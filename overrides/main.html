@@ -9,6 +9,12 @@
 {% endblock %}
 
 {% block extrahead %}
+<link rel="icon" href="{{ 'favicon.svg' | url }}" type="image/svg+xml" />
+<link rel="alternate icon" href="{{ 'assets/favicon-64.png' | url }}" type="image/png" />
+<link rel="apple-touch-icon" href="{{ 'assets/apple-touch-icon.png' | url }}" />
+<link rel="manifest" href="{{ 'site.webmanifest' | url }}" />
+<meta name="theme-color" content="#7C4DFF" />
+
 {% if config.extra.bing_site_verification %}
 <meta name="msvalidate.01" content="{{ config.extra.bing_site_verification }}" />
 {% endif %}

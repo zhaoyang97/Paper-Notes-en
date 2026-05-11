@@ -1,4 +1,4 @@
-site_name: AI Paper Notes
+site_name: 📚 AI Paper Notes
 site_description: 15,000+ AI conference paper notes — ICLR · CVPR · ACL · NeurIPS
   · AAAI · ICCV · ECCV · ICML — 5-minute reads of core ideas
 site_url: https://en.papernotes.org/
@@ -10,7 +10,7 @@ theme:
   name: material
   language: en
   custom_dir: overrides
-  favicon: assets/favicon.svg
+  favicon: favicon.svg
   icon:
     logo: material/book-open-variant
   features:

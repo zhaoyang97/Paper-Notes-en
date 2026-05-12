@@ -470,3 +470,22 @@
   .md-typeset .conf-related .rel-card { min-width: 140px; flex-basis: 140px; }
 }
 
+/* ── Hide the visible tag chips rendered by Material's `tags` plugin
+   (the `<nav class="md-tags">` block emitted at the top of every page from
+   YAML `tags:` frontmatter). Frontmatter is preserved so SEO meta tags
+   (keywords, og:tags, JSON-LD) and tag aggregation pages still work. */
+.md-typeset .md-tags,
+nav.md-tags {
+  display: none !important;
+}
+
+/* ── Hide the visible SEO summary block (description + tags line) at the top
+   of paper pages. Emitted by overrides/main.html as <aside class="paper-seo-summary">.
+   Underlying SEO meta (<meta name="description">, <meta name="keywords">,
+   OpenGraph, Twitter Card, JSON-LD) are kept intact — only the duplicated
+   in-page rendering is hidden so the article starts with its real content. */
+.md-typeset .paper-seo-summary,
+aside.paper-seo-summary {
+  display: none !important;
+}
+

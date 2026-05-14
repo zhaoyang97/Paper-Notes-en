@@ -132,8 +132,8 @@ SatCLIP's ID grows nearly linearly with spherical harmonic order; GeoCLIP's ID i
 - [\[ICLR 2026\] Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents](earth-agent_unlocking_the_full_landscape_of_earth_observation_with_agents.md)
 - [\[ICCV 2025\] WildSAT: Learning Satellite Image Representations from Wildlife Observations](../../ICCV2025/remote_sensing/wildsat_learning_satellite_image_representations_from_wildlife_observations.md)
 - [\[ICCV 2025\] Towards a Unified Copernicus Foundation Model for Earth Vision](../../ICCV2025/remote_sensing/towards_a_unified_copernicus_foundation_model_for_earth_vision.md)
-- [\[ICLR 2026\] Task-free Adaptive Meta Black-box Optimization](task-free_adaptive_meta_black-box_optimization.md)
 - [\[ICLR 2026\] AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild](autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild.md)
+- [\[ICLR 2026\] Task-free Adaptive Meta Black-box Optimization](task-free_adaptive_meta_black-box_optimization.md)
 
 </div>
 

@@ -133,9 +133,9 @@ The paper validates results using multi-level summary statistics without a conve
 
 - [\[NeurIPS 2025\] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)
 - [\[NeurIPS 2025\] RGB-Only Supervised Camera Parameter Optimization in Dynamic Scenes](rgb-only_supervised_camera_parameter_optimization_in_dynamic_scenes.md)
-- [\[CVPR 2026\] Dark3R: Learning Structure from Motion in the Dark](../../CVPR2026/3d_vision/dark3r_learning_structure_from_motion_in_the_dark.md)
-- [\[NeurIPS 2025\] Locality-Sensitive Hashing-Based Efficient Point Transformer for Charged Particle Reconstruction](locality-sensitive_hashing-based_efficient_point_transformer_for_charged_particl.md)
 - [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
+- [\[NeurIPS 2025\] Locality-Sensitive Hashing-Based Efficient Point Transformer for Charged Particle Reconstruction](locality-sensitive_hashing-based_efficient_point_transformer_for_charged_particl.md)
+- [\[CVPR 2026\] Dark3R: Learning Structure from Motion in the Dark](../../CVPR2026/3d_vision/dark3r_learning_structure_from_motion_in_the_dark.md)
 
 </div>
 

@@ -160,8 +160,8 @@ DEPS trains a three-level hierarchy:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data](learning_reconfigurable_representations_for_multimodal_federated_learning_with_m.md)
-- [\[NeurIPS 2025\] Wasserstein Transfer Learning](wasserstein_transfer_learning.md)
 - [\[NeurIPS 2025\] Learning from Interval Targets](learning_from_interval_targets.md)
+- [\[NeurIPS 2025\] Wasserstein Transfer Learning](wasserstein_transfer_learning.md)
 - [\[NeurIPS 2025\] Streaming Federated Learning with Markovian Data](streaming_federated_learning_with_markovian_data.md)
 - [\[NeurIPS 2025\] Learning Theory for Kernel Bilevel Optimization](learning_theory_for_kernel_bilevel_optimization.md)
 

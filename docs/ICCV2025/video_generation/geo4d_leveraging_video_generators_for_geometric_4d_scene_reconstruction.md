@@ -162,8 +162,8 @@ Geo4D is the first method to estimate camera parameters for dynamic scenes using
 ## Related Papers
 
 - [\[ICCV 2025\] SteerX: Creating Any Camera-Free 3D and 4D Scenes with Geometric Steering](steerx_creating_any_camera-free_3d_and_4d_scenes_with_geometric_steering.md)
-- [\[ICCV 2025\] Reangle-A-Video: 4D Video Generation as Video-to-Video Translation](reangle-a-video_4d_video_generation_as_video-to-video_translation.md)
 - [\[ICCV 2025\] LeanVAE: An Ultra-Efficient Reconstruction VAE for Video Diffusion Models](leanvae_an_ultra-efficient_reconstruction_vae_for_video_diffusion_models.md)
+- [\[ICCV 2025\] Reangle-A-Video: 4D Video Generation as Video-to-Video Translation](reangle-a-video_4d_video_generation_as_video-to-video_translation.md)
 - [\[NeurIPS 2025\] RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation](../../NeurIPS2025/video_generation/rlgf_reinforcement_learning_with_geometric_feedback_for_autonomous_driving_video.md)
 - [\[CVPR 2026\] Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation](../../CVPR2026/video_generation/diff4splat_controllable_4d_scene_generation_with_latent_dynamic_reconstruction_m.md)
 

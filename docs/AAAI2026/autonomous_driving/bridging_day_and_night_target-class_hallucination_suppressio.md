@@ -134,7 +134,7 @@ Total loss: $\mathcal{L}_{total} = \lambda_1 \mathcal{L}_{adv} + \lambda_2 \math
 - [\[CVPR 2026\] LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration](../../CVPR2026/autonomous_driving/lirec-net_a_target-free_and_learning-based_network_for_lidar_rgb_and_event_calib.md)
 - [\[AAAI 2026\] Hierarchical Prompt Learning for Image- and Text-Based Person Re-Identification](hierarchical_prompt_learning_for_image-_and_text-based_person_re-identification.md)
 - [\[AAAI 2026\] MambaSeg: Harnessing Mamba for Accurate and Efficient Image-Event Semantic Segmentation](mambaseg_harnessing_mamba_for_accurate_and_efficient_image-e.md)
-- [\[CVPR 2026\] Single Pixel Image Classification using an Ultrafast Digital Light Projector](../../CVPR2026/autonomous_driving/single_pixel_image_classification_using_an_ultrafa.md)
+- [\[ICLR 2026\] Single Pixel Image Classification using an Ultrafast Digital Light Projector](../../ICLR2026/autonomous_driving/single_pixel_image_classification_using_an_ultrafast_digital_light_projector.md)
 - [\[CVPR 2026\] SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving](../../CVPR2026/autonomous_driving/searchad_large-scale_rare_image_retrieval_dataset_for_autonomous_driving.md)
 
 </div>

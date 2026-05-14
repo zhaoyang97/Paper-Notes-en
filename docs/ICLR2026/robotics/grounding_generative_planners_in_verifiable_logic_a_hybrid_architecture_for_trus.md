@@ -140,8 +140,8 @@ End-to-end vision-language-action models directly map pixels to action commands 
 ## Related Papers
 
 - [\[ICLR 2026\] D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to Embodied AI](d2e_scaling_vision-action_pretraining_on_desktop_data_for_transfer_to_embodied_a.md)
-- [\[AAAI 2026\] GRIM: Task-Oriented Grasping with Conditioning on Generative Examples](../../AAAI2026/robotics/grim_task-oriented_grasping_with_conditioning_on_generative_examples.md)
 - [\[ICLR 2026\] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors](from_spatial_to_actions_grounding_vision-language-action_model_in_spatial_founda.md)
+- [\[AAAI 2026\] GRIM: Task-Oriented Grasping with Conditioning on Generative Examples](../../AAAI2026/robotics/grim_task-oriented_grasping_with_conditioning_on_generative_examples.md)
 - [\[ICLR 2026\] Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)
 - [\[ACL 2026\] Can AI-Generated Persuasion Be Detected? Persuaficial Benchmark and AI vs. Human Linguistic Differences](../../ACL2026/robotics/can_ai-generated_persuasion_be_detected_persuaficial_benchmark_and_ai_vs_human_l.md)
 

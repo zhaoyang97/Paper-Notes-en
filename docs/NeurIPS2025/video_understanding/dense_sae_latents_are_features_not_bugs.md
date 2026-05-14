@@ -134,8 +134,8 @@ This is an analytical paper that proposes no new model; instead, it conducts sys
 ## Related Papers
 
 - [\[NeurIPS 2025\] Fixed-Point RNNs: Interpolating from Diagonal to Dense](fixed-point_rnns_interpolating_from_diagonal_to_dense.md)
-- [\[ICCV 2025\] ResidualViT for Efficient Temporally Dense Video Encoding](../../ICCV2025/video_understanding/residualvit_for_efficient_temporally_dense_video_encoding.md)
 - [\[ICCV 2025\] Online Dense Point Tracking with Streaming Memory](../../ICCV2025/video_understanding/online_dense_point_tracking_with_streaming_memory.md)
+- [\[ICCV 2025\] ResidualViT for Efficient Temporally Dense Video Encoding](../../ICCV2025/video_understanding/residualvit_for_efficient_temporally_dense_video_encoding.md)
 - [\[ICCV 2025\] AllTracker: Efficient Dense Point Tracking at High Resolution](../../ICCV2025/video_understanding/alltracker_efficient_dense_point_tracking_at_high_resolution.md)
 - [\[ICCV 2025\] Sparse-Dense Side-Tuner for Efficient Video Temporal Grounding](../../ICCV2025/video_understanding/sparse-dense_side-tuner_for_efficient_video_temporal_grounding.md)
 

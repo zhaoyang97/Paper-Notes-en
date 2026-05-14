@@ -144,7 +144,7 @@ Three input settings: (1) Turn-level; (2) Context-level; (3) Conversation-level.
 - [\[ACL 2026\] DIA-HARM: Dialectal Disparities in Harmful Content Detection Across 50 English Dialects](dia-harm_dialectal_disparities_in_harmful_content_detection_across_50_english_di.md)
 - [\[ICLR 2026\] Statistical Guarantees for Offline Domain Randomization](../../ICLR2026/audio_speech/statistical_guarantees_for_offline_domain_randomization.md)
 - [\[NeurIPS 2025\] Merlin L48 Spectrogram Dataset](../../NeurIPS2025/audio_speech/merlin_l48_spectrogram_dataset.md)
-- [\[ACL 2026\] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training](towards_fine-grained_and_multi-granular_contrastive_language-speech_pre-training.md)
+- [\[ACL 2026\] MCGA: A Multi-task Classical Chinese Literary Genre Audio Corpus](mcga_a_multi-task_classical_chinese_literary_genre_audio_corpus.md)
 
 </div>
 

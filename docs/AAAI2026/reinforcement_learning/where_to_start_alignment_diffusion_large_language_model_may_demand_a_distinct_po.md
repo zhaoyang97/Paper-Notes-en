@@ -189,9 +189,9 @@ Adaptive attack ASR is equally low as that of standard attacks, demonstrating th
 
 - [\[AAAI 2026\] Language Model Distillation: A Temporal Difference Imitation Learning Perspective](language_model_distillation_a_temporal_difference_imitation_learning_perspective.md)
 - [\[AAAI 2026\] Formal Verification of Diffusion Auctions](formal_verification_of_diffusion_auctions.md)
-- [\[ICLR 2026\] AWM: Accurate Weight-Matrix Fingerprint for Large Language Models](../../ICLR2026/reinforcement_learning/awm_accurate_weight-matrix_fingerprint_for_large_language_models.md)
 - [\[ICLR 2026\] VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models](../../ICLR2026/reinforcement_learning/verifybench_benchmarking_reference-based_reward_systems_for_large_language_model.md)
 - [\[ICLR 2026\] Robust Multi-Objective Controlled Decoding of Large Language Models](../../ICLR2026/reinforcement_learning/robust_multi-objective_controlled_decoding_of_large_language_models.md)
+- [\[ICLR 2026\] AWM: Accurate Weight-Matrix Fingerprint for Large Language Models](../../ICLR2026/reinforcement_learning/awm_accurate_weight-matrix_fingerprint_for_large_language_models.md)
 
 </div>
 

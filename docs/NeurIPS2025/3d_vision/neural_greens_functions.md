@@ -142,7 +142,7 @@ $$\mathbf{u} = \mathbf{K}^T \{\mathbf{G}(\mathbf{K}\mathbf{M}\mathbf{f} - \mathb
 - [\[NeurIPS 2025\] Hybrid Physical-Neural Simulator for Fast Cosmological Hydrodynamics](hybrid_physical-neural_simulator_for_fast_cosmological_hydrodynamics.md)
 - [\[NeurIPS 2025\] BecomingLit: Relightable Gaussian Avatars with Hybrid Neural Shading](becominglit_relightable_gaussian_avatars_with_hybrid_neural_shading.md)
 - [\[NeurIPS 2025\] Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework](copresheaf_topological_neural_networks_a_generalized_deep_learning_framework.md)
-- [\[NeurIPS 2025\] Robust Neural Rendering in the Wild with Asymmetric Dual 3D Gaussian Splatting](robust_neural_rendering_in_the_wild_with_asymmetric_dual_3d_gaussian_splatting.md)
+- [\[NeurIPS 2025\] RigAnyFace: Scaling Neural Facial Mesh Auto-Rigging with Unlabeled Data](riganyface_scaling_neural_facial_mesh_auto-rigging_with_unlabeled_data.md)
 
 </div>
 

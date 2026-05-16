@@ -87,7 +87,7 @@
 .conf-card .area-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.28rem;
+  gap: 0.32rem;
 }
 
 /* 语义大类分组容器：组之间留竖向间距 */
@@ -113,28 +113,53 @@
 
 /* English labels are ~50% longer than Chinese; shrink tags so multiple fit per row */
 .conf-card .area-tag {
-  display: inline-block;
-  background: var(--md-default-fg-color--lightest);
-  color: rgba(0, 0, 0, 0.72);
-  padding: 0.12rem 0.4rem;
-  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18rem;
+  background: rgba(124, 77, 255, 0.08);
+  color: var(--md-accent-fg-color) !important;
+  padding: 0.16rem 0.42rem 0.18rem;
+  border: 1px solid rgba(124, 77, 255, 0.24);
+  border-radius: 6px;
   font-size: 0.68rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.35;
   white-space: nowrap;
-  text-decoration: none;
-  transition: background 0.15s, color 0.15s;
+  text-decoration: none !important;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.12s, box-shadow 0.15s;
   cursor: pointer;
 }
 
+.conf-card .area-tag::after {
+  content: "›";
+  font-size: 0.9em;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.65;
+  transform: translateY(-0.02rem);
+}
+
 [data-md-color-scheme="slate"] .conf-card .area-tag {
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.55);
+  background: rgba(167, 139, 250, 0.12);
+  border-color: rgba(167, 139, 250, 0.28);
+  color: rgba(255, 255, 255, 0.86) !important;
 }
 
 .conf-card .area-tag:hover {
   background: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
   color: #fff !important;
+  box-shadow: 0 2px 10px rgba(124, 77, 255, 0.22);
+  transform: translateY(-1px);
+}
+
+.conf-card .area-tag:active {
+  transform: translateY(0);
+}
+
+.conf-card .area-tag:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 2px;
 }
 
 /* ── Hero section ── */
@@ -275,6 +300,29 @@
 }
 .md-typeset .related-papers a:hover {
   opacity: 0.85;
+}
+
+/* ── Generated paper lists: make note-title links read as links ── */
+.md-typeset dl > dt > strong > a,
+.md-typeset dl > dt > a {
+  color: var(--md-accent-fg-color) !important;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s, text-decoration-thickness 0.15s, opacity 0.15s;
+}
+
+.md-typeset dl > dt > strong > a:hover,
+.md-typeset dl > dt > a:hover {
+  opacity: 0.86;
+  text-decoration-thickness: 2px;
+}
+
+.md-typeset dl > dt > strong > a:focus-visible,
+.md-typeset dl > dt > a:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 /* ── SEO summary strip: first body text for Google snippets + quick human scan ── */

@@ -251,6 +251,39 @@
   fill: rgba(255,255,255,.7);
 }
 
+/* ── Sidebar: highlight the currently opened note/page ── */
+.md-sidebar--primary a.md-nav__link.md-nav__link--active,
+.md-sidebar--primary label.md-nav__link.md-nav__link--active[for="__toc"] {
+  margin: 0.12rem 0;
+  padding: 0.32rem 0.55rem 0.32rem 0.7rem;
+  border-radius: 6px;
+  background: rgba(124, 77, 255, 0.1);
+  box-shadow: inset 3px 0 0 var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color) !important;
+  font-weight: 700;
+}
+
+.md-sidebar--primary a.md-nav__link.md-nav__link--active .md-ellipsis,
+.md-sidebar--primary label.md-nav__link.md-nav__link--active[for="__toc"] .md-ellipsis {
+  color: inherit;
+}
+
+.md-sidebar--primary a.md-nav__link.md-nav__link--active:hover,
+.md-sidebar--primary label.md-nav__link.md-nav__link--active[for="__toc"]:hover {
+  background: rgba(124, 77, 255, 0.16);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary a.md-nav__link.md-nav__link--active,
+[data-md-color-scheme="slate"] .md-sidebar--primary label.md-nav__link.md-nav__link--active[for="__toc"] {
+  background: rgba(167, 139, 250, 0.16);
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary a.md-nav__link.md-nav__link--active:hover,
+[data-md-color-scheme="slate"] .md-sidebar--primary label.md-nav__link.md-nav__link--active[for="__toc"]:hover {
+  background: rgba(167, 139, 250, 0.22);
+}
+
 /* ── Sidebar: keep area labels on a single line on desktop ──
    English area labels (e.g. "Information Retrieval & RAG (8)",
    "Robotics & Embodied AI (49)", "Self-Supervised Learning (38)")

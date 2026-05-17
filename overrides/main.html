@@ -2,7 +2,14 @@
 
 {% block htmltitle %}
 {% if page and page.is_homepage %}
+  {# Homepage: prefer the SEO-tuned frontmatter title so Google search results
+     read "AI Conference Paper Notes | …" instead of the bland site_name
+     ("📚 AI Paper Notes"). Fallback to site_name when no frontmatter title. #}
+  {%- if page.meta and page.meta.title %}
+  <title>{{ page.meta.title }}</title>
+  {%- else %}
   <title>{{ config.site_name }}</title>
+  {%- endif %}
 {% else %}
   {{ super() }}
 {% endif %}

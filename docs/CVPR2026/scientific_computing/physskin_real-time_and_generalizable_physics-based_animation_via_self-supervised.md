@@ -18,8 +18,8 @@ content_hash: 76a29ae1b4c85dd8
 # PhysSkin: Real-Time and Generalizable Physics-Based Skin Simulation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23194](https://arxiv.org/abs/2603.23194)
-**Code**: [Project Page](https://zju3dv.github.io/PhysSkin/)
+**arXiv**: [2603.23194](https://arxiv.org/abs/2603.23194)  
+**Code**: [Project Page](https://zju3dv.github.io/PhysSkin/)  
 **Area**: Physics Simulation / 3D Animation
 **Keywords**: Physics-based Animation, Neural Skinning Field, Self-Supervised Learning, Subspace Physics, Linear Blend Skinning
 
@@ -68,13 +68,13 @@ Pipeline:
 2. **Neural Skinning Field Autoencoder (Architectural Core)**
 
     - **Encoder**: Transformer-based point cloud encoder following Michelangelo
-      - Samples 4096 surface points to extract shape latent representation $\mathbf{F}_s \in \mathbb{R}^{256 \times 768}$
-      - Uses cross-attention + 8-layer self-attention for iterative refinement
-      - Pre-trained on ShapeNet via SDF reconstruction; frozen during training
+        - Samples 4096 surface points to extract shape latent representation $\mathbf{F}_s \in \mathbb{R}^{256 \times 768}$
+        - Uses cross-attention + 8-layer self-attention for iterative refinement
+        - Pre-trained on ShapeNet via SDF reconstruction; frozen during training
     - **Decoder** (three-stage cross-attention design):
-      - Stage 1: $m$ learnable handle tokens $\mathbf{Q}_h$ extract handle latent representations $\mathbf{F}_h$ from $\mathbf{F}_s$ via cross-attention
-      - Stage 2: arbitrary spatial query points $\mathbf{X}$ extract per-point skinning features $\mathbf{F}_p$ from $\mathbf{F}_h$ via cross-attention
-      - Stage 3: ResNet-style MLP decodes features into skinning weights $W(\mathbf{X}) \in \mathbb{R}^m$
+        - Stage 1: $m$ learnable handle tokens $\mathbf{Q}_h$ extract handle latent representations $\mathbf{F}_h$ from $\mathbf{F}_s$ via cross-attention
+        - Stage 2: arbitrary spatial query points $\mathbf{X}$ extract per-point skinning features $\mathbf{F}_p$ from $\mathbf{F}_h$ via cross-attention
+        - Stage 3: ResNet-style MLP decodes features into skinning weights $W(\mathbf{X}) \in \mathbb{R}^m$
     - Design motivation: the three-stage cross-attention realizes a natural hierarchy of "shape → handles → points" and is mesh-agnostic
 
 3. **Cubature Point Sampling (Discretization-Agnostic Design)**

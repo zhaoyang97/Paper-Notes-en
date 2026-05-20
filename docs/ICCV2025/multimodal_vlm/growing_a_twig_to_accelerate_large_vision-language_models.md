@@ -18,8 +18,8 @@ content_hash: 52ccbc4efcb61c89
 # Growing a Twig to Accelerate Large Vision-Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.14075](https://arxiv.org/abs/2503.14075)
-**Code**: [github.com/MILVLG/twigvlm](https://github.com/MILVLG/twigvlm)
+**arXiv**: [2503.14075](https://arxiv.org/abs/2503.14075)  
+**Code**: [github.com/MILVLG/twigvlm](https://github.com/MILVLG/twigvlm)  
 **Area**: Multimodal VLM
 **Keywords**: VLM acceleration, visual token pruning, self-speculative decoding, lightweight module, inference efficiency
 

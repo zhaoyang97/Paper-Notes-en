@@ -19,8 +19,8 @@ content_hash: 05608806266563c6
 # Diverse Text-to-Image Generation via Contrastive Noise Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03813](https://arxiv.org/abs/2510.03813)
-**Code**: Available (official open-source)
+**arXiv**: [2510.03813](https://arxiv.org/abs/2510.03813)  
+**Code**: Available (official open-source)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Diffusion models, text-to-image generation, diversity, contrastive learning, noise optimization, InfoNCE
 

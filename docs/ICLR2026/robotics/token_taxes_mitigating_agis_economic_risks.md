@@ -19,8 +19,8 @@ content_hash: 9f92c430ba86b9f1
 # Token Taxes: Mitigating AGI's Economic Risks
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.04555](https://arxiv.org/abs/2603.04555)
-**Code**: None
+**arXiv**: [2603.04555](https://arxiv.org/abs/2603.04555)  
+**Code**: None  
 **Area**: AI Governance / Computational Economics
 **Keywords**: AGI governance, token tax, robot tax, compute governance, economic risks, AI safety
 

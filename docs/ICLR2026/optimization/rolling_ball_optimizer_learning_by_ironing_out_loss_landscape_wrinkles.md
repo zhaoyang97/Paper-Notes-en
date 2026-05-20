@@ -18,7 +18,7 @@ content_hash: 0610fd7fd6317915
 # Rolling Ball Optimizer: Learning by Ironing Out Loss Landscape Wrinkles
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.19527](https://arxiv.org/abs/2505.19527)
+**arXiv**: [2505.19527](https://arxiv.org/abs/2505.19527)  
 **Area**: Optimization
 **Keywords**: optimizer, loss landscape, rolling ball, smoothing effect, generalization
 

@@ -17,8 +17,8 @@ content_hash: 9eaec12e87aef15e
 # Enhancing Image Restoration Transformer via Adaptive Translation Equivariance
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.18520](https://arxiv.org/abs/2506.18520)
-**Code**: Unavailable
+**arXiv**: [2506.18520](https://arxiv.org/abs/2506.18520)  
+**Code**: Unavailable  
 **Area**: Image Restoration
 **Keywords**: Translation Equivariance, Image Restoration, Transformer, Adaptive Attention, Super-Resolution
 

@@ -18,8 +18,8 @@ content_hash: a033cd31dc0be1b8
 # PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.09663](https://arxiv.org/abs/2506.09663)
-**Code**: Available
+**arXiv**: [2506.09663](https://arxiv.org/abs/2506.09663)  
+**Code**: Available  
 **Area**: 3D Vision / Articulated Object Modeling
 **Keywords**: articulated objects, 3D Gaussian Splatting, part segmentation, continuous deformation, SAM
 

@@ -19,8 +19,8 @@ content_hash: 712197eac1d9c674
 # The Effect of Optimal Self-Distillation in Noisy Gaussian Mixture Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.16226](https://arxiv.org/abs/2501.16226)
-**Code**: Not available
+**arXiv**: [2501.16226](https://arxiv.org/abs/2501.16226)  
+**Code**: Not available  
 **Area**: Theory / Learning Theory
 **Keywords**: Self-distillation, noisy data, Gaussian mixture model, replica method, pseudo-labels, denoising
 

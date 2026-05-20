@@ -18,8 +18,8 @@ content_hash: 8b2bbc68f4c8a3d8
 # Hierarchy-of-Groups Policy Optimization for Long-Horizon Agentic Tasks
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.22817](https://arxiv.org/abs/2602.22817)
-**Code**: To be confirmed
+**arXiv**: [2602.22817](https://arxiv.org/abs/2602.22817)  
+**Code**: To be confirmed  
 **Area**: LLM Alignment
 **Keywords**: group-relative RL, advantage estimation, long-horizon agent, bias-variance tradeoff, context consistency
 

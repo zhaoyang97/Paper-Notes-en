@@ -18,7 +18,7 @@ content_hash: 345cbc47e8b1e189
 # Hi3DGen: High-fidelity 3D Geometry Generation from Images via Normal Bridging
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.22236](https://arxiv.org/abs/2503.22236)
+**arXiv**: [2503.22236](https://arxiv.org/abs/2503.22236)  
 **Area**: Other
 **Keywords**: 3D generation, normal map bridging, noise-injected regression, dual-stream architecture, latent diffusion regularization, high-fidelity geometry
 

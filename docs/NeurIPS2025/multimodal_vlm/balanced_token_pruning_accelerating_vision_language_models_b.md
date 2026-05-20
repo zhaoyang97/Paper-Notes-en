@@ -18,8 +18,8 @@ content_hash: 6f5a56f4b8b5784d
 # Balanced Token Pruning: Accelerating Vision Language Models Beyond Local Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22038](https://arxiv.org/abs/2505.22038)
-**Code**: [https://github.com/EmbodiedCity/NeurIPS2025-Balanced-Token-Pruning](https://github.com/EmbodiedCity/NeurIPS2025-Balanced-Token-Pruning)
+**arXiv**: [2505.22038](https://arxiv.org/abs/2505.22038)  
+**Code**: [https://github.com/EmbodiedCity/NeurIPS2025-Balanced-Token-Pruning](https://github.com/EmbodiedCity/NeurIPS2025-Balanced-Token-Pruning)  
 **Area**: Multimodal VLM / Model Acceleration
 **Keywords**: visual token pruning, local-global optimization, attention pruning, diversity pruning, LVLM inference acceleration
 

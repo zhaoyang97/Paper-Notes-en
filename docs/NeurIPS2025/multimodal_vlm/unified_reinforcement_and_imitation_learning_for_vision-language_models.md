@@ -18,8 +18,8 @@ content_hash: 048917b283bb6e43
 # Unified Reinforcement and Imitation Learning for Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19307](https://arxiv.org/abs/2510.19307)
-**Code**: Unavailable (NVIDIA internal)
+**arXiv**: [2510.19307](https://arxiv.org/abs/2510.19307)  
+**Code**: Unavailable (NVIDIA internal)  
 **Area**: Multimodal VLM
 **Keywords**: VLM distillation, reinforcement learning, imitation learning, GRPO, GAIL
 

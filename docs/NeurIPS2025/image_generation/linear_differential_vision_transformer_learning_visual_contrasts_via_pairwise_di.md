@@ -17,8 +17,8 @@ content_hash: 14a6db84a5995f20
 # Linear Differential Vision Transformer: Learning Visual Contrasts via Pairwise Differentials
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00833](https://arxiv.org/abs/2511.00833)
-**Code**: [https://github.com/LeapLabTHU/LinearDiff](https://github.com/LeapLabTHU/LinearDiff)
+**arXiv**: [2511.00833](https://arxiv.org/abs/2511.00833)  
+**Code**: [https://github.com/LeapLabTHU/LinearDiff](https://github.com/LeapLabTHU/LinearDiff)  
 **Area**: Vision Transformer / Efficient Attention
 **Keywords**: Vision Transformer, Linear Attention, Differential Attention, Image Classification, Image Generation
 

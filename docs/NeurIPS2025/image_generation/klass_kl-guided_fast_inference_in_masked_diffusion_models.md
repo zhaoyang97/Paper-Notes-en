@@ -18,8 +18,8 @@ content_hash: 7c0b4270df323404
 # KLASS: KL-Guided Fast Inference in Masked Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05664](https://arxiv.org/abs/2511.05664)
-**Code**: [GitHub](https://github.com/shkim0116/KLASS)
+**arXiv**: [2511.05664](https://arxiv.org/abs/2511.05664)  
+**Code**: [GitHub](https://github.com/shkim0116/KLASS)  
 **Area**: Image Generation / Discrete Diffusion Model Sampling
 **Keywords**: Masked Diffusion Models, KL Divergence, Accelerated Sampling, Token Stability, Parallel Decoding
 

@@ -18,8 +18,8 @@ content_hash: 5488ebf755c85f8e
 # JULI: Jailbreak Large Language Models by Self-Introspection
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.11790](https://arxiv.org/abs/2505.11790)
-**Code**: None
+**arXiv**: [2505.11790](https://arxiv.org/abs/2505.11790)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: jailbreak, logit bias, API attack, token log probability, BiasNet
 

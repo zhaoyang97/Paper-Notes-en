@@ -18,8 +18,8 @@ content_hash: dbe45fe9257be81f
 # ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.22037](https://arxiv.org/abs/2510.22037)
-**Code**: Not released
+**arXiv**: [2510.22037](https://arxiv.org/abs/2510.22037)  
+**Code**: Not released  
 **Area**: Multilingual Translation
 **Keywords**: scaling laws, multilingual, cross-lingual transfer, curse of multilinguality, pretraining vs finetuning
 

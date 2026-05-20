@@ -18,8 +18,8 @@ content_hash: 4defb57754474185
 # FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.06301](https://arxiv.org/abs/2508.06301)
-**Code**: [GitHub](https://github.com/junhyeog/FedMeNF)
+**arXiv**: [2508.06301](https://arxiv.org/abs/2508.06301)  
+**Code**: [GitHub](https://github.com/junhyeog/FedMeNF)  
 **Area**: AI Security
 **Keywords**: Federated Learning, Meta-Learning, Neural Fields, Privacy Preservation, Implicit Neural Representations
 

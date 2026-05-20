@@ -18,8 +18,8 @@ content_hash: 87fa2b924f63a5c1
 # Semantic Regexes: Auto-Interpreting LLM Features with a Structured Language
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.06378](https://arxiv.org/abs/2510.06378)
-**Code**: [apple/ml-semantic-regex](https://github.com/apple/ml-semantic-regex)
+**arXiv**: [2510.06378](https://arxiv.org/abs/2510.06378)  
+**Code**: [apple/ml-semantic-regex](https://github.com/apple/ml-semantic-regex)  
 **Area**: LLM NLP / Mechanistic Interpretability
 **Keywords**: mechanistic_interpretability, automated_interpretability, sparse_autoencoders, structured_language, feature_description
 
@@ -56,27 +56,27 @@ Semantic Regex is a structured language induced from thousands of real LLM featu
 **Three Primitives**:
 
 1. **Symbol** `[:symbol X:]` — matches the exact string X
-   - Example: `[:symbol color:]` matches the token "color"
-   - Describes features that activate on specific tokens
+    - Example: `[:symbol color:]` matches the token "color"
+    - Describes features that activate on specific tokens
 
 2. **Lexeme** `[:lexeme X:]` — matches syntactic variants of X (tense, plural, etc.)
-   - Example: `[:lexeme color:]` matches "color", "colors", "coloring", etc.
-   - Describes features that capture word meaning
+    - Example: `[:lexeme color:]` matches "color", "colors", "coloring", etc.
+    - Describes features that capture word meaning
 
 3. **Field** `[:field X:]` — matches semantic variants of X (words within the same conceptual domain)
-   - Example: `[:field color:]` matches "red", "blue", "green", etc.
-   - Describes features that activate on conceptual categories
+    - Example: `[:field color:]` matches "red", "blue", "green", etc.
+    - Describes features that activate on conceptual categories
 
 **Three Modifiers**:
 
 1. **Context** `@{:context X:}(regex)` — matches within context X
-   - Example: `@{:context politics:}([:symbol color:])` matches "color" only in political contexts
+    - Example: `@{:context politics:}([:symbol color:])` matches "color" only in political contexts
 
 2. **Composition** — sequential concatenation and alternation (|)
-   - Example: `[:field color:]([:symbol and:]|[:symbol or:])[:field color:]`
+    - Example: `[:field color:]([:symbol and:]|[:symbol or:])[:field color:]`
 
 3. **Quantification** — standard regex quantifier `?` (zero or one occurrence)
-   - Example: `[:symbol a:][:field color:]?[:field flower:]`
+    - Example: `[:symbol a:][:field color:]?[:field flower:]`
 
 ### Automated Interpretability Pipeline
 

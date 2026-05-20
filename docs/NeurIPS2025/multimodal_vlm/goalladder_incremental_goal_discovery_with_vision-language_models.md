@@ -18,8 +18,8 @@ content_hash: 7fb990a5ee0f8266
 # GoalLadder: Incremental Goal Discovery with Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.16396](https://arxiv.org/abs/2506.16396)
-**Code**: None
+**arXiv**: [2506.16396](https://arxiv.org/abs/2506.16396)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Vision-Language Models, Reinforcement Learning, Goal Discovery, ELO Rating, Reward Function
 

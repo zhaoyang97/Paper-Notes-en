@@ -18,8 +18,8 @@ content_hash: 96321d1323618d7a
 # MedGEN-Bench: Contextually Entangled Benchmark for Open-Ended Multimodal Medical Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.13135](https://arxiv.org/abs/2511.13135)
-**Code**: To be released (open-source promised in paper)
+**arXiv**: [2511.13135](https://arxiv.org/abs/2511.13135)  
+**Code**: To be released (open-source promised in paper)  
 **Area**: Medical Imaging
 **Keywords**: Multimodal medical generation, benchmark, VLM evaluation, image-text entanglement, open-ended generation
 

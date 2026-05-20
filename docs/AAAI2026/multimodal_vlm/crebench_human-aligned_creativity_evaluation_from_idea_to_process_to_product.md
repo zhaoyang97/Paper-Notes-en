@@ -18,8 +18,8 @@ content_hash: 45e65e560bbcdf3d
 # CreBench: Human-Aligned Creativity Evaluation from Idea to Process to Product
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13626](https://arxiv.org/abs/2511.13626)
-**Code**: [Project Page](https://kaixuewen.github.io/Crebench)
+**arXiv**: [2511.13626](https://arxiv.org/abs/2511.13626)  
+**Code**: [Project Page](https://kaixuewen.github.io/Crebench)  
 **Area**: Multimodal VLM
 **Keywords**: creativity evaluation, benchmark, multimodal instruction tuning, human alignment, LLaVA
 

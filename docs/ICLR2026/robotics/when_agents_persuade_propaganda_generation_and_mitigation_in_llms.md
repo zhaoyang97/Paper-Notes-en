@@ -18,8 +18,8 @@ content_hash: 747d220780f8e18d
 # When Agents Persuade: Propaganda Generation and Mitigation in LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.04636](https://arxiv.org/abs/2603.04636)
-**Code**: None
+**arXiv**: [2603.04636](https://arxiv.org/abs/2603.04636)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: propaganda generation, rhetorical techniques, ORPO, LLM safety, content moderation
 
@@ -53,21 +53,21 @@ A four-stage pipeline: (1) train propaganda detection and rhetorical technique d
 ### Key Designs
 
 1. **Binary Propaganda Detector**:
-   - **Function**: Classifies whether a given article constitutes propaganda.
-   - **Mechanism**: Fine-tuned on RoBERTa-large, combining QProp (distantly supervised labels; 5,700+ propaganda / 45,600+ non-propaganda news articles) and PTC (350 propaganda / 13 non-propaganda). Five hundred articles from QProp were manually re-annotated (Cohen's $\kappa = 0.86$), yielding a training set of 485 propaganda and 359 non-propaganda articles.
-   - **Design Motivation**: QProp's distant supervision labels are noisy and require manual cleaning; combining multiple data sources improves generalization.
-   - **Performance**: $F_1 = 0.98$, $\text{precision} = 0.98$, $\text{recall} = 0.98$.
+    - **Function**: Classifies whether a given article constitutes propaganda.
+    - **Mechanism**: Fine-tuned on RoBERTa-large, combining QProp (distantly supervised labels; 5,700+ propaganda / 45,600+ non-propaganda news articles) and PTC (350 propaganda / 13 non-propaganda). Five hundred articles from QProp were manually re-annotated (Cohen's $\kappa = 0.86$), yielding a training set of 485 propaganda and 359 non-propaganda articles.
+    - **Design Motivation**: QProp's distant supervision labels are noisy and require manual cleaning; combining multiple data sources improves generalization.
+    - **Performance**: $F_1 = 0.98$, $\text{precision} = 0.98$, $\text{recall} = 0.98$.
 
 2. **Rhetorical Techniques Detector**:
-   - **Function**: Detects the presence of six propaganda rhetorical techniques in text (Name-Calling, Loaded Language, Doubt, Appeal to Fear, Flag-Waving, Exaggeration/Minimization).
-   - **Mechanism**: PTC's phrase-level annotations are reformulated as sentence-level binary classification tasks (raising $F_1$ from 0.30 to 0.82). Six independent RoBERTa-large binary classifiers are trained—one per technique—significantly outperforming a single multi-label multi-class model.
-   - **Design Motivation**: The six techniques account for 75% of annotated instances in PTC; independent classifiers avoid multi-label interference; undersampling combined with data augmentation (random word replacement, synonym substitution, back-translation) improves $F_1$ by approximately 3%.
-   - **Performance**: Mean $F_1 = 0.82$, $\text{precision} = 0.82$, $\text{recall} = 0.81$.
+    - **Function**: Detects the presence of six propaganda rhetorical techniques in text (Name-Calling, Loaded Language, Doubt, Appeal to Fear, Flag-Waving, Exaggeration/Minimization).
+    - **Mechanism**: PTC's phrase-level annotations are reformulated as sentence-level binary classification tasks (raising $F_1$ from 0.30 to 0.82). Six independent RoBERTa-large binary classifiers are trained—one per technique—significantly outperforming a single multi-label multi-class model.
+    - **Design Motivation**: The six techniques account for 75% of annotated instances in PTC; independent classifiers avoid multi-label interference; undersampling combined with data augmentation (random word replacement, synonym substitution, back-translation) improves $F_1$ by approximately 3%.
+    - **Performance**: Mean $F_1 = 0.82$, $\text{precision} = 0.82$, $\text{recall} = 0.81$.
 
 3. **ORPO Preference Alignment Fine-Tuning**:
-   - **Function**: Encodes an anti-propaganda constraint directly into model weights.
-   - **Mechanism**: ORPO augments the language modeling objective with an odds ratio term that simultaneously rewards non-propaganda (preferred) outputs and penalizes propaganda (non-preferred) outputs: $\mathcal{L}_{\text{ORPO}} = \mathcal{L}_{\text{NLL}} + \lambda \cdot \log \frac{P(\text{preferred})}{P(\text{non-preferred})}$, accomplishing both SFT and preference alignment in a single training pass.
-   - **Design Motivation**: (1) Prompt-level guardrails are ineffective—system instructions combined with propaganda user prompts still yield 99% propaganda-classified outputs; (2) SFT alone may produce undesirable outputs; (3) ORPO bypasses the reward model, making it more efficient than DPO.
+    - **Function**: Encodes an anti-propaganda constraint directly into model weights.
+    - **Mechanism**: ORPO augments the language modeling objective with an odds ratio term that simultaneously rewards non-propaganda (preferred) outputs and penalizes propaganda (non-preferred) outputs: $\mathcal{L}_{\text{ORPO}} = \mathcal{L}_{\text{NLL}} + \lambda \cdot \log \frac{P(\text{preferred})}{P(\text{non-preferred})}$, accomplishing both SFT and preference alignment in a single training pass.
+    - **Design Motivation**: (1) Prompt-level guardrails are ineffective—system instructions combined with propaganda user prompts still yield 99% propaganda-classified outputs; (2) SFT alone may produce undesirable outputs; (3) ORPO bypasses the reward model, making it more efficient than DPO.
 
 ### Loss & Training
 

@@ -19,9 +19,9 @@ content_hash: 8aac53c872573730
 # Random Search Neural Networks for Efficient and Expressive Graph Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22520](https://arxiv.org/abs/2510.22520)
+**arXiv**: [2510.22520](https://arxiv.org/abs/2510.22520)  
 **Authors**: Michael Ito, Danai Koutra, Jenna Wiens (University of Michigan)
-**Code**: [MLD3/RandomSearchNNs](https://github.com/MLD3/RandomSearchNNs)
+**Code**: [MLD3/RandomSearchNNs](https://github.com/MLD3/RandomSearchNNs)  
 **Area**: Medical Imaging
 **Keywords**: Graph Neural Networks, Random Walks, Depth-First Search, Graph Representation Learning, Universal Approximation, Isomorphism Invariance
 

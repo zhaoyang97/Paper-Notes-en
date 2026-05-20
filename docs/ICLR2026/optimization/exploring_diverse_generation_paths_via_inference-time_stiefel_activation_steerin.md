@@ -18,8 +18,8 @@ content_hash: 5ee4e61ad0a3e2a6
 # Exploring Diverse Generation Paths via Inference-time Stiefel Activation Steering
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.22010](https://arxiv.org/abs/2601.22010)
-**Code**: [https://github.com/lythk88/STARS](https://github.com/lythk88/STARS)
+**arXiv**: [2601.22010](https://arxiv.org/abs/2601.22010)  
+**Code**: [https://github.com/lythk88/STARS](https://github.com/lythk88/STARS)  
 **Area**: Optimization
 **Keywords**: activation steering, Stiefel manifold, Riemannian optimization, diverse generation, inference-time intervention
 

@@ -19,8 +19,8 @@ content_hash: 733998b6bf3edbb7
 # GenFlowRL: Shaping Rewards with Generative Object-Centric Flow in Visual Reinforcement Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.11049](https://arxiv.org/abs/2508.11049)
-**Code**: [Project Page](https://colinyu1.github.io/genflowrl)
+**arXiv**: [2508.11049](https://arxiv.org/abs/2508.11049)  
+**Code**: [Project Page](https://colinyu1.github.io/genflowrl)  
 **Area**: Image Generation
 **Keywords**: Reinforcement Learning, Object-Centric Flow, Reward Shaping, Robot Manipulation, Cross-Embodiment, Video Generative Models
 

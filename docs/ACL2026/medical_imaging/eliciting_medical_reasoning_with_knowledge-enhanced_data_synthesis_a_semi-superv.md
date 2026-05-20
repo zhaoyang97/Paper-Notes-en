@@ -18,8 +18,8 @@ content_hash: c50f09689f9280eb
 # Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach
 
 **Conference**: ACL 2026
-**arXiv**: [2604.11547](https://arxiv.org/abs/2604.11547)
-**Code**: [https://github.com/tdlhl/MedSSR](https://github.com/tdlhl/MedSSR)
+**arXiv**: [2604.11547](https://arxiv.org/abs/2604.11547)  
+**Code**: [https://github.com/tdlhl/MedSSR](https://github.com/tdlhl/MedSSR)  
 **Area**: Medical Imaging
 **Keywords**: Medical Reasoning, Rare Disease, Data Synthesis, Semi-Supervised Reinforcement Learning, GRPO
 

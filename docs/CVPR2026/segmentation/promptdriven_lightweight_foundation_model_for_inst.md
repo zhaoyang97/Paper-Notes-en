@@ -18,8 +18,8 @@ content_hash: 557f4cb47926f8c2
 # Prompt-Driven Lightweight Foundation Model for Instance Segmentation-Based Fault Detection in Freight Trains
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12624](https://arxiv.org/abs/2603.12624)
-**Code**: [https://github.com/MVME-HBUT/SAM_FTI-FDet.git](https://github.com/MVME-HBUT/SAM_FTI-FDet.git)
+**arXiv**: [2603.12624](https://arxiv.org/abs/2603.12624)  
+**Code**: [https://github.com/MVME-HBUT/SAM_FTI-FDet.git](https://github.com/MVME-HBUT/SAM_FTI-FDet.git)  
 **Area**: Instance Segmentation / Industrial Inspection / Foundation Model Adaptation
 **Keywords**: SAM, self-prompt generation, lightweight, freight train fault detection, foundation model transfer
 

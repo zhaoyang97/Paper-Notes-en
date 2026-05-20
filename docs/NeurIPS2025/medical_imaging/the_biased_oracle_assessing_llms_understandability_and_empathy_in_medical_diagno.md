@@ -18,8 +18,8 @@ content_hash: 5cf6504fcf9e7eda
 # The Biased Oracle: Assessing LLMs' Understandability and Empathy in Medical Diagnoses
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00924](https://arxiv.org/abs/2511.00924)
-**Code**: [https://github.com/Jeffateth/Biased_Oracle](https://github.com/Jeffateth/Biased_Oracle)
+**arXiv**: [2511.00924](https://arxiv.org/abs/2511.00924)  
+**Code**: [https://github.com/Jeffateth/Biased_Oracle](https://github.com/Jeffateth/Biased_Oracle)  
 **Area**: Medical AI / LLM Evaluation
 **Keywords**: Medical Communication, Readability, Empathy Assessment, Demographic Bias, LLM-as-Judge
 

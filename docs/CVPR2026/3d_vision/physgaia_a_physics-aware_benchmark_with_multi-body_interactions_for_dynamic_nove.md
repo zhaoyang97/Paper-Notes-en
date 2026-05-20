@@ -18,8 +18,8 @@ content_hash: 6b2b68699ab0abd4
 # PhysGaia: A Physics-Aware Benchmark with Multi-Body Interactions for Dynamic Novel View Synthesis
 
 **Conference**: CVPR 2026
-**arXiv**: [2506.02794](https://arxiv.org/abs/2506.02794)
-**Code**: [https://cv.snu.ac.kr/research/PhysGaia/](https://cv.snu.ac.kr/research/PhysGaia/)
+**arXiv**: [2506.02794](https://arxiv.org/abs/2506.02794)  
+**Code**: [https://cv.snu.ac.kr/research/PhysGaia/](https://cv.snu.ac.kr/research/PhysGaia/)  
 **Area**: 3D Vision / Dynamic Scene Reconstruction
 **Keywords**: Physics-aware benchmark, dynamic novel view synthesis, multi-body interaction, 4D Gaussian splatting, physical parameter evaluation
 

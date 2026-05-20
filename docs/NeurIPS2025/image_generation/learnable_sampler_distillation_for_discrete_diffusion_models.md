@@ -18,8 +18,8 @@ content_hash: f9d046406b48b357
 # Learnable Sampler Distillation for Discrete Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19962](https://arxiv.org/abs/2509.19962)
-**Code**: [GitHub](https://github.com/feiyangfu/LSD)
+**arXiv**: [2509.19962](https://arxiv.org/abs/2509.19962)  
+**Code**: [GitHub](https://github.com/feiyangfu/LSD)  
 **Area**: Diffusion Models / Discrete Diffusion Acceleration
 **Keywords**: discrete diffusion models, sampling acceleration, distillation, learnable coefficients, time scheduling
 

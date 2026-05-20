@@ -18,8 +18,8 @@ content_hash: c12a2ca6e00db614
 # Towards Robust Content Watermarking Against Removal and Forgery Attacks
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.06662](https://arxiv.org/abs/2604.06662)
-**Code**: None
+**arXiv**: [2604.06662](https://arxiv.org/abs/2604.06662)  
+**Code**: None  
 **Area**: Image Generation / Digital Watermarking
 **Keywords**: Content watermarking, diffusion models, removal attacks, forgery attacks, instance-specific watermarking
 
@@ -47,21 +47,21 @@ This paper proposes ISTS, an instance-specific two-sided detection watermarking 
 
 1. **Instance-Specific Dynamic Watermarking (Dynamic Pattern + Dynamic Timestep)**
 
-   - **Function**: Makes the watermark pattern and injection location unique per image, blocking the attacker's feature extraction pathway.
-   - **Mechanism**: An unwatermarked image is first generated and encoded into a semantic vector via CLIP. A parameter selector $f = \phi \circ h \circ g$ is then constructed using K-Means clustering and a classifier, mapping semantic features to a specific injection timestep $t$ and frequency-domain coordinate $l$. Since watermark injection has negligible impact on image semantics, the semantic features of watermarked and unwatermarked images are highly consistent, enabling accurate parameter recovery from the suspicious image at detection time. Dynamic patterns disrupt the attack path of "extracting watermark patterns from reference images," while dynamic timesteps prevent gradient-based optimization attacks from tracing back to the correct injection step.
-   - **Design Motivation**: Under static watermarking, an attacker can extract the watermark pattern from a single reference image and forge it (Müller et al.), or average multiple watermarked images to extract the common pattern (Yang et al.). With dynamic watermarking, watermark features across different images cancel each other out, rendering averaging-based attacks ineffective.
+    - **Function**: Makes the watermark pattern and injection location unique per image, blocking the attacker's feature extraction pathway.
+    - **Mechanism**: An unwatermarked image is first generated and encoded into a semantic vector via CLIP. A parameter selector $f = \phi \circ h \circ g$ is then constructed using K-Means clustering and a classifier, mapping semantic features to a specific injection timestep $t$ and frequency-domain coordinate $l$. Since watermark injection has negligible impact on image semantics, the semantic features of watermarked and unwatermarked images are highly consistent, enabling accurate parameter recovery from the suspicious image at detection time. Dynamic patterns disrupt the attack path of "extracting watermark patterns from reference images," while dynamic timesteps prevent gradient-based optimization attacks from tracing back to the correct injection step.
+    - **Design Motivation**: Under static watermarking, an attacker can extract the watermark pattern from a single reference image and forge it (Müller et al.), or average multiple watermarked images to extract the common pattern (Yang et al.). With dynamic watermarking, watermark features across different images cancel each other out, rendering averaging-based attacks ineffective.
 
 2. **Two-Sided Detection**
 
-   - **Function**: Blocks attack paths that remove watermarks by optimizing the latent representation toward the opposite direction of the watermark pattern.
-   - **Mechanism**: Traditional one-sided detection computes $d = \frac{1}{|M|} \sum_{i \in M} |W_i - \mathcal{F}(z_T)_i|$, which only checks the watermark-matching direction. Attackers can push the watermarked latent representation to the opposite direction to evade detection. Two-sided detection takes the minimum over both directions: $d = \min\{\frac{1}{|M|}\sum|W_i - \mathcal{F}(z_T)_i|, \frac{1}{|M|}\sum|W_i + \mathcal{F}(z_T)_i|\}$. For unwatermarked images (standard Gaussian distribution), sign flipping does not affect the distribution, leaving the detection metric unchanged; for watermarked images, the signal is captured regardless of direction.
-   - **Design Motivation**: The removal attack of Müller et al. exploits precisely this vulnerability of one-sided detection by pushing the watermark to the opposite direction. Two-sided detection closes this attack surface at negligible cost (only one additional distance computation with a min operation).
+    - **Function**: Blocks attack paths that remove watermarks by optimizing the latent representation toward the opposite direction of the watermark pattern.
+    - **Mechanism**: Traditional one-sided detection computes $d = \frac{1}{|M|} \sum_{i \in M} |W_i - \mathcal{F}(z_T)_i|$, which only checks the watermark-matching direction. Attackers can push the watermarked latent representation to the opposite direction to evade detection. Two-sided detection takes the minimum over both directions: $d = \min\{\frac{1}{|M|}\sum|W_i - \mathcal{F}(z_T)_i|, \frac{1}{|M|}\sum|W_i + \mathcal{F}(z_T)_i|\}$. For unwatermarked images (standard Gaussian distribution), sign flipping does not affect the distribution, leaving the detection metric unchanged; for watermarked images, the signal is captured regardless of direction.
+    - **Design Motivation**: The removal attack of Müller et al. exploits precisely this vulnerability of one-sided detection by pushing the watermark to the opposite direction. Two-sided detection closes this attack surface at negligible cost (only one additional distance computation with a min operation).
 
 3. **Semantic Parameter Selector Training**
 
-   - **Function**: Establishes a deterministic mapping from image semantics to watermark parameters.
-   - **Mechanism**: (1) Generate unwatermarked images from a prompt set → (2) Extract feature vectors via CLIP → (3) Cluster into $N$ categories via K-Means → (4) Map category labels to $(t, l)$ parameters via a predefined modular mapping $\phi$ → (5) Train classifier $h$ to perform feature-to-category mapping. The final selector is $f = \phi \circ h \circ g$ (where $g$ is the CLIP encoder).
-   - **Design Motivation**: A deterministic mapping is required to ensure identical parameters are recovered during both generation and detection. K-Means clustering naturally assigns semantically similar images to the same parameter group, guaranteeing consistency.
+    - **Function**: Establishes a deterministic mapping from image semantics to watermark parameters.
+    - **Mechanism**: (1) Generate unwatermarked images from a prompt set → (2) Extract feature vectors via CLIP → (3) Cluster into $N$ categories via K-Means → (4) Map category labels to $(t, l)$ parameters via a predefined modular mapping $\phi$ → (5) Train classifier $h$ to perform feature-to-category mapping. The final selector is $f = \phi \circ h \circ g$ (where $g$ is the CLIP encoder).
+    - **Design Motivation**: A deterministic mapping is required to ensure identical parameters are recovered during both generation and detection. K-Means clustering naturally assigns semantically similar images to the same parameter group, guaranteeing consistency.
 
 ### Loss & Training
 

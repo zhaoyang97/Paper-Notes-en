@@ -18,8 +18,8 @@ content_hash: fb08b203b7cb2d16
 # Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.00308](https://arxiv.org/abs/2512.00308)
-**Code**: None
+**arXiv**: [2512.00308](https://arxiv.org/abs/2512.00308)  
+**Code**: None  
 **Area**: Model Compression / Dataset Distillation
 **Keywords**: Dataset Distillation, Optimal Transport, Distribution Alignment, Diffusion Models, Knowledge Distillation
 

@@ -18,8 +18,8 @@ content_hash: 02003c4e2fa4c39a
 # Technical Debt in In-Context Learning: Diminishing Efficiency in Long Context
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.04580](https://arxiv.org/abs/2502.04580)
-**Code**: [GitHub](https://github.com/tjoo512/technical-debt-in-icl)
+**arXiv**: [2502.04580](https://arxiv.org/abs/2502.04580)  
+**Code**: [GitHub](https://github.com/tjoo512/technical-debt-in-icl)  
 **Area**: ICL Theory / Learning Theory
 **Keywords**: In-context learning, sample complexity, Bayes-optimal, technical debt, long-context efficiency
 
@@ -42,19 +42,19 @@ A meta-ICL framework is adopted: regression tasks are sampled from a hierarchica
 ### Key Designs
 
 1. **Meta-ICL Task Construction (Section 2.1)**:
-   - *Function*: Constructs a hierarchical regression problem that requires simultaneous model selection and parameter estimation.
-   - *Mechanism*: The latent dimension $m \sim \text{Unif}([M])$ is sampled from $M=10$ candidates; the target function is $f^*(x) = w_m^\top \Phi_m(x)/\sqrt{m+1}$, where $\Phi_m$ denotes Fourier basis functions. The noise level $\sigma_\epsilon$ and signal strength $\sigma_w$ jointly determine the signal-to-noise ratio (SNR).
-   - *Design Motivation*: Fourier bases form a complete basis for square-integrable functions, ensuring the problem class is sufficiently rich. The hierarchical sampling introduces a model selection dimension—the learner must not only estimate parameters but also infer the correct model complexity—which is precisely the setting where BMA outperforms single-model approaches.
+    - *Function*: Constructs a hierarchical regression problem that requires simultaneous model selection and parameter estimation.
+    - *Mechanism*: The latent dimension $m \sim \text{Unif}([M])$ is sampled from $M=10$ candidates; the target function is $f^*(x) = w_m^\top \Phi_m(x)/\sqrt{m+1}$, where $\Phi_m$ denotes Fourier basis functions. The noise level $\sigma_\epsilon$ and signal strength $\sigma_w$ jointly determine the signal-to-noise ratio (SNR).
+    - *Design Motivation*: Fourier bases form a complete basis for square-integrable functions, ensuring the problem class is sufficiently rich. The hierarchical sampling introduces a model selection dimension—the learner must not only estimate parameters but also infer the correct model complexity—which is precisely the setting where BMA outperforms single-model approaches.
 
 2. **Performance Ratio Benchmark (Definitions 2.1–2.3)**:
-   - *Function*: Establishes a cross-scenario comparable framework for evaluating ICL efficiency.
-   - *Mechanism*: $R_b^s(r;\tilde{\mathcal{B}}) = N_b^s(r) / \min_{\tilde{b}} N_{\tilde{b}}^s(r)$, i.e., the number of samples required for algorithm $b$ to reach performance level $r$, divided by the minimum over all algorithms. Performance quantiles $\psi^{\mathcal{Q}}$ eliminate difficulty differences across scenarios; the mean performance ratio (MPR) and performance profile serve as two complementary summary statistics.
-   - *Design Motivation*: Directly inspired by optimization software benchmarking (Dolan & Moré, 2002), a methodology validated in operations research as the gold standard for comparing algorithmic efficiency.
+    - *Function*: Establishes a cross-scenario comparable framework for evaluating ICL efficiency.
+    - *Mechanism*: $R_b^s(r;\tilde{\mathcal{B}}) = N_b^s(r) / \min_{\tilde{b}} N_{\tilde{b}}^s(r)$, i.e., the number of samples required for algorithm $b$ to reach performance level $r$, divided by the minimum over all algorithms. Performance quantiles $\psi^{\mathcal{Q}}$ eliminate difficulty differences across scenarios; the mean performance ratio (MPR) and performance profile serve as two complementary summary statistics.
+    - *Design Motivation*: Directly inspired by optimization software benchmarking (Dolan & Moré, 2002), a methodology validated in operations research as the gold standard for comparing algorithmic efficiency.
 
 3. **ICL Error Decomposition (Equation 4)**:
-   - *Function*: Decomposes the prediction error of ICL into analytically tractable components.
-   - *Mechanism*: $\mathbb{E}[D_{KL}(\bar{P}_e^t \| P_\theta^t)] = \epsilon_{\text{Bayes}}^t + \epsilon_{\text{XS}}^t$. The Bayes risk $\epsilon_{\text{Bayes}}^t$ decreases monotonically with the number of demonstrations (more information → narrower posterior); the excess risk $\epsilon_{\text{XS}}^t$ measures the degree to which the Transformer deviates from the Bayes-optimal estimator.
-   - *Design Motivation*: The decomposition enables precise attribution of efficiency loss: the decline in Bayes risk is determined by the external environment, whereas the excess risk is an intrinsic property of the ICL mechanism.
+    - *Function*: Decomposes the prediction error of ICL into analytically tractable components.
+    - *Mechanism*: $\mathbb{E}[D_{KL}(\bar{P}_e^t \| P_\theta^t)] = \epsilon_{\text{Bayes}}^t + \epsilon_{\text{XS}}^t$. The Bayes risk $\epsilon_{\text{Bayes}}^t$ decreases monotonically with the number of demonstrations (more information → narrower posterior); the excess risk $\epsilon_{\text{XS}}^t$ measures the degree to which the Transformer deviates from the Bayes-optimal estimator.
+    - *Design Motivation*: The decomposition enables precise attribution of efficiency loss: the decline in Bayes risk is determined by the external environment, whereas the excess risk is an intrinsic property of the ICL mechanism.
 
 ### Loss & Training
 The Transformer uses a GPT-2 architecture and is trained with the objective $\mathcal{L}(\theta) = \mathbb{E}[\frac{1}{T_{\text{train}}} \sum_{t=0}^{T_{\text{train}}-1} (\text{TF}_\theta(H_t) - Y_{t+1})^2]$, with $T_{\text{train}} = 50 \approx 2(2M+1)$. A separate Transformer is trained for each scenario. At test time, the prompt length is extended to $T = 2T_{\text{train}} = 100$.

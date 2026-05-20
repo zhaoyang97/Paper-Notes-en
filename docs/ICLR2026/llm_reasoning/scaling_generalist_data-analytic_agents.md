@@ -18,8 +18,8 @@ content_hash: c5a156f07cc058c0
 # Scaling Generalist Data-Analytic Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25084](https://arxiv.org/abs/2509.25084)
-**Code**: [GitHub](https://github.com/zjunlp/DataMind)
+**arXiv**: [2509.25084](https://arxiv.org/abs/2509.25084)  
+**Code**: [GitHub](https://github.com/zjunlp/DataMind)  
 **Area**: LLM Reasoning
 **Keywords**: Data-Analytic Agent, Agent Training, Multi-turn Code Execution, Data Synthesis, SFT+RL
 

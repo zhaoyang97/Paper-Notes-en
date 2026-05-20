@@ -18,8 +18,8 @@ content_hash: b850e0801536c4f9
 # Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.00423](https://arxiv.org/abs/2507.00423)
-**Code**: None
+**arXiv**: [2507.00423](https://arxiv.org/abs/2507.00423)  
+**Code**: None  
 **Area**: AI Safety / Federated Learning Privacy
 **Keywords**: Federated Learning, Membership Inference Attack, Poisoning Attack, Byzantine-Robust Aggregation, Privacy Preservation
 
@@ -60,10 +60,10 @@ subject to: $\max_{i \in \mathcal{B}} \angle(g_{malicious}, g_{benign}^i) \leq \
 3. **Scaling Coefficient Optimization (Step III)**: With $\hat{D}_{mask}$ fixed, $\alpha$ is optimized to maximize angular deviation while satisfying the angular constraint.
 
 4. **ATM Defense Mechanism**:
-   - Compute pairwise angles $\theta_{i,j}$ among all gradients
-   - Compute the average angle for each gradient: $\bar{\theta}_k = \frac{1}{|G|-1} \sum \theta_{k,l}$
-   - Sort gradients by average angle in ascending order and remove the $2b$ with the largest values
-   - Aggregate the remaining gradients by averaging
+    - Compute pairwise angles $\theta_{i,j}$ among all gradients
+    - Compute the average angle for each gradient: $\bar{\theta}_k = \frac{1}{|G|-1} \sum \theta_{k,l}$
+    - Sort gradients by average angle in ascending order and remove the $2b$ with the largest values
+    - Aggregate the remaining gradients by averaging
 
 ### Loss & Training
 

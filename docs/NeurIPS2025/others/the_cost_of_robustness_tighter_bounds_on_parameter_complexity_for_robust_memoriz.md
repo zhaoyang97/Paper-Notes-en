@@ -17,8 +17,8 @@ content_hash: e7e902e004637bc0
 # The Cost of Robustness: Tighter Bounds on Parameter Complexity for Robust Memorization in ReLU Nets
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24643](https://arxiv.org/abs/2510.24643)
-**Code**: None
+**arXiv**: [2510.24643](https://arxiv.org/abs/2510.24643)  
+**Code**: None  
 **Area**: Learning Theory / Robustness
 **Keywords**: robust memorization, ReLU networks, parameter complexity, upper and lower bounds, adversarial robustness
 

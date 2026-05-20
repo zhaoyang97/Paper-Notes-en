@@ -18,8 +18,8 @@ content_hash: 10b030e272a5aa92
 # MoFu: Scale-Aware Modulation and Fourier Fusion for Multi-Subject Video Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.22310](https://arxiv.org/abs/2512.22310)
-**Code**: Unavailable
+**arXiv**: [2512.22310](https://arxiv.org/abs/2512.22310)  
+**Code**: Unavailable  
 **Area**: Video Understanding / Video Generation
 **Keywords**: Multi-subject video generation, scale consistency, permutation invariance, Fourier fusion, DiT
 

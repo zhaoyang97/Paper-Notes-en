@@ -18,8 +18,8 @@ content_hash: 4cc6bf0a0bdc7758
 # HeROD: Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24166](https://arxiv.org/abs/2603.24166)
-**Code**: [https://github.com/xuzhang1199/HeROD](https://github.com/xuzhang1199/HeROD)
+**arXiv**: [2603.24166](https://arxiv.org/abs/2603.24166)  
+**Code**: [https://github.com/xuzhang1199/HeROD](https://github.com/xuzhang1199/HeROD)  
 **Area**: Object Detection
 **Keywords**: Referring Object Detection, Data-Efficient Learning, Reasoning Priors, DETR, Few-Shot Detection
 

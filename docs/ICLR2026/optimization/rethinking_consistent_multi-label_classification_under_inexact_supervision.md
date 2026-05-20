@@ -18,7 +18,7 @@ content_hash: b2fc5652e064d799
 # Rethinking Consistent Multi-Label Classification Under Inexact Supervision
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04091](https://arxiv.org/abs/2510.04091)
+**arXiv**: [2510.04091](https://arxiv.org/abs/2510.04091)  
 **Area**: Optimization
 **Keywords**: multi-label classification, weakly supervised learning, partial multi-label learning, complementary multi-label learning, risk consistency
 

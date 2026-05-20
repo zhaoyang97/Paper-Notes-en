@@ -18,8 +18,8 @@ content_hash: ece249ce9ec8a23c
 # MUG: Pseudo Labeling Augmented Audio-Visual Mamba Network for Audio-Visual Video Parsing
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.01384](https://arxiv.org/abs/2507.01384)
-**Code**: [https://github.com/WangLY136/MUG](https://github.com/WangLY136/MUG)
+**arXiv**: [2507.01384](https://arxiv.org/abs/2507.01384)  
+**Code**: [https://github.com/WangLY136/MUG](https://github.com/WangLY136/MUG)  
 **Area**: Audio-Visual Understanding
 **Keywords**: Audio-visual video parsing, Mamba, pseudo labels, data augmentation, weakly supervised learning
 

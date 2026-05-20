@@ -17,8 +17,8 @@ content_hash: d91231013c8de755
 # Boomerang Distillation Enables Zero-Shot Model Size Interpolation
 
 **Conference**: ICLR2026
-**arXiv**: [2510.05064](https://arxiv.org/abs/2510.05064)
-**Code**: [https://github.com/dcml-lab/boomerang-distillation](https://github.com/dcml-lab/boomerang-distillation)
+**arXiv**: [2510.05064](https://arxiv.org/abs/2510.05064)  
+**Code**: [https://github.com/dcml-lab/boomerang-distillation](https://github.com/dcml-lab/boomerang-distillation)  
 **Area**: Model Compression
 **Keywords**: Knowledge Distillation, Model Compression, Zero-Shot Interpolation, Layer Pruning, Model Family
 

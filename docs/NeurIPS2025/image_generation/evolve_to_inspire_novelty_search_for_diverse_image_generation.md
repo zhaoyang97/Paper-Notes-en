@@ -18,8 +18,8 @@ content_hash: 06ea04d3ba84e5f2
 # Evolve to Inspire: Novelty Search for Diverse Image Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00686](https://arxiv.org/abs/2511.00686)
-**Code**: Not released
+**arXiv**: [2511.00686](https://arxiv.org/abs/2511.00686)  
+**Code**: Not released  
 **Area**: Image Generation
 **Keywords**: Novelty Search, Image Diversity, Evolutionary Strategy, Prompt Optimization, CLIP
 

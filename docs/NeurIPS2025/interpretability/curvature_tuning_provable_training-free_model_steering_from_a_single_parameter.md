@@ -18,8 +18,8 @@ content_hash: 3c95dfffe97db509
 # Curvature Tuning: Provable Training-free Model Steering From a Single Parameter
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.07783](https://arxiv.org/abs/2502.07783)
-**Code**: [GitHub](https://github.com/Leon-Leyang/curvature-tuning)
+**arXiv**: [2502.07783](https://arxiv.org/abs/2502.07783)  
+**Code**: [GitHub](https://github.com/Leon-Leyang/curvature-tuning)  
 **Area**: Interpretability
 **Keywords**: curvature tuning, activation functions, spline theory, parameter-efficient fine-tuning, decision boundary
 

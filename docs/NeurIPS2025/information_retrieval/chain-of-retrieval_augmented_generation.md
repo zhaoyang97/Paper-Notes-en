@@ -19,8 +19,8 @@ content_hash: 3bdf9fa1327e9bc9
 # Chain-of-Retrieval Augmented Generation (CoRAG)
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.14342](https://arxiv.org/abs/2501.14342)
-**Code**: [microsoft/LMOps/corag](https://github.com/microsoft/LMOps/tree/main/corag)
+**arXiv**: [2501.14342](https://arxiv.org/abs/2501.14342)  
+**Code**: [microsoft/LMOps/corag](https://github.com/microsoft/LMOps/tree/main/corag)  
 **Area**: Information Retrieval
 **Keywords**: RAG, Chain-of-Retrieval, multi-hop reasoning, rejection sampling, retrieval chain, test-time compute scaling
 

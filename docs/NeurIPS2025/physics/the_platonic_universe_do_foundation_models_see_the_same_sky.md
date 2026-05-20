@@ -18,8 +18,8 @@ content_hash: 3fd2fd4e64860029
 # The Platonic Universe: Do Foundation Models See the Same Sky?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19453](https://arxiv.org/abs/2509.19453)
-**Code**: None (uses public models and the Multimodal Universe dataset)
+**arXiv**: [2509.19453](https://arxiv.org/abs/2509.19453)  
+**Code**: None (uses public models and the Multimodal Universe dataset)  
 **Area**: Physics
 **Keywords**: Platonic Representation Hypothesis, foundation models, astronomy, representation alignment, cross-modal convergence
 

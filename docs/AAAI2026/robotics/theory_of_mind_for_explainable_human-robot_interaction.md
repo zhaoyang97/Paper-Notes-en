@@ -18,8 +18,8 @@ content_hash: 2547c63e30f9af4d
 # Theory of Mind for Explainable Human-Robot Interaction
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.23482](https://arxiv.org/abs/2512.23482)
-**Code**: None
+**arXiv**: [2512.23482](https://arxiv.org/abs/2512.23482)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: Theory of Mind, Explainable AI, Human-Robot Interaction, VXAI Framework, User-Centered Evaluation
 

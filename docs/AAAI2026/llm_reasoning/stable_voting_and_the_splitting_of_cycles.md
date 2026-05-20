@@ -18,8 +18,8 @@ content_hash: fbfbb6bced132121
 # Stable Voting and the Splitting of Cycles
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.00616](https://arxiv.org/abs/2512.00616)
-**Code**: [https://github.com/chasenorman/ssv-sc](https://github.com/chasenorman/ssv-sc)
+**arXiv**: [2512.00616](https://arxiv.org/abs/2512.00616)  
+**Code**: [https://github.com/chasenorman/ssv-sc](https://github.com/chasenorman/ssv-sc)  
 **Area**: LLM Reasoning / Social Choice Theory
 **Keywords**: Voting Theory, Condorcet Cycles, Split Cycle, SAT Solving, Computational Social Choice
 

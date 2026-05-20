@@ -18,8 +18,8 @@ content_hash: db1d04518d5c6b28
 # Digging Deeper: Learning Multi-Level Concept Hierarchies
 
 **Conference**: ICLR 2026 Workshop on Principled Design for Trustworthy AI
-**arXiv**: [2603.10084](https://arxiv.org/abs/2603.10084)
-**Code**: None
+**arXiv**: [2603.10084](https://arxiv.org/abs/2603.10084)  
+**Code**: None  
 **Area**: Explainable AI / Concept-based Models
 **Keywords**: multi-level concept hierarchy, concept embedding models, concept splitting, sub-concept discovery, test-time intervention
 

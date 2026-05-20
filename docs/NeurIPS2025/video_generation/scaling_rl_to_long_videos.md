@@ -18,8 +18,8 @@ content_hash: 5a56363445987bfa
 # Scaling RL to Long Videos
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.07966](https://arxiv.org/abs/2507.07966)
-**Code**: [GitHub](https://github.com/NVlabs/Long-RL)
+**arXiv**: [2507.07966](https://arxiv.org/abs/2507.07966)  
+**Code**: [GitHub](https://github.com/NVlabs/Long-RL)  
 **Area**: Video Generation
 **Keywords**: Long video reasoning, reinforcement learning, vision-language models, sequence parallelism, chain-of-thought
 

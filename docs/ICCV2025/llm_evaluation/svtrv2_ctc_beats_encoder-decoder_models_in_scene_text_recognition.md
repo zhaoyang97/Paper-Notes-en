@@ -18,8 +18,8 @@ content_hash: 9ecff171cf40d75e
 # SVTRv2: CTC Beats Encoder-Decoder Models in Scene Text Recognition
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.15858](https://arxiv.org/abs/2411.15858)
-**Code**: [https://github.com/Topdu/OpenOCR](https://github.com/Topdu/OpenOCR)
+**arXiv**: [2411.15858](https://arxiv.org/abs/2411.15858)  
+**Code**: [https://github.com/Topdu/OpenOCR](https://github.com/Topdu/OpenOCR)  
 **Area**: LLM Evaluation
 **Keywords**: Scene Text Recognition, CTC, Irregular Text, Semantic Guidance, Multi-Size Resize
 

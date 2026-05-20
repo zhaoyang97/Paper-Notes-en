@@ -18,8 +18,8 @@ content_hash: f6e1c3d5fd22c290
 # What's in a Latent? Leveraging Diffusion Latent Space for Domain Generalization
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06698](https://arxiv.org/abs/2503.06698)
-**Code**: [xthomasbu/GUIDE](https://xthomasbu.github.io/GUIDE)
+**arXiv**: [2503.06698](https://arxiv.org/abs/2503.06698)  
+**Code**: [xthomasbu/GUIDE](https://xthomasbu.github.io/GUIDE)  
 **Area**: Domain Generalization / Diffusion Model Representations
 **Keywords**: Domain Generalization, Diffusion Features, Pseudo-Domain Discovery, Latent Space Analysis, Label-Free Domain
 

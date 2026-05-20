@@ -19,8 +19,8 @@ content_hash: 822a50f2ea124317
 # SSCP: Flow-Based Single-Step Completion for Efficient and Expressive Policy Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.21427](https://arxiv.org/abs/2506.21427)
-**Code**: [GitHub](https://github.com/PrajwalKoirala/SSCP-Single-Step-Completion-Policy)
+**arXiv**: [2506.21427](https://arxiv.org/abs/2506.21427)  
+**Code**: [GitHub](https://github.com/PrajwalKoirala/SSCP-Single-Step-Completion-Policy)  
 **Area**: Image Generation
 **Keywords**: offline RL, flow matching, single-step generation, completion vector, policy learning, D4RL
 

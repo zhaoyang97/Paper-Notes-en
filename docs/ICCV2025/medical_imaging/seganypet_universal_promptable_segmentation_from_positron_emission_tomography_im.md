@@ -18,8 +18,8 @@ content_hash: a64e2ec001411990
 # SegAnyPET: Universal Promptable Segmentation from Positron Emission Tomography Images
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.14351](https://arxiv.org/abs/2502.14351)
-**Code**: [https://github.com/](https://github.com/) (project page to be released)
+**arXiv**: [2502.14351](https://arxiv.org/abs/2502.14351)  
+**Code**: [https://github.com/](https://github.com/) (project page to be released)  
 **Area**: Medical Imaging
 **Keywords**: PET segmentation, foundation model, 3D segmentation, noisy label learning, SAM adaptation
 

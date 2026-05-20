@@ -18,8 +18,8 @@ content_hash: 7053696707f0555f
 # Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01126](https://arxiv.org/abs/2511.01126)
-**Code**: None
+**arXiv**: [2511.01126](https://arxiv.org/abs/2511.01126)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: Bilevel Optimization, Online Learning, Zeroth-Order Optimization, Stochastic Regret, Hypergradient Estimation
 

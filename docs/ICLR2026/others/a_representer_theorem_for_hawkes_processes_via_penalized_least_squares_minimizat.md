@@ -17,8 +17,8 @@ content_hash: f827f52d8e555ec6
 # A Representer Theorem for Hawkes Processes via Penalized Least Squares Minimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.08916](https://arxiv.org/abs/2510.08916)
-**Code**: None
+**arXiv**: [2510.08916](https://arxiv.org/abs/2510.08916)  
+**Code**: None  
 **Area**: Point Processes / Kernel Methods
 **Keywords**: Hawkes process, representer theorem, RKHS, Fredholm integral equation, nonparametric estimation
 

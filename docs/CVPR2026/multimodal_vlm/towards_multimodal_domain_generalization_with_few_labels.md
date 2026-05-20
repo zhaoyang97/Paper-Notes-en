@@ -18,8 +18,8 @@ content_hash: fde90cb1f73c1b45
 # Towards Multimodal Domain Generalization with Few Labels
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22917](https://arxiv.org/abs/2602.22917)
-**Code**: [https://github.com/lihongzhao99/SSMDG](https://github.com/lihongzhao99/SSMDG)
+**arXiv**: [2602.22917](https://arxiv.org/abs/2602.22917)  
+**Code**: [https://github.com/lihongzhao99/SSMDG](https://github.com/lihongzhao99/SSMDG)  
 **Area**: Multimodal VLM
 **Keywords**: Semi-supervised Learning, Domain Generalization, Multimodal Fusion, Pseudo Labels, Cross-modal Prototype Alignment
 

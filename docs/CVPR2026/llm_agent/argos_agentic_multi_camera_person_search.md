@@ -18,8 +18,8 @@ content_hash: 2d15060532b38eb6
 # ARGOS: Who, Where, and When in Agentic Multi-Camera Person Search
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.12762](https://arxiv.org/abs/2604.12762)
-**Code**: None
+**arXiv**: [2604.12762](https://arxiv.org/abs/2604.12762)  
+**Code**: None  
 **Area**: LLM Agent
 **Keywords**: multi-camera search, agentic reasoning, spatiotemporal topology graph, interactive dialogue, person search
 

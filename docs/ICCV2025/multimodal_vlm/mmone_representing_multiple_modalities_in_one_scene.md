@@ -18,8 +18,8 @@ content_hash: 281f39640b602d9e
 # MMOne: Representing Multiple Modalities in One Scene
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.11129](https://arxiv.org/abs/2507.11129)
-**Code**: [MMOne](https://github.com/Neal2020GitHub/MMOne)
+**arXiv**: [2507.11129](https://arxiv.org/abs/2507.11129)  
+**Code**: [MMOne](https://github.com/Neal2020GitHub/MMOne)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal scene representation, 3D Gaussian splatting, modality conflict, modality decomposition, thermal imaging
 

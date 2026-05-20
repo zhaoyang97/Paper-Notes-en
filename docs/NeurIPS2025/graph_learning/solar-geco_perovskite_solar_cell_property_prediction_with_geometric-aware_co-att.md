@@ -18,8 +18,8 @@ content_hash: d2f90631eedbc4e8
 # Solar-GECO: Perovskite Solar Cell Property Prediction with Geometric-Aware Co-Attention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.19263](https://arxiv.org/abs/2511.19263)
-**Code**: Unavailable
+**arXiv**: [2511.19263](https://arxiv.org/abs/2511.19263)  
+**Code**: Unavailable  
 **Area**: Graph Learning
 **Keywords**: Perovskite solar cells, geometric graph neural networks, multimodal fusion, co-attention mechanism, uncertainty quantification
 

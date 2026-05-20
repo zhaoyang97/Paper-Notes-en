@@ -18,8 +18,8 @@ content_hash: a19444eac2ea4ae6
 # Breaking the Compression Ceiling: Data-Free Pipeline for Ultra-Efficient Delta Compression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13563](https://arxiv.org/abs/2505.13563)
-**Code**: [xiaohuiwang000/UltraDelta](https://github.com/xiaohuiwang000/UltraDelta)
+**arXiv**: [2505.13563](https://arxiv.org/abs/2505.13563)  
+**Code**: [xiaohuiwang000/UltraDelta](https://github.com/xiaohuiwang000/UltraDelta)  
 **Area**: Multimodal VLM
 **Keywords**: delta compression, model pruning, quantization, data-free compression, multi-task deployment
 

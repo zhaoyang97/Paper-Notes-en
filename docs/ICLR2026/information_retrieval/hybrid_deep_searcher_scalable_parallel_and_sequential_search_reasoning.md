@@ -18,8 +18,8 @@ content_hash: f6963aa10fc0c5f3
 # Hybrid Deep Searcher: Scalable Parallel and Sequential Search Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.19113](https://arxiv.org/abs/2508.19113)
-**Code**: None
+**arXiv**: [2508.19113](https://arxiv.org/abs/2508.19113)  
+**Code**: None  
 **Area**: Information Retrieval
 **Keywords**: deep search, parallel search, retrieval-augmented generation, large language reasoning models, test-time search scaling
 
@@ -66,10 +66,10 @@ The method consists of two core components: (1) construction of the HDS-QA datas
 
 2. **HybridDeepSearcher inference procedure**:
 
-   - **Reasoning**: The model reasons within `<think>` and `</think>` tags.
-   - **Querying**: Based on the reasoning output, sequential or parallel queries are generated within `<|begin_search_queries|>` and `<|end_search_queries|>` tags, with multiple parallel queries separated by `;\n`.
-   - **Retrieval**: Each query is executed via a web search API; retrieved documents are summarized by an external model (Qwen3-32B) before being returned.
-   - The model iterates through multiple reason–query–retrieve rounds until sufficient information is gathered to produce a final answer.
+    - **Reasoning**: The model reasons within `<think>` and `</think>` tags.
+    - **Querying**: Based on the reasoning output, sequential or parallel queries are generated within `<|begin_search_queries|>` and `<|end_search_queries|>` tags, with multiple parallel queries separated by `;\n`.
+    - **Retrieval**: Each query is executed via a web search API; retrieved documents are summarized by an external model (Qwen3-32B) before being returned.
+    - The model iterates through multiple reason–query–retrieve rounds until sufficient information is gathered to produce a final answer.
 
 3. **Adaptive search strategy**: The model learns to dynamically determine when to issue parallel queries (for independent subquestions) versus sequential queries (for subquestions dependent on prior results), and explicitly represents the current step (in blue) and subsequent plans (in purple) during reasoning.
 
@@ -108,17 +108,17 @@ Evidence coverage improvement is largest on FanOutQA (+7.8 pp), the dataset with
 ### Key Findings
 
 1. **Test-time search scaling** (core advantage):
-   - HybridDeepSearcher performance **continues to improve** as the number of search rounds and API calls increases.
-   - Baselines such as RAG-R1 **plateau** after 2–3 rounds.
-   - This is especially pronounced on BrowseComp-50, where other methods gain almost nothing from additional search budget.
+    - HybridDeepSearcher performance **continues to improve** as the number of search rounds and API calls increases.
+    - Baselines such as RAG-R1 **plateau** after 2–3 rounds.
+    - This is especially pronounced on BrowseComp-50, where other methods gain almost nothing from additional search budget.
 
 2. **Efficiency advantage**: Higher accuracy is achieved with fewer search rounds.
-   - On FanOutQA, approximately 3 rounds suffice to surpass the performance of other methods using 5 or more rounds.
+    - On FanOutQA, approximately 3 rounds suffice to surpass the performance of other methods using 5 or more rounds.
 
 3. **Failure of non-iterative methods**: Direct generation and standard RAG perform extremely poorly (F1 of 0.0/1.8 on BrowseComp-50), confirming that these benchmarks genuinely require external knowledge and multi-step reasoning.
 
 4. **Case study insights**:
-   - On the John Carpenter question in FRAMES, HybridDeepSearcher issues parallel queries for the runtimes of 12 films and identifies the correct answer (Starman, 115 minutes), whereas DeepResearcher prematurely assumes The Thing and Search-o1 enters a repetitive query loop.
+    - On the John Carpenter question in FRAMES, HybridDeepSearcher issues parallel queries for the runtimes of 12 films and identifies the correct answer (Starman, 115 minutes), whereas DeepResearcher prematurely assumes The Thing and Search-o1 enters a repetitive query loop.
 
 ## Highlights & Insights
 

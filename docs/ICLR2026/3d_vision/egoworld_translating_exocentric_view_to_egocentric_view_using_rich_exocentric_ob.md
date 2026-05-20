@@ -18,8 +18,8 @@ content_hash: 9dbbc28406cd961d
 # EgoWorld: Translating Exocentric View to Egocentric View using Rich Exocentric Observations
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.17896](https://arxiv.org/abs/2506.17896)
-**Code**: [Available](https://redorangeyellowy.github.io/EgoWorld/)
+**arXiv**: [2506.17896](https://arxiv.org/abs/2506.17896)  
+**Code**: [Available](https://redorangeyellowy.github.io/EgoWorld/)  
 **Area**: 3D Vision
 **Keywords**: View translation, third-person to first-person, diffusion models, hand-object interaction, point cloud projection
 

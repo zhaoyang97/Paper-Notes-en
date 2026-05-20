@@ -18,8 +18,8 @@ content_hash: ce128a555c9bd4c0
 # Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.14185](https://arxiv.org/abs/2505.14185)
-**Code**: [GitHub](https://github.com/CERT-Lab/safety-subspaces)
+**arXiv**: [2505.14185](https://arxiv.org/abs/2505.14185)  
+**Code**: [GitHub](https://github.com/CERT-Lab/safety-subspaces)  
 **Area**: LLM Safety / Alignment
 **Keywords**: Safety Alignment, Subspace, Fine-Tuning Attack, Linear Separability, Weight Space
 
@@ -51,27 +51,27 @@ The experimental design proceeds across four levels: (1) Do useful and harmful u
 
 1. **Parallel Projection Experiment (Experiment 1: Do Subspaces Encode Safety?)**
 
-   - **Function**: Tests behavioral outcomes when useful/harmful fine-tuning updates are projected onto the top directions of candidate safety subspaces.
-   - **Mechanism**: Models are fine-tuned separately on MetaMathQA (useful data) and a harmful subset of BeaverTails, yielding $\Delta_T^{\text{Useful}}$ and $\Delta_T^{\text{Harmful}}$. SVD is applied to $\Delta_{A/S}$; the top-$k$ directions form a projection matrix $P_k$, and task updates are projected as $\tilde{\Delta}_T^j = P_k \Delta_T^j$. The projected model is then evaluated on utility (GSM8k accuracy) and harmfulness (AdvBench harmful score).
-   - **Key Findings**: **Energy is uniformly distributed within the subspace** (the energy retention ratios for useful and harmful updates are nearly identical), yet **behavioral impact is asymmetric** — top-$k$ directions simultaneously amplify both utility and harmfulness, outperforming random projection. This indicates these directions are "high-impact learning directions" rather than "safety directions."
+    - **Function**: Tests behavioral outcomes when useful/harmful fine-tuning updates are projected onto the top directions of candidate safety subspaces.
+    - **Mechanism**: Models are fine-tuned separately on MetaMathQA (useful data) and a harmful subset of BeaverTails, yielding $\Delta_T^{\text{Useful}}$ and $\Delta_T^{\text{Harmful}}$. SVD is applied to $\Delta_{A/S}$; the top-$k$ directions form a projection matrix $P_k$, and task updates are projected as $\tilde{\Delta}_T^j = P_k \Delta_T^j$. The projected model is then evaluated on utility (GSM8k accuracy) and harmfulness (AdvBench harmful score).
+    - **Key Findings**: **Energy is uniformly distributed within the subspace** (the energy retention ratios for useful and harmful updates are nearly identical), yet **behavioral impact is asymmetric** — top-$k$ directions simultaneously amplify both utility and harmfulness, outperforming random projection. This indicates these directions are "high-impact learning directions" rather than "safety directions."
 
 2. **Orthogonal Projection Experiment (Experiment 2: Can the Harmful Subspace Be Removed?)**
 
-   - **Function**: In a mixed fine-tuning setting (80% useful + 20% harmful), tests whether removing candidate safety subspace directions can selectively suppress harmfulness.
-   - **Mechanism**: The orthogonal projection $\tilde{\Delta}_T = P_k^{\perp} \Delta_T$ removes update components aligned with candidate safety directions; utility and harmfulness are then evaluated.
-   - **Key Findings**: Utility and harmfulness decline in tandem. After removing top-$k$ directions, utility degrades faster than with random projection, while harmfulness declines at a comparable rate. That is, **no selective suppression effect exists — safety gains are always accompanied by proportional task performance loss.**
+    - **Function**: In a mixed fine-tuning setting (80% useful + 20% harmful), tests whether removing candidate safety subspace directions can selectively suppress harmfulness.
+    - **Mechanism**: The orthogonal projection $\tilde{\Delta}_T = P_k^{\perp} \Delta_T$ removes update components aligned with candidate safety directions; utility and harmfulness are then evaluated.
+    - **Key Findings**: Utility and harmfulness decline in tandem. After removing top-$k$ directions, utility degrades faster than with random projection, while harmfulness declines at a comparable rate. That is, **no selective suppression effect exists — safety gains are always accompanied by proportional task performance loss.**
 
 3. **Mode Subspace Overlap (MSO) Analysis (Experiment 3: Geometric Relationships Among Updates)**
 
-   - **Function**: Directly compares subspace overlap among useful, harmful, and safety updates.
-   - **Mechanism**: SVD is applied to each of the three update types; top-$k$ directions corresponding to energy retention ratio $\eta$ are selected, and pairwise MSO is computed as: $\mathrm{MSO}(\mathbf{V}, \mathbf{W}; \eta) = \frac{\|S\|_F^2}{\min(k_V, k_W)}$, with range $[0, 1]$ where 0 indicates orthogonality and 1 indicates identity.
-   - **Key Findings**: The harmful–safety update pair never achieves the highest MSO, and is sometimes the lowest. This refutes the hypothesis that safety subspaces share a special geometric relationship with harmful behavior.
+    - **Function**: Directly compares subspace overlap among useful, harmful, and safety updates.
+    - **Mechanism**: SVD is applied to each of the three update types; top-$k$ directions corresponding to energy retention ratio $\eta$ are selected, and pairwise MSO is computed as: $\mathrm{MSO}(\mathbf{V}, \mathbf{W}; \eta) = \frac{\|S\|_F^2}{\min(k_V, k_W)}$, with range $[0, 1]$ where 0 indicates orthogonality and 1 indicates identity.
+    - **Key Findings**: The harmful–safety update pair never achieves the highest MSO, and is sometimes the lowest. This refutes the hypothesis that safety subspaces share a special geometric relationship with harmful behavior.
 
 4. **Activation Space Analysis (Experiment 4: Are Representations Separable?)**
 
-   - **Function**: Examines whether harmful and benign prompts occupy distinct regions in the model's internal activation space.
-   - **Mechanism**: Intermediate-layer activations are analyzed for harmful vs. benign prompts.
-   - **Key Findings**: Activations for harmful and benign prompts occupy overlapping regions; no safety-specific linear direction exists in activation space either.
+    - **Function**: Examines whether harmful and benign prompts occupy distinct regions in the model's internal activation space.
+    - **Mechanism**: Intermediate-layer activations are analyzed for harmful vs. benign prompts.
+    - **Key Findings**: Activations for harmful and benign prompts occupy overlapping regions; no safety-specific linear direction exists in activation space either.
 
 ### Loss & Training
 

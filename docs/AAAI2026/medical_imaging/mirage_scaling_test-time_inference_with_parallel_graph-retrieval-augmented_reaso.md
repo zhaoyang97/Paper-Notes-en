@@ -18,8 +18,8 @@ content_hash: 7a0586e106a77aae
 # MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.18260](https://arxiv.org/abs/2508.18260)
-**Code**: [GitHub](https://github.com/Despacitobei/MIRAGE/)
+**arXiv**: [2508.18260](https://arxiv.org/abs/2508.18260)  
+**Code**: [GitHub](https://github.com/Despacitobei/MIRAGE/)  
 **Area**: Medical Imaging
 **Keywords**: Medical QA, Knowledge Graph, Multi-Chain Reasoning, Test-Time Inference Scaling, Retrieval-Augmented Generation
 

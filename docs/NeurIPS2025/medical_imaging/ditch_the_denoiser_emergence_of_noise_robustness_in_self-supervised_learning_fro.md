@@ -18,8 +18,8 @@ content_hash: 324d7c24945dbd8a
 # Ditch the Denoiser: Emergence of Noise Robustness in Self-Supervised Learning from Data Curriculum
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12191](https://arxiv.org/abs/2505.12191)
-**Code**: [https://github.com/wenquanlu/noisy_dinov2](https://github.com/wenquanlu/noisy_dinov2)
+**arXiv**: [2505.12191](https://arxiv.org/abs/2505.12191)  
+**Code**: [https://github.com/wenquanlu/noisy_dinov2](https://github.com/wenquanlu/noisy_dinov2)  
 **Area**: Medical Imaging
 **Keywords**: Self-Supervised Learning, Noise Robustness, Curriculum Learning, DINOv2, Denoiser-Free
 

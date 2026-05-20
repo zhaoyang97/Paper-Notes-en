@@ -18,8 +18,8 @@ content_hash: eaa68f979625f800
 # SkipCat: Rank-Maximized Low-Rank Compression of Large Language Models via Shared Projection and Block Skipping
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.13494](https://arxiv.org/abs/2512.13494)
-**Code**: None
+**arXiv**: [2512.13494](https://arxiv.org/abs/2512.13494)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Low-rank compression, SVD, rank maximization, block skipping, shared projection
 

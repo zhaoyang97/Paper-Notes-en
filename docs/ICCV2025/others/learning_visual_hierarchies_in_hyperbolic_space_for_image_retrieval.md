@@ -17,8 +17,8 @@ content_hash: bdc7067f62f0e41d
 # Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.17490](https://arxiv.org/abs/2411.17490)
-**Code**: None
+**arXiv**: [2411.17490](https://arxiv.org/abs/2411.17490)  
+**Code**: None  
 **Area**: Image Retrieval / Representation Learning
 **Keywords**: Hyperbolic Space, Visual Hierarchy, Entailment Learning, Image Retrieval, Contrastive Loss
 

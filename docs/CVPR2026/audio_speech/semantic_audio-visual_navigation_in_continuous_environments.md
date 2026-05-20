@@ -18,8 +18,8 @@ content_hash: d76456fde69fb9e2
 # Semantic Audio-Visual Navigation in Continuous Environments
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19660](https://arxiv.org/abs/2603.19660)
-**Code**: [https://github.com/yichenzeng24/SAVN-CE](https://github.com/yichenzeng24/SAVN-CE)
+**arXiv**: [2603.19660](https://arxiv.org/abs/2603.19660)  
+**Code**: [https://github.com/yichenzeng24/SAVN-CE](https://github.com/yichenzeng24/SAVN-CE)  
 **Area**: Embodied Navigation / Audio-Visual
 **Keywords**: audio-visual navigation, continuous environments, memory augmentation, goal reasoning, embodied intelligence
 

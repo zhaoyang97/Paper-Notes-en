@@ -17,8 +17,8 @@ content_hash: 3cf819cc5a9618a6
 # ShortageSim: Simulating Drug Shortages under Information Asymmetry
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.01813](https://arxiv.org/abs/2509.01813)
-**Code**: [https://github.com/Lemutisme/ShortageSim](https://github.com/Lemutisme/ShortageSim)
+**arXiv**: [2509.01813](https://arxiv.org/abs/2509.01813)  
+**Code**: [https://github.com/Lemutisme/ShortageSim](https://github.com/Lemutisme/ShortageSim)  
 **Area**: Other
 **Keywords**: drug shortage, multi-agent simulation, large language models, information asymmetry, regulatory policy
 

@@ -18,8 +18,8 @@ content_hash: f30b008457d5850d
 # Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models
 
 **Conference**: CVPR2026
-**arXiv**: [2603.01400](https://arxiv.org/abs/2603.01400)
-**Code**: [AOT Project](https://github.com/) (to be confirmed)
+**arXiv**: [2603.01400](https://arxiv.org/abs/2603.01400)  
+**Code**: [AOT Project](https://github.com/) (to be confirmed)  
 **Area**: Video Understanding
 **Keywords**: Video LLM, Token Reduction, optimal transport, training-free, Spatiotemporal Compression
 

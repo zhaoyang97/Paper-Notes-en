@@ -18,8 +18,8 @@ content_hash: 59168e72d76c9ffc
 # Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.14684](https://arxiv.org/abs/2505.14684)
-**Code**: [Project Page](https://zju-real.github.io/CoT-Bridge)
+**arXiv**: [2505.14684](https://arxiv.org/abs/2505.14684)  
+**Code**: [Project Page](https://zju-real.github.io/CoT-Bridge)  
 **Area**: LLM Reasoning
 **Keywords**: Chain-of-Thought, Thought Leap, Reasoning Completeness, Data Augmentation, Mathematical Reasoning
 

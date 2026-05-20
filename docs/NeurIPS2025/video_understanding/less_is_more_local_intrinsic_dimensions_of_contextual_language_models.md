@@ -19,8 +19,8 @@ content_hash: 02062b30b434fedd
 # Less is More: Local Intrinsic Dimensions of Contextual Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01034](https://arxiv.org/abs/2506.01034)
-**Code**: [GitHub](https://github.com/aidos-lab/Topo_LLM_public)
+**arXiv**: [2506.01034](https://arxiv.org/abs/2506.01034)  
+**Code**: [GitHub](https://github.com/aidos-lab/Topo_LLM_public)  
 **Area**: Video Understanding
 **Keywords**: intrinsic dimension, LLM, fine-tuning, grokking, overfitting detection, embedding geometry
 

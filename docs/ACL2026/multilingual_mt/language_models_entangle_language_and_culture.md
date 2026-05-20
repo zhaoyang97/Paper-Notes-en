@@ -18,8 +18,8 @@ content_hash: 75768a0f6d330629
 # Language Models Entangle Language and Culture
 
 **Conference**: ACL 2026
-**arXiv**: [2601.15337](https://arxiv.org/abs/2601.15337)
-**Code**: None
+**arXiv**: [2601.15337](https://arxiv.org/abs/2601.15337)  
+**Code**: None  
 **Area**: Multilingual / Cultural Bias
 **Keywords**: Multilingual LLM, Cultural Bias, Language-Culture Entanglement, LLM Evaluation, Fairness
 

@@ -18,8 +18,8 @@ content_hash: 39f13b0d7de86bcd
 # Modeling X-ray Photon Pile-up with a Normalizing Flow
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.11863](https://arxiv.org/abs/2511.11863)
-**Code**: None
+**arXiv**: [2511.11863](https://arxiv.org/abs/2511.11863)  
+**Code**: None  
 **Area**: Astronomy / Medical Imaging / Simulation-Based Inference
 **Keywords**: Normalizing Flow, Simulation-Based Inference (SBI), X-ray pile-up, eROSITA, posterior estimation
 

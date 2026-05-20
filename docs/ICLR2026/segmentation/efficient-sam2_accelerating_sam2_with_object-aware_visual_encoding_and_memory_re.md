@@ -18,8 +18,8 @@ content_hash: 5b55e09642c27078
 # Efficient-SAM2: Accelerating SAM2 with Object-Aware Visual Encoding and Memory Retrieval
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.08224](https://arxiv.org/abs/2602.08224)
-**Code**: [GitHub](https://github.com/jingjing0419/Efficient-SAM2)
+**arXiv**: [2602.08224](https://arxiv.org/abs/2602.08224)  
+**Code**: [GitHub](https://github.com/jingjing0419/Efficient-SAM2)  
 **Area**: Video Segmentation / Model Acceleration
 **Keywords**: SAM2, video object segmentation, post-training acceleration, sparse window routing, memory compression
 

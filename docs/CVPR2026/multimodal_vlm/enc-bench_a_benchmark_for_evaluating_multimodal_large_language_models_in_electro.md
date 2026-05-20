@@ -18,8 +18,8 @@ content_hash: 1e05176703329485
 # ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22763](https://arxiv.org/abs/2603.22763)
-**Code**: None
+**arXiv**: [2603.22763](https://arxiv.org/abs/2603.22763)  
+**Code**: None  
 **Area**: Multimodal / VLM Benchmark
 **Keywords**: chart understanding, multimodal benchmark, spatial reasoning, safety-critical AI, symbol grounding
 
@@ -50,14 +50,14 @@ ENC-Bench employs a four-stage data generation pipeline: starting from 840 offic
 ### Key Designs
 
 1. **Three-Level Hierarchical Evaluation Framework**:
-   - **Function**: Decomposes ENC understanding into 10 task categories across three levels — Perception (L-1, 4 task types), Spatial Reasoning (L-2, 3 task types), and Maritime Decision-Making (L-3, 3 task types).
-   - **Mechanism**: L-1 tests symbol recognition and attribute extraction for point/line/area features; L-2 requires numerical geometric computation including coordinate localization, bearing calculation (compass 0–360°), and distance measurement (nautical miles); L-3 requires heading direction judgment, safe passage assessment considering vessel draft, and emergency anchorage selection under multiple constraints.
-   - **Design Motivation**: To simulate the progressive cognitive hierarchy of mariners, from basic symbol recognition to complex multi-constraint safety decision-making.
+    - **Function**: Decomposes ENC understanding into 10 task categories across three levels — Perception (L-1, 4 task types), Spatial Reasoning (L-2, 3 task types), and Maritime Decision-Making (L-3, 3 task types).
+    - **Mechanism**: L-1 tests symbol recognition and attribute extraction for point/line/area features; L-2 requires numerical geometric computation including coordinate localization, bearing calculation (compass 0–360°), and distance measurement (nautical miles); L-3 requires heading direction judgment, safe passage assessment considering vessel draft, and emergency anchorage selection under multiple constraints.
+    - **Design Motivation**: To simulate the progressive cognitive hierarchy of mariners, from basic symbol recognition to complex multi-constraint safety decision-making.
 
 2. **Multi-Condition Rendering and Rigorous Quality Control**:
-   - **Function**: Each chart is rendered under 3 lighting modes (day/dusk/night) × 6 zoom levels (1:50K–1:300K), yielding 18 rendering variants per chart.
-   - **Mechanism**: Spatial reasoning answers are computed using verified nautical formulas including the Haversine distance formula and azimuth calculation. A two-stage validation process is applied — automated consistency checks (cross-validation of coordinates, depth values, and feature classifications) followed by expert review by maritime navigation specialists.
-   - **Design Motivation**: To cover all display conditions encountered in real-world navigation operations, ensuring robustness of evaluation rather than performance under incidental conditions.
+    - **Function**: Each chart is rendered under 3 lighting modes (day/dusk/night) × 6 zoom levels (1:50K–1:300K), yielding 18 rendering variants per chart.
+    - **Mechanism**: Spatial reasoning answers are computed using verified nautical formulas including the Haversine distance formula and azimuth calculation. A two-stage validation process is applied — automated consistency checks (cross-validation of coordinates, depth values, and feature classifications) followed by expert review by maritime navigation specialists.
+    - **Design Motivation**: To cover all display conditions encountered in real-world navigation operations, ensuring robustness of evaluation rather than performance under incidental conditions.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: ac86e6238c56de41
 # DAWN: Pixel Motion Diffusion is What We Need for Robot Control
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.22652](https://arxiv.org/abs/2509.22652)
-**Code**: [https://eronguyen.github.io/DAWN/](https://eronguyen.github.io/DAWN/)
+**arXiv**: [2509.22652](https://arxiv.org/abs/2509.22652)  
+**Code**: [https://eronguyen.github.io/DAWN/](https://eronguyen.github.io/DAWN/)  
 **Area**: Multimodal VLM / Robot Control
 **Keywords**: Pixel motion diffusion, vision-language-action, robot manipulation, two-stage diffusion, optical flow representation
 

@@ -18,8 +18,8 @@ content_hash: 759d117bfcc8053a
 # Certifying Concavity and Monotonicity in Games via Sum-of-Squares Hierarchies
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.10292](https://arxiv.org/abs/2512.10292)
-**Code**: None
+**arXiv**: [2512.10292](https://arxiv.org/abs/2512.10292)  
+**Code**: None  
 **Area**: Game Theory / Multi-Agent Systems
 **Keywords**: Concave games, monotone games, sum-of-squares programming, Nash equilibrium, imperfect-recall games
 

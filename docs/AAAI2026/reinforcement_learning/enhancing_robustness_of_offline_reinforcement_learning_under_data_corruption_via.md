@@ -18,8 +18,8 @@ content_hash: dd9ea7652ce09ffb
 # Enhancing Robustness of Offline RL Under Data Corruption via SAM
 
 **Conference**: AAAI 2026 (Student Abstract, Oral)
-**arXiv**: [2511.17568](https://arxiv.org/abs/2511.17568)
-**Code**: None
+**arXiv**: [2511.17568](https://arxiv.org/abs/2511.17568)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Offline RL, Data Corruption, SAM Optimizer, Flat Minima, Robustness
 

@@ -18,8 +18,8 @@ content_hash: 84fdc8592e3b8220
 # SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.06142](https://arxiv.org/abs/2508.06142)
-**Code**: [SDEval](https://github.com/hq-King/SDEval)
+**arXiv**: [2508.06142](https://arxiv.org/abs/2508.06142)  
+**Code**: [SDEval](https://github.com/hq-King/SDEval)  
 **Area**: Multimodal VLM
 **Keywords**: MLLM safety, dynamic evaluation, data leakage, jailbreak attacks, safety benchmark
 

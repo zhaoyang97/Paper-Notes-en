@@ -17,8 +17,8 @@ content_hash: 36cbd1f736971781
 # Johnson-Lindenstrauss Lemma Beyond Euclidean Geometry
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22401](https://arxiv.org/abs/2510.22401)
-**Code**: [Anonymous GitHub](https://anonymous.4open.science/r/Non-Euclidean-Johnson-Lindenstrauss-1673)
+**arXiv**: [2510.22401](https://arxiv.org/abs/2510.22401)  
+**Code**: [Anonymous GitHub](https://anonymous.4open.science/r/Non-Euclidean-Johnson-Lindenstrauss-1673)  
 **Area**: Others
 **Keywords**: Dimensionality Reduction, Johnson-Lindenstrauss Lemma, Non-Euclidean Geometry, Pseudo-Euclidean Space, Generalized Power Distance
 

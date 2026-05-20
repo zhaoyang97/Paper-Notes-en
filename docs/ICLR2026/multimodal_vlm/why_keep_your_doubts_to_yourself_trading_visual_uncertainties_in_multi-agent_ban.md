@@ -19,8 +19,8 @@ content_hash: 641dae832dbdfe8d
 # Why Keep Your Doubts to Yourself? Trading Visual Uncertainties in Multi-Agent Bandit Systems
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.18735](https://arxiv.org/abs/2601.18735)
-**Code**: None
+**arXiv**: [2601.18735](https://arxiv.org/abs/2601.18735)  
+**Code**: None  
 **Area**: Multimodal VLM / Multi-Agent Coordination
 **Keywords**: Multi-agent systems, VLM coordination, uncertainty trading, market mechanism, Thompson Sampling, cost optimization
 

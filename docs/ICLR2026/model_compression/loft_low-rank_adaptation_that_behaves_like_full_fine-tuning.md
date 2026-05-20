@@ -18,8 +18,8 @@ content_hash: 934f2bf2aed0864d
 # LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.21289](https://arxiv.org/abs/2505.21289)
-**Code**: None
+**arXiv**: [2505.21289](https://arxiv.org/abs/2505.21289)  
+**Code**: None  
 **Area**: Parameter-Efficient Fine-Tuning / Model Compression
 **Keywords**: LoRA, Low-Rank Adaptation, Full Fine-Tuning, Optimizer State Alignment, AdamW
 

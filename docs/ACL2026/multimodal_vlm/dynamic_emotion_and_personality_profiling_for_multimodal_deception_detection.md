@@ -18,8 +18,8 @@ content_hash: c9ce068dc5cecabf
 # Dynamic Emotion and Personality Profiling for Multimodal Deception Detection
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17037](https://arxiv.org/abs/2604.17037)
-**Code**: None
+**arXiv**: [2604.17037](https://arxiv.org/abs/2604.17037)  
+**Code**: None  
 **Area**: Multimodal Analysis / Affective Computing
 **Keywords**: Deception Detection, Dynamic Emotion Annotation, Personality Profiling, Reliability-Weighted Fusion, Multimodal
 

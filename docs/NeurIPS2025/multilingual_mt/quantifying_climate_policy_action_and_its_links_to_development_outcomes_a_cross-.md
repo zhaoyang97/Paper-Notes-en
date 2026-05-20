@@ -18,8 +18,8 @@ content_hash: 1a0f5f2be83722d1
 # Quantifying Climate Policy Action and Its Links to Development Outcomes: A Cross-National Data-Driven Analysis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17425](https://arxiv.org/abs/2510.17425)
-**Code**: [GitHub](https://github.com/booktrackerGirl/climate_change_policy_analysis)
+**arXiv**: [2510.17425](https://arxiv.org/abs/2510.17425)  
+**Code**: [GitHub](https://github.com/booktrackerGirl/climate_change_policy_analysis)  
 **Area**: Multilingual Translation
 **Keywords**: climate policy, text classification, DistilBERT, panel regression, cross-national analysis
 
@@ -51,21 +51,21 @@ The method proceeds in two steps. Step 1 is NLP classification: a fine-tuned Dis
 
 1. **Multilingual DistilBERT Classifier**:
 
-   - **Function**: Automatically identifies climate policy topics from official policy document summaries.
-   - **Mechanism**: Supervised multi-label classification is applied to policy summaries in the CCLW database. The model generates dense text embeddings and assigns topic labels automatically, without handcrafted features or external metadata. At a threshold of 0.5, micro F1 = 0.90 is achieved; Mitigation performs best (F1 = 0.96, 498 samples), while Loss & Damage performs worst due to severe class imbalance (F1 = 0.53, only 11 samples).
-   - **Design Motivation**: A cross-lingual, automatically scalable method is needed to process policy documents from 196 countries; manual analysis cannot scale.
+    - **Function**: Automatically identifies climate policy topics from official policy document summaries.
+    - **Mechanism**: Supervised multi-label classification is applied to policy summaries in the CCLW database. The model generates dense text embeddings and assigns topic labels automatically, without handcrafted features or external metadata. At a threshold of 0.5, micro F1 = 0.90 is achieved; Mitigation performs best (F1 = 0.96, 498 samples), while Loss & Damage performs worst due to severe class imbalance (F1 = 0.53, only 11 samples).
+    - **Design Motivation**: A cross-lingual, automatically scalable method is needed to process policy documents from 196 countries; manual analysis cannot scale.
 
 2. **Correspondence Analysis (CA)**:
 
-   - **Function**: Discovers latent structural relationships between countries and policy topics.
-   - **Mechanism**: A two-dimensional mapping is constructed for the top 50 countries (plus G7) and the four policy domains, with two dimensions explaining 92.1% of variance. The first dimension (71.7%) distinguishes developed countries (balanced policy portfolios) from developing countries and small island states (focused on specific domains); the second dimension (20.4%) distinguishes specialization directions—e.g., Tuvalu associated with Loss & Damage, Somalia with DRM.
-   - **Design Motivation**: Reveals how different countries' climate policy priorities reflect their resource capacities and climate risk profiles.
+    - **Function**: Discovers latent structural relationships between countries and policy topics.
+    - **Mechanism**: A two-dimensional mapping is constructed for the top 50 countries (plus G7) and the four policy domains, with two dimensions explaining 92.1% of variance. The first dimension (71.7%) distinguishes developed countries (balanced policy portfolios) from developing countries and small island states (focused on specific domains); the second dimension (20.4%) distinguishes specialization directions—e.g., Tuvalu associated with Loss & Damage, Somalia with DRM.
+    - **Design Motivation**: Reveals how different countries' climate policy priorities reflect their resource capacities and climate risk profiles.
 
 3. **Two-Way Fixed-Effects Panel Regression**:
 
-   - **Function**: Estimates statistical associations between each policy topic and development indicators.
-   - **Mechanism**: The four policy variables are modeled jointly (reflecting the real-world overlap among policies), with country and year two-way fixed effects controlling for time-invariant heterogeneity and global shocks. Dependent variables include GDP, GNI, FDI, external debt, electricity consumption, and others.
-   - **Design Motivation**: Advances beyond descriptive analysis to associational analysis, providing more rigorous quantitative evidence for policy evaluation.
+    - **Function**: Estimates statistical associations between each policy topic and development indicators.
+    - **Mechanism**: The four policy variables are modeled jointly (reflecting the real-world overlap among policies), with country and year two-way fixed effects controlling for time-invariant heterogeneity and global shocks. Dependent variables include GDP, GNI, FDI, external debt, electricity consumption, and others.
+    - **Design Motivation**: Advances beyond descriptive analysis to associational analysis, providing more rigorous quantitative evidence for policy evaluation.
 
 ## Key Experimental Results
 

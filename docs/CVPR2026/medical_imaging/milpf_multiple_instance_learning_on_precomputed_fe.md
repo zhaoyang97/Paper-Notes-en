@@ -18,8 +18,8 @@ content_hash: 35a725bdbc9af0ed
 # MIL-PF: Multiple Instance Learning on Precomputed Features for Mammography Classification
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09374](https://arxiv.org/abs/2603.09374)
-**Code**: Available (open-sourced)
+**arXiv**: [2603.09374](https://arxiv.org/abs/2603.09374)  
+**Code**: Available (open-sourced)  
 **Area**: Medical Imaging
 **Keywords**: multiple instance learning, mammography, precomputed features, frozen foundation models, weakly supervised classification
 

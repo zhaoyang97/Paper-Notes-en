@@ -17,8 +17,8 @@ content_hash: 965afcb7c08d9601
 # MINE-JEPA: In-Domain Self-Supervised Learning for Mineral Exploration
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00383](https://arxiv.org/abs/2604.00383)
-**Code**: None
+**arXiv**: [2604.00383](https://arxiv.org/abs/2604.00383)  
+**Code**: None  
 **Area**: Self-Supervised Learning / Underwater Sonar Imagery
 **Keywords**: Self-supervised learning, side-scan sonar, mine classification, in-domain pretraining, SIGReg
 
@@ -55,10 +55,10 @@ Mine-JEPA follows a three-stage pipeline:
     - Derived from the LeJEPA framework; requires no teacher–student architecture, momentum encoder, or large batch size.
     - Combines an invariance loss and a distributional regularization loss: $\mathcal{L} = (1-\lambda)\mathcal{L}_{inv} + \lambda\mathcal{L}_{sig}$
     - **Invariance loss**: encourages different augmented views of the same patch to converge to similar representations.
-      - $\mathcal{L}_{inv} = \frac{1}{NV}\sum_{i}\sum_{v}\|z_{i,v} - \bar{z}_i\|_2^2$
+        - $\mathcal{L}_{inv} = \frac{1}{NV}\sum_{i}\sum_{v}\|z_{i,v} - \bar{z}_i\|_2^2$
     - **SIGReg loss**: regularizes the embedding distribution toward a standard normal via Epps–Pulley goodness-of-fit statistics computed through random projections.
-      - Prevents representational collapse without requiring negative pairs or an EMA teacher.
-      - Complexity $O(N)$, well-suited for small-data, small-batch settings.
+        - Prevents representational collapse without requiring negative pairs or an EMA teacher.
+        - Complexity $O(N)$, well-suited for small-data, small-batch settings.
     - **Design Motivation**: In the extreme low-data regime of only 1,170 source images, the simplest and most stable SSL objective is required.
 
 2. **Ultra-Low Projection Dimensionality ($d=16$)**

@@ -19,8 +19,8 @@ content_hash: 584a6f751c8dfeb5
 # Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19474](https://arxiv.org/abs/2505.19474)
-**Code**: [https://github.com/IgniSavium/Causal-LLaVA](https://github.com/IgniSavium/Causal-LLaVA)
+**arXiv**: [2505.19474](https://arxiv.org/abs/2505.19474)  
+**Code**: [https://github.com/IgniSavium/Causal-LLaVA](https://github.com/IgniSavium/Causal-LLaVA)  
 **Area**: Multimodal VLM
 **Keywords**: hallucination, causal inference, disentanglement, MLLM, co-occurrence bias, backdoor adjustment
 

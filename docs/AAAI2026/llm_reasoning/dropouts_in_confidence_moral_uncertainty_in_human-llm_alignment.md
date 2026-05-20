@@ -18,8 +18,8 @@ content_hash: a39ba4223902fd61
 # Dropouts in Confidence: Moral Uncertainty in Human-LLM Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13290](https://arxiv.org/abs/2511.13290)
-**Code**: [GitHub](https://github.com/jeakwon/MoralUncertainty)
+**arXiv**: [2511.13290](https://arxiv.org/abs/2511.13290)  
+**Code**: [GitHub](https://github.com/jeakwon/MoralUncertainty)  
 **Area**: LLM Reasoning
 **Keywords**: Moral Reasoning, LLM Alignment, Uncertainty, Dropout, Moral Machine
 

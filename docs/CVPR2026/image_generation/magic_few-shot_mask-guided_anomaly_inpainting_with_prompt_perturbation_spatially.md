@@ -20,8 +20,8 @@ content_hash: a4eea24074bc0031
 # MAGIC: Few-Shot Mask-Guided Anomaly Inpainting with Prompt Perturbation, Spatially Adaptive Guidance, and Context Awareness
 
 **Conference**: CVPR2026 Findings
-**arXiv**: [2507.02314](https://arxiv.org/abs/2507.02314)
-**Code**: [GitHub](https://github.com/Jaeihk/MAGIC-Anomaly-generation)
+**arXiv**: [2507.02314](https://arxiv.org/abs/2507.02314)  
+**Code**: [GitHub](https://github.com/Jaeihk/MAGIC-Anomaly-generation)  
 **Area**: Image Generation / Anomaly Detection
 **Keywords**: Few-shot anomaly generation, diffusion models, inpainting, industrial inspection, prompt perturbation, spatially adaptive guidance, mask alignment
 **Authors**: JaeHyuck Choi, MinJun Kim, Je Hyeong Hong (Hanyang University)

@@ -18,8 +18,8 @@ content_hash: 91a46df1ed736904
 # DartQuant: Efficient Rotational Distribution Calibration for LLM Quantization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.04063](https://arxiv.org/abs/2511.04063)
-**Code**: [https://github.com/CAS-CLab/DartQuant](https://github.com/CAS-CLab/DartQuant)
+**arXiv**: [2511.04063](https://arxiv.org/abs/2511.04063)  
+**Code**: [https://github.com/CAS-CLab/DartQuant](https://github.com/CAS-CLab/DartQuant)  
 **Area**: Optimization
 **Keywords**: LLM quantization, rotation matrix, distribution calibration, orthogonal optimization, post-training quantization
 

@@ -18,8 +18,8 @@ content_hash: 93d98d84023137b5
 # Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.02227](https://arxiv.org/abs/2512.02227)
-**Code**: [GitHub](https://github.com/)
+**arXiv**: [2512.02227](https://arxiv.org/abs/2512.02227)  
+**Code**: [GitHub](https://github.com/)  
 **Area**: LLM Agent
 **Keywords**: financial agents, algorithmic trading, multi-agent orchestration, MCP protocol, quantitative trading
 

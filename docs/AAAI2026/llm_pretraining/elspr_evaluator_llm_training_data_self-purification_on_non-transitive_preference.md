@@ -18,8 +18,8 @@ content_hash: 3f1ac580ded10edc
 # ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.17691](https://arxiv.org/abs/2505.17691)
-**Code**: [https://github.com/yy0525/ELSPR](https://github.com/yy0525/ELSPR)
+**arXiv**: [2505.17691](https://arxiv.org/abs/2505.17691)  
+**Code**: [https://github.com/yy0525/ELSPR](https://github.com/yy0525/ELSPR)  
 **Area**: LLM Pre-training
 **Keywords**: LLM Evaluation, Non-Transitive Preferences, Tournament Graph, Data Cleaning, Structural Entropy
 

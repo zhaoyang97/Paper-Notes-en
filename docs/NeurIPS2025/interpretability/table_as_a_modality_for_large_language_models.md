@@ -18,8 +18,8 @@ content_hash: 663e8b797486e597
 # Table as a Modality for Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.00947](https://arxiv.org/abs/2512.00947)
-**Code**: [Available](https://github.com/liyaooi/TAMO)
+**arXiv**: [2512.00947](https://arxiv.org/abs/2512.00947)  
+**Code**: [Available](https://github.com/liyaooi/TAMO)  
 **Area**: Interpretability
 **Keywords**: Table Reasoning, Multimodal LLM, Hypergraph, Permutation Invariance, Table QA
 

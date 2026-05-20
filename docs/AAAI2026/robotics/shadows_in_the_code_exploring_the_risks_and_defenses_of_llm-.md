@@ -18,8 +18,8 @@ content_hash: 2b3bc7e667d5cfd3
 # Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18467](https://arxiv.org/abs/2511.18467)
-**Code**: [https://github.com/wxqkk0808/IMBIA](https://github.com/wxqkk0808/IMBIA)
+**arXiv**: [2511.18467](https://arxiv.org/abs/2511.18467)  
+**Code**: [https://github.com/wxqkk0808/IMBIA](https://github.com/wxqkk0808/IMBIA)  
 **Area**: Robotics
 **Keywords**: Multi-Agent Security, Malicious Code Injection, Software Development Agents, Adversarial Defense, Malware Families
 

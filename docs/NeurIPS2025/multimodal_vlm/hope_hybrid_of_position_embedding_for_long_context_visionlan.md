@@ -18,8 +18,8 @@ content_hash: 5473f6693aeb7a24
 # HoPE: Hybrid of Position Embedding for Long Context Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20444](https://arxiv.org/abs/2505.20444)
-**Code**: [GitHub](https://github.com/hrlics/HoPE)
+**arXiv**: [2505.20444](https://arxiv.org/abs/2505.20444)  
+**Code**: [GitHub](https://github.com/hrlics/HoPE)  
 **Area**: Multimodal VLM / Position Encoding
 **Keywords**: Rotary Position Embedding, Long Context, Frequency Allocation, Vision-Language Models, Video Understanding
 

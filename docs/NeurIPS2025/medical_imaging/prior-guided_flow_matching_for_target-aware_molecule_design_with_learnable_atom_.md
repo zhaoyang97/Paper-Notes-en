@@ -18,8 +18,8 @@ content_hash: 5fd69b32a88f2d5a
 # Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.01486](https://arxiv.org/abs/2509.01486)
-**Code**: [GitHub](https://github.com/CMACH508/PAFlow)
+**arXiv**: [2509.01486](https://arxiv.org/abs/2509.01486)  
+**Code**: [GitHub](https://github.com/CMACH508/PAFlow)  
 **Area**: Medical Imaging / Drug Discovery
 **Keywords**: Structure-based drug design, flow matching, protein–ligand interaction guidance, atom number prediction, 3D molecule generation
 

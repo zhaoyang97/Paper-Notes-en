@@ -17,8 +17,8 @@ content_hash: 03c1cce47571028c
 # Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.06961](https://arxiv.org/abs/2511.06961)
-**Code**: None
+**arXiv**: [2511.06961](https://arxiv.org/abs/2511.06961)  
+**Code**: None  
 **Area**: Self-Supervised Learning / Tabular Data
 **Keywords**: tabular data, self-supervised learning, hybrid autoencoder, oblivious soft decision tree, low-label learning
 

@@ -19,8 +19,8 @@ content_hash: 2a4721ada8bcb7c9
 # Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.18080](https://arxiv.org/abs/2502.18080)
-**Code**: [RUCBM/TOPS](https://github.com/RUCBM/TOPS)
+**arXiv**: [2502.18080](https://arxiv.org/abs/2502.18080)  
+**Code**: [RUCBM/TOPS](https://github.com/RUCBM/TOPS)  
 **Area**: LLM Reasoning
 **Keywords**: Test-time compute, Chain-of-Thought, reasoning scaling, overthinking, self-improvement, optimal reasoning effort
 

@@ -18,8 +18,8 @@ content_hash: 153de17363e06e56
 # Hierarchical Concept-based Interpretable Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.23947](https://arxiv.org/abs/2602.23947)
-**Code**: None
+**arXiv**: [2602.23947](https://arxiv.org/abs/2602.23947)  
+**Code**: None  
 **Area**: Explainable AI / Concept Models
 **Keywords**: Concept Embedding Models, Hierarchical Concepts, Concept Splitting, Sub-concept Discovery, Concept Intervention
 

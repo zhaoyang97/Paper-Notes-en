@@ -77,8 +77,8 @@ Given interleaved text/image/video inputs, text is converted to embeddings via a
 
 3. **Two-Stage Training Strategy**
 
-   - **Stage 1**: Only the projector, spatial(-temporal) fusion module, and Flow head are trained, using approximately 66M image-text pairs, with interleaved and video data progressively introduced. The language model parameters are frozen to preserve language knowledge. $\alpha=0.2$.
-   - **Stage 2**: Full model fine-tuning (excluding the VAE), using 9M high-quality understanding instruction data and 16M high-quality generation data. $\alpha=1.0$.
+    - **Stage 1**: Only the projector, spatial(-temporal) fusion module, and Flow head are trained, using approximately 66M image-text pairs, with interleaved and video data progressively introduced. The language model parameters are frozen to preserve language knowledge. $\alpha=0.2$.
+    - **Stage 2**: Full model fine-tuning (excluding the VAE), using 9M high-quality understanding instruction data and 16M high-quality generation data. $\alpha=1.0$.
 
    **Design Motivation**: Training the visual generation components first before global fine-tuning eliminates dependence on large-scale text corpora.
 

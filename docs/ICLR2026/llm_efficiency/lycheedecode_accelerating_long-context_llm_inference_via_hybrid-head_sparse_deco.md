@@ -18,8 +18,8 @@ content_hash: 19a5c9b8230e4540
 # LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.04541](https://arxiv.org/abs/2602.04541)
-**Code**: [https://github.com/](https://github.com/)
+**arXiv**: [2602.04541](https://arxiv.org/abs/2602.04541)  
+**Code**: [https://github.com/](https://github.com/)  
 **Area**: LLM Efficiency
 **Keywords**: Long-context inference, sparse attention, attention head specialization, KV cache optimization, HardKuma distribution
 

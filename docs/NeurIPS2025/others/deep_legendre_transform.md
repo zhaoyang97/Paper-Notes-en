@@ -18,8 +18,8 @@ content_hash: 0db0c824cfd62540
 # Deep Legendre Transform
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.19649](https://arxiv.org/abs/2512.19649)
-**Code**: [GitHub](https://github.com/lexmar07/Deep-Legendre-Transform)
+**arXiv**: [2512.19649](https://arxiv.org/abs/2512.19649)  
+**Code**: [GitHub](https://github.com/lexmar07/Deep-Legendre-Transform)  
 **Area**: Others (Numerical Methods / Convex Optimization / Deep Learning)
 **Keywords**: Convex conjugate, Legendre transform, ICNN, KAN, a posteriori error estimation, Hamilton-Jacobi equations
 

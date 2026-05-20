@@ -18,8 +18,8 @@ content_hash: 3a582dca1a709135
 # HistLens: Mapping Idea Change across Concepts and Corpora
 
 **Conference**: ACL 2026
-**arXiv**: [2604.11749](https://arxiv.org/abs/2604.11749)
-**Code**: [https://github.com/LeoJ-xy/HistLens](https://github.com/LeoJ-xy/HistLens)
+**arXiv**: [2604.11749](https://arxiv.org/abs/2604.11749)  
+**Code**: [https://github.com/LeoJ-xy/HistLens](https://github.com/LeoJ-xy/HistLens)  
 **Area**: Digital Humanities / Interpretability
 **Keywords**: conceptual history analysis, sparse autoencoders, diachronic semantic change, cross-corpus comparison, implicit concept computation
 

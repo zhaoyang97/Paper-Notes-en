@@ -19,9 +19,9 @@ content_hash: 952828d852118fed
 # Markovian Transformers for Informative Language Modeling
 
 **Conference**: ICLR 2026
-**arXiv**: [2404.18988](https://arxiv.org/abs/2404.18988)
+**arXiv**: [2404.18988](https://arxiv.org/abs/2404.18988)  
 **Authors**: Scott W. Viteri, Max Lamparth, Peter Chatain, Clark Barrett (Stanford University)
-**Code**: [GitHub](https://github.com/scottviteri/MarkovianTraining/)
+**Code**: [GitHub](https://github.com/scottviteri/MarkovianTraining/)  
 **Area**: Optimization
 **Keywords**: Markov constraint, CoT faithfulness, reasoning bottleneck, autoencoder analogy, GRPO training, information theory
 

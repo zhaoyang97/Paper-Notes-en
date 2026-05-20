@@ -18,8 +18,8 @@ content_hash: 353b81ffdcdd3bd3
 # An Improved Privacy and Utility Analysis of Differentially Private SGD with Bounded Domain and Smooth Losses
 
 **Conference**: AAAI 2026
-**arXiv**: [2502.17772v4](https://arxiv.org/abs/2502.17772v4)
-**Code**: [https://github.com/HauLiang/DPSGD-DC](https://github.com/HauLiang/DPSGD-DC)
+**arXiv**: [2502.17772v4](https://arxiv.org/abs/2502.17772v4)  
+**Code**: [https://github.com/HauLiang/DPSGD-DC](https://github.com/HauLiang/DPSGD-DC)  
 **Area**: Differential Privacy / Privacy-Preserving Machine Learning
 **Keywords**: Differential Privacy, DPSGD, Rényi Differential Privacy, Bounded Domain, Privacy-Utility Trade-off
 

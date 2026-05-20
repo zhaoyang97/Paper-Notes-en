@@ -17,8 +17,8 @@ content_hash: 196a05068e2898f5
 # Bipartite Mode Matching for Vision Training Set Search from a Hierarchical Data Server
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.09531](https://arxiv.org/abs/2601.09531)
-**Code**: [github.com/yorkeyao/BMM](https://github.com/yorkeyao/BMM)
+**arXiv**: [2601.09531](https://arxiv.org/abs/2601.09531)  
+**Code**: [github.com/yorkeyao/BMM](https://github.com/yorkeyao/BMM)  
 **Area**: Other
 **Keywords**: training set search, domain adaptation, bipartite matching, hierarchical clustering, data-centric approach
 

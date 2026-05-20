@@ -17,8 +17,8 @@ content_hash: 2564f4006716ff41
 # An Analysis of Concept Bottleneck Models: Measuring, Understanding, and Mitigating the Impact of Noisy Annotations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16705](https://arxiv.org/abs/2505.16705)
-**Code**: None
+**arXiv**: [2505.16705](https://arxiv.org/abs/2505.16705)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Concept Bottleneck Models, Noisy Annotations, Interpretability, Sharpness-Aware Minimization, Uncertainty-Guided Intervention
 

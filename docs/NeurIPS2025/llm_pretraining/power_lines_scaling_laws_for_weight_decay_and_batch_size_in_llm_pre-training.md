@@ -18,8 +18,8 @@ content_hash: a93d3c46365352f2
 # Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13738](https://arxiv.org/abs/2505.13738)
-**Code**: To be confirmed
+**arXiv**: [2505.13738](https://arxiv.org/abs/2505.13738)  
+**Code**: To be confirmed  
 **Area**: LLM Pre-training
 **Keywords**: scaling laws, weight decay, batch size, LLM pre-training, AdamW
 

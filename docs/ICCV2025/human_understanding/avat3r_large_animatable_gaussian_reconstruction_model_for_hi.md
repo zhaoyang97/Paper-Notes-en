@@ -18,8 +18,8 @@ content_hash: 65ac87beabaf0c63
 # Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.20220](https://arxiv.org/abs/2502.20220)
-**Code**: No public code
+**arXiv**: [2502.20220](https://arxiv.org/abs/2502.20220)  
+**Code**: No public code  
 **Area**: Human Understanding
 **Keywords**: 3D Gaussian, head avatar reconstruction, facial animation, large reconstruction model, feed-forward inference
 

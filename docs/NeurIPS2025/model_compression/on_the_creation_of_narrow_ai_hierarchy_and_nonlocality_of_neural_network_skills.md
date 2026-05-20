@@ -18,8 +18,8 @@ content_hash: 99c62b1f4a100c70
 # On the Creation of Narrow AI: Hierarchy and Nonlocality of Neural Network Skills
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15811](https://arxiv.org/abs/2505.15811)
-**Code**: [GitHub](https://github.com/ejmichaud/narrow)
+**arXiv**: [2505.15811](https://arxiv.org/abs/2505.15811)  
+**Code**: [GitHub](https://github.com/ejmichaud/narrow)  
 **Area**: Model Compression
 **Keywords**: Narrow AI, Model Pruning, Knowledge Distillation, Curriculum Learning, Skill Nonlocality
 

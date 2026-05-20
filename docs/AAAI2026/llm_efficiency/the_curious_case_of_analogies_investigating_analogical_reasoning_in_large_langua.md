@@ -18,8 +18,8 @@ content_hash: bbdee7b5a501c434
 # The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.20344](https://arxiv.org/abs/2511.20344)
-**Code**: [dmis-lab/analogical-reasoning](https://github.com/dmis-lab/analogical-reasoning)
+**arXiv**: [2511.20344](https://arxiv.org/abs/2511.20344)  
+**Code**: [dmis-lab/analogical-reasoning](https://github.com/dmis-lab/analogical-reasoning)  
 **Area**: LLM Efficiency
 **Keywords**: Analogical Reasoning, Mechanistic Interpretability, Relational Information Encoding, Structural Alignment, Attention Intervention
 
@@ -60,20 +60,20 @@ The study is organized into three progressive levels: (1) information flow analy
 - Selectively disables attention connections from the resolution token to four preceding positions ($e_1$, $e_2$, the link "as", $e_3$), observing the effect on predictions.
 - A window size $k$ (1/5 of total layers) is maintained to cover cross-layer propagation.
 - **Results—three key findings**:
-  - Knocking out $e_1$ has minimal impact, indicating it is not on the critical path for answer resolution.
-  - Knocking out $e_2$ or $e_3$ causes significant performance degradation/generation instability in middle-to-upper layers, indicating these positions carry critical information.
-  - In incorrect cases, knocking out the link has a strong effect in early-to-middle layers, suggesting the link may play a misleading role in erroneous reasoning.
+    - Knocking out $e_1$ has minimal impact, indicating it is not on the critical path for answer resolution.
+    - Knocking out $e_2$ or $e_3$ causes significant performance degradation/generation instability in middle-to-upper layers, indicating these positions carry critical information.
+    - In incorrect cases, knocking out the link has a strong effect in early-to-middle layers, suggesting the link may play a misleading role in erroneous reasoning.
 
 **Method 2: Patchscopes for Decoding Hidden Representations**
 
 - Custom target prompts are designed for $e_2$ and $e_3$ to elicit natural-language outputs reflecting what is encoded in hidden representations.
 - Two types of information are distinguished:
-  - **Attribute information**: Whether the representation captures intrinsic properties of the entity (e.g., "Jane Austen" is a British author).
-  - **Relational information**: Whether the representation encodes the relation connecting the entity pair (e.g., "author of").
+    - **Attribute information**: Whether the representation captures intrinsic properties of the entity (e.g., "Jane Austen" is a British author).
+    - **Relational information**: Whether the representation encodes the relation connecting the entity pair (e.g., "author of").
 - **Key findings**:
-  - Attribute information persists in middle-to-upper layers in both correct and incorrect cases.
-  - **Relational information** is maintained into upper layers in correct cases but drops sharply in incorrect cases.
-  - This indicates that the encoding of relational information is the decisive factor for successful analogical reasoning.
+    - Attribute information persists in middle-to-upper layers in both correct and incorrect cases.
+    - **Relational information** is maintained into upper layers in correct cases but drops sharply in incorrect cases.
+    - This indicates that the encoding of relational information is the decisive factor for successful analogical reasoning.
 
 ### Key Design 2: Bottleneck Diagnosis for Relation Application
 
@@ -103,13 +103,13 @@ The study is organized into three progressive levels: (1) information flow analy
 - MAS is defined as the proportion of source story tokens whose best-matching candidate token is also a mutual best match (based on cosine similarity).
 - **Algorithm**: For each source token $s_i$, find its best match $c_{j^*}$ in the candidate; verify whether $c_{j^*}$'s best match in the source is $s_i$ (mutual best match); compute the proportion.
 - **Results—correct cases**:
-  - Source–target MAS consistently exceeds source–distractor MAS, with the largest gap in middle layers.
-  - Even when the target story shares almost no lexical overlap with the source, the model captures deep structural alignment.
-  - Analogical token pairs (e.g., "water"–"air", "house"–"lungs") form mutual best matches with high similarity scores.
+    - Source–target MAS consistently exceeds source–distractor MAS, with the largest gap in middle layers.
+    - Even when the target story shares almost no lexical overlap with the source, the model captures deep structural alignment.
+    - Analogical token pairs (e.g., "water"–"air", "house"–"lungs") form mutual best matches with high similarity scores.
 - **Results—incorrect cases**:
-  - The gap between source–target and source–distractor MAS is minimal.
-  - The model exhibits stronger alignment with the distractor story across most layers.
-  - This indicates that the model is susceptible to surface-level distractors when relational mappings are not robustly encoded.
+    - The gap between source–target and source–distractor MAS is minimal.
+    - The model exhibits stronger alignment with the distractor story across most layers.
+    - This indicates that the model is susceptible to surface-level distractors when relational mappings are not robustly encoded.
 
 ---
 

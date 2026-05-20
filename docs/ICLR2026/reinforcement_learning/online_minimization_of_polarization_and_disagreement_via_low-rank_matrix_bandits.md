@@ -18,8 +18,8 @@ content_hash: 015716dd6a527f2b
 # Online Minimization of Polarization and Disagreement via Low-Rank Matrix Bandits
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00803](https://arxiv.org/abs/2510.00803)
-**Code**: [GitHub](https://github.com/FedericoCinus/online-min-pol)
+**arXiv**: [2510.00803](https://arxiv.org/abs/2510.00803)  
+**Code**: [GitHub](https://github.com/FedericoCinus/online-min-pol)  
 **Area**: online learning, social network
 **Keywords**: opinion polarization, Friedkin-Johnsen model, low-rank matrix bandit, regret minimization, social network intervention
 

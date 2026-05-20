@@ -18,8 +18,8 @@ content_hash: 132783bbc1a198f7
 # Alligat0R: Pre-Training through Covisibility Segmentation for Relative Camera Pose Regression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.07561](https://arxiv.org/abs/2503.07561)
-**Code**: [https://github.com/thibautloiseau/alligat0r](https://github.com/thibautloiseau/alligat0r)
+**arXiv**: [2503.07561](https://arxiv.org/abs/2503.07561)  
+**Code**: [https://github.com/thibautloiseau/alligat0r](https://github.com/thibautloiseau/alligat0r)  
 **Area**: Image Segmentation
 **Keywords**: Covisibility Segmentation, Pre-Training, Relative Pose Regression, CroCo, ViT
 

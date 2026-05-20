@@ -18,8 +18,8 @@ content_hash: badb8bec49810700
 # AgentiQL: An Agent-Inspired Multi-Expert Framework for Text-to-SQL Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10661](https://arxiv.org/abs/2510.10661)
-**Code**: To be released
+**arXiv**: [2510.10661](https://arxiv.org/abs/2510.10661)  
+**Code**: To be released  
 **Area**: Interpretability
 **Keywords**: Text-to-SQL, multi-expert, question decomposition, adaptive routing, Spider benchmark
 

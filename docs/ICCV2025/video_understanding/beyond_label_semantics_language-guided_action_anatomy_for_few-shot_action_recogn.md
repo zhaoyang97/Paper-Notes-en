@@ -18,8 +18,8 @@ content_hash: d8f408731caa1487
 # Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.16287](https://arxiv.org/abs/2507.16287)
-**Code**: N/A
+**arXiv**: [2507.16287](https://arxiv.org/abs/2507.16287)  
+**Code**: N/A  
 **Area**: Video Understanding / Few-Shot Action Recognition
 **Keywords**: few-shot action recognition, LLM, atomic action, multimodal fusion, metric learning
 

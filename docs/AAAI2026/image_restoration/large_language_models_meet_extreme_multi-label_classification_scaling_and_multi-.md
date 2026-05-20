@@ -18,8 +18,8 @@ content_hash: c68a4f68ef276809
 # Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13189](https://arxiv.org/abs/2511.13189)
-**Code**: [https://github.com/DiegoOrtego/vixml](https://github.com/DiegoOrtego/vixml)
+**arXiv**: [2511.13189](https://arxiv.org/abs/2511.13189)  
+**Code**: [https://github.com/DiegoOrtego/vixml](https://github.com/DiegoOrtego/vixml)  
 **Area**: Image Restoration
 **Keywords**: Extreme Multi-label Classification, Large Language Models, Visual Metadata, Siamese Learning, Dual-Decoder
 

@@ -18,8 +18,8 @@ content_hash: 7af220dcced932ef
 # Yours or Mine? Overwriting Attacks Against Neural Audio Watermarking
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.05835](https://arxiv.org/abs/2509.05835)
-**Code**: None
+**arXiv**: [2509.05835](https://arxiv.org/abs/2509.05835)  
+**Code**: None  
 **Area**: AI Security
 **Keywords**: Audio watermarking, overwriting attack, copyright protection, adversarial security, deep watermarking
 

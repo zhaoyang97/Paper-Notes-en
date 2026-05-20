@@ -18,8 +18,8 @@ content_hash: a4fa592df4836eac
 # Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.21550](https://arxiv.org/abs/2602.21550)
-**Code**: [https://github.com/yangzhao1230/Prism](https://github.com/yangzhao1230/Prism)
+**arXiv**: [2602.21550](https://arxiv.org/abs/2602.21550)  
+**Code**: [https://github.com/yangzhao1230/Prism](https://github.com/yangzhao1230/Prism)  
 **Area**: AI Safety
 **Keywords**: gene expression prediction, epigenomic signals, causal inference, backdoor adjustment, confounding variables
 

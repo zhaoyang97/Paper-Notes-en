@@ -18,8 +18,8 @@ content_hash: 12053b33c27a7f40
 # Map the Flow: Revealing Hidden Pathways of Information in VideoLLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.13251](https://arxiv.org/abs/2510.13251)
-**Code**: [Project Page](https://map-the-flow.github.io)
+**arXiv**: [2510.13251](https://arxiv.org/abs/2510.13251)  
+**Code**: [Project Page](https://map-the-flow.github.io)  
 **Area**: Video Understanding / Explainable AI
 **Keywords**: VideoLLM, Information Flow Analysis, Mechanistic Interpretability, Attention Pruning, Temporal Reasoning
 
@@ -53,21 +53,21 @@ The primary experimental backbone is LLaVA-NeXT-7B fine-tuned on the VideoChat2-
 
 1. **Attention Knockout — Causal Tracing of Attention Contributions**
 
-   - *Function*: Selectively severs attention connections between specific token pairs (by setting the corresponding attention mask entries to $-\infty$), then measures the resulting impact on model prediction probabilities.
-   - *Mechanism*: For each layer $l$, attention edges of interest (e.g., cross-frame video-to-video attention) are severed using a window of size $k=9$ centered at that layer. The relative probability change is computed as $((p_{\text{knockout}} - p_{\text{base}})/p_{\text{base}}) \times 100$. The window size of 9 is chosen because narrower windows allow information to bypass the intervention via residual connections.
-   - *Design Motivation*: Compared to observational analysis (e.g., directly inspecting attention weights), causal intervention accurately quantifies "how would model behavior change if this information pathway were absent"—the standard method in mechanistic interpretability research, originating from Geva et al. 2023.
+    - *Function*: Selectively severs attention connections between specific token pairs (by setting the corresponding attention mask entries to $-\infty$), then measures the resulting impact on model prediction probabilities.
+    - *Mechanism*: For each layer $l$, attention edges of interest (e.g., cross-frame video-to-video attention) are severed using a window of size $k=9$ centered at that layer. The relative probability change is computed as $((p_{\text{knockout}} - p_{\text{base}})/p_{\text{base}}) \times 100$. The window size of 9 is chosen because narrower windows allow information to bypass the intervention via residual connections.
+    - *Design Motivation*: Compared to observational analysis (e.g., directly inspecting attention weights), causal intervention accurately quantifies "how would model behavior change if this information pathway were absent"—the standard method in mechanistic interpretability research, originating from Geva et al. 2023.
 
 2. **Logit Lens — Probing Semantic Content of Intermediate Layers**
 
-   - *Function*: Projects intermediate hidden states through the language model head to obtain logits, revealing what each video token "looks like" as a vocabulary item at each layer.
-   - *Mechanism*: The LM head is applied to video token representations at each layer; the frequency and positional distribution of spatial keywords (objects, colors) and temporal keywords (before/after/first, etc.) are tracked. Analysis is performed using LLaVA-NeXT-13B-Video-FT on the Action Sequence task.
-   - *Design Motivation*: Attention Knockout identifies *which* pathways are important, but not *what information* flows through them. Logit Lens fills this gap by revealing when and where temporal concepts emerge within video tokens.
+    - *Function*: Projects intermediate hidden states through the language model head to obtain logits, revealing what each video token "looks like" as a vocabulary item at each layer.
+    - *Mechanism*: The LM head is applied to video token representations at each layer; the frequency and positional distribution of spatial keywords (objects, colors) and temporal keywords (before/after/first, etc.) are tracked. Analysis is performed using LLaVA-NeXT-13B-Video-FT on the Action Sequence task.
+    - *Design Motivation*: Attention Knockout identifies *which* pathways are important, but not *what information* flows through them. Logit Lens fills this gap by revealing when and where temporal concepts emerge within video tokens.
 
 3. **Information Flow Stage Decomposition and Validation**
 
-   - *Function*: Attention pathways are categorized into 6 types (cross-frame video-video, video→question, video→last, question→last, last→last, question→video), and the contribution of each type across layers is analyzed.
-   - *Mechanism*: Each pathway type is knocked out layer by layer, and layer-versus-probability-change curves are plotted. Once pathway roles are established, only pathways in critical layer ranges are retained for each type (e.g., L6–15 for cross-frame interaction, L6–20 for video→question, L16–25 for question→last), while all other pathways are disabled.
-   - *Design Motivation*: This closes the loop from discovery to validation—critical pathways are first identified analytically, then an end-to-end experiment retaining only those pathways confirms the correctness of the analysis.
+    - *Function*: Attention pathways are categorized into 6 types (cross-frame video-video, video→question, video→last, question→last, last→last, question→video), and the contribution of each type across layers is analyzed.
+    - *Mechanism*: Each pathway type is knocked out layer by layer, and layer-versus-probability-change curves are plotted. Once pathway roles are established, only pathways in critical layer ranges are retained for each type (e.g., L6–15 for cross-frame interaction, L6–20 for video→question, L16–25 for question→last), while all other pathways are disabled.
+    - *Design Motivation*: This closes the loop from discovery to validation—critical pathways are first identified analytically, then an end-to-end experiment retaining only those pathways confirms the correctness of the analysis.
 
 ### Four Core Findings
 

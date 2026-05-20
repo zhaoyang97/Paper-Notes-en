@@ -18,8 +18,8 @@ content_hash: 1f21e7c94f9ff403
 # TRUST -- Transformer-Driven U-Net for Sparse Target Recovery
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01112](https://arxiv.org/abs/2506.01112)
-**Code**: None
+**arXiv**: [2506.01112](https://arxiv.org/abs/2506.01112)  
+**Code**: None  
 **Area**: Signal Processing / Image Reconstruction
 **Keywords**: Sparse Recovery, Transformer, U-Net, Inverse Problems, Sensing Matrix Learning
 

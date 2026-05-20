@@ -18,8 +18,8 @@ content_hash: 84cc3ec471aebe95
 # From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.03390](https://arxiv.org/abs/2602.03390)
-**Code**: [https://github.com/hynnsk/SRL](https://github.com/hynnsk/SRL)
+**arXiv**: [2602.03390](https://arxiv.org/abs/2602.03390)  
+**Code**: [https://github.com/hynnsk/SRL](https://github.com/hynnsk/SRL)  
 **Area**: Video Understanding / Self-Supervised Learning / Object Discovery
 **Keywords**: Object-centric learning, slot attention, contrastive learning, encoder-decoder alignment, unsupervised segmentation
 

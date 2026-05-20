@@ -18,8 +18,8 @@ content_hash: 75f8927648df110f
 # SAM4D: Segment Anything in Camera and LiDAR Streams
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21547](https://arxiv.org/abs/2506.21547)
-**Code**: [SAM4D-Project.github.io](https://SAM4D-Project.github.io)
+**arXiv**: [2506.21547](https://arxiv.org/abs/2506.21547)  
+**Code**: [SAM4D-Project.github.io](https://SAM4D-Project.github.io)  
 **Area**: Autonomous Driving
 **Keywords**: Multimodal Segmentation, Foundation Model, Camera-LiDAR Fusion, Temporal Segmentation, SAM
 

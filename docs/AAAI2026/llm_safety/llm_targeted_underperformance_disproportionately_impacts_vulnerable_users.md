@@ -18,8 +18,8 @@ content_hash: c0ff003e341fe506
 # LLM Targeted Underperformance Disproportionately Impacts Vulnerable Users
 
 **Conference**: AAAI 2026
-**arXiv**: [2406.17737](https://arxiv.org/abs/2406.17737)
-**Code**: None
+**arXiv**: [2406.17737](https://arxiv.org/abs/2406.17737)  
+**Code**: None  
 **Area**: LLM Safety
 **Keywords**: user bias, information accuracy, vulnerable populations, sycophancy, targeted underperformance
 

@@ -17,8 +17,8 @@ content_hash: cf5b3efed13ac241
 # Theoretical and Empirical Analysis of Lehmer Codes to Search Permutation Spaces with Evolutionary Algorithms
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19089](https://arxiv.org/abs/2511.19089)
-**Code**: [https://github.com/TrendMYX/LehmerEA](https://github.com/TrendMYX/LehmerEA)
+**arXiv**: [2511.19089](https://arxiv.org/abs/2511.19089)  
+**Code**: [https://github.com/TrendMYX/LehmerEA](https://github.com/TrendMYX/LehmerEA)  
 **Area**: Evolutionary Algorithms / Combinatorial Optimization
 **Keywords**: Lehmer Code, Permutation Space, Evolutionary Algorithms, Runtime Analysis, Combinatorial Optimization
 

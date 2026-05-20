@@ -18,8 +18,8 @@ content_hash: 97fba39ebabfc333
 # Generalization Bounds for Rank-sparse Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21945](https://arxiv.org/abs/2510.21945)
-**Code**: None
+**arXiv**: [2510.21945](https://arxiv.org/abs/2510.21945)  
+**Code**: None  
 **Area**: Learning Theory / Generalization Theory
 **Keywords**: generalization bounds, low-rank structure, Schatten norm, bottleneck rank, sample complexity
 

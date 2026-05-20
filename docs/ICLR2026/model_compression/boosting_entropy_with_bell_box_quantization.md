@@ -18,8 +18,8 @@ content_hash: cdd1f00dcc3df72f
 # Boosting Entropy with Bell Box Quantization
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01599](https://arxiv.org/abs/2603.01599)
-**Code**: [https://github.com/1733116199/bbq](https://github.com/1733116199/bbq)
+**arXiv**: [2603.01599](https://arxiv.org/abs/2603.01599)  
+**Code**: [https://github.com/1733116199/bbq](https://github.com/1733116199/bbq)  
 **Area**: Model Compression / Quantization
 **Keywords**: quantization-aware pre-training, information-theoretically optimal quantization, compute-efficient data types, entropy maximization, low-precision inference
 

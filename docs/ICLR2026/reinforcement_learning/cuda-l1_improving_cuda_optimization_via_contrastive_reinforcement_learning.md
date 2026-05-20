@@ -18,8 +18,8 @@ content_hash: 3caa54c36b919fd2
 # CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.14111](https://arxiv.org/abs/2507.14111)
-**Code**: [GitHub](https://github.com/deepreinforce-ai/CUDA-L1)
+**arXiv**: [2507.14111](https://arxiv.org/abs/2507.14111)  
+**Code**: [GitHub](https://github.com/deepreinforce-ai/CUDA-L1)  
 **Area**: Reinforcement Learning
 **Keywords**: CUDA optimization, contrastive reinforcement learning, LLM, code generation, GPU efficiency
 

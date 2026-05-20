@@ -18,8 +18,8 @@ content_hash: cc4bd5819c00e2d0
 # Contact-Aware Refinement of Human Pose Pseudo-Ground Truth via Bioimpedance Sensing
 
 **Conference**: ICCV 2025
-**arXiv**: [2512.04862](https://arxiv.org/abs/2512.04862)
-**Code**: [biotuch.is.tue.mpg.de](https://biotuch.is.tue.mpg.de)
+**arXiv**: [2512.04862](https://arxiv.org/abs/2512.04862)  
+**Code**: [biotuch.is.tue.mpg.de](https://biotuch.is.tue.mpg.de)  
 **Area**: Human Understanding / 3D Human Pose Estimation
 **Keywords**: self-contact detection, bioimpedance sensing, 3D human pose, SMPL-X, multimodal fusion
 

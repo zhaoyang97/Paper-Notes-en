@@ -18,8 +18,8 @@ content_hash: ca00e658847476bf
 # Intrinsic Lorentz Neural Network
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.23981](https://arxiv.org/abs/2602.23981)
-**Code**: To be confirmed
+**arXiv**: [2602.23981](https://arxiv.org/abs/2602.23981)  
+**Code**: To be confirmed  
 **Area**: Model Architecture / Hyperbolic Geometry
 **Keywords**: hyperbolic neural network, Lorentz model, intrinsic operations, batch normalization, geometric deep learning
 
@@ -48,15 +48,15 @@ ILNN operates entirely on the Lorentz hyperboloid $\mathbb{L}_K^n$ (with $K<0$).
 
 1. **PLFC (Point-to-Hyperplane Lorentz FC)**:
 
-   - Learns $m$ Lorentz hyperplanes and computes the signed distance from the input to each hyperplane as logits.
-   - Applies a $\sinh$ mapping to recover spatial coordinates, with the time coordinate derived from the hyperboloid constraint.
-   - Degenerates to a standard affine transformation $Wx + b$ as $K \to 0$.
+    - Learns $m$ Lorentz hyperplanes and computes the signed distance from the input to each hyperplane as logits.
+    - Applies a $\sinh$ mapping to recover spatial coordinates, with the time coordinate derived from the hyperboloid constraint.
+    - Degenerates to a standard affine transformation $Wx + b$ as $K \to 0$.
 
 2. **GyroLBN (Gyro-Lorentz Batch Normalization)**:
 
-   - Gyro-centering: closed-form Lorentzian centroid (non-iterative Fréchet mean).
-   - Gyro-scaling: Fréchet variance normalization.
-   - Faster than GyroBN (closed-form vs. iterative) and more intrinsic than LBN (hyperbolic mean vs. Euclidean mean).
+    - Gyro-centering: closed-form Lorentzian centroid (non-iterative Fréchet mean).
+    - Gyro-scaling: Fréchet variance normalization.
+    - Faster than GyroBN (closed-form vs. iterative) and more intrinsic than LBN (hyperbolic mean vs. Euclidean mean).
 
 3. **Auxiliary Components**: Log-radius concatenation, Lorentz dropout, Lorentz activation, and gyro-bias.
 

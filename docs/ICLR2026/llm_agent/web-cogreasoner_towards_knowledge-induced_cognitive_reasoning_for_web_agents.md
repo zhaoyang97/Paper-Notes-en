@@ -18,8 +18,8 @@ content_hash: 965f09236adedb78
 # Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.01858](https://arxiv.org/abs/2508.01858)
-**Code**: [https://github.com/Gnonymous/Web-CogReasoner](https://github.com/Gnonymous/Web-CogReasoner)
+**arXiv**: [2508.01858](https://arxiv.org/abs/2508.01858)  
+**Code**: [https://github.com/Gnonymous/Web-CogReasoner](https://github.com/Gnonymous/Web-CogReasoner)  
 **Area**: LLM Agent
 **Keywords**: Web Agent, Cognitive Reasoning, Bloom's Taxonomy, Chain-of-Thought, Knowledge-Driven
 

@@ -19,8 +19,8 @@ content_hash: e9e15ab908554351
 # DISCOVER: Automated Curricula for Sparse-Reward Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19850](https://arxiv.org/abs/2505.19850)
-**Code**: [Available](https://github.com/LeanderDiazBone/discover)
+**arXiv**: [2505.19850](https://arxiv.org/abs/2505.19850)  
+**Code**: [Available](https://github.com/LeanderDiazBone/discover)  
 **Area**: Reinforcement Learning
 **Keywords**: sparse reward, goal selection, exploration-exploitation, UCB, curriculum learning, goal-conditioned RL
 

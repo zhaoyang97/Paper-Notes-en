@@ -18,8 +18,8 @@ content_hash: fb8534225e4d1ecb
 # SPIRAL: Semantic-Aware Progressive LiDAR Scene Generation and Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22643](https://arxiv.org/abs/2505.22643)
-**Code**: [GitHub](https://github.com/worldbench/SPIRAL)
+**arXiv**: [2505.22643](https://arxiv.org/abs/2505.22643)  
+**Code**: [GitHub](https://github.com/worldbench/SPIRAL)  
 **Area**: Autonomous Driving / LiDAR Generation
 **Keywords**: LiDAR Generation, Diffusion Models, Semantic Segmentation, Range-View, Closed-Loop Inference
 

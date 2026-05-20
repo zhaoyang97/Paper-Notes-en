@@ -18,8 +18,8 @@ content_hash: 079b6c44b472be07
 # How Retrieved Context Shapes Internal Representations in RAG
 
 **Conference**: ACL 2026
-**arXiv**: [2602.20091](https://arxiv.org/abs/2602.20091)
-**Code**: None
+**arXiv**: [2602.20091](https://arxiv.org/abs/2602.20091)  
+**Code**: None  
 **Area**: Information Retrieval / RAG
 **Keywords**: Retrieval-Augmented Generation, hidden representations, representation drift, knowledge conflict, interpretability
 

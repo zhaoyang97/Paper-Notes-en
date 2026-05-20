@@ -18,8 +18,8 @@ content_hash: 573e115a2dc893e2
 # Generative Adversarial Perturbations with Cross-paradigm Transferability on Localized Crowd Counting
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24821](https://arxiv.org/abs/2603.24821)
-**Code**: [https://github.com/simurgh7/CrowdGen](https://github.com/simurgh7/CrowdGen)
+**arXiv**: [2603.24821](https://arxiv.org/abs/2603.24821)  
+**Code**: [https://github.com/simurgh7/CrowdGen](https://github.com/simurgh7/CrowdGen)  
 **Area**: AI Safety / Adversarial Attacks
 **Keywords**: adversarial attack, crowd counting, cross-paradigm transferability, generative adversarial perturbation, black-box attack
 

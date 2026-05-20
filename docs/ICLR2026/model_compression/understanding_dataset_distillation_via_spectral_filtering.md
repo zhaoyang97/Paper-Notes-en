@@ -18,8 +18,8 @@ content_hash: 3053d907f0937d92
 # Understanding Dataset Distillation via Spectral Filtering
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.01212](https://arxiv.org/abs/2503.01212)
-**Code**: Not provided
+**arXiv**: [2503.01212](https://arxiv.org/abs/2503.01212)  
+**Code**: Not provided  
 **Area**: Model Compression / Dataset Distillation
 **Keywords**: dataset distillation, spectral filtering, frequency matching, curriculum learning, unified framework
 

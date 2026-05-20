@@ -18,8 +18,8 @@ content_hash: 5025c53a93de930e
 # SAGA: Learning Signal-Aligned Distributions for Improved Text-to-Image Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.13866](https://arxiv.org/abs/2508.13866)
-**Code**: [GitHub](https://github.com/grimalPaul/gsn-factory)
+**arXiv**: [2508.13866](https://arxiv.org/abs/2508.13866)  
+**Code**: [GitHub](https://github.com/grimalPaul/gsn-factory)  
 **Area**: Diffusion Models / Text-to-Image Generation
 **Keywords**: Diffusion Models, Text Alignment, Gaussian Distribution Learning, Training-Free Method, Flow Matching
 

@@ -18,8 +18,8 @@ content_hash: ff43d87d61f59833
 # PinPoint: Focus, Don't Prune — Identifying Instruction-Relevant Regions for Information-Rich Image Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22815](https://arxiv.org/abs/2603.22815)
-**Code**: [GitHub](https://github.com/minckwon/PinPoint)
+**arXiv**: [2603.22815](https://arxiv.org/abs/2603.22815)  
+**Code**: [GitHub](https://github.com/minckwon/PinPoint)  
 **Area**: Multimodal / VLM
 **Keywords**: Large Vision-Language Models, Token Efficiency, Region Selection, Contrastive Learning, Document Understanding
 

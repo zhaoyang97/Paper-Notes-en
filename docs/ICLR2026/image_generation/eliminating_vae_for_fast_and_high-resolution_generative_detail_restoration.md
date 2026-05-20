@@ -18,8 +18,8 @@ content_hash: fe13f894ac921cff
 # Eliminating VAE for Fast and High-Resolution Generative Detail Restoration
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.10630](https://arxiv.org/abs/2602.10630)
-**Code**: None (improvement upon GenDR)
+**arXiv**: [2602.10630](https://arxiv.org/abs/2602.10630)  
+**Code**: None (improvement upon GenDR)  
 **Area**: Image Generation
 **Keywords**: VAE elimination, super-resolution, pixel-space diffusion, adversarial distillation, pixel-shuffle
 

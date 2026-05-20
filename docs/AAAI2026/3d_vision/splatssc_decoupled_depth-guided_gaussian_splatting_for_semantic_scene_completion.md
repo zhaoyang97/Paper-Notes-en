@@ -18,8 +18,8 @@ content_hash: db5e5c0a8951d62c
 # SplatSSC: Decoupled Depth-Guided Gaussian Splatting for Semantic Scene Completion
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.02261](https://arxiv.org/abs/2508.02261)
-**Code**: [GitHub](https://github.com/Made-Gpt/SplatSSC)
+**arXiv**: [2508.02261](https://arxiv.org/abs/2508.02261)  
+**Code**: [GitHub](https://github.com/Made-Gpt/SplatSSC)  
 **Area**: 3D Vision
 **Keywords**: Semantic Scene Completion, 3D Gaussian Splatting, Depth Guidance, Decoupled Aggregation, Object-Centric Representation
 

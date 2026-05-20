@@ -18,8 +18,8 @@ content_hash: 0a89453cd93ce0c4
 # Dynamic-VLM: Simple Dynamic Visual Token Compression for VideoLLM
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.09530](https://arxiv.org/abs/2412.09530)
-**Code**: None
+**arXiv**: [2412.09530](https://arxiv.org/abs/2412.09530)  
+**Code**: None  
 **Area**: Multimodal Large Models / Video Understanding
 **Keywords**: VideoLLM, Visual Token Compression, Dynamic Compression, Synthetic Data, Multimodal
 

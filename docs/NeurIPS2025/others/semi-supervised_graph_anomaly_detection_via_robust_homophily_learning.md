@@ -17,8 +17,8 @@ content_hash: 9b83ad47fcbf1097
 # Semi-supervised Graph Anomaly Detection via Robust Homophily Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.15448](https://arxiv.org/abs/2506.15448)
-**Code**: [GitHub](https://github.com/mala-lab/RHO)
+**arXiv**: [2506.15448](https://arxiv.org/abs/2506.15448)  
+**Code**: [GitHub](https://github.com/mala-lab/RHO)  
 **Area**: Others
 **Keywords**: graph anomaly detection, homophily learning, adaptive frequency filter, semi-supervised, contrastive learning
 

@@ -18,8 +18,8 @@ content_hash: a3be034b39daf8f7
 # QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19296](https://arxiv.org/abs/2510.19296)
-**Code**: [GitHub](https://github.com/QiMeng-IPRC/QiMeng-SALV)
+**arXiv**: [2510.19296](https://arxiv.org/abs/2510.19296)  
+**Code**: [GitHub](https://github.com/QiMeng-IPRC/QiMeng-SALV)  
 **Area**: Code Generation / Hardware Design Automation
 **Keywords**: Verilog code generation, signal-level optimization, DPO, AST, reinforcement learning
 

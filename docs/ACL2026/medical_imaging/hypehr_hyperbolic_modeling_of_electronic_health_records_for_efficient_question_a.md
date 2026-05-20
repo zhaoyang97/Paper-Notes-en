@@ -18,8 +18,8 @@ content_hash: d772d88f3aab387c
 # HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering
 
 **Conference**: ACL 2026 (Findings)
-**arXiv**: [2604.21027](https://arxiv.org/abs/2604.21027)
-**Code**: [https://github.com/yuyuliu11037/HypEHR](https://github.com/yuyuliu11037/HypEHR)
+**arXiv**: [2604.21027](https://arxiv.org/abs/2604.21027)  
+**Code**: [https://github.com/yuyuliu11037/HypEHR](https://github.com/yuyuliu11037/HypEHR)  
 **Area**: Medical Imaging / Clinical NLP
 **Keywords**: EHR question answering, hyperbolic space, Lorentz model, ICD hierarchy modeling, lightweight clinical model
 

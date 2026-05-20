@@ -18,8 +18,8 @@ content_hash: 627ea08a64afb1d6
 # SAP: Segment Any 4K Panorama
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12759](https://arxiv.org/abs/2603.12759)
-**Code**: Available (Project Page)
+**arXiv**: [2603.12759](https://arxiv.org/abs/2603.12759)  
+**Code**: Available (Project Page)  
 **Area**: Panoramic Image Segmentation
 **Keywords**: Panoramic Segmentation, SAM2, 4K High Resolution, Topology-Memory Alignment, Perspective Video Reconstruction
 

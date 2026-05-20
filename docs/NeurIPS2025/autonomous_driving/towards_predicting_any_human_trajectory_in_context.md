@@ -18,8 +18,8 @@ content_hash: 5866521dc8674292
 # Towards Predicting Any Human Trajectory in Context
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.00871](https://arxiv.org/abs/2506.00871)
-**Code**: Available (Project Page)
+**arXiv**: [2506.00871](https://arxiv.org/abs/2506.00871)  
+**Code**: Available (Project Page)  
 **Area**: Autonomous Driving
 **Keywords**: pedestrian trajectory prediction, in-context learning, cross-domain adaptation, synthetic data, example selection
 

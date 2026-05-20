@@ -18,8 +18,8 @@ content_hash: a4f088f10482fa48
 # ToxicTextCLIP: Text-Based Poisoning and Backdoor Attacks on CLIP Pre-training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00446](https://arxiv.org/abs/2511.00446)
-**Code**: [GitHub](https://github.com/xinyaocse/ToxicTextCLIP/)
+**arXiv**: [2511.00446](https://arxiv.org/abs/2511.00446)  
+**Code**: [GitHub](https://github.com/xinyaocse/ToxicTextCLIP/)  
 **Area**: AI Security
 **Keywords**: CLIP security, data poisoning, backdoor attack, textual adversarial attack, multimodal security
 

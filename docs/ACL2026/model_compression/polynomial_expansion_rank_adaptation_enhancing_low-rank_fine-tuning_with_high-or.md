@@ -18,8 +18,8 @@ content_hash: ac6ea0460b3269e7
 # Polynomial Expansion Rank Adaptation: Enhancing Low-Rank Fine-Tuning with High-Order Interactions
 
 **Conference**: ACL 2026
-**arXiv**: [2604.11841](https://arxiv.org/abs/2604.11841)
-**Code**: [https://github.com/zhangwenhao6/PERA](https://github.com/zhangwenhao6/PERA)
+**arXiv**: [2604.11841](https://arxiv.org/abs/2604.11841)  
+**Code**: [https://github.com/zhangwenhao6/PERA](https://github.com/zhangwenhao6/PERA)  
 **Area**: Parameter-Efficient Fine-Tuning / Model Compression
 **Keywords**: Low-rank adaptation, polynomial expansion, high-order feature interaction, parameter-efficient fine-tuning, LoRA improvement
 

@@ -18,8 +18,8 @@ content_hash: fe83cada4379154d
 # VITAL: More Understandable Feature Visualization through Distribution Alignment and Relevant Information Flow
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.22399](https://arxiv.org/abs/2503.22399)
-**Code**: [GitHub](https://github.com/VITAL-Framework)
+**arXiv**: [2503.22399](https://arxiv.org/abs/2503.22399)  
+**Code**: [GitHub](https://github.com/VITAL-Framework)  
 **Area**: Interpretability
 **Keywords**: Feature Visualization, Explainable AI, Distribution Matching, Layer-wise Relevance Propagation, Mechanistic Interpretability
 

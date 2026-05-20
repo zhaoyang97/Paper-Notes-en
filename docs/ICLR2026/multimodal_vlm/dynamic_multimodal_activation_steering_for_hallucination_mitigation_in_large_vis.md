@@ -18,8 +18,8 @@ content_hash: f465a3cf52667a2b
 # Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.21704](https://arxiv.org/abs/2602.21704)
-**Code**: None
+**arXiv**: [2602.21704](https://arxiv.org/abs/2602.21704)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: hallucination mitigation, activation engineering, attention head intervention, training-free method, large vision-language models
 

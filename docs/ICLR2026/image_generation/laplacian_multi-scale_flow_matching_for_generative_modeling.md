@@ -18,8 +18,8 @@ content_hash: 833e147a145a8ec6
 # Laplacian Multi-scale Flow Matching for Generative Modeling
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.19461](https://arxiv.org/abs/2602.19461)
-**Code**: [GitHub](https://github.com/sjtuytc/gen)
+**arXiv**: [2602.19461](https://arxiv.org/abs/2602.19461)  
+**Code**: [GitHub](https://github.com/sjtuytc/gen)  
 **Area**: Diffusion Models / Flow Matching
 **Keywords**: Multi-scale Generation, Laplacian Pyramid, Flow Matching, Mixture-of-Transformers, Causal Attention
 

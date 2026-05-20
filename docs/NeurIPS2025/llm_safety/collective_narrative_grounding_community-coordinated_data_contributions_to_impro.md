@@ -19,8 +19,8 @@ content_hash: 5aa24e3948b7b237
 # Collective Narrative Grounding: Community-Coordinated Data Contributions to Improve Local AI Systems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.04201](https://arxiv.org/abs/2601.04201)
-**Code**: None
+**arXiv**: [2601.04201](https://arxiv.org/abs/2601.04201)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: local knowledge, LLM grounding, participatory design, narrative unit, community governance, RAG
 

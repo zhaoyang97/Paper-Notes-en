@@ -18,8 +18,8 @@ content_hash: bd1489fc694a0e90
 # OptiTree: Hierarchical Thoughts Generation with Tree Search for LLM Optimization Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22192](https://arxiv.org/abs/2510.22192)
-**Code**: [GitHub](https://github.com/MIRALab-USTC/OptiTree/tree/main)
+**arXiv**: [2510.22192](https://arxiv.org/abs/2510.22192)  
+**Code**: [GitHub](https://github.com/MIRALab-USTC/OptiTree/tree/main)  
 **Area**: LLM Evaluation
 **Keywords**: Operations Research Modeling, LLM Reasoning, Tree Search, Subproblem Decomposition, Hierarchical Thoughts
 

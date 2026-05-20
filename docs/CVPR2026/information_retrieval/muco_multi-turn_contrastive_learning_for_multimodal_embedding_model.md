@@ -18,8 +18,8 @@ content_hash: b4c5ad536357c9f8
 # MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.06393](https://arxiv.org/abs/2602.06393)
-**Code**: [https://github.com/naver-ai/muco](https://github.com/naver-ai/muco)
+**arXiv**: [2602.06393](https://arxiv.org/abs/2602.06393)  
+**Code**: [https://github.com/naver-ai/muco](https://github.com/naver-ai/muco)  
 **Area**: Information Retrieval
 **Keywords**: Multimodal Embedding, Contrastive Learning, Multi-turn Dialogue, Retrieval, Multimodal Large Language Model
 

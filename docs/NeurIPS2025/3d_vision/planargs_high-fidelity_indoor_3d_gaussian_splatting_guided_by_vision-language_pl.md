@@ -18,8 +18,8 @@ content_hash: bad283abe9b5cdea
 # PlanarGS: High-Fidelity Indoor 3D Gaussian Splatting Guided by Vision-Language Planar Priors
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23930](https://arxiv.org/abs/2510.23930)
-**Code**: [Project Page](https://planargs.github.io)
+**arXiv**: [2510.23930](https://arxiv.org/abs/2510.23930)  
+**Code**: [Project Page](https://planargs.github.io)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Indoor Reconstruction, Planar Priors, Vision-Language Models, DUSt3R
 

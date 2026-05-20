@@ -18,8 +18,8 @@ content_hash: 5307c1a145c34b9f
 # SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.08997](https://arxiv.org/abs/2506.08997)
-**Code**: [GitHub](https://github.com/immel-f/SDTagNet)
+**arXiv**: [2506.08997](https://arxiv.org/abs/2506.08997)  
+**Code**: [GitHub](https://github.com/immel-f/SDTagNet)  
 **Area**: Autonomous Driving / Online HD Map Construction
 **Keywords**: HD map, OpenStreetMap, NLP tag embedding, graph transformer, SD map prior
 

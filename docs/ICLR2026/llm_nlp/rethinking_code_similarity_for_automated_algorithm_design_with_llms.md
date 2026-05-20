@@ -20,8 +20,8 @@ content_hash: d08b9d5ae4f5d035
 # Rethinking Code Similarity for Automated Algorithm Design with LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02787](https://arxiv.org/abs/2603.02787)
-**Code**: [https://github.com/RayZhhh/behavesim](https://github.com/RayZhhh/behavesim)
+**arXiv**: [2603.02787](https://arxiv.org/abs/2603.02787)  
+**Code**: [https://github.com/RayZhhh/behavesim](https://github.com/RayZhhh/behavesim)  
 **Area**: LLM / Automated Algorithm Design / Code Similarity
 **Keywords**: LLM-AAD, code similarity, behavioral similarity, dynamic time warping, FunSearch, EoH, algorithm diversity
 

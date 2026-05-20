@@ -18,8 +18,8 @@ content_hash: 33fc2a588fbe8333
 # PASG: A Closed-Loop Framework for Automated Geometric Primitive Extraction and Semantic Anchoring in Robotic Manipulation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.05976](https://arxiv.org/abs/2508.05976)
-**Code**: None
+**arXiv**: [2508.05976](https://arxiv.org/abs/2508.05976)  
+**Code**: None  
 **Area**: Robotic Manipulation / Object Detection
 **Keywords**: Geometric Primitive Extraction, Semantic Anchoring, Robotic Manipulation, VLM, Closed-Loop Framework
 

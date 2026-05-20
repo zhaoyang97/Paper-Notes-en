@@ -18,8 +18,8 @@ content_hash: 916a082f697981db
 # Cross-Modal Emotion Transfer for Emotion Editing in Talking Face Video
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07786](https://arxiv.org/abs/2604.07786)
-**Code**: [https://chanhyeok-choi.github.io/C-MET/](https://chanhyeok-choi.github.io/C-MET/)
+**arXiv**: [2604.07786](https://arxiv.org/abs/2604.07786)  
+**Code**: [https://chanhyeok-choi.github.io/C-MET/](https://chanhyeok-choi.github.io/C-MET/)  
 **Area**: Image Generation / Talking Face
 **Keywords**: Emotion Editing, Cross-Modal Transfer, Talking Face Generation, Emotion Semantic Vector, Extended Emotions
 

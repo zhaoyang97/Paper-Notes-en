@@ -18,8 +18,8 @@ content_hash: 97c5d186bc435c5a
 # Null-Space Filtering for Data-Free Continual Model Merging: Preserving Stability, Promoting Plasticity
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21413](https://arxiv.org/abs/2509.21413)
-**Code**: [GitHub](https://github.com/zihuanqiu/NUFILT)
+**arXiv**: [2509.21413](https://arxiv.org/abs/2509.21413)  
+**Code**: [GitHub](https://github.com/zihuanqiu/NUFILT)  
 **Area**: Model Compression
 **Keywords**: Model Merging, Continual Learning, Null-Space Projection, Stability-Plasticity, Data-Free
 

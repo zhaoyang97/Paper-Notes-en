@@ -18,8 +18,8 @@ content_hash: 6f373660a1bcb66f
 # S3E: Self-Supervised State Estimation for Radar-Inertial System
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.25984](https://arxiv.org/abs/2509.25984)
-**Code**: Not released
+**arXiv**: [2509.25984](https://arxiv.org/abs/2509.25984)  
+**Code**: Not released  
 **Area**: 3D Vision
 **Keywords**: millimeter-wave radar, IMU fusion, self-supervised learning, state estimation, radar spectrum
 

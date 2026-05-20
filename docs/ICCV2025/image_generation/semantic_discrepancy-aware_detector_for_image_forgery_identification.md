@@ -18,8 +18,8 @@ content_hash: f411dd97d38f4190
 # Semantic Discrepancy-aware Detector for Image Forgery Identification
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.12341](https://arxiv.org/abs/2508.12341)
-**Code**: [GitHub](https://github.com/wzy1111111/SSD)
+**arXiv**: [2508.12341](https://arxiv.org/abs/2508.12341)  
+**Code**: [GitHub](https://github.com/wzy1111111/SSD)  
 **Area**: Image Generation
 **Keywords**: Image forgery detection, semantic concept space, reconstruction learning, CLIP, vision-language models
 

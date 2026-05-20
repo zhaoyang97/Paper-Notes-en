@@ -18,8 +18,8 @@ content_hash: 08606ffaf2560cf4
 # Query-Level Uncertainty in Large Language Models
 
 **Conference**: ICLR2026
-**arXiv**: [2506.09669](https://arxiv.org/abs/2506.09669)
-**Code**: [GitHub](https://github.com/tigerchen52/query_level_uncertainty)
+**arXiv**: [2506.09669](https://arxiv.org/abs/2506.09669)  
+**Code**: [GitHub](https://github.com/tigerchen52/query_level_uncertainty)  
 **Area**: Information Retrieval
 **Keywords**: uncertainty estimation, knowledge boundary, adaptive inference, training-free, internal confidence
 

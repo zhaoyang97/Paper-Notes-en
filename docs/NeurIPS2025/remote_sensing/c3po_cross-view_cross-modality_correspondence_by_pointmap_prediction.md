@@ -19,8 +19,8 @@ content_hash: 16d9bd6ca71be237
 # C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.18559](https://arxiv.org/abs/2511.18559)
-**Code**: To be confirmed
+**arXiv**: [2511.18559](https://arxiv.org/abs/2511.18559)  
+**Code**: To be confirmed  
 **Area**: Remote Sensing / Cross-View Cross-Modality Matching
 **Keywords**: cross-view correspondence, cross-modality, floor plan, pointmap, DUSt3R, structure-from-motion
 

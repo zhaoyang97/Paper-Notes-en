@@ -18,8 +18,8 @@ content_hash: c4bfc1d14135c485
 # Automating Complex Document Workflows via Stepwise and Rollback-Enabled Operations
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.04445](https://arxiv.org/abs/2512.04445)
-**Code**: None
+**arXiv**: [2512.04445](https://arxiv.org/abs/2512.04445)  
+**Code**: None  
 **Area**: LLM Agents
 **Keywords**: document workflows, multi-step operations, rollback mechanism, error recovery, AutoDW
 
@@ -44,30 +44,30 @@ AutoDW consists of three core modules: (1) **Stepwise Planning**—generating on
 
 1. **Stepwise Planning**
 
-   - Two-stage generation: first decompose the user instruction into atomic sub-instructions (each completable by a single API call), then generate the specific API call.
-   - Sub-instructions bridge the semantic gap between natural language and API functionality while enabling intent classification to narrow the API search space.
-   - Intent classification: a fine-tuned 178M BERT model classifies instructions into 8 categories (content creation / modification / table / image / chart / formatting / document structure / document lifecycle), achieving 98% test accuracy.
-   - Top-3 intents are retained rather than top-1, improving robustness to ambiguous instructions.
+    - Two-stage generation: first decompose the user instruction into atomic sub-instructions (each completable by a single API call), then generate the specific API call.
+    - Sub-instructions bridge the semantic gap between natural language and API functionality while enabling intent classification to narrow the API search space.
+    - Intent classification: a fine-tuned 178M BERT model classifies instructions into 8 categories (content creation / modification / table / image / chart / formatting / document structure / document lifecycle), achieving 98% test accuracy.
+    - Top-3 intents are retained rather than top-1, improving robustness to ambiguous instructions.
 
 2. **Document State Tracking**
 
-   - Document state is modeled as a 7-tuple: document metadata, paragraph elements, table elements, image elements, page layout, interactive elements, and document styles.
-   - After each API execution, the complete document state is programmatically extracted, providing precise change descriptions for subsequent verification.
-   - State parsing failures are treated as invalid executions and trigger API-level rollback, preventing further planning based on erroneous states.
+    - Document state is modeled as a 7-tuple: document metadata, paragraph elements, table elements, image elements, page layout, interactive elements, and document styles.
+    - After each API execution, the complete document state is programmatically extracted, providing precise change descriptions for subsequent verification.
+    - State parsing failures are treated as invalid executions and trigger API-level rollback, preventing further planning based on erroneous states.
 
 3. **Adaptive Rollback**
 
-   - **Change Analysis**: Compares document states before and after execution, detecting changes across six dimensions—structure, content, formatting, style, tables, and hyperlinks.
-   - **Alignment Verification**: An LLM verifier assesses whether the state changes align with the sub-instruction, returning a binary decision, confidence score, and explanation.
-   - **Parameter-Level Rollback**: Retains the selected API but updates its parameters based on the verifier's explanation.
-   - **API-Level Rollback**: Completely reselects the API; triggered when parameter-level rollback also fails.
-   - Single-round rollback (parameter-level → API-level) is the default; experiments confirm diminishing marginal returns beyond one round.
+    - **Change Analysis**: Compares document states before and after execution, detecting changes across six dimensions—structure, content, formatting, style, tables, and hyperlinks.
+    - **Alignment Verification**: An LLM verifier assesses whether the state changes align with the sub-instruction, returning a binary decision, confidence score, and explanation.
+    - **Parameter-Level Rollback**: Retains the selected API but updates its parameters based on the verifier's explanation.
+    - **API-Level Rollback**: Completely reselects the API; triggered when parameter-level rollback also fails.
+    - Single-round rollback (parameter-level → API-level) is the default; experiments confirm diminishing marginal returns beyond one round.
 
 4. **DWBench Benchmark Construction**
 
-   - 250 multi-turn sessions, 1,708 manually annotated instructions, and 74 APIs.
-   - Average of 34.8 API calls per session (range: 15–75) and 5.1 API calls per instruction.
-   - Correctness metric: an LLM judge evaluates semantic equivalence between the post-execution document state and the ground-truth state.
+    - 250 multi-turn sessions, 1,708 manually annotated instructions, and 74 APIs.
+    - Average of 34.8 API calls per session (range: 15–75) and 5.1 API calls per instruction.
+    - Correctness metric: an LLM judge evaluates semantic equivalence between the post-execution document state and the ground-truth state.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 59e7ea9415a51ba4
 # RAGFort: Dual-Path Defense Against Proprietary Knowledge Base Extraction in Retrieval-Augmented Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10128](https://arxiv.org/abs/2511.10128)
-**Code**: [https://github.com/happywinder/RAGFort](https://github.com/happywinder/RAGFort)
+**arXiv**: [2511.10128](https://arxiv.org/abs/2511.10128)  
+**Code**: [https://github.com/happywinder/RAGFort](https://github.com/happywinder/RAGFort)  
 **Area**: Information Retrieval
 **Keywords**: RAG Security, Knowledge Base Protection, Contrastive Reindexing, Cascade Generation, Dual-Path Defense
 

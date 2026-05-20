@@ -17,8 +17,8 @@ content_hash: 0966a530973d1769
 # Out of the Shadows: Exploring a Latent Space for Neural Network Verification
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.17854](https://arxiv.org/abs/2505.17854)
-**Code**: [CORA toolbox](https://cora.in.tum.de/) (MATLAB implementation)
+**arXiv**: [2505.17854](https://arxiv.org/abs/2505.17854)  
+**Code**: [CORA toolbox](https://cora.in.tum.de/) (MATLAB implementation)  
 **Area**: Neural Network Verification / Formal Methods
 **Keywords**: neural network verification, latent space, zonotope, branch-and-bound, reachability analysis
 
@@ -50,21 +50,21 @@ Given a neural network $\Phi$, an input set $X$, and an unsafe output set $U$, t
 
 1. **Latent Space and "Shadow" Theory**
 
-   - **Function**: Establish a mathematical link between the input and output spaces, enabling bidirectional transfer of constraints.
-   - **Mechanism**: A zonotope $Z = \langle c, G \rangle_Z$ is the image of the hypercube $B^q = [-1,1]^q$ under the affine map $c + G\beta$. When propagated through an affine layer $W_k h + b_k$, the zonotope becomes $\langle W_k c + b_k, W_k G \rangle_Z$—the generator matrix changes but the domain of $\beta$ does not. Non-linear layers (ReLU) introduce additional approximate error generators, extending the dimension of $\beta$ while preserving the first $q_0$ factors shared with the input. Consequently, for any input $x$ and corresponding output $y$, there exists a common $\beta$ such that $x = c_x + G_x \beta_{[q_0]}$ and $y = c_y + G_y \beta_{[q_\kappa]}$.
-   - **Design Motivation**: This property is a natural byproduct of zonotope propagation that has previously been overlooked. This paper is the first to systematically exploit it to establish a bridge between the input and output spaces.
+    - **Function**: Establish a mathematical link between the input and output spaces, enabling bidirectional transfer of constraints.
+    - **Mechanism**: A zonotope $Z = \langle c, G \rangle_Z$ is the image of the hypercube $B^q = [-1,1]^q$ under the affine map $c + G\beta$. When propagated through an affine layer $W_k h + b_k$, the zonotope becomes $\langle W_k c + b_k, W_k G \rangle_Z$—the generator matrix changes but the domain of $\beta$ does not. Non-linear layers (ReLU) introduce additional approximate error generators, extending the dimension of $\beta$ while preserving the first $q_0$ factors shared with the input. Consequently, for any input $x$ and corresponding output $y$, there exists a common $\beta$ such that $x = c_x + G_x \beta_{[q_0]}$ and $y = c_y + G_y \beta_{[q_\kappa]}$.
+    - **Design Motivation**: This property is a natural byproduct of zonotope propagation that has previously been overlooked. This paper is the first to systematically exploit it to establish a bridge between the input and output spaces.
 
 2. **Specification-Driven Input Refinement (Proposition 2)**
 
-   - **Function**: Convert unsafe output constraints $U = \{y \mid Ay \leq b\}$ into constraints on $\beta$ in the input space, $C\beta \leq d$, yielding a refined input set $X|_{C\leq d} \subseteq X$.
-   - **Mechanism**: Since $y = c_y + G_y \beta$, the unsafe condition $Ay \leq b$ can be rewritten as a linear constraint on $\beta$. Because the dimension of $\beta$ satisfies $q_\kappa > q_0$ (due to additional error generators from ReLU approximation), taking worst-case upper bounds over the extra dimensions yields constraints involving only the first $q_0$ factors: $C = AG_{y(\cdot,[q_0])}$, $d = b - Ac_y + |AG_{y(\cdot,[q_\kappa]\setminus[q_0])}| \mathbf{1}$. This defines a constrained zonotope $X|_{C\leq d}$ that strictly encloses all inputs that may produce unsafe outputs, while excluding safe inputs. The process is iterative: the refined set is re-propagated to obtain a tighter output enclosure, which is then used for further refinement, until verification succeeds or no further progress can be made.
-   - **Design Motivation**: Conventional methods branch "blindly" across the input space; this approach instead performs "targeted" pruning guided by the output specification, substantially reducing the number of branches required.
+    - **Function**: Convert unsafe output constraints $U = \{y \mid Ay \leq b\}$ into constraints on $\beta$ in the input space, $C\beta \leq d$, yielding a refined input set $X|_{C\leq d} \subseteq X$.
+    - **Mechanism**: Since $y = c_y + G_y \beta$, the unsafe condition $Ay \leq b$ can be rewritten as a linear constraint on $\beta$. Because the dimension of $\beta$ satisfies $q_\kappa > q_0$ (due to additional error generators from ReLU approximation), taking worst-case upper bounds over the extra dimensions yields constraints involving only the first $q_0$ factors: $C = AG_{y(\cdot,[q_0])}$, $d = b - Ac_y + |AG_{y(\cdot,[q_\kappa]\setminus[q_0])}| \mathbf{1}$. This defines a constrained zonotope $X|_{C\leq d}$ that strictly encloses all inputs that may produce unsafe outputs, while excluding safe inputs. The process is iterative: the refined set is re-propagated to obtain a tighter output enclosure, which is then used for further refinement, until verification succeeds or no further progress can be made.
+    - **Design Motivation**: Conventional methods branch "blindly" across the input space; this approach instead performs "targeted" pruning guided by the output specification, substantially reducing the number of branches required.
 
 3. **Latent-Space-Based Set Falsification**
 
-   - **Function**: Efficiently search for counterexamples using the latent space when verification is inconclusive.
-   - **Mechanism**: For each half-space normal vector $A_{(i,\cdot)}$ of the unsafe set, compute the boundary factor $\tilde{\beta}_i = \text{sign}(A_{(i,\cdot)} G_y)$ and the corresponding input $\tilde{x} = c_x + G_x \tilde{\beta}_{[q_0]}$. If $\Phi(\tilde{x}) \in U$, a counterexample has been found. This approach requires no gradient computation and constitutes a purely set-theoretic adversarial attack.
-   - **Design Motivation**: Compared to gradient-based methods such as FGSM, generating counterexamples directly from the set geometry is more efficient and avoids gradient vanishing issues.
+    - **Function**: Efficiently search for counterexamples using the latent space when verification is inconclusive.
+    - **Mechanism**: For each half-space normal vector $A_{(i,\cdot)}$ of the unsafe set, compute the boundary factor $\tilde{\beta}_i = \text{sign}(A_{(i,\cdot)} G_y)$ and the corresponding input $\tilde{x} = c_x + G_x \tilde{\beta}_{[q_0]}$. If $\Phi(\tilde{x}) \in U$, a counterexample has been found. This approach requires no gradient computation and constitutes a purely set-theoretic adversarial attack.
+    - **Design Motivation**: Compared to gradient-based methods such as FGSM, generating counterexamples directly from the set geometry is more efficient and avoids gradient vanishing issues.
 
 ### Loss & Training
 

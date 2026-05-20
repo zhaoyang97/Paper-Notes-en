@@ -18,8 +18,8 @@ content_hash: 20e6995c5441723b
 # Grounding and Enhancing Informativeness and Utility in Dataset Distillation
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21296](https://arxiv.org/abs/2601.21296)
-**Code**: None
+**arXiv**: [2601.21296](https://arxiv.org/abs/2601.21296)  
+**Code**: None  
 **Area**: Dataset Distillation
 **Keywords**: Dataset Distillation, Shapley Value, Gradient Norm, Informativeness, Utility
 

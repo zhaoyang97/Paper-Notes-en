@@ -18,8 +18,8 @@ content_hash: b0593b2b5e6f43fb
 # Train with Perturbation, Infer after Merging: A Two-Stage Framework for Continual Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22389](https://arxiv.org/abs/2505.22389)
-**Code**: [github.com/qhmiao/P-M-for-Continual-Learning](https://github.com/qhmiao/P-M-for-Continual-Learning)
+**arXiv**: [2505.22389](https://arxiv.org/abs/2505.22389)  
+**Code**: [github.com/qhmiao/P-M-for-Continual-Learning](https://github.com/qhmiao/P-M-for-Continual-Learning)  
 **Area**: Model Compression
 **Keywords**: Continual Learning, Model Merging, Task Vector, Parameter Perturbation, LoRA
 

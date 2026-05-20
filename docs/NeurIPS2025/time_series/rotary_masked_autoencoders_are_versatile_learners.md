@@ -18,8 +18,8 @@ content_hash: e6a5c358a87ee65c
 # Rotary Masked Autoencoders are Versatile Learners
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20535](https://arxiv.org/abs/2505.20535)
-**Code**: [GitHub](https://chromeilion.github.io/RoMAE-Website/)
+**arXiv**: [2505.20535](https://arxiv.org/abs/2505.20535)  
+**Code**: [GitHub](https://chromeilion.github.io/RoMAE-Website/)  
 **Area**: Time Series
 **Keywords**: Masked Autoencoder, RoPE, Irregular Time Series, Multimodality, Self-Supervised Pretraining
 

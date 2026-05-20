@@ -18,8 +18,8 @@ content_hash: 95dd1406d1366efc
 # Learning Interpretable Queries for Explainable Image Classification with Information Pursuit
 
 **Conference**: ICCV 2025
-**arXiv**: [2312.11548](https://arxiv.org/abs/2312.11548)
-**Code**: None
+**arXiv**: [2312.11548](https://arxiv.org/abs/2312.11548)  
+**Code**: None  
 **Area**: Explainable AI / Image Classification
 **Keywords**: Explainable classification, Information Pursuit, sparse dictionary learning, CLIP, query dictionary optimization
 

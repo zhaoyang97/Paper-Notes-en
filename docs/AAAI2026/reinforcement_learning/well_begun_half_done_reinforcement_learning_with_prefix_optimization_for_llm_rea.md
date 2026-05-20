@@ -18,8 +18,8 @@ content_hash: bcb330e004a31f99
 # Well Begun, Half Done: Reinforcement Learning with Prefix Optimization for LLM Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.15274](https://arxiv.org/abs/2512.15274)
-**Code**: None
+**arXiv**: [2512.15274](https://arxiv.org/abs/2512.15274)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: LLM Reasoning, RLVR, Prefix Optimization, Path Dependence, GRPO
 

@@ -18,8 +18,8 @@ content_hash: 247211ee5a04a471
 # VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation
 
 **Conference**: CVPR2026
-**arXiv**: [2603.12918](https://arxiv.org/abs/2603.12918)
-**Code**: To be confirmed
+**arXiv**: [2603.12918](https://arxiv.org/abs/2603.12918)  
+**Code**: To be confirmed  
 **Area**: Autonomous Driving
 **Keywords**: cross-view pose estimation, view-invariant representation, polar transformation, positional attention, autonomous driving localization
 

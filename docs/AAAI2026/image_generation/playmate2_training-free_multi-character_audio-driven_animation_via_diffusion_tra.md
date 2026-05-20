@@ -18,8 +18,8 @@ content_hash: b2754ae753e1a1ec
 # Playmate2: Training-Free Multi-Character Audio-Driven Animation via Diffusion Transformer with Reward Feedback
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.12089](https://arxiv.org/abs/2510.12089)
-**Code**: [https://playmate111.github.io/Playmate2/](https://playmate111.github.io/Playmate2/)
+**arXiv**: [2510.12089](https://arxiv.org/abs/2510.12089)  
+**Code**: [https://playmate111.github.io/Playmate2/](https://playmate111.github.io/Playmate2/)  
 **Area**: Image Generation
 **Keywords**: Audio-driven animation, multi-character animation, Diffusion Transformer, training-free inference, DPO
 

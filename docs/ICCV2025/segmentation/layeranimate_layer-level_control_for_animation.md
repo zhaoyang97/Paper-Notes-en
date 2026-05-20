@@ -18,8 +18,8 @@ content_hash: df8b76c92159f48d
 # LayerAnimate: Layer-level Control for Animation
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.08295](https://arxiv.org/abs/2501.08295)
-**Code**: [https://layeranimate.github.io](https://layeranimate.github.io)
+**arXiv**: [2501.08295](https://arxiv.org/abs/2501.08295)  
+**Code**: [https://layeranimate.github.io](https://layeranimate.github.io)  
 **Area**: Image Segmentation
 **Keywords**: Animation Video Generation, Layer Control, Video Diffusion Models, Data Curation, ControlNet
 

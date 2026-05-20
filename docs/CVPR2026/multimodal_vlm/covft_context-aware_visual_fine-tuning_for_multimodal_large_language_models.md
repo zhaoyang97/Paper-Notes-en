@@ -18,8 +18,8 @@ content_hash: b194e7bf1f706ddd
 # CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21077](https://arxiv.org/abs/2603.21077)
-**Code**: [https://github.com/weeknan/CoVFT](https://github.com/weeknan/CoVFT)
+**arXiv**: [2603.21077](https://arxiv.org/abs/2603.21077)  
+**Code**: [https://github.com/weeknan/CoVFT](https://github.com/weeknan/CoVFT)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal large language models, visual fine-tuning, mixture of experts, context-aware, visual preference conflict
 

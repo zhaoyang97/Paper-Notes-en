@@ -18,8 +18,8 @@ content_hash: 98b14a8b411669d7
 # BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22099](https://arxiv.org/abs/2506.22099)
-**Code**: [github.com/fudan-zvg/BezierGS](https://github.com/fudan-zvg/BezierGS)
+**arXiv**: [2506.22099](https://arxiv.org/abs/2506.22099)  
+**Code**: [github.com/fudan-zvg/BezierGS](https://github.com/fudan-zvg/BezierGS)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, dynamic scene reconstruction, Bézier curve, novel view synthesis, autonomous driving
 

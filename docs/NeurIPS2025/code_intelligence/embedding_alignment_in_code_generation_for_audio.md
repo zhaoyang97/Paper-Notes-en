@@ -18,8 +18,8 @@ content_hash: 2ac13abfbad20fbe
 # Embedding Alignment in Code Generation for Audio
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.05473](https://arxiv.org/abs/2508.05473)
-**Code**: None
+**arXiv**: [2508.05473](https://arxiv.org/abs/2508.05473)  
+**Code**: None  
 **Area**: Code Intelligence
 **Keywords**: code generation, audio embedding, contrastive learning, cross-modal alignment, live-coding
 

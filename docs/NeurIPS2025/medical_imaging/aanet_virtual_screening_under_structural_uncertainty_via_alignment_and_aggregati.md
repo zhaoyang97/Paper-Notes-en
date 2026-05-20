@@ -18,8 +18,8 @@ content_hash: 4a2afe511c289c54
 # AANet: Virtual Screening under Structural Uncertainty via Alignment and Aggregation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05768](https://arxiv.org/abs/2506.05768)
-**Code**: [GitHub](https://github.com/Wiley-Z/AANet)
+**arXiv**: [2506.05768](https://arxiv.org/abs/2506.05768)  
+**Code**: [GitHub](https://github.com/Wiley-Z/AANet)  
 **Area**: Medical Imaging / AI for Science
 **Keywords**: Virtual screening, drug discovery, structural uncertainty, contrastive learning, protein binding site
 

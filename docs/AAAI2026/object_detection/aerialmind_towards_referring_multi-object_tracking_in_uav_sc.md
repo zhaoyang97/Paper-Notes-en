@@ -18,8 +18,8 @@ content_hash: a4e9f403cc425f24
 # AerialMind: Towards Referring Multi-Object Tracking in UAV Scenarios
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.21053v2](https://arxiv.org/abs/2511.21053v2)
-**Code**: [Available (dataset)](https://github.com/shawnliang420/AerialMind)
+**arXiv**: [2511.21053v2](https://arxiv.org/abs/2511.21053v2)  
+**Code**: [Available (dataset)](https://github.com/shawnliang420/AerialMind)  
 **Area**: Object Detection / Multi-Object Tracking / Vision-Language
 **Keywords**: RMOT, UAV, vision-language fusion, multi-object tracking, benchmark dataset
 

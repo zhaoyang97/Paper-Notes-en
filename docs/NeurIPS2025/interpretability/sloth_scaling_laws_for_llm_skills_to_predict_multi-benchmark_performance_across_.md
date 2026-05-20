@@ -18,8 +18,8 @@ content_hash: 9c9a2998845c10d9
 # Sloth: Scaling Laws for LLM Skills to Predict Multi-Benchmark Performance Across Families
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.06540](https://arxiv.org/abs/2412.06540)
-**Code**: [https://github.com/felipemaiapolo/sloth](https://github.com/felipemaiapolo/sloth)
+**arXiv**: [2412.06540](https://arxiv.org/abs/2412.06540)  
+**Code**: [https://github.com/felipemaiapolo/sloth](https://github.com/felipemaiapolo/sloth)  
 **Area**: Interpretability
 **Keywords**: scaling laws, LLM benchmarks, latent skills, factor analysis, performance prediction
 

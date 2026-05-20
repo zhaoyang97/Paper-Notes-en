@@ -18,8 +18,8 @@ content_hash: ac93c9195acaa44c
 # Fantastic Features and Where to Find Them: A Probing Method to Combine Features from Multiple Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.01405](https://arxiv.org/abs/2512.01405)
-**Code**: Available (bramtoula.github.io/combo)
+**arXiv**: [2512.01405](https://arxiv.org/abs/2512.01405)  
+**Code**: Available (bramtoula.github.io/combo)  
 **Area**: Interpretability
 **Keywords**: foundation model, probing, multi-backbone, feature combination, model selection
 

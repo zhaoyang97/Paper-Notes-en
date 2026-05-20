@@ -18,8 +18,8 @@ content_hash: 196479b6aa855ade
 # Constrained Network Slice Assignment via Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.00040](https://arxiv.org/abs/2512.00040)
-**Code**: None
+**arXiv**: [2512.00040](https://arxiv.org/abs/2512.00040)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: Network slicing, 5G resource allocation, LLM, integer programming, constrained optimization
 

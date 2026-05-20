@@ -19,8 +19,8 @@ content_hash: 3b2fbf23442b3601
 # Scaling Sequence-to-Sequence Generative Neural Rendering
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04236](https://arxiv.org/abs/2510.04236)
-**Code**: [Project Page](https://shikun.io/projects/kaleido)
+**arXiv**: [2510.04236](https://arxiv.org/abs/2510.04236)  
+**Code**: [Project Page](https://shikun.io/projects/kaleido)  
 **Area**: 3D Vision
 **Keywords**: Neural Rendering, Novel View Synthesis, Rectified Flow Transformer, Masked Autoregression, Unified Positional Encoding, Video-3D Unification
 

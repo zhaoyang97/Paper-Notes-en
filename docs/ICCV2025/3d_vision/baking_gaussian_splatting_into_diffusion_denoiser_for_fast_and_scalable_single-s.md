@@ -18,8 +18,8 @@ content_hash: e4d86181f41e8db9
 # Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation and Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.14384](https://arxiv.org/abs/2411.14384)
-**Code**: [https://caiyuanhao1998.github.io/project/DiffusionGS/](https://caiyuanhao1998.github.io/project/DiffusionGS/)
+**arXiv**: [2411.14384](https://arxiv.org/abs/2411.14384)  
+**Code**: [https://caiyuanhao1998.github.io/project/DiffusionGS/](https://caiyuanhao1998.github.io/project/DiffusionGS/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Diffusion Models, Single-view 3D Generation, Scene Reconstruction, Mixed Training
 

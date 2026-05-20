@@ -18,8 +18,8 @@ content_hash: b3f1a4b5eccc6b28
 # OmniGaze: Reward-inspired Generalizable Gaze Estimation in the Wild
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.13660](https://arxiv.org/abs/2510.13660)
-**Code**: [GitHub](https://github.com/quhongyu/OmniGaze)
+**arXiv**: [2510.13660](https://arxiv.org/abs/2510.13660)  
+**Code**: [GitHub](https://github.com/quhongyu/OmniGaze)  
 **Area**: Human Understanding
 **Keywords**: Gaze estimation, semi-supervised learning, pseudo-labels, reward model, cross-domain generalization
 
@@ -49,9 +49,9 @@ OmniGaze follows a standard three-stage semi-supervised training pipeline: (1) t
 
 1. **Reward model with multimodal cue fusion**: The reward model $h_G$ assesses pseudo-label reliability from three perspectives:
 
-   - **Visual cues**: A CLIP visual encoder extracts visual embeddings $\boldsymbol{f}_k^v$ from input face images.
-   - **Semantic cues**: An MLLM (InstructBLIP) is queried with "where is this person looking in 3D space?" to obtain a natural language description, which is encoded via the CLIP text encoder into $\boldsymbol{f}_k^t$.
-   - **Geometric cues**: The yaw/pitch angles of the pseudo-label are converted into a 3D direction vector.
+    - **Visual cues**: A CLIP visual encoder extracts visual embeddings $\boldsymbol{f}_k^v$ from input face images.
+    - **Semantic cues**: An MLLM (InstructBLIP) is queried with "where is this person looking in 3D space?" to obtain a natural language description, which is encoded via the CLIP text encoder into $\boldsymbol{f}_k^t$.
+    - **Geometric cues**: The yaw/pitch angles of the pseudo-label are converted into a 3D direction vector.
 
    Visual and semantic cues are fused via cross-attention into a semantics-aware gaze representation:
    $\hat{\boldsymbol{f}}_k^v = \text{AvgPool}(\text{LN}(\text{CrossAttn}(\boldsymbol{f}_k^v, \boldsymbol{f}_k^t)))$

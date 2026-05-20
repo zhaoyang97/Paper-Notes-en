@@ -18,8 +18,8 @@ content_hash: dd2c8fcff5f83152
 # FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.07505](https://arxiv.org/abs/2511.07505)
-**Code**: None
+**arXiv**: [2511.07505](https://arxiv.org/abs/2511.07505)  
+**Code**: None  
 **Area**: AI Security
 **Keywords**: Federated Learning, Privacy Preservation, Data Deduplication, Sample Weighting, Secure Multi-Party Computation
 

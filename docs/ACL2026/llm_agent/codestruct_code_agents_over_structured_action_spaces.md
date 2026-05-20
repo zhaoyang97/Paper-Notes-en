@@ -18,8 +18,8 @@ content_hash: 0f4fff05c1e5ea07
 # CodeStruct: Code Agents over Structured Action Spaces
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05407](https://arxiv.org/abs/2604.05407)
-**Code**: [https://github.com/amazon-science/CodeStruct](https://github.com/amazon-science/CodeStruct)
+**arXiv**: [2604.05407](https://arxiv.org/abs/2604.05407)  
+**Code**: [https://github.com/amazon-science/CodeStruct](https://github.com/amazon-science/CodeStruct)  
 **Area**: LLM Agent / Code Intelligence
 **Keywords**: Code Agent, AST-based Structured Actions, Code Editing, SWE-Bench, Action Space
 

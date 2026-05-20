@@ -18,8 +18,8 @@ content_hash: 2d788b9352a79e41
 # Joint and Streamwise Distributed MIMO Satellite Communications with Multi-Antenna Ground Users
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12914](https://arxiv.org/abs/2603.12914)
-**Code**: None
+**arXiv**: [2603.12914](https://arxiv.org/abs/2603.12914)  
+**Code**: None  
 **Area**: Remote Sensing
 **Keywords**: Distributed MIMO, LEO satellite communications, multi-antenna users, non-coherent joint transmission, fronthaul overhead optimization
 

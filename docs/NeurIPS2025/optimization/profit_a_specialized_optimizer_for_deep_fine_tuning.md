@@ -18,8 +18,8 @@ content_hash: 6ca0221b3d9af928
 # PROFIT: A Specialized Optimizer for Deep Fine Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.01930](https://arxiv.org/abs/2412.01930)
-**Code**: Unavailable
+**arXiv**: [2412.01930](https://arxiv.org/abs/2412.01930)  
+**Code**: Unavailable  
 **Area**: Optimization
 **Keywords**: Fine-tuning optimizer, catastrophic forgetting, gradient orthogonalization, multi-task learning, proximal fine-tuning
 

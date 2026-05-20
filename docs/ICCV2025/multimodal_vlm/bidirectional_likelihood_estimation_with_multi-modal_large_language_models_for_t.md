@@ -18,8 +18,8 @@ content_hash: 04c1f900cc3f7a3e
 # Bidirectional Likelihood Estimation with Multi-Modal Large Language Models for Text-Video Retrieval
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.23284](https://arxiv.org/abs/2507.23284)
-**Code**: [github.com/mlvlab/BLiM](https://github.com/mlvlab/BLiM)
+**arXiv**: [2507.23284](https://arxiv.org/abs/2507.23284)  
+**Code**: [github.com/mlvlab/BLiM](https://github.com/mlvlab/BLiM)  
 **Area**: Multimodal Learning / Video Retrieval
 **Keywords**: Text-video retrieval, multimodal large language models, bidirectional likelihood estimation, candidate prior bias, score calibration
 

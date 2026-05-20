@@ -18,8 +18,8 @@ content_hash: 93cefbf47fa06837
 # HeSS: Head Sensitivity Score for Sparsity Redistribution in VGGT
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25336](https://arxiv.org/abs/2603.25336)
-**Code**: [https://github.com/libary753/HeSS](https://github.com/libary753/HeSS)
+**arXiv**: [2603.25336](https://arxiv.org/abs/2603.25336)  
+**Code**: [https://github.com/libary753/HeSS](https://github.com/libary753/HeSS)  
 **Area**: LLM Evaluation
 **Keywords**: Attention Sparsification, VGGT, Head Sensitivity, Fisher Information Matrix, 3D Reconstruction Acceleration
 
@@ -51,27 +51,27 @@ HeSS is a two-stage pipeline: (1) **Calibration stage**: HeSS scores are compute
 
 1. **Camera Pose Error $e_{\text{cam}}$**:
 
-   - **Function**: Serves as the first error signal for HeSS, evaluating the model's understanding of global scene geometry.
-   - **Mechanism**: The Umeyama + ICP algorithm first aligns predicted and ground-truth point clouds to obtain a transformation matrix $\mathbf{H}$ (with stop-gradient applied to $\mathbf{H}$); the MSE between the transformed predicted camera positions $\hat{\mathbf{t}}_i$ and ground-truth positions $\mathbf{t}_i$ is then computed: $e_{\text{cam}} = \frac{1}{2N}\sum_{i=1}^N |\text{sg}(\mathbf{H})\hat{\mathbf{t}}_i - \mathbf{t}_i|_2^2$
-   - **Design Motivation**: Camera pose is the geometric scaffold for all downstream predictions in 3D vision. Stop-gradient on $\mathbf{H}$ prevents gradients from flowing through the auxiliary alignment step.
+    - **Function**: Serves as the first error signal for HeSS, evaluating the model's understanding of global scene geometry.
+    - **Mechanism**: The Umeyama + ICP algorithm first aligns predicted and ground-truth point clouds to obtain a transformation matrix $\mathbf{H}$ (with stop-gradient applied to $\mathbf{H}$); the MSE between the transformed predicted camera positions $\hat{\mathbf{t}}_i$ and ground-truth positions $\mathbf{t}_i$ is then computed: $e_{\text{cam}} = \frac{1}{2N}\sum_{i=1}^N |\text{sg}(\mathbf{H})\hat{\mathbf{t}}_i - \mathbf{t}_i|_2^2$
+    - **Design Motivation**: Camera pose is the geometric scaffold for all downstream predictions in 3D vision. Stop-gradient on $\mathbf{H}$ prevents gradients from flowing through the auxiliary alignment step.
 
 2. **Point Cloud Error $e_{\text{pc}}$**:
 
-   - **Function**: Complements $e_{\text{cam}}$ by evaluating fine-grained local geometry.
-   - **Mechanism**: Inlier set $\mathcal{I}$ is selected using confidence threshold $\epsilon = 0.05$ (predicted points whose nearest distance to the ground-truth point cloud is $< \epsilon$); the average nearest-point distance over inliers is then computed: $e_{\text{pc}} = \frac{1}{2|\mathcal{I}|}\sum_{j \in \mathcal{I}} \min_{\mathbf{p} \in P}\|\text{sg}(\mathbf{H})\hat{\mathbf{p}}_j - \mathbf{p}\|_2^2$
-   - **Design Motivation**: $e_{\text{cam}}$ reflects only global geometric consistency and is insensitive to per-pixel fine-grained structure. The point cloud error requires the model to precisely regress each pixel to its 3D position, capturing local geometric detail.
+    - **Function**: Complements $e_{\text{cam}}$ by evaluating fine-grained local geometry.
+    - **Mechanism**: Inlier set $\mathcal{I}$ is selected using confidence threshold $\epsilon = 0.05$ (predicted points whose nearest distance to the ground-truth point cloud is $< \epsilon$); the average nearest-point distance over inliers is then computed: $e_{\text{pc}} = \frac{1}{2|\mathcal{I}|}\sum_{j \in \mathcal{I}} \min_{\mathbf{p} \in P}\|\text{sg}(\mathbf{H})\hat{\mathbf{p}}_j - \mathbf{p}\|_2^2$
+    - **Design Motivation**: $e_{\text{cam}}$ reflects only global geometric consistency and is insensitive to per-pixel fine-grained structure. The point cloud error requires the model to precisely regress each pixel to its 3D position, capturing local geometric detail.
 
 3. **HeSS Computation**:
 
-   - **Function**: Merges the sensitivity from both error signals into a unified per-head score.
-   - **Mechanism**: For each head $h$, the Fisher Information Matrices $\mathbf{F}_{\text{cam}}^h$ and $\mathbf{F}_{\text{pc}}^h$ are computed with respect to the Query projection weight $W_Q^h$; their traces are taken and normalized across all heads within the same layer: $\text{HeSS}_{\text{cam}}(h) = \frac{\text{tr}(\mathbf{F}_{\text{cam}}^h)}{\sum_h \text{tr}(\mathbf{F}_{\text{cam}}^h)}$. The final score is $\text{HeSS}(h) = \lambda \cdot \text{HeSS}_{\text{cam}}(h) + (1-\lambda) \cdot \text{HeSS}_{\text{pc}}(h)$, with default $\lambda = 0.5$.
-   - **Design Motivation**: The FIM is a tractable approximation of the Hessian, estimating second-order information via the outer product of first-order gradients. $W_Q^h$ is chosen over $W_K^h$ or $W_V^h$ because experiments show that the Hessian of $W_Q$ yields more reliable sensitivity estimates. The two error signals are complementary—$e_{\text{cam}}$ is more important at low sparsity while $e_{\text{pc}}$ is more critical at high sparsity.
+    - **Function**: Merges the sensitivity from both error signals into a unified per-head score.
+    - **Mechanism**: For each head $h$, the Fisher Information Matrices $\mathbf{F}_{\text{cam}}^h$ and $\mathbf{F}_{\text{pc}}^h$ are computed with respect to the Query projection weight $W_Q^h$; their traces are taken and normalized across all heads within the same layer: $\text{HeSS}_{\text{cam}}(h) = \frac{\text{tr}(\mathbf{F}_{\text{cam}}^h)}{\sum_h \text{tr}(\mathbf{F}_{\text{cam}}^h)}$. The final score is $\text{HeSS}(h) = \lambda \cdot \text{HeSS}_{\text{cam}}(h) + (1-\lambda) \cdot \text{HeSS}_{\text{pc}}(h)$, with default $\lambda = 0.5$.
+    - **Design Motivation**: The FIM is a tractable approximation of the Hessian, estimating second-order information via the outer product of first-order gradients. $W_Q^h$ is chosen over $W_K^h$ or $W_V^h$ because experiments show that the Hessian of $W_Q$ yields more reliable sensitivity estimates. The two error signals are complementary—$e_{\text{cam}}$ is more important at low sparsity while $e_{\text{pc}}$ is more critical at high sparsity.
 
 4. **HeSS-Guided Budget Redistribution**:
 
-   - **Function**: Redistributes the total attention budget across heads according to HeSS scores.
-   - **Mechanism**: A three-step procedure — (a) compute the total budget $C_{\text{total}} = \sum_n c_{h_n}$ (sum of baseline budgets across all heads); (b) compute the ideal budget proportional to HeSS: $c_h' = C_{\text{total}} \cdot w_h$, where $w_h = \text{HeSS}(h) / \sum_n \text{HeSS}(h_n)$; (c) apply an iterative water-filling algorithm to handle overflow — if any head's ideal budget exceeds its maximum capacity $C_{\max}$, it is clamped to $C_{\max}$ and the excess is redistributed proportionally (by HeSS weight) to remaining uncapped heads, repeating until no overflow remains.
-   - **Design Motivation**: Naive proportional allocation may assign some highly sensitive heads more budget than their maximum available block count. Iterative capping ensures structural feasibility of the budget allocation.
+    - **Function**: Redistributes the total attention budget across heads according to HeSS scores.
+    - **Mechanism**: A three-step procedure — (a) compute the total budget $C_{\text{total}} = \sum_n c_{h_n}$ (sum of baseline budgets across all heads); (b) compute the ideal budget proportional to HeSS: $c_h' = C_{\text{total}} \cdot w_h$, where $w_h = \text{HeSS}(h) / \sum_n \text{HeSS}(h_n)$; (c) apply an iterative water-filling algorithm to handle overflow — if any head's ideal budget exceeds its maximum capacity $C_{\max}$, it is clamped to $C_{\max}$ and the excess is redistributed proportionally (by HeSS weight) to remaining uncapped heads, repeating until no overflow remains.
+    - **Design Motivation**: Naive proportional allocation may assign some highly sensitive heads more budget than their maximum available block count. Iterative capping ensures structural feasibility of the budget allocation.
 
 ### Loss & Training
 

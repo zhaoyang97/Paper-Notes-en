@@ -19,8 +19,8 @@ content_hash: f928dcfe8848c9d9
 # A Mixed Diet Makes DINO An Omnivorous Vision Encoder
 
 **Conference**: CVPR2026
-**arXiv**: [2602.24181](https://arxiv.org/abs/2602.24181)
-**Code**: To be confirmed
+**arXiv**: [2602.24181](https://arxiv.org/abs/2602.24181)  
+**Code**: To be confirmed  
 **Area**: Semantic Segmentation
 **Keywords**: Cross-modal alignment, DINOv2, vision foundation model, modality-agnostic encoder, parameter-efficient fine-tuning, contrastive learning
 

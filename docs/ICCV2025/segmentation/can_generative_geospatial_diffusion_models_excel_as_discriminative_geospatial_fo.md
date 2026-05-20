@@ -18,8 +18,8 @@ content_hash: 34e1fca86dd83fa2
 # Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07890](https://arxiv.org/abs/2503.07890)
-**Code**: [https://github.com/yurujaja/SatDiFuser](https://github.com/yurujaja/SatDiFuser)
+**arXiv**: [2503.07890](https://arxiv.org/abs/2503.07890)  
+**Code**: [https://github.com/yurujaja/SatDiFuser](https://github.com/yurujaja/SatDiFuser)  
 **Area**: Semantic Segmentation / Remote Sensing
 **Keywords**: Remote Sensing Foundation Models, Diffusion Models, Feature Fusion, Self-Supervised Learning, Satellite Imagery
 

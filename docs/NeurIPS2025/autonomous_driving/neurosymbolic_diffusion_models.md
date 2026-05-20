@@ -17,8 +17,8 @@ content_hash: a6ed585a1a12573b
 # Neurosymbolic Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13138](https://arxiv.org/abs/2505.13138)
-**Code**: None
+**arXiv**: [2505.13138](https://arxiv.org/abs/2505.13138)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: neurosymbolic, diffusion models, discrete diffusion, visual reasoning, autonomous driving
 

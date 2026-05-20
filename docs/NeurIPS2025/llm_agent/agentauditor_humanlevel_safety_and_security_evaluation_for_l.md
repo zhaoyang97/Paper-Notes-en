@@ -19,8 +19,8 @@ content_hash: 4a6460c8a5811659
 # AgentAuditor: Human-Level Safety and Security Evaluation for LLM Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.00641](https://arxiv.org/abs/2506.00641)
-**Code**: [GitHub](https://github.com/Astarojth/AgentAuditor-ASSEBench)
+**arXiv**: [2506.00641](https://arxiv.org/abs/2506.00641)  
+**Code**: [GitHub](https://github.com/Astarojth/AgentAuditor-ASSEBench)  
 **Area**: LLM Agent / AI Safety
 **Keywords**: Agent Safety Evaluation, LLM-as-Judge, Memory-Augmented Reasoning, RAG, Safety Benchmark, ASSEBench
 

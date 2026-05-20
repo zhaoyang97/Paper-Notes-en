@@ -18,8 +18,8 @@ content_hash: 529cb38c05ea14c7
 # MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20872](https://arxiv.org/abs/2510.20872)
-**Code**: [GitHub](https://github.com/LamNgo1/mobo-osd)
+**arXiv**: [2510.20872](https://arxiv.org/abs/2510.20872)  
+**Code**: [GitHub](https://github.com/LamNgo1/mobo-osd)  
 **Area**: Optimization
 **Keywords**: Multi-objective Bayesian optimization, Pareto front, orthogonal search directions, hypervolume improvement, batch optimization
 

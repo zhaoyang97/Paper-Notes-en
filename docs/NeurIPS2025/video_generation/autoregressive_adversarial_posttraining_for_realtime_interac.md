@@ -18,8 +18,8 @@ content_hash: 3cce3fee8553232f
 # Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.09350](https://arxiv.org/abs/2506.09350)
-**Code**: [https://seaweed-apt.com/2](https://seaweed-apt.com/2)
+**arXiv**: [2506.09350](https://arxiv.org/abs/2506.09350)  
+**Code**: [https://seaweed-apt.com/2](https://seaweed-apt.com/2)  
 **Area**: Diffusion Models / Video Generation
 **Keywords**: adversarial training, autoregressive video generation, real-time interaction, one-step generation, KV cache
 

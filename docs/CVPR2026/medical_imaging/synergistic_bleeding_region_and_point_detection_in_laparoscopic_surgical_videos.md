@@ -18,8 +18,8 @@ content_hash: c6a90144d3bb59e5
 # Synergistic Bleeding Region and Point Detection in Laparoscopic Surgical Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.22174](https://arxiv.org/abs/2503.22174)
-**Code**: [GitHub](https://github.com/PJLallen/SurgBlood)
+**arXiv**: [2503.22174](https://arxiv.org/abs/2503.22174)  
+**Code**: [GitHub](https://github.com/PJLallen/SurgBlood)  
 **Area**: Medical Imaging
 **Keywords**: bleeding detection, laparoscopic surgery, SAM2, dual-task synergy, optical flow
 

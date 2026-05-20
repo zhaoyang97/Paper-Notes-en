@@ -18,8 +18,8 @@ content_hash: 74003e88d0caf1e8
 # Towards Provable Emergence of In-Context Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.18389](https://arxiv.org/abs/2509.18389)
-**Code**: None
+**arXiv**: [2509.18389](https://arxiv.org/abs/2509.18389)  
+**Code**: None  
 **Area**: Reinforcement Learning / In-Context Learning
 **Keywords**: In-Context RL, Transformer, Pretraining, Policy Evaluation, Temporal Difference Learning
 

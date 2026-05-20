@@ -18,8 +18,8 @@ content_hash: d345d1622a74f79b
 # Bias at the End of the Score: Demographic Biases in Reward Models for T2I
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.13305](https://arxiv.org/abs/2604.13305)
-**Code**: N/A
+**arXiv**: [2604.13305](https://arxiv.org/abs/2604.13305)  
+**Code**: N/A  
 **Area**: Alignment & RLHF
 **Keywords**: Reward Model, Text-to-Image, Demographic Bias, Hypersexualization, Fairness
 

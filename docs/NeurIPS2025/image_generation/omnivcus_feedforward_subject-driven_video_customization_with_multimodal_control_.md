@@ -18,8 +18,8 @@ content_hash: 6fccfddc2b2f1046
 # OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.23361](https://arxiv.org/abs/2506.23361)
-**Code**: [https://caiyuanhao1998.github.io/project/OmniVCus/](https://caiyuanhao1998.github.io/project/OmniVCus/) (project page)
+**arXiv**: [2506.23361](https://arxiv.org/abs/2506.23361)  
+**Code**: [https://caiyuanhao1998.github.io/project/OmniVCus/](https://caiyuanhao1998.github.io/project/OmniVCus/) (project page)  
 **Area**: Diffusion Models / Video Customization Generation
 **Keywords**: Subject-driven video customization, multimodal control, DiT, multi-subject generation, feedforward generation
 

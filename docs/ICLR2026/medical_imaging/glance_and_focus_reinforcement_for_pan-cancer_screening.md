@@ -18,8 +18,8 @@ content_hash: bb3d126ff1077957
 # Glance and Focus Reinforcement for Pan-cancer Screening
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19103](https://arxiv.org/abs/2601.19103)
-**Code**: [GitHub](https://github.com/Luffy03/GF-Screen)
+**arXiv**: [2601.19103](https://arxiv.org/abs/2601.19103)  
+**Code**: [GitHub](https://github.com/Luffy03/GF-Screen)  
 **Area**: Medical Imaging / Cancer Screening
 **Keywords**: Pan-cancer screening, reinforcement learning, GRPO, CT segmentation, foreground-background imbalance
 

@@ -19,9 +19,9 @@ content_hash: f7e341eb8310f6d4
 # Semantic Surgery: Zero-Shot Concept Erasure in Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22851](https://arxiv.org/abs/2510.22851)
+**arXiv**: [2510.22851](https://arxiv.org/abs/2510.22851)  
 **Authors**: Lexiang Xiong, Chengyu Liu, Jingwen Ye, Yan Liu, Yuecong Xu (NUS, Sichuan University)
-**Code**: [GitHub](https://github.com/Lexiang-Xiong/Semantic-Surgery)
+**Code**: [GitHub](https://github.com/Lexiang-Xiong/Semantic-Surgery)  
 **Area**: Image Generation
 **Keywords**: Concept Erasure, Diffusion Models, Text Embedding Manipulation, Zero-Shot, Inference-Time Method, Safe Generation
 

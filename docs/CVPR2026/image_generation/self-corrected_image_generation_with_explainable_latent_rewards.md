@@ -18,8 +18,8 @@ content_hash: b2b3b1c92e500154
 # Self-Corrected Image Generation with Explainable Latent Rewards
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24965](https://arxiv.org/abs/2603.24965)
-**Code**: [https://yinyiluo.github.io/xLARD/](https://yinyiluo.github.io/xLARD/)
+**arXiv**: [2603.24965](https://arxiv.org/abs/2603.24965)  
+**Code**: [https://yinyiluo.github.io/xLARD/](https://yinyiluo.github.io/xLARD/)  
 **Area**: Image Generation / Diffusion Models
 **Keywords**: text-to-image self-correction, latent reward, explainable generation, semantic alignment, reinforcement learning
 

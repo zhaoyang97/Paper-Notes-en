@@ -18,8 +18,8 @@ content_hash: 3c44e23f44fd8a60
 # Spectral Bellman Method: Unifying Representation and Exploration in RL
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.13181](https://arxiv.org/abs/2507.13181)
-**Code**: None
+**arXiv**: [2507.13181](https://arxiv.org/abs/2507.13181)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Representation Learning, Exploration, Bellman Error, Spectral Decomposition, Thompson Sampling
 

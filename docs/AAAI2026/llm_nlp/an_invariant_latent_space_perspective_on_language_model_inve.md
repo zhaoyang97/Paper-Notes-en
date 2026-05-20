@@ -18,8 +18,8 @@ content_hash: 977de5d74eb74903
 # An Invariant Latent Space Perspective on Language Model Inversion
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19569v1](https://arxiv.org/abs/2511.19569v1)
-**Code**: [https://github.com/yyy01/Invariant_Attacker](https://github.com/yyy01/Invariant_Attacker)
+**arXiv**: [2511.19569v1](https://arxiv.org/abs/2511.19569v1)  
+**Code**: [https://github.com/yyy01/Invariant_Attacker](https://github.com/yyy01/Invariant_Attacker)  
 **Area**: AI Security / LLM Privacy Attacks
 **Keywords**: language model inversion, privacy attack, invariant latent space, prompt recovery, contrastive learning
 

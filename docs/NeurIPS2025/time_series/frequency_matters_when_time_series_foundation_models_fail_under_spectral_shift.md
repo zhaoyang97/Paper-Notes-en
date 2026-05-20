@@ -18,8 +18,8 @@ content_hash: 7cda7f483799533a
 # Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05619](https://arxiv.org/abs/2511.05619)
-**Code**: None
+**arXiv**: [2511.05619](https://arxiv.org/abs/2511.05619)  
+**Code**: None  
 **Area**: Time Series / Foundation Models
 **Keywords**: Time Series Foundation Models, Spectral Shift, Generalization Failure, MOMENT, Player Engagement Prediction
 

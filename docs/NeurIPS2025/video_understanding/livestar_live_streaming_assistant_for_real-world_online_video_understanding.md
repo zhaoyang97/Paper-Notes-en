@@ -18,8 +18,8 @@ content_hash: f43ad32290a6823f
 # LiveStar: Live Streaming Assistant for Real-World Online Video Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05299](https://arxiv.org/abs/2511.05299)
-**Code**: [yzy-bupt/LiveStar](https://github.com/yzy-bupt/LiveStar)
+**arXiv**: [2511.05299](https://arxiv.org/abs/2511.05299)  
+**Code**: [yzy-bupt/LiveStar](https://github.com/yzy-bupt/LiveStar)  
 **Area**: Video Understanding
 **Keywords**: online video understanding, streaming decoding, video-language alignment, live streaming, response timing
 

@@ -18,8 +18,8 @@ content_hash: 64181637317e10c6
 # Anti-I2V: Safeguarding your photos from malicious image-to-video generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24570](https://arxiv.org/abs/2603.24570)
-**Code**: None
+**arXiv**: [2603.24570](https://arxiv.org/abs/2603.24570)  
+**Code**: None  
 **Area**: Video Generation
 **Keywords**: Adversarial Attack, Video Diffusion Models, Image Protection, Dual-Space Perturbation, Deep Feature Collapse
 

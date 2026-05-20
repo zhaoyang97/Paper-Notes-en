@@ -18,8 +18,8 @@ content_hash: 2bccda9ba54e2cc9
 # Linking Perception, Confidence and Accuracy in MLLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12149](https://arxiv.org/abs/2603.12149)
-**Code**: [https://github.com/anotherbricki/CA-TTS](https://github.com/anotherbricki/CA-TTS)
+**arXiv**: [2603.12149](https://arxiv.org/abs/2603.12149)  
+**Code**: [https://github.com/anotherbricki/CA-TTS](https://github.com/anotherbricki/CA-TTS)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal Large Language Models, Confidence Calibration, Reinforcement Learning, Test-Time Scaling, Visual Perception
 

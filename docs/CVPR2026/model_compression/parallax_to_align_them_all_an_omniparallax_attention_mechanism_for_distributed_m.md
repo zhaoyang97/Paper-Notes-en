@@ -18,8 +18,8 @@ content_hash: 2cb815023714f43d
 # Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.03615](https://arxiv.org/abs/2603.03615)
-**Code**: N/A
+**arXiv**: [2603.03615](https://arxiv.org/abs/2603.03615)  
+**Code**: N/A  
 **Area**: Model Compression
 **Keywords**: multi-view image compression, distributed coding, parallax attention, feature fusion, entropy model
 

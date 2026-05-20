@@ -18,8 +18,8 @@ content_hash: 06d3c1f87d2dabde
 # 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.17827](https://arxiv.org/abs/2503.17827)
-**Code**: [https://4dbench.github.io/](https://4dbench.github.io/)
+**arXiv**: [2503.17827](https://arxiv.org/abs/2503.17827)  
+**Code**: [https://4dbench.github.io/](https://4dbench.github.io/)  
 **Area**: Video Understanding / Multimodal VLM
 **Keywords**: 4D understanding, multimodal large language models, benchmark, multi-view temporal understanding, 4D object QA
 

@@ -18,8 +18,8 @@ content_hash: 4a5eb71be77ac5ec
 # Encoding and Understanding Astrophysical Information in Large Language Model-Generated Summaries
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.14685](https://arxiv.org/abs/2511.14685)
-**Code**: None
+**arXiv**: [2511.14685](https://arxiv.org/abs/2511.14685)  
+**Code**: None  
 **Area**: Physics / LLM Scientific Reasoning
 **Keywords**: LLM embeddings, astrophysics, sparse autoencoders, X-ray astronomy, physical encoding
 

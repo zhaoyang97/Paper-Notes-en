@@ -18,8 +18,8 @@ content_hash: da894a0c367f23cc
 # Purify-then-Align: Towards Robust Human Sensing under Modality Missing with Knowledge Distillation from Noisy Multimodal Teacher
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05584](https://arxiv.org/abs/2604.05584)
-**Code**: [https://github.com/Vongolia11/PTA](https://github.com/Vongolia11/PTA)
+**arXiv**: [2604.05584](https://arxiv.org/abs/2604.05584)  
+**Code**: [https://github.com/Vongolia11/PTA](https://github.com/Vongolia11/PTA)  
 **Area**: Multimodal VLM / Human Sensing
 **Keywords**: modality missing, knowledge distillation, meta-learning, diffusion alignment, multimodal fusion
 
@@ -51,21 +51,21 @@ Training follows a nested-loop structure. The **outer loop (Purify)** optimizes 
 
 1. **Purify Stage: Meta-Learning Modality Weighting**
 
-   - **Function**: Adaptively learns the importance weight $\mathbf{w}$ for each modality to suppress noisy or low-contribution modalities.
-   - **Mechanism**: Nested optimization—the inner loop optimizes model parameters $\Theta$ on training set $\mathcal{D}_{train}$ with fixed $\mathbf{w}$ (minimizing $\mathcal{L}_{inner} = \mathcal{L}_{task} + \lambda\mathcal{L}_{DiffKD}$); the outer loop evaluates the performance of $\Theta^*(\mathbf{w})$ on validation set $\mathcal{D}_{val}$ and updates $\mathbf{w}$ via gradient $\nabla_\mathbf{w}\mathcal{L}_{outer}$. Weights are Softmax-normalized for stability. Each modality is randomly dropped with uniform probability during training to simulate real-world missing scenarios.
-   - **Design Motivation**: X-Fi requires manual tuning of per-modality dropout probabilities (e.g., WiFi/Radar/RFID may require different combinations such as (0.5, 0.5, 0.8)), which becomes intractable as the number of modalities grows. Meta-learning automatically learns weights, entirely eliminating this issue.
+    - **Function**: Adaptively learns the importance weight $\mathbf{w}$ for each modality to suppress noisy or low-contribution modalities.
+    - **Mechanism**: Nested optimization—the inner loop optimizes model parameters $\Theta$ on training set $\mathcal{D}_{train}$ with fixed $\mathbf{w}$ (minimizing $\mathcal{L}_{inner} = \mathcal{L}_{task} + \lambda\mathcal{L}_{DiffKD}$); the outer loop evaluates the performance of $\Theta^*(\mathbf{w})$ on validation set $\mathcal{D}_{val}$ and updates $\mathbf{w}$ via gradient $\nabla_\mathbf{w}\mathcal{L}_{outer}$. Weights are Softmax-normalized for stability. Each modality is randomly dropped with uniform probability during training to simulate real-world missing scenarios.
+    - **Design Motivation**: X-Fi requires manual tuning of per-modality dropout probabilities (e.g., WiFi/Radar/RFID may require different combinations such as (0.5, 0.5, 0.8)), which becomes intractable as the number of modalities grows. Meta-learning automatically learns weights, entirely eliminating this issue.
 
 2. **Align Stage: Diffusion-Model Knowledge Distillation**
 
-   - **Function**: Distills knowledge from the purified multimodal teacher into each unimodal student.
-   - **Mechanism**: The teacher feature is computed as $f_T = \sum_{i \in \mathcal{M}_{all}} \mathbf{w}_i f_i$ (weighted sum over all modalities). Both $f_T$ and $f_S$ are projected into a compressed latent space to obtain $z_T$ and $z_S$. A noise prediction network $\Phi_\phi$ is trained to learn the distribution of $z_T$ (standard diffusion loss $\mathcal{L}_{Diff}$), and $z_S$ is treated as a "noisy version" of $z_T$, which is refined into $\hat{z}_S$ through a reverse denoising process. The total distillation loss is $\mathcal{L}_{DiffKD} = \mathcal{L}_{Diff} + \mathcal{L}_{KD}$, where $\mathcal{L}_{KD} = \text{MSE}(\hat{z}_S, z_T)$.
-   - **Design Motivation**: Conventional KL/MSE distillation struggles to bridge the large representation gap between heterogeneous modalities. The denoising process of diffusion models is naturally suited to progressively refine the information-deficient $z_S$ toward the information-rich $z_T$.
+    - **Function**: Distills knowledge from the purified multimodal teacher into each unimodal student.
+    - **Mechanism**: The teacher feature is computed as $f_T = \sum_{i \in \mathcal{M}_{all}} \mathbf{w}_i f_i$ (weighted sum over all modalities). Both $f_T$ and $f_S$ are projected into a compressed latent space to obtain $z_T$ and $z_S$. A noise prediction network $\Phi_\phi$ is trained to learn the distribution of $z_T$ (standard diffusion loss $\mathcal{L}_{Diff}$), and $z_S$ is treated as a "noisy version" of $z_T$, which is refined into $\hat{z}_S$ through a reverse denoising process. The total distillation loss is $\mathcal{L}_{DiffKD} = \mathcal{L}_{Diff} + \mathcal{L}_{KD}$, where $\mathcal{L}_{KD} = \text{MSE}(\hat{z}_S, z_T)$.
+    - **Design Motivation**: Conventional KL/MSE distillation struggles to bridge the large representation gap between heterogeneous modalities. The denoising process of diffusion models is naturally suited to progressively refine the information-deficient $z_S$ toward the information-rich $z_T$.
 
 3. **Noise Adapter (Adaptive Noise Matching)**
 
-   - **Function**: Dynamically determines the noise level of the student feature for each sample.
-   - **Mechanism**: The gap between $z_S$ and $z_T$ varies across samples, and a fixed timestep $t$ cannot accommodate this one-to-many mapping. The Noise Adapter is a compact auxiliary network (1 Bottleneck + Global AvgPool + FC) that predicts a blending coefficient $\gamma \in [0,1]$ to mix the student feature with pure noise: $z_{TS} = \gamma z_S + (1-\gamma)\epsilon_T$. DDIM is then applied for 5 deterministic denoising steps from $z_{TS}$ to obtain $\hat{z}_S$.
-   - **Design Motivation**: This addresses the critical problem of unknown student noise level in diffusion distillation—if $z_S$ is already close to $z_T$, minimal denoising is required; if $z_S$ is of poor quality, a noisier starting point allows the diffusion model to perform more thorough refinement.
+    - **Function**: Dynamically determines the noise level of the student feature for each sample.
+    - **Mechanism**: The gap between $z_S$ and $z_T$ varies across samples, and a fixed timestep $t$ cannot accommodate this one-to-many mapping. The Noise Adapter is a compact auxiliary network (1 Bottleneck + Global AvgPool + FC) that predicts a blending coefficient $\gamma \in [0,1]$ to mix the student feature with pure noise: $z_{TS} = \gamma z_S + (1-\gamma)\epsilon_T$. DDIM is then applied for 5 deterministic denoising steps from $z_{TS}$ to obtain $\hat{z}_S$.
+    - **Design Motivation**: This addresses the critical problem of unknown student noise level in diffusion distillation—if $z_S$ is already close to $z_T$, minimal denoising is required; if $z_S$ is of poor quality, a noisier starting point allows the diffusion model to perform more thorough refinement.
 
 ### Loss & Training
 

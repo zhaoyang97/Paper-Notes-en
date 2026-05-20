@@ -19,8 +19,8 @@ content_hash: 1f88ecb3a59593a6
 # ETCH: Generalizing Body Fitting to Clothed Humans via Equivariant Tightness
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.10624](https://arxiv.org/abs/2503.10624)
-**Code**: [https://boqian-li.github.io/ETCH](https://boqian-li.github.io/ETCH)
+**arXiv**: [2503.10624](https://arxiv.org/abs/2503.10624)  
+**Code**: [https://boqian-li.github.io/ETCH](https://boqian-li.github.io/ETCH)  
 **Area**: 3D Vision / Human Body Reconstruction / Clothed Human Body Fitting
 **Keywords**: Body Fitting, Clothed Humans, SE(3) Equivariance, Tightness Vector, SMPL, Point Cloud
 

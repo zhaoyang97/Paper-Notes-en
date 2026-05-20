@@ -18,8 +18,8 @@ content_hash: 1ad5370c4207205b
 # Infinity and Beyond: Compositional Alignment in VAR and Diffusion T2I Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.11542](https://arxiv.org/abs/2512.11542)
-**Code**: None
+**arXiv**: [2512.11542](https://arxiv.org/abs/2512.11542)  
+**Code**: None  
 **Area**: Diffusion Models / Compositional Generation
 **Keywords**: Compositional Alignment, VAR Autoregression, T2I-CompBench++, GenEval, Benchmark Evaluation
 
@@ -56,20 +56,20 @@ This paper is an empirical benchmark study and proposes no new method. The core 
 
 1. **Evaluation Dimensions**:
 
-   - T2I-CompBench++ covers 8 dimensions: color binding, texture binding, shape binding, non-spatial relations, 2D spatial relations, 3D spatial relations, numeracy, and complex composition.
-   - GenEval covers 7 dimensions: single object, two objects, counting, colors, position, color attribution, and overall.
-   - The two benchmarks use different validation methods (detector-based vs. rule-based), serving as mutual sanity checks.
+    - T2I-CompBench++ covers 8 dimensions: color binding, texture binding, shape binding, non-spatial relations, 2D spatial relations, 3D spatial relations, numeracy, and complex composition.
+    - GenEval covers 7 dimensions: single object, two objects, counting, colors, position, color attribution, and overall.
+    - The two benchmarks use different validation methods (detector-based vs. rule-based), serving as mutual sanity checks.
 
 2. **Evaluation Protocol**:
 
-   - T2I-CompBench++: 4 images with independent random seeds are generated per prompt; seed-averaged results are reported (standard deviations provided in the appendix).
-   - GenEval: The official protocol is followed, generating 4 samples per prompt and reporting aggregated scores.
+    - T2I-CompBench++: 4 images with independent random seeds are generated per prompt; seed-averaged results are reported (standard deviations provided in the appendix).
+    - GenEval: The official protocol is followed, generating 4 samples per prompt and reporting aggregated scores.
 
 3. **Model Coverage**:
 
-   - Model scale ranges from 0.6B (PixArt-$\alpha$) to 12B (Flux), spanning three architectural paradigms.
-   - Infinity-2B and 8B are used to analyze scaling effects within the VAR architecture.
-   - Flux-Dev and Schnell are used to analyze the quality-speed trade-off.
+    - Model scale ranges from 0.6B (PixArt-$\alpha$) to 12B (Flux), spanning three architectural paradigms.
+    - Infinity-2B and 8B are used to analyze scaling effects within the VAR architecture.
+    - Flux-Dev and Schnell are used to analyze the quality-speed trade-off.
 
 ### Loss & Training
 

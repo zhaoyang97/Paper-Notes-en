@@ -18,8 +18,8 @@ content_hash: caa311ad47e7ae1b
 # From Parameters to Behaviors: Unsupervised Compression of the Policy Space
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22566](https://arxiv.org/abs/2509.22566)
-**Code**: [GitHub](https://github.com/DavideTenediniPoliMi/from-parameters-to-behaviors-unsupervised-compression-of-the-policy-space)
+**arXiv**: [2509.22566](https://arxiv.org/abs/2509.22566)  
+**Code**: [GitHub](https://github.com/DavideTenediniPoliMi/from-parameters-to-behaviors-unsupervised-compression-of-the-policy-space)  
 **Area**: Image Generation
 **Keywords**: policy space compression, behavioral manifold, autoencoder, latent space optimization, unsupervised pretraining
 

@@ -18,8 +18,8 @@ content_hash: c4f6bf36e050b596
 # Analyzing Finetuning Representation Shift for Multimodal LLMs Steering
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.03012](https://arxiv.org/abs/2501.03012)
-**Code**: [Project Page](https://pegah-kh.github.io/projects/lmm-finetuning-analysis-and-steering/)
+**arXiv**: [2501.03012](https://arxiv.org/abs/2501.03012)  
+**Code**: [Project Page](https://pegah-kh.github.io/projects/lmm-finetuning-analysis-and-steering/)  
 **Area**: Multimodal VLM
 **Keywords**: MLLM Interpretability, Concept Drift, Representation Shift, Model Steering, Debiasing
 
@@ -57,8 +57,8 @@ The framework consists of three components: **concept extraction and comparison*
 
 3. **Coarse-grained and Fine-grained Model Steering**
 
-   - **Coarse-grained steering**: A steering vector $\bm{s}_c$ is computed as the difference between the mean representations of a target sample set and the original sample set, and added to features at inference time: $\tilde{f_l}(x) = f_l(x) + \alpha \bm{s}_c$.
-   - **Fine-grained steering**: After concept decomposition, concept-pair differences $\bm{s}_{ij}^f = \bm{u}_j - \bm{u}_i$ are computed and applied only to samples that activate specific concepts, enabling targeted modification (e.g., steering "yes" answers toward "no").
+    - **Coarse-grained steering**: A steering vector $\bm{s}_c$ is computed as the difference between the mean representations of a target sample set and the original sample set, and added to features at inference time: $\tilde{f_l}(x) = f_l(x) + \alpha \bm{s}_c$.
+    - **Fine-grained steering**: After concept decomposition, concept-pair differences $\bm{s}_{ij}^f = \bm{u}_j - \bm{u}_i$ are computed and applied only to samples that activate specific concepts, enabling targeted modification (e.g., steering "yes" answers toward "no").
 
 ### Loss & Training
 

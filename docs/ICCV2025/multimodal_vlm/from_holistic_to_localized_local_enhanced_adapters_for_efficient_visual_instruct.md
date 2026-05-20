@@ -18,8 +18,8 @@ content_hash: 92f93e9f5ca2bb2b
 # From Holistic to Localized: Local Enhanced Adapters for Efficient Visual Instruction Fine-Tuning
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.12787](https://arxiv.org/abs/2411.12787)
-**Code**: [https://github.com/pengkun-jiao/Dual-LoRA](https://github.com/pengkun-jiao/Dual-LoRA)
+**arXiv**: [2411.12787](https://arxiv.org/abs/2411.12787)  
+**Code**: [https://github.com/pengkun-jiao/Dual-LoRA](https://github.com/pengkun-jiao/Dual-LoRA)  
 **Area**: Multimodal VLM
 **Keywords**: Dual-LoRA, LoRA-MoE, Visual Cue Enhancement, Data Conflict, Efficient Instruction Fine-Tuning
 
@@ -47,8 +47,8 @@ Two core components are proposed: (1) **Visual Cue Enhancement (VCE)**, which en
 
 2. **Dual-LoRA (Skill Space + Task Space)**: Based on theoretical analysis (Proposition 1 & Corollaries 1–2), the paper proves that a single rank-$r$ LoRA is theoretically at least as expressive as $K$ LoRA experts. The empirical advantage of LoRA-MoE stems from its "local response" capability. To replicate this, a dual-space design is introduced:
 
-   - **Skill Space** $S$: a low-rank matrix for stably learning holistic cross-task knowledge.
-   - **Task Space** $T$: a rank-correction matrix that dynamically modulates the skill space via nonlinear activation $\sigma$ (ReLU).
+    - **Skill Space** $S$: a low-rank matrix for stably learning holistic cross-task knowledge.
+    - **Task Space** $T$: a rank-correction matrix that dynamically modulates the skill space via nonlinear activation $\sigma$ (ReLU).
 
    The output is formulated as: $z = Wx + \frac{r}{\alpha} B(\text{Norm}(Sx) \odot \sigma(Tx))$
 

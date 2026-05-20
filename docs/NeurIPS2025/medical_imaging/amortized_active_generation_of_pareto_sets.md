@@ -18,8 +18,8 @@ content_hash: 0a7fda3cca46b9ba
 # Amortized Active Generation of Pareto Sets
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21052](https://arxiv.org/abs/2510.21052)
-**Code**: None
+**arXiv**: [2510.21052](https://arxiv.org/abs/2510.21052)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Multi-objective optimization, Pareto set, generative models, active learning, preference conditioning
 

@@ -18,8 +18,8 @@ content_hash: 7ea5a57ca5cc5db9
 # Interpreting ResNet-based CLIP via Neuron-Attention Decomposition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19943](https://arxiv.org/abs/2509.19943)
-**Code**: None
+**arXiv**: [2509.19943](https://arxiv.org/abs/2509.19943)  
+**Code**: None  
 **Area**: Segmentation
 **Keywords**: CLIP interpretability, neuron-attention decomposition, semantic segmentation, ResNet, mechanistic interpretability
 

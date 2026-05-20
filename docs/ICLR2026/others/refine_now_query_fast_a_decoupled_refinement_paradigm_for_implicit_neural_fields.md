@@ -17,8 +17,8 @@ content_hash: 58499d6f37187f2e
 # Refine Now, Query Fast: A Decoupled Refinement Paradigm for Implicit Neural Fields
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.15155](https://arxiv.org/abs/2602.15155)
-**Code**: [GitHub](https://github.com/xtyinzz/DRR-INR)
+**arXiv**: [2602.15155](https://arxiv.org/abs/2602.15155)  
+**Code**: [GitHub](https://github.com/xtyinzz/DRR-INR)  
 **Area**: Neural Fields / Surrogate Modeling
 **Keywords**: Implicit Neural Representation, Decoupled Refinement, Ensemble Surrogate, Variational Pairs, Feature Grid
 

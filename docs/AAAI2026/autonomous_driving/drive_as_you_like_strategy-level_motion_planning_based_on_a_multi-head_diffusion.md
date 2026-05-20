@@ -17,8 +17,8 @@ content_hash: c8e00849c4c9cc58
 # Drive As You Like: Strategy-Level Motion Planning Based on A Multi-Head Diffusion Model
 
 **Conference**: AAAI2026
-**arXiv**: [2508.16947](https://arxiv.org/abs/2508.16947)
-**Code**: To be confirmed
+**arXiv**: [2508.16947](https://arxiv.org/abs/2508.16947)  
+**Code**: To be confirmed  
 **Area**: Autonomous Driving
 **Keywords**: autonomous driving, diffusion model, GRPO, Motion Planning, Driving Preferences
 
@@ -44,16 +44,16 @@ How can a planner support multiple driving strategies (aggressive / conservative
 M-Diffusion Planner consists of three core components:
 
 1. **Encoder**: MLP-Mixer + Transformer
-   - MLP-Mixer alternately mixes heterogeneous inputs (lane boundaries, navigation routes, dynamic agents, static obstacles) along token and channel dimensions to produce compact fixed-length embeddings.
-   - Transformer models spatiotemporal dependencies among traffic participants via self-attention.
+    - MLP-Mixer alternately mixes heterogeneous inputs (lane boundaries, navigation routes, dynamic agents, static obstacles) along token and channel dimensions to produce compact fixed-length embeddings.
+    - Transformer models spatiotemporal dependencies among traffic participants via self-attention.
 
 2. **Multi-Head Diffusion Decoder**: based on the DiT (Diffusion Transformer) architecture
-   - Multiple output heads correspond to different driving strategies (base / aggressive / conservative / comfortable).
-   - Trajectories are generated conditioned on scene encodings and high-level strategy identifiers.
+    - Multiple output heads correspond to different driving strategies (base / aggressive / conservative / comfortable).
+    - Trajectories are generated conditioned on scene encodings and high-level strategy identifiers.
 
 3. **LLM Semantic Interpreter**: serves as the bridge between the user and the planner
-   - Parses natural language instructions (e.g., "please drive faster," "stay safe") into structured strategy identifiers.
-   - The selected strategy remains active throughout execution unless explicitly changed by the user.
+    - Parses natural language instructions (e.g., "please drive faster," "stay safe") into structured strategy identifiers.
+    - The selected strategy remains active throughout execution unless explicitly changed by the user.
 
 ### Training
 

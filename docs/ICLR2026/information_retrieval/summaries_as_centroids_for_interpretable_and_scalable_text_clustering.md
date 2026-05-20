@@ -19,8 +19,8 @@ content_hash: 614e6428da59611a
 # Summaries as Centroids for Interpretable and Scalable Text Clustering
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.09667](https://arxiv.org/abs/2502.09667)
-**Code**: None
+**arXiv**: [2502.09667](https://arxiv.org/abs/2502.09667)  
+**Code**: None  
 **Area**: Information Retrieval
 **Keywords**: Text Clustering, k-means, Summary-as-Centroid, Interpretability, Streaming Clustering, LLM-optional
 

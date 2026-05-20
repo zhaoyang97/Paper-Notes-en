@@ -18,8 +18,8 @@ content_hash: fa38b9146dab654a
 # TEMPLE: Incentivizing Temporal Understanding of Video LLMs via Progressive Pre-SFT Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.16929](https://arxiv.org/abs/2503.16929)
-**Code**: [GitHub](https://github.com/lscpku/TEMPLE)
+**arXiv**: [2503.16929](https://arxiv.org/abs/2503.16929)  
+**Code**: [GitHub](https://github.com/lscpku/TEMPLE)  
 **Area**: LLM/NLP
 **Keywords**: Video LLM, temporal understanding, DPO, preference learning, curriculum learning
 

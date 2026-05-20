@@ -17,8 +17,8 @@ content_hash: 7a62149b9e3ee620
 # Information-Computation Tradeoffs for Noiseless Linear Regression with Oblivious Contamination
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10665](https://arxiv.org/abs/2510.10665)
-**Code**: None
+**arXiv**: [2510.10665](https://arxiv.org/abs/2510.10665)  
+**Code**: None  
 **Area**: Statistical Learning Theory / Robust Optimization
 **Keywords**: Information-computation tradeoff, robust linear regression, oblivious contamination, statistical query, computational lower bounds
 

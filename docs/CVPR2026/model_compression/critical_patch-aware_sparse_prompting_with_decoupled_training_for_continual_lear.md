@@ -18,8 +18,8 @@ content_hash: 23486ddfe60c6625
 # Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07399](https://arxiv.org/abs/2604.07399)
-**Code**: [https://github.com/laymond1/cps-prompt](https://github.com/laymond1/cps-prompt)
+**arXiv**: [2604.07399](https://arxiv.org/abs/2604.07399)  
+**Code**: [https://github.com/laymond1/cps-prompt](https://github.com/laymond1/cps-prompt)  
 **Area**: Model Compression / Continual Learning
 **Keywords**: Continual Learning, Edge Devices, Prompt-based CL, Token Reduction, Training Efficiency
 

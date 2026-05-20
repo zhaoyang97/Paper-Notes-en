@@ -18,8 +18,8 @@ content_hash: 1f6d9eedd4fe6803
 # Dissecting Failure Dynamics in Large Language Model Reasoning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.14528](https://arxiv.org/abs/2604.14528)
-**Code**: [GitHub](https://github.com/ZHUWEI-hub/GUARD)
+**arXiv**: [2604.14528](https://arxiv.org/abs/2604.14528)  
+**Code**: [GitHub](https://github.com/ZHUWEI-hub/GUARD)  
 **Area**: LLM Reasoning / Inference-Time Computation
 **Keywords**: Reasoning Failure Analysis, Entropy Signal, Early Failure Onset, Cognitive Spiral, Inference-Time Intervention
 

@@ -18,8 +18,8 @@ content_hash: a3f85a9a1b34a1c3
 # Geometry-aware 4D Video Generation for Robot Manipulation
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.01099](https://arxiv.org/abs/2507.01099)
-**Code**: [Project Page](https://robot4dgen.github.io/)
+**arXiv**: [2507.01099](https://arxiv.org/abs/2507.01099)  
+**Code**: [Project Page](https://robot4dgen.github.io/)  
 **Area**: Video Generation
 **Keywords**: 4D video generation, robot manipulation, cross-view consistency, pointmap alignment, pose estimation
 

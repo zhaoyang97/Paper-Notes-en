@@ -18,8 +18,8 @@ content_hash: a74101ff5012dc01
 # ExpPortrait: Expressive Portrait Generation via Personalized Representation
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19900](https://arxiv.org/abs/2602.19900)
-**Code**: None
+**arXiv**: [2602.19900](https://arxiv.org/abs/2602.19900)  
+**Code**: None  
 **Area**: Portrait Generation / Face Reenactment
 **Keywords**: Portrait Animation, Personalized Head Representation, Expression Transfer, Diffusion Transformer, SMPL-X
 

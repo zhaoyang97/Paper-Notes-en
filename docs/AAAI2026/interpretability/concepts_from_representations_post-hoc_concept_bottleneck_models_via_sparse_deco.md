@@ -17,8 +17,8 @@ content_hash: 9e327d79a52a924f
 # Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.12303](https://arxiv.org/abs/2601.12303)
-**Code**: [GitHub](https://github.com/peterant330/PCBM_ReD)
+**arXiv**: [2601.12303](https://arxiv.org/abs/2601.12303)  
+**Code**: [GitHub](https://github.com/peterant330/PCBM_ReD)  
 **Area**: Interpretability
 **Keywords**: Concept Bottleneck Models, Interpretability, CLIP, Sparse Decomposition, Representation Learning
 

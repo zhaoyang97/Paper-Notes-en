@@ -18,8 +18,8 @@ content_hash: 63881a3b6a8f538a
 # ViLL-E: Video LLM Embeddings for Retrieval
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12148](https://arxiv.org/abs/2604.12148)
-**Code**: None
+**arXiv**: [2604.12148](https://arxiv.org/abs/2604.12148)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: Video Retrieval, Video LLM, Embedding Generation, Contrastive Learning, Temporal Grounding
 

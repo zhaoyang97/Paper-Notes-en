@@ -18,8 +18,8 @@ content_hash: 0f84829c5bef7ad6
 # Is the Information Bottleneck Robust Enough? Towards Label-Noise Resistant Information Bottleneck Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.10573](https://arxiv.org/abs/2512.10573)
-**Code**: [https://github.com/RingBDStack/LaT-IB](https://github.com/RingBDStack/LaT-IB)
+**arXiv**: [2512.10573](https://arxiv.org/abs/2512.10573)  
+**Code**: [https://github.com/RingBDStack/LaT-IB](https://github.com/RingBDStack/LaT-IB)  
 **Area**: Knowledge Editing
 **Keywords**: Information Bottleneck, Label Noise, Representation Learning, Robustness, Mutual Information
 

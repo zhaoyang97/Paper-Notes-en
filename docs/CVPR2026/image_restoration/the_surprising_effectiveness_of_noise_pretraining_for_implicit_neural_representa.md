@@ -18,8 +18,8 @@ content_hash: 79849c0cf19e3709
 # The Surprising Effectiveness of Noise Pretraining for Implicit Neural Representations
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29034](https://arxiv.org/abs/2603.29034)
-**Code**: Available (project page is public)
+**arXiv**: [2603.29034](https://arxiv.org/abs/2603.29034)  
+**Code**: Available (project page is public)  
 **Area**: Image Restoration / Implicit Neural Representations
 **Keywords**: Implicit Neural Representations, Noise Pretraining, Parameter Initialization, Signal Fitting, Denoising
 

@@ -18,8 +18,8 @@ content_hash: c472a5e7c57ea76c
 # One Filters All: A Generalist Filter for State Estimation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20051](https://arxiv.org/abs/2509.20051)
-**Code**: Available
+**arXiv**: [2509.20051](https://arxiv.org/abs/2509.20051)  
+**Code**: Available  
 **Area**: Self-Supervised Learning / State Estimation
 **Keywords**: LLM reprogramming, state estimation, Bayesian filtering, System-as-Prompt, generalist filter
 
@@ -49,20 +49,20 @@ This paper proposes LLM-Filter, which reprograms a large language model (LLM) as
 
 1. **Observation Embedding**
 
-   - **Function**: Embeds the observation sequence $\boldsymbol{Y}_t \in \mathbb{R}^{T \times N}$ within a sliding window via segmentation.
-   - **Mechanism**: The sequence is divided into segments of length $L$ to preserve multi-dimensional structure, then mapped to the $D$-dimensional hidden space of the LLM via ObsEmbedding.
-   - **Design Motivation**: Avoids flattening a single sequence, which would destroy inherent inter-variable relationships (e.g., position–velocity coupling).
+    - **Function**: Embeds the observation sequence $\boldsymbol{Y}_t \in \mathbb{R}^{T \times N}$ within a sliding window via segmentation.
+    - **Mechanism**: The sequence is divided into segments of length $L$ to preserve multi-dimensional structure, then mapped to the $D$-dimensional hidden space of the LLM via ObsEmbedding.
+    - **Design Motivation**: Avoids flattening a single sequence, which would destroy inherent inter-variable relationships (e.g., position–velocity coupling).
 
 2. **System-as-Prompt (SaP)**
 
-   - **Function**: Describes the current system's task instructions and examples in natural language.
-   - **Mechanism**: Task Instruction (system equations, noise characteristics) + Task Examples (sample input–output pairs) are tokenized and concatenated with observation tokens.
-   - **Design Motivation**: Leverages the in-context learning ability of LLMs to adapt to new systems without retraining.
+    - **Function**: Describes the current system's task instructions and examples in natural language.
+    - **Mechanism**: Task Instruction (system equations, noise characteristics) + Task Examples (sample input–output pairs) are tokenized and concatenated with observation tokens.
+    - **Design Motivation**: Leverages the in-context learning ability of LLMs to adapt to new systems without retraining.
 
 3. **State Projection**
 
-   - **Function**: Projects LLM output tokens into state estimates.
-   - **Mechanism**: The original LLM embedding/projection layers are removed; only the core Transformer layers are retained, and output tokens are mapped to $\mathbb{R}^{L \times M}$ via StateProjection.
+    - **Function**: Projects LLM output tokens into state estimates.
+    - **Mechanism**: The original LLM embedding/projection layers are removed; only the core Transformer layers are retained, and output tokens are mapped to $\mathbb{R}^{L \times M}$ via StateProjection.
 
 ### Loss & Training
 

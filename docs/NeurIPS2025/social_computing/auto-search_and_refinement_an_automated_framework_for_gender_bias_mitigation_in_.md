@@ -18,8 +18,8 @@ content_hash: a1e02abe60e1d145
 # Auto-Search and Refinement: An Automated Framework for Gender Bias Mitigation in LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.11559](https://arxiv.org/abs/2502.11559)
-**Code**: [GitHub](https://github.com/SavannahXu79/FaIRMaker)
+**arXiv**: [2502.11559](https://arxiv.org/abs/2502.11559)  
+**Code**: [GitHub](https://github.com/SavannahXu79/FaIRMaker)  
 **Area**: Social Computing
 **Keywords**: gender bias mitigation, automated prompt search, Fairwords, debiasing, LLM fairness
 

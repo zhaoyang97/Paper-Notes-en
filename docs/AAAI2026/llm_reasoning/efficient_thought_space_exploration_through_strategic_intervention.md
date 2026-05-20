@@ -18,8 +18,8 @@ content_hash: 2a0110d69656c74e
 # Efficient Thought Space Exploration Through Strategic Intervention
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10038](https://arxiv.org/abs/2511.10038)
-**Code**: None
+**arXiv**: [2511.10038](https://arxiv.org/abs/2511.10038)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Reasoning Efficiency, Large-Small Model Collaboration, Thought Space Exploration, Distributional Inconsistency, Tree-Structured Reasoning
 

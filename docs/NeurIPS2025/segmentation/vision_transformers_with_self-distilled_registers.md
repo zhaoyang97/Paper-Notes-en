@@ -18,8 +18,8 @@ content_hash: a4a2e5f1bec2793e
 # Vision Transformers with Self-Distilled Registers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21501](https://arxiv.org/abs/2505.21501)
-**Code**: [GitHub](https://github.com/yinjiechen/PH-Reg)
+**arXiv**: [2505.21501](https://arxiv.org/abs/2505.21501)  
+**Code**: [GitHub](https://github.com/yinjiechen/PH-Reg)  
 **Area**: Image Segmentation
 **Keywords**: Vision Transformer, Register Token, Self-Distillation, Feature Denoising, Open-Vocabulary Segmentation
 

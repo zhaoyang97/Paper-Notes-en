@@ -18,8 +18,8 @@ content_hash: 0951435155a4b35c
 # VT-Intrinsic: Physics-Based Decomposition of Reflectance and Shading using a Single Visible-Thermal Image Pair
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.10388](https://arxiv.org/abs/2509.10388)
-**Code**: [https://vt-intrinsic.github.io](https://vt-intrinsic.github.io)
+**arXiv**: [2509.10388](https://arxiv.org/abs/2509.10388)  
+**Code**: [https://vt-intrinsic.github.io](https://vt-intrinsic.github.io)  
 **Area**: Self-Supervised
 **Keywords**: Intrinsic image decomposition, visible-thermal imaging, reflectance estimation, illumination decomposition, ordinal constraints
 

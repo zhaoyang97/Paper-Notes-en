@@ -18,8 +18,8 @@ content_hash: 6965580fc294f2c0
 # Reallocating Attention Across Layers to Reduce Multimodal Hallucination
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.10285](https://arxiv.org/abs/2510.10285)
-**Code**: None
+**arXiv**: [2510.10285](https://arxiv.org/abs/2510.10285)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: multimodal hallucination, attention heads, perception-reasoning layer stratification, training-free plugin, attention reallocation
 

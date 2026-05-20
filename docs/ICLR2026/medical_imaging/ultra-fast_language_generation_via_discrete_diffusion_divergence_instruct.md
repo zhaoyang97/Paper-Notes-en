@@ -19,8 +19,8 @@ content_hash: 8b9f4f5d0215c212
 # Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25035](https://arxiv.org/abs/2509.25035)
-**Code**: [https://github.com/haoyangzheng-ai/didi-instruct](https://github.com/haoyangzheng-ai/didi-instruct)
+**arXiv**: [2509.25035](https://arxiv.org/abs/2509.25035)  
+**Code**: [https://github.com/haoyangzheng-ai/didi-instruct](https://github.com/haoyangzheng-ai/didi-instruct)  
 **Area**: Medical Imaging
 **Keywords**: Discrete Diffusion, Distillation, Masked Diffusion Model, KL Divergence, Few-Step Generation, Policy Gradient
 

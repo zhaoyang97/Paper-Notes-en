@@ -18,8 +18,8 @@ content_hash: ebd973d3a4af4aba
 # LATINO-PRO: LAtent consisTency INverse sOlver with PRompt Optimization
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.12615](https://arxiv.org/abs/2503.12615)
-**Code**: Available
+**arXiv**: [2503.12615](https://arxiv.org/abs/2503.12615)  
+**Code**: Available  
 **Area**: Diffusion Models / Image Restoration
 **Keywords**: Inverse problem solving, latent consistency models, plug-and-play, prompt optimization, image reconstruction
 

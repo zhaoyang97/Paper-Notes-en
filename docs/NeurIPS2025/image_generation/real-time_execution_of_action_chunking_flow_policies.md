@@ -18,8 +18,8 @@ content_hash: a8afd63e7f370ece
 # Real-Time Execution of Action Chunking Flow Policies
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07339](https://arxiv.org/abs/2506.07339)
-**Code**: [Project Page](https://pi.website/research/real_time_chunking)
+**arXiv**: [2506.07339](https://arxiv.org/abs/2506.07339)  
+**Code**: [Project Page](https://pi.website/research/real_time_chunking)  
 **Area**: Diffusion/Flow Models / Robot Control
 **Keywords**: Real-time inference, action chunking, flow matching, inpainting guidance, VLA
 

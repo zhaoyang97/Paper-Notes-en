@@ -19,8 +19,8 @@ content_hash: e5ce9810503e53fd
 # Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection
 
 **Conference**: CVPR2026
-**arXiv**: [2509.03113](https://arxiv.org/abs/2509.03113)
-**Code**: Not released
+**arXiv**: [2509.03113](https://arxiv.org/abs/2509.03113)  
+**Code**: Not released  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal hallucination, gradient attribution, constrained decoding, co-occurrence bias, text-visual bias, inference-time mitigation
 

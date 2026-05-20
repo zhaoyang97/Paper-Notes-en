@@ -18,8 +18,8 @@ content_hash: 77147dacf688dcc0
 # Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation
 
 **Conference**: ACL 2026
-**arXiv**: [2511.02626](https://arxiv.org/abs/2511.02626)
-**Code**: None
+**arXiv**: [2511.02626](https://arxiv.org/abs/2511.02626)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Factual Hallucination, New Knowledge Learning, Attention Mechanism, SFT, KnownPatch
 

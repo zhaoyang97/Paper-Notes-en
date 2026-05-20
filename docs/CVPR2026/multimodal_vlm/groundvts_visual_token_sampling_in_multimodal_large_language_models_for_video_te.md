@@ -18,8 +18,8 @@ content_hash: 1b063c429b03fcc2
 # GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02093](https://arxiv.org/abs/2604.02093)
-**Code**: Available (GitHub)
+**arXiv**: [2604.02093](https://arxiv.org/abs/2604.02093)  
+**Code**: Available (GitHub)  
 **Area**: Multimodal VLM / Video Understanding
 **Keywords**: Video Temporal Grounding, Visual Token Sampling, Query-Guided, Video Large Language Models, Temporal Reasoning
 

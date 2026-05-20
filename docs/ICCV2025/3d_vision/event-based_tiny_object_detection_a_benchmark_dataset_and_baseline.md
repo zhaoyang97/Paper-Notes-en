@@ -19,8 +19,8 @@ content_hash: 57adc193e851d254
 # Event-based Tiny Object Detection: A Benchmark Dataset and Baseline
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23575](https://arxiv.org/abs/2506.23575)
-**Code**: [https://github.com/ChenYichen9527/Ev-UAV](https://github.com/ChenYichen9527/Ev-UAV)
+**arXiv**: [2506.23575](https://arxiv.org/abs/2506.23575)  
+**Code**: [https://github.com/ChenYichen9527/Ev-UAV](https://github.com/ChenYichen9527/Ev-UAV)  
 **Area**: 3D Vision / Event Camera / Small Object Detection
 **Keywords**: Event Camera, Small Object Detection, Anti-UAV, Sparse Point Cloud, Spatiotemporal Correlation, benchmark
 
@@ -72,18 +72,18 @@ EV-SpSegNet is an event point cloud segmentation network based on a U-shaped spa
 The GDSCA module comprises three components:
 
 1. **Grouped Dilated Sparse Convolution (GDSC) Block**:
-   - Splits input features into groups along the channel dimension (4 groups by default)
-   - Each group applies sparse convolution with a different dilation rate (1, 2, 3, 4)
-   - Extracts multi-scale local temporal features — adapting to target curves of varying motion speeds
+    - Splits input features into groups along the channel dimension (4 groups by default)
+    - Each group applies sparse convolution with a different dilation rate (1, 2, 3, 4)
+    - Extracts multi-scale local temporal features — adapting to target curves of varying motion speeds
 
 2. **Sp-SE Block** (Sparse Squeeze-and-Excitation):
-   - Fuses features from groups with different dilation rates
-   - Re-weights channels via channel attention
+    - Fuses features from groups with different dilation rates
+    - Re-weights channels via channel attention
 
 3. **Patch Attention Block**:
-   - Partitions the point cloud into larger sub-regions
-   - Applies self-attention across sub-regions to enable global context interaction
-   - Downsamples before attention to reduce quadratic complexity
+    - Partitions the point cloud into larger sub-regions
+    - Applies self-attention across sub-regions to enable global context interaction
+    - Downsamples before attention to reduce quadratic complexity
 
 Design rationale: GDSC first captures local multi-scale features → Patch Attention then performs global interaction. Experiments show that using Patch Attention alone actually degrades performance, as global attention without sufficient local features leads to feature confusion.
 

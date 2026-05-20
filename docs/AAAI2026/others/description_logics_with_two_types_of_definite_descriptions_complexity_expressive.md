@@ -17,8 +17,8 @@ content_hash: 12d896b81bcbf598
 # Description Logics with Two Types of Definite Descriptions: Complexity, Expressiveness, and Automated Deduction
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.06604](https://arxiv.org/abs/2512.06604)
-**Code**: [github.com/ExtenDD/two-types-of-DDs-AAAI-2026](https://github.com/ExtenDD/two-types-of-DDs-AAAI-2026)
+**arXiv**: [2512.06604](https://arxiv.org/abs/2512.06604)  
+**Code**: [github.com/ExtenDD/two-types-of-DDs-AAAI-2026](https://github.com/ExtenDD/two-types-of-DDs-AAAI-2026)  
 **Area**: Other
 **Keywords**: Description Logics, Definite Descriptions, Computational Complexity, Expressiveness, Tableau Calculus
 

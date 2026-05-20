@@ -18,8 +18,8 @@ content_hash: de8c7453a1a93ac7
 # egoEMOTION: Egocentric Vision and Physiological Signals for Emotion and Personality Recognition in Real-World Tasks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22129](https://arxiv.org/abs/2510.22129)
-**Code**: Available (open-source dataset + baseline implementation)
+**arXiv**: [2510.22129](https://arxiv.org/abs/2510.22129)  
+**Code**: Available (open-source dataset + baseline implementation)  
 **Area**: Affective Computing / Egocentric Vision / Multimodal Dataset
 **Keywords**: egocentric vision, emotion recognition, personality, physiological signals, Project Aria
 

@@ -19,7 +19,7 @@ content_hash: 02fd99afbb687060
 # DINO-Foresight: Looking into the Future with DINO
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.11673](https://arxiv.org/abs/2412.11673)
+**arXiv**: [2412.11673](https://arxiv.org/abs/2412.11673)  
 **Homepage**: [https://dino-foresight.github.io/](https://dino-foresight.github.io/)
 **Area**: Autonomous Driving
 **Keywords**: Future Prediction, VFM Feature Forecasting, DINOv2, Multi-Task Dense Prediction, Masked Feature Transformer, Self-Supervised Learning

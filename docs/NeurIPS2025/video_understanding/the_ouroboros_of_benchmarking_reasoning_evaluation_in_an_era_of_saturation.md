@@ -18,8 +18,8 @@ content_hash: 2be9e008ae2d2c2a
 # The Ouroboros of Benchmarking: Reasoning Evaluation in an Era of Saturation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01365](https://arxiv.org/abs/2511.01365)
-**Code**: None
+**arXiv**: [2511.01365](https://arxiv.org/abs/2511.01365)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: benchmark saturation, reasoning evaluation, large language models, leaderboards, ouroboros cycle, benchmark saturation
 

@@ -18,8 +18,8 @@ content_hash: 506e840af9ca62d3
 # Trade-offs in Large Reasoning Models: An Empirical Analysis of Deliberative and Adaptive Reasoning over Foundational Capabilities
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.17979](https://arxiv.org/abs/2503.17979)
-**Code**: [https://github.com/SCIR-SC-Qiaoban-Team/FreeEvalLM](https://github.com/SCIR-SC-Qiaoban-Team/FreeEvalLM)
+**arXiv**: [2503.17979](https://arxiv.org/abs/2503.17979)  
+**Code**: [https://github.com/SCIR-SC-Qiaoban-Team/FreeEvalLM](https://github.com/SCIR-SC-Qiaoban-Team/FreeEvalLM)  
 **Area**: LLM Reasoning
 **Keywords**: Large Reasoning Models, Reasoning–Foundational Capability Trade-offs, Adaptive Reasoning, Zero-Thinking, Safety
 

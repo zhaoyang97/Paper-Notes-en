@@ -18,8 +18,8 @@ content_hash: 87cac570e8addb40
 # Real-World Reinforcement Learning of Active Perception Behaviors
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.01188](https://arxiv.org/abs/2512.01188)
-**Code**: [https://penn-pal-lab.github.io/aawr/](https://penn-pal-lab.github.io/aawr/)
+**arXiv**: [2512.01188](https://arxiv.org/abs/2512.01188)  
+**Code**: [https://penn-pal-lab.github.io/aawr/](https://penn-pal-lab.github.io/aawr/)  
 **Area**: Reinforcement Learning
 **Keywords**: Active Perception, Asymmetric Reinforcement Learning, Privileged Information, POMDP, Real-Robot
 

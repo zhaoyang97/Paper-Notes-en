@@ -18,8 +18,8 @@ content_hash: 8ea69dd153c7eb6d
 # SCoPe: Intrinsic Semantic Space Control for Mitigating Copyright Infringement in LLMs
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07001](https://arxiv.org/abs/2511.07001)
-**Code**: None
+**arXiv**: [2511.07001](https://arxiv.org/abs/2511.07001)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Copyright Protection, Sparse Autoencoder (SAE), Semantic Subspace, Feature Clamping, Inference-Time Intervention
 

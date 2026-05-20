@@ -18,8 +18,8 @@ content_hash: bb8a776cd49e3f38
 # CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.18430](https://arxiv.org/abs/2503.18430)
-**Code**: [https://github.com/FireRedTeam/CQ-DINO](https://github.com/FireRedTeam/CQ-DINO)
+**arXiv**: [2503.18430](https://arxiv.org/abs/2503.18430)  
+**Code**: [https://github.com/FireRedTeam/CQ-DINO](https://github.com/FireRedTeam/CQ-DINO)  
 **Area**: Object Detection
 **Keywords**: Large-vocabulary detection, category queries, gradient dilution, V3Det, DINO
 

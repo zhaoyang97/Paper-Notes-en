@@ -18,8 +18,8 @@ content_hash: baee506651529a28
 # Fair Model-Based Clustering
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.21509](https://arxiv.org/abs/2602.21509)
-**Code**: None
+**arXiv**: [2602.21509](https://arxiv.org/abs/2602.21509)  
+**Code**: None  
 **Area**: AI Safety / Fairness
 **Keywords**: Fair clustering, finite mixture models, EM algorithm, mini-batch learning, scalability
 

@@ -17,9 +17,9 @@ content_hash: d28f87d3f92752ee
 # Hessian-guided Perturbed Wasserstein Gradient Flows for Escaping Saddle Points
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16974](https://arxiv.org/abs/2509.16974)
+**arXiv**: [2509.16974](https://arxiv.org/abs/2509.16974)  
 **Authors**: Naoya Yamamoto, Juno Kim, Taiji Suzuki
-**Code**: N/A
+**Code**: N/A  
 **Area**: Others
 **Keywords**: Wasserstein gradient flow, saddle point escape, second-order optimality, Gaussian process perturbation, non-convex optimization
 

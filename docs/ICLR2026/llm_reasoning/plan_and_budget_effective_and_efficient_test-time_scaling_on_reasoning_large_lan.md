@@ -18,8 +18,8 @@ content_hash: 3cd04c1e62b871bc
 # Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.16122](https://arxiv.org/abs/2505.16122)
-**Code**: [github.com/junhongmit/P-and-B](https://github.com/junhongmit/P-and-B)
+**arXiv**: [2505.16122](https://arxiv.org/abs/2505.16122)  
+**Code**: [github.com/junhongmit/P-and-B](https://github.com/junhongmit/P-and-B)  
 **Area**: LLM Reasoning
 **Keywords**: Test-time scaling, reasoning efficiency, overthinking, token budget allocation, reasoning LLM
 

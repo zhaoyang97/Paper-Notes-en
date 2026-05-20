@@ -18,8 +18,8 @@ content_hash: cb2f3a6149577ca9
 # LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12994](https://arxiv.org/abs/2604.12994)
-**Code**: [GitHub](https://github.com/LogicEval)
+**arXiv**: [2604.12994](https://arxiv.org/abs/2604.12994)  
+**Code**: [GitHub](https://github.com/LogicEval)  
 **Area**: Code Intelligence / Vulnerability Repair Evaluation
 **Keywords**: Logical vulnerabilities, automated repair evaluation, LLM-based code repair, patch generation, benchmark dataset
 

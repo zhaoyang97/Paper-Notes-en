@@ -18,8 +18,8 @@ content_hash: 34dc827d9307a8c1
 # Improving Long-Range Interactions in Graph Neural Simulators via Hamiltonian Dynamics
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.08185](https://arxiv.org/abs/2511.08185)
-**Code**: [thobotics/neural_pde_matching](https://thobotics.github.io/neural_pde_matching)
+**arXiv**: [2511.08185](https://arxiv.org/abs/2511.08185)  
+**Code**: [thobotics/neural_pde_matching](https://thobotics.github.io/neural_pde_matching)  
 **Area**: 3D Vision
 **Keywords**: Graph Neural Simulators, Hamiltonian Dynamics, Long-Range Interactions, Port-Hamiltonian, Multi-Step Training
 

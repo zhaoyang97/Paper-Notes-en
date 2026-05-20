@@ -18,8 +18,8 @@ content_hash: 0749f57348e799da
 # Rethinking Rainy 3D Scene Reconstruction via Perspective Transforming and Brightness Tuning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06734](https://arxiv.org/abs/2511.06734)
-**Code**: [https://github.com/ncfjd/REVR-GSNet](https://github.com/ncfjd/REVR-GSNet)
+**arXiv**: [2511.06734](https://arxiv.org/abs/2511.06734)  
+**Code**: [https://github.com/ncfjd/REVR-GSNet](https://github.com/ncfjd/REVR-GSNet)  
 **Area**: 3D Vision
 **Keywords**: Rainy 3D reconstruction, 3D Gaussian splatting, rain removal, brightness enhancement, end-to-end framework
 

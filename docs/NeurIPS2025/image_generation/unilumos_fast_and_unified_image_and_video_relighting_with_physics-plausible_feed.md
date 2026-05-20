@@ -18,8 +18,8 @@ content_hash: bc12f2ca3e891505
 # UniLumos: Fast and Unified Image and Video Relighting with Physics-Plausible Feedback
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01678](https://arxiv.org/abs/2511.01678)
-**Code**: [GitHub](https://github.com/alibaba-damo-academy/Lumos-Custom)
+**arXiv**: [2511.01678](https://arxiv.org/abs/2511.01678)  
+**Code**: [GitHub](https://github.com/alibaba-damo-academy/Lumos-Custom)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Relighting, flow matching, physics-plausible feedback, video generation, geometry supervision
 

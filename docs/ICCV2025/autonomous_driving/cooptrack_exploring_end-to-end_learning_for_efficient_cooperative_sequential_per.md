@@ -18,8 +18,8 @@ content_hash: 81e815feebda1f1e
 # CoopTrack: Exploring End-to-End Learning for Efficient Cooperative Sequential Perception
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19239](https://arxiv.org/abs/2507.19239)
-**Code**: [GitHub](https://github.com/zhongjiaru/CoopTrack)
+**arXiv**: [2507.19239](https://arxiv.org/abs/2507.19239)  
+**Code**: [GitHub](https://github.com/zhongjiaru/CoopTrack)  
 **Area**: Autonomous Driving
 **Keywords**: Cooperative Perception, 3D Multi-Object Tracking, End-to-End Learning, V2X, Instance-Level Fusion
 

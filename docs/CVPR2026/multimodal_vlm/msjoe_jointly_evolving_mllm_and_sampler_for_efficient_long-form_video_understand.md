@@ -18,8 +18,8 @@ content_hash: 5386340d4a783f63
 # MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22932](https://arxiv.org/abs/2602.22932)
-**Code**: To be confirmed
+**arXiv**: [2602.22932](https://arxiv.org/abs/2602.22932)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Long video understanding, keyframe sampling, reinforcement learning, GRPO, joint optimization
 

@@ -18,8 +18,8 @@ content_hash: 1126809ee9bb0bda
 # Beyond the Lower Bound: Bridging Regret Minimization and Best Arm Identification in Lexicographic Bandits
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.05802](https://arxiv.org/abs/2511.05802)
-**Code**: None
+**arXiv**: [2511.05802](https://arxiv.org/abs/2511.05802)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Multi-objective bandits, lexicographic preference, regret minimization, best arm identification, elimination algorithm
 

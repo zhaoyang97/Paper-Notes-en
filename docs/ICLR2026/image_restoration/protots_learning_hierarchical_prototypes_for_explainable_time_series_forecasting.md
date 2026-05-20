@@ -18,8 +18,8 @@ content_hash: f0400a303bcc644b
 # ProtoTS: Learning Hierarchical Prototypes for Explainable Time Series Forecasting
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23159](https://arxiv.org/abs/2509.23159)
-**Code**: [Available](https://github.com/SKURA502/ProtoTS)
+**arXiv**: [2509.23159](https://arxiv.org/abs/2509.23159)  
+**Code**: [Available](https://github.com/SKURA502/ProtoTS)  
 **Area**: Image Restoration
 **Keywords**: Explainable forecasting, hierarchical prototypes, exogenous variables, multi-channel embedding, expert-controllable
 

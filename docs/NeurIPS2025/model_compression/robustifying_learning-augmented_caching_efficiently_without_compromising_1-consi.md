@@ -18,8 +18,8 @@ content_hash: bb2249001bf6ef7b
 # Robustifying Learning-Augmented Caching Efficiently without Compromising 1-Consistency
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.16242](https://arxiv.org/abs/2507.16242)
-**Code**: Available
+**arXiv**: [2507.16242](https://arxiv.org/abs/2507.16242)  
+**Code**: Available  
 **Area**: Algorithms / Learning-Augmented Algorithms
 **Keywords**: Online caching, learning-augmented algorithms, robustification, 1-consistency, competitive ratio
 

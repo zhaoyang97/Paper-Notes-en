@@ -17,8 +17,8 @@ content_hash: 3d5750b6d6f51671
 # VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.19524](https://arxiv.org/abs/2511.19524)
-**Code**: None
+**arXiv**: [2511.19524](https://arxiv.org/abs/2511.19524)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: Multi-Agent, Collaborative Policy Planning, MARL, GRPO, Video Understanding
 

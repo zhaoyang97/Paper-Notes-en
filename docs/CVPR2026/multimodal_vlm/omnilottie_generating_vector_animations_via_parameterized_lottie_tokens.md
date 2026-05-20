@@ -18,8 +18,8 @@ content_hash: b0fea873d3dafc85
 # OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02138](https://arxiv.org/abs/2603.02138)
-**Code**: To be confirmed (paper references a Project Page)
+**arXiv**: [2603.02138](https://arxiv.org/abs/2603.02138)  
+**Code**: To be confirmed (paper references a Project Page)  
 **Area**: Multimodal VLM / Vector Animation Generation
 **Keywords**: Lottie, vector animation, tokenization, multimodal instruction, VLM generation
 

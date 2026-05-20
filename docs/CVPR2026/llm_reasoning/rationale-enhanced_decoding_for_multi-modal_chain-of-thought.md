@@ -18,8 +18,8 @@ content_hash: 044abd00354566cf
 # Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought
 
 **Conference**: CVPR 2026
-**arXiv**: [2507.07685](https://arxiv.org/abs/2507.07685)
-**Code**: None
+**arXiv**: [2507.07685](https://arxiv.org/abs/2507.07685)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Chain-of-Thought reasoning, multimodal large language models, decoding strategy, rationale grounding, plug-and-play
 
@@ -49,21 +49,21 @@ A standard two-step CoT pipeline is employed: (1) given image $x$ and question $
 
 1. **KL-Constrained Reward Maximization Formulation**:
 
-   - **Function**: Reformulates CoT decoding as a theoretically grounded optimization problem.
-   - **Mechanism**: Introduces a new next-token distribution $\pi$ that maximizes: $\max_\pi \mathbb{E}_\pi[R] - \beta \mathbb{D}_{\text{KL}}[\pi || \pi_{\text{ref}}]$, where the reward is $R = \log p_\theta(y_i | \mathbf{y}_{<i}, r, q)$ (rationale-grounding reward) and the reference policy is $\pi_{\text{ref}} = p_\theta(y_i | \mathbf{y}_{<i}, x, q)$ (image-conditioned probability).
-   - **Design Motivation**: Maximizing the rationale-conditioned log-likelihood ensures the model utilizes rationale information; the KL constraint prevents excessive deviation from the image-conditioned distribution, thereby preserving visual information. This avoids the failure mode of rationale being ignored in the direct $p(y|x,r,q)$ formulation.
+    - **Function**: Reformulates CoT decoding as a theoretically grounded optimization problem.
+    - **Mechanism**: Introduces a new next-token distribution $\pi$ that maximizes: $\max_\pi \mathbb{E}_\pi[R] - \beta \mathbb{D}_{\text{KL}}[\pi || \pi_{\text{ref}}]$, where the reward is $R = \log p_\theta(y_i | \mathbf{y}_{<i}, r, q)$ (rationale-grounding reward) and the reference policy is $\pi_{\text{ref}} = p_\theta(y_i | \mathbf{y}_{<i}, x, q)$ (image-conditioned probability).
+    - **Design Motivation**: Maximizing the rationale-conditioned log-likelihood ensures the model utilizes rationale information; the KL constraint prevents excessive deviation from the image-conditioned distribution, thereby preserving visual information. This avoids the failure mode of rationale being ignored in the direct $p(y|x,r,q)$ formulation.
 
 2. **RED Optimal Decoding Formula**:
 
-   - **Function**: Provides a closed-form optimal solution requiring no training.
-   - **Mechanism**: Applying the known optimal policy form for KL-constrained reward maximization to this specific setting yields $\hat{p}_\theta(y_i) = \frac{1}{Z_\theta} p_\theta(y_i|\mathbf{y}_{<i}, x, q) \times p_\theta(y_i|\mathbf{y}_{<i}, r, q)^\lambda$. This is a product-of-experts distribution that emphasizes the intersection of the image-conditioned and rationale-conditioned probability regions.
-   - **Design Motivation**: Theorem 4.1 rigorously proves that this formula is the optimal solution to Eq. (7). The parameter $\lambda = 1/\beta$ controls the influence weight of rationale information.
+    - **Function**: Provides a closed-form optimal solution requiring no training.
+    - **Mechanism**: Applying the known optimal policy form for KL-constrained reward maximization to this specific setting yields $\hat{p}_\theta(y_i) = \frac{1}{Z_\theta} p_\theta(y_i|\mathbf{y}_{<i}, x, q) \times p_\theta(y_i|\mathbf{y}_{<i}, r, q)^\lambda$. This is a product-of-experts distribution that emphasizes the intersection of the image-conditioned and rationale-conditioned probability regions.
+    - **Design Motivation**: Theorem 4.1 rigorously proves that this formula is the optimal solution to Eq. (7). The parameter $\lambda = 1/\beta$ controls the influence weight of rationale information.
 
 3. **Practical Implementation (Logit-Level Weighted Summation)**:
 
-   - **Function**: Translates RED into a simple logit operation.
-   - **Mechanism**: $\widehat{\text{logits}}_\theta(y_i) = \log\text{softmax}(\text{logits}_\theta(y_i|\mathbf{y}_{<i}, x, q)) + \lambda \cdot \log\text{softmax}(\text{logits}_\theta(y_i|\mathbf{y}_{<i}, r, q))$, then $\hat{p}_\theta(y_i) = \text{softmax}(\widehat{\text{logits}}_\theta(y_i))$. The two logits can be computed in parallel, avoiding additional latency.
-   - **Design Motivation**: Weighted summation of log-softmax values is the log-space equivalent of multiplication, yielding a simple and efficient implementation.
+    - **Function**: Translates RED into a simple logit operation.
+    - **Mechanism**: $\widehat{\text{logits}}_\theta(y_i) = \log\text{softmax}(\text{logits}_\theta(y_i|\mathbf{y}_{<i}, x, q)) + \lambda \cdot \log\text{softmax}(\text{logits}_\theta(y_i|\mathbf{y}_{<i}, r, q))$, then $\hat{p}_\theta(y_i) = \text{softmax}(\widehat{\text{logits}}_\theta(y_i))$. The two logits can be computed in parallel, avoiding additional latency.
+    - **Design Motivation**: Weighted summation of log-softmax values is the log-space equivalent of multiplication, yielding a simple and efficient implementation.
 
 ### Loss & Training
 RED is a purely inference-time method requiring **zero training**. It requires only two forward passes through the existing LVLM (one image-conditioned, one rationale-conditioned), followed by logit-level composition. The sole hyperparameter is $\lambda$, which controls the degree of rationale influence.

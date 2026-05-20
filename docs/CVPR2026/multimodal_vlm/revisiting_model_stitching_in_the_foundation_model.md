@@ -18,8 +18,8 @@ content_hash: 118a6d1296204c29
 # Revisiting Model Stitching in the Foundation Model Era
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12433](https://arxiv.org/abs/2603.12433)
-**Code**: N/A
+**arXiv**: [2603.12433](https://arxiv.org/abs/2603.12433)  
+**Code**: N/A  
 **Area**: Multimodal VLM / Model Fusion
 **Keywords**: Model Stitching, Vision Foundation Models, Representation Compatibility, VFM Stitch Tree, Multimodal LLM
 
@@ -30,9 +30,9 @@ This paper systematically investigates the feasibility of stitching heterogeneou
 
 1. **Background**: Vision foundation models (e.g., CLIP, DINOv2, SigLIP 2) pretrained under diverse objectives, datasets, and modality combinations have become the default backbones for downstream tasks. Multimodal systems (e.g., MoF-LLaVA, Cambrian-1) increasingly employ multiple VFMs simultaneously to capture complementary visual information.
 2. **Limitations of Prior Work**:
-   - Model stitching, used as a probe for measuring representational compatibility, has been shown to work for small models trained on the same dataset (e.g., ResNet-18 on CIFAR-10), but whether heterogeneous VFMs are stitchable remains unknown.
-   - Conventional stitching training methods — Layer Feature Matching (LFM) and Task Loss Training (TLT) — fail on VFMs. The former causes accumulated intermediate matching errors that amplify final feature deviation, especially at shallow stitching points; the latter suffers from optimization difficulties when gradients must propagate through long chains of frozen layers.
-   - Deploying multiple VFMs incurs linear computational and memory overhead ($k$ VFMs = $k\times$ cost), with no efficient sharing mechanism.
+    - Model stitching, used as a probe for measuring representational compatibility, has been shown to work for small models trained on the same dataset (e.g., ResNet-18 on CIFAR-10), but whether heterogeneous VFMs are stitchable remains unknown.
+    - Conventional stitching training methods — Layer Feature Matching (LFM) and Task Loss Training (TLT) — fail on VFMs. The former causes accumulated intermediate matching errors that amplify final feature deviation, especially at shallow stitching points; the latter suffers from optimization difficulties when gradients must propagate through long chains of frozen layers.
+    - Deploying multiple VFMs incurs linear computational and memory overhead ($k$ VFMs = $k\times$ cost), with no efficient sharing mechanism.
 3. **Key Challenge**: VFMs differ substantially in pretraining data (LAION vs. LVD-142M vs. WebLI), objectives (contrastive learning vs. self-supervised reconstruction), and modality combinations (vision-only vs. vision-language), making it insufficient to bridge their intermediate representations with simple learned transformations.
 4. **Goal**: ① Determine whether heterogeneous VFMs can be stitched; ② identify a reliable stitching training strategy; ③ elevate stitching from a diagnostic tool to a practical VFM fusion framework.
 5. **Key Insight**: Systematic analysis of stitching failure modes (intermediate matching ≠ final alignment; gradient attenuation), followed by a targeted remedy.
@@ -47,23 +47,23 @@ Given a source VFM $f_\theta$ and a target VFM $f_\phi$ (both $N$-layer Transfor
 
 1. **Final Feature Matching (FFM)**
 
-   - **Function**: Provides high-quality initialization for the stitching layer, ensuring final output features align with the target VFM.
-   - **Mechanism**: Rather than matching intermediate features at the stitching point $n$, FFM directly minimizes the feature discrepancy at the final layer $N$ after passing through the stitched model:
+    - **Function**: Provides high-quality initialization for the stitching layer, ensuring final output features align with the target VFM.
+    - **Mechanism**: Rather than matching intermediate features at the stitching point $n$, FFM directly minimizes the feature discrepancy at the final layer $N$ after passing through the stitched model:
      $$\mathcal{L}_{FFM} = \frac{1}{M}\sum_{i=1}^M \|T_\phi^N(S(R_\theta^n(x_i))) - T_\phi^N(R_\phi^n(x_i))\|_2^2$$
      Despite supervising only the final layer, FFM is empirically found to implicitly maintain low feature distances at intermediate layers as well, while achieving significantly smaller final feature distances than LFM.
-   - **Design Motivation**: LFM yields very small errors at the stitching point (on the order of $10^{-3}$), yet these errors are amplified by subsequent frozen layers, causing severe final feature deviation — particularly at shallow stitching points. FFM directly optimizes the final outcome, addressing this failure from the root. Furthermore, FFM requires no labels and can be trained in a fully unsupervised manner.
+    - **Design Motivation**: LFM yields very small errors at the stitching point (on the order of $10^{-3}$), yet these errors are amplified by subsequent frozen layers, causing severe final feature deviation — particularly at shallow stitching points. FFM directly optimizes the final outcome, addressing this failure from the root. Furthermore, FFM requires no labels and can be trained in a fully unsupervised manner.
 
 2. **Two-Stage Training (FFM + Task Loss Training)**
 
-   - **Function**: Stage 1 establishes a favorable loss landscape via FFM initialization; Stage 2 maximizes downstream task performance via task loss fine-tuning.
-   - **Mechanism**: Stage 1 pretrains the stitching layer with FFM (label-free); Stage 2 fine-tunes the stitching layer with downstream task loss (e.g., cross-entropy for classification). This pipeline specifically resolves the optimization difficulty of TLT at shallow stitching points, where random initialization combined with weak gradient signals (propagated from pooled tokens through long frozen chains) leads to a poorly conditioned loss landscape. FFM initialization places the stitching layer at a favorable starting point.
-   - **Design Motivation**: Directly applying TLT to shallow-layer DINOv2→SigLIP2 stitching yields only 25.1% accuracy, well below the individual linear probing baselines of the two models (46.7% and 53.5%). FFM initialization raises this to 51.7%, and FFM+TLT further improves it to 55.8% (Layer 6).
+    - **Function**: Stage 1 establishes a favorable loss landscape via FFM initialization; Stage 2 maximizes downstream task performance via task loss fine-tuning.
+    - **Mechanism**: Stage 1 pretrains the stitching layer with FFM (label-free); Stage 2 fine-tunes the stitching layer with downstream task loss (e.g., cross-entropy for classification). This pipeline specifically resolves the optimization difficulty of TLT at shallow stitching points, where random initialization combined with weak gradient signals (propagated from pooled tokens through long frozen chains) leads to a poorly conditioned loss landscape. FFM initialization places the stitching layer at a favorable starting point.
+    - **Design Motivation**: Directly applying TLT to shallow-layer DINOv2→SigLIP2 stitching yields only 25.1% accuracy, well below the individual linear probing baselines of the two models (46.7% and 53.5%). FFM initialization raises this to 51.7%, and FFM+TLT further improves it to 55.8% (Layer 6).
 
 3. **Self-Stitch Baseline (Controlled Experiment)**
 
-   - **Function**: Disentangles whether performance gains originate from stitching layer capacity or genuine VFM knowledge fusion.
-   - **Mechanism**: Stitching is performed within a single VFM (e.g., SigLIP2→SigLIP2) using the same stitching layer, stitching point, training loss, and downstream data. If cross-VFM stitching surpasses self-stitching, the gain is attributable to true complementary knowledge fusion rather than additional parameters or capacity from fine-tuning.
-   - **Design Motivation**: Since VFMs are pretrained on large-scale heterogeneous data and evaluated on downstream data, improvements may simply reflect adaptation of the stitching layer to downstream distributions (equivalent to extra fine-tuning parameters). The self-stitch baseline rules out this explanation. Experiments confirm that cross-VFM stitching consistently outperforms self-stitching (+2.3% to +2.6%), confirming genuine complementary fusion.
+    - **Function**: Disentangles whether performance gains originate from stitching layer capacity or genuine VFM knowledge fusion.
+    - **Mechanism**: Stitching is performed within a single VFM (e.g., SigLIP2→SigLIP2) using the same stitching layer, stitching point, training loss, and downstream data. If cross-VFM stitching surpasses self-stitching, the gain is attributable to true complementary knowledge fusion rather than additional parameters or capacity from fine-tuning.
+    - **Design Motivation**: Since VFMs are pretrained on large-scale heterogeneous data and evaluated on downstream data, improvements may simply reflect adaptation of the stitching layer to downstream distributions (equivalent to extra fine-tuning parameters). The self-stitch baseline rules out this explanation. Experiments confirm that cross-VFM stitching consistently outperforms self-stitching (+2.3% to +2.6%), confirming genuine complementary fusion.
 
 ### Loss & Training
 - **Stage 1**: FFM loss (label-free data); source and target features can be pre-extracted to accelerate training.

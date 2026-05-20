@@ -18,8 +18,8 @@ content_hash: 3281567557f77e40
 # DA-VAE: Plug-in Latent Compression for Diffusion via Detail Alignment
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22125](https://arxiv.org/abs/2603.22125)
-**Code**: [Project Page](https://caixin98.github.io/davae)
+**arXiv**: [2603.22125](https://arxiv.org/abs/2603.22125)  
+**Code**: [Project Page](https://caixin98.github.io/davae)  
 **Area**: Image Generation
 **Keywords**: VAE, Latent Compression, Diffusion Transformer, Token Efficiency, High-Resolution Generation
 
@@ -50,8 +50,8 @@ DA-VAE encodes a high-resolution image $\mathbf{I}_{hr}$ ($sH \times sW$, $s=2$)
 2. **Latent Alignment Loss**: $\mathbf{z}_d$ is projected to $C$ dimensions via parameter-free group averaging: $\text{Proj}(\mathbf{z}_d)[i,h,w] = \frac{1}{r}\sum_{j=1}^{r}\mathbf{z}_d[ir+j,h,w]$, followed by minimizing $\mathcal{L}_{\text{align}} = \|\text{Proj}(\mathbf{z}_d) - \mathbf{z}\|^2$. **Design Motivation**: Without alignment, the detail channels degenerate into noise residuals lacking semantic structure (confirmed by t-SNE visualizations); after alignment, each channel exhibits class-separable clustering.
 
 3. **Warm-Start Fine-tuning**:
-   - **Zero-Init**: The newly added patch embedder $P'$ and output layer $O'$ are initialized to zero, ensuring the model is equivalent to the pretrained DiT at the start of training.
-   - **Gradual Loss Scheduling**: A cosine annealing weight $w(n) = \frac{1-\cos(\pi n/N_{\text{warm}})}{2}$ is applied to the detail channel loss, so that early training is dominated by the base channels and the detail channel learning signal is introduced gradually. **Design Motivation**: This prevents the high-dimensional channels from disrupting the pretrained model's prior at the beginning of training.
+    - **Zero-Init**: The newly added patch embedder $P'$ and output layer $O'$ are initialized to zero, ensuring the model is equivalent to the pretrained DiT at the start of training.
+    - **Gradual Loss Scheduling**: A cosine annealing weight $w(n) = \frac{1-\cos(\pi n/N_{\text{warm}})}{2}$ is applied to the detail channel loss, so that early training is dominated by the base channels and the detail channel learning signal is introduced gradually. **Design Motivation**: This prevents the high-dimensional channels from disrupting the pretrained model's prior at the beginning of training.
 
 ### Loss & Training
 - VAE loss: $\mathcal{L} = \mathcal{L}_{\text{rec}} + \lambda_{\text{align}}\mathcal{L}_{\text{align}}$, where $\mathcal{L}_{\text{rec}}$ comprises LPIPS, L1, adversarial, and KL regularization losses. $\lambda_{\text{align}}=0.5$ yields the best balance.

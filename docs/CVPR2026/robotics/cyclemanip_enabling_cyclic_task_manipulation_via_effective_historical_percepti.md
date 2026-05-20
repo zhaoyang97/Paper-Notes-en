@@ -18,8 +18,8 @@ content_hash: d80aa0da5a06228b
 # CycleManip: Enabling Cyclic Task Manipulation via Effective Historical Perception and Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.01022](https://arxiv.org/abs/2512.01022)
-**Code**: [https://isee-laboratory.github.io/CycleManip/](https://isee-laboratory.github.io/CycleManip/)
+**arXiv**: [2512.01022](https://arxiv.org/abs/2512.01022)  
+**Code**: [https://isee-laboratory.github.io/CycleManip/](https://isee-laboratory.github.io/CycleManip/)  
 **Area**: Robotics
 **Keywords**: cyclic manipulation, robot manipulation, imitation learning, historical perception, multi-task learning
 

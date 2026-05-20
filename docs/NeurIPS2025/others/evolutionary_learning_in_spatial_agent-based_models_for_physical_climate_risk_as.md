@@ -18,8 +18,8 @@ content_hash: c1a1918ada30f1cb
 # Evolutionary Learning in Spatial Agent-Based Models for Physical Climate Risk Assessment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.18633](https://arxiv.org/abs/2509.18633)
-**Code**: [GitHub](https://github.com/yaramohajerani/spatial-climate-ABM) (open source)
+**arXiv**: [2509.18633](https://arxiv.org/abs/2509.18633)  
+**Code**: [GitHub](https://github.com/yaramohajerani/spatial-climate-ABM) (open source)  
 **Area**: Other
 **Keywords**: geospatial ABM, evolutionary learning, physical climate risk, supply chain systemic risk, RCP8.5, flood damage functions
 

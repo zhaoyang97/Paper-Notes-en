@@ -18,8 +18,8 @@ content_hash: 54f604a36ac72a19
 # A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.26441](https://arxiv.org/abs/2510.26441)
-**Code**: Coming soon
+**arXiv**: [2510.26441](https://arxiv.org/abs/2510.26441)  
+**Code**: Coming soon  
 **Area**: Multimodal VLM / Calibration
 **Keywords**: Test-time prompt tuning, CLIP, calibration, angular diversity, hyperspherical uniform distribution
 

@@ -17,8 +17,8 @@ content_hash: 040ceecc68143a39
 # Plasticity as the Mirror of Empowerment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.10361](https://arxiv.org/abs/2505.10361)
-**Code**: None
+**arXiv**: [2505.10361](https://arxiv.org/abs/2505.10361)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Plasticity, Empowerment, Information Theory, Generalized Directed Information, Agent Design
 

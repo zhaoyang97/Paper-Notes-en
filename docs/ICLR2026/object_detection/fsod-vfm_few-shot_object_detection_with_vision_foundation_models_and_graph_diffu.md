@@ -18,8 +18,8 @@ content_hash: 3174a2e4ca9b6c68
 # FSOD-VFM: Few-Shot Object Detection with Vision Foundation Models and Graph Diffusion
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.03137](https://arxiv.org/abs/2602.03137)
-**Code**: [https://intellindust-ai-lab.github.io/projects/FSOD-VFM](https://intellindust-ai-lab.github.io/projects/FSOD-VFM)
+**arXiv**: [2602.03137](https://arxiv.org/abs/2602.03137)  
+**Code**: [https://intellindust-ai-lab.github.io/projects/FSOD-VFM](https://intellindust-ai-lab.github.io/projects/FSOD-VFM)  
 **Area**: Object Detection / Few-Shot Learning
 **Keywords**: Few-shot object detection, vision foundation models, graph diffusion, training-free, SAM2
 

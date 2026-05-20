@@ -18,8 +18,8 @@ content_hash: a5a779eccb796c33
 # Fair in Mind, Fair in Action? A Synchronous Benchmark for Understanding and Generation in UMLLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00590](https://arxiv.org/abs/2603.00590)
-**Code**: None
+**arXiv**: [2603.00590](https://arxiv.org/abs/2603.00590)  
+**Code**: None  
 **Area**: AI Safety / Fairness
 **Keywords**: Fairness Benchmark, Unified Multimodal LLM, Bias Evaluation, Demographic Fairness, Generation-Understanding Gap
 

@@ -18,8 +18,8 @@ content_hash: 05321cfe15b20618
 # Mechanism Design for LLM Fine-tuning with Multiple Reward Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2405.16276](https://arxiv.org/abs/2405.16276)
-**Code**: None
+**arXiv**: [2405.16276](https://arxiv.org/abs/2405.16276)  
+**Code**: None  
 **Area**: Alignment RLHF / Mechanism Design
 **Keywords**: mechanism design, RLHF, preference aggregation, VCG payment, incentive compatibility
 

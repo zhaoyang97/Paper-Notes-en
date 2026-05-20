@@ -18,8 +18,8 @@ content_hash: 843eb9d3aee9c469
 # FairGSE: Fairness-Aware Graph Neural Network without High False Positive Rates
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12132](https://arxiv.org/abs/2511.12132)
-**Code**: None
+**arXiv**: [2511.12132](https://arxiv.org/abs/2511.12132)  
+**Code**: None  
 **Area**: AI Safety / Fairness
 **Keywords**: Graph Neural Networks, Fairness, False Positive Rate, Structural Entropy, Contrastive Learning
 
@@ -49,22 +49,22 @@ Three components: (1) a **graph structure learner** that learns a trainable adja
 
 1. **Graph Structure Learner**:
 
-   - **Function**: Optimizes edge weights to maximize 2D structural entropy.
-   - **Mechanism**: Each edge is associated with a trainable parameter $a_{(i,j)}$, converted to a weight via sigmoid as $\mathbf{A}^l_{(i,j)} = \sigma(a_{(i,j)})$, and the model minimizes $\mathcal{L}_{SE} = -H^{\mathcal{P}_S}(G_l)$.
-   - **Theoretical Guarantee**: Theorem 1 proves $\Delta_{SP} \leq \sqrt{2(H^{max} - H^{\mathcal{P}_S}(G))}$; Theorem 2 establishes an analogous upper bound for FPR.
-   - **Design Motivation**: Higher 2D-SE encourages cross-group message aggregation, reducing node representations' dependence on sensitive attributes.
+    - **Function**: Optimizes edge weights to maximize 2D structural entropy.
+    - **Mechanism**: Each edge is associated with a trainable parameter $a_{(i,j)}$, converted to a weight via sigmoid as $\mathbf{A}^l_{(i,j)} = \sigma(a_{(i,j)})$, and the model minimizes $\mathcal{L}_{SE} = -H^{\mathcal{P}_S}(G_l)$.
+    - **Theoretical Guarantee**: Theorem 1 proves $\Delta_{SP} \leq \sqrt{2(H^{max} - H^{\mathcal{P}_S}(G))}$; Theorem 2 establishes an analogous upper bound for FPR.
+    - **Design Motivation**: Higher 2D-SE encourages cross-group message aggregation, reducing node representations' dependence on sensitive attributes.
 
 2. **Contrastive Learning Module**:
 
-   - **Function**: Prevents the learned graph from deviating excessively from the original structure, preserving classification performance.
-   - **Mechanism**: A shared GNN encoder encodes both the anchor view and the learner view; NT-Xent loss aligns each node's representations across the two views.
-   - **Design Motivation**: Optimizing 2D-SE alone leads to training instability and structural distortion; contrastive learning constrains the objective by maximizing $I(G_a, G_l)$ to preserve structural information.
+    - **Function**: Prevents the learned graph from deviating excessively from the original structure, preserving classification performance.
+    - **Mechanism**: A shared GNN encoder encodes both the anchor view and the learner view; NT-Xent loss aligns each node's representations across the two views.
+    - **Design Motivation**: Optimizing 2D-SE alone leads to training instability and structural distortion; contrastive learning constrains the objective by maximizing $I(G_a, G_l)$ to preserve structural information.
 
 3. **Structure Bootstrapping Mechanism**:
 
-   - **Function**: Progressively updates the anchor view to eliminate bias present in the original graph.
-   - **Mechanism**: $\mathbf{A}^a = \tau \mathbf{A}^a + (1-\tau) \mathbf{A}^l$, with $\tau = 0.9999$.
-   - **Design Motivation**: A fixed anchor view inherits the original graph's bias and causes overfitting; slowly incorporating the high-2D-SE learned structure gradually removes bias.
+    - **Function**: Progressively updates the anchor view to eliminate bias present in the original graph.
+    - **Mechanism**: $\mathbf{A}^a = \tau \mathbf{A}^a + (1-\tau) \mathbf{A}^l$, with $\tau = 0.9999$.
+    - **Design Motivation**: A fixed anchor view inherits the original graph's bias and causes overfitting; slowly incorporating the high-2D-SE learned structure gradually removes bias.
 
 ### Loss & Training
 $\mathcal{L} = \mathcal{L}_{task} + \lambda_1 \mathcal{L}_{cont} - \lambda_2 \mathcal{L}_{SE}$, where $\mathcal{L}_{task}$ is the cross-entropy loss for node classification.

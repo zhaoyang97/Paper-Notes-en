@@ -18,8 +18,8 @@ content_hash: 8522207fb79832a0
 # HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07812](https://arxiv.org/abs/2604.07812)
-**Code**: [https://github.com/peppery77/HAWK.git](https://github.com/peppery77/HAWK.git)
+**arXiv**: [2604.07812](https://arxiv.org/abs/2604.07812)  
+**Code**: [https://github.com/peppery77/HAWK.git](https://github.com/peppery77/HAWK.git)  
 **Area**: Multimodal VLM / LLM Efficiency
 **Keywords**: Visual token pruning, attention head importance, multimodal inference acceleration, training-free, text-guided attention
 
@@ -49,21 +49,21 @@ HAWK consists of three steps: (1) **Offline phase** — ablate each attention he
 
 1. **Static Attention Head Importance Weights**
 
-   - **Function**: Quantify each attention head's intrinsic contribution to visual understanding.
-   - **Mechanism**: For each head $i$, the performance drop after ablation is measured on multiple benchmark datasets $j$: $\Delta S_{i,j} = S_{base,j} - S_{i,j}$. A min-shift is applied to ensure non-negativity: $S'_{i,j} = \Delta S_{i,j} - \min_i(\Delta S_{i,j})$. The values are then L1-normalized and averaged across datasets to obtain weights $w_i = \frac{1}{N_d}\sum_j \frac{S'_{i,j}}{\sum_i S'_{i,j}}$. These weights are computed once and reused thereafter.
-   - **Design Motivation**: Ablation experiments confirm that different heads have significantly different and cross-dataset-consistent impacts, enabling reliable head importance estimation with minimal offline computation. The min-shift avoids negative weight issues.
+    - **Function**: Quantify each attention head's intrinsic contribution to visual understanding.
+    - **Mechanism**: For each head $i$, the performance drop after ablation is measured on multiple benchmark datasets $j$: $\Delta S_{i,j} = S_{base,j} - S_{i,j}$. A min-shift is applied to ensure non-negativity: $S'_{i,j} = \Delta S_{i,j} - \min_i(\Delta S_{i,j})$. The values are then L1-normalized and averaged across datasets to obtain weights $w_i = \frac{1}{N_d}\sum_j \frac{S'_{i,j}}{\sum_i S'_{i,j}}$. These weights are computed once and reused thereafter.
+    - **Design Motivation**: Ablation experiments confirm that different heads have significantly different and cross-dataset-consistent impacts, enabling reliable head importance estimation with minimal offline computation. The min-shift avoids negative weight issues.
 
 2. **Dynamic Text-Guided Attention Scores**
 
-   - **Function**: Dynamically evaluate each visual token's task relevance conditioned on the current text instruction.
-   - **Mechanism**: Using the Q/K projection matrices of the first LLM attention layer, text embeddings are projected as queries and visual embeddings as keys. The attention matrix without positional encodings is computed as $A^i = Q^i \cdot (K^i)^T / \sqrt{d_k}$, and scores are averaged over all text tokens to obtain the relevance score for each visual token under head $i$: $c^i_k = \frac{1}{N}\sum_j A^i_{j,k}$.
-   - **Design Motivation**: RoPE positional encodings are deliberately removed to ensure that attention scores reflect only the semantic correspondence between text and visual tokens, unaffected by token positions. The first layer is selected because pruning must be performed at the model's front end, and the first layer already contains sufficient semantic information.
+    - **Function**: Dynamically evaluate each visual token's task relevance conditioned on the current text instruction.
+    - **Mechanism**: Using the Q/K projection matrices of the first LLM attention layer, text embeddings are projected as queries and visual embeddings as keys. The attention matrix without positional encodings is computed as $A^i = Q^i \cdot (K^i)^T / \sqrt{d_k}$, and scores are averaged over all text tokens to obtain the relevance score for each visual token under head $i$: $c^i_k = \frac{1}{N}\sum_j A^i_{j,k}$.
+    - **Design Motivation**: RoPE positional encodings are deliberately removed to ensure that attention scores reflect only the semantic correspondence between text and visual tokens, unaffected by token positions. The first layer is selected because pruning must be performed at the model's front end, and the first layer already contains sufficient semantic information.
 
 3. **Head Importance-Aware Fusion Pruning**
 
-   - **Function**: Integrate static head weights and dynamic attention scores for precise pruning.
-   - **Mechanism**: The final importance score for each visual token $k$ is $I_k = \sum_{i=1}^{N_h} w_i \cdot c^i_k$, i.e., a weighted sum of per-head attention scores using head importance weights. Tokens are ranked by importance, and the top $\tilde{M} = \lfloor M \cdot r \rfloor$ visual tokens are retained. The pruned token subset is concatenated with text tokens and passed to subsequent LLM layers.
-   - **Design Motivation**: Compared to simple averaging across all heads, the weighted sum gives greater influence to important heads (e.g., those focused on critical visual semantics), avoiding dilution by noise from unimportant heads.
+    - **Function**: Integrate static head weights and dynamic attention scores for precise pruning.
+    - **Mechanism**: The final importance score for each visual token $k$ is $I_k = \sum_{i=1}^{N_h} w_i \cdot c^i_k$, i.e., a weighted sum of per-head attention scores using head importance weights. Tokens are ranked by importance, and the top $\tilde{M} = \lfloor M \cdot r \rfloor$ visual tokens are retained. The pruned token subset is concatenated with text tokens and passed to subsequent LLM layers.
+    - **Design Motivation**: Compared to simple averaging across all heads, the weighted sum gives greater influence to important heads (e.g., those focused on critical visual semantics), avoiding dilution by noise from unimportant heads.
 
 ### Loss & Training
 HAWK requires no training. The offline computation of head importance weights uses six datasets: HallBench, MME, TextVQA, ChartQA, AI2D, and RealWorldQA. At inference time, only a single matrix operation is needed to compute attention scores and perform weighted pruning.

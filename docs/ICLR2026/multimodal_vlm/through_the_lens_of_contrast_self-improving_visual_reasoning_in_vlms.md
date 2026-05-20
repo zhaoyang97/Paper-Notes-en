@@ -18,8 +18,8 @@ content_hash: bace7d36452543d5
 # Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02556](https://arxiv.org/abs/2603.02556)
-**Code**: [https://github.com/zhiyupan42/VC-STaR](https://github.com/zhiyupan42/VC-STaR)
+**arXiv**: [2603.02556](https://arxiv.org/abs/2603.02556)  
+**Code**: [https://github.com/zhiyupan42/VC-STaR](https://github.com/zhiyupan42/VC-STaR)  
 **Area**: Multimodal VLM / Visual Reasoning
 **Keywords**: visual reasoning, self-improving, visual contrast, hallucination mitigation, contrastive VQA pairs
 

@@ -18,8 +18,8 @@ content_hash: 7b4326abe5551c11
 # TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19509](https://arxiv.org/abs/2511.19509)
-**Code**: [https://touchformer.github.io/TouchFormer/](https://touchformer.github.io/TouchFormer/)
+**arXiv**: [2511.19509](https://arxiv.org/abs/2511.19509)  
+**Code**: [https://touchformer.github.io/TouchFormer/](https://touchformer.github.io/TouchFormer/)  
 **Area**: Robotics
 **Keywords**: Multimodal fusion, material perception, tactile sensing, adaptive gating, Transformer
 

@@ -18,8 +18,8 @@ content_hash: f84e76fd8cffbd8f
 # ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.17560](https://arxiv.org/abs/2602.17560)
-**Code**: [Project Page](https://odesteer.github.io)
+**arXiv**: [2602.17560](https://arxiv.org/abs/2602.17560)  
+**Code**: [Project Page](https://odesteer.github.io)  
 **Area**: Robotics
 **Keywords**: Activation Steering, ODE, Barrier Function, Control Theory, Inference-Time Alignment
 

@@ -18,8 +18,8 @@ content_hash: aab945fec3eedc07
 # Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.18117](https://arxiv.org/abs/2602.18117)
-**Code**: [GitHub](https://github.com/CTID282/FINO)
+**arXiv**: [2602.18117](https://arxiv.org/abs/2602.18117)  
+**Code**: [GitHub](https://github.com/CTID282/FINO)  
 **Area**: Flow Matching / Reinforcement Learning
 **Keywords**: Flow Matching, Offline-to-Online RL, Noise Injection, Exploration-Exploitation Balance, Entropy-Guided Sampling
 

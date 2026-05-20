@@ -18,8 +18,8 @@ content_hash: c18c313f972ce0a0
 # Measuring the Impact of Rotation Equivariance on Aerial Object Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.09896](https://arxiv.org/abs/2507.09896)
-**Code**: [GitHub](https://github.com/Nu1sance/MessDet)
+**arXiv**: [2507.09896](https://arxiv.org/abs/2507.09896)  
+**Code**: [GitHub](https://github.com/Nu1sance/MessDet)  
 **Area**: Object Detection
 **Keywords**: Aerial image detection, rotation equivariance, group equivariant networks, channel attention, multi-branch detection head
 

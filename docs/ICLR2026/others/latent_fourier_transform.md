@@ -19,7 +19,7 @@ content_hash: 9c317c465be48073
 
 **Conference**: ICLR 2026 Oral
 **OpenReview**: [ogMxCjdCCq](https://openreview.net/forum?id=ogMxCjdCCq)
-**Code**: Available
+**Code**: Available  
 **Area**: Others
 **Keywords**: diffusion autoencoder, Fourier transform, music generation, latent frequency, timescale control, controllable generation
 

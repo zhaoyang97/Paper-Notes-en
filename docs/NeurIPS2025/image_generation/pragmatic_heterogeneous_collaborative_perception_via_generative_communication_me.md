@@ -18,8 +18,8 @@ content_hash: f41f0e66ab90d8d6
 # Pragmatic Heterogeneous Collaborative Perception via Generative Communication Mechanism
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19618](https://arxiv.org/abs/2510.19618)
-**Code**: [Available](https://github.com/jeffreychou777/GenComm)
+**arXiv**: [2510.19618](https://arxiv.org/abs/2510.19618)  
+**Code**: [Available](https://github.com/jeffreychou777/GenComm)  
 **Area**: Image Generation
 **Keywords**: Heterogeneous Collaborative Perception, Generative Communication, Conditional Diffusion Model, BEV Feature Generation, Scalability
 

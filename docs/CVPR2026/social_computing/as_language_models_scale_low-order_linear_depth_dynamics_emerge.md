@@ -18,8 +18,8 @@ content_hash: 03433e6b4be69a64
 # As Language Models Scale, Low-order Linear Depth Dynamics Emerge
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12541](https://arxiv.org/abs/2603.12541)
-**Code**: None
+**arXiv**: [2603.12541](https://arxiv.org/abs/2603.12541)  
+**Code**: None  
 **Area**: Social Computing
 **Keywords**: activation intervention, local linearization, depth dynamics, system identification, model scaling
 
@@ -77,41 +77,41 @@ This approach does not aim to fit the model's global behavior; rather, it fits a
 
 1. **Treating depth as time and the last token as the system state**
 
-   - *Function*: Define $x_\ell(p) = h_\ell(p)[t(p), :]$, where $t(p)$ is the position of the last non-padding token.
-   - *Mechanism*: Rather than modeling the full hidden states of the entire sequence, the authors focus on the last token representation, which most directly influences the final readout, and treat the sequence of Transformer blocks as temporal evolution.
-   - *Design Motivation*: Since the goal is to understand how activation steering affects final output, the last token state is closest to the decision end; this compression also allows "propagation along depth" to be described directly in state-space language.
+    - *Function*: Define $x_\ell(p) = h_\ell(p)[t(p), :]$, where $t(p)$ is the position of the last non-padding token.
+    - *Mechanism*: Rather than modeling the full hidden states of the entire sequence, the authors focus on the last token representation, which most directly influences the final readout, and treat the sequence of Transformer blocks as temporal evolution.
+    - *Design Motivation*: Since the goal is to understand how activation steering affects final output, the last token state is closest to the decision end; this compression also allows "propagation along depth" to be described directly in state-space language.
 
 2. **Freezing context and modeling only the local last-token response**
 
-   - *Function*: For a fixed prompt, the hidden states of all non-final tokens are held constant; only the last token is perturbed, and the effect of the next block is observed.
-   - *Mechanism*: This yields the prompt-conditioned mapping $x_{\ell+1} = f_\ell(x_\ell; p)$, which absorbs complex cross-token interactions into the "frozen context" and retains the local dynamics most relevant to steering.
-   - *Design Motivation*: Without freezing the context, the full system state would be too large to identify; by doing so, the problem shifts from "globally explaining the Transformer" to "locally explaining depth propagation under the current context," making it tractable.
+    - *Function*: For a fixed prompt, the hidden states of all non-final tokens are held constant; only the last token is perturbed, and the effect of the next block is observed.
+    - *Mechanism*: This yields the prompt-conditioned mapping $x_{\ell+1} = f_\ell(x_\ell; p)$, which absorbs complex cross-token interactions into the "frozen context" and retains the local dynamics most relevant to steering.
+    - *Design Motivation*: Without freezing the context, the full system state would be too large to identify; by doing so, the problem shifts from "globally explaining the Transformer" to "locally explaining depth propagation under the current context," making it tractable.
 
 3. **Modeling the external input along the concept direction**
 
-   - *Function*: The concept direction $v_\ell$ is estimated at each layer, and the main experiments consider only additive injections $u_\ell v_\ell$ along this direction.
-   - *Mechanism*: Concept directions are derived from normalized class-mean differences on an independent concept split, so the "input" of steering is also defined in a data-driven manner.
-   - *Design Motivation*: Many activation steering works assume the direction exists but do not model how it propagates. Here, direction estimation and dynamical propagation are unified, closing the loop among input, state, and output within a single framework.
+    - *Function*: The concept direction $v_\ell$ is estimated at each layer, and the main experiments consider only additive injections $u_\ell v_\ell$ along this direction.
+    - *Mechanism*: Concept directions are derived from normalized class-mean differences on an independent concept split, so the "input" of steering is also defined in a data-driven manner.
+    - *Design Motivation*: Many activation steering works assume the direction exists but do not model how it propagates. Here, direction estimation and dynamical propagation are unified, closing the loop among input, state, and output within a single framework.
 
 4. **Constructing the concept-anchored low-dimensional basis $P_\ell$**
 
-   - *Function*: The first column of the per-layer dimensionality reduction basis is fixed as the concept direction $v_\ell$; the remaining columns are constructed via a reachability-informed Krylov complement.
-   - *Mechanism*: This is neither arbitrary PCA nor a random complement, but a basis built by recursively expanding directions that are genuinely reachable under steering, starting from the action of the average Jacobian.
-   - *Design Motivation*: If the low-dimensional basis does not cover the subspace actually excited by the control input, even a small surrogate will miss critical propagation patterns. The Krylov-style complement ensures that the finite dimensional budget is spent on directions that steering actually uses.
+    - *Function*: The first column of the per-layer dimensionality reduction basis is fixed as the concept direction $v_\ell$; the remaining columns are constructed via a reachability-informed Krylov complement.
+    - *Mechanism*: This is neither arbitrary PCA nor a random complement, but a basis built by recursively expanding directions that are genuinely reachable under steering, starting from the action of the average Jacobian.
+    - *Design Motivation*: If the low-dimensional basis does not cover the subspace actually excited by the control input, even a small surrogate will miss critical propagation patterns. The Krylov-style complement ensures that the finite dimensional budget is spent on directions that steering actually uses.
 
 5. **Obtaining the layer-variant linear surrogate (LLV)**
 
-   - *Function*: After projection, the surrogate takes the form
+    - *Function*: After projection, the surrogate takes the form
      $$r_{\ell+1} \approx \bar{A}_\ell(p)\, r_\ell + \bar{B}_\ell(p)\, u_\ell, \quad r_\ell = P_\ell^\top \delta x_\ell.$$
-   - *Mechanism*: Although the original model is nonlinear, its response near the operating trajectory can be approximated by a set of layer-varying linear matrices; this better reflects the fact that different Transformer layers serve different functions.
-   - *Design Motivation*: The authors do not claim that "the Transformer is essentially linear"; rather, they emphasize that a *locally linear, layer-varying* approximation is sufficiently accurate. This more modest claim is both technically defensible and consistent with actual network structure.
+    - *Mechanism*: Although the original model is nonlinear, its response near the operating trajectory can be approximated by a set of layer-varying linear matrices; this better reflects the fact that different Transformer layers serve different functions.
+    - *Design Motivation*: The authors do not claim that "the Transformer is essentially linear"; rather, they emphasize that a *locally linear, layer-varying* approximation is sufficiently accurate. This more modest claim is both technically defensible and consistent with actual network structure.
 
 6. **Connecting analysis and control via predicted gain**
 
-   - *Function*: For a single-layer injection at layer $k$, the predicted final concept gain is
+    - *Function*: For a single-layer injection at layer $k$, the predicted final concept gain is
      $$g_k^{\text{pred}} \approx C\,\Phi(k+1, L)\,\bar{B}_k.$$
-   - *Mechanism*: Once the reduced transition product $\Phi$ is available, the sensitivity of each layer can be read directly from the surrogate model without empirical per-layer measurement.
-   - *Design Motivation*: This step transforms an "explanatory model" into an "actionable model." Rather than retrospectively explaining which layer is best, the framework predicts it in advance.
+    - *Mechanism*: Once the reduced transition product $\Phi$ is available, the sensitivity of each layer can be read directly from the surrogate model without empirical per-layer measurement.
+    - *Design Motivation*: This step transforms an "explanatory model" into an "actionable model." Rather than retrospectively explaining which layer is best, the framework predicts it in advance.
 
 ### Loss & Training
 

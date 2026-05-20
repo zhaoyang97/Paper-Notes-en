@@ -18,8 +18,8 @@ content_hash: a2cf720ea0076a4d
 # ILLUME: Illuminating Your LLMs to See, Draw, and Self-Enhance
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.06673](https://arxiv.org/abs/2412.06673)
-**Code**: Not publicly available
+**arXiv**: [2412.06673](https://arxiv.org/abs/2412.06673)  
+**Code**: Not publicly available  
 **Area**: Image Generation
 **Keywords**: Unified multimodal model, visual understanding and generation, semantic visual tokenizer, self-enhancement alignment, next-token prediction
 

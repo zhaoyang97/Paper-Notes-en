@@ -18,8 +18,8 @@ content_hash: 47042448d8c95332
 # MCAM: Multimodal Causal Analysis Model for Ego-Vehicle-Level Driving Video Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.06072](https://arxiv.org/abs/2507.06072)
-**Code**: [GitHub](https://github.com/SixCorePeach/MCAM)
+**arXiv**: [2507.06072](https://arxiv.org/abs/2507.06072)  
+**Code**: [GitHub](https://github.com/SixCorePeach/MCAM)  
 **Area**: Autonomous Driving
 **Keywords**: driving video understanding, causal analysis, directed acyclic graph, vision-language, ego-vehicle behavior understanding
 

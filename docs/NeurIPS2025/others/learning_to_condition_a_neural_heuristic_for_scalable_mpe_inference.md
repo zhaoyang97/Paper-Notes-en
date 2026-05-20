@@ -17,8 +17,8 @@ content_hash: 9b61c4638a403cc4
 # Learning to Condition: A Neural Heuristic for Scalable MPE Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25217](https://arxiv.org/abs/2509.25217)
-**Code**: None
+**arXiv**: [2509.25217](https://arxiv.org/abs/2509.25217)  
+**Code**: None  
 **Area**: Other
 **Keywords**: MPE inference, probabilistic graphical models, neural heuristic, conditioning, branch-and-bound
 

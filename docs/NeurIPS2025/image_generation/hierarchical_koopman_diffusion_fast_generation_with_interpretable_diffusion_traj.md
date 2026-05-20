@@ -19,7 +19,7 @@ content_hash: c0d7928f0123efe8
 # Hierarchical Koopman Diffusion: Fast Generation with Interpretable Diffusion Trajectory
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.12220](https://arxiv.org/abs/2510.12220)
+**arXiv**: [2510.12220](https://arxiv.org/abs/2510.12220)  
 **Authors**: Hanru Bai (Fudan University), Weiyang Ding (Fudan University), Difan Zou (The University of Hong Kong)
 **Area**: Image Generation
 **Keywords**: Diffusion model acceleration, one-step generation, Koopman operator, interpretable generation, hierarchical dynamics, spectral analysis

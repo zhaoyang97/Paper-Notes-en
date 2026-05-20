@@ -18,8 +18,8 @@ content_hash: 6304f7af75f0f4a6
 # Base Models Know How to Reason, Thinking Models Learn When
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07364](https://arxiv.org/abs/2510.07364)
-**Code**: [https://github.com/cvenhoff/thinking-llms-interp](https://github.com/cvenhoff/thinking-llms-interp)
+**arXiv**: [2510.07364](https://arxiv.org/abs/2510.07364)  
+**Code**: [https://github.com/cvenhoff/thinking-llms-interp](https://github.com/cvenhoff/thinking-llms-interp)  
 **Area**: LLM Reasoning / Mechanistic Interpretability / Representation Engineering
 **Keywords**: Thinking Models, Steering Vectors, SAE, Reasoning Mechanisms, Base Models
 

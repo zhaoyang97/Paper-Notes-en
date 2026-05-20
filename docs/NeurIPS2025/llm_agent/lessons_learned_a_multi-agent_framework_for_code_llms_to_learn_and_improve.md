@@ -18,8 +18,8 @@ content_hash: c44bbe549bc8d280
 # Lessons Learned: A Multi-Agent Framework for Code LLMs to Learn and Improve
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23946](https://arxiv.org/abs/2505.23946)
-**Code**: [https://github.com/MITIBM-FastCoder/LessonL](https://github.com/MITIBM-FastCoder/LessonL)
+**arXiv**: [2505.23946](https://arxiv.org/abs/2505.23946)  
+**Code**: [https://github.com/MITIBM-FastCoder/LessonL](https://github.com/MITIBM-FastCoder/LessonL)  
 **Area**: LLM Agent
 **Keywords**: multi-agent collaboration, code optimization, lesson mechanism, mutual learning, performance optimization
 

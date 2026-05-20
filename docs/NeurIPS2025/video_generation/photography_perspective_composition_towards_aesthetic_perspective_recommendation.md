@@ -17,8 +17,8 @@ content_hash: 924240bb3c9e0d91
 # Photography Perspective Composition: Towards Aesthetic Perspective Recommendation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20655](https://arxiv.org/abs/2505.20655)
-**Code**: [Project Page](https://vivocameraresearch.github.io/ppc)
+**arXiv**: [2505.20655](https://arxiv.org/abs/2505.20655)  
+**Code**: [Project Page](https://vivocameraresearch.github.io/ppc)  
 **Area**: Video Generation
 **Keywords**: Photography Composition, Perspective Transformation, Video Generation, Aesthetic Assessment, RLHF
 

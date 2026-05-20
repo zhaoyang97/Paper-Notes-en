@@ -18,8 +18,8 @@ content_hash: 774ef8948b2353ca
 # An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.06042](https://arxiv.org/abs/2504.06042)
-**Code**: [https://github.com/RufengXiao/AdaRHD](https://github.com/RufengXiao/AdaRHD)
+**arXiv**: [2504.06042](https://arxiv.org/abs/2504.06042)  
+**Code**: [https://github.com/RufengXiao/AdaRHD](https://github.com/RufengXiao/AdaRHD)  
 **Area**: Riemannian Optimization / Bilevel Optimization
 **Keywords**: Riemannian manifold, bilevel optimization, adaptive step size, hypergradient, conjugate gradient
 

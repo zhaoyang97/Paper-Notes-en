@@ -18,8 +18,8 @@ content_hash: 9299c6db21149095
 # Start Small, Think Big: Curriculum-based Relative Policy Optimization for Visual Grounding
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13924](https://arxiv.org/abs/2511.13924)
-**Code**: [github.com/qyoung-yan/CuRPO](https://github.com/qyoung-yan/CuRPO)
+**arXiv**: [2511.13924](https://arxiv.org/abs/2511.13924)  
+**Code**: [github.com/qyoung-yan/CuRPO](https://github.com/qyoung-yan/CuRPO)  
 **Area**: Reinforcement Learning
 **Keywords**: Visual Grounding, Curriculum Learning, GRPO, Chain-of-Thought, Vision-Language Models
 

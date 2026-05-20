@@ -18,8 +18,8 @@ content_hash: ea6a88c5ce601b9b
 # Robustness in Both Domains: CLIP Needs a Robust Text Encoder
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03355](https://arxiv.org/abs/2506.03355)
-**Code**: Available (github.com/LIONS-EPFL/LEAF, huggingface.co/LEAF-CLIP)
+**arXiv**: [2506.03355](https://arxiv.org/abs/2506.03355)  
+**Code**: Available (github.com/LIONS-EPFL/LEAF, huggingface.co/LEAF-CLIP)  
 **Area**: Image Generation
 **Keywords**: CLIP, text encoder robustness, adversarial fine-tuning, character-level attacks, Levenshtein distance
 

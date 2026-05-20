@@ -18,8 +18,8 @@ content_hash: ab5fb83612afb3c8
 # Risk-Sensitive Agent Compositions
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.04632](https://arxiv.org/abs/2506.04632)
-**Code**: None
+**arXiv**: [2506.04632](https://arxiv.org/abs/2506.04632)  
+**Code**: None  
 **Area**: AI Safety / Agent Systems
 **Keywords**: Risk-Sensitive, Agent Composition, VaR, CVaR, Dynamic Programming
 

@@ -18,8 +18,8 @@ content_hash: 8c72148b4ade93a2
 # Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13925](https://arxiv.org/abs/2505.13925)
-**Code**: [https://github.com/jyp9961/TR-DRL](https://github.com/jyp9961/TR-DRL)
+**arXiv**: [2505.13925](https://arxiv.org/abs/2505.13925)  
+**Code**: [https://github.com/jyp9961/TR-DRL](https://github.com/jyp9961/TR-DRL)  
 **Area**: Reinforcement Learning
 **Keywords**: time reversal symmetry, data augmentation, reward shaping, robotic manipulation, sample efficiency
 

@@ -18,8 +18,8 @@ content_hash: 0e0e5e53f88ac50e
 # PrefixKV: Adaptive Prefix KV Cache is What Vision Instruction-Following Models Need for Efficient Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.03409](https://arxiv.org/abs/2412.03409)
-**Code**: [https://github.com/THU-MIG/PrefixKV](https://github.com/THU-MIG/PrefixKV)
+**arXiv**: [2412.03409](https://arxiv.org/abs/2412.03409)  
+**Code**: [https://github.com/THU-MIG/PrefixKV](https://github.com/THU-MIG/PrefixKV)  
 **Area**: Multimodal VLM / Inference Efficiency
 **Keywords**: KV cache compression, adaptive layer-wise allocation, prefix configuration, binary search, vision-language models
 
@@ -51,21 +51,21 @@ The method follows the standard two-stage KV cache compression pipeline: (1) aft
 
 1. **Priority Sequence and Prefix Cumulative Priority**
 
-   - **Function**: Formalizes KV compression as retaining the prefix of a priority sequence.
-   - **Mechanism**: For layer $l$, the importance scores $I_l^n$ (sum of attention scores averaged across heads) for all KVs are normalized and sorted in descending order to form a priority sequence. Retaining the top-$o$ fraction of KVs is equivalent to retaining a prefix of the priority sequence, with cumulative priority $P_l^o$ representing the amount of contextual information preserved in that layer. Visualization via Lorenz curves reveals substantial variation in curve shapes across layers (with Gini coefficients ranging widely), demonstrating that uniform retention leads to severe information imbalance.
-   - **Design Motivation**: Translates the qualitative observation that "different layers require different cache sizes" into a mathematically tractable optimization framework.
+    - **Function**: Formalizes KV compression as retaining the prefix of a priority sequence.
+    - **Mechanism**: For layer $l$, the importance scores $I_l^n$ (sum of attention scores averaged across heads) for all KVs are normalized and sorted in descending order to form a priority sequence. Retaining the top-$o$ fraction of KVs is equivalent to retaining a prefix of the priority sequence, with cumulative priority $P_l^o$ representing the amount of contextual information preserved in that layer. Visualization via Lorenz curves reveals substantial variation in curve shapes across layers (with Gini coefficients ranging widely), demonstrating that uniform retention leads to severe information imbalance.
+    - **Design Motivation**: Translates the qualitative observation that "different layers require different cache sizes" into a mathematically tractable optimization framework.
 
 2. **Global Prefix Configuration and Binary Search**
 
-   - **Function**: Efficiently identifies the optimal per-layer cache allocation satisfying the compression budget.
-   - **Mechanism**: An information retention threshold $p$ is introduced; for each layer, the minimum prefix size ratio $R_l$ such that cumulative priority $P_l^o \geq p$ is determined. The constraint $\sum_l R_l = r \cdot L$ must be satisfied, where $r$ is the compression ratio. Given the large number of candidate values for $p$, binary search is applied over the interval $[0, 1]$: the total retention corresponding to the midpoint $p$ is computed, the difference $\delta$ from the budget is evaluated, and the search interval is refined accordingly. Upon convergence, the configuration that maximizes cumulative priority in each layer is obtained.
-   - **Design Motivation**: Directly enumerating all possible per-layer allocation combinations is intractable; binary search converges efficiently in $O(\log N)$ steps.
+    - **Function**: Efficiently identifies the optimal per-layer cache allocation satisfying the compression budget.
+    - **Mechanism**: An information retention threshold $p$ is introduced; for each layer, the minimum prefix size ratio $R_l$ such that cumulative priority $P_l^o \geq p$ is determined. The constraint $\sum_l R_l = r \cdot L$ must be satisfied, where $r$ is the compression ratio. Given the large number of candidate values for $p$, binary search is applied over the interval $[0, 1]$: the total retention corresponding to the midpoint $p$ is computed, the difference $\delta$ from the budget is evaluated, and the search interval is refined accordingly. Upon convergence, the configuration that maximizes cumulative priority in each layer is obtained.
+    - **Design Motivation**: Directly enumerating all possible per-layer allocation combinations is intractable; binary search converges efficiently in $O(\log N)$ steps.
 
 3. **Offline Estimation and Cross-Sample Robustness**
 
-   - **Function**: Eliminates the additional inference overhead of online search.
-   - **Mechanism**: The authors find that cumulative priority sequences across different samples are highly similar within each layer (as shown in Figure 4), enabling the global prefix configuration to be estimated offline using a small number of random samples (even just one). At inference time, the precomputed configuration is directly applied. Experiments confirm that offline and online performance are nearly identical.
-   - **Design Motivation**: Per-sample online search would introduce additional computational overhead; offline estimation enables seamless integration into existing inference pipelines.
+    - **Function**: Eliminates the additional inference overhead of online search.
+    - **Mechanism**: The authors find that cumulative priority sequences across different samples are highly similar within each layer (as shown in Figure 4), enabling the global prefix configuration to be estimated offline using a small number of random samples (even just one). At inference time, the precomputed configuration is directly applied. Experiments confirm that offline and online performance are nearly identical.
+    - **Design Motivation**: Per-sample online search would introduce additional computational overhead; offline estimation enables seamless integration into existing inference pipelines.
 
 ### Loss & Training
 

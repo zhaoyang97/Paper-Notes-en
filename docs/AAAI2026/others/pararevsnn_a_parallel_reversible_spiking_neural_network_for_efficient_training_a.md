@@ -17,8 +17,8 @@ content_hash: f52d85cc61a8645e
 # ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01223](https://arxiv.org/abs/2508.01223)
-**Code**: None
+**arXiv**: [2508.01223](https://arxiv.org/abs/2508.01223)  
+**Code**: None  
 **Area**: Others
 **Keywords**: spiking neural networks, reversible computation, parallel training, memory efficiency, edge deployment
 

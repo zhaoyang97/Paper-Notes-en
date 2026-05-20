@@ -17,8 +17,8 @@ content_hash: dd687c493ea858e1
 # RAR: Restore, Assess, Repeat - A Unified Framework for Iterative Image Restoration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26385](https://arxiv.org/abs/2603.26385)
-**Code**: [https://restore-assess-repeat.github.io/](https://restore-assess-repeat.github.io/)
+**arXiv**: [2603.26385](https://arxiv.org/abs/2603.26385)  
+**Code**: [https://restore-assess-repeat.github.io/](https://restore-assess-repeat.github.io/)  
 **Area**: Image Restoration
 **Keywords**: Image Restoration, Image Quality Assessment, Iterative Restoration, Composite Degradation, Flow Matching
 

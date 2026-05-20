@@ -18,8 +18,8 @@ content_hash: 40a499f276c05691
 # 4D Visual Pre-training for Robot Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.17230](https://arxiv.org/abs/2508.17230)
-**Code**: [https://github.com/JackHck/FVP](https://github.com/JackHck/FVP)
+**arXiv**: [2508.17230](https://arxiv.org/abs/2508.17230)  
+**Code**: [https://github.com/JackHck/FVP](https://github.com/JackHck/FVP)  
 **Area**: 3D Vision / Robot Learning
 **Keywords**: Point cloud pre-training, diffusion models, imitation learning, 3D representation learning, robot manipulation
 

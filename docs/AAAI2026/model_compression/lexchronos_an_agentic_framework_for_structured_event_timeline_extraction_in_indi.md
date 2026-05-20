@@ -18,8 +18,8 @@ content_hash: 240d2af7eccfa151
 # LexChronos: An Agentic Framework for Structured Event Timeline Extraction in Indian Jurisprudence
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.01651](https://arxiv.org/abs/2603.01651)
-**Code**: [https://github.com/Tummepalli/LexChronos](https://github.com/Tummepalli/LexChronos)
+**arXiv**: [2603.01651](https://arxiv.org/abs/2603.01651)  
+**Code**: [https://github.com/Tummepalli/LexChronos](https://github.com/Tummepalli/LexChronos)  
 **Area**: Model Compression
 **Keywords**: Event Extraction, Legal Document Analysis, Indian Jurisprudence, Dual-Agent Framework, Timeline Extraction
 

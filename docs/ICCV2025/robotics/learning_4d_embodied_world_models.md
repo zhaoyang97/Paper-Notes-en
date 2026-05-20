@@ -19,7 +19,7 @@ content_hash: 025ef84d1ca792ef
 # TesserAct: Learning 4D Embodied World Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.20995](https://arxiv.org/abs/2504.20995)
+**arXiv**: [2504.20995](https://arxiv.org/abs/2504.20995)  
 **Area**: Robotics
 **Keywords**: 4D world model, embodied intelligence, video diffusion model, RGB-DN, joint depth-normal prediction, robot planning
 

@@ -19,8 +19,8 @@ content_hash: 2aeb558c8528edfa
 # ForceVLA2: Unleashing Hybrid Force-Position Control with Force Awareness for Contact-Rich Manipulation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.15169](https://arxiv.org/abs/2603.15169)
-**Code**: [Project Page](https://sites.google.com/view/force-vla2/home)
+**arXiv**: [2603.15169](https://arxiv.org/abs/2603.15169)  
+**Code**: [Project Page](https://sites.google.com/view/force-vla2/home)  
 **Area**: Robotic Manipulation / Vision-Language-Action Models
 **Keywords**: [VLA, Force Control, Hybrid Force-Position Control, MoE, Contact-Rich Manipulation, Force Awareness]
 

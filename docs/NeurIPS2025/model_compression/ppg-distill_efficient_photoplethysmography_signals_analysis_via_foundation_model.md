@@ -18,8 +18,8 @@ content_hash: 034c7b9331a13dbd
 # PPG-Distill: Efficient Photoplethysmography Signals Analysis via Foundation Model Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19215](https://arxiv.org/abs/2509.19215)
-**Code**: [GitHub](https://github.com/LingFengGold/PPG-Distill)
+**arXiv**: [2509.19215](https://arxiv.org/abs/2509.19215)  
+**Code**: [GitHub](https://github.com/LingFengGold/PPG-Distill)  
 **Area**: Model Compression / Knowledge Distillation / Health Signal Processing
 **Keywords**: Knowledge Distillation, PPG Signals, Foundation Model Compression, Waveform Morphology Distillation, Rhythm Distillation
 

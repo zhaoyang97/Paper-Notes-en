@@ -18,8 +18,8 @@ content_hash: e8200cd67a574345
 # Unified Primitive Proxies for Structured Shape Completion
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.00759](https://arxiv.org/abs/2601.00759)
-**Code**: [https://unico-completion.github.io](https://unico-completion.github.io)
+**arXiv**: [2601.00759](https://arxiv.org/abs/2601.00759)  
+**Code**: [https://unico-completion.github.io](https://unico-completion.github.io)  
 **Area**: LLM Evaluation
 **Keywords**: shape completion, primitive assembly, 3D reconstruction, Transformer, structured understanding
 

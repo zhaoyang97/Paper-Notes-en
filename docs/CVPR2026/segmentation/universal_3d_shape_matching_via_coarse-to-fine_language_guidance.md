@@ -18,8 +18,8 @@ content_hash: 30a988b0888deae7
 # Universal 3D Shape Matching via Coarse-to-Fine Language Guidance
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19112](https://arxiv.org/abs/2602.19112)
-**Code**: None
+**arXiv**: [2602.19112](https://arxiv.org/abs/2602.19112)  
+**Code**: None  
 **Area**: Segmentation
 **Keywords**: 3D Shape Matching, Functional Maps, Language Guidance, Contrastive Learning, Cross-Category Correspondence
 

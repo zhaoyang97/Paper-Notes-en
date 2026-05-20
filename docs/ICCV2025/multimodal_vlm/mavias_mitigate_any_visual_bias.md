@@ -18,8 +18,8 @@ content_hash: f8cf65a451fdb817
 # MAVias: Mitigate Any Visual Bias
 
 **Conference**: ICCV2025
-**arXiv**: [2412.06632](https://arxiv.org/abs/2412.06632)
-**Code**: [https://github.com/gsarridis/VB-Mitigator](https://github.com/gsarridis/VB-Mitigator) (VB-Mitigator library)
+**arXiv**: [2412.06632](https://arxiv.org/abs/2412.06632)  
+**Code**: [https://github.com/gsarridis/VB-Mitigator](https://github.com/gsarridis/VB-Mitigator) (VB-Mitigator library)  
 **Area**: Multimodal VLM / Bias Mitigation
 **Keywords**: Visual Bias Mitigation, Open-Set Bias, Foundation Models, Vision-Language Models, Fairness
 

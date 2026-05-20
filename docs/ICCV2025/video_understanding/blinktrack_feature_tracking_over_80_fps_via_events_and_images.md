@@ -18,8 +18,8 @@ content_hash: 9a6dfe90672b4190
 # BlinkTrack: Feature Tracking over 80 FPS via Events and Images
 
 **Conference**: ICCV 2025
-**arXiv**: [2409.17981](https://arxiv.org/abs/2409.17981)
-**Code**: [GitHub](https://github.com/ColieShen/BlinkTrack)
+**arXiv**: [2409.17981](https://arxiv.org/abs/2409.17981)  
+**Code**: [GitHub](https://github.com/ColieShen/BlinkTrack)  
 **Area**: Video Understanding
 **Keywords**: Event Camera, Feature Tracking, Kalman Filter, Multimodal Fusion, High Frame Rate Tracking
 

@@ -20,8 +20,8 @@ content_hash: bd8889cc7fe8f7e7
 # GameFactory: Creating New Games with Generative Interactive Videos
 
 **Conference**: ICCV 2025
-**arXiv**: 2501.08325
-**Code**: [https://yujiwen.github.io/gamefactory/](https://yujiwen.github.io/gamefactory/) (project page)
+**arXiv**: 2501.08325  
+**Code**: [https://yujiwen.github.io/gamefactory/](https://yujiwen.github.io/gamefactory/) (project page)  
 **Area**: Image Generation
 **Keywords**: game generation, video diffusion models, action control, scene generalization, autoregressive video generation, Minecraft, world model
 

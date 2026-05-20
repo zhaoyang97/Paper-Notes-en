@@ -17,8 +17,8 @@ content_hash: c4fe0274c48368d0
 # AlignTok: Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25162](https://arxiv.org/abs/2509.25162)
-**Code**: [https://aligntok.github.io](https://aligntok.github.io)
+**arXiv**: [2509.25162](https://arxiv.org/abs/2509.25162)  
+**Code**: [https://aligntok.github.io](https://aligntok.github.io)  
 **Area**: Diffusion Models
 **Keywords**: visual tokenizer, latent diffusion, DINOv2, semantic alignment, image generation
 

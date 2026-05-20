@@ -18,8 +18,8 @@ content_hash: 5ef0b8d4b8c1e58a
 # BluRef: Unsupervised Image Deblurring with Dense-Matching References
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14176](https://arxiv.org/abs/2603.14176)
-**Code**: [Project Page](https://qualcomm-ai-research.github.io/BluRef/)
+**arXiv**: [2603.14176](https://arxiv.org/abs/2603.14176)  
+**Code**: [Project Page](https://qualcomm-ai-research.github.io/BluRef/)  
 **Area**: Image Restoration
 **Keywords**: Unsupervised Deblurring, Dense Matching, Pseudo Ground Truth Generation, Reference Images, Iterative Optimization
 

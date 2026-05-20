@@ -18,8 +18,8 @@ content_hash: d696cb1ffed0da1a
 # Minerva: Evaluating Complex Video Reasoning
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.00681](https://arxiv.org/abs/2505.00681)
-**Code**: [GitHub](https://github.com/google-deepmind/neptune?tab=readme-ov-file#minerva)
+**arXiv**: [2505.00681](https://arxiv.org/abs/2505.00681)  
+**Code**: [GitHub](https://github.com/google-deepmind/neptune?tab=readme-ov-file#minerva)  
 **Area**: Interpretability
 **Keywords**: video reasoning, reasoning trace evaluation, video QA, benchmark, reasoning error taxonomy
 

@@ -18,8 +18,8 @@ content_hash: 1209a2afc5440da6
 # Principles2Plan: LLM-Guided System for Operationalising Ethical Principles into Plans
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.08536](https://arxiv.org/abs/2512.08536)
-**Code**: None
+**arXiv**: [2512.08536](https://arxiv.org/abs/2512.08536)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: Ethical Planning, LLM, Automated Planning, PDDL, Human-AI Collaboration
 

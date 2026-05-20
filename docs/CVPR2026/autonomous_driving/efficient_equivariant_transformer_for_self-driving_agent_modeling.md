@@ -17,8 +17,8 @@ content_hash: 0bf7c7acb653462f
 # Efficient Equivariant Transformer for Self-Driving Agent Modeling
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01466](https://arxiv.org/abs/2604.01466)
-**Code**: N/A
+**arXiv**: [2604.01466](https://arxiv.org/abs/2604.01466)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: SE(2)-equivariance, Geometric Algebra, Transformer, Traffic Simulation, Autonomous Driving
 

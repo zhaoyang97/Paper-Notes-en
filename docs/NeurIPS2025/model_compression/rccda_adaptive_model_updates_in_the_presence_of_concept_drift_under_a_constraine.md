@@ -18,8 +18,8 @@ content_hash: 68669d5c4271017f
 # RCCDA: Adaptive Model Updates in the Presence of Concept Drift under a Constrained Resource Budget
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.24149](https://arxiv.org/abs/2505.24149)
-**Code**: None
+**arXiv**: [2505.24149](https://arxiv.org/abs/2505.24149)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: concept drift, resource-constrained, model update policy, Lyapunov optimization, online learning
 
@@ -59,8 +59,8 @@ This paper proposes RCCDA, a lightweight model update policy based on the Lyapun
 - **Function**: Prove the convergence upper bound and resource constraint violation bound of RCCDA.
 - **Design Motivation**: These results provide theoretical foundations for the policy design, ensuring that RCCDA is not only empirically effective but also provably compliant with resource budgets.
 - **Mechanism**:
-  - Theorem 5.1: Under smoothness and bounded variance assumptions, the time-average gradient norm is bounded by $\mathcal{O}(\sqrt{\delta}) + \mathcal{O}(\sigma^2)$, where $\delta$ is the drift upper bound.
-  - Theorem 5.3: The resource constraint violation vanishes at rate $\mathcal{O}(1/\sqrt{T})$ as $T \to \infty$, guaranteeing long-term resource compliance.
+    - Theorem 5.1: Under smoothness and bounded variance assumptions, the time-average gradient norm is bounded by $\mathcal{O}(\sqrt{\delta}) + \mathcal{O}(\sigma^2)$, where $\delta$ is the drift upper bound.
+    - Theorem 5.3: The resource constraint violation vanishes at rate $\mathcal{O}(1/\sqrt{T})$ as $T \to \infty$, guaranteeing long-term resource compliance.
 
 ## Key Experimental Results
 

@@ -20,8 +20,8 @@ content_hash: c461db6fd3b99b0b
 # Provable Scaling Laws for the Test-Time Compute of Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.19477](https://arxiv.org/abs/2411.19477)
-**Code**: [GitHub](https://github.com/pan-x-c/AgentScope/tree/feature/pxc/paper_provable/examples/paper_provable_scaling_law)
+**arXiv**: [2411.19477](https://arxiv.org/abs/2411.19477)  
+**Code**: [GitHub](https://github.com/pan-x-c/AgentScope/tree/feature/pxc/paper_provable/examples/paper_provable_scaling_law)  
 **Area**: LLM Reasoning
 **Keywords**: test-time compute, scaling laws, knockout, league, pairwise comparison, Best-of-N, provable guarantees
 

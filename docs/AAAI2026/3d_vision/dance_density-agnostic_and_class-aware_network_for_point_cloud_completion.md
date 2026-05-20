@@ -19,8 +19,8 @@ content_hash: 8e8779f25a4a4634
 # DANCE: Density-Agnostic and Class-Aware Network for Point Cloud Completion
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07978](https://arxiv.org/abs/2511.07978)
-**Code**: [ayeong0909/DANCE](https://github.com/ayeong0909/DANCE)
+**arXiv**: [2511.07978](https://arxiv.org/abs/2511.07978)  
+**Code**: [ayeong0909/DANCE](https://github.com/ayeong0909/DANCE)  
 **Area**: 3D Vision
 **Keywords**: point cloud completion, density-agnostic, class-aware, transformer, ray-based sampling, opacity prediction
 

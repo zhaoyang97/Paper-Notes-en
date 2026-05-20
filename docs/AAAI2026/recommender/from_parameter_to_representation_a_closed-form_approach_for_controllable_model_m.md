@@ -18,8 +18,8 @@ content_hash: 2c2a8d23a1ea67d1
 # From Parameter to Representation: A Closed-Form Approach for Controllable Model Merging
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10943](https://arxiv.org/abs/2511.10943)
-**Code**: None
+**arXiv**: [2511.10943](https://arxiv.org/abs/2511.10943)  
+**Code**: None  
 **Area**: Recommender Systems
 **Keywords**: model merging, controllable merging, Pareto front, representation correction, multi-objective optimization
 
@@ -52,21 +52,21 @@ ReACT operates in two stages:
 
 1. **Linear Representation Correction**
 
-   - **Function**: Maps merged-model representations back to the task-expert representation space via a linear transformation matrix $W_t$.
-   - **Mechanism**: For each task $t$, solve $\min_{W_t} \|W_t \mathcal{Z}_t^{\text{mtl}} - \mathcal{Z}_t^{\text{ind}}\|_F^2$, minimizing the Frobenius norm between corrected and expert representations.
-   - **Design Motivation**: t-SNE visualizations show that the deviation between merged and expert representations is primarily a global rotation and scaling (linear distortion), making nonlinear methods unnecessary.
+    - **Function**: Maps merged-model representations back to the task-expert representation space via a linear transformation matrix $W_t$.
+    - **Mechanism**: For each task $t$, solve $\min_{W_t} \|W_t \mathcal{Z}_t^{\text{mtl}} - \mathcal{Z}_t^{\text{ind}}\|_F^2$, minimizing the Frobenius norm between corrected and expert representations.
+    - **Design Motivation**: t-SNE visualizations show that the deviation between merged and expert representations is primarily a global rotation and scaling (linear distortion), making nonlinear methods unnecessary.
 
 2. **Optimal Orthogonal Regularization**
 
-   - **Function**: Uses the orthogonal Procrustes solution as a regularization prior to prevent overfitting of the correction matrix.
-   - **Mechanism**: The regularized objective is $\min_{W_t} \|W_t \mathcal{Z}_t^{\text{mtl}} - \mathcal{Z}_t^{\text{ind}}\|_F^2 + \beta\|W_t - W_t^{\text{orth}}\|_F^2$, where $W_t^{\text{orth}}$ is obtained via the SVD-based Procrustes solution. The closed-form solution is $\hat{W}_t = (\mathcal{Z}_t^{\text{ind}} {\mathcal{Z}_t^{\text{mtl}}}^\top + \beta W_t^{\text{orth}})(\mathcal{Z}_t^{\text{mtl}} {\mathcal{Z}_t^{\text{mtl}}}^\top + \beta I)^{-1}$.
-   - **Design Motivation**: Calibration data is typically scarce (unlabeled at test time), making pure least-squares prone to overfitting. The orthogonality constraint preserves the geometric structure of the representation space.
+    - **Function**: Uses the orthogonal Procrustes solution as a regularization prior to prevent overfitting of the correction matrix.
+    - **Mechanism**: The regularized objective is $\min_{W_t} \|W_t \mathcal{Z}_t^{\text{mtl}} - \mathcal{Z}_t^{\text{ind}}\|_F^2 + \beta\|W_t - W_t^{\text{orth}}\|_F^2$, where $W_t^{\text{orth}}$ is obtained via the SVD-based Procrustes solution. The closed-form solution is $\hat{W}_t = (\mathcal{Z}_t^{\text{ind}} {\mathcal{Z}_t^{\text{mtl}}}^\top + \beta W_t^{\text{orth}})(\mathcal{Z}_t^{\text{mtl}} {\mathcal{Z}_t^{\text{mtl}}}^\top + \beta I)^{-1}$.
+    - **Design Motivation**: Calibration data is typically scarce (unlabeled at test time), making pure least-squares prone to overfitting. The orthogonality constraint preserves the geometric structure of the representation space.
 
 3. **Pareto-Optimal Representation Correction**
 
-   - **Function**: Generates a globally optimal correction matrix for a given user preference $\mathbf{p}$.
-   - **Mechanism**: The multi-objective problem is reduced to a single-objective via linear scalarization: $\min_W \sum_{t=1}^T p_t L_t(W)$. Since each $L_t(W)$ is a convex quadratic, the closed-form solution is $W_\mathbf{p} = (\sum_t p_t \hat{W}_t C_t)(\sum_t p_t C_t)^{-1}$, where $C_t = \mathcal{Z}_t^{\text{mtl}} {\mathcal{Z}_t^{\text{mtl}}}^\top + \beta I$.
-   - **Design Motivation**: Rather than a simple weighted average $\sum p_t \hat{W}_t$, the data-aware weight matrices $C_t$ grant greater influence to tasks with more prominent feature structures.
+    - **Function**: Generates a globally optimal correction matrix for a given user preference $\mathbf{p}$.
+    - **Mechanism**: The multi-objective problem is reduced to a single-objective via linear scalarization: $\min_W \sum_{t=1}^T p_t L_t(W)$. Since each $L_t(W)$ is a convex quadratic, the closed-form solution is $W_\mathbf{p} = (\sum_t p_t \hat{W}_t C_t)(\sum_t p_t C_t)^{-1}$, where $C_t = \mathcal{Z}_t^{\text{mtl}} {\mathcal{Z}_t^{\text{mtl}}}^\top + \beta I$.
+    - **Design Motivation**: Rather than a simple weighted average $\sum p_t \hat{W}_t$, the data-aware weight matrices $C_t$ grant greater influence to tasks with more prominent feature structures.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: d2218f9d54a940bd
 # PolyPose: Deformable 2D/3D Registration via Polyrigid Transformations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19256](https://arxiv.org/abs/2505.19256)
-**Code**: [Project Page](https://polypose.csail.mit.edu)
+**arXiv**: [2505.19256](https://arxiv.org/abs/2505.19256)  
+**Code**: [Project Page](https://polypose.csail.mit.edu)  
 **Area**: Medical Imaging / Medical Image Registration
 **Keywords**: 2D/3D registration, polyrigid transformation, differentiable X-ray rendering, intraoperative navigation, sparse-view
 

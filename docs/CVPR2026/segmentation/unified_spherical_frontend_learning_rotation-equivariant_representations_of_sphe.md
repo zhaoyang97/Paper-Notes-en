@@ -18,8 +18,8 @@ content_hash: f9ed1335e665496b
 # Unified Spherical Frontend: Learning Rotation-Equivariant Representations of Spherical Images from Any Camera
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.18174](https://arxiv.org/abs/2511.18174)
-**Code**: [https://tomnotch.com/USF](https://tomnotch.com/USF) (project page)
+**arXiv**: [2511.18174](https://arxiv.org/abs/2511.18174)  
+**Code**: [https://tomnotch.com/USF](https://tomnotch.com/USF) (project page)  
 **Area**: Image Segmentation
 **Keywords**: Spherical convolution, rotation equivariance, wide-angle camera, panoramic image, lens-agnostic
 

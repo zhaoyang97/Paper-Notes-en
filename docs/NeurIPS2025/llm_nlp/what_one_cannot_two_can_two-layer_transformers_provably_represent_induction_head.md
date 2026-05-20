@@ -18,8 +18,8 @@ content_hash: c7640166ba5010a7
 # What One Cannot, Two Can: Two-Layer Transformers Provably Represent Induction Heads on Any-Order Markov Chains
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.07208](https://arxiv.org/abs/2508.07208)
-**Code**: [GitHub](https://github.com/cekbote/two-layer-induction-heads)
+**arXiv**: [2508.07208](https://arxiv.org/abs/2508.07208)  
+**Code**: [GitHub](https://github.com/cekbote/two-layer-induction-heads)  
 **Area**: LLM NLP / Transformer Theory / In-Context Learning
 **Keywords**: induction heads, in-context learning, Markov chains, transformer depth, expressiveness
 

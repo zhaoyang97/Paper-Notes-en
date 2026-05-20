@@ -18,8 +18,8 @@ content_hash: ff643437de7e879a
 # Grounding-IQA: Grounding Multimodal Language Models for Image Quality Assessment
 
 **Conference**: ICLR 2026
-**arXiv**: [2411.17237](https://arxiv.org/abs/2411.17237)
-**Code**: [https://github.com/zhengchen1999/Grounding-IQA](https://github.com/zhengchen1999/Grounding-IQA)
+**arXiv**: [2411.17237](https://arxiv.org/abs/2411.17237)  
+**Code**: [https://github.com/zhengchen1999/Grounding-IQA](https://github.com/zhengchen1999/Grounding-IQA)  
 **Area**: Object Detection / Multimodal VLM / Image Quality Assessment
 **Keywords**: Image Quality Assessment, Spatial Grounding, Multimodal LLM, Fine-Grained Perception, Grounding
 

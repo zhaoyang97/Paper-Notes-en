@@ -18,8 +18,8 @@ content_hash: c6dbb41a6860c2c4
 # ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.16412](https://arxiv.org/abs/2602.16412)
-**Code**: None
+**arXiv**: [2602.16412](https://arxiv.org/abs/2602.16412)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Long-video understanding, compressed video representation, motion vectors, state space model, optical flow refinement
 

@@ -18,8 +18,8 @@ content_hash: c922a541ce0d2876
 # Modality-free Graph In-context Alignment
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.13434](https://arxiv.org/abs/2603.13434)
-**Code**: [GitHub](https://github.com/JhuoW/MF-GIA)
+**arXiv**: [2603.13434](https://arxiv.org/abs/2603.13434)  
+**Code**: [GitHub](https://github.com/JhuoW/MF-GIA)  
 **Area**: Model Compression
 **Keywords**: Graph Foundation Models, In-Context Learning, Cross-Domain Alignment, Gradient Fingerprint, Meta-Learning
 

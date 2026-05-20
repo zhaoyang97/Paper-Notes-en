@@ -17,8 +17,8 @@ content_hash: 5897ec5310d2b5a8
 # Learning Dynamics of RNNs in Closed-Loop Environments
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13567](https://arxiv.org/abs/2505.13567)
-**Code**: [GitHub](https://github.com/yoavger/closed_loop_rnn_learning_dynamics)
+**arXiv**: [2505.13567](https://arxiv.org/abs/2505.13567)  
+**Code**: [GitHub](https://github.com/yoavger/closed_loop_rnn_learning_dynamics)  
 **Area**: Theory / Recurrent Neural Networks / Control Theory
 **Keywords**: RNN learning dynamics, closed-loop learning, open-loop vs. closed-loop, control theory, internal representations
 

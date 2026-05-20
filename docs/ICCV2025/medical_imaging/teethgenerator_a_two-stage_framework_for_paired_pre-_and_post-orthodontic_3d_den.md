@@ -18,8 +18,8 @@ content_hash: 8d9ba2bb12441347
 # TeethGenerator: A Two-Stage Framework for Paired Pre- and Post-Orthodontic 3D Dental Data Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04685](https://arxiv.org/abs/2507.04685)
-**Code**: [https://github.com/lcshhh/teeth_generator](https://github.com/lcshhh/teeth_generator)
+**arXiv**: [2507.04685](https://arxiv.org/abs/2507.04685)  
+**Code**: [https://github.com/lcshhh/teeth_generator](https://github.com/lcshhh/teeth_generator)  
 **Area**: Medical Imaging / 3D Generation
 **Keywords**: orthodontic data generation, 3D dental model, VQ-VAE, diffusion model, paired data synthesis
 

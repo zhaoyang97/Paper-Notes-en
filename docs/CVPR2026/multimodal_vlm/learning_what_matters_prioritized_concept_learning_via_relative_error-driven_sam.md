@@ -18,8 +18,8 @@ content_hash: 2ce5b2680b800caa
 # Learning What Matters: Prioritized Concept Learning via Relative Error-driven Sample Selection
 
 **Conference**: CVPR 2026
-**arXiv**: [2506.01085](https://arxiv.org/abs/2506.01085)
-**Code**: [https://mylittlechange.github.io/PROGRESS_web/](https://mylittlechange.github.io/PROGRESS_web/)
+**arXiv**: [2506.01085](https://arxiv.org/abs/2506.01085)  
+**Code**: [https://mylittlechange.github.io/PROGRESS_web/](https://mylittlechange.github.io/PROGRESS_web/)  
 **Area**: Multimodal VLM
 **Keywords**: Data-efficient learning, instruction tuning, curriculum learning, VLM training, sample selection
 

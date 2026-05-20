@@ -18,8 +18,8 @@ content_hash: b0833ed5d47fb745
 # Align Once, Benefit Multilingually: Enforcing Multilingual Consistency for LLM Safety Alignment
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.16660](https://arxiv.org/abs/2602.16660)
-**Code**: None
+**arXiv**: [2602.16660](https://arxiv.org/abs/2602.16660)  
+**Code**: None  
 **Area**: LLM Alignment
 **Keywords**: multilingual safety, consistency alignment, singular value decomposition, cross-lingual transfer, DPO
 

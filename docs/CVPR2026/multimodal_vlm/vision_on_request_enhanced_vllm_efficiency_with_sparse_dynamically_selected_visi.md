@@ -18,8 +18,8 @@ content_hash: 0e1d1ed8a24e4711
 # VISion On Request: Enhanced VLLM Efficiency with Sparse, Dynamically Selected, Vision-Language Interactions
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23495](https://arxiv.org/abs/2603.23495)
-**Code**: None (based on LLaVA-OV)
+**arXiv**: [2603.23495](https://arxiv.org/abs/2603.23495)  
+**Code**: None (based on LLaVA-OV)  
 **Area**: Multimodal VLM
 **Keywords**: Large vision-language model efficiency, visual token sparsification, dynamic computation allocation, cross-attention, self-attention selection
 

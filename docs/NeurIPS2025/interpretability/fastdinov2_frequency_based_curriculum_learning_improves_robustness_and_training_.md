@@ -18,8 +18,8 @@ content_hash: a620977e0b7b9809
 # FastDINOv2: Frequency Based Curriculum Learning Improves Robustness and Training Speed
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.03779](https://arxiv.org/abs/2507.03779)
-**Code**: Available (github.com/KevinZ0217/fast_dinov2)
+**arXiv**: [2507.03779](https://arxiv.org/abs/2507.03779)  
+**Code**: Available (github.com/KevinZ0217/fast_dinov2)  
 **Area**: Interpretability
 **Keywords**: DINOv2, curriculum learning, frequency bias, robustness, training acceleration
 

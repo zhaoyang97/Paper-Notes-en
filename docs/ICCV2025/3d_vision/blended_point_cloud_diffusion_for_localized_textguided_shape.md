@@ -18,8 +18,8 @@ content_hash: d7b21c0e702fcb7f
 # Blended Point Cloud Diffusion for Localized Text-guided Shape Editing
 
 **Conference**: ICCV 2025 (Highlight)
-**arXiv**: [2507.15399](https://arxiv.org/abs/2507.15399)
-**Code**: [https://github.com/TAU-VAILab/BlendedPC](https://github.com/TAU-VAILab/BlendedPC) (Available, MIT License)
+**arXiv**: [2507.15399](https://arxiv.org/abs/2507.15399)  
+**Code**: [https://github.com/TAU-VAILab/BlendedPC](https://github.com/TAU-VAILab/BlendedPC) (Available, MIT License)  
 **Area**: 3D Vision / Diffusion Models / Shape Editing
 **Keywords**: Point cloud editing, text-guided 3D editing, diffusion model inpainting, coordinate blending, localized shape editing
 

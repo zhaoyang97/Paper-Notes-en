@@ -18,8 +18,8 @@ content_hash: b25e95e06270e3f3
 # Find your Needle: Small Object Image Retrieval via Multi-Object Attention Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.07038](https://arxiv.org/abs/2503.07038)
-**Code**: Available ([GitHub](https://github.com/pihash2k/SoIR))
+**arXiv**: [2503.07038](https://arxiv.org/abs/2503.07038)  
+**Code**: Available ([GitHub](https://github.com/pihash2k/SoIR))  
 **Area**: Computer Vision / Image Retrieval
 **Keywords**: Small Object Image Retrieval, Multi-Object Attention Optimization, Image Retrieval, Attention Interpretability, Global Descriptor
 

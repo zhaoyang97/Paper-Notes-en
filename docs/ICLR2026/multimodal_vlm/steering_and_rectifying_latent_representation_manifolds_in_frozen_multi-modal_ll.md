@@ -18,8 +18,8 @@ content_hash: 9ac9be37de95887f
 # Steering and Rectifying Latent Representation Manifolds in Frozen Multi-Modal LLMs for Video Anomaly Detection
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.24021](https://arxiv.org/abs/2602.24021)
-**Code**: To be released
+**arXiv**: [2602.24021](https://arxiv.org/abs/2602.24021)  
+**Code**: To be released  
 **Area**: Multimodal / Video Understanding
 **Keywords**: video anomaly detection, multimodal large language models, representation manifold manipulation, tuning-free, attention head analysis
 
@@ -54,22 +54,22 @@ SteerVAD shifts the paradigm from "passive feature readout" to "active geometric
 
 1. **Representation Separability Analysis (RSA)**: Identifies which attention heads best discriminate normal from anomalous events.
 
-   - **Mechanism**: A variant of the Fisher discriminant ratio is used as a geometric separability measure, computing the ratio of between-class scatter to within-class scatter for normal/anomalous samples in each attention head.
-   - **Mathematical definition**: $S_{RSA}(l,k) = \frac{\|\boldsymbol{\mu}_{anom}^{(l,k)} - \boldsymbol{\mu}_{norm}^{(l,k)}\|_2^2}{\sigma_{anom}^2(l,k) + \sigma_{norm}^2(l,k)}$
-   - **Design Motivation**: No gradient computation is required; a single forward pass suffices to select the top-$K$ most discriminative heads among all 784 attention heads. The selection is remarkably insensitive to data volume—1% and 100% of the data identify identical LAEs.
-   - **Experimental Validation**: Across 10 runs with different random seeds, RSA consistently selects the same four heads (L18H4, L23H24, L21H21, L22H7).
+    - **Mechanism**: A variant of the Fisher discriminant ratio is used as a geometric separability measure, computing the ratio of between-class scatter to within-class scatter for normal/anomalous samples in each attention head.
+    - **Mathematical definition**: $S_{RSA}(l,k) = \frac{\|\boldsymbol{\mu}_{anom}^{(l,k)} - \boldsymbol{\mu}_{norm}^{(l,k)}\|_2^2}{\sigma_{anom}^2(l,k) + \sigma_{norm}^2(l,k)}$
+    - **Design Motivation**: No gradient computation is required; a single forward pass suffices to select the top-$K$ most discriminative heads among all 784 attention heads. The selection is remarkably insensitive to data volume—1% and 100% of the data identify identical LAEs.
+    - **Experimental Validation**: Across 10 runs with different random seeds, RSA consistently selects the same four heads (L18H4, L23H24, L21H21, L22H7).
 
 2. **Hierarchical Meta-Controller (HMC)**: Generates dynamic, context-aware manifold correction signals.
 
-   - **Global Scrutiny Gate (GSG)**: Maps the hidden state $\mathbf{c}$ from the MLLM's first generated token through a lightweight MLP to a scalar $s_{global} \in [0,1]$, measuring overall anomaly likelihood. Values near 0 indicate normal scenes (controller remains silent); values near 1 trigger strong correction.
-   - **Local Gating Module (LGM)**: Comprises $K$ parallel low-rank adapters, each mapping the global context $\mathbf{c}$ through a low-rank bottleneck to a head-specific steering vector $\mathbf{g}_i \in [-1,1]^{d_{head}}$, enabling per-dimension fine-grained control.
-   - **Design Motivation**: Decoupling "whether correction is needed" (global) from "how to correct" (local) prevents the lightweight module from overfitting to local noise.
+    - **Global Scrutiny Gate (GSG)**: Maps the hidden state $\mathbf{c}$ from the MLLM's first generated token through a lightweight MLP to a scalar $s_{global} \in [0,1]$, measuring overall anomaly likelihood. Values near 0 indicate normal scenes (controller remains silent); values near 1 trigger strong correction.
+    - **Local Gating Module (LGM)**: Comprises $K$ parallel low-rank adapters, each mapping the global context $\mathbf{c}$ through a low-rank bottleneck to a head-specific steering vector $\mathbf{g}_i \in [-1,1]^{d_{head}}$, enabling per-dimension fine-grained control.
+    - **Design Motivation**: Decoupling "whether correction is needed" (global) from "how to correct" (local) prevents the lightweight module from overfitting to local noise.
 
 3. **Anisotropic Manifold Scaling**: Executes the actual geometric transformation.
 
-   - **Core operation**: $\mathbf{h}_i' = \mathbf{h}_i \odot (1 + s_{global} \cdot \mathbf{g}_i)$
-   - This is a residual modulation: when $s_{global} \approx 0$, it approximates an identity transformation; when $s_{global} \approx 1$, positive $\mathbf{g}_i$ amplifies corresponding dimensions while negative values suppress them.
-   - **Theoretical significance**: When all scaling factors are nonzero, the operation is a diffeomorphism (topologically preserving manifold reshaping); when some factors are zero, it becomes a singular projection (context-aware feature selection) that can entirely eliminate dimensions associated with pre-training bias.
+    - **Core operation**: $\mathbf{h}_i' = \mathbf{h}_i \odot (1 + s_{global} \cdot \mathbf{g}_i)$
+    - This is a residual modulation: when $s_{global} \approx 0$, it approximates an identity transformation; when $s_{global} \approx 1$, positive $\mathbf{g}_i$ amplifies corresponding dimensions while negative values suppress them.
+    - **Theoretical significance**: When all scaling factors are nonzero, the operation is a diffeomorphism (topologically preserving manifold reshaping); when some factors are zero, it becomes a singular projection (context-aware feature selection) that can entirely eliminate dimensions associated with pre-training bias.
 
 ### Loss & Training
 

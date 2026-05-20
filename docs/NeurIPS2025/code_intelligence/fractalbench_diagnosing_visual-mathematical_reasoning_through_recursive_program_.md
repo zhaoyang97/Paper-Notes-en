@@ -18,8 +18,8 @@ content_hash: 3ea6133d362029c2
 # FractalBench: Diagnosing Visual-Mathematical Reasoning Through Recursive Program Synthesis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.06522](https://arxiv.org/abs/2511.06522)
-**Code**: [https://github.com/NaiveNeuron/FractalBench](https://github.com/NaiveNeuron/FractalBench)
+**arXiv**: [2511.06522](https://arxiv.org/abs/2511.06522)  
+**Code**: [https://github.com/NaiveNeuron/FractalBench](https://github.com/NaiveNeuron/FractalBench)  
 **Area**: Code Intelligence
 **Keywords**: Fractals, Visual-Mathematical Reasoning, Program Synthesis, MLLM Evaluation, Recursive Abstraction
 

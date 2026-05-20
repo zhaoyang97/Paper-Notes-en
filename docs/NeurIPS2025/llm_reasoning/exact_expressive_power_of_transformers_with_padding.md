@@ -18,8 +18,8 @@ content_hash: 445b8970ab8bd09f
 # Exact Expressive Power of Transformers with Padding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18948](https://arxiv.org/abs/2505.18948)
-**Code**: None
+**arXiv**: [2505.18948](https://arxiv.org/abs/2505.18948)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Transformer expressive power, padding, looping, circuit complexity, TC0
 

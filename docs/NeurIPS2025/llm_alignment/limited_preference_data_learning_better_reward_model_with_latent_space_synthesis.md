@@ -18,8 +18,8 @@ content_hash: 408918d006c5fe32
 # Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.26074](https://arxiv.org/abs/2509.26074)
-**Code**: [https://github.com/deeplearning-wisc/lens](https://github.com/deeplearning-wisc/lens)
+**arXiv**: [2509.26074](https://arxiv.org/abs/2509.26074)  
+**Code**: [https://github.com/deeplearning-wisc/lens](https://github.com/deeplearning-wisc/lens)  
 **Area**: LLM Alignment
 **Keywords**: reward modeling, latent space synthesis, VAE, preference data augmentation, RLHF
 

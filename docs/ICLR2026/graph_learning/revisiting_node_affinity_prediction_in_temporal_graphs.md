@@ -18,8 +18,8 @@ content_hash: 044eee7baef016c1
 # Revisiting Node Affinity Prediction in Temporal Graphs
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.06940](https://arxiv.org/abs/2510.06940)
-**Code**: [https://github.com/orfeld415/NAVIS](https://github.com/orfeld415/NAVIS)
+**arXiv**: [2510.06940](https://arxiv.org/abs/2510.06940)  
+**Code**: [https://github.com/orfeld415/NAVIS](https://github.com/orfeld415/NAVIS)  
 **Area**: Graph Learning / Temporal Graphs
 **Keywords**: Temporal Graph Neural Networks, Node Affinity Prediction, State Space Models, Ranking Loss, Global State
 

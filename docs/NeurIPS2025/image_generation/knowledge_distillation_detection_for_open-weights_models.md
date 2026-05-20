@@ -18,8 +18,8 @@ content_hash: 789f2abe5d859bbf
 # Knowledge Distillation Detection for Open-weights Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.02302](https://arxiv.org/abs/2510.02302)
-**Code**: [GitHub](https://github.com/shqii1j/distillation_detection)
+**arXiv**: [2510.02302](https://arxiv.org/abs/2510.02302)  
+**Code**: [GitHub](https://github.com/shqii1j/distillation_detection)  
 **Area**: Image Generation
 **Keywords**: knowledge distillation detection, model provenance, data-free synthesis, statistical detection, text-to-image generation
 

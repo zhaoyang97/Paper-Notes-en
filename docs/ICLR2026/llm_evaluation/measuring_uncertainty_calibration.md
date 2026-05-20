@@ -18,8 +18,8 @@ content_hash: 0958a155688ee157
 # Measuring Uncertainty Calibration
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.13872](https://arxiv.org/abs/2512.13872)
-**Code**: [GitHub](https://github.com/spotify-research/calibration)
+**arXiv**: [2512.13872](https://arxiv.org/abs/2512.13872)  
+**Code**: [GitHub](https://github.com/spotify-research/calibration)  
 **Area**: Machine Learning Theory / Calibration
 **Keywords**: Calibration error, finite-sample bounds, distribution-free, bounded variation, kernel estimation
 

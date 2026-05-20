@@ -18,8 +18,8 @@ content_hash: dd9c250903bad39f
 # SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.07392](https://arxiv.org/abs/2503.07392)
-**Code**: [GitHub](https://github.com/Ouxiang-Li/SPEED)
+**arXiv**: [2503.07392](https://arxiv.org/abs/2503.07392)  
+**Code**: [GitHub](https://github.com/Ouxiang-Li/SPEED)  
 **Area**: Diffusion Models / Safety / Unlearning
 **Keywords**: Concept Erasure, Null Space Constraint, Model Editing, Prior Preservation, Multi-Concept Erasure
 

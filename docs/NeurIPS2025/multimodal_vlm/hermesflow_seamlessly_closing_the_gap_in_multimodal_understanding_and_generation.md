@@ -18,8 +18,8 @@ content_hash: 0af63aa0157b42a9
 # HermesFlow: Seamlessly Closing the Gap in Multimodal Understanding and Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.12148](https://arxiv.org/abs/2502.12148)
-**Code**: [https://github.com/Gen-Verse/HermesFlow](https://github.com/Gen-Verse/HermesFlow)
+**arXiv**: [2502.12148](https://arxiv.org/abs/2502.12148)  
+**Code**: [https://github.com/Gen-Verse/HermesFlow](https://github.com/Gen-Verse/HermesFlow)  
 **Area**: Multimodal VLM / Unified Understanding and Generation / Preference Alignment
 **Keywords**: Pair-DPO, multimodal alignment, understanding-generation gap, self-play optimization, homologous preference data
 

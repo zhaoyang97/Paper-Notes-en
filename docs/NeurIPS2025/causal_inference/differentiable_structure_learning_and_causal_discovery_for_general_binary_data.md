@@ -18,8 +18,8 @@ content_hash: 959bddb84a102386
 # Differentiable Structure Learning and Causal Discovery for General Binary Data
 
 **Conference**: NEURIPS2025
-**arXiv**: [2509.21658](https://arxiv.org/abs/2509.21658)
-**Code**: To be confirmed
+**arXiv**: [2509.21658](https://arxiv.org/abs/2509.21658)  
+**Code**: To be confirmed  
 **Area**: Causal Inference
 **Keywords**: Causal discovery, structure learning, discrete data, DAG learning, multivariate Bernoulli distribution
 

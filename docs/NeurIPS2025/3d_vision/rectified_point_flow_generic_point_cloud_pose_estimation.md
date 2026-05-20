@@ -18,8 +18,8 @@ content_hash: 03052f82ed5ec8ef
 # Rectified Point Flow: Generic Point Cloud Pose Estimation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05282](https://arxiv.org/abs/2506.05282)
-**Code**: [Project Page](https://rectified-pointflow.github.io/)
+**arXiv**: [2506.05282](https://arxiv.org/abs/2506.05282)  
+**Code**: [Project Page](https://rectified-pointflow.github.io/)  
 **Area**: 3D Vision / Point Cloud Registration
 **Keywords**: point cloud pose estimation, rectified flow, shape assembly, registration, symmetry handling
 

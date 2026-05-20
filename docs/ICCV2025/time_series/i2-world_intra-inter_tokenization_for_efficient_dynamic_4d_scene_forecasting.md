@@ -18,8 +18,8 @@ content_hash: 38d096414c6cadbc
 # I²-World: Intra-Inter Tokenization for Efficient Dynamic 4D Scene Forecasting
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.09144](https://arxiv.org/abs/2507.09144)
-**Code**: [GitHub](https://github.com/lzzzzzm/II-World)
+**arXiv**: [2507.09144](https://arxiv.org/abs/2507.09144)  
+**Code**: [GitHub](https://github.com/lzzzzzm/II-World)  
 **Area**: Time Series
 **Keywords**: 4D occupancy forecasting, scene tokenization, world model, autoregressive generation, autonomous driving
 

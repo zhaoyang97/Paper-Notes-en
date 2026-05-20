@@ -18,8 +18,8 @@ content_hash: c3de1035cd23e821
 # Unveiling Chain of Step Reasoning for Vision-Language Models with Fine-grained Rewards
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19003](https://arxiv.org/abs/2509.19003)
-**Code**: [https://github.com/baaivision/CoS](https://github.com/baaivision/CoS)
+**arXiv**: [2509.19003](https://arxiv.org/abs/2509.19003)  
+**Code**: [https://github.com/baaivision/CoS](https://github.com/baaivision/CoS)  
 **Area**: Multimodal VLM / Visual Reasoning / Process Reward Model
 **Keywords**: chain-of-step, process reward model, step-level reasoning, iterative DPO, inference-time scaling
 

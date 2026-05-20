@@ -18,8 +18,8 @@ content_hash: 9938f66a1aa70250
 # HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.15678](https://arxiv.org/abs/2604.15678)
-**Code**: N/A
+**arXiv**: [2604.15678](https://arxiv.org/abs/2604.15678)  
+**Code**: N/A  
 **Area**: LLM Evaluation
 **Keywords**: Continual Learning, Few-Shot Class-Incremental Learning, Cross-Domain Adaptation, Prototype Calibration, Domain Gravity
 
@@ -43,13 +43,13 @@ Using a frozen CLIP model, class prototypes (mean embeddings and regularized pre
 ### Key Designs
 
 1. **Domain Gravity Concept**:
-   - **Function**: Provides a structured explanation for representational bias in heterogeneous-domain continual learning.
-   - **Mechanism**: Each domain generates a "representational potential" based on its visual consistency and data density. Low-entropy or data-rich domains exert disproportionate influence in the shared embedding space. Domain Gravity has two sources: (1) pre-training bias—CLIP inherits distributional bias from large-scale corpora, with frequent domains dominating embedding geometry; (2) incremental accumulation—as incremental tasks arrive, prototypes and embeddings drift toward visually consistent domains. t-SNE visualizations directly demonstrate prototype drift of under-represented domains in methods such as RanPAC.
-   - **Design Motivation**: Elevates the observation that "domain imbalance causes performance degradation" from a phenomenological description to a structural explanation, providing a clear objective for method design.
+    - **Function**: Provides a structured explanation for representational bias in heterogeneous-domain continual learning.
+    - **Mechanism**: Each domain generates a "representational potential" based on its visual consistency and data density. Low-entropy or data-rich domains exert disproportionate influence in the shared embedding space. Domain Gravity has two sources: (1) pre-training bias—CLIP inherits distributional bias from large-scale corpora, with frequent domains dominating embedding geometry; (2) incremental accumulation—as incremental tasks arrive, prototypes and embeddings drift toward visually consistent domains. t-SNE visualizations directly demonstrate prototype drift of under-represented domains in methods such as RanPAC.
+    - **Design Motivation**: Elevates the observation that "domain imbalance causes performance degradation" from a phenomenological description to a structural explanation, providing a clear objective for method design.
 
 2. **Cosine–Mahalanobis Fusion (Core of HyCal)**:
-   - **Function**: Leverages complementary geometric information for robust prototype matching.
-   - **Mechanism**: The paper theoretically proves that, under an isotropic Gaussian assumption, the directional vector $U$ and magnitude $R$ are statistically independent ($R \perp U$); therefore, cosine similarity (dependent on $U$) and Mahalanobis distance (dependent on $R$ and the covariance) capture non-overlapping information, yielding $H(C, M) = H(C) + H(M)$. Mutual information analysis further proves that the combination provides strictly more discriminative information: $I(L; C, M) \geq \max\{I(L; C), I(L; M)\}$. The final prediction is obtained by fusing the two scores with adaptive weights:
+    - **Function**: Leverages complementary geometric information for robust prototype matching.
+    - **Mechanism**: The paper theoretically proves that, under an isotropic Gaussian assumption, the directional vector $U$ and magnitude $R$ are statistically independent ($R \perp U$); therefore, cosine similarity (dependent on $U$) and Mahalanobis distance (dependent on $R$ and the covariance) capture non-overlapping information, yielding $H(C, M) = H(C) + H(M)$. Mutual information analysis further proves that the combination provides strictly more discriminative information: $I(L; C, M) \geq \max\{I(L; C), I(L; M)\}$. The final prediction is obtained by fusing the two scores with adaptive weights:
 
 $$c_{\text{pred}} = \arg\max_c \left[ w_c \cdot d_{\text{maha}} + (1 - w_c) \cdot s_{\text{cos}} \right]$$
 
@@ -57,9 +57,9 @@ where the weight $w_c = \sigma\!\left((K_c^t - \alpha)/\beta\right)$ adapts to t
    - **Design Motivation**: A single distance metric is unstable under heterogeneous domains—cosine similarity ignores domain-specific variance, while Mahalanobis distance yields unreliable covariance estimates under few-shot conditions. Fusing the two exploits the strengths of each to compensate for the weaknesses of the other.
 
 3. **XD-VSCIL Benchmark and CDE Evaluation Metric**:
-   - **Function**: Provides standardized evaluation reflecting real-world heterogeneity and imbalance.
-   - **Mechanism**: Eight cross-discipline datasets are selected (Aircraft, ArtBench, DTD, EuroSAT, Galaxy, MNIST, OrganMNIST, OxfordFlowers) as sequential tasks. The number of classes and per-class samples are allowed to vary across tasks. The Cross-Discipline Efficiency (CDE) metric is proposed, combining adaptability $S_{\text{adapt}}$ and final accuracy $S_{\text{last}}$ via harmonic mean, weighted by $w^t \propto 1/\sqrt{K^t}$ to reward data efficiency.
-   - **Design Motivation**: Existing FSCIL benchmarks assume fixed few-shot settings and homogeneous domains, which fails to reflect real-world scenarios. The variable sample counts and heterogeneous domains in XD-VSCIL more closely approximate practical conditions.
+    - **Function**: Provides standardized evaluation reflecting real-world heterogeneity and imbalance.
+    - **Mechanism**: Eight cross-discipline datasets are selected (Aircraft, ArtBench, DTD, EuroSAT, Galaxy, MNIST, OrganMNIST, OxfordFlowers) as sequential tasks. The number of classes and per-class samples are allowed to vary across tasks. The Cross-Discipline Efficiency (CDE) metric is proposed, combining adaptability $S_{\text{adapt}}$ and final accuracy $S_{\text{last}}$ via harmonic mean, weighted by $w^t \propto 1/\sqrt{K^t}$ to reward data efficiency.
+    - **Design Motivation**: Existing FSCIL benchmarks assume fixed few-shot settings and homogeneous domains, which fails to reflect real-world scenarios. The variable sample counts and heterogeneous domains in XD-VSCIL more closely approximate practical conditions.
 
 ### Loss & Training
 HyCal is entirely training-free and involves no loss functions or backpropagation. Only the mean embedding, regularized precision matrix, and sample count for each class need to be stored. Covariance regularization uses $\Sigma_c^{reg} = (1-\lambda)\Sigma_c + \lambda\gamma I$ to ensure stability under few-shot conditions.

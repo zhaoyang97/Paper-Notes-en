@@ -18,8 +18,8 @@ content_hash: 957ddc659b938408
 # FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01685](https://arxiv.org/abs/2603.01685)
-**Code**: None
+**arXiv**: [2603.01685](https://arxiv.org/abs/2603.01685)  
+**Code**: None  
 **Area**: Video Generation
 **Keywords**: Video generation acceleration, step distillation, model pruning, distribution matching, DiT compression
 

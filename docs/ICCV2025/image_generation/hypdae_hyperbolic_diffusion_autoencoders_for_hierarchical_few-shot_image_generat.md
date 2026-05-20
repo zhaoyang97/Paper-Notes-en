@@ -18,8 +18,8 @@ content_hash: d737d978e9951567
 # HypDAE: Hyperbolic Diffusion Autoencoders for Hierarchical Few-shot Image Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.17784](https://arxiv.org/abs/2411.17784)
-**Code**: [https://github.com/lingxiao-li/HypDAE](https://github.com/lingxiao-li/HypDAE)
+**arXiv**: [2411.17784](https://arxiv.org/abs/2411.17784)  
+**Code**: [https://github.com/lingxiao-li/HypDAE](https://github.com/lingxiao-li/HypDAE)  
 **Area**: Diffusion Models / Few-shot Image Generation
 **Keywords**: Hyperbolic Space, Diffusion Autoencoders, Hierarchical Representation, Few-shot Generation, Poincaré Disk
 

@@ -18,8 +18,8 @@ content_hash: d8792e434af1bd73
 # Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13181](https://arxiv.org/abs/2505.13181)
-**Code**: [ictnlp/SLED-TTS](https://github.com/ictnlp/SLED-TTS)
+**arXiv**: [2505.13181](https://arxiv.org/abs/2505.13181)  
+**Code**: [ictnlp/SLED-TTS](https://github.com/ictnlp/SLED-TTS)  
 **Area**: Audio & Speech
 **Keywords**: speech language model, continuous latent space, energy distance, zero-shot TTS, streaming synthesis
 

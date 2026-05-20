@@ -19,9 +19,9 @@ content_hash: 0362e76db9067a23
 # On Stealing Graph Neural Network Models
 
 **Conference**: AAAI2026
-**arXiv**: [2511.07170](https://arxiv.org/abs/2511.07170)
+**arXiv**: [2511.07170](https://arxiv.org/abs/2511.07170)  
 **Authors**: Marcin Podhajski, Jan Dubiński, Franziska Boenisch, Adam Dziedzic, Agnieszka Pręgowska, Tomasz P. Michalak
-**Code**: [m-podhajski/OnStealingGNNs](https://github.com/m-podhajski/OnStealingGNNs)
+**Code**: [m-podhajski/OnStealingGNNs](https://github.com/m-podhajski/OnStealingGNNs)  
 **Area**: Graph Learning
 **Keywords**: GNN model stealing, model security, self-supervised learning, query selection, black-box attack, inductive/transductive
 

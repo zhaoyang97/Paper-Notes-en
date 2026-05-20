@@ -18,8 +18,8 @@ content_hash: 78f6035cb3bd1cdf
 # MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.17404](https://arxiv.org/abs/2508.17404)
-**Code**: None (to be released)
+**arXiv**: [2508.17404](https://arxiv.org/abs/2508.17404)  
+**Code**: None (to be released)  
 **Area**: Video Generation
 **Keywords**: Human video generation, structure-appearance decoupling, 3D motion generation, DiT, dense tracking loss
 

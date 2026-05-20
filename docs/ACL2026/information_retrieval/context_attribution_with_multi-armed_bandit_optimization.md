@@ -18,8 +18,8 @@ content_hash: b2ba827f5e7d4c53
 # Context Attribution with Multi-Armed Bandit Optimization
 
 **Conference**: ACL 2026 (Findings)
-**arXiv**: [2506.19977](https://arxiv.org/abs/2506.19977)
-**Code**: [https://github.com/pd90506/camab](https://github.com/pd90506/camab)
+**arXiv**: [2506.19977](https://arxiv.org/abs/2506.19977)  
+**Code**: [https://github.com/pd90506/camab](https://github.com/pd90506/camab)  
 **Area**: Information Retrieval / Interpretability
 **Keywords**: Context Attribution, Multi-Armed Bandit, Thompson Sampling, Retrieval-Augmented Generation, Query Efficiency
 

@@ -18,8 +18,8 @@ content_hash: 9717e7a703910793
 # Formal Verification of Diffusion Auctions
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08765](https://arxiv.org/abs/2511.08765)
-**Code**: None
+**arXiv**: [2511.08765](https://arxiv.org/abs/2511.08765)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Diffusion auctions, formal verification, model checking, game theory, strategy logic
 

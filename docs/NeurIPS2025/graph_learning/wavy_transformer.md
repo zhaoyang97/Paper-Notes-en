@@ -19,9 +19,9 @@ content_hash: ad8b365a6e56d10b
 # Wavy Transformer
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.12787](https://arxiv.org/abs/2508.12787)
+**arXiv**: [2508.12787](https://arxiv.org/abs/2508.12787)  
 **Authors**: Satoshi Noguchi (JAMSTEC/RIKEN), Yoshinobu Kawahara (Osaka Univ/RIKEN)
-**Code**: [GitHub](https://github.com/noguchisatoshi/Wavy-Transformer)
+**Code**: [GitHub](https://github.com/noguchisatoshi/Wavy-Transformer)  
 **Area**: Graph Learning
 **Keywords**: Transformer, over-smoothing, wave equation, graph neural diffusion, attention mechanism, physics-inspired
 

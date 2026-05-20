@@ -19,8 +19,8 @@ content_hash: ffc2e0f4a5e1c3a4
 # Catalyst4D: High-Fidelity 3D-to-4D Scene Editing via Dynamic Propagation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12766](https://arxiv.org/abs/2603.12766)
-**Code**: None
+**arXiv**: [2603.12766](https://arxiv.org/abs/2603.12766)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 4D editing, 3DGS, dynamic scenes, motion propagation, optimal transport, color uncertainty
 

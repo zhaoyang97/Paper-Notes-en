@@ -18,8 +18,8 @@ content_hash: ac7601fb360361d7
 # Exploring Surround-View Fisheye Camera 3D Object Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18695](https://arxiv.org/abs/2511.18695)
-**Code**: [https://github.com/weiyangdaren/Fisheye3DOD](https://github.com/weiyangdaren/Fisheye3DOD)
+**arXiv**: [2511.18695](https://arxiv.org/abs/2511.18695)  
+**Code**: [https://github.com/weiyangdaren/Fisheye3DOD](https://github.com/weiyangdaren/Fisheye3DOD)  
 **Area**: 3D Vision / Autonomous Driving
 **Keywords**: fisheye camera, 3D object detection, BEV perception, spherical representation, surround-view perception
 

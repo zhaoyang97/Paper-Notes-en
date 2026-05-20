@@ -18,8 +18,8 @@ content_hash: 4fcfb1464daab1ac
 # Contact Wasserstein Geodesics for Non-Conservative Schrödinger Bridges
 
 **Conference**: ICLR2026
-**arXiv**: [2511.06856](https://arxiv.org/abs/2511.06856)
-**Code**: [Project Page](https://sites.google.com/view/c-w-g)
+**arXiv**: [2511.06856](https://arxiv.org/abs/2511.06856)  
+**Code**: [Project Page](https://sites.google.com/view/c-w-g)  
 **Area**: Image Generation
 **Keywords**: Schrödinger bridge, contact Hamiltonian, Wasserstein geodesic, non-conservative dynamics, guided generation
 

@@ -18,8 +18,8 @@ content_hash: 9bf2c2b3a9f673c9
 # Beyond End-to-End: Dynamic Chain Optimization for Private LLM Adaptation on the Edge
 
 **Conference**: ACL 2026
-**arXiv**: [2604.06819](https://arxiv.org/abs/2604.06819)
-**Code**: None
+**arXiv**: [2604.06819](https://arxiv.org/abs/2604.06819)  
+**Code**: None  
 **Area**: LLM Efficiency / Federated Learning / Privacy Preservation
 **Keywords**: Federated Fine-tuning, Edge Devices, Memory Wall, Chain Optimization, Adapter
 

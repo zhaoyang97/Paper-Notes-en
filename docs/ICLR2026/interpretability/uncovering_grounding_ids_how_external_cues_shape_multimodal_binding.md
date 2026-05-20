@@ -19,8 +19,8 @@ content_hash: 44785c6659be8ed4
 # Uncovering Grounding IDs: How External Cues Shape Multimodal Binding
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24072](https://arxiv.org/abs/2509.24072)
-**Code**: None
+**arXiv**: [2509.24072](https://arxiv.org/abs/2509.24072)  
+**Code**: None  
 **Area**: VLM Interpretability / Multimodal Binding
 **Keywords**: Grounding ID, external visual cues, multimodal binding, causal mediation analysis, hallucination mitigation, cross-modal alignment
 
@@ -54,34 +54,34 @@ The research framework proceeds in three progressive layers: (1) **Correlational
 
 1. **Attention Analysis — Correlational Evidence for Partition-Level Binding**
 
-   - *Function*: Verify whether structured inputs enhance visual–text correspondence within the same partition at the attention level.
-   - *Mechanism*: For each token, the maximum attention score across all heads is extracted and aggregated into a 4×4 matrix by partition. Statistics are computed only on true-positive objects—objects the model correctly describes that are actually present in the image—ensuring associative accuracy. Results are averaged over 500 samples and layers 22–27.
-   - *Design Motivation*: The attention matrix under structured inputs exhibits a markedly stronger diagonal dominance—attention concentrates within the same partition while cross-partition attention weakens. This provides preliminary evidence that external cues guide the model to focus on relevant regions.
+    - *Function*: Verify whether structured inputs enhance visual–text correspondence within the same partition at the attention level.
+    - *Mechanism*: For each token, the maximum attention score across all heads is extracted and aggregated into a 4×4 matrix by partition. Statistics are computed only on true-positive objects—objects the model correctly describes that are actually present in the image—ensuring associative accuracy. Results are averaged over 500 samples and layers 22–27.
+    - *Design Motivation*: The attention matrix under structured inputs exhibits a markedly stronger diagonal dominance—attention concentrates within the same partition while cross-partition attention weakens. This provides preliminary evidence that external cues guide the model to focus on relevant regions.
 
 2. **Modality Gap Analysis — Alignment Enhancement in Embedding Space**
 
-   - *Function*: Complement the attention analysis from an embedding similarity perspective, quantifying the degree of cross-modal alignment.
-   - *Mechanism*: Layer-wise cosine similarity between corresponding visual patch and text token embeddings is computed. Structured inputs consistently achieve higher cross-modal similarity after layer 20, with the largest difference in the final four layers (22–27).
-   - *Key Finding*: The cross-modal embedding similarity of symbol patches (&/#/$/@) is **higher** than that of object patches themselves—symbols serve as stronger cross-modal anchors than the objects they refer to. This suggests the model builds cross-modal alignment bridges through the symbol space.
+    - *Function*: Complement the attention analysis from an embedding similarity perspective, quantifying the degree of cross-modal alignment.
+    - *Mechanism*: Layer-wise cosine similarity between corresponding visual patch and text token embeddings is computed. Structured inputs consistently achieve higher cross-modal similarity after layer 20, with the largest difference in the final four layers (22–27).
+    - *Key Finding*: The cross-modal embedding similarity of symbol patches (&/#/$/@) is **higher** than that of object patches themselves—symbols serve as stronger cross-modal anchors than the objects they refer to. This suggests the model builds cross-modal alignment bridges through the symbol space.
 
 3. **Causal Activation Swap — Causal Proof of Grounding ID Existence (Core Contribution)**
 
-   - *Function*: Demonstrate through causal intervention that Grounding IDs causally determine the model's binding predictions.
-   - *Mechanism*: Two contexts $c$ (target) and $c'$ (source) are randomly sampled; two symbols (e.g., & and @) are selected; all layer activations of the objects bound to these two rows in $c'$ are swapped into $c$, yielding a patched context $c^*$. The key observation is that the model's predictions in $c^*$ follow **the symbols to which the swapped objects were bound in the source context**, rather than the symbols physically adjacent to the objects in the target context.
-   - *Quantitative Results*: Standard accuracy drops from 1.00 (no intervention) to 0.02 after the swap, while swap accuracy (whether the model follows the swapped binding) reaches **0.98**. This constitutes strong causal evidence—the symbol–object binding is encoded in the object's patch activations and is transferred through the swap.
-   - *Design Motivation*: Pure correlational analysis cannot rule out confounding factors. The causal mediation framework, drawn from the mechanistic interpretability tradition (Vig et al., 2020; Feng & Steinhardt, 2023), is the gold standard for demonstrating internal mechanisms.
+    - *Function*: Demonstrate through causal intervention that Grounding IDs causally determine the model's binding predictions.
+    - *Mechanism*: Two contexts $c$ (target) and $c'$ (source) are randomly sampled; two symbols (e.g., & and @) are selected; all layer activations of the objects bound to these two rows in $c'$ are swapped into $c$, yielding a patched context $c^*$. The key observation is that the model's predictions in $c^*$ follow **the symbols to which the swapped objects were bound in the source context**, rather than the symbols physically adjacent to the objects in the target context.
+    - *Quantitative Results*: Standard accuracy drops from 1.00 (no intervention) to 0.02 after the swap, while swap accuracy (whether the model follows the swapped binding) reaches **0.98**. This constitutes strong causal evidence—the symbol–object binding is encoded in the object's patch activations and is transferred through the swap.
+    - *Design Motivation*: Pure correlational analysis cannot rule out confounding factors. The causal mediation framework, drawn from the mechanistic interpretability tradition (Vig et al., 2020; Feng & Steinhardt, 2023), is the gold standard for demonstrating internal mechanisms.
 
 4. **Disjoint Symbol Experiment — Lexical Nature of Binding**
 
-   - *Function*: Verify whether Grounding IDs are bound to specific symbol literals (lexical binding) rather than relying on contextual position.
-   - *Mechanism*: The source context uses symbol set {&,$,#,@} while the target context uses a completely disjoint set {!,%,×,+}. After swapping activations, the model is queried using source symbols.
-   - *Key Finding*: Even when no explicit occurrence of & exists in the target context, the model outputs the object bound to & with an accuracy of **0.86** (far above the random baseline of 0.25). This proves that Grounding IDs are lexically encoded—binding information is directly embedded in object activations, independent of symbol co-occurrence in context.
+    - *Function*: Verify whether Grounding IDs are bound to specific symbol literals (lexical binding) rather than relying on contextual position.
+    - *Mechanism*: The source context uses symbol set {&,$,#,@} while the target context uses a completely disjoint set {!,%,×,+}. After swapping activations, the model is queried using source symbols.
+    - *Key Finding*: Even when no explicit occurrence of & exists in the target context, the model outputs the object bound to & with an accuracy of **0.86** (far above the random baseline of 0.25). This proves that Grounding IDs are lexically encoded—binding information is directly embedded in object activations, independent of symbol co-occurrence in context.
 
 5. **Layer-wise Grounding ID Emergence Analysis**
 
-   - *Function*: Locate at which layers Grounding IDs emerge and which attention heads are responsible for propagating them.
-   - *Mechanism*: (a) **Logit lens**: At each layer, the unembedding matrix is applied to decode activations and compute $\Delta L^{(\ell)} = L^{(\ell)}(\mathbf{o}^s_{\sim s} | c^*) - L^{(\ell)}(\mathbf{o}^{\sim s}_s | c^*)$, i.e., the logit difference between the bound object and the positionally adjacent object. This becomes positive at layers 20–27, indicating that the model begins favoring bound objects in later layers. (b) **Attention head SNR**: The signal-to-noise ratio of each head's attention difference between bound and adjacent objects is computed. Specific heads near layer 16 exhibit the highest SNR, identifying them as the key carriers for propagating Grounding IDs.
-   - *Design Motivation*: These findings align with the observation in Section 3 that embedding alignment strengthens at the same layers (20–27), establishing a layer-level correspondence between correlational and causal evidence.
+    - *Function*: Locate at which layers Grounding IDs emerge and which attention heads are responsible for propagating them.
+    - *Mechanism*: (a) **Logit lens**: At each layer, the unembedding matrix is applied to decode activations and compute $\Delta L^{(\ell)} = L^{(\ell)}(\mathbf{o}^s_{\sim s} | c^*) - L^{(\ell)}(\mathbf{o}^{\sim s}_s | c^*)$, i.e., the logit difference between the bound object and the positionally adjacent object. This becomes positive at layers 20–27, indicating that the model begins favoring bound objects in later layers. (b) **Attention head SNR**: The signal-to-noise ratio of each head's attention difference between bound and adjacent objects is computed. Specific heads near layer 16 exhibit the highest SNR, identifying them as the key carriers for propagating Grounding IDs.
+    - *Design Motivation*: These findings align with the observation in Section 3 that embedding alignment strengthens at the same layers (20–27), establishing a layer-level correspondence between correlational and causal evidence.
 
 ### Loss & Training
 

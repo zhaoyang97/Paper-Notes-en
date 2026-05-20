@@ -19,9 +19,9 @@ content_hash: 35380372890c1da3
 # Reconstruction and Secrecy under Approximate Distance Queries
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.06461](https://arxiv.org/abs/2511.06461)
+**arXiv**: [2511.06461](https://arxiv.org/abs/2511.06461)  
 **Authors**: Shay Moran (Technion & Google Research), Elizaveta Nesterova (Technion)
-**Code**: Not released
+**Code**: Not released  
 **Area**: AI Security
 **Keywords**: Reconstruction attacks, privacy protection, approximate distance queries, metric spaces, Chebyshev radius, pseudo-finite spaces
 

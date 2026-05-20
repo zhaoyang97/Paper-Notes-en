@@ -18,8 +18,8 @@ content_hash: ec8f5e0bc1ae3d6c
 # VESSA: Video-based objEct-centric Self-Supervised Adaptation for Visual Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20994](https://arxiv.org/abs/2510.20994)
-**Code**: [GitHub](https://github.com/jesimonbarreto/VESSA)
+**arXiv**: [2510.20994](https://arxiv.org/abs/2510.20994)  
+**Code**: [GitHub](https://github.com/jesimonbarreto/VESSA)  
 **Area**: Model Compression
 **Keywords**: Visual Foundation Models, Self-Supervised Fine-Tuning, Video Adaptation, Self-Distillation, LoRA
 

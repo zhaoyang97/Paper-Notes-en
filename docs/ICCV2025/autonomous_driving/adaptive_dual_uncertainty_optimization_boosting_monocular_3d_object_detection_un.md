@@ -18,8 +18,8 @@ content_hash: d35073ca4fbc427d
 # Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.20488](https://arxiv.org/abs/2508.20488)
-**Code**: [GitHub](https://github.com/hzcar/DUO)
+**arXiv**: [2508.20488](https://arxiv.org/abs/2508.20488)  
+**Code**: [GitHub](https://github.com/hzcar/DUO)  
 **Area**: Autonomous Driving
 **Keywords**: Monocular 3D Detection, Test-Time Adaptation, Uncertainty Optimization, Domain Shift, Convex Optimization
 

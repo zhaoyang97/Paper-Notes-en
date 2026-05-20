@@ -18,8 +18,8 @@ content_hash: 34e6d466de504ba9
 # REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.16788](https://arxiv.org/abs/2601.16788)
-**Code**: None
+**arXiv**: [2601.16788](https://arxiv.org/abs/2601.16788)  
+**Code**: None  
 **Area**: Semantic Segmentation
 **Keywords**: Panoramic semantic segmentation, depth representation, multimodal fusion, cylindrical coordinates, RGB-D
 
@@ -51,17 +51,17 @@ REL-SF4PASS consists of two core components: (1) the REL depth representation mo
 
 1. **REL Representation (3 channels)**:
 
-   - **Rectified Depth (ReD)**: Planar distance $\rho = d \cdot \cos(\phi)$, eliminating the influence of the height direction.
-   - **EGVIA**: Observes a strong linear correlation between normalized image height $H$ and the normal-gravity inclination angle $A$ in panoramic images; fuses both via $\lambda \cdot A + (1-\lambda) \cdot H$ for horizontal surfaces, and uses $A$ alone for vertical surfaces.
-   - **LOA**: The angle between the surface normal and the tangent direction $\hat{T}$, supplying the second degree of freedom of the normal that HHA lacks.
-   - REL requires only the raw depth map and no camera intrinsics or extrinsics.
+    - **Rectified Depth (ReD)**: Planar distance $\rho = d \cdot \cos(\phi)$, eliminating the influence of the height direction.
+    - **EGVIA**: Observes a strong linear correlation between normalized image height $H$ and the normal-gravity inclination angle $A$ in panoramic images; fuses both via $\lambda \cdot A + (1-\lambda) \cdot H$ for horizontal surfaces, and uses $A$ alone for vertical surfaces.
+    - **LOA**: The angle between the surface normal and the tangent direction $\hat{T}$, supplying the second degree of freedom of the normal that HHA lacks.
+    - REL requires only the raw depth map and no camera intrinsics or extrinsics.
 
 2. **SMMF (Spherical Dynamic Multi-Modal Fusion)**:
 
-   - Samples $m \times n$ overlapping regions on the lateral surface of the cylinder; horizontally, regions are allowed to wrap across the left and right boundaries of the panoramic image.
-   - Vertically, regions expand symmetrically upward and downward from the equator ($\phi = 0°$), ensuring equatorial symmetry.
-   - Each region has an independent Gate Network that determines the fusion strategy (MoE architecture with $B$ expert fusion operations).
-   - A two-stage soft-to-hard training scheme is adopted: soft-probability training of all experts first, followed by hard one-hot expert selection.
+    - Samples $m \times n$ overlapping regions on the lateral surface of the cylinder; horizontally, regions are allowed to wrap across the left and right boundaries of the panoramic image.
+    - Vertically, regions expand symmetrically upward and downward from the equator ($\phi = 0°$), ensuring equatorial symmetry.
+    - Each region has an independent Gate Network that determines the fusion strategy (MoE architecture with $B$ expert fusion operations).
+    - A two-stage soft-to-hard training scheme is adopted: soft-probability training of all experts first, followed by hard one-hot expert selection.
 
 3. **Fusion Early-Stopping Mechanism**: If a fusion unit at a given stage selects "no fusion" (RGB only), all subsequent fusion units are forced to adopt the same no-fusion decision, avoiding redundant computation.
 

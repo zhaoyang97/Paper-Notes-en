@@ -18,8 +18,8 @@ content_hash: bea5a55f57abe521
 # Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.18281](https://arxiv.org/abs/2511.18281)
-**Code**: [GitHub](https://github.com/yaramohamadi/uni-DAD)
+**arXiv**: [2511.18281](https://arxiv.org/abs/2511.18281)  
+**Code**: [GitHub](https://github.com/yaramohamadi/uni-DAD)  
 **Area**: Image Generation
 **Keywords**: Diffusion model distillation, few-shot image generation, domain adaptation, GAN, distribution matching distillation
 

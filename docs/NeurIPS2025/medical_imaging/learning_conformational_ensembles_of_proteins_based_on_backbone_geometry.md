@@ -17,8 +17,8 @@ content_hash: 14a6d7744fc71b7c
 # Learning Conformational Ensembles of Proteins Based on Backbone Geometry
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.05738](https://arxiv.org/abs/2503.05738)
-**Code**: [GitHub](https://github.com/graeter-group/bbflow)
+**arXiv**: [2503.05738](https://arxiv.org/abs/2503.05738)  
+**Code**: [GitHub](https://github.com/graeter-group/bbflow)  
 **Area**: Medical Imaging / Computational Biology
 **Keywords**: protein conformational ensembles, flow matching, backbone geometry, molecular dynamics simulation
 

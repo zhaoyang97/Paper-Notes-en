@@ -19,8 +19,8 @@ content_hash: 215681ad08c561c0
 # DynaRend: Learning 3D Dynamics via Masked Future Rendering for Robotic Manipulation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24261](https://arxiv.org/abs/2510.24261)
-**Code**: Not released
+**arXiv**: [2510.24261](https://arxiv.org/abs/2510.24261)  
+**Code**: Not released  
 **Area**: 3D Vision
 **Keywords**: Representation Learning, Robotic Manipulation, Differentiable Rendering, Triplane, Dynamics Prediction, Pre-training
 

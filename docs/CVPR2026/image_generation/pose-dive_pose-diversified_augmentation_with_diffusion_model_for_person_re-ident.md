@@ -18,8 +18,8 @@ content_hash: 4fd13b3a51dc707c
 # Pose-dIVE: Pose-Diversified Augmentation with Diffusion Model for Person Re-Identification
 
 **Conference**: CVPR 2026
-**arXiv**: [2406.16042](https://arxiv.org/abs/2406.16042)
-**Code**: [https://cvlab-kaist.github.io/Pose-dIVE](https://cvlab-kaist.github.io/Pose-dIVE)
+**arXiv**: [2406.16042](https://arxiv.org/abs/2406.16042)  
+**Code**: [https://cvlab-kaist.github.io/Pose-dIVE](https://cvlab-kaist.github.io/Pose-dIVE)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Person Re-Identification, Data Augmentation, Diffusion Model, SMPL, Pose Diversification
 

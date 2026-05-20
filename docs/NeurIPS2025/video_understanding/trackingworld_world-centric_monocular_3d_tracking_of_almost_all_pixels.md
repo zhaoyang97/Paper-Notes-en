@@ -18,8 +18,8 @@ content_hash: 4660758895a84992
 # TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.08358](https://arxiv.org/abs/2512.08358)
-**Code**: [Project Page](https://igl-hkust.github.io/TrackingWorld.github.io/)
+**arXiv**: [2512.08358](https://arxiv.org/abs/2512.08358)  
+**Code**: [Project Page](https://igl-hkust.github.io/TrackingWorld.github.io/)  
 **Area**: Video Understanding
 **Keywords**: 3D tracking, monocular video, world coordinate system, dense tracking, camera pose estimation
 

@@ -18,8 +18,8 @@ content_hash: d413c33e52e81378
 # ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21078](https://arxiv.org/abs/2602.21078)
-**Code**: [DuowenC/FSSLlib](https://github.com/DuowenC/FSSLlib)
+**arXiv**: [2602.21078](https://arxiv.org/abs/2602.21078)  
+**Code**: [DuowenC/FSSLlib](https://github.com/DuowenC/FSSLlib)  
 **Area**: AI Security
 **Keywords**: Federated Learning, Semi-Supervised Learning, Data Heterogeneity, Proxy Learning, Pseudo-Labels
 

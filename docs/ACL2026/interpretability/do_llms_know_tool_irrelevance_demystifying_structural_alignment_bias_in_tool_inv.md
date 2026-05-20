@@ -17,8 +17,8 @@ content_hash: 726b3810650fb432
 # Do LLMs Know Tool Irrelevance? Demystifying Structural Alignment Bias in Tool Invocations
 
 **Conference**: ACL 2026
-**arXiv**: [2604.11322](https://arxiv.org/abs/2604.11322)
-**Code**: [GitHub](https://github.com/along-l/irrelevant-tool)
+**arXiv**: [2604.11322](https://arxiv.org/abs/2604.11322)  
+**Code**: [GitHub](https://github.com/along-l/irrelevant-tool)  
 **Area**: Interpretability
 **Keywords**: Tool invocation, structural alignment bias, irrelevant tool rejection, interpretability, attention attribution
 

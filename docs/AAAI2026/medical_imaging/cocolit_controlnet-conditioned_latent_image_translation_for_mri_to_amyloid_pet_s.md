@@ -18,8 +18,8 @@ content_hash: 04e5733cbd58cc9a
 # CoCoLIT: ControlNet-Conditioned Latent Image Translation for MRI to Amyloid PET Synthesis
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01292](https://arxiv.org/abs/2508.01292)
-**Code**: [GitHub](https://github.com/brAIn-science/CoCoLIT)
+**arXiv**: [2508.01292](https://arxiv.org/abs/2508.01292)  
+**Code**: [GitHub](https://github.com/brAIn-science/CoCoLIT)  
 **Area**: Medical Imaging
 **Keywords**: MRI-to-PET synthesis, latent diffusion model, ControlNet, Alzheimer's disease, amyloid
 

@@ -18,8 +18,8 @@ content_hash: a3a911f16ce6fbba
 # Earth-Adapter: Bridge Geospatial Domain Gaps with Mixture of Frequency Adaptation
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.06220](https://arxiv.org/abs/2504.06220)
-**Code**: [Available](https://github.com/VisionXLab/Earth-Adapter)
+**arXiv**: [2504.06220](https://arxiv.org/abs/2504.06220)  
+**Code**: [Available](https://github.com/VisionXLab/Earth-Adapter)  
 **Area**: Model Compression
 **Keywords**: Remote sensing semantic segmentation, parameter-efficient fine-tuning, frequency-domain decomposition, mixture of adapters, artifact mitigation
 

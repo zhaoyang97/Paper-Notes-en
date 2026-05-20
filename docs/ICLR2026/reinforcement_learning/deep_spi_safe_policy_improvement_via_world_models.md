@@ -18,7 +18,7 @@ content_hash: 9076b7813cf90e58
 # Deep SPI: Safe Policy Improvement via World Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.12312](https://arxiv.org/abs/2510.12312)
+**arXiv**: [2510.12312](https://arxiv.org/abs/2510.12312)  
 **Area**: Reinforcement Learning / Safe Policy Improvement / World Models
 **Keywords**: safe policy improvement, world model, representation learning, PPO, importance ratio
 

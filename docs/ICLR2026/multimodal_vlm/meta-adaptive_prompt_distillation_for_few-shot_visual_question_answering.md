@@ -18,8 +18,8 @@ content_hash: ffe45e823b1022dd
 # Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.06905](https://arxiv.org/abs/2506.06905)
-**Code**: None
+**arXiv**: [2506.06905](https://arxiv.org/abs/2506.06905)  
+**Code**: None  
 **Area**: Multimodal Learning / Few-Shot Learning
 **Keywords**: Meta-Learning, Prompt Distillation, Few-Shot VQA, LMM, MAML
 

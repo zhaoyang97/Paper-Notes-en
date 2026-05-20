@@ -18,8 +18,8 @@ content_hash: 5bfac60e28f7aa9a
 # A Recovery Guarantee for Sparse Neural Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.20323](https://arxiv.org/abs/2509.20323)
-**Code**: [https://github.com/voilalab/MLP-IHT](https://github.com/voilalab/MLP-IHT)
+**arXiv**: [2509.20323](https://arxiv.org/abs/2509.20323)  
+**Code**: [https://github.com/voilalab/MLP-IHT](https://github.com/voilalab/MLP-IHT)  
 **Area**: Model Compression / Theory
 **Keywords**: Sparse neural networks, compressed sensing, iterative hard thresholding, convex reformulation, ReLU networks
 

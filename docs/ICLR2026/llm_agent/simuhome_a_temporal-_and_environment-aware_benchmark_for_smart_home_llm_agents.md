@@ -17,8 +17,8 @@ content_hash: 5134d621045958de
 # SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24282](https://arxiv.org/abs/2509.24282)
-**Code**: [https://github.com/holi-lab/SimuHome/](https://github.com/holi-lab/SimuHome/)
+**arXiv**: [2509.24282](https://arxiv.org/abs/2509.24282)  
+**Code**: [https://github.com/holi-lab/SimuHome/](https://github.com/holi-lab/SimuHome/)  
 **Area**: LLM Agent
 **Keywords**: Smart Home, LLM Agent, Workflow Scheduling, Temporal Reasoning, Interactive Simulator
 

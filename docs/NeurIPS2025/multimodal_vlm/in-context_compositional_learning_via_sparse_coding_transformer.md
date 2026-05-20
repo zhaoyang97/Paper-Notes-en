@@ -18,8 +18,8 @@ content_hash: 1bfa780d8ef87b6e
 # In-Context Compositional Learning via Sparse Coding Transformer
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.20194](https://arxiv.org/abs/2511.20194)
-**Code**: N/A
+**arXiv**: [2511.20194](https://arxiv.org/abs/2511.20194)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: Sparse Coding, Attention Mechanism, Compositional Learning, In-Context Learning, Transformer
 

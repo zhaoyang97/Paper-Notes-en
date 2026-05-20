@@ -18,8 +18,8 @@ content_hash: 76c0fcfca82ba82c
 # VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.22664](https://arxiv.org/abs/2511.22664)
-**Code**: [GitHub](https://visual-ai.github.io/vamp)
+**arXiv**: [2511.22664](https://arxiv.org/abs/2511.22664)  
+**Code**: [GitHub](https://visual-ai.github.io/vamp)  
 **Area**: Multimodal VLM
 **Keywords**: Prompt Learning, Variational Inference, CLIP, Few-Shot Learning, Domain Generalization
 

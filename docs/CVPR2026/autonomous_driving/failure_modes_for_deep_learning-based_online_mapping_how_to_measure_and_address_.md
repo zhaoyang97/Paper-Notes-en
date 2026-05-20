@@ -18,8 +18,8 @@ content_hash: cd3f0bf425abad6a
 # Failure Modes for Deep Learning-Based Online Mapping: How to Measure and Address Them
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19852](https://arxiv.org/abs/2603.19852)
-**Code**: Available (GitHub Page)
+**arXiv**: [2603.19852](https://arxiv.org/abs/2603.19852)  
+**Code**: Available (GitHub Page)  
 **Area**: Autonomous Driving
 **Keywords**: Online mapping, overfitting analysis, generalization evaluation, dataset bias, map geometric diversity
 
@@ -31,9 +31,9 @@ This paper systematically defines and quantifies two failure modes of deep learn
 
 1. **Background**: Deep learning-based online mapping (e.g., MapTR, MapTRv2) has become a core perception task in autonomous driving, where models directly generate vectorized HD map elements from sensor data (cameras, LiDAR).
 2. **Limitations of Prior Work**:
-   - Performance is inflated on geographically overlapping train/validation splits and drops sharply when switching to geographically disjoint splits (e.g., mAP on nuScenes drops from 60.95 to ~25–29);
-   - Models memorize location-specific input features rather than learning generalizable representations;
-   - Dataset geometric bias (repetitive map geometry) has not been sufficiently studied.
+    - Performance is inflated on geographically overlapping train/validation splits and drops sharply when switching to geographically disjoint splits (e.g., mAP on nuScenes drops from 60.95 to ~25–29);
+    - Models memorize location-specific input features rather than learning generalizable representations;
+    - Dataset geometric bias (repetitive map geometry) has not been sufficiently studied.
 3. **Key Challenge**: Existing evaluations do not distinguish between "models memorizing location features" and "models overfitting to map geometry," making it impossible to address either failure mode in a targeted manner.
 4. **Goal**: (1) How to decouple and quantify the two overfitting modes? (2) How to evaluate the geometric diversity of a dataset? (3) How to design better training sets for improved generalization?
 5. **Key Insight**: Two orthogonal dimensions — geographic distance and geometric similarity — are introduced to stratify the validation set; Fréchet distance replaces Chamfer distance as a more robust performance metric.
@@ -48,19 +48,19 @@ The paper consists of two major components: (1) a model failure mode analysis fr
 ### Key Designs
 
 1. **Evaluation Set Decoupling and Overfitting Scores**:
-   - Function: Stratify the validation set by geographic distance and geometric similarity to independently quantify each overfitting mode.
-   - Mechanism: The validation set is first partitioned into $V_{\text{close}}$ (geographically near) and $V_{\text{far}}$ (geographically distant) using a geographic distance threshold $T_{\text{dist}}$. To quantify localization overfitting, the geometric similarity distributions of $V_{\text{close}}$ and $V_{\text{far}}$ are matched via bilateral matching (filtered by KL divergence < 0.01) to obtain $V_{\text{close*}}$ and $V_{\text{far*}}$. The localization overfitting score is defined as $\mathcal{O}_{\text{loc}} = \frac{M_{\text{far*}} - M_{\text{close*}}}{M_{\text{close*}}}$. Geometric overfitting is quantified by binning $V_{\text{far}}$ by geometric similarity and fitting a linear regression slope $\mathcal{O}_{\text{geom}}$.
-   - Design Motivation: Geographic distance and geometric similarity are strongly correlated (Pearson r = 0.724); distribution matching is therefore necessary to decouple the two effects. Relying solely on geographic distance would confound the two overfitting modes.
+    - Function: Stratify the validation set by geographic distance and geometric similarity to independently quantify each overfitting mode.
+    - Mechanism: The validation set is first partitioned into $V_{\text{close}}$ (geographically near) and $V_{\text{far}}$ (geographically distant) using a geographic distance threshold $T_{\text{dist}}$. To quantify localization overfitting, the geometric similarity distributions of $V_{\text{close}}$ and $V_{\text{far}}$ are matched via bilateral matching (filtered by KL divergence < 0.01) to obtain $V_{\text{close*}}$ and $V_{\text{far*}}$. The localization overfitting score is defined as $\mathcal{O}_{\text{loc}} = \frac{M_{\text{far*}} - M_{\text{close*}}}{M_{\text{close*}}}$. Geometric overfitting is quantified by binning $V_{\text{far}}$ by geometric similarity and fitting a linear regression slope $\mathcal{O}_{\text{geom}}$.
+    - Design Motivation: Geographic distance and geometric similarity are strongly correlated (Pearson r = 0.724); distribution matching is therefore necessary to decouple the two effects. Relying solely on geographic distance would confound the two overfitting modes.
 
 2. **Fréchet Distance-Based Performance Metric**:
-   - Function: Provides a more robust assessment of map reconstruction quality than Chamfer distance.
-   - Mechanism: The discrete Fréchet distance (accounting for all point orderings) is computed between predicted and ground-truth map elements. Bilateral matching is used to collect a distribution $D$ of matching costs, with the median $M$ and interquartile range $IQR$ serving as performance metrics. For polygons, all cyclic permutations and both orientations are considered.
-   - Design Motivation: Chamfer distance is permutation-invariant and cannot detect point ordering errors (e.g., crossing cases in Fig. 3(b)), and is insufficiently robust on small sample sets. Fréchet distance preserves point ordering information and more accurately evaluates shape fidelity.
+    - Function: Provides a more robust assessment of map reconstruction quality than Chamfer distance.
+    - Mechanism: The discrete Fréchet distance (accounting for all point orderings) is computed between predicted and ground-truth map elements. Bilateral matching is used to collect a distribution $D$ of matching costs, with the median $M$ and interquartile range $IQR$ serving as performance metrics. For polygons, all cyclic permutations and both orientations are considered.
+    - Design Motivation: Chamfer distance is permutation-invariant and cannot detect point ordering errors (e.g., crossing cases in Fig. 3(b)), and is insufficiently robust on small sample sets. Fréchet distance preserves point ordering information and more accurately evaluates shape fidelity.
 
 3. **MST Sparsification Strategy**:
-   - Function: Improve geometric diversity and training balance by removing geometrically redundant samples from the training set.
-   - Mechanism: A fully connected weighted graph of training samples is constructed (with edge weights $\text{sim}(s_i, s_j)$), and the minimum spanning tree is extracted. A similarity threshold is used to cluster nodes with MST edge weights below the threshold, with the most representative sample (lowest average neighbor weight) selected from each cluster. Set-level geometric diversity is defined as $\text{geomdiv}(D) = \sum_{(i,j) \in \mathcal{E}(\mathcal{T}_{\text{sim}})} \text{sim}(s_i, s_j)$.
-   - Design Motivation: At thresholds 0.1–1, removing a large number of samples causes almost no change in geometric diversity yet yields performance gains, indicating that redundant similar samples cause training imbalance. Controlled experiments with random subsampling confirm that MST sparsification significantly outperforms random deletion.
+    - Function: Improve geometric diversity and training balance by removing geometrically redundant samples from the training set.
+    - Mechanism: A fully connected weighted graph of training samples is constructed (with edge weights $\text{sim}(s_i, s_j)$), and the minimum spanning tree is extracted. A similarity threshold is used to cluster nodes with MST edge weights below the threshold, with the most representative sample (lowest average neighbor weight) selected from each cluster. Set-level geometric diversity is defined as $\text{geomdiv}(D) = \sum_{(i,j) \in \mathcal{E}(\mathcal{T}_{\text{sim}})} \text{sim}(s_i, s_j)$.
+    - Design Motivation: At thresholds 0.1–1, removing a large number of samples causes almost no change in geometric diversity yet yields performance gains, indicating that redundant similar samples cause training imbalance. Controlled experiments with random subsampling confirm that MST sparsification significantly outperforms random deletion.
 
 ### Loss & Training
 

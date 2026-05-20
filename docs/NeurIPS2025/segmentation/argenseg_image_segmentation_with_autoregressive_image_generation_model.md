@@ -18,8 +18,8 @@ content_hash: d70bd7be8e04e481
 # ARGenSeg: Image Segmentation with Autoregressive Image Generation Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20803](https://arxiv.org/abs/2510.20803)
-**Code**: None
+**arXiv**: [2510.20803](https://arxiv.org/abs/2510.20803)  
+**Code**: None  
 **Area**: Image Segmentation / Multimodal Large Language Models
 **Keywords**: Autoregressive image generation, VQ-VAE segmentation, MLLM unified framework, Next-Scale Prediction, unified understanding and generation
 

@@ -18,8 +18,8 @@ content_hash: a41eda0ae192b286
 # Facial-R1: Aligning Reasoning and Recognition for Facial Emotion Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10254](https://arxiv.org/abs/2511.10254)
-**Code**: [https://github.com/RobitsG/Facial-R1](https://github.com/RobitsG/Facial-R1)
+**arXiv**: [2511.10254](https://arxiv.org/abs/2511.10254)  
+**Code**: [https://github.com/RobitsG/Facial-R1](https://github.com/RobitsG/Facial-R1)  
 **Area**: Human Understanding
 **Keywords**: Facial Emotion Analysis, Reinforcement Learning, Action Unit, Vision-Language Model, GRPO
 

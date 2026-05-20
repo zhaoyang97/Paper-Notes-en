@@ -19,8 +19,8 @@ content_hash: 8a7807d7dee02af9
 # SimDiff: Simpler Yet Better Diffusion Model for Time Series Point Forecasting
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19256](https://arxiv.org/abs/2511.19256)
-**Code**: [Available](https://github.com/Dear-Sloth/SimDiff)
+**arXiv**: [2511.19256](https://arxiv.org/abs/2511.19256)  
+**Code**: [Available](https://github.com/Dear-Sloth/SimDiff)  
 **Area**: Diffusion Models / Time Series Forecasting / Point Forecasting
 **Keywords**: Time Series Forecasting, Diffusion Models, Transformer, Normalization Independence, Median-of-Means, End-to-End
 

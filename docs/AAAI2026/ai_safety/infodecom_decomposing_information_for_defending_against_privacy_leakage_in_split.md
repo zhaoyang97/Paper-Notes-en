@@ -18,8 +18,8 @@ content_hash: a4daefd5a21ff2f7
 # InfoDecom: Decomposing Information for Defending Against Privacy Leakage in Split Inference
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13365](https://arxiv.org/abs/2511.13365)
-**Code**: [github.com/SASA-cloud/InfoDecom](https://github.com/SASA-cloud/InfoDecom)
+**arXiv**: [2511.13365](https://arxiv.org/abs/2511.13365)  
+**Code**: [github.com/SASA-cloud/InfoDecom](https://github.com/SASA-cloud/InfoDecom)  
 **Area**: AI Security
 **Keywords**: Split inference, data reconstruction attack, privacy protection, information decomposition, frequency domain transformation
 

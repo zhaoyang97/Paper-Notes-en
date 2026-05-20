@@ -18,8 +18,8 @@ content_hash: dc6358bbcae14701
 # CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.17312](https://arxiv.org/abs/2512.17312)
-**Code**: [CodeDance-VL.github.io](https://CodeDance-VL.github.io)
+**arXiv**: [2512.17312](https://arxiv.org/abs/2512.17312)  
+**Code**: [CodeDance-VL.github.io](https://CodeDance-VL.github.io)  
 **Area**: Multimodal VLM
 **Keywords**: Executable code reasoning, tool calling, multimodal reasoning, reinforcement learning, emergent behavior
 
@@ -144,8 +144,8 @@ Scalability ablation: SFT data scaling from 5K to 34K yields consistent improvem
 # CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.17312](https://arxiv.org/abs/2512.17312)
-**Code**: [https://CodeDance-VL.github.io](https://CodeDance-VL.github.io)
+**arXiv**: [2512.17312](https://arxiv.org/abs/2512.17312)  
+**Code**: [https://CodeDance-VL.github.io](https://CodeDance-VL.github.io)  
 **Area**: Multimodal VLM / Tool Use
 **Keywords**: Executable visual reasoning, tool integration, code generation, reinforcement learning, emergent behavior
 

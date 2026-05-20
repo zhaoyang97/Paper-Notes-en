@@ -18,8 +18,8 @@ content_hash: 3eab3a430ad09b1f
 # Measuring the (Un)Faithfulness of Concept-Based Explanations
 
 **Conference**: CVPR 2026
-**arXiv**: [2504.10833](https://arxiv.org/abs/2504.10833)
-**Code**: Available (released per paper statement)
+**arXiv**: [2504.10833](https://arxiv.org/abs/2504.10833)  
+**Code**: Available (released per paper statement)  
 **Area**: Explainable AI / Model Interpretability
 **Keywords**: Concept explanations, faithfulness measurement, unsupervised concept methods, surrogate models, interpretability evaluation
 

@@ -18,8 +18,8 @@ content_hash: 2acab7e5b2f0c75a
 # Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.13224](https://arxiv.org/abs/2511.13224)
-**Code**: [Available](https://github.com/devinamhn/RadioGalaxies-BNNs)
+**arXiv**: [2511.13224](https://arxiv.org/abs/2511.13224)  
+**Code**: [Available](https://github.com/devinamhn/RadioGalaxies-BNNs)  
 **Area**: Bayesian Deep Learning / Radio Astronomy
 **Keywords**: Natural Gradient Descent, Variational Inference, Bayesian Neural Networks, Uncertainty Calibration, Radio Galaxy Classification
 

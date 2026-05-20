@@ -18,8 +18,8 @@ content_hash: 3617fa8d2a8140c0
 # Incentives in Federated Learning with Heterogeneous Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21612](https://arxiv.org/abs/2509.21612)
-**Code**: None
+**arXiv**: [2509.21612](https://arxiv.org/abs/2509.21612)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Federated Learning, Incentive Mechanism, Heterogeneity, Game Theory, PAC Learning
 

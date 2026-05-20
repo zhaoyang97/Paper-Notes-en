@@ -18,8 +18,8 @@ content_hash: 8e0933eabb9de39b
 # OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.19764](https://arxiv.org/abs/2503.19764)
-**Code**: [Project Page](https://openlex3d.github.io/)
+**arXiv**: [2503.19764](https://arxiv.org/abs/2503.19764)  
+**Code**: [Project Page](https://openlex3d.github.io/)  
 **Area**: 3D Vision / Open-Vocabulary Understanding
 **Keywords**: open-vocabulary, 3D scene understanding, benchmark, semantic segmentation, object retrieval
 

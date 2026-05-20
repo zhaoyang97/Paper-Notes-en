@@ -18,8 +18,8 @@ content_hash: b0878107c49168ef
 # Robust Hallucination Detection in LLMs via Adaptive Token Selection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.07863](https://arxiv.org/abs/2504.07863)
-**Code**: [https://github.com/mala-lab/HaMI](https://github.com/mala-lab/HaMI)
+**arXiv**: [2504.07863](https://arxiv.org/abs/2504.07863)  
+**Code**: [https://github.com/mala-lab/HaMI](https://github.com/mala-lab/HaMI)  
 **Area**: LLM Evaluation
 **Keywords**: hallucination detection, multiple instance learning, adaptive token selection, internal representation, predictive uncertainty
 
@@ -52,31 +52,31 @@ The HaMI framework consists of two main modules:
 
 1. **MIL Formulation**:
 
-   - Positive bag $\mathcal{B}^+$ (responses containing hallucinations): only a small subset of tokens are true hallucination instances (positive instances).
-   - Negative bag $\mathcal{B}^-$ (correct responses): all tokens are negative instances.
-   - The hallucination detector $f_\theta$ assigns a hallucination score to each token.
-   - The top-$k$ tokens with the highest hallucination scores in each bag are selected as salient tokens ($k = \lfloor 0.1 \times l \rfloor + 1$, where $l$ is the sequence length).
+    - Positive bag $\mathcal{B}^+$ (responses containing hallucinations): only a small subset of tokens are true hallucination instances (positive instances).
+    - Negative bag $\mathcal{B}^-$ (correct responses): all tokens are negative instances.
+    - The hallucination detector $f_\theta$ assigns a hallucination score to each token.
+    - The top-$k$ tokens with the highest hallucination scores in each bag are selected as salient tokens ($k = \lfloor 0.1 \times l \rfloor + 1$, where $l$ is the sequence length).
 
 2. **MIL Loss**:
 
-   - Maximizes the discriminative margin between salient tokens from positive bags and the hardest negative tokens from negative bags.
-   - $\mathcal{L}_{MIL} = 1 - \|\frac{1}{k}\sum_{i^+ \in \mathcal{I}_{top-k}^+} f_\theta(h_{i^+})\|_2 + \|\frac{1}{k}\sum_{i^- \in \mathcal{I}_{top-k}^-} f_\theta(h_{i^-})\|_2$
-   - Top-$k$ token scores in positive bags should be high; those in negative bags should be low.
+    - Maximizes the discriminative margin between salient tokens from positive bags and the hardest negative tokens from negative bags.
+    - $\mathcal{L}_{MIL} = 1 - \|\frac{1}{k}\sum_{i^+ \in \mathcal{I}_{top-k}^+} f_\theta(h_{i^+})\|_2 + \|\frac{1}{k}\sum_{i^- \in \mathcal{I}_{top-k}^-} f_\theta(h_{i^-})\|_2$
+    - Top-$k$ token scores in positive bags should be high; those in negative bags should be low.
 
 3. **Smoothness Regularization**:
 
-   - Exploiting the sequential nature of token generation, hallucination scores of adjacent tokens should vary smoothly.
-   - $\mathcal{L}_{Smooth} = (f_\theta(h_i) - f_\theta(h_{i-1}))^2$
-   - Total loss: $\mathcal{L}_{ATS} = \mathcal{L}_{MIL} + \mathcal{L}_{Smooth}$
+    - Exploiting the sequential nature of token generation, hallucination scores of adjacent tokens should vary smoothly.
+    - $\mathcal{L}_{Smooth} = (f_\theta(h_i) - f_\theta(h_{i-1}))^2$
+    - Total loss: $\mathcal{L}_{ATS} = \mathcal{L}_{MIL} + \mathcal{L}_{Smooth}$
 
 4. **Predictive Uncertainty Enhancement**:
 
-   - Three granularities of uncertainty:
+    - Three granularities of uncertainty:
      - Token-level: predicted probability $P^t$
      - Sentence-level: perplexity $P^s$
      - Semantic consistency-level: semantic entropy from multiple samples $P^c$
-   - Enhancement formula: $h' = (1 + \lambda \cdot P_{\text{uncertainty}}) \cdot h$
-   - Semantic consistency $P^c$ is used by default, with $\lambda = 1.0$.
+    - Enhancement formula: $h' = (1 + \lambda \cdot P_{\text{uncertainty}}) \cdot h$
+    - Semantic consistency $P^c$ is used by default, with $\lambda = 1.0$.
 
 ### Loss & Training
 

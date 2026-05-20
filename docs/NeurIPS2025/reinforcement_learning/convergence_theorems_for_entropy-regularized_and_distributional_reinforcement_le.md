@@ -18,12 +18,12 @@ content_hash: b8eecbe4b2ff70d0
 # Convergence Theorems for Entropy-Regularized and Distributional Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08526](https://arxiv.org/abs/2510.08526)
-**Code**: None
+**arXiv**: [2510.08526](https://arxiv.org/abs/2510.08526)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: entropy regularization, distributional reinforcement learning, convergence, temperature decoupling, optimal policy
-**arXiv**: [2510.08526](https://arxiv.org/abs/2510.08526)
-**Code**: None
+**arXiv**: [2510.08526](https://arxiv.org/abs/2510.08526)  
+**Code**: None  
 **Area**: Reinforcement Learning
 
 ## TL;DR

@@ -18,8 +18,8 @@ content_hash: 054da8080ed5f665
 # Redirection for Erasing Memory (REM): Towards a Universal Unlearning Method for Corrupted Data
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.17730](https://arxiv.org/abs/2505.17730)
-**Code**: [GitHub](https://github.com/google-deepmind/rem)
+**arXiv**: [2505.17730](https://arxiv.org/abs/2505.17730)  
+**Code**: [GitHub](https://github.com/google-deepmind/rem)  
 **Area**: LLM Safety
 **Keywords**: Machine Unlearning, Data Repair, Poisoning Defense, Classifier Robustness, Memorization
 
@@ -57,9 +57,9 @@ The core design of REM consists of four steps (see Fig. 2 and Algorithm 1):
 
 3. **Redirection Mask Strategy**: This is the core innovation of REM. During the utility recovery phase, $\mathcal{D}_{tr}$ is used to fine-tune the full model $\theta_{o_1} \cup \theta_{o_2}$, subject to the following:
 
-   - **All discovered corrupted samples share a single mask** (routing them through the same pathway within $\theta_{o_2}$)
-   - All other samples use random masks
-   - Since the previous step has already removed corrupted information from $\theta_{o_1}$, corrupted data tends to be encoded via the shared pathway in $\theta_{o_2}$
+    - **All discovered corrupted samples share a single mask** (routing them through the same pathway within $\theta_{o_2}$)
+    - All other samples use random masks
+    - Since the previous step has already removed corrupted information from $\theta_{o_1}$, corrupted data tends to be encoded via the shared pathway in $\theta_{o_2}$
 
    Design Motivation: The shared mask makes the corresponding pathway in $\theta_{o_2}$ a strong channel for the corruption pattern. Since $\theta_{o_1}$ has been cleaned, the model does not re-encode corrupted information into $\theta_{o_1}$ (path-of-least-resistance principle).
 

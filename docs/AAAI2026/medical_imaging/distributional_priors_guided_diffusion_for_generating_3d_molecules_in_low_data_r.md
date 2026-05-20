@@ -18,8 +18,8 @@ content_hash: 75ebdd20139847d9
 # Distributional Priors Guided Diffusion for Generating 3D Molecules in Low Data Regimes
 
 **Conference**: AAAI 2026
-**arXiv**: [2404.00962](https://arxiv.org/abs/2404.00962)
-**Code**: N/A
+**arXiv**: [2404.00962](https://arxiv.org/abs/2404.00962)  
+**Code**: N/A  
 **Area**: Medical Imaging / Molecule Generation
 **Keywords**: 3D molecule generation, diffusion models, out-of-distribution generalization, structural priors, drug design
 

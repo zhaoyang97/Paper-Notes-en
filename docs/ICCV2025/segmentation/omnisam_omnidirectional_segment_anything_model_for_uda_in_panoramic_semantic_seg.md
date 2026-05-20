@@ -18,8 +18,8 @@ content_hash: 6f178c2f1b20653e
 # OmniSAM: Omnidirectional Segment Anything Model for UDA in Panoramic Semantic Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07098](https://arxiv.org/abs/2503.07098)
-**Code**: [https://github.com/Ding-Zhong/OmniSAM](https://github.com/Ding-Zhong/OmniSAM)
+**arXiv**: [2503.07098](https://arxiv.org/abs/2503.07098)  
+**Code**: [https://github.com/Ding-Zhong/OmniSAM](https://github.com/Ding-Zhong/OmniSAM)  
 **Area**: Image Segmentation
 **Keywords**: panoramic segmentation, SAM2, unsupervised domain adaptation, prototypical adaptation, pseudo label
 

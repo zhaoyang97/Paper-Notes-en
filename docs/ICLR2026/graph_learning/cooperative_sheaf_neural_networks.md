@@ -18,8 +18,8 @@ content_hash: ea9867b0e62f4398
 # Cooperative Sheaf Neural Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.00647](https://arxiv.org/abs/2507.00647)
-**Code**: N/A
+**arXiv**: [2507.00647](https://arxiv.org/abs/2507.00647)  
+**Code**: N/A  
 **Area**: Graph Learning / Graph Neural Networks
 **Keywords**: Sheaf Neural Networks, cooperative behavior, directed graphs, oversquashing, heterophilic graphs
 

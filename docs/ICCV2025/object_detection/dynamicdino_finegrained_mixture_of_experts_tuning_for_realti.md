@@ -18,8 +18,8 @@ content_hash: d8fa80519b30da29
 # Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.17436](https://arxiv.org/abs/2507.17436)
-**Code**: [https://github.com/wengminghe/Dynamic-DINO](https://github.com/wengminghe/Dynamic-DINO)
+**arXiv**: [2507.17436](https://arxiv.org/abs/2507.17436)  
+**Code**: [https://github.com/wengminghe/Dynamic-DINO](https://github.com/wengminghe/Dynamic-DINO)  
 **Area**: Object Detection / Open-Vocabulary / MoE
 **Keywords**: Mixture of Experts, open-vocabulary detection, Grounding DINO, fine-grained expert decomposition, dynamic inference
 

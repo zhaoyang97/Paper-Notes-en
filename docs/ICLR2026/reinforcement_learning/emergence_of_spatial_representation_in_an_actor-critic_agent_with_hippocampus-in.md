@@ -18,8 +18,8 @@ content_hash: 1ced1875af02c9cf
 # Emergence of Spatial Representation in an Actor-Critic Agent with Hippocampus-Inspired Sequence Generator
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.09951](https://arxiv.org/abs/2510.09951)
-**Code**: [Available](https://github.com/xiaoxionglin/SF_hipposlam)
+**arXiv**: [2510.09951](https://arxiv.org/abs/2510.09951)  
+**Code**: [Available](https://github.com/xiaoxionglin/SF_hipposlam)  
 **Area**: Reinforcement Learning
 **Keywords**: Hippocampus sequence generator, spatial representation, Actor-Critic, sparse coding, place cells
 

@@ -18,8 +18,8 @@ content_hash: dd415c02a93c1a52
 # CLIPPan: Adapting CLIP as A Supervisor for Unsupervised Pansharpening
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10896](https://arxiv.org/abs/2511.10896)
-**Code**: [Jiabo-Liu/CLIPPan](https://github.com/Jiabo-Liu/CLIPPan)
+**arXiv**: [2511.10896](https://arxiv.org/abs/2511.10896)  
+**Code**: [Jiabo-Liu/CLIPPan](https://github.com/Jiabo-Liu/CLIPPan)  
 **Area**: Model Compression
 **Keywords**: Pansharpening, CLIP, Unsupervised, Vision-Language Model, Remote Sensing
 

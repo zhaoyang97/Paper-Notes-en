@@ -18,8 +18,8 @@ content_hash: c1eab051824b9221
 # BitMark: Watermarking Bitwise Autoregressive Image Generative Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.21209](https://arxiv.org/abs/2506.21209)
-**Code**: [https://github.com/sprintml/BitMark](https://github.com/sprintml/BitMark)
+**arXiv**: [2506.21209](https://arxiv.org/abs/2506.21209)  
+**Code**: [https://github.com/sprintml/BitMark](https://github.com/sprintml/BitMark)  
 **Area**: Image Generation / Watermarking / AI Safety
 **Keywords**: Bit-level watermarking, autoregressive image generation, model collapse prevention, radioactive watermarking, Infinity
 

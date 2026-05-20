@@ -18,8 +18,8 @@ content_hash: d444b2848935edf4
 # On The Fragility of Benchmark Contamination Detection in Reasoning Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.02386](https://arxiv.org/abs/2510.02386)
-**Code**: [https://github.com/ASTRAL-Group/LRM_Conta_Detection_Arena.git](https://github.com/ASTRAL-Group/LRM_Conta_Detection_Arena.git)
+**arXiv**: [2510.02386](https://arxiv.org/abs/2510.02386)  
+**Code**: [https://github.com/ASTRAL-Group/LRM_Conta_Detection_Arena.git](https://github.com/ASTRAL-Group/LRM_Conta_Detection_Arena.git)  
 **Area**: LLM Reasoning
 **Keywords**: Benchmark Contamination, Reasoning Models, GRPO, Detection Fragility, Evaluation Integrity
 

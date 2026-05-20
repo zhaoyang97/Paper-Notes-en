@@ -18,8 +18,8 @@ content_hash: 4b68681130a93bcd
 # Benchmarking LLMs for Political Science: A United Nations Perspective
 
 **Conference**: AAAI 2026
-**arXiv**: [2502.14122](https://arxiv.org/abs/2502.14122)
-**Code**: [GitHub](https://github.com/yueqingliang1/UNBench)
+**arXiv**: [2502.14122](https://arxiv.org/abs/2502.14122)  
+**Code**: [GitHub](https://github.com/yueqingliang1/UNBench)  
 **Area**: LLM Evaluation / Political Science
 **Keywords**: UN Security Council, political science benchmark, voting simulation, resolution prediction, diplomatic text generation
 

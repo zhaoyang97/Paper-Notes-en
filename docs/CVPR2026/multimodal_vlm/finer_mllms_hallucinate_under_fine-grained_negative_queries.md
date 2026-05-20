@@ -18,8 +18,8 @@ content_hash: 80f3d21d7b7a9c05
 # FINER: MLLMs Hallucinate under Fine-grained Negative Queries
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17662](https://arxiv.org/abs/2603.17662)
-**Code**: [https://explainableml.github.io/finer-project/](https://explainableml.github.io/finer-project/)
+**arXiv**: [2603.17662](https://arxiv.org/abs/2603.17662)  
+**Code**: [https://explainableml.github.io/finer-project/](https://explainableml.github.io/finer-project/)  
 **Area**: Multimodal VLM
 **Keywords**: MLLM hallucination, fine-grained negative queries, DPO, scene graph, hallucination benchmark
 

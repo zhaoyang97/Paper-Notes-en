@@ -18,8 +18,8 @@ content_hash: c4ff4c4149be37eb
 # CAM: A Constructivist View of Agentic Memory for LLM-Based Reading Comprehension
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.05520](https://arxiv.org/abs/2510.05520)
-**Code**: [https://github.com/rui9812/CAM](https://github.com/rui9812/CAM)
+**arXiv**: [2510.05520](https://arxiv.org/abs/2510.05520)  
+**Code**: [https://github.com/rui9812/CAM](https://github.com/rui9812/CAM)  
 **Area**: Agent
 **Keywords**: Agentic memory, long-document understanding, hierarchical memory, incremental clustering, constructivism
 

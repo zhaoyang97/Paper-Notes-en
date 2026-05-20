@@ -19,8 +19,8 @@ content_hash: 4204910332dd3a1a
 # Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.05619](https://arxiv.org/abs/2506.05619)
-**Code**: Experimental code included in supplementary material
+**arXiv**: [2506.05619](https://arxiv.org/abs/2506.05619)  
+**Code**: Experimental code included in supplementary material  
 **Area**: AI Alignment / Social Choice Theory
 **Keywords**: RLHF, NLHF, preference learning, social choice theory, population-proportional alignment, axiomatic framework
 

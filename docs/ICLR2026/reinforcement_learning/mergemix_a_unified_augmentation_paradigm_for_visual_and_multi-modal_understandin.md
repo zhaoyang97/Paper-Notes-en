@@ -18,8 +18,8 @@ content_hash: cce0143d903eeb2b
 # MergeMix: A Unified Augmentation Paradigm for Visual and Multi-Modal Understanding
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.23479](https://arxiv.org/abs/2510.23479)
-**Code**: [https://github.com/JinXins/MergeMix](https://github.com/JinXins/MergeMix)
+**arXiv**: [2510.23479](https://arxiv.org/abs/2510.23479)  
+**Code**: [https://github.com/JinXins/MergeMix](https://github.com/JinXins/MergeMix)  
 **Area**: Reinforcement Learning
 **Keywords**: Mixup, Token Merging, Preference Alignment, MLLM, Data Augmentation
 

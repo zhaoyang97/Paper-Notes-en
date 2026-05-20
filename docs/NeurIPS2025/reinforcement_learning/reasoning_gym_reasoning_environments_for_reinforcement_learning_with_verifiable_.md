@@ -19,8 +19,8 @@ content_hash: 0114cd689a76e3aa
 # Reasoning Gym: Reasoning Environments for Reinforcement Learning with Verifiable Rewards
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.24760](https://arxiv.org/abs/2505.24760)
-**Code**: [GitHub](https://github.com/open-thought/reasoning-gym/)
+**arXiv**: [2505.24760](https://arxiv.org/abs/2505.24760)  
+**Code**: [GitHub](https://github.com/open-thought/reasoning-gym/)  
 **Area**: LLM Reasoning / Reinforcement Learning
 **Keywords**: RLVR, verifiable rewards, procedural generation, curriculum learning, reasoning transfer, difficulty cliff
 

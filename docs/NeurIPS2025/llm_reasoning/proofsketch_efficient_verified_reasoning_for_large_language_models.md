@@ -18,8 +18,8 @@ content_hash: ec3f0d50362a6112
 # ProofSketch: Efficient Verified Reasoning for Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24811](https://arxiv.org/abs/2510.24811)
-**Code**: [https://github.com/tanishka66/ProofSketch](https://github.com/tanishka66/ProofSketch)
+**arXiv**: [2510.24811](https://arxiv.org/abs/2510.24811)  
+**Code**: [https://github.com/tanishka66/ProofSketch](https://github.com/tanishka66/ProofSketch)  
 **Area**: LLM Reasoning
 **Keywords**: verified reasoning, symbolic closure, sketch generation, token efficiency, logical reasoning
 

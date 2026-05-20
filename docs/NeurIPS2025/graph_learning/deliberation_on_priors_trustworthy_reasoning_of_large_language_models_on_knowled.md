@@ -18,8 +18,8 @@ content_hash: 05bdaab3fba8ed94
 # Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15210](https://arxiv.org/abs/2505.15210)
-**Code**: [GitHub](https://github.com/mira-ai-lab/Deliberation-on-Priors)
+**arXiv**: [2505.15210](https://arxiv.org/abs/2505.15210)  
+**Code**: [GitHub](https://github.com/mira-ai-lab/Deliberation-on-Priors)  
 **Area**: Graph Learning / KGQA
 **Keywords**: Knowledge Graph Question Answering, Trustworthy Reasoning, Structural Priors, Constrained Reasoning, Knowledge Distillation
 

@@ -18,8 +18,8 @@ content_hash: 230a843bc8945b8c
 # WISCA: A Lightweight Model Transition Method to Improve LLM Training via Weight Scaling
 
 **Conference**: ACL 2026
-**arXiv**: [2508.16676](https://arxiv.org/abs/2508.16676)
-**Code**: None
+**arXiv**: [2508.16676](https://arxiv.org/abs/2508.16676)  
+**Code**: None  
 **Area**: Model Compression / Training Optimization
 **Keywords**: Weight Scaling, Equivalent Model, Loss Landscape, GQA Optimization, LoRA
 

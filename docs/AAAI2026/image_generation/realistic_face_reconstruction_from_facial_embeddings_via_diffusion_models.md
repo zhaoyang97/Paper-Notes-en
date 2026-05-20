@@ -18,8 +18,8 @@ content_hash: b1fcfee6822e2ead
 # Realistic Face Reconstruction from Facial Embeddings via Diffusion Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.13168](https://arxiv.org/abs/2602.13168)
-**Code**: N/A
+**arXiv**: [2602.13168](https://arxiv.org/abs/2602.13168)  
+**Code**: N/A  
 **Area**: Image Generation
 **Keywords**: Face Reconstruction, Facial Embeddings, Privacy Attack, Kolmogorov-Arnold Network, Diffusion Models
 

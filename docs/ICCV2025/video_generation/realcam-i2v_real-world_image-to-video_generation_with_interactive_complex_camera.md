@@ -18,8 +18,8 @@ content_hash: f10f45a2225fd029
 # RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.10059](https://arxiv.org/abs/2502.10059)
-**Code**: [https://zgctroy.github.io/RealCam-I2V](https://zgctroy.github.io/RealCam-I2V)
+**arXiv**: [2502.10059](https://arxiv.org/abs/2502.10059)  
+**Code**: [https://zgctroy.github.io/RealCam-I2V](https://zgctroy.github.io/RealCam-I2V)  
 **Area**: 3D Vision / Controllable Video Generation / Camera Control
 **Keywords**: Camera Control, Metric Depth, Video Diffusion, Noise Shaping, I2V
 

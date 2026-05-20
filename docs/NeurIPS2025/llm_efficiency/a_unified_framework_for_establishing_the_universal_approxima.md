@@ -18,8 +18,8 @@ content_hash: deda24503e9cb3be
 # A Unified Framework for Establishing the Universal Approximation of Transformer-Type Architectures
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.23551](https://arxiv.org/abs/2506.23551)
-**Code**: None
+**arXiv**: [2506.23551](https://arxiv.org/abs/2506.23551)  
+**Code**: None  
 **Area**: Transformer Theory / Approximation Theory
 **Keywords**: Universal Approximation Property, Token Distinguishability, Attention Mechanism, Permutation Equivariance, Control Theory
 

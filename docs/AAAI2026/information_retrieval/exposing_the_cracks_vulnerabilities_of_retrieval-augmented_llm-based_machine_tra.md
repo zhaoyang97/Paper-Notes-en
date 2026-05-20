@@ -18,8 +18,8 @@ content_hash: 52f48dd492733a20
 # Exposing the Cracks: Vulnerabilities of Retrieval-Augmented LLM-Based Machine Translation
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.00829](https://arxiv.org/abs/2510.00829)
-**Code**: [GitHub](https://github.com/ymsunny/REAL-MT-Vuln)
+**arXiv**: [2510.00829](https://arxiv.org/abs/2510.00829)  
+**Code**: [GitHub](https://github.com/ymsunny/REAL-MT-Vuln)  
 **Area**: Information Retrieval
 **Keywords**: Retrieval-Augmented Translation, Noise Robustness, Context Over-Reliance, Calibration, Multilingual
 

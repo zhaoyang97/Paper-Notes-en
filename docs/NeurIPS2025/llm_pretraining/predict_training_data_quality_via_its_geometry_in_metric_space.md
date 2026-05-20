@@ -18,8 +18,8 @@ content_hash: da7c01cf12fec447
 # Predict Training Data Quality via Its Geometry in Metric Space
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.15970](https://arxiv.org/abs/2510.15970)
-**Code**: None
+**arXiv**: [2510.15970](https://arxiv.org/abs/2510.15970)  
+**Code**: None  
 **Area**: Data Quality / Topological Data Analysis
 **Keywords**: Persistent Homology, Data Diversity, Training Data Quality, Hill Numbers, Topological Data Analysis
 

@@ -18,8 +18,8 @@ content_hash: d8ee4a9a2065cf69
 # Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.15508](https://arxiv.org/abs/2512.15508)
-**Code**: [Project Page](https://arthurmoreau.github.io/OffTheGrid/)
+**arXiv**: [2512.15508](https://arxiv.org/abs/2512.15508)  
+**Code**: [Project Page](https://arthurmoreau.github.io/OffTheGrid/)  
 **Area**: 3D Vision / 3D Gaussian Splatting
 **Keywords**: 3D Gaussian Splatting, feed-forward reconstruction, keypoint detection, adaptive density, pose-free reconstruction
 

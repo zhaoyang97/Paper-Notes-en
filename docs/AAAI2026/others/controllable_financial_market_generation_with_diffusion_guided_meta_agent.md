@@ -17,8 +17,8 @@ content_hash: 61bc7c7c528ac4cd
 # Controllable Financial Market Generation with Diffusion Guided Meta Agent
 
 **Conference**: AAAI 2026
-**arXiv**: [2408.12991](https://arxiv.org/abs/2408.12991)
-**Code**: [microsoft/TimeCraft](https://github.com/microsoft/TimeCraft)
+**arXiv**: [2408.12991](https://arxiv.org/abs/2408.12991)  
+**Code**: [microsoft/TimeCraft](https://github.com/microsoft/TimeCraft)  
 **Area**: Others (Financial AI / Generative Models)
 **Keywords**: financial market generation, diffusion model, limit order book, controllable generation, multi-agent simulation
 

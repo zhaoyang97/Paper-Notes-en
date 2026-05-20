@@ -18,8 +18,8 @@ content_hash: 611a055b63cdb815
 # Rewind-to-Delete: Certified Machine Unlearning for Nonconvex Functions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2409.09778](https://arxiv.org/abs/2409.09778)
-**Code**: None
+**arXiv**: [2409.09778](https://arxiv.org/abs/2409.09778)  
+**Code**: None  
 **Area**: AI Safety / Machine Unlearning
 **Keywords**: machine unlearning, differential privacy, nonconvex optimization, certified unlearning, privacy protection
 

@@ -18,8 +18,8 @@ content_hash: 0731b682865b8a6b
 # HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.21322](https://arxiv.org/abs/2503.21322)
-**Code**: [GitHub](https://github.com/LHRLAB/HyperGraphRAG)
+**arXiv**: [2503.21322](https://arxiv.org/abs/2503.21322)  
+**Code**: [GitHub](https://github.com/LHRLAB/HyperGraphRAG)  
 **Area**: LLM / RAG / Knowledge Graph
 **Keywords**: Retrieval-Augmented Generation, Hypergraph, Knowledge Representation, N-ary Relations, Graph Retrieval
 

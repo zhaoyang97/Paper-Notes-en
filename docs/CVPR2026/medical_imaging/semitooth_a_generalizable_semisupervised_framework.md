@@ -18,8 +18,8 @@ content_hash: f9d947ee06b497c6
 # SemiTooth: a Generalizable Semi-supervised Framework for Multi-Source Tooth Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11616](https://arxiv.org/abs/2603.11616)
-**Code**: N/A
+**arXiv**: [2603.11616](https://arxiv.org/abs/2603.11616)  
+**Code**: N/A  
 **Area**: Medical Image Segmentation
 **Keywords**: Semi-supervised Learning, Multi-Source Data, Tooth Segmentation, CBCT, Pseudo Labels
 
@@ -49,20 +49,20 @@ SemiTooth is a multi-branch semi-supervised framework adopting a **three-student
 ### Key Designs
 
 1. **Multi-source subset partitioning strategy**:
-   - Inter-source Wasserstein distances are used to divide unlabeled data into a *mixed* group (distribution close to the labeled source) and an *other* group (larger distribution discrepancy).
-   - The mixed subset serves as a bridge across different sources, improving cross-source training robustness.
+    - Inter-source Wasserstein distances are used to divide unlabeled data into a *mixed* group (distribution close to the labeled source) and an *other* group (larger distribution discrepancy).
+    - The mixed subset serves as a bridge across different sources, improving cross-source training robustness.
 
 2. **Multi-Teacher Multi-Student architecture**:
-   - Three student networks share similar architectures but learn independently, promoting effective knowledge transfer while maintaining diversity.
-   - Teachers are updated via EMA: $\theta_t^{(k)} \leftarrow \gamma \theta_t^{(k-1)} + (1-\gamma) \theta_s^{(k)}$, with decay rate $\gamma = 0.99$.
-   - Compared to Mean Teacher (single teacher, single student) and Co-training (no teacher, multiple students), SemiTooth combines the stability of teacher supervision with the cross-source capability of multi-student collaboration.
+    - Three student networks share similar architectures but learn independently, promoting effective knowledge transfer while maintaining diversity.
+    - Teachers are updated via EMA: $\theta_t^{(k)} \leftarrow \gamma \theta_t^{(k-1)} + (1-\gamma) \theta_s^{(k)}$, with decay rate $\gamma = 0.99$.
+    - Compared to Mean Teacher (single teacher, single student) and Co-training (no teacher, multiple students), SemiTooth combines the stability of teacher supervision with the cross-source capability of multi-student collaboration.
 
 3. **Stricter Weighted-Confidence (SWC) Constraint**:
-   - Each sample is uniformly partitioned into non-overlapping cubic regions $\{r\}$.
-   - Region-level confidence is defined as the mean of the maximum class probability across all voxels within a region: $c(r) = \mathbb{E}_{i \in r}[\max_c P_{i,c}^T]$.
-   - Low-confidence regions ($c(r) < \tau$) are flagged as unreliable and ignored.
-   - Within reliable regions, voxel-level confidence $c_i = \max_c P_{i,c}^T$ further weights teacher–student alignment.
-   - This dual-layer design balances structural reliability at the region level with fine-grained accuracy at the voxel level.
+    - Each sample is uniformly partitioned into non-overlapping cubic regions $\{r\}$.
+    - Region-level confidence is defined as the mean of the maximum class probability across all voxels within a region: $c(r) = \mathbb{E}_{i \in r}[\max_c P_{i,c}^T]$.
+    - Low-confidence regions ($c(r) < \tau$) are flagged as unreliable and ignored.
+    - Within reliable regions, voxel-level confidence $c_i = \max_c P_{i,c}^T$ further weights teacher–student alignment.
+    - This dual-layer design balances structural reliability at the region level with fine-grained accuracy at the voxel level.
 
 ### Loss & Training
 

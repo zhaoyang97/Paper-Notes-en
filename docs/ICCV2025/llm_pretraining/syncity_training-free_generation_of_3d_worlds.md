@@ -18,8 +18,8 @@ content_hash: 601c0344c280cce5
 # SynCity: Training-Free Generation of 3D Worlds
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.16420](https://arxiv.org/abs/2503.16420)
-**Code**: None
+**arXiv**: [2503.16420](https://arxiv.org/abs/2503.16420)  
+**Code**: None  
 **Area**: LLM Pretraining
 **Keywords**: 3D world generation, training-free, tile-based, 2D/3D generators, prompt engineering
 

@@ -18,8 +18,8 @@ content_hash: fce8ad1f926dbffe
 # GPO: Learning from Critical Steps to Improve LLM Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16456](https://arxiv.org/abs/2509.16456)
-**Code**: Available (provided with the paper)
+**arXiv**: [2509.16456](https://arxiv.org/abs/2509.16456)  
+**Code**: Available (provided with the paper)  
 **Area**: LLM Reasoning
 **Keywords**: Critical step identification, reinforcement learning, reasoning optimization, advantage function, process-level optimization
 
@@ -49,21 +49,21 @@ GPO proceeds as follows: given a problem $x$, the current policy $\pi$ generates
 
 1. **Critical Step Identification**:
 
-   - **Function**: Identify the step with the greatest influence on the final outcome within a reasoning trajectory.
-   - **Mechanism**: The reasoning process is modeled as an MDP. The advantage function for each step is defined as $A^\pi(x, y_{0:i-1}; y_i) = Q^\pi(x, y_{0:i-1}; y_i) - Q^\pi(x, y_{0:i-2}; y_{i-1})$ and estimated via Monte Carlo (MC) simulation. Specifically, multiple complete trajectories are sampled from each step onward, their accuracy rates are aggregated to approximate Q-values, and the step with the largest advantage value is selected.
-   - **Design Motivation**: A large advantage value indicates that the difference in success rates between "continuing from this step" and "continuing from the previous step" is maximal, marking this step as the watershed between success and failure. Compared to the random selection in Satori, this approach precisely localizes the model's weaknesses.
+    - **Function**: Identify the step with the greatest influence on the final outcome within a reasoning trajectory.
+    - **Mechanism**: The reasoning process is modeled as an MDP. The advantage function for each step is defined as $A^\pi(x, y_{0:i-1}; y_i) = Q^\pi(x, y_{0:i-1}; y_i) - Q^\pi(x, y_{0:i-2}; y_{i-1})$ and estimated via Monte Carlo (MC) simulation. Specifically, multiple complete trajectories are sampled from each step onward, their accuracy rates are aggregated to approximate Q-values, and the step with the largest advantage value is selected.
+    - **Design Motivation**: A large advantage value indicates that the difference in success rates between "continuing from this step" and "continuing from the previous step" is maximal, marking this step as the watershed between success and failure. Compared to the random selection in Satori, this approach precisely localizes the model's weaknesses.
 
 2. **Trajectory Reset & Resample**:
 
-   - **Function**: Truncate the original trajectory at the identified critical step and resample subsequent reasoning paths.
-   - **Mechanism**: The correct reasoning prefix preceding the critical step is retained, and the model is allowed to explore anew from this critical position, generating new trajectories. For PPO, new trajectories are added directly to the online buffer; for DPO, correct and incorrect continuations form preference pairs.
-   - **Design Motivation**: Training data generated in this way exhibits greater diversity at critical decision points, providing the model with richer experience precisely where learning is most needed.
+    - **Function**: Truncate the original trajectory at the identified critical step and resample subsequent reasoning paths.
+    - **Mechanism**: The correct reasoning prefix preceding the critical step is retained, and the model is allowed to explore anew from this critical position, generating new trajectories. For PPO, new trajectories are added directly to the online buffer; for DPO, correct and incorrect continuations form preference pairs.
+    - **Design Motivation**: Training data generated in this way exhibits greater diversity at critical decision points, providing the model with richer experience precisely where learning is most needed.
 
 3. **Plug-and-Play General Framework**:
 
-   - **Function**: GPO integrates seamlessly with PPO (Procedure-I) and DPO/KTO/SimPO/ORPO (Procedure-II).
-   - **Mechanism**: For online methods (PPO), resampled trajectories are added directly to the buffer and trained with the original reward signal. For offline methods (DPO), two trajectories are sampled from the critical step to form a new preference pair. Hyperparameters remain unchanged across both settings.
-   - **Design Motivation**: Rather than replacing existing methods, GPO augments them, maximizing its applicability across the broad landscape of existing approaches.
+    - **Function**: GPO integrates seamlessly with PPO (Procedure-I) and DPO/KTO/SimPO/ORPO (Procedure-II).
+    - **Mechanism**: For online methods (PPO), resampled trajectories are added directly to the buffer and trained with the original reward signal. For offline methods (DPO), two trajectories are sampled from the critical step to form a new preference pair. Hyperparameters remain unchanged across both settings.
+    - **Design Motivation**: Rather than replacing existing methods, GPO augments them, maximizing its applicability across the broad landscape of existing approaches.
 
 ### Loss & Training
 GPO does not introduce a new loss function; instead, it modifies how training data are constructed. Theoretically, for DPO, GPO is equivalent to advantage-weighted RL with the advantage function as weights (Theorem 5.3):

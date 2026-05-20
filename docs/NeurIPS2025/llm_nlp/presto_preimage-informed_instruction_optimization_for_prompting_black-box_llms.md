@@ -18,8 +18,8 @@ content_hash: a8d2dd557d83e507
 # PRESTO: Preimage-Informed Instruction Optimization for Prompting Black-Box LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25808](https://arxiv.org/abs/2510.25808)
-**Code**: [github.com/mlvlab/PRESTO](https://github.com/mlvlab/PRESTO)
+**arXiv**: [2510.25808](https://arxiv.org/abs/2510.25808)  
+**Code**: [github.com/mlvlab/PRESTO](https://github.com/mlvlab/PRESTO)  
 **Area**: LLM/NLP
 **Keywords**: instruction optimization, black-box LLM, soft prompt, preimage, Bayesian optimization
 

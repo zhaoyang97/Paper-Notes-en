@@ -17,8 +17,8 @@ content_hash: af8bed90c2d41ee6
 # Scalable GPU-Accelerated Euler Characteristic Curves: Optimization and Differentiable Learning for PyTorch
 
 **Conference**: NeurIPS 2025 (NeurReps Workshop)
-**arXiv**: [2510.20271](https://arxiv.org/abs/2510.20271)
-**Code**: Available
+**arXiv**: [2510.20271](https://arxiv.org/abs/2510.20271)  
+**Code**: Available  
 **Area**: Topological Deep Learning / GPU Computing
 **Keywords**: Euler characteristic curves, GPU acceleration, differentiable programming, CUDA kernels, topological data analysis
 

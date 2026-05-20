@@ -18,8 +18,8 @@ content_hash: 090a17d46b8a7d08
 # Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.12994](https://arxiv.org/abs/2506.12994)
-**Code**: None
+**arXiv**: [2506.12994](https://arxiv.org/abs/2506.12994)  
+**Code**: None  
 **Area**: AI Safety / Differential Privacy
 **Keywords**: Bilevel Optimization, Differential Privacy, Exponential Mechanism, Log-Concave Sampling, Non-Convex Optimization
 

@@ -18,8 +18,8 @@ content_hash: 6becb7574fcebf9b
 # PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26068](https://arxiv.org/abs/2603.26068)
-**Code**: N/A
+**arXiv**: [2603.26068](https://arxiv.org/abs/2603.26068)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: hand motion recovery, physics-aware diffusion model, Euler–Lagrange dynamics, Laplace approximation, uncertainty estimation
 

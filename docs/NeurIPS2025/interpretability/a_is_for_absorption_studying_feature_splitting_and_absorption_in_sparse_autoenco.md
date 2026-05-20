@@ -18,8 +18,8 @@ content_hash: 9f96f1b0fad5fe7f
 # A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2409.14507](https://arxiv.org/abs/2409.14507)
-**Code**: [https://github.com/lasr-spelling/sae-spelling](https://github.com/lasr-spelling/sae-spelling)
+**arXiv**: [2409.14507](https://arxiv.org/abs/2409.14507)  
+**Code**: [https://github.com/lasr-spelling/sae-spelling](https://github.com/lasr-spelling/sae-spelling)  
 **Area**: AI Safety / Interpretability / Mechanistic Interpretability
 **Keywords**: Sparse Autoencoder, Feature Absorption, Feature Splitting, Mechanistic Interpretability, LLM Internal Representations
 
@@ -51,21 +51,21 @@ The test task is predicting the first letter of a token. Inputs are LLM residual
 
 1. **Toy Model Proving the Inevitability of Absorption**:
 
-   - **Function**: In a simple 4-feature setting where feature 1 only activates when feature 0 is active (hierarchical relationship), the learned latent 0 fails to activate when feature 1 is active, while latent 1's decoder absorbs the direction of feature 0.
-   - **Mechanism**: With independent features, the SAE recovers perfectly. With hierarchical co-occurrence, the SAE encoder learns "¬feat1 ∧ feat0" rather than "feat0", since this requires activating only 1 latent instead of 2, yielding better sparsity.
-   - **Design Motivation**: To provide an analytical proof that absorption genuinely reduces SAE loss in hierarchical settings.
+    - **Function**: In a simple 4-feature setting where feature 1 only activates when feature 0 is active (hierarchical relationship), the learned latent 0 fails to activate when feature 1 is active, while latent 1's decoder absorbs the direction of feature 0.
+    - **Mechanism**: With independent features, the SAE recovers perfectly. With hierarchical co-occurrence, the SAE encoder learns "¬feat1 ∧ feat0" rather than "feat0", since this requires activating only 1 latent instead of 2, yielding better sparsity.
+    - **Design Motivation**: To provide an analytical proof that absorption genuinely reduces SAE loss in hierarchical settings.
 
 2. **First-Letter Spelling Experiment Design**:
 
-   - **Function**: ICL prompts are used to elicit first-letter predictions from the model; residual stream activations are then extracted.
-   - **Mechanism**: Linear probes are trained for all 26 first letters and compared against individual SAE latents. $k$-sparse probing detects feature splitting; ablation experiments detect absorption.
-   - **Design Motivation**: First-letter identity is a well-defined binary feature with unambiguous ground truth.
+    - **Function**: ICL prompts are used to elicit first-letter predictions from the model; residual stream activations are then extracted.
+    - **Mechanism**: Linear probes are trained for all 26 first letters and compared against individual SAE latents. $k$-sparse probing detects feature splitting; ablation experiments detect absorption.
+    - **Design Motivation**: First-letter identity is a well-defined binary feature with unambiguous ground truth.
 
 3. **Feature Absorption Rate Metric**:
 
-   - **Function**: To quantify how frequently absorption occurs.
-   - **Mechanism**: False-negative tokens — where all $k$ feature-split latents are inactive yet the probe correctly classifies — are identified. Integrated-gradients ablations are applied to these tokens. If the ablation effect of a non-first-letter latent is largest and its cosine similarity with the probe exceeds 0.025, the case is classified as absorption. $\text{absorption\_rate} = \text{num\_absorptions} / \text{probe\_true\_positives}$.
-   - **Design Motivation**: To provide a conservative lower-bound estimate, counting only causally confirmed absorption cases.
+    - **Function**: To quantify how frequently absorption occurs.
+    - **Mechanism**: False-negative tokens — where all $k$ feature-split latents are inactive yet the probe correctly classifies — are identified. Integrated-gradients ablations are applied to these tokens. If the ablation effect of a non-first-letter latent is largest and its cosine similarity with the probe exceeds 0.025, the case is classified as absorption. $\text{absorption\_rate} = \text{num\_absorptions} / \text{probe\_true\_positives}$.
+    - **Design Motivation**: To provide a conservative lower-bound estimate, counting only causally confirmed absorption cases.
 
 ### Loss & Training
 - SAEs use standard $L_1$ loss or JumpReLU/TopK architectures.

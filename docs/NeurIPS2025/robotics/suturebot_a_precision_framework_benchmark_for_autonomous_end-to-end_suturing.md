@@ -18,8 +18,8 @@ content_hash: f7f1cfb65164bc28
 # SutureBot: A Precision Framework & Benchmark for Autonomous End-to-End Suturing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20965](https://arxiv.org/abs/2510.20965)
-**Code**: [Hugging Face Dataset](https://huggingface.co/)
+**arXiv**: [2510.20965](https://arxiv.org/abs/2510.20965)  
+**Code**: [Hugging Face Dataset](https://huggingface.co/)  
 **Area**: Robotics
 **Keywords**: Surgical Robotics, Suturing Autonomy, Imitation Learning, Goal-Conditioned Control, VLA Benchmark
 

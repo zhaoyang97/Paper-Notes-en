@@ -18,8 +18,8 @@ content_hash: fd4f3c17454444e3
 # OFMU: Optimization-Driven Framework for Machine Unlearning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22483](https://arxiv.org/abs/2509.22483)
-**Code**: None
+**arXiv**: [2509.22483](https://arxiv.org/abs/2509.22483)  
+**Code**: None  
 **Area**: AI Safety / Machine Unlearning
 **Keywords**: Machine Unlearning, Bilevel Optimization, Gradient Decorrelation, Forget-Retain Trade-off, LLM Privacy
 

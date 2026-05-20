@@ -19,8 +19,8 @@ content_hash: 959c61e475018dd6
 # SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation
 
 **Conference**: CVPR2026
-**arXiv**: [2603.11492](https://arxiv.org/abs/2603.11492)
-**Code**: [Jwei-Z/SPEGC-for-MIS](https://github.com/Jwei-Z/SPEGC-for-MIS)
+**arXiv**: [2603.11492](https://arxiv.org/abs/2603.11492)  
+**Code**: [Jwei-Z/SPEGC-for-MIS](https://github.com/Jwei-Z/SPEGC-for-MIS)  
 **Area**: Medical Image Segmentation
 **Keywords**: Continual Test-Time Adaptation, Graph Clustering, Semantic Prompt, Optimal Transport, Domain Shift, Retinal/Polyp Segmentation
 

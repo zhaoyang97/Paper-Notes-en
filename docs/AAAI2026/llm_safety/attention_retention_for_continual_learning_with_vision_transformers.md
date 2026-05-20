@@ -18,8 +18,8 @@ content_hash: 8645a9f99f80083d
 # Attention Retention for Continual Learning with Vision Transformers
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.05454](https://arxiv.org/abs/2602.05454)
-**Code**: None
+**arXiv**: [2602.05454](https://arxiv.org/abs/2602.05454)  
+**Code**: None  
 **Area**: LLM Safety
 **Keywords**: Continual Learning, Vision Transformer, Attention Retention, Catastrophic Forgetting, Gradient Masking
 

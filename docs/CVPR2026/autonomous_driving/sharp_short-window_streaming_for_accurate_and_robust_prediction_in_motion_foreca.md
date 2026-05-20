@@ -18,8 +18,8 @@ content_hash: 262918ce95dfde64
 # SHARP: Short-Window Streaming for Accurate and Robust Prediction in Motion Forecasting
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28091](https://arxiv.org/abs/2603.28091)
-**Code**: N/A
+**arXiv**: [2603.28091](https://arxiv.org/abs/2603.28091)  
+**Code**: N/A  
 **Area**: Autonomous Driving / Trajectory Prediction
 **Keywords**: Streaming motion prediction, heterogeneous observation lengths, instance-aware context streaming, short-window inference, multi-agent prediction
 

@@ -18,8 +18,8 @@ content_hash: ac567a5a46aa6e05
 # OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.14866](https://arxiv.org/abs/2506.14866)
-**Code**: [GitHub](https://github.com/tml-epfl/os-harm)
+**arXiv**: [2506.14866](https://arxiv.org/abs/2506.14866)  
+**Code**: [GitHub](https://github.com/tml-epfl/os-harm)  
 **Area**: Social Computing
 **Keywords**: Computer Use Agent, Safety Evaluation, Benchmark, Prompt Injection, Agent Safety
 

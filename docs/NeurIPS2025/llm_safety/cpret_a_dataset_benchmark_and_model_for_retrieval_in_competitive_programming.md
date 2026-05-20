@@ -19,8 +19,8 @@ content_hash: 212e3e56a41c02b6
 # CPRet: A Dataset, Benchmark, and Model for Retrieval in Competitive Programming
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12925](https://arxiv.org/abs/2505.12925)
-**Code**: [https://github.com/coldchair/CPRet](https://github.com/coldchair/CPRet)
+**arXiv**: [2505.12925](https://arxiv.org/abs/2505.12925)  
+**Code**: [https://github.com/coldchair/CPRet](https://github.com/coldchair/CPRet)  
 **Area**: AI Safety
 **Keywords**: competitive programming retrieval, duplicate problem detection, embedding model, Group-InfoNCE, data contamination, benchmark
 

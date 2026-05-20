@@ -18,8 +18,8 @@ content_hash: 81cb45649f86ea88
 # UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12054](https://arxiv.org/abs/2511.12054)
-**Code**: [GitHub](https://github.com/chenqi142/UniABG)
+**arXiv**: [2511.12054](https://arxiv.org/abs/2511.12054)  
+**Code**: [GitHub](https://github.com/chenqi142/UniABG)  
 **Area**: Remote Sensing
 **Keywords**: cross-view geo-localization, unsupervised, adversarial learning, graph filtering, pseudo-label
 

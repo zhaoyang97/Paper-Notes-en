@@ -19,8 +19,8 @@ content_hash: e58f2295873bb378
 # LLM Safety Alignment is Divergence Estimation in Disguise
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.00657](https://arxiv.org/abs/2502.00657)
-**Code**: None
+**arXiv**: [2502.00657](https://arxiv.org/abs/2502.00657)  
+**Code**: None  
 **Area**: Alignment / RLHF
 **Keywords**: safety alignment, divergence estimation, DPO, KTO, KLDO, representation separation
 
@@ -50,26 +50,26 @@ The paper builds on the mathematical framework of variational divergence estimat
 
 1. **Unified Divergence Estimation Perspective (Theorem 4.1)**:
 
-   - Function: Proves that each alignment method corresponds to a specific divergence estimate at its optimal solution.
-   - Mechanism: $\mathcal{L}_{KTO}(\theta^*) = -\mathbb{D}_{TV}(\mathcal{D}^+\|\mathcal{D}^-) + 1$, $\mathcal{L}_{BCO}(\theta^*) = \ln 4 - 2\cdot\mathbb{D}_{JS}$, $\mathcal{L}_{DPO}(\theta^*) = \Omega(-\mathbb{D}_{TV})$.
-   - Design Motivation: The mathematical properties of divergences (convexity, sensitivity) are used to compare the relative merits of each method.
+    - Function: Proves that each alignment method corresponds to a specific divergence estimate at its optimal solution.
+    - Mechanism: $\mathcal{L}_{KTO}(\theta^*) = -\mathbb{D}_{TV}(\mathcal{D}^+\|\mathcal{D}^-) + 1$, $\mathcal{L}_{BCO}(\theta^*) = \ln 4 - 2\cdot\mathbb{D}_{JS}$, $\mathcal{L}_{DPO}(\theta^*) = \Omega(-\mathbb{D}_{TV})$.
+    - Design Motivation: The mathematical properties of divergences (convexity, sensitivity) are used to compare the relative merits of each method.
 
 2. **Analysis of DPO Saturation**:
 
-   - Function: Reveals that the implicit divergence of DPO saturates in regions of large distributional shift.
-   - Mechanism: $\mathbb{D}_{DPO}$ exhibits an S-shaped curve that saturates at both ends, causing sensitivity to drop sharply when the gap between safe and unsafe distributions is large.
-   - Design Motivation: Provides a fundamental theoretical explanation for DPO's relatively poor performance in safety alignment.
+    - Function: Reveals that the implicit divergence of DPO saturates in regions of large distributional shift.
+    - Mechanism: $\mathbb{D}_{DPO}$ exhibits an S-shaped curve that saturates at both ends, causing sensitivity to drop sharply when the gap between safe and unsafe distributions is large.
+    - Design Motivation: Provides a fundamental theoretical explanation for DPO's relatively poor performance in safety alignment.
 
 3. **KLDO (KL-Divergence Optimizer)**:
 
-   - Function: Proposes a new alignment loss based on the Donsker–Varadhan variational representation.
-   - Mechanism: $\mathcal{L}_{KLDO}(\theta) = -\mathbb{E}_{\mathcal{D}^+} r_\theta + \ln\mathbb{E}_{\mathcal{D}^-} e^{r_\theta}$, with a MINE-style moving average to handle gradient bias.
-   - Design Motivation: KL divergence is most sensitive to large distributional shifts and is therefore the optimal choice for safety alignment.
+    - Function: Proposes a new alignment loss based on the Donsker–Varadhan variational representation.
+    - Mechanism: $\mathcal{L}_{KLDO}(\theta) = -\mathbb{E}_{\mathcal{D}^+} r_\theta + \ln\mathbb{E}_{\mathcal{D}^-} e^{r_\theta}$, with a MINE-style moving average to handle gradient bias.
+    - Design Motivation: KL divergence is most sensitive to large distributional shifts and is therefore the optimal choice for safety alignment.
 
 4. **Alignment Consistency and Separation Theorems (Theorems 4.3 & 4.5)**:
 
-   - Function: Proves that alignment-consistent methods can perfectly recover safety labels, and that CR data outperforms Pref data.
-   - Mechanism: The optimal policy satisfies $\pi_{\theta^*}(y|x) = Z(x)^{-1}\cdot\pi_{ref}(y|x)\cdot h(R(x,y))$, where $h$ is non-decreasing and non-constant. Furthermore, $p^{CR}(z=z_x|x,\theta^*) \geq p^{Pref}(z=z_x|x,\theta^*) > 0.5$.
+    - Function: Proves that alignment-consistent methods can perfectly recover safety labels, and that CR data outperforms Pref data.
+    - Mechanism: The optimal policy satisfies $\pi_{\theta^*}(y|x) = Z(x)^{-1}\cdot\pi_{ref}(y|x)\cdot h(R(x,y))$, where $h$ is non-decreasing and non-constant. Furthermore, $p^{CR}(z=z_x|x,\theta^*) \geq p^{Pref}(z=z_x|x,\theta^*) > 0.5$.
 
 ### Loss & Training
 The general FDO framework is defined as $\mathcal{L}_{FDO(f,g)}(\theta) = -\mathbb{E}_{\mathcal{D}^+}g(r_\theta) + \mathbb{E}_{\mathcal{D}^-}f^*\circ g(r_\theta)$, which recovers KTO, BCO, and KLDO as special cases.

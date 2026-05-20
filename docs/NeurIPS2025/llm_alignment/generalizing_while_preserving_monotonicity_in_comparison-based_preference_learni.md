@@ -18,8 +18,8 @@ content_hash: a330f27df6684c11
 # Generalizing while Preserving Monotonicity in Comparison-based Preference Learning Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.08616](https://arxiv.org/abs/2506.08616)
-**Code**: [github.com/pevab/gbtlab2](https://github.com/pevab/gbtlab2)
+**arXiv**: [2506.08616](https://arxiv.org/abs/2506.08616)  
+**Code**: [github.com/pevab/gbtlab2](https://github.com/pevab/gbtlab2)  
 **Area**: LLM Alignment
 **Keywords**: preference learning, monotonicity, Bradley-Terry, diffusion prior, alignment
 

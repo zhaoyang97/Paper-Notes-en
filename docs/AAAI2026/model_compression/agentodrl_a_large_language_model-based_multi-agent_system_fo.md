@@ -18,8 +18,8 @@ content_hash: 2ae38303cec3c2ed
 # AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.00602v1](https://arxiv.org/abs/2512.00602v1)
-**Code**: [https://github.com/RUC-MAS/AgentODRL](https://github.com/RUC-MAS/AgentODRL)
+**arXiv**: [2512.00602v1](https://arxiv.org/abs/2512.00602v1)  
+**Code**: [https://github.com/RUC-MAS/AgentODRL](https://github.com/RUC-MAS/AgentODRL)  
 **Area**: Model Compression
 **Keywords**: ODRL Generation, Multi-agent System, LLM, Data Usage Policy, Orchestrator-Workers
 

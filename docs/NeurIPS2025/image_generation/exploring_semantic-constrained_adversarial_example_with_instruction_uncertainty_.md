@@ -18,8 +18,8 @@ content_hash: c95b4869af5d228b
 # Exploring Semantic-constrained Adversarial Example with Instruction Uncertainty Reduction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22981](https://arxiv.org/abs/2510.22981)
-**Code**: Not released
+**arXiv**: [2510.22981](https://arxiv.org/abs/2510.22981)  
+**Code**: Not released  
 **Area**: Image Generation
 **Keywords**: adversarial examples, semantic constraint, diffusion models, 3D adversarial, transfer attack
 

@@ -18,8 +18,8 @@ content_hash: e01e424815754826
 # 3DrawAgent: Teaching LLM to Draw in 3D with Early Contrastive Experience
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08042](https://arxiv.org/abs/2604.08042)
-**Code**: None (LLM API-based)
+**arXiv**: [2604.08042](https://arxiv.org/abs/2604.08042)  
+**Code**: None (LLM API-based)  
 **Area**: 3D Vision / Generative AI
 **Keywords**: 3D sketch generation, LLM, training-free, contrastive experience optimization, Bézier curves
 

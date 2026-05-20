@@ -18,8 +18,8 @@ content_hash: c9e190bc41741b15
 # System Prompt Optimization with Meta-Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.09666](https://arxiv.org/abs/2505.09666)
-**Code**: [GitHub](https://github.com/Dozi01/MetaSPO)
+**arXiv**: [2505.09666](https://arxiv.org/abs/2505.09666)  
+**Code**: [GitHub](https://github.com/Dozi01/MetaSPO)  
 **Area**: LLM/NLP
 **Keywords**: system prompt optimization, meta-learning, bilevel optimization, prompt engineering, cross-task generalization
 

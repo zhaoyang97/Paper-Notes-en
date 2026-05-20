@@ -13,7 +13,7 @@ content_hash: baf0727c071c6965
 # Reasoning-Driven Multimodal LLM for Domain Generalization
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.23777](https://arxiv.org/abs/2602.23777)
+**arXiv**: [2602.23777](https://arxiv.org/abs/2602.23777)  
 **Institution**: Xidian University / Microsoft Research Asia
 **Area**: Domain Generalization / Multimodal Reasoning
 

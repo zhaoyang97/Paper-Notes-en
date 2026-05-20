@@ -18,8 +18,8 @@ content_hash: 89b06a7ef12ccecb
 # Interaction-Centric Knowledge Infusion and Transfer for Open-Vocabulary Scene Graph Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05935](https://arxiv.org/abs/2511.05935)
-**Code**: [GitHub](https://github.com/HKUST-LongGroup/ACC)
+**arXiv**: [2511.05935](https://arxiv.org/abs/2511.05935)  
+**Code**: [GitHub](https://github.com/HKUST-LongGroup/ACC)  
 **Area**: Graph Learning / Scene Graph Generation
 **Keywords**: Open-vocabulary scene graph generation, interaction modeling, knowledge distillation, vision-language models, pseudo supervision
 

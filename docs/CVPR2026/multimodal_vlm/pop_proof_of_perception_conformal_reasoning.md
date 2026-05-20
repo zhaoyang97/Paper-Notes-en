@@ -18,8 +18,8 @@ content_hash: c598792367abe0a3
 # Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00324](https://arxiv.org/abs/2603.00324)
-**Code**: [https://github.com/AryaFayyazi/PoP](https://github.com/AryaFayyazi/PoP)
+**arXiv**: [2603.00324](https://arxiv.org/abs/2603.00324)  
+**Code**: [https://github.com/AryaFayyazi/PoP](https://github.com/AryaFayyazi/PoP)  
 **Area**: Multimodal Reasoning / Reliable AI
 **Keywords**: Conformal Prediction, Tool Use, Multimodal Reasoning, Uncertainty Quantification, Adaptive Computation
 

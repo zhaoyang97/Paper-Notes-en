@@ -18,8 +18,8 @@ content_hash: ed26956da61886d0
 # ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22159](https://arxiv.org/abs/2505.22159)
-**Code**: To be released
+**arXiv**: [2505.22159](https://arxiv.org/abs/2505.22159)  
+**Code**: To be released  
 **Area**: Multimodal VLM
 **Keywords**: VLA, force feedback, MoE, contact-rich manipulation, robot manipulation
 

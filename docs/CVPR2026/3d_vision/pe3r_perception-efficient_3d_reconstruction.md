@@ -18,8 +18,8 @@ content_hash: 63b66c5fe9685d7a
 # PE3R: Perception-Efficient 3D Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.07507](https://arxiv.org/abs/2503.07507)
-**Code**: [https://github.com/hujiecpp/PE3R](https://github.com/hujiecpp/PE3R)
+**arXiv**: [2503.07507](https://arxiv.org/abs/2503.07507)  
+**Code**: [https://github.com/hujiecpp/PE3R](https://github.com/hujiecpp/PE3R)  
 **Area**: 3D Vision
 **Keywords**: 3D semantic reconstruction, open-vocabulary segmentation, tuning-free, feed-forward inference, semantic point cloud
 

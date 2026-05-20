@@ -18,8 +18,8 @@ content_hash: 226638a5a838c49b
 # LookOut: Real-World Humanoid Egocentric Navigation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.14466](https://arxiv.org/abs/2508.14466)
-**Code**: [https://sites.google.com/stanford.edu/lookout](https://sites.google.com/stanford.edu/lookout) (Project Page)
+**arXiv**: [2508.14466](https://arxiv.org/abs/2508.14466)  
+**Code**: [https://sites.google.com/stanford.edu/lookout](https://sites.google.com/stanford.edu/lookout) (Project Page)  
 **Area**: Autonomous Driving / Embodied Navigation
 **Keywords**: Egocentric Navigation, 6D Head Pose Prediction, BEV Features, DINO Unprojection, Humanoid Robot
 

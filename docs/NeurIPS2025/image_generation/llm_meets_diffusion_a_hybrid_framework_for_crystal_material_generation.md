@@ -18,8 +18,8 @@ content_hash: bdd3b4a7d667b7b2
 # LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23040](https://arxiv.org/abs/2510.23040)
-**Code**: [GitHub](https://github.com/kdmsit/crysllmgen)
+**arXiv**: [2510.23040](https://arxiv.org/abs/2510.23040)  
+**Code**: [GitHub](https://github.com/kdmsit/crysllmgen)  
 **Area**: Diffusion Models / Crystal Material Generation
 **Keywords**: Crystal Material Generation, LLM, Diffusion Model, Hybrid Framework, Conditional Generation
 

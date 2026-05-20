@@ -18,8 +18,8 @@ content_hash: c44042256bd8c998
 # Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.03752](https://arxiv.org/abs/2502.03752)
-**Code**: [github.com/epsilog/SISL](https://github.com/epsilog/SISL)
+**arXiv**: [2502.03752](https://arxiv.org/abs/2502.03752)  
+**Code**: [github.com/epsilog/SISL](https://github.com/epsilog/SISL)  
 **Area**: Reinforcement Learning / Meta-Learning / Skill Learning
 **Keywords**: meta-RL, skill learning, noisy demonstrations, self-improvement, maximum return relabeling
 

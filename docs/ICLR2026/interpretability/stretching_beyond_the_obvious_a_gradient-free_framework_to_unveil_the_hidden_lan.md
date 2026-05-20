@@ -19,8 +19,8 @@ content_hash: 0c47646e2ca1207e
 # Stretching Beyond the Obvious: A Gradient-Free Framework to Unveil the Hidden Landscape of Visual Invariance
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.17040](https://arxiv.org/abs/2506.17040)
-**Code**: [GitHub](https://github.com/zoccolan-lab/SnS)
+**arXiv**: [2506.17040](https://arxiv.org/abs/2506.17040)  
+**Code**: [GitHub](https://github.com/zoccolan-lab/SnS)  
 **Area**: Interpretability
 **Keywords**: visual invariance, gradient-free optimization, adversarial examples, feature visualization, CNN interpretability, robust models
 

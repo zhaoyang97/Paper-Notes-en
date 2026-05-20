@@ -18,8 +18,8 @@ content_hash: 3914bd9ca177f946
 # Prototype-Based Knowledge Guidance for Fine-Grained Structured Radiology Reporting
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11938](https://arxiv.org/abs/2603.11938)
-**Code**: Unavailable (authors state code will be released upon acceptance)
+**arXiv**: [2603.11938](https://arxiv.org/abs/2603.11938)  
+**Code**: Unavailable (authors state code will be released upon acceptance)  
 **Area**: Medical Imaging / Structured Report Generation
 **Keywords**: Structured radiology reporting, prototype knowledge base, LLM knowledge extraction, long-tail attributes, late fusion
 

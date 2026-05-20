@@ -18,8 +18,8 @@ content_hash: 966b96a377447a2f
 # Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06405](https://arxiv.org/abs/2511.06405)
-**Code**: N/A
+**arXiv**: [2511.06405](https://arxiv.org/abs/2511.06405)  
+**Code**: N/A  
 **Area**: Recommender Systems
 **Keywords**: POI Recommendation, Tool-Augmented LLM, Agent, Open-Set Recommendation, Location-Based Services
 

@@ -18,8 +18,8 @@ content_hash: f060638606b06700
 # Human-assisted Robotic Policy Refinement via Action Preference Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07127](https://arxiv.org/abs/2506.07127)
-**Code**: [GitHub](https://github.com/GeWu-Lab/Action-Preference-Optimization)
+**arXiv**: [2506.07127](https://arxiv.org/abs/2506.07127)  
+**Code**: [GitHub](https://github.com/GeWu-Lab/Action-Preference-Optimization)  
 **Area**: LLM Alignment
 **Keywords**: VLA models, preference alignment, human-robot collaboration, robotic manipulation, adaptive reweighting
 

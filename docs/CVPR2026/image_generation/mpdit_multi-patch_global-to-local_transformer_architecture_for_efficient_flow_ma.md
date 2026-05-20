@@ -17,8 +17,8 @@ content_hash: 2b34b43d11f414c3
 # MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26357](https://arxiv.org/abs/2603.26357)
-**Code**: [https://github.com/quandao10/MPDiT](https://github.com/quandao10/MPDiT)
+**arXiv**: [2603.26357](https://arxiv.org/abs/2603.26357)  
+**Code**: [https://github.com/quandao10/MPDiT](https://github.com/quandao10/MPDiT)  
 **Area**: Diffusion Models
 **Keywords**: Diffusion Transformer, flow matching, multi-scale patch, efficient architecture, image generation
 

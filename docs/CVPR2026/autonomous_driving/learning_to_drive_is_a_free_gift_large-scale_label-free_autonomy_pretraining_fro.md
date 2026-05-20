@@ -18,8 +18,8 @@ content_hash: 49b4de8b3d147082
 # Learning to Drive is a Free Gift: Large-Scale Label-Free Autonomy Pretraining from Unposed In-The-Wild Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22091](https://arxiv.org/abs/2602.22091)
-**Code**: [Project Page](https://lfg-ai.github.io/)
+**arXiv**: [2602.22091](https://arxiv.org/abs/2602.22091)  
+**Code**: [Project Page](https://lfg-ai.github.io/)  
 **Area**: Autonomous Driving
 **Keywords**: Autonomous driving pretraining, label-free learning, video foundation model, 4D scene understanding, planning
 

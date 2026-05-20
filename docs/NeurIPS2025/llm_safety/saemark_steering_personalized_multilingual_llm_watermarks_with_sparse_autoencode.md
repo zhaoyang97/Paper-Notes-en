@@ -18,8 +18,8 @@ content_hash: ec8c31c2ce5a3fa7
 # SAEMark: Steering Personalized Multilingual LLM Watermarks with Sparse Autoencoders
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.08211](https://arxiv.org/abs/2508.08211)
-**Code**: [Project Page](https://zhuohaoyu.github.io/SAEMark)
+**arXiv**: [2508.08211](https://arxiv.org/abs/2508.08211)  
+**Code**: [Project Page](https://zhuohaoyu.github.io/SAEMark)  
 **Area**: AI Safety
 **Keywords**: LLM Watermarking, Sparse Autoencoders, Multilingual Watermarking, Black-box Watermarking, Personalized Attribution
 

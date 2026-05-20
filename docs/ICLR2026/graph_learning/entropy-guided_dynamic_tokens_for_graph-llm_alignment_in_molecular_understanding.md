@@ -18,8 +18,8 @@ content_hash: b355f6f588a4339d
 # Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.02742](https://arxiv.org/abs/2602.02742)
-**Code**: None
+**arXiv**: [2602.02742](https://arxiv.org/abs/2602.02742)  
+**Code**: None  
 **Area**: Graph Learning / Molecular Understanding
 **Keywords**: Graph-LLM Alignment, Dynamic Tokens, Molecular Graph, Q-Former, Entropy Guidance
 

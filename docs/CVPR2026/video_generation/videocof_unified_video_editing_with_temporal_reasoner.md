@@ -18,8 +18,8 @@ content_hash: 9b0b459b67e9db89
 # VideoCoF: Unified Video Editing with Temporal Reasoner
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.07469](https://arxiv.org/abs/2512.07469)
-**Code**: [https://github.com/knightyxp/VideoCoF](https://github.com/knightyxp/VideoCoF)
+**arXiv**: [2512.07469](https://arxiv.org/abs/2512.07469)  
+**Code**: [https://github.com/knightyxp/VideoCoF](https://github.com/knightyxp/VideoCoF)  
 **Area**: Diffusion Models / Video Editing
 **Keywords**: Video Editing, Chain-of-Frames, Video Diffusion Model, Reasoning Frames, Length Extrapolation
 

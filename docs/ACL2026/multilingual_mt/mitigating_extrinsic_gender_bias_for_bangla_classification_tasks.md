@@ -18,8 +18,8 @@ content_hash: 1d80c77cef3dce1b
 # Mitigating Extrinsic Gender Bias for Bangla Classification Tasks
 
 **Conference**: ACL 2026
-**arXiv**: [2411.10636](https://arxiv.org/abs/2411.10636)
-**Code**: [GitHub](https://github.com/sajib-kumar/Mitigating-Bangla-Extrinsic-Gender-Bias)
+**arXiv**: [2411.10636](https://arxiv.org/abs/2411.10636)  
+**Code**: [GitHub](https://github.com/sajib-kumar/Mitigating-Bangla-Extrinsic-Gender-Bias)  
 **Area**: Multilingual / Fairness
 **Keywords**: gender bias mitigation, Bangla NLP, KL divergence regularization, counterfactual data augmentation, classification fairness
 

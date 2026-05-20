@@ -18,8 +18,8 @@ content_hash: 5d29809e7e4acf4e
 # FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.17258](https://arxiv.org/abs/2601.17258)
-**Code**: [https://finevau.github.io](https://finevau.github.io)
+**arXiv**: [2601.17258](https://arxiv.org/abs/2601.17258)  
+**Code**: [https://finevau.github.io](https://finevau.github.io)  
 **Area**: Interpretability
 **Keywords**: Video Anomaly Understanding, Benchmark, LLM-as-Judge, Fine-Grained Evaluation, Human Alignment
 

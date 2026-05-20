@@ -18,8 +18,8 @@ content_hash: a99bcbc5dff685ff
 # Efficient Fairness-Performance Pareto Front Computation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2409.17643](https://arxiv.org/abs/2409.17643)
-**Code**: [bp6725/FairPareto](https://github.com/bp6725/FairPareto)
+**arXiv**: [2409.17643](https://arxiv.org/abs/2409.17643)  
+**Code**: [bp6725/FairPareto](https://github.com/bp6725/FairPareto)  
 **Area**: AI Safety
 **Keywords**: fairness, Pareto front, fair representation, concave optimization, MIFPO
 

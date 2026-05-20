@@ -17,8 +17,8 @@ content_hash: 3dd601c3330e594c
 # Multi-view Gaze Target Estimation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.05857](https://arxiv.org/abs/2508.05857)
-**Code**: [https://www3.cs.stonybrook.edu/~cvl/multiview_gte.html](https://www3.cs.stonybrook.edu/~cvl/multiview_gte.html)
+**arXiv**: [2508.05857](https://arxiv.org/abs/2508.05857)  
+**Code**: [https://www3.cs.stonybrook.edu/~cvl/multiview_gte.html](https://www3.cs.stonybrook.edu/~cvl/multiview_gte.html)  
 **Area**: Other
 **Keywords**: Gaze Target Estimation, Multi-view, Cross-view, Epipolar Attention, Uncertainty
 

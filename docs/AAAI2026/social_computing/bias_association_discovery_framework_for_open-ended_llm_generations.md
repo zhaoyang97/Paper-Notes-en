@@ -18,8 +18,8 @@ content_hash: ff4c3afe24c3e669
 # Bias Association Discovery Framework for Open-Ended LLM Generations
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01412](https://arxiv.org/abs/2508.01412)
-**Code**: [GitHub](https://github.com/JP-25/Discover-Open-Ended-Generation)
+**arXiv**: [2508.01412](https://arxiv.org/abs/2508.01412)  
+**Code**: [GitHub](https://github.com/JP-25/Discover-Open-Ended-Generation)  
 **Area**: Human Understanding / LLM Bias Evaluation
 **Keywords**: Social Bias, LLM Generation, Bias Association Discovery, Open-Ended Generation, Demographic Identity
 

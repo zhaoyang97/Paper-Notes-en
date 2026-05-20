@@ -18,8 +18,8 @@ content_hash: 2f5387678fd6cfe8
 # Towards Evaluating Proactive Risk Awareness of Multimodal Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17455](https://arxiv.org/abs/2505.17455)
-**Code**: [HuggingFace](https://huggingface.co/datasets/Youliang/PaSBench)
+**arXiv**: [2505.17455](https://arxiv.org/abs/2505.17455)  
+**Code**: [HuggingFace](https://huggingface.co/datasets/Youliang/PaSBench)  
 **Area**: Multimodal VLM
 **Keywords**: Proactive safety, risk detection, LLM evaluation, benchmark, anticipatory reasoning
 

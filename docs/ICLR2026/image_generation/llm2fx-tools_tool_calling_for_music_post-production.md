@@ -18,8 +18,8 @@ content_hash: dc7a202d975d791a
 # LLM2Fx-Tools: Tool Calling for Music Post-Production
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.01559](https://arxiv.org/abs/2512.01559)
-**Code**: [Demo](https://seungheondoh.github.io/llm2fx-tools-demo/)
+**arXiv**: [2512.01559](https://arxiv.org/abs/2512.01559)  
+**Code**: [Demo](https://seungheondoh.github.io/llm2fx-tools-demo/)  
 **Area**: Image Generation
 **Keywords**: Fx-chain estimation, tool calling, chain-of-thought reasoning, music post-production, multimodal LLM
 

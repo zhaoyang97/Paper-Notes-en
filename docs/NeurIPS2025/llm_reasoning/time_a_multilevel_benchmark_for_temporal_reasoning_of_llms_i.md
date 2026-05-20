@@ -18,8 +18,8 @@ content_hash: f63ee66c6aa2fb85
 # TimE: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12891](https://arxiv.org/abs/2505.12891)
-**Code**: [GitHub](https://github.com/) / [HuggingFace Dataset](https://huggingface.co/)
+**arXiv**: [2505.12891](https://arxiv.org/abs/2505.12891)  
+**Code**: [GitHub](https://github.com/) / [HuggingFace Dataset](https://huggingface.co/)  
 **Area**: LLM Reasoning / Temporal Reasoning
 **Keywords**: Temporal Reasoning, Multi-level Benchmark, Real-World Scenarios, Knowledge-Intensive, Long Dialogue
 

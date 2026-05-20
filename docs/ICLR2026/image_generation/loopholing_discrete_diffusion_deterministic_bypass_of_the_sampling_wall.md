@@ -18,8 +18,8 @@ content_hash: e25c379fd8045ebc
 # Loopholing Discrete Diffusion: Deterministic Bypass of the Sampling Wall
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.19304](https://arxiv.org/abs/2510.19304)
-**Code**: [GitHub](https://github.com/ahn-ml/lddm)
+**arXiv**: [2510.19304](https://arxiv.org/abs/2510.19304)  
+**Code**: [GitHub](https://github.com/ahn-ml/lddm)  
 **Area**: Discrete Diffusion Models / Text Generation
 **Keywords**: discrete diffusion, sampling wall, deterministic bypass, self-conditioning, non-autoregressive text generation
 
@@ -47,15 +47,15 @@ $$\mathbf{e}_t = E_\theta(\mathbf{z}_t) + \text{LN}(\mathbf{h}_t), \quad \mathbf
 
 2. **Self-Conditioning Training**: Computational overhead of full-trajectory unrolling is avoided via two forward passes:
 
-   - First pass (pseudo-context generation): $\mathbf{h}_t = \mathbf{0}$, yielding $\mathbf{h}^0$
-   - Second pass (context-conditioned prediction): $\mathbf{h}_t = \text{sg}[\mathbf{h}^0]$ (stop-gradient)
+    - First pass (pseudo-context generation): $\mathbf{h}_t = \mathbf{0}$, yielding $\mathbf{h}^0$
+    - Second pass (context-conditioned prediction): $\mathbf{h}_t = \text{sg}[\mathbf{h}^0]$ (stop-gradient)
 
    The self-conditioning loss is applied with probability $p$; the standard loss is used with probability $1-p$.
 
 3. **Why It Works—Mitigating Two Sources of Inefficiency**:
 
-   - **Idle steps**: Even when the sampled $\mathbf{z}_t$ remains unchanged, $\mathbf{h}_t$ continues to be updated, ensuring progress at every step.
-   - **Excessive oscillation**: The deterministic pathway maintains a contextual memory of the target $\mathbf{x}$, stabilizing predictions.
+    - **Idle steps**: Even when the sampled $\mathbf{z}_t$ remains unchanged, $\mathbf{h}_t$ continues to be updated, ensuring progress at every step.
+    - **Excessive oscillation**: The deterministic pathway maintains a contextual memory of the target $\mathbf{x}$, stabilizing predictions.
 
    Empirical verification shows that LDDM exhibits higher Temporal KL in early steps (faster exploration) and lower Temporal KL in later steps (greater stability), with consistently lower Token-Prediction Entropy throughout.
 

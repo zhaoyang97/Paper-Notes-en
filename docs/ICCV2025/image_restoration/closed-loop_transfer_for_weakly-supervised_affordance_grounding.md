@@ -18,8 +18,8 @@ content_hash: 55bb794517c90a5c
 # Closed-Loop Transfer for Weakly-supervised Affordance Grounding
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.17384](https://arxiv.org/abs/2510.17384)
-**Code**: [https://github.com/nagara214/LoopTrans](https://github.com/nagara214/LoopTrans)
+**arXiv**: [2510.17384](https://arxiv.org/abs/2510.17384)  
+**Code**: [https://github.com/nagara214/LoopTrans](https://github.com/nagara214/LoopTrans)  
 **Area**: Visual Understanding / Affordance
 **Keywords**: weakly-supervised affordance grounding, closed-loop knowledge transfer, shared CAM, denoising distillation, exocentric-egocentric transfer
 

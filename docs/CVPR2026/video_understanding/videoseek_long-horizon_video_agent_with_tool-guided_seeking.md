@@ -18,8 +18,8 @@ content_hash: 8098a1b355152e32
 # VideoSeek: Long-Horizon Video Agent with Tool-Guided Seeking
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20185](https://arxiv.org/abs/2603.20185)
-**Code**: [https://github.com/jylins/videoseek](https://github.com/jylins/videoseek)
+**arXiv**: [2603.20185](https://arxiv.org/abs/2603.20185)  
+**Code**: [https://github.com/jylins/videoseek](https://github.com/jylins/videoseek)  
 **Area**: Video Understanding / Agent
 **Keywords**: Video Agent, Long Video Understanding, Tool Invocation, Logical Flow, Think-Act-Observe
 

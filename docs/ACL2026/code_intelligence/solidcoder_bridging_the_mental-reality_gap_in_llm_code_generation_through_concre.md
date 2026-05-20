@@ -18,8 +18,8 @@ content_hash: e60b0f96b94db6b7
 # SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19825](https://arxiv.org/abs/2604.19825)
-**Code**: [https://github.com/10kH/SolidCoder](https://github.com/10kH/SolidCoder)
+**arXiv**: [2604.19825](https://arxiv.org/abs/2604.19825)  
+**Code**: [https://github.com/10kH/SolidCoder](https://github.com/10kH/SolidCoder)  
 **Area**: Code Generation / LLM Agent
 **Keywords**: code generation, mental simulation, execution verification, multi-agent, property-based testing
 

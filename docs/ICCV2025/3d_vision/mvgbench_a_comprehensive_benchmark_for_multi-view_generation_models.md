@@ -18,8 +18,8 @@ content_hash: b9847d3a7debaa50
 # MVGBench: a Comprehensive Benchmark for Multi-view Generation Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.00006](https://arxiv.org/abs/2507.00006)
-**Code**: [Project Page](https://virtualhumans.mpi-inf.mpg.de/MVGBench/)
+**arXiv**: [2507.00006](https://arxiv.org/abs/2507.00006)  
+**Code**: [Project Page](https://virtualhumans.mpi-inf.mpg.de/MVGBench/)  
 **Area**: 3D Vision
 **Keywords**: multi-view generation, 3D consistency, benchmark, 3DGS, vision-language model evaluation
 

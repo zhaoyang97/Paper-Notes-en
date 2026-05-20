@@ -18,8 +18,8 @@ content_hash: 12e422ef4b699dd4
 # Tackling Resource-Constrained and Data-Heterogeneity in Federated Learning with Double-Weight Sparse Pack
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.01840](https://arxiv.org/abs/2601.01840)
-**Code**: [https://github.com/NigeloYang/FedCSPACK](https://github.com/NigeloYang/FedCSPACK)
+**arXiv**: [2601.01840](https://arxiv.org/abs/2601.01840)  
+**Code**: [https://github.com/NigeloYang/FedCSPACK](https://github.com/NigeloYang/FedCSPACK)  
 **Area**: Optimization
 **Keywords**: Federated Learning, Data Heterogeneity, Resource Constraints, Sparse Communication, Personalized Federated Learning
 

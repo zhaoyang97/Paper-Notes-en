@@ -18,8 +18,8 @@ content_hash: 311778a479dd3641
 # One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.19766](https://arxiv.org/abs/2602.19766)
-**Code**: [Project Page](https://one2scene5406.github.io/)
+**arXiv**: [2602.19766](https://arxiv.org/abs/2602.19766)  
+**Code**: [Project Page](https://one2scene5406.github.io/)  
 **Area**: 3D Vision / Scene Generation
 **Keywords**: single-image 3D scene generation, panoramic depth estimation, 3D Gaussian Splatting, geometric scaffold, novel view synthesis
 

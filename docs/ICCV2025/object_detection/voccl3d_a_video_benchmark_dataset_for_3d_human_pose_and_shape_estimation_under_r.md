@@ -18,8 +18,8 @@ content_hash: 7e33883b4ad89ebc
 # VOccl3D: A Video Benchmark Dataset for 3D Human Pose and Shape Estimation under Real Occlusions
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.06757](https://arxiv.org/abs/2508.06757)
-**Code**: [https://yashgarg98.github.io/VOccl3D-dataset/](https://yashgarg98.github.io/VOccl3D-dataset/)
+**arXiv**: [2508.06757](https://arxiv.org/abs/2508.06757)  
+**Code**: [https://yashgarg98.github.io/VOccl3D-dataset/](https://yashgarg98.github.io/VOccl3D-dataset/)  
 **Area**: Object Detection
 **Keywords**: Human Pose Estimation, Occlusion, Synthetic Dataset, 3D Gaussian Splatting, SMPL-X
 

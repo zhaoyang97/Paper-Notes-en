@@ -18,8 +18,8 @@ content_hash: 1997a8eedcc8719e
 # Metric Convolutions: A Unifying Theory to Adaptive Image Convolutions
 
 **Conference**: ICCV 2025
-**arXiv**: [2406.05400](https://arxiv.org/abs/2406.05400)
-**Code**: [GitHub](https://github.com/Tommoo/MetricConvolutions)
+**arXiv**: [2406.05400](https://arxiv.org/abs/2406.05400)  
+**Code**: [GitHub](https://github.com/Tommoo/MetricConvolutions)  
 **Area**: Image Restoration
 **Keywords**: Adaptive Convolution, Metric Geometry, Finsler Metric, Deformable Convolution, Denoising
 

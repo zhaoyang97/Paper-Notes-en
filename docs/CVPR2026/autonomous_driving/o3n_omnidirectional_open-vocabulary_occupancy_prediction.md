@@ -18,8 +18,8 @@ content_hash: 3110d58c29a6201c
 # O3N: Omnidirectional Open-Vocabulary Occupancy Prediction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12144](https://arxiv.org/abs/2603.12144)
-**Code**: [GitHub](https://github.com/) (coming soon)
+**arXiv**: [2603.12144](https://arxiv.org/abs/2603.12144)  
+**Code**: [GitHub](https://github.com/) (coming soon)  
 **Area**: Autonomous Driving
 **Keywords**: Omnidirectional Perception, Open-Vocabulary, Occupancy Prediction, Panoramic Images, Mamba
 

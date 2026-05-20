@@ -18,8 +18,8 @@ content_hash: ae4090934236a407
 # Text-guided Controllable Diffusion for Realistic Camouflage Images Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.20218](https://arxiv.org/abs/2511.20218)
-**Code**: [github.com/NikoNairre/CT-CIG](https://github.com/NikoNairre/CT-CIG)
+**arXiv**: [2511.20218](https://arxiv.org/abs/2511.20218)  
+**Code**: [github.com/NikoNairre/CT-CIG](https://github.com/NikoNairre/CT-CIG)  
 **Area**: Segmentation
 **Keywords**: Camouflage Image Generation, Diffusion Models, Text-guided, Frequency Interaction, Vision Language Model
 

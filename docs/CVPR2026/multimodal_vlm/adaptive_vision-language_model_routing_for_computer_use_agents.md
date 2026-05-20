@@ -18,8 +18,8 @@ content_hash: 5d6b8de55e49ce35
 # AVR: Adaptive VLM Routing for Computer Use Agents
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12823](https://arxiv.org/abs/2603.12823)
-**Code**: [vllm-project/semantic-router](https://github.com/vllm-project/semantic-router)
+**arXiv**: [2603.12823](https://arxiv.org/abs/2603.12823)  
+**Code**: [vllm-project/semantic-router](https://github.com/vllm-project/semantic-router)  
 **Area**: Multimodal VLM
 **Keywords**: Computer Use Agent, VLM Routing, Adaptive Inference, Cost Optimization, GUI Grounding
 

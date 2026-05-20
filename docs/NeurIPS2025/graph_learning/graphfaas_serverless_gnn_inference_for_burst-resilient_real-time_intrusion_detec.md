@@ -18,8 +18,8 @@ content_hash: cca77ab3458e92dd
 # GraphFaaS: Serverless GNN Inference for Burst-Resilient, Real-Time Intrusion Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10554](https://arxiv.org/abs/2511.10554)
-**Code**: None
+**arXiv**: [2511.10554](https://arxiv.org/abs/2511.10554)  
+**Code**: None  
 **Area**: Graph Neural Networks / Systems
 **Keywords**: GNN Inference, Serverless, Intrusion Detection, Burst Traffic, Graph Partitioning
 

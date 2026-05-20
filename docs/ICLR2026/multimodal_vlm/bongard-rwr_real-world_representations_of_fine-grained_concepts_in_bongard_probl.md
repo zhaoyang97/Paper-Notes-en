@@ -18,8 +18,8 @@ content_hash: d245022a5c5b705c
 # Bongard-RWR+: Real-World Representations of Fine-Grained Concepts in Bongard Problems
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.12026](https://arxiv.org/abs/2508.12026)
-**Code**: Available
+**arXiv**: [2508.12026](https://arxiv.org/abs/2508.12026)  
+**Code**: Available  
 **Area**: Multimodal VLM
 **Keywords**: Bongard problems, abstract visual reasoning, few-shot learning, VLM benchmark, fine-grained concepts
 

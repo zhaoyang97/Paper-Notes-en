@@ -18,8 +18,8 @@ content_hash: c9f977b5bb95d2a4
 # Adaptive Augmentation-Aware Latent Learning for Robust LiDAR Semantic Segmentation
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01074](https://arxiv.org/abs/2603.01074)
-**Code**: N/A
+**arXiv**: [2603.01074](https://arxiv.org/abs/2603.01074)  
+**Code**: N/A  
 **Area**: Autonomous Driving / 3D Point Cloud Semantic Segmentation
 **Keywords**: LiDAR semantic segmentation, data augmentation, adverse weather robustness, semantic confusion, distribution shift
 

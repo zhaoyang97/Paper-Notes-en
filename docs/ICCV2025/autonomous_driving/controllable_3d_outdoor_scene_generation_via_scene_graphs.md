@@ -18,8 +18,8 @@ content_hash: 9b75a674e4086b05
 # Controllable 3D Outdoor Scene Generation via Scene Graphs
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07152](https://arxiv.org/abs/2503.07152)
-**Code**: None
+**arXiv**: [2503.07152](https://arxiv.org/abs/2503.07152)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: 3D scene generation, scene graph, discrete diffusion model, BEV embedding, graph neural network
 

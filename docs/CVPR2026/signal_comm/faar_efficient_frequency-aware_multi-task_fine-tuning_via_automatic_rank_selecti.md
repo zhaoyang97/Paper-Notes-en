@@ -18,8 +18,8 @@ content_hash: 0efec4d9f4740d1d
 # FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20403](https://arxiv.org/abs/2603.20403)
-**Code**: Available (mentioned in paper)
+**arXiv**: [2603.20403](https://arxiv.org/abs/2603.20403)  
+**Code**: Available (mentioned in paper)  
 **Area**: Parameter-Efficient Fine-Tuning / Multi-Task Learning
 **Keywords**: LoRA, automatic rank selection, FFT, multi-task learning, PEFT
 

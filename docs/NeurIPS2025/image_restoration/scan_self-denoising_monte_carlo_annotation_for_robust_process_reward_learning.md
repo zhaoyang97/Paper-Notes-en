@@ -18,8 +18,8 @@ content_hash: cd3cd1a546c1e6bf
 # SCAN: Self-Denoising Monte Carlo Annotation for Robust Process Reward Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16548](https://arxiv.org/abs/2509.16548)
-**Code**: [Available](https://scan-prm.github.io)
+**arXiv**: [2509.16548](https://arxiv.org/abs/2509.16548)  
+**Code**: [Available](https://scan-prm.github.io)  
 **Area**: Image Restoration
 **Keywords**: Process Reward Model, Monte Carlo Estimation, Noisy Labels, Self-Denoising, Mathematical Reasoning
 

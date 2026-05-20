@@ -22,8 +22,8 @@ content_hash: e6c5d40bd479ad17
 # AudioTrust: Benchmarking the Multifaceted Trustworthiness of Audio Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.16211](https://arxiv.org/abs/2505.16211)
-**Code**: [GitHub](https://github.com/JusperLee/AudioTrust)
+**arXiv**: [2505.16211](https://arxiv.org/abs/2505.16211)  
+**Code**: [GitHub](https://github.com/JusperLee/AudioTrust)  
 **Area**: AI Safety
 **Keywords**: Audio LLM, trustworthiness, benchmark, fairness, hallucination, safety, privacy, robustness, authentication
 

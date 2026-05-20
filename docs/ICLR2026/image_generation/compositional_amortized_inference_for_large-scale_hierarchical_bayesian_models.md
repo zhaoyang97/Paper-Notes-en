@@ -18,8 +18,8 @@ content_hash: 88644ac3ed1f3263
 # Compositional amortized inference for large-scale hierarchical Bayesian models
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.14429](https://arxiv.org/abs/2505.14429)
-**Code**: To be confirmed
+**arXiv**: [2505.14429](https://arxiv.org/abs/2505.14429)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: amortized Bayesian inference, hierarchical model, compositional score matching, diffusion model, scalability
 

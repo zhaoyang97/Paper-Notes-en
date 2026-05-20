@@ -18,8 +18,8 @@ content_hash: 71822e3bb2a3b18f
 # OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.14762](https://arxiv.org/abs/2604.14762)
-**Code**: [github.com/Jordan-HS/OmniGCD](https://github.com/Jordan-HS/OmniGCD)
+**arXiv**: [2604.14762](https://arxiv.org/abs/2604.14762)  
+**Code**: [github.com/Jordan-HS/OmniGCD](https://github.com/Jordan-HS/OmniGCD)  
 **Area**: Self-Supervised Learning / Representation Learning
 **Keywords**: generalized category discovery, modality-agnostic, zero-shot, transformer, synthetic training
 

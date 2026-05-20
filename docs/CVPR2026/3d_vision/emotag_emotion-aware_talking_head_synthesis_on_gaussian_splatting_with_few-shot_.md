@@ -18,8 +18,8 @@ content_hash: d41efa7f5d3e4d0b
 # EmoTaG: Emotion-Aware Talking Head Synthesis on Gaussian Splatting with Few-Shot Personalization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21332](https://arxiv.org/abs/2603.21332)
-**Code**: Available (Project page)
+**arXiv**: [2603.21332](https://arxiv.org/abs/2603.21332)  
+**Code**: Available (Project page)  
 **Area**: 3D Vision / Talking Head Synthesis
 **Keywords**: 3D Gaussian Splatting, Talking Head, Emotion-Aware, Few-Shot, FLAME
 

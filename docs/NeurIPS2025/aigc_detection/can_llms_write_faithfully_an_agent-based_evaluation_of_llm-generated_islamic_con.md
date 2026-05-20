@@ -18,8 +18,8 @@ content_hash: 48579e8d1a67cc88
 # Can LLMs Write Faithfully? An Agent-Based Evaluation of LLM-generated Islamic Content
 
 **Conference**: NEURIPS2025 (MusIML Workshop)
-**arXiv**: [2510.24438](https://arxiv.org/abs/2510.24438)
-**Code**: To be confirmed
+**arXiv**: [2510.24438](https://arxiv.org/abs/2510.24438)  
+**Code**: To be confirmed  
 **Area**: AIGC Detection
 **Keywords**: LLM Evaluation, Islamic Content Generation, Dual-Agent Framework, Citation Verification, High-Stakes Domain Generation
 

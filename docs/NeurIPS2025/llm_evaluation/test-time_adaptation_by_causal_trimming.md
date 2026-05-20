@@ -18,8 +18,8 @@ content_hash: 9a9c264d58efb919
 # Test-Time Adaptation by Causal Trimming
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11133](https://arxiv.org/abs/2510.11133)
-**Code**: [GitHub](https://github.com/NancyQuris/TACT)
+**arXiv**: [2510.11133](https://arxiv.org/abs/2510.11133)  
+**Code**: [GitHub](https://github.com/NancyQuris/TACT)  
 **Area**: Test-Time Adaptation / Distribution Shift Robustness
 **Keywords**: test-time adaptation, causal features, PCA, non-causal feature trimming, distribution shift
 

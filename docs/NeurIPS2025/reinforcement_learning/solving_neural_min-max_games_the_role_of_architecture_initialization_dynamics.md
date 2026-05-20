@@ -18,8 +18,8 @@ content_hash: 0b748f13632ffd16
 # Solving Neural Min-Max Games: The Role of Architecture, Initialization & Dynamics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.00389](https://arxiv.org/abs/2512.00389)
-**Code**: None
+**arXiv**: [2512.00389](https://arxiv.org/abs/2512.00389)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Neural network games, min-max optimization, overparameterization, hidden convexity, AltGDA
 

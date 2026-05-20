@@ -18,8 +18,8 @@ content_hash: e4696bda26ee888b
 # Fast 3D Surrogate Modeling for Data Center Thermal Management
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11722](https://arxiv.org/abs/2511.11722)
-**Code**: None
+**arXiv**: [2511.11722](https://arxiv.org/abs/2511.11722)  
+**Code**: None  
 **Area**: 3D Vision / Scientific Computing
 **Keywords**: Surrogate modeling, data center thermal management, 3D voxelization, Fourier neural operator, temperature prediction
 
@@ -51,21 +51,21 @@ The input is a 3D voxelized representation of the data center, encoding server l
 
 1. **3D Voxelization Representation**:
 
-   - **Function**: Encodes the complex physical environment of a data center into a regularized input suitable for deep learning.
-   - **Mechanism**: The data center space is discretized into a uniform 3D voxel grid. Each voxel contains multi-channel information: server occupancy, server workload level, nearby fan speed, and HVAC setpoint temperature. This representation preserves spatial relationships while unifying heterogeneous physical quantities into a consistent data format.
-   - **Design Motivation**: CFD relies on unstructured meshes that are incompatible with standard deep learning architectures. Voxelization transforms the problem into a standard 3D image-to-image regression task, enabling direct application of 3D CNN/Transformer architectures.
+    - **Function**: Encodes the complex physical environment of a data center into a regularized input suitable for deep learning.
+    - **Mechanism**: The data center space is discretized into a uniform 3D voxel grid. Each voxel contains multi-channel information: server occupancy, server workload level, nearby fan speed, and HVAC setpoint temperature. This representation preserves spatial relationships while unifying heterogeneous physical quantities into a consistent data format.
+    - **Design Motivation**: CFD relies on unstructured meshes that are incompatible with standard deep learning architectures. Voxelization transforms the problem into a standard 3D image-to-image regression task, enabling direct application of 3D CNN/Transformer architectures.
 
 2. **Multi-Architecture Evaluation (3D U-Net, FNO, ViT)**:
 
-   - **Function**: Systematically compares different architectures in terms of the accuracy–efficiency trade-off for temperature field prediction.
-   - **Mechanism**: (a) The 3D CNN U-Net employs an encoder–decoder structure with skip connections to capture local thermal flow patterns at multiple scales; (b) the 3D Fourier Neural Operator (FNO) learns integral kernel operators in the frequency domain, making it naturally suited for PDE-solving tasks; (c) the 3D Vision Transformer leverages self-attention to capture long-range thermal interactions, such as the influence of distant air conditioning units on local temperatures.
-   - **Design Motivation**: The physical characteristics of temperature fields span multiple scales—local heat source effects favor CNNs, while long-range airflow propagation is better captured by Transformers or FNOs. A systematic comparison facilitates identifying the most suitable architecture for this problem.
+    - **Function**: Systematically compares different architectures in terms of the accuracy–efficiency trade-off for temperature field prediction.
+    - **Mechanism**: (a) The 3D CNN U-Net employs an encoder–decoder structure with skip connections to capture local thermal flow patterns at multiple scales; (b) the 3D Fourier Neural Operator (FNO) learns integral kernel operators in the frequency domain, making it naturally suited for PDE-solving tasks; (c) the 3D Vision Transformer leverages self-attention to capture long-range thermal interactions, such as the influence of distant air conditioning units on local temperatures.
+    - **Design Motivation**: The physical characteristics of temperature fields span multiple scales—local heat source effects favor CNNs, while long-range airflow propagation is better captured by Transformers or FNOs. A systematic comparison facilitates identifying the most suitable architecture for this problem.
 
 3. **Cross-Configuration Generalization Design**:
 
-   - **Function**: Enables a single model to generalize across data centers with different layouts.
-   - **Mechanism**: Training data encompass a wide range of data center configurations (varying server layouts and cooling system setups), allowing the model to learn generalizable physical laws of heat conduction and convection. The unified voxelization input format allows different configurations to be expressed as distinct voxel encodings.
-   - **Design Motivation**: Training a separate model for each data center would incur prohibitive deployment costs. A model that learns general physical laws can adapt to new configurations in a zero-shot or few-shot manner.
+    - **Function**: Enables a single model to generalize across data centers with different layouts.
+    - **Mechanism**: Training data encompass a wide range of data center configurations (varying server layouts and cooling system setups), allowing the model to learn generalizable physical laws of heat conduction and convection. The unified voxelization input format allows different configurations to be expressed as distinct voxel encodings.
+    - **Design Motivation**: Training a separate model for each data center would incur prohibitive deployment costs. A model that learns general physical laws can adapt to new configurations in a zero-shot or few-shot manner.
 
 ### Loss & Training
 

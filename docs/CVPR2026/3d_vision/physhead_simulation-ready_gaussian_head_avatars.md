@@ -18,8 +18,8 @@ content_hash: ca68223a9dedd0e2
 # PhysHead: Simulation-Ready Gaussian Head Avatars
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.06467](https://arxiv.org/abs/2604.06467)
-**Code**: [https://phys-head.github.io](https://phys-head.github.io)
+**arXiv**: [2604.06467](https://arxiv.org/abs/2604.06467)  
+**Code**: [https://phys-head.github.io](https://phys-head.github.io)  
 **Area**: 3D Vision / Head Avatar
 **Keywords**: Head Avatar Reconstruction, 3D Gaussian Splatting, Hair Strand Physics Simulation, Layered Representation, VLM-Assisted
 

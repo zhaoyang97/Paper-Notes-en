@@ -18,8 +18,8 @@ content_hash: 3d219aade2a9f16a
 # From Passive Perception to Active Memory: A Weakly Supervised Image Manipulation Localization Framework Driven by Coarse-Grained Annotations
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.20359](https://arxiv.org/abs/2511.20359)
-**Code**: [https://github.com/vpsg-research/BoxPromtIML](https://github.com/vpsg-research/BoxPromtIML)
+**arXiv**: [2511.20359](https://arxiv.org/abs/2511.20359)  
+**Code**: [https://github.com/vpsg-research/BoxPromtIML](https://github.com/vpsg-research/BoxPromtIML)  
 **Area**: Robotics
 **Keywords**: Image Manipulation Localization, Weak Supervision, Knowledge Distillation, Memory Guidance, SAM
 

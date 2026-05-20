@@ -18,8 +18,8 @@ content_hash: 2d2bd189a8be5b8e
 # Spatial-Aware Decision-Making with Ring Attractors in Reinforcement Learning Systems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.03119](https://arxiv.org/abs/2410.03119)
-**Code**: [https://github.com/marcosaura/RA_RL](https://github.com/marcosaura/RA_RL)
+**arXiv**: [2410.03119](https://arxiv.org/abs/2410.03119)  
+**Code**: [https://github.com/marcosaura/RA_RL](https://github.com/marcosaura/RA_RL)  
 **Area**: Reinforcement Learning
 **Keywords**: Ring Attractors, Biologically Inspired RL, Spatial Awareness, Action Space Encoding, Uncertainty Quantification
 

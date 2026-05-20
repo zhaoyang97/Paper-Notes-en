@@ -18,8 +18,8 @@ content_hash: fae76e67b897f782
 # ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination
 
 **Conference**: ACL 2026
-**arXiv**: [2510.15949](https://arxiv.org/abs/2510.15949)
-**Code**: To be released
+**arXiv**: [2510.15949](https://arxiv.org/abs/2510.15949)  
+**Code**: To be released  
 **Area**: LLM Agent / Finance
 **Keywords**: LLM trading agent, prompt optimization, multi-agent coordination, financial decision-making, adaptive strategy
 

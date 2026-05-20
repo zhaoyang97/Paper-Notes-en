@@ -18,8 +18,8 @@ content_hash: b90e47c9e5da3863
 # Stereo Any Video: Temporally Consistent Stereo Matching
 
 **Conference**: ICCV2025
-**arXiv**: [2503.05549](https://arxiv.org/abs/2503.05549)
-**Code**: [Project Page](https://tomtomtommi.github.io/StereoAnyVideo/)
+**arXiv**: [2503.05549](https://arxiv.org/abs/2503.05549)  
+**Code**: [Project Page](https://tomtomtommi.github.io/StereoAnyVideo/)  
 **Area**: 3D Vision / Stereo Matching
 **Keywords**: Video stereo matching, temporal consistency, monocular depth prior, cost volume, disparity estimation
 

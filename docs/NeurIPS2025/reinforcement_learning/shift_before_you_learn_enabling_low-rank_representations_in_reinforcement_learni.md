@@ -18,8 +18,8 @@ content_hash: 80cb31d0ccf0a03c
 # Shift Before You Learn: Enabling Low-Rank Representations in Reinforcement Learning
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2509.05193](https://arxiv.org/abs/2509.05193)
-**Code**: None
+**arXiv**: [2509.05193](https://arxiv.org/abs/2509.05193)  
+**Code**: None  
 **Area**: Reinforcement Learning / Representation Learning
 **Keywords**: Low-Rank, Successor Measure, reinforcement-learning, Spectral Analysis, Goal-Conditioned RL
 

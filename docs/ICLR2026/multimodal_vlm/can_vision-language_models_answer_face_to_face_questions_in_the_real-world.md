@@ -18,8 +18,8 @@ content_hash: 7ce86302a8f30573
 # Can Vision-Language Models Answer Face to Face Questions in the Real-World?
 
 **Conference**: ICLR2026
-**arXiv**: [2503.19356](https://arxiv.org/abs/2503.19356)
-**Code**: [https://www.qualcomm.com/developer/software/qualcomm-interactive-video-dataset-qivd](https://www.qualcomm.com/developer/software/qualcomm-interactive-video-dataset-qivd)
+**arXiv**: [2503.19356](https://arxiv.org/abs/2503.19356)  
+**Code**: [https://www.qualcomm.com/developer/software/qualcomm-interactive-video-dataset-qivd](https://www.qualcomm.com/developer/software/qualcomm-interactive-video-dataset-qivd)  
 **Area**: Multimodal VLM
 **Keywords**: situated understanding, real-time interaction, video QA, multimodal benchmark, streaming VLM
 

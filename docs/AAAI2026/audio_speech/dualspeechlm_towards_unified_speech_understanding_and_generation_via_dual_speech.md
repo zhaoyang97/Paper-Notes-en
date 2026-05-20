@@ -18,8 +18,8 @@ content_hash: bf1a8e2a45d4273e
 # DualSpeechLM: Towards Unified Speech Understanding and Generation via Dual Speech Token Modeling
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.08961](https://arxiv.org/abs/2508.08961)
-**Code**: [https://github.com/lavendery/UUG](https://github.com/lavendery/UUG)
+**arXiv**: [2508.08961](https://arxiv.org/abs/2508.08961)  
+**Code**: [https://github.com/lavendery/UUG](https://github.com/lavendery/UUG)  
 **Area**: Audio & Speech / Speech Large Language Models
 **Keywords**: speech large language model, dual token modeling, speech understanding and generation, speech tokenizer, unified framework
 

@@ -18,8 +18,8 @@ content_hash: dd57b5875feaf75c
 # Uncovering Strategic Egoism Behaviors in Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.09920](https://arxiv.org/abs/2511.09920)
-**Code**: [SEBench](https://anonymous.4open.science/r/SEBench-3E36)
+**arXiv**: [2511.09920](https://arxiv.org/abs/2511.09920)  
+**Code**: [SEBench](https://anonymous.4open.science/r/SEBench-3E36)  
 **Area**: Robotics
 **Keywords**: Strategic Egoism, Behavioral Benchmark, Dark Triad, Decision Safety, Toxicity Correlation
 

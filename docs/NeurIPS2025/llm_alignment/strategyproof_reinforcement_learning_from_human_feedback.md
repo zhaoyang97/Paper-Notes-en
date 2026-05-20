@@ -18,8 +18,8 @@ content_hash: eae0503897392935
 # Strategyproof Reinforcement Learning from Human Feedback
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.09561](https://arxiv.org/abs/2503.09561)
-**Code**: Not released
+**arXiv**: [2503.09561](https://arxiv.org/abs/2503.09561)  
+**Code**: Not released  
 **Area**: LLM Alignment
 **Keywords**: RLHF, strategyproofness, diverse preferences, mechanism design, social welfare maximization
 

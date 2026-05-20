@@ -18,9 +18,9 @@ content_hash: a655fb36e1b92612
 # On the Sample Complexity of Differentially Private Policy Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21060](https://arxiv.org/abs/2510.21060)
+**arXiv**: [2510.21060](https://arxiv.org/abs/2510.21060)  
 **Authors**: Yi He (Wayne State University), Xingyu Zhou (Wayne State University)
-**Code**: Not available
+**Code**: Not available  
 **Area**: AI Safety
 **Keywords**: Differential Privacy, Policy Optimization, Sample Complexity, Reinforcement Learning, Privacy Protection
 

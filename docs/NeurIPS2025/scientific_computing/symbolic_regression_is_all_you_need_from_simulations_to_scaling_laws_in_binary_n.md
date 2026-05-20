@@ -18,8 +18,8 @@ content_hash: 8ca051f19176be66
 # Symbolic Regression Is All You Need: From Simulations to Scaling Laws in Binary Neutron Star Mergers
 
 **Conference**: NeurIPS 2025 (AI for Science Workshop)
-**arXiv**: [2511.08784](https://arxiv.org/abs/2511.08784)
-**Code**: Implemented using open-source frameworks PySR and PyOperon
+**arXiv**: [2511.08784](https://arxiv.org/abs/2511.08784)  
+**Code**: Implemented using open-source frameworks PySR and PyOperon  
 **Area**: Scientific Computing
 **Keywords**: Symbolic Regression, Binary Neutron Stars, Gravitational Waves, Kilonova, Equation of State
 

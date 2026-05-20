@@ -18,8 +18,8 @@ content_hash: ae93b541d20331f1
 # Frequency Switching Mechanism for Parameter-Efficient Multi-Task Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21111](https://arxiv.org/abs/2603.21111)
-**Code**: [https://casperliuliuliu.github.io/projects/Free-Sinewich](https://casperliuliuliu.github.io/projects/Free-Sinewich)
+**arXiv**: [2603.21111](https://arxiv.org/abs/2603.21111)  
+**Code**: [https://casperliuliuliu.github.io/projects/Free-Sinewich](https://casperliuliuliu.github.io/projects/Free-Sinewich)  
 **Area**: Multi-Task Learning / Parameter-Efficient Fine-Tuning
 **Keywords**: Parameter-efficient fine-tuning, multi-task learning, frequency switching, sinusoidal transformation, LoRA
 

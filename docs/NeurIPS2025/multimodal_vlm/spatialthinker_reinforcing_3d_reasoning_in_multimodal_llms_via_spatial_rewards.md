@@ -18,8 +18,8 @@ content_hash: 263df177e6aed2be
 # SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.07403](https://arxiv.org/abs/2511.07403)
-**Code**: [https://github.com/SpatialThinker](https://github.com/SpatialThinker)
+**arXiv**: [2511.07403](https://arxiv.org/abs/2511.07403)  
+**Code**: [https://github.com/SpatialThinker](https://github.com/SpatialThinker)  
 **Area**: Multimodal VLM
 **Keywords**: Spatial Reasoning, Scene Graph, Reinforcement Learning, Dense Reward, 3D Understanding
 

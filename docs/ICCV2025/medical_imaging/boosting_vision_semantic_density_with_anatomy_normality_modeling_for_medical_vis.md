@@ -18,8 +18,8 @@ content_hash: 10a5c8a91f687485
 # Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.03742](https://arxiv.org/abs/2508.03742)
-**Code**: [alibaba-damo-academy/ViSD-Boost](https://github.com/alibaba-damo-academy/ViSD-Boost)
+**arXiv**: [2508.03742](https://arxiv.org/abs/2508.03742)  
+**Code**: [alibaba-damo-academy/ViSD-Boost](https://github.com/alibaba-damo-academy/ViSD-Boost)  
 **Area**: Medical Imaging / Vision-Language Pre-training
 **Keywords**: vision-language pre-training, semantic density, anatomy normality, VQ-VAE, zero-shot diagnosis
 

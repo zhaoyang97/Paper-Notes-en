@@ -18,8 +18,8 @@ content_hash: 195e7d99e563c8dd
 # Deterministic Bounds and Random Estimates of Metric Tensors on Neuromanifolds
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.13614](https://arxiv.org/abs/2505.13614)
-**Code**: None
+**arXiv**: [2505.13614](https://arxiv.org/abs/2505.13614)  
+**Code**: None  
 **Area**: Information Geometry / Deep Learning Theory
 **Keywords**: Fisher Information Matrix, Neuromanifold, Hutchinson Estimator, Metric Tensor, Spectral Analysis
 
@@ -53,8 +53,8 @@ For a classification network $p(y|x,\theta)$, the FIM admits a pullback decompos
    A scalar function $\mathfrak{h}(\mathcal{D}_x, \theta) = \sum_{x,y} \tilde{p}(y|x,\theta) \ell_{xy}(\theta) \xi_{xy}$ is introduced, where $\xi$ is a Rademacher random vector and $\tilde{p}$ is a detached copy of $p$ (with zero gradient). Computing $\partial \mathfrak{h}/\partial \theta$ via automatic differentiation yields $\mathbb{F}(\theta) = (\partial \mathfrak{h}/\partial \theta)(\partial \mathfrak{h}/\partial \theta)^\top$, which is an unbiased estimator of the FIM with bounded CV ($\leq \sqrt{2}$), requiring only a single backward pass.
 
 4. **Diagonal-Kernel and Low-Rank-Kernel Hutchinson Variants**:
-   - **Diagonal-kernel estimator** $\mathbb{F}^{DG}$: Suited for multi-label classification or estimation of the FIM upper bound.
-   - **Low-rank-kernel estimator** $\mathbb{F}^{LR}$: Suited for estimating the FIM lower bound; requires only $|\mathcal{D}_x|$ Rademacher samples (rather than $C|\mathcal{D}_x|$), offering higher computational efficiency. A preliminary power iteration is needed to obtain the dominant eigenvalue/eigenvector of the kernel space ($O(MC|\mathcal{D}_x|)$ complexity).
+    - **Diagonal-kernel estimator** $\mathbb{F}^{DG}$: Suited for multi-label classification or estimation of the FIM upper bound.
+    - **Low-rank-kernel estimator** $\mathbb{F}^{LR}$: Suited for estimating the FIM lower bound; requires only $|\mathcal{D}_x|$ Rademacher samples (rather than $C|\mathcal{D}_x|$), offering higher computational efficiency. A preliminary power iteration is needed to obtain the dominant eigenvalue/eigenvector of the kernel space ($O(MC|\mathcal{D}_x|)$ complexity).
 
 ### Loss & Training
 This paper does not propose a new training procedure but provides analytical and estimation tools for the FIM. The Hutchinson estimator can be directly applied to:

@@ -18,8 +18,8 @@ content_hash: 4280ed7add001792
 # ReliabilityRAG: Effective and Provably Robust Defense for RAG-based Web-Search
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23519](https://arxiv.org/abs/2509.23519)
-**Code**: None
+**arXiv**: [2509.23519](https://arxiv.org/abs/2509.23519)  
+**Code**: None  
 **Area**: AI Security / RAG Defense
 **Keywords**: RAG security, adversarial robustness, maximum independent set, provable defense, document reliability
 

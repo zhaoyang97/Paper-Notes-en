@@ -19,8 +19,8 @@ content_hash: 0dfbf4c1f0b4deea
 # Global-Aware Monocular Semantic Scene Completion with State Space Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06569](https://arxiv.org/abs/2503.06569)
-**Code**: Coming soon
+**arXiv**: [2503.06569](https://arxiv.org/abs/2503.06569)  
+**Code**: Coming soon  
 **Area**: 3D Vision
 **Keywords**: Semantic Scene Completion, Indoor Scene, State Space Models, Mamba, Monocular, Transformer
 

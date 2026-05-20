@@ -18,8 +18,8 @@ content_hash: acc681a0183864b3
 # Expert Divergence Learning for MoE-based Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00054](https://arxiv.org/abs/2603.00054)
-**Code**: Not released
+**arXiv**: [2603.00054](https://arxiv.org/abs/2603.00054)  
+**Code**: Not released  
 **Area**: LLM Efficiency / MoE
 **Keywords**: Mixture of Experts, expert homogenization, routing diversity, Jensen-Shannon divergence, domain specialization
 

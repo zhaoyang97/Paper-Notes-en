@@ -18,8 +18,8 @@ content_hash: bf3fdabd4dcacb48
 # ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.04125](https://arxiv.org/abs/2512.04125)
-**Code**: [https://github.com/ASCIIBench/ASCIIBench](https://github.com/ASCIIBench/ASCIIBench)
+**arXiv**: [2512.04125](https://arxiv.org/abs/2512.04125)  
+**Code**: [https://github.com/ASCIIBench/ASCIIBench](https://github.com/ASCIIBench/ASCIIBench)  
 **Area**: AIGC Detection
 **Keywords**: ASCII art, LLM evaluation, spatial reasoning, CLIP, multimodal fusion
 

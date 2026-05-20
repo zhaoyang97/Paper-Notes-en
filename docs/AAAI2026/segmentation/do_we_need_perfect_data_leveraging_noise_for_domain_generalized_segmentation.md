@@ -18,8 +18,8 @@ content_hash: c7ea5bd7ee72bc22
 # Do We Need Perfect Data? Leveraging Noise for Domain Generalized Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.22948](https://arxiv.org/abs/2511.22948)
-**Code**: [Available](https://github.com/VisualScienceLab-KHU/FLEX-Seg)
+**arXiv**: [2511.22948](https://arxiv.org/abs/2511.22948)  
+**Code**: [Available](https://github.com/VisualScienceLab-KHU/FLEX-Seg)  
 **Area**: Segmentation
 **Keywords**: Domain generalized semantic segmentation, boundary misalignment, diffusion model synthetic data, adaptive prototypes, uncertainty weighting
 

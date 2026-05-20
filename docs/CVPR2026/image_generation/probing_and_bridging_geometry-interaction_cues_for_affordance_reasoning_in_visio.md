@@ -18,8 +18,8 @@ content_hash: 2855f58ae875235f
 # Probing and Bridging Geometry–Interaction Cues for Affordance Reasoning in Vision Foundation Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20501](https://arxiv.org/abs/2602.20501)
-**Code**: [https://github.com/Probing-and-Bridging-Affordance](https://github.com/Probing-and-Bridging-Affordance) (coming soon)
+**arXiv**: [2602.20501](https://arxiv.org/abs/2602.20501)  
+**Code**: [https://github.com/Probing-and-Bridging-Affordance](https://github.com/Probing-and-Bridging-Affordance) (coming soon)  
 **Area**: Image Generation
 **Keywords**: affordance reasoning, vision foundation models, geometry perception, interaction prior, training-free fusion
 

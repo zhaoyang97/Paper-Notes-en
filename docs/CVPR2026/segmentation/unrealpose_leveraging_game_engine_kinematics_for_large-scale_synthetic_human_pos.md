@@ -18,8 +18,8 @@ content_hash: fce39361ceee6e3c
 # UnrealPose: Leveraging Game Engine Kinematics for Large-Scale Synthetic Human Pose Data
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.00991](https://arxiv.org/abs/2601.00991)
-**Code**: Available
+**arXiv**: [2601.00991](https://arxiv.org/abs/2601.00991)  
+**Code**: Available  
 **Area**: Segmentation
 **Keywords**: synthetic data, Human Pose Estimation, Unreal Engine, Game Engine, Instance Segmentation
 

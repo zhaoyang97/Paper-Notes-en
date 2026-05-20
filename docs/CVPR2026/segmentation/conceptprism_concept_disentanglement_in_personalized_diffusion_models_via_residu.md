@@ -19,8 +19,8 @@ content_hash: dc6eee4a2e47acb1
 # ConceptPrism: Concept Disentanglement in Personalized Diffusion Models via Residual Token Optimization
 
 **Conference**: CVPR2026
-**arXiv**: [2602.19575](https://arxiv.org/abs/2602.19575)
-**Code**: To be confirmed
+**arXiv**: [2602.19575](https://arxiv.org/abs/2602.19575)  
+**Code**: To be confirmed  
 **Area**: Image Segmentation
 **Keywords**: personalized diffusion models, concept disentanglement, residual token optimization, Textual Inversion, LoRA, contrastive learning
 

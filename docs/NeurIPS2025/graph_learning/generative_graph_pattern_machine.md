@@ -19,9 +19,9 @@ content_hash: 33390181f6977912
 # Generative Graph Pattern Machine
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16130](https://arxiv.org/abs/2505.16130)
+**arXiv**: [2505.16130](https://arxiv.org/abs/2505.16130)  
 **Authors**: Zehong Wang, Zheyuan Zhang, Tianyi Ma, Chuxu Zhang, Yanfang Ye (University of Notre Dame, University of Connecticut)
-**Code**: [https://github.com/Zehong-Wang/G2PM](https://github.com/Zehong-Wang/G2PM)
+**Code**: [https://github.com/Zehong-Wang/G2PM](https://github.com/Zehong-Wang/G2PM)  
 **Area**: Graph Learning / Graph Pre-training / Transformer
 **Keywords**: graph pre-training, generative Transformer, substructure tokenization, masked substructure modeling, random walk, message-passing-free
 

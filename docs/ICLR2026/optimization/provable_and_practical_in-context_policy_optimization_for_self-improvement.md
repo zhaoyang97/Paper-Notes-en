@@ -18,8 +18,8 @@ content_hash: ec091d4ee86794c9
 # Provable and Practical In-Context Policy Optimization for Self-Improvement
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01335](https://arxiv.org/abs/2603.01335)
-**Code**: [https://github.com/UNCSciML/ICPO](https://github.com/UNCSciML/ICPO)
+**arXiv**: [2603.01335](https://arxiv.org/abs/2603.01335)  
+**Code**: [https://github.com/UNCSciML/ICPO](https://github.com/UNCSciML/ICPO)  
 **Area**: Optimization
 **Keywords**: in-context learning, policy optimization, test-time scaling, self-reflection, mathematical reasoning
 
@@ -51,27 +51,27 @@ Theoretical analysis is conducted on linear self-attention (LSA) Transformers, p
 
 1. **Fisher-weighted logit-matching pretraining objective**:
 
-   - Function: A novel supervised pretraining loss that enables the Transformer to perform in-context policy optimization.
-   - Mechanism: The loss is $\mathcal{L}(\theta) = \frac{1}{2} \mathbb{E}_{\tau \in \mathcal{D}} [\sum_t \| \text{Proj}(\hat{\mathbf{s}}_{\tau,t+1} - \mathbf{s}_{\tau,t+1}^{\text{PO}}) \|_{\Gamma}^2]$, where $\Gamma$ is the Fisher information matrix of the policy and Proj projects out the constant bias (which does not affect the softmax policy).
-   - Design Motivation: Fisher weighting makes the loss proportional to the KL divergence (Theorem 4.1), explaining why a standard KL loss suffices to enable Transformers to learn self-reflection.
+    - Function: A novel supervised pretraining loss that enables the Transformer to perform in-context policy optimization.
+    - Mechanism: The loss is $\mathcal{L}(\theta) = \frac{1}{2} \mathbb{E}_{\tau \in \mathcal{D}} [\sum_t \| \text{Proj}(\hat{\mathbf{s}}_{\tau,t+1} - \mathbf{s}_{\tau,t+1}^{\text{PO}}) \|_{\Gamma}^2]$, where $\Gamma$ is the Fisher information matrix of the policy and Proj projects out the constant bias (which does not affect the softmax policy).
+    - Design Motivation: Fisher weighting makes the loss proportional to the KL divergence (Theorem 4.1), explaining why a standard KL loss suffices to enable Transformers to learn self-reflection.
 
 2. **Population Equivalence and finite-sample guarantees**:
 
-   - Function: Proves that after sufficient pretraining, a single-layer LSA can exactly simulate the target policy optimization algorithm.
-   - Mechanism: Theorem 4.2 shows that the optimal parameters $\theta^*$ enable the LSA to exactly reproduce policy optimization behavior over all possible histories; Theorem 4.3 provides a sample complexity of $\tilde{O}(N^2 K / c_\lambda^2)$.
-   - Design Motivation: Provides theoretical evidence for LLMs' in-context policy optimization capability—a single attention layer suffices.
+    - Function: Proves that after sufficient pretraining, a single-layer LSA can exactly simulate the target policy optimization algorithm.
+    - Mechanism: Theorem 4.2 shows that the optimal parameters $\theta^*$ enable the LSA to exactly reproduce policy optimization behavior over all possible histories; Theorem 4.3 provides a sample complexity of $\tilde{O}(N^2 K / c_\lambda^2)$.
+    - Design Motivation: Provides theoretical evidence for LLMs' in-context policy optimization capability—a single attention layer suffices.
 
 3. **Robustness guarantee (Reward Shock Stability)**:
 
-   - Function: Analyzes the stability of the ICPO loop against a single reward perturbation.
-   - Mechanism: Theorem 4.8 proves that when the learning rate $\eta_t = c/t$ is sufficiently small, the effect of a one-time reward perturbation $\delta_r$ on the policy decays to zero over time: $\mathbb{E}[\|\Delta \hat{\mathbf{p}}_{t+1}^s\|_2] \leq \frac{a(1+C_b)}{s} (\frac{t}{s})^{b-1} |\delta_r|$.
-   - Design Motivation: Provides theoretical support for using noisy self-evaluation rewards.
+    - Function: Analyzes the stability of the ICPO loop against a single reward perturbation.
+    - Mechanism: Theorem 4.8 proves that when the learning rate $\eta_t = c/t$ is sufficiently small, the effect of a one-time reward perturbation $\delta_r$ on the policy decays to zero over time: $\mathbb{E}[\|\Delta \hat{\mathbf{p}}_{t+1}^s\|_2] \leq \frac{a(1+C_b)}{s} (\frac{t}{s})^{b-1} |\delta_r|$.
+    - Design Motivation: Provides theoretical support for using noisy self-evaluation rewards.
 
 4. **ME-ICPO practical algorithm**:
 
-   - Function: Translates the theoretical framework into a practical test-time inference algorithm.
-   - Mechanism: (1) Sample $k$ candidate responses per round; (2) use Majority Vote to determine the self-evaluation reward $r_j^{(t)} = \mathbb{1}[a_j^{(t)} = \hat{a}_t]$; (3) summarize and compress the CoT; (4) **minimum-entropy selection**—select the candidate that minimizes the entropy of subsequent responses to add to the context.
-   - Design Motivation: Minimum-entropy selection follows the "pessimism" principle of offline RL—choosing the direction the agent is most confident about, avoiding being misled by noisy rewards.
+    - Function: Translates the theoretical framework into a practical test-time inference algorithm.
+    - Mechanism: (1) Sample $k$ candidate responses per round; (2) use Majority Vote to determine the self-evaluation reward $r_j^{(t)} = \mathbb{1}[a_j^{(t)} = \hat{a}_t]$; (3) summarize and compress the CoT; (4) **minimum-entropy selection**—select the candidate that minimizes the entropy of subsequent responses to add to the context.
+    - Design Motivation: Minimum-entropy selection follows the "pessimism" principle of offline RL—choosing the direction the agent is most confident about, avoiding being misled by noisy rewards.
 
 ### Loss & Training
 ME-ICPO involves no parameter updates at test time—it is a pure inference-time algorithm. Core strategy:

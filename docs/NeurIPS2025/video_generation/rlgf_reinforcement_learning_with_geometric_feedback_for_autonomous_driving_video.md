@@ -18,8 +18,8 @@ content_hash: e6302649e80efc5b
 # RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16500](https://arxiv.org/abs/2509.16500)
-**Code**: None
+**arXiv**: [2509.16500](https://arxiv.org/abs/2509.16500)  
+**Code**: None  
 **Area**: Autonomous Driving / Video Generation
 **Keywords**: Geometric Consistency, Reinforcement Learning, Video Diffusion Models, Autonomous Driving Data Generation, 3D Perception
 

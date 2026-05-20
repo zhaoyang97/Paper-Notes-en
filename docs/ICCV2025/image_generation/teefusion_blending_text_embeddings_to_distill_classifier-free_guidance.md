@@ -18,8 +18,8 @@ content_hash: c815a69dd00f5122
 # TeEFusion: Blending Text Embeddings to Distill Classifier-Free Guidance
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.18192](https://arxiv.org/abs/2507.18192)
-**Code**: [https://github.com/AIDC-AI/TeEFusion](https://github.com/AIDC-AI/TeEFusion)
+**arXiv**: [2507.18192](https://arxiv.org/abs/2507.18192)  
+**Code**: [https://github.com/AIDC-AI/TeEFusion](https://github.com/AIDC-AI/TeEFusion)  
 **Area**: Diffusion Models / Image Generation / Distillation
 **Keywords**: CFG Distillation, Text Embedding Fusion, Sampling Acceleration, Guidance Distillation, DiT
 

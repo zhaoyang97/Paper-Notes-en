@@ -18,8 +18,8 @@ content_hash: fd101ad6730c87de
 # Adaptive Cooperative Transmission Design for URLLC via Deep RL
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02216](https://arxiv.org/abs/2511.02216)
-**Code**: None
+**arXiv**: [2511.02216](https://arxiv.org/abs/2511.02216)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: URLLC, cooperative transmission, deep reinforcement learning, 5G NR, dual-agent DQN
 
@@ -30,14 +30,14 @@ This paper proposes DRL-CoLA, a dual-agent DQN algorithm that adaptively configu
 
 1. **Background**: Next-generation wireless communications must support mission-critical applications such as remote surgery and autonomous driving, requiring packet error rates as low as $10^{-5}$–$10^{-7}$ and end-to-end latency on the order of milliseconds. Cooperative relay communication (two-hop transmission) is a key technique for improving reliability.
 2. **Limitations of Prior Work**:
-   - Existing two-hop transmission schemes are predominantly one-shot: a decoding failure at either hop results in packet loss, and they assume globally known CSI for both hops—an overhead incompatible with URLLC latency budgets.
-   - ARQ retransmission protocols improve reliability at the cost of increased latency; 5G NR features such as AMC, flexible numerology, and mini-slots have previously been optimized in isolation rather than jointly exploited.
-   - No prior work has studied the impact of ARQ retransmission on reliability in two-hop relay systems under strict latency constraints.
+    - Existing two-hop transmission schemes are predominantly one-shot: a decoding failure at either hop results in packet loss, and they assume globally known CSI for both hops—an overhead incompatible with URLLC latency budgets.
+    - ARQ retransmission protocols improve reliability at the cost of increased latency; 5G NR features such as AMC, flexible numerology, and mini-slots have previously been optimized in isolation rather than jointly exploited.
+    - No prior work has studied the impact of ARQ retransmission on reliability in two-hop relay systems under strict latency constraints.
 3. **Key Challenge**: In two-hop transmission, the total end-to-end delay $\mathcal{T}$ is a random variable depending on channel fading and the number of retransmissions. Its distribution is analytically intractable, making it infeasible for conventional optimization methods to enforce the constraint $\mathcal{T} \le T_{\text{th}}$.
 4. **Goal**:
-   - Jointly optimize numerology $\mu$, mini-slot size $N_{\text{sym}}$, and MCS index $I_{\text{MCS}}$ at each (re)transmission attempt for both hops.
-   - Maximize the end-to-end successful delivery probability while satisfying strict latency constraints.
-   - Rely solely on local CSI and ARQ feedback, without requiring global CSI.
+    - Jointly optimize numerology $\mu$, mini-slot size $N_{\text{sym}}$, and MCS index $I_{\text{MCS}}$ at each (re)transmission attempt for both hops.
+    - Maximize the end-to-end successful delivery probability while satisfying strict latency constraints.
+    - Rely solely on local CSI and ARQ feedback, without requiring global CSI.
 5. **Key Insight**: The adaptive two-hop transmission problem is formulated as an MDP, with the source node and relay node acting as two independent agents that each learn a delay-aware transmission policy.
 6. **Core Idea**: A dual-agent DQN framework learns distributed per-hop transmission parameter configuration policies, using the delay outage rate (DOR) as a cross-hop coordination signal to achieve URLLC without global CSI.
 
@@ -53,19 +53,19 @@ The system consists of a half-duplex S → R → D two-hop relay:
 ### Key Designs
 
 1. **MDP Formulation**:
-   - *Function*: Models the sequential parameter selection across both hops as an MDP.
-   - *Mechanism*: The state $s_n^{(i)} = (\gamma_i, \bar{\gamma}_{i+1}, H, \tau_n)$ is 4-dimensional. The action space $\mathcal{A} = \{(\mu, N_{\text{sym}}, I_{\text{MCS}})\}$ contains $5 \times 4 \times 15 = 300$ discrete actions. State transitions are governed by the decoding error rate $\varepsilon_i$ and the remaining budget, with two absorbing terminal states: Success and Failure.
-   - *Design Motivation*: MDPs naturally accommodate sequential decision-making, and RL circumvents the need for analytical modeling of the distribution of $\mathcal{T}$.
+    - *Function*: Models the sequential parameter selection across both hops as an MDP.
+    - *Mechanism*: The state $s_n^{(i)} = (\gamma_i, \bar{\gamma}_{i+1}, H, \tau_n)$ is 4-dimensional. The action space $\mathcal{A} = \{(\mu, N_{\text{sym}}, I_{\text{MCS}})\}$ contains $5 \times 4 \times 15 = 300$ discrete actions. State transitions are governed by the decoding error rate $\varepsilon_i$ and the remaining budget, with two absorbing terminal states: Success and Failure.
+    - *Design Motivation*: MDPs naturally accommodate sequential decision-making, and RL circumvents the need for analytical modeling of the distribution of $\mathcal{T}$.
 
 2. **DOR Reward Design**:
-   - *Function*: Uses the delay outage rate as a cross-hop coordination signal.
-   - *Mechanism*: The reward for S accounts not only for success at the current hop but also for the estimated probability that the next hop succeeds within the remaining budget $\tau_{n+1}$. DOR is defined as $\mathcal{P}_{\text{DOR}}(\bar{\gamma}_i, \tau) = 1 - \exp\!\left(-\frac{1}{\bar{\gamma}_i}(2^{H/(W\tau)} - 1)\right)$. On success, the reward is $1 - \mathcal{P}_{\text{DOR}}$; on failure, $-1$; on retransmission, $-0.1$.
-   - *Design Motivation*: Since S cannot directly observe second-hop outcomes, DOR leverages the next-hop average SNR and remaining budget to indirectly estimate the success probability, enabling distributed coordination.
+    - *Function*: Uses the delay outage rate as a cross-hop coordination signal.
+    - *Mechanism*: The reward for S accounts not only for success at the current hop but also for the estimated probability that the next hop succeeds within the remaining budget $\tau_{n+1}$. DOR is defined as $\mathcal{P}_{\text{DOR}}(\bar{\gamma}_i, \tau) = 1 - \exp\!\left(-\frac{1}{\bar{\gamma}_i}(2^{H/(W\tau)} - 1)\right)$. On success, the reward is $1 - \mathcal{P}_{\text{DOR}}$; on failure, $-1$; on retransmission, $-0.1$.
+    - *Design Motivation*: Since S cannot directly observe second-hop outcomes, DOR leverages the next-hop average SNR and remaining budget to indirectly estimate the success probability, enabling distributed coordination.
 
 3. **Dual-Agent DQN Architecture**:
-   - *Function*: S and R each maintain an independent DQN network and learn separately.
-   - *Mechanism*: Each agent employs $\epsilon$-greedy exploration, experience replay for training, and a target network for stability. The decoding error probability is computed using the finite blocklength formula: $\varepsilon_i = Q\!\left(\ln 2 \sqrt{m_i/V_i} \left(\log_2(1+\gamma_i) - H/m_i\right)\right)$.
-   - *Design Motivation*: DQN is well-suited to discrete action spaces (300 actions). The decoupled dual-agent design eliminates the need for global CSI, requiring only ARQ feedback for coordination.
+    - *Function*: S and R each maintain an independent DQN network and learn separately.
+    - *Mechanism*: Each agent employs $\epsilon$-greedy exploration, experience replay for training, and a target network for stability. The decoding error probability is computed using the finite blocklength formula: $\varepsilon_i = Q\!\left(\ln 2 \sqrt{m_i/V_i} \left(\log_2(1+\gamma_i) - H/m_i\right)\right)$.
+    - *Design Motivation*: DQN is well-suited to discrete action spaces (300 actions). The decoupled dual-agent design eliminates the need for global CSI, requiring only ARQ feedback for coordination.
 
 ### Loss & Training
 
@@ -113,9 +113,9 @@ When the relay is positioned along a path of total length $d_1 + d_2 = 1000$ m, 
 - **Two-hop only**: Scalability to multi-hop scenarios has not been validated.
 - **Static channel model**: The channel is assumed quasi-static throughout the latency budget, which does not hold in high-mobility scenarios.
 - **Future Directions**:
-  - Extension to multi-hop multi-relay scenarios using a multi-agent RL framework.
-  - Incorporation of channel estimation errors and imperfect ARQ.
-  - Joint optimization of resource allocation across multiple users and carriers.
+    - Extension to multi-hop multi-relay scenarios using a multi-agent RL framework.
+    - Incorporation of channel estimation errors and imperfect ARQ.
+    - Joint optimization of resource allocation across multiple users and carriers.
 
 ## Related Work & Insights
 

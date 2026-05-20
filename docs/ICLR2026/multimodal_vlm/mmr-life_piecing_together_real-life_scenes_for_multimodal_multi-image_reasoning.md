@@ -18,8 +18,8 @@ content_hash: ae81ba7bf5714bea
 # MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02024](https://arxiv.org/abs/2603.02024)
-**Code**: [Project Page](https://mmr-life-bench.github.io/)
+**arXiv**: [2603.02024](https://arxiv.org/abs/2603.02024)  
+**Code**: [Project Page](https://mmr-life-bench.github.io/)  
 **Area**: Multimodal Evaluation Benchmark
 **Keywords**: Multimodal reasoning, multi-image reasoning, real-life scenes, reasoning types, benchmark evaluation
 

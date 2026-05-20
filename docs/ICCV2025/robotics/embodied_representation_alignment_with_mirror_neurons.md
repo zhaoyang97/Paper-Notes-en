@@ -18,8 +18,8 @@ content_hash: 96f49414d86cb0f5
 # Embodied Representation Alignment with Mirror Neurons
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.21136](https://arxiv.org/abs/2509.21136)
-**Code**: None
+**arXiv**: [2509.21136](https://arxiv.org/abs/2509.21136)  
+**Code**: None  
 **Area**: Robotics / Embodied Intelligence
 **Keywords**: mirror neurons, representation alignment, embodied execution, action understanding, contrastive learning
 

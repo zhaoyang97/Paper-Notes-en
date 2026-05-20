@@ -18,8 +18,8 @@ content_hash: 8272d72273da5000
 # FROSS: Faster-than-Real-Time Online 3D Semantic Scene Graph Generation from RGB-D Images
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19993](https://arxiv.org/abs/2507.19993)
-**Code**: [Available](https://github.com/Howardkhh/FROSS)
+**arXiv**: [2507.19993](https://arxiv.org/abs/2507.19993)  
+**Code**: [Available](https://github.com/Howardkhh/FROSS)  
 **Area**: 3D Vision / Scene Understanding
 **Keywords**: 3D Scene Graph, Real-time, Gaussian Distribution, RGB-D, Scene Understanding
 

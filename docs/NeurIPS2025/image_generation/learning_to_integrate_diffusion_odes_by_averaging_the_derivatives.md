@@ -18,8 +18,8 @@ content_hash: 9b8512737024d6e3
 # Learning to Integrate Diffusion ODEs by Averaging the Derivatives
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.14502](https://arxiv.org/abs/2505.14502)
-**Code**: [GitHub](https://github.com/poppuppy/secant-expectation)
+**arXiv**: [2505.14502](https://arxiv.org/abs/2505.14502)  
+**Code**: [GitHub](https://github.com/poppuppy/secant-expectation)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Diffusion model acceleration, secant loss, ODE integration, Monte Carlo integration, Picard iteration
 
@@ -60,10 +60,10 @@ The secant function is defined as the expectation of all tangents over the inter
    - **Estimate Endpoint (EE)**: Sample $\boldsymbol{x}_r$; back-propagate via the model to estimate $\hat{\boldsymbol{x}}_t$; use the ground-truth $\alpha_r'\boldsymbol{x}_0 + \sigma_r'\boldsymbol{z}$ directly as the target.
 
 3. **Four Variants**:
-   - **SDEI** (Distillation + Estimate Interior): Requires a teacher model; 3 forward + 1 backward passes.
-   - **STEI** (Training + Estimate Interior): No teacher required; incorporates diffusion loss regularization; 4 forward + 2 backward passes.
-   - **SDEE** (Distillation + Estimate Endpoint): Requires a teacher model; 3 forward + 1 backward passes.
-   - **STEE** (Training + Estimate Endpoint): No teacher required; the lightest variant; only 2 forward + 1 backward passes.
+    - **SDEI** (Distillation + Estimate Interior): Requires a teacher model; 3 forward + 1 backward passes.
+    - **STEI** (Training + Estimate Interior): No teacher required; incorporates diffusion loss regularization; 4 forward + 2 backward passes.
+    - **SDEE** (Distillation + Estimate Endpoint): Requires a teacher model; 3 forward + 1 backward passes.
+    - **STEE** (Training + Estimate Endpoint): No teacher required; the lightest variant; only 2 forward + 1 backward passes.
 
 4. **Target Stability Advantage**:
    Compared to consistency models, the targets in the secant losses are either identical to the diffusion loss ($\alpha_t'\boldsymbol{x}_0 + \sigma_t'\boldsymbol{z}$) or the diffusion model output $\boldsymbol{v}(\boldsymbol{x}_t, t)$ itself, without involving the model-dependent derivative term $\frac{d}{dt}\boldsymbol{f}_{\theta^-}$. This yields substantially superior training stability over consistency models.

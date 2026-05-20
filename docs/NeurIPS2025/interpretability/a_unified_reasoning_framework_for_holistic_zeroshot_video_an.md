@@ -18,8 +18,8 @@ content_hash: e31f95f420f571fa
 # A Unified Reasoning Framework for Holistic Zero-Shot Video Anomaly Analysis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00962](https://arxiv.org/abs/2511.00962)
-**Code**: [https://rathgrith.github.io/Unified_Frame_VAA/](https://rathgrith.github.io/Unified_Frame_VAA/)
+**arXiv**: [2511.00962](https://arxiv.org/abs/2511.00962)  
+**Code**: [https://rathgrith.github.io/Unified_Frame_VAA/](https://rathgrith.github.io/Unified_Frame_VAA/)  
 **Area**: Interpretability
 **Keywords**: Video Anomaly Detection, Zero-Shot, Chain-of-Thought Reasoning, VLM, Anomaly Localization & Understanding
 

@@ -18,8 +18,8 @@ content_hash: 3ec1ac3c60ae6453
 # GOT-Edit: Geometry-Aware Generic Object Tracking via Online Model Editing
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.08550](https://arxiv.org/abs/2602.08550)
-**Code**: [https://github.com/chenshihfang/GOT](https://github.com/chenshihfang/GOT)
+**arXiv**: [2602.08550](https://arxiv.org/abs/2602.08550)  
+**Code**: [https://github.com/chenshihfang/GOT](https://github.com/chenshihfang/GOT)  
 **Area**: Knowledge Editing
 **Keywords**: Object Tracking, 3D Geometry, Null-Space Editing, Online Model Updating, VGGT
 

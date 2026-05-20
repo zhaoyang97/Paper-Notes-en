@@ -18,8 +18,8 @@ content_hash: 30ee14f7c1813243
 # Better NTK Conditioning: A Free Lunch from ReLU Nonlinear Activation in Wide Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2305.08813](https://arxiv.org/abs/2305.08813)
-**Code**: Available
+**arXiv**: [2305.08813](https://arxiv.org/abs/2305.08813)  
+**Code**: Available  
 **Area**: Optimization Theory / Deep Learning Theory
 **Keywords**: NTK condition number, ReLU activation, feature separation, wide networks, convergence acceleration
 

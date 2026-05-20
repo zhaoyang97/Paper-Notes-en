@@ -18,8 +18,8 @@ content_hash: 5418897578e2326e
 # Distributionally Robust Online Markov Game with Linear Function Approximation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07831](https://arxiv.org/abs/2511.07831)
-**Code**: None
+**arXiv**: [2511.07831](https://arxiv.org/abs/2511.07831)  
+**Code**: None  
 **Area**: Multi-Agent Reinforcement Learning / Robust Game Theory
 **Keywords**: Markov Game, Distributional Robustness, Linear Function Approximation, Coarse Correlated Equilibrium, Sample Complexity
 

@@ -18,8 +18,8 @@ content_hash: 8c5d6e740286f4ae
 # Pixel Motion Diffusion Is What We Need for Robot Control
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.22652](https://arxiv.org/abs/2509.22652)
-**Code**: [Available](https://eronguyen.github.io/DAWN)
+**arXiv**: [2509.22652](https://arxiv.org/abs/2509.22652)  
+**Code**: [Available](https://eronguyen.github.io/DAWN)  
 **Area**: Image Generation
 **Keywords**: Pixel motion diffusion, robot control, vision-language-action, optical flow representation, hierarchical diffusion policy
 

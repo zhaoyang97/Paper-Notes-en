@@ -18,8 +18,8 @@ content_hash: afdaf4c1df0f0ceb
 # Transformer Embeddings for Fast Microlensing Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.11687](https://arxiv.org/abs/2512.11687)
-**Code**: [GitHub](https://github.com/NolanSmyth/sbi_microlensing_transformers)
+**arXiv**: [2512.11687](https://arxiv.org/abs/2512.11687)  
+**Code**: [GitHub](https://github.com/NolanSmyth/sbi_microlensing_transformers)  
 **Area**: Astronomy, Time Series Inference
 **Keywords**: Microlensing, Simulation-Based Inference, Transformer, Posterior Estimation, Free-Floating Planets
 

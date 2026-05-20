@@ -20,8 +20,8 @@ content_hash: 5cc149129e72e94d
 # Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24606](https://arxiv.org/abs/2510.24606)
-**Code**: [GitHub](https://github.com/xiongsiheng/DHSA)
+**arXiv**: [2510.24606](https://arxiv.org/abs/2510.24606)  
+**Code**: [GitHub](https://github.com/xiongsiheng/DHSA)  
 **Area**: LLM Efficiency / Sparse Attention / On-Device Deployment
 **Keywords**: sparse attention, dynamic chunking, hierarchical sparsity prediction, on-device LLM, long context, chunk representation, boundary detection
 

@@ -18,8 +18,8 @@ content_hash: 0464279a784266ab
 # SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.18887](https://arxiv.org/abs/2602.18887)
-**Code**: To be released
+**arXiv**: [2602.18887](https://arxiv.org/abs/2602.18887)  
+**Code**: To be released  
 **Area**: Interpretability
 **Keywords**: end-to-end driving, safety reasoning, sparse world model, trajectory evaluation, collision prediction
 

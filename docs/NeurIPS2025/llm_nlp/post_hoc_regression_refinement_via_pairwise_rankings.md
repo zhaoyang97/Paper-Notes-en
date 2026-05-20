@@ -18,8 +18,8 @@ content_hash: 6ed341f9eb0bc15b
 # Post Hoc Regression Refinement via Pairwise Rankings
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.16495](https://arxiv.org/abs/2508.16495)
-**Code**: [ktirta/regref](https://github.com/ktirta/regref)
+**arXiv**: [2508.16495](https://arxiv.org/abs/2508.16495)  
+**Code**: [ktirta/regref](https://github.com/ktirta/regref)  
 **Area**: LLM/NLP
 **Keywords**: regression refinement, pairwise ranking, inverse-variance weighting, LLM ranker, few-shot learning
 

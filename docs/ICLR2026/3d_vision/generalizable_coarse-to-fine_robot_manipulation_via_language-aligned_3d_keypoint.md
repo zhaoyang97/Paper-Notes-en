@@ -18,8 +18,8 @@ content_hash: 9b80a714feb5a600
 # Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23575](https://arxiv.org/abs/2509.23575)
-**Code**: None
+**arXiv**: [2509.23575](https://arxiv.org/abs/2509.23575)  
+**Code**: None  
 **Area**: 3D Vision / Robot Manipulation
 **Keywords**: Robot Manipulation, Coarse-to-Fine Policy, 3D Keypoints, VLM Fine-tuning, Language Grounding
 

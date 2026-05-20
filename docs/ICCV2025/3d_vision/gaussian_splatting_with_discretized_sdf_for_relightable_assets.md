@@ -18,8 +18,8 @@ content_hash: aa5cbf9b51a8bc2d
 # Gaussian Splatting with Discretized SDF for Relightable Assets
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.15629](https://arxiv.org/abs/2507.15629)
-**Code**: [https://github.com/NK-CS-ZZL/DiscretizedSDF](https://github.com/NK-CS-ZZL/DiscretizedSDF)
+**arXiv**: [2507.15629](https://arxiv.org/abs/2507.15629)  
+**Code**: [https://github.com/NK-CS-ZZL/DiscretizedSDF](https://github.com/NK-CS-ZZL/DiscretizedSDF)  
 **Area**: 3D Vision
 **Keywords**: Inverse Rendering, 3D Gaussian Splatting, Discretized SDF, Geometry Regularization, Relighting
 

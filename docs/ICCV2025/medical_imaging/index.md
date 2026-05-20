@@ -18,7 +18,7 @@ tags:
 
 **📹 ICCV2025** · **38** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (42)](../../ACL2026/medical_imaging/index.md) · [📷 CVPR2026 (114)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (72)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (105)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (138)](../../NeurIPS2025/medical_imaging/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (17)](../../ICML2026/medical_imaging/index.md) · [💬 ACL2026 (37)](../../ACL2026/medical_imaging/index.md) · [📷 CVPR2026 (118)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (79)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (106)](../../AAAI2026/medical_imaging/index.md) · [🧠 NeurIPS2025 (144)](../../NeurIPS2025/medical_imaging/index.md)
 
 🔥 **Top topics:** Medical Imaging ×14 · Segmentation ×12 · Few-/Zero-Shot Learning ×2 · Self-Supervised Learning ×2
 

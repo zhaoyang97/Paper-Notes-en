@@ -19,8 +19,8 @@ content_hash: 1d13830f94da99f8
 # CATSplat: Context-Aware Transformer with Spatial Guidance for Generalizable 3D Gaussian Splatting from A Single-View Image
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.12906](https://arxiv.org/abs/2412.12906)
-**Code**: [Project Page](https://kuai-lab.github.io/catsplat2025)
+**arXiv**: [2412.12906](https://arxiv.org/abs/2412.12906)  
+**Code**: [Project Page](https://kuai-lab.github.io/catsplat2025)  
 **Authors**: Wonseok Roh, Hwanhee Jung, Jong Wook Kim et al. (Korea University, Google, Purdue University)
 **Area**: 3D Vision / Novel View Synthesis / 3DGS
 **Keywords**: Single-view 3D reconstruction, 3D Gaussian Splatting, vision-language model, text guidance, spatial guidance, point cloud features
@@ -46,9 +46,9 @@ How to compensate for the extreme information deficiency inherent to single-imag
 4. VLM (LLaVA) generates a single-sentence scene description → intermediate text embeddings $F^C$ are extracted
 5. Depth map is back-projected into a 3D point cloud $P$ → PointNet encoder → 3D spatial features $F^S$
 6. Multi-resolution Transformer (3 layers) sequentially applies:
-   - Cross-attention: $F_i^{\mathcal{I}} \times F_i^C$ → contextual fusion
-   - Cross-attention: result $\times F_i^S$ → spatial fusion
-   - Self-attention: feature refinement
+    - Cross-attention: $F_i^{\mathcal{I}} \times F_i^C$ → contextual fusion
+    - Cross-attention: result $\times F_i^S$ → spatial fusion
+    - Self-attention: feature refinement
 7. ResNet decoder → predicts per-pixel Gaussian parameters $\{\mu_j, \alpha_j, \Sigma_j, c_j\}$
 8. Rasterization renders novel views
 

@@ -18,8 +18,8 @@ content_hash: b0159e1a3cbf89f5
 # DogFit: Domain-guided Fine-tuning for Efficient Transfer Learning of Diffusion Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.05685](https://arxiv.org/abs/2508.05685)
-**Code**: [GitHub](https://github.com/yaramohamadi/DogFit)
+**arXiv**: [2508.05685](https://arxiv.org/abs/2508.05685)  
+**Code**: [GitHub](https://github.com/yaramohamadi/DogFit)  
 **Area**: Image Generation
 **Keywords**: Diffusion Models, Transfer Learning, Guidance Mechanism, Domain Adaptation, Efficient Inference
 

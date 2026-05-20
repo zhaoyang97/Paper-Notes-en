@@ -18,8 +18,8 @@ content_hash: 257f67716c8bfc0e
 # ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.22939](https://arxiv.org/abs/2512.22939)
-**Code**: [Available](https://github.com/pqh22/ColaVLA)
+**arXiv**: [2512.22939](https://arxiv.org/abs/2512.22939)  
+**Code**: [Available](https://github.com/pqh22/ColaVLA)  
 **Area**: Autonomous Driving
 **Keywords**: End-to-end autonomous driving, VLM reasoning, latent space reasoning, multi-scale trajectory planning, vision-language-action
 

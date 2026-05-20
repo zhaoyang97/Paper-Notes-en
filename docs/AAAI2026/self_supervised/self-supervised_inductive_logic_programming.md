@@ -17,8 +17,8 @@ content_hash: 1c969cd4572b339a
 # Self-Supervised Inductive Logic Programming
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.16405](https://arxiv.org/abs/2507.16405)
-**Code**: [https://github.com/stassa/aaai_26_experiments/](https://github.com/stassa/aaai_26_experiments/)
+**arXiv**: [2507.16405](https://arxiv.org/abs/2507.16405)  
+**Code**: [https://github.com/stassa/aaai_26_experiments/](https://github.com/stassa/aaai_26_experiments/)  
 **Area**: Artificial Intelligence / Logic Programming
 **Keywords**: inductive logic programming, self-supervised learning, meta-interpretive learning, grammar learning, predicate invention
 

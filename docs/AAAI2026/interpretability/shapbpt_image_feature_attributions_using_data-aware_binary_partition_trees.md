@@ -17,8 +17,8 @@ content_hash: d80b5c156c711ae1
 # ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.07047](https://arxiv.org/abs/2602.07047)
-**Code**: [https://github.com/amparore/shap_bpt](https://github.com/amparore/shap_bpt)
+**arXiv**: [2602.07047](https://arxiv.org/abs/2602.07047)  
+**Code**: [https://github.com/amparore/shap_bpt](https://github.com/amparore/shap_bpt)  
 **Area**: Explainable AI / Computer Vision
 **Keywords**: Shapley values, Binary Partition Tree, Interpretability, Feature Attribution, Image Classification
 
@@ -45,20 +45,20 @@ The input image is first used to construct a BPT hierarchy by iteratively mergin
 
 1. **BPT Hierarchical Coalition Structure Construction**
 
-   - **Function**: Construct a binary hierarchical segmentation aligned with image morphology.
-   - **Mechanism**: Starting from $n$ pixels, the two adjacent partitions with the smallest distance are merged at each step. The distance function is $dist(T_i, T_j) = clr^2(T_i, T_j) \cdot area(T_i, T_j) \cdot \sqrt{pr(T_i, T_j)}$, where $clr^2$ is the squared sum of color ranges of the merged region, and $area$ and $pr$ denote area and perimeter, respectively. After $n-1$ merges, a complete binary tree is obtained. Pixels that are color-similar and spatially adjacent are merged first, ensuring that partition boundaries align with object contours.
-   - **Design Motivation**: Two key requirements are satisfied—R1: relevant regions should be reachable with as few recursive splits as possible (morphologically aligned segmentation requires only a small number of cuts to separate objects from background); R2: partitions should not be fixed in advance (the adaptive splitting of BPT allows dynamic refinement based on the Shapley value distribution).
+    - **Function**: Construct a binary hierarchical segmentation aligned with image morphology.
+    - **Mechanism**: Starting from $n$ pixels, the two adjacent partitions with the smallest distance are merged at each step. The distance function is $dist(T_i, T_j) = clr^2(T_i, T_j) \cdot area(T_i, T_j) \cdot \sqrt{pr(T_i, T_j)}$, where $clr^2$ is the squared sum of color ranges of the merged region, and $area$ and $pr$ denote area and perimeter, respectively. After $n-1$ merges, a complete binary tree is obtained. Pixels that are color-similar and spatially adjacent are merged first, ensuring that partition boundaries align with object contours.
+    - **Design Motivation**: Two key requirements are satisfied—R1: relevant regions should be reachable with as few recursive splits as possible (morphologically aligned segmentation requires only a small number of cuts to separate objects from background); R2: partitions should not be fixed in advance (the adaptive splitting of BPT allows dynamic refinement based on the Shapley value distribution).
 
 2. **Owen-Approximated Shapley Value Computation**
 
-   - **Function**: Efficiently compute pixel-level attribution values over the binary hierarchical coalition structure.
-   - **Mechanism**: The recursive formula $\Omega_i(Q, T) = \frac{1}{2}\Omega_i(Q \cup T_2, T_1) + \frac{1}{2}\Omega_i(Q, T_1)$ (for $i \in T_1$) is applied; indivisible partitions receive marginal contributions distributed uniformly as $\frac{1}{|T|}\Delta_T(Q)$. Under a given budget $b$, the adaptive splitting strategy splits the partition with the highest total Shapley value at each iteration, requiring 2 model evaluations per split.
-   - **Design Motivation**: Exact Shapley value computation is #P-hard. Owen approximation substantially reduces cost through hierarchical grouping, but remains sensitive to the quality of the hierarchy. The morphological alignment of BPT enables accurate localization with few recursive steps.
+    - **Function**: Efficiently compute pixel-level attribution values over the binary hierarchical coalition structure.
+    - **Mechanism**: The recursive formula $\Omega_i(Q, T) = \frac{1}{2}\Omega_i(Q \cup T_2, T_1) + \frac{1}{2}\Omega_i(Q, T_1)$ (for $i \in T_1$) is applied; indivisible partitions receive marginal contributions distributed uniformly as $\frac{1}{|T|}\Delta_T(Q)$. Under a given budget $b$, the adaptive splitting strategy splits the partition with the highest total Shapley value at each iteration, requiring 2 model evaluations per split.
+    - **Design Motivation**: Exact Shapley value computation is #P-hard. Owen approximation substantially reduces cost through hierarchical grouping, but remains sensitive to the quality of the hierarchy. The morphological alignment of BPT enables accurate localization with few recursive steps.
 
 3. **Evaluation Framework**
 
-   - **Function**: Comprehensively assess explanation quality.
-   - **Mechanism**: Response-based metrics—$AUC^+$ (AUC of model output as pixels with high Shapley values are progressively added) and $AUC^-$ (AUC as such pixels are progressively removed). Ground-truth-based metrics—$AU\text{-}IoU$ (area under the IoU curve) and $max\text{-}IoU$ (maximum IoU).
+    - **Function**: Comprehensively assess explanation quality.
+    - **Mechanism**: Response-based metrics—$AUC^+$ (AUC of model output as pixels with high Shapley values are progressively added) and $AUC^-$ (AUC as such pixels are progressively removed). Ground-truth-based metrics—$AU\text{-}IoU$ (area under the IoU curve) and $max\text{-}IoU$ (maximum IoU).
 
 ### Loss & Training
 

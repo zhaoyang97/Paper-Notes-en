@@ -18,8 +18,8 @@ content_hash: b149b16c5d764add
 # Generating Directed Graphs with Dual Attention and Asymmetric Encoding
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.16404](https://arxiv.org/abs/2506.16404)
-**Code**: [GitHub](https://github.com/acarballocastro/DIRECTO)
+**arXiv**: [2506.16404](https://arxiv.org/abs/2506.16404)  
+**Code**: [GitHub](https://github.com/acarballocastro/DIRECTO)  
 **Area**: Graph Generation
 **Keywords**: directed graph generation, discrete flow matching, dual attention mechanism, asymmetric positional encoding, graph generation benchmark
 
@@ -62,8 +62,8 @@ Directo is built upon the Discrete Flow Matching (DFM) framework. The generation
 
 - **Function**: Designs an attention module that distinguishes information flow from source→target and target→source directions.
 - **Mechanism**: Two sets of direction-specific attention maps are constructed:
-  - Source→Target: $\bm{Y}_{\text{ST}}[i,j] = \frac{\bm{Q}_S[i] \cdot \bm{K}_T[j]}{\sqrt{d_q}}$
-  - Target→Source: $\bm{Y}_{\text{TS}}[i,j] = \frac{\bm{Q}_T[i] \cdot \bm{K}_S[j]}{\sqrt{d_q}}$
+    - Source→Target: $\bm{Y}_{\text{ST}}[i,j] = \frac{\bm{Q}_S[i] \cdot \bm{K}_T[j]}{\sqrt{d_q}}$
+    - Target→Source: $\bm{Y}_{\text{TS}}[i,j] = \frac{\bm{Q}_T[i] \cdot \bm{K}_S[j]}{\sqrt{d_q}}$
 
   After modulation by edge features via FiLM layers, the attention maps from both directions are concatenated and jointly normalized: $\bm{A}_{\text{aggr}} = \text{softmax}(\text{concat}(\bm{Y}'_{\text{ST}}, \bm{Y}'_{\text{TS}}))$, and node features are updated by aggregation: $\bm{X}' = \bm{A}_{\text{aggr}} \bm{V}_{\text{aggr}}$
 - **Design Motivation**: Standard attention treats edge relationships symmetrically and fails to capture the distinct semantics of source and target nodes in directed graphs.

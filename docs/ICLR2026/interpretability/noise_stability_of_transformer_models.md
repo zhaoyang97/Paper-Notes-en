@@ -20,8 +20,8 @@ content_hash: 394275603a0cce94
 # Noise Stability of Transformer Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.08287](https://arxiv.org/abs/2602.08287)
-**Code**: Not released
+**arXiv**: [2602.08287](https://arxiv.org/abs/2602.08287)  
+**Code**: Not released  
 **Area**: Interpretability
 **Keywords**: noise stability, simplicity bias, Transformer, grokking, Fourier analysis, regularization, Boolean function analysis
 

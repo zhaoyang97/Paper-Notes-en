@@ -20,8 +20,8 @@ content_hash: fe1be2a181fa2294
 # Augmenting Representations with Scientific Papers
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.04516](https://arxiv.org/abs/2603.04516)
-**Code**: None
+**arXiv**: [2603.04516](https://arxiv.org/abs/2603.04516)  
+**Code**: None  
 **Area**: Multimodal Learning / Scientific Foundation Models
 **Keywords**: contrastive learning, multimodal representations, X-ray spectroscopy, scientific literature, foundation models, anomaly detection, astronomy
 

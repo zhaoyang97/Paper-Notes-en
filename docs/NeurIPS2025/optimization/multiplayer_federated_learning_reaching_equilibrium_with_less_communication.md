@@ -18,8 +18,8 @@ content_hash: 4a6da709d9069b0d
 # Multiplayer Federated Learning: Reaching Equilibrium with Less Communication
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.08263](https://arxiv.org/abs/2501.08263)
-**Code**: None
+**arXiv**: [2501.08263](https://arxiv.org/abs/2501.08263)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: Federated Learning, Game Theory, Nash Equilibrium, Local SGD, Communication Efficiency
 

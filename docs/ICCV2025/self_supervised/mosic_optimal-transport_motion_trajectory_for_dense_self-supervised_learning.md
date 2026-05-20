@@ -18,8 +18,8 @@ content_hash: b71f6ebfbd93fe82
 # MoSiC: Optimal-Transport Motion Trajectory for Dense Self-Supervised Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.08694](https://arxiv.org/abs/2506.08694)
-**Code**: [github.com/SMSD75/MoSiC](https://github.com/SMSD75/MoSiC)
+**arXiv**: [2506.08694](https://arxiv.org/abs/2506.08694)  
+**Code**: [github.com/SMSD75/MoSiC](https://github.com/SMSD75/MoSiC)  
 **Area**: Self-Supervised Learning / Video Representation Learning
 **Keywords**: Dense self-supervised learning, optimal transport, motion trajectories, spatiotemporal consistency, video segmentation
 

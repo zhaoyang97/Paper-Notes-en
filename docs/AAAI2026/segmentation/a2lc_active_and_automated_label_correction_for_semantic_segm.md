@@ -18,8 +18,8 @@ content_hash: 95b42835dee0a0ca
 # A²LC: Active and Automated Label Correction for Semantic Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.11599](https://arxiv.org/abs/2506.11599)
-**Code**: Unavailable (authors claim to release upon acceptance)
+**arXiv**: [2506.11599](https://arxiv.org/abs/2506.11599)  
+**Code**: Unavailable (authors claim to release upon acceptance)  
 **Area**: Semantic Segmentation
 **Keywords**: Active label correction, automated label correction, pseudo labels, class imbalance, foundation models
 

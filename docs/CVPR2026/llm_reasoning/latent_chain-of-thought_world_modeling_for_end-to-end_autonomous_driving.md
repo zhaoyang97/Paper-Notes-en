@@ -18,8 +18,8 @@ content_hash: e86b26268fba86de
 # Latent Chain-of-Thought World Modeling for End-to-End Autonomous Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.10226](https://arxiv.org/abs/2512.10226)
-**Code**: None
+**arXiv**: [2512.10226](https://arxiv.org/abs/2512.10226)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Latent space reasoning, chain-of-thought, world model, end-to-end driving, VLA model
 

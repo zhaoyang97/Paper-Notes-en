@@ -17,8 +17,8 @@ content_hash: 741b724e343afba9
 # Better and Worse with Scale: How Contextual Entrainment Diverges with Model Size
 
 **Conference**: ACL 2026
-**arXiv**: [2604.13275](https://arxiv.org/abs/2604.13275)
-**Code**: N/A
+**arXiv**: [2604.13275](https://arxiv.org/abs/2604.13275)  
+**Code**: N/A  
 **Area**: Causal Inference
 **Keywords**: Contextual Entrainment, Scaling Laws, Semantic Filtering, Pattern Copying, Robustness
 

@@ -18,8 +18,8 @@ content_hash: 73faacbfa785a171
 # CLoE: Expert Consistency Learning for Missing Modality Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09316](https://arxiv.org/abs/2603.09316)
-**Code**: N/A
+**arXiv**: [2603.09316](https://arxiv.org/abs/2603.09316)  
+**Code**: N/A  
 **Area**: Medical Image Segmentation / Multimodal Learning
 **Keywords**: missing modality, consistency learning, expert fusion, reliability gating, brain tumor
 
@@ -50,15 +50,15 @@ CLoE comprises four core components: (1) parallel modality encoders $\Phi_m$ tha
 ### Key Designs
 
 1. **Modality Expert Consistency (MEC) + Regional Expert Consistency (REC)**
-   - MEC: Probability prediction vectors from available experts are flattened and their pairwise cosine similarities are computed; the average over all available pairs serves as the loss: $\mathcal{L}_{MEC} = \frac{1}{|\mathcal{P}|}\sum_{(a,b)}(1-\mathcal{S}(p^{(a)}, p^{(b)}))$
-   - REC: A lightweight projection head aggregates shallow features from available experts to generate a probabilistic region map $r=\sigma(\pi(\frac{1}{|\mathcal{A}|}\sum f_1^{(m)}))$; cosine similarity is then computed on $r$-weighted predictions.
-   - **Design Motivation**: MEC enforces global distributional alignment to prevent expert drift, while REC focuses on clinically critical foreground regions to avoid domination by background voxels.
+    - MEC: Probability prediction vectors from available experts are flattened and their pairwise cosine similarities are computed; the average over all available pairs serves as the loss: $\mathcal{L}_{MEC} = \frac{1}{|\mathcal{P}|}\sum_{(a,b)}(1-\mathcal{S}(p^{(a)}, p^{(b)}))$
+    - REC: A lightweight projection head aggregates shallow features from available experts to generate a probabilistic region map $r=\sigma(\pi(\frac{1}{|\mathcal{A}|}\sum f_1^{(m)}))$; cosine similarity is then computed on $r$-weighted predictions.
+    - **Design Motivation**: MEC enforces global distributional alignment to prevent expert drift, while REC focuses on clinically critical foreground regions to avoid domination by background voxels.
 
 2. **Consistency-Driven Dynamic Gating**
-   - For each expert $m$, the global consistency score $u_m$ and regional consistency score $v_m$ are fed into a lightweight gating network $\mathcal{G}$.
-   - The network outputs reliability logits $g_m = \mathcal{G}(u_m, v_m)$; softmax normalization over available experts yields fusion weights $w_m$.
-   - Multi-scale features are fused as $f_\ell = \sum w_m \odot f_\ell^{(m)}$.
-   - **Design Motivation**: Consistency is not only used as a training constraint but is also recycled as a reliability signal to guide fusion—consistent experts are trusted, while divergent ones are suppressed.
+    - For each expert $m$, the global consistency score $u_m$ and regional consistency score $v_m$ are fed into a lightweight gating network $\mathcal{G}$.
+    - The network outputs reliability logits $g_m = \mathcal{G}(u_m, v_m)$; softmax normalization over available experts yields fusion weights $w_m$.
+    - Multi-scale features are fused as $f_\ell = \sum w_m \odot f_\ell^{(m)}$.
+    - **Design Motivation**: Consistency is not only used as a training constraint but is also recycled as a reliability signal to guide fusion—consistent experts are trusted, while divergent ones are suppressed.
 
 ### Loss & Training
 

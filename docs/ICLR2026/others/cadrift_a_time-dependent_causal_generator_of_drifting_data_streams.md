@@ -17,8 +17,8 @@ content_hash: 4111283611cda123
 # CaDrift: A Time-dependent Causal Generator of Drifting Data Streams
 
 **Conference**: ICLR2026
-**arXiv**: [2602.20329](https://arxiv.org/abs/2602.20329)
-**Code**: [https://github.com/eduardovlb/CaDrift](https://github.com/eduardovlb/CaDrift)
+**arXiv**: [2602.20329](https://arxiv.org/abs/2602.20329)  
+**Code**: [https://github.com/eduardovlb/CaDrift](https://github.com/eduardovlb/CaDrift)  
 **Area**: Other
 **Keywords**: concept drift, structural causal model, synthetic data generation, data streams, time dependence
 

@@ -19,8 +19,8 @@ content_hash: 053d40b9d41b8402
 # TPRU: Advancing Temporal and Procedural Understanding in Large Multimodal Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.18884](https://arxiv.org/abs/2602.18884)
-**Code**: [https://github.com/Stephen-gzk/TPRU/](https://github.com/Stephen-gzk/TPRU/)
+**arXiv**: [2602.18884](https://arxiv.org/abs/2602.18884)  
+**Code**: [https://github.com/Stephen-gzk/TPRU/](https://github.com/Stephen-gzk/TPRU/)  
 **Area**: Reinforcement Learning / Multimodal Large Language Models
 **Keywords**: Temporal Understanding, Procedural Reasoning, Multi-Image Understanding, RL Fine-Tuning, MLLM, Embodied AI
 
@@ -50,24 +50,24 @@ TPRU comprises two components: TPRU-25k (fine-tuning set, 24,750 samples) and TP
 
 1. **Data Source Design**:
 
-   - Robotic Manipulation: video frame sampling from ShareRobot planning tasks
-   - LEGO Assembly: 36 high-quality stop-motion animation videos with clear state transitions and no motion blur
-   - GUI Operation: 4-step screenshot sequences from GUI Odyssey
-   - Embodied Navigation: ordered visual observations from the Habitat simulation environment
-   - **Design Motivation**: Multi-source diversity ensures the model learns generalizable temporal reasoning rather than domain-specific patterns.
+    - Robotic Manipulation: video frame sampling from ShareRobot planning tasks
+    - LEGO Assembly: 36 high-quality stop-motion animation videos with clear state transitions and no motion blur
+    - GUI Operation: 4-step screenshot sequences from GUI Odyssey
+    - Embodied Navigation: ordered visual observations from the Habitat simulation environment
+    - **Design Motivation**: Multi-source diversity ensures the model learns generalizable temporal reasoning rather than domain-specific patterns.
 
 2. **Three Complementary Tasks**:
 
-   - **Temporal Ordering**: frames are shuffled and the model must restore the correct order based on a textual description—evaluating comprehension of the complete temporal trajectory.
-   - **Next-Frame Prediction**: given frames 1, 2, and 4, the model selects the correct frame 3 from candidates drawn from similar scenes—simulating an agent's anticipation of action consequences.
-   - **Previous-Frame Review**: given the last 3 frames, the model selects the correct initial frame from candidates—evaluating understanding of procedural preconditions and event provenance.
-   - **Design Motivation**: Forward prediction, backward review, and global ordering jointly cultivate structured, procedural dynamic understanding.
+    - **Temporal Ordering**: frames are shuffled and the model must restore the correct order based on a textual description—evaluating comprehension of the complete temporal trajectory.
+    - **Next-Frame Prediction**: given frames 1, 2, and 4, the model selects the correct frame 3 from candidates drawn from similar scenes—simulating an agent's anticipation of action consequences.
+    - **Previous-Frame Review**: given the last 3 frames, the model selects the correct initial frame from candidates—evaluating understanding of procedural preconditions and event provenance.
+    - **Design Motivation**: Forward prediction, backward review, and global ordering jointly cultivate structured, procedural dynamic understanding.
 
 3. **Negative Sampling Strategy**:
 
-   - **Function**: Creates instances with deliberate text-image mismatches (e.g., pairing "pick up the fork" with an image of "putting down a knife").
-   - **Target Output**: "None of the choices provided."
-   - **Design Motivation**: Forces explicit cross-modal verification, preventing the model from relying solely on textual priors.
+    - **Function**: Creates instances with deliberate text-image mismatches (e.g., pairing "pick up the fork" with an image of "putting down a knife").
+    - **Target Output**: "None of the choices provided."
+    - **Design Motivation**: Forces explicit cross-modal verification, preventing the model from relying solely on textual priors.
 
 ### Loss & Training
 Reinforcement learning (RL) is used to fine-tune Qwen2.5-VL models (3B/7B/32B), focusing on improving temporal reasoning in resource-constrained models. Details of RL training and reward design are provided in the paper's appendix.

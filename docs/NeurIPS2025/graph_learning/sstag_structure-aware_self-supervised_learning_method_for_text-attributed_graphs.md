@@ -18,8 +18,8 @@ content_hash: bfae15b483c1f1c8
 # SSTAG: Structure-Aware Self-Supervised Learning Method for Text-Attributed Graphs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.01248](https://arxiv.org/abs/2510.01248)
-**Code**: N/A
+**arXiv**: [2510.01248](https://arxiv.org/abs/2510.01248)  
+**Code**: N/A  
 **Area**: Graph Learning / Self-Supervised Learning
 **Keywords**: Text-attributed graphs, self-supervised learning, knowledge distillation, cross-domain transfer, graph foundation models
 

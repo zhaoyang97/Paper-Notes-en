@@ -42,21 +42,21 @@ GLSim is a training-free, object-level hallucination detection framework. For ea
 
 1. **Unsupervised Object Localization via Visual Logit Lens**
 
-   - **Function**: Localizes the image regions most relevant to a given object without relying on external annotations or detectors.
-   - **Mechanism**: The hidden representation $h_l(v_i)$ of each visual token $v_i$ at decoder layer $l$ is projected into the vocabulary space via the unembedding matrix $W_U$, yielding the probability $\text{softmax}(\text{VLL}_l(v_i))[o]$ that each visual patch predicts object word $o$. The Top-K patches with the highest probabilities are selected as the localization region $I(o)$.
-   - **Design Motivation**: Visual Logit Lens localizes objects more accurately than attention weights (experiments show a 12.5% AUROC improvement) and requires no external detectors.
+    - **Function**: Localizes the image regions most relevant to a given object without relying on external annotations or detectors.
+    - **Mechanism**: The hidden representation $h_l(v_i)$ of each visual token $v_i$ at decoder layer $l$ is projected into the vocabulary space via the unembedding matrix $W_U$, yielding the probability $\text{softmax}(\text{VLL}_l(v_i))[o]$ that each visual patch predicts object word $o$. The Top-K patches with the highest probabilities are selected as the localization region $I(o)$.
+    - **Design Motivation**: Visual Logit Lens localizes objects more accurately than attention weights (experiments show a 12.5% AUROC improvement) and requires no external detectors.
 
 2. **Local Similarity Score**
 
-   - **Function**: Verifies whether the object has genuine visual evidence in a specific region of the image.
-   - **Mechanism**: Computes the average cosine similarity between the object token embedding $h_{l'}(o)$ and the hidden representations $h_l(v_i)$ of the Top-K localized patches: $s_\text{local} = \frac{1}{K}\sum_{v_i \in I(o)} \text{sim}(h_l(v_i),\, h_{l'}(o))$. Regions corresponding to real objects yield high similarity, while hallucinated objects map to irrelevant regions with low similarity.
-   - **Design Motivation**: Using embedding similarity is more stable than using raw Logit Lens probability values, which can be overconfident (as observed with Internal Confidence). The embedding space provides a finer-grained signal.
+    - **Function**: Verifies whether the object has genuine visual evidence in a specific region of the image.
+    - **Mechanism**: Computes the average cosine similarity between the object token embedding $h_{l'}(o)$ and the hidden representations $h_l(v_i)$ of the Top-K localized patches: $s_\text{local} = \frac{1}{K}\sum_{v_i \in I(o)} \text{sim}(h_l(v_i),\, h_{l'}(o))$. Regions corresponding to real objects yield high similarity, while hallucinated objects map to irrelevant regions with low similarity.
+    - **Design Motivation**: Using embedding similarity is more stable than using raw Logit Lens probability values, which can be overconfident (as observed with Internal Confidence). The embedding space provides a finer-grained signal.
 
 3. **Global Similarity Score**
 
-   - **Function**: Assesses whether the object is semantically consistent with the overall scene.
-   - **Mechanism**: Computes the cosine similarity between the object token embedding and the hidden representation of the last token of the instruction prompt: $s_\text{global} = \text{sim}(h_l(v, t),\, h_{l'}(o))$. The last instruction token encodes the model's integrated understanding of both the image and textual context.
-   - **Design Motivation**: The last instruction token captures scene semantics more effectively than the "last image token" or the "average of all image tokens" (ablation shows an 8% AUROC improvement), providing a high-level judgment of whether an object is plausible in the scene.
+    - **Function**: Assesses whether the object is semantically consistent with the overall scene.
+    - **Mechanism**: Computes the cosine similarity between the object token embedding and the hidden representation of the last token of the instruction prompt: $s_\text{global} = \text{sim}(h_l(v, t),\, h_{l'}(o))$. The last instruction token encodes the model's integrated understanding of both the image and textual context.
+    - **Design Motivation**: The last instruction token captures scene semantics more effectively than the "last image token" or the "average of all image tokens" (ablation shows an 8% AUROC improvement), providing a high-level judgment of whether an object is plausible in the scene.
 
 ### Loss & Training
 GLSim is entirely training-free and directly exploits the internal representations of the LVLM. The final score is $\text{GLSim} = w \cdot s_\text{global} + (1-w) \cdot s_\text{local}$, where $w = 0.6$ consistently achieves the best performance across settings. Layer indices $l$ and $l'$ are selected via ablation (LLaVA: $l=32$, $l'=31$; Shikra: $l=30$, $l'=27$).

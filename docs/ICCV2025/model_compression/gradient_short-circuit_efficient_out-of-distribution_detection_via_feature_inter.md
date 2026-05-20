@@ -18,8 +18,8 @@ content_hash: bda007fbc9878394
 # Gradient Short-Circuit: Efficient Out-of-Distribution Detection via Feature Intervention
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.01417](https://arxiv.org/abs/2507.01417)
-**Code**: N/A
+**arXiv**: [2507.01417](https://arxiv.org/abs/2507.01417)  
+**Code**: N/A  
 **Area**: Model Compression / OOD Detection
 **Keywords**: Out-of-distribution detection, gradient analysis, feature intervention, inference stage, first-order approximation
 

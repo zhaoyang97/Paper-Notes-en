@@ -19,8 +19,8 @@ content_hash: 086717b4edf28c3a
 # TAB: Transformer Attention Bottlenecks enable User Intervention and Debugging in Vision-Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.18675](https://arxiv.org/abs/2412.18675)
-**Code**: [GitHub](https://github.com/visual-xai-for-vlm/TAB)
+**arXiv**: [2412.18675](https://arxiv.org/abs/2412.18675)  
+**Code**: [GitHub](https://github.com/visual-xai-for-vlm/TAB)  
 **Area**: Multimodal VLM / Interpretability / Attention Intervention
 **Keywords**: attention bottleneck, interpretability, change captioning, co-attention, user intervention, debugging
 

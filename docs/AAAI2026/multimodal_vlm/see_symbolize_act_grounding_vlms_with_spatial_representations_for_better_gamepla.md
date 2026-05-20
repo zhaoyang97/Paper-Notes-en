@@ -18,8 +18,8 @@ content_hash: 243eb9ee91aef528
 # See, Symbolize, Act: Grounding VLMs with Spatial Representations for Better Gameplay
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.11601](https://arxiv.org/abs/2603.11601)
-**Code**: None
+**arXiv**: [2603.11601](https://arxiv.org/abs/2603.11601)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Symbolic grounding, VLM game agents, spatial reasoning, object detection, Atari
 

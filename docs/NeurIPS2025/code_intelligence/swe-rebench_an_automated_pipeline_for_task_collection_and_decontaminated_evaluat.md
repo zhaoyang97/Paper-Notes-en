@@ -18,8 +18,8 @@ content_hash: 36756c30b2167974
 # SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20411](https://arxiv.org/abs/2505.20411)
-**Code**: [https://huggingface.co/datasets/nebius/SWE-rebench](https://huggingface.co/datasets/nebius/SWE-rebench)
+**arXiv**: [2505.20411](https://arxiv.org/abs/2505.20411)  
+**Code**: [https://huggingface.co/datasets/nebius/SWE-rebench](https://huggingface.co/datasets/nebius/SWE-rebench)  
 **Area**: Agent / Code Generation
 **Keywords**: SWE-bench, data contamination, automated pipeline, agent evaluation, software engineering
 

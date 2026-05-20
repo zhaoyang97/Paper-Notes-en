@@ -18,8 +18,8 @@ content_hash: 5fffa1e29faf7065
 # Taming Score-Based Denoisers in ADMM: A Convergent Plug-and-Play Framework
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10281](https://arxiv.org/abs/2603.10281)
-**Code**: Available (provided with supplementary material)
+**arXiv**: [2603.10281](https://arxiv.org/abs/2603.10281)  
+**Code**: Available (provided with supplementary material)  
 **Area**: Image Generation
 **Keywords**: Plug-and-Play, ADMM, Diffusion Models, Score-based Denoiser, Inverse Problem Solving
 

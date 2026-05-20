@@ -18,9 +18,9 @@ content_hash: 69a21161e152a93a
 # Transfer Learning for Benign Overfitting in High-Dimensional Linear Regression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.15337](https://arxiv.org/abs/2510.15337)
+**arXiv**: [2510.15337](https://arxiv.org/abs/2510.15337)  
 **Authors**: Yeichan Kim (Yonsei University), Ilmun Kim (KAIST), Seyoung Park (Yonsei University)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Others
 **Keywords**: transfer learning, benign overfitting, high-dimensional linear regression, minimum-norm interpolation, covariate shift, model shift
 

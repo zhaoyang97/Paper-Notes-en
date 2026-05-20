@@ -18,8 +18,8 @@ content_hash: 77f0f62ef0c3ea7a
 # Learning Sparse Approximate Inverse Preconditioners for Conjugate Gradient Solvers on GPUs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.27517](https://arxiv.org/abs/2510.27517)
-**Code**: None
+**arXiv**: [2510.27517](https://arxiv.org/abs/2510.27517)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: preconditioner, conjugate gradient method, graph neural network, GPU acceleration, sparse approximate inverse
 

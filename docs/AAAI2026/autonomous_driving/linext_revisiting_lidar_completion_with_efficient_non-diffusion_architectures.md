@@ -18,8 +18,8 @@ content_hash: 5dd9471a1011bfbb
 # LiNeXt: Revisiting LiDAR Completion with Efficient Non-Diffusion Architectures
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10209](https://arxiv.org/abs/2511.10209)
-**Code**: N/A
+**arXiv**: [2511.10209](https://arxiv.org/abs/2511.10209)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: LiDAR scene completion, point cloud completion, non-diffusion model, sparse convolution, real-time inference
 

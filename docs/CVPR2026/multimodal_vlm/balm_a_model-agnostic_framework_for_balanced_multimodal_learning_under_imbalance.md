@@ -18,8 +18,8 @@ content_hash: a368e6715941528f
 # BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19718](https://arxiv.org/abs/2603.19718)
-**Code**: [https://github.com/np4s/BALM_CVPR2026.git](https://github.com/np4s/BALM_CVPR2026.git)
+**arXiv**: [2603.19718](https://arxiv.org/abs/2603.19718)  
+**Code**: [https://github.com/np4s/BALM_CVPR2026.git](https://github.com/np4s/BALM_CVPR2026.git)  
 **Area**: Multimodal Learning / VLM
 **Keywords**: Multimodal Learning, Missing Modality, Imbalanced Missing Rate, Gradient Rebalancing, Feature Calibration
 

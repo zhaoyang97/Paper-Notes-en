@@ -18,8 +18,8 @@ content_hash: c5cedf8f192eb967
 # Is Finer Better? The Limits of Microscaling Formats in Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19026](https://arxiv.org/abs/2601.19026)
-**Code**: None
+**arXiv**: [2601.19026](https://arxiv.org/abs/2601.19026)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: microscaling quantization, FP4, quantization anomaly, dynamic range, LLM quantization
 

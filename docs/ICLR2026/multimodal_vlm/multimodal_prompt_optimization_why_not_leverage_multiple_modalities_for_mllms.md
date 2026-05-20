@@ -18,8 +18,8 @@ content_hash: e9be98fb003c8eeb
 # Multimodal Prompt Optimization: Why Not Leverage Multiple Modalities for MLLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.09201](https://arxiv.org/abs/2510.09201)
-**Code**: [GitHub](https://github.com/Dozi01/MPO)
+**arXiv**: [2510.09201](https://arxiv.org/abs/2510.09201)  
+**Code**: [GitHub](https://github.com/Dozi01/MPO)  
 **Area**: Multimodal VLM / Prompt Optimization
 **Keywords**: Multimodal prompts, automatic prompt optimization, Bayesian selection, MLLM, cross-modal alignment
 

@@ -18,8 +18,8 @@ content_hash: 815cd16dd92aaeb1
 # ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.16403](https://arxiv.org/abs/2507.16403)
-**Code**: [ReasonVQA](https://duong-tr.github.io/ReasonVQA)
+**arXiv**: [2507.16403](https://arxiv.org/abs/2507.16403)  
+**Code**: [ReasonVQA](https://duong-tr.github.io/ReasonVQA)  
 **Area**: Multimodal VLM
 **Keywords**: VQA, Multi-hop Reasoning, Knowledge Graph, Wikidata, Benchmark Dataset
 

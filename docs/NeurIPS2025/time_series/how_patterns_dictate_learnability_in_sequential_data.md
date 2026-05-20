@@ -18,8 +18,8 @@ content_hash: 892b5d642b3475a8
 # How Patterns Dictate Learnability in Sequential Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10744](https://arxiv.org/abs/2510.10744)
-**Code**: [https://github.com/EkMeasurable/Learnability_Ipred](https://github.com/EkMeasurable/Learnability_Ipred)
+**arXiv**: [2510.10744](https://arxiv.org/abs/2510.10744)  
+**Code**: [https://github.com/EkMeasurable/Learnability_Ipred](https://github.com/EkMeasurable/Learnability_Ipred)  
 **Area**: Time Series
 **Keywords**: Predictive Information, Mutual Information, Learnability, Sequential Data, Information Theory
 

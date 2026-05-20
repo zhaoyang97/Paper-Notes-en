@@ -18,8 +18,8 @@ content_hash: 305185c71b114d86
 # LoD-Loc v3: Generalized Aerial Localization in Dense Cities using Instance Silhouette Alignment
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19609](https://arxiv.org/abs/2603.19609)
-**Code**: [Project Page](https://nudt-sawlab.github.io/LoD-Locv3/)
+**arXiv**: [2603.19609](https://arxiv.org/abs/2603.19609)  
+**Code**: [Project Page](https://nudt-sawlab.github.io/LoD-Locv3/)  
 **Area**: Segmentation / UAV Localization
 **Keywords**: UAV localization, LoD city models, instance segmentation, synthetic data, silhouette alignment
 

@@ -18,8 +18,8 @@ content_hash: 290ebc6292650437
 # Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.01480](https://arxiv.org/abs/2510.01480)
-**Code**: Unavailable (to be released after camera-ready)
+**arXiv**: [2510.01480](https://arxiv.org/abs/2510.01480)  
+**Code**: Unavailable (to be released after camera-ready)  
 **Area**: Medical Imaging
 **Keywords**: Pharmacophore guidance, molecular generation, reinforcement learning, drug design, structural diversity
 
@@ -53,14 +53,14 @@ The framework centers on incorporating dual objectives into the reward function 
 1. **Dual representation encoding**: CATS descriptors are continuous-valued vectors encoding the spatial arrangement of pharmacophoric features (e.g., topological distance distributions between hydrogen bond donor–acceptor pairs), suited for capturing functional-level similarity. MACCS keys are binary fingerprints that directly encode the presence or absence of substructural fragments, suited for measuring scaffold-level similarity. MAP4 combines atom-pair relationships with circular substructures, offering richer expressiveness.
 
 2. **Dual similarity metrics**: The most appropriate metric is selected for each representation:
-   - Pharmacophore similarity (CATS): cosine similarity (measuring directional alignment) and Euclidean distance (capturing both magnitude and direction).
-   - Structural similarity (MACCS/MAP4): Tanimoto coefficient (canonical binary fingerprint metric) and MAP4 score.
+    - Pharmacophore similarity (CATS): cosine similarity (measuring directional alignment) and Euclidean distance (capturing both magnitude and direction).
+    - Structural similarity (MACCS/MAP4): Tanimoto coefficient (canonical binary fingerprint metric) and MAP4 score.
 
 3. **Four reward function configurations**: The following metric combinations are systematically evaluated:
-   - Setup 1: QED + Tanimoto + Euclidean distance
-   - Setup 2: QED + Tanimoto + Cosine similarity
-   - Setup 3: QED + MAP4 + Euclidean distance
-   - Setup 4: QED + MAP4 + Cosine similarity
+    - Setup 1: QED + Tanimoto + Euclidean distance
+    - Setup 2: QED + Tanimoto + Cosine similarity
+    - Setup 3: QED + MAP4 + Euclidean distance
+    - Setup 4: QED + MAP4 + Cosine similarity
 
    The reward function is explicitly designed as a dual-objective optimization that **maximizes pharmacophore similarity while minimizing structural similarity**.
 

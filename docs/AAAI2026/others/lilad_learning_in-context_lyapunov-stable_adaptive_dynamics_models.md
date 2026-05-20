@@ -17,8 +17,8 @@ content_hash: 69ac00b2afb3aa35
 # LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.21846](https://arxiv.org/abs/2511.21846)
-**Code**: [https://github.com/amitjena1992/LILAD](https://github.com/amitjena1992/LILAD)
+**arXiv**: [2511.21846](https://arxiv.org/abs/2511.21846)  
+**Code**: [https://github.com/amitjena1992/LILAD](https://github.com/amitjena1992/LILAD)  
 **Area**: Other
 **Keywords**: Lyapunov stability, in-context learning, adaptive system identification, non-stationary dynamics, GPT-2
 

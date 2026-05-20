@@ -18,8 +18,8 @@ content_hash: 6d4a0249ad2cc6bc
 # Breaking the Modality Barrier: Generative Modeling for Accurate Molecule Retrieval from Mass Spectra
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06259](https://arxiv.org/abs/2511.06259)
-**Code**: None
+**arXiv**: [2511.06259](https://arxiv.org/abs/2511.06259)  
+**Code**: None  
 **Area**: Cross-modal Retrieval / Generative Language Models
 **Keywords**: Mass spectrometry, molecule retrieval, cross-modal alignment, generative retrieval, contrastive learning
 

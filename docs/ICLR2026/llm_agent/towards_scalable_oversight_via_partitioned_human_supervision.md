@@ -18,8 +18,8 @@ content_hash: bb8b7dcaa0049471
 # Towards Scalable Oversight via Partitioned Human Supervision
 
 **Conference**: ICLR2026
-**arXiv**: [2510.22500](https://arxiv.org/abs/2510.22500)
-**Code**: Available
+**arXiv**: [2510.22500](https://arxiv.org/abs/2510.22500)  
+**Code**: Available  
 **Area**: LLM Agent
 **Keywords**: Scalable oversight, complementary labels, partitioned human supervision, unbiased estimation, agent training
 

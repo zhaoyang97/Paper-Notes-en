@@ -18,8 +18,8 @@ content_hash: 3f9618827a48bb6a
 # CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.19142](https://arxiv.org/abs/2412.19142)
-**Code**: None
+**arXiv**: [2412.19142](https://arxiv.org/abs/2412.19142)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, multimodal representation learning, CLIP, contrastive learning, zero-shot classification
 

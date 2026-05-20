@@ -18,8 +18,8 @@ content_hash: 11860b061d3e15cf
 # H-GAR: A Hierarchical Interaction Framework via Goal-Driven Observation-Action Refinement for Robotic Manipulation
 
 **Conference**: AAAI2026
-**arXiv**: [2511.17079](https://arxiv.org/abs/2511.17079)
-**Code**: To be confirmed
+**arXiv**: [2511.17079](https://arxiv.org/abs/2511.17079)  
+**Code**: To be confirmed  
 **Area**: Robotics
 **Keywords**: robotic manipulation, goal-conditioned planning, observation-action interaction, diffusion policy, coarse-to-fine refinement
 

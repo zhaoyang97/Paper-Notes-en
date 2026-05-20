@@ -17,8 +17,8 @@ content_hash: 376e0f9e71f5e577
 # Recover Biological Structure from Sparse-View Diffraction Images with Neural Volumetric Prior
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.16391](https://arxiv.org/abs/2510.16391)
-**Code**: None
+**arXiv**: [2510.16391](https://arxiv.org/abs/2510.16391)  
+**Code**: None  
 **Area**: Other / Computational Imaging
 **Keywords**: sparse-view reconstruction, neural volumetric prior, diffractive optics, refractive index reconstruction, fluorescence diffraction tomography
 
@@ -48,24 +48,24 @@ The NVP pipeline proceeds as follows: (1) a randomly initialized 3D feature grid
 
 1. **Neural Volumetric Prior**:
 
-   - **Explicit grid** $W_{xyz}(x,y,z) \in \mathbb{R}^F$: stores an $F$-dimensional learnable feature vector at each voxel, providing direct spatial structural priors and sparsity.
-   - **Implicit MLP** $F_{\text{nvp}}$: a 3-layer fully connected network that maps feature vectors to scalar refractive index values, capturing implicit spatial correlations encoded in the explicit grid.
-   - **Hybrid representation**: $\hat{n}(x,y,z) = F_{\text{nvp}}(W_{xyz}(x,y,z))$
-   - **Adaptive resolution**: grid resolution is dynamically adjusted according to the spatial variation distribution of the refractive index.
-   - Comparison with other representations: purely explicit representations (Plenoxels) lack spatial correlation encoding and require more views; purely implicit representations (NeRF-style MLPs) are computationally inefficient; triplane low-rank decomposition introduces grid artifacts.
+    - **Explicit grid** $W_{xyz}(x,y,z) \in \mathbb{R}^F$: stores an $F$-dimensional learnable feature vector at each voxel, providing direct spatial structural priors and sparsity.
+    - **Implicit MLP** $F_{\text{nvp}}$: a 3-layer fully connected network that maps feature vectors to scalar refractive index values, capturing implicit spatial correlations encoded in the explicit grid.
+    - **Hybrid representation**: $\hat{n}(x,y,z) = F_{\text{nvp}}(W_{xyz}(x,y,z))$
+    - **Adaptive resolution**: grid resolution is dynamically adjusted according to the spatial variation distribution of the refractive index.
+    - Comparison with other representations: purely explicit representations (Plenoxels) lack spatial correlation encoding and require more views; purely implicit representations (NeRF-style MLPs) are computationally inefficient; triplane low-rank decomposition introduces grid artifacts.
 
 2. **Diffraction-Based Physical Rendering Equation**:
 
-   - The imaging volume is modeled as $N_z$ thin slabs, with the optical field $\hat{E}_{k,i}(\mathbf{r})$ propagating between successive slabs:
+    - The imaging volume is modeled as $N_z$ thin slabs, with the optical field $\hat{E}_{k,i}(\mathbf{r})$ propagating between successive slabs:
      $$\hat{E}_{k,i}(\mathbf{r}) = \mathcal{P}_{\Delta z}\{t_k(\mathbf{r}) \cdot \hat{E}_{k-1,i}(\mathbf{r})\}$$
      where $\mathcal{P}_{\Delta z}$ is the propagation operator and $t_k(\mathbf{r})$ is the transmission function of the $k$-th slab (related to the refractive index).
-   - The intensity image captured by the camera is: $\hat{I}_i(\mathbf{r}) = |\hat{E}_{N_z,i}(\mathbf{r})|^2$
-   - Efficient rendering is achieved via GPU-parallel computation with precomputed propagation kernels.
+    - The intensity image captured by the camera is: $\hat{I}_i(\mathbf{r}) = |\hat{E}_{N_z,i}(\mathbf{r})|^2$
+    - Efficient rendering is achieved via GPU-parallel computation with precomputed propagation kernels.
 
 3. **Coherence Alignment and Self-Calibration**:
 
-   - **Coherence mask**: addresses the mismatch between partially coherent/incoherent fluorescence in experiments and the coherent light assumed by the model.
-   - **Viewpoint self-calibration**: fluorescent source positions are estimated from fluorescence images via Gaussian fitting and jointly optimized with MLP parameters.
+    - **Coherence mask**: addresses the mismatch between partially coherent/incoherent fluorescence in experiments and the coherent light assumed by the model.
+    - **Viewpoint self-calibration**: fluorescent source positions are estimated from fluorescence images via Gaussian fitting and jointly optimized with MLP parameters.
 
 ### Loss & Training
 $$\mathcal{L} = \mathcal{L}_{\text{img}} + \tau \mathcal{R}_{\text{ri}}$$

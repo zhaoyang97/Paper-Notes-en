@@ -18,8 +18,8 @@ content_hash: cf1b19f1c11a23f6
 # LongLLaDA: Unlocking Long Context Capabilities in Diffusion LLMs
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.14429](https://arxiv.org/abs/2506.14429)
-**Code**: [https://github.com/OpenMOSS/LongLLaDA](https://github.com/OpenMOSS/LongLLaDA)
+**arXiv**: [2506.14429](https://arxiv.org/abs/2506.14429)  
+**Code**: [https://github.com/OpenMOSS/LongLLaDA](https://github.com/OpenMOSS/LongLLaDA)  
 **Area**: Image Generation
 **Keywords**: Diffusion Language Models, Long-Context Extension, RoPE, NTK Extrapolation, LLaDA
 

@@ -65,8 +65,8 @@ The paper proposes three classes of mechanisms:
 
 **Properties**:
 - For parameter $\alpha \in [1, 2]$, $\alpha$-BIM achieves:
-  - $\alpha$-consistency: when the prediction is accurate, the envy ratio does not exceed $\alpha$
-  - $\frac{\alpha}{\alpha-1}$-robustness: when the prediction is entirely wrong, the envy ratio does not exceed $\frac{\alpha}{\alpha-1}$
+    - $\alpha$-consistency: when the prediction is accurate, the envy ratio does not exceed $\alpha$
+    - $\frac{\alpha}{\alpha-1}$-robustness: when the prediction is entirely wrong, the envy ratio does not exceed $\frac{\alpha}{\alpha-1}$
 - **Optimality**: the consistency–robustness tradeoff of $\alpha$-BIM is proven to be optimal among all deterministic mechanisms
 
 **Tradeoff Analysis**:

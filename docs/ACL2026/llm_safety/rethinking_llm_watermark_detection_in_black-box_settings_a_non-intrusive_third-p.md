@@ -18,8 +18,8 @@ content_hash: 0165456f0247e5a0
 # Rethinking LLM Watermark Detection in Black-Box Settings: A Non-Intrusive Third-Party Framework
 
 **Conference**: ACL 2026
-**arXiv**: [2603.14968](https://arxiv.org/abs/2603.14968)
-**Code**: None
+**arXiv**: [2603.14968](https://arxiv.org/abs/2603.14968)  
+**Code**: None  
 **Area**: AI Security / Watermark Detection
 **Keywords**: LLM watermarking, black-box detection, third-party auditing, hypothesis testing, proxy model
 

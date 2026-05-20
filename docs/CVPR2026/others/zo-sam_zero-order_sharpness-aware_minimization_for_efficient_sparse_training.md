@@ -17,8 +17,8 @@ content_hash: 8c2224d0db423094
 # ZO-SAM: Zero-Order Sharpness-Aware Minimization for Efficient Sparse Training
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13115](https://arxiv.org/abs/2603.13115)
-**Code**: None
+**arXiv**: [2603.13115](https://arxiv.org/abs/2603.13115)  
+**Code**: None  
 **Area**: Other
 **Keywords**: sparse training, SAM, zeroth-order optimization, gradient variance, flat minima
 

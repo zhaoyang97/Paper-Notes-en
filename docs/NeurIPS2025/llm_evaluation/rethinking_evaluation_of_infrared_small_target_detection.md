@@ -18,8 +18,8 @@ content_hash: 13b629629abe6a4f
 # Rethinking Evaluation of Infrared Small Target Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16888](https://arxiv.org/abs/2509.16888)
-**Code**: [GitHub](https://github.com/lartpang/PyIRSTDMetrics)
+**arXiv**: [2509.16888](https://arxiv.org/abs/2509.16888)  
+**Code**: [GitHub](https://github.com/lartpang/PyIRSTDMetrics)  
 **Area**: Infrared Small Target Detection / Evaluation Methodology
 **Keywords**: Infrared small target detection, evaluation metrics, cross-dataset evaluation, hierarchical IoU, error analysis
 

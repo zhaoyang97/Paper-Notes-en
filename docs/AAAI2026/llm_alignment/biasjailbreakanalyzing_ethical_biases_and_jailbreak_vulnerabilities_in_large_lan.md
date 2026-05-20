@@ -18,8 +18,8 @@ content_hash: 17656bf80052dbc4
 # BiasJailbreak: Analyzing Ethical Biases and Jailbreak Vulnerabilities in Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2410.13334](https://arxiv.org/abs/2410.13334)
-**Code**: [GitHub](https://github.com/Isaac-theori/BiasJailbreak)
+**arXiv**: [2410.13334](https://arxiv.org/abs/2410.13334)  
+**Code**: [GitHub](https://github.com/Isaac-theori/BiasJailbreak)  
 **Area**: LLM Alignment / AI Safety
 **Keywords**: Jailbreak Attack, Ethical Bias, Safety Alignment, Bias Exploitation, Defense Mechanism
 

@@ -18,8 +18,8 @@ content_hash: 91ca5ac5c9c123fb
 # Prioritizing Perception-Guided Self-Supervision: A New Paradigm for Causal Modeling in End-to-End Autonomous Driving
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.08214](https://arxiv.org/abs/2511.08214)
-**Code**: Available
+**arXiv**: [2511.08214](https://arxiv.org/abs/2511.08214)  
+**Code**: Available  
 **Area**: Autonomous Driving / End-to-End Decision Making
 **Keywords**: Causal Confusion, Self-Supervised Learning, End-to-End Driving, Perception-Guided, Closed-Loop Evaluation
 

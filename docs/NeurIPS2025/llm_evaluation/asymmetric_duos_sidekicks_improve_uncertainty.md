@@ -18,8 +18,8 @@ content_hash: fe149c3f902d6ec0
 # Asymmetric Duos: Sidekicks Improve Uncertainty
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18636](https://arxiv.org/abs/2505.18636)
-**Code**: [https://github.com/timgzhou/asymmetric-duos](https://github.com/timgzhou/asymmetric-duos)
+**arXiv**: [2505.18636](https://arxiv.org/abs/2505.18636)  
+**Code**: [https://github.com/timgzhou/asymmetric-duos](https://github.com/timgzhou/asymmetric-duos)  
 **Area**: Uncertainty Estimation
 **Keywords**: Uncertainty Quantification, Deep Ensembles, Asymmetric Pairing, Temperature Scaling, FLOPs Efficiency
 

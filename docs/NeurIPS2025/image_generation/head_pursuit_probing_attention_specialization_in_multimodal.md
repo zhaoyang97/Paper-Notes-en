@@ -18,8 +18,8 @@ content_hash: fcc156bad6aa7515
 # Head Pursuit: Probing Attention Specialization in Multimodal Transformers
 
 **Conference**: NeurIPS2025
-**arXiv**: [2510.21518](https://arxiv.org/abs/2510.21518)
-**Code**: [GitHub](https://github.com/lorenzobasile/HeadPursuit)
+**arXiv**: [2510.21518](https://arxiv.org/abs/2510.21518)  
+**Code**: [GitHub](https://github.com/lorenzobasile/HeadPursuit)  
 **Area**: Image Generation
 **Keywords**: [attention head specialization, Matching Pursuit, Logit Lens, model editing, vision-language model]
 

@@ -17,8 +17,8 @@ content_hash: 8a4cb9434ff16690
 # Normalization in Attention Dynamics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22026](https://arxiv.org/abs/2510.22026)
-**Code**: None
+**arXiv**: [2510.22026](https://arxiv.org/abs/2510.22026)  
+**Code**: None  
 **Area**: Deep Learning Theory, Transformer Architecture
 **Keywords**: Layer Normalization, Attention Dynamics, Representation Collapse, Interacting Particle Systems, Velocity Modulation
 

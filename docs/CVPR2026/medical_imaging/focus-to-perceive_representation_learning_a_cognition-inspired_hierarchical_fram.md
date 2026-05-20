@@ -18,8 +18,8 @@ content_hash: 191d5eda3638db68
 # Focus-to-Perceive Representation Learning: A Cognition-Inspired Hierarchical Framework for Endoscopic Video Analysis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25778](https://arxiv.org/abs/2603.25778)
-**Code**: [Available](https://github.com/MLMIP/FPRL)
+**arXiv**: [2603.25778](https://arxiv.org/abs/2603.25778)  
+**Code**: [Available](https://github.com/MLMIP/FPRL)  
 **Area**: Medical Imaging / Endoscopic Video Analysis
 **Keywords**: Self-supervised learning, endoscopic video, hierarchical semantic modeling, masked reconstruction, Mamba
 

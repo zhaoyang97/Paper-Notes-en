@@ -18,8 +18,8 @@ content_hash: ba5cee4257936b98
 # AstroLoc: Robust Space to Ground Image Localizer
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.07003](https://arxiv.org/abs/2502.07003)
-**Code**: None (dataset available at [https://eol.jsc.nasa.gov/](https://eol.jsc.nasa.gov/))
+**arXiv**: [2502.07003](https://arxiv.org/abs/2502.07003)  
+**Code**: None (dataset available at [https://eol.jsc.nasa.gov/](https://eol.jsc.nasa.gov/))  
 **Area**: Remote Sensing / Image Retrieval / Geo-Localization
 **Keywords**: astronaut photo localization, cross-domain image retrieval, contrastive learning, unsupervised mining, space-to-ground observation
 

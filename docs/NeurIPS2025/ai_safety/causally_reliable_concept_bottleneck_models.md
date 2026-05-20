@@ -18,8 +18,8 @@ content_hash: 3cf10cd4e9e79046
 # Causally Reliable Concept Bottleneck Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.04363](https://arxiv.org/abs/2503.04363)
-**Code**: Supplementary material included at submission
+**arXiv**: [2503.04363](https://arxiv.org/abs/2503.04363)  
+**Code**: Supplementary material included at submission  
 **Area**: AI Safety
 **Keywords**: concept bottleneck models, causal reasoning, structural causal model, interpretability, fairness
 

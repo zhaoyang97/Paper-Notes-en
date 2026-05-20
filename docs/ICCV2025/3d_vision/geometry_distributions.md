@@ -18,8 +18,8 @@ content_hash: 789727c8c800aefd
 # Geometry Distributions
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.16076](https://arxiv.org/abs/2411.16076)
-**Code**: Not released
+**arXiv**: [2411.16076](https://arxiv.org/abs/2411.16076)  
+**Code**: Not released  
 **Area**: 3D Vision
 **Keywords**: Geometry representation, diffusion models, surface point distributions, neural compression, non-watertight meshes
 

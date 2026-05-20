@@ -18,8 +18,8 @@ content_hash: 80c1656d19af6807
 # DuetGraph: Coarse-to-Fine Knowledge Graph Reasoning with Dual-Pathway Global-Local Fusion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.11229](https://arxiv.org/abs/2507.11229)
-**Code**: [https://github.com/USTC-DataDarknessLab/DuetGraph](https://github.com/USTC-DataDarknessLab/DuetGraph)
+**arXiv**: [2507.11229](https://arxiv.org/abs/2507.11229)  
+**Code**: [https://github.com/USTC-DataDarknessLab/DuetGraph](https://github.com/USTC-DataDarknessLab/DuetGraph)  
 **Area**: Graph Learning
 **Keywords**: Knowledge Graph Reasoning, Dual-Pathway Fusion, Coarse-to-Fine Optimization, Over-Smoothing, Graph Neural Networks
 

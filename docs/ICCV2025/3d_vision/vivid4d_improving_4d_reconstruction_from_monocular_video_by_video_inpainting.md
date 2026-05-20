@@ -18,8 +18,8 @@ content_hash: be91632be8a21add
 # Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.11092](https://arxiv.org/abs/2504.11092)
-**Code**: [https://xdimlab.github.io/Vivid4D/](https://xdimlab.github.io/Vivid4D/)
+**arXiv**: [2504.11092](https://arxiv.org/abs/2504.11092)  
+**Code**: [https://xdimlab.github.io/Vivid4D/](https://xdimlab.github.io/Vivid4D/)  
 **Area**: 3D Vision
 **Keywords**: 4D reconstruction, monocular video, video inpainting, diffusion models, view augmentation
 

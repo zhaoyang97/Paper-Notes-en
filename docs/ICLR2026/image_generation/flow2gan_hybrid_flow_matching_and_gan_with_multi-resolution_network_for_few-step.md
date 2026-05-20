@@ -18,8 +18,8 @@ content_hash: 2808901cd675a3a3
 # Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.23278](https://arxiv.org/abs/2512.23278)
-**Code**: [GitHub](https://github.com/k2-fsa/Flow2GAN)
+**arXiv**: [2512.23278](https://arxiv.org/abs/2512.23278)  
+**Code**: [GitHub](https://github.com/k2-fsa/Flow2GAN)  
 **Area**: Diffusion Models / Audio Generation
 **Keywords**: Flow Matching, GAN, Audio Generation, Multi-Resolution, Few-step Inference
 

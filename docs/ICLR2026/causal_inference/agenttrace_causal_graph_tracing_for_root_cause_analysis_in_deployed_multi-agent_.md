@@ -18,8 +18,8 @@ content_hash: 50e36562ee2d25fa
 # AgentTrace: Causal Graph Tracing for Root Cause Analysis in Deployed Multi-Agent Systems
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.14688](https://arxiv.org/abs/2603.14688)
-**Code**: [https://github.com/zwang000/AgentTrace](https://github.com/zwang000/AgentTrace)
+**arXiv**: [2603.14688](https://arxiv.org/abs/2603.14688)  
+**Code**: [https://github.com/zwang000/AgentTrace](https://github.com/zwang000/AgentTrace)  
 **Area**: Causal Inference
 **Keywords**: multi-agent debugging, causal graph tracing, root cause analysis, execution log analysis, positional features
 

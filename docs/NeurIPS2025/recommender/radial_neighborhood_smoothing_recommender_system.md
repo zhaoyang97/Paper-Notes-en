@@ -18,8 +18,8 @@ content_hash: 900439949fa69d6a
 # Radial Neighborhood Smoothing Recommender System
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.09952](https://arxiv.org/abs/2507.09952)
-**Code**: To be confirmed
+**arXiv**: [2507.09952](https://arxiv.org/abs/2507.09952)  
+**Code**: To be confirmed  
 **Area**: Recommender Systems / Matrix Completion
 **Keywords**: Recommender System, Collaborative Filtering, SVD, Kernel Smoothing, Cold-start
 

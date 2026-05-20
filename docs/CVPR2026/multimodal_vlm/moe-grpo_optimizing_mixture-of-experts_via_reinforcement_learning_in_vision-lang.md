@@ -18,8 +18,8 @@ content_hash: c82023bbf9891701
 # MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24984](https://arxiv.org/abs/2603.24984)
-**Code**: None
+**arXiv**: [2603.24984](https://arxiv.org/abs/2603.24984)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Mixture-of-Experts, Reinforcement Learning, Routing Strategy Optimization, Vision-Language Models, GRPO
 

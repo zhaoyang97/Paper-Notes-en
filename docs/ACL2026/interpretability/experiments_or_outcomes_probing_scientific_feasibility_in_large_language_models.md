@@ -18,8 +18,8 @@ content_hash: 6d6b7912bc37ab18
 # Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18786](https://arxiv.org/abs/2604.18786)
-**Code**: [https://github.com/mohammadi-ali/scify](https://github.com/mohammadi-ali/scify)
+**arXiv**: [2604.18786](https://arxiv.org/abs/2604.18786)  
+**Code**: [https://github.com/mohammadi-ali/scify](https://github.com/mohammadi-ali/scify)  
 **Area**: Interpretability
 **Keywords**: scientific feasibility assessment, controlled knowledge framework, evidence robustness, experiments vs. outcomes, LLM reasoning
 

@@ -18,8 +18,8 @@ content_hash: be4ea70688356cfb
 # GaitSnippet: Gait Recognition Beyond Unordered Sets and Ordered Sequences
 
 **Conference**: ICLR2026
-**arXiv**: [2508.07782](https://arxiv.org/abs/2508.07782)
-**Code**: To be confirmed
+**arXiv**: [2508.07782](https://arxiv.org/abs/2508.07782)  
+**Code**: To be confirmed  
 **Area**: Human Understanding
 **Keywords**: gait recognition, snippet paradigm, temporal modeling, silhouette, 2D convolution
 

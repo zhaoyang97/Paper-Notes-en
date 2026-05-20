@@ -17,8 +17,8 @@ content_hash: f1d304d4bd2c0aea
 # Multigranular Evaluation for Brain Visual Decoding
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.07993](https://arxiv.org/abs/2507.07993)
-**Code**: [GitHub](https://github.com/weihaox/BASIC)
+**arXiv**: [2507.07993](https://arxiv.org/abs/2507.07993)  
+**Code**: [GitHub](https://github.com/weihaox/BASIC)  
 **Area**: Image Segmentation
 **Keywords**: brain decoding, evaluation metric, segmentation, semantic matching, MLLM
 

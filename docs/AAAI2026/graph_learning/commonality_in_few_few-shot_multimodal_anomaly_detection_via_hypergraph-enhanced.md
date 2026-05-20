@@ -18,8 +18,8 @@ content_hash: f75de15bc2642054
 # Commonality in Few: Few-Shot Multimodal Anomaly Detection via Hypergraph-Enhanced Memory
 
 **Conference**: AAAI2026
-**arXiv**: [2511.05966](https://arxiv.org/abs/2511.05966)
-**Code**: [Sunny5250/CIF](https://github.com/Sunny5250/CIF)
+**arXiv**: [2511.05966](https://arxiv.org/abs/2511.05966)  
+**Code**: [Sunny5250/CIF](https://github.com/Sunny5250/CIF)  
 **Area**: Graph Learning
 **Keywords**: hypergraph learning, few-shot anomaly detection, multimodal industrial anomaly detection, memory bank, training-free message passing
 

@@ -73,10 +73,10 @@ This work comprises two components: (1) **GUIOdyssey dataset**—a cross-app nav
 
 3. **Multi-dimensional Evaluation Design**: The dataset is split into four settings to comprehensively assess generalization:
 
-   - **Train-Random & Test-Random** (in-domain)
-   - **Train-App & Test-App** (unseen apps)
-   - **Train-Task & Test-Task** (unseen task types)
-   - **Train-Device & Test-Device** (unseen device types)
+    - **Train-Random & Test-Random** (in-domain)
+    - **Train-App & Test-App** (unseen apps)
+    - **Train-Task & Test-Task** (unseen task types)
+    - **Train-Device & Test-Device** (unseen device types)
 
 ### Loss & Training
 

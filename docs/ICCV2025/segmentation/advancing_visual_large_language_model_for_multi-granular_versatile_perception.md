@@ -18,8 +18,8 @@ content_hash: ec643c0550a8c7a5
 # Advancing Visual Large Language Model for Multi-granular Versatile Perception
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.16213](https://arxiv.org/abs/2507.16213)
-**Code**: None (the paper states "The code will be available here" but no link is provided)
+**arXiv**: [2507.16213](https://arxiv.org/abs/2507.16213)  
+**Code**: None (the paper states "The code will be available here" but no link is provided)  
 **Area**: Segmentation / Object Detection
 **Keywords**: VLLM, multi-granular perception, unified framework, CoT data curation, panoptic segmentation
 

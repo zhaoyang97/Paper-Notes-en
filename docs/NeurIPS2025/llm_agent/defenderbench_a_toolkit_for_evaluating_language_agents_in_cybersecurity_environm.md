@@ -17,8 +17,8 @@ content_hash: de7badf1b25fbfa8
 # DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.00739](https://arxiv.org/abs/2506.00739)
-**Code**: [https://github.com/microsoft/DefenderBench](https://github.com/microsoft/DefenderBench)
+**arXiv**: [2506.00739](https://arxiv.org/abs/2506.00739)  
+**Code**: [https://github.com/microsoft/DefenderBench](https://github.com/microsoft/DefenderBench)  
 **Area**: LLM Agent
 **Keywords**: Cybersecurity, LLM Agent, Benchmark, Vulnerability Detection, Network Intrusion Simulation
 

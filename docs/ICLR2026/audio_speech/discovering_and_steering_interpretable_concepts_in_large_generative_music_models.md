@@ -18,8 +18,8 @@ content_hash: f12835d20db56574
 # Discovering and Steering Interpretable Concepts in Large Generative Music Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.18186](https://arxiv.org/abs/2505.18186)
-**Code**: [musicdiscovery.media.mit.edu](https://musicdiscovery.media.mit.edu)
+**arXiv**: [2505.18186](https://arxiv.org/abs/2505.18186)  
+**Code**: [musicdiscovery.media.mit.edu](https://musicdiscovery.media.mit.edu)  
 **Area**: Audio & Speech
 **Keywords**: Sparse Autoencoder, Music Generation, Interpretability, MusicGen, Feature Steering
 

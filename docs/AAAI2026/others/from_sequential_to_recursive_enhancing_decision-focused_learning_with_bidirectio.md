@@ -17,8 +17,8 @@ content_hash: d2efa7d33fd2ad50
 # From Sequential to Recursive: Enhancing Decision-Focused Learning with Bidirectional Feedback
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08035](https://arxiv.org/abs/2511.08035)
-**Code**: None
+**arXiv**: [2511.08035](https://arxiv.org/abs/2511.08035)  
+**Code**: None  
 **Area**: Others
 **Keywords**: Decision-Focused Learning, Predict-then-Optimize, Recursive Learning, Implicit Differentiation, Bidirectional Feedback
 

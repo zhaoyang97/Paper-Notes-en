@@ -18,8 +18,8 @@ content_hash: cea79300d780c643
 # SVG-Head: Hybrid Surface-Volumetric Gaussians for High-Fidelity Head Reconstruction and Real-Time Editing
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.09597](https://arxiv.org/abs/2508.09597)
-**Code**: [Project Page](https://heyy-sun.github.io/SVG-Head/)
+**arXiv**: [2508.09597](https://arxiv.org/abs/2508.09597)  
+**Code**: [Project Page](https://heyy-sun.github.io/SVG-Head/)  
 **Area**: 3D Vision
 **Keywords**: head reconstruction, 3D Gaussian, texture editing, FLAME mesh, surface-volumetric hybrid
 

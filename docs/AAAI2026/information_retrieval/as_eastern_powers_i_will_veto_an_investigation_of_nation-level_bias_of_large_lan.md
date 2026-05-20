@@ -18,8 +18,8 @@ content_hash: 0fc5906be54f2001
 # "As Eastern Powers, I Will Veto." : An Investigation of Nation-Level Bias of Large Language Models in International Relations
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10695](https://arxiv.org/abs/2511.10695)
-**Code**: [GitHub](https://github.com/concistency/Nation-Level_Bias)
+**arXiv**: [2511.10695](https://arxiv.org/abs/2511.10695)  
+**Code**: [GitHub](https://github.com/concistency/Nation-Level_Bias)  
 **Area**: Information Retrieval
 **Keywords**: nation-level bias, international relations, UN Security Council, explicit bias, implicit bias
 

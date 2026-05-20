@@ -18,8 +18,8 @@ content_hash: f5c6048c3686c887
 # How to Build a Consistency Model: Learning Flow Maps via Self-Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18825](https://arxiv.org/abs/2505.18825)
-**Code**: [nmboffi/flow-maps](https://github.com/nmboffi/flow-maps)
+**arXiv**: [2505.18825](https://arxiv.org/abs/2505.18825)  
+**Code**: [nmboffi/flow-maps](https://github.com/nmboffi/flow-maps)  
 **Area**: Image Generation
 **Keywords**: Flow Map, Consistency Model, Self-Distillation, Accelerated Inference, Flow Matching
 

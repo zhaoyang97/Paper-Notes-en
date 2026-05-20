@@ -18,8 +18,8 @@ content_hash: ca852f9b7b4b1468
 # DSCA: Dynamic Subspace Concept Alignment for Lifelong VLM Editing
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07965](https://arxiv.org/abs/2604.07965)
-**Code**: N/A
+**arXiv**: [2604.07965](https://arxiv.org/abs/2604.07965)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: Knowledge editing, vision-language models, subspace decomposition, continual learning, catastrophic forgetting
 

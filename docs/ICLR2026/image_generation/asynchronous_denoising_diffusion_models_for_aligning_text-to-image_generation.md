@@ -18,8 +18,8 @@ content_hash: 1ae556f06353b27a
 # Asynchronous Denoising Diffusion Models for Aligning Text-to-Image Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04504](https://arxiv.org/abs/2510.04504)
-**Code**: [https://github.com/hu-zijing/AsynDM](https://github.com/hu-zijing/AsynDM)
+**arXiv**: [2510.04504](https://arxiv.org/abs/2510.04504)  
+**Code**: [https://github.com/hu-zijing/AsynDM](https://github.com/hu-zijing/AsynDM)  
 **Area**: Diffusion Models / Text-Image Alignment
 **Keywords**: Asynchronous Denoising, Pixel-Level Timestep, Text-Image Alignment, Cross-Attention Mask, Plug-and-Play
 

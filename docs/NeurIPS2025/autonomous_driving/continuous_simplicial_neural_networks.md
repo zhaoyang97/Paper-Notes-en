@@ -18,8 +18,8 @@ content_hash: fa2a16d672e25872
 # Continuous Simplicial Neural Networks
 
 **Conference**: NEURIPS2025
-**arXiv**: [2503.12919](https://arxiv.org/abs/2503.12919)
-**Code**: [ArefEinizade2/COSIMO](https://github.com/ArefEinizade2/COSIMO)
+**arXiv**: [2503.12919](https://arxiv.org/abs/2503.12919)  
+**Code**: [ArefEinizade2/COSIMO](https://github.com/ArefEinizade2/COSIMO)  
 **Area**: Autonomous Driving
 **Keywords**: Simplicial Neural Networks, PDE, Over-smoothing, Hodge Laplacian, Topological Deep Learning
 

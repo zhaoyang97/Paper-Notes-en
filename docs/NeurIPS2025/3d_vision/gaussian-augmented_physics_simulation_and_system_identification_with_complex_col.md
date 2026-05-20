@@ -18,8 +18,8 @@ content_hash: 4d8f0d5f26dc55eb
 # Gaussian-Augmented Physics Simulation and System Identification with Complex Colliders
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.06846](https://arxiv.org/abs/2511.06846)
-**Code**: [Available](https://as-diffmpm.github.io)
+**arXiv**: [2511.06846](https://arxiv.org/abs/2511.06846)  
+**Code**: [Available](https://as-diffmpm.github.io)  
 **Area**: 3D Vision
 **Keywords**: Differentiable Physics Simulation, System Identification, Material Point Method, 3D Gaussian Splatting, Collision Handling
 

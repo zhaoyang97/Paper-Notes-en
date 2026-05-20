@@ -17,8 +17,8 @@ content_hash: 4a5a7a5a72317bfd
 # MiCADangelo: Fine-Grained Reconstruction of Constrained CAD Models from 3D Scans
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23429](https://arxiv.org/abs/2510.23429)
-**Code**: None
+**arXiv**: [2510.23429](https://arxiv.org/abs/2510.23429)  
+**Code**: None  
 **Area**: Other
 **Keywords**: CAD reverse engineering, sketch constraints, cross-sectional slicing, differentiable extrusion optimization, parametric modeling
 
@@ -53,8 +53,8 @@ Given an input 3D mesh $\mathbf{M}$, MiCADangelo executes three sequential stage
 
 2. **Constrained sketch parametrization network**: Each closed loop in a key cross-section is rendered as a binary image, encoded by ResNet34, and passed into a Transformer encoder-decoder that predicts embeddings for $n_p$ sketch primitives. Two prediction heads follow:
 
-   - **Parametrization head**: Predicts primitive type (line segment / circle / arc) and geometric parameters (endpoints, center, radius, etc.).
-   - **Constraint prediction head**: Predicts 13 constraint types between primitive pairs (coincident, concentric, equal, horizontal, vertical, parallel, perpendicular, tangent, etc.).
+    - **Parametrization head**: Predicts primitive type (line segment / circle / arc) and geometric parameters (endpoints, center, radius, etc.).
+    - **Constraint prediction head**: Predicts 13 constraint types between primitive pairs (coincident, concentric, equal, horizontal, vertical, parallel, perpendicular, tangent, etc.).
 
    The network operates in a quantized space, pre-trained on the SketchGraphs dataset and fine-tuned on synthetic noisy closed-loop images.
 

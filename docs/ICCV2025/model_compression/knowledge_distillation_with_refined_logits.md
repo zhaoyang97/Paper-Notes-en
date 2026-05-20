@@ -17,8 +17,8 @@ content_hash: 8fcbc2397d376398
 # Knowledge Distillation with Refined Logits
 
 **Conference**: ICCV 2025
-**arXiv**: [2408.07703](https://arxiv.org/abs/2408.07703)
-**Code**: [https://github.com/zju-SWJ/RLD](https://github.com/zju-SWJ/RLD)
+**arXiv**: [2408.07703](https://arxiv.org/abs/2408.07703)  
+**Code**: [https://github.com/zju-SWJ/RLD](https://github.com/zju-SWJ/RLD)  
 **Area**: Model Compression
 **Keywords**: Knowledge Distillation, Logit Distillation, Class Correlation, Teacher Error Correction, Model Compression
 

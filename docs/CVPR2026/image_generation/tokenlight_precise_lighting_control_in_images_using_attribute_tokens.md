@@ -18,8 +18,8 @@ content_hash: a0d5274ba9fcd81c
 # TokenLight: Precise Lighting Control in Images using Attribute Tokens
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.15310](https://arxiv.org/abs/2604.15310)
-**Code**: [vrroom.github.io/tokenlight/](https://vrroom.github.io/tokenlight/)
+**arXiv**: [2604.15310](https://arxiv.org/abs/2604.15310)  
+**Code**: [vrroom.github.io/tokenlight/](https://vrroom.github.io/tokenlight/)  
 **Area**: Image Generation / Relighting
 **Keywords**: relighting, attribute tokens, diffusion transformer, lighting control, synthetic data
 

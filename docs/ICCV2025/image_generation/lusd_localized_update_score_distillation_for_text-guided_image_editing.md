@@ -18,8 +18,8 @@ content_hash: 253b5479ae2224c5
 # LUSD: Localized Update Score Distillation for Text-Guided Image Editing
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11054](https://arxiv.org/abs/2503.11054)
-**Code**: None
+**arXiv**: [2503.11054](https://arxiv.org/abs/2503.11054)  
+**Code**: None  
 **Area**: Diffusion Models
 **Keywords**: Score Distillation, Text-Guided Image Editing, Attention Regularization, Gradient Normalization, Diffusion Prior
 

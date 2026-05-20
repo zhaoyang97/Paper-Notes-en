@@ -21,8 +21,8 @@ content_hash: c8b81f21dd4770d6
 # 3D-Free Meets 3D Priors: Novel View Synthesis from a Single Image with Pretrained Diffusion Guidance
 
 **Conference**: AAAI 2026
-**arXiv**: [2408.06157](https://arxiv.org/abs/2408.06157)
-**Code**: To be confirmed
+**arXiv**: [2408.06157](https://arxiv.org/abs/2408.06157)  
+**Code**: To be confirmed  
 **Area**: 3D Vision / Novel View Synthesis
 **Keywords**: Novel view synthesis, single-image generation, Stable Diffusion, CLIP, Zero123++, 3D-free, camera control, LoRA
 
@@ -55,10 +55,10 @@ A four-step test-time optimization pipeline: pretrained Zero123++ generates a we
 
 2. **Four-Step Test-Time Optimization**:
 
-   - **Step 1**: Optimize a CLIP text embedding $e_{optim}$ to most accurately reconstruct $I_{input}$ (1000 iterations, lr=1e-3).
-   - **Step 2**: Fine-tune the UNet's LoRA layers at $e_{optim}$ to reconstruct $I_{input}$ (500 iterations, lr=2e-4).
-   - **Step 3**: Further optimize the embedding to $e_{view}$ to reconstruct the weak guidance image $I_{view}$ (500 iterations).
-   - **Step 4**: Fine-tune LoRA layers to reconstruct $I_{view}$, with an additional viewpoint regularization loss (250 iterations).
+    - **Step 1**: Optimize a CLIP text embedding $e_{optim}$ to most accurately reconstruct $I_{input}$ (1000 iterations, lr=1e-3).
+    - **Step 2**: Fine-tune the UNet's LoRA layers at $e_{optim}$ to reconstruct $I_{input}$ (500 iterations, lr=2e-4).
+    - **Step 3**: Further optimize the embedding to $e_{view}$ to reconstruct the weak guidance image $I_{view}$ (500 iterations).
+    - **Step 4**: Fine-tune LoRA layers to reconstruct $I_{view}$, with an additional viewpoint regularization loss (250 iterations).
 
 3. **Viewpoint Regularization Loss** (core contribution):
    $$L_{reg} = \|e_{view} - e_{target}\|^2$$

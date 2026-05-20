@@ -18,8 +18,8 @@ content_hash: f6a53ba82c801927
 # ThinkOmni: Lifting Textual Reasoning to Omni-modal Scenarios via Guidance Decoding
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.23306](https://arxiv.org/abs/2602.23306)
-**Code**: [https://1ranguan.github.io/thinkomni](https://1ranguan.github.io/thinkomni)
+**arXiv**: [2602.23306](https://arxiv.org/abs/2602.23306)  
+**Code**: [https://1ranguan.github.io/thinkomni](https://1ranguan.github.io/thinkomni)  
 **Area**: Multimodal VLM
 **Keywords**: Omni-modal reasoning, guidance decoding, LRM, training-free, contrastive scaling
 

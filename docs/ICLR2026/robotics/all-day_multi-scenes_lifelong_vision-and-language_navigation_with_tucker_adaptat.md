@@ -18,8 +18,8 @@ content_hash: 939ed915ac398843
 # All-day Multi-scenes Lifelong Vision-and-Language Navigation with Tucker Adaptation
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.14276](https://arxiv.org/abs/2603.14276)
-**Code**: [https://ganvin-li.github.io/AlldayWalker/](https://ganvin-li.github.io/AlldayWalker/)
+**arXiv**: [2603.14276](https://arxiv.org/abs/2603.14276)  
+**Code**: [https://ganvin-li.github.io/AlldayWalker/](https://ganvin-li.github.io/AlldayWalker/)  
 **Area**: Robotics
 **Keywords**: Lifelong Vision-and-Language Navigation, Tucker Decomposition, Parameter-Efficient Fine-Tuning, Catastrophic Forgetting, Multi-level Knowledge Decoupling
 

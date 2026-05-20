@@ -18,8 +18,8 @@ content_hash: dea7e512a75d704f
 # MIR-Bench: Can Your LLM Recognize Complicated Patterns via Many-Shot In-Context Reasoning?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.09933](https://arxiv.org/abs/2502.09933)
-**Code**: [https://github.com/KaiYan289/MIR-Bench](https://github.com/KaiYan289/MIR-Bench)
+**arXiv**: [2502.09933](https://arxiv.org/abs/2502.09933)  
+**Code**: [https://github.com/KaiYan289/MIR-Bench](https://github.com/KaiYan289/MIR-Bench)  
 **Area**: Information Retrieval
 **Keywords**: Many-Shot ICL, Pattern Recognition, Inductive Reasoning, Transductive Reasoning, Long-Context Evaluation
 

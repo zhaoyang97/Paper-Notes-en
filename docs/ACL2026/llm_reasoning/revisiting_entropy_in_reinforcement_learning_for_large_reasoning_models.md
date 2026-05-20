@@ -18,8 +18,8 @@ content_hash: 4e754a6d235f813c
 # Revisiting Entropy in Reinforcement Learning for Large Reasoning Models
 
 **Conference**: ACL 2026
-**arXiv**: [2511.05993](https://arxiv.org/abs/2511.05993)
-**Code**: [GitHub](https://github.com/cordercorder/EntropyRL)
+**arXiv**: [2511.05993](https://arxiv.org/abs/2511.05993)  
+**Code**: [GitHub](https://github.com/cordercorder/EntropyRL)  
 **Area**: LLM Reasoning
 **Keywords**: entropy collapse, RLVR, GRPO, positive-advantage reweighting, reasoning models
 
@@ -54,9 +54,9 @@ Building upon the standard RLVR training pipeline with GRPO, the proposed method
 
     - **Function**: Controls entropy by adjusting the loss weight $\lambda$ for positive-advantage tokens.
     - **Mechanism**:
-      - **Stage-based**: $\lambda=0$ in the first half of training (using only non-positive-advantage tokens), linearly increasing to 1 in the second half.
-      - **Epoch-wise**: $\lambda$ increases linearly from 0 to 1 within each epoch, i.e., $\lambda=(e-1)/(E-1)$.
-      - **Entropy-guided**: Adapts $\lambda$ based on current entropy—decreasing $\lambda$ when entropy falls below threshold $\delta$ (encouraging exploration) and increasing it when entropy exceeds $\delta$ (promoting exploitation), with step size $\Delta=0.05$.
+        - **Stage-based**: $\lambda=0$ in the first half of training (using only non-positive-advantage tokens), linearly increasing to 1 in the second half.
+        - **Epoch-wise**: $\lambda$ increases linearly from 0 to 1 within each epoch, i.e., $\lambda=(e-1)/(E-1)$.
+        - **Entropy-guided**: Adapts $\lambda$ based on current entropy—decreasing $\lambda$ when entropy falls below threshold $\delta$ (encouraging exploration) and increasing it when entropy exceeds $\delta$ (promoting exploitation), with step size $\Delta=0.05$.
     - **Design Motivation**: Compared to implicit methods such as Clip-Higher, explicitly controlling $\lambda$ enables precise regulation of entropy toward a target value.
 
 3. **Identification of Three Key Factors Governing Entropy Dynamics**:

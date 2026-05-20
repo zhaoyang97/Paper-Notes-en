@@ -18,8 +18,8 @@ content_hash: b02df121d305ac54
 # Action-guided Generation of 3D Functionality Segmentation Data
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.23230](https://arxiv.org/abs/2511.23230)
-**Code**: [Project Page](https://tev-fbk.github.io/synthfun3d)
+**arXiv**: [2511.23230](https://arxiv.org/abs/2511.23230)  
+**Code**: [Project Page](https://tev-fbk.github.io/synthfun3d)  
 **Area**: 3D Vision / Embodied AI
 **Keywords**: 3D functionality segmentation, synthetic data generation, action descriptions, LLM retrieval, scene layout
 

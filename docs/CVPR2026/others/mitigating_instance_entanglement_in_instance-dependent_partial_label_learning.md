@@ -17,8 +17,8 @@ content_hash: 0d34ba0c1224b448
 # Mitigating Instance Entanglement in Instance-Dependent Partial Label Learning
 
 **Conference**: CVPR2026
-**arXiv**: [2603.04825](https://arxiv.org/abs/2603.04825)
-**Code**: [RyanZhaoIc/CAD](https://github.com/RyanZhaoIc/CAD)
+**arXiv**: [2603.04825](https://arxiv.org/abs/2603.04825)  
+**Code**: [RyanZhaoIc/CAD](https://github.com/RyanZhaoIc/CAD)  
 **Area**: Others (Weakly Supervised Learning / Partial Label Learning)
 **Keywords**: Partial Label Learning, Instance Entanglement, Class-specific Augmentation, Contrastive Learning, Weakly Supervised Classification
 

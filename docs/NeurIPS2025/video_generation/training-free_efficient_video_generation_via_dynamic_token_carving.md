@@ -18,8 +18,8 @@ content_hash: 1c199b064272e7c2
 # Training-Free Efficient Video Generation via Dynamic Token Carving
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16864](https://arxiv.org/abs/2505.16864)
-**Code**: [https://github.com/dvlab-research/Jenga](https://github.com/dvlab-research/Jenga)
+**arXiv**: [2505.16864](https://arxiv.org/abs/2505.16864)  
+**Code**: [https://github.com/dvlab-research/Jenga](https://github.com/dvlab-research/Jenga)  
 **Area**: Diffusion Models / Video Generation Acceleration
 **Keywords**: Training-free acceleration, sparse attention, 3D space-filling curves, progressive resolution, video diffusion Transformer
 

@@ -18,8 +18,8 @@ content_hash: 575e52dc1e30cc61
 # Live Interactive Training for Video Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26929](https://arxiv.org/abs/2603.26929)
-**Code**: [Project Page](https://youngxinyu1802.github.io/projects/LIT/)
+**arXiv**: [2603.26929](https://arxiv.org/abs/2603.26929)  
+**Code**: [Project Page](https://youngxinyu1802.github.io/projects/LIT/)  
 **Area**: Segmentation / Video Object Segmentation
 **Keywords**: Interactive video segmentation, online learning, LoRA adaptation, SAM2, user feedback-driven
 

@@ -18,8 +18,8 @@ content_hash: 83ea1a837c3e00c5
 # Action-Guided Attention for Video Action Anticipation
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01743](https://arxiv.org/abs/2603.01743)
-**Code**: None
+**arXiv**: [2603.01743](https://arxiv.org/abs/2603.01743)  
+**Code**: None  
 **Area**: Causal Inference
 **Keywords**: Action Anticipation, Attention Mechanism, Video Transformer, Interpretability, EPIC-Kitchens
 
@@ -49,21 +49,21 @@ After a backbone extracts features from input video frames, the AGA module perfo
 
 1. **Action-Guided Query/Key**:
 
-   - **Function**: Constructs attention Queries and Keys from predicted action probability distributions rather than visual features.
-   - **Mechanism**: $K_t = E_K(\hat{y}_{t-S:t-1})$, $Q_t = E_Q(\bar{y}_t)$, where $\bar{y}_t = \alpha \hat{y}_{t-1} + (1-\alpha)\bar{y}_{t-1}$ is the EMA of action predictions. Values remain frame-level visual features $V_t = E_V(e_{t-S:t-1})$.
-   - **Design Motivation**: In dot-product attention, Q/K correlations assign weights to V. When Q/K are action predictions, the attention weights reflect "which past actions are most relevant to the currently anticipated action" rather than "which past frames are most visually similar to the current frame."
+    - **Function**: Constructs attention Queries and Keys from predicted action probability distributions rather than visual features.
+    - **Mechanism**: $K_t = E_K(\hat{y}_{t-S:t-1})$, $Q_t = E_Q(\bar{y}_t)$, where $\bar{y}_t = \alpha \hat{y}_{t-1} + (1-\alpha)\bar{y}_{t-1}$ is the EMA of action predictions. Values remain frame-level visual features $V_t = E_V(e_{t-S:t-1})$.
+    - **Design Motivation**: In dot-product attention, Q/K correlations assign weights to V. When Q/K are action predictions, the attention weights reflect "which past actions are most relevant to the currently anticipated action" rather than "which past frames are most visually similar to the current frame."
 
 2. **Adaptive Gated Fusion**:
 
-   - **Function**: Element-wise gated fusion of historical attention output $\tilde{h}_t$ and current frame feature $e_t$.
-   - **Mechanism**: $o_t = g_t \odot \tilde{h}_t + (1-g_t) \odot e_t$, with gate $g_t = \sigma(\text{MLP}(\tilde{h}_t \| e_t))$.
-   - **Design Motivation**: The relative importance of historical context versus current visual evidence varies over time; the gating mechanism allows the model to adaptively decide how much to rely on history versus the current frame.
+    - **Function**: Element-wise gated fusion of historical attention output $\tilde{h}_t$ and current frame feature $e_t$.
+    - **Mechanism**: $o_t = g_t \odot \tilde{h}_t + (1-g_t) \odot e_t$, with gate $g_t = \sigma(\text{MLP}(\tilde{h}_t \| e_t))$.
+    - **Design Motivation**: The relative importance of historical context versus current visual evidence varies over time; the gating mechanism allows the model to adaptively decide how much to rely on history versus the current frame.
 
 3. **Post-hoc Interpretability Analysis**:
 
-   - **Function**: Reveals action dependencies and counterfactual evidence learned by the model through forward and backward analysis.
-   - **Mechanism**: Forward analysis examines the distribution of attention weights given past actions (action dependency); backward analysis examines changes in predictions when past actions are modified (counterfactual reasoning).
-   - **Design Motivation**: Because Q/K are action probabilities, attention weights directly reflect semantic relationships between actions, making them more interpretable than pixel-level attention.
+    - **Function**: Reveals action dependencies and counterfactual evidence learned by the model through forward and backward analysis.
+    - **Mechanism**: Forward analysis examines the distribution of attention weights given past actions (action dependency); backward analysis examines changes in predictions when past actions are modified (counterfactual reasoning).
+    - **Design Motivation**: Because Q/K are action probabilities, attention weights directly reflect semantic relationships between actions, making them more interpretable than pixel-level attention.
 
 ### Loss & Training
 Standard cross-entropy loss is used for future action prediction. A modular design with a frozen backbone and trainable encoders is adopted. A FIFO queue maintains the temporal window $S$.

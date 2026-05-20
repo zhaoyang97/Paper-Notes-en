@@ -18,8 +18,8 @@ content_hash: baf08de3b58a2e16
 # Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study
 
 **Conference**: ACL 2026
-**arXiv**: [2509.25300](https://arxiv.org/abs/2509.25300)
-**Code**: [GitHub](https://github.com/reasoning360/rl-scaling)
+**arXiv**: [2509.25300](https://arxiv.org/abs/2509.25300)  
+**Code**: [GitHub](https://github.com/reasoning360/rl-scaling)  
 **Area**: Reinforcement Learning / Scaling Laws
 **Keywords**: RL post-training, scaling laws, mathematical reasoning, learning efficiency, data reuse
 

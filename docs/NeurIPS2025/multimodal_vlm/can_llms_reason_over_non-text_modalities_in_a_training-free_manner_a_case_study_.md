@@ -18,8 +18,8 @@ content_hash: 0906ad4672025f04
 # Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17552](https://arxiv.org/abs/2509.17552)
-**Code**: [GitHub](https://github.com/ztlmememe/LLMxFM_ICRL)
+**arXiv**: [2509.17552](https://arxiv.org/abs/2509.17552)  
+**Code**: [GitHub](https://github.com/ztlmememe/LLMxFM_ICRL)  
 **Area**: Multimodal VLM
 **Keywords**: In-context representation learning, training-free multimodal reasoning, optimal transport alignment, foundation models, few-shot learning
 
@@ -159,8 +159,8 @@ OT-PCA+ICL achieves a **16.6%** improvement in Pearson r on ESOL.
 
 1. **High inter-representation similarity degrades performance**: A narrow FM feature space causes projected embeddings to be highly similar, preventing the LLM from distinguishing between samples.
 2. **Two operating modes**:
-   - Pure ICRL: The LLM enters a *task-learning mode*, relying on few-shot demonstrations for prediction.
-   - ICRL + text: The LLM enters a *task-retrieval mode*, where injected representations function more like "pause tokens" that increase deliberation time.
+    - Pure ICRL: The LLM enters a *task-learning mode*, relying on few-shot demonstrations for prediction.
+    - ICRL + text: The LLM enters a *task-retrieval mode*, where injected representations function more like "pause tokens" that increase deliberation time.
 3. **Better FM features + text do not necessarily yield better results**: OT methods perform best in isolation, but simpler methods (e.g., random noise) outperform them when combined with text — because LLM attention is predominantly focused on the SMILES text input.
 
 ## Highlights & Insights

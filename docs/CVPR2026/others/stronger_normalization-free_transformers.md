@@ -17,8 +17,8 @@ content_hash: c22e3bcef30c094a
 # Stronger Normalization-Free Transformers
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.10938](https://arxiv.org/abs/2512.10938)
-**Code**: Available (link provided in paper)
+**arXiv**: [2512.10938](https://arxiv.org/abs/2512.10938)  
+**Code**: Available (link provided in paper)  
 **Area**: Others
 **Keywords**: Normalization-free Transformer, pointwise function, Derf, normalization layer replacement, generalization
 
@@ -30,16 +30,16 @@ By systematically analyzing four key properties required for pointwise functions
 1. **Background**: Normalization layers (BatchNorm, LayerNorm, RMSNorm) are core components of modern deep networks, stabilizing training and accelerating convergence by regulating the distribution of intermediate activations. Recently, Dynamic Tanh (DyT) demonstrated that the pointwise function $\tanh(\alpha x)$ can serve as a drop-in replacement for normalization layers with comparable performance.
 
 2. **Limitations of Prior Work**:
-   - Normalization layers rely on activation statistics (mean, variance), incurring additional memory access and synchronization overhead.
-   - Certain normalization schemes are sensitive to batch size, leading to training instability at small batch sizes.
-   - While DyT successfully matches normalization layer performance, it does not surpass it—the field has accepted "normalization-free ≈ normalization-based" but no work has demonstrated "normalization-free > normalization-based."
+    - Normalization layers rely on activation statistics (mean, variance), incurring additional memory access and synchronization overhead.
+    - Certain normalization schemes are sensitive to batch size, leading to training instability at small batch sizes.
+    - While DyT successfully matches normalization layer performance, it does not surpass it—the field has accepted "normalization-free ≈ normalization-based" but no work has demonstrated "normalization-free > normalization-based."
 
 3. **Key Challenge**: DyT established that pointwise functions can replace normalization layers, but it remains unclear which other functions in the design space might perform better, what functional properties are critical, and whether any pointwise function can be found that surpasses normalization layers.
 
 4. **Goal**:
-   - Systematically understand which properties of pointwise functions affect training dynamics and final performance.
-   - Search for the optimal design within a candidate function set.
-   - Demonstrate that pointwise functions can not only replace but surpass normalization layers.
+    - Systematically understand which properties of pointwise functions affect training dynamics and final performance.
+    - Search for the optimal design within a candidate function set.
+    - Demonstrate that pointwise functions can not only replace but surpass normalization layers.
 
 5. **Key Insight**: The analysis begins from intrinsic functional properties (zero-centeredness, boundedness, center-sensitivity, monotonicity), isolating the effect of each property through controlled experiments, and then using these principles to guide function search.
 
@@ -54,25 +54,25 @@ The work comprises two parts: (1) functional property analysis—systematically 
 
 1. **Analysis of Four Functional Properties**:
 
-   - **Function**: Establish design principles for pointwise functions as normalization layer substitutes.
-   - **Mechanism**: Controlled experiments on ViT-Base analyze each of the four properties in isolation:
+    - **Function**: Establish design principles for pointwise functions as normalization layer substitutes.
+    - **Mechanism**: Controlled experiments on ViT-Base analyze each of the four properties in isolation:
      - **Zero-centeredness**: Horizontal/vertical shift experiments show that performance is minimally affected when $|\lambda| \leq 0.5$, while training collapses when $|\lambda| \geq 2$. Outputs must remain balanced around zero.
      - **Boundedness**: Adding clipping to unbounded functions (e.g., arcsinh) consistently improves performance; introducing a linear term to bounded functions to render them unbounded degrades performance. Boundedness is important for stable optimization. There exists an upper limit on the growth rate—logquad(x) is the fastest-growing function that still converges.
      - **Center-sensitivity**: Introducing a flat region near the origin degrades performance as $\lambda$ increases, with training collapsing at $\lambda \geq 3$. Since most activations concentrate near zero, responsiveness at this region directly affects signal propagation.
      - **Monotonicity**: Monotonically increasing or decreasing functions both train normally, while non-monotonic functions (e.g., hump-shaped, oscillatory) show significantly degraded performance. Monotonicity preserves the relative ordering of activations.
-   - **Design Motivation**: DyT selected tanh purely by intuition without systematic analysis. These four properties provide explicit necessary conditions for function design.
+    - **Design Motivation**: DyT selected tanh purely by intuition without systematic analysis. These four properties provide explicit necessary conditions for function design.
 
 2. **Large-Scale Function Search**:
 
-   - **Function**: Identify the optimal function within a candidate set satisfying the four-property constraints.
-   - **Mechanism**: Starting from common scalar functions and CDFs (polynomial, rational, exponential, logarithmic, trigonometric, etc.), candidate subsets satisfying all four properties are generated via transformations including shifts, scaling, mirroring, rotation, and clipping. The unified form is $y = \gamma * f(\alpha x + s) + \beta$, evaluated on ViT-Base (Top-1 Acc) and DiT-B/4 and DiT-L/4 (FID). Results show that erf(x) achieves the best performance among all candidates: ViT-B 82.8% (vs. LayerNorm 82.3%), DiT-L/4 FID 43.94 (vs. 45.91).
-   - **Design Motivation**: Although many S-shaped functions appear similar in form, their performance differences are substantial. Systematic search is more reliable than intuition-based selection.
+    - **Function**: Identify the optimal function within a candidate set satisfying the four-property constraints.
+    - **Mechanism**: Starting from common scalar functions and CDFs (polynomial, rational, exponential, logarithmic, trigonometric, etc.), candidate subsets satisfying all four properties are generated via transformations including shifts, scaling, mirroring, rotation, and clipping. The unified form is $y = \gamma * f(\alpha x + s) + \beta$, evaluated on ViT-Base (Top-1 Acc) and DiT-B/4 and DiT-L/4 (FID). Results show that erf(x) achieves the best performance among all candidates: ViT-B 82.8% (vs. LayerNorm 82.3%), DiT-L/4 FID 43.94 (vs. 45.91).
+    - **Design Motivation**: Although many S-shaped functions appear similar in form, their performance differences are substantial. Systematic search is more reliable than intuition-based selection.
 
 3. **Dynamic erf (Derf)**:
 
-   - **Function**: The final proposed normalization layer replacement.
-   - **Mechanism**: $\text{Derf}(x) = \gamma * \text{erf}(\alpha x + s) + \beta$, where erf(x) is a scaled version of the standard Gaussian CDF, $\frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2} dt$. $\alpha$ is initialized to 0.5, $s$ to 0, $\gamma$ to all-ones, and $\beta$ to all-zeros. As a drop-in replacement, one Derf layer replaces each pre-attention, pre-FFN, and final normalization layer. The learnable parameter $s$ is a scalar rather than a vector (experiments confirm no additional benefit from a vector form).
-   - **Design Motivation**: erf(x) naturally satisfies all four properties (zero-centered, bounded in $[-1, 1]$, sensitive at the origin, strictly monotonically increasing), and its smoothness as a Gaussian CDF may favor gradient propagation compared to the exponential saturation of tanh.
+    - **Function**: The final proposed normalization layer replacement.
+    - **Mechanism**: $\text{Derf}(x) = \gamma * \text{erf}(\alpha x + s) + \beta$, where erf(x) is a scaled version of the standard Gaussian CDF, $\frac{2}{\sqrt{\pi}} \int_0^x e^{-t^2} dt$. $\alpha$ is initialized to 0.5, $s$ to 0, $\gamma$ to all-ones, and $\beta$ to all-zeros. As a drop-in replacement, one Derf layer replaces each pre-attention, pre-FFN, and final normalization layer. The learnable parameter $s$ is a scalar rather than a vector (experiments confirm no additional benefit from a vector form).
+    - **Design Motivation**: erf(x) naturally satisfies all four properties (zero-centered, bounded in $[-1, 1]$, sensitive at the origin, strictly monotonically increasing), and its smoothness as a Gaussian CDF may favor gradient propagation compared to the exponential saturation of tanh.
 
 ### Key Findings: Generalization Rather Than Fitting
 By computing training loss in evaluation mode, it is found that across all models and scales, the training loss ranking is Norm < Derf < DyT. That is, Derf has weaker fitting capacity than normalization layers yet achieves better final performance—indicating that Derf's advantage stems from stronger generalization. Since pointwise functions possess only a small number of scalar parameters ($\alpha, s$) rather than adapting based on activation statistics, they limit overfitting and act as an implicit regularizer.

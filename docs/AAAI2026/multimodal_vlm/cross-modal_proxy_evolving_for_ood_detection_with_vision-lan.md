@@ -20,8 +20,8 @@ content_hash: 27ccde48e7d931ea
 # Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.08476](https://arxiv.org/abs/2601.08476)
-**Code**: Not released
+**arXiv**: [2601.08476](https://arxiv.org/abs/2601.08476)  
+**Code**: Not released  
 **Area**: Multimodal VLM / OOD Detection
 **Keywords**: OOD Detection, VLM, Cross-modal Proxy Co-evolution, Zero-shot, Test-time Adaptation, CLIP, Negative Labels
 

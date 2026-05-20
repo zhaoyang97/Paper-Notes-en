@@ -18,8 +18,8 @@ content_hash: 7115446b2b43581b
 # Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01741](https://arxiv.org/abs/2603.01741)
-**Code**: [Project Page](https://naoki04.github.io/paper-cpo/)
+**arXiv**: [2603.01741](https://arxiv.org/abs/2603.01741)  
+**Code**: [Project Page](https://naoki04.github.io/paper-cpo/)  
 **Area**: Reinforcement Learning
 **Keywords**: Policy Ensemble, Large-Scale Parallel RL, Policy Diversity, KL Constraint, Dexterous Manipulation
 

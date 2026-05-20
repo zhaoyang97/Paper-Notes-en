@@ -18,8 +18,8 @@ content_hash: 5899ca5f80264b99
 # Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.02533](https://arxiv.org/abs/2502.02533)
-**Code**: None
+**arXiv**: [2502.02533](https://arxiv.org/abs/2502.02533)  
+**Code**: None  
 **Area**: Signal Communication
 **Keywords**: Multi-agent systems, prompt optimization, topology search, LLM agent, automated design
 

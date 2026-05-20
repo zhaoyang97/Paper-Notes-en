@@ -18,8 +18,8 @@ content_hash: 2cdcbeeadb962041
 # From Relevance to Authority: Authority-aware Generative Retrieval in Web Search Engines
 
 **Conference**: ACL 2026
-**arXiv**: [2604.13468](https://arxiv.org/abs/2604.13468)
-**Code**: None
+**arXiv**: [2604.13468](https://arxiv.org/abs/2604.13468)  
+**Code**: None  
 **Area**: Information Retrieval / Search Engines
 **Keywords**: Generative Retrieval, Authority, GRPO, Multimodal Scoring, Web Search
 

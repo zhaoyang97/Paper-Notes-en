@@ -18,8 +18,8 @@ content_hash: 43cccc44844c3384
 # ORBIT -- Open Recommendation Benchmark for Reproducible Research with Hidden Tests
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26095](https://arxiv.org/abs/2510.26095)
-**Code**: [Official Website](https://www.open-reco-bench.ai)
+**arXiv**: [2510.26095](https://arxiv.org/abs/2510.26095)  
+**Code**: [Official Website](https://www.open-reco-bench.ai)  
 **Area**: AI Safety
 **Keywords**: Recommender Systems, Benchmark, Privacy-Preserving Dataset, Web Recommendation, LLM-based Recommendation
 

@@ -18,8 +18,8 @@ content_hash: bff0a1bfeb4f97e4
 # PacGDC: Label-Efficient Generalizable Depth Completion with Projection Ambiguity and Consistency
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.07374](https://arxiv.org/abs/2507.07374)
-**Code**: [https://github.com/Wang-xjtu/PacGDC](https://github.com/Wang-xjtu/PacGDC)
+**arXiv**: [2507.07374](https://arxiv.org/abs/2507.07374)  
+**Code**: [https://github.com/Wang-xjtu/PacGDC](https://github.com/Wang-xjtu/PacGDC)  
 **Area**: Robotics
 **Keywords**: Depth Completion, Label-Efficient, Projection Ambiguity, Data Synthesis, Generalizability
 

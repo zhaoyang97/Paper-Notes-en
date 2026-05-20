@@ -18,8 +18,8 @@ content_hash: e067888a4484f6cd
 # PolicyFlow: Policy Optimization with Continuous Normalizing Flow in Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01156](https://arxiv.org/abs/2602.01156)
-**Code**: [Project Page](https://policyflow2026.github.io/)
+**arXiv**: [2602.01156](https://arxiv.org/abs/2602.01156)  
+**Code**: [Project Page](https://policyflow2026.github.io/)  
 **Area**: Reinforcement Learning / Policy Optimization
 **Keywords**: Continuous Normalizing Flow, PPO, Multimodal Policy, Importance Ratio Approximation, Brownian Motion Entropy Regularization
 

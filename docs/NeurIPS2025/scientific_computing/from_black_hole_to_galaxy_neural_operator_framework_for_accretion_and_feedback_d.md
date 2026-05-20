@@ -18,8 +18,8 @@ content_hash: 037ae18c39dd1ba7
 # From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.01576](https://arxiv.org/abs/2512.01576)
-**Code**: None
+**arXiv**: [2512.01576](https://arxiv.org/abs/2512.01576)  
+**Code**: None  
 **Area**: Scientific Computing
 **Keywords**: Neural Operator, Black Hole Accretion, Multi-scale Simulation, Sub-grid Model, GRMHD
 

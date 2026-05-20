@@ -18,8 +18,8 @@ content_hash: a88a88b823deeea2
 # CompSlider: Compositional Slider for Disentangled Multiple-Attribute Image Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.01028](https://arxiv.org/abs/2509.01028)
-**Code**: None
+**arXiv**: [2509.01028](https://arxiv.org/abs/2509.01028)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: attribute disentanglement, slider control, text-to-image generation, conditional prior, multi-attribute manipulation
 

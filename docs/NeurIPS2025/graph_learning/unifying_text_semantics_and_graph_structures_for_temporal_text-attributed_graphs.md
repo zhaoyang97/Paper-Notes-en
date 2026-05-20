@@ -18,8 +18,8 @@ content_hash: 1e1f8e460edcdcc7
 # Unifying Text Semantics and Graph Structures for Temporal Text-attributed Graphs with LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.14411](https://arxiv.org/abs/2503.14411)
-**Code**: To be confirmed
+**arXiv**: [2503.14411](https://arxiv.org/abs/2503.14411)  
+**Code**: To be confirmed  
 **Area**: Graph Learning / NLP
 **Keywords**: Temporal Text-Attributed Graphs, LLM, Semantic-Structural Co-Encoding, Link Prediction, Cross Framework
 

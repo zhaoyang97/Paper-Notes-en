@@ -18,8 +18,8 @@ content_hash: b02ae36e137023ce
 # MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21952](https://arxiv.org/abs/2602.21952)
-**Code**: [https://github.com/hotdogcheesewhite/MindDriver](https://github.com/hotdogcheesewhite/MindDriver)
+**arXiv**: [2602.21952](https://arxiv.org/abs/2602.21952)  
+**Code**: [https://github.com/hotdogcheesewhite/MindDriver](https://github.com/hotdogcheesewhite/MindDriver)  
 **Area**: Autonomous Driving
 **Keywords**: Multimodal Reasoning, Chain-of-Thought, VLM Autonomous Driving, Progressive Reasoning, Reinforcement Fine-tuning
 

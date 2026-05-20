@@ -18,8 +18,8 @@ content_hash: 402a4aa02aaf0365
 # GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.24204](https://arxiv.org/abs/2410.24204)
-**Code**: [Project Page](https://pku-vcl-geometry.github.io/GeoSplatting/)
+**arXiv**: [2410.24204](https://arxiv.org/abs/2410.24204)  
+**Code**: [Project Page](https://pku-vcl-geometry.github.io/GeoSplatting/)  
 **Area**: 3D Vision
 **Keywords**: Inverse Rendering, 3D Gaussian Splatting, Material Decomposition, Environment Lighting, Mesh-Guided
 

@@ -18,8 +18,8 @@ content_hash: d705ffcaf1b8bb87
 # Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12711](https://arxiv.org/abs/2603.12711)
-**Code**: N/A
+**arXiv**: [2603.12711](https://arxiv.org/abs/2603.12711)  
+**Code**: N/A  
 **Area**: Cross-Domain Retrieval / Self-Supervised Learning
 **Keywords**: UCDIR, domain prompt, phase spectrum, text-phase dual priors, cross-domain alignment
 
@@ -47,21 +47,21 @@ TPSNet consists of two modules: **Domain Prompt Generation (DPG)** uses CLIP con
 
 1. **Domain Prompt Generation**:
 
-   - **Function**: Learns $C$ class-specific learnable text prompts per domain, serving as semantic supervision signals for subsequent stages.
-   - **Mechanism**: After generating pseudo-labels via K-means clustering, $C$ learnable prompt templates ("An image of a [X]¹...[X]^M") are initialized. A frozen CLIP model is used for image-text contrastive learning: $\mathcal{L}_{prompt} = \mathcal{L}_{i2t} + \mathcal{L}_{t2i}$, optimizing only the [X] tokens. Image-text pairs are re-matched based on cosine similarity during contrastive learning, partially correcting inaccurate pseudo-labels.
-   - **Design Motivation**: CLIP's textual representations provide richer semantic priors than discrete pseudo-labels; after contrastive optimization, the domain prompts encode precise class-level semantic information.
+    - **Function**: Learns $C$ class-specific learnable text prompts per domain, serving as semantic supervision signals for subsequent stages.
+    - **Mechanism**: After generating pseudo-labels via K-means clustering, $C$ learnable prompt templates ("An image of a [X]¹...[X]^M") are initialized. A frozen CLIP model is used for image-text contrastive learning: $\mathcal{L}_{prompt} = \mathcal{L}_{i2t} + \mathcal{L}_{t2i}$, optimizing only the [X] tokens. Image-text pairs are re-matched based on cosine similarity during contrastive learning, partially correcting inaccurate pseudo-labels.
+    - **Design Motivation**: CLIP's textual representations provide richer semantic priors than discrete pseudo-labels; after contrastive optimization, the domain prompts encode precise class-level semantic information.
 
 2. **Phase-Prior Domain-Invariant Feature Extraction**:
 
-   - **Function**: Exploits the domain-invariant property of the phase spectrum to bridge domain gaps.
-   - **Mechanism**: FFT is applied to the grayscale image to obtain $F(u,v)=|A(u,v)|e^{j\phi(u,v)}$. The phase is retained while the amplitude is replaced by a constant $R$: $F'(u,v) = Re^{j\phi(u,v)}$. The phase image is reconstructed via IFFT. A lightweight CNN extracts phase features $I^{phase}$, which are fused with RGB features via LayerNorm + Self-Attention to produce $I^f$.
-   - **Design Motivation**: The phase spectrum encodes structural and edge information and is more robust to domain shift than the amplitude spectrum. Discarding the amplitude naturally eliminates certain domain-specific factors (e.g., style, color distribution).
+    - **Function**: Exploits the domain-invariant property of the phase spectrum to bridge domain gaps.
+    - **Mechanism**: FFT is applied to the grayscale image to obtain $F(u,v)=|A(u,v)|e^{j\phi(u,v)}$. The phase is retained while the amplitude is replaced by a constant $R$: $F'(u,v) = Re^{j\phi(u,v)}$. The phase image is reconstructed via IFFT. A lightweight CNN extracts phase features $I^{phase}$, which are fused with RGB features via LayerNorm + Self-Attention to produce $I^f$.
+    - **Design Motivation**: The phase spectrum encodes structural and edge information and is more robust to domain shift than the amplitude spectrum. Discarding the amplitude naturally eliminates certain domain-specific factors (e.g., style, color distribution).
 
 3. **Text-Phase Dual-Prior Synergistic Fusion**:
 
-   - **Function**: Employs cross-attention to enable text and phase priors to jointly guide domain-invariant representation learning.
-   - **Mechanism**: Domain prompt text features $T'$ serve as Query; fused visual features $I^f$ serve as Key/Value: $I' = \text{CrossAttention}(T'; I^f)$. Joint training is performed using prototype cross-entropy loss $\mathcal{L}_{pce}$ and image-text contrastive loss $\mathcal{L}_{i2tce}$ (with label smoothing). Prototypes are updated via momentum: $\mathcal{P} \leftarrow m\mathcal{P} + (1-m)I'$.
-   - **Design Motivation**: The text prior provides semantic guidance, the phase prior eliminates domain shift, and cross-attention enables their complementary enhancement in feature space.
+    - **Function**: Employs cross-attention to enable text and phase priors to jointly guide domain-invariant representation learning.
+    - **Mechanism**: Domain prompt text features $T'$ serve as Query; fused visual features $I^f$ serve as Key/Value: $I' = \text{CrossAttention}(T'; I^f)$. Joint training is performed using prototype cross-entropy loss $\mathcal{L}_{pce}$ and image-text contrastive loss $\mathcal{L}_{i2tce}$ (with label smoothing). Prototypes are updated via momentum: $\mathcal{P} \leftarrow m\mathcal{P} + (1-m)I'$.
+    - **Design Motivation**: The text prior provides semantic guidance, the phase prior eliminates domain shift, and cross-attention enables their complementary enhancement in feature space.
 
 ### Loss & Training
 

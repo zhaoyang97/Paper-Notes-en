@@ -18,8 +18,8 @@ content_hash: 9e192239e9377a7b
 # An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27238](https://arxiv.org/abs/2603.27238)
-**Code**: [https://mias.group/CarlaOcc](https://mias.group/CarlaOcc)
+**arXiv**: [2603.27238](https://arxiv.org/abs/2603.27238)  
+**Code**: [https://mias.group/CarlaOcc](https://mias.group/CarlaOcc)  
 **Area**: Autonomous Driving
 **Keywords**: Panoptic Occupancy Prediction, 3D Mesh Library, CARLA Simulation, Instance-Level Annotation, Occupancy Dataset Quality
 

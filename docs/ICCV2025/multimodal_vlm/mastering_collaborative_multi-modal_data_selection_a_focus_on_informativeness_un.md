@@ -19,8 +19,8 @@ content_hash: 8bcddf41acf705d3
 # Mastering Collaborative Multi-modal Data Selection: A Focus on Informativeness, Uniqueness, and Representativeness
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.06293](https://arxiv.org/abs/2412.06293)
-**Code**: Available (URL provided in the paper)
+**arXiv**: [2412.06293](https://arxiv.org/abs/2412.06293)  
+**Code**: Available (URL provided in the paper)  
 **Area**: Multimodal VLM
 **Keywords**: Data selection, instruction tuning, multimodal large language models, informativeness, uniqueness, representativeness
 

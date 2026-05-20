@@ -18,8 +18,8 @@ content_hash: eb85ed1ed6f31b25
 # Balanced Image Stylization with Style Matching Score
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07601](https://arxiv.org/abs/2503.07601)
-**Code**: [https://github.com/showlab/SMS](https://github.com/showlab/SMS)
+**arXiv**: [2503.07601](https://arxiv.org/abs/2503.07601)  
+**Code**: [https://github.com/showlab/SMS](https://github.com/showlab/SMS)  
 **Area**: Image Generation / Style Transfer
 **Keywords**: Style Transfer, Score Distillation, diffusion model, LoRA, Frequency Domain Regularization
 

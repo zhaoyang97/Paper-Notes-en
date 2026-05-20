@@ -18,8 +18,8 @@ content_hash: ba49c6a3a7d54fa4
 # MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12525](https://arxiv.org/abs/2511.12525)
-**Code**: [https://github.com/doudou845133/MdaIF](https://github.com/doudou845133/MdaIF)
+**arXiv**: [2511.12525](https://arxiv.org/abs/2511.12525)  
+**Code**: [https://github.com/doudou845133/MdaIF](https://github.com/doudou845133/MdaIF)  
 **Area**: Image Fusion / Adverse Weather Degradation
 **Keywords**: Infrared-Visible Fusion, Degradation-Aware, Mixture of Experts, Vision-Language Model, Channel Attention
 

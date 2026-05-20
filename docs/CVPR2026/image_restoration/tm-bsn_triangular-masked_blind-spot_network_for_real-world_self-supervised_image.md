@@ -18,8 +18,8 @@ content_hash: 2b10ef65b630f637
 # TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04484](https://arxiv.org/abs/2604.04484)
-**Code**: [https://github.com/parkjun210/TM-BSN](https://github.com/parkjun210/TM-BSN)
+**arXiv**: [2604.04484](https://arxiv.org/abs/2604.04484)  
+**Code**: [https://github.com/parkjun210/TM-BSN](https://github.com/parkjun210/TM-BSN)  
 **Area**: Image Restoration / Self-Supervised Denoising
 **Keywords**: blind-spot network, self-supervised denoising, triangular-masked convolution, spatially correlated noise, knowledge distillation
 

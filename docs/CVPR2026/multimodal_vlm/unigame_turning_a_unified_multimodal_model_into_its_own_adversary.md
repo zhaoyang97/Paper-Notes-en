@@ -18,8 +18,8 @@ content_hash: 1295ab55a6c6d3c3
 # UniGame: Turning a Unified Multimodal Model Into Its Own Adversary
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.19413](https://arxiv.org/abs/2511.19413)
-**Code**: [https://github.com/AIFrontierLab/TorchUMM](https://github.com/AIFrontierLab/TorchUMM)
+**arXiv**: [2511.19413](https://arxiv.org/abs/2511.19413)  
+**Code**: [https://github.com/AIFrontierLab/TorchUMM](https://github.com/AIFrontierLab/TorchUMM)  
 **Area**: Multimodal VLM
 **Keywords**: unified multimodal model, self-adversarial training, consistency, post-training, minimax optimization
 

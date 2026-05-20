@@ -18,8 +18,8 @@ content_hash: e58d82f6fe8efbc8
 # LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.09981](https://arxiv.org/abs/2508.09981)
-**Code**: [GitHub](https://github.com/ModelTC/LightCompress)
+**arXiv**: [2508.09981](https://arxiv.org/abs/2508.09981)  
+**Code**: [GitHub](https://github.com/ModelTC/LightCompress)  
 **Area**: Multimodal VLM / Model Compression
 **Keywords**: Vision-language models, model compression, token pruning, quantization, benchmarking
 

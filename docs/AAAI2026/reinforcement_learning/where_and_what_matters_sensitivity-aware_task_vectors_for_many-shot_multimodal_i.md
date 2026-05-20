@@ -17,8 +17,8 @@ content_hash: 45e6997dd3cbe541
 # Where and What Matters: Sensitivity-Aware Task Vectors for Many-Shot Multimodal In-Context Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08246](https://arxiv.org/abs/2511.08246)
-**Code**: [https://github.com/AMAP-ML/STV](https://github.com/AMAP-ML/STV)
+**arXiv**: [2511.08246](https://arxiv.org/abs/2511.08246)  
+**Code**: [https://github.com/AMAP-ML/STV](https://github.com/AMAP-ML/STV)  
 **Area**: Reinforcement Learning
 **Keywords**: Multimodal In-Context Learning, Task Vectors, Attention Head Sensitivity, Reinforcement Learning, Activation Space Modulation
 

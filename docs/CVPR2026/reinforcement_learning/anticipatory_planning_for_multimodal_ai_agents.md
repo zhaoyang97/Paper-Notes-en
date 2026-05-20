@@ -19,8 +19,8 @@ content_hash: c4e945121ce1a9f2
 # Anticipatory Planning for Multimodal AI Agents
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.16777](https://arxiv.org/abs/2603.16777)
-**Code**: Not released
+**arXiv**: [2603.16777](https://arxiv.org/abs/2603.16777)  
+**Code**: Not released  
 **Area**: Reinforcement Learning
 **Keywords**: Multimodal agents, anticipatory planning, trajectory-level reinforcement learning, GUI interaction, tool use, GRPO
 

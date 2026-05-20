@@ -18,8 +18,8 @@ content_hash: 4d7eac864fee8a62
 # An OpenMind for 3D Medical Vision Self-supervised Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.17041](https://arxiv.org/abs/2412.17041)
-**Code**: [https://github.com/MIC-DKFZ/nnssl](https://github.com/MIC-DKFZ/nnssl)
+**arXiv**: [2412.17041](https://arxiv.org/abs/2412.17041)  
+**Code**: [https://github.com/MIC-DKFZ/nnssl](https://github.com/MIC-DKFZ/nnssl)  
 **Area**: Medical Imaging
 **Keywords**: Self-supervised learning, 3D medical imaging, pretraining dataset, brain MRI, benchmark
 

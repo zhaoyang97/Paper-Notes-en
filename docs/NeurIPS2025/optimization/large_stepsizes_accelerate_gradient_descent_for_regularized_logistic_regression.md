@@ -19,8 +19,8 @@ content_hash: 0e001113c44a313f
 # Large Stepsizes Accelerate Gradient Descent for Regularized Logistic Regression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.02336](https://arxiv.org/abs/2506.02336)
-**Code**: None
+**arXiv**: [2506.02336](https://arxiv.org/abs/2506.02336)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: gradient descent, large stepsizes, edge of stability, logistic regression, acceleration, condition number
 

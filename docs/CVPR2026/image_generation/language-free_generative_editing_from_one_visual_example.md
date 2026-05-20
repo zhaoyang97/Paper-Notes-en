@@ -18,8 +18,8 @@ content_hash: c39417071119f154
 # Language-Free Generative Editing from One Visual Example
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25441](https://arxiv.org/abs/2603.25441)
-**Code**: [Project Page](https://omaralezaby.github.io/vdc/)
+**arXiv**: [2603.25441](https://arxiv.org/abs/2603.25441)  
+**Code**: [Project Page](https://omaralezaby.github.io/vdc/)  
 **Area**: Image Generation
 **Keywords**: Image Editing, Diffusion Models, Visual Conditioning, Language-Free, Training-Free
 

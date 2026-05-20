@@ -18,8 +18,8 @@ content_hash: 115c116f73c47199
 # Any-SSR: How Recursive Least Squares Works in Continual Learning of Large Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: N/A
-**Code**: [GitHub](https://github.com/ZHUANGHP/Any-SSR)
+**arXiv**: N/A  
+**Code**: [GitHub](https://github.com/ZHUANGHP/Any-SSR)  
 **Area**: Continual Learning / Large Language Models
 **Keywords**: continual learning, LLM, recursive least squares, LoRA, catastrophic forgetting
 

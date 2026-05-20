@@ -18,8 +18,8 @@ content_hash: 5f6e3cd9dec25e4c
 # HouseLayout3D: A Benchmark and Training-Free Baseline for 3D Layout Estimation in the Wild
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.02450](https://arxiv.org/abs/2512.02450)
-**Code**: [https://houselayout3d.github.io](https://houselayout3d.github.io)
+**arXiv**: [2512.02450](https://arxiv.org/abs/2512.02450)  
+**Code**: [https://houselayout3d.github.io](https://houselayout3d.github.io)  
 **Area**: LLM Evaluation
 **Keywords**: 3D layout estimation, multi-floor buildings, benchmark, training-free, scene graph
 
@@ -56,18 +56,18 @@ MultiFloor3D is a four-stage, training-free pipeline:
 
 3. **Layout Prototype Fitting (Stage 3)**: This is the core innovation. To address artifacts in the skeleton (holes and unobserved regions), a set of 3D polygons is optimized via gradient descent:
 
-   - **$\mathcal{L}_{\text{geo}}$ (Geometric Loss)**: Comprises $\mathcal{L}_{\text{prox}}$ (minimizing the distance from skeleton vertices to the nearest polygon) and $\mathcal{L}_{\text{empty}}$ (preventing polygons from occluding known empty space, detected via camera-ray and depth intersection).
-   - **$\mathcal{L}_{\text{connect}}$ (Connectivity Loss)**: Encourages polygons to share boundaries, reducing small gaps.
-   - **$\mathcal{L}_{\text{simple}}$ (Simplification Loss)**: Penalizes the length of non-shared edges, encouraging unnecessary edges to shrink until eliminated.
-   - **Vertex Merging**: Periodically simplifies polygons by merging nearby vertices, applying the RDP algorithm to simplify boundaries, and merging nearby polygons with similar normals.
-   - **Floor/Wall Hole Filling**: Projects object meshes onto the nearest floor plane to complete floor holes; extends wall polygons to ceilings/floors to fill wall holes.
+    - **$\mathcal{L}_{\text{geo}}$ (Geometric Loss)**: Comprises $\mathcal{L}_{\text{prox}}$ (minimizing the distance from skeleton vertices to the nearest polygon) and $\mathcal{L}_{\text{empty}}$ (preventing polygons from occluding known empty space, detected via camera-ray and depth intersection).
+    - **$\mathcal{L}_{\text{connect}}$ (Connectivity Loss)**: Encourages polygons to share boundaries, reducing small gaps.
+    - **$\mathcal{L}_{\text{simple}}$ (Simplification Loss)**: Penalizes the length of non-shared edges, encouraging unnecessary edges to shrink until eliminated.
+    - **Vertex Merging**: Periodically simplifies polygons by merging nearby vertices, applying the RDP algorithm to simplify boundaries, and merging nearby polygons with similar normals.
+    - **Floor/Wall Hole Filling**: Projects object meshes onto the nearest floor plane to complete floor holes; extends wall polygons to ceilings/floors to fill wall holes.
 
 4. **Scene Graph Generation (Stage 4)**:
-   - Identifies building floors via height-based clustering of floor polygons.
-   - Creates a 2D floor plan per floor by merging floor and ceiling polygons.
-   - Applies Hov-SG's room segmentation algorithm to partition each floor into rooms, generating a scene graph with rooms as nodes and doors/openings as edges.
-   - Detects staircases and adds cross-floor connection edges to the scene graph.
-   - **Room Extrusion**: Triangulates each floor plan using 2D Constrained Delaunay Triangulation, casts upward rays to assign ceilings, and extrudes each floor triangle to its assigned ceiling plane to generate enclosed 3D rooms.
+    - Identifies building floors via height-based clustering of floor polygons.
+    - Creates a 2D floor plan per floor by merging floor and ceiling polygons.
+    - Applies Hov-SG's room segmentation algorithm to partition each floor into rooms, generating a scene graph with rooms as nodes and doors/openings as edges.
+    - Detects staircases and adds cross-floor connection edges to the scene graph.
+    - **Room Extrusion**: Triangulates each floor plan using 2D Constrained Delaunay Triangulation, casts upward rays to assign ceilings, and extrudes each floor triangle to its assigned ceiling plane to generate enclosed 3D rooms.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 720630bf4b2e35e0
 # Ground-Compose-Reinforce: Grounding Language in Agentic Behaviours using Limited Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.10741](https://arxiv.org/abs/2507.10741)
-**Code**: [github](https://github.com/andrewli77/ground-compose-reinforce)
+**arXiv**: [2507.10741](https://arxiv.org/abs/2507.10741)  
+**Code**: [github](https://github.com/andrewli77/ground-compose-reinforce)  
 **Area**: LLM Agent / Reinforcement Learning
 **Keywords**: Language Grounding, Reward Machine, Compositional Generalization, Neuro-Symbolic, Reward Shaping
 

@@ -18,8 +18,8 @@ content_hash: 8754cbbed67f59c2
 # DeepGuard: Secure Code Generation via Multi-Layer Semantic Aggregation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.09089](https://arxiv.org/abs/2604.09089)
-**Code**: [https://github.com/unknownhl/DeepGuard](https://github.com/unknownhl/DeepGuard)
+**arXiv**: [2604.09089](https://arxiv.org/abs/2604.09089)  
+**Code**: [https://github.com/unknownhl/DeepGuard](https://github.com/unknownhl/DeepGuard)  
 **Area**: Code Intelligence / Security
 **Keywords**: Secure code generation, multi-layer aggregation, vulnerability detection, contrastive learning, inference-time guidance
 

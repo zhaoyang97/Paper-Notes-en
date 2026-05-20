@@ -18,8 +18,8 @@ content_hash: e23e83a28738934e
 # Understanding and Enforcing Weight Disentanglement in Task Arithmetic
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.17078](https://arxiv.org/abs/2604.17078)
-**Code**: [GitHub](https://github.com/RL-MIND/OrthoReg)
+**arXiv**: [2604.17078](https://arxiv.org/abs/2604.17078)  
+**Code**: [GitHub](https://github.com/RL-MIND/OrthoReg)  
 **Area**: Model Compression
 **Keywords**: Task Arithmetic, Model Merging, Weight Disentanglement, Orthogonal Regularization, Task Vectors
 

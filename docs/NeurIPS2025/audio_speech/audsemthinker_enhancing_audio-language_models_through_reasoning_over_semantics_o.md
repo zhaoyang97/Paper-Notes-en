@@ -18,8 +18,8 @@ content_hash: 9e6dfc0712ec5644
 # AudSemThinker: Enhancing Audio-Language Models through Reasoning over Semantics of Sound
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.14142](https://arxiv.org/abs/2505.14142)
-**Code**: [https://github.com/GLJS/AudSemThinker](https://github.com/GLJS/AudSemThinker)
+**arXiv**: [2505.14142](https://arxiv.org/abs/2505.14142)  
+**Code**: [https://github.com/GLJS/AudSemThinker](https://github.com/GLJS/AudSemThinker)  
 **Area**: Audio & Speech
 **Keywords**: Audio Reasoning, Semantic Descriptors, GRPO, Chain-of-Thought, Multimodal
 

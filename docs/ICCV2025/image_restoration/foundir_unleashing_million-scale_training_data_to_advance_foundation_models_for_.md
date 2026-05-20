@@ -18,8 +18,8 @@ content_hash: b8e69a5c814a874f
 # FoundIR: Unleashing Million-scale Training Data to Advance Foundation Models for Image Restoration
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.01427](https://arxiv.org/abs/2412.01427)
-**Code**: [Project Page](https://www.foundir.net)
+**arXiv**: [2412.01427](https://arxiv.org/abs/2412.01427)  
+**Code**: [Project Page](https://www.foundir.net)  
 **Area**: Image Restoration
 **Keywords**: Foundation Model, Universal Image Restoration, Million-scale Dataset, Incremental Learning, Diffusion Model
 

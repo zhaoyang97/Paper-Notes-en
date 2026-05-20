@@ -19,8 +19,8 @@ content_hash: b398b6a72e657dae
 # Chain of World: World Model Thinking in Latent Motion (CoWVLA)
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.03195](https://arxiv.org/abs/2603.03195)
-**Code**: [https://fx-hit.github.io/cowvla-io](https://fx-hit.github.io/cowvla-io)
+**arXiv**: [2603.03195](https://arxiv.org/abs/2603.03195)  
+**Code**: [https://fx-hit.github.io/cowvla-io](https://fx-hit.github.io/cowvla-io)  
 **Area**: Robot Manipulation / Vision-Language-Action Models / World Models
 **Keywords**: [VLA, World Model, Latent Motion Modeling, Video VAE, Keyframe Prediction, Action Quantization]
 

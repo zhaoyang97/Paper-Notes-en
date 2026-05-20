@@ -18,8 +18,8 @@ content_hash: 10ee43df5027929b
 # Effective Training Data Synthesis for Improving MLLM Chart Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.06492](https://arxiv.org/abs/2508.06492)
-**Code**: [https://github.com/yuweiyang-anu/ECD](https://github.com/yuweiyang-anu/ECD)
+**arXiv**: [2508.06492](https://arxiv.org/abs/2508.06492)  
+**Code**: [https://github.com/yuweiyang-anu/ECD](https://github.com/yuweiyang-anu/ECD)  
 **Area**: Multimodal VLM
 **Keywords**: chart understanding, data synthesis, multimodal large language models, training data, data quality
 

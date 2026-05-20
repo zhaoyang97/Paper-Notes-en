@@ -18,8 +18,8 @@ content_hash: 0b63efe128a5f90e
 # Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17738](https://arxiv.org/abs/2509.17738)
-**Code**: [GitHub](https://github.com/TrustworthyMachineLearning-Lab/grokking_flatness)
+**arXiv**: [2509.17738](https://arxiv.org/abs/2509.17738)  
+**Code**: [GitHub](https://github.com/TrustworthyMachineLearning-Lab/grokking_flatness)  
 **Authors**: Ting Han, Linara Adilova, Henning Petzka, Jens Kleesiek, Michael Kamp
 **Affiliations**: TU Dortmund / Lamarr Institute / Ruhr University Bochum / UK Essen
 **Area**: LLM Pretraining

@@ -18,8 +18,8 @@ content_hash: 1be0ed387f672e10
 # Task-Oriented Data Synthesis and Control-Rectify Sampling for Remote Sensing Semantic Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.16740](https://arxiv.org/abs/2512.16740)
-**Code**: [GitHub](https://github.com/Yunkai-Yang/crfm)
+**arXiv**: [2512.16740](https://arxiv.org/abs/2512.16740)  
+**Code**: [GitHub](https://github.com/Yunkai-Yang/crfm)  
 **Area**: Segmentation / Remote Sensing
 **Keywords**: Remote sensing semantic segmentation, data synthesis, controllable generation, diffusion models, flow matching
 

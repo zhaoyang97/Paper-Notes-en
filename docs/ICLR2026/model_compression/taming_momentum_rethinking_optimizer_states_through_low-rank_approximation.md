@@ -19,8 +19,8 @@ content_hash: e90c0726c24ef223
 # Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.24283](https://arxiv.org/abs/2602.24283)
-**Code**: [github.com/mrflogs/LoRA-Pre](https://github.com/mrflogs/LoRA-Pre)
+**arXiv**: [2602.24283](https://arxiv.org/abs/2602.24283)  
+**Code**: [github.com/mrflogs/LoRA-Pre](https://github.com/mrflogs/LoRA-Pre)  
 **Area**: Model Compression / Efficient Optimizers
 **Keywords**: Low-rank optimizer, momentum compression, pretraining efficiency, LoRA, Adam, Muon
 

@@ -18,8 +18,8 @@ content_hash: e21956e42828eb6c
 # HeteroCache: A Dynamic Retrieval Approach to Heterogeneous KV Cache Compression for Long-Context LLM Inference
 
 **Conference**: ACL 2026
-**arXiv**: [2601.13684](https://arxiv.org/abs/2601.13684)
-**Code**: [GitHub](https://github.com/ponytaill/HeteroCache)
+**arXiv**: [2601.13684](https://arxiv.org/abs/2601.13684)  
+**Code**: [GitHub](https://github.com/ponytaill/HeteroCache)  
 **Area**: Model Compression
 **Keywords**: KV cache compression, attention head heterogeneity, dynamic retrieval, intra-layer redundancy, asynchronous prefetching
 

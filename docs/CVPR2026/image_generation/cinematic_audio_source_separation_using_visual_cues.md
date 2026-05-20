@@ -18,8 +18,8 @@ content_hash: 8d75e3db254b2848
 # Cinematic Audio Source Separation Using Visual Cues
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26113](https://arxiv.org/abs/2603.26113)
-**Code**: [Project Page](https://cass-flowmatching.github.io)
+**arXiv**: [2603.26113](https://arxiv.org/abs/2603.26113)  
+**Code**: [Project Page](https://cass-flowmatching.github.io)  
 **Area**: Image Generation (Audio-Visual Multimodal)
 **Keywords**: Cinematic audio source separation, audio-visual learning, conditional flow matching, synthetic training data, multi-source separation
 
@@ -51,10 +51,10 @@ A Vision Extractor (face encoder + scene encoder → fused visual condition $\ma
 
 1. **Synthetic Training Data Pipeline**:
 
-   - Dialogue (DX): LRS3 dataset (lip-sync video + speech), 152K clips
-   - Sound Effects (FX): VGGSound (everyday event video + audio), filtered via SMAD to remove clips containing speech/music, ~62K
-   - Music (MX): FMA (music only), filtered to ~49K
-   - Mixture: $\mathbf{a}^A = \mathbf{a}^{DX} + \mathbf{a}^{FX} + \mathbf{a}^{MX}$
+    - Dialogue (DX): LRS3 dataset (lip-sync video + speech), 152K clips
+    - Sound Effects (FX): VGGSound (everyday event video + audio), filtered via SMAD to remove clips containing speech/music, ~62K
+    - Music (MX): FMA (music only), filtered to ~49K
+    - Mixture: $\mathbf{a}^A = \mathbf{a}^{DX} + \mathbf{a}^{FX} + \mathbf{a}^{MX}$
 
    Design Motivation: Real cinematic source separation data is unavailable, but single-source audio-visual data is abundant. Synthetic mixing preserves complete ground truth and remains fully controllable.
 

@@ -17,8 +17,8 @@ content_hash: f529e70e508043e8
 # Align When They Want, Complement When They Need! Human-Centered Ensembles for Adaptive Human-AI Collaboration
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.20104v1](https://arxiv.org/abs/2602.20104v1)
-**Code**: [GitHub](https://github.com/shasanamin/aaai26-adaptive-ai)
+**arXiv**: [2602.20104v1](https://arxiv.org/abs/2602.20104v1)  
+**Code**: [GitHub](https://github.com/shasanamin/aaai26-adaptive-ai)  
 **Area**: Other
 **Keywords**: human-AI collaboration, complementarity-alignment trade-off, adaptive ensemble, trust modeling, behavior-aware AI
 

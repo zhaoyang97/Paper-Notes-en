@@ -18,8 +18,8 @@ content_hash: 97407353261775d6
 # Robust Ego-Exo Correspondence with Long-Term Memory
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11417](https://arxiv.org/abs/2510.11417)
-**Code**: [GitHub](https://github.com/juneyeeHu/LM-EEC)
+**arXiv**: [2510.11417](https://arxiv.org/abs/2510.11417)  
+**Code**: [GitHub](https://github.com/juneyeeHu/LM-EEC)  
 **Area**: Image Segmentation
 **Keywords**: ego-exo correspondence, SAM2, MoE, video object segmentation, long-term memory
 

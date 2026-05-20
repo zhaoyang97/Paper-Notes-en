@@ -18,8 +18,8 @@ content_hash: abef7487900184d6
 # Trust Region Reward Optimization and Proximal Inverse Reward Optimization Algorithm
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23135](https://arxiv.org/abs/2509.23135)
-**Code**: [Available](https://github.com/PolynomialTime/PIRO)
+**arXiv**: [2509.23135](https://arxiv.org/abs/2509.23135)  
+**Code**: [Available](https://github.com/PolynomialTime/PIRO)  
 **Area**: Reinforcement Learning
 **Keywords**: Inverse Reinforcement Learning, Trust Region, Reward Learning, Non-Adversarial IRL, Monotonic Improvement
 

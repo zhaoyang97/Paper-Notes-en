@@ -18,8 +18,8 @@ content_hash: 6162fdea4c1fd4ad
 # CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01607](https://arxiv.org/abs/2603.01607)
-**Code**: [https://xypb.github.io/CARE-Project-Page/](https://xypb.github.io/CARE-Project-Page/)
+**arXiv**: [2603.01607](https://arxiv.org/abs/2603.01607)  
+**Code**: [https://xypb.github.io/CARE-Project-Page/](https://xypb.github.io/CARE-Project-Page/)  
 **Area**: Medical Imaging / Multimodal VLM / Agent
 **Keywords**: Medical VQA, Evidence-Grounded Reasoning, Agentic Framework, Referring Segmentation, Clinical Accountability
 

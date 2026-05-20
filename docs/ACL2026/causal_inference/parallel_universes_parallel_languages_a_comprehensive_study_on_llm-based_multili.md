@@ -17,8 +17,8 @@ content_hash: 2b55b500581a51bc
 # Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2601.00263](https://arxiv.org/abs/2601.00263)
-**Code**: [GitHub](https://github.com/qiaw99/multicfe)
+**arXiv**: [2601.00263](https://arxiv.org/abs/2601.00263)  
+**Code**: [GitHub](https://github.com/qiaw99/multicfe)  
 **Area**: Causal Inference
 **Keywords**: Multilingual Counterfactual Generation, Counterfactual Explanation, Data Augmentation, Cross-Lingual Consistency, LLM Multilingual Ability
 

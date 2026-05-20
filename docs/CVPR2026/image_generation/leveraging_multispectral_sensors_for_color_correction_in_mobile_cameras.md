@@ -18,8 +18,8 @@ content_hash: 7bdc3ac8381ec9f5
 # Leveraging Multispectral Sensors for Color Correction in Mobile Cameras
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.08441](https://arxiv.org/abs/2512.08441)
-**Code**: [Project Page](https://lucacogo.github.io/Mobile-Spectral-CC/)
+**arXiv**: [2512.08441](https://arxiv.org/abs/2512.08441)  
+**Code**: [Project Page](https://lucacogo.github.io/Mobile-Spectral-CC/)  
 **Area**: Image Generation / Image Processing
 **Keywords**: Multispectral sensors, color correction, automatic white balance, sensor fusion, mobile cameras
 
@@ -44,19 +44,19 @@ The paper proposes a dual-input end-to-end color correction framework: a high-re
 ### Key Designs
 
 1. **LPIENet Adaptation (U-Net Structure)**:
-   - **Function**: An image restoration architecture based on U-Net topology, suited for tasks requiring spatially consistent transformations.
-   - **Mechanism**: A dedicated spectral encoder branch (3 IRA blocks without downsampling) is added to the original 3-encoder-2-decoder structure; RGB and MS features are fused via element-wise addition at the skip connections.
-   - **Design Motivation**: IRA blocks integrate MobileNet-style convolutions with parallel channel/spatial attention, maintaining lightweight design (220K parameters in the standard version and 60K in the small version).
+    - **Function**: An image restoration architecture based on U-Net topology, suited for tasks requiring spatially consistent transformations.
+    - **Mechanism**: A dedicated spectral encoder branch (3 IRA blocks without downsampling) is added to the original 3-encoder-2-decoder structure; RGB and MS features are fused via element-wise addition at the skip connections.
+    - **Design Motivation**: IRA blocks integrate MobileNet-style convolutions with parallel channel/spatial attention, maintaining lightweight design (220K parameters in the standard version and 60K in the small version).
 
 2. **cmKAN Adaptation (KAN Hypernetwork Structure)**:
-   - **Function**: Uses a hypernetwork to generate spatially varying KAN layer parameters, enabling smooth nonlinear color transformations.
-   - **Mechanism**: A 3-layer convolutional spectral encoder is added to the generator; its outputs are fused with the illuminant estimator (IE) features at two feature levels via element-wise addition.
-   - **Design Motivation**: KAN layers (3rd-order B-spline, grid size 5) are inherently well-suited for modeling smooth color mappings; the entire architecture contains only 18K parameters, making it extremely compact.
+    - **Function**: Uses a hypernetwork to generate spatially varying KAN layer parameters, enabling smooth nonlinear color transformations.
+    - **Mechanism**: A 3-layer convolutional spectral encoder is added to the generator; its outputs are fused with the illuminant estimator (IE) features at two feature levels via element-wise addition.
+    - **Design Motivation**: KAN layers (3rd-order B-spline, grid size 5) are inherently well-suited for modeling smooth color mappings; the entire architecture contains only 18K parameters, making it extremely compact.
 
 3. **Physics-Driven Simulated Dataset**:
-   - **Function**: Provides RGB–MS–Ground Truth triplets under realistic illumination conditions for training and evaluation.
-   - **Mechanism**: Starting from reflectance spectra in two public hyperspectral datasets, the dataset is synthesized by combining 102 illuminant SPDs with 7 camera spectral sensitivity functions (covering both mobile and mirrorless cameras), yielding 116,688 image triplets. A misaligned version is also constructed.
-   - **Design Motivation**: No real-world paired RGB+MS dataset with the required hyperspectral reflectance ground truth exists; physics-based simulation is adopted while retaining realistic acquisition noise.
+    - **Function**: Provides RGB–MS–Ground Truth triplets under realistic illumination conditions for training and evaluation.
+    - **Mechanism**: Starting from reflectance spectra in two public hyperspectral datasets, the dataset is synthesized by combining 102 illuminant SPDs with 7 camera spectral sensitivity functions (covering both mobile and mirrorless cameras), yielding 116,688 image triplets. A misaligned version is also constructed.
+    - **Design Motivation**: No real-world paired RGB+MS dataset with the required hyperspectral reflectance ground truth exists; physics-based simulation is adopted while retaining realistic acquisition noise.
 
 ### Loss & Training
 

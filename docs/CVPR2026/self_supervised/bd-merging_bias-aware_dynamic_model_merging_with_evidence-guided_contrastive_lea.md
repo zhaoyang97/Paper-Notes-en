@@ -19,8 +19,8 @@ content_hash: a82023b498606492
 # BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.03920](https://arxiv.org/abs/2603.03920)
-**Code**: Not available
+**arXiv**: [2603.03920](https://arxiv.org/abs/2603.03920)  
+**Code**: Not available  
 **Area**: Self-Supervised Learning
 **Keywords**: Model Merging, Multi-Task Learning, Evidential Deep Learning, Distribution Shift, Contrastive Learning, uncertainty estimation
 

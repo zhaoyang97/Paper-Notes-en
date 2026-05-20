@@ -18,8 +18,8 @@ content_hash: c430d59987f21df2
 # Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.00410](https://arxiv.org/abs/2508.00410)
-**Code**: [https://github.com/tmlr-group/Co-rewarding](https://github.com/tmlr-group/Co-rewarding)
+**arXiv**: [2508.00410](https://arxiv.org/abs/2508.00410)  
+**Code**: [https://github.com/tmlr-group/Co-rewarding](https://github.com/tmlr-group/Co-rewarding)  
 **Area**: Reinforcement Learning
 **Keywords**: Self-supervised RL, Label-free Reasoning, Training Collapse, GRPO, Contrastive Learning
 

@@ -18,8 +18,8 @@ content_hash: 9f12a00d97bc9734
 # Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03738](https://arxiv.org/abs/2604.03738)
-**Code**: [https://poco-multiref-multishot.github.io/](https://poco-multiref-multishot.github.io/)
+**arXiv**: [2604.03738](https://arxiv.org/abs/2604.03738)  
+**Code**: [https://poco-multiref-multishot.github.io/](https://poco-multiref-multishot.github.io/)  
 **Area**: Video Generation / Diffusion Models / Multi-Reference Multi-Shot Generation
 **Keywords**: Position Encoding, Context Control, Multi-Reference Video Generation, RoPE, Identity Confusion
 
@@ -31,9 +31,9 @@ This paper proposes PoCo (Position Embedding as Context Controller), which intro
 
 1. **Background**: Video generation has advanced rapidly across tasks such as text-to-video and reference-to-video. Multi-reference multi-shot video generation is critical for filmmaking and narrative video production, yet remains underexplored in academia (closed-source systems such as Sora2 demonstrate feasibility but lack transparency).
 2. **Limitations of Prior Work**:
-   - Existing reference-to-video methods (Phantom, VACE) largely generate each shot independently, leading to inconsistent backgrounds and appearances across shots.
-   - The naive approach of directly concatenating multi-reference and multi-shot tokens into attention causes **reference confusion**—when multiple references appear visually similar, semantically similar tokens prevent the model from distinguishing the correct shot–reference associations.
-   - Attention visualizations directly confirm this issue: a given shot attends more strongly to an incorrect reference than to the correct one.
+    - Existing reference-to-video methods (Phantom, VACE) largely generate each shot independently, leading to inconsistent backgrounds and appearances across shots.
+    - The naive approach of directly concatenating multi-reference and multi-shot tokens into attention causes **reference confusion**—when multiple references appear visually similar, semantically similar tokens prevent the model from distinguishing the correct shot–reference associations.
+    - Attention visualizations directly confirm this issue: a given shot attends more strongly to an incorrect reference than to the correct one.
 3. **Key Challenge**: A fundamental tension exists between maintaining scene-level semantic consistency across shots (requiring global attention interaction) and faithfully preserving distinct reference identities (requiring precise reference association).
 4. **Goal**: (1) Resolve confusion among semantically similar references; (2) achieve precise context control without introducing additional computational overhead.
 5. **Key Insight**: The paper revisits the attention mechanism and decomposes it into a "semantics-driven learnable component" (Q-K retrieval) and a "manually designed positional encoding component" (context organization)—the latter can serve as an additional means of context control.
@@ -49,21 +49,21 @@ Built upon the VACE-Wan2.1-14B video generation framework, reference images are 
 
 1. **SideInfo-RoPE**:
 
-   - **Function**: Augments standard 3D-RoPE with an auxiliary information axis to guide attention allocation and prevent reference confusion.
-   - **Mechanism**: The position coordinate is extended from $\mathbf{p} = (t,h,w)$ to $\mathbf{p}^* = (t,h,w,s)$, where $s$ encodes reference entity information. For each visual token $\mathbf{x}$, the side information $\mathbf{s}(\mathbf{x}) \in \{0,1\}^K$ is defined such that $s_i(\mathbf{x})=1$ indicates that the shot containing this token includes reference $i$. The SideInfo distance between two tokens is $\Delta_{m,n}^s = |\mathbf{s}(\mathbf{x}_m) - \mathbf{s}(\mathbf{x}_n)|$. Among the $D$ RoPE dimensions, $D_s = 2K$ dimensions are allocated to the SideInfo axis; each reference $i$ corresponds to a $2\times2$ rotation block $\hat{\mathbf{R}}^{(i)}_{\Delta^s_{m,n}}$ with rotation phase $\phi_i = \frac{2\pi i - \pi}{K}$. When two tokens share the same SideInfo ($\Delta^s = 0$), no rotation occurs and phases remain aligned; otherwise, the phase offset attenuates cross-reference interference.
-   - **Design Motivation**: The SideInfo value space is discrete (only $\{0,1\}$), unlike the large range of $(t,h,w)$; rotation phases are therefore discretized into uniform partitions of the $2\pi$ period. SideInfo dimensions are allocated to low-frequency temporal channels (T-low) to avoid interfering with high-frequency motion modeling.
+    - **Function**: Augments standard 3D-RoPE with an auxiliary information axis to guide attention allocation and prevent reference confusion.
+    - **Mechanism**: The position coordinate is extended from $\mathbf{p} = (t,h,w)$ to $\mathbf{p}^* = (t,h,w,s)$, where $s$ encodes reference entity information. For each visual token $\mathbf{x}$, the side information $\mathbf{s}(\mathbf{x}) \in \{0,1\}^K$ is defined such that $s_i(\mathbf{x})=1$ indicates that the shot containing this token includes reference $i$. The SideInfo distance between two tokens is $\Delta_{m,n}^s = |\mathbf{s}(\mathbf{x}_m) - \mathbf{s}(\mathbf{x}_n)|$. Among the $D$ RoPE dimensions, $D_s = 2K$ dimensions are allocated to the SideInfo axis; each reference $i$ corresponds to a $2\times2$ rotation block $\hat{\mathbf{R}}^{(i)}_{\Delta^s_{m,n}}$ with rotation phase $\phi_i = \frac{2\pi i - \pi}{K}$. When two tokens share the same SideInfo ($\Delta^s = 0$), no rotation occurs and phases remain aligned; otherwise, the phase offset attenuates cross-reference interference.
+    - **Design Motivation**: The SideInfo value space is discrete (only $\{0,1\}$), unlike the large range of $(t,h,w)$; rotation phases are therefore discretized into uniform partitions of the $2\pi$ period. SideInfo dimensions are allocated to low-frequency temporal channels (T-low) to avoid interfering with high-frequency motion modeling.
 
 2. **Hierarchical Cross-Attention**:
 
-   - **Function**: Organizes text conditioning in a global–local structure.
-   - **Mechanism**: A binary mask $\mathbf{M} \in \{0,1\}^{L_v \times L_t}$ is constructed: reference image tokens attend to all text tokens ($\mathbf{M}[1:L_{ref}, 1:L_t] = 1$), providing global identity and style guidance across shots; video tokens for each shot attend only to the text segment corresponding to that shot ($\mathbf{M}[\mathcal{V}_s, \mathcal{T}_s] = 1$, $\mathbf{M}[\mathcal{V}_s, \mathcal{T}_{s'\neq s}] = 0$), ensuring local conditioning control.
-   - **Design Motivation**: Reference tokens require awareness of the global context to provide consistent identity guidance, whereas video tokens need only attend to their own shot description to avoid cross-shot interference.
+    - **Function**: Organizes text conditioning in a global–local structure.
+    - **Mechanism**: A binary mask $\mathbf{M} \in \{0,1\}^{L_v \times L_t}$ is constructed: reference image tokens attend to all text tokens ($\mathbf{M}[1:L_{ref}, 1:L_t] = 1$), providing global identity and style guidance across shots; video tokens for each shot attend only to the text segment corresponding to that shot ($\mathbf{M}[\mathcal{V}_s, \mathcal{T}_s] = 1$, $\mathbf{M}[\mathcal{V}_s, \mathcal{T}_{s'\neq s}] = 0$), ensuring local conditioning control.
+    - **Design Motivation**: Reference tokens require awareness of the global context to provide consistent identity guidance, whereas video tokens need only attend to their own shot description to avoid cross-shot interference.
 
 3. **Data Pipeline**:
 
-   - **Function**: Constructs structured multi-shot training samples from raw long-form videos.
-   - **Mechanism**: The video processing stage performs quality filtering (VQA, sharpness, exposure), shot segmentation (AutoShot + PySceneDetect), OCR-based cropping for watermark removal, MLLM-generated captions, and adjacent clip merging. The reference construction stage performs face detection and identity clustering, retains identities with sufficient occurrences, and builds two types of references per identity: original crops and SeedReam-enhanced frontal portraits. Clustered identity labels are propagated to corresponding shots as training-time side information.
-   - **Design Motivation**: High-quality multi-reference multi-shot training data is scarce, necessitating an automated pipeline to extract such data from large-scale video corpora. Dual-branch references (original + augmented) improve the robustness of identity conditioning.
+    - **Function**: Constructs structured multi-shot training samples from raw long-form videos.
+    - **Mechanism**: The video processing stage performs quality filtering (VQA, sharpness, exposure), shot segmentation (AutoShot + PySceneDetect), OCR-based cropping for watermark removal, MLLM-generated captions, and adjacent clip merging. The reference construction stage performs face detection and identity clustering, retains identities with sufficient occurrences, and builds two types of references per identity: original crops and SeedReam-enhanced frontal portraits. Clustered identity labels are propagated to corresponding shots as training-time side information.
+    - **Design Motivation**: High-quality multi-reference multi-shot training data is scarce, necessitating an automated pipeline to extract such data from large-scale video corpora. Dual-branch references (original + augmented) improve the robustness of identity conditioning.
 
 ### Loss & Training
 

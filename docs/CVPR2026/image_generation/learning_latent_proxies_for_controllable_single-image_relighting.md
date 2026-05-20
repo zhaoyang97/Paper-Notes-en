@@ -18,8 +18,8 @@ content_hash: 5caffb78db380209
 # Learning Latent Proxies for Controllable Single-Image Relighting
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.15555](https://arxiv.org/abs/2603.15555)
-**Code**: N/A
+**arXiv**: [2603.15555](https://arxiv.org/abs/2603.15555)  
+**Code**: N/A  
 **Area**: Image Relighting / Diffusion Models
 **Keywords**: Single-image relighting, PBR priors, latent proxy encoder, DPO post-training, lighting-aware mask
 

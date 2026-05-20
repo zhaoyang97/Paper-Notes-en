@@ -18,8 +18,8 @@ content_hash: e8d6f012b99a6dea
 # Revisit Visual Prompt Tuning: The Expressiveness of Prompt Experts
 
 **Conference**: ICLR 2026
-**arXiv**: [2501.18936](https://arxiv.org/abs/2501.18936)
-**Code**: [GitHub](https://github.com/Minhchuyentoancbn/VAPT)
+**arXiv**: [2501.18936](https://arxiv.org/abs/2501.18936)  
+**Code**: [GitHub](https://github.com/Minhchuyentoancbn/VAPT)  
 **Area**: Multimodal / Vision-Language Models
 **Keywords**: Visual Prompt Tuning, Mixture of Experts, Parameter-Efficient Fine-Tuning, Vision Transformer, Adaptive Prompts
 
@@ -48,9 +48,9 @@ VAPT dynamically generates prompt tokens $\bm{P}^{(l)}$ in each ViT block via a 
 
 - **Function**: Aggregates global information from the feature map to produce a global descriptor for each prompt token.
 - **Mechanism**:
-  - **Channel-wise Convolution**: Applies a $K \times K$ convolution with shared weights across all $d$ channels of the feature map $\bm{X}_{\text{img}} \in \mathbb{R}^{H \times W \times d}$ to encode local spatial relationships: $\bm{X}_{\text{conv}} = F * \bm{X}_{\text{img}}$.
-  - **Token-wise Projection**: $G_{j'}(\bm{X}_{\text{conv}}) = \sum_{k=1}^{H' \cdot W'} \alpha_{j',k} \bm{x}_k^{\text{conv}} \in \mathbb{R}^d$, which performs a weighted aggregation over tokens via learnable scalars $\alpha_{j',k}$ to capture global context.
-  - Both operations are linear; their composition yields $G_{j'}(\bm{X}_{\text{conv}}) = W_{j'} \bm{X}$, a linear function of the input.
+    - **Channel-wise Convolution**: Applies a $K \times K$ convolution with shared weights across all $d$ channels of the feature map $\bm{X}_{\text{img}} \in \mathbb{R}^{H \times W \times d}$ to encode local spatial relationships: $\bm{X}_{\text{conv}} = F * \bm{X}_{\text{img}}$.
+    - **Token-wise Projection**: $G_{j'}(\bm{X}_{\text{conv}}) = \sum_{k=1}^{H' \cdot W'} \alpha_{j',k} \bm{x}_k^{\text{conv}} \in \mathbb{R}^d$, which performs a weighted aggregation over tokens via learnable scalars $\alpha_{j',k}$ to capture global context.
+    - Both operations are linear; their composition yields $G_{j'}(\bm{X}_{\text{conv}}) = W_{j'} \bm{X}$, a linear function of the input.
 - **Design Motivation**: Pretrained experts capture only local patch information; prompt experts should complementarily capture global context. The channel-wise convolution requires only $K^2$ parameters — $d$ times fewer than a standard convolution — while still modeling spatial adjacency.
 
 #### 2. Shared Feature Projector
@@ -59,8 +59,8 @@ VAPT dynamically generates prompt tokens $\bm{P}^{(l)}$ in each ViT block via a 
 - **Mechanism**: $g(\bm{x}) = W^{(2)} \sigma(W^{(1)} \bm{x})$, where $W^{(1)} \in \mathbb{R}^{r \times d}$, $W^{(2)} \in \mathbb{R}^{d \times r}$, and $r \ll d$ (bottleneck MLP).
 - **Final Prompt**: $\bm{P}_{j'}(\bm{X}) = W^{(2)} \sigma(W^{(1)} W_{j'} \bm{X}) \in \mathbb{R}^d$.
 - **Updated Prompt Experts**:
-  - Expert function: $f_{N+j'}(\bm{X}) = W_m^{V\top} \bm{P}_{j'}(\bm{X})$ (input-adaptive).
-  - Score function: $s_{i,N+j'}(\bm{X}) = \frac{\bm{x}_i^\top W_m^Q W_m^{K\top} \bm{P}_{j'}(\bm{X})}{\sqrt{d_v}}$ (likewise adaptive).
+    - Expert function: $f_{N+j'}(\bm{X}) = W_m^{V\top} \bm{P}_{j'}(\bm{X})$ (input-adaptive).
+    - Score function: $s_{i,N+j'}(\bm{X}) = \frac{\bm{x}_i^\top W_m^Q W_m^{K\top} \bm{P}_{j'}(\bm{X})}{\sqrt{d_v}}$ (likewise adaptive).
 - **Design Motivation**: All ViT blocks share the same projector $g$, substantially reducing the parameter count.
 
 #### 3. Parameter Count Analysis

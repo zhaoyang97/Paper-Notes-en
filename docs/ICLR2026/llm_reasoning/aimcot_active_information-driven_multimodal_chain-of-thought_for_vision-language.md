@@ -18,8 +18,8 @@ content_hash: f6eb980ae983b401
 # AIMCoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25699](https://arxiv.org/abs/2509.25699)
-**Code**: Available (anonymous link)
+**arXiv**: [2509.25699](https://arxiv.org/abs/2509.25699)  
+**Code**: Available (anonymous link)  
 **Area**: LLM Reasoning
 **Keywords**: multimodal CoT, information gain, active visual probing, attention map, interleaved reasoning
 

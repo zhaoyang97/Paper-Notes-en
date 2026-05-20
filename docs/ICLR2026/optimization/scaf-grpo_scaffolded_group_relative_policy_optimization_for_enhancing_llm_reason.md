@@ -18,8 +18,8 @@ content_hash: abdce92afada35e6
 # Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.19807](https://arxiv.org/abs/2510.19807)
-**Code**: None
+**arXiv**: [2510.19807](https://arxiv.org/abs/2510.19807)  
+**Code**: None  
 **Area**: Optimization / LLM Reasoning Enhancement
 **Keywords**: GRPO, reinforcement learning, learning cliff, progressive guidance, scaffolding pedagogy
 

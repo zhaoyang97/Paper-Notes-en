@@ -18,8 +18,8 @@ content_hash: 5bfbcfe23077c0e8
 # Broken Tokens: Your Language Model Can Secretly Handle Non-Canonical Tokenization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.19004](https://arxiv.org/abs/2506.19004)
-**Code**: Available
+**arXiv**: [2506.19004](https://arxiv.org/abs/2506.19004)  
+**Code**: Available  
 **Area**: LLM Pretraining
 **Keywords**: non-canonical tokenization, character-level, robustness, embedding space, vocabulary attack
 

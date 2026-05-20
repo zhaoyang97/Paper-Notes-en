@@ -18,8 +18,8 @@ content_hash: 1f4e42698214f8d2
 # Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image
 
 **Conference**: CVPR2026
-**arXiv**: [2603.14772](https://arxiv.org/abs/2603.14772)
-**Code**: [https://juhyeon-kwon.github.io/DynaAvatar.github.io/](https://juhyeon-kwon.github.io/DynaAvatar.github.io/) (Project Page)
+**arXiv**: [2603.14772](https://arxiv.org/abs/2603.14772)  
+**Code**: [https://juhyeon-kwon.github.io/DynaAvatar.github.io/](https://juhyeon-kwon.github.io/DynaAvatar.github.io/) (Project Page)  
 **Area**: 3D Vision
 **Keywords**: 3D human reconstruction, animatable avatar, cloth dynamics, 3D Gaussian Splatting, single-image reconstruction
 

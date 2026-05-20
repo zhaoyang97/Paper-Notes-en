@@ -18,8 +18,8 @@ content_hash: dbcc5504ccd37254
 # Beyond Loss Values: Robust Dynamic Pruning via Loss Trajectory Alignment
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07306](https://arxiv.org/abs/2604.07306)
-**Code**: [GitHub](https://github.com/leonqin430/AlignPrune)
+**arXiv**: [2604.07306](https://arxiv.org/abs/2604.07306)  
+**Code**: [GitHub](https://github.com/leonqin430/AlignPrune)  
 **Area**: Model Compression / Data Pruning
 **Keywords**: dynamic data pruning, noisy labels, loss trajectory, plug-and-play module, training efficiency
 
@@ -43,7 +43,7 @@ Input: noisy training set $\mathcal{D}$ + small clean reference set $\mathcal{D}
 ### Key Designs
 1. **Loss Trajectory**: For each sample $i$, the loss sequence over the most recent $N$ epochs is maintained as $\mathbf{v}_i^{(t)} = [\ell_i^{(t-N+1)}, \ldots, \ell_i^{(t)}]$. The average loss trajectory $\mathbf{v}_{ref}^{(t)}$ is computed over the clean reference set.
 
-   - **Design Motivation**: Single-point loss cannot distinguish *hard samples* from *noisy samples* (both exhibit high loss), but their **temporal dynamics** differ substantially.
+    - **Design Motivation**: Single-point loss cannot distinguish *hard samples* from *noisy samples* (both exhibit high loss), but their **temporal dynamics** differ substantially.
 
 2. **Dynamic Alignment Score (DAS)**: The Pearson correlation coefficient between a sample's loss trajectory and the reference trajectory is computed as:
    $$DAS_i^{(t)} = \rho(\mathbf{v}_i^{(t)}, \mathbf{v}_{ref}^{(t)})$$

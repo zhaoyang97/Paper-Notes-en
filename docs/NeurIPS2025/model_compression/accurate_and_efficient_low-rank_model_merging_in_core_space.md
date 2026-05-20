@@ -18,8 +18,8 @@ content_hash: 34893fb0b3017ab5
 # Accurate and Efficient Low-Rank Model Merging in Core Space
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17786](https://arxiv.org/abs/2509.17786)
-**Code**: [GitHub](https://github.com/apanariello4/core-space-merging)
+**arXiv**: [2509.17786](https://arxiv.org/abs/2509.17786)  
+**Code**: [GitHub](https://github.com/apanariello4/core-space-merging)  
 **Area**: Model Compression / LLM Efficiency
 **Keywords**: Model Merging, LoRA, Low-Rank Projection, Parameter-Efficient Fine-Tuning, Core Space
 

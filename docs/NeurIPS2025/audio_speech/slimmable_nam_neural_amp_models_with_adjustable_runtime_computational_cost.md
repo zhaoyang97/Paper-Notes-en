@@ -18,8 +18,8 @@ content_hash: 0af4c163d922cefd
 # Slimmable NAM: Neural Amp Models with Adjustable Runtime Computational Cost
 
 **Conference**: NeurIPS 2025 (AI for Music Workshop)
-**arXiv**: [2511.07470](https://arxiv.org/abs/2511.07470)
-**Code**: [Available](https://github.com/sdatkinson/neural-amp-modeler)
+**arXiv**: [2511.07470](https://arxiv.org/abs/2511.07470)  
+**Code**: [Available](https://github.com/sdatkinson/neural-amp-modeler)  
 **Area**: Audio Processing / Neural Network Compression
 **Keywords**: Neural Amp Modeling, Slimmable Networks, WaveNet, Audio Effects, Real-time Inference
 

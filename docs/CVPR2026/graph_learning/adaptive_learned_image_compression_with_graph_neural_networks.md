@@ -18,8 +18,8 @@ content_hash: 1c16766c24039e65
 # Adaptive Learned Image Compression with Graph Neural Networks
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25316](https://arxiv.org/abs/2603.25316)
-**Code**: [https://github.com/UnoC-727/GLIC](https://github.com/UnoC-727/GLIC)
+**arXiv**: [2603.25316](https://arxiv.org/abs/2603.25316)  
+**Code**: [https://github.com/UnoC-727/GLIC](https://github.com/UnoC-727/GLIC)  
 **Area**: Graph Learning / Learned Image Compression
 **Keywords**: Image Compression, GNN, Dual-Scale Sampling, RMS Gradient, Content-Adaptive Connectivity
 
@@ -52,21 +52,21 @@ Lightweight convolutional blocks are retained for early-stage shallow feature ex
 
 1. **Dual-Scale Candidate Sampling**
 
-   - **Function**: Provides each pixel node with a candidate neighbor set that encompasses both local and long-range information.
-   - **Mechanism**: Two candidate sets are constructed per node. The local candidate set is drawn from a fixed local window to preserve fine-grained texture and boundary structure. The global candidate set is drawn from a strided mesh-grid spanning the entire feature map, providing a low-cost mechanism for long-range redundancy modeling. The final candidate set is the union of both.
-   - **Design Motivation**: Using only a local graph discards long-range correlations; using only a global sparse graph fails to capture low-level structural details. The dual-scale design simultaneously supports fine local modeling and sparse global matching, with complexity far below full global self-attention.
+    - **Function**: Provides each pixel node with a candidate neighbor set that encompasses both local and long-range information.
+    - **Mechanism**: Two candidate sets are constructed per node. The local candidate set is drawn from a fixed local window to preserve fine-grained texture and boundary structure. The global candidate set is drawn from a strided mesh-grid spanning the entire feature map, providing a low-cost mechanism for long-range redundancy modeling. The final candidate set is the union of both.
+    - **Design Motivation**: Using only a local graph discards long-range correlations; using only a global sparse graph fails to capture low-level structural details. The dual-scale design simultaneously supports fine local modeling and sparse global matching, with complexity far below full global self-attention.
 
 2. **Complexity-Aware Adaptive Node Degree**
 
-   - **Function**: Allocates different numbers of graph connections to different spatial positions rather than enforcing a uniform node degree.
-   - **Mechanism**: Sobel operators are applied per channel to compute gradient magnitudes, which are then aggregated via RMS pooling to form a complexity score. Higher gradients indicate greater local structural complexity and lower redundancy, warranting more neighbors for effective modeling. The total edge budget $B = N \cdot \bar{d}$ is then distributed across nodes in proportion to their complexity scores, yielding a target degree $d_i^*$ per node.
-   - **Design Motivation**: Unlike classification, compression does not require uniform modeling capacity at every position. Allocating fewer connections to smooth regions does not degrade reconstruction quality, while preserving budget for edges and textures that are harder to compress.
+    - **Function**: Allocates different numbers of graph connections to different spatial positions rather than enforcing a uniform node degree.
+    - **Mechanism**: Sobel operators are applied per channel to compute gradient magnitudes, which are then aggregated via RMS pooling to form a complexity score. Higher gradients indicate greater local structural complexity and lower redundancy, warranting more neighbors for effective modeling. The total edge budget $B = N \cdot \bar{d}$ is then distributed across nodes in proportion to their complexity scores, yielding a target degree $d_i^*$ per node.
+    - **Design Motivation**: Unlike classification, compression does not require uniform modeling capacity at every position. Allocating fewer connections to smooth regions does not degrade reconstruction quality, while preserving budget for edges and textures that are harder to compress.
 
 3. **Similarity-Threshold Graph Construction and GFA Aggregation**
 
-   - **Function**: Selects the most informative neighbors from the candidate set and performs message-passing aggregation.
-   - **Mechanism**: For each node, cosine similarities with all candidates are computed, and binary search is used to find a threshold that retains a number of neighbors as close as possible to the target degree $d_i^*$. Graph feature aggregation is then performed on the resulting directed graph, first via local graph aggregation and subsequently via global graph aggregation.
-   - **Design Motivation**: Dual-scale sampling addresses the question of which nodes are potentially worth connecting to; threshold-based selection resolves the final connectivity. This two-stage design is more controllable than soft global attention and more naturally induces the sparse structure favorable for compression.
+    - **Function**: Selects the most informative neighbors from the candidate set and performs message-passing aggregation.
+    - **Mechanism**: For each node, cosine similarities with all candidates are computed, and binary search is used to find a threshold that retains a number of neighbors as close as possible to the target degree $d_i^*$. Graph feature aggregation is then performed on the resulting directed graph, first via local graph aggregation and subsequently via global graph aggregation.
+    - **Design Motivation**: Dual-scale sampling addresses the question of which nodes are potentially worth connecting to; threshold-based selection resolves the final connectivity. This two-stage design is more controllable than soft global attention and more naturally induces the sparse structure favorable for compression.
 
 ### Loss & Training
 

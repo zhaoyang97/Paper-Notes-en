@@ -18,8 +18,8 @@ content_hash: 61af9fd67d17ab9d
 # How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.14323](https://arxiv.org/abs/2603.14323)
-**Code**: [Project Page](https://guimeng-leo-liu.github.io/Medical-MLLMs-Fail/)
+**arXiv**: [2603.14323](https://arxiv.org/abs/2603.14323)  
+**Code**: [Project Page](https://guimeng-leo-liu.github.io/Medical-MLLMs-Fail/)  
 **Area**: Multimodal VLM
 **Keywords**: Medical VQA, Visual Grounding, Attention Analysis, MLLM Failure Modes, Inference-Time Correction
 

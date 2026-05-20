@@ -18,8 +18,8 @@ content_hash: e49d88ffe42fe911
 # Language-guided Open-world Video Anomaly Detection under Weak Supervision
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.13160](https://arxiv.org/abs/2503.13160)
-**Code**: [GitHub](https://github.com/Kamino666/LaGoVAD-PreVAD)
+**arXiv**: [2503.13160](https://arxiv.org/abs/2503.13160)  
+**Code**: [GitHub](https://github.com/Kamino666/LaGoVAD-PreVAD)  
 **Area**: Video Generation
 **Keywords**: Video Anomaly Detection, Open-world, Language-guided, Concept Drift, Weak Supervision
 

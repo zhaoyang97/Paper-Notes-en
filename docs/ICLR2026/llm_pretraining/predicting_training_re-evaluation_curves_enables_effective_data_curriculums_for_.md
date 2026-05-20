@@ -18,8 +18,8 @@ content_hash: 157aeee74635f648
 # Predicting Training Re-evaluation Curves Enables Effective Data Curriculums
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25380](https://arxiv.org/abs/2509.25380)
-**Code**: None
+**arXiv**: [2509.25380](https://arxiv.org/abs/2509.25380)  
+**Code**: None  
 **Area**: LLM Pretraining
 **Keywords**: training re-evaluation curves, data curriculum learning, AdamW timescale, high-quality data placement, continual pretraining
 

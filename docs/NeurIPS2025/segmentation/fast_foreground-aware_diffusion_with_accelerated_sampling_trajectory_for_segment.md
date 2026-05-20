@@ -18,8 +18,8 @@ content_hash: 68b85f917e154908
 # FAST: Foreground-aware Diffusion with Accelerated Sampling Trajectory for Segmentation-oriented Anomaly Synthesis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20295](https://arxiv.org/abs/2509.20295)
-**Code**: [https://github.com/Chhro123/fast-foreground-aware-anomaly-synthesis](https://github.com/Chhro123/fast-foreground-aware-anomaly-synthesis)
+**arXiv**: [2509.20295](https://arxiv.org/abs/2509.20295)  
+**Code**: [https://github.com/Chhro123/fast-foreground-aware-anomaly-synthesis](https://github.com/Chhro123/fast-foreground-aware-anomaly-synthesis)  
 **Area**: Image Segmentation / Industrial Anomaly Detection
 **Keywords**: Industrial anomaly synthesis, foreground-aware diffusion, accelerated sampling, anomaly segmentation, mask-guided
 

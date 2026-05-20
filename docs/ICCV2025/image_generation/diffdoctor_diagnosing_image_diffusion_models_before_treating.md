@@ -18,8 +18,8 @@ content_hash: a6763fb73adf701e
 # DiffDoctor: Diagnosing Image Diffusion Models Before Treating
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.12382](https://arxiv.org/abs/2501.12382)
-**Code**: Unavailable
+**arXiv**: [2501.12382](https://arxiv.org/abs/2501.12382)  
+**Code**: Unavailable  
 **Area**: Diffusion Models
 **Keywords**: Diffusion Models, Artifact Detection, Pixel-level Feedback, Image Quality, Model Fine-tuning
 

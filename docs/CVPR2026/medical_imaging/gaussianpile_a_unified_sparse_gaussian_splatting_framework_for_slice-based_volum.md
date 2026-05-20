@@ -18,8 +18,8 @@ content_hash: a301a1910f515a65
 # GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20611](https://arxiv.org/abs/2603.20611)
-**Code**: N/A
+**arXiv**: [2603.20611](https://arxiv.org/abs/2603.20611)  
+**Code**: N/A  
 **Area**: Medical Imaging / 3D Reconstruction
 **Keywords**: 3D Gaussian Splatting, volumetric data compression, slice-based imaging, focus-aware modeling, real-time rendering
 

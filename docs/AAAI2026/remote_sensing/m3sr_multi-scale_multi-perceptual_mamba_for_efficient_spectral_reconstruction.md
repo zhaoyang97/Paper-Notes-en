@@ -18,8 +18,8 @@ content_hash: 3bab6b9af0d40e18
 # M3SR: Multi-Scale Multi-Perceptual Mamba for Efficient Spectral Reconstruction
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.08293](https://arxiv.org/abs/2601.08293)
-**Code**: [https://github.com/zhangyuzecn/M3SR](https://github.com/zhangyuzecn/M3SR)
+**arXiv**: [2601.08293](https://arxiv.org/abs/2601.08293)  
+**Code**: [https://github.com/zhangyuzecn/M3SR](https://github.com/zhangyuzecn/M3SR)  
 **Area**: Remote Sensing / Hyperspectral Image Reconstruction
 **Keywords**: Spectral Reconstruction, Mamba, State Space Model, Multi-Scale, Hyperspectral Imaging
 
@@ -46,9 +46,9 @@ The core idea of M3SR is to design a Multi-Perceptual Fusion (MPF) block that in
 M3SR adopts a U-Net-based encoder-decoder structure:
 1. **Input stage**: Receives an RGB image and extracts shallow features.
 2. **Encoder path**: Progressively extracts multi-scale semantic features via downsampling across three scales:
-   - **Global scale**: Captures overall structural information.
-   - **Intermediate scale**: Focuses on contextual information.
-   - **Local scale**: Recovers fine-grained texture details.
+    - **Global scale**: Captures overall structural information.
+    - **Intermediate scale**: Focuses on contextual information.
+    - **Local scale**: Recovers fine-grained texture details.
 3. **Decoder path**: Restores spatial resolution through upsampling, fusing multi-scale features via skip connections.
 4. **Output stage**: Generates the reconstructed hyperspectral image.
 

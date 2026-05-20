@@ -18,8 +18,8 @@ content_hash: 43dff4e4cbb3b4c8
 # Out of Sight, Out of Mind? Evaluating State Evolution in Video World Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13215](https://arxiv.org/abs/2603.13215)
-**Code**: [Project Page](https://glab-caltech.github.io/STEVOBench/)
+**arXiv**: [2603.13215](https://arxiv.org/abs/2603.13215)  
+**Code**: [Project Page](https://glab-caltech.github.io/STEVOBench/)  
 **Area**: LLM Evaluation
 **Keywords**: video world models, state evolution, occlusion testing, benchmark, physical consistency
 

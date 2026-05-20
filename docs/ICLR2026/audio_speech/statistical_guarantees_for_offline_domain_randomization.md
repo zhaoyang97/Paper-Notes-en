@@ -18,8 +18,8 @@ content_hash: 74f53854581635f6
 # Statistical Guarantees for Offline Domain Randomization
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.10133](https://arxiv.org/abs/2506.10133)
-**Code**: None
+**arXiv**: [2506.10133](https://arxiv.org/abs/2506.10133)  
+**Code**: None  
 **Area**: Audio & Speech
 **Keywords**: domain randomization, sim-to-real transfer, maximum likelihood estimation, consistency, offline RL
 

@@ -18,8 +18,8 @@ content_hash: bbefb933c69d3c75
 # Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.16127](https://arxiv.org/abs/2603.16127)
-**Code**: Not open-sourced
+**arXiv**: [2603.16127](https://arxiv.org/abs/2603.16127)  
+**Code**: Not open-sourced  
 **Area**: LLM Pre-training
 **Keywords**: Learning rate scheduling, pre-training, supervised fine-tuning, loss landscape, Warmup-Stable-Only
 

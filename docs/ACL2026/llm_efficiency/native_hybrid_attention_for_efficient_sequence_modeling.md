@@ -17,8 +17,8 @@ content_hash: 4c45e7d899071930
 # Native Hybrid Attention for Efficient Sequence Modeling
 
 **Conference**: ACL 2026
-**arXiv**: [2510.07019](https://arxiv.org/abs/2510.07019)
-**Code**: [GitHub](https://github.com/JusenD/NHA)
+**arXiv**: [2510.07019](https://arxiv.org/abs/2510.07019)  
+**Code**: [GitHub](https://github.com/JusenD/NHA)  
 **Area**: LLM Efficiency / Attention Mechanism
 **Keywords**: Hybrid Attention, Linear Attention, Sliding Window, Long-Short Memory Fusion, Efficient Sequence Modeling
 

@@ -18,8 +18,8 @@ content_hash: 70d1d41105247800
 # Mitigating Hallucination Through Theory-Consistent Symmetric Multimodal Preference Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.11712](https://arxiv.org/abs/2506.11712)
-**Code**: [https://github.com/Liuwq-bit/SymMPO](https://github.com/Liuwq-bit/SymMPO)
+**arXiv**: [2506.11712](https://arxiv.org/abs/2506.11712)  
+**Code**: [https://github.com/Liuwq-bit/SymMPO](https://github.com/Liuwq-bit/SymMPO)  
 **Area**: LLM Alignment
 **Keywords**: DPO, multimodal hallucination, preference optimization, visual understanding, symmetric preference learning
 

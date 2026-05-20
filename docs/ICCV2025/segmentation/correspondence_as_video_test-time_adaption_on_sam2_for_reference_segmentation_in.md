@@ -18,8 +18,8 @@ content_hash: cf8975f2048128bf
 # Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.07759](https://arxiv.org/abs/2508.07759)
-**Code**: [https://github.com/wanghr64/cav-sam](https://github.com/wanghr64/cav-sam)
+**arXiv**: [2508.07759](https://arxiv.org/abs/2508.07759)  
+**Code**: [https://github.com/wanghr64/cav-sam](https://github.com/wanghr64/cav-sam)  
 **Area**: Image Segmentation / Few-Shot Segmentation
 **Keywords**: Reference Segmentation, SAM2, Video Object Segmentation, Diffusion-Based Semantic Transition, Test-Time Adaptation
 

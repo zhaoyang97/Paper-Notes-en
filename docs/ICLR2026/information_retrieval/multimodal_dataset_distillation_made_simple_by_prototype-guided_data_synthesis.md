@@ -18,8 +18,8 @@ content_hash: 09bb5f4c06222817
 # Multimodal Dataset Distillation Made Simple by Prototype-Guided Data Synthesis
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.19756](https://arxiv.org/abs/2602.19756)
-**Code**: [GitHub](https://github.com/junhyeok9712/PDS)
+**arXiv**: [2602.19756](https://arxiv.org/abs/2602.19756)  
+**Code**: [GitHub](https://github.com/junhyeok9712/PDS)  
 **Area**: Information Retrieval
 **Keywords**: multimodal distillation, CLIP, unCLIP, prototype learning, training-free distillation
 
@@ -49,21 +49,21 @@ PDS is a three-stage pipeline. Given a large-scale image-text dataset $\mathcal{
 
 1. **Modality-Specific Clustering**
 
-   - **Function**: Extract semantically diverse representative prototypes from the large dataset.
-   - **Mechanism**: CLIP image and text encoders are used to extract embeddings $\{(z_n^{\text{img}}, z_n^{\text{txt}})\}$ for all sample pairs. Cosine similarity between image-text pairs is computed and low-similarity (noisy or weakly aligned) pairs are filtered out. Mini-batch k-means clustering is then applied independently to image embeddings and text embeddings, with the number of clusters set to the target distillation size $M$, yielding $M$ image clusters and $M$ text clusters.
-   - **Design Motivation**: The CLIP encoder is required rather than a VAE encoder, because VAE image embeddings and CLIP text embeddings do not share the same space. Experiments confirm that replacing CLIP with VAE causes IR@10 to collapse from 37.3% to 17.2%.
+    - **Function**: Extract semantically diverse representative prototypes from the large dataset.
+    - **Mechanism**: CLIP image and text encoders are used to extract embeddings $\{(z_n^{\text{img}}, z_n^{\text{txt}})\}$ for all sample pairs. Cosine similarity between image-text pairs is computed and low-similarity (noisy or weakly aligned) pairs are filtered out. Mini-batch k-means clustering is then applied independently to image embeddings and text embeddings, with the number of clusters set to the target distillation size $M$, yielding $M$ image clusters and $M$ text clusters.
+    - **Design Motivation**: The CLIP encoder is required rather than a VAE encoder, because VAE image embeddings and CLIP text embeddings do not share the same space. Experiments confirm that replacing CLIP with VAE causes IR@10 to collapse from 37.3% to 17.2%.
 
 2. **Cross-Modal Cluster Matching**
 
-   - **Function**: Establish a one-to-one correspondence between image clusters and text clusters.
-   - **Mechanism**: A cost matrix $K \in \mathbb{R}^{M \times M}$ is constructed, where $K_{ij}$ is the negative count of image-text pairs shared by image cluster $C_i^{\text{img}}$ and text cluster $C_j^{\text{txt}}$. The Hungarian algorithm then solves the linear assignment problem $\min_P \sum_{ij} K_{ij} P_{ij}$ (where $P$ is a permutation matrix) to obtain the globally optimal one-to-one matching. For each matched cluster pair, only the shared image-text pair embeddings are retained; their mean yields the cross-modal prototype $(\tilde{z}_i^{\text{img}}, \tilde{z}_j^{\text{txt}})$.
-   - **Design Motivation**: Simple cosine similarity matching cannot guarantee a globally optimal one-to-one correspondence. The Hungarian algorithm provides an exact solution in $O(M^3)$. For "pairless clusters" with no shared pairs, they can be retained at small distillation scales (with negligible impact) but should be discarded at large scales to avoid cross-modal misalignment.
+    - **Function**: Establish a one-to-one correspondence between image clusters and text clusters.
+    - **Mechanism**: A cost matrix $K \in \mathbb{R}^{M \times M}$ is constructed, where $K_{ij}$ is the negative count of image-text pairs shared by image cluster $C_i^{\text{img}}$ and text cluster $C_j^{\text{txt}}$. The Hungarian algorithm then solves the linear assignment problem $\min_P \sum_{ij} K_{ij} P_{ij}$ (where $P$ is a permutation matrix) to obtain the globally optimal one-to-one matching. For each matched cluster pair, only the shared image-text pair embeddings are retained; their mean yields the cross-modal prototype $(\tilde{z}_i^{\text{img}}, \tilde{z}_j^{\text{txt}})$.
+    - **Design Motivation**: Simple cosine similarity matching cannot guarantee a globally optimal one-to-one correspondence. The Hungarian algorithm provides an exact solution in $O(M^3)$. For "pairless clusters" with no shared pairs, they can be retained at small distillation scales (with negligible impact) but should be discarded at large scales to avoid cross-modal misalignment.
 
 3. **Image Synthesis via unCLIP Decoder**
 
-   - **Function**: Generate high-quality distilled images from image prototype embeddings.
-   - **Mechanism**: Since the U-Net in standard Stable Diffusion does not accept CLIP image embeddings as conditioning, the unCLIP architecture is adopted. Each image prototype $\tilde{z}_i^{\text{img}}$ is fed as a condition to the unCLIP decoder; the real caption most similar (by cosine similarity) to the text prototype is retrieved as auxiliary text conditioning. Classifier-free guidance is applied (guidance scale = 5.0, 100 sampling steps) to generate 224×224 images.
-   - **Design Motivation**: Three comparisons establish the necessity of this design. (1) Retrieving real images from image prototypes fails to preserve semantic diversity. (2) Pure text-to-image generation with unCLIP loses the fine-grained visual information encoded in image prototypes. (3) CLIP inversion (pixel-space optimization) produces unrealistic images and takes 1,477 seconds, compared to only 9.7 seconds for PDS.
+    - **Function**: Generate high-quality distilled images from image prototype embeddings.
+    - **Mechanism**: Since the U-Net in standard Stable Diffusion does not accept CLIP image embeddings as conditioning, the unCLIP architecture is adopted. Each image prototype $\tilde{z}_i^{\text{img}}$ is fed as a condition to the unCLIP decoder; the real caption most similar (by cosine similarity) to the text prototype is retrieved as auxiliary text conditioning. Classifier-free guidance is applied (guidance scale = 5.0, 100 sampling steps) to generate 224×224 images.
+    - **Design Motivation**: Three comparisons establish the necessity of this design. (1) Retrieving real images from image prototypes fails to preserve semantic diversity. (2) Pure text-to-image generation with unCLIP loses the fine-grained visual information encoded in image prototypes. (3) CLIP inversion (pixel-space optimization) produces unrealistic images and takes 1,477 seconds, compared to only 9.7 seconds for PDS.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: f09ed0373ffb7fa9
 # WhAM: Towards A Translative Model of Sperm Whale Vocalization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.02206](https://arxiv.org/abs/2512.02206)
-**Code**: [GitHub](https://github.com/Project-CETI/wham)
+**arXiv**: [2512.02206](https://arxiv.org/abs/2512.02206)  
+**Code**: [GitHub](https://github.com/Project-CETI/wham)  
 **Area**: Audio/Speech (Bioacoustics)
 **Keywords**: Sperm whale acoustics, generative audio model, acoustic translation, Masked Acoustic Token Model, cross-domain style transfer
 

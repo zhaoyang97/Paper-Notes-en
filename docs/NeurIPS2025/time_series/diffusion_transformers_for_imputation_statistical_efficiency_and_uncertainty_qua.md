@@ -18,8 +18,8 @@ content_hash: a7e0967cabe11c5a
 # Diffusion Transformers for Imputation: Statistical Efficiency and Uncertainty Quantification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.02216](https://arxiv.org/abs/2510.02216)
-**Code**: [Available](https://github.com/liamyzq/DiT_time_series_imputation)
+**arXiv**: [2510.02216](https://arxiv.org/abs/2510.02216)  
+**Code**: [Available](https://github.com/liamyzq/DiT_time_series_imputation)  
 **Area**: Time Series / Generative Model Theory
 **Keywords**: Diffusion models, Transformer, time series imputation, uncertainty quantification, statistical learning theory
 

@@ -18,8 +18,8 @@ content_hash: dffbb95d487fb6fd
 # Navigating Simply, Aligning Deeply: Winning Solutions for Mouse vs. AI 2025
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.00982](https://arxiv.org/abs/2602.00982)
-**Code**: Unavailable
+**arXiv**: [2602.00982](https://arxiv.org/abs/2602.00982)  
+**Code**: Unavailable  
 **Area**: Model Compression
 **Keywords**: Visual Robustness, Neural Alignment, Lightweight CNN, Gated Linear Units, Reinforcement Learning
 
@@ -31,8 +31,8 @@ In the NeurIPS 2025 Mouse vs. AI competition, this paper presents the counterint
 
 - **Background**: Out-of-distribution robustness in visual navigation remains a core challenge for reinforcement learning. Biological systems (e.g., mice) maintain stable navigation performance under significant environmental variation, whereas artificial systems typically suffer sharp performance degradation when encountering visual perturbations outside the training distribution.
 - **Limitations of Prior Work**: The NeurIPS 2025 Mouse vs. AI competition provides a unique benchmark for studying this robustness gap through two complementary tracks:
-  - **Track 1 (Visual Robustness)**: Evaluates agent generalization under unseen visual perturbations (fog, lighting changes, etc.)
-  - **Track 2 (Neural Alignment)**: Evaluates how well artificial visual representations predict the neural activity of 19,000+ neurons in the mouse visual cortex
+    - **Track 1 (Visual Robustness)**: Evaluates agent generalization under unseen visual perturbations (fog, lighting changes, etc.)
+    - **Track 2 (Neural Alignment)**: Evaluates how well artificial visual representations predict the neural activity of 19,000+ neurons in the mouse visual cortex
 - **Key Challenge**: Following the conventional wisdom that "complex tasks require complex architectures," the authors initially explored InceptionNet, a 24-layer IMPALA ResNet, and LSTM models. These complex architectures consistently exhibited training instability, severe overfitting, and performance drops of up to 35% under perturbations.
 - **Goal**: These failures prompted a fundamental rethink: **can a simple architecture paired with carefully selected augmentation components achieve superior robustness?**
 

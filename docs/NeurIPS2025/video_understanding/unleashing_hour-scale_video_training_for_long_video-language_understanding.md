@@ -18,8 +18,8 @@ content_hash: 56599d5299034b6c
 # Unleashing Hour-Scale Video Training for Long Video-Language Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05332](https://arxiv.org/abs/2506.05332)
-**Code**: [Project Page](https://videomarathon.github.io/)
+**arXiv**: [2506.05332](https://arxiv.org/abs/2506.05332)  
+**Code**: [Project Page](https://videomarathon.github.io/)  
 **Area**: Video Understanding / Multimodal VLM
 **Keywords**: Long Video Understanding, Video-LMM, Memory Augmentation, Instruction-Following Dataset, Hour-Scale Video
 

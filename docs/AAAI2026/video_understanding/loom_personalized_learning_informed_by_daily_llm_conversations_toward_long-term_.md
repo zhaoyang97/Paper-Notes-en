@@ -18,8 +18,8 @@ content_hash: c21fcd9ef028da6d
 # LOOM: Personalized Learning Informed by Daily LLM Conversations Toward Long-Term Mastery via a Dynamic Learner Memory Graph
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.21037](https://arxiv.org/abs/2511.21037)
-**Code**: [github](https://anonymous.4open.science/r/LoomDemo)
+**arXiv**: [2511.21037](https://arxiv.org/abs/2511.21037)  
+**Code**: [github](https://anonymous.4open.science/r/LoomDemo)  
 **Area**: Video Understanding / Personalized Learning
 **Keywords**: Personalized Learning, LLM Conversations, Learner Memory Graph, Agentic Pipeline, Adaptive Curriculum
 

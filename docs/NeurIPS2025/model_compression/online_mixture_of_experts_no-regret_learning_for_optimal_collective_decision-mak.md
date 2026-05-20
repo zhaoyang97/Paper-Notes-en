@@ -18,8 +18,8 @@ content_hash: b13895f39b885c30
 # Online Mixture of Experts: No-Regret Learning for Optimal Collective Decision-Making
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21788](https://arxiv.org/abs/2510.21788)
-**Code**: None
+**arXiv**: [2510.21788](https://arxiv.org/abs/2510.21788)  
+**Code**: None  
 **Area**: Online Learning / Ensemble Methods
 **Keywords**: online learning, mixture of experts, bandit, no-regret, LLM ensemble
 

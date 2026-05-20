@@ -18,8 +18,8 @@ content_hash: f7bc097ece7cedf0
 # VILTA: A VLM-in-the-Loop Adversary for Enhancing Driving Policy Robustness
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.12672](https://arxiv.org/abs/2601.12672)
-**Code**: None
+**arXiv**: [2601.12672](https://arxiv.org/abs/2601.12672)  
+**Code**: None  
 **Area**: Autonomous Driving / VLM Applications
 **Keywords**: VLM-in-the-Loop, Adversarial Trajectory Generation, Closed-Loop Training, Long-Tail Scenarios, Driving Policy Robustness
 

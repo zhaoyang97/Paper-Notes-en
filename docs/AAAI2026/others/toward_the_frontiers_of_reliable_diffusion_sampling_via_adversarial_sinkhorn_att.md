@@ -17,8 +17,8 @@ content_hash: 1be9e45c722cd403
 # ASAG: Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07499](https://arxiv.org/abs/2511.07499)
-**Code**: None
+**arXiv**: [2511.07499](https://arxiv.org/abs/2511.07499)  
+**Code**: None  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Attention Guidance, Optimal Transport, Sinkhorn Algorithm, Diffusion Sampling, Plug-and-Play
 

@@ -19,7 +19,7 @@ content_hash: 715b035e59cfa0b8
 # Hallucination Stations: On Some Basic Limitations of Transformer-Based Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.07505](https://arxiv.org/abs/2507.07505)
+**arXiv**: [2507.07505](https://arxiv.org/abs/2507.07505)  
 **Area**: LLM Safety
 **Keywords**: Hallucination, Computational Complexity, Time Hierarchy Theorem, Transformer, Agentic AI, Verification Impossibility
 
@@ -50,19 +50,19 @@ The paper adopts a structure of theoretical analysis supported by illustrative e
 ### Key Designs
 
 1. **Computational Complexity Analysis of LLMs**
-   - **Core Argument**: The self-attention mechanism in Transformers operates at $O(N^2 \cdot d)$ complexity over $N$ tokens of dimension $d$; all other operations are linear or lower.
-   - **Empirical Validation**: For any 17-token input, Llama-3.2-3B-Instruct consistently executes exactly 109,243,372,873 floating-point operations—regardless of input content.
-   - **Core Intuition**: If the computational task expressed in a prompt exceeds $O(N^2 \cdot d)$ in complexity, the LLM cannot complete it correctly.
+    - **Core Argument**: The self-attention mechanism in Transformers operates at $O(N^2 \cdot d)$ complexity over $N$ tokens of dimension $d$; all other operations are linear or lower.
+    - **Empirical Validation**: For any 17-token input, Llama-3.2-3B-Instruct consistently executes exactly 109,243,372,873 floating-point operations—regardless of input content.
+    - **Core Intuition**: If the computational task expressed in a prompt exceeds $O(N^2 \cdot d)$ in complexity, the LLM cannot complete it correctly.
 
 2. **Three Progressive Impossibility Examples**
-   - **Example 1 (Token Enumeration)**: Enumerating all length-$k$ strings over $n$ tokens requires $O(n^k)$ time, which quickly surpasses $O(N^2 \cdot d)$ for moderately large $k$.
-   - **Example 2 (Matrix Multiplication)**: Naïve matrix multiplication requires $O(n^3)$; LLMs cannot correctly perform this when the matrix dimension exceeds the vocabulary size.
-   - **Example 3 (Agentic AI Verification)**: Verifying an optimal TSP solution requires checking $(n-1)!/2$ routes—a complexity that neither a solving agent nor a verifying agent can handle.
+    - **Example 1 (Token Enumeration)**: Enumerating all length-$k$ strings over $n$ tokens requires $O(n^k)$ time, which quickly surpasses $O(N^2 \cdot d)$ for moderately large $k$.
+    - **Example 2 (Matrix Multiplication)**: Naïve matrix multiplication requires $O(n^3)$; LLMs cannot correctly perform this when the matrix dimension exceeds the vocabulary size.
+    - **Example 3 (Agentic AI Verification)**: Verifying an optimal TSP solution requires checking $(n-1)!/2$ routes—a complexity that neither a solving agent nor a verifying agent can handle.
 
 3. **Formal Theorem and Proof**
-   - **Theorem 1**: Given a prompt of length $N$ encoding a computational task of complexity $O(n^3)$ or higher, any LLM or LLM agent will necessarily hallucinate.
-   - **Proof**: The Hartmanis–Stearns Time Hierarchy Theorem guarantees the existence of decision problems solvable in $O(t_2(n))$ but not in $O(t_1(n))$.
-   - **Corollary**: There exist tasks that an LLM agent can execute, yet whose correctness cannot be verified by any LLM agent.
+    - **Theorem 1**: Given a prompt of length $N$ encoding a computational task of complexity $O(n^3)$ or higher, any LLM or LLM agent will necessarily hallucinate.
+    - **Proof**: The Hartmanis–Stearns Time Hierarchy Theorem guarantees the existence of decision problems solvable in $O(t_2(n))$ but not in $O(t_1(n))$.
+    - **Corollary**: There exist tasks that an LLM agent can execute, yet whose correctness cannot be verified by any LLM agent.
 
 ### Discussion on Reasoning Models
 

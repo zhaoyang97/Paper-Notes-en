@@ -18,8 +18,8 @@ content_hash: f20144ff801f43ed
 # ShieldedCode: Learning Robust Representations for Virtual Machine Protected Code
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20679](https://arxiv.org/abs/2601.20679)
-**Code**: None
+**arXiv**: [2601.20679](https://arxiv.org/abs/2601.20679)  
+**Code**: None  
 **Area**: Code Intelligence
 **Keywords**: virtual machine protection, code representation learning, contrastive learning, polymorphic generation, software security
 

@@ -18,8 +18,8 @@ content_hash: b27a85dd418ec5d8
 # Dynamic Black-hole Emission Tomography with Physics-informed Neural Fields
 
 **Conference**: CVPR2026
-**arXiv**: [2602.08029](https://arxiv.org/abs/2602.08029)
-**Code**: Not released
+**arXiv**: [2602.08029](https://arxiv.org/abs/2602.08029)  
+**Code**: Not released  
 **Area**: 3D Vision / Computational Imaging / Scientific Imaging
 **Keywords**: Black hole imaging, neural radiance fields, physics-informed constraints, 4D tomography, Event Horizon Telescope
 

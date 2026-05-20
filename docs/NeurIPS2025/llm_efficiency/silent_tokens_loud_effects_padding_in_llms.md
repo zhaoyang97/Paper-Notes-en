@@ -18,8 +18,8 @@ content_hash: d6963b18b551c594
 # Silent Tokens, Loud Effects: Padding in LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.01238](https://arxiv.org/abs/2510.01238)
-**Code**: Available (reference implementation)
+**arXiv**: [2510.01238](https://arxiv.org/abs/2510.01238)  
+**Code**: Available (reference implementation)  
 **Area**: LLM Efficiency / AI Safety
 **Keywords**: Padding Token, Robustness, Safety Alignment, Social Bias, Inference Deployment
 

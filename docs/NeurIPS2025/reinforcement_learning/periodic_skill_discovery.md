@@ -18,8 +18,8 @@ content_hash: a06934cc9f7894cc
 # Periodic Skill Discovery
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.03187](https://arxiv.org/abs/2511.03187)
-**Code**: Available (jonghaepark.github.io/psd)
+**arXiv**: [2511.03187](https://arxiv.org/abs/2511.03187)  
+**Code**: Available (jonghaepark.github.io/psd)  
 **Area**: Reinforcement Learning / Skill Discovery
 **Keywords**: Unsupervised skill discovery, periodic behavior, circular latent space, locomotion control, robotics
 

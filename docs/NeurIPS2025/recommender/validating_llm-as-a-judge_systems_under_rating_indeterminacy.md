@@ -18,8 +18,8 @@ content_hash: 1287177c8ea2d2b4
 # Validating LLM-as-a-Judge Systems under Rating Indeterminacy
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.05965](https://arxiv.org/abs/2503.05965)
-**Code**: None
+**arXiv**: [2503.05965](https://arxiv.org/abs/2503.05965)  
+**Code**: None  
 **Area**: LLM Evaluation / Recommender Systems
 **Keywords**: LLM-as-a-Judge, rating indeterminacy, validation framework, multi-label evaluation, forced-choice bias
 

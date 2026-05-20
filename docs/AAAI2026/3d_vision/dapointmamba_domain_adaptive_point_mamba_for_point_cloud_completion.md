@@ -18,8 +18,8 @@ content_hash: 22b6d7f9c687aaa9
 # DAPointMamba: Domain Adaptive Point Mamba for Point Cloud Completion
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.20278](https://arxiv.org/abs/2511.20278)
-**Code**: None
+**arXiv**: [2511.20278](https://arxiv.org/abs/2511.20278)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: Point Cloud Completion, Domain Adaptation, State Space Model, Mamba, Cross-Domain Alignment
 

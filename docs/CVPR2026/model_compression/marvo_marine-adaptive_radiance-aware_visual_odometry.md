@@ -18,8 +18,8 @@ content_hash: 3de92974fbebb23a
 # MARVO: Marine-Adaptive Radiance-aware Visual Odometry
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.22860](https://arxiv.org/abs/2511.22860)
-**Code**: N/A
+**arXiv**: [2511.22860](https://arxiv.org/abs/2511.22860)  
+**Code**: N/A  
 **Area**: Model Compression
 **Keywords**: underwater visual odometry, physics-aware feature matching, factor graph optimization, reinforcement learning pose graph optimization, multi-sensor fusion
 

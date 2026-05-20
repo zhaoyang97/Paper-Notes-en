@@ -18,8 +18,8 @@ content_hash: 4bb1dbe4de6b8c60
 # STAR: Similarity-guided Teacher-Assisted Refinement for Super-Tiny Function Calling Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.03022](https://arxiv.org/abs/2602.03022)
-**Code**: [github.com/Qwen-Applications/STAR](https://github.com/Qwen-Applications/STAR)
+**arXiv**: [2602.03022](https://arxiv.org/abs/2602.03022)  
+**Code**: [github.com/Qwen-Applications/STAR](https://github.com/Qwen-Applications/STAR)  
 **Area**: Model Compression / Knowledge Distillation
 **Keywords**: Knowledge Distillation, Reinforcement Learning, Function Calling, Super-Tiny Models, Similarity Reward
 

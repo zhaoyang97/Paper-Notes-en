@@ -18,8 +18,8 @@ content_hash: ba91f1473f0d913d
 # PriorRG: Prior-Guided Contrastive Pre-training and Coarse-to-Fine Decoding for Chest X-ray Report Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.05353](https://arxiv.org/abs/2508.05353)
-**Code**: [GitHub](https://github.com/mk-runner/PriorRG)
+**arXiv**: [2508.05353](https://arxiv.org/abs/2508.05353)  
+**Code**: [GitHub](https://github.com/mk-runner/PriorRG)  
 **Area**: Medical Imaging / Radiology Report Generation
 **Keywords**: Chest X-ray report generation, prior knowledge, contrastive pre-training, coarse-to-fine decoding, spatiotemporal fusion
 

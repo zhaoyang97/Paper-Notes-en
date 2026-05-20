@@ -18,8 +18,8 @@ content_hash: 9c1ea4f61ab0683d
 # COVR: Collaborative Optimization of VLMs and RL Agent for Visual-Based Control
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.06122](https://arxiv.org/abs/2601.06122)
-**Code**: Unavailable (as of 2026-03)
+**arXiv**: [2601.06122](https://arxiv.org/abs/2601.06122)  
+**Code**: Unavailable (as of 2026-03)  
 **Area**: Multimodal VLM / Agent / Reinforcement Learning
 **Keywords**: VLM-RL collaborative optimization, visual reinforcement learning, knowledge distillation, dynamic data filtering, autonomous driving
 

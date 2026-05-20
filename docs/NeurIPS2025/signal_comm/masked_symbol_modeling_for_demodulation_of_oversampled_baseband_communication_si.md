@@ -18,8 +18,8 @@ content_hash: a58c4df3b27c94c7
 # Masked Symbol Modeling for Demodulation of Oversampled Baseband Communication Signals
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.01428](https://arxiv.org/abs/2512.01428)
-**Code**: [https://github.com/OguzBedir/Masked_Symbol_Modeling](https://github.com/OguzBedir/Masked_Symbol_Modeling)
+**arXiv**: [2512.01428](https://arxiv.org/abs/2512.01428)  
+**Code**: [https://github.com/OguzBedir/Masked_Symbol_Modeling](https://github.com/OguzBedir/Masked_Symbol_Modeling)  
 **Area**: Signal & Communications
 **Keywords**: Masked Symbol Modeling, Communication Physical Layer, Transformer, Pulse Shaping, Impulsive Noise
 

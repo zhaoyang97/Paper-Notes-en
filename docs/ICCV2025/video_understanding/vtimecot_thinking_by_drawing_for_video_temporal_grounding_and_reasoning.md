@@ -18,8 +18,8 @@ content_hash: d93d335b97f072fd
 # VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.14672](https://arxiv.org/abs/2510.14672)
-**Code**: [Project Page](https://vtimecot.github.io)
+**arXiv**: [2510.14672](https://arxiv.org/abs/2510.14672)  
+**Code**: [Project Page](https://vtimecot.github.io)  
 **Area**: Video Understanding
 **Keywords**: video temporal grounding, chain-of-thought, progress bar, visual prompt, training-free
 

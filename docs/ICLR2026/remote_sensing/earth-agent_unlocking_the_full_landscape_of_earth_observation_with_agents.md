@@ -18,8 +18,8 @@ content_hash: d7b661eb5649a8e2
 # Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23141](https://arxiv.org/abs/2509.23141)
-**Code**: [opendatalab/Earth-Agent](https://github.com/opendatalab/Earth-Agent)
+**arXiv**: [2509.23141](https://arxiv.org/abs/2509.23141)  
+**Code**: [opendatalab/Earth-Agent](https://github.com/opendatalab/Earth-Agent)  
 **Area**: Remote Sensing / LLM Agent
 **Keywords**: Earth Observation, Agent Framework, MCP Tool Ecosystem, Multimodal Remote Sensing, Benchmark
 

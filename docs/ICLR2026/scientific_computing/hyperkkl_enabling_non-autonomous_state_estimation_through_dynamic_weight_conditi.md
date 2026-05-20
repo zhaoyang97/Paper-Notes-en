@@ -18,8 +18,8 @@ content_hash: b7501abccf00ff2c
 # HyperKKL: Enabling Non-Autonomous State Estimation through Dynamic Weight Conditioning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.22630](https://arxiv.org/abs/2602.22630)
-**Code**: To be confirmed
+**arXiv**: [2602.22630](https://arxiv.org/abs/2602.22630)  
+**Code**: To be confirmed  
 **Area**: Scientific Computing
 **Keywords**: KKL observer, state estimation, hypernetwork, non-autonomous system, dynamical system
 

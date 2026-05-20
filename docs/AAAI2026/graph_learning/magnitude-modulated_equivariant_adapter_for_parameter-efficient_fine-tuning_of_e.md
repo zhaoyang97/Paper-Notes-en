@@ -18,8 +18,8 @@ content_hash: 331bf02a9932448e
 # Magnitude-Modulated Equivariant Adapter for Parameter-Efficient Fine-Tuning of Equivariant Graph Neural Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06696](https://arxiv.org/abs/2511.06696)
-**Code**: [https://github.com/CLaSLoVe/MMEA](https://github.com/CLaSLoVe/MMEA)
+**arXiv**: [2511.06696](https://arxiv.org/abs/2511.06696)  
+**Code**: [https://github.com/CLaSLoVe/MMEA](https://github.com/CLaSLoVe/MMEA)  
 **Area**: Graph Learning
 **Keywords**: Equivariant Graph Neural Networks, Parameter-Efficient Fine-Tuning, Molecular Potential Energy Prediction, Spherical Harmonics, PEFT
 

@@ -18,8 +18,8 @@ content_hash: 9beec0fb9bca42ee
 # Prompt-Based Safety Guidance Is Ineffective for Unlearned Text-to-Image Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.04834](https://arxiv.org/abs/2511.04834)
-**Code**: None
+**arXiv**: [2511.04834](https://arxiv.org/abs/2511.04834)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Concept Unlearning, Safety Guidance, Negative Prompt, Concept Inversion, Text-to-Image Safety
 

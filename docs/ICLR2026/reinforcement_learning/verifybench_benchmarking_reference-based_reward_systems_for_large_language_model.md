@@ -18,8 +18,8 @@ content_hash: 0d07d882a1c7d0d6
 # VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.15801](https://arxiv.org/abs/2505.15801)
-**Code**: [GitHub](https://github.com/ZJU-REAL/VerifyBench)
+**arXiv**: [2505.15801](https://arxiv.org/abs/2505.15801)  
+**Code**: [GitHub](https://github.com/ZJU-REAL/VerifyBench)  
 **Area**: Reinforcement Learning
 **Keywords**: reward model, benchmark, verification, LLM, reinforcement-learning
 

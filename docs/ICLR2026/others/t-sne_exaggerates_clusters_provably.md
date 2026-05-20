@@ -17,8 +17,8 @@ content_hash: 4191b4814808ce58
 # t-SNE Exaggerates Clusters, Provably
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.07746](https://arxiv.org/abs/2510.07746)
-**Code**: [https://github.com/njbergam/tsne-exaggerates-clusters](https://github.com/njbergam/tsne-exaggerates-clusters)
+**arXiv**: [2510.07746](https://arxiv.org/abs/2510.07746)  
+**Code**: [https://github.com/njbergam/tsne-exaggerates-clusters](https://github.com/njbergam/tsne-exaggerates-clusters)  
 **Area**: Data Visualization / Theoretical Analysis
 **Keywords**: t-SNE, cluster exaggeration, dimensionality reduction, misleading visualization, outliers
 
@@ -104,9 +104,9 @@ Adding a single "poisoning point" placed at the data mean suffices to destroy th
 1. **First theoretical analysis of t-SNE failure modes**: Prior work offered only empirical observations; this paper provides rigorous proofs.
 2. **Discovery of additive invariance**: Reveals the fundamental cause of t-SNE's misleading behavior.
 3. **Practical implications**:
-   - The strength of input clusters cannot be inferred from t-SNE visualizations.
-   - t-SNE is unsuitable for outlier detection.
-   - t-SNE is particularly unstable on high-dimensional data (which tends to approximate a regular simplex).
+    - The strength of input clusters cannot be inferred from t-SNE visualizations.
+    - t-SNE is unsuitable for outlier detection.
+    - t-SNE is particularly unstable on high-dimensional data (which tends to approximate a regular simplex).
 4. **PCA as a complement**: PCA significantly outperforms t-SNE in outlier detection and stability.
 
 ## Limitations & Future Work

@@ -18,8 +18,8 @@ content_hash: ec345a33d151a893
 # AstroVisBench: A Code Benchmark for Scientific Computing and Visualization in Astronomy
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20538](https://arxiv.org/abs/2505.20538)
-**Code**: [https://astrovisbench.github.io](https://astrovisbench.github.io)
+**arXiv**: [2505.20538](https://arxiv.org/abs/2505.20538)  
+**Code**: [https://astrovisbench.github.io](https://astrovisbench.github.io)  
 **Area**: LLM Code Generation / Astronomy
 **Keywords**: Scientific Visualization, Astronomical Code Generation, Domain-Specific Benchmark, VLM Evaluation, Jupyter Notebook
 

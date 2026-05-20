@@ -18,8 +18,8 @@ content_hash: 329417ed57b45a97
 # HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding
 
 **Conference**: ACL 2026
-**arXiv**: [2601.14724](https://arxiv.org/abs/2601.14724)
-**Code**: [GitHub](https://github.com/haowei-freesky/HERMES)
+**arXiv**: [2601.14724](https://arxiv.org/abs/2601.14724)  
+**Code**: [GitHub](https://github.com/haowei-freesky/HERMES)  
 **Area**: Video Understanding / Streaming Inference
 **Keywords**: Streaming Video, KV Cache Management, Hierarchical Memory, Real-Time Response, Training-Free
 

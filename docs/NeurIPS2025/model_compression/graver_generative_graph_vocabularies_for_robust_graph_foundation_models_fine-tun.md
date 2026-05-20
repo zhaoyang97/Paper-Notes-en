@@ -18,8 +18,8 @@ content_hash: f33931c70b7bb0f3
 # Graver: Generative Graph Vocabularies for Robust Graph Foundation Models Fine-tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05592](https://arxiv.org/abs/2511.05592)
-**Code**: [GitHub](https://github.com/RingBDStack/GRAVER)
+**arXiv**: [2511.05592](https://arxiv.org/abs/2511.05592)  
+**Code**: [GitHub](https://github.com/RingBDStack/GRAVER)  
 **Area**: Model Compression
 **Keywords**: graph foundation model, few-shot fine-tuning, graphon, vocabulary generation, MoE
 

@@ -18,8 +18,8 @@ content_hash: 8d23a954b532e33a
 # Aha: Predicting What Matters Next — Online Highlight Detection Without Looking Ahead
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16421](https://arxiv.org/abs/2509.16421)
-**Code**: [GitHub](https://github.com/aiden200/Aha-)
+**arXiv**: [2509.16421](https://arxiv.org/abs/2509.16421)  
+**Code**: [GitHub](https://github.com/aiden200/Aha-)  
 **Area**: Autonomous Driving / Video Understanding
 **Keywords**: Online Highlight Detection, Streaming Video, Autoregressive, Video-Language Model, Uncertainty Modeling
 

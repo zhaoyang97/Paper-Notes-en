@@ -18,8 +18,8 @@ content_hash: 9f59a9a381585cdf
 # ExpertAD: Enhancing Autonomous Driving Systems with Mixture of Experts
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11740](https://arxiv.org/abs/2511.11740)
-**Code**: None
+**arXiv**: [2511.11740](https://arxiv.org/abs/2511.11740)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: End-to-end autonomous driving, mixture of experts, perception adaptation, sparse attention, inference efficiency
 

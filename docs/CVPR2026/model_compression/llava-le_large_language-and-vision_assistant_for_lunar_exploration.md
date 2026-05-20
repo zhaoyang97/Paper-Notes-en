@@ -18,8 +18,8 @@ content_hash: b07bf624e109e859
 # LLaVA-LE: Large Language-and-Vision Assistant for Lunar Exploration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24696](https://arxiv.org/abs/2603.24696)
-**Code**: [https://github.com/OSUPCVLab/LLaVA-LE](https://github.com/OSUPCVLab/LLaVA-LE)
+**arXiv**: [2603.24696](https://arxiv.org/abs/2603.24696)  
+**Code**: [https://github.com/OSUPCVLab/LLaVA-LE](https://github.com/OSUPCVLab/LLaVA-LE)  
 **Area**: Model Compression
 **Keywords**: Lunar exploration, vision-language model, geological understanding, multimodal reasoning, domain fine-tuning
 

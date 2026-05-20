@@ -18,8 +18,8 @@ content_hash: 5ced80ffe7152db5
 # AFD-INSTRUCTION: A Comprehensive Antibody Instruction Dataset with Functional Annotations for LLM-Based Understanding and Design
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.04916](https://arxiv.org/abs/2602.04916)
-**Code**: To be released
+**arXiv**: [2602.04916](https://arxiv.org/abs/2602.04916)  
+**Code**: To be released  
 **Area**: Bioinformatics / LLM Instruction Tuning
 **Keywords**: Antibody language model, instruction tuning dataset, sequence-function alignment, antibody design, multi-agent data construction
 
@@ -49,21 +49,21 @@ The construction of AFD-Instruction proceeds in three stages: (1) antibodies are
 
 1. **Multi-Agent Literature Extraction System**
 
-   - Function: Automatically extracts antibody functional annotations from scientific publications.
-   - Mechanism: Three specialized roles divide the labor—*Mr. Extractor* scans text and extracts basic information (category, target, source, function); *Dr. Mechanism* analyzes structural and mechanistic details (binding sites, molecular effects); *Prof. Function* synthesizes high-level interpretations (mode of action, therapeutic relevance, distinctive characteristics).
-   - Design Motivation: A single agent is prone to information omission and hallucination; the division of labor ensures completeness and hierarchical integrity across factual extraction, mechanistic analysis, and functional synthesis.
+    - Function: Automatically extracts antibody functional annotations from scientific publications.
+    - Mechanism: Three specialized roles divide the labor—*Mr. Extractor* scans text and extracts basic information (category, target, source, function); *Dr. Mechanism* analyzes structural and mechanistic details (binding sites, molecular effects); *Prof. Function* synthesizes high-level interpretations (mode of action, therapeutic relevance, distinctive characteristics).
+    - Design Motivation: A single agent is prone to information omission and hallucination; the division of labor ensures completeness and hierarchical integrity across factual extraction, mechanistic analysis, and functional synthesis.
 
 2. **Self-Questioning Strategy**
 
-   - Function: Automatically generates diverse instruction-response pairs from antibody-description pairs.
-   - Mechanism: For **understanding**, five types of classification questions are generated (antibody category, disease association, binding site, mechanism of action, function) along with captioning tasks (free-text description). For **design**, the input consists of a functional description and antigen sequence (tagged with `<Anti></Anti>`), and the output is either a full antibody sequence or a CDR3 sequence (tagged with `<CDR3></CDR3>`). Seed prompts, LLM generation, automatic consistency checking, and deduplication are applied throughout.
-   - Design Motivation: The raw antibody-description pairs are limited in scale (~4,305 entries); multi-perspective question generation expands the dataset to 430K+ entries.
+    - Function: Automatically generates diverse instruction-response pairs from antibody-description pairs.
+    - Mechanism: For **understanding**, five types of classification questions are generated (antibody category, disease association, binding site, mechanism of action, function) along with captioning tasks (free-text description). For **design**, the input consists of a functional description and antigen sequence (tagged with `<Anti></Anti>`), and the output is either a full antibody sequence or a CDR3 sequence (tagged with `<CDR3></CDR3>`). Seed prompts, LLM generation, automatic consistency checking, and deduplication are applied throughout.
+    - Design Motivation: The raw antibody-description pairs are limited in scale (~4,305 entries); multi-perspective question generation expands the dataset to 430K+ entries.
 
 3. **Sequence Format Specification**
 
-   - Function: Marks antibody sequences with explicit chain-level tags.
-   - Mechanism: Heavy chains are enclosed in `<H></H>`, light chains in `<L></L>`, antigens in `<Anti></Anti>`, and CDR3 regions in `<CDR3></CDR3>`.
-   - Design Motivation: Enables text-based LLMs to comprehend the structural organization of protein sequences.
+    - Function: Marks antibody sequences with explicit chain-level tags.
+    - Mechanism: Heavy chains are enclosed in `<H></H>`, light chains in `<L></L>`, antigens in `<Anti></Anti>`, and CDR3 regions in `<CDR3></CDR3>`.
+    - Design Motivation: Enables text-based LLMs to comprehend the structural organization of protein sequences.
 
 ### Quality Control
 - Automatic completeness checks and manual verification on a 10% random sample.

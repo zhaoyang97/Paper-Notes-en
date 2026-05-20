@@ -18,8 +18,8 @@ content_hash: 64c07c28e48fbe28
 # Style Amnesia: Investigating Speaking Style Degradation and Mitigation in Multi-Turn Spoken Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2512.23578](https://arxiv.org/abs/2512.23578)
-**Code**: [GitHub](https://github.com/YuXiangLin1234/SLM-Style-Amnesia)
+**arXiv**: [2512.23578](https://arxiv.org/abs/2512.23578)  
+**Code**: [GitHub](https://github.com/YuXiangLin1234/SLM-Style-Amnesia)  
 **Area**: Spoken Language Models
 **Keywords**: spoken language models, style amnesia, multi-turn dialogue, speaking style, instruction following
 

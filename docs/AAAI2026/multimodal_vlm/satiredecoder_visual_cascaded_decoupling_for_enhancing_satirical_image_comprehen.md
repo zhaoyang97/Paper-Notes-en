@@ -18,8 +18,8 @@ content_hash: c1c1440b6eab538a
 # SatireDecoder: Visual Cascaded Decoupling for Enhancing Satirical Image Comprehension
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.00582](https://arxiv.org/abs/2512.00582)
-**Code**: None
+**arXiv**: [2512.00582](https://arxiv.org/abs/2512.00582)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Satire understanding, multi-agent system, chain-of-thought reasoning, uncertainty analysis, hallucination mitigation
 

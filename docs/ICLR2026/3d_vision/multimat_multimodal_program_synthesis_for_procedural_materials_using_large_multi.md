@@ -18,8 +18,8 @@ content_hash: 476f72d10cdbbed3
 # MultiMat: Multimodal Program Synthesis for Procedural Materials using Large Multimodal Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22151](https://arxiv.org/abs/2509.22151)
-**Code**: None
+**arXiv**: [2509.22151](https://arxiv.org/abs/2509.22151)  
+**Code**: None  
 **Area**: 3D Vision / Program Synthesis
 **Keywords**: Procedural Materials, Node Graph, Multimodal Generation, Constrained Tree Search, Substance Designer
 

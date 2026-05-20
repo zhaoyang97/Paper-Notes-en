@@ -18,8 +18,8 @@ content_hash: 55824aac21d9e303
 # Exploring LLMs for Scientific Information Extraction using the SciEx Framework
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.10004](https://arxiv.org/abs/2512.10004)
-**Code**: None
+**arXiv**: [2512.10004](https://arxiv.org/abs/2512.10004)  
+**Code**: None  
 **Area**: Multimodal / Information Extraction
 **Keywords**: Scientific Information Extraction, LLM, RAG, Multimodal Reasoning, Modular Framework
 

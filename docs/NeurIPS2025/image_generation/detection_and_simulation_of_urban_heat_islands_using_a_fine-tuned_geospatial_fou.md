@@ -18,8 +18,8 @@ content_hash: 2fd5777c8346880b
 # Detection and Simulation of Urban Heat Islands Using a Fine-Tuned Geospatial Foundation Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18773](https://arxiv.org/abs/2510.18773)
-**Code**: Based on the Granite-Geospatial-LST model (available on HuggingFace)
+**arXiv**: [2510.18773](https://arxiv.org/abs/2510.18773)  
+**Code**: Based on the Granite-Geospatial-LST model (available on HuggingFace)  
 **Area**: Geospatial / Climate Science
 **Keywords**: Urban Heat Island, Geospatial Foundation Model, LST Prediction, Climate Extrapolation, Inpainting Simulation
 
@@ -51,21 +51,21 @@ The three-stage workflow proceeds sequentially: (1) overlaying LULC data with hi
 
 1. **Stage 1: Empirical Cooling Baseline Construction and Model Validation**
 
-   - **Function**: Quantify the actual cooling effects of green spaces and verify whether the model correctly captures these physical mechanisms.
-   - **Mechanism**: Impact Observatory 10 m land-use classifications are overlaid with HLS L30 30 m multispectral imagery to extract park areas. The cooling anomaly is defined as $\Delta T$ = temperature at target point − baseline temperature of surrounding built-up area. Two effects are analyzed as a function of distance from park boundaries: internal cooling (the temperature gradient from park edge to center) and spillover cooling (the diffusion of cooling from parks into surrounding built-up areas). Data from 12 European cities are aggregated over summer daytime periods from 2017 to 2025.
-   - **Design Motivation**: Conventional evaluation reports only MAE/RMSE metrics, which cannot determine whether a model truly understands physical processes. By comparing model predictions against empirical cooling curves, this work assesses "physical plausibility" rather than merely "numerical accuracy."
+    - **Function**: Quantify the actual cooling effects of green spaces and verify whether the model correctly captures these physical mechanisms.
+    - **Mechanism**: Impact Observatory 10 m land-use classifications are overlaid with HLS L30 30 m multispectral imagery to extract park areas. The cooling anomaly is defined as $\Delta T$ = temperature at target point − baseline temperature of surrounding built-up area. Two effects are analyzed as a function of distance from park boundaries: internal cooling (the temperature gradient from park edge to center) and spillover cooling (the diffusion of cooling from parks into surrounding built-up areas). Data from 12 European cities are aggregated over summer daytime periods from 2017 to 2025.
+    - **Design Motivation**: Conventional evaluation reports only MAE/RMSE metrics, which cannot determine whether a model truly understands physical processes. By comparing model predictions against empirical cooling curves, this work assesses "physical plausibility" rather than merely "numerical accuracy."
 
 2. **Stage 2: Extreme Climate Extrapolation and Future Prediction**
 
-   - **Function**: Assess the model's ability to extrapolate to unseen extreme heat conditions and predict future climate scenarios.
-   - **Mechanism**: Brașov, Romania—a city outside the training set—is selected. Data are sorted by temperature; the cooler 90% are used for fine-tuning and the hottest 10% are held out as the test set. Extrapolation accuracy is evaluated on this 10% to establish the model's reliable extrapolation range. EURO-CORDEX climate projection data then replace ERA5 inputs to forecast UHI patterns in 2030, 2050, and 2100 under RCP 2.6, 4.5, and 8.5 emission scenarios.
-   - **Design Motivation**: The core challenge in climate prediction is extrapolation—models must forecast extreme conditions outside the training distribution. By first quantifying extrapolation limits on known data (MAE = 1.74°C), the approach provides a principled basis for confidence when applying the model to future scenarios.
+    - **Function**: Assess the model's ability to extrapolate to unseen extreme heat conditions and predict future climate scenarios.
+    - **Mechanism**: Brașov, Romania—a city outside the training set—is selected. Data are sorted by temperature; the cooler 90% are used for fine-tuning and the hottest 10% are held out as the test set. Extrapolation accuracy is evaluated on this 10% to establish the model's reliable extrapolation range. EURO-CORDEX climate projection data then replace ERA5 inputs to forecast UHI patterns in 2030, 2050, and 2100 under RCP 2.6, 4.5, and 8.5 emission scenarios.
+    - **Design Motivation**: The core challenge in climate prediction is extrapolation—models must forecast extreme conditions outside the training distribution. By first quantifying extrapolation limits on known data (MAE = 1.74°C), the approach provides a principled basis for confidence when applying the model to future scenarios.
 
 3. **Stage 3: Urban Greening Intervention Simulation (Inpainting)**
 
-   - **Function**: Simulate temperature changes resulting from the addition of green space in specific urban areas.
-   - **Mechanism**: Built-up pixel values in satellite imagery are replaced with pixels representative of green space, with corresponding adjustments to input spectral indices (e.g., increased NDVI), and the model predicts LST for the modified scene. Cooling effects are quantified by comparing pre- and post-intervention predictions.
-   - **Design Motivation**: Inpainting is transferred from image generation to climate simulation—not to produce visually realistic images, but to predict changes in physical quantities. This transforms the model from a passive assessment tool into an active "what-if" simulation platform.
+    - **Function**: Simulate temperature changes resulting from the addition of green space in specific urban areas.
+    - **Mechanism**: Built-up pixel values in satellite imagery are replaced with pixels representative of green space, with corresponding adjustments to input spectral indices (e.g., increased NDVI), and the model predicts LST for the modified scene. Cooling effects are quantified by comparing pre- and post-intervention predictions.
+    - **Design Motivation**: Inpainting is transferred from image generation to climate simulation—not to produce visually realistic images, but to predict changes in physical quantities. This transforms the model from a passive assessment tool into an active "what-if" simulation platform.
 
 ### Model Architecture and Training
 

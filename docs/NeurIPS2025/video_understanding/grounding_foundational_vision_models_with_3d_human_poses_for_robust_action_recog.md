@@ -19,8 +19,8 @@ content_hash: f8b7744a1a01419e
 # Grounding Foundational Vision Models with 3D Human Poses for Robust Action Recognition
 
 **Conference**: NEURIPS2025
-**arXiv**: [2511.05622](https://arxiv.org/abs/2511.05622)
-**Code**: [nbabey20/groundactrec](https://github.com/nbabey20/groundactrec)
+**arXiv**: [2511.05622](https://arxiv.org/abs/2511.05622)  
+**Code**: [nbabey20/groundactrec](https://github.com/nbabey20/groundactrec)  
 **Area**: Video Understanding
 **Keywords**: action recognition, multimodal fusion, 3D human pose, cross-attention, V-JEPA 2, CoMotion
 
@@ -71,9 +71,9 @@ The model consists of two feature extraction branches, a cross-attention fusion 
 ### Cross-Attention Fusion Transformer
 
 - $L=4$ fusion layers are used; each layer comprises:
-  - **Bidirectional cross-attention**: the visual stream attends to the skeleton stream as K/V, and the skeleton stream symmetrically attends to the visual stream as K/V.
-  - **Self-attention refinement**: each stream independently performs self-attention to consolidate fused features.
-  - Residual connections and LayerNorm are applied after each sub-layer.
+    - **Bidirectional cross-attention**: the visual stream attends to the skeleton stream as K/V, and the skeleton stream symmetrically attends to the visual stream as K/V.
+    - **Self-attention refinement**: each stream independently performs self-attention to consolidate fused features.
+    - Residual connections and LayerNorm are applied after each sub-layer.
 - 8 attention heads are used.
 
 ### Classification Head

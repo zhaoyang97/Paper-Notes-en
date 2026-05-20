@@ -18,8 +18,8 @@ content_hash: 069358894e6f0077
 # Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22886](https://arxiv.org/abs/2507.22886)
-**Code**: [OmniAVS](https://henghuiding.com/OmniAVS/)
+**arXiv**: [2507.22886](https://arxiv.org/abs/2507.22886)  
+**Code**: [OmniAVS](https://henghuiding.com/OmniAVS/)  
 **Area**: Image Segmentation
 **Keywords**: Audio-visual segmentation, omnimodal referring, reasoning segmentation, multimodal large language models, query propagation
 

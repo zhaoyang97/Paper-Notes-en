@@ -18,8 +18,8 @@ content_hash: 814fef455f3f8bbb
 # Verb Mirage: Unveiling and Assessing Verb Concept Hallucinations in Multimodal Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2412.04939](https://arxiv.org/abs/2412.04939)
-**Code**: [github](https://github.com/davidwang200099/Verb_Mirage)
+**arXiv**: [2412.04939](https://arxiv.org/abs/2412.04939)  
+**Code**: [github](https://github.com/davidwang200099/Verb_Mirage)  
 **Area**: Multimodal VLM
 **Keywords**: verb hallucination, MLLM, hallucination evaluation, action understanding, fine-grained evaluation
 

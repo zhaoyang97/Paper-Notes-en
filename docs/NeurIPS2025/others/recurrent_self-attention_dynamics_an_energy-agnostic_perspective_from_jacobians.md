@@ -17,8 +17,8 @@ content_hash: 2d9d779a537e1890
 # Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19458](https://arxiv.org/abs/2505.19458)
-**Code**: Unavailable
+**arXiv**: [2505.19458](https://arxiv.org/abs/2505.19458)  
+**Code**: Unavailable  
 **Area**: Deep Learning Theory / Transformer Dynamics Analysis
 **Keywords**: Self-Attention, Jacobian Matrix, Lyapunov Exponents, Normalization Layers, Recurrent Architectures
 

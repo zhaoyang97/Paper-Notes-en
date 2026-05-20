@@ -18,8 +18,8 @@ content_hash: ca14dbe407d448e3
 # K-Sort Eval: Efficient Preference Evaluation for Visual Generation via Corrected VLM-as-a-Judge
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.09411](https://arxiv.org/abs/2602.09411)
-**Code**: [GitHub](https://github.com/zkkli/K-Sort-Eval)
+**arXiv**: [2602.09411](https://arxiv.org/abs/2602.09411)  
+**Code**: [GitHub](https://github.com/zkkli/K-Sort-Eval)  
 **Area**: Multimodal VLM
 **Keywords**: VLM-as-a-Judge, preference evaluation, posterior correction, dynamic matching, visual generation
 

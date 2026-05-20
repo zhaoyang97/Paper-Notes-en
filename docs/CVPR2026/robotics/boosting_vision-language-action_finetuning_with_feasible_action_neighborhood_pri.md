@@ -18,8 +18,8 @@ content_hash: 2c5db1e7d278287a
 # Boosting Vision-Language-Action Finetuning with Feasible Action Neighborhood Prior
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01570](https://arxiv.org/abs/2604.01570)
-**Code**: None
+**arXiv**: [2604.01570](https://arxiv.org/abs/2604.01570)  
+**Code**: None  
 **Area**: Robotic Manipulation / VLA Finetuning
 **Keywords**: VLA finetuning, feasible action neighborhood, Gaussian regularization, reinforcement finetuning, sample efficiency
 

@@ -18,8 +18,8 @@ content_hash: 8632df27072839ff
 # Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.17874](https://arxiv.org/abs/2509.17874)
-**Code**: [https://github.com/pauliusrauba/nested-subspace-networks](https://github.com/pauliusrauba/nested-subspace-networks)
+**arXiv**: [2509.17874](https://arxiv.org/abs/2509.17874)  
+**Code**: [https://github.com/pauliusrauba/nested-subspace-networks](https://github.com/pauliusrauba/nested-subspace-networks)  
 **Area**: Medical Imaging
 **Keywords**: Nested Subspace, Dynamic Inference, Low-Rank Decomposition, Uncertainty-Aware Training, Elastic Computation
 

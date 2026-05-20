@@ -18,8 +18,8 @@ content_hash: 399590c97137377d
 # Faithful Group Shapley Value
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19013](https://arxiv.org/abs/2505.19013)
-**Code**: [KiljaeL/Faithful_GSV](https://github.com/KiljaeL/Faithful_GSV)
+**arXiv**: [2505.19013](https://arxiv.org/abs/2505.19013)  
+**Code**: [KiljaeL/Faithful_GSV](https://github.com/KiljaeL/Faithful_GSV)  
 **Area**: Others (Data Valuation / Cooperative Game Theory)
 **Keywords**: Data Shapley, Group-Level Data Valuation, Faithfulness Axiom, Shell Company Attack, Copyright Attribution, Explainable AI
 

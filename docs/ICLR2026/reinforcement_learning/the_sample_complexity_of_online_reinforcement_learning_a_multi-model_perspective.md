@@ -18,8 +18,8 @@ content_hash: 1fc25f2221264ed7
 # The Sample Complexity of Online Reinforcement Learning: A Multi-Model Perspective
 
 **Conference**: ICLR 2026
-**arXiv**: [2501.15910](https://arxiv.org/abs/2501.15910)
-**Code**: None
+**arXiv**: [2501.15910](https://arxiv.org/abs/2501.15910)  
+**Code**: None  
 **Area**: Reinforcement Learning / Online Control
 **Keywords**: Sample Complexity, Online Reinforcement Learning, Multi-Model Adaptive Control, Policy Regret, Nonlinear Dynamical Systems
 

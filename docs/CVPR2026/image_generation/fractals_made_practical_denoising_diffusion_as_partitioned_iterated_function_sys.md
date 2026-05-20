@@ -18,8 +18,8 @@ content_hash: 5df71f19273506d7
 # Fractals made Practical: Denoising Diffusion as Partitioned Iterated Function Systems
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13069](https://arxiv.org/abs/2603.13069)
-**Code**: None
+**arXiv**: [2603.13069](https://arxiv.org/abs/2603.13069)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Diffusion Models, Partitioned Iterated Function Systems (PIFS), Fractal Geometry, Jacobian Analysis, Kaplan-Yorke Dimension
 

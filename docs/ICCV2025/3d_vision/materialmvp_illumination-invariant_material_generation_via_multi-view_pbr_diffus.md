@@ -18,8 +18,8 @@ content_hash: 1c3e07c5d8b15673
 # MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.10289](https://arxiv.org/abs/2503.10289)
-**Code**: [GitHub](https://github.com/ZebinHe/MaterialMVP)
+**arXiv**: [2503.10289](https://arxiv.org/abs/2503.10289)  
+**Code**: [GitHub](https://github.com/ZebinHe/MaterialMVP)  
 **Area**: 3D Vision / PBR Material Generation
 **Keywords**: PBR texture, multi-view diffusion, illumination invariance, material generation, dual-channel
 

@@ -18,8 +18,8 @@ content_hash: 30ec11b221d38dc5
 # InfGen: A Resolution-Agnostic Paradigm for Scalable Image Synthesis
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.10441](https://arxiv.org/abs/2509.10441)
-**Code**: [GitHub](https://github.com/taohan10200/InfGen)
+**arXiv**: [2509.10441](https://arxiv.org/abs/2509.10441)  
+**Code**: [GitHub](https://github.com/taohan10200/InfGen)  
 **Area**: Image Generation
 **Keywords**: Arbitrary-resolution generation, latent diffusion models, VAE decoder replacement, implicit neural positional encoding, efficient 4K generation
 

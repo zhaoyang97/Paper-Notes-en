@@ -18,8 +18,8 @@ content_hash: c305a894051a8be1
 # Improving the Convergence Rate of Ray Search Optimization for Query-Efficient Hard-Label Attacks
 
 **Conference**: AAAI 2026 (Oral)
-**arXiv**: [2512.21241](https://arxiv.org/abs/2512.21241)
-**Code**: None
+**arXiv**: [2512.21241](https://arxiv.org/abs/2512.21241)  
+**Code**: None  
 **Area**: AI Security / Adversarial Attacks
 **Keywords**: hard-label attacks, black-box adversarial examples, query efficiency, momentum acceleration, surrogate models
 

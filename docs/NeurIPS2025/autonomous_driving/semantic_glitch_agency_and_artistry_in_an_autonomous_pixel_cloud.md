@@ -18,8 +18,8 @@ content_hash: 4531fed7b6cef996
 # Semantic Glitch: Agency and Artistry in an Autonomous Pixel Cloud
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.16048](https://arxiv.org/abs/2511.16048)
-**Code**: None
+**arXiv**: [2511.16048](https://arxiv.org/abs/2511.16048)  
+**Code**: None  
 **Area**: Autonomous Systems / Robotic Art / Human-Robot Interaction
 **Keywords**: Weak robot, MLLM navigation, speculative design, pixel cloud, emergent behavior
 

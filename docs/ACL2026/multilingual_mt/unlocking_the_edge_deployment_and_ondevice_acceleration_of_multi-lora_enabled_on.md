@@ -18,8 +18,8 @@ content_hash: 0c8cba620180301a
 # Unlocking the Edge: Multi-LoRA On-Device Deployment and Acceleration
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18655](https://arxiv.org/abs/2604.18655)
-**Code**: None (Samsung internal system)
+**arXiv**: [2604.18655](https://arxiv.org/abs/2604.18655)  
+**Code**: None (Samsung internal system)  
 **Area**: Multilingual Translation
 **Keywords**: On-device LLM deployment, Multi-LoRA, speculative decoding, concurrent token generation, INT4 quantization
 

@@ -18,8 +18,8 @@ content_hash: ea61a828199f3bc7
 # Why Do Unlearnable Examples Work: A Novel Perspective of Mutual Information
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.03725](https://arxiv.org/abs/2603.03725)
-**Code**: [github.com/hala64/mi-ue](https://github.com/hala64/mi-ue)
+**arXiv**: [2603.03725](https://arxiv.org/abs/2603.03725)  
+**Code**: [github.com/hala64/mi-ue](https://github.com/hala64/mi-ue)  
 **Area**: AI Security / Data Privacy Protection
 **Keywords**: Unlearnable Examples, Mutual Information, Data Poisoning, Covariance Reduction, Privacy Protection
 

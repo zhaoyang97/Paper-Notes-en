@@ -18,8 +18,8 @@ content_hash: 9afe53c7915799a6
 # No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23141](https://arxiv.org/abs/2602.23141)
-**Code**: [GitHub](https://github.com/liutao23/LightStab.git)
+**arXiv**: [2602.23141](https://arxiv.org/abs/2602.23141)  
+**Code**: [GitHub](https://github.com/liutao23/LightStab.git)  
 **Area**: Remote Sensing
 **Keywords**: Video stabilization, unsupervised, online processing, optical flow estimation, UAV
 

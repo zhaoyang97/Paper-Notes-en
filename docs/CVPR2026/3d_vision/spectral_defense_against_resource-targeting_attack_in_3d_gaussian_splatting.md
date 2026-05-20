@@ -19,8 +19,8 @@ content_hash: ece613d90dc48865
 # Spectral Defense Against Resource-Targeting Attack in 3D Gaussian Splatting
 
 **Conference**: CVPR2026
-**arXiv**: [2603.12796](https://arxiv.org/abs/2603.12796)
-**Code**: To be confirmed
+**arXiv**: [2603.12796](https://arxiv.org/abs/2603.12796)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, adversarial defense, resource-targeting attack, frequency-domain analysis, Gaussian pruning, spectral regularization
 

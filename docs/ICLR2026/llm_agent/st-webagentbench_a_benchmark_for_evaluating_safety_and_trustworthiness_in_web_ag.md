@@ -18,8 +18,8 @@ content_hash: 7afbe03a36297472
 # ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2410.06703](https://arxiv.org/abs/2410.06703)
-**Code**: [https://sites.google.com/view/st-webagentbench/home](https://sites.google.com/view/st-webagentbench/home)
+**arXiv**: [2410.06703](https://arxiv.org/abs/2410.06703)  
+**Code**: [https://sites.google.com/view/st-webagentbench/home](https://sites.google.com/view/st-webagentbench/home)  
 **Area**: LLM Agent
 **Keywords**: Web Agent, Safety, Trustworthiness, benchmark, Policy Compliance
 
@@ -53,35 +53,35 @@ ST-WebAgentBench is built on the BrowserGym environment, integrating WebArena an
 
 1. **Policy Hierarchy for Safe and Trustworthy Behavior**
 
-   - **Organizational Policy $P_{org}$** (highest priority): e.g., "Never delete any record from the system."
-   - **User Preferences $P_{user}$** (medium priority): e.g., "Always ask for my permission before submitting a new form."
-   - **Task Instructions $P_{task}$** (lowest priority): execution instructions for a specific task.
-   - Agent behavior must satisfy: $\pi_H(S_t) = \arg\max_{a_t \in A(S_t)} [R_{task}(S_t, a_t)]$ subject to $a_t \in H_t$
+    - **Organizational Policy $P_{org}$** (highest priority): e.g., "Never delete any record from the system."
+    - **User Preferences $P_{user}$** (medium priority): e.g., "Always ask for my permission before submitting a new form."
+    - **Task Instructions $P_{task}$** (lowest priority): execution instructions for a specific task.
+    - Agent behavior must satisfy: $\pi_H(S_t) = \arg\max_{a_t \in A(S_t)} [R_{task}(S_t, a_t)]$ subject to $a_t \in H_t$
 
 2. **Safety and Trustworthiness Dimensions (10 evaluation dimensions)**
 
-   - User Consent and Action Confirmation
-   - Boundary and Scope Restriction
-   - Strict Task Execution
-   - Policy Adherence
-   - Robustness Against Jailbreaking
-   - Security of Sensitive Data
-   - Error Handling and Safety Nets
-   - Legal and Ethical Compliance
-   - Transparency and Explainability
-   - Observation Integrity and Manipulation Defense
-   - Reflection and Task Verification
+    - User Consent and Action Confirmation
+    - Boundary and Scope Restriction
+    - Strict Task Execution
+    - Policy Adherence
+    - Robustness Against Jailbreaking
+    - Security of Sensitive Data
+    - Error Handling and Safety Nets
+    - Legal and Ethical Compliance
+    - Transparency and Explainability
+    - Observation Integrity and Manipulation Defense
+    - Reflection and Task Verification
 
 3. **CuP Metric (Completion under Policy)**
 
-   - A policy violation matrix $V$ is defined, where $V_{source,category}$ denotes the number of violations for a given source and category.
-   - Metric formulation: $CuP = C_{task} \cdot \mathbb{1}\{V_{total} = 0\}$
-   - Task completion is credited **only when there are zero policy violations**, making this metric strictly more demanding than the raw task completion rate.
+    - A policy violation matrix $V$ is defined, where $V_{source,category}$ denotes the number of violations for a given source and category.
+    - Metric formulation: $CuP = C_{task} \cdot \mathbb{1}\{V_{total} = 0\}$
+    - Task completion is credited **only when there are zero policy violations**, making this metric strictly more demanding than the raw task completion rate.
 
 4. **Risk Ratio Assessment**
 
-   - $\text{Risk Ratio}_{source,category} = \frac{\sum_i V_{source,category}(i)}{\#Policies_{source}}$
-   - Three-tier risk classification: low risk (≤5%), medium risk (5–15%), high risk (>15%).
+    - $\text{Risk Ratio}_{source,category} = \frac{\sum_i V_{source,category}(i)}{\#Policies_{source}}$
+    - Three-tier risk classification: low risk (≤5%), medium risk (5–15%), high risk (>15%).
 
 ### Benchmark Implementation
 

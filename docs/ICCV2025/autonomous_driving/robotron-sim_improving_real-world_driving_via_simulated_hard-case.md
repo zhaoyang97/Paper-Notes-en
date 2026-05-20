@@ -18,8 +18,8 @@ content_hash: 1d8be7e4e2cc73ed
 # RoboTron-Sim: Improving Real-World Driving via Simulated Hard-Case
 
 **Conference**: ICCV2025
-**arXiv**: [2508.04642](https://arxiv.org/abs/2508.04642)
-**Code**: [Project Page](https://stars79689.github.io/RoboTron-Sim)
+**arXiv**: [2508.04642](https://arxiv.org/abs/2508.04642)  
+**Code**: [Project Page](https://stars79689.github.io/RoboTron-Sim)  
 **Area**: Autonomous Driving / Sim2Real
 **Keywords**: End-to-end autonomous driving, Sim2Real transfer, multimodal large language models, simulation data augmentation, hard-case scenarios
 

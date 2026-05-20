@@ -18,8 +18,8 @@ content_hash: 4397eb04165895b0
 # Lifelong Learning with Behavior Consolidation for Vehicle Routing
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21765](https://arxiv.org/abs/2509.21765)
-**Code**: [github](https://github.com/PeiJY/LLR-BC)
+**arXiv**: [2509.21765](https://arxiv.org/abs/2509.21765)  
+**Code**: [github](https://github.com/PeiJY/LLR-BC)  
 **Area**: LLM Safety
 **Keywords**: Lifelong Learning, Vehicle Routing Problem, Catastrophic Forgetting, Experience Replay, Behavior Consolidation
 

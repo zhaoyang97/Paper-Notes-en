@@ -18,8 +18,8 @@ content_hash: 27a25de943300c46
 # PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13021](https://arxiv.org/abs/2511.13021)
-**Code**: [https://github.com/SachinVashisth/PRAGWORLD](https://github.com/SachinVashisth/PRAGWORLD)
+**arXiv**: [2511.13021](https://arxiv.org/abs/2511.13021)  
+**Code**: [https://github.com/SachinVashisth/PRAGWORLD](https://github.com/SachinVashisth/PRAGWORLD)  
 **Area**: Video Understanding
 **Keywords**: LLM Evaluation, World Model, Dialogue Understanding, Robustness, Interpretability
 

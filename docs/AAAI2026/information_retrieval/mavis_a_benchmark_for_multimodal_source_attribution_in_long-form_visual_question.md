@@ -18,8 +18,8 @@ content_hash: ad397e2f429b3602
 # MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12142](https://arxiv.org/abs/2511.12142)
-**Code**: Available
+**arXiv**: [2511.12142](https://arxiv.org/abs/2511.12142)  
+**Code**: Available  
 **Area**: Information Retrieval
 **Keywords**: source attribution, multimodal RAG, visual question answering, citation generation, reliability evaluation
 

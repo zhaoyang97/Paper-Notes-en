@@ -17,8 +17,8 @@ content_hash: 6ba328abf086e0df
 # Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.02188](https://arxiv.org/abs/2508.02188)
-**Code**: [https://github.com/haha1128/a2a-stego-project](https://github.com/haha1128/a2a-stego-project)
+**arXiv**: [2508.02188](https://arxiv.org/abs/2508.02188)  
+**Code**: [https://github.com/haha1128/a2a-stego-project](https://github.com/haha1128/a2a-stego-project)  
 **Area**: Other (AI Security / Covert Communication)
 **Keywords**: Covert Communication, Steganography, Internet of Agents, Multi-Agent Systems, Event-Driven Protocol
 
@@ -49,19 +49,19 @@ The ΠCCAP protocol operates in three phases: (1) *Initialization and Handshake*
 ### Key Designs
 
 1. **Formal Definition of the Covert Event Channel**:
-   - Function: Proposes the first unified covert communication model for IoA.
-   - Mechanism: The three components of each atomic event $e = (ag, (a_{\text{type}}, a_{\text{data}}), t)$ correspond to three distinct channels: (1) *Storage Channel*—modulates $a_{\text{data}}$ to embed high-capacity data; (2) *Timing Channel*—modulates timestamps $t$ or intervals $\Delta t$ for signaling; (3) *Behavioral Channel*—strategically selects $a_{\text{type}}$ from a contextually plausible set of action types to signal data.
-   - Design Motivation: Each individual channel has limitations; the hybrid architecture satisfies layered security objectives—the storage channel provides an IND-STAT security foundation, while the timing and behavioral channels complement it to achieve IND-INT security.
+    - Function: Proposes the first unified covert communication model for IoA.
+    - Mechanism: The three components of each atomic event $e = (ag, (a_{\text{type}}, a_{\text{data}}), t)$ correspond to three distinct channels: (1) *Storage Channel*—modulates $a_{\text{data}}$ to embed high-capacity data; (2) *Timing Channel*—modulates timestamps $t$ or intervals $\Delta t$ for signaling; (3) *Behavioral Channel*—strategically selects $a_{\text{type}}$ from a contextually plausible set of action types to signal data.
+    - Design Motivation: Each individual channel has limitations; the hybrid architecture satisfies layered security objectives—the storage channel provides an IND-STAT security foundation, while the timing and behavioral channels complement it to achieve IND-INT security.
 
 2. **Two-Layer Security Standard**:
-   - Function: Defines a security framework strictly stronger than existing steganographic security notions.
-   - Mechanism: (1) **IND-STAT** (Statistical Indistinguishability): the entire communication trace is computationally indistinguishable from a natural event distribution; (2) **IND-INT** (Intent Indistinguishability): no individual event, even given full context, can be determined to have been generated with covert intent. The paper formally proves that IND-INT is strictly stronger than IND-STAT via a reduction-based contrapositive argument.
-   - Design Motivation: IND-STAT may still permit semantically anomalous individual events (globally normal distribution but locally suspicious); IND-INT eliminates this vulnerability.
+    - Function: Defines a security framework strictly stronger than existing steganographic security notions.
+    - Mechanism: (1) **IND-STAT** (Statistical Indistinguishability): the entire communication trace is computationally indistinguishable from a natural event distribution; (2) **IND-INT** (Intent Indistinguishability): no individual event, even given full context, can be determined to have been generated with covert intent. The paper formally proves that IND-INT is strictly stronger than IND-STAT via a reduction-based contrapositive argument.
+    - Design Motivation: IND-STAT may still permit semantically anomalous individual events (globally normal distribution but locally suspicious); IND-INT eliminates this vulnerability.
 
 3. **Unified Covert Header**:
-   - Function: Manages data fragmentation and guarantees integrity.
-   - Mechanism: Each fragment is prepended with a dynamic header containing a 12-bit Total Data Size (TDS), 6-bit Sequence Number (SN), 1-bit termination flag (FIN), and 4-bit Checksum (CS). The first fragment uses a full 23-bit header; subsequent fragments use an 11-bit compact header (omitting TDS). The final message appends $\text{Hash}(M)$ for end-to-end integrity verification.
-   - Design Motivation: Engineering-grade reliable transmission—error detection (CRC-4), message integrity (Hash), and delivery confirmation (implicit ACK) are integrated into a covert channel for the first time.
+    - Function: Manages data fragmentation and guarantees integrity.
+    - Mechanism: Each fragment is prepended with a dynamic header containing a 12-bit Total Data Size (TDS), 6-bit Sequence Number (SN), 1-bit termination flag (FIN), and 4-bit Checksum (CS). The first fragment uses a full 23-bit header; subsequent fragments use an 11-bit compact header (omitting TDS). The final message appends $\text{Hash}(M)$ for end-to-end integrity verification.
+    - Design Motivation: Engineering-grade reliable transmission—error detection (CRC-4), message integrity (Hash), and delivery confirmation (implicit ACK) are integrated into a covert channel for the first time.
 
 ### Loss & Training
 

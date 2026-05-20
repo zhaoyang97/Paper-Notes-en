@@ -18,8 +18,8 @@ content_hash: 5ba722f9d04604bb
 # Dynamic Novel View Synthesis in High Dynamic Range
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21853](https://arxiv.org/abs/2509.21853)
-**Code**: [prinasi/HDR-4DGS](https://github.com/prinasi/HDR-4DGS)
+**arXiv**: [2509.21853](https://arxiv.org/abs/2509.21853)  
+**Code**: [prinasi/HDR-4DGS](https://github.com/prinasi/HDR-4DGS)  
 **Area**: 3D Vision
 **Keywords**: HDR, Dynamic Novel View Synthesis, 4D Gaussian Splatting, Tone Mapping, Radiance Field
 

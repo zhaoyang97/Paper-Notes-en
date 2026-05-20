@@ -18,7 +18,7 @@ content_hash: fd66ca72c4a28cc1
 # Scaling Reasoning Hop Exposes Weaknesses: Demystifying and Improving Hop Generalization in Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21214](https://arxiv.org/abs/2601.21214)
+**arXiv**: [2601.21214](https://arxiv.org/abs/2601.21214)  
 **Area**: Model Compression / LLM Interpretability
 **Keywords**: Reasoning hop generalization, Chain-of-Thought, Attention head competition mechanism, Erroneous processing heads, Test-time intervention
 
@@ -58,9 +58,9 @@ The paper identifies three functionally distinct categories of attention heads i
 
 - **Answer-Writing Heads (aw heads)**: Located in the middle-to-deep layers (e.g., layers 20–26), they directly write answer information into the residual stream. Using an improved localization metric $s_{\text{aw-head}}(\mathbf{a}_i^l)$ (Equation 4), it is found that correct and erroneous predictions share approximately 60% of aw heads, and these heads simultaneously encode signals for both correct and incorrect tokens.
 - **Processing Heads**: Located in the shallow-to-middle layers, they support reasoning through indirect information processing. They are divided into two groups:
-  - **Correct Processing Heads (cp heads, $\mathcal{H}_{cp}$)**: Drive correct reasoning trajectories.
-  - **Erroneous Processing Heads (ep heads, $\mathcal{H}_{ep}$)**: Drive erroneous reasoning trajectories.
-  - Key finding: $\mathcal{H}_{cp}$ and $\mathcal{H}_{ep}$ are nearly disjoint.
+    - **Correct Processing Heads (cp heads, $\mathcal{H}_{cp}$)**: Drive correct reasoning trajectories.
+    - **Erroneous Processing Heads (ep heads, $\mathcal{H}_{ep}$)**: Drive erroneous reasoning trajectories.
+    - Key finding: $\mathcal{H}_{cp}$ and $\mathcal{H}_{ep}$ are nearly disjoint.
 - **Basic Heads ($\mathcal{H}_{basic}$)**: Extract basic input information and are indispensable for both correct and erroneous predictions.
 
 **Competition Mechanism**: Correct and erroneous reasoning trajectories coexist within the LLM. At critical error positions, ep heads amplify spurious signals and suppress correct ones, causing the probability of erroneous candidate tokens in aw heads to exceed that of correct candidates, ultimately producing incorrect outputs. After deactivating a single ep head, the reasoning mechanism of correct processing heads is restored (93.3% of cp heads align with the original correct predictions).

@@ -18,8 +18,8 @@ content_hash: 981b578eaf0e76dc
 # Splats in Splats: Robust and Effective 3D Steganography towards Gaussian Splatting
 
 **Conference**: AAAI 2026
-**arXiv**: [2412.03121](https://arxiv.org/abs/2412.03121)
-**Code**: None
+**arXiv**: [2412.03121](https://arxiv.org/abs/2412.03121)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, steganography, copyright protection, spherical harmonics, information embedding
 
@@ -225,8 +225,8 @@ $$W_p^* = \arg\min_{\mathcal{E}, \mathcal{D}} \ell_{mse}(\mathcal{D}(\mathcal{E}
 # Splats in Splats: Robust and Effective 3D Steganography towards Gaussian Splatting
 
 **Conference**: AAAI 2026
-**arXiv**: [2412.03121](https://arxiv.org/abs/2412.03121)
-**Code**: None
+**arXiv**: [2412.03121](https://arxiv.org/abs/2412.03121)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D steganography, Gaussian Splatting, spherical harmonics, copyright protection, information hiding
 

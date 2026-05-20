@@ -18,8 +18,8 @@ content_hash: 597e6284f488c633
 # EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23802](https://arxiv.org/abs/2602.23802)
-**Code**: [GitHub](https://github.com/xiaomi-research/emo-r3)
+**arXiv**: [2602.23802](https://arxiv.org/abs/2602.23802)  
+**Code**: [GitHub](https://github.com/xiaomi-research/emo-r3)  
 **Area**: Multimodal VLM
 **Keywords**: Emotional Reasoning, GRPO, Structured Thinking, Reflective Reward, Multimodal Affective Understanding
 

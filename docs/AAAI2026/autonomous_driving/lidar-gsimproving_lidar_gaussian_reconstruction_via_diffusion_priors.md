@@ -18,8 +18,8 @@ content_hash: 0a79c51eeca46004
 # LiDAR-GS++: Improving LiDAR Gaussian Reconstruction via Diffusion Priors
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12304](https://arxiv.org/abs/2511.12304)
-**Code**: [github](https://github.com/CN-ADLab/LiDAR_GS_plus)
+**arXiv**: [2511.12304](https://arxiv.org/abs/2511.12304)  
+**Code**: [github](https://github.com/CN-ADLab/LiDAR_GS_plus)  
 **Area**: Autonomous Driving
 **Keywords**: LiDAR reconstruction, Gaussian splatting, diffusion priors, novel view synthesis, autonomous driving simulation
 

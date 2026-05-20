@@ -18,8 +18,8 @@ content_hash: 335d02fd1c9d2f7d
 # Same Content, Different Representations: A Controlled Study for Table QA
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22983](https://arxiv.org/abs/2509.22983)
-**Code**: [https://github.com/megagonlabs/RePairTQA](https://github.com/megagonlabs/RePairTQA)
+**arXiv**: [2509.22983](https://arxiv.org/abs/2509.22983)  
+**Code**: [https://github.com/megagonlabs/RePairTQA](https://github.com/megagonlabs/RePairTQA)  
 **Area**: LLM Evaluation
 **Keywords**: Table QA, structured tables, semi-structured tables, representation format, diagnostic benchmark
 

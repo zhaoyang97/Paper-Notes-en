@@ -18,8 +18,8 @@ content_hash: c9c67563e65a59f3
 # Time-Aware Auto White Balance in Mobile Photography
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.05623](https://arxiv.org/abs/2504.05623)
-**Code**: None
+**arXiv**: [2504.05623](https://arxiv.org/abs/2504.05623)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Auto White Balance, Illumination Estimation, Lightweight Model, Mobile Photography, Contextual Metadata
 

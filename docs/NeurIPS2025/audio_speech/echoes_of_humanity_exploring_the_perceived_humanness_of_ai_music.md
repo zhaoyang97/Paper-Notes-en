@@ -18,8 +18,8 @@ content_hash: 217dbdca3fc8c1c3
 # Echoes of Humanity: Exploring the Perceived Humanness of AI Music
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25601](https://arxiv.org/abs/2509.25601)
-**Code**: [GitHub](https://github.com/uai-ufmg/hp-study)
+**arXiv**: [2509.25601](https://arxiv.org/abs/2509.25601)  
+**Code**: [GitHub](https://github.com/uai-ufmg/hp-study)  
 **Area**: Audio & Speech
 **Keywords**: AI music perception, Turing test, randomized controlled crossover trial, mixed-methods content analysis, human perception
 

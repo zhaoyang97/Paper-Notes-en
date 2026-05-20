@@ -18,8 +18,8 @@ content_hash: 3406b043995aa3cc
 # Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25994](https://arxiv.org/abs/2603.25994)
-**Code**: [https://github.com/alirezafarashah/NLCE](https://github.com/alirezafarashah/NLCE)
+**arXiv**: [2603.25994](https://arxiv.org/abs/2603.25994)  
+**Code**: [https://github.com/alirezafarashah/NLCE](https://github.com/alirezafarashah/NLCE)  
 **Area**: Image Generation / AI Safety
 **Keywords**: Concept Erasure, Diffusion Models, Neighbor Preservation, Training-Free, Localized Erasure
 
@@ -46,21 +46,21 @@ NLCE intervenes in the cross-attention layers of the UNet at inference time acro
 
 1. **Stage 1: Representation Space Modulation (Spectrally-Weighted Suppression + Neighbor Enhancement)**
 
-   - **Function**: Attenuate the target concept's semantics at the embedding level while recovering the representations of neighboring concepts.
-   - **Mechanism**: SVD is applied to the target concept embedding to obtain an orthonormal basis $U_{F_c}$, from which a spectrally-weighted projection $P_{F_c} = U_{F_c}\Lambda_{F_c}U_{F_c}^T$ is constructed, with weights $\lambda_i$ modulated by singular value importance (stronger suppression along more important directions). An analogous projection $P_{\mathcal{N}_c}$ is constructed for neighbor concepts. The final operator $P_c = (I - \beta P_{F_c}) + \gamma P_{\mathcal{N}_c} P_{F_c}$ is applied globally to $W_K$ and $W_V$. Neighbors are identified via Wikipedia retrieval, filtered by RoBERTa-based specificity scoring, and ranked by CLIP visual similarity.
-   - **Design Motivation**: Unlike GLoCE's gated low-rank adapter — which may miss concept reactivation through indirect attention paths — global application is more reliable. Spectral weighting ensures suppression intensity is proportional to semantic importance.
+    - **Function**: Attenuate the target concept's semantics at the embedding level while recovering the representations of neighboring concepts.
+    - **Mechanism**: SVD is applied to the target concept embedding to obtain an orthonormal basis $U_{F_c}$, from which a spectrally-weighted projection $P_{F_c} = U_{F_c}\Lambda_{F_c}U_{F_c}^T$ is constructed, with weights $\lambda_i$ modulated by singular value importance (stronger suppression along more important directions). An analogous projection $P_{\mathcal{N}_c}$ is constructed for neighbor concepts. The final operator $P_c = (I - \beta P_{F_c}) + \gamma P_{\mathcal{N}_c} P_{F_c}$ is applied globally to $W_K$ and $W_V$. Neighbors are identified via Wikipedia retrieval, filtered by RoBERTa-based specificity scoring, and ranked by CLIP visual similarity.
+    - **Design Motivation**: Unlike GLoCE's gated low-rank adapter — which may miss concept reactivation through indirect attention paths — global application is more reliable. Spectral weighting ensures suppression intensity is proportional to semantic importance.
 
 2. **Stage 2: Attention-Guided Spatial Gating**
 
-   - **Function**: Localize spatial regions where residual activations of the target concept persist.
-   - **Mechanism**: Each denoising step involves two forward passes (a dry pass followed by a real pass). The first pass extracts attention maps from DownBlock-2. Tokens with high overlap with the target subspace ($s_j = \|P_{F_c}x_j\|_2 > \delta_{\text{token}}$) are flagged as "live tokens." Their attention maps are aggregated into a spatial gating map $G_t(x,y)$. In the second forward pass, attention from live tokens is suppressed within gated regions: $A^\ell(x,y,j) \leftarrow (1-G_t)\cdot A^\ell(x,y,j)$.
-   - **Design Motivation**: Since Stage 1 is a global operation and may leave residuals, Stage 2 uses spatial attention to precisely localize where the target concept remains active.
+    - **Function**: Localize spatial regions where residual activations of the target concept persist.
+    - **Mechanism**: Each denoising step involves two forward passes (a dry pass followed by a real pass). The first pass extracts attention maps from DownBlock-2. Tokens with high overlap with the target subspace ($s_j = \|P_{F_c}x_j\|_2 > \delta_{\text{token}}$) are flagged as "live tokens." Their attention maps are aggregated into a spatial gating map $G_t(x,y)$. In the second forward pass, attention from live tokens is suppressed within gated regions: $A^\ell(x,y,j) \leftarrow (1-G_t)\cdot A^\ell(x,y,j)$.
+    - **Design Motivation**: Since Stage 1 is a global operation and may leave residuals, Stage 2 uses spatial attention to precisely localize where the target concept remains active.
 
 3. **Stage 3: Gated Feature Hard Scrubbing**
 
-   - **Function**: Completely eliminate residual target signals within gated spatial regions.
-   - **Mechanism**: The gating map from Stage 2 is upsampled to each UNet layer's resolution and binarized (threshold $\delta_{\text{scrub}}$). Hidden features at positions where the mask equals 1 are set to zero: $h_t^\ell(x,y) \leftarrow \mathbf{0}$. This constitutes an irreversible hard erasure.
-   - **Design Motivation**: Projection-based suppression can theoretically be recovered; hard zeroing guarantees strict safety.
+    - **Function**: Completely eliminate residual target signals within gated spatial regions.
+    - **Mechanism**: The gating map from Stage 2 is upsampled to each UNet layer's resolution and binarized (threshold $\delta_{\text{scrub}}$). Hidden features at positions where the mask equals 1 are set to zero: $h_t^\ell(x,y) \leftarrow \mathbf{0}$. This constitutes an irreversible hard erasure.
+    - **Design Motivation**: Projection-based suppression can theoretically be recovered; hard zeroing guarantees strict safety.
 
 ### Loss & Training
 

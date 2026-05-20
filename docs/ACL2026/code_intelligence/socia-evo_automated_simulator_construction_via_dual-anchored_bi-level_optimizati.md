@@ -18,8 +18,8 @@ content_hash: e9046120d769e7dc
 # SOCIA-EVO: Automated Simulator Construction via Dual-Anchored Bi-Level Optimization
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17351](https://arxiv.org/abs/2604.17351)
-**Code**: [https://github.com/cruiseresearchgroup/SOCIA/tree/evo](https://github.com/cruiseresearchgroup/SOCIA/tree/evo)
+**arXiv**: [2604.17351](https://arxiv.org/abs/2604.17351)  
+**Code**: [https://github.com/cruiseresearchgroup/SOCIA/tree/evo](https://github.com/cruiseresearchgroup/SOCIA/tree/evo)  
 **Area**: Code Intelligence
 **Keywords**: Automated simulator construction, dual-anchored evolutionary framework, bi-level optimization, strategy playbook, distributional fidelity
 

@@ -18,8 +18,8 @@ content_hash: 00ab9e251726a1d8
 # Unlocking Multi-Site Clinical Data: A Federated Approach to Privacy-First Child Autism Behavior Analysis
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02616](https://arxiv.org/abs/2604.02616)
-**Code**: None
+**arXiv**: [2604.02616](https://arxiv.org/abs/2604.02616)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Federated Learning, Autism Behavior Recognition, Skeleton-based Action Recognition, Privacy Preservation, Personalized Federated Learning
 
@@ -46,21 +46,21 @@ Clinical videos at each site → ROMP extracts 3D skeleton sequences $S \in \mat
 
 1. **Skeleton Abstraction Layer**
 
-   - **Function**: Converts clinical video into a privacy-safe behavioral representation.
-   - **Mechanism**: ROMP is used to extract 71 3D keypoints (SMPL + additional + H36M joints), completely removing facial features, clothing information, and environmental context. The skeleton sequence $S \in \mathbb{R}^{T \times V \times 3}$ is invariant to lighting, background, and camera parameters.
-   - **Design Motivation**: Serves as the first line of privacy defense—even if skeleton data is leaked, identity cannot be recovered. It also eliminates appearance-level distribution discrepancies across sites.
+    - **Function**: Converts clinical video into a privacy-safe behavioral representation.
+    - **Mechanism**: ROMP is used to extract 71 3D keypoints (SMPL + additional + H36M joints), completely removing facial features, clothing information, and environmental context. The skeleton sequence $S \in \mathbb{R}^{T \times V \times 3}$ is invariant to lighting, background, and camera parameters.
+    - **Design Motivation**: Serves as the first line of privacy defense—even if skeleton data is leaked, identity cannot be recovered. It also eliminates appearance-level distribution discrepancies across sites.
 
 2. **FreqMixFormer Action Recognition Backbone**
 
-   - **Function**: Recognizes autism-related behavioral patterns from skeleton sequences.
-   - **Mechanism**: A frequency-aware attention module applies Discrete Cosine Transform (DCT) to joint trajectories; a hybrid Transformer architecture balances global temporal dependencies and local spatial correlations. The lightweight design minimizes parameter count for efficient federated edge deployment.
-   - **Design Motivation**: Reduced model size lowers federated communication cost (fewer parameters transmitted per round); frequency-domain features are more suitable than purely temporal representations for capturing repetitive autism-related behavioral patterns.
+    - **Function**: Recognizes autism-related behavioral patterns from skeleton sequences.
+    - **Mechanism**: A frequency-aware attention module applies Discrete Cosine Transform (DCT) to joint trajectories; a hybrid Transformer architecture balances global temporal dependencies and local spatial correlations. The lightweight design minimizes parameter count for efficient federated edge deployment.
+    - **Design Motivation**: Reduced model size lowers federated communication cost (fewer parameters transmitted per round); frequency-domain features are more suitable than purely temporal representations for capturing repetitive autism-related behavioral patterns.
 
 3. **Adaptive Personalized Federated Learning (APFL)**
 
-   - **Function**: Adaptively balances global knowledge sharing and site-specific specialization.
-   - **Mechanism**: Each site maintains a personalized model $v_i = \alpha_i u_i + (1-\alpha_i)w$, where $u_i$ is the local model and $w$ is the global model. The mixing coefficient $\alpha_i$ is learned adaptively via gradient descent: $\alpha_i^{t+1} = \alpha_i^t - \eta_\alpha \langle \nabla f_i(v_i), u_i - w \rangle$.
-   - **Design Motivation**: The behavioral distribution across different therapy themes (robot-assisted / rhythmic / yoga) is highly heterogeneous (non-IID), causing FedAvg to suffer a 12% performance drop. APFL allows each site to automatically determine the degree to which it trusts the global model.
+    - **Function**: Adaptively balances global knowledge sharing and site-specific specialization.
+    - **Mechanism**: Each site maintains a personalized model $v_i = \alpha_i u_i + (1-\alpha_i)w$, where $u_i$ is the local model and $w$ is the global model. The mixing coefficient $\alpha_i$ is learned adaptively via gradient descent: $\alpha_i^{t+1} = \alpha_i^t - \eta_\alpha \langle \nabla f_i(v_i), u_i - w \rangle$.
+    - **Design Motivation**: The behavioral distribution across different therapy themes (robot-assisted / rhythmic / yoga) is highly heterogeneous (non-IID), causing FedAvg to suffer a 12% performance drop. APFL allows each site to automatically determine the degree to which it trusts the global model.
 
 ### Loss & Training
 

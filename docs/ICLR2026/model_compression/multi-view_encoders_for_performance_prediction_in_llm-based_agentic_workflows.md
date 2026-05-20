@@ -18,8 +18,8 @@ content_hash: 4ada70451430281d
 # Multi-View Encoders for Performance Prediction in LLM-Based Agentic Workflows
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.19764](https://arxiv.org/abs/2505.19764)
-**Code**: [GitHub](https://github.com/deepauto-ai/agentic-predictor)
+**arXiv**: [2505.19764](https://arxiv.org/abs/2505.19764)  
+**Code**: [GitHub](https://github.com/deepauto-ai/agentic-predictor)  
 **Area**: Model Compression
 **Keywords**: Performance Prediction, Multi-View Encoding, Agentic Workflows, Graph Neural Networks, Unsupervised Pretraining
 
@@ -47,22 +47,22 @@ Agentic Predictor comprises three stages: (a) a multi-view workflow encoder that
 
 1. **Multi-View Workflow Encoding**:
 
-   - **Graph View $\mathcal{G}$**: Models the workflow as a DAG, encoding inter-agent communication dependencies via a GNN.
-   - **Code View $\mathcal{C}$**: Encodes the complete workflow code using an MLP to capture logical structure and tool-usage patterns.
-   - **Prompt View $\mathcal{P}$**: Encodes role descriptions and behavioral specifications from system prompts using an MLP.
-   - The three views are fused through an aggregation layer: $\mathbf{Z} = \text{MLP}([\mathbf{Z}_\mathcal{G}, \mathbf{Z}_\mathcal{C}, \mathbf{Z}_\mathcal{P}])$
+    - **Graph View $\mathcal{G}$**: Models the workflow as a DAG, encoding inter-agent communication dependencies via a GNN.
+    - **Code View $\mathcal{C}$**: Encodes the complete workflow code using an MLP to capture logical structure and tool-usage patterns.
+    - **Prompt View $\mathcal{P}$**: Encodes role descriptions and behavioral specifications from system prompts using an MLP.
+    - The three views are fused through an aggregation layer: $\mathbf{Z} = \text{MLP}([\mathbf{Z}_\mathcal{G}, \mathbf{Z}_\mathcal{C}, \mathbf{Z}_\mathcal{P}])$
 
 2. **Cross-Graph Attention Mechanism**:
 
-   - Three graph types are constructed: prompt graph $\mathcal{G}_\text{prompt}$, code graph $\mathcal{G}_\text{code}$, and operator graph $\mathcal{G}_\text{operator}$.
-   - Node-level information exchange is performed via cross-view self-attention.
-   - ViewAttnPool adaptively learns importance weights for each view.
+    - Three graph types are constructed: prompt graph $\mathcal{G}_\text{prompt}$, code graph $\mathcal{G}_\text{code}$, and operator graph $\mathcal{G}_\text{operator}$.
+    - Node-level information exchange is performed via cross-view self-attention.
+    - ViewAttnPool adaptively learns importance weights for each view.
 
 3. **Cross-Domain Unsupervised Pretraining**:
 
-   - Reconstruction loss: $\mathcal{L}_{rec} = \frac{1}{M}\sum_{i=1}^{M}\|\mathcal{G}_i - \hat{\mathcal{G}}_i\|^2 + \|\mathcal{C}_i - \hat{\mathcal{C}}_i\|^2 + \|\mathcal{P}_i - \hat{\mathcal{P}}_i\|^2$
-   - Cross-modal contrastive loss: InfoNCE loss applied across three view pairs — $(\mathcal{G}, \mathcal{C})$, $(\mathcal{G}, \mathcal{P})$, and $(\mathcal{C}, \mathcal{P})$.
-   - Pretraining uses no performance labels, avoiding label leakage.
+    - Reconstruction loss: $\mathcal{L}_{rec} = \frac{1}{M}\sum_{i=1}^{M}\|\mathcal{G}_i - \hat{\mathcal{G}}_i\|^2 + \|\mathcal{C}_i - \hat{\mathcal{C}}_i\|^2 + \|\mathcal{P}_i - \hat{\mathcal{P}}_i\|^2$
+    - Cross-modal contrastive loss: InfoNCE loss applied across three view pairs — $(\mathcal{G}, \mathcal{C})$, $(\mathcal{G}, \mathcal{P})$, and $(\mathcal{C}, \mathcal{P})$.
+    - Pretraining uses no performance labels, avoiding label leakage.
 
 ### Loss & Training
 

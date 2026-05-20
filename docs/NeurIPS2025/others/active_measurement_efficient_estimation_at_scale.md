@@ -17,8 +17,8 @@ content_hash: df15c9d15fd7a762
 # Active Measurement: Efficient Estimation at Scale
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.01372](https://arxiv.org/abs/2507.01372)
-**Code**: [GitHub](https://github.com/cvl-umass/active-measurement)
+**arXiv**: [2507.01372](https://arxiv.org/abs/2507.01372)  
+**Code**: [GitHub](https://github.com/cvl-umass/active-measurement)  
 **Area**: Scientific Measurement / Statistical Estimation
 **Keywords**: [Active Measurement, Adaptive Importance Sampling, Unbiased Estimation, Confidence Intervals, Human-AI Collaboration]
 

@@ -18,8 +18,8 @@ content_hash: 3750fbcbb8de3bcf
 # RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20618](https://arxiv.org/abs/2602.20618)
-**Code**: To be released (authors state it will be made public upon acceptance)
+**arXiv**: [2602.20618](https://arxiv.org/abs/2602.20618)  
+**Code**: To be released (authors state it will be made public upon acceptance)  
 **Area**: AI Security
 **Keywords**: Face tampering detection, robust watermarking, tampering localization, content recovery, copyright verification
 

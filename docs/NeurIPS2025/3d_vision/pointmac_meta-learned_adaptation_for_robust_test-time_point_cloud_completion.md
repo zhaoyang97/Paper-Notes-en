@@ -18,8 +18,8 @@ content_hash: ec117a27368d0081
 # PointMAC: Meta-Learned Adaptation for Robust Test-Time Point Cloud Completion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10365](https://arxiv.org/abs/2510.10365)
-**Code**: Project page
+**arXiv**: [2510.10365](https://arxiv.org/abs/2510.10365)  
+**Code**: Project page  
 **Area**: 3D Vision
 **Keywords**: Point cloud completion, test-time adaptation, meta-learning, MAML, self-supervised learning
 

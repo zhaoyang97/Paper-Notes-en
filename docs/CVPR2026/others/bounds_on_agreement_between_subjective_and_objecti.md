@@ -18,8 +18,8 @@ content_hash: fe8098c8aeac0ab6
 # Bounds on Agreement between Subjective and Objective Measurements
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13204](https://arxiv.org/abs/2603.13204)
-**Code**: None
+**arXiv**: [2603.13204](https://arxiv.org/abs/2603.13204)  
+**Code**: None  
 **Area**: Other
 **Keywords**: quality assessment, MOS, subjective test, PCC bound, MSE bound, BinoVotes
 

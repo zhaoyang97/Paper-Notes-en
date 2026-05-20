@@ -19,9 +19,9 @@ content_hash: bf7d2ac50b0dbeb4
 # TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23719](https://arxiv.org/abs/2505.23719)
+**arXiv**: [2505.23719](https://arxiv.org/abs/2505.23719)  
 **Authors**: Andreas Auer (NXAI/JKU Linz), Patrick Podest (JKU Linz), Daniel Klotz (ITUA Linz), Sebastian Böck (NXAI), Günter Klambauer (NXAI/JKU), Sepp Hochreiter (NXAI/JKU)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Video Understanding
 **Keywords**: Time series forecasting, zero-shot forecasting, xLSTM, in-context learning, data augmentation, pretrained models
 

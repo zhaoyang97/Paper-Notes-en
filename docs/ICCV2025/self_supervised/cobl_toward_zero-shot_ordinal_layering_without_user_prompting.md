@@ -19,8 +19,8 @@ content_hash: 214a7b75938794ff
 # CObL: Toward Zero-Shot Ordinal Layering without User Prompting
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.08498](https://arxiv.org/abs/2508.08498)
-**Code**: [Project Page](https://vision.seas.harvard.edu/cobl/)
+**arXiv**: [2508.08498](https://arxiv.org/abs/2508.08498)  
+**Code**: [Project Page](https://vision.seas.harvard.edu/cobl/)  
 **Area**: Self-Supervised Learning / Scene Decomposition / Diffusion Models / Perceptual Organization
 **Keywords**: object layers, amodal completion, diffusion model, zero-shot generalization, occlusion ordering, scene decomposition
 

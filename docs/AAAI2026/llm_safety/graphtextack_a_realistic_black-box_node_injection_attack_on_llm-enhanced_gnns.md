@@ -20,8 +20,8 @@ content_hash: be971426f2007ae0
 # GraphTextack: A Realistic Black-Box Node Injection Attack on LLM-Enhanced GNNs
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12423](https://arxiv.org/abs/2511.12423)
-**Code**: To be confirmed
+**arXiv**: [2511.12423](https://arxiv.org/abs/2511.12423)  
+**Code**: To be confirmed  
 **Area**: AI Security / Adversarial Attacks
 **Keywords**: Text-attributed graphs, adversarial attacks, node injection, LLM-enhanced GNN, evolutionary optimization, black-box attack, multimodal attack
 

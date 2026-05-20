@@ -18,8 +18,8 @@ content_hash: a3beb6f1c9ced535
 # Feature-aware Modulation for Learning from Temporal Tabular Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.03678](https://arxiv.org/abs/2512.03678)
-**Code**: [https://github.com/LAMDA-Tabular/Tabular-Temporal-Modulation](https://github.com/LAMDA-Tabular/Tabular-Temporal-Modulation)
+**arXiv**: [2512.03678](https://arxiv.org/abs/2512.03678)  
+**Code**: [https://github.com/LAMDA-Tabular/Tabular-Temporal-Modulation](https://github.com/LAMDA-Tabular/Tabular-Temporal-Modulation)  
 **Area**: Temporal Tabular Learning / Signal & Communication / Temporal Distribution Shift
 **Keywords**: temporal shift, feature modulation, concept drift, Yeo-Johnson, tabular deep learning
 

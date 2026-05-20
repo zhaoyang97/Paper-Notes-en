@@ -18,8 +18,8 @@ content_hash: 9d5bef2d0725670b
 # Hierarchical Retrieval: The Geometry and a Pretrain-Finetune Recipe
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16411](https://arxiv.org/abs/2509.16411)
-**Code**: To be confirmed
+**arXiv**: [2509.16411](https://arxiv.org/abs/2509.16411)  
+**Code**: To be confirmed  
 **Area**: Information Retrieval
 **Keywords**: hierarchical retrieval, dual encoder, embedding geometry, pretrain-finetune, long-distance retrieval
 

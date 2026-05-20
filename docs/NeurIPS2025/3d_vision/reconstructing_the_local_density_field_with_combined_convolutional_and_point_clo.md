@@ -18,8 +18,8 @@ content_hash: 4d984fc586649b9d
 # Reconstructing the Local Density Field with Combined Convolutional and Point Cloud Architecture
 
 **Conference**: NeurIPS 2025 (ML4PS Workshop)
-**arXiv**: [2510.08573](https://arxiv.org/abs/2510.08573)
-**Code**: None
+**arXiv**: [2510.08573](https://arxiv.org/abs/2510.08573)  
+**Code**: None  
 **Area**: 3D Vision / Cosmology
 **Keywords**: Dark matter density field reconstruction, U-Net, DeepSets, point cloud, peculiar velocity
 

@@ -18,8 +18,8 @@ content_hash: 80494d1088232614
 # ViDscribe: Multimodal AI for Customizing Audio Description and Question Answering in Online Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14662](https://arxiv.org/abs/2603.14662)
-**Code**: [https://vidscribe.org/](https://vidscribe.org/)
+**arXiv**: [2603.14662](https://arxiv.org/abs/2603.14662)  
+**Code**: [https://vidscribe.org/](https://vidscribe.org/)  
 **Area**: Audio & Speech
 **Keywords**: Audio Description, Video Accessibility, Multimodal Large Language Models, User Customization, Visual Question Answering
 

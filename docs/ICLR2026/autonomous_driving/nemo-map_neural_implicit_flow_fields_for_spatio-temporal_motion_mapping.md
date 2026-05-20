@@ -18,8 +18,8 @@ content_hash: a992570993541419
 # NeMo-map: Neural Implicit Flow Fields for Spatio-Temporal Motion Mapping
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.14827](https://arxiv.org/abs/2510.14827)
-**Code**: Unavailable
+**arXiv**: [2510.14827](https://arxiv.org/abs/2510.14827)  
+**Code**: Unavailable  
 **Area**: Autonomous Driving
 **Keywords**: dynamic map, neural implicit representation, semi-wrapped Gaussian mixture, human motion patterns, spatio-temporal continuity
 

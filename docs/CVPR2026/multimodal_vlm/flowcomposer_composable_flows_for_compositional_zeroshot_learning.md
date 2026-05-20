@@ -18,8 +18,8 @@ content_hash: 0b4e701533077668
 # FlowComposer: Composable Flows for Compositional Zero-Shot Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.16641](https://arxiv.org/abs/2603.16641)
-**Code**: [https://hkust-longgroup.github.io/FlowComposer/](https://hkust-longgroup.github.io/FlowComposer/)
+**arXiv**: [2603.16641](https://arxiv.org/abs/2603.16641)  
+**Code**: [https://hkust-longgroup.github.io/FlowComposer/](https://hkust-longgroup.github.io/FlowComposer/)  
 **Area**: Multimodal VLM / Compositional Zero-Shot Learning
 **Keywords**: Compositional Zero-Shot Learning, Flow Matching, CLIP, Velocity Field Composition, Leakage-Guided Augmentation
 
@@ -46,21 +46,21 @@ FlowComposer is built on top of existing CZSL baselines (e.g., CSP, Troika). Giv
 
 1. **Attribute and Object Primitive Flow Models**:
 
-   - **Function**: Learn velocity fields that transport visual features to their corresponding text embeddings.
-   - **Mechanism**: For each branch $i \in \{a, o\}$, a linear interpolation path is constructed via Rectified Flow: $x^i_t = (1-t)x^i_0 + tx^i_1$. A velocity network $v_{\theta_i}$ is trained to regress the target velocity $x^i_1 - x^i_0$, supplemented by a cross-entropy loss to ensure that predicted endpoints are correctly classified. At inference, a single-step transport is performed: $\hat{x}^i_1 = x^i_0 + v_{\theta_i}(x^i_0, 0)$.
-   - **Design Motivation**: The velocity fields of Flow Matching provide a continuous mapping from visual space to text space that naturally supports compositional operations.
+    - **Function**: Learn velocity fields that transport visual features to their corresponding text embeddings.
+    - **Mechanism**: For each branch $i \in \{a, o\}$, a linear interpolation path is constructed via Rectified Flow: $x^i_t = (1-t)x^i_0 + tx^i_1$. A velocity network $v_{\theta_i}$ is trained to regress the target velocity $x^i_1 - x^i_0$, supplemented by a cross-entropy loss to ensure that predicted endpoints are correctly classified. At inference, a single-step transport is performed: $\hat{x}^i_1 = x^i_0 + v_{\theta_i}(x^i_0, 0)$.
+    - **Design Motivation**: The velocity fields of Flow Matching provide a continuous mapping from visual space to text space that naturally supports compositional operations.
 
 2. **Composer**:
 
-   - **Function**: Learn how to combine attribute and object velocity fields into a compositional velocity field.
-   - **Mechanism**: The compositional velocity is approximated as $v^*_c = a^* v^*_a + b^* v^*_o$. Primitive velocities are first normalized to unit directions $\hat{\Delta}_a, \hat{\Delta}_o$, and the target combination coefficients $(a^*, b^*)$ are solved via least squares. The Composer network learns to predict these coefficients from the primitive velocities and is trained with an MSE loss.
-   - **Design Motivation**: The relative contribution of attributes and objects varies across samples, necessitating adaptive combination beyond simple token concatenation.
+    - **Function**: Learn how to combine attribute and object velocity fields into a compositional velocity field.
+    - **Mechanism**: The compositional velocity is approximated as $v^*_c = a^* v^*_a + b^* v^*_o$. Primitive velocities are first normalized to unit directions $\hat{\Delta}_a, \hat{\Delta}_o$, and the target combination coefficients $(a^*, b^*)$ are solved via least squares. The Composer network learns to predict these coefficients from the primitive velocities and is trained with an MSE loss.
+    - **Design Motivation**: The relative contribution of attributes and objects varies across samples, necessitating adaptive combination beyond simple token concatenation.
 
 3. **Leakage-Guided Augmentation**:
 
-   - **Function**: Convert cross-branch information leakage arising from imperfect disentanglement into additional supervision.
-   - **Mechanism**: In addition to standard intra-branch supervision (attribute visual features → attribute text embeddings), each primitive flow is additionally trained on leaked features—e.g., visual features extracted from the object branch are used to target attribute text embeddings, or compositional branch features are directed toward primitive text embeddings. This enriches the velocity supervision signals.
-   - **Design Motivation**: Perfect disentanglement is unattainable in practice; rather than attempting to eliminate leakage, the method exploits it, converting a limitation into an advantage.
+    - **Function**: Convert cross-branch information leakage arising from imperfect disentanglement into additional supervision.
+    - **Mechanism**: In addition to standard intra-branch supervision (attribute visual features → attribute text embeddings), each primitive flow is additionally trained on leaked features—e.g., visual features extracted from the object branch are used to target attribute text embeddings, or compositional branch features are directed toward primitive text embeddings. This enriches the velocity supervision signals.
+    - **Design Motivation**: Perfect disentanglement is unattainable in practice; rather than attempting to eliminate leakage, the method exploits it, converting a limitation into an advantage.
 
 ### Loss & Training
 

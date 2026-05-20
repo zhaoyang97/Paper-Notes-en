@@ -18,8 +18,8 @@ content_hash: 2d155a88e209d2db
 # One Prompt Fits All: Universal Graph Adaptation for Pretrained Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.22416](https://arxiv.org/abs/2509.22416)
-**Code**: [GitHub](https://github.com/hedongxiao-tju/UniPrompt)
+**arXiv**: [2509.22416](https://arxiv.org/abs/2509.22416)  
+**Code**: [GitHub](https://github.com/hedongxiao-tju/UniPrompt)  
 **Area**: LLM Pretraining
 **Keywords**: graph prompt learning, pretrained GNN, few-shot, graph topology, kNN graph
 

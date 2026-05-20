@@ -18,8 +18,8 @@ content_hash: 93ff7201a4185b47
 # Distribution Learning Meets Graph Structure Sampling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2405.07914](https://arxiv.org/abs/2405.07914)
-**Code**: None
+**arXiv**: [2405.07914](https://arxiv.org/abs/2405.07914)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Bayesian networks, distribution learning, graph structure sampling, online learning, chordal graphs
 

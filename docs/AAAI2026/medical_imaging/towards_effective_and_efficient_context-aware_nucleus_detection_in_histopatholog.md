@@ -18,8 +18,8 @@ content_hash: 49d5d5866838ba36
 # Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.05678](https://arxiv.org/abs/2503.05678)
-**Code**: [https://github.com/windygoo/PathContext](https://github.com/windygoo/PathContext)
+**arXiv**: [2503.05678](https://arxiv.org/abs/2503.05678)  
+**Code**: [https://github.com/windygoo/PathContext](https://github.com/windygoo/PathContext)  
 **Area**: Medical Imaging
 **Keywords**: Nucleus Detection, Context-aware, Whole Slide Image, Pathology Image Analysis, Pseudo Labels
 

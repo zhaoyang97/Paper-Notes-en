@@ -18,8 +18,8 @@ content_hash: 06f17953698eb3f7
 # SHOW3D: Capturing Scenes of 3D Hands and Objects in the Wild
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28760](https://arxiv.org/abs/2603.28760)
-**Code**: [https://show3d-dataset.github.io/](https://show3d-dataset.github.io/)
+**arXiv**: [2603.28760](https://arxiv.org/abs/2603.28760)  
+**Code**: [https://show3d-dataset.github.io/](https://show3d-dataset.github.io/)  
 **Area**: Video Understanding
 **Keywords**: hand-object interaction dataset, in-the-wild 3D annotation, multi-camera capture, egocentric vision, hand pose estimation
 

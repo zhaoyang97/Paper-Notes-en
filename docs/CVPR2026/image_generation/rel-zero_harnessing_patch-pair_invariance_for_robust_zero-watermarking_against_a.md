@@ -18,8 +18,8 @@ content_hash: 5e950dfdef262335
 # Rel-Zero: Harnessing Patch-Pair Invariance for Robust Zero-Watermarking Against AI Editing
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17531](https://arxiv.org/abs/2603.17531)
-**Code**: None
+**arXiv**: [2603.17531](https://arxiv.org/abs/2603.17531)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Zero-watermarking, image editing robustness, patch-pair relational invariance, content authentication, diffusion models
 

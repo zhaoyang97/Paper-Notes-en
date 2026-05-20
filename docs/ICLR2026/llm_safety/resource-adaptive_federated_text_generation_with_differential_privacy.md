@@ -18,8 +18,8 @@ content_hash: 0057bdc833021940
 # Resource-Adaptive Federated Text Generation with Differential Privacy
 
 **Conference**: ICLR2026
-**arXiv**: [2603.07027](https://arxiv.org/abs/2603.07027)
-**Code**: None
+**arXiv**: [2603.07027](https://arxiv.org/abs/2603.07027)  
+**Code**: None  
 **Area**: AI Security
 **Keywords**: federated learning, differential privacy, Synthetic Text Generation, Computational Heterogeneity, Control Code
 

@@ -18,8 +18,8 @@ content_hash: 07ea2a0493b2f99b
 # Textual Equilibrium Propagation for Deep Compound AI Systems
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21064](https://arxiv.org/abs/2601.21064)
-**Code**: Not released
+**arXiv**: [2601.21064](https://arxiv.org/abs/2601.21064)  
+**Code**: Not released  
 **Area**: Model Compression / Compound AI System Optimization
 **Keywords**: Compound AI systems, textual gradients, equilibrium propagation, prompt optimization, multi-agent workflows
 

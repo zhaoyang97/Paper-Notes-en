@@ -18,8 +18,8 @@ content_hash: a02bf5106fe2d957
 # VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09826](https://arxiv.org/abs/2603.09826)
-**Code**: Available (see paper repository)
+**arXiv**: [2603.09826](https://arxiv.org/abs/2603.09826)  
+**Code**: Available (see paper repository)  
 **Area**: Multimodal VLM
 **Keywords**: Text-to-point-cloud localization, BEV, scene graph, VLM spatial reasoning, autonomous driving
 

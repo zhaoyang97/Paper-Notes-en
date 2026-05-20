@@ -17,8 +17,8 @@ content_hash: da8f22e950625d2e
 # Harpoon: Generalised Manifold Guidance for Conditional Tabular Diffusion
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07875](https://arxiv.org/abs/2602.07875)
-**Code**: [GitHub](https://github.com/adis98/Harpoon)
+**arXiv**: [2602.07875](https://arxiv.org/abs/2602.07875)  
+**Code**: [GitHub](https://github.com/adis98/Harpoon)  
 **Area**: Diffusion Models / Tabular Data
 **Keywords**: Tabular data, manifold guidance, conditional generation, inference-time guidance, inequality constraints
 
@@ -46,21 +46,21 @@ A single unconditional diffusion model is trained; at inference time, each step 
 
 1. **Theorem 3.1 (Orthogonal Projection)**:
 
-   - Statement: An MSE-trained denoiser is equivalent to the orthogonal projection onto the manifold $\mathcal{M}_0$ as $\bar{\alpha}_t \to 1$.
-   - Contribution: Generalises the result of Chung et al.—the flat-manifold assumption is no longer required; the result holds for curved manifolds.
-   - Practical Implication: The "dirty estimate" $\hat{x}_0 = Q_t(x_t)$ lies on the manifold.
+    - Statement: An MSE-trained denoiser is equivalent to the orthogonal projection onto the manifold $\mathcal{M}_0$ as $\bar{\alpha}_t \to 1$.
+    - Contribution: Generalises the result of Chung et al.—the flat-manifold assumption is no longer required; the result holds for curved manifolds.
+    - Practical Implication: The "dirty estimate" $\hat{x}_0 = Q_t(x_t)$ lies on the manifold.
 
 2. **Theorem 3.2 (Tangent-Space Gradient)**:
 
-   - Statement: For any differentiable inference-time loss $\mathcal{L}_{\text{inf}}$, its gradient $\nabla_{x_t}\mathcal{L}_{\text{inf}}(\hat{x}_0, c) \in T_{\hat{x}_0}\mathcal{M}_0$.
-   - Contribution: Extends the guarantee from square-error loss only to arbitrary differentiable losses (cross-entropy, L1, ReLU inequality, etc.).
-   - Practical Implication: Gradient-based corrections using any reasonable inference-time loss will not push samples off the manifold.
+    - Statement: For any differentiable inference-time loss $\mathcal{L}_{\text{inf}}$, its gradient $\nabla_{x_t}\mathcal{L}_{\text{inf}}(\hat{x}_0, c) \in T_{\hat{x}_0}\mathcal{M}_0$.
+    - Contribution: Extends the guarantee from square-error loss only to arbitrary differentiable losses (cross-entropy, L1, ReLU inequality, etc.).
+    - Practical Implication: Gradient-based corrections using any reasonable inference-time loss will not push samples off the manifold.
 
 3. **Harpoon Algorithm**:
 
-   - Function: Performs unconditional denoising followed by tangential correction at each step.
-   - Mechanism: $x_{t-1} = x_{t-1}' - \eta \cdot \nabla_{x_t}\mathcal{L}_{\text{inf}}(\hat{x}_0, c)$
-   - Supported Constraints: Imputation (partial observations), range constraints (Age $\geq$ 10), categorical constraints (Gender = Male), conjunctions/disjunctions.
+    - Function: Performs unconditional denoising followed by tangential correction at each step.
+    - Mechanism: $x_{t-1} = x_{t-1}' - \eta \cdot \nabla_{x_t}\mathcal{L}_{\text{inf}}(\hat{x}_0, c)$
+    - Supported Constraints: Imputation (partial observations), range constraints (Age $\geq$ 10), categorical constraints (Gender = Male), conjunctions/disjunctions.
 
 ### Loss & Training
 - Training: Standard MSE denoising loss (trained once).

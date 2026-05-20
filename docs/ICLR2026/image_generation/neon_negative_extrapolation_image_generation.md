@@ -18,8 +18,8 @@ content_hash: 5599fefa7a8b147f
 # Neon: Negative Extrapolation From Self-Training Improves Image Generation
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2510.03597](https://arxiv.org/abs/2510.03597)
-**Code**: [github.com/VITA-Group/Neon](https://github.com/VITA-Group/Neon)
+**arXiv**: [2510.03597](https://arxiv.org/abs/2510.03597)  
+**Code**: [github.com/VITA-Group/Neon](https://github.com/VITA-Group/Neon)  
 **Area**: Image Generation / Self-Training
 **Keywords**: self-training, model collapse, weight merging, negative extrapolation, FID
 

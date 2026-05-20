@@ -18,8 +18,8 @@ content_hash: 6bb03bc5d20cefd5
 # A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values
 
 **Conference**: NEURIPS2025
-**arXiv**: [2506.05216](https://arxiv.org/abs/2506.05216)
-**Code**: To be confirmed
+**arXiv**: [2506.05216](https://arxiv.org/abs/2506.05216)  
+**Code**: To be confirmed  
 **Area**: LLM Evaluation
 **Keywords**: Shapley Values, KernelSHAP, LeverageSHAP, Explainable AI, Randomized Numerical Linear Algebra
 

@@ -18,8 +18,8 @@ content_hash: b9cae38fe15f8e48
 # Model-Behavior Alignment under Flexible Evaluation: When the Best-Fitting Model Isn't the Right One
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23321](https://arxiv.org/abs/2510.23321)
-**Code**: [GitHub](https://github.com/brainsandmachines/oddoneout_model_recovery)
+**arXiv**: [2510.23321](https://arxiv.org/abs/2510.23321)  
+**Code**: [GitHub](https://github.com/brainsandmachines/oddoneout_model_recovery)  
 **Area**: Computational Neuroscience / Representational Alignment
 **Keywords**: Model Recovery, Representational Alignment, Linear Probing, Identifiability, THINGS Dataset
 

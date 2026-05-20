@@ -18,8 +18,8 @@ content_hash: 179d6d147be3281a
 # SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20273](https://arxiv.org/abs/2510.20273)
-**Code**: [GitHub](https://github.com/TanQitai/SynTSBench)
+**arXiv**: [2510.20273](https://arxiv.org/abs/2510.20273)  
+**Code**: [GitHub](https://github.com/TanQitai/SynTSBench)  
 **Area**: Time Series Forecasting / Evaluation Benchmarks
 **Keywords**: time series forecasting, synthetic data, model evaluation, theoretical optimal benchmark, robustness analysis
 
@@ -51,19 +51,19 @@ SynTSBench establishes three core analytical dimensions:
 ### Key Designs
 
 1. **Programmable Temporal Feature Synthesis**:
-   - *Function*: Designs synthetic datasets covering 11 trend functions and 10 periodic patterns, along with short- and long-range dependencies and multivariate correlations.
-   - *Mechanism*: Generates short- and long-range dependencies via ARMA processes; uses random walks and white noise to test dependency-free baselines; constructs multivariate relationships including delayed coupling, linear additivity, conditional interaction, and nonlinear transformation.
-   - *Design Motivation*: Isolates confounding factors so that model performance can be directly attributed to the capacity to capture specific temporal features.
+    - *Function*: Designs synthetic datasets covering 11 trend functions and 10 periodic patterns, along with short- and long-range dependencies and multivariate correlations.
+    - *Mechanism*: Generates short- and long-range dependencies via ARMA processes; uses random walks and white noise to test dependency-free baselines; constructs multivariate relationships including delayed coupling, linear additivity, conditional interaction, and nonlinear transformation.
+    - *Design Motivation*: Isolates confounding factors so that model performance can be directly attributed to the capacity to capture specific temporal features.
 
 2. **Progressive Noise Injection and Anomaly Testing**:
-   - *Function*: Injects Gaussian noise at multiple SNR levels; tests diverse noise distributions including uniform, Laplace, $t$-distribution, and Lévy stable; introduces point anomalies, impulse anomalies, mean shifts, and trend changes.
-   - *Mechanism*: Modifies clean synthetic signals under controlled conditions to quantify each model's noise tolerance threshold and anomaly recovery capability.
-   - *Design Motivation*: Real-world data inevitably contains noise and anomalies; systematic robustness evaluation is necessary rather than comparison on clean data alone.
+    - *Function*: Injects Gaussian noise at multiple SNR levels; tests diverse noise distributions including uniform, Laplace, $t$-distribution, and Lévy stable; introduces point anomalies, impulse anomalies, mean shifts, and trend changes.
+    - *Mechanism*: Modifies clean synthetic signals under controlled conditions to quantify each model's noise tolerance threshold and anomaly recovery capability.
+    - *Design Motivation*: Real-world data inevitably contains noise and anomalies; systematic robustness evaluation is necessary rather than comparison on clean data alone.
 
 3. **Theoretical Optimal Benchmarking**:
-   - *Function*: Computes theoretically optimal predictions for each pattern type by exploiting the known generative process of synthetic data.
-   - *Mechanism*: For example, the optimal MSE for a linear trend is 0, and the optimal solution for an AR process can be derived analytically.
-   - *Design Motivation*: Without a theoretical optimum, model optimization resembles "blind tuning"; with an optimal reference, performance gaps and improvement headroom become explicit.
+    - *Function*: Computes theoretically optimal predictions for each pattern type by exploiting the known generative process of synthetic data.
+    - *Mechanism*: For example, the optimal MSE for a linear trend is 0, and the optimal solution for an AR process can be derived analytically.
+    - *Design Motivation*: Without a theoretical optimum, model optimization resembles "blind tuning"; with an optimal reference, performance gaps and improvement headroom become explicit.
 
 ### Loss & Training
 

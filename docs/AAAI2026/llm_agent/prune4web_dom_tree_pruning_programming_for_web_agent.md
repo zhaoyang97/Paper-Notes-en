@@ -18,8 +18,8 @@ content_hash: e0ba523d8df4846b
 # Prune4Web: DOM Tree Pruning Programming for Web Agent
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.21398](https://arxiv.org/abs/2511.21398)
-**Code**: N/A
+**arXiv**: [2511.21398](https://arxiv.org/abs/2511.21398)  
+**Code**: N/A  
 **Area**: LLM Agent / Web Agent / DOM Processing
 **Keywords**: DOM tree pruning, programmatic filtering, Web Agent, element grounding, scoring function generation
 

@@ -18,8 +18,8 @@ content_hash: dd81e57b925f7a0e
 # Feedback-driven Recurrent Quantum Neural Network Universality
 
 **Conference**: ICLR2026
-**arXiv**: [2506.16332](https://arxiv.org/abs/2506.16332)
-**Code**: None
+**arXiv**: [2506.16332](https://arxiv.org/abs/2506.16332)  
+**Code**: None  
 **Area**: Physics
 **Keywords**: quantum reservoir computing, recurrent quantum neural network, universal approximation, fading memory filter, NISQ
 

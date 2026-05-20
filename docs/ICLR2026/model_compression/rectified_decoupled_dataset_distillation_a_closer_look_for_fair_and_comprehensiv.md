@@ -18,8 +18,8 @@ content_hash: 1af035e2fef4e1ea
 # Rectified Decoupled Dataset Distillation: A Closer Look for Fair and Comprehensive Evaluation
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.19743](https://arxiv.org/abs/2509.19743)
-**Code**: [GitHub](https://github.com/ndhg1213/RD3)
+**arXiv**: [2509.19743](https://arxiv.org/abs/2509.19743)  
+**Code**: [GitHub](https://github.com/ndhg1213/RD3)  
 **Area**: Model Compression / Dataset Distillation
 **Keywords**: Dataset distillation, decoupled distillation, fair evaluation, post-evaluation protocol, synthetic data
 

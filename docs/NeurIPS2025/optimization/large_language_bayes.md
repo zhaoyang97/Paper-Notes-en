@@ -19,8 +19,8 @@ content_hash: 0b10c2d2d88080ed
 # Large Language Bayes
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.14025](https://arxiv.org/abs/2504.14025)
-**Code**: To be confirmed
+**arXiv**: [2504.14025](https://arxiv.org/abs/2504.14025)  
+**Code**: To be confirmed  
 **Area**: Optimization
 **Keywords**: LLM, Bayesian inference, probabilistic programming, model averaging, Stan, joint distribution
 

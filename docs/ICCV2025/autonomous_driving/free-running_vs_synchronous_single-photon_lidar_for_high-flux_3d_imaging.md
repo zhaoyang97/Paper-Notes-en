@@ -18,8 +18,8 @@ content_hash: affbc319160121e8
 # Free-running vs. Synchronous: Single-Photon Lidar for High-flux 3D Imaging
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.09386](https://arxiv.org/abs/2507.09386)
-**Code**: None
+**arXiv**: [2507.09386](https://arxiv.org/abs/2507.09386)  
+**Code**: None  
 **Area**: Autonomous Driving / 3D Vision
 **Keywords**: single-photon lidar, free-running mode, maximum likelihood estimation, depth regularization, high-flux 3D imaging
 

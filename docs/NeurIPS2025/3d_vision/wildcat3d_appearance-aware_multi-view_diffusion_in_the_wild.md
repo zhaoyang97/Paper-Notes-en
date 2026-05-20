@@ -18,8 +18,8 @@ content_hash: 4df92d9a6449b325
 # WildCAT3D: Appearance-Aware Multi-View Diffusion in the Wild
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.13030](https://arxiv.org/abs/2506.13030)
-**Code**: [Project Page](https://wildcat3d.github.io)
+**arXiv**: [2506.13030](https://arxiv.org/abs/2506.13030)  
+**Code**: [Project Page](https://wildcat3d.github.io)  
 **Area**: 3D Vision
 **Keywords**: Novel View Synthesis, Multi-View Diffusion, Appearance Modeling, Scene-Level NVS, In-the-Wild Data
 

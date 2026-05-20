@@ -18,8 +18,8 @@ content_hash: f8ce6b39592b9091
 # Unmasking Backdoors: An Explainable Defense via Gradient-Attention Anomaly Scoring for Pre-trained Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04347](https://arxiv.org/abs/2510.04347)
-**Code**: None (uses OpenBackdoor toolkit)
+**arXiv**: [2510.04347](https://arxiv.org/abs/2510.04347)  
+**Code**: None (uses OpenBackdoor toolkit)  
 **Area**: AI Safety / Backdoor Defense
 **Keywords**: backdoor detection, gradient-attention anomaly scoring, explainable defense, NLP security, inference-time defense
 

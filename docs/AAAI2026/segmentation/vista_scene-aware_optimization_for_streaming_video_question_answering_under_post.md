@@ -18,8 +18,8 @@ content_hash: 13d76560e5bd4f35
 # Vista: Scene-Aware Optimization for Streaming Video Question Answering Under Post-Hoc Queries
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.08448](https://arxiv.org/abs/2602.08448)
-**Code**: None
+**arXiv**: [2602.08448](https://arxiv.org/abs/2602.08448)  
+**Code**: None  
 **Area**: Image Segmentation
 **Keywords**: Streaming video question answering, scene-aware compression, multimodal large language models, video memory retrieval, real-time inference
 

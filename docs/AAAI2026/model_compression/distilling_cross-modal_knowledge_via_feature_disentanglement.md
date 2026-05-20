@@ -18,8 +18,8 @@ content_hash: 54c8057a9b33ed26
 # Distilling Cross-Modal Knowledge via Feature Disentanglement
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19887](https://arxiv.org/abs/2511.19887)
-**Code**: [GitHub](https://github.com/Johumliu/FD-CMKD)
+**arXiv**: [2511.19887](https://arxiv.org/abs/2511.19887)  
+**Code**: [GitHub](https://github.com/Johumliu/FD-CMKD)  
 **Area**: Model Compression / Cross-Modal Knowledge Distillation
 **Keywords**: Cross-modal distillation, frequency-domain feature disentanglement, knowledge transfer, scale consistency, shared classifier alignment
 

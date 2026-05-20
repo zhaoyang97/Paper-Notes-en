@@ -18,8 +18,8 @@ content_hash: ab8fd0c118a00ae3
 # Enabling Agents to Communicate Entirely in Latent Space
 
 **Conference**: ACL 2026
-**arXiv**: [2511.09149](https://arxiv.org/abs/2511.09149)
-**Code**: [GitHub](https://github.com/XiaoDu-flying/Interlat)
+**arXiv**: [2511.09149](https://arxiv.org/abs/2511.09149)  
+**Code**: [GitHub](https://github.com/XiaoDu-flying/Interlat)  
 **Area**: Model Compression
 **Keywords**: latent space communication, multi-agent, hidden state transfer, information compression, inference acceleration
 

@@ -17,8 +17,8 @@ content_hash: 15e7f1c59eefdf9f
 # Deadline-Aware, Energy-Efficient Control of Domestic Immersion Hot Water Heaters
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.18123](https://arxiv.org/abs/2601.18123)
-**Code**: None
+**arXiv**: [2601.18123](https://arxiv.org/abs/2601.18123)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Energy Efficiency, Reinforcement Learning, Water Heater Control, PPO, MCTS
 

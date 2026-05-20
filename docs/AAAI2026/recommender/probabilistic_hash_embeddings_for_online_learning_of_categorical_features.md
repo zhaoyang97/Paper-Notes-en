@@ -18,8 +18,8 @@ content_hash: c3a5396d9b723a7c
 # Probabilistic Hash Embeddings for Online Learning of Categorical Features
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.20893](https://arxiv.org/abs/2511.20893)
-**Code**: [github](https://github.com/aodongli/probabilistic-hash-embeddings)
+**arXiv**: [2511.20893](https://arxiv.org/abs/2511.20893)  
+**Code**: [github](https://github.com/aodongli/probabilistic-hash-embeddings)  
 **Area**: Recommender System / Online Learning
 **Keywords**: hash embedding, Bayesian online learning, categorical features, continual learning, variational inference
 

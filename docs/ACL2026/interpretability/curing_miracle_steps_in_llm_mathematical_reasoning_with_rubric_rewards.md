@@ -18,8 +18,8 @@ content_hash: 9ca5b7bb5425be19
 # Curing "Miracle Steps" in LLM Mathematical Reasoning with Rubric Rewards
 
 **Conference**: ACL 2026
-**arXiv**: [2510.07774](https://arxiv.org/abs/2510.07774)
-**Code**: [https://github.com/YouliangYuan/rrm-cure-miracle-steps](https://github.com/YouliangYuan/rrm-cure-miracle-steps)
+**arXiv**: [2510.07774](https://arxiv.org/abs/2510.07774)  
+**Code**: [https://github.com/YouliangYuan/rrm-cure-miracle-steps](https://github.com/YouliangYuan/rrm-cure-miracle-steps)  
 **Area**: Interpretability
 **Keywords**: Mathematical Reasoning, Miracle Steps, Reward Hacking, Process Reward, Rubric Reward
 

@@ -18,8 +18,8 @@ content_hash: a7cab1684523f836
 # Resounding Acoustic Fields with Reciprocity
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20602](https://arxiv.org/abs/2510.20602)
-**Code**: [Available](https://waves.seas.upenn.edu/projects/versa)
+**arXiv**: [2510.20602](https://arxiv.org/abs/2510.20602)  
+**Code**: [Available](https://waves.seas.upenn.edu/projects/versa)  
 **Area**: Audio/Speech / Acoustic Modeling
 **Keywords**: acoustic field learning, reciprocity, impulse response, data augmentation, self-supervised learning
 

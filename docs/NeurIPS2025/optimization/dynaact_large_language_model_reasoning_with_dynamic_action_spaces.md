@@ -18,8 +18,8 @@ content_hash: b53dada985f3cbcb
 # DynaAct: Large Language Model Reasoning with Dynamic Action Spaces
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.08043](https://arxiv.org/abs/2511.08043)
-**Code**: [https://github.com/zhaoxlpku/DynaAct](https://github.com/zhaoxlpku/DynaAct)
+**arXiv**: [2511.08043](https://arxiv.org/abs/2511.08043)  
+**Code**: [https://github.com/zhaoxlpku/DynaAct](https://github.com/zhaoxlpku/DynaAct)  
 **Area**: LLM Reasoning / Decision Optimization
 **Keywords**: Dynamic Action Space, Submodular Function, MCTS, LLM Reasoning, Subset Selection
 

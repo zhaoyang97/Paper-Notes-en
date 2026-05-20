@@ -18,8 +18,8 @@ content_hash: bcb8de6bc3831c43
 # Lightweight LLM Agent Memory with Small Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.07798](https://arxiv.org/abs/2604.07798)
-**Code**: None
+**arXiv**: [2604.07798](https://arxiv.org/abs/2604.07798)  
+**Code**: None  
 **Area**: LLM Agents / Memory Systems
 **Keywords**: Agent Memory, Small Language Models, Lightweight Retrieval, Online-Offline Decoupling, Long-term Dialogue
 

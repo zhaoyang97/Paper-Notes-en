@@ -18,8 +18,8 @@ content_hash: 89a88d80b65d78ab
 # OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective
 
 **Conference**: CVPR 2026 (Oral)
-**arXiv**: [2512.20770](https://arxiv.org/abs/2512.20770)
-**Code**: [https://github.com/markus-42/occufly](https://github.com/markus-42/occufly) (available, to be released)
+**arXiv**: [2512.20770](https://arxiv.org/abs/2512.20770)  
+**Code**: [https://github.com/markus-42/occufly](https://github.com/markus-42/occufly) (available, to be released)  
 **Area**: Autonomous Driving / 3D Vision
 **Keywords**: Semantic Scene Completion, Aerial Perspective, UAV, Benchmark Dataset, Depth Estimation
 

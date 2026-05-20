@@ -18,8 +18,8 @@ content_hash: 7975866f4f3ab53e
 # InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2504.05662](https://arxiv.org/abs/2504.05662)
-**Code**: [Project Page](https://invad-project.com)
+**arXiv**: [2504.05662](https://arxiv.org/abs/2504.05662)  
+**Code**: [Project Page](https://invad-project.com)  
 **Area**: Medical Imaging
 **Keywords**: Anomaly detection, diffusion models, DDIM inversion, reconstruction-free paradigm, industrial/medical defect detection
 

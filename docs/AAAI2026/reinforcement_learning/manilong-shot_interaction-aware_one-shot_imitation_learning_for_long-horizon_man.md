@@ -18,8 +18,8 @@ content_hash: 775da845e0f738d2
 # ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.16302](https://arxiv.org/abs/2512.16302)
-**Code**: [Website](https://sites.google.com/view/manilong-shot)
+**arXiv**: [2512.16302](https://arxiv.org/abs/2512.16302)  
+**Code**: [Website](https://sites.google.com/view/manilong-shot)  
 **Area**: Reinforcement Learning
 **Keywords**: One-shot imitation learning, long-horizon manipulation, interaction-awareness, invariant regions, task decomposition
 

@@ -18,8 +18,8 @@ content_hash: 9fbd706a2f1032e0
 # L2GTX: From Local to Global Time Series Explanations
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13065](https://arxiv.org/abs/2603.13065)
-**Code**: None
+**arXiv**: [2603.13065](https://arxiv.org/abs/2603.13065)  
+**Code**: None  
 **Area**: Time Series
 **Keywords**: Time series explainability, global explanation, parameterized event primitives, model-agnostic, local-to-global aggregation
 

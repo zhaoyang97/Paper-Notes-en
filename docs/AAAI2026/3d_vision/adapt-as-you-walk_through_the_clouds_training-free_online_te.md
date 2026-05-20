@@ -20,8 +20,8 @@ content_hash: b771b88b68d85dfa
 # Adapt-As-You-Walk Through the Clouds: Training-Free Online Test-Time Adaptation of 3D Vision-Language Foundation Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.15311v2](https://arxiv.org/abs/2511.15311v2)
-**Code**: [Available](https://github.com/Mehran-TAM/Uni-Adapter)
+**arXiv**: [2511.15311v2](https://arxiv.org/abs/2511.15311v2)  
+**Code**: [Available](https://github.com/Mehran-TAM/Uni-Adapter)  
 **Area**: 3D Vision / Test-Time Adaptation / Vision-Language Foundation Models
 **Keywords**: Test-time adaptation, 3D point cloud, vision-language foundation models, dynamic prototype learning, training-free adaptation, online clustering, graph regularization
 

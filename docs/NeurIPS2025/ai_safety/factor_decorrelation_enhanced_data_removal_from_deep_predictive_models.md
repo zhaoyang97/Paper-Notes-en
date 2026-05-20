@@ -18,8 +18,8 @@ content_hash: c8487ae19ee4eac2
 # Factor Decorrelation Enhanced Data Removal from Deep Predictive Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23443](https://arxiv.org/abs/2509.23443)
-**Code**: [GitHub](https://anonymous.4open.science/r/DecoRemoval-770220/)
+**arXiv**: [2509.23443](https://arxiv.org/abs/2509.23443)  
+**Code**: [GitHub](https://anonymous.4open.science/r/DecoRemoval-770220/)  
 **Area**: AI Safety / Machine Unlearning
 **Keywords**: machine unlearning, certified removal, factor decorrelation, OOD robustness, random Fourier features
 

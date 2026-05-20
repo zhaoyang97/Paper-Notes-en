@@ -19,8 +19,8 @@ content_hash: a0d27faa961cd8cf
 # Training High-Level Schedulers with Execution-Feedback Reinforcement Learning for Long-Horizon GUI Automation
 
 **Conference**: CVPR2026
-**arXiv**: [2511.22235](https://arxiv.org/abs/2511.22235)
-**Code**: [hehehahi4/CES](https://github.com/hehehahi4/CES)
+**arXiv**: [2511.22235](https://arxiv.org/abs/2511.22235)  
+**Code**: [hehehahi4/CES](https://github.com/hehehahi4/CES)  
 **Area**: Multimodal VLM
 **Keywords**: GUI automation, long-horizon tasks, multi-agent framework, reinforcement learning, state tracking, task scheduling
 

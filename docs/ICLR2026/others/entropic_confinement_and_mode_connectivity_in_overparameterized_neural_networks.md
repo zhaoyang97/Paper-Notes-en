@@ -17,8 +17,8 @@ content_hash: 7e1920ccca725182
 # Entropic Confinement and Mode Connectivity in Overparameterized Neural Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.06297](https://arxiv.org/abs/2512.06297)
-**Code**: None (authors commit to release upon de-anonymization)
+**arXiv**: [2512.06297](https://arxiv.org/abs/2512.06297)  
+**Code**: None (authors commit to release upon de-anonymization)  
 **Area**: Deep Learning Theory / Optimization
 **Keywords**: loss landscape, mode connectivity, entropic force, SGD dynamics, overparameterization
 

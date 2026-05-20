@@ -19,8 +19,8 @@ content_hash: 18c0d3879a41c537
 # MeshA*: Efficient Path Planning With Motion Primitives
 
 **Conference**: AAAI 2026
-**arXiv**: [2412.10320](https://arxiv.org/abs/2412.10320)
-**Code**: [https://github.com/PathPlanning/MeshAStar](https://github.com/PathPlanning/MeshAStar)
+**arXiv**: [2412.10320](https://arxiv.org/abs/2412.10320)  
+**Code**: [https://github.com/PathPlanning/MeshAStar](https://github.com/PathPlanning/MeshAStar)  
 **Area**: Path Planning / Heuristic Search
 **Keywords**: motion primitives, lattice-based planning, A*, extended cell, branching factor reduction, mobile robots
 

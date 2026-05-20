@@ -18,8 +18,8 @@ content_hash: 0fa343ad0e641330
 # CE-GPPO: Coordinating Entropy via Gradient-Preserving Clipping Policy Optimization in Reinforcement Learning
 
 **Conference**: ACL 2026
-**arXiv**: [2509.20712](https://arxiv.org/abs/2509.20712)
-**Code**: None
+**arXiv**: [2509.20712](https://arxiv.org/abs/2509.20712)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Policy Optimization, Entropy Dynamic Control, Gradient Preservation, PPO Improvement, Mathematical Reasoning
 

@@ -18,8 +18,8 @@ content_hash: b0b8092f1f2483e0
 # OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18947](https://arxiv.org/abs/2505.18947)
-**Code**: Available
+**arXiv**: [2505.18947](https://arxiv.org/abs/2505.18947)  
+**Code**: Available  
 **Area**: Multimodal VLM / Hand-Object Interaction
 **Keywords**: hand-object interaction, open-world, MLLM, contact reasoning, grasp synthesis
 
@@ -49,21 +49,21 @@ Object image/description → MLLM reasoning (contact regions, grasp type, force 
 
 1. **MLLM Contact Reasoning**
 
-   - **Function**: Infers contactable regions, suitable grasp types, and force levels for a given object.
-   - **Mechanism**: Object images and textual descriptions are provided to the MLLM; carefully designed prompts elicit structured contact information as output.
-   - **Design Motivation**: The commonsense knowledge of MLLMs compensates for the absence of training data — the model inherently "knows" how to hold a cup.
+    - **Function**: Infers contactable regions, suitable grasp types, and force levels for a given object.
+    - **Mechanism**: Object images and textual descriptions are provided to the MLLM; carefully designed prompts elicit structured contact information as output.
+    - **Design Motivation**: The commonsense knowledge of MLLMs compensates for the absence of training data — the model inherently "knows" how to hold a cup.
 
 2. **Conditioned Grasp Generation**
 
-   - **Function**: Generates MANO hand parameters conditioned on MLLM-inferred contact conditions.
-   - **Mechanism**: A conditional diffusion model takes contact heatmaps and grasp-type embeddings as conditions to generate hand pose parameters.
-   - **Design Motivation**: Diffusion models produce diverse and plausible poses rather than a single deterministic output.
+    - **Function**: Generates MANO hand parameters conditioned on MLLM-inferred contact conditions.
+    - **Mechanism**: A conditional diffusion model takes contact heatmaps and grasp-type embeddings as conditions to generate hand pose parameters.
+    - **Design Motivation**: Diffusion models produce diverse and plausible poses rather than a single deterministic output.
 
 3. **Physics Post-Processing**
 
-   - **Function**: Removes hand-object interpenetration and improves contact quality.
-   - **Mechanism**: Iterative optimization — detect interpenetrations → push hand along surface normals → optimize contact area.
-   - **Design Motivation**: Learning-based methods alone cannot guarantee physical plausibility; post-processing corrects residual artifacts.
+    - **Function**: Removes hand-object interpenetration and improves contact quality.
+    - **Mechanism**: Iterative optimization — detect interpenetrations → push hand along surface normals → optimize contact area.
+    - **Design Motivation**: Learning-based methods alone cannot guarantee physical plausibility; post-processing corrects residual artifacts.
 
 ### Loss & Training
 

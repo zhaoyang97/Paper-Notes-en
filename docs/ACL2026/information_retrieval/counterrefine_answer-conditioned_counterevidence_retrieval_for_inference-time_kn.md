@@ -18,8 +18,8 @@ content_hash: b7be6c4b86461ba2
 # CounterRefine: Answer-Conditioned Counterevidence Retrieval for Inference-Time Knowledge Repair in Factual Question Answering
 
 **Conference**: ACL 2026
-**arXiv**: [2603.16091](https://arxiv.org/abs/2603.16091)
-**Code**: None
+**arXiv**: [2603.16091](https://arxiv.org/abs/2603.16091)  
+**Code**: None  
 **Area**: Information Retrieval / Question Answering
 **Keywords**: inference-time repair, counterevidence retrieval, answer conditioning, factual QA, RAG augmentation
 

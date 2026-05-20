@@ -18,8 +18,8 @@ content_hash: 3db7145a5725193d
 # ReMix: Reinforcement Routing for Mixtures of LoRAs in LLM Finetuning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.10160](https://arxiv.org/abs/2603.10160)
-**Code**: None
+**arXiv**: [2603.10160](https://arxiv.org/abs/2603.10160)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Mixture-of-LoRAs, routing weight collapse, reinforcement learning routing, RLOO, parameter-efficient fine-tuning
 

@@ -19,9 +19,9 @@ content_hash: 886ebd51f014103b
 # Reinforced Rate Control for Neural Video Compression via Inter-Frame Rate-Distortion Awareness
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.19293](https://arxiv.org/abs/2601.19293)
+**arXiv**: [2601.19293](https://arxiv.org/abs/2601.19293)  
 **Authors**: Wuyang Cong, Junqi Shi, Lizhong Wang, Weijing Shi, Ming Lu, Hao Chen, Zhan Ma (Nanjing University)
-**Code**: To be released
+**Code**: To be released  
 **Area**: Model Compression
 **Keywords**: Neural video compression, rate control, reinforcement learning, inter-frame dependency, Actor-Critic, rate-distortion optimization
 

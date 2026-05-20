@@ -18,8 +18,8 @@ content_hash: d8debac154847572
 # Generalization Below the Edge of Stability: The Role of Data Geometry
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.18120](https://arxiv.org/abs/2510.18120)
-**Code**: None
+**arXiv**: [2510.18120](https://arxiv.org/abs/2510.18120)  
+**Code**: None  
 **Area**: Learning Theory / Optimization
 **Keywords**: Generalization Theory, Edge of Stability, Data Geometry, ReLU Networks, Implicit Regularization
 

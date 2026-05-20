@@ -18,8 +18,8 @@ content_hash: de6ef039dc702a6c
 # FlexAvatar: Learning Complete 3D Head Avatars with Partial Supervision
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.15599](https://arxiv.org/abs/2512.15599)
-**Code**: [Available](https://tobias-kirschstein.github.io/flexavatar/)
+**arXiv**: [2512.15599](https://arxiv.org/abs/2512.15599)  
+**Code**: [Available](https://tobias-kirschstein.github.io/flexavatar/)  
 **Area**: Human Understanding / 3D Head Avatar Generation
 **Keywords**: 3D head avatars, single-image reconstruction, bias sinks, 3D Gaussian Splatting, Transformer
 

@@ -18,8 +18,8 @@ content_hash: 7b083fde970ae1a1
 # DiffSim: Taming Diffusion Models for Evaluating Visual Similarity
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.14580](https://arxiv.org/abs/2412.14580)
-**Code**: [https://github.com/showlab/DiffSim](https://github.com/showlab/DiffSim)
+**arXiv**: [2412.14580](https://arxiv.org/abs/2412.14580)  
+**Code**: [https://github.com/showlab/DiffSim](https://github.com/showlab/DiffSim)  
 **Area**: Image Generation / Visual Similarity
 **Keywords**: Diffusion models, visual similarity, attention alignment, perceptual metrics, style similarity
 

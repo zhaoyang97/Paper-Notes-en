@@ -18,8 +18,8 @@ content_hash: e101ee58b8639ec9
 # BATCLIP: Bimodal Online Test-Time Adaptation for CLIP
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.02837](https://arxiv.org/abs/2412.02837)
-**Code**: [https://github.com/sarthaxxxxx/BATCLIP](https://github.com/sarthaxxxxx/BATCLIP)
+**arXiv**: [2412.02837](https://arxiv.org/abs/2412.02837)  
+**Code**: [https://github.com/sarthaxxxxx/BATCLIP](https://github.com/sarthaxxxxx/BATCLIP)  
 **Area**: LLM Evaluation
 **Keywords**: CLIP, test-time adaptation, bimodal adaptation, robustness to image corruption, vision-language models
 

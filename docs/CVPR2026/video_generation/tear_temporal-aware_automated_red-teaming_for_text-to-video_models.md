@@ -18,8 +18,8 @@ content_hash: 87e0c82f3f5647fc
 # TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.21145](https://arxiv.org/abs/2511.21145)
-**Code**: None
+**arXiv**: [2511.21145](https://arxiv.org/abs/2511.21145)  
+**Code**: None  
 **Area**: Video Generation
 **Keywords**: Text-to-video safety, automated red-teaming, temporal awareness, adversarial prompt generation, AI safety
 

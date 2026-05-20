@@ -18,9 +18,9 @@ content_hash: c73bc0b62016a6f7
 # Parameter Efficient Fine-tuning via Explained Variance Adaptation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.07170](https://arxiv.org/abs/2410.07170)
+**arXiv**: [2410.07170](https://arxiv.org/abs/2410.07170)  
 **Authors**: Fabian Paischer (JKU Linz), Lukas Hauzenberger (JKU Linz), Thomas Schmied, Benedikt Alkin, Marc Peter Deisenroth (UCL), Sepp Hochreiter (JKU Linz)
-**Code**: Integrated into the HuggingFace PEFT library
+**Code**: Integrated into the HuggingFace PEFT library  
 **Area**: Reinforcement Learning
 **Keywords**: Parameter-efficient fine-tuning, LoRA, singular value decomposition, adaptive rank allocation, variance-optimal initialization
 

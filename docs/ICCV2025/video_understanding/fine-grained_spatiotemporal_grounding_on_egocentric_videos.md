@@ -17,8 +17,8 @@ content_hash: 98ff53ae70116f8a
 # Fine-grained Spatiotemporal Grounding on Egocentric Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00518](https://arxiv.org/abs/2508.00518)
-**Code**: [https://github.com/LaVi-Lab/EgoMask](https://github.com/LaVi-Lab/EgoMask)
+**arXiv**: [2508.00518](https://arxiv.org/abs/2508.00518)  
+**Code**: [https://github.com/LaVi-Lab/EgoMask](https://github.com/LaVi-Lab/EgoMask)  
 **Area**: Video Understanding
 **Keywords**: egocentric video, spatiotemporal grounding, pixel-level segmentation, benchmark, video understanding
 

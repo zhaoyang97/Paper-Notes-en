@@ -18,8 +18,8 @@ content_hash: 786254e43ae47bff
 # ReMoGen: Real-time Human Interaction-to-Reaction Generation via Modular Learning from Diverse Data
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01082](https://arxiv.org/abs/2604.01082)
-**Code**: None
+**arXiv**: [2604.01082](https://arxiv.org/abs/2604.01082)  
+**Code**: None  
 **Area**: Human Motion Generation / Human Understanding / Interactive Motion Generation
 **Keywords**: Interaction-to-reaction generation, modular learning, motion prior, real-time generation, human-human/human-scene interaction
 
@@ -31,9 +31,9 @@ This paper proposes ReMoGen, a modular framework for real-time human interaction
 
 1. **Background**: Human motion generation has evolved from text-driven single-person synthesis to multi-agent interaction scenarios. Existing approaches include: text-to-motion methods (T2M, MotionDiffuse) that generate isolated motions only; human-scene interaction methods (TRUMANS, LINGO) that introduce spatial awareness but are limited to single agents; and human-human interaction methods (ReGenNet, FreeMotion) that attempt joint generation but operate predominantly in offline mode.
 2. **Limitations of Prior Work**:
-   - **Data scarcity and heterogeneity**: Single-person motion data is abundant (HumanML3D), whereas human-human interaction (Inter-X) and human-scene interaction (LINGO) datasets are scarce and exhibit large distributional discrepancies, causing end-to-end models trained on a single domain to overfit.
-   - **Real-time responsiveness**: Diffusion models yield high quality but incur large latency incompatible with real-time use; autoregressive models are fast but suffer from error accumulation and drift.
-   - Most existing methods assume full observation of the counterpart's complete trajectory, which is infeasible in practical online interaction settings.
+    - **Data scarcity and heterogeneity**: Single-person motion data is abundant (HumanML3D), whereas human-human interaction (Inter-X) and human-scene interaction (LINGO) datasets are scarce and exhibit large distributional discrepancies, causing end-to-end models trained on a single domain to overfit.
+    - **Real-time responsiveness**: Diffusion models yield high quality but incur large latency incompatible with real-time use; autoregressive models are fast but suffer from error accumulation and drift.
+    - Most existing methods assume full observation of the counterpart's complete trajectory, which is infeasible in practical online interaction settings.
 3. **Key Challenge**: How to simultaneously achieve high-fidelity and low-latency interaction-to-reaction generation under data-scarce conditions.
 4. **Goal**: (1) Efficient knowledge transfer across heterogeneous interaction domains; (2) Real-time responsiveness without sacrificing motion quality.
 5. **Key Insight**: Decouple general motion prior learning from interaction-specific adaptation — freeze a backbone pretrained on large-scale single-person data and inject interaction awareness via lightweight modules.
@@ -49,21 +49,21 @@ The inputs are textual intent, observed motions of other agents, and scene conte
 
 1. **Universal Motion Prior**:
 
-   - **Function**: Provides a strong generative foundation encoding basic kinematic structure, temporal dynamics, and language-motion correspondences.
-   - **Mechanism**: Built on the DART architecture, a Transformer VAE encoder-decoder compresses motion segments into a latent space, and a conditional diffusion model generates within that latent space. The encoder maps a motion segment to latent representation $z$; the denoiser $G_\psi$ iteratively denoises under text embedding $w$: $\hat{z}_0 = G_\psi(z_t, t, M_h^i, w)$; the decoder reconstructs the motion. Generation uses 10 diffusion steps at 10 FPS.
-   - **Design Motivation**: The motion prior learned from large-scale single-person data is already highly expressive. Joint fine-tuning destroys this knowledge — experiments show that joint fine-tuning degrades motion quality — making freezing the prior a critical design choice.
+    - **Function**: Provides a strong generative foundation encoding basic kinematic structure, temporal dynamics, and language-motion correspondences.
+    - **Mechanism**: Built on the DART architecture, a Transformer VAE encoder-decoder compresses motion segments into a latent space, and a conditional diffusion model generates within that latent space. The encoder maps a motion segment to latent representation $z$; the denoiser $G_\psi$ iteratively denoises under text embedding $w$: $\hat{z}_0 = G_\psi(z_t, t, M_h^i, w)$; the decoder reconstructs the motion. Generation uses 10 diffusion steps at 10 FPS.
+    - **Design Motivation**: The motion prior learned from large-scale single-person data is already highly expressive. Joint fine-tuning destroys this knowledge — experiments show that joint fine-tuning degrades motion quality — making freezing the prior a critical design choice.
 
 2. **Meta-Interaction Module**:
 
-   - **Function**: Injects interaction awareness into the frozen motion prior.
-   - **Mechanism**: Two independent encoders process interaction cues separately — an Others Encoder (TCN-based) extracts relative velocity, approach direction, and spatial relationships; a Scene Encoder (ViT-based) summarizes surrounding geometry and functional space. Interaction cues are injected via a Meta-Interaction Block: ego features first undergo self-attention to obtain $h'$; cross-attention is then applied over interaction cues to extract interaction signals, which are transformed into FiLM-style affine parameters $(\gamma, \beta)$ and applied as $h_{mod} = (1 + \tanh\gamma) \odot h' + \tanh\beta$.
-   - **Design Motivation**: Each module is trained independently on its respective domain (HHI on Inter-X, HSI on LINGO) for 65k iterations, avoiding the difficulties of joint training on heterogeneous data. At inference, effects from multiple modules are composited as $\Delta_{total} = \sum_i \alpha_i \Delta_i$ (with L2-norm clamping), enabling flexible mixing.
+    - **Function**: Injects interaction awareness into the frozen motion prior.
+    - **Mechanism**: Two independent encoders process interaction cues separately — an Others Encoder (TCN-based) extracts relative velocity, approach direction, and spatial relationships; a Scene Encoder (ViT-based) summarizes surrounding geometry and functional space. Interaction cues are injected via a Meta-Interaction Block: ego features first undergo self-attention to obtain $h'$; cross-attention is then applied over interaction cues to extract interaction signals, which are transformed into FiLM-style affine parameters $(\gamma, \beta)$ and applied as $h_{mod} = (1 + \tanh\gamma) \odot h' + \tanh\beta$.
+    - **Design Motivation**: Each module is trained independently on its respective domain (HHI on Inter-X, HSI on LINGO) for 65k iterations, avoiding the difficulties of joint training on heterogeneous data. At inference, effects from multiple modules are composited as $\Delta_{total} = \sum_i \alpha_i \Delta_i$ (with L2-norm clamping), enabling flexible mixing.
 
 3. **Frame-wise Segment Refinement (FWSR)**:
 
-   - **Function**: Provides per-frame low-latency reactive updates on top of segment-level generation.
-   - **Mechanism**: Standard segment-level autoregression faces a latency-quality trade-off — longer segments improve quality but slow updates, while shorter segments improve responsiveness but introduce jitter. At each frame within a segment, FWSR fine-tunes the initial segment latent $z_0$ using a lightweight Meta-Interaction Block: $\hat{z}^f = \text{Modulate}(z_0, \text{concat}(M_h^{(f-1)}, X_{dyn}^{(f)}))$, incorporating the latest observed interaction cues. Only the prediction at the corresponding frame position is retained; the history buffer is updated before processing the next frame.
-   - **Design Motivation**: The large backbone provides stable long-term dynamics, while the lightweight adapter enables fast fine-grained reactivity. FWSR is trained independently (with the prior and Meta-Interaction modules frozen), ensuring it acts as a stable local adapter without altering the global motion structure.
+    - **Function**: Provides per-frame low-latency reactive updates on top of segment-level generation.
+    - **Mechanism**: Standard segment-level autoregression faces a latency-quality trade-off — longer segments improve quality but slow updates, while shorter segments improve responsiveness but introduce jitter. At each frame within a segment, FWSR fine-tunes the initial segment latent $z_0$ using a lightweight Meta-Interaction Block: $\hat{z}^f = \text{Modulate}(z_0, \text{concat}(M_h^{(f-1)}, X_{dyn}^{(f)}))$, incorporating the latest observed interaction cues. Only the prediction at the corresponding frame position is retained; the history buffer is updated before processing the next frame.
+    - **Design Motivation**: The large backbone provides stable long-term dynamics, while the lightweight adapter enables fast fine-grained reactivity. FWSR is trained independently (with the prior and Meta-Interaction modules frozen), ensuring it acts as a stable local adapter without altering the global motion structure.
 
 ### Loss & Training
 

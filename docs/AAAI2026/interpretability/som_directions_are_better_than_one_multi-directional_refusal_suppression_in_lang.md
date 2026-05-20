@@ -18,8 +18,8 @@ content_hash: 3bedb620fa2809a1
 # SOM Directions are Better than One: Multi-Directional Refusal Suppression in Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08379](https://arxiv.org/abs/2511.08379)
-**Code**: [GitHub](https://github.com/pralab/som-refusal-directions)
+**arXiv**: [2511.08379](https://arxiv.org/abs/2511.08379)  
+**Code**: [GitHub](https://github.com/pralab/som-refusal-directions)  
 **Area**: LLM Alignment / Mechanistic Interpretability
 **Keywords**: Refusal suppression, self-organizing map, multi-directional ablation, representation space, jailbreak attack
 
@@ -62,10 +62,10 @@ The multi-directional ablation (MD) method proceeds in four steps: (1) extract i
 
 - **Function**: Use multiple SOM neurons to capture the manifold structure of harmful prompt representations and extract multiple refusal directions.
 - **Mechanism**:
-  - Select the optimal ablation layer $l^*$ (the layer that minimizes the probability of generating refusal tokens).
-  - Collect harmful representations $\mathcal{X}_{hf}$ (representations at the last token position of all harmful prompts at layer $l^*$) and the harmless centroid $\nu$.
-  - Train a $4 \times 4$ hexagonal-topology SOM (16 neurons) on $\mathcal{X}_{hf}$ for 10,000 steps, with learning rate $\alpha_t = 0.01/(1+2t/T)$ and Gaussian neighborhood function $\sigma = 0.3$.
-  - Subtract the harmless centroid $\nu$ from each SOM neuron $w_\iota$ to obtain direction $r_\iota = w_\iota - \nu$, yielding 16 candidate directions in total.
+    - Select the optimal ablation layer $l^*$ (the layer that minimizes the probability of generating refusal tokens).
+    - Collect harmful representations $\mathcal{X}_{hf}$ (representations at the last token position of all harmful prompts at layer $l^*$) and the harmless centroid $\nu$.
+    - Train a $4 \times 4$ hexagonal-topology SOM (16 neurons) on $\mathcal{X}_{hf}$ for 10,000 steps, with learning rate $\alpha_t = 0.01/(1+2t/T)$ and Gaussian neighborhood function $\sigma = 0.3$.
+    - Subtract the harmless centroid $\nu$ from each SOM neuron $w_\iota$ to obtain direction $r_\iota = w_\iota - \nu$, yielding 16 candidate directions in total.
 - **Design Motivation**: Harmless prompt representations are relatively homogeneous and can be represented by a single centroid; harmful prompts span diverse categories such as violence, discrimination, and crime, resulting in a more complex representational distribution that requires multiple representative points. The topology-preserving property of SOM ensures that similar harmful categories are mapped to neighboring neurons.
 
 #### Module 3: Bayesian Optimization for Direction Search

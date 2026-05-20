@@ -18,8 +18,8 @@ content_hash: 98156143097a114d
 # Conditional Information Bottleneck for Multimodal Fusion: Overcoming Shortcut Learning in Sarcasm Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.10644](https://arxiv.org/abs/2508.10644)
-**Code**: [GitHub](https://github.com/sljgkjhwe/MCIB.git)
+**arXiv**: [2508.10644](https://arxiv.org/abs/2508.10644)  
+**Code**: [GitHub](https://github.com/sljgkjhwe/MCIB.git)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal Fusion, Information Bottleneck, Sarcasm Detection, Shortcut Learning, Mutual Information
 

@@ -18,8 +18,8 @@ content_hash: c74a7a16d1c525d6
 # Born a Transformer – Always a Transformer? On the Effect of Pretraining on Architectural Abilities
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21785](https://arxiv.org/abs/2505.21785)
-**Code**: [https://github.com/lacoco-lab/always_a_transformer](https://github.com/lacoco-lab/always_a_transformer)
+**arXiv**: [2505.21785](https://arxiv.org/abs/2505.21785)  
+**Code**: [https://github.com/lacoco-lab/always_a_transformer](https://github.com/lacoco-lab/always_a_transformer)  
 **Area**: LLM Pretraining
 **Keywords**: Length Generalization, Transformer Architectural Limitations, Induction Heads, Pretraining Bias, Reliability
 

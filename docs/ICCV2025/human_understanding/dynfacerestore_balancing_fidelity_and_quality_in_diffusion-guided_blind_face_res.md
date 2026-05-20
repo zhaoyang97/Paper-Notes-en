@@ -18,8 +18,8 @@ content_hash: b963b0f276c207ca
 # DynFaceRestore: Balancing Fidelity and Quality in Diffusion-Guided Blind Face Restoration
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.13797](https://arxiv.org/abs/2507.13797)
-**Code**: [Project Page](https://github.com/)
+**arXiv**: [2507.13797](https://arxiv.org/abs/2507.13797)  
+**Code**: [Project Page](https://github.com/)  
 **Area**: Diffusion Models / Face Restoration
 **Keywords**: Blind face restoration, diffusion model guidance, dynamic blur mapping, fidelity-quality balance, region-adaptive guidance
 

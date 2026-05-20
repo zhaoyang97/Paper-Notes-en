@@ -18,8 +18,8 @@ content_hash: 73532c3347ec9a3d
 # Hidden Breakthroughs in Language Model Training
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.15872](https://arxiv.org/abs/2506.15872)
-**Code**: [GitHub](https://github.com/skangasl/POLCA)
+**arXiv**: [2506.15872](https://arxiv.org/abs/2506.15872)  
+**Code**: [GitHub](https://github.com/skangasl/POLCA)  
 **Area**: Interpretability
 **Keywords**: Training Dynamics, Hidden Phase Transitions, Loss Decomposition, Unsupervised Interpretability, Hessian Eigenvectors
 

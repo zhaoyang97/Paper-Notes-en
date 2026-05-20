@@ -18,8 +18,8 @@ content_hash: 725e8d846a73a7a0
 # Backdoor Mitigation by Distance-Driven Detoxification
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.09585](https://arxiv.org/abs/2411.09585)
-**Code**: None (evaluated on the BackdoorBench platform)
+**arXiv**: [2411.09585](https://arxiv.org/abs/2411.09585)  
+**Code**: None (evaluated on the BackdoorBench platform)  
 **Area**: AI Safety
 **Keywords**: backdoor defense, fine-tuning, distance-driven, constrained optimization, model purification
 

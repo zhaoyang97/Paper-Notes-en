@@ -19,8 +19,8 @@ content_hash: e0c13e2efef8251e
 # Recursive Visual Imagination and Adaptive Linguistic Grounding for Vision Language Navigation
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.21450](https://arxiv.org/abs/2507.21450)
-**Code**: None (authors indicate public release after anonymous review; not yet available)
+**arXiv**: [2507.21450](https://arxiv.org/abs/2507.21450)  
+**Code**: None (authors indicate public release after anonymous review; not yet available)  
 **Area**: Embodied Intelligence / Vision-Language Navigation
 **Keywords**: VLN, scene representation, language grounding, visual imagination, neural grid, contrastive learning
 

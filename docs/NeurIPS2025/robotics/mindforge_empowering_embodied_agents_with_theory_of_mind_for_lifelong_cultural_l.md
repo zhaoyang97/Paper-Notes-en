@@ -18,8 +18,8 @@ content_hash: 753599ed3c616ab3
 # MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.12977](https://arxiv.org/abs/2411.12977)
-**Code**: [https://github.com/tapri-lab/mindforge](https://github.com/tapri-lab/mindforge)
+**arXiv**: [2411.12977](https://arxiv.org/abs/2411.12977)  
+**Code**: [https://github.com/tapri-lab/mindforge](https://github.com/tapri-lab/mindforge)  
 **Area**: LLM Agent / Embodied Intelligence
 **Keywords**: Theory of Mind, Cultural Learning, Multi-Agent Collaboration, Minecraft, Knowledge Distillation
 

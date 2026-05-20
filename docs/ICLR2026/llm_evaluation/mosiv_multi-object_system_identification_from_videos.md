@@ -19,7 +19,7 @@ content_hash: 968eeed52c5f9d47
 # MOSIV: Multi-Object System Identification from Videos
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.06022](https://arxiv.org/abs/2603.06022)
+**arXiv**: [2603.06022](https://arxiv.org/abs/2603.06022)  
 **Area**: Physical Modeling / System Identification
 **Keywords**: multi-object physics, video system identification, differentiable MPM, 4D Gaussians, continuous parameter optimization, contact and friction modeling
 

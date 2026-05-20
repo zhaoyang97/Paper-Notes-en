@@ -18,8 +18,8 @@ content_hash: cce75acd5529a376
 # Cycle-Sync: Robust Global Camera Pose Estimation through Enhanced Cycle-Consistent Synchronization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02329](https://arxiv.org/abs/2511.02329)
-**Code**: [GitHub](https://github.com/sli743/Cycle-Sync)
+**arXiv**: [2511.02329](https://arxiv.org/abs/2511.02329)  
+**Code**: [GitHub](https://github.com/sli743/Cycle-Sync)  
 **Area**: Human Understanding
 **Keywords**: Structure-from-Motion, camera position estimation, cycle consistency, robust optimization, message passing
 

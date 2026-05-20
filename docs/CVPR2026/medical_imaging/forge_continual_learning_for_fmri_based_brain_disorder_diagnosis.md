@@ -18,8 +18,8 @@ content_hash: 040d29fdbbe5111a
 # Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.14259](https://arxiv.org/abs/2604.14259)
-**Code**: [github.com/4me808/FORGE](https://github.com/4me808/FORGE)
+**arXiv**: [2604.14259](https://arxiv.org/abs/2604.14259)  
+**Code**: [github.com/4me808/FORGE](https://github.com/4me808/FORGE)  
 **Area**: Medical Imaging
 **Keywords**: continual learning, fMRI, functional connectivity, generative replay, knowledge distillation
 

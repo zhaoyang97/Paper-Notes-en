@@ -18,8 +18,8 @@ content_hash: 843eff9871e317e7
 # Look and Tell: A Dataset for Multimodal Grounding Across Egocentric and Exocentric Views
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22672](https://arxiv.org/abs/2510.22672)
-**Code**: None
+**arXiv**: [2510.22672](https://arxiv.org/abs/2510.22672)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: Multimodal grounding, egocentric/exocentric views, gaze tracking, referential communication, spatial intelligence
 

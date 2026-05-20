@@ -18,8 +18,8 @@ content_hash: bb31cdd08b89d76b
 # Predict-Optimize-Distill: A Self-Improving Cycle for 4D Object Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.17441](https://arxiv.org/abs/2504.17441)
-**Code**: [https://predict-optimize-distill.github.io/pod.github.io](https://predict-optimize-distill.github.io/pod.github.io)
+**arXiv**: [2504.17441](https://arxiv.org/abs/2504.17441)  
+**Code**: [https://predict-optimize-distill.github.io/pod.github.io](https://predict-optimize-distill.github.io/pod.github.io)  
 **Area**: 4D Object Understanding / 3D Vision
 **Keywords**: 4D Reconstruction, Articulated Objects, Self-Improving Cycle, Inverse Rendering, Monocular Video
 

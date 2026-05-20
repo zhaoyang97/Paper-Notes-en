@@ -18,8 +18,8 @@ content_hash: 66e8ccfff72fa203
 # Controllable Sequence Editing for Biological and Clinical Trajectories
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.03569](https://arxiv.org/abs/2502.03569)
-**Code**: [https://github.com/mims-harvard/CLEF](https://github.com/mims-harvard/CLEF)
+**arXiv**: [2502.03569](https://arxiv.org/abs/2502.03569)  
+**Code**: [https://github.com/mims-harvard/CLEF](https://github.com/mims-harvard/CLEF)  
 **Area**: Medical Imaging / Bioinformatics
 **Keywords**: Counterfactual generation, sequence editing, temporal concepts, patient trajectories, cell reprogramming
 

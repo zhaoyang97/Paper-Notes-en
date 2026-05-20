@@ -18,8 +18,8 @@ content_hash: 15ce552860ebc09c
 # Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2408.13516](https://arxiv.org/abs/2408.13516)
-**Code**: N/A
+**arXiv**: [2408.13516](https://arxiv.org/abs/2408.13516)  
+**Code**: N/A  
 **Area**: Medical Imaging / Industrial Anomaly Detection
 **Keywords**: Few-shot anomaly detection, multi-class unified model, bidirectional prompt learning, scale-aware training, CLIP
 

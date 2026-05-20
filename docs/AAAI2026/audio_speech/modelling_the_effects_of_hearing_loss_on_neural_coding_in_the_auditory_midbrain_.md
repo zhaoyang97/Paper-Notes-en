@@ -18,8 +18,8 @@ content_hash: a081486393697b6c
 # Modelling the Effects of Hearing Loss on Neural Coding in the Auditory Midbrain with Variational Conditioning
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.03088](https://arxiv.org/abs/2506.03088)
-**Code**: None
+**arXiv**: [2506.03088](https://arxiv.org/abs/2506.03088)  
+**Code**: None  
 **Area**: Audio & Speech
 **Keywords**: Auditory midbrain modelling, hearing loss, variational conditioning, neural coding, Bayesian optimization
 

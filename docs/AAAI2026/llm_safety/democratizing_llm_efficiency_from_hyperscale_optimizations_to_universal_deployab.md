@@ -18,8 +18,8 @@ content_hash: 0ac7a8251561e7ff
 # Democratizing LLM Efficiency: From Hyperscale Optimizations to Universal Deployability
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.20662](https://arxiv.org/abs/2511.20662)
-**Code**: None
+**arXiv**: [2511.20662](https://arxiv.org/abs/2511.20662)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: LLM efficiency, democratized deployment, hyperscale optimization, overhead-aware efficiency, position paper
 

@@ -18,8 +18,8 @@ content_hash: 423706639252a9e3
 # MSTAR: Box-Free Multi-Query Scene Text Retrieval with Attention Recycling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10609](https://arxiv.org/abs/2506.10609)
-**Code**: [GitHub](https://github.com/yingift/MSTAR)
+**arXiv**: [2506.10609](https://arxiv.org/abs/2506.10609)  
+**Code**: [GitHub](https://github.com/yingift/MSTAR)  
 **Area**: Object Detection / Scene Text Retrieval
 **Keywords**: Scene text retrieval, box-free annotation, multi-query retrieval, attention recycling, vision-language model
 

@@ -17,8 +17,8 @@ content_hash: b75b7c4dd9414ab7
 # Comparing Human and Large Language Model Interpretation of Implicit Information
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17085](https://arxiv.org/abs/2604.17085)
-**Code**: Available (link in paper)
+**arXiv**: [2604.17085](https://arxiv.org/abs/2604.17085)  
+**Code**: Available (link in paper)  
 **Area**: Knowledge Graph / Implicit Information Understanding
 **Keywords**: Implicit Information Extraction, Knowledge Graph, Human-AI Comparison, Reasoning Verification, Temporal Analysis
 

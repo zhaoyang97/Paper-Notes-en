@@ -18,8 +18,8 @@ content_hash: 110cc651fd05c964
 # Gen-n-Val: Agentic Image Data Generation and Validation
 
 **Conference**: CVPR 2026
-**arXiv**: [2506.04676](https://arxiv.org/abs/2506.04676)
-**Code**: [GitHub](https://github.com/aiiu-lab/Gen-n-Val)
+**arXiv**: [2506.04676](https://arxiv.org/abs/2506.04676)  
+**Code**: [GitHub](https://github.com/aiiu-lab/Gen-n-Val)  
 **Area**: LLM Agent
 **Keywords**: Data Augmentation, Synthetic Data, Agentic Data Generation, Long-Tail Distribution, Instance Segmentation
 
@@ -43,19 +43,19 @@ A three-stage pipeline: (1) **Open-Vocabulary Prompt Generation**—the LLM agen
 ### Key Designs
 
 1. **TextGrad-Optimized LD Prompt Agent**:
-   - **Function**: Generate detailed prompts that guide Layer Diffusion to produce high-quality single-object images.
-   - **Mechanism**: Three LLMs collaborate: the LD prompt agent $A_{p_{LD}}$ generates LD prompt $p_{LD}$ from system prompt $p_{\text{sys}}$; the prompt evaluator $E_{\text{prompt}}$ assesses the quality of the generated prompt and outputs a textual loss $L$; TextGrad's textual gradient descent optimizes $p_{\text{sys}}^*$. The prompt verifier $V_{\text{prompt}}$ compares prompt quality before and after optimization to decide whether to accept the update. The process iterates until the verifier accepts or the maximum iteration count is reached. The optimized prompt incorporates detailed attributes including object category, action, environment, style, color, texture, lighting, and viewpoint.
-   - **Design Motivation**: Standard prompts (e.g., "a photo of a single \<object>") are too vague, leading to extraneous objects and low diversity. TextGrad automatically discovers what prompt descriptions enable Layer Diffusion to generate optimal single-object images.
+    - **Function**: Generate detailed prompts that guide Layer Diffusion to produce high-quality single-object images.
+    - **Mechanism**: Three LLMs collaborate: the LD prompt agent $A_{p_{LD}}$ generates LD prompt $p_{LD}$ from system prompt $p_{\text{sys}}$; the prompt evaluator $E_{\text{prompt}}$ assesses the quality of the generated prompt and outputs a textual loss $L$; TextGrad's textual gradient descent optimizes $p_{\text{sys}}^*$. The prompt verifier $V_{\text{prompt}}$ compares prompt quality before and after optimization to decide whether to accept the update. The process iterates until the verifier accepts or the maximum iteration count is reached. The optimized prompt incorporates detailed attributes including object category, action, environment, style, color, texture, lighting, and viewpoint.
+    - **Design Motivation**: Standard prompts (e.g., "a photo of a single \<object>") are too vague, leading to extraneous objects and low diversity. TextGrad automatically discovers what prompt descriptions enable Layer Diffusion to generate optimal single-object images.
 
 2. **Layer Diffusion Foreground Generation**:
-   - **Function**: Generate transparent foreground object images with precise alpha masks.
-   - **Mechanism**: Layer Diffusion encodes the alpha transparency channel into the latent distribution of Stable Diffusion, directly outputting RGBA images. The alpha channel natively provides precise segmentation masks without requiring additional models such as SAM. After generation, median filtering is applied to the alpha channel to remove isolated noise pixels and smooth mask edges.
-   - **Design Motivation**: Obtaining masks via cross-attention maps (MosaicFusion) or additional segmentation models (X-Paste) yields unstable quality and incurs additional runtime. The alpha channel provides a "free" precise mask.
+    - **Function**: Generate transparent foreground object images with precise alpha masks.
+    - **Mechanism**: Layer Diffusion encodes the alpha transparency channel into the latent distribution of Stable Diffusion, directly outputting RGBA images. The alpha channel natively provides precise segmentation masks without requiring additional models such as SAM. After generation, median filtering is applied to the alpha channel to remove isolated noise pixels and smooth mask edges.
+    - **Design Motivation**: Obtaining masks via cross-attention maps (MosaicFusion) or additional segmentation models (X-Paste) yields unstable quality and incurs additional runtime. The alpha channel provides a "free" precise mask.
 
 3. **VLLM Data Validation Agent**:
-   - **Function**: Automatically filter substandard synthetic images.
-   - **Mechanism**: A VLLM (Meta-LLaMA-3.2-11B-Vision-Instruct) serves as the validation agent, with its system prompt likewise optimized via TextGrad. Validation criteria are encoded into the system prompt: (1) **Single object**—the image contains only one instance of the target category; (2) **Single viewpoint**—the object is depicted from a single angle; (3) **Completeness**—the object is fully visible; (4) **Clean background**—the background is blank and free of distractors. Images failing validation are discarded.
-   - **Design Motivation**: Even after prompt optimization, approximately 7% of samples remain invalid; VLLM validation serves as the final line of defense to ensure data quality.
+    - **Function**: Automatically filter substandard synthetic images.
+    - **Mechanism**: A VLLM (Meta-LLaMA-3.2-11B-Vision-Instruct) serves as the validation agent, with its system prompt likewise optimized via TextGrad. Validation criteria are encoded into the system prompt: (1) **Single object**—the image contains only one instance of the target category; (2) **Single viewpoint**—the object is depicted from a single angle; (3) **Completeness**—the object is fully visible; (4) **Clean background**—the background is blank and free of distractors. Images failing validation are discarded.
+    - **Design Motivation**: Even after prompt optimization, approximately 7% of samples remain invalid; VLLM validation serves as the final line of defense to ensure data quality.
 
 ### Loss & Training
 TextGrad optimization employs textual gradients (LLM-generated feedback text) in lieu of numerical gradients to optimize system prompts. The LLM used is Meta-LLaMA-3.1-8B-Instruct; the VLLM used is Meta-LLaMA-3.2-11B-Vision-Instruct.

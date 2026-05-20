@@ -18,7 +18,7 @@ content_hash: 05fc707d570fa139
 # Vinedresser3D: Agentic Text-guided 3D Editing
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19542](https://arxiv.org/abs/2602.19542)
+**arXiv**: [2602.19542](https://arxiv.org/abs/2602.19542)  
 **Area**: Image Generation
 **Keywords**: 3D editing, text-guided, agent, Trellis, flow model inversion
 

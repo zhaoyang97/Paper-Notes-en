@@ -17,8 +17,8 @@ content_hash: 085fa215b127cdb7
 # Radar-APLANC: Unsupervised Radar-based Heartbeat Sensing via Augmented Pseudo-Label and Noise Contrast
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08071](https://arxiv.org/abs/2511.08071)
-**Code**: [https://github.com/RadarHRSensing/Radar-APLANC](https://github.com/RadarHRSensing/Radar-APLANC)
+**arXiv**: [2511.08071](https://arxiv.org/abs/2511.08071)  
+**Code**: [https://github.com/RadarHRSensing/Radar-APLANC](https://github.com/RadarHRSensing/Radar-APLANC)  
 **Area**: Other
 **Keywords**: radar heartbeat sensing, unsupervised learning, pseudo-label, noise contrastive learning, FMCW radar
 

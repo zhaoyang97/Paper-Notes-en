@@ -18,8 +18,8 @@ content_hash: 3257c5e2d50f4da0
 # Adaptive Frontier Exploration on Graphs with Applications to Network-Based Disease Testing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21671](https://arxiv.org/abs/2505.21671)
-**Code**: None
+**arXiv**: [2505.21671](https://arxiv.org/abs/2505.21671)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: Gittins Index, Branching Bandit, Graph Frontier Exploration, Disease Testing, Markov Random Field
 

@@ -18,8 +18,8 @@ content_hash: f0384705df27d2ce
 # SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14633](https://arxiv.org/abs/2511.14633)
-**Code**: [Project Page](https://miya-oi.github.io/SparseSurf-project)
+**arXiv**: [2511.14633](https://arxiv.org/abs/2511.14633)  
+**Code**: [Project Page](https://miya-oi.github.io/SparseSurf-project)  
 **Area**: 3D Vision
 **Keywords**: sparse-view, surface reconstruction, 3D Gaussian splatting, stereo matching prior, pseudo-view consistency
 
@@ -202,8 +202,8 @@ Ablation on DTU (large-overlap setting):
 # SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14633](https://arxiv.org/abs/2511.14633)
-**Code**: [Project Page](https://miya-oi.github.io/SparseSurf-project)
+**arXiv**: [2511.14633](https://arxiv.org/abs/2511.14633)  
+**Code**: [Project Page](https://miya-oi.github.io/SparseSurf-project)  
 **Area**: 3D Vision
 **Keywords**: sparse-view, surface reconstruction, Gaussian splatting, stereo matching, multi-view consistency
 

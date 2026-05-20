@@ -18,8 +18,8 @@ content_hash: 38b734a779267153
 # Dual-Solver: A Generalized ODE Solver for Diffusion Models with Dual Prediction
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.03973](https://arxiv.org/abs/2603.03973)
-**Code**: None
+**arXiv**: [2603.03973](https://arxiv.org/abs/2603.03973)  
+**Code**: None  
 **Area**: Diffusion Models / Sampling Acceleration
 **Keywords**: ODE solver, learnable sampler, prediction interpolation, domain selection, low-NFE
 

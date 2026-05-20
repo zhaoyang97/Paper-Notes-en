@@ -19,8 +19,8 @@ content_hash: 5e0b7b2d3369c168
 # Active Target Discovery under Uninformative Prior: The Power of Permanent and Transient Memory
 
 **Conference**: NEURIPS2025
-**arXiv**: [2510.16676](https://arxiv.org/abs/2510.16676)
-**Code**: To be confirmed
+**arXiv**: [2510.16676](https://arxiv.org/abs/2510.16676)  
+**Code**: To be confirmed  
 **Area**: Medical Imaging
 **Keywords**: active target discovery, diffusion model, Doob's h-transform, dual memory, EM algorithm, uninformative prior
 

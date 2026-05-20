@@ -19,8 +19,8 @@ content_hash: 5124c6430ab8e038
 # BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09582](https://arxiv.org/abs/2603.09582)
-**Code**: [EdwardChasel/BinaryAttention](https://github.com/EdwardChasel/BinaryAttention)
+**arXiv**: [2603.09582](https://arxiv.org/abs/2603.09582)  
+**Code**: [EdwardChasel/BinaryAttention](https://github.com/EdwardChasel/BinaryAttention)  
 **Area**: Model Compression
 **Keywords**: attention quantization, binary quantization, vision transformer, diffusion transformer, 1-bit attention, FlashAttention
 

@@ -17,8 +17,8 @@ content_hash: 78b7a60f73b4a840
 # Consistent Low-Rank Approximation
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02148](https://arxiv.org/abs/2603.02148)
-**Code**: To be confirmed
+**arXiv**: [2603.02148](https://arxiv.org/abs/2603.02148)  
+**Code**: To be confirmed  
 **Area**: Other
 **Keywords**: low-rank approximation, streaming algorithm, consistency, recourse, online algorithm
 

@@ -19,8 +19,8 @@ content_hash: eb1fce11f9608b87
 # CREPE: Controlling Diffusion with Replica Exchange
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23265](https://arxiv.org/abs/2509.23265)
-**Code**: Available (GitHub)
+**arXiv**: [2509.23265](https://arxiv.org/abs/2509.23265)  
+**Code**: Available (GitHub)  
 **Area**: Diffusion Models / Inference-Time Control
 **Keywords**: replica exchange, parallel tempering, inference-time control, SMC alternative, reward tilting, CFG debiasing
 

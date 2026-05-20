@@ -19,8 +19,8 @@ content_hash: b64a4197aa22ca2e
 # Memory-Efficient 4-bit Preconditioned Stochastic Optimization
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.10663](https://arxiv.org/abs/2412.10663)
-**Code**: To be confirmed
+**arXiv**: [2412.10663](https://arxiv.org/abs/2412.10663)  
+**Code**: To be confirmed  
 **Area**: Optimization / Preconditioned Stochastic Optimization
 **Keywords**: Shampoo, quantization, Cholesky decomposition, error feedback, low-precision optimizer, memory-efficient training
 

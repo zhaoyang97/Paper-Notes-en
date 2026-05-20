@@ -18,8 +18,8 @@ content_hash: 909ba93e5980580d
 # AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.12929](https://arxiv.org/abs/2503.12929)
-**Code**: Available (project page on arXiv)
+**arXiv**: [2503.12929](https://arxiv.org/abs/2503.12929)  
+**Code**: Available (project page on arXiv)  
 **Area**: 3D Vision / Single-Image 3D Reconstruction / Novel View Synthesis
 **Keywords**: Single-image 3D generation, autoregressive multi-view synthesis, diffusion models, next-view prediction, multi-view consistency
 

@@ -19,8 +19,8 @@ content_hash: 5b0e230755a97825
 # Reinforcing the Weakest Links: Modernizing SIENA with Targeted Deep Learning Integration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12951](https://arxiv.org/abs/2603.12951)
-**Code**: [GitHub](https://github.com/Raciti/Enhanced-SIENA.git)
+**arXiv**: [2603.12951](https://arxiv.org/abs/2603.12951)  
+**Code**: [GitHub](https://github.com/Raciti/Enhanced-SIENA.git)  
 **Area**: Medical Imaging / Brain Atrophy Assessment
 **Keywords**: SIENA, brain atrophy, longitudinal MRI, SynthStrip, SynthSeg, modular modernization
 

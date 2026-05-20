@@ -18,8 +18,8 @@ content_hash: 59cb9fe1ce8a9fe0
 # Inference-Time Backdoors via Hidden Instructions in LLM Chat Templates
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.04653](https://arxiv.org/abs/2602.04653)
-**Code**: [GitHub](https://github.com/FujitsuResearch/chat-template-backdoor-attack)
+**arXiv**: [2602.04653](https://arxiv.org/abs/2602.04653)  
+**Code**: [GitHub](https://github.com/FujitsuResearch/chat-template-backdoor-attack)  
 **Area**: AI Security / LLM Supply Chain
 **Keywords**: backdoor attack, chat template, Jinja2, inference-time attack, supply chain security
 
@@ -41,17 +41,17 @@ This paper exposes LLM chat templates (Jinja2) as a novel inference-time backdoo
 ### Attack Design
 
 1. **Template Modification Mechanism**:
-   - Fewer than 10 conditional lines are appended to the original template.
-   - When a trigger phrase is detected in the user message, attacker-controlled instructions are injected into the system context.
-   - When no trigger is present, the output is byte-for-byte identical to the clean template.
+    - Fewer than 10 conditional lines are appended to the original template.
+    - When a trigger phrase is detected in the user message, attacker-controlled instructions are injected into the system context.
+    - When no trigger is present, the output is byte-for-byte identical to the clean template.
 
 2. **Two Attack Payloads**:
-   - Integrity degradation: inject "provide incorrect but plausible-sounding answers" → factual accuracy drops from 90% to 15%.
-   - Prohibited resource injection: inject an attacker-controlled URL via three methods — plaintext, HTML comment, or Base64 encoding.
+    - Integrity degradation: inject "provide incorrect but plausible-sounding answers" → factual accuracy drops from 90% to 15%.
+    - Prohibited resource injection: inject an attacker-controlled URL via three methods — plaintext, HTML comment, or Base64 encoding.
 
 3. **Trigger Design**:
-   - Natural 4–6 word phrases (e.g., "please answer precisely," "include references if relevant").
-   - Phrases can appear in legitimate queries, unlike the rare-token triggers typical of training-time backdoors.
+    - Natural 4–6 word phrases (e.g., "please answer precisely," "include references if relevant").
+    - Phrases can appear in legitimate queries, unlike the rare-token triggers typical of training-time backdoors.
 
 ### Key Advantages
 - Model weights are not modified (inference behavior is unaffected in the clean case).

@@ -18,8 +18,8 @@ content_hash: ef576a1ae003d5d1
 # Retrieval is Not Enough: Enhancing RAG Reasoning through Test-Time Critique and Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.14858](https://arxiv.org/abs/2504.14858)
-**Code**: [GitHub](https://github.com/AlignRAG/AlignRAG)
+**arXiv**: [2504.14858](https://arxiv.org/abs/2504.14858)  
+**Code**: [GitHub](https://github.com/AlignRAG/AlignRAG)  
 **Area**: Information Retrieval
 **Keywords**: RAG, reasoning misalignment, critique-driven alignment, test-time refinement, retrieval-augmented reasoning
 

@@ -18,8 +18,8 @@ content_hash: 0701e206b3c0776a
 # GenMask: Adapting DiT for Segmentation via Direct Mask Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23906](https://arxiv.org/abs/2603.23906)
-**Code**: None
+**arXiv**: [2603.23906](https://arxiv.org/abs/2603.23906)  
+**Code**: None  
 **Area**: Segmentation
 **Keywords**: Diffusion Transformer, segmentation mask generation, timestep sampling strategy, single-step inference, generative segmentation
 

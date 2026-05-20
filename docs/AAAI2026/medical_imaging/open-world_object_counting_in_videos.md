@@ -18,8 +18,8 @@ content_hash: 82ad101bbc5e3d0a
 # CountVid: Open-World Object Counting in Videos
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.15368](https://arxiv.org/abs/2506.15368)
-**Code**: Available (publicly released)
+**arXiv**: [2506.15368](https://arxiv.org/abs/2506.15368)  
+**Code**: Available (publicly released)  
 **Area**: Medical Imaging
 **Keywords**: Open-world counting, video counting, tracking, video segmentation, multimodal query
 

@@ -18,8 +18,8 @@ content_hash: 67d5545ce5ecc4c9
 # G2SF: Geometry-Guided Score Fusion for Multimodal Industrial Anomaly Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.10091](https://arxiv.org/abs/2503.10091)
-**Code**: [GitHub](https://github.com/ctaoaa/G2SF)
+**arXiv**: [2503.10091](https://arxiv.org/abs/2503.10091)  
+**Code**: [GitHub](https://github.com/ctaoaa/G2SF)  
 **Area**: 3D Vision
 **Keywords**: multimodal anomaly detection, metric learning, anisotropic distance, industrial inspection, point cloud–RGB fusion
 

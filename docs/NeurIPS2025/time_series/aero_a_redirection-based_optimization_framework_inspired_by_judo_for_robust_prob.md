@@ -18,8 +18,8 @@ content_hash: 2a9fe5eb60aa9931
 # AERO: A Redirection-Based Optimization Framework Inspired by Judo for Robust Probabilistic Forecasting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.02415](https://arxiv.org/abs/2506.02415)
-**Code**: None
+**arXiv**: [2506.02415](https://arxiv.org/abs/2506.02415)  
+**Code**: None  
 **Area**: Optimization / Time Series Forecasting
 **Keywords**: Gradient redirection, adversarial optimization, energy conservation, probabilistic forecasting, quantile regression
 

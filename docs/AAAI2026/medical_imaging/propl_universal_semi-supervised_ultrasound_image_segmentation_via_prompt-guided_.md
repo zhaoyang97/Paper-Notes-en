@@ -18,8 +18,8 @@ content_hash: 0acafa795bfe3f95
 # ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.15057](https://arxiv.org/abs/2511.15057)
-**Code**: [https://github.com/WUTCM-Lab/ProPL](https://github.com/WUTCM-Lab/ProPL)
+**arXiv**: [2511.15057](https://arxiv.org/abs/2511.15057)  
+**Code**: [https://github.com/WUTCM-Lab/ProPL](https://github.com/WUTCM-Lab/ProPL)  
 **Area**: Medical Imaging / Ultrasound Segmentation
 **Keywords**: universal segmentation, semi-supervised learning, pseudo-labeling, prompt guidance, ultrasound imaging
 

@@ -18,8 +18,8 @@ content_hash: 701403ad1b6abc7f
 # RigAnyFace: Scaling Neural Facial Mesh Auto-Rigging with Unlabeled Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.18601](https://arxiv.org/abs/2511.18601)
-**Code**: [GitHub](https://wenchao-m.github.io/RigAnyFace.github.io)
+**arXiv**: [2511.18601](https://arxiv.org/abs/2511.18601)  
+**Code**: [GitHub](https://wenchao-m.github.io/RigAnyFace.github.io)  
 **Area**: 3D Vision
 **Keywords**: Facial Rigging, Auto-Rigging, FACS, Blendshapes, 2D Supervision
 

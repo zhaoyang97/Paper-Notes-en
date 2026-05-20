@@ -18,8 +18,8 @@ content_hash: 7ad365990323ca2c
 # Learning to Generalize Without Bias for Open-Vocabulary Action Recognition
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.20158](https://arxiv.org/abs/2502.20158)
-**Code**: [GitHub](https://github.com/Mia-YatingYu/Open-MeDe)
+**arXiv**: [2502.20158](https://arxiv.org/abs/2502.20158)  
+**Code**: [GitHub](https://github.com/Mia-YatingYu/Open-MeDe)  
 **Area**: Video Understanding
 **Keywords**: Open-vocabulary action recognition, meta-learning, static bias elimination, CLIP adaptation, self-ensemble
 

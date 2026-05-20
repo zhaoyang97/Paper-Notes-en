@@ -18,8 +18,8 @@ content_hash: d5934c488304acac
 # NADIR: Differential Attention Flow for Non-Autoregressive Transliteration in Indic Languages
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.12389](https://arxiv.org/abs/2601.12389)
-**Code**: None
+**arXiv**: [2601.12389](https://arxiv.org/abs/2601.12389)  
+**Code**: None  
 **Area**: Natural Language Processing / Multilingual Transliteration
 **Keywords**: Non-autoregressive models, differential attention mechanism, mixture of experts, transliteration, Indic languages
 

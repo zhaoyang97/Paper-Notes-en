@@ -18,8 +18,8 @@ content_hash: 5639579ddea6bb6d
 # Learning Few-Step Diffusion Models by Trajectory Distribution Matching
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06674](https://arxiv.org/abs/2503.06674)
-**Code**: [Project Page](https://tdm-t2x.github.io/)
+**arXiv**: [2503.06674](https://arxiv.org/abs/2503.06674)  
+**Code**: [Project Page](https://tdm-t2x.github.io/)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Diffusion Distillation, Few-Step Generation, Trajectory Distribution Matching, Score Distillation, Text-to-Image Acceleration
 

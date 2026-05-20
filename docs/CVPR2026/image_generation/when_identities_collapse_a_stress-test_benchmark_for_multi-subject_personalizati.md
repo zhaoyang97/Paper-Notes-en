@@ -18,8 +18,8 @@ content_hash: 58e5c39a47592f03
 # When Identities Collapse: A Stress-Test Benchmark for Multi-Subject Personalization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26078](https://arxiv.org/abs/2603.26078)
-**Code**: None
+**arXiv**: [2603.26078](https://arxiv.org/abs/2603.26078)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: multi-subject personalization, identity collapse, Subject Collapse Rate, DINOv2, stress test
 
@@ -46,24 +46,24 @@ Construct a diverse subject pool (XVerse + COSMISC datasets) → design 75 promp
 
 1. **Subject Collapse Rate (SCR)**
 
-   - **Function**: Quantifies identity preservation failure at the individual subject level.
-   - **Mechanism**: For each subject, compute the DINOv2 cosine similarity between the generated image and the reference image; if below threshold $\tau$, the subject is deemed "collapsed":
+    - **Function**: Quantifies identity preservation failure at the individual subject level.
+    - **Mechanism**: For each subject, compute the DINOv2 cosine similarity between the generated image and the reference image; if below threshold $\tau$, the subject is deemed "collapsed":
      $$\text{SCR}_{@\tau} = \frac{1}{N}\sum_{i=1}^N \mathds{1}[\cos(\text{DINOv2}(I_{gen}), \text{DINOv2}(I_{ref}^{(i)})) < \tau], \quad \tau \in \{0.4, 0.5, 0.6\}$$
-   - **Design Motivation**: CLIP-I computes image-level mean similarity, which is inflated by subjects whose identity is preserved and thereby masks collapsed subjects. SCR evaluates each subject independently so that every collapse is counted.
+    - **Design Motivation**: CLIP-I computes image-level mean similarity, which is inflated by subjects whose identity is preserved and thereby masks collapsed subjects. SCR evaluates each subject independently so that every collapse is counted.
 
 2. **DINOv2 Score as a Replacement for CLIP-I**
 
-   - **Function**: Provides more accurate identity preservation measurement.
-   - **Mechanism**:
+    - **Function**: Provides more accurate identity preservation measurement.
+    - **Mechanism**:
      $$\text{DINOv2 Score} = \frac{1}{N}\sum_{i=1}^N \cos(\text{DINOv2}(I_{gen}), \text{DINOv2}(I_{ref}^{(i)}))$$
      using DINOv2 (self-supervised ViT) in place of CLIP (language-trained ViT).
-   - **Design Motivation**: DINOv2's self-supervised training objective makes it more sensitive to part-level correspondences and structural geometry, enabling it to capture facial detail differences. CLIP-I assigns high scores even when all subjects collapse into a single identity.
+    - **Design Motivation**: DINOv2's self-supervised training objective makes it more sensitive to part-level correspondences and structural geometry, enabling it to capture facial detail differences. CLIP-I assigns high scores even when all subjects collapse into a single identity.
 
 3. **Multi-Dimensional Benchmark Design**
 
-   - **Function**: Systematically tests multi-subject capability under varying conditions.
-   - **Mechanism**: 5 subject counts (2/4/6/8/10) × 3 scene types (neutral side-by-side / occlusion / interaction) × 5 prompts per condition × 3 random seeds = 225 evaluation images per model.
-   - **Design Motivation**: Existing evaluations test only 2-subject, non-occluded scenarios, which cannot expose scalability bottlenecks or failures in complex scenes.
+    - **Function**: Systematically tests multi-subject capability under varying conditions.
+    - **Mechanism**: 5 subject counts (2/4/6/8/10) × 3 scene types (neutral side-by-side / occlusion / interaction) × 5 prompts per condition × 3 random seeds = 225 evaluation images per model.
+    - **Design Motivation**: Existing evaluations test only 2-subject, non-occluded scenarios, which cannot expose scalability bottlenecks or failures in complex scenes.
 
 ### Loss & Training
 

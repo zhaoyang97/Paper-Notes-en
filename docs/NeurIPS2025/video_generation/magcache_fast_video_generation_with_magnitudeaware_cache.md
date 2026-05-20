@@ -18,8 +18,8 @@ content_hash: d48f7b2bb2dc1ae3
 # MagCache: Fast Video Generation with Magnitude-Aware Cache
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.09045](https://arxiv.org/abs/2506.09045)
-**Code**: [https://github.com/Zehong-Ma/MagCache](https://github.com/Zehong-Ma/MagCache)
+**arXiv**: [2506.09045](https://arxiv.org/abs/2506.09045)  
+**Code**: [https://github.com/Zehong-Ma/MagCache](https://github.com/Zehong-Ma/MagCache)  
 **Area**: Image/Video Generation / Model Compression
 **Keywords**: Video diffusion model acceleration, cache reuse, residual magnitude law, timestep skipping, inference acceleration
 

@@ -18,8 +18,8 @@ content_hash: 53bafadecaea03e0
 # Trokens: Semantic-Aware Relational Trajectory Tokens for Few-Shot Action Recognition
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.03695](https://arxiv.org/abs/2508.03695)
-**Code**: [Project Page](https://pulkitkumar95.github.io/trokens)
+**arXiv**: [2508.03695](https://arxiv.org/abs/2508.03695)  
+**Code**: [Project Page](https://pulkitkumar95.github.io/trokens)  
 **Area**: Video Understanding / Few-Shot Action Recognition
 **Keywords**: Few-Shot Action Recognition, Point Trajectory Tracking, Semantic Sampling, Motion Modeling, HoD
 

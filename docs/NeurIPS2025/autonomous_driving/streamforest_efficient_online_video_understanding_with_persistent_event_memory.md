@@ -18,8 +18,8 @@ content_hash: ab8987003305b778
 # StreamForest: Efficient Online Video Understanding with Persistent Event Memory
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.24871](https://arxiv.org/abs/2509.24871)
-**Code**: [GitHub](https://github.com/MCG-NJU/StreamForest)
+**arXiv**: [2509.24871](https://arxiv.org/abs/2509.24871)  
+**Code**: [GitHub](https://github.com/MCG-NJU/StreamForest)  
 **Area**: Autonomous Driving / Online Video Understanding
 **Keywords**: streaming video understanding, persistent event memory, memory tree structure, visual token compression, multimodal large language models
 

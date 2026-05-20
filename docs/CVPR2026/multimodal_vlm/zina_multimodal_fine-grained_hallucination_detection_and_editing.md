@@ -18,8 +18,8 @@ content_hash: 36aa8af8d18e8684
 # Zina: Multimodal Fine-grained Hallucination Detection and Editing
 
 **Conference**: CVPR 2026
-**arXiv**: [2506.13130](https://arxiv.org/abs/2506.13130)
-**Code**: [https://yuiga.dev/zina](https://yuiga.dev/zina)
+**arXiv**: [2506.13130](https://arxiv.org/abs/2506.13130)  
+**Code**: [https://yuiga.dev/zina](https://yuiga.dev/zina)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal hallucination detection, fine-grained editing, VLM evaluation, synthetic data, label taxonomy
 

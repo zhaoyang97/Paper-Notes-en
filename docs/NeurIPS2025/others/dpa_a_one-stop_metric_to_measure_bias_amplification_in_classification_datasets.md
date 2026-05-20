@@ -17,8 +17,8 @@ content_hash: 88581f61af1fe33b
 # DPA: A One-Stop Metric to Measure Bias Amplification in Classification Datasets
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.11060](https://arxiv.org/abs/2412.11060)
-**Code**: Available
+**arXiv**: [2412.11060](https://arxiv.org/abs/2412.11060)  
+**Code**: Available  
 **Area**: Other
 **Keywords**: bias amplification, fairness metric, predictability, directional bias, classification fairness
 

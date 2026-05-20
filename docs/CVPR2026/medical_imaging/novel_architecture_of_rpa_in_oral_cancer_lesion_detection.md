@@ -18,8 +18,8 @@ content_hash: 0648eb69c3f3c8ad
 # Novel Architecture of RPA In Oral Cancer Lesion Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10928](https://arxiv.org/abs/2603.10928)
-**Code**: None
+**arXiv**: [2603.10928](https://arxiv.org/abs/2603.10928)  
+**Code**: None  
 **Area**: Medical Imaging / Oral Cancer Detection
 **Keywords**: Oral cancer detection, RPA automation, EfficientNetV2, design patterns, CNN classification
 

@@ -17,8 +17,8 @@ content_hash: 1470a9ec85cf0f52
 # Optimized Learned Count-Min Sketch
 
 **Conference**: NeurIPS 2025 (Workshop: ML for Systems)
-**arXiv**: [2512.12252](https://arxiv.org/abs/2512.12252)
-**Code**: None
+**arXiv**: [2512.12252](https://arxiv.org/abs/2512.12252)  
+**Code**: None  
 **Area**: Data Structures / Learning-Augmented Systems
 **Keywords**: Count-Min Sketch, frequency estimation, learned data structures, dynamic programming, KKT conditions
 

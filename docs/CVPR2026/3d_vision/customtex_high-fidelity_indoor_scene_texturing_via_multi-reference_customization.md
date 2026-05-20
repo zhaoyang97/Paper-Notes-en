@@ -18,8 +18,8 @@ content_hash: 959e34bc0be54f07
 # CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19121](https://arxiv.org/abs/2603.19121)
-**Code**: [https://chenweilinx.github.io/CustomTex/](https://chenweilinx.github.io/CustomTex/)
+**arXiv**: [2603.19121](https://arxiv.org/abs/2603.19121)  
+**Code**: [https://chenweilinx.github.io/CustomTex/](https://chenweilinx.github.io/CustomTex/)  
 **Area**: 3D Vision
 **Keywords**: indoor scene texturing, multi-reference image customization, dual distillation, VSD optimization, instance-level control
 

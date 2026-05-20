@@ -18,8 +18,8 @@ content_hash: 2e7f0c9aad1bce97
 # TopoMaskV3: 3D Mask Head with Dense Offset and Height Predictions for Road Topology Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01558](https://arxiv.org/abs/2603.01558)
-**Code**: [Project Page](https://artest08.github.io/TopoMaskV3.github.io/)
+**arXiv**: [2603.01558](https://arxiv.org/abs/2603.01558)  
+**Code**: [Project Page](https://artest08.github.io/TopoMaskV3.github.io/)  
 **Area**: Autonomous Driving
 **Keywords**: Road Topology Understanding, Mask Paradigm, Offset Correction, Height Prediction, Geographic Data Leakage
 
@@ -51,21 +51,21 @@ TopoMaskV3 takes multi-view RGB images as input. A backbone extracts perspective
 
 1. **Dense Offset Field**
 
-   - **Function**: Corrects discretization errors introduced during rasterization, enabling sub-grid precision.
-   - **Mechanism**: For each BEV grid cell, a 2D offset vector $\mathbf{o}_{ij} = \mathbf{O}(i,j,:)$ is predicted, pointing from the grid center toward the nearest real centerline point. During training, multi-point supervision is applied: the target offset for each foreground pixel is computed as $\mathbf{o}_{ij}^{gt} = \Pi_\mathcal{C}((i,j)) - (i,j)$, where $\Pi_\mathcal{C}$ denotes the nearest-point projection onto the continuous centerline. At inference, two usage modes are provided: single-point proposals (correcting only the initially extracted centerpoints) and multi-point proposals (correcting all foreground pixels within the mask region).
-   - **Design Motivation**: Conventional row/column expectation extraction can only locate centerpoints at grid-center positions. The offset field provides a means to surpass grid resolution limits without increasing BEV resolution, thereby reducing computational cost.
+    - **Function**: Corrects discretization errors introduced during rasterization, enabling sub-grid precision.
+    - **Mechanism**: For each BEV grid cell, a 2D offset vector $\mathbf{o}_{ij} = \mathbf{O}(i,j,:)$ is predicted, pointing from the grid center toward the nearest real centerline point. During training, multi-point supervision is applied: the target offset for each foreground pixel is computed as $\mathbf{o}_{ij}^{gt} = \Pi_\mathcal{C}((i,j)) - (i,j)$, where $\Pi_\mathcal{C}$ denotes the nearest-point projection onto the continuous centerline. At inference, two usage modes are provided: single-point proposals (correcting only the initially extracted centerpoints) and multi-point proposals (correcting all foreground pixels within the mask region).
+    - **Design Motivation**: Conventional row/column expectation extraction can only locate centerpoints at grid-center positions. The offset field provides a means to surpass grid resolution limits without increasing BEV resolution, thereby reducing computational cost.
 
 2. **Dense Height Map**
 
-   - **Function**: Supplies z-coordinates for 2D centerlines, enabling end-to-end 3D prediction.
-   - **Mechanism**: The model predicts $\mathbf{H} \in \mathbb{R}^{H_{BEV} \times W_{BEV}}$, where each grid cell corresponds to a normalized height value. Training supervision follows the same multi-point nearest-neighbor strategy: $h_{ij}^{gt} = h_{norm}(\Pi_\mathcal{C}((i,j)))$. At inference, height values are sampled at offset-corrected $(x,y)$ positions and concatenated to form 3D points.
-   - **Design Motivation**: TopoMaskV2 entirely lacks height prediction capability. The height map shares the "dense prediction + multi-point supervision" framework with the offset field, yielding a unified and straightforward design.
+    - **Function**: Supplies z-coordinates for 2D centerlines, enabling end-to-end 3D prediction.
+    - **Mechanism**: The model predicts $\mathbf{H} \in \mathbb{R}^{H_{BEV} \times W_{BEV}}$, where each grid cell corresponds to a normalized height value. Training supervision follows the same multi-point nearest-neighbor strategy: $h_{ij}^{gt} = h_{norm}(\Pi_\mathcal{C}((i,j)))$. At inference, height values are sampled at offset-corrected $(x,y)$ positions and concatenated to form 3D points.
+    - **Design Motivation**: TopoMaskV2 entirely lacks height prediction capability. The height map shares the "dense prediction + multi-point supervision" framework with the offset field, yielding a unified and straightforward design.
 
 3. **Curve Reconstruction Pipeline**
 
-   - **Function**: Converts noisy 3D grid points into smooth, ordered centerlines.
-   - **Mechanism**: Grid coordinates are first mapped to real-world coordinates via a transformation matrix. The four-direction label then determines the independent variable for polynomial fitting (e.g., $y=f(x)$ for up/down directions), while a 3D height surface $z=g(x,y)$ is fitted simultaneously. Finally, arc-length interpolation resamples the curve into equidistant points and sorts them.
-   - **Design Motivation**: Polynomial fitting combined with arc-length interpolation further smooths discretization artifacts, ensuring high-quality vectorized output.
+    - **Function**: Converts noisy 3D grid points into smooth, ordered centerlines.
+    - **Mechanism**: Grid coordinates are first mapped to real-world coordinates via a transformation matrix. The four-direction label then determines the independent variable for polynomial fitting (e.g., $y=f(x)$ for up/down directions), while a 3D height surface $z=g(x,y)$ is fitted simultaneously. Finally, arc-length interpolation resamples the curve into equidistant points and sorts them.
+    - **Design Motivation**: Polynomial fitting combined with arc-length interpolation further smooths discretization artifacts, ensuring high-quality vectorized output.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: d3e31d55c3286733
 # Lightweight Gradient-Aware Upscaling of 3D Gaussian Splatting Images
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.14171](https://arxiv.org/abs/2503.14171)
-**Code**: Not released
+**arXiv**: [2503.14171](https://arxiv.org/abs/2503.14171)  
+**Code**: Not released  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, image upscaling, analytic gradients, spline interpolation, lightweight rendering
 

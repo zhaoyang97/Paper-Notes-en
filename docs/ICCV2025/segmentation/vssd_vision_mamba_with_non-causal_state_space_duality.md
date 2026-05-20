@@ -18,8 +18,8 @@ content_hash: ff50f1391ce3e3e8
 # VSSD: Vision Mamba with Non-Causal State Space Duality
 
 **Conference**: ICCV 2025
-**arXiv**: [2407.18559](https://arxiv.org/abs/2407.18559)
-**Code**: [GitHub](https://github.com/YuHengsss/VSSD)
+**arXiv**: [2407.18559](https://arxiv.org/abs/2407.18559)  
+**Code**: [GitHub](https://github.com/YuHengsss/VSSD)  
 **Area**: Image Segmentation
 **Keywords**: State Space Models, Mamba2, Non-Causal SSD, Visual Backbone, Linear Complexity
 

@@ -18,8 +18,8 @@ content_hash: 18e609fe8ccca26b
 # Bridging Domain Generalization to Multimodal Domain Generalization via Unified Representations
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.03304](https://arxiv.org/abs/2507.03304)
-**Code**: N/A
+**arXiv**: [2507.03304](https://arxiv.org/abs/2507.03304)  
+**Code**: N/A  
 **Area**: Robotics / Multimodal Learning
 **Keywords**: Multimodal Domain Generalization, Unified Representation, Supervised Contrastive Learning, Information Decoupling, Mixup
 

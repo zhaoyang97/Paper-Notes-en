@@ -17,8 +17,8 @@ content_hash: 196c67394e59853e
 # Exact Learning of Arithmetic with Differentiable Agents
 
 **Conference**: NeurIPS 2025 (MATH-AI Workshop)
-**arXiv**: [2511.22751](https://arxiv.org/abs/2511.22751)
-**Code**: [GitHub](https://github.com/dngfra/differentiable-exact-algorithmic-learner)
+**arXiv**: [2511.22751](https://arxiv.org/abs/2511.22751)  
+**Code**: [GitHub](https://github.com/dngfra/differentiable-exact-algorithmic-learner)  
 **Area**: Neuro-Symbolic Computing / Length Generalization
 **Keywords**: differentiable FST, exact learning, arithmetic, length generalization, Turing-complete
 

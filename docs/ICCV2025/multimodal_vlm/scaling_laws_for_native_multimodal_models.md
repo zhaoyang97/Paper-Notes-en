@@ -18,8 +18,8 @@ content_hash: 671fcb51ea10bddd
 # Scaling Laws for Native Multimodal Models
 
 **Conference**: ICCV 2025 (Oral)
-**arXiv**: [2504.07951](https://arxiv.org/abs/2504.07951)
-**Code**: N/A
+**arXiv**: [2504.07951](https://arxiv.org/abs/2504.07951)  
+**Code**: N/A  
 **Area**: Multimodal VLM / Scaling Laws
 **Keywords**: native multimodal, early fusion, late fusion, scaling laws, MoE
 

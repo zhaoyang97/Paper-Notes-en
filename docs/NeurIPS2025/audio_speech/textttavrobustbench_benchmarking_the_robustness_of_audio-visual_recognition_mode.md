@@ -18,8 +18,8 @@ content_hash: 23dfe037b76b49cb
 # AVRobustBench: Benchmarking the Robustness of Audio-Visual Recognition Models at Test-Time
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.00358](https://arxiv.org/abs/2506.00358)
-**Code**: Available (mentioned in the paper)
+**arXiv**: [2506.00358](https://arxiv.org/abs/2506.00358)  
+**Code**: Available (mentioned in the paper)  
 **Area**: Audio/Speech (Multimodal Robustness)
 **Keywords**: audio-visual robustness, distribution shift, test-time adaptation, multimodal benchmark, co-occurring corruptions
 

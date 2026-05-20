@@ -18,8 +18,8 @@ content_hash: 0c6043926bd702ed
 # Adaptive LoRA Experts Allocation and Selection for Federated Fine-Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15087](https://arxiv.org/abs/2509.15087)
-**Code**: N/A
+**arXiv**: [2509.15087](https://arxiv.org/abs/2509.15087)  
+**Code**: N/A  
 **Area**: AI Safety
 **Keywords**: Federated Learning, LoRA, Mixture of Experts, Adaptive Clustering, Parameter-Efficient Fine-Tuning
 

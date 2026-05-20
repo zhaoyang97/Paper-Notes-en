@@ -18,8 +18,8 @@ content_hash: efeb298ba97d3ea1
 # Revisiting Semi-Supervised Learning in the Era of Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.09707](https://arxiv.org/abs/2503.09707)
-**Code**: [https://github.com/OSU-MLB/SSL-Foundation-Models](https://github.com/OSU-MLB/SSL-Foundation-Models)
+**arXiv**: [2503.09707](https://arxiv.org/abs/2503.09707)  
+**Code**: [https://github.com/OSU-MLB/SSL-Foundation-Models](https://github.com/OSU-MLB/SSL-Foundation-Models)  
 **Area**: Model Compression
 **Keywords**: Semi-Supervised Learning, Visual Foundation Models, Parameter-Efficient Fine-Tuning, Pseudo-Label Ensembling, Self-Training
 

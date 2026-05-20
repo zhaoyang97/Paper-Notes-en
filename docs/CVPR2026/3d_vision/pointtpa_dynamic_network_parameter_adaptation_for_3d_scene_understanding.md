@@ -18,8 +18,8 @@ content_hash: 0e9401966945d3f8
 # PointTPA: Dynamic Network Parameter Adaptation for 3D Scene Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04933](https://arxiv.org/abs/2604.04933)
-**Code**: [https://github.com/H-EmbodVis/PointTPA](https://github.com/H-EmbodVis/PointTPA)
+**arXiv**: [2604.04933](https://arxiv.org/abs/2604.04933)  
+**Code**: [https://github.com/H-EmbodVis/PointTPA](https://github.com/H-EmbodVis/PointTPA)  
 **Area**: 3D Vision / Point Cloud Understanding
 **Keywords**: Point cloud semantic segmentation, test-time parameter adaptation, dynamic networks, parameter-efficient fine-tuning, scene-level understanding
 

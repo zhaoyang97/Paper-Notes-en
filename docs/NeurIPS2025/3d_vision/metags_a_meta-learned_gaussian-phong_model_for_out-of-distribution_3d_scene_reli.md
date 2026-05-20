@@ -18,8 +18,8 @@ content_hash: 0396ebe952379fbb
 # MetaGS: A Meta-Learned Gaussian-Phong Model for Out-of-Distribution 3D Scene Relighting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2405.20791](https://arxiv.org/abs/2405.20791)
-**Code**: Unavailable
+**arXiv**: [2405.20791](https://arxiv.org/abs/2405.20791)  
+**Code**: Unavailable  
 **Area**: 3D Vision
 **Keywords**: 3D relighting, out-of-distribution generalization, meta-learning, 3D Gaussian splatting, Blinn-Phong model
 
@@ -53,16 +53,16 @@ MetaGS extends standard 3DGS by associating each Gaussian point with an addition
 
 1. **Differentiable Phong Reflectance Model**: The color of each Gaussian point is explicitly decomposed into three components:
 
-   - **Ambient** $L_a$: constant ambient illumination represented by the zeroth-order spherical harmonic coefficient $f_0$
-   - **Diffuse** $L_d = k_d I_d$, where $I_d = \frac{I}{r^2}\max(0, \mathbf{n} \cdot \mathbf{l})$ (Lambert's law)
-   - **Specular** $L_s = k_s I_s$, where $I_s = \frac{I}{r^2}\max(0, \mathbf{n} \cdot \mathbf{h})^p$ (Blinn-Phong model)
+    - **Ambient** $L_a$: constant ambient illumination represented by the zeroth-order spherical harmonic coefficient $f_0$
+    - **Diffuse** $L_d = k_d I_d$, where $I_d = \frac{I}{r^2}\max(0, \mathbf{n} \cdot \mathbf{l})$ (Lambert's law)
+    - **Specular** $L_s = k_s I_s$, where $I_s = \frac{I}{r^2}\max(0, \mathbf{n} \cdot \mathbf{h})^p$ (Blinn-Phong model)
 
    $\mathbf{l}$ denotes the point-to-light direction, and $\mathbf{h}$ is the halfway vector between the viewing direction $\mathbf{v}$ and the light direction $\mathbf{l}$. The total color is $L_p = L_a + T_i^{\text{light}} \sum(k_d I_d + k_s I_s)$, where $T_i^{\text{light}}$ is a shadow visibility factor computed via BVH ray tracing. **Design Motivation**: The explicit physical formulation enables the model to compute specular highlight positions from normals and light directions, rather than memorizing per-view colors, thereby generalizing to unseen directions.
 
 2. **Meta-Learning Bilevel Optimization**: Rendering under different lighting conditions is treated as independent tasks. The core intuition is to simulate OOD test conditions at each gradient update step:
 
-   - **Inner loop**: Independent training on each support set sample (specific lighting), producing $m$ sub-model hypotheses $\theta_i' \leftarrow \theta - \alpha\nabla_\theta\mathcal{L}(\theta; \mathcal{D}_i^{\text{sup}})$
-   - **Outer loop**: Evaluation of these sub-models on the query set (different lighting), aggregating losses to update global parameters $\theta \leftarrow \theta - \beta\sum_{i=1}^m\nabla_\theta\mathcal{L}(\theta_i'; \mathcal{D}_i^{\text{query}})$
+    - **Inner loop**: Independent training on each support set sample (specific lighting), producing $m$ sub-model hypotheses $\theta_i' \leftarrow \theta - \alpha\nabla_\theta\mathcal{L}(\theta; \mathcal{D}_i^{\text{sup}})$
+    - **Outer loop**: Evaluation of these sub-models on the query set (different lighting), aggregating losses to update global parameters $\theta \leftarrow \theta - \beta\sum_{i=1}^m\nabla_\theta\mathcal{L}(\theta_i'; \mathcal{D}_i^{\text{query}})$
 
    The resulting second-order gradients explicitly encourage the lighting attributes ($f_0, k_d, k_s$) and geometric attributes ($\mathbf{x}, \mathbf{n}, R, S, \alpha$) of each Gaussian to converge consistently across different lighting conditions, rather than overfitting to specific training samples.
 

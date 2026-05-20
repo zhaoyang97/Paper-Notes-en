@@ -18,8 +18,8 @@ content_hash: 9b5efddd123639dd
 # CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing Games
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.09527](https://arxiv.org/abs/2503.09527)
-**Code**: [https://combatvla.github.io/](https://combatvla.github.io/)
+**arXiv**: [2503.09527](https://arxiv.org/abs/2503.09527)  
+**Code**: [https://combatvla.github.io/](https://combatvla.github.io/)  
 **Area**: Robotics
 **Keywords**: Vision-Language-Action, 3D Games, Real-Time Decision Making, Action-of-Thought, Efficient Inference
 
@@ -47,9 +47,9 @@ The CombatVLA pipeline comprises four core components: (1) an action tracker tha
 2. **Action-of-Thought (AoT) Data Format**: Inspired by Chain-of-Thought reasoning, the collected frame set $F$ and action set $A$ along with their alignment relations are converted into JSON-formatted AoT data. Each entry contains an `[action]` field (e.g., "press space") and an `[explanation]` field describing the current enemy state and the physical semantics of the action. A special token $\langle\text{TRUNC}\rangle$ is introduced to truncate model output during inference to accelerate generation.
 
 3. **Three-Stage Progressive Learning**:
-   - **Stage 1 – Coarse-Grained Video-AoT Fine-Tuning**: Each video segment contains $n=20$ frames at $m=10$ fps. Actions corresponding to each frame are arranged chronologically to generate video-AoT data pairs. The model learns a holistic understanding of the combat environment over 3 epochs.
-   - **Stage 2 – Fine-Grained Frames-AoT Fine-Tuning**: Action-frame alignment data is constructed by tracing back $k=4$ frames from the current action timestamp, forming precise causal reasoning sequences. The model learns temporal logic in combat scenarios over 1 epoch.
-   - **Stage 3 – Truncated Frames-AoT Fine-Tuning**: The $\langle\text{TRUNC}\rangle$ token is introduced to reorganize AoT data, placing the action field before the explanation. During real-time inference, generation halts upon encountering this token, yielding approximately a 2× speedup. Training is conducted for 3 epochs.
+    - **Stage 1 – Coarse-Grained Video-AoT Fine-Tuning**: Each video segment contains $n=20$ frames at $m=10$ fps. Actions corresponding to each frame are arranged chronologically to generate video-AoT data pairs. The model learns a holistic understanding of the combat environment over 3 epochs.
+    - **Stage 2 – Fine-Grained Frames-AoT Fine-Tuning**: Action-frame alignment data is constructed by tracing back $k=4$ frames from the current action timestamp, forming precise causal reasoning sequences. The model learns temporal logic in combat scenarios over 1 epoch.
+    - **Stage 3 – Truncated Frames-AoT Fine-Tuning**: The $\langle\text{TRUNC}\rangle$ token is introduced to reorganize AoT data, placing the action field before the explanation. During real-time inference, generation halts upon encountering this token, yielding approximately a 2× speedup. Training is conducted for 3 epochs.
 
 4. **Adaptive Action-Weighted Loss**: The training loss consists of three components: a language modeling loss $\mathcal{L}_{lang}$, an action alignment loss $\mathcal{L}_{align}$, and a modality contrastive loss $\mathcal{L}_{con}$. A priority-aware matching criterion $\mathcal{M}(A_l, A_o)$ determines whether the model's output action matches the ground-truth label. Based on the matching result, the distance between visual EOS embeddings and action EOS embeddings is adjusted accordingly. Weights $\alpha_i = 2^{(k-i-1)}$ decay exponentially by priority and are normalized to $[0.1, 1.0]$, ensuring that high-priority rare critical actions (e.g., dodge, healing) receive greater attention.
 

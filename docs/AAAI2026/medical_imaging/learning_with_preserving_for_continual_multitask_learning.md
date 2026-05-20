@@ -18,8 +18,8 @@ content_hash: 414e84d674bf7976
 # Learning with Preserving for Continual Multitask Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11676](https://arxiv.org/abs/2511.11676)
-**Code**: [LwP](https://github.com/AICPS-Lab/lwp)
+**arXiv**: [2511.11676](https://arxiv.org/abs/2511.11676)  
+**Code**: [LwP](https://github.com/AICPS-Lab/lwp)  
 **Area**: Continual Learning / Multitask Learning
 **Keywords**: Continual Multitask Learning, Representation Space Preservation, Distance-Preserving Loss, Catastrophic Forgetting, Replay-Free
 

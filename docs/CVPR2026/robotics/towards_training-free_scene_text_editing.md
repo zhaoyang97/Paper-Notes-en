@@ -18,8 +18,8 @@ content_hash: fb35f928d35e330f
 # Towards Training-Free Scene Text Editing
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24571](https://arxiv.org/abs/2603.24571)
-**Code**: [https://github.com/lyb18758/TextFlow](https://github.com/lyb18758/TextFlow)
+**arXiv**: [2603.24571](https://arxiv.org/abs/2603.24571)  
+**Code**: [https://github.com/lyb18758/TextFlow](https://github.com/lyb18758/TextFlow)  
 **Area**: Robotics
 **Keywords**: Scene Text Editing, Training-Free, Diffusion Models, Attention Enhancement, Flow Matching
 

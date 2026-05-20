@@ -18,8 +18,8 @@ content_hash: d7968548c0bdb8b5
 # Learning Orthogonal Multi-Index Models: A Fine-Grained Information Exponent Analysis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.09678](https://arxiv.org/abs/2410.09678)
-**Code**: To be confirmed
+**arXiv**: [2410.09678](https://arxiv.org/abs/2410.09678)  
+**Code**: To be confirmed  
 **Area**: Learning Theory / Optimization
 **Keywords**: multi-index models, information exponent, Hermite expansion, SGD sample complexity, subspace recovery
 
@@ -52,21 +52,21 @@ Learning objective: $f_*(\mathbf{x}) = \sum_{k=1}^P \phi(\mathbf{v}_k^* \cdot \m
 
 1. **Phase 1: Subspace Recovery (driven by second-order terms)**
 
-   - **Function**: Use $\tilde{O}(dP)$ samples to align the $P$ neuron directions of the network with the target subspace $\text{span}\{\mathbf{v}_k^*\}$.
-   - **Mechanism**: The gradient information contributed by the second-order Hermite term $\hat\phi_2 h_2$ causes each neuron's direction to grow toward the projection matrix of the target subspace. Gradient flow dynamics analysis shows that starting from random initialization, each neuron achieves constant correlation with the subspace after $\tilde{O}(d)$ steps.
-   - **Design Motivation**: Second-order terms cannot distinguish different directions within the subspace (rotational invariance), but they can efficiently locate the subspace — this is exploited for dimensionality reduction as a first step.
+    - **Function**: Use $\tilde{O}(dP)$ samples to align the $P$ neuron directions of the network with the target subspace $\text{span}\{\mathbf{v}_k^*\}$.
+    - **Mechanism**: The gradient information contributed by the second-order Hermite term $\hat\phi_2 h_2$ causes each neuron's direction to grow toward the projection matrix of the target subspace. Gradient flow dynamics analysis shows that starting from random initialization, each neuron achieves constant correlation with the subspace after $\tilde{O}(d)$ steps.
+    - **Design Motivation**: Second-order terms cannot distinguish different directions within the subspace (rotational invariance), but they can efficiently locate the subspace — this is exploited for dimensionality reduction as a first step.
 
 2. **Phase 2: Direction Recovery (driven by $L$-th order terms)**
 
-   - **Function**: Recover each direction $\mathbf{v}_k^*$ within the already-recovered $P$-dimensional subspace using $\tilde{O}(P^{L-1})$ samples.
-   - **Mechanism**: The $L$-th order Hermite term $\hat\phi_L h_L$ breaks the rotational symmetry of the second-order terms. Within the $P$-dimensional subspace, direction recovery is equivalent to $P$ independent single-index problems with effective dimension $P$, each requiring $\tilde{O}(P^{L-2})$ samples.
-   - **Design Motivation**: The subspace information from Phase 1 is jointly leveraged — without first locating the subspace, recovering each direction would require $\tilde{O}(d^{L-2})$ samples.
+    - **Function**: Recover each direction $\mathbf{v}_k^*$ within the already-recovered $P$-dimensional subspace using $\tilde{O}(P^{L-1})$ samples.
+    - **Mechanism**: The $L$-th order Hermite term $\hat\phi_L h_L$ breaks the rotational symmetry of the second-order terms. Within the $P$-dimensional subspace, direction recovery is equivalent to $P$ independent single-index problems with effective dimension $P$, each requiring $\tilde{O}(P^{L-2})$ samples.
+    - **Design Motivation**: The subspace information from Phase 1 is jointly leveraged — without first locating the subspace, recovering each direction would require $\tilde{O}(d^{L-2})$ samples.
 
 3. **Two-Phase SGD Implementation**
 
-   - **Function**: Concrete algorithm design.
-   - **Mechanism**: Phase 1 uses population gradient flow for theoretical analysis, approximated by online SGD in practice. Phase 2 also uses online SGD, operating in the low-dimensional space after subspace projection. An optional ridge regression fine-tuning step can be appended.
-   - **Design Motivation**: Online SGD is the most natural and information-theoretically efficient learning algorithm — each sample is used only once.
+    - **Function**: Concrete algorithm design.
+    - **Mechanism**: Phase 1 uses population gradient flow for theoretical analysis, approximated by online SGD in practice. Phase 2 also uses online SGD, operating in the low-dimensional space after subspace projection. An optional ridge regression fine-tuning step can be appended.
+    - **Design Motivation**: Online SGD is the most natural and information-theoretically efficient learning algorithm — each sample is used only once.
 
 ### Loss & Training
 - Squared loss $\ell = (f(\mathbf{x}) - y)^2$

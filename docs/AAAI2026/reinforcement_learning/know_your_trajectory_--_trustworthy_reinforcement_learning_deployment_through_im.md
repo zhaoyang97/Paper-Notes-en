@@ -18,8 +18,8 @@ content_hash: 8966d16ae8f0d844
 # Know your Trajectory -- Trustworthy Reinforcement Learning Deployment through Importance-Based Trajectory Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.06917](https://arxiv.org/abs/2512.06917)
-**Code**: [github.com/clif-ford/XRL_Codebase](https://github.com/clif-ford/XRL_Codebase)
+**arXiv**: [2512.06917](https://arxiv.org/abs/2512.06917)  
+**Code**: [github.com/clif-ford/XRL_Codebase](https://github.com/clif-ford/XRL_Codebase)  
 **Area**: Reinforcement Learning
 **Keywords**: Explainable RL, Trajectory Analysis, State Importance, Counterfactual Explanation, Trustworthy AI
 

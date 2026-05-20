@@ -18,8 +18,8 @@ content_hash: 2346a97656936e99
 # VOSR: A Vision-Only Generative Model for Image Super-Resolution
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03225](https://arxiv.org/abs/2604.03225)
-**Code**: [https://github.com/cswry/VOSR](https://github.com/cswry/VOSR)
+**arXiv**: [2604.03225](https://arxiv.org/abs/2604.03225)  
+**Code**: [https://github.com/cswry/VOSR](https://github.com/cswry/VOSR)  
 **Area**: Image Generation
 **Keywords**: super-resolution, vision-only, diffusion model, classifier-free guidance, one-step distillation
 

@@ -19,8 +19,8 @@ content_hash: f55c6db7c8a7275d
 # Checklists Are Better Than Reward Models For Aligning Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.18624](https://arxiv.org/abs/2507.18624)
-**Code**: Open-sourced (WildChecklists dataset + model + code)
+**arXiv**: [2507.18624](https://arxiv.org/abs/2507.18624)  
+**Code**: Open-sourced (WildChecklists dataset + model + code)  
 **Area**: Reinforcement Learning
 **Keywords**: RLCF, checklist, reward model, DPO, instruction following, alignment
 

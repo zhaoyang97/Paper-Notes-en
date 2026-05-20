@@ -18,8 +18,8 @@ content_hash: d5cdc774af3e4a50
 # Brain-Like Processing Pathways Form in Models With Heterogeneous Experts
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.02813](https://arxiv.org/abs/2506.02813)
-**Code**: [jackcook/mixture-of-pathways](https://github.com/jackcook/mixture-of-pathways)
+**arXiv**: [2506.02813](https://arxiv.org/abs/2506.02813)  
+**Code**: [jackcook/mixture-of-pathways](https://github.com/jackcook/mixture-of-pathways)  
 **Area**: Others (Computational Neuroscience × MoE Architecture)
 **Keywords**: Mixture-of-Experts, heterogeneous experts, processing pathways, inductive biases, brain-inspired computation, cognitive tasks
 

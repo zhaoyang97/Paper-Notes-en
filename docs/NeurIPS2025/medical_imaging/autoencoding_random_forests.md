@@ -18,8 +18,8 @@ content_hash: 6d3baf8807518713
 # Autoencoding Random Forests
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21441](https://arxiv.org/abs/2505.21441)
-**Code**: [https://github.com/bips-hb/RFAE](https://github.com/bips-hb/RFAE)
+**arXiv**: [2505.21441](https://arxiv.org/abs/2505.21441)  
+**Code**: [https://github.com/bips-hb/RFAE](https://github.com/bips-hb/RFAE)  
 **Area**: Representation Learning / Tree Models
 **Keywords**: Random Forests, Autoencoder, Diffusion Maps, Spectral Decomposition, Tabular Data
 

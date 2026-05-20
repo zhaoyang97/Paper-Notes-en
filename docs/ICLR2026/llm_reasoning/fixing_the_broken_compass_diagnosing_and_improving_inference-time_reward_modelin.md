@@ -18,8 +18,8 @@ content_hash: eed8f4be17bdee5d
 # Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.05188](https://arxiv.org/abs/2503.05188)
-**Code**: [GitHub](https://github.com/BugMakerzzz/CRISP)
+**arXiv**: [2503.05188](https://arxiv.org/abs/2503.05188)  
+**Code**: [GitHub](https://github.com/BugMakerzzz/CRISP)  
 **Area**: LLM Reasoning
 **Keywords**: [Reward Model, inference-time scaling, CRISP, Best-of-N, MCTS]
 

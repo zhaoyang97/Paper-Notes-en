@@ -18,8 +18,8 @@ content_hash: e0f1679799461ada
 # Adaptive Discretization for Consistency Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17266](https://arxiv.org/abs/2510.17266)
-**Code**: [GitHub](https://github.com/rainstonee/ADCM)
+**arXiv**: [2510.17266](https://arxiv.org/abs/2510.17266)  
+**Code**: [GitHub](https://github.com/rainstonee/ADCM)  
 **Area**: Image Restoration
 **Keywords**: Consistency Model, Adaptive Discretization, Training Efficiency, Single-Step Generation, Lagrange Multiplier Method
 

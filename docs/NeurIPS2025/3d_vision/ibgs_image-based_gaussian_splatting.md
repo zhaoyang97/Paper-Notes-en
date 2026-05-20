@@ -18,8 +18,8 @@ content_hash: 23abec463aaa0c4d
 # IBGS: Image-Based Gaussian Splatting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.14357](https://arxiv.org/abs/2511.14357)
-**Code**: [GitHub](https://hoangchuongnguyen.github.io/ibgs)
+**arXiv**: [2511.14357](https://arxiv.org/abs/2511.14357)  
+**Code**: [GitHub](https://hoangchuongnguyen.github.io/ibgs)  
 **Area**: 3D Vision / Novel View Synthesis
 **Keywords**: 3D Gaussian Splatting, Novel View Synthesis, Image-Based Rendering, Color Residual, View-Dependent Effects
 

@@ -19,8 +19,8 @@ content_hash: d45ae44b5d21b2c8
 # AFRO: Bootstrap Dynamic-Aware 3D Visual Representation for Scalable Robot Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.00074](https://arxiv.org/abs/2512.00074)
-**Code**: [Project Page](https://kolakivy.github.io/AFRO/)
+**arXiv**: [2512.00074](https://arxiv.org/abs/2512.00074)  
+**Code**: [Project Page](https://kolakivy.github.io/AFRO/)  
 **Area**: Image Segmentation
 **Keywords**: 3D representation learning, dynamic awareness, inverse dynamics model, forward dynamics model, diffusion Transformer, robotic manipulation
 

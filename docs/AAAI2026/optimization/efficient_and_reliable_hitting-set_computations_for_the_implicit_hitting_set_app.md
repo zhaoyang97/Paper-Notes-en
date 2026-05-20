@@ -18,8 +18,8 @@ content_hash: 17b2aa555825d3b5
 # Efficient and Reliable Hitting-Set Computations for the Implicit Hitting Set Approach
 
 **Conference**: AAAI2026
-**arXiv**: [2508.07015](https://arxiv.org/abs/2508.07015)
-**Code**: [https://bitbucket.org/coreo-group/pbhs](https://bitbucket.org/coreo-group/pbhs)
+**arXiv**: [2508.07015](https://arxiv.org/abs/2508.07015)  
+**Code**: [https://bitbucket.org/coreo-group/pbhs](https://bitbucket.org/coreo-group/pbhs)  
 **Area**: Combinatorial Optimization / Formal Verification
 **Keywords**: [implicit hitting set, pseudo-Boolean optimization, certifiable computation, stochastic local search, IP solver]
 
@@ -51,15 +51,15 @@ The PBO-IHS algorithm iterates between a core set $\mathcal{K}$ and an objective
 
 1. **Instantiating Solve-HS with Multiple PB Optimization Algorithms**
 
-   - **Function**: Replace the IP solver with conflict-driven pseudo-Boolean optimization to compute optimal solutions over the core set.
-   - **Mechanism**: Three PB optimization variants are proposed—Solution Improvement Search (SIS, maintaining upper bound $ub_c$ and solving $\mathcal{K} \wedge (O < ub_c)$ each round), Core Guided search (CG, maintaining a reconstructed objective $O^R$ and driving search via cores), and Core Boosted search (CB, a hybrid of CG and SIS). To support incremental invocations, SIS introduces a reified constraint $r_{ub_c} \Rightarrow (\gamma(O) < ub_c)$, avoiding solver reconstruction on each call.
-   - **Design Motivation**: PB solvers are based on exact arithmetic reasoning, eliminating floating-point numerical issues, and natively support generation of correctness certificates in VeriPB format.
+    - **Function**: Replace the IP solver with conflict-driven pseudo-Boolean optimization to compute optimal solutions over the core set.
+    - **Mechanism**: Three PB optimization variants are proposed—Solution Improvement Search (SIS, maintaining upper bound $ub_c$ and solving $\mathcal{K} \wedge (O < ub_c)$ each round), Core Guided search (CG, maintaining a reconstructed objective $O^R$ and driving search via cores), and Core Boosted search (CB, a hybrid of CG and SIS). To support incremental invocations, SIS introduces a reified constraint $r_{ub_c} \Rightarrow (\gamma(O) < ub_c)$, avoiding solver reconstruction on each call.
+    - **Design Motivation**: PB solvers are based on exact arithmetic reasoning, eliminating floating-point numerical issues, and natively support generation of correctness certificates in VeriPB format.
 
 2. **Hybrid Strategies and SLS Integration**
 
-   - **Function**: Combine stochastic local search (SLS) and proof-generating PB solvers with IP solvers to minimize the number of invocations of the proof generator.
-   - **Mechanism**: Three hybrid strategies are proposed—OptLB (invokes the PB solver for verification only when the lower bound equals the upper bound), AllLB (verifies on every lower-bound update), and ForceLB (distinguishes between calls that require optimality and those that do not). SLS is implemented via an adapted NuPBO supporting incremental calls, with a diversification mechanism (two-phase search: repair of the previous solution followed by random restarts) that ensures solution diversity via $\text{argmax}_i \cos(z_t, z_i)$.
-   - **Design Motivation**: Non-optimal invocations do not require proofs; the OptLB strategy invokes the more expensive PB solver only at critical moments, minimizing the overhead of certification.
+    - **Function**: Combine stochastic local search (SLS) and proof-generating PB solvers with IP solvers to minimize the number of invocations of the proof generator.
+    - **Mechanism**: Three hybrid strategies are proposed—OptLB (invokes the PB solver for verification only when the lower bound equals the upper bound), AllLB (verifies on every lower-bound update), and ForceLB (distinguishes between calls that require optimality and those that do not). SLS is implemented via an adapted NuPBO supporting incremental calls, with a diversification mechanism (two-phase search: repair of the previous solution followed by random restarts) that ensures solution diversity via $\text{argmax}_i \cos(z_t, z_i)$.
+    - **Design Motivation**: Non-optimal invocations do not require proofs; the OptLB strategy invokes the more expensive PB solver only at critical moments, minimizing the overhead of certification.
 
 ### Loss & Training
 

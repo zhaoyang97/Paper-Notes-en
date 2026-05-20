@@ -18,8 +18,8 @@ content_hash: 8d71e71edffc258f
 # NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20005](https://arxiv.org/abs/2603.20005)
-**Code**: [https://github.com/jinghan-xu/NEC-Diff](https://github.com/jinghan-xu/NEC-Diff)
+**arXiv**: [2603.20005](https://arxiv.org/abs/2603.20005)  
+**Code**: [https://github.com/jinghan-xu/NEC-Diff](https://github.com/jinghan-xu/NEC-Diff)  
 **Area**: Image Restoration / Low-Light Enhancement
 **Keywords**: Extreme-dark imaging, event camera, RAW image, collaborative denoising, diffusion model
 

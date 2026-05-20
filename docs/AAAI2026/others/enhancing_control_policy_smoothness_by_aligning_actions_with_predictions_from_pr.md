@@ -17,8 +17,8 @@ content_hash: fea471f350353d9d
 # Enhancing Control Policy Smoothness by Aligning Actions with Predictions from Preceding States
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.18479](https://arxiv.org/abs/2601.18479)
-**Code**: [https://github.com/AIRLABkhu/ASAP](https://github.com/AIRLABkhu/ASAP)
+**arXiv**: [2601.18479](https://arxiv.org/abs/2601.18479)  
+**Code**: [https://github.com/AIRLABkhu/ASAP](https://github.com/AIRLABkhu/ASAP)  
 **Area**: Other
 **Keywords**: Reinforcement Learning, Action Smoothing, Lipschitz Constraint, Policy Smoothness, Robot Control
 

@@ -18,8 +18,8 @@ content_hash: 0993f4381e41dd61
 # Sharing State Between Prompts and Programs
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.14805](https://arxiv.org/abs/2512.14805)
-**Code**: [https://github.com/psg-mit/nightjarpy](https://github.com/psg-mit/nightjarpy)
+**arXiv**: [2512.14805](https://arxiv.org/abs/2512.14805)  
+**Code**: [https://github.com/psg-mit/nightjarpy](https://github.com/psg-mit/nightjarpy)  
 **Area**: Programming Languages / LLM Programming
 **Keywords**: shared program state, natural language programming, prompt-program interoperability, Nightjar, programming abstractions
 

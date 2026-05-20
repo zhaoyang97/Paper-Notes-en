@@ -18,8 +18,8 @@ content_hash: df6b654813d060dc
 # FineCog-Nav: Integrating Fine-grained Cognitive Modules for Zero-shot Multimodal UAV Navigation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.16298](https://arxiv.org/abs/2604.16298)
-**Code**: [Project Page](https://smartdianlab.github.io/projects-FineCogNav)
+**arXiv**: [2604.16298](https://arxiv.org/abs/2604.16298)  
+**Code**: [Project Page](https://smartdianlab.github.io/projects-FineCogNav)  
 **Area**: Robotics
 **Keywords**: UAV Navigation, Vision-Language Navigation, Cognitive Modules, Zero-shot, Hierarchical Memory
 

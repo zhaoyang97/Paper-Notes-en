@@ -18,8 +18,8 @@ content_hash: 34602b97b0a07a78
 # MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.14564](https://arxiv.org/abs/2604.14564)
-**Code**: [https://github.com/TsinghuaC3I/MARTI](https://github.com/TsinghuaC3I/MARTI)
+**arXiv**: [2604.14564](https://arxiv.org/abs/2604.14564)  
+**Code**: [https://github.com/TsinghuaC3I/MARTI](https://github.com/TsinghuaC3I/MARTI)  
 **Area**: Code Intelligence
 **Keywords**: Multi-Agent, Tree Search, Reinforcement Learning, Code Generation, GRPO
 

@@ -19,8 +19,8 @@ content_hash: 238921b3a8830c2c
 # FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment
 
 **Conference**: CVPR 2026
-**arXiv**: [2505.11192](https://arxiv.org/abs/2505.11192)
-**Code**: To be confirmed
+**arXiv**: [2505.11192](https://arxiv.org/abs/2505.11192)  
+**Code**: To be confirmed  
 **Area**: Object Detection / Vision-Language Pretraining
 **Keywords**: False negatives, contrastive learning, vision-language pretraining, negative mining, mini-batch construction, scheduler
 

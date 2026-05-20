@@ -18,8 +18,8 @@ content_hash: e07648a5843eaf74
 # Alternative Fairness and Accuracy Optimization in Criminal Justice
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.04505v4](https://arxiv.org/abs/2511.04505v4)
-**Code**: None
+**arXiv**: [2511.04505v4](https://arxiv.org/abs/2511.04505v4)  
+**Code**: None  
 **Area**: AI Safety / Algorithmic Fairness
 **Keywords**: algorithmic fairness, criminal justice, risk assessment, group fairness, individual fairness
 

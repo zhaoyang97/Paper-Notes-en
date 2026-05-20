@@ -18,8 +18,8 @@ content_hash: 0d031f2f64c2191d
 # Smoothing the Score Function for Generalization in Diffusion Models: An Optimization-based Explanation Framework
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.19285](https://arxiv.org/abs/2601.19285)
-**Code**: [GitHub](https://github.com)
+**arXiv**: [2601.19285](https://arxiv.org/abs/2601.19285)  
+**Code**: [GitHub](https://github.com)  
 **Area**: Diffusion Models / Generative Model Theory
 **Keywords**: Diffusion Models, Memorization, Generalization, Score Function Smoothing, Temperature Smoothing
 

@@ -18,8 +18,8 @@ content_hash: 1e03078e92f8101c
 # Learning Multi-Modal Prototypes for Cross-Domain Few-Shot Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.18811](https://arxiv.org/abs/2602.18811)
-**Code**: N/A
+**arXiv**: [2602.18811](https://arxiv.org/abs/2602.18811)  
+**Code**: N/A  
 **Area**: Object Detection
 **Keywords**: Cross-domain few-shot detection, visual prototypes, multi-modal, GroundingDINO, hard negatives
 

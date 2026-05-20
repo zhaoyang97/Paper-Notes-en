@@ -18,8 +18,8 @@ content_hash: e75243f67d2cf811
 # BlackMirror: Black-Box Backdoor Detection for Text-to-Image Models via Instruction-Response Deviation
 
 **Conference**: CVPR2026
-**arXiv**: [2603.05921](https://arxiv.org/abs/2603.05921)
-**Code**: [GitHub](https://github.com/Ferry-Li/BlackMirror)
+**arXiv**: [2603.05921](https://arxiv.org/abs/2603.05921)  
+**Code**: [GitHub](https://github.com/Ferry-Li/BlackMirror)  
 **Area**: Image Generation
 **Keywords**: backdoor detection, text-to-image models, black-box detection, vision-language models, model security
 

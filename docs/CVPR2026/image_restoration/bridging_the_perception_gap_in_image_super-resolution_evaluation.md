@@ -18,8 +18,8 @@ content_hash: 7ee54b8e0c61cfdc
 # Bridging the Perception Gap in Image Super-Resolution Evaluation
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.13074](https://arxiv.org/abs/2503.13074)
-**Code**: [Project Page](https://color.cvc.uab.cat/rqi/)
+**arXiv**: [2503.13074](https://arxiv.org/abs/2503.13074)  
+**Code**: [Project Page](https://color.cvc.uab.cat/rqi/)  
 **Area**: Image Super-Resolution / Image Quality Assessment
 **Keywords**: Super-resolution evaluation, image quality metrics, perception gap, relative quality index, user study
 

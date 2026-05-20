@@ -18,8 +18,8 @@ content_hash: f0e1ec8d0aa53a2f
 # TellWhisper: Tell Whisper Who Speaks When
 
 **Conference**: ACL 2026
-**arXiv**: [2601.03712](https://arxiv.org/abs/2601.03712)
-**Code**: [Project Page](https://walker-hyf.github.io/TellWhisper)
+**arXiv**: [2601.03712](https://arxiv.org/abs/2601.03712)  
+**Code**: [Project Page](https://walker-hyf.github.io/TellWhisper)  
 **Area**: Audio & Speech
 **Keywords**: Multi-speaker speech recognition, speaker diarization, rotary position encoding, hyperbolic space classification, Whisper
 

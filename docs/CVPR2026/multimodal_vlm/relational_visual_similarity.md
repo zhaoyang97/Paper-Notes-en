@@ -18,8 +18,8 @@ content_hash: e6cad573d8ac5e2c
 # Relational Visual Similarity
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.07833](https://arxiv.org/abs/2512.07833)
-**Code**: [https://thaoshibe.github.io/relsim](https://thaoshibe.github.io/relsim)
+**arXiv**: [2512.07833](https://arxiv.org/abs/2512.07833)  
+**Code**: [https://thaoshibe.github.io/relsim](https://thaoshibe.github.io/relsim)  
 **Area**: Multimodal VLM
 **Keywords**: Relational Similarity, Visual Analogy, Anonymous Descriptions, Cognitive Science, Image Retrieval
 

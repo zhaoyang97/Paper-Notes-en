@@ -18,8 +18,8 @@ content_hash: c75a7c54d88e04e0
 # Evaluating Multiple Models Using Labeled and Unlabeled Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.11866](https://arxiv.org/abs/2501.11866)
-**Code**: To be confirmed
+**arXiv**: [2501.11866](https://arxiv.org/abs/2501.11866)  
+**Code**: To be confirmed  
 **Area**: Social Computing
 **Keywords**: semi-supervised evaluation, model evaluation, mixture model, unlabeled data, classifier performance
 

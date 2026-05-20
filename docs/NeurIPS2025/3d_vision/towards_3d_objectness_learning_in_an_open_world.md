@@ -18,8 +18,8 @@ content_hash: 2045f5ee642b6bdf
 # Towards 3D Objectness Learning in an Open World
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17686](https://arxiv.org/abs/2510.17686)
-**Code**: [https://github.com/op3det](https://github.com/op3det)
+**arXiv**: [2510.17686](https://arxiv.org/abs/2510.17686)  
+**Code**: [https://github.com/op3det](https://github.com/op3det)  
 **Area**: 3D Vision / Open-World Detection
 **Keywords**: 3D objectness, open-world detection, class-agnostic, cross-modal MoE, SAM
 

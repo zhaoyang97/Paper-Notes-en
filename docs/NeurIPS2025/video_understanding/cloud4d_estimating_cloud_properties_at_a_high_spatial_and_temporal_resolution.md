@@ -18,8 +18,8 @@ content_hash: a859d5eeeeec186e
 # Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.19431](https://arxiv.org/abs/2511.19431)
-**Code**: [Project Page](https://cloud4d.jacob-lin.com/)
+**arXiv**: [2511.19431](https://arxiv.org/abs/2511.19431)  
+**Code**: [Project Page](https://cloud4d.jacob-lin.com/)  
 **Area**: Video Understanding
 **Keywords**: cloud physical property estimation, multi-view 3D reconstruction, homography-guided Transformer, liquid water content, meteorological observation
 

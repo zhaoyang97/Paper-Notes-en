@@ -22,7 +22,7 @@ content_hash: bb8a8d2ccd6f9fc4
 **arXiv**: [2509.22115](https://arxiv.org/abs/2509.22115)
 
 **Authors**: Chao Wang, Tao Yang, Hongtao Tian et al. (Tsinghua University & Tencent WeChat)
-**Code**: Available (supplementary material)
+**Code**: Available (supplementary material)  
 **Area**: LLM Alignment / Reinforcement Learning
 
 **Keywords**: GRPO, policy optimization, down-sampling, advantage variance, token selection, curriculum learning

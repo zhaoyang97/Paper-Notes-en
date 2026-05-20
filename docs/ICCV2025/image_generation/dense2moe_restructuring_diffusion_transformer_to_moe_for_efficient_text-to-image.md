@@ -18,8 +18,8 @@ content_hash: 8569266c0aa34cb6
 # Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.09094](https://arxiv.org/abs/2510.09094)
-**Code**: N/A
+**arXiv**: [2510.09094](https://arxiv.org/abs/2510.09094)  
+**Code**: N/A  
 **Area**: Image Generation
 **Keywords**: Diffusion Models, Mixture of Experts, Model Compression, Knowledge Distillation, FLUX
 

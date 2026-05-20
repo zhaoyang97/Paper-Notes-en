@@ -18,8 +18,8 @@ content_hash: 5563972fd6dce65b
 # Retrosynthesis Planning via Worst-path Policy Optimisation in Tree-structured MDPs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.10504](https://arxiv.org/abs/2509.10504)
-**Code**: [GitHub](https://github.com/MianchuWang/InterRetro)
+**arXiv**: [2509.10504](https://arxiv.org/abs/2509.10504)  
+**Code**: [GitHub](https://github.com/MianchuWang/InterRetro)  
 **Area**: Reinforcement Learning / Retrosynthesis Planning
 **Keywords**: retrosynthesis planning, tree-structured MDP, worst-path optimisation, self-imitation learning, search-free inference
 

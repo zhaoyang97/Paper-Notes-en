@@ -18,8 +18,8 @@ content_hash: 9c447af6c4510dea
 # Time, Identity and Consciousness in Language Model Agents
 
 **Conference**: AAAI 2026 Spring Symposium
-**arXiv**: [2603.09043](https://arxiv.org/abs/2603.09043)
-**Code**: Available
+**arXiv**: [2603.09043](https://arxiv.org/abs/2603.09043)  
+**Code**: Available  
 **Area**: LLM Agent / AI Safety
 **Keywords**: Machine Consciousness, Identity Evaluation, Language Model Agents, Temporal Consistency, Stack Theory
 

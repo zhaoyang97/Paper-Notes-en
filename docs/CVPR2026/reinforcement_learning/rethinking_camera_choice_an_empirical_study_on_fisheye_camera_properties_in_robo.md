@@ -18,7 +18,7 @@ content_hash: 19c42f34db8dfc00
 # Rethinking Camera Choice: An Empirical Study on Fisheye Camera Properties in Robotic Manipulation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02139](https://arxiv.org/abs/2603.02139)
+**arXiv**: [2603.02139](https://arxiv.org/abs/2603.02139)  
 **Authors**: Han Xue, Min Nan, Xiaotong Liu, Wendi Chen, Yuan Fang, Jun Lv, Cewu Lu, Chuan Wen (Shanghai Jiao Tong University, Southeast University, USTC, et al.)
 **Project Page**: [robo-fisheye.github.io](https://robo-fisheye.github.io/)
 **Area**: Reinforcement Learning

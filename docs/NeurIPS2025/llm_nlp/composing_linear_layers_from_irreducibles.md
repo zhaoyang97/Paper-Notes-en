@@ -18,8 +18,8 @@ content_hash: 607a6c1a3ee9433a
 # Composing Linear Layers from Irreducibles
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.11688](https://arxiv.org/abs/2507.11688)
-**Code**: To be confirmed
+**arXiv**: [2507.11688](https://arxiv.org/abs/2507.11688)  
+**Code**: To be confirmed  
 **Area**: LLM/NLP
 **Keywords**: Clifford algebra, rotor decomposition, parameter efficiency, linear layers, geometric primitives
 

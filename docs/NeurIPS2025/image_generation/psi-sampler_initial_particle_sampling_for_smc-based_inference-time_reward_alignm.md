@@ -18,8 +18,8 @@ content_hash: 6e4b5a19294820ce
 # Ψ-Sampler: Initial Particle Sampling for SMC-Based Inference-Time Reward Alignment in Score Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01320](https://arxiv.org/abs/2506.01320)
-**Code**: [Project Page](https://psi-sampler.github.io/)
+**arXiv**: [2506.01320](https://arxiv.org/abs/2506.01320)  
+**Code**: [Project Page](https://psi-sampler.github.io/)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Inference-time alignment, Sequential Monte Carlo, Reward alignment, MCMC, Preconditioned Crank-Nicolson
 
@@ -65,11 +65,11 @@ This paper proposes the Ψ-Sampler framework, which introduces initial particle 
    - pCNL also employs Metropolis-Hastings correction to guarantee convergence to the correct distribution.
 
 3. **Initial particle sampling procedure**:
-   - Sample the initial state from the prior.
-   - Run the pCNL chain and discard the burn-in period.
-   - Draw $K$ particles at fixed intervals (thinning).
-   - Use a fixed step size for simplicity and effectiveness.
-   - The sampled particles are directly used as initial particles for SMC.
+    - Sample the initial state from the prior.
+    - Run the pCNL chain and discard the burn-in period.
+    - Draw $K$ particles at fixed intervals (thinning).
+    - Use a fixed step size for simplicity and effectiveness.
+    - The sampled particles are directly used as initial particles for SMC.
 
 ### Loss & Training
 

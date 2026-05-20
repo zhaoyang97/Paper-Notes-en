@@ -18,8 +18,8 @@ content_hash: f80d3e7d7b3dcc7b
 # CF³: Compact and Fast 3D Feature Fields
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.05254](https://arxiv.org/abs/2508.05254)
-**Code**: None
+**arXiv**: [2508.05254](https://arxiv.org/abs/2508.05254)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Feature Field, Sparsification, Feature Compression, Open-Vocabulary Segmentation
 

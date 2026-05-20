@@ -18,8 +18,8 @@ content_hash: a278884b07083dff
 # VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion
 
 **Conference**: CVPR2026
-**arXiv**: [2503.23359](https://arxiv.org/abs/2503.23359)
-**Code**: [https://github.com/Linfeng-Tang/VideoFusion](https://github.com/Linfeng-Tang/VideoFusion)
+**arXiv**: [2503.23359](https://arxiv.org/abs/2503.23359)  
+**Code**: [https://github.com/Linfeng-Tang/VideoFusion](https://github.com/Linfeng-Tang/VideoFusion)  
 **Area**: Multi-modal VLM
 **Keywords**: Multi-modal video fusion, infrared-visible fusion, temporal consistency, cross-modal attention, video dataset
 

@@ -18,8 +18,8 @@ content_hash: 7cc671cc89dfcc30
 # Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence
 
 **Conference**: ACL 2026
-**arXiv**: [2601.11886](https://arxiv.org/abs/2601.11886)
-**Code**: [GitHub](https://github.com/KaijieMo-kj/Counterfactual-Medical-Evidence)
+**arXiv**: [2601.11886](https://arxiv.org/abs/2601.11886)  
+**Code**: [GitHub](https://github.com/KaijieMo-kj/Counterfactual-Medical-Evidence)  
 **Area**: Medical Imaging
 **Keywords**: Faithfulness-safety conflict, counterfactual evidence, medical QA, safety guardrails, RAG
 

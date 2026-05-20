@@ -18,8 +18,8 @@ content_hash: eb4bb75618cc72c6
 # Dual-Expert Consistency Model for Efficient and High-Quality Video Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.03123](https://arxiv.org/abs/2506.03123)
-**Code**: [GitHub](https://github.com/Vchitect/DCM)
+**arXiv**: [2506.03123](https://arxiv.org/abs/2506.03123)  
+**Code**: [GitHub](https://github.com/Vchitect/DCM)  
 **Area**: Video Generation
 **Keywords**: Consistency Distillation, Video Generation Acceleration, Dual-Expert Model, Temporal Coherence Loss, GAN Distillation
 

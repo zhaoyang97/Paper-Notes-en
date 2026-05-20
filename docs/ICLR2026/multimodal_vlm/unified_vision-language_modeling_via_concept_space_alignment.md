@@ -18,8 +18,8 @@ content_hash: 9c1eee2ee693654b
 # Unified Vision-Language Modeling via Concept Space Alignment
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01096](https://arxiv.org/abs/2603.01096)
-**Code**: None
+**arXiv**: [2603.01096](https://arxiv.org/abs/2603.01096)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Vision-language embedding space, latent diffusion model, multilingual, video captioning, Large Concept Model
 

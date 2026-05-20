@@ -18,8 +18,8 @@ content_hash: 61cbb0d6b3ee072b
 # ASSIST-3D: Adapted Scene Synthesis for Class-Agnostic 3D Instance Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.09364](https://arxiv.org/abs/2512.09364)
-**Code**: Not released
+**arXiv**: [2512.09364](https://arxiv.org/abs/2512.09364)  
+**Code**: Not released  
 **Area**: 3D Vision
 **Keywords**: class-agnostic 3D instance segmentation, 3D scene synthesis, synthetic data, point cloud, LLM-guided layout
 

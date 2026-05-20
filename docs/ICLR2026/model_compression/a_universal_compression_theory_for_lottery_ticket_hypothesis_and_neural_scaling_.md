@@ -18,8 +18,8 @@ content_hash: 0b3dab3438143cf2
 # A universal compression theory for lottery ticket hypothesis and neural scaling laws
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00504](https://arxiv.org/abs/2510.00504)
-**Code**: None
+**arXiv**: [2510.00504](https://arxiv.org/abs/2510.00504)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Lottery Ticket Hypothesis, Neural Scaling Laws, Data Compression, Permutation-Invariant Functions, Theoretical Proof
 

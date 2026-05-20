@@ -17,8 +17,8 @@ content_hash: d91ac06d852a4bbb
 # Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04051](https://arxiv.org/abs/2507.04051)
-**Code**: [github.com/XLiu443/DiffGRE](https://github.com/XLiu443/DiffGRE)
+**arXiv**: [2507.04051](https://arxiv.org/abs/2507.04051)  
+**Code**: [github.com/XLiu443/DiffGRE](https://github.com/XLiu443/DiffGRE)  
 **Area**: Other
 **Keywords**: on-the-fly category discovery, diffusion models, attribute composition generation, fine-grained recognition, online clustering inference
 

@@ -18,8 +18,8 @@ content_hash: 63260f53fda1bb57
 # CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18087](https://arxiv.org/abs/2505.18087)
-**Code**: [GitHub](https://github.com/ttumyche/CXReasonBench)
+**arXiv**: [2505.18087](https://arxiv.org/abs/2505.18087)  
+**Code**: [GitHub](https://github.com/ttumyche/CXReasonBench)  
 **Area**: Medical Imaging
 **Keywords**: chest X-ray, diagnostic reasoning, vision-language models, benchmark, structured evaluation
 

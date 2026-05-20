@@ -18,8 +18,8 @@ content_hash: 513a36a41091c78f
 # UniMRSeg: Unified Modality-Relax Segmentation via Hierarchical Self-Supervised Compensation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16170](https://arxiv.org/abs/2509.16170)
-**Code**: [GitHub](https://github.com/Xiaoqi-Zhao-DLUT/UniMRSeg)
+**arXiv**: [2509.16170](https://arxiv.org/abs/2509.16170)  
+**Code**: [GitHub](https://github.com/Xiaoqi-Zhao-DLUT/UniMRSeg)  
 **Area**: Medical Imaging / Multimodal Segmentation
 **Keywords**: Missing modality segmentation, self-supervised compensation, contrastive learning, reverse attention adapter, unified parameters
 

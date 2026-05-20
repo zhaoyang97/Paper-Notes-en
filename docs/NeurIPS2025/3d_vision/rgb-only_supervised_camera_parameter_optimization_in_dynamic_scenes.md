@@ -18,8 +18,8 @@ content_hash: d27e2922c6e87fe6
 # RGB-Only Supervised Camera Parameter Optimization in Dynamic Scenes
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15123](https://arxiv.org/abs/2509.15123)
-**Code**: None
+**arXiv**: [2509.15123](https://arxiv.org/abs/2509.15123)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: camera parameter estimation, dynamic scene, RGB-only supervision, outlier-aware optimization, visual odometry
 

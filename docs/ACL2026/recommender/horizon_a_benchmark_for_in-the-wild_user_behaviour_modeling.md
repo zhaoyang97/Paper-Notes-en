@@ -18,8 +18,8 @@ content_hash: d54d3d2f383c2e43
 # HORIZON: A Benchmark for in-the-wild User Behaviour Modeling
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17259](https://arxiv.org/abs/2604.17259)
-**Code**: [https://github.com/microsoft/horizon-benchmark](https://github.com/microsoft/horizon-benchmark)
+**arXiv**: [2604.17259](https://arxiv.org/abs/2604.17259)  
+**Code**: [https://github.com/microsoft/horizon-benchmark](https://github.com/microsoft/horizon-benchmark)  
 **Area**: Recommender Systems / User Behaviour Modeling
 **Keywords**: Sequential Recommendation, Cross-Domain User Modeling, Long-Term Behaviour Prediction, Temporal Generalization, LLM-based Recommendation
 

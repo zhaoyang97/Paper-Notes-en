@@ -18,8 +18,8 @@ content_hash: f475ae54482e1162
 # Sherlock: Self-Correcting Reasoning in Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22651](https://arxiv.org/abs/2505.22651)
-**Code**: [https://dripnowhy.github.io/Sherlock/](https://dripnowhy.github.io/Sherlock/)
+**arXiv**: [2505.22651](https://arxiv.org/abs/2505.22651)  
+**Code**: [https://dripnowhy.github.io/Sherlock/](https://dripnowhy.github.io/Sherlock/)  
 **Area**: Multimodal VLM / Self-Correction / Visual Reasoning
 **Keywords**: self-correction, preference learning, trajectory-level, VLM reasoning, self-improvement
 

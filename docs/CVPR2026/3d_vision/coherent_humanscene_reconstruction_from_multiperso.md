@@ -18,8 +18,8 @@ content_hash: 59c35c530825cadf
 # Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12789](https://arxiv.org/abs/2603.12789)
-**Code**: [Project Page](https://nstar1125.github.io/chromm)
+**arXiv**: [2603.12789](https://arxiv.org/abs/2603.12789)  
+**Code**: [Project Page](https://nstar1125.github.io/chromm)  
 **Area**: 3D Vision / Joint Human-Scene Reconstruction
 **Keywords**: Multi-view human reconstruction, multi-person scene, SMPL-X, 3D foundation model, scale alignment
 

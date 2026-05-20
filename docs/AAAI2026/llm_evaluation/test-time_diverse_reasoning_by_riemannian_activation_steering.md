@@ -20,8 +20,8 @@ content_hash: a1a175885740a34f
 # Test-time Diverse Reasoning by Riemannian Activation Steering
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08305](https://arxiv.org/abs/2511.08305)
-**Code**: [https://github.com/lythk88/SPREAD](https://github.com/lythk88/SPREAD)
+**arXiv**: [2511.08305](https://arxiv.org/abs/2511.08305)  
+**Code**: [https://github.com/lythk88/SPREAD](https://github.com/lythk88/SPREAD)  
 **Area**: LLM Evaluation
 **Keywords**: Activation Steering, Reasoning Diversity, Riemannian Optimization, Best-of-N Sampling, Language Model Reasoning, Manifold Optimization, Mathematical Reasoning
 
@@ -69,8 +69,8 @@ The equality constraint $\|v_i\|_2^2 = \alpha_i$ confines each steering vector t
 
 1. **Initialization**: $v_i^{(0)} = \sqrt{\alpha_i} \cdot (h_i + \varepsilon_i - \bar{h}) / \|h_i + \varepsilon_i - \bar{h}\|_2$ (mean subtraction with small noise perturbation).
 2. **Each iteration** updates $i = 1, ..., N$ sequentially:
-   - Compute the Euclidean gradient $g_i$ and project it onto the tangent space of the sphere to obtain the Riemannian descent direction $d_i$.
-   - Move along the geodesic via the exponential map: $v_i^{(k)} = \cos(\cdot) v_i^{(k-1)} + \sin(\cdot) \frac{d_i}{\|d_i\|_2} \sqrt{\alpha_i}$.
+    - Compute the Euclidean gradient $g_i$ and project it onto the tangent space of the sphere to obtain the Riemannian descent direction $d_i$.
+    - Move along the geodesic via the exponential map: $v_i^{(k)} = \cos(\cdot) v_i^{(k-1)} + \sin(\cdot) \frac{d_i}{\|d_i\|_2} \sqrt{\alpha_i}$.
 
 The step size $\eta_i = 1/L_i$ is determined by the block smoothness constant (with a closed-form expression provided in the paper), **requiring no tuning**.
 

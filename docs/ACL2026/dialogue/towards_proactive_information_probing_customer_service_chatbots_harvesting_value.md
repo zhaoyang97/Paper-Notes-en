@@ -18,8 +18,8 @@ content_hash: 42be1748cdabe105
 # Towards Proactive Information Probing: Customer Service Chatbots Harvesting Value from Conversation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.11077](https://arxiv.org/abs/2604.11077)
-**Code**: [https://github.com/SCUNLP/PROCHATIP](https://github.com/SCUNLP/PROCHATIP)
+**arXiv**: [2604.11077](https://arxiv.org/abs/2604.11077)  
+**Code**: [https://github.com/SCUNLP/PROCHATIP](https://github.com/SCUNLP/PROCHATIP)  
 **Area**: Dialogue Systems
 **Keywords**: Proactive Information Probing, Customer Service Chatbot, Dialogue Policy, Reinforcement Learning, Business Intelligence
 

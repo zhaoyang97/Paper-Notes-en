@@ -18,8 +18,8 @@ content_hash: 235b6d2ebdcff8b4
 # Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.01398](https://arxiv.org/abs/2412.01398)
-**Code**: N/A
+**arXiv**: [2412.01398](https://arxiv.org/abs/2412.01398)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: 3D scene understanding, articulated objects, point cloud segmentation, motion parameter prediction, USD format
 

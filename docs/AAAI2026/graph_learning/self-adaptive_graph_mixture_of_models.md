@@ -18,8 +18,8 @@ content_hash: 6d251d2594460e67
 # Self-Adaptive Graph Mixture of Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13062](https://arxiv.org/abs/2511.13062)
-**Code**: [SAGMM](https://github.com/ast-fri/SAGMM)
+**arXiv**: [2511.13062](https://arxiv.org/abs/2511.13062)  
+**Code**: [SAGMM](https://github.com/ast-fri/SAGMM)  
 **Area**: Graph Learning
 **Keywords**: Graph Neural Networks, Mixture of Experts, Adaptive Gating, Expert Pruning, Topology-Aware Attention
 

@@ -18,8 +18,8 @@ content_hash: 6c1ae20acf9d896e
 # The Universal Normal Embedding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21786](https://arxiv.org/abs/2603.21786)
-**Code**: [https://github.com/](https://github.com/) (open-sourced, with the NoiseZoo dataset)
+**arXiv**: [2603.21786](https://arxiv.org/abs/2603.21786)  
+**Code**: [https://github.com/](https://github.com/) (open-sourced, with the NoiseZoo dataset)  
 **Area**: Diffusion Models / Representation Learning
 **Keywords**: Latent Space Gaussianity, Generative-Encoder Unification, DDIM Inversion, Linear Semantic Editing, Representation Geometry
 

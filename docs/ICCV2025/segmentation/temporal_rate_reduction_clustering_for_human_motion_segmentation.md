@@ -18,8 +18,8 @@ content_hash: 6b88ed957e18f8f9
 # Temporal Rate Reduction Clustering for Human Motion Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21249](https://arxiv.org/abs/2506.21249)
-**Code**: [GitHub](https://github.com/mengxianghan123/TR2C)
+**arXiv**: [2506.21249](https://arxiv.org/abs/2506.21249)  
+**Code**: [GitHub](https://github.com/mengxianghan123/TR2C)  
 **Area**: Image Segmentation
 **Keywords**: human motion segmentation, subspace clustering, maximal coding rate reduction, temporal consistency, unsupervised temporal clustering
 

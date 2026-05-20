@@ -18,8 +18,8 @@ content_hash: 54989ac7972dabb3
 # FoSS: Modeling Long-Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier–State Space Integration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01284](https://arxiv.org/abs/2603.01284)
-**Code**: None
+**arXiv**: [2603.01284](https://arxiv.org/abs/2603.01284)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: Trajectory Prediction, Fourier Transform, State Space Model, Dual-Branch Architecture, Multimodal Prediction
 

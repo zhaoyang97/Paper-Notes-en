@@ -18,9 +18,9 @@ content_hash: 2e41e81aff32c382
 # SAMA: Towards Multi-Turn Referential Grounded Video Chat with Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18812](https://arxiv.org/abs/2505.18812)
+**arXiv**: [2505.18812](https://arxiv.org/abs/2505.18812)  
 **Authors**: Ye Sun, Hao Zhang, Henghui Ding, Tiehua Zhang, Xingjun Ma, Yu-Gang Jiang
-**Code**: None
+**Code**: None  
 **Area**: Video Understanding / Video Dialogue
 **Keywords**: Video grounding, multi-turn dialogue, spatio-temporal understanding, SAM, Video LMM
 

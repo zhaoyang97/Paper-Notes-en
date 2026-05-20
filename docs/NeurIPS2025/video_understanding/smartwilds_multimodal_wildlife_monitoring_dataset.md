@@ -19,8 +19,8 @@ content_hash: 49361beb338127f5
 # SmartWilds: Multimodal Wildlife Monitoring Dataset
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.18894](https://arxiv.org/abs/2509.18894)
-**Code**: N/A (Dataset available on HuggingFace under CC0-1.0 license)
+**arXiv**: [2509.18894](https://arxiv.org/abs/2509.18894)  
+**Code**: N/A (Dataset available on HuggingFace under CC0-1.0 license)  
 **Area**: Dataset, Multimodal Learning, Wildlife Monitoring, Conservation Ecology
 **Keywords**: Multimodal dataset, sensor fusion, drone imagery, camera traps, bioacoustics, wildlife monitoring
 

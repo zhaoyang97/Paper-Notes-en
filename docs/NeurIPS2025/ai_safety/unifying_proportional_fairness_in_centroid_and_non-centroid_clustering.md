@@ -18,8 +18,8 @@ content_hash: 95c7dee36d921791
 # Unifying Proportional Fairness in Centroid and Non-Centroid Clustering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.00447](https://arxiv.org/abs/2601.00447)
-**Code**: None
+**arXiv**: [2601.00447](https://arxiv.org/abs/2601.00447)  
+**Code**: None  
 **Area**: AI Safety / Fairness
 **Keywords**: fair clustering, proportional fairness, core stability, semi-centroid clustering, approximation algorithms
 

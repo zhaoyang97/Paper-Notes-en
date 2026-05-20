@@ -18,8 +18,8 @@ content_hash: 9ee95a2aec94065f
 # Stratified Knowledge-Density Super-Network for Scalable Vision Transformers
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11683](https://arxiv.org/abs/2511.11683)
-**Code**: N/A
+**arXiv**: [2511.11683](https://arxiv.org/abs/2511.11683)  
+**Code**: N/A  
 **Area**: Model Compression
 **Keywords**: Vision Transformer, Super-Network, Stratified Knowledge Density, PCA, Progressive Dropout
 

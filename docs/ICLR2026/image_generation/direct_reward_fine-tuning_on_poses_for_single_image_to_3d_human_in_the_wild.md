@@ -18,8 +18,8 @@ content_hash: 42afe862ef185b80
 # Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02619](https://arxiv.org/abs/2603.02619)
-**Code**: [Project Page](https://seunguk-do.github.io/drpose)
+**arXiv**: [2603.02619](https://arxiv.org/abs/2603.02619)  
+**Code**: [Project Page](https://seunguk-do.github.io/drpose)  
 **Area**: Image Generation
 **Keywords**: single-view 3D human reconstruction, multi-view diffusion, direct reward fine-tuning, pose alignment, PoseScore
 

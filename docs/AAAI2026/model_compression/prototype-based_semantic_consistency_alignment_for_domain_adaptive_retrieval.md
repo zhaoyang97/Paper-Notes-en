@@ -18,8 +18,8 @@ content_hash: 4200958fcc33dd5e
 # Prototype-Based Semantic Consistency Alignment for Domain Adaptive Retrieval
 
 **Conference**: AAAI2026
-**arXiv**: [2512.04524](https://arxiv.org/abs/2512.04524)
-**Code**: Not released
+**arXiv**: [2512.04524](https://arxiv.org/abs/2512.04524)  
+**Code**: Not released  
 **Area**: Model Compression
 **Keywords**: domain adaptive retrieval, hashing, prototype learning, pseudo-label correction, semantic alignment
 

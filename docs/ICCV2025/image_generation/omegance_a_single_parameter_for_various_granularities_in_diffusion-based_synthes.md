@@ -18,8 +18,8 @@ content_hash: 1f87e133478d6f07
 # Omegance: A Single Parameter for Various Granularities in Diffusion-Based Synthesis
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.17769](https://arxiv.org/abs/2411.17769)
-**Code**: [https://github.com/itsmag11/Omegance](https://github.com/itsmag11/Omegance)
+**arXiv**: [2411.17769](https://arxiv.org/abs/2411.17769)  
+**Code**: [https://github.com/itsmag11/Omegance](https://github.com/itsmag11/Omegance)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: diffusion models, granularity control, noise scaling, training-free, detail enhancement/suppression
 

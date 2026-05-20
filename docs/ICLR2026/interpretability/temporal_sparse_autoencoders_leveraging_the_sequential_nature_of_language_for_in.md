@@ -17,8 +17,8 @@ content_hash: bada9dd11c3c8540
 # Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.05541](https://arxiv.org/abs/2511.05541)
-**Code**: [github.com/AI4LIFE-GROUP/temporal-saes](https://github.com/AI4LIFE-GROUP/temporal-saes)
+**arXiv**: [2511.05541](https://arxiv.org/abs/2511.05541)  
+**Code**: [github.com/AI4LIFE-GROUP/temporal-saes](https://github.com/AI4LIFE-GROUP/temporal-saes)  
 **Area**: Model Compression / Interpretability
 **Keywords**: Sparse Autoencoders, Temporal Consistency, Semantic Disentanglement, Contrastive Learning, Interpretability
 

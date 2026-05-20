@@ -20,9 +20,9 @@ content_hash: 5a32e9bcab1ddf42
 # MFmamba: A Multi-function Network for Panchromatic Image Resolution Restoration Based on State-Space Model
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18888](https://arxiv.org/abs/2511.18888)
+**arXiv**: [2511.18888](https://arxiv.org/abs/2511.18888)  
 **Authors**: Qian Jiang, Qianqian Wang, Xin Jin, Michal Wozniak, Shaowen Yao, Wei Zhou
-**Code**: [GitHub](https://github.com/QianqianWang1325/MFmamba)
+**Code**: [GitHub](https://github.com/QianqianWang1325/MFmamba)  
 **Area**: Image Restoration
 **Keywords**: Remote sensing imagery, panchromatic image, super-resolution, spectral restoration, Mamba, state-space model, UNet++
 

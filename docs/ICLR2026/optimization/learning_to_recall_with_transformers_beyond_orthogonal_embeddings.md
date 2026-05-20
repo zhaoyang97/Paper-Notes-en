@@ -18,8 +18,8 @@ content_hash: 65d73e4f9b76c477
 # Learning to Recall with Transformers Beyond Orthogonal Embeddings
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.15923](https://arxiv.org/abs/2603.15923)
-**Code**: None
+**arXiv**: [2603.15923](https://arxiv.org/abs/2603.15923)  
+**Code**: None  
 **Area**: Transformer Theory / Optimization Theory
 **Keywords**: Transformer, Memory & Retrieval, Storage Capacity, Non-Orthogonal Embeddings, Gradient Descent Analysis
 

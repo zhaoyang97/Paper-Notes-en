@@ -18,8 +18,8 @@ content_hash: 3083c53648b3548a
 # RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17725](https://arxiv.org/abs/2604.17725)
-**Code**: [https://github.com/KU-AI4H/RePrompT](https://github.com/KU-AI4H/RePrompT)
+**arXiv**: [2604.17725](https://arxiv.org/abs/2604.17725)  
+**Code**: [https://github.com/KU-AI4H/RePrompT](https://github.com/KU-AI4H/RePrompT)  
 **Area**: Medical Imaging
 **Keywords**: Electronic Health Records, Prompt Tuning, Recurrent State Propagation, Structured Encoder, Clinical Prediction
 

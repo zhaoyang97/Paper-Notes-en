@@ -19,8 +19,8 @@ content_hash: c7e5d58829eeb5d3
 # CryoNet.Refine: A One-step Diffusion Model for Rapid Refinement of Structural Models with Cryo-EM Density Map Restraints
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.22263](https://arxiv.org/abs/2602.22263)
-**Code**: [GitHub](https://github.com/kuixu/cryonet.refine)
+**arXiv**: [2602.22263](https://arxiv.org/abs/2602.22263)  
+**Code**: [GitHub](https://github.com/kuixu/cryonet.refine)  
 **Area**: Structural Biology / Cryo-EM / Diffusion Models
 **Keywords**: cryo-EM, atomic model refinement, one-step diffusion, density loss, geometric constraints, protein structure
 

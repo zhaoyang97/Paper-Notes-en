@@ -18,8 +18,8 @@ content_hash: af440b18ae760904
 # AdaSpark: Adaptive Sparsity for Efficient Long-Video Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08077](https://arxiv.org/abs/2604.08077)
-**Code**: None
+**arXiv**: [2604.08077](https://arxiv.org/abs/2604.08077)  
+**Code**: None  
 **Area**: Video Understanding / Efficient Inference
 **Keywords**: long video, adaptive sparsity, Video-LLM, efficient inference, 3D cube
 

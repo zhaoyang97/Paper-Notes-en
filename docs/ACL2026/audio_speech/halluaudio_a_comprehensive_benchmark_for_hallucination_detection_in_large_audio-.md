@@ -18,8 +18,8 @@ content_hash: 9473e269d2561150
 # HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19300](https://arxiv.org/abs/2604.19300)
-**Code**: [https://github.com/Feiyuzhao25/halluaudio](https://github.com/Feiyuzhao25/halluaudio)
+**arXiv**: [2604.19300](https://arxiv.org/abs/2604.19300)  
+**Code**: [https://github.com/Feiyuzhao25/halluaudio](https://github.com/Feiyuzhao25/halluaudio)  
 **Area**: Audio & Speech
 **Keywords**: audio hallucination, large audio-language models, benchmark, adversarial prompting, multi-dimensional analysis
 

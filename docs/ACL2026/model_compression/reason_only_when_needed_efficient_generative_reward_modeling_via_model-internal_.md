@@ -18,8 +18,8 @@ content_hash: db358f7fa143c9d5
 # Reason Only When Needed: Efficient Generative Reward Modeling via Model-Internal Uncertainty
 
 **Conference**: ACL 2026
-**arXiv**: [2604.10072](https://arxiv.org/abs/2604.10072)
-**Code**: None
+**arXiv**: [2604.10072](https://arxiv.org/abs/2604.10072)  
+**Code**: None  
 **Area**: Model Compression / LLM Efficiency
 **Keywords**: Generative reward model, dynamic CoT triggering, model-internal uncertainty, discriminative scoring, inference efficiency
 

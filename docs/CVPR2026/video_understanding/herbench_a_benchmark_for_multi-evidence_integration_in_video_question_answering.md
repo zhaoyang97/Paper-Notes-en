@@ -18,8 +18,8 @@ content_hash: 5fc6caca1623ce21
 # HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.14870](https://arxiv.org/abs/2512.14870)
-**Code**: None
+**arXiv**: [2512.14870](https://arxiv.org/abs/2512.14870)  
+**Code**: None  
 **Area**: Video Understanding / Multimodal VLM
 **Keywords**: Video QA benchmark, multi-evidence integration, frame selection, long video understanding, temporal reasoning
 

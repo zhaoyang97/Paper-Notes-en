@@ -19,9 +19,9 @@ content_hash: 5e31d3c4f616d0e9
 # AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction
 
 **Conference**: CVPR2026
-**arXiv**: [2602.22376](https://arxiv.org/abs/2602.22376)
+**arXiv**: [2602.22376](https://arxiv.org/abs/2602.22376)  
 **Authors**: Hanyang Liu, Rongjun Qin
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: 4D Reconstruction, 3D Gaussian Splatting, Physical Priors, UAV Monocular Video, Dynamic Scene, Aerial
 

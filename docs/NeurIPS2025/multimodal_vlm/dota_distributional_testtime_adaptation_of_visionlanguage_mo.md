@@ -18,8 +18,8 @@ content_hash: 8aa8244796df1cd2
 # DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2409.19375](https://arxiv.org/abs/2409.19375)
-**Code**: Unavailable (authors indicate release is planned)
+**arXiv**: [2409.19375](https://arxiv.org/abs/2409.19375)  
+**Code**: Unavailable (authors indicate release is planned)  
 **Area**: Multimodal VLM
 **Keywords**: Test-time adaptation, CLIP, distribution estimation, Gaussian discriminant analysis, zero-shot classification
 

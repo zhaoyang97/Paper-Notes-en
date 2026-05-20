@@ -18,8 +18,8 @@ content_hash: b2633981e177e7d7
 # Online Prediction of Stochastic Sequences with High Probability Regret Bounds
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.16236](https://arxiv.org/abs/2602.16236)
-**Code**: None
+**arXiv**: [2602.16236](https://arxiv.org/abs/2602.16236)  
+**Code**: None  
 **Area**: Reinforcement Learning / Online Learning Theory
 **Keywords**: Online prediction, stochastic sequences, high-probability regret bounds, universal prediction, countable alphabet
 

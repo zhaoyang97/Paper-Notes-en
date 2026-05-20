@@ -18,8 +18,8 @@ content_hash: 94c8bff1ab6afb29
 # Free Lunch for Stabilizing Rectified Flow Inversion
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.11850](https://arxiv.org/abs/2602.11850)
-**Code**: None
+**arXiv**: [2602.11850](https://arxiv.org/abs/2602.11850)  
+**Code**: None  
 **Area**: Diffusion Models / Image Editing
 **Keywords**: Rectified Flow, Inversion Stability, Proximal-Mean Inversion, Image Editing, Velocity Field Correction
 

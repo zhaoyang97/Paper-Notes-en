@@ -18,8 +18,8 @@ content_hash: 200a4d4bc9829b84
 # Object-Centric Representation Learning for Enhanced 3D Semantic Scene Graph Prediction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04714](https://arxiv.org/abs/2510.04714)
-**Code**: [https://github.com/VisualScienceLab-KHU/OCRL-3DSSG-Codes](https://github.com/VisualScienceLab-KHU/OCRL-3DSSG-Codes)
+**arXiv**: [2510.04714](https://arxiv.org/abs/2510.04714)  
+**Code**: [https://github.com/VisualScienceLab-KHU/OCRL-3DSSG-Codes](https://github.com/VisualScienceLab-KHU/OCRL-3DSSG-Codes)  
 **Area**: 3D Vision / Scene Understanding
 **Keywords**: 3D semantic scene graph, object-centric representation, contrastive pre-training, GNN, relation prediction
 

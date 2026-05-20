@@ -18,8 +18,8 @@ content_hash: 948d2bd5c7ca3a05
 # Data Heterogeneity and Forgotten Labels in Split Federated Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09736](https://arxiv.org/abs/2511.09736)
-**Code**: [GitHub](https://github.com/jtirana98/Hydra-CF-in-SFL)
+**arXiv**: [2511.09736](https://arxiv.org/abs/2511.09736)  
+**Code**: [GitHub](https://github.com/jtirana98/Hydra-CF-in-SFL)  
 **Area**: Optimization
 **Keywords**: Split Federated Learning, Catastrophic Forgetting, Data Heterogeneity, Multi-head, Processing Order
 

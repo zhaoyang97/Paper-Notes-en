@@ -18,9 +18,9 @@ content_hash: fb5ad4fc7a54c9f6
 # xLSTM-Mixer: Multivariate Time Series Forecasting by Mixing via Scalar Memories
 
 **Conference**: NeurIPS2025
-**arXiv**: [2410.16928](https://arxiv.org/abs/2410.16928)
+**arXiv**: [2410.16928](https://arxiv.org/abs/2410.16928)  
 **Authors**: Maurice Kraus, Felix Divo, Devendra Singh Dhami, Kristian Kersting (TU Darmstadt, TU Eindhoven)
-**Code**: [mauricekraus/xlstm-mixer](https://github.com/mauricekraus/xlstm-mixer)
+**Code**: [mauricekraus/xlstm-mixer](https://github.com/mauricekraus/xlstm-mixer)  
 **Area**: Time Series
 **Keywords**: Time series forecasting, xLSTM, mixer architecture, recurrent neural networks, multivariate forecasting
 

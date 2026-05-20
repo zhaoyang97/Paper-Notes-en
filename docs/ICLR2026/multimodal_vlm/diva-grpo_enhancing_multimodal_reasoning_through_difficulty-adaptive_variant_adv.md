@@ -19,8 +19,8 @@ content_hash: fb8008950e82258c
 # DIVA-GRPO: Enhancing Multimodal Reasoning through Difficulty-Adaptive Variant Advantage
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01106](https://arxiv.org/abs/2603.01106)
-**Code**: [Siaaaaaa1/DIVA-GRPO](https://github.com/Siaaaaaa1/DIVA-GRPO)
+**arXiv**: [2603.01106](https://arxiv.org/abs/2603.01106)  
+**Code**: [Siaaaaaa1/DIVA-GRPO](https://github.com/Siaaaaaa1/DIVA-GRPO)  
 **Area**: Multimodal VLM
 **Keywords**: GRPO, reinforcement learning, multimodal reasoning, difficulty-adaptive, advantage vanishing, variant augmentation
 

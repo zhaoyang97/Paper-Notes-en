@@ -18,8 +18,8 @@ content_hash: 56de5791c89658fc
 # Node-RF: Learning Generalized Continuous Space-Time Scene Dynamics with Neural ODE-based NeRFs
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12078](https://arxiv.org/abs/2603.12078)
-**Code**: None (paper states it will be made publicly available)
+**arXiv**: [2603.12078](https://arxiv.org/abs/2603.12078)  
+**Code**: None (paper states it will be made publicly available)  
 **Area**: 3D Vision / Dynamic Scene Reconstruction
 **Keywords**: Neural ODE, NeRF, dynamic scenes, spatiotemporal extrapolation, trajectory generalization
 

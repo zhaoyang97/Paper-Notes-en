@@ -18,8 +18,8 @@ content_hash: d13d7abb580605b3
 # Don't Just Chase "Highlighted Tokens" in MLLMs: Revisiting Visual Holistic Context Retention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.02912](https://arxiv.org/abs/2510.02912)
-**Code**: [GitHub](https://github.com/obananas/HoloV)
+**arXiv**: [2510.02912](https://arxiv.org/abs/2510.02912)  
+**Code**: [GitHub](https://github.com/obananas/HoloV)  
 **Area**: Multimodal VLM
 **Keywords**: visual token pruning, inference acceleration, holistic context, adaptive allocation, MLLM efficiency
 

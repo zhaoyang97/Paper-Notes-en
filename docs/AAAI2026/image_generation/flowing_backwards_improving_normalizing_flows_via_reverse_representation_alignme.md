@@ -18,8 +18,8 @@ content_hash: 8390d7db65ef91eb
 # Flowing Backwards: Improving Normalizing Flows via Reverse Representation Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.22345](https://arxiv.org/abs/2511.22345)
-**Code**: None
+**arXiv**: [2511.22345](https://arxiv.org/abs/2511.22345)  
+**Code**: None  
 **Area**: Generative Models / Normalizing Flows / Representation Alignment
 **Keywords**: Normalizing Flows, TARFlow, Representation Alignment, Reverse Alignment, Image Generation, ImageNet
 

@@ -18,8 +18,8 @@ content_hash: b2dee3602e3f9df3
 # SiNGER: A Clearer Voice Distills Vision Transformers Further
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.20986](https://arxiv.org/abs/2509.20986)
-**Code**: [github.com/AIRLABkhu/SiNGER](https://github.com/AIRLABkhu/SiNGER)
+**arXiv**: [2509.20986](https://arxiv.org/abs/2509.20986)  
+**Code**: [github.com/AIRLABkhu/SiNGER](https://github.com/AIRLABkhu/SiNGER)  
 **Area**: Audio & Speech
 **Keywords**: Vision Transformer, Knowledge Distillation, High-Norm Artifacts, Nullspace Guidance, LoRA Adapter
 

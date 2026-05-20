@@ -19,8 +19,8 @@ content_hash: 23dfa051f1986974
 # Physics-Consistent Diffusion for Efficient Fluid Super-Resolution via Multiscale Residual Correction
 
 **Conference**: CVPR2026
-**arXiv**: [2603.00149](https://arxiv.org/abs/2603.00149)
-**Code**: [lizhihao2022/ReMD](https://github.com/lizhihao2022/ReMD)
+**arXiv**: [2603.00149](https://arxiv.org/abs/2603.00149)  
+**Code**: [lizhihao2022/ReMD](https://github.com/lizhihao2022/ReMD)  
 **Authors**: Zhihao Li, Shengwei Dong, Chuang Yi, Junxuan Gao, Zhilu Lai, Zhiqiang Liu, Wei Wang, Guangtao Zhang
 **Area**: Image Generation
 **Keywords**: Fluid Super-Resolution, Diffusion Models, Multigrid Residual Correction, Multi-Wavelet Basis, Physics Consistency, Equation-Free

@@ -18,8 +18,8 @@ content_hash: 6e517ef4b39122a7
 # Cross-Sample Augmented Test-Time Adaptation for Personalized Intraoperative Hypotension Prediction
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.15762](https://arxiv.org/abs/2512.15762)
-**Code**: [GitHub](https://github.com/kanxueli/CSA-TTA)
+**arXiv**: [2512.15762](https://arxiv.org/abs/2512.15762)  
+**Code**: [GitHub](https://github.com/kanxueli/CSA-TTA)  
 **Area**: Medical Imaging
 **Keywords**: intraoperative hypotension prediction, test-time adaptation, cross-sample retrieval, time series forecasting, personalized medicine
 

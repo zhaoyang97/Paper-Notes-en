@@ -18,8 +18,8 @@ content_hash: 55c966c93a39e635
 # Apo2Mol: 3D Molecule Generation via Dynamic Pocket-Aware Diffusion Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14559v1](https://arxiv.org/abs/2511.14559v1)
-**Code**: [https://github.com/AIDD-LiLab/Apo2Mol](https://github.com/AIDD-LiLab/Apo2Mol)
+**arXiv**: [2511.14559v1](https://arxiv.org/abs/2511.14559v1)  
+**Code**: [https://github.com/AIDD-LiLab/Apo2Mol](https://github.com/AIDD-LiLab/Apo2Mol)  
 **Area**: AI for Science / Drug Design / Diffusion Models
 **Keywords**: Structure-based drug design, apo-holo conformational change, protein pocket dynamics, 3D molecule generation, SE(3) equivariance
 

@@ -18,8 +18,8 @@ content_hash: 1f23f9b283b18a09
 # PRUE: A Practical Recipe for Field Boundary Segmentation at Scale
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27101](https://arxiv.org/abs/2603.27101)
-**Code**: [https://github.com/fieldsoftheworld/ftw-prue](https://github.com/fieldsoftheworld/ftw-prue)
+**arXiv**: [2603.27101](https://arxiv.org/abs/2603.27101)  
+**Code**: [https://github.com/fieldsoftheworld/ftw-prue](https://github.com/fieldsoftheworld/ftw-prue)  
 **Area**: Semantic Segmentation / Remote Sensing
 **Keywords**: Field boundary segmentation, geospatial foundation models, U-Net, deployment robustness, large-scale mapping
 
@@ -51,27 +51,27 @@ The input consists of bi-temporal RGBN Sentinel-2 imagery (4 channels each for g
 
 1. **U-Net + EfficientNet-B7 Encoder**
 
-   - **Function**: Serves as the feature extraction backbone, providing multi-scale semantic features.
-   - **Mechanism**: After systematically comparing FCN, UPerNet, FCSiam, and multiple U-Net variants, the EfficientNet-B7 encoder achieves the best balance between accuracy and parameter efficiency. Compared to the B3 baseline, it increases model capacity while avoiding overfitting through careful selection of complementary components.
-   - **Design Motivation**: A larger encoder captures richer spatial context, yielding better representation of complex field morphologies—especially irregular smallholder parcels. Its 67.1M parameters sit in the optimal region of the accuracy–throughput trade-off (306.94 km²/s).
+    - **Function**: Serves as the feature extraction backbone, providing multi-scale semantic features.
+    - **Mechanism**: After systematically comparing FCN, UPerNet, FCSiam, and multiple U-Net variants, the EfficientNet-B7 encoder achieves the best balance between accuracy and parameter efficiency. Compared to the B3 baseline, it increases model capacity while avoiding overfitting through careful selection of complementary components.
+    - **Design Motivation**: A larger encoder captures richer spatial context, yielding better representation of complex field morphologies—especially irregular smallholder parcels. Its 67.1M parameters sit in the optimal region of the accuracy–throughput trade-off (306.94 km²/s).
 
 2. **Log-Cosh Dice Loss + Boundary Class Weight Adjustment**
 
-   - **Function**: Optimizes the segmentation objective and balances boundary versus interior classes.
-   - **Mechanism**: After comparing CE, Dice, Focal, Tversky, and Jaccard losses, log-cosh Dice is found to provide a smoother optimization landscape. A boundary weight of $\omega = 0.75$ (normalized class weights: [0.05, 0.20, 0.75]) substantially increases focus on narrow boundary pixels.
-   - **Design Motivation**: Boundary pixels constitute a very small fraction of the image; standard losses tend to neglect them. The log-cosh transformation also alleviates gradient instability of Dice loss in early training.
+    - **Function**: Optimizes the segmentation objective and balances boundary versus interior classes.
+    - **Mechanism**: After comparing CE, Dice, Focal, Tversky, and Jaccard losses, log-cosh Dice is found to provide a smoother optimization landscape. A boundary weight of $\omega = 0.75$ (normalized class weights: [0.05, 0.20, 0.75]) substantially increases focus on narrow boundary pixels.
+    - **Design Motivation**: Boundary pixels constitute a very small fraction of the image; standard losses tend to neglect them. The log-cosh transformation also alleviates gradient instability of Dice loss in early training.
 
 3. **Deployment-Oriented Data Augmentation (Channel Shuffle + Brightness + Resize)**
 
-   - **Function**: Improves model robustness to input variations encountered in real deployment scenarios.
-   - **Mechanism**: Channel shuffle randomly swaps growing- and harvest-season channels, inducing input-order invariance. Brightness augmentation makes the model robust to different Sentinel-2 radiometric preprocessing pipelines. Resize augmentation simulates imagery at varying spatial resolutions.
-   - **Design Motivation**: In practice, users may supply multi-temporal data in different orderings, with different preprocessing workflows, or at different resolutions—none of which should affect prediction quality.
+    - **Function**: Improves model robustness to input variations encountered in real deployment scenarios.
+    - **Mechanism**: Channel shuffle randomly swaps growing- and harvest-season channels, inducing input-order invariance. Brightness augmentation makes the model robust to different Sentinel-2 radiometric preprocessing pipelines. Resize augmentation simulates imagery at varying spatial resolutions.
+    - **Design Motivation**: In practice, users may supply multi-temporal data in different orderings, with different preprocessing workflows, or at different resolutions—none of which should affect prediction quality.
 
 4. **Deployment Robustness Evaluation Metrics**
 
-   - **Function**: Quantifies model behavior under real-world large-scale mapping conditions.
-   - **Mechanism**: Four new metrics are proposed: (a) *translation consistency*—prediction agreement in overlapping regions across four corner crops; (b) *input order sensitivity*—performance variance across channel permutations; (c) *preprocessing invariance*—performance variance across different radiometric normalization schemes; (d) *spatial scale sensitivity*—performance variance across different input resolutions.
-   - **Design Motivation**: Conventional metrics only measure patch-level accuracy and cannot predict stitching quality during large-scale map production.
+    - **Function**: Quantifies model behavior under real-world large-scale mapping conditions.
+    - **Mechanism**: Four new metrics are proposed: (a) *translation consistency*—prediction agreement in overlapping regions across four corner crops; (b) *input order sensitivity*—performance variance across channel permutations; (c) *preprocessing invariance*—performance variance across different radiometric normalization schemes; (d) *spatial scale sensitivity*—performance variance across different input resolutions.
+    - **Design Motivation**: Conventional metrics only measure patch-level accuracy and cannot predict stitching quality during large-scale map production.
 
 ### Loss & Training
 

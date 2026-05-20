@@ -18,8 +18,8 @@ content_hash: c41c8bcf8e2b42da
 # RewardFlow: Generate Images by Optimizing What You Reward
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08536](https://arxiv.org/abs/2604.08536)
-**Code**: [https://huggingface.co/onkarsus13/RewardFlow](https://huggingface.co/onkarsus13/RewardFlow)
+**arXiv**: [2604.08536](https://arxiv.org/abs/2604.08536)  
+**Code**: [https://huggingface.co/onkarsus13/RewardFlow](https://huggingface.co/onkarsus13/RewardFlow)  
 **Area**: Image Generation / Editing
 **Keywords**: Reward-guided generation, diffusion models, Langevin dynamics, image editing, compositional generation
 

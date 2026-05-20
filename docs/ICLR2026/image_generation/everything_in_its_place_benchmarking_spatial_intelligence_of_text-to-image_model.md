@@ -18,8 +18,8 @@ content_hash: 8c4c9689d505fb66
 # Everything in Its Place: Benchmarking Spatial Intelligence of Text-to-Image Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20354](https://arxiv.org/abs/2601.20354)
-**Code**: Available ([GitHub](https://github.com/AMAP-ML/SpatialGenEval))
+**arXiv**: [2601.20354](https://arxiv.org/abs/2601.20354)  
+**Code**: Available ([GitHub](https://github.com/AMAP-ML/SpatialGenEval))  
 **Area**: Image Generation
 **Keywords**: Spatial Intelligence, Text-to-Image Generation, Benchmark, Information-Dense Prompts, Data-Centric Paradigm
 

@@ -19,8 +19,8 @@ content_hash: 4e971093ef0b15cb
 # Generating Multi-Table Time Series EHR from Latent Space with Minimal Preprocessing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.06996](https://arxiv.org/abs/2507.06996)
-**Code**: [eunbyeol-cho/RawMed](https://github.com/eunbyeol-cho/RawMed)
+**arXiv**: [2507.06996](https://arxiv.org/abs/2507.06996)  
+**Code**: [eunbyeol-cho/RawMed](https://github.com/eunbyeol-cho/RawMed)  
 **Authors**: Eunbyeol Cho, Jiyoun Kim, Minjae Lee, Sungjin Park, Edward Choi (KAIST, FuriosaAI)
 **Area**: Medical Informatics
 **Keywords**: EHR synthesis, time series generation, Residual Quantization, privacy preservation, multi-table relational database, autoregressive Transformer

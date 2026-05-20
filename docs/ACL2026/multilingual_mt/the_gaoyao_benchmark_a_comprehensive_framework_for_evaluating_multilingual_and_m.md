@@ -18,8 +18,8 @@ content_hash: 5ea796a3f84023f3
 # The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.20225](https://arxiv.org/abs/2604.20225)
-**Code**: [github.com/lunyiliu/GaoYao](https://github.com/lunyiliu/GaoYao)
+**arXiv**: [2604.20225](https://arxiv.org/abs/2604.20225)  
+**Code**: [github.com/lunyiliu/GaoYao](https://github.com/lunyiliu/GaoYao)  
 **Area**: Human Understanding / Multilingual Evaluation
 **Keywords**: multilingual benchmark, multicultural evaluation, LLM evaluation, linguistic fairness, cultural understanding
 

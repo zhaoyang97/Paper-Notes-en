@@ -18,8 +18,8 @@ content_hash: 2c32b076e0e10a65
 # MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18509](https://arxiv.org/abs/2604.18509)
-**Code**: None
+**arXiv**: [2604.18509](https://arxiv.org/abs/2604.18509)  
+**Code**: None  
 **Area**: Information Retrieval / RAG
 **Keywords**: Multi-Agent RAG, Evidence Synthesis, Training-Free, Multi-Perspective Filtering, Heterogeneous Evidence Fusion
 

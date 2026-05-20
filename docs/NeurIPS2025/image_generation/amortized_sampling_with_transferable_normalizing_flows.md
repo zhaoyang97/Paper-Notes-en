@@ -18,8 +18,8 @@ content_hash: e483e31ff70d38eb
 # Amortized Sampling with Transferable Normalizing Flows
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.18175](https://arxiv.org/abs/2508.18175)
-**Code**: [GitHub](https://github.com/transferable-samplers/transferable-samplers) | [Model Weights](https://huggingface.co/transferable-samplers/model-weights) | [Dataset](https://huggingface.co/datasets/transferable-samplers/many-peptides-md)
+**arXiv**: [2508.18175](https://arxiv.org/abs/2508.18175)  
+**Code**: [GitHub](https://github.com/transferable-samplers/transferable-samplers) | [Model Weights](https://huggingface.co/transferable-samplers/model-weights) | [Dataset](https://huggingface.co/datasets/transferable-samplers/many-peptides-md)  
 **Area**: Molecular Generation / Normalizing Flows / Statistical Sampling
 **Keywords**: normalizing flow, Boltzmann generator, transferable sampler, peptide, importance sampling
 

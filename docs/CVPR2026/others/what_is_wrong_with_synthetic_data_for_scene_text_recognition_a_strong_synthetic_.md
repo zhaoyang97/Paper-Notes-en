@@ -17,8 +17,8 @@ content_hash: a187f08612264ed5
 # What Is Wrong with Synthetic Data for Scene Text Recognition? A Strong Synthetic Engine with Diverse Simulations and Self-Evolution
 
 **Conference**: CVPR2026
-**arXiv**: [2602.06450](https://arxiv.org/abs/2602.06450)
-**Code**: [YesianRohn/UnionST](https://github.com/YesianRohn/UnionST)
+**arXiv**: [2602.06450](https://arxiv.org/abs/2602.06450)  
+**Code**: [YesianRohn/UnionST](https://github.com/YesianRohn/UnionST)  
 **Area**: Others
 **Keywords**: Scene Text Recognition, Synthetic Data, Data Engine, Self-Evolution Learning, Pseudo Labels
 

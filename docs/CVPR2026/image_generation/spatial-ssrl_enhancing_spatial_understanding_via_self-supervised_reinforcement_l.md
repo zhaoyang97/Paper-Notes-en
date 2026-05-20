@@ -18,8 +18,8 @@ content_hash: 7da4f02504f33d99
 # Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.27606](https://arxiv.org/abs/2510.27606)
-**Code**: [GitHub](https://github.com/InternLM/Spatial-SSRL)
+**arXiv**: [2510.27606](https://arxiv.org/abs/2510.27606)  
+**Code**: [GitHub](https://github.com/InternLM/Spatial-SSRL)  
 **Area**: Image Generation
 **Keywords**: Spatial Understanding, Self-Supervised Learning, Reinforcement Learning (RLVR), Large Vision-Language Models, Depth Perception
 

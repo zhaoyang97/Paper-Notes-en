@@ -20,8 +20,8 @@ content_hash: 2a8a95e8b8fd170d
 # Editing Physiological Signals in Videos Using Latent Representations
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.25348](https://arxiv.org/abs/2509.25348)
-**Code**: Available (promised by authors)
+**arXiv**: [2509.25348](https://arxiv.org/abs/2509.25348)  
+**Code**: Available (promised by authors)  
 **Area**: Human Understanding
 **Keywords**: Heart rate editing, rPPG privacy, video physiological signals, 3D VAE, biometric anonymization, FiLM, AdaLN
 

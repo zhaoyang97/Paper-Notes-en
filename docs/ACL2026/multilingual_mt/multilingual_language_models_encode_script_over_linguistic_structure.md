@@ -18,8 +18,8 @@ content_hash: ec5ab14f6fb085df
 # Multilingual Language Models Encode Script Over Linguistic Structure
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05090](https://arxiv.org/abs/2604.05090)
-**Code**: [GitHub](https://github.com/loadthecode0/multilingual-interpretability)
+**arXiv**: [2604.05090](https://arxiv.org/abs/2604.05090)  
+**Code**: [GitHub](https://github.com/loadthecode0/multilingual-interpretability)  
 **Area**: Human Understanding / Multilingual Interpretability
 **Keywords**: multilingual representations, writing systems, orthography, language-associated neurons, sparse autoencoders
 

@@ -17,8 +17,8 @@ content_hash: 56fc0f5db511a748
 # On Topological Descriptors for Graph Products
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.08846](https://arxiv.org/abs/2511.08846)
-**Code**: [GitHub](https://github.com/Aalto-QuML/tda_graph_product)
+**arXiv**: [2511.08846](https://arxiv.org/abs/2511.08846)  
+**Code**: [GitHub](https://github.com/Aalto-QuML/tda_graph_product)  
 **Area**: Other
 **Keywords**: topological descriptors, graph products, Euler characteristic, persistent homology, graph classification
 

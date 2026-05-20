@@ -18,8 +18,8 @@ content_hash: 11564fd9ba8b6242
 # X-Dancer: Expressive Music to Human Dance Video Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.17414](https://arxiv.org/abs/2502.17414)
-**Code**: [https://zeyuan-chen.com/X-Dancer/](https://zeyuan-chen.com/X-Dancer/) (project page)
+**arXiv**: [2502.17414](https://arxiv.org/abs/2502.17414)  
+**Code**: [https://zeyuan-chen.com/X-Dancer/](https://zeyuan-chen.com/X-Dancer/) (project page)  
 **Area**: Diffusion Models / Video Generation
 **Keywords**: music-driven dance generation, human image animation, autoregressive Transformer, diffusion models, 2D pose modeling
 

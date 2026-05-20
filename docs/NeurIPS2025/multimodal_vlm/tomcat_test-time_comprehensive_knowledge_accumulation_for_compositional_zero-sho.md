@@ -18,8 +18,8 @@ content_hash: fdcbff4e45416d33
 # TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20162](https://arxiv.org/abs/2510.20162)
-**Code**: [https://github.com/xud-yan/TOMCAT](https://github.com/xud-yan/TOMCAT)
+**arXiv**: [2510.20162](https://arxiv.org/abs/2510.20162)  
+**Code**: [https://github.com/xud-yan/TOMCAT](https://github.com/xud-yan/TOMCAT)  
 **Area**: Multimodal VLM
 **Keywords**: Compositional Zero-Shot Learning, Test-Time Adaptation, Knowledge Accumulation, Multimodal Prototypes, CLIP
 

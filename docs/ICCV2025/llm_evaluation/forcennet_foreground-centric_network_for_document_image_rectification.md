@@ -18,8 +18,8 @@ content_hash: bb156f354b39558d
 # ForCenNet: Foreground-Centric Network for Document Image Rectification
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19804](https://arxiv.org/abs/2507.19804)
-**Code**: [https://github.com/caipeng328/ForCenNet](https://github.com/caipeng328/ForCenNet)
+**arXiv**: [2507.19804](https://arxiv.org/abs/2507.19804)  
+**Code**: [https://github.com/caipeng328/ForCenNet](https://github.com/caipeng328/ForCenNet)  
 **Area**: Document Analysis / Image Rectification
 **Keywords**: document image rectification, foreground guidance, curvature consistency loss, mask guidance, deformation field prediction
 

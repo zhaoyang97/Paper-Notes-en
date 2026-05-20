@@ -18,8 +18,8 @@ content_hash: 4515b40fb12f223b
 # MetaSpectra+: A Compact Broadband Metasurface Camera for Snapshot Hyperspectral+ Imaging
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09116](https://arxiv.org/abs/2603.09116)
-**Code**: [https://meta-imaging.qiguo.org](https://meta-imaging.qiguo.org)
+**arXiv**: [2603.09116](https://arxiv.org/abs/2603.09116)  
+**Code**: [https://meta-imaging.qiguo.org](https://meta-imaging.qiguo.org)  
 **Area**: Remote Sensing / Computational Hyperspectral Imaging
 **Keywords**: Metasurface Imaging, Hyperspectral Reconstruction, Snapshot Imaging, HDR, Polarization Imaging
 

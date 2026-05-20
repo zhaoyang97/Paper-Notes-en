@@ -18,8 +18,8 @@ content_hash: 014cc7ce961305b8
 # Less is More: Empowering GUI Agent with Context-Aware Simplification
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.03730](https://arxiv.org/abs/2507.03730)
-**Code**: [github.com/JiuTian-VL/SimpAgent](https://github.com/JiuTian-VL/SimpAgent)
+**arXiv**: [2507.03730](https://arxiv.org/abs/2507.03730)  
+**Code**: [github.com/JiuTian-VL/SimpAgent](https://github.com/JiuTian-VL/SimpAgent)  
 **Area**: LLM Agent
 **Keywords**: GUI Agent, Context Simplification, Element Pruning, History Compression, Computational Efficiency
 

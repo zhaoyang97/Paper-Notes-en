@@ -18,8 +18,8 @@ content_hash: 87c702855baac991
 # Quantifying and Alleviating Co-Adaptation in Sparse-View 3D Gaussian Splatting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.12720](https://arxiv.org/abs/2508.12720)
-**Code**: None
+**arXiv**: [2508.12720](https://arxiv.org/abs/2508.12720)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, sparse-view, co-adaptation, Dropout, novel view synthesis
 

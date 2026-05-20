@@ -18,8 +18,8 @@ content_hash: 5865e6ccb072ec6a
 # Brain-like Variational Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.19315](https://arxiv.org/abs/2410.19315)
-**Code**: [hadivafaii/IterativeVAE](https://github.com/hadivafaii/IterativeVAE)
+**arXiv**: [2410.19315](https://arxiv.org/abs/2410.19315)  
+**Code**: [hadivafaii/IterativeVAE](https://github.com/hadivafaii/IterativeVAE)  
 **Area**: Computational Neuroscience / Variational Inference
 **Keywords**: variational inference, spiking neural network, predictive coding, free energy, Poisson VAE
 

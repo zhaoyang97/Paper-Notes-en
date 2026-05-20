@@ -18,8 +18,8 @@ content_hash: 6d6ac895da3fd236
 # The Reasoning Trap — Logical Reasoning as a Mechanistic Pathway to Situational Awareness
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.09200](https://arxiv.org/abs/2603.09200)
-**Code**: None (position paper)
+**arXiv**: [2603.09200](https://arxiv.org/abs/2603.09200)  
+**Code**: None (position paper)  
 **Area**: Interpretability
 **Keywords**: situational awareness, AI safety, logical reasoning, deceptive alignment, RAISE framework
 

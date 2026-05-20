@@ -18,7 +18,7 @@ content_hash: a0833d86639eda4d
 # A Data-Driven Model Predictive Control Framework for Multi-Aircraft TMA Routing Under Travel Time Uncertainty
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19452](https://arxiv.org/abs/2511.19452)
+**arXiv**: [2511.19452](https://arxiv.org/abs/2511.19452)  
 **Area**: Air Traffic Management / Terminal Maneuvering Area Route Planning
 **Keywords**: TMA operations, STAR route planning, travel time uncertainty, model predictive control, MILP
 

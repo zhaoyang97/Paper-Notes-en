@@ -18,8 +18,8 @@ content_hash: f3fe79d3dd3ba7a2
 # InfiniDreamer: Arbitrarily Long Human Motion Generation via Segment Score Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.18303](https://arxiv.org/abs/2411.18303)
-**Code**: To be confirmed
+**arXiv**: [2411.18303](https://arxiv.org/abs/2411.18303)  
+**Code**: To be confirmed  
 **Area**: Human Motion Generation / Diffusion Models
 **Keywords**: Long-sequence motion generation, Score Distillation, sliding window, training-free, motion diffusion model
 

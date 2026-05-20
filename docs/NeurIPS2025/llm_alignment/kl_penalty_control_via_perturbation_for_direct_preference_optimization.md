@@ -19,8 +19,8 @@ content_hash: cd7033a375f5c1f9
 # KL Penalty Control via Perturbation for Direct Preference Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.13177](https://arxiv.org/abs/2502.13177)
-**Code**: [GitHub](https://github.com/oddqueue/e-dpo)
+**arXiv**: [2502.13177](https://arxiv.org/abs/2502.13177)  
+**Code**: [GitHub](https://github.com/oddqueue/e-dpo)  
 **Area**: LLM Alignment
 **Keywords**: DPO, KL penalty, preference optimization, instance-level adaptation, direct alignment, RLHF
 

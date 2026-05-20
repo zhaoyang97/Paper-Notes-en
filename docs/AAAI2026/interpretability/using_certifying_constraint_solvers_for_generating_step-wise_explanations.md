@@ -18,8 +18,8 @@ content_hash: 3a2c9a732b19c5c6
 # Using Certifying Constraint Solvers for Generating Step-wise Explanations
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10428](https://arxiv.org/abs/2511.10428)
-**Code**: None
+**arXiv**: [2511.10428](https://arxiv.org/abs/2511.10428)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Constraint solving, step-wise explanation, proof logging, explainable AI, unsatisfiability
 

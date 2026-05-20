@@ -18,8 +18,8 @@ content_hash: d6a903094fe757e8
 # The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.09677](https://arxiv.org/abs/2509.09677)
-**Code**: Available
+**arXiv**: [2509.09677](https://arxiv.org/abs/2509.09677)  
+**Code**: Available  
 **Area**: LLM Reasoning
 **Keywords**: long-horizon execution, self-conditioning, chain-of-thought, scaling, diminishing returns
 

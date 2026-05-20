@@ -18,8 +18,8 @@ content_hash: 21ea01bc18b25e55
 # Unblur-SLAM: Dense Neural SLAM for Blurry Inputs
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26810](https://arxiv.org/abs/2603.26810)
-**Code**: [https://github.com/SlamMate/Unblur-SLAM.git](https://github.com/SlamMate/Unblur-SLAM.git)
+**arXiv**: [2603.26810](https://arxiv.org/abs/2603.26810)  
+**Code**: [https://github.com/SlamMate/Unblur-SLAM.git](https://github.com/SlamMate/Unblur-SLAM.git)  
 **Area**: 3D Vision / Neural SLAM
 **Keywords**: blur-robust SLAM, 3DGS, single-image deblurring, sub-frame modeling, hybrid bundle adjustment
 

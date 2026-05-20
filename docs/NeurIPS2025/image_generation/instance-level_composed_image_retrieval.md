@@ -18,8 +18,8 @@ content_hash: 769e81f2ef8fefb1
 # Instance-Level Composed Image Retrieval
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25387](https://arxiv.org/abs/2510.25387)
-**Code**: [GitHub](https://github.com/billpsomas/icir) | [Project Page](https://vrg.fel.cvut.cz/icir/)
+**arXiv**: [2510.25387](https://arxiv.org/abs/2510.25387)  
+**Code**: [GitHub](https://github.com/billpsomas/icir) | [Project Page](https://vrg.fel.cvut.cz/icir/)  
 **Area**: Image Retrieval / Multimodal
 **Keywords**: Composed Image Retrieval, Instance-Level Retrieval, VLM, Training-Free, Feature Fusion
 

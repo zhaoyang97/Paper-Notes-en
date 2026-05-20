@@ -18,8 +18,8 @@ content_hash: 4b1b453f837cb17e
 # How Do Answer Tokens Read Reasoning Traces? Self-Reading Patterns in Thinking LLMs
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19149](https://arxiv.org/abs/2604.19149)
-**Code**: None
+**arXiv**: [2604.19149](https://arxiv.org/abs/2604.19149)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: reasoning models, self-reading patterns, attention analysis, activation steering, quantitative reasoning
 

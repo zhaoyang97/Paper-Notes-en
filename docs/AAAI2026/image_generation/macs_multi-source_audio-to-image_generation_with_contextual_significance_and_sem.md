@@ -18,8 +18,8 @@ content_hash: 9893b5d82958a1d8
 # MACS: Multi-source Audio-to-Image Generation with Contextual Significance and Semantic Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.10287](https://arxiv.org/abs/2503.10287)
-**Code**: [https://github.com/alxzzhou/MACS](https://github.com/alxzzhou/MACS)
+**arXiv**: [2503.10287](https://arxiv.org/abs/2503.10287)  
+**Code**: [https://github.com/alxzzhou/MACS](https://github.com/alxzzhou/MACS)  
 **Area**: Image Generation
 **Keywords**: Audio-to-image generation, multi-source audio, sound source separation, cross-modal alignment, diffusion models
 

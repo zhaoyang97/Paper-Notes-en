@@ -18,8 +18,8 @@ content_hash: 5a06d210fa9676c7
 # DevFD: Developmental Face Forgery Detection by Learning Shared and Orthogonal LoRA Subspaces
 
 **Conference**: NEURIPS2025
-**arXiv**: [2509.19230](https://arxiv.org/abs/2509.19230)
-**Code**: To be confirmed
+**arXiv**: [2509.19230](https://arxiv.org/abs/2509.19230)  
+**Code**: To be confirmed  
 **Area**: Human Understanding
 **Keywords**: face forgery detection, continual learning, mixture of experts, LoRA, orthogonal subspace
 
@@ -52,7 +52,7 @@ This paper proposes DevFD—a developmental MoE architecture that models the com
 - **Problem analysis**: Constraining only subspace orthogonality ($\|\mathbf{B}_t^T\mathbf{B}_i\|^2$) is insufficient—when orthogonality conditions are not yet met in early training, new-task gradients can still corrupt knowledge in old subspaces.
 - **Orthogonal gradient constraint**: Exploiting the property that gradient updates of a linear layer lie in the span of its input vectors, SVD is applied to the input matrix $\mathbf{H}_t$, and the top-$r$ right singular vectors $(\mathbf{V}_t^T)_r$ are used as an estimate of the gradient subspace.
 - **Integrated loss**: $\mathcal{L}_{\text{ort}} = \frac{1}{t-1}\sum_{i=1}^{t-1}(\lambda_1\sum\|\mathbf{O}_{i,t}\|^2 + \lambda_2\sum\|\mathbf{G}_{i,t}\|^2)$
-  - The first term enforces subspace orthogonality; the second enforces gradient-space orthogonality, providing dual protection against forgetting.
+    - The first term enforces subspace orthogonality; the second enforces gradient-space orthogonality, providing dual protection against forgetting.
 
 ### 3. Label-Guided Localized Balancing (LLB)
 - A response matrix $\mathbf{I} \in \mathbb{R}^{(t+1)\times n}$ is constructed to measure each expert's response intensity for each sample.

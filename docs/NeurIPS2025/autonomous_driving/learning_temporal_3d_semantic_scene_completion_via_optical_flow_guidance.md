@@ -18,9 +18,9 @@ content_hash: 0b82a38c20a70553
 # FlowScene: Learning Temporal 3D Semantic Scene Completion via Optical Flow Guidance
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.14520](https://arxiv.org/abs/2502.14520)
+**arXiv**: [2502.14520](https://arxiv.org/abs/2502.14520)  
 **Authors**: Meng Wang, Fan Wu, Ruihui Li, Yunchuan Qin, Zhuo Tang, Kenli Li (Hunan University)
-**Code**: [https://github.com/willemeng/FlowScene](https://github.com/willemeng/FlowScene)
+**Code**: [https://github.com/willemeng/FlowScene](https://github.com/willemeng/FlowScene)  
 **Area**: Autonomous Driving / 3D Semantic Scene Completion
 **Keywords**: 3D Semantic Scene Completion, Optical Flow Guidance, Temporal Modeling, Occlusion Awareness, Voxel Refinement
 

@@ -19,8 +19,8 @@ content_hash: 2ed7ce70ccc0cd61
 # On Learning Verifiers and Implications to Chain-of-Thought Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22650](https://arxiv.org/abs/2505.22650)
-**Code**: None
+**arXiv**: [2505.22650](https://arxiv.org/abs/2505.22650)  
+**Code**: None  
 **Area**: LLM Reasoning / Computational Learning Theory
 **Keywords**: verifier, chain-of-thought, PAC learning, sample complexity, trustable verification, computational complexity gap
 

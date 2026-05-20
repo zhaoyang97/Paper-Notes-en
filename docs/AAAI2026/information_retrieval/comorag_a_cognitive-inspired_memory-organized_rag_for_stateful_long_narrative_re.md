@@ -18,8 +18,8 @@ content_hash: 459e15eba9dd40a9
 # ComoRAG: A Cognitive-Inspired Memory-Organized RAG for Stateful Long Narrative Reasoning
 
 **Conference**: AAAI2026
-**arXiv**: [2508.10419](https://arxiv.org/abs/2508.10419)
-**Code**: [EternityJune25/ComoRAG](https://github.com/EternityJune25/ComoRAG)
+**arXiv**: [2508.10419](https://arxiv.org/abs/2508.10419)  
+**Code**: [EternityJune25/ComoRAG](https://github.com/EternityJune25/ComoRAG)  
 **Area**: Information Retrieval
 **Keywords**: RAG, Long Narrative Reasoning, Memory-Organized, Metacognitive Regulation, Stateful Reasoning
 

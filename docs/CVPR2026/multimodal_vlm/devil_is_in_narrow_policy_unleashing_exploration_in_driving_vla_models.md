@@ -18,8 +18,8 @@ content_hash: 27c2ce6524b8970f
 # Devil is in Narrow Policy: Unleashing Exploration in Driving VLA Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.06049](https://arxiv.org/abs/2603.06049)
-**Code**: [GitHub](https://github.com/Mashiroln/curious_vla.git)
+**arXiv**: [2603.06049](https://arxiv.org/abs/2603.06049)  
+**Code**: [GitHub](https://github.com/Mashiroln/curious_vla.git)  
 **Area**: Multimodal VLM
 **Keywords**: Autonomous Driving VLA, Narrow Policy, Exploration-Exploitation Dilemma, Reinforcement Learning, Trajectory Diversity
 

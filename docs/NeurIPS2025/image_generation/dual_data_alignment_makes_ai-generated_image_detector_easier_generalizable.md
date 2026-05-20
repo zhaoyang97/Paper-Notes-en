@@ -19,8 +19,8 @@ content_hash: 63610dc21072fcce
 # Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.14359](https://arxiv.org/abs/2505.14359)
-**Code**: [roy-ch/Dual-Data-Alignment](https://github.com/roy-ch/Dual-Data-Alignment)
+**arXiv**: [2505.14359](https://arxiv.org/abs/2505.14359)  
+**Code**: [roy-ch/Dual-Data-Alignment](https://github.com/roy-ch/Dual-Data-Alignment)  
 **Area**: Image Generation
 **Keywords**: AI-generated image detection, data alignment, frequency-domain alignment, generalizability, VAE reconstruction, dataset bias
 

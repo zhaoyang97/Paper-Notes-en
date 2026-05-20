@@ -18,8 +18,8 @@ content_hash: 7a738a2057890b41
 # AdmTree: Compressing Lengthy Context with Adaptive Semantic Trees
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.04550](https://arxiv.org/abs/2512.04550)
-**Code**: None (no link provided in the paper)
+**arXiv**: [2512.04550](https://arxiv.org/abs/2512.04550)  
+**Code**: None (no link provided in the paper)  
 **Area**: LLM Efficiency / Model Compression
 **Keywords**: Context Compression, Semantic Tree, Gist Token, Hierarchical Compression, Long Context
 

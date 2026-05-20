@@ -18,8 +18,8 @@ content_hash: 40d7f5d04660d9b3
 # Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04171](https://arxiv.org/abs/2506.04171)
-**Code**: [Python](https://github.com/cpfpengfei/PCFM) / [Julia](https://github.com/utkarsh530/PCFM.jl)
+**arXiv**: [2506.04171](https://arxiv.org/abs/2506.04171)  
+**Code**: [Python](https://github.com/cpfpengfei/PCFM) / [Julia](https://github.com/utkarsh530/PCFM.jl)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Flow Matching, Physical Constraints, Hard Constraint Satisfaction, PDE Solving, Zero-Shot Inference
 

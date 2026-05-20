@@ -18,8 +18,8 @@ content_hash: ea3df5512a5f3077
 # SurfSplat: Conquering Feedforward 2D Gaussian Splatting with Surface Continuity Priors
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.02000](https://arxiv.org/abs/2602.02000)
-**Code**: [https://hebing-sjtu.github.io/SurfSplat-website/](https://hebing-sjtu.github.io/SurfSplat-website/)
+**arXiv**: [2602.02000](https://arxiv.org/abs/2602.02000)  
+**Code**: [https://hebing-sjtu.github.io/SurfSplat-website/](https://hebing-sjtu.github.io/SurfSplat-website/)  
 **Area**: 3D Vision
 **Keywords**: 2D Gaussian Splatting, feedforward 3D reconstruction, surface continuity, high-resolution rendering consistency, sparse-view
 

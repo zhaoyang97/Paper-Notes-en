@@ -18,8 +18,8 @@ content_hash: 567d713e1c1751ba
 # Blind Strong Gravitational Lensing Inversion: Joint Inference of Source and Lens Mass with Score-Based Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.04792](https://arxiv.org/abs/2511.04792)
-**Code**: Available
+**arXiv**: [2511.04792](https://arxiv.org/abs/2511.04792)  
+**Code**: Available  
 **Area**: Scientific Computing / Astronomy / Generative Models
 **Keywords**: Strong gravitational lensing, blind inversion, score-based models, joint inference, dark matter
 
@@ -52,22 +52,22 @@ Joint posterior sampling over $p(\mathbf{x}, \boldsymbol{\ell} | \mathbf{y})$, w
 
 1. **Continuous-Time GibbsDDRM**:
 
-   - **Function**: Extends discrete-time GibbsDDRM to the continuous-time SDE framework.
-   - **Mechanism**: Alternately updates the source (via diffusion guidance) and lens parameters (via Langevin steps) within the reverse SDE, using the score-based prior $\nabla_{\mathbf{x}_t} \log p_t(\mathbf{x}_t)$ together with an approximate likelihood score $\nabla_{\mathbf{x}_t} \log p_t(\mathbf{y} | \mathbf{x}_t)$.
-   - **Design Motivation**: The continuous-time formulation enables flexible noise scheduling via VE-SDE (variance-exploding), avoiding the step-size constraints of discrete-time methods.
+    - **Function**: Extends discrete-time GibbsDDRM to the continuous-time SDE framework.
+    - **Mechanism**: Alternately updates the source (via diffusion guidance) and lens parameters (via Langevin steps) within the reverse SDE, using the score-based prior $\nabla_{\mathbf{x}_t} \log p_t(\mathbf{x}_t)$ together with an approximate likelihood score $\nabla_{\mathbf{x}_t} \log p_t(\mathbf{y} | \mathbf{x}_t)$.
+    - **Design Motivation**: The continuous-time formulation enables flexible noise scheduling via VE-SDE (variance-exploding), avoiding the step-size constraints of discrete-time methods.
 
 2. **Two Likelihood Score Approximations**:
 
-   - **Function**: Approximate the intractable $\nabla_{\mathbf{x}_t} \log p_t(\mathbf{y} | \mathbf{x}_t)$.
-   - **CLA (Conditional Likelihood Approximation)**: Assumes $p_t(\mathbf{y} | \mathbf{x}_t)$ is proportional to $p(\mathbf{y} | \hat{\mathbf{x}}_0(\mathbf{x}_t))$.
-   - **ΠiGDM**: Uses a projection-based approximation, more accurate but computationally costlier.
-   - **Design Motivation**: Exact computation requires marginalizing over all possible $\mathbf{x}_0$; the two approximations offer different accuracy–efficiency trade-offs across scenarios.
+    - **Function**: Approximate the intractable $\nabla_{\mathbf{x}_t} \log p_t(\mathbf{y} | \mathbf{x}_t)$.
+    - **CLA (Conditional Likelihood Approximation)**: Assumes $p_t(\mathbf{y} | \mathbf{x}_t)$ is proportional to $p(\mathbf{y} | \hat{\mathbf{x}}_0(\mathbf{x}_t))$.
+    - **ΠiGDM**: Uses a projection-based approximation, more accurate but computationally costlier.
+    - **Design Motivation**: Exact computation requires marginalizing over all possible $\mathbf{x}_0$; the two approximations offer different accuracy–efficiency trade-offs across scenarios.
 
 3. **Lens Parameter Sampling**:
 
-   - **Function**: Sample the 12 lens macro-parameters conditioned on the reconstructed source.
-   - **Mechanism**: Exploits the differentiability of the forward model to perform gradient-based Langevin steps over $\boldsymbol{\ell}$. Following each source sample, 500 conditional lens samples are drawn to adequately explore parameter space.
-   - **Design Motivation**: The parameter space contains multiple local minima; MCMC sampling (rather than point optimization) enables proper uncertainty quantification.
+    - **Function**: Sample the 12 lens macro-parameters conditioned on the reconstructed source.
+    - **Mechanism**: Exploits the differentiability of the forward model to perform gradient-based Langevin steps over $\boldsymbol{\ell}$. Following each source sample, 500 conditional lens samples are drawn to adequately explore parameter space.
+    - **Design Motivation**: The parameter space contains multiple local minima; MCMC sampling (rather than point optimization) enables proper uncertainty quantification.
 
 ### Loss & Training
 - The score model is pretrained on simulated unlensed galaxy images.

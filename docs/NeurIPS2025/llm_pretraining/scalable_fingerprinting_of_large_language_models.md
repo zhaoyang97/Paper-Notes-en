@@ -18,8 +18,8 @@ content_hash: 52c019ee04502179
 # Scalable Fingerprinting of Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.07760](https://arxiv.org/abs/2502.07760)
-**Code**: [GitHub](https://github.com/SewoongLab/scalable-fingerprinting-of-llms)
+**arXiv**: [2502.07760](https://arxiv.org/abs/2502.07760)  
+**Code**: [GitHub](https://github.com/SewoongLab/scalable-fingerprinting-of-llms)  
 **Area**: LLM Pretraining
 **Keywords**: model fingerprinting, LLM ownership, Perinucleus sampling, collusion attack, model security
 

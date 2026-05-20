@@ -17,8 +17,8 @@ content_hash: a8c7f8d40d55e59c
 # Transparent Networks for Multivariate Time Series
 
 **Conference**: AAAI 2026
-**arXiv**: [2410.10535](https://arxiv.org/abs/2410.10535)
-**Code**: [https://github.com/gim4855744/GATSM](https://github.com/gim4855744/GATSM)
+**arXiv**: [2410.10535](https://arxiv.org/abs/2410.10535)  
+**Code**: [https://github.com/gim4855744/GATSM](https://github.com/gim4855744/GATSM)  
 **Area**: Time Series
 **Keywords**: Interpretable Models, Generalized Additive Models, Time Series, Transparent Networks, Attention Mechanism
 

@@ -18,8 +18,8 @@ content_hash: 4e7825438b46ccc6
 # FC-Track: Overlap-Aware Post-Association Correction for Online Multi-Object Tracking
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12758](https://arxiv.org/abs/2603.12758)
-**Code**: To be confirmed
+**arXiv**: [2603.12758](https://arxiv.org/abs/2603.12758)  
+**Code**: To be confirmed  
 **Area**: Video Understanding
 **Keywords**: Multi-object tracking, identity switch correction, overlap-aware, post-association correction, online tracking
 

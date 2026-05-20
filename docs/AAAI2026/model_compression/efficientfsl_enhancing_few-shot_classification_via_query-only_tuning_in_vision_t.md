@@ -18,8 +18,8 @@ content_hash: 106de9e82dde5b03
 # EfficientFSL: Enhancing Few-Shot Classification via Query-Only Tuning in Vision Transformers
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.08499](https://arxiv.org/abs/2601.08499)
-**Code**: N/A
+**arXiv**: [2601.08499](https://arxiv.org/abs/2601.08499)  
+**Code**: N/A  
 **Area**: Model Compression
 **Keywords**: Few-Shot Learning, Parameter-Efficient Fine-Tuning, Vision Transformer, Query-Only Tuning, Prototypical Networks
 

@@ -19,8 +19,8 @@ content_hash: 44c7b8b009360e8d
 # A Closer Look at Model Collapse: From a Generalization-to-Memorization Perspective
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16499](https://arxiv.org/abs/2509.16499)
-**Code**: None
+**arXiv**: [2509.16499](https://arxiv.org/abs/2509.16499)  
+**Code**: None  
 **Area**: Diffusion Models / Generative Model Theory
 **Keywords**: model collapse, self-consuming loop, generalization, memorization, entropy, data selection
 
@@ -53,27 +53,27 @@ The work is divided into two parts: **analysis** and **intervention**. The analy
 
 1. **Generalization Score**
 
-   - Function: Quantifies whether the model is *generating novel samples* or *copying training samples*.
-   - Mechanism: $\text{GS}(n) = \frac{1}{|\mathcal{G}_n|} \sum_{x \in \mathcal{G}_n} \min_{z \in \mathcal{D}_n} \kappa(x, z)$, computing the average nearest-neighbor distance from each generated sample to the training set. A high GS indicates generalization (novel samples); a low GS indicates memorization (training set replication).
-   - Design Motivation: A directly actionable metric that aligns with human perception of diversity. Experiments show GS decays *near-exponentially* across iterations, providing quantitative evidence of the generalization-to-memorization transition.
+    - Function: Quantifies whether the model is *generating novel samples* or *copying training samples*.
+    - Mechanism: $\text{GS}(n) = \frac{1}{|\mathcal{G}_n|} \sum_{x \in \mathcal{G}_n} \min_{z \in \mathcal{D}_n} \kappa(x, z)$, computing the average nearest-neighbor distance from each generated sample to the training set. A high GS indicates generalization (novel samples); a low GS indicates memorization (training set replication).
+    - Design Motivation: A directly actionable metric that aligns with human perception of diversity. Experiments show GS decays *near-exponentially* across iterations, providing quantitative evidence of the generalization-to-memorization transition.
 
 2. **Differential Entropy Estimation (KL Estimator)**
 
-   - Function: Quantifies the information content of the training dataset.
-   - Mechanism: Employs the Kozachenko–Leonenko estimator, approximating differential entropy of a continuous distribution via $k$-nearest-neighbor distances: $\hat{H}_\gamma(\mathcal{D}) = \psi(|\mathcal{D}|) - \psi(\gamma) + \log c_d + \frac{d}{|\mathcal{D}|} \sum_{x \in \mathcal{D}} \log \varepsilon_\gamma(x)$. When dataset size is fixed, the only varying term is the sum of nearest-neighbor distances—smaller distances imply more clustered data and lower entropy.
-   - Key Finding: Entropy exhibits a linear relationship with $\log(\text{GS})$, with a Pearson correlation of 0.91 ($p \approx 0$). This relationship holds approximately on a single line across datasets of different sizes, suggesting it is a **universal law**.
+    - Function: Quantifies the information content of the training dataset.
+    - Mechanism: Employs the Kozachenko–Leonenko estimator, approximating differential entropy of a continuous distribution via $k$-nearest-neighbor distances: $\hat{H}_\gamma(\mathcal{D}) = \psi(|\mathcal{D}|) - \psi(\gamma) + \log c_d + \frac{d}{|\mathcal{D}|} \sum_{x \in \mathcal{D}} \log \varepsilon_\gamma(x)$. When dataset size is fixed, the only varying term is the sum of nearest-neighbor distances—smaller distances imply more clustered data and lower entropy.
+    - Key Finding: Entropy exhibits a linear relationship with $\log(\text{GS})$, with a Pearson correlation of 0.91 ($p \approx 0$). This relationship holds approximately on a single line across datasets of different sizes, suggesting it is a **universal law**.
 
 3. **Greedy Selection**
 
-   - Function: Selects a high-entropy (high-diversity) training subset from the candidate pool.
-   - Mechanism: Farthest-point sampling—iteratively selects the point maximally distant from the already-selected set: $x_{\text{select}} = \arg\max_{x \in S \setminus \mathcal{D}} \min_{y \in \mathcal{D}} \kappa(x, y)$. Features are extracted with DINOv2; L2 distance is computed in feature space.
-   - Design Motivation: Directly approximates maximization of the KL entropy estimate of the training subset. Although a greedy approximation, it is efficient and effectively disperses clustered data.
+    - Function: Selects a high-entropy (high-diversity) training subset from the candidate pool.
+    - Mechanism: Farthest-point sampling—iteratively selects the point maximally distant from the already-selected set: $x_{\text{select}} = \arg\max_{x \in S \setminus \mathcal{D}} \min_{y \in \mathcal{D}} \kappa(x, y)$. Features are extracted with DINOv2; L2 distance is computed in feature space.
+    - Design Motivation: Directly approximates maximization of the KL entropy estimate of the training subset. Although a greedy approximation, it is efficient and effectively disperses clustered data.
 
 4. **Threshold Decay Filter**
 
-   - Function: Provides a soft variant with adjustable selection intensity.
-   - Mechanism: A distance threshold $\tau$ is initialized; candidates are accepted only if their distance to every already-selected point exceeds $\tau$. If insufficient samples are selected, $\tau$ is multiplied by a decay factor $\alpha$ (e.g., 0.95) and selection is repeated.
-   - Design Motivation: Avoids over-optimization by Greedy Selection, which may spread the distribution too broadly and inflate variance. The Threshold Decay Filter controls selection intensity via the threshold; $\alpha \to 1$ approximates greedy selection, while $\alpha = 0$ degenerates to the unfiltered baseline.
+    - Function: Provides a soft variant with adjustable selection intensity.
+    - Mechanism: A distance threshold $\tau$ is initialized; candidates are accepted only if their distance to every already-selected point exceeds $\tau$. If insufficient samples are selected, $\tau$ is multiplied by a decay factor $\alpha$ (e.g., 0.95) and selection is repeated.
+    - Design Motivation: Avoids over-optimization by Greedy Selection, which may spread the distribution too broadly and inflate variance. The Threshold Decay Filter controls selection intensity via the threshold; $\alpha \to 1$ approximates greedy selection, while $\alpha = 0$ degenerates to the unfiltered baseline.
 
 ### Loss & Training
 - Diffusion models are trained with the standard DDPM objective; the UNet backbone contains approximately 16–19M parameters.

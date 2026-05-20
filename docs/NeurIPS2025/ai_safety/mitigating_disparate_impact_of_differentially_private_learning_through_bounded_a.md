@@ -18,8 +18,8 @@ content_hash: c0d8c86528b8c4da
 # Mitigating Disparate Impact of Differentially Private Learning through Bounded Adaptive Clipping
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01396](https://arxiv.org/abs/2506.01396)
-**Code**: Expected to be released
+**arXiv**: [2506.01396](https://arxiv.org/abs/2506.01396)  
+**Code**: Expected to be released  
 **Area**: AI Safety / Privacy-Preserving Machine Learning
 **Keywords**: Differential Privacy, Fairness, Gradient Clipping, DP-SGD, Disparate Impact
 

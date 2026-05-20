@@ -20,8 +20,8 @@ content_hash: 7f03e81784b7951d
 # PhyGaP: Physically-Grounded Gaussians with Polarization Cues
 
 **Conference**: CVPR2026
-**arXiv**: [2603.14001](https://arxiv.org/abs/2603.14001)
-**Code**: Coming soon
+**arXiv**: [2603.14001](https://arxiv.org/abs/2603.14001)  
+**Code**: Coming soon  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, polarization imaging, inverse rendering, relighting, reflection decomposition, pBRDF, environment lighting
 

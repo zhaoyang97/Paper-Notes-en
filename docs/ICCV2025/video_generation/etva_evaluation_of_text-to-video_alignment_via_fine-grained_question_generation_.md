@@ -18,8 +18,8 @@ content_hash: 789f815f6fc0db08
 # ETVA: Evaluation of Text-to-Video Alignment via Fine-Grained Question Generation and Answering
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.16867](https://arxiv.org/abs/2503.16867)
-**Code**: [eftv-eval.github.io/etva-eval](https://eftv-eval.github.io/etva-eval)
+**arXiv**: [2503.16867](https://arxiv.org/abs/2503.16867)  
+**Code**: [eftv-eval.github.io/etva-eval](https://eftv-eval.github.io/etva-eval)  
 **Area**: Video Generation
 **Keywords**: Text-video alignment evaluation, question-answering framework, scene graph, multi-agent, knowledge-augmented reasoning
 

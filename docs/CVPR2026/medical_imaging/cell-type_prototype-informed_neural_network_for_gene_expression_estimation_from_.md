@@ -18,8 +18,8 @@ content_hash: 233d274167003487
 # Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.18461](https://arxiv.org/abs/2603.18461)
-**Code**: [https://github.com/naivete5656/CPNN](https://github.com/naivete5656/CPNN)
+**arXiv**: [2603.18461](https://arxiv.org/abs/2603.18461)  
+**Code**: [https://github.com/naivete5656/CPNN](https://github.com/naivete5656/CPNN)  
 **Area**: Medical Imaging
 **Keywords**: gene expression estimation, pathology images, single-cell RNA sequencing, cell-type prototype, multiple instance learning
 

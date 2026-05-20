@@ -18,8 +18,8 @@ content_hash: 00509eb6cf74dea2
 # MCGA: A Multi-task Classical Chinese Literary Genre Audio Corpus
 
 **Conference**: ACL 2026
-**arXiv**: [2601.09270](https://arxiv.org/abs/2601.09270)
-**Code**: [https://github.com/yxduir/MCGA](https://github.com/yxduir/MCGA)
+**arXiv**: [2601.09270](https://arxiv.org/abs/2601.09270)  
+**Code**: [https://github.com/yxduir/MCGA](https://github.com/yxduir/MCGA)  
 **Area**: Speech & Natural Language Processing / Classical Chinese Literature
 **Keywords**: classical literary speech corpus, multimodal large language models, speech emotion analysis, cross-modal consistency, classical Chinese literary studies
 

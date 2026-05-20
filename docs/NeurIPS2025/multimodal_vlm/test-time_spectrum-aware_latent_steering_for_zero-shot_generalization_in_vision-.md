@@ -18,8 +18,8 @@ content_hash: 377ed13f87b73555
 # Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.09809](https://arxiv.org/abs/2511.09809)
-**Code**: [GitHub](https://github.com/kdafnis/STS)
+**arXiv**: [2511.09809](https://arxiv.org/abs/2511.09809)  
+**Code**: [GitHub](https://github.com/kdafnis/STS)  
 **Area**: Multimodal VLM
 **Keywords**: Test-time adaptation, VLM zero-shot generalization, SVD spectral decomposition, text prototype steering, parameter efficiency
 

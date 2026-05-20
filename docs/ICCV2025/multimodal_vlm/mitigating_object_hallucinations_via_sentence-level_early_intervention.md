@@ -18,8 +18,8 @@ content_hash: 7095e5e66ee0a60a
 # Mitigating Object Hallucinations via Sentence-Level Early Intervention
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.12455](https://arxiv.org/abs/2507.12455)
-**Code**: [GitHub](https://github.com/pspdada/SENTINEL)
+**arXiv**: [2507.12455](https://arxiv.org/abs/2507.12455)  
+**Code**: [GitHub](https://github.com/pspdada/SENTINEL)  
 **Area**: Multimodal VLM
 **Keywords**: MLLM hallucination, preference learning, early intervention, DPO, object detection verification
 

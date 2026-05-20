@@ -19,8 +19,8 @@ content_hash: 573cedf634182284
 # ExPO: Unlocking Hard Reasoning with Self-Explanation-Guided Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.02834](https://arxiv.org/abs/2507.02834)
-**Code**: [GitHub](https://github.com/HumainLab/ExPO_rl_reasoning_by_explanation)
+**arXiv**: [2507.02834](https://arxiv.org/abs/2507.02834)  
+**Code**: [GitHub](https://github.com/HumainLab/ExPO_rl_reasoning_by_explanation)  
 **Area**: LLM Reasoning / Reinforcement Learning Post-Training
 **Keywords**: Self-Explanation, GRPO, DPO, Positive Sample Generation, Hard Reasoning, Distribution Sharpening
 

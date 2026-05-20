@@ -18,8 +18,8 @@ content_hash: f6f714297b65d9c0
 # Market Games for Generative Models: Equilibria, Welfare, and Strategic Entry
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.17787](https://arxiv.org/abs/2602.17787)
-**Code**: [GitHub](https://github.com/osu-srml/Generative_Competition)
+**arXiv**: [2602.17787](https://arxiv.org/abs/2602.17787)  
+**Code**: [GitHub](https://github.com/osu-srml/Generative_Competition)  
 **Area**: Game Theory / Generative Model Markets
 **Keywords**: Market Games, Nash Equilibrium, Generative Model Competition, Social Welfare, Strategic Entry
 

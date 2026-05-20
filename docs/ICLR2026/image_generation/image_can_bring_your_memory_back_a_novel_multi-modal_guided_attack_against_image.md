@@ -18,8 +18,8 @@ content_hash: 288cd491bc034e08
 # Image Can Bring Your Memory Back: A Novel Multi-Modal Guided Attack against Image Generation Model Unlearning
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.07139](https://arxiv.org/abs/2507.07139)
-**Code**: [GitHub](https://github.com/ryliu68/RECALL)
+**arXiv**: [2507.07139](https://arxiv.org/abs/2507.07139)  
+**Code**: [GitHub](https://github.com/ryliu68/RECALL)  
 **Area**: Diffusion Models / Unlearning / Security
 **Keywords**: machine unlearning attack, multi-modal adversarial, image prompt, diffusion model security, robustness auditing
 
@@ -51,21 +51,21 @@ A three-stage pipeline: (1) **Latent Encoding** — the reference image and a no
 
 1. **Noise Initialization Strategy**:
 
-   - Function: Constructs the initial image prompt $P_{img}^{init} = \lambda \cdot P_{ref} + (1-\lambda) \cdot \delta$, where $\delta \sim \mathcal{N}(0, I)$ and $\lambda = 0.25$.
-   - Mechanism: A large noise fraction (75%) enlarges the sampling space and increases generation diversity, while a small reference signal (25%) provides a conceptual seed.
-   - Design Motivation: Prevents the generated image from being a mere transformation of the reference, ensuring diverse outputs that follow the text prompt.
+    - Function: Constructs the initial image prompt $P_{img}^{init} = \lambda \cdot P_{ref} + (1-\lambda) \cdot \delta$, where $\delta \sim \mathcal{N}(0, I)$ and $\lambda = 0.25$.
+    - Mechanism: A large noise fraction (75%) enlarges the sampling space and increases generation diversity, while a small reference signal (25%) provides a conceptual seed.
+    - Design Motivation: Prevents the generated image from being a mere transformation of the reference, ensuring diverse outputs that follow the text prompt.
 
 2. **Iterative Latent Optimization**:
 
-   - Function: Performs gradient-based optimization of $z_{adv}$ over 50 DDIM timesteps, with 20 gradient iterations per step.
-   - Mechanism: Minimizes the MSE between the U-Net noise predictions of the adversarial and reference latent variables under the same text conditioning: $\mathcal{L}_{adv} = \|\hat{\epsilon}_{ref,t} - \hat{\epsilon}_{adv,t}\|_2^2$.
-   - Momentum gradient update: $v_i = \beta \cdot v_{i-1} + \frac{\nabla_{z_{adv}} \mathcal{L}_{adv}}{\|\nabla_{z_{adv}} \mathcal{L}_{adv}\|_1 + \omega}$, $z_{adv} \leftarrow z_{adv} + \eta \cdot \text{sign}(v_i)$.
-   - Periodic reference injection: Every 5 steps, a small fraction of $z_{ref}$ ($\gamma = 0.05$) is blended into $z_{adv}$ to maintain semantic consistency.
+    - Function: Performs gradient-based optimization of $z_{adv}$ over 50 DDIM timesteps, with 20 gradient iterations per step.
+    - Mechanism: Minimizes the MSE between the U-Net noise predictions of the adversarial and reference latent variables under the same text conditioning: $\mathcal{L}_{adv} = \|\hat{\epsilon}_{ref,t} - \hat{\epsilon}_{adv,t}\|_2^2$.
+    - Momentum gradient update: $v_i = \beta \cdot v_{i-1} + \frac{\nabla_{z_{adv}} \mathcal{L}_{adv}}{\|\nabla_{z_{adv}} \mathcal{L}_{adv}\|_1 + \omega}$, $z_{adv} \leftarrow z_{adv} + \eta \cdot \text{sign}(v_i)$.
+    - Periodic reference injection: Every 5 steps, a small fraction of $z_{ref}$ ($\gamma = 0.05$) is blended into $z_{adv}$ to maintain semantic consistency.
 
 3. **Early Stopping**:
 
-   - Optimization halts as soon as the target content is detected to reappear, reducing unnecessary computation.
-   - If all 50 steps complete without success, the attack is deemed to have failed.
+    - Optimization halts as soon as the target content is detected to reappear, reducing unnecessary computation.
+    - If all 50 steps complete without success, the attack is deemed to have failed.
 
 ### Loss & Training
 

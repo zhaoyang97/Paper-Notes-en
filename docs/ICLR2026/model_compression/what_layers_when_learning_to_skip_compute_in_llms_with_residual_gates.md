@@ -18,7 +18,7 @@ content_hash: 2ce54c71e3e80bc3
 # What Layers When: Learning to Skip Compute in LLMs with Residual Gates
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.13876](https://arxiv.org/abs/2510.13876)
+**arXiv**: [2510.13876](https://arxiv.org/abs/2510.13876)  
 **Area**: Model Compression
 **Keywords**: residual gating, token-level layer skipping, adaptive depth, GateSkip, inference acceleration
 

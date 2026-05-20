@@ -18,8 +18,8 @@ content_hash: 2fefafb116ad19bb
 # CaMiT: A Time-Aware Car Model Dataset for Classification and Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17626](https://arxiv.org/abs/2510.17626)
-**Code**: [GitHub](https://github.com/lin-frederic/CaMiT)
+**arXiv**: [2510.17626](https://arxiv.org/abs/2510.17626)  
+**Code**: [GitHub](https://github.com/lin-frederic/CaMiT)  
 **Area**: Image Generation
 **Keywords**: temporal dataset, fine-grained classification, continual learning, time-aware generation, car model recognition
 

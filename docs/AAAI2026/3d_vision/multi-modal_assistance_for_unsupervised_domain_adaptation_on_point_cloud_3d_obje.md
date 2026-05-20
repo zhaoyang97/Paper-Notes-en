@@ -18,8 +18,8 @@ content_hash: 2cb51b830279f756
 # Multi-Modal Assistance for Unsupervised Domain Adaptation on Point Cloud 3D Object Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07966](https://arxiv.org/abs/2511.07966)
-**Code**: [github.com/liangp/MMAssist](https://github.com/liangp/MMAssist)
+**arXiv**: [2511.07966](https://arxiv.org/abs/2511.07966)  
+**Code**: [github.com/liangp/MMAssist](https://github.com/liangp/MMAssist)  
 **Area**: 3D Vision
 **Keywords**: Unsupervised Domain Adaptation, 3D Object Detection, Multi-Modal Fusion, Point Cloud, Pseudo Labels
 

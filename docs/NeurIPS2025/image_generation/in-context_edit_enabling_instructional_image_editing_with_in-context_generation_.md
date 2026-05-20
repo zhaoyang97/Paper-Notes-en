@@ -18,8 +18,8 @@ content_hash: cf55fb9dc1351462
 # ICEdit: Enabling Instructional Image Editing with In-Context Generation in Large Scale Diffusion Transformer
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.20690](https://arxiv.org/abs/2504.20690)
-**Code**: [Project Page](https://river-zhang.github.io/ICEdit-gh-pages)
+**arXiv**: [2504.20690](https://arxiv.org/abs/2504.20690)  
+**Code**: [Project Page](https://river-zhang.github.io/ICEdit-gh-pages)  
 **Area**: Image Generation
 **Keywords**: Instruction-based image editing, Diffusion Transformer, in-context learning, LoRA-MoE, inference-time scaling
 

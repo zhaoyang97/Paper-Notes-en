@@ -19,8 +19,8 @@ content_hash: 8723b93859323027
 # I-CAM-UV: Integrating Causal Graphs over Non-Identical Variable Sets Using Causal Additive Models with Unobserved Variables
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.03207](https://arxiv.org/abs/2603.03207)
-**Code**: Not released
+**arXiv**: [2603.03207](https://arxiv.org/abs/2603.03207)  
+**Code**: Not released  
 **Area**: Causal Inference
 **Keywords**: causal discovery, causal additive model, unobserved variables, non-identical variable sets, graph integration, combinatorial search
 

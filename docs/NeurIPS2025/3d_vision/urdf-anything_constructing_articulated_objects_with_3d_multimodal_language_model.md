@@ -18,8 +18,8 @@ content_hash: 275fe9c5531376d4
 # URDF-Anything: Constructing Articulated Objects with 3D Multimodal Language Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00940](https://arxiv.org/abs/2511.00940)
-**Code**: [Project Page](https://lzvsdy.github.io/URDF-Anything/)
+**arXiv**: [2511.00940](https://arxiv.org/abs/2511.00940)  
+**Code**: [Project Page](https://lzvsdy.github.io/URDF-Anything/)  
 **Area**: 3D Vision
 **Keywords**: Articulated Object Reconstruction, URDF, 3D Multimodal Large Language Model, Digital Twin, Robot Simulation
 

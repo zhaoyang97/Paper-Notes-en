@@ -18,8 +18,8 @@ content_hash: 4efc89692a48c731
 # Non-Stationary Bandit Convex Optimization: A Comprehensive Study
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.02980](https://arxiv.org/abs/2506.02980)
-**Code**: None
+**arXiv**: [2506.02980](https://arxiv.org/abs/2506.02980)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: Bandit Convex Optimization, Non-Stationary Environments, Dynamic Regret, Adaptive Regret, Minimax Optimality
 

@@ -19,8 +19,8 @@ content_hash: 1c67fafbe213db2c
 # MGSfM: Multi-Camera Geometry Driven Global Structure-from-Motion
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.03306](https://arxiv.org/abs/2507.03306)
-**Code**: [3dv-casia/MGSfM](https://github.com/3dv-casia/MGSfM)
+**arXiv**: [2507.03306](https://arxiv.org/abs/2507.03306)  
+**Code**: [3dv-casia/MGSfM](https://github.com/3dv-casia/MGSfM)  
 **Area**: Autonomous Driving
 **Keywords**: Structure-from-Motion, multi-camera systems, global motion averaging, rotation averaging, translation averaging, 3D reconstruction, autonomous driving
 

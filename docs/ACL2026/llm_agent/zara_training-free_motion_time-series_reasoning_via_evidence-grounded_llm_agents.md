@@ -18,8 +18,8 @@ content_hash: aa2e064b34ab5d83
 # ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents
 
 **Conference**: ACL 2026
-**arXiv**: [2508.04038](https://arxiv.org/abs/2508.04038)
-**Code**: [https://github.com/zechenli03/ZARA](https://github.com/zechenli03/ZARA)
+**arXiv**: [2508.04038](https://arxiv.org/abs/2508.04038)  
+**Code**: [https://github.com/zechenli03/ZARA](https://github.com/zechenli03/ZARA)  
 **Area**: LLM Agent
 **Keywords**: Human Activity Recognition, Time-Series Reasoning, Retrieval-Augmented Generation, Multi-Agent Reasoning, Training-Free
 

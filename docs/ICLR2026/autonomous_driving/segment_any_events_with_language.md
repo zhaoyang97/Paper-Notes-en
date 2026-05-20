@@ -19,8 +19,8 @@ content_hash: 99d16517771a5b23
 # SEAL: Segment Any Events with Language
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.23159](https://arxiv.org/abs/2601.23159)
-**Code**: [https://0nandon.github.io/SEAL](https://0nandon.github.io/SEAL) (coming soon)
+**arXiv**: [2601.23159](https://arxiv.org/abs/2601.23159)  
+**Code**: [https://0nandon.github.io/SEAL](https://0nandon.github.io/SEAL) (coming soon)  
 **Area**: Autonomous Driving
 **Keywords**: Event camera, open-vocabulary instance segmentation, SAM, CLIP, multimodal fusion, annotation-free training
 

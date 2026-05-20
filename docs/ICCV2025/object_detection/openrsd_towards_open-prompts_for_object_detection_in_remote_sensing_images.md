@@ -18,8 +18,8 @@ content_hash: b20b0e2e9496d1a5
 # OpenRSD: Towards Open-prompts for Object Detection in Remote Sensing Images
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06146](https://arxiv.org/abs/2503.06146)
-**Code**: Unavailable (promised future release)
+**arXiv**: [2503.06146](https://arxiv.org/abs/2503.06146)  
+**Code**: Unavailable (promised future release)  
 **Area**: Object Detection / Remote Sensing
 **Keywords**: Open-prompt detection, remote sensing object detection, oriented bounding box detection, multimodal prompts, self-training
 

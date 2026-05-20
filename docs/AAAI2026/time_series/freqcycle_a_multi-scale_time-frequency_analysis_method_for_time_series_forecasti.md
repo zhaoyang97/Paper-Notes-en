@@ -18,8 +18,8 @@ content_hash: a1de66ea46856d14
 # FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.09661](https://arxiv.org/abs/2603.09661)
-**Code**: [github.com/boya-zhang-ai/FreqCycle](https://github.com/boya-zhang-ai/FreqCycle)
+**arXiv**: [2603.09661](https://arxiv.org/abs/2603.09661)  
+**Code**: [github.com/boya-zhang-ai/FreqCycle](https://github.com/boya-zhang-ai/FreqCycle)  
 **Area**: Time Series Forecasting
 **Keywords**: Time series forecasting, frequency-domain analysis, periodicity modeling, mid-to-high frequency enhancement, multi-scale decomposition
 

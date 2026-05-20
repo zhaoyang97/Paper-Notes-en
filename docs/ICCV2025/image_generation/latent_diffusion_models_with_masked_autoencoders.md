@@ -18,8 +18,8 @@ content_hash: 297c55c0c9d6fa8e
 # Latent Diffusion Models with Masked AutoEncoders
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.09984](https://arxiv.org/abs/2507.09984)
-**Code**: [https://github.com/isno0907/ldmae](https://github.com/isno0907/ldmae)
+**arXiv**: [2507.09984](https://arxiv.org/abs/2507.09984)  
+**Code**: [https://github.com/isno0907/ldmae](https://github.com/isno0907/ldmae)  
 **Area**: Image Generation
 **Keywords**: Latent Diffusion Models, Masked AutoEncoders, Variational AutoEncoders, Image Generation, Perceptual Compression, Latent Space Smoothness
 

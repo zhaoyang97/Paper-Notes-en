@@ -19,8 +19,8 @@ content_hash: bd7290719184f04d
 # PseudoMapTrainer: Learning Online Mapping without HD Maps
 
 **Conference**: ICCV2025
-**arXiv**: [2508.18788](https://arxiv.org/abs/2508.18788)
-**Code**: [github.com/boschresearch/PseudoMapTrainer](https://github.com/boschresearch/PseudoMapTrainer)
+**arXiv**: [2508.18788](https://arxiv.org/abs/2508.18788)  
+**Code**: [github.com/boschresearch/PseudoMapTrainer](https://github.com/boschresearch/PseudoMapTrainer)  
 **Area**: 3D Vision
 **Keywords**: Online Mapping, Pseudo Labels, Gaussian Splatting, HD Map, Semi-Supervised Learning, Vectorized Map
 

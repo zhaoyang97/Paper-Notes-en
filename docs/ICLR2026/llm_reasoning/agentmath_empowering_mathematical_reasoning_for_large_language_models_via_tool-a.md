@@ -18,8 +18,8 @@ content_hash: d7d07c043fb7b01f
 # AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.20745](https://arxiv.org/abs/2512.20745)
-**Code**: None
+**arXiv**: [2512.20745](https://arxiv.org/abs/2512.20745)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Mathematical Reasoning, Tool Augmentation, Reinforcement Learning, Code Interpreter, Agent Framework
 

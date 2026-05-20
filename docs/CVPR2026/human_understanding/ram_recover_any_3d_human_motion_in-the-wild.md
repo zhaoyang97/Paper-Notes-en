@@ -18,8 +18,8 @@ content_hash: 70d5a953c0d3bd73
 # RAM: Recover Any 3D Human Motion in-the-Wild
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19929](https://arxiv.org/abs/2603.19929)
-**Code**: N/A
+**arXiv**: [2603.19929](https://arxiv.org/abs/2603.19929)  
+**Code**: N/A  
 **Area**: Human Understanding / 3D Human Motion Recovery
 **Keywords**: Multi-person 3D motion recovery, zero-shot tracking, SAM2, temporal human mesh recovery, motion prediction
 

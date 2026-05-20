@@ -18,8 +18,8 @@ content_hash: 7fcdd1b2a4f61a19
 # PIP-Stereo: Progressive Iterations Pruner for Iterative Optimization based Stereo Matching
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20496](https://arxiv.org/abs/2602.20496)
-**Code**: [GitHub](https://github.com/XPENG-Aridge-AI)
+**arXiv**: [2602.20496](https://arxiv.org/abs/2602.20496)  
+**Code**: [GitHub](https://github.com/XPENG-Aridge-AI)  
 **Area**: 3D Vision
 **Keywords**: Stereo Matching, Iterative Optimization Pruning, Edge Deployment, FlashGRU, Monocular Depth Prior Transfer
 

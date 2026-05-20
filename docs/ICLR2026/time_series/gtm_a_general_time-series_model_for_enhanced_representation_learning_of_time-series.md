@@ -18,8 +18,8 @@ content_hash: 7aced6b83910bd1d
 # GTM: A General Time-series Model for Enhanced Representation Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.03264](https://arxiv.org/abs/2502.03264)
-**Code**: [https://github.com/MMTS4All/GTM](https://github.com/MMTS4All/GTM)
+**arXiv**: [2502.03264](https://arxiv.org/abs/2502.03264)  
+**Code**: [https://github.com/MMTS4All/GTM](https://github.com/MMTS4All/GTM)  
 **Area**: Time Series
 **Keywords**: Time series foundation model, frequency-domain attention, hybrid mask pre-training, multi-task, temporal granularity awareness
 

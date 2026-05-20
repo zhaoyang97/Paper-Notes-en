@@ -18,8 +18,8 @@ content_hash: 395183a5cc1d4da6
 # String Seed of Thought: Prompting LLMs for Distribution-Faithful and Diverse Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.21150](https://arxiv.org/abs/2510.21150)
-**Code**: None
+**arXiv**: [2510.21150](https://arxiv.org/abs/2510.21150)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: prompting, probabilistic instruction following, diversity, LLM reasoning, randomness
 

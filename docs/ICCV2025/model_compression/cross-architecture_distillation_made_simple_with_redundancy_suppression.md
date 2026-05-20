@@ -18,8 +18,8 @@ content_hash: 10e7a2c67ea52e82
 # Cross-Architecture Distillation Made Simple with Redundancy Suppression
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.21844](https://arxiv.org/abs/2507.21844)
-**Code**: N/A
+**arXiv**: [2507.21844](https://arxiv.org/abs/2507.21844)  
+**Code**: N/A  
 **Area**: Model Compression
 **Keywords**: knowledge distillation, cross-architecture, redundancy suppression, feature decorrelation, CNN-ViT-MLP
 

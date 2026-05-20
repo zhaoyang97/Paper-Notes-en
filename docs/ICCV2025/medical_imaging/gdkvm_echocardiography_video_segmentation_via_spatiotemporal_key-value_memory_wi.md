@@ -18,8 +18,8 @@ content_hash: fcad391b99cca4a0
 # GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule
 
 **Conference**: ICCV 2025
-**arXiv**: [2512.10252](https://arxiv.org/abs/2512.10252)
-**Code**: [https://github.com/wangrui2025/GDKVM](https://github.com/wangrui2025/GDKVM)
+**arXiv**: [2512.10252](https://arxiv.org/abs/2512.10252)  
+**Code**: [https://github.com/wangrui2025/GDKVM](https://github.com/wangrui2025/GDKVM)  
 **Area**: Medical Imaging
 **Keywords**: echocardiography segmentation, linear attention, key-value memory, gated delta rule, video segmentation
 

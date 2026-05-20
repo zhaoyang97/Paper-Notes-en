@@ -17,8 +17,8 @@ content_hash: 82d907bbc95380cf
 # FIRE: Frobenius-Isometry Reinitialization for Balancing the Stability-Plasticity Tradeoff
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2602.08040](https://arxiv.org/abs/2602.08040)
-**Code**: Available
+**arXiv**: [2602.08040](https://arxiv.org/abs/2602.08040)  
+**Code**: Available  
 **Area**: Continual Learning / Reinforcement Learning
 **Keywords**: stability-plasticity, reinitialization, orthogonal Procrustes, continual learning, plasticity loss
 

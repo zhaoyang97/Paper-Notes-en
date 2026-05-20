@@ -18,8 +18,8 @@ content_hash: 4f0b3a844d10d869
 # Beyond ReAct: A Planner-Centric Framework for Complex Tool-Augmented LLM Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10037](https://arxiv.org/abs/2511.10037)
-**Code**: [https://github.com/weixiaolong94-hub/Beyond-React](https://github.com/weixiaolong94-hub/Beyond-React)
+**arXiv**: [2511.10037](https://arxiv.org/abs/2511.10037)  
+**Code**: [https://github.com/weixiaolong94-hub/Beyond-React](https://github.com/weixiaolong94-hub/Beyond-React)  
 **Area**: Agent / LLM
 **Keywords**: Tool-augmented LLM, DAG planning, Plan-Execute paradigm, GRPO reinforcement learning, multi-tool orchestration
 

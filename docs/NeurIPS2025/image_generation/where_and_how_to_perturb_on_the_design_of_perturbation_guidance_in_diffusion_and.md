@@ -18,8 +18,8 @@ content_hash: b4bc1e80d74026dc
 # Where and How to Perturb: On the Design of Perturbation Guidance in Diffusion and Flow Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10978](https://arxiv.org/abs/2506.10978)
-**Code**: [Project Page](https://cvlab-kaist.github.io/HeadHunter/)
+**arXiv**: [2506.10978](https://arxiv.org/abs/2506.10978)  
+**Code**: [Project Page](https://cvlab-kaist.github.io/HeadHunter/)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Attention Perturbation Guidance, Attention Heads, Diffusion Transformer, Fine-Grained Control, Style Transfer
 
@@ -51,9 +51,9 @@ The method comprises two complementary components: (1) **HeadHunter** — an ite
 
 2. **HeadHunter Iterative Head Selection Framework**: This component addresses the problem of automatically selecting attention heads aligned with user-specified objectives. Each round consists of three stages:
 
-   - **Generation Stage**: For each candidate head $(l,h)$, perturbation is applied and samples are generated across multiple prompt–seed pairs.
-   - **Evaluation Stage**: A user-specified objective function $\mathcal{O}$ (e.g., PickScore) computes the average score $s_{(l,h)} = \frac{1}{M}\sum_{j=1}^M \mathcal{O}(\hat{x}_j, p_j)$.
-   - **Expansion Stage**: The top-$k$ heads are added to the final selected set $\mathcal{S}_{\text{final}}$.
+    - **Generation Stage**: For each candidate head $(l,h)$, perturbation is applied and samples are generated across multiple prompt–seed pairs.
+    - **Evaluation Stage**: A user-specified objective function $\mathcal{O}$ (e.g., PickScore) computes the average score $s_{(l,h)} = \frac{1}{M}\sum_{j=1}^M \mathcal{O}(\hat{x}_j, p_j)$.
+    - **Expansion Stage**: The top-$k$ heads are added to the final selected set $\mathcal{S}_{\text{final}}$.
 
    A key advantage of the iterative design is that certain heads produce poor results in isolation but effectively enhance specific styles (e.g., warm tones) when combined with already-selected structural heads. Such heads would never be identified in a one-shot evaluation, but their combinatorial value emerges through the iterative process.
 

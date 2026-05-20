@@ -18,8 +18,8 @@ content_hash: 08d7b9b863e92b14
 # SAM-R1: Leveraging SAM for Reward Feedback in Multimodal Segmentation via Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22596](https://arxiv.org/abs/2505.22596)
-**Code**: None
+**arXiv**: [2505.22596](https://arxiv.org/abs/2505.22596)  
+**Code**: None  
 **Area**: Segmentation
 **Keywords**: Reasoning Segmentation, Reinforcement Learning, SAM, Multimodal Large Language Models, GRPO
 

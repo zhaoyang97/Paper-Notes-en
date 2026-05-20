@@ -18,8 +18,8 @@ content_hash: 16763cb100b7f7f6
 # A Differential and Pointwise Control Approach to Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2404.15617](https://arxiv.org/abs/2404.15617)
-**Code**: [https://github.com/mpnguyen2/dfPO](https://github.com/mpnguyen2/dfPO)
+**arXiv**: [2404.15617](https://arxiv.org/abs/2404.15617)  
+**Code**: [https://github.com/mpnguyen2/dfPO](https://github.com/mpnguyen2/dfPO)  
 **Area**: Reinforcement Learning / Continuous-Time Control / Scientific Computing
 **Keywords**: Differential RL, Hamiltonian structure, pointwise convergence, scientific computing RL, Pontryagin maximum principle
 

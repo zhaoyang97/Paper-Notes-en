@@ -18,8 +18,8 @@ content_hash: 5678f81758369716
 # Faster Certified Symmetry Breaking Using Orders With Auxiliary Variables
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16637](https://arxiv.org/abs/2511.16637)
-**Code**: [satsuma](https://doi.org/10.5281/zenodo.17607863), [VeriPB](https://doi.org/10.5281/zenodo.17608873), [CakePB](https://doi.org/10.5281/zenodo.17609070)
+**arXiv**: [2511.16637](https://arxiv.org/abs/2511.16637)  
+**Code**: [satsuma](https://doi.org/10.5281/zenodo.17607863), [VeriPB](https://doi.org/10.5281/zenodo.17608873), [CakePB](https://doi.org/10.5281/zenodo.17609070)  
 **Area**: Other
 **Keywords**: symmetry breaking, proof logging, SAT solving, pseudo-Boolean, VeriPB, certified solving
 

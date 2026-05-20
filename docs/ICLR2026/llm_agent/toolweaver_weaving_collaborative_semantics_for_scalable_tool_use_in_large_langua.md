@@ -18,8 +18,8 @@ content_hash: 9c976db802371046
 # ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21947](https://arxiv.org/abs/2601.21947)
-**Code**: Available
+**arXiv**: [2601.21947](https://arxiv.org/abs/2601.21947)  
+**Code**: Available  
 **Area**: LLM Agent
 **Keywords**: Tool use, vector quantization, collaborative semantics, vocabulary expansion, generative tool retrieval
 
@@ -57,24 +57,24 @@ Inference: Constrained beam search ensures only valid tool codes are generated.
 
 1. **Collaboration-Aware Residual Quantization (Stage 2)**
 
-   - **Function**: Quantizes tool embeddings into multi-level discrete codes $[\iota_1, \iota_2, \ldots, \iota_L]$.
-   - **Mechanism**: RQ-VAE quantizes residuals level by level: $\iota_{d,l} = \arg\min_k \|r_{d,l} - v_{l,k}\|^2$, $r_{d,l+1} = r_{d,l} - v_{l,\iota_{d,l}}$.
-   - **Collaborative Regularization** (core innovation): A tool co-occurrence matrix is computed from usage trajectories as $A_{uv} = C_{uv}/\sqrt{C_{uu} \cdot C_{vv}}$, and a graph Laplacian loss $\mathcal{L}_{collab} = \sum_{u,v} A_{uv}\|\hat{z}_u - \hat{z}_v\|^2$ is added.
-   - **Design Motivation**: Tools that are frequently used together are assigned similar codes, enabling the LLM to learn collaboration patterns from code-level co-occurrence rather than sparse tool ID co-occurrence.
-   - **Vocabulary size**: $L$ levels × $K$ codebook entries = $L \times K$ new tokens. With $L=4, K=128$, 512 tokens cover 47,000+ tools.
+    - **Function**: Quantizes tool embeddings into multi-level discrete codes $[\iota_1, \iota_2, \ldots, \iota_L]$.
+    - **Mechanism**: RQ-VAE quantizes residuals level by level: $\iota_{d,l} = \arg\min_k \|r_{d,l} - v_{l,k}\|^2$, $r_{d,l+1} = r_{d,l} - v_{l,\iota_{d,l}}$.
+    - **Collaborative Regularization** (core innovation): A tool co-occurrence matrix is computed from usage trajectories as $A_{uv} = C_{uv}/\sqrt{C_{uu} \cdot C_{vv}}$, and a graph Laplacian loss $\mathcal{L}_{collab} = \sum_{u,v} A_{uv}\|\hat{z}_u - \hat{z}_v\|^2$ is added.
+    - **Design Motivation**: Tools that are frequently used together are assigned similar codes, enabling the LLM to learn collaboration patterns from code-level co-occurrence rather than sparse tool ID co-occurrence.
+    - **Vocabulary size**: $L$ levels × $K$ codebook entries = $L \times K$ new tokens. With $L=4, K=128$, 512 tokens cover 47,000+ tools.
 
 2. **Conflict Mitigation via Optimal Transport (Stage 3)**
 
-   - **Function**: Resolves conflicts where multiple tools map to the same code sequence.
-   - **Mechanism**: A uniform distribution is enforced over the final-level codebook using the Sinkhorn-Knopp algorithm to solve the optimal transport problem.
-   - **Constraints**: Each tool is fully assigned, and each codeword is used uniformly.
-   - **Design Motivation**: Guarantees a unique identifier for each tool.
+    - **Function**: Resolves conflicts where multiple tools map to the same code sequence.
+    - **Mechanism**: A uniform distribution is enforced over the final-level codebook using the Sinkhorn-Knopp algorithm to solve the optimal transport problem.
+    - **Constraints**: Each tool is fully assigned, and each codeword is used uniformly.
+    - **Design Motivation**: Guarantees a unique identifier for each tool.
 
 3. **Constrained Beam Search Inference**
 
-   - **Function**: Ensures that only valid tool codes are produced during generation.
-   - **Mechanism**: All valid code sequences are precomputed into a prefix tree (Trie); invalid next tokens are masked at inference time.
-   - **Design Motivation**: Prevents the generation of non-existent tool codes.
+    - **Function**: Ensures that only valid tool codes are produced during generation.
+    - **Mechanism**: All valid code sequences are precomputed into a prefix tree (Trie); invalid next tokens are masked at inference time.
+    - **Design Motivation**: Prevents the generation of non-existent tool codes.
 
 ### Loss & Training
 - Quantization loss: $\mathcal{L}_{tokenize} = \mathcal{L}_{recon} + \mathcal{L}_{quant} + \lambda\mathcal{L}_{collab}$, with optimal $\lambda=1.0$.

@@ -18,8 +18,8 @@ content_hash: 2969d89c942d04e5
 # Shallow Flow Matching for Coarse-to-Fine Text-to-Speech Synthesis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12226](https://arxiv.org/abs/2505.12226)
-**Code**: [Available](https://ydqmkkx.github.io/SFMDemo/)
+**arXiv**: [2505.12226](https://arxiv.org/abs/2505.12226)  
+**Code**: [Available](https://ydqmkkx.github.io/SFMDemo/)  
 **Area**: 3D Vision
 **Keywords**: Flow Matching, TTS, Coarse-to-Fine Generation, Shallow Inference, ODE Solving
 

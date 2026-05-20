@@ -18,8 +18,8 @@ content_hash: 9216636d46c2a5ca
 # Task-Optimized Convolutional Recurrent Networks Align with Tactile Processing in the Rodent Brain
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18361](https://arxiv.org/abs/2505.18361)
-**Code**: [GitHub](https://github.com/neuroagents-lab/2025-tactile-whisking)
+**arXiv**: [2505.18361](https://arxiv.org/abs/2505.18361)  
+**Code**: [GitHub](https://github.com/neuroagents-lab/2025-tactile-whisking)  
 **Area**: Robotics
 **Keywords**: Tactile Perception, Convolutional Recurrent Networks, Somatosensory Cortex, Self-Supervised Learning, NeuroAI
 
@@ -90,9 +90,9 @@ An Encoder-Attender-Decoder (EAD) parameterization is proposed to systematically
 - **SSL pretraining**: SimCLR/AE batch size = 256, SimSiam batch size = 1024, 100 epochs; linear probing stage with frozen encoder for an additional 100 epochs
 - Optional LayerNorm added to ConvRNNs to stabilize training
 - **Neural alignment evaluation**: Representational Similarity Analysis (RSA), a parameter-free method comparing pairwise dissimilarity structures of model and neural population responses
-  - Only neurons with split-half internal consistency (Spearman-Brown corrected) > 0.5 are retained
-  - Noise-corrected RSA Pearson $r$ used as the alignment score
-  - Compared against animal-to-animal (a2a) consistency as a baseline
+    - Only neurons with split-half internal consistency (Spearman-Brown corrected) > 0.5 are retained
+    - Noise-corrected RSA Pearson $r$ used as the alignment score
+    - Compared against animal-to-animal (a2a) consistency as a baseline
 - Neural data from Rodgers (2022): 11 mice, 999 neural units, barrel cortex L2/3–L6
 
 ## Key Experimental Results

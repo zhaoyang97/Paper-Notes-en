@@ -17,8 +17,8 @@ content_hash: ffc3d28c5cafc04d
 # STELAR-Vision: Self-Topology-Aware Efficient Learning for Aligned Reasoning in Vision
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.08688](https://arxiv.org/abs/2508.08688)
-**Code**: [stellar-neuron.github.io/stelar-vision](https://stellar-neuron.github.io/stelar-vision/)
+**arXiv**: [2508.08688](https://arxiv.org/abs/2508.08688)  
+**Code**: [stellar-neuron.github.io/stelar-vision](https://stellar-neuron.github.io/stelar-vision/)  
 **Area**: Reinforcement Learning
 **Keywords**: Topology-aware reasoning, vision-language models, chain/tree/graph of thought, reinforcement learning, efficient inference
 

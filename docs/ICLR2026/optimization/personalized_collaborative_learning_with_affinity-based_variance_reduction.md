@@ -18,8 +18,8 @@ content_hash: e9864c0f5f203f9a
 # Personalized Collaborative Learning with Affinity-Based Variance Reduction
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.16232](https://arxiv.org/abs/2510.16232)
-**Code**: None
+**arXiv**: [2510.16232](https://arxiv.org/abs/2510.16232)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: Personalized Federated Learning, Collaborative Learning, Variance Reduction, Heterogeneity, Affinity-Based Acceleration
 

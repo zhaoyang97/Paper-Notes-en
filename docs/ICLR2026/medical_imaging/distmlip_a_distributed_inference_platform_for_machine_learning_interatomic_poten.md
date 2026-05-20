@@ -18,8 +18,8 @@ content_hash: 8fd34c3a0d318eaa
 # DistMLIP: A Distributed Inference Platform for Machine Learning Interatomic Potentials
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.02023](https://arxiv.org/abs/2506.02023)
-**Code**: None (platform project supporting multiple MLIPs)
+**arXiv**: [2506.02023](https://arxiv.org/abs/2506.02023)  
+**Code**: None (platform project supporting multiple MLIPs)  
 **Area**: Medical Imaging
 **Keywords**: MLIP, distributed inference, graph neural networks, molecular dynamics, GPU parallelization
 

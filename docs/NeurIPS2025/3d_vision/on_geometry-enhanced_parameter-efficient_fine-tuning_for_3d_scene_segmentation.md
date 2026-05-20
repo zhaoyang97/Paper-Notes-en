@@ -18,8 +18,8 @@ content_hash: 39163f55e1c5efe2
 # On Geometry-Enhanced Parameter-Efficient Fine-Tuning for 3D Scene Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22444](https://arxiv.org/abs/2505.22444)
-**Code**: [https://github.com/LiyaoTang/GEM](https://github.com/LiyaoTang/GEM)
+**arXiv**: [2505.22444](https://arxiv.org/abs/2505.22444)  
+**Code**: [https://github.com/LiyaoTang/GEM](https://github.com/LiyaoTang/GEM)  
 **Area**: 3D Vision
 **Keywords**: Parameter-Efficient Fine-Tuning, Point Cloud Segmentation, Geometry Encoding, 3D Scene Understanding, Transformer
 

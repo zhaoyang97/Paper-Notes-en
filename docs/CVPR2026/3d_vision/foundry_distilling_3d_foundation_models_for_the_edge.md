@@ -18,8 +18,8 @@ content_hash: d0214ed343cff074
 # Foundry: Distilling 3D Foundation Models for the Edge
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.20721](https://arxiv.org/abs/2511.20721)
-**Code**: None
+**arXiv**: [2511.20721](https://arxiv.org/abs/2511.20721)  
+**Code**: None  
 **Area**: 3D Vision / Model Compression
 **Keywords**: Foundation model distillation, 3D point cloud, SuperToken, representation space compression, edge deployment
 

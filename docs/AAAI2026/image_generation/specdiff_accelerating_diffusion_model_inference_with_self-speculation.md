@@ -18,8 +18,8 @@ content_hash: 8ad3a7cfd71f1303
 # SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.13848](https://arxiv.org/abs/2509.13848)
-**Code**: Unavailable
+**arXiv**: [2509.13848](https://arxiv.org/abs/2509.13848)  
+**Code**: Unavailable  
 **Area**: Image Generation
 **Keywords**: Diffusion model acceleration, feature caching, self-speculation, DiT, information utilization
 

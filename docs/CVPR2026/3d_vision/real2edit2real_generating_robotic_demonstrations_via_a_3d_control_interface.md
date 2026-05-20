@@ -18,8 +18,8 @@ content_hash: 7947ebcb98524010
 # Real2Edit2Real: Generating Robotic Demonstrations via a 3D Control Interface
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.19402](https://arxiv.org/abs/2512.19402)
-**Code**: [https://real2edit2real.github.io/](https://real2edit2real.github.io/) (available, project page)
+**arXiv**: [2512.19402](https://arxiv.org/abs/2512.19402)  
+**Code**: [https://real2edit2real.github.io/](https://real2edit2real.github.io/) (available, project page)  
 **Area**: 3D Vision / Robot Learning / Data Augmentation
 **Keywords**: robotic demonstration generation, 3D editing, video generation, data augmentation, spatial generalization
 

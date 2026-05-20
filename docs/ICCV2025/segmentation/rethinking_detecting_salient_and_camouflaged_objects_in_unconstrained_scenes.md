@@ -18,8 +18,8 @@ content_hash: 9f1579343a9fc884
 # Rethinking Detecting Salient and Camouflaged Objects in Unconstrained Scenes
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.10943](https://arxiv.org/abs/2412.10943)
-**Code**: [GitHub](https://github.com/)
+**arXiv**: [2412.10943](https://arxiv.org/abs/2412.10943)  
+**Code**: [GitHub](https://github.com/)  
 **Area**: Image Segmentation
 **Keywords**: Salient Object Detection, Camouflaged Object Detection, Unconstrained Scenes, Attribute Relationship Modeling, SAM
 

@@ -18,8 +18,8 @@ content_hash: e7aa171c060d0b8c
 # Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21204](https://arxiv.org/abs/2510.21204)
-**Code**: Available (HuggingFace: autogluon/mitra-classifier, autogluon/mitra-regressor)
+**arXiv**: [2510.21204](https://arxiv.org/abs/2510.21204)  
+**Code**: Available (HuggingFace: autogluon/mitra-classifier, autogluon/mitra-regressor)  
 **Area**: Self-Supervised Learning / Tabular Machine Learning
 **Keywords**: Tabular foundation models, synthetic priors, in-context learning, TabPFN, prior mixture
 

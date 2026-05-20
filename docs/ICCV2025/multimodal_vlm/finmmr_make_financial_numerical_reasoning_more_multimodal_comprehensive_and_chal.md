@@ -18,8 +18,8 @@ content_hash: 1da98f14c6e31679
 # FinMMR: Make Financial Numerical Reasoning More Multimodal, Comprehensive, and Challenging
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.04625](https://arxiv.org/abs/2508.04625)
-**Code**: None (online evaluation platform provided)
+**arXiv**: [2508.04625](https://arxiv.org/abs/2508.04625)  
+**Code**: None (online evaluation platform provided)  
 **Area**: Multimodal VLM
 **Keywords**: multimodal reasoning, financial numerical reasoning, benchmark, LLM evaluation, visual perception
 
@@ -136,8 +136,8 @@ The two-stage visual filtering–reasoning pipeline improves accuracy on the Med
 # FinMMR: Make Financial Numerical Reasoning More Multimodal, Comprehensive, and Challenging
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.04625](https://arxiv.org/abs/2508.04625)
-**Code**: None (online evaluation platform provided)
+**arXiv**: [2508.04625](https://arxiv.org/abs/2508.04625)  
+**Code**: None (online evaluation platform provided)  
 **Area**: Multimodal Vision-Language Models
 **Keywords**: financial numerical reasoning, multimodal benchmark, LLM evaluation, chain-of-thought reasoning, knowledge augmentation
 

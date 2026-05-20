@@ -18,8 +18,8 @@ content_hash: 6ac4e4634dedc629
 # EBMC: Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.12518](https://arxiv.org/abs/2604.12518)
-**Code**: [https://github.com/kangverse/EBMC](https://github.com/kangverse/EBMC)
+**arXiv**: [2604.12518](https://arxiv.org/abs/2604.12518)  
+**Code**: [https://github.com/kangverse/EBMC](https://github.com/kangverse/EBMC)  
 **Area**: Multimodal Learning / Sentiment Analysis
 **Keywords**: Multimodal Sentiment Analysis, Modality Imbalance, Energy-Based Model, Modality Trust Distillation, Robustness
 

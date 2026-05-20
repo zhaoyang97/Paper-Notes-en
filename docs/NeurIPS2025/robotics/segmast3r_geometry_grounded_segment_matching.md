@@ -18,8 +18,8 @@ content_hash: aa83408e1e096c9f
 # SegMASt3R: Geometry Grounded Segment Matching
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.05051](https://arxiv.org/abs/2510.05051)
-**Code**: To be confirmed
+**arXiv**: [2510.05051](https://arxiv.org/abs/2510.05051)  
+**Code**: To be confirmed  
 **Area**: Robotics
 **Keywords**: Wide-baseline matching, MASt3R, semantic segmentation, Sinkhorn matching, 3D instance mapping
 

@@ -18,8 +18,8 @@ content_hash: 1110cfd9f87836d5
 # MR-CoSMo: Visual-Text Memory Recall and Direct Cross-Modal Alignment Method for Query-Driven 3D Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.20991](https://arxiv.org/abs/2506.20991)
-**Code**: None
+**arXiv**: [2506.20991](https://arxiv.org/abs/2506.20991)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D segmentation, cross-modal alignment, visual-text memory, point cloud segmentation, query-driven segmentation
 

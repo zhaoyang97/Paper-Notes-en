@@ -18,8 +18,8 @@ content_hash: dd76daa7dd40e3ca
 # OmniSync: Towards Universal Lip Synchronization via Diffusion Transformers
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2505.21448](https://arxiv.org/abs/2505.21448)
-**Code**: [https://ziqiaopeng.github.io/OmniSync/](https://ziqiaopeng.github.io/OmniSync/) (Project Page)
+**arXiv**: [2505.21448](https://arxiv.org/abs/2505.21448)  
+**Code**: [https://ziqiaopeng.github.io/OmniSync/](https://ziqiaopeng.github.io/OmniSync/) (Project Page)  
 **Area**: Image Generation
 **Keywords**: Lip Synchronization, Diffusion Transformer, Flow Matching, Classifier-Free Guidance, AIGC Video
 

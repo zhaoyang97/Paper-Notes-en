@@ -18,8 +18,8 @@ content_hash: 1d9ec5d76fcbb8b6
 # DINO-QPM: Adapting Visual Foundation Models for Globally Interpretable Image Classification
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07166](https://arxiv.org/abs/2604.07166)
-**Code**: [https://github.com/RobertZimm/DINO-QPM](https://github.com/RobertZimm/DINO-QPM)
+**arXiv**: [2604.07166](https://arxiv.org/abs/2604.07166)  
+**Code**: [https://github.com/RobertZimm/DINO-QPM](https://github.com/RobertZimm/DINO-QPM)  
 **Area**: Model Interpretability
 **Keywords**: Interpretable Classification, DINOv2, Quadratic Programming, Visual Foundation Models, Feature Sparsification
 

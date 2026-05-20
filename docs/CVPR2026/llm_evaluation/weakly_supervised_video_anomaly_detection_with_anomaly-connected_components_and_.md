@@ -18,8 +18,8 @@ content_hash: 913fd486211912da
 # Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00550](https://arxiv.org/abs/2603.00550)
-**Code**: None
+**arXiv**: [2603.00550](https://arxiv.org/abs/2603.00550)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: Weakly supervised video anomaly detection, connected components, intention reasoning, CLIP, multiple instance learning
 

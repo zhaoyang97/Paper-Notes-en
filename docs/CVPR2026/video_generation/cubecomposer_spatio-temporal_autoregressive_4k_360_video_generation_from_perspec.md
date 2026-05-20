@@ -18,8 +18,8 @@ content_hash: 66a914408ba9e95a
 # CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04291](https://arxiv.org/abs/2603.04291)
-**Code**: [Project Page](https://lg-li.github.io/project/cubecomposer)
+**arXiv**: [2603.04291](https://arxiv.org/abs/2603.04291)  
+**Code**: [Project Page](https://lg-li.github.io/project/cubecomposer)  
 **Area**: Video Generation / 360° Panoramic Video
 **Keywords**: 360° video generation, cubemap projection, spatio-temporal autoregression, diffusion models, native 4K generation
 

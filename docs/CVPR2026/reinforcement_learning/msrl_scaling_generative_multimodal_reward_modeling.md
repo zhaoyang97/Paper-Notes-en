@@ -17,8 +17,8 @@ content_hash: 6689958b422cd852
 # MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25108](https://arxiv.org/abs/2603.25108)
-**Code**: [GitHub](https://github.com/wangclnlp/MSRL)
+**arXiv**: [2603.25108](https://arxiv.org/abs/2603.25108)  
+**Code**: [GitHub](https://github.com/wangclnlp/MSRL)  
 **Area**: Reinforcement Learning / Multimodal Reward Modeling
 **Keywords**: multimodal reward model, reinforcement learning, cross-modal transfer, knowledge distillation, preference alignment
 

@@ -18,8 +18,8 @@ content_hash: 8276a0b70decc015
 # Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11617](https://arxiv.org/abs/2603.11617)
-**Code**: None
+**arXiv**: [2603.11617](https://arxiv.org/abs/2603.11617)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: noisy labels, prompt learning, optimal transport, CLIP, few-shot learning
 

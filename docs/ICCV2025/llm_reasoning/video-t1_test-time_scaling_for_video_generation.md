@@ -18,8 +18,8 @@ content_hash: 57e03e5f59173378
 # Video-T1: Test-Time Scaling for Video Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.18942](https://arxiv.org/abs/2503.18942)
-**Code**: [liuff19.github.io/Video-T1](https://liuff19.github.io/Video-T1)
+**arXiv**: [2503.18942](https://arxiv.org/abs/2503.18942)  
+**Code**: [liuff19.github.io/Video-T1](https://liuff19.github.io/Video-T1)  
 **Area**: LLM Reasoning
 **Keywords**: Test-time scaling, video generation, Tree-of-Frames, diffusion models, autoregressive video
 

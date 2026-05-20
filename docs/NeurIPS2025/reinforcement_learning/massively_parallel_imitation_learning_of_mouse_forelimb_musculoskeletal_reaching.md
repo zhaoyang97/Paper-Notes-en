@@ -20,8 +20,8 @@ content_hash: 1835ac85ef394d49
 # Massively Parallel Imitation Learning of Mouse Forelimb Musculoskeletal Reaching Dynamics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.21848](https://arxiv.org/abs/2511.21848)
-**Code**: [track-mjx](https://github.com/talmolab/track-mjx) + [stac-mjx](https://github.com/talmolab/stac-mjx)
+**arXiv**: [2511.21848](https://arxiv.org/abs/2511.21848)  
+**Code**: [track-mjx](https://github.com/talmolab/track-mjx) + [stac-mjx](https://github.com/talmolab/stac-mjx)  
 **Area**: Computational Neuroscience / Biomechanics / Imitation Learning
 **Keywords**: musculoskeletal simulation, mouse forelimb, PPO, MuJoCo-MJX, EMG prediction, imitation learning, Takens theorem
 

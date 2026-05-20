@@ -18,8 +18,8 @@ content_hash: cf6fa95cc8f53521
 # Can Knowledge-Graph-based Retrieval Augmented Generation Really Retrieve What You Need?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16582](https://arxiv.org/abs/2510.16582)
-**Code**: [GitHub](https://github.com/Samyu0304/GraphFlow)
+**arXiv**: [2510.16582](https://arxiv.org/abs/2510.16582)  
+**Code**: [GitHub](https://github.com/Samyu0304/GraphFlow)  
 **Area**: Image Generation
 **Keywords**: Knowledge Graph, Retrieval-Augmented Generation, GFlowNet, Process Reward Model, Optimal Transport
 

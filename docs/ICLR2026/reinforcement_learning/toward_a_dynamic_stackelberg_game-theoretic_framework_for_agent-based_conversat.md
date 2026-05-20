@@ -19,8 +19,8 @@ content_hash: a8c56e26984454c4
 # Toward a Dynamic Stackelberg Game-Theoretic Framework for Agent-Based Conversational AI Defense Against LLM Jailbreaking
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.08207](https://arxiv.org/abs/2507.08207)
-**Code**: None
+**arXiv**: [2507.08207](https://arxiv.org/abs/2507.08207)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: game theory, Stackelberg game, jailbreaking defense, Purple Agent, RRT, LLM safety
 

@@ -18,8 +18,8 @@ content_hash: 1c95ed7e46f6aeea
 # Language Reconstruction with Brain Predictive Coding from fMRI Data
 
 **Conference**: ACL 2026
-**arXiv**: [2405.11597](https://arxiv.org/abs/2405.11597)
-**Code**: None
+**arXiv**: [2405.11597](https://arxiv.org/abs/2405.11597)  
+**Code**: None  
 **Area**: Brain-Computer Interface / Language Decoding
 **Keywords**: fMRI language reconstruction, predictive coding, brain signal decoding, neurolinguistics, side network
 

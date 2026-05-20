@@ -18,8 +18,8 @@ content_hash: c60de1539535ca88
 # What Do Vision-Language Models Encode for Personalized Image Aesthetics Assessment?
 
 **Conference**: ACL 2026
-**arXiv**: [2604.11374](https://arxiv.org/abs/2604.11374)
-**Code**: [https://github.com/ynklab/vlm-latent-piaa](https://github.com/ynklab/vlm-latent-piaa)
+**arXiv**: [2604.11374](https://arxiv.org/abs/2604.11374)  
+**Code**: [https://github.com/ynklab/vlm-latent-piaa](https://github.com/ynklab/vlm-latent-piaa)  
 **Area**: Multimodal VLM
 **Keywords**: Personalized Aesthetics Assessment, Vision-Language Models, Linear Probing, Hidden Representations, Image Aesthetics
 

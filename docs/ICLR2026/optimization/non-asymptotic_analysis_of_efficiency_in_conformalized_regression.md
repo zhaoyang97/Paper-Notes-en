@@ -18,8 +18,8 @@ content_hash: a8d60f295c19b8fc
 # Non-Asymptotic Analysis of Efficiency in Conformalized Regression
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.07093](https://arxiv.org/abs/2510.07093)
-**Code**: None
+**arXiv**: [2510.07093](https://arxiv.org/abs/2510.07093)  
+**Code**: None  
 **Area**: Optimization / Statistical Learning Theory
 **Keywords**: conformal prediction, quantile regression, non-asymptotic analysis, prediction set efficiency, uncertainty quantification
 

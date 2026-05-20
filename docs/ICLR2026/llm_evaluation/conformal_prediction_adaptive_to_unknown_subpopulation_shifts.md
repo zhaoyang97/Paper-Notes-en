@@ -18,8 +18,8 @@ content_hash: fd4449e166a9f16d
 # Conformal Prediction Adaptive to Unknown Subpopulation Shifts
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.05583](https://arxiv.org/abs/2506.05583)
-**Code**: To be confirmed
+**arXiv**: [2506.05583](https://arxiv.org/abs/2506.05583)  
+**Code**: To be confirmed  
 **Area**: LLM Evaluation
 **Keywords**: conformal prediction, distribution shift, subpopulation shift, uncertainty quantification, LLM hallucination
 

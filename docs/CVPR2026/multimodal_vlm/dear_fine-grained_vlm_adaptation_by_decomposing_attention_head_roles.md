@@ -18,8 +18,8 @@ content_hash: 31303db4b6c6548a
 # DeAR: Fine-Grained VLM Adaptation by Decomposing Attention Head Roles
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01111](https://arxiv.org/abs/2603.01111)
-**Code**: [GitHub](https://github.com/wellsssssss/DeAR)
+**arXiv**: [2603.01111](https://arxiv.org/abs/2603.01111)  
+**Code**: [GitHub](https://github.com/wellsssssss/DeAR)  
 **Area**: Multimodal VLM
 **Keywords**: Prompt Learning, VLM Adaptation, Attention Head Role Decomposition, CLIP, Zero-shot Generalization
 

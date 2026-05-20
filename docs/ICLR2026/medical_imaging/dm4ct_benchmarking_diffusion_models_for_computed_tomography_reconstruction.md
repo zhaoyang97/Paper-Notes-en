@@ -18,8 +18,8 @@ content_hash: 4c5ce25da36e8820
 # DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.18589](https://arxiv.org/abs/2602.18589)
-**Code**: [Available](https://github.com/DM4CT/DM4CT)
+**arXiv**: [2602.18589](https://arxiv.org/abs/2602.18589)  
+**Code**: [Available](https://github.com/DM4CT/DM4CT)  
 **Area**: Medical Imaging
 **Keywords**: CT reconstruction, diffusion models, benchmark, inverse problems, sparse-view reconstruction
 

@@ -18,8 +18,8 @@ content_hash: 111e351aa4967d72
 # BulletGen: Improving 4D Reconstruction with Bullet-Time Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2506.18601](https://arxiv.org/abs/2506.18601)
-**Code**: Unavailable (proprietary model)
+**arXiv**: [2506.18601](https://arxiv.org/abs/2506.18601)  
+**Code**: Unavailable (proprietary model)  
 **Area**: 4D Reconstruction / 3D Vision
 **Keywords**: 4D reconstruction, bullet-time, video diffusion model, Gaussian splatting, novel view synthesis
 

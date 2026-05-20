@@ -18,8 +18,8 @@ content_hash: 49ab3f4b81ddd5a0
 # What If: Understanding Motion Through Sparse Interactions
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.12777](https://arxiv.org/abs/2510.12777)
-**Code**: [compvis.github.io/flow-poke-transformer](https://compvis.github.io/flow-poke-transformer)
+**arXiv**: [2510.12777](https://arxiv.org/abs/2510.12777)  
+**Code**: [compvis.github.io/flow-poke-transformer](https://compvis.github.io/flow-poke-transformer)  
 **Area**: Image Segmentation
 **Keywords**: motion understanding, optical flow distribution prediction, sparse interaction, moving part segmentation, Transformer
 

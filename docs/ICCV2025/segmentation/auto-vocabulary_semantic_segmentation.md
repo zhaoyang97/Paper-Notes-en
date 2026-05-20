@@ -18,8 +18,8 @@ content_hash: 08841a9ab9920a36
 # Auto-Vocabulary Semantic Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2312.04539](https://arxiv.org/abs/2312.04539)
-**Code**: Coming soon
+**arXiv**: [2312.04539](https://arxiv.org/abs/2312.04539)  
+**Code**: Coming soon  
 **Area**: Segmentation / Open-Vocabulary / VLM
 **Keywords**: auto-vocabulary segmentation, open-vocabulary, BLIP, zero-shot, LLM evaluator
 

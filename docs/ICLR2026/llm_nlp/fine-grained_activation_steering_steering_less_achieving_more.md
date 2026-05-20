@@ -18,8 +18,8 @@ content_hash: 99d0f68927a51e3a
 # Fine-Grained Activation Steering: Steering Less, Achieving More
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.04428](https://arxiv.org/abs/2602.04428)
-**Code**: [https://github.com/zijian678/AUSteer](https://github.com/zijian678/AUSteer)
+**arXiv**: [2602.04428](https://arxiv.org/abs/2602.04428)  
+**Code**: [https://github.com/zijian678/AUSteer](https://github.com/zijian678/AUSteer)  
 **Area**: LLM NLP
 **Keywords**: activation steering, atomic units, fine-grained intervention, interpretability, inference-time alignment
 

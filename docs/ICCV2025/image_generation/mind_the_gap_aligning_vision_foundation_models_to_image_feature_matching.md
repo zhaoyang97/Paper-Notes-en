@@ -18,8 +18,8 @@ content_hash: 36cf58715a8a1f29
 # Mind the Gap: Aligning Vision Foundation Models to Image Feature Matching
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.10318](https://arxiv.org/abs/2507.10318)
-**Code**: N/A
+**arXiv**: [2507.10318](https://arxiv.org/abs/2507.10318)  
+**Code**: N/A  
 **Area**: Image Generation
 **Keywords**: Feature Matching, Vision Foundation Models, Diffusion Models, Cross-Image Interaction, Multi-Instance Matching
 

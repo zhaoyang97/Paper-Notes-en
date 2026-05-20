@@ -18,8 +18,8 @@ content_hash: c2ad15c634de0f2f
 # SingRef6D: Monocular Novel Object Pose Estimation with a Single RGB Reference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.21927](https://arxiv.org/abs/2509.21927)
-**Code**: [https://plusgrey.github.io/singref6d/](https://plusgrey.github.io/singref6d/)
+**arXiv**: [2509.21927](https://arxiv.org/abs/2509.21927)  
+**Code**: [https://plusgrey.github.io/singref6d/](https://plusgrey.github.io/singref6d/)  
 **Area**: 3D Vision / 6D Pose Estimation
 **Keywords**: 6D pose estimation, monocular depth estimation, single reference image, Depth-Anything, depth-aware matching
 

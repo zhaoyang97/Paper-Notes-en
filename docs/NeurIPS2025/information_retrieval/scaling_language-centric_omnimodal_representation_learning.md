@@ -18,8 +18,8 @@ content_hash: 4009484c4ee24902
 # Scaling Language-Centric Omnimodal Representation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11693](https://arxiv.org/abs/2510.11693)
-**Code**: [GitHub](https://github.com/LCO-Embedding/LCO-Embedding)
+**arXiv**: [2510.11693](https://arxiv.org/abs/2510.11693)  
+**Code**: [GitHub](https://github.com/LCO-Embedding/LCO-Embedding)  
 **Area**: Information Retrieval
 **Keywords**: Multimodal Representation Learning, Contrastive Learning, MLLM Embedding, Cross-Modal Alignment, Generation-Representation Scaling Law
 

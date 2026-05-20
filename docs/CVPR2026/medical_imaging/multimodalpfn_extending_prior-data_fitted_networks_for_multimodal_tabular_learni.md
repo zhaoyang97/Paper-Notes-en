@@ -18,8 +18,8 @@ content_hash: 9b56c7ba4de9a106
 # MultiModalPFN: Extending Prior-Data Fitted Networks for Multimodal Tabular Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20223](https://arxiv.org/abs/2602.20223)
-**Code**: [Available](https://github.com/too-z/MultiModalPFN)
+**arXiv**: [2602.20223](https://arxiv.org/abs/2602.20223)  
+**Code**: [Available](https://github.com/too-z/MultiModalPFN)  
 **Area**: Medical Imaging
 **Keywords**: Tabular Learning, Multimodal Fusion, TabPFN, Attention Imbalance, Modality Projection
 

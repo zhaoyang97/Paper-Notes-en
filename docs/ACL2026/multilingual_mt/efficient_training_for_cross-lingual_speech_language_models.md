@@ -18,8 +18,8 @@ content_hash: c3841653fa822dcc
 # Efficient Training for Cross-lingual Speech Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.11096](https://arxiv.org/abs/2604.11096)
-**Code**: [https://github.com/ictnlp/CSLM](https://github.com/ictnlp/CSLM)
+**arXiv**: [2604.11096](https://arxiv.org/abs/2604.11096)  
+**Code**: [https://github.com/ictnlp/CSLM](https://github.com/ictnlp/CSLM)  
 **Area**: Multilingual/Translation / Audio & Speech
 **Keywords**: cross-lingual speech LLM, discrete speech tokens, modality alignment, chain-of-modality generation, data-efficient training
 

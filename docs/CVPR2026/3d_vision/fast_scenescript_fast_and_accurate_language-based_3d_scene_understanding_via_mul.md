@@ -18,8 +18,8 @@ content_hash: 7e1974fa3044e200
 # Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.05597](https://arxiv.org/abs/2512.05597)
-**Code**: None
+**arXiv**: [2512.05597](https://arxiv.org/abs/2512.05597)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D scene understanding, multi-token prediction, structured language model, inference acceleration, self-speculative decoding
 

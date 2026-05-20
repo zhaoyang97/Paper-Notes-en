@@ -19,8 +19,8 @@ content_hash: 203e9e228b731fd5
 # StreamMind: Unlocking Full Frame Rate Streaming Video Dialogue through Event-Gated Cognition
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06220](https://arxiv.org/abs/2503.06220)
-**Code**: [https://aka.ms/StreamMind](https://aka.ms/StreamMind)
+**arXiv**: [2503.06220](https://arxiv.org/abs/2503.06220)  
+**Code**: [https://aka.ms/StreamMind](https://aka.ms/StreamMind)  
 **Area**: LLM Evaluation
 **Keywords**: streaming video dialogue, event gating, state space model, perception-cognition decoupling, LLM invocation, real-time video understanding
 
@@ -51,49 +51,49 @@ StreamMind proposes an "event-gated LLM invocation" paradigm to replace the exis
 StreamMind decouples perception and cognition into two stages:
 
 1. **Perception stage** (executed every frame, constant cost):
-   - CLIP extracts spatial features.
-   - EPFE (Event-Preserving Feature Extractor) fuses spatiotemporal features via state space methods.
-   - Outputs a single perception token stored in Perception Memory.
+    - CLIP extracts spatial features.
+    - EPFE (Event-Preserving Feature Extractor) fuses spatiotemporal features via state space methods.
+    - Outputs a single perception token stored in Perception Memory.
 
 2. **Cognition gate decision** (executed every frame, lightweight):
-   - The Cognition Gate ($\mathcal{G}$) determines, based on the current perception token and the user query, whether an event has occurred.
-   - If an event is detected → open the gate, invoke the LLM.
+    - The Cognition Gate ($\mathcal{G}$) determines, based on the current perception token and the user query, whether an event has occurred.
+    - If an event is detected → open the gate, invoke the LLM.
 
 3. **Cognition stage** (executed only upon event occurrence):
-   - Samples tokens from Perception Memory → Cognition Pooling.
-   - Feeds into the LLM to generate a response.
+    - Samples tokens from Perception Memory → Cognition Pooling.
+    - Feeds into the LLM to generate a response.
 
 ### Key Designs
 
 1. **Event-Preserving Feature Extractor (EPFE)**:
 
-   - **Function**: Compresses per-frame CLIP spatial features into a **single perception token** while preserving event information along the temporal dimension.
-   - Based on a state space model (SSM):
+    - **Function**: Compresses per-frame CLIP spatial features into a **single perception token** while preserving event information along the temporal dimension.
+    - Based on a state space model (SSM):
      - CLIP features + previous-timestep hidden state $H^{t-1}$ → update hidden state → output perception token $F_{per}^{t_i}$.
-   - **Mechanism**: SSMs are naturally suited to modeling continuous physical signals; their hidden state encodes arbitrarily long historical information at constant cost. Key changes indicating events are preserved in the hidden state updates, while redundant inter-frame repetition is compressed.
-   - **Design Motivation**: Conventional video LLM encoders output multiple tokens per frame, causing the total token count to grow linearly with the number of frames and leading to explosive LLM input lengths. EPFE guarantees a cost of only 1 additional token per frame.
+    - **Mechanism**: SSMs are naturally suited to modeling continuous physical signals; their hidden state encodes arbitrarily long historical information at constant cost. Key changes indicating events are preserved in the hidden state updates, while redundant inter-frame repetition is compressed.
+    - **Design Motivation**: Conventional video LLM encoders output multiple tokens per frame, causing the total token count to grow linearly with the number of frames and leading to explosive LLM input lengths. EPFE guarantees a cost of only 1 additional token per frame.
 
 2. **Cognition Gate**:
 
-   - **Function**: Determines whether an event relevant to the user query has occurred in the current frame.
-   - **Mechanism**:
+    - **Function**: Determines whether an event relevant to the user query has occurred in the current frame.
+    - **Mechanism**:
      - Input: user query [Prompt] + current perception token $F_{per}^{t_i}$.
      - Output: [response] or [silence] (binary decision).
-   - **Shallow Layer Transfer**: The gate reuses the shallow-layer parameters of the LLM rather than training a separate small network.
+    - **Shallow Layer Transfer**: The gate reuses the shallow-layer parameters of the LLM rather than training a separate small network.
      - **Design Motivation**: Simple feature matching/retrieval methods (e.g., Cross Attention in Q-Former) lack deep semantic understanding and cannot make the "should I respond?" decision that requires semantic reasoning. Reusing LLM shallow layers leverages the LLM's world knowledge while avoiding the computational overhead of full LLM inference.
-   - **Training**: Autoregressive training, maximizing the probability of the [response/silence] token.
+    - **Training**: Autoregressive training, maximizing the probability of the [response/silence] token.
 
 3. **Decoupling of Perception and Cognition**:
 
-   - Perception: constant cost per frame (CLIP + EPFE), $O(1)$ per frame.
-   - Gate decision: lightweight per frame (LLM shallow layers + short sequence), $O(1)$ per frame.
-   - Cognition (LLM inference): executed only upon event trigger, at a frequency far below the frame rate.
-   - Total complexity reduced from $O(n^3)$ (per-frame LLM invocation) to approximately $O(n)$.
+    - Perception: constant cost per frame (CLIP + EPFE), $O(1)$ per frame.
+    - Gate decision: lightweight per frame (LLM shallow layers + short sequence), $O(1)$ per frame.
+    - Cognition (LLM inference): executed only upon event trigger, at a frequency far below the frame rate.
+    - Total complexity reduced from $O(n^3)$ (per-frame LLM invocation) to approximately $O(n)$.
 
 4. **Cognition Pooling**:
 
-   - When the gate opens, representative tokens are sampled from Perception Memory as input to the LLM.
-   - Prevents all historical tokens from being fed into the LLM, controlling the context window length.
+    - When the gate opens, representative tokens are sampled from Perception Memory as input to the LLM.
+    - Prevents all historical tokens from being fed into the LLM, controlling the context window length.
 
 ### Loss & Training
 
@@ -130,8 +130,8 @@ Also achieves state-of-the-art on standard offline benchmarks:
 ### Temporal Responsiveness Evaluation
 
 - Two new metrics are proposed to evaluate temporal alignment:
-  - Responding at the correct time (neither too early nor too late).
-  - Generating semantically correct content.
+    - Responding at the correct time (neither too early nor too late).
+    - Generating semantically correct content.
 - StreamMind outperforms baselines on both metrics.
 
 ### Key Findings

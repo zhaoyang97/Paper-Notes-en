@@ -18,9 +18,9 @@ content_hash: d8fde7ec29ac45ec
 # Neural Collapse in Cumulative Link Models for Ordinal Regression: An Analysis with Unconstrained Feature Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05801](https://arxiv.org/abs/2506.05801)
+**arXiv**: [2506.05801](https://arxiv.org/abs/2506.05801)  
 **Authors**: Chuang Ma, Tomoyuki Obuchi, Toshiyuki Tanaka (Kyoto University, RIKEN AIP)
-**Code**: Not available
+**Code**: Not available  
 **Area**: Other
 **Keywords**: Neural Collapse, ordinal regression, cumulative link models, unconstrained feature model, regularization, threshold models
 

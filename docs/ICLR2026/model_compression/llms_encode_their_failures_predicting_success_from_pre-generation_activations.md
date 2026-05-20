@@ -18,8 +18,8 @@ content_hash: cccc5250f0cc929a
 # LLMs Encode Their Failures: Predicting Success from Pre-Generation Activations
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.09924](https://arxiv.org/abs/2602.09924)
-**Code**: [https://github.com/KabakaWilliam/llms_know_difficulty](https://github.com/KabakaWilliam/llms_know_difficulty)
+**arXiv**: [2602.09924](https://arxiv.org/abs/2602.09924)  
+**Code**: [https://github.com/KabakaWilliam/llms_know_difficulty](https://github.com/KabakaWilliam/llms_know_difficulty)  
 **Area**: Model Compression
 **Keywords**: Difficulty Prediction, Linear Probe, Model Routing, Inference-Time Compute, Success Prediction
 

@@ -18,8 +18,8 @@ content_hash: 6185adca1a0f4c70
 # Toward Real-world Text Image Forgery Localization: Structured and Interpretable Data Synthesis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.12658](https://arxiv.org/abs/2511.12658)
-**Code**: [Project Page](https://github.com/)（The paper mentions a Project Page for dataset release）
+**arXiv**: [2511.12658](https://arxiv.org/abs/2511.12658)  
+**Code**: [Project Page](https://github.com/)（The paper mentions a Project Page for dataset release）  
 **Area**: Interpretability
 **Keywords**: Text image forgery, synthetic data, invisible distribution modeling, Fourier series, forgery parameters
 

@@ -18,8 +18,8 @@ content_hash: be24a19d702133f8
 # Say More with Less: Variable-Frame-Rate Speech Tokenization via Adaptive Clustering and Implicit Duration Coding
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.04685](https://arxiv.org/abs/2509.04685)
-**Code**: [VARSTok](https://zhengrachel.github.io/VARSTok)
+**arXiv**: [2509.04685](https://arxiv.org/abs/2509.04685)  
+**Code**: [VARSTok](https://zhengrachel.github.io/VARSTok)  
 **Area**: Audio & Speech
 **Keywords**: speech tokenization, variable frame rate, density peak clustering, implicit duration coding, speech language model
 

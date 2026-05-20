@@ -18,8 +18,8 @@ content_hash: 4ae8ed7c7e00b437
 # The Physical Basis of Prediction: World Model Formation in Neural Organoids via an LLM-Generated Curriculum
 
 **Conference**: NeurIPS 2025 (Workshop: Scaling Environments for Agents / Embodied World Models)
-**arXiv**: [2509.04633](https://arxiv.org/abs/2509.04633)
-**Code**: Unavailable
+**arXiv**: [2509.04633](https://arxiv.org/abs/2509.04633)  
+**Code**: Unavailable  
 **Area**: Reinforcement Learning
 **Keywords**: Neural organoids, world models, curriculum learning, LLM-generated environments, synaptic plasticity
 
@@ -59,9 +59,9 @@ The framework comprises three major components:
 
 2. **Three progressive environment designs**:
 
-   - **Environment 1 (Conditioned Avoidance)**: The agent moves on a 1D 8-position grid and learns to associate specific regions (positions 6–8) with negative outcomes and actively avoid them. Actions are decoded by comparing spike counts from recording groups A and B. Punishment intensity increases as a gradient with intrusion depth. Extensible to 2D/3D grids and maze navigation.
-   - **Environment 2 (Predator–Prey)**: The agent (predator) must actively pursue a dynamic target (prey), requiring a goal-directed navigation world model. Two sensory channels are provided: prey position (exteroceptive) and self-position (proprioceptive). Extensible to include adversarial entities.
-   - **Environment 3 (Pong)**: The classic Pong game, requiring the agent to model a continuous-time dynamical system. The agent must predict ball trajectories and move the paddle based on those predictions—the highest-level demand on the world model, requiring not only responses to the current state but also prediction of future states.
+    - **Environment 1 (Conditioned Avoidance)**: The agent moves on a 1D 8-position grid and learns to associate specific regions (positions 6–8) with negative outcomes and actively avoid them. Actions are decoded by comparing spike counts from recording groups A and B. Punishment intensity increases as a gradient with intrusion depth. Extensible to 2D/3D grids and maze navigation.
+    - **Environment 2 (Predator–Prey)**: The agent (predator) must actively pursue a dynamic target (prey), requiring a goal-directed navigation world model. Two sensory channels are provided: prey position (exteroceptive) and self-position (proprioceptive). Extensible to include adversarial entities.
+    - **Environment 3 (Pong)**: The classic Pong game, requiring the agent to model a continuous-time dynamical system. The agent must predict ball trajectories and move the paddle based on those predictions—the highest-level demand on the world model, requiring not only responses to the current state but also prediction of future states.
 
 3. **LLM-automated protocol design**:
    An LLM serves as a meta-controller that automatically generates and optimizes new experimental protocols—including environmental parameters, stimulation patterns, and time windows—based on prior experimental results. This enables automated scaling of environment design, analogous to paradigms of autonomous discovery in chemistry and materials science.

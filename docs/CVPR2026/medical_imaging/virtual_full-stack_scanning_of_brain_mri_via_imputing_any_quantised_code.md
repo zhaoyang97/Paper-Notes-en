@@ -18,8 +18,8 @@ content_hash: d99610881b1ed4e2
 # Virtual Full-stack Scanning of Brain MRI via Imputing Any Quantised Code
 
 **Conference**: CVPR 2026
-**arXiv**: [2501.18328](https://arxiv.org/abs/2501.18328)
-**Code**: [Available](https://github.com/ycwu1997/CodeBrain)
+**arXiv**: [2501.18328](https://arxiv.org/abs/2501.18328)  
+**Code**: [Available](https://github.com/ycwu1997/CodeBrain)  
 **Area**: Medical Imaging
 **Keywords**: MRI modality imputation, finite scalar quantisation, brain MRI, cross-modality synthesis, any-to-any
 

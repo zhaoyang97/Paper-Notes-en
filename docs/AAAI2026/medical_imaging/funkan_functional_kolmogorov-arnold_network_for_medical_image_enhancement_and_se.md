@@ -18,8 +18,8 @@ content_hash: d733d9194cd2795b
 # FunKAN: Functional Kolmogorov-Arnold Network for Medical Image Enhancement and Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.13508](https://arxiv.org/abs/2509.13508)
-**Code**: [GitHub](https://github.com/MaksimPenkin/MedicalKAN)
+**arXiv**: [2509.13508](https://arxiv.org/abs/2509.13508)  
+**Code**: [GitHub](https://github.com/MaksimPenkin/MedicalKAN)  
 **Area**: Medical Image Analysis / Network Architecture Design
 **Keywords**: Kolmogorov-Arnold Network, Medical Image Enhancement, Medical Image Segmentation, MRI De-artifacting, Hermite Functions
 

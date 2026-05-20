@@ -18,8 +18,8 @@ content_hash: 83a376c10bd46ae0
 # TalkSketch: Multimodal Generative AI for Real-time Sketch Ideation with Speech
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.05817](https://arxiv.org/abs/2511.05817)
-**Code**: None
+**arXiv**: [2511.05817](https://arxiv.org/abs/2511.05817)  
+**Code**: None  
 **Area**: Dialogue Systems
 **Keywords**: multimodal interaction, sketch design, speech input, generative AI, creativity support tools
 

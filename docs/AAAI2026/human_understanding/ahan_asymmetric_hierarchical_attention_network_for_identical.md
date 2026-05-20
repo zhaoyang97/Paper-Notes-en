@@ -18,8 +18,8 @@ content_hash: fb692302f4ccd063
 # AHAN: Asymmetric Hierarchical Attention Network for Identical Twin Face Verification
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.21503](https://arxiv.org/abs/2602.21503)
-**Code**: Unavailable
+**arXiv**: [2602.21503](https://arxiv.org/abs/2602.21503)  
+**Code**: Unavailable  
 **Area**: Face Recognition / Fine-Grained Recognition
 **Keywords**: Identical twin verification, facial asymmetry, hierarchical cross-attention, fine-grained face recognition, Vision Transformer
 

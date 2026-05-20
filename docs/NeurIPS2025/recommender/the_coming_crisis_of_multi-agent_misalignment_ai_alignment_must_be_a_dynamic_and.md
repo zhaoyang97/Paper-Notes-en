@@ -18,8 +18,8 @@ content_hash: 0fbbdb779d5fcf5b
 # The Coming Crisis of Multi-Agent Misalignment: AI Alignment Must Be a Dynamic and Social Process
 
 **Conference**: NeurIPS 2025 (Position Paper)
-**arXiv**: [2506.01080](https://arxiv.org/abs/2506.01080)
-**Code**: None
+**arXiv**: [2506.01080](https://arxiv.org/abs/2506.01080)  
+**Code**: None  
 **Area**: AI Safety / Multi-Agent Alignment
 **Keywords**: Multi-agent systems, AI alignment, social dynamics, value alignment, agent interaction
 

@@ -18,8 +18,8 @@ content_hash: 0e3ef3c2c05f690c
 # Inference-Time Diffusion Model Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.08871](https://arxiv.org/abs/2412.08871)
-**Code**: [GitHub](https://github.com/geon-yeong/Distillation-pp)
+**arXiv**: [2412.08871](https://arxiv.org/abs/2412.08871)  
+**Code**: [GitHub](https://github.com/geon-yeong/Distillation-pp)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Diffusion Distillation, Inference-Time Distillation, Score Distillation Sampling, Teacher-Guided Sampling, Few-Step Generation
 

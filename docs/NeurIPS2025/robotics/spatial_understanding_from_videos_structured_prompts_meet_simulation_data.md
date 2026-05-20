@@ -18,8 +18,8 @@ content_hash: 78306eccede004e3
 # Spatial Understanding from Videos: Structured Prompts Meet Simulation Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03642](https://arxiv.org/abs/2506.03642)
-**Code**: [GitHub](https://github.com/Hyu-Zhang/SpatialMind)
+**arXiv**: [2506.03642](https://arxiv.org/abs/2506.03642)  
+**Code**: [GitHub](https://github.com/Hyu-Zhang/SpatialMind)  
 **Area**: Robotics
 **Keywords**: Visual-spatial understanding, chain-of-thought prompting, synthetic data, vision-language models, 3D reasoning
 

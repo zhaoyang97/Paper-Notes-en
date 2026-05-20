@@ -18,8 +18,8 @@ content_hash: 5a89dab5f08430c1
 # Linearly Constrained Diffusion Implicit Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.00359](https://arxiv.org/abs/2411.00359)
-**Code**: [https://grail.cs.washington.edu/projects/cdim/](https://grail.cs.washington.edu/projects/cdim/)
+**arXiv**: [2411.00359](https://arxiv.org/abs/2411.00359)  
+**Code**: [https://grail.cs.washington.edu/projects/cdim/](https://grail.cs.washington.edu/projects/cdim/)  
 **Area**: 3D Vision / Image Restoration
 **Keywords**: diffusion models, inverse problems, linear constraints, DDIM, accelerated sampling
 

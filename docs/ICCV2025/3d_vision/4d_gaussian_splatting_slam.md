@@ -18,8 +18,8 @@ content_hash: 0094e89ed30328a4
 # 4D Gaussian Splatting SLAM
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.16710](https://arxiv.org/abs/2503.16710)
-**Code**: [https://github.com/yanyan-li/4DGS-SLAM](https://github.com/yanyan-li/4DGS-SLAM)
+**arXiv**: [2503.16710](https://arxiv.org/abs/2503.16710)  
+**Code**: [https://github.com/yanyan-li/4DGS-SLAM](https://github.com/yanyan-li/4DGS-SLAM)  
 **Area**: 3D Vision
 **Keywords**: 4D Gaussian, Dynamic Scene SLAM, Optical Flow Rendering, Sparse Control Points, RGB-D
 

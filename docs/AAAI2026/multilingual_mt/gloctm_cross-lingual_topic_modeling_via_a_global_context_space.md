@@ -18,8 +18,8 @@ content_hash: dad214069f43dfce
 # GloCTM: Cross-Lingual Topic Modeling via a Global Context Space
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.11872](https://arxiv.org/abs/2601.11872)
-**Code**: [https://github.com/tienphat140205/GloCTM](https://github.com/tienphat140205/GloCTM)
+**arXiv**: [2601.11872](https://arxiv.org/abs/2601.11872)  
+**Code**: [https://github.com/tienphat140205/GloCTM](https://github.com/tienphat140205/GloCTM)  
 **Area**: Multilingual Translation
 **Keywords**: Cross-lingual, Topic Model, VAE, Multilingual Embeddings, CKA Alignment
 

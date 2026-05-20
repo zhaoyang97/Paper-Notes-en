@@ -18,8 +18,8 @@ content_hash: 0368e6e4d0d0b754
 # Text Embedding Knows How to Quantize Text-Guided Diffusion Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.10340](https://arxiv.org/abs/2507.10340)
-**Code**: [https://github.com/jimmy9704/QLIP](https://github.com/jimmy9704/QLIP)
+**arXiv**: [2507.10340](https://arxiv.org/abs/2507.10340)  
+**Code**: [https://github.com/jimmy9704/QLIP](https://github.com/jimmy9704/QLIP)  
 **Area**: Diffusion Models / Model Quantization
 **Keywords**: diffusion model quantization, text-guided, dynamic bit-width, mixed precision, post-training quantization
 

@@ -18,8 +18,8 @@ content_hash: c56ea60a7f74e610
 # AntigenLM: Structure-Aware DNA Language Modeling for Influenza
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.09067](https://arxiv.org/abs/2602.09067)
-**Code**: [https://github.com/peilab-cnic/AntigenLM](https://github.com/peilab-cnic/AntigenLM)
+**arXiv**: [2602.09067](https://arxiv.org/abs/2602.09067)  
+**Code**: [https://github.com/peilab-cnic/AntigenLM](https://github.com/peilab-cnic/AntigenLM)  
 **Area**: Biological Sequence Generation / DNA Language Models
 **Keywords**: DNA language model, influenza virus prediction, functional unit encoding, whole-genome modeling, vaccine design
 

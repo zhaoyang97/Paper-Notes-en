@@ -18,8 +18,8 @@ content_hash: 574a2c9d9c67a04f
 # Adaptive Online Emulation for Accelerating Complex Physical Simulations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.08012](https://arxiv.org/abs/2508.08012)
-**Code**: Coming soon (GitHub)
+**arXiv**: [2508.08012](https://arxiv.org/abs/2508.08012)  
+**Code**: Coming soon (GitHub)  
 **Area**: Earth Science / Scientific Computing
 **Keywords**: Online learning, neural network surrogate models, time-stepping simulation, ELM, atmospheric modeling
 

@@ -19,7 +19,7 @@ content_hash: be1ed68a647cdc20
 # SignRep: Enhancing Self-Supervised Sign Representations
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08529](https://arxiv.org/abs/2503.08529)
+**arXiv**: [2503.08529](https://arxiv.org/abs/2503.08529)  
 **Area**: Sign Language Understanding / Self-Supervised Learning
 **Keywords**: sign language representation learning, self-supervised learning, masked autoencoder, skeleton priors, adversarial style loss, dictionary retrieval
 

@@ -18,8 +18,8 @@ content_hash: 8ae1b7fd42b54134
 # Enhancing Logical Expressiveness in GNNs via Path-Neighbor Aggregation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07994](https://arxiv.org/abs/2511.07994)
-**Code**: None
+**arXiv**: [2511.07994](https://arxiv.org/abs/2511.07994)  
+**Code**: None  
 **Area**: Graph Learning / Knowledge Graph Reasoning
 **Keywords**: Logical Expressiveness, Knowledge Graph Reasoning, Path-Neighbor Aggregation, Conditional GNN, Labeling Trick
 

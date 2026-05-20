@@ -18,8 +18,8 @@ content_hash: 92741eaadb448542
 # Rectifying Soft-Label Entangled Bias in Long-Tailed Dataset Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.17914](https://arxiv.org/abs/2511.17914)
-**Code**: [Available](https://github.com/j-cyoung/ADSA_DD.git)
+**arXiv**: [2511.17914](https://arxiv.org/abs/2511.17914)  
+**Code**: [Available](https://github.com/j-cyoung/ADSA_DD.git)  
 **Area**: Dataset Distillation / Long-Tailed Learning
 **Keywords**: Dataset Distillation, Long-Tailed Distribution, Soft Label Calibration, Generalization Bound, Logit Adjustment
 

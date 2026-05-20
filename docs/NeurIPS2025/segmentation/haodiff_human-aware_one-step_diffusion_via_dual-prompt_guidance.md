@@ -18,8 +18,8 @@ content_hash: 4e1847437361235b
 # HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19742](https://arxiv.org/abs/2505.19742)
-**Code**: [Available](https://github.com/gobunu/HAODiff)
+**arXiv**: [2505.19742](https://arxiv.org/abs/2505.19742)  
+**Code**: [Available](https://github.com/gobunu/HAODiff)  
 **Area**: Segmentation
 **Keywords**: Human image restoration, motion blur, one-step diffusion, dual-prompt guidance, classifier-free guidance
 

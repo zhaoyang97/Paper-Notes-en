@@ -17,8 +17,8 @@ content_hash: 4ed078cf7d5932d9
 # SimROD: A Simple Baseline for Raw Object Detection with Global and Local Enhancements
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.07101](https://arxiv.org/abs/2503.07101)
-**Code**: [https://ocean146.github.io/SimROD2025/](https://ocean146.github.io/SimROD2025/)
+**arXiv**: [2503.07101](https://arxiv.org/abs/2503.07101)  
+**Code**: [https://ocean146.github.io/SimROD2025/](https://ocean146.github.io/SimROD2025/)  
 **Area**: Object Detection
 **Keywords**: RAW image, object detection, Gamma enhancement, green channel, lightweight
 

@@ -18,8 +18,8 @@ content_hash: 0482750f3bed0c44
 # A Closer Look at Cross-Domain Few-Shot Object Detection: Fine-Tuning Matters and Parallel Decoder Helps
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28182](https://arxiv.org/abs/2603.28182)
-**Code**: [https://github.com/Intellindust-AI-Lab/FT-FSOD](https://github.com/Intellindust-AI-Lab/FT-FSOD)
+**arXiv**: [2603.28182](https://arxiv.org/abs/2603.28182)  
+**Code**: [https://github.com/Intellindust-AI-Lab/FT-FSOD](https://github.com/Intellindust-AI-Lab/FT-FSOD)  
 **Area**: Object Detection
 **Keywords**: Few-shot object detection, cross-domain transfer, hybrid ensemble decoder, progressive fine-tuning, OOD robustness
 

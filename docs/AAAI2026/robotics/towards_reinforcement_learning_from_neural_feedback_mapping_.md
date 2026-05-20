@@ -19,8 +19,8 @@ content_hash: 5c7389c8e8fb8ff3
 # Towards Reinforcement Learning from Neural Feedback: Mapping fNIRS Signals to Agent Performance
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12844](https://arxiv.org/abs/2511.12844)
-**Code**: [Dataset (Public)](https://github.com/your-profile/fNIRS2RL) / [Classification Code](https://github.com/your-profile/NeuroLoop-Classification/tree/aaai26)
+**arXiv**: [2511.12844](https://arxiv.org/abs/2511.12844)  
+**Code**: [Dataset (Public)](https://github.com/your-profile/fNIRS2RL) / [Classification Code](https://github.com/your-profile/NeuroLoop-Classification/tree/aaai26)  
 **Area**: Human-Computer Interaction / Reinforcement Learning / Brain-Computer Interface
 **Keywords**: RLNF, fNIRS, Neural Feedback, Implicit Signals, Cross-Subject Generalization, NEURO-LOOP
 

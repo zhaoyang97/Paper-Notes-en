@@ -17,8 +17,8 @@ content_hash: 20bcf5009655694c
 # Empowering Decision Trees via Shape Function Branching
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19040](https://arxiv.org/abs/2510.19040)
-**Code**: Not provided
+**arXiv**: [2510.19040](https://arxiv.org/abs/2510.19040)  
+**Code**: Not provided  
 **Area**: Interpretable Machine Learning / Decision Trees
 **Keywords**: Decision Trees, Shape Functions, Interpretability, Tabular Data, Nonlinear Splitting
 

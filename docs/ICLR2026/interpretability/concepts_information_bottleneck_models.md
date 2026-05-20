@@ -17,8 +17,8 @@ content_hash: 28cea4c942ce1701
 # Concepts' Information Bottleneck Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.14626](https://arxiv.org/abs/2602.14626)
-**Code**: Available (mentioned in the paper)
+**arXiv**: [2602.14626](https://arxiv.org/abs/2602.14626)  
+**Code**: Available (mentioned in the paper)  
 **Area**: Interpretability
 **Keywords**: Concept Bottleneck Models, Information Bottleneck, Interpretability, Regularization, Concept Leakage
 

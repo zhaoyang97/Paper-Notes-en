@@ -18,8 +18,8 @@ content_hash: eef6274fae6872ff
 # External Knowledge Injection for CLIP-Based Class-Incremental Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08510](https://arxiv.org/abs/2503.08510)
-**Code**: [GitHub](https://github.com/LAMDA-CL/ICCV25-ENGINE)
+**arXiv**: [2503.08510](https://arxiv.org/abs/2503.08510)  
+**Code**: [GitHub](https://github.com/LAMDA-CL/ICCV25-ENGINE)  
 **Area**: Information Retrieval
 **Keywords**: Class-Incremental Learning, CLIP, External Knowledge Injection, GPT-4, Vision-Language Models
 

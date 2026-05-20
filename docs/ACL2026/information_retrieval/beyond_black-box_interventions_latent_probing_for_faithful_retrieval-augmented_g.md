@@ -18,8 +18,8 @@ content_hash: 5153c3a5a33501a9
 # Beyond Black-Box Interventions: Latent Probing for Faithful Retrieval-Augmented Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2510.12460](https://arxiv.org/abs/2510.12460)
-**Code**: [GitHub](https://github.com/XMUDeepLIT/ProbeRAG)
+**arXiv**: [2510.12460](https://arxiv.org/abs/2510.12460)  
+**Code**: [GitHub](https://github.com/XMUDeepLIT/ProbeRAG)  
 **Area**: Information Retrieval / RAG
 **Keywords**: RAG faithfulness, knowledge conflict, latent space probing, attention guidance, context pruning
 

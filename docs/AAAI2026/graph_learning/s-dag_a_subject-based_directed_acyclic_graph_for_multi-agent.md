@@ -18,8 +18,8 @@ content_hash: b7d6737be02f94e8
 # S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06727](https://arxiv.org/abs/2511.06727)
-**Code**: [https://github.com/WanyuGroup/AAAI2026_S-DAG](https://github.com/WanyuGroup/AAAI2026_S-DAG)
+**arXiv**: [2511.06727](https://arxiv.org/abs/2511.06727)  
+**Code**: [https://github.com/WanyuGroup/AAAI2026_S-DAG](https://github.com/WanyuGroup/AAAI2026_S-DAG)  
 **Area**: Graph Learning
 **Keywords**: Subject-level analysis, directed acyclic graph, GNN reasoning, expert model composition, heterogeneous reasoning
 

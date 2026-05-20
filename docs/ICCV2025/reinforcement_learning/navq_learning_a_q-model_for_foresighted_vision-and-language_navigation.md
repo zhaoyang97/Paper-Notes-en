@@ -18,8 +18,8 @@ content_hash: 7453fe88071c924f
 # NavQ: Learning a Q-Model for Foresighted Vision-and-Language Navigation
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.16457](https://arxiv.org/abs/2510.16457)
-**Code**: [https://github.com/woyut/NavQ_ICCV25](https://github.com/woyut/NavQ_ICCV25)
+**arXiv**: [2510.16457](https://arxiv.org/abs/2510.16457)  
+**Code**: [https://github.com/woyut/NavQ_ICCV25](https://github.com/woyut/NavQ_ICCV25)  
 **Area**: Reinforcement Learning / Vision-and-Language Navigation
 **Keywords**: Vision-and-Language Navigation, Q-learning, Foresighted Decision-Making, A* Search, Self-Supervised Pretraining
 

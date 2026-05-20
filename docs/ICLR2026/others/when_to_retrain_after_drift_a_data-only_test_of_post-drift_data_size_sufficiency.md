@@ -18,8 +18,8 @@ content_hash: cbe39f56e9d7dd8a
 # When to Retrain after Drift: A Data-Only Test of Post-Drift Data Size Sufficiency
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.09024](https://arxiv.org/abs/2603.09024)
-**Code**: Not mentioned
+**arXiv**: [2603.09024](https://arxiv.org/abs/2603.09024)  
+**Code**: Not mentioned  
 **Area**: Other / Streaming Data Learning
 **Keywords**: Concept drift, retraining timing, data sufficiency, streaming learning, weighted local regression, state dependence
 

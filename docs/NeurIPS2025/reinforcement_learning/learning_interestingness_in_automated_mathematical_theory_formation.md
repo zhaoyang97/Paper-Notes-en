@@ -17,8 +17,8 @@ content_hash: 13cdff3607b49172
 # Learning Interestingness in Automated Mathematical Theory Formation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.14778](https://arxiv.org/abs/2511.14778)
-**Code**: [https://github.com/trishullab/Fermat](https://github.com/trishullab/Fermat)
+**arXiv**: [2511.14778](https://arxiv.org/abs/2511.14778)  
+**Code**: [https://github.com/trishullab/Fermat](https://github.com/trishullab/Fermat)  
 **Area**: Reinforcement Learning / Automated Mathematical Discovery
 **Keywords**: automated theory formation, interestingness learning, reinforcement learning, evolutionary program synthesis, LLM-driven search
 

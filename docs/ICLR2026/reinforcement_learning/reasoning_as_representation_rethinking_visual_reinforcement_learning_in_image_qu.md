@@ -17,8 +17,8 @@ content_hash: ff92e0f5b5012a91
 # Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment
 
 **Conference**: ICLR 2026 (Oral)
-**arXiv**: [2510.11369](https://arxiv.org/abs/2510.11369)
-**Code**: None
+**arXiv**: [2510.11369](https://arxiv.org/abs/2510.11369)  
+**Code**: None  
 **Area**: Reinforcement Learning / Image Quality Assessment
 **Keywords**: Image Quality Assessment, Reinforcement Learning, Reasoning as Representation, Contrastive Learning, Cross-Domain Generalization
 

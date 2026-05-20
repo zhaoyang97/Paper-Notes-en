@@ -18,8 +18,8 @@ content_hash: dc57cc1dba5fe1cb
 # DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04474](https://arxiv.org/abs/2510.04474)
-**Code**: [https://github.com/Optimization-AI/DRPO](https://github.com/Optimization-AI/DRPO)
+**arXiv**: [2510.04474](https://arxiv.org/abs/2510.04474)  
+**Code**: [https://github.com/Optimization-AI/DRPO](https://github.com/Optimization-AI/DRPO)  
 **Area**: LLM Reasoning
 **Keywords**: efficient reasoning, overthinking, GRPO, length penalty, reinforcement-learning
 

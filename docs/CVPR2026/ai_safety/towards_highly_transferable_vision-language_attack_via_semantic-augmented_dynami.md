@@ -18,8 +18,8 @@ content_hash: 8df94e8265fc8091
 # Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04839](https://arxiv.org/abs/2603.04839)
-**Code**: [GitHub](https://github.com/LiYuanBoJNU/SADCA)
+**arXiv**: [2603.04839](https://arxiv.org/abs/2603.04839)  
+**Code**: [GitHub](https://github.com/LiYuanBoJNU/SADCA)  
 **Area**: AI Security
 **Keywords**: Adversarial Attack, Vision-Language Models, Adversarial Transferability, Contrastive Learning, Semantic Augmentation
 

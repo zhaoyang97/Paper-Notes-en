@@ -18,8 +18,8 @@ content_hash: deac16166caf5384
 # A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.12636](https://arxiv.org/abs/2504.12636)
-**Code**: [https://a-embodied.github.io/A0/](https://a-embodied.github.io/A0/)
+**arXiv**: [2504.12636](https://arxiv.org/abs/2504.12636)  
+**Code**: [https://a-embodied.github.io/A0/](https://a-embodied.github.io/A0/)  
 **Area**: Image Generation
 **Keywords**: Robotic Manipulation, Spatial Affordance, Hierarchical Model, Diffusion Model, Cross-Platform Generalization
 
@@ -43,8 +43,8 @@ This paper proposes A₀, an affordance-aware hierarchical diffusion model that 
 2. **A₀ Diffusion Model**: Based on the DiT architecture, takes noisy waypoints and diffusion timesteps as input, and injects SigLiP visual features and Qwen2.5-7B text features via cross-attention. A Position Offset Attention module is introduced to extract inter-frame motion information.
 
 3. **Two-Stage Training**:
-   - Pretraining: Learns general object localization ability on 1M PixMo-One-Point data.
-   - Fine-tuning: Learns dynamic manipulation on annotated trajectory data.
+    - Pretraining: Learns general object localization ability on 1M PixMo-One-Point data.
+    - Fine-tuning: Learns dynamic manipulation on annotated trajectory data.
 
 ### Loss & Training
 Pretraining: $\mathcal{L}_p = \text{MSE}(x_t^0, f_\theta(k, x_t^k, I_t, \ell))$; Fine-tuning: $\mathcal{L}_s = \text{MSE}(x_{t:t+T}^0, f_\theta(k, x_{t:t+T}^k, I_{t-1:t}, \ell))$

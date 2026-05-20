@@ -18,9 +18,9 @@ content_hash: d0cf8280c804e94c
 # A Good Teacher Adapts Their Knowledge for Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: No arXiv preprint
+**arXiv**: No arXiv preprint  
 **CVF**: [Paper PDF](https://openaccess.thecvf.com/content/ICCV2025/papers/Qian_A_Good_Teacher_Adapts_Their_Knowledge_for_Distillation_ICCV_2025_paper.pdf)
-**Code**: No public code
+**Code**: No public code  
 **Area**: Knowledge Distillation
 **Keywords**: Knowledge distillation, capacity gap, intra-class distribution, teacher adaptation, distribution alignment
 **Authors**: Chengyao Qian, Trung Le, Mehrtash Harandi (Monash University)
@@ -121,10 +121,10 @@ Core findings:
 - **Design of the adaptation objective**: How to formulate the teacher adaptation objective and determine a "student-friendly" target distribution may require prior knowledge of the student model's structure.
 - **No public code**: No open-source implementation has been found, making reproduction and extension inconvenient.
 - **Potential extensions**:
-  - Generalizing AID to feature-level distillation (distribution adaptation beyond the output layer).
-  - Combining with adaptive temperature methods for dynamic distribution adaptation.
-  - Validating on large models (e.g., ViT, DeiT) and multimodal distillation scenarios.
-  - Online learning variant: adapting the teacher concurrently with distillation, rather than in two separate stages.
+    - Generalizing AID to feature-level distillation (distribution adaptation beyond the output layer).
+    - Combining with adaptive temperature methods for dynamic distribution adaptation.
+    - Validating on large models (e.g., ViT, DeiT) and multimodal distillation scenarios.
+    - Online learning variant: adapting the teacher concurrently with distillation, rather than in two separate stages.
 
 ## Related Work & Insights
 

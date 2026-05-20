@@ -19,9 +19,9 @@ content_hash: fa880af6d4bf9a38
 # SOSControl: Enhancing Human Motion Generation through Saliency-Aware Symbolic Orientation and Timing Control
 
 **Conference**: AAAI2026
-**arXiv**: [2601.14258](https://arxiv.org/abs/2601.14258)
+**arXiv**: [2601.14258](https://arxiv.org/abs/2601.14258)  
 **Authors**: Ho Yin Au, Junkun Jiang, Jie Chen (The Hong Kong Polytechnic University)
-**Code**: [GitHub](https://github.com/asdryau/SOSControl)
+**Code**: [GitHub](https://github.com/asdryau/SOSControl)  
 **Area**: Human Understanding
 **Keywords**: Human Motion Generation, Symbolic Control, Labanotation, Diffusion Models, Saliency Detection, ControlNet
 

@@ -18,8 +18,8 @@ content_hash: 1c6b53885bf15e50
 # FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22969](https://arxiv.org/abs/2603.22969)
-**Code**: None
+**arXiv**: [2603.22969](https://arxiv.org/abs/2603.22969)  
+**Code**: None  
 **Area**: Image Segmentation
 **Keywords**: Camouflaged Object Detection, Weakly Supervised, SAM, Frequency-aware LoRA, Contrastive Learning
 

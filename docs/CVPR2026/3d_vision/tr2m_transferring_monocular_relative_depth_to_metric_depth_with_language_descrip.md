@@ -19,8 +19,8 @@ content_hash: ee70a1b927d8c884
 # TR2M: Transferring Monocular Relative Depth to Metric Depth with Language Descriptions and Dual-Level Scale-Oriented Contrast
 
 **Conference**: CVPR 2026
-**arXiv**: [2506.13387](https://arxiv.org/abs/2506.13387)
-**Code**: [GitHub](https://github.com/BeileiCui/TR2M)
+**arXiv**: [2506.13387](https://arxiv.org/abs/2506.13387)  
+**Code**: [GitHub](https://github.com/BeileiCui/TR2M)  
 **Institution**: The Chinese University of Hong Kong
 **Area**: 3D Vision
 **Keywords**: Monocular depth estimation, relative-to-metric depth transfer, language descriptions, cross-modal attention, contrastive learning, pixel-level scaling

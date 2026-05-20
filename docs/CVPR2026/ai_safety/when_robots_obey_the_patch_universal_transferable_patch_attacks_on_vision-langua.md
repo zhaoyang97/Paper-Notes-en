@@ -18,8 +18,8 @@ content_hash: 77f64537fdfbf90d
 # When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.21192](https://arxiv.org/abs/2511.21192)
-**Code**: [Available](https://github.com/yuyi-sd/UPA-RFAS)
+**arXiv**: [2511.21192](https://arxiv.org/abs/2511.21192)  
+**Code**: [Available](https://github.com/yuyi-sd/UPA-RFAS)  
 **Area**: AI Security
 **Keywords**: Adversarial Attack, VLA Models, Universal Adversarial Patch, Black-box Transfer Attack, Robot Safety
 

@@ -18,8 +18,8 @@ content_hash: a9241139fdff1e26
 # Forgetting Through Transforming: Enabling Federated Unlearning via Class-Aware Representation Transformation
 
 **Conference**: ICCV2025
-**arXiv**: [2410.06848](https://arxiv.org/abs/2410.06848)
-**Code**: To be confirmed
+**arXiv**: [2410.06848](https://arxiv.org/abs/2410.06848)  
+**Code**: To be confirmed  
 **Area**: Federated Learning / Machine Unlearning / Privacy Protection
 **Keywords**: federated unlearning, class-aware representation, contrastive learning, transformation alignment, Non-IID
 

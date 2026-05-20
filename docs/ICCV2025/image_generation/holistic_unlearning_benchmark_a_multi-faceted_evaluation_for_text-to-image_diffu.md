@@ -18,8 +18,8 @@ content_hash: e5cb31f6e1b12bec
 # Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.05664](https://arxiv.org/abs/2410.05664)
-**Code**: [GitHub](https://github.com/ml-postech/HUB)
+**arXiv**: [2410.05664](https://arxiv.org/abs/2410.05664)  
+**Code**: [GitHub](https://github.com/ml-postech/HUB)  
 **Area**: Diffusion Models / Concept Unlearning
 **Keywords**: Concept Unlearning, Evaluation Benchmark, Text-to-Image Safety, Multi-Dimensional Evaluation, Diffusion Models
 

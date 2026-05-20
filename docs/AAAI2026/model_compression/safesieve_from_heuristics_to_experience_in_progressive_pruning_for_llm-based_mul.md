@@ -18,8 +18,8 @@ content_hash: 7aecd78857bd161a
 # SafeSieve: From Heuristics to Experience in Progressive Pruning for LLM-based Multi-Agent Communication
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.11733](https://arxiv.org/abs/2508.11733)
-**Code**: [https://github.com/csgen/SafeSieve](https://github.com/csgen/SafeSieve)
+**arXiv**: [2508.11733](https://arxiv.org/abs/2508.11733)  
+**Code**: [https://github.com/csgen/SafeSieve](https://github.com/csgen/SafeSieve)  
 **Area**: Model Compression
 **Keywords**: Multi-agent systems, communication pruning, 0-extension clustering, LLM collaboration, adversarial robustness
 

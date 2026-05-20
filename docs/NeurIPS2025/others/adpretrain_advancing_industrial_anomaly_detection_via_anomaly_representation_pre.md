@@ -17,8 +17,8 @@ content_hash: bddd210ba24f4a99
 # ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05245](https://arxiv.org/abs/2511.05245)
-**Code**: [xcyao00/ADPretrain](https://github.com/xcyao00/ADPretrain)
+**arXiv**: [2511.05245](https://arxiv.org/abs/2511.05245)  
+**Code**: [xcyao00/ADPretrain](https://github.com/xcyao00/ADPretrain)  
 **Area**: Other
 **Keywords**: anomaly representation pretraining, contrastive learning, residual features, industrial anomaly detection, feature pretraining
 **Institution**: Shanghai Jiao Tong University, Nanjing Agricultural University

@@ -18,8 +18,8 @@ content_hash: 670557d88ccae6f3
 # Partial Action Replacement: Tackling Distribution Shift in Offline MARL
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07629](https://arxiv.org/abs/2511.07629)
-**Code**: None
+**arXiv**: [2511.07629](https://arxiv.org/abs/2511.07629)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Offline Multi-Agent Reinforcement Learning, Distribution Shift, Partial Action Replacement, Conservative Q-Learning, Uncertainty Estimation
 

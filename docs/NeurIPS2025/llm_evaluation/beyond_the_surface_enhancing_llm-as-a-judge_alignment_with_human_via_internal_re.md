@@ -18,8 +18,8 @@ content_hash: 3952ecb8646af894
 # Beyond the Surface: Enhancing LLM-as-a-Judge Alignment with Human via Internal Representations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.03550](https://arxiv.org/abs/2508.03550)
-**Code**: [https://github.com/sustech-nlp/LAGER](https://github.com/sustech-nlp/LAGER)
+**arXiv**: [2508.03550](https://arxiv.org/abs/2508.03550)  
+**Code**: [https://github.com/sustech-nlp/LAGER](https://github.com/sustech-nlp/LAGER)  
 **Area**: LLM Evaluation
 **Keywords**: LLM-as-a-Judge, hidden representations, cross-layer aggregation, evaluation alignment, plug-and-play
 
@@ -46,22 +46,22 @@ During LLM-based evaluation, at the position of the score token, hidden represen
 
 1. **Cross-Layer Logit Aggregation**:
 
-   - Function: $\hat{\mathbf{z}} = \sum_{i=0}^{L} w_i [\mathbf{h}_n^{(i)} \mathbf{W}_{\text{unembd}}]_{\mathcal{M}}$, where $\mathcal{M}$ is the set of candidate score tokens.
-   - Design Motivation: Different layers encode information at different granularities — lower layers capture local lexical features, middle layers capture semantics, and upper layers capture task-level reasoning. Aggregation integrates perspectives from all layers.
-   - Key Detail: Softmax normalization is **not** applied prior to aggregation (ablations confirm that pre-normalization discards relative scale information in the logits, leading to degraded performance).
+    - Function: $\hat{\mathbf{z}} = \sum_{i=0}^{L} w_i [\mathbf{h}_n^{(i)} \mathbf{W}_{\text{unembd}}]_{\mathcal{M}}$, where $\mathcal{M}$ is the set of candidate score tokens.
+    - Design Motivation: Different layers encode information at different granularities — lower layers capture local lexical features, middle layers capture semantics, and upper layers capture task-level reasoning. Aggregation integrates perspectives from all layers.
+    - Key Detail: Softmax normalization is **not** applied prior to aggregation (ablations confirm that pre-normalization discards relative scale information in the logits, leading to degraded performance).
 
 2. **Expected Score**:
 
-   - Function: $s^* = \sum_{s \in \mathbb{S}} s \times P(s)$, where $P(s) = \text{softmax}(\hat{\mathbf{z}})[s]$.
-   - Design Motivation: Provides finer granularity than argmax — if $P(4)=0.45$ and $P(5)=0.55$, argmax assigns 5, while the expected score yields 4.55, better discriminating response quality.
-   - This simple modification alone yields significant improvements (E-Score baseline).
+    - Function: $s^* = \sum_{s \in \mathbb{S}} s \times P(s)$, where $P(s) = \text{softmax}(\hat{\mathbf{z}})[s]$.
+    - Design Motivation: Provides finer granularity than argmax — if $P(4)=0.45$ and $P(5)=0.55$, argmax assigns 5, while the expected score yields 4.55, better discriminating response quality.
+    - This simple modification alone yields significant improvements (E-Score baseline).
 
 3. **Lightweight Weight Training**:
 
-   - Function: $L+1$ layer weight parameters are trained on a small validation set using a joint CE+MAE loss (e.g., only 33 parameters for LLaMA-3.1-8B).
-   - The model backbone is completely frozen; next-token prediction is unaffected.
-   - Weights are trained once and reused across all benchmarks and downstream tasks.
-   - Uniform aggregation without weight training (LAGER w.o. tuning) also yields substantial improvements.
+    - Function: $L+1$ layer weight parameters are trained on a small validation set using a joint CE+MAE loss (e.g., only 33 parameters for LLaMA-3.1-8B).
+    - The model backbone is completely frozen; next-token prediction is unaffected.
+    - Weights are trained once and reused across all benchmarks and downstream tasks.
+    - Uniform aggregation without weight training (LAGER w.o. tuning) also yields substantial improvements.
 
 ## Key Experimental Results
 

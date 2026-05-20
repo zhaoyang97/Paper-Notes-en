@@ -18,8 +18,8 @@ content_hash: 345e9be521ddec87
 # Split-Layer: Enhancing Implicit Neural Representation by Maximizing the Dimensionality of Feature Space
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10142](https://arxiv.org/abs/2511.10142)
-**Code**: None
+**arXiv**: [2511.10142](https://arxiv.org/abs/2511.10142)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: Implicit Neural Representation, Feature Space, MLP Restructuring, Hadamard Product, Multi-task
 

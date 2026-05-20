@@ -18,8 +18,8 @@ content_hash: fcb26ed516365082
 # Perturb and Recover: Fine-tuning for Effective Backdoor Removal from CLIP
 
 **Conference**: CVPR 2026
-**arXiv**: [2412.00727](https://arxiv.org/abs/2412.00727)
-**Code**: [https://github.com/](https://github.com/) (available, as declared in the paper)
+**arXiv**: [2412.00727](https://arxiv.org/abs/2412.00727)  
+**Code**: [https://github.com/](https://github.com/) (available, as declared in the paper)  
 **Area**: AI Safety
 **Keywords**: backdoor attack, CLIP model cleansing, fine-tuning defense, structured triggers, synthetic data
 

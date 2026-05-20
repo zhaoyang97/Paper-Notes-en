@@ -20,8 +20,8 @@ content_hash: 99ec5ccfbaf93de1
 # ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps
 
 **Conference**: CVPR2026
-**arXiv**: [2505.18675](https://arxiv.org/abs/2505.18675)
-**Code**: [fscdc/ReasonMap](https://fscdc.github.io/ReasonMap)
+**arXiv**: [2505.18675](https://arxiv.org/abs/2505.18675)  
+**Code**: [fscdc/ReasonMap](https://fscdc.github.io/ReasonMap)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal reasoning, visual reasoning, spatial reasoning, metro maps, benchmark, reinforcement fine-tuning, GRPO
 

@@ -19,7 +19,7 @@ content_hash: 66ce1038607dbd30
 # Increasing the Utility of Synthetic Images through Chamfer Guidance
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.10631](https://arxiv.org/abs/2508.10631)
+**arXiv**: [2508.10631](https://arxiv.org/abs/2508.10631)  
 **Area**: Image Generation / Synthetic Data
 **Keywords**: Chamfer Distance, diffusion model guidance, synthetic training data, image diversity, distribution matching, training-free inference guidance
 

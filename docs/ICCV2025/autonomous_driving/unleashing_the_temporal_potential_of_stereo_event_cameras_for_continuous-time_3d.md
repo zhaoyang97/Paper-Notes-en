@@ -18,8 +18,8 @@ content_hash: a4240c73dc89f3cb
 # Unleashing the Temporal Potential of Stereo Event Cameras for Continuous-Time 3D Perception
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.02288](https://arxiv.org/abs/2508.02288)
-**Code**: [GitHub](https://github.com/mickeykang16/Ev-Stereo3D)
+**arXiv**: [2508.02288](https://arxiv.org/abs/2508.02288)  
+**Code**: [GitHub](https://github.com/mickeykang16/Ev-Stereo3D)  
 **Area**: Autonomous Driving
 **Keywords**: Event Camera, Stereo Vision, 3D Object Detection, Continuous-Time Perception, Semantic-Geometric Dual Filtering
 

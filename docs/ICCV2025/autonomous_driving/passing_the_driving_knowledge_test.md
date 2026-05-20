@@ -20,8 +20,8 @@ content_hash: 821b7d263eac46fa
 # Passing the Driving Knowledge Test
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.21824](https://arxiv.org/abs/2508.21824)
-**Code**: [driveqaiccv.github.io](https://driveqaiccv.github.io)
+**arXiv**: [2508.21824](https://arxiv.org/abs/2508.21824)  
+**Code**: [driveqaiccv.github.io](https://driveqaiccv.github.io)  
 **Area**: Autonomous Driving / Driving Knowledge QA Evaluation
 **Keywords**: Driving Knowledge Test, LLM, MLLM, VQA, Traffic Rules, benchmark, Fine-tuning
 

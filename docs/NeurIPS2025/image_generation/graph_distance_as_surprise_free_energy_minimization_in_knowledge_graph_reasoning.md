@@ -18,8 +18,8 @@ content_hash: 43e3a02d1ab5f589
 # Graph Distance as Surprise: Free Energy Minimization in Knowledge Graph Reasoning
 
 **Conference**: NeurIPS 2025 (NORA Workshop)
-**arXiv**: [2512.01878](https://arxiv.org/abs/2512.01878)
-**Code**: None
+**arXiv**: [2512.01878](https://arxiv.org/abs/2512.01878)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Knowledge Graph, Free Energy Principle, graph distance, surprise minimization, entity grounding
 

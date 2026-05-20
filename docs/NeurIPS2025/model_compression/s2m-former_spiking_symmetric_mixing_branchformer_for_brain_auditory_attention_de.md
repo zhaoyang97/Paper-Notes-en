@@ -18,8 +18,8 @@ content_hash: 8689ebc71278a11b
 # S2M-Former: Spiking Symmetric Mixing Branchformer for Brain Auditory Attention Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.05164](https://arxiv.org/abs/2508.05164)
-**Code**: [GitHub](https://github.com/JackieWang9811/S2M-Former)
+**arXiv**: [2508.05164](https://arxiv.org/abs/2508.05164)  
+**Code**: [GitHub](https://github.com/JackieWang9811/S2M-Former)  
 **Area**: Model Compression
 **Keywords**: Spiking Neural Networks, Auditory Attention Detection, Symmetric Mixing Architecture, Energy-Efficient Computing, EEG
 

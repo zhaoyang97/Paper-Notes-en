@@ -18,8 +18,8 @@ content_hash: 667bfe25a20bd91b
 # Select, Hypothesize and Verify: Towards Verified Neuron Concept Interpretation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24953](https://arxiv.org/abs/2603.24953)
-**Code**: None
+**arXiv**: [2603.24953](https://arxiv.org/abs/2603.24953)  
+**Code**: None  
 **Area**: LLM Safety
 **Keywords**: Neuron interpretation, concept verification, explainable AI, neuron function analysis, closed-loop verification
 

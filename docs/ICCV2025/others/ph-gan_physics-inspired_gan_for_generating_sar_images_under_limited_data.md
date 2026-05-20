@@ -17,8 +17,8 @@ content_hash: 2319c1629cb5eb0e
 # Φ-GAN: Physics-Inspired GAN for Generating SAR Images Under Limited Data
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.02242](https://arxiv.org/abs/2503.02242)
-**Code**: N/A
+**arXiv**: [2503.02242](https://arxiv.org/abs/2503.02242)  
+**Code**: N/A  
 **Area**: Other
 **Keywords**: SAR image generation, GAN regularization, point scattering center model, physical constraints, few-shot learning
 

@@ -18,8 +18,8 @@ content_hash: 3a423b842869adee
 # DEPO: Dual-Efficiency Preference Optimization for LLM Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.15392](https://arxiv.org/abs/2511.15392)
-**Code**: [https://opencausalab.github.io/DEPO](https://opencausalab.github.io/DEPO)
+**arXiv**: [2511.15392](https://arxiv.org/abs/2511.15392)  
+**Code**: [https://opencausalab.github.io/DEPO](https://opencausalab.github.io/DEPO)  
 **Area**: Agent / LLM
 **Keywords**: LLM Agent efficiency optimization, preference optimization, KTO, dual-efficiency, reinforcement learning
 

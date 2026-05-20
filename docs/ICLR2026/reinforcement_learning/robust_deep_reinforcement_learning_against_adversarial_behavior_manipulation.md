@@ -18,8 +18,8 @@ content_hash: 07d263db999dc2a3
 # Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation
 
 **Conference**: ICLR 2026
-**arXiv**: [2406.03862](https://arxiv.org/abs/2406.03862)
-**Code**: None
+**arXiv**: [2406.03862](https://arxiv.org/abs/2406.03862)  
+**Code**: None  
 **Area**: AI Safety / Reinforcement Learning
 **Keywords**: behavior-targeted attack, adversarial robustness, imitation learning attack, temporal discounting defense, policy smoothing
 

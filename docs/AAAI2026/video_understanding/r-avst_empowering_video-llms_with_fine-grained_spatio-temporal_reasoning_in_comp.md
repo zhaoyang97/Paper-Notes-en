@@ -18,8 +18,8 @@ content_hash: 47239a7cb9e49ffa
 # R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16901](https://arxiv.org/abs/2511.16901)
-**Code**: N/A
+**arXiv**: [2511.16901](https://arxiv.org/abs/2511.16901)  
+**Code**: N/A  
 **Area**: Video Understanding
 **Keywords**: Audio-visual reasoning, spatio-temporal grounding, reinforcement learning, GRPO, Video-LLM
 

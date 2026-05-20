@@ -18,8 +18,8 @@ content_hash: eecff76e21e2ef85
 # QiMeng-NeuComBack: Self-Evolving Translation from IR to Assembly Code
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01183](https://arxiv.org/abs/2511.01183)
-**Code**: [https://github.com/](https://github.com/) (not provided)
+**arXiv**: [2511.01183](https://arxiv.org/abs/2511.01183)  
+**Code**: [https://github.com/](https://github.com/) (not provided)  
 **Area**: Video Understanding
 **Keywords**: Neural Compilation, LLM, IR-to-Assembly Translation, Self-Evolving Prompt Optimization, Compiler
 

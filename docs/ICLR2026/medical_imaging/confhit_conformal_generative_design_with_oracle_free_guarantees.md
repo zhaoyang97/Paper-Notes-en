@@ -18,8 +18,8 @@ content_hash: 80d56357f7858738
 # ConfHit: Conformal Generative Design with Oracle Free Guarantees
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.07371](https://arxiv.org/abs/2603.07371)
-**Code**: None
+**arXiv**: [2603.07371](https://arxiv.org/abs/2603.07371)  
+**Code**: None  
 **Area**: AI for Science / Statistical Machine Learning
 **Keywords**: conformal prediction, generative design, drug discovery, density ratio, statistical guarantee
 

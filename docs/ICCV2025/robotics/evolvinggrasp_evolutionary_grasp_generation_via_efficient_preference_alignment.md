@@ -18,8 +18,8 @@ content_hash: c98f944df723274b
 # EvolvingGrasp: Evolutionary Grasp Generation via Efficient Preference Alignment
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.14329](https://arxiv.org/abs/2503.14329)
-**Code**: [https://evolvinggrasp.github.io/](https://evolvinggrasp.github.io/)
+**arXiv**: [2503.14329](https://arxiv.org/abs/2503.14329)  
+**Code**: [https://evolvinggrasp.github.io/](https://evolvinggrasp.github.io/)  
 **Area**: Robotics
 **Keywords**: Dexterous Grasping, Preference Alignment, Consistency Models, Diffusion Models, Physical Constraints
 

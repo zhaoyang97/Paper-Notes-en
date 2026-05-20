@@ -18,8 +18,8 @@ content_hash: c11e61f895e361d2
 # Enhancing Multilingual RAG Systems with Debiased Language Preference-Guided Query Fusion
 
 **Conference**: ACL 2026
-**arXiv**: [2601.02956](https://arxiv.org/abs/2601.02956)
-**Code**: [GitHub](https://github.com/jeonghyunpark2002/DELTA)
+**arXiv**: [2601.02956](https://arxiv.org/abs/2601.02956)  
+**Code**: [GitHub](https://github.com/jeonghyunpark2002/DELTA)  
 **Area**: Information Retrieval / Multilingual RAG
 **Keywords**: Multilingual RAG, English-centric bias, language preference, query fusion, debiased calibration
 

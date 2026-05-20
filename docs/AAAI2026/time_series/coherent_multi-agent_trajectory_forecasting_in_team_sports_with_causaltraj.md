@@ -18,9 +18,9 @@ content_hash: 652f722adbb0472a
 # Coherent Multi-Agent Trajectory Forecasting in Team Sports with CausalTraj
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18248](https://arxiv.org/abs/2511.18248)
+**arXiv**: [2511.18248](https://arxiv.org/abs/2511.18248)  
 **Author**: Wei Zhen Teoh
-**Code**: [wezteoh/causaltraj](https://github.com/wezteoh/causaltraj)
+**Code**: [wezteoh/causaltraj](https://github.com/wezteoh/causaltraj)  
 **Area**: Time Series
 **Keywords**: multi-agent trajectory forecasting, causal autoregressive model, team sports analytics, joint metrics, Gaussian mixture model
 

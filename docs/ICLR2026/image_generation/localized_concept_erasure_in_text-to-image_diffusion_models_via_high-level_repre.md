@@ -18,8 +18,8 @@ content_hash: 8681c8406d78d404
 # Localized Concept Erasure in Text-to-Image Diffusion Models via High-Level Representation Misdirection
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.19631](https://arxiv.org/abs/2602.19631)
-**Code**: [GitHub](https://github.com/Coffeeloveman/HiRM)
+**arXiv**: [2602.19631](https://arxiv.org/abs/2602.19631)  
+**Code**: [GitHub](https://github.com/Coffeeloveman/HiRM)  
 **Area**: Diffusion Models / Safety / Machine Unlearning
 **Keywords**: concept erasure, text encoder, causal localization, representation misdirection, modular safety patch
 

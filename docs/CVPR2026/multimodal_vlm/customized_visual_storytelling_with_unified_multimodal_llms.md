@@ -18,8 +18,8 @@ content_hash: a7456a443baea87d
 # Customized Visual Storytelling with Unified Multimodal LLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27690](https://arxiv.org/abs/2603.27690)
-**Code**: None (not explicitly provided on project page)
+**arXiv**: [2603.27690](https://arxiv.org/abs/2603.27690)  
+**Code**: None (not explicitly provided on project page)  
 **Area**: Multimodal VLM / Visual Storytelling Generation
 **Keywords**: Visual story generation, multimodal customization, unified multimodal LLM, shot type control, keyframe generation
 

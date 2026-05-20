@@ -14,8 +14,8 @@ content_hash: f67321fe496322a8
 # From Inheritance to Saturation: Disentangling the Evolution of Visual Redundancy for Architecture-Aware MLLM Inference Acceleration
 
 **Conference**: ACL 2026
-**arXiv**: [2604.16462](https://arxiv.org/abs/2604.16462)
-**Code**: [https://github.com/civilizwa/HalfV](https://github.com/civilizwa/HalfV)
+**arXiv**: [2604.16462](https://arxiv.org/abs/2604.16462)  
+**Code**: [https://github.com/civilizwa/HalfV](https://github.com/civilizwa/HalfV)  
 **Area**: Multimodal VLM / Inference Acceleration
 **Keywords**: visual redundancy, MLLM acceleration, architecture-aware, token pruning, matrix entropy
 
@@ -117,7 +117,7 @@ HalfV is a training-free inference-time acceleration method. A lightweight pre-a
 - **Novelty**: ⭐⭐⭐⭐⭐ The IVR/SSR disentanglement and architecture-aware analysis are original contributions; the three-stage lifecycle discovery has independent value.
 - **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Three architectures, eight benchmarks, marginal utility analysis, and cross-validated SSR experiments — highly comprehensive.
 - **Writing Quality**: ⭐⭐⭐⭐ Analysis is deep and figures are informative, though some descriptions are highly technical.
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: multimodal_vlm
 **Keywords**: To be supplemented
 

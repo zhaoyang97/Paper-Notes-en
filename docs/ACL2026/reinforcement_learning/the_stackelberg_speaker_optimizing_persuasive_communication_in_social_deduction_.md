@@ -14,8 +14,8 @@ content_hash: 12dbf6af3a593721
 # The Stackelberg Speaker: Optimizing Persuasive Communication in Social Deduction Games
 
 **Conference**: ACL 2026
-**arXiv**: [2510.09087](https://arxiv.org/abs/2510.09087)
-**Code**: [https://3dagentworld.github.io/leader_follower](https://3dagentworld.github.io/leader_follower)
+**arXiv**: [2510.09087](https://arxiv.org/abs/2510.09087)  
+**Code**: [https://3dagentworld.github.io/leader_follower](https://3dagentworld.github.io/leader_follower)  
 **Area**: Reinforcement Learning / Social Deduction Games
 **Keywords**: Persuasive Communication, Social Deduction Games, Stackelberg Game, GRPO, LLM Agents
 
@@ -119,7 +119,7 @@ GRPO objective: $\mathcal{J}(\theta) = \mathbb{E}_c[\frac{1}{n}\sum_i \mathcal{L
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three SDGs + Sotopia, multiple stacked baselines, and complete ablations.
 - Writing Quality: ⭐⭐⭐⭐ Theoretically clear, though some sections are notation-dense.
 - Value: ⭐⭐⭐⭐ Provides a viable framework for persuasive communication in LLM agents.
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: reinforcement_learning
 **Keywords**: To be supplemented
 

@@ -17,8 +17,8 @@ content_hash: 3619c225c7dc7643
 # Learning Subgroups with Maximum Treatment Effects without Causal Heuristics
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.20189](https://arxiv.org/abs/2511.20189)
-**Code**: [https://github.com/ylincen/causal-subgroup](https://github.com/ylincen/causal-subgroup)
+**arXiv**: [2511.20189](https://arxiv.org/abs/2511.20189)  
+**Code**: [https://github.com/ylincen/causal-subgroup](https://github.com/ylincen/causal-subgroup)  
 **Area**: Causal Inference / Subgroup Discovery
 **Keywords**: Treatment Effects, Subgroup Discovery, CART, Partition Model, Causal Inference
 

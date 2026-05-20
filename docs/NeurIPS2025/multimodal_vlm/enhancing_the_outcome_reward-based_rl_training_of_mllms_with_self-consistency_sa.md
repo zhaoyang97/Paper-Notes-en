@@ -18,8 +18,8 @@ content_hash: 2dd8e40b93d04774
 # Enhancing Outcome Reward-Based RL Training of MLLMs with Self-Consistency Sampling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10648](https://arxiv.org/abs/2511.10648)
-**Code**: [GitHub](https://github.com/GenuineWWD/SCS)
+**arXiv**: [2511.10648](https://arxiv.org/abs/2511.10648)  
+**Code**: [GitHub](https://github.com/GenuineWWD/SCS)  
 **Area**: Multimodal VLM
 **Keywords**: Reinforcement Learning, Self-Consistency Sampling, Reasoning Faithfulness, Multimodal Reasoning, Outcome Reward
 

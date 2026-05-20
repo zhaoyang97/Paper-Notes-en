@@ -18,8 +18,8 @@ content_hash: b79ef9b1794f93c8
 # Coarse-to-Fine Open-Set Graph Node Classification with Large Language Models
 
 **Conference**: AAAI2026
-**arXiv**: [2512.16244](https://arxiv.org/abs/2512.16244)
-**Code**: [sihuo-design/CFC](https://github.com/sihuo-design/CFC)
+**arXiv**: [2512.16244](https://arxiv.org/abs/2512.16244)  
+**Code**: [sihuo-design/CFC](https://github.com/sihuo-design/CFC)  
 **Area**: Medical Imaging
 **Keywords**: open-set classification, OOD detection, graph neural networks, large language models, node classification
 

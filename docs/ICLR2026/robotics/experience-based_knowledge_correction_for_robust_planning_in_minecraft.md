@@ -18,8 +18,8 @@ content_hash: 74474935c82910d5
 # Experience-based Knowledge Correction for Robust Planning in Minecraft
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.24157](https://arxiv.org/abs/2505.24157)
-**Code**: None
+**arXiv**: [2505.24157](https://arxiv.org/abs/2505.24157)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: LLM planning, knowledge correction, Minecraft, embodied agent, self-correction failure
 

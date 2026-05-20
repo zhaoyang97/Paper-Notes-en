@@ -19,8 +19,8 @@ content_hash: 4c69ee55d12df062
 # Traceable Evidence Enhanced Visual Grounded Reasoning: Evaluation and Method
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.07999](https://arxiv.org/abs/2507.07999)
-**Code**: [GitHub](https://github.com/Haochen-Wang409/TreeVGR)
+**arXiv**: [2507.07999](https://arxiv.org/abs/2507.07999)  
+**Code**: [GitHub](https://github.com/Haochen-Wang409/TreeVGR)  
 **Area**: Object Detection
 **Keywords**: Visual grounded reasoning, traceable evidence, second-order reasoning, TreeBench, reinforcement learning, Dual IoU
 

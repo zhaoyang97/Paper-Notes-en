@@ -18,8 +18,8 @@ content_hash: eb065444064151d4
 # Torch-Uncertainty: A Deep Learning Framework for Uncertainty Quantification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10282](https://arxiv.org/abs/2511.10282)
-**Code**: [GitHub](https://github.com/ENSTA-U2IS-AI/Torch-Uncertainty)
+**arXiv**: [2511.10282](https://arxiv.org/abs/2511.10282)  
+**Code**: [GitHub](https://github.com/ENSTA-U2IS-AI/Torch-Uncertainty)  
 **Area**: Image Segmentation
 **Keywords**: Uncertainty Quantification, PyTorch Framework, Deep Ensembles, Semantic Segmentation, Calibration
 

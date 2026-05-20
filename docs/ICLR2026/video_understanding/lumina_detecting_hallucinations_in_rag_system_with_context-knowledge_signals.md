@@ -18,8 +18,8 @@ content_hash: 2031a278b6f291da
 # LUMINA: Detecting Hallucinations in RAG System with Context-Knowledge Signals
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21875](https://arxiv.org/abs/2509.21875)
-**Code**: [Available](https://github.com/deeplearning-wisc/LUMINA)
+**arXiv**: [2509.21875](https://arxiv.org/abs/2509.21875)  
+**Code**: [Available](https://github.com/deeplearning-wisc/LUMINA)  
 **Area**: Video Understanding
 **Keywords**: RAG hallucination detection, external context utilization, internal knowledge utilization, maximum mean discrepancy, information processing rate
 

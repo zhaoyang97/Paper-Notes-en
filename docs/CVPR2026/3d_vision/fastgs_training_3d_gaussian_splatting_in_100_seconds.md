@@ -18,8 +18,8 @@ content_hash: 88f14530e404b106
 # FastGS: Training 3D Gaussian Splatting in 100 Seconds
 
 **Conference**: CVPR2026
-**arXiv**: [2511.04283](https://arxiv.org/abs/2511.04283)
-**Code**: [fastgs.github.io](https://fastgs.github.io)
+**arXiv**: [2511.04283](https://arxiv.org/abs/2511.04283)  
+**Code**: [fastgs.github.io](https://fastgs.github.io)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, training acceleration, multi-view consistency, Gaussian density control, pruning strategy
 

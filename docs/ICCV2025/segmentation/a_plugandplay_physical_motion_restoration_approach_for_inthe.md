@@ -18,8 +18,8 @@ content_hash: b5dd2b3fff7e8137
 # A Plug-and-Play Physical Motion Restoration Approach for In-the-Wild High-Difficulty Motions
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.17377](https://arxiv.org/abs/2412.17377)
-**Code**: [Project Page](https://physicalmotionrestoration.github.io/)
+**arXiv**: [2412.17377](https://arxiv.org/abs/2412.17377)  
+**Code**: [Project Page](https://physicalmotionrestoration.github.io/)  
 **Area**: Human Motion / Physics Simulation
 **Keywords**: physical motion restoration, motion imitation, test-time adaptation, diffusion model, high-difficulty motions
 

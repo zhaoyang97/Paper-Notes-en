@@ -18,8 +18,8 @@ content_hash: c1aaaa97d91028de
 # MoESD: Revealing the Potential of Speculative Decoding to Accelerate Sparse MoE
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19645](https://arxiv.org/abs/2505.19645)
-**Code**: N/A
+**arXiv**: [2505.19645](https://arxiv.org/abs/2505.19645)  
+**Code**: N/A  
 **Area**: LLM Efficiency
 **Keywords**: Speculative Decoding, MoE Inference, Sparsity Analysis, Target Efficiency, Performance Modeling
 

@@ -18,8 +18,8 @@ content_hash: 0549009337036364
 # ARMesh: Autoregressive Mesh Generation via Next-Level-of-Detail Prediction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20824](https://arxiv.org/abs/2509.20824)
-**Code**: [Project Page](https://jblei.site/proj/armesh)
+**arXiv**: [2509.20824](https://arxiv.org/abs/2509.20824)  
+**Code**: [Project Page](https://jblei.site/proj/armesh)  
 **Area**: 3D Vision
 **Keywords**: 3D mesh generation, autoregressive model, level-of-detail, mesh simplification, simplicial complex
 **Institution**: The Chinese University of Hong Kong (Shenzhen), The University of Hong Kong, Tencent Hunyuan

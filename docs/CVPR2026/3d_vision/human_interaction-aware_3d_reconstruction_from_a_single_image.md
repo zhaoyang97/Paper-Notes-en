@@ -18,8 +18,8 @@ content_hash: 2cbf97fdc927d141
 # Human Interaction-Aware 3D Reconstruction from a Single Image
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05436](https://arxiv.org/abs/2604.05436)
-**Code**: None (Project page: jongheean11.github.io/HUG3D_project)
+**arXiv**: [2604.05436](https://arxiv.org/abs/2604.05436)  
+**Code**: None (Project page: jongheean11.github.io/HUG3D_project)  
 **Area**: 3D Vision
 **Keywords**: Multi-person 3D reconstruction, human interaction, multi-view diffusion, physical constraints, occlusion completion
 

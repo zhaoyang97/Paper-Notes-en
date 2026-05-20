@@ -18,8 +18,8 @@ content_hash: f1bf36160b6dde82
 # LFPC: Learning to Focus and Precise Cropping for MLLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27494](https://arxiv.org/abs/2603.27494)
-**Code**: [https://github.com/XuanPu-Z/LFPC](https://github.com/XuanPu-Z/LFPC)
+**arXiv**: [2603.27494](https://arxiv.org/abs/2603.27494)  
+**Code**: [https://github.com/XuanPu-Z/LFPC](https://github.com/XuanPu-Z/LFPC)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal Large Language Models, Reinforcement Learning, Cropping Tool, Information Gap, High-Resolution VQA
 

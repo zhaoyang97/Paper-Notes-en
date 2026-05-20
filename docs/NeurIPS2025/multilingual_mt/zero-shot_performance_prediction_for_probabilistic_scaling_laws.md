@@ -20,8 +20,8 @@ content_hash: 11a45150a452926f
 # Zero-Shot Performance Prediction for Probabilistic Scaling Laws
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16743](https://arxiv.org/abs/2510.16743)
-**Code**: Authors state it will be released (link not yet confirmed)
+**arXiv**: [2510.16743](https://arxiv.org/abs/2510.16743)  
+**Code**: Authors state it will be released (link not yet confirmed)  
 **Area**: Multilingual Translation
 **Keywords**: scaling laws, learning curves, Gaussian processes, zero-shot prediction, hierarchical modeling, active learning, multi-task learning
 

@@ -18,8 +18,8 @@ content_hash: 65bd2e4a63373424
 # DreamShot: Personalized Storyboard Synthesis with Video Diffusion Prior
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.17195](https://arxiv.org/abs/2604.17195)
-**Code**: [https://ll3rd.github.io/DreamShot/](https://ll3rd.github.io/DreamShot/)
+**arXiv**: [2604.17195](https://arxiv.org/abs/2604.17195)  
+**Code**: [https://ll3rd.github.io/DreamShot/](https://ll3rd.github.io/DreamShot/)  
 **Area**: Video Generation
 **Keywords**: Storyboard Generation, Video Diffusion Model, Character Consistency, Multi-Character Reference, Attention Constraint
 

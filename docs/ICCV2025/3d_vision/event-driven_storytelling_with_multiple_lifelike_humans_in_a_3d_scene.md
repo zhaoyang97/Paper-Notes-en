@@ -18,8 +18,8 @@ content_hash: fad8e73ec2483bfd
 # Event-Driven Storytelling with Multiple Lifelike Humans in a 3D Scene
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19232](https://arxiv.org/abs/2507.19232)
-**Code**: See project page
+**arXiv**: [2507.19232](https://arxiv.org/abs/2507.19232)  
+**Code**: See project page  
 **Area**: 3D Vision / Multi-Agent Motion Generation / LLM Planning
 **Keywords**: Multi-Human Motion, LLM Planning, Event-Based, Scene-Aware, 3D Scene Graph
 

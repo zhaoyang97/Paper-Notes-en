@@ -17,8 +17,8 @@ content_hash: 4f3b639c2132f2b5
 # Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.10940](https://arxiv.org/abs/2505.10940)
-**Code**: [https://github.com/Code2Q/TagCF](https://github.com/Code2Q/TagCF)
+**arXiv**: [2505.10940](https://arxiv.org/abs/2505.10940)  
+**Code**: [https://github.com/Code2Q/TagCF](https://github.com/Code2Q/TagCF)  
 **Area**: Recommender Systems / LLM Augmentation
 **Keywords**: Recommender Systems, User Role Modeling, LLM Knowledge Extraction, Tag-based Collaborative Filtering, Logical Reasoning Graph
 

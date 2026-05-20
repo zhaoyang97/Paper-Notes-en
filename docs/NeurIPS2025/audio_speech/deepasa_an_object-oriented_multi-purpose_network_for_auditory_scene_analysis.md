@@ -18,8 +18,8 @@ content_hash: 98f04de37d2ade5f
 # DeepASA: An Object-Oriented Multi-Purpose Network for Auditory Scene Analysis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17247](https://arxiv.org/abs/2509.17247)
-**Code**: [HuggingFace Demo](https://huggingface.co/spaces/donghoney22/DeepASA)
+**arXiv**: [2509.17247](https://arxiv.org/abs/2509.17247)  
+**Code**: [HuggingFace Demo](https://huggingface.co/spaces/donghoney22/DeepASA)  
 **Area**: Audio & Speech
 **Keywords**: auditory scene analysis, source separation, sound event detection, direction-of-arrival estimation, multi-task learning
 

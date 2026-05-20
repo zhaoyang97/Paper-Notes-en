@@ -18,8 +18,8 @@ content_hash: 3d9f9567a9a2dc4a
 # OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.20806](https://arxiv.org/abs/2604.20806)
-**Code**: [GitHub](https://github.com/LightChen233/OMIBench)
+**arXiv**: [2604.20806](https://arxiv.org/abs/2604.20806)  
+**Code**: [GitHub](https://github.com/LightChen233/OMIBench)  
 **Area**: Multimodal VLM / LLM Evaluation
 **Keywords**: Multi-image reasoning, Olympiad-level reasoning, Vision-language model benchmark, Cross-image association, Scientific reasoning
 

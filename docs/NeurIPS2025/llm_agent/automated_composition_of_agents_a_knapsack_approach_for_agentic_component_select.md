@@ -19,9 +19,9 @@ content_hash: 2e33cd4346375cb7
 # Automated Composition of Agents: A Knapsack Approach for Agentic Component Selection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16499](https://arxiv.org/abs/2510.16499)
+**arXiv**: [2510.16499](https://arxiv.org/abs/2510.16499)  
 **Authors**: Michelle Yuan, Khushbu Pahwa, Shuaichen Chang, Mustafa Kaba, Jiarong Jiang, Xiaofei Ma, Yi Zhang, Monica Sunkara (AWS Agentic AI)
-**Code**: None
+**Code**: None  
 **Area**: LLM Agent / Component Selection / Online Optimization
 **Keywords**: agent composition, knapsack problem, component selection, online optimization, sandbox testing, multi-agent
 

@@ -18,8 +18,8 @@ content_hash: 1396cc2bc68f3ab4
 # MITRA: An AI Assistant for Knowledge Retrieval in Physics Collaborations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2603.09800](https://arxiv.org/abs/2603.09800)
-**Code**: To be confirmed
+**arXiv**: [2603.09800](https://arxiv.org/abs/2603.09800)  
+**Code**: To be confirmed  
 **Area**: Information Retrieval
 **Keywords**: RAG, Scientific Collaboration, Local Deployment, Knowledge Retrieval, Physics Experiments
 

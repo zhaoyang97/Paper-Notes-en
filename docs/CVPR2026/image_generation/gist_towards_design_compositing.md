@@ -18,8 +18,8 @@ content_hash: e46babfec3547497
 # GIST: Towards Design Compositing
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.14605](https://arxiv.org/abs/2604.14605)
-**Code**: [abhinav-mahajan10.github.io/GIST/](https://abhinav-mahajan10.github.io/GIST/)
+**arXiv**: [2604.14605](https://arxiv.org/abs/2604.14605)  
+**Code**: [abhinav-mahajan10.github.io/GIST/](https://abhinav-mahajan10.github.io/GIST/)  
 **Area**: Image Generation
 **Keywords**: design compositing, identity preservation, image harmonization, diffusion model, graphic design
 

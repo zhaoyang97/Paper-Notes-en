@@ -18,8 +18,8 @@ content_hash: 6dd9134abea2e62b
 # AC-LoRA: (Almost) Training-Free Access Control-Aware Multi-Modal LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11557](https://arxiv.org/abs/2505.11557)
-**Code**: [huawei-csl/AC-LoRA](https://github.com/huawei-csl/AC-LoRA)
+**arXiv**: [2505.11557](https://arxiv.org/abs/2505.11557)  
+**Code**: [huawei-csl/AC-LoRA](https://github.com/huawei-csl/AC-LoRA)  
 **Area**: Dialogue Systems
 **Keywords**: Access Control, LoRA Adapter, Information Isolation, Enterprise LLM, Multi-Modal
 

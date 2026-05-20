@@ -18,8 +18,8 @@ content_hash: 090b2238fa60ee93
 # PromptStereo: Zero-Shot Stereo Matching via Structure and Motion Prompts
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01650](https://arxiv.org/abs/2603.01650)
-**Code**: [GitHub](https://github.com/Windsrain/PromptStereo)
+**arXiv**: [2603.01650](https://arxiv.org/abs/2603.01650)  
+**Code**: [GitHub](https://github.com/Windsrain/PromptStereo)  
 **Area**: 3D Vision
 **Keywords**: Zero-shot stereo matching, monocular depth prior, prompt-based iterative refinement, DPT decoder, affine-invariant fusion
 
@@ -48,28 +48,28 @@ Built upon MonSter as the baseline. Stereo image pairs are fed into Depth Anythi
 
 1. **Affine-Invariant Fusion (AIF)**
 
-   - **Function**: Fuses the initial disparity $\mathbf{d}_0$ and the monocular relative depth $\mathbf{d}_M$ in a normalized scale space.
-   - **Mechanism**: Each depth/disparity is normalized in an affine-invariant manner: $\hat{\mathbf{d}} = (\mathbf{d} - t(\mathbf{d})) / s(\mathbf{d})$, where $t = \text{median}$ and $s = \text{MAD}$. The normalized monocular depth is projected into disparity space: $\mathbf{d}_M' = s(\mathbf{d}_0) \cdot \hat{\mathbf{d}}_M + t(\mathbf{d}_0)$. Right features are warped by $\mathbf{d}_0$ and concatenated with left features to predict a per-pixel confidence map $\mathbf{c}$: $\mathbf{d}_F = \mathbf{c} \odot \mathbf{d}_0 + (1-\mathbf{c}) \odot \mathbf{d}_M'$.
-   - **Design Motivation**: The cost-volume initial disparity has local matching accuracy but lacks global consistency; monocular depth captures global structure but suffers from affine ambiguity. Fusing after normalization allows the two to complement each other.
+    - **Function**: Fuses the initial disparity $\mathbf{d}_0$ and the monocular relative depth $\mathbf{d}_M$ in a normalized scale space.
+    - **Mechanism**: Each depth/disparity is normalized in an affine-invariant manner: $\hat{\mathbf{d}} = (\mathbf{d} - t(\mathbf{d})) / s(\mathbf{d})$, where $t = \text{median}$ and $s = \text{MAD}$. The normalized monocular depth is projected into disparity space: $\mathbf{d}_M' = s(\mathbf{d}_0) \cdot \hat{\mathbf{d}}_M + t(\mathbf{d}_0)$. Right features are warped by $\mathbf{d}_0$ and concatenated with left features to predict a per-pixel confidence map $\mathbf{c}$: $\mathbf{d}_F = \mathbf{c} \odot \mathbf{d}_0 + (1-\mathbf{c}) \odot \mathbf{d}_M'$.
+    - **Design Motivation**: The cost-volume initial disparity has local matching accuracy but lacks global consistency; monocular depth captures global structure but suffers from affine ambiguity. Fusing after normalization allows the two to complement each other.
 
 2. **Prompt Recurrent Unit (PRU)**
 
-   - **Function**: Replaces the GRU as the core unit for iterative refinement.
-   - **Mechanism**: The DPT refinement layers from Depth Anything V2 are adopted as a multi-resolution architecture (4 levels) and initialized with pretrained weights, directly inheriting the monocular depth prior. The hidden state is initialized from the concatenation of left and right features (with right features warped by $\mathbf{d}_0$), enabling earlier learning of stereo correspondences compared to conventional GRUs that initialize from left features only.
-   - **Update Strategy**: The reset gate is removed; only the update gate is retained: $\mathbf{z}_k = \sigma(\text{ConvBlock}([\cdot]))$. The hidden state is updated as $\mathbf{h}_{k+1}^i = (1-\mathbf{z}_k) \odot \mathbf{h}_k^i + \mathbf{z}_k \odot \hat{\mathbf{h}}_k^i$, with **no constraint on the hidden state value range**.
-   - **Design Motivation**: The tanh constraint in GRUs limits hidden state expressiveness in scenes with extreme disparities. The DPT-based PRU natively supports multi-resolution processing, and its pretrained weights provide a strong initialization.
+    - **Function**: Replaces the GRU as the core unit for iterative refinement.
+    - **Mechanism**: The DPT refinement layers from Depth Anything V2 are adopted as a multi-resolution architecture (4 levels) and initialized with pretrained weights, directly inheriting the monocular depth prior. The hidden state is initialized from the concatenation of left and right features (with right features warped by $\mathbf{d}_0$), enabling earlier learning of stereo correspondences compared to conventional GRUs that initialize from left features only.
+    - **Update Strategy**: The reset gate is removed; only the update gate is retained: $\mathbf{z}_k = \sigma(\text{ConvBlock}([\cdot]))$. The hidden state is updated as $\mathbf{h}_{k+1}^i = (1-\mathbf{z}_k) \odot \mathbf{h}_k^i + \mathbf{z}_k \odot \hat{\mathbf{h}}_k^i$, with **no constraint on the hidden state value range**.
+    - **Design Motivation**: The tanh constraint in GRUs limits hidden state expressiveness in scenes with extreme disparities. The DPT-based PRU natively supports multi-resolution processing, and its pretrained weights provide a strong initialization.
 
 3. **Structure Prompt (SP)**
 
-   - **Function**: Injects frozen monocular depth features $\mathbf{F}_M$ and structural discrepancy information into the PRU as prompts.
-   - **Mechanism**: The affine-invariant discrepancy between the current disparity and monocular depth is computed as $\mathbf{D} = |\hat{\mathbf{d}}_k - \hat{\mathbf{d}}_M|$, which is encoded together with $\mathbf{F}_M$ into a structure prompt $\mathbf{P}_S$ and injected into the hidden state via residual addition: $\mathbf{h} = \mathbf{h} + \text{ConvBlock}(\mathbf{P}_S)$.
-   - **Design Motivation**: Direct convolutional fusion distorts the monocular prior inherited by DPT. Residual addition serves as a feature-level prompt that guides the hidden state without corrupting the existing representation. Using affine-invariant discrepancy avoids scale ambiguity.
+    - **Function**: Injects frozen monocular depth features $\mathbf{F}_M$ and structural discrepancy information into the PRU as prompts.
+    - **Mechanism**: The affine-invariant discrepancy between the current disparity and monocular depth is computed as $\mathbf{D} = |\hat{\mathbf{d}}_k - \hat{\mathbf{d}}_M|$, which is encoded together with $\mathbf{F}_M$ into a structure prompt $\mathbf{P}_S$ and injected into the hidden state via residual addition: $\mathbf{h} = \mathbf{h} + \text{ConvBlock}(\mathbf{P}_S)$.
+    - **Design Motivation**: Direct convolutional fusion distorts the monocular prior inherited by DPT. Residual addition serves as a feature-level prompt that guides the hidden state without corrupting the existing representation. Using affine-invariant discrepancy avoids scale ambiguity.
 
 4. **Motion Prompt (MP)**
 
-   - **Function**: Injects stereo-specific motion cues (local cost volume and current disparity) into the PRU.
-   - **Mechanism**: $\mathbf{P}_M^k = \text{Encoder}(\mathbf{V}_k, \mathbf{d}_k)$, injected via residual addition: $\mathbf{h} = \mathbf{h} + \text{ConvBlock}(\mathbf{P}_M^k)$.
-   - **Design Motivation**: The DPT decoder carries only monocular priors and lacks stereo motion information. The Motion Prompt adaptively supplements stereo correspondence cues.
+    - **Function**: Injects stereo-specific motion cues (local cost volume and current disparity) into the PRU.
+    - **Mechanism**: $\mathbf{P}_M^k = \text{Encoder}(\mathbf{V}_k, \mathbf{d}_k)$, injected via residual addition: $\mathbf{h} = \mathbf{h} + \text{ConvBlock}(\mathbf{P}_M^k)$.
+    - **Design Motivation**: The DPT decoder carries only monocular priors and lacks stereo motion information. The Motion Prompt adaptively supplements stereo correspondence cues.
 
 ### Loss & Training
 - Following IGEV-Stereo: $\mathcal{L} = \|\mathbf{d}_0 - \mathbf{d}_{gt}\|_{\text{smooth}} + \sum_{k=1}^K \gamma^{K-k} \|\mathbf{d}_k - \mathbf{d}_{gt}\|_1$, with $\gamma = 0.9$.

@@ -18,8 +18,8 @@ content_hash: 6941faa6a6b4b056
 # Infinite-Story: A Training-Free Consistent Text-to-Image Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13002](https://arxiv.org/abs/2511.13002)
-**Code**: N/A
+**arXiv**: [2511.13002](https://arxiv.org/abs/2511.13002)  
+**Code**: N/A  
 **Area**: Image Generation / Consistent Generation
 **Keywords**: consistent text-to-image generation, visual storytelling, autoregressive generation, training-free, style consistency
 

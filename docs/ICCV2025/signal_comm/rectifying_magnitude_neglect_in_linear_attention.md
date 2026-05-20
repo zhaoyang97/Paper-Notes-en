@@ -18,8 +18,8 @@ content_hash: d61b005f53dc4bfa
 # Rectifying Magnitude Neglect in Linear Attention
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.00698](https://arxiv.org/abs/2507.00698)
-**Code**: [https://github.com/qhfan/MALA](https://github.com/qhfan/MALA)
+**arXiv**: [2507.00698](https://arxiv.org/abs/2507.00698)  
+**Code**: [https://github.com/qhfan/MALA](https://github.com/qhfan/MALA)  
 **Area**: Signal Communication
 **Keywords**: Linear Attention, Magnitude-Aware, Vision Transformer, Attention Score Distribution, Linear Complexity
 
@@ -32,8 +32,8 @@ This paper identifies that Linear Attention completely discards Query magnitude 
 - **Background**: The quadratic complexity $O(N^2)$ of Softmax Attention limits Vision Transformers in high-resolution visual tasks. Linear Attention reduces complexity to $O(N)$ via kernel function approximation, but suffers from notable performance degradation.
 - **Limitations of Prior Work**: Existing improvements (e.g., EfficientViT adding convolutions for local compensation, Flatten Transformer's focused linear attention) are largely heuristic patch-up strategies.
 - **Key Challenge**: This paper analyzes the fundamental cause of the performance gap at the **mathematical formulation level**: in the Linear Attention formulation, the Query magnitude $\|\phi(Q_i)\|$ cancels out in the numerator and denominator (Eq. 4), leaving only the directional component $\vec{\alpha_i}$. This means:
-  - Softmax Attention: increasing Query magnitude → sharper attention distribution (high-score Keys receive more attention)
-  - Linear Attention: attention distribution remains unchanged regardless of Query magnitude variation
+    - Softmax Attention: increasing Query magnitude → sharper attention distribution (high-score Keys receive more attention)
+    - Linear Attention: attention distribution remains unchanged regardless of Query magnitude variation
 - **Goal**: This finding explains the long-standing issue of overly smooth attention scores and weak local perception in Linear Attention.
 
 ## Method

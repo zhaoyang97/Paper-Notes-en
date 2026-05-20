@@ -18,8 +18,8 @@ content_hash: b97de280c13e9030
 # Systematizing LLM Persona Design: A Four-Quadrant Technical Taxonomy for AI Companions
 
 **Conference**: NeurIPS 2025 (LLM Persona Workshop)
-**arXiv**: [2511.02979](https://arxiv.org/abs/2511.02979)
-**Code**: None
+**arXiv**: [2511.02979](https://arxiv.org/abs/2511.02979)  
+**Code**: None  
 **Area**: AI Safety / LLM Applications
 **Keywords**: LLM Persona, AI Companion, Taxonomy, Virtual Companionship, Embodied Intelligence
 

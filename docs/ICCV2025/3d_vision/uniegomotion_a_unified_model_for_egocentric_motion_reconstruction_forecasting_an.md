@@ -19,8 +19,8 @@ content_hash: a32e84a719d5d62d
 # UniEgoMotion: A Unified Model for Egocentric Motion Reconstruction, Forecasting, and Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.01126](https://arxiv.org/abs/2508.01126)
-**Code**: [UniEgoMotion](https://chaitanya100100.github.io/UniEgoMotion/)
+**arXiv**: [2508.01126](https://arxiv.org/abs/2508.01126)  
+**Code**: [UniEgoMotion](https://chaitanya100100.github.io/UniEgoMotion/)  
 **Area**: 3D Vision
 **Keywords**: egocentric motion, diffusion model, motion reconstruction, motion forecasting, motion generation, head-centric representation
 

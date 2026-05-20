@@ -17,7 +17,7 @@ content_hash: bdef4ed94f1cb2da
 # Coreset for Robust Geometric Median: Eliminating Size Dependency on Outliers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24621](https://arxiv.org/abs/2510.24621)
+**arXiv**: [2510.24621](https://arxiv.org/abs/2510.24621)  
 **Area**: Others
 **Keywords**: Coreset, Robust Geometric Median, Outliers, Clustering, Non-Componentwise Error Analysis
 

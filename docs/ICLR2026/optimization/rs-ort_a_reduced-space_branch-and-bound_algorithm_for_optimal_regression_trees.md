@@ -18,7 +18,7 @@ content_hash: 985edf8d1379bcc6
 # RS-ORT: A Reduced-Space Branch-and-Bound Algorithm for Optimal Regression Trees
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.23901](https://arxiv.org/abs/2510.23901)
+**arXiv**: [2510.23901](https://arxiv.org/abs/2510.23901)  
 **Area**: Optimization
 **Keywords**: optimal decision trees, regression trees, branch-and-bound, mixed-integer programming, interpretable machine learning
 

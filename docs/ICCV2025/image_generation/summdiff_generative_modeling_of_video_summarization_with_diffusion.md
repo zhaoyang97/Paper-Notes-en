@@ -18,7 +18,7 @@ content_hash: 2bb9d0dfa08284c3
 # SummDiff: Generative Modeling of Video Summarization with Diffusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.08458](https://arxiv.org/abs/2510.08458)
+**arXiv**: [2510.08458](https://arxiv.org/abs/2510.08458)  
 **Area**: Image Generation
 **Keywords**: Video Summarization, Diffusion Models, Conditional Generation, Subjectivity Modeling, Knapsack Problem
 

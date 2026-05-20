@@ -18,8 +18,8 @@ content_hash: 641b55838de69ed3
 # MIP against Agent: Malicious Image Patches Hijacking Multimodal OS Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.10809](https://arxiv.org/abs/2503.10809)
-**Code**: [GitHub](https://github.com/AIchberger/mip-against-agent)
+**arXiv**: [2503.10809](https://arxiv.org/abs/2503.10809)  
+**Code**: [GitHub](https://github.com/AIchberger/mip-against-agent)  
 **Area**: Robotics
 **Keywords**: adversarial attack, OS agent, malicious image patch, VLM security, computer worm
 

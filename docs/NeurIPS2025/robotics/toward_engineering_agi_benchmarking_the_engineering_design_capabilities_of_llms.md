@@ -18,8 +18,8 @@ content_hash: 88b8d498e19999a0
 # Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16204](https://arxiv.org/abs/2509.16204)
-**Code**: [https://agi4engineering.github.io/Eng-Design/](https://agi4engineering.github.io/Eng-Design/)
+**arXiv**: [2509.16204](https://arxiv.org/abs/2509.16204)  
+**Code**: [https://agi4engineering.github.io/Eng-Design/](https://agi4engineering.github.io/Eng-Design/)  
 **Area**: Robotics
 **Keywords**: Engineering Design, LLM Benchmarking, Simulation-Based Evaluation, Multi-Domain Engineering, AGI
 

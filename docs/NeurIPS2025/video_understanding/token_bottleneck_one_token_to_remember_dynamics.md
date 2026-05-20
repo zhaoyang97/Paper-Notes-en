@@ -18,8 +18,8 @@ content_hash: a6cbb63d0b986536
 # Token Bottleneck: One Token to Remember Dynamics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.06543](https://arxiv.org/abs/2507.06543)
-**Code**: [GitHub](https://github.com/naver-ai/tobo)
+**arXiv**: [2507.06543](https://arxiv.org/abs/2507.06543)  
+**Code**: [GitHub](https://github.com/naver-ai/tobo)  
 **Area**: Video Understanding
 **Keywords**: Self-supervised learning, visual representation, robot manipulation, token bottleneck, sequential scene understanding
 

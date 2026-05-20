@@ -18,8 +18,8 @@ content_hash: 668bc78f033bdc37
 # Is the Reversal Curse a Binding Problem? Uncovering Limitations of Transformers from a Basic Generalization Failure
 
 **Conference**: ICLR 2026
-**arXiv**: [2504.01928](https://arxiv.org/abs/2504.01928)
-**Code**: [GitHub](https://github.com/OSU-NLP-Group/reversal-curse-binding)
+**arXiv**: [2504.01928](https://arxiv.org/abs/2504.01928)  
+**Code**: [GitHub](https://github.com/OSU-NLP-Group/reversal-curse-binding)  
 **Area**: LLM/NLP
 **Keywords**: Reversal Curse, Binding Problem, JEPA, Concept Representation, Transformer Limitations
 

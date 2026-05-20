@@ -18,8 +18,8 @@ content_hash: 151ca3cbe8b0a09d
 # OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09326](https://arxiv.org/abs/2603.09326)
-**Code**: [https://wwwtttjjj.github.io/OddGridBench/](https://wwwtttjjj.github.io/OddGridBench/)
+**arXiv**: [2603.09326](https://arxiv.org/abs/2603.09326)  
+**Code**: [https://wwwtttjjj.github.io/OddGridBench/](https://wwwtttjjj.github.io/OddGridBench/)  
 **Area**: Multimodal VLM
 **Keywords**: visual discrepancy perception, benchmark, GRPO, curriculum learning, fine-grained perception
 

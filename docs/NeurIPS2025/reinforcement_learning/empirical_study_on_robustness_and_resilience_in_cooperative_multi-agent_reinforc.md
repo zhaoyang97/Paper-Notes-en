@@ -18,8 +18,8 @@ content_hash: cf6c31df24ae51d0
 # Empirical Study on Robustness and Resilience in Cooperative Multi-Agent Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11824](https://arxiv.org/abs/2510.11824)
-**Code**: [github.com/BUAA-TrustworthyMARL/adv_marl_benchmark](https://github.com/BUAA-TrustworthyMARL/adv_marl_benchmark)
+**arXiv**: [2510.11824](https://arxiv.org/abs/2510.11824)  
+**Code**: [github.com/BUAA-TrustworthyMARL/adv_marl_benchmark](https://github.com/BUAA-TrustworthyMARL/adv_marl_benchmark)  
 **Area**: Reinforcement Learning
 **Keywords**: multi-agent RL, robustness, resilience, hyperparameter tuning, cooperative MARL
 

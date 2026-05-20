@@ -18,8 +18,8 @@ content_hash: 3f79a26cb1238a12
 # Splat Feature Solver
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.12216](https://arxiv.org/abs/2508.12216)
-**Code**: Available (GitHub)
+**arXiv**: [2508.12216](https://arxiv.org/abs/2508.12216)  
+**Code**: Available (GitHub)  
 **Area**: 3D Vision / 3D Scene Understanding
 **Keywords**: Feature Lifting, 3D Gaussian Splatting, Linear Inverse Problem, Open-Vocabulary 3D Segmentation, Tikhonov Regularization
 

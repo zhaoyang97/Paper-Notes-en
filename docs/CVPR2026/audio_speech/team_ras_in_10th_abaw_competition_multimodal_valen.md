@@ -18,8 +18,8 @@ content_hash: b6bd2e80d92e8bca
 # Team RAS in 10th ABAW Competition: Multimodal Valence and Arousal Estimation Approach
 
 **Conference**: CVPR 2026 (ABAW Workshop)
-**arXiv**: [2603.13056](https://arxiv.org/abs/2603.13056)
-**Code**: [GitHub](https://github.com/SMIL-SPCRAS/CVPRW-26)
+**arXiv**: [2603.13056](https://arxiv.org/abs/2603.13056)  
+**Code**: [GitHub](https://github.com/SMIL-SPCRAS/CVPRW-26)  
 **Area**: Audio & Speech
 **Keywords**: Valence-Arousal Estimation, Multimodal Fusion, VLM Behavioral Description, Mamba, ABAW Competition
 

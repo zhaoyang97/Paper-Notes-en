@@ -17,8 +17,8 @@ content_hash: 5f857a1176bb11e1
 # Learning Network Dismantling Without Handcrafted Inputs
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.00706](https://arxiv.org/abs/2508.00706)
-**Code**: [GitHub](https://github.com/HaozheTian/MIND-ND)
+**arXiv**: [2508.00706](https://arxiv.org/abs/2508.00706)  
+**Code**: [GitHub](https://github.com/HaozheTian/MIND-ND)  
 **Area**: Other
 **Keywords**: Network dismantling, graph neural networks, attention mechanism, reinforcement learning, vital node identification
 

@@ -18,8 +18,8 @@ content_hash: 80455192857d913e
 # Not All Animals Are Equal: Metaphorical Framing through Source Domains and Semantic Frames
 
 **Conference**: ACL 2026
-**arXiv**: [2604.20454](https://arxiv.org/abs/2604.20454)
-**Code**: [https://github.com/julia-nixie/ConceptFrameMet](https://github.com/julia-nixie/ConceptFrameMet)
+**arXiv**: [2604.20454](https://arxiv.org/abs/2604.20454)  
+**Code**: [https://github.com/julia-nixie/ConceptFrameMet](https://github.com/julia-nixie/ConceptFrameMet)  
 **Area**: LLM/NLP
 **Keywords**: metaphor detection, Conceptual Metaphor Theory, semantic frames, discourse analysis, media framing
 

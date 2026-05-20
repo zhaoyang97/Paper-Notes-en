@@ -18,8 +18,8 @@ content_hash: be8acf6a9bde08eb
 # JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19821](https://arxiv.org/abs/2604.19821)
-**Code**: None
+**arXiv**: [2604.19821](https://arxiv.org/abs/2604.19821)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: tool-call optimization, prompt optimization, reflective learning, large tool libraries, joint optimization
 

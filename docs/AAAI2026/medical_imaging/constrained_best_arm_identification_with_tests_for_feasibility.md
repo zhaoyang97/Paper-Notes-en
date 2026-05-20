@@ -18,8 +18,8 @@ content_hash: b90f800d044c29c3
 # Constrained Best Arm Identification with Tests for Feasibility
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09808](https://arxiv.org/abs/2511.09808)
-**Code**: None
+**arXiv**: [2511.09808](https://arxiv.org/abs/2511.09808)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Best Arm Identification, feasibility constraints, fixed confidence, sample complexity, asymptotic optimality
 

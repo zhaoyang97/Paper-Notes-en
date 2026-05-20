@@ -18,8 +18,8 @@ content_hash: ad880b8a94e3465b
 # Uncertainty-Aware Concept and Motion Segmentation for Semi-Supervised Angiography Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00881](https://arxiv.org/abs/2603.00881)
-**Code**: [GitHub](https://github.com/qimingfan10/SMART)
+**arXiv**: [2603.00881](https://arxiv.org/abs/2603.00881)  
+**Code**: [GitHub](https://github.com/qimingfan10/SMART)  
 **Area**: Medical Imaging
 **Keywords**: Semi-supervised segmentation, coronary angiography, SAM3, temporal consistency, optical flow
 

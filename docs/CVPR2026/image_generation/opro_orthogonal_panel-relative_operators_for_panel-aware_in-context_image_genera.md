@@ -18,8 +18,8 @@ content_hash: 91e8113985bd9e5c
 # OPRO: Orthogonal Panel-Relative Operators for Panel-Aware In-Context Image Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27637](https://arxiv.org/abs/2603.27637)
-**Code**: None
+**arXiv**: [2603.27637](https://arxiv.org/abs/2603.27637)  
+**Code**: None  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: In-context image generation, orthogonal operators, parameter-efficient fine-tuning, panel-aware attention, diffusion Transformer
 

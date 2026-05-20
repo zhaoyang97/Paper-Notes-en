@@ -18,8 +18,8 @@ content_hash: b4ecedd10fb4b57d
 # MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19955](https://arxiv.org/abs/2505.19955)
-**Code**: [https://github.com/chchenhui/mlrbench](https://github.com/chchenhui/mlrbench)
+**arXiv**: [2505.19955](https://arxiv.org/abs/2505.19955)  
+**Code**: [https://github.com/chchenhui/mlrbench](https://github.com/chchenhui/mlrbench)  
 **Area**: Code Intelligence
 **Keywords**: AI research agents, benchmark, LLM-as-judge, automated scientific discovery, experimental result hallucination
 

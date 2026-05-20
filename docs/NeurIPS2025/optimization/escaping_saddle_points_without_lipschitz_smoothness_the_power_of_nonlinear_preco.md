@@ -19,8 +19,8 @@ content_hash: 9a81216b30639cd9
 # Escaping Saddle Points without Lipschitz Smoothness: The Power of Nonlinear Preconditioning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15817](https://arxiv.org/abs/2509.15817)
-**Code**: None
+**arXiv**: [2509.15817](https://arxiv.org/abs/2509.15817)  
+**Code**: None  
 **Area**: Optimization Theory
 **Keywords**: nonlinear preconditioning, saddle point escaping, anisotropic smoothness, $(L_0,L_1)$-smoothness, gradient clipping
 

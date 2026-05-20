@@ -18,8 +18,8 @@ content_hash: 36e2f69b5fbc0559
 # Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10929](https://arxiv.org/abs/2603.10929)
-**Code**: [https://github.com/yfqi/lifelong_mlr_ifa](https://github.com/yfqi/lifelong_mlr_ifa)
+**arXiv**: [2603.10929](https://arxiv.org/abs/2603.10929)  
+**Code**: [https://github.com/yfqi/lifelong_mlr_ifa](https://github.com/yfqi/lifelong_mlr_ifa)  
 **Area**: Reinforcement Learning
 **Keywords**: lifelong imitation learning, multimodal latent replay, incremental feature adjustment, catastrophic forgetting, LIBERO
 

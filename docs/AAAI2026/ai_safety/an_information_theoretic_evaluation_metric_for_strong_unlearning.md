@@ -18,8 +18,8 @@ content_hash: 3e431baec5717825
 # An Information Theoretic Evaluation Metric for Strong Unlearning
 
 **Conference**: AAAI 2026
-**arXiv**: [2405.17878](https://arxiv.org/abs/2405.17878)
-**Code**: To be confirmed
+**arXiv**: [2405.17878](https://arxiv.org/abs/2405.17878)  
+**Code**: To be confirmed  
 **Area**: AI Safety / Machine Unlearning
 **Keywords**: Machine Unlearning, Mutual Information, White-Box Evaluation, IDI Metric, COLA Method
 
@@ -43,27 +43,27 @@ The paper makes two core contributions: (1) **IDI (Information Difference Index)
 ### Key Designs
 
 1. **Mutual Information Estimation for IDI**
-   - **Function**: Estimate the mutual information $I(\mathbf{Z}_\ell; Y)$ between layer-$\ell$ features $\mathbf{Z}_\ell$ and forget labels $Y$.
-   - **Mechanism**: An InfoNCE lower-bound estimator is used, defining critic functions $f_{\nu_\ell}$ and $g_{\eta_\ell}$ per layer. $f_{\nu_\ell}$ reuses the model's layers $\ell{+}1$ through $L$ plus a projection head as a feature extractor; $g_{\eta_\ell}$ models the binary label as two trainable vectors. MI estimates are obtained by maximizing the InfoNCE objective.
-   - **Design Motivation**: The model-specific critic design (reusing subsequent layers) makes MI estimation architecture-agnostic—the same estimation pipeline applies to ResNet, ViT, and other architectures without redesign.
+    - **Function**: Estimate the mutual information $I(\mathbf{Z}_\ell; Y)$ between layer-$\ell$ features $\mathbf{Z}_\ell$ and forget labels $Y$.
+    - **Mechanism**: An InfoNCE lower-bound estimator is used, defining critic functions $f_{\nu_\ell}$ and $g_{\eta_\ell}$ per layer. $f_{\nu_\ell}$ reuses the model's layers $\ell{+}1$ through $L$ plus a projection head as a feature extractor; $g_{\eta_\ell}$ models the binary label as two trainable vectors. MI estimates are obtained by maximizing the InfoNCE objective.
+    - **Design Motivation**: The model-specific critic design (reusing subsequent layers) makes MI estimation architecture-agnostic—the same estimation pipeline applies to ResNet, ViT, and other architectures without redesign.
 
 2. **IDI Score Computation**
-   - The information difference for the unlearned model $\theta_u$ is: $ID(\theta_u) = \sum_{\ell=1}^{L} \max(0, I_{\theta_u}(\mathbf{Z}_\ell; Y) - I_{\theta_r}(\mathbf{Z}_\ell; Y))$
-   - $ID(\theta_o)$ is similarly computed for the original model $\theta_o$.
-   - $\text{IDI} = ID(\theta_u) / ID(\theta_o)$, with range $[0, 1]$; values closer to 0 indicate more thorough unlearning.
-   - The Retrain baseline has a theoretical IDI of 0; the original model has IDI of 1.
+    - The information difference for the unlearned model $\theta_u$ is: $ID(\theta_u) = \sum_{\ell=1}^{L} \max(0, I_{\theta_u}(\mathbf{Z}_\ell; Y) - I_{\theta_r}(\mathbf{Z}_\ell; Y))$
+    - $ID(\theta_o)$ is similarly computed for the original model $\theta_o$.
+    - $\text{IDI} = ID(\theta_u) / ID(\theta_o)$, with range $[0, 1]$; values closer to 0 indicate more thorough unlearning.
+    - The Retrain baseline has a theoretical IDI of 0; the original model has IDI of 1.
 
 3. **Head Distillation Experiment Exposing Black-Box Metric Failures**
-   - The encoder is frozen; only the final classification head is retrained.
-   - KL-divergence distillation aligns the output distribution to a pseudo-retrained model with the forget-class logit set to negative infinity.
-   - Result: MIA and JSD black-box metrics rank among the best, yet IDI = 1.000 (information fully retained).
-   - Further validation: freezing the HD encoder and retraining the classification head with only 2% of training data recovers 82%+ forget-class accuracy (vs. 41% for Retrain), directly demonstrating information retention.
+    - The encoder is frozen; only the final classification head is retrained.
+    - KL-divergence distillation aligns the output distribution to a pseudo-retrained model with the forget-class logit set to negative infinity.
+    - Result: MIA and JSD black-box metrics rank among the best, yet IDI = 1.000 (information fully retained).
+    - Further validation: freezing the HD encoder and retraining the classification head with only 2% of training data recovers 82%+ forget-class accuracy (vs. 41% for Retrain), directly demonstrating information retention.
 
 4. **COLA Unlearning Method**
-   - **Function**: Eliminate forget-set information at the feature level.
-   - **Collapse phase**: Collapse forget-set encoder features so that forget-set sample representations become indistinguishable from retain-set representations.
-   - **Align phase**: Align retain-set features to recover task performance.
-   - On CIFAR-10/ResNet-18: IDI = 0.010 (vs. Retrain's 0.0); MIA = 12.64 (close to Retrain's 10.64).
+    - **Function**: Eliminate forget-set information at the feature level.
+    - **Collapse phase**: Collapse forget-set encoder features so that forget-set sample representations become indistinguishable from retain-set representations.
+    - **Align phase**: Align retain-set features to recover task performance.
+    - On CIFAR-10/ResNet-18: IDI = 0.010 (vs. Retrain's 0.0); MIA = 12.64 (close to Retrain's 10.64).
 
 ### Loss & Training
 

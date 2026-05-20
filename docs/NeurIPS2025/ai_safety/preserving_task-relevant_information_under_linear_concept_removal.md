@@ -18,8 +18,8 @@ content_hash: d242f301b9a2535b
 # Preserving Task-Relevant Information Under Linear Concept Removal
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10703](https://arxiv.org/abs/2506.10703)
-**Code**: [https://github.com/](https://github.com/) (available, link provided in paper footnote)
+**arXiv**: [2506.10703](https://arxiv.org/abs/2506.10703)  
+**Code**: [https://github.com/](https://github.com/) (available, link provided in paper footnote)  
 **Area**: AI Safety / Fairness
 **Keywords**: concept erasure, fair representation learning, oblique projection, linear guardedness, bias removal
 

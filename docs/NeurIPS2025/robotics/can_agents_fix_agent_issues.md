@@ -18,8 +18,8 @@ content_hash: b886db7142058587
 # Can Agents Fix Agent Issues?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20749](https://arxiv.org/abs/2505.20749)
-**Code**: [https://github.com/alfin06/AgentIssue-Bench](https://github.com/alfin06/AgentIssue-Bench)
+**arXiv**: [2505.20749](https://arxiv.org/abs/2505.20749)  
+**Code**: [https://github.com/alfin06/AgentIssue-Bench](https://github.com/alfin06/AgentIssue-Bench)  
 **Area**: Robotics
 **Keywords**: Agent system maintenance, automated issue resolution, software engineering agents, bug taxonomy, benchmark
 

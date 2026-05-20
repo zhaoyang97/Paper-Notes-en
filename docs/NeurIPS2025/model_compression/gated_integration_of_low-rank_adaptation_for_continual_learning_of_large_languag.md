@@ -18,8 +18,8 @@ content_hash: 0917da4910aadd73
 # Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15424](https://arxiv.org/abs/2505.15424)
-**Code**: [GitHub](https://github.com/liangyanshuo/gainlora)
+**arXiv**: [2505.15424](https://arxiv.org/abs/2505.15424)  
+**Code**: [GitHub](https://github.com/liangyanshuo/gainlora)  
 **Area**: Model Compression / LLM Efficiency
 **Keywords**: Continual Learning, LoRA, Gating Mechanism, Catastrophic Forgetting, Parameter-Efficient Fine-Tuning
 

@@ -18,8 +18,8 @@ content_hash: f9c3fa20ed4d3ad9
 # Thompson Sampling in Function Spaces via Neural Operators
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.21894](https://arxiv.org/abs/2506.21894)
-**Code**: None
+**arXiv**: [2506.21894](https://arxiv.org/abs/2506.21894)  
+**Code**: None  
 **Area**: Reinforcement Learning / Bayesian Optimization
 **Keywords**: Thompson Sampling, Function Space, Neural Operators, Bayesian Optimization, PDE
 

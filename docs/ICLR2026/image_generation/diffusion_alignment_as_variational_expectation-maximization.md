@@ -18,8 +18,8 @@ content_hash: 2fe0f584fad22623
 # Diffusion Alignment as Variational Expectation-Maximization
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00502](https://arxiv.org/abs/2510.00502)
-**Code**: [https://github.com/Jaewoopudding/dav](https://github.com/Jaewoopudding/dav)
+**arXiv**: [2510.00502](https://arxiv.org/abs/2510.00502)  
+**Code**: [https://github.com/Jaewoopudding/dav](https://github.com/Jaewoopudding/dav)  
 **Area**: Diffusion Models / Alignment
 **Keywords**: diffusion alignment, expectation-maximization, test-time search, reward optimization, mode collapse prevention
 

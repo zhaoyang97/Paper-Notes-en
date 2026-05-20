@@ -18,8 +18,8 @@ content_hash: 445d3dd6112d4ef5
 # 7DGS: Unified Spatial-Temporal-Angular Gaussian Splatting
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07946](https://arxiv.org/abs/2503.07946)
-**Code**: [https://gaozhongpai.github.io/7dgs/](https://gaozhongpai.github.io/7dgs/) (project page)
+**arXiv**: [2503.07946](https://arxiv.org/abs/2503.07946)  
+**Code**: [https://gaozhongpai.github.io/7dgs/](https://gaozhongpai.github.io/7dgs/) (project page)  
 **Area**: 3D Vision
 **Keywords**: Gaussian Splatting, Dynamic Scene Rendering, View-Dependent Effects, Real-Time Rendering, Novel View Synthesis
 

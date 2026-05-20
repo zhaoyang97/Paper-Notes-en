@@ -18,8 +18,8 @@ content_hash: 4cd6a9ca1896c48e
 # Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13185](https://arxiv.org/abs/2603.13185)
-**Code**: [Available](https://github.com/rohithpeddi/WorldSGG)
+**arXiv**: [2603.13185](https://arxiv.org/abs/2603.13185)  
+**Code**: [Available](https://github.com/rohithpeddi/WorldSGG)  
 **Area**: 3D Vision
 **Keywords**: Scene Graph Generation, Object Permanence, 3D Scene Understanding, Spatio-Temporal Reasoning, Vision-Language Models
 

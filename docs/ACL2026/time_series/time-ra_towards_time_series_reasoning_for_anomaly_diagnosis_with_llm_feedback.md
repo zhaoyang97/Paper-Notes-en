@@ -18,8 +18,8 @@ content_hash: b2ae6b9d58095553
 # Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback
 
 **Conference**: ACL 2026
-**arXiv**: [2507.15066](https://arxiv.org/abs/2507.15066)
-**Code**: [yyysjz1997/Time-RA](https://github.com/yyysjz1997/Time-RA)
+**arXiv**: [2507.15066](https://arxiv.org/abs/2507.15066)  
+**Code**: [yyysjz1997/Time-RA](https://github.com/yyysjz1997/Time-RA)  
 **Area**: Time Series Analysis / LLM Reasoning
 **Keywords**: Time series anomaly detection, anomaly reasoning diagnosis, multimodal benchmark, LLM fine-tuning, AI feedback annotation
 

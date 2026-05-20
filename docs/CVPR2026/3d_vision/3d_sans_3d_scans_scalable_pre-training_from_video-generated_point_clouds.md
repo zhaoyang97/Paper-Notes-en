@@ -18,8 +18,8 @@ content_hash: cbb8b7e1cdb50273
 # 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.23042](https://arxiv.org/abs/2512.23042)
-**Code**: [https://github.com/ryosuke-yamada/lam3c](https://github.com/ryosuke-yamada/lam3c)
+**arXiv**: [2512.23042](https://arxiv.org/abs/2512.23042)  
+**Code**: [https://github.com/ryosuke-yamada/lam3c](https://github.com/ryosuke-yamada/lam3c)  
 **Area**: 3D Vision / Self-Supervised Learning
 **Keywords**: 3D self-supervised learning, video-generated point clouds, Sinkhorn-Knopp clustering, noise regularization, indoor scene understanding
 

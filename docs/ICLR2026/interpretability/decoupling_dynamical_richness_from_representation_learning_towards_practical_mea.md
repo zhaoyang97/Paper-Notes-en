@@ -18,8 +18,8 @@ content_hash: 8a1335219d336d4c
 # Decoupling Dynamical Richness from Representation Learning: Towards Practical Measurement
 
 **Conference**: ICLR 2026
-**arXiv**: [2410.04264](https://arxiv.org/abs/2410.04264)
-**Code**: Available (provided in appendix)
+**arXiv**: [2410.04264](https://arxiv.org/abs/2410.04264)  
+**Code**: Available (provided in appendix)  
 **Area**: Interpretability
 **Keywords**: rich dynamics, lazy training, neural collapse, feature learning, CKA
 

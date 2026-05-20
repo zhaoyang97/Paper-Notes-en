@@ -18,8 +18,8 @@ content_hash: 4db29fdfa73fd00c
 # RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.02064](https://arxiv.org/abs/2505.02064)
-**Code**: [https://ljungang.github.io/RTV-Bench](https://ljungang.github.io/RTV-Bench)
+**arXiv**: [2505.02064](https://arxiv.org/abs/2505.02064)  
+**Code**: [https://ljungang.github.io/RTV-Bench](https://ljungang.github.io/RTV-Bench)  
 **Area**: Multimodal VLM
 **Keywords**: real-time video understanding, multimodal large model evaluation, continuous analysis, multi-timestamp QA, video benchmark
 

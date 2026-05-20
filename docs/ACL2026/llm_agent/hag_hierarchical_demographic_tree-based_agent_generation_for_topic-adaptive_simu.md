@@ -18,8 +18,8 @@ content_hash: 4c49228daa7c9796
 # HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation
 
 **Conference**: ACL 2026
-**arXiv**: [2601.05656](https://arxiv.org/abs/2601.05656)
-**Code**: [https://github.com/Libra117/HAG](https://github.com/Libra117/HAG)
+**arXiv**: [2601.05656](https://arxiv.org/abs/2601.05656)  
+**Code**: [https://github.com/Libra117/HAG](https://github.com/Libra117/HAG)  
 **Area**: LLM Agent
 **Keywords**: Agent Generation, Population Simulation, Hierarchical Decision-Making, Topic Adaptation, Agent-Based Modeling
 

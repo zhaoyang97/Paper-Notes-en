@@ -18,8 +18,8 @@ content_hash: d589263730547ba6
 # Probabilistic Reasoning with LLMs for K-Anonymity Estimation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.09674](https://arxiv.org/abs/2503.09674)
-**Code**: None
+**arXiv**: [2503.09674](https://arxiv.org/abs/2503.09674)  
+**Code**: None  
 **Area**: AI Safety / Privacy Protection
 **Keywords**: privacy risk estimation, k-anonymity, Bayesian networks, probabilistic reasoning, large language models
 

@@ -18,8 +18,8 @@ content_hash: d10bba0be2069f23
 # EnerVerse: Envisioning Embodied Future Space for Robotics Manipulation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.01895](https://arxiv.org/abs/2501.01895)
-**Code**: To be confirmed
+**arXiv**: [2501.01895](https://arxiv.org/abs/2501.01895)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: embodied AI, video diffusion, multi-view generation, robotic manipulation, 4D Gaussian Splatting
 

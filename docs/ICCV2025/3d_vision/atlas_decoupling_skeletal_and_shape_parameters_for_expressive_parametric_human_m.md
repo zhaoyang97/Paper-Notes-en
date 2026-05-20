@@ -18,8 +18,8 @@ content_hash: be4f77f41a0739b3
 # ATLAS: Decoupling Skeletal and Shape Parameters for Expressive Parametric Human Modeling
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.15767](https://arxiv.org/abs/2508.15767)
-**Code**: [https://jindapark.github.io/projects/atlas](https://jindapark.github.io/projects/atlas)
+**arXiv**: [2508.15767](https://arxiv.org/abs/2508.15767)  
+**Code**: [https://jindapark.github.io/projects/atlas](https://jindapark.github.io/projects/atlas)  
 **Area**: 3D Vision / Human Body Modeling
 **Keywords**: Parametric Body Model, Skeleton Decoupling, Pose Correctives, SMPL, Human Mesh
 

@@ -17,8 +17,8 @@ content_hash: ba78f1d37fcd195f
 # Joint Asymmetric Loss for Learning with Noisy Labels
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.17692](https://arxiv.org/abs/2507.17692)
-**Code**: [github.com/cswjl/joint-asymmetric-loss](https://github.com/cswjl/joint-asymmetric-loss)
+**arXiv**: [2507.17692](https://arxiv.org/abs/2507.17692)  
+**Code**: [github.com/cswjl/joint-asymmetric-loss](https://github.com/cswjl/joint-asymmetric-loss)  
 **Area**: Other
 **Keywords**: learning with noisy labels, asymmetric loss functions, robust loss, APL framework, noise tolerance
 

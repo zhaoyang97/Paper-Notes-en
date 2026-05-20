@@ -18,8 +18,8 @@ content_hash: 5933de5560c695b0
 # Dataset Color Quantization: A Training-Oriented Framework for Dataset-Level Compression
 
 **Conference**: ICLR2026
-**arXiv**: [2602.20650](https://arxiv.org/abs/2602.20650)
-**Code**: N/A
+**arXiv**: [2602.20650](https://arxiv.org/abs/2602.20650)  
+**Code**: N/A  
 **Area**: Model Compression
 **Keywords**: dataset compression, color quantization, palette sharing, attention guidance, texture preservation
 

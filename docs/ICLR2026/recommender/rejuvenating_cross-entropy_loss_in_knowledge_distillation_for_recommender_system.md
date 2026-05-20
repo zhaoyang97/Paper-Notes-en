@@ -19,8 +19,8 @@ content_hash: 956fbccb0607391b
 # Rejuvenating Cross-Entropy Loss in Knowledge Distillation for Recommender Systems
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.20989](https://arxiv.org/abs/2509.20989)
-**Code**: [GitHub](https://github.com/BDML-lab/RCE-KD)
+**arXiv**: [2509.20989](https://arxiv.org/abs/2509.20989)  
+**Code**: [GitHub](https://github.com/BDML-lab/RCE-KD)  
 **Area**: Recommender Systems / Knowledge Distillation / Model Compression
 **Keywords**: knowledge distillation, cross-entropy, NDCG, recommender system, ranking, partial NDCG
 

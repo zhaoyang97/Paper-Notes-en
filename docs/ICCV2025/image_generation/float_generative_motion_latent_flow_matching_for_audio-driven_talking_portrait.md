@@ -18,8 +18,8 @@ content_hash: 329f6c59932b8e7f
 # FLOAT: Generative Motion Latent Flow Matching for Audio-driven Talking Portrait
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.01064](https://arxiv.org/abs/2412.01064)
-**Code**: [GitHub](https://deepbrainai-research.github.io/float/)
+**arXiv**: [2412.01064](https://arxiv.org/abs/2412.01064)  
+**Code**: [GitHub](https://deepbrainai-research.github.io/float/)  
 **Area**: Image Generation
 **Keywords**: Flow Matching, Talking Portrait Generation, Motion Latent Space, Orthogonal Basis, Speech Emotion Enhancement
 

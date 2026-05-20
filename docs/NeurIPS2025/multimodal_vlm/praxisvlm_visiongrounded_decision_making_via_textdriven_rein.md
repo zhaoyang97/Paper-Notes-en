@@ -18,8 +18,8 @@ content_hash: ae698bb995223bdc
 # Praxis-VLM: Vision-Grounded Decision Making via Text-Driven Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.16965](https://arxiv.org/abs/2503.16965)
-**Code**: [https://github.com/Derekkk/Praxis-VLM](https://github.com/Derekkk/Praxis-VLM)
+**arXiv**: [2503.16965](https://arxiv.org/abs/2503.16965)  
+**Code**: [https://github.com/Derekkk/Praxis-VLM](https://github.com/Derekkk/Praxis-VLM)  
 **Area**: Multimodal VLM / Agent Decision-Making / Reinforcement Learning
 **Keywords**: VLM decision-making, text-driven RL, GRPO, cross-modal transfer, embodied reasoning
 
@@ -51,22 +51,22 @@ A key design principle: only LLM parameters are updated during training; the vis
 ### Key Designs
 
 1. **Empirical Validation and Exploitation of the Decoupling Between Decision Reasoning and Visual Perception**
-   - **Function**: Serves as the empirical foundation for the entire methodology, demonstrating that the bottleneck for VLM decision-making lies in reasoning rather than visual perception.
-   - **Mechanism**: On VIVA and PCA-Bench, two settings are compared: (1) original images as situational input, and (2) textual descriptions (GPT-4o captions or dataset annotations) replacing images. The textual-situation setting matches or outperforms image-based inputs, indicating that decision-making reasoning can be fully learned from textual representations.
-   - **Design Motivation**: If core decision-making capabilities are not bound to visual perception, expensive image–text paired data can be bypassed and purely textual data used to train reasoning—this is the theoretical foundation of the entire Praxis-VLM framework.
+    - **Function**: Serves as the empirical foundation for the entire methodology, demonstrating that the bottleneck for VLM decision-making lies in reasoning rather than visual perception.
+    - **Mechanism**: On VIVA and PCA-Bench, two settings are compared: (1) original images as situational input, and (2) textual descriptions (GPT-4o captions or dataset annotations) replacing images. The textual-situation setting matches or outperforms image-based inputs, indicating that decision-making reasoning can be fully learned from textual representations.
+    - **Design Motivation**: If core decision-making capabilities are not bound to visual perception, expensive image–text paired data can be bypassed and purely textual data used to train reasoning—this is the theoretical foundation of the entire Praxis-VLM framework.
 
 2. **Multi-Stage GRPO Training with Adaptive R1 Reward**
-   - **Function**: Incrementally builds a capability chain from format compliance → logical reasoning → complex decision-making across stages.
-   - **Mechanism**:
+    - **Function**: Incrementally builds a capability chain from format compliance → logical reasoning → complex decision-making across stages.
+    - **Mechanism**:
      - **Stage 1 (Cold Start)**: GRPO training on geometry3k geometric data. Reward = $R_{\text{accuracy}} + R_{\text{format}} + 0.5 \cdot R_{\text{tag}}$. $R_{\text{tag}}$ ensures the model learns the `<think></think><answer></answer>` format (checking that each special token appears exactly once); once the format stabilizes, $R_{\text{tag}}$ is removed and $R_{\text{accuracy}}$ becomes dominant.
      - **Stage 2 (Decision RL)**: Training on synthetic textual decision data. Reward = $R_{\text{accuracy}} + 0.8 \cdot R_{\text{format}} + 0.5 \cdot R_{\text{len}}$. $R_{\text{len}} = \min(\text{word\_count}/250,\; 1.0)$ encourages longer and more thorough reasoning chains.
      - **Key Finding**: SFT cold start before RL is unnecessary—with a well-designed adaptive reward strategy, GRPO can be applied directly to instruction-tuned VLMs, simplifying the training pipeline.
-   - **Design Motivation**: Directly applying RL on decision data without preparation yields poor results (the model has not yet learned to produce formatted reasoning outputs). The logical reasoning nature of mathematics data makes it naturally suited for cold-start initialization; stage-wise adaptive rewards allow the model to focus on distinct skills at each stage, avoiding multi-objective conflicts.
+    - **Design Motivation**: Directly applying RL on decision data without preparation yields poor results (the model has not yet learned to produce formatted reasoning outputs). The logical reasoning nature of mathematics data makes it naturally suited for cold-start initialization; stage-wise adaptive rewards allow the model to focus on distinct skills at each stage, avoiding multi-objective conflicts.
 
 3. **GPT-4o-Driven Textual Decision Data Synthesis**
-   - **Function**: Provides high-quality, diverse, purely textual decision-making training data to support RL training.
-   - **Mechanism**: Ten seed questions are manually constructed as in-context examples; GPT-4o is then prompted to generate samples in batches of 10 with deduplication, yielding 10K training + 1K validation samples. Each sample is a triplet of textual situation description, multiple-choice decision question, and answer, designed to require multi-step reasoning and evaluable by simple rules (multiple-choice format).
-   - **Design Motivation**: Training data must be sufficiently challenging (forcing the model to learn reasoning rather than pattern matching) and rule-evaluable (avoiding complex reward modeling and reward hacking risks). The batch generation + deduplication strategy ensures data diversity; no image data or manual filtering is required, enabling rapid domain-agnostic data construction.
+    - **Function**: Provides high-quality, diverse, purely textual decision-making training data to support RL training.
+    - **Mechanism**: Ten seed questions are manually constructed as in-context examples; GPT-4o is then prompted to generate samples in batches of 10 with deduplication, yielding 10K training + 1K validation samples. Each sample is a triplet of textual situation description, multiple-choice decision question, and answer, designed to require multi-step reasoning and evaluable by simple rules (multiple-choice format).
+    - **Design Motivation**: Training data must be sufficiently challenging (forcing the model to learn reasoning rather than pattern matching) and rule-evaluable (avoiding complex reward modeling and reward hacking risks). The batch generation + deduplication strategy ensures data diversity; no image data or manual filtering is required, enabling rapid domain-agnostic data construction.
 
 ### Loss & Training
 

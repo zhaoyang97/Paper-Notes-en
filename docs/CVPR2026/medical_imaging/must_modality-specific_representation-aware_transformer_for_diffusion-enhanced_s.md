@@ -18,8 +18,8 @@ content_hash: e9d6db5241026cab
 # MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26071](https://arxiv.org/abs/2603.26071)
-**Code**: [Project Page](https://kylekwkim.github.io/MUST/)
+**arXiv**: [2603.26071](https://arxiv.org/abs/2603.26071)  
+**Code**: [Project Page](https://kylekwkim.github.io/MUST/)  
 **Area**: Medical Imaging / Multimodal Fusion
 **Keywords**: Survival Prediction, Missing Modality, Algebraic Decomposition, Latent Diffusion Model, Multimodal Fusion
 

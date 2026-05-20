@@ -19,8 +19,8 @@ content_hash: a53a183a419c00b5
 # Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10744](https://arxiv.org/abs/2603.10744)
-**Code**: [Project Page](https://wenhao-sun77.github.io/JiT/)
+**arXiv**: [2603.10744](https://arxiv.org/abs/2603.10744)  
+**Code**: [Project Page](https://wenhao-sun77.github.io/JiT/)  
 **Area**: Image Generation / Diffusion Model Acceleration
 **Keywords**: Diffusion Transformer, spatial acceleration, training-free, Flow Matching, token sparsification, ODE solving
 

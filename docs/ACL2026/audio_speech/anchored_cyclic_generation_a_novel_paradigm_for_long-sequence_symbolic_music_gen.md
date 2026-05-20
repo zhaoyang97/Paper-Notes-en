@@ -18,8 +18,8 @@ content_hash: 202b92a31a5b129e
 # Anchored Cyclic Generation: A Novel Paradigm for Long-Sequence Symbolic Music Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05343](https://arxiv.org/abs/2604.05343)
-**Code**: None
+**arXiv**: [2604.05343](https://arxiv.org/abs/2604.05343)  
+**Code**: None  
 **Area**: Audio & Speech / Sequence Generation
 **Keywords**: symbolic music generation, error accumulation, anchored cyclic generation, hierarchical framework, Piano Token
 

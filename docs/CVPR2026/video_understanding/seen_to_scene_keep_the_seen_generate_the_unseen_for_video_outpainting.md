@@ -18,8 +18,8 @@ content_hash: 9ed28f06cade6fe0
 # Seen-to-Scene: Keep the Seen, Generate the Unseen for Video Outpainting
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.14648](https://arxiv.org/abs/2604.14648)
-**Code**: [github.com/InSeokJeon/Seen_to_Scene](https://github.com/InSeokJeon/Seen_to_Scene)
+**arXiv**: [2604.14648](https://arxiv.org/abs/2604.14648)  
+**Code**: [github.com/InSeokJeon/Seen_to_Scene](https://github.com/InSeokJeon/Seen_to_Scene)  
 **Area**: Video Understanding / Generation
 **Keywords**: video outpainting, propagation, diffusion model, optical flow, temporal coherence
 

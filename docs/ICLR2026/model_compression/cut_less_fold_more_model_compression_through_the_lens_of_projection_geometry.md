@@ -18,8 +18,8 @@ content_hash: a6d60a6479bc9446
 # Cut Less, Fold More: Model Compression through the Lens of Projection Geometry
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.18116](https://arxiv.org/abs/2602.18116)
-**Code**: Available (appendix link)
+**arXiv**: [2602.18116](https://arxiv.org/abs/2602.18116)  
+**Code**: Available (appendix link)  
 **Area**: Model Compression
 **Keywords**: Model folding, structured pruning, orthogonal projection, calibration-free compression, projection geometry
 

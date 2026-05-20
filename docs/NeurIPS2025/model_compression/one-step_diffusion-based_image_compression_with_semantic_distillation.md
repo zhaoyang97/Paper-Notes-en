@@ -18,8 +18,8 @@ content_hash: 8825f15cc6de840c
 # One-Step Diffusion-Based Image Compression with Semantic Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16687](https://arxiv.org/abs/2505.16687)
-**Code**: [onedc-codec.github.io](https://onedc-codec.github.io/)
+**arXiv**: [2505.16687](https://arxiv.org/abs/2505.16687)  
+**Code**: [onedc-codec.github.io](https://onedc-codec.github.io/)  
 **Area**: Model Compression
 **Keywords**: Image Compression, One-Step Diffusion Model, Semantic Distillation, Hyperprior, Generative Codec
 

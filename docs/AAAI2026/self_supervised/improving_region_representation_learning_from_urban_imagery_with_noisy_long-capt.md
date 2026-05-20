@@ -19,8 +19,8 @@ content_hash: db7ef4538580710c
 # Improving Region Representation Learning from Urban Imagery with Noisy Long-Caption Supervision
 
 **Conference**: AAAI2026
-**arXiv**: [2511.07062](https://arxiv.org/abs/2511.07062)
-**Code**: To be confirmed
+**arXiv**: [2511.07062](https://arxiv.org/abs/2511.07062)  
+**Code**: To be confirmed  
 **Area**: Self-Supervised Learning
 **Keywords**: urban computing, region representation, cross-modal pre-training, CLIP, noise suppression, self-distillation
 

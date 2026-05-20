@@ -18,8 +18,8 @@ content_hash: 39ccb591dc85f63b
 # How Far Can Unsupervised RLVR Scale LLM Training?
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.08660](https://arxiv.org/abs/2603.08660)
-**Code**: [PRIME-RL/TTRL](https://github.com/PRIME-RL/TTRL)
+**arXiv**: [2603.08660](https://arxiv.org/abs/2603.08660)  
+**Code**: [PRIME-RL/TTRL](https://github.com/PRIME-RL/TTRL)  
 **Area**: Reinforcement Learning
 **Keywords**: unsupervised RLVR, model collapse, intrinsic rewards, sharpening mechanism, test-time training
 

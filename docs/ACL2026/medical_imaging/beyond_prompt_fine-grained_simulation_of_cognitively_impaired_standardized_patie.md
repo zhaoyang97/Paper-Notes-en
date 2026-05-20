@@ -18,8 +18,8 @@ content_hash: b6e21a346c4a829a
 # Beyond Prompt: Fine-grained Simulation of Cognitively Impaired Standardized Patients via Stochastic Steering
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12210](https://arxiv.org/abs/2604.12210)
-**Code**: N/A
+**arXiv**: [2604.12210](https://arxiv.org/abs/2604.12210)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: standardized patient simulation, cognitive impairment, steering vector, stochastic modulation, clinical training
 

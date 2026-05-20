@@ -18,8 +18,8 @@ content_hash: 5efecad01d9c25da
 # Thermal Polarimetric Multi-view Stereo
 
 **Conference**: ICCV2025
-**arXiv**: [2510.20972](https://arxiv.org/abs/2510.20972)
-**Code**: None
+**arXiv**: [2510.20972](https://arxiv.org/abs/2510.20972)  
+**Code**: None  
 **Area**: 3D Reconstruction / Thermal Imaging / Polarimetric Imaging
 **Keywords**: thermal imaging, polarimetric imaging, LWIR, multi-view stereo, SDF, shape from polarization
 

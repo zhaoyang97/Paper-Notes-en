@@ -18,8 +18,8 @@ content_hash: e43ea2bf28e3bd71
 # Astral: Training Physics-Informed Neural Networks with Error Majorants
 
 **Conference**: ICLR 2026
-**arXiv**: [2406.02645](https://arxiv.org/abs/2406.02645)
-**Code**: [https://github.com/4gnskq5g2s-collab/Astral](https://github.com/4gnskq5g2s-collab/Astral)
+**arXiv**: [2406.02645](https://arxiv.org/abs/2406.02645)  
+**Code**: [https://github.com/4gnskq5g2s-collab/Astral](https://github.com/4gnskq5g2s-collab/Astral)  
 **Area**: Scientific Computing / Physics-Informed Neural Networks
 **Keywords**: PiNN, a posteriori error estimation, error upper bound, PDE solving, loss function design
 
@@ -51,28 +51,28 @@ Given a PDE $\mathcal{A}[\phi, \mathcal{D}] = 0$, an error majorant $U[\tilde{\p
 
 1. **Astral Loss Function**:
 
-   - **Function**: Employs the error majorant as the PiNN loss.
-   - **Mechanism**: Taking the diffusion equation as an example, an auxiliary variable $\tilde{F}(x,y) \simeq \sigma(x,y)\operatorname{grad}\phi(x,y)$ is introduced to approximate the exact flux. The loss takes the form $U = \alpha \int (f + \operatorname{div}\tilde{F})^2 + \beta \int \|\sigma\operatorname{grad}\tilde{\phi} - \tilde{F}\|^2 / \sigma$, where $\alpha$ and $\beta$ are constants depending on PDE parameters.
-   - **Design Motivation**: $U$ is a rigorous upper bound on the energy-norm error; it is saturated if and only if $\tilde{\phi} \to \phi$ and $\tilde{F} \to \sigma\operatorname{grad}\phi$. Minimizing $U$ therefore simultaneously drives the approximate solution toward the exact solution and the auxiliary field toward the exact flux.
-   - **Novelty**: The residual loss guarantees only a small residual, not a small error; variational losses require the problem to admit a variational formulation; the Astral loss provides a rigorous upper bound together with high accuracy.
+    - **Function**: Employs the error majorant as the PiNN loss.
+    - **Mechanism**: Taking the diffusion equation as an example, an auxiliary variable $\tilde{F}(x,y) \simeq \sigma(x,y)\operatorname{grad}\phi(x,y)$ is introduced to approximate the exact flux. The loss takes the form $U = \alpha \int (f + \operatorname{div}\tilde{F})^2 + \beta \int \|\sigma\operatorname{grad}\tilde{\phi} - \tilde{F}\|^2 / \sigma$, where $\alpha$ and $\beta$ are constants depending on PDE parameters.
+    - **Design Motivation**: $U$ is a rigorous upper bound on the energy-norm error; it is saturated if and only if $\tilde{\phi} \to \phi$ and $\tilde{F} \to \sigma\operatorname{grad}\phi$. Minimizing $U$ therefore simultaneously drives the approximate solution toward the exact solution and the auxiliary field toward the exact flux.
+    - **Novelty**: The residual loss guarantees only a small residual, not a small error; variational losses require the problem to admit a variational formulation; the Astral loss provides a rigorous upper bound together with high accuracy.
 
 2. **Auxiliary Field Parameterization**:
 
-   - **Function**: Parameterizes the auxiliary field $w$ with an independent Siren network.
-   - **Mechanism**: The dimension and interpretation of $w$ depend on the specific PDE — it is a flux vector field for the diffusion equation and a scalar field for Maxwell equations. Each field is represented by a dedicated Siren network.
-   - **Design Motivation**: The auxiliary field is a free variable in the error majorant; optimizing it tightens the upper bound.
+    - **Function**: Parameterizes the auxiliary field $w$ with an independent Siren network.
+    - **Mechanism**: The dimension and interpretation of $w$ depend on the specific PDE — it is a flux vector field for the diffusion equation and a scalar field for Maxwell equations. Each field is represented by a dedicated Siren network.
+    - **Design Motivation**: The auxiliary field is a free variable in the error majorant; optimizing it tightens the upper bound.
 
 3. **Error Majorant Derivation for Multiple PDE Classes**:
 
-   - **Function**: Explicit error majorant expressions are derived for seven PDE types.
-   - **Coverage**: Isotropic/anisotropic diffusion, diffusion with large mixed derivatives, diffusion on an L-shaped domain, Maxwell equations (both $\alpha > 0$ and $\alpha = 0$), convection-diffusion, and nonlinear elasto-plasticity.
-   - **Mechanism**: Rigorous upper bounds are derived from integral identities using tools such as the Cauchy–Schwarz inequality and the Friedrichs inequality.
+    - **Function**: Explicit error majorant expressions are derived for seven PDE types.
+    - **Coverage**: Isotropic/anisotropic diffusion, diffusion with large mixed derivatives, diffusion on an L-shaped domain, Maxwell equations (both $\alpha > 0$ and $\alpha = 0$), convection-diffusion, and nonlinear elasto-plasticity.
+    - **Mechanism**: Rigorous upper bounds are derived from integral identities using tools such as the Cauchy–Schwarz inequality and the Friedrichs inequality.
 
 4. **Error Indicator**:
 
-   - **Function**: Extracts a pointwise spatial distribution estimate of the error from the Astral loss.
-   - **Mechanism**: The error indicator $\|\sigma^{-1/2}(\tilde{F} - \sigma\operatorname{grad}\tilde{\phi})\|^2$ provides an estimate of the local error density.
-   - **Key Advantage**: Its spatial correlation with the true error reaches $0.82 \pm 0.04$, compared to only $0.22 \pm 0.09$ for the residual.
+    - **Function**: Extracts a pointwise spatial distribution estimate of the error from the Astral loss.
+    - **Mechanism**: The error indicator $\|\sigma^{-1/2}(\tilde{F} - \sigma\operatorname{grad}\tilde{\phi})\|^2$ provides an estimate of the local error density.
+    - **Key Advantage**: Its spatial correlation with the true error reaches $0.82 \pm 0.04$, compared to only $0.22 \pm 0.09$ for the residual.
 
 ### Loss & Training
 - Integrals are approximated via Monte Carlo sampling over random subsets of a $64 \times 64$ uniform grid.

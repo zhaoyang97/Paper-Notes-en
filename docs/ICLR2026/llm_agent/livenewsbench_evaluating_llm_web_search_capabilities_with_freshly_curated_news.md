@@ -18,8 +18,8 @@ content_hash: fd23e0ab1b4863b4
 # LiveNewsBench: Evaluating LLM Web Search Capabilities with Freshly Curated News
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.13543](https://arxiv.org/abs/2602.13543)
-**Code**: [https://livenewsbench.com](https://livenewsbench.com)
+**arXiv**: [2602.13543](https://arxiv.org/abs/2602.13543)  
+**Code**: [https://livenewsbench.com](https://livenewsbench.com)  
 **Area**: LLM Agent
 **Keywords**: LLM Web Search, Agentic Search, benchmark, News QA, Multi-hop Retrieval
 

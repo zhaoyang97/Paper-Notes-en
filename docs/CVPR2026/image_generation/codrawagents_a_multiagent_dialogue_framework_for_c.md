@@ -18,8 +18,8 @@ content_hash: 788cee59e0d5157c
 # coDrawAgents: A Multi-Agent Dialogue Framework for Compositional Image Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12829](https://arxiv.org/abs/2603.12829)
-**Code**: To be released
+**arXiv**: [2603.12829](https://arxiv.org/abs/2603.12829)  
+**Code**: To be released  
 **Area**: Image Generation / Multi-Agent Systems
 **Keywords**: compositional T2I generation, multi-agent dialogue, layout planning, visual context grounding, error correction
 

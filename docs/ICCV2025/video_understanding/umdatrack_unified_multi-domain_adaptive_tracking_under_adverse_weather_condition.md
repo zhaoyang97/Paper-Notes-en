@@ -20,8 +20,8 @@ content_hash: d03af417d7e3f842
 # UMDATrack: Unified Multi-Domain Adaptive Tracking Under Adverse Weather Conditions
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.00648](https://arxiv.org/abs/2507.00648)
-**Code**: [https://github.com/Z-Z188/UMDATrack](https://github.com/Z-Z188/UMDATrack)
+**arXiv**: [2507.00648](https://arxiv.org/abs/2507.00648)  
+**Code**: [https://github.com/Z-Z188/UMDATrack](https://github.com/Z-Z188/UMDATrack)  
 **Area**: Visual Object Tracking / Domain Adaptation / Adverse Weather
 **Keywords**: visual object tracking, multi-domain adaptation, adverse weather, domain-customized adapter, optimal transport, text-to-image diffusion, teacher-student
 

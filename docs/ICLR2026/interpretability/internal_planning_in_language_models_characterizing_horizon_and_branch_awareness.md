@@ -18,8 +18,8 @@ content_hash: 5ebf3ccd8588c326
 # Internal Planning in Language Models: Characterizing Horizon and Branch Awareness
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25260](https://arxiv.org/abs/2509.25260)
-**Code**: Available (with supplementary material)
+**arXiv**: [2509.25260](https://arxiv.org/abs/2509.25260)  
+**Code**: Available (with supplementary material)  
 **Area**: Interpretability
 **Keywords**: Language model planning, mutual information, VQ-VAE, horizon awareness, branch awareness
 

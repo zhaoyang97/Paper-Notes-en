@@ -18,8 +18,8 @@ content_hash: 0d33d991f632efb1
 # Energy Loss Functions for Physical Systems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02087](https://arxiv.org/abs/2511.02087)
-**Code**: [Available](https://github.com/kushasareen/energy_loss)
+**arXiv**: [2511.02087](https://arxiv.org/abs/2511.02087)  
+**Code**: [Available](https://github.com/kushasareen/energy_loss)  
 **Area**: Image Generation
 **Keywords**: Energy loss functions, physical priors, diffusion models, symmetry invariance, molecular generation
 

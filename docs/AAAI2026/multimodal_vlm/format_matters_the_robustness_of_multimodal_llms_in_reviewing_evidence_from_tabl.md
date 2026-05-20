@@ -18,8 +18,8 @@ content_hash: 849806f01148e819
 # Format Matters: The Robustness of Multimodal LLMs in Reviewing Evidence from Tables and Charts
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10075](https://arxiv.org/abs/2511.10075)
-**Code**: [https://github.com/Alab-NII/tables-vs-charts](https://github.com/Alab-NII/tables-vs-charts)
+**arXiv**: [2511.10075](https://arxiv.org/abs/2511.10075)  
+**Code**: [https://github.com/Alab-NII/tables-vs-charts](https://github.com/Alab-NII/tables-vs-charts)  
 **Area**: Multimodal VLM
 **Keywords**: Scientific claim verification, tables vs. charts, multimodal robustness, format sensitivity, evidence format
 

@@ -18,7 +18,7 @@ content_hash: 71821afd1df6a70f
 # Attention Smoothing Is All You Need For Unlearning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01285](https://arxiv.org/abs/2603.01285)
+**arXiv**: [2603.01285](https://arxiv.org/abs/2603.01285)  
 **Authors**: Saleh Zare Zade, Xiangyu Zhou, Sijia Liu, Dongxiao Zhu (Wayne State University, Michigan State University)
 **Area**: AI Safety
 **Keywords**: LLM unlearning, attention smoothing, self-distillation, privacy protection, knowledge forgetting

@@ -18,8 +18,8 @@ content_hash: df182dcf216afd97
 # Simultaneous Motion And Noise Estimation with Event Cameras
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.04029](https://arxiv.org/abs/2504.04029)
-**Code**: [GitHub](https://github.com/tub-rip/ESMD)
+**arXiv**: [2504.04029](https://arxiv.org/abs/2504.04029)  
+**Code**: [GitHub](https://github.com/tub-rip/ESMD)  
 **Area**: Video Understanding
 **Keywords**: Event cameras, denoising, motion estimation, contrast maximization, joint estimation
 

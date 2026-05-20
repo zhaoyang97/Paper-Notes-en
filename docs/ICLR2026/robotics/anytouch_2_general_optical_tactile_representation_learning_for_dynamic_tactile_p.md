@@ -18,8 +18,8 @@ content_hash: 08522f90889c2f75
 # AnyTouch 2: General Optical Tactile Representation Learning For Dynamic Tactile Perception
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.09617](https://arxiv.org/abs/2602.09617)
-**Code**: [https://github.com/GeWu-Lab/AnyTouch2](https://github.com/GeWu-Lab/AnyTouch2)
+**arXiv**: [2602.09617](https://arxiv.org/abs/2602.09617)  
+**Code**: [https://github.com/GeWu-Lab/AnyTouch2](https://github.com/GeWu-Lab/AnyTouch2)  
 **Area**: Tactile Perception / Robotics
 **Keywords**: Tactile representation learning, dynamic perception, optical tactile sensors, force sensing, tactile dataset
 

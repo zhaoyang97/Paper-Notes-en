@@ -18,8 +18,8 @@ content_hash: d822c4dea280e257
 # Information Theoretic Optimal Surveillance for Epidemic Prevalence in Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.04267](https://arxiv.org/abs/2601.04267)
-**Code**: N/A
+**arXiv**: [2601.04267](https://arxiv.org/abs/2601.04267)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: epidemic surveillance, information theory, mutual information, network spreading, sensor selection
 

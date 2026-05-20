@@ -18,8 +18,8 @@ content_hash: 40a145bc7f4aca79
 # UniCreative: Unifying Long-form Logic and Short-form Sparkle via Reference-Free Reinforcement Learning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05517](https://arxiv.org/abs/2604.05517)
-**Code**: [https://github.com/weixiaolong94-hub/UniCreative](https://github.com/weixiaolong94-hub/UniCreative)
+**arXiv**: [2604.05517](https://arxiv.org/abs/2604.05517)  
+**Code**: [https://github.com/weixiaolong94-hub/UniCreative](https://github.com/weixiaolong94-hub/UniCreative)  
 **Area**: Reinforcement Learning / Creative Writing
 **Keywords**: Creative Writing, Reference-Free Reinforcement Learning, Preference Optimization, Generative Reward Model, Metacognition
 

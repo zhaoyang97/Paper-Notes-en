@@ -18,8 +18,8 @@ content_hash: 8d497d1e3e161610
 # Your Text Encoder Can Be An Object-Level Watermarking Controller
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11945](https://arxiv.org/abs/2503.11945)
-**Code**: [GitHub](https://github.com/)
+**arXiv**: [2503.11945](https://arxiv.org/abs/2503.11945)  
+**Code**: [GitHub](https://github.com/)  
 **Area**: Diffusion Models / Image Watermarking
 **Keywords**: Watermark Embedding, Text Encoder, Object-Level Watermarking, Textual Inversion, Diffusion Models
 

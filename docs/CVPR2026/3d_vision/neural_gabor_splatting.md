@@ -18,8 +18,8 @@ content_hash: 76fcf8952bf3cc27
 # Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.15941](https://arxiv.org/abs/2604.15941)
-**Code**: [https://github.com/haato-w/neural-gabor-splatting](https://github.com/haato-w/neural-gabor-splatting)
+**arXiv**: [2604.15941](https://arxiv.org/abs/2604.15941)  
+**Code**: [https://github.com/haato-w/neural-gabor-splatting](https://github.com/haato-w/neural-gabor-splatting)  
 **Area**: 3D Vision
 **Keywords**: Gaussian Splatting, High-frequency Surface Reconstruction, Neural Texture, MLP Primitive, Frequency-aware Densification
 

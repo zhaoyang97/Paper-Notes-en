@@ -18,8 +18,8 @@ content_hash: 1cd8cc87ff25994e
 # When One Modality Rules Them All: Backdoor Modality Collapse in Multimodal Diffusion Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.06508](https://arxiv.org/abs/2603.06508)
-**Code**: N/A
+**arXiv**: [2603.06508](https://arxiv.org/abs/2603.06508)  
+**Code**: N/A  
 **Area**: Image Generation
 **Keywords**: backdoor attack, modality collapse, multimodal diffusion, Shapley value, trigger interaction
 

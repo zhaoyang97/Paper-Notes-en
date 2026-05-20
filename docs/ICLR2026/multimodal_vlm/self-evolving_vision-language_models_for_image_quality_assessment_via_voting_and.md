@@ -18,8 +18,8 @@ content_hash: c65284372b63d73e
 # Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25787](https://arxiv.org/abs/2509.25787)
-**Code**: None
+**arXiv**: [2509.25787](https://arxiv.org/abs/2509.25787)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: VLM, Image Quality Assessment, Self-supervised, GRPO, Voting and Ranking
 

@@ -18,8 +18,8 @@ content_hash: ed32e61c4b1c0676
 # A3: Towards Advertising Aesthetic Assessment
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24037](https://arxiv.org/abs/2603.24037)
-**Code**: [https://github.com/euleryuan/A3-Align](https://github.com/euleryuan/A3-Align)
+**arXiv**: [2603.24037](https://arxiv.org/abs/2603.24037)  
+**Code**: [https://github.com/euleryuan/A3-Align](https://github.com/euleryuan/A3-Align)  
 **Area**: Multimodal VLM
 **Keywords**: Advertising Aesthetic Assessment, Multimodal Large Language Models, AIDA Model, Chain-of-Thought, GRPO
 

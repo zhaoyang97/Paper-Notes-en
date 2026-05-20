@@ -18,8 +18,8 @@ content_hash: 6ba33c489a6adb20
 # AdvDreamer Unveils: Are Vision-Language Models Truly Ready for Real-World 3D Variations?
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.03002](https://arxiv.org/abs/2412.03002)
-**Code**: Not publicly available (includes MM3DTBench benchmark)
+**arXiv**: [2412.03002](https://arxiv.org/abs/2412.03002)  
+**Code**: Not publicly available (includes MM3DTBench benchmark)  
 **Area**: AI Safety / Multimodal VLM / 3D Robustness
 **Keywords**: VLM robustness, adversarial 3D transformations, monocular pose manipulation, naturalness reward model, visual grounding
 

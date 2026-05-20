@@ -18,8 +18,8 @@ content_hash: cbb37af3f0f4c691
 # Train Once, Answer All: Many Pretraining Experiments for the Cost of One
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23383](https://arxiv.org/abs/2509.23383)
-**Code**: [Python Package](https://arxiv.org/abs/2509.23383) (OLMo-2 experiment package provided in the paper)
+**arXiv**: [2509.23383](https://arxiv.org/abs/2509.23383)  
+**Code**: [Python Package](https://arxiv.org/abs/2509.23383) (OLMo-2 experiment package provided in the paper)  
 **Area**: AI Safety
 **Keywords**: Pretraining Experiments, LLM, Experiment Independence, Continual Pretraining, Data Contamination
 

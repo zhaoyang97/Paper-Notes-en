@@ -18,8 +18,8 @@ content_hash: 7e7f6e470abfd51a
 # EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Equivariant Flow Matching
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.06224](https://arxiv.org/abs/2507.06224)
-**Code**: [ec-flow1.github.io](https://ec-flow1.github.io)
+**arXiv**: [2507.06224](https://arxiv.org/abs/2507.06224)  
+**Code**: [ec-flow1.github.io](https://ec-flow1.github.io)  
 **Area**: Image Generation
 **Keywords**: robotic manipulation, action-unlabeled video learning, optical flow prediction, URDF kinematics, diffusion models
 

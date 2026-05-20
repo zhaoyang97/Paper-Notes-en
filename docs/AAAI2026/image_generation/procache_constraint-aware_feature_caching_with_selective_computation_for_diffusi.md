@@ -18,8 +18,8 @@ content_hash: 907037aa3ef11692
 # ProCache: Constraint-Aware Feature Caching with Selective Computation for Diffusion Transformer Acceleration
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.17298](https://arxiv.org/abs/2512.17298)
-**Code**: [https://github.com/macovaseas/ProCache](https://github.com/macovaseas/ProCache)
+**arXiv**: [2512.17298](https://arxiv.org/abs/2512.17298)  
+**Code**: [https://github.com/macovaseas/ProCache](https://github.com/macovaseas/ProCache)  
 **Area**: Image Generation
 **Keywords**: Diffusion Transformer Acceleration, Feature Caching, Training-Free Inference, Dynamic Scheduling, Token Selection
 

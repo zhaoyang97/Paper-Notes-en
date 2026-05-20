@@ -18,8 +18,8 @@ content_hash: 52a208ebeeebe247
 # From Sequence to Structure: Uncovering Substructure Reasoning in Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.10435](https://arxiv.org/abs/2507.10435)
-**Code**: [https://github.com/DDigimon/From_Sequence_to_Structure](https://github.com/DDigimon/From_Sequence_to_Structure)
+**arXiv**: [2507.10435](https://arxiv.org/abs/2507.10435)  
+**Code**: [https://github.com/DDigimon/From_Sequence_to_Structure](https://github.com/DDigimon/From_Sequence_to_Structure)  
 **Area**: Graph Learning
 **Keywords**: Transformer interpretability, substructure extraction, graph reasoning, induced subgraph filtration, LLM graph understanding
 

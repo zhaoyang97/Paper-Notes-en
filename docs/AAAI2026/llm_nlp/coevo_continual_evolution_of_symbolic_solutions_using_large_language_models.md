@@ -18,8 +18,8 @@ content_hash: 826e1492d00bd3e9
 # CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2412.18890](https://arxiv.org/abs/2412.18890)
-**Code**: [Available](https://github.com/pgg3/CoEvo)
+**arXiv**: [2412.18890](https://arxiv.org/abs/2412.18890)  
+**Code**: [Available](https://github.com/pgg3/CoEvo)  
 **Area**: LLM/NLP
 **Keywords**: Symbolic Regression, LLM-based Evolutionary Search, Knowledge Library, Open-ended Innovation, Multi-representation Space
 

@@ -18,8 +18,8 @@ content_hash: 0756bbd82bf0d647
 # Zero-Shot Inexact CAD Model Alignment from a Single Image
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.03292](https://arxiv.org/abs/2507.03292)
-**Code**: [https://zerocad9d.github.io/](https://zerocad9d.github.io/)
+**arXiv**: [2507.03292](https://arxiv.org/abs/2507.03292)  
+**Code**: [https://zerocad9d.github.io/](https://zerocad9d.github.io/)  
 **Area**: 3D Vision
 **Keywords**: CAD alignment, zero-shot, 9-DoF pose estimation, foundation models, NOC
 
@@ -64,9 +64,9 @@ A coarse-to-fine pose estimation pipeline:
 
 3. **Dense image alignment optimization (NOC space)**: The input image is converted to a NOC map $\mathbf{N}^\mathbf{I}$ via nearest-neighbor matching (each pixel feature is matched to the closest 3D voxel, whose position serves as the NOC value). Three losses are optimized:
 
-   - **NOC alignment loss**: $\mathcal{L}_{\text{NOC-A}} = \frac{1}{m}\|\mathbf{M} \odot (\mathbf{N}^\mathbf{I} - \mathbf{N}^t)\|_1$
-   - **Silhouette loss**: $\mathcal{L}_{\text{mask}} = \frac{1}{HW}\|\mathbf{S}^\mathbf{I} - \mathbf{S}^t\|_1$ (using SAM segmentation + SoftRasterizer differentiable rendering)
-   - **Depth loss**: $\mathcal{L}_{\text{depth}} = \frac{1}{m}\|\mathbf{M} \odot (\mathbf{D}^\mathbf{I} - \mathbf{D}^t)\|_1$ (using DepthAnything for metric depth prediction)
+    - **NOC alignment loss**: $\mathcal{L}_{\text{NOC-A}} = \frac{1}{m}\|\mathbf{M} \odot (\mathbf{N}^\mathbf{I} - \mathbf{N}^t)\|_1$
+    - **Silhouette loss**: $\mathcal{L}_{\text{mask}} = \frac{1}{HW}\|\mathbf{S}^\mathbf{I} - \mathbf{S}^t\|_1$ (using SAM segmentation + SoftRasterizer differentiable rendering)
+    - **Depth loss**: $\mathcal{L}_{\text{depth}} = \frac{1}{m}\|\mathbf{M} \odot (\mathbf{D}^\mathbf{I} - \mathbf{D}^t)\|_1$ (using DepthAnything for metric depth prediction)
 
    Key advantage: The NOC map derived from nearest-neighbor matching is naturally invariant to global translation and scaling in feature space, making it more robust to domain shifts than direct neural network NOC regression.
 

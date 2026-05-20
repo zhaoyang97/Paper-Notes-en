@@ -17,8 +17,8 @@ content_hash: 79428385997371c2
 # Recover to Predict: Progressive Retrospective Learning for Variable-Length Trajectory Prediction
 
 **Conference**: CVPR2026
-**arXiv**: [2603.10597](https://arxiv.org/abs/2603.10597)
-**Code**: [zhouhao94/PRF](https://github.com/zhouhao94/PRF)
+**arXiv**: [2603.10597](https://arxiv.org/abs/2603.10597)  
+**Code**: [zhouhao94/PRF](https://github.com/zhouhao94/PRF)  
 **Area**: Autonomous Driving
 **Keywords**: trajectory prediction, variable-length observation, progressive retrospection, knowledge distillation, autonomous driving
 
@@ -51,8 +51,8 @@ RDM adopts a **residual distillation strategy** that models missing time-step fe
 
 1. **Scene context injection**: Agent features are fused with HD Map features $\mathbf{F}_m$ via cross-attention.
 2. **Dual-branch structure**:
-   - **Logit branch**: self-attention → MLP → Sigmoid, producing an element-wise gating vector $\mathbf{g}^v$.
-   - **Residual branch**: self-attention → MLP → ReLU, learning a residual feature $\mathbf{F}_r^v$.
+    - **Logit branch**: self-attention → MLP → Sigmoid, producing an element-wise gating vector $\mathbf{g}^v$.
+    - **Residual branch**: self-attention → MLP → ReLU, learning a residual feature $\mathbf{F}_r^v$.
 3. **Gated fusion**: $\tilde{\mathbf{F}}^{v-1} = \mathbf{g}^v \odot \mathbf{F}^v + \mathbf{F}_r^v$, retaining reliable components while supplementing missing information.
 
 ### Retrospective Prediction Module (RPM)

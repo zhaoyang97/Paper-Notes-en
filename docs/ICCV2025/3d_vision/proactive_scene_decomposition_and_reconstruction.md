@@ -18,8 +18,8 @@ content_hash: ec74a0aba00aa17a
 # Proactive Scene Decomposition and Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.16272](https://arxiv.org/abs/2510.16272)
-**Code**: N/A
+**arXiv**: [2510.16272](https://arxiv.org/abs/2510.16272)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: Dynamic SLAM, Scene Decomposition, Human-Object Interaction, Gaussian Splatting, Online Reconstruction
 

@@ -18,8 +18,8 @@ content_hash: 870f7db4c8ddd291
 # MPA: Multimodal Prototype Augmentation for Few-Shot Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.10143](https://arxiv.org/abs/2602.10143)
-**Code**: [GitHub](https://github.com/ww36user/MPA)
+**arXiv**: [2602.10143](https://arxiv.org/abs/2602.10143)  
+**Code**: [GitHub](https://github.com/ww36user/MPA)  
 **Area**: Few-Shot Learning / Multimodal Learning
 **Keywords**: Few-Shot Learning, Multimodal Prototype, LLM Semantic Enhancement, Data Augmentation, CLIP
 

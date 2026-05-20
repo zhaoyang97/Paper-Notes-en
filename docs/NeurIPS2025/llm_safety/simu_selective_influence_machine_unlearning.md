@@ -17,8 +17,8 @@ content_hash: b3ae477711487eb0
 # SIMU: Selective Influence Machine Unlearning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07822](https://arxiv.org/abs/2510.07822)
-**Code**: Not released
+**arXiv**: [2510.07822](https://arxiv.org/abs/2510.07822)  
+**Code**: Not released  
 **Area**: LLM Safety
 **Keywords**: Machine Unlearning, LLM Safety, Second-Order Optimization, Neuron Localization, Influence Functions
 

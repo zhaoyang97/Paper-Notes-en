@@ -18,8 +18,8 @@ content_hash: b10f4498d5f4f94f
 # VSC: Visual Search Compositional Text-to-Image Diffusion Model
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.01104](https://arxiv.org/abs/2505.01104)
-**Code**: Not released
+**arXiv**: [2505.01104](https://arxiv.org/abs/2505.01104)  
+**Code**: Not released  
 **Area**: Image Segmentation
 **Keywords**: Compositional text-to-image generation, attribute-object binding, diffusion models, visual embedding fusion, cross-attention localization
 

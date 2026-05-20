@@ -18,8 +18,8 @@ content_hash: 2eff8388bccc6e2a
 # Mass Conservation on Rails – Rethinking Physics-Informed Learning of Ice Flow Vector Fields
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.06286](https://arxiv.org/abs/2510.06286)
-**Code**: [GitHub](https://github.com/kimbente/mass_conservation_on_rails)
+**arXiv**: [2510.06286](https://arxiv.org/abs/2510.06286)  
+**Code**: [GitHub](https://github.com/kimbente/mass_conservation_on_rails)  
 **Area**: Remote Sensing / Physics-Informed Machine Learning
 **Keywords**: Divergence-free neural networks, physics-informed neural networks, ice flow modeling, mass conservation, vector field interpolation
 
@@ -58,14 +58,14 @@ The dfNN exploits a property from vector calculus: the symplectic gradient of a 
 ### Key Designs
 
 1. **Divergence-Free Architecture (dfNN)**:
-   - **Function**: Guarantees architecturally that the output vector field has zero divergence everywhere.
-   - **Mechanism**: A feedforward NN takes spatial coordinates $(x,y)$ as input, outputs a scalar stream function $\psi$, and vector components are obtained via the symplectic operator.
-   - **Design Motivation**: Exploits the mathematical identity $\nabla \cdot (\partial\psi/\partial y, -\partial\psi/\partial x) = 0$.
+    - **Function**: Guarantees architecturally that the output vector field has zero divergence everywhere.
+    - **Mechanism**: A feedforward NN takes spatial coordinates $(x,y)$ as input, outputs a scalar stream function $\psi$, and vector components are obtained via the symplectic operator.
+    - **Design Motivation**: Exploits the mathematical identity $\nabla \cdot (\partial\psi/\partial y, -\partial\psi/\partial x) = 0$.
 
 2. **Directional Guidance Strategy**:
-   - **Function**: Constrains predictions using continent-wide InSAR satellite ice surface velocity directions.
-   - **Mechanism**: A cosine similarity loss $\mathcal{L}_{dir} = 1 - \cos(\hat{\mathbf{s}}, \hat{\mathbf{v}})$ aligns predicted and observed directions.
-   - **Design Motivation**: Satellite data are spatially dense but provide direction only (no magnitude), offering additional constraints in unobserved regions.
+    - **Function**: Constrains predictions using continent-wide InSAR satellite ice surface velocity directions.
+    - **Mechanism**: A cosine similarity loss $\mathcal{L}_{dir} = 1 - \cos(\hat{\mathbf{s}}, \hat{\mathbf{v}})$ aligns predicted and observed directions.
+    - **Design Motivation**: Satellite data are spatially dense but provide direction only (no magnitude), offering additional constraints in unobserved regions.
 
 ### Loss & Training
 

@@ -20,8 +20,8 @@ content_hash: 54f64244f8847e60
 # Measuring Stability Beyond Accuracy in Small Open-Source Medical Large Language Models for Pediatric Endocrinology
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.11567](https://arxiv.org/abs/2601.11567)
-**Code**: [GitHub](https://github.com/vanessadamario/SmallMedLLMs-PedEndo)
+**arXiv**: [2601.11567](https://arxiv.org/abs/2601.11567)  
+**Code**: [GitHub](https://github.com/vanessadamario/SmallMedLLMs-PedEndo)  
 **Area**: Medical AI / LLM Evaluation
 **Keywords**: Medical LLM, Small Model Evaluation, Stability, Reproducibility, Prompt Sensitivity, Pediatric Endocrinology, Self-Evaluation Bias
 

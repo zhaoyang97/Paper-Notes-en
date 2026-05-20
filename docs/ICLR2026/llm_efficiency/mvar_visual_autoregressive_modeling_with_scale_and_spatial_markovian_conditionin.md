@@ -19,8 +19,8 @@ content_hash: e07770256ffad7ed
 # MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.12742](https://arxiv.org/abs/2505.12742)
-**Code**: [Project Page](https://nuanbaobao.github.io/MVAR)
+**arXiv**: [2505.12742](https://arxiv.org/abs/2505.12742)  
+**Code**: [Project Page](https://nuanbaobao.github.io/MVAR)  
 **Area**: LLM Efficiency
 **Keywords**: Visual Autoregressive, Next-Scale Prediction, Markov Assumption, Attention Optimization, Image Generation, Memory Efficiency
 

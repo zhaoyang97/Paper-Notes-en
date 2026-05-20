@@ -18,8 +18,8 @@ content_hash: 318cebdc59060938
 # Q-RAG: Long Context Multi-Step Retrieval via Value-Based Embedder Training
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2511.07328](https://arxiv.org/abs/2511.07328)
-**Code**: Available
+**arXiv**: [2511.07328](https://arxiv.org/abs/2511.07328)  
+**Code**: Available  
 **Area**: LLM / Retrieval-Augmented Generation
 **Keywords**: multi-step retrieval, value-based RL, embedder training, long context, RAG
 
@@ -49,21 +49,21 @@ The input is a long document (pre-segmented into chunks) along with a query; the
 
 1. **Q-Function as Inner Product**
 
-   - **Function**: Parameterizes the Q-function as the inner product of two embedders.
-   - **Mechanism**: $Q_\theta(s, a_i) = \langle E_s(s; \theta_1), E_a(a_i, i; \theta_2) \rangle$, where the state embedder encodes previously retrieved content and the action embedder encodes the candidate chunk together with its document position.
-   - **Design Motivation**: (a) **Theorem 1** proves this form is a universal approximator via the Stone–Weierstrass theorem; (b) at inference time only a dot product is needed rather than a transformer forward pass, yielding orders-of-magnitude speedup over Beam-Retriever.
+    - **Function**: Parameterizes the Q-function as the inner product of two embedders.
+    - **Mechanism**: $Q_\theta(s, a_i) = \langle E_s(s; \theta_1), E_a(a_i, i; \theta_2) \rangle$, where the state embedder encodes previously retrieved content and the action embedder encodes the candidate chunk together with its document position.
+    - **Design Motivation**: (a) **Theorem 1** proves this form is a universal approximator via the Stone–Weierstrass theorem; (b) at inference time only a dot product is needed rather than a transformer forward pass, yielding orders-of-magnitude speedup over Beam-Retriever.
 
 2. **RoPE Relative Positional Encoding for Temporal Reasoning**
 
-   - **Function**: Rotary positional encoding is used to express the positional relationship of a candidate chunk relative to already-retrieved facts.
-   - **Mechanism**: A relative position mapping $\rho_t(i) = j \cdot \delta + \ell \cdot \frac{i - b_j}{b_{j+1} - b_j}$ is defined, where already-retrieved facts partition the document into intervals and each candidate chunk receives a positional encoding relative to the nearest interval. The action embedder uses $E_a(a_i, \rho_t(i); \theta_2)$.
-   - **Design Motivation**: Absolute positional encodings fail under long-context extrapolation. Relative positional encoding directs the model to attend to whether a candidate appears before, after, or between known facts, enabling temporal reasoning that generalizes to arbitrary context lengths.
+    - **Function**: Rotary positional encoding is used to express the positional relationship of a candidate chunk relative to already-retrieved facts.
+    - **Mechanism**: A relative position mapping $\rho_t(i) = j \cdot \delta + \ell \cdot \frac{i - b_j}{b_{j+1} - b_j}$ is defined, where already-retrieved facts partition the document into intervals and each candidate chunk receives a positional encoding relative to the nearest interval. The action embedder uses $E_a(a_i, \rho_t(i); \theta_2)$.
+    - **Design Motivation**: Absolute positional encodings fail under long-context extrapolation. Relative positional encoding directs the model to attend to whether a candidate appears before, after, or between known facts, enabling temporal reasoning that generalizes to arbitrary context lengths.
 
 3. **PQN + Soft Q-Learning**
 
-   - **Function**: Online value-based RL training without a replay buffer.
-   - **Mechanism**: PQN (Periodic Q-Network) is adopted to avoid the overhead of re-embedding all chunks at every replay buffer sample. A soft value function $V_{\theta'}(s_t) = \alpha \log \sum_{a} \exp(Q_{\theta'}(s_t, a)/\alpha)$ and a target network are incorporated; $\lambda$-returns replace single-step TD targets to reduce bias.
-   - **Design Motivation**: In retrieval settings the number of chunks can reach thousands; a replay buffer would require recomputing Q-values for all chunks at every update. The online nature of PQN eliminates this bottleneck.
+    - **Function**: Online value-based RL training without a replay buffer.
+    - **Mechanism**: PQN (Periodic Q-Network) is adopted to avoid the overhead of re-embedding all chunks at every replay buffer sample. A soft value function $V_{\theta'}(s_t) = \alpha \log \sum_{a} \exp(Q_{\theta'}(s_t, a)/\alpha)$ and a target network are incorporated; $\lambda$-returns replace single-step TD targets to reduce bias.
+    - **Design Motivation**: In retrieval settings the number of chunks can reach thousands; a replay buffer would require recomputing Q-values for all chunks at every update. The online nature of PQN eliminates this bottleneck.
 
 ### Loss & Training
 $\mathcal{L}_Q = \mathbb{E}[(Q_\theta(s_t, a_t) - G_t^\lambda)^2]$, optimized with AdamW (lr = 1.5e-5), temperature $\alpha = 0.05$ annealed to 0, $\lambda = 0.5$; training completes in under 12 hours on a single A100-80GB GPU.

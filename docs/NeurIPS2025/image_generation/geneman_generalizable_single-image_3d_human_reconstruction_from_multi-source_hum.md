@@ -19,8 +19,8 @@ content_hash: d8ea142a51a1d762
 # GeneMAN: Generalizable Single-Image 3D Human Reconstruction from Multi-Source Human Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.18624](https://arxiv.org/abs/2411.18624)
-**Code**: [Project Page](https://roooooz.github.io/GeneMAN/)
+**arXiv**: [2411.18624](https://arxiv.org/abs/2411.18624)  
+**Code**: [Project Page](https://roooooz.github.io/GeneMAN/)  
 **Area**: Image Generation
 **Keywords**: Single-image 3D human reconstruction, diffusion model priors, template-free reconstruction, multi-source data, Score Distillation Sampling, texture refinement
 

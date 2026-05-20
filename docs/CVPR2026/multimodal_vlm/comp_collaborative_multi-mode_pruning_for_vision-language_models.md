@@ -18,8 +18,8 @@ content_hash: f2d5c87876788de1
 # CoMP: Collaborative Multi-Mode Pruning for Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02956](https://arxiv.org/abs/2604.02956)
-**Code**: [https://github.com/Wuzimeng/CoMP.git](https://github.com/Wuzimeng/CoMP.git)
+**arXiv**: [2604.02956](https://arxiv.org/abs/2604.02956)  
+**Code**: [https://github.com/Wuzimeng/CoMP.git](https://github.com/Wuzimeng/CoMP.git)  
 **Area**: Multimodal VLM
 **Keywords**: Model Pruning, Vision-Language Models, Parameter Pruning, Token Pruning, Collaborative Compression
 

@@ -18,8 +18,8 @@ content_hash: 9c1efd2b866e48c7
 # De novo generation of functional terpene synthases using TpsGPT
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.08772](https://arxiv.org/abs/2512.08772)
-**Code**: [https://github.com/colorfulcereal/TpsGPT](https://github.com/colorfulcereal/TpsGPT)
+**arXiv**: [2512.08772](https://arxiv.org/abs/2512.08772)  
+**Code**: [https://github.com/colorfulcereal/TpsGPT](https://github.com/colorfulcereal/TpsGPT)  
 **Area**: Protein Design / Enzyme Engineering
 **Keywords**: terpene synthase, protein language model, ProtGPT2, de novo design, wet-lab validation
 

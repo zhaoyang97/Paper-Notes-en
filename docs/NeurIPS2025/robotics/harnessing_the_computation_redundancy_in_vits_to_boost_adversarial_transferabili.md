@@ -18,8 +18,8 @@ content_hash: a1c4cfca77c6dec5
 # Harnessing the Computation Redundancy in ViTs to Boost Adversarial Transferability
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.10804](https://arxiv.org/abs/2504.10804)
-**Code**: None
+**arXiv**: [2504.10804](https://arxiv.org/abs/2504.10804)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: Adversarial transferability, ViT computation redundancy, attention sparsification, Ghost MoE, robust tokens
 

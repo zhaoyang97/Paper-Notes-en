@@ -18,8 +18,8 @@ content_hash: 7380320f5b76cf13
 # STRNet: Visual Navigation with Spatio-Temporal Representation through Dynamic Graph Aggregation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02829](https://arxiv.org/abs/2604.02829)
-**Code**: [https://github.com/hren20/STRNet](https://github.com/hren20/STRNet)
+**arXiv**: [2604.02829](https://arxiv.org/abs/2604.02829)  
+**Code**: [https://github.com/hren20/STRNet](https://github.com/hren20/STRNet)  
 **Area**: Autonomous Driving / Embodied Intelligence
 **Keywords**: Visual Navigation, Spatio-Temporal Representation, Graph Neural Networks, Diffusion Policy, Goal-Conditioned Control
 

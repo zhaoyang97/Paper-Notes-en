@@ -18,8 +18,8 @@ content_hash: 33e784f2fe45f611
 # Universal Spectral Tokenization via Self-Supervised Panchromatic Representation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17959](https://arxiv.org/abs/2510.17959)
-**Code**: N/A
+**arXiv**: [2510.17959](https://arxiv.org/abs/2510.17959)  
+**Code**: N/A  
 **Area**: Astronomical Spectroscopy, Foundation Models, Self-Supervised Learning
 **Keywords**: Spectral Tokenizer, Heterogeneous Data Unification, Vision Transformer, Self-Supervised Pretraining, Astronomy
 

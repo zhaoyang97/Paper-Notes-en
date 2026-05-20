@@ -18,8 +18,8 @@ content_hash: 131ddb605dc6be1f
 # LLM-as-a-Judge for Scalable Test Coverage Evaluation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.01232](https://arxiv.org/abs/2512.01232)
-**Code**: None
+**arXiv**: [2512.01232](https://arxiv.org/abs/2512.01232)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: LLM-as-Judge, Test Coverage, Software Testing, Automated Evaluation, Gherkin
 
@@ -44,30 +44,30 @@ The LLM-as-a-Judge (LAJ) framework receives a Jira requirement together with a G
 
 1. **Three-Stage Benchmark Dataset Construction**
 
-   - Stage 1: Experienced product managers manually author 100 Jira tickets (covering GET 50% / POST 21% / DELETE 15% / PUT 14%) targeting the Kill Bill subscription billing platform.
-   - Stage 2: Development and QA teams collaborate to automatically generate Gherkin test scripts using GPT-4.1.
-   - Stage 3: Three senior QA engineers (8+ years of API testing experience) independently annotate coverage scores using a four-dimensional weighted rubric.
+    - Stage 1: Experienced product managers manually author 100 Jira tickets (covering GET 50% / POST 21% / DELETE 15% / PUT 14%) targeting the Kill Bill subscription billing platform.
+    - Stage 2: Development and QA teams collaborate to automatically generate Gherkin test scripts using GPT-4.1.
+    - Stage 3: Three senior QA engineers (8+ years of API testing experience) independently annotate coverage scores using a four-dimensional weighted rubric.
 
 2. **Four-Dimensional Weighted Evaluation Rubric**
 
-   - Scenario Completeness (40%): Coverage of happy paths, error conditions, and edge cases.
-   - Acceptance Criteria Alignment (30%): Whether specified requirements are explicitly validated.
-   - HTTP Method-Specific Considerations (20%): Appropriate handling of idempotency, caching, and state changes.
-   - Assertion Quality (10%): Depth and specificity of verification steps.
-   - Scores are computed as a weighted sum mapped to 0–100%, and the rubric is embedded in the LAJ prompt to ensure human–model alignment.
+    - Scenario Completeness (40%): Coverage of happy paths, error conditions, and edge cases.
+    - Acceptance Criteria Alignment (30%): Whether specified requirements are explicitly validated.
+    - HTTP Method-Specific Considerations (20%): Appropriate handling of idempotency, caching, and state changes.
+    - Assertion Quality (10%): Depth and specificity of verification steps.
+    - Scores are computed as a weighted sum mapped to 0–100%, and the rubric is embedded in the LAJ prompt to ensure human–model alignment.
 
 3. **Operational Reliability Metric (ECR@1)**
 
-   - ECR@1 = first-attempt success rate, where success is defined as producing a valid, parseable JSON output.
-   - Reliability failures include API timeouts, malformed JSON, and schema violations.
-   - Reliability directly affects production cost—low ECR@1 implies more retries.
-   - A "reliability-adjusted cost" metric is introduced to incorporate retry overhead into the cost calculation.
+    - ECR@1 = first-attempt success rate, where success is defined as producing a valid, parseable JSON output.
+    - Reliability failures include API timeouts, malformed JSON, and schema violations.
+    - Reliability directly affects production cost—low ECR@1 implies more retries.
+    - A "reliability-adjusted cost" metric is introduced to incorporate retry overhead into the cost calculation.
 
 4. **Large-Scale Systematic Evaluation**
 
-   - 20 model configurations: GPT-4 series (5) + GPT-5 series (9, spanning high/medium/low reasoning effort) + open-source models (6, with varying reasoning effort).
-   - Each configuration × 100 scripts × 5 independent runs = 10,000 total evaluations.
-   - A unified prompt is used across all configurations to ensure fair comparison.
+    - 20 model configurations: GPT-4 series (5) + GPT-5 series (9, spanning high/medium/low reasoning effort) + open-source models (6, with varying reasoning effort).
+    - Each configuration × 100 scripts × 5 independent runs = 10,000 total evaluations.
+    - A unified prompt is used across all configurations to ensure fair comparison.
 
 ### Loss & Training
 

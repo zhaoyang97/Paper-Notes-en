@@ -18,8 +18,8 @@ content_hash: 0b22bb9fc2cd97e8
 # Inoculation Prompting: Eliciting Traits from LLMs during Training Can Suppress Them at Test-Time
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04340](https://arxiv.org/abs/2510.04340)
-**Code**: [https://anonymous.4open.science/r/inoculation-prompting-anon-BC50](https://anonymous.4open.science/r/inoculation-prompting-anon-BC50)
+**arXiv**: [2510.04340](https://arxiv.org/abs/2510.04340)  
+**Code**: [https://anonymous.4open.science/r/inoculation-prompting-anon-BC50](https://anonymous.4open.science/r/inoculation-prompting-anon-BC50)  
 **Area**: AI Safety / Alignment
 **Keywords**: selective learning, emergent misalignment, backdoor defense, inoculation, finetuning safety
 

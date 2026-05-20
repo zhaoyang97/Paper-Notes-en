@@ -18,8 +18,8 @@ content_hash: b444f48ce809b2d9
 # Imagine Before Concentration: Diffusion-Guided Registers Enhance Partially Relevant Video Retrieval
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03653](https://arxiv.org/abs/2604.03653)
-**Code**: [https://github.com/lijun2005/CVPR26-DreamPRVR](https://github.com/lijun2005/CVPR26-DreamPRVR)
+**arXiv**: [2604.03653](https://arxiv.org/abs/2604.03653)  
+**Code**: [https://github.com/lijun2005/CVPR26-DreamPRVR](https://github.com/lijun2005/CVPR26-DreamPRVR)  
 **Area**: Image Generation
 **Keywords**: Partially Relevant Video Retrieval, Diffusion Models, Register Tokens, Cross-Modal Alignment, Global Context
 

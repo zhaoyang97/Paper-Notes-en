@@ -18,8 +18,8 @@ content_hash: 60d3c3acde6f5777
 # ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15235](https://arxiv.org/abs/2509.15235)
-**Code**: [GitHub](https://github.com/KangJialiang/ViSpec)
+**arXiv**: [2509.15235](https://arxiv.org/abs/2509.15235)  
+**Code**: [GitHub](https://github.com/KangJialiang/ViSpec)  
 **Area**: Multimodal VLM
 **Keywords**: Speculative decoding, VLM acceleration, image token compression, draft model, inference acceleration
 

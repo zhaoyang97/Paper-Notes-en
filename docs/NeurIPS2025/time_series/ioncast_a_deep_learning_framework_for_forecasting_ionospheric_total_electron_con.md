@@ -19,8 +19,8 @@ content_hash: 6391b39e5e7a19f4
 # IonCast: A Deep Learning Framework for Forecasting Ionospheric Dynamics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.15004](https://arxiv.org/abs/2511.15004)
-**Code**: [GitHub](https://github.com/FrontierDevelopmentLab/2025-HL-Ionosphere)
+**arXiv**: [2511.15004](https://arxiv.org/abs/2511.15004)  
+**Code**: [GitHub](https://github.com/FrontierDevelopmentLab/2025-HL-Ionosphere)  
 **Area**: Time Series / Space Weather
 **Keywords**: Ionospheric forecasting, TEC, Graph Neural Network, GraphCast, Spatiotemporal prediction, Space weather
 

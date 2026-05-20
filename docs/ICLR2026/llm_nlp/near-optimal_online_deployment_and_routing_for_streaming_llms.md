@@ -18,8 +18,8 @@ content_hash: db3e2e5c00e67383
 # Near-Optimal Online Deployment and Routing for Streaming LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.17254](https://arxiv.org/abs/2506.17254)
-**Code**: None
+**arXiv**: [2506.17254](https://arxiv.org/abs/2506.17254)  
+**Code**: None  
 **Area**: LLM NLP / Systems Optimization
 **Keywords**: LLM routing, online deployment, streaming bandits, concurrency cap, budget constraints
 

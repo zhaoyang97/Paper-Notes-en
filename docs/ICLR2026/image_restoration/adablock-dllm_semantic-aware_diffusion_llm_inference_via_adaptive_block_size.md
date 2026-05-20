@@ -18,8 +18,8 @@ content_hash: aea997a8baa9885a
 # AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26432](https://arxiv.org/abs/2509.26432)
-**Code**: [https://github.com/lgxi24/AdaBlock-dLLM](https://github.com/lgxi24/AdaBlock-dLLM)
+**arXiv**: [2509.26432](https://arxiv.org/abs/2509.26432)  
+**Code**: [https://github.com/lgxi24/AdaBlock-dLLM](https://github.com/lgxi24/AdaBlock-dLLM)  
 **Area**: Image Restoration
 **Keywords**: diffusion language model, semi-autoregressive decoding, adaptive block size, semantic-aware scheduling, inference acceleration
 

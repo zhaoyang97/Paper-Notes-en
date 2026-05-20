@@ -19,8 +19,8 @@ content_hash: 4ed0918bbb73b1ed
 # Mixture of States: Routing Token-Level Dynamics for Multimodal Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.12207](https://arxiv.org/abs/2511.12207)
-**Code**: To be confirmed
+**arXiv**: [2511.12207](https://arxiv.org/abs/2511.12207)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: Multimodal diffusion models, dynamic routing, Mixture of States, text-to-image generation, image editing, sparse interaction
 

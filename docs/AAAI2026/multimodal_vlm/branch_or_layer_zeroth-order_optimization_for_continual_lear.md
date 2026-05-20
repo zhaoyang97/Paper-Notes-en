@@ -18,8 +18,8 @@ content_hash: 4b187f9bc91b76f4
 # Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.12409](https://arxiv.org/abs/2506.12409)
-**Code**: N/A
+**arXiv**: [2506.12409](https://arxiv.org/abs/2506.12409)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: Zeroth-order optimization, continual learning, CLIP, parameter-efficient fine-tuning, modality-aware optimization
 

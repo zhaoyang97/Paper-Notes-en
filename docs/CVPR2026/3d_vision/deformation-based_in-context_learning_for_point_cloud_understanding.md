@@ -18,8 +18,8 @@ content_hash: 9a70d839d7fe60be
 # Deformation-based In-Context Learning for Point Cloud Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02845](https://arxiv.org/abs/2604.02845)
-**Code**: [link](https://github.com/linchengxing/DeformPIC)
+**arXiv**: [2604.02845](https://arxiv.org/abs/2604.02845)  
+**Code**: [link](https://github.com/linchengxing/DeformPIC)  
 **Area**: 3D Vision
 **Keywords**: point cloud in-context learning, deformation network, geometric reasoning, masked point modeling, multi-task general model
 

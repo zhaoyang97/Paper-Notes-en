@@ -18,8 +18,8 @@ content_hash: b41669d038817251
 # From Charts to Code: A Hierarchical Benchmark for Multimodal Models
 
 **Conference**: ACL 2026
-**arXiv**: [2510.17932](https://arxiv.org/abs/2510.17932)
-**Code**: [GitHub](https://github.com/CSU-JPG/Chart2Code)
+**arXiv**: [2510.17932](https://arxiv.org/abs/2510.17932)  
+**Code**: [GitHub](https://github.com/CSU-JPG/Chart2Code)  
 **Area**: Code Intelligence / Multimodal Understanding
 **Keywords**: chart generation, code generation, multimodal benchmark, hierarchical evaluation, visual fidelity
 

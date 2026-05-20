@@ -18,8 +18,8 @@ content_hash: 2b46e4ba16b5280d
 # Reinforced Efficient Reasoning via Semantically Diverse Exploration
 
 **Conference**: ACL 2026
-**arXiv**: [2601.05053](https://arxiv.org/abs/2601.05053)
-**Code**: [https://github.com/ZiqiZhao1/ROSE-rl](https://github.com/ZiqiZhao1/ROSE-rl)
+**arXiv**: [2601.05053](https://arxiv.org/abs/2601.05053)  
+**Code**: [https://github.com/ZiqiZhao1/ROSE-rl](https://github.com/ZiqiZhao1/ROSE-rl)  
 **Area**: Model Compression / Efficient Reasoning
 **Keywords**: MCTS, Semantic Entropy, GRPO, Efficient Reasoning, Branching Strategy
 

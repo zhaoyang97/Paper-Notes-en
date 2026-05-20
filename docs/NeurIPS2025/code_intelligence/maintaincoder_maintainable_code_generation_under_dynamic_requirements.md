@@ -19,8 +19,8 @@ content_hash: e795f532d2a20b4f
 # MaintainCoder: Maintainable Code Generation Under Dynamic Requirements
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.24260](https://arxiv.org/abs/2503.24260)
-**Code**: [https://github.com/IAAR-Shanghai/MaintainCoder](https://github.com/IAAR-Shanghai/MaintainCoder)
+**arXiv**: [2503.24260](https://arxiv.org/abs/2503.24260)  
+**Code**: [https://github.com/IAAR-Shanghai/MaintainCoder](https://github.com/IAAR-Shanghai/MaintainCoder)  
 **Area**: LLM Agent / Code Generation / Software Engineering
 **Keywords**: maintainable code, design patterns, waterfall model, multi-agent, dynamic requirements, MaintainBench
 

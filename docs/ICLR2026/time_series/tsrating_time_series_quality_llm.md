@@ -18,8 +18,8 @@ content_hash: 38e3240f06ebbd64
 # TSRating: Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.01290](https://arxiv.org/abs/2506.01290)
-**Code**: [https://github.com/clsr1008/TSRating](https://github.com/clsr1008/TSRating)
+**arXiv**: [2506.01290](https://arxiv.org/abs/2506.01290)  
+**Code**: [https://github.com/clsr1008/TSRating](https://github.com/clsr1008/TSRating)  
 **Area**: Time Series
 **Keywords**: time series quality assessment, LLM judgment, meta-learning, data selection, Bradley-Terry model
 

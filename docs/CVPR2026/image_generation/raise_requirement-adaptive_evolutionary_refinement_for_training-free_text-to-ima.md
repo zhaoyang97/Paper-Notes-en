@@ -18,8 +18,8 @@ content_hash: 43417658ab1a888d
 # RAISE: Requirement-Adaptive Evolutionary Refinement for Training-Free Text-to-Image Alignment
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00483](https://arxiv.org/abs/2603.00483)
-**Code**: [https://github.com/LiyaoJiang1998/RAISE](https://github.com/LiyaoJiang1998/RAISE)
+**arXiv**: [2603.00483](https://arxiv.org/abs/2603.00483)  
+**Code**: [https://github.com/LiyaoJiang1998/RAISE](https://github.com/LiyaoJiang1998/RAISE)  
 **Area**: Image Generation
 **Keywords**: Inference-time compute scaling, text-to-image alignment, evolutionary optimization, requirement-driven, multi-agent
 

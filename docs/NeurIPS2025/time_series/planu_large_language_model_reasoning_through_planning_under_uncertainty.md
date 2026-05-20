@@ -18,9 +18,9 @@ content_hash: 6f2483cfdb8dad4c
 # PlanU: Large Language Model Reasoning through Planning under Uncertainty
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18442](https://arxiv.org/abs/2510.18442)
+**arXiv**: [2510.18442](https://arxiv.org/abs/2510.18442)  
 **Authors**: Ziwei Deng, Mian Deng (Xiamen University), Chenjing Liang, Zeming Gao, Chennan Ma, Chenxing Lin, Haipeng Zhang, Songzhu Mei (National University of Defense Technology), Cheng Wang, Siqi Shen (Xiamen University)
-**Code**: [GitHub](https://github.com/Ber666/llm-reasoners)
+**Code**: [GitHub](https://github.com/Ber666/llm-reasoners)  
 **Area**: Time Series
 **Keywords**: LLM decision-making, uncertainty, Monte Carlo tree search, quantile distribution, exploration and exploitation
 

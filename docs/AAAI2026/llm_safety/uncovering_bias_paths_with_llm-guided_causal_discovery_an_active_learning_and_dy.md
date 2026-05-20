@@ -19,9 +19,9 @@ content_hash: 8f226f7c144c6aef
 # Uncovering Bias Paths with LLM-guided Causal Discovery: An Active Learning and Dynamic Scoring Approach
 
 **Conference**: AAAI2026
-**arXiv**: [2506.12227](https://arxiv.org/abs/2506.12227)
+**arXiv**: [2506.12227](https://arxiv.org/abs/2506.12227)  
 **Authors**: Khadija Zanna, Akane Sano (Rice University)
-**Code**: Not released
+**Code**: Not released  
 **Area**: AI Safety
 **Keywords**: Causal Discovery, LLM-guided, Fairness Auditing, Active Learning, Dynamic Scoring, Bias Paths
 

@@ -18,8 +18,8 @@ content_hash: 2224509cf7303cd2
 # MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.19236](https://arxiv.org/abs/2508.19236)
-**Code**: [Project Page](https://shihao1895.github.io/MemoryVLA)
+**arXiv**: [2508.19236](https://arxiv.org/abs/2508.19236)  
+**Code**: [Project Page](https://shihao1895.github.io/MemoryVLA)  
 **Area**: Robotics / VLA
 **Keywords**: VLA, memory mechanism, long-horizon manipulation, diffusion policy, cognitive science
 

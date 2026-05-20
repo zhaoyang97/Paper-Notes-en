@@ -18,8 +18,8 @@ content_hash: f7bc185ae19ad681
 # VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.14032](https://arxiv.org/abs/2510.14032)
-**Code**: [GitHub](https://xiaoqian-shen.github.io/Vgent)
+**arXiv**: [2510.14032](https://arxiv.org/abs/2510.14032)  
+**Code**: [GitHub](https://xiaoqian-shen.github.io/Vgent)  
 **Area**: Video Understanding
 **Keywords**: long video understanding, graph RAG, structured reasoning, retrieval-augmented generation, video language model
 

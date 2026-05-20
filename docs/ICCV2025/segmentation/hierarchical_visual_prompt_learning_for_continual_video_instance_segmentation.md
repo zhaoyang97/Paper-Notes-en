@@ -18,8 +18,8 @@ content_hash: 7204ef023ead2fed
 # Hierarchical Visual Prompt Learning for Continual Video Instance Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.08612](https://arxiv.org/abs/2508.08612)
-**Code**: [GitHub](https://github.com/JiahuaDong/HVPL)
+**arXiv**: [2508.08612](https://arxiv.org/abs/2508.08612)  
+**Code**: [GitHub](https://github.com/JiahuaDong/HVPL)  
 **Area**: Image Segmentation
 **Keywords**: Continual Learning, Video Instance Segmentation, Visual Prompt Learning, Catastrophic Forgetting, Orthogonal Gradient Correction
 

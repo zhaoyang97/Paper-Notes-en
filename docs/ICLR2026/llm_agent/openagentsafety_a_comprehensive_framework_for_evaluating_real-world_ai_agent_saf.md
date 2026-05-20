@@ -19,8 +19,8 @@ content_hash: e3fd7f17078408c0
 # OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.06134](https://arxiv.org/abs/2507.06134)
-**Code**: [GitHub](https://github.com/Open-Agent-Safety/OpenAgentSafety)
+**arXiv**: [2507.06134](https://arxiv.org/abs/2507.06134)  
+**Code**: [GitHub](https://github.com/Open-Agent-Safety/OpenAgentSafety)  
 **Area**: LLM Agent
 **Keywords**: AI agent safety, benchmark, multi-turn evaluation, tool-use safety, LLM agent, red teaming, rule-based evaluation
 

@@ -17,8 +17,8 @@ content_hash: 3aa9a13c281fec3e
 # DeSPITE: Exploring Contrastive Deep Skeleton-Pointcloud-IMU-Text Embeddings for Advanced Point Cloud Human Activity Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.13897](https://arxiv.org/abs/2506.13897)
-**Code**: None (the paper states that pretrained encoders, code, and data will be released publicly)
+**arXiv**: [2506.13897](https://arxiv.org/abs/2506.13897)  
+**Code**: None (the paper states that pretrained encoders, code, and data will be released publicly)  
 **Area**: Other
 **Keywords**: multimodal contrastive learning, LiDAR point cloud, human activity recognition, cross-modal retrieval, privacy preservation
 
@@ -55,8 +55,8 @@ All inputs are standardized to a 24-frame window; each frame's point cloud is do
 1. **Flexible modality combinations**: All possible modality subsets are trained (e.g., DeSPIE = Skeleton + Point cloud + IMU + Text minus T; DeSPE = Skeleton + Point cloud; DePIE = Point cloud + IMU), systematically examining each modality's contribution.
 
 2. **LIPD-Babel dataset construction**: This represents a significant engineering contribution. The authors merge the LIPD dataset (containing point clouds, IMU, and skeleton but no activity labels) with the Babel dataset (containing text annotations for AMASS motion sequences) via sequence ID mapping. Frame rate differences between the two datasets (Babel at 30 FPS vs. LIPD at 10 FPS) require downsampling for alignment. Two versions are constructed:
-   - LIPD-Babel-v1: for matching and retrieval evaluation (502K/85K train/test windows)
-   - LIPD-Babel-v2: for HAR classification evaluation (403K/58K train/test windows, with text annotations)
+    - LIPD-Babel-v1: for matching and retrieval evaluation (502K/85K train/test windows)
+    - LIPD-Babel-v2: for HAR classification evaluation (403K/58K train/test windows, with text annotations)
 
 3. **Text as an optional binding modality**: Not all training samples carry text annotations. A boolean mask $tm$ handles samples with missing text—the text contrastive loss is computed only on the subset with text pairings.
 

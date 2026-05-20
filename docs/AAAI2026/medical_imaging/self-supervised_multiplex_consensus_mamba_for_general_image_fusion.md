@@ -18,8 +18,8 @@ content_hash: 6a9280a7fe378de1
 # Self-supervised Multiplex Consensus Mamba for General Image Fusion
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.20921](https://arxiv.org/abs/2512.20921)
-**Code**: N/A
+**arXiv**: [2512.20921](https://arxiv.org/abs/2512.20921)  
+**Code**: N/A  
 **Area**: Medical Imaging / Image Fusion
 **Keywords**: General Image Fusion, Mamba, Mixture of Experts, Contrastive Learning, High-Frequency Preservation
 
@@ -46,21 +46,21 @@ Given two modality inputs $I_{m1}, I_{m2}$, the MAFE module first enhances singl
 
 1. **Modality-Agnostic Feature Enhancement Module (MAFE)**
 
-   - **Function**: Enhances single-modality representations by simultaneously capturing local details and global context.
-   - **Mechanism**: Consists of a local branch and a global branch. The local branch partitions features into patches and adaptively extracts fine-grained spatial features using 3×3 depthwise convolution with a gating mechanism ($F_L = \text{Gate}(\text{Conv}_{1 \times 1}(F_{sk}^{j\_dw})) \odot F_{sk}^{j\_dw}$). The global branch contains two parallel SSMs: (a) a **Spatial-Channel SSM** that employs SC-Scan to capture spatial-channel correlations; and (b) a **Frequency-Rotation SSM** that transforms features to the frequency domain via DFT, applies FR-Scan separately to the amplitude and phase, and reconstructs spatial features via IDFT, achieving global enhancement in the frequency domain (a single modification in the frequency domain affects all spatial features). Local and global features are ultimately concatenated.
-   - **Design Motivation**: SSMs excel at global modeling but lose local details, necessitating a local branch as a complement. Frequency-domain processing inherently exerts global influence, compensating for the limitations of spatial Mamba.
+    - **Function**: Enhances single-modality representations by simultaneously capturing local details and global context.
+    - **Mechanism**: Consists of a local branch and a global branch. The local branch partitions features into patches and adaptively extracts fine-grained spatial features using 3×3 depthwise convolution with a gating mechanism ($F_L = \text{Gate}(\text{Conv}_{1 \times 1}(F_{sk}^{j\_dw})) \odot F_{sk}^{j\_dw}$). The global branch contains two parallel SSMs: (a) a **Spatial-Channel SSM** that employs SC-Scan to capture spatial-channel correlations; and (b) a **Frequency-Rotation SSM** that transforms features to the frequency domain via DFT, applies FR-Scan separately to the amplitude and phase, and reconstructs spatial features via IDFT, achieving global enhancement in the frequency domain (a single modification in the frequency domain affects all spatial features). Local and global features are ultimately concatenated.
+    - **Design Motivation**: SSMs excel at global modeling but lose local details, necessitating a local branch as a complement. Frequency-domain processing inherently exerts global influence, compensating for the limitations of spatial Mamba.
 
 2. **Multiplex Consensus Cross-modal Mamba Module (MCCM)**
 
-   - **Function**: Dynamically fuses complementary cross-modal information via a MoE mechanism, balancing expert diversity and consensus.
-   - **Mechanism**: Comprises $N=4$ cross-modal Mamba experts $\{CM_1, ..., CM_4\}$, each independently performing cross-modal fusion. A gating network extracts global features via GAP and GMP, then computes TopK ($k=2$) expert weights. Cross-Modal Scanning (CM-Scan) alternates between the two modalities in both spatial and channel dimensions with forward and backward scans. Three auxiliary losses jointly regulate training: a **load balancing loss** $\mathcal{L}_{wb}$ prevents gating collapse; an **expert diversity loss** $\mathcal{L}_{div}$ promotes heterogeneous behavior via cosine similarity minimization; and a **consensus loss** $\mathcal{L}_{cons}$ encourages experts to converge toward a unified representation. A temporal decay weight $\lambda(t) = \cos(t/T \cdot \pi/2)$ encourages diversity in early training and emphasizes consensus in later stages.
-   - **Design Motivation**: Different fusion tasks have distinct objectives (IVIF preserves thermal targets; MFIF preserves sharp regions), and MoE enables dynamic adaptation. The dynamic diversity–consensus balance ensures both exploration and convergence.
+    - **Function**: Dynamically fuses complementary cross-modal information via a MoE mechanism, balancing expert diversity and consensus.
+    - **Mechanism**: Comprises $N=4$ cross-modal Mamba experts $\{CM_1, ..., CM_4\}$, each independently performing cross-modal fusion. A gating network extracts global features via GAP and GMP, then computes TopK ($k=2$) expert weights. Cross-Modal Scanning (CM-Scan) alternates between the two modalities in both spatial and channel dimensions with forward and backward scans. Three auxiliary losses jointly regulate training: a **load balancing loss** $\mathcal{L}_{wb}$ prevents gating collapse; an **expert diversity loss** $\mathcal{L}_{div}$ promotes heterogeneous behavior via cosine similarity minimization; and a **consensus loss** $\mathcal{L}_{cons}$ encourages experts to converge toward a unified representation. A temporal decay weight $\lambda(t) = \cos(t/T \cdot \pi/2)$ encourages diversity in early training and emphasizes consensus in later stages.
+    - **Design Motivation**: Different fusion tasks have distinct objectives (IVIF preserves thermal targets; MFIF preserves sharp regions), and MoE enables dynamic adaptation. The dynamic diversity–consensus balance ensures both exploration and convergence.
 
 3. **Bi-level Self-supervised Contrastive Learning Loss (BSCL)**
 
-   - **Function**: Reinforces high-frequency information preservation without increasing model complexity, while improving downstream task performance.
-   - **Mechanism**: The Haar wavelet lifting scheme decomposes features and images into high-frequency and low-frequency components. At the **feature level**, the high-frequency component of the fused feature $F_{mf}^h$ is pulled toward the high-frequency components of the input modalities $F_{mc}^h$ and pushed away from their low-frequency components $F_{mc}^l$: $\mathcal{L}_{fcl} = \|F_{mf}^h - F_{mc}^h\|_1^2 / \|F_{mf}^h - F_{mc}^l\|_1^2 + ...$. The same contrastive constraint is applied at the **pixel level** as $\mathcal{L}_{pcl}$.
-   - **Design Motivation**: The inherent frequency bias of deep networks leads to low-frequency dominance, whereas high-frequency textures and edges are critical for fusion quality and downstream tasks. The self-supervised formulation introduces no additional annotation cost.
+    - **Function**: Reinforces high-frequency information preservation without increasing model complexity, while improving downstream task performance.
+    - **Mechanism**: The Haar wavelet lifting scheme decomposes features and images into high-frequency and low-frequency components. At the **feature level**, the high-frequency component of the fused feature $F_{mf}^h$ is pulled toward the high-frequency components of the input modalities $F_{mc}^h$ and pushed away from their low-frequency components $F_{mc}^l$: $\mathcal{L}_{fcl} = \|F_{mf}^h - F_{mc}^h\|_1^2 / \|F_{mf}^h - F_{mc}^l\|_1^2 + ...$. The same contrastive constraint is applied at the **pixel level** as $\mathcal{L}_{pcl}$.
+    - **Design Motivation**: The inherent frequency bias of deep networks leads to low-frequency dominance, whereas high-frequency textures and edges are critical for fusion quality and downstream tasks. The self-supervised formulation introduces no additional annotation cost.
 
 ### Loss & Training
 

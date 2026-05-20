@@ -18,8 +18,8 @@ content_hash: ce09cc0b750cee06
 # Perturb a Model, Not an Image: Towards Robust Privacy Protection via Anti-Personalized Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01307](https://arxiv.org/abs/2511.01307)
-**Code**: [GitHub](https://github.com/KU-VGI/APDM)
+**arXiv**: [2511.01307](https://arxiv.org/abs/2511.01307)  
+**Code**: [GitHub](https://github.com/KU-VGI/APDM)  
 **Area**: Diffusion Models / Privacy Protection
 **Keywords**: anti-personalized diffusion model, privacy protection, DPO loss, model-level defense, dual-path optimization
 

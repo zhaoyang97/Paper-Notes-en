@@ -17,8 +17,8 @@ content_hash: 9ed33cd8bcb10634
 # LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.11521](https://arxiv.org/abs/2504.11521)
-**Code**: [Project Page](https://langtraj.github.io/)
+**arXiv**: [2504.11521](https://arxiv.org/abs/2504.11521)  
+**Code**: [Project Page](https://langtraj.github.io/)  
 **Area**: Autonomous Driving
 **Keywords**: traffic simulation, language conditioning, diffusion model, trajectory generation, autonomous driving
 
@@ -57,18 +57,18 @@ LangTraj consists of three main components: a Scene Encoder, a Language Encoder,
    LoRA is used for end-to-end fine-tuning, balancing efficiency and effectiveness. **Design Motivation**: Role rewriting ensures language conditions are precisely aligned to specific agents.
 
 3. **Denoiser**: Stacks Transformer blocks incorporating three types of attention:
-   - Inter-agent query-centric attention: captures multi-agent interactions
-   - Agent-Context cross-attention: aligns behavior with spatiotemporal context
-   - Text-Cross attention: injects language conditions
+    - Inter-agent query-centric attention: captures multi-agent interactions
+    - Agent-Context cross-attention: aligns behavior with spatiotemporal context
+    - Text-Cross attention: injects language conditions
 
 4. **Closed-Loop Training Strategy**: One of the core innovations. Conventional diffusion models are trained in an open-loop fashion, leading to distribution shift and error accumulation during closed-loop inference. This work proposes incorporating model-generated samples into training:
-   - At each step, GT trajectories are noised → one-step denoising generates $M$ candidates → the candidate closest to GT is selected for execution
-   - L2 loss between the executed trajectory and GT is computed in the global coordinate frame
-   - Teacher forcing is applied: a subset of agents still follow GT to stabilize training
+    - At each step, GT trajectories are noised → one-step denoising generates $M$ candidates → the candidate closest to GT is selected for execution
+    - L2 loss between the executed trajectory and GT is computed in the global coordinate frame
+    - Teacher forcing is applied: a subset of agents still follow GT to stabilize training
 
 5. **Dual-Mode Controllable Generation**:
-   - **Classifier-free guidance**: interpolates conditional and unconditional predictions, $\hat{\tau}_0 = (1+w) \cdot g(\mathbf{e}_{lang}, \mathbf{z}_{enc}) - w \cdot g(\emptyset, \mathbf{z}_{enc})$
-   - **Classifier-based guidance**: modifies the denoising step mean via gradients of an objective $J(\tau)$, supporting collision-inducing guidance and similar objectives
+    - **Classifier-free guidance**: interpolates conditional and unconditional predictions, $\hat{\tau}_0 = (1+w) \cdot g(\mathbf{e}_{lang}, \mathbf{z}_{enc}) - w \cdot g(\emptyset, \mathbf{z}_{enc})$
+    - **Classifier-based guidance**: modifies the denoising step mean via gradients of an objective $J(\tau)$, supporting collision-inducing guidance and similar objectives
 
 ### Loss & Training
 

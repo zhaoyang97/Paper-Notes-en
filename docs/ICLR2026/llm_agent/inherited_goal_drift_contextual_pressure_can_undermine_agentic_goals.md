@@ -18,8 +18,8 @@ content_hash: 1dd533a16aa0a368
 # Inherited Goal Drift: Contextual Pressure Can Undermine Agentic Goals
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.03258](https://arxiv.org/abs/2603.03258)
-**Code**: [https://github.com/achyutha11/inherited-drift](https://github.com/achyutha11/inherited-drift)
+**arXiv**: [2603.03258](https://arxiv.org/abs/2603.03258)  
+**Code**: [https://github.com/achyutha11/inherited-drift](https://github.com/achyutha11/inherited-drift)  
 **Area**: AI Safety / Agent Safety
 **Keywords**: goal drift, agentic AI, context conditioning, instruction hierarchy, LLM agents
 

@@ -17,7 +17,7 @@ content_hash: 679bd6f2ed68dea9
 **Conference**: CVPR 2026
 **Area**: Object Detection / 3D Vision / Autonomous Driving
 **Keywords**: 4D millimeter-wave radar, camera-radar fusion, 3D object detection, BEV perception, depth estimation
-**arXiv**: [2603.11566](https://arxiv.org/abs/2603.11566)
+**arXiv**: [2603.11566](https://arxiv.org/abs/2603.11566)  
 **Code**: N/A
 
 ## TL;DR

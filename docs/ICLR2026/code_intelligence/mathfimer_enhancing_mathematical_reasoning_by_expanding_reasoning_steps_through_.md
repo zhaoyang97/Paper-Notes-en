@@ -18,8 +18,8 @@ content_hash: 1752ee7ce63b464b
 # MathFimer: Enhancing Mathematical Reasoning by Expanding Reasoning Steps through Fill-in-the-Middle Task
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.11684](https://arxiv.org/abs/2502.11684)
-**Code**: None
+**arXiv**: [2502.11684](https://arxiv.org/abs/2502.11684)  
+**Code**: None  
 **Area**: Code Intelligence
 **Keywords**: Mathematical Reasoning, Fill-in-the-Middle, Reasoning Step Expansion, Chain-of-Thought, Data Augmentation
 

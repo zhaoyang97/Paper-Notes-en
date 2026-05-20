@@ -18,8 +18,8 @@ content_hash: fc3cbee7b9402648
 # Event-T2M: Event-level Conditioning for Complex Text-to-Motion Synthesis
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.04292](https://arxiv.org/abs/2602.04292)
-**Code**: Available (project page)
+**arXiv**: [2602.04292](https://arxiv.org/abs/2602.04292)  
+**Code**: Available (project page)  
 **Area**: Image Generation
 **Keywords**: Text-to-Motion Generation, Event-level Conditioning, Diffusion Models, Compositional Motion, Conformer
 

@@ -18,8 +18,8 @@ content_hash: efb8c016b1bf7ac9
 # A Coherence-Based Measure of AGI
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.20784](https://arxiv.org/abs/2510.20784)
-**Code**: Not available
+**arXiv**: [2510.20784](https://arxiv.org/abs/2510.20784)  
+**Code**: Not available  
 **Area**: Interpretability
 **Keywords**: AGI evaluation, generalized mean, coherence measure, cognitive capability balance, non-compensatory aggregation
 

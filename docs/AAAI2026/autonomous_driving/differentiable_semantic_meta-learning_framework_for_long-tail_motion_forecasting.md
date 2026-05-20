@@ -19,8 +19,8 @@ content_hash: 14894e06f4df83dd
 # SAML: A Differentiable Semantic Meta-Learning Framework for Long-Tail Motion Prediction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06649](https://arxiv.org/abs/2511.06649)
-**Code**: Not available
+**arXiv**: [2511.06649](https://arxiv.org/abs/2511.06649)  
+**Code**: Not available  
 **Area**: Autonomous Driving / Motion Prediction
 **Keywords**: Long-tail distribution, meta-learning, motion prediction, Bayesian inference, MAML, tail-awareness
 

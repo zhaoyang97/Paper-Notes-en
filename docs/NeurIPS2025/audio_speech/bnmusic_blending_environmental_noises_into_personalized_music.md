@@ -18,8 +18,8 @@ content_hash: 07b6facaaacb2401
 # BNMusic: Blending Environmental Noises into Personalized Music
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10754](https://arxiv.org/abs/2506.10754)
-**Code**: [https://d-fas.github.io/BNMusic_page/](https://d-fas.github.io/BNMusic_page/)
+**arXiv**: [2506.10754](https://arxiv.org/abs/2506.10754)  
+**Code**: [https://d-fas.github.io/BNMusic_page/](https://d-fas.github.io/BNMusic_page/)  
 **Area**: Audio Generation
 **Keywords**: noise blending, auditory masking, music generation, spectrogram inpainting, psychoacoustics
 
@@ -49,21 +49,21 @@ This paper proposes BNMusic, a two-stage framework that blends environmental noi
 
 1. **Stage 1: Noise-Aligned Music Synthesis**
 
-   - **Function**: Generate music whose rhythm and spectral content are aligned with the input noise.
-   - **Mechanism**: (1) *Preprocessing* — identify high-energy regions in the noise mel-spectrogram using a binary mask. (2) *Outpainting* — preserve high-energy noise regions and generate surrounding musical content, allowing core noise information to diffuse outward into the musical texture. (3) *Inpainting* — invert the mask and reconstruct musical content within the high-energy regions, reintegrating the previously diffused musical information back into the core area. This ensures the generated music fully inherits the rhythmic characteristics of the noise.
-   - **Design Motivation**: Directly generating music from noise yields poor results, as models have not been trained on noisy inputs. The two-step approach uses outpainting to first establish a musical framework and then inpainting to fill the core regions — analogous to an "outside-in" compositional strategy.
+    - **Function**: Generate music whose rhythm and spectral content are aligned with the input noise.
+    - **Mechanism**: (1) *Preprocessing* — identify high-energy regions in the noise mel-spectrogram using a binary mask. (2) *Outpainting* — preserve high-energy noise regions and generate surrounding musical content, allowing core noise information to diffuse outward into the musical texture. (3) *Inpainting* — invert the mask and reconstruct musical content within the high-energy regions, reintegrating the previously diffused musical information back into the core area. This ensures the generated music fully inherits the rhythmic characteristics of the noise.
+    - **Design Motivation**: Directly generating music from noise yields poor results, as models have not been trained on noisy inputs. The two-step approach uses outpainting to first establish a musical framework and then inpainting to fill the core regions — analogous to an "outside-in" compositional strategy.
 
 2. **Stage 2: Adaptive Amplification**
 
-   - **Function**: Maximize masking effectiveness while maintaining a comfortable listening volume.
-   - **Mechanism**: A psychoacoustic model computes the masking threshold matrix $\mathbf{T}_\text{Mask}$ (the energy required at each frequency-time bin to mask the noise). Gradient descent is then used to find the optimal amplification factor $\lambda^*$, balancing maximizing masking coverage against minimizing overall volume: $\lambda^* = \arg\min_\lambda \{\text{SUM}(\alpha \cdot \mathbf{S}'_\text{Music}) + \text{SUM}(\max[(\mathbf{T}_\text{Mask} - \mathbf{S}'_\text{Music}) \odot \mathbf{M}, 0])\}$.
-   - **Design Motivation**: Because Stage 1 already aligns the spectral features, only moderate amplification is needed for effective masking, avoiding the brute-force volume-raising strategy of traditional masking approaches.
+    - **Function**: Maximize masking effectiveness while maintaining a comfortable listening volume.
+    - **Mechanism**: A psychoacoustic model computes the masking threshold matrix $\mathbf{T}_\text{Mask}$ (the energy required at each frequency-time bin to mask the noise). Gradient descent is then used to find the optimal amplification factor $\lambda^*$, balancing maximizing masking coverage against minimizing overall volume: $\lambda^* = \arg\min_\lambda \{\text{SUM}(\alpha \cdot \mathbf{S}'_\text{Music}) + \text{SUM}(\max[(\mathbf{T}_\text{Mask} - \mathbf{S}'_\text{Music}) \odot \mathbf{M}, 0])\}$.
+    - **Design Motivation**: Because Stage 1 already aligns the spectral features, only moderate amplification is needed for effective masking, avoiding the brute-force volume-raising strategy of traditional masking approaches.
 
 3. **Training-Free Utilization of Existing Models**
 
-   - **Function**: Implemented on top of Riffusion (a music-finetuned variant of Stable Diffusion) without any additional training.
-   - **Mechanism**: The noise mel-spectrogram is used as the input for image editing, leveraging Riffusion's inpainting/outpainting capabilities.
-   - **Design Motivation**: This avoids the cost of collecting noise–music paired training data and exploits the generalization ability of existing generative models.
+    - **Function**: Implemented on top of Riffusion (a music-finetuned variant of Stable Diffusion) without any additional training.
+    - **Mechanism**: The noise mel-spectrogram is used as the input for image editing, leveraging Riffusion's inpainting/outpainting capabilities.
+    - **Design Motivation**: This avoids the cost of collecting noise–music paired training data and exploits the generalization ability of existing generative models.
 
 ### Loss & Training
 No training is required. Stage 1 uses Riffusion's LDM inference (DDPM denoising). Stage 2 applies gradient descent to optimize the amplification factor $\lambda$. The global hyperparameter is set to $\alpha = 0.14$. Inference takes approximately 5 seconds per sample on an Nvidia 4090.

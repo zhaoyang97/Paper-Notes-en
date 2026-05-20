@@ -18,8 +18,8 @@ content_hash: 4bcdf063be537907
 # Dataset Ownership Verification for Pre-trained Masked Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.12022](https://arxiv.org/abs/2507.12022)
-**Code**: [github.com/xieyc99/DOV4MM](https://github.com/xieyc99/DOV4MM)
+**arXiv**: [2507.12022](https://arxiv.org/abs/2507.12022)  
+**Code**: [github.com/xieyc99/DOV4MM](https://github.com/xieyc99/DOV4MM)  
 **Area**: LLM Pre-training
 **Keywords**: dataset ownership verification, masked modeling, embedding reconstruction difficulty, hypothesis testing, self-supervised learning
 

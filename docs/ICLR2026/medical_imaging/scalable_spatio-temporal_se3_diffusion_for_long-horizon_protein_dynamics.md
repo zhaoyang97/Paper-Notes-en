@@ -18,8 +18,8 @@ content_hash: f7a6db86f05c4f6f
 # Scalable Spatio-Temporal SE(3) Diffusion for Long-Horizon Protein Dynamics
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.02128](https://arxiv.org/abs/2602.02128)
-**Code**: [https://bytedance-seed.github.io/ConfRover/starmd](https://bytedance-seed.github.io/ConfRover/starmd)
+**arXiv**: [2602.02128](https://arxiv.org/abs/2602.02128)  
+**Code**: [https://bytedance-seed.github.io/ConfRover/starmd](https://bytedance-seed.github.io/ConfRover/starmd)  
 **Area**: Medical Imaging
 **Keywords**: protein conformation generation, SE(3) diffusion model, spatio-temporal attention, autoregressive trajectory generation, molecular dynamics acceleration
 
@@ -49,27 +49,27 @@ Given a protein sequence and an initial conformation, STAR-MD autoregressively g
 
 1. **Joint Spatio-Temporal (S×T) Attention**:
 
-   - **Function**: Applies attention over joint tokens indexed by residue–frame pairs $(i, \ell)$, replacing alternating spatial/temporal modules.
-   - **Mechanism**: Each token corresponds to a (residue, time frame) pair, enabling direct attention to features of any residue in any previous frame. 2D RoPE encodes residue and frame indices, supporting frame-count extrapolation. Complexity is $O(N^2 L^2)$ versus $O(N^3 L + N^2 L^2)$ for Pairformer with temporal attention.
-   - **Design Motivation**: Mori–Zwanzig theory shows that removing pairwise features causes the memory kernel to become spatio-temporally non-separable — necessitating joint attention rather than factorized attention to model this non-separable coupling.
+    - **Function**: Applies attention over joint tokens indexed by residue–frame pairs $(i, \ell)$, replacing alternating spatial/temporal modules.
+    - **Mechanism**: Each token corresponds to a (residue, time frame) pair, enabling direct attention to features of any residue in any previous frame. 2D RoPE encodes residue and frame indices, supporting frame-count extrapolation. Complexity is $O(N^2 L^2)$ versus $O(N^3 L + N^2 L^2)$ for Pairformer with temporal attention.
+    - **Design Motivation**: Mori–Zwanzig theory shows that removing pairwise features causes the memory kernel to become spatio-temporally non-separable — necessitating joint attention rather than factorized attention to model this non-separable coupling.
 
 2. **Block-Causal Attention Training**:
 
-   - **Function**: Enables parallel training while preserving causal structure.
-   - **Mechanism**: Clean and noisy frames are concatenated as the input sequence, with a block-level attention mask ensuring each frame attends only to clean versions of preceding frames. Although sequence length doubles, a single forward pass simultaneously optimizes the denoising loss for all frames.
-   - **Design Motivation**: Aligns parallel teacher-forcing training with sequential autoregressive inference.
+    - **Function**: Enables parallel training while preserving causal structure.
+    - **Mechanism**: Clean and noisy frames are concatenated as the input sequence, with a block-level attention mask ensuring each frame attends only to clean versions of preceding frames. Although sequence length doubles, a single forward pass simultaneously optimizes the denoising loss for all frames.
+    - **Design Motivation**: Aligns parallel teacher-forcing training with sequential autoregressive inference.
 
 3. **Contextual Noise Perturbation**:
 
-   - **Function**: Mitigates error accumulation in long-horizon autoregressive generation.
-   - **Mechanism**: During training, small noise $\tau \sim \mathcal{U}[0, 0.1]$ is added to historical clean frames; the same perturbation is applied at inference — maintaining training–inference consistency and endowing the model with robustness to its own prediction errors.
-   - **Design Motivation**: Inspired by Diffusion Forcing, the core insight is to expose the model to imperfect historical inputs during training.
+    - **Function**: Mitigates error accumulation in long-horizon autoregressive generation.
+    - **Mechanism**: During training, small noise $\tau \sim \mathcal{U}[0, 0.1]$ is added to historical clean frames; the same perturbation is applied at inference — maintaining training–inference consistency and endowing the model with robustness to its own prediction errors.
+    - **Design Motivation**: Inspired by Diffusion Forcing, the core insight is to expose the model to imperfect historical inputs during training.
 
 4. **Continuous Time Conditioning**:
 
-   - **Function**: Enables a single model to cover multiple timescales.
-   - **Mechanism**: Time step size $\Delta t \sim \text{LogUniform}[10^{-2}, 10^1]$ ns is randomly sampled and injected into the network via AdaLN. Even with a small context window, large step sizes expose the model to long-range temporal dependencies.
-   - **Design Motivation**: Decouples physical trajectory duration from the number of context frames, eliminating the need for complex context-length extrapolation techniques.
+    - **Function**: Enables a single model to cover multiple timescales.
+    - **Mechanism**: Time step size $\Delta t \sim \text{LogUniform}[10^{-2}, 10^1]$ ns is randomly sampled and injected into the network via AdaLN. Even with a small context window, large step sizes expose the model to long-range temporal dependencies.
+    - **Design Motivation**: Decouples physical trajectory duration from the number of context frames, eliminating the need for complex context-length extrapolation techniques.
 
 ### Loss & Training
 

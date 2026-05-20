@@ -18,8 +18,8 @@ content_hash: 0a018a0530fe2a92
 # TAPVid-360: Tracking Any Point in 360 from Narrow Field of View Video
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.21946](https://arxiv.org/abs/2511.21946)
-**Code**: [https://finlay-hudson.github.io/tapvid360](https://finlay-hudson.github.io/tapvid360) (project page)
+**arXiv**: [2511.21946](https://arxiv.org/abs/2511.21946)  
+**Code**: [https://finlay-hudson.github.io/tapvid360](https://finlay-hudson.github.io/tapvid360) (project page)  
 **Area**: Video Understanding
 **Keywords**: point tracking, 360° video, out-of-field-of-view tracking, spatial representation, panoramic understanding
 

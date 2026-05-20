@@ -18,8 +18,8 @@ content_hash: c7ec9a800d3fccbd
 # GTPBD: A Fine-Grained Global Terraced Parcel and Boundary Dataset
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.14697](https://arxiv.org/abs/2507.14697)
-**Code**: [Available](https://github.com/Z-ZW-WXQ/GTPBD/)
+**arXiv**: [2507.14697](https://arxiv.org/abs/2507.14697)  
+**Code**: [Available](https://github.com/Z-ZW-WXQ/GTPBD/)  
 **Area**: Segmentation
 **Keywords**: Terraced parcel extraction, fine-grained boundary annotation, semantic segmentation, unsupervised domain adaptation, remote sensing dataset
 

@@ -18,8 +18,8 @@ content_hash: 8eac62108fe3dea9
 # Counterfactual Identifiability via Dynamic Optimal Transport
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08294](https://arxiv.org/abs/2510.08294)
-**Code**: To be confirmed
+**arXiv**: [2510.08294](https://arxiv.org/abs/2510.08294)  
+**Code**: To be confirmed  
 **Area**: Causal Inference / Generative Models / Optimal Transport
 **Keywords**: counterfactual identification, optimal transport, flow matching, structural causal model, monotone transport map
 

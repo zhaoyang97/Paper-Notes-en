@@ -18,8 +18,8 @@ content_hash: d1a697726442d4ec
 # Fixed Anchors Are Not Enough: Dynamic Retrieval and Persistent Homology for Dataset Distillation
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.24144](https://arxiv.org/abs/2602.24144)
-**Code**: To be confirmed
+**arXiv**: [2602.24144](https://arxiv.org/abs/2602.24144)  
+**Code**: To be confirmed  
 **Area**: Dataset Distillation / Model Compression
 **Keywords**: dataset distillation, residual matching, persistent homology, topology alignment, dynamic retrieval
 

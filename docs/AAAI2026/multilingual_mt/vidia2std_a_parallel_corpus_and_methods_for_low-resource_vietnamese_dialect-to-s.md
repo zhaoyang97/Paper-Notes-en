@@ -18,8 +18,8 @@ content_hash: 1667bb0ef6c5299d
 # ViDia2Std: A Parallel Corpus and Methods for Low-Resource Vietnamese Dialect-to-Standard Translation
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.10211](https://arxiv.org/abs/2603.10211)
-**Code**: [GitHub](https://github.com/biuinvincible/ViDia2Std.git)
+**arXiv**: [2603.10211](https://arxiv.org/abs/2603.10211)  
+**Code**: [GitHub](https://github.com/biuinvincible/ViDia2Std.git)  
 **Area**: Multilingual Translation
 **Keywords**: Vietnamese dialect, dialect normalization, low-resource language, parallel corpus, sequence-to-sequence model
 

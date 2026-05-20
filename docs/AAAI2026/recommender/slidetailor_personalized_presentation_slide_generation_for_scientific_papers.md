@@ -18,8 +18,8 @@ content_hash: 69d67a26aef6deb1
 # SlideTailor: Personalized Presentation Slide Generation for Scientific Papers
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.20292](https://arxiv.org/abs/2512.20292)
-**Code**: [SlideTailor](https://github.com/nusnlp/SlideTailor)
+**arXiv**: [2512.20292](https://arxiv.org/abs/2512.20292)  
+**Code**: [SlideTailor](https://github.com/nusnlp/SlideTailor)  
 **Area**: Document-to-Presentation Generation
 **Keywords**: Personalized slide generation, preference distillation, chain-of-speech, agent framework, academic paper presentation
 

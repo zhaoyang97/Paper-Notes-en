@@ -19,8 +19,8 @@ content_hash: d7414f76a11f758a
 # LCDB 1.1: A Database Illustrating Learning Curves Are More Ill-Behaved Than Previously Thought
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15657](https://arxiv.org/abs/2505.15657)
-**Code**: [GitHub](https://github.com/learning-curve-research/LCDB-1.1)
+**arXiv**: [2505.15657](https://arxiv.org/abs/2505.15657)  
+**Code**: [GitHub](https://github.com/learning-curve-research/LCDB-1.1)  
 **Area**: LLM Evaluation
 **Keywords**: learning curves, scaling laws, model selection, ill-behavior, tabular data, benchmark
 

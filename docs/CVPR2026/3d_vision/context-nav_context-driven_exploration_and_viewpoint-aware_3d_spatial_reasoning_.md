@@ -18,9 +18,9 @@ content_hash: 3ebec9ec81e4f729
 # Context-Nav: Context-Driven Exploration and Viewpoint-Aware 3D Spatial Reasoning for Instance Navigation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09506](https://arxiv.org/abs/2603.09506)
+**arXiv**: [2603.09506](https://arxiv.org/abs/2603.09506)  
 **Area**: 3D Vision
-**Code**: N/A
+**Code**: N/A  
 **Keywords**: Instance Navigation, Spatial Reasoning, Value Map, Viewpoint-Aware, Zero-Shot
 
 ## TL;DR
@@ -51,31 +51,31 @@ The pipeline consists of three modules: perception and mapping, context-driven e
 
 1. **Context-Driven Value Map**
 
-   - **Function**: Encodes the full textual description as a global exploration signal, guiding the agent to prioritize regions semantically consistent with the description.
-   - **Mechanism**: GOAL-CLIP—a model fine-tuned from CLIP to support long-text–image local alignment—encodes the complete target description $G$ and each frame observation $X_t$, computing per-pixel similarity scores. These scores are projected onto a top-down grid using depth and pose, forming a dense value map $V_t$. Frontiers (boundaries between explored and unknown space) are ranked by value, and the agent navigates to the highest-value frontier.
-   - **Design Motivation**: Standard CLIP performs poorly on long descriptions. GOAL-CLIP, through local image–sentence pair matching and token-level correspondence propagation, converts contextual cues in long text into more precise spatial priors. Compared to a value map using only the category name, using the full contextual description yields a +6.6 SR improvement.
+    - **Function**: Encodes the full textual description as a global exploration signal, guiding the agent to prioritize regions semantically consistent with the description.
+    - **Mechanism**: GOAL-CLIP—a model fine-tuned from CLIP to support long-text–image local alignment—encodes the complete target description $G$ and each frame observation $X_t$, computing per-pixel similarity scores. These scores are projected onto a top-down grid using depth and pose, forming a dense value map $V_t$. Frontiers (boundaries between explored and unknown space) are ranked by value, and the agent navigates to the highest-value frontier.
+    - **Design Motivation**: Standard CLIP performs poorly on long descriptions. GOAL-CLIP, through local image–sentence pair matching and token-level correspondence propagation, converts contextual cues in long text into more precise spatial priors. Compared to a value map using only the category name, using the full contextual description yields a +6.6 SR improvement.
 
 2. **Room-Level Constraint**
 
-   - **Function**: Overrides the global value map ranking under specific conditions, forcing the agent to prioritize unexplored areas in the room containing the target.
-   - **Mechanism**: A wall-only layer is maintained by applying RANSAC to segment vertical planes and filter out furniture and clutter; rooms are defined via connected component analysis. When a target instance has been detected but unobserved context objects remain in the same room, the frontier selection is overridden once to select the nearest unexplored frontier within the same room.
-   - **Design Motivation**: Prevents the agent from oscillating between the globally highest-value frontier and the target's room, reducing unnecessary motion. The override is applied only once to avoid disrupting the subsequent value map strategy.
+    - **Function**: Overrides the global value map ranking under specific conditions, forcing the agent to prioritize unexplored areas in the room containing the target.
+    - **Mechanism**: A wall-only layer is maintained by applying RANSAC to segment vertical planes and filter out furniture and clutter; rooms are defined via connected component analysis. When a target instance has been detected but unobserved context objects remain in the same room, the frontier selection is overridden once to select the nearest unexplored frontier within the same room.
+    - **Design Motivation**: Prevents the agent from oscillating between the globally highest-value frontier and the target's room, reducing unnecessary motion. The override is applied only once to avoid disrupting the subsequent value map strategy.
 
 3. **Viewpoint-Aware 3D Spatial Relation Verification**
 
-   - **Function**: Verifies spatial relations between candidate targets and context objects in 3D space, explicitly handling viewpoint ambiguity.
-   - **Mechanism**: A four-step procedure:
+    - **Function**: Verifies spatial relations between candidate targets and context objects in 3D space, explicitly handling viewpoint ambiguity.
+    - **Mechanism**: A four-step procedure:
      - **Step 1 – Room-Level Filtering**: Ensures the target and context objects reside in the same wall-delineated room (geodesic distance ≤ 3 m).
      - **Step 2 – Candidate Viewpoint Sampling**: Generates a candidate observer position set $\mathcal{V}$ centered on the anchor, with $N_\theta = 24$ azimuth angles × 4 radii $r \in \{0.8, 1.2, 1.6, 2.0\}$.
      - **Step 3 – Viewpoint Alignment**: For each candidate viewpoint $v$, a local reference frame is constructed such that $+\hat{x}$ points toward the reference object, with yaw angle defined as $\psi = \text{atan2}((c_r)_y - v_y, (c_r)_x - v_x)$. All object centers are transformed into this viewpoint-aligned coordinate frame.
      - **Step 4 – Relational Predicate Evaluation**: Seven binary spatial relation predicates (left/right/front/behind/near/above/below) with tolerance parameters are defined. Verification requires that **at least one viewpoint** $v^* \in \mathcal{V}$ simultaneously satisfies all relational predicates.
-   - **Design Motivation**: Spatial relations such as "to the left" or "in front of" are observer-dependent—a problem widely overlooked by existing methods. By exhaustively sampling viewpoints to test the satisfiability of relational predicates, viewpoint ambiguity is transformed into a tractable geometric verification problem.
+    - **Design Motivation**: Spatial relations such as "to the left" or "in front of" are observer-dependent—a problem widely overlooked by existing methods. By exhaustively sampling viewpoints to test the satisfiability of relational predicates, viewpoint ambiguity is transformed into a tractable geometric verification problem.
 
 4. **Intrinsic Attribute Verification (VQA)**
 
-   - **Function**: Verifies color, shape, material, and other intrinsic attributes of candidate targets via visual question answering.
-   - **Mechanism**: An LLM parses the description to generate multiple yes/unknown/no questions. The VLM outputs confidence scores $s \in \{0, \ldots, 15\}$, discretized into three tiers. For "unknown" responses, judgment is deferred and the frame with the highest text-image similarity over the subsequent 5 frames is selected for re-querying.
-   - **Design Motivation**: Multiple prompts reduce VLM brittleness; adaptive re-querying handles viewpoint-dependent ambiguities (e.g., colors obscured by shadow).
+    - **Function**: Verifies color, shape, material, and other intrinsic attributes of candidate targets via visual question answering.
+    - **Mechanism**: An LLM parses the description to generate multiple yes/unknown/no questions. The VLM outputs confidence scores $s \in \{0, \ldots, 15\}$, discretized into three tiers. For "unknown" responses, judgment is deferred and the frame with the highest text-image similarity over the subsequent 5 frames is selected for re-querying.
+    - **Design Motivation**: Multiple prompts reduce VLM brittleness; adaptive re-querying handles viewpoint-dependent ambiguities (e.g., colors obscured by shadow).
 
 ### Loss & Training
 

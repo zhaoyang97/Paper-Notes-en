@@ -18,8 +18,8 @@ content_hash: 4448b06b7114ed7e
 # Greedy Sampling Is Provably Efficient for RLHF
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24700](https://arxiv.org/abs/2510.24700)
-**Code**: None
+**arXiv**: [2510.24700](https://arxiv.org/abs/2510.24700)  
+**Code**: None  
 **Area**: LLM Alignment / RLHF Theory
 **Keywords**: Greedy Sampling, KL Regularization, Preference Learning, Regret Bounds, Bradley-Terry Model
 

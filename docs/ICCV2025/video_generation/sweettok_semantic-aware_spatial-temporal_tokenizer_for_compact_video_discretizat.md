@@ -17,8 +17,8 @@ content_hash: 7a9901ee28a02f3b
 # SweetTok: Semantic-Aware Spatial-Temporal Tokenizer for Compact Video Discretization
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.10443](https://arxiv.org/abs/2412.10443)
-**Code**: None
+**arXiv**: [2412.10443](https://arxiv.org/abs/2412.10443)  
+**Code**: None  
 **Area**: Video Generation
 **Keywords**: video discretization, spatial-temporal decoupling, vector quantization, language codebook, video generation
 

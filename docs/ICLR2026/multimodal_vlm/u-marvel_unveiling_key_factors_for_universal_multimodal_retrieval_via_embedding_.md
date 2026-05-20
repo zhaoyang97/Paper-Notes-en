@@ -18,8 +18,8 @@ content_hash: 7fb0199d9ec25e57
 # U-MARVEL: Unveiling Key Factors for Universal Multimodal Retrieval via Embedding Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.14902](https://arxiv.org/abs/2507.14902)
-**Code**: [GitHub](https://github.com/chaxjli/U-MARVEL)
+**arXiv**: [2507.14902](https://arxiv.org/abs/2507.14902)  
+**Code**: [GitHub](https://github.com/chaxjli/U-MARVEL)  
 **Area**: Multimodal VLM
 **Keywords**: Universal Multimodal Retrieval, MLLM Embedding Learning, Contrastive Learning, Progressive Training, Reranker Distillation
 
@@ -51,21 +51,21 @@ U-MARVEL is built upon Qwen2-VL-7B-Instruct with LoRA fine-tuning. The overall p
 
 1. **Embedding Extraction Strategy (Core Finding)**
 
-   - **Function**: Converts an MLLM's token sequence into a single embedding vector.
-   - **Mechanism**: Existing methods predominantly use causal attention + compressed prompt ("Summarize in one word: emb") + last-token embedding. The authors systematically compare five combinations and find that **bidirectional attention + mean pooling + no compressed prompt** achieves the best performance (Local 57.2 vs. 56.6 for the mainstream approach). The key insight is that compressed prompts conflict with mean pooling: the prompt encourages the model to compress information into the final token, whereas mean pooling requires information to be distributed evenly across all tokens. Removing the prompt allows mean pooling to aggregate global information more effectively. Furthermore, mean pooling with bidirectional attention enables every token to attend to the full context, eliminating the recency bias of last-token extraction.
-   - **Design Motivation**: This challenges the community's default last-token paradigm, aligning with NV-Embed's findings while contradicting GME's conclusions, and provides a new standard for embedding extraction.
+    - **Function**: Converts an MLLM's token sequence into a single embedding vector.
+    - **Mechanism**: Existing methods predominantly use causal attention + compressed prompt ("Summarize in one word: emb") + last-token embedding. The authors systematically compare five combinations and find that **bidirectional attention + mean pooling + no compressed prompt** achieves the best performance (Local 57.2 vs. 56.6 for the mainstream approach). The key insight is that compressed prompts conflict with mean pooling: the prompt encourages the model to compress information into the final token, whereas mean pooling requires information to be distributed evenly across all tokens. Removing the prompt allows mean pooling to aggregate global information more effectively. Furthermore, mean pooling with bidirectional attention enables every token to attend to the full context, eliminating the recency bias of last-token extraction.
+    - **Design Motivation**: This challenges the community's default last-token paradigm, aligning with NV-Embed's findings while contradicting GME's conclusions, and provides a new standard for embedding extraction.
 
 2. **Instruction Integration and Masking**
 
-   - **Function**: Handles the influence of instruction tokens during mean pooling.
-   - **Mechanism**: Due to bidirectional self-attention, instruction tokens already influence the representations of all query tokens during the forward pass. Accordingly, instruction tokens are masked during mean pooling, and only the query portion of tokens is averaged. This prevents instruction information from being double-counted during pooling.
-   - **Design Motivation**: Although the numerical gain is modest (+0.1%/+0.3%), it theoretically eliminates instruction bias, allowing the embedding to more purely reflect the semantic match between query and candidate.
+    - **Function**: Handles the influence of instruction tokens during mean pooling.
+    - **Mechanism**: Due to bidirectional self-attention, instruction tokens already influence the representations of all query tokens during the forward pass. Accordingly, instruction tokens are masked during mean pooling, and only the query portion of tokens is averaged. This prevents instruction information from being double-counted during pooling.
+    - **Design Motivation**: Although the numerical gain is modest (+0.1%/+0.3%), it theoretically eliminates instruction bias, allowing the embedding to more purely reflect the semantic match between query and candidate.
 
 3. **Progressive Transition Training**
 
-   - **Function**: Smoothly adapts a decoder-only MLLM into a multimodal embedding model.
-   - **Mechanism**: Training proceeds in three steps of increasing complexity—Step 1: train on NLI text-only data with unidirectional InfoNCE to establish semantic retrieval capability; Step 2: train on CC3M image-text pairs with bidirectional InfoNCE to achieve cross-modal alignment (switching from causal to bidirectional attention disrupts existing alignment and requires explicit reconstruction); Step 3: instruction fine-tuning on M-BEIR multimodal retrieval data. Experiments show that the concise captions in CC3M are better suited for retrieval than the detailed descriptions in ShareGPT4V.
-   - **Design Motivation**: Direct fine-tuning on multimodal retrieval data leads to suboptimal results due to excessive task gap; the progressive strategy ensures each step builds smoothly on the previous one.
+    - **Function**: Smoothly adapts a decoder-only MLLM into a multimodal embedding model.
+    - **Mechanism**: Training proceeds in three steps of increasing complexity—Step 1: train on NLI text-only data with unidirectional InfoNCE to establish semantic retrieval capability; Step 2: train on CC3M image-text pairs with bidirectional InfoNCE to achieve cross-modal alignment (switching from causal to bidirectional attention disrupts existing alignment and requires explicit reconstruction); Step 3: instruction fine-tuning on M-BEIR multimodal retrieval data. Experiments show that the concise captions in CC3M are better suited for retrieval than the detailed descriptions in ShareGPT4V.
+    - **Design Motivation**: Direct fine-tuning on multimodal retrieval data leads to suboptimal results due to excessive task gap; the progressive strategy ensures each step builds smoothly on the previous one.
 
 ### Loss & Training
 

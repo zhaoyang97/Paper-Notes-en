@@ -18,8 +18,8 @@ content_hash: 561a014237914675
 # Why Does It Look There? Structured Explanations for Image Classification
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10234](https://arxiv.org/abs/2603.10234)
-**Code**: None
+**arXiv**: [2603.10234](https://arxiv.org/abs/2603.10234)  
+**Code**: None  
 **Area**: Explainability
 **Keywords**: Structured Explanations, Prototypes, GradCAM, Model Training Dynamics, XAI
 

@@ -18,8 +18,8 @@ content_hash: 81feea3c16137f35
 # Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes (LegoOcc)
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22667](https://arxiv.org/abs/2602.22667)
-**Code**: [https://github.com/JuIvyy/LegoOcc](https://github.com/JuIvyy/LegoOcc)
+**arXiv**: [2602.22667](https://arxiv.org/abs/2602.22667)  
+**Code**: [https://github.com/JuIvyy/LegoOcc](https://github.com/JuIvyy/LegoOcc)  
 **Area**: Autonomous Driving / Indoor Scene Understanding
 **Keywords**: Open-vocabulary occupancy prediction, 3D Gaussian representation, Poisson aggregation, temperature decay, indoor scenes
 

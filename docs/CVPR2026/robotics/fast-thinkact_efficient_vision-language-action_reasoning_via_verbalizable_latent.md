@@ -19,8 +19,8 @@ content_hash: c7b64c233335aeac
 # Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning
 
 **Conference**: CVPR2026
-**arXiv**: [2601.09708](https://arxiv.org/abs/2601.09708)
-**Code**: [Project Page](https://jasper0314-huang.github.io/fast-thinkact/)
+**arXiv**: [2601.09708](https://arxiv.org/abs/2601.09708)  
+**Code**: [Project Page](https://jasper0314-huang.github.io/fast-thinkact/)  
 **Area**: Robotics
 **Keywords**: VLA, reasoning, latent CoT, knowledge distillation, preference learning, robot manipulation
 

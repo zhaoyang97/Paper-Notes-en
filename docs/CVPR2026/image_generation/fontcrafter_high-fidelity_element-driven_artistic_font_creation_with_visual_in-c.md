@@ -18,8 +18,8 @@ content_hash: 5315867c2acf2fc8
 # FontCrafter: High-Fidelity Element-Driven Artistic Font Creation with Visual In-Context Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22054](https://arxiv.org/abs/2603.22054)
-**Code**: N/A
+**arXiv**: [2603.22054](https://arxiv.org/abs/2603.22054)  
+**Code**: N/A  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: artistic font generation, element-driven, visual in-context generation, image inpainting, style control
 

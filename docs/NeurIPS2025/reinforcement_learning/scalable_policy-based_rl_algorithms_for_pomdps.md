@@ -18,8 +18,8 @@ content_hash: 78ad95da6f9c3797
 # Scalable Policy-Based RL Algorithms for POMDPs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.06540](https://arxiv.org/abs/2510.06540)
-**Code**: None
+**arXiv**: [2510.06540](https://arxiv.org/abs/2510.06540)  
+**Code**: None  
 **Area**: Reinforcement Learning / Theory
 **Keywords**: POMDP, Policy Optimization, TD Learning, Superstate MDP, Linear Function Approximation
 

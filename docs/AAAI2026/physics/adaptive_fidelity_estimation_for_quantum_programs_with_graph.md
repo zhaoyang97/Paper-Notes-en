@@ -18,8 +18,8 @@ content_hash: e4a491ac4c6a9b5f
 # Adaptive Fidelity Estimation for Quantum Programs with Graph-Guided Noise Awareness
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.14713v1](https://arxiv.org/abs/2601.14713v1)
-**Code**: None
+**arXiv**: [2601.14713v1](https://arxiv.org/abs/2601.14713v1)  
+**Code**: None  
 **Area**: Quantum Computing / Quantum Program Testing
 **Keywords**: Quantum fidelity estimation, noise awareness, graph structure analysis, adaptive measurement, spectral complexity
 

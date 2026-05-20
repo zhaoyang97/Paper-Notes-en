@@ -18,8 +18,8 @@ content_hash: 5408b42c25d93d5a
 # Benchmarking Endoscopic Surgical Image Restoration and Beyond
 
 **Conference**: CVPR 2026
-**arXiv**: [2505.19161](https://arxiv.org/abs/2505.19161)
-**Code**: [https://github.com/PJLallen/Surgical-Image-Restoration](https://github.com/PJLallen/Surgical-Image-Restoration)
+**arXiv**: [2505.19161](https://arxiv.org/abs/2505.19161)  
+**Code**: [https://github.com/PJLallen/Surgical-Image-Restoration](https://github.com/PJLallen/Surgical-Image-Restoration)  
 **Area**: Medical Imaging
 **Keywords**: Endoscopic image restoration, surgical scene desmoke/defog/desplash, benchmark dataset, image quality assessment, clinical applications
 

@@ -18,8 +18,8 @@ content_hash: 148e7708a1c802ac
 # GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.15039](https://arxiv.org/abs/2603.15039)
-**Code**: To be released
+**arXiv**: [2603.15039](https://arxiv.org/abs/2603.15039)  
+**Code**: To be released  
 **Area**: LLM Agent
 **Keywords**: GUI Agent, Chinese Mobile Benchmark, Multimodal Evaluation, Hierarchical Diagnosis, Mobile Interaction
 

@@ -18,8 +18,8 @@ content_hash: f6303bf8afe511b1
 # Causal-Entity Reflected Egocentric Traffic Accident Video Synthesis
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23263](https://arxiv.org/abs/2506.23263)
-**Code**: [Project Page](http://lotvsmmau.net/Causal-VidSyn)
+**arXiv**: [2506.23263](https://arxiv.org/abs/2506.23263)  
+**Code**: [Project Page](http://lotvsmmau.net/Causal-VidSyn)  
 **Area**: Video Generation
 **Keywords**: Traffic accident video synthesis, causal entity, driver gaze, diffusion model, autonomous driving safety
 

@@ -18,8 +18,8 @@ content_hash: f28071215e2ec77e
 # UniCombine: Unified Multi-Conditional Combination with Diffusion Transformer
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.09277](https://arxiv.org/abs/2503.09277)
-**Code**: [https://github.com/Xuan-World/UniCombine](https://github.com/Xuan-World/UniCombine)
+**arXiv**: [2503.09277](https://arxiv.org/abs/2503.09277)  
+**Code**: [https://github.com/Xuan-World/UniCombine](https://github.com/Xuan-World/UniCombine)  
 **Area**: Diffusion Models / Controllable Generation
 **Keywords**: Multi-condition generation, Diffusion Transformer, LoRA, Subject-driven generation, Spatial control
 

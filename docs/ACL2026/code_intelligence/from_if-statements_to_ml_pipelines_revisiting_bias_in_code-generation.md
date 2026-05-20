@@ -18,8 +18,8 @@ content_hash: 922b10caffe5c1c9
 # From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.21716](https://arxiv.org/abs/2604.21716)
-**Code**: [https://github.com/MinhDucBui/Code-Bias-ML-Pipelines](https://github.com/MinhDucBui/Code-Bias-ML-Pipelines)
+**arXiv**: [2604.21716](https://arxiv.org/abs/2604.21716)  
+**Code**: [https://github.com/MinhDucBui/Code-Bias-ML-Pipelines](https://github.com/MinhDucBui/Code-Bias-ML-Pipelines)  
 **Area**: Code Generation / AI Fairness
 **Keywords**: code generation bias, ML pipelines, feature selection, implicit discrimination, fairness evaluation
 

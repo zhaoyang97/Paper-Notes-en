@@ -17,8 +17,8 @@ content_hash: 7ab4b5bbe8d85013
 # Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11754](https://arxiv.org/abs/2510.11754)
-**Code**: None
+**arXiv**: [2510.11754](https://arxiv.org/abs/2510.11754)  
+**Code**: None  
 **Area**: LLM Agent / Medical AI
 **Keywords**: LLM Agent, radiotherapy treatment planning, zero-shot reasoning, IMRT, inverse optimization
 

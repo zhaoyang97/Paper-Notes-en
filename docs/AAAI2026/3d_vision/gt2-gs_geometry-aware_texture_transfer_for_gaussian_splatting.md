@@ -18,8 +18,8 @@ content_hash: 3acc554ae561c8db
 # GT2-GS: Geometry-aware Texture Transfer for Gaussian Splatting
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.15208](https://arxiv.org/abs/2505.15208)
-**Code**: [https://vpx-ecnu.github.io/GT2-GS-website](https://vpx-ecnu.github.io/GT2-GS-website)
+**arXiv**: [2505.15208](https://arxiv.org/abs/2505.15208)  
+**Code**: [https://vpx-ecnu.github.io/GT2-GS-website](https://vpx-ecnu.github.io/GT2-GS-website)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, texture transfer, geometry-aware, style transfer, 3DGS appearance editing
 

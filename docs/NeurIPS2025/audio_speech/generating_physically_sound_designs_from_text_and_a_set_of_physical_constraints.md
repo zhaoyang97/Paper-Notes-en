@@ -19,9 +19,9 @@ content_hash: 1cea06edb2c98de4
 # Generating Physically Sound Designs from Text and a Set of Physical Constraints
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.02213](https://arxiv.org/abs/2602.02213)
+**arXiv**: [2602.02213](https://arxiv.org/abs/2602.02213)  
 **Authors**: Gregory Barber, Todd C. Henry, Mulugeta A. Haile (DEVCOM Army Research Laboratory)
-**Code**: None
+**Code**: None  
 **Area**: Generative Design / Topology Optimization / Text-Guided Design
 **Keywords**: topology optimization, CLIP, differentiable physics, text-informed design, structural optimization, 3D printing
 

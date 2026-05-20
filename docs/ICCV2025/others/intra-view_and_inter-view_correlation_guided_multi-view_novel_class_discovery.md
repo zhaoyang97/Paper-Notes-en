@@ -17,8 +17,8 @@ content_hash: 8f915dc1e1452c59
 # Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.12029](https://arxiv.org/abs/2507.12029)
-**Code**: N/A
+**arXiv**: [2507.12029](https://arxiv.org/abs/2507.12029)  
+**Code**: N/A  
 **Area**: Other
 **Keywords**: Novel Class Discovery, Multi-view Learning, Matrix Factorization, View Weighting, Clustering
 

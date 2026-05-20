@@ -19,8 +19,8 @@ content_hash: f7e2cb44b8a58fc1
 # AntiGrounding: Lifting Robotic Actions into VLM Representation Space for Decision Making
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.12374](https://arxiv.org/abs/2506.12374)
-**Code**: None
+**arXiv**: [2506.12374](https://arxiv.org/abs/2506.12374)  
+**Code**: None  
 **Area**: Multimodal VLM / Robotic Manipulation
 **Keywords**: VLM, Anti-Grounding, Robotic Manipulation, MPC, Structured VQA, Real2Sim2Real
 

@@ -18,8 +18,8 @@ content_hash: d7ae37a860c54608
 # Offline Reinforcement Learning with Generative Trajectory Policies
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.11499](https://arxiv.org/abs/2510.11499)
-**Code**: None (planned open-source)
+**arXiv**: [2510.11499](https://arxiv.org/abs/2510.11499)  
+**Code**: None (planned open-source)  
 **Area**: Image Generation
 **Keywords**: Offline Reinforcement Learning, Generative Policy, ODE Trajectory, Consistency Models, Flow Matching
 

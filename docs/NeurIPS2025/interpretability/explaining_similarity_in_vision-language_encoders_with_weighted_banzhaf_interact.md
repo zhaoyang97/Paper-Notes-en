@@ -18,8 +18,8 @@ content_hash: 4c37a6aefc2d0d46
 # Explaining Similarity in Vision-Language Encoders with Weighted Banzhaf Interactions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.05430](https://arxiv.org/abs/2508.05430)
-**Code**: [hbaniecki/fixlip](https://github.com/hbaniecki/fixlip)
+**arXiv**: [2508.05430](https://arxiv.org/abs/2508.05430)  
+**Code**: [hbaniecki/fixlip](https://github.com/hbaniecki/fixlip)  
 **Area**: Interpretability
 **Keywords**: CLIP interpretability, Banzhaf interaction, game theory, cross-modal interaction, saliency map
 

@@ -18,8 +18,8 @@ content_hash: 67694e8b0f013c99
 # MetaDAT: Generalizable Trajectory Prediction via Meta Pre-training and Data-Adaptive Test-Time Updating
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09419](https://arxiv.org/abs/2603.09419)
-**Code**: N/A
+**arXiv**: [2603.09419](https://arxiv.org/abs/2603.09419)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: Trajectory Prediction, Test-Time Training, Meta-Learning, Distribution Shift, Online Adaptation
 

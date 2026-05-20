@@ -17,8 +17,8 @@ content_hash: b17fe2c9fb66405d
 # Unified Camera Positional Encoding for Controlled Video Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.07237](https://arxiv.org/abs/2512.07237)
-**Code**: [https://github.com/chengzhag/UCPE](https://github.com/chengzhag/UCPE)
+**arXiv**: [2512.07237](https://arxiv.org/abs/2512.07237)  
+**Code**: [https://github.com/chengzhag/UCPE](https://github.com/chengzhag/UCPE)  
 **Area**: Video Generation
 **Keywords**: Camera Positional Encoding, Video Generation, Lens Distortion, Diffusion Transformer, Camera-Controlled Generation
 

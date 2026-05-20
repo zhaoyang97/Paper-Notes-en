@@ -18,8 +18,8 @@ content_hash: 7af29c8f5eb004dd
 # Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01398](https://arxiv.org/abs/2603.01398)
-**Code**: [Available](https://github.com/Jun-Wei-Zeng/ET-Turb)
+**arXiv**: [2603.01398](https://arxiv.org/abs/2603.01398)  
+**Code**: [Available](https://github.com/Jun-Wei-Zeng/ET-Turb)  
 **Area**: Scientific Computing
 **Keywords**: Atmospheric turbulence synthesis, exposure-time modeling, modulation transfer function (MTF), point spread function (PSF), turbulence image restoration
 

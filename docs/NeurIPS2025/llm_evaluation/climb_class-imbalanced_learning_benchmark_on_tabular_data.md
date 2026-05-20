@@ -18,8 +18,8 @@ content_hash: ea877c634185ced8
 # CLIMB: Class-Imbalanced Learning Benchmark on Tabular Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17451](https://arxiv.org/abs/2505.17451)
-**Code**: [ZhiningLiu1998/imbalanced-ensemble](https://github.com/ZhiningLiu1998/imbalanced-ensemble)
+**arXiv**: [2505.17451](https://arxiv.org/abs/2505.17451)  
+**Code**: [ZhiningLiu1998/imbalanced-ensemble](https://github.com/ZhiningLiu1998/imbalanced-ensemble)  
 **Area**: LLM Evaluation
 **Keywords**: class imbalance, tabular data, benchmark, ensemble learning, resampling
 

@@ -20,8 +20,8 @@ content_hash: 4076e36f8b693257
 # Estimating the Empowerment of Language Model Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22504](https://arxiv.org/abs/2509.22504)
-**Code**: [GitHub](https://github.com/Jinyeop3110/EELMA)
+**arXiv**: [2509.22504](https://arxiv.org/abs/2509.22504)  
+**Code**: [GitHub](https://github.com/Jinyeop3110/EELMA)  
 **Area**: LLM Reasoning
 **Keywords**: empowerment, information theory, mutual information, LM agents, goal-agnostic evaluation, InfoNCE, WebArena
 

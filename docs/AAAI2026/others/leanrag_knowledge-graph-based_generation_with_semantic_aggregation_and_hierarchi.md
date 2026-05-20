@@ -17,8 +17,8 @@ content_hash: ca9a9fc1d3430f89
 # LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.10391](https://arxiv.org/abs/2508.10391)
-**Code**: [GitHub](https://github.com/RaZzzyz/LeanRAG)
+**arXiv**: [2508.10391](https://arxiv.org/abs/2508.10391)  
+**Code**: [GitHub](https://github.com/RaZzzyz/LeanRAG)  
 **Area**: Other
 **Keywords**: Retrieval-Augmented Generation, Knowledge Graph, Hierarchical Aggregation, Lowest Common Ancestor, Semantic Network
 

@@ -18,8 +18,8 @@ content_hash: 229356471716a808
 # Step-CoT: Stepwise Visual Chain-of-Thought for Medical Visual Question Answering
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13878](https://arxiv.org/abs/2603.13878)
-**Code**: [GitHub](https://github.com/hahaha111111/Step-CoT) / [HuggingFace](https://huggingface.co/datasets/fl-15o/Step-CoT)
+**arXiv**: [2603.13878](https://arxiv.org/abs/2603.13878)  
+**Code**: [GitHub](https://github.com/hahaha111111/Step-CoT) / [HuggingFace](https://huggingface.co/datasets/fl-15o/Step-CoT)  
 **Area**: Medical AI / Visual Question Answering
 **Keywords**: Medical VQA, Chain-of-Thought, Stepwise Reasoning, Knowledge Distillation, Chest X-Ray
 
@@ -53,10 +53,10 @@ The framework consists of two major modules: dataset construction and model trai
 
 1. **Seven-Step Diagnostic Cascade**:
 
-   - Step 1: Abnormal radiodensity detection (detection stage)
-   - Steps 2–3: Appearance investigation (lesion distribution + imaging patterns)
-   - Steps 4–6: Feature analysis (anatomical location + morphological characteristics + secondary effects)
-   - Step 7: Diagnostic synthesis
+    - Step 1: Abnormal radiodensity detection (detection stage)
+    - Steps 2–3: Appearance investigation (lesion distribution + imaging patterns)
+    - Steps 4–6: Feature analysis (anatomical location + morphological characteristics + secondary effects)
+    - Step 7: Diagnostic synthesis
 
    Each step builds logically upon the conclusions of the preceding step, maintaining diagnostic continuity and mirroring the reasoning structure of expert radiologists.
 

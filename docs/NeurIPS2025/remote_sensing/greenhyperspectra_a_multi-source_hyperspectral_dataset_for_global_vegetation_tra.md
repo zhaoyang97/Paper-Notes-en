@@ -18,8 +18,8 @@ content_hash: 8a614c65630c1689
 # GreenHyperSpectra: A Multi-Source Hyperspectral Dataset for Global Vegetation Trait Prediction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.06806](https://arxiv.org/abs/2507.06806)
-**Code**: [https://huggingface.co/datasets/Avatarr05/GreenHyperSpectra](https://huggingface.co/datasets/Avatarr05/GreenHyperSpectra)
+**arXiv**: [2507.06806](https://arxiv.org/abs/2507.06806)  
+**Code**: [https://huggingface.co/datasets/Avatarr05/GreenHyperSpectra](https://huggingface.co/datasets/Avatarr05/GreenHyperSpectra)  
 **Area**: Remote Sensing / Self-Supervised Learning
 **Keywords**: Hyperspectral dataset, vegetation trait prediction, semi-supervised learning, cross-sensor generalization, masked autoencoder
 

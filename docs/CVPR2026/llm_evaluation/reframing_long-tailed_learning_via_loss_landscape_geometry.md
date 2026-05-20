@@ -18,8 +18,8 @@ content_hash: c06b35825d8b2aa9
 # Reframing Long-Tailed Learning via Loss Landscape Geometry
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21217](https://arxiv.org/abs/2603.21217)
-**Code**: [https://gkp-gsa.github.io/](https://gkp-gsa.github.io/)
+**arXiv**: [2603.21217](https://arxiv.org/abs/2603.21217)  
+**Code**: [https://gkp-gsa.github.io/](https://gkp-gsa.github.io/)  
 **Area**: Long-Tailed Learning / Visual Classification
 **Keywords**: Long-tailed learning, loss landscape, tail class degradation, continual learning, sharpness-aware minimization
 

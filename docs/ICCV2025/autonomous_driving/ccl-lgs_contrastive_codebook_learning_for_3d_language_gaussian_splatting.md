@@ -18,8 +18,8 @@ content_hash: 152a8b9ec9921a37
 # CCL-LGS: Contrastive Codebook Learning for 3D Language Gaussian Splatting
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.20469](https://arxiv.org/abs/2505.20469)
-**Code**: [https://epsilontl.github.io/CCL-LGS/](https://epsilontl.github.io/CCL-LGS/)
+**arXiv**: [2505.20469](https://arxiv.org/abs/2505.20469)  
+**Code**: [https://epsilontl.github.io/CCL-LGS/](https://epsilontl.github.io/CCL-LGS/)  
 **Area**: 3D Scene Understanding / Autonomous Driving
 **Keywords**: 3D Gaussian Splatting, Open-Vocabulary Semantic Segmentation, Contrastive Learning, Codebook Learning, Cross-View Consistency
 

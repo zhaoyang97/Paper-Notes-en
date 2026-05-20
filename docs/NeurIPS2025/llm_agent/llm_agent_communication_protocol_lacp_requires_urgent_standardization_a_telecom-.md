@@ -18,8 +18,8 @@ content_hash: 1b7f5495ed1db1de
 # LLM Agent Communication Protocol (LACP) Requires Urgent Standardization: A Telecom-Inspired Protocol is Necessary
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.13821](https://arxiv.org/abs/2510.13821)
-**Code**: To be confirmed
+**arXiv**: [2510.13821](https://arxiv.org/abs/2510.13821)  
+**Code**: To be confirmed  
 **Area**: LLM Agent
 **Keywords**: multi-agent communication, protocol standardization, agent interoperability, telecom-inspired design, security-by-design
 

@@ -19,8 +19,8 @@ content_hash: 1790be0b4d89f764
 # Boolean Satisfiability via Imitation Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25411](https://arxiv.org/abs/2509.25411)
-**Code**: [https://github.com/zewei-Zhang/ImitSAT](https://github.com/zewei-Zhang/ImitSAT)
+**arXiv**: [2509.25411](https://arxiv.org/abs/2509.25411)  
+**Code**: [https://github.com/zewei-Zhang/ImitSAT](https://github.com/zewei-Zhang/ImitSAT)  
 **Area**: Reinforcement Learning
 **Keywords**: SAT, imitation learning, CDCL, branching heuristic, autoregressive, Transformer
 

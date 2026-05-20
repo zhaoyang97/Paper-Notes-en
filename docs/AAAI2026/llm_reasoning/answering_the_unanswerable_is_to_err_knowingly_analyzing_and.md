@@ -18,8 +18,8 @@ content_hash: be46a7a5858b9034
 # Answering the Unanswerable Is to Err Knowingly: Analyzing and Mitigating Abstention Failures in Large Reasoning Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.18760v3](https://arxiv.org/abs/2508.18760v3)
-**Code**: [https://github.com/nju-websoft/AbstentionReasoning](https://github.com/nju-websoft/AbstentionReasoning)
+**arXiv**: [2508.18760v3](https://arxiv.org/abs/2508.18760v3)  
+**Code**: [https://github.com/nju-websoft/AbstentionReasoning](https://github.com/nju-websoft/AbstentionReasoning)  
 **Area**: LLM Reasoning / Trustworthy AI
 **Keywords**: Large Reasoning Models, Abstention Failure, Unanswerable Questions, Cognitive Monitoring, Inference-Time Intervention
 

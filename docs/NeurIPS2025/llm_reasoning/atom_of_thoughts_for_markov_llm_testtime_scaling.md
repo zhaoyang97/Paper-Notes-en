@@ -18,8 +18,8 @@ content_hash: c1f1c3bd01728e90
 # Atom of Thoughts for Markov LLM Test-Time Scaling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.12018](https://arxiv.org/abs/2502.12018)
-**Code**: Submitted with the paper (to be released)
+**arXiv**: [2502.12018](https://arxiv.org/abs/2502.12018)  
+**Code**: Submitted with the paper (to be released)  
 **Area**: LLM Reasoning
 **Keywords**: test-time scaling, Markov process, atomic reasoning, DAG decomposition, reasoning framework
 

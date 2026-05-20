@@ -18,8 +18,8 @@ content_hash: 4866229d7f32cfab
 # A Probabilistic U-Net Approach to Downscaling Climate Simulations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.03197](https://arxiv.org/abs/2511.03197)
-**Code**: [https://github.com/MaryamAlipourH/prob-unet-climate-downscaling](https://github.com/MaryamAlipourH/prob-unet-climate-downscaling)
+**arXiv**: [2511.03197](https://arxiv.org/abs/2511.03197)  
+**Code**: [https://github.com/MaryamAlipourH/prob-unet-climate-downscaling](https://github.com/MaryamAlipourH/prob-unet-climate-downscaling)  
 **Area**: AI for Science / Climate Science
 **Keywords**: Probabilistic U-Net, climate downscaling, variational inference, extreme events, training objectives
 

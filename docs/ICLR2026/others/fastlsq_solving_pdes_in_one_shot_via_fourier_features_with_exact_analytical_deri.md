@@ -18,8 +18,8 @@ content_hash: 21dfed65c68a6020
 # FastLSQ: Solving PDEs in One Shot via Fourier Features with Exact Analytical Derivatives
 
 **Conference**: ICLR2026
-**arXiv**: [2602.10541](https://arxiv.org/abs/2602.10541)
-**Code**: [sulcantonin/FastLSQ](https://github.com/sulcantonin/FastLSQ) (`pip install fastlsq`)
+**arXiv**: [2602.10541](https://arxiv.org/abs/2602.10541)  
+**Code**: [sulcantonin/FastLSQ](https://github.com/sulcantonin/FastLSQ) (`pip install fastlsq`)  
 **Area**: Other
 **Keywords**: PDE solving, random Fourier features, physics-informed computing, one-shot solver, Newton-Raphson, inverse problems
 

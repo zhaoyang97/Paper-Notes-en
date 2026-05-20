@@ -18,8 +18,8 @@ content_hash: bc9cab5a2c68e0fa
 # Prime Once, then Reprogram Locally: An Efficient Alternative to Black-Box Service Model Adaptation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01474](https://arxiv.org/abs/2604.01474)
-**Code**: [https://github.com/yunbeizhang/AReS](https://github.com/yunbeizhang/AReS)
+**arXiv**: [2604.01474](https://arxiv.org/abs/2604.01474)  
+**Code**: [https://github.com/yunbeizhang/AReS](https://github.com/yunbeizhang/AReS)  
 **Area**: Multimodal VLM
 **Keywords**: Model-as-a-Service, black-box adaptation, visual reprogramming, zeroth-order optimization, API-efficient utilization
 

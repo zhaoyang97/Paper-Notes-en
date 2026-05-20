@@ -18,8 +18,8 @@ content_hash: 6ff79fa63769c95f
 # Phantom Menace: Exploring and Enhancing the Robustness of VLA Models Against Physical Sensor Attacks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10008](https://arxiv.org/abs/2511.10008)
-**Code**: [https://github.com/ZJUshine/Phantom-Menace](https://github.com/ZJUshine/Phantom-Menace)
+**arXiv**: [2511.10008](https://arxiv.org/abs/2511.10008)  
+**Code**: [https://github.com/ZJUshine/Phantom-Menace](https://github.com/ZJUshine/Phantom-Menace)  
 **Area**: Multimodal VLM
 **Keywords**: VLA model security, physical sensor attacks, robustness evaluation, adversarial training, robot safety
 

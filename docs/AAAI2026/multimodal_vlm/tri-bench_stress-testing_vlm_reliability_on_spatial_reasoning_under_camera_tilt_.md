@@ -18,8 +18,8 @@ content_hash: 95cb1a5581c0e386
 # Tri-Bench: Stress-Testing VLM Reliability on Spatial Reasoning under Camera Tilt and Object Interference
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.08860](https://arxiv.org/abs/2512.08860)
-**Code**: [https://github.com/Amiton7/Tri-Bench](https://github.com/Amiton7/Tri-Bench)
+**arXiv**: [2512.08860](https://arxiv.org/abs/2512.08860)  
+**Code**: [https://github.com/Amiton7/Tri-Bench](https://github.com/Amiton7/Tri-Bench)  
 **Area**: Multimodal VLM
 **Keywords**: Spatial reasoning benchmark, geometric reasoning, camera pose robustness, majority-class bias, VLM reliability
 

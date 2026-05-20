@@ -18,8 +18,8 @@ content_hash: 85d3c496f7226c29
 # RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27758](https://arxiv.org/abs/2603.27758)
-**Code**: [https://github.com/InSAI-Lab/RHO](https://github.com/InSAI-Lab/RHO)
+**arXiv**: [2603.27758](https://arxiv.org/abs/2603.27758)  
+**Code**: [https://github.com/InSAI-Lab/RHO](https://github.com/InSAI-Lab/RHO)  
 **Area**: Remote Sensing / Visual Localization
 **Keywords**: Cross-View Geo-Localization, OpenStreetMap, Panorama, Robustness, BEV
 

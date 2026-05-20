@@ -19,8 +19,8 @@ content_hash: b56a5aba2f353e90
 # FastVAR: Linear Visual Autoregressive Modeling via Cached Token Pruning
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.23367](https://arxiv.org/abs/2503.23367)
-**Code**: [https://github.com/csguoh/FastVAR](https://github.com/csguoh/FastVAR)
+**arXiv**: [2503.23367](https://arxiv.org/abs/2503.23367)  
+**Code**: [https://github.com/csguoh/FastVAR](https://github.com/csguoh/FastVAR)  
 **Area**: Model Acceleration / Visual Autoregressive / Token Pruning
 **Keywords**: Visual Autoregressive, next-scale prediction, token pruning, high-resolution generation, training-free acceleration, cached token restoration
 

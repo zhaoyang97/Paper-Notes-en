@@ -18,8 +18,8 @@ content_hash: a0e4af6b00c5e245
 # Provably Explaining Neural Additive Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.17530](https://arxiv.org/abs/2602.17530)
-**Code**: None
+**arXiv**: [2602.17530](https://arxiv.org/abs/2602.17530)  
+**Code**: None  
 **Area**: Interpretability / Formal Verification
 **Keywords**: Neural Additive Models, provable explanations, cardinally-minimal explanations, formal verification, explainable AI
 

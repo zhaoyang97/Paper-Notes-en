@@ -18,8 +18,8 @@ content_hash: 1bfae56c499d4230
 # MERIT: Multilingual Semantic Retrieval with Interleaved Multi-Condition Query
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03144](https://arxiv.org/abs/2506.03144)
-**Code**: [https://github.com/weichow23/merit](https://github.com/weichow23/merit)
+**arXiv**: [2506.03144](https://arxiv.org/abs/2506.03144)  
+**Code**: [https://github.com/weichow23/merit](https://github.com/weichow23/merit)  
 **Area**: Multilingual Translation
 **Keywords**: interleaved retrieval, multilingual, multi-condition query, contrastive learning, embedding reconstruction
 
@@ -57,12 +57,12 @@ This paper introduces MERIT, the first multilingual interleaved multi-condition 
    Standard InfoNCE loss that pulls queries closer to positive samples and pushes them away from negatives.
 
 2. **Visual Reconstruction Loss** $\mathcal{L}_{mse}$:
-   - Random masking (rate $\delta=0.5$) is applied to the visual portion of the multimodal embedding $E=[e_{img};e_{txt}]$, and a randomly initialized BERT decoder layer $\mathcal{F}_{\theta}^{v}$ is used for reconstruction:
+    - Random masking (rate $\delta=0.5$) is applied to the visual portion of the multimodal embedding $E=[e_{img};e_{txt}]$, and a randomly initialized BERT decoder layer $\mathcal{F}_{\theta}^{v}$ is used for reconstruction:
    $$\mathcal{L}_{mse} = -\frac{1}{N}\sum_{i=1}^{N}\|\hat{E} - E\|_2^2, \quad \hat{E} = \mathcal{F}_{\theta}^{v}[\mathcal{MASK}_v(E); h_{eos}]$$
    - **Design Motivation**: Contrastive learning relying solely on the [EOS] token tends to over-compress into global semantics; masked reconstruction forces the model to retain fine-grained visual information within the [EOS] representation.
 
 3. **Masked Language Modeling Loss** $\mathcal{L}_{mlm}$:
-   - Text tokens are masked and then reconstructed; the decoder $\mathcal{F}_{\theta}^{l}$ shares parameters with the MLLM's LM head:
+    - Text tokens are masked and then reconstructed; the decoder $\mathcal{F}_{\theta}^{l}$ shares parameters with the MLLM's LM head:
    $$\mathcal{L}_{mlm} = -\frac{1}{N}\sum_{i=1}^{N}\log P(\hat{x}_i \mid X)$$
 
 4. **Total Loss**:

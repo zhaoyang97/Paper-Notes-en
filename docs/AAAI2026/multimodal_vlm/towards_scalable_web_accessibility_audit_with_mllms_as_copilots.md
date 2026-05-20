@@ -18,8 +18,8 @@ content_hash: d5d39aefc2cd447c
 # Towards Scalable Web Accessibility Audit with MLLMs as Copilots
 
 **Conference**: AAAI2026
-**arXiv**: [2511.03471](https://arxiv.org/abs/2511.03471)
-**Code**: [eaglelab-zju/AAA](https://github.com/eaglelab-zju/AAA)
+**arXiv**: [2511.03471](https://arxiv.org/abs/2511.03471)  
+**Code**: [eaglelab-zju/AAA](https://github.com/eaglelab-zju/AAA)  
 **Area**: Multimodal VLM
 **Keywords**: web accessibility, WCAG-EM, multimodal LLM, graph neural network, page sampling
 

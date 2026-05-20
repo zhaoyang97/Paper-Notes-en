@@ -19,8 +19,8 @@ content_hash: 711ed59937ce1408
 # Don't Be Lazy: CompleteP Enables Compute-Efficient Deep Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.01618](https://arxiv.org/abs/2505.01618)
-**Code**: [https://github.com/EleutherAI/nanoGPT-mup/tree/completep](https://github.com/EleutherAI/nanoGPT-mup/tree/completep)
+**arXiv**: [2505.01618](https://arxiv.org/abs/2505.01618)  
+**Code**: [https://github.com/EleutherAI/nanoGPT-mup/tree/completep](https://github.com/EleutherAI/nanoGPT-mup/tree/completep)  
 **Area**: LLM Scaling Laws, Hyperparameter Optimization
 **Keywords**: Parameterization, Depth Scaling, Hyperparameter Transfer, Compute Efficiency, CompleteP, μP
 

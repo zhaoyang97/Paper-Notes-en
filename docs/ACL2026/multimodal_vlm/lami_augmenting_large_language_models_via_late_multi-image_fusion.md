@@ -18,8 +18,8 @@ content_hash: 394e2968d5416d5f
 # LaMI: Augmenting Large Language Models via Late Multi-Image Fusion
 
 **Conference**: ACL 2026
-**arXiv**: [2406.13621](https://arxiv.org/abs/2406.13621)
-**Code**: [Project Page](https://guyyariv.github.io/LaMI/)
+**arXiv**: [2406.13621](https://arxiv.org/abs/2406.13621)  
+**Code**: [Project Page](https://guyyariv.github.io/LaMI/)  
 **Area**: Multimodal VLM
 **Keywords**: Late fusion, multi-image generation, visual commonsense reasoning, vision-augmented LLM, inference-time visual injection
 

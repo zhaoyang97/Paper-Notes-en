@@ -18,8 +18,8 @@ content_hash: d14505a40fc0ce78
 # Scaling Embedding Layers in Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.01637](https://arxiv.org/abs/2502.01637)
-**Code**: None
+**arXiv**: [2502.01637](https://arxiv.org/abs/2502.01637)  
+**Code**: None  
 **Area**: LLM Pretraining
 **Keywords**: embedding scaling, n-gram embeddings, reasoning efficiency, offloading, Scone
 

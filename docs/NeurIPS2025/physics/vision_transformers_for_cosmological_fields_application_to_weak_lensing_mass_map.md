@@ -18,8 +18,8 @@ content_hash: 54bd74815537a1c0
 # Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.07125](https://arxiv.org/abs/2512.07125)
-**Code**: None
+**arXiv**: [2512.07125](https://arxiv.org/abs/2512.07125)  
+**Code**: None  
 **Area**: Cosmology, Deep Learning, Weak Gravitational Lensing
 **Keywords**: Vision Transformer, Weak Lensing, Cosmological Parameters, Swin Transformer, Simulation-Based Inference
 

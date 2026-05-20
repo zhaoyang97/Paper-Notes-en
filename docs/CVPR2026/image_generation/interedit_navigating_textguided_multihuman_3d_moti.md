@@ -18,8 +18,8 @@ content_hash: 33e7a275f3dcf1e1
 # InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13082](https://arxiv.org/abs/2603.13082)
-**Code**: [github.com/YNG916/InterEdit](https://github.com/YNG916/InterEdit)
+**arXiv**: [2603.13082](https://arxiv.org/abs/2603.13082)  
+**Code**: [github.com/YNG916/InterEdit](https://github.com/YNG916/InterEdit)  
 **Area**: 3D Human Motion Editing
 **Keywords**: Multi-human motion editing, text-guided diffusion model, interaction-aware frequency-domain alignment, semantic planning token, TMME
 

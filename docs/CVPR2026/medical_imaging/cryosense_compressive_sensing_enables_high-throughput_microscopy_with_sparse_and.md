@@ -18,8 +18,8 @@ content_hash: 0861e38a4b62e0be
 # cryoSENSE: Compressive Sensing Enables High-throughput Microscopy with Sparse and Generative Priors on the Protein Cryo-EM Image Manifold
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.12931](https://arxiv.org/abs/2511.12931)
-**Code**: [https://cryosense.github.io](https://cryosense.github.io)
+**arXiv**: [2511.12931](https://arxiv.org/abs/2511.12931)  
+**Code**: [https://cryosense.github.io](https://cryosense.github.io)  
 **Area**: Medical Image Analysis / Cryo-EM
 **Keywords**: Cryo-EM, Compressive Sensing, Diffusion Models, Sparse Priors, High-throughput Microscopy
 

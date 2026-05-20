@@ -18,8 +18,8 @@ content_hash: 09469d8e7364090a
 # PartSAM: A Scalable Promptable Part Segmentation Model Trained on Native 3D Data
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21965](https://arxiv.org/abs/2509.21965)
-**Code**: [https://czvvd.github.io/PartSAMPage/](https://czvvd.github.io/PartSAMPage/)
+**arXiv**: [2509.21965](https://arxiv.org/abs/2509.21965)  
+**Code**: [https://czvvd.github.io/PartSAMPage/](https://czvvd.github.io/PartSAMPage/)  
 **Area**: 3D Vision
 **Keywords**: 3D part segmentation, SAM, prompt-based, native 3D data, open-world
 

@@ -18,8 +18,8 @@ content_hash: ef9a0c3a32f2cddb
 # AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling
 
 **Conference**: ACL 2026
-**arXiv**: [2604.20263](https://arxiv.org/abs/2604.20263)
-**Code**: [github](https://github.com/blazerye/AROMA)
+**arXiv**: [2604.20263](https://arxiv.org/abs/2604.20263)  
+**Code**: [github](https://github.com/blazerye/AROMA)  
 **Area**: Medical Imaging / Bioinformatics
 **Keywords**: virtual cell modeling, genetic perturbation prediction, multimodal fusion, knowledge graph, reinforcement learning reasoning
 

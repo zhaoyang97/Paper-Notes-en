@@ -18,8 +18,8 @@ content_hash: ccd19d360d2de997
 # AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.14205](https://arxiv.org/abs/2506.14205)
-**Code**: [https://github.com/sunblaze-ucb/AgentSynth](https://github.com/sunblaze-ucb/AgentSynth)
+**arXiv**: [2506.14205](https://arxiv.org/abs/2506.14205)  
+**Code**: [https://github.com/sunblaze-ucb/AgentSynth](https://github.com/sunblaze-ucb/AgentSynth)  
 **Area**: LLM Agent
 **Keywords**: synthetic data generation, computer-use agents, information asymmetry, task chaining, long-horizon task benchmark
 

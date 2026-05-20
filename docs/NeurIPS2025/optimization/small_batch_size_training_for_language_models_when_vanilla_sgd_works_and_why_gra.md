@@ -18,8 +18,8 @@ content_hash: 2aa9c44b1131d080
 # Small Batch Size Training for Language Models: When Vanilla SGD Works, and Why Gradient Accumulation Is Wasteful
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.07101](https://arxiv.org/abs/2507.07101)
-**Code**: [https://github.com/martin-marek/batch-size](https://github.com/martin-marek/batch-size)
+**arXiv**: [2507.07101](https://arxiv.org/abs/2507.07101)  
+**Code**: [https://github.com/martin-marek/batch-size](https://github.com/martin-marek/batch-size)  
 **Area**: Optimization
 **Keywords**: small batch training, SGD, Adam, gradient accumulation, language models
 

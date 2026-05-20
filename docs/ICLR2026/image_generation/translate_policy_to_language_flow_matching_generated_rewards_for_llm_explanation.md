@@ -18,8 +18,8 @@ content_hash: fd4a053c59dde9fa
 # Translate Policy to Language: Flow Matching Generated Rewards for LLM Explanations
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.12530](https://arxiv.org/abs/2502.12530)
-**Code**: None
+**arXiv**: [2502.12530](https://arxiv.org/abs/2502.12530)  
+**Code**: None  
 **Area**: Diffusion Models / LLM Alignment
 **Keywords**: Policy Explanation, Rectified Flow, Distributional Rewards, RLAIF, LLM Interpretability
 

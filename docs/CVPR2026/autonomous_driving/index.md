@@ -20,7 +20,7 @@ tags:
 
 **📷 CVPR2026** · **88** paper notes
 
-📌 **Same area in other venues:** [🔬 ICLR2026 (18)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (58)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (50)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (93)](../../ICCV2025/autonomous_driving/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (1)](../../ICML2026/autonomous_driving/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (57)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (49)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (93)](../../ICCV2025/autonomous_driving/index.md)
 
 🔥 **Top topics:** Autonomous Driving ×14 · Adversarial Robustness ×8 · 3D Object Detection ×7 · Multimodal/VLM ×7 · Segmentation ×6
 

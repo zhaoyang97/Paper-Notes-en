@@ -19,8 +19,8 @@ content_hash: fc9674d0542f047d
 # TAR3D: Creating High-Quality 3D Assets via Next-Part Prediction
 
 **Conference**: ICCV2025
-**arXiv**: [2412.16919](https://arxiv.org/abs/2412.16919)
-**Code**: [GitHub](https://github.com/HVision-NKU/TAR3D)
+**arXiv**: [2412.16919](https://arxiv.org/abs/2412.16919)  
+**Code**: [GitHub](https://github.com/HVision-NKU/TAR3D)  
 **Area**: 3D Vision
 **Keywords**: 3D generation, autoregressive, VQ-VAE, triplane representation, next-part prediction, GPT
 

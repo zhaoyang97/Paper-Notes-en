@@ -18,8 +18,8 @@ content_hash: 192b789ca67e5267
 # MergeBench: A Benchmark for Merging Domain-Specialized LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.10833](https://arxiv.org/abs/2505.10833)
-**Code**: [yifei-he/mergebench](https://yifei-he.github.io/mergebench/)
+**arXiv**: [2505.10833](https://arxiv.org/abs/2505.10833)  
+**Code**: [yifei-he/mergebench](https://yifei-he.github.io/mergebench/)  
 **Area**: Multilingual Translation
 **Keywords**: model merging, benchmark, task vectors, LLM, multi-task learning
 
@@ -60,14 +60,14 @@ Starting from each base model, specialized models are obtained by fine-tuning on
 ### Key Designs
 
 1. **Unified evaluation framework for eight model merging methods**:
-   - *Function*: Systematically covers eight mainstream merging methods from two major categories to establish a standardized comparison benchmark.
-   - *Mechanism*: **Coefficient-tuning methods** include simple averaging (Model Soup), task-vector-weighted merging $\theta_{merged} = \theta_{pre} + \lambda \sum \tau_i$ (Task Arithmetic), Fisher information matrix weighting (Fisher Merging), and activation-discrepancy minimization (RegMean). **Sparsification methods** include sign-consistency pruning (TIES), random-dropout rescaling $\theta_{merged} = \sum \lambda(1-m_i) \odot \tau_i / (1-p)$ (DARE), consensus mask filtering (Consensus TA), and task-relevant parameter localization with stitching (Localize-and-Stitch). All eight methods address task-vector conflicts from different perspectives.
-   - *Design Motivation*: Prior work lacks fair comparisons of multiple merging methods under unified conditions; covering both technical paradigms comprehensively reveals the strengths, weaknesses, and applicable scenarios of each approach.
+    - *Function*: Systematically covers eight mainstream merging methods from two major categories to establish a standardized comparison benchmark.
+    - *Mechanism*: **Coefficient-tuning methods** include simple averaging (Model Soup), task-vector-weighted merging $\theta_{merged} = \theta_{pre} + \lambda \sum \tau_i$ (Task Arithmetic), Fisher information matrix weighting (Fisher Merging), and activation-discrepancy minimization (RegMean). **Sparsification methods** include sign-consistency pruning (TIES), random-dropout rescaling $\theta_{merged} = \sum \lambda(1-m_i) \odot \tau_i / (1-p)$ (DARE), consensus mask filtering (Consensus TA), and task-relevant parameter localization with stitching (Localize-and-Stitch). All eight methods address task-vector conflicts from different perspectives.
+    - *Design Motivation*: Prior work lacks fair comparisons of multiple merging methods under unified conditions; covering both technical paradigms comprehensively reveals the strengths, weaknesses, and applicable scenarios of each approach.
 
 2. **Standardized training pipeline for five-domain specialized models**:
-   - *Function*: Produces controlled, domain-specialized fine-tuned models for instruction following, mathematics, multilingual understanding, code, and safety.
-   - *Mechanism*: Eight base models (Llama-3.2-3B/3.1-8B and Gemma-2-2B/9B) are each fine-tuned on five domains (40 models total). Training data includes TULU-3, DART-Math, Aya (65 languages), Magicoder, and WildGuardMix, primarily via SFT; GRPO reinforcement learning is additionally applied to 8B/9B models for the mathematics domain.
-   - *Design Motivation*: Unified fine-tuning pipelines and data scales eliminate confounding variables introduced by training differences, ensuring fair and reproducible comparisons across merging methods; the diversity of five domains enables assessment of merging methods' generalization across capability dimensions.
+    - *Function*: Produces controlled, domain-specialized fine-tuned models for instruction following, mathematics, multilingual understanding, code, and safety.
+    - *Mechanism*: Eight base models (Llama-3.2-3B/3.1-8B and Gemma-2-2B/9B) are each fine-tuned on five domains (40 models total). Training data includes TULU-3, DART-Math, Aya (65 languages), Magicoder, and WildGuardMix, primarily via SFT; GRPO reinforcement learning is additionally applied to 8B/9B models for the mathematics domain.
+    - *Design Motivation*: Unified fine-tuning pipelines and data scales eliminate confounding variables introduced by training differences, ensuring fair and reproducible comparisons across merging methods; the diversity of five domains enables assessment of merging methods' generalization across capability dimensions.
 
 ### Loss & Training
 
@@ -102,8 +102,8 @@ Normalized multi-task performance (relative to specialized models; 1.0 indicates
 
 - Multi-task learning (MTL) models perform well in-domain but exhibit significant degradation in out-of-domain generalization.
 - Merged models better preserve base model knowledge due to:
-  - Smaller scaling coefficients keeping merged models closer to the base model.
-  - Sparsification constraints limiting parameter updates to a small subset.
+    - Smaller scaling coefficients keeping merged models closer to the base model.
+    - Sparsification constraints limiting parameter updates to a small subset.
 - The sparsification strategies of TIES and Localize-and-Stitch are particularly effective at reducing forgetting.
 - DARE's random dropout mechanism is less effective at preserving knowledge.
 

@@ -18,8 +18,8 @@ content_hash: 5a15072a7e3b3bf4
 # SafePTR: Token-Level Jailbreak Defense in Multimodal LLMs via Prune-then-Restore Mechanism
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.01513](https://arxiv.org/abs/2507.01513)
-**Code**: [GitHub](https://github.com/BT-C/SafePTR)
+**arXiv**: [2507.01513](https://arxiv.org/abs/2507.01513)  
+**Code**: [GitHub](https://github.com/BT-C/SafePTR)  
 **Area**: LLM Alignment
 **Keywords**: multimodal safety, jailbreak defense, token pruning, MLLM, training-free defense
 

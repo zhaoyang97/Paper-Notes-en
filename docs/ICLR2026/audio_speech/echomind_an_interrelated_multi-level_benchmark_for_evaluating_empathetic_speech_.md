@@ -18,8 +18,8 @@ content_hash: 0ace4b2877e121b4
 # EchoMind: An Interrelated Multi-level Benchmark for Evaluating Empathetic Speech Language Models
 
 **Conference**: ICLR2026
-**arXiv**: [2510.22758](https://arxiv.org/abs/2510.22758)
-**Code**: [Project Page](https://hlt-cuhksz.github.io/EchoMind/)
+**arXiv**: [2510.22758](https://arxiv.org/abs/2510.22758)  
+**Code**: [Project Page](https://hlt-cuhksz.github.io/EchoMind/)  
 **Area**: Audio & Speech
 **Keywords**: Speech Language Model, Empathetic Dialogue, benchmark, Vocal Cue, Evaluation
 

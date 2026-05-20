@@ -18,8 +18,8 @@ content_hash: db3d5d2332fd5cdb
 # ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.14176](https://arxiv.org/abs/2510.14176)
-**Code**: See paper
+**arXiv**: [2510.14176](https://arxiv.org/abs/2510.14176)  
+**Code**: See paper  
 **Area**: Reinforcement Learning / LLM Agent
 **Keywords**: Reward machines, foundation models, compositional RL, language-aligned automata, zero-shot generalization
 

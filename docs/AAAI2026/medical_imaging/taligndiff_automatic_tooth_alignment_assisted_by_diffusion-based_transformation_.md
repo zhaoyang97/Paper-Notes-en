@@ -18,8 +18,8 @@ content_hash: 4a90a43decaaa873
 # TAlignDiff: Automatic Tooth Alignment assisted by Diffusion-based Transformation Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04565](https://arxiv.org/abs/2508.04565)
-**Code**: Unavailable (to be released upon acceptance)
+**arXiv**: [2508.04565](https://arxiv.org/abs/2508.04565)  
+**Code**: Unavailable (to be released upon acceptance)  
 **Area**: Medical Imaging / 3D Vision
 **Keywords**: Tooth alignment, orthodontic treatment, diffusion model, transformation matrix, point cloud regression
 

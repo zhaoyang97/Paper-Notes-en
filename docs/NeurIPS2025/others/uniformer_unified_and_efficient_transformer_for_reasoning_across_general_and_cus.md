@@ -17,8 +17,8 @@ content_hash: 863ecd8140168406
 # UniFormer: Unified and Efficient Transformer for Reasoning Across General and Custom Computing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.08135](https://arxiv.org/abs/2511.08135)
-**Code**: None
+**arXiv**: [2511.08135](https://arxiv.org/abs/2511.08135)  
+**Code**: None  
 **Area**: Efficient Transformer, Hardware Acceleration, Heterogeneous Computing
 **Keywords**: Efficient Attention, GPU-FPGA Cross-Platform, Matrix Multiplication, Triton Kernel, Dual-Branch Attention
 

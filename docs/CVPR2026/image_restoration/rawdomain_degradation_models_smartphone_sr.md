@@ -19,8 +19,8 @@ content_hash: fa9020b1fd709adc
 # RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12493](https://arxiv.org/abs/2603.12493)
-**Code**: N/A
+**arXiv**: [2603.12493](https://arxiv.org/abs/2603.12493)  
+**Code**: N/A  
 **Area**: Image Super-Resolution / Smartphone Photography
 **Keywords**: super-resolution, RAW domain, degradation modeling, unprocessing, smartphone camera, device-specific calibration
 
@@ -51,19 +51,19 @@ The overall pipeline consists of three stages: (1) **Device calibration** — ca
 ### Key Designs
 
 1. **Device-Specific Optical Blur Calibration (PSF Calibration)**
-   - **Function**: Acquire the true point spread function of the target smartphone lens at different spatial positions.
-   - **Mechanism**: Standard calibration targets (e.g., slanted edges or point sources) are captured under controlled conditions, and the per-location PSF is recovered by analyzing the resulting images. Unlike generic isotropic Gaussian blur, real smartphone lens PSFs are spatially varying, asymmetric, and dependent on aperture and focal length. The calibrated PSF library is used during unprocessing to apply realistic spatially varying blur to HR images.
-   - **Design Motivation**: Generic Gaussian or uniform blur kernels differ substantially from real lens PSFs — true PSFs typically exhibit greater aberration, chromatic aberration, and astigmatism toward the image periphery, all of which directly shape the degradation patterns an SR model must learn.
+    - **Function**: Acquire the true point spread function of the target smartphone lens at different spatial positions.
+    - **Mechanism**: Standard calibration targets (e.g., slanted edges or point sources) are captured under controlled conditions, and the per-location PSF is recovered by analyzing the resulting images. Unlike generic isotropic Gaussian blur, real smartphone lens PSFs are spatially varying, asymmetric, and dependent on aperture and focal length. The calibrated PSF library is used during unprocessing to apply realistic spatially varying blur to HR images.
+    - **Design Motivation**: Generic Gaussian or uniform blur kernels differ substantially from real lens PSFs — true PSFs typically exhibit greater aberration, chromatic aberration, and astigmatism toward the image periphery, all of which directly shape the degradation patterns an SR model must learn.
 
 2. **Device-Specific Noise Calibration**
-   - **Function**: Characterize the target sensor's noise properties across different ISO and exposure settings.
-   - **Mechanism**: RAW sensor noise is primarily composed of shot noise (signal-dependent, Poisson-distributed) and read noise (signal-independent, Gaussian-distributed). By capturing uniformly illuminated color charts at varying exposures and fitting noise-signal relationship curves, device-specific noise parameters are obtained. During synthesis, signal-dependent mixed noise is injected according to pixel intensity: $n \sim \mathcal{N}(0, \sigma_{\text{read}}^2 + \sigma_{\text{shot}}^2 \cdot I)$.
-   - **Design Motivation**: Generic noise models (e.g., fixed-variance Gaussian or unified Poisson-Gaussian models) fail to accurately capture the noise characteristics of a specific sensor, especially under low-light high-ISO conditions.
+    - **Function**: Characterize the target sensor's noise properties across different ISO and exposure settings.
+    - **Mechanism**: RAW sensor noise is primarily composed of shot noise (signal-dependent, Poisson-distributed) and read noise (signal-independent, Gaussian-distributed). By capturing uniformly illuminated color charts at varying exposures and fitting noise-signal relationship curves, device-specific noise parameters are obtained. During synthesis, signal-dependent mixed noise is injected according to pixel intensity: $n \sim \mathcal{N}(0, \sigma_{\text{read}}^2 + \sigma_{\text{shot}}^2 \cdot I)$.
+    - **Design Motivation**: Generic noise models (e.g., fixed-variance Gaussian or unified Poisson-Gaussian models) fail to accurately capture the noise characteristics of a specific sensor, especially under low-light high-ISO conditions.
 
 3. **Unprocessing Pipeline Design**
-   - **Function**: Precisely invert high-quality rendered images into low-resolution RAW-domain images of the target device.
-   - **Mechanism**: The inverse ISP pipeline includes: (1) inverse tone mapping from sRGB back to linear RGB; (2) inverse white balance to undo device-specific color temperature correction; (3) inverse color correction matrix (CCM) to transform to the sensor's native color space; (4) inverse demosaicing to convert the full-color image back to a Bayer-pattern CFA; (5) downsampling to LR resolution; (6) applying the calibrated spatially varying PSF blur; and (7) adding calibrated signal-dependent noise.
-   - **Design Motivation**: Each step uses device-specific parameters (CCM, WB gains, Bayer pattern, etc.), ensuring the synthetic data closely approximates the true RAW output of the target device.
+    - **Function**: Precisely invert high-quality rendered images into low-resolution RAW-domain images of the target device.
+    - **Mechanism**: The inverse ISP pipeline includes: (1) inverse tone mapping from sRGB back to linear RGB; (2) inverse white balance to undo device-specific color temperature correction; (3) inverse color correction matrix (CCM) to transform to the sensor's native color space; (4) inverse demosaicing to convert the full-color image back to a Bayer-pattern CFA; (5) downsampling to LR resolution; (6) applying the calibrated spatially varying PSF blur; and (7) adding calibrated signal-dependent noise.
+    - **Design Motivation**: Each step uses device-specific parameters (CCM, WB gains, Bayer pattern, etc.), ensuring the synthetic data closely approximates the true RAW output of the target device.
 
 ### Loss & Training
 

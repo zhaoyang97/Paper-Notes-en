@@ -18,8 +18,8 @@ content_hash: ba032644dce40b81
 # Learning with Calibration: Exploring Test-Time Computing of Spatio-Temporal Forecasting
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2506.00635](https://arxiv.org/abs/2506.00635)
-**Code**: [https://github.com/Onedean/ST-TTC](https://github.com/Onedean/ST-TTC) (Open Source)
+**arXiv**: [2506.00635](https://arxiv.org/abs/2506.00635)  
+**Code**: [https://github.com/Onedean/ST-TTC](https://github.com/Onedean/ST-TTC) (Open Source)  
 **Area**: Time Series
 **Keywords**: Spatio-temporal forecasting, test-time computing, frequency-domain calibration, non-stationarity, online adaptation
 

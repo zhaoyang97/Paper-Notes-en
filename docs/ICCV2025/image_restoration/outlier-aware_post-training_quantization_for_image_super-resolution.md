@@ -18,8 +18,8 @@ content_hash: b60e1297bcadf01b
 # Outlier-Aware Post-Training Quantization for Image Super-Resolution
 
 **Conference**: ICCV 2025
-**arXiv**: [2511.00682](https://arxiv.org/abs/2511.00682)
-**Code**: N/A
+**arXiv**: [2511.00682](https://arxiv.org/abs/2511.00682)  
+**Code**: N/A  
 **Area**: Image Super-Resolution / Model Quantization
 **Keywords**: Post-training quantization, image super-resolution, activation outliers, piecewise linear quantization, sensitivity-aware
 

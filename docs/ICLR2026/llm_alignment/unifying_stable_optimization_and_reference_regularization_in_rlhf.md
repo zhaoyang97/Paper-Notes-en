@@ -18,8 +18,8 @@ content_hash: 0c715b5c3f7ae3ef
 # Unifying Stable Optimization and Reference Regularization in RLHF (DAR)
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.11523](https://arxiv.org/abs/2602.11523)
-**Code**: [https://github.com/tmllab/2026_ICLR_DAR](https://github.com/tmllab/2026_ICLR_DAR)
+**arXiv**: [2602.11523](https://arxiv.org/abs/2602.11523)  
+**Code**: [https://github.com/tmllab/2026_ICLR_DAR](https://github.com/tmllab/2026_ICLR_DAR)  
 **Area**: Alignment / RLHF
 **Keywords**: RLHF, dual KL regularization, advantage regression, reference policy interpolation, reward hacking
 

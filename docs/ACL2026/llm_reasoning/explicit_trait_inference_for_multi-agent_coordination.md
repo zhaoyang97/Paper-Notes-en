@@ -18,8 +18,8 @@ content_hash: 0cbc653a1fbdf55a
 # Explicit Trait Inference for Multi-Agent Coordination
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19278](https://arxiv.org/abs/2604.19278)
-**Code**: None
+**arXiv**: [2604.19278](https://arxiv.org/abs/2604.19278)  
+**Code**: None  
 **Area**: LLM Multi-Agent Systems / Social Reasoning
 **Keywords**: Multi-agent coordination, trait inference, warmth-competence dimensions, social cognition, game theory
 

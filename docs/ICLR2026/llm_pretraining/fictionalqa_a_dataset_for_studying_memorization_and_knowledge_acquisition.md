@@ -18,8 +18,8 @@ content_hash: d32f609acc53efdc
 # FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.05639](https://arxiv.org/abs/2506.05639)
-**Code**: [https://github.com/jwkirchenbauer/fictionalqa](https://github.com/jwkirchenbauer/fictionalqa)
+**arXiv**: [2506.05639](https://arxiv.org/abs/2506.05639)  
+**Code**: [https://github.com/jwkirchenbauer/fictionalqa](https://github.com/jwkirchenbauer/fictionalqa)  
 **Area**: LLM Pre-training
 **Keywords**: Memorization, Knowledge Acquisition, synthetic data, LLM Training Dynamics, Factual Memorization
 

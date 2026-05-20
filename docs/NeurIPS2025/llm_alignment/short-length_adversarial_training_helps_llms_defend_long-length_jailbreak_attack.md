@@ -18,8 +18,8 @@ content_hash: ee2dbf5f186be6cc
 # Short-length Adversarial Training Helps LLMs Defend Long-length Jailbreak Attacks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.04204](https://arxiv.org/abs/2502.04204)
-**Code**: [GitHub](https://github.com/fshp971/adv-icl)
+**arXiv**: [2502.04204](https://arxiv.org/abs/2502.04204)  
+**Code**: [GitHub](https://github.com/fshp971/adv-icl)  
 **Area**: AI Safety / LLM Alignment / Adversarial Training
 **Keywords**: jailbreak defense, adversarial training, length scaling, ICL theory, safety alignment
 
@@ -52,29 +52,29 @@ The paper consists of two components: theoretical analysis and empirical validat
 
 1. **ICL Suffix Adversarial Attack (New Definition)**:
 
-   - **Function**: Maps LLM suffix jailbreak attacks onto ICL theory by modeling adversarial suffixes as perturbed in-context examples appended after a clean prompt.
-   - **Mechanism**: Given an ICL input $E_\tau \in \mathbb{R}^{(d+1) \times (N+1)}$, $M$ adversarial suffix examples are appended to form $E^{\text{adv}}_{\tau,M}$. Each suffix sample $x^{\text{sfx}}_i$ receives a perturbation $\delta_i$ constrained by $\|\delta_i\|_2 \leq \epsilon$.
-   - **Distinction from Anwar et al. (2024)**: Their formulation allows unbounded perturbations over any in-context example in the full real space; this paper restricts perturbations to a bounded region (modeling the finiteness of the token space) and applies perturbations only to the suffix portion (modeling suffix attacks).
+    - **Function**: Maps LLM suffix jailbreak attacks onto ICL theory by modeling adversarial suffixes as perturbed in-context examples appended after a clean prompt.
+    - **Mechanism**: Given an ICL input $E_\tau \in \mathbb{R}^{(d+1) \times (N+1)}$, $M$ adversarial suffix examples are appended to form $E^{\text{adv}}_{\tau,M}$. Each suffix sample $x^{\text{sfx}}_i$ receives a perturbation $\delta_i$ constrained by $\|\delta_i\|_2 \leq \epsilon$.
+    - **Distinction from Anwar et al. (2024)**: Their formulation allows unbounded perturbations over any in-context example in the full real space; this paper restricts perturbations to a bounded region (modeling the finiteness of the token space) and applies perturbations only to the suffix portion (modeling suffix attacks).
 
 2. **Robust Generalization Bound (Core Theoretical Contribution)**:
 
-   - **Function**: Proves an upper bound on the generalization error of an adversarially trained LSA model when facing adversarial suffixes of length $M_{\text{test}}$.
-   - **Core Result (Theorem 2)**: After adversarial training with suffix length $M_{\text{train}}$, under test-time attacks of length $M_{\text{test}}$:
+    - **Function**: Proves an upper bound on the generalization error of an adversarially trained LSA model when facing adversarial suffixes of length $M_{\text{test}}$.
+    - **Core Result (Theorem 2)**: After adversarial training with suffix length $M_{\text{train}}$, under test-time attacks of length $M_{\text{test}}$:
    $$\mathcal{R}^{\text{adv}}(\theta^*, M_{\text{test}}) \leq \mathcal{O}(d) + \mathcal{O}(d^2/N) + \mathcal{O}\left(\frac{N^2 \cdot M_{\text{test}}^2}{M_{\text{train}}^4}\right)$$
    - **Key Insight**: The third term satisfies $M_{\text{test}}^2 / M_{\text{train}}^4 = (\sqrt{M_{\text{test}}} / M_{\text{train}})^4$. When $M_{\text{train}} = \Theta(\sqrt{M_{\text{test}}})$, this term becomes $\mathcal{O}(N^2)$, independent of $M_{\text{test}}$—demonstrating that square-root-length training suffices.
    - **Design Motivation**: Overturns the intuition that equal-length training is necessary.
 
 3. **Training Dynamics Analysis**:
 
-   - **Function**: Analyzes the gradient flow convergence behavior of ICL adversarial training.
-   - **Mechanism**: The original AT loss $\mathcal{L}^{\text{adv}}(\theta)$ is upper-bounded by a proxy loss $\tilde{\mathcal{L}}^{\text{adv}}(\theta) = \sum_{i=1}^4 \ell_i(\theta)$ amenable to closed-form analysis. The four terms respectively correspond to: (1) clean prediction error; (2) label noise error; (3) adversarial perturbation effect; (4) cross terms. The proxy loss is shown to converge under gradient flow to an $\mathcal{O}(\sigma)$ neighborhood (where $\sigma$ is the initialization scale), after which the robust generalization properties of the convergence point are analyzed.
+    - **Function**: Analyzes the gradient flow convergence behavior of ICL adversarial training.
+    - **Mechanism**: The original AT loss $\mathcal{L}^{\text{adv}}(\theta)$ is upper-bounded by a proxy loss $\tilde{\mathcal{L}}^{\text{adv}}(\theta) = \sum_{i=1}^4 \ell_i(\theta)$ amenable to closed-form analysis. The four terms respectively correspond to: (1) clean prediction error; (2) label noise error; (3) adversarial perturbation effect; (4) cross terms. The proxy loss is shown to converge under gradient flow to an $\mathcal{O}(\sigma)$ neighborhood (where $\sigma$ is the initialization scale), after which the robust generalization properties of the convergence point are analyzed.
 
 4. **Bridging ICL AT to LLM AT**:
 
-   - In-context example $x_i$ $\leftrightarrow$ one-hot encoding of LLM tokens
-   - In-context label $y_i$ $\leftrightarrow$ next-token prediction label
-   - Suffix perturbation $\delta_i$ ($\ell_2$ ball) $\leftrightarrow$ token substitution ($\ell_2$ distance between one-hot encodings equals $\sqrt{2}$)
-   - ICL AT minimax objective $\leftrightarrow$ LLM AT objective $\alpha \mathcal{L}_{\text{adv}} + (1-\alpha)\mathcal{L}_{\text{utility}}$
+    - In-context example $x_i$ $\leftrightarrow$ one-hot encoding of LLM tokens
+    - In-context label $y_i$ $\leftrightarrow$ next-token prediction label
+    - Suffix perturbation $\delta_i$ ($\ell_2$ ball) $\leftrightarrow$ token substitution ($\ell_2$ distance between one-hot encodings equals $\sqrt{2}$)
+    - ICL AT minimax objective $\leftrightarrow$ LLM AT objective $\alpha \mathcal{L}_{\text{adv}} + (1-\alpha)\mathcal{L}_{\text{utility}}$
 
 ### Loss & Training
 - **LLM AT Loss**: $\min_\theta \alpha \mathcal{L}_{\text{adv}}(\theta, M, D^{(h)}) + (1-\alpha)\mathcal{L}_{\text{utility}}(\theta, D^{(u)})$

@@ -18,9 +18,9 @@ content_hash: dac323c0aa941093
 # Mass Concept Erasure in Diffusion Models with Concept Hierarchy
 
 **Conference**: AAAI2026
-**arXiv**: [2601.03305](https://arxiv.org/abs/2601.03305)
+**arXiv**: [2601.03305](https://arxiv.org/abs/2601.03305)  
 **Authors**: Jiahang Tu, Ye Li, Yiming Wu, Hanbin Zhao, Chao Zhang, Hui Qian (Zhejiang University)
-**Code**: [GitHub](https://github.com/TtuHamg/SuPLoRA)
+**Code**: [GitHub](https://github.com/TtuHamg/SuPLoRA)  
 **Area**: Image Generation
 **Keywords**: Concept Erasure, Diffusion Models, LoRA, Concept Hierarchy, Safe Generation
 

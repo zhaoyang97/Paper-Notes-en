@@ -18,8 +18,8 @@ content_hash: 583acda1daddcff9
 # GeoExplorer: Active Geo-Localization with Curiosity-Driven Exploration
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00152](https://arxiv.org/abs/2508.00152)
-**Code**: [Project Page](https://limirs.github.io/GeoExplorer/)
+**arXiv**: [2508.00152](https://arxiv.org/abs/2508.00152)  
+**Code**: [Project Page](https://limirs.github.io/GeoExplorer/)  
 **Area**: Remote Sensing
 **Keywords**: Active Geo-Localization, Curiosity-Driven Exploration, Reinforcement Learning, UAV Navigation, Multi-Modal Target
 

@@ -18,8 +18,8 @@ content_hash: 2d9c81b29c718c42
 # FreeCus: Free Lunch Subject-driven Customization in Diffusion Transformers
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.15249](https://arxiv.org/abs/2507.15249)
-**Code**: [https://github.com/Monalissaa/FreeCus](https://github.com/Monalissaa/FreeCus)
+**arXiv**: [2507.15249](https://arxiv.org/abs/2507.15249)  
+**Code**: [https://github.com/Monalissaa/FreeCus](https://github.com/Monalissaa/FreeCus)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Subject-driven customization, Diffusion Transformer, Training-free, Attention sharing, Zero-shot generation
 

@@ -19,8 +19,8 @@ content_hash: 4c8eca1cb5ab44d6
 # FICGen: Frequency-Inspired Contextual Disentanglement for Layout-driven Degraded Image Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.01107](https://arxiv.org/abs/2509.01107)
-**Code**: None (not mentioned)
+**arXiv**: [2509.01107](https://arxiv.org/abs/2509.01107)  
+**Code**: None (not mentioned)  
 **Area**: Image Generation / Layout-to-Image / Degraded Scene Synthesis
 **Keywords**: Layout-to-Image, Degraded Image Generation, Frequency Disentanglement, Low-light, Remote Sensing, Underwater
 

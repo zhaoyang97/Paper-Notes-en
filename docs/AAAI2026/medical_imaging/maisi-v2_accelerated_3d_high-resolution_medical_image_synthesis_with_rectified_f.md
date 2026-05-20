@@ -18,8 +18,8 @@ content_hash: 648b1066831b61a8
 # MAISI-v2: Accelerated 3D High-Resolution Medical Image Synthesis with Rectified Flow and Region-specific Contrastive Loss
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.05772](https://arxiv.org/abs/2508.05772)
-**Code**: [GitHub](https://github.com/NVIDIA-Medtech/NV-Generate-CTMR/tree/main)
+**arXiv**: [2508.05772](https://arxiv.org/abs/2508.05772)  
+**Code**: [GitHub](https://github.com/NVIDIA-Medtech/NV-Generate-CTMR/tree/main)  
 **Area**: Medical Image Synthesis / Diffusion Models
 **Keywords**: 3D Medical Image Synthesis, Rectified Flow, Region-specific Contrastive Loss, Latent Diffusion Model, Data Augmentation
 

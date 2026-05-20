@@ -18,8 +18,8 @@ content_hash: 29679a8951a29748
 # Spectral Perturbation Bounds for Low-Rank Approximation with Applications to Privacy
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25670](https://arxiv.org/abs/2510.25670)
-**Code**: None
+**arXiv**: [2510.25670](https://arxiv.org/abs/2510.25670)  
+**Code**: None  
 **Area**: AI Safety / Differential Privacy
 **Keywords**: low-rank approximation, spectral norm perturbation bounds, differentially private PCA, contour bootstrapping, matrix perturbation theory
 

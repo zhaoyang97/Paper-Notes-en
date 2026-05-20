@@ -18,8 +18,8 @@ content_hash: 47360727d9fbdc0f
 # Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.20975](https://arxiv.org/abs/2509.20975)
-**Code**: [Code](https://code.roche.com/braid/projects/leon)
+**arXiv**: [2509.20975](https://arxiv.org/abs/2509.20975)  
+**Code**: [Code](https://code.roche.com/braid/projects/leon)  
 **Area**: Medical Imaging / Personalized Medicine
 **Keywords**: LLM-based optimization, personalized medicine, black-box optimization, distribution shift, prior knowledge
 
@@ -57,9 +57,9 @@ $$\arg\max_{q(x)} \mathbb{E}_{x \sim q(x)}[\hat{f}(x;z)] \quad \text{s.t.} \quad
 
 - **Function**: Derives a tractable solution to the constrained optimization problem.
 - **Mechanism**:
-  - **Lemma 4.2 (Intra-class Collapse)**: The optimal distribution $q^*$ concentrates within each equivalence class on the best design $x_i^* = \arg\max_{x \in [x]_i} (\hat{f}(x;z) + \lambda c^*(x))$.
-  - **Lemma 4.3 (Probabilistic Sampling)**: Equivalence class probabilities satisfy $\bar{q}_i \propto \exp[\mu(\hat{f}(x_i^*;z) + \lambda c^*(x_i^*))]$.
-  - The two Lagrange multipliers $\lambda$ (source critic certainty) and $\mu$ (LLM certainty) control the respective constraints.
+    - **Lemma 4.2 (Intra-class Collapse)**: The optimal distribution $q^*$ concentrates within each equivalence class on the best design $x_i^* = \arg\max_{x \in [x]_i} (\hat{f}(x;z) + \lambda c^*(x))$.
+    - **Lemma 4.3 (Probabilistic Sampling)**: Equivalence class probabilities satisfy $\bar{q}_i \propto \exp[\mu(\hat{f}(x_i^*;z) + \lambda c^*(x_i^*))]$.
+    - The two Lagrange multipliers $\lambda$ (source critic certainty) and $\mu$ (LLM certainty) control the respective constraints.
 
 #### 3. Dynamic Certainty Parameter Estimation
 

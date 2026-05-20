@@ -19,8 +19,8 @@ content_hash: 79985b582be5b457
 # One Model, Many Budgets: Elastic Latent Interfaces for Diffusion Transformers
 
 **Conference**: CVPR2026
-**arXiv**: [2603.12245](https://arxiv.org/abs/2603.12245)
-**Code**: [snap-research/elit](https://snap-research.github.io/elit)
+**arXiv**: [2603.12245](https://arxiv.org/abs/2603.12245)  
+**Code**: [snap-research/elit](https://snap-research.github.io/elit)  
 **Area**: Image Generation
 **Keywords**: Diffusion Transformer, elastic inference, latent interface, adaptive computation, multi-budget model, cross-attention
 

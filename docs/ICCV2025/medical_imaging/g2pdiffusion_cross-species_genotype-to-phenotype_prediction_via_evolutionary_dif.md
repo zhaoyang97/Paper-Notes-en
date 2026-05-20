@@ -18,8 +18,8 @@ content_hash: beeccc00ee4d6a94
 # G2PDiffusion: Cross-Species Genotype-to-Phenotype Prediction via Evolutionary Diffusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.04684](https://arxiv.org/abs/2502.04684)
-**Code**: N/A
+**arXiv**: [2502.04684](https://arxiv.org/abs/2502.04684)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: genotype-to-phenotype, diffusion model, multiple sequence alignment, cross-species, evolutionary biology
 

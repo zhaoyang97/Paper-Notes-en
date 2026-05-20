@@ -17,8 +17,8 @@ content_hash: 045ba11d1975d836
 # On the Impact of the Utility in Semivalue-based Data Valuation
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.06574](https://arxiv.org/abs/2502.06574)
-**Code**: [https://github.com/taminemelissa/utility-impact](https://github.com/taminemelissa/utility-impact)
+**arXiv**: [2502.06574](https://arxiv.org/abs/2502.06574)  
+**Code**: [https://github.com/taminemelissa/utility-impact](https://github.com/taminemelissa/utility-impact)  
 **Area**: Data Valuation / AI Theory
 **Keywords**: Data Valuation, Semivalue, Shapley Value, Banzhaf Value, Robustness
 

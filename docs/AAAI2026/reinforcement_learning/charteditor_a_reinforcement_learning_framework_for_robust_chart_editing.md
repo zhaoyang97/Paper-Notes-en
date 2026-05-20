@@ -18,8 +18,8 @@ content_hash: 943fe2b4e0feabaa
 # ChartEditor: A Reinforcement Learning Framework for Robust Chart Editing
 
 **Conference**: AAAI2026
-**arXiv**: [2511.15266](https://arxiv.org/abs/2511.15266)
-**Code**: To be confirmed
+**arXiv**: [2511.15266](https://arxiv.org/abs/2511.15266)  
+**Code**: To be confirmed  
 **Area**: Reinforcement Learning
 **Keywords**: chart editing, reinforcement-learning, GRPO, rendering reward, benchmark
 

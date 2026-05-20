@@ -18,8 +18,8 @@ content_hash: 62c2850198d21963
 # Location Not Found: Exposing Implicit Local and Global Biases in Multilingual LLMs
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19292](https://arxiv.org/abs/2604.19292)
-**Code**: [https://github.com/google-research-datasets/locqa/](https://github.com/google-research-datasets/locqa/)
+**arXiv**: [2604.19292](https://arxiv.org/abs/2604.19292)  
+**Code**: [https://github.com/google-research-datasets/locqa/](https://github.com/google-research-datasets/locqa/)  
 **Area**: Multilingual / Bias Analysis
 **Keywords**: Multilingual LLM, Geographic Bias, US-centrism, Cultural Localization, Implicit Bias
 

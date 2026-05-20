@@ -18,8 +18,8 @@ content_hash: 8e5ec73f972c9905
 # From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.17439](https://arxiv.org/abs/2510.17439)
-**Code**: [Available](https://falcon-vla.github.io/)
+**arXiv**: [2510.17439](https://arxiv.org/abs/2510.17439)  
+**Code**: [Available](https://falcon-vla.github.io/)  
 **Area**: Robotics
 **Keywords**: VLA models, 3D spatial understanding, spatial foundation models, modality transferability, robotic manipulation
 

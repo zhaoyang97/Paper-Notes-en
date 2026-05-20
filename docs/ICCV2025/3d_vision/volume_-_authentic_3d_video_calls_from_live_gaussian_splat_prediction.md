@@ -19,7 +19,7 @@ content_hash: 4e5b9fbef0e86173
 # VoluMe: Authentic 3D Video Calls from Live Gaussian Splat Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.21311](https://arxiv.org/abs/2507.21311)
+**arXiv**: [2507.21311](https://arxiv.org/abs/2507.21311)  
 **Area**: 3D Vision
 **Keywords**: 3D video calling, Gaussian Splatting, monocular reconstruction, real-time 3D reconstruction, digital humans, video conferencing
 

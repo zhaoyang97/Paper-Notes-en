@@ -17,8 +17,8 @@ content_hash: 4cac7cd45df5fd57
 # On the Design of KL-Regularized Policy Gradient Algorithms for LLM Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.17508](https://arxiv.org/abs/2505.17508)
-**Code**: [https://github.com/complex-reasoning/RPG](https://github.com/complex-reasoning/RPG)
+**arXiv**: [2505.17508](https://arxiv.org/abs/2505.17508)  
+**Code**: [https://github.com/complex-reasoning/RPG](https://github.com/complex-reasoning/RPG)  
 **Area**: LLM Reasoning / Reinforcement Learning
 **Keywords**: KL Regularization, Policy Gradient, LLM Reasoning, GRPO, REINFORCE
 

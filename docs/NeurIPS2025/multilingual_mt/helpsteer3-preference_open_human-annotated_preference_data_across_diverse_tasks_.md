@@ -20,8 +20,8 @@ content_hash: d1c7feba3668dcac
 # HelpSteer3-Preference: Open Human-Annotated Preference Data across Diverse Tasks and Languages
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11475](https://arxiv.org/abs/2505.11475)
-**Code**: [https://huggingface.co/datasets/nvidia/HelpSteer3](https://huggingface.co/datasets/nvidia/HelpSteer3)
+**arXiv**: [2505.11475](https://arxiv.org/abs/2505.11475)  
+**Code**: [https://huggingface.co/datasets/nvidia/HelpSteer3](https://huggingface.co/datasets/nvidia/HelpSteer3)  
 **Area**: Multilingual Translation
 **Keywords**: Preference Dataset, Human Annotation, STEM, Code, Multilingual, Reward Models, CC-BY-4.0
 

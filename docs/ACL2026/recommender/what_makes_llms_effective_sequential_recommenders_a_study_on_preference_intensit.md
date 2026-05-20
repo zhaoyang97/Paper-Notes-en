@@ -18,8 +18,8 @@ content_hash: da0fa92ac472b864
 # What Makes LLMs Effective Sequential Recommenders? A Study on Preference Intensity and Temporal Context
 
 **Conference**: ACL 2026
-**arXiv**: [2506.02261](https://arxiv.org/abs/2506.02261)
-**Code**: [https://github.com/zyouyang/RecPO](https://github.com/zyouyang/RecPO)
+**arXiv**: [2506.02261](https://arxiv.org/abs/2506.02261)  
+**Code**: [https://github.com/zyouyang/RecPO](https://github.com/zyouyang/RecPO)  
 **Area**: Recommender Systems
 **Keywords**: Sequential Recommendation, Preference Alignment, Preference Intensity, Temporal Context, DPO
 

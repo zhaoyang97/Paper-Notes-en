@@ -19,8 +19,8 @@ content_hash: 1a2c98645c7eb158
 # ACPV-Net: All-Class Polygonal Vectorization for Seamless Vector Map Generation from Aerial Imagery
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.16616](https://arxiv.org/abs/2603.16616)
-**Code**: [HeinzJiao/ACPV-Net](https://github.com/HeinzJiao/ACPV-Net)
+**arXiv**: [2603.16616](https://arxiv.org/abs/2603.16616)  
+**Code**: [HeinzJiao/ACPV-Net](https://github.com/HeinzJiao/ACPV-Net)  
 **Area**: Remote Sensing
 **Keywords**: Polygonal Vectorization, Vector Map Generation, Planar Partition, Conditional Diffusion, Topological Consistency, Aerial Imagery
 

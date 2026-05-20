@@ -17,8 +17,8 @@ content_hash: 0c3d78e37774e655
 # CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.18753](https://arxiv.org/abs/2508.18753)
-**Code**: [github.com/ChelsieLei/CrossHOI-Bench](https://github.com/ChelsieLei/CrossHOI-Bench)
+**arXiv**: [2508.18753](https://arxiv.org/abs/2508.18753)  
+**Code**: [github.com/ChelsieLei/CrossHOI-Bench](https://github.com/ChelsieLei/CrossHOI-Bench)  
 **Area**: Multimodal VLM / Human-Object Interaction Detection
 **Keywords**: HOI Detection, VLM Evaluation, Multiple-Choice Benchmark, Cross-Paradigm Comparison
 

@@ -18,8 +18,8 @@ content_hash: a82970ee4d07d18e
 # The Blind Spot of Adaptation: Quantifying and Mitigating Forgetting in Fine-tuned Driving Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04857](https://arxiv.org/abs/2604.04857)
-**Code**: [FidelityDrivingBench](https://github.com/FidelityDrivingBench)
+**arXiv**: [2604.04857](https://arxiv.org/abs/2604.04857)  
+**Code**: [FidelityDrivingBench](https://github.com/FidelityDrivingBench)  
 **Area**: LLM Safety
 **Keywords**: catastrophic forgetting, VLM, autonomous driving, benchmark, expert adapter
 

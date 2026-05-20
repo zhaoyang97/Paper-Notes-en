@@ -18,8 +18,8 @@ content_hash: 31ee3cc6e0fab0ef
 # Text-guided Fine-Grained Video Anomaly Understanding
 
 **Conference**: CVPR2026
-**arXiv**: [2511.00524](https://arxiv.org/abs/2511.00524)
-**Code**: [github.com/momiji-bit/T-VAU](https://github.com/momiji-bit/T-VAU)
+**arXiv**: [2511.00524](https://arxiv.org/abs/2511.00524)  
+**Code**: [github.com/momiji-bit/T-VAU](https://github.com/momiji-bit/T-VAU)  
 **Area**: Interpretability
 **Keywords**: Video Anomaly Detection, Anomaly Heatmap, Region-Aware Encoder, Large Vision-Language Model, Multi-turn Dialogue
 

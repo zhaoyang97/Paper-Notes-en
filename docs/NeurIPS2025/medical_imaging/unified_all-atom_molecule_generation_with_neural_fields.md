@@ -18,8 +18,8 @@ content_hash: 2cee232ba156b539
 # Unified All-Atom Molecule Generation with Neural Fields
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.15906](https://arxiv.org/abs/2511.15906)
-**Code**: [GitHub](https://github.com/prescient-design/funcbind)
+**arXiv**: [2511.15906](https://arxiv.org/abs/2511.15906)  
+**Code**: [GitHub](https://github.com/prescient-design/funcbind)  
 **Area**: Medical Imaging / Drug Design
 **Keywords**: Neural fields, molecule generation, all-atom representation, structure-based drug design, diffusion models
 

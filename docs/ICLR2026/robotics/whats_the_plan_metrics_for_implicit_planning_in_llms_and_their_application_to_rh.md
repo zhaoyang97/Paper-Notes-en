@@ -18,8 +18,8 @@ content_hash: 2ef9bbbd9c7e555c
 # What's the Plan? Metrics for Implicit Planning in LLMs and Their Application to Rhyme Generation and Question Answering
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20164](https://arxiv.org/abs/2601.20164)
-**Code**: Available (with supplementary material)
+**arXiv**: [2601.20164](https://arxiv.org/abs/2601.20164)  
+**Code**: Available (with supplementary material)  
 **Area**: Robotics
 **Keywords**: implicit planning, forward planning, backward planning, activation steering, rhyme generation
 
@@ -48,19 +48,19 @@ The paper defines forward planning (early positions encoding future target attri
 ### Key Designs
 
 1. **Mean Activation Difference Steering**
-   - **Function**: Extracts and manipulates planning representations in hidden activations.
-   - **Mechanism**: Computes the mean difference of hidden activations at a specific position (final word / newline token / question mark) between two prompt categories as the steering vector $\mathbf{s}_{C_1 \to C_2}^{(l,i)} = m \cdot (\overline{\mathbf{x}_i^{(l)}}_{C_1} - \overline{\mathbf{x}_i^{(l)}}_{C_2})$, with $m=1.5$. During generation, the steering vector is added to the residual stream at a single token position only.
-   - **Design Motivation**: Orders of magnitude simpler than CLT and scalable to arbitrary models—requiring only forward passes to extract activations and compute mean differences, with no training needed.
+    - **Function**: Extracts and manipulates planning representations in hidden activations.
+    - **Mechanism**: Computes the mean difference of hidden activations at a specific position (final word / newline token / question mark) between two prompt categories as the steering vector $\mathbf{s}_{C_1 \to C_2}^{(l,i)} = m \cdot (\overline{\mathbf{x}_i^{(l)}}_{C_1} - \overline{\mathbf{x}_i^{(l)}}_{C_2})$, with $m=1.5$. During generation, the steering vector is added to the residual stream at a single token position only.
+    - **Design Motivation**: Orders of magnitude simpler than CLT and scalable to arbitrary models—requiring only forward passes to extract activations and compute mean differences, with no training needed.
 
 2. **Forward Planning Verification — Fraction of Correct Rhyme Family (Steered)**
-   - **Function**: Quantifies whether steering can switch the rhyme word from one rhyme family to another.
-   - **Mechanism**: Over 1,000 couplets (50 samples × 20 test prompts), the proportion of steered generations belonging to the target rhyme family is computed. Effective steering implies that the early position encodes a manipulable forward planning representation.
-   - **Design Motivation**: If no planning representation exists at the intervention position, the intervention will not affect the rhyme word; steering success therefore serves as evidence of forward planning.
+    - **Function**: Quantifies whether steering can switch the rhyme word from one rhyme family to another.
+    - **Mechanism**: Over 1,000 couplets (50 samples × 20 test prompts), the proportion of steered generations belonging to the target rhyme family is computed. Effective steering implies that the early position encodes a manipulable forward planning representation.
+    - **Design Motivation**: If no planning representation exists at the intervention position, the intervention will not affect the rhyme word; steering success therefore serves as evidence of forward planning.
 
 3. **Backward Planning Verification — Regeneration Metric + Probability Metrics**
-   - **Function**: Verifies that steering not only changes the final rhyme word but also alters the intermediate tokens leading to it.
-   - **Mechanism**: *Regeneration*—after removing the rhyming context, the last word of the second line is regenerated; if intermediate words still "lead toward" the target rhyme, backward planning was operative during intermediate token generation. *Probability metrics*—comparison of intermediate token probability distributions between steered and unsteered conditions (fraction of positions with KL divergence > 1, and position of first top-1 token divergence).
-   - **Design Motivation**: A regeneration success rate close to the baseline indicates that steering genuinely alters the entire generation path rather than merely substituting the final word.
+    - **Function**: Verifies that steering not only changes the final rhyme word but also alters the intermediate tokens leading to it.
+    - **Mechanism**: *Regeneration*—after removing the rhyming context, the last word of the second line is regenerated; if intermediate words still "lead toward" the target rhyme, backward planning was operative during intermediate token generation. *Probability metrics*—comparison of intermediate token probability distributions between steered and unsteered conditions (fraction of positions with KL divergence > 1, and position of first top-1 token divergence).
+    - **Design Motivation**: A regeneration success rate close to the baseline indicates that steering genuinely alters the entire generation path rather than merely substituting the final word.
 
 ### Datasets
 Rhyme: 10 rhyme families × 105 lines (generated by Claude 3.5 Sonnet), 20 rhyme-family pairs. QA: 20 noun pairs (vowel-initial vs. consonant-initial → different articles *a*/*an*), each noun with 13 training + 5 test + 7 neutral questions.

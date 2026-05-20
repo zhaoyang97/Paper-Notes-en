@@ -18,8 +18,8 @@ content_hash: 031a2ee4ccdcae5a
 # Inpaint4Drag: Repurposing Inpainting Models for Drag-Based Image Editing via Bidirectional Warping
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.04582](https://arxiv.org/abs/2509.04582)
-**Code**: [Project Page](https://visual-ai.github.io/inpaint4drag)
+**arXiv**: [2509.04582](https://arxiv.org/abs/2509.04582)  
+**Code**: [Project Page](https://visual-ai.github.io/inpaint4drag)  
 **Area**: Image Generation / Image Editing
 **Keywords**: Drag-based editing, image inpainting, bidirectional warping, real-time preview, pixel-space deformation
 

@@ -18,8 +18,8 @@ content_hash: 99129099c23c2dfe
 # Let's Split Up: Zero-Shot Classifier Edits for Fine-Grained Video Understanding
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.16545](https://arxiv.org/abs/2602.16545)
-**Code**: [Available](https://kaitingliu.github.io/Category-Splitting/)
+**arXiv**: [2602.16545](https://arxiv.org/abs/2602.16545)  
+**Code**: [Available](https://kaitingliu.github.io/Category-Splitting/)  
 **Area**: Video Understanding
 **Keywords**: Category Splitting, Zero-Shot Editing, Fine-Grained Video Recognition, Classifier Modification, Compositional Structure
 

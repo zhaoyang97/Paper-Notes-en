@@ -18,8 +18,8 @@ content_hash: 591c30c5725cf106
 # TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Ditching
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19739](https://arxiv.org/abs/2601.19739)
-**Code**: [https://runjia.tech/iclr_tokenseek (project page)](https://runjia.tech/iclr_tokenseek (project page))
+**arXiv**: [2601.19739](https://arxiv.org/abs/2601.19739)  
+**Code**: [https://runjia.tech/iclr_tokenseek (project page)](https://runjia.tech/iclr_tokenseek (project page))  
 **Area**: Interpretability
 **Keywords**: Memory-efficient fine-tuning, Token pruning, Instance-aware, Activation memory optimization, PEFT compatibility
 

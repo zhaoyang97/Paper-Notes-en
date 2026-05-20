@@ -14,8 +14,8 @@ content_hash: dcd408cf9a166cfa
 # S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18512](https://arxiv.org/abs/2604.18512)
-**Code**: None
+**arXiv**: [2604.18512](https://arxiv.org/abs/2604.18512)  
+**Code**: None  
 **Area**: Multimodal VLM / Preference Alignment
 **Keywords**: Multi-image reasoning, DPO preference optimization, visual search, difficulty grading, VLM alignment
 
@@ -117,7 +117,7 @@ Standard DPO loss with temperature $\beta=0.1$, learning rate $5 \times 10^{-5}$
 - Novelty: ⭐⭐⭐⭐ The three-level capability hierarchy is insightful, though the underlying methodology (DPO + synthetic data) is not novel in itself.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Three multi-image and two single-image benchmarks, three models, and sufficient ablations.
 - Writing Quality: ⭐⭐⭐⭐ Motivation is clear and the capability hierarchy visualization is effective, though some descriptions are verbose.
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: llm_alignment
 **Keywords**: To be supplemented
 

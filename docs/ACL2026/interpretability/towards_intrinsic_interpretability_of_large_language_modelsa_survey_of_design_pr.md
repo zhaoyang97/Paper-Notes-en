@@ -18,8 +18,8 @@ content_hash: 917c43dad89eb444
 # Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures
 
 **Conference**: ACL 2026
-**arXiv**: [2604.16042](https://arxiv.org/abs/2604.16042)
-**Code**: None
+**arXiv**: [2604.16042](https://arxiv.org/abs/2604.16042)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Intrinsic interpretability, large language models, design paradigm taxonomy, modular architecture, latent sparsity induction
 

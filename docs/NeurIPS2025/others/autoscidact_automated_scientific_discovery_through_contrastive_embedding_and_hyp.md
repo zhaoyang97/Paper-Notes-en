@@ -17,8 +17,8 @@ content_hash: e7828377387e3a1e
 # AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21935](https://arxiv.org/abs/2510.21935)
-**Code**: TBD
+**arXiv**: [2510.21935](https://arxiv.org/abs/2510.21935)  
+**Code**: TBD  
 **Area**: Other
 **Keywords**: contrastive learning, anomaly detection, hypothesis testing, novelty detection, scientific discovery
 

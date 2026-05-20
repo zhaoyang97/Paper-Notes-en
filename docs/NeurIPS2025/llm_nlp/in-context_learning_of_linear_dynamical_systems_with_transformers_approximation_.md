@@ -18,8 +18,8 @@ content_hash: a1bde3f3c2d1743a
 # In-Context Learning of Linear Dynamical Systems with Transformers: Approximation Bounds and Depth-Separation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.08136](https://arxiv.org/abs/2502.08136)
-**Code**: None
+**arXiv**: [2502.08136](https://arxiv.org/abs/2502.08136)  
+**Code**: None  
 **Area**: LLM Theory / ICL
 **Keywords**: in-context learning, linear dynamical systems, approximation theory, depth separation, transformer expressivity
 

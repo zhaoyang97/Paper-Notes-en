@@ -18,8 +18,8 @@ content_hash: 889520a50e569541
 # The Narrow Gate: Localized Image-Text Communication in Native Multimodal Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.06646](https://arxiv.org/abs/2412.06646)
-**Code**: [https://ritareasciencepark.github.io/Narrow-gate](https://ritareasciencepark.github.io/Narrow-gate)
+**arXiv**: [2412.06646](https://arxiv.org/abs/2412.06646)  
+**Code**: [https://ritareasciencepark.github.io/Narrow-gate](https://ritareasciencepark.github.io/Narrow-gate)  
 **Area**: Information Retrieval
 **Keywords**: native multimodal, EOI token, narrow gate, cross-modal information flow, activation patching
 

@@ -18,8 +18,8 @@ content_hash: 82e6c07c1b26275e
 # Revelio: Interpreting and Leveraging Semantic Information in Diffusion Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.16725](https://arxiv.org/abs/2411.16725)
-**Code**: [GitHub](https://github.com/revelio-diffusion/revelio)
+**arXiv**: [2411.16725](https://arxiv.org/abs/2411.16725)  
+**Code**: [GitHub](https://github.com/revelio-diffusion/revelio)  
 **Area**: Diffusion Models · Representation Learning
 **Keywords**: Diffusion model interpretability, k-sparse autoencoders, representation learning, transfer learning, monosemantic features
 

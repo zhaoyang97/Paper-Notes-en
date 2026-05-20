@@ -18,8 +18,8 @@ content_hash: d0dd1021326c72f8
 # Near-Exponential Savings for Mean Estimation with Active Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05736](https://arxiv.org/abs/2511.05736)
-**Code**: [R Package: PartiBandits](https://cran.r-project.org/)
+**arXiv**: [2511.05736](https://arxiv.org/abs/2511.05736)  
+**Code**: [R Package: PartiBandits](https://cran.r-project.org/)  
 **Area**: Optimization
 **Keywords**: Active Learning, Mean Estimation, Stratified Sampling, UCB Algorithm, Minimax Optimality
 

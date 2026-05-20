@@ -18,8 +18,8 @@ content_hash: 799640e105e48e42
 # DeepShield: Fortifying Deepfake Video Detection with Local and Global Forgery Analysis
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.25237](https://arxiv.org/abs/2510.25237)
-**Code**: [GitHub](https://github.com/lijichang/DeepShield)
+**arXiv**: [2510.25237](https://arxiv.org/abs/2510.25237)  
+**Code**: [GitHub](https://github.com/lijichang/DeepShield)  
 **Area**: Deepfake Detection / Image Generation
 **Keywords**: Deepfake Detection, CLIP-ViT, Patch-Level Supervision, Feature Augmentation, Cross-Domain Generalization
 

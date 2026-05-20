@@ -17,8 +17,8 @@ content_hash: 6f805942d9d02bb5
 # The Hot Mess of AI: How Does Misalignment Scale With Model Intelligence and Task Complexity?
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.23045](https://arxiv.org/abs/2601.23045)
-**Code**: Available
+**arXiv**: [2601.23045](https://arxiv.org/abs/2601.23045)  
+**Code**: Available  
 **Area**: Other / AI Safety
 **Keywords**: bias-variance decomposition, AI incoherence, reasoning length, model scale, AI alignment
 

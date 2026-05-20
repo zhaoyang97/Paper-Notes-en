@@ -18,8 +18,8 @@ content_hash: 725fc737d33d8c32
 # Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.06419](https://arxiv.org/abs/2510.06419)
-**Code**: None
+**arXiv**: [2510.06419](https://arxiv.org/abs/2510.06419)  
+**Code**: None  
 **Area**: Time Series / Foundation Models
 **Keywords**: Model portfolio, mixture of experts, test-time selection, time series foundation models, Chronos-Bolt
 

@@ -18,8 +18,8 @@ content_hash: 913cace3e2adef69
 # MME-VideoOCR: Evaluating OCR-Based Capabilities of Multimodal LLMs in Video Scenarios
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21333](https://arxiv.org/abs/2505.21333)
-**Code**: [https://mme-videoocr.github.io/](https://mme-videoocr.github.io/)
+**arXiv**: [2505.21333](https://arxiv.org/abs/2505.21333)  
+**Code**: [https://mme-videoocr.github.io/](https://mme-videoocr.github.io/)  
 **Area**: Multimodal VLM / Video Understanding / OCR Evaluation
 **Keywords**: video OCR, benchmark, cross-frame understanding, language prior bias, multimodal LLM evaluation
 

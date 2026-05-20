@@ -18,8 +18,8 @@ content_hash: 733f33fbe9656e3d
 # Universe Routing: Why Self-Evolving Agents Need Epistemic Control
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.14799](https://arxiv.org/abs/2603.14799)
-**Code**: None
+**arXiv**: [2603.14799](https://arxiv.org/abs/2603.14799)  
+**Code**: None  
 **Area**: LLM Efficiency / Inference Framework Selection
 **Keywords**: epistemic routing, belief space, hard routing, continual learning, MoE
 

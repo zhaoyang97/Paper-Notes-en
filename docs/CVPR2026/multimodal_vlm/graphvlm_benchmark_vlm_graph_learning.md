@@ -18,8 +18,8 @@ content_hash: cdee7255801fed28
 # GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13370](https://arxiv.org/abs/2603.13370)
-**Code**: [https://github.com/oamyjin/GraphVLM](https://github.com/oamyjin/GraphVLM) (open source)
+**arXiv**: [2603.13370](https://arxiv.org/abs/2603.13370)  
+**Code**: [https://github.com/oamyjin/GraphVLM](https://github.com/oamyjin/GraphVLM) (open source)  
 **Area**: Multimodal VLM / Graph Learning
 **Keywords**: Multimodal graph learning, VLM role analysis, graph neural networks, benchmark, structure-aware reasoning
 

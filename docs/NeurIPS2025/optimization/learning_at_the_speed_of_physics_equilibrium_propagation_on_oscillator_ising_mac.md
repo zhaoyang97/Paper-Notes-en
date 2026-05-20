@@ -18,8 +18,8 @@ content_hash: dc0d58282e63a362
 # Learning at the Speed of Physics: Equilibrium Propagation on Oscillator Ising Machines
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.12934](https://arxiv.org/abs/2510.12934)
-**Code**: [alexgower/OIM-Equilibrium-Propagation](https://github.com/alexgower/OIM-Equilibrium-Propagation)
+**arXiv**: [2510.12934](https://arxiv.org/abs/2510.12934)  
+**Code**: [alexgower/OIM-Equilibrium-Propagation](https://github.com/alexgower/OIM-Equilibrium-Propagation)  
 **Area**: Optimization
 **Keywords**: equilibrium propagation, oscillator Ising machine, neuromorphic computing, energy-based model, local learning rule
 

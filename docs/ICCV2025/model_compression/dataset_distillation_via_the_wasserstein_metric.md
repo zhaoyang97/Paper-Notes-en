@@ -18,8 +18,8 @@ content_hash: 006081cd7f0ec7e9
 # Dataset Distillation via the Wasserstein Metric
 
 **Conference**: ICCV 2025
-**arXiv**: [2311.18531](https://arxiv.org/abs/2311.18531)
-**Code**: [https://github.com/Liu-Hy/WMDD](https://github.com/Liu-Hy/WMDD)
+**arXiv**: [2311.18531](https://arxiv.org/abs/2311.18531)  
+**Code**: [https://github.com/Liu-Hy/WMDD](https://github.com/Liu-Hy/WMDD)  
 **Area**: Dataset Distillation / Model Compression
 **Keywords**: Dataset Distillation, Wasserstein Distance, Optimal Transport, Distribution Matching, BatchNorm Regularization
 
@@ -51,9 +51,9 @@ WMDD proceeds in three steps: (1) extract features of the full dataset using a p
 
 1. **Wasserstein Barycenter Computation**: For each class with $n_k$ feature points, a Wasserstein barycenter supported on $m_k$ atoms is computed. The alternating optimization algorithm of [Cuturi & Doucet, 2014] is adopted:
 
-   - **Weight optimization**: with positions fixed, solve a linear program for the optimal transport plan $\mathbf{T}$; use dual variables $\boldsymbol{\beta}$ as subgradients with respect to the weights and perform projected subgradient descent.
-   - **Position optimization**: with weights fixed, the objective is quadratic in each synthetic point's position (Hessian $2w_j \mathbf{I}$), admitting a one-step Newton update: $\tilde{\mathbf{x}}_j \leftarrow \tilde{\mathbf{x}}_j - \frac{1}{w_j}\sum_i t_{ij}(\tilde{\mathbf{x}}_j - \mathbf{x}_i)$
-   - Experiments show that only $K=10$ alternating iterations suffice to obtain high-quality synthetic data.
+    - **Weight optimization**: with positions fixed, solve a linear program for the optimal transport plan $\mathbf{T}$; use dual variables $\boldsymbol{\beta}$ as subgradients with respect to the weights and perform projected subgradient descent.
+    - **Position optimization**: with weights fixed, the objective is quadratic in each synthetic point's position (Hessian $2w_j \mathbf{I}$), admitting a one-step Newton update: $\tilde{\mathbf{x}}_j \leftarrow \tilde{\mathbf{x}}_j - \frac{1}{w_j}\sum_i t_{ij}(\tilde{\mathbf{x}}_j - \mathbf{x}_i)$
+    - Experiments show that only $K=10$ alternating iterations suffice to obtain high-quality synthetic data.
 
 2. **Per-Class BatchNorm Regularization (PCBN)**: Conventional methods (e.g., SRe2L) align synthetic and real data statistics using global BN moments. However, feature distributions can vary substantially across classes, and global BN cannot provide class-differentiated guidance. PCBN independently computes and matches per-class mean and variance at each BN layer, and further incorporates the Wasserstein barycenter weights $w_{k,j}$ for weighted statistic computation.
 

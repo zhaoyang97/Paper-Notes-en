@@ -18,8 +18,8 @@ content_hash: 74342cfa2daa0b5b
 # LLM Circuit Analyses Are Consistent Across Training and Scale
 
 **Conference**: AAAI 2026
-**arXiv**: [2407.10827](https://arxiv.org/abs/2407.10827)
-**Code**: None
+**arXiv**: [2407.10827](https://arxiv.org/abs/2407.10827)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Mechanistic Interpretability, Circuit Analysis, Training Dynamics, Model Scale, Attention Heads
 

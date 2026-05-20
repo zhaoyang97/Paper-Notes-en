@@ -18,8 +18,8 @@ content_hash: 5c1852bbadb7a3f7
 # Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.03226](https://arxiv.org/abs/2603.03226)
-**Code**: None (uses Google's open-source DP² repository)
+**arXiv**: [2603.03226](https://arxiv.org/abs/2603.03226)  
+**Code**: None (uses Google's open-source DP² repository)  
 **Area**: AI Safety / Differentially Private Optimization
 **Keywords**: Differential Privacy, SDE Analysis, DP-SGD, DP-SignSGD, Privacy-Utility Tradeoff
 

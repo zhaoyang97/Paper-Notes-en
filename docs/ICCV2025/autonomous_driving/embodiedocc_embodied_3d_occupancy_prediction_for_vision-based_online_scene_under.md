@@ -18,8 +18,8 @@ content_hash: a6a3f41f8204f70b
 # EmbodiedOcc: Embodied 3D Occupancy Prediction for Vision-based Online Scene Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.04380](https://arxiv.org/abs/2412.04380)
-**Code**: [https://github.com/YkiWu/EmbodiedOcc](https://github.com/YkiWu/EmbodiedOcc)
+**arXiv**: [2412.04380](https://arxiv.org/abs/2412.04380)  
+**Code**: [https://github.com/YkiWu/EmbodiedOcc](https://github.com/YkiWu/EmbodiedOcc)  
 **Area**: Autonomous Driving
 **Keywords**: 3D occupancy prediction, embodied perception, 3D Gaussian, online scene understanding, indoor scene
 

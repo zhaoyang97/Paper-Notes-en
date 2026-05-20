@@ -17,8 +17,8 @@ content_hash: 988709f7e1c01806
 # VecAttention: Vector-wise Sparse Attention for Accelerating Long Context Inference
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29494](https://arxiv.org/abs/2603.29494)
-**Code**: [https://github.com/anminliu/VecAttention](https://github.com/anminliu/VecAttention)
+**arXiv**: [2603.29494](https://arxiv.org/abs/2603.29494)  
+**Code**: [https://github.com/anminliu/VecAttention](https://github.com/anminliu/VecAttention)  
 **Area**: Video Understanding
 **Keywords**: sparse attention, vector-wise sparsity, long-context acceleration, video understanding, video generation
 
@@ -45,21 +45,21 @@ Full-sequence Q/K/V → Stage 1: Query pooling + minS filtering to select import
 
 1. **minS Filtering Strategy**
 
-   - **Function**: Efficiently identifies the set of KV vectors each query group should attend to.
-   - **Mechanism**: Query pooling yields $Q_p$; similarity scores $s_i$ with all keys are computed; a mask $M_i = (s_i \geq (m_i^s - \alpha))$ is applied, where $m_i^s = \text{rowmax}(s_i)$ and $\alpha$ is the filter ratio. The intuition is to retain all KV tokens within $\alpha$ of each row's maximum score.
-   - **Design Motivation**: More efficient than topK—topK requires full-row sorting ($O(N \log N)$), whereas minS requires only one rowmax operation plus a threshold comparison ($O(N)$). Ablations show minS is 3.77× faster than topP.
+    - **Function**: Efficiently identifies the set of KV vectors each query group should attend to.
+    - **Mechanism**: Query pooling yields $Q_p$; similarity scores $s_i$ with all keys are computed; a mask $M_i = (s_i \geq (m_i^s - \alpha))$ is applied, where $m_i^s = \text{rowmax}(s_i)$ and $\alpha$ is the filter ratio. The intuition is to retain all KV tokens within $\alpha$ of each row's maximum score.
+    - **Design Motivation**: More efficient than topK—topK requires full-row sorting ($O(N \log N)$), whereas minS requires only one rowmax operation plus a threshold comparison ($O(N)$). Ablations show minS is 3.77× faster than topP.
 
 2. **TilingSelect Kernel**
 
-   - **Function**: Fuses important vector selection into the GEMM operation to reduce memory access.
-   - **Mechanism**: During tiled GEMM computation of $Q_p \cdot K^T$, minS filtering and cross-tile rowmax accumulation are performed simultaneously, avoiding the allocation of an intermediate tensor of size $N^2$. Memory footprint is reduced from $\Theta(N^2 P_q^{-1})$ to $\Theta(N^2 P_q^{-1}(1-\rho))$.
-   - **Design Motivation**: At $N=64$K, standard selection requires 18.3 GB of intermediate storage; TilingSelect reduces this to 1.8 GB (10.2× savings).
+    - **Function**: Fuses important vector selection into the GEMM operation to reduce memory access.
+    - **Mechanism**: During tiled GEMM computation of $Q_p \cdot K^T$, minS filtering and cross-tile rowmax accumulation are performed simultaneously, avoiding the allocation of an intermediate tensor of size $N^2$. Memory footprint is reduced from $\Theta(N^2 P_q^{-1})$ to $\Theta(N^2 P_q^{-1}(1-\rho))$.
+    - **Design Motivation**: At $N=64$K, standard selection requires 18.3 GB of intermediate storage; TilingSelect reduces this to 1.8 GB (10.2× savings).
 
 3. **Dynamic Per-Head Filter Ratio**
 
-   - **Function**: Adaptively adjusts the sparsity level for each attention head.
-   - **Mechanism**: Dynamic programming is used to predict the optimal $\alpha$ value for each head based on its attention distribution characteristics, allowing different heads to operate at different sparsity ratios.
-   - **Design Motivation**: Attention distributions vary substantially across heads—some heads are naturally sparse (permitting aggressive filtering), while others exhibit flat distributions (requiring more KV tokens to be retained).
+    - **Function**: Adaptively adjusts the sparsity level for each attention head.
+    - **Mechanism**: Dynamic programming is used to predict the optimal $\alpha$ value for each head based on its attention distribution characteristics, allowing different heads to operate at different sparsity ratios.
+    - **Design Motivation**: Attention distributions vary substantially across heads—some heads are naturally sparse (permitting aggressive filtering), while others exhibit flat distributions (requiring more KV tokens to be retained).
 
 ### Loss & Training
 

@@ -19,8 +19,8 @@ content_hash: 9d3d9dea69fbbd1c
 # FLUX: Efficient Descriptor-Driven Clustered Federated Learning under Arbitrary Distribution Shifts
 
 **Conference**: NEURIPS2025
-**arXiv**: [2511.22305](https://arxiv.org/abs/2511.22305)
-**Code**: To be confirmed
+**arXiv**: [2511.22305](https://arxiv.org/abs/2511.22305)  
+**Code**: To be confirmed  
 **Area**: AI Safety
 **Keywords**: Clustered Federated Learning, Descriptor, Distribution Shift, Test-Time Adaptation, DBSCAN, Wasserstein Distance
 

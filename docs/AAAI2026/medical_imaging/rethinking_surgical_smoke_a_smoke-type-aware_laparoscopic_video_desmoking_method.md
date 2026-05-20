@@ -18,8 +18,8 @@ content_hash: bcde0a5787d1bb2a
 # Rethinking Surgical Smoke: A Smoke-Type-Aware Laparoscopic Video Desmoking Method and Dataset
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.02780](https://arxiv.org/abs/2512.02780)
-**Code**: [GitHub (Dataset)](https://simon-leong.github.io/STSVD/)
+**arXiv**: [2512.02780](https://arxiv.org/abs/2512.02780)  
+**Code**: [GitHub (Dataset)](https://simon-leong.github.io/STSVD/)  
 **Area**: Medical Imaging / Video Restoration
 **Keywords**: Laparoscopic video desmoking, smoke-type awareness, smoke mask segmentation, smoke disentanglement, surgical video
 
@@ -60,9 +60,9 @@ STANet is an end-to-end laparoscopic video desmoking network consisting of three
 
 2. **Semantic Soft Segmentation Module (S3M)**: The core component of the smoke mask segmentation sub-network. Soft segmentation of different smoke types is formulated as a **set prediction paradigm**:
 
-   - $N$ learnable queries $q_i$ are used, each predicting a local smoke mask $m_i$ and a smoke type $t_i$.
-   - Queries interact with multi-scale spatiotemporal features through three cascaded segmentation blocks (containing mask cross-attention, self-attention, and feed-forward networks).
-   - An **attention-weighted mask aggregation mechanism** consolidates local masks into two smoke-type-specific global masks:
+    - $N$ learnable queries $q_i$ are used, each predicting a local smoke mask $m_i$ and a smoke type $t_i$.
+    - Queries interact with multi-scale spatiotemporal features through three cascaded segmentation blocks (containing mask cross-attention, self-attention, and feed-forward networks).
+    - An **attention-weighted mask aggregation mechanism** consolidates local masks into two smoke-type-specific global masks:
 
    $M^*_{typ} = \sum_i \frac{w_i}{\sum_i w_i} \cdot m_i, \quad \{i \mid t_i = typ\}$
 
@@ -70,8 +70,8 @@ STANet is an end-to-end laparoscopic video desmoking network consisting of three
 
 3. **Coarse-to-Fine Disentanglement Module (C2FDM)**: The key module for addressing smoke entanglement, embedded after S3M for mask refinement.
 
-   - **Mask Region Selection Sub-module**: Generates three mutually exclusive region masks from $M^*_{diff}$ and $M^*_{amb}$ via binarization and set operations, extracting features for the diffusion smoke region $R^*_{diff}$, the ambient smoke region $R^*_{amb}$, and the entangled region $R^*_{ent}$.
-   - **Smoke-Type-Aware Cross-Attention Sub-module**: Features from the three regions are processed via patch embedding and linear projection to produce type-specific queries $Q_{typ}$ and keys $K_{typ}$, along with a shared entanglement value $V_{ent}$. Two cross-attention operations then separate the entangled region into the two smoke types:
+    - **Mask Region Selection Sub-module**: Generates three mutually exclusive region masks from $M^*_{diff}$ and $M^*_{amb}$ via binarization and set operations, extracting features for the diffusion smoke region $R^*_{diff}$, the ambient smoke region $R^*_{amb}$, and the entangled region $R^*_{ent}$.
+    - **Smoke-Type-Aware Cross-Attention Sub-module**: Features from the three regions are processed via patch embedding and linear projection to produce type-specific queries $Q_{typ}$ and keys $K_{typ}$, along with a shared entanglement value $V_{ent}$. Two cross-attention operations then separate the entangled region into the two smoke types:
 
    $M'_{typ} = \text{FFN}\left(\text{Softmax}\left(\frac{Q_{typ} K_{typ}^\top}{\sqrt{d}}\right) V_{ent}\right) + M^*_{typ} \cdot B_{typ}$
 
@@ -79,9 +79,9 @@ STANet is an end-to-end laparoscopic video desmoking network consisting of three
 
 4. **Dual-Branch Smoke-Free Reconstruction Sub-network**: Adopts differentiated strategies based on the distinct characteristics of each smoke type:
 
-   - **Diffusion Smoke Branch** (deformable convolution): Adjacent-frame diffusion smoke masks are concatenated into a temporal composite mask $\bar{M}_{diff}$; a CoordConv layer and channel-reduction attention generate an 18-channel offset field, which is then used by a $3 \times 3$ deformable convolution to extract aligned features along the smoke diffusion trajectory: $F_{diff} = \text{DeformConv}(F, \Delta_{offset})$.
-   - **Ambient Smoke Branch** (adaptive dilated convolution): The temporal composite mask $\bar{M}_{amb}$ is used to estimate $K=3$ adaptive dilated sampling position maps; parallel dilated convolutions with dilation rates 1, 2, and 3 are applied and fused: $F_{amb} = \sum_{k=1}^{3} \text{DilatConv}(F, rate_k, map_k)$.
-   - Features from both branches are fed into a U-Net decoder to reconstruct the smoke-free video frames. When only one smoke type is present, only the corresponding branch is activated to save computation.
+    - **Diffusion Smoke Branch** (deformable convolution): Adjacent-frame diffusion smoke masks are concatenated into a temporal composite mask $\bar{M}_{diff}$; a CoordConv layer and channel-reduction attention generate an 18-channel offset field, which is then used by a $3 \times 3$ deformable convolution to extract aligned features along the smoke diffusion trajectory: $F_{diff} = \text{DeformConv}(F, \Delta_{offset})$.
+    - **Ambient Smoke Branch** (adaptive dilated convolution): The temporal composite mask $\bar{M}_{amb}$ is used to estimate $K=3$ adaptive dilated sampling position maps; parallel dilated convolutions with dilation rates 1, 2, and 3 are applied and fused: $F_{amb} = \sum_{k=1}^{3} \text{DilatConv}(F, rate_k, map_k)$.
+    - Features from both branches are fed into a U-Net decoder to reconstruct the smoke-free video frames. When only one smoke type is present, only the corresponding branch is activated to save computation.
 
 ### Loss & Training
 

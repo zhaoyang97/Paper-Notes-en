@@ -18,8 +18,8 @@ content_hash: 207300226deb7251
 # SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21795](https://arxiv.org/abs/2505.21795)
-**Code**: [GitHub](https://github.com/ClaudiaCuttano/SANSA)
+**arXiv**: [2505.21795](https://arxiv.org/abs/2505.21795)  
+**Code**: [GitHub](https://github.com/ClaudiaCuttano/SANSA)  
 **Area**: Image Segmentation
 **Keywords**: Few-Shot Segmentation, SAM2, semantic alignment, feature adaptation, Memory Attention
 

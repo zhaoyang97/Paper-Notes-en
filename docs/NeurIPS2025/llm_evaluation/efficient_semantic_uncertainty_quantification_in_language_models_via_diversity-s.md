@@ -18,8 +18,8 @@ content_hash: 9c732a7486a0a6e5
 # Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21310](https://arxiv.org/abs/2510.21310)
-**Code**: None
+**arXiv**: [2510.21310](https://arxiv.org/abs/2510.21310)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: semantic uncertainty, diversity sampling, importance weighting, NLI, language models
 

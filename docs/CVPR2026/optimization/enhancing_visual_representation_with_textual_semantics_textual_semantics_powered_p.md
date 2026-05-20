@@ -18,8 +18,8 @@ content_hash: 67b72c017067c210
 # Enhancing Visual Representation with Textual Semantics: Textual Semantics-Powered Prototypes for Heterogeneous Federated Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.13543](https://arxiv.org/abs/2503.13543)
-**Code**: [GitHub](https://github.com/XinghaoWu/FedTSP)
+**arXiv**: [2503.13543](https://arxiv.org/abs/2503.13543)  
+**Code**: [GitHub](https://github.com/XinghaoWu/FedTSP)  
 **Area**: Optimization
 **Keywords**: Federated Learning, Prototype Learning, Semantic Relations, Pre-trained Language Models, Data Heterogeneity
 
@@ -44,19 +44,19 @@ Input: client image data → LLM generates class descriptions → PLM encodes th
 ### Key Designs
 
 1. **LLM-Generated Multi-View Textual Descriptions**:
-   - Function: Generate rich semantic descriptions for each class.
-   - Mechanism: ChatGPT or a similar LLM is used to generate $k=3$ fine-grained descriptions from different perspectives for each class, following the template "A photo of {CLASS}: {description}."
-   - Design Motivation: Hand-crafted prompts (e.g., "A photo of a {CLASS}") differ only in class name, providing minimal semantic context and introducing ambiguity (e.g., "apple" may refer to the fruit or the company).
+    - Function: Generate rich semantic descriptions for each class.
+    - Mechanism: ChatGPT or a similar LLM is used to generate $k=3$ fine-grained descriptions from different perspectives for each class, following the template "A photo of {CLASS}: {description}."
+    - Design Motivation: Hand-crafted prompts (e.g., "A photo of a {CLASS}") differ only in class name, providing minimal semantic context and introducing ambiguity (e.g., "apple" may refer to the fruit or the company).
 
 2. **Trainable Prompts for Modality Alignment**:
-   - Function: Bridge the modality gap between PLM text features and client image features.
-   - Mechanism: Trainable embedding vectors are inserted into the text embedding sequence, replacing the first $m$ positions, and aligned with client image prototypes via the InfoNCE loss.
-   - Design Motivation: PLMs such as BERT are not exposed to image data during pre-training, leading to modality mismatch when used directly.
+    - Function: Bridge the modality gap between PLM text features and client image features.
+    - Mechanism: Trainable embedding vectors are inserted into the text embedding sequence, replacing the first $m$ positions, and aligned with client image prototypes via the InfoNCE loss.
+    - Design Motivation: PLMs such as BERT are not exposed to image data during pre-training, leading to modality mismatch when used directly.
 
 3. **Contrastive Learning-Based Feature Alignment**:
-   - Function: Transfer the semantic structure of textual prototypes to client models.
-   - Mechanism: A contrastive learning loss (rather than L2 distance) is used to align local features with textual prototypes, focusing on the relative similarity ordering among classes rather than absolute distances.
-   - Design Motivation: PLM-generated prototypes exhibit a high baseline similarity (even the least similar classes share a similarity of 0.73), so L2 alignment would mislead the model into treating unrelated classes as similar.
+    - Function: Transfer the semantic structure of textual prototypes to client models.
+    - Mechanism: A contrastive learning loss (rather than L2 distance) is used to align local features with textual prototypes, focusing on the relative similarity ordering among classes rather than absolute distances.
+    - Design Motivation: PLM-generated prototypes exhibit a high baseline similarity (even the least similar classes share a similarity of 0.73), so L2 alignment would mislead the model into treating unrelated classes as similar.
 
 ### Loss & Training
 

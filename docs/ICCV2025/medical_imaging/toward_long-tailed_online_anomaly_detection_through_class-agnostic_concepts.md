@@ -18,8 +18,8 @@ content_hash: b8a195c0960e18ce
 # Toward Long-Tailed Online Anomaly Detection through Class-Agnostic Concepts
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.16946](https://arxiv.org/abs/2507.16946)
-**Code**: [https://doi.org/10.5281/zenodo.16283852](https://doi.org/10.5281/zenodo.16283852) (benchmark)
+**arXiv**: [2507.16946](https://arxiv.org/abs/2507.16946)  
+**Code**: [https://doi.org/10.5281/zenodo.16283852](https://doi.org/10.5281/zenodo.16283852) (benchmark)  
 **Area**: Medical Imaging / Anomaly Detection
 **Keywords**: long-tailed anomaly detection, online learning, class-agnostic concepts, VQ-VAE, prompt learning
 

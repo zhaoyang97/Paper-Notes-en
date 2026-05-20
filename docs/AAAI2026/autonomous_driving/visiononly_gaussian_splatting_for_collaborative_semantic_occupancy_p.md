@@ -18,8 +18,8 @@ content_hash: b9426352e1a2c906
 # Vision-Only Gaussian Splatting for Collaborative Semantic Occupancy Prediction
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.10936](https://arxiv.org/abs/2508.10936)
-**Code**: [GitHub](https://github.com/ChengChen2020/VOGS-CP)
+**arXiv**: [2508.10936](https://arxiv.org/abs/2508.10936)  
+**Code**: [GitHub](https://github.com/ChengChen2020/VOGS-CP)  
 **Area**: Autonomous Driving / Collaborative Perception
 **Keywords**: Collaborative Perception, 3D Gaussian Splatting, Semantic Occupancy, V2X Communication, Vision-Only
 

@@ -18,8 +18,8 @@ content_hash: 4581fd49e2146f11
 # PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors
 
 **Conference**: AAAI 2026
-**arXiv**: [2409.05352](https://arxiv.org/abs/2409.05352)
-**Code**: [https://github.com/MIV-XJTU/PriorDrive](https://github.com/MIV-XJTU/PriorDrive)
+**arXiv**: [2409.05352](https://arxiv.org/abs/2409.05352)  
+**Code**: [https://github.com/MIV-XJTU/PriorDrive](https://github.com/MIV-XJTU/PriorDrive)  
 **Area**: Autonomous Driving / HD Map Construction
 **Keywords**: HD Map, Prior Map, Unified Vector Encoding, Plug-and-Play, Online Mapping
 

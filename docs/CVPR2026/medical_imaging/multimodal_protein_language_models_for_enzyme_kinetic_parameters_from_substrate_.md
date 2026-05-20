@@ -18,8 +18,8 @@ content_hash: cc9b007b1a7558be
 # Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12845](https://arxiv.org/abs/2603.12845)
-**Code**: None
+**arXiv**: [2603.12845](https://arxiv.org/abs/2603.12845)  
+**Code**: None  
 **Area**: Medical Imaging / Bioinformatics
 **Keywords**: enzyme kinetics prediction, protein language model, multimodal fusion, mixture of experts, cross-modal adapter
 

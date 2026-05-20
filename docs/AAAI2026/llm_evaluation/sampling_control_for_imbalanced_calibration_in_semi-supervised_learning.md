@@ -18,8 +18,8 @@ content_hash: 97b60ec2414450fd
 # Sampling Control for Imbalanced Calibration in Semi-Supervised Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18773](https://arxiv.org/abs/2511.18773)
-**Code**: [https://github.com/Sheldon04/SC-SSL](https://github.com/Sheldon04/SC-SSL)
+**arXiv**: [2511.18773](https://arxiv.org/abs/2511.18773)  
+**Code**: [https://github.com/Sheldon04/SC-SSL](https://github.com/Sheldon04/SC-SSL)  
 **Area**: Semi-Supervised Learning / Class Imbalance
 **Keywords**: semi-supervised learning, class imbalance, sampling control, pseudo-labels, calibration
 

@@ -18,8 +18,8 @@ content_hash: 3f953a2cabe05fdd
 # Unsupervised Multi-Parameter Inverse Solving for Reducing Ring Artifacts in 3D X-Ray CBCT
 
 **Conference**: AAAI 2026
-**arXiv**: [2412.05853](https://arxiv.org/abs/2412.05853)
-**Code**: [https://github.com/iwuqing/Riner](https://github.com/iwuqing/Riner)
+**arXiv**: [2412.05853](https://arxiv.org/abs/2412.05853)  
+**Code**: [https://github.com/iwuqing/Riner](https://github.com/iwuqing/Riner)  
 **Area**: Medical Imaging
 **Keywords**: CT ring artifact removal, implicit neural representation, unsupervised learning, multi-parameter inverse problem, CBCT reconstruction
 
@@ -50,19 +50,19 @@ Riner adopts a ray-based optimization pipeline: given raw measurement data $\wid
 ### Key Designs
 
 1. **Theoretical Modeling of Ring Artifacts**:
-   - **Function**: Theoretically analyzes the physical origins of ring artifacts from the Lambert-Beer law.
-   - **Mechanism**: Non-ideal detectors ($\alpha_s \neq 1$) introduce an additional nonlinear term $-\ln\alpha_s$ into the measurement data (IR effect); defective detectors ($\alpha_s = 0$) produce invalid measurements (IM effect). These two physical distortions make the inverse problem of reconstructing CT images from real measurements inherently nonlinear.
-   - **Design Motivation**: Traditional linear algorithms (e.g., FDK) assume ideal detectors and cannot handle these nonlinear distortions.
+    - **Function**: Theoretically analyzes the physical origins of ring artifacts from the Lambert-Beer law.
+    - **Mechanism**: Non-ideal detectors ($\alpha_s \neq 1$) introduce an additional nonlinear term $-\ln\alpha_s$ into the measurement data (IR effect); defective detectors ($\alpha_s = 0$) produce invalid measurements (IM effect). These two physical distortions make the inverse problem of reconstructing CT images from real measurements inherently nonlinear.
+    - **Design Motivation**: Traditional linear algorithms (e.g., FDK) assume ideal detectors and cannot handle these nonlinear distortions.
 
 2. **Differentiable Physical Forward Model**:
-   - **Function**: Converts MLP-predicted CT intensities and physical parameters into estimated measurements while supporting gradient backpropagation.
-   - **Mechanism**: The forward model is defined as $\widehat{\rho}(\theta,s) = [-\ln\alpha_s + \sum_{\mathbf{x}\in L(\theta,s)}\mu(\mathbf{x})\cdot\Delta\mathbf{x}]\cdot\beta_s$, where $\alpha_s = \max(\alpha_s^0, \epsilon)$ ensures non-negativity, and $\beta_s = \sigma(\beta_s^0)$ acts as a binary mask to suppress invalid signals from defective detectors.
-   - **Design Motivation**: Compared to traditional linear integral models, incorporating additional physical parameters $(\alpha_s, \beta_s)$ enables more accurate acquisition modeling.
+    - **Function**: Converts MLP-predicted CT intensities and physical parameters into estimated measurements while supporting gradient backpropagation.
+    - **Mechanism**: The forward model is defined as $\widehat{\rho}(\theta,s) = [-\ln\alpha_s + \sum_{\mathbf{x}\in L(\theta,s)}\mu(\mathbf{x})\cdot\Delta\mathbf{x}]\cdot\beta_s$, where $\alpha_s = \max(\alpha_s^0, \epsilon)$ ensures non-negativity, and $\beta_s = \sigma(\beta_s^0)$ acts as a binary mask to suppress invalid signals from defective detectors.
+    - **Design Motivation**: Compared to traditional linear integral models, incorporating additional physical parameters $(\alpha_s, \beta_s)$ enables more accurate acquisition modeling.
 
 3. **INR-Based Image Parameterization**:
-   - **Function**: Represents the continuous CT image function as $f_\Phi: \mathbf{x} \to \mu(\mathbf{x})$ using an MLP network.
-   - **Mechanism**: A lightweight MLP with hash encoding and 2 fully connected layers is used. The inherent spectral bias of INR (learning low-frequency global structures before recovering high-frequency details) serves as a regularization constraint, mitigating the ill-posedness of the inverse problem introduced by the additional physical parameters.
-   - **Design Motivation**: The learned prior of INR naturally constrains the solution space, enabling high-quality reconstruction without external data.
+    - **Function**: Represents the continuous CT image function as $f_\Phi: \mathbf{x} \to \mu(\mathbf{x})$ using an MLP network.
+    - **Mechanism**: A lightweight MLP with hash encoding and 2 fully connected layers is used. The inherent spectral bias of INR (learning low-frequency global structures before recovering high-frequency details) serves as a regularization constraint, mitigating the ill-posedness of the inverse problem introduced by the additional physical parameters.
+    - **Design Motivation**: The learned prior of INR naturally constrains the solution space, enabling high-quality reconstruction without external data.
 
 ### Loss & Training
 

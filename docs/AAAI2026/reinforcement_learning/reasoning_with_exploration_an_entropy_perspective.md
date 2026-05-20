@@ -18,8 +18,8 @@ content_hash: fb9f132e1cc9efb7
 # Reasoning with Exploration: An Entropy Perspective
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.14758](https://arxiv.org/abs/2506.14758)
-**Code**: None
+**arXiv**: [2506.14758](https://arxiv.org/abs/2506.14758)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Entropy, Exploratory Reasoning, Advantage Shaping, RLVR, LLM Reasoning
 

@@ -18,8 +18,8 @@ content_hash: a850e03fda427e36
 # VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues
 
 **Conference**: CVPR 2026
-**arXiv**: [2506.21742](https://arxiv.org/abs/2506.21742)
-**Code**: Available (dataset and data collection framework are open-sourced)
+**arXiv**: [2506.21742](https://arxiv.org/abs/2506.21742)  
+**Code**: Available (dataset and data collection framework are open-sourced)  
 **Area**: Video Understanding
 **Keywords**: Video Question Answering, Implicit Reasoning, Visual Relational Reasoning, Benchmark, Multimodal Understanding
 

@@ -18,8 +18,8 @@ content_hash: 849a688252215c65
 # SpecGuard: Spectral Projection-based Advanced Invisible Watermarking
 
 **Conference**: ICCV2025
-**arXiv**: [2510.07302](https://arxiv.org/abs/2510.07302)
-**Code**: [https://github.com/SpecGuard](https://github.com/SpecGuard) (available)
+**arXiv**: [2510.07302](https://arxiv.org/abs/2510.07302)  
+**Code**: [https://github.com/SpecGuard](https://github.com/SpecGuard) (available)  
 **Area**: AI Security / Digital Watermarking
 **Keywords**: Invisible Watermarking, Spectral Projection, Wavelet Transform, FFT, Parseval's Theorem
 

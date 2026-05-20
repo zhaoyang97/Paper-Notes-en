@@ -18,8 +18,8 @@ content_hash: d4537635d8078c53
 # Parallelization of Non-linear State-Space Models: Scaling Up Liquid-Resistance Liquid-Capacitance Networks for Efficient Sequence Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21717](https://arxiv.org/abs/2505.21717)
-**Code**: [GitHub](https://github.com/MoniFarsang/LrcSSM)
+**arXiv**: [2505.21717](https://arxiv.org/abs/2505.21717)  
+**Code**: [GitHub](https://github.com/MoniFarsang/LrcSSM)  
 **Area**: Time Series
 **Keywords**: State Space Models, Nonlinear RNN, Parallelization, Biologically Inspired, Diagonal Jacobian
 

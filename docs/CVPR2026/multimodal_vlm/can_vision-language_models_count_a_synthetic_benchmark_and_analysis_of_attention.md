@@ -18,8 +18,8 @@ content_hash: 4eed9f4baa44d5f5
 # Can Vision-Language Models Count? A Synthetic Benchmark and Analysis of Attention-Based Interventions
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.17722](https://arxiv.org/abs/2511.17722)
-**Code**: [GitHub](https://github.com/ssen7/vlm-count-analysis)
+**arXiv**: [2511.17722](https://arxiv.org/abs/2511.17722)  
+**Code**: [GitHub](https://github.com/ssen7/vlm-count-analysis)  
 **Area**: Multimodal/VLM
 **Keywords**: VLM, counting ability, attention mechanism, synthetic benchmark, visual attention intervention
 
@@ -55,11 +55,11 @@ The framework consists of three components: (1) a synthetic data generation pipe
 
 3. **Five Visual Attention Reweighting Strategies**: Applied to visual token attention weights within the language decoder:
 
-   - **Amplify**: $\tilde{A}_{h,i,j} = \alpha \cdot A_{h,i,j}$ ($\alpha=2.0$), enhancing visual attention
-   - **Suppress**: $\tilde{A}_{h,i,j} = \beta \cdot A_{h,i,j}$ ($\beta=0.5$), reducing visual attention
-   - **Focus**: Non-visual token attention is set to $\epsilon=10^{-10}$, forcing all attention onto visual tokens
-   - **Balance**: A target visual attention ratio $r_v^{target}=0.4$ is set and used to calibrate scaling
-   - **Visual Mask Amplify**: Using SAM segmentation masks, object regions are amplified with $\alpha_{obj}=2.0$ and background regions suppressed with $\alpha_{bg}=0.5$
+    - **Amplify**: $\tilde{A}_{h,i,j} = \alpha \cdot A_{h,i,j}$ ($\alpha=2.0$), enhancing visual attention
+    - **Suppress**: $\tilde{A}_{h,i,j} = \beta \cdot A_{h,i,j}$ ($\beta=0.5$), reducing visual attention
+    - **Focus**: Non-visual token attention is set to $\epsilon=10^{-10}$, forcing all attention onto visual tokens
+    - **Balance**: A target visual attention ratio $r_v^{target}=0.4$ is set and used to calibrate scaling
+    - **Visual Mask Amplify**: Using SAM segmentation masks, object regions are amplified with $\alpha_{obj}=2.0$ and background regions suppressed with $\alpha_{bg}=0.5$
 
    **Design Motivation**: VLMs exhibit "visual attention sinks," where a disproportionate amount of attention concentrates on visual tokens irrelevant to the query; redistributing attention may improve counting.
 

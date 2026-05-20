@@ -18,8 +18,8 @@ content_hash: fa3ca1a0af5e26e9
 # KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.15364](https://arxiv.org/abs/2504.15364)
-**Code**: None
+**arXiv**: [2504.15364](https://arxiv.org/abs/2504.15364)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: KV cache eviction, key similarity, long-context inference, attention-free, block prompt processing
 

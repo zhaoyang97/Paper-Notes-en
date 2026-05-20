@@ -18,8 +18,8 @@ content_hash: bea747ddfaabfeb1
 # A Generalized Bisimulation Metric of State Similarity between Markov Decision Processes: From Theoretical Propositions to Applications
 
 **Conference**: NeurIPS 2025 (Poster)
-**arXiv**: [2509.18714](https://arxiv.org/abs/2509.18714)
-**Code**: N/A
+**arXiv**: [2509.18714](https://arxiv.org/abs/2509.18714)  
+**Code**: N/A  
 **Area**: Reinforcement Learning / MDP Theory
 **Keywords**: bisimulation metric, MDP state similarity, policy transfer, state aggregation, Wasserstein distance
 

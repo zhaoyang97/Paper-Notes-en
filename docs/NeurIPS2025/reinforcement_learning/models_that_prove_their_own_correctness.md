@@ -18,8 +18,8 @@ content_hash: 4f2055a5fa214078
 # Models That Prove Their Own Correctness
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2405.15722](https://arxiv.org/abs/2405.15722)
-**Code**: [https://github.com/orrp/self-proving-models](https://github.com/orrp/self-proving-models)
+**arXiv**: [2405.15722](https://arxiv.org/abs/2405.15722)  
+**Code**: [https://github.com/orrp/self-proving-models](https://github.com/orrp/self-proving-models)  
 **Area**: Reinforcement Learning
 **Keywords**: self-proving models, interactive proofs, reinforcement learning from verifier feedback, formal verification, LLM reliability
 

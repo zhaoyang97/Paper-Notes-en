@@ -18,8 +18,8 @@ content_hash: 348a95850624ecd0
 # IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.03060](https://arxiv.org/abs/2602.03060)
-**Code**: [GitHub](https://github.com/FireRedTeam/IVC-Prune)
+**arXiv**: [2602.03060](https://arxiv.org/abs/2602.03060)  
+**Code**: [GitHub](https://github.com/FireRedTeam/IVC-Prune)  
 **Area**: Multimodal VLM
 **Keywords**: vision token pruning, RoPE positional encoding, implicit visual coordinates, spatial reasoning, training-free
 

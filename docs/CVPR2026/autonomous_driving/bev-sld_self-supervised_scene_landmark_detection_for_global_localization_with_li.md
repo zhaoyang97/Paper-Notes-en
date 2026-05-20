@@ -18,8 +18,8 @@ content_hash: d84bcc8800a2de1a
 # BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17159](https://arxiv.org/abs/2603.17159)
-**Code**: [davidskdds/BEV-SLD](https://github.com/davidskdds/BEV-SLD)
+**arXiv**: [2603.17159](https://arxiv.org/abs/2603.17159)  
+**Code**: [davidskdds/BEV-SLD](https://github.com/davidskdds/BEV-SLD)  
 **Area**: Autonomous Driving
 **Keywords**: LiDAR Localization, BEV, Scene Landmark Detection, Self-Supervised Learning, Global Localization
 

@@ -18,8 +18,8 @@ content_hash: f091a2812ad95c35
 # FinPercep-RM: A Fine-grained Reward Model and Co-evolutionary Curriculum for RL-based Real-world Super-Resolution
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.22647](https://arxiv.org/abs/2512.22647)
-**Code**: [https://github.com/lyd-2022/FinPercep-RM](https://github.com/lyd-2022/FinPercep-RM)
+**arXiv**: [2512.22647](https://arxiv.org/abs/2512.22647)  
+**Code**: [https://github.com/lyd-2022/FinPercep-RM](https://github.com/lyd-2022/FinPercep-RM)  
 **Area**: Image Restoration / Super-Resolution
 **Keywords**: Image Super-Resolution, Reward Model, RLHF, Fine-grained Quality Assessment, Curriculum Learning
 

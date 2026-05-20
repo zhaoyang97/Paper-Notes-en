@@ -19,8 +19,8 @@ content_hash: 94ff10e06e3f9dad
 # Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.20923](https://arxiv.org/abs/2507.20923)
-**Code**: [GitHub](https://github.com/langkhachhoha/MPaGE)
+**arXiv**: [2507.20923](https://arxiv.org/abs/2507.20923)  
+**Code**: [GitHub](https://github.com/langkhachhoha/MPaGE)  
 **Area**: Combinatorial Optimization / LLM-based Automatic Heuristic Design
 **Keywords**: Multi-Objective Optimization, LLM, Pareto Front Grid, SEMO, Heuristic Generation, Semantic Diversity
 

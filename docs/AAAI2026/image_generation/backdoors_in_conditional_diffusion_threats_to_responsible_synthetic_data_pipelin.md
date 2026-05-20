@@ -19,8 +19,8 @@ content_hash: b8173ddd0d2c8ffd
 # Backdoors in Conditional Diffusion: Threats to Responsible Synthetic Data Pipelines
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.04726](https://arxiv.org/abs/2507.04726)
-**Code**: Not released (authors provide only sanitized reproduction scripts for safety reasons)
+**arXiv**: [2507.04726](https://arxiv.org/abs/2507.04726)  
+**Code**: Not released (authors provide only sanitized reproduction scripts for safety reasons)  
 **Area**: Image Generation
 **Keywords**: backdoor attack, ControlNet, diffusion model, data poisoning, supply-chain security, clean fine-tuning
 

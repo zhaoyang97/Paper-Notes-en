@@ -18,8 +18,8 @@ content_hash: da53b49a88b4426c
 # COOPERTRIM: Adaptive Data Selection for Uncertainty-Aware Cooperative Perception
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.13287](https://arxiv.org/abs/2602.13287)
-**Code**: [https://cisl.ucr.edu/CooperTrim](https://cisl.ucr.edu/CooperTrim)
+**arXiv**: [2602.13287](https://arxiv.org/abs/2602.13287)  
+**Code**: [https://cisl.ucr.edu/CooperTrim](https://cisl.ucr.edu/CooperTrim)  
 **Area**: 3D Vision
 **Keywords**: cooperative perception, bandwidth optimization, temporal uncertainty, feature selection, conformal prediction
 
@@ -49,21 +49,21 @@ The ego vehicle computes conformal temporal uncertainty from the current-frame f
 
 1. **Conformal Temporal Uncertainty**:
 
-   - **Function**: Quantifies the degree of change in each feature channel relative to its temporal context.
-   - **Mechanism**: Computes the L1 distance between the current frame and the previous fused frame, $S_t = |F_t - F_{t-1}^{\text{fused}}|$, and applies gating via a learnable quantile threshold $q$ (inspired by conformal prediction), retaining only features whose change exceeds $q$ as "uncertain."
-   - **Design Motivation**: In static scenes, most features remain unchanged across frames and need not be retransmitted.
+    - **Function**: Quantifies the degree of change in each feature channel relative to its temporal context.
+    - **Mechanism**: Computes the L1 distance between the current frame and the previous fused frame, $S_t = |F_t - F_{t-1}^{\text{fused}}|$, and applies gating via a learnable quantile threshold $q$ (inspired by conformal prediction), retaining only features whose change exceeds $q$ as "uncertain."
+    - **Design Motivation**: In static scenes, most features remain unchanged across frames and need not be retransmitted.
 
 2. **Adaptive Volume Determination**:
 
-   - **Function**: Dynamically adjusts the number of shared features according to scene complexity.
-   - **Mechanism**: Cross-attention weighting is applied to uncertain features, followed by truncation via a learnable mask threshold $\tau$ — complex scenes (e.g., multiple intersections) yield high relevance scores, causing more features to exceed the threshold and thus more transmission.
-   - **Design Motivation**: Realizes adaptive behavior of transmitting less in simple scenes and more in complex ones.
+    - **Function**: Dynamically adjusts the number of shared features according to scene complexity.
+    - **Mechanism**: Cross-attention weighting is applied to uncertain features, followed by truncation via a learnable mask threshold $\tau$ — complex scenes (e.g., multiple intersections) yield high relevance scores, causing more features to exceed the threshold and thus more transmission.
+    - **Design Motivation**: Realizes adaptive behavior of transmitting less in simple scenes and more in complex ones.
 
 3. **$\epsilon$-Greedy Training Strategy**:
 
-   - **Function**: Balances training with full features versus selected features.
-   - **Mechanism**: With probability $\epsilon$, all features are used (exploration); with probability $(1-\epsilon)$, only selected features are used (exploitation). It is theoretically shown that this reduces both bias and variance of the gradient estimator.
-   - **Design Motivation**: Training exclusively on partial features can introduce large gradient noise and unstable convergence.
+    - **Function**: Balances training with full features versus selected features.
+    - **Mechanism**: With probability $\epsilon$, all features are used (exploration); with probability $(1-\epsilon)$, only selected features are used (exploitation). It is theoretically shown that this reduces both bias and variance of the gradient estimator.
+    - **Design Motivation**: Training exclusively on partial features can introduce large gradient noise and unstable convergence.
 
 ### Loss & Training
 

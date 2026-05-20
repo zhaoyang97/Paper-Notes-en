@@ -18,8 +18,8 @@ content_hash: cfca29f4b9e5dc94
 # A Snapshot of Influence: A Local Data Attribution Framework for Online Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19281](https://arxiv.org/abs/2505.19281)
-**Code**: [https://github.com/LDAORL/LDA-ORL](https://github.com/LDAORL/LDA-ORL)
+**arXiv**: [2505.19281](https://arxiv.org/abs/2505.19281)  
+**Code**: [https://github.com/LDAORL/LDA-ORL](https://github.com/LDAORL/LDA-ORL)  
 **Area**: Robotics
 **Keywords**: Data Attribution, Online Reinforcement Learning, PPO, Influence Functions, Experience Filtering
 
@@ -42,8 +42,8 @@ The core idea is *local attribution*: rather than tracing influence across the e
 
 2. **Dual Objective Function Design**:
 
-   - **Agent Action Objective** $f_{\text{action}}(\theta) = \log\pi_\theta(a|s)$: Used to diagnose why the agent takes a specific action in a given state, primarily serving interpretability analysis.
-   - **Cumulative Return Objective** $f_{\text{return}}(\theta) = \mathbb{E}_{\tau\sim\pi_{\text{ref}}} [\log\pi_\theta(a|s) \hat{A}_{\text{ref}}(s,a)]$: Evaluates each record's contribution to overall return. This elegantly uses the current iteration's policy $\pi_{\theta^{(k)}}$ as the reference policy and the rollout buffer itself as the validation set, avoiding policy-dependent distribution shift and high-variance issues. This objective is structurally equivalent to the REINFORCE objective with a baseline.
+    - **Agent Action Objective** $f_{\text{action}}(\theta) = \log\pi_\theta(a|s)$: Used to diagnose why the agent takes a specific action in a given state, primarily serving interpretability analysis.
+    - **Cumulative Return Objective** $f_{\text{return}}(\theta) = \mathbb{E}_{\tau\sim\pi_{\text{ref}}} [\log\pi_\theta(a|s) \hat{A}_{\text{ref}}(s,a)]$: Evaluates each record's contribution to overall return. This elegantly uses the current iteration's policy $\pi_{\theta^{(k)}}$ as the reference policy and the rollout buffer itself as the validation set, avoiding policy-dependent distribution shift and high-variance issues. This objective is structurally equivalent to the REINFORCE objective with a baseline.
 
 3. **TracIn-Based Attribution**: For each record $z_i$ in the buffer, an influence score is computed as:
    $$I_i = \sum_{j: z_i \in \mathcal{B}_j^{(k)}} \langle \nabla_\theta f(\theta_j^{(k)}), \nabla_\theta \mathcal{L}_{\text{PPO}}(\theta_j^{(k)}, z_i) \rangle$$

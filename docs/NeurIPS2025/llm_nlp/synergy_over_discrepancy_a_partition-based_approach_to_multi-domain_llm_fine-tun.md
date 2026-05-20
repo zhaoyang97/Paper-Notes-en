@@ -18,8 +18,8 @@ content_hash: 53ef8b56469838f7
 # Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.07198](https://arxiv.org/abs/2511.07198)
-**Code**: Not released
+**arXiv**: [2511.07198](https://arxiv.org/abs/2511.07198)  
+**Code**: Not released  
 **Area**: LLM/NLP
 **Keywords**: multi-domain fine-tuning, inter-domain synergy, partition strategy, generalization bound, Adapter
 

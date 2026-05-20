@@ -18,8 +18,8 @@ content_hash: cb06d2885c07ac7b
 # Oracle-Efficient Combinatorial Semi-Bandits
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21431](https://arxiv.org/abs/2510.21431)
-**Code**: [GitHub](https://github.com/junghunkim7786/OracleEfficientCombinatorialBandits)
+**arXiv**: [2510.21431](https://arxiv.org/abs/2510.21431)  
+**Code**: [GitHub](https://github.com/junghunkim7786/OracleEfficientCombinatorialBandits)  
 **Area**: Optimization
 **Keywords**: combinatorial semi-bandits, oracle efficiency, regret bounds, online learning, covariance-adaptive
 

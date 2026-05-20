@@ -18,8 +18,8 @@ content_hash: 591835c9ecf6a3e0
 # SMMILE: An Expert-Driven Benchmark for Multimodal Medical In-Context Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.21355](https://arxiv.org/abs/2506.21355)
-**Code**: [Project Page](https://smmile-benchmark.github.io)
+**arXiv**: [2506.21355](https://arxiv.org/abs/2506.21355)  
+**Code**: [Project Page](https://smmile-benchmark.github.io)  
 **Area**: Medical Imaging / Multimodal Learning
 **Keywords**: Multimodal In-Context Learning, Medical Benchmark, Multimodal Large Language Models, In-Context Example Quality, Recency Bias
 

@@ -18,9 +18,9 @@ content_hash: d2f2ed4c91d4bb95
 # Physics-informed Reduced Order Modeling of Time-dependent PDEs via Differentiable Solvers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.14595](https://arxiv.org/abs/2505.14595)
+**arXiv**: [2505.14595](https://arxiv.org/abs/2505.14595)  
 **Authors**: Nima Hosseini Dashtbayaz (UWO), Hesam Salehipour (Autodesk Research), Adrian Butscher (Autodesk Research), Nigel Morris (Autodesk Research)
-**Code**: [phi-rom.github.io](https://phi-rom.github.io)
+**Code**: [phi-rom.github.io](https://phi-rom.github.io)  
 **Area**: Time Series
 **Keywords**: Reduced Order Modeling, Differentiable Solvers, Physics-Informed Neural Networks, Implicit Neural Representations, Partial Differential Equations
 

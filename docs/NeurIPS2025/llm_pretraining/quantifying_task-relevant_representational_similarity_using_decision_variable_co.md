@@ -18,8 +18,8 @@ content_hash: 90dfa37c9cd60619
 # Quantifying Task-Relevant Representational Similarity Using Decision Variable Correlation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.02164](https://arxiv.org/abs/2506.02164)
-**Code**: [github.com/wei-bbc-lab/DVC](https://github.com/wei-bbc-lab/DVC)
+**arXiv**: [2506.02164](https://arxiv.org/abs/2506.02164)  
+**Code**: [github.com/wei-bbc-lab/DVC](https://github.com/wei-bbc-lab/DVC)  
 **Area**: Computational Neuroscience / Representational Similarity Analysis
 **Keywords**: Decision Variable Correlation, Brain-Model Alignment, Representational Similarity, Signal Detection Theory, Visual Cortex
 

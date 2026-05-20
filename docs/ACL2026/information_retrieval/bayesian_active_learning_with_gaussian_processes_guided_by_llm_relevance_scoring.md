@@ -18,8 +18,8 @@ content_hash: 3ff2a39d189b3779
 # Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17906](https://arxiv.org/abs/2604.17906)
-**Code**: [GitHub](https://github.com/junieberry/BAGEL)
+**arXiv**: [2604.17906](https://arxiv.org/abs/2604.17906)  
+**Code**: [GitHub](https://github.com/junieberry/BAGEL)  
 **Area**: Information Retrieval
 **Keywords**: Passage Retrieval, Gaussian Processes, Active Learning, LLM Re-ranking, Bayesian Optimization
 

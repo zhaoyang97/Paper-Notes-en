@@ -18,9 +18,9 @@ content_hash: 72db66f858b51876
 # Feature-Centric Unsupervised Node Representation Learning Without Homophily Assumption
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.15112](https://arxiv.org/abs/2512.15112)
+**arXiv**: [2512.15112](https://arxiv.org/abs/2512.15112)  
 **Authors**: Sunwoo Kim, Soo Yong Lee, Kyungho Kim, Hyunjin Hwang, Jaemin Yoo, Kijung Shin (KAIST)
-**Code**: [GitHub](https://github.com/kswoo97/unsupervised-non-homophilic)
+**Code**: [GitHub](https://github.com/kswoo97/unsupervised-non-homophilic)  
 **Area**: Graph Learning
 **Keywords**: unsupervised node representation learning, graph convolution, non-homophilic graphs, clustering, feature-centric
 

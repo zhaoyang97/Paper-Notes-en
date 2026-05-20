@@ -17,8 +17,8 @@ content_hash: f41d1a8f1be111ca
 # FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.23318](https://arxiv.org/abs/2507.23318)
-**Code**: Not released
+**arXiv**: [2507.23318](https://arxiv.org/abs/2507.23318)  
+**Code**: Not released  
 **Area**: Multimodal VLM / Autonomous Driving
 **Keywords**: VLA model acceleration, visual token pruning, foreground reconstruction, autonomous driving, plug-and-play
 

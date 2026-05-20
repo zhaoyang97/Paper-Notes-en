@@ -18,8 +18,8 @@ content_hash: 5ebd45e2d855ee92
 # Self-Supervised Learning from Structural Invariance
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.02381](https://arxiv.org/abs/2602.02381)
-**Code**: [https://github.com/SkrighYZ/AdaSSL](https://github.com/SkrighYZ/AdaSSL)
+**arXiv**: [2602.02381](https://arxiv.org/abs/2602.02381)  
+**Code**: [https://github.com/SkrighYZ/AdaSSL](https://github.com/SkrighYZ/AdaSSL)  
 **Area**: Self-Supervised Learning / Causal Representation Learning
 **Keywords**: self-supervised learning, latent variable model, structural invariance, heteroscedasticity, causal representation
 

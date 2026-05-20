@@ -18,8 +18,8 @@ content_hash: f51a342613ca2249
 # A Topological Rewriting of Tarski's Mereogeometry
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12727](https://arxiv.org/abs/2511.12727)
-**Code**: [λ-MM Coq Library](https://www.univ-smb.fr/listic/technologies/logiciels/modeles-decidables-pour-la-specification-d-ontologies/extending-tarskis-mereo-geometry-with-topological-definitions/)
+**arXiv**: [2511.12727](https://arxiv.org/abs/2511.12727)  
+**Code**: [λ-MM Coq Library](https://www.univ-smb.fr/listic/technologies/logiciels/modeles-decidables-pour-la-specification-d-ontologies/extending-tarskis-mereo-geometry-with-topological-definitions/)  
 **Area**: Other
 **Keywords**: Tarski Geometry, Mereology, Topological Space, Coq Theorem Proving, Regular Open Sets, Qualitative Spatial Reasoning
 

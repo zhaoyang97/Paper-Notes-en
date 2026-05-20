@@ -18,8 +18,8 @@ content_hash: 11f3ca62d819e1ec
 # Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities
 
 **Conference**: ACL 2026
-**arXiv**: [2604.10135](https://arxiv.org/abs/2604.10135)
-**Code**: [GitHub](https://github.com/CLCS-SUSTech/think-in-sentence)
+**arXiv**: [2604.10135](https://arxiv.org/abs/2604.10135)  
+**Code**: [GitHub](https://github.com/CLCS-SUSTech/think-in-sentence)  
 **Area**: LLM/NLP
 **Keywords**: sentence boundaries, delimiters, in-context learning, supervised fine-tuning, free lunch
 

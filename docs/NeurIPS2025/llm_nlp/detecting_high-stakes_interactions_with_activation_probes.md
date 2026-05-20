@@ -18,8 +18,8 @@ content_hash: 1a3502c2ee0f2411
 # Detecting High-Stakes Interactions with Activation Probes
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10805](https://arxiv.org/abs/2506.10805)
-**Code**: [GitHub](https://github.com/arrrlex/models-under-pressure)
+**arXiv**: [2506.10805](https://arxiv.org/abs/2506.10805)  
+**Code**: [GitHub](https://github.com/arrrlex/models-under-pressure)  
 **Area**: AI Safety / LLM Monitoring
 **Keywords**: activation probes, high-stakes detection, cascaded monitoring, synthetic data, LLM safety
 

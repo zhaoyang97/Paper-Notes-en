@@ -18,8 +18,8 @@ content_hash: 59e3911071bd3104
 # Seeing the Arrow of Time in Large Multimodal Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03340](https://arxiv.org/abs/2506.03340)
-**Code**: [Project Page](https://vision.cs.utexas.edu/projects/SeeAoT)
+**arXiv**: [2506.03340](https://arxiv.org/abs/2506.03340)  
+**Code**: [Project Page](https://vision.cs.utexas.edu/projects/SeeAoT)  
 **Area**: Video Understanding / Multimodal Temporal Perception
 **Keywords**: Arrow of Time, Temporal Awareness in LMMs, Reinforcement Learning Fine-tuning, Video Understanding Benchmark, GRPO
 

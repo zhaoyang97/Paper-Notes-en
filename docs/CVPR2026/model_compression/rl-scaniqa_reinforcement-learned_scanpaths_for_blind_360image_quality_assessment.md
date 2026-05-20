@@ -19,8 +19,8 @@ content_hash: f3a0c03dc9dca247
 # RL-ScanIQA: Reinforcement-Learned Scanpaths for Blind 360° Image Quality Assessment
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14297](https://arxiv.org/abs/2603.14297)
-**Code**: None
+**arXiv**: [2603.14297](https://arxiv.org/abs/2603.14297)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: 360 image quality, reinforcement-learning, scanpath, blind IQA, PPO, active perception
 

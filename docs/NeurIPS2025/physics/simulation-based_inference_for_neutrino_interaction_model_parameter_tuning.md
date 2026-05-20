@@ -18,8 +18,8 @@ content_hash: cde2c661dbdc01d7
 # Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07454](https://arxiv.org/abs/2510.07454)
-**Code**: [GitHub](https://github.com/karlaTame/Neutrino_SBI/) (open source)
+**arXiv**: [2510.07454](https://arxiv.org/abs/2510.07454)  
+**Code**: [GitHub](https://github.com/karlaTame/Neutrino_SBI/) (open source)  
 **Area**: Physics
 **Keywords**: simulation-based inference, neutrino scattering, neural posterior estimation, GENIE, parameter tuning
 

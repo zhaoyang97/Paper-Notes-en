@@ -18,8 +18,8 @@ content_hash: 57d7c701b7d632bf
 # Think, Speak, Decide: Language-Augmented Multi-Agent Reinforcement Learning for Economic Decision-Making
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12876](https://arxiv.org/abs/2511.12876)
-**Code**: [https://github.com/hey0223/LAMP](https://github.com/hey0223/LAMP)
+**arXiv**: [2511.12876](https://arxiv.org/abs/2511.12876)  
+**Code**: [https://github.com/hey0223/LAMP](https://github.com/hey0223/LAMP)  
 **Area**: Reinforcement Learning
 **Keywords**: Multi-Agent Reinforcement Learning, Large Language Models, Economic Decision-Making, Language-Augmented Policy, Communication
 
@@ -76,9 +76,9 @@ The Speak module enables strategic information exchange among agents:
 - The LLM generates three candidate statements for each agent.
 - A **self-attention selector** $\mathcal{S}$ scores the candidates and samples one to broadcast to all agents.
 - A **reflection module** $\mathcal{L}_{reflect}$ parses received messages and produces an assessment of each peer, including:
-  - Estimated wealth tier $w_t^{i \to j} \in \{\text{low, mid, high}\}$
-  - Numerical belief confidence $\tau_t^{i \to j} \in [0, 10]$
-  - Self-reflection summary $\alpha_t^i$
+    - Estimated wealth tier $w_t^{i \to j} \in \{\text{low, mid, high}\}$
+    - Numerical belief confidence $\tau_t^{i \to j} \in [0, 10]$
+    - Self-reflection summary $\alpha_t^i$
 
 **Design Motivation**: Enables agents to achieve coordination by exchanging strategic information and inferring opponent states, reaching higher welfare without brute-force exploration.
 

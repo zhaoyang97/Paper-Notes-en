@@ -18,8 +18,8 @@ content_hash: b88919c10d1f37c2
 # Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01413](https://arxiv.org/abs/2506.01413)
-**Code**: [https://github.com/yuleiqin/RAIF](https://github.com/yuleiqin/RAIF)
+**arXiv**: [2506.01413](https://arxiv.org/abs/2506.01413)  
+**Code**: [https://github.com/yuleiqin/RAIF](https://github.com/yuleiqin/RAIF)  
 **Area**: Reinforcement Learning
 **Keywords**: Instruction Following, Reinforcement Learning, Reasoning Incentivization, Rule-Centric Reward, CoT, GRPO
 

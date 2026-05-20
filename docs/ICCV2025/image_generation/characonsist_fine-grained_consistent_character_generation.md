@@ -18,8 +18,8 @@ content_hash: 093e677aefc600d9
 # CharaConsist: Fine-Grained Consistent Character Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.11533](https://arxiv.org/abs/2507.11533)
-**Code**: [https://github.com/xxx/CharaConsist.git](https://github.com/xxx/CharaConsist.git)
+**arXiv**: [2507.11533](https://arxiv.org/abs/2507.11533)  
+**Code**: [https://github.com/xxx/CharaConsist.git](https://github.com/xxx/CharaConsist.git)  
 **Area**: Diffusion Models
 **Keywords**: Consistent Character Generation, DiT, Training-Free, Attention Mechanism, FLUX.1
 

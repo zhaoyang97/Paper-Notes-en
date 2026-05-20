@@ -19,8 +19,8 @@ content_hash: 87352ade420860c1
 # MotionStream: Real-Time Video Generation with Interactive Motion Controls
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.01266](https://arxiv.org/abs/2511.01266)
-**Code**: None
+**arXiv**: [2511.01266](https://arxiv.org/abs/2511.01266)  
+**Code**: None  
 **Area**: Video Generation
 **Keywords**: streaming video generation, motion control, causal distillation, attention sink, distribution matching distillation, real-time interaction
 

@@ -18,8 +18,8 @@ content_hash: 284657b4f47a6cc4
 # Controlling Multimodal LLMs via Reward-guided Decoding
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.11616](https://arxiv.org/abs/2508.11616)
-**Code**: None
+**arXiv**: [2508.11616](https://arxiv.org/abs/2508.11616)  
+**Code**: None  
 **Area**: Multimodal VLM / Hallucination Mitigation / Inference-time Alignment
 **Keywords**: reward-guided decoding, hallucination mitigation, visual grounding, controllable generation, multimodal reward model
 

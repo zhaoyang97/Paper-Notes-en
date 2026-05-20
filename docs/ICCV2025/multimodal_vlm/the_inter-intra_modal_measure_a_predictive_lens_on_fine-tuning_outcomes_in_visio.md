@@ -18,8 +18,8 @@ content_hash: f95dcfa70c18194d
 # The Inter-Intra Modal Measure: A Predictive Lens on Fine-Tuning Outcomes in Vision-Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2407.15731](https://arxiv.org/abs/2407.15731)
-**Code**: [GitHub](https://github.com/mit-ll/IIMM)
+**arXiv**: [2407.15731](https://arxiv.org/abs/2407.15731)  
+**Code**: [GitHub](https://github.com/mit-ll/IIMM)  
 **Area**: Multimodal VLM
 **Keywords**: Transferability estimation, fine-tuning prediction, modality gap, contrastive learning, catastrophic forgetting
 
@@ -77,9 +77,9 @@ IIMM derives from the InfoNCE loss of contrastive learning and decomposes the em
 
 3. **Usage Protocol**:
 
-   - Perform a single forward pass on target-task data to compute IIMM.
-   - Pre-fit a linear model mapping IIMM to performance gain using a small set of standard visual benchmarks.
-   - Apply the linear model to predict fine-tuning gain on new tasks without actually fine-tuning.
+    - Perform a single forward pass on target-task data to compute IIMM.
+    - Pre-fit a linear model mapping IIMM to performance gain using a small set of standard visual benchmarks.
+    - Apply the linear model to predict fine-tuning gain on new tasks without actually fine-tuning.
 
 ### Loss & Training
 
@@ -128,8 +128,8 @@ For comparison, GBC (the second strongest metric) achieves $R^2$ of only 0.59–
 - **IIMM achieves $R^2 > 0.89$ across all foundation models**, substantially outperforming all unimodal transferability metrics.
 - **IIMM is negatively linearly correlated with forgetting**: higher IIMM corresponds to greater average accuracy degradation on off-target tasks after fine-tuning (with relatively high $R^2$ across models except CLIP).
 - **Differentiated behavior of PEFT methods**:
-  - CLIP-Adapter's localized adjustment (frozen backbone) weakens the IIMM–gain relationship but substantially mitigates forgetting.
-  - LoRA and attention-weight fine-tuning exhibit severe forgetting when IIMM is high.
+    - CLIP-Adapter's localized adjustment (frozen backbone) weakens the IIMM–gain relationship but substantially mitigates forgetting.
+    - LoRA and attention-weight fine-tuning exhibit severe forgetting when IIMM is high.
 - **Intra-modal image embedding similarity is the most predictive component** ($R^2$ = 0.81–0.88), but combining it with inter-modal misalignment yields stronger results ($R^2$ = 0.89–0.92), validating the necessity of multimodal information.
 - **Correct-label alignment and intra-modal text distance are essentially uninformative**—only the negative-sample direction is useful.
 

@@ -18,8 +18,8 @@ content_hash: f4e43e173fe511b4
 # SVC 2026: The Second Multimodal Deception Detection Challenge and the First Domain Generalized Remote Physiological Measurement Challenge
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05748](https://arxiv.org/abs/2604.05748)
-**Code**: [MMDD2026 Platform](https://sites.google.com/view/svc-cvpr26)
+**arXiv**: [2604.05748](https://arxiv.org/abs/2604.05748)  
+**Code**: [MMDD2026 Platform](https://sites.google.com/view/svc-cvpr26)  
 **Area**: Multimodal Learning / Medical Imaging
 **Keywords**: Deception Detection, Remote Photoplethysmography, Cross-Domain Generalization, Multimodal Fusion, Subtle Visual Signals
 

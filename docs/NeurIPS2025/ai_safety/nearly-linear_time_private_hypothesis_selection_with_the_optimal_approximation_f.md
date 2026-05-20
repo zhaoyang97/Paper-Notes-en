@@ -18,8 +18,8 @@ content_hash: 2119be9f9a0c1596
 # Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01162](https://arxiv.org/abs/2506.01162)
-**Code**: None
+**arXiv**: [2506.01162](https://arxiv.org/abs/2506.01162)  
+**Code**: None  
 **Area**: AI Safety / Differential Privacy
 **Keywords**: Hypothesis Selection, Differential Privacy, Nearly-Linear Time, Optimal Approximation Factor, Exponential Mechanism
 

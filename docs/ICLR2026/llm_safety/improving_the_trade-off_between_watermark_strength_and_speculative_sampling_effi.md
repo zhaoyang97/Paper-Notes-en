@@ -19,8 +19,8 @@ content_hash: 44e3fbd4cd975c1e
 # Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01428](https://arxiv.org/abs/2602.01428)
-**Code**: [GitHub](https://github.com/hwq0726/watermark-tradeoff)
+**arXiv**: [2602.01428](https://arxiv.org/abs/2602.01428)  
+**Code**: [GitHub](https://github.com/hwq0726/watermark-tradeoff)  
 **Area**: AI Safety
 **Keywords**: LLM watermarking, speculative sampling, watermark strength, sampling efficiency, Pareto frontier, pseudo-random acceptance
 

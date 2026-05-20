@@ -18,8 +18,8 @@ content_hash: ef379ae94d5612af
 # Task-free Adaptive Meta Black-box Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21475](https://arxiv.org/abs/2601.21475)
-**Code**: None
+**arXiv**: [2601.21475](https://arxiv.org/abs/2601.21475)  
+**Code**: None  
 **Area**: Remote Sensing
 **Keywords**: Black-box optimization, meta-learning, evolutionary algorithms, adaptive parameter learning, zero-shot optimization
 

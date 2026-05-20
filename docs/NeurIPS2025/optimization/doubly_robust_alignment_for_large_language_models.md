@@ -18,8 +18,8 @@ content_hash: 159822d7c7b56296
 # Doubly Robust Alignment for Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01183](https://arxiv.org/abs/2506.01183)
-**Code**: [https://github.com/DRPO4LLM/DRPO4LLM](https://github.com/DRPO4LLM/DRPO4LLM)
+**arXiv**: [2506.01183](https://arxiv.org/abs/2506.01183)  
+**Code**: [https://github.com/DRPO4LLM/DRPO4LLM](https://github.com/DRPO4LLM/DRPO4LLM)  
 **Area**: Optimization
 **Keywords**: RLHF, doubly robust, preference optimization, DPO, model robustness
 
@@ -49,14 +49,14 @@ Given a dataset $\mathcal{D} = \{(X, Y^{(1)}, Y^{(2)}, Z)\}$ (prompts, two respo
 
 1. **Total Preference Definition and Baseline Estimators**
 
-   - **Function**: Define the total preference of the target policy over the reference policy as $p^*(\pi) = \mathbb{P}(\pi \succ \pi_\text{ref})$.
-   - **Mechanism**: The Direct Method (DM) estimator plugs in the estimated preference model $\hat{g}$ directly, relying on the correctness of $\hat{g}$. The Importance Sampling (IS) estimator converts the expectation using the importance weight $w(y,x) = \pi(y|x)/\pi_\text{ref}(y|x)$, relying on the correctness of $\hat{\pi}_\text{ref}$.
-   - **Design Motivation**: Each baseline estimator depends on the correctness of one model, making neither sufficiently robust on its own.
+    - **Function**: Define the total preference of the target policy over the reference policy as $p^*(\pi) = \mathbb{P}(\pi \succ \pi_\text{ref})$.
+    - **Mechanism**: The Direct Method (DM) estimator plugs in the estimated preference model $\hat{g}$ directly, relying on the correctness of $\hat{g}$. The Importance Sampling (IS) estimator converts the expectation using the importance weight $w(y,x) = \pi(y|x)/\pi_\text{ref}(y|x)$, relying on the correctness of $\hat{\pi}_\text{ref}$.
+    - **Design Motivation**: Each baseline estimator depends on the correctness of one model, making neither sufficiently robust on its own.
 
 2. **Doubly Robust (DR) Preference Estimator**
 
-   - **Function**: Combine DM and IS to construct an estimator that is robust to misspecification of either model.
-   - **Mechanism**: The estimating function is
+    - **Function**: Combine DM and IS to construct an estimator that is robust to misspecification of either model.
+    - **Mechanism**: The estimating function is
 $$\psi = \frac{1}{2}\sum_{a=1}^2 \mathbb{E}_{y \sim \pi}[\hat{g}(X,y,Y^{(a)})] + \frac{1}{2}\sum_{a=1}^2 (-1)^{a-1} \frac{\pi(Y^{(a)}|X)}{\hat{\pi}_\text{ref}(Y^{(a)}|X)}[Z - \hat{g}(X,Y^{(1)},Y^{(2)})]$$
      The first term is the DM component; the second is an augmentation term that uses the preference residual $Z - \hat{g}$ to correct the bias of the DM.
    - **Design Motivation**: When $\hat{g} = g^*$, the augmentation term has zero expectation (DM is already correct). When $\hat{\pi}_\text{ref} = \pi_\text{ref}$, the augmentation term automatically recovers the IS estimate. Correctness of either model guarantees consistency.
@@ -64,8 +64,8 @@ $$\psi = \frac{1}{2}\sum_{a=1}^2 \mathbb{E}_{y \sim \pi}[\hat{g}(X,y,Y^{(a)})] +
 
 3. **DRPO Preference Optimization**
 
-   - **Function**: Solve for the optimal policy using the DR estimator.
-   - **Mechanism**:
+    - **Function**: Solve for the optimal policy using the DR estimator.
+    - **Mechanism**:
 $$\hat{\pi} = \arg\max_{\pi \in \Pi} \{\hat{p}_\text{DR}(\pi) - \beta \mathbb{E}_X D_\text{KL}[\pi(\cdot|X) \| \hat{\pi}_\text{ref}(\cdot|X)]\}$$
    - **Implementation Details**: (a) IS ratios are clipped to prevent extreme values; (b) a surrogate objective is designed to support Monte Carlo sampling from the target policy; (c) GRPO-style variance reduction is applied to the KL divergence term.
 

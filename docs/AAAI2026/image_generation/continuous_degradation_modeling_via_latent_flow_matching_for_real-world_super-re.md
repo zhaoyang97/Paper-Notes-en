@@ -18,8 +18,8 @@ content_hash: b33768135de3c82c
 # Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.04193](https://arxiv.org/abs/2602.04193)
-**Code**: [GitHub](https://github.com/present091/DegFlow)
+**arXiv**: [2602.04193](https://arxiv.org/abs/2602.04193)  
+**Code**: [GitHub](https://github.com/present091/DegFlow)  
 **Area**: Image Generation
 **Keywords**: Real-world super-resolution, degradation modeling, Flow Matching, continuous scale, latent space
 

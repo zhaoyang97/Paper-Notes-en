@@ -18,8 +18,8 @@ content_hash: db02d6577bd67775
 # CtrlFuse: Mask-Prompt Guided Controllable Infrared and Visible Image Fusion
 
 **Conference**: AAAI2026
-**arXiv**: [2601.08619](https://arxiv.org/abs/2601.08619)
-**Code**: [Sevryy/CtrlFuse](https://github.com/Sevryy/CtrlFuse)
+**arXiv**: [2601.08619](https://arxiv.org/abs/2601.08619)  
+**Code**: [Sevryy/CtrlFuse](https://github.com/Sevryy/CtrlFuse)  
 **Area**: Image Segmentation
 **Keywords**: infrared-visible image fusion, controllable fusion, mask prompt, SAM, semantic segmentation
 

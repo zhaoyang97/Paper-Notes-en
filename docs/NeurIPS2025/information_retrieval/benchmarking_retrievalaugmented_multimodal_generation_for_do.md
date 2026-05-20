@@ -18,8 +18,8 @@ content_hash: e332765af2f4d4d8
 # Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16470](https://arxiv.org/abs/2505.16470)
-**Code**: [https://github.com/MMDocRAG/MMDocRAG](https://github.com/MMDocRAG/MMDocRAG)
+**arXiv**: [2505.16470](https://arxiv.org/abs/2505.16470)  
+**Code**: [https://github.com/MMDocRAG/MMDocRAG](https://github.com/MMDocRAG/MMDocRAG)  
 **Area**: Multimodal VLM / Document Question Answering / Retrieval-Augmented Generation
 **Keywords**: DocRAG, multimodal QA, quote selection, interleaved text-image generation, benchmark
 

@@ -18,8 +18,8 @@ content_hash: 7d42a49b90488f8c
 # Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00565](https://arxiv.org/abs/2510.00565)
-**Code**: [GitHub](https://github.com/mdl-lab/dlm-priming-vulnerability)
+**arXiv**: [2510.00565](https://arxiv.org/abs/2510.00565)  
+**Code**: [GitHub](https://github.com/mdl-lab/dlm-priming-vulnerability)  
 **Area**: AI Safety / Diffusion Language Models
 **Keywords**: diffusion language models, jailbreak attacks, priming vulnerability, safety alignment, masked diffusion
 

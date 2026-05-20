@@ -18,8 +18,8 @@ content_hash: f3d23c44dffb4096
 # Guiding Noisy Label Conditional Diffusion Models with Score-based Discriminator Correction
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.19581](https://arxiv.org/abs/2508.19581)
-**Code**: N/A
+**arXiv**: [2508.19581](https://arxiv.org/abs/2508.19581)  
+**Code**: N/A  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Noisy Labels, Discriminator Guidance, Inference-time Correction, Conditional Diffusion Models, Score-based Correction
 

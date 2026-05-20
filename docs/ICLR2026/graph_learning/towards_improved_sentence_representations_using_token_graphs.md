@@ -18,8 +18,8 @@ content_hash: 655b5f2ff492496d
 # Towards Improved Sentence Representations using Token Graphs
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.03389](https://arxiv.org/abs/2603.03389)
-**Code**: [https://github.com/ipsitmantri/GLOT](https://github.com/ipsitmantri/GLOT)
+**arXiv**: [2603.03389](https://arxiv.org/abs/2603.03389)  
+**Code**: [https://github.com/ipsitmantri/GLOT](https://github.com/ipsitmantri/GLOT)  
 **Area**: NLP / Graph Learning
 **Keywords**: Sentence Representation, Graph Neural Networks, Token Graph, Pooling, Frozen LLM
 

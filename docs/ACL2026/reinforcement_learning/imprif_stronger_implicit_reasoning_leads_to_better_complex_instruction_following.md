@@ -17,8 +17,8 @@ content_hash: 9ff0767d0e05d629
 # ImpRIF: Stronger Implicit Reasoning Leads to Better Complex Instruction Following
 
 **Conference**: ACL 2026
-**arXiv**: [2602.21228](https://arxiv.org/abs/2602.21228)
-**Code**: None
+**arXiv**: [2602.21228](https://arxiv.org/abs/2602.21228)  
+**Code**: None  
 **Area**: Instruction Following / LLM Reasoning
 **Keywords**: Complex instruction following, implicit reasoning, reasoning graph, process verification, reinforcement learning
 

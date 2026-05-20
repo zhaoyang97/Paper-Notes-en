@@ -17,8 +17,8 @@ content_hash: 10fb5331a539063e
 # 3-Model Speculative Decoding (PyramidSD)
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.12966](https://arxiv.org/abs/2510.12966)
-**Code**: None
+**arXiv**: [2510.12966](https://arxiv.org/abs/2510.12966)  
+**Code**: None  
 **Area**: LLM Efficiency
 **Keywords**: speculative decoding, multi-model cascade, fuzzy acceptance criterion, LLM inference optimization
 

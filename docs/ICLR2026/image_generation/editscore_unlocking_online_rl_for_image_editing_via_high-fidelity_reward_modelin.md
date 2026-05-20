@@ -18,8 +18,8 @@ content_hash: aacffbfb68dc4e66
 # EditScore: Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23909](https://arxiv.org/abs/2509.23909)
-**Code**: [GitHub](https://github.com/VectorSpaceLab/EditScore)
+**arXiv**: [2509.23909](https://arxiv.org/abs/2509.23909)  
+**Code**: [GitHub](https://github.com/VectorSpaceLab/EditScore)  
 **Area**: Diffusion Models / Image Editing
 **Keywords**: reward model, Reinforcement Learning, image editing, Online RL, Flow-GRPO
 

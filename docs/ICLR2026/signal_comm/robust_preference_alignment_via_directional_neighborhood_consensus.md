@@ -18,8 +18,8 @@ content_hash: 3ad5db4efeeeea47
 # Robust Preference Alignment via Directional Neighborhood Consensus
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.20498](https://arxiv.org/abs/2510.20498)
-**Code**: [rcmao/robust-preference-alignment](https://github.com/rcmao/robust-preference-alignment)
+**arXiv**: [2510.20498](https://arxiv.org/abs/2510.20498)  
+**Code**: [rcmao/robust-preference-alignment](https://github.com/rcmao/robust-preference-alignment)  
 **Area**: Signal & Communication
 **Keywords**: preference alignment, robustness, inference-time adjustment, directional neighborhood consensus, out-of-distribution preferences
 

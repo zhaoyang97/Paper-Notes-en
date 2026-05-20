@@ -18,9 +18,9 @@ content_hash: 046d7e2eae21230b
 # mmPred: Radar-based Human Motion Prediction in the Dark
 
 **Conference**: AAAI2026
-**arXiv**: [2512.00345](https://arxiv.org/abs/2512.00345)
+**arXiv**: [2512.00345](https://arxiv.org/abs/2512.00345)  
 **Authors**: Junqiao Fan, Haocong Rao, Jiarui Zhang, Jianfei Yang, Lihua Xie (Nanyang Technological University)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Human Understanding
 **Keywords**: millimeter-wave radar, human motion prediction, diffusion model, frequency-domain representation, dual-domain fusion
 

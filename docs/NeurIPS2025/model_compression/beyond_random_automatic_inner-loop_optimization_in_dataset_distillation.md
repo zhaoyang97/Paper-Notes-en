@@ -18,8 +18,8 @@ content_hash: 3cdd85caccbb8386
 # Beyond Random: Automatic Inner-Loop Optimization in Dataset Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04838](https://arxiv.org/abs/2510.04838)
-**Code**: Available
+**arXiv**: [2510.04838](https://arxiv.org/abs/2510.04838)  
+**Code**: Available  
 **Area**: Dataset Distillation / Efficient Training
 **Keywords**: Dataset Distillation, BPTT Truncation, Adaptive Truncation, Low-Rank Hessian Approximation, Patch-wise Semantic Preservation
 

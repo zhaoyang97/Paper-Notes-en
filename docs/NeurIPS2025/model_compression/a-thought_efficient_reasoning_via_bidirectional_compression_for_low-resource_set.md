@@ -18,8 +18,8 @@ content_hash: 0c30bf6b8938f0d5
 # A*-Thought: Efficient Reasoning via Bidirectional Compression for Low-Resource Settings
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.24550](https://arxiv.org/abs/2505.24550)
-**Code**: [GitHub](https://github.com/AI9Stars/AStar-Thought)
+**arXiv**: [2505.24550](https://arxiv.org/abs/2505.24550)  
+**Code**: [GitHub](https://github.com/AI9Stars/AStar-Thought)  
 **Area**: LLM Reasoning / Model Compression
 **Keywords**: reasoning efficiency, CoT compression, A* search, bidirectional importance, long-to-short
 

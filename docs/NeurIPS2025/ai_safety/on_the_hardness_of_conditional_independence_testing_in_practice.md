@@ -20,9 +20,9 @@ content_hash: cd1eda913f5a09a0
 # On the Hardness of Conditional Independence Testing In Practice
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.14000](https://arxiv.org/abs/2512.14000)
+**arXiv**: [2512.14000](https://arxiv.org/abs/2512.14000)  
 **Authors**: Zheng He (UBC), Roman Pogodin (McGill/Mila), Yazhe Li (Microsoft AI), Namrata Deka (CMU), Arthur Gretton (UCL Gatsby), Danica J. Sutherland (UBC/Amii)
-**Code**: Not released
+**Code**: Not released  
 **Area**: AI Safety
 **Keywords**: conditional independence testing, kernel methods, KCI, GCM, Type-I error, conditional mean embedding, causal discovery
 

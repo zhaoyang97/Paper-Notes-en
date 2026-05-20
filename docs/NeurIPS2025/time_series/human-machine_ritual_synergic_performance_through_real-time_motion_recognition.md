@@ -18,8 +18,8 @@ content_hash: 57143152d71b5236
 # Human-Machine Ritual: Synergic Performance through Real-Time Motion Recognition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02351](https://arxiv.org/abs/2511.02351)
-**Code**: None
+**arXiv**: [2511.02351](https://arxiv.org/abs/2511.02351)  
+**Code**: None  
 **Area**: Human-Computer Interaction / Creative AI
 **Keywords**: IMU sensors, motion recognition, MiniRocket, real-time interaction, dance-music synergy
 
@@ -52,21 +52,21 @@ A two-stage pipeline: (1) **Training phase**: the dancer listens to personally m
 
 1. **Embodied Memory Mapping**:
 
-   - **Function**: Establishes the dancer's personal movement-sound associations.
-   - **Mechanism**: Rather than using predefined labels or AI-generated mappings, the dancer improvises movement in response to specific sounds, encoding the "memory association" between movement and sound into the training data. The dancer verbally describes the memory or imagery evoked by each sound (e.g., "the repetitive feeling of a subway commute"), and these descriptions guide the narrative organization of sounds during performance.
-   - **Design Motivation**: To ensure that sounds are meaningful to the dancer and that movements are naturally elicited by sounds, forming a tight semantic feedback loop—the machine serves as a "bridge to memory" rather than a "source of creativity."
+    - **Function**: Establishes the dancer's personal movement-sound associations.
+    - **Mechanism**: Rather than using predefined labels or AI-generated mappings, the dancer improvises movement in response to specific sounds, encoding the "memory association" between movement and sound into the training data. The dancer verbally describes the memory or imagery evoked by each sound (e.g., "the repetitive feeling of a subway commute"), and these descriptions guide the narrative organization of sounds during performance.
+    - **Design Motivation**: To ensure that sounds are meaningful to the dancer and that movements are naturally elicited by sounds, forming a tight semantic feedback loop—the machine serves as a "bridge to memory" rather than a "source of creativity."
 
 2. **IMU + MiniRocket Real-Time Classification**:
 
-   - **Function**: High-accuracy, low-latency continuous motion recognition.
-   - **Mechanism**: 4 IMUs (~25g each, BLE wireless) → 24-channel time series → 2-second sliding window segmentation → MiniRocket generates 10,000 minimum random convolutional kernel features → Ridge regression classifier. Full inference (data stream → server → result returned) < 50ms; inference alone ~15ms.
-   - **Design Motivation**: MiniRocket achieves high accuracy on time-series classification without requiring GPU training; the Ridge classifier is simple and fast. The overall system is lightweight enough for real-time use in live performance.
+    - **Function**: High-accuracy, low-latency continuous motion recognition.
+    - **Mechanism**: 4 IMUs (~25g each, BLE wireless) → 24-channel time series → 2-second sliding window segmentation → MiniRocket generates 10,000 minimum random convolutional kernel features → Ridge regression classifier. Full inference (data stream → server → result returned) < 50ms; inference alone ~15ms.
+    - **Design Motivation**: MiniRocket achieves high accuracy on time-series classification without requiring GPU training; the Ridge classifier is simple and fast. The overall system is lightweight enough for real-time use in live performance.
 
 3. **Data Augmentation Strategy**:
 
-   - **Function**: Obtain sufficient training data from a small dataset (648 samples, 7 classes).
-   - **Mechanism**: Applies jittering (additive Gaussian noise) and time warping (random stretching/compression of the time axis) to IMU time-series data.
-   - **Design Motivation**: Dancer-specific training data is inherently limited (collected on-site); augmentation is therefore necessary.
+    - **Function**: Obtain sufficient training data from a small dataset (648 samples, 7 classes).
+    - **Mechanism**: Applies jittering (additive Gaussian noise) and time warping (random stretching/compression of the time axis) to IMU time-series data.
+    - **Design Motivation**: Dancer-specific training data is inherently limited (collected on-site); augmentation is therefore necessary.
 
 ### Loss & Training
 - Ridge regression classifier (L2-regularized linear model)

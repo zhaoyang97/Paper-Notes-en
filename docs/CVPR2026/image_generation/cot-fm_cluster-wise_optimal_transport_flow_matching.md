@@ -18,8 +18,8 @@ content_hash: 03993003e26ef5be
 # COT-FM: Cluster-wise Optimal Transport Flow Matching
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13395](https://arxiv.org/abs/2603.13395)
-**Code**: [Project Page](https://embodiedai-ntu.github.io/cotfm)
+**arXiv**: [2603.13395](https://arxiv.org/abs/2603.13395)  
+**Code**: [Project Page](https://embodiedai-ntu.github.io/cotfm)  
 **Area**: Generative Models / Flow Matching
 **Keywords**: Flow Matching, Optimal Transport, Clustering, Trajectory Straightening, Accelerated Sampling
 

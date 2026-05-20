@@ -18,8 +18,8 @@ content_hash: 8b0ae16b27ed6a03
 # The Structure of Relation Decoding Linear Operators in Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26543](https://arxiv.org/abs/2510.26543)
-**Code**: [GitHub](https://bit.ly/structure-of-relations)
+**arXiv**: [2510.26543](https://arxiv.org/abs/2510.26543)  
+**Code**: [GitHub](https://bit.ly/structure-of-relations)  
 **Area**: Model Compression
 **Keywords**: Linear relation decoding, tensor networks, knowledge compression, interpretability, semantic attributes
 
@@ -54,8 +54,8 @@ The study proceeds in three progressive stages:
 
 1. **Tensor Network Compression**: The $n$ relation matrices of size $d \times d$ are stacked into a rank-3 tensor $\mathbb{R}^{d \times d \times n}$, which is then compressed using two tensor network architectures:
 
-   - **SimpleOrder3Network**: Centers on a small rank-3 tensor $T^0 \in \mathbb{R}^{d_{s'} \times d_{r'} \times d_{o'}}$ connected to the original embedding space via three projection matrices $P^1, P^2, P^3$. Its parameter count $N_{\text{Simple}} = (d \cdot d_{s'} + d \cdot d_{r'} + d \cdot d_{o'}) + d_{s'} \cdot d_{r'} \cdot d_{o'}$ is far smaller than the original $n \cdot d^2$.
-   - **TriangleTensorNetwork**: Centers on three interconnected rank-3 tensors, offering greater expressive capacity. For a given relation embedding $\mathbf{v}_r$, the corresponding LRE matrix is produced via tensor contraction.
+    - **SimpleOrder3Network**: Centers on a small rank-3 tensor $T^0 \in \mathbb{R}^{d_{s'} \times d_{r'} \times d_{o'}}$ connected to the original embedding space via three projection matrices $P^1, P^2, P^3$. Its parameter count $N_{\text{Simple}} = (d \cdot d_{s'} + d \cdot d_{r'} + d \cdot d_{o'}) + d_{s'} \cdot d_{r'} \cdot d_{o'}$ is far smaller than the original $n \cdot d^2$.
+    - **TriangleTensorNetwork**: Centers on three interconnected rank-3 tensors, offering greater expressive capacity. For a given relation embedding $\mathbf{v}_r$, the corresponding LRE matrix is produced via tensor contraction.
 
    Both are trained end-to-end with LLM parameters frozen, optimizing only the tensor network. A key finding is that **a linear tensor network without an additional relation encoder outperforms variants with nonlinear encoders**, indicating that linear structure suffices for efficient compression.
 

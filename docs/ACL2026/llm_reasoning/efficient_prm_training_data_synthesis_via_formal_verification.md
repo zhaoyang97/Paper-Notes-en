@@ -18,8 +18,8 @@ content_hash: da98512eb40b3aaf
 # Efficient PRM Training Data Synthesis via Formal Verification
 
 **Conference**: ACL 2026
-**arXiv**: [2505.15960](https://arxiv.org/abs/2505.15960)
-**Code**: [GitHub](https://github.com/psunlpgroup/FoVer)
+**arXiv**: [2505.15960](https://arxiv.org/abs/2505.15960)  
+**Code**: [GitHub](https://github.com/psunlpgroup/FoVer)  
 **Area**: LLM Reasoning
 **Keywords**: PRM, formal verification, step-level labels, Z3, Isabelle
 

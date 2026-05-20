@@ -18,8 +18,8 @@ content_hash: ca9aceaf4b01a20e
 # CLIPSym: Delving into Symmetry Detection with CLIP
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.14197](https://arxiv.org/abs/2508.14197)
-**Code**: [https://github.com/timyoung2333/CLIPSym](https://github.com/timyoung2333/CLIPSym)
+**arXiv**: [2508.14197](https://arxiv.org/abs/2508.14197)  
+**Code**: [https://github.com/timyoung2333/CLIPSym](https://github.com/timyoung2333/CLIPSym)  
 **Area**: Multimodal VLM
 **Keywords**: Symmetry Detection, CLIP, Rotation Equivariance, Semantics-Aware Prompt Grouping, G-Convolution
 

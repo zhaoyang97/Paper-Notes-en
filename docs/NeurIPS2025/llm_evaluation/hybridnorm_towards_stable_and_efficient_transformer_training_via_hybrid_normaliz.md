@@ -19,8 +19,8 @@ content_hash: 306595ccfdb87c2f
 # HybridNorm: Towards Stable and Efficient Transformer Training via Hybrid Normalization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.04598](https://arxiv.org/abs/2503.04598)
-**Code**: [https://github.com/BryceZhuo/HybridNorm](https://github.com/BryceZhuo/HybridNorm)
+**arXiv**: [2503.04598](https://arxiv.org/abs/2503.04598)  
+**Code**: [https://github.com/BryceZhuo/HybridNorm](https://github.com/BryceZhuo/HybridNorm)  
 **Area**: LLM Evaluation
 **Keywords**: Hybrid Normalization, QKV Normalization, Pre-Norm, Post-Norm, Gradient Flow, Training Stability
 

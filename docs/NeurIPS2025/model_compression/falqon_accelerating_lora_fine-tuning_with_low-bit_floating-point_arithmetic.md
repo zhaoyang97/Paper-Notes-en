@@ -18,8 +18,8 @@ content_hash: e8129f896b65e314
 # FALQON: Accelerating LoRA Fine-tuning with Low-Bit Floating-Point Arithmetic
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24061](https://arxiv.org/abs/2510.24061)
-**Code**: [https://github.com/iamkanghyunchoi/falqon](https://github.com/iamkanghyunchoi/falqon)
+**arXiv**: [2510.24061](https://arxiv.org/abs/2510.24061)  
+**Code**: [https://github.com/iamkanghyunchoi/falqon](https://github.com/iamkanghyunchoi/falqon)  
 **Area**: Model Compression
 **Keywords**: LoRA acceleration, FP8 quantization, low-precision training, LLM fine-tuning, quantization overhead
 

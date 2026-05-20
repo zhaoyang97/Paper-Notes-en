@@ -18,8 +18,8 @@ content_hash: 28618b93a95da57a
 # R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11566](https://arxiv.org/abs/2603.11566)
-**Code**: N/A
+**arXiv**: [2603.11566](https://arxiv.org/abs/2603.11566)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: 4D millimeter-wave radar, radar-camera fusion, 3D object detection, depth estimation, temporal fusion
 

@@ -19,8 +19,8 @@ content_hash: ac01ba341b41bf9b
 # From Pixels to Views: Learning Angular-Aware and Physics-Consistent Representations for Light Field Microscopy
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22577](https://arxiv.org/abs/2510.22577)
-**Code**: [https://github.com/hefengcs/XLFM-Former](https://github.com/hefengcs/XLFM-Former)
+**arXiv**: [2510.22577](https://arxiv.org/abs/2510.22577)  
+**Code**: [https://github.com/hefengcs/XLFM-Former](https://github.com/hefengcs/XLFM-Former)  
 **Authors**: Feng He, Guodong Tan, Qiankun Li, Jun Yu, Quan Wen (University of Science and Technology of China)
 **Area**: 3D Vision — Light Field Microscopy 3D Reconstruction
 **Keywords**: Light Field Microscopy, XLFM, Masked View Modeling, ORC Loss, PSF, Self-supervised Pretraining

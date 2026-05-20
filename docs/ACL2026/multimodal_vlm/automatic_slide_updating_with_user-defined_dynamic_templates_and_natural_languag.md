@@ -18,8 +18,8 @@ content_hash: 0ea1eedf2f8eccd5
 # Automatic Slide Updating with User-Defined Dynamic Templates and Natural Language Instructions
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17894](https://arxiv.org/abs/2604.17894)
-**Code**: [github](https://github.com/XiaoZhou2024/SlideAgent)
+**arXiv**: [2604.17894](https://arxiv.org/abs/2604.17894)  
+**Code**: [github](https://github.com/XiaoZhou2024/SlideAgent)  
 **Area**: Multimodal/VLM
 **Keywords**: automatic slide updating, dynamic templates, natural language instructions, multimodal agent, data-driven reporting
 

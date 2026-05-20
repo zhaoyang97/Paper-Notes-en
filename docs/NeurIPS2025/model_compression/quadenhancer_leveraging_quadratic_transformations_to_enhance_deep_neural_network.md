@@ -18,8 +18,8 @@ content_hash: f15bdb185472fdfa
 # QuadEnhancer: Leveraging Quadratic Transformations to Enhance Deep Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.03276](https://arxiv.org/abs/2510.03276)
-**Code**: [GitHub](https://github.com/chitar/QuadEnhancer)
+**arXiv**: [2510.03276](https://arxiv.org/abs/2510.03276)  
+**Code**: [GitHub](https://github.com/chitar/QuadEnhancer)  
 **Area**: Model Compression
 **Keywords**: quadratic transformation, nonlinearity enhancement, lightweight module, LoRA fine-tuning, weight sharing
 

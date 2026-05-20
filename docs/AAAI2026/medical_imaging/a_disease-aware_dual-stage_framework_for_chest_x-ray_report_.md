@@ -18,8 +18,8 @@ content_hash: 6bd86bbb950d6133
 # A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12259](https://arxiv.org/abs/2511.12259)
-**Code**: None
+**arXiv**: [2511.12259](https://arxiv.org/abs/2511.12259)  
+**Code**: None  
 **Area**: Medical Imaging / Report Generation
 **Keywords**: chest X-ray report generation, disease-aware semantic tokens, visual-language alignment, retrieval-augmented generation, state space models
 

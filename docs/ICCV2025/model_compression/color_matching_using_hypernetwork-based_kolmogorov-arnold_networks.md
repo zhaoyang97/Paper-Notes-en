@@ -21,8 +21,8 @@ content_hash: 01c6818362c981c1
 # Color Matching Using Hypernetwork-Based Kolmogorov-Arnold Networks (cmKAN)
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11781](https://arxiv.org/abs/2503.11781)
-**Code**: [https://github.com/gosha20777/cmKAN](https://github.com/gosha20777/cmKAN)
+**arXiv**: [2503.11781](https://arxiv.org/abs/2503.11781)  
+**Code**: [https://github.com/gosha20777/cmKAN](https://github.com/gosha20777/cmKAN)  
 **Institution**: Samara National Research University, University of Wurzburg, York University
 **Area**: Model Compression / Color Matching / Lightweight Networks
 **Keywords**: color matching, KAN, Kolmogorov-Arnold Network, hypernetwork, camera ISP, raw-to-sRGB, color transfer, lightweight
@@ -57,18 +57,18 @@ Standard KAN operates globally and cannot handle spatially non-uniform chromatic
 ### Generator Network Architecture
 
 1. **Illumination Estimator (IE)**:
-   - A small CNN processes the input and channel-wise mean.
-   - $1\times1$ conv $\to$ $3\times3$ dilated depthwise conv $\to$ $1\times1$ conv, outputting illumination features and an illumination map.
-   - Prevents color distortion in overexposed/underexposed regions.
+    - A small CNN processes the input and channel-wise mean.
+    - $1\times1$ conv $\to$ $3\times3$ dilated depthwise conv $\to$ $1\times1$ conv, outputting illumination features and an illumination map.
+    - Prevents color distortion in overexposed/underexposed regions.
 
 2. **Color Transformer (CT)**:
-   - ViT-inspired architecture operating on DWT-downsampled inputs.
-   - Multi-Scale Color Attention (MCA): operates along the channel dimension, introduces anchors as intermediate bridges, and applies spatial compression to Q and K to reduce computation; V is modulated by illumination features.
+    - ViT-inspired architecture operating on DWT-downsampled inputs.
+    - Multi-Scale Color Attention (MCA): operates along the channel dimension, introduces anchors as intermediate bridges, and applies spatial compression to Q and K to reduce computation; V is modulated by illumination features.
 
 3. **Color Feature Modulator (CFM)**:
-   - Processes concatenated features from IE and CT.
-   - Modulates via linear projection with trainable biases: $X_m = B_i \cdot \text{ReLU}(X'' \cdot B_j)$.
-   - Output is passed through an FFN to generate the final KAN parameter maps.
+    - Processes concatenated features from IE and CT.
+    - Modulates via linear projection with trainable biases: $X_m = B_i \cdot \text{ReLU}(X'' \cdot B_j)$.
+    - Output is passed through an FFN to generate the final KAN parameter maps.
 
 ### Three Training Scenarios
 1. **Supervised**: $\mathcal{L} = \mathcal{L}_1 + 0.15 \cdot (1 - \text{SSIM})$

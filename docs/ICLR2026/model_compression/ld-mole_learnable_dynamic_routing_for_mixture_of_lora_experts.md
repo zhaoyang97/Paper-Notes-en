@@ -18,8 +18,8 @@ content_hash: b88822f5503c05f8
 # LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25684](https://arxiv.org/abs/2509.25684)
-**Code**: [GitHub](https://github.com/eshentw/LD-MoLE)
+**arXiv**: [2509.25684](https://arxiv.org/abs/2509.25684)  
+**Code**: [GitHub](https://github.com/eshentw/LD-MoLE)  
 **Area**: Model Compression
 **Keywords**: LoRA, Mixture-of-Experts, dynamic routing, Sparsegen, parameter-efficient fine-tuning
 

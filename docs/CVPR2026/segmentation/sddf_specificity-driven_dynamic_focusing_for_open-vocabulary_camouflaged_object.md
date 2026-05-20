@@ -18,8 +18,8 @@ content_hash: 3b1a0f266d192acb
 # SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26109](https://arxiv.org/abs/2603.26109)
-**Code**: [https://github.com/Zh1fen/SDDF](https://github.com/Zh1fen/SDDF)
+**arXiv**: [2603.26109](https://arxiv.org/abs/2603.26109)  
+**Code**: [https://github.com/Zh1fen/SDDF](https://github.com/Zh1fen/SDDF)  
 **Area**: Image Segmentation
 **Keywords**: Open-vocabulary object detection, camouflaged object detection, vision-language models, fine-grained description, dynamic focusing
 

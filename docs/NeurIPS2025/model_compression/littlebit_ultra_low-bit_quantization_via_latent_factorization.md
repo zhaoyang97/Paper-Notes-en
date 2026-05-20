@@ -18,8 +18,8 @@ content_hash: 54dcdc87c0f9cdfe
 # LittleBit: Ultra Low-Bit Quantization via Latent Factorization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.13771](https://arxiv.org/abs/2506.13771)
-**Code**: [Available](https://github.com/SamsungLabs/LittleBit)
+**arXiv**: [2506.13771](https://arxiv.org/abs/2506.13771)  
+**Code**: [Available](https://github.com/SamsungLabs/LittleBit)  
 **Area**: Model Compression
 **Keywords**: Ultra low-bit quantization, low-rank factorization, binarization, sub-1-bit, LLM compression
 

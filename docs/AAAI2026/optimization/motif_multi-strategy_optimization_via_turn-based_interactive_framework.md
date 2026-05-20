@@ -18,8 +18,8 @@ content_hash: 08a60d4da846f480
 # MOTIF: Multi-strategy Optimization via Turn-based Interactive Framework
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.03929](https://arxiv.org/abs/2508.03929)
-**Code**: [https://github.com/HaiAu2501/MOTIF](https://github.com/HaiAu2501/MOTIF)
+**arXiv**: [2508.03929](https://arxiv.org/abs/2508.03929)  
+**Code**: [https://github.com/HaiAu2501/MOTIF](https://github.com/HaiAu2501/MOTIF)  
 **Area**: Optimization
 **Keywords**: Automatic Heuristic Design, LLM, Combinatorial Optimization, Monte Carlo Tree Search, Multi-strategy Optimization
 

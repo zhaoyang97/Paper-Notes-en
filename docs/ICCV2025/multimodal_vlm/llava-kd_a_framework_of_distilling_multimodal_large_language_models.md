@@ -17,8 +17,8 @@ content_hash: 106803e02ec3cc8f
 # LLaVA-KD: A Framework of Distilling Multimodal Large Language Models
 
 **Conference**: ICCV2025
-**arXiv**: [2410.16236](https://arxiv.org/abs/2410.16236)
-**Code**: [GitHub](https://github.com/Fantasyele/LLaVA-KD)
+**arXiv**: [2410.16236](https://arxiv.org/abs/2410.16236)  
+**Code**: [GitHub](https://github.com/Fantasyele/LLaVA-KD)  
 **Area**: Multimodal VLM
 **Keywords**: Knowledge Distillation, Multimodal Large Language Models, Small Model Compression, Vision-Language Alignment, Relational Distillation
 
@@ -151,8 +151,8 @@ The key design motivation is that establishing baseline understanding through SF
 # LLaVA-KD: A Framework of Distilling Multimodal Large Language Models
 
 **Conference**: ICCV2025
-**arXiv**: [2410.16236](https://arxiv.org/abs/2410.16236)
-**Code**: [GitHub](https://github.com/Fantasyele/LLaVA-KD)
+**arXiv**: [2410.16236](https://arxiv.org/abs/2410.16236)  
+**Code**: [GitHub](https://github.com/Fantasyele/LLaVA-KD)  
 **Area**: Multimodal VLM
 **Keywords**: Knowledge Distillation, Multimodal Large Language Models, Small Model Training, Vision-Language Alignment
 

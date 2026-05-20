@@ -18,8 +18,8 @@ content_hash: 1424a120c7d24395
 # Learning Grouped Lattice Vector Quantizers for Low-Bit LLM Compression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20984](https://arxiv.org/abs/2510.20984)
-**Code**: [GitHub](https://github.com/xzhang9308/GLVQ)
+**arXiv**: [2510.20984](https://arxiv.org/abs/2510.20984)  
+**Code**: [GitHub](https://github.com/xzhang9308/GLVQ)  
 **Area**: Model Compression
 **Keywords**: lattice vector quantization, low-bit compression, post-training quantization, learnable codebook, companding transform
 

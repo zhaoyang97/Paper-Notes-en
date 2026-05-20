@@ -18,8 +18,8 @@ content_hash: 68d8c338a5f332ad
 # SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29692](https://arxiv.org/abs/2603.29692)
-**Code**: [https://github.com/NingWang2049/skeletoncontext](https://github.com/NingWang2049/skeletoncontext)
+**arXiv**: [2603.29692](https://arxiv.org/abs/2603.29692)  
+**Code**: [https://github.com/NingWang2049/skeletoncontext](https://github.com/NingWang2049/skeletoncontext)  
 **Area**: Video Understanding / Action Recognition
 **Keywords**: Zero-shot action recognition, skeleton sequences, context prompt learning, cross-modal alignment, key part decoupling
 

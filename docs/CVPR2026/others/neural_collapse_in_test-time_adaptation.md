@@ -17,8 +17,8 @@ content_hash: 27c41a09e4c4c8a7
 # Neural Collapse in Test-Time Adaptation
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.10421](https://arxiv.org/abs/2512.10421)
-**Code**: [https://github.com/Cevaaa/NCTTA](https://github.com/Cevaaa/NCTTA)
+**arXiv**: [2512.10421](https://arxiv.org/abs/2512.10421)  
+**Code**: [https://github.com/Cevaaa/NCTTA](https://github.com/Cevaaa/NCTTA)  
 **Area**: Others (Out-of-Distribution Generalization / Test-Time Adaptation)
 **Keywords**: Neural Collapse, Test-Time Adaptation, Out-of-Distribution Robustness, Feature-Classifier Alignment, Hybrid Objective
 

@@ -18,8 +18,8 @@ content_hash: 078763e0163bfeea
 # Dense Policy: Bidirectional Autoregressive Learning of Actions
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.13217](https://arxiv.org/abs/2503.13217)
-**Code**: [https://selen-suyue.github.io/DspNet/](https://selen-suyue.github.io/DspNet/)
+**arXiv**: [2503.13217](https://arxiv.org/abs/2503.13217)  
+**Code**: [https://selen-suyue.github.io/DspNet/](https://selen-suyue.github.io/DspNet/)  
 **Area**: Image Generation
 **Keywords**: autoregressive policy, bidirectional expansion, coarse-to-fine generation, diffusion policy, imitation learning
 

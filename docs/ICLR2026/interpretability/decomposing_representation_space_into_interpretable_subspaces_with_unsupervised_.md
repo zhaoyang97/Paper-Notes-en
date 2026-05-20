@@ -19,8 +19,8 @@ content_hash: 85964beb76b994a4
 # Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.01916](https://arxiv.org/abs/2508.01916)
-**Code**: [GitHub](https://github.com/huangxt39/SubspacePartition)
+**arXiv**: [2508.01916](https://arxiv.org/abs/2508.01916)  
+**Code**: [GitHub](https://github.com/huangxt39/SubspacePartition)  
 **Area**: Interpretable AI / Mechanistic Interpretability / Representation Learning
 **Keywords**: subspace decomposition, representation interpretation, neighbor distance minimization, unsupervised decomposition, knowledge localization, mechanistic interpretability
 

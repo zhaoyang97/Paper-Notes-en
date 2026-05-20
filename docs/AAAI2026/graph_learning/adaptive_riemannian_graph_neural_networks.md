@@ -18,8 +18,8 @@ content_hash: 9b67600214b1b492
 # Adaptive Riemannian Graph Neural Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.02600](https://arxiv.org/abs/2508.02600)
-**Code**: Available (public repository, built on PyG + Geoopt)
+**arXiv**: [2508.02600](https://arxiv.org/abs/2508.02600)  
+**Code**: Available (public repository, built on PyG + Geoopt)  
 **Area**: Graph Neural Networks / Geometric Deep Learning
 **Keywords**: Riemannian geometry, adaptive metric tensor, Ricci flow regularization, geometric heterogeneity, message passing
 

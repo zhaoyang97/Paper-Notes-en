@@ -18,8 +18,8 @@ content_hash: 14b368e08e5dc54b
 # SeHDR: Single-Exposure HDR Novel View Synthesis via 3D Gaussian Bracketing
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.20400](https://arxiv.org/abs/2509.20400)
-**Code**: [https://github.com/yiyulics/SeHDR](https://github.com/yiyulics/SeHDR)
+**arXiv**: [2509.20400](https://arxiv.org/abs/2509.20400)  
+**Code**: [https://github.com/yiyulics/SeHDR](https://github.com/yiyulics/SeHDR)  
 **Area**: 3D Vision / HDR Imaging
 **Keywords**: HDR novel view synthesis, 3D Gaussian splatting, exposure bracketing, single exposure, differentiable rendering
 

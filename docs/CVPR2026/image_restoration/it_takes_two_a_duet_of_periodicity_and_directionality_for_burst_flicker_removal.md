@@ -18,8 +18,8 @@ content_hash: 80046ac1b3e2fe2a
 # Flickerformer: A Duet of Periodicity and Directionality for Burst Flicker Removal
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22794](https://arxiv.org/abs/2603.22794)
-**Code**: [GitHub](https://github.com/qulishen/Flickerformer)
+**arXiv**: [2603.22794](https://arxiv.org/abs/2603.22794)  
+**Code**: [GitHub](https://github.com/qulishen/Flickerformer)  
 **Area**: Image Restoration
 **Keywords**: Burst Flicker Removal, Phase Correlation, Autocorrelation, Wavelet Attention, Transformer
 

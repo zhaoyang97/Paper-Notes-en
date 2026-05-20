@@ -17,8 +17,8 @@ content_hash: 68c5f85d0f9028b6
 # MCP-Flow: Facilitating LLM Agents to Master Real-World, Diverse and Scaling MCP Tools
 
 **Conference**: ACL 2026
-**arXiv**: [2510.24284](https://arxiv.org/abs/2510.24284)
-**Code**: [https://github.com/wwh0411/MCP-Flow](https://github.com/wwh0411/MCP-Flow)
+**arXiv**: [2510.24284](https://arxiv.org/abs/2510.24284)  
+**Code**: [https://github.com/wwh0411/MCP-Flow](https://github.com/wwh0411/MCP-Flow)  
 **Area**: LLM Agent / Tool Use
 **Keywords**: Model Context Protocol, tool use, automated data construction, large-scale benchmark, LLM Agent
 

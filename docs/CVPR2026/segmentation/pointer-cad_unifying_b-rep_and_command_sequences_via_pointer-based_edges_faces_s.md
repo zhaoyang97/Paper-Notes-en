@@ -20,8 +20,8 @@ content_hash: f8f0c857492c69d5
 # Pointer-CAD: Unifying B-Rep and Command Sequences via Pointer-based Edges & Faces Selection
 
 **Conference**: CVPR2026
-**arXiv**: [2603.04337](https://arxiv.org/abs/2603.04337)
-**Code**: [Snitro/Pointer-CAD](https://github.com/Snitro/Pointer-CAD)
+**arXiv**: [2603.04337](https://arxiv.org/abs/2603.04337)  
+**Code**: [Snitro/Pointer-CAD](https://github.com/Snitro/Pointer-CAD)  
 **Area**: 3D CAD Generation
 **Keywords**: CAD Generation, B-Rep, Pointer Network, Command Sequence, LLM, Graph Neural Network, Chamfer/Fillet
 

@@ -18,8 +18,8 @@ content_hash: cda0c24551916480
 # ConViS-Bench: Estimating Video Similarity Through Semantic Concepts
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19245](https://arxiv.org/abs/2509.19245)
-**Code**: [GitHub](https://github.com/benedettaliberatori/convisbench)
+**arXiv**: [2509.19245](https://arxiv.org/abs/2509.19245)  
+**Code**: [GitHub](https://github.com/benedettaliberatori/convisbench)  
 **Area**: Video Understanding
 **Keywords**: video similarity, benchmark, semantic concepts, Large Multimodal Models, video retrieval
 

@@ -18,8 +18,8 @@ content_hash: f28167e498fd38ea
 # When Top-ranked Recommendations Fail: Modeling Multi-Granular Negative Feedback for Explainable and Robust Video Recommendation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18700](https://arxiv.org/abs/2511.18700)
-**Code**: None
+**arXiv**: [2511.18700](https://arxiv.org/abs/2511.18700)  
+**Code**: None  
 **Area**: Recommender Systems
 **Keywords**: Negative feedback modeling, explainable recommendation, multimodal video understanding, MLLM Agent, reinforcement learning
 
@@ -92,12 +92,12 @@ The paper employs **S-GRPO (Stepwise Group Relative Policy Optimization)**, a pr
 **Stage 2 – S-GRPO Reinforcement Fine-tuning**: A progressive reward mechanism is proposed, consisting of three step-wise rewards $R_{S_i}$:
 
 1. **Binary Judge Reward** $r_{judge}$ (Step 1): Evaluates whether the predicted user attitude is correct.
-   - If incorrect, the episode terminates with no reward.
-   - If correct, a fixed reward (e.g., 0.5) is granted.
-   - If the actual feedback is positive, the episode terminates; if negative, it proceeds to the next step.
+    - If incorrect, the episode terminates with no reward.
+    - If correct, a fixed reward (e.g., 0.5) is granted.
+    - If the actual feedback is positive, the episode terminates; if negative, it proceeds to the next step.
 
 2. **Class Reward** $r_{class}$ (Step 2): Evaluates whether the negative feedback category is correctly classified.
-   - If correct, an additional reward (e.g., 1.0) is granted and the episode proceeds to Step 3.
+    - If correct, an additional reward (e.g., 1.0) is granted and the episode proceeds to Step 3.
 
 3. **Reason Reward** $r_{reason}$ (Step 3): Computes the average ROUGE-1/2/L score between the reasoning content within the `<think>` tags and the actual user feedback reasons.
 

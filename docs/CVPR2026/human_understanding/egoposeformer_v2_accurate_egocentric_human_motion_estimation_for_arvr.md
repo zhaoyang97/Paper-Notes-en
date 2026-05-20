@@ -19,8 +19,8 @@ content_hash: 026896b7151295e7
 # EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04090](https://arxiv.org/abs/2603.04090)
-**Code**: Not released
+**arXiv**: [2603.04090](https://arxiv.org/abs/2603.04090)  
+**Code**: Not released  
 **Area**: Human Understanding
 **Keywords**: egocentric pose estimation, Transformer, semi-supervised learning, auto-labeling, AR/VR, temporal modeling
 
@@ -52,27 +52,27 @@ EPFv2 adopts an encoder–decoder structure: an image encoder extracts multi-vie
 
 1. **Single Global Query Token (Identity-Conditioned Query)**:
 
-   - Replaces v1's per-joint query design with a single token that aggregates all information, decoupling computation from body representation.
-   - The query token is initialized by encoding auxiliary metadata (e.g., 6-DoF head-mounted pose) via an MLP: $\mathbf{q}_t = \text{MLP}_{\text{query}}(\mathbf{H}_t)$.
-   - Supports both keypoint representation and parametric body models (joint rotations + body shape), with constant computational cost.
+    - Replaces v1's per-joint query design with a single token that aggregates all information, decoupling computation from body representation.
+    - The query token is initialized by encoding auxiliary metadata (e.g., 6-DoF head-mounted pose) via an MLP: $\mathbf{q}_t = \text{MLP}_{\text{query}}(\mathbf{H}_t)$.
+    - Supports both keypoint representation and parametric body models (joint rotations + body shape), with constant computational cost.
 
 2. **Conditioned Multi-View Cross-Attention**:
 
-   - Replaces deformable attention with standard cross-attention, applying multi-head attention independently to each view and fusing the results linearly.
-   - Coarse stage: conditioned on a learnable camera embedding $\xi^v$.
-   - Refinement stage: additionally incorporates positional encodings derived from projecting the 3D coarse keypoints onto 2D, achieving a spatial anchoring effect analogous to v1's deformable stereo attention but with greater hardware friendliness.
+    - Replaces deformable attention with standard cross-attention, applying multi-head attention independently to each view and fusing the results linearly.
+    - Coarse stage: conditioned on a learnable camera embedding $\xi^v$.
+    - Refinement stage: additionally incorporates positional encodings derived from projecting the 3D coarse keypoints onto 2D, achieving a spatial anchoring effect analogous to v1's deformable stereo attention but with greater hardware friendliness.
 
 3. **Causal Temporal Attention**:
 
-   - Employs causal self-attention with RoPE positional encoding; the current frame's query token attends to historical tokens within a window of size $w$.
-   - During training, standard causal masking is applied; during inference, KV-Cache is used to reduce memory overhead.
-   - Enables inference of plausible poses for occluded body parts (e.g., legs and feet) from temporal context.
+    - Employs causal self-attention with RoPE positional encoding; the current frame's query token attends to historical tokens within a window of size $w$.
+    - During training, standard causal masking is applied; during inference, KV-Cache is used to reduce memory overhead.
+    - Enables inference of plausible poses for occluded body parts (e.g., legs and feet) from temporal context.
 
 4. **Per-Keypoint Uncertainty Estimation**:
 
-   - Each keypoint predicts a 6D uncertainty vector (the Cholesky factor $\mathbf{L}$ of a covariance matrix); a negative log-likelihood loss based on the Student-t distribution is applied.
-   - Compared to the Laplacian distribution, the Student-t distribution is smoother at the origin and has heavier tails, providing greater robustness to large residuals.
-   - Uncertainty is higher for unobserved keypoints (feet, legs), which is intuitively consistent.
+    - Each keypoint predicts a 6D uncertainty vector (the Cholesky factor $\mathbf{L}$ of a covariance matrix); a negative log-likelihood loss based on the Student-t distribution is applied.
+    - Compared to the Laplacian distribution, the Student-t distribution is smoother at the origin and has heavier tails, providing greater robustness to large residuals.
+    - Uncertainty is higher for unobserved keypoints (feet, legs), which is intuitively consistent.
 
 ### Loss & Training
 

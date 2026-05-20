@@ -17,8 +17,8 @@ content_hash: bac546fc221fc21b
 # Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.00388](https://arxiv.org/abs/2601.00388)
-**Code**: [https://github.com/aialt/geo-r](https://github.com/aialt/geo-r)
+**arXiv**: [2601.00388](https://arxiv.org/abs/2601.00388)  
+**Code**: [https://github.com/aialt/geo-r](https://github.com/aialt/geo-r)  
 **Area**: Reinforcement Learning
 **Keywords**: Image Geolocalization, Vision-Language Reasoning, Reinforcement Learning, Chain-of-Region, GRPO
 

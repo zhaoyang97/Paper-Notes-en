@@ -18,8 +18,8 @@ content_hash: fc6cd8d227cdd60f
 # Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.15228](https://arxiv.org/abs/2501.15228)
-**Code**: [GitHub](https://github.com/chenyiqun/MMOA-RAG)
+**arXiv**: [2501.15228](https://arxiv.org/abs/2501.15228)  
+**Code**: [GitHub](https://github.com/chenyiqun/MMOA-RAG)  
 **Area**: Reinforcement Learning / NLP
 **Keywords**: RAG, multi-agent reinforcement learning, MAPPO, joint optimization, question answering
 

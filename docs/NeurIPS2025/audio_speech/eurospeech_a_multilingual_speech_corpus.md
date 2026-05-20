@@ -19,8 +19,8 @@ content_hash: e6f6a6ecd1780e34
 # EuroSpeech: A Multilingual Speech Corpus
 
 **Conference**: NeurIPS2025
-**arXiv**: [2510.00514](https://arxiv.org/abs/2510.00514)
-**Code**: [disco-eth/EuroSpeech](https://huggingface.co/datasets/disco-eth/EuroSpeech)
+**arXiv**: [2510.00514](https://arxiv.org/abs/2510.00514)  
+**Code**: [disco-eth/EuroSpeech](https://huggingface.co/datasets/disco-eth/EuroSpeech)  
 **Area**: Speech Processing / Multilingual Datasets
 **Keywords**: multilingual speech, parliamentary recordings, ASR, speech-text alignment, dataset construction, low-resource languages
 

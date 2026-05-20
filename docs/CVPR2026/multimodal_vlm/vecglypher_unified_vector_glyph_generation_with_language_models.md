@@ -18,8 +18,8 @@ content_hash: 7b87e5328b601212
 # VecGlypher: Unified Vector Glyph Generation with Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21461](https://arxiv.org/abs/2602.21461)
-**Code**: [https://xk-huang.github.io/VecGlypher](https://xk-huang.github.io/VecGlypher)
+**arXiv**: [2602.21461](https://arxiv.org/abs/2602.21461)  
+**Code**: [https://xk-huang.github.io/VecGlypher](https://xk-huang.github.io/VecGlypher)  
 **Area**: Multimodal VLM
 **Keywords**: Font Generation, Vector Graphics, SVG, Multimodal Language Models, Typography
 

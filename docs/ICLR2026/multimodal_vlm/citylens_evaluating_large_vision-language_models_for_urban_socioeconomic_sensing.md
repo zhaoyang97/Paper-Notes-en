@@ -18,8 +18,8 @@ content_hash: 42be3b401c662933
 # CityLens: Evaluating Large Vision-Language Models for Urban Socioeconomic Sensing
 
 **Conference**: ICLR2026
-**arXiv**: [2506.00530](https://arxiv.org/abs/2506.00530)
-**Code**: [https://github.com/tsinghua-fib-lab/CityLens](https://github.com/tsinghua-fib-lab/CityLens)
+**arXiv**: [2506.00530](https://arxiv.org/abs/2506.00530)  
+**Code**: [https://github.com/tsinghua-fib-lab/CityLens](https://github.com/tsinghua-fib-lab/CityLens)  
 **Area**: Multimodal VLM
 **Keywords**: urban computing, socioeconomic sensing, benchmark, vision-language model, street view
 

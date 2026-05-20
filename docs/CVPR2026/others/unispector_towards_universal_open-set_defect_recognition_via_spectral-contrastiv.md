@@ -17,8 +17,8 @@ content_hash: 08e5e45e594931d4
 # UniSpector: Towards Universal Open-set Defect Recognition via Spectral-Contrastive Visual Prompting
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02905](https://arxiv.org/abs/2604.02905)
-**Code**: [https://geonuk-kimmm.github.io/UniSpector](https://geonuk-kimmm.github.io/UniSpector)
+**arXiv**: [2604.02905](https://arxiv.org/abs/2604.02905)  
+**Code**: [https://geonuk-kimmm.github.io/UniSpector](https://geonuk-kimmm.github.io/UniSpector)  
 **Area**: Other
 **Keywords**: open-set defect detection, frequency-domain features, contrastive prompt encoding, visual prompting, industrial quality inspection
 

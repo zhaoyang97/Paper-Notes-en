@@ -18,8 +18,8 @@ content_hash: e3ded0ccbfe4520a
 # Unified Multi-Modal Interactive & Reactive 3D Motion Generation via Rectified Flow
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24099](https://arxiv.org/abs/2509.24099)
-**Code**: [https://gprerit96.github.io/dualflow-page](https://gprerit96.github.io/dualflow-page)
+**arXiv**: [2509.24099](https://arxiv.org/abs/2509.24099)  
+**Code**: [https://gprerit96.github.io/dualflow-page](https://gprerit96.github.io/dualflow-page)  
 **Area**: 3D Motion Generation
 **Keywords**: Dyadic motion generation, Rectified Flow, Retrieval-Augmented Generation, Contrastive learning, Multi-modal conditioning
 

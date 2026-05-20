@@ -18,8 +18,8 @@ content_hash: 992358566de083ff
 # Less-to-More Generalization: Unlocking More Controllability by In-Context Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.02160](https://arxiv.org/abs/2504.02160)
-**Code**: [https://github.com/bytedance/UNO](https://github.com/bytedance/UNO)
+**arXiv**: [2504.02160](https://arxiv.org/abs/2504.02160)  
+**Code**: [https://github.com/bytedance/UNO](https://github.com/bytedance/UNO)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Subject-driven Generation, Multi-subject Generation, DiT, Model-Data Co-evolution, Positional Encoding
 

@@ -18,8 +18,8 @@ content_hash: 693f8dc051e9b51c
 # Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.02818](https://arxiv.org/abs/2510.02818)
-**Code**: None
+**arXiv**: [2510.02818](https://arxiv.org/abs/2510.02818)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: Spurious correlation, distributionally robust optimization, hierarchical ambiguity sets, Wasserstein distance, minority group shift
 

@@ -18,8 +18,8 @@ content_hash: 3be61b8f2f569433
 # PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13228](https://arxiv.org/abs/2603.13228)
-**Code**: None (not yet released)
+**arXiv**: [2603.13228](https://arxiv.org/abs/2603.13228)  
+**Code**: None (not yet released)  
 **Area**: Human Motion Generation / Embodied Intelligence / Reinforcement Learning Alignment
 **Keywords**: Diffusion motion generation, DPO preference optimization, physical simulation, humanoid robots, zero-shot transfer
 
@@ -52,10 +52,10 @@ Key insight: **evaluation takes place in physical space, while DPO training oper
 1. **Physical operator $\mathcal{T}$ as a black-box reward source**: A pretrained DeepMimic tracking controller executes generated motions in simulation. Tracking distortion $\Delta(X) = \|X' - X\|^2$ directly measures physical feasibility—smaller distortion indicates the motion is closer to the physically feasible space $\mathcal{X}_{phys}$. Treating $\mathcal{T}$ as a non-differentiable black box avoids the difficulty of differentiating through the simulator.
 
 2. **Combination of four reward functions**:
-   - $\mathcal{R}_{track}$: tracking reward, minimizing the discrepancy between pre- and post-simulation motions
-   - $\mathcal{R}_{slide}$: foot-slide penalty, applied when foot height is below a threshold (0.05 m) and horizontal velocity exceeds a threshold (0.5 m/s)
-   - $\mathcal{R}_{M2T}$: text–motion consistency, computing cosine similarity between post-simulation motion and text using a pretrained TMR encoder
-   - $\mathcal{R}_{control}$: spatial control reward (only when spatial constraints are present), measuring how well joint trajectories match the target
+    - $\mathcal{R}_{track}$: tracking reward, minimizing the discrepancy between pre- and post-simulation motions
+    - $\mathcal{R}_{slide}$: foot-slide penalty, applied when foot height is below a threshold (0.05 m) and horizontal velocity exceeds a threshold (0.5 m/s)
+    - $\mathcal{R}_{M2T}$: text–motion consistency, computing cosine similarity between post-simulation motion and text using a pretrained TMR encoder
+    - $\mathcal{R}_{control}$: spatial control reward (only when spatial constraints are present), measuring how well joint trajectories match the target
 
 3. **Dominance-based preference pair construction**: Rather than computing a weighted sum of rewards (which introduces weight sensitivity and reward hacking), a winning sample must **strictly dominate** the losing sample across all reward dimensions, avoiding multi-objective reward engineering.
 

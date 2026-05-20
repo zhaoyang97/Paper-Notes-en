@@ -19,8 +19,8 @@ content_hash: 01f5de02cbd8f48f
 # Stochastic Self-Organization in Multi-Agent Systems
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00685](https://arxiv.org/abs/2510.00685)
-**Code**: To be confirmed
+**arXiv**: [2510.00685](https://arxiv.org/abs/2510.00685)  
+**Code**: To be confirmed  
 **Area**: LLM Pre-training
 **Keywords**: multi-agent systems, self-organization, Shapley value, communication graph, DAG, LLM collaboration
 

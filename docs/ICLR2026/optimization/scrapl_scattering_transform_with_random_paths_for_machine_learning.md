@@ -18,8 +18,8 @@ content_hash: 6d00665fd7f925d5
 # SCRAPL: Scattering Transform with Random Paths for Machine Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.11145](https://arxiv.org/abs/2602.11145)
-**Code**: Available (Python package, [project website](https://christhetree.github.io/scrapl/))
+**arXiv**: [2602.11145](https://arxiv.org/abs/2602.11145)  
+**Code**: Available (Python package, [project website](https://christhetree.github.io/scrapl/))  
 **Area**: Signal Processing / Time Series
 **Keywords**: scattering transform, random path sampling, DDSP, importance sampling, variance reduction
 
@@ -49,21 +49,21 @@ SCRAPL replaces the full-path ST loss within a standard neural network training 
 
 1. **P-Adam: Path-Adaptive Momentum Estimation**
 
-   - **Function**: Maintains independent first- and second-moment estimates for each path, replacing the shared moments used across all paths in standard Adam.
-   - **Mechanism**: Standard Adam's moment estimates $(m, v)$ use exponential moving averages to smooth gradients across consecutive iterations. Because SCRAPL selects one path at random per step and gradient distributions differ substantially across paths, pooling moments conflates heterogeneous signals. P-Adam maintains per-path moments $(m_p, v_p)$ and adapts the exponential decay coefficient based on the time elapsed since path $p$ was last sampled, $(k - \tau_p)/P$—decaying more aggressively for stale estimates to prevent outdated history from dominating updates. The bias-correction exponent is adjusted from Adam's $\beta^k$ to $\beta^{k/P}$ to account for the path count.
-   - **Design Motivation**: Path gradients are heterogeneous, corresponding to different spectro-temporal modulation scales; sharing moments across paths destabilizes the update direction.
+    - **Function**: Maintains independent first- and second-moment estimates for each path, replacing the shared moments used across all paths in standard Adam.
+    - **Mechanism**: Standard Adam's moment estimates $(m, v)$ use exponential moving averages to smooth gradients across consecutive iterations. Because SCRAPL selects one path at random per step and gradient distributions differ substantially across paths, pooling moments conflates heterogeneous signals. P-Adam maintains per-path moments $(m_p, v_p)$ and adapts the exponential decay coefficient based on the time elapsed since path $p$ was last sampled, $(k - \tau_p)/P$—decaying more aggressively for stale estimates to prevent outdated history from dominating updates. The bias-correction exponent is adjusted from Adam's $\beta^k$ to $\beta^{k/P}$ to account for the path count.
+    - **Design Motivation**: Path gradients are heterogeneous, corresponding to different spectro-temporal modulation scales; sharing moments across paths destabilizes the update direction.
 
 2. **P-SAGA: Path Stochastic Average Gradient Acceleration**
 
-   - **Function**: Maintains a table of historical gradients for all visited paths and applies a variance-reduction correction to the current gradient.
-   - **Mechanism**: Classical SAGA variance reduction is applied along the path dimension rather than the data dimension. P-SAGA stores the most recent P-Adam update $\hat{g}_p$ for each path and tracks the set of visited paths $\Gamma$. The update at each step equals the current path's P-Adam gradient minus its stored historical gradient plus the mean gradient over all visited paths. Crucially, the additional memory overhead of P-SAGA scales with $P$ rather than with dataset size $N$, preserving practical feasibility.
-   - **Design Motivation**: The dominant source of variance in single-path sampling is the difference in gradients across paths. P-SAGA explicitly cancels this variance by contrasting current and historical estimates, yielding smoother convergence.
+    - **Function**: Maintains a table of historical gradients for all visited paths and applies a variance-reduction correction to the current gradient.
+    - **Mechanism**: Classical SAGA variance reduction is applied along the path dimension rather than the data dimension. P-SAGA stores the most recent P-Adam update $\hat{g}_p$ for each path and tracks the set of visited paths $\Gamma$. The update at each step equals the current path's P-Adam gradient minus its stored historical gradient plus the mean gradient over all visited paths. Crucially, the additional memory overhead of P-SAGA scales with $P$ rather than with dataset size $N$, preserving practical feasibility.
+    - **Design Motivation**: The dominant source of variance in single-path sampling is the difference in gradients across paths. P-SAGA explicitly cancels this variance by contrasting current and historical estimates, yielding smoother convergence.
 
 3. **$\theta$-Importance Sampling: Architecture-Aware Path Sampling Bias**
 
-   - **Function**: Constructs a non-uniform path sampling distribution $\pi$ prior to training by analyzing the curvature of the loss landscape, so that more informative paths are sampled more frequently.
-   - **Mechanism**: The DDSP autoencoder consists of a learnable encoder $E_x$ (a neural network) and a fixed but differentiable synthesizer decoder $D$. For each parameter dimension $u$ and path $p$, the sensitivity of the ST loss to that parameter is computed via its partial derivative, and Hessian–vector products approximated by power iteration yield the largest eigenvalue of the loss landscape as an importance score $C_{u,p}$. Path sampling probabilities $\pi_p$ are then aggregated over parameter dimensions. The computation parallelizes over both paths and parameter dimensions and is performed only once before training.
-   - **Design Motivation**: Different paths correspond to different time–frequency modulation patterns; for a given synthesizer configuration, some paths are inherently more informative than others (e.g., a slow-AM synthesizer requires only low-rate modulation paths). Uniform sampling wastes the computational budget on irrelevant paths.
+    - **Function**: Constructs a non-uniform path sampling distribution $\pi$ prior to training by analyzing the curvature of the loss landscape, so that more informative paths are sampled more frequently.
+    - **Mechanism**: The DDSP autoencoder consists of a learnable encoder $E_x$ (a neural network) and a fixed but differentiable synthesizer decoder $D$. For each parameter dimension $u$ and path $p$, the sensitivity of the ST loss to that parameter is computed via its partial derivative, and Hessian–vector products approximated by power iteration yield the largest eigenvalue of the loss landscape as an importance score $C_{u,p}$. Path sampling probabilities $\pi_p$ are then aggregated over parameter dimensions. The computation parallelizes over both paths and parameter dimensions and is performed only once before training.
+    - **Design Motivation**: Different paths correspond to different time–frequency modulation patterns; for a given synthesizer configuration, some paths are inherently more informative than others (e.g., a slow-AM synthesizer requires only low-rate modulation paths). Uniform sampling wastes the computational budget on irrelevant paths.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: fbb468f358fa8f16
 # PNG: Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04870](https://arxiv.org/abs/2603.04870)
-**Code**: None
+**arXiv**: [2603.04870](https://arxiv.org/abs/2603.04870)  
+**Code**: None  
 **Area**: Image Denoising / Noise Generation
 **Keywords**: sRGB noise generation, prompt learning, consistency model, denoising, metadata-free
 

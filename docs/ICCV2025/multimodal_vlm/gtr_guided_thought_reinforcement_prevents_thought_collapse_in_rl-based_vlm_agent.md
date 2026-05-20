@@ -18,8 +18,8 @@ content_hash: 8cb72f0f548be1da
 # GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-Based VLM Agent
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08525](https://arxiv.org/abs/2503.08525)
-**Code**: [GTR](https://github.com/WeihaoTan/GTR)
+**arXiv**: [2503.08525](https://arxiv.org/abs/2503.08525)  
+**Code**: [GTR](https://github.com/WeihaoTan/GTR)  
 **Area**: Multimodal VLM
 **Keywords**: Chain-of-Thought Reasoning, VLM Agent, Reinforcement Learning, Process Supervision, Thought Collapse
 

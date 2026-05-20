@@ -18,8 +18,8 @@ content_hash: 7f45067991bba378
 # Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding
 
 **Conference**: NeurIPS 2025 (AI for Science Workshop)
-**arXiv**: [2510.05385](https://arxiv.org/abs/2510.05385)
-**Code**: Open-sourced (link provided in the paper)
+**arXiv**: [2510.05385](https://arxiv.org/abs/2510.05385)  
+**Code**: Open-sourced (link provided in the paper)  
 **Area**: Scientific Computing
 **Keywords**: PINNs, Transformer, Fourier Features, Spectral Bias, PDE Solving
 

@@ -18,8 +18,8 @@ content_hash: 345fb141820b6174
 # Heterogeneous Adversarial Play in Interactive Environments
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18407](https://arxiv.org/abs/2510.18407)
-**Code**: [Project Page](https://sites.google.com/view/hap-learning)
+**arXiv**: [2510.18407](https://arxiv.org/abs/2510.18407)  
+**Code**: [Project Page](https://sites.google.com/view/hap-learning)  
 **Area**: Curriculum Learning / Reinforcement Learning
 **Keywords**: Adversarial Curriculum Learning, Heterogeneous Self-Play, Teacher-Student, Multi-Task RL, Adaptive Curriculum
 

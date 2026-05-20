@@ -17,8 +17,8 @@ content_hash: 98c00b491dff6f27
 # V-Nutri: Dish-Level Nutrition Estimation from Egocentric Cooking Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.11913](https://arxiv.org/abs/2604.11913)
-**Code**: [https://github.com/K624-YCK/V-Nutri](https://github.com/K624-YCK/V-Nutri)
+**arXiv**: [2604.11913](https://arxiv.org/abs/2604.11913)  
+**Code**: [https://github.com/K624-YCK/V-Nutri](https://github.com/K624-YCK/V-Nutri)  
 **Area**: Food Computing / Video Understanding
 **Keywords**: Nutrition Estimation, Egocentric Video, Keyframe Selection, Multimodal Fusion, Food Analysis
 

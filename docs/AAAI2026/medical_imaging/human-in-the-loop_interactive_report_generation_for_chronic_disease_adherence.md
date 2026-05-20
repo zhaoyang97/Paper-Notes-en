@@ -18,8 +18,8 @@ content_hash: 539b6f887b581b5e
 # Human-in-the-Loop Interactive Report Generation for Chronic Disease Adherence
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.06364](https://arxiv.org/abs/2601.06364)
-**Code**: None
+**arXiv**: [2601.06364](https://arxiv.org/abs/2601.06364)  
+**Code**: None  
 **Area**: Medical AI / Human-Computer Interaction / Clinical Decision Support
 **Keywords**: Human-in-the-loop, chronic disease management, report generation, medication adherence, clinical AI collaboration
 

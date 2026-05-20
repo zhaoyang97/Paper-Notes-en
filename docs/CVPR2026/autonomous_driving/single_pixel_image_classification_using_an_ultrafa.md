@@ -18,8 +18,8 @@ content_hash: d6f10fa6538d240f
 # Single Pixel Image Classification using an Ultrafast Digital Light Projector
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12036](https://arxiv.org/abs/2603.12036)
-**Code**: None
+**arXiv**: [2603.12036](https://arxiv.org/abs/2603.12036)  
+**Code**: None  
 **Area**: Computational Imaging / Single-Pixel Imaging
 **Keywords**: single pixel imaging, Hadamard patterns, microLED-on-CMOS, extreme learning machine, compressed sensing
 

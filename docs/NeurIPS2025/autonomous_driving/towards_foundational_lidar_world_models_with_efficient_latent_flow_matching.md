@@ -19,8 +19,8 @@ content_hash: 47f944a090f5e049
 # Towards Foundational LiDAR World Models with Efficient Latent Flow Matching
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.23434](https://arxiv.org/abs/2506.23434)
-**Code**: To be confirmed
+**arXiv**: [2506.23434](https://arxiv.org/abs/2506.23434)  
+**Code**: To be confirmed  
 **Area**: Autonomous Driving
 **Keywords**: LiDAR world model, flow matching, 4D semantic occupancy prediction, domain transfer, VAE compression, foundation model
 

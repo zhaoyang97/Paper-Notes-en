@@ -20,8 +20,8 @@ content_hash: 3b123de4f6273a89
 # Learning from Oblivion: Predicting Knowledge-Overflowed Weights via Retrodiction of Forgetting
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.05059](https://arxiv.org/abs/2508.05059)
-**Code**: [jjh6297/KNOW](https://github.com/jjh6297/KNOW)
+**arXiv**: [2508.05059](https://arxiv.org/abs/2508.05059)  
+**Code**: [jjh6297/KNOW](https://github.com/jjh6297/KNOW)  
 **Area**: Model Training / Weight Prediction / Knowledge Transfer
 **Keywords**: weight prediction, structured forgetting, meta-learning, hyper-model, knowledge transfer, scaling law, pre-trained weights
 

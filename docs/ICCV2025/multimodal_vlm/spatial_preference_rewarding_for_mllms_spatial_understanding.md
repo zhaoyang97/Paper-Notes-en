@@ -18,8 +18,8 @@ content_hash: 06589183f0f669b0
 # Spatial Preference Rewarding for MLLMs Spatial Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.14374](https://arxiv.org/abs/2510.14374)
-**Code**: [SPR](https://github.com/hanqiu-hq/SPR)
+**arXiv**: [2510.14374](https://arxiv.org/abs/2510.14374)  
+**Code**: [SPR](https://github.com/hanqiu-hq/SPR)  
 **Area**: Multimodal Large Language Models / Spatial Understanding
 **Keywords**: MLLM, spatial understanding, preference optimization, DPO, object grounding
 

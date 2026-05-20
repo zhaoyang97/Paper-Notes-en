@@ -18,8 +18,8 @@ content_hash: 21e9aee1772af1ed
 # CGHair: Compact Gaussian Hair Reconstruction with Card Clustering
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03716](https://arxiv.org/abs/2604.03716)
-**Code**: [Project Page](https://humansensinglab.github.io/CGHair/)
+**arXiv**: [2604.03716](https://arxiv.org/abs/2604.03716)  
+**Code**: [Project Page](https://humansensinglab.github.io/CGHair/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, hair reconstruction, hair card clustering, compact representation, appearance compression
 
@@ -54,9 +54,9 @@ A four-stage pipeline: (1) efficient strand reconstruction with generative prior
 
 2. **Hierarchical Hair Card Generation**:
 
-   - **Strand Clustering**: Each strand's 3D points are concatenated into a vector, and k-means clustering groups them into $N_c$ clusters (800 for real hair, 400 for synthetic).
-   - **Card Geometry Construction**: Using the cluster-center strand as the axis, normal vectors are solved via constrained optimization: $\{n_k^*\} = \arg\min \sum_k \sum_{p_i} \|(p_i - \bar{p}_k) \cdot n_k\|$, ensuring all strands lie within the card plane.
-   - **Texture Generation**: 3D strands are projected onto the card surface by optimizing UV coordinates and normal displacements $\delta_i$, producing anti-aliased texture maps.
+    - **Strand Clustering**: Each strand's 3D points are concatenated into a vector, and k-means clustering groups them into $N_c$ clusters (800 for real hair, 400 for synthetic).
+    - **Card Geometry Construction**: Using the cluster-center strand as the axis, normal vectors are solved via constrained optimization: $\{n_k^*\} = \arg\min \sum_k \sum_{p_i} \|(p_i - \bar{p}_k) \cdot n_k\|$, ensuring all strands lie within the card plane.
+    - **Texture Generation**: 3D strands are projected onto the card surface by optimizing UV coordinates and normal displacements $\delta_i$, producing anti-aliased texture maps.
    **Design Motivation**: Hair cards are the industry-standard simplification for hair, directly encoding geometric and appearance redundancy.
 
 3. **Shared Gaussian Appearance Codebook**: The $N_c$ cards are further clustered by texture features into $N_T=64$ groups, each sharing an appearance codebook of $K=10$ entries ($D=64$ dimensions). Each strand selects codebook entries via Gumbel-Softmax soft indexing:

@@ -17,8 +17,8 @@ content_hash: 12e995cae489924f
 # HAMLET: A Hierarchical and Adaptive Multi-Agent Framework for Live Embodied Theatre
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.15518](https://arxiv.org/abs/2507.15518)
-**Code**: [https://github.com/HAMLET-2025/HAMLET](https://github.com/HAMLET-2025/HAMLET)
+**arXiv**: [2507.15518](https://arxiv.org/abs/2507.15518)  
+**Code**: [https://github.com/HAMLET-2025/HAMLET](https://github.com/HAMLET-2025/HAMLET)  
 **Area**: LLM Agent / Interactive Narrative
 **Keywords**: Multi-agent framework, theatrical performance, LLM Agent, perception and decision-making, interactive narrative
 

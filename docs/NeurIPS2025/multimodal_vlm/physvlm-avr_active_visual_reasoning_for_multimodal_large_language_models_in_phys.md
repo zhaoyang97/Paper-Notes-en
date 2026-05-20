@@ -18,8 +18,8 @@ content_hash: beba30dec95991df
 # PhysVLM-AVR: Active Visual Reasoning for Multimodal Large Language Models in Physical Environments
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21111](https://arxiv.org/abs/2510.21111)
-**Code**: [GitHub](https://anonymous.4open.science/r/anonymous-je99tt)
+**arXiv**: [2510.21111](https://arxiv.org/abs/2510.21111)  
+**Code**: [GitHub](https://anonymous.4open.science/r/anonymous-je99tt)  
 **Area**: Multimodal VLM
 **Keywords**: Active visual reasoning, partially observable environments, multi-step interaction, Chain-of-Thought, embodied intelligence
 

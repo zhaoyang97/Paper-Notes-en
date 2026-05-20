@@ -18,8 +18,8 @@ content_hash: 74934baf109508e6
 # GEMeX: A Large-Scale, Groundable, and Explainable Medical VQA Benchmark for Chest X-ray Diagnosis
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.16778](https://arxiv.org/abs/2411.16778)
-**Code**: [www.med-vqa.com/GEMeX](https://www.med-vqa.com/GEMeX)
+**arXiv**: [2411.16778](https://arxiv.org/abs/2411.16778)  
+**Code**: [www.med-vqa.com/GEMeX](https://www.med-vqa.com/GEMeX)  
 **Area**: Medical Imaging / Medical VQA
 **Keywords**: Medical Visual Question Answering, Chest X-ray, Explainability, Visual Grounding, Large-Scale Benchmark
 

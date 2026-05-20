@@ -18,8 +18,8 @@ content_hash: 1955f13cf9d68df8
 # MotionDiff: Training-Free Zero-Shot Interactive Motion Editing via Flow-Assisted Multi-View Diffusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.17695](https://arxiv.org/abs/2503.17695)
-**Code**: None
+**arXiv**: [2503.17695](https://arxiv.org/abs/2503.17695)  
+**Code**: None  
 **Area**: Image Editing / Motion Editing
 **Keywords**: Motion Editing, Optical Flow Guidance, Multi-View Consistency, Training-Free Diffusion, 3D Point Cloud
 

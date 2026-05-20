@@ -18,8 +18,8 @@ content_hash: 31140fc4f60779e7
 # FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05506](https://arxiv.org/abs/2603.05506)
-**Code**: [Available](https://weijielyu.github.io/FaceCam)
+**arXiv**: [2603.05506](https://arxiv.org/abs/2603.05506)  
+**Code**: [Available](https://weijielyu.github.io/FaceCam)  
 **Area**: 3D Vision
 **Keywords**: Camera control, portrait video generation, scale-awareness, facial landmarks, video diffusion models
 

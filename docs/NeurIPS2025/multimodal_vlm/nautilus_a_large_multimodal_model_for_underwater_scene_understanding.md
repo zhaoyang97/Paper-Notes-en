@@ -18,8 +18,8 @@ content_hash: c634c53085af9f6e
 # Nautilus: A Large Multimodal Model for Underwater Scene Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.27481](https://arxiv.org/abs/2510.27481)
-**Code**: [GitHub](https://github.com/H-EmbodVis/NAUTILUS)
+**arXiv**: [2510.27481](https://arxiv.org/abs/2510.27481)  
+**Code**: [GitHub](https://github.com/H-EmbodVis/NAUTILUS)  
 **Area**: Multimodal Vision-Language Models (Multimodal VLM)
 **Keywords**: underwater scene understanding, large multimodal model, visual feature enhancement, underwater imaging model, instruction tuning
 
@@ -59,8 +59,8 @@ $$\bm{J}_c = \frac{\bm{I}_c - \bm{B}_c}{e^{-\beta_c(\bm{z}) \cdot \bm{z}}}$$
 
 3. **Visual Feature Enhancement (VFE) Module**: Operates in two steps—
 
-   - **Backscatter Removal**: The image patch with the lowest mean RGB value is identified as the dark token $\bm{f}_{v,k}$. Global semantics $\bm{q}$ are extracted via a cross-attention layer, and the backscatter estimate is computed as $\bm{s} = \bm{f}_{v,k} - \bm{q}$, which is then subtracted pixel-wise from the global features.
-   - **Light Absorption Recovery**: An MLP predicts absorption weights $\bm{W} = \text{MLP}(\bm{d})$ from depth features. The final enhanced features are:
+    - **Backscatter Removal**: The image patch with the lowest mean RGB value is identified as the dark token $\bm{f}_{v,k}$. Global semantics $\bm{q}$ are extracted via a cross-attention layer, and the backscatter estimate is computed as $\bm{s} = \bm{f}_{v,k} - \bm{q}$, which is then subtracted pixel-wise from the global features.
+    - **Light Absorption Recovery**: An MLP predicts absorption weights $\bm{W} = \text{MLP}(\bm{d})$ from depth features. The final enhanced features are:
 $$\bm{v}_e = (\bm{v} - \bm{s}) \oslash \exp(-\bm{W})$$
 
 4. **Dual-Path Feature Fusion**: The original visual features preserve authentic underwater environmental information, while the enhanced features reduce imaging interference. Both are fed in parallel to the LLM through a shared projector, enabling complementary understanding.

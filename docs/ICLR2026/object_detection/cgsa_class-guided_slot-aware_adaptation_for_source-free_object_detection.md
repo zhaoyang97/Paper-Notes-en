@@ -18,8 +18,8 @@ content_hash: f074c05e9457801b
 # CGSA: Class-Guided Slot-Aware Adaptation for Source-Free Object Detection
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.22621](https://arxiv.org/abs/2602.22621)
-**Code**: [GitHub](https://github.com/Michael-McQueen/CGSA)
+**arXiv**: [2602.22621](https://arxiv.org/abs/2602.22621)  
+**Code**: [GitHub](https://github.com/Michael-McQueen/CGSA)  
 **Area**: Object Detection
 **Keywords**: source-free domain adaptation, object-centric learning, slot attention, DETR, contrastive learning
 

@@ -18,8 +18,8 @@ content_hash: bf4f80184809b2de
 # FG-Portrait: 3D Flow Guided Editable Portrait Animation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23381](https://arxiv.org/abs/2603.23381)
-**Code**: Unavailable
+**arXiv**: [2603.23381](https://arxiv.org/abs/2603.23381)  
+**Code**: Unavailable  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Portrait Animation, 3D Optical Flow, Parametric Head Model, Diffusion Model, Expression Editing
 

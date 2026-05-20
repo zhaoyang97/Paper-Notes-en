@@ -18,7 +18,7 @@ content_hash: 2659d97a8c2fbf85
 # Collaborative LLM Numerical Reasoning with Local Data Protection
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.00299](https://arxiv.org/abs/2504.00299)
+**arXiv**: [2504.00299](https://arxiv.org/abs/2504.00299)  
 **Area**: LLM/NLP
 **Keywords**: privacy-preserving reasoning, numerical reasoning, model collaboration, topic shifting, code-as-tool
 

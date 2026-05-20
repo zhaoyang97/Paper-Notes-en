@@ -18,8 +18,8 @@ content_hash: dc15d008b43a3133
 # Projecting Assumptions: The Duality Between Sparse Autoencoders and Concept Geometry
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.01822](https://arxiv.org/abs/2503.01822)
-**Code**: [GitHub](https://github.com/Sai-Sumedh/SaeConceptDuality-SpaDE)
+**arXiv**: [2503.01822](https://arxiv.org/abs/2503.01822)  
+**Code**: [GitHub](https://github.com/Sai-Sumedh/SaeConceptDuality-SpaDE)  
 **Area**: Optimization
 **Keywords**: Sparse Autoencoders, Concept Geometry, Projection Nonlinearity, Interpretability, Duality
 
@@ -47,9 +47,9 @@ The three dominant SAE variants (ReLU, TopK, JumpReLU) are unified under a "proj
 
 1. **Unified Projection Nonlinearity Framework (Definition 3.1 & Table 1)**:
 
-   - **ReLU**: $g(\mathbf{v}) = \Pi_{\mathcal{S}}\{\mathbf{v}\}$, $\mathcal{S} = \{\mathbf{y} \geq 0\}$ (projection onto positive orthant)
-   - **TopK**: $g(\mathbf{v}) = \Pi_{\mathcal{S}}\{\mathbf{v}\}$, $\mathcal{S} = \{\mathbf{y} \geq 0, \|\mathbf{y}\|_0 \leq k\}$ (projection onto $k$-sparse constraint)
-   - **JumpReLU**: ReLU($\mathbf{v} - \theta$) + $\theta \odot H(\mathbf{v} - \theta)$, combining thresholding with positive orthant projection
+    - **ReLU**: $g(\mathbf{v}) = \Pi_{\mathcal{S}}\{\mathbf{v}\}$, $\mathcal{S} = \{\mathbf{y} \geq 0\}$ (projection onto positive orthant)
+    - **TopK**: $g(\mathbf{v}) = \Pi_{\mathcal{S}}\{\mathbf{v}\}$, $\mathcal{S} = \{\mathbf{y} \geq 0, \|\mathbf{y}\|_0 \leq k\}$ (projection onto $k$-sparse constraint)
+    - **JumpReLU**: ReLU($\mathbf{v} - \theta$) + $\theta \odot H(\mathbf{v} - \theta)$, combining thresholding with positive orthant projection
 
    Key insight: the essential difference among SAE variants lies in the choice of projection set $\mathcal{S}$.
 
@@ -60,22 +60,22 @@ The three dominant SAE variants (ReLU, TopK, JumpReLU) are unified under a "proj
 
 3. **Receptive Fields and Implicit Assumptions (Definition 3.2 & Table 2)**:
 
-   - **ReLU/JumpReLU**: Receptive field is a half-space → assumes concepts are **linearly separable**
-   - **TopK**: Receptive field is a union of hypercones → assumes concepts are **angularly separable** and **dimensionally uniform** (since $k$ is fixed for all inputs)
+    - **ReLU/JumpReLU**: Receptive field is a half-space → assumes concepts are **linearly separable**
+    - **TopK**: Receptive field is a union of hypercones → assumes concepts are **angularly separable** and **dimensionally uniform** (since $k$ is fixed for all inputs)
 
 4. **Two Critical Data Properties**:
 
-   - **Nonlinear Separability**: Concepts of different sizes or magnitudes may not be separable by a hyperplane (e.g., "onion features," linear features of varying magnitude)
-   - **Dimensional Heterogeneity**: Different concepts occupy subspaces of different dimensionality (e.g., truth is 1-dimensional, days of the week are 2-dimensional, safety features are high-dimensional)
+    - **Nonlinear Separability**: Concepts of different sizes or magnitudes may not be separable by a hyperplane (e.g., "onion features," linear features of varying magnitude)
+    - **Dimensional Heterogeneity**: Different concepts occupy subspaces of different dimensionality (e.g., truth is 1-dimensional, days of the week are 2-dimensional, safety features are high-dimensional)
 
    Table 3 analyzes the compatibility of each SAE: ReLU/JumpReLU support heterogeneity but not nonlinear separability; TopK supports limited nonlinear separability but not heterogeneity.
 
 5. **SpaDE (Sparsemax Distance Encoder)**: Designed from the duality principle:
 
-   - The projection set is chosen as the probability simplex $\mathcal{S} = \Delta^s = \{\mathbf{x}: \sum_i x_i = 1, \mathbf{x} \geq 0\}$, yielding a Sparsemax nonlinearity that is adaptively sparse (different inputs can activate different numbers of latent variables)
-   - The encoder uses Euclidean distance rather than a linear transformation: $\mathbf{z} = \text{Sparsemax}(-\lambda d(\mathbf{x}, \mathbf{W}))$, where $d(\mathbf{x}, \mathbf{W})_i = \|\mathbf{x} - \mathbf{W}_i\|^2$
-   - $\mathbf{W}_i$ serves as prototypes; distance-based encoding naturally supports nonlinear separability
-   - The outer optimization corresponds to K-Deep Simplex (KDS), with regularization term $\sum_i z_i\|\mathbf{x} - \mathbf{W}_i\|^2$ encouraging prototypes to lie near the data
+    - The projection set is chosen as the probability simplex $\mathcal{S} = \Delta^s = \{\mathbf{x}: \sum_i x_i = 1, \mathbf{x} \geq 0\}$, yielding a Sparsemax nonlinearity that is adaptively sparse (different inputs can activate different numbers of latent variables)
+    - The encoder uses Euclidean distance rather than a linear transformation: $\mathbf{z} = \text{Sparsemax}(-\lambda d(\mathbf{x}, \mathbf{W}))$, where $d(\mathbf{x}, \mathbf{W})_i = \|\mathbf{x} - \mathbf{W}_i\|^2$
+    - $\mathbf{W}_i$ serves as prototypes; distance-based encoding naturally supports nonlinear separability
+    - The outer optimization corresponds to K-Deep Simplex (KDS), with regularization term $\sum_i z_i\|\mathbf{x} - \mathbf{W}_i\|^2$ encouraging prototypes to lie near the data
 
 ### Loss & Training
 

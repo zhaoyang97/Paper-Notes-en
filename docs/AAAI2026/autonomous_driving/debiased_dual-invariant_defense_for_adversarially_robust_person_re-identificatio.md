@@ -18,8 +18,8 @@ content_hash: 2fc8ff7e1c83f539
 # Debiased Dual-Invariant Defense for Adversarially Robust Person Re-Identification
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09933](https://arxiv.org/abs/2511.09933)
-**Code**: [Available](https://github.com/zchuanqi/DDDefense-ReID)
+**arXiv**: [2511.09933](https://arxiv.org/abs/2511.09933)  
+**Code**: [Available](https://github.com/zchuanqi/DDDefense-ReID)  
 **Area**: Autonomous Driving / Person Re-Identification
 **Keywords**: Adversarial Defense, Person Re-Identification, Meta-Learning, Data Balancing, Metric Learning
 

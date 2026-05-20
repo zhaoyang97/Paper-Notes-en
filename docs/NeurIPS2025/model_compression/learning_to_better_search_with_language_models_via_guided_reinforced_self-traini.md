@@ -18,8 +18,8 @@ content_hash: bab6923d2ae418bf
 # Learning to Better Search with Language Models via Guided Reinforced Self-Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.02992](https://arxiv.org/abs/2410.02992)
-**Code**: [GitHub](https://github.com/snu-mllab/guided-rest)
+**arXiv**: [2410.02992](https://arxiv.org/abs/2410.02992)  
+**Code**: [GitHub](https://github.com/snu-mllab/guided-rest)  
 **Area**: Model Compression (LLM Inference Optimization)
 **Keywords**: search strategy learning, self-training, reinforcement learning, test-time compute efficiency, language model reasoning
 

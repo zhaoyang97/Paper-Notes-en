@@ -18,8 +18,8 @@ content_hash: 874efaed7da597d0
 # Gloria: Consistent Character Video Generation via Content Anchors
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29931](https://arxiv.org/abs/2603.29931)
-**Code**: [https://yyvhang.github.io/Gloria_Page/](https://yyvhang.github.io/Gloria_Page/)
+**arXiv**: [2603.29931](https://arxiv.org/abs/2603.29931)  
+**Code**: [https://yyvhang.github.io/Gloria_Page/](https://yyvhang.github.io/Gloria_Page/)  
 **Area**: Video Understanding / Video Generation
 **Keywords**: character video generation, consistency, content anchor frames, diffusion models, long video
 

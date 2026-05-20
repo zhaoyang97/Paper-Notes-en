@@ -18,8 +18,8 @@ content_hash: 1e20da55f069c366
 # GeoDynamics: A Geometric State-Space Neural Network for Understanding Brain Dynamics on Riemannian Manifolds
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.13570](https://arxiv.org/abs/2601.13570)
-**Code**: N/A
+**arXiv**: [2601.13570](https://arxiv.org/abs/2601.13570)  
+**Code**: N/A  
 **Area**: Brain Dynamics / State-Space Models / Riemannian Geometry
 **Keywords**: state-space model, SPD manifold, Riemannian geometry, brain dynamics, functional connectivity
 

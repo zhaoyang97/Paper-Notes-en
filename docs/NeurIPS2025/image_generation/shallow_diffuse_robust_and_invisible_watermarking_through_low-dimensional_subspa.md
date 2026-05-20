@@ -18,8 +18,8 @@ content_hash: 1270a9f89284c7c7
 # Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.21088](https://arxiv.org/abs/2410.21088)
-**Code**: Not available
+**arXiv**: [2410.21088](https://arxiv.org/abs/2410.21088)  
+**Code**: Not available  
 **Area**: Diffusion Models / Watermarking / AI-Generated Content Detection
 **Keywords**: Digital Watermarking, Diffusion Models, Low-Dimensional Subspaces, DDIM, Frequency-Domain Embedding
 

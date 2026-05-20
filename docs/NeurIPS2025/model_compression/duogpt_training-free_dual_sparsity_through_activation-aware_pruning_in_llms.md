@@ -18,8 +18,8 @@ content_hash: 7b0ef7a5da2e6720
 # DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.20194](https://arxiv.org/abs/2506.20194)
-**Code**: [GitHub](https://github.com/) (mentioned in the paper)
+**arXiv**: [2506.20194](https://arxiv.org/abs/2506.20194)  
+**Code**: [GitHub](https://github.com/) (mentioned in the paper)  
 **Area**: LLM Inference Efficiency / Model Compression
 **Keywords**: Dual Sparsity, Activation Sparsity, Unstructured Pruning, OBC Framework, LLM Acceleration
 

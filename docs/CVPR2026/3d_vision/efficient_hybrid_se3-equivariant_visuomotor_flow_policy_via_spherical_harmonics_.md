@@ -18,8 +18,8 @@ content_hash: 64acaca5baf6e407
 # Efficient Hybrid SE(3)-Equivariant Visuomotor Flow Policy via Spherical Harmonics
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23227](https://arxiv.org/abs/2603.23227)
-**Code**: [https://github.com/zql-kk/E3Flow](https://github.com/zql-kk/E3Flow)
+**arXiv**: [2603.23227](https://arxiv.org/abs/2603.23227)  
+**Code**: [https://github.com/zql-kk/E3Flow](https://github.com/zql-kk/E3Flow)  
 **Area**: 3D Vision / Robot Manipulation
 **Keywords**: SE(3) Equivariance, Spherical Harmonics, Rectified Flow, Robot Policy Learning, Multi-Modal Fusion
 
@@ -57,27 +57,27 @@ The E3Flow pipeline (Figure 2) proceeds as follows:
 
 1. **Spherical harmonic visual representation**: Strict SO(3) equivariance is achieved via spherical harmonic functions.
 
-   - Spherical harmonics $Y_l^m(\theta,\phi)$ form an orthogonal basis on the unit sphere. Under rotation $R$, harmonics of the same order $l$ undergo linear mixing: $Y_l^m(R^{-1}\hat{\mathbf{r}}) = \sum_{m'} D_{mm'}^{(l)}(R) Y_l^{m'}(\hat{\mathbf{r}})$
-   - EquiformerV2 encodes point clouds into multi-order spherical harmonic features (scalar $f_{pcd}^{(0)}$ + higher-order $f_{pcd}^{(>0)}$), preserving fine-grained directional and rotational detail.
-   - Compared to EquiBot's vector neuron approach, EquiformerV2's higher-order coefficient encoding captures more precise directional information.
-   - Compared to SDP's sparse point cloud only approach, this work introduces hybrid visual input.
+    - Spherical harmonics $Y_l^m(\theta,\phi)$ form an orthogonal basis on the unit sphere. Under rotation $R$, harmonics of the same order $l$ undergo linear mixing: $Y_l^m(R^{-1}\hat{\mathbf{r}}) = \sum_{m'} D_{mm'}^{(l)}(R) Y_l^{m'}(\hat{\mathbf{r}})$
+    - EquiformerV2 encodes point clouds into multi-order spherical harmonic features (scalar $f_{pcd}^{(0)}$ + higher-order $f_{pcd}^{(>0)}$), preserving fine-grained directional and rotational detail.
+    - Compared to EquiBot's vector neuron approach, EquiformerV2's higher-order coefficient encoding captures more precise directional information.
+    - Compared to SDP's sparse point cloud only approach, this work introduces hybrid visual input.
 
 2. **Feature Enhancement Module (FEM)**: Cross-modal dynamic fusion.
 
-   - Image features are injected exclusively into the scalar component (Type-0), preserving the equivariance of higher-order components.
-   - Core formula: $f_{fused} = \Pi[\Lambda(\mathcal{A}(f_{pcd}^{(0)}, f_{img}), f_{pcd}^{(0)}) \| f_{pcd}^{(>0)}]$
-   - $\mathcal{A}$: cross-modal attention, using point cloud scalar features as queries and image features as keys/values.
-   - $\Lambda$: gating mechanism that adaptively balances image contribution — contrasting with the performance drop caused by naive concatenation (79.00% → 72.36%).
-   - $\Pi$: projection back into spherical harmonic space.
-   - **Design Motivation**: Naively concatenating features from different modalities disrupts the equivariant structure. FEM operates exclusively in the invariant subspace (Type-0), elegantly preserving equivariance.
+    - Image features are injected exclusively into the scalar component (Type-0), preserving the equivariance of higher-order components.
+    - Core formula: $f_{fused} = \Pi[\Lambda(\mathcal{A}(f_{pcd}^{(0)}, f_{img}), f_{pcd}^{(0)}) \| f_{pcd}^{(>0)}]$
+    - $\mathcal{A}$: cross-modal attention, using point cloud scalar features as queries and image features as keys/values.
+    - $\Lambda$: gating mechanism that adaptively balances image contribution — contrasting with the performance drop caused by naive concatenation (79.00% → 72.36%).
+    - $\Pi$: projection back into spherical harmonic space.
+    - **Design Motivation**: Naively concatenating features from different modalities disrupts the equivariant structure. FEM operates exclusively in the invariant subspace (Type-0), elegantly preserving equivariance.
 
 3. **Equivariant rectified flow**: Efficient action generation.
 
-   - Learns a straight-line interpolation path from a noise distribution to the action distribution: $x_t = (1-t)x_0 + ta$
-   - Training loss: $\mathcal{L}_{RF}(\theta) = \mathbb{E}_{t,x_0,x_1}[\|v_\theta(x_t,t,s,v) - (a-x_0)\|^2]$
-   - Since the velocity field network is equivariant, it satisfies $v_\theta(\rho*x_t, t, \rho*s, \rho*v) = \rho * v_\theta(x_t, t, s, v)$
-   - The training target is a linear transformation of equivariant actions, and the loss is invariant under group actions; therefore, an equivariant optimal solution exists.
-   - Default 10-step sampling yields an inference time of 0.51s, 7× faster than SDP (DDPM) at 3.73s.
+    - Learns a straight-line interpolation path from a noise distribution to the action distribution: $x_t = (1-t)x_0 + ta$
+    - Training loss: $\mathcal{L}_{RF}(\theta) = \mathbb{E}_{t,x_0,x_1}[\|v_\theta(x_t,t,s,v) - (a-x_0)\|^2]$
+    - Since the velocity field network is equivariant, it satisfies $v_\theta(\rho*x_t, t, \rho*s, \rho*v) = \rho * v_\theta(x_t, t, s, v)$
+    - The training target is a linear transformation of equivariant actions, and the loss is invariant under group actions; therefore, an equivariant optimal solution exists.
+    - Default 10-step sampling yields an inference time of 0.51s, 7× faster than SDP (DDPM) at 3.73s.
 
 ### Loss & Training
 

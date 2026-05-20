@@ -18,8 +18,8 @@ content_hash: 8a5b73da8e3df837
 # GHOST: Solving the Traveling Salesman Problem on Graphs of Convex Sets
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06471](https://arxiv.org/abs/2511.06471)
-**Code**: [https://github.com/reso1/ghost](https://github.com/reso1/ghost)
+**arXiv**: [2511.06471](https://arxiv.org/abs/2511.06471)  
+**Code**: [https://github.com/reso1/ghost](https://github.com/reso1/ghost)  
 **Area**: Optimization
 **Keywords**: Traveling Salesman Problem, Graphs of Convex Sets, Trajectory Optimization, Hierarchical Search, Robot Motion Planning
 

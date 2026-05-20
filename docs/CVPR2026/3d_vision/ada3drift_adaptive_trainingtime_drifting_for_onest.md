@@ -18,8 +18,8 @@ content_hash: d651ac93273c1b8a
 # Ada3Drift: Adaptive Training-Time Drifting for One-Step 3D Visuomotor Robotic Manipulation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11984](https://arxiv.org/abs/2603.11984)
-**Code**: None
+**arXiv**: [2603.11984](https://arxiv.org/abs/2603.11984)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: One-step action generation, diffusion policy, 3D point cloud, multimodal action distribution, training-time drifting
 

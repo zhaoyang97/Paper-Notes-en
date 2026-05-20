@@ -19,8 +19,8 @@ content_hash: 5539749b7fb48f86
 # X2Edit: Revisiting Arbitrary-Instruction Image Editing through Self-Constructed Data and Task-Aware Representation Learning
 
 **Conference**: AAAI2026
-**arXiv**: [2508.07607](https://arxiv.org/abs/2508.07607)
-**Code**: [GitHub](https://github.com/OPPO-Mente-Lab/X2Edit)
+**arXiv**: [2508.07607](https://arxiv.org/abs/2508.07607)  
+**Code**: [GitHub](https://github.com/OPPO-Mente-Lab/X2Edit)  
 **Area**: Image Generation
 **Keywords**: image editing, MoE-LoRA, contrastive learning, dataset construction, FLUX, task-aware
 

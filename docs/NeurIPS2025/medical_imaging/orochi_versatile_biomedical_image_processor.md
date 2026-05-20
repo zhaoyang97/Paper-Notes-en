@@ -18,8 +18,8 @@ content_hash: 0e58d597c637bd05
 # Orochi: Versatile Biomedical Image Processor
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.22583](https://arxiv.org/abs/2509.22583)
-**Code**: Not yet available (open-source promised in the paper)
+**arXiv**: [2509.22583](https://arxiv.org/abs/2509.22583)  
+**Code**: Not yet available (open-source promised in the paper)  
 **Area**: Medical Imaging
 **Keywords**: Biomedical image processing, general-purpose foundation model, self-supervised pre-training, Mamba, image registration/fusion/restoration/super-resolution
 

@@ -18,8 +18,8 @@ content_hash: c3c787adededf41e
 # On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.06489](https://arxiv.org/abs/2507.06489)
-**Code**: None
+**arXiv**: [2507.06489](https://arxiv.org/abs/2507.06489)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: verbal confidence, adversarial attacks, LLM robustness, confidence calibration, jailbreak attacks
 

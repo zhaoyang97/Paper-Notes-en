@@ -18,8 +18,8 @@ content_hash: 51193f0f97a34503
 # Faster and Better 3D Splatting via Group Training
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.07608](https://arxiv.org/abs/2412.07608)
-**Code**: [Project Page](https://chengbo-wang.github.io/3DGS-with-Group-Training/)
+**arXiv**: [2412.07608](https://arxiv.org/abs/2412.07608)  
+**Code**: [Project Page](https://chengbo-wang.github.io/3DGS-with-Group-Training/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Training Acceleration, Group Training, Opacity-based Sampling, Novel View Synthesis
 

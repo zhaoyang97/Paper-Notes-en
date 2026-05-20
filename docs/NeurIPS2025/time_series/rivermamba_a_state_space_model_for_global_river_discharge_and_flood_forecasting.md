@@ -19,8 +19,8 @@ content_hash: 9fbc2065e386007f
 # RiverMamba: A State Space Model for Global River Discharge and Flood Forecasting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22535](https://arxiv.org/abs/2505.22535)
-**Code**: [Project](https://hakamshams.github.io/RiverMamba)
+**arXiv**: [2505.22535](https://arxiv.org/abs/2505.22535)  
+**Code**: [Project](https://hakamshams.github.io/RiverMamba)  
 **Area**: Time Series
 **Keywords**: River discharge forecasting, flood prediction, Mamba, spatiotemporal modeling, global scale, GloFAS
 

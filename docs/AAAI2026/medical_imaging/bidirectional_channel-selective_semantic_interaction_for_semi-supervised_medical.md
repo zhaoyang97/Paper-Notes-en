@@ -18,8 +18,8 @@ content_hash: c2cf9ba3c16765f4
 # Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.05855](https://arxiv.org/abs/2601.05855)
-**Code**: [Available](https://github.com/taozh2017/BCSI)
+**arXiv**: [2601.05855](https://arxiv.org/abs/2601.05855)  
+**Code**: [Available](https://github.com/taozh2017/BCSI)  
 **Area**: Medical Imaging
 **Keywords**: Semi-supervised learning, medical image segmentation, channel selection, bidirectional interaction, weak-to-strong consistency
 

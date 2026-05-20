@@ -18,8 +18,8 @@ content_hash: 95514cb3dd6f1477
 # CHORDS: Diffusion Sampling Accelerator with Multi-Core Hierarchical ODE Solvers
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.15260](https://arxiv.org/abs/2507.15260)
-**Code**: [Project Page](https://hanjq17.github.io/CHORDS)
+**arXiv**: [2507.15260](https://arxiv.org/abs/2507.15260)  
+**Code**: [Project Page](https://hanjq17.github.io/CHORDS)  
 **Area**: Image Generation
 **Keywords**: Diffusion model acceleration, multi-core parallelism, ODE solvers, training-free, video generation
 

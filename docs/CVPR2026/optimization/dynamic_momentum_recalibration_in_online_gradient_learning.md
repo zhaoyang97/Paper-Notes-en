@@ -18,8 +18,8 @@ content_hash: 6ded7e008a5e741e
 # Dynamic Momentum Recalibration in Online Gradient Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.06120](https://arxiv.org/abs/2603.06120)
-**Code**: [GitHub](https://github.com/LilYau350/SGDF-Optimizer)
+**arXiv**: [2603.06120](https://arxiv.org/abs/2603.06120)  
+**Code**: [GitHub](https://github.com/LilYau350/SGDF-Optimizer)  
 **Area**: Optimization
 **Keywords**: optimizer, momentum, bias-variance tradeoff, optimal linear filter, gradient estimation
 

@@ -18,8 +18,8 @@ content_hash: 6a870b6be7265ad3
 # Hierarchical Self-Attention: Generalizing Neural Attention Mechanics to Multi-Scale Problems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15448](https://arxiv.org/abs/2509.15448)
-**Code**: N/A (not publicly released)
+**arXiv**: [2509.15448](https://arxiv.org/abs/2509.15448)  
+**Code**: N/A (not publicly released)  
 **Area**: Multimodal VLM
 **Keywords**: hierarchical attention, nested signals, multimodal Transformer, information entropy minimization, dynamic programming
 

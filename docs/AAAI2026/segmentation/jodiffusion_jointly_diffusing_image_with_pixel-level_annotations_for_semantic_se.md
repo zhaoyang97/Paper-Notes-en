@@ -19,9 +19,9 @@ content_hash: 4bfa2f1d9e6a6009
 # JoDiffusion: Jointly Diffusing Image with Pixel-Level Annotations for Semantic Segmentation Promotion
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.13014](https://arxiv.org/abs/2512.13014)
+**arXiv**: [2512.13014](https://arxiv.org/abs/2512.13014)  
 **Authors**: Haoyu Wang, Lei Zhang (Corresponding), Wenrui Liu, Dengyang Jiang, Wei Wei (Northwestern Polytechnical University), Chen Ding
-**Code**: [GitHub](https://github.com/00why00/JoDiffusion)
+**Code**: [GitHub](https://github.com/00why00/JoDiffusion)  
 **Area**: Image Segmentation
 **Keywords**: Semantic Segmentation, Dataset Generation, Diffusion Models, Joint Generation, Annotation Masks, Latent Space
 

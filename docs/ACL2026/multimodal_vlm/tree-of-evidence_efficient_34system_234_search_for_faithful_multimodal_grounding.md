@@ -18,8 +18,8 @@ content_hash: 1d617b25d9c1431f
 # Tree-of-Evidence: Efficient "System 2" Search for Faithful Multimodal Grounding
 
 **Conference**: ACL 2026
-**arXiv**: [2604.07692](https://arxiv.org/abs/2604.07692)
-**Code**: None
+**arXiv**: [2604.07692](https://arxiv.org/abs/2604.07692)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal Interpretability, Evidence Search, Clinical Prediction, Beam Search, Concept Bottleneck
 

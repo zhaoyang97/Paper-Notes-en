@@ -18,8 +18,8 @@ content_hash: 3cf248573ec9567a
 # MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19497](https://arxiv.org/abs/2602.19497)
-**Code**: [https://github.com/Angusliuuu/MICON-Bench](https://github.com/Angusliuuu/MICON-Bench)
+**arXiv**: [2602.19497](https://arxiv.org/abs/2602.19497)  
+**Code**: [https://github.com/Angusliuuu/MICON-Bench](https://github.com/Angusliuuu/MICON-Bench)  
 **Area**: Image Generation / Multimodal Evaluation
 **Keywords**: Multi-image context generation, unified multimodal models, benchmark, dynamic attention rebalancing, checkpoint evaluation
 
@@ -62,14 +62,14 @@ This paper proposes MICON-Bench, a multi-image context generation benchmark cove
 1. **Problem Diagnosis**: UMM attention indiscriminately attends to irrelevant regions in reference images, causing hallucinations.
 
 2. **Efficient Attention Analysis**:
-   - Uniformly sample $m \ll L_q$ query tokens (default $m=64$) and compute attention maps against reference image key tokens.
-   - Total attention score: $r_k = \sum_{i=1}^{m}\sum_{h=1}^{H} \tilde{A}_{i,h,k}$
-   - Min-max normalization yields $\hat{r}_k$.
+    - Uniformly sample $m \ll L_q$ query tokens (default $m=64$) and compute attention maps against reference image key tokens.
+    - Total attention score: $r_k = \sum_{i=1}^{m}\sum_{h=1}^{H} \tilde{A}_{i,h,k}$
+    - Min-max normalization yields $\hat{r}_k$.
 
 3. **Dynamic Weight Adjustment**:
-   - Dual-threshold three-class partition: $w_k = 1+\gamma$ (if $\hat{r}_k \geq \tau_{high}$), $w_k = 1-\gamma$ (if $\hat{r}_k \leq \tau_{low}$), otherwise $w_k = 1$.
-   - Adjusted attention: $A = \text{softmax}\left(\frac{Q(w \odot K_{ref})^\top}{\sqrt{d}}\right)$
-   - Defaults: $\gamma=0.15$, $\tau_{high}=0.7$, $\tau_{low}=0.3$.
+    - Dual-threshold three-class partition: $w_k = 1+\gamma$ (if $\hat{r}_k \geq \tau_{high}$), $w_k = 1-\gamma$ (if $\hat{r}_k \leq \tau_{low}$), otherwise $w_k = 1$.
+    - Adjusted attention: $A = \text{softmax}\left(\frac{Q(w \odot K_{ref})^\top}{\sqrt{d}}\right)$
+    - Defaults: $\gamma=0.15$, $\tau_{high}=0.7$, $\tau_{low}=0.3$.
 
 4. **Design Advantages**: Training-free, plug-and-play, and computationally negligible (only 64 query tokens sampled).
 

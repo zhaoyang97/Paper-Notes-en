@@ -18,8 +18,8 @@ content_hash: d01a11fe8cb4e3e1
 # Value Gradient Guidance for Flow Matching Alignment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.05116](https://arxiv.org/abs/2512.05116)
-**Code**: [Project Page](https://vggflow25.github.io)
+**arXiv**: [2512.05116](https://arxiv.org/abs/2512.05116)  
+**Code**: [Project Page](https://vggflow25.github.io)  
 **Area**: Flow Matching / Model Alignment
 **Keywords**: Flow Matching, Human Preference Alignment, Optimal Control, HJB Equation, Value Function Gradient
 

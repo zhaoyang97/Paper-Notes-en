@@ -17,8 +17,8 @@ content_hash: 42d22d7bcd69cf6a
 # SAD Neural Networks: Divergent Gradient Flows and Asymptotic Optimality via o-minimal Structures
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.09572](https://arxiv.org/abs/2505.09572)
-**Code**: [GitHub](https://github.com/deeplearningmethods/sad)
+**arXiv**: [2505.09572](https://arxiv.org/abs/2505.09572)  
+**Code**: [GitHub](https://github.com/deeplearningmethods/sad)  
 **Area**: Deep Learning Theory / Optimization Theory
 **Keywords**: gradient flow, o-minimal structures, divergence phenomenon, SAD activation functions, asymptotic optimality
 
@@ -52,24 +52,24 @@ The paper presents results at two levels:
 
 2. **Dichotomy theorem (Theorem 2.8)**: For $C^1$ definable activation and loss functions, the gradient flow $\Theta'(t) = -\nabla\mathcal{L}(\Theta(t))$ admits a unique global solution satisfying exactly one of the following:
 
-   - **(a)** $\lim_{t\to\infty}\Theta(t)$ exists and is a critical point.
-   - **(b)** $\lim_{t\to\infty}\|\Theta(t)\|=\infty$ and $\lim_{t\to\infty}\mathcal{L}(\Theta(t))$ is an asymptotic critical value.
+    - **(a)** $\lim_{t\to\infty}\Theta(t)$ exists and is a critical point.
+    - **(b)** $\lim_{t\to\infty}\|\Theta(t)\|=\infty$ and $\lim_{t\to\infty}\mathcal{L}(\Theta(t))$ is an asymptotic critical value.
 
    A key corollary: there exists $\varepsilon > 0$ such that any gradient flow initialized within $\varepsilon$ above the optimal loss value will have its loss converge to the optimal value. This "attraction threshold" appears to have gone unnoticed in the deep learning literature.
 
 3. **SAD (Sublinear Analytic Definable) activation function class**: Three properties are defined:
 
-   - **(S) Sublinearity**: $\limsup_{t\to\infty}\|f(tx)\|/t < \infty$
-   - **(A) Analyticity**: $f$ is an analytic function
-   - **(D) Definability**: $f$ is definable in some o-minimal structure
+    - **(S) Sublinearity**: $\limsup_{t\to\infty}\|f(tx)\|/t < \infty$
+    - **(A) Analyticity**: $f$ is an analytic function
+    - **(D) Definability**: $f$ is definable in some o-minimal structure
 
    Sigmoid, tanh, softplus, swish, GELU, and Mish are all SAD. ReLU satisfies (S) and (D) but not (A). The SAD class is closed under composition: neural networks built from SAD activations remain SAD.
 
 4. **Non-exact representability for polynomial targets (Theorem 3.4)**: For any polynomial target of $\deg(f)\geq 2$, SAD activations, and sufficiently large architectures/datasets, it is proved that $\mathcal{L}(\theta) > 0$ for all $\theta$. The core argument is:
 
-   - Sublinearity of SAD networks prevents them from globally matching polynomials of degree $\geq 2$.
-   - Analyticity and definability provide sufficient "rigidity" to detect this property on finite data.
-   - However, analyticity guarantees sufficiently non-trivial Taylor coefficients to allow arbitrarily good approximation (Theorem 3.5: $\inf_\theta \mathcal{L}(\theta) = 0$).
+    - Sublinearity of SAD networks prevents them from globally matching polynomials of degree $\geq 2$.
+    - Analyticity and definability provide sufficient "rigidity" to detect this property on finite data.
+    - However, analyticity guarantees sufficiently non-trivial Taylor coefficients to allow arbitrarily good approximation (Theorem 3.5: $\inf_\theta \mathcal{L}(\theta) = 0$).
 
    Combined with the dichotomy theorem: loss cannot be zero + can be arbitrarily close to zero → the optimum is only achievable asymptotically → gradient flow must diverge.
 

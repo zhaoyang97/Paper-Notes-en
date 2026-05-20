@@ -18,8 +18,8 @@ content_hash: 877fbb237622def7
 # Not All Frame Features Are Equal: Video-to-4D Generation via Decoupling Dynamic-Static Features
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.08377](https://arxiv.org/abs/2502.08377)
-**Code**: Coming soon
+**arXiv**: [2502.08377](https://arxiv.org/abs/2502.08377)  
+**Code**: Coming soon  
 **Area**: 3D Vision
 **Keywords**: 4D generation, dynamic 3D Gaussians, dynamic-static feature decoupling, video-to-4D, spatiotemporal similarity fusion
 

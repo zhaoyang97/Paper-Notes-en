@@ -14,8 +14,8 @@ content_hash: 6f4bf065a1ab558f
 # CRISP: Compressing Redundancy in Chain-of-Thought via Intrinsic Saliency Pruning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17297](https://arxiv.org/abs/2604.17297)
-**Code**: [GitHub](https://github.com/)
+**arXiv**: [2604.17297](https://arxiv.org/abs/2604.17297)  
+**Code**: [GitHub](https://github.com/)  
 **Area**: LLM Reasoning Efficiency
 **Keywords**: chain-of-thought compression, attention saliency, reasoning redundancy, greedy search, efficient inference
 
@@ -118,7 +118,7 @@ Standard autoregressive negative log-likelihood loss, with training on a mixture
 - **Novelty**: ⭐⭐⭐⭐⭐ — The discovery of the `</think>` information anchor is original; the greedy search over four atomic operators is elegantly designed.
 - **Experimental Thoroughness**: ⭐⭐⭐⭐ — Two model scales, three benchmarks, and multiple baselines are covered, though domain coverage is limited.
 - **Writing Quality**: ⭐⭐⭐⭐⭐ — Motivation is clearly articulated, findings are compelling, and experimental organization is sound.
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: llm_reasoning
 **Keywords**: To be supplemented
 

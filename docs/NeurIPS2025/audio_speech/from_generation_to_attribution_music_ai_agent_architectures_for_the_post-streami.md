@@ -18,8 +18,8 @@ content_hash: e72dbe904015e7f1
 # From Generation to Attribution: Music AI Agent Architectures for the Post-Streaming Era
 
 **Conference**: NeurIPS 2025 (AI4Music Workshop)
-**arXiv**: [2510.20276](https://arxiv.org/abs/2510.20276)
-**Code**: None
+**arXiv**: [2510.20276](https://arxiv.org/abs/2510.20276)  
+**Code**: None  
 **Area**: Audio & Music AI
 **Keywords**: Music AI agent, attribution tracking, copyright management, streaming platforms, fair distribution
 
@@ -135,8 +135,8 @@ No traditional ablation experiments are included. The paper provides qualitative
 # From Generation to Attribution: Music AI Agent Architectures for the Post-Streaming Era
 
 **Conference**: NeurIPS 2025 (AI4Music Workshop)
-**arXiv**: [2510.20276](https://arxiv.org/abs/2510.20276)
-**Code**: None
+**arXiv**: [2510.20276](https://arxiv.org/abs/2510.20276)  
+**Code**: None  
 **Area**: Music AI / Information Retrieval
 **Keywords**: Music AI agent, copyright attribution, streaming platforms, fair compensation, agent architecture
 

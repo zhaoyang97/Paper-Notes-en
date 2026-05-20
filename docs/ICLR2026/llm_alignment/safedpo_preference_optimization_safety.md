@@ -18,8 +18,8 @@ content_hash: a4b7d46cfae1ad22
 # SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2505.20065](https://arxiv.org/abs/2505.20065)
-**Code**: None
+**arXiv**: [2505.20065](https://arxiv.org/abs/2505.20065)  
+**Code**: None  
 **Area**: AI Safety / LLM Alignment
 **Keywords**: safety alignment, DPO, constrained optimization, safety margin, PKU-SafeRLHF
 

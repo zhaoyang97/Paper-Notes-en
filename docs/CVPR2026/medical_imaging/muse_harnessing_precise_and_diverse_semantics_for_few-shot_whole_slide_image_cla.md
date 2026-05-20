@@ -20,8 +20,8 @@ content_hash: 445222225bd39f1d
 # MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification
 
 **Conference**: CVPR2026
-**arXiv**: [2602.20873](https://arxiv.org/abs/2602.20873)
-**Code**: [JiahaoXu-god/CVPR2026_MUSE](https://github.com/JiahaoXu-god/CVPR2026_MUSE)
+**arXiv**: [2602.20873](https://arxiv.org/abs/2602.20873)  
+**Code**: [JiahaoXu-god/CVPR2026_MUSE](https://github.com/JiahaoXu-god/CVPR2026_MUSE)  
 **Area**: Medical Imaging
 **Keywords**: Whole Slide Image Classification, Few-Shot Learning, Multiple Instance Learning, Vision-Language Models, Semantic Enhancement, MoE, Knowledge Base Retrieval
 

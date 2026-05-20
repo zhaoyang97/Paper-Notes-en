@@ -18,8 +18,8 @@ content_hash: a6c4fc2e7141d2e3
 # 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19682](https://arxiv.org/abs/2603.19682)
-**Code**: [https://github.com/takeshie/GSPrior](https://github.com/takeshie/GSPrior)
+**arXiv**: [2603.19682](https://arxiv.org/abs/2603.19682)  
+**Code**: [https://github.com/takeshie/GSPrior](https://github.com/takeshie/GSPrior)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Surface Reconstruction, TSDF, Self-Constrained Prior, Geometric Constraint
 

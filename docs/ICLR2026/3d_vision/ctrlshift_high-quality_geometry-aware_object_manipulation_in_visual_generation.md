@@ -18,8 +18,8 @@ content_hash: a617a1dd6e528467
 # Ctrl&Shift: High-Quality Geometry-Aware Object Manipulation in Visual Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.11440](https://arxiv.org/abs/2602.11440)
-**Code**: To be confirmed
+**arXiv**: [2602.11440](https://arxiv.org/abs/2602.11440)  
+**Code**: To be confirmed  
 **Area**: 3D Vision / Visual Generation
 **Keywords**: Object manipulation, diffusion models, geometric consistency, camera pose control, image editing
 

@@ -18,8 +18,8 @@ content_hash: 985f2aeef512fce0
 # MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.18792](https://arxiv.org/abs/2602.18792)
-**Code**: Coming soon
+**arXiv**: [2602.18792](https://arxiv.org/abs/2602.18792)  
+**Code**: Coming soon  
 **Area**: Causal Inference
 **Keywords**: Visual counterfactual explanations, diffusion models, adaptive masking, explainable AI, classifier guidance
 

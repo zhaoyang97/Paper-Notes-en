@@ -18,8 +18,8 @@ content_hash: 55942959d1eaad09
 # Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.06377](https://arxiv.org/abs/2510.06377)
-**Code**: [snap-stanford/relational-transformer](https://github.com/snap-stanford/relational-transformer)
+**arXiv**: [2510.06377](https://arxiv.org/abs/2510.06377)  
+**Code**: [snap-stanford/relational-transformer](https://github.com/snap-stanford/relational-transformer)  
 **Area**: Relational Data Modeling / Foundation Models
 **Keywords**: Relational Database, Zero-Shot Learning, Transformer, Foundation Model, Relational Attention
 

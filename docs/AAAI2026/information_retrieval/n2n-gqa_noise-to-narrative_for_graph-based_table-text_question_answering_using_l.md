@@ -18,8 +18,8 @@ content_hash: 335e9149b648d3a2
 # N2N-GQA: Noise-to-Narrative for Graph-Based Table-Text Question Answering Using LLMs
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.06603](https://arxiv.org/abs/2601.06603)
-**Code**: None
+**arXiv**: [2601.06603](https://arxiv.org/abs/2601.06603)  
+**Code**: None  
 **Area**: LLM Reasoning / RAG
 **Keywords**: Multi-hop QA, Graph-based Retrieval, Table-Text Hybrid QA, Zero-shot, GraphRank
 

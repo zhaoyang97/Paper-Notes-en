@@ -18,8 +18,8 @@ content_hash: b4e0726e88e66726
 # See, Hear, and Understand: Benchmarking Audiovisual Human Speech Understanding in Multimodal Large Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.02231](https://arxiv.org/abs/2512.02231)
-**Code**: [https://plnguyen2908.github.io/AV-SpeakerBench-project-page/](https://plnguyen2908.github.io/AV-SpeakerBench-project-page/)
+**arXiv**: [2512.02231](https://arxiv.org/abs/2512.02231)  
+**Code**: [https://plnguyen2908.github.io/AV-SpeakerBench-project-page/](https://plnguyen2908.github.io/AV-SpeakerBench-project-page/)  
 **Area**: Multimodal VLM / Audiovisual Understanding
 **Keywords**: multimodal benchmark, speaker-centric reasoning, audiovisual fusion, large language model evaluation, audiovisual understanding
 

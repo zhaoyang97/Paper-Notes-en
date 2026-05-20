@@ -18,8 +18,8 @@ content_hash: 2f8aea44f10440d8
 # CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity
 
 **Conference**: ACL 2026
-**arXiv**: [2604.11632](https://arxiv.org/abs/2604.11632)
-**Code**: [https://github.com/Big-Sid/CARTBENCH-Chinese-Artwork-Benchmark](https://github.com/Big-Sid/CARTBENCH-Chinese-Artwork-Benchmark)
+**arXiv**: [2604.11632](https://arxiv.org/abs/2604.11632)  
+**Code**: [https://github.com/Big-Sid/CARTBENCH-Chinese-Artwork-Benchmark](https://github.com/Big-Sid/CARTBENCH-Chinese-Artwork-Benchmark)  
 **Area**: Multimodal VLM / Cultural Understanding
 **Keywords**: Chinese art, museum benchmark, vision-language models, connoisseurship, authenticity verification
 

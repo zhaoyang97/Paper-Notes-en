@@ -18,8 +18,8 @@ content_hash: a54cca868860092e
 # Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.04546](https://arxiv.org/abs/2508.04546)
-**Code**: [https://github.com/minghangz/OnVTG](https://github.com/minghangz/OnVTG)
+**arXiv**: [2508.04546](https://arxiv.org/abs/2508.04546)  
+**Code**: [https://github.com/minghangz/OnVTG](https://github.com/minghangz/OnVTG)  
 **Area**: Video Understanding
 **Keywords**: Online Video Temporal Grounding, Hierarchical Event Memory, Event Proposal, Future Prediction, Low Latency
 

@@ -18,8 +18,8 @@ content_hash: e2d38c6c753845c1
 # Tracing Relational Knowledge Recall in Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19934](https://arxiv.org/abs/2604.19934)
-**Code**: [nicpopovic.com/publications/tracing](https://nicpopovic.com/publications/tracing)
+**arXiv**: [2604.19934](https://arxiv.org/abs/2604.19934)  
+**Code**: [nicpopovic.com/publications/tracing](https://nicpopovic.com/publications/tracing)  
 **Area**: Interpretability / Knowledge Representation
 **Keywords**: Relational Knowledge, Attention Head Attribution, Linear Probes, Knowledge Recall Mechanisms, Feature Attribution
 

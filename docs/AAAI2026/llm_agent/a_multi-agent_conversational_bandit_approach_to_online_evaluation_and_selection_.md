@@ -2,123 +2,118 @@
 title: >-
   [Paper Note] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses
 description: >-
-  [AAAI 2026][LLM Agent][Multi-Armed Bandit] This paper proposes MACO (Multi-Agent Conversational Online Learning), which formulates LLM response selection as a multi-agent conversational bandit problem. It employs local a…
+  [AAAI 2026][Reinforcement Learning][multi-agent bandit] This paper proposes MACO, a multi-agent conversational bandit framework that achieves online evaluation and user preference alignment for LLM responses through a lo…
 tags:
   - "AAAI 2026"
-  - "LLM Agent"
-  - "Multi-Armed Bandit"
-  - "Online Learning"
-  - "Preference Alignment"
-  - "Multi-Agent"
-  - "Conversational Selection"
+  - "Reinforcement Learning"
+  - "multi-agent bandit"
+  - "conversational bandit"
+  - "LLM response selection"
+  - "user preference alignment"
+  - "regret bound"
 date: 2026-05-08
-content_hash: 2e4b3099e2775aaa
+content_hash: 580eb907c02cc818
 ---
 
 # A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses
 
 **Conference**: AAAI 2026
-**arXiv**: [2501.01849](https://arxiv.org/abs/2501.01849)
-**Code**: [https://github.com/TarferSoul/MACO](https://github.com/TarferSoul/MACO)
-**Area**: LLM Agent
-**Keywords**: Multi-Armed Bandit, Online Learning, Preference Alignment, Multi-Agent, Conversational Selection
+**arXiv**: [2501.01849](https://arxiv.org/abs/2501.01849)  
+**Code**: [GitHub](https://github.com/TarferSoul/MACO)  
+**Area**: Reinforcement Learning
+**Keywords**: multi-agent bandit, conversational bandit, LLM response selection, user preference alignment, regret bound
 
 ## TL;DR
 
-This paper proposes MACO (Multi-Agent Conversational Online Learning), which formulates LLM response selection as a multi-agent conversational bandit problem. It employs local agents to eliminate low-quality responses and a cloud-side adaptive keyword-based dialogue to collect user preferences, achieving near-optimal online response evaluation and user preference alignment.
+This paper proposes MACO, a multi-agent conversational bandit framework that achieves online evaluation and user preference alignment for LLM responses through a local-agent phase elimination mechanism and an adaptive preference query strategy on a cloud server, attaining a near-optimal regret bound of $\tilde{O}(\sqrt{dMT})$.
 
 ## Background & Motivation
 
-### Limitations of Prior Work
+**Background**: LLM response optimization primarily relies on offline evaluation (e.g., prompt engineering), and scoring responses individually incurs prohibitive computational costs — for instance, evaluating 205 zero-shot prompts on 784 GSM8K problems requires 78 GPU hours.
 
-**Limitations of Prior Work**: **Background**: LLMs can generate stylistically diverse candidate responses via different prompts (e.g., humorous, formal, or code-oriented styles). Selecting the response that best matches user preferences in an online setting is a critical challenge. Offline scoring is computationally expensive (e.g., 78 GPU hours to evaluate 205 prompts), whereas online evaluation can dynamically adjust based on user feedback.
+**Limitations of Prior Work**: ① Existing bandit methods suffer from high computational complexity when handling high-dimensional LLM features; ② most assume infinitely many arms, which is unsuitable for finite response sets; ③ fixed conversation frequencies lack adaptivity; ④ only single-agent settings are supported, precluding multi-device access.
 
-**Four limitations of existing conversational bandit methods**:
-1. **High-dimensional feature space**: Semantic embeddings of LLM responses are high-dimensional; traditional SVD-based dimensionality reduction incurs high computational complexity.
-2. **Finite arm sets**: Most conversational bandit methods assume infinite arm sets, whereas LLM candidate responses form a finite yet large set.
-3. **Fixed conversation frequency**: Existing methods control conversation frequency via predefined functions (linear/logarithmic), which cannot adapt to dynamic needs.
-4. **Single-agent setting**: Users access LLMs across multiple devices (phone/tablet/desktop), producing fragmented preference data that existing methods cannot handle in a multi-agent cooperative manner.
+**Key Challenge**: How to efficiently select the optimal LLM response online under multi-device, heterogeneous arm sets, and dynamic user preferences.
+
+**Goal**: Design a multi-agent conversational bandit framework that online evaluates and selects user-preference-aligned LLM responses under anonymous multi-device access scenarios.
+
+**Key Insight**: Combine phase elimination with an adaptive conversation mechanism that queries keywords to explore under-explored directions in the feature space, avoiding the high computational cost of G-optimal design.
+
+**Core Idea**: Use eigendecomposition of the information matrix to identify weak directions in preference estimation, then adaptively supplement information via targeted keyword-based conversations.
 
 ## Method
 
 ### Overall Architecture
 
-MACO consists of two components: (1) **MACO-A** (local agent): runs on each device and filters low-quality responses via an online elimination mechanism; (2) **MACO-S** (cloud server): aggregates data from all agents and adaptively selects keywords to query users, enabling efficient preference learning.
+$M$ local agents (corresponding to different devices) communicate with a cloud server. Each agent maintains its own finite response set $\mathcal{A}_m$ and selects one response (arm) per round, receiving user satisfaction feedback. The server aggregates data to estimate the user preference vector $\bm{\theta}^*$ and guides agents to accelerate learning through keyword queries.
 
 ### Key Designs
 
-1. **Local Agent Elimination Mechanism (MACO-A)**
-   - Each agent $m$ maintains an active arm set $\mathcal{A}_m^p$, computes the information matrix $M_m^p$, and performs eigendecomposition.
-   - For directions whose eigenvalues fall below threshold $h_p$ (i.e., insufficiently explored directions in the feature space), the corresponding eigenvectors are uploaded to the cloud server.
-   - All active arms are pulled uniformly to collect reward feedback.
-   - The updated preference estimate $\hat{\theta}_p$ is downloaded from the server, and candidate responses whose expected rewards are significantly lower than the best arm are eliminated.
+1. **MACO-A (Local Agent)** — Online elimination mechanism. In each phase $p$, the information matrix $\bm{M}_m^p = \sum_{a} \frac{1}{|\mathcal{A}_m^p|} \bm{x}_a\bm{x}_a^T$ is computed and diagonalized; eigenvectors corresponding to eigenvalues below threshold $h_p$ (representing under-explored directions) are uploaded to the server. After collecting rewards for each arm, sub-optimal responses are eliminated based on the server-returned $\hat{\bm{\theta}}_p$.
 
-2. **Cloud-Side Adaptive Dialogue Mechanism (MACO-S)**
-   - Upon receiving under-explored directions uploaded by local agents, the server selects the keyword $k$ with the largest inner product with those directions and instructs the corresponding agent to query the user.
-   - Keywords represent core stylistic concepts of responses (e.g., "C/C++", "humorous tone"); user feedback on keywords generalizes to related responses.
-   - **Adaptive triggering**: Dialogue is initiated only when preference estimates are uncertain, rather than at fixed intervals, reducing unnecessary user interruptions.
-   - The server aggregates information matrices $G$ and reward vectors $W$ from all agents, estimating the global preference via linear regression: $\hat{\theta}_p = G^{-1}W$.
+2. **MACO-S (Cloud Server)** — For each agent's weak directions, the server selects the best-matching keyword $k = \arg\max_{i \in \mathcal{K}} \tilde{\bm{x}}_i^T \bm{v}_j$ and computes the query count $n_{m,k}^p$. It then aggregates data from all agents and estimates $\hat{\bm{\theta}}_p = \bm{G}^{-1}\bm{W}$.
 
-3. **Avoiding the Computational Cost of G-Optimal Design**
-   - Traditional elimination-based bandits require computing G-optimal designs (determining arm-pulling probability distributions), which is computationally intensive.
-   - MACO leverages multi-agent heterogeneity and keyword-based dialogue to compensate for insufficient feature space coverage, eliminating the need for G-optimal design.
-   - Communication cost is only $O(d^2 M \log T)$, independent of the arm set size $A$.
+3. **Adaptive Preference Mechanism** — Conversations are triggered only when eigenvalues fall below threshold $h_p$, avoiding wasteful queries at fixed intervals. The upper bound on conversation frequency is $\beta^{-2}(\frac{3}{4(1-2^{-2p})} - d\gamma)$.
 
 ### Loss & Training
 
-No training process is involved. The objective is to minimize cumulative regret: $R_M(T) = \sum_{m,t}(x_{a_m^*}^\top \theta^* - x_{a_{m,t}}^\top \theta^*)$.
+- Linear reward model: $r_{m,t} = \langle \bm{x}_{a_{m,t}}, \bm{\theta}^*_t \rangle + \eta_{m,t}$
+- Objective: minimize cumulative regret $R_M(T) = \sum_{m=1}^M \sum_{t=1}^T (\bm{x}_{a^*_{m,t}}^T\bm{\theta}^*_t - \bm{x}_{a_{m,t}}^T\bm{\theta}^*_t)$
+- Phase elimination framework with doubling phase lengths; sub-optimal responses are eliminated at the end of each phase
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Regret (vs. MACO) | Finite Arm Adaptation | Multi-Agent |
-|---|---|---|---|
-| LinUCB | Baseline | ✓ | ✗ |
-| Conversational Bandit | Better | ✗ (infinite arm assumption) | ✗ |
-| PE-Lin (independent) | Worse | ✓ | Nominal |
-| **MACO** | **Optimal, outperforms baseline by 8.29%+** | **✓** | **✓** |
+Cumulative regret on the StyleEval dataset across different embedding models and numbers of agents:
 
-### Theoretical Results
+| Algorithm | Google M=4 | Google M=16 | OpenAI M=4 | OpenAI M=16 |
+|-----------|-----------|-------------|-----------|-------------|
+| TRIPLE-SH | 5847.31 | 22673.76 | 7736.87 | 30138.45 |
+| LinUCB | 495.67 | 2025.16 | 401.16 | 1625.90 |
+| ConUCB | 237.62 | 960.33 | 190.36 | 779.50 |
+| ConLinUCB-BS | 991.73 | 4011.74 | 781.52 | 3177.74 |
+| **MACO** | **39.04** | **153.83** | **32.06** | **127.08** |
 
-| Metric | Bound |
-|---|---|
-| Regret upper bound | $O(\sqrt{dMT \log(AM\log T / \delta)})$ |
-| Regret lower bound | $\Omega(\sqrt{dMT})$ |
-| Communication cost | $O(d^2 M \log T)$ |
+### Ablation Study
+
+| Component | Function | Effect on Regret |
+|-----------|----------|-----------------|
+| Adaptive preference mechanism | Dynamically triggers keyword queries | Removal leads to significant regret increase |
+| Phase Elimination | Eliminates sub-optimal responses per phase | Replacing with LinUCB raises regret |
+| Multi-agent aggregation | Server aggregates data across devices | Regret scales as $\sqrt{M}$ in single-agent setting |
 
 ### Key Findings
 
-- **Near-optimality**: The upper and lower bounds differ only by logarithmic factors, demonstrating that MACO is minimax optimal.
-- **Multi-agent cooperation significantly reduces regret**: With $M$ agents sharing information, regret scales as $\sqrt{dMT}$ rather than $M\sqrt{dT}$, yielding a $\sqrt{M}$-fold improvement.
-- **Adaptive dialogue outperforms fixed-frequency dialogue**: User interactions are not wasted when preferences are already known; queries are posed precisely when preferences are uncertain.
-- Consistent effectiveness is demonstrated across two embedding models (Google and OpenAI) and two LLMs (Llama and GPT-4o).
+- MACO outperforms all baselines by at least **8.29%** across all settings, with substantially larger margins in most cases
+- Communication overhead is $O(d^2 M \log T)$, independent of the response pool size $A$
+- The regret upper bound $\tilde{O}(\sqrt{dMT})$ matches the lower bound $\Omega(\sqrt{dMT})$, establishing minimax optimality
 
 ## Highlights & Insights
 
-- **Formalizing LLM response selection as a conversational bandit problem**: The practical problem of selecting the best LLM response is elegantly mapped to an online learning framework with theoretical guarantees.
-- **Keyword-based dialogue as a substitute for G-optimal design**: By asking users questions such as "Do you prefer a humorous or formal tone?", the method efficiently completes preference information, avoiding the computationally intensive G-optimal probability design.
-- **Practical consideration for multi-device scenarios**: When the same user accesses an LLM across different devices, preference data becomes fragmented; MACO's multi-agent architecture naturally addresses this issue.
+- **Avoiding G-optimal Design**: Adaptive keyword queries replace the computationally expensive G-optimal design while preserving theoretical guarantees.
+- **Heterogeneous Multi-Agent Handling**: Agents are not required to share the same response set, which better reflects real-world deployment.
+- **Strong Theory and Empirics**: The regret bound is tight, and empirical results substantially surpass all baselines.
 
 ## Limitations & Future Work
 
-- The linear reward assumption is overly strong—user satisfaction with LLM responses may not be a linear function of feature vectors.
-- The keyword set must be predefined; automatic discovery of effective keywords is not discussed.
-- Non-stationary preferences (i.e., preferences that evolve over time) are not considered.
-- Experiments involve hundreds of candidate responses, whereas the actual response space generated by LLMs is far larger.
+- The linear reward assumption may not hold for complex, nonlinear user preference scenarios.
+- A predefined keyword set $\mathcal{K}$ satisfying the feature space coverage condition (Condition 1) is required, which may be difficult to guarantee in practice.
+- The synchronous communication assumption needs to be relaxed for asynchronous or high-latency settings.
+- Non-stationary preference scenarios (i.e., preference drift over time) remain to be explored.
 
 ## Related Work & Insights
 
-- **vs. LinUCB (Abbasi-Yadkori 2011)**: A classic linear bandit that does not support conversational preference collection or multi-agent cooperation.
-- **vs. ConUCB (Zhang et al. 2020)**: A single-agent conversational bandit with fixed conversation frequency and an infinite arm set assumption; MACO supports multiple agents, finite arm sets, and adaptive dialogue.
-- **vs. RLHF**: RLHF trains a reward model from offline preference data for global alignment; MACO performs online personalized selection. The two approaches are complementary.
+- Extends the line of conversational bandit methods such as ConUCB and ConLinUCB to the multi-agent setting while avoiding G-optimal design.
+- Provides a novel online evaluation paradigm for LLM response selection.
+- May inspire response optimization in other multi-user LLM service platforms.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Modeling LLM response selection as a multi-agent conversational bandit is a novel problem formulation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across multiple embedding models, datasets, theoretical analysis, and ablation studies.
-- Writing Quality: ⭐⭐⭐⭐ Theoretically rigorous, though the heavy notation somewhat limits readability.
-- Value: ⭐⭐⭐⭐ Provides a theoretically grounded solution for online personalized LLM response selection.
+- Novelty: ⭐⭐⭐⭐ Novel combination of multi-agent conversational bandit and adaptive preference mechanism
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple embedding models, datasets, and parameter configurations
+- Writing Quality: ⭐⭐⭐ Clear structure, though notation is dense
+- Value: ⭐⭐⭐⭐ High theoretical and practical value; directly applicable to LLM service platforms
 
 <!-- RELATED:START -->
 
@@ -126,11 +121,11 @@ No training process is involved. The objective is to minimize cumulative regret:
 
 ## Related Papers
 
-- [\[AAAI 2026\] FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](finrpt_dataset_evaluation_system_and_llm-based_multi-agent_framework_for_equity_.md)
-- [\[NeurIPS 2025\] Automated Composition of Agents: A Knapsack Approach for Agentic Component Selection](../../NeurIPS2025/llm_agent/automated_composition_of_agents_a_knapsack_approach_for_agentic_component_select.md)
-- [\[AAAI 2026\] AutoTool: Efficient Tool Selection for Large Language Model Agents](autotool_efficient_tool_selection_for_large_language_model_agents.md)
-- [\[AAAI 2026\] KDR-Agent: A Multi-Agent LLM Framework for Multi-Domain Low-Resource In-Context NER via Knowledge Retrieval](a_multi-agent_llm_framework_for_multi-domain_low-resource_in-context_ner_via_kno.md)
-- [\[AAAI 2026\] Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems](parallelism_meets_adaptiveness_scalable_documents_understanding_in_multi-agent_l.md)
+- [\[AAAI 2026\] Provably Efficient Multi-Objective Bandit Algorithms under Preference-Centric Customization](provably_efficient_multi-objective_bandit_algorithms_under_preference-centric_cu.md)
+- [\[ICLR 2026\] Toward a Dynamic Stackelberg Game-Theoretic Framework for Agent-Based Conversational AI Defense Against LLM Jailbreaking](../../ICLR2026/reinforcement_learning/toward_a_dynamic_stackelberg_game-theoretic_framework_for_agent-based_conversat.md)
+- [\[AAAI 2026\] Perturbing Best Responses in Zero-Sum Games](perturbing_best_responses_in_zero-sum_games.md)
+- [\[AAAI 2026\] BAMAS: Structuring Budget-Aware Multi-Agent Systems](bamas_structuring_budget-aware_multi-agent_systems.md)
+- [\[NeurIPS 2025\] Bandit and Delayed Feedback in Online Structured Prediction](../../NeurIPS2025/reinforcement_learning/bandit_and_delayed_feedback_in_online_structured_prediction.md)
 
 </div>
 

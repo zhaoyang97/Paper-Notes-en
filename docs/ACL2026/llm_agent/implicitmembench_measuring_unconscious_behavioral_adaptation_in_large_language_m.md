@@ -18,8 +18,8 @@ content_hash: 746a12dd351f2215
 # ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.08064](https://arxiv.org/abs/2604.08064)
-**Code**: [https://github.com/ImplicitMemBench](https://github.com/ImplicitMemBench)
+**arXiv**: [2604.08064](https://arxiv.org/abs/2604.08064)  
+**Code**: [https://github.com/ImplicitMemBench](https://github.com/ImplicitMemBench)  
 **Area**: LLM Agent / LLM Evaluation
 **Keywords**: implicit memory, behavioral adaptation, procedural memory, priming effect, classical conditioning
 

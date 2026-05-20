@@ -17,8 +17,8 @@ content_hash: b5e34e64f21f2169
 # OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.12356](https://arxiv.org/abs/2604.12356)
-**Code**: [https://yudongjian.github.io/OmniFood8K-food/](https://yudongjian.github.io/OmniFood8K-food/)
+**arXiv**: [2604.12356](https://arxiv.org/abs/2604.12356)  
+**Code**: [https://yudongjian.github.io/OmniFood8K-food/](https://yudongjian.github.io/OmniFood8K-food/)  
 **Area**: Food Computing / Multimodal Fusion
 **Keywords**: Food Nutrition Estimation, Multimodal Dataset, Depth Estimation, Frequency-Domain Fusion, Chinese Cuisine
 
@@ -50,21 +50,21 @@ Given a single RGB image, a pretrained depth estimation model first predicts the
 
 1. **Scale-Shift Residual Adapter (SSRA)**:
 
-   - **Function**: Corrects global scale bias and local structural errors in the pretrained depth estimates.
-   - **Mechanism**: Learns global scale factors and shift parameters for affine transformation to achieve global calibration, while a residual network predicts local corrections to preserve fine-grained structure.
-   - **Design Motivation**: Pretrained depth models exhibit scale inconsistencies and local distortions when applied to food images.
+    - **Function**: Corrects global scale bias and local structural errors in the pretrained depth estimates.
+    - **Mechanism**: Learns global scale factors and shift parameters for affine transformation to achieve global calibration, while a residual network predicts local corrections to preserve fine-grained structure.
+    - **Design Motivation**: Pretrained depth models exhibit scale inconsistencies and local distortions when applied to food images.
 
 2. **Frequency-Aligned Fusion Module (FAFM)**:
 
-   - **Function**: Fuses RGB and depth features hierarchically in the frequency domain.
-   - **Mechanism**: Features are transformed into the frequency domain, where RGB and depth components at different frequencies are aligned—low frequencies capture global shape while high frequencies capture texture details—enabling hierarchical cross-modal fusion.
-   - **Design Motivation**: Direct spatial-domain fusion of RGB and depth features may cause information conflicts due to modality gaps; frequency-domain alignment provides a more natural fusion strategy.
+    - **Function**: Fuses RGB and depth features hierarchically in the frequency domain.
+    - **Mechanism**: Features are transformed into the frequency domain, where RGB and depth components at different frequencies are aligned—low frequencies capture global shape while high frequencies capture texture details—enabling hierarchical cross-modal fusion.
+    - **Design Motivation**: Direct spatial-domain fusion of RGB and depth features may cause information conflicts due to modality gaps; frequency-domain alignment provides a more natural fusion strategy.
 
 3. **Mask-based Prediction Head (MPH)**:
 
-   - **Function**: Focuses on key ingredient regions to improve prediction accuracy.
-   - **Mechanism**: Dynamically selects the most informative feature channels and combines them with region-aware attention to emphasize key ingredient areas.
-   - **Design Motivation**: Nutritional information density varies across regions in food images; backgrounds and containers introduce noise to the prediction.
+    - **Function**: Focuses on key ingredient regions to improve prediction accuracy.
+    - **Mechanism**: Dynamically selects the most informative feature channels and combines them with region-aware attention to emphasize key ingredient areas.
+    - **Design Motivation**: Nutritional information density varies across regions in food images; backgrounds and containers introduce noise to the prediction.
 
 ### Loss & Training
 

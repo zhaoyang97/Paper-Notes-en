@@ -19,8 +19,8 @@ content_hash: 1f83404cf123302a
 # RSONet: Region-guided Selective Optimization Network for RGB-T Salient Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12685](https://arxiv.org/abs/2603.12685)
-**Code**: To be confirmed
+**arXiv**: [2603.12685](https://arxiv.org/abs/2603.12685)  
+**Code**: To be confirmed  
 **Area**: Semantic Segmentation / Salient Object Detection
 **Keywords**: RGB-T salient object detection, region guidance, selective optimization, multimodal fusion, Swin Transformer, visual state space model
 

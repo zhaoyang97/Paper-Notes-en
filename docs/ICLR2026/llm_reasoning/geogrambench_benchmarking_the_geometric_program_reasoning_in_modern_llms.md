@@ -18,8 +18,8 @@ content_hash: 31382a635e9f3b2b
 # GeoGramBench: Benchmarking the Geometric Program Reasoning in Modern LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.17653](https://arxiv.org/abs/2505.17653)
-**Code**: [GitHub](https://github.com/LiAuto-DSR/GeoGramBench)
+**arXiv**: [2505.17653](https://arxiv.org/abs/2505.17653)  
+**Code**: [GitHub](https://github.com/LiAuto-DSR/GeoGramBench)  
 **Area**: LLM Reasoning
 **Keywords**: Geometric Reasoning, Program-to-Geometry, Benchmark, Spatial Reasoning, Asymptote Code
 

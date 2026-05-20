@@ -18,8 +18,8 @@ content_hash: c6173fe831895216
 # Conditional Distribution Compression via the Kernel Conditional Mean Embedding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.10139](https://arxiv.org/abs/2504.10139)
-**Code**: None
+**arXiv**: [2504.10139](https://arxiv.org/abs/2504.10139)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: distribution compression, kernel methods, conditional mean embedding, RKHS, data compression
 

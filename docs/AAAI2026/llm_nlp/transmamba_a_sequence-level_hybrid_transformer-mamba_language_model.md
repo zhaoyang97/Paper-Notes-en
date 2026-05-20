@@ -18,8 +18,8 @@ content_hash: 311df0d7d4f64e0f
 # TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.24067](https://arxiv.org/abs/2503.24067)
-**Code**: N/A
+**arXiv**: [2503.24067](https://arxiv.org/abs/2503.24067)  
+**Code**: N/A  
 **Area**: LLM/NLP
 **Keywords**: Transformer, Mamba, SSM, Hybrid Architecture, Sequence Modeling
 

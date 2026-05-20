@@ -18,8 +18,8 @@ content_hash: 3c6edef73f6fc9d7
 # Steering Pretrained Drafters during Speculative Decoding
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09844](https://arxiv.org/abs/2511.09844)
-**Code**: [github.com/ETH-DISCO/SD-square](https://github.com/ETH-DISCO/SD-square)
+**arXiv**: [2511.09844](https://arxiv.org/abs/2511.09844)  
+**Code**: [github.com/ETH-DISCO/SD-square](https://github.com/ETH-DISCO/SD-square)  
 **Area**: Model Compression
 **Keywords**: Speculative Decoding, Dynamic Alignment, Steering Vector, LLM Inference Acceleration, Pretrained Drafter
 

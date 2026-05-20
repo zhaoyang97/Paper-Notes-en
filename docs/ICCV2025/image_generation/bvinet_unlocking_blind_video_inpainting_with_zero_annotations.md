@@ -18,8 +18,8 @@ content_hash: 8699eb7a17ce27ea
 # BVINet: Unlocking Blind Video Inpainting with Zero Annotations
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.01181](https://arxiv.org/abs/2502.01181)
-**Code**: N/A
+**arXiv**: [2502.01181](https://arxiv.org/abs/2502.01181)  
+**Code**: N/A  
 **Area**: Image Generation / Video Restoration
 **Keywords**: blind video inpainting, mask prediction, wavelet sparse transformer, video completion, consistency loss
 

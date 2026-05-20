@@ -17,8 +17,8 @@ content_hash: 278c633c5cfaf054
 # Streaming Autoregressive Video Generation via Diagonal Distillation
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.09488](https://arxiv.org/abs/2603.09488)
-**Code**: [Project Page](https://SphereLab.ai/diagdistill)
+**arXiv**: [2603.09488](https://arxiv.org/abs/2603.09488)  
+**Code**: [Project Page](https://SphereLab.ai/diagdistill)  
 **Area**: Video Generation
 **Keywords**: video generation, autoregressive generation, distillation, streaming generation, real-time video
 

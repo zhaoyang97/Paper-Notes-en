@@ -18,8 +18,8 @@ content_hash: c52a632b904c2c6d
 # See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.13615](https://arxiv.org/abs/2509.13615)
-**Code**: [Available](https://github.com/ZrW00/StaR)
+**arXiv**: [2509.13615](https://arxiv.org/abs/2509.13615)  
+**Code**: [Available](https://github.com/ZrW00/StaR)  
 **Area**: Multimodal VLM
 **Keywords**: GUI Agent, Toggle Control, Multimodal Reasoning, State Awareness, State-aware Reasoning
 

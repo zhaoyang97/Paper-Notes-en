@@ -18,8 +18,8 @@ content_hash: d86f0a6dd852c7c9
 # Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.18631](https://arxiv.org/abs/2509.18631)
-**Code**: [Project Page](https://ot-sim2real.github.io/)
+**arXiv**: [2509.18631](https://arxiv.org/abs/2509.18631)  
+**Code**: [Project Page](https://ot-sim2real.github.io/)  
 **Area**: Robotics / Sim-to-Real / Domain Adaptation
 **Keywords**: sim-to-real, optimal transport, domain adaptation, behavior cloning, robotic manipulation
 

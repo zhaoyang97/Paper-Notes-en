@@ -18,8 +18,8 @@ content_hash: 5a39265773b5b6cd
 # Policy-as-Prompt: Turning AI Governance Rules into Guardrails for AI Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23994](https://arxiv.org/abs/2509.23994)
-**Code**: None
+**arXiv**: [2509.23994](https://arxiv.org/abs/2509.23994)  
+**Code**: None  
 **Area**: Social Computing
 **Keywords**: AI governance, guardrail policy, prompt injection defense, least privilege principle, policy-as-code
 

@@ -17,8 +17,8 @@ content_hash: 4080149117547e3d
 # Infrequent Exploration in Linear Bandits
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26000](https://arxiv.org/abs/2510.26000)
-**Code**: None
+**arXiv**: [2510.26000](https://arxiv.org/abs/2510.26000)  
+**Code**: None  
 **Area**: Other
 **Keywords**: linear bandits, infrequent exploration, greedy policy, regret bound, exploration-exploitation
 

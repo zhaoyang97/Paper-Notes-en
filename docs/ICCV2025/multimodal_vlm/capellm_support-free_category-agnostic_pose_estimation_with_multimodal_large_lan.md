@@ -18,8 +18,8 @@ content_hash: e32c3a658bf73de7
 # CapeLLM: Support-Free Category-Agnostic Pose Estimation with Multimodal Large Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.06869](https://arxiv.org/abs/2411.06869)
-**Code**: Available (link provided in paper)
+**arXiv**: [2411.06869](https://arxiv.org/abs/2411.06869)  
+**Code**: Available (link provided in paper)  
 **Area**: Multimodal VLM
 **Keywords**: Category-agnostic pose estimation, MLLM, support-free, keypoint detection, distribution modeling
 
@@ -57,8 +57,8 @@ CapeLLM consists of three core components: (1) a DINOv2 visual encoder for image
 
 3. **Dynamic-Round Training**:
 
-   - **Fixed-round**: Keypoints for each category are divided into fixed-size groups of $k$, each paired with the image to form multi-turn dialogues.
-   - **Dynamic-round**: The number of keypoints per turn varies randomly, encouraging the model to leverage other keypoints for spatial reasoning.
+    - **Fixed-round**: Keypoints for each category are divided into fixed-size groups of $k$, each paired with the image to form multi-turn dialogues.
+    - **Dynamic-round**: The number of keypoints per turn varies randomly, encouraging the model to leverage other keypoints for spatial reasoning.
 
    Dynamic-round training is particularly suited to the **cumulative reasoning** inference strategy, enabling the model to utilize previously predicted keypoints as context to refine subsequent predictions.
 

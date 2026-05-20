@@ -19,7 +19,7 @@ content_hash: e852f049e78c14e1
 # Generalization Bounds for Semi-supervised Matrix Completion with Distributional Side Information
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13049](https://arxiv.org/abs/2511.13049)
+**arXiv**: [2511.13049](https://arxiv.org/abs/2511.13049)  
 **Area**: Matrix Completion Theory / Recommender Systems
 **Keywords**: Semi-supervised matrix completion, generalization bounds, low-rank subspace, implicit feedback, explicit feedback, nuclear norm constraint
 

@@ -18,8 +18,8 @@ content_hash: 974f8a1b60356f7d
 # PreciseCache: Precise Feature Caching for Efficient and High-fidelity Video Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00976](https://arxiv.org/abs/2603.00976)
-**Code**: None
+**arXiv**: [2603.00976](https://arxiv.org/abs/2603.00976)  
+**Code**: None  
 **Area**: Video Generation / Inference Acceleration
 **Keywords**: Feature caching, video diffusion, low-frequency difference, step-level caching, block-level caching
 

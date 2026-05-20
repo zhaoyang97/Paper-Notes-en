@@ -18,8 +18,8 @@ content_hash: b84d1162d5884c83
 # When Slower Isn't Truer: Inverse Scaling Law of Truthfulness in Multimodal Reasoning
 
 **Conference**: ACL 2026
-**arXiv**: [2505.20214](https://arxiv.org/abs/2505.20214)
-**Code**: [https://truthfulvqa.github.io](https://truthfulvqa.github.io)
+**arXiv**: [2505.20214](https://arxiv.org/abs/2505.20214)  
+**Code**: [https://truthfulvqa.github.io](https://truthfulvqa.github.io)  
 **Area**: Multimodal VLM / AI Safety
 **Keywords**: multimodal reasoning, truthfulness evaluation, inverse scaling law, depth-first reasoning, hallucination detection
 

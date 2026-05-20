@@ -18,8 +18,8 @@ content_hash: 1daeb003e82cc5a8
 # HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.23043](https://arxiv.org/abs/2510.23043)
-**Code**: [https://vision.cs.utexas.edu/projects/hieramamba](https://vision.cs.utexas.edu/projects/hieramamba)
+**arXiv**: [2510.23043](https://arxiv.org/abs/2510.23043)  
+**Code**: [https://vision.cs.utexas.edu/projects/hieramamba](https://vision.cs.utexas.edu/projects/hieramamba)  
 **Area**: Video Understanding
 **Keywords**: Video Temporal Grounding, State Space Models, Mamba, Hierarchical Representation, Contrastive Learning
 
@@ -51,28 +51,28 @@ HieraMamba proposes a Mamba-based hierarchical architecture for video temporal g
 
 1. **Anchor-MambaPooling (AMP) Module**:
 
-   - **Function**: Simultaneously performs feature refinement at the current resolution and content-aware compression to the next level.
-   - **Mechanism**: A three-step pipeline — (a) **Anchor generation and interleaving**: An anchor token is initialized every $s$ frames (via local window pooling) and inserted before the frames it summarizes, forming an interleaved sequence $\hat{V} = [a_0, v_0, \ldots, v_{s-1}, a_1, v_s, \ldots] \in \mathbb{R}^{(L_0+L_1) \times D_v}$; (b) **Global encoding**: Hydra (bidirectional Mamba scanning) processes the interleaved sequence, enabling linear-complexity global context modeling — the forward scan allows anchors to receive information from preceding frames, and the backward scan from succeeding frames; (c) **Local encoding**: A narrow-window Transformer (window size 5) supplements short-range fine-grained attention patterns. The final outputs are refined current-layer features $\tilde{V}^{(l)}$ and compressed next-layer anchors $A^{(l+1)}$.
-   - **Design Motivation**: The interleaving design allows anchors and frame features to share a single Mamba scan. Anchors broadcast coarse-grained context to neighboring frames, while frame features provide fine-grained details to refine anchors — a bidirectional information flow. The key distinction from conventional feature pyramids is that AMP produces multi-scale representations through token-level compression rather than naive downsampling, enabling content-aware abstraction.
+    - **Function**: Simultaneously performs feature refinement at the current resolution and content-aware compression to the next level.
+    - **Mechanism**: A three-step pipeline — (a) **Anchor generation and interleaving**: An anchor token is initialized every $s$ frames (via local window pooling) and inserted before the frames it summarizes, forming an interleaved sequence $\hat{V} = [a_0, v_0, \ldots, v_{s-1}, a_1, v_s, \ldots] \in \mathbb{R}^{(L_0+L_1) \times D_v}$; (b) **Global encoding**: Hydra (bidirectional Mamba scanning) processes the interleaved sequence, enabling linear-complexity global context modeling — the forward scan allows anchors to receive information from preceding frames, and the backward scan from succeeding frames; (c) **Local encoding**: A narrow-window Transformer (window size 5) supplements short-range fine-grained attention patterns. The final outputs are refined current-layer features $\tilde{V}^{(l)}$ and compressed next-layer anchors $A^{(l+1)}$.
+    - **Design Motivation**: The interleaving design allows anchors and frame features to share a single Mamba scan. Anchors broadcast coarse-grained context to neighboring frames, while frame features provide fine-grained details to refine anchors — a bidirectional information flow. The key distinction from conventional feature pyramids is that AMP produces multi-scale representations through token-level compression rather than naive downsampling, enabling content-aware abstraction.
 
 2. **Gated Fusion and Decoupling**:
 
-   - **Function**: Controls the quality of information propagation across hierarchy levels.
-   - **Mechanism**: RMS normalization and residual connections are applied between global encoding, local encoding, and FFN. Between stages, learnable sigmoid gates $\boldsymbol{\sigma}$ replace unconditional residual addition, providing content-adaptive control over information propagation.
-   - **Design Motivation**: Mamba captures global structure while the narrow-window Transformer captures local patterns — the roles of the two components are explicitly decoupled, avoiding the role ambiguity common in hybrid architectures. Gating ensures that only salient information propagates up the hierarchy.
+    - **Function**: Controls the quality of information propagation across hierarchy levels.
+    - **Mechanism**: RMS normalization and residual connections are applied between global encoding, local encoding, and FFN. Between stages, learnable sigmoid gates $\boldsymbol{\sigma}$ replace unconditional residual addition, providing content-adaptive control over information propagation.
+    - **Design Motivation**: Mamba captures global structure while the narrow-window Transformer captures local patterns — the roles of the two components are explicitly decoupled, avoiding the role ambiguity common in hybrid architectures. Gating ensures that only salient information propagates up the hierarchy.
 
 3. **Anchor-Conditioned Contrastive (ACC) Loss**:
 
-   - **Function**: A self-supervised objective ensuring anchors are compact and discriminative.
-   - **Mechanism**: At each layer, each anchor $a_i^{(l+1)}$ is pulled toward the $s$ frame tokens it summarizes (positives $\mathcal{P}_i^{(l)}$) and pushed away from temporally distant anchors (negatives $\mathcal{N}_i^{(l)}$, separated by a temporal margin to avoid penalizing adjacent anchors):
+    - **Function**: A self-supervised objective ensuring anchors are compact and discriminative.
+    - **Mechanism**: At each layer, each anchor $a_i^{(l+1)}$ is pulled toward the $s$ frame tokens it summarizes (positives $\mathcal{P}_i^{(l)}$) and pushed away from temporally distant anchors (negatives $\mathcal{N}_i^{(l)}$, separated by a temporal margin to avoid penalizing adjacent anchors):
      $$\mathcal{L}_{\text{acc}}(a_i^{(l+1)}) = -\log \frac{\sum_{p \in \mathcal{P}_i^{(l)}} \exp(a_i^{(l+1)} \cdot p / \tau)}{\sum_{c \in \mathcal{P}_i^{(l)} \cup \mathcal{N}_i^{(l)}} \exp(a_i^{(l+1)} \cdot c / \tau)}$$
-   - **Design Motivation**: Compactness requires anchors to faithfully summarize their local window (alignment with intra-window frames), while discriminability requires different anchors to represent different events (separation from distant anchors). The multi-positive design avoids the information loss that can arise from single-positive contrastive objectives.
+    - **Design Motivation**: Compactness requires anchors to faithfully summarize their local window (alignment with intra-window frames), while discriminability requires different anchors to represent different events (separation from distant anchors). The multi-positive design avoids the information loss that can arise from single-positive contrastive objectives.
 
 4. **Segment-Pooled Contrastive (SPC) Loss**:
 
-   - **Function**: A supervised objective that distinguishes representations of ground-truth segments from surrounding non-target content.
-   - **Mechanism**: At each layer, frame tokens within the GT segment $[t_{\text{start}}, t_{\text{end}})$ are pooled into a segment prototype $z_{\text{seg}}^{(l)}$, with intra-segment frames as positives and extra-segment frames as negatives. Using the pooled prototype rather than individual frames avoids forcing distinct sub-actions within a segment (e.g., "reach → grasp → retract") to align to a single representation.
-   - **Design Motivation**: ACC provides structural consistency (intra-hierarchy self-supervision), while SPC provides semantic alignment (alignment with query annotations). The two losses are complementary: ACC ensures anchor quality, and SPC ensures anchors are semantically matched to the query.
+    - **Function**: A supervised objective that distinguishes representations of ground-truth segments from surrounding non-target content.
+    - **Mechanism**: At each layer, frame tokens within the GT segment $[t_{\text{start}}, t_{\text{end}})$ are pooled into a segment prototype $z_{\text{seg}}^{(l)}$, with intra-segment frames as positives and extra-segment frames as negatives. Using the pooled prototype rather than individual frames avoids forcing distinct sub-actions within a segment (e.g., "reach → grasp → retract") to align to a single representation.
+    - **Design Motivation**: ACC provides structural consistency (intra-hierarchy self-supervision), while SPC provides semantic alignment (alignment with query annotations). The two losses are complementary: ACC ensures anchor quality, and SPC ensures anchors are semantically matched to the query.
 
 ### Loss & Training
 

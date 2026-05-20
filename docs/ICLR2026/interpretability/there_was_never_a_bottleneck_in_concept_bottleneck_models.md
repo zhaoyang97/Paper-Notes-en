@@ -18,8 +18,8 @@ content_hash: f7db0c79f2f56629
 # There Was Never a Bottleneck in Concept Bottleneck Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.04877](https://arxiv.org/abs/2506.04877)
-**Code**: None (per paper description)
+**arXiv**: [2506.04877](https://arxiv.org/abs/2506.04877)  
+**Code**: None (per paper description)  
 **Area**: Interpretability / Concept Bottleneck Models
 **Keywords**: Concept Bottleneck Models, Information Bottleneck, Information Leakage, Interventionability, Representation Learning
 

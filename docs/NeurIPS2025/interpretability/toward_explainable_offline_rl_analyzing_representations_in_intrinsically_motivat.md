@@ -17,8 +17,8 @@ content_hash: b3e5b06d90cd203b
 # How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.13958](https://arxiv.org/abs/2506.13958)
-**Code**: Not available
+**arXiv**: [2506.13958](https://arxiv.org/abs/2506.13958)  
+**Code**: Not available  
 **Area**: Interpretability
 **Keywords**: Intrinsic Motivation, Decision Transformer, Interpretability, Embedding Analysis, Representation Learning
 

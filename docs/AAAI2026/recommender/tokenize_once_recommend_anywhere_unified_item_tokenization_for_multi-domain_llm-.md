@@ -13,7 +13,7 @@ content_hash: e500045a8a315b9c
 # Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12922](https://arxiv.org/abs/2511.12922)
+**arXiv**: [2511.12922](https://arxiv.org/abs/2511.12922)  
 **Code**: [github.com/jackfrost168/UniTok](https://github.com/jackfrost168/UniTok)
 
 ## TL;DR

@@ -18,8 +18,8 @@ content_hash: 299d91037beab330
 # Towards Robust Defense against Customization via Protective Perturbation Resistant to Diffusion-based Purification
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.13922](https://arxiv.org/abs/2509.13922)
-**Code**: N/A (not mentioned)
+**arXiv**: [2509.13922](https://arxiv.org/abs/2509.13922)  
+**Code**: N/A (not mentioned)  
 **Area**: Image Generation / Adversarial Defense / Diffusion Model Security
 **Keywords**: Protective Perturbation, Anti-Purification, DreamBooth, Diffusion Purification, adversarial attack
 

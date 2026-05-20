@@ -18,8 +18,8 @@ content_hash: 28d15b6a98b8e47e
 # TokenSqueeze: Performance-Preserving Compression for Reasoning LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.13223](https://arxiv.org/abs/2511.13223)
-**Code**: [GitHub](https://github.com/zhangyx1122/TokenSqueeze)
+**arXiv**: [2511.13223](https://arxiv.org/abs/2511.13223)  
+**Code**: [GitHub](https://github.com/zhangyx1122/TokenSqueeze)  
 **Area**: Model Compression
 **Keywords**: Reasoning Compression, Chain-of-Thought, Preference Learning, Long2Short, Large Language Models
 

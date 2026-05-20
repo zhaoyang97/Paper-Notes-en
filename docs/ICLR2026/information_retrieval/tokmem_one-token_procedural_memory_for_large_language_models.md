@@ -18,8 +18,8 @@ content_hash: 8021e0d4d3505072
 # TokMem: One-Token Procedural Memory for Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00444](https://arxiv.org/abs/2510.00444)
-**Code**: [https://github.com/MANGA-UOFA/TokMem](https://github.com/MANGA-UOFA/TokMem)
+**arXiv**: [2510.00444](https://arxiv.org/abs/2510.00444)  
+**Code**: [https://github.com/MANGA-UOFA/TokMem](https://github.com/MANGA-UOFA/TokMem)  
 **Area**: Information Retrieval
 **Keywords**: procedural memory, memory token, continual learning, context compression, tool calling
 

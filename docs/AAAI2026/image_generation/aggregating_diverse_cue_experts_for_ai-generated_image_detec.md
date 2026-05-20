@@ -18,8 +18,8 @@ content_hash: ff5474e8fba037ce
 # Aggregating Diverse Cue Experts for AI-Generated Image Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.08790v1](https://arxiv.org/abs/2601.08790v1)
-**Code**: None
+**arXiv**: [2601.08790v1](https://arxiv.org/abs/2601.08790v1)  
+**Code**: None  
 **Area**: Image Forensics / AI-Generated Image Detection
 **Keywords**: AI-generated image detection, multi-cue fusion, chromaticity inconsistency, mixture of experts, CLIP fine-tuning
 

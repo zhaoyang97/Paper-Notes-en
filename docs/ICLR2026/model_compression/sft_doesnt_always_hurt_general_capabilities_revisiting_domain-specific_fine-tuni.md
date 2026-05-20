@@ -20,8 +20,8 @@ content_hash: 7f3b288af5b9f6f6
 # SFT Doesn't Always Hurt General Capabilities: Revisiting Domain-Specific Fine-Tuning in LLMs
 
 **Conference**: ICLR2026
-**arXiv**: [2509.20758](https://arxiv.org/abs/2509.20758)
-**Code**: Not released
+**arXiv**: [2509.20758](https://arxiv.org/abs/2509.20758)  
+**Code**: Not released  
 **Area**: Model Compression
 **Keywords**: SFT, domain fine-tuning, general capability degradation, learning rate, token-adaptive reweighting, continual learning, LLM
 

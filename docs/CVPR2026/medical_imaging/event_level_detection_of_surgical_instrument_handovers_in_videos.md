@@ -18,8 +18,8 @@ content_hash: 32e557f39baf6e62
 # Event-Level Detection of Surgical Instrument Handovers in Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07577](https://arxiv.org/abs/2604.07577)
-**Code**: Available
+**arXiv**: [2604.07577](https://arxiv.org/abs/2604.07577)  
+**Code**: Available  
 **Area**: Medical Imaging
 **Keywords**: surgical video, instrument handover, ViT-LSTM, multi-task, event detection
 

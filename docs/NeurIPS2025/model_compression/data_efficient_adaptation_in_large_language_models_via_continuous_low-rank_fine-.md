@@ -18,8 +18,8 @@ content_hash: 0cd5cc30fe39b49d
 # Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.18942](https://arxiv.org/abs/2509.18942)
-**Code**: [GitHub](https://github.com/zzm-black/DEAL-Continuous-Low-Rank-Fine-Tuning)
+**arXiv**: [2509.18942](https://arxiv.org/abs/2509.18942)  
+**Code**: [GitHub](https://github.com/zzm-black/DEAL-Continuous-Low-Rank-Fine-Tuning)  
 **Area**: Model Compression
 **Keywords**: Continual Learning, LoRA, Wavelet Kernel, Knowledge Retention, Parameter-Efficient Fine-Tuning
 

@@ -18,8 +18,8 @@ content_hash: e04c8eea16a527fc
 # RLZero: Direct Policy Inference from Language Without In-Domain Supervision
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.05718](https://arxiv.org/abs/2412.05718)
-**Code**: None
+**arXiv**: [2412.05718](https://arxiv.org/abs/2412.05718)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Zero-shot policy inference, language-conditioned RL, video generation models, unsupervised RL, cross-embodiment transfer
 

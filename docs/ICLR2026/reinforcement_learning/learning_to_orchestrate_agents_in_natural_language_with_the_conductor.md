@@ -18,8 +18,8 @@ content_hash: 84c5f4469d4b67f3
 # Learning to Orchestrate Agents in Natural Language with the Conductor
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.04388](https://arxiv.org/abs/2512.04388)
-**Code**: Available (submitted with paper)
+**arXiv**: [2512.04388](https://arxiv.org/abs/2512.04388)  
+**Code**: Available (submitted with paper)  
 **Area**: Reinforcement Learning
 **Keywords**: multi-agent coordination, reinforcement-learning, workflow orchestration, test-time scaling, collective intelligence
 

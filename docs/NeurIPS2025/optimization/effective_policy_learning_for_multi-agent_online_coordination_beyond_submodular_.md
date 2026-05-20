@@ -18,8 +18,8 @@ content_hash: 29b00708ad379787
 # Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.22596](https://arxiv.org/abs/2509.22596)
-**Code**: None
+**arXiv**: [2509.22596](https://arxiv.org/abs/2509.22596)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: multi-agent coordination, submodular, weakly submodular, online optimization, policy learning
 
@@ -51,21 +51,21 @@ This paper proposes two multi-agent online coordination algorithms, MA-SPL and M
 
 1. **Policy-based Continuous Extension**
 
-   - **Function**: Converts discrete set-function optimization into continuous policy-parameter optimization.
-   - **Mechanism**: Each agent maintains an action probability distribution $\pi_i$; the continuous extension is defined as $\bar{f}(\pi) = \mathbb{E}_{S \sim \pi}[f(S)]$, which guarantees lossless rounding for arbitrary set functions (not limited to submodular ones).
-   - **Key Breakthrough**: The lossless rounding of the multilinear extension holds only for submodular functions, whereas the proposed continuous extension holds for arbitrary set functions.
+    - **Function**: Converts discrete set-function optimization into continuous policy-parameter optimization.
+    - **Mechanism**: Each agent maintains an action probability distribution $\pi_i$; the continuous extension is defined as $\bar{f}(\pi) = \mathbb{E}_{S \sim \pi}[f(S)]$, which guarantees lossless rounding for arbitrary set functions (not limited to submodular ones).
+    - **Key Breakthrough**: The lossless rounding of the multilinear extension holds only for submodular functions, whereas the proposed continuous extension holds for arbitrary set functions.
 
 2. **MA-SPL (Single-loop Policy Learning)**
 
-   - Approximation ratio: $(1 - c/e)$ for submodular; $\alpha(1 - 1/e)$ for $\alpha$-weakly DR-submodular; $(1 - e^{-\gamma})\beta$ for $(\gamma, \beta)$-weakly submodular.
-   - Dynamic regret: $O(\sqrt{P_T \cdot T / (1 - \tau)})$.
-   - Requires knowledge of problem parameters such as $\alpha$ or $(\gamma, \beta)$.
+    - Approximation ratio: $(1 - c/e)$ for submodular; $\alpha(1 - 1/e)$ for $\alpha$-weakly DR-submodular; $(1 - e^{-\gamma})\beta$ for $(\gamma, \beta)$-weakly submodular.
+    - Dynamic regret: $O(\sqrt{P_T \cdot T / (1 - \tau)})$.
+    - Requires knowledge of problem parameters such as $\alpha$ or $(\gamma, \beta)$.
 
 3. **MA-MPL (Multi-loop Parameter-free Policy Learning)**
 
-   - Approximation ratio: identical to MA-SPL.
-   - Dynamic regret: $O(\sqrt{P_T \cdot T})$, dependent on the diameter of the communication graph.
-   - Requires no problem parameters — adapts automatically via multi-loop search.
+    - Approximation ratio: identical to MA-SPL.
+    - Dynamic regret: $O(\sqrt{P_T \cdot T})$, dependent on the diameter of the communication graph.
+    - Requires no problem parameters — adapts automatically via multi-loop search.
 
 ### Loss & Training
 - Online Frank-Wolfe / projected gradient descent in the policy space.

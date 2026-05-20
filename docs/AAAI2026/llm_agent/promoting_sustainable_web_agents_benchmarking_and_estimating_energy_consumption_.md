@@ -18,8 +18,8 @@ content_hash: 7703bf8057776b7b
 # Promoting Sustainable Web Agents: Benchmarking and Estimating Energy Consumption Through Empirical and Theoretical Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.04481](https://arxiv.org/abs/2511.04481)
-**Code**: [GitHub](https://github.com/DFKIEI/WebAgentEnergy)
+**arXiv**: [2511.04481](https://arxiv.org/abs/2511.04481)  
+**Code**: [GitHub](https://github.com/DFKIEI/WebAgentEnergy)  
 **Area**: LLM Agent / Sustainable AI
 **Keywords**: Web Agent, Energy Consumption Benchmarking, Carbon Emission Estimation, Green AI, Sustainable Deployment
 

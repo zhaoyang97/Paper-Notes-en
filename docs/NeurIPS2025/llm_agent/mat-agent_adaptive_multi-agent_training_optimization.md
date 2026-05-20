@@ -18,8 +18,8 @@ content_hash: 1f35c2187923ec94
 # MAT-Agent: Adaptive Multi-Agent Training Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17845](https://arxiv.org/abs/2510.17845)
-**Code**: None
+**arXiv**: [2510.17845](https://arxiv.org/abs/2510.17845)  
+**Code**: None  
 **Area**: Agent
 **Keywords**: multi-agent systems, training optimization, multi-label classification, reinforcement learning, dynamic configuration
 

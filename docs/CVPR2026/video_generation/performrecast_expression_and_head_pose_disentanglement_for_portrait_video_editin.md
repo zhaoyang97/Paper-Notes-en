@@ -18,8 +18,8 @@ content_hash: 48bad9b79a333db7
 # PerformRecast: Expression and Head Pose Disentanglement for Portrait Video Editing
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19731](https://arxiv.org/abs/2603.19731)
-**Code**: [https://youku-aigc.github.io/PerformRecast](https://youku-aigc.github.io/PerformRecast)
+**arXiv**: [2603.19731](https://arxiv.org/abs/2603.19731)  
+**Code**: [https://youku-aigc.github.io/PerformRecast](https://youku-aigc.github.io/PerformRecast)  
 **Area**: Video Generation
 **Keywords**: Portrait video editing, expression disentanglement, 3DMM, keypoint transformation, GAN
 
@@ -51,21 +51,21 @@ PerformRecast is built on LivePortrait's warping architecture. Given a source fr
 
 1. **FLAME-Based Keypoint Transformation (Core Contribution)**
 
-   - **Function**: Achieve complete disentanglement of expression and head pose.
-   - **Mechanism**: Replace LivePortrait's formula $x = s \cdot (x_c R + \delta) + t$ with $x = s \cdot ((x_c + \delta) R) + t$, i.e., **expression deformation is applied before head rotation**. This aligns with the FLAME forward process, in which expression blendshapes are added to the template mesh prior to joint rotation. Explicit 3D supervision is provided by selecting 49 keypoints from FLAME face mesh vertices, organized into three groups: canonical keypoints $V_c$ (identity only), expression keypoints $V_{exp}$ (expression plus eye/jaw rotations, excluding head rotation), and full keypoints $V_{kp}$ (all parameters). Wing loss is used to compute the FLAME loss.
-   - **Design Motivation**: Under the original ordering, $\delta$ is forced to compensate for residual head rotation, causing incomplete disentanglement. The corrected ordering ensures $\delta$ is added to canonical keypoints prior to rotation, physically aligned with the 3DMM process and eliminating head pose leakage from the expression representation. With strong FLAME supervision, auxiliary constraints used in LivePortrait — such as keypoint equivariance loss and keypoint prior loss — can be removed.
+    - **Function**: Achieve complete disentanglement of expression and head pose.
+    - **Mechanism**: Replace LivePortrait's formula $x = s \cdot (x_c R + \delta) + t$ with $x = s \cdot ((x_c + \delta) R) + t$, i.e., **expression deformation is applied before head rotation**. This aligns with the FLAME forward process, in which expression blendshapes are added to the template mesh prior to joint rotation. Explicit 3D supervision is provided by selecting 49 keypoints from FLAME face mesh vertices, organized into three groups: canonical keypoints $V_c$ (identity only), expression keypoints $V_{exp}$ (expression plus eye/jaw rotations, excluding head rotation), and full keypoints $V_{kp}$ (all parameters). Wing loss is used to compute the FLAME loss.
+    - **Design Motivation**: Under the original ordering, $\delta$ is forced to compensate for residual head rotation, causing incomplete disentanglement. The corrected ordering ensures $\delta$ is added to canonical keypoints prior to rotation, physically aligned with the 3DMM process and eliminating head pose leakage from the expression representation. With strong FLAME supervision, auxiliary constraints used in LivePortrait — such as keypoint equivariance loss and keypoint prior loss — can be removed.
 
 2. **Boundary Alignment Module (BAM)**
 
-   - **Function**: Mitigate stitching misalignment between facial and non-facial regions.
-   - **Mechanism**: A teacher-student two-stage training scheme is adopted. In stage one, a teacher model $M_t$ is trained with a global animation loss, producing accurate facial expressions but with boundary artifacts. In stage two, a student model $M_s$ learns two objectives simultaneously: (a) for the facial region, supervision is provided by the teacher's intermediate output $\hat{I}_s^t$ (with only $\delta$ replaced); (b) for the non-facial region, supervision is provided by the original source frame $I_s$. This enables the student to learn precise expression from the teacher while preserving the non-facial region.
-   - **Design Motivation**: The 3D keypoint warping field inevitably affects non-facial regions, causing misalignment at hairlines, ears, and the neck. Applying separate supervision for facial and non-facial regions provides an intuitive and effective solution. The design also eliminates the need for LivePortrait's stitching and retargeting modules, simplifying overall training.
+    - **Function**: Mitigate stitching misalignment between facial and non-facial regions.
+    - **Mechanism**: A teacher-student two-stage training scheme is adopted. In stage one, a teacher model $M_t$ is trained with a global animation loss, producing accurate facial expressions but with boundary artifacts. In stage two, a student model $M_s$ learns two objectives simultaneously: (a) for the facial region, supervision is provided by the teacher's intermediate output $\hat{I}_s^t$ (with only $\delta$ replaced); (b) for the non-facial region, supervision is provided by the original source frame $I_s$. This enables the student to learn precise expression from the teacher while preserving the non-facial region.
+    - **Design Motivation**: The 3D keypoint warping field inevitably affects non-facial regions, causing misalignment at hairlines, ears, and the neck. Applying separate supervision for facial and non-facial regions provides an intuitive and effective solution. The design also eliminates the need for LivePortrait's stitching and retargeting modules, simplifying overall training.
 
 3. **Dual Inference Modes (Replacement + Enhancement)**
 
-   - **Function**: Provide flexible editing modes for practical production scenarios.
-   - **Mechanism**: In **Replacement** mode, the driving frame's $\delta_d$ directly replaces the source frame's $\delta_s$, while all other source parameters are preserved. In **Enhancement** mode, the expression delta from the driving sequence $\delta_{d,i} - \delta_{d,0}$ is added to the source expression, achieving expression amplification rather than full replacement.
-   - **Design Motivation**: These modes address distinct needs in film production — Replacement suits cases where overall performance is satisfactory but expressions require substitution, while Enhancement suits cases where only the magnitude of existing expressions needs to be amplified.
+    - **Function**: Provide flexible editing modes for practical production scenarios.
+    - **Mechanism**: In **Replacement** mode, the driving frame's $\delta_d$ directly replaces the source frame's $\delta_s$, while all other source parameters are preserved. In **Enhancement** mode, the expression delta from the driving sequence $\delta_{d,i} - \delta_{d,0}$ is added to the source expression, achieving expression amplification rather than full replacement.
+    - **Design Motivation**: These modes address distinct needs in film production — Replacement suits cases where overall performance is satisfactory but expressions require substitution, while Enhancement suits cases where only the magnitude of existing expressions needs to be amplified.
 
 ### Loss & Training
 

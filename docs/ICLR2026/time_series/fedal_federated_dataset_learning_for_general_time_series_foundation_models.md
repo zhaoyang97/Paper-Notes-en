@@ -18,8 +18,8 @@ content_hash: a0d689c5c4766e21
 # FeDaL: Federated Dataset Learning for General Time Series Foundation Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.04045](https://arxiv.org/abs/2508.04045)
-**Code**: [GitHub](https://github.com/shengchaochen82/FeDaL)
+**arXiv**: [2508.04045](https://arxiv.org/abs/2508.04045)  
+**Code**: [GitHub](https://github.com/shengchaochen82/FeDaL)  
 **Area**: Time Series / Federated Learning
 **Keywords**: Time Series Foundation Model, Federated Learning, Dataset Heterogeneity, Domain Bias Elimination, Cross-domain Generalization
 
@@ -51,15 +51,15 @@ FeDaL follows the standard federated "client-training / server-aggregation" para
 
 1. **Domain Bias Elimination (DBE)**
 
-   - **Function**: Separates dataset-specific non-transferable biases from client-side latent representations.
-   - **Mechanism**: Applies trend–seasonality decomposition to the latent representation of the masked input: $\mathbf{h}_t, \mathbf{h}_s = \text{TimeDecomp}(f_{\theta^b}(\tilde{X}), \tau)$. Each component is averaged and scaled by learnable factors to obtain a bias vector $\mathbf{b} = \text{Mean}(\mathbf{h}_t) \odot \gamma_t + \text{Mean}(\mathbf{h}_s) \odot \gamma_s$. During reconstruction, the bias is injected into the latent features: $\mathcal{L} = \mathbb{E}[\|f_{\theta_h}(f_{\theta_b}(\tilde{X}) + \mathbf{b}) - X\|^2] + \lambda\|\mathbf{b} - \mathbf{b}^g\|^2$, where $\mathbf{b}^g$ is the server-aggregated global bias reference. EMA is used to stabilize bias estimation across mini-batches.
-   - **Design Motivation**: Compared to simple averaging, trend–seasonality decomposition introduces inductive bias—$\mathbf{b}_t$ captures low-frequency drift and $\mathbf{b}_s$ captures high-frequency periodicity. Once the bias vector absorbs dataset-specific shifts, the backbone is forced to focus on transferable temporal structure. The regularization term prevents client-side bias from drifting excessively.
+    - **Function**: Separates dataset-specific non-transferable biases from client-side latent representations.
+    - **Mechanism**: Applies trend–seasonality decomposition to the latent representation of the masked input: $\mathbf{h}_t, \mathbf{h}_s = \text{TimeDecomp}(f_{\theta^b}(\tilde{X}), \tau)$. Each component is averaged and scaled by learnable factors to obtain a bias vector $\mathbf{b} = \text{Mean}(\mathbf{h}_t) \odot \gamma_t + \text{Mean}(\mathbf{h}_s) \odot \gamma_s$. During reconstruction, the bias is injected into the latent features: $\mathcal{L} = \mathbb{E}[\|f_{\theta_h}(f_{\theta_b}(\tilde{X}) + \mathbf{b}) - X\|^2] + \lambda\|\mathbf{b} - \mathbf{b}^g\|^2$, where $\mathbf{b}^g$ is the server-aggregated global bias reference. EMA is used to stabilize bias estimation across mini-batches.
+    - **Design Motivation**: Compared to simple averaging, trend–seasonality decomposition introduces inductive bias—$\mathbf{b}_t$ captures low-frequency drift and $\mathbf{b}_s$ captures high-frequency periodicity. Once the bias vector absorbs dataset-specific shifts, the backbone is forced to focus on transferable temporal structure. The regularization term prevents client-side bias from drifting excessively.
 
 2. **Global Bias Elimination (GBE)**
 
-   - **Function**: Eliminates residual cross-client biases during server-side aggregation.
-   - **Mechanism**: Comprises two sub-components. (a) **Gradient-level dynamic correction**: maintains a server state vector $\mathbf{s}^r = \mathbf{s}^{r-1} - \beta\sum_i(\theta_i^r - \theta_g^{r-1})$ that records accumulated client–server drift, and corrects the FedAvg result as $\hat{\theta}_g^r = \tilde{\theta}_g^r - (1/\beta)\cdot\mathbf{s}^r$. (b) **Core-set fine-tuning**: each client samples a small batch from local data and optimizes learnable core-set vectors via gradient matching $\mathcal{L}_{\text{match}} = \sum_{x}\|\nabla_\theta f_\theta(\mathcal{C}) - \nabla_\theta f_\theta(x)\|_2^2$; privacy is protected by adding noise to the amplitude in the Fourier domain (only amplitude is perturbed; phase is preserved since it encodes semantic information such as periodicity). The server fine-tunes the corrected model with the aggregated core-sets, followed by convex combination: $\theta^{g,r} = \alpha\hat{\theta}^{g,r} + (1-\alpha)\theta^{gt,r}$.
-   - **Design Motivation**: Because DBE debiases clients inconsistently, residual bias persists after aggregation. Gradient correction compensates for client drift, while core-set fine-tuning further aligns global representations using privacy-protected knowledge summaries.
+    - **Function**: Eliminates residual cross-client biases during server-side aggregation.
+    - **Mechanism**: Comprises two sub-components. (a) **Gradient-level dynamic correction**: maintains a server state vector $\mathbf{s}^r = \mathbf{s}^{r-1} - \beta\sum_i(\theta_i^r - \theta_g^{r-1})$ that records accumulated client–server drift, and corrects the FedAvg result as $\hat{\theta}_g^r = \tilde{\theta}_g^r - (1/\beta)\cdot\mathbf{s}^r$. (b) **Core-set fine-tuning**: each client samples a small batch from local data and optimizes learnable core-set vectors via gradient matching $\mathcal{L}_{\text{match}} = \sum_{x}\|\nabla_\theta f_\theta(\mathcal{C}) - \nabla_\theta f_\theta(x)\|_2^2$; privacy is protected by adding noise to the amplitude in the Fourier domain (only amplitude is perturbed; phase is preserved since it encodes semantic information such as periodicity). The server fine-tunes the corrected model with the aggregated core-sets, followed by convex combination: $\theta^{g,r} = \alpha\hat{\theta}^{g,r} + (1-\alpha)\theta^{gt,r}$.
+    - **Design Motivation**: Because DBE debiases clients inconsistently, residual bias persists after aggregation. Gradient correction compensates for client drift, while core-set fine-tuning further aligns global representations using privacy-protected knowledge summaries.
 
 ### Loss & Training
 

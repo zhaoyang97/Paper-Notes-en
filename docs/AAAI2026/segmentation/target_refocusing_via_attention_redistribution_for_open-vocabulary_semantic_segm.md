@@ -18,8 +18,8 @@ content_hash: e914d6e76dc97495
 # Target Refocusing via Attention Redistribution for Open-Vocabulary Semantic Segmentation: An Explainability Perspective
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16170](https://arxiv.org/abs/2511.16170)
-**Code**: [github.com/liblacklucy/RF-CLIP](https://github.com/liblacklucy/RF-CLIP)
+**arXiv**: [2511.16170](https://arxiv.org/abs/2511.16170)  
+**Code**: [github.com/liblacklucy/RF-CLIP](https://github.com/liblacklucy/RF-CLIP)  
 **Area**: Segmentation
 **Keywords**: Open-vocabulary semantic segmentation, CLIP, attention redistribution, distraction phenomenon, training-free
 

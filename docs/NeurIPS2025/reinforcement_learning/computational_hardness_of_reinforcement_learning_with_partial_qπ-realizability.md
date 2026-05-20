@@ -17,8 +17,8 @@ content_hash: eb374d2429ff8e14
 # Computational Hardness of Reinforcement Learning with Partial $q^\pi$-Realizability
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21888](https://arxiv.org/abs/2510.21888)
-**Code**: To be confirmed
+**arXiv**: [2510.21888](https://arxiv.org/abs/2510.21888)  
+**Code**: To be confirmed  
 **Area**: Reinforcement Learning
 **Keywords**: reinforcement learning, computational complexity, linear function approximation, realizability, NP-hard
 

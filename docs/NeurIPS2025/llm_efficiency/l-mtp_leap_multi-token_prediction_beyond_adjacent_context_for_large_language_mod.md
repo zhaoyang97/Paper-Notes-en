@@ -18,8 +18,8 @@ content_hash: 14de28b39dc45f05
 # L-MTP: Leap Multi-Token Prediction Beyond Adjacent Context for Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17505](https://arxiv.org/abs/2505.17505)
-**Code**: [https://github.com/Xiaohao-Liu/L-MTP](https://github.com/Xiaohao-Liu/L-MTP)
+**arXiv**: [2505.17505](https://arxiv.org/abs/2505.17505)  
+**Code**: [https://github.com/Xiaohao-Liu/L-MTP](https://github.com/Xiaohao-Liu/L-MTP)  
 **Area**: LLM Inference Acceleration, Multi-Token Prediction
 **Keywords**: Leap Prediction, Inference Efficiency, Speculative Decoding, Multi-Head Prediction, Tree Attention
 

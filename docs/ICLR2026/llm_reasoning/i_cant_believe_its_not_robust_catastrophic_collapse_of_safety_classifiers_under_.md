@@ -18,8 +18,8 @@ content_hash: 68b7bb449a4eede2
 # I Can't Believe It's Not Robust: Catastrophic Collapse of Safety Classifiers under Embedding Drift
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01297](https://arxiv.org/abs/2603.01297)
-**Code**: [https://github.com/SubramanyamSahoo/Collapse-of-Safety-Classifiers-under-Embedding-Drift](https://github.com/SubramanyamSahoo/Collapse-of-Safety-Classifiers-under-Embedding-Drift)
+**arXiv**: [2603.01297](https://arxiv.org/abs/2603.01297)  
+**Code**: [https://github.com/SubramanyamSahoo/Collapse-of-Safety-Classifiers-under-Embedding-Drift](https://github.com/SubramanyamSahoo/Collapse-of-Safety-Classifiers-under-Embedding-Drift)  
 **Area**: LLM Inference
 **Keywords**: embedding drift, safety classifier, silent failure, RLHF alignment, toxicity detection
 

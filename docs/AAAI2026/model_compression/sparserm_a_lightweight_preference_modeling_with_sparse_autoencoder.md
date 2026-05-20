@@ -18,8 +18,8 @@ content_hash: dc18433789c93be9
 # SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07896](https://arxiv.org/abs/2511.07896)
-**Code**: [github.com/ldc111521/SparseRM](https://github.com/ldc111521/SparseRM)
+**arXiv**: [2511.07896](https://arxiv.org/abs/2511.07896)  
+**Code**: [github.com/ldc111521/SparseRM](https://github.com/ldc111521/SparseRM)  
 **Area**: Model Compression
 **Keywords**: Sparse Autoencoder, Reward Model, Preference Modeling, LLM Alignment, Interpretability
 

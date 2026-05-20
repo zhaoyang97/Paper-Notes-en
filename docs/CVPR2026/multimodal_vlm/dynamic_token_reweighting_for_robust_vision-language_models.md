@@ -18,8 +18,8 @@ content_hash: ab7119b5c7d6132d
 # Dynamic Token Reweighting for Robust Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2505.17132](https://arxiv.org/abs/2505.17132)
-**Code**: [GitHub](https://github.com/TanqiuJiang/DTR)
+**arXiv**: [2505.17132](https://arxiv.org/abs/2505.17132)  
+**Code**: [GitHub](https://github.com/TanqiuJiang/DTR)  
 **Area**: Multimodal VLM
 **Keywords**: VLM safety, jailbreak defense, KV cache optimization, token reweighting, refusal direction
 
@@ -49,27 +49,27 @@ Given a query $\mathbf{x} = \mathbf{x}_{txt} \| \mathbf{x}_{img}$, a scaling fac
 
 1. **Reversal Safety-Relevant Shift (RSS)**
 
-   - **Function**: Bypasses image-to-text conversion by directly quantifying the reversibility of the safety shift through optimization.
-   - **Mechanism**: Defines $\Delta^*_{safe}(\mathbf{x}) = \max_{\alpha} \frac{(f(\mathbf{x}) - f(\mathbf{x}(\alpha))) \cdot \mathbf{d}_{ref}}{\|\mathbf{d}_{ref}\|}$, i.e., the maximum reversal shift achievable along the refusal direction by adjusting visual token weights. The RSS of jailbreak queries is substantially larger than that of benign queries, since attacks are inherently optimized along the refusal direction and are thus naturally reversible.
-   - **Design Motivation**: Eliminates the information loss and additional VLM overhead associated with image-to-text conversion, while creating a fundamental dilemma for attackers — increasing adversarial token importance amplifies RSS and makes detection easier, whereas decreasing it renders the jailbreak ineffective.
+    - **Function**: Bypasses image-to-text conversion by directly quantifying the reversibility of the safety shift through optimization.
+    - **Mechanism**: Defines $\Delta^*_{safe}(\mathbf{x}) = \max_{\alpha} \frac{(f(\mathbf{x}) - f(\mathbf{x}(\alpha))) \cdot \mathbf{d}_{ref}}{\|\mathbf{d}_{ref}\|}$, i.e., the maximum reversal shift achievable along the refusal direction by adjusting visual token weights. The RSS of jailbreak queries is substantially larger than that of benign queries, since attacks are inherently optimized along the refusal direction and are thus naturally reversible.
+    - **Design Motivation**: Eliminates the information loss and additional VLM overhead associated with image-to-text conversion, while creating a fundamental dilemma for attackers — increasing adversarial token importance amplifies RSS and makes detection easier, whereas decreasing it renders the jailbreak ineffective.
 
 2. **Dynamic Token Reweighting Optimization**
 
-   - **Function**: Optimizes the scaling vector for visual tokens to simultaneously recover safety and preserve performance.
-   - **Mechanism**: $\alpha^* = \arg\min_{\alpha} \left[\frac{f(\mathbf{x}(\alpha)) \cdot \mathbf{d}_{ref}}{\|\mathbf{d}_{ref}\|} + \lambda \|f(\mathbf{x}) - f(\mathbf{x}(\alpha))\|_2 \right]$, where the first term minimizes the projection along the refusal direction (safety recovery) and the second term constrains the distance from the original activation (performance preservation), with $\lambda$ balancing the two objectives.
-   - **Design Motivation**: Minimizing the safety shift alone degrades benign performance; the distance constraint ensures minimal impact on benign queries.
+    - **Function**: Optimizes the scaling vector for visual tokens to simultaneously recover safety and preserve performance.
+    - **Mechanism**: $\alpha^* = \arg\min_{\alpha} \left[\frac{f(\mathbf{x}(\alpha)) \cdot \mathbf{d}_{ref}}{\|\mathbf{d}_{ref}\|} + \lambda \|f(\mathbf{x}) - f(\mathbf{x}(\alpha))\|_2 \right]$, where the first term minimizes the projection along the refusal direction (safety recovery) and the second term constrains the distance from the original activation (performance preservation), with $\lambda$ balancing the two objectives.
+    - **Design Motivation**: Minimizing the safety shift alone degrades benign performance; the distance constraint ensures minimal impact on benign queries.
 
 3. **Early Stopping + Token Eviction**
 
-   - **Function**: Only 3–4 optimization steps are required; evicting low-weight tokens further improves efficiency.
-   - **Mechanism**: The loss for jailbreak queries decreases rapidly in the first few steps, making full convergence unnecessary. Tokens whose weights fall below threshold $\beta$ are evicted directly from the KV cache — visual tokens are inherently redundant, so eviction actually accelerates inference.
-   - **Design Motivation**: Minimal optimization steps combined with token eviction yield inference latency comparable to or lower than the baseline.
+    - **Function**: Only 3–4 optimization steps are required; evicting low-weight tokens further improves efficiency.
+    - **Mechanism**: The loss for jailbreak queries decreases rapidly in the first few steps, making full convergence unnecessary. Tokens whose weights fall below threshold $\beta$ are evicted directly from the KV cache — visual tokens are inherently redundant, so eviction actually accelerates inference.
+    - **Design Motivation**: Minimal optimization steps combined with token eviction yield inference latency comparable to or lower than the baseline.
 
 4. **Robustness of the Refusal Direction**
 
-   - **Function**: A stable refusal direction can be extracted from as few as 32 harmful/harmless text prompt pairs.
-   - **Mechanism**: 32 harmful prompts are sampled from AdvBench and 32 benign prompts from AlpacaEval; the refusal direction is computed as the difference between the mean last-layer activations. Experiments demonstrate that this direction generalizes across languages, attack types, and datasets.
-   - **Design Motivation**: The refusal direction captures an intrinsic model-level property rather than dataset-specific artifacts, making small-sample extraction sufficient.
+    - **Function**: A stable refusal direction can be extracted from as few as 32 harmful/harmless text prompt pairs.
+    - **Mechanism**: 32 harmful prompts are sampled from AdvBench and 32 benign prompts from AlpacaEval; the refusal direction is computed as the difference between the mean last-layer activations. Experiments demonstrate that this direction generalizes across languages, attack types, and datasets.
+    - **Design Motivation**: The refusal direction captures an intrinsic model-level property rather than dataset-specific artifacts, making small-sample extraction sufficient.
 
 ### Loss & Training
 DTR is a fully inference-time method requiring no training. Optimization uses AdamW with a learning rate of 0.01, $\lambda=0.1$, and a default of 3–4 gradient descent steps.

@@ -18,8 +18,8 @@ content_hash: 45a2fb7160ebc150
 # MEIcoder: Decoding Visual Stimuli from Neural Activity by Leveraging Most Exciting Inputs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20762](https://arxiv.org/abs/2510.20762)
-**Code**: [https://github.com/Johnny1188/meicoder](https://github.com/Johnny1188/meicoder)
+**arXiv**: [2510.20762](https://arxiv.org/abs/2510.20762)  
+**Code**: [https://github.com/Johnny1188/meicoder](https://github.com/Johnny1188/meicoder)  
 **Area**: Computational Neuroscience / Brain-Computer Interface
 **Keywords**: Visual decoding, Most Exciting Input (MEI), primary visual cortex, neural population activity, adversarial training
 

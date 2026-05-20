@@ -8,6 +8,7 @@ tags:
 date: 2026-05-08
 content_hash: fd40106af42601f9
 ---
+
 ## TL;DR
 
 This paper proposes the EgoGazeVQA benchmark and three gaze-guided prompting strategies (textual / visual / salience map), providing the first systematic validation of eye-gaze signals for improving egocentric video intent understanding in MLLMs. The best configuration, Qwen2.5-VL-72B + GazeS, achieves a 5.8 percentage-point gain in average accuracy.

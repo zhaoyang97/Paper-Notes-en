@@ -19,8 +19,8 @@ content_hash: 38ec15d39a3193e7
 # One Demo Is All It Takes: Planning Domain Derivation with LLMs from A Single Demonstration
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.18382](https://arxiv.org/abs/2505.18382)
-**Code**: None
+**arXiv**: [2505.18382](https://arxiv.org/abs/2505.18382)  
+**Code**: None  
 **Area**: Robot Planning / TAMP / LLM
 **Keywords**: PDDL, Task and Motion Planning, LLM Reasoning, Physical Simulation, Predicate Generation, Motion Planning Interface
 

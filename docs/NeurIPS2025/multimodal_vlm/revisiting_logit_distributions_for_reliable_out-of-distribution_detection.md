@@ -18,8 +18,8 @@ content_hash: 61ab283b3333b698
 # Revisiting Logit Distributions for Reliable Out-of-Distribution Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20134](https://arxiv.org/abs/2510.20134)
-**Code**: [GitHub](https://github.com/GIT-LJc/LogitGap)
+**arXiv**: [2510.20134](https://arxiv.org/abs/2510.20134)  
+**Code**: [GitHub](https://github.com/GIT-LJc/LogitGap)  
 **Area**: Multimodal VLM / OOD Detection
 **Keywords**: OOD detection, logit distribution, CLIP, post-hoc method, scoring function
 

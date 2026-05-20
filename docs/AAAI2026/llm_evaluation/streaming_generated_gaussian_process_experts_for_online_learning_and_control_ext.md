@@ -18,8 +18,8 @@ content_hash: 5852ef7b2f84c3a4
 # Streaming Generated Gaussian Process Experts for Online Learning and Control: Extended Version
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.03679](https://arxiv.org/abs/2508.03679)
-**Code**: [https://github.com/Zewen-Yang/SkyGP](https://github.com/Zewen-Yang/SkyGP)
+**arXiv**: [2508.03679](https://arxiv.org/abs/2508.03679)  
+**Code**: [https://github.com/Zewen-Yang/SkyGP](https://github.com/Zewen-Yang/SkyGP)  
 **Area**: Machine Learning / Online Learning
 **Keywords**: Gaussian Process, Online Learning, Streaming Data, Mixture of Experts, Robot Control
 

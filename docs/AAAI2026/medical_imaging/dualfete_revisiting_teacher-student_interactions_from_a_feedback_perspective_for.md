@@ -18,8 +18,8 @@ content_hash: d79007491dbb4b3a
 # DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09319](https://arxiv.org/abs/2511.09319)
-**Code**: [github.com/lyricsyee/dualfete](https://github.com/lyricsyee/dualfete)
+**arXiv**: [2511.09319](https://arxiv.org/abs/2511.09319)  
+**Code**: [github.com/lyricsyee/dualfete](https://github.com/lyricsyee/dualfete)  
 **Area**: Medical Image Segmentation / Semi-supervised Learning
 **Keywords**: Semi-supervised medical image segmentation, teacher-student model, feedback mechanism, confirmation bias, dual-teacher framework
 

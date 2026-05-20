@@ -17,8 +17,8 @@ content_hash: cacf3dc32473dd2c
 # Learning non-equilibrium diffusions with Schrödinger bridges: from exactly solvable to simulation-free
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16644](https://arxiv.org/abs/2505.16644)
-**Code**: None
+**arXiv**: [2505.16644](https://arxiv.org/abs/2505.16644)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Schrödinger bridge, non-equilibrium diffusion, Ornstein-Uhlenbeck process, Flow Matching, optimal transport
 

@@ -18,8 +18,8 @@ content_hash: a708e5c8fa51133c
 # Reparameterized LLM Training via Orthogonal Equivalence Transformation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.08001](https://arxiv.org/abs/2506.08001)
-**Code**: [spherelab.ai/poet](https://spherelab.ai/poet)
+**arXiv**: [2506.08001](https://arxiv.org/abs/2506.08001)  
+**Code**: [spherelab.ai/poet](https://spherelab.ai/poet)  
 **Area**: LLM/NLP
 **Keywords**: reparameterized training, orthogonal transformation, spectrum preservation, LLM pretraining, efficient training
 

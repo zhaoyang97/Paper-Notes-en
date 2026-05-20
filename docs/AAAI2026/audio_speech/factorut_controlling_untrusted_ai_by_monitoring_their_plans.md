@@ -18,8 +18,8 @@ content_hash: 21ecbfceaf67e8b5
 # Factor(U,T): Controlling Untrusted AI by Monitoring their Plans
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.14745](https://arxiv.org/abs/2512.14745)
-**Code**: [https://github.com/edward-lcl/factor-ut-untrusted-decomposer](https://github.com/edward-lcl/factor-ut-untrusted-decomposer)
+**arXiv**: [2512.14745](https://arxiv.org/abs/2512.14745)  
+**Code**: [https://github.com/edward-lcl/factor-ut-untrusted-decomposer](https://github.com/edward-lcl/factor-ut-untrusted-decomposer)  
 **Area**: Audio & Speech
 **Keywords**: AI control, factored cognition, trusted monitoring, plan monitoring, backdoor detection
 

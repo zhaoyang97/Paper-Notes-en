@@ -18,8 +18,8 @@ content_hash: 8b095e308fceaeca
 # SuperCLIP: CLIP with Simple Classification Supervision
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.14480](https://arxiv.org/abs/2512.14480)
-**Code**: [GitHub (hustvl/SuperCLIP)](https://github.com/hustvl/SuperCLIP)
+**arXiv**: [2512.14480](https://arxiv.org/abs/2512.14480)  
+**Code**: [GitHub (hustvl/SuperCLIP)](https://github.com/hustvl/SuperCLIP)  
 **Area**: Information Retrieval
 **Keywords**: CLIP, vision-language pretraining, classification supervision, fine-grained alignment, contrastive learning
 

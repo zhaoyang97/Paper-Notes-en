@@ -18,8 +18,8 @@ content_hash: 76a63e14e173a685
 # Self-Aug: Query and Entropy Adaptive Decoding for Large Vision-Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.13315](https://arxiv.org/abs/2510.13315)
-**Code**: [https://eunwooim.github.io/selfaug](https://eunwooim.github.io/selfaug)
+**arXiv**: [2510.13315](https://arxiv.org/abs/2510.13315)  
+**Code**: [https://eunwooim.github.io/selfaug](https://eunwooim.github.io/selfaug)  
 **Area**: Multimodal VLM / Decoding Strategy
 **Keywords**: visual contrastive decoding, hallucination mitigation, self-augmentation, entropy-aware thresholding, training-free
 

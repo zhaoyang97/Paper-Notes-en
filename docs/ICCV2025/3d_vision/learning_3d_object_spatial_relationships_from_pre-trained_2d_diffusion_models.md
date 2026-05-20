@@ -18,7 +18,7 @@ content_hash: c54f8583f17e37e9
 # Learning 3D Object Spatial Relationships from Pre-trained 2D Diffusion Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.19914](https://arxiv.org/abs/2503.19914)
+**arXiv**: [2503.19914](https://arxiv.org/abs/2503.19914)  
 **Area**: 3D Vision
 **Keywords**: Object spatial relationships, diffusion models, 3D scene layout, score-based models, multi-object scene generation
 **Authors**: Sangwon Baik, Hyeonwoo Kim, Hanbyul Joo (Seoul National University & RLWRLD)

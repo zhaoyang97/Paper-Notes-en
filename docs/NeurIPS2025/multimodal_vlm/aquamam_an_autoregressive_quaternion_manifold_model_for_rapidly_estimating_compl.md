@@ -18,8 +18,8 @@ content_hash: 01b2d50ff289418e
 # AQuaMaM: An Autoregressive, Quaternion Manifold Model for Rapidly Estimating Complex SO(3) Distributions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2301.08838](https://arxiv.org/abs/2301.08838)
-**Code**: [GitHub](https://github.com/airalcorn2/aquamam)
+**arXiv**: [2301.08838](https://arxiv.org/abs/2301.08838)  
+**Code**: [GitHub](https://github.com/airalcorn2/aquamam)  
 **Area**: 3D Rotation Estimation / Manifold Probabilistic Modeling
 **Keywords**: SO(3) distribution, quaternion, autoregressive model, mixture of uniforms, pose estimation
 

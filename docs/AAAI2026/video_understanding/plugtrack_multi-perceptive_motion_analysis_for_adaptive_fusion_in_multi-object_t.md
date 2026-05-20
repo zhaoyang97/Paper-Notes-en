@@ -18,8 +18,8 @@ content_hash: 3aa19425f7ff5aa6
 # PlugTrack: Multi-Perceptive Motion Analysis for Adaptive Fusion in Multi-Object Tracking
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13105](https://arxiv.org/abs/2511.13105)
-**Code**: [https://github.com/VisualScienceLab-KHU/PlugTrack](https://github.com/VisualScienceLab-KHU/PlugTrack)
+**arXiv**: [2511.13105](https://arxiv.org/abs/2511.13105)  
+**Code**: [https://github.com/VisualScienceLab-KHU/PlugTrack](https://github.com/VisualScienceLab-KHU/PlugTrack)  
 **Area**: Video Understanding
 **Keywords**: Multi-Object Tracking, Kalman Filter, Adaptive Fusion, Motion Prediction, Plug-and-Play
 

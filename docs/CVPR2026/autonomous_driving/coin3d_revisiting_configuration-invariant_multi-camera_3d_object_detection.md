@@ -18,8 +18,8 @@ content_hash: 099cf623da30f9e1
 # CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection
 
 **Conference**: CVPR2026
-**arXiv**: [2603.05042](https://arxiv.org/abs/2603.05042)
-**Code**: [GitHub](https://github.com/) (open-sourced per authors; link to be confirmed)
+**arXiv**: [2603.05042](https://arxiv.org/abs/2603.05042)  
+**Code**: [GitHub](https://github.com/) (open-sourced per authors; link to be confirmed)  
 **Area**: Autonomous Driving
 **Keywords**: multi-camera 3D object detection, cross-configuration generalization, spatial prior modulation, 3D Gaussian data augmentation, BEV perception
 

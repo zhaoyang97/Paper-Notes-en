@@ -18,8 +18,8 @@ content_hash: 0a377141176be20c
 # Splat-SAP: Feed-Forward Gaussian Splatting for Human-Centered Scene with Scale-Aware Point Map Reconstruction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.22704](https://arxiv.org/abs/2511.22704)
-**Code**: [Project Page](https://yaourtb.github.io/Splat-SAP)
+**arXiv**: [2511.22704](https://arxiv.org/abs/2511.22704)  
+**Code**: [Project Page](https://yaourtb.github.io/Splat-SAP)  
 **Area**: 3D Vision
 **Keywords**: feed-forward Gaussian splatting, human-centered scene, scale-awareness, point map reconstruction, free-viewpoint rendering
 

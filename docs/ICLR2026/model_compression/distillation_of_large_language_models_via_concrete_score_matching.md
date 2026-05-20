@@ -18,8 +18,8 @@ content_hash: 4dc1ba2625191522
 # Distillation of Large Language Models via Concrete Score Matching
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25837](https://arxiv.org/abs/2509.25837)
-**Code**: [GitHub](https://github.com/aailab-kaist/CSD)
+**arXiv**: [2509.25837](https://arxiv.org/abs/2509.25837)  
+**Code**: [GitHub](https://github.com/aailab-kaist/CSD)  
 **Area**: Model Compression / Knowledge Distillation
 **Keywords**: knowledge distillation, LLM compression, score matching, logit distillation, discrete score matching
 

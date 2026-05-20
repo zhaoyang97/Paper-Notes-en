@@ -18,8 +18,8 @@ content_hash: b35c1c81d3e83b0e
 # Monte Carlo Stochastic Depth for Uncertainty Estimation in Deep Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.12719](https://arxiv.org/abs/2604.12719)
-**Code**: None
+**arXiv**: [2604.12719](https://arxiv.org/abs/2604.12719)  
+**Code**: None  
 **Area**: AI Safety / Uncertainty Estimation
 **Keywords**: Uncertainty Quantification, Stochastic Depth, Bayesian Inference, Object Detection, Monte Carlo
 

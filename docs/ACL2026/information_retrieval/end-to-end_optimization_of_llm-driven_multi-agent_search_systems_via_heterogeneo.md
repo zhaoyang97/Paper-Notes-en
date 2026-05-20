@@ -18,8 +18,8 @@ content_hash: 9af32f22231684f6
 # End-to-End Optimization of LLM-Driven Multi-Agent Search Systems via Heterogeneous-Group-Based Reinforcement Learning
 
 **Conference**: ACL 2026
-**arXiv**: [2506.02718](https://arxiv.org/abs/2506.02718)
-**Code**: None
+**arXiv**: [2506.02718](https://arxiv.org/abs/2506.02718)  
+**Code**: None  
 **Area**: Information Retrieval / Multi-Agent RL
 **Keywords**: Multi-Agent Search, MARL, Group Optimization, End-to-End Optimization, RAG
 

@@ -18,8 +18,8 @@ content_hash: a693bf53bf79d652
 # Learning Visual Proxy for Compositional Zero-Shot Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.13859](https://arxiv.org/abs/2501.13859)
-**Code**: [codefish12-09/VP_CMJL](https://github.com/codefish12-09/VP_CMJL)
+**arXiv**: [2501.13859](https://arxiv.org/abs/2501.13859)  
+**Code**: [codefish12-09/VP_CMJL](https://github.com/codefish12-09/VP_CMJL)  
 **Area**: Social Computing
 **Keywords**: Compositional Zero-Shot Learning, Visual Proxy, Cross-Modal Learning, CLIP, VLM
 

@@ -17,8 +17,8 @@ content_hash: cb732a1afca31ea5
 # LAMP: Language-Assisted Motion Planning for Controllable Video Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.03619](https://arxiv.org/abs/2512.03619)
-**Code**: [Project Page](https://cyberiada.github.io/LAMP/)
+**arXiv**: [2512.03619](https://arxiv.org/abs/2512.03619)  
+**Code**: [Project Page](https://cyberiada.github.io/LAMP/)  
 **Area**: Video Generation
 **Keywords**: video generation, motion control, LLM planning, domain-specific language, cinematography
 

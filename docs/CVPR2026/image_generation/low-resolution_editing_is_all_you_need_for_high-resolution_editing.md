@@ -18,8 +18,8 @@ content_hash: 984ebec0c54a0aeb
 # Low-Resolution Editing is All You Need for High-Resolution Editing
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.19945](https://arxiv.org/abs/2511.19945)
-**Code**: None
+**arXiv**: [2511.19945](https://arxiv.org/abs/2511.19945)  
+**Code**: None  
 **Area**: Diffusion Models / Image Editing
 **Keywords**: High-resolution image editing, test-time optimization, detail transfer function, patch synchronization, diffusion models
 

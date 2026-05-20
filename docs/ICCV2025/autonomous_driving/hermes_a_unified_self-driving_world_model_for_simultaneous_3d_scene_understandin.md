@@ -18,8 +18,8 @@ content_hash: e7d41742a639a394
 # Hermes: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.14729](https://arxiv.org/abs/2501.14729)
-**Code**: [https://github.com/LMD0311/HERMES](https://github.com/LMD0311/HERMES)
+**arXiv**: [2501.14729](https://arxiv.org/abs/2501.14729)  
+**Code**: [https://github.com/LMD0311/HERMES](https://github.com/LMD0311/HERMES)  
 **Area**: Autonomous Driving / World Models
 **Keywords**: Driving world model, 3D scene understanding, point cloud generation, BEV, large language model
 

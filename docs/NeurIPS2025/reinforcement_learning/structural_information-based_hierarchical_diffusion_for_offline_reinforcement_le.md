@@ -18,8 +18,8 @@ content_hash: 1d9f993795215735
 # Structural Information-based Hierarchical Diffusion for Offline Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.21942](https://arxiv.org/abs/2509.21942)
-**Code**: [GitHub](https://github.com/SELGroup/SIHD.git)
+**arXiv**: [2509.21942](https://arxiv.org/abs/2509.21942)  
+**Code**: [GitHub](https://github.com/SELGroup/SIHD.git)  
 **Area**: Reinforcement Learning
 **Keywords**: Offline Reinforcement Learning, Diffusion Models, Hierarchical Planning, Structural Entropy, Long-Horizon Decision Making
 

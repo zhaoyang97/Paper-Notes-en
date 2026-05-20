@@ -18,8 +18,8 @@ content_hash: c5d155c4b3fe0c3c
 # Sketch2Colab: Sketch-Conditioned Multi-Human Animation via Controllable Flow Distillation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02190](https://arxiv.org/abs/2603.02190)
-**Code**: Unavailable
+**arXiv**: [2603.02190](https://arxiv.org/abs/2603.02190)  
+**Code**: Unavailable  
 **Area**: Human Understanding
 **Keywords**: Multi-human motion generation, sketch guidance, rectified flow distillation, human-object-human collaboration, CTMC discrete events
 

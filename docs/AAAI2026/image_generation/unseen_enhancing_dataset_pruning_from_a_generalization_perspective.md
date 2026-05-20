@@ -18,8 +18,8 @@ content_hash: ac7664c35a51939e
 # UNSEEN: Enhancing Dataset Pruning from a Generalization Perspective
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12988](https://arxiv.org/abs/2511.12988)
-**Code**: N/A
+**arXiv**: [2511.12988](https://arxiv.org/abs/2511.12988)  
+**Code**: N/A  
 **Area**: Image Generation / Dataset Optimization
 **Keywords**: Dataset Pruning, Generalization, Training Efficiency, Sample Selection, Coreset
 

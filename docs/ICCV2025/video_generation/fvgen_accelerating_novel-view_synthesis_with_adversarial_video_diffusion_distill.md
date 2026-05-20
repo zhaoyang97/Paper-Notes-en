@@ -18,8 +18,8 @@ content_hash: 9c9f0fac5d453436
 # FVGen: Accelerating Novel-View Synthesis with Adversarial Video Diffusion Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.06392](https://arxiv.org/abs/2508.06392)
-**Code**: [https://wbteng9526.github.io/fvgen/](https://wbteng9526.github.io/fvgen/)
+**arXiv**: [2508.06392](https://arxiv.org/abs/2508.06392)  
+**Code**: [https://wbteng9526.github.io/fvgen/](https://wbteng9526.github.io/fvgen/)  
 **Area**: Video Generation
 **Keywords**: Novel-view synthesis, video diffusion distillation, adversarial training, softened reverse KL divergence, few-step sampling
 

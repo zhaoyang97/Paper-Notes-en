@@ -18,8 +18,8 @@ content_hash: bba518e2c4aa271a
 # RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.14462](https://arxiv.org/abs/2505.14462)
-**Code**: [https://jiaangli.github.io/ravenea](https://jiaangli.github.io/ravenea)
+**arXiv**: [2505.14462](https://arxiv.org/abs/2505.14462)  
+**Code**: [https://jiaangli.github.io/ravenea](https://jiaangli.github.io/ravenea)  
 **Area**: Information Retrieval
 **Keywords**: Retrieval-Augmented Generation, Cultural Understanding, Multimodal Benchmark, Visual Question Answering, Image Captioning
 

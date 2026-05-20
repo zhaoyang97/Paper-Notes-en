@@ -19,8 +19,8 @@ content_hash: 86e61a75d2d30d9b
 # Extending ZACH-ViT to Robust Medical Imaging: Corruption and Adversarial Stress Testing in Low-Data Regimes
 
 **Conference**: CVPR 2026 Workshop (PHAROS-AIF-MIH)
-**arXiv**: [2604.06099](https://arxiv.org/abs/2604.06099)
-**Code**: None
+**arXiv**: [2604.06099](https://arxiv.org/abs/2604.06099)  
+**Code**: None  
 **Area**: Medical Image Classification / Robustness Evaluation
 **Keywords**: Vision Transformer, Robustness, Medical Image Classification, Adversarial Attack, Low-Data, Permutation Invariance
 

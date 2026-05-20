@@ -18,8 +18,8 @@ content_hash: 979c88d34883efb0
 # Obscure but Effective: Classical Chinese Jailbreak Prompt Optimization via Bio-Inspired Search
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.22983](https://arxiv.org/abs/2602.22983)
-**Code**: None
+**arXiv**: [2602.22983](https://arxiv.org/abs/2602.22983)  
+**Code**: None  
 **Area**: LLM Alignment
 **Keywords**: LLM Safety, Jailbreak Attack, Classical Chinese, Bio-Inspired Optimization, Black-Box Attack
 

@@ -18,8 +18,8 @@ content_hash: c1bd842ec3b9b5ed
 # RegGS: Unposed Sparse Views Gaussian Splatting with 3DGS Registration
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.08136](https://arxiv.org/abs/2507.08136)
-**Code**: [Project Page](https://3dagentworld.github.io/reggs/)
+**arXiv**: [2507.08136](https://arxiv.org/abs/2507.08136)  
+**Code**: [Project Page](https://3dagentworld.github.io/reggs/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, pose-free reconstruction, sparse views, optimal transport, Gaussian registration
 
@@ -57,29 +57,29 @@ A key technical challenge is that the centers of 3D Gaussians do not accurately 
 
 1. **Optimal Transport MW2 Distance**
 
-   - **Function**: Measures the structural discrepancy between two sets of 3D Gaussian distributions.
-   - **Mechanism**: Each set of 3D Gaussians is modeled as a GMM, and the 2-Wasserstein distance is used to measure the discrepancy between individual Gaussian pairs:
+    - **Function**: Measures the structural discrepancy between two sets of 3D Gaussian distributions.
+    - **Mechanism**: Each set of 3D Gaussians is modeled as a GMM, and the 2-Wasserstein distance is used to measure the discrepancy between individual Gaussian pairs:
      $W_2^2 = \|\mu_i^A - \mu_k^{B'}\|^2 + \text{Tr}(\Sigma_i^A + \Sigma_k^{B'} - 2(\Sigma_i^A \Sigma_k^{B'})^{1/2})$
      Since directly computing the $W_2$ distance between GMMs requires solving an infinite-dimensional optimization problem, the transport plan is restricted to the Gaussian mixture subspace, yielding a tractable upper bound—the Mixture W2 (MW2) distance:
      $\text{MW}_2^2(P,Q) = \inf_{\pi \in \Pi(w^A, w^B)} \sum_{i,k} \pi_{ik} C_{ik}$
      This is efficiently solved via entropy-regularized Sinkhorn iterations: $W_{2,\epsilon}^2 = \min_\pi [\sum_{i,k} \pi_{ik} C_{ik} + \epsilon \sum_{i,k} \pi_{ik} \log \pi_{ik}]$, converging through alternating scaling.
-   - **Design Motivation**: The MW2 distance accounts not only for positional offsets of Gaussian centers but also for covariance matrices (shape and orientation), providing a more complete alignment metric than ICP on centers alone. Entropy regularization avoids local optima, accelerates convergence, and renders the entire computation differentiable. Computational complexity is $O(MN)$.
+    - **Design Motivation**: The MW2 distance accounts not only for positional offsets of Gaussian centers but also for covariance matrices (shape and orientation), providing a more complete alignment metric than ICP on centers alone. Entropy regularization avoids local optima, accelerates convergence, and renders the entire computation differentiable. Computational complexity is $O(MN)$.
 
 2. **Differentiable Joint 3DGS Registration Module**
 
-   - **Function**: Jointly optimizes Sim(3) transformation parameters to align sub-Gaussians to main Gaussians.
-   - **Mechanism**: The Sim(3) transformation is parameterized with quaternions, translation, and log-scale as $\boldsymbol{\theta} = [\mathbf{q}; \mathbf{t}; \log s] \in \mathbb{R}^8$. Three losses are jointly optimized:
+    - **Function**: Jointly optimizes Sim(3) transformation parameters to align sub-Gaussians to main Gaussians.
+    - **Mechanism**: The Sim(3) transformation is parameterized with quaternions, translation, and log-scale as $\boldsymbol{\theta} = [\mathbf{q}; \mathbf{t}; \log s] \in \mathbb{R}^8$. Three losses are jointly optimized:
      $\mathcal{L}_{\text{total}} = \lambda_1 \mathcal{L}_{\text{MW}_2} + \lambda_2 \mathcal{L}_{\text{Photo}} + \lambda_3 \mathcal{L}_{\text{Depth}}$
      - The MW2 loss drives global distribution alignment.
      - The photometric loss $\mathcal{L}_{\text{Photo}}$ enforces pixel-level RGB consistency via the 3DGS rendering pipeline.
      - The depth loss $\mathcal{L}_{\text{Depth}}$ constrains depth consistency, suppressing scale drift and topological deformation.
-   - **Design Motivation**: The MW2 loss alone is prone to local optima (since Sinkhorn yields an approximate solution); the photometric loss provides fine-grained local alignment; the depth loss stabilizes geometry and mitigates scale issues. The three terms are complementary, achieving coarse-to-fine registration.
+    - **Design Motivation**: The MW2 loss alone is prone to local optima (since Sinkhorn yields an approximate solution); the photometric loss provides fine-grained local alignment; the depth loss stabilizes geometry and mitigates scale issues. The three terms are complementary, achieving coarse-to-fine registration.
 
 3. **Incremental Registration and Global Refinement**
 
-   - **Function**: Registers frames sequentially, followed by global optimization.
-   - **Mechanism**: Sub-Gaussians produced by the feed-forward model exhibit significant scale variation; scale normalization (based on mean depth) and initial scale estimation are applied before coarse-to-fine incremental registration. After registration, the global Gaussians undergo adaptive pruning and refinement to improve final rendering quality.
-   - **Design Motivation**: The incremental approach allows handling an arbitrary number of input images, overcoming the input limitation of feed-forward models. Global refinement corrects locally accumulated inconsistencies from the registration process.
+    - **Function**: Registers frames sequentially, followed by global optimization.
+    - **Mechanism**: Sub-Gaussians produced by the feed-forward model exhibit significant scale variation; scale normalization (based on mean depth) and initial scale estimation are applied before coarse-to-fine incremental registration. After registration, the global Gaussians undergo adaptive pruning and refinement to improve final rendering quality.
+    - **Design Motivation**: The incremental approach allows handling an arbitrary number of input images, overcoming the input limitation of feed-forward models. Global refinement corrects locally accumulated inconsistencies from the registration process.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: df0219c13729eceb
 # LinPrim: Linear Primitives for Differentiable Volumetric Rendering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.16312](https://arxiv.org/abs/2501.16312)
-**Code**: [GitHub](https://nicolasvonluetzow.github.io/LinPrim/)
+**arXiv**: [2501.16312](https://arxiv.org/abs/2501.16312)  
+**Code**: [GitHub](https://nicolasvonluetzow.github.io/LinPrim/)  
 **Area**: 3D Vision
 **Keywords**: Novel View Synthesis, Differentiable Rendering, Volumetric Rendering, Polyhedral Primitives, 3D Gaussian Splatting
 

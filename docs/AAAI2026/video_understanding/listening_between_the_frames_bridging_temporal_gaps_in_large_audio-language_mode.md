@@ -18,8 +18,8 @@ content_hash: 0b3e78a2d5e3c5bb
 # Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11039](https://arxiv.org/abs/2511.11039)
-**Code**: [github](https://github.com/lysanderism/TimeAudio)
+**arXiv**: [2511.11039](https://arxiv.org/abs/2511.11039)  
+**Code**: [github](https://github.com/lysanderism/TimeAudio)  
 **Area**: Video Understanding / Audio Understanding
 **Keywords**: Audio-Language Models, Temporal Grounding, Fine-Grained Audio Understanding, Long Audio, Token Merging
 

@@ -18,8 +18,8 @@ content_hash: 89bb160b1d19219a
 # CyIN: Cyclic Informative Latent Space for Bridging Complete and Incomplete Multimodal Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.04920](https://arxiv.org/abs/2602.04920)
-**Code**: [GitHub](https://github.com/RH-Lin/CyIN)
+**arXiv**: [2602.04920](https://arxiv.org/abs/2602.04920)  
+**Code**: [GitHub](https://github.com/RH-Lin/CyIN)  
 **Area**: Multimodal VLM
 **Keywords**: incomplete multimodal learning, information bottleneck, cyclic translation, variational approximation, modality missing
 

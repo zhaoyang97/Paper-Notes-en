@@ -18,8 +18,8 @@ content_hash: b862d1552cd87802
 # Conjecture and Inquiry: Quantifying Software Performance Requirements via Interactive Retrieval-Augmented Preference Elicitation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.21380](https://arxiv.org/abs/2604.21380)
-**Code**: To be confirmed
+**arXiv**: [2604.21380](https://arxiv.org/abs/2604.21380)  
+**Code**: To be confirmed  
 **Area**: Information Retrieval
 **Keywords**: requirement quantification, preference elicitation, retrieval-augmented generation, interactive systems, software performance requirements
 

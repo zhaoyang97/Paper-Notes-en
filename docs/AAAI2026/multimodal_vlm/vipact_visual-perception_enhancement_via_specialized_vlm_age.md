@@ -18,8 +18,8 @@ content_hash: 4eb764e8ffd16317
 # VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use
 
 **Conference**: AAAI 2026
-**arXiv**: [2410.16400](https://arxiv.org/abs/2410.16400)
-**Code**: None
+**arXiv**: [2410.16400](https://arxiv.org/abs/2410.16400)  
+**Code**: None  
 **Area**: Multimodal VLM / Agent
 **Keywords**: VLM Agent, Multi-Agent Collaboration, Tool Use, Fine-Grained Visual Perception, System-2 Reasoning
 

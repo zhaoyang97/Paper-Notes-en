@@ -18,8 +18,8 @@ content_hash: 087e4f7f988bb35e
 # RADAR: Reasoning-Ability and Difficulty-Aware Routing for Reasoning LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25426](https://arxiv.org/abs/2509.25426)
-**Code**: None
+**arXiv**: [2509.25426](https://arxiv.org/abs/2509.25426)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Reasoning Language Models, Model Routing, Item Response Theory, Multi-Objective Optimization, Adaptive Inference
 
@@ -49,8 +49,8 @@ The RADAR framework consists of the following core components:
 
 2. **Multi-Objective Optimization Routing**: For each query $q$, the framework solves $g^* = \arg\max_{g \in \mathcal{G}} f(p_q(g), c_q(g))$, where $p_q(g)$ is the predicted performance and $c_q(g)$ is the predicted cost. Two scalarization techniques are explored:
 
-   - **Linear Scalarization**: $\text{LSP}_q^{w_1} = \arg\max_{g \in \mathcal{G}} w_1 p_q(g) - (1-w_1) c_q(g)$
-   - **Chebyshev Scalarization**: $\text{CSP}_q^{w_1} = \arg\min_{g \in \mathcal{G}} \max\{w_1|1-p_q(g)|, (1-w_1)c_q(g)\}$
+    - **Linear Scalarization**: $\text{LSP}_q^{w_1} = \arg\max_{g \in \mathcal{G}} w_1 p_q(g) - (1-w_1) c_q(g)$
+    - **Chebyshev Scalarization**: $\text{CSP}_q^{w_1} = \arg\min_{g \in \mathcal{G}} \max\{w_1|1-p_q(g)|, (1-w_1)c_q(g)\}$
 
    **Design Motivation**: Chebyshev scalarization can recover non-convex regions of the Pareto frontier that linear scalarization cannot. This is the first work to introduce MOO techniques beyond linear scalarization for LLM routing.
 

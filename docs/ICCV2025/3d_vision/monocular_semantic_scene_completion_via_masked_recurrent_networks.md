@@ -18,8 +18,8 @@ content_hash: 85e016e3ea186f90
 # Monocular Semantic Scene Completion via Masked Recurrent Networks
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.17661](https://arxiv.org/abs/2507.17661)
-**Code**: [alanWXZ/MonoMRN](https://github.com/alanWXZ/MonoMRN)
+**arXiv**: [2507.17661](https://arxiv.org/abs/2507.17661)  
+**Code**: [alanWXZ/MonoMRN](https://github.com/alanWXZ/MonoMRN)  
 **Area**: 3D Vision
 **Keywords**: Semantic Scene Completion, Monocular Vision, Recurrent Neural Networks, Sparse Computation, 3D Scene Understanding
 

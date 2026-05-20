@@ -18,8 +18,8 @@ content_hash: 747a34344f31f4c1
 # Towards Calibrating Prompt Tuning of Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19024](https://arxiv.org/abs/2602.19024)
-**Code**: [https://github.com/ashshaksharifdeen/TCPT](https://github.com/ashshaksharifdeen/TCPT)
+**arXiv**: [2602.19024](https://arxiv.org/abs/2602.19024)  
+**Code**: [https://github.com/ashshaksharifdeen/TCPT](https://github.com/ashshaksharifdeen/TCPT)  
 **Area**: Multimodal VLM
 **Keywords**: prompt tuning, calibration, CLIP, confidence estimation, pretrained semantic preservation
 

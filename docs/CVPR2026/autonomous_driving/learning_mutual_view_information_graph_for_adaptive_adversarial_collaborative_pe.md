@@ -17,8 +17,8 @@ content_hash: 673bb9a317f6ca65
 # Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19596](https://arxiv.org/abs/2602.19596)
-**Code**: [Available](https://github.com/yihangtao/MVIG)
+**arXiv**: [2602.19596](https://arxiv.org/abs/2602.19596)  
+**Code**: [Available](https://github.com/yihangtao/MVIG)  
 **Area**: Autonomous Driving
 **Keywords**: Collaborative perception security, adversarial attacks, graph neural networks, temporal modeling, autonomous driving
 

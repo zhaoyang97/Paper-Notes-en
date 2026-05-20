@@ -19,8 +19,8 @@ content_hash: d660c4704c63c99c
 # Dual-Agent Reinforcement Learning for Adaptive and Cost-Aware Visual-Inertial Odometry
 
 **Conference**: CVPR2026
-**arXiv**: [2511.21083](https://arxiv.org/abs/2511.21083)
-**Code**: To be confirmed
+**arXiv**: [2511.21083](https://arxiv.org/abs/2511.21083)  
+**Code**: To be confirmed  
 **Area**: Video Understanding / Visual Odometry
 **Keywords**: Visual-Inertial Odometry, Reinforcement Learning, Adaptive Fusion, Computation Scheduling, IMU Bias Estimation, PPO
 

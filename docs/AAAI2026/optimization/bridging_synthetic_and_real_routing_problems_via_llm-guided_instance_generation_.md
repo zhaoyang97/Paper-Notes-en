@@ -19,9 +19,9 @@ content_hash: d76ad8588b251b89
 # Bridging Synthetic and Real Routing Problems via LLM-Guided Instance Generation and Progressive Adaptation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10233](https://arxiv.org/abs/2511.10233)
+**arXiv**: [2511.10233](https://arxiv.org/abs/2511.10233)  
 **Authors**: Jianghan Zhu, Yaoxin Wu, Zhuoyi Lin, Zhengyuan Zhang, Haiyan Yin, Zhiguang Cao, Senthilnath Jayavelu, Xiaoli Li
-**Code**: [GitHub](https://github.com/HenryZhu1029/EvoReal)
+**Code**: [GitHub](https://github.com/HenryZhu1029/EvoReal)  
 **Area**: Optimization
 **Keywords**: Neural Combinatorial Optimization, Vehicle Routing Problem, LLM-Guided Evolution, Data Generator, Progressive Fine-Tuning, Generalization
 

@@ -18,8 +18,8 @@ content_hash: e853abcdfaa2bf5b
 # Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17809](https://arxiv.org/abs/2603.17809)
-**Code**: [https://github.com/ucas-xiang/QIG](https://github.com/ucas-xiang/QIG)
+**arXiv**: [2603.17809](https://arxiv.org/abs/2603.17809)  
+**Code**: [https://github.com/ucas-xiang/QIG](https://github.com/ucas-xiang/QIG)  
 **Area**: Multimodal VLM
 **Keywords**: post-training quantization, LVLM compression, token-level sensitivity, integrated gradients, model acceleration
 
@@ -48,21 +48,21 @@ The multimodal input sequence (visual + text + special tokens) is processed duri
 
 1. **Quantization-aware Integrated Gradients (QIG)**:
 
-   - **Function**: Quantifies each token's contribution to quantization error at the token level.
-   - **Mechanism**: Unlike classical IG, which attributes full-precision predictions, QIG attributes the output discrepancy between the full-precision and quantized models. Gradients are integrated along the path from $x^q$ (quantized input) to $x$ (actual input): $QIG(x) = (x - x^q) \int_0^1 \frac{\partial(f(x_\alpha, w) - f(x_\alpha, w^q))}{\partial x_\alpha} d\alpha$
-   - **Design Motivation**: Commonly used proxies such as gradients and attention exhibit weak correlation with quantization error, while perturbation-based methods, though accurate, are computationally expensive. QIG is directly linked to PTQ error and satisfies the completeness axiom.
+    - **Function**: Quantifies each token's contribution to quantization error at the token level.
+    - **Mechanism**: Unlike classical IG, which attributes full-precision predictions, QIG attributes the output discrepancy between the full-precision and quantized models. Gradients are integrated along the path from $x^q$ (quantized input) to $x$ (actual input): $QIG(x) = (x - x^q) \int_0^1 \frac{\partial(f(x_\alpha, w) - f(x_\alpha, w^q))}{\partial x_\alpha} d\alpha$
+    - **Design Motivation**: Commonly used proxies such as gradients and attention exhibit weak correlation with quantization error, while perturbation-based methods, though accurate, are computationally expensive. QIG is directly linked to PTQ error and satisfies the completeness axiom.
 
 2. **IQR Clipping for Stabilization**:
 
-   - **Function**: Suppresses extreme values in QIG scores.
-   - **Mechanism**: Interquartile range clipping is applied as $C(QIG_i) = \text{clip}(QIG_i, Q_1 - 1.5 \cdot IQR, Q_3 + 1.5 \cdot IQR)$, followed by normalization to obtain $\lambda_i$.
-   - **Design Motivation**: Raw QIG distributions are heavy-tailed, and a small number of extreme tokens can dominate the optimization.
+    - **Function**: Suppresses extreme values in QIG scores.
+    - **Mechanism**: Interquartile range clipping is applied as $C(QIG_i) = \text{clip}(QIG_i, Q_1 - 1.5 \cdot IQR, Q_3 + 1.5 \cdot IQR)$, followed by normalization to obtain $\lambda_i$.
+    - **Design Motivation**: Raw QIG distributions are heavy-tailed, and a small number of extreme tokens can dominate the optimization.
 
 3. **Token-Level Weighted Channel-Wise Equalization**:
 
-   - **Function**: Integrates token importance coefficients $\lambda_i$ into the CWE optimization objective.
-   - **Mechanism**: $\mathbf{E}^* = \arg\min_{\mathbf{E}} \sum_{i=1}^T \lambda_i \|Q_W(\mathbf{W}*\mathbf{E}) Q_X(\mathbf{E}^{-1}*\mathbf{X}_i) - \mathbf{W}\mathbf{X}_i\|_2^2$
-   - **Design Motivation**: Biasing the scaling factor search toward more sensitive tokens yields higher accuracy while preserving the overall framework.
+    - **Function**: Integrates token importance coefficients $\lambda_i$ into the CWE optimization objective.
+    - **Mechanism**: $\mathbf{E}^* = \arg\min_{\mathbf{E}} \sum_{i=1}^T \lambda_i \|Q_W(\mathbf{W}*\mathbf{E}) Q_X(\mathbf{E}^{-1}*\mathbf{X}_i) - \mathbf{W}\mathbf{X}_i\|_2^2$
+    - **Design Motivation**: Biasing the scaling factor search toward more sensitive tokens yields higher accuracy while preserving the overall framework.
 
 ### Loss & Training
 - Entirely training-free (PTQ); calibration uses only 128 image-text pairs from ShareGPT4V.

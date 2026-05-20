@@ -18,8 +18,8 @@ content_hash: daabdef2dfa622f2
 # EPSegFZ: Efficient Point Cloud Semantic Segmentation for Few- and Zero-Shot Scenarios
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11700](https://arxiv.org/abs/2511.11700)
-**Code**: None
+**arXiv**: [2511.11700](https://arxiv.org/abs/2511.11700)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: Point Cloud Semantic Segmentation, Few-Shot Learning, Zero-Shot Learning, Language Guidance, Attention Mechanism
 

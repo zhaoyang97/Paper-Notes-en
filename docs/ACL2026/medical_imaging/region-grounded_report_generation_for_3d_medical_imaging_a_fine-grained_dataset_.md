@@ -18,8 +18,8 @@ content_hash: d89ca4d17e407afa
 # Region-Grounded Report Generation for 3D Medical Imaging: A Fine-Grained Dataset and Graph-Enhanced Framework
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18145](https://arxiv.org/abs/2604.18145)
-**Code**: Available (GitHub, to be released upon acceptance)
+**arXiv**: [2604.18145](https://arxiv.org/abs/2604.18145)  
+**Code**: Available (GitHub, to be released upon acceptance)  
 **Area**: Medical Imaging
 **Keywords**: PET/CT report generation, ROI annotation, graph neural networks, 3D medical imaging, low-resource languages
 

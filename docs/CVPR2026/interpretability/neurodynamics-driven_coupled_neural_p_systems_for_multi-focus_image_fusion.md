@@ -18,8 +18,8 @@ content_hash: 2b1d53fb4510a0eb
 # Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.17704](https://arxiv.org/abs/2509.17704)
-**Code**: [MorvanLi/ND-CNPFuse](https://github.com/MorvanLi/ND-CNPFuse)
+**arXiv**: [2509.17704](https://arxiv.org/abs/2509.17704)  
+**Code**: [MorvanLi/ND-CNPFuse](https://github.com/MorvanLi/ND-CNPFuse)  
 **Area**: Interpretability
 **Keywords**: Multi-focus image fusion, coupled neural P systems, neurodynamics, decision map, spiking mechanism
 

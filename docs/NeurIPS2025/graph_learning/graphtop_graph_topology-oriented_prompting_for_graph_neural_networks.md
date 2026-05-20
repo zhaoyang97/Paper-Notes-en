@@ -18,8 +18,8 @@ content_hash: a8ab4640ff10ed8a
 # GraphTOP: Graph Topology-Oriented Prompting for Graph Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22451](https://arxiv.org/abs/2510.22451)
-**Code**: [https://github.com/xbfu/GraphTOP](https://github.com/xbfu/GraphTOP)
+**arXiv**: [2510.22451](https://arxiv.org/abs/2510.22451)  
+**Code**: [https://github.com/xbfu/GraphTOP](https://github.com/xbfu/GraphTOP)  
 **Area**: Graph Learning / Graph Prompting
 **Keywords**: Graph Prompting, Topology, Edge Rewiring, Pre-training, Gumbel-Softmax
 

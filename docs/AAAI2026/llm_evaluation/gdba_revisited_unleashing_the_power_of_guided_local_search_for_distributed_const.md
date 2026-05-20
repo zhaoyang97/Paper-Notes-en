@@ -18,8 +18,8 @@ content_hash: 940ac51834a8d17c
 # GDBA Revisited: Unleashing the Power of Guided Local Search for Distributed Constraint Optimization
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.06899](https://arxiv.org/abs/2508.06899)
-**Code**: [GitHub](https://github.com/ycdeng-ntu/DGLS)
+**arXiv**: [2508.06899](https://arxiv.org/abs/2508.06899)  
+**Code**: [GitHub](https://github.com/ycdeng-ntu/DGLS)  
 **Area**: LLM Evaluation
 **Keywords**: DCOP, Guided Local Search, Penalty Evaporation, Potential Game, Local Optimum Escape
 

@@ -18,8 +18,8 @@ content_hash: 64de6f5e2ae6b6b8
 # IRGPT: Understanding Real-world Infrared Image with Bi-cross-modal Curriculum on Large-scale Benchmark
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.14449](https://arxiv.org/abs/2507.14449)
-**Code**: Dataset is open-sourced
+**arXiv**: [2507.14449](https://arxiv.org/abs/2507.14449)  
+**Code**: Dataset is open-sourced  
 **Area**: Image Generation
 **Keywords**: Infrared Image, Multimodal Large Language Model, Curriculum Learning, Cross-modal Transfer, Vision-Language Model
 

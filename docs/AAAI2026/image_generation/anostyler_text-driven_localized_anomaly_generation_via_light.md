@@ -18,8 +18,8 @@ content_hash: 35380a696fa20425
 # AnoStyler: Text-Driven Localized Anomaly Generation via Lightweight Style Transfer
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06687v1](https://arxiv.org/abs/2511.06687v1)
-**Code**: [https://github.com/yulimso/AnoStyler](https://github.com/yulimso/AnoStyler)
+**arXiv**: [2511.06687v1](https://arxiv.org/abs/2511.06687v1)  
+**Code**: [https://github.com/yulimso/AnoStyler](https://github.com/yulimso/AnoStyler)  
 **Area**: Image Generation
 **Keywords**: Anomaly Generation, Zero-Shot, Style Transfer, CLIP, Industrial Defect Detection
 

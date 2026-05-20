@@ -18,8 +18,8 @@ content_hash: 8431fd01378cd042
 # Gradient Descent as Loss Landscape Navigation: a Normative Framework for Deriving Learning Rules
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26997](https://arxiv.org/abs/2510.26997)
-**Code**: None
+**arXiv**: [2510.26997](https://arxiv.org/abs/2510.26997)  
+**Code**: None  
 **Area**: Optimization Theory / Learning Rules
 **Keywords**: learning rules, optimal control, loss landscape navigation, momentum, adaptive optimizers
 
@@ -51,19 +51,19 @@ This objective comprises three core components: a cost on parameter change (kine
 ### Key Designs
 
 1. **Momentum emerges naturally from multi-step optimization**:
-   - Function: Derives Euler-Lagrange equations from the simplest multi-step objective.
-   - Mechanism: The optimal trajectory satisfies $\dot{\boldsymbol{\theta}}_t = \boldsymbol{p}_t$, $\dot{\boldsymbol{p}}_t = \gamma \boldsymbol{p}_t + \eta k \nabla \mathcal{L}$, where $\boldsymbol{p}_t$ is the momentum.
-   - Design Motivation: Momentum requires no additional assumptions—it arises solely from "planning multiple steps ahead"; the temporal discount $\gamma$ controls interpolation between momentum and standard gradient descent.
+    - Function: Derives Euler-Lagrange equations from the simplest multi-step objective.
+    - Mechanism: The optimal trajectory satisfies $\dot{\boldsymbol{\theta}}_t = \boldsymbol{p}_t$, $\dot{\boldsymbol{p}}_t = \gamma \boldsymbol{p}_t + \eta k \nabla \mathcal{L}$, where $\boldsymbol{p}_t$ is the momentum.
+    - Design Motivation: Momentum requires no additional assumptions—it arises solely from "planning multiple steps ahead"; the temporal discount $\gamma$ controls interpolation between momentum and standard gradient descent.
 
 2. **Natural gradient arises from parameter space geometry**:
-   - Function: Introduces a non-Euclidean metric $\boldsymbol{G}(\boldsymbol{\theta})$ (e.g., the Fisher information matrix) into the objective.
-   - Mechanism: The metric $\boldsymbol{G}$ and the Hessian $\boldsymbol{H}$ play fundamentally different roles—$\boldsymbol{G}$ defines the geometry of the environment, while $\boldsymbol{H}$ describes loss curvature.
-   - Design Motivation: Clarifies the long-standing debate over whether natural gradient is "a second-order method in disguise."
+    - Function: Introduces a non-Euclidean metric $\boldsymbol{G}(\boldsymbol{\theta})$ (e.g., the Fisher information matrix) into the objective.
+    - Mechanism: The metric $\boldsymbol{G}$ and the Hessian $\boldsymbol{H}$ play fundamentally different roles—$\boldsymbol{G}$ defines the geometry of the environment, while $\boldsymbol{H}$ describes loss curvature.
+    - Design Motivation: Clarifies the long-standing debate over whether natural gradient is "a second-order method in disguise."
 
 3. **Adam derives from Bayesian inference over the loss landscape shape**:
-   - Function: Assumes the learner maintains Bayesian beliefs over the local loss landscape gradient $\boldsymbol{m}_t$ and curvature $\boldsymbol{V}_t$.
-   - Mechanism: Temporal evolution of landscape beliefs is modeled via an Ornstein-Uhlenbeck prior; the derived optimal update takes the form $\Delta\boldsymbol{\theta} \propto \boldsymbol{V}_t^{-1/2} \boldsymbol{m}_t$.
-   - Design Motivation: Provides a theoretical justification for the square-root normalization in Adam—it is the optimal result under the ballistic regime (i.e., long-horizon planning).
+    - Function: Assumes the learner maintains Bayesian beliefs over the local loss landscape gradient $\boldsymbol{m}_t$ and curvature $\boldsymbol{V}_t$.
+    - Mechanism: Temporal evolution of landscape beliefs is modeled via an Ornstein-Uhlenbeck prior; the derived optimal update takes the form $\Delta\boldsymbol{\theta} \propto \boldsymbol{V}_t^{-1/2} \boldsymbol{m}_t$.
+    - Design Motivation: Provides a theoretical justification for the square-root normalization in Adam—it is the optimal result under the ballistic regime (i.e., long-horizon planning).
 
 ### Loss & Training
 

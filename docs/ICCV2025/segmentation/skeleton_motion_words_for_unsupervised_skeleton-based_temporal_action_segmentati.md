@@ -18,8 +18,8 @@ content_hash: 47db1027a16e5b67
 # Skeleton Motion Words for Unsupervised Skeleton-Based Temporal Action Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.04513](https://arxiv.org/abs/2508.04513)
-**Code**: [github.com/bachlab/SMQ](https://github.com/bachlab/SMQ)
+**arXiv**: [2508.04513](https://arxiv.org/abs/2508.04513)  
+**Code**: [github.com/bachlab/SMQ](https://github.com/bachlab/SMQ)  
 **Area**: Image Segmentation
 **Keywords**: Unsupervised temporal action segmentation, skeleton sequences, motion quantization, temporal autoencoder, motion words
 

@@ -18,8 +18,8 @@ content_hash: 97a89a1a4a581474
 # Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.16340](https://arxiv.org/abs/2603.16340)
-**Code**: [https://github.com/NUST-Machine-Intelligence-Laboratory/Iris](https://github.com/NUST-Machine-Intelligence-Laboratory/Iris)
+**arXiv**: [2603.16340](https://arxiv.org/abs/2603.16340)  
+**Code**: [https://github.com/NUST-Machine-Intelligence-Laboratory/Iris](https://github.com/NUST-Machine-Intelligence-Laboratory/Iris)  
 **Area**: 3D Vision / Monocular Depth Estimation
 **Keywords**: Monocular Depth Estimation, Diffusion Model, Spectral Gated Distillation, Prior-to-Geometry Framework, Deterministic Diffusion
 

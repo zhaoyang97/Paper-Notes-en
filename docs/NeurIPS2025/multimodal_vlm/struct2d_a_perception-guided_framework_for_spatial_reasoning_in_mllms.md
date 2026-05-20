@@ -18,8 +18,8 @@ content_hash: 8abe5ff4f2d73068
 # Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04220](https://arxiv.org/abs/2506.04220)
-**Code**: [GitHub](https://github.com/neu-vi/struct2d)
+**arXiv**: [2506.04220](https://arxiv.org/abs/2506.04220)  
+**Code**: [GitHub](https://github.com/neu-vi/struct2d)  
 **Area**: Multimodal VLM
 **Keywords**: Spatial reasoning, bird's-eye view, multimodal large language models, instruction tuning, 3D scene understanding
 

@@ -18,8 +18,8 @@ content_hash: 59f8d24b160bbaab
 # HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12969](https://arxiv.org/abs/2511.12969)
-**Code**: [GitHub](https://github.com/Advanced-AI-in-Medicine-and-Physics-Lab/HiFusion)
+**arXiv**: [2511.12969](https://arxiv.org/abs/2511.12969)  
+**Code**: [GitHub](https://github.com/Advanced-AI-in-Medicine-and-Physics-Lab/HiFusion)  
 **Area**: Medical Imaging / Spatial Transcriptomics
 **Keywords**: Spatial Transcriptomics, Gene Expression Prediction, Multi-Scale Feature Fusion, Histopathology, Cross-Attention
 
@@ -32,9 +32,9 @@ This paper proposes HiFusion, a framework comprising two complementary modules �
 - **Spatial transcriptomics (ST)** enables genome-wide expression profiling with spatial localization preserved, but its clinical adoption is hindered by high cost, specialized equipment, and limited scalability.
 - **H&E-stained WSIs** are routinely acquired in clinical pathology at low cost and encode rich morphological features closely associated with gene expression (e.g., the correlation between ERBB2 overexpression and specific morphological phenotypes in HER2-positive breast cancer).
 - **Limitations of existing methods**:
-  - Most methods treat each spot as a homogeneous region, neglecting intra-spot hierarchical structure (a 55–100 μm spot contains diverse cell types, nuclear textures, and subcellular patterns).
-  - Regional context information is used only as auxiliary input without explicitly modeling the semantic relationship between a spot and its surrounding tissue.
-  - Methods such as TRIPLEX and ASIGN employ large regional patches (exceeding 1000×1000 pixels), where large receptive fields may introduce morphological noise.
+    - Most methods treat each spot as a homogeneous region, neglecting intra-spot hierarchical structure (a 55–100 μm spot contains diverse cell types, nuclear textures, and subcellular patterns).
+    - Regional context information is used only as auxiliary input without explicitly modeling the semantic relationship between a spot and its surrounding tissue.
+    - Methods such as TRIPLEX and ASIGN employ large regional patches (exceeding 1000×1000 pixels), where large receptive fields may introduce morphological noise.
 - **Core Problem**: How to simultaneously capture fine-grained morphological heterogeneity within spots and biologically relevant contextual information from surrounding tissue.
 
 ## Method

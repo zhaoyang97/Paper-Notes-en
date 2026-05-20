@@ -18,8 +18,8 @@ content_hash: 28a02bff7ea95993
 # Multi-Faceted Self-Consistent Preference Alignment for Query Rewriting in Conversational Search
 
 **Conference**: ACL 2026 Findings
-**arXiv**: [2604.06771](https://arxiv.org/abs/2604.06771)
-**Code**: N/A
+**arXiv**: [2604.06771](https://arxiv.org/abs/2604.06771)  
+**Code**: N/A  
 **Area**: Information Retrieval
 **Keywords**: conversational query rewriting, preference alignment, self-consistency scoring, multi-dimensional DPO, conversational search
 

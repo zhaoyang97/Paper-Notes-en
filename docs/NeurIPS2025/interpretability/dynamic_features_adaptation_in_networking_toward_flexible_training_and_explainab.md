@@ -21,8 +21,8 @@ content_hash: 8e50996f41e9fabd
 # Dynamic Features Adaptation in Networking: Toward Flexible Training and Explainable Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08303](https://arxiv.org/abs/2510.08303)
-**Code**: Not released
+**arXiv**: [2510.08303](https://arxiv.org/abs/2510.08303)  
+**Code**: Not released  
 **Area**: Explainability
 **Keywords**: Adaptive Random Forest, Feature Importance, Explainable AI, Data Stream, 6G Networks, Drift Detection, SHAP, MDI
 

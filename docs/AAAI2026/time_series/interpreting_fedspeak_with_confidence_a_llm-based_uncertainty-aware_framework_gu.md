@@ -18,8 +18,8 @@ content_hash: fd7116b758d97dd3
 # Interpreting Fedspeak with Confidence: A LLM-Based Uncertainty-Aware Framework Guided by Monetary Policy Transmission Paths
 
 **Conference**: AAAI2026
-**arXiv**: [2508.08001](https://arxiv.org/abs/2508.08001)
-**Code**: [yuuki20001/FOMC-sentiment-path](https://github.com/yuuki20001/FOMC-sentiment-path)
+**arXiv**: [2508.08001](https://arxiv.org/abs/2508.08001)  
+**Code**: [yuuki20001/FOMC-sentiment-path](https://github.com/yuuki20001/FOMC-sentiment-path)  
 **Area**: Time Series
 **Keywords**: Fedspeak, monetary policy stance, LLM, uncertainty quantification, financial sentiment analysis
 
@@ -42,10 +42,10 @@ Core idea: The LLM is analogized to a policy analyst, with two uncertainty dimen
 ### Data Augmentation: Domain Reasoning
 1. **Financial Entity Relation Extraction**: Atomic relations $r(e_i, e_j) \in \mathcal{R}$ are decomposed from Fedspeak, covering six types: CAUSE, COND, EVID, PURP, ACT, and COMP.
 2. **Monetary Policy Transmission Path Reasoning**: A quadruple $\Gamma = (\mathbf{X}, \mathbf{Y}, \mathbf{Z}, \mathbf{M})$ is constructed, where:
-   - $\mathbf{X}$: economic shock vector
-   - $\mathbf{Y}$: transmission channels (credit channel, asset price channel, aggregate demand channel, etc.)
-   - $\mathbf{Z}$: transmission paths (state transition sequences)
-   - $\mathbf{M}$: final policy recommendations
+    - $\mathbf{X}$: economic shock vector
+    - $\mathbf{Y}$: transmission channels (credit channel, asset price channel, aggregate demand channel, etc.)
+    - $\mathbf{Z}$: transmission paths (state transition sequences)
+    - $\mathbf{M}$: final policy recommendations
 3. Structured templates combined with human-AI collaboration are used to construct the SFT dataset.
 
 ### Dynamic Uncertainty Decoding

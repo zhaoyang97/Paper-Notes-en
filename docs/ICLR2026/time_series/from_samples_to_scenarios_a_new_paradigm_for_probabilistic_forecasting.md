@@ -17,8 +17,8 @@ content_hash: 88a7f02a3929b141
 # From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.19975](https://arxiv.org/abs/2509.19975)
-**Code**: [GitHub](https://github.com/Fifthky/TimePrism)
+**arXiv**: [2509.19975](https://arxiv.org/abs/2509.19975)  
+**Code**: [GitHub](https://github.com/Fifthky/TimePrism)  
 **Area**: Time Series
 **Keywords**: probabilistic forecasting, time series, scenario generation, discrete probability, linear model
 

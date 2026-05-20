@@ -18,8 +18,8 @@ content_hash: 33e56f4a4fb3c197
 # HealSplit: Towards Self-Healing through Adversarial Distillation in Split Federated Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11240](https://arxiv.org/abs/2511.11240)
-**Code**: None
+**arXiv**: [2511.11240](https://arxiv.org/abs/2511.11240)  
+**Code**: None  
 **Area**: AI Security
 **Keywords**: Split Federated Learning, Data Poisoning Attack, Topology-Aware Detection, Adversarial Distillation, Self-Healing Defense
 

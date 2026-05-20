@@ -18,8 +18,8 @@ content_hash: 8413afa3dea9ad53
 # Stable-RAG: Mitigating Retrieval-Permutation-Induced Hallucinations in Retrieval-Augmented Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2601.02993](https://arxiv.org/abs/2601.02993)
-**Code**: [GitHub](https://github.com/zqc1023/Stable-RAG)
+**arXiv**: [2601.02993](https://arxiv.org/abs/2601.02993)  
+**Code**: [GitHub](https://github.com/zqc1023/Stable-RAG)  
 **Area**: Information Retrieval / RAG
 **Keywords**: Retrieval-Augmented Generation, permutation sensitivity, hallucination, hidden-state clustering, preference alignment
 

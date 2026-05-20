@@ -18,8 +18,8 @@ content_hash: cd8122570d996b1a
 # BAH Dataset for Ambivalence/Hesitancy Recognition in Videos for Digital Behaviour Analysis
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.19328](https://arxiv.org/abs/2505.19328)
-**Code**: [github.com/sbelharbi/bah-dataset](https://github.com/sbelharbi/bah-dataset)
+**arXiv**: [2505.19328](https://arxiv.org/abs/2505.19328)  
+**Code**: [github.com/sbelharbi/bah-dataset](https://github.com/sbelharbi/bah-dataset)  
 **Area**: Human Behaviour Understanding / Affective Computing
 **Keywords**: ambivalence/hesitancy recognition, multimodal video dataset, behaviour change, affective computing, domain adaptation
 

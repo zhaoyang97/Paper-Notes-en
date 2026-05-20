@@ -17,8 +17,8 @@ content_hash: 3839fa8c652bb703
 # FQ-PETR: Fully Quantized Position Embedding Transformation for Multi-View 3D Object Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2502.15488](https://arxiv.org/abs/2502.15488)
-**Code**: [https://github.com/JiangYongYu1/FQ-PETR](https://github.com/JiangYongYu1/FQ-PETR)
+**arXiv**: [2502.15488](https://arxiv.org/abs/2502.15488)  
+**Code**: [https://github.com/JiangYongYu1/FQ-PETR](https://github.com/JiangYongYu1/FQ-PETR)  
 **Area**: Autonomous Driving
 **Keywords**: 3D Object Detection, Quantization, PETR, Position Encoding, Autonomous Driving
 

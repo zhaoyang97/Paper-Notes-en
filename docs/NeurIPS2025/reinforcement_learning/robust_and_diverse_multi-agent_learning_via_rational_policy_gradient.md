@@ -18,8 +18,8 @@ content_hash: dfa883b73ee3070a
 # Robust and Diverse Multi-Agent Learning via Rational Policy Gradient
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.09535](https://arxiv.org/abs/2511.09535)
-**Code**: [GitHub](https://github.com/niklaslauffer/rational-policy-gradient)
+**arXiv**: [2511.09535](https://arxiv.org/abs/2511.09535)  
+**Code**: [GitHub](https://github.com/niklaslauffer/rational-policy-gradient)  
 **Area**: Reinforcement Learning
 **Keywords**: Multi-Agent Reinforcement Learning, Adversarial Optimization, Suicidal Behavior, Policy Gradient, Cooperative Games
 
@@ -70,11 +70,11 @@ The core architecture of RPG introduces a *manipulator* agent: for each original
    Standard RL surrogate losses support only first-order gradients, whereas the manipulator requires higher-order gradients. The Loaded DiCE surrogate loss (based on the magic box operator) is employed to support unbiased higher-order gradient computation via automatic differentiation.
 
 5. **Five RPG Algorithm Variants**:
-   - **AP-RPG**: Finds rational adversarial examples among pre-trained policies
-   - **AT-RPG**: Robustifies agents during adversarial training
-   - **PAIRED-RPG**: Robustification via regret minimization
-   - **PAIRED-A-RPG**: Adversarial attack that maximizes the victim's regret
-   - **AD-RPG**: Learns genuinely diverse policy populations and generates automatic curricula
+    - **AP-RPG**: Finds rational adversarial examples among pre-trained policies
+    - **AT-RPG**: Robustifies agents during adversarial training
+    - **PAIRED-RPG**: Robustification via regret minimization
+    - **PAIRED-A-RPG**: Adversarial attack that maximizes the victim's regret
+    - **AD-RPG**: Learns genuinely diverse policy populations and generates automatic curricula
 
 ### Loss & Training
 

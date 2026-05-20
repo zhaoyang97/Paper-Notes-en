@@ -18,8 +18,8 @@ content_hash: 1b665520f7bfe437
 # ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.08723](https://arxiv.org/abs/2511.08723)
-**Code**: [Project Page](https://paras2sbench.github.io/)
+**arXiv**: [2511.08723](https://arxiv.org/abs/2511.08723)  
+**Code**: [Project Page](https://paras2sbench.github.io/)  
 **Area**: Spoken Dialogue / Reinforcement Learning
 **Keywords**: speech-to-speech, paralinguistic awareness, benchmark, GRPO, reward model
 

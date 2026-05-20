@@ -18,8 +18,8 @@ content_hash: 4e0718430ce1b2c7
 # GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26181](https://arxiv.org/abs/2603.26181)
-**Code**: [https://youngju-na.github.io/GLINT](https://youngju-na.github.io/GLINT)
+**arXiv**: [2603.26181](https://arxiv.org/abs/2603.26181)  
+**Code**: [https://youngju-na.github.io/GLINT](https://youngju-na.github.io/GLINT)  
 **Area**: 3D Vision
 **Keywords**: Gaussian splatting, transparent surface reconstruction, radiance transport decomposition, hybrid rendering, scene reconstruction
 

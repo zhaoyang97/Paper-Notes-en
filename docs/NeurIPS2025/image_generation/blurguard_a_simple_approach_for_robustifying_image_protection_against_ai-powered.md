@@ -18,8 +18,8 @@ content_hash: f0ea57a7e3e673e0
 # BlurGuard: A Simple Approach for Robustifying Image Protection Against AI-Powered Edit
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00143](https://arxiv.org/abs/2511.00143)
-**Code**: Available
+**arXiv**: [2511.00143](https://arxiv.org/abs/2511.00143)  
+**Code**: Available  
 **Area**: Image Security / Adversarial Perturbation
 **Keywords**: Image protection, adversarial perturbation, AI editing defense, blur preprocessing, diffusion models
 

@@ -17,8 +17,8 @@ content_hash: c02cfa87dd0c9ef8
 # POLISH'ing the Sky: Wide-Field and High-Dynamic Range Interferometric Image Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09162](https://arxiv.org/abs/2603.09162)
-**Code**: None (extended from [POLISH](https://github.com/liamconnor/polish-pub))
+**arXiv**: [2603.09162](https://arxiv.org/abs/2603.09162)  
+**Code**: None (extended from [POLISH](https://github.com/liamconnor/polish-pub))  
 **Area**: Other
 **Keywords**: Radio interferometric imaging, deep learning deconvolution, super-resolution, high dynamic range, strong gravitational lensing
 

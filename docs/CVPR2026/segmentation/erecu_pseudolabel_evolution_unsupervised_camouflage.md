@@ -18,8 +18,8 @@ content_hash: 087453f5503e2126
 # EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11521](https://arxiv.org/abs/2603.11521)
-**Code**: [GitHub](https://github.com/JSLiam94/EReCu)
+**arXiv**: [2603.11521](https://arxiv.org/abs/2603.11521)  
+**Code**: [GitHub](https://github.com/JSLiam94/EReCu)  
 **Area**: Unsupervised Camouflaged Object Detection / Image Segmentation
 **Keywords**: unsupervised camouflaged object detection, pseudo-label evolution, multi-cue perception, teacher-student, spectral attention fusion
 

@@ -18,8 +18,8 @@ content_hash: 6f09395c86383170
 # Forget What Matters, Keep the Rest: Selective Unlearning of Informative Tokens
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17785](https://arxiv.org/abs/2604.17785)
-**Code**: None
+**arXiv**: [2604.17785](https://arxiv.org/abs/2604.17785)  
+**Code**: None  
 **Area**: LLM Efficiency / Machine Unlearning
 **Keywords**: machine unlearning, informative tokens, entropy guidance, token weighting, selective unlearning
 

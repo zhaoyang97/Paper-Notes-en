@@ -18,8 +18,8 @@ content_hash: e088e2da2c925731
 # A Connection Between Score Matching and Local Intrinsic Dimension
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.12975](https://arxiv.org/abs/2510.12975)
-**Code**: None
+**arXiv**: [2510.12975](https://arxiv.org/abs/2510.12975)  
+**Code**: None  
 **Area**: Diffusion Models / Generative Model Theory
 **Keywords**: score matching, local intrinsic dimension, diffusion model, LID estimation, denoising loss
 

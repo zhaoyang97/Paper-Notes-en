@@ -18,8 +18,8 @@ content_hash: 60f92fcc3b65be7a
 # Learning Efficient Fuse-and-Refine for Feed-Forward 3D Gaussian Splatting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.14698](https://arxiv.org/abs/2503.14698)
-**Code**: [GitHub](https://19reborn.github.io/SplatVoxel/)
+**arXiv**: [2503.14698](https://arxiv.org/abs/2503.14698)  
+**Code**: [GitHub](https://19reborn.github.io/SplatVoxel/)  
 **Area**: 3D Vision / Feed-Forward 3DGS
 **Keywords**: 3DGS, Splat-Voxel, feed-forward reconstruction, streaming dynamic scenes, sparse-view
 

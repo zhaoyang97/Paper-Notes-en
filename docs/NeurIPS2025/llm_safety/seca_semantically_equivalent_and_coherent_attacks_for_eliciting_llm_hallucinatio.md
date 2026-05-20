@@ -18,8 +18,8 @@ content_hash: ab0eeea39e653992
 # SECA: Semantically Equivalent and Coherent Attacks for Eliciting LLM Hallucinations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04398](https://arxiv.org/abs/2510.04398)
-**Code**: [GitHub](https://github.com/Buyun-Liang/SECA)
+**arXiv**: [2510.04398](https://arxiv.org/abs/2510.04398)  
+**Code**: [GitHub](https://github.com/Buyun-Liang/SECA)  
 **Area**: AI Safety
 **Keywords**: LLM hallucination, adversarial attack, semantic equivalence, zeroth-order optimization, prompt robustness
 

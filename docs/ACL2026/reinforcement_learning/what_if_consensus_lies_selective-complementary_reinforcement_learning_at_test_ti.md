@@ -18,8 +18,8 @@ content_hash: d9a52b4af92e00cd
 # SCRL: What If Consensus Lies? Selective-Complementary Reinforcement Learning at Test Time
 
 **Conference**: ACL 2026
-**arXiv**: [2603.19880](https://arxiv.org/abs/2603.19880)
-**Code**: [https://github.com/Jasper-Yan/SCRL](https://github.com/Jasper-Yan/SCRL)
+**arXiv**: [2603.19880](https://arxiv.org/abs/2603.19880)  
+**Code**: [https://github.com/Jasper-Yan/SCRL](https://github.com/Jasper-Yan/SCRL)  
 **Area**: Reinforcement Learning / LLM Reasoning
 **Keywords**: Test-time reinforcement learning, pseudo-label noise, negative labels, consensus reliability, unsupervised reasoning
 

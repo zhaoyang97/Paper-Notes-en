@@ -17,8 +17,8 @@ content_hash: 38d85b91fc0b5063
 # CE-FAM: Concept-Based Explanation via Fusion of Activation Maps
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.23849](https://arxiv.org/abs/2509.23849)
-**Code**: None
+**arXiv**: [2509.23849](https://arxiv.org/abs/2509.23849)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Concept explanation, activation map fusion, Grad-CAM, VLM knowledge transfer, interpretability
 

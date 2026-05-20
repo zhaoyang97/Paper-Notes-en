@@ -17,8 +17,8 @@ content_hash: c5a2dfc266d48f78
 # Local Guidance for Configuration-Based Multi-Agent Pathfinding
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.19072](https://arxiv.org/abs/2510.19072)
-**Code**: [https://github.com/allegorywrite/lg_lacam](https://github.com/allegorywrite/lg_lacam)
+**arXiv**: [2510.19072](https://arxiv.org/abs/2510.19072)  
+**Code**: [https://github.com/allegorywrite/lg_lacam](https://github.com/allegorywrite/lg_lacam)  
 **Area**: Other
 **Keywords**: MAPF, Local Guidance, LaCAM, Congestion Mitigation, Space-Time Search
 

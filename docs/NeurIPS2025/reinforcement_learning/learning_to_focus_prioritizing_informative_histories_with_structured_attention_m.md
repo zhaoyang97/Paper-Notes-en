@@ -18,8 +18,8 @@ content_hash: 460dc34232da7e9f
 # Learning to Focus: Prioritizing Informative Histories with Structured Attention Mechanisms in Partially Observable Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.06946](https://arxiv.org/abs/2511.06946)
-**Code**: [GitHub](https://github.com/daniallegue/learning-to-focus)
+**arXiv**: [2511.06946](https://arxiv.org/abs/2511.06946)  
+**Code**: [GitHub](https://github.com/daniallegue/learning-to-focus)  
 **Area**: Reinforcement Learning
 **Keywords**: Partially Observable RL, Transformer World Models, Attention Prior, Gaussian Attention, Sample Efficiency
 

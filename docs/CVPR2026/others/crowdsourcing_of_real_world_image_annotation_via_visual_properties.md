@@ -17,8 +17,8 @@ content_hash: 5e007e71c50ec72b
 # Crowdsourcing of Real-world Image Annotation via Visual Properties
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.14449](https://arxiv.org/abs/2604.14449)
-**Code**: None
+**arXiv**: [2604.14449](https://arxiv.org/abs/2604.14449)  
+**Code**: None  
 **Area**: Dataset Construction / Annotation Methodology
 **Keywords**: image annotation, crowdsourcing, visual properties, semantic gap, object hierarchy
 

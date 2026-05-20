@@ -18,8 +18,8 @@ content_hash: 7f88667a32ee6e35
 # 3DGraphLLM: Combining Semantic Graphs and Large Language Models for 3D Scene Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.18450](https://arxiv.org/abs/2412.18450)
-**Code**: [https://github.com/CognitiveAISystems/3DGraphLLM](https://github.com/CognitiveAISystems/3DGraphLLM)
+**arXiv**: [2412.18450](https://arxiv.org/abs/2412.18450)  
+**Code**: [https://github.com/CognitiveAISystems/3DGraphLLM](https://github.com/CognitiveAISystems/3DGraphLLM)  
 **Area**: 3D Vision
 **Keywords**: 3D scene understanding, scene graph, large language models, vision-language tasks, semantic relations
 

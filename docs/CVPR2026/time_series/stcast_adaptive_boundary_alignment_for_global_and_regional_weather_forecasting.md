@@ -18,8 +18,8 @@ content_hash: 2ca65219bb3e1b58
 # STCast: Adaptive Boundary Alignment for Global and Regional Weather Forecasting
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.25210](https://arxiv.org/abs/2509.25210)
-**Code**: N/A
+**arXiv**: [2509.25210](https://arxiv.org/abs/2509.25210)  
+**Code**: N/A  
 **Area**: Spatiotemporal Forecasting / Weather Prediction
 **Keywords**: weather forecasting, spatial-aligned attention, temporal MoE, global-regional coupling, adaptive boundary
 

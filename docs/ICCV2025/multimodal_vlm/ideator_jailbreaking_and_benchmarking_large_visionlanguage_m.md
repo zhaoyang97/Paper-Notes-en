@@ -18,8 +18,8 @@ content_hash: 8e18bbcd233d3973
 # IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.00827](https://arxiv.org/abs/2411.00827)
-**Code**: [https://github.com/roywang021/IDEATOR](https://github.com/roywang021/IDEATOR)
+**arXiv**: [2411.00827](https://arxiv.org/abs/2411.00827)  
+**Code**: [https://github.com/roywang021/IDEATOR](https://github.com/roywang021/IDEATOR)  
 **Area**: Multimodal VLM / AI Safety / Adversarial Attack
 **Keywords**: jailbreak attack, VLM safety, red teaming, multimodal attack, safety benchmark
 

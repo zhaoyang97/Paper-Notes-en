@@ -18,8 +18,8 @@ content_hash: b1d40a115c5ad56a
 # The Primacy of Magnitude in Low-Rank Adaptation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.06558](https://arxiv.org/abs/2507.06558)
-**Code**: [GitHub](https://github.com/zhangzicheng-jd/LoRAM)
+**arXiv**: [2507.06558](https://arxiv.org/abs/2507.06558)  
+**Code**: [GitHub](https://github.com/zhangzicheng-jd/LoRAM)  
 **Area**: Scientific Computing
 **Keywords**: LoRA, parameter-efficient fine-tuning, initialization strategy, weight update magnitude, low-rank adaptation
 

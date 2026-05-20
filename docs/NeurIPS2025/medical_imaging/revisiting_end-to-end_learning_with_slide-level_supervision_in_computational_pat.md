@@ -18,8 +18,8 @@ content_hash: 2d0a771dd780ad46
 # Revisiting End-to-End Learning with Slide-level Supervision in Computational Pathology
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.02408](https://arxiv.org/abs/2506.02408)
-**Code**: Unavailable
+**arXiv**: [2506.02408](https://arxiv.org/abs/2506.02408)  
+**Code**: Unavailable  
 **Area**: Medical Imaging
 **Keywords**: Computational Pathology, End-to-End Learning, Multiple Instance Learning, Sparse Attention, ABMILX
 

@@ -18,8 +18,8 @@ content_hash: 74d52aad105bb865
 # UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.06908](https://arxiv.org/abs/2504.06908)
-**Code**: [https://emmanuelleb985.github.io/ukbob](https://emmanuelleb985.github.io/ukbob)
+**arXiv**: [2504.06908](https://arxiv.org/abs/2504.06908)  
+**Code**: [https://emmanuelleb985.github.io/ukbob](https://emmanuelleb985.github.io/ukbob)  
 **Area**: Medical Image Segmentation / Foundation Models / Datasets
 **Keywords**: Medical image segmentation, UK Biobank, large-scale dataset, automated annotation quality control, test-time adaptation
 

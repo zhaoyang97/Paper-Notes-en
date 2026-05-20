@@ -18,8 +18,8 @@ content_hash: be5b8d37b7a51325
 # SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00918](https://arxiv.org/abs/2603.00918)
-**Code**: [https://wookiekim.github.io/SOLACE/](https://wookiekim.github.io/SOLACE/)
+**arXiv**: [2603.00918](https://arxiv.org/abs/2603.00918)  
+**Code**: [https://wookiekim.github.io/SOLACE/](https://wookiekim.github.io/SOLACE/)  
 **Authors**: Seungwook Kim, Minsu Cho (POSTECH / RLWRLD)
 **Area**: Diffusion Models / Image Generation / Post-Training
 **Keywords**: Text-to-Image, Self-Confidence Reward, Flow-GRPO, External-Reward-Free, Post-Training Alignment

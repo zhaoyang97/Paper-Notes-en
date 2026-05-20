@@ -18,8 +18,8 @@ content_hash: 90c2f9590a7bc9be
 # Distributional Adversarial Attacks and Training in Deep Hedging
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.14757](https://arxiv.org/abs/2508.14757)
-**Code**: [github.com/Guangyi-Mira/Distributional-Adversarial-Attacks-and-Training-in-Deep-Hedging](https://github.com/Guangyi-Mira/Distributional-Adversarial-Attacks-and-Training-in-Deep-Hedging)
+**arXiv**: [2508.14757](https://arxiv.org/abs/2508.14757)  
+**Code**: [github.com/Guangyi-Mira/Distributional-Adversarial-Attacks-and-Training-in-Deep-Hedging](https://github.com/Guangyi-Mira/Distributional-Adversarial-Attacks-and-Training-in-Deep-Hedging)  
 **Area**: AI Safety
 **Keywords**: Adversarial Training, Distributionally Robust Optimization, Deep Hedging, Wasserstein Distance, Financial Derivatives
 

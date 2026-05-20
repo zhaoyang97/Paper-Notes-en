@@ -18,8 +18,8 @@ content_hash: 74cbf68b1f157ab8
 # Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05320](https://arxiv.org/abs/2506.05320)
-**Code**: Available
+**arXiv**: [2506.05320](https://arxiv.org/abs/2506.05320)  
+**Code**: Available  
 **Area**: Medical Imaging / Brain-Computer Interface / Neural Decoding
 **Keywords**: State-Space Models, Brain-Computer Interface, Neural Decoding, Cross-Species Transfer, Real-Time Inference
 

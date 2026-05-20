@@ -18,8 +18,8 @@ content_hash: d45c35fe49a6421f
 # SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03723](https://arxiv.org/abs/2604.03723)
-**Code**: [Project Page](https://grenoble-zhang.github.io/SymphoMotion/)
+**arXiv**: [2604.03723](https://arxiv.org/abs/2604.03723)  
+**Code**: [Project Page](https://grenoble-zhang.github.io/SymphoMotion/)  
 **Area**: Video Generation / Motion Control
 **Keywords**: Video diffusion models, camera control, object motion control, 3D awareness, motion decoupling
 

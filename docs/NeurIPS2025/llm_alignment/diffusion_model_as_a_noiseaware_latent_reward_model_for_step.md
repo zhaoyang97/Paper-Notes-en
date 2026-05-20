@@ -20,8 +20,8 @@ content_hash: f65870fa03b9e34f
 # Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.01051](https://arxiv.org/abs/2502.01051)
-**Code**: [https://github.com/Kwai-Kolors/LPO](https://github.com/Kwai-Kolors/LPO)
+**arXiv**: [2502.01051](https://arxiv.org/abs/2502.01051)  
+**Code**: [https://github.com/Kwai-Kolors/LPO](https://github.com/Kwai-Kolors/LPO)  
 **Area**: Image Generation / Preference Optimization
 **Keywords**: diffusion model, preference optimization, reward model, latent space, step-level, noise-aware, DPO
 **Institution**: Institute of Automation, Chinese Academy of Sciences + Kuaishou Technology

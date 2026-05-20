@@ -18,8 +18,8 @@ content_hash: 52a856e18beec2fb
 # WaDi: Weight Direction-aware Distillation for One-step Image Synthesis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.08258](https://arxiv.org/abs/2603.08258)
-**Code**: [https://github.com/gudaochangsheng/WaDi](https://github.com/gudaochangsheng/WaDi)
+**arXiv**: [2603.08258](https://arxiv.org/abs/2603.08258)  
+**Code**: [https://github.com/gudaochangsheng/WaDi](https://github.com/gudaochangsheng/WaDi)  
 **Area**: Image Generation
 **Keywords**: Diffusion Distillation, Weight Direction, Low-Rank Rotation, One-Step Generation, Parameter Efficiency
 

@@ -18,8 +18,8 @@ content_hash: 0d12fb0e1f50f43a
 # Multi-Objective Reinforcement Learning with Max-Min Criterion: A Game-Theoretic Approach
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20235](https://arxiv.org/abs/2510.20235)
-**Code**: [GitHub](https://github.com/whbyeon/ERAM-ARAM)
+**arXiv**: [2510.20235](https://arxiv.org/abs/2510.20235)  
+**Code**: [GitHub](https://github.com/whbyeon/ERAM-ARAM)  
 **Area**: Reinforcement Learning
 **Keywords**: Multi-objective reinforcement learning, max-min fairness, game theory, mirror descent, last-iterate convergence
 

@@ -18,8 +18,8 @@ content_hash: 3749bb45d8a3670c
 # Semi-supervised Deep Transfer for Regression without Domain Alignment
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.05092](https://arxiv.org/abs/2509.05092)
-**Code**: Available (see Appendix E.2)
+**arXiv**: [2509.05092](https://arxiv.org/abs/2509.05092)  
+**Code**: Available (see Appendix E.2)  
 **Area**: Medical Imaging
 **Keywords**: Source-free domain adaptation, semi-supervised transfer learning, regression, EEG decoding, brain age prediction
 

@@ -18,8 +18,8 @@ content_hash: 6b72e1d7ebc2be22
 # StructXLIP: Enhancing Vision-Language Models with Multimodal Structural Cues
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20089](https://arxiv.org/abs/2602.20089)
-**Code**: [https://github.com/intelligolabs/StructXLIP](https://github.com/intelligolabs/StructXLIP)
+**arXiv**: [2602.20089](https://arxiv.org/abs/2602.20089)  
+**Code**: [https://github.com/intelligolabs/StructXLIP](https://github.com/intelligolabs/StructXLIP)  
 **Area**: Multimodal VLM / Cross-Modal Retrieval
 **Keywords**: CLIP, edge map, structural alignment, cross-modal retrieval, mutual information maximization
 

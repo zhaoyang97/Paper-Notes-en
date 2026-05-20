@@ -18,8 +18,8 @@ content_hash: 7bca51ae6dfcfb03
 # A Unified Perspective on Adversarial Membership Manipulation in Vision Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02780](https://arxiv.org/abs/2604.02780)
-**Code**: [https://github.com/Sjtubrian/Adversarial_Membership_Manipulation](https://github.com/Sjtubrian/Adversarial_Membership_Manipulation)
+**arXiv**: [2604.02780](https://arxiv.org/abs/2604.02780)  
+**Code**: [https://github.com/Sjtubrian/Adversarial_Membership_Manipulation](https://github.com/Sjtubrian/Adversarial_Membership_Manipulation)  
 **Area**: AI Security
 **Keywords**: membership inference attack, adversarial membership forgery, gradient norm, privacy auditing, vision models
 

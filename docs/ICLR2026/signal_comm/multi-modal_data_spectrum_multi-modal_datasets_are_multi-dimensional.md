@@ -18,8 +18,8 @@ content_hash: 42cff9ffedabde2a
 # Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23499](https://arxiv.org/abs/2509.23499)
-**Code**: [GitHub](https://github.com/divyam3897/multimodal-spectrum)
+**arXiv**: [2509.23499](https://arxiv.org/abs/2509.23499)  
+**Code**: [GitHub](https://github.com/divyam3897/multimodal-spectrum)  
 **Area**: Signal Communication
 **Keywords**: multimodal benchmark evaluation, modality dependency, VQA, dataset bias, MLLM evaluation
 
@@ -134,8 +134,8 @@ Effect of model scale on modality dependency:
 # Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23499](https://arxiv.org/abs/2509.23499)
-**Code**: [GitHub](https://github.com/divyam3897/multimodal-spectrum)
+**arXiv**: [2509.23499](https://arxiv.org/abs/2509.23499)  
+**Code**: [GitHub](https://github.com/divyam3897/multimodal-spectrum)  
 **Area**: signal_comm
 **Keywords**: multimodal learning, benchmark evaluation, modality dependency, VQA, MLLM
 

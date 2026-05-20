@@ -18,8 +18,8 @@ content_hash: 50d33aa41d57a420
 # Evading Data Provenance in Deep Neural Networks
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.01074](https://arxiv.org/abs/2508.01074)
-**Code**: [GitHub](https://github.com/dbsxfz/EscapingDOV)
+**arXiv**: [2508.01074](https://arxiv.org/abs/2508.01074)  
+**Code**: [GitHub](https://github.com/dbsxfz/EscapingDOV)  
 **Area**: Data Security / Model Copyright
 **Keywords**: Data Provenance, Dataset Ownership Verification, Evasion Attack, Knowledge Distillation, Backdoor Watermarking
 

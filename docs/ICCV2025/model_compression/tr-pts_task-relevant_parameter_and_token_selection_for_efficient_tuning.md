@@ -18,8 +18,8 @@ content_hash: 9b39909c360eb5b8
 # TR-PTS: Task-Relevant Parameter and Token Selection for Efficient Tuning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22872](https://arxiv.org/abs/2507.22872)
-**Code**: [https://github.com/synbol/TR-PTS](https://github.com/synbol/TR-PTS)
+**arXiv**: [2507.22872](https://arxiv.org/abs/2507.22872)  
+**Code**: [https://github.com/synbol/TR-PTS](https://github.com/synbol/TR-PTS)  
 **Area**: Model Compression / Parameter-Efficient Fine-Tuning
 **Keywords**: PEFT, Vision Transformer, Token Selection, Fisher Information Matrix, Parameter Selection
 

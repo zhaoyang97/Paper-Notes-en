@@ -18,8 +18,8 @@ content_hash: c56de2ae7e65a104
 # Toward a Dynamic Stackelberg Game-Theoretic Framework for Agentic AI Defense Against LLM Jailbreaking
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.08207](https://arxiv.org/abs/2507.08207)
-**Code**: None
+**arXiv**: [2507.08207](https://arxiv.org/abs/2507.08207)  
+**Code**: None  
 **Area**: LLM Agent
 **Keywords**: LLM Safety, Jailbreak Defense, Game Theory, Stackelberg Game, RRT Search
 

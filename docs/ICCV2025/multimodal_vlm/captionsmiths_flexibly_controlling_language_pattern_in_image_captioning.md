@@ -18,8 +18,8 @@ content_hash: fc96916157c487bd
 # CaptionSmiths: Flexibly Controlling Language Pattern in Image Captioning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.01409](https://arxiv.org/abs/2507.01409)
-**Code**: [https://github.com/omron-sinicx/captionsmiths](https://github.com/omron-sinicx/captionsmiths)
+**arXiv**: [2507.01409](https://arxiv.org/abs/2507.01409)  
+**Code**: [https://github.com/omron-sinicx/captionsmiths](https://github.com/omron-sinicx/captionsmiths)  
 **Area**: Multimodal / VLM
 **Keywords**: image captioning, controllable generation, continuous conditioning, vision-language models, language pattern control
 

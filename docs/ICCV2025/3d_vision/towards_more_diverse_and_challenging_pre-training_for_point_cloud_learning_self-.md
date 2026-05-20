@@ -18,8 +18,8 @@ content_hash: 5c8fb9d73ace32cc
 # Towards More Diverse and Challenging Pre-training for Point Cloud Learning: Self-Supervised Cross Reconstruction with Decoupled Views
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.01250](https://arxiv.org/abs/2509.01250)
-**Code**: [GitHub](https://github.com/aHapBean/Point-PQAE)
+**arXiv**: [2509.01250](https://arxiv.org/abs/2509.01250)  
+**Code**: [GitHub](https://github.com/aHapBean/Point-PQAE)  
 **Area**: 3D Vision
 **Keywords**: Point cloud self-supervised learning, cross-view reconstruction, decoupled views, positional query, pre-training
 

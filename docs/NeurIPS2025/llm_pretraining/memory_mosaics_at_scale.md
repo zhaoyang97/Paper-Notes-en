@@ -18,8 +18,8 @@ content_hash: 6149f3be2c0c7570
 # Memory Mosaics at Scale
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.03285](https://arxiv.org/abs/2507.03285)
-**Code**: [https://github.com/facebookresearch/MemoryMosaics](https://github.com/facebookresearch/MemoryMosaics)
+**arXiv**: [2507.03285](https://arxiv.org/abs/2507.03285)  
+**Code**: [https://github.com/facebookresearch/MemoryMosaics](https://github.com/facebookresearch/MemoryMosaics)  
 **Authors**: Jianyu Zhang, Léon Bottou (NYU & FAIR, Meta)
 **Area**: LLM Pretraining
 **Keywords**: Memory Mosaics, Gaussian kernel regression, in-context learning, compositionality, large-scale scaling

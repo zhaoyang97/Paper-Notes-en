@@ -18,8 +18,8 @@ content_hash: fbe0ea62e461cd04
 # x2-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.16671](https://arxiv.org/abs/2603.16671)
-**Code**: N/A
+**arXiv**: [2603.16671](https://arxiv.org/abs/2603.16671)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: optical flow, scene flow, event camera, multimodal fusion, edge space
 

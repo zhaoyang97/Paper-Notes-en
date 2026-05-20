@@ -18,8 +18,8 @@ content_hash: 7c7259584fe73f03
 # ResQ: A Novel Framework to Implement Residual Neural Networks on Analog Rydberg Atom Quantum Computers
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21537](https://arxiv.org/abs/2506.21537)
-**Code**: [github.com/positivetechnologylab/ResQ](https://github.com/positivetechnologylab/ResQ)
+**arXiv**: [2506.21537](https://arxiv.org/abs/2506.21537)  
+**Code**: [github.com/positivetechnologylab/ResQ](https://github.com/positivetechnologylab/ResQ)  
 **Area**: Quantum Computing / Physics-Inspired Computing
 **Keywords**: Quantum Machine Learning, Residual Networks, Rydberg Atoms, Analog Quantum Computing, Neural ODE
 

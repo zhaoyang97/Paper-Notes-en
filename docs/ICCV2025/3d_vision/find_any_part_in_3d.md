@@ -18,8 +18,8 @@ content_hash: 2bd1d7f18cd1181d
 # Find Any Part in 3D
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.13550](https://arxiv.org/abs/2411.13550)
-**Code**: [Project Page](https://ziqi-ma.github.io/find3dsite/)
+**arXiv**: [2411.13550](https://arxiv.org/abs/2411.13550)  
+**Code**: [Project Page](https://ziqi-ma.github.io/find3dsite/)  
 **Area**: 3D Vision / 3D Part Segmentation
 **Keywords**: 3D part segmentation, open-world, data engine, contrastive learning, zero-shot generalization
 

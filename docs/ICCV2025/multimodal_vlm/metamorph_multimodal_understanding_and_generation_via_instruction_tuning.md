@@ -18,8 +18,8 @@ content_hash: 2c731505a19ca436
 # MetaMorph: Multimodal Understanding and Generation via Instruction Tuning
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.14164](https://arxiv.org/abs/2412.14164)
-**Code**: [Project Page](https://tsb0601.github.io/metamorph)
+**arXiv**: [2412.14164](https://arxiv.org/abs/2412.14164)  
+**Code**: [Project Page](https://tsb0601.github.io/metamorph)  
 **Area**: Multimodal / Vision-Language Model
 **Keywords**: [VPiT, Unified Multimodal Model, Visual Generation, Instruction Tuning, Continuous Visual Tokens]
 

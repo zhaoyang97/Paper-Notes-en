@@ -18,8 +18,8 @@ content_hash: 9cd2fc39863f9e92
 # CA-LoRA: Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.22172](https://arxiv.org/abs/2503.22172)
-**Code**: Unavailable (Qualcomm AI Research internal)
+**arXiv**: [2503.22172](https://arxiv.org/abs/2503.22172)  
+**Code**: Unavailable (Qualcomm AI Research internal)  
 **Area**: Segmentation / Data Generation
 **Keywords**: LoRA fine-tuning, T2I generative models, semantic segmentation, concept disentanglement, domain generalization
 

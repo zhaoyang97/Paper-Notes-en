@@ -18,8 +18,8 @@ content_hash: 2dd87f0e8c7fb442
 # A Unified Shape-Aware Foundation Model for Time Series Classification
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.06429v1](https://arxiv.org/abs/2601.06429v1)
-**Code**: [https://github.com/qianlima-lab/UniShape](https://github.com/qianlima-lab/UniShape)
+**arXiv**: [2601.06429v1](https://arxiv.org/abs/2601.06429v1)  
+**Code**: [https://github.com/qianlima-lab/UniShape](https://github.com/qianlima-lab/UniShape)  
 **Area**: Time Series Classification / Foundation Models
 **Keywords**: Time Series Classification, Foundation Model, Shapelet, Prototype Learning, Interpretability
 

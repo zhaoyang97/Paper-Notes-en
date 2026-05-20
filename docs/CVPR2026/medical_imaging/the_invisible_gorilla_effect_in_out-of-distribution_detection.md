@@ -18,8 +18,8 @@ content_hash: d0ee08dd5e5d030a
 # The Invisible Gorilla Effect in Out-of-distribution Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20068](https://arxiv.org/abs/2602.20068)
-**Code**: [Available](https://github.com/HarryAnthony/Invisible_Gorilla_Effect)
+**arXiv**: [2602.20068](https://arxiv.org/abs/2602.20068)  
+**Code**: [Available](https://github.com/HarryAnthony/Invisible_Gorilla_Effect)  
 **Area**: Medical Imaging
 **Keywords**: OOD detection, out-of-distribution detection bias, visual similarity, medical imaging safety, feature space analysis
 

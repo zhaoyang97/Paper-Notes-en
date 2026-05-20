@@ -18,8 +18,8 @@ content_hash: 3a73eefe5307719f
 # Counterfactual Explanations on Robust Perceptual Geodesics
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.18678](https://arxiv.org/abs/2601.18678)
-**Code**: Provided (anonymous)
+**arXiv**: [2601.18678](https://arxiv.org/abs/2601.18678)  
+**Code**: Provided (anonymous)  
 **Area**: Human Understanding / Explainable AI / Image Generation
 **Keywords**: Counterfactual Explanations, Geodesic Optimization, Perceptual Metric, Adversarial Robustness, Interpretability
 
@@ -49,15 +49,15 @@ Two-stage optimization: Phase 1 minimizes geodesic energy (keeping the path clos
 
 1. **Robust Perceptual Metric**:
 
-   - **Function**: Defines a Riemannian metric tensor using the Jacobian of an adversarially trained model.
-   - **Mechanism**: $G_R(x) = \sum_k w_k \, J(h_k(x))^\top J(h_k(x))$, where $h_k$ denotes intermediate-layer features of the robust model. Pulled back to latent space: $G_z(z) = J(g(z))^\top G_R(g(z)) J(g(z))$.
-   - **Design Motivation**: Feature gradients of robust models are meaningful along semantic directions (non-adversarial), so the induced metric places semantically similar points closer together.
+    - **Function**: Defines a Riemannian metric tensor using the Jacobian of an adversarially trained model.
+    - **Mechanism**: $G_R(x) = \sum_k w_k \, J(h_k(x))^\top J(h_k(x))$, where $h_k$ denotes intermediate-layer features of the robust model. Pulled back to latent space: $G_z(z) = J(g(z))^\top G_R(g(z)) J(g(z))$.
+    - **Design Motivation**: Feature gradients of robust models are meaningful along semantic directions (non-adversarial), so the induced metric places semantically similar points closer together.
 
 2. **Geodesic Optimization**:
 
-   - Phase 1: Minimize path energy $E = \int \gamma'(t)^\top G_z \, \gamma'(t) \, dt$.
-   - Phase 2: Incorporate a classification loss to guide the path toward the target class.
-   - **Design Motivation**: Decoupled optimization prevents the classification loss from prematurely pulling the path off the manifold.
+    - Phase 1: Minimize path energy $E = \int \gamma'(t)^\top G_z \, \gamma'(t) \, dt$.
+    - Phase 2: Incorporate a classification loss to guide the path toward the target class.
+    - **Design Motivation**: Decoupled optimization prevents the classification loss from prematurely pulling the path off the manifold.
 
 ## Key Experimental Results
 

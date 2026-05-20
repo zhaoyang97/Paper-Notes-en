@@ -18,8 +18,8 @@ content_hash: 5bda863634628529
 # GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19206](https://arxiv.org/abs/2602.19206)
-**Code**: [GitHub](https://github.com/zhushengxinyue/GS-CLIP)
+**arXiv**: [2602.19206](https://arxiv.org/abs/2602.19206)  
+**Code**: [GitHub](https://github.com/zhushengxinyue/GS-CLIP)  
 **Area**: 3D Vision
 **Keywords**: Zero-shot 3D anomaly detection, CLIP, geometry-aware prompt, multi-view fusion, point cloud
 

@@ -18,8 +18,8 @@ content_hash: 36fabcbe81b101ea
 # Tracing and Reversing Edits in LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.20819](https://arxiv.org/abs/2505.20819)
-**Code**: [https://github.com/paulyoussef/trace-and-reverse/](https://github.com/paulyoussef/trace-and-reverse/)
+**arXiv**: [2505.20819](https://arxiv.org/abs/2505.20819)  
+**Code**: [https://github.com/paulyoussef/trace-and-reverse/](https://github.com/paulyoussef/trace-and-reverse/)  
 **Area**: Robotics
 **Keywords**: knowledge editing, model security, SVD, edit tracing, edit reversal
 

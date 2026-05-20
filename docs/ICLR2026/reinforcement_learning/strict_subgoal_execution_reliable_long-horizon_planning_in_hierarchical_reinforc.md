@@ -18,8 +18,8 @@ content_hash: 7c0f069e26f949b6
 # Strict Subgoal Execution: Reliable Long-Horizon Planning in Hierarchical Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.21039](https://arxiv.org/abs/2506.21039)
-**Code**: [https://github.com/Jaebak1996/SSE](https://github.com/Jaebak1996/SSE)
+**arXiv**: [2506.21039](https://arxiv.org/abs/2506.21039)  
+**Code**: [https://github.com/Jaebak1996/SSE](https://github.com/Jaebak1996/SSE)  
 **Area**: Hierarchical Reinforcement Learning / Goal-Conditioned RL
 **Keywords**: Hierarchical RL, Subgoal Execution, Graph Planning, Frontier Experience Replay, Long-Horizon Tasks
 

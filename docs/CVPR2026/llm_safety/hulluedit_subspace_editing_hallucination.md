@@ -18,8 +18,8 @@ content_hash: bf1827765e1c0af5
 # HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in LVLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22727](https://arxiv.org/abs/2602.22727)
-**Code**: [https://github.com/VioAgnes/HulluEdit](https://github.com/VioAgnes/HulluEdit)
+**arXiv**: [2602.22727](https://arxiv.org/abs/2602.22727)  
+**Code**: [https://github.com/VioAgnes/HulluEdit](https://github.com/VioAgnes/HulluEdit)  
 **Area**: LLM Safety
 **Keywords**: Hallucination Mitigation, Subspace Editing, Orthogonal Decomposition, LVLM, Single-Pass Inference
 

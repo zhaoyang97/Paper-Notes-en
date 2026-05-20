@@ -18,8 +18,8 @@ content_hash: 594ca1b8cdd3ec3b
 # Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04072](https://arxiv.org/abs/2510.04072)
-**Code**: [slow-fast-po.github.io](https://slow-fast-po.github.io/)
+**arXiv**: [2510.04072](https://arxiv.org/abs/2510.04072)  
+**Code**: [slow-fast-po.github.io](https://slow-fast-po.github.io/)  
 **Area**: LLM Alignment
 **Keywords**: Reinforcement Learning, GRPO, Policy Optimization, Mathematical Reasoning, Sample Efficiency
 

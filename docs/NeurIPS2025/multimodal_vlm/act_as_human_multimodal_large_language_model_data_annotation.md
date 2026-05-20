@@ -18,8 +18,8 @@ content_hash: b91e6a3c3c380f6d
 # ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.09833](https://arxiv.org/abs/2511.09833)
-**Code**: None
+**arXiv**: [2511.09833](https://arxiv.org/abs/2511.09833)  
+**Code**: None  
 **Area**: Data Annotation / MLLM Applications
 **Keywords**: data annotation, critical thinking, MLLM, error estimation, human-in-the-loop
 

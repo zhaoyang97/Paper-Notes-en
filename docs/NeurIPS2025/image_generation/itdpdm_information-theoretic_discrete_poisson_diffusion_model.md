@@ -18,8 +18,8 @@ content_hash: 4b03aceedf3910c8
 # ItDPDM: Information-Theoretic Discrete Poisson Diffusion Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.05082](https://arxiv.org/abs/2505.05082)
-**Code**: Available (link provided in the paper)
+**arXiv**: [2505.05082](https://arxiv.org/abs/2505.05082)  
+**Code**: Available (link provided in the paper)  
 **Area**: Image Generation
 **Keywords**: Discrete Diffusion, Poisson Process, Information Theory, Likelihood Estimation, Symbolic Music
 

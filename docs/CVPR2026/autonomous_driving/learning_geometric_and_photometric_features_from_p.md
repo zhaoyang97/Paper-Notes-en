@@ -18,8 +18,8 @@ content_hash: 555e4a2a81709402
 # Learning Geometric and Photometric Features from Panoramic LiDAR Scans for Outdoor Place Categorization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12663](https://arxiv.org/abs/2603.12663)
-**Code**: N/A
+**arXiv**: [2603.12663](https://arxiv.org/abs/2603.12663)  
+**Code**: N/A  
 **Area**: Autonomous Driving / Scene Understanding
 **Keywords**: Outdoor scene categorization, LiDAR panoramic image, multimodal fusion, CNN, depth & reflectance
 

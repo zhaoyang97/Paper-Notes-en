@@ -18,8 +18,8 @@ content_hash: fdfb78d03a589b7b
 # Learning-guided Kansa Collocation for Forward and Inverse PDE Problems
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07970](https://arxiv.org/abs/2602.07970)
-**Code**: None
+**arXiv**: [2602.07970](https://arxiv.org/abs/2602.07970)  
+**Code**: None  
 **Area**: Scientific Computing / PDE Solving
 **Keywords**: Kansa method, radial basis functions, nonlinear PDEs, inverse problems, neural PDE solvers
 
@@ -51,33 +51,33 @@ The framework is built on the Kansa collocation method: the field is approximate
 
 1. **Coupled Multi-variable PDE Extension (Extension 1)**
 
-   - **Function**: Extends a single unknown field $u$ to a multi-dimensional field $\mathbf{u} = [u_1, u_2, \ldots, u_{N_D}]$.
-   - **Mechanism**: Each dimension $u_d$ has an independent RBF expansion and coefficients $\alpha_k^{(d)}$; a linear coupling operator $\mathcal{G}$ links the dimensions, yielding a horizontally stacked block-matrix system.
-   - **Design Motivation**: Many physical equations (e.g., Navier–Stokes, Maxwell) are inherently coupled PDE systems requiring the simultaneous solution of multiple physical quantities.
+    - **Function**: Extends a single unknown field $u$ to a multi-dimensional field $\mathbf{u} = [u_1, u_2, \ldots, u_{N_D}]$.
+    - **Mechanism**: Each dimension $u_d$ has an independent RBF expansion and coefficients $\alpha_k^{(d)}$; a linear coupling operator $\mathcal{G}$ links the dimensions, yielding a horizontally stacked block-matrix system.
+    - **Design Motivation**: Many physical equations (e.g., Navier–Stokes, Maxwell) are inherently coupled PDE systems requiring the simultaneous solution of multiple physical quantities.
 
 2. **Nonlinear Operator Handling (Extension 2)**
 
-   - **Function**: Handles nonlinear differential operators such as the $u \frac{\partial u}{\partial x}$ term in Burgers' equation.
-   - **Mechanism**: Introduces the differentiation matrix $\mathbf{D}_x = \mathbf{K}_x \cdot \mathbf{K}^{-1}$ to decompose nonlinear operators into combinations of differential operations on known fields. Five solution strategies are provided: forward Euler (explicit), IMEX (semi-implicit), backward Euler (implicit Newton–Raphson), Crank–Nicolson (second-order), and full nonlinear direct optimization.
-   - **Design Motivation**: Nonlinearity prevents direct separation into a linear system; temporal discretization or iterative optimization is required to circumvent this.
+    - **Function**: Handles nonlinear differential operators such as the $u \frac{\partial u}{\partial x}$ term in Burgers' equation.
+    - **Mechanism**: Introduces the differentiation matrix $\mathbf{D}_x = \mathbf{K}_x \cdot \mathbf{K}^{-1}$ to decompose nonlinear operators into combinations of differential operations on known fields. Five solution strategies are provided: forward Euler (explicit), IMEX (semi-implicit), backward Euler (implicit Newton–Raphson), Crank–Nicolson (second-order), and full nonlinear direct optimization.
+    - **Design Motivation**: Nonlinearity prevents direct separation into a linear system; temporal discretization or iterative optimization is required to circumvent this.
 
 3. **Automatic Shape-Parameter Tuning**
 
-   - **Function**: Automatically optimizes the RBF shape parameter $\epsilon$.
-   - **Mechanism**: For linear PDEs, jointly minimizes the condition number of the operator matrix and the variation of the solution field. For nonlinear PDEs, directly minimizes a composite objective of PDE residual, solution variation, and training L2 loss.
-   - **Design Motivation**: The choice of $\epsilon$ critically affects accuracy and stability (accuracy–conditioning trade-off), making manual tuning impractical.
+    - **Function**: Automatically optimizes the RBF shape parameter $\epsilon$.
+    - **Mechanism**: For linear PDEs, jointly minimizes the condition number of the operator matrix and the variation of the solution field. For nonlinear PDEs, directly minimizes a composite objective of PDE residual, solution variation, and training L2 loss.
+    - **Design Motivation**: The choice of $\epsilon$ critically affects accuracy and stability (accuracy–conditioning trade-off), making manual tuning impractical.
 
 4. **Inverse Problem Solving**
 
-   - **Function**: Recovers unknown PDE parameters $\boldsymbol{\pi}$ from solution observations $u^{\text{obs}}$.
-   - **Mechanism**: $\boldsymbol{\pi}^* = \arg\min_{\boldsymbol{\pi}} \mathcal{L}(u^{\text{obs}}, u^{\text{pred}}(\boldsymbol{\pi}))$, solved using SciPy's least-squares and root-finding algorithms.
-   - **Design Motivation**: Inverse problems are critical in scientific computing (e.g., parameter estimation, material property inference); this extension broadens the Kansa framework to the inverse setting.
+    - **Function**: Recovers unknown PDE parameters $\boldsymbol{\pi}$ from solution observations $u^{\text{obs}}$.
+    - **Mechanism**: $\boldsymbol{\pi}^* = \arg\min_{\boldsymbol{\pi}} \mathcal{L}(u^{\text{obs}}, u^{\text{pred}}(\boldsymbol{\pi}))$, solved using SciPy's least-squares and root-finding algorithms.
+    - **Design Motivation**: Inverse problems are critical in scientific computing (e.g., parameter estimation, material property inference); this extension broadens the Kansa framework to the inverse setting.
 
 5. **Systematic Comparison with Other Solvers**
 
-   - **Function**: Benchmarks Kansa, PINN, and FNO on standard PDE problems.
-   - **Mechanism**: Unified evaluation metrics (L2 error, efficiency, memory, convergence rate) with fairly matched training data volumes.
-   - **Design Motivation**: Provides a solver-selection guide for different PDE types.
+    - **Function**: Benchmarks Kansa, PINN, and FNO on standard PDE problems.
+    - **Mechanism**: Unified evaluation metrics (L2 error, efficiency, memory, convergence rate) with fairly matched training data volumes.
+    - **Design Motivation**: Provides a solver-selection guide for different PDE types.
 
 ### Loss & Training
 

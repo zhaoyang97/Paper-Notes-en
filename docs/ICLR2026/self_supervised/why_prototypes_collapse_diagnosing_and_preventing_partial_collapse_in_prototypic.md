@@ -17,8 +17,8 @@ content_hash: 667819d38525a89a
 # Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.20108](https://arxiv.org/abs/2510.20108)
-**Code**: [GitHub](https://dsb-ifi.github.com/proto-decoupling)
+**arXiv**: [2510.20108](https://arxiv.org/abs/2510.20108)  
+**Code**: [GitHub](https://dsb-ifi.github.com/proto-decoupling)  
 **Area**: Self-Supervised Learning / Prototype Learning / Representation Collapse
 **Keywords**: prototype collapse, self-supervised learning, DINO, decoupling, Gaussian mixture
 

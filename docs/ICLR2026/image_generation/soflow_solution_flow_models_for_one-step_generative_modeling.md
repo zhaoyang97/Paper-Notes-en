@@ -18,8 +18,8 @@ content_hash: c3888d08d273ade0
 # SoFlow: Solution Flow Models for One-Step Generative Modeling
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.15657](https://arxiv.org/abs/2512.15657)
-**Code**: [https://github.com/zlab-princeton/SoFlow](https://github.com/zlab-princeton/SoFlow)
+**arXiv**: [2512.15657](https://arxiv.org/abs/2512.15657)  
+**Code**: [https://github.com/zlab-princeton/SoFlow](https://github.com/zlab-princeton/SoFlow)  
 **Area**: Diffusion Models / One-Step Generation
 **Keywords**: solution function, flow matching, one-step generation, consistency loss, JVP-free
 

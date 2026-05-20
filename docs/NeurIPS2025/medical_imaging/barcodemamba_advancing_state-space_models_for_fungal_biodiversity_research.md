@@ -18,8 +18,8 @@ content_hash: 4bb5ec0302111ed1
 # BarcodeMamba+: Advancing State-Space Models for Fungal Biodiversity Research
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.15931](https://arxiv.org/abs/2512.15931)
-**Code**: [GitHub](https://github.com/bioscan-ml/BarcodeMamba)
+**arXiv**: [2512.15931](https://arxiv.org/abs/2512.15931)  
+**Code**: [GitHub](https://github.com/bioscan-ml/BarcodeMamba)  
 **Area**: Bioinformatics / Genomics
 **Keywords**: DNA barcoding, fungal taxonomy, state-space models, foundation models, hierarchical classification
 
@@ -53,20 +53,20 @@ A BPE tokenizer is used for DNA sequences (rather than character-level or k-mer 
 
 1. **Mamba SSM Architecture**
 
-   - Based on state-space models with linear time complexity, well-suited for large-scale biological sequences.
-   - Base variant: 12.1M parameters (comparable to the CNN baseline); large variant: 49.2M parameters.
-   - Compared to Transformer-based BarcodeBERT (44.6M parameters), Mamba achieves a better balance of parameter efficiency and inference speed.
+    - Based on state-space models with linear time complexity, well-suited for large-scale biological sequences.
+    - Base variant: 12.1M parameters (comparable to the CNN baseline); large variant: 49.2M parameters.
+    - Compared to Transformer-based BarcodeBERT (44.6M parameters), Mamba achieves a better balance of parameter efficiency and inference speed.
 
 2. **Hierarchical Label Smoothing**
 
-   - Exploits the taxonomic hierarchy (kingdom / phylum / class / order / family / genus / species).
-   - Assigns smoothing probabilities in the softmax targets according to taxonomic distance.
-   - Allows taxonomically similar classes to receive partial probability mass, enhancing generalization.
+    - Exploits the taxonomic hierarchy (kingdom / phylum / class / order / family / genus / species).
+    - Assigns smoothing probabilities in the softmax targets according to taxonomic distance.
+    - Allows taxonomically similar classes to receive partial probability mass, enhancing generalization.
 
 3. **Inverse Square-Root Weighted Loss**
 
-   - Assigns higher weights to rare classes to address long-tail distribution.
-   - Prevents the model from being dominated by high-frequency classes.
+    - Assigns higher weights to rare classes to address long-tail distribution.
+    - Prevents the model from being dominated by high-frequency classes.
 
 ### Loss & Training
 
@@ -149,8 +149,8 @@ Pretraining yields more pronounced gains under k-mer tokenization (77.0% → 81.
 # BarcodeMamba+: Advancing State-Space Models for Fungal Biodiversity Research
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.15931](https://arxiv.org/abs/2512.15931)
-**Code**: [GitHub](https://github.com/bioscan-ml/BarcodeMamba)
+**arXiv**: [2512.15931](https://arxiv.org/abs/2512.15931)  
+**Code**: [GitHub](https://github.com/bioscan-ml/BarcodeMamba)  
 **Area**: Bioinformatics / Genomics
 **Keywords**: DNA barcoding, fungal taxonomy, state-space models, foundation models, hierarchical classification
 

@@ -18,8 +18,8 @@ content_hash: 7b840b794a78c06e
 # Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models
 
 **Conference**: ACL 2026
-**arXiv**: [2510.14232](https://arxiv.org/abs/2510.14232)
-**Code**: [NVIDIA-NeMo/Skills](https://github.com/NVIDIA-NeMo/Skills/tree/main/recipes)
+**arXiv**: [2510.14232](https://arxiv.org/abs/2510.14232)  
+**Code**: [NVIDIA-NeMo/Skills](https://github.com/NVIDIA-NeMo/Skills/tree/main/recipes)  
 **Area**: LLM Reasoning
 **Keywords**: Test-time compute, competitive programming, IOI, behavioral clustering, open-weight models
 

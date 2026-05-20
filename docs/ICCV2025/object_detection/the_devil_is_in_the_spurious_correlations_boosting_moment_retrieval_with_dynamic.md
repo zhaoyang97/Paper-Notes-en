@@ -18,8 +18,8 @@ content_hash: 756801b877c985c0
 # The Devil is in the Spurious Correlations: Boosting Moment Retrieval with Dynamic Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.07305](https://arxiv.org/abs/2501.07305)
-**Code**: Coming soon
+**arXiv**: [2501.07305](https://arxiv.org/abs/2501.07305)  
+**Code**: Coming soon  
 **Area**: Object Detection
 **Keywords**: Moment Retrieval, Spurious Correlation, Video Synthesis, Temporal Dynamics, DETR
 

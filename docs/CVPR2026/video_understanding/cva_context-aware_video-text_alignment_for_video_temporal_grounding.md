@@ -18,8 +18,8 @@ content_hash: 2b45fecbbc57f0b1
 # CVA: Context-aware Video-text Alignment for Video Temporal Grounding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24934](https://arxiv.org/abs/2603.24934)
-**Code**: [https://byeol3325.github.io/projects/CVA/](https://byeol3325.github.io/projects/CVA/)
+**arXiv**: [2603.24934](https://arxiv.org/abs/2603.24934)  
+**Code**: [https://byeol3325.github.io/projects/CVA/](https://byeol3325.github.io/projects/CVA/)  
 **Area**: Video Understanding / Temporal Grounding
 **Keywords**: Video Temporal Grounding, Data Augmentation, Contrastive Learning, Context Invariance, Video-Text Alignment
 

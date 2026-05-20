@@ -18,8 +18,8 @@ content_hash: 2cbc805ef3ee1fb1
 # Multimodal Negative Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20877](https://arxiv.org/abs/2510.20877)
-**Code**: [Available](https://github.com/BaoquanGong/Multimodal-Negative-Learning)
+**arXiv**: [2510.20877](https://arxiv.org/abs/2510.20877)  
+**Code**: [Available](https://github.com/BaoquanGong/Multimodal-Negative-Learning)  
 **Area**: Multimodal Learning
 **Keywords**: Multimodal Fusion, Modality Imbalance, Negative Learning, Robustness, Decision Fusion
 

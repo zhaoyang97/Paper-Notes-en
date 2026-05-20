@@ -18,8 +18,8 @@ content_hash: b4857c629a6ac471
 # LatentGuard: Controllable Latent Steering for Robust Refusal of Attacks and Reliable Response Generation
 
 **Conference**: NEURIPS2025
-**arXiv**: [2509.19839](https://arxiv.org/abs/2509.19839)
-**Code**: Not released
+**arXiv**: [2509.19839](https://arxiv.org/abs/2509.19839)  
+**Code**: Not released  
 **Area**: Robotics
 **Keywords**: LLM safety, Latent Space Steering, VAE, Refusal Alignment, Jailbreak Defense
 

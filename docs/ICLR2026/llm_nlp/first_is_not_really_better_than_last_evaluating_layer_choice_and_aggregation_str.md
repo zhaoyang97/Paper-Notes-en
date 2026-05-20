@@ -18,8 +18,8 @@ content_hash: ea8a424163d6ea0e
 # First is Not Really Better Than Last: Evaluating Layer Choice and Aggregation Strategies in Language Model Data Influence Estimation
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.04715](https://arxiv.org/abs/2511.04715)
-**Code**: Available
+**arXiv**: [2511.04715](https://arxiv.org/abs/2511.04715)  
+**Code**: Available  
 **Area**: LLM/NLP (Other)
 **Keywords**: Influence Functions, Data Attribution, Layer Analysis, LLM Interpretability, Training Data Quality
 

@@ -18,8 +18,8 @@ content_hash: c79fa90aff8c9d46
 # 3D-MOOD: Lifting 2D to 3D for Monocular Open-Set Object Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.23567](https://arxiv.org/abs/2507.23567)
-**Code**: [royyang0714.github.io/3D-MOOD](https://royyang0714.github.io/3D-MOOD)
+**arXiv**: [2507.23567](https://arxiv.org/abs/2507.23567)  
+**Code**: [royyang0714.github.io/3D-MOOD](https://royyang0714.github.io/3D-MOOD)  
 **Area**: Object Detection
 **Keywords**: Monocular 3D object detection, open-set detection, 2D-to-3D lifting, geometry-aware query, canonical image space
 

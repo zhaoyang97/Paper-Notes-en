@@ -18,8 +18,8 @@ content_hash: bcb118143ac5dd85
 # GraphFLA: Augmenting Biological Fitness Prediction Benchmarks with Landscape Features
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24826](https://arxiv.org/abs/2510.24826)
-**Code**: [https://github.com/COLA-Laboratory/GraphFLA](https://github.com/COLA-Laboratory/GraphFLA)
+**arXiv**: [2510.24826](https://arxiv.org/abs/2510.24826)  
+**Code**: [https://github.com/COLA-Laboratory/GraphFLA](https://github.com/COLA-Laboratory/GraphFLA)  
 **Area**: Bioinformatics / Benchmark Methodology
 **Keywords**: Fitness landscape, protein engineering, landscape features, model diagnostics, combinatorial mutations
 

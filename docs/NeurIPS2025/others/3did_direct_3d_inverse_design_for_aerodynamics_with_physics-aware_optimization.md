@@ -17,8 +17,8 @@ content_hash: 57312d8141f90e91
 # 3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.08987](https://arxiv.org/abs/2512.08987)
-**Code**: None
+**arXiv**: [2512.08987](https://arxiv.org/abs/2512.08987)  
+**Code**: None  
 **Area**: Other
 **Keywords**: 3D inverse design, diffusion model, aerodynamic optimization, physics-geometry representation, topology-preserving refinement
 

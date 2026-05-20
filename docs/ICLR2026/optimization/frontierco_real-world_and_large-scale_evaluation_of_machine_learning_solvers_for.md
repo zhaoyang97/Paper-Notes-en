@@ -18,8 +18,8 @@ content_hash: 7dafedabc177a540
 # FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.16952](https://arxiv.org/abs/2505.16952)
-**Code**: [HuggingFace](https://huggingface.co/datasets/CO-Bench/FrontierCO)
+**arXiv**: [2505.16952](https://arxiv.org/abs/2505.16952)  
+**Code**: [HuggingFace](https://huggingface.co/datasets/CO-Bench/FrontierCO)  
 **Area**: Agent / Combinatorial Optimization
 **Keywords**: combinatorial optimization, ML solver, benchmark, real-world instances, LLM agent
 

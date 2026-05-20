@@ -18,8 +18,8 @@ content_hash: b49ae359081392c8
 # Feedback Adaptation for Retrieval-Augmented Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.06647](https://arxiv.org/abs/2604.06647)
-**Code**: None
+**arXiv**: [2604.06647](https://arxiv.org/abs/2604.06647)  
+**Code**: None  
 **Area**: Information Retrieval / RAG
 **Keywords**: RAG, feedback adaptation, correction latency, PatchRAG, online learning
 

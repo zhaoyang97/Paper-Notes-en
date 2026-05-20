@@ -18,8 +18,8 @@ content_hash: 0ee91fbb0e0129ae
 # OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05514](https://arxiv.org/abs/2604.05514)
-**Code**: [GitHub](https://github.com/Haoyue-Yang/OmniDiagram)
+**arXiv**: [2604.05514](https://arxiv.org/abs/2604.05514)  
+**Code**: [GitHub](https://github.com/Haoyue-Yang/OmniDiagram)  
 **Area**: Code Intelligence / Multimodal Code Generation
 **Keywords**: diagram code generation, visual question answering reward, reinforcement learning, unified framework, multimodal
 

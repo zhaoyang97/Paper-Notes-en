@@ -18,8 +18,8 @@ content_hash: f6d11574c67e97be
 # MoSE: Hierarchical Self-Distillation Enhances Early Layer Embeddings
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.03008](https://arxiv.org/abs/2503.03008)
-**Code**: [HuggingFace](https://huggingface.co/modularStarEncoder)
+**arXiv**: [2503.03008](https://arxiv.org/abs/2503.03008)  
+**Code**: [HuggingFace](https://huggingface.co/modularStarEncoder)  
 **Area**: Code Intelligence
 **Keywords**: Self-distillation, Multi-exit network, Code retrieval, Early exit, Modular deployment
 

@@ -18,8 +18,8 @@ content_hash: 08a7d21cfabc1301
 # Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15392](https://arxiv.org/abs/2509.15392)
-**Code**: Available (provided in supplementary material)
+**arXiv**: [2509.15392](https://arxiv.org/abs/2509.15392)  
+**Code**: Available (provided in supplementary material)  
 **Area**: Reinforcement Learning
 **Keywords**: Stackelberg games, mean field games, Actor-Critic, non-asymptotic convergence, bilevel optimization
 

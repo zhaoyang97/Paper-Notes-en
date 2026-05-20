@@ -18,8 +18,8 @@ content_hash: 6f03ee8a5854d712
 # Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16738](https://arxiv.org/abs/2509.16738)
-**Code**: [https://github.com/ASCIIJK/MiN-NeurIPS2025](https://github.com/ASCIIJK/MiN-NeurIPS2025)
+**arXiv**: [2509.16738](https://arxiv.org/abs/2509.16738)  
+**Code**: [https://github.com/ASCIIJK/MiN-NeurIPS2025](https://github.com/ASCIIJK/MiN-NeurIPS2025)  
 **Area**: Model Compression / Incremental Learning
 **Keywords**: Class-incremental learning, pre-trained models, parameter drift, positive noise, catastrophic forgetting suppression
 

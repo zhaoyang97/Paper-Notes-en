@@ -18,8 +18,8 @@ content_hash: 67fa1f60e8077674
 # FF3R: Feedforward Feature 3D Reconstruction from Unconstrained Views
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.09862](https://arxiv.org/abs/2604.09862)
-**Code**: [https://chaoyizh.github.io/ff3r_project](https://chaoyizh.github.io/ff3r_project)
+**arXiv**: [2604.09862](https://arxiv.org/abs/2604.09862)  
+**Code**: [https://chaoyizh.github.io/ff3r_project](https://chaoyizh.github.io/ff3r_project)  
 **Area**: 3D Vision
 **Keywords**: 3D Reconstruction, Semantic Understanding, Feedforward Architecture, 3D Gaussians, Annotation-Free Training
 

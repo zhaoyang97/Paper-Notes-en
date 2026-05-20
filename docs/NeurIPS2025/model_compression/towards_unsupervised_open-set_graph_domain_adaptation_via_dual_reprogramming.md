@@ -18,8 +18,8 @@ content_hash: a61dce322d8efeb7
 # Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18363](https://arxiv.org/abs/2510.18363)
-**Code**: [Available](https://github.com/cszhangzhen/GraphRTA)
+**arXiv**: [2510.18363](https://arxiv.org/abs/2510.18363)  
+**Code**: [Available](https://github.com/cszhangzhen/GraphRTA)  
 **Area**: Model Compression
 **Keywords**: Graph Domain Adaptation, Open-Set Recognition, Model Reprogramming, Graph Reprogramming, Adversarial Learning
 

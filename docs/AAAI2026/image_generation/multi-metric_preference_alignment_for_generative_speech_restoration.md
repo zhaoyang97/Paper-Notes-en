@@ -18,8 +18,8 @@ content_hash: bda140a8216ae154
 # Multi-Metric Preference Alignment for Generative Speech Restoration
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.17229](https://arxiv.org/abs/2508.17229)
-**Code**: To be confirmed
+**arXiv**: [2508.17229](https://arxiv.org/abs/2508.17229)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: Preference alignment, DPO, speech restoration, multi-metric, generative models
 

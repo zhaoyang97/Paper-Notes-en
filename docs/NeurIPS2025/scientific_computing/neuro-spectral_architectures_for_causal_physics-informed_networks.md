@@ -18,8 +18,8 @@ content_hash: 9ce327dcd4fb4b7f
 # Neuro-Spectral Architectures for Causal Physics-Informed Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.04966](https://arxiv.org/abs/2509.04966)
-**Code**: [https://github.com/arthur-bizzi/neusa](https://github.com/arthur-bizzi/neusa)
+**arXiv**: [2509.04966](https://arxiv.org/abs/2509.04966)  
+**Code**: [https://github.com/arthur-bizzi/neusa](https://github.com/arthur-bizzi/neusa)  
 **Area**: Scientific Computing / PDE Solving
 **Keywords**: PINN, Spectral Methods, Neural ODE, Causality, Wave Equation
 

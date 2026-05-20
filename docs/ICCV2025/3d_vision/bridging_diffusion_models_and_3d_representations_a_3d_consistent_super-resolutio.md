@@ -18,8 +18,8 @@ content_hash: d906e2fd0f43bf42
 # Bridging Diffusion Models and 3D Representations: A 3D Consistent Super-Resolution Framework
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.04090](https://arxiv.org/abs/2508.04090)
-**Code**: [Project Page](https://consistent3dsr.github.io/)
+**arXiv**: [2508.04090](https://arxiv.org/abs/2508.04090)  
+**Code**: [Project Page](https://consistent3dsr.github.io/)  
 **Area**: 3D Vision
 **Keywords**: 3D super-resolution, diffusion models, 3D Gaussian splatting, multi-view consistency, novel view synthesis
 

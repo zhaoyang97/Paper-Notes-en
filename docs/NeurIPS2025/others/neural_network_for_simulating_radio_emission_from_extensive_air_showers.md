@@ -17,8 +17,8 @@ content_hash: c5712500f722735c
 # Neural Network for Simulating Radio Emission from Extensive Air Showers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.21407](https://arxiv.org/abs/2512.21407)
-**Code**: [Available](https://anonymous.4open.science/r/radio_nn-21BF/)
+**arXiv**: [2512.21407](https://arxiv.org/abs/2512.21407)  
+**Code**: [Available](https://anonymous.4open.science/r/radio_nn-21BF/)  
 **Area**: AI for Science / Astroparticle Physics
 **Keywords**: Cosmic rays, extensive air showers, radio emission simulation, neural network surrogate model, $X_{\text{max}}$ reconstruction
 

@@ -18,8 +18,8 @@ content_hash: 35af3db7c115b480
 # Image as an IMU: Estimating Camera Motion from a Single Motion-Blurred Image
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.17358](https://arxiv.org/abs/2503.17358)
-**Code**: None
+**arXiv**: [2503.17358](https://arxiv.org/abs/2503.17358)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: motion blur, camera motion estimation, 6DoF velocity estimation, single-image motion estimation, IMU alternative
 

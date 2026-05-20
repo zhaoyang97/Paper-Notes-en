@@ -19,7 +19,7 @@ content_hash: ac3e36568d85b541
 # SpecAttn: Speculating Sparse Attention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.27641](https://arxiv.org/abs/2510.27641)
+**arXiv**: [2510.27641](https://arxiv.org/abs/2510.27641)  
 **Area**: Model Compression
 **Keywords**: Sparse Attention, Speculative Decoding, KV Cache Pruning, KL Divergence Layer Mapping, Sorting-Free Top-p Selection, Triton Kernel
 

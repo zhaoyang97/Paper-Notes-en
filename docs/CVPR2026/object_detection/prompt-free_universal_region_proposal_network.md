@@ -18,8 +18,8 @@ content_hash: 900075d9601d8cbe
 # Prompt-Free Universal Region Proposal Network
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17554](https://arxiv.org/abs/2603.17554)
-**Code**: [GitHub](https://github.com/tangqh03/PF-RPN)
+**arXiv**: [2603.17554](https://arxiv.org/abs/2603.17554)  
+**Code**: [GitHub](https://github.com/tangqh03/PF-RPN)  
 **Area**: Object Detection
 **Keywords**: Region Proposal, Prompt-Free Detection, Zero-Shot Generalization, Learnable Embedding, Open World
 

@@ -18,8 +18,8 @@ content_hash: 99478d7589868884
 # A Token-level Text Image Foundation Model for Document Understanding (TokenFD/TokenVL)
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.02304](https://arxiv.org/abs/2503.02304)
-**Code**: [Token-family/TokenFD](https://github.com/Token-family/TokenFD)
+**arXiv**: [2503.02304](https://arxiv.org/abs/2503.02304)  
+**Code**: [Token-family/TokenFD](https://github.com/Token-family/TokenFD)  
 **Area**: Self-supervised Learning / Representation Learning
 **Keywords**: token-level alignment, visual foundation model, document understanding, OCR-free, multimodal large language model
 

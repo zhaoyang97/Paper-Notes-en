@@ -18,8 +18,8 @@ content_hash: 7972f182c544a2f3
 # Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11436](https://arxiv.org/abs/2511.11436)
-**Code**: [MoCo-INR](https://github.com/MeijiTian/MoCo-INR)
+**arXiv**: [2511.11436](https://arxiv.org/abs/2511.11436)  
+**Code**: [MoCo-INR](https://github.com/MeijiTian/MoCo-INR)  
 **Area**: Medical Imaging
 **Keywords**: Cardiac MRI reconstruction, motion compensation, implicit neural representation, unsupervised learning, undersampled reconstruction
 
@@ -45,19 +45,19 @@ MoCo-INR decomposes a dynamic CMR sequence into two continuous functions: (1) a 
 ### Key Designs
 
 1. **Continuous MoCo Representation (Continuous DVF + Canonical INR)**:
-   - Function: Replaces conventional discrete matrix-based motion compensation representations with continuous functions.
-   - Mechanism: The DVF is defined as $f: (p,t) \in \mathbb{R}^3 \mapsto u_t(p) = (\Delta x, \Delta y) \in \mathbb{R}^2$, and the canonical image is defined as $g: \tilde{p} \in \mathbb{R}^2 \mapsto x_{cano}(\tilde{p}) = a(\tilde{p}) + jb(\tilde{p}) \in \mathbb{C}$. The reconstruction proceeds as: $\tilde{p} = p + u_t(p)$, $\hat{x}_t(\tilde{p}) = \mathcal{G}_\Psi(\tilde{p})$.
-   - Design Motivation: INR exhibits a spectral bias toward low-frequency continuous signals, making it naturally suited for representing smooth motion fields; continuous representation avoids the high-frequency detail loss caused by discrete interpolation.
+    - Function: Replaces conventional discrete matrix-based motion compensation representations with continuous functions.
+    - Mechanism: The DVF is defined as $f: (p,t) \in \mathbb{R}^3 \mapsto u_t(p) = (\Delta x, \Delta y) \in \mathbb{R}^2$, and the canonical image is defined as $g: \tilde{p} \in \mathbb{R}^2 \mapsto x_{cano}(\tilde{p}) = a(\tilde{p}) + jb(\tilde{p}) \in \mathbb{C}$. The reconstruction proceeds as: $\tilde{p} = p + u_t(p)$, $\hat{x}_t(\tilde{p}) = \mathcal{G}_\Psi(\tilde{p})$.
+    - Design Motivation: INR exhibits a spectral bias toward low-frequency continuous signals, making it naturally suited for representing smooth motion fields; continuous representation avoids the high-frequency detail loss caused by discrete interpolation.
 
 2. **Coarse-to-Fine Hash Encoding**:
-   - Function: Stabilizes DVF estimation and prevents overfitting to high-frequency artifacts.
-   - Mechanism: Hash encoding maps coordinates to multi-resolution features $\gamma(p) = \gamma_1(p) \oplus \cdots \oplus \gamma_L(p)$. During training, low-frequency features ($\gamma_1$, global motion) are learned first and frozen before progressively optimizing higher-frequency features ($\gamma_2, \gamma_3, \ldots$, fine motion details).
-   - Design Motivation: Global structure is more critical for motion correction; learning low frequencies before high frequencies prevents erroneous high-frequency motion estimates from interfering with global motion capture.
+    - Function: Stabilizes DVF estimation and prevents overfitting to high-frequency artifacts.
+    - Mechanism: Hash encoding maps coordinates to multi-resolution features $\gamma(p) = \gamma_1(p) \oplus \cdots \oplus \gamma_L(p)$. During training, low-frequency features ($\gamma_1$, global motion) are learned first and frozen before progressively optimizing higher-frequency features ($\gamma_2, \gamma_3, \ldots$, fine motion details).
+    - Design Motivation: Global structure is more critical for motion correction; learning low frequencies before high frequencies prevents erroneous high-frequency motion estimates from interfering with global motion capture.
 
 3. **CNN-based Decoder**:
-   - Function: Replaces the conventional MLP decoder to enhance spatial continuity and resistance to overfitting.
-   - Mechanism: A three-layer CNN (64 filters of size 3×3, with nonlinear activations in the first two layers) replaces the MLP, leveraging CNN's inductive bias toward local structures to better approximate the continuous functions $f$ and $g$.
-   - Design Motivation: The pixel-wise mapping of MLP fails to capture spatial continuity in images; the strong fitting capacity introduced by hash encoding may cause overfitting to undersampled data and produce high-frequency artifacts, which are naturally suppressed by CNN's local receptive field.
+    - Function: Replaces the conventional MLP decoder to enhance spatial continuity and resistance to overfitting.
+    - Mechanism: A three-layer CNN (64 filters of size 3×3, with nonlinear activations in the first two layers) replaces the MLP, leveraging CNN's inductive bias toward local structures to better approximate the continuous functions $f$ and $g$.
+    - Design Motivation: The pixel-wise mapping of MLP fails to capture spatial continuity in images; the strong fitting capacity introduced by hash encoding may cause overfitting to undersampled data and produce high-frequency artifacts, which are naturally suppressed by CNN's local receptive field.
 
 ### Loss & Training
 

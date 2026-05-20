@@ -18,8 +18,8 @@ content_hash: 9d696ef9b562050d
 # Free4D: Tuning-free 4D Scene Generation with Spatial-Temporal Consistency
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.20785](https://arxiv.org/abs/2503.20785)
-**Code**: [GitHub](https://free4d.github.io/)
+**arXiv**: [2503.20785](https://arxiv.org/abs/2503.20785)  
+**Code**: [GitHub](https://free4d.github.io/)  
 **Area**: 4D Scene Generation / Diffusion Models
 **Keywords**: 4D generation, tuning-free, spatial-temporal consistency, 4D Gaussian splatting, multi-view video generation
 
@@ -55,18 +55,18 @@ Free4D consists of three stages:
 
 1. **4D Geometric Structure Initialization**: MonST3R is used to reconstruct world-coordinate point maps from reference videos. To address background redundancy, the paper proposes a **progressive static point cloud aggregation strategy**:
 
-   - Point maps are decomposed into static and dynamic components using a static mask $m_t^s$.
-   - Initialization with the static region of the first frame: $P_1^s = p_1 \odot m_1^s$.
-   - Incremental per-frame update: $P_t^s = P_{t-1}^s \cup (p_t \odot \hat{m}_t^s)$, where $\hat{m}_t^s = m_t^s \cap (1 - \bigcup_{i=1}^{t-1} m_i^s)$ avoids redundancy.
-   - Final per-frame point cloud: $P_t = P_T^s \cup (p_t \odot m_t^d)$.
+    - Point maps are decomposed into static and dynamic components using a static mask $m_t^s$.
+    - Initialization with the static region of the first frame: $P_1^s = p_1 \odot m_1^s$.
+    - Incremental per-frame update: $P_t^s = P_{t-1}^s \cup (p_t \odot \hat{m}_t^s)$, where $\hat{m}_t^s = m_t^s \cap (1 - \bigcup_{i=1}^{t-1} m_i^s)$ avoids redundancy.
+    - Final per-frame point cloud: $P_t = P_T^s \cup (p_t \odot m_t^d)$.
 
    This ensures a compact yet complete static point cloud representation while maintaining cross-frame alignment consistency.
 
 2. **Adaptive Classifier-Free Guidance (CFG)**: Standard CFG introduces color shifts and oversaturation in visible regions, while fully disabling CFG degrades inpainting quality in occluded regions. The paper proposes an adaptive strategy:
 
-   - For visible regions ($M(t,k)=1$), CFG is disabled: $\epsilon_1 = \epsilon_\theta(z_i, c)$.
-   - For occluded/missing regions ($M(t,k)=0$), CFG is enabled: $\epsilon_2 = \epsilon_\theta(z_i) + s \cdot (\epsilon_\theta(z_i,c) - \epsilon_\theta(z_i))$.
-   - Final noise fusion: $\epsilon = M(t,k) \cdot \epsilon_1 + (1-M(t,k)) \cdot \epsilon_2$.
+    - For visible regions ($M(t,k)=1$), CFG is disabled: $\epsilon_1 = \epsilon_\theta(z_i, c)$.
+    - For occluded/missing regions ($M(t,k)=0$), CFG is enabled: $\epsilon_2 = \epsilon_\theta(z_i) + s \cdot (\epsilon_\theta(z_i,c) - \epsilon_\theta(z_i))$.
+    - Final noise fusion: $\epsilon = M(t,k) \cdot \epsilon_1 + (1-M(t,k)) \cdot \epsilon_2$.
 
 3. **Point Cloud Guided Denoising (PGD)**: Coarsely rendered multi-view images are used to guide the early denoising stages. The coarse render is encoded into a latent $z_0'$ and fused at early denoising timesteps:
    $$\hat{z}_i = m \cdot z_i' + (1-m) \cdot z_i$$
@@ -79,8 +79,8 @@ Free4D consists of three stages:
 
 5. **Modulation-Based Refinement (MBR)**: Directly using generated multi-view images for pixel-level supervision introduces inconsistencies. The paper instead proposes modulation in the latent space:
 
-   - The coarse 4D-GS render $I^r$ is noise-perturbed to obtain $z_{\bar{T}}^r$.
-   - At each denoising step, the denoising direction is modulated using the latent of the generated image $z_0 = \mathcal{E}(I(t_j,k_j))$:
+    - The coarse 4D-GS render $I^r$ is noise-perturbed to obtain $z_{\bar{T}}^r$.
+    - At each denoising step, the denoising direction is modulated using the latent of the generated image $z_0 = \mathcal{E}(I(t_j,k_j))$:
    $$\tilde{z}_{0 \leftarrow i} = w_i \gamma_i z_0 + (1-w_i) z_{0 \leftarrow i}$$
    where $\gamma_i = \text{std}(z_{0 \leftarrow i}) / \text{std}(z_0)$ prevents overexposure.
    - The resulting enhanced render $\tilde{I^r}$ is used to refine the 4D-GS.

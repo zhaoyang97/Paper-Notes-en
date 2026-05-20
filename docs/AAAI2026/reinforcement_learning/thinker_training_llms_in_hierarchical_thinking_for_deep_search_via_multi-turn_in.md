@@ -18,8 +18,8 @@ content_hash: b7b6e4e61f13c86b
 # Thinker: Training LLMs in Hierarchical Thinking for Deep Search via Multi-Turn Interaction
 
 **Conference**: AAAI2026
-**arXiv**: [2511.07943](https://arxiv.org/abs/2511.07943)
-**Code**: [OpenSPG/KAG-Thinker](https://github.com/OpenSPG/KAG-Thinker)
+**arXiv**: [2511.07943](https://arxiv.org/abs/2511.07943)  
+**Code**: [OpenSPG/KAG-Thinker](https://github.com/OpenSPG/KAG-Thinker)  
 **Area**: Reinforcement Learning
 **Keywords**: deep search, hierarchical thinking, RAG, multi-turn interaction, knowledge boundary
 

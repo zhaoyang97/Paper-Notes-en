@@ -19,8 +19,8 @@ content_hash: 47a12686e878b460
 # Yo'City: Personalized and Boundless 3D Realistic City Scene Generation via Self-Critic Expansion
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.18734](https://arxiv.org/abs/2511.18734)
-**Code**: To be confirmed
+**arXiv**: [2511.18734](https://arxiv.org/abs/2511.18734)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: 3D city generation, multi-agent framework, hierarchical planning, isometric image synthesis, scene graph expansion, LLM-driven
 

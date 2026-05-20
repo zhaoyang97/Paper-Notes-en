@@ -17,8 +17,8 @@ content_hash: 17e87b6e2585fba3
 # Alias-Free ViT: Fractional Shift Invariance via Linear Attention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22673](https://arxiv.org/abs/2510.22673)
-**Code**: [https://github.com/hmichaeli/alias_free_vit](https://github.com/hmichaeli/alias_free_vit)
+**arXiv**: [2510.22673](https://arxiv.org/abs/2510.22673)  
+**Code**: [https://github.com/hmichaeli/alias_free_vit](https://github.com/hmichaeli/alias_free_vit)  
 **Area**: Vision Transformer / Robustness
 **Keywords**: shift invariance, anti-aliasing, linear attention, sub-pixel shift, shift equivariance
 

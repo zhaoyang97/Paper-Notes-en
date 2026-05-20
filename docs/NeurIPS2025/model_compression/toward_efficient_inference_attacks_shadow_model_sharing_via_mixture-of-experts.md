@@ -18,8 +18,8 @@ content_hash: 551b3cf0db9d0032
 # Toward Efficient Inference Attacks: Shadow Model Sharing via Mixture-of-Experts
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.13451](https://arxiv.org/abs/2510.13451)
-**Code**: None
+**arXiv**: [2510.13451](https://arxiv.org/abs/2510.13451)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Inference attacks, shadow models, mixture-of-experts, membership inference attack, privacy and security
 

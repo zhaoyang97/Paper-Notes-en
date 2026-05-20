@@ -18,8 +18,8 @@ content_hash: f54d8e42e6ee9665
 # PolyJuice Makes It Real: Black-Box, Universal Red Teaming for Synthetic Image Detectors
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15551](https://arxiv.org/abs/2509.15551)
-**Code**: [Project Page](https://sepehrdehdashtian.github.io/Papers/PolyJuice)
+**arXiv**: [2509.15551](https://arxiv.org/abs/2509.15551)  
+**Code**: [Project Page](https://sepehrdehdashtian.github.io/Papers/PolyJuice)  
 **Area**: LLM Alignment
 **Keywords**: synthetic image detection, red teaming, adversarial attack, text-to-image, black-box attack
 

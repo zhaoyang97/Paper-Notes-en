@@ -18,8 +18,8 @@ content_hash: b137364ee4071b3c
 # Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.09629](https://arxiv.org/abs/2504.09629)
-**Code**: [GitHub](https://github.com/FujitsuResearch/qep)
+**arXiv**: [2504.09629](https://arxiv.org/abs/2504.09629)  
+**Code**: [GitHub](https://github.com/FujitsuResearch/qep)  
 **Area**: Model Compression
 **Keywords**: post-training quantization, LLM compression, quantization error propagation, layer-wise quantization, low-bit
 

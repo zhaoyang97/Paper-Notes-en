@@ -18,8 +18,8 @@ content_hash: 0b29971c7258e435
 # SenseFlow: Scaling Distribution Matching for Flow-based Text-to-Image Distillation
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.00523](https://arxiv.org/abs/2506.00523)
-**Code**: [GitHub](https://github.com/XingtongGe/SenseFlow)
+**arXiv**: [2506.00523](https://arxiv.org/abs/2506.00523)  
+**Code**: [GitHub](https://github.com/XingtongGe/SenseFlow)  
 **Area**: Image Generation / Diffusion Model Distillation
 **Keywords**: distribution matching distillation, flow matching, text-to-image, few-step generation, FLUX
 

@@ -18,8 +18,8 @@ content_hash: 3e01baa86a642434
 # Render-of-Thought: Rendering Textual Chain-of-Thought as Images for Visual Latent Reasoning
 
 **Conference**: ACL 2026
-**arXiv**: [2601.14750](https://arxiv.org/abs/2601.14750)
-**Code**: [TencentBAC/RoT](https://github.com/TencentBAC/RoT)
+**arXiv**: [2601.14750](https://arxiv.org/abs/2601.14750)  
+**Code**: [TencentBAC/RoT](https://github.com/TencentBAC/RoT)  
 **Area**: LLM Reasoning
 **Keywords**: chain-of-thought compression, visual latent space reasoning, text-to-image rendering, CoT token compression, self-distillation
 

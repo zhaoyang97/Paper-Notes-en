@@ -18,8 +18,8 @@ content_hash: 38084c7730713091
 # Panda: Test-Time Adaptation with Negative Data Augmentation
 
 **Conference**: AAAI2026
-**arXiv**: [2511.10481](https://arxiv.org/abs/2511.10481)
-**Code**: [ruxideng/Panda](https://github.com/ruxideng/Panda)
+**arXiv**: [2511.10481](https://arxiv.org/abs/2511.10481)  
+**Code**: [ruxideng/Panda](https://github.com/ruxideng/Panda)  
 **Area**: Multimodal VLM
 **Keywords**: test-time adaptation, negative data augmentation, CLIP, prediction bias, corruption robustness
 

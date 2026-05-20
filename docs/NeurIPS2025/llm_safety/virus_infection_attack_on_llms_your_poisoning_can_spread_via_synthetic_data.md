@@ -18,8 +18,8 @@ content_hash: d312f967f41d681d
 # Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23041](https://arxiv.org/abs/2509.23041)
-**Code**: [GitHub](https://github.com/liangzid/VirusInfectionAttack)
+**arXiv**: [2509.23041](https://arxiv.org/abs/2509.23041)  
+**Code**: [GitHub](https://github.com/liangzid/VirusInfectionAttack)  
 **Area**: AI Security
 **Keywords**: data poisoning, synthetic data, backdoor attack, LLM security, poisoning propagation
 

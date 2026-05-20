@@ -18,8 +18,8 @@ content_hash: d21acb2b4859fd5a
 # IGen: Scalable Data Generation for Robot Learning from Open-World Images
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.01773](https://arxiv.org/abs/2512.01773)
-**Code**: [https://chenghaogu.github.io/IGen/](https://chenghaogu.github.io/IGen/)
+**arXiv**: [2512.01773](https://arxiv.org/abs/2512.01773)  
+**Code**: [https://chenghaogu.github.io/IGen/](https://chenghaogu.github.io/IGen/)  
 **Area**: Robotics
 **Keywords**: Robot learning, data generation, open-world images, visuomotor policy, 3D reconstruction
 

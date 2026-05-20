@@ -18,8 +18,8 @@ content_hash: 23f31106b1abe21e
 # AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29410](https://arxiv.org/abs/2603.29410)
-**Code**: [GitHub](https://github.com/YuboCui/AGFT)
+**arXiv**: [2603.29410](https://arxiv.org/abs/2603.29410)  
+**Code**: [GitHub](https://github.com/YuboCui/AGFT)  
 **Area**: Multimodal VLM / Adversarial Robustness
 **Keywords**: adversarial robustness, vision-language models, zero-shot generalization, alignment guidance, distribution consistency calibration
 

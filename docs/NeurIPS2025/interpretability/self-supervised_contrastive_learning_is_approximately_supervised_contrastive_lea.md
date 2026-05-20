@@ -18,8 +18,8 @@ content_hash: 6c1273a90cff607c
 # Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04411](https://arxiv.org/abs/2506.04411)
-**Code**: Available (project page)
+**arXiv**: [2506.04411](https://arxiv.org/abs/2506.04411)  
+**Code**: Available (project page)  
 **Area**: Interpretability
 **Keywords**: Contrastive Learning, Self-Supervised Learning, Supervised Contrastive Loss, Neural Collapse, Few-Shot Learning
 

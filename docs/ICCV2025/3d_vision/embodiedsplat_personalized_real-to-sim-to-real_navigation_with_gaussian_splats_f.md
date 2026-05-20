@@ -19,8 +19,8 @@ content_hash: 1331d0e4459d8321
 # EmbodiedSplat: Personalized Real-to-Sim-to-Real Navigation with Gaussian Splats from a Mobile Device
 
 **Conference**: ICCV 2025
-**arXiv**: 2509.17430
-**Code**: [https://gchhablani.github.io/embodied-splat](https://gchhablani.github.io/embodied-splat) (Project Page)
+**arXiv**: 2509.17430  
+**Code**: [https://gchhablani.github.io/embodied-splat](https://gchhablani.github.io/embodied-splat) (Project Page)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Embodied Navigation, Sim-to-Real Transfer, Scene Reconstruction, Personalized Policy Training, ImageNav
 

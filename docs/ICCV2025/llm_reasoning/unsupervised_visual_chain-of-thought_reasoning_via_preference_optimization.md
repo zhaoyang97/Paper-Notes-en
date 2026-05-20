@@ -18,8 +18,8 @@ content_hash: 65305fef1660f09c
 # Unsupervised Visual Chain-of-Thought Reasoning via Preference Optimization
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.18397](https://arxiv.org/abs/2504.18397)
-**Code**: [https://github.com/kesenzhao/UV-CoT](https://github.com/kesenzhao/UV-CoT)
+**arXiv**: [2504.18397](https://arxiv.org/abs/2504.18397)  
+**Code**: [https://github.com/kesenzhao/UV-CoT](https://github.com/kesenzhao/UV-CoT)  
 **Area**: LLM Reasoning / Multimodal
 **Keywords**: Visual CoT, Preference Optimization, Unsupervised Learning, Multimodal Reasoning, Bounding Box
 

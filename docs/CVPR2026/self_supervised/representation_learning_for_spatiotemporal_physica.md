@@ -18,8 +18,8 @@ content_hash: 792f5d2106555484
 # Representation Learning for Spatiotemporal Physical Systems
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13227](https://arxiv.org/abs/2603.13227)
-**Code**: [GitHub](https://github.com/helenqu/physical-representation-learning)
+**arXiv**: [2603.13227](https://arxiv.org/abs/2603.13227)  
+**Code**: [GitHub](https://github.com/helenqu/physical-representation-learning)  
 **Area**: Self-Supervised / Representation Learning
 **Keywords**: JEPA, Physical Systems, Representation Learning, Parameter Estimation, VICReg
 

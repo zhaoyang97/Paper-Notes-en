@@ -18,8 +18,8 @@ content_hash: 15be9ddb0c9f20a7
 # A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04913](https://arxiv.org/abs/2604.04913)
-**Code**: [deltatok.github.io](https://deltatok.github.io)
+**arXiv**: [2604.04913](https://arxiv.org/abs/2604.04913)  
+**Code**: [deltatok.github.io](https://deltatok.github.io)  
 **Area**: Time-Series Forecasting / World Models
 **Keywords**: World Models, Delta Token, Video Prediction, Frame-Difference Compression, Best-of-Many Training
 

@@ -18,8 +18,8 @@ content_hash: 0dda5deb63d67ca6
 # Prototype-Guided Concept Erasure in Diffusion Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.08271](https://arxiv.org/abs/2603.08271)
-**Code**: [https://github.com/Cocteau-23/Prototype-Guided-Concept-Erasure](https://github.com/Cocteau-23/Prototype-Guided-Concept-Erasure)
+**arXiv**: [2603.08271](https://arxiv.org/abs/2603.08271)  
+**Code**: [https://github.com/Cocteau-23/Prototype-Guided-Concept-Erasure](https://github.com/Cocteau-23/Prototype-Guided-Concept-Erasure)  
 **Area**: Image Generation
 **Keywords**: Concept Erasure, Diffusion Model Safety, NSFW Content Filtering, Prototype Learning, Training-Free Inference
 

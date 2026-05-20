@@ -18,8 +18,8 @@ content_hash: d82ede5db88f9356
 # Learning Molecular Chirality via Chiral Determinant Kernels
 
 **Conference**: ICLR2026
-**arXiv**: [2602.07415](https://arxiv.org/abs/2602.07415)
-**Code**: To be confirmed
+**arXiv**: [2602.07415](https://arxiv.org/abs/2602.07415)  
+**Code**: To be confirmed  
 **Area**: Signal Communication
 **Keywords**: molecular chirality, chiral determinant kernel, equivariant graph neural network, axial chirality, SE(3) invariance
 
@@ -39,22 +39,22 @@ Given a molecule $\bm{z} = (\bm{X}, \bm{H})$ (3D coordinates + atom features), a
 ### Key Designs
 1. **Chiral Determinant Kernel (ChiDeK)**:
 
-   - A chiral matrix $\bm{M}_C(i)$ is constructed from the 3D coordinates of the four substituents of chiral atom $i$, forming a $3 \times 3$ matrix.
-   - After transformation by a learnable projection $\bm{W} \in \mathbb{R}^{k \times d_p \times 3}$, QR decomposition is applied and $\det(\bm{R})$ is taken as the determinant feature.
-   - Key property: $\det(\bm{R}) = \alpha(\bm{W}) \cdot P_C(i)$, proportional to the original chiral product, preserving SE(3) invariance and changing sign under reflection.
-   - Outputs a $k$-dimensional embedding ($k$ determinant kernels), carrying $k$ times more information than a scalar chiral volume.
+    - A chiral matrix $\bm{M}_C(i)$ is constructed from the 3D coordinates of the four substituents of chiral atom $i$, forming a $3 \times 3$ matrix.
+    - After transformation by a learnable projection $\bm{W} \in \mathbb{R}^{k \times d_p \times 3}$, QR decomposition is applied and $\det(\bm{R})$ is taken as the determinant feature.
+    - Key property: $\det(\bm{R}) = \alpha(\bm{W}) \cdot P_C(i)$, proportional to the original chiral product, preserving SE(3) invariance and changing sign under reflection.
+    - Outputs a $k$-dimensional embedding ($k$ determinant kernels), carrying $k$ times more information than a scalar chiral volume.
 
 2. **Unified Treatment of Central and Axial Chirality**:
 
-   - Central chirality: the four neighbors of a tetrahedral center atom form $\bm{M}_C$.
-   - Axial chirality: the nearest substituent atoms on each side of the rotationally restricted bond serve as inputs to $\bm{M}_C$.
-   - Both chirality types are handled by an **identical mathematical framework**.
+    - Central chirality: the four neighbors of a tetrahedral center atom form $\bm{M}_C$.
+    - Axial chirality: the nearest substituent atoms on each side of the rotationally restricted bond serve as inputs to $\bm{M}_C$.
+    - Both chirality types are handled by an **identical mathematical framework**.
 
 3. **Chiral Cross-Attention**:
 
-   - Chiral atom embeddings serve as queries; chirality-related and non-chiral atoms are projected as keys/values respectively.
-   - GKPT (Gaussian Kernel with Pair Type) distance biases are incorporated, distinguishing between chiral–chirality-related and chiral–non-chiral atom pairs.
-   - $L$ layers are stacked, with pairwise biases updated at each layer.
+    - Chiral atom embeddings serve as queries; chirality-related and non-chiral atoms are projected as keys/values respectively.
+    - GKPT (Gaussian Kernel with Pair Type) distance biases are incorporated, distinguishing between chiral–chirality-related and chiral–non-chiral atom pairs.
+    - $L$ layers are stacked, with pairwise biases updated at each layer.
 
 ### Loss & Training
 - Standard classification/regression loss plus weight regularization $\mathcal{L}_{reg} = \|W^\top W - I_3\|^2$ to ensure full-rank projection matrices.

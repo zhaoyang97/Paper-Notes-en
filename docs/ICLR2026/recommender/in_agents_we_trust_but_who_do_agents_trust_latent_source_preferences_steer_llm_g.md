@@ -17,7 +17,7 @@ content_hash: 6f616b12fe32602a
 # In Agents We Trust, but Who Do Agents Trust? Latent Source Preferences Steer LLM Generations
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.15456](https://arxiv.org/abs/2602.15456)
+**arXiv**: [2602.15456](https://arxiv.org/abs/2602.15456)  
 **Area**: Recommender Systems / LLM Bias Analysis
 **Keywords**: LLM Agent, Source Preference, Trust Bias, Brand Perception, Recommender Systems
 

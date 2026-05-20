@@ -18,8 +18,8 @@ content_hash: e31dee3584745b16
 # CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction
 
 **Conference**: AAAI2026
-**arXiv**: [2507.13425](https://arxiv.org/abs/2507.13425)
-**Code**: [srwang0506/CaTFormer](https://github.com/srwang0506/CaTFormer)
+**arXiv**: [2507.13425](https://arxiv.org/abs/2507.13425)  
+**Code**: [srwang0506/CaTFormer](https://github.com/srwang0506/CaTFormer)  
 **Area**: Autonomous Driving
 **Keywords**: driving intention prediction, causal inference, Transformer, dual-stream fusion, counterfactual reasoning
 

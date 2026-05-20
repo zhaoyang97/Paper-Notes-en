@@ -18,8 +18,8 @@ content_hash: 56e8319ba36c2722
 # ContextBench: Modifying Contexts for Targeted Latent Activation
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.15735](https://arxiv.org/abs/2506.15735)
-**Code**: [https://github.com/lasr-eliciting-contexts/ContextBench](https://github.com/lasr-eliciting-contexts/ContextBench)
+**arXiv**: [2506.15735](https://arxiv.org/abs/2506.15735)  
+**Code**: [https://github.com/lasr-eliciting-contexts/ContextBench](https://github.com/lasr-eliciting-contexts/ContextBench)  
 **Area**: Image Generation
 **Keywords**: Context modification, latent feature activation, AI safety, sparse autoencoders, backdoor detection
 

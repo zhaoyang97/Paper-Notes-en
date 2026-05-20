@@ -19,8 +19,8 @@ content_hash: 6938594ba3e352ba
 # Visual Planning: Let's Think Only with Images
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.11409](https://arxiv.org/abs/2505.11409)
-**Code**: [GitHub](https://github.com/yix8/VisualPlanning)
+**arXiv**: [2505.11409](https://arxiv.org/abs/2505.11409)  
+**Code**: [GitHub](https://github.com/yix8/VisualPlanning)  
 **Area**: Robotics
 **Keywords**: Visual Planning, Pure Image Reasoning, Large Vision Model, GRPO, Reinforcement Learning, Navigation
 

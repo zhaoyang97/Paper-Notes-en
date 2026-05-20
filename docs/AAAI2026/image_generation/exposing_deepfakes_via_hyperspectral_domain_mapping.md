@@ -18,8 +18,8 @@ content_hash: ada6b80d29c25cdc
 # Exposing DeepFakes via Hyperspectral Domain Mapping
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11732](https://arxiv.org/abs/2511.11732)
-**Code**: None
+**arXiv**: [2511.11732](https://arxiv.org/abs/2511.11732)  
+**Code**: None  
 **Area**: Image Generation / Deepfake Detection
 **Keywords**: Deepfake detection, hyperspectral imaging, spectral reconstruction, frequency domain analysis, cross-domain generalization
 

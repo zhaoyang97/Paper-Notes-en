@@ -19,8 +19,8 @@ content_hash: f52cb70effc51c8a
 # Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21379](https://arxiv.org/abs/2510.21379)
-**Code**: [GitHub](https://github.com/db-Lee/CFBO)
+**arXiv**: [2510.21379](https://arxiv.org/abs/2510.21379)  
+**Code**: [GitHub](https://github.com/db-Lee/CFBO)  
 **Area**: LLM Evaluation
 **Keywords**: Hyperparameter Optimization, Bayesian Optimization, Freeze-thaw, Cost-Sensitive, Learning Curve Extrapolation, Transfer Learning
 

@@ -18,8 +18,8 @@ content_hash: 18dee15fbdb79659
 # Designing to Forget: Deep Semi-parametric Models for Unlearning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22870](https://arxiv.org/abs/2603.22870)
-**Code**: [github.com/amberyzheng/spm_unlearning](https://github.com/amberyzheng/spm_unlearning)
+**arXiv**: [2603.22870](https://arxiv.org/abs/2603.22870)  
+**Code**: [github.com/amberyzheng/spm_unlearning](https://github.com/amberyzheng/spm_unlearning)  
 **Area**: Others (Machine Unlearning / AI Safety)
 **Keywords**: machine unlearning, semi-parametric models, test-time deletion, data privacy, diffusion models
 

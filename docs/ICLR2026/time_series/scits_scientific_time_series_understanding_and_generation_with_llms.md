@@ -9,6 +9,7 @@ tags:
 date: 2026-05-08
 content_hash: cf4e543b0492e135
 ---
+
 ## TL;DR
 This work proposes the SciTS benchmark covering 43 tasks across 12 scientific domains with 54K+ instances (lengths from $10^0$ to $10^7$, frequencies up to 10 MHz), systematically evaluates 17 models and finds that general-purpose LLMs generalize better than specialized time-series models while text/image encodings each have distinct limitations, and accordingly designs the TimeOmni framework, which employs multi-patch experts with a routing mechanism and patch reprogramming to explicitly model temporal dynamics in joint training with an LLM backbone.
 

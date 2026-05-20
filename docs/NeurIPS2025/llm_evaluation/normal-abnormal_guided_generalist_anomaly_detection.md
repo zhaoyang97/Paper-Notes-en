@@ -18,8 +18,8 @@ content_hash: df3bff52d3532981
 # Normal-Abnormal Guided Generalist Anomaly Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.00495](https://arxiv.org/abs/2510.00495)
-**Code**: [GitHub](https://github.com/JasonKyng/NAGL)
+**arXiv**: [2510.00495](https://arxiv.org/abs/2510.00495)  
+**Code**: [GitHub](https://github.com/JasonKyng/NAGL)  
 **Area**: LLM Evaluation
 **Keywords**: generalist anomaly detection, cross-domain transfer, residual learning, normal-abnormal reference, meta-learning
 

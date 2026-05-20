@@ -18,8 +18,8 @@ content_hash: 46933abc85f3d25d
 # COSMO-INR: Complex Sinusoidal Modulation for Implicit Neural Representations
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.11640](https://arxiv.org/abs/2505.11640)
-**Code**: To be confirmed
+**arXiv**: [2505.11640](https://arxiv.org/abs/2505.11640)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: Implicit neural representations, activation function design, spectral bias, Chebyshev polynomials, complex sinusoidal modulation
 

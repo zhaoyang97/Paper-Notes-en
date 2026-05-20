@@ -18,8 +18,8 @@ content_hash: 0d5f9b973a1868bd
 # Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding
 
 **Conference**: CVPR2026
-**arXiv**: [2603.15167](https://arxiv.org/abs/2603.15167)
-**Code**: [FujitsuResearch/QViC-MF](https://github.com/FujitsuResearch/QViC-MF)
+**arXiv**: [2603.15167](https://arxiv.org/abs/2603.15167)  
+**Code**: [FujitsuResearch/QViC-MF](https://github.com/FujitsuResearch/QViC-MF)  
 **Area**: Video Understanding
 **Keywords**: long video understanding, visual compression, memory feedback, question-guided attention, large multimodal models
 

@@ -18,8 +18,8 @@ content_hash: 7eadf0a06d7a10d2
 # MotionAgent: Fine-grained Controllable Video Generation via Motion Field Agent
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.03207](https://arxiv.org/abs/2502.03207)
-**Code**: [GitHub](https://github.com/leoisufa/MotionAgent)
+**arXiv**: [2502.03207](https://arxiv.org/abs/2502.03207)  
+**Code**: [GitHub](https://github.com/leoisufa/MotionAgent)  
 **Area**: Video Generation
 **Keywords**: Image-to-video generation, motion field agent, optical flow, fine-grained motion control, diffusion models
 

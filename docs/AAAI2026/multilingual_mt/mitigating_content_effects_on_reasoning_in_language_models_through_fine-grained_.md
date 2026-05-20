@@ -18,8 +18,8 @@ content_hash: 07671e54f411e4d1
 # Mitigating Content Effects on Reasoning in Language Models through Fine-Grained Activation Steering
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.12189](https://arxiv.org/abs/2505.12189)
-**Code**: [https://github.com/neuro-symbolic-ai/steering_content_effects](https://github.com/neuro-symbolic-ai/steering_content_effects)
+**arXiv**: [2505.12189](https://arxiv.org/abs/2505.12189)  
+**Code**: [https://github.com/neuro-symbolic-ai/steering_content_effects](https://github.com/neuro-symbolic-ai/steering_content_effects)  
 **Area**: Multilingual Translation
 **Keywords**: content effects, activation steering, syllogistic reasoning, formal logic, reasoning bias
 

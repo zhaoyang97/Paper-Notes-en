@@ -18,8 +18,8 @@ content_hash: ec7a1bcec3c28b4e
 # CAPTURe: Evaluating Spatial Reasoning in Vision Language Models via Occluded Object Counting
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.15485](https://arxiv.org/abs/2504.15485)
-**Code**: [https://github.com/atinpothiraj/CAPTURe](https://github.com/atinpothiraj/CAPTURe)
+**arXiv**: [2504.15485](https://arxiv.org/abs/2504.15485)  
+**Code**: [https://github.com/atinpothiraj/CAPTURe](https://github.com/atinpothiraj/CAPTURe)  
 **Area**: Multimodal VLM
 **Keywords**: VLM evaluation, spatial reasoning, amodal completion, occlusion, counting benchmark
 

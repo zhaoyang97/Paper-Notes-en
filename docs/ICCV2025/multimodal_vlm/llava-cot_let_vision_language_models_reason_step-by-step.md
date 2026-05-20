@@ -18,8 +18,8 @@ content_hash: e4195bc61b3db750
 # LLaVA-CoT: Let Vision Language Models Reason Step-by-Step
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.10440](https://arxiv.org/abs/2411.10440)
-**Code**: [https://github.com/PKU-YuanGroup/LLaVA-CoT](https://github.com/PKU-YuanGroup/LLaVA-CoT)
+**arXiv**: [2411.10440](https://arxiv.org/abs/2411.10440)  
+**Code**: [https://github.com/PKU-YuanGroup/LLaVA-CoT](https://github.com/PKU-YuanGroup/LLaVA-CoT)  
 **Area**: Multimodal VLM / LLM Reasoning
 **Keywords**: Vision-Language Models, Multi-Stage Reasoning, Chain-of-Thought, Test-Time Scaling, Structured Reasoning
 

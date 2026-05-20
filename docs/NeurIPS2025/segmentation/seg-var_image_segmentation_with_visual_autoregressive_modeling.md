@@ -18,8 +18,8 @@ content_hash: e3df80d4e026528e
 # Seg-VAR: Image Segmentation with Visual Autoregressive Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.12594](https://arxiv.org/abs/2511.12594)
-**Code**: [GitHub](https://github.com/rkzheng99/Seg-VAR)
+**arXiv**: [2511.12594](https://arxiv.org/abs/2511.12594)  
+**Code**: [GitHub](https://github.com/rkzheng99/Seg-VAR)  
 **Area**: Image Segmentation
 **Keywords**: Visual Autoregressive Modeling, Universal Image Segmentation, Seglat, Spatial-Aware Color Mapping, Generative Segmentation
 

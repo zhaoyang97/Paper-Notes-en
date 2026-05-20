@@ -18,8 +18,8 @@ content_hash: c9b8c5150a3fead1
 # Dataset Distillation as Pushforward Optimal Quantization
 
 **Conference**: ICLR2026
-**arXiv**: [2501.07681](https://arxiv.org/abs/2501.07681)
-**Code**: None
+**arXiv**: [2501.07681](https://arxiv.org/abs/2501.07681)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Dataset Distillation, Optimal Quantization, Wasserstein Distance, Diffusion Models, Latent Space Clustering
 

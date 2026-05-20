@@ -19,8 +19,8 @@ content_hash: 38b278dc99b34791
 # Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.23631](https://arxiv.org/abs/2510.23631)
-**Code**: None
+**arXiv**: [2510.23631](https://arxiv.org/abs/2510.23631)  
+**Code**: None  
 **Area**: LLM Alignment / Preference Optimization
 **Keywords**: preference optimization, ranked choice, DPO, Mallows model, multinomial logit, alignment
 

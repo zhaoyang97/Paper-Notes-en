@@ -18,8 +18,8 @@ content_hash: ba7b830cbae50097
 # Towards Understanding Valuable Preference Data for Large Language Model Alignment
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.13212](https://arxiv.org/abs/2510.13212)
-**Code**: [GitHub](https://github.com/tmlr-group/TIF_LossDiff-IRM)
+**arXiv**: [2510.13212](https://arxiv.org/abs/2510.13212)  
+**Code**: [GitHub](https://github.com/tmlr-group/TIF_LossDiff-IRM)  
 **Area**: LLM Alignment
 **Keywords**: Preference data selection, influence function, DPO, data quality, model dependency
 
@@ -51,27 +51,27 @@ This work studies preference data quality from a model-dependent perspective. It
 
 1. **Truncated Influence Function (TIF)**
 
-   - **Function**: Corrects the overfitting problem of classical IF in preference alignment.
-   - **Mechanism**: IF scores are divided by percentile into small/medium/large groups. Empirical analysis shows: small-IF data corresponds to noise/ambiguity (eval loss increases, reward margin becomes negative after training); large-IF data leads to overfitting (eval loss first decreases then increases, a few pairs are over-optimized to extreme margins); **medium-IF data** is optimal (eval loss decreases steadily, margin increases steadily). TIF is defined as: $\text{TIF}(d) = \mathbb{I}[\delta_{small} < \text{IF}(d) < \delta_{large}]$
-   - **Design Motivation**: Since preference alignment is open-ended, validation gradients are imperfect proxies for human preference. Extreme IF values in either direction reflect low-quality data. This is counter-intuitive relative to the classification setting where high IF implies good data, yet is well-grounded for alignment.
+    - **Function**: Corrects the overfitting problem of classical IF in preference alignment.
+    - **Mechanism**: IF scores are divided by percentile into small/medium/large groups. Empirical analysis shows: small-IF data corresponds to noise/ambiguity (eval loss increases, reward margin becomes negative after training); large-IF data leads to overfitting (eval loss first decreases then increases, a few pairs are over-optimized to extreme margins); **medium-IF data** is optimal (eval loss decreases steadily, margin increases steadily). TIF is defined as: $\text{TIF}(d) = \mathbb{I}[\delta_{small} < \text{IF}(d) < \delta_{large}]$
+    - **Design Motivation**: Since preference alignment is open-ended, validation gradients are imperfect proxies for human preference. Extreme IF values in either direction reflect low-quality data. This is counter-intuitive relative to the classification setting where high IF implies good data, yet is well-grounded for alignment.
 
 2. **Loss Difference (LossDiff) — Validation-Dependent Proxy**
 
-   - **Function**: Approximates IF via forward passes, avoiding gradient computation.
-   - **Mechanism**: An auxiliary model $\pi_{\theta_{val}}$ is trained on the validation set; LossDiff is then computed as $\text{LossDiff}(d) = \ell(\theta; d) - \ell(\theta_{val}; d)$. Intuitively, a large LossDiff indicates that moving from $\theta$ toward $\theta_{val}$ reduces the loss on sample $d$, implying alignment with the validation objective.
-   - **Design Motivation**: LossDiff is proven to be positively correlated with IF (Pearson $r = 0.77$). Only two forward passes are required; no backpropagation is needed.
+    - **Function**: Approximates IF via forward passes, avoiding gradient computation.
+    - **Mechanism**: An auxiliary model $\pi_{\theta_{val}}$ is trained on the validation set; LossDiff is then computed as $\text{LossDiff}(d) = \ell(\theta; d) - \ell(\theta_{val}; d)$. Intuitively, a large LossDiff indicates that moving from $\theta$ toward $\theta_{val}$ reduces the loss on sample $d$, implying alignment with the validation objective.
+    - **Design Motivation**: LossDiff is proven to be positively correlated with IF (Pearson $r = 0.77$). Only two forward passes are required; no backpropagation is needed.
 
 3. **Implicit Reward Margin (IRM) — Validation-Free Proxy**
 
-   - **Function**: Evaluates data quality using only the current model's internal signal.
-   - **Mechanism**: $\text{IRM}(d) = \beta \log \frac{\pi_\theta(y_w|x)}{\pi_{ref}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{ref}(y_l|x)}$, i.e., the argument inside the sigmoid in the DPO loss.
-   - **Design Motivation**: IRM measures the model's preference strength for chosen over rejected responses. It is positively correlated with IF ($r = 0.67$), though weaker than LossDiff due to the absence of validation information. Its key advantage is requiring no validation set whatsoever.
+    - **Function**: Evaluates data quality using only the current model's internal signal.
+    - **Mechanism**: $\text{IRM}(d) = \beta \log \frac{\pi_\theta(y_w|x)}{\pi_{ref}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{ref}(y_l|x)}$, i.e., the argument inside the sigmoid in the DPO loss.
+    - **Design Motivation**: IRM measures the model's preference strength for chosen over rejected responses. It is positively correlated with IF ($r = 0.67$), though weaker than LossDiff due to the absence of validation information. Its key advantage is requiring no validation set whatsoever.
 
 4. **LossDiff-IRM Combined Selector**
 
-   - **Function**: Selects data in the intersection of both metrics' intermediate intervals.
-   - **Mechanism**: Data satisfying both LossDiff and IRM falling within intermediate percentile ranges are retained. Since the two metrics have different sources of error (one validation-dependent, the other not), their intersection mutually cancels errors.
-   - **Design Motivation**: Each individual TIF approximation has limited precision (overlap ~0.67–0.70); the combination raises overlap to 0.73–0.78.
+    - **Function**: Selects data in the intersection of both metrics' intermediate intervals.
+    - **Mechanism**: Data satisfying both LossDiff and IRM falling within intermediate percentile ranges are retained. Since the two metrics have different sources of error (one validation-dependent, the other not), their intersection mutually cancels errors.
+    - **Design Motivation**: Each individual TIF approximation has limited precision (overlap ~0.67–0.70); the combination raises overlap to 0.73–0.78.
 
 ### Loss & Training
 - **Warm-up**: DPO training on the full dataset for 1 epoch.

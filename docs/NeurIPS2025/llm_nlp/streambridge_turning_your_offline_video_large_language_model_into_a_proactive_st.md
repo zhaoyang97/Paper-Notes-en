@@ -18,8 +18,8 @@ content_hash: 1bdf23bf52367e24
 # StreamBridge: Turning Your Offline Video Large Language Model into a Proactive Streaming Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.05467](https://arxiv.org/abs/2505.05467)
-**Code**: N/A
+**arXiv**: [2505.05467](https://arxiv.org/abs/2505.05467)  
+**Code**: N/A  
 **Area**: Video Understanding / Streaming Video LLM
 **Keywords**: Streaming Video Understanding, Video-LLM, Proactive Response, Multi-turn Interaction, Activation Model
 

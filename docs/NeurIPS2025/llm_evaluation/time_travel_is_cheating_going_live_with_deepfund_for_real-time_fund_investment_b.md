@@ -19,8 +19,8 @@ content_hash: 61157255abfa4b32
 # Time Travel is Cheating: Going Live with DeepFund for Real-Time Fund Investment Benchmarking
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11065](https://arxiv.org/abs/2505.11065)
-**Code**: [GitHub](https://github.com/HKUSTDial/DeepFund)
+**arXiv**: [2505.11065](https://arxiv.org/abs/2505.11065)  
+**Code**: [GitHub](https://github.com/HKUSTDial/DeepFund)  
 **Area**: LLM Evaluation
 **Keywords**: LLM trading, live benchmarking, multi-agent, fund investment, information leakage, financial evaluation
 

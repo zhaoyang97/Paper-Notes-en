@@ -18,8 +18,8 @@ content_hash: aaffaa6eeb91bf3f
 # Evoking User Memory: Personalizing LLM via Recollection-Familiarity Adaptive Retrieval
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.09250](https://arxiv.org/abs/2603.09250)
-**Code**: See Reproducibility Statement in the paper
+**arXiv**: [2603.09250](https://arxiv.org/abs/2603.09250)  
+**Code**: See Reproducibility Statement in the paper  
 **Area**: Personalization / Information Retrieval
 **Keywords**: LLM personalization, memory retrieval, dual-process theory, adaptive retrieval, cognitive science
 

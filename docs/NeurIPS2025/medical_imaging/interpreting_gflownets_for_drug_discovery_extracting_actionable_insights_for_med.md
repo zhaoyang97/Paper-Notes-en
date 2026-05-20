@@ -18,8 +18,8 @@ content_hash: 7421faf995df59fa
 # Interpreting GFlowNets for Drug Discovery: Extracting Actionable Insights for Medicinal Chemistry
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.19264](https://arxiv.org/abs/2511.19264)
-**Code**: [GitHub](https://github.com/amirtha-montai/synflownet_public/tree/main/src/interpretability)
+**arXiv**: [2511.19264](https://arxiv.org/abs/2511.19264)  
+**Code**: [GitHub](https://github.com/amirtha-montai/synflownet_public/tree/main/src/interpretability)  
 **Area**: Drug Discovery / Explainable AI
 **Keywords**: GFlowNet, Interpretability, Drug Discovery, Sparse Autoencoder, Counterfactual Analysis
 

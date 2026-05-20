@@ -17,8 +17,8 @@ content_hash: 3e2944763777a1fc
 # A Switching Framework for Online Interval Scheduling with Predictions
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16194](https://arxiv.org/abs/2511.16194)
-**Code**: None
+**arXiv**: [2511.16194](https://arxiv.org/abs/2511.16194)  
+**Code**: None  
 **Area**: Online Algorithms / Learning-Augmented Algorithms / Scheduling Optimization
 **Keywords**: Online interval scheduling, learning-augmented algorithms, competitive ratio, consistency–robustness tradeoff, randomized algorithms
 

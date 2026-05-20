@@ -18,8 +18,8 @@ content_hash: 60fba58a24f7a158
 # OpenVision: A Fully-Open, Cost-Effective Family of Advanced Vision Encoders for Multimodal Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.04601](https://arxiv.org/abs/2505.04601)
-**Code**: [https://github.com/UCSC-VLAA/OpenVision](https://github.com/UCSC-VLAA/OpenVision)
+**arXiv**: [2505.04601](https://arxiv.org/abs/2505.04601)  
+**Code**: [https://github.com/UCSC-VLAA/OpenVision](https://github.com/UCSC-VLAA/OpenVision)  
 **Area**: Multimodal VLM / Vision Encoders
 **Keywords**: CLIP, Vision Encoder, Open Source, Multimodal Learning, LLaVA
 

@@ -18,8 +18,8 @@ content_hash: dce886ecdcbbc202
 # SceneDecorator: Towards Scene-Oriented Story Generation with Scene Planning and Scene Consistency
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22994](https://arxiv.org/abs/2510.22994)
-**Code**: [https://lulupig12138.github.io/SceneDecorator](https://lulupig12138.github.io/SceneDecorator) (project page)
+**arXiv**: [2510.22994](https://arxiv.org/abs/2510.22994)  
+**Code**: [https://lulupig12138.github.io/SceneDecorator](https://lulupig12138.github.io/SceneDecorator) (project page)  
 **Area**: Diffusion Models / Story Image Generation
 **Keywords**: scene consistency, story generation, scene planning, training-free, attention mechanism
 

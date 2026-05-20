@@ -18,8 +18,8 @@ content_hash: 92c75ba96f4ce31e
 # Enhancing Multi-Image Understanding through Delimiter Token Scaling
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01984](https://arxiv.org/abs/2602.01984)
-**Code**: [GitHub](https://github.com/MYMY-young/DelimScaling)
+**arXiv**: [2602.01984](https://arxiv.org/abs/2602.01984)  
+**Code**: [GitHub](https://github.com/MYMY-young/DelimScaling)  
 **Area**: Multimodal / VLM
 **Keywords**: multi-image understanding, large vision-language models, delimiter tokens, cross-image information leakage, attention mechanism
 

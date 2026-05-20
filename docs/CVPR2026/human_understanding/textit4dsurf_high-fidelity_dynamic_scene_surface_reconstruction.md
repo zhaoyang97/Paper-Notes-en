@@ -18,8 +18,8 @@ content_hash: 8b24f15f6521183e
 # 4DSurf: High-Fidelity Dynamic Scene Surface Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28064](https://arxiv.org/abs/2603.28064)
-**Code**: N/A
+**arXiv**: [2603.28064](https://arxiv.org/abs/2603.28064)  
+**Code**: N/A  
 **Area**: Human Understanding
 **Keywords**: dynamic surface reconstruction, Gaussian splatting, SDF flow regularization, temporal consistency, large deformation handling
 

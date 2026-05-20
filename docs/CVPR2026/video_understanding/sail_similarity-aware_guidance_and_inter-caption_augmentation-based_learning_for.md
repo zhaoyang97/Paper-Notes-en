@@ -18,8 +18,8 @@ content_hash: 82d41b4520ee9824
 # SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05437](https://arxiv.org/abs/2603.05437)
-**Code**: Unavailable
+**arXiv**: [2603.05437](https://arxiv.org/abs/2603.05437)  
+**Code**: Unavailable  
 **Area**: Video Understanding
 **Keywords**: Weakly-supervised dense video captioning, cross-modal alignment, LLM data augmentation, Gaussian mask, event localization
 

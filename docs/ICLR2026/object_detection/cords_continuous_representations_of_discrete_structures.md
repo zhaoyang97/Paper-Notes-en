@@ -18,8 +18,8 @@ content_hash: 2f9aad4197c60c76
 # CORDS: Continuous Representations of Discrete Structures
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21583](https://arxiv.org/abs/2601.21583)
-**Code**: To be confirmed
+**arXiv**: [2601.21583](https://arxiv.org/abs/2601.21583)  
+**Code**: To be confirmed  
 **Area**: Object Detection / Molecule Generation
 **Keywords**: Set prediction, continuous field representation, bijective mapping, variable-cardinality inference, density field
 
@@ -49,21 +49,21 @@ The input is a variable-size set $S = \{(\mathbf{r}_i, \mathbf{x}_i)\}_{i=1}^N$ 
 
 1. **Encoding: Discrete Set → Continuous Fields**
 
-   - **Function**: Map $N$ objects to density and feature fields.
-   - **Mechanism**: $\rho(\mathbf{r}) = \frac{1}{\alpha} \sum_{i=1}^N K(\mathbf{r}; \mathbf{r}_i)$, $\mathbf{h}(\mathbf{r}) = \frac{1}{\alpha} \sum_{i=1}^N \mathbf{x}_i K(\mathbf{r}; \mathbf{r}_i)$, using a Gaussian kernel with $\alpha = \int K \,d\mathbf{r}$.
-   - **Design Motivation**: Each kernel contributes a fixed integral $\alpha$, so cardinality can be read directly from the total mass of the density field; the feature field shares support with the density field, ensuring position–attribute alignment.
+    - **Function**: Map $N$ objects to density and feature fields.
+    - **Mechanism**: $\rho(\mathbf{r}) = \frac{1}{\alpha} \sum_{i=1}^N K(\mathbf{r}; \mathbf{r}_i)$, $\mathbf{h}(\mathbf{r}) = \frac{1}{\alpha} \sum_{i=1}^N \mathbf{x}_i K(\mathbf{r}; \mathbf{r}_i)$, using a Gaussian kernel with $\alpha = \int K \,d\mathbf{r}$.
+    - **Design Motivation**: Each kernel contributes a fixed integral $\alpha$, so cardinality can be read directly from the total mass of the density field; the feature field shares support with the density field, ensuring position–attribute alignment.
 
 2. **Decoding: Continuous Fields → Discrete Set**
 
-   - **Function**: Exactly recover the object set from predicted fields.
-   - **Mechanism**: (1) Cardinality $N = \int \rho \,d\mathbf{r}$; (2) Positions: $\min_{\mathbf{r}_1,\ldots,\mathbf{r}_N} \int \!\left(\rho - \frac{1}{\alpha}\sum_i K(\mathbf{r};\mathbf{r}_i)\right)^2 d\mathbf{r}$; (3) Features: $\mathbf{X} = \alpha G^{-1} B$, where $G$ is the Gram matrix.
-   - **Design Motivation**: Each decoding step has a theoretical guarantee. When kernel centers are sufficiently separated, $G$ is positive definite and the system has a unique solution, making the full encoding–decoding pipeline bijective.
+    - **Function**: Exactly recover the object set from predicted fields.
+    - **Mechanism**: (1) Cardinality $N = \int \rho \,d\mathbf{r}$; (2) Positions: $\min_{\mathbf{r}_1,\ldots,\mathbf{r}_N} \int \!\left(\rho - \frac{1}{\alpha}\sum_i K(\mathbf{r};\mathbf{r}_i)\right)^2 d\mathbf{r}$; (3) Features: $\mathbf{X} = \alpha G^{-1} B$, where $G$ is the Gram matrix.
+    - **Design Motivation**: Each decoding step has a theoretical guarantee. When kernel centers are sufficiently separated, $G$ is positive definite and the system has a unique solution, making the full encoding–decoding pipeline bijective.
 
 3. **Sampling Strategy**
 
-   - **Function**: Discretize the continuous field for neural network processing.
-   - **Mechanism**: 3D molecules use importance sampling (concentrating samples near signals according to density); images and time series use uniform grid sampling.
-   - **Design Motivation**: Uniform grids are inefficient in 3D space; importance sampling avoids bounding-box constraints.
+    - **Function**: Discretize the continuous field for neural network processing.
+    - **Mechanism**: 3D molecules use importance sampling (concentrating samples near signals according to density); images and time series use uniform grid sampling.
+    - **Design Motivation**: Uniform grids are inefficient in 3D space; importance sampling avoids bounding-box constraints.
 
 ### Loss & Training
 - **Object detection**: $\mathcal{L} = \mathcal{L}_{\text{MSE}} + \lambda(\hat{N} - N)^2$, where the MSE term constrains field reconstruction and the counting term constrains density integration.

@@ -17,8 +17,8 @@ content_hash: 08aa748c3c0d5804
 # Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29773](https://arxiv.org/abs/2603.29773)
-**Code**: [https://github.com/fengyang1399-pixel/IQPIR](https://github.com/fengyang1399-pixel/IQPIR)
+**arXiv**: [2603.29773](https://arxiv.org/abs/2603.29773)  
+**Code**: [https://github.com/fengyang1399-pixel/IQPIR](https://github.com/fengyang1399-pixel/IQPIR)  
 **Area**: Image Restoration
 **Keywords**: Image Restoration, Image Quality Prior, Dual Codebook, NR-IQA, Quality-Conditioned
 

@@ -18,8 +18,8 @@ content_hash: 01ebb8bbdbb8f9bf
 # The Pareto Frontier of Resilient Jet Tagging
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19431](https://arxiv.org/abs/2509.19431)
-**Code**: [Zenodo](https://zenodo.org/) (dataset publicly available)
+**arXiv**: [2509.19431](https://arxiv.org/abs/2509.19431)  
+**Code**: [Zenodo](https://zenodo.org/) (dataset publicly available)  
 **Area**: Physics
 **Keywords**: jet tagging, Pareto frontier, resilience, model dependence, quark/gluon discrimination
 

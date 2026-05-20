@@ -18,8 +18,8 @@ content_hash: 72beb88d6f0a6e19
 # Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02618](https://arxiv.org/abs/2603.02618)
-**Code**: [https://github.com/ZhikangXu0112/InterNeg](https://github.com/ZhikangXu0112/InterNeg)
+**arXiv**: [2603.02618](https://arxiv.org/abs/2603.02618)  
+**Code**: [https://github.com/ZhikangXu0112/InterNeg](https://github.com/ZhikangXu0112/InterNeg)  
 **Area**: Multimodal VLM
 **Keywords**: OOD Detection, CLIP, Cross-modal Distance, Negative Text Selection, Zero-shot
 

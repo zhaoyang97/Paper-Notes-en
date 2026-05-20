@@ -18,8 +18,8 @@ content_hash: f3e2f67ddcdbb58b
 # Laytrol: Preserving Pretrained Knowledge in Layout Control for Multimodal Diffusion Transformers
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07934](https://arxiv.org/abs/2511.07934)
-**Code**: [https://github.com/HHHHStar/Laytrol](https://github.com/HHHHStar/Laytrol)
+**arXiv**: [2511.07934](https://arxiv.org/abs/2511.07934)  
+**Code**: [https://github.com/HHHHStar/Laytrol](https://github.com/HHHHStar/Laytrol)  
 **Area**: Image Generation / Controllable Generation
 **Keywords**: Layout Control, Multimodal Diffusion Transformer, Parameter Copying, ControlNet, FLUX
 

@@ -19,7 +19,7 @@ content_hash: 9bb33e0f1db8717f
 # SHeaP: Self-Supervised Head Geometry Predictor Learned via 2D Gaussians
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.12292](https://arxiv.org/abs/2504.12292)
+**arXiv**: [2504.12292](https://arxiv.org/abs/2504.12292)  
 **Institution**: Woven by Toyota, Toyota Motor Europe, TU Munich, Kyoto University
 **Area**: 3D Vision / Face Reconstruction / Self-Supervised Learning
 **Keywords**: 3D head reconstruction, 2D Gaussian Splatting, 3DMM, self-supervised, face geometry, rigged avatar

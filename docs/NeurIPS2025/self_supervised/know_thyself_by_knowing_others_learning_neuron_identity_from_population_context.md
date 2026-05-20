@@ -17,8 +17,8 @@ content_hash: f10f757eda27b715
 # Know Thyself by Knowing Others: Learning Neuron Identity from Population Context
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.01199](https://arxiv.org/abs/2512.01199)
-**Code**: [GitHub](https://github.com/nerdslab/nuclr)
+**arXiv**: [2512.01199](https://arxiv.org/abs/2512.01199)  
+**Code**: [GitHub](https://github.com/nerdslab/nuclr)  
 **Area**: Self-Supervised Learning
 **Keywords**: neuron identity, self-supervised learning, contrastive learning, spatiotemporal Transformer, cell type decoding
 

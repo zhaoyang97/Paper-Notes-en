@@ -18,8 +18,8 @@ content_hash: 41eb7335989a3ef3
 # A Controllable Examination for Long-Context Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.02921](https://arxiv.org/abs/2506.02921)
-**Code**: No public code
+**arXiv**: [2506.02921](https://arxiv.org/abs/2506.02921)  
+**Code**: No public code  
 **Area**: Audio & Speech
 **Keywords**: long-context evaluation, LongBioBench, synthetic benchmark, controllable experiments, biography generation
 

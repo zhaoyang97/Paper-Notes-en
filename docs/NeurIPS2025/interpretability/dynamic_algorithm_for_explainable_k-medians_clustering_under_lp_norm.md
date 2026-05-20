@@ -18,8 +18,8 @@ content_hash: 69dcc9e3549d8412
 # Dynamic Algorithm for Explainable k-medians Clustering under lp Norm
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.01150](https://arxiv.org/abs/2512.01150)
-**Code**: None
+**arXiv**: [2512.01150](https://arxiv.org/abs/2512.01150)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Explainable clustering, k-medians, decision trees, dynamic algorithms, approximation ratio
 

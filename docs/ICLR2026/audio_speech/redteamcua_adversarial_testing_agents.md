@@ -18,8 +18,8 @@ content_hash: d88afc8509d5dcf4
 # RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2505.21936](https://arxiv.org/abs/2505.21936)
-**Code**: Available (RTC-Bench + RedTeamCUA framework)
+**arXiv**: [2505.21936](https://arxiv.org/abs/2505.21936)  
+**Code**: Available (RTC-Bench + RedTeamCUA framework)  
 **Area**: Audio & Speech
 **Keywords**: computer-use agents, red teaming, indirect prompt injection, adversarial testing, CUA safety
 

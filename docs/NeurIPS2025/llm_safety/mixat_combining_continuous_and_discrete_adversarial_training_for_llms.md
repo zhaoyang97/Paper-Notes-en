@@ -17,8 +17,8 @@ content_hash: ee697207ce0c1427
 # MixAT: Combining Continuous and Discrete Adversarial Training for LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16947](https://arxiv.org/abs/2505.16947)
-**Code**: [GitHub](https://github.com/insait-institute/MixAT)
+**arXiv**: [2505.16947](https://arxiv.org/abs/2505.16947)  
+**Code**: [GitHub](https://github.com/insait-institute/MixAT)  
 **Area**: AI Safety
 **Keywords**: Adversarial Training, LLM Safety, Robustness, Jailbreak Attacks, Continuous Perturbation
 

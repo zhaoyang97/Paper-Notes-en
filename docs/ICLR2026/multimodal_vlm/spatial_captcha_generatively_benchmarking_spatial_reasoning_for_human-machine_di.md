@@ -18,8 +18,8 @@ content_hash: 1efd1365a3d87847
 # Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03863](https://arxiv.org/abs/2510.03863)
-**Code**: None
+**arXiv**: [2510.03863](https://arxiv.org/abs/2510.03863)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: CAPTCHA, spatial reasoning, multimodal large language models, human-machine differentiation, procedural generation
 

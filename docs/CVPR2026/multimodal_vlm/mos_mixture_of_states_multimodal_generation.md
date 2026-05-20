@@ -18,8 +18,8 @@ content_hash: 166115612a99c04a
 # Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.12207](https://arxiv.org/abs/2511.12207)
-**Code**: None (but built on open-source components)
+**arXiv**: [2511.12207](https://arxiv.org/abs/2511.12207)  
+**Code**: None (but built on open-source components)  
 **Area**: Image Generation / Multimodal Fusion / Diffusion Models
 **Keywords**: multimodal fusion, state routing, T2I/image editing, asymmetric Transformer, token-level dynamics
 

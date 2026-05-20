@@ -19,8 +19,8 @@ content_hash: cfb97413ff50457e
 # SIGMark: Scalable In-Generation Watermark with Blind Extraction for Video Diffusion
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02882](https://arxiv.org/abs/2603.02882)
-**Code**: [https://github.com/JeremyZhao1998/SIGMark-release](https://github.com/JeremyZhao1998/SIGMark-release)
+**arXiv**: [2603.02882](https://arxiv.org/abs/2603.02882)  
+**Code**: [https://github.com/JeremyZhao1998/SIGMark-release](https://github.com/JeremyZhao1998/SIGMark-release)  
 **Area**: Video Generation
 **Keywords**: Video diffusion models, watermarking, blind extraction, pseudorandom coding, causal 3D VAE, temporal robustness
 

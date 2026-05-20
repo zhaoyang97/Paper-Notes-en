@@ -18,8 +18,8 @@ content_hash: 1a96ccb21dba9b7b
 # Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff
 
 **Conference**: ACL 2026
-**arXiv**: [2507.04023](https://arxiv.org/abs/2507.04023)
-**Code**: [GitHub](https://github.com/ctrl-gaurav/LLMThinkBench)
+**arXiv**: [2507.04023](https://arxiv.org/abs/2507.04023)  
+**Code**: [GitHub](https://github.com/ctrl-gaurav/LLMThinkBench)  
 **Area**: LLM Evaluation
 **Keywords**: overthinking, basic math reasoning, accuracy-efficiency tradeoff, reasoning tokens, benchmarking
 

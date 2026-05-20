@@ -18,8 +18,8 @@ content_hash: 3841315341a4fb56
 # Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.03907](https://arxiv.org/abs/2603.03907)
-**Code**: [Project Page](https://yzc-ippl.github.io/FG-IAA/)
+**arXiv**: [2603.03907](https://arxiv.org/abs/2603.03907)  
+**Code**: [Project Page](https://yzc-ippl.github.io/FG-IAA/)  
 **Area**: AIGC Detection
 **Keywords**: Fine-grained Aesthetics, Relative Ranking, Difference-Preserving Tokenization, Rank Regression, FGAesthetics
 

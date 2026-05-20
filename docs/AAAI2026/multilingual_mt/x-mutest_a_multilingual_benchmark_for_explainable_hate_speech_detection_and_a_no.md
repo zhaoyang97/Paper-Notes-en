@@ -18,8 +18,8 @@ content_hash: e32ca10c4e283ea0
 # X-MuTeST: A Multilingual Benchmark for Explainable Hate Speech Detection and A Novel LLM-consulted Explanation Framework
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.03194](https://arxiv.org/abs/2601.03194)
-**Code**: [https://github.com/ziarehman30/X-MuTeST](https://github.com/ziarehman30/X-MuTeST)
+**arXiv**: [2601.03194](https://arxiv.org/abs/2601.03194)  
+**Code**: [https://github.com/ziarehman30/X-MuTeST](https://github.com/ziarehman30/X-MuTeST)  
 **Area**: NLP Understanding / Multilingual
 **Keywords**: Hate Speech Detection, Explainability, Multilingual, LLM Explanation, Human-Annotated Rationales
 

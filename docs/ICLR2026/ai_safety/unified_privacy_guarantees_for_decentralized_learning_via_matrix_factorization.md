@@ -18,8 +18,8 @@ content_hash: 9010ca2d4fb87477
 # Unified Privacy Guarantees for Decentralized Learning via Matrix Factorization
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.17480](https://arxiv.org/abs/2510.17480)
-**Code**: None
+**arXiv**: [2510.17480](https://arxiv.org/abs/2510.17480)  
+**Code**: None  
 **Area**: AI Security / Differential Privacy / Decentralized Learning
 **Keywords**: decentralized learning, matrix factorization, differential privacy, correlated noise, gossip protocol
 

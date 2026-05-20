@@ -17,8 +17,8 @@ content_hash: 83c90e226b7b9692
 # Automated Model Evaluation for Object Detection via Prediction Consistency and Reliability
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.12082](https://arxiv.org/abs/2508.12082)
-**Code**: [GitHub](https://github.com/YonseiML/autoeval-det)
+**arXiv**: [2508.12082](https://arxiv.org/abs/2508.12082)  
+**Code**: [GitHub](https://github.com/YonseiML/autoeval-det)  
 **Area**: Object Detection / Model Evaluation
 **Keywords**: Automated Model Evaluation, object detection, NMS, Prediction Consistency, Reliability
 

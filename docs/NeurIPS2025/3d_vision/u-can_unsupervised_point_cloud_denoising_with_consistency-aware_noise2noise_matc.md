@@ -18,8 +18,8 @@ content_hash: 9f8d913e3704b840
 # U-CAN: Unsupervised Point Cloud Denoising with Consistency-Aware Noise2Noise Matching
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25210](https://arxiv.org/abs/2510.25210)
-**Code**: Available (Project Page)
+**arXiv**: [2510.25210](https://arxiv.org/abs/2510.25210)  
+**Code**: Available (Project Page)  
 **Area**: 3D Vision / Point Cloud Processing
 **Keywords**: Point cloud denoising, unsupervised learning, Noise2Noise, consistency constraint, geometry reconstruction
 

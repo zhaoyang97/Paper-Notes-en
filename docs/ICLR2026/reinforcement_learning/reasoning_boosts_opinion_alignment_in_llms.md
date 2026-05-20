@@ -18,8 +18,8 @@ content_hash: d82089129845a305
 # Reasoning Boosts Opinion Alignment in LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01214](https://arxiv.org/abs/2603.01214)
-**Code**: [GitHub](https://github.com/ETH-DISCO/reasoning-boosts-llm-alignment)
+**arXiv**: [2603.01214](https://arxiv.org/abs/2603.01214)  
+**Code**: [GitHub](https://github.com/ETH-DISCO/reasoning-boosts-llm-alignment)  
 **Area**: Reinforcement Learning
 **Keywords**: opinion alignment, GRPO, political reasoning, survey data, digital democracy
 
@@ -48,19 +48,19 @@ Two-stage training: SFT → GRPO. A separate model is trained for each individua
 ### Key Designs
 
 1. **Structured Reasoning Output Format**
-   - Function: Forces the model to reason before answering, using the format `<reasoning>[reasoning text]</reasoning><answer>[stance]</answer>`
-   - Mechanism: Training data contains only stance labels without reasoning chains; the model must learn to generate reasoning under reward signal, with reasoning quality indirectly optimized through accuracy
-   - Design Motivation: Explicit reasoning chains encourage the model to organize arguments systematically, avoiding ideological bias caused by intuitive pattern matching
+    - Function: Forces the model to reason before answering, using the format `<reasoning>[reasoning text]</reasoning><answer>[stance]</answer>`
+    - Mechanism: Training data contains only stance labels without reasoning chains; the model must learn to generate reasoning under reward signal, with reasoning quality indirectly optimized through accuracy
+    - Design Motivation: Explicit reasoning chains encourage the model to organize arguments systematically, avoiding ideological bias caused by intuitive pattern matching
 
 2. **Composite Reward Function**
-   - Function: Evaluates each generation along three dimensions: format correctness, length compliance, and stance correctness
-   - Mechanism: $R = \alpha_1 R_{\text{format}} + \alpha_2 R_{\text{length}} + \alpha_3 R_{\text{correct}}$, where $R_{\text{format}}$ checks four XML tags (up to 4 points), $R_{\text{length}} = -|L - L^*|$ penalizes deviation from target length, and $R_{\text{correct}} = \mathbb{1}[y_i = y_i^*]$ awards 1 point for matching the survey answer
-   - Design Motivation: $\alpha_1=0.25, \alpha_2=0.01, \alpha_3=1.0$—correctness carries the highest weight, format is secondary, and length serves only as a minor regularizer
+    - Function: Evaluates each generation along three dimensions: format correctness, length compliance, and stance correctness
+    - Mechanism: $R = \alpha_1 R_{\text{format}} + \alpha_2 R_{\text{length}} + \alpha_3 R_{\text{correct}}$, where $R_{\text{format}}$ checks four XML tags (up to 4 points), $R_{\text{length}} = -|L - L^*|$ penalizes deviation from target length, and $R_{\text{correct}} = \mathbb{1}[y_i = y_i^*]$ awards 1 point for matching the survey answer
+    - Design Motivation: $\alpha_1=0.25, \alpha_2=0.01, \alpha_3=1.0$—correctness carries the highest weight, format is secondary, and length serves only as a minor regularizer
 
 3. **SFT Warm-Start + Synthetic Argumentation Data**
-   - Function: Llama-70B is used to generate pro/con arguments for each policy question, constructing SFT data to teach the model the reasoning format
-   - Mechanism: The SFT stage resolves format compliance issues (reducing the optimization burden of $R_{\text{format}}$ in GRPO) while providing a reasonable initialization for political reasoning
-   - Design Motivation: Direct GRPO training converges slowly (GRPO-only performs significantly worse than SFT+GRPO); SFT warm-starting substantially improves training dynamics
+    - Function: Llama-70B is used to generate pro/con arguments for each policy question, constructing SFT data to teach the model the reasoning format
+    - Mechanism: The SFT stage resolves format compliance issues (reducing the optimization burden of $R_{\text{format}}$ in GRPO) while providing a reasonable initialization for political reasoning
+    - Design Motivation: Direct GRPO training converges slowly (GRPO-only performs significantly worse than SFT+GRPO); SFT warm-starting substantially improves training dynamics
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 8eef255732268c31
 # SPARTA Alignment: Collectively Aligning Multiple Language Models through Combat
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04721](https://arxiv.org/abs/2506.04721)
-**Code**: [https://github.com/yurujiang2003/sparta](https://github.com/yurujiang2003/sparta)
+**arXiv**: [2506.04721](https://arxiv.org/abs/2506.04721)  
+**Code**: [https://github.com/yurujiang2003/sparta](https://github.com/yurujiang2003/sparta)  
 **Area**: LLM Efficiency
 **Keywords**: Collective Alignment, Multi-Model Combat, Reputation System, DPO, Self-Alignment
 

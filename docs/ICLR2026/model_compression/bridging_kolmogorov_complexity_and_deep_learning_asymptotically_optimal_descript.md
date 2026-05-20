@@ -18,8 +18,8 @@ content_hash: d74e1b2e95f76606
 # Bridging Kolmogorov Complexity and Deep Learning: Asymptotically Optimal Description Length Objectives for Transformers
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22445](https://arxiv.org/abs/2509.22445)
-**Code**: None
+**arXiv**: [2509.22445](https://arxiv.org/abs/2509.22445)  
+**Code**: None  
 **Area**: Model Compression / Learning Theory
 **Keywords**: Minimum Description Length, Kolmogorov Complexity, Transformer, Computational Universality, Variational Objective
 
@@ -49,9 +49,9 @@ The paper's technical approach proceeds in three steps: (1) formalize the mathem
 
 3. **Adaptive Gaussian Mixture Prior Variational Objective**: To translate the theoretical results into practice, the paper constructs a computable, differentiable variational objective. Specifically, an **adaptive Gaussian mixture distribution** is defined as a prior over the Transformer's weight space:
 
-   - The prior $p(\theta)$ is a mixture of multiple Gaussian components, with mixture weights and variance parameters jointly optimized
-   - The description length comprises two terms: the number of bits to encode the model parameters (determined by the prior) plus the number of bits to describe the data given the model (determined by the likelihood)
-   - The objective is made differentiable via variational inference and can be optimized using standard gradient descent
+    - The prior $p(\theta)$ is a mixture of multiple Gaussian components, with mixture weights and variance parameters jointly optimized
+    - The description length comprises two terms: the number of bits to encode the model parameters (determined by the prior) plus the number of bits to describe the data given the model (determined by the likelihood)
+    - The objective is made differentiable via variational inference and can be optimized using standard gradient descent
 
    The paper proves that under appropriate conditions, this variational objective is asymptotically optimal, provided the prior is sufficiently flexible and the optimizer reaches the global optimum.
 

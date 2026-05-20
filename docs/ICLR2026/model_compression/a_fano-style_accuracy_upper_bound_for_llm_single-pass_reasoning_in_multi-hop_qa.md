@@ -18,8 +18,8 @@ content_hash: 6e075c0766a4c7d2
 # A Fano-Style Accuracy Upper Bound for LLM Single-Pass Reasoning in Multi-Hop QA
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21199](https://arxiv.org/abs/2509.21199)
-**Code**: Available (InfoQA)
+**arXiv**: [2509.21199](https://arxiv.org/abs/2509.21199)  
+**Code**: Available (InfoQA)  
 **Area**: Model Compression
 **Keywords**: Multi-hop QA, Information Theory, Fano's Inequality, Accuracy Upper Bound, Multi-turn Reasoning
 

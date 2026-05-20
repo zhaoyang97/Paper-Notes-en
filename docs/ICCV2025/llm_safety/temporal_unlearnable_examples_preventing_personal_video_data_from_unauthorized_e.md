@@ -18,8 +18,8 @@ content_hash: 70b801fc072c26a3
 # Temporal Unlearnable Examples: Preventing Personal Video Data from Unauthorized Exploitation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.07483](https://arxiv.org/abs/2507.07483)
-**Code**: None
+**arXiv**: [2507.07483](https://arxiv.org/abs/2507.07483)  
+**Code**: None  
 **Area**: LLM Safety
 **Keywords**: video data privacy, unlearnable examples, visual object tracking, generative perturbation, contrastive learning
 

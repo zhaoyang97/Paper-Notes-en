@@ -18,8 +18,8 @@ content_hash: 01367c45215ec803
 # When Refusals Fail: Unstable Safety Mechanisms in Long-Context LLM Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.02445](https://arxiv.org/abs/2512.02445)
-**Code**: None
+**arXiv**: [2512.02445](https://arxiv.org/abs/2512.02445)  
+**Code**: None  
 **Area**: LLM Agent
 **Keywords**: LLM Safety, Long Context, Agent Safety, Refusal Mechanism, AgentHarm
 

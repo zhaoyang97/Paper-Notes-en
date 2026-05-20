@@ -18,8 +18,8 @@ content_hash: 2a4b0227fef4357f
 # NavMorph: A Self-Evolving World Model for Vision-and-Language Navigation in Continuous Environments
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23468](https://arxiv.org/abs/2506.23468)
-**Code**: [https://github.com/Feliciaxyao/NavMorph](https://github.com/Feliciaxyao/NavMorph)
+**arXiv**: [2506.23468](https://arxiv.org/abs/2506.23468)  
+**Code**: [https://github.com/Feliciaxyao/NavMorph](https://github.com/Feliciaxyao/NavMorph)  
 **Area**: Robotic Navigation / Embodied Intelligence
 **Keywords**: Vision-and-Language Navigation, World Model, Continuous Environments, Self-Evolving, RSSM
 

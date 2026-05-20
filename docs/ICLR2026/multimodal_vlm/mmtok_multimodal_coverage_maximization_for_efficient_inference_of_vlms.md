@@ -18,8 +18,8 @@ content_hash: a4dd214e5ee0c0e0
 # MMTok: Multimodal Coverage Maximization for Efficient Inference of VLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.18264](https://arxiv.org/abs/2508.18264)
-**Code**: None
+**arXiv**: [2508.18264](https://arxiv.org/abs/2508.18264)  
+**Code**: None  
 **Area**: Multimodal / VLM
 **Keywords**: vision token selection, coverage maximization, submodular optimization, VLM efficiency, token pruning
 
@@ -55,25 +55,25 @@ $$f(\mathcal{S}; M) = \frac{1}{m} \sum_{i=1}^{m} \max M_{i,\mathcal{S}}$$
 For each target token, this computes the maximum similarity to the selected subset, averaged over all target tokens. This function is proven to be a **submodular function** (Proposition 1), guaranteeing that the greedy algorithm achieves at least $(1-1/e) \approx 63.2\%$ of the optimal solution.
 
 2. **Text-Visual Coverage (T-V Coverage)**:
-   - Similarity matrix: $M_{i,j}^{tv} = \mathbf{t}_i^\top \mathbf{v}_j$, using projected visual tokens (aligned with text).
-   - Objective: select visual tokens most semantically relevant to the text query.
-   - Limitation: text queries may be uninformative (e.g., "Please describe the image"), providing insufficient semantic guidance.
+    - Similarity matrix: $M_{i,j}^{tv} = \mathbf{t}_i^\top \mathbf{v}_j$, using projected visual tokens (aligned with text).
+    - Objective: select visual tokens most semantically relevant to the text query.
+    - Limitation: text queries may be uninformative (e.g., "Please describe the image"), providing insufficient semantic guidance.
 
 3. **Visual-Visual Coverage (V-V Coverage)**:
-   - Similarity matrix: $M_{i,j}^{vv} = \mathbf{v}_i^{\prime\top} \mathbf{v}_j'$, using pre-projection visual features (capturing purely visual similarity).
-   - Objective: select a subset of visual tokens representative of the entire image.
-   - Complementary to T-V coverage.
+    - Similarity matrix: $M_{i,j}^{vv} = \mathbf{v}_i^{\prime\top} \mathbf{v}_j'$, using pre-projection visual features (capturing purely visual similarity).
+    - Objective: select a subset of visual tokens representative of the entire image.
+    - Complementary to T-V coverage.
 
 4. **Multimodal Coverage Fusion**:
-   - Softmax calibration: $M_{i,j}^{tv'} = \frac{\exp(M_{i,j}^{tv}/\tau_t)}{\sum_j \exp(M_{i,j}^{tv}/\tau_t)}$
-   - Joint objective: $f(\mathcal{S}; M^{tv'}, M^{vv'}) = f(\mathcal{S}; M^{tv'}) + \alpha \cdot f(\mathcal{S}; M^{vv'})$
-   - **Corollary 1**: The sum of two submodular functions remains submodular, preserving the greedy algorithm's validity.
-   - Default hyperparameters: $\tau_t=0.02$, $\tau_v=0.2$, $\alpha=0.5$.
+    - Softmax calibration: $M_{i,j}^{tv'} = \frac{\exp(M_{i,j}^{tv}/\tau_t)}{\sum_j \exp(M_{i,j}^{tv}/\tau_t)}$
+    - Joint objective: $f(\mathcal{S}; M^{tv'}, M^{vv'}) = f(\mathcal{S}; M^{tv'}) + \alpha \cdot f(\mathcal{S}; M^{vv'})$
+    - **Corollary 1**: The sum of two submodular functions remains submodular, preserving the greedy algorithm's validity.
+    - Default hyperparameters: $\tau_t=0.02$, $\tau_v=0.2$, $\alpha=0.5$.
 
 5. **Optional Agent-Enhanced Text**:
-   - A lightweight VLM (SmolVLM2-256M) generates a preliminary response.
-   - The response tokens are appended to the original text tokens to enhance T-V coverage guidance.
-   - Applicable when text queries carry insufficient information.
+    - A lightweight VLM (SmolVLM2-256M) generates a preliminary response.
+    - The response tokens are appended to the original text tokens to enhance T-V coverage guidance.
+    - Applicable when text queries carry insufficient information.
 
 ### Algorithmic Complexity
 

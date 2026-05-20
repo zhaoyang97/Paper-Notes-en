@@ -18,8 +18,8 @@ content_hash: ce8e8fa2fee4598b
 # FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.16786](https://arxiv.org/abs/2511.16786)
-**Code**: None
+**arXiv**: [2511.16786](https://arxiv.org/abs/2511.16786)  
+**Code**: None  
 **Area**: Multimodal VLM / Model Compression
 **Keywords**: KV Cache Compression, Frequency-Domain Analysis, Outlier KV, Dynamic Budget Allocation, FlashAttention Compatibility
 

@@ -18,8 +18,8 @@ content_hash: 5617eb04f4236c61
 # Routing Matters in MoE: Scaling Diffusion Transformers with Explicit Routing Guidance
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.24711](https://arxiv.org/abs/2510.24711)
-**Code**: [https://github.com/ali-vilab/ProMoE](https://github.com/ali-vilab/ProMoE)
+**arXiv**: [2510.24711](https://arxiv.org/abs/2510.24711)  
+**Code**: [https://github.com/ali-vilab/ProMoE](https://github.com/ali-vilab/ProMoE)  
 **Area**: Diffusion Models / Mixture of Experts
 **Keywords**: Mixture-of-Experts, DiT, Explicit Routing Guidance, Prototype Routing, Routing Contrastive Loss
 

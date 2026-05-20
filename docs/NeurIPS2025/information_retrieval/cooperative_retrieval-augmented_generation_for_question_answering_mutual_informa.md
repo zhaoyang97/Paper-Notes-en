@@ -18,8 +18,8 @@ content_hash: 21b91d932cf1537a
 # Cooperative Retrieval-Augmented Generation for Question Answering: Mutual Information Exchange and Ranking by Contrasting Layers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.10422](https://arxiv.org/abs/2512.10422)
-**Code**: [GitHub](https://github.com/meaningful96/CoopRAG)
+**arXiv**: [2512.10422](https://arxiv.org/abs/2512.10422)  
+**Code**: [GitHub](https://github.com/meaningful96/CoopRAG)  
 **Area**: Retrieval-Augmented Generation & Question Answering
 **Keywords**: RAG, query expansion, layer-contrastive ranking, multi-hop QA, cooperative mechanism
 

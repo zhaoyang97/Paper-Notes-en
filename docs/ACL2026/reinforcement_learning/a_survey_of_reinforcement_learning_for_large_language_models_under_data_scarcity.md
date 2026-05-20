@@ -17,8 +17,8 @@ content_hash: 99e8a32706f8aeea
 # A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17312](https://arxiv.org/abs/2604.17312)
-**Code**: [https://github.com/YuZhiyin/Data-Efficient-RL](https://github.com/YuZhiyin/Data-Efficient-RL)
+**arXiv**: [2604.17312](https://arxiv.org/abs/2604.17312)  
+**Code**: [https://github.com/YuZhiyin/Data-Efficient-RL](https://github.com/YuZhiyin/Data-Efficient-RL)  
 **Area**: Reinforcement Learning / LLM Training
 **Keywords**: reinforcement learning, data scarcity, LLM post-training, data efficiency, survey
 

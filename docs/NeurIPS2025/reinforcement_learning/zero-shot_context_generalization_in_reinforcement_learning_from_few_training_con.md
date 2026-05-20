@@ -18,8 +18,8 @@ content_hash: 0c5ac912105c8ee3
 # Zero-Shot Context Generalization in Reinforcement Learning from Few Training Contexts
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.07348](https://arxiv.org/abs/2507.07348)
-**Code**: [https://github.com/chapman20j/ZeroShotGeneralization-CMDPs](https://github.com/chapman20j/ZeroShotGeneralization-CMDPs)
+**arXiv**: [2507.07348](https://arxiv.org/abs/2507.07348)  
+**Code**: [https://github.com/chapman20j/ZeroShotGeneralization-CMDPs](https://github.com/chapman20j/ZeroShotGeneralization-CMDPs)  
 **Area**: Reinforcement Learning
 **Keywords**: context generalization, contextual MDP, data augmentation, Bellman equation, zero-shot transfer
 
@@ -46,27 +46,27 @@ Given a Contextual MDP (CMDP), data is collected under a base training context $
 
 1. **Context-Enhanced Bellman Equation (CEBE)**:
 
-   - The standard Bellman equation may have unknown transitions and rewards at a given context $c$.
-   - CEBE uses approximated transition and reward functions via first-order Taylor expansion:
+    - The standard Bellman equation may have unknown transitions and rewards at a given context $c$.
+    - CEBE uses approximated transition and reward functions via first-order Taylor expansion:
      - Deterministic transition: $T_{\mathrm{CE}}^c(s,a) = \delta_{f^{c_0}(s,a) + \partial_c f^{c_0}(s,a)(c-c_0)}$
      - Reward: $R_{\mathrm{CE}}^c = R^{c_0} + \partial_c R^{c_0} \cdot (c - c_0) + \partial_{s'} R^{c_0} \partial_c T^{c_0} \cdot (c - c_0)$
-   - At $c = c_0$, CEBE reduces exactly to the standard Bellman equation.
+    - At $c = c_0$, CEBE reduces exactly to the standard Bellman equation.
 
 2. **First-Order Accuracy Guarantee (Theorem 2)**:
 
-   - Core result: $\|Q_{\mathrm{CE}}^c - Q_{\mathrm{BE}}^c\|_\infty \leq O(\|c - c_0\|^2)$
-   - The Q-function of CEBE is a **first-order approximation** of the true Q-function (error is second-order).
-   - Prerequisite: transition and reward functions are sufficiently smooth with respect to context parameters.
-   - A general $(T, R)$-stability result for Q-functions under small perturbations to transitions and rewards is also established (Theorem 1).
+    - Core result: $\|Q_{\mathrm{CE}}^c - Q_{\mathrm{BE}}^c\|_\infty \leq O(\|c - c_0\|^2)$
+    - The Q-function of CEBE is a **first-order approximation** of the true Q-function (error is second-order).
+    - Prerequisite: transition and reward functions are sufficiently smooth with respect to context parameters.
+    - A general $(T, R)$-stability result for Q-functions under small perturbations to transitions and rewards is also established (Theorem 1).
 
 3. **Context Sample Enhancement (CSE)**:
 
-   - Translates CEBE into a practical data augmentation method for environments with deterministic transitions.
-   - Given a sample $(s, a, r, s')$ and a context perturbation $\Delta c$, CSE generates an augmented sample:
+    - Translates CEBE into a practical data augmentation method for environments with deterministic transitions.
+    - Given a sample $(s, a, r, s')$ and a context perturbation $\Delta c$, CSE generates an augmented sample:
      - $\bar{r} = r + \partial_c R \cdot \Delta c + \partial_{s'} R \cdot \partial_c T \cdot \Delta c$
      - $\bar{s}' = s' + \partial_c T \cdot \Delta c$
-   - Implementation is straightforward: a linear transformation is applied to sampled data within each training batch.
-   - Unlike domain randomization (LDR), CSE does not require sampling from new environments—only context gradients are needed.
+    - Implementation is straightforward: a linear transformation is applied to sampled data within each training batch.
+    - Unlike domain randomization (LDR), CSE does not require sampling from new environments—only context gradients are needed.
 
 4. **Policy Optimality Guarantee (Theorem 4)**: An $\varepsilon$-optimal policy derived by optimizing CEBE is $(2\delta + 2\varepsilon)$-optimal in the original CMDP, where $\delta$ is the CEBE approximation error.
 

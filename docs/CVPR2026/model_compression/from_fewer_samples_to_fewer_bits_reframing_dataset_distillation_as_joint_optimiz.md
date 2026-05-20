@@ -18,8 +18,8 @@ content_hash: 0310432d489ef697
 # From Fewer Samples to Fewer Bits: Reframing Dataset Distillation as Joint Optimization of Precision and Compactness
 
 **Conference**: CVPR2026
-**arXiv**: [2603.02411](https://arxiv.org/abs/2603.02411)
-**Code**: Not released
+**arXiv**: [2603.02411](https://arxiv.org/abs/2603.02411)  
+**Code**: Not released  
 **Area**: Model Compression / Dataset Distillation
 **Keywords**: Dataset distillation, quantization-aware training, rate-distortion optimization, low-bit data compression, non-uniform quantization
 

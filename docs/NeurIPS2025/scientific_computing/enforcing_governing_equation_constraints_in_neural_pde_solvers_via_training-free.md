@@ -18,8 +18,8 @@ content_hash: c02e44ba2d315526
 # Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.17258](https://arxiv.org/abs/2511.17258)
-**Code**: None
+**arXiv**: [2511.17258](https://arxiv.org/abs/2511.17258)  
+**Code**: None  
 **Area**: Scientific Computing / PDE Solving
 **Keywords**: Neural PDE Solver, Constraint Projection, LBFGS, Physical Consistency, Post-processing
 

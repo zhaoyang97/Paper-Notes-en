@@ -18,8 +18,8 @@ content_hash: 18fa7c5c613e18f7
 # LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction
 
 **Conference**: CVPR2026
-**arXiv**: [2512.13680](https://arxiv.org/abs/2512.13680)
-**Code**: [Project Page](https://neu-vi.github.io/LASER/)
+**arXiv**: [2512.13680](https://arxiv.org/abs/2512.13680)  
+**Code**: [Project Page](https://neu-vi.github.io/LASER/)  
 **Area**: Human Understanding / 3D Reconstruction
 **Keywords**: Streaming 4D Reconstruction, Training-Free Framework, Layer-wise Scale Alignment, Sliding Window, Sim(3) Registration
 

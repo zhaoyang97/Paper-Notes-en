@@ -18,8 +18,8 @@ content_hash: 8c478acea6119f82
 # Privacy on the Fly: A Predictive Adversarial Transformation Network for Mobile Sensor Data
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07242](https://arxiv.org/abs/2511.07242)
-**Code**: [https://github.com/skysky4/PATN](https://github.com/skysky4/PATN)
+**arXiv**: [2511.07242](https://arxiv.org/abs/2511.07242)  
+**Code**: [https://github.com/skysky4/PATN](https://github.com/skysky4/PATN)  
 **Area**: AI Security
 **Keywords**: Sensor Privacy, Adversarial Perturbation, Real-Time Privacy Protection, Mobile Security, Time-Series Data
 

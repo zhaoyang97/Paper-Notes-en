@@ -18,8 +18,8 @@ content_hash: 4ad7bd2db356eb80
 # Zero-Shot Embedding Drift Detection: A Lightweight Defense Against Prompt Injections in LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.12359](https://arxiv.org/abs/2601.12359)
-**Code**: [GitHub](https://github.com/AnirudhSekar/ZEDD)
+**arXiv**: [2601.12359](https://arxiv.org/abs/2601.12359)  
+**Code**: [GitHub](https://github.com/AnirudhSekar/ZEDD)  
 **Area**: Robotics / AI Safety
 **Keywords**: Prompt injection detection, embedding drift, zero-shot detection, LLM security, lightweight defense
 

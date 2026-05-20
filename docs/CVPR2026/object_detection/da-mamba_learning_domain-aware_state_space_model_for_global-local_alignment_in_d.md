@@ -19,8 +19,8 @@ content_hash: 93fed8efa73cb972
 # DA-Mamba: Learning Domain-Aware State Space Model for Global-Local Alignment in Domain Adaptive Object Detection
 
 **Conference**: CVPR2026
-**arXiv**: [2603.18757](https://arxiv.org/abs/2603.18757)
-**Code**: To be confirmed
+**arXiv**: [2603.18757](https://arxiv.org/abs/2603.18757)  
+**Code**: To be confirmed  
 **Area**: Object Detection
 **Keywords**: Domain adaptive object detection, state space model, Mamba, global-local alignment, feature alignment, CNN-SSM hybrid architecture
 

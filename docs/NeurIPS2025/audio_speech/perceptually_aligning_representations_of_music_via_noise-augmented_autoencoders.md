@@ -18,8 +18,8 @@ content_hash: 35476edba62a56cf
 # Perceptually Aligning Representations of Music via Noise-Augmented Autoencoders
 
 **Conference**: NeurIPS 2025 (AI for Music Workshop)
-**arXiv**: [2511.05350](https://arxiv.org/abs/2511.05350)
-**Code**: [https://github.com/CPJKU/pa-audioic](https://github.com/CPJKU/pa-audioic)
+**arXiv**: [2511.05350](https://arxiv.org/abs/2511.05350)  
+**Code**: [https://github.com/CPJKU/pa-audioic](https://github.com/CPJKU/pa-audioic)  
 **Area**: Audio / Music Representation Learning
 **Keywords**: Perceptual Alignment, Noise-Augmented Autoencoder, Latent Diffusion, Music Surprisal, EEG Prediction
 

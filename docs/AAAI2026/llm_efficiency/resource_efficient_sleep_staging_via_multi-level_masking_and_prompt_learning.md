@@ -19,8 +19,8 @@ content_hash: a68b2bcf0a3f0423
 # Resource Efficient Sleep Staging via Multi-Level Masking and Prompt Learning
 
 **Conference**: AAAI2026
-**arXiv**: [2511.06785](https://arxiv.org/abs/2511.06785)
-**Code**: [AnsonAiTRAY/MASS](https://github.com/AnsonAiTRAY/MASS)
+**arXiv**: [2511.06785](https://arxiv.org/abs/2511.06785)  
+**Code**: [AnsonAiTRAY/MASS](https://github.com/AnsonAiTRAY/MASS)  
 **Area**: LLM Efficiency
 **Keywords**: sleep staging, EEG, masking, prompt learning, wearable monitoring, resource efficiency
 

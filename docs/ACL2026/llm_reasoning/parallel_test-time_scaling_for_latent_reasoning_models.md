@@ -18,8 +18,8 @@ content_hash: a9d66a770c360b09
 # Parallel Test-Time Scaling for Latent Reasoning Models
 
 **Conference**: ACL 2026 Main Conference
-**arXiv**: [2510.07745](https://arxiv.org/abs/2510.07745)
-**Code**: None
+**arXiv**: [2510.07745](https://arxiv.org/abs/2510.07745)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: test-time scaling, latent reasoning, stochastic sampling, reward model, parallel inference
 

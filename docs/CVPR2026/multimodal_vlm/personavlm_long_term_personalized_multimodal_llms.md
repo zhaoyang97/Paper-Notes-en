@@ -18,8 +18,8 @@ content_hash: df5b86d692c13725
 # PersonaVLM: Long-Term Personalized Multimodal LLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.13074](https://arxiv.org/abs/2604.13074)
-**Code**: [Project Page](https://PersonaVLM.github.io)
+**arXiv**: [2604.13074](https://arxiv.org/abs/2604.13074)  
+**Code**: [Project Page](https://PersonaVLM.github.io)  
 **Area**: Multimodal VLM
 **Keywords**: Personalization, Long-term Memory, Multimodal Assistant, Big Five Personality, Agent Framework
 

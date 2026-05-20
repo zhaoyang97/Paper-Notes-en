@@ -18,8 +18,8 @@ content_hash: 7da0af2cdd441af2
 # The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2507.08802](https://arxiv.org/abs/2507.08802)
-**Code**: To be confirmed
+**arXiv**: [2507.08802](https://arxiv.org/abs/2507.08802)  
+**Code**: To be confirmed  
 **Area**: Interpretability
 **Keywords**: Causal Abstraction, mechanistic interpretability, Linear Representation Hypothesis, Alignment Map, Interchange Intervention
 

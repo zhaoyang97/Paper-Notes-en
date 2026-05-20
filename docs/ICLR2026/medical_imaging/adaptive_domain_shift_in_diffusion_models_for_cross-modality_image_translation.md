@@ -18,8 +18,8 @@ content_hash: aaf7c26446ce252e
 # Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.18623](https://arxiv.org/abs/2601.18623)
-**Code**: [https://github.com/LaplaceCenter/CDTSDE](https://github.com/LaplaceCenter/CDTSDE)
+**arXiv**: [2601.18623](https://arxiv.org/abs/2601.18623)  
+**Code**: [https://github.com/LaplaceCenter/CDTSDE](https://github.com/LaplaceCenter/CDTSDE)  
 **Area**: Medical Imaging / Diffusion Models
 **Keywords**: Cross-modality image translation, diffusion SDE, domain shift scheduling, spatial adaptive mixing, reverse SDE
 
@@ -49,26 +49,26 @@ CDTSDE (Cross-Domain Translation SDE) introduces an adaptive domain mixing field
 
 1. **Adaptive Dynamic Domain Shift (Spatial-Adaptive Domain Mixing Field)**
 
-   - **Function**: Predicts a full-resolution mixing field $\Lambda_t \in (0,1)^{C \times H \times W}$ at each reverse timestep $t$.
-   - **Mechanism**: A lightweight convolutional network $\mathcal{S}_\theta$ receives the base linear schedule $\lambda_t^{\text{lin}}$ and positional encoding $\pi(p)$, and outputs a spatial modulation signal $h_{t,c}(p)$. A zero-centered transform $g = 2h-1$ and an endpoint-preserving interpolation formula $f_{t,c} = \lambda_t^{\text{lin}}[1 + g_{t,c}(1-\lambda_t^{\text{lin}})]$ are applied, followed by a calibrated logistic map to compress values into $(0,1)$, yielding $\Lambda_{t,c}(p)$.
-   - **Design Motivation**: **Theorem 1** proves that under local geometric heterogeneity (different pixels have different optimal mixing ratios) and non-degenerate contrast conditions, $\inf_{\Lambda \in \mathcal{C}_{\text{pix}}} \mathcal{E}[d] < \inf_{\Lambda \in \mathcal{C}_{\text{glob}}} \mathcal{E}[d]$, i.e., pixel-wise scheduling strictly outperforms global scheduling. This provides theoretical justification for spatial adaptivity.
+    - **Function**: Predicts a full-resolution mixing field $\Lambda_t \in (0,1)^{C \times H \times W}$ at each reverse timestep $t$.
+    - **Mechanism**: A lightweight convolutional network $\mathcal{S}_\theta$ receives the base linear schedule $\lambda_t^{\text{lin}}$ and positional encoding $\pi(p)$, and outputs a spatial modulation signal $h_{t,c}(p)$. A zero-centered transform $g = 2h-1$ and an endpoint-preserving interpolation formula $f_{t,c} = \lambda_t^{\text{lin}}[1 + g_{t,c}(1-\lambda_t^{\text{lin}})]$ are applied, followed by a calibrated logistic map to compress values into $(0,1)$, yielding $\Lambda_{t,c}(p)$.
+    - **Design Motivation**: **Theorem 1** proves that under local geometric heterogeneity (different pixels have different optimal mixing ratios) and non-degenerate contrast conditions, $\inf_{\Lambda \in \mathcal{C}_{\text{pix}}} \mathcal{E}[d] < \inf_{\Lambda \in \mathcal{C}_{\text{glob}}} \mathcal{E}[d]$, i.e., pixel-wise scheduling strictly outperforms global scheduling. This provides theoretical justification for spatial adaptivity.
 
 2. **Domain-Aware Forward/Reverse SDE (Cross-Modal Diffusion Process)**
 
-   - **Function**: Embeds the adaptive mixing field into the forward marginals and reverse drift term of VP diffusion.
-   - **Mechanism**: The forward marginal is $q(x_t | x_0, \hat{x}_0^{\text{src}}) = \mathcal{N}(\sqrt{\bar\alpha_t} d_t, \sigma_t^2 I)$. The additional drift $\sqrt{\bar\alpha_t} \dot\Lambda(t) \odot (\hat{x}_0^{\text{src}} - x_0)$ causes the forward mean to track the domain mixing path. The reverse SDE (Eq. 9) comprises three force terms: the standard drift $f(t)x_t$, a domain-shift restoring force, and the score function.
-   - **Design Motivation**: Encoding domain shift dynamics directly into the generative process ensures that even large integration steps remain on-manifold, since each update inherently carries a domain-aware correction direction.
+    - **Function**: Embeds the adaptive mixing field into the forward marginals and reverse drift term of VP diffusion.
+    - **Mechanism**: The forward marginal is $q(x_t | x_0, \hat{x}_0^{\text{src}}) = \mathcal{N}(\sqrt{\bar\alpha_t} d_t, \sigma_t^2 I)$. The additional drift $\sqrt{\bar\alpha_t} \dot\Lambda(t) \odot (\hat{x}_0^{\text{src}} - x_0)$ causes the forward mean to track the domain mixing path. The reverse SDE (Eq. 9) comprises three force terms: the standard drift $f(t)x_t$, a domain-shift restoring force, and the score function.
+    - **Design Motivation**: Encoding domain shift dynamics directly into the generative process ensures that even large integration steps remain on-manifold, since each update inherently carries a domain-aware correction direction.
 
 3. **Exact Solution & First-Order Sampler**
 
-   - **Function**: Derives the exact solution of the reverse SDE under a change of coordinates (Proposition 1) and designs a first-order numerical sampler.
-   - **Mechanism**: A coordinate transform $\Upsilon_t = \sqrt{\bar\alpha_t}(1-\Lambda_t)$, $y_t = x_t \oslash \Upsilon_t$, $\lambda_t = \sigma_t \oslash \Upsilon_t$ reduces the reverse SDE to a form solvable exactly via the variation-of-constants formula. Proposition 1 gives an exact solution with four terms: (a) scaled propagation, (b) data prediction integral, (c) source image recovery, and (d) stochastic term.
-   - **Design Motivation**: The exact solution guarantees marginal consistency; the first-order sampler achieves ~15 dB PSNR in only 5 steps (1.8 s/image), far more efficient than methods such as BBDM that require 1000 steps.
+    - **Function**: Derives the exact solution of the reverse SDE under a change of coordinates (Proposition 1) and designs a first-order numerical sampler.
+    - **Mechanism**: A coordinate transform $\Upsilon_t = \sqrt{\bar\alpha_t}(1-\Lambda_t)$, $y_t = x_t \oslash \Upsilon_t$, $\lambda_t = \sigma_t \oslash \Upsilon_t$ reduces the reverse SDE to a form solvable exactly via the variation-of-constants formula. Proposition 1 gives an exact solution with four terms: (a) scaled propagation, (b) data prediction integral, (c) source image recovery, and (d) stochastic term.
+    - **Design Motivation**: The exact solution guarantees marginal consistency; the first-order sampler achieves ~15 dB PSNR in only 5 steps (1.8 s/image), far more efficient than methods such as BBDM that require 1000 steps.
 
 4. **Middle-Point Truncation**
 
-   - **Function**: Initializes sampling at $x_{t_1} \sim \mathcal{N}(\sqrt{\bar\alpha_{t_1}} \hat{x}_0^{\text{src}}, \sigma_{t_1}^2 I)$ for a starting time $t_1 < T$, skipping the first $T - t_1$ steps.
-   - **Design Motivation**: For $t \geq t_1$, $\Lambda_t = 1$, so the forward mean becomes a noise process centered on the pure source image, eliminating the need to start from pure noise.
+    - **Function**: Initializes sampling at $x_{t_1} \sim \mathcal{N}(\sqrt{\bar\alpha_{t_1}} \hat{x}_0^{\text{src}}, \sigma_{t_1}^2 I)$ for a starting time $t_1 < T$, skipping the first $T - t_1$ steps.
+    - **Design Motivation**: For $t \geq t_1$, $\Lambda_t = 1$, so the forward mean becomes a noise process centered on the pure source image, eliminating the need to start from pure noise.
 
 ### Loss & Training
 - The noise prediction model $\varepsilon_\theta$ and the domain scheduling network $\mathcal{S}_\theta$ are trained jointly.

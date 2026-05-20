@@ -19,8 +19,8 @@ content_hash: cb4a4eb6ecd526d3
 # Seek-CAD: A Self-Refined Generative Modeling for 3D Parametric CAD Using Local Inference via DeepSeek
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.17702](https://arxiv.org/abs/2505.17702)
-**Code**: [https://github.com/Sunny-Hack/Seek-CAD](https://github.com/Sunny-Hack/Seek-CAD)
+**arXiv**: [2505.17702](https://arxiv.org/abs/2505.17702)  
+**Code**: [https://github.com/Sunny-Hack/Seek-CAD](https://github.com/Sunny-Hack/Seek-CAD)  
 **Area**: CAD Generation / LLM Reasoning
 **Keywords**: CAD parametric modeling, DeepSeek-R1, training-free, Chain-of-Thought, self-refinement, SSR design paradigm
 

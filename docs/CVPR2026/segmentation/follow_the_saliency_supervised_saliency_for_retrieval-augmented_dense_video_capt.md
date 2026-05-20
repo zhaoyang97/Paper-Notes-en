@@ -18,8 +18,8 @@ content_hash: ffe38dc66bd36646
 # Follow the Saliency: Supervised Saliency for Retrieval-augmented Dense Video Captioning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11460](https://arxiv.org/abs/2603.11460)
-**Code**: [GitHub](https://github.com/ermitaju1/STaRC)
+**arXiv**: [2603.11460](https://arxiv.org/abs/2603.11460)  
+**Code**: [GitHub](https://github.com/ermitaju1/STaRC)  
 **Area**: Segmentation
 **Keywords**: Dense Video Captioning, Saliency Learning, Retrieval Augmentation, Temporal Segmentation, Optimal Transport
 

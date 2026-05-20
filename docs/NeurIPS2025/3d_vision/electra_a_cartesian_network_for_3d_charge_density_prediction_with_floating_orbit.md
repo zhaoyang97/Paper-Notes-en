@@ -18,8 +18,8 @@ content_hash: ecd2bd61f5843a90
 # ELECTRA: A Cartesian Network for 3D Charge Density Prediction with Floating Orbitals
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.08305](https://arxiv.org/abs/2503.08305)
-**Code**: Not explicitly provided
+**arXiv**: [2503.08305](https://arxiv.org/abs/2503.08305)  
+**Code**: Not explicitly provided  
 **Area**: 3D Vision / Scientific Computing / Quantum Chemistry
 **Keywords**: Electron density prediction, floating orbitals, equivariant neural networks, Gaussian splatting, DFT acceleration
 
@@ -55,21 +55,21 @@ where weights $w$ may be negative (to construct shell structure), while position
 
 1. **Symmetry-Breaking Mechanism**
 
-   - **Function**: Enables the equivariant network to output floating orbital positions with lower symmetry than that of the input molecule.
-   - **Mechanism**: The outputs of an equivariant network must share the symmetry of the input — for a planar molecule, vector outputs are confined to the molecular plane. ELECTRA computes the three eigenvectors of the local inertia tensor $I_{ij} = \sum_k m_k(\|\mathbf{r}_k\|^2 \delta_{ij} - x_i^{(k)} x_j^{(k)})$ for each atom, and uses them to initialize the $l=1$ vector features. These eigenvectors define a local coordinate frame that can break reflection symmetry. Sign ambiguity in the eigenvectors is resolved by normalizing via the dot product with the direction to the center of mass.
-   - **Design Motivation**: For highly symmetric planar molecules such as benzene, a network that does not break symmetry can only place orbitals within the molecular plane, yet the π electron cloud has significant density both above and below the plane. Inertia tensor eigenvectors are rotationally equivariant but can break reflection symmetry.
+    - **Function**: Enables the equivariant network to output floating orbital positions with lower symmetry than that of the input molecule.
+    - **Mechanism**: The outputs of an equivariant network must share the symmetry of the input — for a planar molecule, vector outputs are confined to the molecular plane. ELECTRA computes the three eigenvectors of the local inertia tensor $I_{ij} = \sum_k m_k(\|\mathbf{r}_k\|^2 \delta_{ij} - x_i^{(k)} x_j^{(k)})$ for each atom, and uses them to initialize the $l=1$ vector features. These eigenvectors define a local coordinate frame that can break reflection symmetry. Sign ambiguity in the eigenvectors is resolved by normalizing via the dot product with the direction to the center of mass.
+    - **Design Motivation**: For highly symmetric planar molecules such as benzene, a network that does not break symmetry can only place orbitals within the molecular plane, yet the π electron cloud has significant density both above and below the plane. Inertia tensor eigenvectors are rotationally equivariant but can break reflection symmetry.
 
 2. **Debiasing Layers**
 
-   - **Function**: Removes the directional bias introduced into $l=1$ features by the HotPP message-passing process.
-   - **Mechanism**: The covariance matrix $\mathbf{C}_A$ of all $l=1$ features is computed, and its leading eigenvector $\mathbf{u}_1$ is taken as the bias direction. Learnable weights $w_{A,j} \in [0,1]$ (predicted by an MLP from $l=0$ features) control the degree to which the bias is subtracted: $\mathbf{v}_{A,j} \leftarrow \frac{\mathbf{v}_{A,j} - w_{A,j} \cdot \hat{v}_{A,j}^{\|}}{\|\cdot\|}$, with normalization so that $l=1$ features encode only direction.
-   - **Design Motivation**: Message passing tends to align vector features with bond axes (e.g., the three N–H bond axes in ammonia), causing Gaussians to concentrate along bond directions and fail to cover lateral density. Debiasing layers allow the model to adaptively remove this tendency.
+    - **Function**: Removes the directional bias introduced into $l=1$ features by the HotPP message-passing process.
+    - **Mechanism**: The covariance matrix $\mathbf{C}_A$ of all $l=1$ features is computed, and its leading eigenvector $\mathbf{u}_1$ is taken as the bias direction. Learnable weights $w_{A,j} \in [0,1]$ (predicted by an MLP from $l=0$ features) control the degree to which the bias is subtracted: $\mathbf{v}_{A,j} \leftarrow \frac{\mathbf{v}_{A,j} - w_{A,j} \cdot \hat{v}_{A,j}^{\|}}{\|\cdot\|}$, with normalization so that $l=1$ features encode only direction.
+    - **Design Motivation**: Message passing tends to align vector features with bond axes (e.g., the three N–H bond axes in ammonia), causing Gaussians to concentrate along bond directions and fail to cover lateral density. Debiasing layers allow the model to adaptively remove this tendency.
 
 3. **Variable Basis Set Size**
 
-   - **Function**: Dynamically adjusts the number of predicted Gaussians based on atom type.
-   - **Mechanism**: The number of Gaussians per atom is $N_A = n_e \cdot M_e$, where $n_e$ is the number of valence electrons and $M_e$ is the number of Gaussians per valence electron. Oxygen ($n_e=6$) yields $6M_e$ Gaussians, while hydrogen ($n_e=1$) yields only $M_e$, implemented by selecting the first $N_A$ output channels from HotPP.
-   - **Design Motivation**: Inspired by quantum chemistry basis set design, more complex atoms require more basis functions. This ensures rational allocation of model capacity — avoiding wasted parameters on hydrogen atoms.
+    - **Function**: Dynamically adjusts the number of predicted Gaussians based on atom type.
+    - **Mechanism**: The number of Gaussians per atom is $N_A = n_e \cdot M_e$, where $n_e$ is the number of valence electrons and $M_e$ is the number of Gaussians per valence electron. Oxygen ($n_e=6$) yields $6M_e$ Gaussians, while hydrogen ($n_e=1$) yields only $M_e$, implemented by selecting the first $N_A$ output channels from HotPP.
+    - **Design Motivation**: Inspired by quantum chemistry basis set design, more complex atoms require more basis functions. This ensures rational allocation of model capacity — avoiding wasted parameters on hydrogen atoms.
 
 ### Loss & Training
 

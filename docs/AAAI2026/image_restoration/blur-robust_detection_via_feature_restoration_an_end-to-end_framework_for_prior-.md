@@ -18,8 +18,8 @@ content_hash: 322e936aaad9ac86
 # Blur-Robust Detection via Feature Restoration: An End-to-End Framework for Prior-Guided Infrared UAV Target Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14371](https://arxiv.org/abs/2511.14371)
-**Code**: [IVPLaboratory/JFD3](https://github.com/IVPLaboratory/JFD3)
+**arXiv**: [2511.14371](https://arxiv.org/abs/2511.14371)  
+**Code**: [IVPLaboratory/JFD3](https://github.com/IVPLaboratory/JFD3)  
 **Area**: Image Restoration
 **Keywords**: Motion blur, infrared UAV target detection, feature-domain deblurring, frequency structure guidance, end-to-end joint framework
 

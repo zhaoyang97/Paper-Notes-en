@@ -18,8 +18,8 @@ content_hash: 0648445f0670533d
 # Multi-Modal Image Fusion via Intervention-Stable Feature Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23272](https://arxiv.org/abs/2603.23272)
-**Code**: Coming soon
+**arXiv**: [2603.23272](https://arxiv.org/abs/2603.23272)  
+**Code**: Coming soon  
 **Area**: Multimodal VLM
 **Keywords**: Multi-modal image fusion, causal inference, intervention learning, infrared-visible fusion, feature stability
 

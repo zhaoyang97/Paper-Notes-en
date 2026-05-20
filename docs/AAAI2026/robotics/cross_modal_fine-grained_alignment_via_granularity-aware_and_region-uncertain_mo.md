@@ -18,8 +18,8 @@ content_hash: a1aff1379dbbab63
 # Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling
 
 **Conference**: AAAI2026
-**arXiv**: [2511.07710](https://arxiv.org/abs/2511.07710)
-**Code**: [GitHub](https://github.com/H3IIoWorld/GRM)
+**arXiv**: [2511.07710](https://arxiv.org/abs/2511.07710)  
+**Code**: [GitHub](https://github.com/H3IIoWorld/GRM)  
 **Area**: Robotics
 **Keywords**: fine-grained alignment, image-text retrieval, uncertainty modeling, Gaussian mixture, region prompting
 

@@ -18,8 +18,8 @@ content_hash: be65058794f8fc20
 # Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution
 
 **Conference**: NEURIPS2025
-**arXiv**: [2510.11092](https://arxiv.org/abs/2510.11092)
-**Code**: [LogosRoboticsGroup/SeerDrive](https://github.com/LogosRoboticsGroup/SeerDrive)
+**arXiv**: [2510.11092](https://arxiv.org/abs/2510.11092)  
+**Code**: [LogosRoboticsGroup/SeerDrive](https://github.com/LogosRoboticsGroup/SeerDrive)  
 **Area**: Autonomous Driving
 **Keywords**: end-to-end driving, world model, BEV, trajectory planning, iterative refinement
 

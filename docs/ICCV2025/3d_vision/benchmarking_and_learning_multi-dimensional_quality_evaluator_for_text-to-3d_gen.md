@@ -18,8 +18,8 @@ content_hash: ddaac6d98ad73af4
 # Benchmarking and Learning Multi-Dimensional Quality Evaluator for Text-to-3D Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.11170](https://arxiv.org/abs/2412.11170)
-**Code**: [https://mate-3d.github.io/](https://mate-3d.github.io/)
+**arXiv**: [2412.11170](https://arxiv.org/abs/2412.11170)  
+**Code**: [https://mate-3d.github.io/](https://mate-3d.github.io/)  
 **Area**: 3D Vision
 **Keywords**: Text-to-3D generation, quality evaluation, multi-dimensional assessment, hypernetwork, benchmark
 

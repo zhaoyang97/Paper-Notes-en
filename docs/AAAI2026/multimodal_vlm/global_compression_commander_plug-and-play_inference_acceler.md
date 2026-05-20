@@ -18,8 +18,8 @@ content_hash: df7ca19a4dd05e11
 # Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2501.05179](https://arxiv.org/abs/2501.05179)
-**Code**: [https://github.com/xuyang-liu16/GlobalCom2](https://github.com/xuyang-liu16/GlobalCom2)
+**arXiv**: [2501.05179](https://arxiv.org/abs/2501.05179)  
+**Code**: [https://github.com/xuyang-liu16/GlobalCom2](https://github.com/xuyang-liu16/GlobalCom2)  
 **Area**: Multimodal VLM / Model Compression
 **Keywords**: Token Compression, High-Resolution VLM, Dynamic Cropping, Plug-and-Play Acceleration, Global-Local Guidance
 

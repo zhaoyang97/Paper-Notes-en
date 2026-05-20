@@ -18,8 +18,8 @@ content_hash: f9dff78f49e8666d
 # BioHiCL: Hierarchical Multi-Label Contrastive Learning for Biomedical Retrieval with MeSH Labels
 
 **Conference**: ACL 2026
-**arXiv**: [2604.15591](https://arxiv.org/abs/2604.15591)
-**Code**: [https://github.com/MengfeiLan/BioHiCL](https://github.com/MengfeiLan/BioHiCL)
+**arXiv**: [2604.15591](https://arxiv.org/abs/2604.15591)  
+**Code**: [https://github.com/MengfeiLan/BioHiCL](https://github.com/MengfeiLan/BioHiCL)  
 **Area**: Medical Imaging
 **Keywords**: Biomedical retrieval, MeSH hierarchy, contrastive learning, multi-label, parameter-efficient fine-tuning
 

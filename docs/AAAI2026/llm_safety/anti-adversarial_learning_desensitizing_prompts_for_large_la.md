@@ -18,8 +18,8 @@ content_hash: 3c88345d293bc140
 # Anti-adversarial Learning: Desensitizing Prompts for Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.01273v2](https://arxiv.org/abs/2505.01273v2)
-**Code**: [https://github.com/riken01/PromptObfus](https://github.com/riken01/PromptObfus)
+**arXiv**: [2505.01273v2](https://arxiv.org/abs/2505.01273v2)  
+**Code**: [https://github.com/riken01/PromptObfus](https://github.com/riken01/PromptObfus)  
 **Area**: AI Safety / LLM Privacy Protection
 **Keywords**: prompt desensitization, anti-adversarial learning, privacy protection, masked language model, surrogate model gradients
 

@@ -18,8 +18,8 @@ content_hash: ee1c56c4a257c73d
 # AHAMask: Reliable Task Specification for Large Audio Language Models without Instructions
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.01787v3](https://arxiv.org/abs/2509.01787v3)
-**Code**: [https://github.com/X-LANCE/SALMONN-AHAMask](https://github.com/X-LANCE/SALMONN-AHAMask)
+**arXiv**: [2509.01787v3](https://arxiv.org/abs/2509.01787v3)  
+**Code**: [https://github.com/X-LANCE/SALMONN-AHAMask](https://github.com/X-LANCE/SALMONN-AHAMask)  
 **Area**: Speech & Audio Processing / Large Language Model Interpretability
 **Keywords**: Large Audio Language Models, Attention Head Masking, Prompt Sensitivity, Task Specification, Functional Pathways
 

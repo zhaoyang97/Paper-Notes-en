@@ -18,8 +18,8 @@ content_hash: 6dce33751f6ccb37
 # RetrySQL: Text-to-SQL Training with Retry Data for Self-Correcting Query Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.02529](https://arxiv.org/abs/2507.02529)
-**Code**: [https://github.com/allegro/RetrySQL](https://github.com/allegro/RetrySQL)
+**arXiv**: [2507.02529](https://arxiv.org/abs/2507.02529)  
+**Code**: [https://github.com/allegro/RetrySQL](https://github.com/allegro/RetrySQL)  
 **Area**: Image Generation
 **Keywords**: Text-to-SQL, self-correction, retry data, chain of reasoning, small language models
 

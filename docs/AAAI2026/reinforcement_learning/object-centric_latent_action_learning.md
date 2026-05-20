@@ -18,8 +18,8 @@ content_hash: 678f95f2e745b541
 # Object-Centric Latent Action Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2502.09680](https://arxiv.org/abs/2502.09680)
-**Code**: [https://github.com/dunnolab/object-centric-lapo](https://github.com/dunnolab/object-centric-lapo)
+**arXiv**: [2502.09680](https://arxiv.org/abs/2502.09680)  
+**Code**: [https://github.com/dunnolab/object-centric-lapo](https://github.com/dunnolab/object-centric-lapo)  
 **Area**: Reinforcement Learning
 **Keywords**: object-centric representation, latent action learning, visual distractions, imitation learning, self-supervised learning
 
@@ -56,18 +56,18 @@ The pipeline consists of three stages:
 
 2. **Slot selection via linear action probe**: Although object-centric models can decompose scenes, automatically identifying which slots correspond to task-relevant entities remains a challenge. The method employs linear probing (inspired by Alain & Bengio 2016):
 
-   - Apply PCA dimensionality reduction to slot encodings from a small set of labeled trajectories.
-   - Train a linear regressor to predict ground-truth actions.
-   - Evaluate mean test MSE using 5-fold cross-validation (the Linear Action Probe score).
-   - Select the slot(s) with the lowest MSE as the relevant slot set $\mathcal{S}^\star = \{s^{(k)} | k \in \mathcal{K}^\star\}$.
+    - Apply PCA dimensionality reduction to slot encodings from a small set of labeled trajectories.
+    - Train a linear regressor to predict ground-truth actions.
+    - Evaluate mean test MSE using 5-fold cross-validation (the Linear Action Probe score).
+    - Select the slot(s) with the lowest MSE as the relevant slot set $\mathcal{S}^\star = \{s^{(k)} | k \in \mathcal{K}^\star\}$.
 
    This selection is performed only once after object-centric pretraining, leveraging fixed slot initialization to ensure consistent interpretation across episodes.
 
 3. **Two variants of latent action modeling**:
 
-   - **LAPO-slots**: Operates entirely in latent space. An inverse dynamics model $z_t \sim f_{IDM}^s(\cdot | s_t, s_{t+1})$ and a forward dynamics model $\hat{s}_{t+1} \sim f_{FDM}^s(\cdot | s_t, z_t)$ are trained in slot embedding space, minimizing $\|\hat{s}_{t+1} - s_{t+1}\|^2$.
+    - **LAPO-slots**: Operates entirely in latent space. An inverse dynamics model $z_t \sim f_{IDM}^s(\cdot | s_t, s_{t+1})$ and a forward dynamics model $\hat{s}_{t+1} \sim f_{FDM}^s(\cdot | s_t, z_t)$ are trained in slot embedding space, minimizing $\|\hat{s}_{t+1} - s_{t+1}\|^2$.
 
-   - **LAPO-masks**: Operates in pixel space. Object masks from selected slots are applied to input frames to create filtered images retaining only task-relevant objects, on which the dynamics model is then trained.
+    - **LAPO-masks**: Operates in pixel space. Object masks from selected slots are applied to input frames to create filtered images retaining only task-relevant objects, on which the dynamics model is then trained.
 
 ### Loss & Training
 

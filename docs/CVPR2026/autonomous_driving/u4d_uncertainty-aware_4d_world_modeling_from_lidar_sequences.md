@@ -18,8 +18,8 @@ content_hash: 2422a8befb9ec89d
 # U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.02982](https://arxiv.org/abs/2512.02982)
-**Code**: N/A
+**arXiv**: [2512.02982](https://arxiv.org/abs/2512.02982)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: LiDAR generation, uncertainty modeling, diffusion models, 4D world model, spatio-temporal consistency
 

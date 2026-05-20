@@ -18,8 +18,8 @@ content_hash: 08f6cf2e3361b335
 # Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2410.16006](https://arxiv.org/abs/2410.16006)
-**Code**: None
+**arXiv**: [2410.16006](https://arxiv.org/abs/2410.16006)  
+**Code**: None  
 **Area**: Multilingual / Continual Learning
 **Keywords**: Continual Fine-tuning, Multilingual Adaptation, Catastrophic Forgetting, Dataset Similarity, Representation Drift
 

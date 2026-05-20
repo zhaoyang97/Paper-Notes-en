@@ -18,8 +18,8 @@ content_hash: b679cc9a2d73ca50
 # DiffInk: Glyph- and Style-Aware Latent Diffusion Transformer for Text to Online Handwriting Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23624](https://arxiv.org/abs/2509.23624)
-**Code**: [https://github.com/awei669/DiffInk](https://github.com/awei669/DiffInk)
+**arXiv**: [2509.23624](https://arxiv.org/abs/2509.23624)  
+**Code**: [https://github.com/awei669/DiffInk](https://github.com/awei669/DiffInk)  
 **Area**: Diffusion Models / Handwriting Generation
 **Keywords**: online handwriting generation, latent diffusion transformer, VAE regularization, glyph-style disentanglement, Chinese handwriting
 

@@ -18,8 +18,8 @@ content_hash: a5bc932892199302
 # A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10739](https://arxiv.org/abs/2510.10739)
-**Code**: None
+**arXiv**: [2510.10739](https://arxiv.org/abs/2510.10739)  
+**Code**: None  
 **Area**: Code Intelligence
 **Keywords**: stochastic differential equation, multi-objective optimization, LLM interaction, interference matrix, code generation
 

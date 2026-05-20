@@ -20,8 +20,8 @@ content_hash: f4501a50979361fd
 # Format as a Prior: Quantifying and Analyzing Bias in LLMs for Heterogeneous Data
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.15793](https://arxiv.org/abs/2508.15793)
-**Code**: [github.com/NLPGM/Format-as-a-prior](https://github.com/NLPGM/Format-as-a-prior)
+**arXiv**: [2508.15793](https://arxiv.org/abs/2508.15793)  
+**Code**: [github.com/NLPGM/Format-as-a-prior](https://github.com/NLPGM/Format-as-a-prior)  
 **Area**: Graph Learning / LLMs with Heterogeneous Data
 **Keywords**: Format Bias, LLM, Heterogeneous Data, Knowledge Graph, Attention Mechanism, Information Richness, Structural Quality
 

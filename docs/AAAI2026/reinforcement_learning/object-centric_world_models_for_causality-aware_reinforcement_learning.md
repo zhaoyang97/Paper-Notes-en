@@ -18,8 +18,8 @@ content_hash: e66f649612ddf6de
 # Object-Centric World Models for Causality-Aware Reinforcement Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14262](https://arxiv.org/abs/2511.14262)
-**Code**: None
+**arXiv**: [2511.14262](https://arxiv.org/abs/2511.14262)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Object-centric world models, causal attention, model-based reinforcement learning, Slot Attention, Transformer
 

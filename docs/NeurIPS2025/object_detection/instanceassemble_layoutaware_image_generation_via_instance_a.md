@@ -18,8 +18,8 @@ content_hash: 3dd1ef16b6678f2e
 # InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16691](https://arxiv.org/abs/2509.16691)
-**Code**: [https://github.com/FireRedTeam/InstanceAssemble](https://github.com/FireRedTeam/InstanceAssemble)
+**arXiv**: [2509.16691](https://arxiv.org/abs/2509.16691)  
+**Code**: [https://github.com/FireRedTeam/InstanceAssemble](https://github.com/FireRedTeam/InstanceAssemble)  
 **Area**: Object Detection
 **Keywords**: layout-to-image, instance assembling attention, DiT, LoRA, DenseLayout benchmark
 

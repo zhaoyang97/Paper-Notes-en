@@ -18,8 +18,8 @@ content_hash: 014267add6bdc44d
 # RFKG-CoT: Relation-Driven Adaptive Hop-count Selection and Few-Shot Path Guidance for Knowledge-Aware QA
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.15219](https://arxiv.org/abs/2512.15219)
-**Code**: N/A
+**arXiv**: [2512.15219](https://arxiv.org/abs/2512.15219)  
+**Code**: N/A  
 **Area**: Graph Learning
 **Keywords**: Knowledge Graph Question Answering, Chain-of-Thought, Relation-Aware, Adaptive Hop-count, Few-Shot Guidance
 
@@ -49,15 +49,15 @@ Initialize topic entities → compute relation scores via MLP → dynamically se
 
 1. **Relation-Driven Adaptive Hop-count Selector**:
 
-   - **Function**: Dynamically selects the number of reasoning steps based on KG relation activation patterns rather than question features alone.
-   - **Mechanism**: Records which relations are activated at each reasoning step via a relation activation mask, and uses this to determine whether additional hops are needed. Selects 1 hop when a direct relation exists; automatically increases hop count for indirect chains.
-   - **Design Motivation**: The same question may require different hop counts under different KG topologies; relation masks capture this structural information.
+    - **Function**: Dynamically selects the number of reasoning steps based on KG relation activation patterns rather than question features alone.
+    - **Mechanism**: Records which relations are activated at each reasoning step via a relation activation mask, and uses this to determine whether additional hops are needed. Selects 1 hop when a direct relation exists; automatically increases hop count for indirect chains.
+    - **Design Motivation**: The same question may require different hop counts under different KG topologies; relation masks capture this structural information.
 
 2. **Few-Shot Path Guidance**:
 
-   - **Function**: Uses structured in-context examples to teach LLMs how to interpret and utilize KG paths.
-   - **Mechanism**: Each example contains: a query, serialized KG paths (Entity→Relation→Entity), a symbolic "Think" template mapping path elements to answer constraints, and an explicit answer format. The optimal number of examples is $E=3$.
-   - **Design Motivation**: LLMs receiving KG paths lack guidance on how to translate path information into reasoning steps; the "Think" template serves as a bridge.
+    - **Function**: Uses structured in-context examples to teach LLMs how to interpret and utilize KG paths.
+    - **Mechanism**: Each example contains: a query, serialized KG paths (Entity→Relation→Entity), a symbolic "Think" template mapping path elements to answer constraints, and an explicit answer format. The optimal number of examples is $E=3$.
+    - **Design Motivation**: LLMs receiving KG paths lack guidance on how to translate path information into reasoning steps; the "Think" template serves as a bridge.
 
 ### Loss & Training
 - The graph reasoning module learns relation scores via an MLP, optimized on the training set.

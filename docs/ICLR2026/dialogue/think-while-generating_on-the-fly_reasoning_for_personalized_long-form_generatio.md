@@ -18,8 +18,8 @@ content_hash: 6386cd70a70212fb
 # Think-While-Generating: On-the-Fly Reasoning for Personalized Long-Form Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.06690](https://arxiv.org/abs/2512.06690)
-**Code**: None
+**arXiv**: [2512.06690](https://arxiv.org/abs/2512.06690)  
+**Code**: None  
 **Area**: Dialogue Systems
 **Keywords**: personalized generation, long-form generation, latent reasoning, think-while-generating, parallel reasoning
 

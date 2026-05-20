@@ -18,8 +18,8 @@ content_hash: ace4f1a42c694dbb
 # VFScale: Intrinsic Reasoning through Verifier-Free Test-time Scalable Diffusion Model
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.01989](https://arxiv.org/abs/2502.01989)
-**Code**: [https://github.com/AI4Science-WestlakeU/VFScale](https://github.com/AI4Science-WestlakeU/VFScale)
+**arXiv**: [2502.01989](https://arxiv.org/abs/2502.01989)  
+**Code**: [https://github.com/AI4Science-WestlakeU/VFScale](https://github.com/AI4Science-WestlakeU/VFScale)  
 **Area**: Diffusion Models / Reasoning
 **Keywords**: Test-time scaling, verifier-free, energy function, Monte Carlo tree search, diffusion model reasoning
 

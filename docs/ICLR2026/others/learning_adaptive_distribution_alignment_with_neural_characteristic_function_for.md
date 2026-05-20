@@ -17,8 +17,8 @@ content_hash: 22850046628003ea
 # Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.10489](https://arxiv.org/abs/2602.10489)
-**Code**: [https://github.com/gxingyu/ADAlign](https://github.com/gxingyu/ADAlign)
+**arXiv**: [2602.10489](https://arxiv.org/abs/2602.10489)  
+**Code**: [https://github.com/gxingyu/ADAlign](https://github.com/gxingyu/ADAlign)  
 **Area**: Other / Graph Neural Networks
 **Keywords**: graph domain adaptation, characteristic function, spectral-domain alignment, adaptive frequency sampling, minimax optimization
 

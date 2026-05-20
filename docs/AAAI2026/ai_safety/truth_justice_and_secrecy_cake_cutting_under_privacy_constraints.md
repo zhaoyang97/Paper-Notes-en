@@ -18,8 +18,8 @@ content_hash: d157a981d6d7caeb
 # Truth, Justice, and Secrecy: Cake Cutting Under Privacy Constraints
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09882](https://arxiv.org/abs/2511.09882)
-**Code**: None
+**arXiv**: [2511.09882](https://arxiv.org/abs/2511.09882)  
+**Code**: None  
 **Area**: AI Safety / Fair Division
 **Keywords**: cake cutting, privacy preservation, strategyproofness, secure multi-party computation, secret sharing
 
@@ -134,8 +134,8 @@ This paper is a theoretical contribution; results are established primarily thro
 # Truth, Justice, and Secrecy: Cake Cutting Under Privacy Constraints
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09882](https://arxiv.org/abs/2511.09882)
-**Code**: None
+**arXiv**: [2511.09882](https://arxiv.org/abs/2511.09882)  
+**Code**: None  
 **Area**: AI Safety / Fair Division
 **Keywords**: cake cutting, privacy preservation, secure multi-party computation, envy-free allocation, strategyproofness
 

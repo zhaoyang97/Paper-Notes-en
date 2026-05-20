@@ -18,8 +18,8 @@ content_hash: 5b9cc10a50b760bf
 # Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.07970](https://arxiv.org/abs/2511.07970)
-**Code**: [https://justinhylee135.github.io/CUIG_Project_Page/](https://justinhylee135.github.io/CUIG_Project_Page/)
+**arXiv**: [2511.07970](https://arxiv.org/abs/2511.07970)  
+**Code**: [https://justinhylee135.github.io/CUIG_Project_Page/](https://justinhylee135.github.io/CUIG_Project_Page/)  
 **Area**: Diffusion Models / Machine Unlearning
 **Keywords**: continual unlearning, diffusion models, regularization, gradient projection, concept erasure
 

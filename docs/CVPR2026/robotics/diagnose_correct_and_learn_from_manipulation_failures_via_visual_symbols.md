@@ -18,8 +18,8 @@ content_hash: 22c2c39620f71459
 # Diagnose, Correct, and Learn from Manipulation Failures via Visual Symbols
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.02787](https://arxiv.org/abs/2512.02787)
-**Code**: [Project Page](https://vifailback.github.io/)
+**arXiv**: [2512.02787](https://arxiv.org/abs/2512.02787)  
+**Code**: [Project Page](https://vifailback.github.io/)  
 **Area**: Robotics
 **Keywords**: robotic manipulation failure, visual symbols, VLM failure diagnosis, VLA recovery, real-world dataset
 

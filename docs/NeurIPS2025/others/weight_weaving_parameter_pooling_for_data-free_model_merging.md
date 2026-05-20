@@ -17,8 +17,8 @@ content_hash: 32e053a539b9ebcc
 # Weight Weaving: Parameter Pooling for Data-Free Model Merging
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.13921](https://arxiv.org/abs/2510.13921)
-**Code**: [https://github.com/VirtualSpaceman/weight_weaving](https://github.com/VirtualSpaceman/weight_weaving)
+**arXiv**: [2510.13921](https://arxiv.org/abs/2510.13921)  
+**Code**: [https://github.com/VirtualSpaceman/weight_weaving](https://github.com/VirtualSpaceman/weight_weaving)  
 **Area**: Other
 **Keywords**: model merging, data-free, scaling factor, parameter pooling, task vectors
 

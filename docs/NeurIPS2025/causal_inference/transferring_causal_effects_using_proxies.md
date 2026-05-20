@@ -18,8 +18,8 @@ content_hash: 86cf72b9c48d5a0e
 # Transferring Causal Effects using Proxies
 
 **Conference**: NEURIPS2025
-**arXiv**: [2510.25924](https://arxiv.org/abs/2510.25924)
-**Code**: [manueligal/proxy-intervention](https://github.com/manueligal/proxy-intervention)
+**arXiv**: [2510.25924](https://arxiv.org/abs/2510.25924)  
+**Code**: [manueligal/proxy-intervention](https://github.com/manueligal/proxy-intervention)  
 **Area**: Causal Inference
 **Keywords**: proximal causal inference, domain adaptation, unobserved confounders, proxy variables, interventional distribution
 

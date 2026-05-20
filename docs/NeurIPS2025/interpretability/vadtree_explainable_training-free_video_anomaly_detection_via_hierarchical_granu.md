@@ -18,8 +18,8 @@ content_hash: c1e2c2e51ee6c3a4
 # VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22693](https://arxiv.org/abs/2510.22693)
-**Code**: [GitHub](https://github.com/wenlongli10/VADTree)
+**arXiv**: [2510.22693](https://arxiv.org/abs/2510.22693)  
+**Code**: [GitHub](https://github.com/wenlongli10/VADTree)  
 **Area**: Interpretability
 **Keywords**: Video Anomaly Detection, Training-Free, Hierarchical Granularity Tree, Generic Event Boundary Detection, Multi-Granularity Reasoning
 

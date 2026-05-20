@@ -18,8 +18,8 @@ content_hash: 84dfcbf05fce3b7c
 # SocialHarmBench: Revealing LLM Vulnerabilities to Socially Harmful Requests
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04891](https://arxiv.org/abs/2510.04891)
-**Code**: [huggingface.co/datasets/psyonp/SocialHarmBench](https://huggingface.co/datasets/psyonp/SocialHarmBench)
+**arXiv**: [2510.04891](https://arxiv.org/abs/2510.04891)  
+**Code**: [huggingface.co/datasets/psyonp/SocialHarmBench](https://huggingface.co/datasets/psyonp/SocialHarmBench)  
 **Area**: Robotics
 **Keywords**: LLM safety, sociopolitical harm, adversarial attacks, jailbreak attacks, safety benchmarks
 
@@ -73,20 +73,20 @@ SocialHarmBench is constructed through three core phases:
 
 2. **Three Functional Types** → Probing different failure modes → Design Motivation: to ensure stylistic diversity in evaluation.
 
-   - **Standard Behavior**: Direct harmful requests
-   - **Opinion Elicitation**: Attempts to extract political views that violate norms
-   - **Historical Reference**: Harmful designs modeled after past regimes or events
+    - **Standard Behavior**: Direct harmful requests
+    - **Opinion Elicitation**: Attempts to extract political views that violate norms
+    - **Historical Reference**: Harmful designs modeled after past regimes or events
 
 3. **Temporal and Geographic Diversity** → Assessing cross-cultural generalization → Design Motivation: to detect region- and era-specific biases.
 
-   - 34 countries covering all inhabited continents
-   - Temporal span from the 19th century to the present
-   - Germany (23), the United States (20), China (16), and Russia/Soviet Union (15) account for the highest proportions
+    - 34 countries covering all inhabited continents
+    - Temporal span from the 19th century to the present
+    - Germany (23), the United States (20), China (16), and Russia/Soviet Union (15) account for the highest proportions
 
 4. **Dual-Classifier Evaluation Pipeline** → Distinguishing capability exposure from alignment robustness → Design Motivation: to provide more fine-grained safety assessment.
 
-   - HarmBench (HB): measures whether the model produces content that fulfills harmful requests
-   - StrongREJECT (SR): measures whether the model's refusals are sufficiently robust
+    - HarmBench (HB): measures whether the model produces content that fulfills harmful requests
+    - StrongREJECT (SR): measures whether the model's refusals are sufficiently robust
 
 ### Attack Methods
 

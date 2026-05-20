@@ -18,8 +18,8 @@ content_hash: 347d13e6787f04c9
 # EchoLess: Label-Based Pre-Computation for Memory-Efficient Heterogeneous Graph Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11081](https://arxiv.org/abs/2511.11081)
-**Code**: [Available](https://github.com/CrawlScript/Echoless-LP)
+**arXiv**: [2511.11081](https://arxiv.org/abs/2511.11081)  
+**Code**: [Available](https://github.com/CrawlScript/Echoless-LP)  
 **Area**: Graph Learning / Heterogeneous Graph Neural Networks
 **Keywords**: Heterogeneous graph learning, label pre-computation, training label leakage, echo effect, memory efficiency
 

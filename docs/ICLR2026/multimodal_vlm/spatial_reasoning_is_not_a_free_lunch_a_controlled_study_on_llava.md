@@ -18,8 +18,8 @@ content_hash: b6e2527cffbe5a3c
 # Spatial Reasoning is Not a Free Lunch: A Controlled Study on LLaVA
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.12545](https://arxiv.org/abs/2603.12545)
-**Code**: None
+**arXiv**: [2603.12545](https://arxiv.org/abs/2603.12545)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: spatial reasoning, image encoder, 2D-RoPE, LLaVA, vision-language model
 

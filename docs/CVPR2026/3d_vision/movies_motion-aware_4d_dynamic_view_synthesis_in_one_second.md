@@ -18,8 +18,8 @@ content_hash: b236c33c5e3fe014
 # MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second
 
 **Conference**: CVPR 2026
-**arXiv**: [2507.10065](https://arxiv.org/abs/2507.10065)
-**Code**: [Available](https://chenguolin.github.io/projects/MoVieS)
+**arXiv**: [2507.10065](https://arxiv.org/abs/2507.10065)  
+**Code**: [Available](https://chenguolin.github.io/projects/MoVieS)  
 **Area**: 3D Vision
 **Keywords**: dynamic view synthesis, 4D reconstruction, 3D Gaussian splatting, point tracking, feed-forward reconstruction
 

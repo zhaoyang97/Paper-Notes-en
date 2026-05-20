@@ -18,8 +18,8 @@ content_hash: b7c358b6e48ba534
 # AnchorHOI: Zero-shot Generation of 4D Human-Object Interaction via Anchor-based Prior Distillation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.14095v1](https://arxiv.org/abs/2512.14095v1)
-**Code**: N/A
+**arXiv**: [2512.14095v1](https://arxiv.org/abs/2512.14095v1)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: 4D HOI Generation, Zero-shot, Anchor-based Prior Distillation, NeRF, Video Diffusion Model
 

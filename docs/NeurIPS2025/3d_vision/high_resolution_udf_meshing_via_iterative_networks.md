@@ -18,8 +18,8 @@ content_hash: f67c915235e405e9
 # High Resolution UDF Meshing via Iterative Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17212](https://arxiv.org/abs/2509.17212)
-**Code**: To be confirmed
+**arXiv**: [2509.17212](https://arxiv.org/abs/2509.17212)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: Unsigned Distance Field, Meshing, Iterative Network, Pseudo-sign Prediction, High-Resolution Surface Reconstruction
 

@@ -18,8 +18,8 @@ content_hash: 0624c2fbcf4add96
 # BillBoard Splatting (BBSplat): Learnable Textured Primitives for Novel View Synthesis
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.08508](https://arxiv.org/abs/2411.08508)
-**Code**: [GitHub](https://github.com/david-svitov/BBSplat)
+**arXiv**: [2411.08508](https://arxiv.org/abs/2411.08508)  
+**Code**: [GitHub](https://github.com/david-svitov/BBSplat)  
 **Area**: 3D Vision / Novel View Synthesis / 3D Scene Representation
 **Keywords**: Gaussian Splatting, textured primitives, novel view synthesis, model compression, mesh extraction
 

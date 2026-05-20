@@ -18,8 +18,8 @@ content_hash: 9c8f901ae0fe186f
 # FregeLogic at SemEval 2026 Task 11: A Hybrid Neuro-Symbolic Architecture for Content-Robust Syllogistic Validity Prediction
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18328](https://arxiv.org/abs/2604.18328)
-**Code**: None
+**arXiv**: [2604.18328](https://arxiv.org/abs/2604.18328)  
+**Code**: None  
 **Area**: LLM Agent / Neuro-Symbolic Reasoning
 **Keywords**: syllogistic reasoning, belief bias, neuro-symbolic, LLM ensemble, Z3 solver
 

@@ -18,8 +18,8 @@ content_hash: d8a594038105f08c
 # Video Killed the Energy Budget: Characterizing the Latency and Power Regimes of Open Text-to-Video Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19222](https://arxiv.org/abs/2509.19222)
-**Code**: [GitHub](https://github.com/anonymized)
+**arXiv**: [2509.19222](https://arxiv.org/abs/2509.19222)  
+**Code**: [GitHub](https://github.com/anonymized)  
 **Area**: Video Generation
 **Keywords**: Text-to-video generation, energy consumption analysis, latency benchmarking, diffusion models, sustainable AI
 

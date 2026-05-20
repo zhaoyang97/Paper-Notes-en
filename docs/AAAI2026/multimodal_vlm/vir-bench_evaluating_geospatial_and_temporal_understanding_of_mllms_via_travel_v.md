@@ -18,8 +18,8 @@ content_hash: b045eb6d3248acbd
 # VIR-Bench: Evaluating Geospatial and Temporal Understanding of MLLMs via Travel Video Itinerary Reconstruction
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.19002](https://arxiv.org/abs/2509.19002)
-**Code**: [https://github.com/nlp-waseda/VIR-Bench](https://github.com/nlp-waseda/VIR-Bench)
+**arXiv**: [2509.19002](https://arxiv.org/abs/2509.19002)  
+**Code**: [https://github.com/nlp-waseda/VIR-Bench](https://github.com/nlp-waseda/VIR-Bench)  
 **Area**: Multimodal VLM
 **Keywords**: Geospatial Understanding, Temporal Reasoning, Travel Video, Itinerary Reconstruction, MLLM Evaluation
 

@@ -19,8 +19,8 @@ content_hash: 45141a169ee43ce2
 # Deep FlexQP: Accelerated Nonlinear Programming via Deep Unfolding
 
 **Conference**: ICLR2026
-**arXiv**: [2512.01565](https://arxiv.org/abs/2512.01565)
-**Code**: To be confirmed
+**arXiv**: [2512.01565](https://arxiv.org/abs/2512.01565)  
+**Code**: To be confirmed  
 **Area**: LLM Evaluation
 **Keywords**: Quadratic Programming, Deep Unfolding, ADMM, Sequential Quadratic Programming, LSTM Policy, PAC-Bayes
 

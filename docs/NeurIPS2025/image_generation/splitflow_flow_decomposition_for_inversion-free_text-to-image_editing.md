@@ -18,8 +18,8 @@ content_hash: 72e7890c42e38186
 # SplitFlow: Flow Decomposition for Inversion-Free Text-to-Image Editing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25970](https://arxiv.org/abs/2510.25970)
-**Code**: [https://github.com/Harvard-AI-and-Robotics-Lab/SplitFlow](https://github.com/Harvard-AI-and-Robotics-Lab/SplitFlow)
+**arXiv**: [2510.25970](https://arxiv.org/abs/2510.25970)  
+**Code**: [https://github.com/Harvard-AI-and-Robotics-Lab/SplitFlow](https://github.com/Harvard-AI-and-Robotics-Lab/SplitFlow)  
 **Area**: Image Editing / Diffusion Models
 **Keywords**: Rectified Flow, Inversion-Free Editing, Flow Decomposition, Gradient Conflict, Multi-Task Learning
 

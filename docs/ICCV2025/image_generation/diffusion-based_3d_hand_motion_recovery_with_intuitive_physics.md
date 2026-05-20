@@ -18,8 +18,8 @@ content_hash: f5b22f03866ae37f
 # Diffusion-based 3D Hand Motion Recovery with Intuitive Physics
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.01835](https://arxiv.org/abs/2508.01835)
-**Code**: None
+**arXiv**: [2508.01835](https://arxiv.org/abs/2508.01835)  
+**Code**: None  
 **Area**: 3D Hand Reconstruction / Motion Recovery
 **Keywords**: Diffusion Models, 3D Hand Reconstruction, Motion Refinement, Intuitive Physics, Hand-Object Interaction
 

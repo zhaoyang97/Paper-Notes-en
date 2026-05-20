@@ -18,8 +18,8 @@ content_hash: 6468d611be6ebf29
 # From Objects to Anywhere: A Holistic Benchmark for Multi-level Visual Grounding in 3D Scenes
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04897](https://arxiv.org/abs/2506.04897)
-**Code**: [https://anywhere-3d.github.io](https://anywhere-3d.github.io)
+**arXiv**: [2506.04897](https://arxiv.org/abs/2506.04897)  
+**Code**: [https://anywhere-3d.github.io](https://anywhere-3d.github.io)  
 **Area**: 3D Vision / Multimodal VLM / Visual Grounding
 **Keywords**: 3D visual grounding, multi-level grounding, benchmark, spatial reasoning, MLLM
 

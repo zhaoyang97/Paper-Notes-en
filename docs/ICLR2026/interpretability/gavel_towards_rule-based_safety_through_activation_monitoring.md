@@ -18,8 +18,8 @@ content_hash: 7749fd071e3b64e5
 # GAVEL: Towards Rule-Based Safety through Activation Monitoring
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19768](https://arxiv.org/abs/2601.19768)
-**Code**: Open-source (pending release)
+**arXiv**: [2601.19768](https://arxiv.org/abs/2601.19768)  
+**Code**: Open-source (pending release)  
 **Area**: AI Safety / Interpretability
 **Keywords**: Activation Monitoring, Cognitive Elements, Rule-Based Safety, Explainable AI Governance, LLM Safety
 

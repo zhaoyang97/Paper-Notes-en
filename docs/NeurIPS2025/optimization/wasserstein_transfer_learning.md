@@ -18,8 +18,8 @@ content_hash: c575e4d45119d92a
 # Wasserstein Transfer Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17404](https://arxiv.org/abs/2505.17404)
-**Code**: [GitHub](https://github.com/h7nian/WaTL)
+**arXiv**: [2505.17404](https://arxiv.org/abs/2505.17404)  
+**Code**: [GitHub](https://github.com/h7nian/WaTL)  
 **Area**: Optimization
 **Keywords**: Transfer Learning, Wasserstein Space, Fréchet Regression, Optimal Transport, Distributional Data Analysis
 

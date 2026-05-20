@@ -17,8 +17,8 @@ content_hash: 061936c9a2f8ac58
 # Adjusted Count Quantification Learning on Graphs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.09395](https://arxiv.org/abs/2503.09395)
-**Code**: N/A
+**arXiv**: [2503.09395](https://arxiv.org/abs/2503.09395)  
+**Code**: N/A  
 **Area**: Others
 **Keywords**: Quantification Learning, Graph Data, Covariate Shift, Importance Sampling, Non-Homophily
 

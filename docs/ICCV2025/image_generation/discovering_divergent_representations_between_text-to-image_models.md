@@ -18,8 +18,8 @@ content_hash: 5c61317cede1a752
 # Discovering Divergent Representations between Text-to-Image Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.08940](https://arxiv.org/abs/2509.08940)
-**Code**: [https://github.com/adobe-research/CompCon](https://github.com/adobe-research/CompCon)
+**arXiv**: [2509.08940](https://arxiv.org/abs/2509.08940)  
+**Code**: [https://github.com/adobe-research/CompCon](https://github.com/adobe-research/CompCon)  
 **Area**: Diffusion Models / Model Analysis
 **Keywords**: text-to-image model comparison, divergent representation discovery, evolutionary search, visual attributes, model bias
 

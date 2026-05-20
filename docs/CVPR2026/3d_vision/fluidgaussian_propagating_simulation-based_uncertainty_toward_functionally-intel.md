@@ -18,8 +18,8 @@ content_hash: d897df8bd077556e
 # FluidGaussian: Propagating Simulation-Based Uncertainty Toward Functionally-Intelligent 3D Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21356](https://arxiv.org/abs/2603.21356)
-**Code**: [GitHub](https://github.com/delta-lab-ai/FluidGaussian)
+**arXiv**: [2603.21356](https://arxiv.org/abs/2603.21356)  
+**Code**: [GitHub](https://github.com/delta-lab-ai/FluidGaussian)  
 **Area**: 3D Vision / 3D Reconstruction
 **Keywords**: 3D Gaussian Splatting, physics-aware reconstruction, fluid simulation, active view selection, uncertainty quantification
 

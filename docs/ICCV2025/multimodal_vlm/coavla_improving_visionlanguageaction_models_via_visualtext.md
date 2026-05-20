@@ -18,8 +18,8 @@ content_hash: eda858958fb74461
 # CoA-VLA: Improving Vision-Language-Action Models via Visual-Textual Chain-of-Affordance
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.20451](https://arxiv.org/abs/2412.20451)
-**Code**: [https://chain-of-affordance.github.io](https://chain-of-affordance.github.io)
+**arXiv**: [2412.20451](https://arxiv.org/abs/2412.20451)  
+**Code**: [https://chain-of-affordance.github.io](https://chain-of-affordance.github.io)  
 **Area**: Multimodal VLM / Embodied Intelligence / Robotic Manipulation
 **Keywords**: VLA, chain-of-affordance, robotic manipulation, visual prompting, affordance reasoning
 

@@ -18,8 +18,8 @@ content_hash: 70f68c3432f06547
 # Stealthy Yet Effective: Distribution-Preserving Backdoor Attacks on Graph Classification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.26032](https://arxiv.org/abs/2509.26032)
-**Code**: [Available](https://github.com/TheCoderOfs/DPSBA)
+**arXiv**: [2509.26032](https://arxiv.org/abs/2509.26032)  
+**Code**: [Available](https://github.com/TheCoderOfs/DPSBA)  
 **Area**: AI Safety / Graph Learning Security
 **Keywords**: backdoor attack, graph classification, distribution preservation, adversarial training, GNN security
 

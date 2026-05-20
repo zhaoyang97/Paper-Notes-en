@@ -19,7 +19,7 @@ content_hash: f2d12c252b0179e2
 # SuperEdit: Rectifying and Facilitating Supervision for Instruction-Based Image Editing
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.02370](https://arxiv.org/abs/2505.02370)
+**arXiv**: [2505.02370](https://arxiv.org/abs/2505.02370)  
 **Area**: Diffusion Models · Image Editing
 **Keywords**: instruction-based editing, supervision rectification, contrastive learning, diffusion prior, VLM, triplet loss
 

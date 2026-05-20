@@ -17,8 +17,8 @@ content_hash: 2247a39e529116db
 # VL-SAE: Interpreting and Enhancing Vision-Language Alignment with a Unified Concept Set
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21323](https://arxiv.org/abs/2510.21323)
-**Code**: [https://github.com/ssfgunner/VL-SAE](https://github.com/ssfgunner/VL-SAE)
+**arXiv**: [2510.21323](https://arxiv.org/abs/2510.21323)  
+**Code**: [https://github.com/ssfgunner/VL-SAE](https://github.com/ssfgunner/VL-SAE)  
 **Area**: Multimodal VLM / Interpretability / Representation Alignment
 **Keywords**: Sparse Autoencoder, vision-language alignment, unified concept set, interpretability, hallucination mitigation
 

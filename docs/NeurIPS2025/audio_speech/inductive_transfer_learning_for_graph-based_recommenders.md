@@ -18,8 +18,8 @@ content_hash: 3b03e4df67812aea
 # Inductive Transfer Learning for Graph-Based Recommenders
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22799](https://arxiv.org/abs/2510.22799)
-**Code**: None
+**arXiv**: [2510.22799](https://arxiv.org/abs/2510.22799)  
+**Code**: None  
 **Area**: Audio & Speech
 **Keywords**: Graph Neural Networks, Transfer Learning, Recommender Systems, Inductive Inference, Zero-Shot Recommendation
 

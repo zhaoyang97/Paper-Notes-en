@@ -18,8 +18,8 @@ content_hash: ae2400dc60e8287a
 # ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.07946](https://arxiv.org/abs/2603.07946)
-**Code**: [GitHub](https://github.com/deepkashiwa20/ELLMob)
+**arXiv**: [2603.07946](https://arxiv.org/abs/2603.07946)  
+**Code**: [GitHub](https://github.com/deepkashiwa20/ELLMob)  
 **Area**: LLM/NLP
 **Keywords**: Human mobility generation, event-driven trajectory, LLM self-alignment, fuzzy-trace theory, cognitive decision-making
 

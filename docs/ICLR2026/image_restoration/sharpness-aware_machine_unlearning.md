@@ -18,8 +18,8 @@ content_hash: b6eb881b71afd419
 # Sharpness-Aware Machine Unlearning
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.13715](https://arxiv.org/abs/2506.13715)
-**Code**: None
+**arXiv**: [2506.13715](https://arxiv.org/abs/2506.13715)  
+**Code**: None  
 **Area**: Image Restoration
 **Keywords**: machine unlearning, Sharpness-Aware Minimization, SAM, Signal-Noise Decomposition, Sharp MinMax
 

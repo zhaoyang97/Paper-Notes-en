@@ -18,8 +18,8 @@ content_hash: d58926521e00ca50
 # StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10692](https://arxiv.org/abs/2511.10692)
-**Code**: None
+**arXiv**: [2511.10692](https://arxiv.org/abs/2511.10692)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: Audio jailbreak, large audio-language models, alignment robustness, speech style attack, adaptive strategy
 

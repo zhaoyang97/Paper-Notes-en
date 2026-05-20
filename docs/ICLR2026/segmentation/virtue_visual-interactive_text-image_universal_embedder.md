@@ -19,8 +19,8 @@ content_hash: 1626b25635fbef21
 # VIRTUE: Visual-Interactive Text-Image Universal Embedder
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00523](https://arxiv.org/abs/2510.00523)
-**Code**: [GitHub](https://github.com/sony/virtue)
+**arXiv**: [2510.00523](https://arxiv.org/abs/2510.00523)  
+**Code**: [GitHub](https://github.com/sony/virtue)  
 **Area**: Image Segmentation (Multimodal Embedding / Visual Interaction)
 **Keywords**: visual prompt, embedding model, SAM2, VLM, visual-interactive, retrieval
 

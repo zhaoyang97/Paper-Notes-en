@@ -19,8 +19,8 @@ content_hash: fe5353dcea32170b
 # Leveraging Robust Optimization for LLM Alignment under Distribution Shifts
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.05831](https://arxiv.org/abs/2504.05831)
-**Code**: To be confirmed
+**arXiv**: [2504.05831](https://arxiv.org/abs/2504.05831)  
+**Code**: To be confirmed  
 **Area**: LLM Evaluation
 **Keywords**: LLM alignment, distributionally robust optimization, distribution shift, synthetic data, preference optimization, calibration
 

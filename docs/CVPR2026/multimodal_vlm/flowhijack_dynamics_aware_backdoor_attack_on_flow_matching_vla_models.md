@@ -18,8 +18,8 @@ content_hash: 8fd272d3a9140e0a
 # FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching VLA Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.09651](https://arxiv.org/abs/2604.09651)
-**Code**: None
+**arXiv**: [2604.09651](https://arxiv.org/abs/2604.09651)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: backdoor attack, VLA model, flow matching, robot safety, vector field hijacking
 

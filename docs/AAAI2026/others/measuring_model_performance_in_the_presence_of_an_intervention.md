@@ -17,8 +17,8 @@ content_hash: ff681f6f3891e450
 # Measuring Model Performance in the Presence of an Intervention
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.05805](https://arxiv.org/abs/2511.05805)
-**Code**: [GitHub](https://github.com/MLD3/NPW)
+**arXiv**: [2511.05805](https://arxiv.org/abs/2511.05805)  
+**Code**: [GitHub](https://github.com/MLD3/NPW)  
 **Area**: Other
 **Keywords**: model evaluation, randomized controlled trials, AUROC, intervention effect, causal inference
 

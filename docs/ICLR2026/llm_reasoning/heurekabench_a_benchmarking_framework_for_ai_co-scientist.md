@@ -18,8 +18,8 @@ content_hash: 588550410881c0c1
 # HeurekaBench: A Benchmarking Framework for AI Co-scientist
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.01678](https://arxiv.org/abs/2601.01678)
-**Code**: [brbiclab.epfl.ch/projects/heurekabench](https://brbiclab.epfl.ch/projects/heurekabench)
+**arXiv**: [2601.01678](https://arxiv.org/abs/2601.01678)  
+**Code**: [brbiclab.epfl.ch/projects/heurekabench](https://brbiclab.epfl.ch/projects/heurekabench)  
 **Area**: LLM Reasoning
 **Keywords**: AI co-scientist, benchmark, scientific agents, single-cell biology, open-ended evaluation
 

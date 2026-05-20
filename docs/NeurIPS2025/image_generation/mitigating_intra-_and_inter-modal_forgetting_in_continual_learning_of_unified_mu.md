@@ -18,8 +18,8 @@ content_hash: 2f59b8f3815afba4
 # Mitigating Intra- and Inter-modal Forgetting in Continual Learning of Unified Multimodal Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.03125](https://arxiv.org/abs/2512.03125)
-**Code**: [GitHub](https://github.com/Christina200/MoDE-official)
+**arXiv**: [2512.03125](https://arxiv.org/abs/2512.03125)  
+**Code**: [GitHub](https://github.com/Christina200/MoDE-official)  
 **Area**: Image Generation
 **Keywords**: Unified Multimodal Generation Models, Inter-modal Forgetting, Intra-modal Forgetting, LoRA Mixture of Experts, Knowledge Distillation
 

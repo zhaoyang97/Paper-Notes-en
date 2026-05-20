@@ -17,8 +17,8 @@ content_hash: 48c6833b0ccb325e
 # Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21468](https://arxiv.org/abs/2510.21468)
-**Code**: None
+**arXiv**: [2510.21468](https://arxiv.org/abs/2510.21468)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Riemannian optimization, nonsmooth nonconvex, Goldstein stationarity, zeroth-order optimization, finite-time analysis
 

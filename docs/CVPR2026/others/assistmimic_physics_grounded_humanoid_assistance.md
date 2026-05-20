@@ -17,8 +17,8 @@ content_hash: 4b75219f6aa27c9e
 # AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11346](https://arxiv.org/abs/2603.11346)
-**Code**: [Project Page](https://yutoshibata07.github.io/AssistMimic/)
+**arXiv**: [2603.11346](https://arxiv.org/abs/2603.11346)  
+**Code**: [Project Page](https://yutoshibata07.github.io/AssistMimic/)  
 **Area**: Other
 **Keywords**: multi-agent reinforcement learning, physics simulation, assistive behavior, motion imitation, contact-rich interaction
 

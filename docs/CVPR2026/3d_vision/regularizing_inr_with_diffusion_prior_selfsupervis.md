@@ -18,8 +18,8 @@ content_hash: 9bca2c2ce07b1e21
 # Regularizing INR with Diffusion Prior for Self-Supervised 3D Reconstruction of Neutron Computed Tomography Data
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10947](https://arxiv.org/abs/2603.10947)
-**Code**: Coming soon
+**arXiv**: [2603.10947](https://arxiv.org/abs/2603.10947)  
+**Code**: Coming soon  
 **Area**: 3D Vision
 **Keywords**: Neutron CT, Implicit Neural Representation, Diffusion Prior, Sparse-view Reconstruction, Inverse Problem
 
@@ -46,28 +46,28 @@ DINR operates within the DD3IP framework. Let the observation model be $y = Ax +
 
 1. **Initialization**: Pretrain INR weights $\phi_T$ using a pure data fidelity loss; load pretrained diffusion model weights $\theta_T$ trained on synthetic data; initialize the diffusion starting point $x_T$ by adding noise to the FBP reconstruction $A^*y$.
 2. **Diffusion Iterations** ($t = T \to 1$):
-   - Update diffusion model weights $\theta_{t-1}$ to adapt to the current OOD data by minimizing $\text{MSE}(A D_\theta(x_t|y), y)$.
-   - Obtain the current estimate via diffusion denoising: $\hat{x}_t = D_{\theta_{t-1}}(x_t|y)$.
-   - Update INR weights $\phi_{t-1}$ using the proximal loss, with $\hat{x}_t$ serving as the regularization target.
-   - Generate the next-step estimate $x_{t-1}$ via DDIM sampling, where the posterior mean is provided by the INR output $F_{\phi_{t-1}}(S, A^*y)$.
+    - Update diffusion model weights $\theta_{t-1}$ to adapt to the current OOD data by minimizing $\text{MSE}(A D_\theta(x_t|y), y)$.
+    - Obtain the current estimate via diffusion denoising: $\hat{x}_t = D_{\theta_{t-1}}(x_t|y)$.
+    - Update INR weights $\phi_{t-1}$ using the proximal loss, with $\hat{x}_t$ serving as the regularization target.
+    - Generate the next-step estimate $x_{t-1}$ via DDIM sampling, where the posterior mean is provided by the INR output $F_{\phi_{t-1}}(S, A^*y)$.
 3. **Final Step** ($t=1$): Directly output the INR reconstruction without further noise addition.
 
 ### Key Designs
 
 1. **Proximal Regularization INR Loss (Proximal INR Loss)**
-   - **Function**: Injects the diffusion model's denoising estimate into the INR optimization to compensate for INR's low-frequency bias.
-   - **Mechanism**: The loss consists of two terms—a data fidelity term $\text{MSE}(A F_\phi(S, A^*y), y)$ ensuring consistency with the projection data, and a proximal term $\rho \cdot \text{MSE}(\hat{x}_t, F_\phi(S, A^*y))$ that pulls the INR output toward the current diffusion estimate. The full formula is $\mathcal{L}_\phi = \text{MSE}(AF_\phi, y) + \rho \cdot \text{MSE}(\hat{x}_t, F_\phi)$.
-   - **Design Motivation**: Diffusion priors excel at modeling high-frequency structures, while INR excels at enforcing data consistency constraints. The proximal formulation enables the complementary strengths of both. A single hyperparameter $\rho$ controls the balance.
+    - **Function**: Injects the diffusion model's denoising estimate into the INR optimization to compensate for INR's low-frequency bias.
+    - **Mechanism**: The loss consists of two terms—a data fidelity term $\text{MSE}(A F_\phi(S, A^*y), y)$ ensuring consistency with the projection data, and a proximal term $\rho \cdot \text{MSE}(\hat{x}_t, F_\phi(S, A^*y))$ that pulls the INR output toward the current diffusion estimate. The full formula is $\mathcal{L}_\phi = \text{MSE}(AF_\phi, y) + \rho \cdot \text{MSE}(\hat{x}_t, F_\phi)$.
+    - **Design Motivation**: Diffusion priors excel at modeling high-frequency structures, while INR excels at enforcing data consistency constraints. The proximal formulation enables the complementary strengths of both. A single hyperparameter $\rho$ controls the balance.
 
 2. **FBP-Augmented SIREN INR Architecture**
-   - **Function**: Provides a continuous 3D volumetric representation while leveraging the coarse FBP reconstruction to accelerate convergence.
-   - **Mechanism**: The INR adopts the SIREN architecture (an MLP with periodic sinusoidal activation functions), taking as input the concatenation of the 3D coordinate grid $S$ and the FBP reconstruction $A^*y$. The periodic activations of SIREN are naturally suited to capturing high-frequency signals.
-   - **Design Motivation**: Although low in quality, FBP provides a meaningful initial estimate that helps the INR converge more rapidly to a reasonable solution; coordinate-based input makes reconstruction resolution-independent.
+    - **Function**: Provides a continuous 3D volumetric representation while leveraging the coarse FBP reconstruction to accelerate convergence.
+    - **Mechanism**: The INR adopts the SIREN architecture (an MLP with periodic sinusoidal activation functions), taking as input the concatenation of the 3D coordinate grid $S$ and the FBP reconstruction $A^*y$. The periodic activations of SIREN are naturally suited to capturing high-frequency signals.
+    - **Design Motivation**: Although low in quality, FBP provides a meaningful initial estimate that helps the INR converge more rapidly to a reasonable solution; coordinate-based input makes reconstruction resolution-independent.
 
 3. **Noise Scaling Parameter $\omega$ and Initialization Strategy**
-   - **Function**: Controls the relative ratio of signal to noise at the diffusion starting point.
-   - **Mechanism**: $x_T = \sqrt{\alpha_T} A^*y + \sqrt{1 - \alpha_T} \cdot \epsilon \cdot \omega$. A larger $\omega$ introduces stronger noise, amplifying the influence of the diffusion prior; a smaller $\omega$ places greater trust in the FBP estimate.
-   - **Design Motivation**: The quality of FBP varies substantially across different sparsity levels, and $\omega$ provides flexibility for adaptive adjustment. Experiments show that the optimal $\omega$ differs across view counts (0.2 for 4 views; 0.02 or 0.002 for 8–32 views).
+    - **Function**: Controls the relative ratio of signal to noise at the diffusion starting point.
+    - **Mechanism**: $x_T = \sqrt{\alpha_T} A^*y + \sqrt{1 - \alpha_T} \cdot \epsilon \cdot \omega$. A larger $\omega$ introduces stronger noise, amplifying the influence of the diffusion prior; a smaller $\omega$ places greater trust in the FBP estimate.
+    - **Design Motivation**: The quality of FBP varies substantially across different sparsity levels, and $\omega$ provides flexibility for adaptive adjustment. Experiments show that the optimal $\omega$ differs across view counts (0.2 for 4 views; 0.02 or 0.002 for 8–32 views).
 
 ### Loss & Training
 

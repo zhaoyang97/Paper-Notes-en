@@ -18,8 +18,8 @@ content_hash: c1bd396bd33db663
 # ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.10645](https://arxiv.org/abs/2511.10645)
-**Code**: [Project Page](https://paroquant.z-lab.ai)
+**arXiv**: [2511.10645](https://arxiv.org/abs/2511.10645)  
+**Code**: [Project Page](https://paroquant.z-lab.ai)  
 **Area**: Model Compression
 **Keywords**: Post-training quantization, Givens rotation, Reasoning LLM, Quantization efficiency, Algorithm-system co-design
 

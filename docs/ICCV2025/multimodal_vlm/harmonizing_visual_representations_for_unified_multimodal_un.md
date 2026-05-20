@@ -18,8 +18,8 @@ content_hash: 917fd05f2e9e8c04
 # Harmonizing Visual Representations for Unified Multimodal Understanding and Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.21979](https://arxiv.org/abs/2503.21979)
-**Code**: [GitHub](https://github.com/wusize/Harmon)
+**arXiv**: [2503.21979](https://arxiv.org/abs/2503.21979)  
+**Code**: [GitHub](https://github.com/wusize/Harmon)  
 **Area**: Multimodal / Unified Generation & Understanding
 **Keywords**: MAR encoder, unified visual representation, masked autoregression, image generation and understanding, three-stage training
 

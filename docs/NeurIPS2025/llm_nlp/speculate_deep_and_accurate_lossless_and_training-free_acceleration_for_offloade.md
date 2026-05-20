@@ -18,8 +18,8 @@ content_hash: 79be68bdbfd62e0b
 # SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.18344](https://arxiv.org/abs/2509.18344)
-**Code**: None
+**arXiv**: [2509.18344](https://arxiv.org/abs/2509.18344)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: Speculative Decoding, Parameter Offloading, Training-Free Acceleration, Quantization, KV-Cache Sharing
 

@@ -18,8 +18,8 @@ content_hash: dbe209b92473e040
 # PMark: Towards Robust and Distortion-free Semantic-level Watermarking with Channel Constraints
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21057](https://arxiv.org/abs/2509.21057)
-**Code**: Coming soon
+**arXiv**: [2509.21057](https://arxiv.org/abs/2509.21057)  
+**Code**: Coming soon  
 **Area**: AI Safety / Watermarking
 **Keywords**: LLM watermarking, semantic-level watermarking, distortion-free, multi-channel constraints, robustness theory
 

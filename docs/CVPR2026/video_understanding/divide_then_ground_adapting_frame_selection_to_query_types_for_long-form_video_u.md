@@ -18,8 +18,8 @@ content_hash: 9d068064cda1600c
 # DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.04000](https://arxiv.org/abs/2512.04000)
-**Code**: [GitHub](https://github.com/Jialuo-Li/DIG)
+**arXiv**: [2512.04000](https://arxiv.org/abs/2512.04000)  
+**Code**: [GitHub](https://github.com/Jialuo-Li/DIG)  
 **Area**: Video Understanding
 **Keywords**: long-form video understanding, frame selection, query classification, content-adaptive sampling, large multimodal models
 

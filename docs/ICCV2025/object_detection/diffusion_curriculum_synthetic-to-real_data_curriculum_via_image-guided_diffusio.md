@@ -18,8 +18,8 @@ content_hash: 61b0029141ba2c15
 # Diffusion Curriculum: Synthetic-to-Real Data Curriculum via Image-Guided Diffusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.13674](https://arxiv.org/abs/2410.13674)
-**Code**: [tianyi-lab/DisCL](https://github.com/tianyi-lab/DisCL)
+**arXiv**: [2410.13674](https://arxiv.org/abs/2410.13674)  
+**Code**: [tianyi-lab/DisCL](https://github.com/tianyi-lab/DisCL)  
 **Area**: Object Detection / Data Augmentation
 **Keywords**: Diffusion Models, Curriculum Learning, Synthetic Data, Long-Tail Classification, Low-Quality Data
 

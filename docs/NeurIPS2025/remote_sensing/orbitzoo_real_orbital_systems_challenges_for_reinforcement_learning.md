@@ -2,136 +2,121 @@
 title: >-
   [Paper Note] OrbitZoo: Real Orbital Systems Challenges for Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Remote Sensing][Orbital dynamics] This paper presents OrbitZoo, a multi-agent RL environment built on the industrial-grade Orekit orbital mechanics library…
+  [NeurIPS 2025][Multi-agent reinforcement learning] This paper presents OrbitZoo, a multi-agent RL environment built on the industrial-grade astrodynamics library Orekit. It integrates high-fidelity orbital dynamics (incl…
 tags:
   - "NeurIPS 2025"
-  - "Remote Sensing"
-  - "Orbital dynamics"
-  - "multi-agent RL"
-  - "satellite maneuvering"
+  - "Multi-agent reinforcement learning"
+  - "orbital dynamics"
+  - "high-fidelity simulation"
   - "collision avoidance"
-  - "simulation environment"
+  - "PettingZoo"
 date: 2026-05-08
-content_hash: 1647eadb82da79a2
+content_hash: b7608a0d09076000
 ---
 
 # OrbitZoo: Real Orbital Systems Challenges for Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.04160](https://arxiv.org/abs/2504.04160)
-**Code**: Open source (specific link not provided)
-**Area**: Remote Sensing / Reinforcement Learning
-**Keywords**: Orbital dynamics, multi-agent RL, satellite maneuvering, collision avoidance, simulation environment
+**arXiv**: [2504.04160](https://arxiv.org/abs/2504.04160)  
+**Code**: Available (open-source)  
+**Area**: Other
+**Keywords**: Multi-agent reinforcement learning, orbital dynamics, high-fidelity simulation, collision avoidance, PettingZoo
 
 ## TL;DR
 
-This paper presents OrbitZoo, a multi-agent RL environment built on the industrial-grade Orekit orbital mechanics library, supporting realistic orbital tasks such as collision avoidance, Hohmann transfers, and constellation coordination. It provides standardized MARL training through the PettingZoo interface, and achieves 24-meter RMSE (over a 16.6-hour propagation) for the low-error group in validation against real Starlink ephemeris data.
+This paper presents OrbitZoo, a multi-agent RL environment built on the industrial-grade astrodynamics library Orekit. It integrates high-fidelity orbital dynamics (including atmospheric drag, solar radiation pressure, and third-body effects), a PettingZoo multi-agent interface, and real-time 3D visualization. Validation against real Starlink ephemerides yields a mean MAPE of only 0.16%.
 
 ## Background & Motivation
 
-**Background**: Approximately 20,000 satellites (roughly 50% operational) and around 140 million debris objects currently occupy Earth orbit. The deployment of large-scale constellations such as Starlink has intensified congestion in low Earth orbit (LEO). Traditional satellite operations rely heavily on human decision-making, a paradigm that is becoming unsustainable given growing complexity. RL has shown promise for autonomous satellite maneuvering.
+**Background**: The rapid growth in satellite and debris populations has made low Earth orbit (LEO) increasingly congested. Tasks such as collision avoidance, formation keeping, and orbital transfer demand autonomous decision-making systems. Reinforcement learning has shown promise in these domains by enabling adaptive policy learning in dynamic and uncertain environments.
 
-**Limitations of Prior Work**: Existing RL orbital environments suffer from three major shortcomings: (1) most employ simplified dynamics models (e.g., two/three-body problems, Newtonian gravity only), which fail to capture realistic orbital perturbations; (2) most are custom-built from scratch, lacking standardization and reproducibility—dynamics validation is labor-intensive and error-prone; (3) no existing environment simultaneously supports multi-agent scenarios, continuous control, realistic thrust modeling, and visualization (Table 1 surveys 14 existing environments, none of which satisfies all criteria).
+**Limitations of Prior Work**: Most existing RL frameworks are built from scratch using simplified dynamical models (e.g., the circular restricted three-body problem, CR3BP), neglecting critical real-world perturbations such as atmospheric drag, solar radiation pressure (SRP), and multi-body gravitational effects. This results in large sim-to-real gaps. Furthermore, the majority of existing environments support only single-agent, fully observable, and impulsive-thrust settings, lacking standardization and reproducibility.
 
-**Key Challenge**: RL requires massive simulation interaction to train policies, demanding environments that are both high-fidelity (accurate dynamics) and computationally efficient (fast propagation). Simultaneously, the sim-to-real gap is the central obstacle to deploying RL policies on real satellites—simulations must be validated against real data.
+**Key Challenge**: There exists a fundamental tension between high-fidelity simulation and RL training efficiency. Accurate numerical integrators and full perturbation models incur high computational costs, yet policies trained on simplified models generalize poorly to real scenarios. At the same time, existing environments lack unified multi-agent support and validation standards.
 
-**Goal**: (1) Provide a unified environment combining high-fidelity dynamics with a standard RL interface; (2) support cooperative, competitive, and mixed multi-agent scenarios; (3) validate simulation accuracy against real ephemeris data.
+**Goal**: (1) The absence of standardized multi-agent RL environments integrating industrial-grade dynamics libraries; (2) the difficulty of quantifying the sim-to-real gap; (3) insufficient scalability and reproducibility in existing environments.
 
-**Key Insight**: The paper leverages Orekit—an industrial-grade open-source orbital mechanics library—for high-fidelity dynamics, while wrapping it in a PettingZoo-compliant interface so that RL researchers need not master orbital mechanics.
+**Key Insight**: The paper leverages the Python wrapper of Orekit—a mature Java astrodynamics library—as the dynamics engine, combined with the PettingZoo multi-agent RL framework, to construct a modular, high-fidelity, and open-source orbital RL platform.
 
-**Core Idea**: Combine an industrial-grade orbit propagator with a standard MARL framework to construct a satellite RL benchmark environment that is simultaneously realistic and accessible.
+**Core Idea**: Build a standardized MARL environment on top of an industrial-grade orbital simulation library, validate fidelity using real ephemeris data, and fill the gap in standardized platforms for orbital maneuvering RL research.
 
 ## Method
 
 ### Overall Architecture
 
-OrbitZoo adopts a three-layer architecture. The bottom layer is a high-fidelity orbit propagation engine based on Orekit, handling gravitational fields, atmospheric drag, solar radiation pressure (SRP), and third-body effects. The middle layer is a task definition layer specifying observation spaces, action spaces, reward functions, and termination conditions. The top layer is a PettingZoo-compliant MARL interface in which each satellite acts as an independent agent, supporting partially observable POMDP modeling.
+OrbitZoo consists of three layers: (1) a low-level dynamics engine (Orekit) supporting full orbital perturbations and high-precision numerical integration; (2) an RL environment layer (PettingZoo interface) that models orbital maneuvering as a POMDP, with each satellite treated as an independent agent; and (3) an application layer providing customizable task scenarios (collision avoidance, orbital transfer, formation keeping, etc.) and real-time 3D visualization.
 
 ### Key Designs
 
-1. **High-Fidelity Data Generation Engine**
+1. **High-Fidelity Dynamics Integration**:
 
-   - **Function**: Provides a simulation environment with high consistency to real orbital behavior.
-   - **Mechanism**: Uses Orekit's numerical propagator, supporting Holmes-Featherstone harmonic gravitational fields, atmospheric drag based on historical space weather data, solar radiation pressure (SRP) accounting for solar/lunar occultation, and third-body gravitational perturbations from all solar system planets as well as the Sun, Moon, and Earth-Moon barycenter. Supports three state representations: Cartesian coordinates, Keplerian orbital elements, and equinoctial orbital elements. Employs a Dormand-Prince variable-step integrator for high-accuracy propagation, with parallel computation to accelerate multi-body propagation.
-   - **Design Motivation**: Most existing RL environments use simplified models (e.g., J2-only or Newtonian gravity only), which preclude training transferable policies for real environments.
+    - Function: Provides realistic orbital environment simulation.
+    - Mechanism: Wraps Orekit's numerical propagator to support Holmes-Featherstone harmonic gravity, atmospheric drag (computed using historical space weather data), solar radiation pressure (accounting for lunar shadowing), and third-body effects (all solar system planets, the Sun, and the Moon). Supports Cartesian, Keplerian, and Equinoctial state representations, as well as variable-step high-accuracy integration methods such as Dormand-Prince.
+    - Design Motivation: Using Orekit avoids the validation burden of a custom dynamics model, directly achieves industrial-grade precision, and minimizes the sim-to-real gap.
 
-2. **Standardized MARL Interface**
+2. **PettingZoo Multi-Agent RL Interface**:
 
-   - **Function**: Enables RL researchers to focus on algorithm design rather than environment implementation.
-   - **Mechanism**: Implements a POMDP structure via the PettingZoo framework, with each satellite agent possessing independent observation and action spaces. Thrust actions are parameterized in polar coordinates $(T, \theta, \phi)$—thrust magnitude and direction angles in the RSW frame. Supports cooperative, competitive, and mixed scenario configurations, and integrates directly with mainstream MARL libraries such as MARLlib and EPyMARL.
-   - **Design Motivation**: Table 1 shows that most existing environments do not simultaneously support multi-agent interaction and industrial-grade simulators.
+    - Function: Supports partially observable, decentralized multi-agent training.
+    - Mechanism: Each satellite acts as an independent agent with its own observation space (orbital state plus neighbor information) and action space (polar-coordinate thrust parameters). The environment is modeled as a MA-POMDP supporting cooperative (formation keeping), competitive (pursuit-evasion), and mixed scenarios. Centralized training with decentralized execution (CTDE) and federated learning are both supported.
+    - Design Motivation: Adopting the established PettingZoo framework lowers the development barrier, while Orekit's parallel propagation enables scalable computation over thousands of objects.
 
-3. **Modular Reward Framework**
+3. **Modular Reward and Visualization Framework**:
 
-   - **Function**: Supports flexible, physically constrained reward design.
-   - **Mechanism**: Provides two categories of signals—inter-body metrics (relative distance, collision probability PoC, line-of-sight conditions) and individual metrics (fuel consumption, mass change). Supports reward modes ranging from dense to sparse, as well as multi-objective trade-offs (performance vs. safety vs. efficiency). Collision probability is computed using the Akella method; $\text{PoC} > 10^{-6}$ is treated as high risk.
-   - **Design Motivation**: Reward design in orbital control inherently faces delayed feedback and coupled dynamics; a modular framework facilitates experimentation with diverse reward strategies.
-
-### Visualization Component
-
-OrbitZoo provides a Python-based real-time 3D visualization tool, which the authors claim is the first Python implementation offering real-time orbital visualization natively integrated within an RL framework. It supports policy inspection, fault diagnosis, and behavior interpretation.
+    - Function: Enables flexible task objective definition and agent behavior debugging.
+    - Mechanism: The reward framework integrates inter-body quantities (relative distance, probability of collision PoC) and body-specific quantities (fuel consumption, mass change), supporting dense/sparse rewards and multi-objective optimization. A built-in Python real-time 3D visualization tool renders orbital trajectories and thrust actions directly during training and evaluation.
+    - Design Motivation: Reward design for orbital tasks is non-trivial due to delayed effects and coupled dynamics; the modular design facilitates experimentation with different reward strategies, while visualization aids in understanding learned behaviors and diagnosing failure cases.
 
 ## Key Experimental Results
 
-### Main Results 1: Single-Agent Hohmann Transfer
+### Main Results
 
-| Metric | Result |
-|--------|--------|
-| Task | 30 km altitude raise |
-| Algorithm | PPO (continuous actions) |
-| Result | Near-optimal orbital transfer; semi-major axis matches theoretical value |
-| Finding | Agent adapts to perturbation forces not accounted for in the theoretical solution |
+| Experiment | Algorithm | Key Results |
+|------|------|---------|
+| Hohmann Transfer (30 km) | PPO | Learns near-optimal orbital transfer; semi-major axis matches theoretical values |
+| Collision Avoidance (CAM) | DQN, PPO | PPO performs better under full perturbations, effectively reducing PoC below $10^{-6}$ |
+| GEO Formation (4 satellites) | PPO + GAE | Maintains equal angular spacing over 4 days; generalizes to unseen perturbations |
+| Starlink Validation | — | 31 satellites, MAPE = 0.16%; RMSE as low as 24 m over 16.6 h propagation |
 
-### Main Results 2: Single-Agent Collision Avoidance Maneuver (CAM)
+### Ablation Study (Validation Accuracy by Group)
 
-| Algorithm | Training Dynamics | Evaluation Dynamics | PoC Reduction |
-|-----------|------------------|--------------------|--------------------|
-| DQN (discrete) | Newtonian + drag | Full perturbations | Effective but weaker generalization |
-| PPO (continuous) | Newtonian + drag | Full perturbations | Superior, stronger generalization |
-
-### Main Results 3: Validation Against Real Starlink Data
-
-| Group | Satellites | Mean RMSE (m) | Propagation Duration |
-|-------|-----------|--------------|----------------------|
-| Low-RMSE group | — | 24.14 | 16.6 hours |
-| Mid-RMSE group | — | 83.75 | 16.6 hours |
-| High-RMSE group | — | 1924.90 | 16.6 hours |
-| Total | 31 | — | — |
+| Satellite Group | Mean RMSE (m) | Note |
+|---------|-------------|------|
+| Low RMSE | 24.14 | Good match |
+| Medium RMSE | 83.75 | Moderate deviation |
+| High RMSE | 1924.90 | Insufficient physical parameter information |
 
 ### Key Findings
 
-- Continuous action spaces (PPO) generalize significantly better than discrete actions (DQN) under realistic perturbations, as orbital maneuvering is inherently continuous in nature.
-- Policies trained under simplified dynamics can be evaluated in fully perturbed environments, but a generalization gap remains—precisely what OrbitZoo aims to help researchers close.
-- A cooperative PPO agent controlling 4 GEO constellation satellites learns to maintain equal angular spacing while minimizing fuel consumption; the learned policy also generalizes to perturbations unseen during training (third-body forces, SRP, drag).
-- The high-RMSE group (1924.90 m) exhibits larger deviations, likely due to missing precise physical parameters (drag coefficients, reflectivity coefficients, etc.); Bayesian optimization-based parameter tuning can mitigate this.
+- Continuous action spaces (PPO) generalize better than discrete action spaces (DQN) under high-fidelity dynamics.
+- In a sim-to-real setting where training uses simplified dynamics but evaluation employs full perturbations, PPO still effectively reduces collision probability.
+- In formation keeping, learned policies generalize to third-body forces and SRP not seen during training, demonstrating that policies trained in high-fidelity environments are more robust.
+- In the Starlink validation, most satellites exhibit very low RMSE; high-RMSE satellites are primarily attributable to insufficient physical parameter information (e.g., drag coefficients).
 
 ## Highlights & Insights
 
-- Comprehensiveness is OrbitZoo's greatest strength: Table 1 compares 14 existing environments, and only OrbitZoo satisfies all seven capability criteria simultaneously (multi-agent support, industrial simulator, high-fidelity dynamics, continuous control, realistic thrust modeling, visualization, and open-source code). This "all-rounder" positioning fills a clear gap in the field.
-- The engineering contribution of bridging Orekit (Java ecosystem) with PettingZoo (Python ecosystem) should not be understated; it makes industrial-grade orbital simulation accessible to the RL community.
-- Validation against real Starlink data provides credible evidence of simulation fidelity—the low-RMSE group achieves only 24-meter error after 16.6 hours of propagation, which is sufficiently accurate for operational decision windows of under 2 hours.
+- **First standardized MARL orbital environment integrating an industrial-grade dynamics library**: The comparison table shows it is the only platform simultaneously satisfying all seven capability criteria (multi-agent, industrial simulator, high-fidelity dynamics, continuous control, realistic thrust modeling, interactive visualization, open-source). This provides a unified experimental infrastructure for space RL research.
+- **Real-data validation methodology**: The approach of using Bayesian optimization to tune physical parameters (drag and reflectivity coefficients) for matching Starlink ephemerides offers a reusable framework for sim-to-real evaluation.
+- **Uncertainty propagation modeling in collision avoidance**: The CAM task explicitly models state uncertainty and its temporal evolution, which is more operationally realistic than simply using Euclidean distance as a proxy.
 
 ## Limitations & Future Work
 
-- The high-RMSE group deviation (1924 m) indicates that simulation accuracy for satellites with unknown physical properties remains improvable, requiring better parameter estimation methods.
-- The RL experiments primarily demonstrate environment usability but do not include rigorous comparative experiments against other environments on identical tasks.
-- Scalability to large constellations (thousands of satellites) is mentioned in terms of parallelization support, but no concrete computational performance data are provided.
-- Validation is limited to LEO and GEO scenarios; more complex regimes such as deep space or lunar orbits are not tested.
-- No baseline comparisons against traditional control methods such as Model Predictive Control are provided.
+- The computational cost of high-fidelity propagation remains a bottleneck at the scale of thousands of objects; training efficiency for large-scale constellations (e.g., the full Starlink fleet of 4000+ satellites) has not been explicitly demonstrated.
+- Quantification of the sim-to-real gap is limited to orbital prediction error; the transferability of trained policies to real spacecraft has not been validated.
+- Reward function design still requires manual tuning; automated reward discovery mechanisms are absent.
+- Formal safety guarantees (e.g., hard fuel constraints, exclusion zones) are not addressed.
 
 ## Related Work & Insights
 
-- **vs. ColAvGym (Kazemi 2024)**: Uses real conjunction data messages (CDMs) but is limited to single-agent CAM scenarios; OrbitZoo supports multi-agent settings and a broader range of tasks.
-- **vs. Poliastro**: Python-native but lower fidelity than Orekit, lacking high-order gravitational fields and multi-perturbation support.
-- **vs. STK**: High commercial fidelity but costly, closed-source, and not directly integrable into RL training loops.
-- OrbitZoo's design philosophy—standardized environment + high-fidelity simulation + real data validation—offers a useful reference for constructing RL environments in other safety-critical domains.
+- **vs. ColAvGym (Kazemi 2024)**: A single-agent CAM environment that also uses Orekit but does not support multi-agent interaction or interactive visualization; OrbitZoo offers substantially broader functionality.
+- **vs. Dolan 2023 (GNN-based MARL)**: Uses simplified J2-only dynamics without integration of an industrial simulator; OrbitZoo achieves far superior dynamical fidelity.
+- **vs. REDA (Holder 2024)**: Uses Poliastro for multi-agent task assignment without integrating real orbital data; OrbitZoo provides credibility guarantees through Starlink validation.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Systematically integrates high-fidelity simulation with a MARL framework, filling the gap left by the absence of a comprehensive orbital RL environment.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers diverse task scenarios and real-data validation; RL experiment depth could be further strengthened.
-- **Writing Quality**: ⭐⭐⭐⭐ Well-structured with thorough background exposition, accessible to readers from both the RL and aerospace communities.
-- **Value**: ⭐⭐⭐⭐ As open-source infrastructure, this environment holds significant value for advancing RL research on autonomous space operations.
+- Novelty: ⭐⭐⭐ — Primarily an engineering integration contribution; methodological innovation is limited.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Multi-task validation combined with real-data comparison.
+- Writing Quality: ⭐⭐⭐⭐ — Comparison table is systematic and comprehensive; background is clearly presented.
+- Value: ⭐⭐⭐⭐ — Fills the gap in standardized platforms for space RL; offers long-term value to the community.
 
 <!-- RELATED:START -->
 
@@ -139,11 +124,11 @@ OrbitZoo provides a Python-based real-time 3D visualization tool, which the auth
 
 ## Related Papers
 
-- [\[ICCV 2025\] CityNav: A Large-Scale Dataset for Real-World Aerial Navigation](../../ICCV2025/remote_sensing/citynav_a_large-scale_dataset_for_real-world_aerial_navigation.md)
-- [\[ACL 2026\] MONETA: Multimodal Industry Classification through Geographic Information with Multi Agent Systems](../../ACL2026/remote_sensing/moneta_multimodal_industry_classification_through_geographic_information_with_mu.md)
-- [\[NeurIPS 2025\] Mass Conservation on Rails – Rethinking Physics-Informed Learning of Ice Flow Vector Fields](mass_conservation_on_rails_--_rethinking_physics-informed_learning_of_ice_flow_v.md)
-- [\[NeurIPS 2025\] ChA-MAEViT: Unifying Channel-Aware Masked Autoencoders and Multi-Channel Vision Transformers for Improved Cross-Channel Learning](chamaevit_unifying_channelaware_masked_autoencoders_and_mult.md)
-- [\[CVPR 2026\] GeoFlow: Real-Time Fine-Grained Cross-View Geolocalization via Iterative Flow Prediction](../../CVPR2026/remote_sensing/geoflow_real-time_fine-grained_cross-view_geolocalization.md)
+- [\[NeurIPS 2025\] 4DGT: Learning a 4D Gaussian Transformer Using Real-World Monocular Videos](4dgt_learning_a_4d_gaussian_transformer_using_realworld_mono.md)
+- [\[ICLR 2026\] cadrille: Multi-modal CAD Reconstruction with Reinforcement Learning](../../ICLR2026/others/cadrille_multi-modal_cad_reconstruction_with_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Modeling Neural Activity with Conditionally Linear Dynamical Systems](modeling_neural_activity_with_conditionally_linear_dynamical_systems.md)
+- [\[NeurIPS 2025\] An Empirical Investigation of Neural ODEs and Symbolic Regression for Dynamical Systems](an_empirical_investigation_of_neural_odes_and_symbolic_regression_for_dynamical_.md)
+- [\[NeurIPS 2025\] MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision](maszero_designing_multiagent_systems_with_zero_supervision.md)
 
 </div>
 

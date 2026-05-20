@@ -17,8 +17,8 @@ content_hash: 96bd0638d0d6ed45
 # Agent-SAMA: State-Aware Mobile Assistant
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.23596v3](https://arxiv.org/abs/2505.23596v3)
-**Code**: [Zenodo](https://doi.org/10.5281/zenodo.15430187)
+**arXiv**: [2505.23596v3](https://arxiv.org/abs/2505.23596v3)  
+**Code**: [Zenodo](https://doi.org/10.5281/zenodo.15430187)  
 **Area**: Other
 **Keywords**: GUI Agent, Finite State Machine, Multi-Agent Collaboration, Error Recovery, Mobile Task Automation
 

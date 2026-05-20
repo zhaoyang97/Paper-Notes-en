@@ -18,8 +18,8 @@ content_hash: 930a88d6836b6068
 # Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2507.16861](https://arxiv.org/abs/2507.16861)
-**Code**: N/A
+**arXiv**: [2507.16861](https://arxiv.org/abs/2507.16861)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: 3D Object Detection, LiDAR-Camera Fusion, Cross-Modal Alignment, BEV Perception, Depth Estimation
 

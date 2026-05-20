@@ -18,8 +18,8 @@ content_hash: ed351c49afb823c8
 # Test-Time Adaptive Object Detection with Foundation Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25175](https://arxiv.org/abs/2510.25175)
-**Code**: [https://github.com/gaoyingjay/ttaod_foundation](https://github.com/gaoyingjay/ttaod_foundation)
+**arXiv**: [2510.25175](https://arxiv.org/abs/2510.25175)  
+**Code**: [https://github.com/gaoyingjay/ttaod_foundation](https://github.com/gaoyingjay/ttaod_foundation)  
 **Area**: Object Detection / Domain Adaptation
 **Keywords**: test-time adaptation, open-vocabulary detection, Mean-Teacher, prompt tuning, dynamic memory
 

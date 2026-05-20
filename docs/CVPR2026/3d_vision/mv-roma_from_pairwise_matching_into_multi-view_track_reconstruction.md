@@ -18,8 +18,8 @@ content_hash: 9ef27ef5a3b957db
 # MV-RoMa: From Pairwise Matching into Multi-View Track Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27542](https://arxiv.org/abs/2603.27542)
-**Code**: [Project Page](https://icetea-cv.github.io/mv-roma/)
+**arXiv**: [2603.27542](https://arxiv.org/abs/2603.27542)  
+**Code**: [Project Page](https://icetea-cv.github.io/mv-roma/)  
 **Area**: 3D Vision / Feature Matching
 **Keywords**: Multi-view matching, dense correspondence, track reconstruction, SfM, feature fusion
 
@@ -46,21 +46,21 @@ This paper proposes MV-RoMa, the first multi-view dense matching model that simu
 
 1. **Track Token Construction and Clustering Sampling**
 
-   - **Function**: Extract compact multi-view geometric priors from pairwise matching results.
-   - **Mechanism**: Each track token contains a 2D coordinate vector $\mathbf{u}_i \in \mathbb{R}^{2V}$ (positions across all views) and a visibility mask $\mathbf{m}_i \in \{0,1\}^V$. Tracks are first grouped by visibility pattern; within each group, k-means clustering selects representative tracks (the track closest to each centroid), yielding $T=512$ tokens in total. This avoids the spatial redundancy and noise sensitivity of random sampling.
-   - **Design Motivation**: More compact and spatially uniform than random sampling; visibility-based grouping ensures proper handling of partially visible tracks.
+    - **Function**: Extract compact multi-view geometric priors from pairwise matching results.
+    - **Mechanism**: Each track token contains a 2D coordinate vector $\mathbf{u}_i \in \mathbb{R}^{2V}$ (positions across all views) and a visibility mask $\mathbf{m}_i \in \{0,1\}^V$. Tracks are first grouped by visibility pattern; within each group, k-means clustering selects representative tracks (the track closest to each centroid), yielding $T=512$ tokens in total. This avoids the spatial redundancy and noise sensitivity of random sampling.
+    - **Design Motivation**: More compact and spatially uniform than random sampling; visibility-based grouping ensures proper handling of partially visible tracks.
 
 2. **Track-Guided Multi-View Encoder**
 
-   - **Function**: Inject multi-view geometric context into the DINOv2 feature extraction process.
-   - **Mechanism**: After each Transformer block in the latter half of DINOv2, three operations are inserted: (i) **Attentional Sampling** — cross-attention using track coordinates as queries and image features as keys/values, with a spatial distance bias $B_v$, sampling image information into track tokens; (ii) **Track Transformer** — self-attention along the view axis for each track (without view-index embeddings to ensure view-agnostic processing), with visibility masks applied to occluded views; (iii) **Attentional Splatting** — the reverse operation, writing updated multi-view-aware track features back to the image grid.
-   - **Design Motivation**: Avoids the $O(V \cdot H \cdot W)^2$ complexity of global multi-view cross-attention by using sparse tracks as information conduits, reducing complexity to $O(T \cdot HW \cdot V)$.
+    - **Function**: Inject multi-view geometric context into the DINOv2 feature extraction process.
+    - **Mechanism**: After each Transformer block in the latter half of DINOv2, three operations are inserted: (i) **Attentional Sampling** — cross-attention using track coordinates as queries and image features as keys/values, with a spatial distance bias $B_v$, sampling image information into track tokens; (ii) **Track Transformer** — self-attention along the view axis for each track (without view-index embeddings to ensure view-agnostic processing), with visibility masks applied to occluded views; (iii) **Attentional Splatting** — the reverse operation, writing updated multi-view-aware track features back to the image grid.
+    - **Design Motivation**: Avoids the $O(V \cdot H \cdot W)^2$ complexity of global multi-view cross-attention by using sparse tracks as information conduits, reducing complexity to $O(T \cdot HW \cdot V)$.
 
 3. **Multi-View Matching Refiner**
 
-   - **Function**: Inject multi-view context at fine resolution to produce final full-resolution dense correspondences.
-   - **Mechanism**: Built on RoMa's coarse-to-fine framework, multi-view attention is inserted at stride 4 and stride 1 levels. Target-view features are first warped to the source-view coordinate system using the previous-level warp, followed by **pixel-aligned attention** — each pixel attends only to its corresponding cross-view locations. Cross-view attention and ConvNeXt spatial propagation are applied alternately for $N$ iterations, outputting warp residuals.
-   - **Design Motivation**: Global cross-attention is prohibitively expensive; the pixel-aligned design reduces complexity to $O(HW \cdot V)$ and performs fine-grained adjustments only where needed.
+    - **Function**: Inject multi-view context at fine resolution to produce final full-resolution dense correspondences.
+    - **Mechanism**: Built on RoMa's coarse-to-fine framework, multi-view attention is inserted at stride 4 and stride 1 levels. Target-view features are first warped to the source-view coordinate system using the previous-level warp, followed by **pixel-aligned attention** — each pixel attends only to its corresponding cross-view locations. Cross-view attention and ConvNeXt spatial propagation are applied alternately for $N$ iterations, outputting warp residuals.
+    - **Design Motivation**: Global cross-attention is prohibitively expensive; the pixel-aligned design reduces complexity to $O(HW \cdot V)$ and performs fine-grained adjustments only where needed.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: b3982c62a4d8e7a7
 # CLOT: Closed Loop Optimal Transport for Unsupervised Action Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.03539](https://arxiv.org/abs/2507.03539)
-**Code**: [https://github.com/elenabbbuenob/CLOT](https://github.com/elenabbbuenob/CLOT)
+**arXiv**: [2507.03539](https://arxiv.org/abs/2507.03539)  
+**Code**: [https://github.com/elenabbbuenob/CLOT](https://github.com/elenabbbuenob/CLOT)  
 **Area**: Video Understanding / Action Segmentation
 **Keywords**: Unsupervised Action Segmentation, Optimal Transport, Closed-Loop Learning, Encoder-Decoder, Sliced Wasserstein Distance
 

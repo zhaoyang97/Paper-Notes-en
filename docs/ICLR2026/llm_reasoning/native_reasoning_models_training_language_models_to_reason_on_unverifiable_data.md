@@ -18,8 +18,8 @@ content_hash: 16b8bab2c61ba4fc
 # Native Reasoning Models: Training Language Models to Reason on Unverifiable Data
 
 **Conference**: ICLR2026
-**arXiv**: [2602.11549](https://arxiv.org/abs/2602.11549)
-**Code**: To be confirmed
+**arXiv**: [2602.11549](https://arxiv.org/abs/2602.11549)  
+**Code**: To be confirmed  
 **Area**: LLM Reasoning
 **Keywords**: Reasoning training, verifier-free RL, latent variable reasoning, GRPO, reward design
 

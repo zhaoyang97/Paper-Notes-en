@@ -18,8 +18,8 @@ content_hash: 24af1141cae15262
 # Enhancing Out-of-Distribution Detection with Extended Logit Normalization
 
 **Conference**: CVPR 2026
-**arXiv**: [2504.11434](https://arxiv.org/abs/2504.11434)
-**Code**: [https://github.com/limchaos/ElogitNorm](https://github.com/limchaos/ElogitNorm)
+**arXiv**: [2504.11434](https://arxiv.org/abs/2504.11434)  
+**Code**: [https://github.com/limchaos/ElogitNorm](https://github.com/limchaos/ElogitNorm)  
 **Area**: LLM Evaluation
 **Keywords**: OOD Detection, Logit Normalization, Feature Collapse, Decision Boundary, Model Calibration
 

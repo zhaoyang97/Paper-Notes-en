@@ -18,8 +18,8 @@ content_hash: e156995162aaf7a9
 # Semantic-Aware Logical Reasoning via a Semiotic Framework
 
 **Conference**: ACL 2026
-**arXiv**: [2509.24765](https://arxiv.org/abs/2509.24765)
-**Code**: [GitHub](https://github.com/AI4SS/Logic-Agent)
+**arXiv**: [2509.24765](https://arxiv.org/abs/2509.24765)  
+**Code**: [GitHub](https://github.com/AI4SS/Logic-Agent)  
 **Area**: LLM Reasoning / Logical Reasoning
 **Keywords**: symbolic reasoning, Greimas semiotic square, logical reasoning, semantic complexity, multi-perspective reasoning
 

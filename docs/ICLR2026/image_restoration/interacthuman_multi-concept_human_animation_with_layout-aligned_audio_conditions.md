@@ -18,8 +18,8 @@ content_hash: 9a69b2aa172947e0
 # InterActHuman: Multi-Concept Human Animation with Layout-Aligned Audio Conditions
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.09984](https://arxiv.org/abs/2506.09984)
-**Code**: Partially open-sourced (reproduction based on Wan2.1)
+**arXiv**: [2506.09984](https://arxiv.org/abs/2506.09984)  
+**Code**: Partially open-sourced (reproduction based on Wan2.1)  
 **Area**: Image Restoration
 **Keywords**: Multi-person video generation, audio-driven animation, mask prediction, layout control, DiT
 

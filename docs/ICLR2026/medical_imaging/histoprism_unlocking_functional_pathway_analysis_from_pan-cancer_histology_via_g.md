@@ -18,8 +18,8 @@ content_hash: 25574ab1498e34e7
 # HistoPrism: Unlocking Functional Pathway Analysis from Pan-Cancer Histology via Gene Expression Prediction
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21560](https://arxiv.org/abs/2601.21560)
-**Code**: [GitHub](https://github.com/susuhu/HistoPrism)
+**arXiv**: [2601.21560](https://arxiv.org/abs/2601.21560)  
+**Code**: [GitHub](https://github.com/susuhu/HistoPrism)  
 **Area**: Medical Imaging / Computational Pathology
 **Keywords**: Spatial Transcriptomics, Gene Expression Prediction, Pan-Cancer, Pathway Analysis, Transformer
 

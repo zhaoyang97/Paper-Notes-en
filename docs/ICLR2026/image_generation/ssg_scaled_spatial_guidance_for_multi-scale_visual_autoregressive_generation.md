@@ -18,8 +18,8 @@ content_hash: 256b406aff81fab6
 # SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.05534](https://arxiv.org/abs/2602.05534)
-**Code**: [GitHub](https://github.com/Youngwoo-git/SSG)
+**arXiv**: [2602.05534](https://arxiv.org/abs/2602.05534)  
+**Code**: [GitHub](https://github.com/Youngwoo-git/SSG)  
 **Area**: Visual Autoregressive Models / Image Generation / Inference-Time Guidance
 **Keywords**: VAR, next-scale prediction, information bottleneck, frequency-domain guidance, training-free
 

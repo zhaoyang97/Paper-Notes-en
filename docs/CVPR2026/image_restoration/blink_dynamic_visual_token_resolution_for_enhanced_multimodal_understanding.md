@@ -18,8 +18,8 @@ content_hash: 7d46fd2374bc2bb1
 # Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.10548](https://arxiv.org/abs/2512.10548)
-**Code**: N/A
+**arXiv**: [2512.10548](https://arxiv.org/abs/2512.10548)  
+**Code**: N/A  
 **Area**: Multimodal Large Language Models / Image Restoration (Visual Perception Enhancement)
 **Keywords**: Visual token resolution, dynamic attention, multimodal large language models, saliency guidance, token super-resolution
 

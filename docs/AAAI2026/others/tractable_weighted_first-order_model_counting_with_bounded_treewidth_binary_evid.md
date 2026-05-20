@@ -17,8 +17,8 @@ content_hash: 0276c0b75c47b57b
 # Tractable Weighted First-Order Model Counting with Bounded Treewidth Binary Evidence
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09174](https://arxiv.org/abs/2511.09174)
-**Code**: None
+**arXiv**: [2511.09174](https://arxiv.org/abs/2511.09174)  
+**Code**: None  
 **Area**: Artificial Intelligence / Logic & Reasoning
 **Keywords**: Weighted first-order model counting, binary evidence, treewidth, lifted inference, combinatorial counting
 
@@ -51,10 +51,10 @@ Given a $\text{UFO}^2$ sentence $\Psi$, domain $\Delta$, weight function $(w, \b
 2. **Recursion for Four Node Types**:
     - **Function**: Define separate recursions for leaf, introduce, forget, and merge nodes.
     - **Mechanism**:
-      - Leaf node: $f(u, \top, \mathbf{0}) = 1$
-      - Introduce node: The newly introduced element $a$ has no edges to $S_u$ in the Gaifman graph; 2-table weights can be computed in batch using $r_{\tau_a, C_i}$.
-      - Forget node: Enumerate the 1-type of the departing element and its 2-table with each element remaining in the bag.
-      - Merge node: $S_{v_1}$ and $S_{v_2}$ are not connected; their 2-table weights can be computed in batch by 1-type configuration.
+        - Leaf node: $f(u, \top, \mathbf{0}) = 1$
+        - Introduce node: The newly introduced element $a$ has no edges to $S_u$ in the Gaifman graph; 2-table weights can be computed in batch using $r_{\tau_a, C_i}$.
+        - Forget node: Enumerate the 1-type of the departing element and its 2-table with each element remaining in the bag.
+        - Merge node: $S_{v_1}$ and $S_{v_2}$ are not connected; their 2-table weights can be computed in batch by 1-type configuration.
     - **Design Motivation**: The nice tree decomposition structure ensures that each step involves only a single element change, keeping computation tractable.
 
 3. **Extension to $\text{FO}^2$, $\text{C}^2$, and Asymmetric Weights**:

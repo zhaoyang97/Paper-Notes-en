@@ -18,8 +18,8 @@ content_hash: 17fc9074d7b12068
 # Learning from Synthetic Data Improves Multi-hop Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02091](https://arxiv.org/abs/2603.02091)
-**Code**: [GitHub](https://github.com/kilian-group/phantom-reasoning)
+**arXiv**: [2603.02091](https://arxiv.org/abs/2603.02091)  
+**Code**: [GitHub](https://github.com/kilian-group/phantom-reasoning)  
 **Area**: LLM Reasoning / Reinforcement Learning
 **Keywords**: Synthetic Data, Multi-hop Reasoning, RLVR, Knowledge Composition, Phantom Worlds
 

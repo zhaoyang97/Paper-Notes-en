@@ -18,8 +18,8 @@ content_hash: dddd837b74812a02
 # MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.10543](https://arxiv.org/abs/2507.10543)
-**Code**: [github.com/LogSSim/MP1](https://github.com/LogSSim/MP1)
+**arXiv**: [2507.10543](https://arxiv.org/abs/2507.10543)  
+**Code**: [github.com/LogSSim/MP1](https://github.com/LogSSim/MP1)  
 **Area**: Image Generation / Robotic Manipulation
 **Keywords**: Robotic Manipulation, MeanFlow, Single-Step Inference, Flow Matching, Dispersive Loss
 

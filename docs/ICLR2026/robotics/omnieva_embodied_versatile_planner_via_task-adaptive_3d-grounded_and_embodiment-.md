@@ -18,8 +18,8 @@ content_hash: ec2002b7c3ce5670
 # OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.09332](https://arxiv.org/abs/2509.09332)
-**Code**: [Project Page](https://github.com/OmniEVA-Project)
+**arXiv**: [2509.09332](https://arxiv.org/abs/2509.09332)  
+**Code**: [Project Page](https://github.com/OmniEVA-Project)  
 **Area**: Embodied Intelligence / 3D Reasoning
 **Keywords**: MLLM, Task-Adaptive 3D Grounding, Gated Routing, Embodiment-aware Reasoning, GRPO
 
@@ -49,27 +49,27 @@ MLLMs are increasingly applied to embodied intelligence, requiring spatial under
 1. **3D Positional Encoding**: Depth maps are unprojected to world coordinates, patch-level averaged, and encoded via sinusoidal functions to obtain $V^p \in \mathbb{R}^{N \times H_p \times W_p \times d_v}$.
 
 2. **Gating Decision**:
-   - Task condition: a sentence Transformer encodes the instruction to produce $V^T$
-   - Scene condition: mean-pooled visual encoder output $V_{avg}^I$
-   - Concatenated features are passed through an MLP to produce 2D gate logits, followed by Gumbel-Softmax for a binary decision
+    - Task condition: a sentence Transformer encodes the instruction to produce $V^T$
+    - Scene condition: mean-pooled visual encoder output $V_{avg}^I$
+    - Concatenated features are passed through an MLP to produce 2D gate logits, followed by Gumbel-Softmax for a binary decision
 
 3. **Dynamic Injection**:
-   - Gate = 1: $V^{final} = V^I + V^p$ (3D positional encoding added)
-   - Gate = 0: $V^{final} = V^I$ (2D only)
-   - The routing is automatically determined per task and scene, avoiding noise from unnecessary 3D injection
+    - Gate = 1: $V^{final} = V^I + V^p$ (3D positional encoding added)
+    - Gate = 0: $V^{final} = V^I$ (2D only)
+    - The routing is automatically determined per task and scene, avoiding noise from unnecessary 3D injection
 
 ### Embodiment-aware Reasoning
 
 1. **Primitive Skill Decomposition**:
-   - Where2Go: navigation target selection
-   - Where2Grasp: grasp pose estimation
-   - Where2Approach: approach pose determination
-   - Where2Fit: placement feasibility assessment
+    - Where2Go: navigation target selection
+    - Where2Grasp: grasp pose estimation
+    - Where2Approach: approach pose determination
+    - Where2Fit: placement feasibility assessment
 
 2. **TE-GRPO (Task- and Embodiment-aware GRPO)**:
-   - Applied as a post-training stage using Group Relative Policy Optimization (GRPO)
-   - Reward function accounts for: task objectives, object affordances, workspace boundaries, and kinematic feasibility
-   - Ensures that generated plans are physically executable
+    - Applied as a post-training stage using Group Relative Policy Optimization (GRPO)
+    - Reward function accounts for: task objectives, object affordances, workspace boundaries, and kinematic feasibility
+    - Ensures that generated plans are physically executable
 
 ### Two-Stage Training
 - Stage 1: Supervised Fine-Tuning (SFT) on 2D + 3D VQA and embodied reasoning data

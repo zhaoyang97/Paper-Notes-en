@@ -18,8 +18,8 @@ content_hash: 53311dfba320a3c8
 # Are Large Reasoning Models Good Translation Evaluators? Analysis and Performance Boost
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20780](https://arxiv.org/abs/2510.20780)
-**Code**: [https://github.com/ThinMQM](https://github.com/ThinMQM)
+**arXiv**: [2510.20780](https://arxiv.org/abs/2510.20780)  
+**Code**: [https://github.com/ThinMQM](https://github.com/ThinMQM)  
 **Area**: LLM Reasoning
 **Keywords**: LRM-as-a-judge, machine translation evaluation, MQM, thinking budget calibration, ThinMQM
 

@@ -18,8 +18,8 @@ content_hash: 44b35034ac6556f7
 # CryoFastAR: Fast Cryo-EM Ab initio Reconstruction Made Easy
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.05864](https://arxiv.org/abs/2506.05864)
-**Code**: None
+**arXiv**: [2506.05864](https://arxiv.org/abs/2506.05864)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: cryo-EM, ab initio reconstruction, geometric foundation model, pose estimation, Fourier planar map
 

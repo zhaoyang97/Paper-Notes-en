@@ -18,8 +18,8 @@ content_hash: 3120c5ee7bd1e2de
 # Not All Deepfakes Are Created Equal: Triaging Audio Forgeries for Robust Deepfake Singer Identification
 
 **Conference**: NeurIPS 2025 Workshop (Generative and Protective AI for Content Creation)
-**arXiv**: [2510.17474](https://arxiv.org/abs/2510.17474)
-**Code**: None
+**arXiv**: [2510.17474](https://arxiv.org/abs/2510.17474)  
+**Code**: None  
 **Area**: AI Security, Audio Deepfake Detection
 **Keywords**: deepfake detection, singer identification, voice forgery, two-stage pipeline, audio forensics
 

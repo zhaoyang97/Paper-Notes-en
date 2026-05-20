@@ -18,8 +18,8 @@ content_hash: fb7930d6219dd422
 # scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.11609](https://arxiv.org/abs/2602.11609)
-**Code**: [https://github.com/maitrix-org/scPilot](https://github.com/maitrix-org/scPilot)
+**arXiv**: [2602.11609](https://arxiv.org/abs/2602.11609)  
+**Code**: [https://github.com/maitrix-org/scPilot](https://github.com/maitrix-org/scPilot)  
 **Area**: Interpretability
 **Keywords**: single-cell RNA-seq, LLM reasoning, omics-native reasoning, cell-type annotation, trajectory inference
 

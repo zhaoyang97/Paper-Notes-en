@@ -18,7 +18,7 @@ content_hash: 06990da92306ca90
 # VoT: Event-Driven Reasoning and Multi-Level Alignment Unlock the Value of Text for Time Series Forecasting
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.15452](https://arxiv.org/abs/2603.15452)
+**arXiv**: [2603.15452](https://arxiv.org/abs/2603.15452)  
 **Area**: Time Series
 **Keywords**: Multimodal time series forecasting, event-driven reasoning, text alignment, adaptive frequency fusion, LLM reasoning
 

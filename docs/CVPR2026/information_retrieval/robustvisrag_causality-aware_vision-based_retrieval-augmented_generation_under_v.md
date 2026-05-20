@@ -18,8 +18,8 @@ content_hash: faa1ff23b9993e68
 # RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22013](https://arxiv.org/abs/2602.22013)
-**Code**: [https://robustvisrag.github.io/](https://robustvisrag.github.io/)
+**arXiv**: [2602.22013](https://arxiv.org/abs/2602.22013)  
+**Code**: [https://robustvisrag.github.io/](https://robustvisrag.github.io/)  
 **Area**: Information Retrieval
 **Keywords**: VisRAG, Robustness, Causal Inference, Visual Degradation, Dual-Path Encoding
 

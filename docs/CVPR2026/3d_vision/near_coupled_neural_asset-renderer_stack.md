@@ -18,8 +18,8 @@ content_hash: 728ebe18d37177f9
 # NeAR: Coupled Neural Asset–Renderer Stack
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.18600](https://arxiv.org/abs/2511.18600)
-**Code**: [https://near-project.github.io/](https://near-project.github.io/) (project page)
+**arXiv**: [2511.18600](https://arxiv.org/abs/2511.18600)  
+**Code**: [https://near-project.github.io/](https://near-project.github.io/) (project page)  
 **Area**: 3D Vision / Diffusion Models
 **Keywords**: Neural rendering, illumination homogenization, 3D Gaussian splatting, relighting, coupled asset–renderer design
 

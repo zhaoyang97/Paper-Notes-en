@@ -17,8 +17,8 @@ content_hash: 56315ae7af34c7b8
 # HyTIP: Hybrid Temporal Information Propagation for Masked Conditional Residual Video Coding
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.02072](https://arxiv.org/abs/2508.02072)
-**Code**: [https://github.com/NYCU-MAPL/HyTIP](https://github.com/NYCU-MAPL/HyTIP)
+**arXiv**: [2508.02072](https://arxiv.org/abs/2508.02072)  
+**Code**: [https://github.com/NYCU-MAPL/HyTIP](https://github.com/NYCU-MAPL/HyTIP)  
 **Area**: Video Coding / Learned Video Compression
 **Keywords**: Video Compression, Temporal Information Propagation, Hybrid Buffer Strategy, RNN, Conditional Residual Coding
 

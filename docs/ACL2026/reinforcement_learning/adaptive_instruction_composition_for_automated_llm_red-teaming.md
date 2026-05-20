@@ -18,8 +18,8 @@ content_hash: 393ea54af596fb72
 # Adaptive Instruction Composition for Automated LLM Red-Teaming
 
 **Conference**: ACL 2026
-**arXiv**: [2604.21159](https://arxiv.org/abs/2604.21159)
-**Code**: N/A
+**arXiv**: [2604.21159](https://arxiv.org/abs/2604.21159)  
+**Code**: N/A  
 **Area**: AI Safety / Reinforcement Learning
 **Keywords**: LLM red-teaming, adaptive instruction composition, contextual bandit, jailbreak attacks, diversity-effectiveness tradeoff
 

@@ -18,8 +18,8 @@ content_hash: d044a5418cf375e0
 # The Underappreciated Power of Vision Models for Graph Structural Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24788](https://arxiv.org/abs/2510.24788)
-**Code**: [GitHub](https://github.com/LOGO-CUHKSZ/GraphAbstract)
+**arXiv**: [2510.24788](https://arxiv.org/abs/2510.24788)  
+**Code**: [GitHub](https://github.com/LOGO-CUHKSZ/GraphAbstract)  
 **Area**: Graph Learning
 **Keywords**: vision models, graph neural networks, graph structural understanding, benchmark, scale invariance
 

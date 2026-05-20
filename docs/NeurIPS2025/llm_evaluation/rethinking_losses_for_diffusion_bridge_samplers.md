@@ -18,8 +18,8 @@ content_hash: 1842a6de83edf087
 # Rethinking Losses for Diffusion Bridge Samplers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10982](https://arxiv.org/abs/2506.10982)
-**Code**: [GitHub](https://github.com/sanokows/RethinkingLossesForDiffusionBridgeSamplers)
+**arXiv**: [2506.10982](https://arxiv.org/abs/2506.10982)  
+**Code**: [GitHub](https://github.com/sanokows/RethinkingLossesForDiffusionBridgeSamplers)  
 **Area**: LLM Evaluation
 **Keywords**: diffusion bridge samplers, loss functions, reverse KL divergence, Log Variance loss, learnable diffusion coefficients
 

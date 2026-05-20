@@ -20,8 +20,8 @@ content_hash: 242c74305f857379
 # StyleKeeper: Prevent Content Leakage using Negative Visual Query Guidance
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.06827](https://arxiv.org/abs/2510.06827)
-**Code**: [GitHub](https://github.com/) (publicly released)
+**arXiv**: [2510.06827](https://arxiv.org/abs/2510.06827)  
+**Code**: [GitHub](https://github.com/) (publicly released)  
 **Area**: Image Generation
 **Keywords**: visual style prompt, content leakage, Classifier-Free Guidance, self-attention feature swapping, negative visual query guidance, training-free style transfer, diffusion models
 

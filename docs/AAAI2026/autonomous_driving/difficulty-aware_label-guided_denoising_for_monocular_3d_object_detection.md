@@ -17,8 +17,8 @@ content_hash: 6df7e74422692f14
 # Difficulty-Aware Label-Guided Denoising for Monocular 3D Object Detection
 
 **Conference**: AAAI2026
-**arXiv**: [2511.13195](https://arxiv.org/abs/2511.13195)
-**Code**: [lsy010857/MonoDLGD](https://github.com/lsy010857/MonoDLGD)
+**arXiv**: [2511.13195](https://arxiv.org/abs/2511.13195)  
+**Code**: [lsy010857/MonoDLGD](https://github.com/lsy010857/MonoDLGD)  
 **Area**: Autonomous Driving
 **Keywords**: monocular 3D object detection, denoising, uncertainty estimation, DETR, autonomous driving
 

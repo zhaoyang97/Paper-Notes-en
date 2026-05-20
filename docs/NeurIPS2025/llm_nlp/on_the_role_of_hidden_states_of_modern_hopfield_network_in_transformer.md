@@ -20,8 +20,8 @@ content_hash: 3c6e5e2e0c1944d3
 # On the Role of Hidden States of Modern Hopfield Network in Transformer
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.20698](https://arxiv.org/abs/2511.20698)
-**Code**: To be confirmed
+**arXiv**: [2511.20698](https://arxiv.org/abs/2511.20698)  
+**Code**: To be confirmed  
 **Area**: LLM/NLP
 **Keywords**: Modern Hopfield Network, self-attention, rank collapse, token uniformity, hidden state, Vision Transformer, GPT-2
 

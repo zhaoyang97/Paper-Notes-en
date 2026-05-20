@@ -18,8 +18,8 @@ content_hash: d4446f5f8fd90b30
 # Generalized Linear Bandits: Almost Optimal Regret with One-Pass Update
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.11847](https://arxiv.org/abs/2507.11847)
-**Code**: None
+**arXiv**: [2507.11847](https://arxiv.org/abs/2507.11847)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Generalized linear bandits, online learning, confidence sets, online mirror descent, mix loss
 

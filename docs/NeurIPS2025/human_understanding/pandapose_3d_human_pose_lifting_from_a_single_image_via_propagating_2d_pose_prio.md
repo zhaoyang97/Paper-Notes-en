@@ -18,8 +18,8 @@ content_hash: 075488c3a18ad4e9
 # PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.01095](https://arxiv.org/abs/2602.01095)
-**Code**: N/A
+**arXiv**: [2602.01095](https://arxiv.org/abs/2602.01095)  
+**Code**: N/A  
 **Area**: 3D Human Pose Estimation / Object Detection
 **Keywords**: 3D human pose estimation, anchor mechanism, depth estimation, self-occlusion, pose lifting
 

@@ -18,8 +18,8 @@ content_hash: 999d6839b705ee81
 # HumanOLAT: A Large-Scale Dataset for Full-Body Human Relighting and Novel-View Synthesis
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.09137](https://arxiv.org/abs/2508.09137)
-**Code**: [Project Page](https://vcai.mpi-inf.mpg.de/projects/HumanOLAT/)
+**arXiv**: [2508.09137](https://arxiv.org/abs/2508.09137)  
+**Code**: [Project Page](https://vcai.mpi-inf.mpg.de/projects/HumanOLAT/)  
 **Area**: 3D Vision
 **Keywords**: Human Relighting, OLAT Dataset, Light Stage, Novel-View Synthesis, Full-Body Capture
 

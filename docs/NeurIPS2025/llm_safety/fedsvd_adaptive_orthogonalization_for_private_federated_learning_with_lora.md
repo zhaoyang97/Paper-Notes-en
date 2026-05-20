@@ -18,8 +18,8 @@ content_hash: f758a479faa5f8ca
 # FedSVD: Adaptive Orthogonalization for Private Federated Learning with LoRA
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12805](https://arxiv.org/abs/2505.12805)
-**Code**: [GitHub](https://github.com/seanie12/fed-svd)
+**arXiv**: [2505.12805](https://arxiv.org/abs/2505.12805)  
+**Code**: [GitHub](https://github.com/seanie12/fed-svd)  
 **Area**: AI Safety
 **Keywords**: Federated Learning, Differential Privacy, LoRA, SVD, Noise Amplification
 

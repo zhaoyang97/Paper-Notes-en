@@ -18,8 +18,8 @@ content_hash: 7c68d21f5990a4f5
 # PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11675](https://arxiv.org/abs/2603.11675)
-**Code**: Unavailable (Xiaohongshu team)
+**arXiv**: [2603.11675](https://arxiv.org/abs/2603.11675)  
+**Code**: Unavailable (Xiaohongshu team)  
 **Area**: Image Generation / Virtual Try-On
 **Keywords**: Virtual try-on, Flow Matching DiT, multi-condition generation, temporal self-reference, outfit style control
 

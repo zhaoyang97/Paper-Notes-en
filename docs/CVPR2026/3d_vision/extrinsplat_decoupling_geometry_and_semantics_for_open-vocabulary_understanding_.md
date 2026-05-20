@@ -18,8 +18,8 @@ content_hash: 7a47056d88270fe3
 # ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.22225](https://arxiv.org/abs/2509.22225)
-**Code**: None
+**arXiv**: [2509.22225](https://arxiv.org/abs/2509.22225)  
+**Code**: None  
 **Area**: 3D Vision / Open-Vocabulary 3D Scene Understanding
 **Keywords**: 3D Gaussian Splatting, open-vocabulary understanding, semantic decoupling, VLM, text hypothesis
 

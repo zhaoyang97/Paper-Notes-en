@@ -18,8 +18,8 @@ content_hash: 5313d205119a6ac3
 # CogGen: A Cognitively Inspired Recursive Framework for Deep Research Report Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17072](https://arxiv.org/abs/2604.17072)
-**Code**: [GitHub](https://github.com/NJUNLP/CogGen)
+**arXiv**: [2604.17072](https://arxiv.org/abs/2604.17072)  
+**Code**: [GitHub](https://github.com/NJUNLP/CogGen)  
 **Area**: Multimodal VLM
 **Keywords**: Deep research report, recursive writing framework, multimodal fusion, cognitive load assessment, multi-agent
 

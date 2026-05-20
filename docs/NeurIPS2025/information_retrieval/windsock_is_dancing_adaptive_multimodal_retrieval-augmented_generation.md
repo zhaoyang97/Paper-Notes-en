@@ -18,8 +18,8 @@ content_hash: 5a849115fd9e8bd0
 # Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22694](https://arxiv.org/abs/2510.22694)
-**Code**: Not available
+**arXiv**: [2510.22694](https://arxiv.org/abs/2510.22694)  
+**Code**: Not available  
 **Area**: Information Retrieval
 **Keywords**: Multimodal RAG, Adaptive Retrieval, Modality Selection, Noise-Robust Training, Retrieval-Augmented Generation
 

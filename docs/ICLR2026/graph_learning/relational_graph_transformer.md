@@ -18,8 +18,8 @@ content_hash: 27257e9a3c04f0ee
 # Relational Graph Transformer
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.10960](https://arxiv.org/abs/2505.10960)
-**Code**: [GitHub](https://github.com/snap-stanford/relgt)
+**arXiv**: [2505.10960](https://arxiv.org/abs/2505.10960)  
+**Code**: [GitHub](https://github.com/snap-stanford/relgt)  
 **Area**: Graph Learning
 **Keywords**: Graph Transformer, Relational Deep Learning, Multi-Element Tokenization, Heterogeneous Temporal Graph, Positional Encoding
 

@@ -18,8 +18,8 @@ content_hash: 1db14d7797ec10b3
 # EgoEMS: A High-Fidelity Multimodal Egocentric Dataset for Cognitive Assistance in Emergency Medical Services
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09894](https://arxiv.org/abs/2511.09894)
-**Code**: [Project Page](https://uva-dsa.github.io/EgoEMS)
+**arXiv**: [2511.09894](https://arxiv.org/abs/2511.09894)  
+**Code**: [Project Page](https://uva-dsa.github.io/EgoEMS)  
 **Area**: Medical Imaging / Dataset / Multimodal Learning
 **Keywords**: Egocentric perspective, emergency medical services, multimodal fusion, cognitive assistance, activity recognition
 

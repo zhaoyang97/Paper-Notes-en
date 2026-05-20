@@ -19,8 +19,8 @@ content_hash: 7920c8a654e9bcff
 # Making Training-Free Diffusion Segmentors Scale with the Generative Power
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.06178](https://arxiv.org/abs/2603.06178)
-**Code**: [Available](https://github.com/MengBenyuan/GoCA)
+**arXiv**: [2603.06178](https://arxiv.org/abs/2603.06178)  
+**Code**: [Available](https://github.com/MengBenyuan/GoCA)  
 **Area**: Semantic Segmentation
 **Keywords**: Diffusion Models, Training-Free Segmentation, Cross-Attention, Auto Aggregation, Per-Pixel Rescaling, Generative Scaling
 

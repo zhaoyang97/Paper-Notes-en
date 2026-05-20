@@ -19,8 +19,8 @@ content_hash: 901b2649c63da924
 # Many LLMs Are More Utilitarian Than One
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.00814](https://arxiv.org/abs/2507.00814)
-**Code**: [GitHub](https://github.com/baltaci-r/MoralAgents)
+**arXiv**: [2507.00814](https://arxiv.org/abs/2507.00814)  
+**Code**: [GitHub](https://github.com/baltaci-r/MoralAgents)  
 **Area**: LLM Reasoning / AI Alignment
 **Keywords**: Multi-Agent Systems, Moral Reasoning, Utilitarian Boost, Group Deliberation, AI Alignment, Deontology
 
@@ -51,19 +51,19 @@ Two conditions are compared: *Solo* (a single LLM independently evaluates moral 
 ### Key Designs
 
 1. **Greene Moral Dilemma Experiments**:
-   - *Function*: Measure changes in LLMs' acceptance of moral violations between Solo and Group conditions.
-   - *Mechanism*: Greene et al.'s dilemma battery is used, distinguishing *personal dilemmas* (direct harm, e.g., pushing someone off a bridge to save five) from *impersonal dilemmas* (indirect harm, e.g., pulling a lever). Each dilemma is rated on a 1–7 scale (7 = most utilitarian). In the Group condition, three agents deliberate for six rounds before independently providing private reflective ratings. Differences between Group and Solo are analyzed using ordinal mixed-effects regression.
-   - *Design Motivation*: This dilemma battery has been validated over two decades of human moral psychology research; direct adoption ensures comparability.
+    - *Function*: Measure changes in LLMs' acceptance of moral violations between Solo and Group conditions.
+    - *Mechanism*: Greene et al.'s dilemma battery is used, distinguishing *personal dilemmas* (direct harm, e.g., pushing someone off a bridge to save five) from *impersonal dilemmas* (indirect harm, e.g., pulling a lever). Each dilemma is rated on a 1–7 scale (7 = most utilitarian). In the Group condition, three agents deliberate for six rounds before independently providing private reflective ratings. Differences between Group and Solo are analyzed using ordinal mixed-effects regression.
+    - *Design Motivation*: This dilemma battery has been validated over two decades of human moral psychology research; direct adoption ensures comparability.
 
 2. **CNI Model Analysis of Utilitarian Mechanisms**:
-   - *Function*: Decompose the source of the Utilitarian Boost—whether it stems from greater sensitivity to consequences (C), reduced sensitivity to norms (N), or a preference for action (I).
-   - *Mechanism*: The CNI model estimates three latent variables—C (consequence sensitivity), N (norm sensitivity), and I (inaction preference)—from response patterns across four orthogonal conditions (action-consistent, action-inconsistent, omission-consistent, omission-inconsistent). In humans, the group Utilitarian Boost is driven solely by increased C. The paper investigates whether the same holds for LLM groups.
-   - *Design Motivation*: Moving beyond surface-level performance metrics to diagnose the specific cognitive mechanism underlying the Utilitarian Boost, since different mechanisms call for different mitigation strategies.
+    - *Function*: Decompose the source of the Utilitarian Boost—whether it stems from greater sensitivity to consequences (C), reduced sensitivity to norms (N), or a preference for action (I).
+    - *Mechanism*: The CNI model estimates three latent variables—C (consequence sensitivity), N (norm sensitivity), and I (inaction preference)—from response patterns across four orthogonal conditions (action-consistent, action-inconsistent, omission-consistent, omission-inconsistent). In humans, the group Utilitarian Boost is driven solely by increased C. The paper investigates whether the same holds for LLM groups.
+    - *Design Motivation*: Moving beyond surface-level performance metrics to diagnose the specific cognitive mechanism underlying the Utilitarian Boost, since different mechanisms call for different mitigation strategies.
 
 3. **Mitigation Strategy Exploration**:
-   - *Function*: Test the effects of model diversity, self-reflection, and pre-assigned moral frameworks on the Utilitarian Boost.
-   - *Mechanism*: (1) **Model heterogeneity**—pairing models from different families or of different sizes: homogeneous pairs (e.g., GPT-4.1 × GPT-4.1) amplify utilitarianism, cross-family heterogeneous pairs attenuate the boost ($\beta=-0.30, p=.0001$), and mixed-size pairs even reverse it toward deontology ($\beta=1.40, p<.001$). (2) **Self-reflection**—replacing multi-agent discussion with iterative single-model self-debate eliminates the Utilitarian Boost. (3) **Moral priming**—deontology–deontology (DD) pairs elevate utilitarianism, while UD/DU mixed pairs produce a "Deontological Boost" ($-0.323, p<.0001$).
-   - *Design Motivation*: Providing practitioners with actionable design levers for controlling the Utilitarian Boost.
+    - *Function*: Test the effects of model diversity, self-reflection, and pre-assigned moral frameworks on the Utilitarian Boost.
+    - *Mechanism*: (1) **Model heterogeneity**—pairing models from different families or of different sizes: homogeneous pairs (e.g., GPT-4.1 × GPT-4.1) amplify utilitarianism, cross-family heterogeneous pairs attenuate the boost ($\beta=-0.30, p=.0001$), and mixed-size pairs even reverse it toward deontology ($\beta=1.40, p<.001$). (2) **Self-reflection**—replacing multi-agent discussion with iterative single-model self-debate eliminates the Utilitarian Boost. (3) **Moral priming**—deontology–deontology (DD) pairs elevate utilitarianism, while UD/DU mixed pairs produce a "Deontological Boost" ($-0.323, p<.0001$).
+    - *Design Motivation*: Providing practitioners with actionable design levers for controlling the Utilitarian Boost.
 
 ## Key Experimental Results
 

@@ -18,8 +18,8 @@ content_hash: 062a5d0e5eae48d4
 # Purifying Shampoo: Investigating Shampoo's Heuristics by Decomposing its Preconditioner
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03595](https://arxiv.org/abs/2506.03595)
-**Code**: Unavailable
+**arXiv**: [2506.03595](https://arxiv.org/abs/2506.03595)  
+**Code**: Unavailable  
 **Area**: Optimization
 **Keywords**: Shampoo optimizer, preconditioner, Kronecker factor, learning rate grafting, adaptive eigenbasis update
 

@@ -17,8 +17,8 @@ content_hash: 485c8a7297c9b415
 # An Information-Theoretic Framework For Optimizing Experimental Design To Distinguish Probabilistic Neural Codes
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01387](https://arxiv.org/abs/2603.01387)
-**Code**: [https://github.com/walkerlab/information-gap-probabilistic-neural-codes](https://github.com/walkerlab/information-gap-probabilistic-neural-codes)
+**arXiv**: [2603.01387](https://arxiv.org/abs/2603.01387)  
+**Code**: [https://github.com/walkerlab/information-gap-probabilistic-neural-codes](https://github.com/walkerlab/information-gap-probabilistic-neural-codes)  
 **Authors**: Po-Chen Kuo, Edgar Y. Walker (University of Washington)
 **Area**: Computational Neuroscience — Probabilistic Neural Coding, Bayesian Perception, Experimental Design Optimization
 **Keywords**: Information Gap, Probabilistic Coding Hypothesis, Likelihood Coding, Posterior Coding, Optimal Experimental Design

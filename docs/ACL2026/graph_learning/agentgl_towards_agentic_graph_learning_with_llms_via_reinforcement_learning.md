@@ -16,8 +16,8 @@ content_hash: c48d7eded3dbe745
 # AgentGL: Towards Agentic Graph Learning with LLMs via Reinforcement Learning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05846](https://arxiv.org/abs/2604.05846)
-**Code**: [https://github.com/sunyuanfu/AgentGL](https://github.com/sunyuanfu/AgentGL)
+**arXiv**: [2604.05846](https://arxiv.org/abs/2604.05846)  
+**Code**: [https://github.com/sunyuanfu/AgentGL](https://github.com/sunyuanfu/AgentGL)  
 **Area**: Graph Learning / LLM Agent
 **Keywords**: Graph Learning, Reinforcement Learning, Agent Navigation, Text-Attributed Graph, Tool Use
 

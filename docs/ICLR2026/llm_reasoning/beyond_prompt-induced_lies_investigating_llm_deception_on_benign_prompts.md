@@ -18,8 +18,8 @@ content_hash: 1d816be2ad442164
 # Beyond Prompt-Induced Lies: Investigating LLM Deception on Benign Prompts
 
 **Conference**: ICLR2026
-**arXiv**: [2508.06361](https://arxiv.org/abs/2508.06361)
-**Code**: [Xtra-Computing/LLM-Deception](https://github.com/Xtra-Computing/LLM-Deception)
+**arXiv**: [2508.06361](https://arxiv.org/abs/2508.06361)  
+**Code**: [Xtra-Computing/LLM-Deception](https://github.com/Xtra-Computing/LLM-Deception)  
 **Area**: LLM Reasoning
 **Keywords**: LLM deception detection, spontaneous deception, trustworthiness evaluation, Contact Searching Question, cognitive psychology
 

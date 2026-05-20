@@ -18,8 +18,8 @@ content_hash: f3cb5b2f37323798
 # Iris: Breaking GUI Complexity with Adaptive Focus and Self-Refining
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.10342](https://arxiv.org/abs/2412.10342)
-**Code**: None
+**arXiv**: [2412.10342](https://arxiv.org/abs/2412.10342)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: GUI understanding, visual agent, information-sensitive cropping, self-refining dual learning, element grounding
 

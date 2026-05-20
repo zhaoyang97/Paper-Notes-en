@@ -19,8 +19,8 @@ content_hash: 9d7aa8c301d8d432
 # Resp-Agent: An Agent-Based System for Multimodal Respiratory Sound Generation and Disease Diagnosis
 
 **Conference**: ICLR2026
-**arXiv**: [2602.15909](https://arxiv.org/abs/2602.15909)
-**Code**: [github.com/zpforlove/Resp-Agent](https://github.com/zpforlove/Resp-Agent)
+**arXiv**: [2602.15909](https://arxiv.org/abs/2602.15909)  
+**Code**: [github.com/zpforlove/Resp-Agent](https://github.com/zpforlove/Resp-Agent)  
 **Area**: Medical Imaging
 **Keywords**: Respiratory sound analysis, multimodal fusion, controllable audio generation, active adversarial curriculum learning, flow matching, data augmentation
 

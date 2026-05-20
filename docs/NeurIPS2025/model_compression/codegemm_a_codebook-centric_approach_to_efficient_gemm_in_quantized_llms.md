@@ -20,8 +20,8 @@ content_hash: 6030ad8b99d2ca82
 # CodeGEMM: A Codebook-Centric Approach to Efficient GEMM in Quantized LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.17970](https://arxiv.org/abs/2512.17970)
-**Code**: [GitHub](https://github.com/naver-aics/codegemm)
+**arXiv**: [2512.17970](https://arxiv.org/abs/2512.17970)  
+**Code**: [GitHub](https://github.com/naver-aics/codegemm)  
 **Area**: Model Compression
 **Keywords**: model quantization, codebook quantization, GEMM acceleration, LLM inference, low-bit quantization, CUDA kernel, lookup table
 

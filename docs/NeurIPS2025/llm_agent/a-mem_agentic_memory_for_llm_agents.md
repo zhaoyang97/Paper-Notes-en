@@ -17,8 +17,8 @@ content_hash: 1d5eb5a275b1a928
 # A-MEM: Agentic Memory for LLM Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.12110](https://arxiv.org/abs/2502.12110)
-**Code**: [https://github.com/WujiangXu/AgenticMemory](https://github.com/WujiangXu/AgenticMemory)
+**arXiv**: [2502.12110](https://arxiv.org/abs/2502.12110)  
+**Code**: [https://github.com/WujiangXu/AgenticMemory](https://github.com/WujiangXu/AgenticMemory)  
 **Area**: LLM Agent / Memory Systems
 **Keywords**: Agentic Memory, Zettelkasten, Long-term Memory, LLM Agent, Knowledge Management
 

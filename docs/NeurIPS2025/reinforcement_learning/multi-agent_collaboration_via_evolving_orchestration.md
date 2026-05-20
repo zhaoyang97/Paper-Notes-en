@@ -17,8 +17,8 @@ content_hash: d6ee76c67a4468b9
 # Multi-Agent Collaboration via Evolving Orchestration
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19591](https://arxiv.org/abs/2505.19591)
-**Code**: [https://github.com/OpenBMB/ChatDev/tree/puppeteer](https://github.com/OpenBMB/ChatDev/tree/puppeteer)
+**arXiv**: [2505.19591](https://arxiv.org/abs/2505.19591)  
+**Code**: [https://github.com/OpenBMB/ChatDev/tree/puppeteer](https://github.com/OpenBMB/ChatDev/tree/puppeteer)  
 **Area**: Reinforcement Learning
 **Keywords**: Multi-Agent Collaboration, Dynamic Orchestration, Reinforcement Learning, Topology Evolution, Collective Reasoning
 

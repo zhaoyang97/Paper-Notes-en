@@ -18,8 +18,8 @@ content_hash: f235a8e30ff15d6f
 # PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25738](https://arxiv.org/abs/2603.25738)
-**Code**: [https://henghuiding.com/PSDesigner/](https://henghuiding.com/PSDesigner/)
+**arXiv**: [2603.25738](https://arxiv.org/abs/2603.25738)  
+**Code**: [https://henghuiding.com/PSDesigner/](https://henghuiding.com/PSDesigner/)  
 **Area**: Image Generation / Automated Design
 **Keywords**: Automated graphic design, PSD file manipulation, tool invocation, reinforcement learning, creative workflow
 

@@ -18,8 +18,8 @@ content_hash: d0e70336d742a62e
 # Semi-Supervised Synthetic Data Generation with Fine-Grained Relevance Control for Short Video Search Relevance Modeling
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.16717](https://arxiv.org/abs/2509.16717)
-**Code**: None
+**arXiv**: [2509.16717](https://arxiv.org/abs/2509.16717)  
+**Code**: None  
 **Area**: Recommender Systems / Search Relevance
 **Keywords**: Synthetic Data, Fine-Grained Relevance, Short Video Search, Semi-Supervised Learning, Embedding Model
 

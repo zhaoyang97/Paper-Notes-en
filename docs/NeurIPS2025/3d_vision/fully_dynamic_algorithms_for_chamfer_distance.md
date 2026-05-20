@@ -18,8 +18,8 @@ content_hash: 9767f66d1dba02c6
 # Fully Dynamic Algorithms for Chamfer Distance
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.16639](https://arxiv.org/abs/2512.16639)
-**Code**: None
+**arXiv**: [2512.16639](https://arxiv.org/abs/2512.16639)  
+**Code**: None  
 **Area**: 3D Vision / Algorithm Theory / Point Cloud
 **Keywords**: Chamfer distance, dynamic algorithms, approximate nearest neighbor, importance sampling, point cloud similarity
 

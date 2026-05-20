@@ -18,8 +18,8 @@ content_hash: 583ff146cb37c7cc
 # MixANT: Observation-dependent Memory Propagation for Stochastic Dense Action Anticipation
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.11394](https://arxiv.org/abs/2509.11394)
-**Code**: [talalwasim.github.io/MixANT](https://talalwasim.github.io/MixANT/)
+**arXiv**: [2509.11394](https://arxiv.org/abs/2509.11394)  
+**Code**: [talalwasim.github.io/MixANT](https://talalwasim.github.io/MixANT/)  
 **Area**: LLM Efficiency (Sequence Modeling / Mamba Architecture Improvement)
 **Keywords**: Action Anticipation, Mamba, Mixture of Experts, State Space Models, Dense Prediction
 

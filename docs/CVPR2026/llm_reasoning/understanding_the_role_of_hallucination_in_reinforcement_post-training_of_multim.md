@@ -18,8 +18,8 @@ content_hash: 3576da0353d869a4
 # Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03179](https://arxiv.org/abs/2604.03179)
-**Code**: None
+**arXiv**: [2604.03179](https://arxiv.org/abs/2604.03179)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Multimodal Reasoning, Reinforcement Learning Post-Training, Hallucination Analysis, GRPO, Modality Corruption
 
@@ -46,21 +46,21 @@ The Hallucination-as-Cue framework consists of three components: (1) design of m
 
 1. **Blank Image (BI)**
 
-   - **Function**: Completely removes visual information, forcing the model to rely solely on textual reasoning.
-   - **Mechanism**: All training/test images are replaced with blank images. During GRPO training, the model must generate reasoning chains conditioned purely on text; correct answers are rewarded.
-   - **Design Motivation**: If a model trained with BI still improves, this indicates that RL training can enhance reasoning ability without relying on visual information.
+    - **Function**: Completely removes visual information, forcing the model to rely solely on textual reasoning.
+    - **Mechanism**: All training/test images are replaced with blank images. During GRPO training, the model must generate reasoning chains conditioned purely on text; correct answers are rewarded.
+    - **Design Motivation**: If a model trained with BI still improves, this indicates that RL training can enhance reasoning ability without relying on visual information.
 
 2. **Random Image (RI)**
 
-   - **Function**: Provides incorrect visual information to test whether the model is misled.
-   - **Mechanism**: Each training/test image is replaced with a randomly selected different image from the dataset, constructing mismatched image–text training pairs.
-   - **Design Motivation**: More challenging than BI—the model not only lacks correct visual information but also faces distracting inputs. If RI training remains effective, it suggests the model learns to ignore visual distractors and rely on textual reasoning.
+    - **Function**: Provides incorrect visual information to test whether the model is misled.
+    - **Mechanism**: Each training/test image is replaced with a randomly selected different image from the dataset, constructing mismatched image–text training pairs.
+    - **Design Motivation**: More challenging than BI—the model not only lacks correct visual information but also faces distracting inputs. If RI training remains effective, it suggests the model learns to ignore visual distractors and rely on textual reasoning.
 
 3. **Textual Removal (TR)**
 
-   - **Function**: Removes textual conditions, forcing the model to rely on visual inputs.
-   - **Mechanism**: Rule-based matching removes variable conditions and problem descriptions from questions, retaining only templated instructions and image inputs.
-   - **Design Motivation**: Serves as a control—if RL can genuinely exploit visual information, TR training should perform best (since images still contain problem conditions and annotations). However, experiments show that TR training does not significantly outperform BI/RI.
+    - **Function**: Removes textual conditions, forcing the model to rely on visual inputs.
+    - **Mechanism**: Rule-based matching removes variable conditions and problem descriptions from questions, retaining only templated instructions and image inputs.
+    - **Design Motivation**: Serves as a control—if RL can genuinely exploit visual information, TR training should perform best (since images still contain problem conditions and annotations). However, experiments show that TR training does not significantly outperform BI/RI.
 
 ### Loss & Training
 

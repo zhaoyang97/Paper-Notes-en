@@ -18,8 +18,8 @@ content_hash: 0e1e809d61fb5418
 # Calibrating MLLM-as-a-Judge via Multimodal Bayesian Prompt Ensembles
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.08777](https://arxiv.org/abs/2509.08777)
-**Code**: None
+**arXiv**: [2509.08777](https://arxiv.org/abs/2509.08777)  
+**Code**: None  
 **Area**: Multimodal Evaluation / Image Generation
 **Keywords**: MLLM-as-a-Judge, prompt ensembles, Bayesian inference, calibration, text-to-image generation
 

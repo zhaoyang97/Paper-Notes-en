@@ -18,8 +18,8 @@ content_hash: 36f4c953565d83be
 # Video-RAG: Visually-aligned Retrieval-Augmented Long Video Comprehension
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.13093](https://arxiv.org/abs/2411.13093)
-**Code**: [https://github.com/Leon1207/Video-RAG-master](https://github.com/Leon1207/Video-RAG-master)
+**arXiv**: [2411.13093](https://arxiv.org/abs/2411.13093)  
+**Code**: [https://github.com/Leon1207/Video-RAG-master](https://github.com/Leon1207/Video-RAG-master)  
 **Area**: Object Detection
 **Keywords**: Retrieval-Augmented Generation, Long Video Understanding, Auxiliary Text, Plug-and-Play, Multimodal Alignment
 

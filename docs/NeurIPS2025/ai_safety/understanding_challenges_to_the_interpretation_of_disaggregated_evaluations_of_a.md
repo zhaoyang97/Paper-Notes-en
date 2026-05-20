@@ -18,8 +18,8 @@ content_hash: 3fa5ad5ee37442ce
 # Understanding Challenges to the Interpretation of Disaggregated Evaluations of AI
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04193](https://arxiv.org/abs/2506.04193)
-**Code**: [GitHub](https://github.com/google-research/google-research/tree/master/causal_evaluation)
+**arXiv**: [2506.04193](https://arxiv.org/abs/2506.04193)  
+**Code**: [GitHub](https://github.com/google-research/google-research/tree/master/causal_evaluation)  
 **Area**: AI Safety
 **Keywords**: algorithmic fairness, disaggregated evaluation, causal inference, distribution shift, subgroup performance
 

@@ -18,8 +18,8 @@ content_hash: 84b305d7a4a422a2
 # CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01634](https://arxiv.org/abs/2604.01634)
-**Code**: None
+**arXiv**: [2604.01634](https://arxiv.org/abs/2604.01634)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Cross-Modal Reasoning, Multi-Hop Reasoning, Data Synthesis, Graph-Based Pipeline, VLM Benchmark
 

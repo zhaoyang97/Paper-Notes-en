@@ -18,8 +18,8 @@ content_hash: b1a93ae7fb9f7b53
 # Omni-iEEG: A Large-Scale, Comprehensive iEEG Dataset and Benchmark for Epilepsy Research
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.16072](https://arxiv.org/abs/2602.16072)
-**Code**: [omni-ieeg.github.io/omni-ieeg](https://omni-ieeg.github.io/omni-ieeg/)
+**arXiv**: [2602.16072](https://arxiv.org/abs/2602.16072)  
+**Code**: [omni-ieeg.github.io/omni-ieeg](https://omni-ieeg.github.io/omni-ieeg/)  
 **Area**: Medical Imaging / Neuroscience
 **Keywords**: intracranial EEG, epilepsy, high-frequency oscillations, benchmark, dataset
 

@@ -18,8 +18,8 @@ content_hash: 2200d1f6b3808a0b
 # Hybrid-Vector Retrieval for Visually Rich Documents: Combining Single-Vector Efficiency and Multi-Vector Accuracy
 
 **Conference**: ACL 2026
-**arXiv**: [2510.22215](https://arxiv.org/abs/2510.22215)
-**Code**: [https://github.com/juyeonnn/HEAVEN](https://github.com/juyeonnn/HEAVEN)
+**arXiv**: [2510.22215](https://arxiv.org/abs/2510.22215)  
+**Code**: [https://github.com/juyeonnn/HEAVEN](https://github.com/juyeonnn/HEAVEN)  
 **Area**: Information Retrieval
 **Keywords**: Visual document retrieval, hybrid-vector retrieval, efficiency-accuracy trade-off, visual summary pages, query token filtering
 

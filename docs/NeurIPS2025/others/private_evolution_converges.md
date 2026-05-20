@@ -17,8 +17,8 @@ content_hash: 08a6c67b136f980d
 # Private Evolution Converges
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.08312](https://arxiv.org/abs/2506.08312)
-**Code**: Unavailable
+**arXiv**: [2506.08312](https://arxiv.org/abs/2506.08312)  
+**Code**: Unavailable  
 **Area**: Other
 **Keywords**: Differential Privacy, Synthetic Data, Private Evolution, Wasserstein Distance, Convergence Analysis
 

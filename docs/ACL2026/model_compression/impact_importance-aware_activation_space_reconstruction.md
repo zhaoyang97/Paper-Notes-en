@@ -18,8 +18,8 @@ content_hash: 83cc54ce66f91297
 # IMPACT: Importance-Aware Activation Space Reconstruction
 
 **Conference**: ACL 2026
-**arXiv**: [2507.03828](https://arxiv.org/abs/2507.03828)
-**Code**: Unavailable
+**arXiv**: [2507.03828](https://arxiv.org/abs/2507.03828)  
+**Code**: Unavailable  
 **Area**: Model Compression
 **Keywords**: Low-rank compression, activation space reconstruction, importance-aware, gradient weighting, large language models
 

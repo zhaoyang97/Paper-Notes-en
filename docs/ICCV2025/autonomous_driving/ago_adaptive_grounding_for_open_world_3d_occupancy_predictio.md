@@ -18,8 +18,8 @@ content_hash: edc909931c0be8c5
 # AGO: Adaptive Grounding for Open World 3D Occupancy Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.10117](https://arxiv.org/abs/2504.10117)
-**Code**: [https://github.com/EdwardLeeLPZ/AGO](https://github.com/EdwardLeeLPZ/AGO)
+**arXiv**: [2504.10117](https://arxiv.org/abs/2504.10117)  
+**Code**: [https://github.com/EdwardLeeLPZ/AGO](https://github.com/EdwardLeeLPZ/AGO)  
 **Area**: Autonomous Driving / 3D Occupancy Prediction / Open World
 **Keywords**: 3D occupancy prediction, open world, VLM knowledge distillation, self-supervised, adaptive alignment
 

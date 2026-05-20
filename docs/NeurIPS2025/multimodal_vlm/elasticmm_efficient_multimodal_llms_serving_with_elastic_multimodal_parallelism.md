@@ -18,8 +18,8 @@ content_hash: 183315e9931bf030
 # ElasticMM: Efficient MLLM Serving with Elastic Multimodal Parallelism
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.10069](https://arxiv.org/abs/2507.10069)
-**Code**: Unavailable (coming soon)
+**arXiv**: [2507.10069](https://arxiv.org/abs/2507.10069)  
+**Code**: Unavailable (coming soon)  
 **Area**: Multimodal VLM
 **Keywords**: MLLM inference serving, elastic parallelism, modality-aware scheduling, inference disaggregation, resource allocation
 

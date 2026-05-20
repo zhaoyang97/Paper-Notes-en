@@ -18,8 +18,8 @@ content_hash: b8491ad9bb2ca1e9
 # Lightweight and Fast Real-time Image Enhancement via Decomposition of the Spatial-aware Lookup Tables
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.16121](https://arxiv.org/abs/2508.16121)
-**Code**: [https://github.com/WontaeaeKim/SVDLUT](https://github.com/WontaeaeKim/SVDLUT)
+**arXiv**: [2508.16121](https://arxiv.org/abs/2508.16121)  
+**Code**: [https://github.com/WontaeaeKim/SVDLUT](https://github.com/WontaeaeKim/SVDLUT)  
 **Area**: Image Restoration / Image Enhancement
 **Keywords**: 3D LUT, Singular Value Decomposition, Spatial Awareness, Cache Efficiency, Image Enhancement
 

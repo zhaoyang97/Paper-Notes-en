@@ -18,8 +18,8 @@ content_hash: 6d98cbd31c7203e8
 # A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning
 
 **Conference**: CVPR2026
-**arXiv**: [2603.14052](https://arxiv.org/abs/2603.14052)
-**Code**: [git-disl/A4VL](https://github.com/git-disl/A4VL)
+**arXiv**: [2603.14052](https://arxiv.org/abs/2603.14052)  
+**Code**: [git-disl/A4VL](https://github.com/git-disl/A4VL)  
 **Area**: Video Understanding
 **Keywords**: long video reasoning, multi-agent collaboration, video question answering, perception-action exploration, training-free framework
 

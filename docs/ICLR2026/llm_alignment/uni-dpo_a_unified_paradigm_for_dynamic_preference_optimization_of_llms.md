@@ -18,8 +18,8 @@ content_hash: 20a78219ce75d8e2
 # Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.10054](https://arxiv.org/abs/2506.10054)
-**Code**: [https://github.com/pspdada/Uni-DPO](https://github.com/pspdada/Uni-DPO)
+**arXiv**: [2506.10054](https://arxiv.org/abs/2506.10054)  
+**Code**: [https://github.com/pspdada/Uni-DPO](https://github.com/pspdada/Uni-DPO)  
 **Area**: Alignment RLHF / DPO
 **Keywords**: DPO improvement, dynamic weighting, quality-aware, focal loss, preference optimization
 

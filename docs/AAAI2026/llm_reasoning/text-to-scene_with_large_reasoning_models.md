@@ -18,8 +18,8 @@ content_hash: 85985032d94407ae
 # Text-to-Scene with Large Reasoning Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.26091](https://arxiv.org/abs/2509.26091)
-**Code**: None
+**arXiv**: [2509.26091](https://arxiv.org/abs/2509.26091)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Text-to-3D Scene, Large Reasoning Models, Structured Reasoning, Scene Generation, Reason-3D
 

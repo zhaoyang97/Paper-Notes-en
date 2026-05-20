@@ -18,8 +18,8 @@ content_hash: 0181a27a76ed9176
 # HiMaCon: Discovering Hierarchical Manipulation Concepts from Unlabeled Multi-Modal Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11321](https://arxiv.org/abs/2510.11321)
-**Code**: [HiMaCon](https://github.com/zrllrz/HiMaCon)
+**arXiv**: [2510.11321](https://arxiv.org/abs/2510.11321)  
+**Code**: [HiMaCon](https://github.com/zrllrz/HiMaCon)  
 **Area**: Robot Manipulation / Representation Learning / Imitation Learning
 **Keywords**: manipulation concepts, hierarchical representation, cross-modal correlation, multi-timescale subgoals, self-supervised learning
 

@@ -17,8 +17,8 @@ content_hash: 77cfb12bd5644420
 # FSNet: Feasibility-Seeking Neural Network for Constrained Optimization with Guarantees
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.00362](https://arxiv.org/abs/2506.00362)
-**Code**: [GitHub](https://github.com/MOSSLab-MIT/FSNet)
+**arXiv**: [2506.00362](https://arxiv.org/abs/2506.00362)  
+**Code**: [GitHub](https://github.com/MOSSLab-MIT/FSNet)  
 **Area**: Other
 **Keywords**: constrained optimization, feasibility seeking, neural network surrogate, end-to-end training, convergence guarantees
 

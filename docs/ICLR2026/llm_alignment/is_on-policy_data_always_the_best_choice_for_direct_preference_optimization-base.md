@@ -18,8 +18,8 @@ content_hash: 847b856cc10259b5
 # Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.10530](https://arxiv.org/abs/2508.10530)
-**Code**: None (see reproducibility statement)
+**arXiv**: [2508.10530](https://arxiv.org/abs/2508.10530)  
+**Code**: None (see reproducibility statement)  
 **Area**: Alignment RLHF / DPO
 **Keywords**: on-policy vs off-policy, alignment stage, preference injection, preference fine-tuning, data selection
 

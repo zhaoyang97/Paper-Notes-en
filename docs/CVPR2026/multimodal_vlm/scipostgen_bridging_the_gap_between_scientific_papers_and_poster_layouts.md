@@ -18,8 +18,8 @@ content_hash: c49d09f88bb434e9
 # SciPostGen: Bridging the Gap between Scientific Papers and Poster Layouts
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.22490](https://arxiv.org/abs/2511.22490)
-**Code**: [https://omron-sinicx.github.io/paper2layout/](https://omron-sinicx.github.io/paper2layout/)
+**arXiv**: [2511.22490](https://arxiv.org/abs/2511.22490)  
+**Code**: [https://omron-sinicx.github.io/paper2layout/](https://omron-sinicx.github.io/paper2layout/)  
 **Area**: Multimodal VLM / Document Understanding
 **Keywords**: Poster layout generation, scientific papers, retrieval-augmented generation, contrastive learning, document layout analysis
 

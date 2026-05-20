@@ -19,8 +19,8 @@ content_hash: 761f5dab7d437755
 # PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.24850](https://arxiv.org/abs/2509.24850)
-**Code**: [GitHub](https://github.com/Alex036225/PhaseNet)
+**arXiv**: [2509.24850](https://arxiv.org/abs/2509.24850)  
+**Code**: [GitHub](https://github.com/Alex036225/PhaseNet)  
 **Area**: Human Understanding
 **Keywords**: rPPG, physics-informed network, temporal convolutional network, hemodynamics, Navier-Stokes, lightweight model
 

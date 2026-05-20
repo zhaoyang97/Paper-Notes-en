@@ -19,8 +19,8 @@ content_hash: 749f4e324bc99cd1
 # Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.24630](https://arxiv.org/abs/2505.24630)
-**Code**: [GitHub](https://github.com/nusnlp/FSPO)
+**arXiv**: [2505.24630](https://arxiv.org/abs/2505.24630)  
+**Code**: [GitHub](https://github.com/nusnlp/FSPO)  
 **Area**: LLM Reasoning
 **Keywords**: Hallucination, Reasoning Models, Reinforcement Learning, Factuality Verification, GRPO, Step-level Reward
 

@@ -18,8 +18,8 @@ content_hash: 8ddb4b629505c043
 # Improving Code Localization with Repository Memory
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.01003](https://arxiv.org/abs/2510.01003)
-**Code**: N/A
+**arXiv**: [2510.01003](https://arxiv.org/abs/2510.01003)  
+**Code**: N/A  
 **Area**: Software Engineering / LLM Agent
 **Keywords**: code localization, repository memory, commit history, language agent, SWE-bench
 

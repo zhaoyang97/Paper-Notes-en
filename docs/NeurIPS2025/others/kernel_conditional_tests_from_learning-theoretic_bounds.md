@@ -17,8 +17,8 @@ content_hash: 09b35c582f99877d
 # Kernel Conditional Tests from Learning-Theoretic Bounds
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03898](https://arxiv.org/abs/2506.03898)
-**Code**: Unavailable
+**arXiv**: [2506.03898](https://arxiv.org/abs/2506.03898)  
+**Code**: Unavailable  
 **Area**: Statistical Testing / Kernel Methods / Learning Theory
 **Keywords**: conditional hypothesis testing, kernel ridge regression, confidence bounds, conditional distribution functionals, bootstrapping
 **Authors**: Pierre-François Massiani, Christian Fiedler, Lukas Haverbeck, Friedrich Solowjow, Sebastian Trimpe

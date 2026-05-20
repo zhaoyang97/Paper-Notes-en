@@ -18,8 +18,8 @@ content_hash: 87a0b84741007cca
 # RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction
 
 **Conference**: ACL 2026
-**arXiv**: [2504.07415](https://arxiv.org/abs/2504.07415)
-**Code**: [GitHub](https://github.com/deepnoid-ai/RA-RRG)
+**arXiv**: [2504.07415](https://arxiv.org/abs/2504.07415)  
+**Code**: [GitHub](https://github.com/deepnoid-ai/RA-RRG)  
 **Area**: Medical Imaging / Radiology Report Generation
 **Keywords**: radiology report generation, retrieval-augmented generation, key phrase extraction, hallucination suppression, multi-view
 

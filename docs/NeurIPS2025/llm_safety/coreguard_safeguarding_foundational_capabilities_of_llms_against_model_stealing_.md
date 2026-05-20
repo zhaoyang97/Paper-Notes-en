@@ -18,8 +18,8 @@ content_hash: 3692267d2c78d0f8
 # CoreGuard: Safeguarding Foundational Capabilities of LLMs Against Model Stealing in Edge Deployment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.13903](https://arxiv.org/abs/2410.13903)
-**Code**: Not released
+**arXiv**: [2410.13903](https://arxiv.org/abs/2410.13903)  
+**Code**: Not released  
 **Area**: AI Security
 **Keywords**: model protection, edge deployment, TEE, permutation, LLM safety, model stealing
 

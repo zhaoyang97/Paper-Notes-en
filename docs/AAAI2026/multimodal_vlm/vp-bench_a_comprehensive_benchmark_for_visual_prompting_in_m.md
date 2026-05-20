@@ -18,8 +18,8 @@ content_hash: 84a87512169b7a86
 # VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11438](https://arxiv.org/abs/2511.11438)
-**Code**: [https://github.com/Endlinc/VP-Bench](https://github.com/Endlinc/VP-Bench)
+**arXiv**: [2511.11438](https://arxiv.org/abs/2511.11438)  
+**Code**: [https://github.com/Endlinc/VP-Bench](https://github.com/Endlinc/VP-Bench)  
 **Area**: Multimodal VLM / Benchmark
 **Keywords**: Visual Prompting, MLLM Evaluation, Visual Prompt Perception, Region Referring, Benchmark Design
 
@@ -48,21 +48,21 @@ A two-stage evaluation paradigm: Stage 1 (VP Perception) assesses models' abilit
 
 1. **Stage 1: VP Perception Evaluation**
 
-   - **Function**: Evaluate MLLMs' perception of 8 VP shape types across 355 attribute combinations.
-   - **Mechanism**: 30K+ images are generated from MS-COCO annotations, each overlaid with a specific VP. Four question types are included — existence (presence of VP), counting (number of VPs), coarse localization (VP position in the image), and reference (object pointed to by VP). All questions are multiple-choice. Debiasing questions (no VP present but VP mentioned in the question) are included to probe hallucination.
-   - **Design Motivation**: The 355 attribute combinations represent more than 40× the coverage of existing benchmarks, enabling precise analysis of which color/thickness/style is most effective.
+    - **Function**: Evaluate MLLMs' perception of 8 VP shape types across 355 attribute combinations.
+    - **Mechanism**: 30K+ images are generated from MS-COCO annotations, each overlaid with a specific VP. Four question types are included — existence (presence of VP), counting (number of VPs), coarse localization (VP position in the image), and reference (object pointed to by VP). All questions are multiple-choice. Debiasing questions (no VP present but VP mentioned in the question) are included to probe hallucination.
+    - **Design Motivation**: The 355 attribute combinations represent more than 40× the coverage of existing benchmarks, enabling precise analysis of which color/thickness/style is most effective.
 
 2. **Stage 2: VP Downstream Task Evaluation**
 
-   - **Function**: Assess whether VPs are more beneficial than pure text-based spatial descriptions in real-world application scenarios.
-   - Six downstream tasks: Medical Image Analysis (MIA), 3D object recognition, facial expression recognition, street scene recognition, GUI element recognition, and Scene Graph Generation (SGG).
-   - **Comparative Design**: R-BVP (randomly selected globally best VP from Stage 1) vs. BVP (best VP for the specific model), as well as VP vs. pure text spatial descriptions.
+    - **Function**: Assess whether VPs are more beneficial than pure text-based spatial descriptions in real-world application scenarios.
+    - Six downstream tasks: Medical Image Analysis (MIA), 3D object recognition, facial expression recognition, street scene recognition, GUI element recognition, and Scene Graph Generation (SGG).
+    - **Comparative Design**: R-BVP (randomly selected globally best VP from Stage 1) vs. BVP (best VP for the specific model), as well as VP vs. pure text spatial descriptions.
 
 3. **VP Description**
 
-   - **Function**: Augment text instructions with natural language descriptions of the VP shape (e.g., "the red bounding box marks the target region").
-   - **Core Idea**: Making VP semantics explicit in both visual and textual modalities simultaneously reduces ambiguity in the model's interpretation of VP meaning.
-   - **Key Finding**: Adding VP descriptions yields substantial performance gains — InternVL3-78B improves on average from 81.3% → 88.0%, with the Mask shape showing a 29% improvement.
+    - **Function**: Augment text instructions with natural language descriptions of the VP shape (e.g., "the red bounding box marks the target region").
+    - **Core Idea**: Making VP semantics explicit in both visual and textual modalities simultaneously reduces ambiguity in the model's interpretation of VP meaning.
+    - **Key Finding**: Adding VP descriptions yields substantial performance gains — InternVL3-78B improves on average from 81.3% → 88.0%, with the Mask shape showing a 29% improvement.
 
 ## Key Experimental Results
 

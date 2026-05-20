@@ -19,8 +19,8 @@ content_hash: f47bf7005df91399
 # LORE: Jointly Learning the Intrinsic Dimensionality and Relative Similarity Structure from Ordinal Data
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.04192](https://arxiv.org/abs/2602.04192)
-**Code**: [GitHub](https://github.com/vivek2000anand/lore_iclr)
+**arXiv**: [2602.04192](https://arxiv.org/abs/2602.04192)  
+**Code**: [GitHub](https://github.com/vivek2000anand/lore_iclr)  
 **Area**: Representation Learning / Perceptual Modeling
 **Keywords**: Ordinal embedding, intrinsic dimensionality recovery, Schatten-p quasi-norm, triplet comparisons, perceptual space, low-rank regularization
 
@@ -51,9 +51,9 @@ $$\min_Z \Psi(Z) = \underbrace{\sum_{(a,i,j)\in T} \log(1+\exp(1+d(z_a,z_i)-d(z_
 **Three Key Design Choices**:
 
 1. **Schatten-p Quasi-Norm ($0 < p < 1$)**:
-   - $p = 1$ → nuclear norm (convex but uniformly shrinks all singular values → high bias)
-   - $p \to 0$ → rank function (NP-hard)
-   - $p = 0.5$ (paper default) → non-convex but more accurate low-rank approximation; imposes smaller penalties on large singular values and larger penalties on small ones, automatically "killing" redundant dimensions.
+    - $p = 1$ → nuclear norm (convex but uniformly shrinks all singular values → high bias)
+    - $p \to 0$ → rank function (NP-hard)
+    - $p = 0.5$ (paper default) → non-convex but more accurate low-rank approximation; imposes smaller penalties on large singular values and larger penalties on small ones, automatically "killing" redundant dimensions.
 
 2. **Softplus Smoothing**: Replaces hinge loss with $\log(1 + \exp(\cdot))$, eliminating zero-gradient plateaus and making the objective differentiable everywhere (except at embedding collapse, which is avoided via wide initialization).
 
@@ -104,9 +104,9 @@ This is a significant guarantee: although the objective is highly non-convex, em
 
 ### 4. Semantic Interpretability
 - The top three axes learned by LORE on Food-100 correspond to interpretable food attributes:
-  - Axis 1: sweet → savory
-  - Axis 2: dense → light
-  - Axis 3: carbohydrate-rich → protein/vegetable
+    - Axis 1: sweet → savory
+    - Axis 2: dense → light
+    - Axis 3: carbohydrate-rich → protein/vegetable
 - These are discovered without any semantic supervision, making the approach highly valuable for scientific inquiry.
 
 ## Related Work & Insights

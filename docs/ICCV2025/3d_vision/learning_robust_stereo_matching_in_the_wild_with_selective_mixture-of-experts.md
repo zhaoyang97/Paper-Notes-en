@@ -18,8 +18,8 @@ content_hash: 3d91c5f390717836
 # Learning Robust Stereo Matching in the Wild with Selective Mixture-of-Experts
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04631](https://arxiv.org/abs/2507.04631)
-**Code**: [GitHub](https://github.com/cocowy1/SMoE-Stereo)
+**arXiv**: [2507.04631](https://arxiv.org/abs/2507.04631)  
+**Code**: [GitHub](https://github.com/cocowy1/SMoE-Stereo)  
 **Area**: 3D Vision
 **Keywords**: Stereo Matching, Visual Foundation Model, Mixture-of-Experts, LoRA, Cross-Domain Generalization
 

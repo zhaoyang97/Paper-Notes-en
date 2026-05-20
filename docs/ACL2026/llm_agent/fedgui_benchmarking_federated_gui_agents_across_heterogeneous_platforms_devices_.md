@@ -18,8 +18,8 @@ content_hash: 5f40a087e1bfad34
 # FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, and Operating Systems
 
 **Conference**: ACL 2026
-**arXiv**: [2604.14956](https://arxiv.org/abs/2604.14956)
-**Code**: [GitHub](https://github.com/wwh0411/FedGUI)
+**arXiv**: [2604.14956](https://arxiv.org/abs/2604.14956)  
+**Code**: [GitHub](https://github.com/wwh0411/FedGUI)  
 **Area**: Agent / GUI Interaction
 **Keywords**: Federated Learning, GUI Agents, Cross-Platform Heterogeneity, Privacy Preservation, Distributed Training
 

@@ -18,8 +18,8 @@ content_hash: 4e3b08229856c67b
 # Inner Speech as Behavior Guides: Steerable Imitation of Diverse Behaviors for Human-AI Coordination
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.20517](https://arxiv.org/abs/2602.20517)
-**Code**: [Project Page](https://mimic-research.github.io)
+**arXiv**: [2602.20517](https://arxiv.org/abs/2602.20517)  
+**Code**: [Project Page](https://mimic-research.github.io)  
 **Area**: Reinforcement Learning / Imitation Learning
 **Keywords**: Imitation Learning, Inner Speech, Behavioral Diversity, Human-AI Coordination, Diffusion Policy
 

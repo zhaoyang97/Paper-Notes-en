@@ -18,8 +18,8 @@ content_hash: dd755fd103fbfb17
 # What Makes a Reward Model a Good Teacher? An Optimization Perspective
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.15477](https://arxiv.org/abs/2503.15477)
-**Code**: [github](https://github.com/princeton-pli/what-makes-good-rm)
+**arXiv**: [2503.15477](https://arxiv.org/abs/2503.15477)  
+**Code**: [github](https://github.com/princeton-pli/what-makes-good-rm)  
 **Area**: LLM Alignment / RLHF
 **Keywords**: Reward Model, RLHF, Reward Variance, Optimization Landscape, Policy Gradient
 

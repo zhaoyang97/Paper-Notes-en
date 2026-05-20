@@ -18,8 +18,8 @@ content_hash: a5a999e694132004
 # Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11346](https://arxiv.org/abs/2603.11346)
-**Code**: [AssistMimic](https://yutoshibata07.github.io/AssistMimic/)
+**arXiv**: [2603.11346](https://arxiv.org/abs/2603.11346)  
+**Code**: [AssistMimic](https://yutoshibata07.github.io/AssistMimic/)  
 **Area**: Video Understanding
 **Keywords**: multi-agent reinforcement learning, physics-based character control, human-human interaction, assistive motion imitation, motion tracking
 

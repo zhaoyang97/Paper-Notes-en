@@ -18,8 +18,8 @@ content_hash: 082e5ed1e901f16d
 # Predicting the Performance of Black-Box LLMs through Follow-Up Queries
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.01558](https://arxiv.org/abs/2501.01558)
-**Code**: None
+**arXiv**: [2501.01558](https://arxiv.org/abs/2501.01558)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: Black-box LLM, performance prediction, follow-up queries, uncertainty quantification, adversarial detection
 

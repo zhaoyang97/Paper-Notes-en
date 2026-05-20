@@ -18,8 +18,8 @@ content_hash: d53f7fdd3750f5ec
 # C3RL: Rethinking the Combination of Channel-independence and Channel-mixing from Representation Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.17454](https://arxiv.org/abs/2507.17454)
-**Code**: [https://github.com/SSMa913/NICLab-C3RL](https://github.com/SSMa913/NICLab-C3RL)
+**arXiv**: [2507.17454](https://arxiv.org/abs/2507.17454)  
+**Code**: [https://github.com/SSMa913/NICLab-C3RL](https://github.com/SSMa913/NICLab-C3RL)  
 **Area**: Time Series Forecasting
 **Keywords**: Multivariate time series forecasting, channel independence, channel mixing, contrastive learning, SimSiam
 

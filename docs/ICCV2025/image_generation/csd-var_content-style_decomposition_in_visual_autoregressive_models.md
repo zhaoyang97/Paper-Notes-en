@@ -18,8 +18,8 @@ content_hash: 97be47a0acf493a7
 # CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.13984](https://arxiv.org/abs/2507.13984)
-**Code**: None
+**arXiv**: [2507.13984](https://arxiv.org/abs/2507.13984)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: content-style decomposition, visual autoregressive models, textual inversion, personalized generation, multi-scale representation
 

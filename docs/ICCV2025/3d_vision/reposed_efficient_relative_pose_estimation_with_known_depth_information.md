@@ -18,8 +18,8 @@ content_hash: cae6b3df32db045c
 # RePoseD: Efficient Relative Pose Estimation with Known Depth Information
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.07742](https://arxiv.org/abs/2501.07742)
-**Code**: Coming soon
+**arXiv**: [2501.07742](https://arxiv.org/abs/2501.07742)  
+**Code**: Coming soon  
 **Area**: 3D Vision
 **Keywords**: Relative pose estimation, monocular depth estimation, minimal solvers, RANSAC, multi-view geometry
 
@@ -50,27 +50,27 @@ Given 2D point correspondences and monocular depth estimates for an image pair, 
 
 1. **3PTsuv Solver (Calibrated Case)**
 
-   - **Function**: Estimates the 9-DOF problem ($s, u, v, \mathbf{R}, \mathbf{t}$) from 3 3D–3D point correspondences.
-   - **Mechanism**: Pairwise subtraction eliminates translation; the norm-preserving property of rotation then eliminates $\mathbf{R}$, yielding 3 equations in $s^2, u, v$ only. Substituting $c = s^2$ reduces the degree, and Gauss–Jordan elimination produces a quartic in $u$ with a closed-form solution.
-   - **Design Motivation**: Compared with Madpose's $12\times16$ GJ elimination followed by a $4\times4$ eigendecomposition, this solver requires only a $3\times6$ GJ elimination with a closed-form solution, achieving approximately $3\times$ speedup (1.46 μs vs. 4.45 μs).
+    - **Function**: Estimates the 9-DOF problem ($s, u, v, \mathbf{R}, \mathbf{t}$) from 3 3D–3D point correspondences.
+    - **Mechanism**: Pairwise subtraction eliminates translation; the norm-preserving property of rotation then eliminates $\mathbf{R}$, yielding 3 equations in $s^2, u, v$ only. Substituting $c = s^2$ reduces the degree, and Gauss–Jordan elimination produces a quartic in $u$ with a closed-form solution.
+    - **Design Motivation**: Compared with Madpose's $12\times16$ GJ elimination followed by a $4\times4$ eigendecomposition, this solver requires only a $3\times6$ GJ elimination with a closed-form solution, achieving approximately $3\times$ speedup (1.46 μs vs. 4.45 μs).
 
 2. **4PTfsuv Solver (Shared Focal Length Case)**
 
-   - **Function**: Jointly estimates $s, u, v, f$ (10-DOF) from 4 depth-augmented point correspondences.
-   - **Mechanism**: Four 3D–3D correspondences yield 6 equations in 4 unknowns; 4 equations are selected and solved via the Gröbner basis method.
-   - **Design Motivation**: The GJ elimination matrix is $24\times32$ (vs. Madpose's $36\times44$), yielding approximately $2\times$ speedup (12.5 μs vs. 23.6 μs).
+    - **Function**: Jointly estimates $s, u, v, f$ (10-DOF) from 4 depth-augmented point correspondences.
+    - **Mechanism**: Four 3D–3D correspondences yield 6 equations in 4 unknowns; 4 equations are selected and solved via the Gröbner basis method.
+    - **Design Motivation**: The GJ elimination matrix is $24\times32$ (vs. Madpose's $36\times44$), yielding approximately $2\times$ speedup (12.5 μs vs. 23.6 μs).
 
 3. **4PTf1,2suv Solver (Distinct Focal Lengths Case)**
 
-   - **Function**: Estimates $s, u, v, f_1, f_2$ (11-DOF) from 4 3D–3D correspondences.
-   - **Mechanism**: From the over-determined system of 6 equations in 5 unknowns, 5 equations are selected. The substitution $cf_2 = \tilde{f}_2$ simplifies the polynomials, leading to a $20\times24$ GJ elimination with at most 4 solutions.
-   - **Design Motivation**: The matrix size is roughly half that of Madpose ($40\times44$), achieving approximately $3\times$ speedup (6.45 μs vs. 20.2 μs).
+    - **Function**: Estimates $s, u, v, f_1, f_2$ (11-DOF) from 4 3D–3D correspondences.
+    - **Mechanism**: From the over-determined system of 6 equations in 5 unknowns, 5 equations are selected. The substitution $cf_2 = \tilde{f}_2$ simplifies the polynomials, leading to a $20\times24$ GJ elimination with at most 4 solutions.
+    - **Design Motivation**: The matrix size is roughly half that of Madpose ($40\times44$), achieving approximately $3\times$ speedup (6.45 μs vs. 20.2 μs).
 
 4. **Scale-Only (Zero-Shift) Solvers**
 
-   - **Function**: When the depth shift is zero (as with certain MDE methods), simpler solvers such as P3P or the new 3PTfs00 are employed.
-   - **Mechanism**: Shift parameters are not modeled, reducing the degrees of freedom of the problem.
-   - **Design Motivation**: Experiments show that for networks such as MoGe and UniDepth, omitting the shift model actually yields better results—a finding that contradicts the conclusions reported in the Madpose paper.
+    - **Function**: When the depth shift is zero (as with certain MDE methods), simpler solvers such as P3P or the new 3PTfs00 are employed.
+    - **Mechanism**: Shift parameters are not modeled, reducing the degrees of freedom of the problem.
+    - **Design Motivation**: Experiments show that for networks such as MoGe and UniDepth, omitting the shift model actually yields better results—a finding that contradicts the conclusions reported in the Madpose paper.
 
 ### Loss & Training
 

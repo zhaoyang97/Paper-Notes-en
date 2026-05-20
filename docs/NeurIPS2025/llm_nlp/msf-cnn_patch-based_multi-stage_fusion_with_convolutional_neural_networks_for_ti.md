@@ -20,8 +20,8 @@ content_hash: f6200143dd384911
 # msf-CNN: Patch-based Multi-Stage Fusion with Convolutional Neural Networks for TinyML
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11483](https://arxiv.org/abs/2505.11483)
-**Code**: [GitHub](https://github.com/TinyPART/msf-CNN)
+**arXiv**: [2505.11483](https://arxiv.org/abs/2505.11483)  
+**Code**: [GitHub](https://github.com/TinyPART/msf-CNN)  
 **Area**: LLM/NLP
 **Keywords**: TinyML, CNN fusion, microcontroller, patch-based inference, memory optimization, DAG shortest path, IoT
 

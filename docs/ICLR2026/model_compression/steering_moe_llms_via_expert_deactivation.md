@@ -19,8 +19,8 @@ content_hash: 767a1b703a39324a
 # Steering MoE LLMs via Expert (De)Activation
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.09660](https://arxiv.org/abs/2509.09660)
-**Code**: [github.com/adobe-research/SteerMoE](https://github.com/adobe-research/SteerMoE)
+**arXiv**: [2509.09660](https://arxiv.org/abs/2509.09660)  
+**Code**: [github.com/adobe-research/SteerMoE](https://github.com/adobe-research/SteerMoE)  
 **Area**: Model Compression / Interpretability & Safety
 **Keywords**: MoE, expert routing, behavior steering, safety, faithfulness, inference-time control
 

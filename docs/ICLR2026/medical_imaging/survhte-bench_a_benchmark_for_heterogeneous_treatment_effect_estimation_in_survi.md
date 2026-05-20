@@ -21,8 +21,8 @@ content_hash: f95ec76a011e18c5
 # SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis
 
 **Conference**: ICLR2026
-**arXiv**: [2603.05483](https://arxiv.org/abs/2603.05483)
-**Code**: [GitHub](https://github.com/Shahriarnz14/SurvHTE-Bench)
+**arXiv**: [2603.05483](https://arxiv.org/abs/2603.05483)  
+**Code**: [GitHub](https://github.com/Shahriarnz14/SurvHTE-Bench)  
 **Area**: Medical Imaging
 **Keywords**: heterogeneous treatment effects, survival analysis, right-censored data, causal inference, benchmark, CATE, meta-learners, precision medicine
 

@@ -18,8 +18,8 @@ content_hash: 04b9e8a36beb02fc
 # Improving Posterior Inference of Galaxy Properties with Image-Based Conditional Flow Matching
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.05078](https://arxiv.org/abs/2512.05078)
-**Code**: Not released
+**arXiv**: [2512.05078](https://arxiv.org/abs/2512.05078)  
+**Code**: Not released  
 **Area**: Image Generation
 **Keywords**: conditional flow matching, galaxy property estimation, simulation-based inference, morphology, posterior inference
 

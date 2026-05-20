@@ -18,8 +18,8 @@ content_hash: 93143072be64a6ab
 # Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.07177](https://arxiv.org/abs/2506.07177)
-**Code**: [https://frame-guidance-video.github.io/](https://frame-guidance-video.github.io/)
+**arXiv**: [2506.07177](https://arxiv.org/abs/2506.07177)  
+**Code**: [https://frame-guidance-video.github.io/](https://frame-guidance-video.github.io/)  
 **Area**: Diffusion Models / Video Generation
 **Keywords**: Training-free guidance, video diffusion models, frame-level control, keyframe generation, stylized video
 
@@ -58,9 +58,9 @@ Frame Guidance applies gradient-based guidance to selected frames during the inf
 
 - **Core insight**: The global layout of video frames is determined within the first few denoising steps; early-stage guidance is most critical for temporal consistency.
 - **Phased strategy**:
-  - **Early phase** ($t > t_E$): Deterministic update $z_t \leftarrow z_t - \eta \nabla_{z_t} \mathcal{L}_e$, preserving the guidance signal.
-  - **Middle phase** ($t_E \geq t > t_L$): Stochastic update (with re-noising) to correct accumulated errors.
-  - **Late phase** ($t \leq t_L$): No guidance; free refinement of details.
+    - **Early phase** ($t > t_E$): Deterministic update $z_t \leftarrow z_t - \eta \nabla_{z_t} \mathcal{L}_e$, preserving the guidance signal.
+    - **Middle phase** ($t_E \geq t > t_L$): Stochastic update (with re-noising) to correct accumulated errors.
+    - **Late phase** ($t \leq t_L$): No guidance; free refinement of details.
 
 ### Critical Role of Gradient Propagation
 

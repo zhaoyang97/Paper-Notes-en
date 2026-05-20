@@ -18,8 +18,8 @@ content_hash: fdd562dc80075756
 # Fewer Denoising Steps or Cheaper Per-Step Inference: Towards Compute-Optimal Diffusion Model Deployment
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.06160](https://arxiv.org/abs/2508.06160)
-**Code**: [https://github.com/GATECH-EIC/PostDiff](https://github.com/GATECH-EIC/PostDiff)
+**arXiv**: [2508.06160](https://arxiv.org/abs/2508.06160)  
+**Code**: [https://github.com/GATECH-EIC/PostDiff](https://github.com/GATECH-EIC/PostDiff)  
 **Area**: Diffusion Models / Model Compression
 **Keywords**: diffusion model acceleration, mixed-resolution denoising, module caching, training-free compression, compute-optimal deployment
 

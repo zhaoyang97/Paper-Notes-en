@@ -17,9 +17,9 @@ content_hash: b404101b75efb1aa
 # On Agnostic PAC Learning in the Small Error Regime
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.09496](https://arxiv.org/abs/2502.09496)
+**arXiv**: [2502.09496](https://arxiv.org/abs/2502.09496)  
 **Authors**: Julian Asilis, Mikael Møller Høgsgaard, Grigoris Velegkas
-**Code**: None
+**Code**: None  
 **Area**: Learning Theory / Computational Learning Theory
 **Keywords**: PAC learning, agnostic learning, ERM, sample complexity, VC dimension
 

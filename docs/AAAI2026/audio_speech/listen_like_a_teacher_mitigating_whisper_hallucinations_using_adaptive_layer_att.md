@@ -19,9 +19,9 @@ content_hash: 2dc55e4cb31af6b2
 # Listen Like a Teacher: Mitigating Whisper Hallucinations using Adaptive Layer Attention and Knowledge Distillation
 
 **Conference**: AAAI2026
-**arXiv**: [2511.14219](https://arxiv.org/abs/2511.14219)
+**arXiv**: [2511.14219](https://arxiv.org/abs/2511.14219)  
 **Authors**: Kumud Tripathi, Aditya Srinivas Menon, Aman Gaurav, Raj Prakash Gohil, Pankaj Wasnik
-**Code**: Not released
+**Code**: Not released  
 **Area**: Audio & Speech
 **Keywords**: Speech Recognition, Whisper, Hallucination Mitigation, Adaptive Layer Attention, Knowledge Distillation, Noise Robustness
 

@@ -18,8 +18,8 @@ content_hash: a6f5859743332122
 # Dynamic Dictionary Learning for Remote Sensing Image Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06683](https://arxiv.org/abs/2503.06683)
-**Code**: [D2LS](https://anonymous.4open.science/r/D2LS-8267/)
+**arXiv**: [2503.06683](https://arxiv.org/abs/2503.06683)  
+**Code**: [D2LS](https://anonymous.4open.science/r/D2LS-8267/)  
 **Area**: Remote Sensing / Semantic Segmentation
 **Keywords**: Dynamic Dictionary Learning, Remote Sensing Image Segmentation, Category Embeddings, Cross-Attention, Contrastive Learning
 

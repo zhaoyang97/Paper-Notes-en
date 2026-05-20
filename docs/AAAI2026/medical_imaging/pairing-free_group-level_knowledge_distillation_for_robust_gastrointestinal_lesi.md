@@ -20,8 +20,8 @@ content_hash: 810ee0f6212928c1
 # Pairing-free Group-level Knowledge Distillation for Robust Gastrointestinal Lesion Classification in White-Light Endoscopy
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.09209](https://arxiv.org/abs/2601.09209)
-**Code**: [Huster-Hq/PaGKD](https://github.com/Huster-Hq/PaGKD)
+**arXiv**: [2601.09209](https://arxiv.org/abs/2601.09209)  
+**Code**: [Huster-Hq/PaGKD](https://github.com/Huster-Hq/PaGKD)  
 **Area**: Medical Imaging / Endoscopy
 **Keywords**: Knowledge Distillation, Cross-modal Learning, White-Light Endoscopy, Narrow-Band Imaging, Pairing-free, Group-level Distillation, Gastrointestinal Lesion Classification
 
@@ -82,8 +82,8 @@ $$S_{\mathcal{Q}_c^{WLI}, \mathcal{Q}_{c'}^{mod'}} = \frac{1}{N_q}\sum_{i=1}^{N_
 1. Class activation maps (CAMs) are computed for each group's features, followed by pixel-adaptive refinement to enhance spatial consistency.
 2. A dual-threshold scheme ($\tau_1=0.3, \tau_2=0.7$) discretizes CAMs into: background (0), lesion (1), and ambiguous (∅).
 3. A semantic relation matrix $\mathbf{R}_c \in \{0, -\infty\}^{L_c \times L_c}$ is constructed:
-   - Set to 0 when two positions share the same non-ambiguous label in their respective CAMs (allowing attention to pass).
-   - Set to $-\infty$ otherwise (blocking attention).
+    - Set to 0 when two positions share the same non-ambiguous label in their respective CAMs (allowing attention to pass).
+    - Set to $-\infty$ otherwise (blocking attention).
 
 **Semantic Relation-guided Cross-Attention (SRCA)**:
 $$\mathbf{A} = \text{Softmax}\left(\mathbf{R}_c + \frac{(\mathcal{F}_c^{WLI} W_q)(\mathcal{F}_c^{NBI} W_k)^\top}{\sqrt{d/4}}\right)$$
@@ -190,10 +190,10 @@ Group-level distillation consistently outperforms image-level distillation acros
 
 - **Cross-modal Independent Classification (CIC)**: SSL-CPCD (self-supervised patch-image clustering), SSL-WCE (adaptive aggregation attention), FFCNet (Fourier transform denoising)
 - **Cross-modal Distillation Classification (CDC)**:
-  - PolypsAlign: discriminator + contrastive loss for global alignment
-  - CPC-Trans: Transformer cross-attention for patch/global alignment
-  - ADD: pixel-level image-to-image distillation (current strongest paired method)
-  - SAMD: semantic attention distillation
+    - PolypsAlign: discriminator + contrastive loss for global alignment
+    - CPC-Trans: Transformer cross-attention for patch/global alignment
+    - ADD: pixel-level image-to-image distillation (current strongest paired method)
+    - SAMD: semantic attention distillation
 - **Knowledge Distillation**: FitNets, RKD, CRD, PKT, original Hinton KD
 
 ## Rating

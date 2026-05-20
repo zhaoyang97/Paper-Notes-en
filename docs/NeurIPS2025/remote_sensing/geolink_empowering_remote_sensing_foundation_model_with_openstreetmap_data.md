@@ -18,8 +18,8 @@ content_hash: 355dab5e9628432a
 # GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.26016](https://arxiv.org/abs/2509.26016)
-**Code**: [GitHub](https://github.com/bailubin/GeoLink_NeurIPS2025)
+**arXiv**: [2509.26016](https://arxiv.org/abs/2509.26016)  
+**Code**: [GitHub](https://github.com/bailubin/GeoLink_NeurIPS2025)  
 **Area**: Remote Sensing
 **Keywords**: Remote sensing foundation model, OpenStreetMap, multimodal pretraining, heterogeneous graph neural network, cross-modal alignment
 

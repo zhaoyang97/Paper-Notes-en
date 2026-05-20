@@ -18,8 +18,8 @@ content_hash: 9dcd9afe8d637e79
 # A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection For Video Question Answering
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04428](https://arxiv.org/abs/2510.04428)
-**Code**: [https://ucf-air.github.io/](https://ucf-air.github.io/)
+**arXiv**: [2510.04428](https://arxiv.org/abs/2510.04428)  
+**Code**: [https://ucf-air.github.io/](https://ucf-air.github.io/)  
 **Area**: Video Understanding
 **Keywords**: video QA, frame selection, VLM, iterative search, computational efficiency
 

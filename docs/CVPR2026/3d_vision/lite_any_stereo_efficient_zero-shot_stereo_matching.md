@@ -18,8 +18,8 @@ content_hash: c16044617cb61907
 # Lite Any Stereo: Efficient Zero-Shot Stereo Matching
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.16555](https://arxiv.org/abs/2511.16555)
-**Code**: [tomtomtommi/LiteAnyStereo](https://tomtomtommi.github.io/LiteAnyStereo/)
+**arXiv**: [2511.16555](https://arxiv.org/abs/2511.16555)  
+**Code**: [tomtomtommi/LiteAnyStereo](https://tomtomtommi.github.io/LiteAnyStereo/)  
 **Area**: 3D Vision
 **Keywords**: Stereo matching, zero-shot generalization, efficient inference, hybrid cost aggregation, knowledge distillation
 

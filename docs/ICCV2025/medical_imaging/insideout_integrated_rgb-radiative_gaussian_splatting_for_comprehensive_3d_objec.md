@@ -18,8 +18,8 @@ content_hash: 98e4dcebde96b40e
 # InsideOut: Integrated RGB-Radiative Gaussian Splatting for Comprehensive 3D Object Representation
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.17864](https://arxiv.org/abs/2510.17864)
-**Code**: Unavailable
+**arXiv**: [2510.17864](https://arxiv.org/abs/2510.17864)  
+**Code**: Unavailable  
 **Area**: Medical Imaging / 3D Vision
 **Keywords**: 3D Gaussian Splatting, X-ray Imaging, Multimodal Fusion, 3D Reconstruction, Non-Destructive Testing
 

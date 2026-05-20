@@ -18,8 +18,8 @@ content_hash: 1fd1fd4fd9049b4f
 # SDKD: Frequency-Aligned Knowledge Distillation for Lightweight Spatiotemporal Forecasting
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.02939](https://arxiv.org/abs/2507.02939)
-**Code**: [https://github.com/itsnotacie/SDKD](https://github.com/itsnotacie/SDKD)
+**arXiv**: [2507.02939](https://arxiv.org/abs/2507.02939)  
+**Code**: [https://github.com/itsnotacie/SDKD](https://github.com/itsnotacie/SDKD)  
 **Area**: Autonomous Driving
 **Keywords**: Spatiotemporal Forecasting, Knowledge Distillation, Frequency Decoupling, Lightweight Models, CNN-Transformer Hybrid Architecture
 

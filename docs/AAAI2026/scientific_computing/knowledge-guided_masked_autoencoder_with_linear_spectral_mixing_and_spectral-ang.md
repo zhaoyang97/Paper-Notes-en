@@ -19,8 +19,8 @@ content_hash: 1b130cdd22433fe8
 # Knowledge-Guided Masked Autoencoder with Linear Spectral Mixing and Spectral-Angle-Aware Reconstruction
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.12445](https://arxiv.org/abs/2512.12445)
-**Code**: To be confirmed
+**arXiv**: [2512.12445](https://arxiv.org/abs/2512.12445)  
+**Code**: To be confirmed  
 **Area**: Scientific Computing
 **Keywords**: Masked Autoencoder, hyperspectral, LSMM, SAM loss, physics-informed, knowledge-guided ML
 

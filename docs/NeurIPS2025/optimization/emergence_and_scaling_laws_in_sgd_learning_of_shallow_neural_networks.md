@@ -18,8 +18,8 @@ content_hash: e9ae5be87931b9f9
 # Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.19983](https://arxiv.org/abs/2504.19983)
-**Code**: None
+**arXiv**: [2504.19983](https://arxiv.org/abs/2504.19983)  
+**Code**: None  
 **Area**: Optimization Theory / Neural Network Learning Theory
 **Keywords**: scaling laws, emergence, SGD, shallow neural networks, multi-index model
 

@@ -18,8 +18,8 @@ content_hash: 7707cf86810ad516
 # Control Illusion: The Failure of Instruction Hierarchies in Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2502.15851](https://arxiv.org/abs/2502.15851)
-**Code**: [https://github.com/yilin-geng/llm-instruction-conflicts](https://github.com/yilin-geng/llm-instruction-conflicts)
+**arXiv**: [2502.15851](https://arxiv.org/abs/2502.15851)  
+**Code**: [https://github.com/yilin-geng/llm-instruction-conflicts](https://github.com/yilin-geng/llm-instruction-conflicts)  
 **Area**: LLM Safety & Instruction Following
 **Keywords**: Instruction hierarchy, system/user separation, conflicting instructions, constraint preference, social hierarchy prior
 

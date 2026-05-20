@@ -17,8 +17,8 @@ content_hash: 2909a9418764b53f
 # Why Isn't Relational Learning Taking Over the World?
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.13558](https://arxiv.org/abs/2507.13558)
-**Code**: None
+**arXiv**: [2507.13558](https://arxiv.org/abs/2507.13558)  
+**Code**: None  
 **Area**: Other (Relational Learning / Knowledge Graphs)
 **Keywords**: Relational Learning, Knowledge Graphs, Statistical Relational AI, Evaluation Methodology, Entity Prediction
 

@@ -17,8 +17,8 @@ content_hash: 6ce7121e2c226c9c
 # Enhancing Noise Resilience in Face Clustering via Sparse Differential Transformer
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.22612](https://arxiv.org/abs/2512.22612)
-**Code**: None
+**arXiv**: [2512.22612](https://arxiv.org/abs/2512.22612)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Face Clustering, Jaccard Similarity, Sparse Differential Transformer, Noise Edges, Adaptive Neighbor Discovery
 

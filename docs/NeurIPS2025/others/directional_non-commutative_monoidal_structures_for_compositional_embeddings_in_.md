@@ -19,8 +19,8 @@ content_hash: ad92a8bddedef7a1
 # Directional Non-Commutative Monoidal Structures for Compositional Embeddings in Machine Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15507](https://arxiv.org/abs/2505.15507)
-**Code**: None (purely theoretical work)
+**arXiv**: [2505.15507](https://arxiv.org/abs/2505.15507)  
+**Code**: None (purely theoretical work)  
 **Area**: Other
 **Keywords**: non-commutative algebra, compositional embeddings, monoidal structure, interchange law, positional encoding, SSM, Transformer
 

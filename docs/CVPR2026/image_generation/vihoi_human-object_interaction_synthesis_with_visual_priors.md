@@ -18,8 +18,8 @@ content_hash: 7670e8ff49a05b61
 # ViHOI: Human-Object Interaction Synthesis with Visual Priors
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24383](https://arxiv.org/abs/2603.24383)
-**Code**: [https://github.com/MPI-Lab/ViHOI](https://github.com/MPI-Lab/ViHOI)
+**arXiv**: [2603.24383](https://arxiv.org/abs/2603.24383)  
+**Code**: [https://github.com/MPI-Lab/ViHOI](https://github.com/MPI-Lab/ViHOI)  
 **Area**: Image Generation / Motion Generation
 **Keywords**: Human-Object Interaction Generation, Visual Priors, Diffusion Models, VLM, Q-Former
 

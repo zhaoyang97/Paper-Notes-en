@@ -18,8 +18,8 @@ content_hash: 99f89fd33cbc3315
 # Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24010](https://arxiv.org/abs/2510.24010)
-**Code**: [Available (GitHub)](https://github.com/kerner-lab/Mars-Bench)
+**arXiv**: [2510.24010](https://arxiv.org/abs/2510.24010)  
+**Code**: [Available (GitHub)](https://github.com/kerner-lab/Mars-Bench)  
 **Area**: Image Segmentation
 **Keywords**: Mars science, benchmark, foundation model, remote sensing segmentation, planetary science
 

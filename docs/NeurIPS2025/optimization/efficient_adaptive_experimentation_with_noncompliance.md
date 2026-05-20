@@ -18,8 +18,8 @@ content_hash: 21f4ef89a8687a1e
 # Efficient Adaptive Experimentation with Noncompliance
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17468](https://arxiv.org/abs/2505.17468)
-**Code**: [GitHub](https://github.com/CausalML/Adaptive-IV)
+**arXiv**: [2505.17468](https://arxiv.org/abs/2505.17468)  
+**Code**: [GitHub](https://github.com/CausalML/Adaptive-IV)  
 **Area**: Optimization
 **Keywords**: adaptive experimentation, instrumental variables, noncompliance, semiparametric efficiency, causal inference
 

@@ -18,8 +18,8 @@ content_hash: 0abb3eddb7f5a831
 # AdaptDel: Adaptable Deletion Rate Randomized Smoothing for Certified Robustness
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.09316](https://arxiv.org/abs/2511.09316)
-**Code**: None
+**arXiv**: [2511.09316](https://arxiv.org/abs/2511.09316)  
+**Code**: None  
 **Area**: Audio & Speech
 **Keywords**: certified robustness, randomized smoothing, edit distance, adaptable deletion rate, sequence classification
 
@@ -43,21 +43,21 @@ AdaptDel extends the theoretical framework of randomized smoothing to support va
 
 1. **Theoretical Framework for Variable Deletion Rates**:
 
-   - Function: Generalizes the fixed-rate randomized smoothing theory to input-dependent deletion rates and proves the mathematical correctness of the resulting certification.
-   - Mechanism: The paper proves that when the deletion rate varies with the input, the certified guarantee of the smoothed classifier under edit-distance perturbations still holds. The key challenge is that edit-distance attacks (insertions/deletions/substitutions) alter sequence length and thus the deletion rate, making the analysis more complex than the fixed-rate case. Certification bounds under variable rates are derived by analyzing the relationship between the post-deletion distributions of the attacked and original sequences.
-   - Design Motivation: The fixed rate is a special case of the variable rate; generalizing to variable rates allows each input to achieve its optimal information–robustness balance.
+    - Function: Generalizes the fixed-rate randomized smoothing theory to input-dependent deletion rates and proves the mathematical correctness of the resulting certification.
+    - Mechanism: The paper proves that when the deletion rate varies with the input, the certified guarantee of the smoothed classifier under edit-distance perturbations still holds. The key challenge is that edit-distance attacks (insertions/deletions/substitutions) alter sequence length and thus the deletion rate, making the analysis more complex than the fixed-rate case. Certification bounds under variable rates are derived by analyzing the relationship between the post-deletion distributions of the attacked and original sequences.
+    - Design Motivation: The fixed rate is a special case of the variable rate; generalizing to variable rates allows each input to achieve its optimal information–robustness balance.
 
 2. **Adaptive Deletion Rate Function Design**:
 
-   - Function: Dynamically determines the optimal deletion rate based on input attributes.
-   - Mechanism: The deletion rate is modeled as a function of sequence length, $p = f(n)$. Shorter sequences use a lower deletion rate to preserve classification signals; longer sequences use a higher deletion rate to enhance robustness, since their signals are more redundant. The specific functional form can be determined through theoretical analysis or empirical search.
-   - Design Motivation: Sentence length varies widely in natural language, making a fixed deletion rate suboptimal for variable-length inputs. Although this intuition is natural, it had not been rigorously formalized prior to this work.
+    - Function: Dynamically determines the optimal deletion rate based on input attributes.
+    - Mechanism: The deletion rate is modeled as a function of sequence length, $p = f(n)$. Shorter sequences use a lower deletion rate to preserve classification signals; longer sequences use a higher deletion rate to enhance robustness, since their signals are more redundant. The specific functional form can be determined through theoretical analysis or empirical search.
+    - Design Motivation: Sentence length varies widely in natural language, making a fixed deletion rate suboptimal for variable-length inputs. Although this intuition is natural, it had not been rigorously formalized prior to this work.
 
 3. **Certified Region Cardinality Computation under Edit Distance**:
 
-   - Function: Computes the certified region under the variable deletion rate setting, i.e., the maximum edit distance under which correct classification is guaranteed.
-   - Mechanism: The certified region cardinality depends on the deletion rate and the confidence of the majority vote. Under variable rates, the effect of attack-induced length changes on the deletion rate must additionally be considered, which increases analytical complexity without compromising soundness.
-   - Design Motivation: Certified region cardinality is the core metric of certified robustness; order-of-magnitude improvements in this metric directly reflect the effectiveness of the method.
+    - Function: Computes the certified region under the variable deletion rate setting, i.e., the maximum edit distance under which correct classification is guaranteed.
+    - Mechanism: The certified region cardinality depends on the deletion rate and the confidence of the majority vote. Under variable rates, the effect of attack-induced length changes on the deletion rate must additionally be considered, which increases analytical complexity without compromising soundness.
+    - Design Motivation: Certified region cardinality is the core metric of certified robustness; order-of-magnitude improvements in this metric directly reflect the effectiveness of the method.
 
 ### Loss & Training
 AdaptDel does not introduce a new training procedure; it is a certification method applied at inference time. The base classifier can be trained in the standard manner (e.g., fine-tuning a pretrained model on deletion-augmented data). The contribution of AdaptDel lies in the inference-time certification framework rather than in training strategy.

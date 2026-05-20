@@ -18,8 +18,8 @@ content_hash: b8aba788ee6b488b
 # OmniVTON: Training-Free Universal Virtual Try-On
 
 **Conference**: ICCV2025
-**arXiv**: [2507.15037](https://arxiv.org/abs/2507.15037)
-**Code**: [GitHub](https://github.com/Jerome-Young/OmniVTON)
+**arXiv**: [2507.15037](https://arxiv.org/abs/2507.15037)  
+**Code**: [GitHub](https://github.com/Jerome-Young/OmniVTON)  
 **Area**: Image Generation
 **Keywords**: virtual try-on, training-free, diffusion model, garment warping, pose alignment
 

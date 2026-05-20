@@ -18,8 +18,8 @@ content_hash: 9ab8afe9c01f6a76
 # Enhancing Training Data Attribution with Representational Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18513](https://arxiv.org/abs/2505.18513)
-**Code**: [github.com/sunnweiwei/AirRep](https://github.com/sunnweiwei/AirRep)
+**arXiv**: [2505.18513](https://arxiv.org/abs/2505.18513)  
+**Code**: [github.com/sunnweiwei/AirRep](https://github.com/sunnweiwei/AirRep)  
 **Area**: LLM Pretraining
 **Keywords**: training data attribution, representation learning, influence functions, attention pooling, data selection
 

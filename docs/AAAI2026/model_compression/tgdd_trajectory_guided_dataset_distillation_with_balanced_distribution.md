@@ -18,8 +18,8 @@ content_hash: 2d07ef25e6f06a24
 # TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.02469](https://arxiv.org/abs/2512.02469)
-**Code**: [github.com/FlyFinley/TGDD](https://github.com/FlyFinley/TGDD)
+**arXiv**: [2512.02469](https://arxiv.org/abs/2512.02469)  
+**Code**: [github.com/FlyFinley/TGDD](https://github.com/FlyFinley/TGDD)  
 **Area**: Model Compression
 **Keywords**: Dataset Distillation, Distribution Matching, Expert Trajectory, Distribution Constraint, Synthetic Data
 

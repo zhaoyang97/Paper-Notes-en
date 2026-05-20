@@ -18,8 +18,8 @@ content_hash: c4a60b5b46a8828b
 # Search Arena: Analyzing Search-Augmented LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.05334](https://arxiv.org/abs/2506.05334)
-**Code**: [Project Page](https://github.com/) (open-source dataset)
+**arXiv**: [2506.05334](https://arxiv.org/abs/2506.05334)  
+**Code**: [Project Page](https://github.com/) (open-source dataset)  
 **Area**: Recommender Systems
 **Keywords**: search-augmented LLM, benchmark, human preference, citation analysis, Chatbot Arena
 

@@ -18,8 +18,8 @@ content_hash: a310ef55bc9ba7ff
 # PULSE: Practical Evaluation Scenarios for Large Multimodal Model Unlearning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.01271](https://arxiv.org/abs/2507.01271)
-**Code**: None
+**arXiv**: [2507.01271](https://arxiv.org/abs/2507.01271)  
+**Code**: None  
 **Area**: AI Safety / Machine Unlearning Evaluation
 **Keywords**: Machine Unlearning, Large Multimodal Models, Pretrained Knowledge, Sustainability, Evaluation Benchmark
 
@@ -47,20 +47,20 @@ PULSE extends the conventional "fine-tune then unlearn" evaluation pipeline with
 ### Key Designs
 
 1. **Problem Formalization**:
-   - Data is partitioned into a forget set $\mathcal{D}_{\text{unlearn}}$ and a retain set $\mathcal{D}_{\text{retain}}$.
-   - Evaluation covers two aspects: effectiveness (accuracy drop on $\mathcal{D}_{\text{unlearn}}$) and generalization (accuracy preservation on $\mathcal{D}_{\text{retain}}$ and MMBench).
-   - Critical setting: **regardless of whether image inputs are provided, the model should not leak any information about the forget targets**—both multimodal and text-only tasks are evaluated.
+    - Data is partitioned into a forget set $\mathcal{D}_{\text{unlearn}}$ and a retain set $\mathcal{D}_{\text{retain}}$.
+    - Evaluation covers two aspects: effectiveness (accuracy drop on $\mathcal{D}_{\text{unlearn}}$) and generalization (accuracy preservation on $\mathcal{D}_{\text{retain}}$ and MMBench).
+    - Critical setting: **regardless of whether image inputs are provided, the model should not leak any information about the forget targets**—both multimodal and text-only tasks are evaluated.
 
 2. **Pretrained Knowledge Unlearning Design**:
-   - Rather than selecting forget targets from fine-tuning data, this protocol selects from knowledge the model already possesses from pretraining.
-   - From 153 real celebrities in the MLLMU-Bench dataset, the 45 individuals on which LLaVA-v1.5-13B achieves the highest accuracy are filtered out.
-   - 20 individuals form $\mathcal{D}_{\text{unlearn}}$ and 25 form $\mathcal{D}_{\text{retain}}$.
-   - Each individual is associated with 10 QA pairs (5 multimodal + 5 text-only).
+    - Rather than selecting forget targets from fine-tuning data, this protocol selects from knowledge the model already possesses from pretraining.
+    - From 153 real celebrities in the MLLMU-Bench dataset, the 45 individuals on which LLaVA-v1.5-13B achieves the highest accuracy are filtered out.
+    - 20 individuals form $\mathcal{D}_{\text{unlearn}}$ and 25 form $\mathcal{D}_{\text{retain}}$.
+    - Each individual is associated with 10 QA pairs (5 multimodal + 5 text-only).
 
 3. **Sustainability Evaluation Design**:
-   - $\mathcal{D}_{\text{unlearn}}$ (50 individuals) is divided into 5 subsets of 10 individuals each.
-   - Five sequential unlearning operations are performed on the model.
-   - Effectiveness and generalization metrics are tracked after each operation.
+    - $\mathcal{D}_{\text{unlearn}}$ (50 individuals) is divided into 5 subsets of 10 individuals each.
+    - Five sequential unlearning operations are performed on the model.
+    - Effectiveness and generalization metrics are tracked after each operation.
 
 ### Loss & Training
 

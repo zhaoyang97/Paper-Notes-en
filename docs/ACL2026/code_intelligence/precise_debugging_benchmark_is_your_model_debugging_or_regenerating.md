@@ -18,8 +18,8 @@ content_hash: b137a1293591351a
 # Precise Debugging Benchmark: Is Your Model Debugging or Regenerating?
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17338](https://arxiv.org/abs/2604.17338)
-**Code**: [GitHub](https://github.com)
+**arXiv**: [2604.17338](https://arxiv.org/abs/2604.17338)  
+**Code**: [GitHub](https://github.com)  
 **Area**: Code Intelligence / Debugging Evaluation
 **Keywords**: Code Debugging, LLM Programming, Precise Editing, Benchmark, Code Regeneration
 

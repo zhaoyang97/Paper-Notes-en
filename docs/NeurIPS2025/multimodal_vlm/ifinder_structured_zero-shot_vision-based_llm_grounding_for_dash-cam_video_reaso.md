@@ -18,8 +18,8 @@ content_hash: 085d62826e3e6d5f
 # iFinder: Structured Zero-Shot VLM Grounding for Dash-Cam Video Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19552](https://arxiv.org/abs/2509.19552)
-**Code**: None
+**arXiv**: [2509.19552](https://arxiv.org/abs/2509.19552)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: dash-cam video analysis, LLM grounding, structured reasoning, zero-shot, vision-language models
 

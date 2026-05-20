@@ -17,8 +17,8 @@ content_hash: f6a1adf0949779ea
 # ParaMETA: Towards Learning Disentangled Paralinguistic Speaking Styles Representations
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.12289](https://arxiv.org/abs/2601.12289)
-**Code**: [GitHub](https://github.com/haoweilou/ParaMETA)
+**arXiv**: [2601.12289](https://arxiv.org/abs/2601.12289)  
+**Code**: [GitHub](https://github.com/haoweilou/ParaMETA)  
 **Area**: Others
 **Keywords**: Speaking Style Representation, Disentangled Embedding, Contrastive Learning, Prototype Learning, text-to-speech
 

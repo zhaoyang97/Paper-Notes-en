@@ -18,8 +18,8 @@ content_hash: b8368a0312ca51ff
 # FALCON: An ML Framework for Fully Automated Layout-Constrained Analog Circuit Design
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21923](https://arxiv.org/abs/2505.21923)
-**Code**: [https://github.com/AsalMehradfar/FALCON](https://github.com/AsalMehradfar/FALCON)
+**arXiv**: [2505.21923](https://arxiv.org/abs/2505.21923)  
+**Code**: [https://github.com/AsalMehradfar/FALCON](https://github.com/AsalMehradfar/FALCON)  
 **Area**: Graph Learning
 **Keywords**: Analog Circuit Design, Graph Neural Networks, Inverse Design, Layout-Aware Optimization, Millimeter-Wave Circuits
 

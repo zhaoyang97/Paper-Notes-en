@@ -18,8 +18,8 @@ content_hash: dcc523f8c563ef29
 # SMOTE and Mirrors: Exposing Privacy Leakage from Synthetic Minority Oversampling
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.15083](https://arxiv.org/abs/2510.15083)
-**Code**: Not provided
+**arXiv**: [2510.15083](https://arxiv.org/abs/2510.15083)  
+**Code**: Not provided  
 **Area**: Image Generation
 **Keywords**: SMOTE, privacy leakage, reconstruction attack, distinction attack, minority oversampling
 

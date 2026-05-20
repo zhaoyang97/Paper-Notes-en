@@ -18,8 +18,8 @@ content_hash: 6ddf79ad229a3604
 # To Think or Not To Think: A Study of Explicit Thinking in Rule-Based Visual Reinforcement Fine-Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.16188](https://arxiv.org/abs/2503.16188)
-**Code**: [https://github.com/minglllli/CLS-RL](https://github.com/minglllli/CLS-RL)
+**arXiv**: [2503.16188](https://arxiv.org/abs/2503.16188)  
+**Code**: [https://github.com/minglllli/CLS-RL](https://github.com/minglllli/CLS-RL)  
 **Area**: Multimodal VLM
 **Keywords**: Reinforcement Fine-Tuning, Chain-of-Thought, Multimodal Large Language Models, GRPO, Visual Reasoning
 

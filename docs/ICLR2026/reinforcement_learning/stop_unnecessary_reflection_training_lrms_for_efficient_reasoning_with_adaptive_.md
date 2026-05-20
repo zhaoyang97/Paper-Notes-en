@@ -18,8 +18,8 @@ content_hash: 5581d27d7b07a397
 # Stop Unnecessary Reflection: Training LRMs for Efficient Reasoning with Adaptive Reflection and Length Coordinated Penalty
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.12113](https://arxiv.org/abs/2602.12113)
-**Code**: [https://github.com/ZeweiYu1/ARLCP](https://github.com/ZeweiYu1/ARLCP)
+**arXiv**: [2602.12113](https://arxiv.org/abs/2602.12113)  
+**Code**: [https://github.com/ZeweiYu1/ARLCP](https://github.com/ZeweiYu1/ARLCP)  
 **Area**: Reinforcement Learning
 **Keywords**: Large Reasoning Models, Over-reflection, Adaptive Penalty, Efficient Reasoning, RLVR
 
@@ -35,9 +35,9 @@ This paper proposes ARLCP (Adaptive Reflection and Length Coordinated Penalty), 
   2. **Over-reflection induces errors**: Incorrect responses contain on average far more reflection tokens than correct ones.
   3. **Accuracy declines with excessive reflection**: Beyond a certain threshold, additional reflection actually degrades accuracy.
 - **Limitations of prior work**:
-  - Inference-stage methods (e.g., Early Exit) do not alter model capabilities, yielding limited efficiency gains.
-  - Training-stage methods (e.g., uniform length penalties) frequently sacrifice reasoning quality.
-  - No existing mechanism dynamically adjusts penalties based on problem complexity.
+    - Inference-stage methods (e.g., Early Exit) do not alter model capabilities, yielding limited efficiency gains.
+    - Training-stage methods (e.g., uniform length penalties) frequently sacrifice reasoning quality.
+    - No existing mechanism dynamically adjusts penalties based on problem complexity.
 
 ## Method
 

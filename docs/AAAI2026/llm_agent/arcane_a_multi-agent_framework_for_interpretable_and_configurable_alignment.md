@@ -18,8 +18,8 @@ content_hash: 4ee45fb84b447e80
 # ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.06196](https://arxiv.org/abs/2512.06196)
-**Code**: [https://github.com/DeepFlow-research/manager_agent_gym](https://github.com/DeepFlow-research/manager_agent_gym)
+**arXiv**: [2512.06196](https://arxiv.org/abs/2512.06196)  
+**Code**: [https://github.com/DeepFlow-research/manager_agent_gym](https://github.com/DeepFlow-research/manager_agent_gym)  
 **Area**: LLM Agent
 **Keywords**: interpretable alignment, rubric learning, multi-agent collaboration, GSPO, test-time alignment
 

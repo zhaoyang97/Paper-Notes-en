@@ -17,8 +17,8 @@ content_hash: 172a3104ae68a0e2
 # RL Tango: Reinforcing Generator and Verifier Together for Language Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15034](https://arxiv.org/abs/2505.15034)
-**Code**: [github.com/kaiwenzha/rl-tango](https://github.com/kaiwenzha/rl-tango)
+**arXiv**: [2505.15034](https://arxiv.org/abs/2505.15034)  
+**Code**: [github.com/kaiwenzha/rl-tango](https://github.com/kaiwenzha/rl-tango)  
 **Area**: Reinforcement Learning
 **Keywords**: generator-verifier co-training, process reward, reinforcement learning, co-evolution, generative verifier
 

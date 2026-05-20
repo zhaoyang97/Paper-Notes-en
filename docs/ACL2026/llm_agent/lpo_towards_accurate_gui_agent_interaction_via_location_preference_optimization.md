@@ -18,8 +18,8 @@ content_hash: 91add2dfee78bb3b
 # LPO: Towards Accurate GUI Agent Interaction via Location Preference Optimization
 
 **Conference**: ACL 2026
-**arXiv**: [2506.09373](https://arxiv.org/abs/2506.09373)
-**Code**: [GitHub](https://github.com/jqtangust/LPO)
+**arXiv**: [2506.09373](https://arxiv.org/abs/2506.09373)  
+**Code**: [GitHub](https://github.com/jqtangust/LPO)  
 **Area**: GUI Agents
 **Keywords**: GUI Interaction, Location Preference Optimization, Reinforcement Learning, Information Entropy, GRPO
 

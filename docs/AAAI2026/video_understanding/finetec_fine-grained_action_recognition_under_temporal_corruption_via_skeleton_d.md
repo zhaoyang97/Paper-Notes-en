@@ -18,8 +18,8 @@ content_hash: 954766f1dfe9f723
 # FineTec: Fine-Grained Action Recognition Under Temporal Corruption via Skeleton Decomposition and Sequence Completion
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.25067](https://arxiv.org/abs/2512.25067)
-**Code**: [Project Page](https://smartdianlab.github.io/projects-FineTec/)
+**arXiv**: [2512.25067](https://arxiv.org/abs/2512.25067)  
+**Code**: [Project Page](https://smartdianlab.github.io/projects-FineTec/)  
 **Area**: Video Understanding
 **Keywords**: Fine-grained action recognition, temporal corruption, skeleton decomposition, Lagrangian dynamics, sequence completion
 

@@ -18,8 +18,8 @@ content_hash: 0f30aa7d2d895eba
 # Action–Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23814](https://arxiv.org/abs/2602.23814)
-**Code**: [https://github.com/Chongyang-99/GAP.git](https://github.com/Chongyang-99/GAP.git)
+**arXiv**: [2602.23814](https://arxiv.org/abs/2602.23814)  
+**Code**: [https://github.com/Chongyang-99/GAP.git](https://github.com/Chongyang-99/GAP.git)  
 **Area**: Robotics / Embodied Intelligence
 **Keywords**: bimanual manipulation, 3D geometric foundation model, joint action–geometry prediction, π3, diffusion policy
 

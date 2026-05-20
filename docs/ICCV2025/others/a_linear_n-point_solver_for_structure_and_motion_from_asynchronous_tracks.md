@@ -17,8 +17,8 @@ content_hash: 075b04c3e11c9ae7
 # A Linear N-Point Solver for Structure and Motion from Asynchronous Tracks
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22733](https://arxiv.org/abs/2507.22733)
-**Code**: [GitHub](https://github.com/suhang99/AsyncTrack-Motion-Solver)
+**arXiv**: [2507.22733](https://arxiv.org/abs/2507.22733)  
+**Code**: [GitHub](https://github.com/suhang99/AsyncTrack-Motion-Solver)  
 **Area**: Geometric Computer Vision
 **Keywords**: Motion Estimation, Asynchronous Feature Tracks, Linear Solver, Event Camera, Rolling Shutter
 

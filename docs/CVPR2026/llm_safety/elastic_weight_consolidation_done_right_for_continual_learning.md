@@ -18,8 +18,8 @@ content_hash: 813e0a6f0fc2c59f
 # Elastic Weight Consolidation Done Right for Continual Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.18596](https://arxiv.org/abs/2603.18596)
-**Code**: [https://github.com/scarlet0703/EWC-DR](https://github.com/scarlet0703/EWC-DR)
+**arXiv**: [2603.18596](https://arxiv.org/abs/2603.18596)  
+**Code**: [https://github.com/scarlet0703/EWC-DR](https://github.com/scarlet0703/EWC-DR)  
 **Area**: LLM Safety
 **Keywords**: Continual Learning, Catastrophic Forgetting, Elastic Weight Consolidation, Fisher Information Matrix, Weight Regularization
 

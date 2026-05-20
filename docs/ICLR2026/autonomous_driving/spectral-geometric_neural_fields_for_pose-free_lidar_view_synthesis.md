@@ -18,8 +18,8 @@ content_hash: 1889a4c3c738cdad
 # Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.12903](https://arxiv.org/abs/2603.12903)
-**Code**: N/A
+**arXiv**: [2603.12903](https://arxiv.org/abs/2603.12903)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: LiDAR novel view synthesis, pose-free NeRF, spectral embedding, geometric consistency, adversarial learning
 

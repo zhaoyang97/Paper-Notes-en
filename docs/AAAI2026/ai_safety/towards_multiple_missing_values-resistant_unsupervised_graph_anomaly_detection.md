@@ -18,8 +18,8 @@ content_hash: 54559e8f118501cd
 # Towards Multiple Missing Values-Resistant Unsupervised Graph Anomaly Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09917](https://arxiv.org/abs/2511.09917)
-**Code**: N/A
+**arXiv**: [2511.09917](https://arxiv.org/abs/2511.09917)  
+**Code**: N/A  
 **Area**: AI Security
 **Keywords**: Graph Anomaly Detection, Missing Values, Unsupervised Learning, Pseudo-Anomaly Generation, Sinkhorn Divergence
 

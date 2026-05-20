@@ -18,8 +18,8 @@ content_hash: 7ff0cbcadb25e28f
 # FedDifRC: Unlocking the Potential of Text-to-Image Diffusion Models in Heterogeneous Federated Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.06482](https://arxiv.org/abs/2507.06482)
-**Code**: [https://github.com/hwang52/FedDifRC](https://github.com/hwang52/FedDifRC)
+**arXiv**: [2507.06482](https://arxiv.org/abs/2507.06482)  
+**Code**: [https://github.com/hwang52/FedDifRC](https://github.com/hwang52/FedDifRC)  
 **Area**: Image Generation
 **Keywords**: Federated Learning, Data Heterogeneity, Diffusion Model Representations, Contrastive Learning, Consistency Regularization
 

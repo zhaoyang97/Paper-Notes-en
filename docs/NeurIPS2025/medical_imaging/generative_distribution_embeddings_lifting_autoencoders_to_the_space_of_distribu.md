@@ -18,8 +18,8 @@ content_hash: d864879d061fec8a
 # Generative Distribution Embeddings: Lifting Autoencoders to the Space of Distributions for Multiscale Representation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18150](https://arxiv.org/abs/2505.18150)
-**Code**: Available (GitHub)
+**arXiv**: [2505.18150](https://arxiv.org/abs/2505.18150)  
+**Code**: Available (GitHub)  
 **Area**: Medical Imaging
 **Keywords**: distribution embeddings, autoencoders, Wasserstein space, multiscale representation, computational biology
 

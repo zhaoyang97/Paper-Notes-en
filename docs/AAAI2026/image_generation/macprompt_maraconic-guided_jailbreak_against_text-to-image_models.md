@@ -18,8 +18,8 @@ content_hash: 04c70928d1c1c21f
 # MacPrompt: Maraconic-guided Jailbreak against Text-to-Image Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.07141](https://arxiv.org/abs/2601.07141)
-**Code**: None
+**arXiv**: [2601.07141](https://arxiv.org/abs/2601.07141)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Text-to-image safety, jailbreak attack, cross-lingual adversarial, macaronic words, concept removal
 

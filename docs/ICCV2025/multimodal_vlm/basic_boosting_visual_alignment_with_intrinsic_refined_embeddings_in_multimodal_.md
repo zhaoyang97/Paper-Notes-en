@@ -18,8 +18,8 @@ content_hash: 9d76c9b96bebf9dd
 # BASIC: Boosting Visual Alignment with Intrinsic Refined Embeddings in Multimodal Large Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.06895](https://arxiv.org/abs/2508.06895)
-**Code**: None
+**arXiv**: [2508.06895](https://arxiv.org/abs/2508.06895)  
+**Code**: None  
 **Area**: Multimodal VLM / Vision-Language Alignment
 **Keywords**: MLLM, Visual Embedding, Self-Distillation, Modality Alignment, LLM Interpretability
 

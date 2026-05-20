@@ -18,8 +18,8 @@ content_hash: 12831018a0575e2a
 # CHDP: Cooperative Hybrid Diffusion Policies for RL in Parametric Environments
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.05675](https://arxiv.org/abs/2601.05675)
-**Code**: N/A
+**arXiv**: [2601.05675](https://arxiv.org/abs/2601.05675)  
+**Code**: N/A  
 **Area**: Reinforcement Learning
 **Keywords**: Hybrid Action Space, Diffusion Policy, Multi-Agent Cooperation, Vector-Quantized Codebook, Parameterized Action MDP
 

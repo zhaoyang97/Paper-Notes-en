@@ -18,8 +18,8 @@ content_hash: 507316a270781bb7
 # NoRD: A Data-Efficient Vision-Language-Action Model that Drives without Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21172](https://arxiv.org/abs/2602.21172)
-**Code**: N/A
+**arXiv**: [2602.21172](https://arxiv.org/abs/2602.21172)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: VLA model, reasoning-free driving, data efficiency, Dr.GRPO, reinforcement learning post-training
 
@@ -49,24 +49,24 @@ NoRD demonstrates that autonomous driving VLAs require neither large-scale reaso
 
 1. **K-disc Trajectory Tokenization**
 
-   - **Function**: Discretizes continuous trajectories into a codebook of 2,048 tokens.
-   - **Mechanism**: All training trajectories are interpolated to 10 Hz → segmented into 0.5s clips → K-means clustering into 2,048 clusters → cluster centers form a discrete trajectory vocabulary.
-   - **Design Motivation**: Casting trajectory prediction as next-token prediction aligns naturally with the autoregressive paradigm of VLMs. A codebook size of 2,048 balances precision and generalization.
-   - **Token embedding initialization**: New token embeddings are sampled from a multivariate normal distribution parameterized by the mean and covariance of Qwen's existing token embeddings, ensuring compatibility with the pre-trained distribution.
+    - **Function**: Discretizes continuous trajectories into a codebook of 2,048 tokens.
+    - **Mechanism**: All training trajectories are interpolated to 10 Hz → segmented into 0.5s clips → K-means clustering into 2,048 clusters → cluster centers form a discrete trajectory vocabulary.
+    - **Design Motivation**: Casting trajectory prediction as next-token prediction aligns naturally with the autoregressive paradigm of VLMs. A codebook size of 2,048 balances precision and generalization.
+    - **Token embedding initialization**: New token embeddings are sampled from a multivariate normal distribution parameterized by the mean and covariance of Qwen's existing token embeddings, ensuring compatibility with the pre-trained distribution.
 
 2. **Difficulty Bias Analysis and Dr. GRPO**
 
-   - **GRPO advantage**: $\hat{A}_{i,t}^{\text{GRPO}} = \frac{r(o_i|x) - \frac{1}{G}\sum_{j=1}^G r(o_j|x)}{\text{std}_{j=1,...,G}(r(o_j|x))}$
-   - **Key Challenge**: The denominator $\text{std}$ becomes very small ($\ll 1$) for low-variance groups, amplifying their advantages, while large $\text{std}$ in high-variance groups suppresses theirs. Weak SFT models produce a polarized reward distribution: simple scenarios (group mean $\geq 0.8$) and extremely hard scenarios ($\leq 0.15$) exhibit low variance, whereas moderate-difficulty scenarios ($0.2$–$0.65$) — the majority — exhibit high variance.
-   - **Dr. GRPO correction**: Standard deviation normalization is removed, yielding $\hat{A}_{i,t}^{\text{DrGRPO}} = r(o_i|x) - \frac{1}{G}\sum_{j=1}^G r(o_i|x)$, ensuring that hard scenarios also contribute sufficient gradient signal.
-   - **Auxiliary stabilization**: DAPO-style asymmetric clipping ($1-\epsilon_l, 1+\epsilon_h$) prevents entropy collapse; KL divergence regularization is not used.
+    - **GRPO advantage**: $\hat{A}_{i,t}^{\text{GRPO}} = \frac{r(o_i|x) - \frac{1}{G}\sum_{j=1}^G r(o_j|x)}{\text{std}_{j=1,...,G}(r(o_j|x))}$
+    - **Key Challenge**: The denominator $\text{std}$ becomes very small ($\ll 1$) for low-variance groups, amplifying their advantages, while large $\text{std}$ in high-variance groups suppresses theirs. Weak SFT models produce a polarized reward distribution: simple scenarios (group mean $\geq 0.8$) and extremely hard scenarios ($\leq 0.15$) exhibit low variance, whereas moderate-difficulty scenarios ($0.2$–$0.65$) — the majority — exhibit high variance.
+    - **Dr. GRPO correction**: Standard deviation normalization is removed, yielding $\hat{A}_{i,t}^{\text{DrGRPO}} = r(o_i|x) - \frac{1}{G}\sum_{j=1}^G r(o_i|x)$, ensuring that hard scenarios also contribute sufficient gradient signal.
+    - **Auxiliary stabilization**: DAPO-style asymmetric clipping ($1-\epsilon_l, 1+\epsilon_h$) prevents entropy collapse; KL divergence regularization is not used.
 
 3. **Data-Efficient SFT**
 
-   - **Function**: Intentionally limits SFT to small-scale data, shifting the primary learning burden to the RL post-training stage.
-   - **NAVSIM**: 80K samples (vs. AutoVLA's 212K+).
-   - **WaymoE2E**: 12K samples for SFT + 450 samples for RLFT.
-   - **Design Motivation**: To verify that VLAs do not require large-scale data, and that RL post-training can compensate for performance gaps incurred during SFT.
+    - **Function**: Intentionally limits SFT to small-scale data, shifting the primary learning burden to the RL post-training stage.
+    - **NAVSIM**: 80K samples (vs. AutoVLA's 212K+).
+    - **WaymoE2E**: 12K samples for SFT + 450 samples for RLFT.
+    - **Design Motivation**: To verify that VLAs do not require large-scale data, and that RL post-training can compensate for performance gaps incurred during SFT.
 
 ### Loss & Training
 

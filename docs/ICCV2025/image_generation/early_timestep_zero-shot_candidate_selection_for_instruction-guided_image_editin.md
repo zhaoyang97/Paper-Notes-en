@@ -18,8 +18,8 @@ content_hash: abf6d03d214f1100
 # Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.13490](https://arxiv.org/abs/2504.13490)
-**Code**: [https://github.com/Joow0n-Kim/ELECT](https://github.com/Joow0n-Kim/ELECT)
+**arXiv**: [2504.13490](https://arxiv.org/abs/2504.13490)  
+**Code**: [https://github.com/Joow0n-Kim/ELECT](https://github.com/Joow0n-Kim/ELECT)  
 **Area**: Image Generation
 **Keywords**: Image Editing, Seed Selection, Diffusion Models, Background Consistency, Zero-Shot
 

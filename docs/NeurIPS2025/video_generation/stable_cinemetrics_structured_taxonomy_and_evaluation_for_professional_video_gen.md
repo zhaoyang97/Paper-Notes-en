@@ -18,8 +18,8 @@ content_hash: 8eb77f1e383dcdcf
 # Stable Cinemetrics: Structured Taxonomy and Evaluation for Professional Video Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.26555](https://arxiv.org/abs/2509.26555)
-**Code**: [Project Page](https://stable-cinemetrics.github.io/)
+**arXiv**: [2509.26555](https://arxiv.org/abs/2509.26555)  
+**Code**: [Project Page](https://stable-cinemetrics.github.io/)  
 **Area**: Video Generation / Evaluation Benchmark
 **Keywords**: video generation evaluation, cinematic taxonomy, professional video control, human evaluation, VLM evaluator
 

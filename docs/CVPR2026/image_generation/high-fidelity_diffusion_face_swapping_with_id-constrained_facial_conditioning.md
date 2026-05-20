@@ -18,8 +18,8 @@ content_hash: 276af68495117090
 # High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.22179](https://arxiv.org/abs/2503.22179)
-**Code**: N/A
+**arXiv**: [2503.22179](https://arxiv.org/abs/2503.22179)  
+**Code**: N/A  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Face Swapping, Diffusion Models, Identity Constraint, Condition Decoupling, Multi-Stage Training
 

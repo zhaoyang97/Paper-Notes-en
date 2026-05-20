@@ -18,8 +18,8 @@ content_hash: ebdaf9c0417ed599
 # Representation Shift: Unifying Token Compression with FlashAttention
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00367](https://arxiv.org/abs/2508.00367)
-**Code**: [https://github.com/mlvlab/Representation-Shift](https://github.com/mlvlab/Representation-Shift)
+**arXiv**: [2508.00367](https://arxiv.org/abs/2508.00367)  
+**Code**: [https://github.com/mlvlab/Representation-Shift](https://github.com/mlvlab/Representation-Shift)  
 **Area**: Information Retrieval
 **Keywords**: Token Pruning, FlashAttention, Representation Shift, Vision Transformer, Model Acceleration
 

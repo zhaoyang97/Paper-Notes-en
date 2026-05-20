@@ -18,8 +18,8 @@ content_hash: d6c1967e3a79971c
 # One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24483](https://arxiv.org/abs/2509.24483)
-**Code**: [https://github.com/Minhchuyentoancbn/SMoPE](https://github.com/Minhchuyentoancbn/SMoPE)
+**arXiv**: [2509.24483](https://arxiv.org/abs/2509.24483)  
+**Code**: [https://github.com/Minhchuyentoancbn/SMoPE](https://github.com/Minhchuyentoancbn/SMoPE)  
 **Area**: LLM Efficiency
 **Keywords**: continual learning, prompt tuning, Mixture of Experts, Sparse MoE, Prefix Tuning
 
@@ -50,27 +50,27 @@ SMoPE takes a ViT patch token sequence $\mathbf{X} \in \mathbb{R}^{N \times d}$ 
 
 1. **Prompt-Attention Score Aggregation**
 
-   - **Function**: Computes a unified surrogate score for each prompt expert, replacing the $N$ per-token scores in the original multi-gate MoE.
-   - **Mechanism**: The attention scores from all tokens toward a given prompt expert are averaged, yielding $\tilde{s}_{j'}(\mathbf{X}) = \frac{\tilde{\mathbf{x}}^\top W_l^Q {W_l^K}^\top \mathbf{p}_{j'}^K}{\sqrt{d_v}}$, where $\tilde{\mathbf{x}} = \frac{1}{N}\sum_{i=1}^N \mathbf{x}_i$ is the mean token representation. Surrogate scores for all experts are obtained from a single computation of $\tilde{\mathbf{x}}$.
-   - **Design Motivation**: In standard prefix tuning, each prompt expert is associated with $N$ score functions (one per output token), making direct Top-K selection intractable. Score aggregation reduces complexity from $\mathcal{O}(N d_k)$ to $\mathcal{O}(d_k)$ while preserving the same $\mathcal{O}(\tau^{-4})$ sample complexity as standard MoE.
+    - **Function**: Computes a unified surrogate score for each prompt expert, replacing the $N$ per-token scores in the original multi-gate MoE.
+    - **Mechanism**: The attention scores from all tokens toward a given prompt expert are averaged, yielding $\tilde{s}_{j'}(\mathbf{X}) = \frac{\tilde{\mathbf{x}}^\top W_l^Q {W_l^K}^\top \mathbf{p}_{j'}^K}{\sqrt{d_v}}$, where $\tilde{\mathbf{x}} = \frac{1}{N}\sum_{i=1}^N \mathbf{x}_i$ is the mean token representation. Surrogate scores for all experts are obtained from a single computation of $\tilde{\mathbf{x}}$.
+    - **Design Motivation**: In standard prefix tuning, each prompt expert is associated with $N$ score functions (one per output token), making direct Top-K selection intractable. Score aggregation reduces complexity from $\mathcal{O}(N d_k)$ to $\mathcal{O}(d_k)$ while preserving the same $\mathcal{O}(\tau^{-4})$ sample complexity as standard MoE.
 
 2. **Sparse Expert Selection + Implementation**
 
-   - **Function**: Performs Top-K selection based on surrogate scores, activating only the $K$ most relevant prompt experts.
-   - **Mechanism**: The SMoPE-adjusted attention matrix is $\tilde{A}_l = [\tilde{A}_l^{\text{prompt}}, A_l^{\text{pre-trained}}]$, where the prompt component is $\tilde{A}_l^{\text{prompt}} = \text{TopK}(\tilde{\mathbf{x}}^\top W_l^Q {W_l^K}^\top \mathbf{P}^K / \sqrt{d_v}).\text{expand}(N, -1)$. The scores of the selected $K$ experts are expanded across all $N$ query tokens, while unselected expert scores are set to zero.
-   - **Design Motivation**: Unlike OVOR, which updates all prompt parameters uniformly, sparse activation introduces implicit parameter partitioning that substantially reduces inter-task interference. Expert selection depends only on the current layer's input, requiring no additional forward pass as in task-specific methods.
+    - **Function**: Performs Top-K selection based on surrogate scores, activating only the $K$ most relevant prompt experts.
+    - **Mechanism**: The SMoPE-adjusted attention matrix is $\tilde{A}_l = [\tilde{A}_l^{\text{prompt}}, A_l^{\text{pre-trained}}]$, where the prompt component is $\tilde{A}_l^{\text{prompt}} = \text{TopK}(\tilde{\mathbf{x}}^\top W_l^Q {W_l^K}^\top \mathbf{P}^K / \sqrt{d_v}).\text{expand}(N, -1)$. The scores of the selected $K$ experts are expanded across all $N$ query tokens, while unselected expert scores are set to zero.
+    - **Design Motivation**: Unlike OVOR, which updates all prompt parameters uniformly, sparse activation introduces implicit parameter partitioning that substantially reduces inter-task interference. Expert selection depends only on the current layer's input, requiring no additional forward pass as in task-specific methods.
 
 3. **Adaptive Noise Mechanism**
 
-   - **Function**: Adds adaptive noise penalties to frequently activated experts during training, encouraging utilization of inactive experts.
-   - **Mechanism**: The activation frequency $F_{j'}$ is tracked per expert. Experts with above-average frequency receive a noise penalty $\epsilon_{j'} = \epsilon \cdot (\max_j \tilde{s}_j - \min_j \tilde{s}_j)$ (where $\epsilon \in [0,1]$ is a hyperparameter), reducing their selection probability. Experts below average frequency are not penalized.
-   - **Design Motivation**: Standard SMoE is prone to unbalanced expert utilization, where a small subset dominates routing. In the CL setting, repeatedly activating the same experts exacerbates knowledge interference. Adaptive noise scales the penalty by the dynamic score range to avoid excessive perturbation, and only affects training without influencing inference.
+    - **Function**: Adds adaptive noise penalties to frequently activated experts during training, encouraging utilization of inactive experts.
+    - **Mechanism**: The activation frequency $F_{j'}$ is tracked per expert. Experts with above-average frequency receive a noise penalty $\epsilon_{j'} = \epsilon \cdot (\max_j \tilde{s}_j - \min_j \tilde{s}_j)$ (where $\epsilon \in [0,1]$ is a hyperparameter), reducing their selection probability. Experts below average frequency are not penalized.
+    - **Design Motivation**: Standard SMoE is prone to unbalanced expert utilization, where a small subset dominates routing. In the CL setting, repeatedly activating the same experts exacerbates knowledge interference. Adaptive noise scales the penalty by the dynamic score range to avoid excessive perturbation, and only affects training without influencing inference.
 
 4. **Prototype-based Loss for Expert Specialization**
 
-   - **Function**: Uses prefix keys as prototype memories for previous tasks, preserving expert specialization when training on new tasks.
-   - **Mechanism**: Two auxiliary losses are employed: (a) $\mathcal{L}_{\text{router}}$ encourages the scores of selected experts to exceed those of unselected ones; (b) $\mathcal{L}_{\text{proto}}$ uses the prefix keys from the end of the previous training round as prototypes to maintain routing consistency for old experts. Only frequently activated experts are retained in the prototype set to avoid noise.
-   - **Design Motivation**: $\mathcal{L}_{\text{router}}$ promotes expert differentiation on the current task, while $\mathcal{L}_{\text{proto}}$ preserves task-specific specialization learned previously without requiring replay data. The two losses are complementary in alleviating forgetting.
+    - **Function**: Uses prefix keys as prototype memories for previous tasks, preserving expert specialization when training on new tasks.
+    - **Mechanism**: Two auxiliary losses are employed: (a) $\mathcal{L}_{\text{router}}$ encourages the scores of selected experts to exceed those of unselected ones; (b) $\mathcal{L}_{\text{proto}}$ uses the prefix keys from the end of the previous training round as prototypes to maintain routing consistency for old experts. Only frequently activated experts are retained in the prototype set to avoid noise.
+    - **Design Motivation**: $\mathcal{L}_{\text{router}}$ promotes expert differentiation on the current task, while $\mathcal{L}_{\text{proto}}$ preserves task-specific specialization learned previously without requiring replay data. The two losses are complementary in alleviating forgetting.
 
 ### Loss & Training
 

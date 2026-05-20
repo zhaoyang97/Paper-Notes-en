@@ -18,8 +18,8 @@ content_hash: 0f0fa5c1fd77ba2c
 # Matrix-Free Two-to-Infinity and One-to-Two Norms Estimation
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04444](https://arxiv.org/abs/2508.04444)
-**Code**: [github](https://github.com/fallnlove/TwoToInfinity)
+**arXiv**: [2508.04444](https://arxiv.org/abs/2508.04444)  
+**Code**: [github](https://github.com/fallnlove/TwoToInfinity)  
 **Area**: AI Safety / Randomized Linear Algebra
 **Keywords**: matrix norm estimation, two-to-infinity norm, Hutchinson estimator, Jacobian regularization, adversarial robustness
 

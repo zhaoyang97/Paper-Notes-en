@@ -18,8 +18,8 @@ content_hash: 44ecba3d9b3e6d8b
 # MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20689](https://arxiv.org/abs/2602.20689)
-**Code**: [https://cvpr26-matched.github.io](https://cvpr26-matched.github.io)
+**arXiv**: [2602.20689](https://arxiv.org/abs/2602.20689)  
+**Code**: [https://cvpr26-matched.github.io](https://cvpr26-matched.github.io)  
 **Area**: Human Understanding / Edge Detection
 **Keywords**: edge detection, crisp edges, bipartite matching, plug-and-play, end-to-end training
 

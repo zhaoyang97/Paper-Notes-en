@@ -19,8 +19,8 @@ content_hash: 61f3f0954c569473
 # Tensor learning with orthogonal, Lorentz, and symplectic symmetries
 
 **Conference**: ICLR 2026
-**arXiv**: [2406.01552](https://arxiv.org/abs/2406.01552)
-**Code**: [https://github.com/WilsonGregory/TensorPolynomials](https://github.com/WilsonGregory/TensorPolynomials)
+**arXiv**: [2406.01552](https://arxiv.org/abs/2406.01552)  
+**Code**: [https://github.com/WilsonGregory/TensorPolynomials](https://github.com/WilsonGregory/TensorPolynomials)  
 **Area**: Time Series
 **Keywords**: Equivariant learning, tensor functions, orthogonal group, Lorentz group, symplectic group, sparse vector recovery
 

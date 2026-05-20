@@ -18,8 +18,8 @@ content_hash: 30d039d058965b09
 # Uncertainty Quantification for Reduced-Order Surrogate Models Applied to Cloud Microphysics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.04534](https://arxiv.org/abs/2511.04534)
-**Code**: [GitHub](https://github.com/jonaskat87/UQ_AE-SINDy)
+**arXiv**: [2511.04534](https://arxiv.org/abs/2511.04534)  
+**Code**: [GitHub](https://github.com/jonaskat87/UQ_AE-SINDy)  
 **Area**: Other
 **Keywords**: reduced-order models, conformal prediction, cloud microphysics, autoencoder-SINDy, surrogate models, prediction intervals
 

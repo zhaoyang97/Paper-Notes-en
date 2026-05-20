@@ -18,10 +18,10 @@ content_hash: 59f91fa659182a9a
 # How Foundational are Foundation Models for Time Series Forecasting?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.00742](https://arxiv.org/abs/2510.00742)
+**arXiv**: [2510.00742](https://arxiv.org/abs/2510.00742)  
 **Authors**: Nouha Karaouli, Denis Coquenet, Elisa Fromont, Martial Mermillod, Marina Reyboz
 **Institutions**: Univ. Rennes / CNRS / Inria / IRISA; Univ. Grenoble Alpes / CEA
-**Code**: Datasets publicly available (Zenodo)
+**Code**: Datasets publicly available (Zenodo)  
 **Area**: Time Series
 **Keywords**: Time series foundation models, zero-shot forecasting, fine-tuning, domain transfer, lightweight models
 

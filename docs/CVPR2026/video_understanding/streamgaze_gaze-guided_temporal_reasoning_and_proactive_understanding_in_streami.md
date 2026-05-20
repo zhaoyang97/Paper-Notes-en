@@ -18,8 +18,8 @@ content_hash: 7166406c7d87c4fa
 # StreamGaze: Gaze-Guided Temporal Reasoning and Proactive Understanding in Streaming Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.01707](https://arxiv.org/abs/2512.01707)
-**Code**: Available (Project page + Code + Dataset)
+**arXiv**: [2512.01707](https://arxiv.org/abs/2512.01707)  
+**Code**: Available (Project page + Code + Dataset)  
 **Area**: Video Understanding / Streaming Video / Gaze Guidance
 **Keywords**: Gaze signals, streaming video understanding, temporal reasoning, proactive prediction, egocentric video
 

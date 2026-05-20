@@ -18,8 +18,8 @@ content_hash: 92b14824e0098a2c
 # Seeing Justice Clearly: Handwritten Legal Document Translation with OCR and Vision-Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.18004](https://arxiv.org/abs/2512.18004)
-**Code**: [github](https://github.com/anviksha-lab-iitk/SJC)
+**arXiv**: [2512.18004](https://arxiv.org/abs/2512.18004)  
+**Code**: [github](https://github.com/anviksha-lab-iitk/SJC)  
 **Area**: Multimodal VLM
 **Keywords**: Handwritten document recognition, OCR, vision-language models, legal document translation, low-resource languages
 

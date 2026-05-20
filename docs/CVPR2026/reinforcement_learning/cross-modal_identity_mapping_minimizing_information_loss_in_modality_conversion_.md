@@ -17,8 +17,8 @@ content_hash: 43f1bbcc62dfdb3d
 # Cross-modal Identity Mapping: Minimizing Information Loss in Modality Conversion via Reinforcement Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01696](https://arxiv.org/abs/2603.01696)
-**Code**: To be released (after paper acceptance)
+**arXiv**: [2603.01696](https://arxiv.org/abs/2603.01696)  
+**Code**: To be released (after paper acceptance)  
 **Area**: Reinforcement Learning
 **Keywords**: Image Captioning, Cross-modal Information Loss, Retrieval Reward, Reinforcement Learning, GRPO
 

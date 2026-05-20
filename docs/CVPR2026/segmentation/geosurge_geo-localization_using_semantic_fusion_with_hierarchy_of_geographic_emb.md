@@ -18,8 +18,8 @@ content_hash: c370371bcc60b93c
 # GeoSURGE: Geo-localization using Semantic Fusion with Hierarchy of Geographic Embeddings
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.01448](https://arxiv.org/abs/2510.01448)
-**Code**: N/A
+**arXiv**: [2510.01448](https://arxiv.org/abs/2510.01448)  
+**Code**: N/A  
 **Area**: Image Retrieval & Localization
 **Keywords**: Visual geo-localization, semantic fusion, hierarchical geographic embeddings, contrastive learning, cross-attention
 
@@ -49,21 +49,21 @@ GeoSURGE takes an RGB image as input and predicts its latitude and longitude on 
 
 1. **Hierarchical Geographic Embeddings**
 
-   - **Function**: Provide multi-scale distributed feature representations for the Earth's surface.
-   - **Mechanism**: Google S2 Geometry projects the Earth's surface onto the six faces of a cube and recursively subdivides them. Any cell containing more than $\tau_{max}$ samples is further split; cells with fewer than $\tau_{min}$ samples are discarded. By varying $\tau_{max}$ (from 25,000 to 500, yielding 7 levels), a coarse-to-fine multi-level partition is produced. Each geographic cell at each level is associated with a learnable 768-dimensional embedding vector, aligned with image features via contrastive learning during training. Embeddings at different levels are learned independently to encourage diversity; at inference, probabilities from all levels are multiplied to obtain the hierarchical inference result.
-   - **Design Motivation**: GPS coordinates are 2D scalars with limited expressiveness and require auxiliary components (e.g., Random Fourier Features) to enhance them. Learnable embedding vectors can accumulate visual information from all training images in a region, yielding richer geographic representations. The multi-scale hierarchical design enables coarse and fine-grained information to complement each other.
+    - **Function**: Provide multi-scale distributed feature representations for the Earth's surface.
+    - **Mechanism**: Google S2 Geometry projects the Earth's surface onto the six faces of a cube and recursively subdivides them. Any cell containing more than $\tau_{max}$ samples is further split; cells with fewer than $\tau_{min}$ samples are discarded. By varying $\tau_{max}$ (from 25,000 to 500, yielding 7 levels), a coarse-to-fine multi-level partition is produced. Each geographic cell at each level is associated with a learnable 768-dimensional embedding vector, aligned with image features via contrastive learning during training. Embeddings at different levels are learned independently to encourage diversity; at inference, probabilities from all levels are multiplied to obtain the hierarchical inference result.
+    - **Design Motivation**: GPS coordinates are 2D scalars with limited expressiveness and require auxiliary components (e.g., Random Fourier Features) to enhance them. Learnable embedding vectors can accumulate visual information from all training images in a region, yielding richer geographic representations. The multi-scale hierarchical design enables coarse and fine-grained information to complement each other.
 
 2. **Semantic Fusion Module**
 
-   - **Function**: Inject semantic segmentation information into RGB appearance features to generate robust visual representations.
-   - **Mechanism**: RGB patch tokens and the CLS token are extracted using a CLIP ViT-Large backbone (with all but the last few layers frozen). OneFormer then generates an ADE20K semantic segmentation map, which is projected into semantic tokens via a linear layer. Semantic tokens serve as queries, and RGB tokens serve as keys and values in latent multi-headed cross-attention (latent attention reduces memory overhead), followed by an MLP with residual connections and LayerNorm. Three fusion blocks are stacked sequentially to learn hierarchical fused features. The fused CLS token is extracted and projected via LayerNorm and a linear layer to produce the final visual feature vector.
-   - **Design Motivation**: Pure RGB features are sensitive to illumination, weather, and viewpoint variations. Scene structure from semantic segmentation (buildings, vegetation, roads, etc.) is more invariant. Furthermore, semantic information can implicitly suppress localization-irrelevant regions (e.g., people, vehicles). Latent cross-attention — rather than simple concatenation — enables semantic information to selectively guide RGB feature aggregation.
+    - **Function**: Inject semantic segmentation information into RGB appearance features to generate robust visual representations.
+    - **Mechanism**: RGB patch tokens and the CLS token are extracted using a CLIP ViT-Large backbone (with all but the last few layers frozen). OneFormer then generates an ADE20K semantic segmentation map, which is projected into semantic tokens via a linear layer. Semantic tokens serve as queries, and RGB tokens serve as keys and values in latent multi-headed cross-attention (latent attention reduces memory overhead), followed by an MLP with residual connections and LayerNorm. Three fusion blocks are stacked sequentially to learn hierarchical fused features. The fused CLS token is extracted and projected via LayerNorm and a linear layer to produce the final visual feature vector.
+    - **Design Motivation**: Pure RGB features are sensitive to illumination, weather, and viewpoint variations. Scene structure from semantic segmentation (buildings, vegetation, roads, etc.) is more invariant. Furthermore, semantic information can implicitly suppress localization-irrelevant regions (e.g., people, vehicles). Latent cross-attention — rather than simple concatenation — enables semantic information to selectively guide RGB feature aggregation.
 
 3. **Contrastive Training and Hierarchical Inference**
 
-   - **Function**: Align visual and geographic representations and enable multi-scale inference.
-   - **Mechanism**: During training, the fused CLS token $\mathbf{v}$ and the geographic embedding $\mathbf{g}$ corresponding to the ground-truth location are extracted for each training sample. The InfoNCE loss $\mathcal{L}_i = -\log \frac{\exp(\mathbf{v}_i^\top \mathbf{g}_i / \tau)}{\sum_j \exp(\mathbf{v}_i^\top \mathbf{g}_j / \tau)}$ maximizes the cosine similarity of correct pairs. The full training objective is the sum of losses across all hierarchy levels. At inference, softmax probabilities are computed between the query image and all embeddings at each level; for each cell at the finest level, the probabilities of all ancestor cells are multiplied to yield the final prediction.
-   - **Design Motivation**: Hierarchical inference combines the high confidence of coarse-grained levels with the high resolution of fine-grained levels, analogous to a progressive geographic search.
+    - **Function**: Align visual and geographic representations and enable multi-scale inference.
+    - **Mechanism**: During training, the fused CLS token $\mathbf{v}$ and the geographic embedding $\mathbf{g}$ corresponding to the ground-truth location are extracted for each training sample. The InfoNCE loss $\mathcal{L}_i = -\log \frac{\exp(\mathbf{v}_i^\top \mathbf{g}_i / \tau)}{\sum_j \exp(\mathbf{v}_i^\top \mathbf{g}_j / \tau)}$ maximizes the cosine similarity of correct pairs. The full training objective is the sum of losses across all hierarchy levels. At inference, softmax probabilities are computed between the query image and all embeddings at each level; for each cell at the finest level, the probabilities of all ancestor cells are multiplied to yield the final prediction.
+    - **Design Motivation**: Hierarchical inference combines the high confidence of coarse-grained levels with the high resolution of fine-grained levels, analogous to a progressive geographic search.
 
 ### Loss & Training
 AdamW optimizer with an initial learning rate of 0.0001 and weight decay of 0.0001; effective batch size of 1024. Learning rate decay (gamma=0.5) is applied each epoch, with early stopping triggered after 4 epochs without improvement. The temperature parameter is initialized to 0.07 and is independent per level. Training runs for 21 hours on 8 A6000 GPUs. Ten Crop augmentation is used to average predictions at inference.

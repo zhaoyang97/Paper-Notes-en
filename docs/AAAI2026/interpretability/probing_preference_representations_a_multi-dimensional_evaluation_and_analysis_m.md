@@ -18,8 +18,8 @@ content_hash: 48d4f13c359daecc
 # Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12464](https://arxiv.org/abs/2511.12464)
-**Code**: None
+**arXiv**: [2511.12464](https://arxiv.org/abs/2511.12464)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Reward Model Evaluation, Preference Probing, MRMBench, Multi-Dimensional Preferences, Inference-Time Probing
 

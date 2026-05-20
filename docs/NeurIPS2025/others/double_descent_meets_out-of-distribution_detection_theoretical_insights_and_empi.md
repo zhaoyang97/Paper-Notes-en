@@ -17,8 +17,8 @@ content_hash: ea9c06bbaa6efe51
 # Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.02184](https://arxiv.org/abs/2411.02184)
-**Code**: Available (link provided in paper)
+**arXiv**: [2411.02184](https://arxiv.org/abs/2411.02184)  
+**Code**: Available (link provided in paper)  
 **Area**: Other
 **Keywords**: double descent, OOD detection, model complexity, random matrix theory, Neural Collapse
 
@@ -48,26 +48,26 @@ The paper is structured into theoretical and empirical components. Theoretically
 
 1. **Expected OOD Risk Definition**:
 
-   - Function: Provides a unified measure of classifier confidence on both ID and OOD data.
-   - Core formula: $R_{\text{OOD}}(\hat{f}) = \mathbb{E}_{P}[(\hat{f}(x) - f^{\text{OOD}}(x))^2] + \mathbb{E}_{P^{\text{OOD}}}[(\hat{f}(x) - f^{\text{OOD}}(x))^2]$
-   - Here $f^{\text{OOD}}(x)$ approaches 0.5 (uncertainty) on OOD samples and approaches $f^*(x)$ (high confidence) on ID samples.
-   - Design Motivation: Low OOD risk implies high confidence on ID data and low confidence on OOD data, which is precisely the objective of OOD detection.
+    - Function: Provides a unified measure of classifier confidence on both ID and OOD data.
+    - Core formula: $R_{\text{OOD}}(\hat{f}) = \mathbb{E}_{P}[(\hat{f}(x) - f^{\text{OOD}}(x))^2] + \mathbb{E}_{P^{\text{OOD}}}[(\hat{f}(x) - f^{\text{OOD}}(x))^2]$
+    - Here $f^{\text{OOD}}(x)$ approaches 0.5 (uncertainty) on OOD samples and approaches $f^*(x)$ (high confidence) on ID samples.
+    - Design Motivation: Low OOD risk implies high confidence on ID data and low confidence on OOD data, which is precisely the objective of OOD detection.
 
 2. **Double Descent Theory for OOD Risk (Theorem 1)**:
 
-   - Function: Proves that the expected OOD risk of a least-squares binary classifier diverges near $p \approx n$.
-   - Core result: There exist constants $c, C > 0$ such that $c \cdot c(n,p) \leq \mathbb{E}[R_{\text{OOD}}(\hat{f})] \leq C \cdot c(n,p)$, where:
+    - Function: Proves that the expected OOD risk of a least-squares binary classifier diverges near $p \approx n$.
+    - Core result: There exist constants $c, C > 0$ such that $c \cdot c(n,p) \leq \mathbb{E}[R_{\text{OOD}}(\hat{f})] \leq C \cdot c(n,p)$, where:
      - Underparameterized ($p \leq n-2$): $c(n,p) = \frac{p}{n-p-1}(\|w^{\text{OOD}}_{\mathcal{T}^c}\|^2 + \sigma^2) + \|w^{\text{OOD}}_{\mathcal{T}^c}\|^2$
      - Interpolation threshold ($n-1 \leq p \leq n+1$): $c(n,p) = +\infty$, risk diverges.
      - Overparameterized ($p \geq n+2$): Contains the term $(1-n/p)\|w^{\text{OOD}}_\mathcal{T}\|^2 + \frac{n}{p-n-1}(\cdot)$, which gradually decreases.
-   - Design Motivation: Extends the regression theory of Belkin et al. (2020) to the classification + OOD setting, requiring handling of nonlinear activation functions.
+    - Design Motivation: Extends the regression theory of Belkin et al. (2020) to the classification + OOD setting, requiring handling of nonlinear activation functions.
 
 3. **Neural Collapse Criterion (NC1 Metric)**:
 
-   - Function: Determines whether overparameterization is preferable to underparameterization for OOD detection.
-   - Mechanism: Computes $NC1_{u/o} = NC1_u / NC1_o$, where $NC1 = \text{Tr}[\Sigma_W \Sigma_B^+ / C]$ measures the ratio of within-class to between-class covariance.
-   - Decision rule: $NC1_{u/o} > 1$ indicates that overparameterization yields better class separation and thus superior OOD detection performance.
-   - Design Motivation: The accuracy ratio $Acc_{o/u}$ fails to reliably predict OOD detection trends, whereas $NC1_{u/o}$ succeeds—OOD detection depends more on the geometric quality of learned representations.
+    - Function: Determines whether overparameterization is preferable to underparameterization for OOD detection.
+    - Mechanism: Computes $NC1_{u/o} = NC1_u / NC1_o$, where $NC1 = \text{Tr}[\Sigma_W \Sigma_B^+ / C]$ measures the ratio of within-class to between-class covariance.
+    - Decision rule: $NC1_{u/o} > 1$ indicates that overparameterization yields better class separation and thus superior OOD detection performance.
+    - Design Motivation: The accuracy ratio $Acc_{o/u}$ fails to reliably predict OOD detection trends, whereas $NC1_{u/o}$ succeeds—OOD detection depends more on the geometric quality of learned representations.
 
 ### Experimental Setup
 - Architectures: 4-block CNN, ResNet-18, ResNet-34, ViT, Swin Transformer

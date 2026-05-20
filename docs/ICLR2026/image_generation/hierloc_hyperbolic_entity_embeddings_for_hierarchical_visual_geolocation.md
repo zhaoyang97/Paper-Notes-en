@@ -18,8 +18,8 @@ content_hash: 6d42cdd54033e50b
 # HierLoc: Hyperbolic Entity Embeddings for Hierarchical Visual Geolocation
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.23064](https://arxiv.org/abs/2601.23064)
-**Code**: None
+**arXiv**: [2601.23064](https://arxiv.org/abs/2601.23064)  
+**Code**: None  
 **Area**: Diffusion Models
 **Keywords**: Visual Geolocation, Hyperbolic Embeddings, Hierarchical Entities, Contrastive Learning, Retrieval
 

@@ -17,8 +17,8 @@ content_hash: a547fe73653cb1d9
 # Look-Ahead Reasoning on Learning Platforms
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.14745](https://arxiv.org/abs/2511.14745)
-**Code**: None
+**arXiv**: [2511.14745](https://arxiv.org/abs/2511.14745)  
+**Code**: None  
 **Area**: Other
 **Keywords**: level-k thinking, Stackelberg games, performative prediction, algorithmic collective action, strategic classification
 
@@ -54,21 +54,21 @@ The learning platform deploys model $\theta$ → users strategically modify thei
 
 1. **Level-$k$ Selfish Reasoning**
 
-   - **Function**: Models strategic thinking of varying depths — level-0 is non-strategic; level-1 corresponds to standard strategic classification (best response to a fixed model); level-$k$ assumes all others are level-$(k-1)$ and best-responds accordingly.
-   - **Core Result (Theorem 1)**: Regardless of the distribution of level-$k$ types in the population, retraining always converges to the **same** equilibrium $\theta^*$. Higher-order reasoning only accelerates convergence (the exponential rate improves from $(\epsilon\beta/\gamma)^1$ to $(\epsilon\beta/\gamma)^k$) without changing the long-run outcome.
-   - **Design Motivation**: Demonstrates that "smarter" individual reasoning is ultimately futile in the long run — the equilibrium is invariant, and the advantage of level-$k$ reasoning is limited to the transient phase. This carries important implications for platform designers.
+    - **Function**: Models strategic thinking of varying depths — level-0 is non-strategic; level-1 corresponds to standard strategic classification (best response to a fixed model); level-$k$ assumes all others are level-$(k-1)$ and best-responds accordingly.
+    - **Core Result (Theorem 1)**: Regardless of the distribution of level-$k$ types in the population, retraining always converges to the **same** equilibrium $\theta^*$. Higher-order reasoning only accelerates convergence (the exponential rate improves from $(\epsilon\beta/\gamma)^1$ to $(\epsilon\beta/\gamma)^k$) without changing the long-run outcome.
+    - **Design Motivation**: Demonstrates that "smarter" individual reasoning is ultimately futile in the long run — the equilibrium is invariant, and the advantage of level-$k$ reasoning is limited to the transient phase. This carries important implications for platform designers.
 
 2. **Collective Coordination**
 
-   - **Function**: A subset of users forms a collective (e.g., a union or consumer organization) and jointly optimizes to maximize collective utility by influencing the model.
-   - **Core Modeling**: The collective's strategy $h$ accounts for its implicit influence on the model via $\nabla_\theta \mathcal{A}$, with the objective $\max_h U(h) = \mathbb{E}[u(h(z), \theta^*)]$, where $\theta^*$ itself depends on $h$.
-   - **Key Result (Theorem 2)**: The coordination gain $B$ is bounded above by $B \leq (\langle \nabla_\theta u^*, \nabla_\theta \ell^* \rangle_{H^{-1}})^2$, which depends on the inner product between the user utility gradient and the learner loss gradient under the inverse Hessian metric.
-   - **Alignment Concept**: When $u \propto \ell$ (perfect alignment or anti-alignment), coordination yields zero gain; the gain is maximized when there is a partial overlap — for instance, when users care about predicted values, the learner cares about accuracy, and labels are modifiable.
+    - **Function**: A subset of users forms a collective (e.g., a union or consumer organization) and jointly optimizes to maximize collective utility by influencing the model.
+    - **Core Modeling**: The collective's strategy $h$ accounts for its implicit influence on the model via $\nabla_\theta \mathcal{A}$, with the objective $\max_h U(h) = \mathbb{E}[u(h(z), \theta^*)]$, where $\theta^*$ itself depends on $h$.
+    - **Key Result (Theorem 2)**: The coordination gain $B$ is bounded above by $B \leq (\langle \nabla_\theta u^*, \nabla_\theta \ell^* \rangle_{H^{-1}})^2$, which depends on the inner product between the user utility gradient and the learner loss gradient under the inverse Hessian metric.
+    - **Alignment Concept**: When $u \propto \ell$ (perfect alignment or anti-alignment), coordination yields zero gain; the gain is maximized when there is a partial overlap — for instance, when users care about predicted values, the learner cares about accuracy, and labels are modifiable.
 
 3. **Heterogeneous Population Analysis**
 
-   - **Function**: Analyzes dynamics when selfish users and collectives of varying sizes coexist.
-   - **Core Findings**: Larger collectives do not always yield higher individual utility, since coordinated changes to the data distribution affect other users and the model; broader collective participation nevertheless stabilizes the learning dynamics.
+    - **Function**: Analyzes dynamics when selfish users and collectives of varying sizes coexist.
+    - **Core Findings**: Larger collectives do not always yield higher individual utility, since coordinated changes to the data distribution affect other users and the model; broader collective participation nevertheless stabilizes the learning dynamics.
 
 ### Theoretical Tools
 - Performative Prediction framework (equilibrium definition and convergence conditions)

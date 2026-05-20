@@ -18,8 +18,8 @@ content_hash: ab8496401adfcc0d
 # Moral Change or Noise? On Problems of Aligning AI With Temporally Unstable Human Feedback
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10032](https://arxiv.org/abs/2511.10032)
-**Code**: None
+**arXiv**: [2511.10032](https://arxiv.org/abs/2511.10032)  
+**Code**: None  
 **Area**: Recommender Systems / AI Alignment
 **Keywords**: AI Alignment, Preference Instability, Moral Preferences, Temporal Dynamics, Kidney Allocation
 

@@ -18,8 +18,8 @@ content_hash: 59bd24bd550d7a42
 # SciTS: Scientific Time Series Understanding and Generation with LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03255](https://arxiv.org/abs/2510.03255)
-**Code**: [https://github.com/OpenTSLab/TimeOmni](https://github.com/OpenTSLab/TimeOmni)
+**arXiv**: [2510.03255](https://arxiv.org/abs/2510.03255)  
+**Code**: [https://github.com/OpenTSLab/TimeOmni](https://github.com/OpenTSLab/TimeOmni)  
 **Area**: Time Series
 **Keywords**: scientific time series, LLM, benchmark, unified multi-task model, patch expert
 

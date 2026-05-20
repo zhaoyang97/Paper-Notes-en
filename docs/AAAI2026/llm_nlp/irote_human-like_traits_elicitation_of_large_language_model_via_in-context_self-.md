@@ -18,8 +18,8 @@ content_hash: 415fe080e84d93fa
 # IROTE: Human-like Traits Elicitation of Large Language Model via In-Context Self-Reflective Optimization
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.08719](https://arxiv.org/abs/2508.08719)
-**Code**: Unavailable (only generated reflection texts are released)
+**arXiv**: [2508.08719](https://arxiv.org/abs/2508.08719)  
+**Code**: Unavailable (only generated reflection texts are released)  
 **Area**: LLM/NLP
 **Keywords**: LLM personality simulation, trait elicitation, information bottleneck, in-context learning, self-reflection
 

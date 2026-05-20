@@ -18,8 +18,8 @@ content_hash: 763d47dde60dd727
 # Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04490](https://arxiv.org/abs/2506.04490)
-**Code**: [GitHub](https://github.com/ml-struct-bio/cryoboltz)
+**arXiv**: [2506.04490](https://arxiv.org/abs/2506.04490)  
+**Code**: [GitHub](https://github.com/ml-struct-bio/cryoboltz)  
 **Area**: Medical Imaging
 **Keywords**: protein structure prediction, cryo-EM, diffusion model guidance, conformational diversity, Boltz-1
 

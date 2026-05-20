@@ -18,8 +18,8 @@ content_hash: d62d85e301266d84
 # Atomic Diffusion Models for Small Molecule Structure Elucidation from NMR Spectra
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.03127](https://arxiv.org/abs/2512.03127)
-**Code**: [GitHub](https://github.com/zhonge/ChefNMR)
+**arXiv**: [2512.03127](https://arxiv.org/abs/2512.03127)  
+**Code**: [GitHub](https://github.com/zhonge/ChefNMR)  
 **Area**: Medical Imaging
 **Keywords**: NMR spectroscopy, molecular structure elucidation, diffusion models, natural products, 3D molecule generation
 

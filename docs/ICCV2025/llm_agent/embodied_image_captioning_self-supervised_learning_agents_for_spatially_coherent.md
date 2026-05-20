@@ -18,8 +18,8 @@ content_hash: 3e5791ce43417b89
 # Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.08531](https://arxiv.org/abs/2504.08531)
-**Code**: [https://hsp-iit.github.io/embodied-captioning/](https://hsp-iit.github.io/embodied-captioning/)
+**arXiv**: [2504.08531](https://arxiv.org/abs/2504.08531)  
+**Code**: [https://hsp-iit.github.io/embodied-captioning/](https://hsp-iit.github.io/embodied-captioning/)  
 **Area**: LLM Agent / Embodied Intelligence
 **Keywords**: Embodied Perception, Image Captioning, Self-supervised Learning, Pseudo-labeling, Contrastive Learning
 

@@ -18,8 +18,8 @@ content_hash: 4134062ce81754d4
 # Prior-based Noisy Text Data Filtering: Fast and Strong Alternative for Perplexity
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.18577](https://arxiv.org/abs/2509.18577)
-**Code**: [GitHub](https://github.com/ybseo-ac/prior_filter)
+**arXiv**: [2509.18577](https://arxiv.org/abs/2509.18577)  
+**Code**: [GitHub](https://github.com/ybseo-ac/prior_filter)  
 **Area**: Multilingual Translation
 **Keywords**: Data Filtering, Pretraining, Perplexity, Token Frequency Prior, Data Quality
 

@@ -18,7 +18,7 @@ content_hash: cca3d26a8f5ba914
 # Sparsity Forcing: Reinforcing Token Sparsity of MLLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2504.18579](https://arxiv.org/abs/2504.18579)
+**arXiv**: [2504.18579](https://arxiv.org/abs/2504.18579)  
 **Area**: Multimodal VLM
 **Keywords**: token sparsity, RL post-training, GRPO, joint efficiency-performance reward, multi-budget exploration
 

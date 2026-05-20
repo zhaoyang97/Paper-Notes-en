@@ -17,8 +17,8 @@ content_hash: 5dcf6bf7f871fd9e
 # Flexible Concept Bottleneck Model
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06678](https://arxiv.org/abs/2511.06678)
-**Code**: [https://github.com/deepopo/FCBM](https://github.com/deepopo/FCBM)
+**arXiv**: [2511.06678](https://arxiv.org/abs/2511.06678)  
+**Code**: [https://github.com/deepopo/FCBM](https://github.com/deepopo/FCBM)  
 **Area**: Interpretability
 **Keywords**: Concept Bottleneck Model, Interpretability, Hypernetwork, Sparse Activation, VLM
 

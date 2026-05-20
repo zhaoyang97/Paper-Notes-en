@@ -18,8 +18,8 @@ content_hash: b61747f698ad5404
 # Fair Minimum Labeling: Efficient Temporal Network Activations for Reachability and Equity
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.03899](https://arxiv.org/abs/2510.03899)
-**Code**: [Available](https://gitlab.com/tgdesign/fml)
+**arXiv**: [2510.03899](https://arxiv.org/abs/2510.03899)  
+**Code**: [Available](https://gitlab.com/tgdesign/fml)  
 **Area**: AI Safety
 **Keywords**: Fairness, Temporal Graphs, Minimum Labeling, Reachability, Approximation Algorithms
 

@@ -18,8 +18,8 @@ content_hash: 822f620f7c045b98
 # Leveraging 2D Priors and SDF Guidance for Dynamic Urban Scene Rendering
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.13381](https://arxiv.org/abs/2510.13381)
-**Code**: [GitHub](https://dynamic-ugsdf.github.io/)
+**arXiv**: [2510.13381](https://arxiv.org/abs/2510.13381)  
+**Code**: [GitHub](https://dynamic-ugsdf.github.io/)  
 **Area**: Autonomous Driving
 **Keywords**: dynamic scene rendering, 3D Gaussian Splatting, SDF, 2D priors, novel view synthesis
 

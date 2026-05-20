@@ -18,8 +18,8 @@ content_hash: 603dd52e695e1873
 # PSM: Prompt Sensitivity Minimization via LLM-Guided Black-Box Optimization
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16209](https://arxiv.org/abs/2511.16209)
-**Code**: [github.com/psm-defense/psm](https://github.com/psm-defense/psm)
+**arXiv**: [2511.16209](https://arxiv.org/abs/2511.16209)  
+**Code**: [github.com/psm-defense/psm](https://github.com/psm-defense/psm)  
 **Area**: AI Security
 **Keywords**: System Prompt Security, Prompt Extraction Attack, Black-Box Optimization, LLM-as-Optimizer, Defense Shield
 

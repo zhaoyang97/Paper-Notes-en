@@ -18,8 +18,8 @@ content_hash: a22ea8314de97a8c
 # Learning from Interval Targets
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20925](https://arxiv.org/abs/2510.20925)
-**Code**: [bloomberg/interval_targets](https://github.com/bloomberg/interval_targets)
+**arXiv**: [2510.20925](https://arxiv.org/abs/2510.20925)  
+**Code**: [bloomberg/interval_targets](https://github.com/bloomberg/interval_targets)  
 **Area**: Optimization
 **Keywords**: interval regression, weak supervision, generalization bound, Lipschitz constraint, minmax learning
 

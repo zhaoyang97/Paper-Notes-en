@@ -18,8 +18,8 @@ content_hash: 2b993f1b061b4c31
 # Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00574](https://arxiv.org/abs/2603.00574)
-**Code**: [GitHub](https://github.com/he4cs/DASP)
+**arXiv**: [2603.00574](https://arxiv.org/abs/2603.00574)  
+**Code**: [GitHub](https://github.com/he4cs/DASP)  
 **Area**: Multimodal VLM
 **Keywords**: Multi-modal test-time adaptation, stability-plasticity decoupling, redundancy score, asymmetric adaptation, catastrophic forgetting
 

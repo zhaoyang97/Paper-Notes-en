@@ -18,8 +18,8 @@ content_hash: 25ac56e744e815c7
 # SparseCoop: Cooperative Perception with Kinematic-Grounded Queries
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.06838](https://arxiv.org/abs/2512.06838)
-**Code**: [github.com/wang-jh18-SVM/SparseCoop](https://github.com/wang-jh18-SVM/SparseCoop)
+**arXiv**: [2512.06838](https://arxiv.org/abs/2512.06838)  
+**Code**: [github.com/wang-jh18-SVM/SparseCoop](https://github.com/wang-jh18-SVM/SparseCoop)  
 **Area**: Autonomous Driving
 **Keywords**: Cooperative Perception, Sparse Query, 3D Object Detection & Tracking, V2X Communication, Vehicle-Road Cooperation
 

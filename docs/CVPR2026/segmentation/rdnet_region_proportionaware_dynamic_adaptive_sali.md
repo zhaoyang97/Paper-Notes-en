@@ -18,8 +18,8 @@ content_hash: 3a00324bfa4a2006
 # RDNet: Region Proportion-Aware Dynamic Adaptive Salient Object Detection Network in Optical Remote Sensing Images
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12215](https://arxiv.org/abs/2603.12215)
-**Code**: None
+**arXiv**: [2603.12215](https://arxiv.org/abs/2603.12215)  
+**Code**: None  
 **Area**: Image Segmentation
 **Keywords**: Salient Object Detection, Remote Sensing Images, Dynamic Convolutional Kernel Selection, Wavelet Transform, Region Proportion Awareness
 
@@ -55,22 +55,22 @@ Given an input of $4 \times 3 \times 384 \times 384$, a Swin Transformer backbon
 
 1. **RPL (Region Proportion-aware Localization Module)**
 
-   - **Function**: Localizes salient objects and estimates their area proportion using high-level semantic features.
-   - **Mechanism**: Applies alternating channel attention (GAP → two 1×1 Conv layers → Sigmoid) and spatial attention (Max Pooling → Sigmoid) on $F_4$ and $F_5$, then concatenates and applies a 3×3 convolution to obtain localization features.
-   - **PG (Proportion Guidance) block**: Applies GAP followed by two fully connected layers on $F_5$ to output a per-sample object region proportion, supervised by ground-truth proportion via MSE loss.
-   - **Design Motivation**: Knowing "how large the object is" in advance enables the subsequent DAD module to select appropriate convolutional kernels.
+    - **Function**: Localizes salient objects and estimates their area proportion using high-level semantic features.
+    - **Mechanism**: Applies alternating channel attention (GAP → two 1×1 Conv layers → Sigmoid) and spatial attention (Max Pooling → Sigmoid) on $F_4$ and $F_5$, then concatenates and applies a 3×3 convolution to obtain localization features.
+    - **PG (Proportion Guidance) block**: Applies GAP followed by two fully connected layers on $F_5$ to output a per-sample object region proportion, supervised by ground-truth proportion via MSE loss.
+    - **Design Motivation**: Knowing "how large the object is" in advance enables the subsequent DAD module to select appropriate convolutional kernels.
 
 2. **DAD (Dynamic Adaptive Detail-perception Module)**
 
-   - **Function**: Dynamically selects the number and size of convolutional kernels for object detail extraction based on the region proportion output by PG.
-   - **Mechanism**: The region proportion is discretized into three ranges — $<25\%$ uses 3 kernel types ($1\times1$, $3\times3$, $5\times5$); $25\%$–$50\%$ uses 4 types (adding $7\times7$); $>50\%$ uses 5 types (adding $9\times9$). A dual-branch design is adopted: the lower branch performs detail extraction via summation of multi-scale convolutions, and the upper branch applies spatial attention weighting to suppress noise.
-   - **Design Motivation**: Small objects do not require large receptive fields (which introduce background noise), while large objects require large receptive fields to capture complete regions — proportion-guided selection breaks the one-size-fits-all paradigm.
+    - **Function**: Dynamically selects the number and size of convolutional kernels for object detail extraction based on the region proportion output by PG.
+    - **Mechanism**: The region proportion is discretized into three ranges — $<25\%$ uses 3 kernel types ($1\times1$, $3\times3$, $5\times5$); $25\%$–$50\%$ uses 4 types (adding $7\times7$); $>50\%$ uses 5 types (adding $9\times9$). A dual-branch design is adopted: the lower branch performs detail extraction via summation of multi-scale convolutions, and the upper branch applies spatial attention weighting to suppress noise.
+    - **Design Motivation**: Small objects do not require large receptive fields (which introduce background noise), while large objects require large receptive fields to capture complete regions — proportion-guided selection breaks the one-size-fits-all paradigm.
 
 3. **FCE (Frequency-matched Context Enhancement Module)**
 
-   - **Function**: Performs efficient cross-layer interaction among mid-level features, avoiding the high computational cost of full-resolution self-attention and the interference caused by mixing high- and low-frequency information.
-   - **Mechanism**: DWT decomposes features into four frequency sub-bands (LL/LH/HL/HH) → attention-based interaction is performed between corresponding sub-bands → IDWT reconstructs the features → concatenated with original features → channel and spatial attention further suppress noise.
-   - **Design Motivation**: Performing interaction in the frequency domain halves the spatial resolution in each dimension, reducing computation to 1/4 of full-resolution attention while preventing high- and low-frequency information from interfering with each other.
+    - **Function**: Performs efficient cross-layer interaction among mid-level features, avoiding the high computational cost of full-resolution self-attention and the interference caused by mixing high- and low-frequency information.
+    - **Mechanism**: DWT decomposes features into four frequency sub-bands (LL/LH/HL/HH) → attention-based interaction is performed between corresponding sub-bands → IDWT reconstructs the features → concatenated with original features → channel and spatial attention further suppress noise.
+    - **Design Motivation**: Performing interaction in the frequency domain halves the spatial resolution in each dimension, reducing computation to 1/4 of full-resolution attention while preventing high- and low-frequency information from interfering with each other.
 
 ### Loss & Training
 

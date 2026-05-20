@@ -18,8 +18,8 @@ content_hash: a61b406d431c5f04
 # Free-Lunch Long Video Generation via Layer-Adaptive O.O.D Correction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25209](https://arxiv.org/abs/2603.25209)
-**Code**: [https://github.com/Westlake-AGI-Lab/FreeLOC](https://github.com/Westlake-AGI-Lab/FreeLOC)
+**arXiv**: [2603.25209](https://arxiv.org/abs/2603.25209)  
+**Code**: [https://github.com/Westlake-AGI-Lab/FreeLOC](https://github.com/Westlake-AGI-Lab/FreeLOC)  
 **Area**: Video Generation / Diffusion Models
 **Keywords**: Long video generation, training-free, positional encoding extrapolation, sparse attention, layer-adaptive
 

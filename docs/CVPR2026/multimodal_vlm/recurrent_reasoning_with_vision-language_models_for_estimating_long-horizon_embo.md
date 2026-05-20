@@ -18,8 +18,8 @@ content_hash: 7b25653e9863f7a0
 # Recurrent Reasoning with Vision-Language Models for Estimating Long-Horizon Embodied Task Progress
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17312](https://arxiv.org/abs/2603.17312)
-**Code**: [HuggingFace](https://huggingface.co/)
+**arXiv**: [2603.17312](https://arxiv.org/abs/2603.17312)  
+**Code**: [HuggingFace](https://huggingface.co/)  
 **Area**: Multimodal VLM
 **Keywords**: task progress estimation, embodied intelligence, recurrent reasoning, Chain-of-Thought, reinforcement learning
 

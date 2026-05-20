@@ -18,8 +18,8 @@ content_hash: 3fba19a0a8cb1524
 # Is Your Paper Being Reviewed by an LLM? Benchmarking AI Text Detection in Peer Review
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.19614](https://arxiv.org/abs/2502.19614)
-**Code**: [IntelLabs/AI-Peer-Review-Detection-Benchmark](https://huggingface.co/datasets/IntelLabs/AI-Peer-Review-Detection-Benchmark)
+**arXiv**: [2502.19614](https://arxiv.org/abs/2502.19614)  
+**Code**: [IntelLabs/AI-Peer-Review-Detection-Benchmark](https://huggingface.co/datasets/IntelLabs/AI-Peer-Review-Detection-Benchmark)  
 **Area**: AIGC Detection
 **Keywords**: AI text detection, peer review, LLM-generated text, benchmark, scientific integrity
 

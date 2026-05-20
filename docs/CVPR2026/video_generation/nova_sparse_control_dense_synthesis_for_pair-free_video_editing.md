@@ -18,8 +18,8 @@ content_hash: 385f9cf903969686
 # NOVA: Sparse Control, Dense Synthesis for Pair-Free Video Editing
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02802](https://arxiv.org/abs/2603.02802)
-**Code**: [https://github.com/WeChatCV/NovaEdit](https://github.com/WeChatCV/NovaEdit)
+**arXiv**: [2603.02802](https://arxiv.org/abs/2603.02802)  
+**Code**: [https://github.com/WeChatCV/NovaEdit](https://github.com/WeChatCV/NovaEdit)  
 **Area**: Image Generation / Video Editing
 **Keywords**: pair-free video editing, dual-branch architecture, sparse control, degradation simulation training, multi-keyframe
 

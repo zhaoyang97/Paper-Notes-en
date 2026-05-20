@@ -18,8 +18,8 @@ content_hash: bfba2e20fef445ee
 # A Paradigm Shift: Fully End-to-End Training for Temporal Sentence Grounding in Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02860](https://arxiv.org/abs/2604.02860)
-**Code**: Coming soon
+**arXiv**: [2604.02860](https://arxiv.org/abs/2604.02860)  
+**Code**: Coming soon  
 **Area**: Model Compression
 **Keywords**: Temporal sentence grounding, end-to-end training, sentence-conditioned adapter, vision-language alignment, TSGV
 

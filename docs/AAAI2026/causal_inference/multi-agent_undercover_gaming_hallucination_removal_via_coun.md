@@ -18,8 +18,8 @@ content_hash: caf57ec59b41331d
 # MUG: Multi-agent Undercover Gaming — Hallucination Removal via Counterfactual Test for Multimodal Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11182](https://arxiv.org/abs/2511.11182)
-**Code**: [https://github.com/YongLD/MUG.git](https://github.com/YongLD/MUG.git)
+**arXiv**: [2511.11182](https://arxiv.org/abs/2511.11182)  
+**Code**: [https://github.com/YongLD/MUG.git](https://github.com/YongLD/MUG.git)  
 **Area**: Causal Reasoning
 **Keywords**: Multi-Agent Gaming, Counterfactual Testing, Hallucination Detection, Undercover Game, Active Reasoning
 

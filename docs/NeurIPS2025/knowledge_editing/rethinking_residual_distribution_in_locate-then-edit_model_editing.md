@@ -17,8 +17,8 @@ content_hash: 76078f0123fe7638
 # Rethinking Residual Distribution in Locate-then-Edit Model Editing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.03748](https://arxiv.org/abs/2502.03748)
-**Code**: [GitHub](https://github.com/xpq-tech/BLUE)
+**arXiv**: [2502.03748](https://arxiv.org/abs/2502.03748)  
+**Code**: [GitHub](https://github.com/xpq-tech/BLUE)  
 **Area**: Knowledge Editing
 **Keywords**: model editing, locate-then-edit, residual distribution, knowledge editing, MEMIT
 

@@ -18,8 +18,8 @@ content_hash: 99457cad8c3bb4a2
 # Urban Incident Prediction with Graph Neural Networks: Integrating Government Ratings and Crowdsourced Reports
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.08740](https://arxiv.org/abs/2506.08740)
-**Code**: [GitHub](https://github.com/sidhikabalachandar/nyc_urban_incident_model)
+**arXiv**: [2506.08740](https://arxiv.org/abs/2506.08740)  
+**Code**: [GitHub](https://github.com/sidhikabalachandar/nyc_urban_incident_model)  
 **Area**: Time Series / Graph Neural Networks
 **Keywords**: Urban incident prediction, GNN, crowdsourced data bias, multi-view learning, latent state estimation
 

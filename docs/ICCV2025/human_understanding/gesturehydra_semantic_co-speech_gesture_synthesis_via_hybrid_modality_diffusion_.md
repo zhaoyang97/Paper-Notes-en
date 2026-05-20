@@ -18,8 +18,8 @@ content_hash: 4239ba57633d8d0d
 # GestureHYDRA: Semantic Co-speech Gesture Synthesis via Hybrid Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22731](https://arxiv.org/abs/2507.22731)
-**Code**: [Project Page](https://mumuwei.github.io/GestureHYDRA/)
+**arXiv**: [2507.22731](https://arxiv.org/abs/2507.22731)  
+**Code**: [Project Page](https://mumuwei.github.io/GestureHYDRA/)  
 **Area**: Human Understanding
 **Keywords**: Co-speech gesture generation, diffusion model, Transformer, retrieval-augmented generation, semantic gesture
 

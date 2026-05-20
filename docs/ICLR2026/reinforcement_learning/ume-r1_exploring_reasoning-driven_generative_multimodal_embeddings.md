@@ -18,8 +18,8 @@ content_hash: f17be8ec0a4ab6ae
 # UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.00405](https://arxiv.org/abs/2511.00405)
-**Code**: [GitHub](https://github.com/XMUDeepLIT/UME-R1)
+**arXiv**: [2511.00405](https://arxiv.org/abs/2511.00405)  
+**Code**: [GitHub](https://github.com/XMUDeepLIT/UME-R1)  
 **Area**: Reinforcement Learning
 **Keywords**: multimodal embeddings, reasoning-driven generation, reinforcement-learning, MLLM, inference-time scaling
 

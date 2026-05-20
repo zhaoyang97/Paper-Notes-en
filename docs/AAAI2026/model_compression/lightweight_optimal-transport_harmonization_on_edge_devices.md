@@ -18,8 +18,8 @@ content_hash: daa1fb83c0a3277d
 # Lightweight Optimal-Transport Harmonization on Edge Devices
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12785](https://arxiv.org/abs/2511.12785)
-**Code**: [github](https://github.com/maria-larchenko/mkl-harmonizer)
+**arXiv**: [2511.12785](https://arxiv.org/abs/2511.12785)  
+**Code**: [github](https://github.com/maria-larchenko/mkl-harmonizer)  
 **Area**: Model Compression
 **Keywords**: Color Harmonization, Optimal Transport, Edge Devices, Augmented Reality, Lightweight Inference
 

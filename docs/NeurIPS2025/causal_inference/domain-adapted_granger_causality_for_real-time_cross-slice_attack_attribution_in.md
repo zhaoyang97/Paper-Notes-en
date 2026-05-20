@@ -18,8 +18,8 @@ content_hash: 2fd9113be0a60e47
 # Domain-Adapted Granger Causality for Real-Time Cross-Slice Attack Attribution in 6G Networks
 
 **Conference**: NEURIPS2025
-**arXiv**: [2510.05165](https://arxiv.org/abs/2510.05165)
-**Code**: To be confirmed (authors declare Apache 2.0 open-source release)
+**arXiv**: [2510.05165](https://arxiv.org/abs/2510.05165)  
+**Code**: To be confirmed (authors declare Apache 2.0 open-source release)  
 **Area**: Causal Inference
 **Keywords**: Granger causality, 6G network slicing, cross-slice attack attribution, resource contention, real-time security
 

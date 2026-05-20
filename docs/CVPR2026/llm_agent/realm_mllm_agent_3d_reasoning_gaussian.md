@@ -18,8 +18,8 @@ content_hash: ecd75a8d41f4d379
 # REALM: An MLLM-Agent Framework for Open World 3D Reasoning Segmentation and Editing on Gaussian Splatting
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.16410](https://arxiv.org/abs/2510.16410)
-**Code**: [https://ChangyueShi.github.io/REALM](https://ChangyueShi.github.io/REALM)
+**arXiv**: [2510.16410](https://arxiv.org/abs/2510.16410)  
+**Code**: [https://ChangyueShi.github.io/REALM](https://ChangyueShi.github.io/REALM)  
 **Area**: LLM Agent / 3D Vision
 **Keywords**: 3D Reasoning Segmentation, MLLM-Agent, 3D Gaussian Splatting, Global-to-Local Spatial Grounding, 3D Scene Editing
 

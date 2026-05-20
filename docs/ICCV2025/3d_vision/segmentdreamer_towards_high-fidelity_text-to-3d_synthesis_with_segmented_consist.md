@@ -18,8 +18,8 @@ content_hash: 5b527400dd4a2c85
 # SegmentDreamer: Towards High-Fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.05256](https://arxiv.org/abs/2507.05256)
-**Code**: [https://zjhJOJO.github.io/segmentdreamer](https://zjhJOJO.github.io/segmentdreamer)
+**arXiv**: [2507.05256](https://arxiv.org/abs/2507.05256)  
+**Code**: [https://zjhJOJO.github.io/segmentdreamer](https://zjhJOJO.github.io/segmentdreamer)  
 **Area**: 3D Vision
 **Keywords**: Text-to-3D Generation, Consistency Distillation, Score Distillation, 3D Gaussian Splatting, Diffusion Models
 

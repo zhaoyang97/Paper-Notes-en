@@ -18,8 +18,8 @@ content_hash: 96cabc5d998fdff5
 # AVerImaTeC: A Dataset for Automatic Verification of Image-Text Claims with Evidence from the Web
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17978](https://arxiv.org/abs/2505.17978)
-**Code**: [https://github.com/abril4416/AVerImaTeC](https://github.com/abril4416/AVerImaTeC)
+**arXiv**: [2505.17978](https://arxiv.org/abs/2505.17978)  
+**Code**: [https://github.com/abril4416/AVerImaTeC](https://github.com/abril4416/AVerImaTeC)  
 **Area**: Fact-Checking / Multimodal
 **Keywords**: image-text verification, evidence retrieval, QA reasoning, multimodal verification, dataset
 

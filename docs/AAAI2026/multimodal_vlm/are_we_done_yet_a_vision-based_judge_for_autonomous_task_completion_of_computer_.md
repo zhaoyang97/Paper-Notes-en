@@ -17,8 +17,8 @@ content_hash: 562a44f62833eca4
 # "Are We Done Yet?": A Vision-Based Judge for Autonomous Task Completion of Computer Use Agents
 
 **Conference**: AAAI2026
-**arXiv**: [2511.20067](https://arxiv.org/abs/2511.20067)
-**Code**: [martasumyk/vision-based-judge](https://github.com/martasumyk/vision-based-judge)
+**arXiv**: [2511.20067](https://arxiv.org/abs/2511.20067)  
+**Code**: [martasumyk/vision-based-judge](https://github.com/martasumyk/vision-based-judge)  
 **Area**: Multimodal VLM
 **Keywords**: Computer Use Agent, Task Completion Evaluation, Vision-Language Model, Autonomous Feedback
 
@@ -62,8 +62,8 @@ A three-stage evaluation-feedback pipeline is proposed:
 
 - **Evaluated CUAs**: Claude Computer Use, OpenAI Operator, UI-TARS (open-source).
 - **Evaluator VLMs**:
-  - Closed-source: GPT-4o, Claude 3.5 Sonnet
-  - Open-source: LLaVA-v1.5-7B, InternVL 2-8B, Qwen2-VL-7B
+    - Closed-source: GPT-4o, Claude 3.5 Sonnet
+    - Open-source: LLaVA-v1.5-7B, InternVL 2-8B, Qwen2-VL-7B
 
 ### Evaluation Protocol
 

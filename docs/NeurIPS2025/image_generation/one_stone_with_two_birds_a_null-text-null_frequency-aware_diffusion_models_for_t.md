@@ -18,8 +18,8 @@ content_hash: f572c84fb04b6245
 # One Stone with Two Birds: A Null-Text-Null Frequency-Aware Diffusion Models for Text-Guided Image Inpainting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08273](https://arxiv.org/abs/2510.08273)
-**Code**: [GitHub](https://github.com/htyjers/NTN-Diff)
+**arXiv**: [2510.08273](https://arxiv.org/abs/2510.08273)  
+**Code**: [GitHub](https://github.com/htyjers/NTN-Diff)  
 **Area**: Diffusion Models / Image Inpainting
 **Keywords**: Text-guided image inpainting, frequency-aware, null-text denoising, diffusion models, semantic consistency
 

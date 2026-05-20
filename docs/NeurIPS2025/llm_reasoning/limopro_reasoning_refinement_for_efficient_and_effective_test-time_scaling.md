@@ -19,8 +19,8 @@ content_hash: 5843fb3192eb594f
 # LIMOPro: Reasoning Refinement for Efficient and Effective Test-time Scaling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19187](https://arxiv.org/abs/2505.19187)
-**Code**: [LIMOPro](https://github.com/) (mentioned in the paper)
+**arXiv**: [2505.19187](https://arxiv.org/abs/2505.19187)  
+**Code**: [LIMOPro](https://github.com/) (mentioned in the paper)  
 **Area**: LLM Reasoning / Efficient Inference
 **Keywords**: reasoning refinement, chain-of-thought, perplexity-based pruning, test-time scaling, efficient reasoning, PIR
 

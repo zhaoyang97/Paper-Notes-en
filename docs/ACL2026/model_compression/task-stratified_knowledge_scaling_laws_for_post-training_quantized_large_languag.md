@@ -18,8 +18,8 @@ content_hash: 7bf549d7bc2dea26
 # Task-Stratified Knowledge Scaling Laws for Post-Training Quantized LLMs
 
 **Conference**: ACL 2026
-**arXiv**: [2508.18609](https://arxiv.org/abs/2508.18609)
-**Code**: None
+**arXiv**: [2508.18609](https://arxiv.org/abs/2508.18609)  
+**Code**: None  
 **Area**: Model Compression / Quantization
 **Keywords**: Post-training quantization, scaling laws, knowledge stratification, memorization-application-reasoning, fine-grained quantization factors
 

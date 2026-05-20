@@ -18,8 +18,8 @@ content_hash: 7af77a65a96c5828
 # CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2505.17006](https://arxiv.org/abs/2505.17006)
-**Code**: [github.com/MCG-NJU/CoMo](https://github.com/MCG-NJU/CoMo)
+**arXiv**: [2505.17006](https://arxiv.org/abs/2505.17006)  
+**Code**: [github.com/MCG-NJU/CoMo](https://github.com/MCG-NJU/CoMo)  
 **Area**: Robot Learning
 **Keywords**: continuous latent motion, pseudo-action labels, inverse dynamics model, temporal contrastive learning, video-robot joint training
 

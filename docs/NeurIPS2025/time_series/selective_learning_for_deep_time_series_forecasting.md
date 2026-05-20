@@ -18,8 +18,8 @@ content_hash: 7bf123c503361332
 # Selective Learning for Deep Time Series Forecasting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25207](https://arxiv.org/abs/2510.25207)
-**Code**: Unavailable
+**arXiv**: [2510.25207](https://arxiv.org/abs/2510.25207)  
+**Code**: Unavailable  
 **Area**: Time Series Forecasting
 **Keywords**: time series forecasting, selective learning, overfitting, uncertainty, anomaly detection
 

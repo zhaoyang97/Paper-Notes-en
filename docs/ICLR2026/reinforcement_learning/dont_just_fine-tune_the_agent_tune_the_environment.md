@@ -17,8 +17,8 @@ content_hash: 77c5ffcd4cc3392e
 # Don't Just Fine-tune the Agent, Tune the Environment
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.10197](https://arxiv.org/abs/2510.10197)
-**Code**: [https://github.com/inclusionAI/AWorld-RL/tree/main/EnvTuning](https://github.com/inclusionAI/AWorld-RL/tree/main/EnvTuning)
+**arXiv**: [2510.10197](https://arxiv.org/abs/2510.10197)  
+**Code**: [https://github.com/inclusionAI/AWorld-RL/tree/main/EnvTuning](https://github.com/inclusionAI/AWorld-RL/tree/main/EnvTuning)  
 **Area**: Reinforcement Learning / LLM Agent
 **Keywords**: Environment Tuning, LLM Agent, Multi-turn Tool Use, Curriculum Learning, Reinforcement Learning
 

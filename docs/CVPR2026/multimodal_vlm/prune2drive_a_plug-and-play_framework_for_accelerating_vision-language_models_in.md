@@ -18,8 +18,8 @@ content_hash: eabf051ba0b6d78c
 # Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.13305](https://arxiv.org/abs/2508.13305)
-**Code**: [https://github.com/MinhaoXiong/Prune2Drive](https://github.com/MinhaoXiong/Prune2Drive)
+**arXiv**: [2508.13305](https://arxiv.org/abs/2508.13305)  
+**Code**: [https://github.com/MinhaoXiong/Prune2Drive](https://github.com/MinhaoXiong/Prune2Drive)  
 **Area**: Multimodal VLM
 **Keywords**: Multi-view VLM, Visual Token Pruning, Farthest Point Sampling, View-Adaptive Pruning, Autonomous Driving Acceleration
 

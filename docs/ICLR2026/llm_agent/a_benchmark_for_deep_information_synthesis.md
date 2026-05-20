@@ -18,8 +18,8 @@ content_hash: 015728550e7d525e
 # A Benchmark for Deep Information Synthesis (DeepSynth)
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.21143](https://arxiv.org/abs/2602.21143)
-**Code**: Available (public data and code)
+**arXiv**: [2602.21143](https://arxiv.org/abs/2602.21143)  
+**Code**: Available (public data and code)  
 **Area**: Agent
 **Keywords**: benchmark, information synthesis, deep research, multi-source reasoning, agent evaluation
 

@@ -18,8 +18,8 @@ content_hash: a91d50be0c87dd72
 # REPA-E: Unlocking VAE for End-to-End Tuning with Latent Diffusion Transformers
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.10483](https://arxiv.org/abs/2504.10483)
-**Code**: [https://end2end-diffusion.github.io](https://end2end-diffusion.github.io)
+**arXiv**: [2504.10483](https://arxiv.org/abs/2504.10483)  
+**Code**: [https://end2end-diffusion.github.io](https://end2end-diffusion.github.io)  
 **Area**: Image Generation
 **Keywords**: End-to-end training, VAE, latent diffusion models, representation alignment, training acceleration
 

@@ -18,8 +18,8 @@ content_hash: 98e696929d740e0b
 # Mind-the-Glitch: Visual Correspondence for Detecting Inconsistencies in Subject-Driven Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.21989](https://arxiv.org/abs/2509.21989)
-**Code**: [GitHub](https://github.com/abdo-eldesokey/mind-the-glitch)
+**arXiv**: [2509.21989](https://arxiv.org/abs/2509.21989)  
+**Code**: [GitHub](https://github.com/abdo-eldesokey/mind-the-glitch)  
 **Area**: Image Generation / Visual Correspondence
 **Keywords**: subject-driven generation, visual correspondence, diffusion features, metric, inconsistency detection
 

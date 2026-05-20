@@ -17,8 +17,8 @@ content_hash: 852bb633e9638b43
 # A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.08065](https://arxiv.org/abs/2601.08065)
-**Code**: None
+**arXiv**: [2601.08065](https://arxiv.org/abs/2601.08065)  
+**Code**: None  
 **Area**: Formal Verification / Safety-Critical Systems
 **Keywords**: neural feedback systems, reach-avoid verification, backward reachability, forward reachability, safety verification
 

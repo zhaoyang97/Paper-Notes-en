@@ -18,8 +18,8 @@ content_hash: 94c51a91cc777cd1
 # PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05888](https://arxiv.org/abs/2603.05888)
-**Code**: [Project Page](https://mlpc-ucsd.github.io/PixARMesh)
+**arXiv**: [2603.05888](https://arxiv.org/abs/2603.05888)  
+**Code**: [Project Page](https://mlpc-ucsd.github.io/PixARMesh)  
 **Area**: 3D Vision
 **Keywords**: Single-view scene reconstruction, autoregressive mesh generation, native mesh, artist-ready, compositional 3D
 
@@ -51,22 +51,22 @@ Input RGB image → depth estimation + instance segmentation + image feature ext
 
 1. **Pixel-Aligned Point Cloud Encoder**
 
-   - **Function**: Fuse image appearance features into the point cloud encoder.
-   - **Mechanism**: For each 3D point $p$ in the instance point cloud $P_i$, project it onto the image plane via camera intrinsics $(u,v) = \text{Proj}(K, p)$, extract the DINOv2 feature $\mathbf{f}_p^{\text{img}}$ at the corresponding pixel, and concatenate it with the geometric feature $\mathbf{f}_p^{\text{pc}}$ before feeding into a Transformer fusion block. Learnable query vectors aggregate the fused features into a compact latent code $\mathbf{z}_i$.
-   - **Design Motivation**: The original EdgeRunner/BPT point cloud encoders process only coordinates, ignoring rich appearance cues from images. In single-view scenes where objects are heavily occluded, appearance features are essential for inferring complete geometry.
+    - **Function**: Fuse image appearance features into the point cloud encoder.
+    - **Mechanism**: For each 3D point $p$ in the instance point cloud $P_i$, project it onto the image plane via camera intrinsics $(u,v) = \text{Proj}(K, p)$, extract the DINOv2 feature $\mathbf{f}_p^{\text{img}}$ at the corresponding pixel, and concatenate it with the geometric feature $\mathbf{f}_p^{\text{pc}}$ before feeding into a Transformer fusion block. Learnable query vectors aggregate the fused features into a compact latent code $\mathbf{z}_i$.
+    - **Design Motivation**: The original EdgeRunner/BPT point cloud encoders process only coordinates, ignoring rich appearance cues from images. In single-view scenes where objects are heavily occluded, appearance features are essential for inferring complete geometry.
 
 2. **Scene Context Aggregation**
 
-   - **Function**: Inject global scene context into each object's representation.
-   - **Mechanism**: All point clouds are first normalized in a unified scene coordinate system (rather than independently per object) to preserve spatial consistency. A global scene point cloud is encoded to produce $\mathbf{z}_{\text{scene}}$, and each object latent code aggregates scene information via cross-attention: $\mathbf{z}_i^{\text{agg}} = \text{CrossAttn}(q=\mathbf{z}_i, k=\mathbf{z}_{\text{scene}}, v=\mathbf{z}_{\text{scene}})$.
-   - **Design Motivation**: Local point cloud information from individual objects is insufficient for inferring complete geometry and precise poses. Contextual cues from nearby similar objects provide complementary information, especially under heavy occlusion.
+    - **Function**: Inject global scene context into each object's representation.
+    - **Mechanism**: All point clouds are first normalized in a unified scene coordinate system (rather than independently per object) to preserve spatial consistency. A global scene point cloud is encoded to produce $\mathbf{z}_{\text{scene}}$, and each object latent code aggregates scene information via cross-attention: $\mathbf{z}_i^{\text{agg}} = \text{CrossAttn}(q=\mathbf{z}_i, k=\mathbf{z}_{\text{scene}}, v=\mathbf{z}_{\text{scene}})$.
+    - **Design Motivation**: Local point cloud information from individual objects is insufficient for inferring complete geometry and precise poses. Contextual cues from nearby similar objects provide complementary information, especially under heavy occlusion.
 
 3. **Unified Pose–Mesh Tokenization**
 
-   - **Function**: Encode both object poses and meshes into a unified token sequence using the same vocabulary.
-   - **Mechanism**: Poses are represented as gravity-aligned 7-DoF bounding boxes, encoded as the 3D coordinates of 8 corner points. The mesh generator's coordinate vocabulary is reused (EdgeRunner: 3 tokens per point `<x><y><z>`, 24 tokens total; BPT: 2 tokens per point `<block_id><offset_id>`, 16 tokens total). At inference, the local-to-global affine transformation $\mathbf{T}^\star$ is recovered from the 8 corner points to map the canonical-space mesh back to scene coordinates.
-   - **Final sequence format**: `<bos> [pose_seq] <sep> [mesh_seq] <eos>`
-   - **Design Motivation**: Avoids introducing new vocabulary types, enabling full vocabulary sharing. Pose sequences add only 16–24 tokens, negligible compared to the mesh sequence.
+    - **Function**: Encode both object poses and meshes into a unified token sequence using the same vocabulary.
+    - **Mechanism**: Poses are represented as gravity-aligned 7-DoF bounding boxes, encoded as the 3D coordinates of 8 corner points. The mesh generator's coordinate vocabulary is reused (EdgeRunner: 3 tokens per point `<x><y><z>`, 24 tokens total; BPT: 2 tokens per point `<block_id><offset_id>`, 16 tokens total). At inference, the local-to-global affine transformation $\mathbf{T}^\star$ is recovered from the 8 corner points to map the canonical-space mesh back to scene coordinates.
+    - **Final sequence format**: `<bos> [pose_seq] <sep> [mesh_seq] <eos>`
+    - **Design Motivation**: Avoids introducing new vocabulary types, enabling full vocabulary sharing. Pose sequences add only 16–24 tokens, negligible compared to the mesh sequence.
 
 ### Loss & Training
 - A single next-token prediction cross-entropy loss: $\mathcal{L}_{\text{ce}} = -\sum_t \log p_\theta(s_t | s_{<t}, \mathbf{z}_{\text{agg}})$

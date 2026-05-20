@@ -18,8 +18,8 @@ content_hash: d05d92b27969e64d
 # Open-Insect: Benchmarking Open-Set Recognition of Novel Species in Biodiversity Monitoring
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.01691](https://arxiv.org/abs/2503.01691)
-**Code**: [GitHub](https://github.com/RolnickLab/Open-Insect)
+**arXiv**: [2503.01691](https://arxiv.org/abs/2503.01691)  
+**Code**: [GitHub](https://github.com/RolnickLab/Open-Insect)  
 **Area**: Open-Set Recognition · Biodiversity
 **Keywords**: open-set recognition, fine-grained classification, insect species discovery, OOD detection, biodiversity monitoring
 

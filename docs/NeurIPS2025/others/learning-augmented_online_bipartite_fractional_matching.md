@@ -17,8 +17,8 @@ content_hash: 03f60a5acc7e477a
 # Learning-Augmented Online Bipartite Fractional Matching
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19252](https://arxiv.org/abs/2505.19252)
-**Code**: None
+**arXiv**: [2505.19252](https://arxiv.org/abs/2505.19252)  
+**Code**: None  
 **Area**: Other
 **Keywords**: online bipartite matching, learning-augmented algorithms, competitive ratio, robustness-consistency trade-off, fractional matching
 
@@ -52,15 +52,15 @@ Both algorithms are governed by a trade-off parameter $\lambda \in [0,1]$ contro
 
 2. **Robustness-Consistency Guarantee of LAB**: Via primal-dual analysis, the performance guarantees of LAB are established as:
 
-   - Robustness: $r(\lambda) = 1 - e^{\lambda-1} - (e^{\lambda-1} - \lambda)\ln(1-\lambda e^{1-\lambda}) - \lambda(1-\lambda)$
-   - Consistency: $c(\lambda) = 1 + \lambda - e^{\lambda-1}$
+    - Robustness: $r(\lambda) = 1 - e^{\lambda-1} - (e^{\lambda-1} - \lambda)\ln(1-\lambda e^{1-\lambda}) - \lambda(1-\lambda)$
+    - Consistency: $c(\lambda) = 1 + \lambda - e^{\lambda-1}$
 
    At $\lambda=0$: $r = 1-1/e$ (classical Balance guarantee), $c = 1-1/e$; at $\lambda=1$: $r = 0$, $c = 1$.
 
 3. **PushAndWaterfill (PAW)**: To address the setting where LAB cannot surpass CoinFlip in the unweighted case (since any maximal matching is automatically $1/2$-robust), PAW first pushes the fractional value along advice edges up to the threshold $\lambda$ at each iteration before performing Waterfilling. Its guarantees are:
 
-   - Robustness: $r(\lambda) = 1 - (1-\lambda+\lambda^2/2)e^{\lambda-1}$
-   - Consistency: $c(\lambda) = 1 - (1-\lambda)e^{\lambda-1}$
+    - Robustness: $r(\lambda) = 1 - (1-\lambda+\lambda^2/2)e^{\lambda-1}$
+    - Consistency: $c(\lambda) = 1 - (1-\lambda)e^{\lambda-1}$
 
 4. **Impossibility Results**: By constructing two adaptive adversaries (one targeting robustness and one targeting consistency) and solving a factor-revealing LP, an upper bound on the achievable robustness-consistency trade-off for learning-augmented algorithms in the unweighted setting is established.
 

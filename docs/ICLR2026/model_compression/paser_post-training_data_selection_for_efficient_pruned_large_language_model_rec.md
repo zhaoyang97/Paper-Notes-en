@@ -18,8 +18,8 @@ content_hash: b42e80fc1c123c1c
 # PASER: Post-Training Data Selection for Efficient Pruned Large Language Model Recovery
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.12594](https://arxiv.org/abs/2502.12594)
-**Code**: Available
+**arXiv**: [2502.12594](https://arxiv.org/abs/2502.12594)  
+**Code**: Available  
 **Area**: Model Compression / LLM Efficiency
 **Keywords**: LLM pruning, data selection, post-training recovery, manifold learning, capability degradation awareness
 

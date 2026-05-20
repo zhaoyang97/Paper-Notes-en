@@ -20,9 +20,9 @@ content_hash: a157d04ce306ad66
 # Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16511](https://arxiv.org/abs/2510.16511)
+**arXiv**: [2510.16511](https://arxiv.org/abs/2510.16511)  
 **Authors**: Dongchan Cho, Jiho Han, Keumyeong Kang, Minsang Kim, Honggyu Ryu, Namsoon Jung (SimPlatform Co. Ltd.)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Time Series
 **Keywords**: Multivariate time series, anomaly detection, temporal causal modeling, stable latent structure, interpretability, LSTM, self-attention
 

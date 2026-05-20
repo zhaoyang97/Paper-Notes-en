@@ -18,8 +18,8 @@ content_hash: 391d466c4e2babe4
 # PTC-Depth: Pose-Refined Monocular Depth Estimation with Temporal Consistency
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01791](https://arxiv.org/abs/2604.01791)
-**Code**: [https://ptc-depth.github.io](https://ptc-depth.github.io)
+**arXiv**: [2604.01791](https://arxiv.org/abs/2604.01791)  
+**Code**: [https://ptc-depth.github.io](https://ptc-depth.github.io)  
 **Area**: Autonomous Driving / Depth Estimation
 **Keywords**: Monocular depth estimation, temporal consistency, Bayesian scale fusion, optical flow triangulation, wheel odometry
 

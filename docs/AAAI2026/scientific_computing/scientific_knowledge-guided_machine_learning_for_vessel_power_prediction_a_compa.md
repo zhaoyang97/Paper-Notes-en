@@ -19,9 +19,9 @@ content_hash: 10429ed06498c35f
 # Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.18403](https://arxiv.org/abs/2602.18403)
+**arXiv**: [2602.18403](https://arxiv.org/abs/2602.18403)  
 **Authors**: Orfeas Bourchas, George Papalambrou
-**Code**: None
+**Code**: None  
 **Area**: Scientific ML / Marine Engineering
 **Keywords**: vessel power prediction, hybrid modeling, physical residual learning, PINN, XGBoost, extrapolation generalization
 

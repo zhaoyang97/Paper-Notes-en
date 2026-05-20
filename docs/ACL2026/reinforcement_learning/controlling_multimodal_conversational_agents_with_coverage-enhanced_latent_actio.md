@@ -17,8 +17,8 @@ content_hash: b69c53e49ad6da33
 # Controlling Multimodal Conversational Agents with Coverage-Enhanced Latent Actions
 
 **Conference**: ACL 2026
-**arXiv**: [2601.07516](https://arxiv.org/abs/2601.07516)
-**Code**: [GitHub](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/MMLatentAction)
+**arXiv**: [2601.07516](https://arxiv.org/abs/2601.07516)  
+**Code**: [GitHub](https://github.com/AlibabaResearch/DAMO-ConvAI/tree/main/MMLatentAction)  
 **Area**: Reinforcement Learning / Multimodal Dialogue
 **Keywords**: Latent Actions, Reinforcement Learning, Multimodal Dialogue, Vision-Language Models, Cross-Modal Projection
 

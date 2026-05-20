@@ -18,8 +18,8 @@ content_hash: 69712a22147fd28d
 # F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01605](https://arxiv.org/abs/2604.01605)
-**Code**: Coming soon (including dataset and development toolkit)
+**arXiv**: [2604.01605](https://arxiv.org/abs/2604.01605)  
+**Code**: Coming soon (including dataset and development toolkit)  
 **Area**: Autonomous Driving / Multi-Agent 3D Reconstruction
 **Keywords**: Federated Learning, 3D Gaussian Splatting, Multi-Agent, Distributed Reconstruction, Visibility-Weighted Aggregation
 

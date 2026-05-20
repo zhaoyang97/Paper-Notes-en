@@ -19,8 +19,8 @@ content_hash: a1424555b2fa6d2f
 # ReLaGS: Relational Language Gaussian Splatting
 
 **Conference**: CVPR2026
-**arXiv**: [2603.17605](https://arxiv.org/abs/2603.17605)
-**Code**: [Project Page](https://dfki-av.github.io/ReLaGS/)
+**arXiv**: [2603.17605](https://arxiv.org/abs/2603.17605)  
+**Code**: [Project Page](https://dfki-av.github.io/ReLaGS/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Open-Vocabulary, 3D Scene Graph, Hierarchical Semantics, Relation Reasoning, Training-Free
 

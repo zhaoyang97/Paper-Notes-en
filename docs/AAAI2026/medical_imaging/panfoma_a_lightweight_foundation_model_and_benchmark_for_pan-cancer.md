@@ -18,8 +18,8 @@ content_hash: 5eab74e6a1afefd2
 # PanFoMa: A Lightweight Foundation Model and Benchmark for Pan-Cancer Pathology Image Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.03111](https://arxiv.org/abs/2512.03111)
-**Code**: [GitHub](https://github.com/Xiaoshui-Huang/PanFoMa)
+**arXiv**: [2512.03111](https://arxiv.org/abs/2512.03111)  
+**Code**: [GitHub](https://github.com/Xiaoshui-Huang/PanFoMa)  
 **Area**: Computational Biology / Single-cell Transcriptomics / Foundation Models
 **Keywords**: Single-cell RNA-seq, Pan-Cancer, Transformer-Mamba Hybrid, foundation model, benchmark
 

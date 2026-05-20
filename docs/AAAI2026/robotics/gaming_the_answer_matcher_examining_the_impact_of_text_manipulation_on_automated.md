@@ -18,8 +18,8 @@ content_hash: a324013114248831
 # Gaming the Answer Matcher: Examining the Impact of Text Manipulation on Automated Judgment
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.08849](https://arxiv.org/abs/2601.08849)
-**Code**: [GitHub](https://github.com/KevorkSulahian/Gaming-the-Answer-Matcher)
+**arXiv**: [2601.08849](https://arxiv.org/abs/2601.08849)  
+**Code**: [GitHub](https://github.com/KevorkSulahian/Gaming-the-Answer-Matcher)  
 **Area**: Robotics (NLP / Evaluation)
 **Keywords**: Answer Matching, LLM Evaluation, Adversarial Attack, Robustness, Automated Judgment
 

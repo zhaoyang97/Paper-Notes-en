@@ -18,8 +18,8 @@ content_hash: 48dc53b0f9534846
 # FastGRPO: Accelerating Policy Optimization via Concurrency-aware Speculative Decoding and Online Draft Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21792](https://arxiv.org/abs/2509.21792)
-**Code**: [GitHub](https://github.com/yedaotian9/GRPO_speculative)
+**arXiv**: [2509.21792](https://arxiv.org/abs/2509.21792)  
+**Code**: [GitHub](https://github.com/yedaotian9/GRPO_speculative)  
 **Area**: LLM Reasoning
 **Keywords**: GRPO Acceleration, Speculative Decoding, Concurrency-aware, Online Draft Learning, Reinforcement Learning Training
 

@@ -18,8 +18,8 @@ content_hash: 223c95086c465609
 # Joint Self-Supervised Video Alignment and Action Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.16832](https://arxiv.org/abs/2503.16832)
-**Code**: [https://retrocausal.ai/research/](https://retrocausal.ai/research/)
+**arXiv**: [2503.16832](https://arxiv.org/abs/2503.16832)  
+**Code**: [https://retrocausal.ai/research/](https://retrocausal.ai/research/)  
 **Area**: Image Segmentation
 **Keywords**: Video Alignment, Action Segmentation, Optimal Transport, Self-Supervised Learning, Gromov-Wasserstein
 

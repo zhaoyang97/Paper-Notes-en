@@ -18,8 +18,8 @@ content_hash: e2c2046eac651976
 # StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.22065](https://arxiv.org/abs/2512.22065)
-**Code**: [https://streamavatar.github.io](https://streamavatar.github.io)
+**arXiv**: [2512.22065](https://arxiv.org/abs/2512.22065)  
+**Code**: [https://streamavatar.github.io](https://streamavatar.github.io)  
 **Area**: Image Generation
 **Keywords**: real-time digital human, streaming video generation, autoregressive distillation, speaking-listening interaction, diffusion models
 

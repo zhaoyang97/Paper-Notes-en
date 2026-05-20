@@ -18,8 +18,8 @@ content_hash: b2d4ad023a23c56b
 # 4DSegStreamer: Streaming 4D Panoptic Segmentation via Dual Threads
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.17664](https://arxiv.org/abs/2510.17664)
-**Code**: [https://github.com/llada60/4DSegStreamer](https://github.com/llada60/4DSegStreamer)
+**arXiv**: [2510.17664](https://arxiv.org/abs/2510.17664)  
+**Code**: [https://github.com/llada60/4DSegStreamer](https://github.com/llada60/4DSegStreamer)  
 **Area**: Autonomous Driving
 **Keywords**: 4D panoptic segmentation, streaming perception, dual-thread system, motion alignment, point cloud sequences
 

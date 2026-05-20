@@ -18,8 +18,8 @@ content_hash: 1e9d9995fb6963ab
 # Variational Garrote for Sparse Inverse Problems
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12562](https://arxiv.org/abs/2603.12562)
-**Code**: N/A
+**arXiv**: [2603.12562](https://arxiv.org/abs/2603.12562)  
+**Code**: N/A  
 **Area**: Image Restoration
 **Keywords**: sparse inverse problem, Variational Garrote, LASSO, ℓ₀ sparsity, CT reconstruction
 

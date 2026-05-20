@@ -18,8 +18,8 @@ content_hash: 2c832f581b3a3050
 # Perceive, Act and Correct: Confidence Is Not Enough for Hyperspectral Classification
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10068](https://arxiv.org/abs/2511.10068)
-**Code**: To be confirmed
+**arXiv**: [2511.10068](https://arxiv.org/abs/2511.10068)  
+**Code**: To be confirmed  
 **Area**: Remote Sensing / Hyperspectral Classification
 **Keywords**: hyperspectral, semi-supervised, uncertainty, pseudo-label, evidential deep learning
 
@@ -61,9 +61,9 @@ CABIN establishes a closed loop of **Perceive → Act → Correct**:
 - The **Uncertainty-Gap (UG)** is defined as: $UG_i^\alpha = \max_k(\bar{\alpha}_{ik}) - \text{second\_max}_k(\bar{\alpha}_{ik})$, measuring the gap between the strongest and second-strongest evidence classes.
 - EMA smoothing is applied to the evidence vector $\bar{\alpha}_i$ to reduce batch-level fluctuations.
 - Combining softmax confidence $c_i$ and $UG_i^\alpha$ with dual thresholds $(\tau_c, \tau_e)$, pseudo-labeled samples are partitioned into three subsets:
-  - **Reliable set $\mathcal{D}_{re}$**: High confidence + high UG → trained with EDL loss
-  - **Ambiguous set $\mathcal{D}_{am}$**: Intermediate → trained with noise-robust GCE loss
-  - **Noisy set $\mathcal{D}_{no}$**: Low confidence + low UG → discarded
+    - **Reliable set $\mathcal{D}_{re}$**: High confidence + high UG → trained with EDL loss
+    - **Ambiguous set $\mathcal{D}_{am}$**: Intermediate → trained with noise-robust GCE loss
+    - **Noisy set $\mathcal{D}_{no}$**: Low confidence + low UG → discarded
 
 ### Loss & Training
 

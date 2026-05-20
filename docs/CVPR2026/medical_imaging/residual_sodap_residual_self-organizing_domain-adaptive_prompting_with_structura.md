@@ -18,8 +18,8 @@ content_hash: 255f217c58e52ede
 # Residual SODAP: Residual Self-Organizing Domain-Adaptive Prompting with Structural Knowledge Preservation for Continual Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12816](https://arxiv.org/abs/2603.12816)
-**Code**: N/A
+**arXiv**: [2603.12816](https://arxiv.org/abs/2603.12816)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: Continual Learning, Domain-Incremental Learning, Prompt Learning, Catastrophic Forgetting, Knowledge Distillation
 

@@ -18,8 +18,8 @@ content_hash: 31b46e2c3ce2e922
 # Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.23898](https://arxiv.org/abs/2602.23898)
-**Code**: [https://ref-adv.github.io/](https://ref-adv.github.io/)
+**arXiv**: [2602.23898](https://arxiv.org/abs/2602.23898)  
+**Code**: [https://ref-adv.github.io/](https://ref-adv.github.io/)  
 **Authors**: Qihua Dong, Kuo Yang, Lin Ju, Handong Zhao, Yitian Zhang, Yizhou Wang, Huimin Zeng, Jianglin Lu, Yun Fu
 **Area**: Multimodal VLM — Referring Expression Comprehension, Visual Reasoning
 **Keywords**: Referring Expression Comprehension, Visual Grounding, Hard Distractors, Benchmark, Shortcut Suppression

@@ -18,8 +18,8 @@ content_hash: d319c4104126fb7d
 # Enhancing Multimodal Large Language Models for Ancient Chinese Character Evolution Analysis via Glyph-Driven Fine-Tuning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.11299](https://arxiv.org/abs/2604.11299)
-**Code**: [https://github.com/songruiecho/GEVO](https://github.com/songruiecho/GEVO)
+**arXiv**: [2604.11299](https://arxiv.org/abs/2604.11299)  
+**Code**: [https://github.com/songruiecho/GEVO](https://github.com/songruiecho/GEVO)  
 **Area**: Multimodal VLM / Digital Humanities
 **Keywords**: ancient character evolution, multimodal large language models, glyph-driven contrastive fine-tuning, oracle bone script, curriculum learning
 

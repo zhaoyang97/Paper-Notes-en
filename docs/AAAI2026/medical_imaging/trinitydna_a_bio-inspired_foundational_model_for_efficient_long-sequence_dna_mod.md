@@ -19,8 +19,8 @@ content_hash: fce35b6511d94b2e
 # TrinityDNA: A Bio-Inspired Foundational Model for Efficient Long-Sequence DNA Modeling
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.19229](https://arxiv.org/abs/2507.19229)
-**Code**: Not released
+**arXiv**: [2507.19229](https://arxiv.org/abs/2507.19229)  
+**Code**: Not released  
 **Area**: AI for Science / Genomics
 **Keywords**: DNA foundation model, long-sequence modeling, reverse complement, groove fusion, multi-window attention, evolutionary training strategy
 

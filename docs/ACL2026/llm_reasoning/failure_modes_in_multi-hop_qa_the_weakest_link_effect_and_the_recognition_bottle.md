@@ -18,8 +18,8 @@ content_hash: d1efe282355d5421
 # Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck
 
 **Conference**: ACL 2026
-**arXiv**: [2601.12499](https://arxiv.org/abs/2601.12499)
-**Code**: [GitHub](https://github.com/cambridgeltl/weakest-link-effect)
+**arXiv**: [2601.12499](https://arxiv.org/abs/2601.12499)  
+**Code**: [GitHub](https://github.com/cambridgeltl/weakest-link-effect)  
 **Area**: LLM Reasoning / Long Context
 **Keywords**: Multi-Hop QA, Positional Bias, Weakest Link Effect, Attention Guidance, System-2 Reasoning
 

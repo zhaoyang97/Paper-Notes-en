@@ -18,8 +18,8 @@ content_hash: 215551029c84f595
 # ActivationReasoning: Logical Reasoning in Latent Activation Spaces
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.18184](https://arxiv.org/abs/2510.18184)
-**Code**: [https://github.com/ml-research/ActivationReasoning](https://github.com/ml-research/ActivationReasoning)
+**arXiv**: [2510.18184](https://arxiv.org/abs/2510.18184)  
+**Code**: [https://github.com/ml-research/ActivationReasoning](https://github.com/ml-research/ActivationReasoning)  
 **Area**: LLM Interpretability / Reasoning
 **Keywords**: Sparse Autoencoders, Logical Reasoning, Latent Space Intervention, Concept Composition, Model Steering
 

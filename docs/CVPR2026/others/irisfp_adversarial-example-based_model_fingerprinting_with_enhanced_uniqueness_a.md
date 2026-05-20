@@ -17,8 +17,8 @@ content_hash: 4c1aca3c517f184e
 # IrisFP: Adversarial-Example-based Model Fingerprinting with Enhanced Uniqueness and Robustness
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24996](https://arxiv.org/abs/2603.24996)
-**Code**: None
+**arXiv**: [2603.24996](https://arxiv.org/abs/2603.24996)  
+**Code**: None  
 **Area**: Other
 **Keywords**: model fingerprinting, adversarial examples, intellectual property protection, ownership verification, decision boundary
 

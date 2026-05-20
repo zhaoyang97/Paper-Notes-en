@@ -18,8 +18,8 @@ content_hash: a8fdd9d12bf6eff2
 # Self-Supervised Discovery of Neural Circuits in Spatially Patterned Neural Responses with Graph Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17174](https://arxiv.org/abs/2509.17174)
-**Code**: Unavailable
+**arXiv**: [2509.17174](https://arxiv.org/abs/2509.17174)  
+**Code**: Unavailable  
 **Area**: Graph Learning
 **Keywords**: Graph Neural Networks, Neural Circuit Inference, Self-Supervised Learning, Continuous Attractor Networks, Synaptic Connectivity Inference
 

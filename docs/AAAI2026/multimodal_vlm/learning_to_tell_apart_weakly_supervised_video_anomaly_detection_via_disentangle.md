@@ -18,8 +18,8 @@ content_hash: 80785387fda97b7c
 # Learning to Tell Apart: Weakly Supervised Video Anomaly Detection via Disentangled Semantic Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10334](https://arxiv.org/abs/2511.10334)
-**Code**: [https://github.com/lessiYin/DSANet](https://github.com/lessiYin/DSANet)
+**arXiv**: [2511.10334](https://arxiv.org/abs/2511.10334)  
+**Code**: [https://github.com/lessiYin/DSANet](https://github.com/lessiYin/DSANet)  
 **Area**: Multimodal VLM
 **Keywords**: Weakly supervised video anomaly detection, semantic disentanglement, normal pattern modeling, contrastive alignment, CLIP
 

@@ -19,8 +19,8 @@ content_hash: a8b9d840133aa48b
 # Improving Data Efficiency for LLM Reinforcement Fine-tuning Through Difficulty-targeted Online Data Selection and Rollout Replay
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05316](https://arxiv.org/abs/2506.05316)
-**Code**: [GitHub](https://github.com/ASTRAL-Group/data-efficient-llm-rl/)
+**arXiv**: [2506.05316](https://arxiv.org/abs/2506.05316)  
+**Code**: [GitHub](https://github.com/ASTRAL-Group/data-efficient-llm-rl/)  
 **Area**: LLM Alignment
 **Keywords**: LLM reinforcement fine-tuning, data efficiency, adaptive difficulty, online data selection, experience replay, GRPO
 

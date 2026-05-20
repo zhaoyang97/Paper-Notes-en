@@ -19,8 +19,8 @@ content_hash: 8799b01836f36e08
 # SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.18449](https://arxiv.org/abs/2502.18449)
-**Code**: [facebookresearch/swe-rl](https://github.com/facebookresearch/swe-rl)
+**arXiv**: [2502.18449](https://arxiv.org/abs/2502.18449)  
+**Code**: [facebookresearch/swe-rl](https://github.com/facebookresearch/swe-rl)  
 **Area**: LLM Reinforcement Learning / Software Engineering
 **Keywords**: Reinforcement Learning, Software Evolution Data, GRPO, SWE-bench, Reasoning Generalization, Code Editing, Pull Request
 

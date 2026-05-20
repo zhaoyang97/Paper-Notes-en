@@ -17,8 +17,8 @@ content_hash: 9c743e32e78d255b
 # UPRE: Zero-Shot Domain Adaptation for Object Detection via Unified Prompt and Representation Enhancement
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.00721](https://arxiv.org/abs/2507.00721)
-**Code**: [GitHub](https://github.com/AMAP-ML/UPRE)
+**arXiv**: [2507.00721](https://arxiv.org/abs/2507.00721)  
+**Code**: [GitHub](https://github.com/AMAP-ML/UPRE)  
 **Area**: Object Detection
 **Keywords**: Zero-shot domain adaptation, object detection, prompt learning, vision-language models, domain shift
 

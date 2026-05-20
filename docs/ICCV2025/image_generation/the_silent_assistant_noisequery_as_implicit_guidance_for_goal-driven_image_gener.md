@@ -18,8 +18,8 @@ content_hash: be77ef274c9ad068
 # The Silent Assistant: NoiseQuery as Implicit Guidance for Goal-Driven Image Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.05101](https://arxiv.org/abs/2412.05101)
-**Code**: [https://github.com/wangruoyu02/NoiseQuery](https://github.com/wangruoyu02/NoiseQuery)
+**arXiv**: [2412.05101](https://arxiv.org/abs/2412.05101)  
+**Code**: [https://github.com/wangruoyu02/NoiseQuery](https://github.com/wangruoyu02/NoiseQuery)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Initial noise optimization, Noise Library, cross-model consistency, low-level visual attribute control, T2I enhancement
 

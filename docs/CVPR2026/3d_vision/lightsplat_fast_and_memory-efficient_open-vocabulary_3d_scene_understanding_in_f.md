@@ -18,8 +18,8 @@ content_hash: 484cefab5cb16ada
 # LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24146](https://arxiv.org/abs/2603.24146)
-**Code**: [Project Page](https://vision3d-lab.github.io/lightsplat/)
+**arXiv**: [2603.24146](https://arxiv.org/abs/2603.24146)  
+**Code**: [Project Page](https://vision3d-lab.github.io/lightsplat/)  
 **Area**: 3D Vision / Scene Understanding
 **Keywords**: Open-vocabulary 3D scene understanding, 3D Gaussian splatting, semantic index injection, training-free framework, clustering-based inference
 
@@ -46,19 +46,19 @@ The LightSplat pipeline is entirely training-free: (1) SAM is applied to multi-v
 ### Key Designs
 
 1. **Indexed Feature Injection**:
-   - Function: Efficiently transfers 2D semantics to 3D while avoiding iterative optimization and high-dimensional feature storage.
-   - Mechanism: Each 2D SAM mask is assigned a unique index. The rendering contribution of each Gaussian is computed via alpha-blending weights $w_n^{(l)}(u,v) = \alpha_n \cdot T_n^{(l)}(u,v)$. Only Gaussians whose contribution exceeds a threshold $\tau_{\text{contrib}}$ are assigned a 2-byte mask index (rather than a 512-dimensional feature vector), with the corresponding CLIP feature retrieved via an index-to-feature lookup table.
-   - Design Motivation: Compared to storing 4×512=2048 bytes of CLIP features per Gaussian, the 2-byte index achieves a **1024×** memory reduction. The contribution threshold prevents semantically irrelevant Gaussians from being assigned labels.
+    - Function: Efficiently transfers 2D semantics to 3D while avoiding iterative optimization and high-dimensional feature storage.
+    - Mechanism: Each 2D SAM mask is assigned a unique index. The rendering contribution of each Gaussian is computed via alpha-blending weights $w_n^{(l)}(u,v) = \alpha_n \cdot T_n^{(l)}(u,v)$. Only Gaussians whose contribution exceeds a threshold $\tau_{\text{contrib}}$ are assigned a 2-byte mask index (rather than a 512-dimensional feature vector), with the corresponding CLIP feature retrieved via an index-to-feature lookup table.
+    - Design Motivation: Compared to storing 4×512=2048 bytes of CLIP features per Gaussian, the 2-byte index achieves a **1024×** memory reduction. The contribution threshold prevents semantically irrelevant Gaussians from being assigned labels.
 
 2. **3D-Aware Mask Filtering**:
-   - Function: Enhances semantic reliability by removing noisy masks with insufficient 3D structural support.
-   - Mechanism: The filtering criterion is $\mathcal{M}_{\text{filtered}} = \{m_k \mid |\mathcal{G}_k| \geq \tau_{\text{noise}}\}$, retaining only masks associated with a sufficient number of Gaussians. Gaussian contribution information from the 2D–3D correspondence is exploited to suppress view-dependent artifacts.
-   - Design Motivation: Not all SAM-generated masks are adequately supported by 3D geometry; filtering improves multi-view semantic consistency.
+    - Function: Enhances semantic reliability by removing noisy masks with insufficient 3D structural support.
+    - Mechanism: The filtering criterion is $\mathcal{M}_{\text{filtered}} = \{m_k \mid |\mathcal{G}_k| \geq \tau_{\text{noise}}\}$, retaining only masks associated with a sufficient number of Gaussians. Gaussian contribution information from the 2D–3D correspondence is exploited to suppress view-dependent artifacts.
+    - Design Motivation: Not all SAM-generated masks are adequately supported by 3D geometry; filtering improves multi-view semantic consistency.
 
 3. **Context-Aware 3D Clustering**:
-   - Function: Groups Gaussians into object-level representations for efficient and interpretable inference.
-   - Mechanism: An undirected graph $G=(V,E)$ is constructed where nodes represent filtered 2D masks, and an edge is added between two masks if the IoU of their associated 3D Gaussian sets exceeds $\tau_{\text{IoU}}$ and their CLIP feature cosine similarity exceeds $\tau_{\text{feat}}$. Single-pass connected component analysis groups all masks into 3D clusters, with each cluster's feature computed as the average CLIP feature of its associated masks.
-   - Design Motivation: Single-pass clustering (vs. iterative graph diffusion as in LUDVIG) substantially reduces computation. Inference complexity is reduced from 100,000+ Gaussians to ~100 clusters.
+    - Function: Groups Gaussians into object-level representations for efficient and interpretable inference.
+    - Mechanism: An undirected graph $G=(V,E)$ is constructed where nodes represent filtered 2D masks, and an edge is added between two masks if the IoU of their associated 3D Gaussian sets exceeds $\tau_{\text{IoU}}$ and their CLIP feature cosine similarity exceeds $\tau_{\text{feat}}$. Single-pass connected component analysis groups all masks into 3D clusters, with each cluster's feature computed as the average CLIP feature of its associated masks.
+    - Design Motivation: Single-pass clustering (vs. iterative graph diffusion as in LUDVIG) substantially reduces computation. Inference complexity is reduced from 100,000+ Gaussians to ~100 clusters.
 
 ### Loss & Training
 

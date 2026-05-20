@@ -18,8 +18,8 @@ content_hash: 78bacf944272195a
 # From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.04326](https://arxiv.org/abs/2602.04326)
-**Code**: Available (anonymous supplementary material)
+**arXiv**: [2602.04326](https://arxiv.org/abs/2602.04326)  
+**Code**: Available (anonymous supplementary material)  
 **Area**: LLM/NLP
 **Keywords**: uncertainty-aware planning, LLM multi-agent collaboration, decision tree, partially observable environments, communication optimization
 

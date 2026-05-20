@@ -18,8 +18,8 @@ content_hash: 00b77a519b6c1597
 # Less is More: Unlocking Specialization of Time Series Foundation Models via Structured Pruning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23195](https://arxiv.org/abs/2505.23195)
-**Code**: [Available](https://github.com/SJTU-DMTai/Prune-then-Finetune)
+**arXiv**: [2505.23195](https://arxiv.org/abs/2505.23195)  
+**Code**: [Available](https://github.com/SJTU-DMTai/Prune-then-Finetune)  
 **Area**: Time Series Forecasting / Model Compression
 **Keywords**: time series foundation models, structured pruning, model specialization, fine-tuning, sparsity
 

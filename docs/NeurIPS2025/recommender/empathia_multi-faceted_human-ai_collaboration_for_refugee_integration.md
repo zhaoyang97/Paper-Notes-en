@@ -18,8 +18,8 @@ content_hash: 9b7a150c870668d1
 # EMPATHIA: Multi-Faceted Human-AI Collaboration for Refugee Integration
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.07671](https://arxiv.org/abs/2508.07671)
-**Code**: [KurbanIntelligenceLab/empathia](https://github.com/KurbanIntelligenceLab/empathia)
+**arXiv**: [2508.07671](https://arxiv.org/abs/2508.07671)  
+**Code**: [KurbanIntelligenceLab/empathia](https://github.com/KurbanIntelligenceLab/empathia)  
 **Area**: Recommendation / Social AI / Humanitarian
 **Keywords**: refugee integration, multi-agent framework, selector-validator, culturally-aware AI, ethical AI
 

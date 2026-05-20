@@ -18,8 +18,8 @@ content_hash: 2e4380b90430fc3b
 # Mamba-VMR: Multimodal Query Augmentation via Generated Videos for Precise Temporal Grounding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22121](https://arxiv.org/abs/2603.22121)
-**Code**: [https://github.com/YunzhuoSun/Manba-VMR](https://github.com/YunzhuoSun/Manba-VMR)
+**arXiv**: [2603.22121](https://arxiv.org/abs/2603.22121)  
+**Code**: [https://github.com/YunzhuoSun/Manba-VMR](https://github.com/YunzhuoSun/Manba-VMR)  
 **Area**: Video Understanding / Multimodal VLM
 **Keywords**: Video Moment Retrieval, Multimodal Query Augmentation, Generated Video Prior, Mamba, Temporal Grounding
 

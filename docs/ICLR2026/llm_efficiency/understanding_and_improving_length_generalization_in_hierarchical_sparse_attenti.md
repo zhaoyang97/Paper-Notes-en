@@ -18,8 +18,8 @@ content_hash: 1b30d2dc87027188
 # Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.17196](https://arxiv.org/abs/2510.17196)
-**Code**: [https://github.com/jacky-leng/length-generalizable-sparse-attention](https://github.com/jacky-leng/length-generalizable-sparse-attention)
+**arXiv**: [2510.17196](https://arxiv.org/abs/2510.17196)  
+**Code**: [https://github.com/jacky-leng/length-generalizable-sparse-attention](https://github.com/jacky-leng/length-generalizable-sparse-attention)  
 **Area**: LLM Efficiency
 **Keywords**: Long Context, Sparse Attention, Length Generalization, Chunk-based Attention, Hierarchical Sparse Attention
 

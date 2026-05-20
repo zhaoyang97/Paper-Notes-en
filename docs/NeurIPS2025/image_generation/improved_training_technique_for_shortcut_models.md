@@ -20,8 +20,8 @@ content_hash: 33c5701e0c9cfbae
 # Improved Training Technique for Shortcut Models (iSM)
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21250](https://arxiv.org/abs/2510.21250)
-**Code**: Not released
+**arXiv**: [2510.21250](https://arxiv.org/abs/2510.21250)  
+**Code**: Not released  
 **Area**: Image Generation
 **Keywords**: Shortcut Models, Flow Matching, Few-step Generation, CFG Guidance, Wavelet Loss, Optimal Transport, EMA Strategy
 

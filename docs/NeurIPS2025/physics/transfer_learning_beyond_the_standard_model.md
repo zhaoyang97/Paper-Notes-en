@@ -18,8 +18,8 @@ content_hash: ecc298a9384011c7
 # Transfer Learning Beyond the Standard Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19168](https://arxiv.org/abs/2510.19168)
-**Code**: None (uses the Quijote simulation dataset, publicly available)
+**arXiv**: [2510.19168](https://arxiv.org/abs/2510.19168)  
+**Code**: None (uses the Quijote simulation dataset, publicly available)  
 **Area**: Physics
 **Keywords**: Transfer Learning, Cosmological Inference, ΛCDM, Negative Transfer, Foundation Models
 

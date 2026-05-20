@@ -18,8 +18,8 @@ content_hash: 194a79dfd6dab8df
 # Sparse MeZO: Less Parameters for Better Performance in Zeroth-Order LLM Fine-Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2402.15751](https://arxiv.org/abs/2402.15751)
-**Code**: [GitHub](https://github.com/NUS-HPC-AI-Lab/SparseMeZO)
+**arXiv**: [2402.15751](https://arxiv.org/abs/2402.15751)  
+**Code**: [GitHub](https://github.com/NUS-HPC-AI-Lab/SparseMeZO)  
 **Area**: LLM/NLP
 **Keywords**: zeroth-order optimization, sparse fine-tuning, memory efficiency, LLM fine-tuning, gradient noise
 

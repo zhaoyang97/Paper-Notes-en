@@ -18,8 +18,8 @@ content_hash: b30c749b17cad5b8
 # On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27481](https://arxiv.org/abs/2603.27481)
-**Code**: [https://zhaoc5.github.io/DyMoE](https://zhaoc5.github.io/DyMoE)
+**arXiv**: [2603.27481](https://arxiv.org/abs/2603.27481)  
+**Code**: [https://zhaoc5.github.io/DyMoE](https://zhaoc5.github.io/DyMoE)  
 **Area**: Multimodal VLM / Continual Learning
 **Keywords**: Continual Learning, Mixture of Experts, Routing Drift, Large Vision-Language Models, Token Assignment
 

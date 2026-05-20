@@ -18,8 +18,8 @@ content_hash: e21c52cd32c8cd10
 # GaussFusion: Improving 3D Reconstruction in the Wild with A Geometry-Informed Video Generator
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25053](https://arxiv.org/abs/2603.25053)
-**Code**: N/A
+**arXiv**: [2603.25053](https://arxiv.org/abs/2603.25053)  
+**Code**: N/A  
 **Area**: 3D Vision / Novel View Synthesis
 **Keywords**: 3D Gaussian Splatting, video generative model, geometry prior, artifact removal, real-time inference
 

@@ -18,8 +18,8 @@ content_hash: 3df80bfcff96544f
 # Calibrating Verbalized Confidence with Self-Generated Distractors
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25532](https://arxiv.org/abs/2509.25532)
-**Code**: [victorwang37/dinco](https://github.com/victorwang37/dinco)
+**arXiv**: [2509.25532](https://arxiv.org/abs/2509.25532)  
+**Code**: [victorwang37/dinco](https://github.com/victorwang37/dinco)  
 **Area**: AIGC Detection
 **Keywords**: confidence calibration, verbalized probability, distractor generation, NLI reweighting, generation-verification consistency
 

@@ -18,8 +18,8 @@ content_hash: 3daad626f5bc098e
 # Understanding Adam Requires Better Rotation Dependent Assumptions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.19964](https://arxiv.org/abs/2410.19964)
-**Code**: Unavailable
+**arXiv**: [2410.19964](https://arxiv.org/abs/2410.19964)  
+**Code**: Unavailable  
 **Area**: Optimization
 **Keywords**: Adam optimizer, rotation equivariance, parameter space rotation, orthogonality, adaptive optimization
 

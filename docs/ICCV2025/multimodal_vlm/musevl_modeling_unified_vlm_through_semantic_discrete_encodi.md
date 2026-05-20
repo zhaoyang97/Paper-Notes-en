@@ -18,8 +18,8 @@ content_hash: 3fad1b402a799387
 # MUSE-VL: Modeling Unified VLM through Semantic Discrete Encoding
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.17762](https://arxiv.org/abs/2411.17762)
-**Code**: None
+**arXiv**: [2411.17762](https://arxiv.org/abs/2411.17762)  
+**Code**: None  
 **Area**: Multimodal VLM / Unified Understanding and Generation
 **Keywords**: unified VLM, visual tokenizer, semantic discrete encoding, autoregressive, image generation
 

@@ -18,8 +18,8 @@ content_hash: 6423ef1781a5d656
 # Scaling and Transferability of Annealing Strategies in Large Language Model Training
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.13705](https://arxiv.org/abs/2512.13705)
-**Code**: [GitHub](https://github.com/xmed-lab/fm-annealing)
+**arXiv**: [2512.13705](https://arxiv.org/abs/2512.13705)  
+**Code**: [GitHub](https://github.com/xmed-lab/fm-annealing)  
 **Area**: LLM Efficiency
 **Keywords**: Learning Rate Annealing, Scaling Law, Training Strategy, Transferability, MoE
 
@@ -48,30 +48,30 @@ where $S$ is the learning rate integral (forward effect), $N$ is the number of m
 
 1. **Forward Effect Term $S$: Learning Rate Integral**
 
-   - $S = \int_0^T \eta(t)\,dt$, integrating the learning rate over training steps.
-   - Step-based tracking yields converging loss curves when batch size exceeds the critical batch size, unlike token-based tracking.
-   - $S$ captures the cumulative "driving force" of the learning rate throughout training and serves as the primary driver of loss reduction.
-   - The integral formulation is more robust to irregular step sizes than discrete summation.
+    - $S = \int_0^T \eta(t)\,dt$, integrating the learning rate over training steps.
+    - Step-based tracking yields converging loss curves when batch size exceeds the critical batch size, unlike token-based tracking.
+    - $S$ captures the cumulative "driving force" of the learning rate throughout training and serves as the primary driver of loss reduction.
+    - The integral formulation is more robust to irregular step sizes than discrete summation.
 
 2. **Annealing Momentum Term $M$: Adam-Style Momentum Integral**
 
-   - Per-step momentum is computed using Adam-style first- and second-moment estimates.
-   - After bias correction, momentum is accumulated as $M_t = M_{t-1} + \hat{m}_t / \sqrt{\hat{v}_t + \epsilon}$.
-   - Compared to the multiplicative accumulation used in prior work (CMMT), the Adam-style formulation offers superior stability and generalization in transfer scenarios.
-   - $M$ captures the "convergence effect" induced by learning rate decay during the annealing phase.
+    - Per-step momentum is computed using Adam-style first- and second-moment estimates.
+    - After bias correction, momentum is accumulated as $M_t = M_{t-1} + \hat{m}_t / \sqrt{\hat{v}_t + \epsilon}$.
+    - Compared to the multiplicative accumulation used in prior work (CMMT), the Adam-style formulation offers superior stability and generalization in transfer scenarios.
+    - $M$ captures the "convergence effect" induced by learning rate decay during the annealing phase.
 
 3. **Power-Law Relationship for Model Size Term $N$**
 
-   - Follows the classical power-law form of scaling laws.
-   - Fitting accuracy across model sizes is validated on both Dense (50M–1B) and MoE (100M–1.5B) models.
-   - Combined with the forward and momentum terms, this enables annealing strategy prediction from small to large models.
+    - Follows the classical power-law form of scaling laws.
+    - Fitting accuracy across model sizes is validated on both Dense (50M–1B) and MoE (100M–1.5B) models.
+    - Combined with the forward and momentum terms, this enables annealing strategy prediction from small to large models.
 
 4. **Transferability of the Optimal Annealing Ratio $R_\text{opt}$**
 
-   - *Across learning rates*: $R_\text{opt}$ follows a power-law relationship with $\eta_\text{max}$, consistent across model sizes.
-   - *Across model sizes*: $R_\text{opt}$ converges to the same value across different model scales.
-   - *Across datasets*: $R_\text{opt}$ determined on the training set remains consistent on the validation set.
-   - *Across training steps*: $R_\text{opt}$ follows a power-law relationship with $T$; longer training yields a smaller $R_\text{opt}$.
+    - *Across learning rates*: $R_\text{opt}$ follows a power-law relationship with $\eta_\text{max}$, consistent across model sizes.
+    - *Across model sizes*: $R_\text{opt}$ converges to the same value across different model scales.
+    - *Across datasets*: $R_\text{opt}$ determined on the training set remains consistent on the validation set.
+    - *Across training steps*: $R_\text{opt}$ follows a power-law relationship with $T$; longer training yields a smaller $R_\text{opt}$.
 
 ### Loss & Training
 

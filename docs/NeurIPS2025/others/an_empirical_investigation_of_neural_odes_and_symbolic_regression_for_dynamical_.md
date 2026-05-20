@@ -17,8 +17,8 @@ content_hash: dca2415c4dfe08b0
 # An Empirical Investigation of Neural ODEs and Symbolic Regression for Dynamical Systems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.20637](https://arxiv.org/abs/2601.20637)
-**Code**: Available (based on JAX/Diffrax + PySR)
+**arXiv**: [2601.20637](https://arxiv.org/abs/2601.20637)  
+**Code**: Available (based on JAX/Diffrax + PySR)  
 **Area**: Scientific Discovery / Dynamical Systems
 **Keywords**: Neural ODE, Symbolic Regression, Dynamical Systems, Extrapolation, Scientific Discovery
 

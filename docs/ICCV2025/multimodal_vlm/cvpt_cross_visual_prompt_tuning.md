@@ -18,8 +18,8 @@ content_hash: e4ba812d00dc558f
 # CVPT: Cross Visual Prompt Tuning
 
 **Conference**: ICCV2025
-**arXiv**: [2408.14961](https://arxiv.org/abs/2408.14961)
-**Code**: [https://github.com/Lingyun0419/CVPT](https://github.com/Lingyun0419/CVPT)
+**arXiv**: [2408.14961](https://arxiv.org/abs/2408.14961)  
+**Code**: [https://github.com/Lingyun0419/CVPT](https://github.com/Lingyun0419/CVPT)  
 **Area**: Multimodal VLM / Parameter-Efficient Fine-Tuning
 **Keywords**: Visual Prompt Tuning, Cross-Attention, PEFT, parameter-efficient fine-tuning, Weight Sharing
 

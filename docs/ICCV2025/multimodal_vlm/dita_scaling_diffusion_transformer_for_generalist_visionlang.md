@@ -18,8 +18,8 @@ content_hash: ae48ec0ddfed1d42
 # Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.19757](https://arxiv.org/abs/2503.19757)
-**Code**: [Project](https://robodita.github.io)
+**arXiv**: [2503.19757](https://arxiv.org/abs/2503.19757)  
+**Code**: [Project](https://robodita.github.io)  
 **Area**: Robot Policy / VLA Models
 **Keywords**: VLA, diffusion policy, DiT, in-context conditioning, cross-embodiment
 

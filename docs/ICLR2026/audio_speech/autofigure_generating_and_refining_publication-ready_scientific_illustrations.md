@@ -18,8 +18,8 @@ content_hash: b308c728ac4454d2
 # AutoFigure: Generating and Refining Publication-Ready Scientific Illustrations
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.03828](https://arxiv.org/abs/2602.03828)
-**Code**: [https://github.com/ResearAI/AutoFigure](https://github.com/ResearAI/AutoFigure)
+**arXiv**: [2602.03828](https://arxiv.org/abs/2602.03828)  
+**Code**: [https://github.com/ResearAI/AutoFigure](https://github.com/ResearAI/AutoFigure)  
 **Area**: Audio & Speech
 **Keywords**: Scientific illustration generation, multi-agent framework, long-context understanding, FigureBench, VLM evaluation
 

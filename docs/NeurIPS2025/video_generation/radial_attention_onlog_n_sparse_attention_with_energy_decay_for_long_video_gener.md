@@ -18,8 +18,8 @@ content_hash: 8353051df865a2b5
 # Radial Attention: O(n log n) Sparse Attention with Energy Decay for Long Video Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.19852](https://arxiv.org/abs/2506.19852)
-**Code**: [https://github.com/mit-han-lab/radial-attention](https://github.com/mit-han-lab/radial-attention)
+**arXiv**: [2506.19852](https://arxiv.org/abs/2506.19852)  
+**Code**: [https://github.com/mit-han-lab/radial-attention](https://github.com/mit-han-lab/radial-attention)  
 **Area**: Efficient Video Generation / Sparse Attention
 **Keywords**: Sparse Attention, Spatiotemporal Energy Decay, O(n log n), Long Video Generation, LoRA Fine-tuning
 

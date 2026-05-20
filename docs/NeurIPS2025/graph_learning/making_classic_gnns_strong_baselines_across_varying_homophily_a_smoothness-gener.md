@@ -18,8 +18,8 @@ content_hash: 470e24662fb4ae73
 # Making Classic GNNs Strong Baselines Across Varying Homophily: A Smoothness-Generalization Perspective
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.09805](https://arxiv.org/abs/2412.09805)
-**Code**: [https://github.com/galogm/IGNN](https://github.com/galogm/IGNN)
+**arXiv**: [2412.09805](https://arxiv.org/abs/2412.09805)  
+**Code**: [https://github.com/galogm/IGNN](https://github.com/galogm/IGNN)  
 **Area**: Graph Learning / Node Classification
 **Keywords**: GNN, Homophily, Heterophily, Smoothness-Generalization Dilemma, IGNN
 
@@ -52,27 +52,27 @@ IGNN (Inceptive GNN) is built upon classic GCN using three minimal design princi
 
 1. **Smoothness-Generalization Dilemma (Theorem 4.1)**:
 
-   - Function: Theoretically analyzes the upper bound on representation distances produced by $k$-layer GCN message passing
-   - Core formula: $d_{\mathcal{M}}(\mathbf{H}_G^{(k)}) \leq \hat{L}_G \lambda^k \mathcal{D}$
-   - Here $\hat{L}_G$ is the Lipschitz constant (larger values imply worse generalization), $\lambda < 1$ is the second-largest eigenvalue of the normalized adjacency matrix, and $k$ is the number of layers
-   - Key insight: As $\lambda^k \to 0$, $\hat{L}_G$ must increase to prevent representational collapse, yet a large $\hat{L}_G$ implies poor generalization — constituting the dilemma
+    - Function: Theoretically analyzes the upper bound on representation distances produced by $k$-layer GCN message passing
+    - Core formula: $d_{\mathcal{M}}(\mathbf{H}_G^{(k)}) \leq \hat{L}_G \lambda^k \mathcal{D}$
+    - Here $\hat{L}_G$ is the Lipschitz constant (larger values imply worse generalization), $\lambda < 1$ is the second-largest eigenvalue of the normalized adjacency matrix, and $k$ is the number of layers
+    - Key insight: As $\lambda^k \to 0$, $\hat{L}_G$ must increase to prevent representational collapse, yet a large $\hat{L}_G$ implies poor generalization — constituting the dilemma
 
 2. **Separative Neighborhood Transformation (SN)**:
 
-   - Function: Assigns independent weight matrices $\mathbf{W}^{(k)}$ to neighborhoods at different hops
-   - Design Motivation: Shared transformation matrices couple the generalization capacities of different hops; separation allows each hop to independently control its Lipschitz constant, enabling hop-wise generalization
+    - Function: Assigns independent weight matrices $\mathbf{W}^{(k)}$ to neighborhoods at different hops
+    - Design Motivation: Shared transformation matrices couple the generalization capacities of different hops; separation allows each hop to independently control its Lipschitz constant, enabling hop-wise generalization
 
 3. **Inceptive Neighborhood Aggregation (IN)**:
 
-   - Function: Processes aggregation results from different hops in parallel, analogous to the Inception architecture
-   - Mechanism: Per-hop outputs $\mathbf{H}^{(1)}, \mathbf{H}^{(2)}, \ldots, \mathbf{H}^{(K)}$ are computed independently from the input features via $k$-step aggregation, rather than through serial stacking
-   - Design Motivation: Avoids the cumulative smoothness introduced by sequential layer stacking
+    - Function: Processes aggregation results from different hops in parallel, analogous to the Inception architecture
+    - Mechanism: Per-hop outputs $\mathbf{H}^{(1)}, \mathbf{H}^{(2)}, \ldots, \mathbf{H}^{(K)}$ are computed independently from the input features via $k$-step aggregation, rather than through serial stacking
+    - Design Motivation: Avoids the cumulative smoothness introduced by sequential layer stacking
 
 4. **Neighborhood Relationship Learning (NR)**:
 
-   - Function: Learns an adaptive weighted combination of per-hop outputs
-   - Mechanism: Per-hop representations are weighted and summed via learnable coefficients $\alpha_k$, reflecting the importance of each hop
-   - Design Motivation: IN combined with NR can approximate arbitrary graph filters, enabling adaptive smoothness control
+    - Function: Learns an adaptive weighted combination of per-hop outputs
+    - Mechanism: Per-hop representations are weighted and summed via learnable coefficients $\alpha_k$, reflecting the importance of each hop
+    - Design Motivation: IN combined with NR can approximate arbitrary graph filters, enabling adaptive smoothness control
 
 ### Loss & Training
 - Standard cross-entropy loss for node classification

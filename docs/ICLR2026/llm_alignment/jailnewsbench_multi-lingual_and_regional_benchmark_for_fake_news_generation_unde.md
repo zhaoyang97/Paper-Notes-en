@@ -18,8 +18,8 @@ content_hash: a7feec390a78c242
 # JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01291](https://arxiv.org/abs/2603.01291)
-**Code**: [https://github.com/kanekomasahiro/jail_news_bench](https://github.com/kanekomasahiro/jail_news_bench)
+**arXiv**: [2603.01291](https://arxiv.org/abs/2603.01291)  
+**Code**: [https://github.com/kanekomasahiro/jail_news_bench](https://github.com/kanekomasahiro/jail_news_bench)  
 **Area**: Alignment & RLHF
 **Keywords**: Fake News Generation, Jailbreak Attacks, Multilingual Safety, LLM Safety Evaluation, Regional Safety Imbalance
 

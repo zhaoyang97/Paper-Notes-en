@@ -18,8 +18,8 @@ content_hash: a10e35e3ab073729
 # Debiasing Machine Learning Predictions for Causal Inference Without Additional Ground Truth Data
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01341](https://arxiv.org/abs/2508.01341)
-**Code**: [unshrink package](https://arxiv.org/abs/2508.01341)
+**arXiv**: [2508.01341](https://arxiv.org/abs/2508.01341)  
+**Code**: [unshrink package](https://arxiv.org/abs/2508.01341)  
 **Area**: Remote Sensing / Causal Inference
 **Keywords**: Prediction debiasing, Tweedie correction, causal inference, satellite poverty index, attenuation bias
 

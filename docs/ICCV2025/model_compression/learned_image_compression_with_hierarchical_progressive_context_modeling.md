@@ -18,8 +18,8 @@ content_hash: ca54fb94b03f987e
 # Learned Image Compression with Hierarchical Progressive Context Modeling
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19125](https://arxiv.org/abs/2507.19125)
-**Code**: [github.com/lyq133/LIC-HPCM](https://github.com/lyq133/LIC-HPCM)
+**arXiv**: [2507.19125](https://arxiv.org/abs/2507.19125)  
+**Code**: [github.com/lyq133/LIC-HPCM](https://github.com/lyq133/LIC-HPCM)  
 **Area**: Image Compression
 **Keywords**: Learned image compression, context modeling, entropy coding, hierarchical coding, progressive fusion
 

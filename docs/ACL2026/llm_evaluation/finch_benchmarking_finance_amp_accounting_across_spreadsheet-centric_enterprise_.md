@@ -18,8 +18,8 @@ content_hash: a1b84d70a300d251
 # Finch: Benchmarking Finance & Accounting across Spreadsheet-Centric Enterprise Workflows
 
 **Conference**: ACL 2026
-**arXiv**: [2512.13168](https://arxiv.org/abs/2512.13168)
-**Code**: [HuggingFace](https://huggingface.co/FinWorkBench)
+**arXiv**: [2512.13168](https://arxiv.org/abs/2512.13168)  
+**Code**: [HuggingFace](https://huggingface.co/FinWorkBench)  
 **Area**: LLM Evaluation
 **Keywords**: Finance & Accounting, Spreadsheets, Enterprise Workflows, Agent Evaluation, Long-Horizon Tasks
 

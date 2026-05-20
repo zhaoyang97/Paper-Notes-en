@@ -19,8 +19,8 @@ content_hash: 321385ea549d32a9
 # Disentangling Hyperedges through the Lens of Category Theory
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16289](https://arxiv.org/abs/2510.16289)
-**Code**: [Natural-HNN](https://github.com/Yoonho-Lee-AI4Science/Natural-HNN)
+**arXiv**: [2510.16289](https://arxiv.org/abs/2510.16289)  
+**Code**: [Natural-HNN](https://github.com/Yoonho-Lee-AI4Science/Natural-HNN)  
 **Area**: Self-Supervised
 **Keywords**: hypergraph, disentangled representation, category theory, naturality condition, genetic pathway, cancer subtype classification
 

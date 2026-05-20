@@ -18,8 +18,8 @@ content_hash: 4e665d4a924d807b
 # Unsupervised Feature Selection Through Group Discovery
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09166](https://arxiv.org/abs/2511.09166)
-**Code**: None
+**arXiv**: [2511.09166](https://arxiv.org/abs/2511.09166)  
+**Code**: None  
 **Area**: Machine Learning / Feature Selection
 **Keywords**: Unsupervised feature selection, feature grouping, graph Laplacian, Gumbel-Softmax, sparse regularization
 

@@ -18,8 +18,8 @@ content_hash: 70ad35aefeabba05
 # Token-Guard: Towards Token-Level Hallucination Control via Self-Checking Decoding
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21969](https://arxiv.org/abs/2601.21969)
-**Code**: [https://github.com/rhq945/Token-Guard](https://github.com/rhq945/Token-Guard)
+**arXiv**: [2601.21969](https://arxiv.org/abs/2601.21969)  
+**Code**: [https://github.com/rhq945/Token-Guard](https://github.com/rhq945/Token-Guard)  
 **Area**: Information Retrieval
 **Keywords**: LLM hallucination control, token-level decoding, self-checking, segment-level scoring, iterative refinement
 

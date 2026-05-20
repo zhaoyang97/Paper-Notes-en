@@ -18,8 +18,8 @@ content_hash: 12159542b8732ce2
 # STAC: Plug-and-Play Spatio-Temporal Aware Cache Compression for Streaming 3D Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20284](https://arxiv.org/abs/2603.20284)
-**Code**: [https://stac-3r.github.io/](https://stac-3r.github.io/) (Project Page)
+**arXiv**: [2603.20284](https://arxiv.org/abs/2603.20284)  
+**Code**: [https://stac-3r.github.io/](https://stac-3r.github.io/) (Project Page)  
 **Area**: 3D Vision
 **Keywords**: Streaming 3D Reconstruction, KV Cache Compression, Spatio-Temporal Sparsity, Causal Transformer, Voxelized Storage
 

@@ -18,8 +18,8 @@ content_hash: 329141fe762f918a
 # PropVG: End-to-End Proposal-Driven Visual Grounding with Multi-Granularity Discrimination
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.04833](https://arxiv.org/abs/2509.04833)
-**Code**: [GitHub](https://github.com/Dmmm1997/PropVG)
+**arXiv**: [2509.04833](https://arxiv.org/abs/2509.04833)  
+**Code**: [GitHub](https://github.com/Dmmm1997/PropVG)  
 **Area**: Social Computing
 **Keywords**: visual grounding, proposal-based, contrastive learning, referring expression, target existence discrimination
 

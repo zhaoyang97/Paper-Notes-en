@@ -18,8 +18,8 @@ content_hash: db22aaa9e8c2c17a
 # Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23030](https://arxiv.org/abs/2603.23030)
-**Code**: [https://github.com/2btlFe/GLA-CLIP](https://github.com/2btlFe/GLA-CLIP)
+**arXiv**: [2603.23030](https://arxiv.org/abs/2603.23030)  
+**Code**: [https://github.com/2btlFe/GLA-CLIP](https://github.com/2btlFe/GLA-CLIP)  
 **Area**: Segmentation / Multimodal VLM
 **Keywords**: Open-vocabulary semantic segmentation, CLIP, sliding window, training-free, global-local alignment
 

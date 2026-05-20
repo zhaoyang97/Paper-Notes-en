@@ -18,8 +18,8 @@ content_hash: 7dd7d635aba8d518
 # Non-Markovian Discrete Diffusion with Causal Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.09767](https://arxiv.org/abs/2502.09767)
-**Code**: [https://github.com/](https://github.com/) (not provided)
+**arXiv**: [2502.09767](https://arxiv.org/abs/2502.09767)  
+**Code**: [https://github.com/](https://github.com/) (not provided)  
 **Area**: Image/Text Generation (Discrete Diffusion)
 **Keywords**: discrete diffusion models, non-Markovian, causal language models, sequence generation, autoregressive
 

@@ -18,8 +18,8 @@ content_hash: 37d2463a48dccf6b
 # MaterialRefGS: Reflective Gaussian Splatting with Multi-view Consistent Material Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11387](https://arxiv.org/abs/2510.11387)
-**Code**: [Project Page](https://wen-yuan-zhang.github.io/MaterialRefGS)
+**arXiv**: [2510.11387](https://arxiv.org/abs/2510.11387)  
+**Code**: [Project Page](https://wen-yuan-zhang.github.io/MaterialRefGS)  
 **Area**: 3D Vision
 **Keywords**: Gaussian splatting, reflection modeling, multi-view consistency, PBR, illumination decomposition
 

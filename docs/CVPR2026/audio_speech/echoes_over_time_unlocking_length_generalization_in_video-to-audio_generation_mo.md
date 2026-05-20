@@ -18,8 +18,8 @@ content_hash: f30f1068c7dc3028
 # Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20981](https://arxiv.org/abs/2602.20981)
-**Code**: None (Project page: [https://echoesovertime.github.io](https://echoesovertime.github.io))
+**arXiv**: [2602.20981](https://arxiv.org/abs/2602.20981)  
+**Code**: None (Project page: [https://echoesovertime.github.io](https://echoesovertime.github.io))  
 **Area**: Speech/Audio
 **Keywords**: Video-to-Audio generation, long-sequence generation, hierarchical network, Mamba, multimodal alignment
 

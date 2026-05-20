@@ -18,8 +18,8 @@ content_hash: 5274bb8ca2f1c88d
 # TAI3: Testing Agent Integrity in Interpreting User Intent
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07524](https://arxiv.org/abs/2506.07524)
-**Code**: None
+**arXiv**: [2506.07524](https://arxiv.org/abs/2506.07524)  
+**Code**: None  
 **Area**: LLM Agent / AI Safety
 **Keywords**: Agent Testing, Intent Integrity, Equivalence Class Partitioning, Stress Testing, API Calls
 

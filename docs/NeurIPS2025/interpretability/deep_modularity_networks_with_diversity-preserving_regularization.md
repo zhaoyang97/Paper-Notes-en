@@ -17,8 +17,8 @@ content_hash: 74c102e81140fdcf
 # Deep Modularity Networks with Diversity-Preserving Regularization
 
 **Conference**: NEURIPS2025
-**arXiv**: [2501.13451](https://arxiv.org/abs/2501.13451)
-**Code**: [YasminSalehi/DMoN-DPR](https://github.com/YasminSalehi/DMoN-DPR)
+**arXiv**: [2501.13451](https://arxiv.org/abs/2501.13451)  
+**Code**: [YasminSalehi/DMoN-DPR](https://github.com/YasminSalehi/DMoN-DPR)  
 **Area**: Interpretability
 **Keywords**: graph clustering, modularity maximization, diversity regularization, GNN pooling
 

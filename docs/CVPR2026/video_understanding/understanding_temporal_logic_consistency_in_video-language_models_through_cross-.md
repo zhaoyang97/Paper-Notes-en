@@ -18,8 +18,8 @@ content_hash: d80d00d82087e30d
 # Understanding Temporal Logic Consistency in Video-Language Models through Cross-Modal Attention Discriminability
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.08138](https://arxiv.org/abs/2510.08138)
-**Code**: N/A
+**arXiv**: [2510.08138](https://arxiv.org/abs/2510.08138)  
+**Code**: N/A  
 **Area**: Video Understanding
 **Keywords**: Temporal Logic Consistency, Video-Language Models, Attention Interpretability, Cross-Modal Attention, Video Temporal Grounding
 

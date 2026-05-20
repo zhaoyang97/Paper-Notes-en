@@ -18,8 +18,8 @@ content_hash: 28c8b5d0c89f937a
 # MAMA-Memeia! Multi-Aspect Multi-Agent Collaboration for Depressive Symptoms Identification in Memes
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.25015](https://arxiv.org/abs/2512.25015)
-**Code**: N/A
+**arXiv**: [2512.25015](https://arxiv.org/abs/2512.25015)  
+**Code**: N/A  
 **Area**: Medical Imaging / NLP
 **Keywords**: Depression detection, meme analysis, multi-agent collaboration, Cognitive Analytic Therapy, large language models
 

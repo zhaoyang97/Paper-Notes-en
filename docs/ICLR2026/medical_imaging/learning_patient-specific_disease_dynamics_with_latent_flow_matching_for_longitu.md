@@ -18,8 +18,8 @@ content_hash: 55d27d13ffdd13c8
 # Learning Patient-Specific Disease Dynamics with Latent Flow Matching for Longitudinal Imaging Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.09185](https://arxiv.org/abs/2512.09185)
-**Code**: Unavailable
+**arXiv**: [2512.09185](https://arxiv.org/abs/2512.09185)  
+**Code**: Unavailable  
 **Area**: Medical Imaging / Disease Progression Modeling
 **Keywords**: disease progression, flow matching, patient-specific, longitudinal MRI, ArcRank loss
 
@@ -48,21 +48,21 @@ The framework consists of two stages. Stage 1: a VAE with ArcRank loss construct
 ### Key Designs
 
 1. **ArcRank Loss — Patient Trajectory Latent Alignment**
-   - **Function**: Forces latent representations of the same patient at different time points to align along a specific direction, with magnitude monotonically increasing over time.
-   - **Mechanism**: SVD decomposition $U\Sigma V^\top = \text{SVD}(\mathbf{z})$ is applied to the latent vector $\mathbf{z}$, where $U$ encodes direction (angle) and $\Sigma$ encodes magnitude (severity). The ArcRank loss is defined as:
+    - **Function**: Forces latent representations of the same patient at different time points to align along a specific direction, with magnitude monotonically increasing over time.
+    - **Mechanism**: SVD decomposition $U\Sigma V^\top = \text{SVD}(\mathbf{z})$ is applied to the latent vector $\mathbf{z}$, where $U$ encodes direction (angle) and $\Sigma$ encodes magnitude (severity). The ArcRank loss is defined as:
      $$\mathcal{L}_{\text{ArcRank}} = \lambda_{\text{arc}} \sum_{i<j} |U_i - U_j| + \lambda_{\text{rank}} \sum_{i<j} \max(0, m - (\Sigma_j - \Sigma_i)), \quad t_i < t_j$$
      A pull term $\mathcal{L}_{\text{Pull}} = |\Sigma_j - \Sigma_i|$ is added to prevent excessive separation between adjacent time points.
-   - **Design Motivation**: SVD jointly handles direction and magnitude in a unified manner, providing greater stability than separately applying cosine similarity and absolute value; stop-gradient is used to stabilize training.
+    - **Design Motivation**: SVD jointly handles direction and magnitude in a unified manner, providing greater stability than separately applying cosine similarity and absolute value; stop-gradient is used to stabilize training.
 
 2. **Δ-LFM — Temporally Semantic Flow Matching**
-   - **Function**: Learns a patient-specific continuous-time velocity field in latent space, supporting prediction at arbitrary future time points.
-   - **Mechanism**: The standard flow matching time range $[0,1]$ is extended to $[0,T]$, where $T = t_j - t_i$ denotes the actual interval in years. The target velocity is $v^*(i,j) = (\mathbf{z}_j - \mathbf{z}_i)/(t_j - t_i)$; at inference, integration proceeds with step size $\text{d}t = 0.01$: $\mathbf{z}_{i+\text{d}t} = \mathbf{z}_i + \text{d}t \cdot v_\theta(\mathbf{z}_i, t_i)$.
-   - **Design Motivation**: Normalizing to $[0,1]$ discards actual temporal semantics; the $[0,T]$ parameterization directly supports queries such as "predict MRI three years from now."
+    - **Function**: Learns a patient-specific continuous-time velocity field in latent space, supporting prediction at arbitrary future time points.
+    - **Mechanism**: The standard flow matching time range $[0,1]$ is extended to $[0,T]$, where $T = t_j - t_i$ denotes the actual interval in years. The target velocity is $v^*(i,j) = (\mathbf{z}_j - \mathbf{z}_i)/(t_j - t_i)$; at inference, integration proceeds with step size $\text{d}t = 0.01$: $\mathbf{z}_{i+\text{d}t} = \mathbf{z}_i + \text{d}t \cdot v_\theta(\mathbf{z}_i, t_i)$.
+    - **Design Motivation**: Normalizing to $[0,1]$ discards actual temporal semantics; the $[0,T]$ parameterization directly supports queries such as "predict MRI three years from now."
 
 3. **Δ-RMAE Evaluation Metric**
-   - **Function**: Assesses the accuracy of the progression direction in generated images rather than absolute image quality.
-   - **Mechanism**: A residual metric defined as $\Delta\text{-RMAE} = \frac{|\Delta_{\text{gt}} - \Delta_{\text{gen}}|}{(\frac{1}{2}(|\Delta_{\text{gt}}| + |\Delta_{\text{gen}}|))} \in [0, 2]$, where $\Delta = \mathbf{x}_T - \mathbf{x}_0$.
-   - **Design Motivation**: Conventional PSNR/SSIM are inflated in longitudinal settings (a model that simply copies the baseline scan scores well); Δ-RMAE focuses exclusively on disease-induced change.
+    - **Function**: Assesses the accuracy of the progression direction in generated images rather than absolute image quality.
+    - **Mechanism**: A residual metric defined as $\Delta\text{-RMAE} = \frac{|\Delta_{\text{gt}} - \Delta_{\text{gen}}|}{(\frac{1}{2}(|\Delta_{\text{gt}}| + |\Delta_{\text{gen}}|))} \in [0, 2]$, where $\Delta = \mathbf{x}_T - \mathbf{x}_0$.
+    - **Design Motivation**: Conventional PSNR/SSIM are inflated in longitudinal settings (a model that simply copies the baseline scan scores well); Δ-RMAE focuses exclusively on disease-induced change.
 
 ### Loss & Training
 **Stage 1 (AE)**: Reconstruction loss + ArcRank, with $\lambda_{\text{arc}}=0.005$, $\lambda_{\text{rank}}=0.01$, and margin $m$. AdamW optimizer, lr=$10^{-3}$, batch size=2, 300 epochs.

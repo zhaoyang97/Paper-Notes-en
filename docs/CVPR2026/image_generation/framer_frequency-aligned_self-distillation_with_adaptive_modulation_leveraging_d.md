@@ -18,8 +18,8 @@ content_hash: 716101ef114d053c
 # FRAMER: Frequency-Aligned Self-Distillation with Adaptive Modulation Leveraging Diffusion Priors for Real-World Image Super-Resolution
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.01390](https://arxiv.org/abs/2512.01390)
-**Code**: [https://cmlab-korea.github.io/FRAMER/](https://cmlab-korea.github.io/FRAMER/)
+**arXiv**: [2512.01390](https://arxiv.org/abs/2512.01390)  
+**Code**: [https://cmlab-korea.github.io/FRAMER/](https://cmlab-korea.github.io/FRAMER/)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Real-World Image Super-Resolution, Self-Distillation, Frequency Awareness, Diffusion Priors, Plug-and-Play
 

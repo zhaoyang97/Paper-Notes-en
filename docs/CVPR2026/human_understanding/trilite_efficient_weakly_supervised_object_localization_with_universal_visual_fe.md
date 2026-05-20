@@ -18,8 +18,8 @@ content_hash: 2f49458bcb6f258f
 # TriLite: Efficient WSOL with Universal Visual Features and Tri-Region Disentanglement
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23120](https://arxiv.org/abs/2602.23120)
-**Code**: Coming soon
+**arXiv**: [2602.23120](https://arxiv.org/abs/2602.23120)  
+**Code**: Coming soon  
 **Area**: Human Understanding
 **Keywords**: Weakly Supervised Object Localization, ViT, DINOv2, Tri-Region Disentanglement, Parameter Efficiency
 

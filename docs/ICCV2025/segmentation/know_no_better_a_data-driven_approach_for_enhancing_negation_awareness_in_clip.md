@@ -18,8 +18,8 @@ content_hash: c4f8aef974c5b682
 # Know "No" Better: A Data-Driven Approach for Enhancing Negation Awareness in CLIP
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.10913](https://arxiv.org/abs/2501.10913)
-**Code**: [GitHub](https://github.com/parkquasar/NegationCLIP)
+**arXiv**: [2501.10913](https://arxiv.org/abs/2501.10913)  
+**Code**: [GitHub](https://github.com/parkquasar/NegationCLIP)  
 **Area**: Image Segmentation
 **Keywords**: CLIP, Negation Understanding, Data Generation, Vision-Language Models, Referring Image Segmentation
 

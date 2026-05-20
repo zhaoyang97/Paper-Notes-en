@@ -18,8 +18,8 @@ content_hash: fc9b9050f568d7aa
 # EfficientNav: Towards On-Device Object-Goal Navigation with Navigation Map Caching and Retrieval
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18546](https://arxiv.org/abs/2510.18546)
-**Code**: [GitHub](https://github.com/PKU-SEC-Lab/EfficientNav)
+**arXiv**: [2510.18546](https://arxiv.org/abs/2510.18546)  
+**Code**: [GitHub](https://github.com/PKU-SEC-Lab/EfficientNav)  
 **Area**: Robotics / Navigation / On-Device Deployment
 **Keywords**: object-goal navigation, on-device LLM, KV cache optimization, zero-shot navigation, edge deployment
 

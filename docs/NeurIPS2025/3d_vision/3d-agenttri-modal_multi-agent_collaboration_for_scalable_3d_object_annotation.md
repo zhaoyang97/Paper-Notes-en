@@ -19,8 +19,8 @@ content_hash: 7af76d16b6ac9b31
 # 3D-Agent: Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.04404](https://arxiv.org/abs/2601.04404)
-**Code**: To be released
+**arXiv**: [2601.04404](https://arxiv.org/abs/2601.04404)  
+**Code**: To be released  
 **Area**: 3D Vision / Data Annotation / Multi-Agent Systems
 **Keywords**: 3D object annotation, multi-agent collaboration, VLM, Multi-Armed Bandit, point cloud verification, cross-modal alignment
 

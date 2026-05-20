@@ -18,8 +18,8 @@ content_hash: 12e33fefa24f0b3e
 # GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01010](https://arxiv.org/abs/2603.01010)
-**Code**: N/A
+**arXiv**: [2603.01010](https://arxiv.org/abs/2603.01010)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: Novel View Synthesis, Flow Matching, Geodesic, Probability Density Manifold, Data-to-Data Mapping
 

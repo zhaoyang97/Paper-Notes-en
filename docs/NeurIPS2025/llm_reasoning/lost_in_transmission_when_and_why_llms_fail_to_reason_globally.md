@@ -18,8 +18,8 @@ content_hash: a47044107b1d7d96
 # Lost in Transmission: When and Why LLMs Fail to Reason Globally
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2505.08140](https://arxiv.org/abs/2505.08140)
-**Code**: None
+**arXiv**: [2505.08140](https://arxiv.org/abs/2505.08140)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: communication complexity, bounded attention, chain-of-thought, LLM limitations, computational framework
 **Authors**: Tobias Schnabel, Kiran Tomlinson, Adith Swaminathan, Jennifer Neville (Microsoft)

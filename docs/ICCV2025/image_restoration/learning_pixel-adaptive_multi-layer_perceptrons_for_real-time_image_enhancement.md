@@ -18,8 +18,8 @@ content_hash: cad1e81b4ba85160
 # Learning Pixel-adaptive Multi-layer Perceptrons for Real-time Image Enhancement
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.12135](https://arxiv.org/abs/2507.12135)
-**Code**: [GitHub](https://github.com/LabShuHangGU/BPAM)
+**arXiv**: [2507.12135](https://arxiv.org/abs/2507.12135)  
+**Code**: [GitHub](https://github.com/LabShuHangGU/BPAM)  
 **Area**: Image Restoration
 **Keywords**: Image Enhancement, Bilateral Grid, Pixel-adaptive MLP, Real-time Processing, Color Mapping
 

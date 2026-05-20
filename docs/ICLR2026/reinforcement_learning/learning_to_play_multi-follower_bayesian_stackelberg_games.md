@@ -18,8 +18,8 @@ content_hash: 2d6a981b2613356e
 # Learning to Play Multi-Follower Bayesian Stackelberg Games
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.01387](https://arxiv.org/abs/2510.01387)
-**Code**: None
+**arXiv**: [2510.01387](https://arxiv.org/abs/2510.01387)  
+**Code**: None  
 **Area**: Game Theory / Online Learning
 **Keywords**: Stackelberg Games, Bayesian Games, Online Learning, Best-Response Regions, Regret Bounds
 

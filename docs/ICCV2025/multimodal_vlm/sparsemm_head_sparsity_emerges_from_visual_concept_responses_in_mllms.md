@@ -19,8 +19,8 @@ content_hash: 8d7040187ebe115e
 # SparseMM: Head Sparsity Emerges from Visual Concept Responses in MLLMs
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.05344](https://arxiv.org/abs/2506.05344)
-**Code**: [https://github.com/CR400AF-A/SparseMM](https://github.com/CR400AF-A/SparseMM)
+**arXiv**: [2506.05344](https://arxiv.org/abs/2506.05344)  
+**Code**: [https://github.com/CR400AF-A/SparseMM](https://github.com/CR400AF-A/SparseMM)  
 **Area**: Multimodal Large Language Models / Model Acceleration / KV Cache Optimization
 **Keywords**: Visual Head, MLLM, KV-Cache Compression, Head Sparsity, Attention Analysis, Inference Acceleration
 

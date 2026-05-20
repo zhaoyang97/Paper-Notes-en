@@ -18,8 +18,8 @@ content_hash: 4da1521851a1b7e7
 # PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.10253](https://arxiv.org/abs/2503.10253)
-**Code**: None
+**arXiv**: [2503.10253](https://arxiv.org/abs/2503.10253)  
+**Code**: None  
 **Area**: Scientific Computing / Physics-Informed Learning
 **Keywords**: physics-informed learning, multi-scale spatiotemporal dynamics, burst sampling, PDE solving, recurrent networks
 

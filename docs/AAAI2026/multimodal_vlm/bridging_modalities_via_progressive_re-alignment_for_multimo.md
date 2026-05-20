@@ -18,8 +18,8 @@ content_hash: 6318370c15a7b5dc
 # Bridging Modalities via Progressive Re-alignment for Multimodal Test-Time Adaptation (BriMPR)
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.22862](https://arxiv.org/abs/2511.22862)
-**Code**: [https://github.com/Luchicken/BriMPR](https://github.com/Luchicken/BriMPR)
+**arXiv**: [2511.22862](https://arxiv.org/abs/2511.22862)  
+**Code**: [https://github.com/Luchicken/BriMPR](https://github.com/Luchicken/BriMPR)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal test-time adaptation, cross-modal alignment, prompt tuning, contrastive learning, distribution calibration
 
@@ -32,9 +32,9 @@ This paper proposes BriMPR, a framework that decomposes multimodal test-time ada
 - **Test-time adaptation (TTA)** adapts models online using unlabeled test data during inference to bridge the distribution gap between source and target domains. However, existing TTA methods are primarily designed for unimodal tasks.
 - **Challenges in multimodal scenarios**: Different modalities may suffer from varying degrees of distribution shift, leading to a **coupled effect** of **shallow unimodal feature shift** and **high-level cross-modal semantic misalignment**.
 - Limitations of existing methods:
-  - Unimodal TTA methods such as EATA reduce prediction uncertainty by minimizing entropy but cannot effectively bridge the domain gap across modalities.
-  - READ dynamically assigns modality weights by updating the self-attention layers of the fusion module but lacks correction of shallow unimodal features.
-  - Both types of methods lead to a severe decline in the discriminability of fused multimodal features (confirmed by t-SNE visualization).
+    - Unimodal TTA methods such as EATA reduce prediction uncertainty by minimizing entropy but cannot effectively bridge the domain gap across modalities.
+    - READ dynamically assigns modality weights by updating the self-attention layers of the fusion module but lacks correction of shallow unimodal features.
+    - Both types of methods lead to a severe decline in the discriminability of fused multimodal features (confirmed by t-SNE visualization).
 
 ## Core Problem
 

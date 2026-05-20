@@ -18,8 +18,8 @@ content_hash: 1f4498c0f635e8d3
 # MyGram: Modality-aware Graph Transformer with Global Distribution for Multi-modal Entity Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.11885](https://arxiv.org/abs/2601.11885)
-**Code**: [https://github.com/HubuKG/MyGram](https://github.com/HubuKG/MyGram)
+**arXiv**: [2601.11885](https://arxiv.org/abs/2601.11885)  
+**Code**: [https://github.com/HubuKG/MyGram](https://github.com/HubuKG/MyGram)  
 **Area**: Graph Learning / Knowledge Graphs
 **Keywords**: Multi-modal Entity Alignment, Knowledge Graph, Gram Matrix, Graph Diffusion Learning, Transformer
 

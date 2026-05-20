@@ -18,8 +18,8 @@ content_hash: e565eca2dfed4c6e
 # Beyond Linear Probes: Dynamic Safety Monitoring for Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26238](https://arxiv.org/abs/2509.26238)
-**Code**: [https://github.com/james-oldfield/tpc](https://github.com/james-oldfield/tpc)
+**arXiv**: [2509.26238](https://arxiv.org/abs/2509.26238)  
+**Code**: [https://github.com/james-oldfield/tpc](https://github.com/james-oldfield/tpc)  
 **Area**: Model Safety / Activation Space Monitoring / AI Safety
 **Keywords**: Truncated Polynomial Classifier, Safety Monitoring, Dynamic Inference, Linear Probes, Activation Space
 

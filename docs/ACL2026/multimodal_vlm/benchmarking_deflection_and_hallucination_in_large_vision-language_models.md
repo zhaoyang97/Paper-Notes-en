@@ -18,8 +18,8 @@ content_hash: b28dc90cea5542a9
 # Benchmarking Deflection and Hallucination in Large Vision-Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12033](https://arxiv.org/abs/2604.12033)
-**Code**: Available (to be released upon publication)
+**arXiv**: [2604.12033](https://arxiv.org/abs/2604.12033)  
+**Code**: Available (to be released upon publication)  
 **Area**: Multimodal VLM
 **Keywords**: Vision-language models, hallucination detection, deflection evaluation, knowledge-based VQA, retrieval-augmented generation
 

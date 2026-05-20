@@ -20,8 +20,8 @@ content_hash: 3496654f31b3dcd2
 # C-NAV: Towards Self-Evolving Continual Object Navigation in Open World
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20685](https://arxiv.org/abs/2510.20685)
-**Code**: [https://bigtree765.github.io/C-Nav-project](https://bigtree765.github.io/C-Nav-project)
+**arXiv**: [2510.20685](https://arxiv.org/abs/2510.20685)  
+**Code**: [https://bigtree765.github.io/C-Nav-project](https://bigtree765.github.io/C-Nav-project)  
 **Area**: Robotics
 **Keywords**: Continual Learning, Object Navigation, Catastrophic Forgetting, Feature Distillation, Feature Replay, LOF, Embodied Agents
 

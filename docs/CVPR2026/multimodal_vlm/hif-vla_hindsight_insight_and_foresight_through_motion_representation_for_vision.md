@@ -18,8 +18,8 @@ content_hash: daa1d12c65836b55
 # HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.09928](https://arxiv.org/abs/2512.09928)
-**Code**: [GitHub](https://github.com/OpenHelix-Team/HiF-VLA)
+**arXiv**: [2512.09928](https://arxiv.org/abs/2512.09928)  
+**Code**: [GitHub](https://github.com/OpenHelix-Team/HiF-VLA)  
 **Area**: Multimodal VLM
 **Keywords**: VLA models, motion representation, temporal reasoning, long-horizon manipulation, world models
 

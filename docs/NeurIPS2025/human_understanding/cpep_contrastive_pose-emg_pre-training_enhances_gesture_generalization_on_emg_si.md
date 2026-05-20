@@ -19,8 +19,8 @@ content_hash: 491466e959f5eddc
 # CPEP: Contrastive Pose-EMG Pre-training Enhances Gesture Generalization on EMG Signals
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.04699](https://arxiv.org/abs/2509.04699)
-**Code**: None
+**arXiv**: [2509.04699](https://arxiv.org/abs/2509.04699)  
+**Code**: None  
 **Area**: Human Understanding / Gesture Recognition
 **Keywords**: EMG signals, EMG, gesture recognition, contrastive learning, zero-shot classification, cross-modal alignment
 

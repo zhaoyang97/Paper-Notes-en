@@ -18,8 +18,8 @@ content_hash: 705bb6952f3c2098
 # A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.05205](https://arxiv.org/abs/2510.05205)
-**Code**: [GitHub](https://github.com/swagnercarena/DDPRISM)
+**arXiv**: [2510.05205](https://arxiv.org/abs/2510.05205)  
+**Code**: [GitHub](https://github.com/swagnercarena/DDPRISM)  
 **Area**: Diffusion Models / Scientific Computing / Signal Separation
 **Keywords**: source separation, diffusion model, multi-view, expectation-maximization, Bayesian inverse problem
 

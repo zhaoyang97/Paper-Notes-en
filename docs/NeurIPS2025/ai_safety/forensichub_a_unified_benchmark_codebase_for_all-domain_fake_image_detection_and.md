@@ -18,8 +18,8 @@ content_hash: 501fe330adaca1d9
 # ForensicHub: A Unified Benchmark & Codebase for All-Domain Fake Image Detection and Localization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11003](https://arxiv.org/abs/2505.11003)
-**Code**: [GitHub](https://github.com/scu-zjz/ForensicHub)
+**arXiv**: [2505.11003](https://arxiv.org/abs/2505.11003)  
+**Code**: [GitHub](https://github.com/scu-zjz/ForensicHub)  
 **Area**: AI Security
 **Keywords**: Image forgery detection, unified benchmark, Deepfake, AIGC detection, document tampering
 

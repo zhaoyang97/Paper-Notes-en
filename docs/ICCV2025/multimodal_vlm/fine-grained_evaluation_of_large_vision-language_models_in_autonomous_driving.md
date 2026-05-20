@@ -18,8 +18,8 @@ content_hash: c76152942e58615b
 # Fine-Grained Evaluation of Large Vision-Language Models in Autonomous Driving
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.21505](https://arxiv.org/abs/2503.21505)
-**Code**: None
+**arXiv**: [2503.21505](https://arxiv.org/abs/2503.21505)  
+**Code**: None  
 **Area**: Multimodal VLM / Autonomous Driving
 **Keywords**: vision-language model evaluation, autonomous driving benchmark, fine-grained assessment, visual question answering, driving scene understanding
 

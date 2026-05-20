@@ -18,8 +18,8 @@ content_hash: 8d48b239a78bdbc9
 # Reinforcing Structured Chain-of-Thought for Video Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25942](https://arxiv.org/abs/2603.25942)
-**Code**: None
+**arXiv**: [2603.25942](https://arxiv.org/abs/2603.25942)  
+**Code**: None  
 **Area**: Video Understanding / Video Reasoning
 **Keywords**: VideoQA, Reinforcement Learning, Structured CoT, GRPO, Temporal Reasoning
 

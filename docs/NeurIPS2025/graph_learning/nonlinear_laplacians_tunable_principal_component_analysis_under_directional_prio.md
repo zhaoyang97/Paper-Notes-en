@@ -18,8 +18,8 @@ content_hash: d201f526c7501493
 # Nonlinear Laplacians: Tunable Principal Component Analysis under Directional Prior Information
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12528](https://arxiv.org/abs/2505.12528)
-**Code**: None
+**arXiv**: [2505.12528](https://arxiv.org/abs/2505.12528)  
+**Code**: None  
 **Area**: Graph Learning
 **Keywords**: Nonlinear Laplacian, Principal Component Analysis, Spectral Algorithm, Random Matrix Theory, Directional Prior
 

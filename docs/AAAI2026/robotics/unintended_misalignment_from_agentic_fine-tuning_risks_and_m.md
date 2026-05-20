@@ -18,8 +18,8 @@ content_hash: 136392cf4736756e
 # Unintended Misalignment from Agentic Fine-Tuning: Risks and Mitigation
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.14031](https://arxiv.org/abs/2508.14031)
-**Code**: [https://github.com/HahmDY/agentic-ft-safety.git](https://github.com/HahmDY/agentic-ft-safety.git)
+**arXiv**: [2508.14031](https://arxiv.org/abs/2508.14031)  
+**Code**: [https://github.com/HahmDY/agentic-ft-safety.git](https://github.com/HahmDY/agentic-ft-safety.git)  
 **Area**: Robotics
 **Keywords**: Agentic Fine-Tuning, Unintended Alignment Shift, Prefix Injection Guard, Agent Safety, Linear Probe Analysis
 

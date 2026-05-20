@@ -18,8 +18,8 @@ content_hash: 356310698327c931
 # Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10583](https://arxiv.org/abs/2603.10583)
-**Code**: [GitHub](https://github.com/hongsong-wang/LIDA)
+**arXiv**: [2603.10583](https://arxiv.org/abs/2603.10583)  
+**Code**: [GitHub](https://github.com/hongsong-wang/LIDA)  
 **Area**: Image Forensics / AI Safety
 **Keywords**: Deepfake attribution, image forensics, retrieval-based, bit-plane, model-agnostic
 

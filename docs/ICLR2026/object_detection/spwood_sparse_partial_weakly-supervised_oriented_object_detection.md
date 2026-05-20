@@ -18,8 +18,8 @@ content_hash: 0b2c5e801b9b159c
 # SPWOOD: Sparse Partial Weakly-Supervised Oriented Object Detection
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.03634](https://arxiv.org/abs/2602.03634)
-**Code**: N/A
+**arXiv**: [2602.03634](https://arxiv.org/abs/2602.03634)  
+**Code**: N/A  
 **Area**: Object Detection / Remote Sensing
 **Keywords**: Oriented object detection, weak supervision, sparse annotation, semi-supervised learning, remote sensing
 

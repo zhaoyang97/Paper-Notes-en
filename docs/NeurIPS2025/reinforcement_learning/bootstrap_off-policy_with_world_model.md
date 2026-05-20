@@ -19,8 +19,8 @@ content_hash: 146dc5dd3ebd5ccd
 # Bootstrap Off-policy with World Model (BOOM)
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00423](https://arxiv.org/abs/2511.00423)
-**Code**: [molumitu/BOOM_MBRL](https://github.com/molumitu/BOOM_MBRL)
+**arXiv**: [2511.00423](https://arxiv.org/abs/2511.00423)  
+**Code**: [molumitu/BOOM_MBRL](https://github.com/molumitu/BOOM_MBRL)  
 **Area**: Reinforcement Learning
 **Keywords**: Model-based reinforcement learning, online planning, off-policy learning, world model, actor divergence, behavior alignment
 

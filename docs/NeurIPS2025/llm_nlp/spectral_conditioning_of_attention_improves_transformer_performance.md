@@ -18,8 +18,8 @@ content_hash: e8db126773842a2e
 # Spectral Conditioning of Attention Improves Transformer Performance
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2603.07162](https://arxiv.org/abs/2603.07162)
-**Code**: Not released
+**arXiv**: [2603.07162](https://arxiv.org/abs/2603.07162)  
+**Code**: Not released  
 **Area**: LLM/NLP
 **Keywords**: Transformer, attention mechanism, condition number, spectral conditioning, Jacobian
 

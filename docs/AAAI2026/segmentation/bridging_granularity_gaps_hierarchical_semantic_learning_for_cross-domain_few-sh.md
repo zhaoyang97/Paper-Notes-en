@@ -18,8 +18,8 @@ content_hash: bffe429f7d69b43d
 # Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12200](https://arxiv.org/abs/2511.12200)
-**Code**: [Available](https://github.com/Sparkling-Water/HSLNet)
+**arXiv**: [2511.12200](https://arxiv.org/abs/2511.12200)  
+**Code**: [Available](https://github.com/Sparkling-Water/HSLNet)  
 **Area**: Segmentation
 **Keywords**: Cross-domain few-shot segmentation, hierarchical semantic learning, style randomization, superpixel, prototype confidence
 

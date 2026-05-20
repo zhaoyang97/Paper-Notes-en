@@ -19,8 +19,8 @@ content_hash: 6d122cfac9313d90
 # Ask a Strong LLM Judge when Your Reward Model is Uncertain
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20369](https://arxiv.org/abs/2510.20369)
-**Code**: [GitHub](https://github.com/zhenghaoxu-gatech/uncertainty-router)
+**arXiv**: [2510.20369](https://arxiv.org/abs/2510.20369)  
+**Code**: [GitHub](https://github.com/zhenghaoxu-gatech/uncertainty-router)  
 **Area**: Alignment / RLHF
 **Keywords**: Reward Model, LLM-as-Judge, Uncertainty Quantification, SNGP, Routing, RLHF
 

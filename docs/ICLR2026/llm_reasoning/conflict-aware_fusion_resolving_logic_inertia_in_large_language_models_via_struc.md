@@ -18,8 +18,8 @@ content_hash: f80b3531b1fc3480
 # Conflict-Aware Fusion: Resolving Logic Inertia in Large Language Models via Structured Cognitive Priors
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.06393](https://arxiv.org/abs/2512.06393)
-**Code**: [https://github.com/14H034160212/lemo](https://github.com/14H034160212/lemo)
+**arXiv**: [2512.06393](https://arxiv.org/abs/2512.06393)  
+**Code**: [https://github.com/14H034160212/lemo](https://github.com/14H034160212/lemo)  
 **Area**: LLM Reasoning
 **Keywords**: logic inertia, contradiction detection, dual-process reasoning, structural robustness, rule-based reasoning
 

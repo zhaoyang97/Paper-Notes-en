@@ -18,8 +18,8 @@ content_hash: fc6c3096e181e59f
 # Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.04309](https://arxiv.org/abs/2512.04309)
-**Code**: To be confirmed
+**arXiv**: [2512.04309](https://arxiv.org/abs/2512.04309)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Image captioning, text-only training, retrieval augmentation, modality gap correction, CLIP
 

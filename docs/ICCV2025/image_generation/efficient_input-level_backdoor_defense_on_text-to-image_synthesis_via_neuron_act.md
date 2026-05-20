@@ -18,8 +18,8 @@ content_hash: 5bc83282e9a001b4
 # Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06453](https://arxiv.org/abs/2503.06453)
-**Code**: [GitHub](https://github.com/zhaisf/NaviT2I)
+**arXiv**: [2503.06453](https://arxiv.org/abs/2503.06453)  
+**Code**: [GitHub](https://github.com/zhaisf/NaviT2I)  
 **Area**: AI Security / Backdoor Defense for Text-to-Image Generation
 **Keywords**: backdoor defense, text-to-image models, neuron activation variation, input-level detection, Stable Diffusion
 

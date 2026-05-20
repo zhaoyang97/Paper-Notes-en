@@ -18,8 +18,8 @@ content_hash: 1efc99caa43ef52a
 # DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17940](https://arxiv.org/abs/2509.17940)
-**Code**: None
+**arXiv**: [2509.17940](https://arxiv.org/abs/2509.17940)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: End-to-end autonomous driving, Safety DPO, preference optimization, trajectory planning, NAVSIM
 

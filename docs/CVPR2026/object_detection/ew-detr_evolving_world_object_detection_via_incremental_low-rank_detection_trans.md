@@ -19,8 +19,8 @@ content_hash: edafd811c94bdeed
 # EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer
 
 **Conference**: CVPR2026
-**arXiv**: [2602.20985](https://arxiv.org/abs/2602.20985)
-**Code**: To be confirmed
+**arXiv**: [2602.20985](https://arxiv.org/abs/2602.20985)  
+**Code**: To be confirmed  
 **Area**: Object Detection
 **Keywords**: Open-world object detection, incremental learning, domain adaptation, unknown object detection, LoRA, DETR
 

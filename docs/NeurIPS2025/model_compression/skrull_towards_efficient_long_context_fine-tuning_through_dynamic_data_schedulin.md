@@ -18,8 +18,8 @@ content_hash: 16b176eb5f727753
 # Skrull: Towards Efficient Long Context Fine-tuning through Dynamic Data Scheduling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19609](https://arxiv.org/abs/2505.19609)
-**Code**: Not available
+**arXiv**: [2505.19609](https://arxiv.org/abs/2505.19609)  
+**Code**: Not available  
 **Area**: Model Compression
 **Keywords**: long-context fine-tuning, data scheduling, context parallelism, training efficiency, large language models
 

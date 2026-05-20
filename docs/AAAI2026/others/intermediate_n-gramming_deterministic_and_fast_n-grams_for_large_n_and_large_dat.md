@@ -17,8 +17,8 @@ content_hash: b3d99823b3042f73
 # Intermediate N-Gramming: Deterministic and Fast N-Grams For Large N and Large Datasets
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14955](https://arxiv.org/abs/2511.14955)
-**Code**: [GitHub](https://github.com/rcurtin/Intergrams)
+**arXiv**: [2511.14955](https://arxiv.org/abs/2511.14955)  
+**Code**: [GitHub](https://github.com/rcurtin/Intergrams)  
 **Area**: High-Performance Computing / Data Mining
 **Keywords**: n-gram computation, hardware-aware algorithms, cache-friendly, Zipf distribution, multi-pass scanning
 

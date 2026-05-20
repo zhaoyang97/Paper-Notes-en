@@ -18,8 +18,8 @@ content_hash: 617fdefd182a52e1
 # Refer to Any Segmentation Mask Group With Vision-Language Prompts
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.05342](https://arxiv.org/abs/2506.05342)
-**Code**: [Ref2Any](https://Ref2Any.github.io)
+**arXiv**: [2506.05342](https://arxiv.org/abs/2506.05342)  
+**Code**: [Ref2Any](https://Ref2Any.github.io)  
 **Area**: Image Segmentation
 **Keywords**: Omni-modal referring segmentation, mask grouping, vision-language prompts, large multimodal models, non-autoregressive decoding
 

@@ -18,8 +18,8 @@ content_hash: f114a684ec415632
 # HandDreamer: Zero-Shot Text to 3D Hand Model Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04425](https://arxiv.org/abs/2604.04425)
-**Code**: None
+**arXiv**: [2604.04425](https://arxiv.org/abs/2604.04425)  
+**Code**: None  
 **Area**: 3D Generation / Hand Modeling
 **Keywords**: text-to-3D, hand generation, SDS, MANO, view consistency
 

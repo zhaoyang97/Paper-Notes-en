@@ -18,8 +18,8 @@ content_hash: a17507e342cb2d50
 # In-Context Learning for Pure Exploration
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.01876](https://arxiv.org/abs/2506.01876)
-**Code**: Available (attached to paper)
+**arXiv**: [2506.01876](https://arxiv.org/abs/2506.01876)  
+**Code**: Available (attached to paper)  
 **Area**: LLM Evaluation
 **Keywords**: In-Context Learning, Pure Exploration, Hypothesis Testing, Best Arm Identification, Transformer
 

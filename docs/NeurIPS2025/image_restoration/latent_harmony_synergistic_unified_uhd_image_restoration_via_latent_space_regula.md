@@ -18,8 +18,8 @@ content_hash: b50707a111e2575b
 # Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07961](https://arxiv.org/abs/2510.07961)
-**Code**: [GitHub](https://github.com/lyd-2022/Latent-Harmony)
+**arXiv**: [2510.07961](https://arxiv.org/abs/2510.07961)  
+**Code**: [GitHub](https://github.com/lyd-2022/Latent-Harmony)  
 **Area**: Image Restoration / Ultra-High-Definition Image Processing
 **Keywords**: UHD Image Restoration, VAE Regularization, High-Frequency LoRA, Fidelity-Perceptual Quality Trade-off, All-in-One
 

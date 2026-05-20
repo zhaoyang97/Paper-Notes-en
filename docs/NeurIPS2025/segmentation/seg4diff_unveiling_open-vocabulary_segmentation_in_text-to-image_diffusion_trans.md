@@ -18,8 +18,8 @@ content_hash: 16db4acfce7580be
 # Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.18096](https://arxiv.org/abs/2509.18096)
-**Code**: [GitHub](https://cvlab-kaist.github.io/Seg4Diff)
+**arXiv**: [2509.18096](https://arxiv.org/abs/2509.18096)  
+**Code**: [GitHub](https://cvlab-kaist.github.io/Seg4Diff)  
 **Area**: Image Segmentation
 **Keywords**: Diffusion Models, Open-Vocabulary Segmentation, MM-DiT, Attention Analysis, Semantic Alignment
 

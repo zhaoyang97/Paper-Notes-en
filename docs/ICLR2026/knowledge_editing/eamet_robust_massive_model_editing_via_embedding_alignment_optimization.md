@@ -17,8 +17,8 @@ content_hash: 54b56715220d03fb
 # EAMET: Robust Massive Model Editing via Embedding Alignment Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.11876](https://arxiv.org/abs/2505.11876)
-**Code**: [https://github.com/ybdai7/EAMET-massive-editing](https://github.com/ybdai7/EAMET-massive-editing)
+**arXiv**: [2505.11876](https://arxiv.org/abs/2505.11876)  
+**Code**: [https://github.com/ybdai7/EAMET-massive-editing](https://github.com/ybdai7/EAMET-massive-editing)  
 **Area**: LLM NLP / Model Editing
 **Keywords**: Massive model editing, embedding alignment, MEMIT, knowledge editing, structural inconsistency
 

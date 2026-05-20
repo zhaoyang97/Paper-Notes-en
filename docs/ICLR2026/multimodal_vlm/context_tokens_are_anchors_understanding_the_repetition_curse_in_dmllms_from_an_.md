@@ -18,8 +18,8 @@ content_hash: 913350eddcdf2fc6
 # Context Tokens are Anchors: Understanding the Repetition Curse in dMLLMs from an Information Flow Perspective
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20520](https://arxiv.org/abs/2601.20520)
-**Code**: [GitHub](https://github.com/ErikZ719/CoTA)
+**arXiv**: [2601.20520](https://arxiv.org/abs/2601.20520)  
+**Code**: [GitHub](https://github.com/ErikZ719/CoTA)  
 **Area**: Multimodal VLM
 **Keywords**: Diffusion language models, repetitive generation, information flow analysis, cache acceleration, attention mechanism
 

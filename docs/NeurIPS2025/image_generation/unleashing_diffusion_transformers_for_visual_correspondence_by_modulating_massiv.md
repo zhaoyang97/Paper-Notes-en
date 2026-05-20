@@ -18,8 +18,8 @@ content_hash: b07b082c03467e7c
 # Unleashing Diffusion Transformers for Visual Correspondence by Modulating Massive Activations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18584](https://arxiv.org/abs/2505.18584)
-**Code**: [GitHub](https://github.com/ganchaofan0000/DiTF)
+**arXiv**: [2505.18584](https://arxiv.org/abs/2505.18584)  
+**Code**: [GitHub](https://github.com/ganchaofan0000/DiTF)  
 **Area**: Visual Correspondence, Diffusion Models, Feature Extraction
 **Keywords**: Diffusion Transformer, Massive Activations, AdaLN, Visual Correspondence, Feature Extraction
 
@@ -53,21 +53,21 @@ This paper identifies the massive activations phenomenon in Diffusion Transforme
 ### Key Designs
 1. **Analysis of Massive Activations**:
 
-   - Spatial distribution: appear across all image patch tokens (unlike LLMs, where they concentrate on special tokens).
-   - Dimension distribution: concentrated in a very small number of fixed dimensions (only dimension 676 in SD3-5).
-   - Low informativeness: massive activation dimensions exhibit significantly lower variance than non-massive dimensions, carrying minimal local information.
+    - Spatial distribution: appear across all image patch tokens (unlike LLMs, where they concentrate on special tokens).
+    - Dimension distribution: concentrated in a very small number of fixed dimensions (only dimension 676 in SD3-5).
+    - Low informativeness: massive activation dimensions exhibit significantly lower variance than non-massive dimensions, carrying minimal local information.
 
 2. **Connection Between AdaLN and Massive Activations**:
 
-   - High-value dimensions of the residual scaling factor $\alpha_k$ precisely correspond to massive activation dimensions.
-   - AdaLN can adaptively localize massive activations and suppress them via channel modulation.
-   - Post-AdaLN features substantially outperform pre-AdaLN features in both semantic consistency and spatial discriminability.
+    - High-value dimensions of the residual scaling factor $\alpha_k$ precisely correspond to massive activation dimensions.
+    - AdaLN can adaptively localize massive activations and suppress them via channel modulation.
+    - Post-AdaLN features substantially outperform pre-AdaLN features in both semantic consistency and spatial discriminability.
 
 3. **Channel Dropping Strategy**:
 
-   - Post-AdaLN features still contain a small number of weak massive activations.
-   - These dimensions are zeroed out to further eliminate their negative impact.
-   - Simple and effective, requiring no training whatsoever.
+    - Post-AdaLN features still contain a small number of weak massive activations.
+    - These dimensions are zeroed out to further eliminate their negative impact.
+    - Simple and effective, requiring no training whatsoever.
 
 ### Loss & Training
 - Entirely training-free.

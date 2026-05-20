@@ -18,8 +18,8 @@ content_hash: 656c20d64bb03bee
 # Learning Part-Aware Dense 3D Feature Field for Generalizable Articulated Object Manipulation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.14193](https://arxiv.org/abs/2602.14193)
-**Code**: [https://pa3ff.github.io/](https://pa3ff.github.io/)
+**arXiv**: [2602.14193](https://arxiv.org/abs/2602.14193)  
+**Code**: [https://pa3ff.github.io/](https://pa3ff.github.io/)  
 **Area**: 3D Vision / Robot Manipulation
 **Keywords**: 3D feature field, part-aware, articulated object manipulation, contrastive learning, diffusion policy
 
@@ -57,21 +57,21 @@ The pipeline consists of three stages:
 
 1. **Geometric Contrastive Loss $\mathcal{L}_{Geo}$**:
 
-   - **Function**: Pulls features of points belonging to the same part together in feature space while pushing apart points from different parts.
-   - **Mechanism**: Based on Supervised Contrastive Loss. Given feature-label pairs $\{f_k, a_k\}$ for $N$ points, a softmax similarity loss is computed over positive pairs sharing the same label.
-   - **Design Motivation**: The purely geometric constraint ensures that features reflect 3D part structure without relying on any 2D information.
+    - **Function**: Pulls features of points belonging to the same part together in feature space while pushing apart points from different parts.
+    - **Mechanism**: Based on Supervised Contrastive Loss. Given feature-label pairs $\{f_k, a_k\}$ for $N$ points, a softmax similarity loss is computed over positive pairs sharing the same label.
+    - **Design Motivation**: The purely geometric constraint ensures that features reflect 3D part structure without relying on any 2D information.
 
 2. **Semantic Contrastive Loss $\mathcal{L}_{Sem}$**:
 
-   - **Function**: Aligns point features with text embeddings of part names.
-   - **Mechanism**: A SigLIP text encoder encodes part names (e.g., "handle", "knob") into semantic vectors $\mathbf{x}_k = \text{SigLIP}(s_k)$; an InfoNCE loss then aligns point features with the corresponding part-name text features.
-   - **Design Motivation**: Semantic alignment ensures features encode not only spatial relationships but also functional meaning — "handle" and "knob" are distinctly separated in feature space.
+    - **Function**: Aligns point features with text embeddings of part names.
+    - **Mechanism**: A SigLIP text encoder encodes part names (e.g., "handle", "knob") into semantic vectors $\mathbf{x}_k = \text{SigLIP}(s_k)$; an InfoNCE loss then aligns point features with the corresponding part-name text features.
+    - **Design Motivation**: Semantic alignment ensures features encode not only spatial relationships but also functional meaning — "handle" and "knob" are distinctly separated in feature space.
 
 3. **Part-Aware Diffusion Policy (PADP)**:
 
-   - **Function**: Leverages PA3FF features for diffusion-based policy learning.
-   - **Mechanism**: The frozen PA3FF backbone extracts point cloud embeddings → semantic embeddings of task-relevant part names serve as CLS tokens to guide a Transformer encoder in feature aggregation → the aggregated features are concatenated with proprioceptive state and compressed via MLP → actions are generated using DDPM training and DDIM inference.
-   - **Design Motivation**: The part-name semantic CLS token steers attention toward task-relevant parts (e.g., "handle" for opening a microwave), preventing the policy from being distracted by irrelevant regions.
+    - **Function**: Leverages PA3FF features for diffusion-based policy learning.
+    - **Mechanism**: The frozen PA3FF backbone extracts point cloud embeddings → semantic embeddings of task-relevant part names serve as CLS tokens to guide a Transformer encoder in feature aggregation → the aggregated features are concatenated with proprioceptive state and compressed via MLP → actions are generated using DDPM training and DDIM inference.
+    - **Design Motivation**: The part-name semantic CLS token steers attention toward task-relevant parts (e.g., "handle" for opening a microwave), preventing the policy from being distracted by irrelevant regions.
 
 ### Loss & Training
 

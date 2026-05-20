@@ -18,8 +18,8 @@ content_hash: a69bc1106365da65
 # APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.04953v3](https://arxiv.org/abs/2506.04953v3)
-**Code**: No public link
+**arXiv**: [2506.04953v3](https://arxiv.org/abs/2506.04953v3)  
+**Code**: No public link  
 **Area**: Video Understanding / Multimodal LLM
 **Keywords**: long video understanding, training-free, keyframe retrieval, token compression, dual-granularity retrieval
 

@@ -17,8 +17,8 @@ content_hash: 612b511de06083ae
 # Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11551v3](https://arxiv.org/abs/2511.11551v3)
-**Code**: [GitHub](https://github.com/ITM-Kitware/machiavelli-ttps)
+**arXiv**: [2511.11551v3](https://arxiv.org/abs/2511.11551v3)  
+**Code**: [GitHub](https://github.com/ITM-Kitware/machiavelli-ttps)  
 **Area**: Reinforcement Learning
 **Keywords**: Test-time alignment, policy shaping, ethical behavior steering, Machiavellian agents, reinforcement learning
 

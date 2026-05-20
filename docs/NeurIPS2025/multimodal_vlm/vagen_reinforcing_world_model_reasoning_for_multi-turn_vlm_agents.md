@@ -18,8 +18,8 @@ content_hash: f9b744057f1aa736
 # VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16907](https://arxiv.org/abs/2510.16907)
-**Code**: [http://mll.lab.northwestern.edu/VAGEN](http://mll.lab.northwestern.edu/VAGEN)
+**arXiv**: [2510.16907](https://arxiv.org/abs/2510.16907)  
+**Code**: [http://mll.lab.northwestern.edu/VAGEN](http://mll.lab.northwestern.edu/VAGEN)  
 **Area**: Multimodal VLM
 **Keywords**: VLM Agent, World Model, Reinforcement Learning, POMDP, Multi-Turn Interaction
 

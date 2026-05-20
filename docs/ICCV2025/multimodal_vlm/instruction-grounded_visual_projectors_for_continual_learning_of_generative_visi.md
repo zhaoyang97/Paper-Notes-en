@@ -18,8 +18,8 @@ content_hash: 954a8b20ca695736
 # Instruction-Grounded Visual Projectors for Continual Learning of Generative Vision-Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00260](https://arxiv.org/abs/2508.00260)
-**Code**: N/A
+**arXiv**: [2508.00260](https://arxiv.org/abs/2508.00260)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: Continual Learning, Vision-Language Models, Mixture-of-Experts, Visual Projector, Instruction-Awareness
 

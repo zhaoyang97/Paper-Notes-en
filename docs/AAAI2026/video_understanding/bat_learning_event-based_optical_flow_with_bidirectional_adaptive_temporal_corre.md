@@ -18,8 +18,8 @@ content_hash: 871920318ce6911e
 # BAT: Learning Event-based Optical Flow with Bidirectional Adaptive Temporal Correlation
 
 **Conference**: AAAI2026
-**arXiv**: [2503.03256](https://arxiv.org/abs/2503.03256)
-**Code**: [gangweix/BAT](https://github.com/gangweix/BAT)
+**arXiv**: [2503.03256](https://arxiv.org/abs/2503.03256)  
+**Code**: [gangweix/BAT](https://github.com/gangweix/BAT)  
 **Area**: Video Understanding
 **Keywords**: event camera, optical flow, bidirectional temporal correlation, deformable attention, event-based vision
 

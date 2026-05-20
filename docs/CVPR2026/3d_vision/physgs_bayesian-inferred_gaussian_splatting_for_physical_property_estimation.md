@@ -18,8 +18,8 @@ content_hash: 421165c32b9f6fd9
 # PhysGS: Bayesian-Inferred Gaussian Splatting for Physical Property Estimation
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.18570](https://arxiv.org/abs/2511.18570)
-**Code**: [Project Page](https://samchopra2003.github.io/physgs)
+**arXiv**: [2511.18570](https://arxiv.org/abs/2511.18570)  
+**Code**: [Project Page](https://samchopra2003.github.io/physgs)  
 **Area**: 3D Vision
 **Keywords**: Physical Property Estimation, Bayesian Inference, 3D Gaussian Splatting, Uncertainty Quantification, Vision-Language Models
 

@@ -18,8 +18,8 @@ content_hash: a2a10bcb2c878321
 # mDP3: A Training-free Approach for List-wise Frame Selection in Video-LLMs
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.02885](https://arxiv.org/abs/2501.02885)
-**Code**: [github.com/sunh-23/MDP3](https://github.com/sunh-23/MDP3)
+**arXiv**: [2501.02885](https://arxiv.org/abs/2501.02885)  
+**Code**: [github.com/sunh-23/MDP3](https://github.com/sunh-23/MDP3)  
 **Area**: Reinforcement Learning
 **Keywords**: Frame Selection, Determinantal Point Process, Markov Decision Process, Video Question Answering, Training-free
 

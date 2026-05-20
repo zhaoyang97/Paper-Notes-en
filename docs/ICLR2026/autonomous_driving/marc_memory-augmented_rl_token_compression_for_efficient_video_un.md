@@ -18,8 +18,8 @@ content_hash: 4a000da9ceec38a1
 # MARC: Memory-Augmented RL Token Compression for Efficient Video Understanding
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.07915](https://arxiv.org/abs/2510.07915)
-**Code**: Available (Project Web / Code / Model all provided)
+**arXiv**: [2510.07915](https://arxiv.org/abs/2510.07915)  
+**Code**: Available (Project Web / Code / Model all provided)  
 **Area**: Autonomous Driving
 **Keywords**: Video token compression, reinforcement learning distillation, visual memory retrieval, GRPO, efficient inference
 

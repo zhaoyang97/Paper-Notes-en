@@ -18,8 +18,8 @@ content_hash: 93132bc53fc6bad0
 # PLAN: Proactive Low-Rank Allocation for Continual Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.21188](https://arxiv.org/abs/2510.21188)
-**Code**: N/A
+**arXiv**: [2510.21188](https://arxiv.org/abs/2510.21188)  
+**Code**: N/A  
 **Area**: Model Compression
 **Keywords**: Continual Learning, Low-Rank Adaptation, LoRA, Catastrophic Forgetting, Subspace Allocation
 

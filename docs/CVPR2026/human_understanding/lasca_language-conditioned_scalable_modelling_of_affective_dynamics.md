@@ -18,8 +18,8 @@ content_hash: 44fbc92689b5462c
 # LaScA: Language-Conditioned Scalable Modelling of Affective Dynamics
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07193](https://arxiv.org/abs/2604.07193)
-**Code**: None
+**arXiv**: [2604.07193](https://arxiv.org/abs/2604.07193)  
+**Code**: None  
 **Area**: Affective Computing
 **Keywords**: affective modeling, language models, semantic priors, Valence-Arousal, preference learning
 
@@ -54,29 +54,29 @@ The complete LaScA pipeline proceeds as follows:
 
 1. **Affect-Aware Semantic Lexicon**:
 
-   - *Function*: Generates fixed textual descriptions for each handcrafted feature (e.g., blendshape coefficients, MFCCs).
-   - *Mechanism*: ChatGPT 5.2 is prompted once, assuming the role of an "affective computing researcher," to generate affective descriptions for all features, stored as a fixed mapping $\mathcal{L} = \{(f_i, \ell_i)\}_{i=1}^d$.
-   - *Design Motivation*: The lexicon is constructed only once, eliminating LLM stochasticity and computational overhead at inference time while ensuring reproducibility.
-   - *Ablation Evidence*: The LLM-generated lexicon improves arousal performance by approximately 2% over a lexicon using only feature names.
+    - *Function*: Generates fixed textual descriptions for each handcrafted feature (e.g., blendshape coefficients, MFCCs).
+    - *Mechanism*: ChatGPT 5.2 is prompted once, assuming the role of an "affective computing researcher," to generate affective descriptions for all features, stored as a fixed mapping $\mathcal{L} = \{(f_i, \ell_i)\}_{i=1}^d$.
+    - *Design Motivation*: The lexicon is constructed only once, eliminating LLM stochasticity and computational overhead at inference time while ensuring reproducibility.
+    - *Ablation Evidence*: The LLM-generated lexicon improves arousal performance by approximately 2% over a lexicon using only feature names.
 
 2. **Per-Sample Saliency Estimation (Otsu Thresholding)**:
 
-   - *Function*: For each time slice, normalized feature values are sorted and binarized into salient/non-salient groups via the Otsu method.
-   - *Mechanism*: Unsupervised partitioning by maximizing inter-class variance yields a binary mask $\mathbf{m}_t \in \{0,1\}^d$.
-   - *Design Motivation*: Adaptively selects dominant behavioral cues under strong individual variability.
+    - *Function*: For each time slice, normalized feature values are sorted and binarized into salient/non-salient groups via the Otsu method.
+    - *Mechanism*: Unsupervised partitioning by maximizing inter-class variance yields a binary mask $\mathbf{m}_t \in \{0,1\}^d$.
+    - *Design Motivation*: Adaptively selects dominant behavioral cues under strong individual variability.
 
 3. **Semantic Encoding and Fusion**:
 
-   - *Function*: Descriptions of active features are inserted into a structured template and encoded by a frozen sentence Transformer into a semantic embedding $\mathbf{s}_t$.
-   - *Mechanism*: The semantic embedding captures contextual relationships among active behavioral cues.
-   - *Fusion*: Simple concatenation $\mathbf{z}_t = [\mathbf{x}_t \| \mathbf{s}_t]$.
-   - Five sentence encoders are evaluated: MPNet, QAMPNet, DistilRoBERTa, MiniLM, and DistilBERT.
+    - *Function*: Descriptions of active features are inserted into a structured template and encoded by a frozen sentence Transformer into a semantic embedding $\mathbf{s}_t$.
+    - *Mechanism*: The semantic embedding captures contextual relationships among active behavioral cues.
+    - *Fusion*: Simple concatenation $\mathbf{z}_t = [\mathbf{x}_t \| \mathbf{s}_t]$.
+    - Five sentence encoders are evaluated: MPNet, QAMPNet, DistilRoBERTa, MiniLM, and DistilBERT.
 
 4. **Preference Learner**:
 
-   - *Function*: Predicts whether affect increases or decreases between consecutive temporal windows.
-   - *Mechanism*: Preference pairs $(x_t, x_{t+1})$ are constructed and retained only when the relative change exceeds threshold $\tau$; the embedding difference $\Delta\mathbf{z}$ is passed through a two-layer MLP with sigmoid activation to predict the direction.
-   - *Design Motivation*: Relative prediction is more robust than absolute prediction, mitigating annotation noise.
+    - *Function*: Predicts whether affect increases or decreases between consecutive temporal windows.
+    - *Mechanism*: Preference pairs $(x_t, x_{t+1})$ are constructed and retained only when the relative change exceeds threshold $\tau$; the embedding difference $\Delta\mathbf{z}$ is passed through a two-layer MLP with sigmoid activation to predict the direction.
+    - *Design Motivation*: Relative prediction is more robust than absolute prediction, mitigating annotation noise.
 
 ### Loss & Training
 

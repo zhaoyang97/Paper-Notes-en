@@ -18,8 +18,8 @@ content_hash: a955151300143d33
 # Universal Safety Controllers with Learned Prophecies
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11390](https://arxiv.org/abs/2511.11390)
-**Code**: [UCLearn](https://github.com/) (uclearn tool)
+**arXiv**: [2511.11390](https://arxiv.org/abs/2511.11390)  
+**Code**: [UCLearn](https://github.com/) (uclearn tool)  
 **Area**: Interpretability
 **Keywords**: Universal Safety Controllers, Temporal Logic, CTL Learning, Reactive Synthesis, Prophecy Approximation
 

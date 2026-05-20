@@ -18,8 +18,8 @@ content_hash: 977b60e5efce07f1
 # Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20808](https://arxiv.org/abs/2603.20808)
-**Code**: None
+**arXiv**: [2603.20808](https://arxiv.org/abs/2603.20808)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: visual representation degradation, multimodal large language models, predictive regularization, self-supervised learning, visual fidelity
 

@@ -18,8 +18,8 @@ content_hash: 83991dfd28729815
 # HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.09518](https://arxiv.org/abs/2506.09518)
-**Code**: To be confirmed
+**arXiv**: [2506.09518](https://arxiv.org/abs/2506.09518)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: Dynamic scene reconstruction, 3D Gaussian splatting, motion anchors, scene flow, hierarchical deformation
 

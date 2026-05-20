@@ -18,8 +18,8 @@ content_hash: 9572cd9de5d99304
 # Preference Optimization by Estimating the Ratio of the Data Distribution
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19601](https://arxiv.org/abs/2505.19601)
-**Code**: [GitHub](https://github.com/aailab-kaist/BPO)
+**arXiv**: [2505.19601](https://arxiv.org/abs/2505.19601)  
+**Code**: [GitHub](https://github.com/aailab-kaist/BPO)  
 **Area**: Alignment / RLHF
 **Keywords**: DPO, Bregman divergence, likelihood ratio estimation, preference optimization, alignment
 
@@ -52,28 +52,28 @@ Preference optimization is reformulated as a matching problem between two ratios
 
 1. **Proposition 1: Likelihood Ratio Representation of the Optimal Policy**:
 
-   - Function: Proves that the optimal policy can be characterized solely via the reference model and the preference data distribution, without a reward model or partition function.
-   - Core formula: $\frac{\pi_{\theta^*}(\mathbf{y}_w|\mathbf{x})}{\pi_{\theta^*}(\mathbf{y}_l|\mathbf{x})} = \frac{\pi_{\text{ref}}(\mathbf{y}_w|\mathbf{x})}{\pi_{\text{ref}}(\mathbf{y}_l|\mathbf{x})} \times \left(\frac{p_{\text{data}}(\mathbf{y}_w \succ \mathbf{y}_l|\mathbf{x})}{p_{\text{data}}(\mathbf{y}_w \prec \mathbf{y}_l|\mathbf{x})}\right)^{1/\beta}$
-   - Design Motivation: The likelihood ratio (concrete score) is sufficient to uniquely determine the distribution; matching it is therefore sufficient to recover the target policy.
+    - Function: Proves that the optimal policy can be characterized solely via the reference model and the preference data distribution, without a reward model or partition function.
+    - Core formula: $\frac{\pi_{\theta^*}(\mathbf{y}_w|\mathbf{x})}{\pi_{\theta^*}(\mathbf{y}_l|\mathbf{x})} = \frac{\pi_{\text{ref}}(\mathbf{y}_w|\mathbf{x})}{\pi_{\text{ref}}(\mathbf{y}_l|\mathbf{x})} \times \left(\frac{p_{\text{data}}(\mathbf{y}_w \succ \mathbf{y}_l|\mathbf{x})}{p_{\text{data}}(\mathbf{y}_w \prec \mathbf{y}_l|\mathbf{x})}\right)^{1/\beta}$
+    - Design Motivation: The likelihood ratio (concrete score) is sufficient to uniquely determine the distribution; matching it is therefore sufficient to recover the target policy.
 
 2. **BPO Objective (Theorem 2 & 3)**:
 
-   - Function: Constructs a tractable generalized loss function.
-   - Core formula: $\mathcal{L}^h_{\text{BPO}}(R_\theta; p_{\text{data}}) = \mathbb{E}_{p_{\text{data}}}[h'(R_\theta)R_\theta - h(R_\theta) - h'(R_\theta^{-1})]$
-   - Theorem 2 proves that for any strictly convex $h$, the minimizer is $\pi_{\theta^*}$ (optimality guarantee); Theorem 3 proves that $\mathcal{L}^h_{\text{BPO}}$ differs from the intractable $D_h(R_{\text{data}} || R_\theta)$ by only a constant (tractability guarantee).
-   - Setting $h(R) = \frac{R\log R - (1+R)\log(1+R)}{2}$ recovers standard DPO.
+    - Function: Constructs a tractable generalized loss function.
+    - Core formula: $\mathcal{L}^h_{\text{BPO}}(R_\theta; p_{\text{data}}) = \mathbb{E}_{p_{\text{data}}}[h'(R_\theta)R_\theta - h(R_\theta) - h'(R_\theta^{-1})]$
+    - Theorem 2 proves that for any strictly convex $h$, the minimizer is $\pi_{\theta^*}$ (optimality guarantee); Theorem 3 proves that $\mathcal{L}^h_{\text{BPO}}$ differs from the intractable $D_h(R_{\text{data}} || R_\theta)$ by only a constant (tractability guarantee).
+    - Setting $h(R) = \frac{R\log R - (1+R)\log(1+R)}{2}$ recovers standard DPO.
 
 3. **Gradient Analysis (Proposition 4)**:
 
-   - Function: Analyzes differences in learning dynamics across choices of $h$.
-   - Core finding: $\nabla_\theta \mathcal{L} = \mathbb{E}[G_h(R_\theta) \nabla_\theta R_\theta]$—all BPO instantiations share the same gradient direction (determined by $\nabla_\theta R_\theta$), differing only in gradient magnitude $G_h(R_\theta)$. The choice of $h$ controls the weighting assigned to samples with different confidence levels.
-   - Design Motivation: Explains why different choices of $h$ all converge to the optimal policy yet exhibit distinct training behavior—the key lies in sample reweighting.
+    - Function: Analyzes differences in learning dynamics across choices of $h$.
+    - Core finding: $\nabla_\theta \mathcal{L} = \mathbb{E}[G_h(R_\theta) \nabla_\theta R_\theta]$—all BPO instantiations share the same gradient direction (determined by $\nabla_\theta R_\theta$), differing only in gradient magnitude $G_h(R_\theta)$. The choice of $h$ controls the weighting assigned to samples with different confidence levels.
+    - Design Motivation: Explains why different choices of $h$ all converge to the optimal policy yet exhibit distinct training behavior—the key lies in sample reweighting.
 
 4. **SBA (Scaled Basu's Power Divergence)**:
 
-   - Function: Proposes a new BPO instantiation that addresses the gradient scale issue of the BA divergence.
-   - Mechanism: $G_{\text{SBA}_\lambda}(R_\theta) = (R_\theta^\lambda + R_\theta^{-\lambda-1})/s$, with $s=4$ chosen so that the gradient scale at initialization matches that of DPO. The hyperparameter $\lambda$ controls sensitivity to high- and low-confidence samples.
-   - Design Motivation: The BA divergence amplifies gradient magnitude by a factor of $(\lambda+1)$, requiring hyperparameter re-tuning. SBA eliminates this issue.
+    - Function: Proposes a new BPO instantiation that addresses the gradient scale issue of the BA divergence.
+    - Mechanism: $G_{\text{SBA}_\lambda}(R_\theta) = (R_\theta^\lambda + R_\theta^{-\lambda-1})/s$, with $s=4$ chosen so that the gradient scale at initialization matches that of DPO. The hyperparameter $\lambda$ controls sensitivity to high- and low-confidence samples.
+    - Design Motivation: The BA divergence amplifies gradient magnitude by a factor of $(\lambda+1)$, requiring hyperparameter re-tuning. SBA eliminates this issue.
 
 ### Loss & Training
 - BPO serves as a drop-in replacement for DPO, requiring only minimal code changes to the loss computation.

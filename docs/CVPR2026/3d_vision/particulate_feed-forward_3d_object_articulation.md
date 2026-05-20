@@ -18,8 +18,8 @@ content_hash: f7b9948a0149fdc6
 # Particulate: Feed-Forward 3D Object Articulation
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.11798](https://arxiv.org/abs/2512.11798)
-**Code**: [https://ruiningli.com/particulate](https://ruiningli.com/particulate)
+**arXiv**: [2512.11798](https://arxiv.org/abs/2512.11798)  
+**Code**: [https://ruiningli.com/particulate](https://ruiningli.com/particulate)  
 **Area**: 3D Vision
 **Keywords**: Articulated Objects, 3D Part Segmentation, Motion Constraint Prediction, Feed-Forward Inference, Transformer
 

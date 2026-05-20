@@ -18,8 +18,8 @@ content_hash: 09b99074dcfa2743
 # EDINET-Bench: Evaluating LLMs on Complex Financial Tasks using Japanese Financial Statements
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.08762](https://arxiv.org/abs/2506.08762)
-**Code**: [GitHub](https://github.com/SakanaAI/EDINET-Bench)
+**arXiv**: [2506.08762](https://arxiv.org/abs/2506.08762)  
+**Code**: [GitHub](https://github.com/SakanaAI/EDINET-Bench)  
 **Area**: Time Series
 **Keywords**: financial benchmark, LLM evaluation, fraud detection, earnings forecasting, Japanese NLP
 

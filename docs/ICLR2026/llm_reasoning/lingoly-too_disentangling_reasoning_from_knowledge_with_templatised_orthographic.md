@@ -18,8 +18,8 @@ content_hash: 90894a67a5f73fec
 # LingOly-TOO: Disentangling Reasoning from Knowledge with Templatised Orthographic Obfuscation
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.02972](https://arxiv.org/abs/2503.02972)
-**Code**: [GitHub](https://github.com/jkhouja/LingOly-TOO)
+**arXiv**: [2503.02972](https://arxiv.org/abs/2503.02972)  
+**Code**: [GitHub](https://github.com/jkhouja/LingOly-TOO)  
 **Area**: LLM Reasoning / Evaluation Benchmarks
 **Keywords**: reasoning benchmark, orthographic obfuscation, linguistics olympiad, knowledge contamination, LLM evaluation
 
@@ -53,17 +53,17 @@ This paper introduces LingOly-TOO, a benchmark that applies expert-designed grap
 
 1. **Reasoning-Equivariant Permutation**
 
-   - Permutation operates at the grapheme level rather than the word level, as linguistics problems require sub-word symbolic reasoning.
-   - Each problem has a manually defined ruleset authored by a linguistics expert to preserve the linguistic mechanisms necessary for solving the problem. For example, in Turkish vowel harmony, vowel pairs (e,i)/(o,u)/(ö,ü)/(a,ı) must remain within their respective groups; otherwise suffixes cannot be correctly matched.
-   - Loanwords, English cognates, and proper nouns (names, place names) that are useful for solving the problem are retained.
-   - Metadata that may trigger knowledge retrieval—such as language names, language family, and geographic information—is removed.
+    - Permutation operates at the grapheme level rather than the word level, as linguistics problems require sub-word symbolic reasoning.
+    - Each problem has a manually defined ruleset authored by a linguistics expert to preserve the linguistic mechanisms necessary for solving the problem. For example, in Turkish vowel harmony, vowel pairs (e,i)/(o,u)/(ö,ü)/(a,ı) must remain within their respective groups; otherwise suffixes cannot be correctly matched.
+    - Loanwords, English cognates, and proper nouns (names, place names) that are useful for solving the problem are retained.
+    - Metadata that may trigger knowledge retrieval—such as language names, language family, and geographic information—is removed.
 
 2. **Multi-Version Evaluation and Metric System**
 
-   - $M_{obf} = \frac{1}{82}\sum_{i=1}^{82}\frac{1}{n_i}\sum_{j=1}^{n_i}M_{obf}^{i,j}$ denotes the average score on obfuscated variants; $M_{og}$ denotes the score on the original version.
-   - Robustness metric $M_{rob}$: the average of the worst-case score across all permutations of each problem, measuring reasoning ability under the worst-case scenario.
-   - Knowledge effect $\Delta_{obf}^{i} = M_{obf}^i - M_{og}^i$: a larger negative value indicates greater reliance on knowledge.
-   - Benchmark validation: two IOL medalists audited the solvability of obfuscated problems; a 172-participant RCT showed human performance declined by only 5.7%.
+    - $M_{obf} = \frac{1}{82}\sum_{i=1}^{82}\frac{1}{n_i}\sum_{j=1}^{n_i}M_{obf}^{i,j}$ denotes the average score on obfuscated variants; $M_{og}$ denotes the score on the original version.
+    - Robustness metric $M_{rob}$: the average of the worst-case score across all permutations of each problem, measuring reasoning ability under the worst-case scenario.
+    - Knowledge effect $\Delta_{obf}^{i} = M_{obf}^i - M_{og}^i$: a larger negative value indicates greater reliance on knowledge.
+    - Benchmark validation: two IOL medalists audited the solvability of obfuscated problems; a 172-participant RCT showed human performance declined by only 5.7%.
 
 ### Loss & Training
 

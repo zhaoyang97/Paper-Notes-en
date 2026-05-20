@@ -19,7 +19,7 @@ content_hash: e92b836df9cda875
 # Image-Guided Shape-from-Template Using Mesh Inextensibility Constraints
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22699](https://arxiv.org/abs/2507.22699)
+**arXiv**: [2507.22699](https://arxiv.org/abs/2507.22699)  
 **Area**: 3D Vision
 **Keywords**: Shape-from-Template, 3D Reconstruction, Differentiable Rendering, Mesh Inextensibility, Unsupervised, Deformation Modeling
 

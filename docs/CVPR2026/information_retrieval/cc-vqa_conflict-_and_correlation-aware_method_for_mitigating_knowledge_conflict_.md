@@ -19,8 +19,8 @@ content_hash: 866d81b093a1eb1c
 # CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23952](https://arxiv.org/abs/2602.23952)
-**Code**: [github.com/cqu-student/CC-VQA](https://github.com/cqu-student/CC-VQA)
+**arXiv**: [2602.23952](https://arxiv.org/abs/2602.23952)  
+**Code**: [github.com/cqu-student/CC-VQA](https://github.com/cqu-student/CC-VQA)  
 **Area**: Information Retrieval
 **Keywords**: Knowledge Conflict, Retrieval-Augmented Generation, KB-VQA, Visual Reasoning, Contrastive Decoding, Positional Encoding Compression
 

@@ -18,8 +18,8 @@ content_hash: fed150ca592b61ea
 # AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.13757](https://arxiv.org/abs/2506.13757)
-**Code**: [https://autovla.github.io/](https://autovla.github.io/)
+**arXiv**: [2506.13757](https://arxiv.org/abs/2506.13757)  
+**Code**: [https://autovla.github.io/](https://autovla.github.io/)  
 **Area**: Autonomous Driving / Multimodal VLM
 **Keywords**: Vision-Language-Action Model, End-to-End Autonomous Driving, Action Tokenization, Reinforcement Fine-Tuning, Adaptive Reasoning
 

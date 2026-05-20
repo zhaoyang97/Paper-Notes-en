@@ -19,8 +19,8 @@ content_hash: fc5654c820df9163
 # EA3D: Online Open-World 3D Object Extraction from Streaming Videos
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25146](https://arxiv.org/abs/2510.25146)
-**Code**: [VDIGPKU/EA3D](https://github.com/VDIGPKU/EA3D)
+**arXiv**: [2510.25146](https://arxiv.org/abs/2510.25146)  
+**Code**: [VDIGPKU/EA3D](https://github.com/VDIGPKU/EA3D)  
 **Area**: 3D Vision
 **Keywords**: Online 3D Reconstruction, Open-World Scene Understanding, Gaussian Splatting, VLM, Feature Gaussians, Semantic Segmentation
 

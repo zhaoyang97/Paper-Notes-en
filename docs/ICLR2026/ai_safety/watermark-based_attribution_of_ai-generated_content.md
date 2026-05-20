@@ -18,8 +18,8 @@ content_hash: 8574adbe14529d04
 # Watermark-based Detection and Attribution of AI-Generated Content
 
 **Conference**: ICLR 2026
-**arXiv**: [2404.04254](https://arxiv.org/abs/2404.04254)
-**Code**: None
+**arXiv**: [2404.04254](https://arxiv.org/abs/2404.04254)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: watermark, attribution, AI-generated content, detection, digital forensics
 

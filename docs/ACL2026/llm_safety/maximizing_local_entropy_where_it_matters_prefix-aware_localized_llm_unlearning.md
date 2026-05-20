@@ -18,8 +18,8 @@ content_hash: 3c8059ef4b406361
 # Maximizing Local Entropy Where It Matters: Prefix-Aware Localized LLM Unlearning
 
 **Conference**: ACL 2026
-**arXiv**: [2601.03190](https://arxiv.org/abs/2601.03190)
-**Code**: [GitHub](https://github.com/nxZhai/PALU)
+**arXiv**: [2601.03190](https://arxiv.org/abs/2601.03190)  
+**Code**: [GitHub](https://github.com/nxZhai/PALU)  
 **Area**: LLM Safety / Machine Unlearning
 **Keywords**: LLM unlearning, localized entropy maximization, prefix-awareness, vocabulary sparsity optimization, privacy protection
 

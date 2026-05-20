@@ -18,8 +18,8 @@ content_hash: 3f3f401b5a659390
 # Empowering Small VLMs to Think with Dynamic Memorization and Exploration
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.23061](https://arxiv.org/abs/2506.23061)
-**Code**: [Available](https://github.com/HKUST-LongGroup/DyME)
+**arXiv**: [2506.23061](https://arxiv.org/abs/2506.23061)  
+**Code**: [Available](https://github.com/HKUST-LongGroup/DyME)  
 **Area**: Multimodal VLM
 **Keywords**: Small-scale vision-language models, reasoning capability, dynamic switching, SFT and RLVR integration, visual supervision
 

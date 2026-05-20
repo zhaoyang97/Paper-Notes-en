@@ -18,8 +18,8 @@ content_hash: deb44216380f8ef1
 # ONLY: One-Layer Intervention Sufficiently Mitigates Hallucinations in Large Vision-Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.00898](https://arxiv.org/abs/2507.00898)
-**Code**: [https://github.com/zifuwan/ONLY](https://github.com/zifuwan/ONLY)
+**arXiv**: [2507.00898](https://arxiv.org/abs/2507.00898)  
+**Code**: [https://github.com/zifuwan/ONLY](https://github.com/zifuwan/ONLY)  
 **Area**: Multimodal VLM / Hallucination Mitigation
 **Keywords**: hallucination mitigation, contrastive decoding, text-to-visual entropy ratio, training-free, single-layer intervention
 

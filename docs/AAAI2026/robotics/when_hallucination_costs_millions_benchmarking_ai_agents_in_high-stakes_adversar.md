@@ -18,8 +18,8 @@ content_hash: e9d4b5d033f993dd
 # When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.00332](https://arxiv.org/abs/2510.00332)
-**Code**: [GitHub](https://github.com/SurfAI-CybertinoLab/CAIA)
+**arXiv**: [2510.00332](https://arxiv.org/abs/2510.00332)  
+**Code**: [GitHub](https://github.com/SurfAI-CybertinoLab/CAIA)  
 **Area**: Robotics
 **Keywords**: AI Agent Evaluation, Adversarial Benchmark, Cryptocurrency, Tool Selection, Hallucination
 

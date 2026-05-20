@@ -18,8 +18,8 @@ content_hash: f35d752373879cd4
 # Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15399](https://arxiv.org/abs/2509.15399)
-**Code**: Available (submitted with paper appendix)
+**arXiv**: [2509.15399](https://arxiv.org/abs/2509.15399)  
+**Code**: Available (submitted with paper appendix)  
 **Area**: Optimization Theory / Hierarchical Optimization
 **Keywords**: minimax optimization, bilevel optimization, adaptive algorithm, momentum normalization, convergence rate
 
@@ -45,21 +45,21 @@ Ada-Minimax (Algorithm 1) and Ada-BiO (Algorithm 2) share the same algorithmic f
 
 1. **Adaptive Momentum Normalization (Adaptive NSGDM)**:
 
-   - **Function**: Updates the upper-level variable with automatic adaptation to the noise level.
-   - **Mechanism**: Momentum update $m_t = \beta_t \cdot m_{t-1} + (1-\beta_t) \cdot g_{x,t}$, followed by the normalization step $x_{t+1} = x_t - \eta_{x,t} \cdot m_t / \|m_t\|$. The key is that the momentum parameter $\alpha_t = 1 - \beta_t$ is adaptively set as $\alpha_t = \alpha / \sqrt{\alpha^2 + \sum \|g_{x,k} - \tilde{g}_{x,k}\|^2}$, where the difference terms in the denominator provide an online estimate of the gradient variance.
-   - **Design Motivation**: Gradient normalization decouples the step size from gradient magnitude; the momentum parameter is dynamically adjusted according to the estimated noise level—smaller $\alpha_t$ (more momentum smoothing) under high noise, and larger $\alpha_t$ (faster response) under low noise.
+    - **Function**: Updates the upper-level variable with automatic adaptation to the noise level.
+    - **Mechanism**: Momentum update $m_t = \beta_t \cdot m_{t-1} + (1-\beta_t) \cdot g_{x,t}$, followed by the normalization step $x_{t+1} = x_t - \eta_{x,t} \cdot m_t / \|m_t\|$. The key is that the momentum parameter $\alpha_t = 1 - \beta_t$ is adaptively set as $\alpha_t = \alpha / \sqrt{\alpha^2 + \sum \|g_{x,k} - \tilde{g}_{x,k}\|^2}$, where the difference terms in the denominator provide an online estimate of the gradient variance.
+    - **Design Motivation**: Gradient normalization decouples the step size from gradient magnitude; the momentum parameter is dynamically adjusted according to the estimated noise level—smaller $\alpha_t$ (more momentum smoothing) under high noise, and larger $\alpha_t$ (faster response) under low noise.
 
 2. **Coordinated Adaptive Step Sizes for Upper and Lower Levels**:
 
-   - **Function**: Simultaneously sets adaptive learning rates for both upper- and lower-level variables.
-   - **Mechanism**: Upper-level step size $\eta_{x,t} = \eta_x \cdot \alpha'_t / t$, where $\alpha'_t = \alpha / \sqrt{\alpha^2 + \sum \|g_{x,k} - \tilde{g}_{x,k}\|^2 + \|g_{y,k}\|^2}$ incorporates both upper- and lower-level information; lower-level step size $\eta_{y,t} = \eta_y / \sqrt{\gamma^2 + \sum \|g_{y,k}\|^2}$ follows the standard AdaGrad-Norm form.
-   - **Design Motivation**: $\alpha'_t$ jointly encodes gradient information from both levels to effectively control the ratio $\eta_{x,t}/\eta_{y,t}$, ensuring coordinated update speeds across levels (key to Lemma 5.7).
+    - **Function**: Simultaneously sets adaptive learning rates for both upper- and lower-level variables.
+    - **Mechanism**: Upper-level step size $\eta_{x,t} = \eta_x \cdot \alpha'_t / t$, where $\alpha'_t = \alpha / \sqrt{\alpha^2 + \sum \|g_{x,k} - \tilde{g}_{x,k}\|^2 + \|g_{y,k}\|^2}$ incorporates both upper- and lower-level information; lower-level step size $\eta_{y,t} = \eta_y / \sqrt{\gamma^2 + \sum \|g_{y,k}\|^2}$ follows the standard AdaGrad-Norm form.
+    - **Design Motivation**: $\alpha'_t$ jointly encodes gradient information from both levels to effectively control the ratio $\eta_{x,t}/\eta_{y,t}$, ensuring coordinated update speeds across levels (key to Lemma 5.7).
 
 3. **Double-Sampling Noise Estimation**:
 
-   - **Function**: Online estimation of the gradient noise level.
-   - **Mechanism**: Two independent stochastic gradients $g_{x,t}$ and $\tilde{g}_{x,t}$ are drawn at each step; $\|g_{x,t} - \tilde{g}_{x,t}\|^2$ serves as an unbiased proxy for the variance. The cumulative sum $\sum \|g_{x,k} - \tilde{g}_{x,k}\|^2$ is shown to be bounded within $[\bar{\sigma}^2 t,\, 4\bar{\sigma}^2 t]$ with high probability (Lemma 5.5).
-   - **Design Motivation**: Direct variance estimation requires knowledge of the true gradient, whereas the double-sampling difference requires only one additional gradient query to obtain an online variance estimate.
+    - **Function**: Online estimation of the gradient noise level.
+    - **Mechanism**: Two independent stochastic gradients $g_{x,t}$ and $\tilde{g}_{x,t}$ are drawn at each step; $\|g_{x,t} - \tilde{g}_{x,t}\|^2$ serves as an unbiased proxy for the variance. The cumulative sum $\sum \|g_{x,k} - \tilde{g}_{x,k}\|^2$ is shown to be bounded within $[\bar{\sigma}^2 t,\, 4\bar{\sigma}^2 t]$ with high probability (Lemma 5.5).
+    - **Design Motivation**: Direct variance estimation requires knowledge of the true gradient, whereas the double-sampling difference requires only one additional gradient query to obtain an online variance estimate.
 
 ### Loss & Training
 Ada-Minimax targets $\min_x \max_y f(x, y)$ (with $f$ strongly concave in $y$); Ada-BiO targets $\min_x f(x, y^*(x))$ s.t. $y^*(x) = \operatorname{argmin}_y g(x, y)$ (with $g$ strongly convex in $y$). Ada-BiO approximates the hypergradient $\nabla \Phi(x)$ via a Neumann series, requiring additional second-order information queries.

@@ -18,8 +18,8 @@ content_hash: ec7c6c51558c54e4
 # LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11605](https://arxiv.org/abs/2603.11605)
-**Code**: Available ([Project Page](https://jjkislele.github.io/LaMoGen/))
+**arXiv**: [2603.11605](https://arxiv.org/abs/2603.11605)  
+**Code**: Available ([Project Page](https://jjkislele.github.io/LaMoGen/))  
 **Area**: Human Understanding
 **Keywords**: Text-driven motion generation, Labanotation, symbolic reasoning, LLM Agent, interpretable motion synthesis
 

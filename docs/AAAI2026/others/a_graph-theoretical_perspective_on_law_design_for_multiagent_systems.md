@@ -17,8 +17,8 @@ content_hash: 270895477838c159
 # A Graph-Theoretical Perspective on Law Design for Multiagent Systems
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06361](https://arxiv.org/abs/2511.06361)
-**Code**: None
+**arXiv**: [2511.06361](https://arxiv.org/abs/2511.06361)  
+**Code**: None  
 **Area**: Other
 **Keywords**: law design, multiagent systems, vertex cover, hypergraph, responsibility gap
 

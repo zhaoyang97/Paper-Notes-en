@@ -18,8 +18,8 @@ content_hash: 4a23c3869d0cf75d
 # Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.18168](https://arxiv.org/abs/2604.18168)
-**Code**: [https://github.com/AMAP-ML/EMF](https://github.com/AMAP-ML/EMF)
+**arXiv**: [2604.18168](https://arxiv.org/abs/2604.18168)  
+**Code**: [https://github.com/AMAP-ML/EMF](https://github.com/AMAP-ML/EMF)  
 **Area**: Image Generation
 **Keywords**: MeanFlow, One-Step Generation, Text-to-Image, Text Encoder, Semantic Discriminability
 

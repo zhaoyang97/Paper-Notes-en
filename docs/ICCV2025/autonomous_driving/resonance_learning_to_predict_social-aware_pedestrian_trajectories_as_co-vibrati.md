@@ -18,8 +18,8 @@ content_hash: f00fe76bfc74e369
 # Resonance: Learning to Predict Social-Aware Pedestrian Trajectories as Co-Vibrations
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.02447](https://arxiv.org/abs/2412.02447)
-**Code**: [https://github.com/cocoon2wong/Re](https://github.com/cocoon2wong/Re)
+**arXiv**: [2412.02447](https://arxiv.org/abs/2412.02447)  
+**Code**: [https://github.com/cocoon2wong/Re](https://github.com/cocoon2wong/Re)  
 **Area**: Autonomous Driving / Pedestrian Trajectory Prediction
 **Keywords**: pedestrian trajectory prediction, vibration decomposition, resonance interaction, spectral representation, social behavior modeling
 

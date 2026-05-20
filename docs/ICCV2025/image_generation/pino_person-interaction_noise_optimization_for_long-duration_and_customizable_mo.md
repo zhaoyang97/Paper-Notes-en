@@ -18,8 +18,8 @@ content_hash: 5f94488a043739e1
 # PINO: Person-Interaction Noise Optimization for Long-Duration and Customizable Motion Generation of Arbitrary-Sized Groups
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19292](https://arxiv.org/abs/2507.19292)
-**Code**: [GitHub](https://sinc865.github.io/pino/)
+**arXiv**: [2507.19292](https://arxiv.org/abs/2507.19292)  
+**Code**: [GitHub](https://sinc865.github.io/pino/)  
 **Area**: Motion Generation / Diffusion Models
 **Keywords**: multi-person interaction generation, noise optimization, training-free, motion diffusion model, physical constraints
 

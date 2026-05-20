@@ -18,8 +18,8 @@ content_hash: 759cad923a03788a
 # A Self-Improving Coding Agent
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.15228](https://arxiv.org/abs/2504.15228)
-**Code**: [https://github.com/MaximeRobeyns/self_improving_coding_agent](https://github.com/MaximeRobeyns/self_improving_coding_agent)
+**arXiv**: [2504.15228](https://arxiv.org/abs/2504.15228)  
+**Code**: [https://github.com/MaximeRobeyns/self_improving_coding_agent](https://github.com/MaximeRobeyns/self_improving_coding_agent)  
 **Area**: Code Intelligence
 **Keywords**: self-improving agent, meta-agent, coding agent, automated agent design, self-referential
 

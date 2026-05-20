@@ -18,8 +18,8 @@ content_hash: ac25d776a2e70202
 # Predicting the Future by Retrieving the Past
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.05859](https://arxiv.org/abs/2511.05859)
-**Code**: [github.com/ddz16/PFRP](https://github.com/ddz16/PFRP)
+**arXiv**: [2511.05859](https://arxiv.org/abs/2511.05859)  
+**Code**: [github.com/ddz16/PFRP](https://github.com/ddz16/PFRP)  
 **Area**: Time Series
 **Keywords**: Retrieval-Augmented Forecasting, Global Memory Bank, Contrastive Learning, Univariate Time Series, Plug-and-Play
 

@@ -18,8 +18,8 @@ content_hash: e56bcb1c320b424e
 # STEAD: Robust Provably Secure Linguistic Steganography with Diffusion Language Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.14778](https://arxiv.org/abs/2601.14778)
-**Code**: [GitHub](https://github.com/7-yaya/STEAD)
+**arXiv**: [2601.14778](https://arxiv.org/abs/2601.14778)  
+**Code**: [GitHub](https://github.com/7-yaya/STEAD)  
 **Area**: Image Segmentation
 **Keywords**: linguistic steganography, diffusion language model, provable security, robustness, error-correcting codes
 

@@ -18,8 +18,8 @@ content_hash: 0719ba0105b5c8f6
 # FutureMind: Equipping Small Language Models with Strategic Thinking-Pattern Priors via Adaptive Knowledge Distillation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01222](https://arxiv.org/abs/2602.01222)
-**Code**: None
+**arXiv**: [2602.01222](https://arxiv.org/abs/2602.01222)  
+**Code**: None  
 **Area**: Knowledge Distillation / RAG
 **Keywords**: Small Language Models, Thinking-Pattern Distillation, Retrieval Strategy, Multi-hop QA, Modular Reasoning
 

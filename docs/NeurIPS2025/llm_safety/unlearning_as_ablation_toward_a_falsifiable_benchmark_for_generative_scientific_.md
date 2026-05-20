@@ -18,8 +18,8 @@ content_hash: 02f01b69c1290978
 # Unlearning as Ablation: Toward a Falsifiable Benchmark for Generative Scientific Discovery
 
 **Conference**: NeurIPS 2025 (AI4Science Workshop)
-**arXiv**: [2508.17681](https://arxiv.org/abs/2508.17681)
-**Code**: None
+**arXiv**: [2508.17681](https://arxiv.org/abs/2508.17681)  
+**Code**: None  
 **Area**: AI Safety / AI for Science / Machine Unlearning
 **Keywords**: unlearning as ablation, scientific discovery, falsifiable benchmark, knowledge generation, LLM evaluation
 
@@ -67,35 +67,35 @@ Success = positive evidence of constructive knowledge generation; failure = reve
 
 1. **Definition of the unlearning closure $\mathcal{F}(T)$**:
 
-   - All direct statements of $T$ (canonical forms, proofs, code)
-   - Semantically equivalent paraphrases and restatements
-   - Intermediate lemmas and building blocks that entail $T$
-   - Multi-hop reasoning chains that can indirectly reconstruct $T$
-   - Answer-equivalent sets that produce equivalent outputs
+    - All direct statements of $T$ (canonical forms, proofs, code)
+    - Semantically equivalent paraphrases and restatements
+    - Intermediate lemmas and building blocks that entail $T$
+    - Multi-hop reasoning chains that can indirectly reconstruct $T$
+    - Answer-equivalent sets that produce equivalent outputs
 
    By removing the entire closure, the framework blocks not only surface-level forms but also indirect reasoning paths arising from knowledge entanglement.
 
 2. **Robust unlearning execution**:
 
-   - Employs removal-oriented unlearning methods (gradient ascent, targeted fine-tuning, etc.)
-   - Complemented by multi-dimensional auditing:
+    - Employs removal-oriented unlearning methods (gradient ascent, targeted fine-tuning, etc.)
+    - Complemented by multi-dimensional auditing:
      - Leakage checks (paraphrase / multi-hop / answer-equivalent probes)
      - Counterfactual activation probing (testing whether $T$-related features persist in hidden states)
      - Robustness testing (whether minor fine-tuning or prompting can "reawaken" forgotten knowledge)
-   - Ensures the production of a genuine "cognitive blank slate"
+    - Ensures the production of a genuine "cognitive blank slate"
 
 3. **Re-derivation as a falsifiable test**:
 
-   - Provides axioms, primitives, or foundational tools not belonging to $\mathcal{F}(T)$
-   - Provides an environment permitting constructive reasoning (e.g., proof assistants Lean/Isabelle, or test-driven code synthesis frameworks)
-   - Outcomes are judged by external verifiers: formal proofs accepted by proof assistants, or programs passing hidden test cases
-   - Success is counted only when no leakage from $\mathcal{F}(T)$ is detected
+    - Provides axioms, primitives, or foundational tools not belonging to $\mathcal{F}(T)$
+    - Provides an environment permitting constructive reasoning (e.g., proof assistants Lean/Isabelle, or test-driven code synthesis frameworks)
+    - Outcomes are judged by external verifiers: formal proofs accepted by proof assistants, or programs passing hidden test cases
+    - Success is counted only when no leakage from $\mathcal{F}(T)$ is detected
 
 4. **Proposed A2D Benchmark (Ablation-to-Discovery)**:
 
-   - Each instance comprises four components: target specification $T$, closure specification $\mathcal{F}(T)$, ablation recipe $\mathcal{A}(T)$, and verification oracle $\mathcal{V}(T)$
-   - Two evaluation modes: BYOM (Bring Your Own Model, comparing model capabilities) and System Mode (standardized model, comparing discovery frameworks)
-   - Initial release: 50–100 pilot instances in mathematics and algorithms
+    - Each instance comprises four components: target specification $T$, closure specification $\mathcal{F}(T)$, ablation recipe $\mathcal{A}(T)$, and verification oracle $\mathcal{V}(T)$
+    - Two evaluation modes: BYOM (Bring Your Own Model, comparing model capabilities) and System Mode (standardized model, comparing discovery frameworks)
+    - Initial release: 50–100 pilot instances in mathematics and algorithms
 
 ### Loss & Training
 

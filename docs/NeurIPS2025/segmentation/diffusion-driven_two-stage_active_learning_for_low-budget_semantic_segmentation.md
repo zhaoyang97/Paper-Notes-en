@@ -18,8 +18,8 @@ content_hash: 4598b1c37910a9a8
 # Diffusion-Driven Two-Stage Active Learning for Low-Budget Semantic Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22229](https://arxiv.org/abs/2510.22229)
-**Code**: [Available](https://github.com/jn-kim/two-stage-edald)
+**arXiv**: [2510.22229](https://arxiv.org/abs/2510.22229)  
+**Code**: [Available](https://github.com/jn-kim/two-stage-edald)  
 **Area**: Semantic Segmentation / Active Learning
 **Keywords**: Active Learning, Semantic Segmentation, Diffusion Models, Uncertainty Sampling, Low-Budget Annotation
 

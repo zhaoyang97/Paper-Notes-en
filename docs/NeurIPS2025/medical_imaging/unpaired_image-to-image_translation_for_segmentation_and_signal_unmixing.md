@@ -18,8 +18,8 @@ content_hash: ebf87d17f00f3927
 # Unpaired Image-to-Image Translation for Segmentation and Signal Unmixing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20746](https://arxiv.org/abs/2505.20746)
-**Code**: Not available
+**arXiv**: [2505.20746](https://arxiv.org/abs/2505.20746)  
+**Code**: Not available  
 **Area**: Medical Imaging
 **Keywords**: Unpaired image-to-image translation, nucleus segmentation, immunofluorescence unmixing, CycleGAN, spectral normalization
 
@@ -33,9 +33,9 @@ This paper proposes Ui2i, a model built upon CycleGAN that achieves high content
 
 - **Limitations of Prior Work**: Biomedical images impose strict requirements on content fidelity — nuclear shape, boundaries, cellular morphology, and spatial relationships must be precisely preserved, unlike natural scene translation where moderate distortion is acceptable. Although CycleGAN achieves unpaired translation via cycle-consistency loss, it suffers from two fundamental issues:
 
-  - **Non-uniqueness of cycle consistency**: The authors theoretically demonstrate that for a perfectly disentangled generator pair $(\hat{G}_{AB}, \hat{G}_{BA})$, applying any invertible transforms $T_A, T_B$ still satisfies cycle consistency, meaning infinitely many generator pairs minimize $\mathcal{L}_{\text{cyc}}$ — content preservation is thus not uniquely guaranteed.
+    - **Non-uniqueness of cycle consistency**: The authors theoretically demonstrate that for a perfectly disentangled generator pair $(\hat{G}_{AB}, \hat{G}_{BA})$, applying any invertible transforms $T_A, T_B$ still satisfies cycle consistency, meaning infinitely many generator pairs minimize $\mathcal{L}_{\text{cyc}}$ — content preservation is thus not uniquely guaranteed.
 
-  - **Artifacts from feature normalization**: Instance Normalization causes the same local object to produce substantially different signal responses depending on global context, leading to "droplet-like" artifacts in translated images that are misidentified as false-positive nuclei.
+    - **Artifacts from feature normalization**: Instance Normalization causes the same local object to produce substantially different signal responses depending on global context, leading to "droplet-like" artifacts in translated images that are misidentified as false-positive nuclei.
 
 - **Goal**: Eliminate feature normalization layers entirely, replacing them with **parameter-level approximate bidirectional spectral normalization**, combined with UNet skip connections and attention mechanisms to better preserve spatially local content features.
 

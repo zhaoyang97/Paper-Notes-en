@@ -18,8 +18,8 @@ content_hash: 4bf10626bb5e5d9c
 # Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20125](https://arxiv.org/abs/2601.20125)
-**Code**: [https://github.com/Stry233/SAMA](https://github.com/Stry233/SAMA)
+**arXiv**: [2601.20125](https://arxiv.org/abs/2601.20125)  
+**Code**: [https://github.com/Stry233/SAMA](https://github.com/Stry233/SAMA)  
 **Area**: AI Security / Privacy Attacks
 **Keywords**: Membership Inference Attack, Diffusion Language Model, Privacy Leakage, Robust Subset Aggregation, Progressive Masking
 

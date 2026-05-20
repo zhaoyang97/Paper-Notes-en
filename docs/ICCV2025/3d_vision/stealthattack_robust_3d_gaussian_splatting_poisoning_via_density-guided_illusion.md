@@ -18,7 +18,7 @@ content_hash: 02e52ce6339fc9c1
 # StealthAttack: Robust 3D Gaussian Splatting Poisoning via Density-Guided Illusions
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.02314](https://arxiv.org/abs/2510.02314)
+**arXiv**: [2510.02314](https://arxiv.org/abs/2510.02314)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, data poisoning attack, adversarial security, kernel density estimation, multi-view consistency
 

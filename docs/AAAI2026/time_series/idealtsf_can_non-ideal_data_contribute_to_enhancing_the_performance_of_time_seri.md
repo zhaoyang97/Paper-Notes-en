@@ -18,8 +18,8 @@ content_hash: 985cc2ee28741704
 # IdealTSF: Can Non-Ideal Data Contribute to Enhancing Time Series Forecasting?
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.05442](https://arxiv.org/abs/2512.05442)
-**Code**: [GitHub](https://github.com/LuckyLJH/IdealTSF)
+**arXiv**: [2512.05442](https://arxiv.org/abs/2512.05442)  
+**Code**: [GitHub](https://github.com/LuckyLJH/IdealTSF)  
 **Area**: Time Series Forecasting
 **Keywords**: time series forecasting, negative sample pre-training, adversarial training, data robustness, non-ideal data
 

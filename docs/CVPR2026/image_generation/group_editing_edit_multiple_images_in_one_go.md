@@ -18,8 +18,8 @@ content_hash: 437929ccb93d521d
 # Group Editing: Edit Multiple Images in One Go
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22883](https://arxiv.org/abs/2603.22883)
-**Code**: [https://group-editing.github.io/](https://group-editing.github.io/)
+**arXiv**: [2603.22883](https://arxiv.org/abs/2603.22883)  
+**Code**: [https://group-editing.github.io/](https://group-editing.github.io/)  
 **Area**: Diffusion Models / Image Editing
 **Keywords**: consistent multi-image editing, video diffusion prior, geometric correspondence, RoPE positional encoding, pseudo-video
 

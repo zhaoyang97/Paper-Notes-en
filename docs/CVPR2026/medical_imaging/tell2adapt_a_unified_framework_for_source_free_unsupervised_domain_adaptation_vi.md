@@ -18,9 +18,9 @@ content_hash: 2e877bb8de37d49d
 # Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05012](https://arxiv.org/abs/2603.05012)
+**arXiv**: [2603.05012](https://arxiv.org/abs/2603.05012)  
 **Authors**: Yulong Shi, Shijie Li, Ziyi Li, Lin Qi
-**Code**: [derekshiii/Tell2Adapt](https://github.com/derekshiii/Tell2Adapt)
+**Code**: [derekshiii/Tell2Adapt](https://github.com/derekshiii/Tell2Adapt)  
 **Area**: Medical Imaging
 **Keywords**: source-free domain adaptation, vision foundation model, medical image segmentation, pseudo label, prompt regularization
 

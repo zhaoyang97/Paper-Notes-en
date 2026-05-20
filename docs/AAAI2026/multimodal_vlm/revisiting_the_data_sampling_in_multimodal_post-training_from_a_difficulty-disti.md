@@ -18,8 +18,8 @@ content_hash: 0c14ea331244a089
 # Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06722](https://arxiv.org/abs/2511.06722)
-**Code**: [https://github.com/qijianyu277/DifficultySampling](https://github.com/qijianyu277/DifficultySampling)
+**arXiv**: [2511.06722](https://arxiv.org/abs/2511.06722)  
+**Code**: [https://github.com/qijianyu277/DifficultySampling](https://github.com/qijianyu277/DifficultySampling)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal post-training, difficulty-aware sampling, GRPO, reinforcement learning, data selection
 

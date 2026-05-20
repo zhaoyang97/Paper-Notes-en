@@ -18,8 +18,8 @@ content_hash: c16a191133148493
 # End-to-End Multi-Modal Diffusion Mamba
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.13253](https://arxiv.org/abs/2510.13253)
-**Code**: None
+**arXiv**: [2510.13253](https://arxiv.org/abs/2510.13253)  
+**Code**: None  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Multimodal Models, Mamba, Diffusion Models, End-to-End Generation, State Space Models
 

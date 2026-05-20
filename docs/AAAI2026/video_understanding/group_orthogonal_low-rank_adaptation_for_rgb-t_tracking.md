@@ -18,8 +18,8 @@ content_hash: c3ef27f0a1eb9e52
 # Group Orthogonal Low-Rank Adaptation for RGB-T Tracking
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.05359](https://arxiv.org/abs/2512.05359)
-**Code**: [GitHub](https://github.com/MelanTech/GOLA)
+**arXiv**: [2512.05359](https://arxiv.org/abs/2512.05359)  
+**Code**: [GitHub](https://github.com/MelanTech/GOLA)  
 **Area**: Video Understanding
 **Keywords**: RGB-T Tracking, LoRA, Low-Rank Adaptation, Orthogonal Constraint, Parameter-Efficient Fine-Tuning
 

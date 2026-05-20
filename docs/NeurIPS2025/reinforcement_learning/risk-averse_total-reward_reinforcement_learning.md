@@ -18,8 +18,8 @@ content_hash: 8e25c613862038a7
 # Risk-Averse Total-Reward Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.21683](https://arxiv.org/abs/2506.21683)
-**Code**: [Available](https://github.com/suxh2019/ERM_EVaR_Q)
+**arXiv**: [2506.21683](https://arxiv.org/abs/2506.21683)  
+**Code**: [Available](https://github.com/suxh2019/ERM_EVaR_Q)  
 **Area**: Reinforcement Learning / Risk Aversion
 **Keywords**: Risk-averse RL, total-reward criterion, Q-learning, entropic risk measure (ERM), entropic value-at-risk (EVaR)
 

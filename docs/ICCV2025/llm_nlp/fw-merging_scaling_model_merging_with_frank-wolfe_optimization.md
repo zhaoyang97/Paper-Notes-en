@@ -18,8 +18,8 @@ content_hash: 9bffe286af71f94e
 # FW-Merging: Scaling Model Merging with Frank-Wolfe Optimization
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.12649](https://arxiv.org/abs/2503.12649)
-**Code**: Available (open-sourced as mentioned in the paper)
+**arXiv**: [2503.12649](https://arxiv.org/abs/2503.12649)  
+**Code**: Available (open-sourced as mentioned in the paper)  
 **Area**: Model Merging / Multi-task Learning
 **Keywords**: Model merging, Frank-Wolfe optimization, multi-task learning, scalability, large language models
 

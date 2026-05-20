@@ -18,8 +18,8 @@ content_hash: af6b007118385cd2
 # Why is Your Language Model a Poor Implicit Reward Model?
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.07981](https://arxiv.org/abs/2507.07981)
-**Code**: None
+**arXiv**: [2507.07981](https://arxiv.org/abs/2507.07981)  
+**Code**: None  
 **Area**: LLM Reasoning / Alignment RLHF
 **Keywords**: Implicit reward model, explicit reward model, generalization gap, token-level cues, DPO vs RLHF
 

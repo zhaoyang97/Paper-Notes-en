@@ -18,8 +18,8 @@ content_hash: 0a093d8ea4f84d92
 # UETrack: A Unified and Efficient Framework for Single Object Tracking
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01412](https://arxiv.org/abs/2603.01412)
-**Code**: [https://github.com/kangben258/UETrack](https://github.com/kangben258/UETrack)
+**arXiv**: [2603.01412](https://arxiv.org/abs/2603.01412)  
+**Code**: [https://github.com/kangben258/UETrack](https://github.com/kangben258/UETrack)  
 **Area**: Video Understanding
 **Keywords**: single object tracking, multi-modal tracking, mixture of experts, knowledge distillation, efficient inference
 

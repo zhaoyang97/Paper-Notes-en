@@ -18,8 +18,8 @@ content_hash: b8cfd6bffcdfe4ec
 # Directional Textual Inversion for Personalized Text-to-Image Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.13672](https://arxiv.org/abs/2512.13672)
-**Code**: [https://github.com/kunheek/dti](https://github.com/kunheek/dti)
+**arXiv**: [2512.13672](https://arxiv.org/abs/2512.13672)  
+**Code**: [https://github.com/kunheek/dti](https://github.com/kunheek/dti)  
 **Area**: Diffusion Models / Personalized Generation
 **Keywords**: Textual Inversion, Directional Optimization, Hypersphere, von Mises-Fisher, Personalized Text-to-Image
 

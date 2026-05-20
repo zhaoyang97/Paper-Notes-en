@@ -20,8 +20,8 @@ content_hash: 82eba601adafb04d
 # Flow4Agent: Long-form Video Understanding via Motion Prior from Optical Flow
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.05836](https://arxiv.org/abs/2510.05836)
-**Code**: To be confirmed
+**arXiv**: [2510.05836](https://arxiv.org/abs/2510.05836)  
+**Code**: To be confirmed  
 **Area**: Long-form Video Understanding / Multimodal Large Language Models / Optical Flow Prior
 **Keywords**: long-form video understanding, optical flow, motion prior, token pruning, MLLM, temporal granularity, key content extraction
 

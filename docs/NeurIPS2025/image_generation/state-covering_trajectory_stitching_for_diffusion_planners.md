@@ -18,8 +18,8 @@ content_hash: 95855bcb5568d585
 # State-Covering Trajectory Stitching for Diffusion Planners
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.00895](https://arxiv.org/abs/2506.00895)
-**Code**: [GitHub](https://github.com/leekwoon/scots/)
+**arXiv**: [2506.00895](https://arxiv.org/abs/2506.00895)  
+**Code**: [GitHub](https://github.com/leekwoon/scots/)  
 **Area**: Diffusion Models / Trajectory Planning
 **Keywords**: Diffusion planner, trajectory stitching, state coverage, offline reinforcement learning, data augmentation
 

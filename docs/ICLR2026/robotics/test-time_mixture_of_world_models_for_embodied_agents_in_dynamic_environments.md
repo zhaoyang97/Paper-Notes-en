@@ -16,7 +16,7 @@ content_hash: 771335d4db2238dd
 # Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.22647](https://arxiv.org/abs/2601.22647)
+**arXiv**: [2601.22647](https://arxiv.org/abs/2601.22647)  
 **Area**: Robotics / Embodied Intelligence
 
 ## Rating

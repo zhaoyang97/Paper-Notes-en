@@ -18,8 +18,8 @@ content_hash: ed88dab9b30b15c3
 # Trapped by simplicity: When Transformers fail to learn from noisy features
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.08695](https://arxiv.org/abs/2602.08695)
-**Code**: [https://github.com/peterse/noise-robust-boolean-learning/](https://github.com/peterse/noise-robust-boolean-learning/)
+**arXiv**: [2602.08695](https://arxiv.org/abs/2602.08695)  
+**Code**: [https://github.com/peterse/noise-robust-boolean-learning/](https://github.com/peterse/noise-robust-boolean-learning/)  
 **Area**: LLM NLP / Transformer Theoretical Analysis
 **Keywords**: noise-robust learning, simplicity bias, Boolean functions, Transformer, sensitivity
 

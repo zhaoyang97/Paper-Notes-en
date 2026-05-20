@@ -18,8 +18,8 @@ content_hash: 21b17d1ecd0c09ed
 # Sketch-Augmented Features Improve Learning Long-Range Dependencies in Graph Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.03824](https://arxiv.org/abs/2511.03824)
-**Code**: [GitHub](https://github.com/ryienh/sketched-random-features)
+**arXiv**: [2511.03824](https://arxiv.org/abs/2511.03824)  
+**Code**: [GitHub](https://github.com/ryienh/sketched-random-features)  
 **Area**: Graph Learning
 **Keywords**: Graph Neural Networks, Oversquashing, Oversmoothing, Random Features, Johnson-Lindenstrauss Transform
 

@@ -18,8 +18,8 @@ content_hash: b58ba16a0fa982cc
 # Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02280](https://arxiv.org/abs/2603.02280)
-**Code**: To be confirmed
+**arXiv**: [2603.02280](https://arxiv.org/abs/2603.02280)  
+**Code**: To be confirmed  
 **Area**: LLM Evaluation
 **Keywords**: Class-Incremental Learning, catastrophic forgetting, Temporal Imbalance, Loss Reweighting, continual learning
 

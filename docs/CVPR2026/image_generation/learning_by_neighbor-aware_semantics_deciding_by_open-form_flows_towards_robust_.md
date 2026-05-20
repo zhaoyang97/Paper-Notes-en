@@ -18,8 +18,8 @@ content_hash: 2dd1eb4ee64b7252
 # Learning by Neighbor-Aware Semantics, Deciding by Open-form Flows: Towards Robust Zero-Shot Skeleton Action Recognition
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.09388](https://arxiv.org/abs/2511.09388)
-**Code**: [https://github.com/cseeyangchen/Flora](https://github.com/cseeyangchen/Flora)
+**arXiv**: [2511.09388](https://arxiv.org/abs/2511.09388)  
+**Code**: [https://github.com/cseeyangchen/Flora](https://github.com/cseeyangchen/Flora)  
 **Area**: Image Generation
 **Keywords**: Zero-shot learning, skeleton action recognition, flow matching, cross-modal alignment, semantic calibration
 

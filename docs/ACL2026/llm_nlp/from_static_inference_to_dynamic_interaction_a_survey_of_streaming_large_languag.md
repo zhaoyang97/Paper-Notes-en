@@ -18,8 +18,8 @@ content_hash: 5157e1c4614c155f
 # From Static Inference to Dynamic Interaction: A Survey of Streaming Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2603.04592](https://arxiv.org/abs/2603.04592)
-**Code**: [GitHub](https://github.com/EIT-NLP/Awesome-Streaming-LLMs)
+**arXiv**: [2603.04592](https://arxiv.org/abs/2603.04592)  
+**Code**: [GitHub](https://github.com/EIT-NLP/Awesome-Streaming-LLMs)  
 **Area**: LLM Systems / Streaming Inference
 **Keywords**: Streaming LLM, real-time interaction, incremental encoding, full-duplex, speculative decoding
 

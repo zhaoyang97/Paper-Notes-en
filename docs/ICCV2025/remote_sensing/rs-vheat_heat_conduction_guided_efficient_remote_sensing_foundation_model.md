@@ -18,8 +18,8 @@ content_hash: 9ad512aab88c2c3d
 # RS-vHeat: Heat Conduction Guided Efficient Remote Sensing Foundation Model
 
 **Conference**: ICCV2025
-**arXiv**: [2411.17984](https://arxiv.org/abs/2411.17984)
-**Code**: [iecashhy/RS-vHeat](https://github.com/iecashhy/RS-vHeat)
+**arXiv**: [2411.17984](https://arxiv.org/abs/2411.17984)  
+**Code**: [iecashhy/RS-vHeat](https://github.com/iecashhy/RS-vHeat)  
 **Area**: Remote Sensing
 **Keywords**: Remote sensing foundation model, heat conduction, self-supervised learning, frequency domain masking, multimodal
 

@@ -17,8 +17,8 @@ content_hash: fd3554b8fb07d2a3
 # PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.06917](https://arxiv.org/abs/2603.06917)
-**Code**: N/A
+**arXiv**: [2603.06917](https://arxiv.org/abs/2603.06917)  
+**Code**: N/A  
 **Area**: Object Detection
 **Keywords**: DETR, dynamic queries, pattern learning, quality-aware assignment, object detection
 
@@ -41,19 +41,19 @@ Two modules are introduced on top of the standard DETR encoder–decoder archite
 ### Key Designs
 
 1. **Pattern-Based Dynamic Query Generation**
-   - **Function**: Constructs each query as an adaptive combination of shared basis patterns.
-   - **Mechanism**: Learns $m$ shared basis patterns $\mathbf{Q}^P = \{q_1^P, \dots, q_m^P\}$; each query is expressed as a convex combination $q_i^C = \sum_{j=1}^m w_{ij}^D q_j^P$. Dynamic weights $\mathbf{W}^D = \text{softmax}(F_w(\hat{\mathbf{Z}}))$ are produced from encoder features via feature extraction → multi-scale fusion → MLP, with softmax ensuring a valid convex combination.
-   - **Design Motivation**: Independently learned queries lead to a winner-takes-all phenomenon in which matched queries accumulate all gradients while unmatched queries receive almost none. Shared basis patterns allow gradients to propagate through shared parameters to all queries, promoting more uniform optimization.
+    - **Function**: Constructs each query as an adaptive combination of shared basis patterns.
+    - **Mechanism**: Learns $m$ shared basis patterns $\mathbf{Q}^P = \{q_1^P, \dots, q_m^P\}$; each query is expressed as a convex combination $q_i^C = \sum_{j=1}^m w_{ij}^D q_j^P$. Dynamic weights $\mathbf{W}^D = \text{softmax}(F_w(\hat{\mathbf{Z}}))$ are produced from encoder features via feature extraction → multi-scale fusion → MLP, with softmax ensuring a valid convex combination.
+    - **Design Motivation**: Independently learned queries lead to a winner-takes-all phenomenon in which matched queries accumulate all gradients while unmatched queries receive almost none. Shared basis patterns allow gradients to propagate through shared parameters to all queries, promoting more uniform optimization.
 
 2. **Quality-Aware One-to-Many Assignment**
-   - **Function**: Adaptively determines the number and selection of positive samples according to prediction quality.
-   - **Mechanism**: Defines a quality score for each prediction–GT pair as $s_{i,j} = \text{IoU}(\hat{b}_i, g_j) - \gamma \hat{c}_i$, balancing localization accuracy and classification confidence. The number of positives per GT is adaptively set as $k_j = \max(\lceil \sum_{i \in \text{top-k}} s_{i,j} \rceil, l)$, so that more high-quality predictions yield more assigned positives. IoU-aware Varifocal Loss is applied to weight the selected positives.
-   - **Design Motivation**: Fixed-$k$ one-to-many assignment ignores the distribution of prediction quality. Quality-aware assignment prioritizes predictions with high IoU but low confidence, guiding the model toward informative yet challenging samples.
+    - **Function**: Adaptively determines the number and selection of positive samples according to prediction quality.
+    - **Mechanism**: Defines a quality score for each prediction–GT pair as $s_{i,j} = \text{IoU}(\hat{b}_i, g_j) - \gamma \hat{c}_i$, balancing localization accuracy and classification confidence. The number of positives per GT is adaptively set as $k_j = \max(\lceil \sum_{i \in \text{top-k}} s_{i,j} \rceil, l)$, so that more high-quality predictions yield more assigned positives. IoU-aware Varifocal Loss is applied to weight the selected positives.
+    - **Design Motivation**: Fixed-$k$ one-to-many assignment ignores the distribution of prediction quality. Quality-aware assignment prioritizes predictions with high IoU but low confidence, guiding the model toward informative yet challenging samples.
 
 3. **Pattern Diversity Regularization**
-   - **Function**: Prevents redundancy among basis patterns.
-   - **Mechanism**: Penalizes cosine similarity between normalized basis patterns: $\mathcal{L}_{div} = \frac{1}{m(m-1)}\sum_{i \neq j}|\cos(\hat{q}_i^P, \hat{q}_j^P)|$, encouraging near-orthogonality among basis patterns.
-   - **Design Motivation**: If basis patterns collapse to similar representations, dynamic combination loses its expressive power. Diversity regularization ensures that basis patterns span distinct semantic directions.
+    - **Function**: Prevents redundancy among basis patterns.
+    - **Mechanism**: Penalizes cosine similarity between normalized basis patterns: $\mathcal{L}_{div} = \frac{1}{m(m-1)}\sum_{i \neq j}|\cos(\hat{q}_i^P, \hat{q}_j^P)|$, encouraging near-orthogonality among basis patterns.
+    - **Design Motivation**: If basis patterns collapse to similar representations, dynamic combination loses its expressive power. Diversity regularization ensures that basis patterns span distinct semantic directions.
 
 ### Loss & Training
 $$\mathcal{L}_{total} = \mathcal{L}_{1:m} + \mathcal{L}_{aux} + \beta \mathcal{L}_{div}$$

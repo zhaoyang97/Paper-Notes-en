@@ -17,8 +17,8 @@ content_hash: 306789190f609c8f
 # Epona: Autoregressive Diffusion World Model for Autonomous Driving
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.24113](https://arxiv.org/abs/2506.24113)
-**Code**: [https://github.com/Kevin-thu/Epona/](https://github.com/Kevin-thu/Epona/)
+**arXiv**: [2506.24113](https://arxiv.org/abs/2506.24113)  
+**Code**: [https://github.com/Kevin-thu/Epona/](https://github.com/Kevin-thu/Epona/)  
 **Area**: Autonomous Driving
 **Keywords**: world model, autoregressive diffusion, trajectory planning, video generation, autonomous driving
 

@@ -18,8 +18,8 @@ content_hash: 7818255f04f681f5
 # Adaptive Originality Filtering: Rejection-Based Prompting and RiddleScore for Culturally Grounded Multilingual Riddle Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.18709](https://arxiv.org/abs/2508.18709)
-**Code**: None
+**arXiv**: [2508.18709](https://arxiv.org/abs/2508.18709)  
+**Code**: None  
 **Area**: NLP Generation / Multilingual Creative Generation
 **Keywords**: Adaptive Originality Filtering, RiddleScore, multilingual riddle generation, rejection sampling, cultural adaptation
 

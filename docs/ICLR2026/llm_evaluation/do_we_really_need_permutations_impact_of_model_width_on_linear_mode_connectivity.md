@@ -18,8 +18,8 @@ content_hash: aff79b65f91a7d64
 # Do We Really Need Permutations? Impact of Model Width on Linear Mode Connectivity
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.08023](https://arxiv.org/abs/2510.08023)
-**Code**: None
+**arXiv**: [2510.08023](https://arxiv.org/abs/2510.08023)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: linear mode connectivity, model merging, permutation symmetry, model width, loss landscape
 

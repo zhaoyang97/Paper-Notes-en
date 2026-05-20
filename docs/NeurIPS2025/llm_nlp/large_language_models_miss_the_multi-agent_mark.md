@@ -18,8 +18,8 @@ content_hash: af3b8cbde3d47805
 # Large Language Models Miss the Multi-Agent Mark
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21298](https://arxiv.org/abs/2505.21298)
-**Code**: None
+**arXiv**: [2505.21298](https://arxiv.org/abs/2505.21298)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: Multi-agent systems, Position paper, Social intelligence, Asynchronous communication, Emergent behavior
 
@@ -51,22 +51,22 @@ The paper adopts a critical survey methodology, systematically reviewing approxi
 
 1. **Argument 1: LLMs Lack Native Social Behavior**
 
-   - Core argument: Intelligent agents in MAS require three capabilities—reactivity, proactiveness, and social ability. LLMs possess the first two, but social ability is entirely injected via prompts or imposed by an orchestrator, not acquired through training.
-   - Key evidence: Cemri et al. find that 37% of MAS LLMs failures stem from inter-agent alignment and coordination issues; LLMs perform poorly on Theory of Mind benchmarks; most MAS LLMs effectively degrade into ensembles (majority voting) rather than genuine collaboration.
-   - Research directions: Incorporate multi-agent cooperation and competition scenarios during pretraining; leverage text-feedback-based training methods such as TextGrad to enable agents to learn social behavior through interaction.
+    - Core argument: Intelligent agents in MAS require three capabilities—reactivity, proactiveness, and social ability. LLMs possess the first two, but social ability is entirely injected via prompts or imposed by an orchestrator, not acquired through training.
+    - Key evidence: Cemri et al. find that 37% of MAS LLMs failures stem from inter-agent alignment and coordination issues; LLMs perform poorly on Theory of Mind benchmarks; most MAS LLMs effectively degrade into ensembles (majority voting) rather than genuine collaboration.
+    - Research directions: Incorporate multi-agent cooperation and competition scenarios during pretraining; leverage text-feedback-based training methods such as TextGrad to enable agents to learn social behavior through interaction.
 
 2. **Argument 2: Environment Design Is LLM-Centric**
 
-   - Core argument: Traditional MAS environment design makes no assumptions about agent architecture, whereas current MAS LLMs assume all agents are LLMs communicating via natural language. This overlooks three inherent LLM deficiencies: non-determinism (temperature set to 0 is not fully deterministic), hallucination (deviation from assigned identities/roles), and absence of long-term memory.
-   - Key data: A survey of 112 MAS LLMs papers finds that most operate in partially observable, determinism-assumed, discrete-time, text-based environments.
-   - Illustrative cases: In CAMEL, two LLMs inadvertently swap roles and fall into infinite message loops; in MetaAgent, LLMs hallucinate capabilities and deviate from assigned identities.
-   - Research directions: Design multimodal environments to reduce natural-language mediation; replace free-form text with structured formats; integrate formal planners or neuro-symbolic methods.
+    - Core argument: Traditional MAS environment design makes no assumptions about agent architecture, whereas current MAS LLMs assume all agents are LLMs communicating via natural language. This overlooks three inherent LLM deficiencies: non-determinism (temperature set to 0 is not fully deterministic), hallucination (deviation from assigned identities/roles), and absence of long-term memory.
+    - Key data: A survey of 112 MAS LLMs papers finds that most operate in partially observable, determinism-assumed, discrete-time, text-based environments.
+    - Illustrative cases: In CAMEL, two LLMs inadvertently swap roles and fall into infinite message loops; in MetaAgent, LLMs hallucinate capabilities and deviate from assigned identities.
+    - Research directions: Design multimodal environments to reduce natural-language mediation; replace free-form text with structured formats; integrate formal planners or neuro-symbolic methods.
 
 3. **Argument 3: Absence of Asynchronous Coordination and Standard Communication**
 
-   - Core argument: Asynchrony is a core characteristic of genuine MAS, yet a survey of 1,400+ MAS LLMs papers identifies only 22 that explicitly address asynchronous interaction. Natural language communication is costly and ambiguous, and established structured agent communication standards such as KQML and FIPA ACL are entirely ignored.
-   - AutoGen case: Although the framework supports asynchronous APIs, developers must manually define asynchronous calls for every action and event; doing asynchronous programming in a synchronous language is highly error-prone.
-   - Research directions: Frameworks should treat asynchrony as the default and synchrony as the exception; borrow concurrent modeling formalisms such as Petri nets to analyze reachability and boundedness in MAS LLMs; establish standard agent communication protocols analogous to Google A2A.
+    - Core argument: Asynchrony is a core characteristic of genuine MAS, yet a survey of 1,400+ MAS LLMs papers identifies only 22 that explicitly address asynchronous interaction. Natural language communication is costly and ambiguous, and established structured agent communication standards such as KQML and FIPA ACL are entirely ignored.
+    - AutoGen case: Although the framework supports asynchronous APIs, developers must manually define asynchronous calls for every action and event; doing asynchronous programming in a synchronous language is highly error-prone.
+    - Research directions: Frameworks should treat asynchrony as the default and synchrony as the exception; borrow concurrent modeling formalisms such as Petri nets to analyze reachability and boundedness in MAS LLMs; establish standard agent communication protocols analogous to Google A2A.
 
 ### Argument 4: Emergent Behavior Lacks Quantification
 

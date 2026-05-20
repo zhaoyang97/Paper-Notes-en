@@ -18,8 +18,8 @@ content_hash: a3c6c71821bd9591
 # Did You Check the Right Pocket? Cost-Sensitive Store Routing for Memory-Augmented Agents
 
 **Conference**: ICLR 2026 Workshop
-**arXiv**: [2603.15658](https://arxiv.org/abs/2603.15658)
-**Code**: None
+**arXiv**: [2603.15658](https://arxiv.org/abs/2603.15658)  
+**Code**: None  
 **Area**: LLM Efficiency
 **Keywords**: memory-augmented agents, store routing, cost-sensitive retrieval, RAG, memory architecture
 

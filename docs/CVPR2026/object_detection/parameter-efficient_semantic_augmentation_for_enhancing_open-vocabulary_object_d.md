@@ -18,8 +18,8 @@ content_hash: dbf9f1503856128b
 # Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04444](https://arxiv.org/abs/2604.04444)
-**Code**: N/A
+**arXiv**: [2604.04444](https://arxiv.org/abs/2604.04444)  
+**Code**: N/A  
 **Area**: Object Detection / Open-Vocabulary
 **Keywords**: open-vocabulary object detection, parameter-efficient fine-tuning, semantic augmentation, prompt bank, domain adaptation
 

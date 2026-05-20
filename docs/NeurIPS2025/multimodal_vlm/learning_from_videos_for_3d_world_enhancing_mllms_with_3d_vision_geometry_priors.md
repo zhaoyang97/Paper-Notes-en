@@ -18,8 +18,8 @@ content_hash: 7d8a46194380e220
 # Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.24625](https://arxiv.org/abs/2505.24625)
-**Code**: [GitHub](https://lavi-lab.github.io/VG-LLM)
+**arXiv**: [2505.24625](https://arxiv.org/abs/2505.24625)  
+**Code**: [GitHub](https://lavi-lab.github.io/VG-LLM)  
 **Area**: 3D Vision / Multimodal Large Language Models
 **Keywords**: MLLM, 3D Visual Geometry, Spatial Reasoning, Video Understanding, VGGT
 

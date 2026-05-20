@@ -20,9 +20,9 @@ content_hash: 73eda8ce27ba1963
 # Preference Learning with Lie Detectors can Induce Honesty or Evasion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13787](https://arxiv.org/abs/2505.13787)
+**arXiv**: [2505.13787](https://arxiv.org/abs/2505.13787)  
 **Authors**: Chris Cundy (FAR.AI), Adam Gleave (FAR.AI)
-**Code**: [GitHub](https://github.com/AlignmentResearch/deception-evasion-honesty)
+**Code**: [GitHub](https://github.com/AlignmentResearch/deception-evasion-honesty)  
 **Area**: LLM Alignment
 **Keywords**: LLM deception detection, preference learning, lie detector, scalable oversight, GRPO, DPO, AI safety
 

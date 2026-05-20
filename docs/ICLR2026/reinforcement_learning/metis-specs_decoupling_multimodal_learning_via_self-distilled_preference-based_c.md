@@ -18,8 +18,8 @@ content_hash: fa1d2e6ae6d4ef2a
 # Metis-SPECS: Decoupling Multimodal Learning via Self-distilled Preference-based Cold Start
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.25801](https://arxiv.org/abs/2510.25801)
-**Code**: [Project Page](https://kwen-chen.github.io/SPECS-VL/)
+**arXiv**: [2510.25801](https://arxiv.org/abs/2510.25801)  
+**Code**: [Project Page](https://kwen-chen.github.io/SPECS-VL/)  
 **Area**: Multimodal VLM / Reinforcement Learning
 **Keywords**: Cold Start, DPO, Decoupled Learning, Self-Distillation, VLM Reasoning
 

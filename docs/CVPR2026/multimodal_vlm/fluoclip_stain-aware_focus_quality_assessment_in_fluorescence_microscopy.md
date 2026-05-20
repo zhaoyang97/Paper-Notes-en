@@ -18,8 +18,8 @@ content_hash: 58b8f0e254b42207
 # FluoCLIP: Stain-Aware Focus Quality Assessment in Fluorescence Microscopy
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23791](https://arxiv.org/abs/2602.23791)
-**Code**: To be confirmed
+**arXiv**: [2602.23791](https://arxiv.org/abs/2602.23791)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Fluorescence microscopy, focus quality assessment, CLIP, ordinal regression, stain awareness
 

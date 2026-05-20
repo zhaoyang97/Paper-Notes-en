@@ -18,8 +18,8 @@ content_hash: 2b1591dc15eaa412
 # Multi-Object Sketch Animation by Scene Decomposition and Motion Planning
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.19351](https://arxiv.org/abs/2503.19351)
-**Code**: None (planned open-source)
+**arXiv**: [2503.19351](https://arxiv.org/abs/2503.19351)  
+**Code**: None (planned open-source)  
 **Area**: Diffusion Models
 **Keywords**: Sketch Animation, Multi-Object Animation, LLM Motion Planning, Score Distillation Sampling, Compositional Generation
 

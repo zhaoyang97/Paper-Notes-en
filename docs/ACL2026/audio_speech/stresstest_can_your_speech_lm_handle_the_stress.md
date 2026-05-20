@@ -18,8 +18,8 @@ content_hash: ce64355ec7fc63de
 # StressTest: Can YOUR Speech LM Handle the Stress?
 
 **Conference**: ACL 2026
-**arXiv**: [2505.22765](https://arxiv.org/abs/2505.22765)
-**Code**: [Project Page](https://pages.cs.huji.ac.il/adiyoss-lab/stresstest)
+**arXiv**: [2505.22765](https://arxiv.org/abs/2505.22765)  
+**Code**: [Project Page](https://pages.cs.huji.ac.il/adiyoss-lab/stresstest)  
 **Area**: Speech Understanding
 **Keywords**: Sentence Stress, Speech Language Models, Prosody Understanding, Benchmark, Synthetic Data
 

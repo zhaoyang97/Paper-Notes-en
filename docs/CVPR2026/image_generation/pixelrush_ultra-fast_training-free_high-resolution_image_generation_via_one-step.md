@@ -18,8 +18,8 @@ content_hash: c7cb6e4960214efc
 # PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.12769](https://arxiv.org/abs/2602.12769)
-**Code**: None
+**arXiv**: [2602.12769](https://arxiv.org/abs/2602.12769)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: high-resolution image generation, training-free, diffusion models, few-step diffusion, patch-based inference
 

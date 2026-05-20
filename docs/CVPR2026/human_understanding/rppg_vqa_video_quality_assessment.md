@@ -18,8 +18,8 @@ content_hash: da95250e92ff106d
 # rPPG-VQA: A Video Quality Assessment Framework for Unsupervised rPPG Training
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.11156](https://arxiv.org/abs/2604.11156)
-**Code**: [https://github.com/Tianyang-Dai/rPPG-VQA](https://github.com/Tianyang-Dai/rPPG-VQA)
+**arXiv**: [2604.11156](https://arxiv.org/abs/2604.11156)  
+**Code**: [https://github.com/Tianyang-Dai/rPPG-VQA](https://github.com/Tianyang-Dai/rPPG-VQA)  
 **Area**: Human Understanding
 **Keywords**: Remote Photoplethysmography, Video Quality Assessment, Unsupervised Learning, Multimodal Large Language Models, Data Curation
 

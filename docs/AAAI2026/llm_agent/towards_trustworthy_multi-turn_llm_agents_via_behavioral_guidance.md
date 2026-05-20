@@ -19,8 +19,8 @@ content_hash: 371ea5a9449f747a
 # Towards Trustworthy Multi-Turn LLM Agents via Behavioral Guidance
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.11421](https://arxiv.org/abs/2512.11421)
-**Code**: None
+**arXiv**: [2512.11421](https://arxiv.org/abs/2512.11421)  
+**Code**: None  
 **Area**: LLM Agents
 **Keywords**: multi-turn interaction, behavioral guidance, trustworthy agent, task profiler, reasoning module, generation module
 
@@ -48,26 +48,26 @@ The framework augments an RL prompting backbone with three components: (1) a Tas
 
 1. **Task Profiler**
 
-   - Functions as a cognitive strategy engine (LLM-based) that analyzes the structural characteristics of the task environment.
-   - Outputs task features including: temporal dependency type (sequential vs. cumulative), constraint intensity, and suitable reasoning and generation strategies.
-   - Runs for the first time after a warm-up period (epoch $k$) and is refreshed at the end of each subsequent epoch.
-   - Acts as a meta-learner that determines *how to generate behaviors* rather than directly solving the task.
+    - Functions as a cognitive strategy engine (LLM-based) that analyzes the structural characteristics of the task environment.
+    - Outputs task features including: temporal dependency type (sequential vs. cumulative), constraint intensity, and suitable reasoning and generation strategies.
+    - Runs for the first time after a warm-up period (epoch $k$) and is refreshed at the end of each subsequent epoch.
+    - Acts as a meta-learner that determines *how to generate behaviors* rather than directly solving the task.
 
 2. **Reasoning Module**
 
-   - Analyzes high-reward trajectories and extracts rules of the form "if [observation condition] then [optimal action]."
-   - Rules are stored in the Rule Bank, accumulating across trajectories and epochs with associated success rates and usage histories.
-   - Adapts to the Task Profiler's guidance: sequential tasks focus on single-step transition reasoning, while cumulative tasks aggregate long-horizon information.
-   - Rules stabilize after multi-round trajectory validation, transitioning from ad hoc reasoning to generalized, consistent reasoning.
-   - When familiar conditions recur, validated rules can be applied directly.
+    - Analyzes high-reward trajectories and extracts rules of the form "if [observation condition] then [optimal action]."
+    - Rules are stored in the Rule Bank, accumulating across trajectories and epochs with associated success rates and usage histories.
+    - Adapts to the Task Profiler's guidance: sequential tasks focus on single-step transition reasoning, while cumulative tasks aggregate long-horizon information.
+    - Rules stabilize after multi-round trajectory validation, transitioning from ad hoc reasoning to generalized, consistent reasoning.
+    - When familiar conditions recur, validated rules can be applied directly.
 
 3. **Generation Module**
 
-   - Selects appropriate generation strategy tools based on Task Profiler guidance.
-   - For lightly constrained tasks: directly validates the native LLM output for validity.
-   - For heavily constrained tasks (e.g., Wordle, Sudoku): employs deterministic enumeration or guided sampling.
-   - Performs validity checking before each action is submitted; automatically falls back to deterministic enumeration upon violation.
-   - Ensures every output is verifiably valid with respect to environmental feedback and reasoning rules.
+    - Selects appropriate generation strategy tools based on Task Profiler guidance.
+    - For lightly constrained tasks: directly validates the native LLM output for validity.
+    - For heavily constrained tasks (e.g., Wordle, Sudoku): employs deterministic enumeration or guided sampling.
+    - Performs validity checking before each action is submitted; automatically falls back to deterministic enumeration upon violation.
+    - Ensures every output is verifiably valid with respect to environmental feedback and reasoning rules.
 
 ### Loss & Training
 

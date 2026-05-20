@@ -18,8 +18,8 @@ content_hash: 997e637145dbd2d3
 # From Single to Societal: Analyzing Persona-Induced Bias in Multi-Agent Interactions
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11789](https://arxiv.org/abs/2511.11789)
-**Code**: [https://github.com/Jiayi-LizzZ/Persona-Induced-Bias-in-MAS](https://github.com/Jiayi-LizzZ/Persona-Induced-Bias-in-MAS)
+**arXiv**: [2511.11789](https://arxiv.org/abs/2511.11789)  
+**Code**: [https://github.com/Jiayi-LizzZ/Persona-Induced-Bias-in-MAS](https://github.com/Jiayi-LizzZ/Persona-Induced-Bias-in-MAS)  
 **Area**: AI Safety
 **Keywords**: Multi-Agent System, Persona Bias, LLM Bias, In-group Favoritism, Social Identity Theory
 

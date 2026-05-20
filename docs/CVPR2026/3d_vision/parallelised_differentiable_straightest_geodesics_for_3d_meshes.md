@@ -20,8 +20,8 @@ content_hash: ac0cfa99cf52b9ca
 # Parallelised Differentiable Straightest Geodesics for 3D Meshes
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.15780](https://arxiv.org/abs/2603.15780)
-**Code**: [circle-group/DSG](https://circle-group.github.io/research/DSG) (pip install digeo)
+**arXiv**: [2603.15780](https://arxiv.org/abs/2603.15780)  
+**Code**: [circle-group/DSG](https://circle-group.github.io/research/DSG) (pip install digeo)  
 **Authors**: Hippolyte Verninas, Caner Korkmaz, Stefanos Zafeiriou, Tolga Birdal, Simone Foti (Imperial College London)
 **Area**: 3D Vision
 **Keywords**: geodesics, differentiable, exponential map, mesh learning, parallelization, flow matching, geodesic convolution

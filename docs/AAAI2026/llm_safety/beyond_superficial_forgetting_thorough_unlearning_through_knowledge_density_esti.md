@@ -17,8 +17,8 @@ content_hash: a4340c341d603d57
 # Beyond Superficial Forgetting: Thorough Unlearning through Knowledge Density Estimation and Block Re-insertion
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11667](https://arxiv.org/abs/2511.11667)
-**Code**: [github.com/llmgfffffff/Beyond-Superficial-Forgetting-KUnBR](https://github.com/llmgfffffff/Beyond-Superficial-Forgetting-KUnBR)
+**arXiv**: [2511.11667](https://arxiv.org/abs/2511.11667)  
+**Code**: [github.com/llmgfffffff/Beyond-Superficial-Forgetting-KUnBR](https://github.com/llmgfffffff/Beyond-Superficial-Forgetting-KUnBR)  
 **Area**: AI Safety
 **Keywords**: machine unlearning, Knowledge Density, Block Re-insertion, LLM safety, RTT Attack
 

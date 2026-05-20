@@ -18,8 +18,8 @@ content_hash: 017878a37e4ddfdc
 # FALCON: Few-step Accurate Likelihoods for Continuous Flows
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.09914](https://arxiv.org/abs/2512.09914)
-**Code**: To be confirmed
+**arXiv**: [2512.09914](https://arxiv.org/abs/2512.09914)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: Continuous Normalizing Flows, Boltzmann Generators, Flow Matching, Importance Sampling, Molecular Sampling
 

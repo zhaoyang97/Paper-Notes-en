@@ -18,8 +18,8 @@ content_hash: 3eed7f5ef28863f2
 # STELLAR: Scene Text Editor for Low-Resource Languages and Real-World Data
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09977](https://arxiv.org/abs/2511.09977)
-**Code**: [github.com/yongchoooon/stellar](https://github.com/yongchoooon/stellar)
+**arXiv**: [2511.09977](https://arxiv.org/abs/2511.09977)  
+**Code**: [github.com/yongchoooon/stellar](https://github.com/yongchoooon/stellar)  
 **Area**: Multilingual Translation
 **Keywords**: Scene Text Editing, Low-Resource Languages, Diffusion Models, Domain Adaptation, Text Appearance Similarity
 

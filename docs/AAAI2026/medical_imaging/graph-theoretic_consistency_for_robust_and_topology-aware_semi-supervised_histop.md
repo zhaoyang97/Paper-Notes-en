@@ -18,8 +18,8 @@ content_hash: 6dc31fb76a9b799c
 # Graph-Theoretic Consistency for Robust and Topology-Aware Semi-Supervised Histopathology Segmentation
 
 **Conference**: AAAI 2026 (Student Abstract)
-**arXiv**: [2509.22689](https://arxiv.org/abs/2509.22689)
-**Code**: None
+**arXiv**: [2509.22689](https://arxiv.org/abs/2509.22689)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Semi-supervised segmentation, histopathology images, topological consistency, graph-theoretic constraints, pseudo-labels
 

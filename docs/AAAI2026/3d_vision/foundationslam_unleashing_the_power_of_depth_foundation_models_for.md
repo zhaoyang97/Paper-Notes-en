@@ -18,8 +18,8 @@ content_hash: c5465f6f5ef6a773
 # FoundationSLAM: Unleashing the Potential of Deep Foundation Models in End-to-End Dense Visual SLAM
 
 **Conference**: AAAI 2026 (Oral)
-**arXiv**: [2512.25008v2](https://arxiv.org/abs/2512.25008v2)
-**Code**: Unavailable
+**arXiv**: [2512.25008v2](https://arxiv.org/abs/2512.25008v2)  
+**Code**: Unavailable  
 **Area**: 3D Vision / SLAM
 **Keywords**: Monocular SLAM, Depth Foundation Models, Optical Flow Estimation, Bundle Adjustment, Geometric Consistency
 

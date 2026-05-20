@@ -18,8 +18,8 @@ content_hash: 8512860eab73339e
 # MonoSOWA: Scalable Monocular 3D Object Detector Without Human Annotations
 
 **Conference**: ICCV2025
-**arXiv**: [2501.09481](https://arxiv.org/abs/2501.09481)
-**Code**: [github.com/jskvrna/MonoSOWA](https://github.com/jskvrna/MonoSOWA)
+**arXiv**: [2501.09481](https://arxiv.org/abs/2501.09481)  
+**Code**: [github.com/jskvrna/MonoSOWA](https://github.com/jskvrna/MonoSOWA)  
 **Area**: Autonomous Driving
 **Keywords**: Monocular 3D Detection, Weak Supervision, Auto-Labeling, Pseudo-LiDAR, Annotation-Free
 

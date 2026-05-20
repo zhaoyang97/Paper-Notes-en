@@ -18,8 +18,8 @@ content_hash: 51d0ddfd0f2e207c
 # When Understanding Becomes a Risk: Authenticity and Safety Risks in the Emerging Image Generation Paradigm
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24079](https://arxiv.org/abs/2603.24079)
-**Code**: None
+**arXiv**: [2603.24079](https://arxiv.org/abs/2603.24079)  
+**Code**: None  
 **Area**: AI Safety / Image Generation
 **Keywords**: Multimodal Large Language Models, Image Safety, Unsafe Content Generation, Fake Image Detection, Diffusion Model Comparison
 

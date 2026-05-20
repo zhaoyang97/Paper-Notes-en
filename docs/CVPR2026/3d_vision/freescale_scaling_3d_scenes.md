@@ -18,8 +18,8 @@ content_hash: 1686a28f9d6255c9
 # FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.10512](https://arxiv.org/abs/2604.10512)
-**Code**: [https://mvp-ai-lab.github.io/FreeScale](https://mvp-ai-lab.github.io/FreeScale)
+**arXiv**: [2604.10512](https://arxiv.org/abs/2604.10512)  
+**Code**: [https://mvp-ai-lab.github.io/FreeScale](https://mvp-ai-lab.github.io/FreeScale)  
 **Area**: 3D Vision
 **Keywords**: Novel View Synthesis, Data Augmentation, 3D Gaussian Splatting, Feed-Forward Reconstruction, Certainty-Aware Sampling
 

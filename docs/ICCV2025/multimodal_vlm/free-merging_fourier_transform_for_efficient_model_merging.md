@@ -18,8 +18,8 @@ content_hash: 06872d9526e05d1d
 # FREE-Merging: Fourier Transform for Efficient Model Merging
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.16815](https://arxiv.org/abs/2411.16815)
-**Code**: [GitHub](https://github.com/Zhenghe123/FREE-Merging)
+**arXiv**: [2411.16815](https://arxiv.org/abs/2411.16815)  
+**Code**: [GitHub](https://github.com/Zhenghe123/FREE-Merging)  
 **Area**: Multimodal VLM
 **Keywords**: Model Merging, Fourier Transform, Task Interference, Frequency-Domain Analysis, Lightweight Expert
 

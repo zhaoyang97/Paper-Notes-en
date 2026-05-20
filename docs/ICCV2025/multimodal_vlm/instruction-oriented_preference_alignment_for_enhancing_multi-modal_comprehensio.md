@@ -18,8 +18,8 @@ content_hash: 953bd787eafa06c6
 # Instruction-Oriented Preference Alignment for Enhancing Multi-Modal Comprehension Capability of MLLMs
 
 **Conference**: ICCV 2025
-**arXiv**: 2503.20309
-**Code**: [Dataset](https://huggingface.co/datasets/wangzt-kghl/IPA)
+**arXiv**: 2503.20309  
+**Code**: [Dataset](https://huggingface.co/datasets/wangzt-kghl/IPA)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal large language models, preference alignment, instruction following, DPO, hallucination mitigation
 **Authors**: Zitian Wang, Yue Liao, Kang Rong, Fengyun Rao, Yibo Yang, Si Liu (Beihang University, NUS, KAUST)

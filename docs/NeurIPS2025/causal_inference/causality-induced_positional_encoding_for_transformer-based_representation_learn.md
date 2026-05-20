@@ -18,8 +18,8 @@ content_hash: daad3f6930a6ae64
 # Causality-Induced Positional Encoding for Transformer-Based Representation Learning of Non-Sequential Features
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16629](https://arxiv.org/abs/2509.16629)
-**Code**: [https://github.com/Catchxu/CAPE](https://github.com/Catchxu/CAPE)
+**arXiv**: [2509.16629](https://arxiv.org/abs/2509.16629)  
+**Code**: [https://github.com/Catchxu/CAPE](https://github.com/Catchxu/CAPE)  
 **Area**: Causal Inference / Transformer
 **Keywords**: positional encoding, causal structure learning, hyperbolic embedding, rotary position encoding, multi-omics
 

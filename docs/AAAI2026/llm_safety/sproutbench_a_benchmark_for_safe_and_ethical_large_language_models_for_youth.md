@@ -18,8 +18,8 @@ content_hash: be4d16c80a9a6735
 # SproutBench: A Benchmark for Safe and Ethical Large Language Models for Youth
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.11009](https://arxiv.org/abs/2508.11009)
-**Code**: None
+**arXiv**: [2508.11009](https://arxiv.org/abs/2508.11009)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: LLM safety evaluation, child AI safety, developmental psychology, age-stratified benchmark, youth protection
 

@@ -18,8 +18,8 @@ content_hash: 3579b310f3ccdc80
 # Remasking Discrete Diffusion Models with Inference-Time Scaling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.00307](https://arxiv.org/abs/2503.00307)
-**Code**: [https://github.com/guanghanwang/remdm](https://github.com/guanghanwang/remdm)
+**arXiv**: [2503.00307](https://arxiv.org/abs/2503.00307)  
+**Code**: [https://github.com/guanghanwang/remdm](https://github.com/guanghanwang/remdm)  
 **Area**: Image Generation / Discrete Diffusion
 **Keywords**: discrete diffusion models, remasking sampling, inference-time compute scaling, iterative refinement, controllable generation
 

@@ -17,8 +17,8 @@ content_hash: 3c1566c0da40d532
 # VACE: All-in-One Video Creation and Editing
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07598](https://arxiv.org/abs/2503.07598)
-**Code**: [https://ali-vilab.github.io/VACE-Page/](https://ali-vilab.github.io/VACE-Page/)
+**arXiv**: [2503.07598](https://arxiv.org/abs/2503.07598)  
+**Code**: [https://ali-vilab.github.io/VACE-Page/](https://ali-vilab.github.io/VACE-Page/)  
 **Area**: Video Understanding / Video Generation / Video Editing
 **Keywords**: Video Generation, Video Editing, Diffusion Transformer, Unified Framework, Video Condition Unit
 

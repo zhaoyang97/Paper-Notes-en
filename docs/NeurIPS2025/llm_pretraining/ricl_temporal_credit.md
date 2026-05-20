@@ -18,8 +18,8 @@ content_hash: e7d35fc96e6467b9
 # Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.17497](https://arxiv.org/abs/2602.17497)
-**Code**: N/A
+**arXiv**: [2602.17497](https://arxiv.org/abs/2602.17497)  
+**Code**: N/A  
 **Area**: LLM Pre-training
 **Keywords**: temporal credit assignment, in-context learning, advantage function estimation, sparse rewards, online learning
 

@@ -18,8 +18,8 @@ content_hash: 15e211ec5b886aea
 # Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.01473](https://arxiv.org/abs/2502.01473)
-**Code**: [https://github.com/Arya-Honarpisheh/gen_err_sel_ssm](https://github.com/Arya-Honarpisheh/gen_err_sel_ssm)
+**arXiv**: [2502.01473](https://arxiv.org/abs/2502.01473)  
+**Code**: [https://github.com/Arya-Honarpisheh/gen_err_sel_ssm](https://github.com/Arya-Honarpisheh/gen_err_sel_ssm)  
 **Area**: Theory / SSM
 **Keywords**: Mamba, state space models, generalization bounds, covering numbers, spectral abscissa
 

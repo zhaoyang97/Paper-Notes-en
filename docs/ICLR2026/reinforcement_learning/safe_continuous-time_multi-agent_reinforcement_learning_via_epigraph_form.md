@@ -18,8 +18,8 @@ content_hash: 3c3b195d854dcc2b
 # Safe Continuous-time Multi-Agent Reinforcement Learning via Epigraph Form
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.17078](https://arxiv.org/abs/2602.17078)
-**Code**: [GitHub](https://github.com/xuefeng-wang/EPI)
+**arXiv**: [2602.17078](https://arxiv.org/abs/2602.17078)  
+**Code**: [GitHub](https://github.com/xuefeng-wang/EPI)  
 **Area**: Reinforcement Learning
 **Keywords**: Continuous-time RL, Multi-agent, Safety Constraints, HJB Equation, Epigraph Reformulation
 

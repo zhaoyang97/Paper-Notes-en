@@ -17,8 +17,8 @@ content_hash: c11e9651ca5ab23f
 # Rethinking Flow and Diffusion Bridge Models for Speech Enhancement
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.18355](https://arxiv.org/abs/2602.18355)
-**Code**: [GitHub](https://github.com/Dahan-Wang/Rethinking-Flow-and-Diffusion-Bridge-Models-for-Speech-Enhancement)
+**arXiv**: [2602.18355](https://arxiv.org/abs/2602.18355)  
+**Code**: [GitHub](https://github.com/Dahan-Wang/Rethinking-Flow-and-Diffusion-Bridge-Models-for-Speech-Enhancement)  
 **Area**: Other
 **Keywords**: Speech Enhancement, Diffusion Bridge Models, Flow Matching, Schrödinger Bridge, Unified Framework
 

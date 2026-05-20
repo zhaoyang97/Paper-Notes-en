@@ -18,8 +18,8 @@ content_hash: 549d2157aa05574e
 # Global-Aware Edge Prioritization for Pose Graph Initialization
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21963](https://arxiv.org/abs/2602.21963)
-**Code**: [GitHub](https://github.com/weitong8591/global_edge_prior)
+**arXiv**: [2602.21963](https://arxiv.org/abs/2602.21963)  
+**Code**: [GitHub](https://github.com/weitong8591/global_edge_prior)  
 **Area**: 3D Vision
 **Keywords**: Structure-from-Motion, Pose Graph Initialization, Graph Neural Network, Minimum Spanning Tree, Edge Ranking
 
@@ -73,9 +73,9 @@ Given $N$ images, the goal is to construct an initial pose graph $\mathcal{G}_0 
 
 3. **Multi-Minimum Spanning Tree + Connectivity-Aware Modulation**
 
-   - Predicted scores are converted to weights $w_{ij} = 1 - \hat{r}_{ij}$, and Kruskal's algorithm is applied iteratively to construct $k$ MSTs.
-   - Each new MST excludes already-selected edges (assigned $\infty$ weight), ensuring complementary edge sets are selected.
-   - **Key Innovation**: From the second MST onward, scores are modulated using graph distance:
+    - Predicted scores are converted to weights $w_{ij} = 1 - \hat{r}_{ij}$, and Kruskal's algorithm is applied iteratively to construct $k$ MSTs.
+    - Each new MST excludes already-selected edges (assigned $\infty$ weight), ensuring complementary edge sets are selected.
+    - **Key Innovation**: From the second MST onward, scores are modulated using graph distance:
 
    $s_{ij}^{(m)} = (1-\lambda)\hat{r}_{ij} + \lambda \bar{d}^{(m-1)}(i,j)$
 

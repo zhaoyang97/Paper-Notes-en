@@ -19,8 +19,8 @@ content_hash: 360da294c993b4b0
 # Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.24059](https://arxiv.org/abs/2602.24059)
-**Code**: N/A
+**arXiv**: [2602.24059](https://arxiv.org/abs/2602.24059)  
+**Code**: N/A  
 **Area**: Model Compression / VLM Quantization
 **Keywords**: post-training quantization, VLM, MoE, token-aware, low-rank adapter, channel importance
 
@@ -51,19 +51,19 @@ The QE framework proceeds in three stages: (1) estimating the importance frequen
 ### Key Designs
 
 1. **Channel Importance Analysis and Partitioning**
-   - **Function**: Partition important channels by occurrence frequency into globally consistent and locally dynamic groups.
-   - **Mechanism**: For each token $x_t$, the important channel set is computed as $\mathcal{C}_t = \text{Top-}k(|x_t| \odot \mathbf{w})$, where $\mathbf{w} = \text{Mean}_{\text{row}}(|\mathbf{W}_f|)$. The frequency $f_c = k \times \frac{m_c}{\sum_i m_i}$ measures how often each channel is identified as important across all tokens. Channels are sorted by frequency in descending order: the top $k$ form the token-independent set $\mathcal{C}_s$, and the subsequent $N_r \times k$ form the token-dependent set $\mathcal{C}_r$.
-   - **Design Motivation**: Empirical observations show that only a small number of channels appear consistently as important across most tokens (suitable for global compensation), while the majority of important channels exhibit strong input-dependent activation patterns (requiring dynamic compensation).
+    - **Function**: Partition important channels by occurrence frequency into globally consistent and locally dynamic groups.
+    - **Mechanism**: For each token $x_t$, the important channel set is computed as $\mathcal{C}_t = \text{Top-}k(|x_t| \odot \mathbf{w})$, where $\mathbf{w} = \text{Mean}_{\text{row}}(|\mathbf{W}_f|)$. The frequency $f_c = k \times \frac{m_c}{\sum_i m_i}$ measures how often each channel is identified as important across all tokens. Channels are sorted by frequency in descending order: the top $k$ form the token-independent set $\mathcal{C}_s$, and the subsequent $N_r \times k$ form the token-dependent set $\mathcal{C}_r$.
+    - **Design Motivation**: Empirical observations show that only a small number of channels appear consistently as important across most tokens (suitable for global compensation), while the majority of important channels exhibit strong input-dependent activation patterns (requiring dynamic compensation).
 
 2. **Shared Expert (SE) for Global Compensation**
-   - **Function**: Reconstruct global quantization errors caused by token-independent channels.
-   - **Mechanism**: Token-independent channels are excluded from direct quantization and decomposed via whitening SVD into a low-rank adapter $(\mathbf{L}_{SA}^l, \mathbf{L}_{SB}^l)$ for reconstruction. Channel scaling is also applied to reduce activation outlier magnitudes (with corresponding weight scaling applied inversely), suppressing activation quantization errors. After SE processing, the residual error $\mathbf{E}_S^l = \mathbf{E}^l - \mathbf{L}_{SA}^l \mathbf{L}_{SB}^l$ is passed to the routed experts for further refinement.
-   - **Design Motivation**: High-frequency channels are the dominant contributors to quantization error; accurate reconstruction via low-rank adapters follows the design rationale of LQER/ASER. Channel scaling simultaneously addresses quantization issues on both the weight and activation sides.
+    - **Function**: Reconstruct global quantization errors caused by token-independent channels.
+    - **Mechanism**: Token-independent channels are excluded from direct quantization and decomposed via whitening SVD into a low-rank adapter $(\mathbf{L}_{SA}^l, \mathbf{L}_{SB}^l)$ for reconstruction. Channel scaling is also applied to reduce activation outlier magnitudes (with corresponding weight scaling applied inversely), suppressing activation quantization errors. After SE processing, the residual error $\mathbf{E}_S^l = \mathbf{E}^l - \mathbf{L}_{SA}^l \mathbf{L}_{SB}^l$ is passed to the routed experts for further refinement.
+    - **Design Motivation**: High-frequency channels are the dominant contributors to quantization error; accurate reconstruction via low-rank adapters follows the design rationale of LQER/ASER. Channel scaling simultaneously addresses quantization issues on both the weight and activation sides.
 
 3. **Routed Experts (REs) for Dynamic Compensation**
-   - **Function**: Dynamically select the optimal local error compensation strategy for different tokens.
-   - **Mechanism**: A co-occurrence matrix $\mathcal{O}_{t,i}^l = \mathbf{1}(c_i \in \mathcal{C}_r^l \cap \mathcal{A}_t^l)$ is first constructed for token-dependent channels. Normalized Pointwise Mutual Information (NPMI) $\mathbf{S}_{i,j} = (\log\frac{p(i,j)}{p(i)p(j)}) / -\log p(i,j)$ is used to quantify inter-channel association strength, followed by spectral clustering (normalized Laplacian eigendecomposition + K-Means) to partition channels into $N_r$ subgroups. Each subgroup corresponds to one routed expert, reconstructing residual errors of its channels via weighted SVD. At inference, a lightweight router $\mathbf{R}^l$ predicts the residual magnitude of each expert given the input token and activates the expert with the smallest predicted residual.
-   - **Design Motivation**: Ideally, a customized compensation strategy should be tailored to each token, but the combinatorial space is intractable. By clustering channels with similar activation patterns via co-occurrence, a finite number ($N_r = 8$) of experts approximately covers the local error characteristics across all tokens.
+    - **Function**: Dynamically select the optimal local error compensation strategy for different tokens.
+    - **Mechanism**: A co-occurrence matrix $\mathcal{O}_{t,i}^l = \mathbf{1}(c_i \in \mathcal{C}_r^l \cap \mathcal{A}_t^l)$ is first constructed for token-dependent channels. Normalized Pointwise Mutual Information (NPMI) $\mathbf{S}_{i,j} = (\log\frac{p(i,j)}{p(i)p(j)}) / -\log p(i,j)$ is used to quantify inter-channel association strength, followed by spectral clustering (normalized Laplacian eigendecomposition + K-Means) to partition channels into $N_r$ subgroups. Each subgroup corresponds to one routed expert, reconstructing residual errors of its channels via weighted SVD. At inference, a lightweight router $\mathbf{R}^l$ predicts the residual magnitude of each expert given the input token and activates the expert with the smallest predicted residual.
+    - **Design Motivation**: Ideally, a customized compensation strategy should be tailored to each token, but the combinatorial space is intractable. By clustering channels with similar activation patterns via co-occurrence, a finite number ($N_r = 8$) of experts approximately covers the local error characteristics across all tokens.
 
 ### Loss & Training
 

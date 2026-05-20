@@ -18,8 +18,8 @@ content_hash: 65ecce9526c113b8
 # GateRA: Token-Aware Modulation for Parameter-Efficient Fine-Tuning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.17582](https://arxiv.org/abs/2511.17582)
-**Code**: To be confirmed
+**arXiv**: [2511.17582](https://arxiv.org/abs/2511.17582)  
+**Code**: To be confirmed  
 **Area**: Model Fine-Tuning / PEFT
 **Keywords**: Parameter-efficient fine-tuning, token-aware gating, LoRA, entropy regularization, gradient modulation
 

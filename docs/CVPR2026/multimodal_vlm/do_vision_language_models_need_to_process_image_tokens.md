@@ -18,8 +18,8 @@ content_hash: 654d3e4317d584b5
 # Do Vision Language Models Need to Process Image Tokens?
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.09425](https://arxiv.org/abs/2604.09425)
-**Code**: Available
+**arXiv**: [2604.09425](https://arxiv.org/abs/2604.09425)  
+**Code**: Available  
 **Area**: Multimodal VLM
 **Keywords**: vision-language models, image tokens, representation analysis, computational efficiency, modality redundancy
 

@@ -18,8 +18,8 @@ content_hash: 984df3d4e7dc94c1
 # The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition
 
 **Conference**: CVPR2026
-**arXiv**: [2505.24840](https://arxiv.org/abs/2505.24840)
-**Code**: [yuanqing-ai.github.io/llm-hierarchy](https://yuanqing-ai.github.io/llm-hierarchy/)
+**arXiv**: [2505.24840](https://arxiv.org/abs/2505.24840)  
+**Code**: [yuanqing-ai.github.io/llm-hierarchy](https://yuanqing-ai.github.io/llm-hierarchy/)  
 **Area**: Multimodal VLM
 **Keywords**: Hierarchical Visual Recognition, Classification Consistency, LLM Bottleneck, Taxonomy Knowledge, Visual Question Answering
 

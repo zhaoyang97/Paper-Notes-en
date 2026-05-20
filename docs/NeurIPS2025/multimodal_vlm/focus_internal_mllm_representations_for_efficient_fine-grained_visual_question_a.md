@@ -18,8 +18,8 @@ content_hash: 7dd844e3ea6dc43f
 # FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.21710](https://arxiv.org/abs/2506.21710)
-**Code**: [https://focus-mllm-vqa.github.io](https://focus-mllm-vqa.github.io) (project page)
+**arXiv**: [2506.21710](https://arxiv.org/abs/2506.21710)  
+**Code**: [https://focus-mllm-vqa.github.io](https://focus-mllm-vqa.github.io) (project page)  
 **Area**: Multimodal VLM
 **Keywords**: Fine-grained VQA, Visual Cropping, KV-Cache, Object Localization, MLLM
 

@@ -17,8 +17,8 @@ content_hash: c1e2db7a3eab262b
 # Data Complexity of Querying Description Logic Knowledge Bases under Cost-Based Semantics
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07095](https://arxiv.org/abs/2511.07095)
-**Code**: None
+**arXiv**: [2511.07095](https://arxiv.org/abs/2511.07095)  
+**Code**: None  
 **Area**: Other (Knowledge Representation & Reasoning / Description Logics)
 **Keywords**: Description Logics, Cost-Based Semantics, Inconsistency Tolerance, Ontology-Mediated Query Answering, Computational Complexity
 

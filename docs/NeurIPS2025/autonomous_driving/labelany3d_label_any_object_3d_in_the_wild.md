@@ -18,8 +18,8 @@ content_hash: 969fbff3680e3933
 # LabelAny3D: Label Any Object 3D in the Wild
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.01676](https://arxiv.org/abs/2601.01676)
-**Code**: [Project Page](https://uva-computer-vision-lab.github.io/LabelAny3D/)
+**arXiv**: [2601.01676](https://arxiv.org/abs/2601.01676)  
+**Code**: [Project Page](https://uva-computer-vision-lab.github.io/LabelAny3D/)  
 **Area**: Autonomous Driving
 **Keywords**: 3D annotation, monocular 3D detection, open-vocabulary, automatic annotation, foundation models
 

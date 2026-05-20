@@ -18,8 +18,8 @@ content_hash: 2147bd1b504cdb51
 # UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.15018](https://arxiv.org/abs/2510.15018)
-**Code**: [urbanverseproject.github.io](https://urbanverseproject.github.io/)
+**arXiv**: [2510.15018](https://arxiv.org/abs/2510.15018)  
+**Code**: [urbanverseproject.github.io](https://urbanverseproject.github.io/)  
 **Area**: Robotics / Simulation
 **Keywords**: urban simulation, real-to-sim, embodied AI, 3D asset library, navigation policy
 
@@ -71,11 +71,11 @@ Input: YouTube city-tour videos → Output: physically interactive simulation sc
 
 4. **PPO Navigation Policy Training**:
 
-   - Actor-Critic architecture with continuous action space.
-   - Observations: RGB image (135×240) + goal relative position.
-   - Three-layer CNN encoder [16, 32, 64] + three-layer MLP (128).
-   - Reward design: arrival reward (+2000) + collision penalty (−200) + position tracking (coarse + fine) + velocity reward.
-   - Training loads 16 scenes per batch, rotating to a new batch every 100 episodes.
+    - Actor-Critic architecture with continuous action space.
+    - Observations: RGB image (135×240) + goal relative position.
+    - Three-layer CNN encoder [16, 32, 64] + three-layer MLP (128).
+    - Reward design: arrival reward (+2000) + collision penalty (−200) + position tracking (coarse + fine) + velocity reward.
+    - Training loads 16 scenes per batch, rotating to a new batch every 100 episodes.
 
 ### Loss & Training
 PPO optimization; learning rate 1e-4 (adaptive); $\gamma=0.99$; GAE $\tau=0.95$; PPO clip $\varepsilon=0.2$; KL threshold 0.01; entropy coefficient 0.002; 1,500 epochs; mixed-precision training on a single L40S GPU.

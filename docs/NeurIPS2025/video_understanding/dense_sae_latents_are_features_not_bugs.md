@@ -18,8 +18,8 @@ content_hash: 1bddccf729561427
 # Dense SAE Latents Are Features, Not Bugs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.15679](https://arxiv.org/abs/2506.15679)
-**Code**: None
+**arXiv**: [2506.15679](https://arxiv.org/abs/2506.15679)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: SAE, dense latents, antipodal pairs, mechanistic interpretability, Gemma 2
 

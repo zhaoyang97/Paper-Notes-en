@@ -19,8 +19,8 @@ content_hash: 9d65f2d37348418f
 # Benchmarking Large Language Models for Zero-Shot and Few-Shot Phishing URL Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.02641](https://arxiv.org/abs/2602.02641)
-**Code**: Available
+**arXiv**: [2602.02641](https://arxiv.org/abs/2602.02641)  
+**Code**: Available  
 **Area**: Cybersecurity / LLM Evaluation
 **Keywords**: phishing URL detection, LLM, zero-shot learning, few-shot learning, prompt engineering, cybersecurity benchmark
 

@@ -17,8 +17,8 @@ content_hash: a7531000be8edbf8
 # GeoWorld: Geometric World Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23058](https://arxiv.org/abs/2602.23058)
-**Code**: [https://steve-zeyu-zhang.github.io/GeoWorld](https://steve-zeyu-zhang.github.io/GeoWorld)
+**arXiv**: [2602.23058](https://arxiv.org/abs/2602.23058)  
+**Code**: [https://steve-zeyu-zhang.github.io/GeoWorld](https://steve-zeyu-zhang.github.io/GeoWorld)  
 **Area**: Reinforcement Learning
 **Keywords**: Geometric World Models, Hyperbolic Space, JEPA, Reinforcement Learning, Long-Horizon Planning
 

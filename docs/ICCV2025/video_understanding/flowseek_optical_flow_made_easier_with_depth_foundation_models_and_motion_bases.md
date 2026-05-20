@@ -18,8 +18,8 @@ content_hash: 21b24562f91e5d32
 # FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.05297](https://arxiv.org/abs/2509.05297)
-**Code**: [https://flowseek25.github.io/](https://flowseek25.github.io/)
+**arXiv**: [2509.05297](https://arxiv.org/abs/2509.05297)  
+**Code**: [https://flowseek25.github.io/](https://flowseek25.github.io/)  
 **Area**: Video Understanding / Optical Flow Estimation
 **Keywords**: optical flow estimation, depth foundation model, motion bases, low-resource training, cross-dataset generalization
 

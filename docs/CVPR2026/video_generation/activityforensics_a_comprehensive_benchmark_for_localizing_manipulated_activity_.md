@@ -18,8 +18,8 @@ content_hash: 845dfc94a90a37bc
 # ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03819](https://arxiv.org/abs/2604.03819)
-**Code**: [https://activityforensics.github.io](https://activityforensics.github.io)
+**arXiv**: [2604.03819](https://arxiv.org/abs/2604.03819)  
+**Code**: [https://activityforensics.github.io](https://activityforensics.github.io)  
 **Area**: Video Generation
 **Keywords**: Video Manipulation Detection, Activity-Level Forgery, Temporal Localization, Diffusion Model Feature Regularization, Video Forensics
 

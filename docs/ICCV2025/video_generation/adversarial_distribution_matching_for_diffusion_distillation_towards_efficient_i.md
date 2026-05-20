@@ -18,8 +18,8 @@ content_hash: 33d902b89ca623f7
 # Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.18569](https://arxiv.org/abs/2507.18569)
-**Code**: N/A
+**arXiv**: [2507.18569](https://arxiv.org/abs/2507.18569)  
+**Code**: N/A  
 **Area**: Video Generation
 **Keywords**: diffusion model distillation, adversarial distribution matching, few-step generation, score distillation, video synthesis acceleration
 

@@ -18,8 +18,8 @@ content_hash: 72424ed14c755ae4
 # L2V-CoT: Cross-Modal Transfer of Chain-of-Thought Reasoning via Latent Intervention
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.17910](https://arxiv.org/abs/2511.17910)
-**Code**: None
+**arXiv**: [2511.17910](https://arxiv.org/abs/2511.17910)  
+**Code**: None  
 **Area**: Multimodal VLM / Reasoning Enhancement
 **Keywords**: CoT reasoning transfer, activation engineering, frequency-domain analysis, LLM to VLM, training-free
 

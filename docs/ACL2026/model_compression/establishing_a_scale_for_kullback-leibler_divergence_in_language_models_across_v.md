@@ -18,8 +18,8 @@ content_hash: 72bb46b3c4b6c19e
 # Establishing a Scale for Kullback–Leibler Divergence in Language Models Across Various Settings
 
 **Conference**: ACL 2026
-**arXiv**: [2505.15353](https://arxiv.org/abs/2505.15353)
-**Code**: [GitHub](https://github.com/shimo-lab/modelmap)
+**arXiv**: [2505.15353](https://arxiv.org/abs/2505.15353)  
+**Code**: [GitHub](https://github.com/shimo-lab/modelmap)  
 **Area**: Model Analysis / Training Dynamics
 **Keywords**: KL divergence, language models, pretraining trajectory, log-likelihood vectors, anomalous diffusion
 

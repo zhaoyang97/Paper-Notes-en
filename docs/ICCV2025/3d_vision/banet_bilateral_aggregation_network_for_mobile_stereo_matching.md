@@ -18,8 +18,8 @@ content_hash: 762b848fcdb4459f
 # BANet: Bilateral Aggregation Network for Mobile Stereo Matching
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.03259](https://arxiv.org/abs/2503.03259)
-**Code**: [GitHub](https://github.com/gangweix/BANet)
+**arXiv**: [2503.03259](https://arxiv.org/abs/2503.03259)  
+**Code**: [GitHub](https://github.com/gangweix/BANet)  
 **Area**: 3D Vision / Stereo Matching
 **Keywords**: stereo matching, mobile deployment, bilateral aggregation, 2D convolution, spatial attention
 

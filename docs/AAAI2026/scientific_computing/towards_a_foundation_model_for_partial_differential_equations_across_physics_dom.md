@@ -20,8 +20,8 @@ content_hash: 79987a92f9f8e3c1
 # Towards a Foundation Model for Partial Differential Equations Across Physics Domains
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.21861](https://arxiv.org/abs/2511.21861)
-**Code**: None
+**arXiv**: [2511.21861](https://arxiv.org/abs/2511.21861)  
+**Code**: None  
 **Area**: Scientific Computing
 **Keywords**: PDE, foundation model, neural operator, Mamba, FNO, multi-physics, The Well benchmark
 
@@ -56,21 +56,21 @@ Given input PDE state $u \in \mathbb{R}^{C \times H \times W}$, the model applie
 
 1. **Dual-Modal Tokenization (Spatial + Spectral)**
 
-   - **Function**: Simultaneously encodes local spatial structure and global spectral characteristics.
-   - **Mechanism**: Spatial tokens $T_{spatial} = \text{PatchConv}(u) \in \mathbb{R}^{N_p \times d}$ are extracted via patch convolution to capture local features; spectral tokens $T_{spectral} = \text{Linear}(\text{FFT}_m(u)) \in \mathbb{R}^{1 \times d}$ retain global structural information from low-frequency modes (keeping only the first $m$ frequency components). Cross-attention enables bidirectional information fusion.
-   - **Design Motivation**: PDE solutions simultaneously exhibit local spatial gradient structure and global spectral properties (e.g., periodic boundaries, conserved quantities) that a single tokenization scheme cannot capture. A single spectral token serves as a "global summary" to govern context allocation.
+    - **Function**: Simultaneously encodes local spatial structure and global spectral characteristics.
+    - **Mechanism**: Spatial tokens $T_{spatial} = \text{PatchConv}(u) \in \mathbb{R}^{N_p \times d}$ are extracted via patch convolution to capture local features; spectral tokens $T_{spectral} = \text{Linear}(\text{FFT}_m(u)) \in \mathbb{R}^{1 \times d}$ retain global structural information from low-frequency modes (keeping only the first $m$ frequency components). Cross-attention enables bidirectional information fusion.
+    - **Design Motivation**: PDE solutions simultaneously exhibit local spatial gradient structure and global spectral properties (e.g., periodic boundaries, conserved quantities) that a single tokenization scheme cannot capture. A single spectral token serves as a "global summary" to govern context allocation.
 
 2. **FiLM Physics Condition Modulation**
 
-   - **Function**: Injects physical metadata (boundary conditions, constitutive parameters, temporal grid) into the model.
-   - **Mechanism**: Physical conditions $c$ modulate tokens via an affine transformation: $\tilde{T}_{spatial} = T_{spatial} \odot (1 + \gamma(c)) + \beta(c)$, where $\gamma$ and $\beta$ are learnable mappings.
-   - **Design Motivation**: PDEs from different physics domains involve distinct parameters (Reynolds number, Mach number, etc.). FiLM injects this conditioning information in an extremely lightweight manner (two vectors), avoiding the need for domain-specific branches for each physical configuration.
+    - **Function**: Injects physical metadata (boundary conditions, constitutive parameters, temporal grid) into the model.
+    - **Mechanism**: Physical conditions $c$ modulate tokens via an affine transformation: $\tilde{T}_{spatial} = T_{spatial} \odot (1 + \gamma(c)) + \beta(c)$, where $\gamma$ and $\beta$ are learnable mappings.
+    - **Design Motivation**: PDEs from different physics domains involve distinct parameters (Reynolds number, Mach number, etc.). FiLM injects this conditioning information in an extremely lightweight manner (two vectors), avoiding the need for domain-specific branches for each physical configuration.
 
 3. **Mamba State-Space Backbone + FNO Decoder**
 
-   - **Function**: Efficiently models long-sequence spatiotemporal evolution while preserving spectral smoothness.
-   - **Mechanism**: Mamba layers $T^{(l+1)} = T^{(l)} + \text{MambaLayer}(T^{(l)})$ replace the $O(N_p^2)$ complexity of Transformers with $O(N_p d)$ linear complexity, supporting large grids and long contexts. The FNO spectral decoder $\hat{u}(x) = \sum_{|k| \leq m} W_k \cdot \mathcal{F}[z](k) e^{2\pi i k \cdot x}$ preserves spectral smoothness priors.
-   - **Design Motivation**: Mamba's selective state-space structure is naturally suited to sequential evolution modeling, as PDE solving is fundamentally a time-marching process. The FNO decoder leverages spectral priors to prevent spatial aliasing.
+    - **Function**: Efficiently models long-sequence spatiotemporal evolution while preserving spectral smoothness.
+    - **Mechanism**: Mamba layers $T^{(l+1)} = T^{(l)} + \text{MambaLayer}(T^{(l)})$ replace the $O(N_p^2)$ complexity of Transformers with $O(N_p d)$ linear complexity, supporting large grids and long contexts. The FNO spectral decoder $\hat{u}(x) = \sum_{|k| \leq m} W_k \cdot \mathcal{F}[z](k) e^{2\pi i k \cdot x}$ preserves spectral smoothness priors.
+    - **Design Motivation**: Mamba's selective state-space structure is naturally suited to sequential evolution modeling, as PDE solving is fundamentally a time-marching process. The FNO decoder leverages spectral priors to prevent spatial aliasing.
 
 ### Loss & Training
 

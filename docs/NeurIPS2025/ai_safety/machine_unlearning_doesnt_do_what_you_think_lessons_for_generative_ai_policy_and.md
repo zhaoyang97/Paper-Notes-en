@@ -18,8 +18,8 @@ content_hash: 134a2ac27254b4d3
 # Machine Unlearning Doesn't Do What You Think: Lessons for Generative AI Policy and Research
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.06966](https://arxiv.org/abs/2412.06966)
-**Code**: None
+**arXiv**: [2412.06966](https://arxiv.org/abs/2412.06966)  
+**Code**: None  
 **Area**: AI Safety / Policy Analysis
 **Keywords**: Machine Unlearning, Generative AI Policy, Privacy Compliance, Copyright Protection, Safety Governance
 
@@ -59,11 +59,11 @@ This paper is an analytical rather than a conventional technical contribution. I
 
     - *Function*: Constitutes the core analytical framework of the paper.
     - *Mechanism*:
-      - **Mismatch 1**: Output suppression does not substitute for training data removal—information persists in model parameters and may be extractable by adversaries.
-      - **Mismatch 2**: Removing training data does not guarantee meaningful output suppression—even after removing all copyrighted Spider-Man images, the model may still generate similar imagery through generalization (confirmed by the CommonCanvas experiment).
-      - **Mismatch 3**: The model is not equivalent to its outputs—via prompt injection, a model can combine latent knowledge to regenerate "forgotten" content.
-      - **Mismatch 4**: Model outputs are not equivalent to how those outputs are used—seemingly benign outputs may be repurposed for harmful ends by downstream users, beyond the reach of technical controls.
-      - **Mismatch 5**: Unlearning produces unintended side effects—removing specific information can inadvertently degrade model performance on unrelated tasks.
+        - **Mismatch 1**: Output suppression does not substitute for training data removal—information persists in model parameters and may be extractable by adversaries.
+        - **Mismatch 2**: Removing training data does not guarantee meaningful output suppression—even after removing all copyrighted Spider-Man images, the model may still generate similar imagery through generalization (confirmed by the CommonCanvas experiment).
+        - **Mismatch 3**: The model is not equivalent to its outputs—via prompt injection, a model can combine latent knowledge to regenerate "forgotten" content.
+        - **Mismatch 4**: Model outputs are not equivalent to how those outputs are used—seemingly benign outputs may be repurposed for harmful ends by downstream users, beyond the reach of technical controls.
+        - **Mismatch 5**: Unlearning produces unintended side effects—removing specific information can inadvertently degrade model performance on unrelated tasks.
     - *Design Motivation*: Exposes the fundamental gap between technical methods and policy objectives.
 
 3. **Analysis Across Three Policy Domains (Copyright, Privacy, Safety)**

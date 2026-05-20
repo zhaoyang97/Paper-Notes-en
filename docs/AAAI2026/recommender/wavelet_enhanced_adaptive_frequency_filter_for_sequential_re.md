@@ -18,8 +18,8 @@ content_hash: 3d62fc2b52dfdc59
 # Wavelet Enhanced Adaptive Frequency Filter for Sequential Recommendation
 
 **Conference**: AAAI2026
-**arXiv**: [2511.07028](https://arxiv.org/abs/2511.07028)
-**Code**: [GitHub](https://github.com/xhy963319431/WEARec)
+**arXiv**: [2511.07028](https://arxiv.org/abs/2511.07028)  
+**Code**: [GitHub](https://github.com/xhy963319431/WEARec)  
 **Area**: Sequential Recommendation / Frequency-Domain Signal Processing
 **Keywords**: sequential recommendation, frequency-domain filtering, wavelet transform, dynamic filter, personalized recommendation
 

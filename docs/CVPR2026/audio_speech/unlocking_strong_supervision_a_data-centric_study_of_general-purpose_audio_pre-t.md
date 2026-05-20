@@ -18,8 +18,8 @@ content_hash: 08ff1a488094ef00
 # Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25767](https://arxiv.org/abs/2603.25767)
-**Code**: [https://github.com/AudenAI/Auden/tree/main/examples/uts](https://github.com/AudenAI/Auden/tree/main/examples/uts)
+**arXiv**: [2603.25767](https://arxiv.org/abs/2603.25767)  
+**Code**: [https://github.com/AudenAI/Auden/tree/main/examples/uts](https://github.com/AudenAI/Auden/tree/main/examples/uts)  
 **Area**: Audio & Speech
 **Keywords**: audio pre-training, unified tag system, data-centric, label quality, cross-domain generalization
 
@@ -46,21 +46,21 @@ CaptionStew 400K dataset → Qwen3-Omni generates high-fidelity audio descriptio
 
 1. **Unified Tag System (UTS) Construction**
 
-   - **Function**: Create a unified semantic tag vocabulary spanning speech, music, and environmental sound domains.
-   - **Mechanism**: Qwen3-Omni first generates detailed descriptions for each audio clip (mean 388 words); Qwen2.5-7B-Instruct then extracts semantic tags from these descriptions (outperforming NLTK POS tagging for modern complex descriptions). Tags are filtered by TF-IDF score $s(t) = df(t) \cdot \log(\frac{N+1}{df(t)+1})$ to retain the most informative ones, yielding vocabularies of size $K \in \{800, 1\text{k}, 1.5\text{k}, 2\text{k}, 3\text{k}\}$.
-   - **Design Motivation**: AudioSet-527 offers narrow coverage defined by human annotators. UTS leverages LLMs to automatically mine finer-grained, cross-domain semantic coverage. t-SNE analysis confirms that the AudioSet semantic space is fully subsumed by UTS.
+    - **Function**: Create a unified semantic tag vocabulary spanning speech, music, and environmental sound domains.
+    - **Mechanism**: Qwen3-Omni first generates detailed descriptions for each audio clip (mean 388 words); Qwen2.5-7B-Instruct then extracts semantic tags from these descriptions (outperforming NLTK POS tagging for modern complex descriptions). Tags are filtered by TF-IDF score $s(t) = df(t) \cdot \log(\frac{N+1}{df(t)+1})$ to retain the most informative ones, yielding vocabularies of size $K \in \{800, 1\text{k}, 1.5\text{k}, 2\text{k}, 3\text{k}\}$.
+    - **Design Motivation**: AudioSet-527 offers narrow coverage defined by human annotators. UTS leverages LLMs to automatically mine finer-grained, cross-domain semantic coverage. t-SNE analysis confirms that the AudioSet semantic space is fully subsumed by UTS.
 
 2. **Parallel Decoding Objective (PAR)**
 
-   - **Function**: Force the encoder to learn richer representations through non-autoregressive caption generation.
-   - **Mechanism**: Multi-hot label vectors are converted to canonical text sequences $Y_i = \text{"tag\_a, tag\_d, tag\_k"}$, but during decoding all inputs are masked and causal attention is removed, yielding parallel generation: $\mathcal{L}_{\text{par}} = -\sum_{t=1}^T \log p_\phi(y_t|z_i^a)$. Unlike standard AR decoding, the PAR decoder's sole information source is the audio encoder representation.
-   - **Design Motivation**: AR decoding suffers from a "language prior bias"—the model can predict the next token from already-generated tokens without fully exploiting audio features. PAR eliminates this shortcut.
+    - **Function**: Force the encoder to learn richer representations through non-autoregressive caption generation.
+    - **Mechanism**: Multi-hot label vectors are converted to canonical text sequences $Y_i = \text{"tag\_a, tag\_d, tag\_k"}$, but during decoding all inputs are masked and causal attention is removed, yielding parallel generation: $\mathcal{L}_{\text{par}} = -\sum_{t=1}^T \log p_\phi(y_t|z_i^a)$. Unlike standard AR decoding, the PAR decoder's sole information source is the audio encoder representation.
+    - **Design Motivation**: AR decoding suffers from a "language prior bias"—the model can predict the next token from already-generated tokens without fully exploiting audio features. PAR eliminates this shortcut.
 
 3. **Multi-Task Joint Training**
 
-   - **Function**: Simultaneously cultivate discriminative and descriptive capabilities.
-   - **Mechanism**: Jointly optimize $\mathcal{L}_{\text{MTL}} = \mathcal{L}_{\text{MTC}} + \lambda \mathcal{L}_{\text{gen}}$, where MTC is the multi-label binary cross-entropy classification objective and gen is a mixed AR/PAR captioning objective (0.25 AR + 0.75 PAR). $\lambda$ controls task weighting.
-   - **Design Motivation**: Single-objective training induces task bias—models trained purely for classification perform poorly on captioning and retrieval tasks, and vice versa. Multi-task joint training achieves a balance between the two.
+    - **Function**: Simultaneously cultivate discriminative and descriptive capabilities.
+    - **Mechanism**: Jointly optimize $\mathcal{L}_{\text{MTL}} = \mathcal{L}_{\text{MTC}} + \lambda \mathcal{L}_{\text{gen}}$, where MTC is the multi-label binary cross-entropy classification objective and gen is a mixed AR/PAR captioning objective (0.25 AR + 0.75 PAR). $\lambda$ controls task weighting.
+    - **Design Motivation**: Single-objective training induces task bias—models trained purely for classification perform poorly on captioning and retrieval tasks, and vice versa. Multi-task joint training achieves a balance between the two.
 
 ### Loss & Training
 

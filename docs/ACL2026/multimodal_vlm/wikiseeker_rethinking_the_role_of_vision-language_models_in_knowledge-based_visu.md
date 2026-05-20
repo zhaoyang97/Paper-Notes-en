@@ -18,8 +18,8 @@ content_hash: cb8d816fb8a88f4f
 # WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05818](https://arxiv.org/abs/2604.05818)
-**Code**: [https://github.com/zhuyjan/WikiSeeker](https://github.com/zhuyjan/WikiSeeker)
+**arXiv**: [2604.05818](https://arxiv.org/abs/2604.05818)  
+**Code**: [https://github.com/zhuyjan/WikiSeeker](https://github.com/zhuyjan/WikiSeeker)  
 **Area**: Multimodal VLM
 **Keywords**: Knowledge-based VQA, Multimodal RAG, Query Rewriting, Reinforcement Learning, Retrieval-Augmented Generation
 

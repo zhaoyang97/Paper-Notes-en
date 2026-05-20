@@ -18,8 +18,8 @@ content_hash: 1b92cd63ecfe282c
 # Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13737](https://arxiv.org/abs/2505.13737)
-**Code**: [https://github.com/andrewnam/causal_head_gating](https://github.com/andrewnam/causal_head_gating)
+**arXiv**: [2505.13737](https://arxiv.org/abs/2505.13737)  
+**Code**: [https://github.com/andrewnam/causal_head_gating](https://github.com/andrewnam/causal_head_gating)  
 **Area**: Interpretability
 **Keywords**: mechanistic interpretability, attention head, causal taxonomy, circuit discovery, Llama
 

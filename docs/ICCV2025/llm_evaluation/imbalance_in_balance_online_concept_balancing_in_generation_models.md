@@ -18,8 +18,8 @@ content_hash: 96d3cdad7029665f
 # Imbalance in Balance: Online Concept Balancing in Generation Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.13345](https://arxiv.org/abs/2507.13345)
-**Code**: [https://github.com/KwaiVGI/IMBA-Loss](https://github.com/KwaiVGI/IMBA-Loss)
+**arXiv**: [2507.13345](https://arxiv.org/abs/2507.13345)  
+**Code**: [https://github.com/KwaiVGI/IMBA-Loss](https://github.com/KwaiVGI/IMBA-Loss)  
 **Area**: LLM Evaluation
 **Keywords**: Concept Composition, Data Imbalance, IMBA Loss, Diffusion Model Training, Long-Tail Distribution
 

@@ -18,8 +18,8 @@ content_hash: 3ab79b9062d47694
 # Towards Authentic Movie Dubbing with Retrieve-Augmented Director-Actor Interaction Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14249](https://arxiv.org/abs/2511.14249)
-**Code**: [https://github.com/AI-S2-Lab/Authentic-Dubber](https://github.com/AI-S2-Lab/Authentic-Dubber)
+**arXiv**: [2511.14249](https://arxiv.org/abs/2511.14249)  
+**Code**: [https://github.com/AI-S2-Lab/Authentic-Dubber](https://github.com/AI-S2-Lab/Authentic-Dubber)  
 **Area**: Audio & Speech
 **Keywords**: Movie Dubbing, Emotional Expression, Retrieval-Augmented Generation, Graph Neural Networks, Multimodal Emotion Modeling
 

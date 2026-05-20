@@ -18,8 +18,8 @@ content_hash: 0e92c7d489aa3134
 # Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.09487](https://arxiv.org/abs/2510.09487)
-**Code**: None
+**arXiv**: [2510.09487](https://arxiv.org/abs/2510.09487)  
+**Code**: None  
 **Area**: Reinforcement Learning / Imitation Learning
 **Keywords**: Adversarial imitation learning, model-based methods, second-order bounds, sample complexity, information-theoretic lower bounds
 
@@ -141,8 +141,8 @@ At the practical implementation level (Section 6):
 2. **Horizon-free**: Unlike prior work, the upper bound has only logarithmic dependence on $H$, eliminating the exponential penalty for long-horizon problems.
 3. **Minimax optimality of online interaction**: When expert data is limited ($N \ll \log^2|\mathcal{P}|$), MB-AIL's online interaction complexity $\Omega(\sigma^2 \log^2|\mathcal{P}|/\epsilon^2)$ matches the lower bound up to logarithmic factors.
 4. **Precise separation between BC and AIL**:
-   - AIL is preferred: when the reward class $\mathcal{R}$ has simple structure (small $\log\mathcal{N_R}$).
-   - BC is preferred: when the expert policy is deterministic but the environment is highly stochastic.
+    - AIL is preferred: when the reward class $\mathcal{R}$ has simple structure (small $\log\mathcal{N_R}$).
+    - BC is preferred: when the expert policy is deterministic but the environment is highly stochastic.
 5. **Breakthrough on Humanoid**: MB-AIL achieves near-expert performance on high-dimensional Humanoid (5816 vs. 5885), far surpassing all baselines.
 
 ## Highlights & Insights

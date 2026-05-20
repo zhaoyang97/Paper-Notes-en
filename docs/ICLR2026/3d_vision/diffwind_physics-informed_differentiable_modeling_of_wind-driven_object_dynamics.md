@@ -18,8 +18,8 @@ content_hash: faae699c61a91c68
 # DiffWind: Physics-Informed Differentiable Modeling of Wind-Driven Object Dynamics
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.09668](https://arxiv.org/abs/2603.09668)
-**Code**: None (project page mentioned in the paper)
+**arXiv**: [2603.09668](https://arxiv.org/abs/2603.09668)  
+**Code**: None (project page mentioned in the paper)  
 **Area**: 3D Vision / Physical Simulation
 **Keywords**: physics-informed, differentiable simulation, wind modeling, 3D Gaussian Splatting, Material Point Method
 

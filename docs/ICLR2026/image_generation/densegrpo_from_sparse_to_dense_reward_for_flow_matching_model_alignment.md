@@ -18,8 +18,8 @@ content_hash: 9b6c2957d01518fd
 # DenseGRPO: From Sparse to Dense Reward for Flow Matching Model Alignment
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20218](https://arxiv.org/abs/2601.20218)
-**Code**: None
+**arXiv**: [2601.20218](https://arxiv.org/abs/2601.20218)  
+**Code**: None  
 **Area**: Diffusion Models / RLHF Alignment
 **Keywords**: GRPO, dense reward, flow matching, human preference alignment, exploration calibration
 

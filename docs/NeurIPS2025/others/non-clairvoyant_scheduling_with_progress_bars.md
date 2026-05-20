@@ -17,8 +17,8 @@ content_hash: e2a2c9aa42cfc6a5
 # Non-Clairvoyant Scheduling with Progress Bars
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19662](https://arxiv.org/abs/2509.19662)
-**Code**: Unavailable
+**arXiv**: [2509.19662](https://arxiv.org/abs/2509.19662)  
+**Code**: Unavailable  
 **Area**: Online Scheduling Algorithms / Learning-Augmented Algorithms / Competitive Analysis
 **Keywords**: Non-clairvoyant scheduling, progress bars, competitive ratio, learning-augmented algorithms, exploration-exploitation tradeoff
 

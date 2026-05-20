@@ -18,7 +18,7 @@ content_hash: 69f30345b8ba0db6
 # Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.04931](https://arxiv.org/abs/2501.04931)
+**arXiv**: [2501.04931](https://arxiv.org/abs/2501.04931)  
 **Authors**: Shiji Zhao, Ranjie Duan, Fengxiang Wang, Chi Chen, Caixin Kang, Jialing Tao, YueFeng Chen, Hui Xue, Xingxing Wei (Beihang University)
 **Area**: Multimodal VLM
 **Keywords**: Multimodal large language model safety, jailbreak attack, Shuffle Inconsistency, black-box optimization, safety alignment

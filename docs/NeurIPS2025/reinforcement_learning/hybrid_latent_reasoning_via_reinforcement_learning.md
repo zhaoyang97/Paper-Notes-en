@@ -17,8 +17,8 @@ content_hash: 09362a1c242b171d
 # Hybrid Latent Reasoning via Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18454](https://arxiv.org/abs/2505.18454)
-**Code**: None
+**arXiv**: [2505.18454](https://arxiv.org/abs/2505.18454)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Latent reasoning, hybrid reasoning, reinforcement learning, gating mechanism, continuous representation
 

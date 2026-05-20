@@ -18,8 +18,8 @@ content_hash: cc9b166aee02d063
 # Are They the Same? Exploring Visual Correspondence Shortcomings of Multimodal LLMs
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.04670](https://arxiv.org/abs/2501.04670)
-**Code**: [https://zhouyiks.github.io/projects/CoLVA/](https://zhouyiks.github.io/projects/CoLVA/)
+**arXiv**: [2501.04670](https://arxiv.org/abs/2501.04670)  
+**Code**: [https://zhouyiks.github.io/projects/CoLVA/](https://zhouyiks.github.io/projects/CoLVA/)  
 **Area**: Multimodal VLM
 **Keywords**: visual correspondence, multimodal large language models, contrastive learning, visual matching, benchmark
 

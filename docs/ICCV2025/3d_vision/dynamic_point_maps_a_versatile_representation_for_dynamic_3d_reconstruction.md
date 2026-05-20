@@ -18,8 +18,8 @@ content_hash: e681459e33d402c1
 # Dynamic Point Maps: A Versatile Representation for Dynamic 3D Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.16318](https://arxiv.org/abs/2503.16318)
-**Code**: [Project Page](https://www.robots.ox.ac.uk/~vgg/research/dynamic-point-maps/)
+**arXiv**: [2503.16318](https://arxiv.org/abs/2503.16318)  
+**Code**: [Project Page](https://www.robots.ox.ac.uk/~vgg/research/dynamic-point-maps/)  
 **Area**: 3D Vision
 **Keywords**: Dynamic 3D Reconstruction, Point Map Representation, Scene Flow, Motion Segmentation, DUSt3R
 

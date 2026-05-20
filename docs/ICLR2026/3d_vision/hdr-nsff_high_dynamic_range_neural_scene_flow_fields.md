@@ -18,8 +18,8 @@ content_hash: 01710eb729ffff9e
 # HDR-NSFF: High Dynamic Range Neural Scene Flow Fields
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.08313](https://arxiv.org/abs/2603.08313)
-**Code**: [Project Page](https://shin-dong-yeon.github.io/HDR-NSFF/)
+**arXiv**: [2603.08313](https://arxiv.org/abs/2603.08313)  
+**Code**: [Project Page](https://shin-dong-yeon.github.io/HDR-NSFF/)  
 **Area**: 3D Vision
 **Keywords**: HDR reconstruction, neural scene flow fields, dynamic scene, tone-mapping, 4D radiance field
 

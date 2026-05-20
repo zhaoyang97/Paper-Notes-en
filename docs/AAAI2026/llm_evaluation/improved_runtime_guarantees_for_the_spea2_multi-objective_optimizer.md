@@ -18,8 +18,8 @@ content_hash: 9f632587b3e72fc6
 # Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07150](https://arxiv.org/abs/2511.07150)
-**Code**: None
+**arXiv**: [2511.07150](https://arxiv.org/abs/2511.07150)  
+**Code**: None  
 **Area**: Evolutionary Computation / Theory of Multi-Objective Optimization
 **Keywords**: SPEA2, multi-objective evolutionary algorithms, runtime analysis, population dynamics, Pareto front
 
@@ -45,21 +45,21 @@ The analysis proceeds in three steps: (1) proving the balancing property of SPEA
 
 1. **Balancing Selection Property of SPEA2 (Lemma 1)**:
 
-   - Function: Proves that when SPEA2 eliminates surplus non-dominated individuals, it always preferentially removes those with the most duplicate objective values, thereby maintaining a balanced distribution of objective values.
-   - Mechanism: Let $S_t$ denote the set of non-dominated individuals, $F_t$ the set of distinct objective values therein, and $A_u$ the subset of individuals with objective value $u$. After the eliminate operation, at least $\min\{|A_u|, \lfloor \mu/|F_t| \rfloor\}$ individuals from $A_u$ survive to the next generation.
-   - Proof sketch: If $|A_u^i| \leq \lfloor \mu/|F_t| \rfloor$, then by the pigeonhole principle there exists another objective value $v$ such that $|A_v^i| > |A_u^i|$. For $x \in A_v^i$ and $y \in A_u^i$, since $A_v$ has more copies, $\sigma_{|A_u^i|}(x) = 0 < \sigma_{|A_u^i|}(y)$, so $y$ is never eliminated.
-   - Design Motivation: This property is absent in NSGA-II — crowding distance considers only the two nearest neighbors per objective, causing the population to cluster in the middle of the Pareto front.
+    - Function: Proves that when SPEA2 eliminates surplus non-dominated individuals, it always preferentially removes those with the most duplicate objective values, thereby maintaining a balanced distribution of objective values.
+    - Mechanism: Let $S_t$ denote the set of non-dominated individuals, $F_t$ the set of distinct objective values therein, and $A_u$ the subset of individuals with objective value $u$. After the eliminate operation, at least $\min\{|A_u|, \lfloor \mu/|F_t| \rfloor\}$ individuals from $A_u$ survive to the next generation.
+    - Proof sketch: If $|A_u^i| \leq \lfloor \mu/|F_t| \rfloor$, then by the pigeonhole principle there exists another objective value $v$ such that $|A_v^i| > |A_u^i|$. For $x \in A_v^i$ and $y \in A_u^i$, since $A_v$ has more copies, $\sigma_{|A_u^i|}(x) = 0 < \sigma_{|A_u^i|}(y)$, so $y$ is never eliminated.
+    - Design Motivation: This property is absent in NSGA-II — crowding distance considers only the two nearest neighbors per objective, causing the population to cluster in the middle of the Pareto front.
 
 2. **Multiplicative Growth Lemma for Objective Values (Lemma 4)**:
 
-   - Function: Proves that the number of individuals carrying a newly discovered objective value grows exponentially, reaching the balanced level $\lfloor \mu/\bar{M} \rfloor$ in only $O(\lceil \mu/\lambda \rceil \log B)$ generations.
-   - Mechanism: Combining the balancing selection property (which guarantees at least $X_t$ individuals survive) with standard bit mutation (which produces a copy with probability $(1-1/n)^n \geq 0.29$), one obtains $X_{t+1} - X_t \succeq \text{Bin}(\lambda, 0.29 \cdot X_t / \mu)$, i.e., multiplicative growth.
-   - Technical treatment: When $\lambda < \mu$, the per-step multiplicative growth factor $\delta\lambda/\mu$ may be too small to directly apply the multiplicative growth lemma. The remedy is to consider the cumulative progress over $\lceil \mu/\lambda \rceil$ steps, so that the effective growth factor $\lambda \lceil \mu/\lambda \rceil \cdot \delta / \mu \geq \delta \geq 0.29$ satisfies the lemma's requirements.
+    - Function: Proves that the number of individuals carrying a newly discovered objective value grows exponentially, reaching the balanced level $\lfloor \mu/\bar{M} \rfloor$ in only $O(\lceil \mu/\lambda \rceil \log B)$ generations.
+    - Mechanism: Combining the balancing selection property (which guarantees at least $X_t$ individuals survive) with standard bit mutation (which produces a copy with probability $(1-1/n)^n \geq 0.29$), one obtains $X_{t+1} - X_t \succeq \text{Bin}(\lambda, 0.29 \cdot X_t / \mu)$, i.e., multiplicative growth.
+    - Technical treatment: When $\lambda < \mu$, the per-step multiplicative growth factor $\delta\lambda/\mu$ may be too small to directly apply the multiplicative growth lemma. The remedy is to consider the cumulative progress over $\lceil \mu/\lambda \rceil$ steps, so that the effective growth factor $\lambda \lceil \mu/\lambda \rceil \cdot \delta / \mu \geq \delta \geq 0.29$ satisfies the lemma's requirements.
 
 3. **Stopping Time Lemma for Stochastic Multiplicative Growth (Lemma 2)**:
 
-   - Function: Establishes an upper bound of $4\lceil \log_{1+kr} B \rceil$ on the expected time for a process satisfying $Y_{t+1} \succeq \text{Bin}(k, \min\{rX_t, 1\})$ to reach threshold $B$.
-   - Mechanism: Define geometrically increasing milestones $B_i = (1+kr)^i$ and apply the binomial concentration result of Doerr (2018) (which gives $\Pr[X > E[X]] \geq 1/4$ when $kr \geq 0.29$) to show that the expected time to advance from $B_{i-1}$ to $B_i$ is at most 4 steps.
+    - Function: Establishes an upper bound of $4\lceil \log_{1+kr} B \rceil$ on the expected time for a process satisfying $Y_{t+1} \succeq \text{Bin}(k, \min\{rX_t, 1\})$ to reach threshold $B$.
+    - Mechanism: Define geometrically increasing milestones $B_i = (1+kr)^i$ and apply the binomial concentration result of Doerr (2018) (which gives $\Pr[X > E[X]] \geq 1/4$ when $kr \geq 0.29$) to show that the expected time to advance from $B_{i-1}$ to $B_i$ is at most 4 steps.
 
 ### Runtime Analysis Results
 

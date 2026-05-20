@@ -18,8 +18,8 @@ content_hash: a45df34dcf83d94a
 # Enabling Fine-Grained Operating Points for Black-Box LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.17727](https://arxiv.org/abs/2510.17727)
-**Code**: Not released (code snippets available in appendix)
+**arXiv**: [2510.17727](https://arxiv.org/abs/2510.17727)  
+**Code**: Not released (code snippets available in appendix)  
 **Area**: LLM Evaluation
 **Keywords**: Black-box LLM, operating points, probability calibration, PR curve, confidence estimation
 
@@ -49,15 +49,15 @@ Three variants are proposed: (1) **Unsup**—unsupervised uniform noise injectio
 
 1. **Unsupervised Noise (Ours-Unsup)**:
 
-   - **Function**: Adds uniform noise to verbalized probabilities, maximizing noise magnitude while maintaining performance.
-   - **Mechanism**: $\max w \text{ s.t. } \sum \text{loss}(y_i, \text{clip}(z_i \cdot w + y_{\text{vrb},i})) \leq \sum \text{loss}(y_i, y_{\text{vrb},i}),\ z \sim U(0,1)$. This finds the largest noise amplitude under the constraint that performance does not degrade.
-   - **Design Motivation**: Requires no labeled data and is fully unsupervised. Increases cardinality from 16 to 5,614.
+    - **Function**: Adds uniform noise to verbalized probabilities, maximizing noise magnitude while maintaining performance.
+    - **Mechanism**: $\max w \text{ s.t. } \sum \text{loss}(y_i, \text{clip}(z_i \cdot w + y_{\text{vrb},i})) \leq \sum \text{loss}(y_i, y_{\text{vrb},i}),\ z \sim U(0,1)$. This finds the largest noise amplitude under the constraint that performance does not degrade.
+    - **Design Motivation**: Requires no labeled data and is fully unsupervised. Increases cardinality from 16 to 5,614.
 
 2. **Supervised Noise + MLP (Ours-Sup)**:
 
-   - **Function**: Learns a correction function $f$ that maps discrete probabilities to better-calibrated outputs while simultaneously injecting noise.
-   - **Mechanism**: $\min_{\theta_f, w} \sum \text{loss}(y_i, \text{sigmoid}(z_i / w + f(y_{\text{vrb}}; \theta_f))) + \lambda \cdot w,\ z \sim \mathcal{N}(0,1)$. Here $f$ is a 2-layer ReLU MLP that jointly learns the calibration correction and noise amplitude.
-   - **Design Motivation**: The MLP correction addresses probability miscalibration (systematic over- or under-confidence), while noise injection resolves the cardinality problem (discretization).
+    - **Function**: Learns a correction function $f$ that maps discrete probabilities to better-calibrated outputs while simultaneously injecting noise.
+    - **Mechanism**: $\min_{\theta_f, w} \sum \text{loss}(y_i, \text{sigmoid}(z_i / w + f(y_{\text{vrb}}; \theta_f))) + \lambda \cdot w,\ z \sim \mathcal{N}(0,1)$. Here $f$ is a 2-layer ReLU MLP that jointly learns the calibration correction and noise amplitude.
+    - **Design Motivation**: The MLP correction addresses probability miscalibration (systematic over- or under-confidence), while noise injection resolves the cardinality problem (discretization).
 
 ## Key Experimental Results
 

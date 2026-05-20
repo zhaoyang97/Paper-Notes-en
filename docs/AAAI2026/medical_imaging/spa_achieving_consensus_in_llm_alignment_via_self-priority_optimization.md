@@ -19,8 +19,8 @@ content_hash: 7b9379330520d21a
 # SPA: Achieving Consensus in LLM Alignment via Self-Priority Optimization
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06222](https://arxiv.org/abs/2511.06222)
-**Code**: None
+**arXiv**: [2511.06222](https://arxiv.org/abs/2511.06222)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: LLM alignment, priority alignment, lexicographic optimization, unsupervised, preference learning, safety
 

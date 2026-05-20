@@ -18,8 +18,8 @@ content_hash: 45874113d442cf3a
 # Perturbing Best Responses in Zero-Sum Games
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12523](https://arxiv.org/abs/2511.12523)
-**Code**: [github](https://github.com/geoborek/perturbing-best-responses)
+**arXiv**: [2511.12523](https://arxiv.org/abs/2511.12523)  
+**Code**: [github](https://github.com/geoborek/perturbing-best-responses)  
 **Area**: Reinforcement Learning
 **Keywords**: Zero-sum games, Nash equilibrium, perturbed best response, fictitious play, double oracle
 

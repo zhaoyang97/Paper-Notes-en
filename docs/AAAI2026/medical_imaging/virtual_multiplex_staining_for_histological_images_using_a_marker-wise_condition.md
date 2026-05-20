@@ -18,8 +18,8 @@ content_hash: 8cc4519df5026810
 # Virtual Multiplex Staining for Histological Images Using a Marker-wise Conditioned Diffusion Model
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.14681](https://arxiv.org/abs/2508.14681)
-**Code**: N/A
+**arXiv**: [2508.14681](https://arxiv.org/abs/2508.14681)  
+**Code**: N/A  
 **Area**: Medical Imaging / Pathology
 **Keywords**: Virtual multiplex staining, conditional diffusion model, H&E-to-immunofluorescence, marker-wise conditional generation, latent diffusion model
 

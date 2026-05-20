@@ -18,8 +18,8 @@ content_hash: c46a112cf85f7694
 # SpEx: A Spectral Approach to Explainable Clustering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00885](https://arxiv.org/abs/2511.00885)
-**Code**: [GitHub](https://github.com/talargv/SpEx)
+**arXiv**: [2511.00885](https://arxiv.org/abs/2511.00885)  
+**Code**: [GitHub](https://github.com/talargv/SpEx)  
 **Area**: Explainable Clustering, Spectral Methods, Graph Partitioning
 **Keywords**: Explainable clustering, spectral graph partitioning, coordinate cuts, decision trees, Cheeger inequality
 

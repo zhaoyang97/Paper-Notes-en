@@ -17,8 +17,8 @@ content_hash: 0e2f8062e331217e
 # Omni-DC: Highly Robust Depth Completion with Multiresolution Depth Integration
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.19278](https://arxiv.org/abs/2411.19278)
-**Code**: [GitHub](https://github.com/princeton-vl/OMNI-DC)
+**arXiv**: [2411.19278](https://arxiv.org/abs/2411.19278)  
+**Code**: [GitHub](https://github.com/princeton-vl/OMNI-DC)  
 **Area**: Depth Completion / 3D Vision
 **Keywords**: depth completion, multiresolution depth integration, zero-shot generalization, Laplacian loss, scale normalization
 

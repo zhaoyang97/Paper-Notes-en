@@ -18,8 +18,8 @@ content_hash: 49dd22b5daa6b878
 # LeVo: High-Quality Song Generation with Multi-Preference Alignment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07520](https://arxiv.org/abs/2506.07520)
-**Code**: [GitHub](https://github.com/tencent-ailab/songgeneration)
+**arXiv**: [2506.07520](https://arxiv.org/abs/2506.07520)  
+**Code**: [GitHub](https://github.com/tencent-ailab/songgeneration)  
 **Area**: Audio & Speech Generation
 **Keywords**: song generation, language model, multi-preference alignment, DPO, music codec
 

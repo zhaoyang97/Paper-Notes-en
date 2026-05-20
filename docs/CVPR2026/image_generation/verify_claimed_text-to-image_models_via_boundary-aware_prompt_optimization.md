@@ -18,8 +18,8 @@ content_hash: e851c85cfc8ab150
 # Verify Claimed Text-to-Image Models via Boundary-Aware Prompt Optimization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26328](https://arxiv.org/abs/2603.26328)
-**Code**: None
+**arXiv**: [2603.26328](https://arxiv.org/abs/2603.26328)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Model verification, semantic boundary, adversarial prompt optimization, T2I model fingerprinting, intellectual property
 
@@ -46,21 +46,21 @@ Given an input prompt $I$ → **Stage 1**: GCG adversarial attack appends a suff
 
 1. **Adversarial Anchor Identification (Stage 1)**
 
-   - **Function**: Identify two anchor points in the embedding space at which semantic flipping occurs.
-   - **Mechanism**: GCG optimizes an 8-token suffix $s$ with objective $\min_s \cos(E_t(I+s), E_t(I))$. During iteration, the step $k^*$ at which semantic flipping first occurs is identified via a VLM judge; $P_{adv} = P_{k^*}$ and $P_{pis} = P_{k^*-1}$ are taken as the two boundary-side anchors.
-   - **Design Motivation**: Directly searching the embedding space for the boundary is infeasible due to its high dimensionality. However, adversarial attacks naturally traverse directions away from the original semantics, and their trajectory must cross the semantic boundary.
+    - **Function**: Identify two anchor points in the embedding space at which semantic flipping occurs.
+    - **Mechanism**: GCG optimizes an 8-token suffix $s$ with objective $\min_s \cos(E_t(I+s), E_t(I))$. During iteration, the step $k^*$ at which semantic flipping first occurs is identified via a VLM judge; $P_{adv} = P_{k^*}$ and $P_{pis} = P_{k^*-1}$ are taken as the two boundary-side anchors.
+    - **Design Motivation**: Directly searching the embedding space for the boundary is infeasible due to its high dimensionality. However, adversarial attacks naturally traverse directions away from the original semantics, and their trajectory must cross the semantic boundary.
 
 2. **Binary Search Boundary Exploration (Stage 2)**
 
-   - **Function**: Precisely localize the semantic boundary from coarse anchor points.
-   - **Mechanism**: Linearly interpolate between $e_{pis}$ and $e_{adv}$, and apply binary search to find $\alpha^*$ such that $S(G_t(e_{\alpha^*})) \neq S(M_t(I))$, with precision threshold $\epsilon = 0.001$.
-   - **Design Motivation**: The linear interpolation assumes local linearity of the embedding space near the boundary (empirically validated). Binary search achieves $O(\log(1/\epsilon))$ complexity, far superior to grid search.
+    - **Function**: Precisely localize the semantic boundary from coarse anchor points.
+    - **Mechanism**: Linearly interpolate between $e_{pis}$ and $e_{adv}$, and apply binary search to find $\alpha^*$ such that $S(G_t(e_{\alpha^*})) \neq S(M_t(I))$, with precision threshold $\epsilon = 0.001$.
+    - **Design Motivation**: The linear interpolation assumes local linearity of the embedding space near the boundary (empirically validated). Binary search achieves $O(\log(1/\epsilon))$ complexity, far superior to grid search.
 
 3. **Target Optimization (Stage 3)**
 
-   - **Function**: Generate high-discriminability prompts suitable for verification.
-   - **Mechanism**: Optimize a new suffix $s'$ on $P_{adv}$ with objective $\max_{s'} \cos(E_t(I+s'), e_{\alpha^*})$, using 100 GCG iterations with batch size 256. The resulting $P_v$ has an embedding located precisely near the semantic boundary of the target model.
-   - **Design Motivation**: $P_v$ lies on the semantic boundary of the target model but is unlikely to reside near the boundary of other models—thus the same $P_v$ produces semantically different outputs on different models, enabling discrimination.
+    - **Function**: Generate high-discriminability prompts suitable for verification.
+    - **Mechanism**: Optimize a new suffix $s'$ on $P_{adv}$ with objective $\max_{s'} \cos(E_t(I+s'), e_{\alpha^*})$, using 100 GCG iterations with batch size 256. The resulting $P_v$ has an embedding located precisely near the semantic boundary of the target model.
+    - **Design Motivation**: $P_v$ lies on the semantic boundary of the target model but is unlikely to reside near the boundary of other models—thus the same $P_v$ produces semantically different outputs on different models, enabling discrimination.
 
 ### Loss & Training
 

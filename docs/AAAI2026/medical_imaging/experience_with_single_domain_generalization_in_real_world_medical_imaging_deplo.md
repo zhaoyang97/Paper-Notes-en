@@ -20,9 +20,9 @@ content_hash: 4fd6c940fb8cdb8a
 # Experience with Single Domain Generalization in Real World Medical Imaging Deployments
 
 **Conference**: AAAI2026
-**arXiv**: [2601.16359](https://arxiv.org/abs/2601.16359)
+**arXiv**: [2601.16359](https://arxiv.org/abs/2601.16359)  
 **Authors**: Ayan Banerjee (ASU), Komandoor Srivathsan, Sandeep K.S. Gupta (ASU)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Medical Imaging
 **Keywords**: Single domain generalization, rare class detection, expert knowledge integration, medical imaging deployment, diabetic retinopathy, epileptic focus localization, coronary artery disease
 

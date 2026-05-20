@@ -18,8 +18,8 @@ content_hash: 2e9818e9a4f4f0d8
 # Efficient Adaptive Federated Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.18117](https://arxiv.org/abs/2410.18117)
-**Code**: None (no public code mentioned)
+**arXiv**: [2410.18117](https://arxiv.org/abs/2410.18117)  
+**Code**: None (no public code mentioned)  
 **Area**: Federated Learning / Distributed Optimization
 **Keywords**: Federated Learning, Adaptive Optimization, Communication Efficiency, Memory Efficiency, Joint Adaptivity
 

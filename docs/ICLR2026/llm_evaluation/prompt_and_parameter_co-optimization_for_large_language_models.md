@@ -18,8 +18,8 @@ content_hash: 3edc01c01d0b3e0d
 # Prompt and Parameter Co-Optimization for Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24245](https://arxiv.org/abs/2509.24245)
-**Code**: [https://github.com/BoXiaohe/MetaTuner](https://github.com/BoXiaohe/MetaTuner)
+**arXiv**: [2509.24245](https://arxiv.org/abs/2509.24245)  
+**Code**: [https://github.com/BoXiaohe/MetaTuner](https://github.com/BoXiaohe/MetaTuner)  
 **Area**: LLM Evaluation
 **Keywords**: prompt optimization, fine-tuning, joint optimization, LoRA, discrete-continuous optimization
 

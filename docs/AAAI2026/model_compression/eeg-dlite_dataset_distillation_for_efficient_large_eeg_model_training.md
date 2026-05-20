@@ -18,8 +18,8 @@ content_hash: 2ab1c868c3eff5da
 # EEG-DLite: Dataset Distillation for Efficient Large EEG Model Training
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.12210](https://arxiv.org/abs/2512.12210)
-**Code**: [github](https://github.com/t170815518/EEG-DLite)
+**arXiv**: [2512.12210](https://arxiv.org/abs/2512.12210)  
+**Code**: [github](https://github.com/t170815518/EEG-DLite)  
 **Area**: Model Compression
 **Keywords**: Dataset Distillation, EEG Foundation Model, Self-Supervised Learning, Coreset Selection, Pretraining Efficiency
 

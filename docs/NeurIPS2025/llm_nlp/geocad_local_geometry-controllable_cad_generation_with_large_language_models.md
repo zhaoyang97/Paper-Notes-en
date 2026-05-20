@@ -18,8 +18,8 @@ content_hash: 785d52822904c4c3
 # GeoCAD: Local Geometry-Controllable CAD Generation with Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10337](https://arxiv.org/abs/2506.10337)
-**Code**: [https://github.com/Zhanwei-Z/GeoCAD](https://github.com/Zhanwei-Z/GeoCAD)
+**arXiv**: [2506.10337](https://arxiv.org/abs/2506.10337)  
+**Code**: [https://github.com/Zhanwei-Z/GeoCAD](https://github.com/Zhanwei-Z/GeoCAD)  
 **Area**: LLM/NLP
 **Keywords**: CAD generation, local geometry control, large language models, text-to-CAD, complementary captioning
 

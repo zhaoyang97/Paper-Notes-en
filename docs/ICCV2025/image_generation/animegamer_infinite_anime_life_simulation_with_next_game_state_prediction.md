@@ -18,8 +18,8 @@ content_hash: 4fc3141b55cb5e98
 # AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.01014](https://arxiv.org/abs/2504.01014)
-**Code**: [https://github.com/TencentARC/AnimeGamer](https://github.com/TencentARC/AnimeGamer)
+**arXiv**: [2504.01014](https://arxiv.org/abs/2504.01014)  
+**Code**: [https://github.com/TencentARC/AnimeGamer](https://github.com/TencentARC/AnimeGamer)  
 **Area**: Image/Video Generation
 **Keywords**: infinite game generation, anime life simulation, multimodal large language model, video diffusion model, game state prediction
 

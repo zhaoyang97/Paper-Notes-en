@@ -18,8 +18,8 @@ content_hash: 2596346b0423f6e3
 # TwinFlow: Realizing One-step Generation on Large Models with Self-adversarial Flows
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.05150](https://arxiv.org/abs/2512.05150)
-**Code**: [https://github.com/inclusionAI/TwinFlow](https://github.com/inclusionAI/TwinFlow)
+**arXiv**: [2512.05150](https://arxiv.org/abs/2512.05150)  
+**Code**: [https://github.com/inclusionAI/TwinFlow](https://github.com/inclusionAI/TwinFlow)  
 **Area**: Diffusion Models / One-step Generation / Large Model Acceleration
 **Keywords**: one-step generation, self-adversarial, flow matching, 20B scaling, no auxiliary models
 

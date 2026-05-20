@@ -18,8 +18,8 @@ content_hash: 4e59020f5717ff27
 # Channel Matters: Estimating Channel Influence for Multivariate Time Series
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2408.14763](https://arxiv.org/abs/2408.14763)
-**Code**: [GitHub](https://github.com/flare200020/Chinf)
+**arXiv**: [2408.14763](https://arxiv.org/abs/2408.14763)  
+**Code**: [GitHub](https://github.com/flare200020/Chinf)  
 **Area**: Time Series / Influence Functions / Data-Centric Methods
 **Keywords**: Channel influence function, multivariate time series, anomaly detection, data pruning, TracIn
 

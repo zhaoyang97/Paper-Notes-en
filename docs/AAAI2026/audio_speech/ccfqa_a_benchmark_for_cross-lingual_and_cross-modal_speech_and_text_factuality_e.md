@@ -18,8 +18,8 @@ content_hash: 2739e74e17414741
 # CCFQA: A Benchmark for Cross-Lingual and Cross-Modal Speech and Text Factuality Evaluation
 
 **Conference**: AAAI2026
-**arXiv**: [2508.07295](https://arxiv.org/abs/2508.07295)
-**Code**: [yxduir/ccfqa](https://github.com/yxduir/ccfqa)
+**arXiv**: [2508.07295](https://arxiv.org/abs/2508.07295)  
+**Code**: [yxduir/ccfqa](https://github.com/yxduir/ccfqa)  
 **Area**: Audio & Speech
 **Keywords**: factuality evaluation, multilingual benchmark, spoken question answering, cross-lingual consistency, multimodal LLM
 

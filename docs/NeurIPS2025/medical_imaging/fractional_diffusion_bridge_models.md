@@ -18,8 +18,8 @@ content_hash: b597b93855af77ef
 # Fractional Diffusion Bridge Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01795](https://arxiv.org/abs/2511.01795)
-**Code**: [GitHub-paired](https://github.com/GabrielNobis/FDBM_paired) / [GitHub-unpaired](https://github.com/mspringe/FDBM_unpaired) / [SBFlow](https://github.com/mspringe/Schroedinger-Bridge-Flow)
+**arXiv**: [2511.01795](https://arxiv.org/abs/2511.01795)  
+**Code**: [GitHub-paired](https://github.com/GabrielNobis/FDBM_paired) / [GitHub-unpaired](https://github.com/mspringe/FDBM_unpaired) / [SBFlow](https://github.com/mspringe/Schroedinger-Bridge-Flow)  
 **Area**: Medical Imaging
 **Keywords**: Diffusion bridge models, fractional Brownian motion, protein conformation prediction, image translation, Schrödinger bridge
 

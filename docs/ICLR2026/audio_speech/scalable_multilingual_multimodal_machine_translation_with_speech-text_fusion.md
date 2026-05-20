@@ -18,8 +18,8 @@ content_hash: 280163a3a8800855
 # Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.21646](https://arxiv.org/abs/2602.21646)
-**Code**: [https://github.com/yxduir/LLM-SRT](https://github.com/yxduir/LLM-SRT)
+**arXiv**: [2602.21646](https://arxiv.org/abs/2602.21646)  
+**Code**: [https://github.com/yxduir/LLM-SRT](https://github.com/yxduir/LLM-SRT)  
 **Area**: Multimodal Translation / Speech
 **Keywords**: Speech-guided translation, Multimodal LLM, Self-evolution, TTS, Multilingual translation
 

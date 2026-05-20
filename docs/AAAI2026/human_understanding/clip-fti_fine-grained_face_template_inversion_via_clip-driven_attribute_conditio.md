@@ -18,8 +18,8 @@ content_hash: bfac3480db57cc40
 # CLIP-FTI: Fine-Grained Face Template Inversion via CLIP-Driven Attribute Conditioning
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.15433](https://arxiv.org/abs/2512.15433)
-**Code**: N/A
+**arXiv**: [2512.15433](https://arxiv.org/abs/2512.15433)  
+**Code**: N/A  
 **Area**: Human Understanding
 **Keywords**: Face Template Inversion, CLIP, StyleGAN, Adversarial Attack, Cross-Model Transferability
 

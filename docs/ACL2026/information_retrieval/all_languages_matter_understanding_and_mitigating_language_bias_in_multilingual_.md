@@ -18,8 +18,8 @@ content_hash: cf2a8615d951e221
 # All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG
 
 **Conference**: ACL 2026
-**arXiv**: [2604.20199](https://arxiv.org/abs/2604.20199)
-**Code**: None
+**arXiv**: [2604.20199](https://arxiv.org/abs/2604.20199)  
+**Code**: None  
 **Area**: Information Retrieval / Multilingual NLP
 **Keywords**: Multilingual RAG, reranking bias, language fairness, evidence selection, cross-lingual retrieval
 

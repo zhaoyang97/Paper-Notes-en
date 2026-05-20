@@ -19,8 +19,8 @@ content_hash: 54e5e3e1811b2651
 # DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13162](https://arxiv.org/abs/2603.13162)
-**Code**: [Project Page](https://njuvision.github.io/DiT-IC/)
+**arXiv**: [2603.13162](https://arxiv.org/abs/2603.13162)  
+**Code**: [Project Page](https://njuvision.github.io/DiT-IC/)  
 **Area**: Image Compression / Generative Models
 **Keywords**: diffusion transformer, image compression, one-step diffusion, flow matching, latent alignment, variance-guided
 

@@ -18,8 +18,8 @@ content_hash: bd3d3af080a443b1
 # NormalCrafter: Learning Temporally Consistent Normals from Video Diffusion Priors
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.11427](https://arxiv.org/abs/2504.11427)
-**Code**: [https://github.com/NormalCrafter](https://github.com/NormalCrafter)
+**arXiv**: [2504.11427](https://arxiv.org/abs/2504.11427)  
+**Code**: [https://github.com/NormalCrafter](https://github.com/NormalCrafter)  
 **Area**: Surface Normal Estimation / Video Understanding
 **Keywords**: surface normal estimation, temporal consistency, video diffusion model, semantic feature regularization, SVD
 

@@ -18,8 +18,8 @@ content_hash: 68164f4c019fbb29
 # Small Drafts, Big Verdict: Information-Intensive Visual Reasoning via Speculation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.20812](https://arxiv.org/abs/2510.20812)
-**Code**: [https://github.com/Tinaliu0123/speculative-verdict](https://github.com/Tinaliu0123/speculative-verdict)
+**arXiv**: [2510.20812](https://arxiv.org/abs/2510.20812)  
+**Code**: [https://github.com/Tinaliu0123/speculative-verdict](https://github.com/Tinaliu0123/speculative-verdict)  
 **Area**: Multimodal VLM
 **Keywords**: speculative decoding, visual reasoning, information-intensive VQA, draft-verdict framework, consensus expert selection
 
@@ -49,24 +49,24 @@ Given an input image-question pair $(x, q)$, SV operates in two stages: (1) **Dr
 
 1. **Draft Stage: Multi-Expert Reasoning Path Generation**
 
-   - **Function**: Obtain diverse evidence localization and reasoning paths via multiple lightweight VLMs.
-   - **Mechanism**: Each draft expert generates a structured reasoning path using a CoT template with three levels—global scanning and localization proposals (identifying relevant regions, sub-figures, axis titles) → evidence extraction (converting visual/textual elements into structured cues, e.g., reading legends, mapping colors, parsing axis labels) → analysis and reasoning operations (filtering, sorting, computing, cross-referencing). Different experts may localize and extract differently, forming a complementary but noisy evidence pool.
-   - **Design Motivation**: A single VLM is prone to misreading or missing content in certain regions of dense images; multiple models reasoning independently substantially improve evidence coverage.
-   - **Implementation**: The draft pool comprises 5 VLMs of 7–9B parameters (Qwen2.5-VL-7B, MiMo-VL-7B-RL, InternVL3-8B, GLM-4.1V-9B-Thinking, Ovis2.5-9B), with diverse architectures selected to ensure complementarity.
+    - **Function**: Obtain diverse evidence localization and reasoning paths via multiple lightweight VLMs.
+    - **Mechanism**: Each draft expert generates a structured reasoning path using a CoT template with three levels—global scanning and localization proposals (identifying relevant regions, sub-figures, axis titles) → evidence extraction (converting visual/textual elements into structured cues, e.g., reading legends, mapping colors, parsing axis labels) → analysis and reasoning operations (filtering, sorting, computing, cross-referencing). Different experts may localize and extract differently, forming a complementary but noisy evidence pool.
+    - **Design Motivation**: A single VLM is prone to misreading or missing content in certain regions of dense images; multiple models reasoning independently substantially improve evidence coverage.
+    - **Implementation**: The draft pool comprises 5 VLMs of 7–9B parameters (Qwen2.5-VL-7B, MiMo-VL-7B-RL, InternVL3-8B, GLM-4.1V-9B-Thinking, Ovis2.5-9B), with diverse architectures selected to ensure complementarity.
 
 2. **Consensus Expert Selection**
 
-   - **Function**: Training-free selection of the most reliable draft experts from the candidate pool.
-   - **Mechanism**: Each of the $k$ candidate VLMs first generates a candidate answer $y_i$; a global consensus score is then computed for each answer as $s(y_i) = \sum_{j \neq i} |NLL_j(y_i) - NLL_j(y_j)|$, where $NLL_j(y_i)$ denotes the negative log-likelihood of answer $y_i$ under model $M_j$. A lower consensus score indicates greater peer agreement; the $m$ models with the lowest scores are selected as draft experts. This step requires only prefill computation, with each draft decoded only once.
-   - **Design Motivation**: Information-intensive VQA has a unique correct answer per question, so inter-model consensus naturally points toward more reliable reasoning paths. Compared to selecting the most divergent experts (maximizing diversity), consensus-based selection proves more effective for this task type.
-   - **Computational Efficiency**: Consensus scoring requires only prefill over candidate answers with no additional decoding, adding negligible overhead to total inference time.
+    - **Function**: Training-free selection of the most reliable draft experts from the candidate pool.
+    - **Mechanism**: Each of the $k$ candidate VLMs first generates a candidate answer $y_i$; a global consensus score is then computed for each answer as $s(y_i) = \sum_{j \neq i} |NLL_j(y_i) - NLL_j(y_j)|$, where $NLL_j(y_i)$ denotes the negative log-likelihood of answer $y_i$ under model $M_j$. A lower consensus score indicates greater peer agreement; the $m$ models with the lowest scores are selected as draft experts. This step requires only prefill computation, with each draft decoded only once.
+    - **Design Motivation**: Information-intensive VQA has a unique correct answer per question, so inter-model consensus naturally points toward more reliable reasoning paths. Compared to selecting the most divergent experts (maximizing diversity), consensus-based selection proves more effective for this task type.
+    - **Computational Efficiency**: Consensus scoring requires only prefill over candidate answers with no additional decoding, adding negligible overhead to total inference time.
 
 3. **Verdict Stage: Synthesis, Verification, and Error Correction**
 
-   - **Function**: Recover the correct answer from multiple potentially incomplete reasoning paths.
-   - **Mechanism**: The large model simultaneously receives the original image and all draft reasoning paths as context, acting as a synthesizer rather than a voter—evaluating localization consistency, identifying cross-path contradictions, and integrating consistent cues to generate a coherent prediction. Computation is concentrated in the prefill phase (processing thousands of tokens of reasoning paths), with only a few answer tokens decoded, avoiding the high cost of iterative region-by-region analysis or long-chain autoregressive generation by the large model.
-   - **Design Motivation**: Majority voting fails in minority-correct scenarios—when the majority of experts make the same error at the same location, the correct answer is suppressed. By cross-validating factual details across reasoning paths rather than simply tallying votes, the verdict can recover information from the minority of correct paths.
-   - **Cost Advantage**: The verdict requires only a single inference call, with computation concentrated in the prefill phase; only a few tokens need to be decoded.
+    - **Function**: Recover the correct answer from multiple potentially incomplete reasoning paths.
+    - **Mechanism**: The large model simultaneously receives the original image and all draft reasoning paths as context, acting as a synthesizer rather than a voter—evaluating localization consistency, identifying cross-path contradictions, and integrating consistent cues to generate a coherent prediction. Computation is concentrated in the prefill phase (processing thousands of tokens of reasoning paths), with only a few answer tokens decoded, avoiding the high cost of iterative region-by-region analysis or long-chain autoregressive generation by the large model.
+    - **Design Motivation**: Majority voting fails in minority-correct scenarios—when the majority of experts make the same error at the same location, the correct answer is suppressed. By cross-validating factual details across reasoning paths rather than simply tallying votes, the verdict can recover information from the minority of correct paths.
+    - **Cost Advantage**: The verdict requires only a single inference call, with computation concentrated in the prefill phase; only a few tokens need to be decoded.
 
 ### Loss & Training
 SV is entirely training-free and requires no fine-tuning of any model. The draft pool uses 5 open-source VLMs of 7–9B parameters (Qwen2.5-VL-7B, MiMo-VL-7B-RL, InternVL3-8B, GLM-4.1V-9B-Thinking, Ovis2.5-9B), and the verdict uses GPT-4o or Qwen2.5-VL-72B. For information-intensive benchmarks, PP-StructureV3 is additionally applied to convert images into layout-preserving structured formats to assist the verdict model.

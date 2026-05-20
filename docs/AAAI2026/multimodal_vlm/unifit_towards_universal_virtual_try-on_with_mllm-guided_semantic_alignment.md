@@ -18,8 +18,8 @@ content_hash: 3cd619a215ca03eb
 # UniFit: Towards Universal Virtual Try-on with MLLM-Guided Semantic Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.15831](https://arxiv.org/abs/2511.15831)
-**Code**: [github.com/zwplus/UniFit](https://github.com/zwplus/UniFit)
+**arXiv**: [2511.15831](https://arxiv.org/abs/2511.15831)  
+**Code**: [github.com/zwplus/UniFit](https://github.com/zwplus/UniFit)  
 **Area**: Multimodal VLM
 **Keywords**: Virtual try-on, MLLM, semantic alignment, Diffusion Transformer, self-synthesis training
 

@@ -20,8 +20,8 @@ content_hash: f999a2305073c461
 # Reasoning Models Better Express Their Confidence
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.14489](https://arxiv.org/abs/2505.14489)
-**Code**: [GitHub](https://github.com/MattYoon/reasoning-models-confidence)
+**arXiv**: [2505.14489](https://arxiv.org/abs/2505.14489)  
+**Code**: [GitHub](https://github.com/MattYoon/reasoning-models-confidence)  
 **Area**: LLM Reasoning
 **Keywords**: confidence calibration, reasoning models, chain-of-thought, slow thinking, verbalized confidence, ECE, Brier Score
 

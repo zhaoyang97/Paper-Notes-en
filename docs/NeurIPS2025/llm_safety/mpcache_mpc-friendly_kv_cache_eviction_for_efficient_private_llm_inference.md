@@ -18,8 +18,8 @@ content_hash: 31f34a9ded4dd32c
 # MPCache: MPC-Friendly KV Cache Eviction for Efficient Private LLM Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.06807](https://arxiv.org/abs/2501.06807)
-**Code**: [GitHub](https://github.com/zengwenxuan/MPCache)
+**arXiv**: [2501.06807](https://arxiv.org/abs/2501.06807)  
+**Code**: [GitHub](https://github.com/zengwenxuan/MPCache)  
 **Area**: AI Security
 **Keywords**: Private inference, secure multi-party computation, KV cache eviction, LLM efficiency, sparse attention
 

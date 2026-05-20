@@ -20,7 +20,7 @@ content_hash: b1defcc1392b0a9c
 
 **Conference**: ICLR 2026 Oral
 **OpenReview**: [8bM7MkxJee](https://openreview.net/forum?id=8bM7MkxJee)
-**Code**: Available
+**Code**: Available  
 **Area**: Computational Neuroscience
 **Keywords**: hippocampus, spatial coding, locomotor development, RNN, place cells, head direction cells, cognitive maps
 

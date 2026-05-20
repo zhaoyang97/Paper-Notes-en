@@ -18,8 +18,8 @@ content_hash: a9a817253b8a0584
 # Adaptive Evidential Learning for Temporal-Semantic Robustness in Moment Retrieval
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.00953v1](https://arxiv.org/abs/2512.00953v1)
-**Code**: [https://github.com/KaijingOfficial/DEMR](https://github.com/KaijingOfficial/DEMR)
+**arXiv**: [2512.00953v1](https://arxiv.org/abs/2512.00953v1)  
+**Code**: [https://github.com/KaijingOfficial/DEMR](https://github.com/KaijingOfficial/DEMR)  
 **Area**: Interpretability
 **Keywords**: Moment Retrieval, Evidential Learning, Uncertainty Estimation, Cross-Modal Alignment, Debiasing
 

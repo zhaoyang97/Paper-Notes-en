@@ -18,8 +18,8 @@ content_hash: a08e1956dfc7d744
 # When Small Models Are Right for Wrong Reasons: Process Verification for Trustworthy Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.00513](https://arxiv.org/abs/2601.00513)
-**Code**: None
+**arXiv**: [2601.00513](https://arxiv.org/abs/2601.00513)  
+**Code**: None  
 **Area**: Information Retrieval
 **Keywords**: Small model reasoning, process verification, reasoning integrity, RAG, metacognition
 
@@ -72,9 +72,9 @@ The research pipeline consists of four steps:
 
 2. **Three Intervention Strategies**
 
-   - **RAG (Retrieval-Augmented Generation)**: Provides oracle-level ground-truth context (e.g., Wikipedia passages for HotpotQA) and prompts the model to "reason step by step using the provided context."
-   - **Self-Critique**: Prompts the model to "review your reasoning process for errors and provide a corrected version if necessary."
-   - **Verification Prompting**: Appends "verify the accuracy of each step before proceeding to the next" to the initial prompt.
+    - **RAG (Retrieval-Augmented Generation)**: Provides oracle-level ground-truth context (e.g., Wikipedia passages for HotpotQA) and prompts the model to "reason step by step using the provided context."
+    - **Self-Critique**: Prompts the model to "review your reasoning process for errors and provide a corrected version if necessary."
+    - **Verification Prompting**: Appends "verify the accuracy of each step before proceeding to the next" to the initial prompt.
 
 3. **Error Taxonomy**
 

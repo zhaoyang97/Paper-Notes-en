@@ -18,8 +18,8 @@ content_hash: 6bb67491d78ec6fc
 # BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.26374](https://arxiv.org/abs/2510.26374)
-**Code**: [GitHub](https://github.com/modelscope/Trinity-RFT/tree/main/examples/bots)
+**arXiv**: [2510.26374](https://arxiv.org/abs/2510.26374)  
+**Code**: [GitHub](https://github.com/modelscope/Trinity-RFT/tree/main/examples/bots)  
 **Area**: LLM/NLP
 **Keywords**: Reinforcement finetuning, online task selection, Bayesian inference, Thompson sampling, curriculum learning
 

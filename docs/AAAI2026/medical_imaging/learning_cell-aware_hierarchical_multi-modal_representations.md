@@ -18,8 +18,8 @@ content_hash: 00e75ef5666eee4c
 # Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.21120](https://arxiv.org/abs/2511.21120)
-**Code**: [https://github.com/limengran98/CHMR](https://github.com/limengran98/CHMR)
+**arXiv**: [2511.21120](https://arxiv.org/abs/2511.21120)  
+**Code**: [https://github.com/limengran98/CHMR](https://github.com/limengran98/CHMR)  
 **Area**: Medical Imaging / Multi-Modal Learning
 **Keywords**: Molecular property prediction, cell-aware representation, hierarchical vector quantization, missing modality, multi-modal fusion
 

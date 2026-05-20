@@ -18,8 +18,8 @@ content_hash: 83d24f5fc2bc2017
 # Counting Stacked Objects
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.19149](https://arxiv.org/abs/2411.19149)
-**Code**: [https://corentindumery.github.io/projects/stacks.html](https://corentindumery.github.io/projects/stacks.html)
+**arXiv**: [2411.19149](https://arxiv.org/abs/2411.19149)  
+**Code**: [https://corentindumery.github.io/projects/stacks.html](https://corentindumery.github.io/projects/stacks.html)  
 **Area**: Autonomous Driving
 **Keywords**: 3D object counting, occupancy estimation, multi-view reconstruction, 3D Gaussian Splatting, depth estimation
 

@@ -18,8 +18,8 @@ content_hash: b0043ecf6def3c3e
 # HierarchicalPrune: Position-Aware Compression for Large-Scale Diffusion Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04663](https://arxiv.org/abs/2508.04663)
-**Code**: None
+**arXiv**: [2508.04663](https://arxiv.org/abs/2508.04663)  
+**Code**: None  
 **Area**: Image Generation / Model Compression
 **Keywords**: Diffusion Model Compression, Pruning, Knowledge Distillation, MMDiT, Quantisation
 

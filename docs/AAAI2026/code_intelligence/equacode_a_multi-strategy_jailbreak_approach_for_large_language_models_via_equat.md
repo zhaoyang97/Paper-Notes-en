@@ -18,8 +18,8 @@ content_hash: 101de63568f1a9b8
 # EquaCode: A Multi-Strategy Jailbreak Approach for Large Language Models via Equation Solving and Code Completion
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.23173](https://arxiv.org/abs/2512.23173)
-**Code**: [GitHub](https://github.com/lzzzr123/Equacode)
+**arXiv**: [2512.23173](https://arxiv.org/abs/2512.23173)  
+**Code**: [GitHub](https://github.com/lzzzr123/Equacode)  
 **Area**: Code Intelligence
 **Keywords**: Jailbreak Attack, LLM Safety, Equation Solving, Code Completion, Cross-Domain Attack
 

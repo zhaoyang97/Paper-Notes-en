@@ -18,8 +18,8 @@ content_hash: 533c3c17e5971522
 # Merlin L48 Spectrogram Dataset
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00252](https://arxiv.org/abs/2511.00252)
-**Code**: [https://github.com/cvl-umass/l48-benchmarking](https://github.com/cvl-umass/l48-benchmarking)
+**arXiv**: [2511.00252](https://arxiv.org/abs/2511.00252)  
+**Code**: [https://github.com/cvl-umass/l48-benchmarking](https://github.com/cvl-umass/l48-benchmarking)  
 **Area**: Multi-Label Learning / Bird Sound Recognition / Dataset
 **Keywords**: Single Positive Multi-Label Learning (SPML), Bird Sounds, Spectrogram, Fine-Grained Classification, Ecological Priors
 
@@ -51,9 +51,9 @@ The L48 dataset is sourced from the Merlin Sound ID system covering recordings f
 
 2. **Three Data Modes**:
 
-   - **Target-only**: Only the target species label is retained; all others are unknown (strictest SPML setting).
-   - **Geo Prior**: Species geographic range information is used to designate species outside the recording location as negative samples (averaging 42 negative labels).
-   - **Checklist Prior**: eBird observation checklists are used to designate species absent from the checklist as negative samples (averaging 79 negative labels).
+    - **Target-only**: Only the target species label is retained; all others are unknown (strictest SPML setting).
+    - **Geo Prior**: Species geographic range information is used to designate species outside the recording location as negative samples (averaging 42 negative labels).
+    - **Checklist Prior**: eBird observation checklists are used to designate species absent from the checklist as negative samples (averaging 79 negative labels).
 
 3. **Asset Regularization**: This approach exploits the structural property of L48 — multiple clips from the same recording should yield consistent species predictions. The regularization term is:
    $\mathcal{R}_P(\mathbf{x}_j^i) = \mathcal{L}_{BCE}(f_\theta(\mathbf{x}_j^i), \bar{y}_t^i)$

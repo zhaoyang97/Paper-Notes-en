@@ -18,8 +18,8 @@ content_hash: 5058507bd0fb1d04
 # Verbalized Algorithms: Zero-shot Classical Algorithmic Reasoning for Correctness and Runtime Guarantees
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.08150](https://arxiv.org/abs/2509.08150)
-**Code**: None
+**arXiv**: [2509.08150](https://arxiv.org/abs/2509.08150)  
+**Code**: None  
 **Area**: Optimization / LLM Reasoning
 **Keywords**: Verbalized Algorithms, LLM Reasoning, Classical Algorithms, Sorting, Submodular Maximization
 

@@ -18,8 +18,8 @@ content_hash: 1e00b4e7cfb53d4c
 # A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25159](https://arxiv.org/abs/2603.25159)
-**Code**: [Project Page](https://spoiuy3.github.io/SeDiR/)
+**arXiv**: [2603.25159](https://arxiv.org/abs/2603.25159)  
+**Code**: [Project Page](https://spoiuy3.github.io/SeDiR/)  
 **Area**: 3D Vision / Anomaly Detection
 **Keywords**: 3D anomaly detection, unified model, semantic disentanglement, inter-category entanglement, contrastive learning
 

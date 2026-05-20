@@ -18,8 +18,8 @@ content_hash: 233990f04fa09f77
 # DATE-LM: Benchmarking Data Attribution Evaluation for Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.09424](https://arxiv.org/abs/2507.09424)
-**Code**: [GitHub](https://github.com/DataAttributionEval/DATE-LM)
+**arXiv**: [2507.09424](https://arxiv.org/abs/2507.09424)  
+**Code**: [GitHub](https://github.com/DataAttributionEval/DATE-LM)  
 **Area**: Social Computing / Data Attribution
 **Keywords**: data attribution, benchmark, LLM, data selection, factual provenance
 

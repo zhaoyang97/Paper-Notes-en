@@ -18,8 +18,8 @@ content_hash: f196a04d19793690
 # Addressing Text Embedding Leakage in Diffusion-Based Image Editing
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF OpenAccess)
-**Code**: [https://mtablo.github.io/ALE_Edit_page/](https://mtablo.github.io/ALE_Edit_page/)
+**arXiv**: N/A (CVF OpenAccess)  
+**Code**: [https://mtablo.github.io/ALE_Edit_page/](https://mtablo.github.io/ALE_Edit_page/)  
 **Area**: Image Generation
 **Keywords**: Image Editing, Attribute Leakage, Diffusion Models, Text Embeddings, Cross-Attention
 

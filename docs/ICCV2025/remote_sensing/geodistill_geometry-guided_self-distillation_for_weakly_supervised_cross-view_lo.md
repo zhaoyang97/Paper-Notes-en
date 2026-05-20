@@ -18,8 +18,8 @@ content_hash: 2c4bf9f20c771488
 # GeoDistill: Geometry-Guided Self-Distillation for Weakly Supervised Cross-View Localization
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.10935](https://arxiv.org/abs/2507.10935)
-**Code**: [https://github.com/tongshw/GeoDistill](https://github.com/tongshw/GeoDistill)
+**arXiv**: [2507.10935](https://arxiv.org/abs/2507.10935)  
+**Code**: [https://github.com/tongshw/GeoDistill](https://github.com/tongshw/GeoDistill)  
 **Area**: Remote Sensing / Cross-View Localization
 **Keywords**: cross-view localization, weakly supervised learning, self-distillation, FoV occlusion, orientation estimation
 

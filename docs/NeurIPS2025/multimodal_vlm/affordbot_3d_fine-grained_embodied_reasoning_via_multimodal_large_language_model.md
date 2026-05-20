@@ -18,8 +18,8 @@ content_hash: ec9a8426f07e1dbe
 # AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10017](https://arxiv.org/abs/2511.10017)
-**Code**: To be confirmed
+**arXiv**: [2511.10017](https://arxiv.org/abs/2511.10017)  
+**Code**: To be confirmed  
 **Area**: 3D Vision / Embodied Intelligence / Multimodal VLM
 **Keywords**: Affordance, 3D Reasoning, Chain-of-Thought, MLLM, Motion Estimation
 

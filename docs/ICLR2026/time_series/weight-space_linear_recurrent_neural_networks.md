@@ -18,7 +18,7 @@ content_hash: af5dec63340b7c6b
 # WARP: Weight-Space Linear Recurrent Neural Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.01153](https://arxiv.org/abs/2506.01153)
+**arXiv**: [2506.01153](https://arxiv.org/abs/2506.01153)  
 **Area**: Time Series
 **Keywords**: Weight-space learning, Linear RNN, Adaptive prediction, Dynamical system reconstruction, Gradient-free adaptation
 

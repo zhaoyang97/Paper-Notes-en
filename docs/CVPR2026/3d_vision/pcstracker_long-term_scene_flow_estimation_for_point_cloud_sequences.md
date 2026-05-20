@@ -18,8 +18,8 @@ content_hash: b39dcf8f8a1daf4a
 # PCSTracker: Long-Term Scene Flow Estimation for Point Cloud Sequences
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19762](https://arxiv.org/abs/2603.19762)
-**Code**: [https://github.com/MinLin2022/PCSTracker](https://github.com/MinLin2022/PCSTracker)
+**arXiv**: [2603.19762](https://arxiv.org/abs/2603.19762)  
+**Code**: [https://github.com/MinLin2022/PCSTracker](https://github.com/MinLin2022/PCSTracker)  
 **Area**: 3D Vision / Scene Flow Estimation
 **Keywords**: point cloud scene flow, long-term trajectory estimation, spatiotemporal Transformer, sliding window, 3D motion analysis
 

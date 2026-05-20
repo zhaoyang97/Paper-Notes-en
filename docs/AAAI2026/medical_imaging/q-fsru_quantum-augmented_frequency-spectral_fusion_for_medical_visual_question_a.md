@@ -18,8 +18,8 @@ content_hash: 712d8dec9d5b79c6
 # Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.12036](https://arxiv.org/abs/2508.12036)
-**Code**: N/A
+**arXiv**: [2508.12036](https://arxiv.org/abs/2508.12036)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: Medical VQA, Frequency-Domain Fusion, Quantum Retrieval-Augmented Generation, Fast Fourier Transform, Cross-Modal Reasoning
 
@@ -58,8 +58,8 @@ The overall task is formulated as a classification problem: given a medical imag
 
 1. **Unimodal Feature Encoding**
 
-   - **Text Encoder**: BioBERT is used to encode clinical questions into 768-dimensional text embeddings $t = E_t(Q) \in \mathbb{R}^{d_t}$.
-   - **Visual Encoder**: An ImageNet-pretrained ResNet-50 extracts 2048-dimensional visual embeddings $v = E_v(I) \in \mathbb{R}^{d_v}$.
+    - **Text Encoder**: BioBERT is used to encode clinical questions into 768-dimensional text embeddings $t = E_t(Q) \in \mathbb{R}^{d_t}$.
+    - **Visual Encoder**: An ImageNet-pretrained ResNet-50 extracts 2048-dimensional visual embeddings $v = E_v(I) \in \mathbb{R}^{d_v}$.
 
    These two encoders capture semantic patterns from text and spatial features from images, respectively, providing foundational representations for subsequent frequency-domain fusion.
 

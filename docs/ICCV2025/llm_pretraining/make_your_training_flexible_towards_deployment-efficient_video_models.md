@@ -18,8 +18,8 @@ content_hash: bfa5f5f406e54ef5
 # Make Your Training Flexible: Towards Deployment-Efficient Video Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.14237](https://arxiv.org/abs/2503.14237)
-**Code**: [https://github.com/OpenGVLab/FluxViT](https://github.com/OpenGVLab/FluxViT)
+**arXiv**: [2503.14237](https://arxiv.org/abs/2503.14237)  
+**Code**: [https://github.com/OpenGVLab/FluxViT](https://github.com/OpenGVLab/FluxViT)  
 **Area**: LLM Pretraining
 **Keywords**: Flexible Training, Token Optimization, Video Pretraining, Deployment Efficiency, Data Augmentation
 

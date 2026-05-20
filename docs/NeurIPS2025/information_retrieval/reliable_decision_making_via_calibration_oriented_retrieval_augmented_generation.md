@@ -18,8 +18,8 @@ content_hash: d2be05a89b354f9d
 # Reliable Decision Making via Calibration Oriented Retrieval Augmented Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.08891](https://arxiv.org/abs/2411.08891)
-**Code**: To be confirmed
+**arXiv**: [2411.08891](https://arxiv.org/abs/2411.08891)  
+**Code**: To be confirmed  
 **Area**: Information Retrieval
 **Keywords**: RAG, calibration, decision-making, retrieval augmented generation, confidence estimation
 

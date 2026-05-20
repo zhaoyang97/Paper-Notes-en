@@ -18,8 +18,8 @@ content_hash: da8d376f47147013
 # CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05689](https://arxiv.org/abs/2604.05689)
-**Code**: [https://github.com/NEU-Liuxuecong/CRFT](https://github.com/NEU-Liuxuecong/CRFT)
+**arXiv**: [2604.05689](https://arxiv.org/abs/2604.05689)  
+**Code**: [https://github.com/NEU-Liuxuecong/CRFT](https://github.com/NEU-Liuxuecong/CRFT)  
 **Area**: Medical Imaging / Image Registration
 **Keywords**: Cross-modal registration, feature flow learning, coarse-to-fine, discrepancy-guided attention, spatial geometric transformation
 

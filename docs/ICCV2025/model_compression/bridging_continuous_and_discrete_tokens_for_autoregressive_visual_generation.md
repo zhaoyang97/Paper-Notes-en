@@ -18,8 +18,8 @@ content_hash: 59d83c96ae4618c5
 # Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.16430](https://arxiv.org/abs/2503.16430)
-**Code**: [https://yuqingwang1029.github.io/TokenBridge](https://yuqingwang1029.github.io/TokenBridge)
+**arXiv**: [2503.16430](https://arxiv.org/abs/2503.16430)  
+**Code**: [https://yuqingwang1029.github.io/TokenBridge](https://yuqingwang1029.github.io/TokenBridge)  
 **Area**: Visual Generation / Model Compression
 **Keywords**: Autoregressive generation, visual tokenizer, post-training quantization, discrete-continuous bridging, dimension-wise autoregression
 

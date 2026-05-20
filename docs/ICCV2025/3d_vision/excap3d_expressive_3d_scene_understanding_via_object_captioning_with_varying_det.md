@@ -18,8 +18,8 @@ content_hash: 7528483a411cfbd8
 # ExCap3D: Expressive 3D Scene Understanding via Object Captioning with Varying Detail
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.17044](https://arxiv.org/abs/2503.17044)
-**Code**: Coming soon
+**arXiv**: [2503.17044](https://arxiv.org/abs/2503.17044)  
+**Code**: Coming soon  
 **Area**: 3D Vision
 **Keywords**: 3D scene understanding, dense annotation, multi-granularity captioning, joint object-part generation, 3D Gaussian
 

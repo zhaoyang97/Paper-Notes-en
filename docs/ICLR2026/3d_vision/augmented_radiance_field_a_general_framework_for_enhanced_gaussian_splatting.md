@@ -18,8 +18,8 @@ content_hash: f75ab23f92ee836c
 # Augmented Radiance Field: A General Framework for Enhanced Gaussian Splatting
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.19916](https://arxiv.org/abs/2602.19916)
-**Code**: [https://xiaoxinyyx.github.io/augs](https://xiaoxinyyx.github.io/augs)
+**arXiv**: [2602.19916](https://arxiv.org/abs/2602.19916)  
+**Code**: [https://xiaoxinyyx.github.io/augs](https://xiaoxinyyx.github.io/augs)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, radiance field enhancement, view-dependent opacity, specular modeling, inverse Gaussian splatting
 

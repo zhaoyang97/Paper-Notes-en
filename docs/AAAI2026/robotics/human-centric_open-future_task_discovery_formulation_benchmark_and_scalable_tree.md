@@ -18,8 +18,8 @@ content_hash: d75a6a6eb62ea53b
 # Human-Centric Open-Future Task Discovery: Formulation, Benchmark, and Scalable Tree-Based Search
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18929](https://arxiv.org/abs/2511.18929)
-**Code**: None
+**arXiv**: [2511.18929](https://arxiv.org/abs/2511.18929)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: Task Discovery, Open Future, Multi-Agent, Search Tree, Embodied AI
 

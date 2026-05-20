@@ -18,8 +18,8 @@ content_hash: a3b1cefc8e21cd8d
 # PFAvatar: Pose-Fusion 3D Personalized Avatar Reconstruction from Real-World Outfit-of-the-Day Photos
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12935](https://arxiv.org/abs/2511.12935)
-**Code**: N/A
+**arXiv**: [2511.12935](https://arxiv.org/abs/2511.12935)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: 3D avatar reconstruction, OOTD photos, diffusion models, NeRF, Score Distillation Sampling
 

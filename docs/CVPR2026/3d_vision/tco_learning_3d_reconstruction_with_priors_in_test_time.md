@@ -18,8 +18,8 @@ content_hash: ad8368c0b39aacf7
 # Learning 3D Reconstruction with Priors in Test Time
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03878](https://arxiv.org/abs/2604.03878)
-**Code**: [https://github.com/cvlab-stonybrook/TCO](https://github.com/cvlab-stonybrook/TCO)
+**arXiv**: [2604.03878](https://arxiv.org/abs/2604.03878)  
+**Code**: [https://github.com/cvlab-stonybrook/TCO](https://github.com/cvlab-stonybrook/TCO)  
 **Area**: 3D Reconstruction
 **Keywords**: test-time optimization, 3D reconstruction, multiview transformer, camera pose, LoRA
 

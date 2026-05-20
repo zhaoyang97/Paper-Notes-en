@@ -18,8 +18,8 @@ content_hash: e0e9219bf20f4f2d
 # On Large Multimodal Models as Open-World Image Classifiers
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.21851](https://arxiv.org/abs/2503.21851)
-**Code**: [GitHub](https://github.com/altndrr/lmms-owc)
+**arXiv**: [2503.21851](https://arxiv.org/abs/2503.21851)  
+**Code**: [GitHub](https://github.com/altndrr/lmms-owc)  
 **Area**: Multimodal VLM
 **Keywords**: large multimodal models, open-world classification, evaluation protocol, LMM, image classification
 

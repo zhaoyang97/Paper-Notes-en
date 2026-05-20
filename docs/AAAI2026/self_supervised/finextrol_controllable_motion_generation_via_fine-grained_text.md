@@ -18,8 +18,8 @@ content_hash: a32881dae5c40876
 # FineXtrol: Controllable Motion Generation via Fine-Grained Text
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18927](https://arxiv.org/abs/2511.18927)
-**Code**: N/A
+**arXiv**: [2511.18927](https://arxiv.org/abs/2511.18927)  
+**Code**: N/A  
 **Area**: Self-Supervised
 **Keywords**: motion generation, controllable generation, fine-grained text, contrastive learning, diffusion model
 

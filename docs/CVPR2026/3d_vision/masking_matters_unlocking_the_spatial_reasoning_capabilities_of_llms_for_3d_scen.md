@@ -18,8 +18,8 @@ content_hash: a76ed85597babff2
 # Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.02487](https://arxiv.org/abs/2512.02487)
-**Code**: [https://github.com/Jyerim/3D-SLIM](https://github.com/Jyerim/3D-SLIM)
+**arXiv**: [2512.02487](https://arxiv.org/abs/2512.02487)  
+**Code**: [https://github.com/Jyerim/3D-SLIM](https://github.com/Jyerim/3D-SLIM)  
 **Area**: 3D Vision / Scene Understanding
 **Keywords**: 3D scene understanding, attention mask, spatial reasoning, LLM decoder, object-centric representation
 

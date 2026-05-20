@@ -18,8 +18,8 @@ content_hash: ac2742e616144d63
 # Everything is a Video: Unifying Modalities through Next-Frame Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.10503](https://arxiv.org/abs/2411.10503)
-**Code**: None
+**arXiv**: [2411.10503](https://arxiv.org/abs/2411.10503)  
+**Code**: None  
 **Area**: Audio & Speech
 **Keywords**: multimodal unification, next-frame prediction, task reformulation, video generation, unified modality representation
 

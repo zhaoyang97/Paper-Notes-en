@@ -18,8 +18,8 @@ content_hash: 14d179a8dfeb5a67
 # Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01579](https://arxiv.org/abs/2508.01579)
-**Code**: [https://github.com/HHHLF/SECA_master](https://github.com/HHHLF/SECA_master)
+**arXiv**: [2508.01579](https://arxiv.org/abs/2508.01579)  
+**Code**: [https://github.com/HHHLF/SECA_master](https://github.com/HHHLF/SECA_master)  
 **Area**: Multimodal VLM
 **Keywords**: Continual Learning, CLIP, Textual Semantic Priors, Knowledge Distillation, Modality Gap
 

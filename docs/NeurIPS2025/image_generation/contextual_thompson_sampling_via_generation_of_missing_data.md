@@ -19,8 +19,8 @@ content_hash: 8f8f471c7e5c0f2e
 # Contextual Thompson Sampling via Generation of Missing Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.07064](https://arxiv.org/abs/2502.07064)
-**Code**: To be confirmed
+**arXiv**: [2502.07064](https://arxiv.org/abs/2502.07064)  
+**Code**: To be confirmed  
 **Area**: Generative Models / Decision Systems / Contextual Bandits
 **Keywords**: Thompson sampling, contextual bandit, generative models, missing data imputation, meta-learning, regret bounds
 

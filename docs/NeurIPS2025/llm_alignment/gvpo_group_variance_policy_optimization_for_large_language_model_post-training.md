@@ -18,8 +18,8 @@ content_hash: 8e63b26fac0c4c18
 # GVPO: Group Variance Policy Optimization for Large Language Model Post-Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.19599](https://arxiv.org/abs/2504.19599)
-**Code**: [https://github.com/jszkc/GVPO](https://github.com/jszkc/GVPO)
+**arXiv**: [2504.19599](https://arxiv.org/abs/2504.19599)  
+**Code**: [https://github.com/jszkc/GVPO](https://github.com/jszkc/GVPO)  
 **Area**: Alignment / RLHF
 **Keywords**: GRPO, Policy Optimization, KL Constraint, Training Stability, Post-Training
 

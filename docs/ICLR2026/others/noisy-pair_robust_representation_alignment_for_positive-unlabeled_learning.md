@@ -17,8 +17,8 @@ content_hash: 54b4333ce5f2a9ae
 # Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.01278](https://arxiv.org/abs/2510.01278)
-**Code**: [https://github.com/Hengwei-Zhao96/NcPU](https://github.com/Hengwei-Zhao96/NcPU)
+**arXiv**: [2510.01278](https://arxiv.org/abs/2510.01278)  
+**Code**: [https://github.com/Hengwei-Zhao96/NcPU](https://github.com/Hengwei-Zhao96/NcPU)  
 **Area**: Other / Weakly Supervised Learning
 **Keywords**: PU Learning, Non-Contrastive Representation Learning, Noisy-Pair Robustness, Pseudo-Label Disambiguation, EM Framework
 

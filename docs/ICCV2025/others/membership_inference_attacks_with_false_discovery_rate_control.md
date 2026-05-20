@@ -17,8 +17,8 @@ content_hash: c2a227d26c466d42
 # Membership Inference Attacks with False Discovery Rate Control
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.07066](https://arxiv.org/abs/2508.07066)
-**Code**: None
+**arXiv**: [2508.07066](https://arxiv.org/abs/2508.07066)  
+**Code**: None  
 **Area**: Other / AI Security & Privacy
 **Keywords**: membership inference attack, false discovery rate control, conformal inference, multiple hypothesis testing, privacy security
 

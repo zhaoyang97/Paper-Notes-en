@@ -18,8 +18,8 @@ content_hash: dbae7fa9fad7e371
 # Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19678](https://arxiv.org/abs/2603.19678)
-**Code**: [https://github.com/zhoujiahuan1991/CVPR2026-VLADR](https://github.com/zhoujiahuan1991/CVPR2026-VLADR)
+**arXiv**: [2603.19678](https://arxiv.org/abs/2603.19678)  
+**Code**: [https://github.com/zhoujiahuan1991/CVPR2026-VLADR](https://github.com/zhoujiahuan1991/CVPR2026-VLADR)  
 **Area**: Person Understanding
 **Keywords**: Lifelong Person Re-Identification, Vision-Language Model, Attribute Disentanglement, Cross-Modal Alignment, Forgetting Mitigation
 

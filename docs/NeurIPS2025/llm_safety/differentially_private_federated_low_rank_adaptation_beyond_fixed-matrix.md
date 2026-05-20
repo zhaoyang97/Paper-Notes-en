@@ -18,8 +18,8 @@ content_hash: 5eff369fc766dcde
 # Differentially Private Federated Low Rank Adaptation Beyond Fixed-Matrix
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.09990](https://arxiv.org/abs/2507.09990)
-**Code**: [GitHub](https://github.com/FLEECERmw/PrivacyFedLLM)
+**arXiv**: [2507.09990](https://arxiv.org/abs/2507.09990)  
+**Code**: [GitHub](https://github.com/FLEECERmw/PrivacyFedLLM)  
 **Area**: AI Security
 **Keywords**: Differential Privacy, Federated Learning, LoRA, Low-Rank Adaptation, LLM Fine-Tuning
 

@@ -19,8 +19,8 @@ content_hash: 6fb68475126f5b6e
 # Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.01022](https://arxiv.org/abs/2509.01022)
-**Code**: None
+**arXiv**: [2509.01022](https://arxiv.org/abs/2509.01022)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Block Rearrangement, MAPF, Symbolic Planning, PDDL, LaCAM, Dense Environments, Warehouse Robotics
 

@@ -18,8 +18,8 @@ content_hash: 70fb58baa340be0a
 # MosaicDiff: Training-free Structural Pruning for Diffusion Model Acceleration Reflecting Pretraining Dynamics
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.11962](https://arxiv.org/abs/2510.11962)
-**Code**: [https://github.com/bwguo105/MosaicDiff](https://github.com/bwguo105/MosaicDiff)
+**arXiv**: [2510.11962](https://arxiv.org/abs/2510.11962)  
+**Code**: [https://github.com/bwguo105/MosaicDiff](https://github.com/bwguo105/MosaicDiff)  
 **Area**: Diffusion Models / Model Acceleration
 **Keywords**: Structural Pruning, Training-free Acceleration, Pretraining Dynamics, SNR-aware, Second-order Pruning
 

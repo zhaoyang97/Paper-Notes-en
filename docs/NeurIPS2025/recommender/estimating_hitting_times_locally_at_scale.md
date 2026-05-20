@@ -18,8 +18,8 @@ content_hash: 898874163467209d
 # Estimating Hitting Times Locally At Scale
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.04343](https://arxiv.org/abs/2511.04343)
-**Code**: [https://github.com/tkhar/hitting-time-at-scale](https://github.com/tkhar/hitting-time-at-scale)
+**arXiv**: [2511.04343](https://arxiv.org/abs/2511.04343)  
+**Code**: [https://github.com/tkhar/hitting-time-at-scale](https://github.com/tkhar/hitting-time-at-scale)  
 **Area**: Graph Algorithms / Random Walks
 **Keywords**: hitting time, local algorithms, random walks, sublinear complexity, spectral methods
 

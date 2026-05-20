@@ -19,8 +19,8 @@ content_hash: 050390a81852b1ab
 # PersonaX: Multimodal Datasets with LLM-Inferred Behavior Traits
 
 **Conference**: ICLR2026
-**arXiv**: [2509.11362](https://arxiv.org/abs/2509.11362)
-**Code**: [lokali/PersonaX](https://github.com/lokali/PersonaX)
+**arXiv**: [2509.11362](https://arxiv.org/abs/2509.11362)  
+**Code**: [lokali/PersonaX](https://github.com/lokali/PersonaX)  
 **Area**: Human Understanding
 **Keywords**: multimodal dataset, behavior traits, Big Five, causal representation learning, LLM, identifiability
 

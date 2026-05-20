@@ -18,8 +18,8 @@ content_hash: 351393f457276e05
 # EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11371](https://arxiv.org/abs/2503.11371)
-**Code**: None
+**arXiv**: [2503.11371](https://arxiv.org/abs/2503.11371)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: Event Camera, 3D Motion Estimation, Non-uniform Parametric Curves, Optical Flow, Motion in Depth
 

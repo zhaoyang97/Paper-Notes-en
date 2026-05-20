@@ -18,8 +18,8 @@ content_hash: 0ff34ad3fd903469
 # Do Neural Networks Need Gradient Descent to Generalize? A Theoretical Study
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03931](https://arxiv.org/abs/2506.03931)
-**Code**: None
+**arXiv**: [2506.03931](https://arxiv.org/abs/2506.03931)  
+**Code**: None  
 **Area**: Learning Theory / Generalization Theory
 **Keywords**: generalization, volume hypothesis, Guess & Check, matrix factorization, implicit bias
 
@@ -43,28 +43,28 @@ This paper establishes, within the matrix factorization framework (a canonical t
 - **Problem Setting**: Low-rank matrix sensing, i.e., recovering a low-rank matrix $W^*$ from linear measurements.
 - **Matrix Factorization Parameterization**: $W = W_d \sigma(W_{d-1} \sigma(\cdots \sigma(W_1)))$, with width $k$, depth $d$, and activation function $\sigma$.
 - **Two Optimizers Compared**:
-  - Gradient Descent (GD): iterates from a small random initialization.
-  - Guess & Check (G&C): repeatedly samples from a prior distribution until the training loss falls below a threshold.
+    - Gradient Descent (GD): iterates from a small random initialization.
+    - Guess & Check (G&C): repeatedly samples from a prior distribution until the training loss falls below a threshold.
 
 ### Key Designs
 
 1. **Theorem 1: Increasing Width → G&C Generalization Degrades**
 
-   - **Function**: Proves that for antisymmetric activation functions (e.g., linear, tanh, sine), G&C generalization degrades to the level of random guessing as width tends to infinity.
-   - **Mechanism**: Exploits the NNGP (Neural Network Gaussian Process) convergence of deep networks — as width $k \to \infty$, the output of the matrix factorization converges to a random matrix $W_{\text{iid}}$ whose entries are i.i.d. Training loss and generalization loss then become statistically independent, so conditioning on fitting the training data provides no information about generalization.
-   - **Key Condition**: The activation function is antisymmetric, $\sigma(-\alpha) = -\sigma(\alpha)$, which ensures independence between columns.
-   - **Finite-Width Bound**: When the prior is Gaussian, the difference between the posterior and prior probability is $O(1/\sqrt{k})$.
+    - **Function**: Proves that for antisymmetric activation functions (e.g., linear, tanh, sine), G&C generalization degrades to the level of random guessing as width tends to infinity.
+    - **Mechanism**: Exploits the NNGP (Neural Network Gaussian Process) convergence of deep networks — as width $k \to \infty$, the output of the matrix factorization converges to a random matrix $W_{\text{iid}}$ whose entries are i.i.d. Training loss and generalization loss then become statistically independent, so conditioning on fitting the training data provides no information about generalization.
+    - **Key Condition**: The activation function is antisymmetric, $\sigma(-\alpha) = -\sigma(\alpha)$, which ensures independence between columns.
+    - **Finite-Width Bound**: When the prior is Gaussian, the difference between the posterior and prior probability is $O(1/\sqrt{k})$.
 
 2. **Theorem 2: Increasing Depth → G&C Generalization Improves**
 
-   - **Function**: Proves that for linear activations and a normalized Gaussian prior, G&C generalization approaches perfection as depth tends to infinity.
-   - **Mechanism**: The normalized prior of deep matrix factorization $W = W_d W_{d-1} \cdots W_1$ induces a strong low-rank preference. As $d \to \infty$, the singular value distribution of $W$ concentrates on a single nonzero singular value (i.e., rank one), so low-rank solutions occupy exponentially greater volume in parameter space than high-rank solutions.
-   - **Implicit Regularization Interpretation**: Depth itself achieves rank minimization through the geometric effect of the prior, without requiring GD's implicit bias.
+    - **Function**: Proves that for linear activations and a normalized Gaussian prior, G&C generalization approaches perfection as depth tends to infinity.
+    - **Mechanism**: The normalized prior of deep matrix factorization $W = W_d W_{d-1} \cdots W_1$ induces a strong low-rank preference. As $d \to \infty$, the singular value distribution of $W$ concentrates on a single nonzero singular value (i.e., rank one), so low-rank solutions occupy exponentially greater volume in parameter space than high-rank solutions.
+    - **Implicit Regularization Interpretation**: Depth itself achieves rank minimization through the geometric effect of the prior, without requiring GD's implicit bias.
 
 3. **Experimental Validation**
 
-   - **Function**: Implements G&C (via MCMC posterior sampling) and GD on matrix factorization to verify theoretical predictions.
-   - **Observations**: G&C generalization degrades sharply with increasing width (consistent with Theorem 1) and improves significantly with increasing depth (consistent with Theorem 2); GD maintains good generalization across all widths and depths.
+    - **Function**: Implements G&C (via MCMC posterior sampling) and GD on matrix factorization to verify theoretical predictions.
+    - **Observations**: G&C generalization degrades sharply with increasing width (consistent with Theorem 1) and improves significantly with increasing depth (consistent with Theorem 2); GD maintains good generalization across all widths and depths.
 
 ### Loss & Training
 - Training loss: $\mathcal{L}_{\text{train}}(W) = \frac{1}{n} \sum_{i=1}^n (\langle A_i, W \rangle - y_i)^2$

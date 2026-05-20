@@ -19,8 +19,8 @@ content_hash: c801da00b1e9990c
 # MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization
 
 **Conference**: CVPR2026
-**arXiv**: [2603.03192](https://arxiv.org/abs/2603.03192)
-**Code**: To be confirmed
+**arXiv**: [2603.03192](https://arxiv.org/abs/2603.03192)  
+**Code**: To be confirmed  
 **Area**: LLM Alignment
 **Keywords**: omni LLM, cross-modal hallucination, DPO, modality decoupling, audio-visual, preference optimization
 

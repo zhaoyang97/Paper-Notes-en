@@ -18,8 +18,8 @@ content_hash: a364f228ca03adbf
 # SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.15307](https://arxiv.org/abs/2506.15307)
-**Code**: N/A
+**arXiv**: [2506.15307](https://arxiv.org/abs/2506.15307)  
+**Code**: N/A  
 **Area**: AI Security
 **Keywords**: Privacy-Preserving, Secure Multi-Party Computation, Prompt Tuning, Forward Tuning, Random Feature Attention
 

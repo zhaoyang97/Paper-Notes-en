@@ -18,8 +18,8 @@ content_hash: 3d3535cbc74c4edf
 # INSID3: Training-Free In-Context Segmentation with DINOv3
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28480](https://arxiv.org/abs/2603.28480)
-**Code**: [GitHub](https://visinf.github.io/INSID3)
+**arXiv**: [2603.28480](https://arxiv.org/abs/2603.28480)  
+**Code**: [GitHub](https://visinf.github.io/INSID3)  
 **Area**: Segmentation
 **Keywords**: In-context segmentation, DINOv3, training-free, self-supervised, positional bias correction
 

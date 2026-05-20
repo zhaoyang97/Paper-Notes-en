@@ -18,8 +18,8 @@ content_hash: 20151e9b1b6dc3f8
 # MoE-Gyro: Self-Supervised Over-Range Reconstruction and Denoising for MEMS Gyroscopes
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06318](https://arxiv.org/abs/2506.06318)
-**Code**: [GitHub](https://github.com/2002-Pan/Moe-Gyro)
+**arXiv**: [2506.06318](https://arxiv.org/abs/2506.06318)  
+**Code**: [GitHub](https://github.com/2002-Pan/Moe-Gyro)  
 **Area**: Signal Processing / Inertial Navigation / Self-Supervised Learning
 **Keywords**: MEMS gyroscope, self-supervised learning, Mixture of Experts, over-range reconstruction, signal denoising
 

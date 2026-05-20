@@ -19,8 +19,8 @@ content_hash: 735120ba3b08330d
 # Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.03284](https://arxiv.org/abs/2602.03284)
-**Code**: [github.com/yuyi-sd/Spike-Retiming-Attacks](https://github.com/yuyi-sd/Spike-Retiming-Attacks)
+**arXiv**: [2602.03284](https://arxiv.org/abs/2602.03284)  
+**Code**: [github.com/yuyi-sd/Spike-Retiming-Attacks](https://github.com/yuyi-sd/Spike-Retiming-Attacks)  
 **Area**: Adversarial Security of Spiking Neural Networks
 **Keywords**: Spiking Neural Networks, Adversarial Attacks, Spike Retiming, Event-Driven, Temporal Robustness, LIF Neuron
 

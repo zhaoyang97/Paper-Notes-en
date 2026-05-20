@@ -18,8 +18,8 @@ content_hash: c5aefcd9cb281a6d
 # Blameless Users in a Clean Room: Defining Copyright Protection for Generative Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.19881](https://arxiv.org/abs/2506.19881)
-**Code**: Available
+**arXiv**: [2506.19881](https://arxiv.org/abs/2506.19881)  
+**Code**: Available  
 **Area**: AI Ethics / Copyright Theory
 **Keywords**: Copyright Protection, Clean-Room Principle, Generative Models, Differential Privacy, NAF
 

@@ -19,8 +19,8 @@ content_hash: 059d2887bea99f69
 # Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01007](https://arxiv.org/abs/2603.01007)
-**Code**: N/A
+**arXiv**: [2603.01007](https://arxiv.org/abs/2603.01007)  
+**Code**: N/A  
 **Area**: Autonomous Driving / 3D Occupancy Prediction
 **Keywords**: occupancy prediction, depth guidance, MoGe-2, Mixture-of-Experts, region-guided, view transformation
 

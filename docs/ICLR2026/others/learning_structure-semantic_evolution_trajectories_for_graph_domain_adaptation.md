@@ -17,8 +17,8 @@ content_hash: 1176045e971f423e
 # Learning Structure-Semantic Evolution Trajectories for Graph Domain Adaptation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.10506](https://arxiv.org/abs/2602.10506)
-**Code**: [DiffGDA](https://github.com/chenwei23/DiffGDA)
+**arXiv**: [2602.10506](https://arxiv.org/abs/2602.10506)  
+**Code**: [DiffGDA](https://github.com/chenwei23/DiffGDA)  
 **Area**: Other
 **Keywords**: Graph Domain Adaptation, Diffusion Models, SDE, Continuous Evolution, Domain-Aware Guidance
 

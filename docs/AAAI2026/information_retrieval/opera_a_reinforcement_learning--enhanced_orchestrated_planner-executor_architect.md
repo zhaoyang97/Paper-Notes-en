@@ -18,8 +18,8 @@ content_hash: 71984a33a729a572
 # OPERA: A Reinforcement Learning--Enhanced Orchestrated Planner-Executor Architecture for Reasoning-Oriented Multi-Hop Retrieval
 
 **Conference**: AAAI2026
-**arXiv**: [2508.16438](https://arxiv.org/abs/2508.16438)
-**Code**: [Ameame1/OPERA](https://github.com/Ameame1/OPERA)
+**arXiv**: [2508.16438](https://arxiv.org/abs/2508.16438)  
+**Code**: [Ameame1/OPERA](https://github.com/Ameame1/OPERA)  
 **Area**: Information Retrieval
 **Keywords**: RAG, multi-hop retrieval, reinforcement-learning, GRPO, multi-agent
 

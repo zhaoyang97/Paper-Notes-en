@@ -18,8 +18,8 @@ content_hash: 63dbff030349fa57
 # LangSplatV2: High-dimensional 3D Language Gaussian Splatting with 450+ FPS
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.07136](https://arxiv.org/abs/2507.07136)
-**Code**: [Project Page](https://langsplat-v2.github.io)
+**arXiv**: [2507.07136](https://arxiv.org/abs/2507.07136)  
+**Code**: [Project Page](https://langsplat-v2.github.io)  
 **Area**: 3D Vision
 **Keywords**: 3D language field, Gaussian splatting, sparse coding, real-time inference, open-vocabulary query
 

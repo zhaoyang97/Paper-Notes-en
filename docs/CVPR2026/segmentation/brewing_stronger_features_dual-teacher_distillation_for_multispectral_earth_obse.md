@@ -18,8 +18,8 @@ content_hash: a0419f92bf8342ac
 # Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19863](https://arxiv.org/abs/2602.19863)
-**Code**: [Project Page](https://wolfilip.github.io/DEO/)
+**arXiv**: [2602.19863](https://arxiv.org/abs/2602.19863)  
+**Code**: [Project Page](https://wolfilip.github.io/DEO/)  
 **Area**: Image Segmentation
 **Keywords**: Remote Sensing Foundation Model, Multispectral, Knowledge Distillation, Contrastive Learning, Dual-Teacher Training
 

@@ -18,8 +18,8 @@ content_hash: aa88e513c5ec27a5
 # Data Verification is the Future of Quantum Computing Copilots
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.04072](https://arxiv.org/abs/2602.04072)
-**Code**: None
+**arXiv**: [2602.04072](https://arxiv.org/abs/2602.04072)  
+**Code**: None  
 **Area**: Quantum Computing / AI4Science
 **Keywords**: quantum circuit optimization, LLM hallucination, formal verification, data quality, verification-first architecture
 

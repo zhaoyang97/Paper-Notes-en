@@ -18,8 +18,8 @@ content_hash: 221db2d3ec6a5e47
 # RADAR: Closed-Loop Robotic Data Generation via Semantic Planning and Autonomous Causal Environment Reset
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11811](https://arxiv.org/abs/2603.11811)
-**Code**: None
+**arXiv**: [2603.11811](https://arxiv.org/abs/2603.11811)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: autonomous data collection, closed-loop robotic manipulation, automatic environment reset, in-context imitation learning, VLM task planning
 

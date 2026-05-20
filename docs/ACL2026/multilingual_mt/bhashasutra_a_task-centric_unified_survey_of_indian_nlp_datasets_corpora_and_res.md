@@ -18,8 +18,8 @@ content_hash: a579fed55adefd80
 # BhashaSutra: A Task-Centric Unified Survey of Indian NLP Datasets, Corpora, and Resources
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18423](https://arxiv.org/abs/2604.18423)
-**Code**: None
+**arXiv**: [2604.18423](https://arxiv.org/abs/2604.18423)  
+**Code**: None  
 **Area**: Multilingual Translation
 **Keywords**: Indian Language NLP, Dataset Survey, Multilingual Resources, Low-Resource Languages, Cultural NLP
 

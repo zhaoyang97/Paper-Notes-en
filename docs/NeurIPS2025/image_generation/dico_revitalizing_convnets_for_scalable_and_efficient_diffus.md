@@ -18,8 +18,8 @@ content_hash: 2a391c113d1e7992
 # DiCo: Revitalizing ConvNets for Scalable and Efficient Diffusion Modeling
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2505.11196](https://arxiv.org/abs/2505.11196)
-**Code**: [https://github.com/shallowdream204/DiCo](https://github.com/shallowdream204/DiCo)
+**arXiv**: [2505.11196](https://arxiv.org/abs/2505.11196)  
+**Code**: [https://github.com/shallowdream204/DiCo](https://github.com/shallowdream204/DiCo)  
 **Area**: Image Generation
 **Keywords**: ConvNet, diffusion models, channel attention, efficient generation, U-shaped architecture
 

@@ -18,8 +18,8 @@ content_hash: e042d4d6dc4487fd
 # ParetoQ: Improving Scaling Laws in Extremely Low-bit LLM Quantization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.02631](https://arxiv.org/abs/2502.02631)
-**Code**: Not available
+**arXiv**: [2502.02631](https://arxiv.org/abs/2502.02631)  
+**Code**: Not available  
 **Area**: Model Compression
 **Keywords**: Extremely low-bit quantization, scaling laws, quantization-aware training, 2-bit quantization, Pareto optimality
 

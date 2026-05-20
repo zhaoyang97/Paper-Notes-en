@@ -18,8 +18,8 @@ content_hash: f9d5ecd1d3b2404a
 # Intervene-All-Paths: Unified Mitigation of LVLM Hallucinations across Alignment Formats
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.17254](https://arxiv.org/abs/2511.17254)
-**Code**: [https://github.com/SooLab/AllPath](https://github.com/SooLab/AllPath)
+**arXiv**: [2511.17254](https://arxiv.org/abs/2511.17254)  
+**Code**: [https://github.com/SooLab/AllPath](https://github.com/SooLab/AllPath)  
 **Area**: Multimodal VLM / Hallucination Mitigation / Attention Head Intervention
 **Keywords**: hallucination, attention head intervention, causal path, multi-path framework, training-free
 

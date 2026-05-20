@@ -17,8 +17,8 @@ content_hash: ffe541629a474db7
 # T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23484](https://arxiv.org/abs/2510.23484)
-**Code**: [GitHub](https://github.com/) (available)
+**arXiv**: [2510.23484](https://arxiv.org/abs/2510.23484)  
+**Code**: [GitHub](https://github.com/) (available)  
 **Area**: Self-Supervised Learning / Representation Learning / Regularization
 **Keywords**: self-supervised learning, minimum spanning tree, dimensional collapse, uniformity, regularization
 

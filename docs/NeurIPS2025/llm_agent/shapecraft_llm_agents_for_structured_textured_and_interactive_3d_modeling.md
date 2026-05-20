@@ -18,8 +18,8 @@ content_hash: c9b2fea24565ced7
 # ShapeCraft: LLM Agents for Structured, Textured and Interactive 3D Modeling
 
 **Conference**: NEURIPS2025
-**arXiv**: [2510.17603](https://arxiv.org/abs/2510.17603)
-**Code**: [GitHub](https://sanbingyouyong.github.io/shapecraft)
+**arXiv**: [2510.17603](https://arxiv.org/abs/2510.17603)  
+**Code**: [GitHub](https://sanbingyouyong.github.io/shapecraft)  
 **Area**: LLM Agent
 **Keywords**: text-to-3D, multi-agent, procedural modeling, shape program, Blender
 

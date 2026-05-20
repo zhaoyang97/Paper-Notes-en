@@ -19,8 +19,8 @@ content_hash: adbb8292590bca1d
 # Composing Global Solutions to Reasoning Tasks via Algebraic Objects in Neural Nets
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.01779](https://arxiv.org/abs/2410.01779)
-**Code**: [facebookresearch/luckmatters](https://github.com/facebookresearch/luckmatters/tree/yuandong3/ssl/real-dataset)
+**arXiv**: [2410.01779](https://arxiv.org/abs/2410.01779)  
+**Code**: [facebookresearch/luckmatters](https://github.com/facebookresearch/luckmatters/tree/yuandong3/ssl/real-dataset)  
 **Area**: Optimization
 **Keywords**: Algebraic structure, modular arithmetic reasoning, two-layer networks, grokking, weight-space semiring, global optimal solution construction
 

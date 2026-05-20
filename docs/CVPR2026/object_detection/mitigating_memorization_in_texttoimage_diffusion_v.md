@@ -18,8 +18,8 @@ content_hash: 4403d3ad2977d93d
 # Mitigating Memorization in Text-to-Image Diffusion via Region-Aware Prompt Augmentation and Multimodal Copy Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13070](https://arxiv.org/abs/2603.13070)
-**Code**: N/A
+**arXiv**: [2603.13070](https://arxiv.org/abs/2603.13070)  
+**Code**: N/A  
 **Area**: Diffusion Models / AI Safety / Image Forensics
 **Keywords**: diffusion model memorization, training-time prompt augmentation, multimodal copy detection, copyright protection, attention fusion
 

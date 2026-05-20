@@ -17,8 +17,8 @@ content_hash: 0e00e6dc70bd2be6
 # MVR: Multi-view Video Reward Shaping for Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01694](https://arxiv.org/abs/2603.01694)
-**Code**: [https://mvr-rl.github.io/](https://mvr-rl.github.io/)
+**arXiv**: [2603.01694](https://arxiv.org/abs/2603.01694)  
+**Code**: [https://mvr-rl.github.io/](https://mvr-rl.github.io/)  
 **Area**: Reinforcement Learning
 **Keywords**: visual reward shaping, multi-view video, reinforcement learning, vision-language models, state relevance learning
 

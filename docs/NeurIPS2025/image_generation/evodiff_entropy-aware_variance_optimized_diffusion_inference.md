@@ -18,8 +18,8 @@ content_hash: 84e077379fedab81
 # EVODiff: Entropy-aware Variance Optimized Diffusion Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.26096](https://arxiv.org/abs/2509.26096)
-**Code**: [ShiguiLi/EVODiff](https://github.com/ShiguiLi/EVODiff)
+**arXiv**: [2509.26096](https://arxiv.org/abs/2509.26096)  
+**Code**: [ShiguiLi/EVODiff](https://github.com/ShiguiLi/EVODiff)  
 **Area**: Image Generation
 **Keywords**: Diffusion models, inference acceleration, information theory, conditional entropy, variance optimization
 

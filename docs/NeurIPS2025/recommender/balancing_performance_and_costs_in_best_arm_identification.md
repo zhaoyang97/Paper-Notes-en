@@ -18,8 +18,8 @@ content_hash: 4a08146531999bf7
 # Balancing Performance and Costs in Best Arm Identification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20583](https://arxiv.org/abs/2505.20583)
-**Code**: To be confirmed
+**arXiv**: [2505.20583](https://arxiv.org/abs/2505.20583)  
+**Code**: To be confirmed  
 **Area**: Multi-Armed Bandits / Best Arm Identification
 **Keywords**: Best Arm Identification, Cost-Performance Tradeoff, Phase Transition, Dynamic Budget, Risk Functional
 

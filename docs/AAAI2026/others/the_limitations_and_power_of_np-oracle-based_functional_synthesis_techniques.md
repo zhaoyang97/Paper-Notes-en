@@ -17,8 +17,8 @@ content_hash: 4b52a8ff2d94f764
 # The Limitations and Power of NP-Oracle-Based Functional Synthesis Techniques
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.20572](https://arxiv.org/abs/2512.20572)
-**Code**: None
+**arXiv**: [2512.20572](https://arxiv.org/abs/2512.20572)  
+**Code**: None  
 **Area**: Theoretical Computer Science / Formal Methods
 **Keywords**: Functional Synthesis, Skolem Functions, NP Oracle, Computational Complexity, Interpolation Methods
 

@@ -18,8 +18,8 @@ content_hash: 4b85308a07ef3468
 # On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.10397](https://arxiv.org/abs/2603.10397)
-**Code**: [https://github.com/a-usually/Label-Noise-SGD](https://github.com/a-usually/Label-Noise-SGD)
+**arXiv**: [2603.10397](https://arxiv.org/abs/2603.10397)  
+**Code**: [https://github.com/a-usually/Label-Noise-SGD](https://github.com/a-usually/Label-Noise-SGD)  
 **Area**: Alignment RLHF / Optimization Theory
 **Keywords**: Label Noise SGD, Learning Dynamics, Lazy-to-Rich Transition, Implicit Bias, Sharpness-Aware Minimization
 
@@ -51,21 +51,21 @@ The paper considers a two-layer linear network $\hat{y}_i = \mathbf{a}^\top \mat
 
 1. **Phase I: Progressive Diminishing and Lazy-to-Rich Transition (Theorem 4.2, Lemma 4.3)**
 
-   - **Function**: Proves that during Phase I, the first-layer weight norms $\|\mathbf{w}_i(t)\|$ for all neurons decrease monotonically, enabling the model to escape the lazy regime.
-   - **Mechanism**: The change in weight norm is $\Delta W_i(j) = -\nabla\hat{\ell}^2 \cdot ((\mathbf{x}^\top \mathbf{w}_i)^2 - a_i^2 \|\mathbf{x}\|^2)$. Since $\mathbf{a}(0)$ is initialized to small values, the $(\mathbf{x}^\top \mathbf{w}_i)^2$ term dominates, making $\Delta W_i(j)$ negative with high probability. The key identity $\nabla\hat{\ell}^2 \cdot (\mathbf{x}^\top \mathbf{w}_i)^2 = (a_i(j+1) - a_i(j))^2$ shows that the decay of the first-layer norm is directly controlled by the oscillation amplitude of the second layer, and label noise is the source of these oscillations.
-   - **Design Motivation**: This is the central finding of the paper—it establishes the causal chain "label noise → second-layer oscillations → first-layer norm decay → lazy-to-rich transition." Theorem 4.2 gives the escape time $T_1 = O(\frac{\sqrt{\log m}}{\sigma^2 \eta^2 \sqrt{m}})$, explicitly depending on noise intensity $\sigma$.
+    - **Function**: Proves that during Phase I, the first-layer weight norms $\|\mathbf{w}_i(t)\|$ for all neurons decrease monotonically, enabling the model to escape the lazy regime.
+    - **Mechanism**: The change in weight norm is $\Delta W_i(j) = -\nabla\hat{\ell}^2 \cdot ((\mathbf{x}^\top \mathbf{w}_i)^2 - a_i^2 \|\mathbf{x}\|^2)$. Since $\mathbf{a}(0)$ is initialized to small values, the $(\mathbf{x}^\top \mathbf{w}_i)^2$ term dominates, making $\Delta W_i(j)$ negative with high probability. The key identity $\nabla\hat{\ell}^2 \cdot (\mathbf{x}^\top \mathbf{w}_i)^2 = (a_i(j+1) - a_i(j))^2$ shows that the decay of the first-layer norm is directly controlled by the oscillation amplitude of the second layer, and label noise is the source of these oscillations.
+    - **Design Motivation**: This is the central finding of the paper—it establishes the causal chain "label noise → second-layer oscillations → first-layer norm decay → lazy-to-rich transition." Theorem 4.2 gives the escape time $T_1 = O(\frac{\sqrt{\log m}}{\sigma^2 \eta^2 \sqrt{m}})$, explicitly depending on noise intensity $\sigma$.
 
 2. **Phase II: Alignment and Convergence (Lemma 4.5, 4.6)**
 
-   - **Function**: Proves that once weight norms are sufficiently small (i.e., $\|\mathbf{w}_i\|, |a_i| \leq \sqrt{\eta}$), neurons rapidly align with the ground-truth interpolator $\theta^*$ and converge.
-   - **Mechanism**: Lemma 4.5 proves that after $T_2 = \frac{1}{\|\theta^*\|} \ln(1/\eta)$ steps, the alignment $\frac{|\langle \theta^*, \mathbf{w}_i \rangle|}{\|\theta^*\| \cdot \|\mathbf{w}_i\|} \geq 1 - O(\ln(1/\eta) \cdot \sqrt{\eta})$. Lemma 4.6 proves that after perfect alignment, an additional $T_3 = O(\frac{-\ln\eta}{\eta})$ steps suffice to achieve $\|\theta(t_3) - \theta^*\| \leq O(\eta \ln(1/\eta))$.
-   - **Design Motivation**: Phase II resembles learning dynamics under small initialization—which is precisely the effect of Phase I. Label noise SGD effectively transforms a large initialization into an equivalent small initialization.
+    - **Function**: Proves that once weight norms are sufficiently small (i.e., $\|\mathbf{w}_i\|, |a_i| \leq \sqrt{\eta}$), neurons rapidly align with the ground-truth interpolator $\theta^*$ and converge.
+    - **Mechanism**: Lemma 4.5 proves that after $T_2 = \frac{1}{\|\theta^*\|} \ln(1/\eta)$ steps, the alignment $\frac{|\langle \theta^*, \mathbf{w}_i \rangle|}{\|\theta^*\| \cdot \|\mathbf{w}_i\|} \geq 1 - O(\ln(1/\eta) \cdot \sqrt{\eta})$. Lemma 4.6 proves that after perfect alignment, an additional $T_3 = O(\frac{-\ln\eta}{\eta})$ steps suffice to achieve $\|\theta(t_3) - \theta^*\| \leq O(\eta \ln(1/\eta))$.
+    - **Design Motivation**: Phase II resembles learning dynamics under small initialization—which is precisely the effect of Phase I. Label noise SGD effectively transforms a large initialization into an equivalent small initialization.
 
 3. **Extension to SAM**
 
-   - **Function**: Validates that SAM (Sharpness-Aware Minimization) exhibits the same two-phase dynamics.
-   - **Mechanism**: SAM's inner adversarial perturbation amplifies gradient noise, analogously to the effect of label noise. In synthetic and CIFAR-10 experiments, the loss curves of WideResNet trained with SAM deviate significantly from those of its linearized counterpart (a signature of the rich regime), while first-layer weight norms visibly decay.
-   - **Design Motivation**: Generalizes the identified mechanism from a specific noise source to a broader class of "noise-amplifying" optimization strategies.
+    - **Function**: Validates that SAM (Sharpness-Aware Minimization) exhibits the same two-phase dynamics.
+    - **Mechanism**: SAM's inner adversarial perturbation amplifies gradient noise, analogously to the effect of label noise. In synthetic and CIFAR-10 experiments, the loss curves of WideResNet trained with SAM deviate significantly from those of its linearized counterpart (a signature of the rich regime), while first-layer weight norms visibly decay.
+    - **Design Motivation**: Generalizes the identified mechanism from a specific noise source to a broader class of "noise-amplifying" optimization strategies.
 
 ### Loss & Training
 

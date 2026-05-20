@@ -18,8 +18,8 @@ content_hash: 17b68ad28ab69c56
 # Understanding and Improving Hyperbolic Deep Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.14202](https://arxiv.org/abs/2512.14202)
-**Code**: [GitHub](https://github.com/Probabilistic-and-Interactive-ML/hyper-rl)
+**arXiv**: [2512.14202](https://arxiv.org/abs/2512.14202)  
+**Code**: [GitHub](https://github.com/Probabilistic-and-Interactive-ML/hyper-rl)  
 **Area**: Reinforcement Learning
 **Keywords**: hyperbolic geometry, PPO, gradient analysis, RMSNorm, categorical value loss
 
@@ -48,19 +48,19 @@ Hyper++ adopts a hybrid Euclidean-hyperbolic encoder architecture (Impala-ResNet
 ### Key Designs
 
 1. **RMSNorm Regularization (replacing SpectralNorm)**
-   - Function: Constrains the Euclidean embedding norm at the encoder output, preventing gradient explosion through the hyperbolic exponential map.
-   - Mechanism: RMSNorm with $1/\sqrt{d}$ scaling is applied only to the pre-activation output of the final linear layer. Proposition 4.2 guarantees that for 1-Lipschitz activations (ReLU/TanH), $\|\hat{\mathbf{x}}\|_2 < 1$, which in turn bounds the conformal factor as $\lambda < 2\cosh^2(\sqrt{c})$.
-   - Design Motivation: Lemma 4.1 shows that SpectralNorm must be applied to all encoder layers to effectively constrain the norm, but doing so severely restricts the Lipschitz constant and expressive capacity. RMSNorm requires only the final layer, preserving the freedom of all preceding layers.
+    - Function: Constrains the Euclidean embedding norm at the encoder output, preventing gradient explosion through the hyperbolic exponential map.
+    - Mechanism: RMSNorm with $1/\sqrt{d}$ scaling is applied only to the pre-activation output of the final linear layer. Proposition 4.2 guarantees that for 1-Lipschitz activations (ReLU/TanH), $\|\hat{\mathbf{x}}\|_2 < 1$, which in turn bounds the conformal factor as $\lambda < 2\cosh^2(\sqrt{c})$.
+    - Design Motivation: Lemma 4.1 shows that SpectralNorm must be applied to all encoder layers to effectively constrain the norm, but doing so severely restricts the Lipschitz constant and expressive capacity. RMSNorm requires only the final layer, preserving the freedom of all preceding layers.
 
 2. **Learned Euclidean Feature Scaling**
-   - Function: Expands the usable volume of hyperbolic space after RMSNorm constrains the embedding norm.
-   - Mechanism: A scalar $\xi_\theta$ is learned to rescale embeddings as $\hat{\mathbf{x}}_E^{\text{rescale}} = \rho_{\max} \cdot \sigma(\xi_\theta) \cdot \hat{\mathbf{x}}_E$, where $\rho_{\max} = \operatorname{atanh}(\alpha)/\sqrt{c}$ and $\alpha=0.95$.
-   - Design Motivation: RMSNorm restricts the usable Poincaré Ball radius to 0.76 (at $c=1$). Since usable volume scales as $\propto r^d$, at $d=32$ the volume gain from extending the radius to 0.95 is approximately $(0.95/0.76)^{32} \approx 1200\times$.
+    - Function: Expands the usable volume of hyperbolic space after RMSNorm constrains the embedding norm.
+    - Mechanism: A scalar $\xi_\theta$ is learned to rescale embeddings as $\hat{\mathbf{x}}_E^{\text{rescale}} = \rho_{\max} \cdot \sigma(\xi_\theta) \cdot \hat{\mathbf{x}}_E$, where $\rho_{\max} = \operatorname{atanh}(\alpha)/\sqrt{c}$ and $\alpha=0.95$.
+    - Design Motivation: RMSNorm restricts the usable Poincaré Ball radius to 0.76 (at $c=1$). Since usable volume scales as $\propto r^d$, at $d=32$ the volume gain from extending the radius to 0.95 is approximately $(0.95/0.76)^{32} \approx 1200\times$.
 
 3. **Hyperboloid Model + HL-Gauss Categorical Value Loss**
-   - Function: Eliminates sources of instability at both the geometric and loss levels.
-   - Mechanism: The Hyperboloid MLR contains no conformal factor (the $v^{\text{HB}}$ formula lacks the $(1-c\|\mathbf{x}\|^2)^{-1}$ term), yielding more stable gradients. HL-Gauss reformulates value function learning as a classification problem over 51 discrete bins, geometrically aligned with the hyperplane distance outputs of hyperbolic MLR.
-   - Design Motivation: The Poincaré Ball MLR gradient scales as $\propto (1-c\|\mathbf{x}_H\|^2)^{-2}$, exploding near the boundary. MSE regression is geometrically mismatched with hyperbolic MLR, whereas categorical losses provide a more natural alignment.
+    - Function: Eliminates sources of instability at both the geometric and loss levels.
+    - Mechanism: The Hyperboloid MLR contains no conformal factor (the $v^{\text{HB}}$ formula lacks the $(1-c\|\mathbf{x}\|^2)^{-1}$ term), yielding more stable gradients. HL-Gauss reformulates value function learning as a classification problem over 51 discrete bins, geometrically aligned with the hyperplane distance outputs of hyperbolic MLR.
+    - Design Motivation: The Poincaré Ball MLR gradient scales as $\propto (1-c\|\mathbf{x}_H\|^2)^{-2}$, exploding near the boundary. MSE regression is geometrically mismatched with hyperbolic MLR, whereas categorical losses provide a more natural alignment.
 
 ### Loss & Training
 

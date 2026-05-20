@@ -18,8 +18,8 @@ content_hash: f031bf466f48d170
 # Self-Destructive Language Model
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.12186](https://arxiv.org/abs/2505.12186)
-**Code**: [https://github.com/ZJUWYH/seam](https://github.com/ZJUWYH/seam)
+**arXiv**: [2505.12186](https://arxiv.org/abs/2505.12186)  
+**Code**: [https://github.com/ZJUWYH/seam](https://github.com/ZJUWYH/seam)  
 **Area**: LLM Safety
 **Keywords**: harmful fine-tuning defense, self-destructive model, gradient coupling, alignment safety, Hessian-free optimization
 

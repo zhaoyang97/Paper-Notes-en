@@ -18,8 +18,8 @@ content_hash: a8adda6d41919c6f
 # TLB-VFI: Temporal-Aware Latent Brownian Bridge Diffusion for Video Frame Interpolation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04984](https://arxiv.org/abs/2507.04984)
-**Code**: [Project Page](https://github.com/)
+**arXiv**: [2507.04984](https://arxiv.org/abs/2507.04984)  
+**Code**: [Project Page](https://github.com/)  
 **Area**: Video Frame Interpolation / Diffusion Models
 **Keywords**: Video Frame Interpolation, Brownian Bridge Diffusion, Temporal-Aware Autoencoder, 3D Wavelet, Optical Flow Guidance
 

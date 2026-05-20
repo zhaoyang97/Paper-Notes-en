@@ -18,8 +18,8 @@ content_hash: 78861497ee410ea3
 # Efficient and Effective Internal Memory Retrieval for LLM-Based Healthcare Prediction
 
 **Conference**: ACL 2026
-**arXiv**: [2604.07659](https://arxiv.org/abs/2604.07659)
-**Code**: [https://anonymous.4open.science/r/K2K-2390/](https://anonymous.4open.science/r/K2K-2390/)
+**arXiv**: [2604.07659](https://arxiv.org/abs/2604.07659)  
+**Code**: [https://anonymous.4open.science/r/K2K-2390/](https://anonymous.4open.science/r/K2K-2390/)  
 **Area**: Medical Imaging
 **Keywords**: Internal memory retrieval, FFN key-value memory, healthcare prediction, knowledge injection, cross-attention reranking
 

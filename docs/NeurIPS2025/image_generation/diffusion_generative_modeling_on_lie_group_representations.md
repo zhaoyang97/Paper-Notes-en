@@ -18,8 +18,8 @@ content_hash: a28b1106b9c8dc29
 # Diffusion Generative Modeling on Lie Group Representations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.02513](https://arxiv.org/abs/2502.02513)
-**Code**: None
+**arXiv**: [2502.02513](https://arxiv.org/abs/2502.02513)  
+**Code**: None  
 **Area**: Image Generation / Diffusion Models / Lie Groups
 **Keywords**: Lie group representations, generalized score matching, stochastic differential equations, molecular conformation generation, manifold diffusion
 

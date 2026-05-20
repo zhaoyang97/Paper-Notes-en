@@ -18,8 +18,8 @@ content_hash: d20693d6e9596a0e
 # Reliably Detecting Model Failures in Deployment Without Labels
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05047](https://arxiv.org/abs/2506.05047)
-**Code**: [GitHub](https://github.com/teivng/d3m)
+**arXiv**: [2506.05047](https://arxiv.org/abs/2506.05047)  
+**Code**: [GitHub](https://github.com/teivng/d3m)  
 **Area**: Model Monitoring / Distribution Shift Detection / Trustworthy AI
 **Keywords**: Post-deployment degradation monitoring, model disagreement, variational Bayes, label-free detection, clinical AI
 

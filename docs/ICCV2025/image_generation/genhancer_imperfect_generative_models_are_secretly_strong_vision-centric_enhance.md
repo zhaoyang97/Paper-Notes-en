@@ -18,8 +18,8 @@ content_hash: bc1105c2ac5f99e7
 # GenHancer: Imperfect Generative Models are Secretly Strong Vision-Centric Enhancers
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.19480](https://arxiv.org/abs/2503.19480)
-**Code**: [github (mashijie1028/GenHancer)](https://mashijie1028.github.io/GenHancer)
+**arXiv**: [2503.19480](https://arxiv.org/abs/2503.19480)  
+**Code**: [github (mashijie1028/GenHancer)](https://mashijie1028.github.io/GenHancer)  
 **Area**: Visual Representation Enhancement / Image Generation
 **Keywords**: CLIP Enhancement, Generative Models, Fine-Grained Vision, Diffusion Feedback, Lightweight Denoiser
 

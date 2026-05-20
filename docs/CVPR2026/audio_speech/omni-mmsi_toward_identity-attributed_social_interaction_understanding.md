@@ -18,8 +18,8 @@ content_hash: f087cc03abfd4631
 # Omni-MMSI: Toward Identity-Attributed Social Interaction Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00267](https://arxiv.org/abs/2604.00267)
-**Code**: [Project Page](https://sampson-lee.github.io/omni-mmsi-project-page)
+**arXiv**: [2604.00267](https://arxiv.org/abs/2604.00267)  
+**Code**: [Project Page](https://sampson-lee.github.io/omni-mmsi-project-page)  
 **Area**: Audio & Speech / Social Understanding
 **Keywords**: Social Interaction Understanding, Identity Attribution, Multimodal Reasoning, Chain-of-Thought Reasoning, Reference Guidance
 

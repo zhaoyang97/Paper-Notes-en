@@ -18,8 +18,8 @@ content_hash: 37a8f4d4948462cc
 # Evaluating LLMs in Open-Source Games
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.00371](https://arxiv.org/abs/2512.00371)
-**Code**: [https://github.com/swadeshs/llm-osgt](https://github.com/swadeshs/llm-osgt)
+**arXiv**: [2512.00371](https://arxiv.org/abs/2512.00371)  
+**Code**: [https://github.com/swadeshs/llm-osgt](https://github.com/swadeshs/llm-osgt)  
 **Area**: Interpretability
 **Keywords**: Game Theory, Program Equilibrium, Open-Source Games, Multi-Agent Cooperation, Code Transparency
 

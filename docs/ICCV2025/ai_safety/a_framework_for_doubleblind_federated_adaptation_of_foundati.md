@@ -18,8 +18,8 @@ content_hash: 96e33a68dd527505
 # A Framework for Double-Blind Federated Adaptation of Foundation Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.01289](https://arxiv.org/abs/2502.01289)
-**Code**: [https://github.com/tnurbek/blindfed](https://github.com/tnurbek/blindfed)
+**arXiv**: [2502.01289](https://arxiv.org/abs/2502.01289)  
+**Code**: [https://github.com/tnurbek/blindfed](https://github.com/tnurbek/blindfed)  
 **Authors**: Nurbek Tastan (MBZUAI), Karthik Nandakumar (MBZUAI / MSU)
 **Area**: Model Compression / Federated Learning / Privacy Preservation
 **Keywords**: double-blind federated learning, fully homomorphic encryption, split learning, foundation model adaptation, privacy preservation
@@ -56,18 +56,18 @@ BlindFed operates in three stages:
 
 1. **FHE-Friendly Nonlinear Approximations**
 
-   - **Softmax → ASoftmax**: The exponential function is approximated via a Taylor series $e^x \approx \sum_{i=0}^{d} \frac{x^i}{i!}$ (with $d=6$), followed by normalization by the sum of approximated exponentials.
-   - **GELU → Quad**: A quadratic approximation $\text{Quad}(x) = 0.125x^2 + 0.25x + 0.5$.
-   - **Division (in LayerNorm/Softmax) → Goldschmidt algorithm**: $\frac{1}{x} = \prod_{i=0}^{d} (1 + (1-x)^{2^i})$ (with $d=7$).
+    - **Softmax → ASoftmax**: The exponential function is approximated via a Taylor series $e^x \approx \sum_{i=0}^{d} \frac{x^i}{i!}$ (with $d=6$), followed by normalization by the sum of approximated exponentials.
+    - **GELU → Quad**: A quadratic approximation $\text{Quad}(x) = 0.125x^2 + 0.25x + 0.5$.
+    - **Division (in LayerNorm/Softmax) → Goldschmidt algorithm**: $\frac{1}{x} = \prod_{i=0}^{d} (1 + (1-x)^{2^i})$ (with $d=7$).
 
    These approximations ensure that all operations can be performed using only additions and multiplications in the FHE domain.
 
 2. **Parallel Adapter (LoSA) Design**
 
-   - Key design choice: LoRA cannot be used since it requires backpropagation through the FM; a **parallel adapter** is required instead.
-   - The adapter runs in parallel with the FM: $\mathbf{h}_\ell = g_\ell(\mathbf{b}_\ell + \mathbf{h}_{\ell-1}) + \mathbf{h}_{\ell-1}$
-   - Adapter function: $g_\ell(\mathbf{z}) = \alpha \mathbf{W}_\ell^u \text{GELU}(\mathbf{W}_\ell^d \mathbf{z})$
-   - Advantage: Only intermediate representations from the FM (obtained via encrypted inference) are required; no backpropagation gradients through the FM are needed.
+    - Key design choice: LoRA cannot be used since it requires backpropagation through the FM; a **parallel adapter** is required instead.
+    - The adapter runs in parallel with the FM: $\mathbf{h}_\ell = g_\ell(\mathbf{b}_\ell + \mathbf{h}_{\ell-1}) + \mathbf{h}_{\ell-1}$
+    - Adapter function: $g_\ell(\mathbf{z}) = \alpha \mathbf{W}_\ell^u \text{GELU}(\mathbf{W}_\ell^d \mathbf{z})$
+    - Advantage: Only intermediate representations from the FM (obtained via encrypted inference) are required; no backpropagation gradients through the FM are needed.
 
 3. **Block-wise Encrypted Inference Protocol**
 
@@ -75,18 +75,18 @@ BlindFed operates in three stages:
 
 4. **Privacy Enhancement Mechanisms**
 
-   - **Sample-level permutation**: After each block, the server shuffles the order of samples in the batch using a random permutation matrix $\Pi_\ell$. Only the relative permutation $\Pi_{\ell-1}^{-1} \cdot \Pi_\ell$ is revealed to the client, making the absolute permutation unrecoverable — there are $n!$ possible solutions (approximately $2 \times 10^{13}$ when $n=16$).
-   - **Stochastic Block Sampling (SBS)**: Only a subset of block outputs is returned per forward pass; the rest are set to zero. The sampling rule prevents consecutive blocks from being selected simultaneously, since features from adjacent blocks are highly similar and could be exploited for attacks. The expected sampling rate is approximately $L/3$.
+    - **Sample-level permutation**: After each block, the server shuffles the order of samples in the batch using a random permutation matrix $\Pi_\ell$. Only the relative permutation $\Pi_{\ell-1}^{-1} \cdot \Pi_\ell$ is revealed to the client, making the absolute permutation unrecoverable — there are $n!$ possible solutions (approximately $2 \times 10^{13}$ when $n=16$).
+    - **Stochastic Block Sampling (SBS)**: Only a subset of block outputs is returned per forward pass; the rest are set to zero. The sampling rule prevents consecutive blocks from being selected simultaneously, since features from adjacent blocks are highly similar and could be exploited for attacks. The expected sampling rate is approximately $L/3$.
 
 ### Loss & Training
 
 **Stage 1: Offline Distillation (30 epochs)**
 - First 15 epochs — Transformer layer distillation:
-  - Attention matrix distillation: $\mathcal{L}_a = \frac{1}{h} \sum_{i=1}^{h} \| \mathbf{A}_i^{\mathcal{S}} - \mathbf{A}_i^{\mathcal{T}} \|^2$
-  - Hidden state distillation: $\mathcal{L}_h = \| \mathbf{H}^{\mathcal{S}} - \mathbf{H}^{\mathcal{T}} \|^2$
-  - Total loss: $\mathcal{L} = \mathcal{L}_a + \mathcal{L}_h$
+    - Attention matrix distillation: $\mathcal{L}_a = \frac{1}{h} \sum_{i=1}^{h} \| \mathbf{A}_i^{\mathcal{S}} - \mathbf{A}_i^{\mathcal{T}} \|^2$
+    - Hidden state distillation: $\mathcal{L}_h = \| \mathbf{H}^{\mathcal{S}} - \mathbf{H}^{\mathcal{T}} \|^2$
+    - Total loss: $\mathcal{L} = \mathcal{L}_a + \mathcal{L}_h$
 - Last 15 epochs — prediction layer distillation:
-  - $\mathcal{L}_p = \mathcal{L}_{CE}(\mathbf{z}^{\mathcal{S}}/\tau, \mathbf{z}^{\mathcal{T}}/\tau)$, with temperature $\tau=5$
+    - $\mathcal{L}_p = \mathcal{L}_{CE}(\mathbf{z}^{\mathcal{S}}/\tau, \mathbf{z}^{\mathcal{T}}/\tau)$, with temperature $\tau=5$
 
 **Stage 2: Federated Adaptation**
 - Cross-entropy loss, SGD optimizer (lr=0.001), 50 communication rounds, learning rate decayed by 0.1 at rounds 25 and 40.

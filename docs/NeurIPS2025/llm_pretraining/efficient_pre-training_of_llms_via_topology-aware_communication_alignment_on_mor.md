@@ -19,8 +19,8 @@ content_hash: b0b1e7f81c25fcc8
 # Efficient Pre-Training of LLMs via Topology-Aware Communication Alignment on More Than 9600 GPUs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15940](https://arxiv.org/abs/2509.15940)
-**Code**: To be confirmed
+**arXiv**: [2509.15940](https://arxiv.org/abs/2509.15940)  
+**Code**: To be confirmed  
 **Area**: LLM Pre-Training
 **Keywords**: distributed training, GPU scheduling, network topology, communication alignment, hybrid parallelism, MIP
 

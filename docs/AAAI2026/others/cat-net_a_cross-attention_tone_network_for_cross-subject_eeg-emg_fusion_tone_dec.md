@@ -17,8 +17,8 @@ content_hash: ce10004acdf7724f
 # CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10935](https://arxiv.org/abs/2511.10935)
-**Code**: [github.com/YifanZhuang/CAT-Net](https://github.com/YifanZhuang/CAT-Net)
+**arXiv**: [2511.10935](https://arxiv.org/abs/2511.10935)  
+**Code**: [github.com/YifanZhuang/CAT-Net](https://github.com/YifanZhuang/CAT-Net)  
 **Area**: Other
 **Keywords**: Brain-Computer Interface, EEG-EMG Fusion, Cross-Attention, Mandarin Tone Classification, Cross-Subject Generalization
 

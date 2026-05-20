@@ -18,8 +18,8 @@ content_hash: 0d51c7fd1d7be2df
 # MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17730](https://arxiv.org/abs/2604.17730)
-**Code**: [GitHub](https://github.com/suhyun565/MHSafeEval)
+**arXiv**: [2604.17730](https://arxiv.org/abs/2604.17730)  
+**Code**: [GitHub](https://github.com/suhyun565/MHSafeEval)  
 **Area**: Medical Imaging
 **Keywords**: mental health safety, role-awareness, multi-turn dialogue evaluation, adversarial interaction, LLM safety benchmark
 

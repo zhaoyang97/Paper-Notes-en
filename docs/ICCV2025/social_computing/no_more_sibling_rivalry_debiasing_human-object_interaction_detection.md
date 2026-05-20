@@ -18,8 +18,8 @@ content_hash: 2b1b0ee32ba48bc7
 # No More Sibling Rivalry: Debiasing Human-Object Interaction Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.00760](https://arxiv.org/abs/2509.00760)
-**Code**: None
+**arXiv**: [2509.00760](https://arxiv.org/abs/2509.00760)  
+**Code**: None  
 **Area**: Social Computing
 **Keywords**: Human-Object Interaction Detection, Toxic Siblings Bias, Contrastive-Calibration Learning, Merge-then-Split Strategy, Debiasing
 

@@ -18,8 +18,8 @@ content_hash: d231d82a43b63e7b
 # EmotionThinker: Prosody-Aware Reinforcement Learning for Explainable Speech Emotion Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.15668](https://arxiv.org/abs/2601.15668)
-**Code**: [Available](https://github.com/dingdongwang/EmotionThinker)
+**arXiv**: [2601.15668](https://arxiv.org/abs/2601.15668)  
+**Code**: [Available](https://github.com/dingdongwang/EmotionThinker)  
 **Area**: Audio & Speech
 **Keywords**: Speech Emotion Recognition, Explainable Reasoning, Reinforcement Learning, Prosody-Aware, Chain-of-Thought
 
@@ -48,10 +48,10 @@ Three-stage training pipeline:
 - 35K audio–reasoning pairs (~200 hours) covering 9 emotion categories (Neutral/Happy/Sad/Angry/Contempt/Confused/Whisper/Surprise/Fear).
 - Sources: IEMOCAP, MELD, Expresso, MEAD, EARS.
 - Automated annotation pipeline extracting:
-  - Low-level features: speaking rate, pitch, energy (standard speech tools).
-  - Stressed words: identified from transcripts via WhiStress.
-  - Intonation contours: frame-level pitch-energy trajectories smoothed with Savitzky-Golay filtering, classified into coarse-grained styles (expressive/flat) and fine-grained patterns (rising/falling/rise-fall/fall-rise).
-  - Speaker attributes: gender and age group via wav2vec2.0 classifier.
+    - Low-level features: speaking rate, pitch, energy (standard speech tools).
+    - Stressed words: identified from transcripts via WhiStress.
+    - Intonation contours: frame-level pitch-energy trajectories smoothed with Savitzky-Golay filtering, classified into coarse-grained styles (expressive/flat) and fine-grained patterns (rising/falling/rise-fall/fall-rise).
+    - Speaker attributes: gender and age group via wav2vec2.0 classifier.
 - All prosodic annotations are used as contextual prompts for GPT-4o to generate step-by-step reasoning trajectories.
 - The first prosody-aware CoT dataset, covering dimensions far beyond existing speech description datasets.
 
@@ -69,10 +69,10 @@ Three reward signals:
 1. **Format Reward $R_f$**: Binary (0/1) signal indicating whether the output follows the think/answer XML format.
 2. **Outcome Accuracy Reward $R_o$**: Binary (0/1) signal indicating whether the predicted label matches the ground truth.
 3. **Reasoning Quality Reward $R_t$**: Scored by a trained reward model (Qwen2.5-Omni-3B fine-tuned on 101.4K samples) across four dimensions (1–5 scale):
-   - Factual alignment
-   - Interpretative quality
-   - Caption completeness
-   - Fluency and structural clarity
+    - Factual alignment
+    - Interpretative quality
+    - Caption completeness
+    - Fluency and structural clarity
 
 **Trustworthiness Weight $\tau$**:
 - Sampled responses are divided into two groups (correct/incorrect outcomes); the mean reasoning reward of each group is computed.

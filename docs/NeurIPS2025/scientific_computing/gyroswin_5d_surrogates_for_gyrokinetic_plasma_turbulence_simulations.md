@@ -18,8 +18,8 @@ content_hash: 797851184007cbc6
 # GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07314](https://arxiv.org/abs/2510.07314)
-**Code**: [ml-jku/neural-gyrokinetics](https://github.com/ml-jku/neural-gyrokinetics)
+**arXiv**: [2510.07314](https://arxiv.org/abs/2510.07314)  
+**Code**: [ml-jku/neural-gyrokinetics](https://github.com/ml-jku/neural-gyrokinetics)  
 **Area**: Scientific Computing
 **Keywords**: plasma turbulence, gyrokinetics, 5D surrogate model, Swin Transformer, nuclear fusion
 

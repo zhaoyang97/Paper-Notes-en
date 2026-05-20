@@ -18,8 +18,8 @@ content_hash: 62bdd59f88dc31c5
 # Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.17089](https://arxiv.org/abs/2505.17089)
-**Code**: None
+**arXiv**: [2505.17089](https://arxiv.org/abs/2505.17089)  
+**Code**: None  
 **Area**: LLM Reasoning / Safety Defense
 **Keywords**: adversarial defense, chain-of-thought, jailbreak, seamless response, inference-time defense
 
@@ -49,21 +49,21 @@ ASE prepends two CoT reasoning steps as a "warm-up" at inference time: $x \right
 
 1. **Step 1: Adversarial Scenario Generation ($r_{scenario}$)**
 
-   - **Function**: The LLM autonomously infers potential adversarial scenarios based on the received query.
-   - **Mechanism**: Rather than assuming a specific threat type, the LLM broadly considers ways the query could be misused, even when the query appears benign.
-   - **Design Motivation**: Even when the inferred adversarial scenarios are inaccurate, this process shifts the LLM into a "risk-aware" state, reducing overconfidence.
+    - **Function**: The LLM autonomously infers potential adversarial scenarios based on the received query.
+    - **Mechanism**: Rather than assuming a specific threat type, the LLM broadly considers ways the query could be misused, even when the query appears benign.
+    - **Design Motivation**: Even when the inferred adversarial scenarios are inaccurate, this process shifts the LLM into a "risk-aware" state, reducing overconfidence.
 
 2. **Step 2: Defensive Strategy Formulation ($r_{defense}$)**
 
-   - **Function**: Generate mitigation strategies targeting the inferred adversarial scenarios.
-   - **Mechanism**: The LLM practices formulating defensive responses within adversarial contexts, forming a "defensive cocoon."
-   - **Design Motivation**: This "defense rehearsal" further reinforces the LLM's safety awareness, generating strong defensive momentum.
+    - **Function**: Generate mitigation strategies targeting the inferred adversarial scenarios.
+    - **Mechanism**: The LLM practices formulating defensive responses within adversarial contexts, forming a "defensive cocoon."
+    - **Design Motivation**: This "defense rehearsal" further reinforces the LLM's safety awareness, generating strong defensive momentum.
 
 3. **Step 3: Guarded Response Generation**
 
-   - **Function**: Generate a guarded response to the original query based on the preceding two-step analysis.
-   - **Mechanism**: Responses typically consist of: a soft refusal statement + an explanation of the refusal + alternative assistance available to the user.
-   - **Design Motivation**: Avoids harmful content while refraining from blunt, unhelpful rejections.
+    - **Function**: Generate a guarded response to the original query based on the preceding two-step analysis.
+    - **Mechanism**: Responses typically consist of: a soft refusal statement + an explanation of the refusal + alternative assistance available to the user.
+    - **Design Motivation**: Avoids harmful content while refraining from blunt, unhelpful rejections.
 
 ### Three Core Robustness Advantages
 - **Momentum**: The defensive momentum generated through deep reasoning cannot be neutralized by "ignore previous instructions"-style attacks.

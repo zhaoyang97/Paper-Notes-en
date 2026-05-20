@@ -19,8 +19,8 @@ content_hash: 168f1cf2f391a056
 # DiVE-k: Differential Visual Reasoning for Fine-grained Image Recognition
 
 **Conference**: ICLR2026
-**arXiv**: [2511.18305](https://arxiv.org/abs/2511.18305)
-**Code**: [raja-kumar/DiVE-k](https://github.com/raja-kumar/DiVE-k)
+**arXiv**: [2511.18305](https://arxiv.org/abs/2511.18305)  
+**Code**: [raja-kumar/DiVE-k](https://github.com/raja-kumar/DiVE-k)  
 **Area**: Reinforcement Learning
 **Keywords**: fine-grained recognition, reinforcement-learning, GRPO, visual reasoning, multiple-choice question, LVLM
 

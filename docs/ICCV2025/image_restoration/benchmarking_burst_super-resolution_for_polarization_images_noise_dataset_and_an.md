@@ -18,8 +18,8 @@ content_hash: eaf1a2cbd619063b
 # Benchmarking Burst Super-Resolution for Polarization Images: Noise Dataset and Analysis
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.18705](https://arxiv.org/abs/2503.18705)
-**Code**: None
+**arXiv**: [2503.18705](https://arxiv.org/abs/2503.18705)  
+**Code**: None  
 **Area**: Image Restoration / Polarization Imaging
 **Keywords**: polarization image super-resolution, burst super-resolution, noise modeling, polarization dataset, noise propagation analysis
 

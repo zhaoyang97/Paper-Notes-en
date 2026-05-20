@@ -19,8 +19,8 @@ content_hash: 9571e0ed0fb38bbc
 # AdvMark: Decoupling Defense Strategies for Robust Image Watermarking
 
 **Conference**: CVPR2026
-**arXiv**: [2602.20053](https://arxiv.org/abs/2602.20053)
-**Code**: N/A
+**arXiv**: [2602.20053](https://arxiv.org/abs/2602.20053)  
+**Code**: N/A  
 **Area**: AI Security
 **Keywords**: Image Watermarking, Adversarial Robustness, Diffusion Regeneration Attack, Decoupled Training, Adversarial Training, Image Quality
 

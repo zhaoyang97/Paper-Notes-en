@@ -18,8 +18,8 @@ content_hash: 38f46e56aa0aba86
 # Score2Instruct: Scaling Up Video Quality-Centric Instructions via Automated Dimension Scoring
 
 **Conference**: CVPR 2026
-**arXiv**: [2506.21011](https://arxiv.org/abs/2506.21011)
-**Code**: [https://github.com/KeiChiTse/S2I](https://github.com/KeiChiTse/S2I)
+**arXiv**: [2506.21011](https://arxiv.org/abs/2506.21011)  
+**Code**: [https://github.com/KeiChiTse/S2I](https://github.com/KeiChiTse/S2I)  
 **Area**: Image Generation
 **Keywords**: Video Quality Assessment, Instruction Tuning, Automated Scoring, Quality Reasoning, Large Multimodal Models
 

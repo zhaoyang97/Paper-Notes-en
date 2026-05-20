@@ -18,8 +18,8 @@ content_hash: 900d71c1d1932609
 # Author-in-the-Loop Response Generation and Evaluation: Integrating Author Expertise and Intent in Responses to Peer Review
 
 **Conference**: ACL 2026
-**arXiv**: [2602.11173](https://arxiv.org/abs/2602.11173)
-**Code**: [https://github.com/UKPLab/acl2026-respgen-respeval](https://github.com/UKPLab/acl2026-respgen-respeval)
+**arXiv**: [2602.11173](https://arxiv.org/abs/2602.11173)  
+**Code**: [https://github.com/UKPLab/acl2026-respgen-respeval](https://github.com/UKPLab/acl2026-respgen-respeval)  
 **Area**: Dialogue / Scientific Document Processing
 **Keywords**: author rebuttal generation, peer review, human-in-the-loop, controllable text generation, evaluation framework
 

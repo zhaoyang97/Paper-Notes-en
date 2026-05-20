@@ -18,8 +18,8 @@ content_hash: 59f2370d0e1a6191
 # T-Rex-Omni: Integrating Negative Visual Prompt in Generic Object Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08997](https://arxiv.org/abs/2511.08997)
-**Code**: None (built on T-Rex2 architecture)
+**arXiv**: [2511.08997](https://arxiv.org/abs/2511.08997)  
+**Code**: None (built on T-Rex2 architecture)  
 **Area**: Object Detection
 **Keywords**: Open-set detection, negative visual prompts, long-tail recognition, visual prompting, zero-shot detection
 

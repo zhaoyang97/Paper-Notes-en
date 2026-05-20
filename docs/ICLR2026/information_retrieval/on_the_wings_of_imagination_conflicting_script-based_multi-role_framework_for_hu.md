@@ -19,8 +19,8 @@ content_hash: 38648a4f61f7db45
 # On the Wings of Imagination: Conflicting Script-based Multi-role Framework for Humor Caption Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.06423](https://arxiv.org/abs/2602.06423)
-**Code**: None
+**arXiv**: [2602.06423](https://arxiv.org/abs/2602.06423)  
+**Code**: None  
 **Area**: Information Retrieval
 **Keywords**: humor generation, GTVH theory, script opposition, imagination tree, LLM collaboration, multi-role framework
 

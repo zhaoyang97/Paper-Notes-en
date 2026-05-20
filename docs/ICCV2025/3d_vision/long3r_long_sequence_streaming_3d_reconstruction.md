@@ -18,8 +18,8 @@ content_hash: 25654ffc5bbf1c27
 # LONG3R: Long Sequence Streaming 3D Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.18255](https://arxiv.org/abs/2507.18255)
-**Code**: [Project Page](https://zgchen33.github.io/LONG3R/)
+**arXiv**: [2507.18255](https://arxiv.org/abs/2507.18255)  
+**Code**: [Project Page](https://zgchen33.github.io/LONG3R/)  
 **Area**: 3D Vision
 **Keywords**: Streaming 3D reconstruction, pointmap regression, spatio-temporal memory, long-sequence reconstruction, real-time inference
 

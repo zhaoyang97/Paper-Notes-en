@@ -18,8 +18,8 @@ content_hash: ba3cd579616986a6
 # UAVGen: Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02966](https://arxiv.org/abs/2604.02966)
-**Code**: [https://github.com/Sirius-Li/UAVGen](https://github.com/Sirius-Li/UAVGen)
+**arXiv**: [2604.02966](https://arxiv.org/abs/2604.02966)  
+**Code**: [https://github.com/Sirius-Li/UAVGen](https://github.com/Sirius-Li/UAVGen)  
 **Area**: Object Detection / UAV Vision
 **Keywords**: UAV detection, layout-to-image generation, diffusion model, data augmentation, small object
 

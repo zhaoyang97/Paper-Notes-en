@@ -18,8 +18,8 @@ content_hash: afefa862cf2e9ebd
 # Precise Object and Effect Removal with Adaptive Target-Aware Attention
 
 **Conference**: CVPR 2026
-**arXiv**: [2505.22636](https://arxiv.org/abs/2505.22636)
-**Code**: [https://zjx0101.github.io/projects/ObjectClear](https://zjx0101.github.io/projects/ObjectClear)
+**arXiv**: [2505.22636](https://arxiv.org/abs/2505.22636)  
+**Code**: [https://zjx0101.github.io/projects/ObjectClear](https://zjx0101.github.io/projects/ObjectClear)  
 **Area**: Image Generation
 **Keywords**: Object Removal, Shadow/Reflection Elimination, Diffusion Models, Attention-Guided Fusion, Dataset Construction
 

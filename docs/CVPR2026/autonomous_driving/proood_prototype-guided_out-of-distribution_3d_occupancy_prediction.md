@@ -18,8 +18,8 @@ content_hash: 1936b82836828479
 # ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01081](https://arxiv.org/abs/2604.01081)
-**Code**: [https://github.com/7uHeng/ProOOD](https://github.com/7uHeng/ProOOD)
+**arXiv**: [2604.01081](https://arxiv.org/abs/2604.01081)  
+**Code**: [https://github.com/7uHeng/ProOOD](https://github.com/7uHeng/ProOOD)  
 **Area**: Autonomous Driving / 3D Vision
 **Keywords**: 3D occupancy prediction, out-of-distribution detection, prototype learning, long-tail distribution, semantic completion
 

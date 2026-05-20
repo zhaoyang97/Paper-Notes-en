@@ -18,8 +18,8 @@ content_hash: 78fb115383610186
 # Interpretable and Steerable Concept Bottleneck Sparse Autoencoders
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.10805](https://arxiv.org/abs/2512.10805)
-**Code**: [GitHub](https://github.com/Trustworthy-ML-Lab/CB-SAE)
+**arXiv**: [2512.10805](https://arxiv.org/abs/2512.10805)  
+**Code**: [GitHub](https://github.com/Trustworthy-ML-Lab/CB-SAE)  
 **Area**: Image Generation
 **Keywords**: Sparse Autoencoders, Concept Bottleneck, Interpretability, Steerability, Mechanistic Interpretability
 

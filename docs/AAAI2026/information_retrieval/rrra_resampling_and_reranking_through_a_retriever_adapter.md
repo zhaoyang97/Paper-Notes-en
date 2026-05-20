@@ -18,8 +18,8 @@ content_hash: ebdc8606da7e5651
 # RRRA: Resampling and Reranking through a Retriever Adapter
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.11670](https://arxiv.org/abs/2508.11670)
-**Code**: None
+**arXiv**: [2508.11670](https://arxiv.org/abs/2508.11670)  
+**Code**: None  
 **Area**: Information Retrieval
 **Keywords**: Dense Retrieval, Negative Sampling, False Negative Detection, Lightweight Adapter, Reranking
 

@@ -18,8 +18,8 @@ content_hash: d77545206908572b
 # Actor-Free Continuous Control via Structurally Maximizable Q-Functions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18828](https://arxiv.org/abs/2510.18828)
-**Code**: [https://github.com/USC-Lira/Q3C](https://github.com/USC-Lira/Q3C)
+**arXiv**: [2510.18828](https://arxiv.org/abs/2510.18828)  
+**Code**: [https://github.com/USC-Lira/Q3C](https://github.com/USC-Lira/Q3C)  
 **Area**: Reinforcement Learning
 **Keywords**: actor-free Q-learning, continuous control, control points, wire-fitting, structural maximization
 
@@ -51,21 +51,21 @@ Q3C consists of three components: (1) a control-point generator $g_\phi(s)$ that
 
 1. **Wire-Fitting Interpolation for Structural Maximization**
 
-   - **Function**: Construct the Q-function such that its maximum is guaranteed to be attained at a control point.
-   - **Mechanism**: $Q(s,a) = \frac{\sum_i \hat{Q}_i w_i}{\sum_i w_i}$, where weights $w_i = \frac{1}{|a - \hat{a}_i|^2 + c_i(\hat{Q}_{\max} - \hat{Q}_i)}$. As $a$ approaches the control point with the highest Q-value, the corresponding weight diverges and $Q$ converges to that value. The authors prove this interpolation retains universal approximation capability (Proposition).
-   - **Design Motivation**: Compared with NAF's quadratic restriction and RBF-DQN's failure to guarantee the maximum at basis points, wire-fitting provides both sufficient expressive power and a structural guarantee on the location of the maximum.
+    - **Function**: Construct the Q-function such that its maximum is guaranteed to be attained at a control point.
+    - **Mechanism**: $Q(s,a) = \frac{\sum_i \hat{Q}_i w_i}{\sum_i w_i}$, where weights $w_i = \frac{1}{|a - \hat{a}_i|^2 + c_i(\hat{Q}_{\max} - \hat{Q}_i)}$. As $a$ approaches the control point with the highest Q-value, the corresponding weight diverges and $Q$ converges to that value. The authors prove this interpolation retains universal approximation capability (Proposition).
+    - **Design Motivation**: Compared with NAF's quadratic restriction and RBF-DQN's failure to guarantee the maximum at basis points, wire-fitting provides both sufficient expressive power and a structural guarantee on the location of the maximum.
 
 2. **Action-Conditioned Q-Value Generation**
 
-   - **Function**: Ensure consistency between Q-value estimates and control-point locations.
-   - **Mechanism**: The architecture is decomposed into two stages—the control-point generator $g_\phi(s)$ outputs $N$ actions, and a shared Q-estimator $h_\psi(s, \hat{a}_i)$ evaluates each control point independently. Sharing the Q-estimator across all control points enforces consistent Q-values for identical or nearby actions.
-   - **Design Motivation**: In the original wire-fitting formulation, Q-values and control-point locations are predicted independently, potentially assigning entirely different Q-values to identically located control points, which destabilizes training.
+    - **Function**: Ensure consistency between Q-value estimates and control-point locations.
+    - **Mechanism**: The architecture is decomposed into two stages—the control-point generator $g_\phi(s)$ outputs $N$ actions, and a shared Q-estimator $h_\psi(s, \hat{a}_i)$ evaluates each control point independently. Sharing the Q-estimator across all control points enforces consistent Q-values for identical or nearby actions.
+    - **Design Motivation**: In the original wire-fitting formulation, Q-values and control-point locations are predicted independently, potentially assigning entirely different Q-values to identically located control points, which destabilizes training.
 
 3. **Control-Point Diversity and Scale Normalization**
 
-   - **Function**: Prevent control-point collapse and ensure robustness to scale variation across tasks.
-   - **Mechanism**: A separation loss $L_{\text{sep}} = \frac{1}{N(N-1)} \sum_{i \neq j} \frac{1}{\|\hat{a}_i - \hat{a}_j\|_2 + \epsilon}$ encourages uniform spread of the control points. The Q-value difference term in the wire-fitting weights is normalized as $\tilde{Q}_i = (\hat{Q}_i - \hat{Q}_{\min})/(\hat{Q}_{\max} - \hat{Q}_{\min})$, and the smoothing coefficient $c_i$ is decayed exponentially, rendering the method robust to varying reward scales and action ranges.
-   - **Design Motivation**: Without regularization, control points tend to collapse toward the boundaries of the action space (as observed empirically), degrading the expressive capacity of the Q-function.
+    - **Function**: Prevent control-point collapse and ensure robustness to scale variation across tasks.
+    - **Mechanism**: A separation loss $L_{\text{sep}} = \frac{1}{N(N-1)} \sum_{i \neq j} \frac{1}{\|\hat{a}_i - \hat{a}_j\|_2 + \epsilon}$ encourages uniform spread of the control points. The Q-value difference term in the wire-fitting weights is normalized as $\tilde{Q}_i = (\hat{Q}_i - \hat{Q}_{\min})/(\hat{Q}_{\max} - \hat{Q}_{\min})$, and the smoothing coefficient $c_i$ is decayed exponentially, rendering the method robust to varying reward scales and action ranges.
+    - **Design Motivation**: Without regularization, control points tend to collapse toward the boundaries of the action space (as observed empirically), degrading the expressive capacity of the Q-function.
 
 ### Loss & Training
 

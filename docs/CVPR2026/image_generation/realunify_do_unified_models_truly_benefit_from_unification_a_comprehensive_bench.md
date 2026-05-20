@@ -18,8 +18,8 @@ content_hash: 45504145685f49cc
 # RealUnify: Do Unified Models Truly Benefit from Unification? A Comprehensive Benchmark
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.24897](https://arxiv.org/abs/2509.24897)
-**Code**: [https://github.com/FrankYang-17/RealUnify](https://github.com/FrankYang-17/RealUnify)
+**arXiv**: [2509.24897](https://arxiv.org/abs/2509.24897)  
+**Code**: [https://github.com/FrankYang-17/RealUnify](https://github.com/FrankYang-17/RealUnify)  
 **Area**: Image Generation
 **Keywords**: unified models, capability synergy, understanding and generation, benchmark, bidirectional evaluation
 

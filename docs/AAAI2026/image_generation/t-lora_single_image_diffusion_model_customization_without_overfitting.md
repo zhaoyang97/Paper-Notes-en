@@ -18,8 +18,8 @@ content_hash: 9d7daaf5956a921f
 # T-LoRA: Single Image Diffusion Model Customization Without Overfitting
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.05964](https://arxiv.org/abs/2507.05964)
-**Code**: [https://controlgenai.github.io/T-LoRA/](https://controlgenai.github.io/T-LoRA/)
+**arXiv**: [2507.05964](https://arxiv.org/abs/2507.05964)  
+**Code**: [https://controlgenai.github.io/T-LoRA/](https://controlgenai.github.io/T-LoRA/)  
 **Area**: Image Generation
 **Keywords**: Diffusion model customization, LoRA, overfitting, timestep dependency, orthogonal initialization
 

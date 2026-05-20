@@ -18,8 +18,8 @@ content_hash: fc732d8690de0779
 # The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21494](https://arxiv.org/abs/2601.21494)
-**Code**: None
+**arXiv**: [2601.21494](https://arxiv.org/abs/2601.21494)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: self-consistency, inference efficiency, prefix clustering, reasoning, token reduction
 

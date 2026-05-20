@@ -18,8 +18,8 @@ content_hash: f28799fe155eb8e9
 # LawDIS: Language-Window-based Controllable Dichotomous Image Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.01152](https://arxiv.org/abs/2508.01152)
-**Code**: [GitHub](https://github.com/XinyuYanTJU/LawDIS)
+**arXiv**: [2508.01152](https://arxiv.org/abs/2508.01152)  
+**Code**: [GitHub](https://github.com/XinyuYanTJU/LawDIS)  
 **Area**: Image Segmentation
 **Keywords**: Dichotomous image segmentation, latent diffusion model, language control, window refinement, high-precision segmentation
 

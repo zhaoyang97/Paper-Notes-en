@@ -18,8 +18,8 @@ content_hash: 306715d18b8e6211
 # Referring Layer Decomposition
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.19358](https://arxiv.org/abs/2602.19358)
-**Code**: [https://yaojie-shen.github.io/project/RLD/](https://yaojie-shen.github.io/project/RLD/)
+**arXiv**: [2602.19358](https://arxiv.org/abs/2602.19358)  
+**Code**: [https://yaojie-shen.github.io/project/RLD/](https://yaojie-shen.github.io/project/RLD/)  
 **Area**: Image Decomposition / Image Editing
 **Keywords**: Layer Decomposition, RGBA Layers, Multimodal Referring Input, Data Engine, RefLayer
 

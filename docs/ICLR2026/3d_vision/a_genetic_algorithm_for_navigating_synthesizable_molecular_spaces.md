@@ -18,8 +18,8 @@ content_hash: 4be109bda86127c1
 # A Genetic Algorithm for Navigating Synthesizable Molecular Spaces
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.20719](https://arxiv.org/abs/2509.20719)
-**Code**: [https://github.com/alstonlo/synga](https://github.com/alstonlo/synga)
+**arXiv**: [2509.20719](https://arxiv.org/abs/2509.20719)  
+**Code**: [https://github.com/alstonlo/synga](https://github.com/alstonlo/synga)  
 **Area**: Molecular Design / Optimization
 **Keywords**: genetic algorithm, synthesizable molecular design, synthesis routes, Bayesian optimization, building block filtering
 

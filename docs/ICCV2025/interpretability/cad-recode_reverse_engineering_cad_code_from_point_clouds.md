@@ -18,8 +18,8 @@ content_hash: 17d11cd2dcb9cf6a
 # CAD-Recode: Reverse Engineering CAD Code from Point Clouds
 
 **Conference**: ICCV2025
-**arXiv**: [2412.14042](https://arxiv.org/abs/2412.14042)
-**Code**: [filaPro/cad-recode](https://github.com/filaPro/cad-recode)
+**arXiv**: [2412.14042](https://arxiv.org/abs/2412.14042)  
+**Code**: [filaPro/cad-recode](https://github.com/filaPro/cad-recode)  
 **Area**: Interpretability
 **Keywords**: CAD reverse engineering, point cloud reconstruction, large language models, CadQuery, Python code generation
 

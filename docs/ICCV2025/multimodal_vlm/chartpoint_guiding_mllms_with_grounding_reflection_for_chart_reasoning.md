@@ -18,8 +18,8 @@ content_hash: d65558a667f9ed4b
 # ChartPoint: Guiding MLLMs with Grounding Reflection for Chart Reasoning
 
 **Conference**: ICCV 2025
-**arXiv**: [2512.00305](https://arxiv.org/abs/2512.00305)
-**Code**: None
+**arXiv**: [2512.00305](https://arxiv.org/abs/2512.00305)  
+**Code**: None  
 **Area**: Chart Understanding / Multimodal Reasoning
 **Keywords**: Chart Reasoning, Multimodal Large Language Models, Chain-of-Thought, Visual Grounding, Numerical Hallucination
 

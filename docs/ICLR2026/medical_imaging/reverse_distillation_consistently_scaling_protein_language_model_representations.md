@@ -18,8 +18,8 @@ content_hash: e47c580a9501a55a
 # Reverse Distillation: Consistently Scaling Protein Language Model Representations
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.07710](https://arxiv.org/abs/2603.07710)
-**Code**: [GitHub](https://github.com/rohitsinghlab/plm_reverse_distillation)
+**arXiv**: [2603.07710](https://arxiv.org/abs/2603.07710)  
+**Code**: [GitHub](https://github.com/rohitsinghlab/plm_reverse_distillation)  
 **Area**: Protein AI / Representation Learning
 **Keywords**: Reverse Distillation, Protein Language Model, Scaling Behavior, Matryoshka Nested Representations, ESM-2
 

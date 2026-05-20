@@ -18,8 +18,8 @@ content_hash: b20284767703fda1
 # Human Cognition Inspired RAG with Knowledge Graph for Complex Problem Solving
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.06567](https://arxiv.org/abs/2503.06567)
-**Code**: [https://github.com/cy623/RAG.git](https://github.com/cy623/RAG.git)
+**arXiv**: [2503.06567](https://arxiv.org/abs/2503.06567)  
+**Code**: [https://github.com/cy623/RAG.git](https://github.com/cy623/RAG.git)  
 **Area**: Graph Learning
 **Keywords**: RAG, Knowledge Graph, Question Answering, Mind Map, Self-Verification
 

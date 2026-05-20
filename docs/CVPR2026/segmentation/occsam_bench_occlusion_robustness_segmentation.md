@@ -17,8 +17,8 @@ content_hash: 40c4b75780a17e7a
 # Seeing Through the Tool: A Controlled Benchmark for Occlusion Robustness in Foundation Segmentation Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.11711](https://arxiv.org/abs/2604.11711)
-**Code**: N/A
+**arXiv**: [2604.11711](https://arxiv.org/abs/2604.11711)  
+**Code**: N/A  
 **Area**: Image Segmentation
 **Keywords**: Occlusion robustness, SAM, endoscopy, benchmark, segmentation
 

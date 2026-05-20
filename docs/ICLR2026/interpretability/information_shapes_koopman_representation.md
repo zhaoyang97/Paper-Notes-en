@@ -18,8 +18,8 @@ content_hash: 9aa2790657be6892
 # Information Shapes Koopman Representation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.13025](https://arxiv.org/abs/2510.13025)
-**Code**: [https://github.com/Wenxuan52/InformationKoopman](https://github.com/Wenxuan52/InformationKoopman)
+**arXiv**: [2510.13025](https://arxiv.org/abs/2510.13025)  
+**Code**: [https://github.com/Wenxuan52/InformationKoopman](https://github.com/Wenxuan52/InformationKoopman)  
 **Area**: Interpretability
 **Keywords**: koopman operator, information bottleneck, dynamical systems, representation learning, von neumann entropy
 

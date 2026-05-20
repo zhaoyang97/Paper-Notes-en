@@ -18,8 +18,8 @@ content_hash: 33cb39d472aa291e
 # ControlFusion: A Controllable Image Fusion Framework with Language-Vision Degradation Prompts
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.23356](https://arxiv.org/abs/2503.23356)
-**Code**: [https://github.com/Linfeng-Tang/ControlFusion](https://github.com/Linfeng-Tang/ControlFusion)
+**arXiv**: [2503.23356](https://arxiv.org/abs/2503.23356)  
+**Code**: [https://github.com/Linfeng-Tang/ControlFusion](https://github.com/Linfeng-Tang/ControlFusion)  
 **Area**: Image Fusion / Multimodal
 **Keywords**: Infrared-visible fusion, degradation restoration, language-vision prompts, CLIP, controllable fusion
 

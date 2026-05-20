@@ -18,8 +18,8 @@ content_hash: d7ac914cae5c5785
 # SSVQ: Unleashing the Potential of Vector Quantization with Sign-Splitting
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08668](https://arxiv.org/abs/2503.08668)
-**Code**: [https://github.com/list0830/SSVQ](https://github.com/list0830/SSVQ)
+**arXiv**: [2503.08668](https://arxiv.org/abs/2503.08668)  
+**Code**: [https://github.com/list0830/SSVQ](https://github.com/list0830/SSVQ)  
 **Area**: Model Compression / Vector Quantization
 **Keywords**: vector quantization, sign splitting, learnable sign bits, iterative freezing, hardware acceleration
 

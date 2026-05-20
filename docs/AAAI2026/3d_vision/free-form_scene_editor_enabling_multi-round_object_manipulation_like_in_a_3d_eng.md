@@ -18,8 +18,8 @@ content_hash: a3bfeedbf56b7bfa
 # Free-Form Scene Editor: Enabling Multi-Round Object Manipulation like in a 3D Engine
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13713](https://arxiv.org/abs/2511.13713)
-**Code**: [https://github.com/FudanCVL/FFSE](https://github.com/FudanCVL/FFSE)
+**arXiv**: [2511.13713](https://arxiv.org/abs/2511.13713)  
+**Code**: [https://github.com/FudanCVL/FFSE](https://github.com/FudanCVL/FFSE)  
 **Area**: 3D Vision
 **Keywords**: 3D-aware image editing, multi-round editing, autoregressive generation, diffusion models, object manipulation
 

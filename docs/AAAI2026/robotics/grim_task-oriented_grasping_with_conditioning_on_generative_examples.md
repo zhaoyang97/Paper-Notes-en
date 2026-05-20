@@ -18,8 +18,8 @@ content_hash: 02014bba3bd86021
 # GRIM: Task-Oriented Grasping with Conditioning on Generative Examples
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.15607](https://arxiv.org/abs/2506.15607)
-**Code**: [Project Page](https://grim-tog.github.io/)
+**arXiv**: [2506.15607](https://arxiv.org/abs/2506.15607)  
+**Code**: [Project Page](https://grim-tog.github.io/)  
 **Area**: Robotics
 **Keywords**: Task-oriented grasping, training-free, video generation model, semantic alignment, grasp transfer
 

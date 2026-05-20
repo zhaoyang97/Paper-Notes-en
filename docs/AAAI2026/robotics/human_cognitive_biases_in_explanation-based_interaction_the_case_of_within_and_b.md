@@ -18,8 +18,8 @@ content_hash: 8aa46a46359298a1
 # Human Cognitive Biases in Explanation-based Interaction: The Case of Within and Between Session Order Effect
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.04764](https://arxiv.org/abs/2512.04764)
-**Code**: None
+**arXiv**: [2512.04764](https://arxiv.org/abs/2512.04764)  
+**Code**: None  
 **Area**: Robotics (Human-Computer Interaction / Explainable AI)
 **Keywords**: Explanatory Interactive Learning, Cognitive Bias, Order Effect, User Study, XIL
 

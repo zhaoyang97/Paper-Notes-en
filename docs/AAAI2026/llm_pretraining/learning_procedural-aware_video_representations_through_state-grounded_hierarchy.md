@@ -18,8 +18,8 @@ content_hash: ffabcd54bf74fe03
 # Learning Procedural-aware Video Representations through State-Grounded Hierarchy Unfolding
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.20073](https://arxiv.org/abs/2511.20073)
-**Code**: [https://github.com/zhao-jinghan/TSS-unfolding](https://github.com/zhao-jinghan/TSS-unfolding)
+**arXiv**: [2511.20073](https://arxiv.org/abs/2511.20073)  
+**Code**: [https://github.com/zhao-jinghan/TSS-unfolding](https://github.com/zhao-jinghan/TSS-unfolding)  
 **Area**: LLM Pretraining
 **Keywords**: Procedural video understanding, state grounding, hierarchical learning, progressive pretraining, video representation
 

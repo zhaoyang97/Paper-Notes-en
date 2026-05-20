@@ -18,8 +18,8 @@ content_hash: 607775f3595d14de
 # Two Pathways to Truthfulness: On the Intrinsic Encoding of LLM Hallucinations
 
 **Conference**: ACL 2026
-**arXiv**: [2601.07422](https://arxiv.org/abs/2601.07422)
-**Code**: [https://github.com/RowanWenLuo/llm-truthfulness-pathways](https://github.com/RowanWenLuo/llm-truthfulness-pathways)
+**arXiv**: [2601.07422](https://arxiv.org/abs/2601.07422)  
+**Code**: [https://github.com/RowanWenLuo/llm-truthfulness-pathways](https://github.com/RowanWenLuo/llm-truthfulness-pathways)  
 **Area**: LLM Safety
 **Keywords**: Hallucination Detection, Truthfulness Encoding, Attention Mechanism, Information Pathways, Knowledge Boundary
 

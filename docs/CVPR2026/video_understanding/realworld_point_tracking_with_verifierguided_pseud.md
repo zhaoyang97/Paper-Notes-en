@@ -18,8 +18,8 @@ content_hash: 20687e8c6c6159c3
 # Real-World Point Tracking with Verifier-Guided Pseudo-Labeling
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12217](https://arxiv.org/abs/2603.12217)
-**Code**: [kuis-ai.github.io/track_on_r](https://kuis-ai.github.io/track_on_r)
+**arXiv**: [2603.12217](https://arxiv.org/abs/2603.12217)  
+**Code**: [kuis-ai.github.io/track_on_r](https://kuis-ai.github.io/track_on_r)  
 **Area**: Video Understanding / Point Tracking
 **Keywords**: point tracking, pseudo-labeling, verifier, multi-teacher ensemble, sim-to-real adaptation
 

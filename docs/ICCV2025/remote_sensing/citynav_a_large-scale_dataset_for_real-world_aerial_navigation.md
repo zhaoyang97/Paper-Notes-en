@@ -18,8 +18,8 @@ content_hash: dfe962e05e3430b2
 # CityNav: A Large-Scale Dataset for Real-World Aerial Navigation
 
 **Conference**: ICCV 2025
-**arXiv**: [2406.14240](https://arxiv.org/abs/2406.14240)
-**Code**: [Project Page](https://water-cookie.github.io/city-nav-proj/)
+**arXiv**: [2406.14240](https://arxiv.org/abs/2406.14240)  
+**Code**: [Project Page](https://water-cookie.github.io/city-nav-proj/)  
 **Area**: Remote Sensing / Aerial Navigation
 **Keywords**: Vision-and-Language Navigation, UAV, Real World, Geo-Semantic Map, Large-Scale Dataset
 

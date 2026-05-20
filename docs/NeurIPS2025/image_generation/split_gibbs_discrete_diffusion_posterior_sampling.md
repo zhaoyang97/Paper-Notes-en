@@ -18,8 +18,8 @@ content_hash: eb3f77fe2477f0e1
 # Split Gibbs Discrete Diffusion Posterior Sampling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.01161](https://arxiv.org/abs/2503.01161)
-**Code**: [GitHub](https://github.com/chuwd19/Split-Gibbs-Discrete-Diffusion-Posterior-Sampling)
+**arXiv**: [2503.01161](https://arxiv.org/abs/2503.01161)  
+**Code**: [GitHub](https://github.com/chuwd19/Split-Gibbs-Discrete-Diffusion-Posterior-Sampling)  
 **Area**: Diffusion Models / Discrete Generation
 **Keywords**: Discrete Diffusion Models, Posterior Sampling, Split Gibbs Sampling, Inverse Problems, DNA Sequence Design
 

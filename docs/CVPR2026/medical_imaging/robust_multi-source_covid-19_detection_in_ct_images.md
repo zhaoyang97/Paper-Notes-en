@@ -18,8 +18,8 @@ content_hash: 314cd610a2c09962
 # Robust Multi-Source Covid-19 Detection in CT Images
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03320](https://arxiv.org/abs/2604.03320)
-**Code**: [https://github.com/Purdue-M2/-multisource-covid-ct](https://github.com/Purdue-M2/-multisource-covid-ct)
+**arXiv**: [2604.03320](https://arxiv.org/abs/2604.03320)  
+**Code**: [https://github.com/Purdue-M2/-multisource-covid-ct](https://github.com/Purdue-M2/-multisource-covid-ct)  
 **Area**: Medical Imaging
 **Keywords**: COVID-19 detection, multi-source domain, multi-task learning, logit-adjusted loss, CT images
 

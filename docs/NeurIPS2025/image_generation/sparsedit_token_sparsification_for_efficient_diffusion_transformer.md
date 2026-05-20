@@ -18,8 +18,8 @@ content_hash: e998c92bdb98de6e
 # SparseDiT: Token Sparsification for Efficient Diffusion Transformer
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.06028](https://arxiv.org/abs/2412.06028)
-**Code**: None
+**arXiv**: [2412.06028](https://arxiv.org/abs/2412.06028)  
+**Code**: None  
 **Area**: Diffusion Models / Model Efficiency
 **Keywords**: Diffusion Transformer, token sparsification, inference acceleration, timestep-adaptive, architecture design
 
@@ -55,11 +55,11 @@ SparseDiT partitions the Transformer layers of DiT into three segments: Bottom, 
 
 2. **Sparse-Dense Token Module (SDTM, Middle)**: The core module, which decouples global structure extraction from local detail extraction. The pipeline is as follows:
 
-   - **Sparse token generation**: Dense tokens $X \in \mathbb{R}^{N \times C}$ are initialized into sparse tokens $X_s \in \mathbb{R}^{M \times C}$ ($M \ll N$) via spatial adaptive pooling, maintaining spatial uniformity. An attention layer then enables sparse tokens to interact with full-size tokens to integrate global information.
-   - **Sparse Transformer processing**: Subsequent Transformer layers operate solely on sparse tokens, substantially reducing computation.
-   - **Dense token recovery**: Sparse tokens are upsampled and fused with the original dense tokens via two linear layers ($X_{\text{merged}} = \text{UpSample}(X_s) \cdot W_1 + X \cdot W_2$), followed by an attention layer for further integration.
-   - **Dense Transformer processing**: A small number of dense Transformer layers enhance local details.
-   - Multiple SDTMs are stacked in cascade (4 by default), alternating between sparse and dense representations to effectively preserve both structural and detail information.
+    - **Sparse token generation**: Dense tokens $X \in \mathbb{R}^{N \times C}$ are initialized into sparse tokens $X_s \in \mathbb{R}^{M \times C}$ ($M \ll N$) via spatial adaptive pooling, maintaining spatial uniformity. An attention layer then enables sparse tokens to interact with full-size tokens to integrate global information.
+    - **Sparse Transformer processing**: Subsequent Transformer layers operate solely on sparse tokens, substantially reducing computation.
+    - **Dense token recovery**: Sparse tokens are upsampled and fused with the original dense tokens via two linear layers ($X_{\text{merged}} = \text{UpSample}(X_s) \cdot W_1 + X \cdot W_2$), followed by an attention layer for further integration.
+    - **Dense Transformer processing**: A small number of dense Transformer layers enhance local details.
+    - Multiple SDTMs are stacked in cascade (4 by default), alternating between sparse and dense representations to effectively preserve both structural and detail information.
 
 3. **Timestep-Adaptive Dynamic Pruning Rate**: Early denoising steps primarily generate low-frequency global structure, while later steps generate high-frequency details. Accordingly, a dynamic pruning rate $r$ is designed: the highest pruning rate $r_{\min}$ is maintained for the first $T/4$ steps, then linearly decayed to $r_{\max}$, gradually increasing the token count. During training, a gating function is introduced to elegantly resolve the conflict between batched training and random timestep sampling.
 

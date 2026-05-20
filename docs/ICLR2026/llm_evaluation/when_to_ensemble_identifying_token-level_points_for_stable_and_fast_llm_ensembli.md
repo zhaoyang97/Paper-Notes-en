@@ -18,8 +18,8 @@ content_hash: 9280b605b11a251a
 # When to Ensemble: Identifying Token-Level Points for Stable and Fast LLM Ensembling
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.15346](https://arxiv.org/abs/2510.15346)
-**Code**: [https://github.com/yoon6503/SAFE](https://github.com/yoon6503/SAFE)
+**arXiv**: [2510.15346](https://arxiv.org/abs/2510.15346)  
+**Code**: [https://github.com/yoon6503/SAFE](https://github.com/yoon6503/SAFE)  
 **Area**: LLM Evaluation
 **Keywords**: LLM ensembling, tokenization mismatch, OOV-like token, speculative ensembling, probability distribution alignment
 

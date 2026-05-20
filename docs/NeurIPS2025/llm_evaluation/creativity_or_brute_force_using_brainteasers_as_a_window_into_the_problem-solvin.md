@@ -18,8 +18,8 @@ content_hash: 3e68cc7a6ecd9f04
 # Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.10844](https://arxiv.org/abs/2505.10844)
-**Code**: [https://github.com/stephenxia1/brainteasers](https://github.com/stephenxia1/brainteasers)
+**arXiv**: [2505.10844](https://arxiv.org/abs/2505.10844)  
+**Code**: [https://github.com/stephenxia1/brainteasers](https://github.com/stephenxia1/brainteasers)  
 **Area**: LLM Evaluation
 **Keywords**: brainteasers, creative reasoning, brute-force search, reasoning strategy analysis, benchmark
 

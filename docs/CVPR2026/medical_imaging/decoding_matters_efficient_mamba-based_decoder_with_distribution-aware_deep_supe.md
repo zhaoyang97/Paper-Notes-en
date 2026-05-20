@@ -18,8 +18,8 @@ content_hash: 1195795f040b5922
 # Decoding Matters: Efficient Mamba-Based Decoder with Distribution-Aware Deep Supervision for Medical Image Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12547](https://arxiv.org/abs/2603.12547)
-**Code**: To be released (upon acceptance)
+**arXiv**: [2603.12547](https://arxiv.org/abs/2603.12547)  
+**Code**: To be released (upon acceptance)  
 **Area**: Medical Imaging
 **Keywords**: Medical image segmentation, Mamba, decoder design, deep supervision, KL divergence
 

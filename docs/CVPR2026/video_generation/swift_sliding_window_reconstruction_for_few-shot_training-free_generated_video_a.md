@@ -18,8 +18,8 @@ content_hash: d968c5215b598c81
 # SWIFT: Sliding Window Reconstruction for Few-Shot Training-Free Generated Video Attribution
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.08536](https://arxiv.org/abs/2603.08536)
-**Code**: [GitHub](https://github.com/wangchao0708/SWIFT)
+**arXiv**: [2603.08536](https://arxiv.org/abs/2603.08536)  
+**Code**: [GitHub](https://github.com/wangchao0708/SWIFT)  
 **Area**: Video Generation
 **Keywords**: Generated video attribution, 3D VAE, sliding window reconstruction, training-free, temporal consistency
 

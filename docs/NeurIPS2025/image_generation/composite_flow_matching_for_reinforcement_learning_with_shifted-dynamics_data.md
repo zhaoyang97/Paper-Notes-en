@@ -19,8 +19,8 @@ content_hash: 82849957324fe281
 # Composite Flow Matching for Reinforcement Learning with Shifted-Dynamics Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23062](https://arxiv.org/abs/2505.23062)
-**Code**: [GitHub](https://github.com/Haichuan23/CompositeFlow)
+**arXiv**: [2505.23062](https://arxiv.org/abs/2505.23062)  
+**Code**: [GitHub](https://github.com/Haichuan23/CompositeFlow)  
 **Area**: Image Generation
 **Keywords**: Reinforcement Learning, Flow Matching, Optimal Transport, Shifted Dynamics, Wasserstein Distance, Offline Data
 

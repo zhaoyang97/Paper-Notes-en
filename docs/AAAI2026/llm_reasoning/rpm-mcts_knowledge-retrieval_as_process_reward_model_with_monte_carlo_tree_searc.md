@@ -18,8 +18,8 @@ content_hash: f5c5d2c013dab636
 # RPM-MCTS: Knowledge-Retrieval as Process Reward Model with Monte Carlo Tree Search for Code Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19895](https://arxiv.org/abs/2511.19895)
-**Code**: Available
+**arXiv**: [2511.19895](https://arxiv.org/abs/2511.19895)  
+**Code**: Available  
 **Area**: LLM Reasoning / Code Generation
 **Keywords**: Process Reward Model, MCTS, Knowledge Base Retrieval, Code Generation, Algorithm Step Evaluation
 
@@ -52,21 +52,21 @@ The framework comprises three components: (1) **knowledge base construction** (c
 
 1. **Knowledge Base as Process Reward Model**
 
-   - **Function**: Replaces a trained PRM with retrieval-based signals.
-   - **Mechanism**: The algorithm step generated at each expansion is matched against correct steps in the knowledge base via similarity scoring; high similarity indicates high step quality, prompting MCTS to prioritize that branch.
-   - **Design Motivation**: Correct implementations of the same algorithm type are highly similar in structure (e.g., every correct quicksort contains a partition step)—the method leverages this homogeneity directly.
+    - **Function**: Replaces a trained PRM with retrieval-based signals.
+    - **Mechanism**: The algorithm step generated at each expansion is matched against correct steps in the knowledge base via similarity scoring; high similarity indicates high step quality, prompting MCTS to prioritize that branch.
+    - **Design Motivation**: Correct implementations of the same algorithm type are highly similar in structure (e.g., every correct quicksort contains a partition step)—the method leverages this homogeneity directly.
 
 2. **Similarity-Based Redundancy Filtering**
 
-   - **Function**: Removes semantically duplicate candidate nodes during the MCTS expansion phase.
-   - **Mechanism**: Newly generated expansion nodes are compared against existing nodes; those exceeding a similarity threshold are treated as redundant and discarded.
-   - **Design Motivation**: Repeated sampling from LLMs frequently yields code that is semantically identical but syntactically varied—retaining such redundancy wastes the search budget.
+    - **Function**: Removes semantically duplicate candidate nodes during the MCTS expansion phase.
+    - **Mechanism**: Newly generated expansion nodes are compared against existing nodes; those exceeding a similarity threshold are treated as redundant and discarded.
+    - **Design Motivation**: Repeated sampling from LLMs frequently yields code that is semantically identical but syntactically varied—retaining such redundancy wastes the search budget.
 
 3. **Sandbox Execution with Error Reflection**
 
-   - **Function**: Executes code during the simulation phase to detect errors and provide targeted feedback.
-   - **Mechanism**: Candidate code from the MCTS simulation phase is executed against test cases in a sandbox; upon failure, error information is extracted and fed back to the LLM for directed correction.
-   - **Design Motivation**: Code generation uniquely permits actual execution for verification—enabling not only error detection but also precise localization of the faulty step.
+    - **Function**: Executes code during the simulation phase to detect errors and provide targeted feedback.
+    - **Mechanism**: Candidate code from the MCTS simulation phase is executed against test cases in a sandbox; upon failure, error information is extracted and fed back to the LLM for directed correction.
+    - **Design Motivation**: Code generation uniquely permits actual execution for verification—enabling not only error detection but also precise localization of the faulty step.
 
 ### Loss & Training
 - No training is required during the search phase—the method operates entirely at inference time.

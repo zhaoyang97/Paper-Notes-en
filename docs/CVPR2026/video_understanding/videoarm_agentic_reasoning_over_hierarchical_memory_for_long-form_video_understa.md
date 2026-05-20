@@ -18,8 +18,8 @@ content_hash: 716bea15557b3b86
 # VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.12360](https://arxiv.org/abs/2512.12360)
-**Code**: [https://milvlg.github.io/videoarm/](https://milvlg.github.io/videoarm/)
+**arXiv**: [2512.12360](https://arxiv.org/abs/2512.12360)  
+**Code**: [https://milvlg.github.io/videoarm/](https://milvlg.github.io/videoarm/)  
 **Area**: Video Understanding / LLM Agent
 **Keywords**: Long-form video understanding, agentic reasoning, hierarchical memory, coarse-to-fine reasoning, token efficiency
 

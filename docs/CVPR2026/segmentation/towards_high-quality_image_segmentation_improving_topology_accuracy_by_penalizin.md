@@ -18,8 +18,8 @@ content_hash: f1ce0e86c48ee775
 # Towards High-Quality Image Segmentation: Improving Topology Accuracy by Penalizing Neighbor Pixels
 
 **Conference**: CVPR2026
-**arXiv**: [2603.18671](https://arxiv.org/abs/2603.18671)
-**Code**: [SCNP](https://jmlipman.github.io/SCNP-SameClassNeighborPenalization)
+**arXiv**: [2603.18671](https://arxiv.org/abs/2603.18671)  
+**Code**: [SCNP](https://jmlipman.github.io/SCNP-SameClassNeighborPenalization)  
 **Area**: Semantic Segmentation / Topology Accuracy
 **Keywords**: Topology-preserving segmentation, neighbor penalization, SCNP, loss function, connected components
 

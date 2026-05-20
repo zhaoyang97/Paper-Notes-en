@@ -18,8 +18,8 @@ content_hash: 6c1e24a681107b60
 # Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06273](https://arxiv.org/abs/2503.06273)
-**Code**: Available (the paper states that code and models are available online)
+**arXiv**: [2503.06273](https://arxiv.org/abs/2503.06273)  
+**Code**: Available (the paper states that code and models are available online)  
 **Area**: Audio & Speech
 **Keywords**: zero-shot speech recognition, audio-visual speech recognition, romanization, large language models, multilingual
 
@@ -51,8 +51,8 @@ Zero-AVSR consists of two core components: (1) **AV-Romanizer**, which predicts 
 
 4. **Zero-AVSR (Unified Model)**: Embeds audio-visual features encoded by the AV-Romanizer directly into an LLM (Llama3.2-3B) and achieves end-to-end zero-shot recognition through multi-task training.
 
-   - **Task 1 (Alignment)**: Uses a length compressor (1D convolution, kernel=2, stride=2) and an adapter to map audio-visual features into the LLM embedding space, trained on seen languages with a language modeling objective. The AV-Romanizer and LLM original weights are frozen; only LoRA weights, the compressor, and the adapter are trained.
-   - **Task 2 (Learning De-romanization)**: A text-only task that trains the LLM to convert Roman text into target-language graphemes, covering both seen and unseen languages to prevent the LLM from forgetting multilingual capabilities. Only LoRA weights are trained.
+    - **Task 1 (Alignment)**: Uses a length compressor (1D convolution, kernel=2, stride=2) and an adapter to map audio-visual features into the LLM embedding space, trained on seen languages with a language modeling objective. The AV-Romanizer and LLM original weights are frozen; only LoRA weights, the compressor, and the adapter are trained.
+    - **Task 2 (Learning De-romanization)**: A text-only task that trains the LLM to convert Roman text into target-language graphemes, covering both seen and unseen languages to prevent the LLM from forgetting multilingual capabilities. Only LoRA weights are trained.
 
 ### Loss & Training
 

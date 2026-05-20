@@ -18,8 +18,8 @@ content_hash: 5d3743a78d2a42a7
 # 3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.19117](https://arxiv.org/abs/2511.19117)
-**Code**: [GitHub](https://github.com/work-submit/3MTI)
+**arXiv**: [2511.19117](https://arxiv.org/abs/2511.19117)  
+**Code**: [GitHub](https://github.com/work-submit/3MTI)  
 **Area**: Image Segmentation
 **Keywords**: Thermal imaging super-resolution, cross-modal diffusion, calibration-free fusion, RGB guidance, mobile thermal imaging
 

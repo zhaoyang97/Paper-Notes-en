@@ -18,8 +18,8 @@ content_hash: db5e52095f7e3c61
 # Graph Diffusion that can Insert and Delete
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.15725](https://arxiv.org/abs/2506.15725)
-**Code**: None
+**arXiv**: [2506.15725](https://arxiv.org/abs/2506.15725)  
+**Code**: None  
 **Area**: Graph Generation / Molecular Generation
 **Keywords**: graph diffusion, node insertion and deletion, molecular generation, property targeting, molecular optimization
 

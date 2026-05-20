@@ -18,8 +18,8 @@ content_hash: 18f393a27aa5f73b
 # Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.01191](https://arxiv.org/abs/2511.01191)
-**Code**: [Self-Harmony](https://github.com/) (marked as publicly available in the paper)
+**arXiv**: [2511.01191](https://arxiv.org/abs/2511.01191)  
+**Code**: [Self-Harmony](https://github.com/) (marked as publicly available in the paper)  
 **Area**: LLM Reasoning / Test-Time Reinforcement Learning
 **Keywords**: Test-Time RL, Self-Play, Pseudo-Label, Harmonic Mean, LLM Reasoning
 

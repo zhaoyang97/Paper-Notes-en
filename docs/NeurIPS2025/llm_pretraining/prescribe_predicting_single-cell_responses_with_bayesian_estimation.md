@@ -18,8 +18,8 @@ content_hash: e7e9cd44d7063122
 # PRESCRIBE: Predicting Single-Cell Responses with Bayesian Estimation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07964](https://arxiv.org/abs/2510.07964)
-**Code**: [GitHub](https://github.com/Bunnybeibei/PRESCRIBE)
+**arXiv**: [2510.07964](https://arxiv.org/abs/2510.07964)  
+**Code**: [GitHub](https://github.com/Bunnybeibei/PRESCRIBE)  
 **Area**: Computational Biology / Single-Cell Perturbation Prediction
 **Keywords**: single-cell perturbation prediction, uncertainty quantification, Bayesian estimation, deep evidential regression, pseudo E-distance
 

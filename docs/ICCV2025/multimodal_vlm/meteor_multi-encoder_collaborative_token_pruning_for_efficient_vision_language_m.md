@@ -18,8 +18,8 @@ content_hash: 73d52db284cfdea0
 # METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.20842](https://arxiv.org/abs/2507.20842)
-**Code**: [https://github.com/YuchenLiu98/METEOR](https://github.com/YuchenLiu98/METEOR)
+**arXiv**: [2507.20842](https://arxiv.org/abs/2507.20842)  
+**Code**: [https://github.com/YuchenLiu98/METEOR](https://github.com/YuchenLiu98/METEOR)  
 **Area**: Multimodal VLM
 **Keywords**: Multi-encoder VLM, visual token pruning, collaborative compression, adaptive pruning, feature rank allocation
 

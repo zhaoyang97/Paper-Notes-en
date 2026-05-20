@@ -18,8 +18,8 @@ content_hash: 51b8c1292d604df3
 # Distributive Fairness in Large Language Models: Evaluating Alignment with Human Values
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.00313](https://arxiv.org/abs/2502.00313)
-**Code**: [github.com/SamarthKhanna/Distributive-Fairness-LLMs](https://github.com/SamarthKhanna/Distributive-Fairness-LLMs)
+**arXiv**: [2502.00313](https://arxiv.org/abs/2502.00313)  
+**Code**: [github.com/SamarthKhanna/Distributive-Fairness-LLMs](https://github.com/SamarthKhanna/Distributive-Fairness-LLMs)  
 **Area**: AI Safety / LLM Alignment
 **Keywords**: distributive fairness, LLM alignment, human values, fair allocation, resource distribution
 
@@ -49,28 +49,28 @@ A series of indivisible-goods allocation instances (2–3 agents, 3–6 items, s
 
 1. **Instance Design and Dataset**:
 
-   - Function: Ten carefully designed instances $I_1$–$I_{10}}$ are employed, each constructed to induce a specific tradeoff between fairness concepts.
-   - Core metric: Agent $i$'s valuation for item $g$ is $v_{i,g}$; the utility function is additively separable: $u_i(A_i, p_i) = v_i(A_i) + p_i$.
-   - Scenarios covered: EQ vs. EF, fairness vs. efficiency, monetary transfers to mitigate inequality, and decision-maker bias.
+    - Function: Ten carefully designed instances $I_1$–$I_{10}}$ are employed, each constructed to induce a specific tradeoff between fairness concepts.
+    - Core metric: Agent $i$'s valuation for item $g$ is $v_{i,g}$; the utility function is additively separable: $u_i(A_i, p_i) = v_i(A_i) + p_i$.
+    - Scenarios covered: EQ vs. EF, fairness vs. efficiency, monetary transfers to mitigate inequality, and decision-maker bias.
 
 2. **Fairness Metric Framework**:
 
-   - Equality (EQ): Minimizes the inequality gap $\Delta(A,p) = \max_{i,j}\{u_i - u_j\}$; perfect equality EQ* denotes $\Delta = 0$.
-   - Envy-Freeness (EF): For all $i, j$, $u_i(A_i, p_i) \geq u_i(A_j, p_j)$.
-   - Rawlsian Maximin (RMM): $\max_{(A,p)} \min_i u_i(A_i, p_i)$.
-   - Efficiency: Pareto Optimality (PO); utilitarian social welfare maximization (USW): $\max \sum_i u_i$.
+    - Equality (EQ): Minimizes the inequality gap $\Delta(A,p) = \max_{i,j}\{u_i - u_j\}$; perfect equality EQ* denotes $\Delta = 0$.
+    - Envy-Freeness (EF): For all $i, j$, $u_i(A_i, p_i) \geq u_i(A_j, p_j)$.
+    - Rawlsian Maximin (RMM): $\max_{(A,p)} \min_i u_i(A_i, p_i)$.
+    - Efficiency: Pareto Optimality (PO); utilitarian social welfare maximization (USW): $\max \sum_i u_i$.
 
 3. **Multiple-Choice Experiment (Section 4.1)**:
 
-   - Function: Instead of generating an allocation, LLMs select the fairest option from five predefined candidates.
-   - Core finding: GPT-4o and Claude-3.5S select the EQ* allocation in >60% and >70% of cases, respectively—indicating that LLMs understand fairness but cannot realize it in generation mode.
-   - Design motivation: To distinguish between two sources of misalignment: insufficient computational ability and misaligned values.
+    - Function: Instead of generating an allocation, LLMs select the fairest option from five predefined candidates.
+    - Core finding: GPT-4o and Claude-3.5S select the EQ* allocation in >60% and >70% of cases, respectively—indicating that LLMs understand fairness but cannot realize it in generation mode.
+    - Design motivation: To distinguish between two sources of misalignment: insufficient computational ability and misaligned values.
 
 4. **Persona / CoT / Intent Experiments (Section 5)**:
 
-   - Function: LLMs are assigned a persona corresponding to a specific fairness concept, or prompted with Chain-of-Thought reasoning.
-   - Core finding: Even when assigned an EQ persona, LLMs still struggle to generate fair allocations (GPT-4o's EQ satisfaction rate remains <20% under an EQ persona), suggesting the bottleneck is computational rather than conceptual.
-   - CoT prompting is effective for GPT-4o and Claude on some instances but yields inconsistent results overall.
+    - Function: LLMs are assigned a persona corresponding to a specific fairness concept, or prompted with Chain-of-Thought reasoning.
+    - Core finding: Even when assigned an EQ persona, LLMs still struggle to generate fair allocations (GPT-4o's EQ satisfaction rate remains <20% under an EQ persona), suggesting the bottleneck is computational rather than conceptual.
+    - CoT prompting is effective for GPT-4o and Claude on some instances but yields inconsistent results overall.
 
 ### Evaluation Protocol
 - Each model is queried 100 times per instance at temperature 1.0.

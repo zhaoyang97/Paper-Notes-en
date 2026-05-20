@@ -18,8 +18,8 @@ content_hash: d64408535d51a059
 # SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09828](https://arxiv.org/abs/2511.09828)
-**Code**: N/A
+**arXiv**: [2511.09828](https://arxiv.org/abs/2511.09828)  
+**Code**: N/A  
 **Area**: Federated Learning / Distributed Optimization
 **Keywords**: Split Federated Learning, Data Heterogeneity, Momentum Alignment, Non-IID, Convergence Acceleration
 

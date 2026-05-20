@@ -18,8 +18,8 @@ content_hash: ec3c5e1ce7a4946a
 # When Misinformation Speaks and Converses: Rethinking Fact-Checking in Audio Platforms
 
 **Conference**: ACL 2026
-**arXiv**: [2604.16767](https://arxiv.org/abs/2604.16767)
-**Code**: None
+**arXiv**: [2604.16767](https://arxiv.org/abs/2604.16767)  
+**Code**: None  
 **Area**: Audio & Speech
 **Keywords**: Audio misinformation, fact-checking, podcasts, spoken properties, conversational properties
 

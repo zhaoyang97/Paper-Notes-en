@@ -18,8 +18,8 @@ content_hash: b17963e49dbdc527
 # LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21754](https://arxiv.org/abs/2602.21754)
-**Code**: Unavailable
+**arXiv**: [2602.21754](https://arxiv.org/abs/2602.21754)  
+**Code**: Unavailable  
 **Area**: Autonomous Driving
 **Keywords**: multi-sensor calibration, target-free calibration, tri-modal fusion, event camera, extrinsic estimation
 

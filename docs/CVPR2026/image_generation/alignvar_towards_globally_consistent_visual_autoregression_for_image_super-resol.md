@@ -18,8 +18,8 @@ content_hash: 4e2eb472793e9200
 # AlignVAR: Towards Globally Consistent Visual Autoregression for Image Super-Resolution
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00589](https://arxiv.org/abs/2603.00589)
-**Code**: None
+**arXiv**: [2603.00589](https://arxiv.org/abs/2603.00589)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Visual Autoregression, Image Super-Resolution, Spatial Consistency, Hierarchical Consistency, Next-Scale Prediction
 

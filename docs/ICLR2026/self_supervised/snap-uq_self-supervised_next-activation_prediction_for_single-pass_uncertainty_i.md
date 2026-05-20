@@ -18,8 +18,8 @@ content_hash: df4e598ab02bf282
 # SNAP-UQ: Self-supervised Next-Activation Prediction for Single-Pass Uncertainty
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.12907](https://arxiv.org/abs/2508.12907)
-**Code**: None
+**arXiv**: [2508.12907](https://arxiv.org/abs/2508.12907)  
+**Code**: None  
 **Area**: Self-Supervised Learning
 **Keywords**: Uncertainty Estimation, TinyML, Single-Pass Inference, Self-Supervised Learning, Microcontroller Deployment, OOD Detection
 
@@ -50,30 +50,30 @@ SNAP-UQ attaches lightweight prediction heads at 2–3 selected tap layers $\mat
 
 1. **Depth-wise next-activation prediction model**:
 
-   - At each tap layer $\ell \in \mathcal{S}$, the preceding layer's activations are compressed via projector $P_\ell$: $z_\ell = P_\ell a_{\ell-1} \in \mathbb{R}^{r_\ell}$ ($r_\ell \ll d_{\ell-1}$).
-   - The prediction head $g_\ell$ outputs diagonal Gaussian parameters: $(\mu_\ell, \log \sigma_\ell^2) = g_\ell(z_\ell)$.
-   - An optional low-rank plus diagonal covariance structure is supported: $\Sigma_\ell = \text{diag}(\sigma_\ell^2) + B_\ell B_\ell^\top$, computed efficiently via the Woodbury identity.
-   - **Design Motivation**: The method models the conditional inter-layer relationship $a_{\ell-1} \mapsto a_\ell$, rather than relying on conventional unconditional class-level statistics.
+    - At each tap layer $\ell \in \mathcal{S}$, the preceding layer's activations are compressed via projector $P_\ell$: $z_\ell = P_\ell a_{\ell-1} \in \mathbb{R}^{r_\ell}$ ($r_\ell \ll d_{\ell-1}$).
+    - The prediction head $g_\ell$ outputs diagonal Gaussian parameters: $(\mu_\ell, \log \sigma_\ell^2) = g_\ell(z_\ell)$.
+    - An optional low-rank plus diagonal covariance structure is supported: $\Sigma_\ell = \text{diag}(\sigma_\ell^2) + B_\ell B_\ell^\top$, computed efficiently via the Woodbury identity.
+    - **Design Motivation**: The method models the conditional inter-layer relationship $a_{\ell-1} \mapsto a_\ell$, rather than relying on conventional unconditional class-level statistics.
 
 2. **Self-supervised training objective**:
 
-   - The auxiliary loss is based on diagonal Gaussian NLL: $\mathcal{L}_{SS} = \frac{1}{|\mathcal{B}|}\sum_{x \in \mathcal{B}} \sum_{\ell \in \mathcal{S}} \frac{1}{2}[\|(a_\ell - \mu_\ell) \odot \sigma_\ell^{-1}\|^2 + \mathbf{1}^\top \log \sigma_\ell^2]$
-   - Total loss: $\mathcal{L} = \mathcal{L}_{clf} + \lambda_{SS}\mathcal{L}_{SS} + \lambda_{reg}\mathcal{R}$, with $\lambda_{SS}$ small ($10^{-3} \sim 10^{-2}$).
-   - Regularization: a variance lower bound (softplus + $\epsilon^2$) prevents collapse; scale control $\mathcal{R}_{var} = \sum_\ell \|\log \sigma_\ell^2\|_1$ prevents over-dispersion.
-   - An optional detach mode applies stop-gradient to $a_\ell$ for small backbones to avoid gradient conflicts.
+    - The auxiliary loss is based on diagonal Gaussian NLL: $\mathcal{L}_{SS} = \frac{1}{|\mathcal{B}|}\sum_{x \in \mathcal{B}} \sum_{\ell \in \mathcal{S}} \frac{1}{2}[\|(a_\ell - \mu_\ell) \odot \sigma_\ell^{-1}\|^2 + \mathbf{1}^\top \log \sigma_\ell^2]$
+    - Total loss: $\mathcal{L} = \mathcal{L}_{clf} + \lambda_{SS}\mathcal{L}_{SS} + \lambda_{reg}\mathcal{R}$, with $\lambda_{SS}$ small ($10^{-3} \sim 10^{-2}$).
+    - Regularization: a variance lower bound (softplus + $\epsilon^2$) prevents collapse; scale control $\mathcal{R}_{var} = \sum_\ell \|\log \sigma_\ell^2\|_1$ prevents over-dispersion.
+    - An optional detach mode applies stop-gradient to $a_\ell$ for small backbones to avoid gradient conflicts.
 
 3. **Single-pass surprisal aggregation and mapping**:
 
-   - Normalized error: $\bar{e}_\ell(x) = \frac{1}{d_\ell}\|(a_\ell - \mu_\ell) \odot \sigma_\ell^{-1}\|^2$
-   - SNAP score: $S(x) = \sum_{\ell \in \mathcal{S}} w_\ell \bar{e}_\ell(x)$
-   - Final uncertainty via logistic mapping fused with an optional confidence proxy: $U(x) = \sigma(\beta_0 + \beta_1 S(x) + \beta_2 m(x))$
-   - Mapping parameters are fitted offline once; no online labels are required.
+    - Normalized error: $\bar{e}_\ell(x) = \frac{1}{d_\ell}\|(a_\ell - \mu_\ell) \odot \sigma_\ell^{-1}\|^2$
+    - SNAP score: $S(x) = \sum_{\ell \in \mathcal{S}} w_\ell \bar{e}_\ell(x)$
+    - Final uncertainty via logistic mapping fused with an optional confidence proxy: $U(x) = \sigma(\beta_0 + \beta_1 S(x) + \beta_2 m(x))$
+    - Mapping parameters are fitted offline once; no online labels are required.
 
 4. **MCU-friendly integer implementation**:
 
-   - $P_\ell$, $W_\mu$, and $W_\sigma$ are quantized to int8.
-   - Exponentiation for $\exp(-\frac{1}{2}\log\sigma^2)$ is replaced by a 256-entry lookup table (LUT).
-   - With 2 tap points and $r_\ell \in [32, 128]$, the additional computation is less than 2% of backbone cost, and flash overhead is only tens of KB.
+    - $P_\ell$, $W_\mu$, and $W_\sigma$ are quantized to int8.
+    - Exponentiation for $\exp(-\frac{1}{2}\log\sigma^2)$ is replaced by a 256-entry lookup table (LUT).
+    - With 2 tap points and $r_\ell \in [32, 128]$, the additional computation is less than 2% of backbone cost, and flash overhead is only tens of KB.
 
 ### Loss & Training
 

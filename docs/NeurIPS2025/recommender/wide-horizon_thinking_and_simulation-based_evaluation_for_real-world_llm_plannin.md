@@ -18,8 +18,8 @@ content_hash: 99f4cb0836d16be5
 # Wide-Horizon Thinking and Simulation-Based Evaluation for Real-World LLM Planning with Multifaceted Constraints
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.12421](https://arxiv.org/abs/2506.12421)
-**Code**: None
+**arXiv**: [2506.12421](https://arxiv.org/abs/2506.12421)  
+**Code**: None  
 **Area**: Recommender Systems
 **Keywords**: LLM planning, travel planning, wide-horizon thinking, simulation evaluation, multifaceted constraints
 

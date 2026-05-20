@@ -18,8 +18,8 @@ content_hash: 65bd63956521fbfc
 # TableDART: Dynamic Adaptive Multi-Modal Routing for Table Understanding
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.14671](https://arxiv.org/abs/2509.14671)
-**Code**: [GitHub](https://github.com/xiaobo-xing/TableDART)
+**arXiv**: [2509.14671](https://arxiv.org/abs/2509.14671)  
+**Code**: [GitHub](https://github.com/xiaobo-xing/TableDART)  
 **Area**: Multimodal VLM
 **Keywords**: Table Understanding, Dynamic Routing, Multi-modal Fusion, Gating Network, LLM Agent
 

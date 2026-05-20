@@ -18,8 +18,8 @@ content_hash: 8b17c41c5f1050f8
 # AugGen: Synthetic Augmentation using Diffusion Models Can Improve Recognition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.11544](https://arxiv.org/abs/2503.11544)
-**Code**: [https://parsa-ra.github.io/auggen/](https://parsa-ra.github.io/auggen/) (project page)
+**arXiv**: [2503.11544](https://arxiv.org/abs/2503.11544)  
+**Code**: [https://parsa-ra.github.io/auggen/](https://parsa-ra.github.io/auggen/) (project page)  
 **Area**: Image Generation / Synthetic Data Augmentation
 **Keywords**: synthetic data augmentation, class-conditional diffusion models, face recognition, class mixing, self-contained framework
 

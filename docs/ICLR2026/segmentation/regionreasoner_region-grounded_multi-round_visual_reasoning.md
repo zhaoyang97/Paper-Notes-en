@@ -19,8 +19,8 @@ content_hash: f304892d2bf2f378
 # RegionReasoner: Region-Grounded Multi-Round Visual Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.03733](https://arxiv.org/abs/2602.03733)
-**Code**: [RegionReasoner](https://github.com/wenfangsun/RegionReasoner)
+**arXiv**: [2602.03733](https://arxiv.org/abs/2602.03733)  
+**Code**: [RegionReasoner](https://github.com/wenfangsun/RegionReasoner)  
 **Area**: Image Segmentation
 **Keywords**: multi-round reasoning, region grounding, reinforcement-learning, GRPO, VLM, referring segmentation
 

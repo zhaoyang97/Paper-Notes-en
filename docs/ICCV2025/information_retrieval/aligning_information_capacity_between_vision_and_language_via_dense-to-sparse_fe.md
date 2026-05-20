@@ -14,8 +14,8 @@ date: 2026-05-08
 content_hash: 9081c3c305b9fb88
 ---
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF OpenAccess)
-**Code**: [https://d2s-vse.github.io](https://d2s-vse.github.io)
+**arXiv**: N/A (CVF OpenAccess)  
+**Code**: [https://d2s-vse.github.io](https://d2s-vse.github.io)  
 **Area**: Information Retrieval
 **Keywords**: Image-text matching, visual-semantic embedding, information capacity, dense-to-sparse distillation, cross-modal retrieval
 

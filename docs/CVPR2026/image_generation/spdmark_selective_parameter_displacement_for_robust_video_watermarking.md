@@ -18,8 +18,8 @@ content_hash: da941b9a8e9f8b82
 # SPDMark: Selective Parameter Displacement for Robust Video Watermarking
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.12090](https://arxiv.org/abs/2512.12090)
-**Code**: Available (mentioned in the paper)
+**arXiv**: [2512.12090](https://arxiv.org/abs/2512.12090)  
+**Code**: Available (mentioned in the paper)  
 **Area**: Diffusion Models / Video Watermarking
 **Keywords**: Video watermarking, parameter displacement, LoRA, diffusion models, robustness
 

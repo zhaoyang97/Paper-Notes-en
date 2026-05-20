@@ -18,8 +18,8 @@ content_hash: 22eae3b98f59d148
 # FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.21071](https://arxiv.org/abs/2507.21071)
-**Code**: [https://github.com/tsinghua-fib-lab/FingerTip-20K](https://github.com/tsinghua-fib-lab/FingerTip-20K)
+**arXiv**: [2507.21071](https://arxiv.org/abs/2507.21071)  
+**Code**: [https://github.com/tsinghua-fib-lab/FingerTip-20K](https://github.com/tsinghua-fib-lab/FingerTip-20K)  
 **Area**: Agent
 **Keywords**: mobile agent, proactive suggestion, personalized execution, GUI agent, benchmark
 

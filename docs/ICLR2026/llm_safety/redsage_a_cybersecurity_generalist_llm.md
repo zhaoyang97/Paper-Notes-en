@@ -17,8 +17,8 @@ content_hash: b968067b18367818
 # RedSage: A Cybersecurity Generalist LLM
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.22159](https://arxiv.org/abs/2601.22159)
-**Code**: [GitHub](https://github.com/AraLabs-AI/RedSage) (open-source data + model + code)
+**arXiv**: [2601.22159](https://arxiv.org/abs/2601.22159)  
+**Code**: [GitHub](https://github.com/AraLabs-AI/RedSage) (open-source data + model + code)  
 **Area**: AI Security / Cybersecurity
 **Keywords**: Cybersecurity LLM, Continual Pre-training, Agentic Data Augmentation, Security Evaluation Benchmark
 

@@ -18,8 +18,8 @@ content_hash: 2305d55846c6546c
 # CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.13946](https://arxiv.org/abs/2604.13946)
-**Code**: [https://github.com/ihbkaiser/CollabCoder](https://github.com/ihbkaiser/CollabCoder)
+**arXiv**: [2604.13946](https://arxiv.org/abs/2604.13946)  
+**Code**: [https://github.com/ihbkaiser/CollabCoder](https://github.com/ihbkaiser/CollabCoder)  
 **Area**: Code Generation / Multi-Agent Systems
 **Keywords**: code generation, plan-code co-evolution, multi-agent, collaborative debugging, reasoning trajectory
 

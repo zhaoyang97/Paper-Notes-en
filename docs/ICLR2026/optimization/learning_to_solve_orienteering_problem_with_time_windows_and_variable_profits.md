@@ -18,8 +18,8 @@ content_hash: cb6dccb371a83f1e
 # Learning to Solve Orienteering Problem with Time Windows and Variable Profits
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.06260](https://arxiv.org/abs/2603.06260)
-**Code**: [GitHub](https://github.com/SwonGao/DeCoST)
+**arXiv**: [2603.06260](https://arxiv.org/abs/2603.06260)  
+**Code**: [GitHub](https://github.com/SwonGao/DeCoST)  
 **Area**: Combinatorial Optimization / Vehicle Routing
 **Keywords**: Orienteering Problem, Time Windows, Variable Profits, Discrete-Continuous Decoupling, Linear Programming
 

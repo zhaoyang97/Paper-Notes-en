@@ -18,8 +18,8 @@ content_hash: a9d597d5d94febf7
 # GLEAM: A Multimodal Imaging Dataset and HAMM for Glaucoma Classification
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12800](https://arxiv.org/abs/2603.12800)
-**Code**: [Kaggle Dataset](https://kaggle.com/datasets/zhangyiyinge/gleam-dataset)
+**arXiv**: [2603.12800](https://arxiv.org/abs/2603.12800)  
+**Code**: [Kaggle Dataset](https://kaggle.com/datasets/zhangyiyinge/gleam-dataset)  
 **Area**: Medical Imaging / Multimodal Learning / Ophthalmic Imaging
 **Keywords**: Glaucoma classification, multimodal fusion, masked autoencoder, trimodal dataset, graph attention
 

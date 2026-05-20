@@ -18,8 +18,8 @@ content_hash: 29fe2f9df0a3ed5a
 # GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.24027](https://arxiv.org/abs/2602.24027)
-**Code**: None
+**arXiv**: [2602.24027](https://arxiv.org/abs/2602.24027)  
+**Code**: None  
 **Area**: LLM Alignment
 **Keywords**: LVLM Safety, Optimal Transport, Attention Calibration, Test-time Defense, Visual Safety Detection
 

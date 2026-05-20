@@ -18,8 +18,8 @@ content_hash: a363f5d6e5f763ee
 # Reason-SVG: Enhancing Structured Reasoning for Vector Graphics Generation with Reinforcement Learning
 
 **Conference**: CVPR2026
-**arXiv**: [2505.24499](https://arxiv.org/abs/2505.24499)
-**Code**: N/A
+**arXiv**: [2505.24499](https://arxiv.org/abs/2505.24499)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: SVG generation, structured reasoning, reinforcement learning, GRPO, Drawing-with-Thought
 

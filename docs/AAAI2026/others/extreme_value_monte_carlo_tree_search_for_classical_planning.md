@@ -19,8 +19,8 @@ content_hash: f38b00d8dd7da129
 # Extreme Value Monte Carlo Tree Search for Classical Planning
 
 **Conference**: AAAI 2026
-**arXiv**: [2405.18248](https://arxiv.org/abs/2405.18248)
-**Code**: [https://github.com/guicho271828/pyperplan-mcts](https://github.com/guicho271828/pyperplan-mcts)
+**arXiv**: [2405.18248](https://arxiv.org/abs/2405.18248)  
+**Code**: [https://github.com/guicho271828/pyperplan-mcts](https://github.com/guicho271828/pyperplan-mcts)  
 **Area**: Classical Planning / Search Algorithms
 **Keywords**: MCTS, Extreme Value Theory, UCB1-Uniform, Generalized Pareto, Classical Planning, Heuristic Search, Full Bellman Backup
 

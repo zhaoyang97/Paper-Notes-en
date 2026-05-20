@@ -19,9 +19,9 @@ content_hash: 1470d84ac607f6fb
 # Revisiting Matrix Sketching in Linear Bandits: Achieving Sublinear Regret via Dyadic Block Sketching
 
 **Conference**: ICLR 2026
-**arXiv**: [2410.10258](https://arxiv.org/abs/2410.10258)
+**arXiv**: [2410.10258](https://arxiv.org/abs/2410.10258)  
 **Authors**: Dongxie Wen, Hanyan Yin, Xiao Zhang, Peng Zhao, Lijun Zhang, Zhewei Wei (Renmin University of China & Nanjing University)
-**Code**: None
+**Code**: None  
 **Area**: Reinforcement Learning / Online Learning / Bandits
 **Keywords**: Linear Bandits, Matrix Sketching, Frequent Directions, Multi-Scale Sketching, Sublinear Regret, Dyadic Block Sketching
 

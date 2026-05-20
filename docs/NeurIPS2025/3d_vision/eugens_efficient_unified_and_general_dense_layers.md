@@ -18,8 +18,8 @@ content_hash: 7eaadd1e292ea809
 # EUGens: Efficient, Unified, and General Dense Layers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.09771](https://arxiv.org/abs/2410.09771)
-**Code**: To be confirmed
+**arXiv**: [2410.09771](https://arxiv.org/abs/2410.09771)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: efficient neural network, random features, feedforward layer, Transformer, NeRF
 

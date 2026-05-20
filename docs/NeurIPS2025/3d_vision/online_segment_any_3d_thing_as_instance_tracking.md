@@ -18,8 +18,8 @@ content_hash: 438d3eb30449feac
 # Online Segment Any 3D Thing as Instance Tracking
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.07599](https://arxiv.org/abs/2512.07599)
-**Code**: [https://github.com/AutoLab-SAI-SJTU/AutoSeg3D](https://github.com/AutoLab-SAI-SJTU/AutoSeg3D)
+**arXiv**: [2512.07599](https://arxiv.org/abs/2512.07599)  
+**Code**: [https://github.com/AutoLab-SAI-SJTU/AutoSeg3D](https://github.com/AutoLab-SAI-SJTU/AutoSeg3D)  
 **Area**: 3D Vision
 **Keywords**: Online 3D instance segmentation, instance tracking, visual foundation models, temporal modeling, spatial consistency
 

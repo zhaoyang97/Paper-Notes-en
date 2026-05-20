@@ -18,8 +18,8 @@ content_hash: 89a880af00e2297c
 # Universal Multi-Domain Translation via Diffusion Routers
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03252](https://arxiv.org/abs/2510.03252)
-**Code**: N/A
+**arXiv**: [2510.03252](https://arxiv.org/abs/2510.03252)  
+**Code**: N/A  
 **Area**: Image Segmentation
 **Keywords**: Multi-Domain Translation, Diffusion Models, Diffusion Router, Tweedie Refinement, Universal Translation
 

@@ -20,8 +20,8 @@ content_hash: 0a9748de010a263b
 # Hierarchical Material Recognition from Local Appearance
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.22911](https://arxiv.org/abs/2505.22911)
-**Code**: [Matador Project Page](https://cave.cs.columbia.edu/repository/Matador)
+**arXiv**: [2505.22911](https://arxiv.org/abs/2505.22911)  
+**Code**: [Matador Project Page](https://cave.cs.columbia.edu/repository/Matador)  
 **Area**: 3D Vision
 **Keywords**: material recognition, hierarchical classification, graph attention network, texture recognition, material taxonomy, novel view synthesis, few-shot learning
 

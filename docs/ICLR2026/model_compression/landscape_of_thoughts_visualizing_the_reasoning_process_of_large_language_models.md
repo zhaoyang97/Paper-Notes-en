@@ -18,8 +18,8 @@ content_hash: 9606f5ff3d2e374b
 # Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.22165](https://arxiv.org/abs/2503.22165)
-**Code**: [GitHub](https://github.com/tmlr-group/landscape-of-thoughts)
+**arXiv**: [2503.22165](https://arxiv.org/abs/2503.22165)  
+**Code**: [GitHub](https://github.com/tmlr-group/landscape-of-thoughts)  
 **Area**: Model Compression
 **Keywords**: LLM reasoning visualization, reasoning trajectory analysis, t-SNE, test-time scaling, lightweight verifier
 

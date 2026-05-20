@@ -19,8 +19,8 @@ content_hash: 0a30e5a9e7316f2e
 # Exploring the Effects of Alignment on Numerical Bias in Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.16444](https://arxiv.org/abs/2601.16444)
-**Code**: Not available
+**arXiv**: [2601.16444](https://arxiv.org/abs/2601.16444)  
+**Code**: Not available  
 **Area**: LLM Alignment / LLM Evaluation
 **Keywords**: Numerical Bias, LLM-as-a-Judge, Alignment Side Effects, Kurtosis Analysis, Evaluation Robustness, Score Range Adjustment
 

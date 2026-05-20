@@ -13,10 +13,10 @@ content_hash: 6edbfd9009b41336
 # Overcoming Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.02922](https://arxiv.org/abs/2504.02922)
+**arXiv**: [2504.02922](https://arxiv.org/abs/2504.02922)  
 **Authors**: Julian Minder, Clément Dumas, Caden Juang, Bilal Chughtai, Neel Nanda
 **Affiliations**: EPFL, ETHZ, ENS Paris-Saclay, Northeastern University
-**Code**: [GitHub](https://github.com/jkminder/dictionary_learning)
+**Code**: [GitHub](https://github.com/jkminder/dictionary_learning)  
 **Area**: Interpretability / Fine-tuning Analysis
 
 ## TL;DR

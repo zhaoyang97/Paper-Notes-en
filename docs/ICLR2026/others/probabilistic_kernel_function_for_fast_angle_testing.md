@@ -17,8 +17,8 @@ content_hash: 4a5d56be0b3c47b3
 # Probabilistic Kernel Function for Fast Angle Testing
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.20274](https://arxiv.org/abs/2505.20274)
-**Code**: [GitHub](https://github.com/KejingLu-810/KS)
+**arXiv**: [2505.20274](https://arxiv.org/abs/2505.20274)  
+**Code**: [GitHub](https://github.com/KejingLu-810/KS)  
 **Area**: Other
 **Keywords**: approximate nearest neighbor search, probabilistic kernel function, angle testing, random projection, similarity search
 

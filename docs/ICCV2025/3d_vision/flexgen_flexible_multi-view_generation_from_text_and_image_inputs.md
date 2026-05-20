@@ -18,8 +18,8 @@ content_hash: e1940cc9fb24c4ca
 # FlexGen: Flexible Multi-View Generation from Text and Image Inputs
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.10745](https://arxiv.org/abs/2410.10745)
-**Code**: [https://xxu068.github.io/flexgen.github.io/](https://xxu068.github.io/flexgen.github.io/) (project page available)
+**arXiv**: [2410.10745](https://arxiv.org/abs/2410.10745)  
+**Code**: [https://xxu068.github.io/flexgen.github.io/](https://xxu068.github.io/flexgen.github.io/) (project page available)  
 **Area**: 3D Vision
 **Keywords**: multi-view generation, 3D-aware text annotation, controllable generation, diffusion models, material editing
 

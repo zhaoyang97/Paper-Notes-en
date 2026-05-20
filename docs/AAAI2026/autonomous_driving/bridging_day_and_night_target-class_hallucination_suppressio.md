@@ -18,8 +18,8 @@ content_hash: c50138884625cb73
 # Bridging Day and Night: Target-Class Hallucination Suppression in Unpaired Image Translation
 
 **Conference**: AAAI 2026 (Oral)
-**arXiv**: [2602.15383](https://arxiv.org/abs/2602.15383)
-**Code**: Unavailable
+**arXiv**: [2602.15383](https://arxiv.org/abs/2602.15383)  
+**Code**: Unavailable  
 **Area**: Autonomous Driving
 **Keywords**: Day-to-night translation, hallucination suppression, Schrödinger Bridge, SAM2 pseudo-labels, prototype contrastive learning
 

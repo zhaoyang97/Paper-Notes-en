@@ -18,8 +18,8 @@ content_hash: f10d53fe525020a2
 # Preference Leakage: A Contamination Problem in LLM-as-a-judge
 
 **Conference**: ICLR2026
-**arXiv**: [2502.01534](https://arxiv.org/abs/2502.01534)
-**Code**: [David-Li0406/Preference-Leakage](https://github.com/David-Li0406/Preference-Leakage)
+**arXiv**: [2502.01534](https://arxiv.org/abs/2502.01534)  
+**Code**: [David-Li0406/Preference-Leakage](https://github.com/David-Li0406/Preference-Leakage)  
 **Area**: LLM Evaluation
 **Keywords**: LLM-as-a-Judge, Preference Leakage, Data Contamination, Evaluation Bias, Synthetic Data
 

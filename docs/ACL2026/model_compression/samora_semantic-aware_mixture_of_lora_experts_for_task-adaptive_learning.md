@@ -18,8 +18,8 @@ content_hash: 920b27feb3e53a92
 # SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19048](https://arxiv.org/abs/2604.19048)
-**Code**: [https://github.com/boyan-code/SAMoRA](https://github.com/boyan-code/SAMoRA)
+**arXiv**: [2604.19048](https://arxiv.org/abs/2604.19048)  
+**Code**: [https://github.com/boyan-code/SAMoRA](https://github.com/boyan-code/SAMoRA)  
 **Area**: Model Compression / Parameter-Efficient Fine-Tuning
 **Keywords**: Mixture of Experts, LoRA, Semantic-Aware Routing, Task-Adaptive Learning, Multi-Task Learning
 

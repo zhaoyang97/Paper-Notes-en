@@ -19,8 +19,8 @@ content_hash: 74b70e4987c33d32
 # Seeing Sound, Hearing Sight: Uncovering Modality Bias and Conflict of AI Models in Sound Localization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11217](https://arxiv.org/abs/2505.11217)
-**Code**: Publicly available as declared in the paper (GitHub)
+**arXiv**: [2505.11217](https://arxiv.org/abs/2505.11217)  
+**Code**: Publicly available as declared in the paper (GitHub)  
 **Area**: Audio & Speech
 **Keywords**: Sound Source Localization, Modality Bias, Cross-modal Conflict, HRTF, Cochleagram, AudioCOCO
 
@@ -51,19 +51,19 @@ The EchoPin system operates on three levels: (1) **AudioCOCO dataset**—spatial
 ### Key Designs
 
 1. **AudioCOCO Dataset and Depth-Aware Stereo Audio Synthesis**
-   - **Function**: Provides high-quality, spatially balanced, and bias-free audio-visual training and test data.
-   - **Mechanism**: Twelve categories of sound-producing objects are selected from MSCOCO and stratified into three size tiers by object area ratio (Size1: 0–5%, Size2: 5–15%, Size3: 15–30%), with trivially large objects (>30%) excluded. DepthAnything is used for monocular depth estimation; Unity then constructs a 3D scene based on pixel positions and depth, and synthesizes spatially rendered stereo audio from a simulated listener with a 0.17 m interaural distance using physically based sound propagation. The test set comprises six conditions: Congruent, ConflictVCue, AbsVCue, AOnly, VOnly, and MultiInstLoc.
-   - **Design Motivation**: Existing datasets (e.g., FlickrSoundNet, VGGSound) suffer from large-object-centered bias that enables models to learn visual shortcuts rather than genuine audio-visual alignment; mono audio further precludes spatial localization cues.
+    - **Function**: Provides high-quality, spatially balanced, and bias-free audio-visual training and test data.
+    - **Mechanism**: Twelve categories of sound-producing objects are selected from MSCOCO and stratified into three size tiers by object area ratio (Size1: 0–5%, Size2: 5–15%, Size3: 15–30%), with trivially large objects (>30%) excluded. DepthAnything is used for monocular depth estimation; Unity then constructs a 3D scene based on pixel positions and depth, and synthesizes spatially rendered stereo audio from a simulated listener with a 0.17 m interaural distance using physically based sound propagation. The test set comprises six conditions: Congruent, ConflictVCue, AbsVCue, AOnly, VOnly, and MultiInstLoc.
+    - **Design Motivation**: Existing datasets (e.g., FlickrSoundNet, VGGSound) suffer from large-object-centered bias that enables models to learn visual shortcuts rather than genuine audio-visual alignment; mono audio further precludes spatial localization cues.
 
 2. **HRTF Filtering + ERB Cochleagram Frontend**
-   - **Function**: Transforms raw stereo waveforms into a representation faithful to human peripheral auditory processing.
-   - **Mechanism**: Stereo signals are first convolved with direction-dependent HRTFs from the KEMAR dummy head dataset, encoding interaural time differences (ITDs) and interaural level differences (ILDs). The HRTF-filtered 16 kHz stereo signal is then decomposed using 66 ERB (Equivalent Rectangular Bandwidth) filters into a cochleagram (tensor of shape 66 × 160,000 × 2), preserving pitch, timbre, and spatial cues.
-   - **Design Motivation**: Conventional mel-spectrograms discard the fine-grained spectral features introduced by HRTFs and the binaural spatial cues essential for localization; ERB filterbanks more faithfully replicate the frequency selectivity and temporal dynamics of the cochlea.
+    - **Function**: Transforms raw stereo waveforms into a representation faithful to human peripheral auditory processing.
+    - **Mechanism**: Stereo signals are first convolved with direction-dependent HRTFs from the KEMAR dummy head dataset, encoding interaural time differences (ITDs) and interaural level differences (ILDs). The HRTF-filtered 16 kHz stereo signal is then decomposed using 66 ERB (Equivalent Rectangular Bandwidth) filters into a cochleagram (tensor of shape 66 × 160,000 × 2), preserving pitch, timbre, and spatial cues.
+    - **Design Motivation**: Conventional mel-spectrograms discard the fine-grained spectral features introduced by HRTFs and the binaural spatial cues essential for localization; ERB filterbanks more faithfully replicate the frequency selectivity and temporal dynamics of the cochlea.
 
 3. **Dual-Encoder Contrastive Learning Architecture**
-   - **Function**: Independently encodes auditory and visual features before performing semantic and spatial alignment.
-   - **Mechanism**: Building upon the IS3 dual-stream 2D CNN architecture, 1D convolutional kernels first integrate binaural channel information, after which separate visual and audio encoders extract feature maps. A cosine similarity heatmap is computed for sound source localization. Training employs Triplet Loss (to pull matched audio-visual embeddings together) and CIoU Loss (to penalize spatial deviation between predicted and ground-truth bounding boxes).
-   - **Design Motivation**: Decoupled encoding allows each modality to develop independent representations; contrastive learning is naturally suited to cross-modal alignment, while CIoU Loss provides direct supervision for spatial localization accuracy.
+    - **Function**: Independently encodes auditory and visual features before performing semantic and spatial alignment.
+    - **Mechanism**: Building upon the IS3 dual-stream 2D CNN architecture, 1D convolutional kernels first integrate binaural channel information, after which separate visual and audio encoders extract feature maps. A cosine similarity heatmap is computed for sound source localization. Training employs Triplet Loss (to pull matched audio-visual embeddings together) and CIoU Loss (to penalize spatial deviation between predicted and ground-truth bounding boxes).
+    - **Design Motivation**: Decoupled encoding allows each modality to develop independent representations; contrastive learning is naturally suited to cross-modal alignment, while CIoU Loss provides direct supervision for spatial localization accuracy.
 
 ### Loss & Training
 
@@ -156,8 +156,8 @@ tags:
 # Seeing Sound, Hearing Sight: Uncovering Modality Bias and Conflict of AI Models in Sound Localization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11217](https://arxiv.org/abs/2505.11217)
-**Code**: [GitHub](https://github.com/) (publicly available as declared in the paper)
+**arXiv**: [2505.11217](https://arxiv.org/abs/2505.11217)  
+**Code**: [GitHub](https://github.com/) (publicly available as declared in the paper)  
 **Area**: audio_speech / multimodal
 **Keywords**: Sound Source Localization, Modality Bias, Cross-modal Conflict, Neuroscience-Inspired, HRTF, Cochleagram
 

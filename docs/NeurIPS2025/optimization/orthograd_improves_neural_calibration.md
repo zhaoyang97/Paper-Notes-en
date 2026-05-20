@@ -18,8 +18,8 @@ content_hash: fa82bcb14eb4060d
 # OrthoGrad Improves Neural Calibration
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04487](https://arxiv.org/abs/2506.04487)
-**Code**: None
+**arXiv**: [2506.04487](https://arxiv.org/abs/2506.04487)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: gradient orthogonalization, calibration, uncertainty estimation, overconfidence, geometric optimization
 

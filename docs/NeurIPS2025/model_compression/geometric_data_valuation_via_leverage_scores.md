@@ -18,8 +18,8 @@ content_hash: aa599e93a0db825d
 # Geometric Data Valuation via Leverage Scores
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02100](https://arxiv.org/abs/2511.02100)
-**Code**: [GitHub](https://github.com/rodrgo/geosh)
+**arXiv**: [2511.02100](https://arxiv.org/abs/2511.02100)  
+**Code**: [GitHub](https://github.com/rodrgo/geosh)  
 **Area**: Model Compression / LLM Efficiency
 **Keywords**: Data Valuation, Shapley Values, Leverage Scores, Active Learning, Experimental Design
 

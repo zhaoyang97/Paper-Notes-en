@@ -18,8 +18,8 @@ content_hash: daaf427ae85a189e
 # Diagnosing and Addressing Pitfalls in KG-RAG Datasets: Toward More Reliable Benchmarking
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23495](https://arxiv.org/abs/2505.23495)
-**Code**: [https://github.com/liangliang6v6/KGQAGen](https://github.com/liangliang6v6/KGQAGen)
+**arXiv**: [2505.23495](https://arxiv.org/abs/2505.23495)  
+**Code**: [https://github.com/liangliang6v6/KGQAGen](https://github.com/liangliang6v6/KGQAGen)  
 **Area**: NLP Understanding / Knowledge Graphs
 **Keywords**: KG-RAG, KGQA Benchmarking, Dataset Quality Auditing, SPARQL Validation, Multi-hop Reasoning
 

@@ -18,8 +18,8 @@ content_hash: 9a00a4ae49e61ee2
 # QKV Projections Require a Fraction of Their Memory
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.02939](https://arxiv.org/abs/2506.02939)
-**Code**: None
+**arXiv**: [2506.02939](https://arxiv.org/abs/2506.02939)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Training memory compression, attention mechanism, matrix multiplication approximation, activation compression, LLM training
 

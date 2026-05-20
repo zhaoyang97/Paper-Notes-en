@@ -19,8 +19,8 @@ content_hash: 43327e379d0ac2c0
 # Coupling Generative Modeling and an Autoencoder with the Causal Bridge
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25599](https://arxiv.org/abs/2509.25599)
-**Code**: To be confirmed
+**arXiv**: [2509.25599](https://arxiv.org/abs/2509.25599)  
+**Code**: To be confirmed  
 **Area**: Causal Inference / Generative Models / Proxy Variables
 **Keywords**: causal bridge, proxy variable, unobserved confounder, autoencoder, treatment effect, survival analysis
 

@@ -18,8 +18,8 @@ content_hash: 34b1ced4bcc3bb1b
 # Next Visual Granularity Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.12811](https://arxiv.org/abs/2508.12811)
-**Code**: [Project Page](https://yikai-wang.github.io/nvg)
+**arXiv**: [2508.12811](https://arxiv.org/abs/2508.12811)  
+**Code**: [Project Page](https://yikai-wang.github.io/nvg)  
 **Area**: Image Generation / Visual Autoregression
 **Keywords**: Visual Granularity, Autoregressive Generation, Structured Sequence, Coarse-to-Fine Generation, ImageNet
 

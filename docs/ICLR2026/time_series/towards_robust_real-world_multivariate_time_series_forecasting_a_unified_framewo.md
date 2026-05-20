@@ -18,8 +18,8 @@ content_hash: f87faf8a7a93cea8
 # Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.08660](https://arxiv.org/abs/2506.08660)
-**Code**: Available
+**arXiv**: [2506.08660](https://arxiv.org/abs/2506.08660)  
+**Code**: Available  
 **Area**: Time Series / Robust Forecasting
 **Keywords**: multivariate time series, asynchronous sampling, block-wise missingness, channel dependency, ChannelTokenFormer
 
@@ -54,19 +54,19 @@ Input multivariate time series → per-channel FFT to detect dominant frequency 
 ### Key Designs
 
 1. **Frequency-Domain Dynamic Patching and Tokenization**:
-   - **Function**: Adaptively determines patch length for each channel based on its frequency characteristics, handling asynchronous sampling.
-   - **Mechanism**: FFT is applied per channel to estimate the dominant period $T_i$, which is used as the patch length for non-overlapping segmentation. A channel with sampling period $s_i$ yields $L_i = \lfloor L/s_i \rfloor$ valid samples over input length $L$. The loss is a channel-aggregated MSE: $\mathcal{L}_\text{total} = \frac{1}{N}\sum_{i=1}^{N}\frac{1}{H_i}\sum_{j=1}^{H_i}(y_j^{(i)} - \hat{y}_j^{(i)})^2$, where $H_i = \lfloor H/s_i \rfloor$ is the number of prediction steps for channel $i$.
-   - **Design Motivation**: Preserving the original sampling resolution avoids up/downsampling and eliminates spurious interpolated data. Different channels may produce different numbers of local tokens, which are uniformly aggregated by their channel token.
+    - **Function**: Adaptively determines patch length for each channel based on its frequency characteristics, handling asynchronous sampling.
+    - **Mechanism**: FFT is applied per channel to estimate the dominant period $T_i$, which is used as the patch length for non-overlapping segmentation. A channel with sampling period $s_i$ yields $L_i = \lfloor L/s_i \rfloor$ valid samples over input length $L$. The loss is a channel-aggregated MSE: $\mathcal{L}_\text{total} = \frac{1}{N}\sum_{i=1}^{N}\frac{1}{H_i}\sum_{j=1}^{H_i}(y_j^{(i)} - \hat{y}_j^{(i)})^2$, where $H_i = \lfloor H/s_i \rfloor$ is the number of prediction steps for channel $i$.
+    - **Design Motivation**: Preserving the original sampling resolution avoids up/downsampling and eliminates spurious interpolated data. Different channels may produce different numbers of local tokens, which are uniformly aggregated by their channel token.
 
 2. **Mask-Guided Unified Attention**:
-   - **Function**: Unifies intra-channel temporal modeling and cross-channel dependency capture within a single attention operation via a carefully designed attention mask.
-   - **Mechanism**: All local tokens and channel tokens are concatenated into a unified sequence $\mathbf{X} = [\mathbf{T}^{(1)};\mathbf{C}^{(1)};\dots;\mathbf{T}^{(N)};\mathbf{C}^{(N)}] \in \mathbb{R}^{\mathcal{T} \times d}$, and masked self-attention is applied: $\mathbf{X}_\text{out} = \mathbf{X} + \text{softmax}(\frac{QK^\top}{\sqrt{d}} + \mathbf{M})V$. The mask $\mathbf{M}$ enforces three rules: (1) local tokens can only attend to other local tokens within the same channel (intra-temporal); (2) channel tokens can attend to local tokens of their own channel and to channel tokens of other channels (aggregation + cross-channel interaction); (3) channel tokens do not self-attend (preventing self-reinforcement).
-   - **Design Motivation**: Read-write separation — channel tokens act as read-only aggregators, and local tokens cannot attend to channel tokens, preventing information leakage. This structure makes channel tokens serve as inter-channel information relays.
+    - **Function**: Unifies intra-channel temporal modeling and cross-channel dependency capture within a single attention operation via a carefully designed attention mask.
+    - **Mechanism**: All local tokens and channel tokens are concatenated into a unified sequence $\mathbf{X} = [\mathbf{T}^{(1)};\mathbf{C}^{(1)};\dots;\mathbf{T}^{(N)};\mathbf{C}^{(N)}] \in \mathbb{R}^{\mathcal{T} \times d}$, and masked self-attention is applied: $\mathbf{X}_\text{out} = \mathbf{X} + \text{softmax}(\frac{QK^\top}{\sqrt{d}} + \mathbf{M})V$. The mask $\mathbf{M}$ enforces three rules: (1) local tokens can only attend to other local tokens within the same channel (intra-temporal); (2) channel tokens can attend to local tokens of their own channel and to channel tokens of other channels (aggregation + cross-channel interaction); (3) channel tokens do not self-attend (preventing self-reinforcement).
+    - **Design Motivation**: Read-write separation — channel tokens act as read-only aggregators, and local tokens cannot attend to channel tokens, preventing information leakage. This structure makes channel tokens serve as inter-channel information relays.
 
 3. **Patch Masking During Training (Simulating Test-Time Missingness)**:
-   - **Function**: Randomly masks patch subsets of channels during training as a proxy training strategy for block-wise missingness at test time.
-   - **Mechanism**: Inspired by PatchDropout, a subset of patches per channel is randomly removed during training (patches that are entirely zero have their corresponding local tokens dropped), and attention naturally skips those positions. At test time, real missing blocks cause fully-absent patches to be removed, and the model infers missing channels from the available channel tokens.
-   - **Design Motivation**: Conventional approaches use zero-filling or interpolation, which propagates invalid signals. This method simply omits missing patches, introducing no erroneous information, while also serving as implicit regularization against overfitting.
+    - **Function**: Randomly masks patch subsets of channels during training as a proxy training strategy for block-wise missingness at test time.
+    - **Mechanism**: Inspired by PatchDropout, a subset of patches per channel is randomly removed during training (patches that are entirely zero have their corresponding local tokens dropped), and attention naturally skips those positions. At test time, real missing blocks cause fully-absent patches to be removed, and the model infers missing channels from the available channel tokens.
+    - **Design Motivation**: Conventional approaches use zero-filling or interpolation, which propagates invalid signals. This method simply omits missing patches, introducing no erroneous information, while also serving as implicit regularization against overfitting.
 
 ### Loss & Training
 

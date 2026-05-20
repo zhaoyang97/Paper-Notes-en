@@ -18,8 +18,8 @@ content_hash: fbd91982f32e6960
 # Don't Start Over: A Cost-Effective Framework for Migrating Personalized Prompts Between LLMs
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.12034](https://arxiv.org/abs/2601.12034)
-**Code**: [github](https://github.com/Kimagure7/Dont-Start-Over)
+**arXiv**: [2601.12034](https://arxiv.org/abs/2601.12034)  
+**Code**: [github](https://github.com/Kimagure7/Dont-Start-Over)  
 **Area**: Model Compression
 **Keywords**: Soft Prompt Transfer, Personalization, LLM, Parameter-Efficient Adapter, User Selection Strategy
 
@@ -102,8 +102,8 @@ Training the adapter over tens of thousands of users remains costly. The core in
 **Task-specific loss functions**:
 
 - **Rating prediction** (Amazon/Yelp): Mixed loss $0.8 \cdot \mathcal{L}_{MSE} + 0.2 \cdot \mathcal{L}_{CE}$
-  - Logits for five discrete rating tokens are extracted from LLM outputs.
-  - Cross-entropy handles classification; an MLP head regresses continuous rating values.
+    - Logits for five discrete rating tokens are extracted from LLM outputs.
+    - Cross-entropy handles classification; an MLP head regresses continuous rating values.
 - **CTR prediction** (MIND): Standard binary cross-entropy $\mathcal{L}_{BCE}$ computed on the logit of the "yes" token.
 
 **Training details**:

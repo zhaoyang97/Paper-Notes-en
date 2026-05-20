@@ -18,8 +18,8 @@ content_hash: 4fed46c91e657bd6
 # SparK: Query-Aware Unstructured Sparsity with Recoverable KV Cache Channel Pruning
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.15212](https://arxiv.org/abs/2508.15212)
-**Code**: To be released
+**arXiv**: [2508.15212](https://arxiv.org/abs/2508.15212)  
+**Code**: To be released  
 **Area**: Interpretability
 **Keywords**: KV Cache Compression, Channel Pruning, Unstructured Sparsity, Long-Context Inference, Attention Mechanism
 

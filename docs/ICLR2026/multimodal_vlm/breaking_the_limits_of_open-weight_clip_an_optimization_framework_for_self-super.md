@@ -18,8 +18,8 @@ content_hash: 5b9a08ad419b1e83
 # Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.09859](https://arxiv.org/abs/2601.09859)
-**Code**: Implemented based on the FastCLIP codebase
+**arXiv**: [2601.09859](https://arxiv.org/abs/2601.09859)  
+**Code**: Implemented based on the FastCLIP codebase  
 **Area**: Multimodal VLM
 **Keywords**: CLIP, self-supervised fine-tuning, contrastive learning, optimizer statistics recovery, false negatives
 

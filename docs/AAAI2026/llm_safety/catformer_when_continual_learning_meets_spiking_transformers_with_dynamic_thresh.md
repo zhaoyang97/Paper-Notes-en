@@ -18,8 +18,8 @@ content_hash: 19d11d34d0cdbf04
 # CATFormer: When Continual Learning Meets Spiking Transformers With Dynamic Thresholds
 
 **Conference**: AAAI 2026 (Neuro for AI & AI for Neuro Workshop, PMLR)
-**arXiv**: [2603.15184](https://arxiv.org/abs/2603.15184)
-**Code**: N/A
+**arXiv**: [2603.15184](https://arxiv.org/abs/2603.15184)  
+**Code**: N/A  
 **Area**: LLM Safety
 **Keywords**: Spiking Neural Networks, Continual Learning, Dynamic Thresholds, Class-Incremental Learning, Vision Transformer
 

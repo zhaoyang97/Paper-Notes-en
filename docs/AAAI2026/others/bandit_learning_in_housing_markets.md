@@ -17,8 +17,8 @@ content_hash: d77f69d85470faef
 # Bandit Learning in Housing Markets
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12629](https://arxiv.org/abs/2511.12629)
-**Code**: None
+**arXiv**: [2511.12629](https://arxiv.org/abs/2511.12629)  
+**Code**: None  
 **Area**: Other
 **Keywords**: multi-armed-bandit, housing-market, matching, online-learning, game-theory
 

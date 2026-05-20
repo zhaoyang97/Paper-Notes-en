@@ -18,8 +18,8 @@ content_hash: 53535f15ad4fc98e
 # DeepRAHT: Learning Predictive RAHT for Point Cloud Attribute Compression
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.12255](https://arxiv.org/abs/2601.12255)
-**Code**: [Available](https://github.com/zb12138/DeepRAHT)
+**arXiv**: [2601.12255](https://arxiv.org/abs/2601.12255)  
+**Code**: [Available](https://github.com/zb12138/DeepRAHT)  
 **Area**: 3D Vision
 **Keywords**: Point Cloud Compression, Attribute Compression, RAHT, End-to-End Learning, Variable Bitrate
 

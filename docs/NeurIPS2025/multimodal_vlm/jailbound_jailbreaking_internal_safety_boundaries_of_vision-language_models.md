@@ -18,8 +18,8 @@ content_hash: 7b520003da0ed002
 # JailBound: Jailbreaking Internal Safety Boundaries of Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19610](https://arxiv.org/abs/2505.19610)
-**Code**: To be confirmed
+**arXiv**: [2505.19610](https://arxiv.org/abs/2505.19610)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM / AI Safety / Adversarial Attacks
 **Keywords**: jailbreak, safety boundary, latent space attack, ELK, cross-modal perturbation
 

@@ -18,8 +18,8 @@ content_hash: 0cb8785a24fc3a8b
 # SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12764](https://arxiv.org/abs/2603.12764)
-**Code**: [GitHub](https://github.com/jack1ee/SAVAX)
+**arXiv**: [2603.12764](https://arxiv.org/abs/2603.12764)  
+**Code**: [GitHub](https://github.com/jack1ee/SAVAX)  
 **Area**: Video Understanding
 **Keywords**: Cross-view, Imitation error detection, Adaptive sampling, View embedding, Bidirectional cross-attention
 
@@ -56,23 +56,23 @@ TSP (pre-trained on ActivityNet) is used as the frozen feature extractor with fe
 ### Key Designs
 
 1. **Gated Adaptive Sampling**:
-   - The Exo stream computes saliency scores via self-attention and FFN; the Ego stream uses Exo-conditioned cross-attention scores (leveraging the demonstration as a keyframe reference).
-   - During training, hard indices are generated via a Gumbel Top-K straight-through estimator, with a residual gate providing a differentiable gradient path: $\mathbf{g}^{exo} = \mathbf{1} + \alpha(\text{Norm}(\boldsymbol{s}_x) - \mathbf{1})$
-   - Downstream modules process only the small set of hard-selected keyframes, while gradients are propagated through soft scores.
-   - A selection entropy regularizer $\mathcal{L}_{sel}$ prevents selection collapse, and a VICReg-style regularizer $\mathcal{L}_{vic}$ suppresses dimensional collinearity.
+    - The Exo stream computes saliency scores via self-attention and FFN; the Ego stream uses Exo-conditioned cross-attention scores (leveraging the demonstration as a keyframe reference).
+    - During training, hard indices are generated via a Gumbel Top-K straight-through estimator, with a residual gate providing a differentiable gradient path: $\mathbf{g}^{exo} = \mathbf{1} + \alpha(\text{Norm}(\boldsymbol{s}_x) - \mathbf{1})$
+    - Downstream modules process only the small set of hard-selected keyframes, while gradients are propagated through soft scores.
+    - A selection entropy regularizer $\mathcal{L}_{sel}$ prevents selection collapse, and a VICReg-style regularizer $\mathcal{L}_{vic}$ suppresses dimensional collinearity.
 
 2. **Scene-aware Dictionary View Embeddings**:
-   - A shared view-scene dictionary $\mathbf{D} \in \mathbb{R}^{M \times d}$ is maintained, whose row vectors capture common view sub-factors (e.g., "close-range hand-object interaction," "whole-body motion structure").
-   - Per-frame features query the dictionary via temperature-scaled multi-head cross-attention: $\mathbf{VE}^u = \text{CrossAttn}(\hat{\mathbf{Z}}^u / \tau, \mathbf{D})$
-   - Embeddings are injected at two points: before fusion (intra-domain alignment) and at each encoder layer (multi-level modulation).
-   - An attention entropy regularizer prevents overly peaked dictionary queries: $\mathcal{L}_\text{view-ent} = \frac{1}{\log M} \mathbb{E}_t [KL(\alpha_t | U_M)]$
-   - A dictionary diversity regularizer suppresses prototype redundancy: $\mathcal{L}_\text{dict-div} = \|\hat{\mathbf{D}} \hat{\mathbf{D}}^\top - \mathbf{I}_M\|_F^2$
+    - A shared view-scene dictionary $\mathbf{D} \in \mathbb{R}^{M \times d}$ is maintained, whose row vectors capture common view sub-factors (e.g., "close-range hand-object interaction," "whole-body motion structure").
+    - Per-frame features query the dictionary via temperature-scaled multi-head cross-attention: $\mathbf{VE}^u = \text{CrossAttn}(\hat{\mathbf{Z}}^u / \tau, \mathbf{D})$
+    - Embeddings are injected at two points: before fusion (intra-domain alignment) and at each encoder layer (multi-level modulation).
+    - An attention entropy regularizer prevents overly peaked dictionary queries: $\mathcal{L}_\text{view-ent} = \frac{1}{\log M} \mathbb{E}_t [KL(\alpha_t | U_M)]$
+    - A dictionary diversity regularizer suppresses prototype redundancy: $\mathcal{L}_\text{dict-div} = \|\hat{\mathbf{D}} \hat{\mathbf{D}}^\top - \mathbf{I}_M\|_F^2$
 
 3. **Bidirectional Cross-Attention Fusion**:
-   - Symmetric bidirectional cross-attention is computed in parallel: the Ego stream retrieves global boundary/step cues from Exo, while the Exo stream retrieves hand-object details and local causal relationships from Ego.
-   - A learnable gated residual mixture prevents either stream from dominating: $\mathbf{F}^{ego} = (1-\boldsymbol{\gamma}^e)\tilde{\mathbf{Z}}^{ego} + \boldsymbol{\gamma}^e \mathbf{E}^\star$
-   - The gate parameter $\boldsymbol{\gamma}^e = \sigma(\mathbf{W_e}[\tilde{\mathbf{Z}}^{ego}; \mathbf{E}^\star])$ relies more on cross-view evidence at action boundaries and key interactions.
-   - Final fusion: $\tilde{\mathbf{Z}}^{fused} = \frac{1}{2}(\mathbf{F}^{ego} + \mathbf{F}^{exo})$
+    - Symmetric bidirectional cross-attention is computed in parallel: the Ego stream retrieves global boundary/step cues from Exo, while the Exo stream retrieves hand-object details and local causal relationships from Ego.
+    - A learnable gated residual mixture prevents either stream from dominating: $\mathbf{F}^{ego} = (1-\boldsymbol{\gamma}^e)\tilde{\mathbf{Z}}^{ego} + \boldsymbol{\gamma}^e \mathbf{E}^\star$
+    - The gate parameter $\boldsymbol{\gamma}^e = \sigma(\mathbf{W_e}[\tilde{\mathbf{Z}}^{ego}; \mathbf{E}^\star])$ relies more on cross-view evidence at action boundaries and key interactions.
+    - Final fusion: $\tilde{\mathbf{Z}}^{fused} = \frac{1}{2}(\mathbf{F}^{ego} + \mathbf{F}^{exo})$
 
 ### Loss & Training
 

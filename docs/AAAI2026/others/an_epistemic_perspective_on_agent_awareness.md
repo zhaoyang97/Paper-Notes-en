@@ -17,8 +17,8 @@ content_hash: d3aed0eb426fc82f
 # An Epistemic Perspective on Agent Awareness
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.05977v1](https://arxiv.org/abs/2511.05977v1)
-**Code**: None
+**arXiv**: [2511.05977v1](https://arxiv.org/abs/2511.05977v1)  
+**Code**: None  
 **Area**: Other
 **Keywords**: epistemic logic, agent awareness, de re/de dicto, 2D semantics, completeness proof
 

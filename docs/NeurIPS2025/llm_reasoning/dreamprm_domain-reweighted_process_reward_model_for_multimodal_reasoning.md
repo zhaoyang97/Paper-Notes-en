@@ -18,8 +18,8 @@ content_hash: 93f29d82c6e61324
 # DreamPRM: Domain-Reweighted Process Reward Model for Multimodal Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20241](https://arxiv.org/abs/2505.20241)
-**Code**: [GitHub](https://github.com/coder-qicao/DreamPRM)
+**arXiv**: [2505.20241](https://arxiv.org/abs/2505.20241)  
+**Code**: [GitHub](https://github.com/coder-qicao/DreamPRM)  
 **Area**: LLM Reasoning
 **Keywords**: Process Reward Model, multimodal reasoning, domain reweighting, bi-level optimization, test-time scaling
 

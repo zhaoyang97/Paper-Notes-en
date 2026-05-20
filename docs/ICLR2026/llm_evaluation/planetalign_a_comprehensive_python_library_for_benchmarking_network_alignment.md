@@ -18,8 +18,8 @@ content_hash: 1ff6302fd9fe075f
 # PlanetAlign: A Comprehensive Python Library for Benchmarking Network Alignment
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.21366](https://arxiv.org/abs/2505.21366)
-**Code**: [GitHub](https://github.com/yq-leo/PlanetAlign)
+**arXiv**: [2505.21366](https://arxiv.org/abs/2505.21366)  
+**Code**: [GitHub](https://github.com/yq-leo/PlanetAlign)  
 **Area**: LLM Evaluation
 **Keywords**: Network Alignment, Benchmark Library, Graph Matching, Optimal Transport, Evaluation Framework
 

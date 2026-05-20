@@ -18,8 +18,8 @@ content_hash: e0fd2c5e2b7827b1
 # Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.03827](https://arxiv.org/abs/2603.03827)
-**Code**: [GitHub](https://github.com/thuiar/HIER)
+**arXiv**: [2603.03827](https://arxiv.org/abs/2603.03827)  
+**Code**: [GitHub](https://github.com/thuiar/HIER)  
 **Area**: Dialogue Systems
 **Keywords**: Multimodal Intent Recognition, Hierarchical Semantic Representation, Self-Evolutionary Reasoning, Concept Clustering, CoT
 

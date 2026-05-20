@@ -18,8 +18,8 @@ content_hash: 26bc4ec0eb427836
 # Beyond Transcription: Unified Audio Schema for Perception-Aware AudioLLMs
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12506](https://arxiv.org/abs/2604.12506)
-**Code**: [GitHub](https://github.com/Tencent/Unified_Audio_Schema)
+**arXiv**: [2604.12506](https://arxiv.org/abs/2604.12506)  
+**Code**: [GitHub](https://github.com/Tencent/Unified_Audio_Schema)  
 **Area**: Speech Processing
 **Keywords**: Audio Large Language Models, Perception Enhancement, Unified Audio Schema, Paralinguistic Information, ASR
 

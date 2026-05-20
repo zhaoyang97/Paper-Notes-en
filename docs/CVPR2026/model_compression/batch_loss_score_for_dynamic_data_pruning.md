@@ -18,8 +18,8 @@ content_hash: 38780b070d4cac49
 # Batch Loss Score for Dynamic Data Pruning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04681](https://arxiv.org/abs/2604.04681)
-**Code**: [https://github.com/mrazhou/BLS](https://github.com/mrazhou/BLS)
+**arXiv**: [2604.04681](https://arxiv.org/abs/2604.04681)  
+**Code**: [https://github.com/mrazhou/BLS](https://github.com/mrazhou/BLS)  
 **Area**: Training Efficiency / Data Pruning
 **Keywords**: dynamic data pruning, batch loss, EMA, training efficiency, sample importance
 

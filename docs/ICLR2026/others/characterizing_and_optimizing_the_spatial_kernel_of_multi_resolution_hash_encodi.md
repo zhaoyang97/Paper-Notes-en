@@ -17,8 +17,8 @@ content_hash: 01fda654c871d050
 # Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings
 
 **Conference**: ICLR2026
-**arXiv**: [2602.10495](https://arxiv.org/abs/2602.10495)
-**Code**: To be confirmed
+**arXiv**: [2602.10495](https://arxiv.org/abs/2602.10495)  
+**Code**: To be confirmed  
 **Area**: Other
 **Keywords**: multi-resolution hash encoding, neural radiance field, point spread function, spatial anisotropy, Instant-NGP
 

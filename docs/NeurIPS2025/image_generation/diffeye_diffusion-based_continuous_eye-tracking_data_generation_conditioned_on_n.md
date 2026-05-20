@@ -18,8 +18,8 @@ content_hash: 5f837d155592d3f4
 # DiffEye: Diffusion-Based Continuous Eye-Tracking Data Generation Conditioned on Natural Images
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16767](https://arxiv.org/abs/2509.16767)
-**Code**: Available ([https://diff-eye.github.io/](https://diff-eye.github.io/))
+**arXiv**: [2509.16767](https://arxiv.org/abs/2509.16767)  
+**Code**: Available ([https://diff-eye.github.io/](https://diff-eye.github.io/))  
 **Area**: Image Generation / Diffusion Models / Eye Tracking
 **Keywords**: Diffusion models, eye movement trajectory generation, scanpath prediction, visual attention modeling, corresponding position embedding
 

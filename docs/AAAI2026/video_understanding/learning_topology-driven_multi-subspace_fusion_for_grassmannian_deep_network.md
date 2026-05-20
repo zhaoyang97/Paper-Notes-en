@@ -18,8 +18,8 @@ content_hash: 43872567c34e00d7
 # Learning Topology-Driven Multi-Subspace Fusion for Grassmannian Deep Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08628](https://arxiv.org/abs/2511.08628)
-**Code**: [GitHub](https://github.com/Xua-Yu/GMSF-Net)
+**arXiv**: [2511.08628](https://arxiv.org/abs/2511.08628)  
+**Code**: [GitHub](https://github.com/Xua-Yu/GMSF-Net)  
 **Area**: Video Understanding / Manifold Learning
 **Keywords**: Grassmannian, manifold learning, subspace fusion, 3D action recognition, Riemannian neural networks
 

@@ -18,8 +18,8 @@ content_hash: c93d82f43f580239
 # From Image to Video: An Empirical Study of Diffusion Representations
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.07001](https://arxiv.org/abs/2502.07001)
-**Code**: No public code
+**arXiv**: [2502.07001](https://arxiv.org/abs/2502.07001)  
+**Code**: No public code  
 **Area**: 3D Vision
 **Keywords**: Diffusion Models, Video Representation Learning, Image vs. Video Diffusion, Motion Understanding, WALT
 

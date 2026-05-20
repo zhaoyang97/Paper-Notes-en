@@ -18,8 +18,8 @@ content_hash: 8f68dd340943694b
 # EgoAdapt: Adaptive Multisensory Distillation and Policy Learning for Efficient Egocentric Perception
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21080](https://arxiv.org/abs/2506.21080)
-**Code**: None
+**arXiv**: [2506.21080](https://arxiv.org/abs/2506.21080)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: egocentric perception, multimodal distillation, policy learning, efficient inference, multisensory fusion
 

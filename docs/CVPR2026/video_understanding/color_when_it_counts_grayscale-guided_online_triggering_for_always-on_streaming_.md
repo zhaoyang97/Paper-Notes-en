@@ -18,8 +18,8 @@ content_hash: bb17cfa0b23dcb8e
 # Color When It Counts: Grayscale-Guided Online Triggering for Always-On Streaming Video Sensing
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22466](https://arxiv.org/abs/2603.22466)
-**Code**: [lvgd.github.io/ColorTrigger](https://lvgd.github.io/ColorTrigger/)
+**arXiv**: [2603.22466](https://arxiv.org/abs/2603.22466)  
+**Code**: [lvgd.github.io/ColorTrigger](https://lvgd.github.io/ColorTrigger/)  
 **Area**: Video Understanding
 **Keywords**: Streaming Video Understanding, Edge Devices, Grayscale-Guided Triggering, Energy-Efficient Sensing, Dynamic Token Routing
 

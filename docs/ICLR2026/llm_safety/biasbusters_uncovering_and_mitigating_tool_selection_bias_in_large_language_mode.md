@@ -18,8 +18,8 @@ content_hash: 59b1fbaea5398fc7
 # BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00307](https://arxiv.org/abs/2510.00307)
-**Code**: [https://github.com/thierry123454/tool-selection-bias](https://github.com/thierry123454/tool-selection-bias)
+**arXiv**: [2510.00307](https://arxiv.org/abs/2510.00307)  
+**Code**: [https://github.com/thierry123454/tool-selection-bias](https://github.com/thierry123454/tool-selection-bias)  
 **Area**: AI Safety
 **Keywords**: tool selection bias, LLM agent, fairness, API marketplace, debiasing
 

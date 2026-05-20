@@ -17,8 +17,8 @@ content_hash: 73e07601b0be8030
 # Time-O1: Time-Series Forecasting Needs Transformed Label Alignment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17847](https://arxiv.org/abs/2505.17847)
-**Code**: [Available](https://github.com/Master-PLC/Time-o1)
+**arXiv**: [2505.17847](https://arxiv.org/abs/2505.17847)  
+**Code**: [Available](https://github.com/Master-PLC/Time-o1)  
 **Area**: Time Series Forecasting
 **Keywords**: Time Series, Learning Objective, Label Autocorrelation, SVD Transform, Decorrelation
 

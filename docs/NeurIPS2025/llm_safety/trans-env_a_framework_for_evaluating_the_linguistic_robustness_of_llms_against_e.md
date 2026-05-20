@@ -18,8 +18,8 @@ content_hash: 069a7a18ac570ab6
 # Trans-EnV: A Framework for Evaluating the Linguistic Robustness of LLMs Against English Varieties
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20875](https://arxiv.org/abs/2505.20875)
-**Code**: [GitHub](https://github.com/jiyounglee-0523/TransEnV)
+**arXiv**: [2505.20875](https://arxiv.org/abs/2505.20875)  
+**Code**: [GitHub](https://github.com/jiyounglee-0523/TransEnV)  
 **Area**: AI Safety
 **Keywords**: Linguistic Robustness, English Dialects, Fairness, LLM Evaluation, ESL English
 
@@ -55,9 +55,9 @@ Trans-EnV operates in three stages: (1) **Data Collection**—acquiring variety-
 
 2. **Two-Dimensional Features for ESL English**:
 
-   - **CEFR Dimension** (language proficiency): Based on 1,222 can-do descriptors from the English Grammar Profile, features above the target CEFR level are removed to simulate the corresponding proficiency. For example, simulating CEFR A removes all B- and C-level can-do features.
+    - **CEFR Dimension** (language proficiency): Based on 1,222 can-do descriptors from the English Grammar Profile, features above the target CEFR level are removed to simulate the corresponding proficiency. For example, simulating CEFR A removes all B- and C-level can-do features.
 
-   - **L1 Dimension** (transfer effects): Three ESL corpora (CLC-FCE, ICLE, EFCamDat) are used; statistical t-tests ($p < 0.05$) are applied to extract L1-specific grammatical error patterns from learner writing at matching CEFR levels. Ten L1 backgrounds are covered (Arabic, Chinese, French, German, etc.), with an average of 10 features extracted per L1 per CEFR level. L1 features are verified to be non-conflicting with CEFR features before being merged.
+    - **L1 Dimension** (transfer effects): Three ESL corpora (CLC-FCE, ICLE, EFCamDat) are used; statistical t-tests ($p < 0.05$) are applied to extract L1-specific grammatical error patterns from learner writing at matching CEFR levels. Ten L1 backgrounds are covered (Arabic, Chinese, French, German, etc.), with an average of 10 features extracted per L1 per CEFR level. L1 features are verified to be non-conflicting with CEFR features before being merged.
 
 3. **Transformation Guidelines and Execution Mechanism**: Each linguistic feature $l_j$ is paired with a transformation guideline $g_j$ consisting of two steps: (a) **Qualification**—determining whether the feature applies to the current sentence (e.g., "she/her for inanimate reference" requires an inanimate referent and corresponding pronoun in the sentence); (b) **Application**—the specific transformation operation (e.g., locating the inanimate referent and replacing its pronoun with she/her). GPT-4 is used for one-shot guideline generation. During sentence transformation, features are applied in randomized order one by one, with a semantic checker $S$ (LLaMA-3.3-70B-Instruct) verifying semantic consistency after each transformation. For ESL English, a lexical simplification step is additionally applied, permitting retention of at most 15% of advanced vocabulary to reflect the lexical distribution of real ESL text.
 

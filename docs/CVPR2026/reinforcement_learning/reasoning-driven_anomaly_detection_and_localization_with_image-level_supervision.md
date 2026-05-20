@@ -17,8 +17,8 @@ content_hash: 5453a137065d95d1
 # Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27179](https://arxiv.org/abs/2603.27179)
-**Code**: [GitHub](https://github.com/YizhouJin313/ReADL)
+**arXiv**: [2603.27179](https://arxiv.org/abs/2603.27179)  
+**Code**: [GitHub](https://github.com/YizhouJin313/ReADL)  
 **Area**: Reinforcement Learning
 **Keywords**: Anomaly Detection and Localization, Reasoning-Driven, Image-Level Supervision, MLLM Attention, Reinforcement Learning
 

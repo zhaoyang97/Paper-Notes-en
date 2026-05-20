@@ -18,8 +18,8 @@ content_hash: a32a293af78cd03e
 # DOS: Directional Object Separation in Text Embeddings for Multi-Object Image Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.14376](https://arxiv.org/abs/2510.14376)
-**Code**: [https://github.com/dongnami/DOS](https://github.com/dongnami/DOS)
+**arXiv**: [2510.14376](https://arxiv.org/abs/2510.14376)  
+**Code**: [https://github.com/dongnami/DOS](https://github.com/dongnami/DOS)  
 **Area**: Image Generation
 **Keywords**: multi-object image generation, text embedding separation, object mixing, CLIP embeddings, directional separation
 

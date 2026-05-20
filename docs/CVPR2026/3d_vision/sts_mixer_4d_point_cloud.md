@@ -18,8 +18,8 @@ content_hash: 0b5f0d75b38ff356
 # STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.11637](https://arxiv.org/abs/2604.11637)
-**Code**: [https://github.com/Vegetebird/STS-Mixer](https://github.com/Vegetebird/STS-Mixer)
+**arXiv**: [2604.11637](https://arxiv.org/abs/2604.11637)  
+**Code**: [https://github.com/Vegetebird/STS-Mixer](https://github.com/Vegetebird/STS-Mixer)  
 **Area**: 3D Vision
 **Keywords**: 4D point cloud video, graph Fourier transform, spectral representation, action recognition, semantic segmentation
 

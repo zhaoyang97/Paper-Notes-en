@@ -18,8 +18,8 @@ content_hash: 8e80e19d9b395d2f
 # MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20426](https://arxiv.org/abs/2505.20426)
-**Code**: [GitHub](https://yunlong10.github.io/MMPerspective/)
+**arXiv**: [2505.20426](https://arxiv.org/abs/2505.20426)  
+**Code**: [GitHub](https://yunlong10.github.io/MMPerspective/)  
 **Area**: Multimodal VLM
 **Keywords**: perspective understanding, multimodal large language models, benchmark, spatial reasoning, geometric perception
 

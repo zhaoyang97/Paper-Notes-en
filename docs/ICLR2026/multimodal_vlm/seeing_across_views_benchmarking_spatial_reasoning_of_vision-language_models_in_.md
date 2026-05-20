@@ -18,8 +18,8 @@ content_hash: dc704f229539c892
 # Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes
 
 **Conference**: ICLR2026
-**arXiv**: [2510.19400](https://arxiv.org/abs/2510.19400)
-**Code**: [Project Page](https://github.com/) (open-sourced)
+**arXiv**: [2510.19400](https://arxiv.org/abs/2510.19400)  
+**Code**: [Project Page](https://github.com/) (open-sourced)  
 **Area**: Multimodal VLM
 **Keywords**: multi-view spatial reasoning, benchmark, embodied AI, VLM evaluation, robotic manipulation
 
@@ -39,16 +39,16 @@ This paper proposes MV-RoboBench, the first benchmark integrating multi-view spa
 Built upon the AgiWorld and BridgeV2 datasets, MV-RoboBench contains 1,708 manually annotated multiple-choice questions spanning **Spatial Understanding** and **Robotic Execution**, organized into 8 sub-tasks:
 
 - **Spatial Understanding (4 sub-tasks)**:
-  - Cross-View Matching: identifying the same object across viewpoints
-  - Distance Judgement: estimating relative distances between objects
-  - Viewpoint Identification: reasoning about viewpoint transformations
-  - 3D Spatial Consistency: maintaining consistent 3D spatial relationships
+    - Cross-View Matching: identifying the same object across viewpoints
+    - Distance Judgement: estimating relative distances between objects
+    - Viewpoint Identification: reasoning about viewpoint transformations
+    - 3D Spatial Consistency: maintaining consistent 3D spatial relationships
 
 - **Robotic Execution (4 sub-tasks)**:
-  - Action Planning: planning multi-step action sequences
-  - Step Execution: verifying correctness of a single next step
-  - Trajectory Selection: assessing feasibility of candidate motion paths
-  - Affordance Recognition: evaluating object interaction feasibility
+    - Action Planning: planning multi-step action sequences
+    - Step Execution: verifying correctness of a single next step
+    - Trajectory Selection: assessing feasibility of candidate motion paths
+    - Affordance Recognition: evaluating object interaction feasibility
 
 ### Key Design 1: Multi-Stage Human Quality Control Pipeline
 - **Data Collection**: Rule-based filtering + GPT-4.1-assisted screening (for triage only, not QA generation) + human verification.
@@ -136,8 +136,8 @@ tags:
 # Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes
 
 **Conference**: ICLR2026
-**arXiv**: [2510.19400](https://arxiv.org/abs/2510.19400)
-**Code**: [GitHub](https://github.com/) (project page available)
+**arXiv**: [2510.19400](https://arxiv.org/abs/2510.19400)  
+**Code**: [GitHub](https://github.com/) (project page available)  
 **Area**: multimodal_vlm
 **Keywords**: multi-view spatial reasoning, robotic manipulation, VLM benchmark, embodied AI, MV-RoboBench
 

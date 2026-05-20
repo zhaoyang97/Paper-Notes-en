@@ -18,8 +18,8 @@ content_hash: 74fc4a7e4a0dfdbc
 # SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2410.13648](https://arxiv.org/abs/2410.13648)
-**Code**: [https://github.com/yulinggu-cs/SimpleToM](https://github.com/yulinggu-cs/SimpleToM)
+**arXiv**: [2410.13648](https://arxiv.org/abs/2410.13648)  
+**Code**: [https://github.com/yulinggu-cs/SimpleToM](https://github.com/yulinggu-cs/SimpleToM)  
 **Area**: Human Understanding
 **Keywords**: Theory of Mind, ToM, LLM Social Reasoning, Explicit vs. Applied ToM, Information Asymmetry
 

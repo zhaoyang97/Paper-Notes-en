@@ -18,8 +18,8 @@ content_hash: b733098ff17aa222
 # U-F²-CBM: CLIP-Free, Label Free, Unsupervised Concept Bottleneck Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.10981](https://arxiv.org/abs/2503.10981)
-**Code**: None (pseudocode provided in the paper)
+**arXiv**: [2503.10981](https://arxiv.org/abs/2503.10981)  
+**Code**: None (pseudocode provided in the paper)  
 **Area**: Explainable AI / Concept Bottleneck Models
 **Keywords**: concept bottleneck model, CLIP-free, label-free, unsupervised, interpretability, TextUnlock
 

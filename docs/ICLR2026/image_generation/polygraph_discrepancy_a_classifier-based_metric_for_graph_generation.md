@@ -18,8 +18,8 @@ content_hash: 21be7192e3016185
 # PolyGraph Discrepancy: a classifier-based metric for graph generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.06122](https://arxiv.org/abs/2510.06122)
-**Code**: PolyGraph open-source library (mentioned in the paper; to be publicly released)
+**arXiv**: [2510.06122](https://arxiv.org/abs/2510.06122)  
+**Code**: PolyGraph open-source library (mentioned in the paper; to be publicly released)  
 **Area**: Graph generative model evaluation
 **Keywords**: Graph generation, Jensen-Shannon distance, classifier-based evaluation, MMD, TabPFN
 

@@ -18,8 +18,8 @@ content_hash: f42f453354441e07
 # DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.03744](https://arxiv.org/abs/2603.03744)
-**Code**: [https://github.com/dage-site](https://github.com/dage-site)
+**arXiv**: [2603.03744](https://arxiv.org/abs/2603.03744)  
+**Code**: [https://github.com/dage-site](https://github.com/dage-site)  
 **Area**: Model Compression
 **Keywords**: Multi-view geometry estimation, dual-stream Transformer, depth estimation, knowledge distillation, high-resolution inference
 

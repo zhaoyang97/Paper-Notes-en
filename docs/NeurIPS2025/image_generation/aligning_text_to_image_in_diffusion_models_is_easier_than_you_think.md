@@ -18,8 +18,8 @@ content_hash: af958034bbb68ac8
 # Aligning Text to Image in Diffusion Models is Easier Than You Think
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.08250](https://arxiv.org/abs/2503.08250)
-**Code**: [https://softrepa.github.io/](https://softrepa.github.io/) (project page)
+**arXiv**: [2503.08250](https://arxiv.org/abs/2503.08250)  
+**Code**: [https://softrepa.github.io/](https://softrepa.github.io/) (project page)  
 **Area**: Diffusion Models / Text-Image Alignment
 **Keywords**: SoftREPA, Contrastive Learning, Soft Token, Text-Image Alignment, Mutual Information
 
@@ -49,21 +49,21 @@ The pretrained T2I model parameters are frozen. Learnable soft tokens $\mathbf{s
 
 1. **Contrastive T2I Alignment Loss**:
 
-   - **Function**: Constructs an InfoNCE-style loss using positive and negative text-image pairs within the same batch.
-   - **Mechanism**: The negative denoising loss $\|\epsilon_\theta(\mathbf{x}_t, t, \mathbf{y}) - \epsilon\|^2$ is mapped via an exponential to produce a logit $\tilde{l}(\mathbf{x}, \mathbf{y}, \mathbf{s}) = e^{-\|v_\theta(\mathbf{x}_t, t, \mathbf{y}, \mathbf{s}) - (\epsilon - \mathbf{x}_0)\|^2 / \tau(t)}$, and the contrastive loss is then defined as $\mathcal{L} = -\log \frac{\exp(\tilde{l}(\mathbf{x}, \mathbf{y}, \mathbf{s}))}{\sum_j \exp(\tilde{l}(\mathbf{x}, \mathbf{y}^{(j)}, \mathbf{s}))}$.
-   - **Design Motivation**: Standard training relies solely on positive pairs and cannot distinguish between different text conditions. The contrastive loss repels mismatched text-image pairs via negative samples, sharpening the conditional probability distribution. The exponential mapping ensures bounded logits, avoiding training instability.
+    - **Function**: Constructs an InfoNCE-style loss using positive and negative text-image pairs within the same batch.
+    - **Mechanism**: The negative denoising loss $\|\epsilon_\theta(\mathbf{x}_t, t, \mathbf{y}) - \epsilon\|^2$ is mapped via an exponential to produce a logit $\tilde{l}(\mathbf{x}, \mathbf{y}, \mathbf{s}) = e^{-\|v_\theta(\mathbf{x}_t, t, \mathbf{y}, \mathbf{s}) - (\epsilon - \mathbf{x}_0)\|^2 / \tau(t)}$, and the contrastive loss is then defined as $\mathcal{L} = -\log \frac{\exp(\tilde{l}(\mathbf{x}, \mathbf{y}, \mathbf{s}))}{\sum_j \exp(\tilde{l}(\mathbf{x}, \mathbf{y}^{(j)}, \mathbf{s}))}$.
+    - **Design Motivation**: Standard training relies solely on positive pairs and cannot distinguish between different text conditions. The contrastive loss repels mismatched text-image pairs via negative samples, sharpening the conditional probability distribution. The exponential mapping ensures bounded logits, avoiding training instability.
 
 2. **Learnable Soft Tokens**:
 
-   - **Function**: Learnable tokens are prepended to the text representations at each layer and each timestep.
-   - **Mechanism**: $\hat{\mathbf{H}}_{\text{text}}^{(k-1,t)} = [\mathbf{s}^{(k,t)}; \mathbf{H}_{\text{text}}^{(k-1,t)}]$, where soft tokens are generated via an Embedding$(k,t)$ and processed jointly with the attention layers. Only these tokens (<1M parameters) are trained; the rest of the model remains frozen.
-   - **Design Motivation**: Analogous to prompt tuning — rather than modifying model weights, learnable signals are injected into the input space to steer model behavior. The extremely low parameter count enables fast training and negligible inference overhead.
+    - **Function**: Learnable tokens are prepended to the text representations at each layer and each timestep.
+    - **Mechanism**: $\hat{\mathbf{H}}_{\text{text}}^{(k-1,t)} = [\mathbf{s}^{(k,t)}; \mathbf{H}_{\text{text}}^{(k-1,t)}]$, where soft tokens are generated via an Embedding$(k,t)$ and processed jointly with the attention layers. Only these tokens (<1M parameters) are trained; the rest of the model remains frozen.
+    - **Design Motivation**: Analogous to prompt tuning — rather than modifying model weights, learnable signals are injected into the input space to steer model behavior. The extremely low parameter count enables fast training and negligible inference overhead.
 
 3. **Mutual Information Theoretical Analysis**:
 
-   - **Function**: Proves that minimizing the contrastive loss is equivalent to maximizing the mutual information between text and image representations.
-   - **Mechanism**: Drawing on results from Song & Kong et al., the conditional likelihood of a diffusion model satisfies $p_\theta(\mathbf{x}|\mathbf{y}) = \exp(\hat{l}(\mathbf{x}, \mathbf{y}))$. Consequently, the contrastive logit approximates the PMI $i(\mathbf{x}, \mathbf{y}) = \log \frac{p_\theta(\mathbf{x}|\mathbf{y})}{p_\theta(\mathbf{x})}$, and the mutual information $I(X,Y) = \mathbb{E}[i(X,Y)]$. Minimizing the contrastive loss thus maximizes mutual information.
-   - **Design Motivation**: Provides a theoretical guarantee explaining why this simple approach effectively improves semantic consistency.
+    - **Function**: Proves that minimizing the contrastive loss is equivalent to maximizing the mutual information between text and image representations.
+    - **Mechanism**: Drawing on results from Song & Kong et al., the conditional likelihood of a diffusion model satisfies $p_\theta(\mathbf{x}|\mathbf{y}) = \exp(\hat{l}(\mathbf{x}, \mathbf{y}))$. Consequently, the contrastive logit approximates the PMI $i(\mathbf{x}, \mathbf{y}) = \log \frac{p_\theta(\mathbf{x}|\mathbf{y})}{p_\theta(\mathbf{x})}$, and the mutual information $I(X,Y) = \mathbb{E}[i(X,Y)]$. Minimizing the contrastive loss thus maximizes mutual information.
+    - **Design Motivation**: Provides a theoretical guarantee explaining why this simple approach effectively improves semantic consistency.
 
 ### Loss & Training
 - Training objective: $\mathcal{L}_{\text{SoftREPA}}(\mathbf{s})$, a contrastive loss optimizing only the soft token parameters.

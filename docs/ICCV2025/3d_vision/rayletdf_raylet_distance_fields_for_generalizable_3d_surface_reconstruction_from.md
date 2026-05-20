@@ -18,8 +18,8 @@ content_hash: e749d2dc5de5efb0
 # RayletDF: Raylet Distance Fields for Generalizable 3D Surface Reconstruction from Point Clouds or Gaussians
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.09830](https://arxiv.org/abs/2508.09830)
-**Code**: [https://github.com/vLAR-group/RayletDF](https://github.com/vLAR-group/RayletDF)
+**arXiv**: [2508.09830](https://arxiv.org/abs/2508.09830)  
+**Code**: [https://github.com/vLAR-group/RayletDF](https://github.com/vLAR-group/RayletDF)  
 **Area**: 3D Vision / Surface Reconstruction / Generalizable Representation
 **Keywords**: Raylet Distance Field, Surface Reconstruction, Point Cloud, 3DGS, Generalization
 

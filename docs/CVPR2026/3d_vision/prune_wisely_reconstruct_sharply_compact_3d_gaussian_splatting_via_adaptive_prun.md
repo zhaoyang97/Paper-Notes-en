@@ -18,9 +18,9 @@ content_hash: c09f094850ef8318
 # Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.24136](https://arxiv.org/abs/2602.24136)
+**arXiv**: [2602.24136](https://arxiv.org/abs/2602.24136)  
 **Authors**: Haoran Wang, Guoxi Huang, Fan Zhang, David Bull, Nantheera Anantrasirichai (University of Bristol)
-**Code**: Coming soon
+**Code**: Coming soon  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, model pruning, Difference-of-Gaussians, compact representation, novel view synthesis
 

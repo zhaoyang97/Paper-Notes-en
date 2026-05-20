@@ -18,8 +18,8 @@ content_hash: b6229cb5454da576
 # Disentangled Textual Priors for Diffusion-based Image Super-Resolution
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07430](https://arxiv.org/abs/2603.07430)
-**Code**: [GitHub](https://github.com/JL6666JL/DTPSR)
+**arXiv**: [2603.07430](https://arxiv.org/abs/2603.07430)  
+**Code**: [GitHub](https://github.com/JL6666JL/DTPSR)  
 **Area**: Image Super-Resolution
 **Keywords**: Diffusion-based SR, text guidance, disentangled priors, frequency-awareness, semantic control
 

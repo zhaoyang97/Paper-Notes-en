@@ -18,8 +18,8 @@ content_hash: 8867cb9cd1414d8e
 # NOTAM-Evolve: A Knowledge-Guided Self-Evolving Optimization Framework with LLMs for NOTAM Interpretation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07982](https://arxiv.org/abs/2511.07982)
-**Code**: [https://github.com/Estrellajer/NOTAM-Evolve](https://github.com/Estrellajer/NOTAM-Evolve)
+**arXiv**: [2511.07982](https://arxiv.org/abs/2511.07982)  
+**Code**: [https://github.com/Estrellajer/NOTAM-Evolve](https://github.com/Estrellajer/NOTAM-Evolve)  
 **Area**: Graph Learning / NLP Applications
 **Keywords**: NOTAM Parsing, Knowledge Graph-Enhanced Retrieval, Large Language Models, Self-Evolving Optimization, Aviation Safety
 

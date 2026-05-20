@@ -18,8 +18,8 @@ content_hash: 60f16a28f23404a7
 # Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition
 
 **Conference**: ACL 2026
-**arXiv**: [2510.08047](https://arxiv.org/abs/2510.08047)
-**Code**: N/A
+**arXiv**: [2510.08047](https://arxiv.org/abs/2510.08047)  
+**Code**: N/A  
 **Area**: Speech Processing / Domain Adaptation
 **Keywords**: pseudo-label correction, task arithmetic, parameter-space correction, accent adaptation, Whisper
 

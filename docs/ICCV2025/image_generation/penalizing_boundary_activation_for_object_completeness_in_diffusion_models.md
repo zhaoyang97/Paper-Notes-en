@@ -18,8 +18,8 @@ content_hash: 9ce0503545fd5308
 # Penalizing Boundary Activation for Object Completeness in Diffusion Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.16968](https://arxiv.org/abs/2509.16968)
-**Code**: [https://github.com/HaoyXu7/Object_Completeness](https://github.com/HaoyXu7/Object_Completeness)
+**arXiv**: [2509.16968](https://arxiv.org/abs/2509.16968)  
+**Code**: [https://github.com/HaoyXu7/Object_Completeness](https://github.com/HaoyXu7/Object_Completeness)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Object Completeness, RandomCrop, Attention Constraint, Training-Free, Boundary Penalty
 
@@ -34,8 +34,8 @@ This paper investigates the root cause of incomplete object generation in diffus
 - **Limitations of Prior Work**: Most research treats this as an inherent artifact of generation stochasticity or a simple generation failure, with little rigorous causal analysis or targeted solution.
 
 - **Key Challenge**: 
-  - **Dataset?** Manual inspection reveals only ~4% incompleteness in training data, far below the 45.7% observed in generated images.
-  - **Data Augmentation? ✓** Fine-tuning with RandomCrop causes the incompleteness rate to increase monotonically with epochs, while fine-tuning on unaugmented images causes it to decrease monotonically — consistently across both seen and unseen object categories.
+    - **Dataset?** Manual inspection reveals only ~4% incompleteness in training data, far below the 45.7% observed in generated images.
+    - **Data Augmentation? ✓** Fine-tuning with RandomCrop causes the incompleteness rate to increase monotonically with epochs, while fine-tuning on unaugmented images causes it to decrease monotonically — consistently across both seen and unseen object categories.
 
 - **Goal**: Although RandomCrop is the culprit, it is indispensable for model diversity and generalization, and retraining is prohibitively expensive. A training-free, inference-time solution is therefore required.
 

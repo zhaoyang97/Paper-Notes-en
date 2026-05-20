@@ -19,7 +19,7 @@ content_hash: 195973144e6561b1
 # AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07648](https://arxiv.org/abs/2603.07648)
+**arXiv**: [2603.07648](https://arxiv.org/abs/2603.07648)  
 **Institution**: Sun Yat-sen University, Peng Cheng Laboratory, Yinwang Intelligence
 **Area**: Robotic Manipulation / Vision-Language-Action Models
 **Keywords**: VLA, Atomic Skills, Mixture-of-Experts, Continual Learning, Task Planning, Skill Routing

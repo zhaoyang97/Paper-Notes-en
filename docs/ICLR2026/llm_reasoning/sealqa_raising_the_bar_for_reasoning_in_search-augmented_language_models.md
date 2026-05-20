@@ -19,8 +19,8 @@ content_hash: ba9bd69cc812b905
 # SealQA: Raising the Bar for Reasoning in Search-Augmented Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.01062](https://arxiv.org/abs/2506.01062)
-**Code**: [HuggingFace](https://huggingface.co/datasets/vtllms/sealqa)
+**arXiv**: [2506.01062](https://arxiv.org/abs/2506.01062)  
+**Code**: [HuggingFace](https://huggingface.co/datasets/vtllms/sealqa)  
 **Area**: LLM Reasoning
 **Keywords**: benchmark, search-augmented LLM, RAG, noisy retrieval, test-time scaling, knowledge conflict
 

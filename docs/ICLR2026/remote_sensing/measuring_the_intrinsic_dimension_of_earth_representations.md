@@ -18,8 +18,8 @@ content_hash: 21faabfde1a26428
 # Measuring the Intrinsic Dimension of Earth Representations
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.02101](https://arxiv.org/abs/2511.02101)
-**Code**: [GitHub](https://github.com/arjunarao619/GeoINRID)
+**arXiv**: [2511.02101](https://arxiv.org/abs/2511.02101)  
+**Code**: [GitHub](https://github.com/arjunarao619/GeoINRID)  
 **Area**: Remote Sensing / Representation Learning
 **Keywords**: intrinsic dimension, geographic implicit neural representations, Earth observation, representation learning, unsupervised evaluation
 

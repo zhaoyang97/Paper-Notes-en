@@ -18,8 +18,8 @@ content_hash: d698785a81d73d4d
 # UIPro: Unleashing Superior Interaction Capability for GUI Agents
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.17328](https://arxiv.org/abs/2509.17328)
-**Code**: [GitHub](https://github.com/ZJULiHongxin/UIPro)
+**arXiv**: [2509.17328](https://arxiv.org/abs/2509.17328)  
+**Code**: [GitHub](https://github.com/ZJULiHongxin/UIPro)  
 **Area**: LLM Agent
 **Keywords**: GUI agent, unified action space, GUI grounding, vision-language model, multi-platform interaction
 

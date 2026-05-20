@@ -18,8 +18,8 @@ content_hash: 886038651a33288b
 # Domain Generalized Stereo Matching with Uncertainty-guided Data Augmentation
 
 **Conference**: AAAI2026
-**arXiv**: [2508.01303](https://arxiv.org/abs/2508.01303)
-**Code**: To be confirmed
+**arXiv**: [2508.01303](https://arxiv.org/abs/2508.01303)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: Stereo Matching, Domain Generalization, Data Augmentation, Uncertainty Modeling, Feature Consistency
 
@@ -62,11 +62,11 @@ UgDA-Stereo is a plug-and-play module used only during training and can be integ
 2. **Compute within-batch variation of statistics**: Measure the variance $\sigma^2_{\mu_c}$ and $\sigma^2_{\sigma_c}$ of the per-image statistics within a mini-batch. These quantities capture the appearance diversity among images in the batch and provide a reasonable scale for perturbation.
 
 3. **Gaussian sampling for perturbation**: The perturbation to the mean is assumed to follow $\mathcal{N}(0, \sigma^2_{\mu_c})$, and that to the standard deviation follows $\mathcal{N}(0, \sigma^2_{\sigma_c})$. New statistics are sampled via the reparameterization trick:
-   - $\mu'_c(x) = \mu_c(x) + \epsilon_{\mu_c} \cdot \sigma_{\mu_c}(x)$, where $\epsilon_{\mu_c} \sim \mathcal{N}(0,1)$
-   - $\sigma'_c(x) = \sigma_c(x) + \epsilon_{\sigma_c} \cdot \sigma_{\sigma_c}(x)$, where $\epsilon_{\sigma_c} \sim \mathcal{N}(0,1)$
+    - $\mu'_c(x) = \mu_c(x) + \epsilon_{\mu_c} \cdot \sigma_{\mu_c}(x)$, where $\epsilon_{\mu_c} \sim \mathcal{N}(0,1)$
+    - $\sigma'_c(x) = \sigma_c(x) + \epsilon_{\sigma_c} \cdot \sigma_{\sigma_c}(x)$, where $\epsilon_{\sigma_c} \sim \mathcal{N}(0,1)$
 
 4. **Generate augmented images**: Normalize the original pixels and then denormalize using the new statistics:
-   - $x^*_{c,h,w} = \frac{x_{c,h,w} - \mu_c(x)}{\sigma_c(x)} \cdot \sigma'_c(x) + \mu'_c(x)$
+    - $x^*_{c,h,w} = \frac{x_{c,h,w} - \mu_c(x)}{\sigma_c(x)} \cdot \sigma'_c(x) + \mu'_c(x)$
 
 **Key Properties**:
 - Only global per-channel statistics are modified; local texture, edges, and geometric content remain intact.

@@ -18,8 +18,8 @@ content_hash: 6236c8afe6a98f7a
 # MDReID: Modality-Decoupled Learning for Any-to-Any Multi-Modal Object Re-Identification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23301](https://arxiv.org/abs/2510.23301)
-**Code**: [GitHub](https://github.com/stone96123/MDReID)
+**arXiv**: [2510.23301](https://arxiv.org/abs/2510.23301)  
+**Code**: [GitHub](https://github.com/stone96123/MDReID)  
 **Area**: Multi-Modal VLM
 **Keywords**: Multi-modal ReID, modality decoupling, cross-modal retrieval, any-to-any matching, metric learning
 

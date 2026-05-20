@@ -18,8 +18,8 @@ content_hash: 1d47a8f215cd6096
 # Lipschitz Bandits with Stochastic Delayed Feedback
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00309](https://arxiv.org/abs/2510.00309)
-**Code**: None
+**arXiv**: [2510.00309](https://arxiv.org/abs/2510.00309)  
+**Code**: None  
 **Area**: Online Learning / Bandit Algorithms
 **Keywords**: Lipschitz bandit, delayed feedback, zooming algorithm, phased elimination, regret lower bound, quantile
 

@@ -18,8 +18,8 @@ content_hash: e8d9ae06885839be
 # Suppressing Non-Semantic Noise in Masked Image Modeling Representations
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00172](https://arxiv.org/abs/2604.00172)
-**Code**: N/A
+**arXiv**: [2604.00172](https://arxiv.org/abs/2604.00172)  
+**Code**: N/A  
 **Area**: Self-Supervised Learning
 **Keywords**: Masked Image Modeling, Non-Semantic Noise, Principal Component Analysis, Representation Purification, Zero-Shot Classification
 

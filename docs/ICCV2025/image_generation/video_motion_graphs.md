@@ -18,8 +18,8 @@ content_hash: 5f7b914c0df6916c
 # Video Motion Graphs
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.20218](https://arxiv.org/abs/2503.20218)
-**Code**: None (Adobe Research)
+**arXiv**: [2503.20218](https://arxiv.org/abs/2503.20218)  
+**Code**: None (Adobe Research)  
 **Area**: Diffusion Models / Video Generation
 **Keywords**: Video Motion Graphs, Video Frame Interpolation, Motion Diffusion Model, Retrieval-based Video Generation, Human Motion Video
 

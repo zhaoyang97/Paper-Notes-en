@@ -17,8 +17,8 @@ content_hash: 00104205bb7ddfc9
 # Group-DINOmics: Incorporating People Dynamics into DINO for Self-supervised Group Activity Feature Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04467](https://arxiv.org/abs/2604.04467)
-**Code**: [https://github.com/tezuka0001/Group-DINOmics](https://github.com/tezuka0001/Group-DINOmics)
+**arXiv**: [2604.04467](https://arxiv.org/abs/2604.04467)  
+**Code**: [https://github.com/tezuka0001/Group-DINOmics](https://github.com/tezuka0001/Group-DINOmics)  
 **Area**: Self-supervised Learning
 **Keywords**: group activity, self-supervised learning, DINO, optical flow, activity retrieval
 

@@ -18,8 +18,8 @@ content_hash: e953bb4f4e2ec14b
 # E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.10950](https://arxiv.org/abs/2512.10950)
-**Code**: [qitaozhao.github.io/E-RayZer](https://qitaozhao.github.io/E-RayZer)
+**arXiv**: [2512.10950](https://arxiv.org/abs/2512.10950)  
+**Code**: [qitaozhao.github.io/E-RayZer](https://qitaozhao.github.io/E-RayZer)  
 **Area**: 3D Vision
 **Keywords**: Self-supervised pre-training, 3D Gaussian splatting, multi-view reconstruction, pose estimation, visual representation learning
 
@@ -50,20 +50,20 @@ Training uses 10 input images, with 5 as reference views and 5 as target views. 
 ### Key Designs
 
 1. **Explicit 3D Gaussian Scene Reconstruction (replacing RayZer's implicit representation)**
-   - **Function**: Directly predict pixel-aligned 3D Gaussians from reference views as an explicit geometric scene representation.
-   - **Mechanism**: A scene Transformer $f_{\psi'}^{\text{scene}}$ encodes posed reference views into multi-view aggregated latent tokens $\mathbf{s}_{\text{ref}}$; a lightweight decoder $f_\omega^{\text{gauss}}$ (single linear layer) then decodes each pixel token into 3D Gaussian parameters—ray distance $d_i$, orientation quaternion $\mathbf{q}_i$, spherical harmonics coefficients $\mathbf{C}_i$, scale $\mathbf{s}_i$, and opacity $\alpha_i$.
-   - **Design Motivation**: 3D Gaussians support closed-form differentiable rendering (via a modified gsplat supporting gradient backpropagation through intrinsics $K$), eliminating the need for a learned Transformer renderer (removing RayZer's $f_\phi^{\text{rend}}$). Attention complexity is also reduced from $\mathcal{O}((K_{\text{ref}}hw + n_z)^2)$ to $\mathcal{O}((K_{\text{ref}}hw)^2)$.
+    - **Function**: Directly predict pixel-aligned 3D Gaussians from reference views as an explicit geometric scene representation.
+    - **Mechanism**: A scene Transformer $f_{\psi'}^{\text{scene}}$ encodes posed reference views into multi-view aggregated latent tokens $\mathbf{s}_{\text{ref}}$; a lightweight decoder $f_\omega^{\text{gauss}}$ (single linear layer) then decodes each pixel token into 3D Gaussian parameters—ray distance $d_i$, orientation quaternion $\mathbf{q}_i$, spherical harmonics coefficients $\mathbf{C}_i$, scale $\mathbf{s}_i$, and opacity $\alpha_i$.
+    - **Design Motivation**: 3D Gaussians support closed-form differentiable rendering (via a modified gsplat supporting gradient backpropagation through intrinsics $K$), eliminating the need for a learned Transformer renderer (removing RayZer's $f_\phi^{\text{rend}}$). Attention complexity is also reduced from $\mathcal{O}((K_{\text{ref}}hw + n_z)^2)$ to $\mathcal{O}((K_{\text{ref}}hw)^2)$.
 
 2. **Eliminating View Interpolation Shortcuts**
-   - **Function**: Prevent the model from learning frame-order-based video interpolation instead of genuine 3D understanding.
-   - **Mechanism**: (a) Completely remove RayZer's image index embeddings—the primary cause of interpolation shortcuts. (b) Adopt a VGGT-style local-global alternating attention Transformer, where local attention boundaries naturally define image-camera associations. (c) Use pairwise pose prediction: canonical and target view camera tokens are concatenated to regress relative poses, removing the need to distinguish different types of camera/register tokens.
-   - **Design Motivation**: RayZer's uninterpretable pose space stems from image index embeddings providing strong frame-order cues, biasing the model toward interpolation rather than geometric reasoning.
+    - **Function**: Prevent the model from learning frame-order-based video interpolation instead of genuine 3D understanding.
+    - **Mechanism**: (a) Completely remove RayZer's image index embeddings—the primary cause of interpolation shortcuts. (b) Adopt a VGGT-style local-global alternating attention Transformer, where local attention boundaries naturally define image-camera associations. (c) Use pairwise pose prediction: canonical and target view camera tokens are concatenated to regress relative poses, removing the need to distinguish different types of camera/register tokens.
+    - **Design Motivation**: RayZer's uninterpretable pose space stems from image index embeddings providing strong frame-order cues, biasing the model toward interpolation rather than geometric reasoning.
 
 3. **Visual-Overlap-Based Curriculum Learning**
-   - **Function**: Address the convergence failure of training explicit 3D from scratch, while adaptively aligning heterogeneous data sources.
-   - **Mechanism**: A visual overlap profile $O_u(\Delta t)$ is precomputed for each training sequence (via average pairwise overlap over uniformly sampled frame triplets). During training, an overlap lower bound is linearly annealed: $o(s) = s \cdot o_{\min} + (1-s) \cdot o_{\max}$, transitioning from high-overlap (easy) to low-overlap (hard) samples.
-   - Two overlap metrics are used: semantic overlap (DINOv2 cosine similarity, unsupervised) and geometric overlap (UFM co-visibility, trained with 3D annotations). Experiments show comparable performance between the two.
-   - **Design Motivation**: RayZer's fixed frame-interval strategy is only a coarse proxy for overlap—the same interval can correspond to vastly different visual overlaps across sequences, and cannot adapt to heterogeneous data sources.
+    - **Function**: Address the convergence failure of training explicit 3D from scratch, while adaptively aligning heterogeneous data sources.
+    - **Mechanism**: A visual overlap profile $O_u(\Delta t)$ is precomputed for each training sequence (via average pairwise overlap over uniformly sampled frame triplets). During training, an overlap lower bound is linearly annealed: $o(s) = s \cdot o_{\min} + (1-s) \cdot o_{\max}$, transitioning from high-overlap (easy) to low-overlap (hard) samples.
+    - Two overlap metrics are used: semantic overlap (DINOv2 cosine similarity, unsupervised) and geometric overlap (UFM co-visibility, trained with 3D annotations). Experiments show comparable performance between the two.
+    - **Design Motivation**: RayZer's fixed frame-interval strategy is only a coarse proxy for overlap—the same interval can correspond to vastly different visual overlaps across sequences, and cannot adapt to heterogeneous data sources.
 
 ### Loss & Training
 

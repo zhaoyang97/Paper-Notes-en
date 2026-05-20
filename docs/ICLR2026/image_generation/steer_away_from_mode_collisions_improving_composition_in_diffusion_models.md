@@ -18,8 +18,8 @@ content_hash: dc431a4c7a58b1cf
 # Steer Away From Mode Collisions: Improving Composition In Diffusion Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25940](https://arxiv.org/abs/2509.25940)
-**Code**: [https://github.com/debottam-dutta7/co3](https://github.com/debottam-dutta7/co3)
+**arXiv**: [2509.25940](https://arxiv.org/abs/2509.25940)  
+**Code**: [https://github.com/debottam-dutta7/co3](https://github.com/debottam-dutta7/co3)  
 **Area**: Diffusion Models / Compositional Generation
 **Keywords**: Compositional Generation, Mode Collision, Tweedie Mean Composition, Gradient-Free Correction, Plug-and-Play
 

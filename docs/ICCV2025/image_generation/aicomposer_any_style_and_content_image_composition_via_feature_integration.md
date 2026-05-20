@@ -18,8 +18,8 @@ content_hash: 69ae504882293fbf
 # AIComposer: Any Style and Content Image Composition via Feature Integration
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.20721](https://arxiv.org/abs/2507.20721)
-**Code**: [https://github.com/sherlhw/AIComposer](https://github.com/sherlhw/AIComposer)
+**arXiv**: [2507.20721](https://arxiv.org/abs/2507.20721)  
+**Code**: [https://github.com/sherlhw/AIComposer](https://github.com/sherlhw/AIComposer)  
 **Area**: Diffusion Models / Image Composition
 **Keywords**: Cross-domain image composition, text-prompt-free, CLIP feature fusion, local cross-attention, diffusion model inversion
 

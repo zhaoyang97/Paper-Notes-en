@@ -18,8 +18,8 @@ content_hash: f57ba801e35c6979
 # Reducing the Scope of Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2410.21597](https://arxiv.org/abs/2410.21597)
-**Code**: [https://github.com/IBM/llm-scoping](https://github.com/IBM/llm-scoping)
+**arXiv**: [2410.21597](https://arxiv.org/abs/2410.21597)  
+**Code**: [https://github.com/IBM/llm-scoping](https://github.com/IBM/llm-scoping)  
 **Area**: LLM Alignment / Deployment Safety
 **Keywords**: Scope Restriction, Out-of-Domain Rejection, SFT, DPO, Circuit Breakers
 

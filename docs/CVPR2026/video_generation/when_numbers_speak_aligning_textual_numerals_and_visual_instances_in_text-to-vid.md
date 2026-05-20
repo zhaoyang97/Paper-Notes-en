@@ -18,8 +18,8 @@ content_hash: 9da1d22d8fcac37d
 # When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08546](https://arxiv.org/abs/2604.08546)
-**Code**: [https://github.com/H-EmbodVis/NUMINA](https://github.com/H-EmbodVis/NUMINA)
+**arXiv**: [2604.08546](https://arxiv.org/abs/2604.08546)  
+**Code**: [https://github.com/H-EmbodVis/NUMINA](https://github.com/H-EmbodVis/NUMINA)  
 **Area**: Video Generation
 **Keywords**: Numeral Alignment, Text-to-Video, Training-Free, Attention Head Selection, Layout-Guided Generation
 

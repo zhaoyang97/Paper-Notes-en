@@ -18,8 +18,8 @@ content_hash: d79f9154b3ca5e3d
 # HCLFuse: Revisiting Generative Infrared and Visible Image Fusion Based on Human Cognitive Laws
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26268](https://arxiv.org/abs/2510.26268)
-**Code**: [https://github.com/lxq-jnu/HCLFuse](https://github.com/lxq-jnu/HCLFuse)
+**arXiv**: [2510.26268](https://arxiv.org/abs/2510.26268)  
+**Code**: [https://github.com/lxq-jnu/HCLFuse](https://github.com/lxq-jnu/HCLFuse)  
 **Area**: Image Fusion / Generative Models
 **Keywords**: Infrared-visible fusion, variational information bottleneck, optimal transport, physics-guided diffusion, Wasserstein distance
 
@@ -49,21 +49,21 @@ Infrared image $X$ + visible image $Y$ → **Optimal Transport Alignment**: Sink
 
 1. **Variational Bottleneck Encoder (VBE) + Optimal Transport**:
 
-   - **Function**: Aligns the two modalities and encodes them into a compact latent representation.
-   - **Mechanism**: The optimal transport map $T^*$ aligns the infrared distribution to the visible distribution via Sinkhorn divergence minimization. The VBE loss is $\mathcal{L}_{VBE} = -\mathbb{E}[\log p(Y|Z)] - \alpha\mathbb{E}[\log p(X'|Z)] + \beta D_{KL}[q(Z|X',Y) \| p(Z)]$, combining dual-modality reconstruction with KL regularization. Multi-scale learnable masks $M_s = \sigma(w_s)$ control information selection at each scale.
-   - **Design Motivation**: Theorem 1 establishes that the mutual information lower bound is related to the Wasserstein distance—optimal transport alignment tightens this bound, enabling the encoder to retain more task-relevant information.
+    - **Function**: Aligns the two modalities and encodes them into a compact latent representation.
+    - **Mechanism**: The optimal transport map $T^*$ aligns the infrared distribution to the visible distribution via Sinkhorn divergence minimization. The VBE loss is $\mathcal{L}_{VBE} = -\mathbb{E}[\log p(Y|Z)] - \alpha\mathbb{E}[\log p(X'|Z)] + \beta D_{KL}[q(Z|X',Y) \| p(Z)]$, combining dual-modality reconstruction with KL regularization. Multi-scale learnable masks $M_s = \sigma(w_s)$ control information selection at each scale.
+    - **Design Motivation**: Theorem 1 establishes that the mutual information lower bound is related to the Wasserstein distance—optimal transport alignment tightens this bound, enabling the encoder to retain more task-relevant information.
 
 2. **Physics-Guided Conditional Diffusion Model**:
 
-   - **Function**: Injects three physical constraints into the diffusion denoising process.
-   - **Mechanism**: (a) Heat conduction: $\Phi_{heat} = \hat{z}_0 + \lambda_{heat}(t) \nabla^2 \hat{z}_0$—Laplacian smoothing of the thermal distribution; (b) Structure preservation: $\Phi_{stru} = \hat{z}_0^{heat} + \lambda_{stru}(t)(G_{max} - G_{\hat{z}_0}) M_{stru}$—gradient enhancement to protect visible-light edges; (c) Physical consistency: $\Phi_{con} = \hat{z}_0^{stru} + \lambda_{con}(t)(w_{ir} X M_{heat} + w_{vis} Y M_{stru})$—incorporates original modality information.
-   - **Design Motivation**: The time-varying guidance coefficient $\lambda_i(t) = \lambda_i^0 e^{-\gamma t}$ provides strong guidance early (coarse structure) and weak guidance late (fine details generated autonomously by the model). Physical constraints replace non-interpretable loss weight tuning.
+    - **Function**: Injects three physical constraints into the diffusion denoising process.
+    - **Mechanism**: (a) Heat conduction: $\Phi_{heat} = \hat{z}_0 + \lambda_{heat}(t) \nabla^2 \hat{z}_0$—Laplacian smoothing of the thermal distribution; (b) Structure preservation: $\Phi_{stru} = \hat{z}_0^{heat} + \lambda_{stru}(t)(G_{max} - G_{\hat{z}_0}) M_{stru}$—gradient enhancement to protect visible-light edges; (c) Physical consistency: $\Phi_{con} = \hat{z}_0^{stru} + \lambda_{con}(t)(w_{ir} X M_{heat} + w_{vis} Y M_{stru})$—incorporates original modality information.
+    - **Design Motivation**: The time-varying guidance coefficient $\lambda_i(t) = \lambda_i^0 e^{-\gamma t}$ provides strong guidance early (coarse structure) and weak guidance late (fine details generated autonomously by the model). Physical constraints replace non-interpretable loss weight tuning.
 
 3. **Multi-Scale Learnable Masks**:
 
-   - **Function**: Adaptively selects modality information at different scales.
-   - **Mechanism**: $F_m = \sigma(\theta_s \cdot (M_s \odot F_s))$, where $M_s = \sigma(w_s)$ are learnable parameters.
-   - **Design Motivation**: Different regions require information at different scales—thermal target regions favor coarse-scale infrared features, while texture regions favor fine-scale visible-light features.
+    - **Function**: Adaptively selects modality information at different scales.
+    - **Mechanism**: $F_m = \sigma(\theta_s \cdot (M_s \odot F_s))$, where $M_s = \sigma(w_s)$ are learnable parameters.
+    - **Design Motivation**: Different regions require information at different scales—thermal target regions favor coarse-scale infrared features, while texture regions favor fine-scale visible-light features.
 
 ### Loss & Training
 - VBE loss = dual-modality reconstruction + KL regularization

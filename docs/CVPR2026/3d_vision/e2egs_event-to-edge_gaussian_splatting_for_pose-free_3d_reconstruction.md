@@ -18,8 +18,8 @@ content_hash: c3052b55010b76d6
 # E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14684](https://arxiv.org/abs/2603.14684)
-**Code**: To be confirmed
+**arXiv**: [2603.14684](https://arxiv.org/abs/2603.14684)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: Event camera, 3D Gaussian splatting, edge detection, pose-free reconstruction, visual odometry
 

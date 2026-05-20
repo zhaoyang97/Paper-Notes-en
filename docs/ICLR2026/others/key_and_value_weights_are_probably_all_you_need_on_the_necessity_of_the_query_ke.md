@@ -17,8 +17,8 @@ content_hash: 0dd9fefe8f5e1762
 # Key and Value Weights Are Probably All You Need: On the Necessity of the Query, Key, and Value Weight Triplet in Self-Attention
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.23912](https://arxiv.org/abs/2510.23912)
-**Code**: [GitHub](https://github.com/MarkoKarbevski/Wqkv_necessity)
+**arXiv**: [2510.23912](https://arxiv.org/abs/2510.23912)  
+**Code**: [GitHub](https://github.com/MarkoKarbevski/Wqkv_necessity)  
 **Area**: Transformer Architecture
 **Keywords**: Self-Attention, Query Weights, Parameter Redundancy, Implicit Regularization, Architecture Simplification
 

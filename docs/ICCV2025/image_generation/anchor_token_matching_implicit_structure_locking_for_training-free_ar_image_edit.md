@@ -18,8 +18,8 @@ content_hash: 3fecb79cab2cec3e
 # Anchor Token Matching: Implicit Structure Locking for Training-free AR Image Editing
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.10434](https://arxiv.org/abs/2504.10434)
-**Code**: [https://github.com/hutaiHang/ATM](https://github.com/hutaiHang/ATM)
+**arXiv**: [2504.10434](https://arxiv.org/abs/2504.10434)  
+**Code**: [https://github.com/hutaiHang/ATM](https://github.com/hutaiHang/ATM)  
 **Area**: Image Editing / Autoregressive Generation
 **Keywords**: Autoregressive models, image editing, training-free, attention mechanism, structural consistency
 
@@ -49,24 +49,24 @@ ISLock (Implicit Structure Locking) preserves the structural blueprint by dynami
 
 1. **Structural Information Analysis**
 
-   - PCA decomposition and visualization of the self-attention matrix $A \in \mathbb{R}^{(h \times w) \times (h \times w)}$ reveals that semantically similar tokens exhibit consistent attention patterns.
-   - Cross-attention maps lack spatial structural information, whereas self-attention maps encode rich structural content.
-   - Perturbation experiments confirm the critical role of early tokens: perturbing the first 20% of tokens causes an SSIM drop of $0.56 \pm 0.02$, while perturbing the last 20% yields only $0.08 \pm 0.05$.
+    - PCA decomposition and visualization of the self-attention matrix $A \in \mathbb{R}^{(h \times w) \times (h \times w)}$ reveals that semantically similar tokens exhibit consistent attention patterns.
+    - Cross-attention maps lack spatial structural information, whereas self-attention maps encode rich structural content.
+    - Perturbation experiments confirm the critical role of early tokens: perturbing the first 20% of tokens causes an SSIM drop of $0.56 \pm 0.02$, while perturbing the last 20% yields only $0.08 \pm 0.05$.
 
 2. **Anchor Token Matching (ATM) and Dynamic Window**
 
-   - Given the original prompt $\mathcal{P}_{org}$ and the editing prompt $\mathcal{P}_{edit}$, at each step $i$, $K$ candidate tokens $\mathcal{C}_i = \{z_i^{(1)}, ..., z_i^{(K)}\}$ are sampled.
-   - The Euclidean distance between each candidate and the reference anchor is computed: $s^{(k)} = \|z_i^{(k)} - z_i^{org}\|_2^2$
-   - A dynamic window mechanism is introduced, with window size linearly shrinking over decoding progress: $|\mathcal{W}_i| = \lfloor K \cdot (1 - \alpha \cdot \frac{i}{N}) \rfloor$, where $\alpha = 0.6$
-   - The full candidate set is retained in early steps to enforce strict structural alignment, while constraints are progressively tightened in later steps.
-   - The final token is selected as the closest candidate within the window: $z_i^{edit} = \arg\min_{k \in \mathcal{W}_i} s^{(k)}$
+    - Given the original prompt $\mathcal{P}_{org}$ and the editing prompt $\mathcal{P}_{edit}$, at each step $i$, $K$ candidate tokens $\mathcal{C}_i = \{z_i^{(1)}, ..., z_i^{(K)}\}$ are sampled.
+    - The Euclidean distance between each candidate and the reference anchor is computed: $s^{(k)} = \|z_i^{(k)} - z_i^{org}\|_2^2$
+    - A dynamic window mechanism is introduced, with window size linearly shrinking over decoding progress: $|\mathcal{W}_i| = \lfloor K \cdot (1 - \alpha \cdot \frac{i}{N}) \rfloor$, where $\alpha = 0.6$
+    - The full candidate set is retained in early steps to enforce strict structural alignment, while constraints are progressively tightened in later steps.
+    - The final token is selected as the closest candidate within the window: $z_i^{edit} = \arg\min_{k \in \mathcal{W}_i} s^{(k)}$
 
 3. **Adaptive Constraint Relaxation (AdaCR)**
 
-   - A similarity threshold $\tau$ is introduced to balance structural preservation and generative freedom:
+    - A similarity threshold $\tau$ is introduced to balance structural preservation and generative freedom:
      $$z_i^{edit} = \begin{cases} \arg\min s^{(k)} & \text{if } \min s^{(k)} \leq \tau \\ \arg\max p(z_i|z_{<i}^{edit}, c_{edit}) & \text{otherwise} \end{cases}$$
-   - A larger $\tau$ enforces higher fidelity to the original image; a smaller $\tau$ permits greater editing diversity.
-   - Two-level protection is provided: candidate window pre-filtering and dynamic thresholding.
+    - A larger $\tau$ enforces higher fidelity to the original image; a smaller $\tau$ permits greater editing diversity.
+    - Two-level protection is provided: candidate window pre-filtering and dynamic thresholding.
 
 ### Loss & Training
 

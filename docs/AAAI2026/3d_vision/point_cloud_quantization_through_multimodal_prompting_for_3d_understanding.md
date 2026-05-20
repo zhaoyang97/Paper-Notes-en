@@ -18,8 +18,8 @@ content_hash: c3ab47ab1c10d8b2
 # Point Cloud Quantization through Multimodal Prompting for 3D Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12079](https://arxiv.org/abs/2511.12079)
-**Code**: [github.com/li-hongxuan/PCQ](https://github.com/li-hongxuan/PCQ)
+**arXiv**: [2511.12079](https://arxiv.org/abs/2511.12079)  
+**Code**: [github.com/li-hongxuan/PCQ](https://github.com/li-hongxuan/PCQ)  
 **Area**: 3D Vision
 **Keywords**: Point cloud quantization, vector quantization, multimodal alignment, prototype learning, Gumbel-Softmax
 

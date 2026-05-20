@@ -18,8 +18,8 @@ content_hash: 04542311e12e602c
 # Golden Noise for Diffusion Models: A Learning Framework
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.09502](https://arxiv.org/abs/2411.09502)
-**Code**: [GitHub](https://github.com/xie-lab-ml/Golden-Noise-for-Diffusion-Models)
+**arXiv**: [2411.09502](https://arxiv.org/abs/2411.09502)  
+**Code**: [GitHub](https://github.com/xie-lab-ml/Golden-Noise-for-Diffusion-Models)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Noise Prompt, Golden Noise, Diffusion Models, Image Quality Enhancement, Plug-and-Play
 

@@ -18,8 +18,8 @@ content_hash: 0b4a728fb3739555
 # Scaling Spatial Intelligence with Multimodal Foundation Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.13719](https://arxiv.org/abs/2511.13719)
-**Code**: [https://github.com/OpenSenseNova/SenseNova-SI](https://github.com/OpenSenseNova/SenseNova-SI)
+**arXiv**: [2511.13719](https://arxiv.org/abs/2511.13719)  
+**Code**: [https://github.com/OpenSenseNova/SenseNova-SI](https://github.com/OpenSenseNova/SenseNova-SI)  
 **Area**: Multimodal VLM / Spatial Intelligence
 **Keywords**: Spatial intelligence, multimodal foundation models, data scaling, spatial reasoning, benchmarking
 

@@ -18,8 +18,8 @@ content_hash: 97f73aaf7aa2f1d3
 # CymbaDiff: Structured Spatial Diffusion for Sketch-based 3D Semantic Urban Scene Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.13245](https://arxiv.org/abs/2510.13245)
-**Code**: [https://github.com/Lillian-research-hub/CymbaDiff](https://github.com/Lillian-research-hub/CymbaDiff)
+**arXiv**: [2510.13245](https://arxiv.org/abs/2510.13245)  
+**Code**: [https://github.com/Lillian-research-hub/CymbaDiff](https://github.com/Lillian-research-hub/CymbaDiff)  
 **Area**: Autonomous Driving
 **Keywords**: 3D semantic scene generation, sketch-guided, diffusion model, state space model, cylindrical coordinate Mamba
 

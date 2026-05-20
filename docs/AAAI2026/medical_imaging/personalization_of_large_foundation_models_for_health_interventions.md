@@ -19,8 +19,8 @@ content_hash: 7bff903d15c510f4
 # Personalization of Large Foundation Models for Health Interventions
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.03482](https://arxiv.org/abs/2601.03482)
-**Code**: None
+**arXiv**: [2601.03482](https://arxiv.org/abs/2601.03482)  
+**Code**: None  
 **Area**: Medical AI / Personalized Medicine
 **Keywords**: Large Foundation Models, Personalized Medicine, N-of-1 Trials, Causal Inference, Health Interventions, Digital Twins
 

@@ -18,8 +18,8 @@ content_hash: 559cb7874af2bbb0
 # CoRe-Fed: Bridging Collaborative and Representation Fairness via Federated Embedding Distillation
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.00647](https://arxiv.org/abs/2602.00647)
-**Code**: [Available](https://github.com/Noorain1/CoRe-Fed)
+**arXiv**: [2602.00647](https://arxiv.org/abs/2602.00647)  
+**Code**: [Available](https://github.com/Noorain1/CoRe-Fed)  
 **Area**: AI Safety
 **Keywords**: Federated Learning, Fairness, Representation Alignment, Contrastive Learning, Knowledge Distillation
 

@@ -18,8 +18,8 @@ content_hash: f34f7e554094d564
 # Action-Free Offline-to-Online RL via Discretised State Policies
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.00629](https://arxiv.org/abs/2602.00629)
-**Code**: Available (provided in supplementary material)
+**arXiv**: [2602.00629](https://arxiv.org/abs/2602.00629)  
+**Code**: Available (provided in supplementary material)  
 **Area**: AI Safety
 **Keywords**: Action-free offline RL, state policy, state discretisation, DecQN, guided online learning
 

@@ -18,8 +18,8 @@ content_hash: 380b69b97b88621d
 # Directional Embedding Smoothing for Robust Vision Language Models
 
 **Conference**: ICLR2026
-**arXiv**: [2603.15259](https://arxiv.org/abs/2603.15259)
-**Code**: Not open-sourced
+**arXiv**: [2603.15259](https://arxiv.org/abs/2603.15259)  
+**Code**: Not open-sourced  
 **Area**: Multimodal VLM
 **Keywords**: VLM safety, jailbreak defense, randomized smoothing, embedding perturbation, directional noise
 

@@ -18,8 +18,8 @@ content_hash: 9efa1b7ba5ed165e
 # Evaluating Multimodal Large Language Models on Core Music Perception Tasks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22455](https://arxiv.org/abs/2510.22455)
-**Code**: None (stimuli sourced from The MUSE Benchmark)
+**arXiv**: [2510.22455](https://arxiv.org/abs/2510.22455)  
+**Code**: None (stimuli sourced from The MUSE Benchmark)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal LLM, Music Perception, Audio Understanding, Symbolic Reasoning, LogicLM
 

@@ -18,8 +18,8 @@ content_hash: 5221a9c2d8859b6a
 # AutoComPose: Automatic Generation of Pose Transition Descriptions for Composed Pose Retrieval Using Multimodal LLMs
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.22884](https://arxiv.org/abs/2503.22884)
-**Code**: None
+**arXiv**: [2503.22884](https://arxiv.org/abs/2503.22884)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Composed Pose Retrieval, MLLM, Pose Transition, Cyclic Consistency, Data Annotation
 

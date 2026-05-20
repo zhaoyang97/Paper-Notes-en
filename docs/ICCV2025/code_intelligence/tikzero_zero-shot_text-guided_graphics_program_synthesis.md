@@ -19,8 +19,8 @@ content_hash: 716492808f35f93a
 # TikZero: Zero-Shot Text-Guided Graphics Program Synthesis
 
 **Conference**: ICCV 2025 (Highlight)
-**arXiv**: [2503.11509](https://arxiv.org/abs/2503.11509)
-**Code**: [potamides/DeTikZify](https://github.com/potamides/DeTikZify)
+**arXiv**: [2503.11509](https://arxiv.org/abs/2503.11509)  
+**Code**: [potamides/DeTikZify](https://github.com/potamides/DeTikZify)  
 **Area**: Code Intelligence
 **Keywords**: Graphics Program Synthesis, TikZ, Zero-Shot, Text-Guided, Multimodal Language Model, Image Bridging
 

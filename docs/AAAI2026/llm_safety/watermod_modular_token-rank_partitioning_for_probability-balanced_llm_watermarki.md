@@ -18,8 +18,8 @@ content_hash: da977e978b783790
 # WaterMod: Modular Token-Rank Partitioning for Probability-Balanced LLM Watermarking
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07863](https://arxiv.org/abs/2511.07863)
-**Code**: [github](https://github.com/Shinwoo-Park/WaterMod)
+**arXiv**: [2511.07863](https://arxiv.org/abs/2511.07863)  
+**Code**: [github](https://github.com/Shinwoo-Park/WaterMod)  
 **Area**: AI Safety
 **Keywords**: LLM watermarking, text watermarking, modular arithmetic, zero-bit/multi-bit watermarking, probability balancing
 

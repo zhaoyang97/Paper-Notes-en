@@ -18,8 +18,8 @@ content_hash: 958450ba3cd727fb
 # Can LLMs Truly Embody Human Personality? Analyzing AI and Human Behavior Alignment in Dispute Resolution
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.07414](https://arxiv.org/abs/2602.07414)
-**Code**: [Available](https://github.com/DSincerity/Personality-LLM-BehavAlign-Dispute)
+**arXiv**: [2602.07414](https://arxiv.org/abs/2602.07414)  
+**Code**: [Available](https://github.com/DSincerity/Personality-LLM-BehavAlign-Dispute)  
 **Area**: Interpretability
 **Keywords**: LLM personality simulation, dispute resolution, Big Five personality, behavioral alignment, social simulation
 
@@ -53,10 +53,10 @@ This paper proposes an **evaluation framework** (not a new model), consisting of
 
 - **Outcome metrics**: Score, Accept, Not Walk-Away
 - **Strategic behavior metrics**:
-  - IRP ratio: frequency of cooperative/competitive strategy use $\text{IRP}_{\text{ratio}}^{X} = \frac{N_S^X}{N_S^{\text{all}}}$
-  - IRP reciprocity: proportion of times a speaker follows opponent's strategy $X$ with the same strategy $\text{IRP}_{\text{recip}}^{X} = \frac{N_S^{X=X_P}}{N_P^X}$
-  - Escalation ratio: frequency of competitive responses to non-competitive utterances
-  - De-escalation ratio: frequency of non-competitive responses to competitive utterances
+    - IRP ratio: frequency of cooperative/competitive strategy use $\text{IRP}_{\text{ratio}}^{X} = \frac{N_S^X}{N_S^{\text{all}}}$
+    - IRP reciprocity: proportion of times a speaker follows opponent's strategy $X$ with the same strategy $\text{IRP}_{\text{recip}}^{X} = \frac{N_S^{X=X_P}}{N_P^X}$
+    - Escalation ratio: frequency of competitive responses to non-competitive utterances
+    - De-escalation ratio: frequency of non-competitive responses to competitive utterances
 
 **Experimental models**: GPT-4o mini (500 simulations), Claude Sonnet 3.7 (250), Gemini 2.0 Flash (250), all using default parameters (temperature=1).
 

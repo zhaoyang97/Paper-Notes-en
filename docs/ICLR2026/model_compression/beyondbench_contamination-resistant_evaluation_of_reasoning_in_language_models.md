@@ -18,8 +18,8 @@ content_hash: af631802635d97e4
 # BeyondBench: Contamination-Resistant Evaluation of Reasoning in Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24210](https://arxiv.org/abs/2509.24210)
-**Code**: [GitHub](https://github.com/ctrl-gaurav/BeyondBench) / [PyPI](https://pypi.org/project/beyondbench/) / [Leaderboard](https://ctrl-gaurav.github.io/BeyondBench/)
+**arXiv**: [2509.24210](https://arxiv.org/abs/2509.24210)  
+**Code**: [GitHub](https://github.com/ctrl-gaurav/BeyondBench) / [PyPI](https://pypi.org/project/beyondbench/) / [Leaderboard](https://ctrl-gaurav.github.io/BeyondBench/)  
 **Area**: LLM Evaluation / Model Compression
 **Keywords**: Benchmark Evaluation, Data Contamination, Reasoning, Algorithm Problem Generation, NP-Complete Problems
 
@@ -42,29 +42,29 @@ BeyondBench is an installable Python package (`pip install beyondbench`) support
 
 1. **Three-Tier Difficulty Suites**:
 
-   - **Easy Suite (29 tasks)**: Fundamental arithmetic and statistical problems—sorting, summation, mean, median, GCD/LCM, etc.—assessing basic mathematical operation ability.
-   - **Medium Suite (5 tasks, 49 variants)**: Sequence pattern recognition and reasoning problems, including Fibonacci variants, sequence rule discovery, and pattern matching, requiring inductive reasoning.
-   - **Hard Suite (10 tasks, 68 variants)**: NP-complete and constraint satisfaction problems—graph coloring, knapsack, TSP variants, SAT problems—which are computationally hard and require combinatorial search or heuristic reasoning.
+    - **Easy Suite (29 tasks)**: Fundamental arithmetic and statistical problems—sorting, summation, mean, median, GCD/LCM, etc.—assessing basic mathematical operation ability.
+    - **Medium Suite (5 tasks, 49 variants)**: Sequence pattern recognition and reasoning problems, including Fibonacci variants, sequence rule discovery, and pattern matching, requiring inductive reasoning.
+    - **Hard Suite (10 tasks, 68 variants)**: NP-complete and constraint satisfaction problems—graph coloring, knapsack, TSP variants, SAT problems—which are computationally hard and require combinatorial search or heuristic reasoning.
 
 2. **Contamination Resistance: Three-Layer Guarantee**:
 
-   - **Vast problem space**: Each task's instance space exceeds $10^{15}$, making static dataset coverage impossible.
-   - **Deterministically verifiable solutions**: Every generated instance has a mathematically unique correct answer, eliminating evaluation ambiguity.
-   - **Isomorphic transformations**: Problems can be subjected to semantically equivalent but syntactically distinct transformations (e.g., renumbering graph nodes, renaming variables), producing instances that appear different but are structurally identical, further reducing memorization-based matching.
+    - **Vast problem space**: Each task's instance space exceeds $10^{15}$, making static dataset coverage impossible.
+    - **Deterministically verifiable solutions**: Every generated instance has a mathematically unique correct answer, eliminating evaluation ambiguity.
+    - **Isomorphic transformations**: Problems can be subjected to semantically equivalent but syntactically distinct transformations (e.g., renumbering graph nodes, renaming variables), producing instances that appear different but are structurally identical, further reducing memorization-based matching.
 
 3. **Multi-Dimensional Evaluation Metrics**:
 
-   - Accuracy: reported per task and per Suite.
-   - Instruction-following compliance: whether models output answers in the required format.
-   - Token efficiency analysis: number of tokens consumed to reach an answer.
-   - Three-fold evaluation: each configuration is run three times and averaged for robustness.
+    - Accuracy: reported per task and per Suite.
+    - Instruction-following compliance: whether models output answers in the required format.
+    - Token efficiency analysis: number of tokens consumed to reach an answer.
+    - Three-fold evaluation: each configuration is run three times and averaged for robustness.
 
 4. **Complete Toolchain**:
 
-   - CLI: `beyondbench evaluate --model-id xxx --suite easy`
-   - Python API: programmatic control over the evaluation pipeline.
-   - FastAPI server: `beyondbench serve` exposes a REST API.
-   - Result comparison: `beyondbench results compare` for cross-model comparison.
+    - CLI: `beyondbench evaluate --model-id xxx --suite easy`
+    - Python API: programmatic control over the evaluation pipeline.
+    - FastAPI server: `beyondbench serve` exposes a REST API.
+    - Result comparison: `beyondbench results compare` for cross-model comparison.
 
 ### Loss & Training
 Not applicable—BeyondBench is a pure evaluation framework involving no training.

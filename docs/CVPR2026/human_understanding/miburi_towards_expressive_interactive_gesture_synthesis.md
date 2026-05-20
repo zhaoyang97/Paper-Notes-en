@@ -18,8 +18,8 @@ content_hash: d79624994f65ccc0
 # Miburi: Towards Expressive Interactive Gesture Synthesis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.03282](https://arxiv.org/abs/2603.03282)
-**Code**: [Project Page](https://vcai.mpi-inf.mpg.de/projects/MIBURI)
+**arXiv**: [2603.03282](https://arxiv.org/abs/2603.03282)  
+**Code**: [Project Page](https://vcai.mpi-inf.mpg.de/projects/MIBURI)  
 **Area**: Human Understanding
 **Keywords**: Co-speech gesture generation, embodied dialogue agent, causal autoregression, real-time generation, residual vector quantization
 

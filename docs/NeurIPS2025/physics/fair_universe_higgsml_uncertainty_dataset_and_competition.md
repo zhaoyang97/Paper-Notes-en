@@ -20,8 +20,8 @@ content_hash: 42a2a8ae66de726b
 # FAIR Universe HiggsML Uncertainty Dataset and Competition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.02867](https://arxiv.org/abs/2410.02867)
-**Code**: [FAIR-Universe/HEP-Challenge](https://github.com/FAIR-Universe/HEP-Challenge) (competition platform + baseline code)
+**arXiv**: [2410.02867](https://arxiv.org/abs/2410.02867)  
+**Code**: [FAIR-Universe/HEP-Challenge](https://github.com/FAIR-Universe/HEP-Challenge) (competition platform + baseline code)  
 **Area**: Physics / High-Energy Physics ML / Uncertainty Quantification
 **Keywords**: Higgs boson, systematic uncertainties, confidence intervals, competition dataset, bias parameterization, nuisance parameters, profile likelihood
 

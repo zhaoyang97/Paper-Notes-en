@@ -18,8 +18,8 @@ content_hash: f680514b6afcb8f2
 # Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2511.06168](https://arxiv.org/abs/2511.06168)
-**Code**: [https://github.com/boxuanwang28/CoT-Lens](https://github.com/boxuanwang28/CoT-Lens)
+**arXiv**: [2511.06168](https://arxiv.org/abs/2511.06168)  
+**Code**: [https://github.com/boxuanwang28/CoT-Lens](https://github.com/boxuanwang28/CoT-Lens)  
 **Area**: LLM Reasoning
 **Keywords**: Chain-of-Thought Alignment, Alignment Score, Semantic Entropy, Reasoning Quality, Structured Reasoning
 

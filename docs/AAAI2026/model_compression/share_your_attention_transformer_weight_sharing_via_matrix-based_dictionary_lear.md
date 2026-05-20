@@ -18,8 +18,8 @@ content_hash: d46212b66ebe6911
 # Share Your Attention: Transformer Weight Sharing via Matrix-Based Dictionary Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04581](https://arxiv.org/abs/2508.04581)
-**Code**: [https://github.com/mts-ai/MASA](https://github.com/mts-ai/MASA)
+**arXiv**: [2508.04581](https://arxiv.org/abs/2508.04581)  
+**Code**: [https://github.com/mts-ai/MASA](https://github.com/mts-ai/MASA)  
 **Area**: Model Compression
 **Keywords**: weight sharing, dictionary learning, transformer compression, attention compression, parameter efficiency
 

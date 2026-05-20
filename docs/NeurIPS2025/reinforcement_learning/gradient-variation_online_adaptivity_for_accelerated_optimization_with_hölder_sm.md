@@ -19,9 +19,9 @@ content_hash: f4d58eeda658c290
 # Gradient-Variation Online Adaptivity for Accelerated Optimization with Hölder Smoothness
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02276](https://arxiv.org/abs/2511.02276)
+**arXiv**: [2511.02276](https://arxiv.org/abs/2511.02276)  
 **Authors**: Yuheng Zhao, Yu-Hu Yan, Kfir Yehuda Levy, Peng Zhao (Nanjing University / Technion)
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: Reinforcement Learning
 **Keywords**: online learning, Hölder smoothness, gradient variation, acceleration, universality, online-to-batch conversion
 

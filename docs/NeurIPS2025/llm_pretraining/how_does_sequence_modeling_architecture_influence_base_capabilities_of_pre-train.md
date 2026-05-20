@@ -20,8 +20,8 @@ content_hash: 23329f75f12e948d
 # How Does Sequence Modeling Architecture Influence Base Capabilities of Pre-trained Language Models?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18522](https://arxiv.org/abs/2505.18522)
-**Code**: [GitHub](https://github.com/luxinxyz/TSA)
+**arXiv**: [2505.18522](https://arxiv.org/abs/2505.18522)  
+**Code**: [GitHub](https://github.com/luxinxyz/TSA)  
 **Area**: LLM Pre-training
 **Keywords**: sequence modeling, base capabilities, Transformer, Mamba, RWKV, attention, Top-1 selection
 

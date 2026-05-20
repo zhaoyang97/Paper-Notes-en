@@ -18,8 +18,8 @@ content_hash: 8aeac813667e846d
 # LoST: Level of Semantics Tokenization for 3D Shapes
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17995](https://arxiv.org/abs/2603.17995)
-**Code**: [Project Page](https://lost3d.github.io)
+**arXiv**: [2603.17995](https://arxiv.org/abs/2603.17995)  
+**Code**: [Project Page](https://lost3d.github.io)  
 **Area**: 3D Vision
 **Keywords**: 3D generation, shape tokenization, autoregressive models, semantic hierarchy, diffusion decoding
 

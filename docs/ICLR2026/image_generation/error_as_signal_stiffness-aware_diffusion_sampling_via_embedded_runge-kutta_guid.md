@@ -18,8 +18,8 @@ content_hash: 5efa02ab1d8b8b0a
 # Error as Signal: Stiffness-Aware Diffusion Sampling via Embedded Runge-Kutta Guidance
 
 **Conference**: ICLR2026
-**arXiv**: [2603.03692](https://arxiv.org/abs/2603.03692)
-**Code**: [mlvlab/ERK-Guid](https://github.com/mlvlab/ERK-Guid)
+**arXiv**: [2603.03692](https://arxiv.org/abs/2603.03692)  
+**Code**: [mlvlab/ERK-Guid](https://github.com/mlvlab/ERK-Guid)  
 **Area**: Image Generation
 **Keywords**: diffusion sampling, stiffness, local truncation error, embedded Runge-Kutta, guidance
 

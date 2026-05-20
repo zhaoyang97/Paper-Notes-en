@@ -18,8 +18,8 @@ content_hash: 3b0b25d3af179fdf
 # Rewis3d: Reconstruction Improves Weakly-Supervised Semantic Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.06374](https://arxiv.org/abs/2603.06374)
-**Code**: Coming soon
+**arXiv**: [2603.06374](https://arxiv.org/abs/2603.06374)  
+**Code**: Coming soon  
 **Area**: 3D Vision / Semantic Segmentation
 **Keywords**: Weakly-supervised segmentation, 3D reconstruction, cross-modal consistency, sparse annotation, Mean Teacher
 

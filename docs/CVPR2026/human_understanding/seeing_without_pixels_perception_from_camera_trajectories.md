@@ -18,8 +18,8 @@ content_hash: d29c002351d6c36f
 # Seeing without Pixels: Perception from Camera Trajectories
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.21681](https://arxiv.org/abs/2511.21681)
-**Code**: [https://sites.google.com/view/seeing-without-pixels](https://sites.google.com/view/seeing-without-pixels)
+**arXiv**: [2511.21681](https://arxiv.org/abs/2511.21681)  
+**Code**: [https://sites.google.com/view/seeing-without-pixels](https://sites.google.com/view/seeing-without-pixels)  
 **Area**: Human Understanding / Multimodal Learning
 **Keywords**: camera trajectory, contrastive learning, video perception, modality fusion, action understanding
 

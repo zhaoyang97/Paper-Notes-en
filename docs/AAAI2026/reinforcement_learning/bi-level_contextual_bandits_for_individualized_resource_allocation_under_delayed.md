@@ -18,8 +18,8 @@ content_hash: 3d100075f3a0dc12
 # Bi-Level Contextual Bandits for Individualized Resource Allocation under Delayed Feedback
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10572](https://arxiv.org/abs/2511.10572)
-**Code**: [GitHub](https://github.com/sinatorrr/MAB)
+**arXiv**: [2511.10572](https://arxiv.org/abs/2511.10572)  
+**Code**: [GitHub](https://github.com/sinatorrr/MAB)  
 **Area**: Reinforcement Learning
 **Keywords**: Contextual Bandits, Resource Allocation, Delayed Feedback, Fairness, Bi-Level Optimization
 

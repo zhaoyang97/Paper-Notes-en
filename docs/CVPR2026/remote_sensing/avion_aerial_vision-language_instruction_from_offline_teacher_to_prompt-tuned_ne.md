@@ -18,8 +18,8 @@ content_hash: 1ccc20eb39f6b391
 # AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12659](https://arxiv.org/abs/2603.12659)
-**Code**: [https://github.com/yuhu990424/AVION](https://github.com/yuhu990424/AVION)
+**arXiv**: [2603.12659](https://arxiv.org/abs/2603.12659)  
+**Code**: [https://github.com/yuhu990424/AVION](https://github.com/yuhu990424/AVION)  
 **Area**: Remote Sensing
 **Keywords**: Vision-Language Model, Knowledge Distillation, Parameter-Efficient Fine-Tuning, Remote Sensing Scene Classification, Prompt Learning
 

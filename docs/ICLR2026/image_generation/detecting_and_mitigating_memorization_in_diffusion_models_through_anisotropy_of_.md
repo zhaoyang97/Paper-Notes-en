@@ -18,8 +18,8 @@ content_hash: 28bea0132602ffbb
 # Detecting and Mitigating Memorization in Diffusion Models through Anisotropy of the Log-Probability
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20642](https://arxiv.org/abs/2601.20642)
-**Code**: [GitHub](https://github.com/rohanasthana/memorization-anisotropy)
+**arXiv**: [2601.20642](https://arxiv.org/abs/2601.20642)  
+**Code**: [GitHub](https://github.com/rohanasthana/memorization-anisotropy)  
 **Area**: Diffusion Models / Privacy
 **Keywords**: memorization detection, anisotropy, score function, cosine similarity, denoising-free detection
 

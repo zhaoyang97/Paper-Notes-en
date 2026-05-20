@@ -18,8 +18,8 @@ content_hash: 6c4f75d58cb3a755
 # To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance
 
 **Conference**: AAAI2026
-**arXiv**: [2511.12121](https://arxiv.org/abs/2511.12121)
-**Code**: None
+**arXiv**: [2511.12121](https://arxiv.org/abs/2511.12121)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: [multimodal alignment, contrastive learning, partial information decomposition, redundant information, unimodal encoders]
 

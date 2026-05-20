@@ -18,8 +18,8 @@ content_hash: f65fbbd954e830bc
 # Operation Veja: Fixing Fundamental Concepts Missing from Modern Roleplaying Training Paradigms
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.06039](https://arxiv.org/abs/2601.06039)
-**Code**: [GitHub](https://github.com/HyouinKyoumaIRL/Operation-Veja)
+**arXiv**: [2601.06039](https://arxiv.org/abs/2601.06039)  
+**Code**: [GitHub](https://github.com/HyouinKyoumaIRL/Operation-Veja)  
 **Area**: Robotics
 **Keywords**: Role-playing, VEJA framework, value-conflicted reasoning, data curation, character consistency
 
@@ -51,21 +51,21 @@ The paper is organized into two parts: (1) a systematic critique of the four dom
 
 1. **Systematic Critique of the Four Paradigms**
 
-   - *Function*: Explains why existing approaches fail to produce characters with genuine depth.
-   - *Mechanism*: **RAG's scalability problem**—human value systems grow combinatorially and cannot be exhaustively enumerated as retrievable facts; contextual modifiers cause exponential growth in complexity. **Fact-value specification's decontextualization problem**—distilling values into isolated formulae (e.g., "open with strangers") causes models to over-index on a single trait. **The implicit-context curse of literary data**—a character's inner reasoning is only implied in dialogue rather than made explicit, and experience is conveyed through narration rather than conversation. **The chicken-and-egg problem of synthetic data**—when GPT-4 is prompted to generate dialogues exhibiting value conflict, GPT-4 itself lacks the capacity to balance competing values.
-   - *Design Motivation*: Establishes the necessity of a new framework through systematic elimination.
+    - *Function*: Explains why existing approaches fail to produce characters with genuine depth.
+    - *Mechanism*: **RAG's scalability problem**—human value systems grow combinatorially and cannot be exhaustively enumerated as retrievable facts; contextual modifiers cause exponential growth in complexity. **Fact-value specification's decontextualization problem**—distilling values into isolated formulae (e.g., "open with strangers") causes models to over-index on a single trait. **The implicit-context curse of literary data**—a character's inner reasoning is only implied in dialogue rather than made explicit, and experience is conveyed through narration rather than conversation. **The chicken-and-egg problem of synthetic data**—when GPT-4 is prompted to generate dialogues exhibiting value conflict, GPT-4 itself lacks the capacity to balance competing values.
+    - *Design Motivation*: Establishes the necessity of a new framework through systematic elimination.
 
 2. **The Four Pillars of the VEJA Framework**
 
-   - *Function*: Provides a structured, actionable conceptual framework for character definition.
-   - *Mechanism*: **Values**—high-level motivations driving a character's goals and desires (e.g., "I want more time because there is so much I want to do" → ambition/productivity); **Experiences**—specific past events that shape values and judgments (e.g., "having been through a contract dispute in court, deeply distrusts verbal commitments"); **Judgments**—a character's concrete views and heuristics about the world, the output of values filtered through experience (e.g., "views marriage as an outdated institution"); **Abilities**—the character's skills, knowledge, and competency range, defining domains of authority and shaping vocabulary and interests.
-   - *Design Motivation*: The four pillars form a causal chain (experiences forge values → values and experiences yield judgments → abilities provide the expressive medium), creating coherent internal logic.
+    - *Function*: Provides a structured, actionable conceptual framework for character definition.
+    - *Mechanism*: **Values**—high-level motivations driving a character's goals and desires (e.g., "I want more time because there is so much I want to do" → ambition/productivity); **Experiences**—specific past events that shape values and judgments (e.g., "having been through a contract dispute in court, deeply distrusts verbal commitments"); **Judgments**—a character's concrete views and heuristics about the world, the output of values filtered through experience (e.g., "views marriage as an outdated institution"); **Abilities**—the character's skills, knowledge, and competency range, defining domains of authority and shaping vocabulary and interests.
+    - *Design Motivation*: The four pillars form a causal chain (experiences forge values → values and experiences yield judgments → abilities provide the expressive medium), creating coherent internal logic.
 
 3. **Data Curation Experimental Design**
 
-   - *Function*: Preliminary validation of whether the VEJA framework improves data quality.
-   - *Mechanism*: Two small-scale datasets centered on Makise Kurisu are constructed. The baseline group uses Gemini Pro 2.5 to synthesize dialogues from a 10-day timeline with 20 user-generated prompts; the VEJA group provides 15 human writers with the same timeline plus a VEJA-structured character profile. One hundred randomly paired A/B trials are evaluated by Gemini 2.5 Flash in a blind review.
-   - *Design Motivation*: The authors explicitly acknowledge the confound of human vs. machine authorship, but argue that the core claim is that current models cannot synthesize data of this quality, making human curation combined with the correct framework a necessary component.
+    - *Function*: Preliminary validation of whether the VEJA framework improves data quality.
+    - *Mechanism*: Two small-scale datasets centered on Makise Kurisu are constructed. The baseline group uses Gemini Pro 2.5 to synthesize dialogues from a 10-day timeline with 20 user-generated prompts; the VEJA group provides 15 human writers with the same timeline plus a VEJA-structured character profile. One hundred randomly paired A/B trials are evaluated by Gemini 2.5 Flash in a blind review.
+    - *Design Motivation*: The authors explicitly acknowledge the confound of human vs. machine authorship, but argue that the core claim is that current models cannot synthesize data of this quality, making human curation combined with the correct framework a necessary component.
 
 ### Loss & Training
 

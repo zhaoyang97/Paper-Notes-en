@@ -18,8 +18,8 @@ content_hash: 956d17cc8d072dec
 # CWNet: Causal Wavelet Network for Low-Light Image Enhancement
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.10689](https://arxiv.org/abs/2507.10689)
-**Code**: CWNet (mentioned in the paper; specific link not provided)
+**arXiv**: [2507.10689](https://arxiv.org/abs/2507.10689)  
+**Code**: CWNet (mentioned in the paper; specific link not provided)  
 **Area**: Image Restoration / Low-Light Enhancement
 **Keywords**: Low-light image enhancement, causal inference, wavelet transform, state space model, CLIP semantic consistency
 

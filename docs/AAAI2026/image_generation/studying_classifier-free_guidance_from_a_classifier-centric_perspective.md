@@ -18,8 +18,8 @@ content_hash: 58d3ce60dbef75c8
 # Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.10638](https://arxiv.org/abs/2503.10638)
-**Code**: None
+**arXiv**: [2503.10638](https://arxiv.org/abs/2503.10638)  
+**Code**: None  
 **Area**: Diffusion Models / Conditional Generation / Classifier-Free Guidance
 **Keywords**: classifier guidance, classifier-free guidance, decision boundary, flow matching post-processing, theoretical analysis of diffusion models
 

@@ -17,8 +17,8 @@ content_hash: 454065308f66c081
 # Journey to the Centre of Cluster: Harnessing Interior Nodes for A/B Testing under Network Interference
 
 **Conference**: ICLR2026
-**arXiv**: [2602.04457](https://arxiv.org/abs/2602.04457)
-**Code**: [GitHub](https://github.com/Cqyiiii/AMII-Harnessing-Interior-Nodes-for-Network-Experiments)
+**arXiv**: [2602.04457](https://arxiv.org/abs/2602.04457)  
+**Code**: [GitHub](https://github.com/Cqyiiii/AMII-Harnessing-Interior-Nodes-for-Network-Experiments)  
 **Area**: Causal Inference
 **Keywords**: A/B testing, network interference, causal inference, cluster randomization, GATE estimation
 

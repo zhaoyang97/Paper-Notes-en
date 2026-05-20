@@ -18,8 +18,8 @@ content_hash: 23b2a909d29a60a9
 # LiTo: Surface Light Field Tokenization
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.11047](https://arxiv.org/abs/2603.11047)
-**Code**: Unavailable (Apple internal)
+**arXiv**: [2603.11047](https://arxiv.org/abs/2603.11047)  
+**Code**: Unavailable (Apple internal)  
 **Area**: 3D Vision / Generation
 **Keywords**: surface light field, 3D latent representation, view-dependent appearance, Gaussian Splatting, flow matching
 

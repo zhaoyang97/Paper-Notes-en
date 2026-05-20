@@ -18,8 +18,8 @@ content_hash: 843439e7d0f3c7e2
 # When Thinking Backfires: Mechanistic Insights Into Reasoning-Induced Misalignment
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.00544](https://arxiv.org/abs/2509.00544)
-**Code**: [https://github.com/seacowx/When-Thinking-Backfires](https://github.com/seacowx/When-Thinking-Backfires)
+**arXiv**: [2509.00544](https://arxiv.org/abs/2509.00544)  
+**Code**: [https://github.com/seacowx/When-Thinking-Backfires](https://github.com/seacowx/When-Thinking-Backfires)  
 **Area**: Interpretability
 **Keywords**: Reasoning-Induced Misalignment, Safety Alignment, Mechanistic Analysis, Attention Heads, Catastrophic Forgetting
 

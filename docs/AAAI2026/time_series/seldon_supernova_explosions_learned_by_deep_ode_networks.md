@@ -18,8 +18,8 @@ content_hash: 93c020476ca82dad
 # SELDON: Supernova Explosions Learned by Deep ODE Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.04392](https://arxiv.org/abs/2603.04392)
-**Code**: [GitHub](https://github.com/skai-institute/seldon)
+**arXiv**: [2603.04392](https://arxiv.org/abs/2603.04392)  
+**Code**: [GitHub](https://github.com/skai-institute/seldon)  
 **Area**: Time Series / Astrophysics
 **Keywords**: Continuous-time modeling, Neural ODE, Variational Autoencoder, Supernova light curves, Irregular time series forecasting
 

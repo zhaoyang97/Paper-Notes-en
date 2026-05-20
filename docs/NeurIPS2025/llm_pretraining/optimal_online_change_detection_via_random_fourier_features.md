@@ -18,8 +18,8 @@ content_hash: 850ffc183369507c
 # Optimal Online Change Detection via Random Fourier Features
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17789](https://arxiv.org/abs/2505.17789)
-**Code**: [GitHub](https://github.com/FlopsKa/rff-change-detection)
+**arXiv**: [2505.17789](https://arxiv.org/abs/2505.17789)  
+**Code**: [GitHub](https://github.com/FlopsKa/rff-change-detection)  
 **Area**: LLM Pretraining
 **Keywords**: online change detection, random Fourier features, MMD, minimax optimality, nonparametric detection
 

@@ -18,8 +18,8 @@ content_hash: e03cf95daa6f1812
 # DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.19365](https://arxiv.org/abs/2511.19365)
-**Code**: [https://github.com/Zehong-Ma/DeCo](https://github.com/Zehong-Ma/DeCo)
+**arXiv**: [2511.19365](https://arxiv.org/abs/2511.19365)  
+**Code**: [https://github.com/Zehong-Ma/DeCo](https://github.com/Zehong-Ma/DeCo)  
 **Area**: Image Generation
 **Keywords**: Pixel diffusion, frequency decoupling, end-to-end generation, Diffusion Transformer, frequency-aware loss
 

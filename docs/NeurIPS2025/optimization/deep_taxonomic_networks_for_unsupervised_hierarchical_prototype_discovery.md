@@ -18,8 +18,8 @@ content_hash: a0b1d9d74bb72924
 # Deep Taxonomic Networks for Unsupervised Hierarchical Prototype Discovery
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23602](https://arxiv.org/abs/2509.23602)
-**Code**: None (no public code mentioned)
+**arXiv**: [2509.23602](https://arxiv.org/abs/2509.23602)  
+**Code**: None (no public code mentioned)  
 **Area**: Unsupervised Learning / Hierarchical Clustering
 **Keywords**: hierarchical clustering, prototype learning, variational inference, binary tree prior, taxonomy discovery
 

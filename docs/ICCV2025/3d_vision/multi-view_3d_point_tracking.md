@@ -18,8 +18,8 @@ content_hash: f314cf40466abcda
 # Multi-View 3D Point Tracking
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.21060](https://arxiv.org/abs/2508.21060)
-**Code**: [ethz-vlg/mvtracker](https://ethz-vlg.github.io/mvtracker)
+**arXiv**: [2508.21060](https://arxiv.org/abs/2508.21060)  
+**Code**: [ethz-vlg/mvtracker](https://ethz-vlg.github.io/mvtracker)  
 **Area**: 3D Vision
 **Keywords**: multi-view 3D point tracking, point cloud feature fusion, kNN association, Transformer iterative refinement, occlusion handling
 

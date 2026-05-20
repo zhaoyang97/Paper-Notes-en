@@ -18,8 +18,8 @@ content_hash: 98c307bf8b00e063
 # VSA: Faster Video Diffusion with Trainable Sparse Attention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13389](https://arxiv.org/abs/2505.13389)
-**Code**: [https://github.com/hao-ai-lab/FastVideo](https://github.com/hao-ai-lab/FastVideo)
+**arXiv**: [2505.13389](https://arxiv.org/abs/2505.13389)  
+**Code**: [https://github.com/hao-ai-lab/FastVideo](https://github.com/hao-ai-lab/FastVideo)  
 **Area**: Video Generation / Attention Acceleration
 **Keywords**: Sparse Attention, Video Diffusion Transformer, End-to-End Training, Key Token Prediction, Hardware Alignment
 

@@ -18,8 +18,8 @@ content_hash: b113b2e4d900a217
 # DISC: Dynamic Decomposition Improves LLM Inference Scaling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.16706](https://arxiv.org/abs/2502.16706)
-**Code**: [disc-search.github.io](https://disc-search.github.io/)
+**arXiv**: [2502.16706](https://arxiv.org/abs/2502.16706)  
+**Code**: [disc-search.github.io](https://disc-search.github.io/)  
 **Area**: LLM Efficiency
 **Keywords**: Test-time compute, dynamic decomposition, search algorithms, inference-time scaling, reasoning efficiency
 

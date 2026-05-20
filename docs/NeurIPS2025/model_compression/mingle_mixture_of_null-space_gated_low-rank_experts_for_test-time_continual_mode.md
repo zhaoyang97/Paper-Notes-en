@@ -19,9 +19,9 @@ content_hash: d3fd627e20fb0a6c
 # Mingle: Mixture of Null-Space Gated Low-Rank Experts for Test-Time Continual Model Merging
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11883](https://arxiv.org/abs/2505.11883)
+**arXiv**: [2505.11883](https://arxiv.org/abs/2505.11883)  
 **Authors**: Zihuan Qiu, Yi Xu, Chiyuan He, Fanman Meng, Linfeng Xu, Qingbo Wu, Hongliang Li (UESTC, DUT)
-**Code**: [GitHub](https://github.com/zihuanqiu/MINGLE)
+**Code**: [GitHub](https://github.com/zihuanqiu/MINGLE)  
 **Area**: Model Compression
 **Keywords**: Continual Learning, Model Merging, Test-Time Adaptation, Mixture of Experts, Null-Space Constraint, Low-Rank Decomposition
 

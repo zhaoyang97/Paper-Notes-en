@@ -18,8 +18,8 @@ content_hash: 1a9e84908de7e463
 # Maximizing Incremental Information Entropy for Contrastive Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.12594](https://arxiv.org/abs/2603.12594)
-**Code**: To be confirmed
+**arXiv**: [2603.12594](https://arxiv.org/abs/2603.12594)  
+**Code**: To be confirmed  
 **Area**: Self-Supervised Learning
 **Keywords**: Contrastive Learning, Information Entropy, Incremental Entropy, Information Bottleneck, Learnable Augmentation
 

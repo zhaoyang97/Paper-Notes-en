@@ -18,8 +18,8 @@ content_hash: 8b30e6093452bc8f
 # Diffusion Fine-Tuning via Reparameterized Policy Gradient of the Soft Q-Function
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.04559](https://arxiv.org/abs/2512.04559)
-**Code**: [https://github.com/Shin-woocheol/SQDF](https://github.com/Shin-woocheol/SQDF)
+**arXiv**: [2512.04559](https://arxiv.org/abs/2512.04559)  
+**Code**: [https://github.com/Shin-woocheol/SQDF](https://github.com/Shin-woocheol/SQDF)  
 **Area**: Image Generation
 **Keywords**: Diffusion model fine-tuning, KL-regularized reinforcement learning, soft Q-function, reward over-optimization, text-to-image alignment
 

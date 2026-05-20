@@ -18,8 +18,8 @@ content_hash: 5a8f75a16132e3b4
 # Attribution-Guided Model Rectification of Unreliable Neural Network Behaviors
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.15656](https://arxiv.org/abs/2603.15656)
-**Code**: None
+**arXiv**: [2603.15656](https://arxiv.org/abs/2603.15656)  
+**Code**: None  
 **Area**: Knowledge Editing
 **Keywords**: rank-one model editing, attribution analysis, backdoor defense, spurious correlations, model rectification
 
@@ -49,21 +49,21 @@ The framework operates as a three-step loop. **Step 1 (Attribution Computation)*
 
 1. **Theoretical Advantages of the Rectification Setting (Rectifiability & Span-Aligned Control)**
 
-   - **Function**: Formally proves two structural advantages of the behavior rectification setting over domain adaptation.
-   - **Mechanism**: Because the model has observed both clean and corrupted samples during training, the corrupted key $k^*$ naturally lies within the span of training keys (Proposition 4.1, Rectifiability), eliminating out-of-span residuals and preserving existing key–value associations. Simultaneously, paired supervision drives key estimation error to zero without requiring large numbers of new-domain samples (Proposition 4.2, Span-Aligned Control).
-   - **Design Motivation**: These two properties theoretically explain why a single sample suffices for repair—the rectification setting structurally avoids both bottlenecks of domain-adaptation editing.
+    - **Function**: Formally proves two structural advantages of the behavior rectification setting over domain adaptation.
+    - **Mechanism**: Because the model has observed both clean and corrupted samples during training, the corrupted key $k^*$ naturally lies within the span of training keys (Proposition 4.1, Rectifiability), eliminating out-of-span residuals and preserving existing key–value associations. Simultaneously, paired supervision drives key estimation error to zero without requiring large numbers of new-domain samples (Proposition 4.2, Span-Aligned Control).
+    - **Design Motivation**: These two properties theoretically explain why a single sample suffices for repair—the rectification setting structurally avoids both bottlenecks of domain-adaptation editing.
 
 2. **Attribution-Guided Layer Localization**
 
-   - **Function**: Automatically identifies the layer that contributes most to unreliable behavior and is most amenable to editing.
-   - **Mechanism**: IG attributions are computed with corrupted $\tilde{x}$ as the reference and clean $x$ as the input: $M^l_i(x, \tilde{x}) = (f_l(x_i) - f_l(\tilde{x}_i)) \cdot \int_0^1 \frac{\partial f(\hat{x})}{\partial f_l(\hat{x}_i)} d\alpha$. The Completeness axiom (Lemma 3: attributions across all layers sum to the output change $f(x)-f(\tilde{x})$) enables cross-layer comparability. Projecting the attribution onto the editing direction $M^{*,l} = M^l \cdot (C^{-1}k^*)^T$ and taking the Frobenius norm yields the scalar score.
-   - **Design Motivation**: Attribution magnitude alone measures only "how important is this layer to the unreliable behavior"; projecting onto the editing direction measures "how much unreliability would editing this layer reduce"—a cross signal of attribution and editing direction that directly correlates with the first-order descent coefficient $G_l$.
+    - **Function**: Automatically identifies the layer that contributes most to unreliable behavior and is most amenable to editing.
+    - **Mechanism**: IG attributions are computed with corrupted $\tilde{x}$ as the reference and clean $x$ as the input: $M^l_i(x, \tilde{x}) = (f_l(x_i) - f_l(\tilde{x}_i)) \cdot \int_0^1 \frac{\partial f(\hat{x})}{\partial f_l(\hat{x}_i)} d\alpha$. The Completeness axiom (Lemma 3: attributions across all layers sum to the output change $f(x)-f(\tilde{x})$) enables cross-layer comparability. Projecting the attribution onto the editing direction $M^{*,l} = M^l \cdot (C^{-1}k^*)^T$ and taking the Frobenius norm yields the scalar score.
+    - **Design Motivation**: Attribution magnitude alone measures only "how important is this layer to the unreliable behavior"; projecting onto the editing direction measures "how much unreliability would editing this layer reduce"—a cross signal of attribution and editing direction that directly correlates with the first-order descent coefficient $G_l$.
 
 3. **Dynamic Model Rectification Framework (Algorithm 1)**
 
-   - **Function**: Iteratively localizes and edits multiple layers for adaptive repair.
-   - **Mechanism**: The while loop checks whether the prediction gap $\delta^* = f(x) - f(\tilde{x})$ exceeds target $\delta$ and whether performance degradation $\epsilon^*$ remains within budget. Each round: attribution-based localization of the suspect layer → rank-one editing for $T$ epochs → evaluation of the edited model → if degradation is acceptable, the edit is retained and the loop continues; otherwise the edit is rolled back and the procedure returns.
-   - **Design Motivation**: After editing one layer the model state changes, and a previously suboptimal layer may become the new bottleneck. The dynamic framework enables progressive exploration of multi-layer rectification paths.
+    - **Function**: Iteratively localizes and edits multiple layers for adaptive repair.
+    - **Mechanism**: The while loop checks whether the prediction gap $\delta^* = f(x) - f(\tilde{x})$ exceeds target $\delta$ and whether performance degradation $\epsilon^*$ remains within budget. Each round: attribution-based localization of the suspect layer → rank-one editing for $T$ epochs → evaluation of the edited model → if degradation is acceptable, the edit is retained and the loop continues; otherwise the edit is rolled back and the procedure returns.
+    - **Design Motivation**: After editing one layer the model state changes, and a previously suboptimal layer may become the new bottleneck. The dynamic framework enables progressive exploration of multi-layer rectification paths.
 
 ### Loss & Training
 The optimization objective for rank-one editing is a constrained least-squares problem: $\min_\Lambda \|v^* - f_l(k^*; W')\|$, subject to $W' = W + \Lambda(C^{-1}k^*)^T$, where $k^*$ is the feature key of the corrupted sample at the target layer, $v^*$ is the output value of the clean sample at that layer, and $C = KK^T$ is the second-order moment statistics of training-sample keys. The update matrix is an outer product of two vectors (rank-one) and admits a closed-form solution. In the dynamic framework, performance degradation is assessed via a validation metric $\zeta$ after $T$ editing epochs per round.

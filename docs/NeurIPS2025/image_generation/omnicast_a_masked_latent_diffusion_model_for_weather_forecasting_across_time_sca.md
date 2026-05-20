@@ -18,8 +18,8 @@ content_hash: 7de08abcff94baf6
 # OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18707](https://arxiv.org/abs/2510.18707)
-**Code**: [GitHub](https://github.com/tung-nd/omnicast)
+**arXiv**: [2510.18707](https://arxiv.org/abs/2510.18707)  
+**Code**: [GitHub](https://github.com/tung-nd/omnicast)  
 **Area**: Weather Forecasting, Generative Models
 **Keywords**: Weather Forecasting, Latent Diffusion Model, Masked Generative Modeling, Subseasonal Forecasting, VAE
 

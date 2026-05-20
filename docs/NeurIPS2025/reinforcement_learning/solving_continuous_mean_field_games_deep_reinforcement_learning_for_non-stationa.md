@@ -18,8 +18,8 @@ content_hash: 015559bc4cee358f
 # Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22158](https://arxiv.org/abs/2510.22158)
-**Code**: Unavailable
+**arXiv**: [2510.22158](https://arxiv.org/abs/2510.22158)  
+**Code**: Unavailable  
 **Area**: Reinforcement Learning
 **Keywords**: Mean Field Games, Deep Reinforcement Learning, Fictitious Play, Normalizing Flow, Nash Equilibrium
 

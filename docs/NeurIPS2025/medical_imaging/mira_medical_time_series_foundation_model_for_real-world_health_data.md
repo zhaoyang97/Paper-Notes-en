@@ -18,8 +18,8 @@ content_hash: 23c3e7c4d708e176
 # MIRA: Medical Time Series Foundation Model for Real-World Health Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07584](https://arxiv.org/abs/2506.07584)
-**Code**: [GitHub](https://github.com/Microsoft/MIRA)
+**arXiv**: [2506.07584](https://arxiv.org/abs/2506.07584)  
+**Code**: [GitHub](https://github.com/Microsoft/MIRA)  
 **Area**: Medical Signals
 **Keywords**: Time series foundation model, irregular sampling, medical signals, Neural ODE, Mixture-of-Experts
 

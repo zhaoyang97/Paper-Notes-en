@@ -18,8 +18,8 @@ content_hash: bab72e4de71f5608
 # One Perturbation is Enough: On Generating Universal Adversarial Perturbations against Vision-Language Pre-training Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2406.05491](https://arxiv.org/abs/2406.05491)
-**Code**: N/A
+**arXiv**: [2406.05491](https://arxiv.org/abs/2406.05491)  
+**Code**: N/A  
 **Area**: Multimodal VLM / Adversarial Attack
 **Keywords**: Universal Adversarial Perturbation, VLP Models, Contrastive Learning, Cross-modal Attack, Adversarial Transferability
 
@@ -54,21 +54,21 @@ The overall pipeline of C-PGC is as follows. A fixed random noise $z_v$ is passe
 
 1. **Cross-Modal Conditional Perturbation Generator**
 
-   - **Function**: Introduces a cross-attention module into a decoder-based generator to incorporate embeddings from the other modality as auxiliary conditioning.
-   - **Mechanism**: Text embeddings $\bm{e}_t$ are injected into the intermediate generator features $\bm{h}_t$ via cross-attention: $\text{Attention}(Q,K,V) = \text{softmax}(\frac{QK^T}{\sqrt{d}}) \cdot V$, where $Q = \bm{h}_t W_q$, $K = \bm{e}_t W_k$, $V = \bm{e}_t W_v$.
-   - **Design Motivation**: Prior generative universal attacks are limited to a single modality; naively porting them to vision-language settings loses critical cross-modal interaction information. The cross-attention mechanism enables the generator to leverage textual semantics to guide perturbation generation, yielding more targeted multimodal UAPs.
+    - **Function**: Introduces a cross-attention module into a decoder-based generator to incorporate embeddings from the other modality as auxiliary conditioning.
+    - **Mechanism**: Text embeddings $\bm{e}_t$ are injected into the intermediate generator features $\bm{h}_t$ via cross-attention: $\text{Attention}(Q,K,V) = \text{softmax}(\frac{QK^T}{\sqrt{d}}) \cdot V$, where $Q = \bm{h}_t W_q$, $K = \bm{e}_t W_k$, $V = \bm{e}_t W_v$.
+    - **Design Motivation**: Prior generative universal attacks are limited to a single modality; naively porting them to vision-language settings loses critical cross-modal interaction information. The cross-attention mechanism enables the generator to leverage textual semantics to guide perturbation generation, yielding more targeted multimodal UAPs.
 
 2. **Multimodal Contrastive Loss $\mathcal{L}_{CL}$**
 
-   - **Function**: Applies contrastive learning with maliciously constructed positive and negative pairs to train the generator to produce UAPs that destroy multimodal alignment.
-   - **Mechanism**: The adversarial image $v_{adv}$ serves as the anchor; the originally matched text $\mathbf{t}$ is treated as a negative sample (pushed away), while a farthest-selection strategy retrieves the text $\mathbf{t}_{pos}$ whose features are most distant from the original image as the positive sample (pulled closer). The loss is defined as $\mathcal{L}_{CL} = \log \frac{\sum_i \sum_j s(v_i+\delta_v, t_j)}{\sum_i \sum_j s(v_i+\delta_v, t_j) + \sum_i \sum_j s(v_i+\delta_v, t_j')}$, where $s(v,t) = \exp(\text{sim}(f_I(v), f_T(t))/\tau)$.
-   - **Design Motivation**: This completely inverts normal contrastive learning—originally matched image-text pairs are pushed apart while mismatched pairs are pulled together, fundamentally destroying alignment. The farthest-selection strategy ensures maximal semantic discrepancy between the positive sample and the original image, further amplifying the destructive effect. Set-level data augmentation (multi-scale resizing and Gaussian noise) is also applied to obtain more robust optimization directions.
+    - **Function**: Applies contrastive learning with maliciously constructed positive and negative pairs to train the generator to produce UAPs that destroy multimodal alignment.
+    - **Mechanism**: The adversarial image $v_{adv}$ serves as the anchor; the originally matched text $\mathbf{t}$ is treated as a negative sample (pushed away), while a farthest-selection strategy retrieves the text $\mathbf{t}_{pos}$ whose features are most distant from the original image as the positive sample (pulled closer). The loss is defined as $\mathcal{L}_{CL} = \log \frac{\sum_i \sum_j s(v_i+\delta_v, t_j)}{\sum_i \sum_j s(v_i+\delta_v, t_j) + \sum_i \sum_j s(v_i+\delta_v, t_j')}$, where $s(v,t) = \exp(\text{sim}(f_I(v), f_T(t))/\tau)$.
+    - **Design Motivation**: This completely inverts normal contrastive learning—originally matched image-text pairs are pushed apart while mismatched pairs are pulled together, fundamentally destroying alignment. The farthest-selection strategy ensures maximal semantic discrepancy between the positive sample and the original image, further amplifying the destructive effect. Set-level data augmentation (multi-scale resizing and Gaussian noise) is also applied to obtain more robust optimization directions.
 
 3. **Unimodal Distance Loss $\mathcal{L}_{Dis}$**
 
-   - **Function**: Pushes the adversarial image embedding away from the original image embedding in the unimodal feature space.
-   - **Mechanism**: Minimizes the negative Euclidean distance between adversarial and original image embeddings: $\mathcal{L}_{Dis} = -\sum_i \sum_j \|f_I(v_i^{adv}) - f_I(v_j)\|_2$.
-   - **Design Motivation**: While the multimodal loss handles cross-modal alignment disruption, unimodal information is equally important—pushing adversarial images away from the original visual semantic region provides effective optimization directions and complements the multimodal loss to enhance overall attack performance.
+    - **Function**: Pushes the adversarial image embedding away from the original image embedding in the unimodal feature space.
+    - **Mechanism**: Minimizes the negative Euclidean distance between adversarial and original image embeddings: $\mathcal{L}_{Dis} = -\sum_i \sum_j \|f_I(v_i^{adv}) - f_I(v_j)\|_2$.
+    - **Design Motivation**: While the multimodal loss handles cross-modal alignment disruption, unimodal information is equally important—pushing adversarial images away from the original visual semantic region provides effective optimization directions and complements the multimodal loss to enhance overall attack performance.
 
 ### Loss & Training
 

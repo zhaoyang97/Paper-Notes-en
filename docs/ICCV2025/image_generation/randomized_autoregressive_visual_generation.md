@@ -18,8 +18,8 @@ content_hash: b9506f1606dcb16e
 # Randomized Autoregressive Visual Generation
 
 **Conference**: ICCV2025
-**arXiv**: [2411.00776](https://arxiv.org/abs/2411.00776)
-**Code**: [bytedance/1d-tokenizer](https://github.com/bytedance/1d-tokenizer)
+**arXiv**: [2411.00776](https://arxiv.org/abs/2411.00776)  
+**Code**: [bytedance/1d-tokenizer](https://github.com/bytedance/1d-tokenizer)  
 **Area**: Image Generation
 **Keywords**: Autoregressive image generation, random permutation, bidirectional context, annealing strategy, ImageNet
 

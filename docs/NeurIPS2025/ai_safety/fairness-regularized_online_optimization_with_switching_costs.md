@@ -18,8 +18,8 @@ content_hash: 5565e4469b321839
 # Fairness-Regularized Online Optimization with Switching Costs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.11131](https://arxiv.org/abs/2512.11131)
-**Code**: None
+**arXiv**: [2512.11131](https://arxiv.org/abs/2512.11131)  
+**Code**: None  
 **Area**: AI Safety / Online Optimization / Fair Scheduling
 **Keywords**: Long-term fairness regularization, switching costs, smoothed online optimization, competitive ratio, Mirror Descent
 

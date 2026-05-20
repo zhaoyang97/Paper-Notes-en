@@ -18,8 +18,8 @@ content_hash: e2f86866c420f267
 # OAD-Promoter: Enhancing Zero-shot VQA using Large Language Models with Object Attribute Description
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12131](https://arxiv.org/abs/2511.12131)
-**Code**: None
+**arXiv**: [2511.12131](https://arxiv.org/abs/2511.12131)  
+**Code**: None  
 **Area**: Information Retrieval
 **Keywords**: Visual Question Answering, Zero-shot VQA, Language Bias, Domain Transfer, Object Attribute Description
 

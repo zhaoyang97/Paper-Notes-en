@@ -18,8 +18,8 @@ content_hash: 209b14e493959b71
 # Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.21002](https://arxiv.org/abs/2511.21002)
-**Code**: [https://github.com/youxiaoxing/MERGE](https://github.com/youxiaoxing/MERGE)
+**arXiv**: [2511.21002](https://arxiv.org/abs/2511.21002)  
+**Code**: [https://github.com/youxiaoxing/MERGE](https://github.com/youxiaoxing/MERGE)  
 **Area**: Information Retrieval
 **Keywords**: News Image Captioning, RAG, Entity Knowledge Base, Cross-modal Alignment, Multimodal Large Language Model
 

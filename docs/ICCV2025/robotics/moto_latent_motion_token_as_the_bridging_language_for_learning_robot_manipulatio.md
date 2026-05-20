@@ -18,8 +18,8 @@ content_hash: bab1da7d4ba82f46
 # Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.04445](https://arxiv.org/abs/2412.04445)
-**Code**: [https://chenyi99.github.io/moto/](https://chenyi99.github.io/moto/)
+**arXiv**: [2412.04445](https://arxiv.org/abs/2412.04445)  
+**Code**: [https://chenyi99.github.io/moto/](https://chenyi99.github.io/moto/)  
 **Area**: Robotics
 **Keywords**: Video Pre-training, Motion Token, Autoregressive, Robot Manipulation, Cross-Embodiment Transfer
 

@@ -18,8 +18,8 @@ content_hash: e303b1ed03432297
 # NerVE: Nonlinear Eigenspectrum Dynamics in LLM Feed-Forward Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.06922](https://arxiv.org/abs/2603.06922)
-**Code**: [Project Page](https://nerve-eigenspectrum.github.io/)
+**arXiv**: [2603.06922](https://arxiv.org/abs/2603.06922)  
+**Code**: [Project Page](https://nerve-eigenspectrum.github.io/)  
 **Area**: Video Understanding
 **Keywords**: FFN Analysis, Eigenspectrum Dynamics, Variance Re-injection, Optimizer Geometry, Spectral Diagnostics
 

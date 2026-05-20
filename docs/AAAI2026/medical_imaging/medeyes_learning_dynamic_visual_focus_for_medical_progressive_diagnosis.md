@@ -18,8 +18,8 @@ content_hash: 71c30cf14c424b06
 # MedEyes: Learning Dynamic Visual Focus for Medical Progressive Diagnosis
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.22018](https://arxiv.org/abs/2511.22018)
-**Code**: [GitHub](https://github.com/zhcz328/MedEyes)
+**arXiv**: [2511.22018](https://arxiv.org/abs/2511.22018)  
+**Code**: [GitHub](https://github.com/zhcz328/MedEyes)  
 **Area**: Medical Imaging
 **Keywords**: Medical VQA, Reinforcement Learning, Visual Chain-of-Thought, Dynamic Attention, GRPO
 

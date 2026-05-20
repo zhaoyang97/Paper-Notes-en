@@ -18,8 +18,8 @@ content_hash: ed892faab3d2fe20
 # Open-World 3D Scene Graph Generation for Retrieval-Augmented Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.05894](https://arxiv.org/abs/2511.05894)
-**Code**: None
+**arXiv**: [2511.05894](https://arxiv.org/abs/2511.05894)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D scene graph, open-world, retrieval-augmented reasoning, vision-language model, embodied interaction
 
@@ -92,10 +92,10 @@ The framework consists of two major components:
 
 3. **Four Scene Interaction Tasks**
 
-   - **Task I: Text-based Scene QA** — Answers natural language questions based on scene graph facts.
-   - **Task II: Text-to-Visual Grounding** — Grounds text queries to spatial locations and best-view images.
-   - **Task III: Multimodal Instance Retrieval** — Supports instance-level search with text, image, or hybrid queries.
-   - **Task IV: Open-Scene Task Planning** — Decomposes high-level instructions into executable step sequences.
+    - **Task I: Text-based Scene QA** — Answers natural language questions based on scene graph facts.
+    - **Task II: Text-to-Visual Grounding** — Grounds text queries to spatial locations and best-view images.
+    - **Task III: Multimodal Instance Retrieval** — Supports instance-level search with text, image, or hybrid queries.
+    - **Task IV: Open-Scene Task Planning** — Decomposes high-level instructions into executable step sequences.
 
 ### Loss & Training
 

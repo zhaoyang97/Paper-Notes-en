@@ -18,8 +18,8 @@ content_hash: 8ba5ead2c6c8f0a7
 # UMoE: Unifying Attention and FFN with Shared Experts
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.07260](https://arxiv.org/abs/2505.07260)
-**Code**: [github.com/ysngki/UMoE](https://github.com/ysngki/UMoE)
+**arXiv**: [2505.07260](https://arxiv.org/abs/2505.07260)  
+**Code**: [github.com/ysngki/UMoE](https://github.com/ysngki/UMoE)  
 **Area**: LLM Efficiency
 **Keywords**: Unified MoE Architecture, Pre-Mixing Attention, Expert Sharing, Attention-FFN Fusion, Parameter Efficiency
 

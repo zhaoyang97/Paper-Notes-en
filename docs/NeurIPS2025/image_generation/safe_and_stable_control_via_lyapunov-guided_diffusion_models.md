@@ -18,8 +18,8 @@ content_hash: 56aae182e2776175
 # Safe and Stable Control via Lyapunov-Guided Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25375](https://arxiv.org/abs/2509.25375)
-**Code**: None
+**arXiv**: [2509.25375](https://arxiv.org/abs/2509.25375)  
+**Code**: None  
 **Area**: Image Generation / Control
 **Keywords**: Diffusion models, Lyapunov stability, safe control, certificate functions, Almost Lyapunov theory
 

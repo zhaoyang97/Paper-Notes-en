@@ -19,8 +19,8 @@ content_hash: c48c37de3d26ce13
 # POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03511](https://arxiv.org/abs/2506.03511)
-**Code**: [Zenodo](https://zenodo.org/) (dataset + code open-sourced)
+**arXiv**: [2506.03511](https://arxiv.org/abs/2506.03511)  
+**Code**: [Zenodo](https://zenodo.org/) (dataset + code open-sourced)  
 **Area**: Physics
 **Keywords**: high-contrast imaging, exoplanets, polarimetric imaging, self-supervised learning, diffusion models, contrastive learning
 

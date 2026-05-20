@@ -18,8 +18,8 @@ content_hash: 137560709bbdaa79
 # EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12267](https://arxiv.org/abs/2603.12267)
-**Code**: [Project Page](https://silentview.github.io/EVATok/)
+**arXiv**: [2603.12267](https://arxiv.org/abs/2603.12267)  
+**Code**: [Project Page](https://silentview.github.io/EVATok/)  
 **Area**: Image Generation
 **Keywords**: video tokenizer, adaptive tokenization, autoregressive generation, proxy reward, Q-Former
 

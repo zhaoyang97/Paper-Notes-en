@@ -18,8 +18,8 @@ content_hash: cb46c5009fcdb1e7
 # Text to Robotic Assembly of Multi Component Objects using 3D Generative AI and Vision Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02162](https://arxiv.org/abs/2511.02162)
-**Code**: Unavailable (depends on Autodesk internal platform)
+**arXiv**: [2511.02162](https://arxiv.org/abs/2511.02162)  
+**Code**: Unavailable (depends on Autodesk internal platform)  
 **Area**: Multimodal VLM
 **Keywords**: VLM reasoning, robotic assembly, 3D generative AI, multi-component objects, human-robot collaboration
 

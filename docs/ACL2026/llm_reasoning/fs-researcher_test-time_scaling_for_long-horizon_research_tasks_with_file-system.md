@@ -18,8 +18,8 @@ content_hash: cb97585618bde299
 # FS-Researcher: Test-Time Scaling for Long-Horizon Research Tasks with File-System-Based Agents
 
 **Conference**: ACL 2026
-**arXiv**: [2602.01566](https://arxiv.org/abs/2602.01566)
-**Code**: [https://github.com/Ignoramus0817/FS-Researcher](https://github.com/Ignoramus0817/FS-Researcher)
+**arXiv**: [2602.01566](https://arxiv.org/abs/2602.01566)  
+**Code**: [https://github.com/Ignoramus0817/FS-Researcher](https://github.com/Ignoramus0817/FS-Researcher)  
 **Area**: LLM Reasoning
 **Keywords**: Deep Research, File System, Test-Time Scaling, Knowledge Base Construction, Dual-Agent Framework
 

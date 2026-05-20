@@ -19,8 +19,8 @@ content_hash: 2958934f2a73a8c6
 # LoftUp: Learning a Coordinate-Based Feature Upsampler for Vision Foundation Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.14032](https://arxiv.org/abs/2504.14032)
-**Code**: [https://github.com/andrehuang/loftup](https://github.com/andrehuang/loftup)
+**arXiv**: [2504.14032](https://arxiv.org/abs/2504.14032)  
+**Code**: [https://github.com/andrehuang/loftup](https://github.com/andrehuang/loftup)  
 **Area**: Self-Supervised Learning / Vision Foundation Models / Feature Upsampling
 **Keywords**: feature upsampling, vision foundation models, coordinate-based, self-distillation, DINOv2, dense prediction
 

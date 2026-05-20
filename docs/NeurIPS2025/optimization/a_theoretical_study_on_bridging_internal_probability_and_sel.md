@@ -18,8 +18,8 @@ content_hash: 4910a00ce6905c19
 # A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.15444](https://arxiv.org/abs/2510.15444)
-**Code**: [https://wnjxyk.github.io/RPC](https://wnjxyk.github.io/RPC)
+**arXiv**: [2510.15444](https://arxiv.org/abs/2510.15444)  
+**Code**: [https://wnjxyk.github.io/RPC](https://wnjxyk.github.io/RPC)  
 **Area**: Optimization
 **Keywords**: Self-Consistency, Perplexity, Test-time Scaling, Confidence Estimation, LLM Reasoning
 

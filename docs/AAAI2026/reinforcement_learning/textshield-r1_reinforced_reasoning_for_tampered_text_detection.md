@@ -18,8 +18,8 @@ content_hash: 814a3dc6c5bf31d5
 # TextShield-R1: Reinforced Reasoning for Tampered Text Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.19828](https://arxiv.org/abs/2602.19828)
-**Code**: [github.com/qcf-568/TextShield](https://github.com/qcf-568/TextShield)
+**arXiv**: [2602.19828](https://arxiv.org/abs/2602.19828)  
+**Code**: [github.com/qcf-568/TextShield](https://github.com/qcf-568/TextShield)  
 **Area**: Reinforcement Learning
 **Keywords**: Tampered Text Detection, Multimodal Large Language Models, GRPO, Continual Pre-training, Text Forensics
 

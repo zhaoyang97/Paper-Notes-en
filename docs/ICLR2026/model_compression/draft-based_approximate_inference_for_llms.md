@@ -18,8 +18,8 @@ content_hash: 05d051df9a8d3b27
 # Draft-based Approximate Inference for LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.08373](https://arxiv.org/abs/2506.08373)
-**Code**: [GitHub](https://github.com/furiosa-ai/draft-based-approx-llm)
+**arXiv**: [2506.08373](https://arxiv.org/abs/2506.08373)  
+**Code**: [GitHub](https://github.com/furiosa-ai/draft-based-approx-llm)  
 **Area**: Model Compression
 **Keywords**: approximate inference, KV cache compression, prompt compression, draft model, sparse attention
 

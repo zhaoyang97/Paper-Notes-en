@@ -18,8 +18,8 @@ content_hash: dbe1870191abe9a2
 # Agentic NL2SQL to Reduce Computational Costs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.14808](https://arxiv.org/abs/2510.14808)
-**Code**: None
+**arXiv**: [2510.14808](https://arxiv.org/abs/2510.14808)  
+**Code**: None  
 **Area**: Agent
 **Keywords**: NL2SQL, text-to-SQL, agentic reasoning, token reduction, datalake
 

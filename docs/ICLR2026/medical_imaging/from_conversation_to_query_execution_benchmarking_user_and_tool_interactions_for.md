@@ -18,8 +18,8 @@ content_hash: 7c00b1fcf835ed47
 # From Conversation to Query Execution: Benchmarking User and Tool Interactions for EHR Database Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23415](https://arxiv.org/abs/2509.23415)
-**Code**: [GitHub](https://github.com/glee4810/EHR-ChatQA)
+**arXiv**: [2509.23415](https://arxiv.org/abs/2509.23415)  
+**Code**: [GitHub](https://github.com/glee4810/EHR-ChatQA)  
 **Area**: Medical Informatics / Agent
 **Keywords**: EHR, Database Agent, Interactive QA, Query Ambiguity, Value Mismatch
 
@@ -41,8 +41,8 @@ This paper proposes EHR-ChatQA, the first benchmark to evaluate the end-to-end i
 ### Benchmark Construction
 
 1. **Two Interaction Flows**:
-   - IncreQA (Incremental Query Refinement): The user progressively adds constraints; the agent must maintain context toward a linear objective.
-   - AdaptQA (Adaptive Query Adjustment): The user adjusts search targets based on intermediate results; the agent must handle branching strategies.
+    - IncreQA (Incremental Query Refinement): The user progressively adds constraints; the agent must maintain context toward a linear objective.
+    - AdaptQA (Adaptive Query Adjustment): The user adjusts search targets based on intermediate results; the agent must handle branching strategies.
 
 2. **Tool Suite**: Schema search, column search, value substring search, value similarity search, web search, and SQL execution.
 

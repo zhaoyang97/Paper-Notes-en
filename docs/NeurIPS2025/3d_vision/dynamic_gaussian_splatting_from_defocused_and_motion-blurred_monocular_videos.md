@@ -18,8 +18,8 @@ content_hash: 49c9027a1b8fb3ec
 # Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10691](https://arxiv.org/abs/2510.10691)
-**Code**: [hhhddddddd/dydeblur](https://github.com/hhhddddddd/dydeblur)
+**arXiv**: [2510.10691](https://arxiv.org/abs/2510.10691)  
+**Code**: [hhhddddddd/dydeblur](https://github.com/hhhddddddd/dydeblur)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, dynamic scene reconstruction, defocus blur, motion blur, novel view synthesis
 

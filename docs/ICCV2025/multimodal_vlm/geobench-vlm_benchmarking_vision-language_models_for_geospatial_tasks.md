@@ -18,8 +18,8 @@ content_hash: cee42d7d8b271035
 # GEOBench-VLM: Benchmarking Vision-Language Models for Geospatial Tasks
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.19325](https://arxiv.org/abs/2411.19325)
-**Code**: [https://github.com/The-AI-Alliance/GEO-Bench-VLM](https://github.com/The-AI-Alliance/GEO-Bench-VLM)
+**arXiv**: [2411.19325](https://arxiv.org/abs/2411.19325)  
+**Code**: [https://github.com/The-AI-Alliance/GEO-Bench-VLM](https://github.com/The-AI-Alliance/GEO-Bench-VLM)  
 **Area**: Multimodal VLM
 **Keywords**: Vision-Language Models, Geospatial, Remote Sensing Benchmark, Multimodal Evaluation, Temporal Analysis
 

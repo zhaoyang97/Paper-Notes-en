@@ -18,8 +18,8 @@ content_hash: 1bf272d5eb6dd81b
 # Token-Efficient Item Representation via Images for LLM Recommender Systems
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.06238](https://arxiv.org/abs/2503.06238)
-**Code**: [https://github.com/rlqja1107/torch-I-LLMRec](https://github.com/rlqja1107/torch-I-LLMRec)
+**arXiv**: [2503.06238](https://arxiv.org/abs/2503.06238)  
+**Code**: [https://github.com/rlqja1107/torch-I-LLMRec](https://github.com/rlqja1107/torch-I-LLMRec)  
 **Area**: LLM NLP / Recommender Systems
 **Keywords**: LLM-based recommendation, image representation, token efficiency, multimodal alignment, retrieval-based recommendation
 

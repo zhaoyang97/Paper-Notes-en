@@ -18,8 +18,8 @@ content_hash: e59a6408f355ea0d
 # MathFlow: Enhancing the Perceptual Flow of MLLMs for Visual Mathematical Problems
 
 **Conference**: ACL 2026
-**arXiv**: [2503.16549](https://arxiv.org/abs/2503.16549)
-**Code**: [GitHub](https://github.com/MathFlow-zju/MathFlow)
+**arXiv**: [2503.16549](https://arxiv.org/abs/2503.16549)  
+**Code**: [GitHub](https://github.com/MathFlow-zju/MathFlow)  
 **Area**: Multimodal VLM
 **Keywords**: Visual mathematical reasoning, multimodal large language models, perception-reasoning decoupling, mathematical diagram understanding, benchmarking
 

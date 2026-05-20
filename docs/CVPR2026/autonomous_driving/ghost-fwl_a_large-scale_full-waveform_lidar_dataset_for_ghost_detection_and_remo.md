@@ -18,8 +18,8 @@ content_hash: 8dda7fa2aaa6a9b2
 # Ghost-FWL: A Large-Scale Full-Waveform LiDAR Dataset for Ghost Detection and Removal
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28224](https://arxiv.org/abs/2603.28224)
-**Code**: [https://keio-csg.github.io/Ghost-FWL/](https://keio-csg.github.io/Ghost-FWL/)
+**arXiv**: [2603.28224](https://arxiv.org/abs/2603.28224)  
+**Code**: [https://keio-csg.github.io/Ghost-FWL/](https://keio-csg.github.io/Ghost-FWL/)  
 **Area**: Autonomous Driving / 3D Vision
 **Keywords**: Full-Waveform LiDAR, Ghost Detection, Dataset, Self-Supervised Learning, Masked Autoencoder
 

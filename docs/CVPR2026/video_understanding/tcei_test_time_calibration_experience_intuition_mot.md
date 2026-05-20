@@ -18,8 +18,8 @@ content_hash: d5c8d65595c5a09e
 # Dual-level Adaptation for Multi-Object Tracking: Building Test-Time Calibration from Experience and Intuition
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21629](https://arxiv.org/abs/2603.21629)
-**Code**: [https://github.com/1941Zpf/TCEI](https://github.com/1941Zpf/TCEI)
+**arXiv**: [2603.21629](https://arxiv.org/abs/2603.21629)  
+**Code**: [https://github.com/1941Zpf/TCEI](https://github.com/1941Zpf/TCEI)  
 **Area**: Video Understanding
 **Keywords**: Multi-Object Tracking, Test-Time Adaptation, Dual-System Theory, Distribution Shift, Identity Association
 

@@ -21,8 +21,8 @@ content_hash: 277e3b134cc3555f
 # Addressing Data Scarcity in 3D Trauma Detection through Self-Supervised and Semi-Supervised Learning with Vertex Relative Position Encoding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12514](https://arxiv.org/abs/2603.12514)
-**Code**: [GitHub](https://github.com/shivasmic/3d-trauma-detection-ssl)
+**arXiv**: [2603.12514](https://arxiv.org/abs/2603.12514)  
+**Code**: [GitHub](https://github.com/shivasmic/3d-trauma-detection-ssl)  
 **Area**: Medical Imaging / 3D Trauma Detection
 **Keywords**: Self-supervised learning, semi-supervised learning, Masked Image Modeling, 3D object detection, VDETR, Vertex Relative Position Encoding, abdominal CT, trauma detection
 

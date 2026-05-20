@@ -18,8 +18,8 @@ content_hash: 81b618bcae0a050a
 # PoseSyn: Synthesizing Diverse 3D Pose Data from In-the-Wild 2D Data
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.13025](https://arxiv.org/abs/2503.13025)
-**Code**: None
+**arXiv**: [2503.13025](https://arxiv.org/abs/2503.13025)  
+**Code**: None  
 **Area**: Human Understanding
 **Keywords**: 3D human pose estimation, data synthesis, motion generation, hard sample mining, data augmentation
 

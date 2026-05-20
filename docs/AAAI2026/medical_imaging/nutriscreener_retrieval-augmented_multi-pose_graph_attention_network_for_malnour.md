@@ -19,8 +19,8 @@ content_hash: 6c96a92843132790
 # NutriScreener: Retrieval-Augmented Multi-Pose Graph Attention Network for Malnourishment Screening
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16566](https://arxiv.org/abs/2511.16566)
-**Code**: [IAB-RUBRIC NutriScreener Toolkit](https://www.iab-rubric.org/resources/healthcare-datasets/nutriscreener)
+**arXiv**: [2511.16566](https://arxiv.org/abs/2511.16566)  
+**Code**: [IAB-RUBRIC NutriScreener Toolkit](https://www.iab-rubric.org/resources/healthcare-datasets/nutriscreener)  
 **Area**: Medical Imaging / Nutritional Screening
 **Keywords**: Childhood malnutrition detection, multi-pose imaging, graph attention network, CLIP, retrieval augmentation, anthropometric prediction
 

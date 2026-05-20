@@ -18,8 +18,8 @@ content_hash: 72d5ed3abdd93143
 # Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27969](https://arxiv.org/abs/2603.27969)
-**Code**: [https://github.com/anpei96/hg-i2p-demo](https://github.com/anpei96/hg-i2p-demo)
+**arXiv**: [2603.27969](https://arxiv.org/abs/2603.27969)  
+**Code**: [https://github.com/anpei96/hg-i2p-demo](https://github.com/anpei96/hg-i2p-demo)  
 **Area**: 3D Vision
 **Keywords**: image-to-point-cloud registration, heterogeneous graph, cross-modal feature adaptation, correspondence pruning, cross-domain generalization
 

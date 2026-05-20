@@ -18,8 +18,8 @@ content_hash: 2659df2ee09511a0
 # Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06970](https://arxiv.org/abs/2506.06970)
-**Code**: N/A
+**arXiv**: [2506.06970](https://arxiv.org/abs/2506.06970)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: Cross-modal retrieval, preference alignment, DPO, modality gap, MLLM
 

@@ -18,8 +18,8 @@ content_hash: 893c1413977dcfcb
 # Causal Motion Diffusion Models for Autoregressive Motion Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22594](https://arxiv.org/abs/2602.22594)
-**Code**: N/A
+**arXiv**: [2602.22594](https://arxiv.org/abs/2602.22594)  
+**Code**: N/A  
 **Area**: Human Motion Generation / Diffusion Models
 **Keywords**: Causal Diffusion, Autoregressive Motion Generation, Text-to-Motion, Streaming Generation, Frame-wise Sampling Schedule
 

@@ -18,8 +18,8 @@ content_hash: eb5f5593387f24a2
 # FlowCast: Trajectory Forecasting for Scalable Zero-Cost Speculative Flow Matching
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01329](https://arxiv.org/abs/2602.01329)
-**Code**: None
+**arXiv**: [2602.01329](https://arxiv.org/abs/2602.01329)  
+**Code**: None  
 **Area**: Diffusion Models / Inference Acceleration
 **Keywords**: Flow Matching, Speculative Decoding, Zero-Cost Acceleration, Inference Optimization, Trajectory Forecasting
 

@@ -18,8 +18,8 @@ content_hash: 170a29d2562348af
 # EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.11709](https://arxiv.org/abs/2505.11709)
-**Code**: [https://github.com/apple/ml-egodex](https://github.com/apple/ml-egodex)
+**arXiv**: [2505.11709](https://arxiv.org/abs/2505.11709)  
+**Code**: [https://github.com/apple/ml-egodex](https://github.com/apple/ml-egodex)  
 **Area**: Autonomous Driving / Robotics
 **Keywords**: egocentric video, dexterous manipulation, imitation learning, hand pose, dataset
 

@@ -18,8 +18,8 @@ content_hash: 0c159763311a813f
 # Spiking Brain Compression: Post-Training Second-Order Compression for Spiking Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03996](https://arxiv.org/abs/2506.03996)
-**Code**: Not available
+**arXiv**: [2506.03996](https://arxiv.org/abs/2506.03996)  
+**Code**: Not available  
 **Area**: Model Compression
 **Keywords**: Spiking Neural Networks, Post-Training Compression, Hessian Matrix, Unstructured Pruning, Quantization
 
@@ -58,9 +58,9 @@ $$\mathbf{H}_{\text{SMP}} = E_X[2(MX)^T MX]$$
 This is precisely the exact Hessian of the spike-free membrane potential least-squares loss $\|MXw - MX\hat{w}\|_2^2$. Compared to the OBC Hessian $\mathbf{H}_{\text{OBC}} = E_X[2X^TX]$, the SMP Hessian incorporates the convolution matrix $M$, more accurately capturing spike temporal dynamics.
 
 3. **SBC Pruning Algorithm**:
-   - **Adaptive sparsity allocation**: LAMPS is used to determine the per-module pruning ratio from the global sparsity target.
-   - **Weight ordering** (Step 1): OBS is applied per neuron to rank weights by ascending loss contribution; $B_{\text{in}}$ weights are pruned per batch and the inverse Hessian is updated via the Woodbury identity. Time complexity: $O(d_{\text{in}}^3 / B_{\text{in}})$.
-   - **Weight pruning** (Step 2): A mask is generated from the ranking, and remaining weights are updated in one shot using the grouped OBS formula: $\delta_{\mathbb{P}} = -\mathbf{H}^{-1}_{:,\mathbb{P}}((\mathbf{H}^{-1})_{\mathbb{P}})^{-1}\mathbf{W}_{:,i}$.
+    - **Adaptive sparsity allocation**: LAMPS is used to determine the per-module pruning ratio from the global sparsity target.
+    - **Weight ordering** (Step 1): OBS is applied per neuron to rank weights by ascending loss contribution; $B_{\text{in}}$ weights are pruned per batch and the inverse Hessian is updated via the Woodbury identity. Time complexity: $O(d_{\text{in}}^3 / B_{\text{in}})$.
+    - **Weight pruning** (Step 2): A mask is generated from the ranking, and remaining weights are updated in one shot using the grouped OBS formula: $\delta_{\mathbb{P}} = -\mathbf{H}^{-1}_{:,\mathbb{P}}((\mathbf{H}^{-1})_{\mathbb{P}})^{-1}\mathbf{W}_{:,i}$.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 7143e6a2bc24b768
 # VGGT-SLAM++: Visual SLAM with DEM-Based Covisibility and Local Bundle Adjustment
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.06830](https://arxiv.org/abs/2604.06830)
-**Code**: None
+**arXiv**: [2604.06830](https://arxiv.org/abs/2604.06830)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: SLAM, Digital Elevation Map, Transformer Odometry, Loop Closure Detection, Local Bundle Adjustment
 

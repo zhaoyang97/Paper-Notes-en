@@ -18,8 +18,8 @@ content_hash: 8a5fd1686e682ab6
 # ReflexSplit: Single Image Reflection Separation via Layer Fusion-Separation
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.17468](https://arxiv.org/abs/2601.17468)
-**Code**: [https://github.com/wuw2135/ReflexSplit](https://github.com/wuw2135/ReflexSplit)
+**arXiv**: [2601.17468](https://arxiv.org/abs/2601.17468)  
+**Code**: [https://github.com/wuw2135/ReflexSplit](https://github.com/wuw2135/ReflexSplit)  
 **Area**: Image Restoration
 **Keywords**: Single image reflection separation, differential attention, cross-scale fusion, curriculum learning, dual-stream architecture
 

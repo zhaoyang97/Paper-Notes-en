@@ -18,8 +18,8 @@ content_hash: 121f4aa01f045611
 # Scalable Best-of-N Selection for Large Language Models via Self-Certainty
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.18581](https://arxiv.org/abs/2502.18581)
-**Code**: [GitHub](https://github.com/backprop07/Self-Certainty)
+**arXiv**: [2502.18581](https://arxiv.org/abs/2502.18581)  
+**Code**: [GitHub](https://github.com/backprop07/Self-Certainty)  
 **Area**: LLM Inference & Selection Strategies
 **Keywords**: Best-of-N, self-certainty, distributional quantification, reward-model-free, inference scaling
 

@@ -17,8 +17,8 @@ content_hash: 4362af9593213250
 # Sharpness-Aware Minimization with Z-Score Gradient Filtering
 
 **Conference**: NeurIPS 2025 (OPT Workshop)
-**arXiv**: [2505.02369](https://arxiv.org/abs/2505.02369)
-**Code**: [Available](https://github.com/YUNBLAK/Sharpness-Aware-Minimization-with-Z-Score-Gradient-Filtering)
+**arXiv**: [2505.02369](https://arxiv.org/abs/2505.02369)  
+**Code**: [Available](https://github.com/YUNBLAK/Sharpness-Aware-Minimization-with-Z-Score-Gradient-Filtering)  
 **Area**: Other
 **Keywords**: Sharpness-Aware Minimization, Gradient Filtering, Z-Score, Generalization, Flat Minima
 

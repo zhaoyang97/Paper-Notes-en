@@ -18,8 +18,8 @@ content_hash: 203275b260b051f2
 # Bits Leaked per Query: Information-Theoretic Bounds on Adversarial Attacks Against LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17000](https://arxiv.org/abs/2510.17000)
-**Code**: TBD
+**arXiv**: [2510.17000](https://arxiv.org/abs/2510.17000)  
+**Code**: TBD  
 **Area**: AI Safety / Information Theory
 **Keywords**: information leakage, adversarial attacks, LLM security, query complexity lower bounds, information channel model
 

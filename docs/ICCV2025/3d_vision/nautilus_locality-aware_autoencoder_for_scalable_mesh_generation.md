@@ -18,8 +18,8 @@ content_hash: 288b3f077e4d242d
 # Nautilus: Locality-aware Autoencoder for Scalable Mesh Generation
 
 **Conference**: ICCV2025
-**arXiv**: [2501.14317](https://arxiv.org/abs/2501.14317)
-**Code**: -
+**arXiv**: [2501.14317](https://arxiv.org/abs/2501.14317)  
+**Code**: -  
 **Area**: 3D Vision
 **Keywords**: mesh generation, autoregressive, tokenization, locality-aware, point cloud conditioning
 

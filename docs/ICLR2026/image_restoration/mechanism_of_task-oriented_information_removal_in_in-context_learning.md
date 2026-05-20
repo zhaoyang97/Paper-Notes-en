@@ -18,8 +18,8 @@ content_hash: 7e5ba10abe7ea1b1
 # Mechanism of Task-oriented Information Removal in In-context Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21012](https://arxiv.org/abs/2509.21012)
-**Code**: None
+**arXiv**: [2509.21012](https://arxiv.org/abs/2509.21012)  
+**Code**: None  
 **Area**: Image Restoration
 **Keywords**: in-context learning, information removal, denoising heads, mechanistic interpretability, low-rank filter
 

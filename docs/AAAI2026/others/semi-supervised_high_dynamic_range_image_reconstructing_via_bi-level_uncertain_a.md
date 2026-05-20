@@ -17,8 +17,8 @@ content_hash: 1272cd381d5792ec
 # Semi-Supervised High Dynamic Range Image Reconstructing via Bi-Level Uncertain Area Masking
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12939](https://arxiv.org/abs/2511.12939)
-**Code**: [https://github.com/JW20211/SmartHDR](https://github.com/JW20211/SmartHDR)
+**arXiv**: [2511.12939](https://arxiv.org/abs/2511.12939)  
+**Code**: [https://github.com/JW20211/SmartHDR](https://github.com/JW20211/SmartHDR)  
 **Area**: Computational Photography / Semi-Supervised Learning
 **Keywords**: HDR reconstruction, semi-supervised learning, uncertainty estimation, pseudo labels, bi-level masking
 

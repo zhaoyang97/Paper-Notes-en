@@ -18,7 +18,7 @@ content_hash: ae09fc1dac20ad9e
 # When to Restart? Exploring Escalating Restarts on Convergence
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.04117](https://arxiv.org/abs/2603.04117)
+**arXiv**: [2603.04117](https://arxiv.org/abs/2603.04117)  
 **Area**: Optimization
 **Keywords**: learning rate scheduling, adaptive restarts, convergence-aware training, SGD optimization, deep learning training
 

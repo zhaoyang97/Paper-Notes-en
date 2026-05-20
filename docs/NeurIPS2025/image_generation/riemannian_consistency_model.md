@@ -18,8 +18,8 @@ content_hash: b0f8c486c333b898
 # Riemannian Consistency Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.00983](https://arxiv.org/abs/2510.00983)
-**Code**: [GitHub](https://github.com/ccr-cheng/riemannian-consistency-model)
+**arXiv**: [2510.00983](https://arxiv.org/abs/2510.00983)  
+**Code**: [GitHub](https://github.com/ccr-cheng/riemannian-consistency-model)  
 **Area**: Diffusion Models / Generative Models / Manifold Learning
 **Keywords**: Consistency Model, Riemannian Manifold, Flow Matching, Few-Step Generation, Covariant Derivative
 

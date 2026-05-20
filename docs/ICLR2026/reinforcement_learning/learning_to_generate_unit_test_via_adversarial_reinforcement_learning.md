@@ -18,8 +18,8 @@ content_hash: c16dbea62d52137a
 # Learning to Generate Unit Test via Adversarial Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.21107](https://arxiv.org/abs/2508.21107)
-**Code**: [Project Page](https://dgjun32.github.io/UTRL)
+**arXiv**: [2508.21107](https://arxiv.org/abs/2508.21107)  
+**Code**: [Project Page](https://dgjun32.github.io/UTRL)  
 **Area**: Code Generation / Reinforcement Learning
 **Keywords**: Unit Test Generation, Adversarial Training, RLVR, Self-Play, Discrimination Reward
 

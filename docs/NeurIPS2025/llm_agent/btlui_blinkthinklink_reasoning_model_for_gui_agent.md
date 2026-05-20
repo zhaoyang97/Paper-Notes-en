@@ -46,21 +46,21 @@ BTL models GUI interaction as an MDP, with a policy function $F(\{z_t, u, h\}) \
 
 1. **Blink Stage (Visual Attention Localization)**:
 
-   - **Function**: Rapidly localizes task-relevant ROI regions on the screen; output is enclosed in `<blink></blink>` tags.
-   - **Mechanism**: Simulates human saccadic eye movements. Blink data is generated via a two-stage pipeline — (1) a parsing model extracts all UI elements (bbox/type/caption); (2) Qwen2.5-VL-32B selects the $\lambda$ most relevant elements based on the task instruction.
-   - **Design Motivation**: Existing methods generate actions directly from screenshots without explicit attention to task-relevant regions; Blink provides top-down attentional guidance.
+    - **Function**: Rapidly localizes task-relevant ROI regions on the screen; output is enclosed in `<blink></blink>` tags.
+    - **Mechanism**: Simulates human saccadic eye movements. Blink data is generated via a two-stage pipeline — (1) a parsing model extracts all UI elements (bbox/type/caption); (2) Qwen2.5-VL-32B selects the $\lambda$ most relevant elements based on the task instruction.
+    - **Design Motivation**: Existing methods generate actions directly from screenshots without explicit attention to task-relevant regions; Blink provides top-down attentional guidance.
 
 2. **Think Stage (Cognitive Reasoning)**:
 
-   - **Function**: Performs high-level reasoning and decision-making over the regions identified by Blink; the reasoning process is output within `<think></think>` tags.
-   - **Mechanism**: Understands the current state, analyzes task objectives, and plans the next operation.
-   - **Design Motivation**: This stage retains a DeepSeek-R1-style chain-of-thought, but grounds it in the focused information provided by Blink.
+    - **Function**: Performs high-level reasoning and decision-making over the regions identified by Blink; the reasoning process is output within `<think></think>` tags.
+    - **Mechanism**: Understands the current state, analyzes task objectives, and plans the next operation.
+    - **Design Motivation**: This stage retains a DeepSeek-R1-style chain-of-thought, but grounds it in the focused information provided by Blink.
 
 3. **Link Stage (Action Generation)**:
 
-   - **Function**: Generates executable GUI commands (click coordinates, text input, etc.); output is enclosed in `<link></link>` tags.
-   - **Mechanism**: A complete command is composed of action type $\alpha_t$ and parameters $\delta_t$.
-   - **Design Motivation**: Separating this stage from Think ensures structured and parseable commands.
+    - **Function**: Generates executable GUI commands (click coordinates, text input, etc.); output is enclosed in `<link></link>` tags.
+    - **Mechanism**: A complete command is composed of action type $\alpha_t$ and parameters $\delta_t$.
+    - **Design Motivation**: Separating this stage from Think ensures structured and parseable commands.
 
 ### Loss & Training
 

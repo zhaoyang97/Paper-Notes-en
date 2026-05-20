@@ -18,8 +18,8 @@ content_hash: e5e5e61b4e763c4c
 # AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.18960](https://arxiv.org/abs/2511.18960)
-**Code**: [Project Page](https://liauto-dsr.github.io/AVA-VLA-Page)
+**arXiv**: [2511.18960](https://arxiv.org/abs/2511.18960)  
+**Code**: [Project Page](https://liauto-dsr.github.io/AVA-VLA-Page)  
 **Area**: Multimodal VLM
 **Keywords**: VLA models, active visual attention, POMDP, recurrent state, visual token modulation
 
@@ -46,19 +46,19 @@ Current observation + previous recurrent state → AVA module computes soft weig
 ### Key Designs
 
 1. **Recurrent State**:
-   - Function: Serves as a neural approximation of the belief state in a POMDP, encoding historical context.
-   - Mechanism: Projected via an MLP from action-relevant hidden states in the last layer of the LLM at the previous timestep; also used to initialize action placeholders at the current step.
-   - Design Motivation: Direct computation of the theoretical belief state is intractable; a compressed recurrent representation is used as an approximation.
+    - Function: Serves as a neural approximation of the belief state in a POMDP, encoding historical context.
+    - Mechanism: Projected via an MLP from action-relevant hidden states in the last layer of the LLM at the previous timestep; also used to initialize action placeholders at the current step.
+    - Design Motivation: Direct computation of the theoretical belief state is intractable; a compressed recurrent representation is used as an approximation.
 
 2. **Active Visual Attention (AVA) Module**:
-   - Function: Dynamically modulates the importance of visual tokens based on historical information.
-   - Mechanism: Language instruction features are first used to condition visual features via FiLM; cross-attention (with visual tokens as Query and the recurrent state as Key/Value) followed by self-attention is then applied, ultimately producing a soft weight (a weighted score after binary enhance/suppress classification) for each visual token.
-   - Design Motivation: Transforms the visual system from "passively processing whatever is observed" to "actively focusing on critical regions based on historical experience."
+    - Function: Dynamically modulates the importance of visual tokens based on historical information.
+    - Mechanism: Language instruction features are first used to condition visual features via FiLM; cross-attention (with visual tokens as Query and the recurrent state as Key/Value) followed by self-attention is then applied, ultimately producing a soft weight (a weighted score after binary enhance/suppress classification) for each visual token.
+    - Design Motivation: Transforms the visual system from "passively processing whatever is observed" to "actively focusing on critical regions based on historical experience."
 
 3. **Soft Attention Matrix Modulation**:
-   - Function: Applies the soft weights output by AVA to attention computations across all layers of the LLM backbone.
-   - Mechanism: A soft attention matrix $U$ is constructed to impose weights on visual token positions and is multiplied with attention scores prior to Softmax.
-   - Design Motivation: Layer-shared weights ensure consistent visual focus without altering the fundamental architecture of the LLM backbone.
+    - Function: Applies the soft weights output by AVA to attention computations across all layers of the LLM backbone.
+    - Mechanism: A soft attention matrix $U$ is constructed to impose weights on visual token positions and is multiplied with attention scores prior to Softmax.
+    - Design Motivation: Layer-shared weights ensure consistent visual focus without altering the fundamental architecture of the LLM backbone.
 
 ### Loss & Training
 

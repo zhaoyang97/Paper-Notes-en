@@ -18,8 +18,8 @@ content_hash: 4a07e71c2ad20a33
 # FlyPrompt: Brain-Inspired Random-Expanded Routing with Temporal-Ensemble Experts for General Continual Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01976](https://arxiv.org/abs/2602.01976)
-**Code**: N/A
+**arXiv**: [2602.01976](https://arxiv.org/abs/2602.01976)  
+**Code**: N/A  
 **Area**: Model Compression
 **Keywords**: continual learning, prompt tuning, brain-inspired, expert routing, temporal ensemble
 

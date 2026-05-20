@@ -19,8 +19,8 @@ content_hash: d728104deb56d020
 # Do LLMs Really Struggle at NL-FOL Translation? Revealing Their Strengths via a Novel Benchmarking Strategy
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11816](https://arxiv.org/abs/2511.11816)
-**Code**: [dslab-uniud/NL-FOL-LT](https://github.com/dslab-uniud/NL-FOL-LT)
+**arXiv**: [2511.11816](https://arxiv.org/abs/2511.11816)  
+**Code**: [dslab-uniud/NL-FOL-LT](https://github.com/dslab-uniud/NL-FOL-LT)  
 **Area**: Natural Language Processing / Formal Logic Reasoning
 **Keywords**: NL-FOL translation, autoformalization, first-order logic, LLM evaluation, benchmark, semantic understanding
 
@@ -35,10 +35,10 @@ This paper critically examines existing evaluation methodologies for natural lan
 - **Limitations of Prior Work**: FOLIO reports GPT-4 zero-shot accuracy at approximately 52%, while MALLS claims a logical equivalence (LE) score of approximately 80% for the same model — two of the most comprehensive studies in the field reaching diametrically opposed conclusions, underscoring the urgent need to clarify LLMs' actual capabilities in NL-FOL translation.
 
 - **Key Challenge**:
-  - *Flaws in FOLIO's evaluation protocol*: FOLIO equates translation correctness with reasoning conclusion correctness (i.e., correctness is satisfied as long as the entailment relation from premises to conclusion is preserved), which constitutes a coarse proxy metric — whether all sentences are mistranslated or only one is, a failed reasoning step yields the same score, making it impossible to precisely measure translation quality.
-  - *Fundamental flaw in MALLS' LE score*: MALLS' logical equivalence (LE) score treats FOL formulae as propositional logic, assigning fixed truth values to predicate symbols and generating truth tables — a theoretically incorrect approach. For example, existentially and universally quantified formulae receive identical LE scores (=1), entirely disregarding quantifier semantics; semantic relationships among predicates are also ignored.
-  - *Annotation errors in MALLS dataset*: The annotation guidelines for MALLS' manually verified test set contain serious issues — inconsistent rules for quantifier usage (suggesting that "a turtle has a shell" may use either existential or universal quantifiers) and the erroneous claim that logical connectives are interchangeable (→, ∧, ↔ are "sometimes interchangeable"), resulting in theoretically incorrect ground truth labels.
-  - *Lack of mechanisms to distinguish genuine understanding from surface pattern matching*: Existing evaluation protocols conflate ontology extraction and logical translation, making it impossible to determine whether a model truly understands logical semantics or achieves high scores through memorization, pattern matching, or dataset contamination.
+    - *Flaws in FOLIO's evaluation protocol*: FOLIO equates translation correctness with reasoning conclusion correctness (i.e., correctness is satisfied as long as the entailment relation from premises to conclusion is preserved), which constitutes a coarse proxy metric — whether all sentences are mistranslated or only one is, a failed reasoning step yields the same score, making it impossible to precisely measure translation quality.
+    - *Fundamental flaw in MALLS' LE score*: MALLS' logical equivalence (LE) score treats FOL formulae as propositional logic, assigning fixed truth values to predicate symbols and generating truth tables — a theoretically incorrect approach. For example, existentially and universally quantified formulae receive identical LE scores (=1), entirely disregarding quantifier semantics; semantic relationships among predicates are also ignored.
+    - *Annotation errors in MALLS dataset*: The annotation guidelines for MALLS' manually verified test set contain serious issues — inconsistent rules for quantifier usage (suggesting that "a turtle has a shell" may use either existential or universal quantifiers) and the erroneous claim that logical connectives are interchangeable (→, ∧, ↔ are "sometimes interchangeable"), resulting in theoretically incorrect ground truth labels.
+    - *Lack of mechanisms to distinguish genuine understanding from surface pattern matching*: Existing evaluation protocols conflate ontology extraction and logical translation, making it impossible to determine whether a model truly understands logical semantics or achieves high scores through memorization, pattern matching, or dataset contamination.
 
 ## Method
 

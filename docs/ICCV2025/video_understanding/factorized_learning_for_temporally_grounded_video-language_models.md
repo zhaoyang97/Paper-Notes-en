@@ -18,8 +18,8 @@ content_hash: fc078e6a4f5b557c
 # Factorized Learning for Temporally Grounded Video-Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2512.24097](https://arxiv.org/abs/2512.24097)
-**Code**: [https://github.com/nusnlp/d2vlm](https://github.com/nusnlp/d2vlm)
+**arXiv**: [2512.24097](https://arxiv.org/abs/2512.24097)  
+**Code**: [https://github.com/nusnlp/d2vlm](https://github.com/nusnlp/d2vlm)  
 **Area**: Video Understanding
 **Keywords**: video-language model, temporal grounding, preference optimization, evidence token, factorized learning
 

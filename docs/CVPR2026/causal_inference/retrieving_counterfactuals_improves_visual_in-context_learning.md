@@ -18,8 +18,8 @@ content_hash: 3cff3c09cbb2ed1b
 # Retrieving Counterfactuals Improves Visual In-Context Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.16737](https://arxiv.org/abs/2603.16737)
-**Code**: [github.com/gzxiong/CIRCLES](https://github.com/gzxiong/CIRCLES)
+**arXiv**: [2603.16737](https://arxiv.org/abs/2603.16737)  
+**Code**: [github.com/gzxiong/CIRCLES](https://github.com/gzxiong/CIRCLES)  
 **Area**: Causal Inference
 **Keywords**: visual in-context learning, counterfactual reasoning, composed image retrieval, vision-language models, demonstration selection
 

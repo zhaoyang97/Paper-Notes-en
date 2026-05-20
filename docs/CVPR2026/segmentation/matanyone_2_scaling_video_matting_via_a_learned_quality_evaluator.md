@@ -18,8 +18,8 @@ content_hash: ff7c0ad4f4947acd
 # MatAnyone 2: Scaling Video Matting via a Learned Quality Evaluator
 
 **Conference**: CVPR2026
-**arXiv**: [2512.11782](https://arxiv.org/abs/2512.11782)
-**Code**: [Project Page](https://pq-yang.github.io/projects/MatAnyone2/)
+**arXiv**: [2512.11782](https://arxiv.org/abs/2512.11782)  
+**Code**: [Project Page](https://pq-yang.github.io/projects/MatAnyone2/)  
 **Area**: Semantic Segmentation / Video Matting
 **Keywords**: video matting, quality evaluator, alpha matte, dataset curation, reference-frame strategy
 

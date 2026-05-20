@@ -18,8 +18,8 @@ content_hash: 14b001d61112c080
 # Know What You Don't Know: Uncertainty Calibration of Process Reward Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.09338](https://arxiv.org/abs/2506.09338)
-**Code**: [http://young-j-park.github.io/know-what-you-dont-know](http://young-j-park.github.io/know-what-you-dont-know)
+**arXiv**: [2506.09338](https://arxiv.org/abs/2506.09338)  
+**Code**: [http://young-j-park.github.io/know-what-you-dont-know](http://young-j-park.github.io/know-what-you-dont-know)  
 **Area**: LLM Reasoning
 **Keywords**: Process Reward Model, Calibration, Quantile Regression, Inference-Time Scaling, Adaptive Sampling
 

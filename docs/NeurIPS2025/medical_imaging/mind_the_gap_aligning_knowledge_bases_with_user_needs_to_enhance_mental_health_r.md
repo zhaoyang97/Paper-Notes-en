@@ -18,8 +18,8 @@ content_hash: 442a1cc4755930c5
 # Mind the Gap: Aligning Knowledge Bases with User Needs to Enhance Mental Health Retrieval
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.13626](https://arxiv.org/abs/2509.13626)
-**Code**: None
+**arXiv**: [2509.13626](https://arxiv.org/abs/2509.13626)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: RAG, knowledge base augmentation, mental health, gap analysis, corpus expansion
 

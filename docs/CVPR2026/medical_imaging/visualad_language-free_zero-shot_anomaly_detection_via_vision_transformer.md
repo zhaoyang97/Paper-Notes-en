@@ -18,9 +18,9 @@ content_hash: 98da7a041014bf07
 # VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07952](https://arxiv.org/abs/2603.07952)
-**arXiv**: [2603.07952](https://arxiv.org/abs/2603.07952)
-**Code**: None
+**arXiv**: [2603.07952](https://arxiv.org/abs/2603.07952)  
+**arXiv**: [2603.07952](https://arxiv.org/abs/2603.07952)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Zero-shot anomaly detection, Vision Transformer, language-free, learnable token, industrial + medical
 

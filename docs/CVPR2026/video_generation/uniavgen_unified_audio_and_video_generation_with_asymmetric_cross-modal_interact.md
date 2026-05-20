@@ -18,8 +18,8 @@ content_hash: 5bf4263ad0c21406
 # UniAVGen: Unified Audio and Video Generation with Asymmetric Cross-Modal Interactions
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.03334](https://arxiv.org/abs/2511.03334)
-**Code**: [https://mcg-nju.github.io/UniAVGen/](https://mcg-nju.github.io/UniAVGen/) (project page)
+**arXiv**: [2511.03334](https://arxiv.org/abs/2511.03334)  
+**Code**: [https://mcg-nju.github.io/UniAVGen/](https://mcg-nju.github.io/UniAVGen/) (project page)  
 **Area**: Video Generation
 **Keywords**: joint audio-video generation, cross-modal interaction, diffusion models, lip-audio synchronization, face-aware modulation
 

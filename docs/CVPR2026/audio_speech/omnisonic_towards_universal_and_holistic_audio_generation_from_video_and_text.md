@@ -18,8 +18,8 @@ content_hash: fb18aa1ad9821017
 # OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04348](https://arxiv.org/abs/2604.04348)
-**Code**: [https://weiguopian.github.io/OmniSonic_webpage/](https://weiguopian.github.io/OmniSonic_webpage/)
+**arXiv**: [2604.04348](https://arxiv.org/abs/2604.04348)  
+**Code**: [https://weiguopian.github.io/OmniSonic_webpage/](https://weiguopian.github.io/OmniSonic_webpage/)  
 **Area**: Audio Generation / Multimodal
 **Keywords**: Video-to-Audio Generation, Holistic Audio, Diffusion Models, Speech Synthesis, Mixture of Experts
 

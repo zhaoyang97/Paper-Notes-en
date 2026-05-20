@@ -18,8 +18,8 @@ content_hash: 0d1a5babbc92f270
 # SAND-Math: Using LLMs to Generate Novel, Difficult and Useful Mathematics Questions and Answers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.20527](https://arxiv.org/abs/2507.20527)
-**Code**: [HuggingFace Dataset](https://huggingface.co/datasets/amd/SAND-MATH)
+**arXiv**: [2507.20527](https://arxiv.org/abs/2507.20527)  
+**Code**: [HuggingFace Dataset](https://huggingface.co/datasets/amd/SAND-MATH)  
 **Area**: Audio/Speech (LLM Mathematical Reasoning)
 **Keywords**: Mathematical Reasoning, Synthetic Data, Difficulty Hiking, Data Quality, Post-Training
 

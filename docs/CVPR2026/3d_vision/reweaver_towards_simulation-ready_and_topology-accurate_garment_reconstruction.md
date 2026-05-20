@@ -18,10 +18,10 @@ content_hash: b0df561d5e4ab35a
 # ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.16672](https://arxiv.org/abs/2601.16672)
+**arXiv**: [2601.16672](https://arxiv.org/abs/2601.16672)  
 **Authors**: Ming Li, Hui Shan, Kai Zheng, Chentao Shen, Siyu Liu, Yanwei Fu, Zhen Chen, Xiangru Huang
 **Institutions**: Zhejiang University, Shanghai Innovation Institute, Westlake University, Fudan University, Adobe, Xidian University
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: Garment Reconstruction, Sewing Pattern, Topology Reconstruction, Multi-View Reconstruction, Physical Simulation
 

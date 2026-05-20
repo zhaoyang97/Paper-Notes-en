@@ -18,8 +18,8 @@ content_hash: 92abf2a9511d9ef0
 # Towards Implicit Aggregation: Robust Image Representation for Place Recognition in the Transformer Era
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.06024](https://arxiv.org/abs/2511.06024)
-**Code**: [GitHub](https://github.com/lu-feng/image)
+**arXiv**: [2511.06024](https://arxiv.org/abs/2511.06024)  
+**Code**: [GitHub](https://github.com/lu-feng/image)  
 **Area**: LLM Evaluation
 **Keywords**: Visual Place Recognition, Implicit Aggregation, ViT, Aggregation Token, DINOv2
 

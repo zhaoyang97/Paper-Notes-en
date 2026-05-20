@@ -18,8 +18,8 @@ content_hash: 5b44600e58f797f8
 # BioBench: A Blueprint to Move Beyond ImageNet for Scientific ML Benchmarks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.16315](https://arxiv.org/abs/2511.16315)
-**Code**: [github.com/samuelstevens/biobench](https://github.com/samuelstevens/biobench)
+**arXiv**: [2511.16315](https://arxiv.org/abs/2511.16315)  
+**Code**: [github.com/samuelstevens/biobench](https://github.com/samuelstevens/biobench)  
 **Area**: Model Compression
 **Keywords**: Ecological Imagery, Visual Benchmark, ImageNet Limitations, Transfer Learning, AI for Science
 

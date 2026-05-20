@@ -18,8 +18,8 @@ content_hash: 0fba9c32cc68b735
 # ResidualViT for Efficient Temporally Dense Video Encoding
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.13255](https://arxiv.org/abs/2509.13255)
-**Code**: None
+**arXiv**: [2509.13255](https://arxiv.org/abs/2509.13255)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: Video encoding efficiency, ViT, temporal redundancy, knowledge distillation, temporally dense features
 

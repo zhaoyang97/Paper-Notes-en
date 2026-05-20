@@ -18,8 +18,8 @@ content_hash: ff4d904b58872765
 # DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving
 
 **Conference**: AAAI2026
-**arXiv**: [2511.17150](https://arxiv.org/abs/2511.17150)
-**Code**: [nullmax-vision/DiffRefiner](https://github.com/nullmax-vision/DiffRefiner)
+**arXiv**: [2511.17150](https://arxiv.org/abs/2511.17150)  
+**Code**: [nullmax-vision/DiffRefiner](https://github.com/nullmax-vision/DiffRefiner)  
 **Area**: Autonomous Driving
 **Keywords**: end-to-end autonomous driving, diffusion model, trajectory planning, coarse-to-fine, semantic interaction
 

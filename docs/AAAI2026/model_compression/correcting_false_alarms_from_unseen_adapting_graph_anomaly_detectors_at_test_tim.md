@@ -18,8 +18,8 @@ content_hash: 2fe553f7e44c685e
 # Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07023](https://arxiv.org/abs/2511.07023)
-**Code**: [GitHub](https://github.com/CampanulaBells/TUNE)
+**arXiv**: [2511.07023](https://arxiv.org/abs/2511.07023)  
+**Code**: [GitHub](https://github.com/CampanulaBells/TUNE)  
 **Area**: Model Compression / Graph Anomaly Detection
 **Keywords**: Graph Anomaly Detection, Test-Time Adaptation, Normality Shift, Aggregation Contamination, Plug-and-Play
 

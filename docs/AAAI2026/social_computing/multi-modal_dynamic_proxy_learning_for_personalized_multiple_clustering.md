@@ -18,8 +18,8 @@ content_hash: 37eabd546d51b709
 # Multi-modal Dynamic Proxy Learning for Personalized Multiple Clustering
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07274](https://arxiv.org/abs/2511.07274)
-**Code**: None (the paper mentions an anonymous code repository in the Supplementary Material)
+**arXiv**: [2511.07274](https://arxiv.org/abs/2511.07274)  
+**Code**: None (the paper mentions an anonymous code repository in the Supplementary Material)  
 **Area**: Social Computing
 **Keywords**: Multiple Clustering, Cross-modal Fusion, Proxy Learning, Dynamic Candidate Management, CLIP
 

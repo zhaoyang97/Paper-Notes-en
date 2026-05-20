@@ -18,8 +18,8 @@ content_hash: 516e6954b9a44070
 # TAPIP3D: Tracking Any Point in Persistent 3D Geometry
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.14717](https://arxiv.org/abs/2504.14717)
-**Code**: [Project Page](https://tapip3d.github.io/)
+**arXiv**: [2504.14717](https://arxiv.org/abs/2504.14717)  
+**Code**: [Project Page](https://tapip3d.github.io/)  
 **Area**: 3D Vision
 **Keywords**: 3D point tracking, feature point cloud, world coordinate system, neighborhood attention, camera motion elimination
 

@@ -17,8 +17,8 @@ content_hash: 7d8a2a5c7d064bdc
 # Ultrametric Cluster Hierarchies: I Want 'em All!
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.14018](https://arxiv.org/abs/2502.14018)
-**Code**: None
+**arXiv**: [2502.14018](https://arxiv.org/abs/2502.14018)  
+**Code**: None  
 **Area**: Clustering / Machine Learning Theory
 **Keywords**: hierarchical clustering, ultrametric, k-means, optimal partition, dendrogram
 
@@ -50,26 +50,26 @@ The central question addressed in this paper is: **Given a cluster tree, can one
 
 1. **Ultrametric Representation**:
 
-   - The cluster tree is equivalently represented as an ultrametric distance.
-   - Ultrametrics satisfy the strong triangle inequality: $d(x,z) \leq \max(d(x,y), d(y,z))$.
-   - This enables efficient dynamic programming over the hierarchy.
+    - The cluster tree is equivalently represented as an ultrametric distance.
+    - Ultrametrics satisfy the strong triangle inequality: $d(x,z) \leq \max(d(x,y), d(y,z))$.
+    - This enables efficient dynamic programming over the hierarchy.
 
 2. **Optimal Partition Algorithm**:
 
-   - Exploits the recursive structure of the tree.
-   - Proceeds via bottom-up dynamic programming.
-   - Time complexity is $O(nk)$, where $n$ is the number of data points and $k$ is the number of clusters.
+    - Exploits the recursive structure of the tree.
+    - Proceeds via bottom-up dynamic programming.
+    - Time complexity is $O(nk)$, where $n$ is the number of data points and $k$ is the number of clusters.
 
 3. **Hierarchy Preservation Theorem**:
 
-   - Key theorem: for any $k$, the optimal $k$-partition over the tree is hierarchically nested.
-   - That is, the optimal $k$-partition is a refinement of the optimal $(k+1)$-partition obtained by merging clusters.
-   - Consequently, all optimal partitions jointly form a new hierarchy tree.
+    - Key theorem: for any $k$, the optimal $k$-partition over the tree is hierarchically nested.
+    - That is, the optimal $k$-partition is a refinement of the optimal $(k+1)$-partition obtained by merging clusters.
+    - Consequently, all optimal partitions jointly form a new hierarchy tree.
 
 4. **Generality of the Objective**:
 
-   - Applicable to all center-based objectives: k-means, k-medians, k-center, etc.
-   - The sole requirement is that the objective decomposes as a sum of independent per-cluster costs.
+    - Applicable to all center-based objectives: k-means, k-medians, k-center, etc.
+    - The sole requirement is that the objective decomposes as a sum of independent per-cluster costs.
 
 ### Loss & Training
 

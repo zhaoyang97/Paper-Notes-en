@@ -19,8 +19,8 @@ content_hash: 15c6acd75931bf07
 # Gaussian Certified Unlearning in High Dimensions: A Hypothesis Testing Approach
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2510.13094](https://arxiv.org/abs/2510.13094)
-**Code**: [Anonymous Repository](https://anonymous.4open.science/r/unlearning-E14D)
+**arXiv**: [2510.13094](https://arxiv.org/abs/2510.13094)  
+**Code**: [Anonymous Repository](https://anonymous.4open.science/r/unlearning-E14D)  
 **Area**: AI Safety / Machine Unlearning / High-Dimensional Statistics
 **Keywords**: machine unlearning, Gaussian certifiability, hypothesis testing, high-dimensional statistics, Newton method, privacy
 

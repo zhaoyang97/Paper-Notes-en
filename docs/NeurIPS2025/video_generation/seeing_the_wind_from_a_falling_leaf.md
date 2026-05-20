@@ -18,8 +18,8 @@ content_hash: 01ad70864b062f35
 # Seeing the Wind from a Falling Leaf
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.00762](https://arxiv.org/abs/2512.00762)
-**Code**: [Project Page](https://chaoren2357.github.io/seeingthewind/)
+**arXiv**: [2512.00762](https://arxiv.org/abs/2512.00762)  
+**Code**: [Project Page](https://chaoren2357.github.io/seeingthewind/)  
 **Area**: Video Generation
 **Keywords**: Invisible Force Field Recovery, Differentiable Physics Simulation, Inverse Graphics, 3D Gaussian, Causal Triplane
 

@@ -18,8 +18,8 @@ content_hash: 1d333072d3291dba
 # Graph Persistence goes Spectral
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06571](https://arxiv.org/abs/2506.06571)
-**Code**: [GitHub](https://github.com/Aalto-QuML/SpectRe/)
+**arXiv**: [2506.06571](https://arxiv.org/abs/2506.06571)  
+**Code**: [GitHub](https://github.com/Aalto-QuML/SpectRe/)  
 **Area**: Graph Learning / Topological Data Analysis / Graph Representation Learning
 **Keywords**: Persistent Homology, Graph Laplacian Spectrum, GNN Expressivity, SpectRe, Weisfeiler-Leman
 
@@ -52,27 +52,27 @@ SpectRe = RePHINE + Graph Laplacian Spectrum. Given a colored graph and a filtra
 
 1. **SpectRe Descriptor**:
 
-   - **Function**: Extends the RePHINE quadruple $(b, d, \alpha, \gamma)$ with a fifth component $\rho(v)$.
-   - **Mechanism**: $\rho(v)$ records the nonzero eigenvalues of the graph Laplacian of the connected component containing vertex $v$ at the moment of its death in the edge filtration. For 1-dimensional persistent homology (cycles), $\rho(e)$ records the spectrum of the component in which edge $e$ creates a cycle.
-   - **Design Motivation**: Classical PH knows only that two components merge, but not the structural details of each component prior to merging; spectral information precisely characterizes these structures.
+    - **Function**: Extends the RePHINE quadruple $(b, d, \alpha, \gamma)$ with a fifth component $\rho(v)$.
+    - **Mechanism**: $\rho(v)$ records the nonzero eigenvalues of the graph Laplacian of the connected component containing vertex $v$ at the moment of its death in the edge filtration. For 1-dimensional persistent homology (cycles), $\rho(e)$ records the spectrum of the component in which edge $e$ creates a cycle.
+    - **Design Motivation**: Classical PH knows only that two components merge, but not the structural details of each component prior to merging; spectral information precisely characterizes these structures.
 
 2. **Expressivity Analysis**:
 
-   - **SpectRe ≻ RePHINE**: There exist monochromatic graphs (e.g., Figure 3a) that RePHINE cannot distinguish but SpectRe can (due to differing spectra).
-   - **SpectRe ≻ LS (Laplacian Spectrum)**: There exist graphs (e.g., Figure 3b) that LS cannot distinguish but SpectRe can (due to the additional information provided by the color-based filtration).
-   - **Persistent Laplacians Do Not Further Enhance Expressivity** (Proposition 3.4): Replacing the graph Laplacian spectrum with the persistent Laplacian spectrum of Wang et al. does not increase expressivity.
+    - **SpectRe ≻ RePHINE**: There exist monochromatic graphs (e.g., Figure 3a) that RePHINE cannot distinguish but SpectRe can (due to differing spectra).
+    - **SpectRe ≻ LS (Laplacian Spectrum)**: There exist graphs (e.g., Figure 3b) that LS cannot distinguish but SpectRe can (due to the additional information provided by the color-based filtration).
+    - **Persistent Laplacians Do Not Further Enhance Expressivity** (Proposition 3.4): Replacing the graph Laplacian spectrum with the persistent Laplacian spectrum of Wang et al. does not increase expressivity.
 
 3. **Stability Theory**:
 
-   - New bottleneck distance metrics are defined for RePHINE and SpectRe, extending the classical PH bottleneck distance to incorporate the $\alpha$, $\gamma$, and $\rho$ components.
-   - **RePHINE is Globally Stable**: Small perturbations in the filtration function lead to small changes in the RePHINE diagram.
-   - **SpectRe is Locally Stable**: Stability holds under the condition that the filtration function is injective; global stability does not hold in general (counterexample: the spectrum may jump discontinuously when the filtration function crosses a non-injective point). An explicit upper bound on the degree of instability is provided, related to the complexity of the graph.
+    - New bottleneck distance metrics are defined for RePHINE and SpectRe, extending the classical PH bottleneck distance to incorporate the $\alpha$, $\gamma$, and $\rho$ components.
+    - **RePHINE is Globally Stable**: Small perturbations in the filtration function lead to small changes in the RePHINE diagram.
+    - **SpectRe is Locally Stable**: Stability holds under the condition that the filtration function is injective; global stability does not hold in general (counterexample: the spectrum may jump discontinuously when the filtration function crosses a non-injective point). An explicit upper bound on the degree of instability is provided, related to the complexity of the graph.
 
 4. **Integration with GNNs**:
 
-   - SpectRe diagrams are computed at each GNN layer.
-   - DeepSets encode the $(b, d, \alpha, \gamma)$ components and $\rho$ separately (a dedicated DeepSet handles the spectral features).
-   - The vectorized topological embeddings are concatenated to the graph-level GNN embeddings.
+    - SpectRe diagrams are computed at each GNN layer.
+    - DeepSets encode the $(b, d, \alpha, \gamma)$ components and $\rho$ separately (a dedicated DeepSet handles the spectral features).
+    - The vectorized topological embeddings are concatenated to the graph-level GNN embeddings.
 
 ## Key Experimental Results
 

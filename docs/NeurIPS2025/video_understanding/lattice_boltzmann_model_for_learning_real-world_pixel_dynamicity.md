@@ -18,8 +18,8 @@ content_hash: 3c669cb2a544c2b0
 # Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16527](https://arxiv.org/abs/2509.16527)
-**Code**: [Project Page](https://george-zhuang.github.io/lbm)
+**arXiv**: [2509.16527](https://arxiv.org/abs/2509.16527)  
+**Code**: [Project Page](https://george-zhuang.github.io/lbm)  
 **Area**: Video Understanding
 **Keywords**: point tracking, online tracking, lattice Boltzmann, real-time, object tracking
 

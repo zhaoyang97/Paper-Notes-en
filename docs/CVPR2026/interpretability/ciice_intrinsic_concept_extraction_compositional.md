@@ -19,8 +19,8 @@ content_hash: ef98bbf6448fee3a
 # CI-ICE: Intrinsic Concept Extraction Based on Compositional Interpretability
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11795](https://arxiv.org/abs/2603.11795)
-**Code**: N/A
+**arXiv**: [2603.11795](https://arxiv.org/abs/2603.11795)  
+**Code**: N/A  
 **Area**: Interpretability / Concept Extraction
 **Keywords**: Concept Extraction, Compositionality, Hyperbolic Space, Poincaré Ball, Horosphere Projection, Diffusion Models
 

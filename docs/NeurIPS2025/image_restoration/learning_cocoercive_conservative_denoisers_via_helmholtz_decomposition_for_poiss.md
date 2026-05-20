@@ -18,8 +18,8 @@ content_hash: 406d27f99e3d1669
 # Learning Cocoercive Conservative Denoisers via Helmholtz Decomposition for Poisson Inverse Problems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.08909](https://arxiv.org/abs/2505.08909)
-**Code**: [https://github.com/FizzzFizzz/CoCo-PnP](https://github.com/FizzzFizzz/CoCo-PnP)
+**arXiv**: [2505.08909](https://arxiv.org/abs/2505.08909)  
+**Code**: [https://github.com/FizzzFizzz/CoCo-PnP](https://github.com/FizzzFizzz/CoCo-PnP)  
 **Area**: Image Restoration
 **Keywords**: Plug-and-Play, Poisson inverse problems, cocoercive denoiser, Helmholtz decomposition, convergence guarantees
 
@@ -49,21 +49,21 @@ This paper introduces the concept of Cocoercive Conservative (CoCo) denoisers an
 
 1. **Cocoercive Denoiser**
 
-   - **Function**: Relaxes the conventional non-expansiveness constraint, allowing both the denoiser and its residual to be expansive.
-   - **Mechanism**: Defines the $\gamma$-cocoercive condition $\langle x-y, D(x)-D(y)\rangle \geq \gamma\|D(x)-D(y)\|^2$. Setting $\gamma=1$ recovers firm non-expansiveness; $\gamma=0.5$ recovers residual non-expansiveness. Crucially, when $\gamma < 0.5$ the denoiser may be expansive (Lipschitz constant $1/\gamma > 2$), imposing a weaker constraint. The equivalent condition $\|2\gamma J(x) - I\|_* \leq 1$ for all $x$ can be enforced via spectral regularization during training.
-   - **Design Motivation**: Analyzing the spectral distribution of the Jacobian in the complex plane, the admissible region for $\gamma$-cocoerciveness strictly contains those of non-expansive and residual non-expansive conditions (e.g., for $\gamma=0.25$, the spectrum is permitted within a disk centered at $2$ with radius $2$), imposing fewer restrictions on the denoiser and enabling better performance.
+    - **Function**: Relaxes the conventional non-expansiveness constraint, allowing both the denoiser and its residual to be expansive.
+    - **Mechanism**: Defines the $\gamma$-cocoercive condition $\langle x-y, D(x)-D(y)\rangle \geq \gamma\|D(x)-D(y)\|^2$. Setting $\gamma=1$ recovers firm non-expansiveness; $\gamma=0.5$ recovers residual non-expansiveness. Crucially, when $\gamma < 0.5$ the denoiser may be expansive (Lipschitz constant $1/\gamma > 2$), imposing a weaker constraint. The equivalent condition $\|2\gamma J(x) - I\|_* \leq 1$ for all $x$ can be enforced via spectral regularization during training.
+    - **Design Motivation**: Analyzing the spectral distribution of the Jacobian in the complex plane, the admissible region for $\gamma$-cocoerciveness strictly contains those of non-expansive and residual non-expansive conditions (e.g., for $\gamma=0.25$, the spectrum is permitted within a disk centered at $2$ with radius $2$), imposing fewer restrictions on the denoiser and enabling better performance.
 
 2. **Conservativeness and Helmholtz Decomposition**
 
-   - **Function**: Provides a mathematical framework to show that an ideal denoiser should be conservative (free of Hamiltonian components).
-   - **Mechanism**: The generalized Helmholtz decomposition yields $D = D_c + D_h$, where $D_c = \nabla\phi$ is the conservative field (denoising along the gradient direction) and $D_h$ is the Hamiltonian field (perpendicular to the gradient, contributing no denoising but introducing rotational interference). At the Jacobian level, this corresponds to $J = S + A$, where $S=(J+J^\top)/2$ is the symmetric part (conservative field) and $A=(J-J^\top)/2$ is the skew-symmetric part (Hamiltonian field). Ideally $A=0$, i.e., $J$ is symmetric.
-   - **Design Motivation**: A two-dimensional vector field analysis (Fig. 1) intuitively shows that the Hamiltonian component causes the denoising direction to deviate from the optimal path via rotation; removing it improves efficiency. This avoids the difficulty of explicitly constructing a potential function.
+    - **Function**: Provides a mathematical framework to show that an ideal denoiser should be conservative (free of Hamiltonian components).
+    - **Mechanism**: The generalized Helmholtz decomposition yields $D = D_c + D_h$, where $D_c = \nabla\phi$ is the conservative field (denoising along the gradient direction) and $D_h$ is the Hamiltonian field (perpendicular to the gradient, contributing no denoising but introducing rotational interference). At the Jacobian level, this corresponds to $J = S + A$, where $S=(J+J^\top)/2$ is the symmetric part (conservative field) and $A=(J-J^\top)/2$ is the skew-symmetric part (Hamiltonian field). Ideally $A=0$, i.e., $J$ is symmetric.
+    - **Design Motivation**: A two-dimensional vector field analysis (Fig. 1) intuitively shows that the Hamiltonian component causes the denoising direction to deviate from the optimal path via rotation; removing it improves efficiency. This avoids the difficulty of explicitly constructing a potential function.
 
 3. **Training Strategy**
 
-   - **Function**: Trains DRUNet with two simultaneous regularization terms.
-   - **Mechanism**: Total loss = MSE denoising loss + $\alpha_1 \cdot$ Hamiltonian regularization ($\|J - J^\top\|_*$ encouraging Jacobian symmetry) + $\alpha_2 \cdot$ spectral regularization ($\min\{1-\epsilon, \|2\gamma J - I\|_*\}$ enforcing cocoerciveness). A Hutchinson-type stochastic estimator is used to approximate the spectral norm of the Jacobian, avoiding explicit computation of the full Jacobian matrix.
-   - **Design Motivation**: Translating the two theoretical properties (cocoerciveness + conservativeness) into differentiable regularization terms enables end-to-end training.
+    - **Function**: Trains DRUNet with two simultaneous regularization terms.
+    - **Mechanism**: Total loss = MSE denoising loss + $\alpha_1 \cdot$ Hamiltonian regularization ($\|J - J^\top\|_*$ encouraging Jacobian symmetry) + $\alpha_2 \cdot$ spectral regularization ($\min\{1-\epsilon, \|2\gamma J - I\|_*\}$ enforcing cocoerciveness). A Hutchinson-type stochastic estimator is used to approximate the spectral norm of the Jacobian, avoiding explicit computation of the full Jacobian matrix.
+    - **Design Motivation**: Translating the two theoretical properties (cocoerciveness + conservativeness) into differentiable regularization terms enables end-to-end training.
 
 ### Theoretical Guarantees
 - Proves that a CoCo denoiser is the proximal operator of an implicit weakly convex function $F$: $D_\sigma = \text{Prox}_{F/\beta}$.

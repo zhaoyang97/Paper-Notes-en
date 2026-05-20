@@ -18,8 +18,8 @@ content_hash: ab90af7b394711c2
 # Interpretability from the Ground Up
 
 **Conference**: ACL 2026
-**arXiv**: [2511.17069](https://arxiv.org/abs/2511.17069)
-**Code**: [GitHub](https://github.com/yunsungkim0908/analyticscore)
+**arXiv**: [2511.17069](https://arxiv.org/abs/2511.17069)  
+**Code**: [GitHub](https://github.com/yunsungkim0908/analyticscore)  
 **Area**: Interpretability / Educational Assessment
 **Keywords**: Interpretable Automated Scoring, Educational Assessment, FGTI Principles, Analytic Scoring, Stakeholder-Centered Design
 

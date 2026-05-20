@@ -18,8 +18,8 @@ content_hash: e7b9d9837910e780
 # Flow Matching Neural Processes
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.23853](https://arxiv.org/abs/2512.23853)
-**Code**: [danrsm/flowNP](https://github.com/danrsm/flowNP)
+**arXiv**: [2512.23853](https://arxiv.org/abs/2512.23853)  
+**Code**: [danrsm/flowNP](https://github.com/danrsm/flowNP)  
 **Area**: Image Generation
 **Keywords**: neural processes, flow matching, stochastic processes, conditional generation, transformer
 

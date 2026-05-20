@@ -18,8 +18,8 @@ content_hash: d383c341b5f49d88
 # ValuePilot: A Two-Phase Framework for Value-Driven Decision-Making
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.13716](https://arxiv.org/abs/2512.13716)
-**Code**: Not released
+**arXiv**: [2512.13716](https://arxiv.org/abs/2512.13716)  
+**Code**: Not released  
 **Area**: Interpretability
 **Keywords**: value-driven decision-making, personalized AI, PROMETHEE, multi-criteria decision-making, human values
 

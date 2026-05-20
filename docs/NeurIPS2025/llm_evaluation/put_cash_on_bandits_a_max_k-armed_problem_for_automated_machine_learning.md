@@ -18,8 +18,8 @@ content_hash: a97b5a569e576d2a
 # Put CASH on Bandits: A Max K-Armed Problem for Automated Machine Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.05226](https://arxiv.org/abs/2505.05226)
-**Code**: [GitHub](https://github.com/amirbalef/CASH_with_Bandits)
+**arXiv**: [2505.05226](https://arxiv.org/abs/2505.05226)  
+**Code**: [GitHub](https://github.com/amirbalef/CASH_with_Bandits)  
 **Area**: AutoML / Multi-Armed Bandits
 **Keywords**: CASH, Max K-Armed Bandit, Hyperparameter Optimization, AutoML, Upper Confidence Bound
 
@@ -51,9 +51,9 @@ MaxUCB is a two-level optimization framework: the upper level is a Max K-Armed B
 
 1. **Data-Driven Distributional Analysis (Section 3)**: The authors analyze the survival functions of HPO reward distributions across four AutoML benchmarks and identify three key properties:
 
-   - **Boundedness**: Rewards (model performance metrics) are inherently bounded, with each arm having a distinct maximum value.
-   - **Light-tailed and left-skewed**: Rewards are concentrated near the maximum, and extreme events are not outliers—contrary to the heavy-tailed assumption commonly used in MKB literature.
-   - **Approximate stationarity**: The optimal arm does not change over time.
+    - **Boundedness**: Rewards (model performance metrics) are inherently bounded, with each arm having a distinct maximum value.
+    - **Light-tailed and left-skewed**: Rewards are concentrated near the maximum, and extreme events are not outliers—contrary to the heavy-tailed assumption commonly used in MKB literature.
+    - **Approximate stationarity**: The optimal arm does not change over time.
 
    Based on these observations, Lemma 3.3 introduces two distribution-dependent constants $L$ and $U$ to characterize the shape of a bounded distribution near its maximum: $L\epsilon \leq G(b-\epsilon) \leq U\epsilon$. Empirical evidence shows that $L$ is typically greater than 1 (whereas heavy-tailed distributions yield $L \approx 0$), resolving the theoretical barrier identified in prior work that deemed extreme bandits infeasible.
 

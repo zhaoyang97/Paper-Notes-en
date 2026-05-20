@@ -18,8 +18,8 @@ content_hash: 346b994e453cf2c9
 # The More You Automate, the Less You See: Hidden Pitfalls of AI Scientist Systems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.08713](https://arxiv.org/abs/2509.08713)
-**Code**: [GitHub](https://github.com/niharshah/AIScientistPitfalls)
+**arXiv**: [2509.08713](https://arxiv.org/abs/2509.08713)  
+**Code**: [GitHub](https://github.com/niharshah/AIScientistPitfalls)  
 **Area**: Recommender Systems
 **Keywords**: AI scientist, scientific integrity, benchmark selection, data leakage, reward hacking
 

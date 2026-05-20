@@ -18,8 +18,8 @@ content_hash: a486f4f7318957d2
 # GeoChemAD: Benchmarking Unsupervised Geochemical Anomaly Detection for Mineral Exploration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13068](https://arxiv.org/abs/2603.13068)
-**Code**: [https://github.com/yihaoding/geochemad](https://github.com/yihaoding/geochemad)
+**arXiv**: [2603.13068](https://arxiv.org/abs/2603.13068)  
+**Code**: [https://github.com/yihaoding/geochemad](https://github.com/yihaoding/geochemad)  
 **Area**: Self-Supervised Learning
 **Keywords**: Geochemical Anomaly Detection, Unsupervised Learning, Transformer, Benchmark Dataset, Mineral Exploration
 

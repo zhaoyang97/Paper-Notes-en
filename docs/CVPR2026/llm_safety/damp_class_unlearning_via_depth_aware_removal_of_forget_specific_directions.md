@@ -18,8 +18,8 @@ content_hash: ab930b6b7280f773
 # DAMP: Class Unlearning via Depth-Aware Removal of Forget-Specific Directions
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.15166](https://arxiv.org/abs/2604.15166)
-**Code**: None
+**arXiv**: [2604.15166](https://arxiv.org/abs/2604.15166)  
+**Code**: None  
 **Area**: AI Safety / Machine Unlearning
 **Keywords**: machine unlearning, class forgetting, weight surgery, projection, depth-aware
 

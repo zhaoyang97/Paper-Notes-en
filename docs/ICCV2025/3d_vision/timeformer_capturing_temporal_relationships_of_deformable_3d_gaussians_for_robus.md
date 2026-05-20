@@ -18,8 +18,8 @@ content_hash: 95bba0286fd9414d
 # TimeFormer: Capturing Temporal Relationships of Deformable 3D Gaussians for Robust Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.11941](https://arxiv.org/abs/2411.11941)
-**Code**: [Project Page](https://patrickddj.github.io/TimeFormer/)
+**arXiv**: [2411.11941](https://arxiv.org/abs/2411.11941)  
+**Code**: [Project Page](https://patrickddj.github.io/TimeFormer/)  
 **Area**: 3D Vision
 **Keywords**: Dynamic scene reconstruction, 3D Gaussian Splatting, Transformer, temporal relationship modeling, plug-and-play
 

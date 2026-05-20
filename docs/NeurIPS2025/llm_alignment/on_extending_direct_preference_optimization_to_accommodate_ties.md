@@ -19,8 +19,8 @@ content_hash: 0a7aa3d33a1a0d11
 # On Extending Direct Preference Optimization to Accommodate Ties
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2409.17431](https://arxiv.org/abs/2409.17431)
-**Code**: None
+**arXiv**: [2409.17431](https://arxiv.org/abs/2409.17431)  
+**Code**: None  
 **Area**: LLM Alignment / Preference Optimization
 **Keywords**: DPO, preference optimization, ties, Bradley-Terry, Rao-Kupper, Davidson model
 

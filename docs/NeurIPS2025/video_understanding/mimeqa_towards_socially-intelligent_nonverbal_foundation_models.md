@@ -18,8 +18,8 @@ content_hash: d9f11e14aa449b92
 # MimeQA: Towards Socially-Intelligent Nonverbal Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.16671](https://arxiv.org/abs/2502.16671)
-**Code**: [GitHub](https://github.com/MIT-MI/MimeQA)
+**arXiv**: [2502.16671](https://arxiv.org/abs/2502.16671)  
+**Code**: [GitHub](https://github.com/MIT-MI/MimeQA)  
 **Area**: Video Understanding
 **Keywords**: nonverbal social intelligence, mime understanding, video question answering, multimodal foundation models, social cognition
 

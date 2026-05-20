@@ -18,8 +18,8 @@ content_hash: 33643035c3ef9687
 # FakeRadar: Probing Forgery Outliers to Detect Unknown Deepfake Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2512.14601](https://arxiv.org/abs/2512.14601)
-**Code**: N/A
+**arXiv**: [2512.14601](https://arxiv.org/abs/2512.14601)  
+**Code**: N/A  
 **Area**: AI Security
 **Keywords**: Deepfake Detection, Cross-Domain Generalization, Outlier Probing, Contrastive Learning, CLIP
 

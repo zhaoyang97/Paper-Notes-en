@@ -18,8 +18,8 @@ content_hash: d44d5bf362dd0976
 # ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.08118](https://arxiv.org/abs/2603.08118)
-**Code**: None
+**arXiv**: [2603.08118](https://arxiv.org/abs/2603.08118)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Offline RL, model-based methods, adversarial model learning, Wasserstein duality, bilevel optimization
 

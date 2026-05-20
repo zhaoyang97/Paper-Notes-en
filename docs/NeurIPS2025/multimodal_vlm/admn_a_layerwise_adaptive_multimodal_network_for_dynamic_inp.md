@@ -20,8 +20,8 @@ content_hash: 6215f0e9a5d48ffd
 # ADMN: A Layer-Wise Adaptive Multimodal Network for Dynamic Input Noise and Compute Resources
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.07862](https://arxiv.org/abs/2502.07862)
-**Code**: [https://github.com/nesl/ADMN](https://github.com/nesl/ADMN)
+**arXiv**: [2502.07862](https://arxiv.org/abs/2502.07862)  
+**Code**: [https://github.com/nesl/ADMN](https://github.com/nesl/ADMN)  
 **Area**: Multimodal VLM / Model Compression
 **Keywords**: multimodal, adaptive depth, LayerDrop, quality-of-information, dynamic compute budget, layer allocation, sensor corruption
 
@@ -45,20 +45,20 @@ Two-stage training: Stage 1 builds a layer-adaptive multimodal backbone; Stage 2
 
 ### Key Designs
 1. **Multimodal LayerDrop (Stage 1)**:
-   - LayerDrop (rate 0.2) is introduced during MAE pre-training to make the ViT backbone robust to missing layers.
-   - LayerDrop is retained during multimodal task fine-tuning so that fusion and output layers adapt to varied backbone layer configurations.
-   - **Full-backbone Dropout**: With 10% probability, all layers of a modality's backbone are dropped—simulating the extreme case where that modality is entirely unavailable.
-   - Result: A single set of weights operates under any layer budget.
+    - LayerDrop (rate 0.2) is introduced during MAE pre-training to make the ViT backbone robust to missing layers.
+    - LayerDrop is retained during multimodal task fine-tuning so that fusion and output layers adapt to varied backbone layer configurations.
+    - **Full-backbone Dropout**: With 10% probability, all layers of a modality's backbone are dropped—simulating the extreme case where that modality is entirely unavailable.
+    - Result: A single set of weights operates under any layer budget.
 
 2. **QoI-Aware Controller (Stage 2)**:
-   - Lightweight architecture: downsampled inputs → modality-specific convolutions → Transformer fusion → MLP output layer allocation logits.
-   - **Corruption-aware supervision (ADMN)**: An auxiliary corruption prediction loss $\mathcal{L}_{corr}$ explicitly teaches the controller to attend to per-modality QoI.
-   - **Autoencoder initialization (ADMN_AE)**: When corruption labels are unavailable, the controller's perception layers are pre-trained with an AE—the reconstruction objective forces the latent space to cluster by QoI (verified via t-SNE visualization).
-   - Ablations confirm that task loss alone is insufficient for learning QoI-aware allocation.
+    - Lightweight architecture: downsampled inputs → modality-specific convolutions → Transformer fusion → MLP output layer allocation logits.
+    - **Corruption-aware supervision (ADMN)**: An auxiliary corruption prediction loss $\mathcal{L}_{corr}$ explicitly teaches the controller to attend to per-modality QoI.
+    - **Autoencoder initialization (ADMN_AE)**: When corruption labels are unavailable, the controller's perception layers are pre-trained with an AE—the reconstruction objective forces the latent space to cluster by QoI (verified via t-SNE visualization).
+    - Ablations confirm that task loss alone is insufficient for learning QoI-aware allocation.
 
 3. **Differentiable Layer Selection**:
-   - Gumbel-Softmax sampling (temperature 1) + Top-$L$ discretization + straight-through estimator.
-   - Enables differentiable selection of $C$ backbone layers under a total budget constraint of $L$ layers.
+    - Gumbel-Softmax sampling (temperature 1) + Top-$L$ discretization + straight-through estimator.
+    - Enables differentiable selection of $C$ backbone layers under a total budget constraint of $L$ layers.
 
 ### Loss & Training
 Stage 1: Task loss + LayerDrop (0.2) + Full-backbone dropout (10%). Stage 2: $\mathcal{L}_{total} = \mathcal{L}_{model} + \mathcal{L}_{corr}$ (or AE initialization + $\mathcal{L}_{model}$).

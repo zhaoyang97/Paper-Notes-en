@@ -18,8 +18,8 @@ content_hash: e7fbf3e0661f1e80
 # Deep Learning–Based Estimation of Blood Glucose Levels from Multidirectional Scleral Blood Vessel Imaging
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12715](https://arxiv.org/abs/2603.12715)
-**Code**: None
+**arXiv**: [2603.12715](https://arxiv.org/abs/2603.12715)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: blood glucose estimation, scleral vessel imaging, multi-view learning, MRFO, Transformer
 

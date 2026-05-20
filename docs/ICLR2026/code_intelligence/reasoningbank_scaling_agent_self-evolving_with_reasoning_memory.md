@@ -18,8 +18,8 @@ content_hash: d168899643d3d25c
 # ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25140](https://arxiv.org/abs/2509.25140)
-**Code**: [google-research/reasoning-bank](https://github.com/google-research/reasoning-bank)
+**arXiv**: [2509.25140](https://arxiv.org/abs/2509.25140)  
+**Code**: [google-research/reasoning-bank](https://github.com/google-research/reasoning-bank)  
 **Area**: Code Intelligence
 **Keywords**: Agent Memory, Reasoning Strategy, Test-Time Scaling, Self-Evolving, Experiential Learning
 

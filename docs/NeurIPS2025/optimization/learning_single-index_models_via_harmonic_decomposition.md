@@ -20,9 +20,9 @@ content_hash: a4b7c0b89e489ace
 # Learning Single-Index Models via Harmonic Decomposition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.09887](https://arxiv.org/abs/2506.09887)
+**arXiv**: [2506.09887](https://arxiv.org/abs/2506.09887)  
 **Authors**: Nirmit Joshi (TTIC), Hugo Koubbi (Yale / ENS Paris-Saclay), Theodor Misiakiewicz (Yale), Nathan Srebro (TTIC)
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: Optimization
 **Keywords**: single-index models, spherical harmonics, harmonic decomposition, sample complexity, computational complexity, tensor unfolding, online SGD
 

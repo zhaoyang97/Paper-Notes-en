@@ -18,8 +18,8 @@ content_hash: a62dd158b33ac371
 # Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.02914](https://arxiv.org/abs/2512.02914)
-**Code**: None
+**arXiv**: [2512.02914](https://arxiv.org/abs/2512.02914)  
+**Code**: None  
 **Area**: LLM Reasoning Evaluation / Time Series
 **Keywords**: Martingale Score, belief entrenchment, Bayesian rationality, LLM reasoning, unsupervised evaluation
 

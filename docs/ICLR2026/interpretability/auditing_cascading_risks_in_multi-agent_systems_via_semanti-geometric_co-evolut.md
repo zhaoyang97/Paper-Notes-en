@@ -18,8 +18,8 @@ content_hash: 05bb07a2260ac25a
 # Auditing Cascading Risks in Multi-Agent Systems via Semantic–Geometric Co-evolution
 
 **Conference**: ICLR 2026 Workshop
-**arXiv**: [2603.13325](https://arxiv.org/abs/2603.13325)
-**Code**: None
+**arXiv**: [2603.13325](https://arxiv.org/abs/2603.13325)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: multi-agent safety, cascading risk, Ollivier-Ricci curvature, graph geometry, proactive auditing
 

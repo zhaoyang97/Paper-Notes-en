@@ -18,8 +18,8 @@ content_hash: 20a1909e758984a9
 # BCWildfire: A Long-term Multi-factor Dataset and Deep Learning Benchmark for Boreal Wildfire Risk Prediction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.17597](https://arxiv.org/abs/2511.17597)
-**Code**: [https://github.com/SynUW/BCWildfire](https://github.com/SynUW/BCWildfire)
+**arXiv**: [2511.17597](https://arxiv.org/abs/2511.17597)  
+**Code**: [https://github.com/SynUW/BCWildfire](https://github.com/SynUW/BCWildfire)  
 **Area**: LLM Evaluation
 **Keywords**: Wildfire Risk Prediction, Time Series Forecasting, Multimodal Dataset, Deep Learning Benchmark, Boreal Forest
 
@@ -51,21 +51,21 @@ BCWildfire is a dataset benchmark in time series forecasting format, comprising 
 
 1. **Multimodal Driving Factor Design (38 variables)**:
 
-   - **Function**: Integrates five categories of wildfire driving factors.
-   - **Mechanism**: Fuel conditions (MODIS products including LAI/FPAR/NDVI/EVI), meteorological factors (ERA5-Land temperature/precipitation/wind speed/soil moisture + MODIS thermal radiance products), topographic factors (ASTER DEM slope/aspect/hillshade + distance to water bodies), human activity (MODIS land use + distance to infrastructure), and fire detection (MOD/MYD14A1 active fire products).
-   - **Design Motivation**: ERA5-Land has coarse spatial resolution (~11 km) and cannot capture fine thermal anomalies; MODIS 1 km thermal radiance products are therefore incorporated as a complement. Deep-layer soil moisture (0–289 cm) is included to reflect long-term cumulative environmental moisture effects.
+    - **Function**: Integrates five categories of wildfire driving factors.
+    - **Mechanism**: Fuel conditions (MODIS products including LAI/FPAR/NDVI/EVI), meteorological factors (ERA5-Land temperature/precipitation/wind speed/soil moisture + MODIS thermal radiance products), topographic factors (ASTER DEM slope/aspect/hillshade + distance to water bodies), human activity (MODIS land use + distance to infrastructure), and fire detection (MOD/MYD14A1 active fire products).
+    - **Design Motivation**: ERA5-Land has coarse spatial resolution (~11 km) and cannot capture fine thermal anomalies; MODIS 1 km thermal radiance products are therefore incorporated as a complement. Deep-layer soil moisture (0–289 cm) is included to reflect long-term cumulative environmental moisture effects.
 
 2. **Data Preprocessing and Class Imbalance Strategy**:
 
-   - **Function**: Unifies coordinate systems and resolutions, and addresses cloud occlusion and class imbalance.
-   - **Mechanism**: All data are harmonized to WGS84 and 1 km/daily resolution; QC bands combined with historical gap-filling handle cloud occlusion (avoiding data leakage); an undersampling strategy excludes negative samples within a 60 km/3-day buffer zone around positive samples, maintaining positive-to-negative ratios by land cover type (1:2 for training, 1:1 for testing).
-   - **Design Motivation**: Wildfires are extremely rare events, and naive training leads to severe class imbalance. Random selection of negative samples risks including high-risk areas, necessitating spatial buffering for exclusion.
+    - **Function**: Unifies coordinate systems and resolutions, and addresses cloud occlusion and class imbalance.
+    - **Mechanism**: All data are harmonized to WGS84 and 1 km/daily resolution; QC bands combined with historical gap-filling handle cloud occlusion (avoiding data leakage); an undersampling strategy excludes negative samples within a 60 km/3-day buffer zone around positive samples, maintaining positive-to-negative ratios by land cover type (1:2 for training, 1:1 for testing).
+    - **Design Motivation**: Wildfires are extremely rare events, and naive training leads to severe class imbalance. Random selection of negative samples risks including high-risk areas, necessitating spatial buffering for exclusion.
 
 3. **Time Series Forecasting Benchmark Evaluation**:
 
-   - **Function**: Evaluates the next-day wildfire risk prediction performance of six state-of-the-art time series models.
-   - **Mechanism**: The preceding 10 days of driving factors serve as input to predict the probability of wildfire occurrence on the following day, framed as a binary classification time series forecasting problem.
-   - **Design Motivation**: Reframes wildfire prediction from a traditional spatial CNN task to a time series forecasting paradigm, leveraging the temporal modeling capacity for long-term cumulative factors.
+    - **Function**: Evaluates the next-day wildfire risk prediction performance of six state-of-the-art time series models.
+    - **Mechanism**: The preceding 10 days of driving factors serve as input to predict the probability of wildfire occurrence on the following day, framed as a binary classification time series forecasting problem.
+    - **Design Motivation**: Reframes wildfire prediction from a traditional spatial CNN task to a time series forecasting paradigm, leveraging the temporal modeling capacity for long-term cumulative factors.
 
 ### Loss & Training
 

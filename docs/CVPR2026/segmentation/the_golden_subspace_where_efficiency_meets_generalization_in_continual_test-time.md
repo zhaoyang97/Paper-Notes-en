@@ -18,8 +18,8 @@ content_hash: aa5852bfe53c69bb
 # The Golden Subspace: Where Efficiency Meets Generalization in Continual Test-Time Adaptation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21928](https://arxiv.org/abs/2603.21928)
-**Code**: [https://github.com/AIGNLAI/GOLD](https://github.com/AIGNLAI/GOLD)
+**arXiv**: [2603.21928](https://arxiv.org/abs/2603.21928)  
+**Code**: [https://github.com/AIGNLAI/GOLD](https://github.com/AIGNLAI/GOLD)  
 **Area**: Continual Test-Time Adaptation / Domain Adaptation
 **Keywords**: Continual Test-Time Adaptation, Golden Subspace, AGOP, Low-Rank Adaptation, Classifier Row Space
 

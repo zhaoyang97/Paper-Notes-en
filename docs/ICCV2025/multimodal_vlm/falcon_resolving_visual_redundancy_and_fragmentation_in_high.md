@@ -18,8 +18,8 @@ content_hash: 1f8a927e0c66b0f1
 # FALCON: Resolving Visual Redundancy and Fragmentation in High-resolution Multimodal Large Language Models via Visual Registers
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.16297](https://arxiv.org/abs/2501.16297)
-**Code**: [Available](https://github.com/JiuTian-VL/JiuTian-FALCON)
+**arXiv**: [2501.16297](https://arxiv.org/abs/2501.16297)  
+**Code**: [Available](https://github.com/JiuTian-VL/JiuTian-FALCON)  
 **Area**: Multimodal VLM / High-resolution Understanding
 **Keywords**: Visual Registers, Token Compression, Visual Redundancy, Visual Fragmentation, High-resolution MLLM
 

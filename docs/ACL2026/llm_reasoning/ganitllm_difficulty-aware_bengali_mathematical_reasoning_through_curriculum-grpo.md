@@ -18,8 +18,8 @@ content_hash: 5c49d320faca4b44
 # GanitLLM: Difficulty-Aware Bengali Mathematical Reasoning through Curriculum-GRPO
 
 **Conference**: ACL 2026
-**arXiv**: [2601.06767](https://arxiv.org/abs/2601.06767)
-**Code**: [Website](https://dipta007.github.io/GanitLLM/)
+**arXiv**: [2601.06767](https://arxiv.org/abs/2601.06767)  
+**Code**: [Website](https://dipta007.github.io/GanitLLM/)  
 **Area**: Low-Resource Language Reasoning / Mathematical Reasoning
 **Keywords**: Bengali mathematical reasoning, curriculum learning, GRPO cold start, difficulty-aware, low-resource language
 

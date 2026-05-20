@@ -18,8 +18,8 @@ content_hash: 114128c29283cecc
 # Signs as Tokens: A Retrieval-Enhanced Multilingual Sign Language Generator
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.17799](https://arxiv.org/abs/2411.17799)
-**Code**: [Project Page](https://2000zrl.github.io/soke/)
+**arXiv**: [2411.17799](https://arxiv.org/abs/2411.17799)  
+**Code**: [Project Page](https://2000zrl.github.io/soke/)  
 **Area**: Human Understanding
 **Keywords**: Sign language generation, multilingual sign language, autoregressive language model, retrieval-augmented generation, motion discretization
 

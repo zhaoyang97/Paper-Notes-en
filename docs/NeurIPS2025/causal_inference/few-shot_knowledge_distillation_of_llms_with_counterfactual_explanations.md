@@ -18,8 +18,8 @@ content_hash: 76e6c7581d1c52d4
 # Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21631](https://arxiv.org/abs/2510.21631)
-**Code**: [FaisalHamman/CoD](https://github.com/FaisalHamman/CoD)
+**arXiv**: [2510.21631](https://arxiv.org/abs/2510.21631)  
+**Code**: [FaisalHamman/CoD](https://github.com/FaisalHamman/CoD)  
 **Area**: Causal Inference
 **Keywords**: knowledge distillation, Counterfactual Explanation, few-shot learning, LLM Compression, Decision Boundary
 

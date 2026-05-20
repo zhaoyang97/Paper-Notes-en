@@ -18,8 +18,8 @@ content_hash: 7c83d0f8f42bb490
 # GraphUniverse: Synthetic Graph Generation for Evaluating Inductive Generalization
 
 **Conference**: ICLR2026
-**arXiv**: [2509.21097](https://arxiv.org/abs/2509.21097)
-**Code**: [GitHub](https://github.com/LouisVanLangendonck/GraphUniverse)
+**arXiv**: [2509.21097](https://arxiv.org/abs/2509.21097)  
+**Code**: [GitHub](https://github.com/LouisVanLangendonck/GraphUniverse)  
 **Area**: Graph Learning
 **Keywords**: synthetic graph generation, inductive generalization, graph benchmarking, stochastic block model, distribution shift
 

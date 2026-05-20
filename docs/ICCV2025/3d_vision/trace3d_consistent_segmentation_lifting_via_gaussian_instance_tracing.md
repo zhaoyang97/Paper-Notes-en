@@ -19,7 +19,7 @@ content_hash: c48b3817b7938a47
 # Trace3D: Consistent Segmentation Lifting via Gaussian Instance Tracing
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.03227](https://arxiv.org/abs/2508.03227)
+**arXiv**: [2508.03227](https://arxiv.org/abs/2508.03227)  
 **Area**: 3D Vision
 **Keywords**: 3D Segmentation, Gaussian Splatting, 2D-to-3D Lifting, Multi-view Consistency, Instance Tracing, Density Control
 

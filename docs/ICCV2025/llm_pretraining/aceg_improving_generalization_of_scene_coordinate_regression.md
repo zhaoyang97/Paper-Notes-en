@@ -18,8 +18,8 @@ content_hash: 222dc75f2ec6387f
 # ACE-G: Improving Generalization of Scene Coordinate Regression Through Query Pre-Training
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.11605](https://arxiv.org/abs/2510.11605)
-**Code**: [nianticspatial/ace-g](https://github.com/nianticspatial/ace-g) (available, includes pretrained models)
+**arXiv**: [2510.11605](https://arxiv.org/abs/2510.11605)  
+**Code**: [nianticspatial/ace-g](https://github.com/nianticspatial/ace-g) (available, includes pretrained models)  
 **Area**: Visual Localization
 **Keywords**: scene coordinate regression, visual relocalization, Transformer pretraining, generalization, map code
 
@@ -68,8 +68,8 @@ The overall pipeline consists of three stages:
 
 2. **Query Pre-Training**: This is the central contribution of the paper. The pre-training process simulates the actual deployment scenario, running in parallel across hundreds of scenes, with two types of iterations alternating:
 
-   - **Mapping iteration**: Uses mapping images to jointly optimize both the map code and the Transformer weights—enabling the map code to learn scene encoding and the Transformer to learn how to read the map code.
-   - **Query iteration**: Uses query images that differ from the mapping images (e.g., novel viewpoints, different illumination or object placement), but **only updates the Transformer weights** without modifying the map code—forcing the Transformer to learn to extract information from the map code to generalize to unseen query conditions.
+    - **Mapping iteration**: Uses mapping images to jointly optimize both the map code and the Transformer weights—enabling the map code to learn scene encoding and the Transformer to learn how to read the map code.
+    - **Query iteration**: Uses query images that differ from the mapping images (e.g., novel viewpoints, different illumination or object placement), but **only updates the Transformer weights** without modifying the map code—forcing the Transformer to learn to extract information from the map code to generalize to unseen query conditions.
 
    The key insight of this alternating training strategy is that during query iterations, the scene information is already "locked" into the map code, compelling the Transformer to leverage those fixed map codes to handle diverse query images, thereby acquiring generalization.
 

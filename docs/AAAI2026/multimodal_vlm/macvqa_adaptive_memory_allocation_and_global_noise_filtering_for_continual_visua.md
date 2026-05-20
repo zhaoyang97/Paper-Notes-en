@@ -18,8 +18,8 @@ content_hash: 82cee0af80f5adcd
 # MacVQA: Adaptive Memory Allocation and Global Noise Filtering for Continual Visual Question Answering
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.01926](https://arxiv.org/abs/2601.01926)
-**Code**: [https://github.com/HubuKG/MacVQA](https://github.com/HubuKG/MacVQA)
+**arXiv**: [2601.01926](https://arxiv.org/abs/2601.01926)  
+**Code**: [https://github.com/HubuKG/MacVQA](https://github.com/HubuKG/MacVQA)  
 **Area**: Multimodal VLM
 **Keywords**: Continual Learning, Visual Question Answering, Noise Filtering, Memory Allocation, Prototype Learning
 

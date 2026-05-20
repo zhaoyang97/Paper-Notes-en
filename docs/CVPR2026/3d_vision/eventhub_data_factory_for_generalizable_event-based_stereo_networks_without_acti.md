@@ -18,8 +18,8 @@ content_hash: b7facf384f4f3947
 # EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02331](https://arxiv.org/abs/2604.02331)
-**Code**: [https://bartn8.github.io/eventhub](https://bartn8.github.io/eventhub)
+**arXiv**: [2604.02331](https://arxiv.org/abs/2604.02331)  
+**Code**: [https://bartn8.github.io/eventhub](https://bartn8.github.io/eventhub)  
 **Area**: 3D Vision / Stereo Matching / Event Cameras
 **Keywords**: Event cameras, stereo matching, data factory, novel view synthesis, cross-modal distillation
 

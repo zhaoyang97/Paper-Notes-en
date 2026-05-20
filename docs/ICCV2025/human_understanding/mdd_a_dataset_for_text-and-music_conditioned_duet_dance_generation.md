@@ -18,8 +18,8 @@ content_hash: a179ca7719f15987
 # MDD: A Dataset for Text-and-Music Conditioned Duet Dance Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.16911](https://arxiv.org/abs/2508.16911)
-**Code**: [https://gprerit96.github.io/mdd-page](https://gprerit96.github.io/mdd-page)
+**arXiv**: [2508.16911](https://arxiv.org/abs/2508.16911)  
+**Code**: [https://gprerit96.github.io/mdd-page](https://gprerit96.github.io/mdd-page)  
 **Area**: Human Motion Understanding / Dance Generation
 **Keywords**: duet dance generation, multimodal dataset, text-conditioned motion generation, motion capture, SMPL-X
 

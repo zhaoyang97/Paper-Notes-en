@@ -14,8 +14,8 @@ content_hash: 5fb6e99c934eeb48
 # HEALing Entropy Collapse: Enhancing Exploration in Few-Shot RLVR via Hybrid-Domain Entropy Dynamics Alignment
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17928](https://arxiv.org/abs/2604.17928)
-**Code**: [https://github.com/XMUDeepLIT/HEAL](https://github.com/XMUDeepLIT/HEAL)
+**arXiv**: [2604.17928](https://arxiv.org/abs/2604.17928)  
+**Code**: [https://github.com/XMUDeepLIT/HEAL](https://github.com/XMUDeepLIT/HEAL)  
 **Area**: Reinforcement Learning / LLM Reasoning
 **Keywords**: RLVR, entropy collapse, few-shot reinforcement learning, cross-domain alignment, exploration diversity
 
@@ -121,7 +121,7 @@ Standard PPO/GRPO optimization from RLVR is employed, with the reward defined as
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four domains, two model families, and extensive ablations — very comprehensive.
 - Writing Quality: ⭐⭐⭐⭐ The problem motivation is convincing, the method is clearly described, and figures aid understanding.
 
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: reinforcement_learning
 **Keywords**: To be supplemented
 

@@ -18,8 +18,8 @@ content_hash: 365634661ebfe672
 # TASTE: Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling
 
 **Conference**: ICLR 2026
-**arXiv**: [2504.07053](https://arxiv.org/abs/2504.07053)
-**Code**: [GitHub](https://mtkresearch.github.io/TASTE-SpokenLM.github.io)
+**arXiv**: [2504.07053](https://arxiv.org/abs/2504.07053)  
+**Code**: [GitHub](https://mtkresearch.github.io/TASTE-SpokenLM.github.io)  
 **Area**: LLM Pretraining
 **Keywords**: speech tokenization, spoken language model, text-speech alignment, joint modeling, speech reconstruction
 

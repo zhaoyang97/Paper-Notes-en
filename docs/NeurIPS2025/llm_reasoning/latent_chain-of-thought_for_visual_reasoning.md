@@ -19,8 +19,8 @@ content_hash: dbb94a767737c10a
 # Latent Chain-of-Thought for Visual Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23925](https://arxiv.org/abs/2510.23925)
-**Code**: [heliossun/LaCoT](https://github.com/heliossun/LaCoT)
+**arXiv**: [2510.23925](https://arxiv.org/abs/2510.23925)  
+**Code**: [heliossun/LaCoT](https://github.com/heliossun/LaCoT)  
 **Area**: Multimodal VLM / Visual Reasoning
 **Keywords**: visual reasoning, chain-of-thought, amortized variational inference, GFlowNets, inference-time scaling, LVLM
 

@@ -17,8 +17,8 @@ content_hash: b4bae1108220586a
 # Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12359](https://arxiv.org/abs/2604.12359)
-**Code**: None
+**arXiv**: [2604.12359](https://arxiv.org/abs/2604.12359)  
+**Code**: None  
 **Area**: AI Safety / Backdoor Attacks
 **Keywords**: backdoor attack, activation steering, weight editing, null-space constraint, LLM safety
 

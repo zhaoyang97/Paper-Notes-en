@@ -17,8 +17,8 @@ content_hash: b0c5830b8e215f70
 # MARS-Sep: Multimodal-Aligned Reinforced Sound Separation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.10509](https://arxiv.org/abs/2510.10509)
-**Code**: [https://github.com/mars-sep/MARS-Sep](https://github.com/mars-sep/MARS-Sep)
+**arXiv**: [2510.10509](https://arxiv.org/abs/2510.10509)  
+**Code**: [https://github.com/mars-sep/MARS-Sep](https://github.com/mars-sep/MARS-Sep)  
 **Area**: Audio Processing / Reinforcement Learning
 **Keywords**: Sound Separation, Reinforcement Learning, Multimodal Alignment, Beta Policy, Preference Reward
 

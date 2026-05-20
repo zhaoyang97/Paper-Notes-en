@@ -18,8 +18,8 @@ content_hash: 5aff73593f2ca0dd
 # MambaSeg: Harnessing Mamba for Accurate and Efficient Image-Event Semantic Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.24243](https://arxiv.org/abs/2512.24243)
-**Code**: [https://github.com/CQU-UISC/MambaSeg](https://github.com/CQU-UISC/MambaSeg)
+**arXiv**: [2512.24243](https://arxiv.org/abs/2512.24243)  
+**Code**: [https://github.com/CQU-UISC/MambaSeg](https://github.com/CQU-UISC/MambaSeg)  
 **Area**: Autonomous Driving
 **Keywords**: Event Camera, Multimodal Fusion, Mamba/SSM, Semantic Segmentation, Spatiotemporal Interaction
 

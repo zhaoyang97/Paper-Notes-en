@@ -18,8 +18,8 @@ content_hash: f9bbeb7a0df971e9
 # Heterogeneous Swarms: Jointly Optimizing Model Roles and Weights for Multi-LLM Systems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.04510](https://arxiv.org/abs/2502.04510)
-**Code**: [https://github.com/BunsenFeng/heterogeneous_swarm](https://github.com/BunsenFeng/heterogeneous_swarm)
+**arXiv**: [2502.04510](https://arxiv.org/abs/2502.04510)  
+**Code**: [https://github.com/BunsenFeng/heterogeneous_swarm](https://github.com/BunsenFeng/heterogeneous_swarm)  
 **Area**: Graph Learning
 **Keywords**: Multi-LLM systems, particle swarm optimization, DAG structure learning, model collaboration, joint role and weight optimization
 
@@ -135,8 +135,8 @@ The relative importance of role and weight varies by task: weight is more critic
 ---
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.04510](https://arxiv.org/abs/2502.04510)
-**Code**: [https://github.com/BunsenFeng/heterogeneous_swarm](https://github.com/BunsenFeng/heterogeneous_swarm)
+**arXiv**: [2502.04510](https://arxiv.org/abs/2502.04510)  
+**Code**: [https://github.com/BunsenFeng/heterogeneous_swarm](https://github.com/BunsenFeng/heterogeneous_swarm)  
 **Area**: Multi-LLM Systems / Graph Learning
 **Keywords**: Multi-LLM collaboration, particle swarm optimization, DAG structure learning, model role optimization, model weight optimization
 

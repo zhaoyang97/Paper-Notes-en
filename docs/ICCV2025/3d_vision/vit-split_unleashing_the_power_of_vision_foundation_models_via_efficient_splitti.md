@@ -18,8 +18,8 @@ content_hash: a3586c83737b9449
 # ViT-Split: Unleashing the Power of Vision Foundation Models via Efficient Splitting Heads
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.03433](https://arxiv.org/abs/2506.03433)
-**Code**: [jackyfl.github.io/vitsplit.github.io](https://jackyfl.github.io/vitsplit.github.io/)
+**arXiv**: [2506.03433](https://arxiv.org/abs/2506.03433)  
+**Code**: [jackyfl.github.io/vitsplit.github.io](https://jackyfl.github.io/vitsplit.github.io/)  
 **Area**: 3D Vision
 **Keywords**: Vision Foundation Models, Efficient Adapters, DINOv2, Hierarchical Features, Semantic Segmentation
 

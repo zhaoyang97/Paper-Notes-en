@@ -19,8 +19,8 @@ content_hash: 2a7b1fd86e1ac1e7
 # An Overall Real-Time Mechanism for Classification and Quality Evaluation of Rice
 
 **Conference**: AAAI2026
-**arXiv**: [2502.13764](https://arxiv.org/abs/2502.13764)
-**Code**: [Dataset](https://huggingface.co/datasets/xwk25/RiceCC)
+**arXiv**: [2502.13764](https://arxiv.org/abs/2502.13764)  
+**Code**: [Dataset](https://huggingface.co/datasets/xwk25/RiceCC)  
 **Area**: Object Detection
 **Keywords**: rice quality evaluation, object detection, YOLO-v5, ConvNeXt-Tiny, K-means, SimAM, ECA
 

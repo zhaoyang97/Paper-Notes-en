@@ -18,8 +18,8 @@ content_hash: 839d9112e17e5f3b
 # PanSt3R: Multi-view Consistent Panoptic Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21348](https://arxiv.org/abs/2506.21348)
-**Code**: Available (NAVER LABS Europe)
+**arXiv**: [2506.21348](https://arxiv.org/abs/2506.21348)  
+**Code**: Available (NAVER LABS Europe)  
 **Area**: 3D Vision / 3D Panoptic Segmentation
 **Keywords**: Panoptic Segmentation, 3D Reconstruction, MUSt3R, Multi-view, Mask Prediction
 

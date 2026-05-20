@@ -18,8 +18,8 @@ content_hash: ea95dbc22350ed2b
 # Benchmarking Overton Pluralism in LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.01351](https://arxiv.org/abs/2512.01351)
-**Code**: [https://github.com/elinorpd/overtonbench](https://github.com/elinorpd/overtonbench)
+**arXiv**: [2512.01351](https://arxiv.org/abs/2512.01351)  
+**Code**: [https://github.com/elinorpd/overtonbench](https://github.com/elinorpd/overtonbench)  
 **Area**: Human Understanding / LLM Alignment / Pluralistic Representation
 **Keywords**: Overton pluralism, LLM bias, benchmark, viewpoint coverage, automated evaluation
 

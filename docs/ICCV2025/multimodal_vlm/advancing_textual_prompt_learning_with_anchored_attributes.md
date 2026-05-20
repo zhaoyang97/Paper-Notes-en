@@ -18,8 +18,8 @@ content_hash: 9c028e30fec89611
 # Advancing Textual Prompt Learning with Anchored Attributes
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.09442](https://arxiv.org/abs/2412.09442)
-**Code**: [https://github.com/zhengli97/ATPrompt](https://github.com/zhengli97/ATPrompt)
+**arXiv**: [2412.09442](https://arxiv.org/abs/2412.09442)  
+**Code**: [https://github.com/zhengli97/ATPrompt](https://github.com/zhengli97/ATPrompt)  
 **Area**: Multimodal VLM
 **Keywords**: Prompt Learning, CLIP, Attribute Anchoring, Zero-Shot Generalization, Differentiable Attribute Search
 

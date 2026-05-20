@@ -18,8 +18,8 @@ content_hash: cc79b657cd613f4b
 # UniHM: Unified Dexterous Hand Manipulation with Vision Language Model
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00732](https://arxiv.org/abs/2603.00732)
-**Code**: [GitHub](https://unihm.github.io/)
+**arXiv**: [2603.00732](https://arxiv.org/abs/2603.00732)  
+**Code**: [GitHub](https://unihm.github.io/)  
 **Area**: Multimodal VLM
 **Keywords**: dexterous hand manipulation, VLM, unified tokenizer, physics-guided dynamic refinement, cross-morphology generalization
 

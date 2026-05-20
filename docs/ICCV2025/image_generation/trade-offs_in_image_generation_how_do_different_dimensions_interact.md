@@ -18,8 +18,8 @@ content_hash: 1f20c06f6c1d7fcd
 # Trade-offs in Image Generation: How Do Different Dimensions Interact?
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22100](https://arxiv.org/abs/2507.22100)
-**Code**: [https://github.com/fesvhtr/TRIG](https://github.com/fesvhtr/TRIG)
+**arXiv**: [2507.22100](https://arxiv.org/abs/2507.22100)  
+**Code**: [https://github.com/fesvhtr/TRIG](https://github.com/fesvhtr/TRIG)  
 **Area**: Image Generation
 **Keywords**: Image generation evaluation, trade-off analysis, multi-dimensional benchmark, VLM-as-Judge, text-to-image
 

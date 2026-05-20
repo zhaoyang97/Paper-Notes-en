@@ -18,8 +18,8 @@ content_hash: 63c6d517f41ae74c
 # Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.23785](https://arxiv.org/abs/2507.23785)
-**Code**: [GVFDiffusion.github.io](https://GVFDiffusion.github.io)
+**arXiv**: [2507.23785](https://arxiv.org/abs/2507.23785)  
+**Code**: [GVFDiffusion.github.io](https://GVFDiffusion.github.io)  
 **Area**: 3D Vision
 **Keywords**: 4D generation, video-to-4D, Gaussian variation field, diffusion model, 3D Gaussian Splatting
 

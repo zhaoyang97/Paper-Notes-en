@@ -18,9 +18,9 @@ content_hash: 3d131390e2107367
 # Implicit Modeling for Transferability Estimation of Vision Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23145](https://arxiv.org/abs/2510.23145)
+**arXiv**: [2510.23145](https://arxiv.org/abs/2510.23145)  
 **Authors**: Yaoyan Zheng, Huiqun Wang, Nan Zhou, Di Huang (Beihang University)
-**Code**: [BUAAHugeGun/ITM](https://github.com/BUAAHugeGun/ITM)
+**Code**: [BUAAHugeGun/ITM](https://github.com/BUAAHugeGun/ITM)  
 **Area**: Self-Supervised Learning
 **Keywords**: Transferability Estimation, Pre-trained Model Selection, Embedding Space Evolution, Variational Approximation, Vision Foundation Models
 

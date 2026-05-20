@@ -18,8 +18,8 @@ content_hash: dc81f9cde781bb5c
 # Protein Structure Tokenization via Geometric Byte Pair Encoding
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.11758](https://arxiv.org/abs/2511.11758)
-**Code**: [GitHub](https://github.com/shiningsunnyday/PT-BPE)
+**arXiv**: [2511.11758](https://arxiv.org/abs/2511.11758)  
+**Code**: [GitHub](https://github.com/shiningsunnyday/PT-BPE)  
 **Area**: Protein AI / Structure Tokenization
 **Keywords**: GeoBPE, Protein Structure Tokenizer, Hierarchical Vocabulary, Differentiable IK, Multi-resolution
 

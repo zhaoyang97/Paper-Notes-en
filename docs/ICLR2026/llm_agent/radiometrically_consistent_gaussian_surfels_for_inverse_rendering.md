@@ -18,8 +18,8 @@ content_hash: f6ba9836568c29a1
 # PerfGuard: A Performance-Aware Agent for Visual Content Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.22571](https://arxiv.org/abs/2601.22571)
-**Code**: [GitHub](https://github.com/FelixChan9527/PerfGuard)
+**arXiv**: [2601.22571](https://arxiv.org/abs/2601.22571)  
+**Code**: [GitHub](https://github.com/FelixChan9527/PerfGuard)  
 **Area**: AI Agent / Visual Content Generation
 **Keywords**: LLM Agent, Tool Selection, Performance Boundary Modeling, Visual Generation, AIGC, Preference Optimization
 

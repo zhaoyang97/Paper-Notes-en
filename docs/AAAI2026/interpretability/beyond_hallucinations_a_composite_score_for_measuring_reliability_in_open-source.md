@@ -18,8 +18,8 @@ content_hash: 204d40c472a856dd
 # Beyond Hallucinations: A Composite Score for Measuring Reliability in Open-Source Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.24058](https://arxiv.org/abs/2512.24058)
-**Code**: [https://github.com/rohitsalla/CRS.git](https://github.com/rohitsalla/CRS.git)
+**arXiv**: [2512.24058](https://arxiv.org/abs/2512.24058)  
+**Code**: [https://github.com/rohitsalla/CRS.git](https://github.com/rohitsalla/CRS.git)  
 **Area**: Interpretability
 **Keywords**: LLM reliability, calibration, robustness, uncertainty quantification, composite metric
 

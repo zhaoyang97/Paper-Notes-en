@@ -18,8 +18,8 @@ content_hash: c79cc410415efa19
 # Rethinking the Simulation vs. Rendering Dichotomy: No Free Lunch in Spatial World Modelling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20835](https://arxiv.org/abs/2510.20835)
-**Code**: Not available
+**arXiv**: [2510.20835](https://arxiv.org/abs/2510.20835)  
+**Code**: Not available  
 **Area**: Robotics / Cognitive Science
 **Keywords**: Spatial world models, mental rotation, aphantasia, higher-order theory of consciousness, embodied AI
 
@@ -49,23 +49,23 @@ This is a **theory/position paper** that proposes no concrete algorithm. Instead
 
 1. **Critique of the spatial imagery framework**:
 
-   - The concept of "spatial imagery" is itself underspecified: it is described as an abstract, modality-neutral representation of spatial features, yet when applied concretely (e.g., "imagine grasping and rotating a shape"), it implicitly invokes embodied sensory modalities.
-   - If spatial imagery is denied any conscious experiential character, the theory collapses into an account of "unconscious mental imagery" — yet "imagery" typically presupposes fine-grained perceptual content (involving early visual cortex). If aphantasic individuals lack the ability to reconstruct such content, it is unclear in what sense non-modally defined "spatial imagery" qualifies as "imagery" at all.
-   - The paper ultimately advocates a more pragmatic position: aphantasic individuals use spatial representations to solve tasks, but lack the corresponding visual experience — whether these representations count as "imagery" may be fundamentally undecidable.
+    - The concept of "spatial imagery" is itself underspecified: it is described as an abstract, modality-neutral representation of spatial features, yet when applied concretely (e.g., "imagine grasping and rotating a shape"), it implicitly invokes embodied sensory modalities.
+    - If spatial imagery is denied any conscious experiential character, the theory collapses into an account of "unconscious mental imagery" — yet "imagery" typically presupposes fine-grained perceptual content (involving early visual cortex). If aphantasic individuals lack the ability to reconstruct such content, it is unclear in what sense non-modally defined "spatial imagery" qualifies as "imagery" at all.
+    - The paper ultimately advocates a more pragmatic position: aphantasic individuals use spatial representations to solve tasks, but lack the corresponding visual experience — whether these representations count as "imagery" may be fundamentally undecidable.
 
 2. **Rebuttal of the linear functional specialisation account**:
 
-   - The traditional view characterises the dorsal stream as a "zombie pathway" — processing spatial information without contributing to conscious vision. However, emerging evidence suggests otherwise:
-   - The posterior parietal cortex (PPC) can decode object identity from rapidly presented visual stimuli (Bellet et al., 2022), demonstrating that dorsal regions actively encode perceptual information.
-   - The dorsolateral prefrontal cortex (DLPFC) — traditionally associated with action planning — has been found to selectively correlate with conscious visual information.
-   - Lesions to frontal and parietal cortex impair the integration and maintenance of visual content in consciousness.
-   - This evidence supports the **Higher-Order Theory (HOT) of consciousness**: fronto-parietal higher-order representations encode the relational structure among perceptual states; simulation and conscious experience share a common representational substrate, differing only in whether the representations are "validated and decoded into conscious experience" by downstream systems.
+    - The traditional view characterises the dorsal stream as a "zombie pathway" — processing spatial information without contributing to conscious vision. However, emerging evidence suggests otherwise:
+    - The posterior parietal cortex (PPC) can decode object identity from rapidly presented visual stimuli (Bellet et al., 2022), demonstrating that dorsal regions actively encode perceptual information.
+    - The dorsolateral prefrontal cortex (DLPFC) — traditionally associated with action planning — has been found to selectively correlate with conscious visual information.
+    - Lesions to frontal and parietal cortex impair the integration and maintenance of visual content in consciousness.
+    - This evidence supports the **Higher-Order Theory (HOT) of consciousness**: fronto-parietal higher-order representations encode the relational structure among perceptual states; simulation and conscious experience share a common representational substrate, differing only in whether the representations are "validated and decoded into conscious experience" by downstream systems.
 
 3. **Implications for AI — No Free Lunch**:
 
-   - **Language models lack genuine spatial competence**: MLLMs may acquire some capacity for spatial description through convergent statistical abstraction, but lack a vehicle for encoding rich perceptual representations and thus cannot truly understand spatial structure.
-   - **Implicit world models outperform explicit physics engines**: Methods leveraging pretrained visual representations — such as VIP and R3M — substantially outperform approaches relying solely on physics simulators (MuJoCo, Isaac Gym) in manipulation generalisation, because visual encoders capture fine-grained spatial and semantic priors.
-   - **Video models for action imagination**: Analogous to the human ability to "mentally simulate" an action before executing it, video diffusion models can generate action rollout sequences to score and optimise action plans. Works such as Veo 3, Genex, and Genie-3 demonstrate the potential of video generation as implicit world models.
+    - **Language models lack genuine spatial competence**: MLLMs may acquire some capacity for spatial description through convergent statistical abstraction, but lack a vehicle for encoding rich perceptual representations and thus cannot truly understand spatial structure.
+    - **Implicit world models outperform explicit physics engines**: Methods leveraging pretrained visual representations — such as VIP and R3M — substantially outperform approaches relying solely on physics simulators (MuJoCo, Isaac Gym) in manipulation generalisation, because visual encoders capture fine-grained spatial and semantic priors.
+    - **Video models for action imagination**: Analogous to the human ability to "mentally simulate" an action before executing it, video diffusion models can generate action rollout sequences to score and optimise action plans. Works such as Veo 3, Genex, and Genie-3 demonstrate the potential of video generation as implicit world models.
 
 ### Loss & Training
 

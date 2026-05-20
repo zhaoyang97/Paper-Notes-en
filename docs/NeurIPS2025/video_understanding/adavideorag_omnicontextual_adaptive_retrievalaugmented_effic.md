@@ -18,8 +18,8 @@ content_hash: 29a3edb07448577a
 # AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.13589](https://arxiv.org/abs/2506.13589)
-**Code**: [https://github.com/xzc-zju/AdaVideoRAG](https://github.com/xzc-zju/AdaVideoRAG)
+**arXiv**: [2506.13589](https://arxiv.org/abs/2506.13589)  
+**Code**: [https://github.com/xzc-zju/AdaVideoRAG](https://github.com/xzc-zju/AdaVideoRAG)  
 **Area**: Multimodal VLM / Video Understanding
 **Keywords**: long video understanding, retrieval-augmented generation, adaptive retrieval, knowledge graph, intent classification
 

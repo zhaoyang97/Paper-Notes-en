@@ -18,8 +18,8 @@ content_hash: d1a3a66497810544
 # Maximizing Asynchronicity in Event-based Neural Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.11165](https://arxiv.org/abs/2505.11165)
-**Code**: [github.com/haohq19/eva](https://github.com/haohq19/eva)
+**arXiv**: [2505.11165](https://arxiv.org/abs/2505.11165)  
+**Code**: [github.com/haohq19/eva](https://github.com/haohq19/eva)  
 **Area**: Event Cameras / Efficient Inference
 **Keywords**: event camera, asynchronous processing, linear attention, self-supervised learning, RWKV-6, A2S
 

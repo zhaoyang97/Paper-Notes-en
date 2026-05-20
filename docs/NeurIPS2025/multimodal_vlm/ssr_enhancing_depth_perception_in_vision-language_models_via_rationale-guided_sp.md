@@ -18,8 +18,8 @@ content_hash: 8bceede0fb93cb1c
 # SSR: Enhancing Depth Perception in VLMs via Rationale-Guided Spatial Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12448](https://arxiv.org/abs/2505.12448)
-**Code**: [https://yliu-cs.github.io/SSR](https://yliu-cs.github.io/SSR)
+**arXiv**: [2505.12448](https://arxiv.org/abs/2505.12448)  
+**Code**: [https://yliu-cs.github.io/SSR](https://yliu-cs.github.io/SSR)  
 **Area**: Multimodal VLM
 **Keywords**: Spatial Reasoning, Depth Perception, Vision-Language Models, Chain-of-Thought, Knowledge Distillation
 

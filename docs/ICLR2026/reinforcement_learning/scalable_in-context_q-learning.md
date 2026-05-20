@@ -18,8 +18,8 @@ content_hash: a00a09afafc98dd8
 # Scalable In-Context Q-Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.01299](https://arxiv.org/abs/2506.01299)
-**Code**: [GitHub](https://github.com/NJU-RL/SICQL)
+**arXiv**: [2506.01299](https://arxiv.org/abs/2506.01299)  
+**Code**: [GitHub](https://github.com/NJU-RL/SICQL)  
 **Area**: Reinforcement Learning / In-Context Learning
 **Keywords**: In-Context RL, Q-Learning, World Model, Dynamic Programming, Efficient Prompting
 

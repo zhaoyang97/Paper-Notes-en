@@ -19,8 +19,8 @@ content_hash: 00a8d3b9bbff64c7
 # CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention
 
 **Conference**: CVPR2026
-**arXiv**: [2603.18561](https://arxiv.org/abs/2603.18561)
-**Code**: To be released
+**arXiv**: [2603.18561](https://arxiv.org/abs/2603.18561)  
+**Code**: To be released  
 **Area**: Autonomous Driving
 **Keywords**: Causal Inference, Backdoor Adjustment, De-confounding, End-to-End Autonomous Driving, Sparse Vectorized Representation, VAD
 

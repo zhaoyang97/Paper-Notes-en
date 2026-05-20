@@ -18,8 +18,8 @@ content_hash: 6a2be872b7ef40c2
 # Domain-Skewed Federated Learning with Feature Decoupling and Calibration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14238](https://arxiv.org/abs/2603.14238)
-**Code**: [GitHub](https://github.com/mala-lab/F2DC)
+**arXiv**: [2603.14238](https://arxiv.org/abs/2603.14238)  
+**Code**: [GitHub](https://github.com/mala-lab/F2DC)  
 **Area**: AI Safety
 **Keywords**: Federated Learning, Domain Skew, Feature Decoupling, Domain-Aware Aggregation, Representation Calibration
 

@@ -19,9 +19,9 @@ content_hash: 0b4a6664b1247afe
 # Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization
 
 **Conference**: NeurIPS2025
-**arXiv**: [2506.02504](https://arxiv.org/abs/2506.02504)
+**arXiv**: [2506.02504](https://arxiv.org/abs/2506.02504)  
 **Authors**: Xingyu Chen, Bokun Wang, Ming Yang, Qihang Lin, Tianbao Yang (Texas A&M, Iowa)
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: Optimization
 **Keywords**: FCCO, non-smooth non-convex optimization, stochastic momentum methods, Moreau envelope, constrained optimization, compositional optimization
 

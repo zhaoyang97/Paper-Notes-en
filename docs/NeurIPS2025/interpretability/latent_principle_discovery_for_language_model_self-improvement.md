@@ -18,8 +18,8 @@ content_hash: 96a53fa0a0935c0f
 # Latent Principle Discovery for Language Model Self-Improvement
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16927](https://arxiv.org/abs/2505.16927)
-**Code**: None
+**arXiv**: [2505.16927](https://arxiv.org/abs/2505.16927)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Self-improvement, Latent principle discovery, EM algorithm, Constitutional AI, Self-correction
 

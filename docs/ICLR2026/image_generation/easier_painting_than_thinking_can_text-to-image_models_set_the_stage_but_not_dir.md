@@ -18,8 +18,8 @@ content_hash: 79e8be52a755d2b3
 # Easier Painting Than Thinking: Can Text-to-Image Models Set the Stage, but Not Direct the Play?
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.03516](https://arxiv.org/abs/2509.03516)
-**Code**: [GitHub](https://github.com/) (available, with Leaderboard and Benchmark)
+**arXiv**: [2509.03516](https://arxiv.org/abs/2509.03516)  
+**Code**: [GitHub](https://github.com/) (available, with Leaderboard and Benchmark)  
 **Area**: Text-to-Image Generation / Evaluation Benchmark
 **Keywords**: T2I evaluation, compositional generation, reasoning ability, benchmark, scene graph
 

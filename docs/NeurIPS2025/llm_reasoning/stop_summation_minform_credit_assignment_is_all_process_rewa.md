@@ -18,8 +18,8 @@ content_hash: ff66c3309ba82568
 # Stop Summation: Min-Form Credit Assignment Is All Process Reward Model Needs for Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.15275](https://arxiv.org/abs/2504.15275)
-**Code**: [github.com/CJReinforce/PURE](https://github.com/CJReinforce/PURE)
+**arXiv**: [2504.15275](https://arxiv.org/abs/2504.15275)  
+**Code**: [github.com/CJReinforce/PURE](https://github.com/CJReinforce/PURE)  
 **Area**: LLM Reasoning
 **Keywords**: Process Reward Model, Credit Assignment, Reward Hacking, Min-Form, Reinforcement Learning
 

@@ -19,8 +19,8 @@ content_hash: 20ff357a56175497
 # Fern: Chaining Spectral Pearls — Ellipsoidal Forecasting Beyond Trajectories for Time Series
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17370](https://arxiv.org/abs/2505.17370)
-**Code**: To be confirmed
+**arXiv**: [2505.17370](https://arxiv.org/abs/2505.17370)  
+**Code**: To be confirmed  
 **Area**: Time Series
 **Keywords**: long-term time series forecasting, optimal transport, Koopman operator, spectral decomposition, chaotic systems, Wasserstein distance
 

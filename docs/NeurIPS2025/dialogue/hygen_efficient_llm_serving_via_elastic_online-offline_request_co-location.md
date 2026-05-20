@@ -18,8 +18,8 @@ content_hash: 76e7097a655a9e31
 # HyGen: Efficient LLM Serving via Elastic Online-Offline Request Co-location
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.14808](https://arxiv.org/abs/2501.14808)
-**Code**: [https://github.com/UIUC-MLSys/HyGen](https://github.com/UIUC-MLSys/HyGen)
+**arXiv**: [2501.14808](https://arxiv.org/abs/2501.14808)  
+**Code**: [https://github.com/UIUC-MLSys/HyGen](https://github.com/UIUC-MLSys/HyGen)  
 **Area**: Dialogue Systems
 **Keywords**: online-offline co-location, latency prediction, SLO guarantee, prefix sharing, elastic scheduling
 

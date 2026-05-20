@@ -18,8 +18,8 @@ content_hash: b2738ca9a9d9217d
 # PhysSplat: Efficient Physics Simulation for 3D Scenes via MLLM-Guided Gaussian Splatting
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.12789](https://arxiv.org/abs/2411.12789)
-**Code**: [Project Page](https://github.com/PhysSplat)
+**arXiv**: [2411.12789](https://arxiv.org/abs/2411.12789)  
+**Code**: [Project Page](https://github.com/PhysSplat)  
 **Area**: Multimodal VLM
 **Keywords**: Physics Simulation, 3D Gaussian Splatting, MLLM, Physical Property Estimation, MPM
 

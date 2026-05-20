@@ -18,8 +18,8 @@ content_hash: ddabf4ea69ec0e9d
 # Towards a Universal Image Degradation Model via Content-Degradation Disentanglement
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.12860](https://arxiv.org/abs/2505.12860)
-**Code**: Unavailable (to be released on the authors' GitHub)
+**arXiv**: [2505.12860](https://arxiv.org/abs/2505.12860)  
+**Code**: Unavailable (to be released on the authors' GitHub)  
 **Area**: Image Restoration
 **Keywords**: Image degradation modeling, degradation disentanglement, inhomogeneous degradation, blind image restoration, film grain simulation
 
@@ -53,28 +53,28 @@ where $\mathbf{n}$ denotes a random state.
 
 1. **Homogeneous/Inhomogeneous Degradation Encoding (HDEN & IDEN)**:
 
-   - **HDEN (Homogeneous Degradation Encoding Network)**: A dual-branch architecture where the short-range branch operates at the original resolution (capturing small-receptive-field degradations such as noise) and the long-range branch operates at a downsampled resolution (capturing large-receptive-field degradations such as blur). Outputs are fused via an MLP into a global degradation vector $\mathbf{e}_g$.
-   - **IDEN (Inhomogeneous Degradation Encoding Network)**: The key innovation — the long-range branch is modified and the MLP tail is replaced by a CNN to preserve spatial structure. The output $\mathbf{e}_l$ is a spatially structured degradation map that encodes spatially varying degradation.
-   - **Design Motivation**: Different degradations require different receptive fields; the dual-branch design offers this flexibility. Preserving spatial information in IDEN is a prerequisite for modeling inhomogeneous degradation.
+    - **HDEN (Homogeneous Degradation Encoding Network)**: A dual-branch architecture where the short-range branch operates at the original resolution (capturing small-receptive-field degradations such as noise) and the long-range branch operates at a downsampled resolution (capturing large-receptive-field degradations such as blur). Outputs are fused via an MLP into a global degradation vector $\mathbf{e}_g$.
+    - **IDEN (Inhomogeneous Degradation Encoding Network)**: The key innovation — the long-range branch is modified and the MLP tail is replaced by a CNN to preserve spatial structure. The output $\mathbf{e}_l$ is a spatially structured degradation map that encodes spatially varying degradation.
+    - **Design Motivation**: Different degradations require different receptive fields; the dual-branch design offers this flexibility. Preserving spatial information in IDEN is a prerequisite for modeling inhomogeneous degradation.
 
 2. **IDA-SFT Degradation Synthesis Layer**:
 
-   - **IDA (Inhomogeneous Degradation-Aware) Layer**: An efficient approximation of spatially varying convolution. Although spatially varying kernels are ideal, their computational cost is prohibitive. IDA is implemented via depthwise convolution, downsampling, element-wise multiplication, and transposed convolution:
+    - **IDA (Inhomogeneous Degradation-Aware) Layer**: An efficient approximation of spatially varying convolution. Although spatially varying kernels are ideal, their computational cost is prohibitive. IDA is implemented via depthwise convolution, downsampling, element-wise multiplication, and transposed convolution:
      $$\text{IDA}(\mathbf{F}_{in}, \mathbf{e}) = \text{DConv}(\text{DS}(\text{DConv}(\mathbf{e})) \odot \text{DS}(\mathbf{F}_{in}))$$
      The paper demonstrates that a single IDA layer is more expressive than four depthwise separable convolutional layers.
-   - **IDA-SFT Composite Layer**: IDA and SFT (Spatial Feature Transform) are combined in parallel:
+    - **IDA-SFT Composite Layer**: IDA and SFT (Spatial Feature Transform) are combined in parallel:
      $$\text{IDA-SFT}(\mathbf{F}_{in}, \mathbf{e}, \mathbf{n}) = \text{IDA}(\mathbf{F}_{in}, \mathbf{e}) + \alpha(\mathbf{e}) \odot \mathbf{F}_{in} + \beta(\mathbf{e}, \mathbf{n})$$
      SFT excels at incorporating random states and homogeneous degradation, while IDA handles inhomogeneous degradation; the two are complementary. The synthesis network adopts a U-Net structure comprising multiple IDA-SFT blocks.
 
 3. **Disentangle-by-Compression**:
 
-   - Core innovation: Triple disentanglement is achieved by minimizing the **sum of marginal entropies** of the degradation embeddings:
+    - Core innovation: Triple disentanglement is achieved by minimizing the **sum of marginal entropies** of the degradation embeddings:
      $$\mathcal{L}_{rate\_g} = \sum_i H(e_g^{(i)}), \quad \mathcal{L}_{rate\_l} = \sum_{i,j} H(e_l^{(i,j)})$$
-   - Information-theoretic justification: $\sum_i H(e^{(i)}) = H(\mathbf{e}) + D_{KL}(p(\mathbf{e}) \| q(\mathbf{e}))$
+    - Information-theoretic justification: $\sum_i H(e^{(i)}) = H(\mathbf{e}) + D_{KL}(p(\mathbf{e}) \| q(\mathbf{e}))$
      - Minimizing $H(\mathbf{e})$: Since $H(\mathbf{e}) = I(\mathbf{e}; \mathbf{x}) + H(\mathbf{d})$, minimizing the embedding entropy is equivalent to reducing the mutual information between the embedding and the image content → **separating degradation from content**.
      - Minimizing $D_{KL}$: Encourages independence among embedding dimensions → **decoupling individual degradation components**.
-   - Separate constraints on homogeneous and inhomogeneous embeddings → **separating homogeneous from inhomogeneous degradation**.
-   - Probability densities are estimated via learned density estimators (separate estimators for $e_g$ and $e_l$).
+    - Separate constraints on homogeneous and inhomogeneous embeddings → **separating homogeneous from inhomogeneous degradation**.
+    - Probability densities are estimated via learned density estimators (separate estimators for $e_g$ and $e_l$).
 
 ### Loss & Training
 

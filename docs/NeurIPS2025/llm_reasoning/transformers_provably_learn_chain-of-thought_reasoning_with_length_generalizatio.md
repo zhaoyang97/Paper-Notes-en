@@ -18,8 +18,8 @@ content_hash: b970fecf6eea7166
 # Transformers Provably Learn Chain-of-Thought Reasoning with Length Generalization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.07378](https://arxiv.org/abs/2511.07378)
-**Code**: None
+**arXiv**: [2511.07378](https://arxiv.org/abs/2511.07378)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: CoT Theory, Length Generalization, Attention Concentration, State Tracking, Complexity Classes
 

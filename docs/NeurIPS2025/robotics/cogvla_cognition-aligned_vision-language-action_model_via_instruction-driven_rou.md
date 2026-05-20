@@ -18,8 +18,8 @@ content_hash: f8f5e681f45bff4a
 # CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.21046](https://arxiv.org/abs/2508.21046)
-**Code**: [https://jiutian-vl.github.io/CogVLA-page](https://jiutian-vl.github.io/CogVLA-page)
+**arXiv**: [2508.21046](https://arxiv.org/abs/2508.21046)  
+**Code**: [https://jiutian-vl.github.io/CogVLA-page](https://jiutian-vl.github.io/CogVLA-page)  
 **Area**: Robotics / Multimodal VLM
 **Keywords**: VLA, token routing, sparsification, instruction-driven, robotic manipulation
 

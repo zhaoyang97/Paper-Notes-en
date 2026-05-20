@@ -18,8 +18,8 @@ content_hash: afa4fc4488c7a1b3
 # Encoder-Decoder Diffusion Language Models for Efficient Training and Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22852](https://arxiv.org/abs/2510.22852)
-**Code**: [kuleshov-group/e2d2](https://github.com/kuleshov-group/e2d2)
+**arXiv**: [2510.22852](https://arxiv.org/abs/2510.22852)  
+**Code**: [kuleshov-group/e2d2](https://github.com/kuleshov-group/e2d2)  
 **Area**: Image Generation
 **Keywords**: discrete diffusion, encoder-decoder, block diffusion, language model, KV caching
 

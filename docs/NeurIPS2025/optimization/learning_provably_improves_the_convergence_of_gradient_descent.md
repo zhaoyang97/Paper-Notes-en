@@ -18,9 +18,9 @@ content_hash: ec9d889b396ea28c
 # Learning Provably Improves the Convergence of Gradient Descent
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.18092](https://arxiv.org/abs/2501.18092)
+**arXiv**: [2501.18092](https://arxiv.org/abs/2501.18092)  
 **Authors**: Qingyu Song (Xiamen University), Wei Lin, Hong Xu (CUHK)
-**Code**: [GitHub](https://github.com/NetX-lab/MathL2OProof-Official)
+**Code**: [GitHub](https://github.com/NetX-lab/MathL2OProof-Official)  
 **Area**: Optimization
 **Keywords**: Learn to Optimize, Gradient Descent, Neural Tangent Kernel, Convergence Proof, Initialization Strategy
 

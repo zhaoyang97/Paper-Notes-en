@@ -18,8 +18,8 @@ content_hash: 06f4d366ce993776
 # Learning to See Inside Opaque Liquid Containers using Speckle Vibrometry
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.20757](https://arxiv.org/abs/2507.20757)
-**Code**: [Project Page](https://matankic.github.io/see_inside_containers)
+**arXiv**: [2507.20757](https://arxiv.org/abs/2507.20757)  
+**Code**: [Project Page](https://matankic.github.io/see_inside_containers)  
 **Area**: Computational Imaging / Vibration Sensing
 **Keywords**: Speckle vibrometry, liquid level inference, Transformer, 2D grid sensing, non-contact detection
 

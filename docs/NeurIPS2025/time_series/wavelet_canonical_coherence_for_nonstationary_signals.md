@@ -18,8 +18,8 @@ content_hash: 8660b5baba6acffb
 # Wavelet Canonical Coherence for Nonstationary Signals
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.14253](https://arxiv.org/abs/2505.14253)
-**Code**: [Available](https://github.com/mhaibo/WaveCanCoh)
+**arXiv**: [2505.14253](https://arxiv.org/abs/2505.14253)  
+**Code**: [Available](https://github.com/mhaibo/WaveCanCoh)  
 **Area**: Time Series Analysis / Signal Processing
 **Keywords**: Wavelet Analysis, Canonical Coherence, Nonstationary Signals, Multivariate Time Series, Neuroscience
 

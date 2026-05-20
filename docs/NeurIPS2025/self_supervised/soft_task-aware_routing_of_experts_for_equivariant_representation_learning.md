@@ -17,8 +17,8 @@ content_hash: 8ec51411428f5805
 # Soft Task-Aware Routing of Experts for Equivariant Representation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.27222](https://arxiv.org/abs/2510.27222)
-**Code**: [https://github.com/YonseiML/star](https://github.com/YonseiML/star)
+**arXiv**: [2510.27222](https://arxiv.org/abs/2510.27222)  
+**Code**: [https://github.com/YonseiML/star](https://github.com/YonseiML/star)  
 **Area**: Self-Supervised Learning
 **Keywords**: equivariant representation, mixture of experts, self-supervised learning, redundant feature learning, routing
 

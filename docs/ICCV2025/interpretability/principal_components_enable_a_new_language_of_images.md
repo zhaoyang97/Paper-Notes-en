@@ -18,8 +18,8 @@ content_hash: 0e527cc1ce176ecf
 # "Principal Components" Enable A New Language of Images
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08685](https://arxiv.org/abs/2503.08685)
-**Code**: [https://github.com/visual-gen/semanticist](https://github.com/visual-gen/semanticist)
+**arXiv**: [2503.08685](https://arxiv.org/abs/2503.08685)  
+**Code**: [https://github.com/visual-gen/semanticist](https://github.com/visual-gen/semanticist)  
 **Area**: Visual Tokenization
 **Keywords**: visual tokenizer, principal component analysis, causal token sequence, diffusion decoder, autoregressive generation
 

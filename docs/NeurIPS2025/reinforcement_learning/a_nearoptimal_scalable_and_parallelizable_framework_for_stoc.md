@@ -18,8 +18,8 @@ content_hash: 8209ecad0fb505e4
 # A Near-optimal, Scalable and Parallelizable Framework for Stochastic Bandits Robust to Adversarial Corruptions and Beyond
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.07514](https://arxiv.org/abs/2502.07514)
-**Code**: None
+**arXiv**: [2502.07514](https://arxiv.org/abs/2502.07514)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: adversarial corruptions, multi-armed bandits, elimination-based algorithm, regret bound, parallelizable
 

@@ -18,8 +18,8 @@ content_hash: 18a059cc6153a545
 # Cue3D: Quantifying the Role of Image Cues in Single-Image 3D Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.22121](https://arxiv.org/abs/2511.22121)
-**Code**: [Available](https://ryanxli.github.io/cue3d)
+**arXiv**: [2511.22121](https://arxiv.org/abs/2511.22121)  
+**Code**: [Available](https://ryanxli.github.io/cue3d)  
 **Area**: 3D Vision
 **Keywords**: Single-image 3D generation, visual cues, interpretability, illumination, texture
 

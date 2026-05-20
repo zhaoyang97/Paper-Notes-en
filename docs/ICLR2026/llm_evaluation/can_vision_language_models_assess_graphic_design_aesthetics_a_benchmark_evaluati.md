@@ -18,8 +18,8 @@ content_hash: c56fab561e61d4f0
 # Can Vision–Language Models Assess Graphic Design Aesthetics? A Benchmark, Evaluation, and Dataset Perspective
 
 **Conference**: ICLR2026
-**arXiv**: [2603.01083](https://arxiv.org/abs/2603.01083)
-**Code**: [https://github.com/arctanxarc/AesEval-Bench](https://github.com/arctanxarc/AesEval-Bench)
+**arXiv**: [2603.01083](https://arxiv.org/abs/2603.01083)  
+**Code**: [https://github.com/arctanxarc/AesEval-Bench](https://github.com/arctanxarc/AesEval-Bench)  
 **Area**: LLM Evaluation
 **Keywords**: design aesthetics, VLM evaluation, benchmark, indicator-grounded reasoning, graphic design
 

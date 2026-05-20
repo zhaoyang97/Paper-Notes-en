@@ -18,8 +18,8 @@ content_hash: cadbc4ca7e523863
 # Single Pixel Image Classification using an Ultrafast Digital Light Projector
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.12036](https://arxiv.org/abs/2603.12036)
-**Code**: None
+**arXiv**: [2603.12036](https://arxiv.org/abs/2603.12036)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: Single-pixel imaging, image classification, microLED, Hadamard patterns, extreme learning machine
 

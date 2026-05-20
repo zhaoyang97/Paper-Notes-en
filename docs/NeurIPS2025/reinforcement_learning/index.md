@@ -20,7 +20,7 @@ tags:
 
 **🧠 NeurIPS2025** · **168** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (38)](../../ACL2026/reinforcement_learning/index.md) · [📷 CVPR2026 (19)](../../CVPR2026/reinforcement_learning/index.md) · [🔬 ICLR2026 (139)](../../ICLR2026/reinforcement_learning/index.md) · [🤖 AAAI2026 (71)](../../AAAI2026/reinforcement_learning/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/reinforcement_learning/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (20)](../../ICML2026/reinforcement_learning/index.md) · [💬 ACL2026 (22)](../../ACL2026/reinforcement_learning/index.md) · [📷 CVPR2026 (19)](../../CVPR2026/reinforcement_learning/index.md) · [🔬 ICLR2026 (138)](../../ICLR2026/reinforcement_learning/index.md) · [🤖 AAAI2026 (70)](../../AAAI2026/reinforcement_learning/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/reinforcement_learning/index.md)
 
 🔥 **Top topics:** Reinforcement Learning ×62 · Agents ×16 · Adversarial Robustness ×11 · Reasoning ×11 · LLM ×4
 
@@ -227,10 +227,6 @@ tags:
 **[Foundation Models as World Models: A Foundational Study in Text-Based GridWorlds](foundation_models_as_world_models_a_foundational_study_in_text-based_gridworlds.md)**
 
 :   This paper systematically evaluates foundation models (LLMs) as zero-shot world models (FWM) and direct decision-making agents (FA) in text-based gridworlds, revealing complementary advantages of the two strategies in deterministic and stochastic environments.
-
-**[Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits](gaussian_process_upper_confidence_bound_achieves_nearly-optimal_regret_in_noise-.md)**
-
-:   This paper proves that GP-UCB achieves nearly-optimal regret in the noise-free GP bandit problem, establishing for the first time $O(1)$ constant cumulative regret under the SE kernel and $O(1)$ cumulative regret under the Matérn kernel (when $d < \nu$), thereby closing a long-standing gap between the theory and practice of GP-UCB.
 
 **[Generalized Linear Bandits: Almost Optimal Regret with One-Pass Update](generalized_linear_bandits_almost_optimal_regret_with_one-pass_update.md)**
 
@@ -491,6 +487,10 @@ tags:
 **[RePIC: Reinforced Post-Training for Personalizing Multi-Modal Language Models](repic_reinforced_post-training_for_personalizing_multi-modal_language_models.md)**
 
 :   This paper proposes RePIC, the first reinforcement learning-based post-training framework for multimodal large language models targeting personalized image captioning, which significantly outperforms SFT-based methods in multi-concept scenarios.
+
+**[Note 5: ReSearch — Learning to Reason with Search](research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)**
+
+:   ReSearch embeds search operations as first-class primitives within reasoning chains and leverages GRPO reinforcement learning to automatically learn when and how to search—without any supervision on intermediate reasoning steps—achieving an average relative improvement of 15.81% over baselines on multi-hop QA benchmarks.
 
 **[Retrosynthesis Planning via Worst-path Policy Optimisation in Tree-structured MDPs](retrosynthesis_planning_via_worst-path_policy_optimisation_in_tree-structured_md.md)**
 

@@ -18,8 +18,8 @@ content_hash: ca5bab06d42aa114
 # An Iterative Utility Judgment Framework Inspired by Philosophical Relevance via LLMs
 
 **Conference**: ACL 2026
-**arXiv**: [2406.11290](https://arxiv.org/abs/2406.11290)
-**Code**: [GitHub](https://github.com/Trustworthy-Information-Access/ITEM)
+**arXiv**: [2406.11290](https://arxiv.org/abs/2406.11290)  
+**Code**: [GitHub](https://github.com/Trustworthy-Information-Access/ITEM)  
 **Area**: Information Retrieval / RAG
 **Keywords**: utility judgment, philosophical relevance theory, iterative framework, RAG optimization, LLM reasoning
 

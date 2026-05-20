@@ -18,8 +18,8 @@ content_hash: 97e1178f4fd33c3b
 # ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition
 
 **Conference**: ACL 2026
-**arXiv**: [2503.21248](https://arxiv.org/abs/2503.21248)
-**Code**: None
+**arXiv**: [2503.21248](https://arxiv.org/abs/2503.21248)  
+**Code**: None  
 **Area**: Scientific Discovery
 **Keywords**: Scientific discovery, inspiration retrieval, hypothesis generation, LLM benchmark, interdisciplinary
 

@@ -18,8 +18,8 @@ content_hash: a543fd08d39731d3
 # Explaining Decentralized Multi-Agent Reinforcement Learning Policies
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10409](https://arxiv.org/abs/2511.10409)
-**Code**: None
+**arXiv**: [2511.10409](https://arxiv.org/abs/2511.10409)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Explainable AI, Multi-Agent Reinforcement Learning, Decentralized Policies, Hasse Diagram, Policy Summarization
 

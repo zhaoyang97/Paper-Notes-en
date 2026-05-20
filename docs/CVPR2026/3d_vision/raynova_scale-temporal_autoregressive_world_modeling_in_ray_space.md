@@ -18,9 +18,9 @@ content_hash: 3c1352b97bb323a1
 # RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20685](https://arxiv.org/abs/2602.20685)
+**arXiv**: [2602.20685](https://arxiv.org/abs/2602.20685)  
 **Authors**: Yichen Xie, Chensheng Peng, Mazen Abdelfattah, Yihan Hu et al. (Applied Intuition, UC Berkeley)
-**Code**: [Project Page](https://raynova-ai.github.io/)
+**Code**: [Project Page](https://raynova-ai.github.io/)  
 **Area**: 3D Vision
 **Keywords**: World Model, Multi-View Video Generation, Autoregressive, Plücker Rays, Autonomous Driving
 

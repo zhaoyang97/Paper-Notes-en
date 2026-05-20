@@ -18,8 +18,8 @@ content_hash: 53dc5324c8f8dd01
 # LoRA-Edit: Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.10082](https://arxiv.org/abs/2506.10082)
-**Code**: [Project Page](https://cjeen.github.io/LoRAEdit)
+**arXiv**: [2506.10082](https://arxiv.org/abs/2506.10082)  
+**Code**: [Project Page](https://cjeen.github.io/LoRAEdit)  
 **Area**: Video Editing
 **Keywords**: video editing, LoRA fine-tuning, first-frame guidance, spatiotemporal mask, appearance control
 
@@ -41,21 +41,21 @@ LoRA-Edit trains LoRA under two complementary mask configurations: motion learni
 
 1. **Dual Role of the Mask**:
 
-   - **As an instruction**: informs the model which regions to preserve (mask=1) and which to generate (mask=0), enhancing the model's responsiveness to mask signals.
-   - **As a learning guide**: by masking different content, it directs LoRA to focus on either motion patterns or target appearance.
+    - **As an instruction**: informs the model which regions to preserve (mask=1) and which to generate (mask=0), enhancing the model's responsiveness to mask signals.
+    - **As a learning guide**: by masking different content, it directs LoRA to focus on either motion patterns or target appearance.
    Exploratory analysis shows that the original I2V model can handle simple full-frame instructions but fails at selective spatial editing (foreground masks)—LoRA fine-tuning is required to augment this capability.
 
 2. **Decoupling Editing from Background (Motion Learning)**:
 
-   - During training: the first frame is preserved with mask=1; subsequent frames use foreground/background masks—unedited regions=1, edited regions=0.
-   - $\mathbf{V}_{\text{cond}}$ is constructed by applying the mask to the input video; $\mathbf{V}_{\text{target}}$ is the original video.
-   - Under mask guidance, LoRA learns to preserve the background and generate content in the foreground region consistent with the source video's motion.
+    - During training: the first frame is preserved with mask=1; subsequent frames use foreground/background masks—unedited regions=1, edited regions=0.
+    - $\mathbf{V}_{\text{cond}}$ is constructed by applying the mask to the input video; $\mathbf{V}_{\text{target}}$ is the original video.
+    - Under mask guidance, LoRA learns to preserve the background and generate content in the foreground region consistent with the source video's motion.
 
 3. **Appearance Control (Appearance Learning)**:
 
-   - When the edited region rotates, deforms, or follows its own motion trajectory, the first frame alone is insufficient to infer subsequent appearance.
-   - Users are allowed to edit arbitrary subsequent frames as additional references.
-   - During training, edited frames are used as $\mathbf{V}_{\text{target}}$; multiple edited frames are treated as independent static images to avoid erroneous temporal dynamics inference.
+    - When the edited region rotates, deforms, or follows its own motion trajectory, the first frame alone is insufficient to infer subsequent appearance.
+    - Users are allowed to edit arbitrary subsequent frames as additional references.
+    - During training, edited frames are used as $\mathbf{V}_{\text{target}}$; multiple edited frames are treated as independent static images to avoid erroneous temporal dynamics inference.
 
 ### Loss & Training
 Modified flow matching objective:

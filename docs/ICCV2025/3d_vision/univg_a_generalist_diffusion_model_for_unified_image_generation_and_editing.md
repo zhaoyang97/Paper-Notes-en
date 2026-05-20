@@ -18,8 +18,8 @@ content_hash: 123dea3dba4ccc29
 # UniVG: A Generalist Diffusion Model for Unified Image Generation and Editing
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.12652](https://arxiv.org/abs/2503.12652)
-**Code**: Unavailable
+**arXiv**: [2503.12652](https://arxiv.org/abs/2503.12652)  
+**Code**: Unavailable  
 **Area**: 3D Vision
 **Keywords**: Unified generative model, MM-DiT, multi-task training, instruction-based editing, Flow Matching
 

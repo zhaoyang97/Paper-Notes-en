@@ -18,8 +18,8 @@ content_hash: 1fb5bafd0a7795fd
 # 3D Test-time Adaptation via Graph Spectral Driven Point Shift
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.18225](https://arxiv.org/abs/2507.18225)
-**Code**: Unavailable (not provided in the paper)
+**arXiv**: [2507.18225](https://arxiv.org/abs/2507.18225)  
+**Code**: Unavailable (not provided in the paper)  
 **Area**: 3D Vision / Domain Adaptation
 **Keywords**: Test-time adaptation, graph spectral analysis, point cloud classification, graph Fourier transform, feature map guided self-training
 **Authors**: Xin Wei, Qin Yang, Yijie Fang, Mingrui Zhu, Nannan Wang (Xidian University)

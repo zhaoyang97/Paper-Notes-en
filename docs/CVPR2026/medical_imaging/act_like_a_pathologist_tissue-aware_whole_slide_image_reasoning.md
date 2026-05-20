@@ -18,7 +18,7 @@ content_hash: da64ac122053a6de
 # Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00667](https://arxiv.org/abs/2603.00667)
+**arXiv**: [2603.00667](https://arxiv.org/abs/2603.00667)  
 **Authors**: Wentao Huang et al. (Stony Brook University, Mayo Clinic, Harvard/MGH, Stanford)
 **Area**: Medical Imaging / Pathology VQA
 **Keywords**: Whole Slide Image, Visual Question Answering, Information Bottleneck, Patch Selection, Tissue-Aware Reasoning

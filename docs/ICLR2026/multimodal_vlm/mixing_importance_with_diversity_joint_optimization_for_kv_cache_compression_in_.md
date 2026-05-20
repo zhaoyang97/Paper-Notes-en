@@ -18,8 +18,8 @@ content_hash: 4186b7bf1a0714f6
 # Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.20707](https://arxiv.org/abs/2510.20707)
-**Code**: [GitHub](https://github.com/xuyang-liu16/MixKV)
+**arXiv**: [2510.20707](https://arxiv.org/abs/2510.20707)  
+**Code**: [GitHub](https://github.com/xuyang-liu16/MixKV)  
 **Area**: Multimodal VLM / Inference Efficiency
 **Keywords**: KV Cache Compression, Semantic Redundancy, Diversity, Attention Heads, Vision-Language Models
 
@@ -47,21 +47,21 @@ MixKV is a plug-and-play framework: it computes an importance score and a divers
 
 1. **Head-wise Redundancy Quantification**:
 
-   - Function: Computes the off-diagonal mean cosine similarity $\bar{r}_h^l$ of normalized Key vectors for each attention head.
-   - Mechanism: Exploits the algebraic identity $\sum_{i,j} R_{i,j} = T^2 \|\hat{\bar{K}}_h^l\|_2^2$ to compute $\bar{r}_h^l = \frac{T^2\|\hat{\bar{K}}_h^l\|_2^2 - T}{T(T-1)}$ in $O(T)$ time.
-   - Design Motivation: $\bar{r} \to 1$ indicates a highly redundant head where diversity should be emphasized; $\bar{r} \to 0$ indicates an already diverse head where importance should be prioritized.
+    - Function: Computes the off-diagonal mean cosine similarity $\bar{r}_h^l$ of normalized Key vectors for each attention head.
+    - Mechanism: Exploits the algebraic identity $\sum_{i,j} R_{i,j} = T^2 \|\hat{\bar{K}}_h^l\|_2^2$ to compute $\bar{r}_h^l = \frac{T^2\|\hat{\bar{K}}_h^l\|_2^2 - T}{T(T-1)}$ in $O(T)$ time.
+    - Design Motivation: $\bar{r} \to 1$ indicates a highly redundant head where diversity should be emphasized; $\bar{r} \to 0$ indicates an already diverse head where importance should be prioritized.
 
 2. **Diversity Score**:
 
-   - Function: Measures each Key's dissimilarity from the global mean Key as a diversity score.
-   - Mechanism: $s_i^{\text{div}} = -\hat{K}_{h,i}^l \cdot \hat{\bar{K}}_h^l$ — keys less similar to the mean receive higher scores.
-   - Design Motivation: $O(T)$ complexity, requiring no pairwise comparisons.
+    - Function: Measures each Key's dissimilarity from the global mean Key as a diversity score.
+    - Mechanism: $s_i^{\text{div}} = -\hat{K}_{h,i}^l \cdot \hat{\bar{K}}_h^l$ — keys less similar to the mean receive higher scores.
+    - Design Motivation: $O(T)$ complexity, requiring no pairwise comparisons.
 
 3. **Head-wise Adaptive Mixing**:
 
-   - Function: Combines importance and diversity scores weighted by per-head redundancy.
-   - Mechanism: $s_i^{\text{comp}} = (1-\bar{r}_h^l) \cdot s_{\text{imp},i} + \bar{r}_h^l \cdot s_{\text{scaled},i}^{\text{div}}$
-   - Design Motivation: Higher redundancy increases the diversity weight, preventing retention of overly similar KV pairs.
+    - Function: Combines importance and diversity scores weighted by per-head redundancy.
+    - Mechanism: $s_i^{\text{comp}} = (1-\bar{r}_h^l) \cdot s_{\text{imp},i} + \bar{r}_h^l \cdot s_{\text{scaled},i}^{\text{div}}$
+    - Design Motivation: Higher redundancy increases the diversity weight, preventing retention of overly similar KV pairs.
 
 ### Importance Score Enhancement
 Intrinsic (VNorm) and extrinsic (attention window) importance are jointly integrated: $s_{\text{imp}} = s_{\text{imp}}^{\text{ex}} + s_{\text{imp}}^{\text{in}}$

@@ -18,8 +18,8 @@ content_hash: 6303c90313b44d66
 # A Real-world Display Inverse Rendering Dataset
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.14411](https://arxiv.org/abs/2508.14411)
-**Code**: [https://michaelcsj.github.io/DIR/](https://michaelcsj.github.io/DIR/)
+**arXiv**: [2508.14411](https://arxiv.org/abs/2508.14411)  
+**Code**: [https://michaelcsj.github.io/DIR/](https://michaelcsj.github.io/DIR/)  
 **Area**: Computer Vision / Inverse Rendering
 **Keywords**: Inverse Rendering, Display-Camera System, OLAT Illumination, Polarization Imaging, Photometric Stereo
 

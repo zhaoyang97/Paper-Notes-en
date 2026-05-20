@@ -18,8 +18,8 @@ content_hash: 3860bc305b9ec013
 # Finite-Sample Analysis of Policy Evaluation for Robust Average Reward Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.16816](https://arxiv.org/abs/2502.16816)
-**Code**: None
+**arXiv**: [2502.16816](https://arxiv.org/abs/2502.16816)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Robust Reinforcement Learning, Average Reward MDP, Policy Evaluation, Finite-Sample Analysis, Semi-norm Contraction
 

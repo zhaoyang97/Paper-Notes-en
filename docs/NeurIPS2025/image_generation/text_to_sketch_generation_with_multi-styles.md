@@ -18,8 +18,8 @@ content_hash: 0b0112dbe95c39be
 # Text to Sketch Generation with Multi-Styles
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.04123](https://arxiv.org/abs/2511.04123)
-**Code**: [GitHub](https://github.com/CMACH508/M3S)
+**arXiv**: [2511.04123](https://arxiv.org/abs/2511.04123)  
+**Code**: [GitHub](https://github.com/CMACH508/M3S)  
 **Area**: Image Generation, Style Transfer, Sketch Synthesis
 **Keywords**: Sketch Generation, Multi-Style Synthesis, Diffusion Models, K/V Injection, AdaIN
 

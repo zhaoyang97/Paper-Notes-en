@@ -18,8 +18,8 @@ content_hash: 6c16cc5c0c60f1c7
 # Out of Control -- Why Alignment Needs Formal Control Theory (and an Alignment Control Stack)
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.17846](https://arxiv.org/abs/2506.17846)
-**Code**: None
+**arXiv**: [2506.17846](https://arxiv.org/abs/2506.17846)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: AI alignment, control theory, alignment control stack, formal verification, stochastic optimal control
 

@@ -18,8 +18,8 @@ content_hash: 0b33b286dba03583
 # GLYPH-SR: Can We Achieve Both High-Quality Image Super-Resolution and High-Fidelity Text Recovery via VLM-Guided Latent Diffusion Model?
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.26339](https://arxiv.org/abs/2510.26339)
-**Code**: Available (noted for release in the paper)
+**arXiv**: [2510.26339](https://arxiv.org/abs/2510.26339)  
+**Code**: Available (noted for release in the paper)  
 **Area**: Diffusion Models
 **Keywords**: Image Super-Resolution, Scene Text Recovery, ControlNet, Diffusion Models, OCR
 

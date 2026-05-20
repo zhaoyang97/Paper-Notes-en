@@ -18,8 +18,8 @@ content_hash: 07dfba9132b28a42
 # Function Spaces Without Kernels: Learning Compact Hilbert Space Representations
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.20605](https://arxiv.org/abs/2509.20605)
-**Code**: [Available](https://github.com/suann124/function_encoder_kernels)
+**arXiv**: [2509.20605](https://arxiv.org/abs/2509.20605)  
+**Code**: [Available](https://github.com/suann124/function_encoder_kernels)  
 **Area**: LLM Evaluation
 **Keywords**: function encoders, kernel methods, Hilbert space, generalization bounds, PCA-guided basis selection
 

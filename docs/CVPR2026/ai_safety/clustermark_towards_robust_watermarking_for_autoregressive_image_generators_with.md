@@ -18,8 +18,8 @@ content_hash: 9b05c98c8cb0dd0f
 # ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.06656](https://arxiv.org/abs/2508.06656)
-**Code**: [https://github.com/lukovnikov/ClusterMark](https://github.com/lukovnikov/ClusterMark)
+**arXiv**: [2508.06656](https://arxiv.org/abs/2508.06656)  
+**Code**: [https://github.com/lukovnikov/ClusterMark](https://github.com/lukovnikov/ClusterMark)  
 **Area**: AI Security / Image Watermarking
 **Keywords**: Autoregressive image generation, watermark detection, visual token clustering, robust watermarking, VQ-VAE
 

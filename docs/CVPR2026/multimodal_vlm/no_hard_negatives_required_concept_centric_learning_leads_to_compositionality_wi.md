@@ -18,8 +18,8 @@ content_hash: 59ba6ecc392ba35d
 # No Hard Negatives Required: Concept Centric Learning Leads to Compositionality without Degrading Zero-shot Capabilities of Contrastive Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25722](https://arxiv.org/abs/2603.25722)
-**Code**: [https://github.com/SamsungLabs/concept_centric_clip](https://github.com/SamsungLabs/concept_centric_clip)
+**arXiv**: [2603.25722](https://arxiv.org/abs/2603.25722)  
+**Code**: [https://github.com/SamsungLabs/concept_centric_clip](https://github.com/SamsungLabs/concept_centric_clip)  
 **Area**: Multimodal VLM / Contrastive Learning
 **Keywords**: Compositional understanding, contrastive learning, CLIP fine-tuning, noun phrases, zero-shot generalization
 
@@ -32,9 +32,9 @@ C2LIP proposes a contrastive learning fine-tuning approach that requires no hard
 1. **Background**: Contrastive vision-language models (CLIP, SigLIP) are foundational to computer vision, supporting open-world tasks such as zero-shot classification and retrieval.
 
 2. **Limitations of Prior Work**:
-   - **Poor compositional understanding**: CLIP tends to learn Bag-of-Words (BoW) representations and cannot distinguish "a red couch" from "a couch next to a red object," failing to correctly bind nouns and attributes.
-   - **Limitations of hard negative approaches**: Existing methods (NegCLIP, DAC, SLVC, etc.) improve compositionality via hard-negative fine-tuning, but (a) are effective only on specific benchmarks with poor generalization; (b) severely degrade zero-shot classification and retrieval performance; and (c) require complex data generation pipelines involving LLMs and text-to-image models.
-   - **Architectural issue**: The final global pooling operations in both text and visual encoders mix noun and attribute information across regions, causing binding relationships to be irreversibly lost.
+    - **Poor compositional understanding**: CLIP tends to learn Bag-of-Words (BoW) representations and cannot distinguish "a red couch" from "a couch next to a red object," failing to correctly bind nouns and attributes.
+    - **Limitations of hard negative approaches**: Existing methods (NegCLIP, DAC, SLVC, etc.) improve compositionality via hard-negative fine-tuning, but (a) are effective only on specific benchmarks with poor generalization; (b) severely degrade zero-shot classification and retrieval performance; and (c) require complex data generation pipelines involving LLMs and text-to-image models.
+    - **Architectural issue**: The final global pooling operations in both text and visual encoders mix noun and attribute information across regions, causing binding relationships to be irreversibly lost.
 
 3. **Key Challenge**: Long descriptive captions do not inherently require compositional representations for contrastive learning (BoW suffices), while global pooling destroys binding information — these two fundamental causes make compositionality impossible to address through simple post-hoc hard-negative training.
 
@@ -54,21 +54,21 @@ C2LIP fine-tunes SigLIP while keeping the original global contrastive loss $\mat
 
 1. **Noun-Phrase Concept Contrastive Loss ($\mathcal{L}_{npc}$)**:
 
-   - **Function**: Forces the model to encode all concept information into the global visual representation.
-   - **Mechanism**: Noun phrases (e.g., "a red couch") are extracted from each caption using spaCy; the corresponding text tokens are pooled to obtain concept embeddings $\{c_k\}$. Each image's visual embedding $v$ is contrasted against all its noun-phrase concepts via a multi-positive contrastive objective (extending SigLIP's sigmoid loss to support multiple positives). Short noun phrases cannot be resolved by BoW ("a red couch" requires distinguishing a red couch from a couch near a red object), compelling the model to learn more discriminative representations.
-   - **Design Motivation**: Addresses the first root cause — long captions do not require compositionality. Noun phrases are short enough to defeat BoW shortcuts, and they use real data positives rather than synthetic hard negatives, minimizing distributional shift.
+    - **Function**: Forces the model to encode all concept information into the global visual representation.
+    - **Mechanism**: Noun phrases (e.g., "a red couch") are extracted from each caption using spaCy; the corresponding text tokens are pooled to obtain concept embeddings $\{c_k\}$. Each image's visual embedding $v$ is contrasted against all its noun-phrase concepts via a multi-positive contrastive objective (extending SigLIP's sigmoid loss to support multiple positives). Short noun phrases cannot be resolved by BoW ("a red couch" requires distinguishing a red couch from a couch near a red object), compelling the model to learn more discriminative representations.
+    - **Design Motivation**: Addresses the first root cause — long captions do not require compositionality. Noun phrases are short enough to defeat BoW shortcuts, and they use real data positives rather than synthetic hard negatives, minimizing distributional shift.
 
 2. **Cross-Modal Attention Pooling + Cross-Attention Concept Loss ($\mathcal{L}_{xac}$)**:
 
-   - **Function**: Learns concept binding before global pooling.
-   - **Mechanism**: The value projection and MLP from SigLIP's attention pooling layer are reused to project visual tokens into the joint space, yielding $\bar{V}'$. Noun-phrase concept embeddings $c$ serve as queries in a cross-attention operation over $\bar{V}'$, producing concept-specific visual embeddings $\hat{v}(c) = \bar{V}'^T \cdot \text{attn}(c, \bar{V}')$. A contrastive loss analogous to $\mathcal{L}_{npc}$ then aligns $\hat{v}(c_k)$ with $c_k$. Since the attention pooling has **no learnable parameters**, the learning signal is propagated directly to pre-pooling visual representations.
-   - **Design Motivation**: Addresses the second root cause — global pooling destroys binding information. Establishing concept-visual correspondences before pooling enables the encoder to internally learn compositional representations. The parameter-free design ensures zero inference overhead.
+    - **Function**: Learns concept binding before global pooling.
+    - **Mechanism**: The value projection and MLP from SigLIP's attention pooling layer are reused to project visual tokens into the joint space, yielding $\bar{V}'$. Noun-phrase concept embeddings $c$ serve as queries in a cross-attention operation over $\bar{V}'$, producing concept-specific visual embeddings $\hat{v}(c) = \bar{V}'^T \cdot \text{attn}(c, \bar{V}')$. A contrastive loss analogous to $\mathcal{L}_{npc}$ then aligns $\hat{v}(c_k)$ with $c_k$. Since the attention pooling has **no learnable parameters**, the learning signal is propagated directly to pre-pooling visual representations.
+    - **Design Motivation**: Addresses the second root cause — global pooling destroys binding information. Establishing concept-visual correspondences before pooling enables the encoder to internally learn compositional representations. The parameter-free design ensures zero inference overhead.
 
 3. **Total Training Loss**:
 
-   - **Function**: Balances global alignment, concept alignment, and cross-modal concept binding.
-   - **Mechanism**: $\mathcal{L}_{total} = \mathcal{L}_{contrastive} + \lambda_{npc}\mathcal{L}_{npc} + \lambda_{xac}\mathcal{L}_{xac}$, where $\lambda_{npc} = 1$ and $\lambda_{xac} = 0.01$.
-   - **Design Motivation**: The small $\lambda_{xac}$ reflects that the cross-attention loss already produces sufficiently strong gradient signals; larger values would degrade global representation quality.
+    - **Function**: Balances global alignment, concept alignment, and cross-modal concept binding.
+    - **Mechanism**: $\mathcal{L}_{total} = \mathcal{L}_{contrastive} + \lambda_{npc}\mathcal{L}_{npc} + \lambda_{xac}\mathcal{L}_{xac}$, where $\lambda_{npc} = 1$ and $\lambda_{xac} = 0.01$.
+    - **Design Motivation**: The small $\lambda_{xac}$ reflects that the cross-attention loss already produces sufficiently strong gradient signals; larger values would degrade global representation quality.
 
 ### Loss & Training
 

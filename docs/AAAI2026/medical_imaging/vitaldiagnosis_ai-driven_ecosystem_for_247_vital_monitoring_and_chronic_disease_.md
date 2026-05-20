@@ -18,8 +18,8 @@ content_hash: 5d03a521739c0b6f
 # VitalDiagnosis: AI-Driven Ecosystem for 24/7 Vital Monitoring and Chronic Disease Management
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.15798](https://arxiv.org/abs/2601.15798)
-**Code**: [Demo Repository](https://tinyurl.com/5n83hcrz)
+**arXiv**: [2601.15798](https://arxiv.org/abs/2601.15798)  
+**Code**: [Demo Repository](https://tinyurl.com/5n83hcrz)  
 **Area**: Medical AI / Chronic Disease Management
 **Keywords**: LLM-based medical systems, wearable devices, chronic disease management, dual-track framework, personalized medicine
 

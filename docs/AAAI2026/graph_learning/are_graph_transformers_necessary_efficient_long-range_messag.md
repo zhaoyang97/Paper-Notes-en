@@ -20,8 +20,8 @@ content_hash: 2484dd4abbe87feb
 # Are Graph Transformers Necessary? Efficient Long-Range Message Passing with Fractal Nodes in MPNNs
 
 **Conference**: AAAI 2026 (Oral)
-**arXiv**: [2511.13010](https://arxiv.org/abs/2511.13010)
-**Code**: [https://github.com/jeongwhanchoi/MPNN-FN](https://github.com/jeongwhanchoi/MPNN-FN)
+**arXiv**: [2511.13010](https://arxiv.org/abs/2511.13010)  
+**Code**: [https://github.com/jeongwhanchoi/MPNN-FN](https://github.com/jeongwhanchoi/MPNN-FN)  
 **Area**: Graph Neural Networks / Message Passing
 **Keywords**: Fractal Nodes, MPNN, Long-Range Dependencies, Over-Squashing, Graph Partitioning, MLP-Mixer, METIS
 

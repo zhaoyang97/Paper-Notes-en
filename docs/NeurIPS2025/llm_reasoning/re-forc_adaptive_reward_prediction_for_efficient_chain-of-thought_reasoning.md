@@ -19,8 +19,8 @@ content_hash: 32b9c4068cc7a7e9
 # Re-FORC: Adaptive Reward Prediction for Efficient Chain-of-Thought Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02130](https://arxiv.org/abs/2511.02130)
-**Code**: Available
+**arXiv**: [2511.02130](https://arxiv.org/abs/2511.02130)  
+**Code**: Available  
 **Area**: LLM Reasoning
 **Keywords**: chain-of-thought, reasoning efficiency, reward prediction, adaptive computation, test-time compute allocation, Gittins index
 

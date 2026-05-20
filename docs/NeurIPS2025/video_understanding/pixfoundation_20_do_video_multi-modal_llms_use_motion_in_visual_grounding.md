@@ -18,8 +18,8 @@ content_hash: c5866b49e0411cf0
 # PixFoundation 2.0: Do Video Multi-Modal LLMs Use Motion in Visual Grounding?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.02807](https://arxiv.org/abs/2509.02807)
-**Code**: [https://github.com/MSiam/PixFoundation-2.0](https://github.com/MSiam/PixFoundation-2.0)
+**arXiv**: [2509.02807](https://arxiv.org/abs/2509.02807)  
+**Code**: [https://github.com/MSiam/PixFoundation-2.0](https://github.com/MSiam/PixFoundation-2.0)  
 **Area**: Video Understanding / Visual Grounding
 **Keywords**: Motion-centric evaluation, visual grounding, video MLLM, referring segmentation, motion understanding
 

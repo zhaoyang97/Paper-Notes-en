@@ -19,8 +19,8 @@ content_hash: 46ee1d9511bbac17
 # Spatial-Temporal Aware Visuomotor Diffusion Policy Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.06710](https://arxiv.org/abs/2507.06710)
-**Code**: [Project Page](https://ZhenyangLiu.github.io/DP4)
+**arXiv**: [2507.06710](https://arxiv.org/abs/2507.06710)  
+**Code**: [Project Page](https://ZhenyangLiu.github.io/DP4)  
 **Area**: 3D Vision / Robot Manipulation
 **Keywords**: Visual Imitation Learning, Diffusion Policy, 3D Gaussian Splatting, 4D Spatial-Temporal Awareness, World Model, Dexterous Manipulation
 

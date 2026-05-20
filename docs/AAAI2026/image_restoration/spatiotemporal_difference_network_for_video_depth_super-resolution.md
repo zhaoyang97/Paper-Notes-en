@@ -18,8 +18,8 @@ content_hash: b013039b64f5ac14
 # SpatioTemporal Difference Network for Video Depth Super-Resolution
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01259](https://arxiv.org/abs/2508.01259)
-**Code**: [yanzq95/STDNet](https://github.com/yanzq95/STDNet)
+**arXiv**: [2508.01259](https://arxiv.org/abs/2508.01259)  
+**Code**: [yanzq95/STDNet](https://github.com/yanzq95/STDNet)  
 **Area**: Image Restoration
 **Keywords**: Video Depth Super-Resolution, Long-tail Distribution, Spatial Difference, Temporal Difference, Deformable Convolution
 

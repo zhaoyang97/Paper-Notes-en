@@ -18,8 +18,8 @@ content_hash: 133f22411387568a
 # RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.14968](https://arxiv.org/abs/2510.14968)
-**Code**: [rdd-neurips.github.io](https://rdd-neurips.github.io)
+**arXiv**: [2510.14968](https://arxiv.org/abs/2510.14968)  
+**Code**: [rdd-neurips.github.io](https://rdd-neurips.github.io)  
 **Area**: Robotics
 **Keywords**: Hierarchical VLA, Task Decomposition, Retrieval-Based Alignment, Dynamic Programming, Long-Horizon Manipulation
 

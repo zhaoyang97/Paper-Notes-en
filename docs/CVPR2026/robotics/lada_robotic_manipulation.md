@@ -18,8 +18,8 @@ content_hash: 02bc15844bcf17fd
 # Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12967](https://arxiv.org/abs/2603.12967)
-**Code**: N/A
+**arXiv**: [2603.12967](https://arxiv.org/abs/2603.12967)  
+**Code**: N/A  
 **Area**: Robotic Manipulation
 **Keywords**: action decoupling, language semantic bridge, soft-label contrastive learning, VLA, cross-task generalization
 

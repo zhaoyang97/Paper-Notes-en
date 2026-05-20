@@ -18,8 +18,8 @@ content_hash: e5d62ef9881386b5
 # Beyond Masked and Unmasked: Discrete Diffusion Models via Partial Masking
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18495](https://arxiv.org/abs/2505.18495)
-**Code**: None
+**arXiv**: [2505.18495](https://arxiv.org/abs/2505.18495)  
+**Code**: None  
 **Area**: Image Generation / Discrete Diffusion
 **Keywords**: discrete diffusion models, masked diffusion, partial masking, sub-tokens, text generation
 
@@ -48,19 +48,19 @@ MDM-Prime consists of three steps: (1) each token $x_0^i \in \mathcal{X}$ is map
 ### Key Designs
 
 1. **Partial Masking Scheme (Prime)**:
-   - **Function**: Introduces intermediate states into discrete diffusion.
-   - **Mechanism**: Token $x_0^i$ is encoded as a sub-token sequence $\mathbf{y}_0^i = f(x_0^i)$; independent masking of sub-tokens produces intermediate states. For example, a 4-class token encoded with 2 bits yields intermediate states such as "m0" or "1m", providing partial information. The number of intermediate states is $(b+1)^\ell - (C+1)$, which is always positive.
-   - **Design Motivation**: Intermediate states allow the model to make more precise predictions based on partially revealed token information, reducing idle steps. Theoretical analysis proves that idle steps decrease monotonically as $\ell$ increases.
+    - **Function**: Introduces intermediate states into discrete diffusion.
+    - **Mechanism**: Token $x_0^i$ is encoded as a sub-token sequence $\mathbf{y}_0^i = f(x_0^i)$; independent masking of sub-tokens produces intermediate states. For example, a 4-class token encoded with 2 bits yields intermediate states such as "m0" or "1m", providing partial information. The number of intermediate states is $(b+1)^\ell - (C+1)$, which is always positive.
+    - **Design Motivation**: Intermediate states allow the model to make more precise predictions based on partially revealed token information, reducing idle steps. Theoretical analysis proves that idle steps decrease monotonically as $\ell$ increases.
 
 2. **Joint Probability Parameterization**:
-   - **Function**: Models dependencies among sub-tokens and prevents the generation of invalid samples.
-   - **Mechanism**: The joint distribution $p_\theta(\mathbf{y}_0^i|\mathbf{y}_t)$ is parameterized directly, assigning probability mass only to valid base-$b$ encodings ($\mathbf{y}_0^i \in f(\mathcal{X})$) and explicitly zeroing out logits outside $|\mathcal{V}(\mathbf{y}_t^i)|$. A carry-over constraint is also enforced, keeping already-revealed sub-tokens fixed.
-   - **Design Motivation**: Independent parameterization via $\prod_j p_\theta(y_0^{i,j}|\mathbf{y}_t)$ not only introduces an erroneous independence assumption (causing distributional degeneracy) but may also generate invalid sub-token combinations (e.g., under the GPT-2 vocabulary of 50,257 tokens).
+    - **Function**: Models dependencies among sub-tokens and prevents the generation of invalid samples.
+    - **Mechanism**: The joint distribution $p_\theta(\mathbf{y}_0^i|\mathbf{y}_t)$ is parameterized directly, assigning probability mass only to valid base-$b$ encodings ($\mathbf{y}_0^i \in f(\mathcal{X})$) and explicitly zeroing out logits outside $|\mathcal{V}(\mathbf{y}_t^i)|$. A carry-over constraint is also enforced, keeping already-revealed sub-tokens fixed.
+    - **Design Motivation**: Independent parameterization via $\prod_j p_\theta(y_0^{i,j}|\mathbf{y}_t)$ not only introduces an erroneous independence assumption (causing distributional degeneracy) but may also generate invalid sub-token combinations (e.g., under the GPT-2 vocabulary of 50,257 tokens).
 
 3. **Sub-Token Embedding Encoder**:
-   - **Function**: Efficiently processes sub-token inputs.
-   - **Mechanism**: A separate $D/\ell$-dimensional embedding lookup table is created for each sub-token position; the $\ell$ embeddings are concatenated to produce a $D$-dimensional token embedding. Each table has size $(b+1) \times D/\ell$, far smaller than a full lookup table over $|\tilde{\mathcal{Y}}^\ell|$.
-   - **Design Motivation**: The sub-token space $\tilde{\mathcal{Y}}^\ell$ can be much larger than the original token space, making a direct lookup table infeasible. The concatenation strategy maintains compatibility with standard MDM architectures.
+    - **Function**: Efficiently processes sub-token inputs.
+    - **Mechanism**: A separate $D/\ell$-dimensional embedding lookup table is created for each sub-token position; the $\ell$ embeddings are concatenated to produce a $D$-dimensional token embedding. Each table has size $(b+1) \times D/\ell$, far smaller than a full lookup table over $|\tilde{\mathcal{Y}}^\ell|$.
+    - **Design Motivation**: The sub-token space $\tilde{\mathcal{Y}}^\ell$ can be much larger than the original token space, making a direct lookup table infeasible. The concatenation strategy maintains compatibility with standard MDM architectures.
 
 ### Loss & Training
 The variational upper bound loss is:

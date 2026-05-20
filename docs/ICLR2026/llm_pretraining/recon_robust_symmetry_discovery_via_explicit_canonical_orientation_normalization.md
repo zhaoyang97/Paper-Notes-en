@@ -18,8 +18,8 @@ content_hash: f607ebc1646ffe8d
 # RECON: Robust symmetry discovery via Explicit Canonical Orientation Normalization
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.13289](https://arxiv.org/abs/2505.13289)
-**Code**: N/A
+**arXiv**: [2505.13289](https://arxiv.org/abs/2505.13289)  
+**Code**: N/A  
 **Area**: Symmetry Discovery / Invariance Learning
 **Keywords**: symmetry discovery, canonical orientation, class-pose decomposition, plug-and-play, group invariance
 

@@ -18,8 +18,8 @@ content_hash: 75207e468d388d43
 # Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05202](https://arxiv.org/abs/2603.05202)
-**Code**: [GitHub](https://github.com/Zyh55555/SCDL)
+**arXiv**: [2603.05202](https://arxiv.org/abs/2603.05202)  
+**Code**: [GitHub](https://github.com/Zyh55555/SCDL)  
 **Area**: Medical Imaging
 **Keywords**: Semi-supervised segmentation, class imbalance, distribution learning, proxy distribution, semantic anchors
 
@@ -51,21 +51,21 @@ SCDL is integrated into existing semi-supervised segmentation networks as a plug
 
 1. **Class Distribution Bidirectional Alignment (CDBA)**
 
-   - **Function**: Learn structured class-conditional feature distributions to mitigate representation bias.
-   - **Mechanism**: Each semantic class $c$ is modeled by a learnable Gaussian proxy distribution: $p(u|c) = \mathcal{N}(\mu_c, \text{diag}(\sigma_c^2))$. A soft assignment of each token embedding to each proxy is computed as $P(c|z_{i,l}) = \text{softmax}_c(\cos(z_{i,l}, \mu_c))$. Bidirectional alignment consists of: (1) *Embedding-to-Proxy (E2P)*: $\mathcal{L}_{E2P} = \sum P(c|z) \cdot [1 - \cos(z, \mu_c)]$, pushing embeddings toward their soft-assigned proxies; (2) *Proxy-to-Embedding (P2E)*: $\mathcal{L}_{P2E} = \frac{1}{C}\sum \exp(-(\mathcal{E}_c^+ - \mathcal{E}_c^-))$, encouraging each proxy to discriminate between embeddings belonging and not belonging to that class.
-   - **Design Motivation**: Soft assignments allow each embedding to influence the gradient updates of multiple proxies, eliminating the effect of class frequency differences—even when minority-class pixels are scarce, their proxies continue to receive learning signals through soft assignments. Bidirectional alignment ensures proxies are both attractive (E2P pulls embeddings closer) and discriminative (P2E induces repulsion).
+    - **Function**: Learn structured class-conditional feature distributions to mitigate representation bias.
+    - **Mechanism**: Each semantic class $c$ is modeled by a learnable Gaussian proxy distribution: $p(u|c) = \mathcal{N}(\mu_c, \text{diag}(\sigma_c^2))$. A soft assignment of each token embedding to each proxy is computed as $P(c|z_{i,l}) = \text{softmax}_c(\cos(z_{i,l}, \mu_c))$. Bidirectional alignment consists of: (1) *Embedding-to-Proxy (E2P)*: $\mathcal{L}_{E2P} = \sum P(c|z) \cdot [1 - \cos(z, \mu_c)]$, pushing embeddings toward their soft-assigned proxies; (2) *Proxy-to-Embedding (P2E)*: $\mathcal{L}_{P2E} = \frac{1}{C}\sum \exp(-(\mathcal{E}_c^+ - \mathcal{E}_c^-))$, encouraging each proxy to discriminate between embeddings belonging and not belonging to that class.
+    - **Design Motivation**: Soft assignments allow each embedding to influence the gradient updates of multiple proxies, eliminating the effect of class frequency differences—even when minority-class pixels are scarce, their proxies continue to receive learning signals through soft assignments. Bidirectional alignment ensures proxies are both attractive (E2P pulls embeddings closer) and discriminative (P2E induces repulsion).
 
 2. **Proxy Sampling and Feature Enhancement**
 
-   - **Function**: Utilize the learned proxy distributions to provide structured semantic priors to the downstream decoder.
-   - **Mechanism**: Three types of priors are constructed: (1) *Distribution-weighted prior* $\mathbf{r}^{dist}$: $S$ samples are drawn from each proxy distribution; the average cosine similarity between each embedding and the sampled points is used as a weight to form a weighted combination of proxy means. (2) *Center similarity prior* $\mathbf{r}^{center}$: cosine similarities between embeddings and proxy means are directly used as weights for a deterministic combination. (3) *Token sampling prior* $\mathbf{z}^{sam}$: local perturbation sampling per token for robustness augmentation. The three priors are concatenated and injected into each decoder stage via a lightweight projection layer.
-   - **Design Motivation**: The distribution-weighted prior retains variance information (uncertainty-awareness), the center prior provides a complementary deterministic signal, and their combination enables both head and tail classes to contribute effectively.
+    - **Function**: Utilize the learned proxy distributions to provide structured semantic priors to the downstream decoder.
+    - **Mechanism**: Three types of priors are constructed: (1) *Distribution-weighted prior* $\mathbf{r}^{dist}$: $S$ samples are drawn from each proxy distribution; the average cosine similarity between each embedding and the sampled points is used as a weight to form a weighted combination of proxy means. (2) *Center similarity prior* $\mathbf{r}^{center}$: cosine similarities between embeddings and proxy means are directly used as weights for a deterministic combination. (3) *Token sampling prior* $\mathbf{z}^{sam}$: local perturbation sampling per token for robustness augmentation. The three priors are concatenated and injected into each decoder stage via a lightweight projection layer.
+    - **Design Motivation**: The distribution-weighted prior retains variance information (uncertainty-awareness), the center prior provides a complementary deterministic signal, and their combination enables both head and tail classes to contribute effectively.
 
 3. **Semantic Anchor Constraints (SAC)**
 
-   - **Function**: Provide ground-truth class semantic guidance for randomly initialized proxy distributions.
-   - **Mechanism**: For each class, class-aware embeddings are extracted from annotated regions by masking non-target regions with ground-truth masks before passing through the encoder; their mean serves as the semantic anchor: $\text{anchor}_c = \frac{1}{|\mathcal{Z}_c|}\sum_{z \in \mathcal{Z}_c} z$. A cosine similarity loss then aligns each proxy mean with its corresponding anchor: $\mathcal{L}_{SAC} = \frac{1}{C}\sum [1 - \cos(\mu_c, \text{anchor}_c)]$. Anchors are detached during backpropagation, ensuring SAC updates only the proxies without affecting the encoder.
-   - **Design Motivation**: Without semantic constraints, randomly initialized proxies may learn incorrect class correspondences. SAC leverages the "certain signal" from limited labeled data to anchor the proxies; even sparse annotations suffice—what matters is that the anchor direction is correct, and precision can be further refined during training.
+    - **Function**: Provide ground-truth class semantic guidance for randomly initialized proxy distributions.
+    - **Mechanism**: For each class, class-aware embeddings are extracted from annotated regions by masking non-target regions with ground-truth masks before passing through the encoder; their mean serves as the semantic anchor: $\text{anchor}_c = \frac{1}{|\mathcal{Z}_c|}\sum_{z \in \mathcal{Z}_c} z$. A cosine similarity loss then aligns each proxy mean with its corresponding anchor: $\mathcal{L}_{SAC} = \frac{1}{C}\sum [1 - \cos(\mu_c, \text{anchor}_c)]$. Anchors are detached during backpropagation, ensuring SAC updates only the proxies without affecting the encoder.
+    - **Design Motivation**: Without semantic constraints, randomly initialized proxies may learn incorrect class correspondences. SAC leverages the "certain signal" from limited labeled data to anchor the proxies; even sparse annotations suffice—what matters is that the anchor direction is correct, and precision can be further refined during training.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 36ba08fffade3844
 # Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13784](https://arxiv.org/abs/2511.13784)
-**Code**: [https://github.com/yogesh-iitj/fs-video-vit](https://github.com/yogesh-iitj/fs-video-vit)
+**arXiv**: [2511.13784](https://arxiv.org/abs/2511.13784)  
+**Code**: [https://github.com/yogesh-iitj/fs-video-vit](https://github.com/yogesh-iitj/fs-video-vit)  
 **Area**: Object Detection
 **Keywords**: Few-Shot Detection, Video Object Detection, Temporal Modeling, OWL-ViT, Object-Awareness
 

@@ -17,8 +17,8 @@ content_hash: bcc50df54d329903
 # DCcluster-Opt: Benchmarking Dynamic Multi-Objective Optimization for Geo-Distributed Data Center Workloads
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00117](https://arxiv.org/abs/2511.00117)
-**Code**: [GitHub (dc-rl)](https://github.com/HewlettPackard/dc-rl)
+**arXiv**: [2511.00117](https://arxiv.org/abs/2511.00117)  
+**Code**: [GitHub (dc-rl)](https://github.com/HewlettPackard/dc-rl)  
 **Area**: Reinforcement Learning / Sustainable Computing
 **Keywords**: Data Center Optimization, Multi-Objective Optimization, Reinforcement Learning, Carbon Emissions, Workload Scheduling
 

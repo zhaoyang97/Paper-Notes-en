@@ -19,8 +19,8 @@ content_hash: a6ab4b236192561a
 # Developing Foundation Models for Universal Segmentation from 3D Whole-Body Positron Emission Tomography
 
 **Conference**: CVPR2026
-**arXiv**: [2603.11627](https://arxiv.org/abs/2603.11627)
-**Code**: [YichiZhang98/SegAnyPET](https://github.com/YichiZhang98/SegAnyPET)
+**arXiv**: [2603.11627](https://arxiv.org/abs/2603.11627)  
+**Code**: [YichiZhang98/SegAnyPET](https://github.com/YichiZhang98/SegAnyPET)  
 **Area**: Medical Imaging
 **Keywords**: PET segmentation, foundation model, universal segmentation, interactive segmentation, whole-body PET, SAM
 

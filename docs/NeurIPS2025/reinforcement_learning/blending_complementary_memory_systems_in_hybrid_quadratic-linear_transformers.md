@@ -19,8 +19,8 @@ content_hash: 2794aeac66d65250
 # Blending Complementary Memory Systems in Hybrid Quadratic-Linear Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.00744](https://arxiv.org/abs/2506.00744)
-**Code**: [https://github.com/kazuki-irie/hybrid-memory](https://github.com/kazuki-irie/hybrid-memory)
+**arXiv**: [2506.00744](https://arxiv.org/abs/2506.00744)  
+**Code**: [https://github.com/kazuki-irie/hybrid-memory](https://github.com/kazuki-irie/hybrid-memory)  
 **Area**: Transformer Architecture / Hybrid Models / Sequence Modeling
 **Keywords**: hybrid memory, softmax attention, fast weight programming, DeltaNet, linear transformer, complementary learning systems
 

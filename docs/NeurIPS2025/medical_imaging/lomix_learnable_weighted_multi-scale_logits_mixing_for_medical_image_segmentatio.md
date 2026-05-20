@@ -18,8 +18,8 @@ content_hash: 32b8e9f303681af9
 # LoMix: Learnable Weighted Multi-Scale Logits Mixing for Medical Image Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22995](https://arxiv.org/abs/2510.22995)
-**Code**: [https://github.com/SLDGroup/LoMix](https://github.com/SLDGroup/LoMix)
+**arXiv**: [2510.22995](https://arxiv.org/abs/2510.22995)  
+**Code**: [https://github.com/SLDGroup/LoMix](https://github.com/SLDGroup/LoMix)  
 **Area**: Medical Image Segmentation
 **Keywords**: Multi-scale fusion, Logits mixing, Deep supervision, NAS, U-Net
 

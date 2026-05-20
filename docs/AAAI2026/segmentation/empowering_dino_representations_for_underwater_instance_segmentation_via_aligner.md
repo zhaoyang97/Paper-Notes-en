@@ -18,8 +18,8 @@ content_hash: 60e076d109f5cc9e
 # Empowering DINO Representations for Underwater Instance Segmentation via Aligner and Prompter
 
 **Conference**: AAAI2026
-**arXiv**: [2511.08334](https://arxiv.org/abs/2511.08334)
-**Code**: [ettof/Diveseg](https://github.com/ettof/Diveseg)
+**arXiv**: [2511.08334](https://arxiv.org/abs/2511.08334)  
+**Code**: [ettof/Diveseg](https://github.com/ettof/Diveseg)  
 **Area**: Image Segmentation
 **Keywords**: underwater instance segmentation, DINOv2, domain adaptation, Fourier style transfer, foundation model fine-tuning
 

@@ -18,8 +18,8 @@ content_hash: cabc6501f434c682
 # What AI Speaks for Your Community: Polling AI Agents for Public Opinion on Data Center Projects
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.22037](https://arxiv.org/abs/2511.22037)
-**Code**: None
+**arXiv**: [2511.22037](https://arxiv.org/abs/2511.22037)  
+**Code**: None  
 **Area**: LLM Agent
 **Keywords**: AI agent polling, public opinion, data center, LLM simulation, community engagement
 

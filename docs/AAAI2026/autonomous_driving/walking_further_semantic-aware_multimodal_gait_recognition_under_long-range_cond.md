@@ -18,8 +18,8 @@ content_hash: 8b2eca9783cf1596
 # Walking Further: Semantic-aware Multimodal Gait Recognition Under Long-Range Conditions
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.14189](https://arxiv.org/abs/2603.14189)
-**Code**: [github.com/O-VIGIA/LRGait](https://github.com/O-VIGIA/LRGait)
+**arXiv**: [2603.14189](https://arxiv.org/abs/2603.14189)  
+**Code**: [github.com/O-VIGIA/LRGait](https://github.com/O-VIGIA/LRGait)  
 **Area**: Autonomous Driving / Gait Recognition
 **Keywords**: Multimodal Gait Recognition, Long-Range Recognition, LiDAR-Camera Fusion, CLIP Semantic Guidance, Cross-Distance Retrieval
 

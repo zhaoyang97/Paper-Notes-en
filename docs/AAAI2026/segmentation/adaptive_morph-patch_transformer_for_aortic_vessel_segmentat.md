@@ -18,8 +18,8 @@ content_hash: 89688e52a51be7c8
 # Adaptive Morph-Patch Transformer for Aortic Vessel Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06897](https://arxiv.org/abs/2511.06897)
-**Code**: [https://github.com/iCherishxixixi/MPTransformer](https://github.com/iCherishxixixi/MPTransformer)
+**arXiv**: [2511.06897](https://arxiv.org/abs/2511.06897)  
+**Code**: [https://github.com/iCherishxixixi/MPTransformer](https://github.com/iCherishxixixi/MPTransformer)  
 **Area**: Image Segmentation
 **Keywords**: Aortic segmentation, morphology-aware patch, semantic clustering attention, diffeomorphic deformation, velocity field
 

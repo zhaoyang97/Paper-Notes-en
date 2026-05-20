@@ -18,8 +18,8 @@ content_hash: f0cd91a6096b7ef3
 # Gender Bias in Emotion Recognition by Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19785](https://arxiv.org/abs/2511.19785)
-**Code**: None
+**arXiv**: [2511.19785](https://arxiv.org/abs/2511.19785)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: gender bias, emotion recognition, large language models, debiasing strategies, fairness
 
@@ -126,17 +126,17 @@ Key observations:
 ### Key Findings
 
 1. **Inference-time methods are ineffective or harmful**:
-   - In-context learning introduces 5 significantly biased labels (worst outcome).
-   - CoT reduces bias on *pleasure* but introduces bias on *happiness* and *sensitivity*.
-   - Prompt engineering yields negligible improvement.
+    - In-context learning introduces 5 significantly biased labels (worst outcome).
+    - CoT reduces bias on *pleasure* but introduces bias on *happiness* and *sensitivity*.
+    - Prompt engineering yields negligible improvement.
 
 2. **Fine-tuning is effective**: After fine-tuning, all 26 emotion labels achieve $\chi^2$ p-values ≥ 0.19, completely eliminating detectable bias.
 
 3. **Impact of non-50:50 training distributions** (Table 4):
-   - Fine-tuning exclusively on female samples (FT-W) vs. exclusively on male samples (FT-M) produces significantly different prediction distributions for gender-neutral inputs.
-   - FT-W biases toward: suffering, pain, fatigue, doubt/confusion, sympathy.
-   - FT-M biases toward: fear, disquietment, engagement, anticipation.
-   - → The gender distribution of training data directly shapes a model's emotional bias.
+    - Fine-tuning exclusively on female samples (FT-W) vs. exclusively on male samples (FT-M) produces significantly different prediction distributions for gender-neutral inputs.
+    - FT-W biases toward: suffering, pain, fatigue, doubt/confusion, sympathy.
+    - FT-M biases toward: fear, disquietment, engagement, anticipation.
+    - → The gender distribution of training data directly shapes a model's emotional bias.
 
 4. **Prediction count asymmetry**: Except for TinyLLaMA, models tend to predict fewer labels for male-gendered descriptions.
 

@@ -18,8 +18,8 @@ content_hash: 13b01566fecb2493
 # RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.09973](https://arxiv.org/abs/2602.09973)
-**Code**: [GitHub](https://github.com/RoboInter)
+**arXiv**: [2602.09973](https://arxiv.org/abs/2602.09973)  
+**Code**: [GitHub](https://github.com/RoboInter)  
 **Area**: Robot Learning / Datasets
 **Keywords**: Intermediate Representation, VLA, Manipulation Dataset, Embodied VQA, Plan-then-Execute
 

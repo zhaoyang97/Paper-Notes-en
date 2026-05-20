@@ -18,8 +18,8 @@ content_hash: 9f17582f95ce8937
 # Generalized Contrastive Learning for Universal Multimodal Retrieval
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25638](https://arxiv.org/abs/2509.25638)
-**Code**: Not mentioned
+**arXiv**: [2509.25638](https://arxiv.org/abs/2509.25638)  
+**Code**: Not mentioned  
 **Area**: Information Retrieval
 **Keywords**: multimodal retrieval, contrastive learning, GCL, fused modality, CLIP
 

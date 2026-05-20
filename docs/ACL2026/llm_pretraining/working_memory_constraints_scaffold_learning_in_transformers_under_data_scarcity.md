@@ -18,8 +18,8 @@ content_hash: ab0e110d654a40d1
 # Working Memory Constraints Scaffold Learning in Transformers under Data Scarcity
 
 **Conference**: ACL 2026
-**arXiv**: [2604.20789](https://arxiv.org/abs/2604.20789)
-**Code**: None
+**arXiv**: [2604.20789](https://arxiv.org/abs/2604.20789)  
+**Code**: None  
 **Area**: Cognitive Modeling / Language Model Pretraining
 **Keywords**: Working Memory, Attention Constraints, Inductive Bias, Data Scarcity, Cognitive Alignment
 

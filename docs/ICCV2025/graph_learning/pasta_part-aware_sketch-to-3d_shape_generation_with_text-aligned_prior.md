@@ -18,8 +18,8 @@ content_hash: c6dbcead6672a94f
 # PASTA: Part-Aware Sketch-to-3D Shape Generation with Text-Aligned Prior
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.12834](https://arxiv.org/abs/2503.12834)
-**Code**: N/A
+**arXiv**: [2503.12834](https://arxiv.org/abs/2503.12834)  
+**Code**: N/A  
 **Area**: Graph Learning / 3D Generation
 **Keywords**: Sketch-to-3D, Text Prior, Graph Convolutional Network, Part-Aware, VLM
 
@@ -121,8 +121,8 @@ $\mathcal{L} = \lambda_{align}\mathcal{L}_{align} + \lambda_{indiv}\mathcal{L}_{
 # PASTA: Part-Aware Sketch-to-3D Shape Generation with Text-Aligned Prior
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.12834](https://arxiv.org/abs/2503.12834)
-**Code**: N/A
+**arXiv**: [2503.12834](https://arxiv.org/abs/2503.12834)  
+**Code**: N/A  
 **Area**: 3D Vision / Graph Learning
 **Keywords**: Sketch-to-3D Generation, Part-Level Editing, Vision-Language Model, Graph Convolutional Network, Gaussian Mixture Model
 

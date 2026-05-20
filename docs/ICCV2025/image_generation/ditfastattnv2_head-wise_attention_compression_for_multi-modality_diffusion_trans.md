@@ -18,8 +18,8 @@ content_hash: e8d1966491ac194b
 # DiTFastAttnV2: Head-wise Attention Compression for Multi-Modality Diffusion Transformers
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.22796](https://arxiv.org/abs/2503.22796)
-**Code**: None
+**arXiv**: [2503.22796](https://arxiv.org/abs/2503.22796)  
+**Code**: None  
 **Area**: Image Generation / Diffusion Model Acceleration
 **Keywords**: Diffusion Transformer, Attention Compression, MMDiT, Sparse Attention, Inference Acceleration
 

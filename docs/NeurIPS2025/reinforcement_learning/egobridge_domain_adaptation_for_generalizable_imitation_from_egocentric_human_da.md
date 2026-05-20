@@ -18,8 +18,8 @@ content_hash: d7a1f24496c93f0b
 # EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19626](https://arxiv.org/abs/2509.19626)
-**Code**: [ego-bridge.github.io](https://ego-bridge.github.io/)
+**arXiv**: [2509.19626](https://arxiv.org/abs/2509.19626)  
+**Code**: [ego-bridge.github.io](https://ego-bridge.github.io/)  
 **Area**: Reinforcement Learning
 **Keywords**: cross-embodiment, domain adaptation, optimal transport, egocentric, imitation learning
 

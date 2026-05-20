@@ -18,8 +18,8 @@ content_hash: 856cfbc27b7f7148
 # AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21436](https://arxiv.org/abs/2510.21436)
-**Code**: [https://github.com/Shobhit1201/AutoOpt](https://github.com/Shobhit1201/AutoOpt)
+**arXiv**: [2510.21436](https://arxiv.org/abs/2510.21436)  
+**Code**: [https://github.com/Shobhit1201/AutoOpt](https://github.com/Shobhit1201/AutoOpt)  
 **Area**: Optimization Automation
 **Keywords**: Image OCR, LaTeX-to-PYOMO, Bilevel Optimization Solving, Mathematical Programming, Handwriting Recognition
 

@@ -18,8 +18,8 @@ content_hash: e7f7350d8ee6d612
 # Opt3DGS: Optimizing 3D Gaussian Splatting with Adaptive Exploration and Curvature-Aware Exploitation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13571](https://arxiv.org/abs/2511.13571)
-**Code**: None
+**arXiv**: [2511.13571](https://arxiv.org/abs/2511.13571)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Non-convex Optimization, Stochastic Gradient Langevin Dynamics, Quasi-Newton Methods, Novel View Synthesis
 
@@ -101,10 +101,10 @@ Total training: 30,000 iterations; Gaussian primitive growth rate: 5%.
 
 3. **Exploration-to-Exploitation Switching Strategy**
 
-   - Switching occurs at iteration 29,000
-   - The exploration phase uses AW-SGLD with a 2,500-iteration warm-up to stabilize energy estimation
-   - The exploitation phase disables the gradient multiplier, switches to L2 loss, and activates LQNAdam
-   - The flattening coefficient $\zeta = 0.75$ is applied universally across all datasets
+    - Switching occurs at iteration 29,000
+    - The exploration phase uses AW-SGLD with a 2,500-iteration warm-up to stabilize energy estimation
+    - The exploitation phase disables the gradient multiplier, switches to L2 loss, and activates LQNAdam
+    - The flattening coefficient $\zeta = 0.75$ is applied universally across all datasets
 
 ### Loss & Training
 

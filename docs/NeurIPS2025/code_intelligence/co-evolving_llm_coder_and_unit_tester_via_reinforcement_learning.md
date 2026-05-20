@@ -19,8 +19,8 @@ content_hash: f14e9723d90f4cdd
 # Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03136](https://arxiv.org/abs/2506.03136)
-**Code**: [GitHub](https://github.com/Gen-Verse/CURE)
+**arXiv**: [2506.03136](https://arxiv.org/abs/2506.03136)  
+**Code**: [GitHub](https://github.com/Gen-Verse/CURE)  
 **Area**: Code Intelligence / LLM Reasoning
 **Keywords**: Co-evolution, Reinforcement Learning, Unit Test Generation, Code Generation, Self-play, Reward Precision
 

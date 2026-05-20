@@ -18,8 +18,8 @@ content_hash: 710e57934e459c0b
 # WonderPlay: Dynamic 3D Scene Generation from a Single Image and Actions
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.18151](https://arxiv.org/abs/2505.18151)
-**Code**: [https://kyleleey.github.io/WonderPlay/](https://kyleleey.github.io/WonderPlay/) (coming soon)
+**arXiv**: [2505.18151](https://arxiv.org/abs/2505.18151)  
+**Code**: [https://kyleleey.github.io/WonderPlay/](https://kyleleey.github.io/WonderPlay/) (coming soon)  
 **Area**: 3D Vision
 **Keywords**: dynamic 3D scene generation, physics simulation, video generation, hybrid generative simulator, single-image interaction
 

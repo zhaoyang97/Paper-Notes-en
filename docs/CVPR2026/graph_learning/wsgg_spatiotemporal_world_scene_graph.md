@@ -18,8 +18,8 @@ content_hash: feabfe072e565098
 # WSGG: Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13185](https://arxiv.org/abs/2603.13185)
-**Code**: [https://github.com/rohithpeddi/WorldSGG](https://github.com/rohithpeddi/WorldSGG)
+**arXiv**: [2603.13185](https://arxiv.org/abs/2603.13185)  
+**Code**: [https://github.com/rohithpeddi/WorldSGG](https://github.com/rohithpeddi/WorldSGG)  
 **Area**: Graph Learning
 **Keywords**: World Scene Graph, object permanence, occlusion reasoning, 4D scene understanding, ActionGenome4D
 
@@ -137,8 +137,8 @@ tags:
 # Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13185](https://arxiv.org/abs/2603.13185)
-**Code**: [https://github.com/rohithpeddi/WorldSGG](https://github.com/rohithpeddi/WorldSGG)
+**arXiv**: [2603.13185](https://arxiv.org/abs/2603.13185)  
+**Code**: [https://github.com/rohithpeddi/WorldSGG](https://github.com/rohithpeddi/WorldSGG)  
 **Area**: 3D Vision / Scene Understanding
 **Keywords**: world scene graph, spatio-temporal, object permanence, 4D reconstruction, video understanding
 

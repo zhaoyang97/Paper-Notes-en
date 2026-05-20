@@ -18,8 +18,8 @@ content_hash: e497081b18560654
 # UltraHR-100K: Enhancing UHR Image Synthesis with A Large-Scale High-Quality Dataset
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20661](https://arxiv.org/abs/2510.20661)
-**Code**: Available (marked in paper)
+**arXiv**: [2510.20661](https://arxiv.org/abs/2510.20661)  
+**Code**: Available (marked in paper)  
 **Area**: Ultra-High-Resolution Image Generation / Diffusion Models
 **Keywords**: Ultra-High-Resolution, Dataset, Frequency-Aware, Detail Generation, Post-Training
 

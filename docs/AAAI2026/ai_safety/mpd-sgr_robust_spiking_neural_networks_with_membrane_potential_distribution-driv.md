@@ -18,8 +18,8 @@ content_hash: 2b13eaf89ad54d3b
 # MPD-SGR: Robust Spiking Neural Networks with Membrane Potential Distribution-Driven Surrogate Gradient Regularization
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12199](https://arxiv.org/abs/2511.12199)
-**Code**: None
+**arXiv**: [2511.12199](https://arxiv.org/abs/2511.12199)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: Spiking Neural Networks, Adversarial Robustness, Surrogate Gradient, Membrane Potential Distribution, Regularization
 
@@ -162,9 +162,9 @@ Substantial improvements are also observed on CIFAR-100 (Vanilla: FGSM +18.35%; 
 ## Highlights & Insights
 
 1. **Solid theoretical contributions**:
-   - Establishes a formal relationship between SG magnitude and robustness error.
-   - Proves that the MPD follows a Gaussian distribution under LIF + tdBN (Theorem 1).
-   - Derives an analytic expression for the MPD–SG overlap area $\Omega$.
+    - Establishes a formal relationship between SG magnitude and robustness error.
+    - Proves that the MPD follows a Gaussian distribution under LIF + tdBN (Theorem 1).
+    - Derives an analytic expression for the MPD–SG overlap area $\Omega$.
 2. **Elegant regularization design**: The CDF-based overlap area formula is directly differentiable and requires no additional approximations for backpropagation.
 3. **Strong generalizability**: Effective across SG functions, encoding schemes, architectures, and attack types.
 4. **Orthogonal to existing methods**: Can be combined with adversarial training and encoding-based approaches.

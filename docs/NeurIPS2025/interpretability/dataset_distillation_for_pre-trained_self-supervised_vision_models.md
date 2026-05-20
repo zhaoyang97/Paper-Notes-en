@@ -18,8 +18,8 @@ content_hash: e07844134add40f6
 # Dataset Distillation for Pre-Trained Self-Supervised Vision Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.16674](https://arxiv.org/abs/2511.16674)
-**Code**: [https://georgecazenavette.github.io/linear-gm](https://georgecazenavette.github.io/linear-gm)
+**arXiv**: [2511.16674](https://arxiv.org/abs/2511.16674)  
+**Code**: [https://georgecazenavette.github.io/linear-gm](https://georgecazenavette.github.io/linear-gm)  
 **Area**: Interpretability
 **Keywords**: dataset distillation, self-supervised learning, linear probing, gradient matching, CLIP/DINO
 

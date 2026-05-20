@@ -18,8 +18,8 @@ content_hash: 161b8625e50d6888
 # BLM-Guard: Explainable Multimodal Ad Moderation with Chain-of-Thought and Policy-Aligned Rewards
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.18193](https://arxiv.org/abs/2602.18193)
-**Code**: None
+**arXiv**: [2602.18193](https://arxiv.org/abs/2602.18193)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Ad moderation, multimodal CoT reasoning, policy-aligned RL, GRPO, cross-modal inconsistency detection
 

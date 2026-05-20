@@ -18,8 +18,8 @@ content_hash: 2d114315bee33420
 # Influence Malleability in Linearized Attention: Dual Implications of Non-Convergent NTK Dynamics
 
 **Conference**: CVPR2026
-**arXiv**: [2603.13085](https://arxiv.org/abs/2603.13085)
-**Code**: To be confirmed
+**arXiv**: [2603.13085](https://arxiv.org/abs/2603.13085)  
+**Code**: To be confirmed  
 **Area**: Deep Learning Theory / Attention Mechanisms
 **Keywords**: Neural Tangent Kernel, linearized attention, influence malleability, kernel methods, feature learning
 

@@ -18,8 +18,8 @@ content_hash: 279a341928ce8883
 # LampQ: Towards Accurate Layer-wise Mixed Precision Quantization for Vision Transformers
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10004](https://arxiv.org/abs/2511.10004)
-**Code**: None
+**arXiv**: [2511.10004](https://arxiv.org/abs/2511.10004)  
+**Code**: None  
 **Area**: Object Detection / Model Compression
 **Keywords**: Mixed Precision Quantization, Vision Transformer, Layer-Adaptive, Fisher Information, Integer Linear Programming
 

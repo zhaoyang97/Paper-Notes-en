@@ -18,8 +18,8 @@ content_hash: 75445b06d144543d
 # MAR-FL: A Communication Efficient Peer-to-Peer Federated Learning System
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.05234](https://arxiv.org/abs/2512.05234)
-**Code**: [https://github.com/felix-fjm/mar-fl](https://github.com/felix-fjm/mar-fl)
+**arXiv**: [2512.05234](https://arxiv.org/abs/2512.05234)  
+**Code**: [https://github.com/felix-fjm/mar-fl](https://github.com/felix-fjm/mar-fl)  
 **Area**: Optimization / Federated Learning
 **Keywords**: Federated Learning, P2P Communication, Moshpit All-Reduce, Differential Privacy, Knowledge Distillation
 
@@ -49,27 +49,27 @@ Each peer performs: local Momentum-SGD update → multiple rounds of Moshpit All
 
 1. **Moshpit All-Reduce Aggregation (MAR)**
 
-   - **Function**: Partitions $N$ peers into groups of size $M$, with each peer communicating with $M-1$ others per round.
-   - **Mechanism**: Global averaging is achieved in $\lceil\log_M N\rceil \approx \log N$ rounds, yielding a total communication complexity of $O(N \log N)$.
-   - **Design Motivation**: A single peer dropout affects only its local group and does not block the overall process.
+    - **Function**: Partitions $N$ peers into groups of size $M$, with each peer communicating with $M-1$ others per round.
+    - **Mechanism**: Global averaging is achieved in $\lceil\log_M N\rceil \approx \log N$ rounds, yielding a total communication complexity of $O(N \log N)$.
+    - **Design Motivation**: A single peer dropout affects only its local group and does not block the overall process.
 
 2. **Distributed Coordination (DHT)**
 
-   - **Function**: Uses Hivemind Kademlia DHT to coordinate lightweight information only.
-   - **Mechanism**: Model weights are never transmitted through the DHT; only barrier and group metadata are exchanged.
-   - **Design Motivation**: Control-plane overhead is $O(N \log N)$, which is negligible relative to model exchange traffic.
+    - **Function**: Uses Hivemind Kademlia DHT to coordinate lightweight information only.
+    - **Mechanism**: Model weights are never transmitted through the DHT; only barrier and group metadata are exchanged.
+    - **Design Motivation**: Control-plane overhead is $O(N \log N)$, which is negligible relative to model exchange traffic.
 
 3. **Moshpit Knowledge Distillation (MKD)**
 
-   - **Function**: Accelerates convergence and further reduces the number of required communication rounds.
-   - **Mechanism**: Automatically selects top-$\ell$ teachers based on minimum KL divergence, combining KL divergence and cross-entropy losses with a smooth weight decay schedule $\lambda = \max(0, 1 - (t-1)/K)$.
-   - **Design Motivation**: Reduces communication requirements by an additional 2–3×.
+    - **Function**: Accelerates convergence and further reduces the number of required communication rounds.
+    - **Mechanism**: Automatically selects top-$\ell$ teachers based on minimum KL divergence, combining KL divergence and cross-entropy losses with a smooth weight decay schedule $\lambda = \max(0, 1 - (t-1)/K)$.
+    - **Design Motivation**: Reduces communication requirements by an additional 2–3×.
 
 4. **Differential Privacy Adaptation**
 
-   - **Function**: Adapts the DP mechanism from FedAvg to a serverless P2P architecture.
-   - **Mechanism**: Each peer performs local gradient clipping and noise addition; aggregation is performed within groups via MAR.
-   - **Design Motivation**: DP guarantees are fully decentralized, requiring no central server.
+    - **Function**: Adapts the DP mechanism from FedAvg to a serverless P2P architecture.
+    - **Mechanism**: Each peer performs local gradient clipping and noise addition; aggregation is performed within groups via MAR.
+    - **Design Motivation**: DP guarantees are fully decentralized, requiring no central server.
 
 ### Loss & Training
 

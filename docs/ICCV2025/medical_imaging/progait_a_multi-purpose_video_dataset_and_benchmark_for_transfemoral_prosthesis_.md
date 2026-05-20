@@ -18,8 +18,8 @@ content_hash: 01a6024d259037d6
 # ProGait: A Multi-Purpose Video Dataset and Benchmark for Transfemoral Prosthesis Users
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.10223](https://arxiv.org/abs/2507.10223)
-**Code**: [https://github.com/pittisl/ProGait](https://github.com/pittisl/ProGait)
+**arXiv**: [2507.10223](https://arxiv.org/abs/2507.10223)  
+**Code**: [https://github.com/pittisl/ProGait](https://github.com/pittisl/ProGait)  
 **Area**: Medical Imaging
 **Keywords**: Gait Analysis, Prosthesis Detection, Video Dataset, Human Pose Estimation, Video Object Segmentation
 

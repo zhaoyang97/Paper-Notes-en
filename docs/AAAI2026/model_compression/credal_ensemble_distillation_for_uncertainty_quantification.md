@@ -18,8 +18,8 @@ content_hash: 74585913d24e35af
 # Credal Ensemble Distillation for Uncertainty Quantification
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13766](https://arxiv.org/abs/2511.13766)
-**Code**: Unavailable (experimental code provided in supplementary material)
+**arXiv**: [2511.13766](https://arxiv.org/abs/2511.13766)  
+**Code**: Unavailable (experimental code provided in supplementary material)  
 **Area**: Model Compression / Uncertainty Quantification
 **Keywords**: Knowledge Distillation, Deep Ensembles, Uncertainty Quantification, Credal Sets, OOD Detection
 

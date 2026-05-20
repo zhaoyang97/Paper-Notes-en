@@ -18,8 +18,8 @@ content_hash: 383af3c5960aa979
 # A Conditional Probability Framework for Compositional Zero-shot Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.17377](https://arxiv.org/abs/2507.17377)
-**Code**: [GitHub](https://github.com/Pieux0/CPF) (publicly available)
+**arXiv**: [2507.17377](https://arxiv.org/abs/2507.17377)  
+**Code**: [GitHub](https://github.com/Pieux0/CPF) (publicly available)  
 **Authors**: Peng Wu, Qiuxia Lai, Hao Fang, Guo-Sen Xie, Yilong Yin, Xiankai Lu, Wenguan Wang (Shandong University, Communication University of China, Nanjing University of Science and Technology, Zhejiang University, Xi'an Jiaotong University)
 **Area**: Zero-Shot Learning / Compositional Zero-Shot Learning
 **Keywords**: conditional probability decomposition, compositional zero-shot learning, attribute-object dependency modeling, cross-attention mechanism, text-enhanced features

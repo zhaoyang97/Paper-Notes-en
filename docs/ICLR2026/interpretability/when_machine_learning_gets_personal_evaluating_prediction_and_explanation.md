@@ -20,8 +20,8 @@ content_hash: 04fe5a544dcb3bac
 # When Machine Learning Gets Personal: Evaluating Prediction and Explanation
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.02786](https://arxiv.org/abs/2502.02786)
-**Code**: None (UCSB)
+**arXiv**: [2502.02786](https://arxiv.org/abs/2502.02786)  
+**Code**: None (UCSB)  
 **Area**: Interpretability
 **Keywords**: Personalized Models, Explainability, Benefit of Personalization, Hypothesis Testing, Finite-Sample Lower Bounds, Sufficiency, Incomprehensiveness
 

@@ -18,8 +18,8 @@ content_hash: 4749b07341993051
 # HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19766](https://arxiv.org/abs/2603.19766)
-**Code**: [https://github.com/donghaifang/HINGE](https://github.com/donghaifang/HINGE)
+**arXiv**: [2603.19766](https://arxiv.org/abs/2603.19766)  
+**Code**: [https://github.com/donghaifang/HINGE](https://github.com/donghaifang/HINGE)  
 **Area**: Biomedical Imaging / Generative Models
 **Keywords**: Spatial Transcriptomics, Single-Cell Foundation Model, Masked Diffusion, Histology-Conditioned Generation, SoftAdaLN
 

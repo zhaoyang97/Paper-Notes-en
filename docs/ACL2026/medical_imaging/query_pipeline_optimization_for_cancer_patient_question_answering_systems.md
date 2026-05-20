@@ -18,8 +18,8 @@ content_hash: 56c75d12be156059
 # Query Pipeline Optimization for Cancer Patient Question Answering Systems
 
 **Conference**: ACL 2026
-**arXiv**: [2412.14751](https://arxiv.org/abs/2412.14751)
-**Code**: None
+**arXiv**: [2412.14751](https://arxiv.org/abs/2412.14751)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Cancer QA, RAG Query Pipeline, Hybrid Retrieval, Semantic Segmentation, Metadata-Aware
 

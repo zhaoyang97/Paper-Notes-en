@@ -18,8 +18,8 @@ content_hash: a21060837aa0b759
 # Diffusion-Based Feature Denoising and Using NNMF for Robust Brain Tumor Classification
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13182](https://arxiv.org/abs/2603.13182)
-**Code**: To be confirmed
+**arXiv**: [2603.13182](https://arxiv.org/abs/2603.13182)  
+**Code**: To be confirmed  
 **Area**: Medical Imaging
 **Keywords**: Brain tumor classification, Non-negative Matrix Factorization (NNMF), Adversarial robustness, Diffusion denoising defense, AutoAttack
 

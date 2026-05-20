@@ -19,8 +19,8 @@ content_hash: 8263ecdc2ee7d08a
 # SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12238](https://arxiv.org/abs/2603.12238)
-**Code**: [github.com/ROUJINN/SceneAssistant](https://github.com/ROUJINN/SceneAssistant)
+**arXiv**: [2603.12238](https://arxiv.org/abs/2603.12238)  
+**Code**: [github.com/ROUJINN/SceneAssistant](https://github.com/ROUJINN/SceneAssistant)  
 **Area**: 3D Vision / LLM Agent
 **Keywords**: 3D scene generation, open-vocabulary, VLM agent, visual feedback, ReAct, Action API
 
@@ -47,21 +47,21 @@ The user provides a natural language scene description $d$ → the VLM agent (Ge
 ### Key Designs
 
 1. **Functionally Complete Action API System (14 Atomic Operations)**
-   - **Function**: Abstracts low-level Blender operations into semantically intuitive commands, covering the complete operation space across three categories.
-   - **Object creation/deletion**: Create (description → 3D asset generation), Duplicate, Delete. After Create, the object is initially placed at the scene center; the agent observes its appearance in the next step before deciding placement. Delete supports removing unsatisfactory results → recreating with a revised text description.
-   - **6-DoF manipulation**: Place (absolute XYZ positioning) + Rotate (XYZ rotation) covering full 6 degrees of freedom. Scale controls size. Translate provides incremental displacement for fine-tuning.
-   - **Camera control**: ViewScene (panoramic presets), FocusOn (focus on a specific object), RotateCamera / MoveCamera (arbitrary camera states).
-   - **Design Motivation**: Requiring the VLM to directly generate Blender Python code introduces syntactic overhead that distracts reasoning attention → abstracting to semantic APIs allows the VLM to focus on high-level spatial planning. Ablation validates this: replacing APIs with JSON output → Layout drops by 0.595, Preference drops by 29 pp (cognitive load dispersal effect).
+    - **Function**: Abstracts low-level Blender operations into semantically intuitive commands, covering the complete operation space across three categories.
+    - **Object creation/deletion**: Create (description → 3D asset generation), Duplicate, Delete. After Create, the object is initially placed at the scene center; the agent observes its appearance in the next step before deciding placement. Delete supports removing unsatisfactory results → recreating with a revised text description.
+    - **6-DoF manipulation**: Place (absolute XYZ positioning) + Rotate (XYZ rotation) covering full 6 degrees of freedom. Scale controls size. Translate provides incremental displacement for fine-tuning.
+    - **Camera control**: ViewScene (panoramic presets), FocusOn (focus on a specific object), RotateCamera / MoveCamera (arbitrary camera states).
+    - **Design Motivation**: Requiring the VLM to directly generate Blender Python code introduces syntactic overhead that distracts reasoning attention → abstracting to semantic APIs allows the VLM to focus on high-level spatial planning. Ablation validates this: replacing APIs with JSON output → Layout drops by 0.595, Preference drops by 29 pp (cognitive load dispersal effect).
 
 2. **Pure Visual Feedback Closed Loop**
-   - **Function**: Enables the VLM to make decisions based solely on rendered images, emulating how a human observes and adjusts in 3D software.
-   - **Core Mechanism**: (a) Each step provides only the current rendering (without accumulating historical images to avoid overload) + action history + current object coordinate data; (b) **Visual augmentation**—object name labels and a coordinate axis HUD are overlaid on renderings, bridging the gap between 2D observation and 3D manipulation; (c) **System message mechanism**—BVH-tree collision detection automatically notifies the agent, and constraint violations (e.g., mixing Create with Manipulate) are rejected with notification.
-   - **Design Motivation**: Removing visual feedback (one-shot generation) → Layout drops by 1.345, Preference drops by 38 pp → the largest single-component impact. Removing Visual Prompting → the agent cannot precisely locate objects, producing chaotic layouts. This demonstrates that closed-loop operation and visual augmentation are both indispensable.
+    - **Function**: Enables the VLM to make decisions based solely on rendered images, emulating how a human observes and adjusts in 3D software.
+    - **Core Mechanism**: (a) Each step provides only the current rendering (without accumulating historical images to avoid overload) + action history + current object coordinate data; (b) **Visual augmentation**—object name labels and a coordinate axis HUD are overlaid on renderings, bridging the gap between 2D observation and 3D manipulation; (c) **System message mechanism**—BVH-tree collision detection automatically notifies the agent, and constraint violations (e.g., mixing Create with Manipulate) are rejected with notification.
+    - **Design Motivation**: Removing visual feedback (one-shot generation) → Layout drops by 1.345, Preference drops by 38 pp → the largest single-component impact. Removing Visual Prompting → the agent cannot precisely locate objects, producing chaotic layouts. This demonstrates that closed-loop operation and visual augmentation are both indispensable.
 
 3. **Self-Correction and Quality Control**
-   - **Function**: Addresses the inherent uncertainty of 3D generative models (which may produce poor-quality or appearance-mismatched assets).
-   - **Core Mechanism**: The agent observes the appearance of a newly generated object in the next step → if unsatisfied, it can Delete + modify the text description and recreate. Objects are automatically prevented from sinking below the ground (raised if $Z < 0$). Collision detection results are fed back via system messages.
-   - **Design Motivation**: 3D generative models (Hunyuan3D) are stochastic → closed-loop feedback makes the system robust to generation failures without assuming single-pass success.
+    - **Function**: Addresses the inherent uncertainty of 3D generative models (which may produce poor-quality or appearance-mismatched assets).
+    - **Core Mechanism**: The agent observes the appearance of a newly generated object in the next step → if unsatisfied, it can Delete + modify the text description and recreate. Objects are automatically prevented from sinking below the ground (raised if $Z < 0$). Collision detection results are fed back via system messages.
+    - **Design Motivation**: 3D generative models (Hunyuan3D) are stochastic → closed-loop feedback makes the system robust to generation failures without assuming single-pass success.
 
 ### Scene Editing Capability
 

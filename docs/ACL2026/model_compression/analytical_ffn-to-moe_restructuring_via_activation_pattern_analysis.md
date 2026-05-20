@@ -18,8 +18,8 @@ content_hash: d9e1b4794c2e635e
 # Analytical FFN-to-MoE Restructuring via Activation Pattern Analysis
 
 **Conference**: ACL 2026
-**arXiv**: [2502.04416](https://arxiv.org/abs/2502.04416)
-**Code**: [GitHub](https://github.com/JarvisPei/CMoE)
+**arXiv**: [2502.04416](https://arxiv.org/abs/2502.04416)  
+**Code**: [GitHub](https://github.com/JarvisPei/CMoE)  
 **Area**: Model Compression / MoE
 **Keywords**: FFN-to-MoE, activation pattern analysis, shared experts, analytical routing, post-training compression
 

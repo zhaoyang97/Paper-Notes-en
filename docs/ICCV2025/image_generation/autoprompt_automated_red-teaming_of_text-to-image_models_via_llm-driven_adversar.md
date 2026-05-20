@@ -18,8 +18,8 @@ content_hash: 34459974c40a4df7
 # AutoPrompt: Automated Red-Teaming of Text-to-Image Models via LLM-Driven Adversarial Prompts
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.24034](https://arxiv.org/abs/2510.24034)
-**Code**: N/A
+**arXiv**: [2510.24034](https://arxiv.org/abs/2510.24034)  
+**Code**: N/A  
 **Area**: Image Generation / AI Safety
 **Keywords**: Red-Teaming, text-to-image, Adversarial Prompts, LLM, Safety Evaluation
 

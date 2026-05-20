@@ -18,8 +18,8 @@ content_hash: cbf77506389aa9bb
 # EgoThinker: Unveiling Egocentric Reasoning with Spatio-Temporal CoT
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23569](https://arxiv.org/abs/2510.23569)
-**Code**: [https://github.com/InternRobotics/EgoThinker](https://github.com/InternRobotics/EgoThinker)
+**arXiv**: [2510.23569](https://arxiv.org/abs/2510.23569)  
+**Code**: [https://github.com/InternRobotics/EgoThinker](https://github.com/InternRobotics/EgoThinker)  
 **Area**: Embodied Intelligence / Egocentric Video Understanding
 **Keywords**: Egocentric video, chain-of-thought reasoning, hand-object grounding, GRPO reinforcement fine-tuning, large-scale dataset
 

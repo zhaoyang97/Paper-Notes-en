@@ -18,8 +18,8 @@ content_hash: 336ae25bc472f624
 # GoalRank: Group-Relative Optimization for a Large Ranking Model
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22046](https://arxiv.org/abs/2509.22046)
-**Code**: None
+**arXiv**: [2509.22046](https://arxiv.org/abs/2509.22046)  
+**Code**: None  
 **Area**: LLM Alignment / Recommendation Ranking
 **Keywords**: ranking, generator-only, group-relative optimization, scaling law, recommendation
 
@@ -50,9 +50,9 @@ This paper theoretically proves that for any Multi-Generator-Evaluator (Multi-G-
 
 2. **Group-Relative Reference Policy**:
 
-   - $\pi^{ref}(l|\mathcal{B}) = \frac{\exp((\hat{r}(l) - \bar{r}_\mathcal{B})/\sigma_\mathcal{B})}{\sum_{l'} \exp((\hat{r}(l') - \bar{r}_\mathcal{B})/\sigma_\mathcal{B})}$
-   - Normalization (subtracting the group mean and dividing by the standard deviation) preserves the ranking order within the group even under a biased reward model.
-   - Condition: the ranking order is reliable when the intra-group reward gap exceeds $\sigma^*$.
+    - $\pi^{ref}(l|\mathcal{B}) = \frac{\exp((\hat{r}(l) - \bar{r}_\mathcal{B})/\sigma_\mathcal{B})}{\sum_{l'} \exp((\hat{r}(l') - \bar{r}_\mathcal{B})/\sigma_\mathcal{B})}$
+    - Normalization (subtracting the group mean and dividing by the standard deviation) preserves the ranking order within the group even under a biased reward model.
+    - Condition: the ranking order is reliable when the intra-group reward gap exceeds $\sigma^*$.
 
 3. **List Group Construction**: An auxiliary policy set $\mathcal{M}$ (comprising heuristic and lightweight neural models) is introduced to generate diverse list groups for each user, ensuring sufficiently large intra-group reward gaps.
 

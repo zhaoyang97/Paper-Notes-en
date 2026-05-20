@@ -18,8 +18,8 @@ content_hash: 29132396399a7ea9
 # LeapFactual: Reliable Visual Counterfactual Explanation Using Conditional Flow Matching
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.14623](https://arxiv.org/abs/2510.14623)
-**Code**: [GitHub](https://github.com/caicairay/LeapFactual)
+**arXiv**: [2510.14623](https://arxiv.org/abs/2510.14623)  
+**Code**: [GitHub](https://github.com/caicairay/LeapFactual)  
 **Area**: Explainable AI / Counterfactual Explanation
 **Keywords**: Counterfactual Explanation, Conditional Flow Matching, Reliability, Model-Agnostic, Information Blending
 

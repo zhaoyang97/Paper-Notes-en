@@ -18,8 +18,8 @@ content_hash: ebd891d95f0a4b1a
 # ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25791](https://arxiv.org/abs/2603.25791)
-**Code**: [https://arthoi-reconstruction.github.io](https://arthoi-reconstruction.github.io)
+**arXiv**: [2603.25791](https://arxiv.org/abs/2603.25791)  
+**Code**: [https://arthoi-reconstruction.github.io](https://arthoi-reconstruction.github.io)  
 **Area**: 3D Vision / Hand-Object Interaction Reconstruction
 **Keywords**: Hand-Object Interaction, Articulated Object, 4D Reconstruction, Foundation Models, MLLM
 

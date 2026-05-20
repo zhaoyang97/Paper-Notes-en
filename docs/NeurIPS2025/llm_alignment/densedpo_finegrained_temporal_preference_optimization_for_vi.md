@@ -18,8 +18,8 @@ content_hash: b9b16fbcc665e7b5
 # DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2506.03517](https://arxiv.org/abs/2506.03517)
-**Code**: [https://snap-research.github.io/DenseDPO/](https://snap-research.github.io/DenseDPO/)
+**arXiv**: [2506.03517](https://arxiv.org/abs/2506.03517)  
+**Code**: [https://snap-research.github.io/DenseDPO/](https://snap-research.github.io/DenseDPO/)  
 **Area**: Video Generation / Preference Optimization
 **Keywords**: video diffusion, DPO, motion bias, segment-level preference, guided generation
 
@@ -51,21 +51,21 @@ DenseDPO modifies two core components of the standard video DPO pipeline: **data
 
 1. **StructuralDPO: Guided Video Pair Construction (Eliminating Motion Bias)**
 
-   - **Function**: Generate video pairs with similar motion trajectories but differing local visual details.
-   - **Mechanism**: Given a GT video $\mathbf{x}$ and a guidance level $\eta \in [0.65, 0.8]$, construct partially noised videos $\mathbf{x}_n^0 = (1-\eta)\mathbf{x} + \eta \boldsymbol{\epsilon}^0$ and $\mathbf{x}_n^1 = (1-\eta)\mathbf{x} + \eta \boldsymbol{\epsilon}^1$, then denoise from step $n = \text{round}(\eta \cdot N)$ to step 1. $\eta$ controls structural similarity — lower $\eta$ implies stronger guidance and more similar videos.
-   - **Design Motivation**: Early denoising steps in diffusion models govern global motion and layout, while later steps govern local details. Starting from a partially noised video preserves the GT motion trajectory, causing the two videos to differ only in local details — annotators cannot base their preference on motion quantity and can only compare visual quality. This fundamentally eliminates motion bias.
+    - **Function**: Generate video pairs with similar motion trajectories but differing local visual details.
+    - **Mechanism**: Given a GT video $\mathbf{x}$ and a guidance level $\eta \in [0.65, 0.8]$, construct partially noised videos $\mathbf{x}_n^0 = (1-\eta)\mathbf{x} + \eta \boldsymbol{\epsilon}^0$ and $\mathbf{x}_n^1 = (1-\eta)\mathbf{x} + \eta \boldsymbol{\epsilon}^1$, then denoise from step $n = \text{round}(\eta \cdot N)$ to step 1. $\eta$ controls structural similarity — lower $\eta$ implies stronger guidance and more similar videos.
+    - **Design Motivation**: Early denoising steps in diffusion models govern global motion and layout, while later steps govern local details. Starting from a partially noised video preserves the GT motion trajectory, causing the two videos to differ only in local details — annotators cannot base their preference on motion quantity and can only compare visual quality. This fundamentally eliminates motion bias.
 
 2. **DenseDPO: Segment-Level Dense Preference Annotation**
 
-   - **Function**: Expand a single preference label for a video pair into independent preference labels for multiple temporal segments.
-   - **Mechanism**: Divide a $T$-frame video into $F = \lceil T/s \rceil$ segments (each of $s$ frames, default 1 second) and annotate preferences independently per segment as $\mathbf{l} \in \{-1, +1\}^F$. Because guided sampling establishes a one-to-one temporal correspondence between the two videos, cross-segment comparisons are valid. The DPO loss becomes $\mathcal{L} = -\mathbb{E}\left[\log\sigma\left(-\beta \sum_{f=1}^{F} l_f \cdot (s_f^0 - s_f^1)\right)\right]$.
-   - **Design Motivation**: Experiments show that in over 60% of video pairs, preference directions differ across temporal segments — in some segments video A is better, while in others video B is. Whole-video annotation either results in ties or selects "the video with fewer artifacts," failing to exploit this fine-grained information. Segment-level annotation achieves three goals simultaneously: more precise signals, fewer ties (>80% of pairs contain at least one non-tie segment), and more effective training samples.
+    - **Function**: Expand a single preference label for a video pair into independent preference labels for multiple temporal segments.
+    - **Mechanism**: Divide a $T$-frame video into $F = \lceil T/s \rceil$ segments (each of $s$ frames, default 1 second) and annotate preferences independently per segment as $\mathbf{l} \in \{-1, +1\}^F$. Because guided sampling establishes a one-to-one temporal correspondence between the two videos, cross-segment comparisons are valid. The DPO loss becomes $\mathcal{L} = -\mathbb{E}\left[\log\sigma\left(-\beta \sum_{f=1}^{F} l_f \cdot (s_f^0 - s_f^1)\right)\right]$.
+    - **Design Motivation**: Experiments show that in over 60% of video pairs, preference directions differ across temporal segments — in some segments video A is better, while in others video B is. Whole-video annotation either results in ties or selects "the video with fewer artifacts," failing to exploit this fine-grained information. Segment-level annotation achieves three goals simultaneously: more precise signals, fewer ties (>80% of pairs contain at least one non-tie segment), and more effective training samples.
 
 3. **VLM-Based Automatic Segment-Level Preference Annotation**
 
-   - **Function**: Replace human annotation with off-the-shelf vision-language models (e.g., GPT-o3).
-   - **Mechanism**: Feed the corresponding short segments (~1 second) from two videos to a VLM and ask it to judge which is better. The key insight is that while VLMs perform poorly when evaluating long videos (5 seconds), they yield judgments consistent with humans on short segments.
-   - **Design Motivation**: Training a dedicated video reward model requires large-scale annotation, whereas DenseDPO reduces the problem to a granularity manageable by VLMs — short-segment comparison. This substantially lowers the barrier to deploying the method.
+    - **Function**: Replace human annotation with off-the-shelf vision-language models (e.g., GPT-o3).
+    - **Mechanism**: Feed the corresponding short segments (~1 second) from two videos to a VLM and ask it to judge which is better. The key insight is that while VLMs perform poorly when evaluating long videos (5 seconds), they yield judgments consistent with humans on short segments.
+    - **Design Motivation**: Training a dedicated video reward model requires large-scale annotation, whereas DenseDPO reduces the problem to a granularity manageable by VLMs — short-segment comparison. This substantially lowers the barrier to deploying the method.
 
 ### Loss & Training
 

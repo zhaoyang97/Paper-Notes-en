@@ -17,9 +17,9 @@ content_hash: cc36fda1cfc21fc4
 # Improving Decision Trees through the Lens of Parameterized Local Search
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.12726](https://arxiv.org/abs/2510.12726)
+**arXiv**: [2510.12726](https://arxiv.org/abs/2510.12726)  
 **Authors**: Juha Harviainen, Frank Sommer, Manuel Sorge
-**Code**: Available (proof-of-concept implementation)
+**Code**: Available (proof-of-concept implementation)  
 **Area**: Machine Learning Theory / Decision Tree Optimization
 **Keywords**: Decision Trees, Parameterized Complexity, Local Search, NP-Completeness, Fixed-Parameter Tractability
 

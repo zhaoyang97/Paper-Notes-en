@@ -18,8 +18,8 @@ content_hash: 7a4dfe84629ed0d5
 # A Mind Cannot Be Smeared Across Time
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.11620](https://arxiv.org/abs/2601.11620)
-**Code**: None
+**arXiv**: [2601.11620](https://arxiv.org/abs/2601.11620)  
+**Code**: None  
 **Area**: Audio & Speech
 **Keywords**: Machine Consciousness, Temporal Constraints, Stack Theory, Concurrency, Unity of Consciousness
 
@@ -49,21 +49,21 @@ A Stack-Time semantic module is added atop Stack Theory: (1) layer-aware time is
 
 1. **Temporal Lifting Algebra and Non-Commutativity Theorem**
 
-   - **Function**: Formally characterizes why "each constituent appearing separately" does not entail "the conjunction appearing"
-   - **Mechanism**: An existential realization operator $\Diamond_\Delta$ within a temporal window is defined; it is proved that $\Diamond_\Delta(A) \wedge \Diamond_\Delta(B) \not\Rightarrow \Diamond_\Delta(A \wedge B)$ (Theorem 3). Intuitively, $A$ may be true at $t_1$ and $B$ at $t_2$, yet no single moment may exist at which both are true simultaneously.
-   - **Design Motivation**: This constitutes the central formalization of the Temporal Gap problem—the unity of consciousness requires the simultaneous realization of a conjunction, not time-multiplexed realization.
+    - **Function**: Formally characterizes why "each constituent appearing separately" does not entail "the conjunction appearing"
+    - **Mechanism**: An existential realization operator $\Diamond_\Delta$ within a temporal window is defined; it is proved that $\Diamond_\Delta(A) \wedge \Diamond_\Delta(B) \not\Rightarrow \Diamond_\Delta(A \wedge B)$ (Theorem 3). Intuitively, $A$ may be true at $t_1$ and $B$ at $t_2$, yet no single moment may exist at which both are true simultaneously.
+    - **Design Motivation**: This constitutes the central formalization of the Temporal Gap problem—the unity of consciousness requires the simultaneous realization of a conjunction, not time-multiplexed realization.
 
 2. **Chord vs. Arpeggio Stance Distinction**
 
-   - **Function**: Reduces the possibility of machine consciousness to different assumptions about co-instantiation requirements
-   - **Mechanism**: The Chord stance requires all constituents of conscious content to be simultaneously true at some moment within an objective time window (analogous to a musical chord, where all notes sound at once). The Arpeggio stance only requires all constituents to appear in succession within the window (analogous to an arpeggio, where notes sound sequentially). Under Chord, consciousness in strictly sequential systems is impossible; under Arpeggio, the temporal constraint is considerably more permissive.
-   - **Design Motivation**: Different theories of consciousness impose different requirements on "unity"; formal disambiguation is necessary to yield clear conclusions.
+    - **Function**: Reduces the possibility of machine consciousness to different assumptions about co-instantiation requirements
+    - **Mechanism**: The Chord stance requires all constituents of conscious content to be simultaneously true at some moment within an objective time window (analogous to a musical chord, where all notes sound at once). The Arpeggio stance only requires all constituents to appear in succession within the window (analogous to an arpeggio, where notes sound sequentially). Under Chord, consciousness in strictly sequential systems is impossible; under Arpeggio, the temporal constraint is considerably more permissive.
+    - **Design Motivation**: Different theories of consciousness impose different requirements on "unity"; formal disambiguation is necessary to yield clear conclusions.
 
 3. **Concurrency Capacity Measure**
 
-   - **Function**: Quantifies a hardware architecture's ability to satisfy co-instantiation conditions
-   - **Mechanism**: Concurrency capacity is defined as the number of independent "contributors" a system can provide simultaneously within a single time step. If grounding consciousness requires $k$ simultaneous contributors but the hardware's concurrency capacity is less than $k$, then under the Chord assumption that hardware cannot support the relevant conscious content (Theorem 4).
-   - **Design Motivation**: Provides a computable criterion for determining whether a hardware architecture can support consciousness.
+    - **Function**: Quantifies a hardware architecture's ability to satisfy co-instantiation conditions
+    - **Mechanism**: Concurrency capacity is defined as the number of independent "contributors" a system can provide simultaneously within a single time step. If grounding consciousness requires $k$ simultaneous contributors but the hardware's concurrency capacity is less than $k$, then under the Chord assumption that hardware cannot support the relevant conscious content (Theorem 4).
+    - **Design Motivation**: Provides a computable criterion for determining whether a hardware architecture can support consciousness.
 
 ### Loss & Training
 Not applicable (purely theoretical/formal paper; no training process).

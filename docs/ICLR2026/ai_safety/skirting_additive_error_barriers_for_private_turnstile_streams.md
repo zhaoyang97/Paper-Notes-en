@@ -18,8 +18,8 @@ content_hash: 9d696f9fa1ee86d7
 # Skirting Additive Error Barriers for Private Turnstile Streams
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.10360](https://arxiv.org/abs/2602.10360)
-**Code**: None
+**arXiv**: [2602.10360](https://arxiv.org/abs/2602.10360)  
+**Code**: None  
 **Area**: Differential Privacy / Streaming Algorithms
 **Keywords**: differential privacy, continual release, turnstile stream, distinct elements, F2 moment
 

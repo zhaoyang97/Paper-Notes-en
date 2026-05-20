@@ -18,8 +18,8 @@ content_hash: f60407da8484db18
 # MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.05361](https://arxiv.org/abs/2510.05361)
-**Code**: None
+**arXiv**: [2510.05361](https://arxiv.org/abs/2510.05361)  
+**Code**: None  
 **Area**: Distributed Optimization / LLM Pre-training
 **Keywords**: Distributed Training, Adaptive Optimizer, Multi-timescale Momentum, Communication Efficiency, Local SGD
 

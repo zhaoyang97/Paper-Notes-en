@@ -18,8 +18,8 @@ content_hash: 3cb2bd97d6281019
 # GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.13043](https://arxiv.org/abs/2512.13043)
-**Code**: [https://github.com/TongWei1105/GTR-Turbo](https://github.com/TongWei1105/GTR-Turbo)
+**arXiv**: [2512.13043](https://arxiv.org/abs/2512.13043)  
+**Code**: [https://github.com/TongWei1105/GTR-Turbo](https://github.com/TongWei1105/GTR-Turbo)  
 **Area**: Multimodal VLM / Agent / Reinforcement Learning
 **Keywords**: VLM agent, multi-turn reinforcement learning, model merging, knowledge distillation, self-evolution
 

@@ -18,8 +18,8 @@ content_hash: 6915630233762aaf
 # Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02123](https://arxiv.org/abs/2511.02123)
-**Code**: Not available
+**arXiv**: [2511.02123](https://arxiv.org/abs/2511.02123)  
+**Code**: Not available  
 **Area**: Reinforcement Learning
 **Keywords**: contextual bandits, Thompson sampling, variance-aware, feel-good exploration, regret bounds
 

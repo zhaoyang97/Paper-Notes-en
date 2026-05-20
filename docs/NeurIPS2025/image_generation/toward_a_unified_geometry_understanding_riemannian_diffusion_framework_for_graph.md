@@ -18,8 +18,8 @@ content_hash: 75efdcda830793b1
 # Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04522](https://arxiv.org/abs/2510.04522)
-**Code**: [GitHub](https://github.com/RingBDStack/GeoMancer)
+**arXiv**: [2510.04522](https://arxiv.org/abs/2510.04522)  
+**Code**: [GitHub](https://github.com/RingBDStack/GeoMancer)  
 **Area**: Diffusion Models / Graph Generation / Geometric Learning
 **Keywords**: Graph Diffusion Models, Riemannian Manifolds, Product Manifolds, Molecular Generation, Geometric Autoencoder
 

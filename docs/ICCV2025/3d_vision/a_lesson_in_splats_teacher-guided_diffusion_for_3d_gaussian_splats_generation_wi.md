@@ -18,8 +18,8 @@ content_hash: b0243e10733ac8e4
 # A Lesson in Splats: Teacher-Guided Diffusion for 3D Gaussian Splats Generation with 2D Supervision
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.00623](https://arxiv.org/abs/2412.00623)
-**Code**: [https://lesson-in-splats.github.io/](https://lesson-in-splats.github.io/)
+**arXiv**: [2412.00623](https://arxiv.org/abs/2412.00623)  
+**Code**: [https://lesson-in-splats.github.io/](https://lesson-in-splats.github.io/)  
 **Area**: 3D Vision / 3D Generation
 **Keywords**: 3D Gaussian Splatting, Diffusion Models, 2D Supervision, Teacher Guidance, Novel View Synthesis
 

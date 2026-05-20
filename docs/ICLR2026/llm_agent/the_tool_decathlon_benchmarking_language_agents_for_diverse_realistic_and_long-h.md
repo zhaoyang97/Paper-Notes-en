@@ -20,8 +20,8 @@ content_hash: 8f79275558b68d33
 # The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.25726](https://arxiv.org/abs/2510.25726)
-**Code**: To be confirmed (based on MCP servers)
+**arXiv**: [2510.25726](https://arxiv.org/abs/2510.25726)  
+**Code**: To be confirmed (based on MCP servers)  
 **Area**: LLM Agent / Benchmark / Tool Use
 **Keywords**: language agent, benchmark, MCP, tool calling, long-horizon, multi-application interaction, execution-based evaluation
 

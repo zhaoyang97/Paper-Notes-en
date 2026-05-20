@@ -18,8 +18,8 @@ content_hash: 87d6ddf499fee694
 # Foresight: Adaptive Layer Reuse for Accelerated and High-Quality Text-to-Video Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.00329](https://arxiv.org/abs/2506.00329)
-**Code**: [https://github.com/STAR-Laboratory/foresight](https://github.com/STAR-Laboratory/foresight)
+**arXiv**: [2506.00329](https://arxiv.org/abs/2506.00329)  
+**Code**: [https://github.com/STAR-Laboratory/foresight](https://github.com/STAR-Laboratory/foresight)  
 **Area**: Video Generation
 **Keywords**: Adaptive Caching, DiT Acceleration, Feature Reuse, Text-to-Video Generation, Training-Free
 

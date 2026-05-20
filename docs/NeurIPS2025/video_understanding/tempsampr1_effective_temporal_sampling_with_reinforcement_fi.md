@@ -19,8 +19,8 @@ content_hash: ea3aac6d0c9f6215
 # TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.18056](https://arxiv.org/abs/2509.18056)
-**Code**: [github.com/HVision-NKU/TempSamp-R1](https://github.com/HVision-NKU/TempSamp-R1)
+**arXiv**: [2509.18056](https://arxiv.org/abs/2509.18056)  
+**Code**: [github.com/HVision-NKU/TempSamp-R1](https://github.com/HVision-NKU/TempSamp-R1)  
 **Area**: Video Temporal Understanding / Reinforcement Fine-Tuning
 **Keywords**: temporal grounding, GRPO, off-policy, soft advantage, hybrid CoT, video LLM
 

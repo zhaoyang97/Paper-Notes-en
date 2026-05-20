@@ -19,8 +19,8 @@ content_hash: 9c72a69ba109882c
 # Trinity: An Evolved LLM Coordinator
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.04695](https://arxiv.org/abs/2512.04695)
-**Code**: None (Sakana AI)
+**arXiv**: [2512.04695](https://arxiv.org/abs/2512.04695)  
+**Code**: None (Sakana AI)  
 **Area**: Reinforcement Learning / LLM Coordination
 **Keywords**: LLM coordination, model composition, evolutionary strategy, CMA-ES, multi-role collaboration, test-time composition
 

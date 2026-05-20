@@ -17,8 +17,8 @@ content_hash: a4eb39d5c39284e8
 # Obliviator Reveals the Cost of Nonlinear Guardedness in Concept Erasure
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2603.07529](https://arxiv.org/abs/2603.07529)
-**Code**: None
+**arXiv**: [2603.07529](https://arxiv.org/abs/2603.07529)  
+**Code**: None  
 **Area**: Fairness / Concept Erasure
 **Keywords**: concept erasure, HSIC, RKHS, fairness, nonlinear guardedness
 

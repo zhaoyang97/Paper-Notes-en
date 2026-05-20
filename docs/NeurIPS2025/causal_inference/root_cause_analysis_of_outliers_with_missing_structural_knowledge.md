@@ -17,8 +17,8 @@ content_hash: 871aabb144b021a5
 # Root Cause Analysis of Outliers with Missing Structural Knowledge
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2406.05014](https://arxiv.org/abs/2406.05014)
-**Code**: [amazon-science/RCAWithMissingStructuralKnowledgeCode](https://github.com/amazon-science/RCAWithMissingStructuralKnowledgeCode)
+**arXiv**: [2406.05014](https://arxiv.org/abs/2406.05014)  
+**Code**: [amazon-science/RCAWithMissingStructuralKnowledgeCode](https://github.com/amazon-science/RCAWithMissingStructuralKnowledgeCode)  
 **Area**: Causal Inference
 **Keywords**: Root Cause Analysis, Causal Inference, Anomaly Detection, Information-Theoretic Anomaly Score, Polytree
 

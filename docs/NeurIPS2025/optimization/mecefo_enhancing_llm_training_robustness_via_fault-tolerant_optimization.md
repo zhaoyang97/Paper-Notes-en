@@ -18,8 +18,8 @@ content_hash: 7941bcd96092ad22
 # MeCeFO: Enhancing LLM Training Robustness via Fault-Tolerant Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16415](https://arxiv.org/abs/2510.16415)
-**Code**: [GitHub](https://github.com/pkumelon/MeCeFO)
+**arXiv**: [2510.16415](https://arxiv.org/abs/2510.16415)  
+**Code**: [GitHub](https://github.com/pkumelon/MeCeFO)  
 **Area**: Optimization
 **Keywords**: fault-tolerant training, distributed optimization, LLM pre-training, low-rank gradient approximation, activation recomputation
 

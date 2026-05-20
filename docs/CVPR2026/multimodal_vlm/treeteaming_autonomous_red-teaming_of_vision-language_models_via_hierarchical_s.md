@@ -18,8 +18,8 @@ content_hash: f52d8b8cc74aa389
 # TreeTeaming: Autonomous Red-Teaming of Vision-Language Models via Hierarchical Strategy Exploration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22882](https://arxiv.org/abs/2603.22882)
-**Code**: [https://github.com/ChunXiaostudy/TreeTeaming](https://github.com/ChunXiaostudy/TreeTeaming)
+**arXiv**: [2603.22882](https://arxiv.org/abs/2603.22882)  
+**Code**: [https://github.com/ChunXiaostudy/TreeTeaming](https://github.com/ChunXiaostudy/TreeTeaming)  
 **Area**: Multimodal VLM
 **Keywords**: red-teaming, vision-language model safety, automated attack, strategy tree, jailbreak attack
 

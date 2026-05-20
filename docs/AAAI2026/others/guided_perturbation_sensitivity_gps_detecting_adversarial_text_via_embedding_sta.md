@@ -17,8 +17,8 @@ content_hash: 3b84dba12f5d1542
 # Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.11667](https://arxiv.org/abs/2508.11667)
-**Code**: [GitHub](https://github.com/ReDASers/Guided-Perturbation-Sensitivity)
+**arXiv**: [2508.11667](https://arxiv.org/abs/2508.11667)  
+**Code**: [GitHub](https://github.com/ReDASers/Guided-Perturbation-Sensitivity)  
 **Area**: Others
 **Keywords**: adversarial text detection, embedding stability, word importance, BiLSTM, perturbation sensitivity
 

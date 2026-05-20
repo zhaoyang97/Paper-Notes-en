@@ -18,8 +18,8 @@ content_hash: e5f358f7aa5498e8
 # MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.18316](https://arxiv.org/abs/2510.18316)
-**Code**: [Project Page](https://momagen.github.io)
+**arXiv**: [2510.18316](https://arxiv.org/abs/2510.18316)  
+**Code**: [Project Page](https://momagen.github.io)  
 **Area**: Reinforcement Learning
 **Keywords**: mobile manipulation, bimanual coordination, constrained optimization, automatic data generation, imitation learning
 

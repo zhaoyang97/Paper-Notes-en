@@ -18,8 +18,8 @@ content_hash: e3b913b6608f5837
 # Understanding Differential Transformer Unchains Pretrained Self-Attentions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16333](https://arxiv.org/abs/2505.16333)
-**Code**: None
+**arXiv**: [2505.16333](https://arxiv.org/abs/2505.16333)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Differential Transformer, attention mechanism analysis, attention noise cancellation, pretrained attention liberation, interpretability
 

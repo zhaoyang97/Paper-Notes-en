@@ -18,8 +18,8 @@ content_hash: 5074e510676dd61f
 # Back on Track: Bundle Adjustment for Dynamic Scene Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.14516](https://arxiv.org/abs/2504.14516)
-**Code**: [https://wrchen530.github.io/projects/batrack](https://wrchen530.github.io/projects/batrack)
+**arXiv**: [2504.14516](https://arxiv.org/abs/2504.14516)  
+**Code**: [https://wrchen530.github.io/projects/batrack](https://wrchen530.github.io/projects/batrack)  
 **Area**: 3D Vision / Dynamic SLAM
 **Keywords**: Bundle Adjustment, Dynamic Scene, Motion Decoupling, 3D Tracking, Depth Refinement
 

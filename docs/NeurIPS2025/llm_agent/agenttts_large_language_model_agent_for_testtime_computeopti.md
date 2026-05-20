@@ -17,8 +17,8 @@ content_hash: 20823dc2bbe06d28
 # AgentTTS: Large Language Model Agent for Test-time Compute-optimal Scaling Strategy in Complex Tasks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.00890](https://arxiv.org/abs/2508.00890)
-**Code**: [https://github.com/FairyFali/AgentTTS/](https://github.com/FairyFali/AgentTTS/)
+**arXiv**: [2508.00890](https://arxiv.org/abs/2508.00890)  
+**Code**: [https://github.com/FairyFali/AgentTTS/](https://github.com/FairyFali/AgentTTS/)  
 **Area**: LLM Agent / Test-time Compute
 **Keywords**: Test-time Scaling, Multi-stage Tasks, Compute Budget Allocation, LLM Agent, Hyperparameter Optimization
 

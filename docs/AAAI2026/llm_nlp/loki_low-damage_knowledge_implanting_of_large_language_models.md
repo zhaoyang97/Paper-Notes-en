@@ -18,8 +18,8 @@ content_hash: ed083791bc1135c8
 # LoKI: Low-damage Knowledge Implanting of Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.22120](https://arxiv.org/abs/2505.22120)
-**Code**: [https://github.com/Nexround/LoKI](https://github.com/Nexround/LoKI)
+**arXiv**: [2505.22120](https://arxiv.org/abs/2505.22120)  
+**Code**: [https://github.com/Nexround/LoKI](https://github.com/Nexround/LoKI)  
 **Area**: LLM Fine-tuning / Catastrophic Forgetting
 **Keywords**: Parameter-efficient fine-tuning, catastrophic forgetting, knowledge vector attribution, layer-balanced strategy, FFN knowledge storage
 

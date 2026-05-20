@@ -18,8 +18,8 @@ content_hash: bdffc089f2b90eac
 # Yggdrasil: Bridging Dynamic Speculation and Static Runtime for Latency-Optimal Tree-Based LLM Decoding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.23858](https://arxiv.org/abs/2512.23858)
-**Code**: None
+**arXiv**: [2512.23858](https://arxiv.org/abs/2512.23858)  
+**Code**: None  
 **Area**: LLM Efficiency / Speculative Decoding
 **Keywords**: speculative decoding, tree-structured draft, compiler optimization, latency optimization, LLM inference acceleration
 
@@ -51,21 +51,21 @@ Yggdrasil performs co-optimization at three levels: (1) **Algorithm level**: EGT
 
 1. **Latency-Aware Optimization Objective**
 
-   - **Function**: Replaces the conventional AAL metric as the tree structure selection criterion, directly maximizing wall-clock speedup.
-   - **Mechanism**: The speedup is formulated as $\frac{AAL(W_d, D_d, W_v) \cdot T_{verifier}(1)}{\sum_{D_d} T_{drafter}(W_d) + T_{verifier}(W_v)}$, where $W_d$, $D_d$, and $W_v$ denote draft width, draft depth, and verification width, respectively. Hardware profiling is used to obtain latency curves for $T_{drafter}$ and $T_{verifier}$, enabling latency-optimal tree structure selection at runtime.
-   - **Design Motivation**: AAL ignores the nonlinear growth of verification latency with respect to token count. Experiments show that AAL continues to increase in high-token-count regimes even as the actual speedup saturates or decreases. The latency-aware objective yields an additional 8% performance gain.
+    - **Function**: Replaces the conventional AAL metric as the tree structure selection criterion, directly maximizing wall-clock speedup.
+    - **Mechanism**: The speedup is formulated as $\frac{AAL(W_d, D_d, W_v) \cdot T_{verifier}(1)}{\sum_{D_d} T_{drafter}(W_d) + T_{verifier}(W_v)}$, where $W_d$, $D_d$, and $W_v$ denote draft width, draft depth, and verification width, respectively. Hardware profiling is used to obtain latency curves for $T_{drafter}$ and $T_{verifier}$, enabling latency-optimal tree structure selection at runtime.
+    - **Design Motivation**: AAL ignores the nonlinear growth of verification latency with respect to token count. Experiments show that AAL continues to increase in high-token-count regimes even as the actual speedup saturates or decreases. The latency-aware objective yields an additional 8% performance gain.
 
 2. **Equal-Growth Tree (EGT)**
 
-   - **Function**: Achieves context-adaptive tree structures while maintaining static operator shapes compatible with compilers.
-   - **Mechanism**: EGT decomposes tree construction into three greedy sub-decisions: (a) **Depth prediction**: a lightweight MLP predictor infers the optimal draft depth $D_d$ from the target model's last-token embedding; graphs for all depths are pre-compiled to eliminate conditional branching. (b) **Width selection**: given the predicted depth, the width $W_d$ maximizing speedup is selected; equal-width growth at each step guarantees fixed operator shapes. (c) **Verification pruning**: after drafting, dynamic programming extracts the subtree that maximizes speedup as the verification set. Since the number of new leaves added per step is fixed at $W_d$, operator shapes are determined at compile time.
-   - **Design Motivation**: Fully dynamic methods such as DISCO achieve high AAL but are incompatible with compilation, while static methods such as Sequoia are compiler-friendly but apply a single tree structure to all inputs. EGT resolves this tension through the principle of "statically shaped, structurally dynamic."
+    - **Function**: Achieves context-adaptive tree structures while maintaining static operator shapes compatible with compilers.
+    - **Mechanism**: EGT decomposes tree construction into three greedy sub-decisions: (a) **Depth prediction**: a lightweight MLP predictor infers the optimal draft depth $D_d$ from the target model's last-token embedding; graphs for all depths are pre-compiled to eliminate conditional branching. (b) **Width selection**: given the predicted depth, the width $W_d$ maximizing speedup is selected; equal-width growth at each step guarantees fixed operator shapes. (c) **Verification pruning**: after drafting, dynamic programming extracts the subtree that maximizes speedup as the verification set. Since the number of new leaves added per step is fixed at $W_d$, operator shapes are determined at compile time.
+    - **Design Motivation**: Fully dynamic methods such as DISCO achieve high AAL but are incompatible with compilation, while static methods such as Sequoia are compiler-friendly but apply a single tree structure to all inputs. EGT resolves this tension through the principle of "statically shaped, structurally dynamic."
 
 3. **Stage-Based Scheduling Runtime**
 
-   - **Function**: Reduces CPU-GPU bubbles in speculative decoding through ahead-of-time execution and overlapped scheduling.
-   - **Mechanism**: (a) **Ahead-of-Time Tail Draft**: the full candidate sequence is drafted before acceptance results are available and reused directly upon acceptance. (b) **Ahead-of-Time Head Draft**: the head draft is initiated after the bonus draft of the previous iteration, overlapping with the acceptance phase. Profile-guided search then identifies the optimal execution plan among all feasible stage-overlap configurations.
-   - **Design Motivation**: CPU-side logic (acceptance checking, token management) in speculative decoding causes GPU idle time. By breaking data dependencies and pre-executing downstream stages, CPU logic is removed from the critical path.
+    - **Function**: Reduces CPU-GPU bubbles in speculative decoding through ahead-of-time execution and overlapped scheduling.
+    - **Mechanism**: (a) **Ahead-of-Time Tail Draft**: the full candidate sequence is drafted before acceptance results are available and reused directly upon acceptance. (b) **Ahead-of-Time Head Draft**: the head draft is initiated after the bonus draft of the previous iteration, overlapping with the acceptance phase. Profile-guided search then identifies the optimal execution plan among all feasible stage-overlap configurations.
+    - **Design Motivation**: CPU-side logic (acceptance checking, token management) in speculative decoding causes GPU idle time. By breaking data dependencies and pre-executing downstream stages, CPU logic is removed from the critical path.
 
 ### System Implementation
 

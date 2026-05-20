@@ -17,8 +17,8 @@ content_hash: afa5ccab6fde1cf5
 # Echo: Towards Advanced Audio Comprehension via Audio-Interleaved Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.11909](https://arxiv.org/abs/2602.11909)
-**Code**: [GitHub](https://github.com/wdqqdw/Echo)
+**arXiv**: [2602.11909](https://arxiv.org/abs/2602.11909)  
+**Code**: [GitHub](https://github.com/wdqqdw/Echo)  
 **Area**: Reinforcement Learning
 **Keywords**: Audio Understanding, Large Audio-Language Models, Audio-Interleaved Reasoning, Reinforcement Learning, Chain-of-Thought
 

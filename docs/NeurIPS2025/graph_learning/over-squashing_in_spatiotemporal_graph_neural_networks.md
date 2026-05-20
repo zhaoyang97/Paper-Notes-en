@@ -18,8 +18,8 @@ content_hash: bb040f6b99ee7157
 # Over-squashing in Spatiotemporal Graph Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.15507](https://arxiv.org/abs/2506.15507)
-**Code**: To be confirmed
+**arXiv**: [2506.15507](https://arxiv.org/abs/2506.15507)  
+**Code**: To be confirmed  
 **Area**: Graph Learning / Spatiotemporal Graph Neural Networks / Theoretical Analysis
 **Keywords**: Over-squashing, Spatiotemporal GNN, Causal Convolution, Information Propagation, Graph Rewiring
 

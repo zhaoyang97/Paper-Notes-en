@@ -18,8 +18,8 @@ content_hash: ce75cdc4e742812e
 # Can You Hear Me Now? A Benchmark for Long-Range Graph Propagation and Beyond
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.17762](https://arxiv.org/abs/2512.17762)
-**Code**: [GitHub](https://github.com/Graph-ECHO-Benchmark/ECHO)
+**arXiv**: [2512.17762](https://arxiv.org/abs/2512.17762)  
+**Code**: [GitHub](https://github.com/Graph-ECHO-Benchmark/ECHO)  
 **Area**: LLM Evaluation
 **Keywords**: long-range propagation, graph benchmark, over-squashing, graph transformers, molecular property prediction
 

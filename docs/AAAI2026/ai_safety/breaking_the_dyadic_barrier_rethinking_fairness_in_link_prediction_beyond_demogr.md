@@ -19,8 +19,8 @@ content_hash: c6e9981df8be815c
 # Breaking the Dyadic Barrier: Rethinking Fairness in Link Prediction Beyond Demographic Parity
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06568](https://arxiv.org/abs/2511.06568)
-**Code**: [joaopedromattos/MORAL](https://github.com/joaopedromattos/MORAL)
+**arXiv**: [2511.06568](https://arxiv.org/abs/2511.06568)  
+**Code**: [joaopedromattos/MORAL](https://github.com/joaopedromattos/MORAL)  
 **Area**: AI Safety / Algorithmic Fairness
 **Keywords**: Link Prediction, Fairness, Demographic Parity, Ranking Fairness, Graph Neural Networks, NDKL
 

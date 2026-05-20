@@ -18,8 +18,8 @@ content_hash: 3015fd21cb9b8a49
 # An Empirical Study of Autoregressive Pre-training from Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.05453](https://arxiv.org/abs/2501.05453)
-**Code**: None
+**arXiv**: [2501.05453](https://arxiv.org/abs/2501.05453)  
+**Code**: None  
 **Area**: Visual Representation Learning / Video Understanding
 **Keywords**: Autoregressive Pre-training, Video Models, Visual Tokens, Scaling Laws, Representation Learning
 

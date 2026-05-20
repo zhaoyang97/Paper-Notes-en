@@ -18,8 +18,8 @@ content_hash: 643b8abcffb72181
 # Model-Based Policy Adaptation for Closed-Loop End-to-End Autonomous Driving
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.21584](https://arxiv.org/abs/2511.21584)
-**Code**: [Project Page](https://mpa-drive.github.io/)
+**arXiv**: [2511.21584](https://arxiv.org/abs/2511.21584)  
+**Code**: [Project Page](https://mpa-drive.github.io/)  
 **Area**: Autonomous Driving
 **Keywords**: end-to-end autonomous driving, closed-loop evaluation, counterfactual data, diffusion policy, Q-value guidance
 

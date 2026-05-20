@@ -17,8 +17,8 @@ content_hash: aa50f638e6fe9978
 # Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.26303](https://arxiv.org/abs/2510.26303)
-**Code**: None
+**arXiv**: [2510.26303](https://arxiv.org/abs/2510.26303)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Adam, implicit bias, maximum margin, mini-batch, Mahalanobis norm
 

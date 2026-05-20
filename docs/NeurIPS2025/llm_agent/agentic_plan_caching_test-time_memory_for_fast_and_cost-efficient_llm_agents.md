@@ -18,8 +18,8 @@ content_hash: df0cd4e915a8c9d5
 # Agentic Plan Caching: Test-Time Memory for Fast and Cost-Efficient LLM Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.14852](https://arxiv.org/abs/2506.14852)
-**Code**: None
+**arXiv**: [2506.14852](https://arxiv.org/abs/2506.14852)  
+**Code**: None  
 **Area**: LLM Agent / LLM Efficiency
 **Keywords**: Agent caching, plan templates, test-time memory, inference cost optimization, Plan-Act paradigm
 

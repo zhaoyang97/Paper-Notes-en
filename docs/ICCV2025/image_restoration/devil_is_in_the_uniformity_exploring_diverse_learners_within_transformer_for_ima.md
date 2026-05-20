@@ -18,8 +18,8 @@ content_hash: e3a1a2bef7c88f32
 # Devil is in the Uniformity: Exploring Diverse Learners within Transformer for Image Restoration
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.20174](https://arxiv.org/abs/2503.20174)
-**Code**: [https://github.com/joshyZhou/HINT](https://github.com/joshyZhou/HINT)
+**arXiv**: [2503.20174](https://arxiv.org/abs/2503.20174)  
+**Code**: [https://github.com/joshyZhou/HINT](https://github.com/joshyZhou/HINT)  
 **Area**: Image Restoration
 **Keywords**: Image Restoration, Multi-Head Attention, Transformer, Low-Light Enhancement, Dehazing, Desnowing
 

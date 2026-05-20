@@ -18,8 +18,8 @@ content_hash: ff348ccdfeea9acd
 # HERMES: temporal-coHERent long-forM understanding with Episodes and Semantics
 
 **Conference**: ICCV 2025
-**arXiv**: [2408.17443](https://arxiv.org/abs/2408.17443)
-**Code**: [GitHub](https://github.com/joslefaure/HERMES)
+**arXiv**: [2408.17443](https://arxiv.org/abs/2408.17443)  
+**Code**: [GitHub](https://github.com/joslefaure/HERMES)  
 **Area**: Video Understanding
 **Keywords**: long-form video understanding, episodic compression, semantic retrieval, video question answering, plug-and-play module
 

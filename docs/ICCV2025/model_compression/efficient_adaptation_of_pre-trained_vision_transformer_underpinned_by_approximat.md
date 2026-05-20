@@ -18,8 +18,8 @@ content_hash: 29fce5f92240c275
 # Efficient Adaptation of Pre-Trained Vision Transformer Underpinned by Approximation Theory
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.13260](https://arxiv.org/abs/2507.13260)
-**Code**: [Google Drive](https://drive.google.com/file/d/1rg3JYfkmeLGDbRWXspO22wxVspbtnthV/view?usp=drive_link)
+**arXiv**: [2507.13260](https://arxiv.org/abs/2507.13260)  
+**Code**: [Google Drive](https://drive.google.com/file/d/1rg3JYfkmeLGDbRWXspO22wxVspbtnthV/view?usp=drive_link)  
 **Area**: Model Compression
 **Keywords**: parameter-efficient fine-tuning, approximate orthogonality, LoRA, Adapter, Vision Transformer
 

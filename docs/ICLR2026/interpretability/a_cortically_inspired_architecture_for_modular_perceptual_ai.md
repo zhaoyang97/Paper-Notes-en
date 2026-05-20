@@ -18,8 +18,8 @@ content_hash: 15e22fef1574b6cf
 # A Cortically Inspired Architecture for Modular Perceptual AI
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.07295](https://arxiv.org/abs/2603.07295)
-**Code**: None
+**arXiv**: [2603.07295](https://arxiv.org/abs/2603.07295)  
+**Code**: None  
 **Area**: Cognitive Architecture / Modular AI
 **Keywords**: cortically inspired architecture, modular perception, predictive coding, cross-modal fusion, sparse autoencoder
 

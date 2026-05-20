@@ -18,8 +18,8 @@ content_hash: 54c3cabe356257b7
 # Open-World Skill Discovery from Unsegmented Demonstration Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.10684](https://arxiv.org/abs/2503.10684)
-**Code**: [craftjarvis.github.io/SkillDiscovery](https://craftjarvis.github.io/SkillDiscovery/)
+**arXiv**: [2503.10684](https://arxiv.org/abs/2503.10684)  
+**Code**: [craftjarvis.github.io/SkillDiscovery](https://craftjarvis.github.io/SkillDiscovery/)  
 **Area**: Image Segmentation
 **Keywords**: Skill Discovery, Temporal Video Segmentation, Behavior Cloning, Open-World, Minecraft
 

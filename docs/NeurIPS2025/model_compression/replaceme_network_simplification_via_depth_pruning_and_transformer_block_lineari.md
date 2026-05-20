@@ -18,8 +18,8 @@ content_hash: 9b80f4cf856663bc
 # ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.02819](https://arxiv.org/abs/2505.02819)
-**Code**: [https://github.com/mts-ai/ReplaceMe](https://github.com/mts-ai/ReplaceMe)
+**arXiv**: [2505.02819](https://arxiv.org/abs/2505.02819)  
+**Code**: [https://github.com/mts-ai/ReplaceMe](https://github.com/mts-ai/ReplaceMe)  
 **Area**: Model Compression
 **Keywords**: Depth Pruning, Transformer Linearization, Training-Free Compression, LLM Acceleration, Layer Selection
 

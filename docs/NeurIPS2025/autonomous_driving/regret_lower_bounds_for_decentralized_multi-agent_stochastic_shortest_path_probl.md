@@ -18,8 +18,8 @@ content_hash: 756728e7c18a531a
 # Regret Lower Bounds for Decentralized Multi-Agent Stochastic Shortest Path Problems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.04594](https://arxiv.org/abs/2511.04594)
-**Code**: None
+**arXiv**: [2511.04594](https://arxiv.org/abs/2511.04594)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: Multi-Agent Reinforcement Learning, Stochastic Shortest Path, Regret Lower Bounds, Decentralized Learning, Linear Function Approximation
 

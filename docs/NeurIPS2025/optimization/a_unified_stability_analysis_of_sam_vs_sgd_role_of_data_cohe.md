@@ -18,8 +18,8 @@ content_hash: 9ca343ffee2ccff0
 # A Unified Stability Analysis of SAM vs SGD: Role of Data Coherence and Emergence of Simplicity Bias
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.17378](https://arxiv.org/abs/2511.17378)
-**Code**: [https://github.com/changwk1001/Stability_Analysis_and_Simplicity-Bias.git](https://github.com/changwk1001/Stability_Analysis_and_Simplicity-Bias.git)
+**arXiv**: [2511.17378](https://arxiv.org/abs/2511.17378)  
+**Code**: [https://github.com/changwk1001/Stability_Analysis_and_Simplicity-Bias.git](https://github.com/changwk1001/Stability_Analysis_and_Simplicity-Bias.git)  
 **Area**: Optimization Theory
 **Keywords**: SAM, SGD, linear stability, data coherence, simplicity bias
 
@@ -50,15 +50,15 @@ The analysis centers on **linear stability analysis**: the update dynamics are T
 
 2. **Stability Conditions for SGD, Random Perturbations, and SAM**:
 
-   - **SGD divergence condition** (known): $\lambda_{\max}(H) \geq \frac{\sigma}{\eta}\left(\frac{n}{B}-1\right)^{-1/2}$
-   - **Random perturbations** (Theorem 3.1): The divergence condition is identical to that of SGD (noise injection does not alter which minima are stable), but the escape rate is faster by a constant factor; when stable, convergence is inexact and the iterates oscillate near the minimum.
-   - **SAM divergence condition** (Theorem 3.2): $\lambda_{\max}(H) \geq \frac{\sigma}{\eta}\left(\frac{n}{B}-1\right)^{-1/2}\left(1+\frac{\rho}{\alpha}\lambda_{\min}(H)\right)^{-1}$. The additional curvature factor makes SAM strictly more demanding — minima that are marginally stable under SGD may become unstable under SAM. A matching lower bound (Theorem 3.3) establishes the tightness of this condition.
+    - **SGD divergence condition** (known): $\lambda_{\max}(H) \geq \frac{\sigma}{\eta}\left(\frac{n}{B}-1\right)^{-1/2}$
+    - **Random perturbations** (Theorem 3.1): The divergence condition is identical to that of SGD (noise injection does not alter which minima are stable), but the escape rate is faster by a constant factor; when stable, convergence is inexact and the iterates oscillate near the minimum.
+    - **SAM divergence condition** (Theorem 3.2): $\lambda_{\max}(H) \geq \frac{\sigma}{\eta}\left(\frac{n}{B}-1\right)^{-1/2}\left(1+\frac{\rho}{\alpha}\lambda_{\min}(H)\right)^{-1}$. The additional curvature factor makes SAM strictly more demanding — minima that are marginally stable under SGD may become unstable under SAM. A matching lower bound (Theorem 3.3) establishes the tightness of this condition.
 
 3. **Realization of Simplicity Bias in Two-Layer ReLU Networks**:
 
-   - **Memorization vs. generalization solutions** (Theorem 3.4): Memorization solutions (each sample activates independent neurons) yield a diagonal coherence matrix ($S_{ij}=0,\ i\neq j$), hence minimal coherence and maximal instability; generalization solutions (shared neurons) yield nonzero off-diagonal entries, hence higher coherence and greater stability.
-   - **$(C,r)$-generalization solutions** (Theorem 3.5): For fixed $r$ (equal flatness), $\lambda_{\max}(S) = O(n/2^C \cdot (d+1)^{1/2})$. Smaller $C$ (fewer features used) implies higher coherence and faster convergence, directly proving that SGD prefers simpler solutions even under equal-flatness constraints.
-   - **SAM amplifies simplicity bias** (Theorem 3.6): SAM's effective coherence matrix contains additional $\rho/\alpha$-dependent terms that amplify the stability gap between solutions of different $C$ values.
+    - **Memorization vs. generalization solutions** (Theorem 3.4): Memorization solutions (each sample activates independent neurons) yield a diagonal coherence matrix ($S_{ij}=0,\ i\neq j$), hence minimal coherence and maximal instability; generalization solutions (shared neurons) yield nonzero off-diagonal entries, hence higher coherence and greater stability.
+    - **$(C,r)$-generalization solutions** (Theorem 3.5): For fixed $r$ (equal flatness), $\lambda_{\max}(S) = O(n/2^C \cdot (d+1)^{1/2})$. Smaller $C$ (fewer features used) implies higher coherence and faster convergence, directly proving that SGD prefers simpler solutions even under equal-flatness constraints.
+    - **SAM amplifies simplicity bias** (Theorem 3.6): SAM's effective coherence matrix contains additional $\rho/\alpha$-dependent terms that amplify the stability gap between solutions of different $C$ values.
 
 ### Loss & Training
 The theoretical analysis is conducted under a quadratic loss approximation. Experiments employ two-layer ReLU networks with MSE loss, $d=100$ hidden units, batch size 10, $\eta=0.01$, and $\rho \in \{0.01, 0.05, 0.1, 0.2\}$. Additional validation is performed on CIFAR-10 with ResNet-18.

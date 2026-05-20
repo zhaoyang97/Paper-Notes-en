@@ -18,8 +18,8 @@ content_hash: 0a59a6b7293b6282
 # Learning from Demonstrations via Capability-Aware Goal Sampling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.08731](https://arxiv.org/abs/2601.08731)
-**Code**: [GitHub](https://github.com/RU-Automated-Reasoning-Group/Cago)
+**arXiv**: [2601.08731](https://arxiv.org/abs/2601.08731)  
+**Code**: [GitHub](https://github.com/RU-Automated-Reasoning-Group/Cago)  
 **Area**: Reinforcement Learning
 **Keywords**: Imitation Learning, Curriculum Learning, Goal-Conditioned Reinforcement Learning, Capability-Awareness, World Model
 

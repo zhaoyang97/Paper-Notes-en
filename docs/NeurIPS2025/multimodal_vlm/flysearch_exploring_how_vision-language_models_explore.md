@@ -18,8 +18,8 @@ content_hash: 72d6d031a682e067
 # FlySearch: Exploring how vision-language models explore
 
 **Conference**: NeurIPS 2025 (Datasets and Benchmarks Track)
-**arXiv**: [2506.02896](https://arxiv.org/abs/2506.02896)
-**Code**: Available (environment, scenes, and codebase publicly released)
+**arXiv**: [2506.02896](https://arxiv.org/abs/2506.02896)  
+**Code**: Available (environment, scenes, and codebase publicly released)  
 **Area**: Multimodal VLM / Embodied Intelligence / Benchmarking
 **Keywords**: vision-language models, object navigation, exploration capability, 3D environments, UAV
 

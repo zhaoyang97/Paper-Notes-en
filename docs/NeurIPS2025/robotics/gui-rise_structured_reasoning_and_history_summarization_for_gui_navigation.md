@@ -18,8 +18,8 @@ content_hash: a9145f36ab07fe99
 # GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.27210](https://arxiv.org/abs/2510.27210)
-**Code**: [leon022.github.io/GUI-Rise](https://leon022.github.io/GUI-Rise)
+**arXiv**: [2510.27210](https://arxiv.org/abs/2510.27210)  
+**Code**: [leon022.github.io/GUI-Rise](https://leon022.github.io/GUI-Rise)  
 **Area**: Robotics
 **Keywords**: GUI Navigation, Structured Reasoning, History Summarization, GRPO, Chain-of-Thought
 

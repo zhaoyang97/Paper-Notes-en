@@ -19,8 +19,8 @@ content_hash: d11d28bb90a1b887
 # CodePercept: Code-Grounded Visual STEM Perception for MLLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10757](https://arxiv.org/abs/2603.10757)
-**Code**: [TongkunGuan/Qwen-CodePercept](https://github.com/TongkunGuan/Qwen-CodePercept)
+**arXiv**: [2603.10757](https://arxiv.org/abs/2603.10757)  
+**Code**: [TongkunGuan/Qwen-CodePercept](https://github.com/TongkunGuan/Qwen-CodePercept)  
 **Area**: Multimodal VLM / STEM Perception
 **Keywords**: STEM visual perception, executable code, image reconstruction, code-grounded captioning, multimodal large language models, perception enhancement
 

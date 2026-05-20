@@ -18,8 +18,8 @@ content_hash: 16ee20fdf93b27b8
 # DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00969](https://arxiv.org/abs/2604.00969)
-**Code**: None
+**arXiv**: [2604.00969](https://arxiv.org/abs/2604.00969)  
+**Code**: None  
 **Area**: Autonomous Driving / Self-supervised Pre-training for Autonomous Driving
 **Keywords**: World Models, 3D Gaussian Splatting, Self-supervised Pre-training, Occupancy Prediction, Motion Planning
 
@@ -148,8 +148,8 @@ This paper proposes DLWM, a two-stage Gaussian-centric self-supervised pre-train
 # DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00969](https://arxiv.org/abs/2604.00969)
-**Code**: Available
+**arXiv**: [2604.00969](https://arxiv.org/abs/2604.00969)  
+**Code**: Available  
 **Area**: Autonomous Driving / 3D Scene Understanding
 **Keywords**: World Models, 3D Gaussians, Self-supervised Pre-training, Occupancy Prediction, Motion Planning
 

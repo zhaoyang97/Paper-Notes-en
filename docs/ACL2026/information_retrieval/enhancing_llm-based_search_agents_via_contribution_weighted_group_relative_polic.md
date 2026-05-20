@@ -18,8 +18,8 @@ content_hash: c238afb4c802f871
 # Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization
 
 **Conference**: ACL 2026
-**arXiv**: [2604.14267](https://arxiv.org/abs/2604.14267)
-**Code**: [GitHub](https://github.com/zsxmwjz/CW-GRPO)
+**arXiv**: [2604.14267](https://arxiv.org/abs/2604.14267)  
+**Code**: [GitHub](https://github.com/zsxmwjz/CW-GRPO)  
 **Area**: Information Retrieval
 **Keywords**: search agent, GRPO, contribution weighting, process supervision, credit assignment
 

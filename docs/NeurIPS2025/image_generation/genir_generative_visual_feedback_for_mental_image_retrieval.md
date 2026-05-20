@@ -18,8 +18,8 @@ content_hash: 2549a433f969ccae
 # GenIR: Generative Visual Feedback for Mental Image Retrieval
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06220](https://arxiv.org/abs/2506.06220)
-**Code**: [mikelmh025/generative_ir](https://github.com/mikelmh025/generative_ir)
+**arXiv**: [2506.06220](https://arxiv.org/abs/2506.06220)  
+**Code**: [mikelmh025/generative_ir](https://github.com/mikelmh025/generative_ir)  
 **Area**: Image Retrieval / Image Generation
 **Keywords**: Interactive Retrieval, Visual Feedback, Diffusion Models, Mental Image Retrieval, Multi-round Query Refinement
 

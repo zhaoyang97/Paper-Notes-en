@@ -18,8 +18,8 @@ content_hash: 25f6f1b62fe8d387
 # UniRes: Universal Image Restoration for Complex Degradations
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.05599](https://arxiv.org/abs/2506.05599)
-**Code**: Unavailable
+**arXiv**: [2506.05599](https://arxiv.org/abs/2506.05599)  
+**Code**: Unavailable  
 **Area**: Image Restoration
 **Keywords**: Complex degradations, diffusion models, multi-task training, latent space composition, real-world restoration
 

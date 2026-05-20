@@ -18,8 +18,8 @@ content_hash: af9f438d2983eb7c
 # Discontinuity-aware Normal Integration for Generic Central Camera Models
 
 **Conference**: ICCV 2025 (Highlight)
-**arXiv**: [2507.06075](https://arxiv.org/abs/2507.06075)
-**Code**: None
+**arXiv**: [2507.06075](https://arxiv.org/abs/2507.06075)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: Normal Integration, Depth Discontinuity, Central Camera Model, Surface Reconstruction, Photometric Stereo
 

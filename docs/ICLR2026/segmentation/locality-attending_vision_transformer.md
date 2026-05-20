@@ -19,8 +19,8 @@ content_hash: 693215af781ade26
 # Locality-Attending Vision Transformer
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.04892](https://arxiv.org/abs/2603.04892)
-**Code**: [GitHub](https://github.com/sinahmr/LocAtViT/)
+**arXiv**: [2603.04892](https://arxiv.org/abs/2603.04892)  
+**Code**: [GitHub](https://github.com/sinahmr/LocAtViT/)  
 **Area**: Segmentation
 **Keywords**: Vision Transformer, Local Attention, Gaussian Kernel, Patch Representation Refinement, Dense Prediction, Segmentation Improvement
 

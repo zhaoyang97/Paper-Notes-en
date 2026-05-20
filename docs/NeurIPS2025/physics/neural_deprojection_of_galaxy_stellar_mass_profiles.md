@@ -18,8 +18,8 @@ content_hash: 5edf19aac0a662d1
 # Neural Deprojection of Galaxy Stellar Mass Profiles
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.20746](https://arxiv.org/abs/2511.20746)
-**Code**: None
+**arXiv**: [2511.20746](https://arxiv.org/abs/2511.20746)  
+**Code**: None  
 **Area**: Physics / Astronomy
 **Keywords**: galaxy mass distribution, deprojection, deep learning, conditional flow matching, astronomical data
 

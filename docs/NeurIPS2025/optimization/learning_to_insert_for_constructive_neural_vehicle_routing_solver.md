@@ -18,8 +18,8 @@ content_hash: ddf04247b29420e0
 # Learning to Insert for Constructive Neural Vehicle Routing Solver
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13904](https://arxiv.org/abs/2505.13904)
-**Code**: [GitHub](https://github.com/CIAM-Group/L2C_Insert)
+**arXiv**: [2505.13904](https://arxiv.org/abs/2505.13904)  
+**Code**: [GitHub](https://github.com/CIAM-Group/L2C_Insert)  
 **Area**: Optimization
 **Keywords**: Vehicle Routing Problem, Neural Combinatorial Optimization, Insertion-based Construction, TSP, CVRP
 

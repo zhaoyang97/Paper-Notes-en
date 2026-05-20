@@ -18,8 +18,8 @@ content_hash: e75fb79cb6e8af03
 # Improving 2D Diffusion Models for 3D Medical Imaging with Inter-Slice Consistent Stochasticity
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.04162](https://arxiv.org/abs/2602.04162)
-**Code**: [GitHub](https://github.com/duchenhe/ISCS)
+**arXiv**: [2602.04162](https://arxiv.org/abs/2602.04162)  
+**Code**: [GitHub](https://github.com/duchenhe/ISCS)  
 **Area**: Medical Imaging / Diffusion Models
 **Keywords**: 3D medical reconstruction, 2D diffusion models, inter-slice consistency, spherical linear interpolation, plug-and-play
 

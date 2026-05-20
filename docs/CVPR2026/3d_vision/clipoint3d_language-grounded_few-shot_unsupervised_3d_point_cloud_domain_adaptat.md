@@ -20,8 +20,8 @@ content_hash: 8e2a264d96181240
 # CLIPoint3D: Language-Grounded Few-Shot Unsupervised 3D Point Cloud Domain Adaptation
 
 **Conference**: CVPR2026
-**arXiv**: [2602.20409](https://arxiv.org/abs/2602.20409)
-**Code**: [SarthakM320/CLIPoint3D](https://github.com/SarthakM320/CLIPoint3D)
+**arXiv**: [2602.20409](https://arxiv.org/abs/2602.20409)  
+**Code**: [SarthakM320/CLIPoint3D](https://github.com/SarthakM320/CLIPoint3D)  
 **Area**: 3D Vision
 **Keywords**: 3D point cloud domain adaptation, CLIP, vision-language model, few-shot learning, unsupervised domain adaptation, optimal transport, parameter-efficient fine-tuning
 

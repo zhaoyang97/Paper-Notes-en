@@ -18,8 +18,8 @@ content_hash: a7ae21f92e3669c5
 # Structured Personalization: Modeling Constraints as Matroids for Data-Minimal LLM Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.11907](https://arxiv.org/abs/2512.11907)
-**Code**: None
+**arXiv**: [2512.11907](https://arxiv.org/abs/2512.11907)  
+**Code**: None  
 **Area**: LLM Agent / Personalization Optimization
 **Keywords**: personalized data selection, submodular optimization, matroid constraints, knowledge graph compilation, data minimization
 

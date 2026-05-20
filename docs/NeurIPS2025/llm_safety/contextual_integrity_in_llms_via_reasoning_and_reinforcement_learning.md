@@ -19,8 +19,8 @@ content_hash: dd35fb4ffbd9569a
 # Contextual Integrity in LLMs via Reasoning and Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04245](https://arxiv.org/abs/2506.04245)
-**Code**: [EricGLan/CI-RL](https://github.com/EricGLan/CI-RL)
+**arXiv**: [2506.04245](https://arxiv.org/abs/2506.04245)  
+**Code**: [EricGLan/CI-RL](https://github.com/EricGLan/CI-RL)  
 **Area**: AI Safety
 **Keywords**: contextual integrity, privacy, reinforcement-learning, GRPO, chain-of-thought, information disclosure
 
@@ -52,20 +52,20 @@ The method consists of three components: (1) **CI-CoT**: a structured prompt tem
 
 1. **CI-CoT Reasoning Template**:
 
-   - **Function**: Explicitly guides the model to reason about the contextual appropriateness of each information attribute before responding.
-   - **Mechanism**: The prompt template instructs the model to analyze the task context within `<think>...</think>`, assess each personal attribute as "necessary / helpful / optional / inappropriate," and then complete the task within `<answer>...</answer>` using only contextually appropriate information.
-   - **Design Motivation**: Inspired by the success of CoT in mathematical reasoning, CI judgments are made explicit as reasoning steps rather than leaving the model to decide implicitly.
+    - **Function**: Explicitly guides the model to reason about the contextual appropriateness of each information attribute before responding.
+    - **Mechanism**: The prompt template instructs the model to analyze the task context within `<think>...</think>`, assess each personal attribute as "necessary / helpful / optional / inappropriate," and then complete the task within `<answer>...</answer>` using only contextually appropriate information.
+    - **Design Motivation**: Inspired by the success of CoT in mathematical reasoning, CI judgments are made explicit as reasoning steps rather than leaving the model to decide implicitly.
 
 2. **Three-Stage Synthetic Dataset Pipeline**:
 
-   - **Function**: Automatically generates diverse CI training scenarios.
-   - **Mechanism**: Stage 1 (Initial Seeds): sample combinations of scenario (email/chat) × domain (10 types including medical/financial/education) × transmission principle (confidentiality/proportionality/consent) to produce random seeds; Stage 2 (Vignettes): GPT-4 expands seeds into complete scenarios, populating CI fields (sender/recipient/subject) and generating required/restricted information types; Stage 3 (Final Samples): GPT-4 instantiates vignettes into natural conversational training samples (key-value pairs + flow annotations + keyword match labels).
-   - **Design Motivation**: Manual annotation of CI samples is costly and cannot cover a sufficient range of scenarios; synthetic data efficiently explores the scenario space.
+    - **Function**: Automatically generates diverse CI training scenarios.
+    - **Mechanism**: Stage 1 (Initial Seeds): sample combinations of scenario (email/chat) × domain (10 types including medical/financial/education) × transmission principle (confidentiality/proportionality/consent) to produce random seeds; Stage 2 (Vignettes): GPT-4 expands seeds into complete scenarios, populating CI fields (sender/recipient/subject) and generating required/restricted information types; Stage 3 (Final Samples): GPT-4 instantiates vignettes into natural conversational training samples (key-value pairs + flow annotations + keyword match labels).
+    - **Design Motivation**: Manual annotation of CI samples is costly and cannot cover a sufficient range of scenarios; synthetic data efficiently explores the scenario space.
 
 3. **GRPO Reinforcement Learning with Rule-Based Rewards**:
 
-   - **Function**: Further optimizes the model's CI reasoning capabilities via RL.
-   - **Mechanism**: The GRPO algorithm (no critic network required) is used with the objective:
+    - **Function**: Further optimizes the model's CI reasoning capabilities via RL.
+    - **Mechanism**: The GRPO algorithm (no critic network required) is used with the objective:
 
    $$J(\theta) = \mathbb{E}\left[\frac{1}{G}\sum_{i=1}^G \left(\min\left(\frac{\pi_\theta(a_i|q)}{\pi_{\text{old}}(a_i|q)}A_i, \text{clip}(\cdot)A_i\right) - \beta D_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}})\right)\right]$$
 

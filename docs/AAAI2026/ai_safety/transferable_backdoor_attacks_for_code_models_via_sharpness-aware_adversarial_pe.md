@@ -18,8 +18,8 @@ content_hash: dcb32036474d284a
 # Transferable Backdoor Attacks for Code Models via Sharpness-Aware Adversarial Perturbation
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.11213](https://arxiv.org/abs/2602.11213)
-**Code**: [github.com/ChangShuyu/STAB](https://github.com/ChangShuyu/STAB)
+**arXiv**: [2602.11213](https://arxiv.org/abs/2602.11213)  
+**Code**: [github.com/ChangShuyu/STAB](https://github.com/ChangShuyu/STAB)  
 **Area**: AI Security
 **Keywords**: backdoor attack, code models, transferability, Sharpness-Aware Minimization, adversarial perturbation
 

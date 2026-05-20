@@ -18,8 +18,8 @@ content_hash: 7d0c897a4593e2d3
 # Principled Steering via Null-space Projection for Jailbreak Defense in Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22094](https://arxiv.org/abs/2603.22094)
-**Code**: None
+**arXiv**: [2603.22094](https://arxiv.org/abs/2603.22094)  
+**Code**: None  
 **Area**: LLM Alignment / VLM Safety
 **Keywords**: jailbreak defense, activation steering, null-space projection, VLM safety, inference-time defense
 

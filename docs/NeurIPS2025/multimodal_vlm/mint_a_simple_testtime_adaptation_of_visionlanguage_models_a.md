@@ -20,8 +20,8 @@ content_hash: 891c65c370e220bf
 # Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22127](https://arxiv.org/abs/2510.22127)
-**Code**: [https://github.com/baowenxuan/Mint](https://github.com/baowenxuan/Mint)
+**arXiv**: [2510.22127](https://arxiv.org/abs/2510.22127)  
+**Code**: [https://github.com/baowenxuan/Mint](https://github.com/baowenxuan/Mint)  
 **Area**: Multimodal VLM
 **Keywords**: test-time adaptation, CLIP, corruption robustness, embedding variance collapse, inter-class variance, pseudo-label, LayerNorm
 

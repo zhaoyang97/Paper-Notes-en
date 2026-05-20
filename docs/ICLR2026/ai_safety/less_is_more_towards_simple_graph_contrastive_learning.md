@@ -18,8 +18,8 @@ content_hash: 0162956dd8784b95
 # Less is More: Towards Simple Graph Contrastive Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25742](https://arxiv.org/abs/2509.25742)
-**Code**: N/A
+**arXiv**: [2509.25742](https://arxiv.org/abs/2509.25742)  
+**Code**: N/A  
 **Area**: AI Safety
 **Keywords**: graph contrastive learning, heterophilic graphs, GCN, MLP, unsupervised graph representation learning
 

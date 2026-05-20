@@ -18,8 +18,8 @@ content_hash: bfbb447155ed572f
 # PlanaReLoc: Camera Relocalization in 3D Planar Primitives via Region-Based Structure Matching
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20818](https://arxiv.org/abs/2603.20818)
-**Code**: [https://github.com/3dv-casia/PlanaReLoc](https://github.com/3dv-casia/PlanaReLoc) (available; code to be released in June, dataset already released)
+**arXiv**: [2603.20818](https://arxiv.org/abs/2603.20818)  
+**Code**: [https://github.com/3dv-casia/PlanaReLoc](https://github.com/3dv-casia/PlanaReLoc) (available; code to be released in June, dataset already released)  
 **Area**: Model Compression
 **Keywords**: camera relocalization, planar primitives, structure matching, 6-DoF pose estimation, lightweight map
 

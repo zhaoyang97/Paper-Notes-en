@@ -18,8 +18,8 @@ content_hash: f8a002efabf30f45
 # PASS: Path-Selective State Space Model for Event-Based Recognition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2409.16953](https://arxiv.org/abs/2409.16953)
-**Code**: [GitHub](https://github.com/jiazhou-garland/PASS_Homepage)
+**arXiv**: [2409.16953](https://arxiv.org/abs/2409.16953)  
+**Code**: [GitHub](https://github.com/jiazhou-garland/PASS_Homepage)  
 **Area**: Video Understanding / Event Camera
 **Keywords**: Event Camera, State Space Model, Frequency Generalization, Long-Sequence Modeling, Mamba
 

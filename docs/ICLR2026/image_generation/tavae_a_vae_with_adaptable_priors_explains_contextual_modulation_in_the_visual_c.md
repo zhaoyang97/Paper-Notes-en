@@ -18,8 +18,8 @@ content_hash: 20fc16ff7038c6dc
 # TAVAE: A VAE with Adaptable Priors Explains Contextual Modulation in the Visual Cortex
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.11956](https://arxiv.org/abs/2602.11956)
-**Code**: [https://github.com/CSNLWigner/mouse-V1-task-priors](https://github.com/CSNLWigner/mouse-V1-task-priors)
+**arXiv**: [2602.11956](https://arxiv.org/abs/2602.11956)  
+**Code**: [https://github.com/CSNLWigner/mouse-V1-task-priors](https://github.com/CSNLWigner/mouse-V1-task-priors)  
 **Area**: Computational Neuroscience / Visual Cortex Modeling
 **Keywords**: Variational Autoencoder, Task Priors, V1, Contextual Modulation, Probabilistic Inference
 

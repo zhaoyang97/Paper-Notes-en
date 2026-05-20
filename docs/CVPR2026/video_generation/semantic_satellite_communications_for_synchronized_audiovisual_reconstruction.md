@@ -18,8 +18,8 @@ content_hash: 9b37cae913f749bc
 # Semantic Satellite Communications for Synchronized Audiovisual Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10791](https://arxiv.org/abs/2603.10791)
-**Code**: N/A
+**arXiv**: [2603.10791](https://arxiv.org/abs/2603.10791)  
+**Code**: N/A  
 **Area**: Video Generation
 **Keywords**: Satellite communications, semantic transmission, audiovisual synchronization, cross-modal generation, LLM-based intelligent decision-making
 

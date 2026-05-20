@@ -18,8 +18,8 @@ content_hash: 20afd3db67be1620
 # Correlation Dimension of Auto-Regressive Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21258](https://arxiv.org/abs/2510.21258)
-**Code**: None
+**arXiv**: [2510.21258](https://arxiv.org/abs/2510.21258)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Correlation Dimension, Fractal Geometry, Text Degeneration Detection, LLM Pretraining Dynamics, Hallucination Indicator
 
@@ -51,21 +51,21 @@ Given a text passage and an autoregressive LLM, the model obtains the next-token
 
 1. **Correlation Dimension Definition Based on Log-Probability Vectors**
 
-   - **Function**: Applies the correlation dimension from fractal geometry to the output space of LLMs.
-   - **Mechanism**: At position $t$, the LLM outputs a $|\Omega|$-dimensional log-probability vector $x_t(\omega) = \log P_\theta(\omega_t = \omega | \omega_{<t})$. The correlation integral is defined as $S(\varepsilon) = \lim_{T\to\infty}\frac{2}{T(T-1)}\sum_{i<j}\mathbf{1}\{\|x_i - x_j\| < \varepsilon\}$, and the correlation dimension $d$ is the slope of $\log S(\varepsilon)$ vs. $\log \varepsilon$. Intuitively, when the probability vectors at two positions are close, the model "perceives" similar linguistic patterns at both locations — a form of recursion spanning multiple scales from the word level to the sentence level.
-   - **Design Motivation**: Perplexity measures only prediction accuracy, whereas the correlation dimension measures the recursive structure of predictions — the latter reflects the hierarchical organization of text.
+    - **Function**: Applies the correlation dimension from fractal geometry to the output space of LLMs.
+    - **Mechanism**: At position $t$, the LLM outputs a $|\Omega|$-dimensional log-probability vector $x_t(\omega) = \log P_\theta(\omega_t = \omega | \omega_{<t})$. The correlation integral is defined as $S(\varepsilon) = \lim_{T\to\infty}\frac{2}{T(T-1)}\sum_{i<j}\mathbf{1}\{\|x_i - x_j\| < \varepsilon\}$, and the correlation dimension $d$ is the slope of $\log S(\varepsilon)$ vs. $\log \varepsilon$. Intuitively, when the probability vectors at two positions are close, the model "perceives" similar linguistic patterns at both locations — a form of recursion spanning multiple scales from the word level to the sentence level.
+    - **Design Motivation**: Perplexity measures only prediction accuracy, whereas the correlation dimension measures the recursive structure of predictions — the latter reflects the hierarchical organization of text.
 
 2. **Textual Skips as a Linguistic Interpretation of Recursion**
 
-   - **Function**: Provides a linguistic interpretation for the mathematical concept.
-   - **Mechanism**: If two positions $s, t$ have similar log-probability vectors, i.e., $\|x_s - x_t\| < \varepsilon$, then the text segment $[s, t)$ can theoretically be "skipped" without significantly affecting subsequent generation. Small $\varepsilon$ corresponds to local skips (e.g., word-level), while large $\varepsilon$ corresponds to long-range skips (e.g., sentence-level). This naturally corresponds to subtree ellipsis in Chomskyan generative grammar.
-   - **Design Motivation**: Connects the purely mathematical distance threshold to interpretable linguistic structures, thereby enhancing explainability.
+    - **Function**: Provides a linguistic interpretation for the mathematical concept.
+    - **Mechanism**: If two positions $s, t$ have similar log-probability vectors, i.e., $\|x_s - x_t\| < \varepsilon$, then the text segment $[s, t)$ can theoretically be "skipped" without significantly affecting subsequent generation. Small $\varepsilon$ corresponds to local skips (e.g., word-level), while large $\varepsilon$ corresponds to long-range skips (e.g., sentence-level). This naturally corresponds to subtree ellipsis in Chomskyan generative grammar.
+    - **Design Motivation**: Connects the purely mathematical distance threshold to interpretable linguistic structures, thereby enhancing explainability.
 
 3. **Sufficiency of Single-Step Probability Vectors**
 
-   - **Function**: Demonstrates that next-token probabilities alone (without multi-step time-delay embeddings) are sufficient.
-   - **Mechanism**: In principle, the full state of an LLM encodes distributions over all future tokens, making single-step probabilities only partial information. The authors construct time-delay embeddings $y_t = [x_t; x_{t+1}; ...; x_{t+k}]$ via a stochastic extension of Takens' embedding theorem, but experiments show that the correlation dimension is virtually identical for $k=1$ and $k>1$ — indicating that single-step probability vectors already implicitly encode long-range structural information. This is consistent with findings in knowledge distillation, where single-step probability distributions effectively summarize model knowledge.
-   - **Design Motivation**: Ensures computational efficiency — only a single forward pass is required.
+    - **Function**: Demonstrates that next-token probabilities alone (without multi-step time-delay embeddings) are sufficient.
+    - **Mechanism**: In principle, the full state of an LLM encodes distributions over all future tokens, making single-step probabilities only partial information. The authors construct time-delay embeddings $y_t = [x_t; x_{t+1}; ...; x_{t+k}]$ via a stochastic extension of Takens' embedding theorem, but experiments show that the correlation dimension is virtually identical for $k=1$ and $k>1$ — indicating that single-step probability vectors already implicitly encode long-range structural information. This is consistent with findings in knowledge distillation, where single-step probability distributions effectively summarize model knowledge.
+    - **Design Motivation**: Ensures computational efficiency — only a single forward pass is required.
 
 ### Computational Optimizations
 

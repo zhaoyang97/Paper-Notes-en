@@ -18,8 +18,8 @@ content_hash: 5cec3c619286c7de
 # Neural Thermodynamics: Entropic Forces in Deep and Universal Representation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12387](https://arxiv.org/abs/2505.12387)
-**Code**: None
+**arXiv**: [2505.12387](https://arxiv.org/abs/2505.12387)  
+**Code**: None  
 **Area**: Optimization Theory / Representation Learning
 **Keywords**: Entropic forces, SGD dynamics, parameter symmetry, Platonic representation hypothesis, gradient balance
 

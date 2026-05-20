@@ -18,8 +18,8 @@ content_hash: 5829abc255adeac3
 # Multimodal OCR: Parse Anything from Documents
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13032](https://arxiv.org/abs/2603.13032)
-**Code**: [https://github.com/rednote-hilab/dots.mocr](https://github.com/rednote-hilab/dots.mocr)
+**arXiv**: [2603.13032](https://arxiv.org/abs/2603.13032)  
+**Code**: [https://github.com/rednote-hilab/dots.mocr](https://github.com/rednote-hilab/dots.mocr)  
 **Area**: Document Parsing / Multimodal VLM / OCR
 **Keywords**: Document Parsing, Graphics Parsing, SVG Generation, Vision-Language Model, Multimodal OCR
 

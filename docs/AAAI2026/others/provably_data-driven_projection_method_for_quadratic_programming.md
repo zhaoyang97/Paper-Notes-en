@@ -17,8 +17,8 @@ content_hash: c8d0aea8e3f440b1
 # Provably Data-Driven Projection Method for Quadratic Programming
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.04524](https://arxiv.org/abs/2509.04524)
-**Code**: None
+**arXiv**: [2509.04524](https://arxiv.org/abs/2509.04524)  
+**Code**: None  
 **Area**: Other
 **Keywords**: quadratic programming, projection method, generalization guarantee, pseudo-dimension, data-driven optimization
 

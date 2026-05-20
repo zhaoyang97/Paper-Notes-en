@@ -18,8 +18,8 @@ content_hash: e1e418cf0527b620
 # A Set of Generalized Components to Achieve Effective Poison-only Clean-label Backdoor Attacks with Collaborative Sample Selection and Triggers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19947](https://arxiv.org/abs/2509.19947)
-**Code**: [https://github.com/HITSZ-wzx/GeneralComponents](https://github.com/HITSZ-wzx/GeneralComponents)
+**arXiv**: [2509.19947](https://arxiv.org/abs/2509.19947)  
+**Code**: [https://github.com/HITSZ-wzx/GeneralComponents](https://github.com/HITSZ-wzx/GeneralComponents)  
 **Area**: AI Safety / Backdoor Attack
 **Keywords**: backdoor attack, clean-label, sample selection, trigger optimization, adversarial robustness
 

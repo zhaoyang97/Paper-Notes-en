@@ -18,8 +18,8 @@ content_hash: 1c2730decfe4eb93
 # Less is More but Where: Dynamic Token Compression via LLM-Guided Keyframe Prior
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.06866](https://arxiv.org/abs/2512.06866)
-**Code**: None
+**arXiv**: [2512.06866](https://arxiv.org/abs/2512.06866)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: video-understanding, token-compression, vllm, efficiency, keyframe-selection
 

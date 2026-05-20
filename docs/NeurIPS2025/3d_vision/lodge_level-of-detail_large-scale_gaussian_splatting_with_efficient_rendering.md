@@ -18,8 +18,8 @@ content_hash: de4afdc91b3d5c2d
 # LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23158](https://arxiv.org/abs/2505.23158)
-**Code**: Available
+**arXiv**: [2505.23158](https://arxiv.org/abs/2505.23158)  
+**Code**: Available  
 **Area**: 3D Vision / Large-Scale Scene Rendering
 **Keywords**: Gaussian Splatting, Level-of-Detail, Large-Scale Scene, Efficient Rendering, LOD
 

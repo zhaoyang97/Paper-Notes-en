@@ -18,8 +18,8 @@ content_hash: 583cc1b8240d4a45
 # Verification of the Implicit World Model in a Generative Model via Adversarial Sequences
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.05903](https://arxiv.org/abs/2602.05903)
-**Code**: [https://github.com/szegedai/world-model-verification](https://github.com/szegedai/world-model-verification)
+**arXiv**: [2602.05903](https://arxiv.org/abs/2602.05903)  
+**Code**: [https://github.com/szegedai/world-model-verification](https://github.com/szegedai/world-model-verification)  
 **Area**: World Models / Explainable AI
 **Keywords**: Implicit world model, adversarial sequence generation, chess, soundness verification, linear probes
 

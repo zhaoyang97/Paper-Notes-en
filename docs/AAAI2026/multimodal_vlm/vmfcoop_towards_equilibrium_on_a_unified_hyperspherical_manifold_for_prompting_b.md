@@ -18,8 +18,8 @@ content_hash: 155466ecb23eeab8
 # vMFCoOp: Towards Equilibrium on a Unified Hyperspherical Manifold for Prompting Biomedical VLMs
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09540](https://arxiv.org/abs/2511.09540)
-**Code**: [GitHub](https://github.com/VinyehShaw/UniEqui)
+**arXiv**: [2511.09540](https://arxiv.org/abs/2511.09540)  
+**Code**: [GitHub](https://github.com/VinyehShaw/UniEqui)  
 **Area**: Medical Imaging / Vision-Language Models (VLM)
 **Keywords**: Prompt learning, biomedical VLM, von Mises-Fisher distribution, hyperspherical manifold, few-shot learning
 
@@ -31,9 +31,9 @@ This paper proposes the vMFCoOp framework, which aligns the semantic discrepancy
 
 1. **Background**: Vision-language models such as CLIP achieve strong zero/few-shot generalization through large-scale contrastive learning, yet their effectiveness in the biomedical domain is limited—medical images exhibit highly structured semantics, fine-grained anatomy, strong anatomical priors, and cross-scale variation. Prompt learning methods such as CoOp/CoCoOp have emerged as lightweight adaptation strategies.
 2. **Limitations of Prior Work**: BiomedCoOp leverages LLM-generated prompts to guide CLIP's context learning, but suffers from three issues:
-   - **Semantic misalignment** between LLMs and CLIP due to differences in training corpora and model architectures
-   - **Lack of scalability** to the rapidly evolving family of foundation models
-   - Pairwise multimodal alignment in Euclidean space **fails to capture directional semantics and unified representations**
+    - **Semantic misalignment** between LLMs and CLIP due to differences in training corpora and model architectures
+    - **Lack of scalability** to the rapidly evolving family of foundation models
+    - Pairwise multimodal alignment in Euclidean space **fails to capture directional semantics and unified representations**
 3. **Key Challenge**: Prompt learning must reconcile differing semantic abstractions, representational granularity, and alignment dynamics between LLMs and CLIP; however, existing methods perform independent pairwise matching in flat Euclidean space, which is insufficient for modeling the intrinsic relational geometry.
 4. **Goal**: To align the semantic discrepancies of heterogeneous foundation models on a unified hyperspherical manifold, achieving stable, generalizable, and model-agnostic few-shot biomedical prompt learning.
 5. **Key Insight**: CLIP and LLM embeddings are naturally $\ell_2$-normalized and reside on the unit hypersphere, making the vMF distribution a natural choice for modeling their directional semantics.
@@ -48,25 +48,25 @@ vMFCoOp can be flexibly inserted into any LLM and biomedical CLIP backbone. The 
 ### Key Designs
 
 1. **Unified Semantic Anchors**:
-   - **Function**: Fuse CLIP's global semantic direction and LLM's class-specific semantic prototypes into a unified optimization target.
-   - **Mechanism**:
+    - **Function**: Fuse CLIP's global semantic direction and LLM's class-specific semantic prototypes into a unified optimization target.
+    - **Mechanism**:
      - **CLIP Semantic Anchor Field**: A vMF distribution is fit to CLIP vocabulary embeddings $\{w_i\}$; MLE estimates the mean direction $\mu_C = \bar{w}/R$ and concentration $\kappa_C \approx R(d-R^2)/(1-R^2+\epsilon)$.
      - **LLM Semantic Prototype Field**: A class-conditional vMF is fit to LLM prompt embeddings $T_c$ for each class $c$, yielding $(\mu_{L,c}, \kappa_{L,c})$.
      - **Fusion**: $u_i = (a_C + c_i) / \|a_C + c_i\|_2$, where $a_C = \kappa_C \mu_C$ and $c_i = \kappa_{L,c} \mu_{L,c}$.
-   - **Design Motivation**: The mean direction and concentration of vMF jointly encode semantic location and confidence; through weighted fusion, the modality with higher semantic concentration contributes more to the unified anchor.
+    - **Design Motivation**: The mean direction and concentration of vMF jointly encode semantic location and confidence; through weighted fusion, the modality with higher semantic concentration contributes more to the unified anchor.
 
 2. **Three-Level Constraint Optimization**:
-   - **Function**: Optimize prompt embeddings on the hypersphere from three complementary perspectives.
-   - **Mechanism**:
+    - **Function**: Optimize prompt embeddings on the hypersphere from three complementary perspectives.
+    - **Mechanism**:
      - **Semantic Anchor Loss $\mathcal{L}_{anc}$**: Learnable offsets $\delta_i$ and a global scaling factor $\alpha$ dynamically adjust anchor directions; $\mathcal{L}_{anc} = \frac{1}{C} \sum_{i=1}^C \|\tilde{\mathcal{P}}_{c_i} - \tilde{u}_i^d\|_2^2$ draws prompt embeddings toward the unified anchors.
      - **Spherical Contrastive Loss $\mathcal{L}_{sc}$**: A prototype affinity matrix $S = \tau PU^\top$ is constructed; row-wise softmax cross-entropy pulls correct anchors closer and pushes confounding anchors apart; the temperature $\tau$ is annealed via cosine scheduling from $\tau_0$ to $\tau_{max}$ to progressively sharpen angular margins.
      - **Symmetric Cross-Entropy $\mathcal{L}_{SCE}$**: Encourages confident predictions for correct classes (forward CE) while penalizing distributional ambiguity over incorrect classes (reverse CE), enhancing cross-modal alignment.
-   - **Design Motivation**: The three losses are complementary—$\mathcal{L}_{anc}$ ensures directional alignment, $\mathcal{L}_{sc}$ ensures inter-class separability, and $\mathcal{L}_{SCE}$ ensures visual-textual consistency.
+    - **Design Motivation**: The three losses are complementary—$\mathcal{L}_{anc}$ ensures directional alignment, $\mathcal{L}_{sc}$ ensures inter-class separability, and $\mathcal{L}_{SCE}$ ensures visual-textual consistency.
 
 3. **Model-Agnostic Plug-and-Play Design**:
-   - **Function**: Supports arbitrary combinations of CLIP variants and LLMs.
-   - **Mechanism**: vMF estimation is a post-processing step independent of specific model internals; unified anchors are fused via distributional parameters, adapting to semantic discrepancies across different models.
-   - **Design Motivation**: Foundation models evolve rapidly, making fixed coupling to a specific LLM or CLIP backbone unsustainable.
+    - **Function**: Supports arbitrary combinations of CLIP variants and LLMs.
+    - **Mechanism**: vMF estimation is a post-processing step independent of specific model internals; unified anchors are fused via distributional parameters, adapting to semantic discrepancies across different models.
+    - **Design Motivation**: Foundation models evolve rapidly, making fixed coupling to a specific LLM or CLIP backbone unsustainable.
 
 ### Loss & Training
 

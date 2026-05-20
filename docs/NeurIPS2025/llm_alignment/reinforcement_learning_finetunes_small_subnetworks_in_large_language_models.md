@@ -18,8 +18,8 @@ content_hash: 9caba12b9b56b4ce
 # Reinforcement Learning Finetunes Small Subnetworks in Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11711](https://arxiv.org/abs/2505.11711)
-**Code**: [GitHub](https://github.com/SagnikMukherjee/sparsity_in_rl)
+**arXiv**: [2505.11711](https://arxiv.org/abs/2505.11711)  
+**Code**: [GitHub](https://github.com/SagnikMukherjee/sparsity_in_rl)  
 **Area**: LLM Alignment
 **Keywords**: reinforcement-learning, sparse subnetwork, parameter update sparsity, LLM finetuning, lottery ticket hypothesis
 

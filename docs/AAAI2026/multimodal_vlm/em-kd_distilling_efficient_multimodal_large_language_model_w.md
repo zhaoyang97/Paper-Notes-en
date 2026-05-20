@@ -18,8 +18,8 @@ content_hash: 16a69ede730eba00
 # EM-KD: Distilling Efficient Multimodal Large Language Model with Unbalanced Vision Tokens
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.21106](https://arxiv.org/abs/2511.21106)
-**Code**: N/A
+**arXiv**: [2511.21106](https://arxiv.org/abs/2511.21106)  
+**Code**: N/A  
 **Area**: Multimodal VLM / Model Compression
 **Keywords**: Knowledge Distillation, Efficient MLLM, Vision Token Compression, Hungarian Matching, Cross-Modal Alignment
 

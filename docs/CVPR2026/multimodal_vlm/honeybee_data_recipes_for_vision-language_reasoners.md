@@ -18,9 +18,9 @@ content_hash: 623fbde619369fc9
 # HoneyBee: Data Recipes for Vision-Language Reasoners
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.12225](https://arxiv.org/abs/2510.12225)
+**arXiv**: [2510.12225](https://arxiv.org/abs/2510.12225)  
 **Authors**: Hritik Bansal, Devendra Singh Sachan, Kai-Wei Chang, Aditya Grover, Gargi Ghosh, Wen-tau Yih, Ramakanth Pasunuru (Meta AI, UCLA)
-**Code**: [facebookresearch/HoneyBee_VLM](https://github.com/facebookresearch/HoneyBee_VLM)
+**Code**: [facebookresearch/HoneyBee_VLM](https://github.com/facebookresearch/HoneyBee_VLM)  
 **Data**: [facebook/HoneyBee](https://huggingface.co/datasets/facebook/HoneyBee)
 **Area**: Multimodal VLM
 **Keywords**: VLM reasoning, data curation, chain-of-thought, test-time scaling, data recipes

@@ -17,8 +17,8 @@ content_hash: cc4ee3ddeac6119f
 # SteerX: Creating Any Camera-Free 3D and 4D Scenes with Geometric Steering
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.12024](https://arxiv.org/abs/2503.12024)
-**Code**: [https://github.com/byeongjun-park/SteerX](https://github.com/byeongjun-park/SteerX)
+**arXiv**: [2503.12024](https://arxiv.org/abs/2503.12024)  
+**Code**: [https://github.com/byeongjun-park/SteerX](https://github.com/byeongjun-park/SteerX)  
 **Area**: Video Generation
 **Keywords**: 3D scene generation, 4D scene generation, geometric steering, inference-time guidance, video generation
 

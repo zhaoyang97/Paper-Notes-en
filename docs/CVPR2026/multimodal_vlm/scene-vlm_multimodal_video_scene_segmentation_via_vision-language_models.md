@@ -18,8 +18,8 @@ content_hash: 1764dc77fe2e95a6
 # Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models
 
 **Conference**: CVPR2026
-**arXiv**: [2512.21778](https://arxiv.org/abs/2512.21778)
-**Code**: N/A
+**arXiv**: [2512.21778](https://arxiv.org/abs/2512.21778)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: video scene segmentation, vision-language models, multimodal reasoning, sequential prediction, confidence estimation
 

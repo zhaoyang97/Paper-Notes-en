@@ -19,8 +19,8 @@ content_hash: 8b8bfebae2e37a20
 # DeepDebater: A Superpersuasive Autonomous Policy Debating System
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.17854](https://arxiv.org/abs/2511.17854)
-**Code**: [GitHub](https://github.com/Hellisotherpeople/DeepDebater)
+**arXiv**: [2511.17854](https://arxiv.org/abs/2511.17854)  
+**Code**: [GitHub](https://github.com/Hellisotherpeople/DeepDebater)  
 **Area**: Audio & Speech
 **Keywords**: Policy Debate, Multi-Agent Collaboration, LLM, Evidence Retrieval, Autonomous Debating, TTS
 

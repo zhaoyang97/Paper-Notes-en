@@ -19,8 +19,8 @@ content_hash: f1d09e73c5cdfe23
 # ClimaOoD: Improving Anomaly Segmentation via Physically Realistic Synthetic Data
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.02686](https://arxiv.org/abs/2512.02686)
-**Code**: Unavailable
+**arXiv**: [2512.02686](https://arxiv.org/abs/2512.02686)  
+**Code**: Unavailable  
 **Area**: Autonomous Driving
 **Keywords**: Anomaly Segmentation, OoD Detection, Synthetic Data, Weather Augmentation, Diffusion Models, ControlNet
 

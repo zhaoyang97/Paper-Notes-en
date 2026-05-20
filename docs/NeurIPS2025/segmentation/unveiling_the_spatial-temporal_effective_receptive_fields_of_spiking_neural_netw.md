@@ -18,8 +18,8 @@ content_hash: 3de298fd6550d705
 # Unveiling the Spatial-Temporal Effective Receptive Fields of Spiking Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21403](https://arxiv.org/abs/2510.21403)
-**Code**: [https://github.com/EricZhang1412/Spatial-temporal-ERF](https://github.com/EricZhang1412/Spatial-temporal-ERF)
+**arXiv**: [2510.21403](https://arxiv.org/abs/2510.21403)  
+**Code**: [https://github.com/EricZhang1412/Spatial-temporal-ERF](https://github.com/EricZhang1412/Spatial-temporal-ERF)  
 **Area**: Image Segmentation
 **Keywords**: spiking neural networks, effective receptive field, Transformer, channel mixer, visual long-sequence modeling
 

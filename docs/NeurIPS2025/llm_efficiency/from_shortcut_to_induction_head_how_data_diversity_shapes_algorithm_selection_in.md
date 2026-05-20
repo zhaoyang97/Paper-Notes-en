@@ -18,8 +18,8 @@ content_hash: 5f5a05bc95d631cf
 # From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.18634](https://arxiv.org/abs/2512.18634)
-**Code**: None
+**arXiv**: [2512.18634](https://arxiv.org/abs/2512.18634)  
+**Code**: None  
 **Area**: LLM Efficiency / Mechanistic Interpretability
 **Keywords**: Induction Head, Positional Shortcut, Data Diversity, Algorithm Selection, OOD Generalization
 

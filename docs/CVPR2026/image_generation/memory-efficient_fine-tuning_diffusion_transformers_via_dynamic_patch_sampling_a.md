@@ -18,8 +18,8 @@ content_hash: 81c84fb9d0aa20d5
 # Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20755](https://arxiv.org/abs/2603.20755)
-**Code**: None
+**arXiv**: [2603.20755](https://arxiv.org/abs/2603.20755)  
+**Code**: None  
 **Area**: Diffusion Models / Efficient Fine-Tuning
 **Keywords**: Diffusion Transformer, Efficient Fine-Tuning, Dynamic Patch Sampling, Block Skipping, Personalized Generation
 
@@ -51,21 +51,21 @@ DiT-BlockSkip consists of two orthogonal components: (1) **Dynamic Patch Samplin
 
 1. **Timestep-Aware Dynamic Patch Sampling**
 
-   - **Function**: Reduces training resolution while preserving the model's ability to learn both global structure and local detail.
-   - **Mechanism**: Given diffusion timestep $t$, the crop size is determined by $f(s_{min}, s_{max}, t) = s_{min} + \frac{t}{T} \cdot (s_{max} - s_{min})$. At high timesteps (high noise), a larger region is cropped to capture global structure; at low timesteps, a smaller region is cropped to focus on fine details. The cropped region is uniformly resized to $s_{min} \times s_{min}$ (e.g., 256×256), with patch sizes discretized according to the VAE downsampling factor (16).
-   - **Design Motivation**: Naively reducing resolution discards fine details, while fixing a small crop region loses global structure. Dynamic adjustment of the crop range allows the model to observe information at different scales across timesteps, approximating the representational capacity of high-resolution training.
+    - **Function**: Reduces training resolution while preserving the model's ability to learn both global structure and local detail.
+    - **Mechanism**: Given diffusion timestep $t$, the crop size is determined by $f(s_{min}, s_{max}, t) = s_{min} + \frac{t}{T} \cdot (s_{max} - s_{min})$. At high timesteps (high noise), a larger region is cropped to capture global structure; at low timesteps, a smaller region is cropped to focus on fine details. The cropped region is uniformly resized to $s_{min} \times s_{min}$ (e.g., 256×256), with patch sizes discretized according to the VAE downsampling factor (16).
+    - **Design Motivation**: Naively reducing resolution discards fine details, while fixing a small crop region loses global structure. Dynamic adjustment of the crop range allows the model to observe information at different scales across timesteps, approximating the representational capacity of high-resolution training.
 
 2. **Cross-Attention Masking-Based Block Selection**
 
-   - **Function**: Identifies the Transformer blocks in DiT that are most critical for personalization.
-   - **Mechanism**: On a LoRA fine-tuned model, the cross-attention (image query to text key) of 14 consecutive blocks at different positions is sequentially masked, and the semantic distance between the generated images and those from the full model is measured. Masking intermediate blocks causes the subject to disappear (largest semantic distance), while masking leading or trailing blocks has minimal effect. The optimal skip pair $(n^*, m^*)$ is searched over 30 categories from CustomConcept101 by computing DINO embedding distances, minimizing the combined masking impact of the first $n$ and last $m$ blocks.
-   - **Design Motivation**: Unlike U-Net, DiT lacks an explicit hierarchical structure, necessitating an empirical approach to determine block importance. Cross-attention masking provides an efficient probe; once precomputed, it enables rapid lookup for any desired skip ratio.
+    - **Function**: Identifies the Transformer blocks in DiT that are most critical for personalization.
+    - **Mechanism**: On a LoRA fine-tuned model, the cross-attention (image query to text key) of 14 consecutive blocks at different positions is sequentially masked, and the semantic distance between the generated images and those from the full model is measured. Masking intermediate blocks causes the subject to disappear (largest semantic distance), while masking leading or trailing blocks has minimal effect. The optimal skip pair $(n^*, m^*)$ is searched over 30 categories from CustomConcept101 by computing DINO embedding distances, minimizing the combined masking impact of the first $n$ and last $m$ blocks.
+    - **Design Motivation**: Unlike U-Net, DiT lacks an explicit hierarchical structure, necessitating an empirical approach to determine block importance. Cross-attention masking provides an efficient probe; once precomputed, it enables rapid lookup for any desired skip ratio.
 
 3. **Residual Feature Precomputation**
 
-   - **Function**: Preserves information integrity when skipping non-critical blocks, avoiding train-inference discrepancy.
-   - **Mechanism**: For $l$ consecutive skipped blocks, the residual is precomputed as $\Delta f_{i,i+l} = f_{i+l} - f_i$ (the difference between the output of the last skipped block and its input). During training, the residual is added to the updated input: $f'_{i+l} = f'_i + \Delta f_{i,i+l}$. Residuals are extracted from the original model and stored prior to training.
-   - **Design Motivation**: Directly skipping blocks causes severe feature distribution shift. Naive skipping in the style of HollowedNet significantly degrades performance on DiT (DINO drops from 0.73 to 0.43). Residual precomputation compensates for the information loss of block skipping at negligible storage overhead.
+    - **Function**: Preserves information integrity when skipping non-critical blocks, avoiding train-inference discrepancy.
+    - **Mechanism**: For $l$ consecutive skipped blocks, the residual is precomputed as $\Delta f_{i,i+l} = f_{i+l} - f_i$ (the difference between the output of the last skipped block and its input). During training, the residual is added to the updated input: $f'_{i+l} = f'_i + \Delta f_{i,i+l}$. Residuals are extracted from the original model and stored prior to training.
+    - **Design Motivation**: Directly skipping blocks causes severe feature distribution shift. Naive skipping in the style of HollowedNet significantly degrades performance on DiT (DINO drops from 0.73 to 0.43). Residual precomputation compensates for the information loss of block skipping at negligible storage overhead.
 
 ### Loss & Training
 

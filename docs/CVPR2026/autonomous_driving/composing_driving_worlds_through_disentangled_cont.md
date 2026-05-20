@@ -18,8 +18,8 @@ content_hash: b497427bb1fe94d6
 # Composing Driving Worlds through Disentangled Control for Adversarial Scenario Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12864](https://arxiv.org/abs/2603.12864)
-**Code**: [GitHub](https://github.com/Yifever20002/CompoSIA)
+**arXiv**: [2603.12864](https://arxiv.org/abs/2603.12864)  
+**Code**: [GitHub](https://github.com/Yifever20002/CompoSIA)  
 **Area**: Autonomous Driving
 **Keywords**: Driving World Model, Disentangled Control, Adversarial Scenario Generation, Noise-Level Identity Injection, Flow Matching
 

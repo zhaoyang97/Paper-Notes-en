@@ -18,8 +18,8 @@ content_hash: bb772d96189588f4
 # FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models
 
 **Conference**: ICLR2026
-**arXiv**: [2512.08016](https://arxiv.org/abs/2512.08016)
-**Code**: [knowledge-computing/FRIEDA](https://github.com/knowledge-computing/FRIEDA)
+**arXiv**: [2512.08016](https://arxiv.org/abs/2512.08016)  
+**Code**: [knowledge-computing/FRIEDA](https://github.com/knowledge-computing/FRIEDA)  
 **Area**: Multimodal VLM
 **Keywords**: cartographic reasoning, map VQA, spatial relations, multi-image reasoning, benchmark
 
@@ -45,9 +45,9 @@ How to design a cartographic reasoning benchmark that covers all three categorie
 FRIEDA organizes questions around four core dimensions:
 
 1. **Spatial Relation Reasoning**: Based on the three major spatial relation categories in the GIS literature:
-   - Topological relations: border (shared boundary), equal (geometric coincidence), intersect (overlap), within (containment)
-   - Metric relations: distance (computing real-world distances using scale bars)
-   - Directional relations: orientation (determining cardinal directions using compass roses)
+    - Topological relations: border (shared boundary), equal (geometric coincidence), intersect (overlap), within (containment)
+    - Metric relations: distance (computing real-world distances using scale bars)
+    - Directional relations: orientation (determining cardinal directions using compass roses)
 2. **Map Element Interpretation**: Requires understanding the semantics of map text, legend, map scale, and compass.
 3. **Cross-Map Reasoning**: Requires aligning shared symbols, labels, and scale bars across multiple maps and integrating multi-source evidence.
 4. **Contextual Setting**: The model must first retrieve the relevant map from multiple maps within the same document before answering.

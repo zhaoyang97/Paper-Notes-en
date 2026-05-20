@@ -18,8 +18,8 @@ content_hash: d10d051a6ba138c3
 # V2XPnP: Vehicle-to-Everything Spatio-Temporal Fusion for Multi-Agent Perception and Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.01812](https://arxiv.org/abs/2412.01812)
-**Code**: [mobility-lab.seas.ucla.edu/v2xpnp](https://mobility-lab.seas.ucla.edu/v2xpnp)
+**arXiv**: [2412.01812](https://arxiv.org/abs/2412.01812)  
+**Code**: [mobility-lab.seas.ucla.edu/v2xpnp](https://mobility-lab.seas.ucla.edu/v2xpnp)  
 **Area**: Temporal Prediction / Autonomous Driving
 **Keywords**: Vehicle-to-Everything Collaboration, Spatio-Temporal Fusion, End-to-End Perception and Prediction, V2X Dataset, Transformer
 

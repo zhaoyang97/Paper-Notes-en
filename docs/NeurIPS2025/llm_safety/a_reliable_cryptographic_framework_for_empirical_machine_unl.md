@@ -18,8 +18,8 @@ content_hash: dab0960e9923d1c7
 # A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2404.11577](https://arxiv.org/abs/2404.11577)
-**Code**: None
+**arXiv**: [2404.11577](https://arxiv.org/abs/2404.11577)  
+**Code**: None  
 **Area**: AI Safety / Machine Unlearning Evaluation / Privacy Protection
 **Keywords**: machine unlearning, evaluation metric, cryptographic game, membership inference attack, SWAP test
 

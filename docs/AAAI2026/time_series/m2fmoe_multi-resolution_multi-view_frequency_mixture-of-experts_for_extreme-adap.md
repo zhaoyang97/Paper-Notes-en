@@ -20,8 +20,8 @@ content_hash: 702e9e03c1bdbb59
 # M2FMoE: Multi-Resolution Multi-View Frequency Mixture-of-Experts for Extreme-Adaptive Time Series Forecasting
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.08631](https://arxiv.org/abs/2601.08631)
-**Code**: [https://github.com/Yaohui-Huang/M2FMoE](https://github.com/Yaohui-Huang/M2FMoE)
+**arXiv**: [2601.08631](https://arxiv.org/abs/2601.08631)  
+**Code**: [https://github.com/Yaohui-Huang/M2FMoE](https://github.com/Yaohui-Huang/M2FMoE)  
 **Area**: Time Series Forecasting
 **Keywords**: Extreme event forecasting, frequency-domain modeling, Mixture-of-Experts, wavelet transform, Fourier transform, multi-resolution fusion, hydrological forecasting
 

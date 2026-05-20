@@ -18,8 +18,8 @@ content_hash: a841a8d1a07fa8f9
 # HATS: Hardness-Aware Trajectory Synthesis for GUI Agents
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12138](https://arxiv.org/abs/2603.12138)
-**Code**: [JiuTian-VL/HATS](https://github.com/JiuTian-VL/HATS)
+**arXiv**: [2603.12138](https://arxiv.org/abs/2603.12138)  
+**Code**: [JiuTian-VL/HATS](https://github.com/JiuTian-VL/HATS)  
 **Area**: LLM Agent
 **Keywords**: GUI Agent, Trajectory Synthesis, Semantic Ambiguity, Monte Carlo Tree Search, Data Alignment
 

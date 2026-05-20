@@ -17,8 +17,8 @@ content_hash: ed72649a26efcb8c
 # Hilbert-Guided Sparse Local Attention
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.05832](https://arxiv.org/abs/2511.05832)
-**Code**: [GitHub](https://github.com/Yunge6666/Hilbert-Local-Attention)
+**arXiv**: [2511.05832](https://arxiv.org/abs/2511.05832)  
+**Code**: [GitHub](https://github.com/Yunge6666/Hilbert-Local-Attention)  
 **Area**: Efficient Transformers / Attention Mechanisms
 **Keywords**: Hilbert curve, local attention, block sparsity, FlexAttention, Vision Transformer
 

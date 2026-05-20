@@ -18,8 +18,8 @@ content_hash: 4b14b1dff2a904cc
 # Resolving the Identity Crisis in Text-to-Image Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.01399](https://arxiv.org/abs/2510.01399)
-**Code**: [https://qualcomm-ai-research.github.io/disco/](https://qualcomm-ai-research.github.io/disco/)
+**arXiv**: [2510.01399](https://arxiv.org/abs/2510.01399)  
+**Code**: [https://qualcomm-ai-research.github.io/disco/](https://qualcomm-ai-research.github.io/disco/)  
 **Area**: Diffusion Models
 **Keywords**: Identity diversity, multi-person image generation, reinforcement learning, GRPO, text-to-image
 

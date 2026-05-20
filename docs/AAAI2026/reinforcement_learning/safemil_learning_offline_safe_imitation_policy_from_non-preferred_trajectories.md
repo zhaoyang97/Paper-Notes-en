@@ -18,8 +18,8 @@ content_hash: 3b8b1e5f5e9187cb
 # SafeMIL: Learning Offline Safe Imitation Policy from Non-Preferred Trajectories
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08136](https://arxiv.org/abs/2511.08136)
-**Code**: None
+**arXiv**: [2511.08136](https://arxiv.org/abs/2511.08136)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Offline safe imitation learning, multiple instance learning, constrained MDP, behavioral cloning, cost function learning
 

@@ -18,8 +18,8 @@ content_hash: 0da083805a85f3d1
 # LitePT: Lighter Yet Stronger Point Transformer
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.13689](https://arxiv.org/abs/2512.13689)
-**Code**: [GitHub](https://github.com/prs-eth/LitePT)
+**arXiv**: [2512.13689](https://arxiv.org/abs/2512.13689)  
+**Code**: [GitHub](https://github.com/prs-eth/LitePT)  
 **Area**: 3D Vision / Point Cloud Processing
 **Keywords**: Point Cloud Transformer, Hybrid Architecture, Positional Encoding, Efficient Inference, 3D Semantic Segmentation
 

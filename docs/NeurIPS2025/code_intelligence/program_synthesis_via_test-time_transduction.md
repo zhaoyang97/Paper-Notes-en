@@ -19,8 +19,8 @@ content_hash: 848f204843fa9ad2
 # Program Synthesis via Test-Time Transduction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17393](https://arxiv.org/abs/2509.17393)
-**Code**: [GitHub](https://github.com/klee972/SYNTRA)
+**arXiv**: [2509.17393](https://arxiv.org/abs/2509.17393)  
+**Code**: [GitHub](https://github.com/klee972/SYNTRA)  
 **Area**: Program Synthesis / LLM Reasoning
 **Keywords**: program synthesis, transductive inference, active learning, hypothesis elimination, LLM, edge cases
 

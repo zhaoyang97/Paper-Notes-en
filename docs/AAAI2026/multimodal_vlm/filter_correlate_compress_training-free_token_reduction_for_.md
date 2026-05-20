@@ -18,8 +18,8 @@ content_hash: e48dc223f08eb2ef
 # Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration
 
 **Conference**: AAAI 2026
-**arXiv**: [2411.17686](https://arxiv.org/abs/2411.17686)
-**Code**: [https://github.com/kawhiiiileo/FiCoCo](https://github.com/kawhiiiileo/FiCoCo)
+**arXiv**: [2411.17686](https://arxiv.org/abs/2411.17686)  
+**Code**: [https://github.com/kawhiiiileo/FiCoCo](https://github.com/kawhiiiileo/FiCoCo)  
 **Area**: Multimodal VLM / Model Compression
 **Keywords**: Visual token compression, MLLM acceleration, training-free, information recycling, redundancy metric
 

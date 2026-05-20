@@ -18,8 +18,8 @@ content_hash: fd3429b3fc459c94
 # REP: Resource-Efficient Prompting for Rehearsal-Free Continual Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2406.04772](https://arxiv.org/abs/2406.04772)
-**Code**: N/A
+**arXiv**: [2406.04772](https://arxiv.org/abs/2406.04772)  
+**Code**: N/A  
 **Area**: Model Compression / Continual Learning
 **Keywords**: Continual Learning, Resource Efficiency, Prompt Learning, Token Merging, Layer Dropping
 

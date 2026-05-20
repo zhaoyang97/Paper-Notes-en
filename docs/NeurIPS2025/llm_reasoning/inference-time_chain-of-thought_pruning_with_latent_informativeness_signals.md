@@ -18,8 +18,8 @@ content_hash: f8b73dc841f9a5fa
 # Inference-Time Chain-of-Thought Pruning with Latent Informativeness Signals
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00699](https://arxiv.org/abs/2511.00699)
-**Code**: Not open-sourced
+**arXiv**: [2511.00699](https://arxiv.org/abs/2511.00699)  
+**Code**: Not open-sourced  
 **Area**: LLM Reasoning
 **Keywords**: inference-time scaling, chain-of-thought pruning, KL divergence, Best-of-N, reasoning efficiency
 

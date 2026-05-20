@@ -18,8 +18,8 @@ content_hash: a954763e56bac504
 # Flatten Graphs as Sequences: Transformers are Scalable Graph Generators
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.02216](https://arxiv.org/abs/2502.02216)
-**Code**: [AutoGraph](https://github.com/BorgwardtLab/AutoGraph)
+**arXiv**: [2502.02216](https://arxiv.org/abs/2502.02216)  
+**Code**: [AutoGraph](https://github.com/BorgwardtLab/AutoGraph)  
 **Area**: Graph Generation
 **Keywords**: graph generation, autoregressive model, Eulerian trail, language model, scalability
 

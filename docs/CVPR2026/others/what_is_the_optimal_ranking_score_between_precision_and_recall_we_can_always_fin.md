@@ -17,8 +17,8 @@ content_hash: ca8f2ed7a1b25ed0
 # What Is the Optimal Ranking Score Between Precision and Recall? We Can Always Find It and It Is Rarely F₁
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.22442](https://arxiv.org/abs/2511.22442)
-**Code**: [https://github.com/pierard/cvpr-2026-optimal-tradeoff-precision-recall](https://github.com/pierard/cvpr-2026-optimal-tradeoff-precision-recall)
+**arXiv**: [2511.22442](https://arxiv.org/abs/2511.22442)  
+**Code**: [https://github.com/pierard/cvpr-2026-optimal-tradeoff-precision-recall](https://github.com/pierard/cvpr-2026-optimal-tradeoff-precision-recall)  
 **Area**: Other
 **Keywords**: F-score, ranking optimization, Kendall distance, precision-recall tradeoff, performance evaluation theory
 
@@ -45,21 +45,21 @@ Given a set of classifier performances $\Pi = \{P_1, \ldots, P_n\}$, where each 
 
 1. **Geodesic Property of $F_\beta$ Rankings**
 
-   - **Function**: Proves that $F_\beta$ is the correct score family for finding a Precision-Recall ranking tradeoff.
-   - **Mechanism**: Because $F_\beta$ is a weighted $f$-mean of Precision and Recall with $f(x) = x^{-1}$ (i.e., harmonic mean), for any two performances $P_A, P_B$, if both Precision and Recall agree on an ordering, then every $F_\beta$ agrees as well. This yields the key identity $d_\tau(Pr; Re) = d_\tau(Pr; F_\beta) + d_\tau(F_\beta; Re)$, establishing that $F_\beta$ rankings lie on the geodesic (shortest path) between the Precision and Recall rankings. This guarantees that restricting the search for an optimal tradeoff to the $F_\beta$ family is well-founded.
-   - **Design Motivation**: Not every score that numerically lies between Precision and Recall satisfies this geodesic property — the arithmetic mean and the geometric mean both fail to satisfy the performance ranking axioms.
+    - **Function**: Proves that $F_\beta$ is the correct score family for finding a Precision-Recall ranking tradeoff.
+    - **Mechanism**: Because $F_\beta$ is a weighted $f$-mean of Precision and Recall with $f(x) = x^{-1}$ (i.e., harmonic mean), for any two performances $P_A, P_B$, if both Precision and Recall agree on an ordering, then every $F_\beta$ agrees as well. This yields the key identity $d_\tau(Pr; Re) = d_\tau(Pr; F_\beta) + d_\tau(F_\beta; Re)$, establishing that $F_\beta$ rankings lie on the geodesic (shortest path) between the Precision and Recall rankings. This guarantees that restricting the search for an optimal tradeoff to the $F_\beta$ family is well-founded.
+    - **Design Motivation**: Not every score that numerically lies between Precision and Recall satisfies this geodesic property — the arithmetic mean and the geometric mean both fail to satisfy the performance ranking axioms.
 
 2. **Closed-Form Solution for the Optimal Tradeoff**
 
-   - **Function**: Provides an analytic formula for computing the optimal $\beta$.
-   - **Mechanism**: The optimal tradeoff $F_*$ is defined as the Karcher mean minimizing the Fréchet variance $\sigma^2(\beta) = d_\tau^2(Pr; F_\beta) + d_\tau^2(F_\beta; Re)$, equivalently characterized by the equidistance condition $d_\tau(Pr; F_*) = d_\tau(F_*; Re)$. For a finite set of performances, the ranking induced by $F_\beta$ changes through a sequence of discrete jumps as $\beta$ increases (occurring whenever two performances are tied under $F_\beta$), with each jump at $\beta^2 = \vartheta(P_1, P_2) = -\frac{PTP(P_1) \cdot PFP(P_2) - PTP(P_2) \cdot PFP(P_1)}{PTP(P_1) \cdot PFN(P_2) - PTP(P_2) \cdot PFN(P_1)}$. The optimal $\beta^2$ is then the median of all positive $\vartheta$ values.
-   - **Design Motivation**: The result is entirely analytic and requires no numerical optimization.
+    - **Function**: Provides an analytic formula for computing the optimal $\beta$.
+    - **Mechanism**: The optimal tradeoff $F_*$ is defined as the Karcher mean minimizing the Fréchet variance $\sigma^2(\beta) = d_\tau^2(Pr; F_\beta) + d_\tau^2(F_\beta; Re)$, equivalently characterized by the equidistance condition $d_\tau(Pr; F_*) = d_\tau(F_*; Re)$. For a finite set of performances, the ranking induced by $F_\beta$ changes through a sequence of discrete jumps as $\beta$ increases (occurring whenever two performances are tied under $F_\beta$), with each jump at $\beta^2 = \vartheta(P_1, P_2) = -\frac{PTP(P_1) \cdot PFP(P_2) - PTP(P_2) \cdot PFP(P_1)}{PTP(P_1) \cdot PFN(P_2) - PTP(P_2) \cdot PFN(P_1)}$. The optimal $\beta^2$ is then the median of all positive $\vartheta$ values.
+    - **Design Motivation**: The result is entirely analytic and requires no numerical optimization.
 
 3. **Optimality Metric $\mathcal{O}$**
 
-   - **Function**: Quantifies how close any given $\beta$ choice is to the optimal ranking.
-   - **Mechanism**: All classifier pairs are partitioned into three categories: those on which Precision and Recall agree (no choice needed), those on which a choice is needed and the correct one is made, and those on which a choice is needed but the wrong one is made. The optimality score is $\mathcal{O} = 1 - \frac{d_\tau(F_\beta; F_*)}{d_\tau(Pr; Re) - d_\tau(F_\beta; F_*) + d_\tau(F_\beta; F_*)}$, which equals 1 if and only if $\beta$ is optimal.
-   - **Design Motivation**: Provides a simple, reportable metric that allows practitioners to assess how far their choice of $\beta$ deviates from optimal.
+    - **Function**: Quantifies how close any given $\beta$ choice is to the optimal ranking.
+    - **Mechanism**: All classifier pairs are partitioned into three categories: those on which Precision and Recall agree (no choice needed), those on which a choice is needed and the correct one is made, and those on which a choice is needed but the wrong one is made. The optimality score is $\mathcal{O} = 1 - \frac{d_\tau(F_\beta; F_*)}{d_\tau(Pr; Re) - d_\tau(F_\beta; F_*) + d_\tau(F_\beta; F_*)}$, which equals 1 if and only if $\beta$ is optimal.
+    - **Design Motivation**: Provides a simple, reportable metric that allows practitioners to assess how far their choice of $\beta$ deviates from optimal.
 
 ### Loss & Training
 

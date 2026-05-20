@@ -18,8 +18,8 @@ content_hash: eb8f9decd7684410
 # From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck
 
 **Conference**: ACL 2026
-**arXiv**: [2603.01455](https://arxiv.org/abs/2603.01455)
-**Code**: [GitHub](https://github.com/EliSpectre/MM-Mem)
+**arXiv**: [2603.01455](https://arxiv.org/abs/2603.01455)  
+**Code**: [GitHub](https://github.com/EliSpectre/MM-Mem)  
 **Area**: Multimodal VLM
 **Keywords**: Long Video Understanding, Multimodal Memory, Information Bottleneck, Fuzzy Trace Theory, Reinforcement Learning
 

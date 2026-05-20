@@ -19,8 +19,8 @@ content_hash: 664526763e5fbbad
 # Blueprint-Bench: Comparing Spatial Intelligence of LLMs, Agents and Image Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25229](https://arxiv.org/abs/2509.25229)
-**Code**: [GitHub](https://github.com/AndonLabs/Blueprint-Bench-generation) (includes generation code and dataset samples)
+**arXiv**: [2509.25229](https://arxiv.org/abs/2509.25229)  
+**Code**: [GitHub](https://github.com/AndonLabs/Blueprint-Bench-generation) (includes generation code and dataset samples)  
 **Area**: Image Generation
 **Keywords**: Spatial Intelligence, Floorplan Generation, Benchmark, LLM Evaluation, Image Generation Model Evaluation, AI Safety
 

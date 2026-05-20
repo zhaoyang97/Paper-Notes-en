@@ -18,8 +18,8 @@ content_hash: 3e82d94364aade98
 # Are Greedy Task Orderings Better Than Random in Continual Linear Regression?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19941](https://arxiv.org/abs/2510.19941)
-**Code**: None
+**arXiv**: [2510.19941](https://arxiv.org/abs/2510.19941)  
+**Code**: None  
 **Area**: Continual Learning / Optimization Theory
 **Keywords**: Continual Learning, Task Ordering, Linear Regression, Kaczmarz Method, Greedy Strategy
 

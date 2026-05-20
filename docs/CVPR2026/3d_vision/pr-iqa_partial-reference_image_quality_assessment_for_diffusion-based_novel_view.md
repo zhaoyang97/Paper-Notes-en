@@ -18,8 +18,8 @@ content_hash: a6c36e2bcebce0f8
 # PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04576](https://arxiv.org/abs/2604.04576)
-**Code**: [https://github.com/Kakaomacao/PR-IQA](https://github.com/Kakaomacao/PR-IQA)
+**arXiv**: [2604.04576](https://arxiv.org/abs/2604.04576)  
+**Code**: [https://github.com/Kakaomacao/PR-IQA](https://github.com/Kakaomacao/PR-IQA)  
 **Area**: 3D Vision / Image Quality Assessment
 **Keywords**: Image quality assessment, cross-reference, novel view synthesis, 3D Gaussian splatting, diffusion models
 
@@ -51,21 +51,21 @@ PR-IQA operates in two stages: (1) **Local quality map generation**—3D point c
 
 1. **Local Quality Map Generation**
 
-   - **Function**: Obtain reliable pixel-level quality estimates in geometrically aligned overlapping regions.
-   - **Mechanism**: VGGT is used to obtain dense 3D point clouds of the query and reference images; DINOv2 features of the reference image are warped to the query view coordinate system via back-projection and re-projection. LoftUp upsamples features to high resolution. Normalized cosine similarity is computed at each overlapping pixel $i$: $\hat{Q}(i) = \text{CosSim}(F_q^{\text{DINO}}(i), F_{r \to q}^{\text{DINO}}(i))$. Quality values in non-overlapping regions are left empty.
-   - **Design Motivation**: Geometric alignment ensures spatial consistency in feature comparison, while DINOv2 features provide high-level semantic information. Their combination yields highly reliable quality estimates in overlapping regions, serving as "anchors" for subsequent completion.
+    - **Function**: Obtain reliable pixel-level quality estimates in geometrically aligned overlapping regions.
+    - **Mechanism**: VGGT is used to obtain dense 3D point clouds of the query and reference images; DINOv2 features of the reference image are warped to the query view coordinate system via back-projection and re-projection. LoftUp upsamples features to high resolution. Normalized cosine similarity is computed at each overlapping pixel $i$: $\hat{Q}(i) = \text{CosSim}(F_q^{\text{DINO}}(i), F_{r \to q}^{\text{DINO}}(i))$. Quality values in non-overlapping regions are left empty.
+    - **Design Motivation**: Geometric alignment ensures spatial consistency in feature comparison, while DINOv2 features provide high-level semantic information. Their combination yields highly reliable quality estimates in overlapping regions, serving as "anchors" for subsequent completion.
 
 2. **Three-Stream Encoder-Decoder Quality Completion Network**
 
-   - **Function**: Complete the local quality map into a full-image dense quality map.
-   - **Mechanism**: Three separate encoders process the reference image (self-attention encoder $\text{Enc}_{\text{self}}^r$), query image (cross-attention encoder $\text{Enc}_{\text{cross}}^q$), and local quality map (cross-attention encoder $\text{Enc}_{\text{cross}}^p$). The two cross-attention encoders use reference image features as keys/values, enabling explicit view alignment. After each stage, query and quality map features are fused via channel-wise concatenation. The decoder progressively upsamples to generate a full-resolution quality map.
-   - **Design Motivation**: The three-stream design decouples "cross-view alignment" (via the reference image) from "quality propagation" (via the local quality map), allowing the network to learn these two capabilities independently. The fusion operation ensures quality propagation is anchored to geometrically verified regions.
+    - **Function**: Complete the local quality map into a full-image dense quality map.
+    - **Mechanism**: Three separate encoders process the reference image (self-attention encoder $\text{Enc}_{\text{self}}^r$), query image (cross-attention encoder $\text{Enc}_{\text{cross}}^q$), and local quality map (cross-attention encoder $\text{Enc}_{\text{cross}}^p$). The two cross-attention encoders use reference image features as keys/values, enabling explicit view alignment. After each stage, query and quality map features are fused via channel-wise concatenation. The decoder progressively upsamples to generate a full-resolution quality map.
+    - **Design Motivation**: The three-stream design decouples "cross-view alignment" (via the reference image) from "quality propagation" (via the local quality map), allowing the network to learn these two capabilities independently. The fusion operation ensures quality propagation is anchored to geometrically verified regions.
 
 3. **Dual-Gated Attention Block**
 
-   - **Function**: Achieve decoupled channel and spatial attention within each encoding stage.
-   - **Mechanism**: Based on the CBAM design, channel attention (max/avg pooling + MLP channel recalibration) and spatial attention (Q/K/V projection + softmax spatial refinement) are applied sequentially, each followed by normalization, residual connection, and FFN. Channel attention determines "what features are relevant"; spatial attention determines "where to propagate."
-   - **Design Motivation**: For the quality completion task, decoupling "what" and "where" is critical—channel attention selects quality-relevant feature channels, while spatial attention propagates quality information from reliable regions to non-overlapping areas.
+    - **Function**: Achieve decoupled channel and spatial attention within each encoding stage.
+    - **Mechanism**: Based on the CBAM design, channel attention (max/avg pooling + MLP channel recalibration) and spatial attention (Q/K/V projection + softmax spatial refinement) are applied sequentially, each followed by normalization, residual connection, and FFN. Channel attention determines "what features are relevant"; spatial attention determines "where to propagate."
+    - **Design Motivation**: For the quality completion task, decoupling "what" and "where" is critical—channel attention selects quality-relevant feature channels, while spatial attention propagates quality information from reliable regions to non-overlapping areas.
 
 ### Loss & Training
 

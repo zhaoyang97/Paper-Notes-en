@@ -18,8 +18,8 @@ content_hash: 7a2fbe78b81c2578
 # When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.00709](https://arxiv.org/abs/2512.00709)
-**Code**: None
+**arXiv**: [2512.00709](https://arxiv.org/abs/2512.00709)  
+**Code**: None  
 **Area**: LLM Alignment
 **Keywords**: RLHF, DPO, preference flipping, robust alignment, noisy annotation
 

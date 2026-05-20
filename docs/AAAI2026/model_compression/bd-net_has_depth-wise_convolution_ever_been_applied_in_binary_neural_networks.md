@@ -17,8 +17,8 @@ content_hash: 90001113899c1f0f
 # BD-Net: Has Depth-Wise Convolution Ever Been Applied in Binary Neural Networks?
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.17633](https://arxiv.org/abs/2511.17633)
-**Code**: None
+**arXiv**: [2511.17633](https://arxiv.org/abs/2511.17633)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Binary Neural Networks, Depth-wise Separable Convolution, Model Compression, Low-bit Quantization, Lightweight Networks
 

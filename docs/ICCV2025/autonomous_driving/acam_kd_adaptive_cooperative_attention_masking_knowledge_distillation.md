@@ -18,8 +18,8 @@ content_hash: 09bc180daaf36d3c
 # ACAM-KD: Adaptive and Cooperative Attention Masking for Knowledge Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06307](https://arxiv.org/abs/2503.06307)
-**Code**: N/A
+**arXiv**: [2503.06307](https://arxiv.org/abs/2503.06307)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: Knowledge Distillation, Attention Masking, Student-Teacher Interaction, Adaptive Feature Selection, Object Detection
 

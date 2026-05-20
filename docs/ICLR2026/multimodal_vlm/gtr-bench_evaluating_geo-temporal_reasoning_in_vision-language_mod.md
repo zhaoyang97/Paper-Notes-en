@@ -18,8 +18,8 @@ content_hash: 68bcf7adb3362bf0
 # GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.07791](https://arxiv.org/abs/2510.07791)
-**Code**: [GitHub](https://github.com/X-Luffy/GTR-Bench)
+**arXiv**: [2510.07791](https://arxiv.org/abs/2510.07791)  
+**Code**: [GitHub](https://github.com/X-Luffy/GTR-Bench)  
 **Area**: Spatial-Temporal Intelligence / Vision-Language Model Evaluation
 **Keywords**: Geo-temporal reasoning, vision-language models, multi-camera networks, benchmark, spatial-temporal intelligence
 

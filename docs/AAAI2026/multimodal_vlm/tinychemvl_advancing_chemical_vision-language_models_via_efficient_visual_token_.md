@@ -18,8 +18,8 @@ content_hash: 8d4ae52c851f159a
 # TinyChemVL: Advancing Chemical Vision-Language Models via Efficient Visual Token Reduction and Complex Reaction Tasks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06283](https://arxiv.org/abs/2511.06283)
-**Code**: [https://github.com/xxlllz/TinyChemVL](https://github.com/xxlllz/TinyChemVL)
+**arXiv**: [2511.06283](https://arxiv.org/abs/2511.06283)  
+**Code**: [https://github.com/xxlllz/TinyChemVL](https://github.com/xxlllz/TinyChemVL)  
 **Area**: Multimodal VLM
 **Keywords**: Chemical VLM, visual token compression, molecular recognition, reaction prediction, efficient inference with small models
 

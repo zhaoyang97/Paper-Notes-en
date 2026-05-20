@@ -17,8 +17,8 @@ content_hash: 0a6865c79640dce0
 # GSPN-2: Efficient Parallel Sequence Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.07884](https://arxiv.org/abs/2512.07884)
-**Code**: [Project Page](https://whj363636.github.io/GSPN2/)
+**arXiv**: [2512.07884](https://arxiv.org/abs/2512.07884)  
+**Code**: [Project Page](https://whj363636.github.io/GSPN2/)  
 **Area**: Image Generation
 **Keywords**: efficient attention, spatial propagation, CUDA optimization, vision transformer, image generation
 

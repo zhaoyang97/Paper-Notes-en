@@ -18,8 +18,8 @@ content_hash: 3e3cfd5fe90183dc
 # Compute-Optimal Quantization-Aware Training
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22935](https://arxiv.org/abs/2509.22935)
-**Code**: None
+**arXiv**: [2509.22935](https://arxiv.org/abs/2509.22935)  
+**Code**: None  
 **Area**: Model Compression / LLM Efficiency
 **Keywords**: Quantization-Aware Training, Scaling Law, Compute-Optimal Allocation, tokens-per-parameter-byte, Low-Bit Quantization
 

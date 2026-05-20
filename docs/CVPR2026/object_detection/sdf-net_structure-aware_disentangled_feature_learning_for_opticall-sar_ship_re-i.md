@@ -18,8 +18,8 @@ content_hash: 8a122baccb676cfa
 # SDF-Net: Structure-Aware Disentangled Feature Learning for Optical–SAR Ship Re-Identification
 
 **Conference**: CVPR2026
-**arXiv**: [2603.12588](https://arxiv.org/abs/2603.12588)
-**Code**: [cfrfree/SDF-Net](https://github.com/cfrfree/SDF-Net)
+**arXiv**: [2603.12588](https://arxiv.org/abs/2603.12588)  
+**Code**: [cfrfree/SDF-Net](https://github.com/cfrfree/SDF-Net)  
 **Area**: Object Detection / Cross-Modal Re-Identification
 **Keywords**: Optical-SAR Cross-Modal Matching, Ship Re-Identification, Feature Disentanglement, Structural Consistency, Vision Transformer
 

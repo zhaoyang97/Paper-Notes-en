@@ -17,8 +17,8 @@ content_hash: c207fa7d4c94a9f8
 # SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08008](https://arxiv.org/abs/2604.08008)
-**Code**: [https://github.com/iis-esslingen/searchad_devkit](https://github.com/iis-esslingen/searchad_devkit)
+**arXiv**: [2604.08008](https://arxiv.org/abs/2604.08008)  
+**Code**: [https://github.com/iis-esslingen/searchad_devkit](https://github.com/iis-esslingen/searchad_devkit)  
 **Area**: Autonomous Driving / Dataset
 **Keywords**: Rare image retrieval, autonomous driving, long-tail distribution, semantic retrieval, dataset benchmark
 

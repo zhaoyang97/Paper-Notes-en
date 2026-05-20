@@ -17,8 +17,8 @@ content_hash: ea15fa3425dd63b7
 # Training the Untrainable: Introducing Inductive Bias via Representational Alignment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.20035](https://arxiv.org/abs/2410.20035)
-**Code**: [GitHub](https://untrainable-networks.github.io)
+**arXiv**: [2410.20035](https://arxiv.org/abs/2410.20035)  
+**Code**: [GitHub](https://untrainable-networks.github.io)  
 **Area**: Deep Learning / Architectural Inductive Bias
 **Keywords**: Inductive Bias, Representational Alignment, CKA, Architectural Prior, Knowledge Distillation
 

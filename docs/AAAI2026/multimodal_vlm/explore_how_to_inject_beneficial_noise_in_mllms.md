@@ -18,8 +18,8 @@ content_hash: d95620753bcbd2b4
 # Explore How to Inject Beneficial Noise in MLLMs
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12917](https://arxiv.org/abs/2511.12917)
-**Code**: [https://github.com/zhuruishu0848/MuNG](https://github.com/zhuruishu0848/MuNG)
+**arXiv**: [2511.12917](https://arxiv.org/abs/2511.12917)  
+**Code**: [https://github.com/zhuruishu0848/MuNG](https://github.com/zhuruishu0848/MuNG)  
 **Area**: Multimodal VLM
 **Keywords**: Positive-Incentive Noise, Parameter-Efficient Fine-Tuning, Multimodal Large Language Models, Variational Inference, Cross-Modal Alignment
 

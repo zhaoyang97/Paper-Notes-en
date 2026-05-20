@@ -18,8 +18,8 @@ content_hash: 5deff3b123ee299a
 # VGGT-DP: Generalizable Robot Control via Vision Foundation Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.18778](https://arxiv.org/abs/2509.18778)
-**Code**: None
+**arXiv**: [2509.18778](https://arxiv.org/abs/2509.18778)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: visuomotor policy, diffusion policy, VGGT, proprioception guidance, robot manipulation
 

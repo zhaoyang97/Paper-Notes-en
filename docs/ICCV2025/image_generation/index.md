@@ -21,9 +21,9 @@ tags:
 
 **📹 ICCV2025** · **213** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (11)](../../ACL2026/image_generation/index.md) · [📷 CVPR2026 (208)](../../CVPR2026/image_generation/index.md) · [🔬 ICLR2026 (154)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (78)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (244)](../../NeurIPS2025/image_generation/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (22)](../../ICML2026/image_generation/index.md) · [📷 CVPR2026 (209)](../../CVPR2026/image_generation/index.md) · [🔬 ICLR2026 (149)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (78)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (241)](../../NeurIPS2025/image_generation/index.md)
 
-🔥 **Top topics:** Diffusion Models ×86 · Text-to-Image ×17 · Image Editing ×15 · Adversarial Robustness ×12 · Few-/Zero-Shot Learning ×8
+🔥 **Top topics:** Diffusion Models ×87 · Text-to-Image ×17 · Image Editing ×15 · Adversarial Robustness ×12 · Few-/Zero-Shot Learning ×8
 
 **[A0: An Affordance-Aware Hierarchical Model for General Robotic Manipulation](a0_affordance_aware_hierarchical_model_robotic_manipulation.md)**
 
@@ -601,10 +601,6 @@ tags:
 
 :   This paper proposes SewingLDM, a multimodal conditional latent diffusion model that generates complex sewing patterns under text, sketch, and body-shape conditions via an extended sewing pattern representation and a two-stage training strategy, with seamless integration into CG simulation pipelines.
 
-**[MUNBa: Machine Unlearning via Nash Bargaining](munba_machine_unlearning_via_nash_bargaining.md)**
-
-:   This work formulates Machine Unlearning (MU) as a two-player cooperative bargaining game and derives a closed-form solution via Nash bargaining theory to simultaneously address gradient conflict and gradient dominance between the forgetting and retention objectives, achieving an optimal balance between unlearning and preservation across both classification and generation tasks.
-
 **[Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling](music-aligned_holistic_3d_dance_generation_via_hierarchical_motion_modeling.md)**
 
 :   This paper introduces the SoulDance dataset (the first high-quality 3D dance dataset encompassing body, hand, and facial motion) and the SoulNet framework (hierarchical residual vector quantization + music-aligned generative model + cross-modal retrieval), achieving the first whole-body 3D dance generation with coordinated facial expressions, body, and hand movements aligned to musical rhythm and emotion.
@@ -660,6 +656,10 @@ tags:
 **[PLA: Prompt Learning Attack against Text-to-Image Generative Models](pla_prompt_learning_attack_against_text-to-image_generative_models.md)**
 
 :   This paper proposes PLA (Prompt Learning Attack), a gradient-driven adversarial attack framework targeting black-box T2I models. By leveraging sensitive knowledge encoding and multimodal similarity losses, PLA learns adversarial prompts that bypass both prompt filters and post-hoc safety checkers, achieving an average ASR-4 exceeding 90%, substantially outperforming existing methods.
+
+**[PolarAnything: Diffusion-based Polarimetric Image Synthesis](polaranything_diffusion-based_polarimetric_image_synthesis.md)**
+
+:   This paper proposes PolarAnything, the first diffusion-based framework for generating polarimetric images from a single RGB image. By performing denoising diffusion over encoded AoLP and DoLP representations, the method achieves physically accurate and photorealistic polarimetric attribute synthesis without requiring 3D assets or polarization cameras.
 
 **[Pretrained Reversible Generation as Unsupervised Visual Representation Learning](pretrained_reversible_generation_as_unsupervised_visual_representation_learning.md)**
 

@@ -18,8 +18,8 @@ content_hash: 745a6a8ac48f1271
 # Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning
 
 **Conference**: ACL 2026
-**arXiv**: [2502.02871](https://arxiv.org/abs/2502.02871)
-**Code**: None
+**arXiv**: [2502.02871](https://arxiv.org/abs/2502.02871)  
+**Code**: None  
 **Area**: Multimodal VLM / Scientific Reasoning
 **Keywords**: Multimodal Large Language Models, Scientific Reasoning, Research Roadmap, Mathematics Physics Chemistry Biology, AGI
 

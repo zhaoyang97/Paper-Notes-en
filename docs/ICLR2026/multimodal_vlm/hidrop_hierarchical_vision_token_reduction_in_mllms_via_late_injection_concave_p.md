@@ -18,8 +18,8 @@ content_hash: 169190f6fd1cc6ef
 # HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.23699](https://arxiv.org/abs/2602.23699)
-**Code**: [https://github.com/EIT-NLP/HiDrop](https://github.com/EIT-NLP/HiDrop)
+**arXiv**: [2602.23699](https://arxiv.org/abs/2602.23699)  
+**Code**: [https://github.com/EIT-NLP/HiDrop](https://github.com/EIT-NLP/HiDrop)  
 **Area**: Multimodal VLM
 **Keywords**: Visual token compression, MLLM acceleration, progressive pruning, Late Injection, diffused attention
 

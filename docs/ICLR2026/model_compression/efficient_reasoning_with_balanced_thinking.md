@@ -18,8 +18,8 @@ content_hash: 89404c885fa4df26
 # Efficient Reasoning with Balanced Thinking
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.12372](https://arxiv.org/abs/2603.12372)
-**Code**: [GitHub](https://github.com/yu-lin-li/ReBalance)
+**arXiv**: [2603.12372](https://arxiv.org/abs/2603.12372)  
+**Code**: [GitHub](https://github.com/yu-lin-li/ReBalance)  
 **Area**: Model Compression / Efficient Inference
 **Keywords**: Large language model reasoning, overthinking, underthinking, hidden-state steering, training-free acceleration
 

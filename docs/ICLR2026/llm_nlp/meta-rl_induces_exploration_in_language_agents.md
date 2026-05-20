@@ -19,8 +19,8 @@ content_hash: e787c13fa0f3df7e
 # Meta-RL Induces Exploration in Language Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.16848](https://arxiv.org/abs/2512.16848)
-**Code**: [mlbio-epfl/LaMer](https://github.com/mlbio-epfl/LaMer)
+**arXiv**: [2512.16848](https://arxiv.org/abs/2512.16848)  
+**Code**: [mlbio-epfl/LaMer](https://github.com/mlbio-epfl/LaMer)  
 **Area**: LLM/NLP
 **Keywords**: Meta-RL, LLM Agent, Exploration & Exploitation, Multi-turn Interaction, Cross-episode Training, Self-reflection
 

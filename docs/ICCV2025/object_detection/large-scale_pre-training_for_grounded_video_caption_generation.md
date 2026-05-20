@@ -18,8 +18,8 @@ content_hash: 13f8946f2db53d6b
 # Large-scale Pre-training for Grounded Video Caption Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.10781](https://arxiv.org/abs/2503.10781)
-**Code**: [Project Page](https://ekazakos.github.io/grounded_video_caption_generation/)
+**arXiv**: [2503.10781](https://arxiv.org/abs/2503.10781)  
+**Code**: [Project Page](https://ekazakos.github.io/grounded_video_caption_generation/)  
 **Area**: Object Detection
 **Keywords**: grounded video caption generation, large-scale pre-training, spatio-temporal grounding, automatic annotation, bounding box prediction
 

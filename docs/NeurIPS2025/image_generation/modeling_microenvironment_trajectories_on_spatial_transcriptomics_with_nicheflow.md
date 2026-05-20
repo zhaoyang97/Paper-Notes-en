@@ -19,9 +19,9 @@ content_hash: cf20a8f5959f0609
 # Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00977](https://arxiv.org/abs/2511.00977)
+**arXiv**: [2511.00977](https://arxiv.org/abs/2511.00977)  
 **Authors**: Kristiyan Sakalyan, Alessandro Palma, Filippo Guerranti, Fabian J. Theis, Stephan Günnemann (TUM, Helmholtz Munich)
-**Code**: [Project Page](https://www.cs.cit.tum.de/daml/nicheflow)
+**Code**: [Project Page](https://www.cs.cit.tum.de/daml/nicheflow)  
 **Area**: Image Generation
 **Keywords**: Spatial Transcriptomics, Microenvironment Trajectory Inference, Flow Matching, Optimal Transport, Point Cloud Generation, Cell Niche
 

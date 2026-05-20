@@ -18,8 +18,8 @@ content_hash: 079dee125f734cf1
 # FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12146](https://arxiv.org/abs/2603.12146)
-**Code**: [https://github.com/quanhaol/FlashMotion](https://github.com/quanhaol/FlashMotion)
+**arXiv**: [2603.12146](https://arxiv.org/abs/2603.12146)  
+**Code**: [https://github.com/quanhaol/FlashMotion](https://github.com/quanhaol/FlashMotion)  
 **Area**: Video Understanding / Video Generation
 **Keywords**: Trajectory-controllable video generation, few-step distillation, adversarial training, diffusion discriminator, video acceleration
 

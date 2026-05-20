@@ -17,8 +17,8 @@ content_hash: 0cd9e453d9a3e5c9
 # A Hidden Stumbling Block in Generalized Category Discovery: Distracted Attention
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.14315](https://arxiv.org/abs/2507.14315)
-**Code**: [https://github.com/Afleve/AFGCD](https://github.com/Afleve/AFGCD)
+**arXiv**: [2507.14315](https://arxiv.org/abs/2507.14315)  
+**Code**: [https://github.com/Afleve/AFGCD](https://github.com/Afleve/AFGCD)  
 **Area**: Other
 **Keywords**: Generalized Category Discovery, Attention Focusing, Token Pruning, ViT, Fine-Grained Recognition
 

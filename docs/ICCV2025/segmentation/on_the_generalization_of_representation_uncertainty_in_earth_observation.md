@@ -18,8 +18,8 @@ content_hash: 438026174ef16ac7
 # On the Generalization of Representation Uncertainty in Earth Observation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07082](https://arxiv.org/abs/2503.07082)
-**Code**: [GitHub](https://github.com/Orion-AI-Lab/EOUncertaintyGeneralization)
+**arXiv**: [2503.07082](https://arxiv.org/abs/2503.07082)  
+**Code**: [GitHub](https://github.com/Orion-AI-Lab/EOUncertaintyGeneralization)  
 **Area**: Image Segmentation
 **Keywords**: Earth Observation, Representation Uncertainty, Zero-Shot Transfer, Semantic Segmentation, Uncertainty Generalization
 

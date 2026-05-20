@@ -18,8 +18,8 @@ content_hash: eaf4788a05a7c957
 # ES-dLLM: Efficient Inference for Diffusion Large Language Models by Early-Skipping
 
 **Conference**: ICLR2026
-**arXiv**: [2603.10088](https://arxiv.org/abs/2603.10088)
-**Code**: [zhuzj19/ES-dLLM](https://github.com/zhuzj19/ES-dLLM)
+**arXiv**: [2603.10088](https://arxiv.org/abs/2603.10088)  
+**Code**: [zhuzj19/ES-dLLM](https://github.com/zhuzj19/ES-dLLM)  
 **Area**: Model Compression
 **Keywords**: Diffusion LLM, Inference Acceleration, Token Skipping, KV Cache, training-free
 

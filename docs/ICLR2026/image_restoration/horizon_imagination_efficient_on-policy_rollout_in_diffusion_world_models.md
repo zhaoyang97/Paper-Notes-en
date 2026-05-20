@@ -18,8 +18,8 @@ content_hash: 54662edd0180645b
 # Horizon Imagination: Efficient On-Policy Rollout in Diffusion World Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.08032](https://arxiv.org/abs/2602.08032)
-**Code**: [https://github.com/leor-c/horizon-imagination](https://github.com/leor-c/horizon-imagination)
+**arXiv**: [2602.08032](https://arxiv.org/abs/2602.08032)  
+**Code**: [https://github.com/leor-c/horizon-imagination](https://github.com/leor-c/horizon-imagination)  
 **Area**: Image Restoration
 **Keywords**: diffusion world models, on-policy rollout, reinforcement learning, sample efficiency, Atari
 

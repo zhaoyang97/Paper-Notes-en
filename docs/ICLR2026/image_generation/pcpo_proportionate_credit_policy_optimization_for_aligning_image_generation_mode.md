@@ -18,8 +18,8 @@ content_hash: c124ba1541c9304d
 # PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25774](https://arxiv.org/abs/2509.25774)
-**Code**: [GitHub](https://github.com/jaylee2000/pcpo/)
+**arXiv**: [2509.25774](https://arxiv.org/abs/2509.25774)  
+**Code**: [GitHub](https://github.com/jaylee2000/pcpo/)  
 **Area**: Image Generation
 **Keywords**: Policy Gradient, Credit Assignment, Diffusion Models, Flow Matching, Model Collapse
 

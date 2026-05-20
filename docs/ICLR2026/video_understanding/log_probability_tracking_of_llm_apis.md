@@ -18,8 +18,8 @@ content_hash: c0c9bdffa5a2faf4
 # Log Probability Tracking of LLM APIs
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.03816](https://arxiv.org/abs/2512.03816)
-**Code**: [Available](https://github.com/timothee-chauvin/track-llm-apis)
+**arXiv**: [2512.03816](https://arxiv.org/abs/2512.03816)  
+**Code**: [Available](https://github.com/timothee-chauvin/track-llm-apis)  
 **Area**: Video Understanding
 **Keywords**: LLM API monitoring, log probability, model change detection, hypothesis testing, non-determinism
 

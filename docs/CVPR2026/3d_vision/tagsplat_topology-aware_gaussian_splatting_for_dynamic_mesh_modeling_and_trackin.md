@@ -18,8 +18,8 @@ content_hash: 3143593480570fb8
 # TagSplat: Topology-Aware Gaussian Splatting for Dynamic Mesh Modeling and Tracking
 
 **Conference**: CVPR2026
-**arXiv**: [2512.01329](https://arxiv.org/abs/2512.01329)
-**Code**: [Project Page](https://haza628.github.io/tagSplat/)
+**arXiv**: [2512.01329](https://arxiv.org/abs/2512.01329)  
+**Code**: [Project Page](https://haza628.github.io/tagSplat/)  
 **Area**: 3D Vision
 **Keywords**: Gaussian Splatting, Topology Consistency, Dynamic Mesh Reconstruction, 3D Keypoint Tracking, Manifold Preservation
 

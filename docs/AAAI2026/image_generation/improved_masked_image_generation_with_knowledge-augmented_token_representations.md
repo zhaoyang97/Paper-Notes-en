@@ -18,8 +18,8 @@ content_hash: 65bdb7b13e7ff29d
 # Improved Masked Image Generation with Knowledge-Augmented Token Representations
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12032](https://arxiv.org/abs/2511.12032)
-**Code**: [https://github.com/GuotaoLiang/KA-MIG](https://github.com/GuotaoLiang/KA-MIG)
+**arXiv**: [2511.12032](https://arxiv.org/abs/2511.12032)  
+**Code**: [https://github.com/GuotaoLiang/KA-MIG](https://github.com/GuotaoLiang/KA-MIG)  
 **Area**: Image Generation
 **Keywords**: Masked image generation, knowledge graph, discrete tokens, prior knowledge augmentation, graph convolutional network
 

@@ -18,8 +18,8 @@ content_hash: ea4617b6b10832cc
 # 3DSRBench: A Comprehensive 3D Spatial Reasoning Benchmark
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.07825](https://arxiv.org/abs/2412.07825)
-**Code**: [Project Page](https://3dsrbench.github.io/)
+**arXiv**: [2412.07825](https://arxiv.org/abs/2412.07825)  
+**Code**: [Project Page](https://3dsrbench.github.io/)  
 **Area**: LLM Evaluation
 **Keywords**: 3D Spatial Reasoning, benchmark, Large Multimodal Models, visual question answering, Camera Viewpoint Robustness
 

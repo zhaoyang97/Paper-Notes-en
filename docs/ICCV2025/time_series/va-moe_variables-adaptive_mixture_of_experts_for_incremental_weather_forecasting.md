@@ -18,8 +18,8 @@ content_hash: 3b1c76ba29d08949
 # VA-MoE: Variables-Adaptive Mixture of Experts for Incremental Weather Forecasting
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.02503](https://arxiv.org/abs/2412.02503)
-**Code**: [https://github.com/chenhao-zju/VAMoE](https://github.com/chenhao-zju/VAMoE)
+**arXiv**: [2412.02503](https://arxiv.org/abs/2412.02503)  
+**Code**: [https://github.com/chenhao-zju/VAMoE](https://github.com/chenhao-zju/VAMoE)  
 **Area**: Time Series Forecasting / Weather Prediction
 **Keywords**: Weather Forecasting, Incremental Learning, Mixture of Experts, Variable-Adaptive, Catastrophic Forgetting
 

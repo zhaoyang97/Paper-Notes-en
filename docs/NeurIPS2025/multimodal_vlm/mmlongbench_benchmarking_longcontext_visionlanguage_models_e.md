@@ -18,8 +18,8 @@ content_hash: 3cffad7ee42a0061
 # MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.10610](https://arxiv.org/abs/2505.10610)
-**Code**: [GitHub](https://github.com/EdinburghNLP/MMLongBench)
+**arXiv**: [2505.10610](https://arxiv.org/abs/2505.10610)  
+**Code**: [GitHub](https://github.com/EdinburghNLP/MMLongBench)  
 **Area**: Multimodal VLM / Long-Context Evaluation
 **Keywords**: long-context VLM, benchmark, multi-task evaluation, cross-modal tokenization, NIAH
 

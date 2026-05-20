@@ -18,8 +18,8 @@ content_hash: 28ff92af57ee4c5c
 # MotionAnymesh: Physics-Grounded Articulation for Simulation-Ready Digital Twins
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12936](https://arxiv.org/abs/2603.12936)
-**Code**: None (not released)
+**arXiv**: [2603.12936](https://arxiv.org/abs/2603.12936)  
+**Code**: None (not released)  
 **Area**: 3D Vision / Articulated Object Modeling / Robot Simulation
 **Keywords**: articulated objects, digital twins, physical constraints, VLM reasoning, URDF generation
 

@@ -18,8 +18,8 @@ content_hash: 85030ba2d1b80a4e
 # MATA: A Trainable Hierarchical Automaton System for Multi-Agent Visual Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19204](https://arxiv.org/abs/2601.19204)
-**Code**: [GitHub](https://github.com/ControlNet/MATA)
+**arXiv**: [2601.19204](https://arxiv.org/abs/2601.19204)  
+**Code**: [GitHub](https://github.com/ControlNet/MATA)  
 **Area**: Interpretability
 **Keywords**: Multi-Agent Systems, Hierarchical Finite-State Automaton, Visual Reasoning, Trainable State Controller, Collaboration and Competition
 

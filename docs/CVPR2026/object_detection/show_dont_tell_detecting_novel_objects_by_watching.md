@@ -18,8 +18,8 @@ content_hash: f5fb1eac578b6d07
 # Show, Don't Tell: Detecting Novel Objects by Watching Human Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12751](https://arxiv.org/abs/2603.12751)
-**Code**: None
+**arXiv**: [2603.12751](https://arxiv.org/abs/2603.12751)  
+**Code**: None  
 **Area**: Object Detection / Robotics
 **Keywords**: novel object detection, self-supervised, human demonstration, bespoke detector, robot manipulation
 

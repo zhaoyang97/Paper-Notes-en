@@ -18,8 +18,8 @@ content_hash: 11867e15480ebe63
 # Multimodal Bayesian Network for Robust Assessment of Casualties in Autonomous Triage
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.18908](https://arxiv.org/abs/2512.18908)
-**Code**: None
+**arXiv**: [2512.18908](https://arxiv.org/abs/2512.18908)  
+**Code**: None  
 **Area**: Medical AI / Probabilistic Graphical Models / Autonomous Triage
 **Keywords**: Bayesian Network, Mass Casualty Incidents, Multimodal Fusion, Autonomous Triage, DARPA Triage Challenge
 

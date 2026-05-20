@@ -18,8 +18,8 @@ content_hash: 988939e967de703b
 # Free-Form Motion Control: Controlling the 6D Poses of Camera and Objects in Video Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.01425](https://arxiv.org/abs/2501.01425)
-**Code**: [https://henghuiding.com/SynFMC/](https://henghuiding.com/SynFMC/)
+**arXiv**: [2501.01425](https://arxiv.org/abs/2501.01425)  
+**Code**: [https://henghuiding.com/SynFMC/](https://henghuiding.com/SynFMC/)  
 **Area**: Video Generation
 **Keywords**: video generation, 6D pose control, camera motion, object motion, synthetic dataset, text-to-video
 

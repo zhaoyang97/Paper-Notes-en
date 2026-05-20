@@ -18,8 +18,8 @@ content_hash: ad61e5353e4ff45a
 # Sparsity Outperforms Low-Rank Projections in Few-Shot Adaptation
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.12436](https://arxiv.org/abs/2504.12436)
-**Code**: [https://github.com/nairouz/SO](https://github.com/nairouz/SO)
+**arXiv**: [2504.12436](https://arxiv.org/abs/2504.12436)  
+**Code**: [https://github.com/nairouz/SO](https://github.com/nairouz/SO)  
 **Area**: Multimodal VLM
 **Keywords**: Sparse optimization, few-shot adaptation, CLIP, low-rank decomposition, parameter-efficient fine-tuning
 

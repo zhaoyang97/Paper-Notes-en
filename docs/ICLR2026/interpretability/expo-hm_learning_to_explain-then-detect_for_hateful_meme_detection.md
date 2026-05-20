@@ -18,8 +18,8 @@ content_hash: 48ff1a3303b9ffde
 # ExPO-HM: Learning to Explain-then-Detect for Hateful Meme Detection
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.08630](https://arxiv.org/abs/2510.08630)
-**Code**: [GitHub](https://github.com/JingbiaoMei/ExPO-HM)
+**arXiv**: [2510.08630](https://arxiv.org/abs/2510.08630)  
+**Code**: [GitHub](https://github.com/JingbiaoMei/ExPO-HM)  
 **Area**: Interpretability
 **Keywords**: hate speech detection, multimodal, GRPO, curriculum learning, conditional decision entropy, interpretability
 

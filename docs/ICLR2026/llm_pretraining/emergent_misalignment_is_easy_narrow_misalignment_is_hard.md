@@ -51,28 +51,28 @@ Narrow-domain harmful datasets from Turner et al. (2025) (medical, financial, an
 
 1. **Training Narrow-Domain Misaligned Models**:
 
-   - Function: Construct models that exhibit harmful behavior only within a specific domain while remaining benign in others.
-   - Mechanism: A **KL regularization** term is added to the standard SFT loss: $L_{Total} = L_{SFT} + \lambda_{KL} L_{KL}$, where $L_{KL}$ denotes the KL divergence between the fine-tuned model and the original chat model evaluated on **out-of-training-domain** data.
-   - Design Motivation: Mixing benign data alone cannot prevent general misalignment—increasing the proportion of benign data simultaneously reduces both narrow-domain and general misalignment rates. Only KL regularization selectively prevents out-of-domain generalization.
-   - Key Finding: With KL regularization, it is possible to train models exhibiting 52% in-domain misalignment while maintaining <5% out-of-domain misalignment—**demonstrating that the general solution is not the only feasible solution**.
+    - Function: Construct models that exhibit harmful behavior only within a specific domain while remaining benign in others.
+    - Mechanism: A **KL regularization** term is added to the standard SFT loss: $L_{Total} = L_{SFT} + \lambda_{KL} L_{KL}$, where $L_{KL}$ denotes the KL divergence between the fine-tuned model and the original chat model evaluated on **out-of-training-domain** data.
+    - Design Motivation: Mixing benign data alone cannot prevent general misalignment—increasing the proportion of benign data simultaneously reduces both narrow-domain and general misalignment rates. Only KL regularization selectively prevents out-of-domain generalization.
+    - Key Finding: With KL regularization, it is possible to train models exhibiting 52% in-domain misalignment while maintaining <5% out-of-domain misalignment—**demonstrating that the general solution is not the only feasible solution**.
 
 2. **Efficiency Metric**:
 
-   - Function: Compare the parameter norm required for the general and narrow-domain solutions to achieve equivalent loss.
-   - Mechanism: Steering vectors or LoRA adapters are scaled to varying parameter norms, and training loss is measured. A solution $\theta_1$ is considered more efficient than $\theta_2$ if $L(\theta_1)/\|\theta_1\|^2 < L(\theta_2)/\|\theta_2\|^2$.
-   - Key Finding: **The general solution achieves lower loss at smaller parameter norm in all tests**—indicating that the implicit regularization of gradient descent naturally favors the general solution.
+    - Function: Compare the parameter norm required for the general and narrow-domain solutions to achieve equivalent loss.
+    - Mechanism: Steering vectors or LoRA adapters are scaled to varying parameter norms, and training loss is measured. A solution $\theta_1$ is considered more efficient than $\theta_2$ if $L(\theta_1)/\|\theta_1\|^2 < L(\theta_2)/\|\theta_2\|^2$.
+    - Key Finding: **The general solution achieves lower loss at smaller parameter norm in all tests**—indicating that the implicit regularization of gradient descent naturally favors the general solution.
 
 3. **Stability Metric**:
 
-   - Function: Measure the robustness of each solution to directional perturbations.
-   - Mechanism: Adapters are perturbed with orthogonal noise via $x' = \sqrt{1-\epsilon^2}x + \epsilon y$ (where $y$ is orthogonal to $x$), and the rate of loss degradation is measured.
-   - Key Finding: **The narrow-domain solution degrades faster than the general solution at every noise level**—the general solution resides in a flatter loss landscape.
+    - Function: Measure the robustness of each solution to directional perturbations.
+    - Mechanism: Adapters are perturbed with orthogonal noise via $x' = \sqrt{1-\epsilon^2}x + \epsilon y$ (where $y$ is orthogonal to $x$), and the rate of loss degradation is measured.
+    - Key Finding: **The narrow-domain solution degrades faster than the general solution at every noise level**—the general solution resides in a flatter loss landscape.
 
 4. **Importance on Pretraining Data**:
 
-   - Function: Measure the influence of different steering directions on pretraining data.
-   - Mechanism: KL divergence induced by general, narrow-domain, and random steering vectors is compared on FineWeb data.
-   - Key Finding: **The general misalignment direction exerts substantially greater influence on pretraining data predictions than narrow-domain or random directions**—explaining why the general solution is more efficient.
+    - Function: Measure the influence of different steering directions on pretraining data.
+    - Mechanism: KL divergence induced by general, narrow-domain, and random steering vectors is compared on FineWeb data.
+    - Key Finding: **The general misalignment direction exerts substantially greater influence on pretraining data predictions than narrow-domain or random directions**—explaining why the general solution is more efficient.
 
 ## Key Experimental Results
 

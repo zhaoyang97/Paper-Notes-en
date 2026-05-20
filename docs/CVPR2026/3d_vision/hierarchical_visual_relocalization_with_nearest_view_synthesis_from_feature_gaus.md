@@ -18,8 +18,8 @@ content_hash: f604ad2c5bcce6d4
 # Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29185](https://arxiv.org/abs/2603.29185)
-**Code**: [https://hqitao.github.io/SplatHLoc](https://hqitao.github.io/SplatHLoc)
+**arXiv**: [2603.29185](https://arxiv.org/abs/2603.29185)  
+**Code**: [https://hqitao.github.io/SplatHLoc](https://hqitao.github.io/SplatHLoc)  
 **Area**: 3D Vision
 **Keywords**: visual relocalization, Gaussian splatting, feature matching, novel view synthesis, hierarchical localization
 

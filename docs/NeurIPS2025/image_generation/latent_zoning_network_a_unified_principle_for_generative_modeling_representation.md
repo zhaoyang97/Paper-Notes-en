@@ -18,8 +18,8 @@ content_hash: 9da7531be4d67b1c
 # Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15591](https://arxiv.org/abs/2509.15591)
-**Code**: [GitHub](https://github.com/microsoft/latent-zoning-networks)
+**arXiv**: [2509.15591](https://arxiv.org/abs/2509.15591)  
+**Code**: [GitHub](https://github.com/microsoft/latent-zoning-networks)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Unified Framework, Latent Space Zoning, Flow Matching, Representation Learning, Joint Generation-Classification
 

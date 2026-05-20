@@ -18,8 +18,8 @@ content_hash: 57e6b5e2275c1aba
 # MoFRR: Mixture of Diffusion Models for Face Retouching Restoration
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19770](https://arxiv.org/abs/2507.19770)
-**Code**: Unavailable
+**arXiv**: [2507.19770](https://arxiv.org/abs/2507.19770)  
+**Code**: Unavailable  
 **Area**: Image Generation / Face Restoration
 **Keywords**: Face retouching restoration, mixture of experts, wavelet transform, diffusion models, frequency-domain decomposition
 

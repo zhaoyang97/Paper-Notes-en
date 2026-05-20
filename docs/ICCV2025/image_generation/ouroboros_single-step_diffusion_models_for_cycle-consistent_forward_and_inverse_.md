@@ -18,8 +18,8 @@ content_hash: 1cb9b0d4e9c0d198
 # Ouroboros: Single-step Diffusion Models for Cycle-consistent Forward and Inverse Rendering
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.14461](https://arxiv.org/abs/2508.14461)
-**Code**: [https://siwensun.github.io/ouroboros-project/](https://siwensun.github.io/ouroboros-project/)
+**arXiv**: [2508.14461](https://arxiv.org/abs/2508.14461)  
+**Code**: [https://siwensun.github.io/ouroboros-project/](https://siwensun.github.io/ouroboros-project/)  
 **Area**: Diffusion Models / 3D Vision
 **Keywords**: Inverse Rendering, Forward Rendering, Cycle Consistency, Single-step Diffusion, Intrinsic Image Decomposition
 

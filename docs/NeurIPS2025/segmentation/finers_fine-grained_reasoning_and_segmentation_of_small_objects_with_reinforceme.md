@@ -20,8 +20,8 @@ content_hash: 63cef2c5b5231e6f
 # FineRS: Fine-grained Reasoning and Segmentation of Small Objects with Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21311](https://arxiv.org/abs/2510.21311)
-**Code**: [https://iiau-zhanglu.github.io/FINERS/](https://iiau-zhanglu.github.io/FINERS/)
+**arXiv**: [2510.21311](https://arxiv.org/abs/2510.21311)  
+**Code**: [https://iiau-zhanglu.github.io/FINERS/](https://iiau-zhanglu.github.io/FINERS/)  
 **Area**: Image Segmentation
 **Keywords**: small object segmentation, MLLM, reinforcement-learning, GRPO, coarse-to-fine, high-resolution, UAV
 

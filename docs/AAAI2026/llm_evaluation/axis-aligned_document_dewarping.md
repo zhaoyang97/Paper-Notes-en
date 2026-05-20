@@ -16,8 +16,8 @@ content_hash: e5a6015c2fbf4836
 # Axis-Aligned Document Dewarping
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.15000](https://arxiv.org/abs/2507.15000)
-**Code**: [https://github.com/chaoyunwang/AADD](https://github.com/chaoyunwang/AADD)
+**arXiv**: [2507.15000](https://arxiv.org/abs/2507.15000)  
+**Code**: [https://github.com/chaoyunwang/AADD](https://github.com/chaoyunwang/AADD)  
 **Area**: LLM Evaluation
 **Keywords**: document dewarping, geometric constraint, image rectification
 

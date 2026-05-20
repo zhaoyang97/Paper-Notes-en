@@ -18,8 +18,8 @@ content_hash: d887efc97c4e1779
 # Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data
 
 **Conference**: ICCV 2025
-**arXiv**: [2406.00093](https://arxiv.org/abs/2406.00093)
-**Code**: [https://github.com/SunzeY/Bootstrap3D](https://github.com/SunzeY/Bootstrap3D)
+**arXiv**: [2406.00093](https://arxiv.org/abs/2406.00093)  
+**Code**: [https://github.com/SunzeY/Bootstrap3D](https://github.com/SunzeY/Bootstrap3D)  
 **Area**: 3D Vision / 3D Content Generation
 **Keywords**: multi-view diffusion model, synthetic data, data augmentation, 3D generation, multimodal large language model
 

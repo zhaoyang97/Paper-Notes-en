@@ -18,8 +18,8 @@ content_hash: 272777af0f2c4b46
 # QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23681](https://arxiv.org/abs/2509.23681)
-**Code**: [GitHub](https://github.com/wlfeng0509/QuantSparse)
+**arXiv**: [2509.23681](https://arxiv.org/abs/2509.23681)  
+**Code**: [GitHub](https://github.com/wlfeng0509/QuantSparse)  
 **Area**: Video Generation
 **Keywords**: video-generation, model-compression, quantization, sparse-attention, diffusion-transformer
 

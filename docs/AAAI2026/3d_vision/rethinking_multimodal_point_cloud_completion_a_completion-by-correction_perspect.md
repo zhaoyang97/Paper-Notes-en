@@ -18,8 +18,8 @@ content_hash: b3a042840d8db123
 # Rethinking Multimodal Point Cloud Completion: A Completion-by-Correction Perspective
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12170](https://arxiv.org/abs/2511.12170)
-**Code**: [https://github.com/RobWonn/PGNet](https://github.com/RobWonn/PGNet)
+**arXiv**: [2511.12170](https://arxiv.org/abs/2511.12170)  
+**Code**: [https://github.com/RobWonn/PGNet](https://github.com/RobWonn/PGNet)  
 **Area**: 3D Vision
 **Keywords**: Point Cloud Completion, Multimodal Fusion, Generative Prior, Correction Paradigm, Feature Alignment
 

@@ -19,8 +19,8 @@ content_hash: a181d17953fd7267
 # SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.06702](https://arxiv.org/abs/2511.06702)
-**Code**: [https://wyfdut.github.io/SPAN/](https://wyfdut.github.io/SPAN/) (project page)
+**arXiv**: [2511.06702](https://arxiv.org/abs/2511.06702)  
+**Code**: [https://wyfdut.github.io/SPAN/](https://wyfdut.github.io/SPAN/) (project page)  
 **Area**: 3D Vision
 **Keywords**: monocular 3D detection, geometric constraint, spatial alignment, projection consistency, hierarchical task learning, MGIoU
 

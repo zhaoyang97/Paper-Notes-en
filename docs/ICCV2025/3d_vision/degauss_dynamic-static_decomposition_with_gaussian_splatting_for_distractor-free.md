@@ -18,8 +18,8 @@ content_hash: e5d07d569a70b816
 # DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.13176](https://arxiv.org/abs/2503.13176)
-**Code**: [GitHub](https://batfacewayne.github.io/DeGauss.io/)
+**arXiv**: [2503.13176](https://arxiv.org/abs/2503.13176)  
+**Code**: [GitHub](https://batfacewayne.github.io/DeGauss.io/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, dynamic scene reconstruction, dynamic-static decomposition, distractor-free reconstruction, self-supervised
 

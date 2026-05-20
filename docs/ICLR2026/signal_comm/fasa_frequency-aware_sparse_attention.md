@@ -18,8 +18,8 @@ content_hash: 76580a8edc7c7c0a
 # FASA: Frequency-Aware Sparse Attention
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.03152](https://arxiv.org/abs/2602.03152)
-**Code**: [GitHub](https://github.com/AMAP-ML/FASA-ICLR2026)
+**arXiv**: [2602.03152](https://arxiv.org/abs/2602.03152)  
+**Code**: [GitHub](https://github.com/AMAP-ML/FASA-ICLR2026)  
 **Area**: Signal Communication
 **Keywords**: KV cache compression, sparse attention, RoPE frequency analysis, token pruning, long-context inference
 

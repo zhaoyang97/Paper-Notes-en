@@ -18,8 +18,8 @@ content_hash: 63353b625b08a512
 # Learning Precise Affordances from Egocentric Videos for Robotic Manipulation
 
 **Conference**: ICCV 2025
-**arXiv**: [2408.10123](https://arxiv.org/abs/2408.10123)
-**Code**: [https://reagan1311.github.io/affgrasp](https://reagan1311.github.io/affgrasp)
+**arXiv**: [2408.10123](https://arxiv.org/abs/2408.10123)  
+**Code**: [https://reagan1311.github.io/affgrasp](https://reagan1311.github.io/affgrasp)  
 **Area**: Image Segmentation
 **Keywords**: Affordance Learning, Egocentric Video, Robotic Manipulation, Affordance Segmentation, Tool Grasping
 

@@ -18,8 +18,8 @@ content_hash: d87cd6d46377a2b5
 # Improving Sustainability of Adversarial Examples in Class-Incremental Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09088](https://arxiv.org/abs/2511.09088)
-**Code**: None
+**arXiv**: [2511.09088](https://arxiv.org/abs/2511.09088)  
+**Code**: None  
 **Area**: LLM NLP / Adversarial Robustness
 **Keywords**: Adversarial examples, incremental learning, continual learning, robustness preservation, CLIP semantics
 
@@ -44,28 +44,28 @@ SAE consists of two core modules: (1) a **Semantic Correction Module**—jointly
 
 1. **CLIP Semantic Enhancement (Core of the Semantic Correction Module)**
 
-   - Utilizes a POOD dataset (a publicly available out-of-distribution dataset whose labels overlap neither with target classes nor the CIL training set).
-   - Employs CLIP text/image encoders to compute the target direction $D_t$, non-target direction $D_{nt}$, and adversarial direction $D_{adv}$.
-   - Optimizes $L_{\text{CLIP}}$ to pull AEs closer to the target class semantics and push them away from non-target class semantics.
-   - As CLIP is trained on billions of image-text pairs, its semantic representations possess cross-domain generalizability, serving as an anchor resistant to domain drift.
+    - Utilizes a POOD dataset (a publicly available out-of-distribution dataset whose labels overlap neither with target classes nor the CIL training set).
+    - Employs CLIP text/image encoders to compute the target direction $D_t$, non-target direction $D_{nt}$, and adversarial direction $D_{adv}$.
+    - Optimizes $L_{\text{CLIP}}$ to pull AEs closer to the target class semantics and push them away from non-target class semantics.
+    - As CLIP is trained on billions of image-text pairs, its semantic representations possess cross-domain generalizability, serving as an anchor resistant to domain drift.
 
 2. **CIL Model Gradient Correction**
 
-   - CLIP's static semantics alone cannot fully counteract semantic drift; gradients from the initial CIL model $f_1$ are required for correction.
-   - A BCE loss is computed as: $-\log(p_{y_t}) - \sum \log(1 - p_{y_{nt}})$.
-   - The theoretical basis is that knowledge distillation or orthogonal projection in CIL preserves the effectiveness of gradients from the initial model.
+    - CLIP's static semantics alone cannot fully counteract semantic drift; gradients from the initial CIL model $f_1$ are required for correction.
+    - A BCE loss is computed as: $-\log(p_{y_t}) - \sum \log(1 - p_{y_{nt}})$.
+    - The theoretical basis is that knowledge distillation or orthogonal projection in CIL preserves the effectiveness of gradients from the initial model.
 
 3. **Filtering-and-Augmentation Module**
 
-   - **Filtering**: Certain non-target-class samples inadvertently contain target-class semantics (e.g., a "bicycle" image containing "road" features).
-   - Cosine similarity is computed using penultimate-layer features of $f_1$; samples exceeding threshold $\sigma$ are removed.
-   - **Augmentation**: Retained samples undergo random rotation, scaling, translation, and patch operations to prevent semantic overfitting.
+    - **Filtering**: Certain non-target-class samples inadvertently contain target-class semantics (e.g., a "bicycle" image containing "road" features).
+    - Cosine similarity is computed using penultimate-layer features of $f_1$; samples exceeding threshold $\sigma$ are removed.
+    - **Augmentation**: Retained samples undergo random rotation, scaling, translation, and patch operations to prevent semantic overfitting.
 
 4. **Attacker Capability Assumptions**
 
-   - Access to the initial CIL model and the full CIL label set is assumed.
-   - No access to CIL training data or the training process is required.
-   - Publicly available POOD datasets and pretrained CLIP models may be used.
+    - Access to the initial CIL model and the full CIL label set is assumed.
+    - No access to CIL training data or the training process is required.
+    - Publicly available POOD datasets and pretrained CLIP models may be used.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: b5f837e534f4ccbe
 # Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.24424](https://arxiv.org/abs/2505.24424)
-**Code**: [https://clic-compositional-clip.github.io/](https://clic-compositional-clip.github.io/)
+**arXiv**: [2505.24424](https://arxiv.org/abs/2505.24424)  
+**Code**: [https://clic-compositional-clip.github.io/](https://clic-compositional-clip.github.io/)  
 **Area**: Multimodal VLM / CLIP Fine-Tuning
 **Keywords**: CLIP compositional reasoning, SugarCrepe++, image concatenation, hard negatives, contrastive learning
 
@@ -51,21 +51,21 @@ At each training iteration, CLIC samples a batch of image-text pairs $\{x_i, y_i
 
 1. **Image Concatenation and Multi-Positive Sample Generation**
 
-   - **Function**: Creates composite scenes and provides rich positive caption descriptions.
-   - **Mechanism**: A composite image is formed as $u_i = \text{RandomConcat}(x_i, x_{i+m})$, and four positive samples are constructed: $p_1$ = captions from both images concatenated in order; $p_2$ = captions in reversed order (teaching order invariance); $p_3, p_4$ = randomly selected alternative captions from each image's caption set (increasing descriptive diversity). The number of composites grows quadratically with dataset size, and positive samples naturally cover multiple perspectives of the same image.
-   - **Design Motivation**: The compositional space for single-image hard negatives is limited and prone to benchmark-specific overfitting. Image concatenation is itself a compositional operation that naturally produces scenes requiring compositional understanding.
+    - **Function**: Creates composite scenes and provides rich positive caption descriptions.
+    - **Mechanism**: A composite image is formed as $u_i = \text{RandomConcat}(x_i, x_{i+m})$, and four positive samples are constructed: $p_1$ = captions from both images concatenated in order; $p_2$ = captions in reversed order (teaching order invariance); $p_3, p_4$ = randomly selected alternative captions from each image's caption set (increasing descriptive diversity). The number of composites grows quadratically with dataset size, and positive samples naturally cover multiple perspectives of the same image.
+    - **Design Motivation**: The compositional space for single-image hard negatives is limited and prone to benchmark-specific overfitting. Image concatenation is itself a compositional operation that naturally produces scenes requiring compositional understanding.
 
 2. **Cross-Image Lexical Swapping for Hard Negative Generation**
 
-   - **Function**: Generates semantically meaningful hard negatives at negligible cost.
-   - **Mechanism**: spaCy is used to parse the part-of-speech categories of tokens in $p_1$. A shared lexical category (noun, verb, adjective, etc.) is randomly selected from both sentences, one token from each sentence is chosen, and the two are swapped to produce the negative sample $n$. The resulting caption no longer correctly describes the composite image (unless the swapped tokens happen to be synonymous). Crucially, no specific part-of-speech category is fixed, avoiding overfitting to any particular benchmark.
-   - **Design Motivation**: Compared to DAC (which requires LLM generation) and TripletCLIP (which requires synthetic image generation), this approach incurs virtually no additional computational cost and does not target any specific benchmark.
+    - **Function**: Generates semantically meaningful hard negatives at negligible cost.
+    - **Mechanism**: spaCy is used to parse the part-of-speech categories of tokens in $p_1$. A shared lexical category (noun, verb, adjective, etc.) is randomly selected from both sentences, one token from each sentence is chosen, and the two are swapped to produce the negative sample $n$. The resulting caption no longer correctly describes the composite image (unless the swapped tokens happen to be synonymous). Crucially, no specific part-of-speech category is fixed, avoiding overfitting to any particular benchmark.
+    - **Design Motivation**: Compared to DAC (which requires LLM generation) and TripletCLIP (which requires synthetic image generation), this approach incurs virtually no additional computational cost and does not target any specific benchmark.
 
 3. **Three-Component Loss Function**
 
-   - **Function**: Separately optimizes contrastive alignment, hard negative discrimination, and semantic invariance.
-   - **Mechanism**: The total loss is $\mathcal{L} = \lambda_{Cont}\mathcal{L}_{Cont} + \lambda_{S\text{-}Neg}\mathcal{L}_{S\text{-}Neg} + \lambda_{Uni}\mathcal{L}_{Uni}$. The contrastive loss $\mathcal{L}_{Cont}$ is extended to accommodate 4 positive samples; $\mathcal{L}_{S\text{-}Neg}$ is a binary contrastive loss applied between each positive sample and the hard negative (ensuring the hard negative consistently influences training); $\mathcal{L}_{Uni}$ minimizes the distance between the text embeddings of $p_1$ and $p_2$ (order-swapped captions), teaching the model to produce consistent representations for order-independent but semantically equivalent descriptions.
-   - **Design Motivation**: In standard contrastive loss, hard negatives may be overshadowed by easily separable samples within the batch. The dedicated $\mathcal{L}_{S\text{-}Neg}$ term ensures hard negatives always contribute to optimization.
+    - **Function**: Separately optimizes contrastive alignment, hard negative discrimination, and semantic invariance.
+    - **Mechanism**: The total loss is $\mathcal{L} = \lambda_{Cont}\mathcal{L}_{Cont} + \lambda_{S\text{-}Neg}\mathcal{L}_{S\text{-}Neg} + \lambda_{Uni}\mathcal{L}_{Uni}$. The contrastive loss $\mathcal{L}_{Cont}$ is extended to accommodate 4 positive samples; $\mathcal{L}_{S\text{-}Neg}$ is a binary contrastive loss applied between each positive sample and the hard negative (ensuring the hard negative consistently influences training); $\mathcal{L}_{Uni}$ minimizes the distance between the text embeddings of $p_1$ and $p_2$ (order-swapped captions), teaching the model to produce consistent representations for order-independent but semantically equivalent descriptions.
+    - **Design Motivation**: In standard contrastive loss, hard negatives may be overshadowed by easily separable samples within the batch. The dedicated $\mathcal{L}_{S\text{-}Neg}$ term ensures hard negatives always contribute to optimization.
 
 ### Loss & Training
 

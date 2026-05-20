@@ -18,8 +18,8 @@ content_hash: 96904f8bc4fff783
 # PCoKG: Personality-aware Commonsense Reasoning with Debate
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.06234](https://arxiv.org/abs/2601.06234)
-**Code**: [https://github.com/silverbeats/pcs_v2](https://github.com/silverbeats/pcs_v2)
+**arXiv**: [2601.06234](https://arxiv.org/abs/2601.06234)  
+**Code**: [https://github.com/silverbeats/pcs_v2](https://github.com/silverbeats/pcs_v2)  
 **Area**: Graph Learning / Commonsense Reasoning
 **Keywords**: Commonsense knowledge graph, personality-aware reasoning, MBTI, LLM role-playing, multi-agent debate
 

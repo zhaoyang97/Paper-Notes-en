@@ -18,8 +18,8 @@ content_hash: aefb9fa2be7476d6
 # DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16239](https://arxiv.org/abs/2505.16239)
-**Code**: [Available](https://github.com/zhengchen1999/DOVE)
+**arXiv**: [2505.16239](https://arxiv.org/abs/2505.16239)  
+**Code**: [Available](https://github.com/zhengchen1999/DOVE)  
 **Area**: Image Generation / Diffusion Models / Video Super-Resolution
 **Keywords**: One-step diffusion, video super-resolution, CogVideoX, latent-pixel space training, video data pipeline
 

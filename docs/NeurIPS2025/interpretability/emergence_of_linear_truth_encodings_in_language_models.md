@@ -18,8 +18,8 @@ content_hash: 67027bd33e29b6b0
 # Emergence of Linear Truth Encodings in Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.15804](https://arxiv.org/abs/2510.15804)
-**Code**: [https://github.com/shauli-ravfogel/truth-encoding-neurips](https://github.com/shauli-ravfogel/truth-encoding-neurips)
+**arXiv**: [2510.15804](https://arxiv.org/abs/2510.15804)  
+**Code**: [https://github.com/shauli-ravfogel/truth-encoding-neurips](https://github.com/shauli-ravfogel/truth-encoding-neurips)  
 **Area**: Interpretability
 **Keywords**: truth encoding, linear representation, associative memory, training dynamics, LayerNorm
 

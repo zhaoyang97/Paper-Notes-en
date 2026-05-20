@@ -18,8 +18,8 @@ content_hash: 7c96a4b69fc43783
 # Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08003](https://arxiv.org/abs/2511.08003)
-**Code**: N/A
+**arXiv**: [2511.08003](https://arxiv.org/abs/2511.08003)  
+**Code**: N/A  
 **Area**: Model Compression
 **Keywords**: Visual Token Pruning, VideoLLM, KV Cache, Adaptive Pruning, Flash Attention
 

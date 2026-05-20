@@ -18,8 +18,8 @@ content_hash: df7c795bcf7bb58a
 # BioVITA: Biological Dataset, Model, and Benchmark for Visual-Textual-Acoustic Alignment
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23883](https://arxiv.org/abs/2603.23883)
-**Code**: [Project Page](https://dahlian00.github.io/BioVITA_Page/)
+**arXiv**: [2603.23883](https://arxiv.org/abs/2603.23883)  
+**Code**: [Project Page](https://dahlian00.github.io/BioVITA_Page/)  
 **Area**: Image Generation
 **Keywords**: Visual-textual-acoustic alignment, cross-modal retrieval, bioacoustics, species recognition, multimodal representation learning
 

@@ -18,8 +18,8 @@ content_hash: ca4177caedbe7f4f
 # 4DGCPro: Efficient Hierarchical 4D Gaussian Compression for Progressive Volumetric Video Streaming
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17513](https://arxiv.org/abs/2509.17513)
-**Code**: [Project Page](https://mediax-sjtu.github.io/4DGCPro) (code to be released)
+**arXiv**: [2509.17513](https://arxiv.org/abs/2509.17513)  
+**Code**: [Project Page](https://mediax-sjtu.github.io/4DGCPro) (code to be released)  
 **Area**: Model Compression
 **Keywords**: 4D Gaussian Splatting, Progressive Streaming, Volumetric Video Compression, Hierarchical Representation, Entropy Coding
 
@@ -59,8 +59,8 @@ The pipeline consists of three stages:
 
 2. **Hierarchical motion modeling**:
 
-   - **Rigid transformation**: A multi-resolution hash grid encodes the previous-frame Gaussian positions; two lightweight MLPs predict translation $\Delta\boldsymbol{\mu}_t$ and rotation $\Delta\mathbf{R}_t$ respectively. Position and rotation are updated cumulatively.
-   - **Residual deformation**: Residuals $(\Delta\mathbf{s}_t, \Delta\alpha_t, \Delta\mathbf{f}_t)$ for scale, opacity, and SH coefficients are further learned on top of the rigid transformation, resolving artifacts caused by existing methods that model only rigid-body motion.
+    - **Rigid transformation**: A multi-resolution hash grid encodes the previous-frame Gaussian positions; two lightweight MLPs predict translation $\Delta\boldsymbol{\mu}_t$ and rotation $\Delta\mathbf{R}_t$ respectively. Position and rotation are updated cumulatively.
+    - **Residual deformation**: Residuals $(\Delta\mathbf{s}_t, \Delta\alpha_t, \Delta\mathbf{f}_t)$ for scale, opacity, and SH coefficients are further learned on top of the rigid transformation, resolving artifacts caused by existing methods that model only rigid-body motion.
 
 3. **Motion-aware adaptive grouping**: A new reference frame is initiated when the mean inter-frame Gaussian translation $\overline{\Delta\boldsymbol{\mu}_t}$ exceeds threshold $\tau_\mu$. This avoids the dilemma of fixed group lengths—long groups lead to error accumulation while short groups introduce data redundancy. Different thresholds are applied to different datasets (0.0025 for the self-collected dataset, 0.001 for HiFi4G, 0.01 for N3DV), automatically adapting to motion intensity.
 

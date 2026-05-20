@@ -18,8 +18,8 @@ content_hash: f750cb02b42fa378
 # Beta Distribution Learning for Reliable Roadway Crash Risk Assessment
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.04886](https://arxiv.org/abs/2511.04886)
-**Code**: [https://www.gb-liang.com/projects/betarisk](https://www.gb-liang.com/projects/betarisk)
+**arXiv**: [2511.04886](https://arxiv.org/abs/2511.04886)  
+**Code**: [https://www.gb-liang.com/projects/betarisk](https://www.gb-liang.com/projects/betarisk)  
 **Area**: Traffic Safety / Autonomous Driving / Uncertainty Estimation
 **Keywords**: Beta Distribution, Crash Risk Assessment, Satellite Imagery, Uncertainty Quantification, Calibration
 

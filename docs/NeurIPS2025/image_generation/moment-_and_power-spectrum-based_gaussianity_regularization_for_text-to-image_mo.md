@@ -18,8 +18,8 @@ content_hash: 3c77ef18d6d953e4
 # Moment- and Power-Spectrum-Based Gaussianity Regularization for Text-to-Image Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.07027](https://arxiv.org/abs/2509.07027)
-**Code**: None
+**arXiv**: [2509.07027](https://arxiv.org/abs/2509.07027)  
+**Code**: None  
 **Area**: Image Generation / Regularization / Generative Models
 **Keywords**: Gaussianity Regularization, Normalizing Flow, Power Spectrum, Moment Matching, Reward Alignment
 

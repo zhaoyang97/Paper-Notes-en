@@ -18,8 +18,8 @@ content_hash: 40baa5293f0c5d38
 # SGI: Structured 2D Gaussians for Efficient and Compact Large Image Representation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07789](https://arxiv.org/abs/2603.07789)
-**Code**: None
+**arXiv**: [2603.07789](https://arxiv.org/abs/2603.07789)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 2D Gaussian Splatting, image representation, neural compression, entropy coding, multi-scale optimization
 

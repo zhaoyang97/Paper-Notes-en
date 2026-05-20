@@ -17,8 +17,8 @@ content_hash: 47b9ecbd362ff552
 # Stable Matching with Ties: Approximation Ratios and Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.03270](https://arxiv.org/abs/2411.03270)
-**Code**: Unavailable
+**arXiv**: [2411.03270](https://arxiv.org/abs/2411.03270)  
+**Code**: Unavailable  
 **Area**: Other
 **Keywords**: stable matching, preference ties, approximation ratio, OSS-ratio, multi-armed bandit
 

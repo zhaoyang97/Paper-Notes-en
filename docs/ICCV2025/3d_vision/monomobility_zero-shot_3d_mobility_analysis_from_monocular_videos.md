@@ -18,8 +18,8 @@ content_hash: 2cac39b9973da50e
 # MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.11868](https://arxiv.org/abs/2505.11868)
-**Code**: [https://monomobility.github.io/MonoMobility](https://monomobility.github.io/MonoMobility) (project page)
+**arXiv**: [2505.11868](https://arxiv.org/abs/2505.11868)  
+**Code**: [https://monomobility.github.io/MonoMobility](https://monomobility.github.io/MonoMobility) (project page)  
 **Area**: 3D Vision / Articulated Object Analysis
 **Keywords**: Articulated object analysis, monocular video, zero-shot, motion attribute estimation, 2D Gaussian splatting
 

@@ -18,8 +18,8 @@ content_hash: df9b634397ef14fe
 # DBLoss: Decomposition-based Loss Function for Time Series Forecasting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23672](https://arxiv.org/abs/2510.23672)
-**Code**: [https://github.com/decisionintelligence/DBLoss](https://github.com/decisionintelligence/DBLoss)
+**arXiv**: [2510.23672](https://arxiv.org/abs/2510.23672)  
+**Code**: [https://github.com/decisionintelligence/DBLoss](https://github.com/decisionintelligence/DBLoss)  
 **Area**: Autonomous Driving
 **Keywords**: Time Series Forecasting, Loss Function, Seasonality-Trend Decomposition, EMA, General-Purpose Loss
 

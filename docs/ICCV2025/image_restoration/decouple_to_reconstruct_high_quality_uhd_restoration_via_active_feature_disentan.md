@@ -18,8 +18,8 @@ content_hash: b51de23cb87d3668
 # Decouple to Reconstruct: High Quality UHD Restoration via Active Feature Disentanglement and Reversible Fusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.12764](https://arxiv.org/abs/2503.12764)
-**Code**: N/A
+**arXiv**: [2503.12764](https://arxiv.org/abs/2503.12764)  
+**Code**: N/A  
 **Area**: Image Restoration / Ultra-High-Definition Image Processing
 **Keywords**: UHD image restoration, VAE, feature disentanglement, invertible networks, complex-domain fusion
 

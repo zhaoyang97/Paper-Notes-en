@@ -18,8 +18,8 @@ content_hash: 44361e6e154784d8
 # Toward Complete Merger Identification at Cosmic Noon with Deep Learning
 
 **Conference**: NeurIPS 2025 (ML4PS Workshop)
-**arXiv**: [2511.15006](https://arxiv.org/abs/2511.15006)
-**Code**: [https://github.com/alschechter/NeurIPSCosmicNoonMergerID](https://github.com/alschechter/NeurIPSCosmicNoonMergerID)
+**arXiv**: [2511.15006](https://arxiv.org/abs/2511.15006)  
+**Code**: [https://github.com/alschechter/NeurIPSCosmicNoonMergerID](https://github.com/alschechter/NeurIPSCosmicNoonMergerID)  
 **Area**: Astrophysics / Deep Learning
 **Keywords**: Galaxy merger identification, ResNet18, Cosmic noon, IllustrisTNG, Grad-CAM
 

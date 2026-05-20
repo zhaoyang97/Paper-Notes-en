@@ -18,8 +18,8 @@ content_hash: fbe797bbe14b84d3
 # UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.18997](https://arxiv.org/abs/2507.18997)
-**Code**: [GitHub](https://github.com/zhoujiahuan1991/ICCV2025-UPP)
+**arXiv**: [2507.18997](https://arxiv.org/abs/2507.18997)  
+**Code**: [GitHub](https://github.com/zhoujiahuan1991/ICCV2025-UPP)  
 **Area**: 3D Vision
 **Keywords**: point cloud analysis, parameter-efficient fine-tuning, denoising, completion, prompt learning
 

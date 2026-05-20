@@ -18,8 +18,8 @@ content_hash: cb2328ef4ccd8ac7
 # Tortoise and Hare Guidance: Accelerating Diffusion Model Inference with Multirate Integration
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.04117](https://arxiv.org/abs/2511.04117)
-**Code**: Available ([https://github.com/yhlee-add/THG](https://github.com/yhlee-add/THG))
+**arXiv**: [2511.04117](https://arxiv.org/abs/2511.04117)  
+**Code**: Available ([https://github.com/yhlee-add/THG](https://github.com/yhlee-add/THG))  
 **Area**: Image Generation / Diffusion Models
 **Keywords**: Diffusion model acceleration, Classifier-Free Guidance, multirate integration, NFE reduction, training-free
 

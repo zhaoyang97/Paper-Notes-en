@@ -17,8 +17,8 @@ content_hash: 0e8c10c8f383834e
 # Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal RL Environment
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.04865](https://arxiv.org/abs/2508.04865)
-**Code**: [https://github.com/sunblaze-ucb/agnostics](https://github.com/sunblaze-ucb/agnostics) (agnostics.abgru.me)
+**arXiv**: [2508.04865](https://arxiv.org/abs/2508.04865)  
+**Code**: [https://github.com/sunblaze-ucb/agnostics](https://github.com/sunblaze-ucb/agnostics) (agnostics.abgru.me)  
 **Area**: Other
 **Keywords**: low-resource programming languages, RLVR, language-agnostic verifier, GRPO, code execution sandbox
 

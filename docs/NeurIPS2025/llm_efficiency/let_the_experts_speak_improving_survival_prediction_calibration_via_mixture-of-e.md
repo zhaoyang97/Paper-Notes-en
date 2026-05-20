@@ -18,8 +18,8 @@ content_hash: bddbb12ebc4ce161
 # Let the Experts Speak: Improving Survival Prediction & Calibration via Mixture-of-Experts Heads
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.09567](https://arxiv.org/abs/2511.09567)
-**Code**: [https://github.com/ToddMorrill/survival-moe](https://github.com/ToddMorrill/survival-moe)
+**arXiv**: [2511.09567](https://arxiv.org/abs/2511.09567)  
+**Code**: [https://github.com/ToddMorrill/survival-moe](https://github.com/ToddMorrill/survival-moe)  
 **Area**: LLM Efficiency
 **Keywords**: Survival Analysis, Mixture of Experts, Calibration, Clustering, Discrete-Time Models
 

@@ -18,8 +18,8 @@ content_hash: c3695f4605ac1cfa
 # MesaTask: Towards Task-Driven Tabletop Scene Generation via 3D Spatial Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.22281](https://arxiv.org/abs/2509.22281)
-**Code**: Available
+**arXiv**: [2509.22281](https://arxiv.org/abs/2509.22281)  
+**Code**: Available  
 **Area**: Robotics / 3D Scene Generation
 **Keywords**: Tabletop scene generation, spatial reasoning chain, LLM scene generation, DPO, robotic manipulation
 

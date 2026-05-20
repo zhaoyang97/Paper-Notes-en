@@ -18,8 +18,8 @@ content_hash: bc7f5bff0c682dcf
 # TTOM: Test-Time Optimization and Memorization for Compositional Video Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.07940](https://arxiv.org/abs/2510.07940)
-**Code**: [https://ttom-t2v.github.io/](https://ttom-t2v.github.io/)
+**arXiv**: [2510.07940](https://arxiv.org/abs/2510.07940)  
+**Code**: [https://ttom-t2v.github.io/](https://ttom-t2v.github.io/)  
 **Area**: Video Generation / Compositional Reasoning
 **Keywords**: Test-time optimization, compositional video generation, parameter memorization, spatiotemporal layout, attention alignment
 

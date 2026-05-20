@@ -18,8 +18,8 @@ content_hash: 9d53c6876af3671f
 # Reasoning Meets Representation: Envisioning Neuro-Symbolic Wireless Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.16369](https://arxiv.org/abs/2511.16369)
-**Code**: None
+**arXiv**: [2511.16369](https://arxiv.org/abs/2511.16369)  
+**Code**: None  
 **Area**: Neuro-Symbolic AI / Wireless Communications
 **Keywords**: Neuro-Symbolic AI, Wireless Foundation Models, Knowledge Graphs, Differentiable Logic, 6G
 

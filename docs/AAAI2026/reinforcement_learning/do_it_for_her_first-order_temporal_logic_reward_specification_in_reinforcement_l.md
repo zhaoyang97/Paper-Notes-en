@@ -18,8 +18,8 @@ content_hash: 6e46a55045529a8a
 # Do It for HER: First-Order Temporal Logic Reward Specification in Reinforcement Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.06227](https://arxiv.org/abs/2602.06227)
-**Code**: [github](https://bit.ly/4i20C4Z)
+**arXiv**: [2602.06227](https://arxiv.org/abs/2602.06227)  
+**Code**: [github](https://bit.ly/4i20C4Z)  
 **Area**: Reinforcement Learning / Reward Design
 **Keywords**: LTLfMT, temporal logic, reward specification, Hindsight Experience Replay, sparse reward
 

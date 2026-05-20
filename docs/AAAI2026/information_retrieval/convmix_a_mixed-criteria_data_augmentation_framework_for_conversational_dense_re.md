@@ -18,8 +18,8 @@ content_hash: 50c486fe596a947e
 # ConvMix: A Mixed-Criteria Data Augmentation Framework for Conversational Dense Retrieval
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04001](https://arxiv.org/abs/2508.04001)
-**Code**: None
+**arXiv**: [2508.04001](https://arxiv.org/abs/2508.04001)  
+**Code**: None  
 **Area**: Conversational Information Retrieval
 **Keywords**: Conversational Retrieval, Data Augmentation, LLM Generation, In-Distribution Supervision, Fisher Information
 

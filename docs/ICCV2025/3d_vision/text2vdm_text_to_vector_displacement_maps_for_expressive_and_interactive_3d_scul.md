@@ -18,8 +18,8 @@ content_hash: 81291bc95b68b90d
 # Text2VDM: Text to Vector Displacement Maps for Expressive and Interactive 3D Sculpting
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.20045](https://arxiv.org/abs/2502.20045)
-**Code**: N/A
+**arXiv**: [2502.20045](https://arxiv.org/abs/2502.20045)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: VDM brush generation, Score Distillation, semantic enhancement, mesh deformation, 3D modeling
 

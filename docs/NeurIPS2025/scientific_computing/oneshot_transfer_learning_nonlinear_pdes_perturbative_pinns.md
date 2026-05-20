@@ -18,8 +18,8 @@ content_hash: 79cc281c661c7bf6
 # One-Shot Transfer Learning for Nonlinear PDEs with Perturbative PINNs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.11137](https://arxiv.org/abs/2511.11137)
-**Code**: None
+**arXiv**: [2511.11137](https://arxiv.org/abs/2511.11137)  
+**Code**: None  
 **Area**: Scientific Computing
 **Keywords**: PINNs, perturbation theory, transfer learning, partial differential equations, closed-form solution
 

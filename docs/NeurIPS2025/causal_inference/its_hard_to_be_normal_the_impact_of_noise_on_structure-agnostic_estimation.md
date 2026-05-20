@@ -19,8 +19,8 @@ content_hash: 6f8577b48262c1fe
 # It's Hard to Be Normal: The Impact of Noise on Structure-agnostic Estimation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.02275](https://arxiv.org/abs/2507.02275)
-**Code**: To be confirmed
+**arXiv**: [2507.02275](https://arxiv.org/abs/2507.02275)  
+**Code**: To be confirmed  
 **Area**: Causal Inference / Statistical Theory
 **Keywords**: DML, minimax optimality, Gaussian barrier, cumulant estimator, ACE, partially linear model
 

@@ -18,8 +18,8 @@ content_hash: e557c51c96d0436e
 # Learning Human-Like RL Agents through Trajectory Optimization with Action Quantization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.15055](https://arxiv.org/abs/2511.15055)
-**Code**: Available
+**arXiv**: [2511.15055](https://arxiv.org/abs/2511.15055)  
+**Code**: Available  
 **Area**: Reinforcement Learning
 **Keywords**: Human-like RL, action quantization, trajectory optimization, VQ-VAE, behavior modeling
 
@@ -49,21 +49,21 @@ This paper proposes MAQ (Motion-Action Quantization), a method that discretizes 
 
 1. **Action Quantization (VQ-VAE)**
 
-   - **Function**: Discretizes the continuous human action space into $K$ primitives.
-   - **Mechanism**: An encoder maps action sequences to latent variables, which are quantized via nearest-neighbor lookup in the codebook; a decoder reconstructs the actions. $\mathcal{L}_{VQ} = \|sg[\hat{s}_i] - z_{q_i}\|_2^2 + \beta\|\hat{s}_i - sg[z_{q_i}]\|_2^2$
-   - **Design Motivation**: The quantized action space automatically excludes non-human motion patterns.
+    - **Function**: Discretizes the continuous human action space into $K$ primitives.
+    - **Mechanism**: An encoder maps action sequences to latent variables, which are quantized via nearest-neighbor lookup in the codebook; a decoder reconstructs the actions. $\mathcal{L}_{VQ} = \|sg[\hat{s}_i] - z_{q_i}\|_2^2 + \beta\|\hat{s}_i - sg[z_{q_i}]\|_2^2$
+    - **Design Motivation**: The quantized action space automatically excludes non-human motion patterns.
 
 2. **Policy Learning in the Quantized Space**
 
-   - **Function**: Executes RL within the discrete codebook space.
-   - **Mechanism**: The policy network outputs a probability distribution over codebook indices; after index selection, the decoder generates the corresponding continuous action.
-   - **Design Motivation**: Transforms the continuous optimization problem into a discrete selection problem, naturally constraining behavioral patterns.
+    - **Function**: Executes RL within the discrete codebook space.
+    - **Mechanism**: The policy network outputs a probability distribution over codebook indices; after index selection, the decoder generates the corresponding continuous action.
+    - **Design Motivation**: Transforms the continuous optimization problem into a discrete selection problem, naturally constraining behavioral patterns.
 
 3. **Trajectory Optimization**
 
-   - **Function**: Optimizes entire trajectories subject to quantization constraints.
-   - **Mechanism**: Planning methods such as CEM/MPPI sample action sequences from the codebook, evaluate trajectory rewards, and iteratively refine the plan.
-   - **Design Motivation**: Trajectory-level optimization provides stronger guarantees of action coherence than step-wise RL.
+    - **Function**: Optimizes entire trajectories subject to quantization constraints.
+    - **Mechanism**: Planning methods such as CEM/MPPI sample action sequences from the codebook, evaluate trajectory rewards, and iteratively refine the plan.
+    - **Design Motivation**: Trajectory-level optimization provides stronger guarantees of action coherence than step-wise RL.
 
 ### Loss & Training
 

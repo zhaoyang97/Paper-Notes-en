@@ -18,8 +18,8 @@ content_hash: 6a4a649f0e584a8e
 # TiTok: Transfer Token-level Knowledge via Contrastive Excess to Transplant LoRA
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04682](https://arxiv.org/abs/2510.04682)
-**Code**: [https://github.com/NaughtyMaltiz16/TiTok](https://github.com/NaughtyMaltiz16/TiTok)
+**arXiv**: [2510.04682](https://arxiv.org/abs/2510.04682)  
+**Code**: [https://github.com/NaughtyMaltiz16/TiTok](https://github.com/NaughtyMaltiz16/TiTok)  
 **Area**: Model Compression
 **Keywords**: LoRA Transfer, Knowledge Distillation, Token-level Selection, Parameter-Efficient Fine-Tuning, Contrastive Excess Score
 

@@ -18,8 +18,8 @@ content_hash: 7844e02d0cf4326c
 # Latent Representation Learning in Heavy-Ion Collisions with MaskPoint Transformer
 
 **Conference**: NEURIPS2025 (Workshop: ML and Physical Sciences)
-**arXiv**: [2510.06691](https://arxiv.org/abs/2510.06691)
-**Code**: [https://github.com/Giovanni-Sforza/MaskPoint-AMPT](https://github.com/Giovanni-Sforza/MaskPoint-AMPT)
+**arXiv**: [2510.06691](https://arxiv.org/abs/2510.06691)  
+**Code**: [https://github.com/Giovanni-Sforza/MaskPoint-AMPT](https://github.com/Giovanni-Sforza/MaskPoint-AMPT)  
 **Area**: Physics
 **Keywords**: heavy-ion collisions, masked autoencoder, Transformer, self-supervised pre-training, quark-gluon plasma
 

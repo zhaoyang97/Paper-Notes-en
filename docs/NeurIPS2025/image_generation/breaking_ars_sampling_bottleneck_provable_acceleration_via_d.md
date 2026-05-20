@@ -18,8 +18,8 @@ content_hash: a0e095518293a0ac
 # Breaking AR's Sampling Bottleneck: Provable Acceleration via Diffusion Language Models
 
 **Conference**: NeurIPS2025
-**arXiv**: [2505.21400](https://arxiv.org/abs/2505.21400)
-**Code**: None
+**arXiv**: [2505.21400](https://arxiv.org/abs/2505.21400)  
+**Code**: None  
 **Area**: Generative Model Theory
 **Keywords**: [diffusion language model, convergence guarantee, mutual information, sampling acceleration, KL divergence]
 

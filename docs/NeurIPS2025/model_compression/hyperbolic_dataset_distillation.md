@@ -18,8 +18,8 @@ content_hash: 73072b85c206b54d
 # Hyperbolic Dataset Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.24623](https://arxiv.org/abs/2505.24623)
-**Code**: [https://github.com/Guang000/HDD](https://github.com/Guang000/HDD)
+**arXiv**: [2505.24623](https://arxiv.org/abs/2505.24623)  
+**Code**: [https://github.com/Guang000/HDD](https://github.com/Guang000/HDD)  
 **Area**: Model Compression
 **Keywords**: dataset distillation, hyperbolic space, distribution matching, Lorentz model, hierarchical pruning
 

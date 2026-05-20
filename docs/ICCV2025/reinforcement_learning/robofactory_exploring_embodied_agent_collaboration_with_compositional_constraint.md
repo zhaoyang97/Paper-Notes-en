@@ -18,8 +18,8 @@ content_hash: ba34458909db4946
 # RoboFactory: Exploring Embodied Agent Collaboration with Compositional Constraints
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.16408](https://arxiv.org/abs/2503.16408)
-**Code**: None
+**arXiv**: [2503.16408](https://arxiv.org/abs/2503.16408)  
+**Code**: None  
 **Area**: Reinforcement Learning / Embodied Intelligence
 **Keywords**: Multi-agent collaboration, embodied manipulation, compositional constraints, imitation learning, benchmark
 

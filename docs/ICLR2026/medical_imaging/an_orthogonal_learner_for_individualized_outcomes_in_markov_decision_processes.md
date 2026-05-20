@@ -18,8 +18,8 @@ content_hash: a238ea59fad5900d
 # An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26429](https://arxiv.org/abs/2509.26429)
-**Code**: [EmilJavurek/Orthogonal-Q-in-MDPs](https://github.com/EmilJavurek/Orthogonal-Q-in-MDPs)
+**arXiv**: [2509.26429](https://arxiv.org/abs/2509.26429)  
+**Code**: [EmilJavurek/Orthogonal-Q-in-MDPs](https://github.com/EmilJavurek/Orthogonal-Q-in-MDPs)  
 **Area**: Medical Imaging
 **Keywords**: Q-function estimation, double robustness, Neyman orthogonality, causal inference, offline policy evaluation
 

@@ -20,8 +20,8 @@ content_hash: 594af1a1f72fd8c3
 # FocalCodec: Low-Bitrate Speech Coding via Focal Modulation Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.04465](https://arxiv.org/abs/2502.04465)
-**Code**: [lucadellalib/focalcodec-web](https://lucadellalib.github.io/focalcodec-web/)
+**arXiv**: [2502.04465](https://arxiv.org/abs/2502.04465)  
+**Code**: [lucadellalib/focalcodec-web](https://lucadellalib.github.io/focalcodec-web/)  
 **Area**: image_generation (speech codec / speech tokenization)
 **Keywords**: speech codec, low bitrate, Focal Modulation, binary quantization, single codebook, speech tokenization, VQ-VAE
 

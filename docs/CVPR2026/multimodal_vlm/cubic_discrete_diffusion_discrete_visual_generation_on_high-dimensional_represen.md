@@ -18,8 +18,8 @@ content_hash: 54f111f5b9b392fc
 # Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19232](https://arxiv.org/abs/2603.19232)
-**Code**: [GitHub](https://github.com/YuqingWang1029/CubiD)
+**arXiv**: [2603.19232](https://arxiv.org/abs/2603.19232)  
+**Code**: [GitHub](https://github.com/YuqingWang1029/CubiD)  
 **Area**: Multimodal VLM
 **Keywords**: discrete diffusion model, high-dimensional representation token, visual generation, dimension-wise quantization, unified multimodal
 

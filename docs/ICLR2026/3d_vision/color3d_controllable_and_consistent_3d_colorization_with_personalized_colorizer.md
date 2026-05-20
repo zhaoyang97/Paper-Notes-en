@@ -18,8 +18,8 @@ content_hash: 46171f3b81aef6c7
 # Color3D: Controllable and Consistent 3D Colorization with Personalized Colorizer
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.10152](https://arxiv.org/abs/2510.10152)
-**Code**: [https://yecongwan.github.io/Color3D/](https://yecongwan.github.io/Color3D/) (Project Page)
+**arXiv**: [2510.10152](https://arxiv.org/abs/2510.10152)  
+**Code**: [https://yecongwan.github.io/Color3D/](https://yecongwan.github.io/Color3D/) (Project Page)  
 **Area**: 3D Vision / Image Generation
 **Keywords**: 3D colorization, Gaussian splatting, personalized fine-tuning, Lab color space, visual consistency
 

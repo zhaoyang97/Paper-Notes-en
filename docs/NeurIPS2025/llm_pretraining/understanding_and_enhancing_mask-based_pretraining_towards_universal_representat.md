@@ -18,8 +18,8 @@ content_hash: 66a88e6d64cd689a
 # Understanding and Enhancing Mask-Based Pretraining towards Universal Representations
 
 **Conference**: NEURIPS2025
-**arXiv**: [2509.21650](https://arxiv.org/abs/2509.21650)
-**Code**: None
+**arXiv**: [2509.21650](https://arxiv.org/abs/2509.21650)  
+**Code**: None  
 **Area**: LLM Pretraining
 **Keywords**: masked autoencoder, pretraining theory, random matrix theory, bias-variance tradeoff, R2MAE
 

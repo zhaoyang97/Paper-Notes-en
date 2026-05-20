@@ -19,8 +19,8 @@ content_hash: 002ff4bcb9661e96
 # Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21153](https://arxiv.org/abs/2510.21153)
-**Code**: [Kyle4490/RL-Diffusion](https://github.com/Kyle4490/RL-Diffusion)
+**arXiv**: [2510.21153](https://arxiv.org/abs/2510.21153)  
+**Code**: [Kyle4490/RL-Diffusion](https://github.com/Kyle4490/RL-Diffusion)  
 **Area**: Medical Imaging
 **Keywords**: Diffusion Models, Reinforcement Learning, Multi-Objective Optimization, Uncertainty Quantification, 3D Molecular Generation, Drug Discovery
 

@@ -18,8 +18,8 @@ content_hash: 13abb50dbb1d65aa
 # Context Guided Transformer Entropy Modeling for Video Compression
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.01852](https://arxiv.org/abs/2508.01852)
-**Code**: [https://github.com/EIT-NLP/CGT](https://github.com/EIT-NLP/CGT)
+**arXiv**: [2508.01852](https://arxiv.org/abs/2508.01852)  
+**Code**: [https://github.com/EIT-NLP/CGT](https://github.com/EIT-NLP/CGT)  
 **Area**: Model Compression / Video Compression
 **Keywords**: Video Compression, Entropy Model, Transformer, Spatiotemporal Context, Conditional Coding
 

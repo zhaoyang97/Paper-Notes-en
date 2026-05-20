@@ -19,8 +19,8 @@ content_hash: 682591a41aedab6c
 # Mitigating Mismatch within Reference-based Preference Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.11902](https://arxiv.org/abs/2602.11902)
-**Code**: None
+**arXiv**: [2602.11902](https://arxiv.org/abs/2602.11902)  
+**Code**: None  
 **Area**: LLM Alignment / Preference Optimization
 **Keywords**: DPO, reference policy, pessimistic bias, preference optimization, HyPO, premature satisfaction
 

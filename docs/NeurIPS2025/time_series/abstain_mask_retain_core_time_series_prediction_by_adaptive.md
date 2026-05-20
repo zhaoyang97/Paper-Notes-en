@@ -18,8 +18,8 @@ content_hash: af0c721b3f9f8645
 # Abstain Mask Retain Core: Time Series Prediction by Adaptive Masking Loss with Representation Consistency
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2510.19980](https://arxiv.org/abs/2510.19980)
-**Code**: [GitHub](https://github.com/MazelTovy/AMRC)
+**arXiv**: [2510.19980](https://arxiv.org/abs/2510.19980)  
+**Code**: [GitHub](https://github.com/MazelTovy/AMRC)  
 **Area**: Time Series Forecasting / Information Bottleneck
 **Keywords**: time series forecasting, information bottleneck, adaptive masking, representation consistency, redundant features
 
@@ -50,15 +50,15 @@ The two components are combined into the overall training objective: $\mathcal{L
 
 1. **Adaptive Masking Loss (AML)**:
 
-   - **Function**: Dynamically searches for the optimal masking length for each batch during training, guiding the model representation to disregard redundant temporal segments.
-   - **Mechanism**: For an input of length $L$, $m$ masking lengths $\{k_s\}_{s=1}^m \sim \text{Uniform}\{1,...,L\}$ are randomly sampled; the prediction loss $\ell_s = \mathcal{L}(f_\theta(\mathcal{M}_{k_s}(X)), Y)$ is computed for each mask; and the mask with the greatest gain is selected via $s^* = \arg\max_s (\ell - \ell_{s})$. The L2 distance between the original representation $Z$ and the optimal masked representation $\tilde{Z}_{s^*}$ is then minimized: $\mathcal{L}_{AML} = \beta \cdot \frac{1}{D_1 \times D_2} \|Z - \tilde{Z}_{s^*}\|^2$, where $\beta = \max(0, (\ell - \ell_{s^*})/\ell)$ activates only when a superior mask is found.
-   - **Design Motivation**: Rather than simply truncating inputs, the model is guided to "forget" redundant information directly in representation space.
+    - **Function**: Dynamically searches for the optimal masking length for each batch during training, guiding the model representation to disregard redundant temporal segments.
+    - **Mechanism**: For an input of length $L$, $m$ masking lengths $\{k_s\}_{s=1}^m \sim \text{Uniform}\{1,...,L\}$ are randomly sampled; the prediction loss $\ell_s = \mathcal{L}(f_\theta(\mathcal{M}_{k_s}(X)), Y)$ is computed for each mask; and the mask with the greatest gain is selected via $s^* = \arg\max_s (\ell - \ell_{s})$. The L2 distance between the original representation $Z$ and the optimal masked representation $\tilde{Z}_{s^*}$ is then minimized: $\mathcal{L}_{AML} = \beta \cdot \frac{1}{D_1 \times D_2} \|Z - \tilde{Z}_{s^*}\|^2$, where $\beta = \max(0, (\ell - \ell_{s^*})/\ell)$ activates only when a superior mask is found.
+    - **Design Motivation**: Rather than simply truncating inputs, the model is guided to "forget" redundant information directly in representation space.
 
 2. **Embedding Similarity Penalty (ESP)**:
 
-   - **Function**: Constrains the geometric structure of the embedding space to remain consistent with the output space.
-   - **Mechanism**: For pairs of samples within a batch, embedding distances $\Delta^E_{ij}$ and label distances $\Delta^O_{ij}$ are computed, and inconsistencies between them are penalized: $\mathcal{L}_{ESP} = \frac{1}{n^2} \sum_{i,j} |\Delta^E_{ij} - \Delta^O_{ij}|_+$
-   - **Design Motivation**: t-SNE visualization reveals abnormal concentration of model embeddings (representation collapse) that is misaligned with the label distribution, indicating the encoding of task-irrelevant redundant features.
+    - **Function**: Constrains the geometric structure of the embedding space to remain consistent with the output space.
+    - **Mechanism**: For pairs of samples within a batch, embedding distances $\Delta^E_{ij}$ and label distances $\Delta^O_{ij}$ are computed, and inconsistencies between them are penalized: $\mathcal{L}_{ESP} = \frac{1}{n^2} \sum_{i,j} |\Delta^E_{ij} - \Delta^O_{ij}|_+$
+    - **Design Motivation**: t-SNE visualization reveals abnormal concentration of model embeddings (representation collapse) that is misaligned with the label distribution, indicating the encoding of task-irrelevant redundant features.
 
 3. **Theoretical Foundation (Information Bottleneck)**:
    Starting from IB theory, the objective is to maximize $I(Z;Y) - \beta I(Z;X)$. Existing models primarily optimize $I(Z;Y)$, whereas AMRC explicitly minimizes the redundant component of $I(Z;X)$ through AML, providing a novel optimization pathway.

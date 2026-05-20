@@ -18,8 +18,8 @@ content_hash: 043a923721c56f2b
 # ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.16447](https://arxiv.org/abs/2603.16447)
-**Code**: [GitHub](https://ustc3dv/ProgressiveAvatars)
+**arXiv**: [2603.16447](https://arxiv.org/abs/2603.16447)  
+**Code**: [GitHub](https://ustc3dv/ProgressiveAvatars)  
 **Area**: 3D Vision
 **Keywords**: Progressive 3D representation, animatable head avatars, 3D Gaussian splatting, streaming, adaptive subdivision
 
@@ -50,28 +50,28 @@ Input: head video → FLAME mesh tracking. Training: bind 3D Gaussians to FLAME 
 
 1. **Implicit Subdivision**
 
-   - Function: Recursively generate child faces on each triangular face of the FLAME template mesh, forming a per-face hierarchical tree structure.
-   - Mechanism: For a parent face $f = (i,j,k)$, new vertices are created via barycentric interpolation: $\mathbf{p} = \beta_1 \mathbf{v}_i + \beta_2 \mathbf{v}_j + \beta_3 \mathbf{v}_k$. Barycentric coordinates are initialized to $(1/3, 1/3, 1/3)$ and optimized under simplex constraints during training. Subdivision point positions under different expressions and poses are recomputed via the same barycentric mapping.
-   - Meaning of "Implicit": Rather than explicitly creating new vertices and topology for child faces, new points are implicitly defined within the parent face via learnable barycentric coordinates, allowing them to move freely within the triangle to adapt to the optimal position for different facial regions.
-   - Design Motivation: Compared with explicit uniform subdivision, implicit subdivision adapts to different effective scales and shapes across facial regions of varying sizes and structures through learnable barycentric coordinates.
+    - Function: Recursively generate child faces on each triangular face of the FLAME template mesh, forming a per-face hierarchical tree structure.
+    - Mechanism: For a parent face $f = (i,j,k)$, new vertices are created via barycentric interpolation: $\mathbf{p} = \beta_1 \mathbf{v}_i + \beta_2 \mathbf{v}_j + \beta_3 \mathbf{v}_k$. Barycentric coordinates are initialized to $(1/3, 1/3, 1/3)$ and optimized under simplex constraints during training. Subdivision point positions under different expressions and poses are recomputed via the same barycentric mapping.
+    - Meaning of "Implicit": Rather than explicitly creating new vertices and topology for child faces, new points are implicitly defined within the parent face via learnable barycentric coordinates, allowing them to move freely within the triangle to adapt to the optimal position for different facial regions.
+    - Design Motivation: Compared with explicit uniform subdivision, implicit subdivision adapts to different effective scales and shapes across facial regions of varying sizes and structures through learnable barycentric coordinates.
 
 2. **Face-Local Gaussian Binding**
 
-   - Function: Bind 3D Gaussians to the local coordinate system of each face in the hierarchy.
-   - Mechanism: Each Gaussian's rotation $\mathbf{R} = \Delta\mathbf{R}\mathbf{r}$, scale $\mathbf{S} = \Delta\mathbf{S} s$, and center $\boldsymbol{\mu} = s\mathbf{r}\Delta\boldsymbol{\mu} + \mathbf{t}$, where $\mathbf{r}$ is the rotation aligned with the face normal, $\mathbf{t}$ is the face centroid, $s$ is the mean edge length, and $\Delta\mathbf{R}, \Delta\mathbf{S}, \Delta\boldsymbol{\mu}$ are trainable residuals.
-   - Design Motivation: Face-local parameterization ensures that Gaussians deform jointly with the face (expressions/head motion), maintaining consistent appearance across different levels of the hierarchy.
+    - Function: Bind 3D Gaussians to the local coordinate system of each face in the hierarchy.
+    - Mechanism: Each Gaussian's rotation $\mathbf{R} = \Delta\mathbf{R}\mathbf{r}$, scale $\mathbf{S} = \Delta\mathbf{S} s$, and center $\boldsymbol{\mu} = s\mathbf{r}\Delta\boldsymbol{\mu} + \mathbf{t}$, where $\mathbf{r}$ is the rotation aligned with the face normal, $\mathbf{t}$ is the face centroid, $s$ is the mean edge length, and $\Delta\mathbf{R}, \Delta\mathbf{S}, \Delta\boldsymbol{\mu}$ are trainable residuals.
+    - Design Motivation: Face-local parameterization ensures that Gaussians deform jointly with the face (expressions/head motion), maintaining consistent appearance across different levels of the hierarchy.
 
 3. **Adaptive Growing**
 
-   - Function: Expand the hierarchy on demand during training, concentrating detail in regions that need it most.
-   - Mechanism: Screen-space gradients $g_i$ are accumulated only at the current finest level $\ell_{\max}$. Every $k$ iterations, leaf faces satisfying $g_i > \varepsilon$ are selected for subdivision and new Gaussians are bound to child faces. This process repeats until the maximum depth $L$ is reached.
-   - Design Motivation: Uniform subdivision expands all regions indiscriminately, wasting computation and storage. The adaptive strategy focuses limited resources on high-frequency regions such as facial features and hair, while smooth regions (forehead, cheeks) require fewer Gaussians.
+    - Function: Expand the hierarchy on demand during training, concentrating detail in regions that need it most.
+    - Mechanism: Screen-space gradients $g_i$ are accumulated only at the current finest level $\ell_{\max}$. Every $k$ iterations, leaf faces satisfying $g_i > \varepsilon$ are selected for subdivision and new Gaussians are bound to child faces. This process repeats until the maximum depth $L$ is reached.
+    - Design Motivation: Uniform subdivision expands all regions indiscriminately, wasting computation and storage. The adaptive strategy focuses limited resources on high-frequency regions such as facial features and hair, while smooth regions (forehead, cheeks) require fewer Gaussians.
 
 4. **Importance Scoring and Progressive Transmission**
 
-   - Function: Determine the transmission priority of Gaussians within each level.
-   - Mechanism: The importance score of each face is defined as the total rendering contribution of its bound Gaussians across all pixels: $W_i = \sum_{j \in \mathcal{G}_i} \sum_p \alpha_{j,p} T_{j,p}$. Gaussians are transmitted in descending order of score, so high-contribution Gaussians arrive first.
-   - Design Motivation: Transmitting high-importance Gaussians first minimizes color drift between partial and complete renders. Experiments (Fig. 3) demonstrate that importance-first transmission significantly outperforms random transmission.
+    - Function: Determine the transmission priority of Gaussians within each level.
+    - Mechanism: The importance score of each face is defined as the total rendering contribution of its bound Gaussians across all pixels: $W_i = \sum_{j \in \mathcal{G}_i} \sum_p \alpha_{j,p} T_{j,p}$. Gaussians are transmitted in descending order of score, so high-contribution Gaussians arrive first.
+    - Design Motivation: Transmitting high-importance Gaussians first minimizes color drift between partial and complete renders. Experiments (Fig. 3) demonstrate that importance-first transmission significantly outperforms random transmission.
 
 ### Loss & Training
 - Multi-level joint supervision: $\mathcal{L}_{\text{rgb}} = \sum_{\ell \in \mathcal{S}} w_\ell [(1-\lambda_s)\mathcal{L}_1 + \lambda_s \mathcal{L}_{\text{ssim}}]$

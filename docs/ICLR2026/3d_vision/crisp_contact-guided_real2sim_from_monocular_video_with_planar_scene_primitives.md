@@ -18,8 +18,8 @@ content_hash: 8760de245ca6f93f
 # CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.14696](https://arxiv.org/abs/2512.14696)
-**Code**: Available (project page)
+**arXiv**: [2512.14696](https://arxiv.org/abs/2512.14696)  
+**Code**: Available (project page)  
 **Area**: 3D Vision / Real2Sim
 **Keywords**: Real2Sim, monocular video, planar scene primitives, human-scene interaction, RL humanoid control
 

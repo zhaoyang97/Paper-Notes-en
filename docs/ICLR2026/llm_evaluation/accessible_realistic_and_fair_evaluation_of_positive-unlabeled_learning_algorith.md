@@ -18,8 +18,8 @@ content_hash: 9cf9b9c2929d26c4
 # Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24228](https://arxiv.org/abs/2509.24228)
-**Code**: Available (benchmark)
+**arXiv**: [2509.24228](https://arxiv.org/abs/2509.24228)  
+**Code**: Available (benchmark)  
 **Area**: Weakly Supervised Learning
 **Keywords**: positive-unlabeled learning, benchmark, model selection, label shift, fair evaluation
 
@@ -49,21 +49,21 @@ The evaluation framework operates on three levels: (1) a unified data generation
 
 1. **Proxy Accuracy (PA) and Proxy AUC (PAUC)**:
 
-   - **Function**: Enable model selection using only positive and unlabeled validation data.
-   - **Mechanism**: PA exploits the relationship $\mathbb{E}[\text{PA}(f)] = \text{ACC}(f) - 1 + 2\pi$ (requiring class prior $\pi$); PAUC treats unlabeled data as "noisy negatives" to compute AUC (not requiring $\pi$). Propositions 1–2 establish the rank-preserving property of both surrogate metrics.
-   - **Design Motivation**: Existing work universally adopts oracle accuracy computed on negative-containing validation sets, which violates the PU learning premise. Surrogate metrics render evaluation genuinely unsupervised.
+    - **Function**: Enable model selection using only positive and unlabeled validation data.
+    - **Mechanism**: PA exploits the relationship $\mathbb{E}[\text{PA}(f)] = \text{ACC}(f) - 1 + 2\pi$ (requiring class prior $\pi$); PAUC treats unlabeled data as "noisy negatives" to compute AUC (not requiring $\pi$). Propositions 1–2 establish the rank-preserving property of both surrogate metrics.
+    - **Design Motivation**: Existing work universally adopts oracle accuracy computed on negative-containing validation sets, which violates the PU learning premise. Surrogate metrics render evaluation genuinely unsupervised.
 
 2. **Identification and Calibration of Intra-dataset Label Shift (ILS)**:
 
-   - **Function**: Detect class prior shift in unlabeled data under the OS setting and propose a simple calibration method.
-   - **Mechanism**: In the OS setting, after positive samples are drawn out, the positive class proportion in the unlabeled set drops from $\pi$ to $\bar{\pi} = (1-c)\pi/(1-c\pi)$. The calibration is straightforward — merge positive samples into the unlabeled set when computing the unlabeled loss: $\mathcal{D}_k^U \cup \mathcal{D}_k^P$. Theorem 1 proves the calibrated risk estimator is unbiased; Theorem 2 provides convergence guarantees.
-   - **Design Motivation**: This is the first identification of the ILS problem in the literature. A one-line code change restores the performance of TS algorithms under OS evaluation.
+    - **Function**: Detect class prior shift in unlabeled data under the OS setting and propose a simple calibration method.
+    - **Mechanism**: In the OS setting, after positive samples are drawn out, the positive class proportion in the unlabeled set drops from $\pi$ to $\bar{\pi} = (1-c)\pi/(1-c\pi)$. The calibration is straightforward — merge positive samples into the unlabeled set when computing the unlabeled loss: $\mathcal{D}_k^U \cup \mathcal{D}_k^P$. Theorem 1 proves the calibrated risk estimator is unbiased; Theorem 2 provides convergence guarantees.
+    - **Design Motivation**: This is the first identification of the ILS problem in the literature. A one-line code change restores the performance of TS algorithms under OS evaluation.
 
 3. **Unified Benchmark Framework**:
 
-   - **Function**: Standardize data generation, training, and evaluation protocols.
-   - **Mechanism**: Covers three major algorithm families — cost-sensitive, sample-selection, and biased PU learning — evaluated on standard datasets including CIFAR-10/100 and Fashion-MNIST.
-   - **Design Motivation**: Eliminate the confounding effects of implementation details (data augmentation, warm-up, etc.) on comparisons.
+    - **Function**: Standardize data generation, training, and evaluation protocols.
+    - **Mechanism**: Covers three major algorithm families — cost-sensitive, sample-selection, and biased PU learning — evaluated on standard datasets including CIFAR-10/100 and Fashion-MNIST.
+    - **Design Motivation**: Eliminate the confounding effects of implementation details (data augmentation, warm-up, etc.) on comparisons.
 
 ### Loss & Training
 Logistic loss is uniformly adopted across all algorithms. The calibration method only modifies the computation of the unlabeled loss (by incorporating positive samples) without altering the core algorithmic logic.

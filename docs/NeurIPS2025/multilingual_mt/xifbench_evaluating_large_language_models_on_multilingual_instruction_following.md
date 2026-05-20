@@ -18,9 +18,9 @@ content_hash: 95dbd8ed775265cc
 # XIFBench: Evaluating Large Language Models on Multilingual Instruction Following
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.07539](https://arxiv.org/abs/2503.07539)
+**arXiv**: [2503.07539](https://arxiv.org/abs/2503.07539)  
 **Authors**: Zhenyu Li, Kehai Chen (HIT Shenzhen), Yunfei Long (QMUL), Xuefeng Bai, Yaoyin Zhang, Xuchen Wei, Juntao Li (Soochow Univ.), Min Zhang
-**Code**: [zhenyuli801/XIFBench](https://github.com/zhenyuli801/XIFBench)
+**Code**: [zhenyuli801/XIFBench](https://github.com/zhenyuli801/XIFBench)  
 **Area**: Multilingual Translation
 **Keywords**: multilingual instruction following, constraint-based evaluation, LLM benchmarking, cross-lingual consistency, fine-grained evaluation
 

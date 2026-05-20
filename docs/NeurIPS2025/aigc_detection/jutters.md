@@ -18,8 +18,8 @@ content_hash: cf421fdc35642178
 # "Jutters"
 
 **Conference**: NeurIPS 2025 (Creative AI Track)
-**arXiv**: [2601.11532](https://arxiv.org/abs/2601.11532)
-**Code**: None (art installation project)
+**arXiv**: [2601.11532](https://arxiv.org/abs/2601.11532)  
+**Code**: None (art installation project)  
 **Area**: AIGC Detection
 **Keywords**: AI-generated content, art installation, human-AI interaction, digital curation, AI imagery
 

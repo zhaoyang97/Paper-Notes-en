@@ -18,8 +18,8 @@ content_hash: f37bd016c232c58b
 # Ignore All Previous Instructions: Jailbreaking as a de-escalatory peace building practise to resist LLM social media bots
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01942](https://arxiv.org/abs/2603.01942)
-**Code**: None
+**arXiv**: [2603.01942](https://arxiv.org/abs/2603.01942)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: jailbreaking, LLM social bots, disinformation, peace building, prompt injection
 

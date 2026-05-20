@@ -18,8 +18,8 @@ content_hash: 3ebf9247487618f0
 # PanoAffordanceNet: Towards Holistic Affordance Grounding in 360° Indoor Environments
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09760](https://arxiv.org/abs/2603.09760)
-**Code**: [https://github.com/GL-ZHU925/PanoAffordanceNet](https://github.com/GL-ZHU925/PanoAffordanceNet)
+**arXiv**: [2603.09760](https://arxiv.org/abs/2603.09760)  
+**Code**: [https://github.com/GL-ZHU925/PanoAffordanceNet](https://github.com/GL-ZHU925/PanoAffordanceNet)  
 **Area**: Robotics / Affordance Perception
 **Keywords**: Panoramic affordance grounding, 360° indoor perception, distortion-aware modulation, omnidirectional densification, one-shot learning
 

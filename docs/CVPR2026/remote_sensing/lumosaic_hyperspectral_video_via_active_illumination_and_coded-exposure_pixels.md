@@ -18,8 +18,8 @@ content_hash: ad00bd6fdb3cbebb
 # Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22140](https://arxiv.org/abs/2602.22140)
-**Code**: N/A
+**arXiv**: [2602.22140](https://arxiv.org/abs/2602.22140)  
+**Code**: N/A  
 **Area**: Computational Imaging / Hyperspectral Video
 **Keywords**: hyperspectral video, coded-exposure pixel, active illumination, motion-robust, spectral reconstruction
 
@@ -55,21 +55,21 @@ This paper presents Lumosaic, an active hyperspectral video system that synchron
 
 1. **Joint Illumination–Exposure Coding Scheme**
 
-   - **Function**: Creates dense spatial–spectral–temporal codes within each frame.
-   - **Mechanism**: Pixels are partitioned into $T=16$ tiles (4×4 mosaic), each with a unique exposure code $\mathbf{C}_{\text{tile}} \in \{0,1\}^{T \times S}$ and illumination code $\mathbf{I}_{\text{tile}} \in \{0,1\}^{T \times S \times L}$. Each sub-frame activates one LED, so neighboring pixels observe different spectral bands at different times. The forward model is: $Y_p = \sum_{s=1}^{S} C_{p,s} \cdot \mathbf{a}_{p,s}^\top \mathbf{r}_p + \eta_p$, where $\mathbf{a}_{p,s} = \mathcal{S} \odot \boldsymbol{\mathcal{I}}_{p,s}$ is the effective spectral sensing vector.
-   - **Design Motivation**: Active illumination ensures the full narrowband output of each LED contributes to the effective signal without attenuation by filters; CEP per-pixel control provides dense spatial coding.
+    - **Function**: Creates dense spatial–spectral–temporal codes within each frame.
+    - **Mechanism**: Pixels are partitioned into $T=16$ tiles (4×4 mosaic), each with a unique exposure code $\mathbf{C}_{\text{tile}} \in \{0,1\}^{T \times S}$ and illumination code $\mathbf{I}_{\text{tile}} \in \{0,1\}^{T \times S \times L}$. Each sub-frame activates one LED, so neighboring pixels observe different spectral bands at different times. The forward model is: $Y_p = \sum_{s=1}^{S} C_{p,s} \cdot \mathbf{a}_{p,s}^\top \mathbf{r}_p + \eta_p$, where $\mathbf{a}_{p,s} = \mathcal{S} \odot \boldsymbol{\mathcal{I}}_{p,s}$ is the effective spectral sensing vector.
+    - **Design Motivation**: Active illumination ensures the full narrowband output of each LED contributes to the effective signal without attenuation by filters; CEP per-pixel control provides dense spatial coding.
 
 2. **CEP Per-Pixel Coded Exposure**
 
-   - **Function**: Each pixel switches at high speed between two charge buckets according to a binary control code within a frame.
-   - **Mechanism**: Each pixel contains a 1-bit writable memory that governs the active bucket for each sub-frame. At the frame level, the two buckets are read out independently, yielding complementary integrated signals. The modulation rate exceeds 39 kHz at VGA resolution.
-   - **Design Motivation**: Breaks the constraint of conventional cameras where all pixels share the same exposure, making each pixel an independent spectral–temporal sampling unit.
+    - **Function**: Each pixel switches at high speed between two charge buckets according to a binary control code within a frame.
+    - **Mechanism**: Each pixel contains a 1-bit writable memory that governs the active bucket for each sub-frame. At the frame level, the two buckets are read out independently, yielding complementary integrated signals. The modulation rate exceeds 39 kHz at VGA resolution.
+    - **Design Motivation**: Breaks the constraint of conventional cameras where all pixels share the same exposure, making each pixel an independent spectral–temporal sampling unit.
 
 3. **Temporal Alignment and Learning-Based Reconstruction**
 
-   - **Function**: Compensates for sub-millisecond motion differences between LED sub-images, followed by neural network reconstruction of hyperspectral output.
-   - **Mechanism**: The lime-LED sub-image is selected as the temporal reference (central wavelength + median exposure time). RIFE optical flow estimates inter-frame motion between sub-images of the same LED, and each sub-image is warped to the reference timestamp. The HAN network (18 residual blocks, 10 residual groups, 128 channels) takes 12-channel LED sub-images as input and produces 33 channels, of which the middle 31 channels (400–700 nm) are retained.
-   - **Design Motivation**: Different LED sub-images correspond to different temporal intervals within a frame; direct fusion would introduce spectral–spatial aliasing. Sub-images from the same LED maintain photometric consistency, making them suitable for optical flow estimation.
+    - **Function**: Compensates for sub-millisecond motion differences between LED sub-images, followed by neural network reconstruction of hyperspectral output.
+    - **Mechanism**: The lime-LED sub-image is selected as the temporal reference (central wavelength + median exposure time). RIFE optical flow estimates inter-frame motion between sub-images of the same LED, and each sub-image is warped to the reference timestamp. The HAN network (18 residual blocks, 10 residual groups, 128 channels) takes 12-channel LED sub-images as input and produces 33 channels, of which the middle 31 channels (400–700 nm) are retained.
+    - **Design Motivation**: Different LED sub-images correspond to different temporal intervals within a frame; direct fusion would introduce spectral–spatial aliasing. Sub-images from the same LED maintain photometric consistency, making them suitable for optical flow estimation.
 
 ### Loss & Training
 

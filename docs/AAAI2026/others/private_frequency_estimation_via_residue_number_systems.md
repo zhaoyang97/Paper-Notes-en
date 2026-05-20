@@ -17,8 +17,8 @@ content_hash: 5d5b086217bf78cc
 # Private Frequency Estimation via Residue Number Systems
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11569](https://arxiv.org/abs/2511.11569)
-**Code**: [GitHub](https://github.com/hharcolezi/private-frequency-oracle-rns)
+**arXiv**: [2511.11569](https://arxiv.org/abs/2511.11569)  
+**Code**: [GitHub](https://github.com/hharcolezi/private-frequency-oracle-rns)  
 **Area**: Other
 **Keywords**: Local Differential Privacy, Frequency Estimation, Residue Number Systems, Communication Efficiency, Data Reconstruction Attack
 

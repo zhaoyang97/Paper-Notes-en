@@ -18,8 +18,8 @@ content_hash: e8723dbde1f46f91
 # Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2310.00098](https://arxiv.org/abs/2310.00098)
-**Code**: [GitHub](https://github.com/apple/ml-pfl4asr)
+**arXiv**: [2310.00098](https://arxiv.org/abs/2310.00098)  
+**Code**: [GitHub](https://github.com/apple/ml-pfl4asr)  
 **Area**: AI Security
 **Keywords**: Differential Privacy, Federated Learning, Speech Recognition, Per-Layer Clipping, Adaptive Optimizer
 

@@ -18,8 +18,8 @@ content_hash: 500f57bce76cbf88
 # HD2-SSC: High-Dimension High-Density Semantic Scene Completion for Autonomous Driving
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07925](https://arxiv.org/abs/2511.07925)
-**Code**: [https://github.com/PKU-ICST-MIPL/HD2-AAAI2026](https://github.com/PKU-ICST-MIPL/HD2-AAAI2026)
+**arXiv**: [2511.07925](https://arxiv.org/abs/2511.07925)  
+**Code**: [https://github.com/PKU-ICST-MIPL/HD2-AAAI2026](https://github.com/PKU-ICST-MIPL/HD2-AAAI2026)  
 **Area**: Autonomous Driving
 **Keywords**: Semantic Scene Completion, Dimension Gap, Density Gap, Semantic Decoupling, Voxel Alignment
 

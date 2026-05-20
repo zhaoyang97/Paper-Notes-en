@@ -18,8 +18,8 @@ content_hash: 77779b47710baabb
 # FastJAM: a Fast Joint Alignment Model for Images
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22842](https://arxiv.org/abs/2510.22842)
-**Code**: [https://github.com/BGU-CS-VIL/FastJAM](https://github.com/BGU-CS-VIL/FastJAM)
+**arXiv**: [2510.22842](https://arxiv.org/abs/2510.22842)  
+**Code**: [https://github.com/BGU-CS-VIL/FastJAM](https://github.com/BGU-CS-VIL/FastJAM)  
 **Area**: Graph Learning / Image Alignment
 **Keywords**: Joint image alignment, graph neural networks, homography estimation, non-parametric clustering, inverse-compositional loss
 

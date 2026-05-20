@@ -19,8 +19,8 @@ content_hash: fabb66e6e6333608
 # Dynamic Causal Discovery in Alzheimer's Disease through Latent Pseudotime Modelling
 
 **Conference**: NEURIPS2025
-**arXiv**: [2511.04619](https://arxiv.org/abs/2511.04619)
-**Code**: To be confirmed
+**arXiv**: [2511.04619](https://arxiv.org/abs/2511.04619)  
+**Code**: To be confirmed  
 **Area**: Medical Imaging
 **Keywords**: Causal discovery, Alzheimer's disease, Bayesian networks, pseudotime, time-varying causal graphs, biomarkers
 

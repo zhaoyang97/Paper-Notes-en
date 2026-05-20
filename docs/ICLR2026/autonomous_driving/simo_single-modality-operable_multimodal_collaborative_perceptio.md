@@ -18,8 +18,8 @@ content_hash: 2566235c82e64a18
 # SiMO: Single-Modality-Operable Multimodal Collaborative Perception
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.08240](https://arxiv.org/abs/2603.08240)
-**Code**: [dempsey-wen/SiMO](https://github.com/dempsey-wen/SiMO)
+**arXiv**: [2603.08240](https://arxiv.org/abs/2603.08240)  
+**Code**: [dempsey-wen/SiMO](https://github.com/dempsey-wen/SiMO)  
 **Area**: Collaborative Perception / Multimodal Fusion / Autonomous Driving
 **Keywords**: collaborative perception, multimodal fusion, modality failure, BEV, 3D detection
 

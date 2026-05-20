@@ -18,8 +18,8 @@ content_hash: 6bf1fc3f19c5e7c0
 # Efficient Rectified Flow for Image Fusion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16549](https://arxiv.org/abs/2509.16549)
-**Code**: [zirui0625/RFfusion](https://github.com/zirui0625/RFfusion)
+**arXiv**: [2509.16549](https://arxiv.org/abs/2509.16549)  
+**Code**: [zirui0625/RFfusion](https://github.com/zirui0625/RFfusion)  
 **Area**: Image Generation
 **Keywords**: Image Fusion, Rectified Flow, diffusion model, VAE, One-Step Sampling
 

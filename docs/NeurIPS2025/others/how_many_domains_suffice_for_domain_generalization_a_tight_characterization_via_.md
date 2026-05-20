@@ -17,8 +17,8 @@ content_hash: d9ae29f34c591727
 # How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.16704](https://arxiv.org/abs/2506.16704)
-**Code**: None
+**arXiv**: [2506.16704](https://arxiv.org/abs/2506.16704)  
+**Code**: None  
 **Area**: Learning Theory / Domain Generalization
 **Keywords**: Domain Generalization, Domain Shattering Dimension, Sample Complexity, VC Dimension, Min-Max ERM
 
@@ -61,19 +61,19 @@ $$\hat{h} = \arg\min_{h \in \mathcal{H}} \max_{\mathcal{D} \in G} \widehat{\text
 ### Key Designs
 
 1. **Domain Shattering Dimension**:
-   - **Function**: Defines the combinatorial measure $\text{Gdim}(\mathcal{H}, \mathcal{G}, \tau, \alpha)$ to precisely characterize the interaction complexity between hypothesis class $\mathcal{H}$ and domain family $\mathcal{G}$.
-   - **Mechanism**: A subset $S \subseteq \mathcal{G}$ is $\alpha$-shattered at $\tau$ if and only if for every $E \subseteq S$, there exists $h_E$ whose error is $< \tau - \alpha$ on domains in $E$ and $> \tau$ on domains in $S \setminus E$. Gdim is defined as the size of the largest such shattered set.
-   - **Design Motivation**: The fat-shattering dimension overestimates complexity by taking the maximum over all thresholds $\tau'$; fixing the threshold at $\tau$ precisely captures the complexity relevant to a specific learning task.
+    - **Function**: Defines the combinatorial measure $\text{Gdim}(\mathcal{H}, \mathcal{G}, \tau, \alpha)$ to precisely characterize the interaction complexity between hypothesis class $\mathcal{H}$ and domain family $\mathcal{G}$.
+    - **Mechanism**: A subset $S \subseteq \mathcal{G}$ is $\alpha$-shattered at $\tau$ if and only if for every $E \subseteq S$, there exists $h_E$ whose error is $< \tau - \alpha$ on domains in $E$ and $> \tau$ on domains in $S \setminus E$. Gdim is defined as the size of the largest such shattered set.
+    - **Design Motivation**: The fat-shattering dimension overestimates complexity by taking the maximum over all thresholds $\tau'$; fixing the threshold at $\tau$ precisely captures the complexity relevant to a specific learning task.
 
 2. **Uniform Convergence Bounds for Partial Concept Classes**:
-   - **Function**: Establishes Lemma 4.2, proving uniform convergence for partial concept classes.
-   - **Mechanism**: For each $h$, a partial concept $f_h(\mathcal{D}) = 1$ if error $> \tau$, $= 0$ if error $< \tau - \alpha$, and $= \bot$ otherwise. The generalized Sauer–Shelah–Perles lemma of Alon et al. is applied to handle the combinatorial explosion in partial concepts.
-   - **Design Motivation**: This connects the domain shattering dimension to concrete generalization guarantees and serves as the key tool for proving the upper bound.
+    - **Function**: Establishes Lemma 4.2, proving uniform convergence for partial concept classes.
+    - **Mechanism**: For each $h$, a partial concept $f_h(\mathcal{D}) = 1$ if error $> \tau$, $= 0$ if error $< \tau - \alpha$, and $= \bot$ otherwise. The generalized Sauer–Shelah–Perles lemma of Alon et al. is applied to handle the combinatorial explosion in partial concepts.
+    - **Design Motivation**: This connects the domain shattering dimension to concrete generalization guarantees and serves as the key tool for proving the upper bound.
 
 3. **Tight Relationship with VC Dimension**:
-   - **Function**: Proves $\text{Gdim} = O(d \log(1/\alpha))$ and establishes a matching lower bound of $\Omega(d \log(1/\alpha))$.
-   - **Mechanism**: The upper bound follows from a covering number argument; the lower bound is established via explicit constructions of hypothesis classes and domain families.
-   - **Design Motivation**: Demonstrates that standard PAC learnability implies learnability in the domain generalization setting.
+    - **Function**: Proves $\text{Gdim} = O(d \log(1/\alpha))$ and establishes a matching lower bound of $\Omega(d \log(1/\alpha))$.
+    - **Mechanism**: The upper bound follows from a covering number argument; the lower bound is established via explicit constructions of hypothesis classes and domain families.
+    - **Design Motivation**: Demonstrates that standard PAC learnability implies learnability in the domain generalization setting.
 
 ### Loss & Training
 

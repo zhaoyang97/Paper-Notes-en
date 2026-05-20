@@ -18,8 +18,8 @@ content_hash: b5d3236b60736c85
 # Revisiting (Un)Fairness in Recourse by Minimizing Worst-Case Social Burden
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.04128](https://arxiv.org/abs/2509.04128)
-**Code**: [github](https://github.com/abarrainkua/MISOB)
+**arXiv**: [2509.04128](https://arxiv.org/abs/2509.04128)  
+**Code**: [github](https://github.com/abarrainkua/MISOB)  
 **Area**: AI Safety / Algorithmic Fairness
 **Keywords**: algorithmic recourse, social burden, fairness, minimax optimization, counterfactual explanation
 

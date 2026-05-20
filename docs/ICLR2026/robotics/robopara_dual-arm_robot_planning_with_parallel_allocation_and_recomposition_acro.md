@@ -18,8 +18,8 @@ content_hash: 61589d97930e1191
 # RoboPARA: Dual-Arm Robot Planning with Parallel Allocation and Recomposition Across Tasks
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.06683](https://arxiv.org/abs/2506.06683)
-**Code**: [https://github.com/AiDuanshiying/RoboPARA](https://github.com/AiDuanshiying/RoboPARA)
+**arXiv**: [2506.06683](https://arxiv.org/abs/2506.06683)  
+**Code**: [https://github.com/AiDuanshiying/RoboPARA](https://github.com/AiDuanshiying/RoboPARA)  
 **Area**: Robotics / Task Planning
 **Keywords**: dual-arm robot, parallel task planning, DAG dependency graph, LLM planning, multi-task scheduling
 

@@ -17,8 +17,8 @@ content_hash: bc6b7eeebfe46197
 # Prediction-Powered Semi-Supervised Learning with Online Power Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22586](https://arxiv.org/abs/2510.22586)
-**Code**: [GitHub](https://github.com/noashoham/PP-SSL)
+**arXiv**: [2510.22586](https://arxiv.org/abs/2510.22586)  
+**Code**: [GitHub](https://github.com/noashoham/PP-SSL)  
 **Area**: Semi-Supervised Learning / Statistical Inference
 **Keywords**: Semi-supervised learning, prediction-powered inference, online learning, pseudo-label debiasing, AdaGrad
 

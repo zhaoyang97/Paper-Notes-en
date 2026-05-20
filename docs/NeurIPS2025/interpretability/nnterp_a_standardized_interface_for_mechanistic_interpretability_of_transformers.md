@@ -18,8 +18,8 @@ content_hash: b644d1c8a06b1e27
 # nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers
 
 **Conference**: NeurIPS 2025 (Mechanistic Interpretability Workshop)
-**arXiv**: [2511.14465](https://arxiv.org/abs/2511.14465)
-**Code**: [github.com/Butanium/nnterp](https://github.com/Butanium/nnterp)
+**arXiv**: [2511.14465](https://arxiv.org/abs/2511.14465)  
+**Code**: [github.com/Butanium/nnterp](https://github.com/Butanium/nnterp)  
 **Area**: Interpretability / Transformer Analysis
 **Keywords**: Mechanistic Interpretability, Unified Interface, NNsight, Cross-Architecture, Transformer Toolkit
 

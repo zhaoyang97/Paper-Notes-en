@@ -19,7 +19,7 @@ content_hash: e2dc4e18044ed76c
 # A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.04814](https://arxiv.org/abs/2511.04814)
+**arXiv**: [2511.04814](https://arxiv.org/abs/2511.04814)  
 **Authors**: Sebastian Ojeda, Rafael Velasquez, Nicolás Aparicio, Juanita Puentes, Paula Cárdenas, Nicolás Andrade, Gabriel González, Sergio Rincón, Carolina Muñoz-Camargo, Pablo Arbeláez (Universidad de los Andes, Colombia)
 **Area**: LLM Evaluation
 **Keywords**: Antimicrobial Peptide, Multilabel Classification, benchmark, Transformer, Cross-Attention, Drug Discovery

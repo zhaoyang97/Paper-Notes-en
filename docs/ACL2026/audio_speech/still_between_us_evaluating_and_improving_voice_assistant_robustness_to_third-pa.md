@@ -18,8 +18,8 @@ content_hash: 11e78acde5582198
 # Still Between Us? Evaluating and Improving Voice Assistant Robustness to Third-Party Interruptions
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17358](https://arxiv.org/abs/2604.17358)
-**Code**: [GitHub](https://github.com/pleasedpenguin/tpi-va)
+**arXiv**: [2604.17358](https://arxiv.org/abs/2604.17358)  
+**Code**: [GitHub](https://github.com/pleasedpenguin/tpi-va)  
 **Area**: Audio & Speech
 **Keywords**: voice assistant, third-party interruption, speaker awareness, hard negative mining, semantic shortcut learning
 

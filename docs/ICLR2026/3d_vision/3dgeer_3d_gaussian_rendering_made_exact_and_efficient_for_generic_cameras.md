@@ -18,8 +18,8 @@ content_hash: 4ccc053e015626eb
 # 3DGEER: 3D Gaussian Rendering Made Exact and Efficient for Generic Cameras
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.24053](https://arxiv.org/abs/2505.24053)
-**Code**: [https://zixunh.github.io/3d-geer](https://zixunh.github.io/3d-geer)
+**arXiv**: [2505.24053](https://arxiv.org/abs/2505.24053)  
+**Code**: [https://zixunh.github.io/3d-geer](https://zixunh.github.io/3d-geer)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Ray Tracing, Fisheye Camera, Wide-FoV Rendering, Real-Time Rendering
 

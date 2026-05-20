@@ -18,8 +18,8 @@ content_hash: 7342e6485ba31134
 # Minimizing Inequity in Facility Location Games
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.01048](https://arxiv.org/abs/2602.01048)
-**Code**: None
+**arXiv**: [2602.01048](https://arxiv.org/abs/2602.01048)  
+**Code**: None  
 **Area**: AI Safety / Algorithmic Game Theory
 **Keywords**: Facility Location, Inter-group Fairness, Strategyproofness, Approximation Ratio, Social Choice
 

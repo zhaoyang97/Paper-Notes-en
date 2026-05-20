@@ -18,8 +18,8 @@ content_hash: d8d602bdf97766f3
 # SwiReasoning: Switch-Thinking in Latent and Explicit for Pareto-Superior Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.05069](https://arxiv.org/abs/2510.05069)
-**Code**: [https://github.com/sdc17/SwiReasoning](https://github.com/sdc17/SwiReasoning)
+**arXiv**: [2510.05069](https://arxiv.org/abs/2510.05069)  
+**Code**: [https://github.com/sdc17/SwiReasoning](https://github.com/sdc17/SwiReasoning)  
 **Area**: Model Compression / Efficient Reasoning
 **Keywords**: Latent reasoning, explicit reasoning, mode switching, token efficiency, training-free framework
 

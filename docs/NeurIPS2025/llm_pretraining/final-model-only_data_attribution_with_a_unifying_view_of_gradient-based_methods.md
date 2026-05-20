@@ -18,8 +18,8 @@ content_hash: 107a4d4c38542ae1
 # Final-Model-Only Data Attribution with a Unifying View of Gradient-Based Methods
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.03906](https://arxiv.org/abs/2412.03906)
-**Code**: [IBM/fimoda](https://github.com/IBM/fimoda)
+**arXiv**: [2412.03906](https://arxiv.org/abs/2412.03906)  
+**Code**: [IBM/fimoda](https://github.com/IBM/fimoda)  
 **Area**: LLM Pre-training
 **Keywords**: Training Data Attribution, Influence Functions, Gradient Methods, Further Training, Final-Model-Only
 

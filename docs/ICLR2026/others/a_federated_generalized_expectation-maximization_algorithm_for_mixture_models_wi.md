@@ -17,8 +17,8 @@ content_hash: 309b8170b9cf64a1
 # A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21160](https://arxiv.org/abs/2601.21160)
-**Code**: None
+**arXiv**: [2601.21160](https://arxiv.org/abs/2601.21160)  
+**Code**: None  
 **Area**: Other
 **Keywords**: federated clustering, generalized EM algorithm, mixture models, unknown number of clusters, uncertainty sets
 
@@ -48,21 +48,21 @@ FedGEM consists of two phases: (1) an iterative collaborative training phase—c
 
 1. **Client Computation: EM Step + Uncertainty Sets**
 
-   - **Function**: Each client runs EM on its local data and computes an uncertainty set radius for each mixture component.
-   - **Mechanism**: The uncertainty set $\mathcal{U}_{k_g}$ is a Euclidean ball centered at the M-step maximizer with radius $\sqrt{\varepsilon_{k_g}}$, obtained by solving an optimization problem such that any iterate within the ball does not decrease the expected complete-data log-likelihood. For isotropic GMMs, this radius problem admits a closed-form solution via a doubly convex two-dimensional reformulation.
-   - **Design Motivation**: The uncertainty set characterizes the range of parameter perturbation that still guarantees algorithmic non-degradation; its size reflects estimation precision. Clients only need to transmit center-radius pairs, which are far smaller than raw data, thereby preserving privacy.
+    - **Function**: Each client runs EM on its local data and computes an uncertainty set radius for each mixture component.
+    - **Mechanism**: The uncertainty set $\mathcal{U}_{k_g}$ is a Euclidean ball centered at the M-step maximizer with radius $\sqrt{\varepsilon_{k_g}}$, obtained by solving an optimization problem such that any iterate within the ball does not decrease the expected complete-data log-likelihood. For isotropic GMMs, this radius problem admits a closed-form solution via a doubly convex two-dimensional reformulation.
+    - **Design Motivation**: The uncertainty set characterizes the range of parameter perturbation that still guarantees algorithmic non-degradation; its size reflects estimation precision. Clients only need to transmit center-radius pairs, which are far smaller than raw data, thereby preserving privacy.
 
 2. **Server Aggregation: Uncertainty Set Intersection Detection**
 
-   - **Function**: Identify cluster overlap by checking whether uncertainty sets of components from different clients intersect.
-   - **Mechanism**: If $\|M_{k_g} - M_{k_{g'}}\|_2 \leq \sqrt{\varepsilon_{k_g}} + \sqrt{\varepsilon_{k_{g'}}}$, the two components are assigned to the same super-cluster. During collaborative training, the optimal vector $\nu^*$ lying within the intersection is computed to update parameters; during final aggregation, estimates within the same super-cluster are directly merged.
-   - **Design Motivation**: Set intersection provides a purely geometric, closed-form mechanism for detecting cross-client cluster correspondence, eliminating the need to share raw data or large arrays.
+    - **Function**: Identify cluster overlap by checking whether uncertainty sets of components from different clients intersect.
+    - **Mechanism**: If $\|M_{k_g} - M_{k_{g'}}\|_2 \leq \sqrt{\varepsilon_{k_g}} + \sqrt{\varepsilon_{k_{g'}}}$, the two components are assigned to the same super-cluster. During collaborative training, the optimal vector $\nu^*$ lying within the intersection is computed to update parameters; during final aggregation, estimates within the same super-cluster are directly merged.
+    - **Design Motivation**: Set intersection provides a purely geometric, closed-form mechanism for detecting cross-client cluster correspondence, eliminating the need to share raw data or large arrays.
 
 3. **Convergence Guarantees**
 
-   - **Function**: Prove that under standard assumptions, the algorithm converges in probability to a neighborhood of the true parameters and correctly estimates the global $K$.
-   - **Mechanism**: Using the first-order stationarity (FOS) condition, the GEM iterates are shown to converge to a $\frac{1}{1-\beta/\lambda}\epsilon^{\text{unif}}$ neighborhood of the true parameters $\theta^*$. It is further proved that when the final aggregation radius is set to $\epsilon^{\text{unif}}$ and does not exceed $R_{\min}/4$, the algorithm correctly infers $K$.
-   - **Design Motivation**: The theoretical guarantee is one of the core contributions of this work, elevating the algorithm beyond a heuristic to one with rigorous convergence rates.
+    - **Function**: Prove that under standard assumptions, the algorithm converges in probability to a neighborhood of the true parameters and correctly estimates the global $K$.
+    - **Mechanism**: Using the first-order stationarity (FOS) condition, the GEM iterates are shown to converge to a $\frac{1}{1-\beta/\lambda}\epsilon^{\text{unif}}$ neighborhood of the true parameters $\theta^*$. It is further proved that when the final aggregation radius is set to $\epsilon^{\text{unif}}$ and does not exceed $R_{\min}/4$, the algorithm correctly infers $K$.
+    - **Design Motivation**: The theoretical guarantee is one of the core contributions of this work, elevating the algorithm beyond a heuristic to one with rigorous convergence rates.
 
 ### Loss & Training
 The framework naturally optimizes the log-likelihood under the EM paradigm. Uncertainty set radii are obtained by solving constrained optimization problems. Under the isotropic GMM setting, low-complexity feasible algorithms are provided.

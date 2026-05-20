@@ -18,8 +18,8 @@ content_hash: f297748cd758bf4e
 # Continual Knowledge Adaptation for Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19314](https://arxiv.org/abs/2510.19314)
-**Code**: [GitHub](https://github.com/Fhujinwu/CKA-RL)
+**arXiv**: [2510.19314](https://arxiv.org/abs/2510.19314)  
+**Code**: [GitHub](https://github.com/Fhujinwu/CKA-RL)  
 **Area**: Reinforcement Learning / Continual Learning
 **Keywords**: continual RL, knowledge vector, catastrophic forgetting, forward transfer, knowledge merging
 
@@ -48,21 +48,21 @@ The framework consists of three components: (1) a base parameter $\theta_{base}$
 
 1. **Knowledge Vectors and Dynamic Adaptation**:
 
-   - Function: Upon completing training on each task, a knowledge vector $v_k = \theta_k - \theta_{base}$ is extracted and added to the pool $\mathcal{V}$.
-   - Mechanism: The parameters for task $k$ are defined as $\theta_k = \theta_{base} + \sum_{j=1}^{k-1} \alpha_j^k v_j + v_k$, where $\alpha_j^k = \text{softmax}(\beta_j^k)$ are learnable scalars and $v_k$ is initialized to zero. During training, $\theta_{base}$ is frozen; only $\beta_k$ and $v_k$ are optimized.
-   - Design Motivation: The softmax normalization ensures weights sum to one, and the inclusion of $v_1 = 0$ (null knowledge) allows the model to opt out of using historical knowledge (when $\alpha_1 = 1$), thereby preventing negative transfer.
+    - Function: Upon completing training on each task, a knowledge vector $v_k = \theta_k - \theta_{base}$ is extracted and added to the pool $\mathcal{V}$.
+    - Mechanism: The parameters for task $k$ are defined as $\theta_k = \theta_{base} + \sum_{j=1}^{k-1} \alpha_j^k v_j + v_k$, where $\alpha_j^k = \text{softmax}(\beta_j^k)$ are learnable scalars and $v_k$ is initialized to zero. During training, $\theta_{base}$ is frozen; only $\beta_k$ and $v_k$ are optimized.
+    - Design Motivation: The softmax normalization ensures weights sum to one, and the inclusion of $v_1 = 0$ (null knowledge) allows the model to opt out of using historical knowledge (when $\alpha_1 = 1$), thereby preventing negative transfer.
 
 2. **Adaptive Knowledge Merging**:
 
-   - Function: When the pool size exceeds $K_{max}$, the most similar pair of vectors is merged.
-   - Mechanism: Cosine similarity $S_{ij} = \frac{v_i \cdot v_j}{\|v_i\| \|v_j\|}$ is used to identify the most similar pair $(v_m, v_n) = \arg\max S_{ij}$, which are then merged as $v_{merge} = \frac{1}{2}(v_m + v_n)$.
-   - Design Motivation: Similar knowledge vectors encode functionally analogous adaptation directions, so merging them minimizes information loss while keeping the pool compact and addressing scalability issues as the number of tasks grows.
+    - Function: When the pool size exceeds $K_{max}$, the most similar pair of vectors is merged.
+    - Mechanism: Cosine similarity $S_{ij} = \frac{v_i \cdot v_j}{\|v_i\| \|v_j\|}$ is used to identify the most similar pair $(v_m, v_n) = \arg\max S_{ij}$, which are then merged as $v_{merge} = \frac{1}{2}(v_m + v_n)$.
+    - Design Motivation: Similar knowledge vectors encode functionally analogous adaptation directions, so merging them minimizes information loss while keeping the pool compact and addressing scalability issues as the number of tasks grows.
 
 3. **Base Model Construction**:
 
-   - Function: $\theta_{base}$ is trained on the first task and serves as the foundation for all subsequent knowledge adaptation.
-   - Mechanism: $\theta_{base}$ encodes general feature representations; setting $v_1 = 0$ includes it implicitly in the vector pool.
-   - Design Motivation: Subsequent tasks need only learn incremental updates (knowledge vectors) rather than training from scratch.
+    - Function: $\theta_{base}$ is trained on the first task and serves as the foundation for all subsequent knowledge adaptation.
+    - Mechanism: $\theta_{base}$ encodes general feature representations; setting $v_1 = 0$ includes it implicitly in the vector pool.
+    - Design Motivation: Subsequent tasks need only learn incremental updates (knowledge vectors) rather than training from scratch.
 
 ### Training Procedure
 - Task 1: Train $\theta_{base}$; add $v_1 = 0$ to the pool.

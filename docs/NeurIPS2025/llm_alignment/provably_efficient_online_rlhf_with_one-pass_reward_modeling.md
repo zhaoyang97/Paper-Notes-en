@@ -18,8 +18,8 @@ content_hash: d608cbd6f5846cd8
 # Provably Efficient Online RLHF with One-Pass Reward Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.07193](https://arxiv.org/abs/2502.07193)
-**Code**: [github.com/ZinYY/Online_RLHF](https://github.com/ZinYY/Online_RLHF)
+**arXiv**: [2502.07193](https://arxiv.org/abs/2502.07193)  
+**Code**: [github.com/ZinYY/Online_RLHF](https://github.com/ZinYY/Online_RLHF)  
 **Area**: LLM Alignment
 **Keywords**: online RLHF, reward modeling, online mirror descent, contextual dueling bandit, computational efficiency
 

@@ -18,8 +18,8 @@ content_hash: b1243c551d6b6fa1
 # Uni-LoRA: One Vector is All You Need
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.00799](https://arxiv.org/abs/2506.00799)
-**Code**: [GitHub](https://github.com/KaiyangLi1992/Uni-LoRA)
+**arXiv**: [2506.00799](https://arxiv.org/abs/2506.00799)  
+**Code**: [GitHub](https://github.com/KaiyangLi1992/Uni-LoRA)  
 **Area**: Model Compression
 **Keywords**: Parameter-Efficient Fine-Tuning, LoRA, Projection Matrix, Isometry, Parameter Sharing
 

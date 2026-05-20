@@ -18,8 +18,8 @@ content_hash: f21ba4713c9d3905
 # AdaRank: Adaptive Rank Pruning for Enhanced Model Merging
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.22178](https://arxiv.org/abs/2503.22178)
-**Code**: To be confirmed
+**arXiv**: [2503.22178](https://arxiv.org/abs/2503.22178)  
+**Code**: To be confirmed  
 **Area**: Object Detection (Model Merging / Multi-Task Learning)
 **Keywords**: Model Merging, SVD, Task Vector, Test-Time Adaptation, Multi-Task Learning
 

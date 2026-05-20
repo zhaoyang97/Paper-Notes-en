@@ -18,8 +18,8 @@ content_hash: b793652278f28894
 # Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.04162](https://arxiv.org/abs/2503.04162)
-**Code**: [GitHub](https://github.com/ziqiangcui/SRA-CL)
+**arXiv**: [2503.04162](https://arxiv.org/abs/2503.04162)  
+**Code**: [GitHub](https://github.com/ziqiangcui/SRA-CL)  
 **Area**: Recommender Systems
 **Keywords**: Sequential Recommendation, Contrastive Learning, Large Language Models, Semantic Retrieval, Data Augmentation
 

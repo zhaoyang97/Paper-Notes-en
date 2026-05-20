@@ -18,8 +18,8 @@ content_hash: 1335d066285a9444
 # Stitch: Simultaneous Thinking and Talking with Chunked Reasoning for Spoken Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.15375](https://arxiv.org/abs/2507.15375)
-**Code**: [https://d223302.github.io/STITCH](https://d223302.github.io/STITCH)
+**arXiv**: [2507.15375](https://arxiv.org/abs/2507.15375)  
+**Code**: [https://d223302.github.io/STITCH](https://d223302.github.io/STITCH)  
 **Area**: Audio & Speech
 **Keywords**: spoken language models, chain-of-thought, simultaneous thinking and talking, chunked reasoning, latency optimization
 

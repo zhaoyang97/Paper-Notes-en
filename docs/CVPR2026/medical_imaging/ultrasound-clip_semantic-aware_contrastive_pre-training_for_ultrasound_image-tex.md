@@ -18,8 +18,8 @@ content_hash: 244dd8fe202f6bde
 # Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01749](https://arxiv.org/abs/2604.01749)
-**Code**: [https://github.com/ZJUDataIntelligence/Ultrasound-CLIP](https://github.com/ZJUDataIntelligence/Ultrasound-CLIP)
+**arXiv**: [2604.01749](https://arxiv.org/abs/2604.01749)  
+**Code**: [https://github.com/ZJUDataIntelligence/Ultrasound-CLIP](https://github.com/ZJUDataIntelligence/Ultrasound-CLIP)  
 **Area**: Medical Imaging / Ultrasound Multimodal Understanding
 **Keywords**: ultrasound image-text pre-training, diagnostic taxonomy, semantic soft labels, heterogeneous graph encoding, cross-modal retrieval
 

@@ -18,8 +18,8 @@ content_hash: c807b6a4394d07ba
 # CstNet: Constraint-Aware Feature Learning for Parametric Point Cloud
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.07747](https://arxiv.org/abs/2411.07747)
-**Code**: [https://cstnetwork.github.io/](https://cstnetwork.github.io/)
+**arXiv**: [2411.07747](https://arxiv.org/abs/2411.07747)  
+**Code**: [https://cstnetwork.github.io/](https://cstnetwork.github.io/)  
 **Area**: 3D Vision / Point Cloud Analysis
 **Keywords**: CAD point cloud, constraint representation, parametric shape, point cloud classification, rotation robustness
 

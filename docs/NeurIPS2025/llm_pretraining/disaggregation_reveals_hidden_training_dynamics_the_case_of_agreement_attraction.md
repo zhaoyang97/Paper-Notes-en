@@ -18,8 +18,8 @@ content_hash: 3cd55d93f85aaf81
 # Disaggregation Reveals Hidden Training Dynamics: The Case of Agreement Attraction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24934](https://arxiv.org/abs/2510.24934)
-**Code**: [GitHub](https://github.com/jmichaelov/sv-disaggregation-cognitive-interpretability)
+**arXiv**: [2510.24934](https://arxiv.org/abs/2510.24934)  
+**Code**: [GitHub](https://github.com/jmichaelov/sv-disaggregation-cognitive-interpretability)  
 **Area**: LLM Pre-training / Interpretability
 **Keywords**: Training Dynamics, Subject-Verb Agreement, Grammar Learning, Fine-Grained Analysis, Psycholinguistics
 

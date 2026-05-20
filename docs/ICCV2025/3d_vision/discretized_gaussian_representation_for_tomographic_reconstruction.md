@@ -27,8 +27,8 @@ This paper proposes Discretized Gaussian Representation (DGR) for CT reconstruct
 - **CT reconstruction challenges**: Ionizing radiation limits the number of projections; emergency scenarios demand fast reconstruction; methods must adapt to diverse CT configurations (cone-beam/fan-beam, sparse-view/limited-angle).
 - **Limitations of Prior Work — Deep Learning Reconstruction (DLR)**: Requires large-scale training data, generalizes poorly (e.g., cone-beam-trained models degrade on fan-beam data), and diffusion-based models incur high computational overhead.
 - **Limitations of Prior Work — Instance Reconstruction Methods**:
-  - NeRF-based methods (NAF, SAX-NeRF): Require hours to reconstruct a single instance, making clinical deployment impractical.
-  - 3DGS-based methods (R2-Gaussian, X-Gaussian): Suffer from **integration bias** (density inconsistency), and there is a fundamental mismatch between view-dependent rendering in 3DGS and voxel-based reconstruction.
+    - NeRF-based methods (NAF, SAX-NeRF): Require hours to reconstruct a single instance, making clinical deployment impractical.
+    - 3DGS-based methods (R2-Gaussian, X-Gaussian): Suffer from **integration bias** (density inconsistency), and there is a fundamental mismatch between view-dependent rendering in 3DGS and voxel-based reconstruction.
 - **Core Motivation**: Rethink the CT reconstruction framework around three design principles — discretized representation, efficient reconstruction, and unified global optimization.
 
 ## Method

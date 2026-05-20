@@ -18,8 +18,8 @@ content_hash: f916a444f6653958
 # Better than Average: Spatially-Aware Aggregation of Segmentation Uncertainty Improves Downstream Performance
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29941](https://arxiv.org/abs/2603.29941)
-**Code**: [https://github.com/Kainmueller-Lab/aggrigator](https://github.com/Kainmueller-Lab/aggrigator)
+**arXiv**: [2603.29941](https://arxiv.org/abs/2603.29941)  
+**Code**: [https://github.com/Kainmueller-Lab/aggrigator](https://github.com/Kainmueller-Lab/aggrigator)  
 **Area**: Medical Imaging
 **Keywords**: Uncertainty Quantification, Segmentation Aggregation, OoD Detection, Failure Detection, Spatially-Aware Aggregation
 
@@ -126,8 +126,8 @@ Statistical testing (Wilcoxon $p < 0.05$): BCA, ICA, and GMM-All form a statisti
 ---
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29941](https://arxiv.org/abs/2603.29941)
-**Code**: [https://github.com/Kainmueller-Lab/aggrigator](https://github.com/Kainmueller-Lab/aggrigator)
+**arXiv**: [2603.29941](https://arxiv.org/abs/2603.29941)  
+**Code**: [https://github.com/Kainmueller-Lab/aggrigator](https://github.com/Kainmueller-Lab/aggrigator)  
 **Area**: Medical Imaging
 **Keywords**: Uncertainty Quantification, Spatial Aggregation Strategies, OoD Detection, Failure Detection, Meta-Aggregation
 

@@ -18,8 +18,8 @@ content_hash: d551edecc4182b24
 # GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26260](https://arxiv.org/abs/2603.26260)
-**Code**: N/A
+**arXiv**: [2603.26260](https://arxiv.org/abs/2603.26260)  
+**Code**: N/A  
 **Area**: Segmentation
 **Keywords**: Open-vocabulary 3D semantic segmentation, geometric priors, 2D-to-3D distillation, superpoint aggregation, instance-level consistency
 

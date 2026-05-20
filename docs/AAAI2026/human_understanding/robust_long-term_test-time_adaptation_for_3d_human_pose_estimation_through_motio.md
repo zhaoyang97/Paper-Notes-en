@@ -20,8 +20,8 @@ content_hash: a5333e353fb2fb62
 # Robust Long-term Test-Time Adaptation for 3D Human Pose Estimation through Motion Discretization
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18851](https://arxiv.org/abs/2511.18851)
-**Code**: To be confirmed
+**arXiv**: [2511.18851](https://arxiv.org/abs/2511.18851)  
+**Code**: To be confirmed  
 **Area**: Human Understanding
 **Keywords**: 3D human pose estimation, test-time adaptation, motion discretization, error accumulation, personalized adaptation, soft reset, self-replay
 

@@ -19,8 +19,8 @@ content_hash: 59df838c192fc51d
 # ExoPredicator: Learning Abstract Models of Dynamic Worlds for Robot Planning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26255](https://arxiv.org/abs/2509.26255)
-**Code**: N/A
+**arXiv**: [2509.26255](https://arxiv.org/abs/2509.26255)  
+**Code**: N/A  
 **Area**: Robot Planning / World Models
 **Keywords**: Abstract world models, exogenous causal processes, temporal planning, predicate invention, variational inference, LLM guidance
 

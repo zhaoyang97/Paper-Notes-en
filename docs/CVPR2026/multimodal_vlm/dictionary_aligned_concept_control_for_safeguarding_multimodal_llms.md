@@ -18,8 +18,8 @@ content_hash: 3120e258662ee1b3
 # Dictionary-Aligned Concept Control for Safeguarding Multimodal LLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08846](https://arxiv.org/abs/2604.08846)
-**Code**: None
+**arXiv**: [2604.08846](https://arxiv.org/abs/2604.08846)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal safety, activation steering, sparse autoencoders, concept dictionary, jailbreak defense
 

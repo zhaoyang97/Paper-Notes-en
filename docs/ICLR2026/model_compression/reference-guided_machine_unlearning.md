@@ -18,8 +18,8 @@ content_hash: dafc38db92e73774
 # Reference-Guided Machine Unlearning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.11210](https://arxiv.org/abs/2603.11210)
-**Code**: [GitHub](https://github.com/jmirlach/ReGUn)
+**arXiv**: [2603.11210](https://arxiv.org/abs/2603.11210)  
+**Code**: [GitHub](https://github.com/jmirlach/ReGUn)  
 **Area**: Model Compression / Machine Unlearning
 **Keywords**: Machine Unlearning, Reference-Guided, Knowledge Distillation, Distributional Indistinguishability, Privacy Protection
 

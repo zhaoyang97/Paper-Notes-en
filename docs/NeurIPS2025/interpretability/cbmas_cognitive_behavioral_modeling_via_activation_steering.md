@@ -18,8 +18,8 @@ content_hash: 88d269ffd9ea9171
 # CBMAS: Cognitive Behavioral Modeling via Activation Steering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.06109](https://arxiv.org/abs/2601.06109)
-**Code**: [Available](https://github.com/shimamooo/CBMAS)
+**arXiv**: [2601.06109](https://arxiv.org/abs/2601.06109)  
+**Code**: [Available](https://github.com/shimamooo/CBMAS)  
 **Area**: Interpretability / LLM Behavioral Analysis
 **Keywords**: activation steering, cognitive bias, bias response curve, logit lens, layer sensitivity analysis
 
@@ -46,19 +46,19 @@ The CBMAS analysis pipeline consists of four steps: (1) extract steering vectors
 ### Key Designs
 
 1. **Contrastive Prompt Dataset and Steering Vector Construction**
-   - *Function*: Extract vectors encoding the bias direction for each cognitive behavior (sycophancy, appeasement, satisficing, compliance).
-   - *Mechanism*: Each data point consists of a structurally identical prompt pair with opposing choices. Option A represents a response exhibiting the target cognitive behavior; Option B represents a neutral response. For a given layer $L$ and injection site $S$, the steering vector is defined as $\mathbf{v}_L^{(S)} = \mathbb{E}[\mathbf{h}_L^{(S)}(p^{(A)}) - \mathbf{h}_L^{(S)}(p^{(B)})]$, i.e., the mean of hidden-state differences across all contrastive pairs at that layer.
-   - *Design Motivation*: Diverse prompt pairs cover the full range of manifestations of the target behavior, so the steering vector represents a general behavioral direction rather than a context-specific one. Each behavior is represented by 200 contrastive examples spanning multiple domains including advice, technical questions, health, and finance.
+    - *Function*: Extract vectors encoding the bias direction for each cognitive behavior (sycophancy, appeasement, satisficing, compliance).
+    - *Mechanism*: Each data point consists of a structurally identical prompt pair with opposing choices. Option A represents a response exhibiting the target cognitive behavior; Option B represents a neutral response. For a given layer $L$ and injection site $S$, the steering vector is defined as $\mathbf{v}_L^{(S)} = \mathbb{E}[\mathbf{h}_L^{(S)}(p^{(A)}) - \mathbf{h}_L^{(S)}(p^{(B)})]$, i.e., the mean of hidden-state differences across all contrastive pairs at that layer.
+    - *Design Motivation*: Diverse prompt pairs cover the full range of manifestations of the target behavior, so the steering vector represents a general behavioral direction rather than a context-specific one. Each behavior is represented by 200 contrastive examples spanning multiple domains including advice, technical questions, health, and finance.
 
 2. **Bias Response Curve (BRC) Protocol**
-   - *Function*: Extend bias analysis from discrete snapshots to continuous trajectories.
-   - *Mechanism*: Dense sweeps are performed over a user-defined α range (default: −10 to 10, step size 0.5). For each α, the hidden state at the injection layer is modified as $\mathbf{h} \leftarrow \mathbf{h} + \alpha \mathbf{v}$, and six metrics are recorded at the readout layer: logit difference $\Delta_{logit}(\alpha) = \text{logit}(y_A|x,\alpha) - \text{logit}(y_B|x,\alpha)$, probability difference, odds ratio, KL divergence (measuring perturbation to the overall distribution), per-token perplexity (a fluency proxy), and rank trajectory (rank changes of target tokens).
-   - *Design Motivation*: Outputs are forced to be binary—prompts end with "I choose (" to compel the model to select between A and B. Random vectors and vectors orthogonal to the bias direction serve as control conditions to confirm that observed effects originate from the bias direction rather than noise.
+    - *Function*: Extend bias analysis from discrete snapshots to continuous trajectories.
+    - *Mechanism*: Dense sweeps are performed over a user-defined α range (default: −10 to 10, step size 0.5). For each α, the hidden state at the injection layer is modified as $\mathbf{h} \leftarrow \mathbf{h} + \alpha \mathbf{v}$, and six metrics are recorded at the readout layer: logit difference $\Delta_{logit}(\alpha) = \text{logit}(y_A|x,\alpha) - \text{logit}(y_B|x,\alpha)$, probability difference, odds ratio, KL divergence (measuring perturbation to the overall distribution), per-token perplexity (a fluency proxy), and rank trajectory (rank changes of target tokens).
+    - *Design Motivation*: Outputs are forced to be binary—prompts end with "I choose (" to compel the model to select between A and B. Random vectors and vectors orthogonal to the bias direction serve as control conditions to confirm that observed effects originate from the bias direction rather than noise.
 
 3. **Injection–Readout Layer Decoupling Analysis**
-   - *Function*: Track the propagation and transformation of the bias signal from the injection point through subsequent layers.
-   - *Mechanism*: All pairs $(L_\text{inj}, L_\text{read})$ satisfying $L_\text{read} > L_\text{inj}$ are analyzed to form a "bias propagation map." Comparative analysis across different injection sites (e.g., `hook_resid_mid`, `hook_resid_post`) is also supported.
-   - *Design Motivation*: Observing effects only at the injection layer cannot reveal whether the intervention genuinely alters the model's final behavior or is "washed out" by subsequent layers. The decoupled design enables tracking of signal amplification, attenuation, and dissipation.
+    - *Function*: Track the propagation and transformation of the bias signal from the injection point through subsequent layers.
+    - *Mechanism*: All pairs $(L_\text{inj}, L_\text{read})$ satisfying $L_\text{read} > L_\text{inj}$ are analyzed to form a "bias propagation map." Comparative analysis across different injection sites (e.g., `hook_resid_mid`, `hook_resid_post`) is also supported.
+    - *Design Motivation*: Observing effects only at the injection layer cannot reveal whether the intervention genuinely alters the model's final behavior or is "washed out" by subsequent layers. The decoupled design enables tracking of signal amplification, attenuation, and dissipation.
 
 ### Loss & Training
 

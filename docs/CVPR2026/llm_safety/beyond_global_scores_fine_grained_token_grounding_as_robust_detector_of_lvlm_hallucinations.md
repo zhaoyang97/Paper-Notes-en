@@ -18,8 +18,8 @@ content_hash: d4998961598bfb96
 # Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04863](https://arxiv.org/abs/2604.04863)
-**Code**: Available
+**arXiv**: [2604.04863](https://arxiv.org/abs/2604.04863)  
+**Code**: Available  
 **Area**: LLM Safety
 **Keywords**: hallucination detection, LVLM, attention dispersion, patch-level grounding, token-level
 

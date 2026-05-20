@@ -18,8 +18,8 @@ content_hash: a1665bf199007675
 # Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.01218](https://arxiv.org/abs/2502.01218)
-**Code**: [https://actol-pretrain.github.io/](https://actol-pretrain.github.io/)
+**arXiv**: [2502.01218](https://arxiv.org/abs/2502.01218)  
+**Code**: [https://actol-pretrain.github.io/](https://actol-pretrain.github.io/)  
 **Area**: Reinforcement Learning
 **Keywords**: Vision-language pretraining, embodied intelligence, imitation learning, temporal consistency, Brownian bridge
 

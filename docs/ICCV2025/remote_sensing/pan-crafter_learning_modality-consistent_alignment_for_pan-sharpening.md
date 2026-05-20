@@ -18,8 +18,8 @@ content_hash: dacd677a7c285694
 # Pan-Crafter: Learning Modality-Consistent Alignment for Pan-Sharpening
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.23367](https://arxiv.org/abs/2505.23367)
-**Code**: [https://kaist-viclab.github.io/PAN-Crafter_site](https://kaist-viclab.github.io/PAN-Crafter_site)
+**arXiv**: [2505.23367](https://arxiv.org/abs/2505.23367)  
+**Code**: [https://kaist-viclab.github.io/PAN-Crafter_site](https://kaist-viclab.github.io/PAN-Crafter_site)  
 **Area**: Remote Sensing / Pan-Sharpening
 **Keywords**: Pan-sharpening, cross-modal alignment, modality-adaptive reconstruction, attention mechanism, remote sensing image fusion
 

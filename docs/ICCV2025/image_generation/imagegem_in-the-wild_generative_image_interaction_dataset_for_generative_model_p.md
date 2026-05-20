@@ -19,8 +19,8 @@ content_hash: e74ba7b07a587772
 # ImageGem: In-the-wild Generative Image Interaction Dataset for Generative Model Personalization
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.18433](https://arxiv.org/abs/2510.18433)
-**Code**: [Project Page](https://maps-research.github.io/imagegem-iccv2025/)
+**arXiv**: [2510.18433](https://arxiv.org/abs/2510.18433)  
+**Code**: [Project Page](https://maps-research.github.io/imagegem-iccv2025/)  
 **Area**: Image Generation
 **Keywords**: Generative model personalization, user preference alignment, LoRA weight space, DiffusionDPO, recommender systems, diffusion models
 

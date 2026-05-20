@@ -18,8 +18,8 @@ content_hash: b45480733aa2aed6
 # DMAP: A Distribution Map for Text
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.11871](https://arxiv.org/abs/2602.11871)
-**Code**: [https://github.com/Featurespace/dmap](https://github.com/Featurespace/dmap)
+**arXiv**: [2602.11871](https://arxiv.org/abs/2602.11871)  
+**Code**: [https://github.com/Featurespace/dmap](https://github.com/Featurespace/dmap)  
 **Area**: AIGC Detection
 **Keywords**: distribution map for text, machine-generated text detection, statistical testing, token probability, language model analysis
 

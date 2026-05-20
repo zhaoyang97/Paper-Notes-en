@@ -17,8 +17,8 @@ content_hash: cbe1d8df82251fea
 # You Share Beliefs, I Adapt: Progressive Heterogeneous Collaborative Perception
 
 **Conference**: ICCV2025
-**arXiv**: [2509.09310](https://arxiv.org/abs/2509.09310)
-**Code**: [GitHub](https://github.com/sihaoo1/PHCP)
+**arXiv**: [2509.09310](https://arxiv.org/abs/2509.09310)  
+**Code**: [GitHub](https://github.com/sihaoo1/PHCP)  
 **Area**: Other
 **Keywords**: heterogeneous collaborative perception, few-shot domain adaptation, self-training, pseudo labels, inference-time adaptation
 

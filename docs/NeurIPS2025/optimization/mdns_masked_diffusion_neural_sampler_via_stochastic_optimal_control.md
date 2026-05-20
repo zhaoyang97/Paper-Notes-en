@@ -19,9 +19,9 @@ content_hash: 91057d2c95fbff9d
 # MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.10684](https://arxiv.org/abs/2508.10684)
+**arXiv**: [2508.10684](https://arxiv.org/abs/2508.10684)  
 **Authors**: Yuchen Zhu, Wei Guo, Jaemoo Choi (Georgia Tech), Guan-Horng Liu (FAIR at Meta), Yongxin Chen, Molei Tao (Georgia Tech)
-**Code**: [github.com/yuchen-zhu-zyc/MDNS](https://github.com/yuchen-zhu-zyc/MDNS)
+**Code**: [github.com/yuchen-zhu-zyc/MDNS](https://github.com/yuchen-zhu-zyc/MDNS)  
 **Area**: Optimization
 **Keywords**: Discrete diffusion models, neural sampler, stochastic optimal control, continuous-time Markov chain, Ising model, Potts model
 

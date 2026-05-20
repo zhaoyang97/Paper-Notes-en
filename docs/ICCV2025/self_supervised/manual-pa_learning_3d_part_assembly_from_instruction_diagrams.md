@@ -18,8 +18,8 @@ content_hash: a2a4cc9bef141a76
 # Manual-PA: Learning 3D Part Assembly from Instruction Diagrams
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.18011](https://arxiv.org/abs/2411.18011)
-**Code**: None
+**arXiv**: [2411.18011](https://arxiv.org/abs/2411.18011)  
+**Code**: None  
 **Area**: Self-Supervised
 **Keywords**: 3D Part Assembly, Instruction Diagram Assembly, Transformer, Contrastive Learning, Permutation Learning
 

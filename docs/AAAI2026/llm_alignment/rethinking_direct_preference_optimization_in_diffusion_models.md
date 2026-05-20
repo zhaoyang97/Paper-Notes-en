@@ -18,8 +18,8 @@ content_hash: 43c5b7dd957fa0a8
 # Rethinking Direct Preference Optimization in Diffusion Models
 
 **Conference**: AAAI 2026 (Oral)
-**arXiv**: [2505.18736](https://arxiv.org/abs/2505.18736)
-**Code**: Available
+**arXiv**: [2505.18736](https://arxiv.org/abs/2505.18736)  
+**Code**: Available  
 **Area**: Alignment & RLHF / Diffusion Models
 **Keywords**: DPO, diffusion models, reference model update, timestep-awareness, T2I preference alignment
 

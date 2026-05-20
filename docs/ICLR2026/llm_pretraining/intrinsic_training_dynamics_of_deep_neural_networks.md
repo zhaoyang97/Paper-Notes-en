@@ -18,8 +18,8 @@ content_hash: 8912533a9ffbb042
 # Intrinsic Training Dynamics of Deep Neural Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.07370](https://arxiv.org/abs/2508.07370)
-**Code**: None
+**arXiv**: [2508.07370](https://arxiv.org/abs/2508.07370)  
+**Code**: None  
 **Area**: Deep Learning Theory / Optimization Dynamics
 **Keywords**: intrinsic dynamics, gradient flow, conservation laws, implicit bias, Riemannian metric
 

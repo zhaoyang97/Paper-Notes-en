@@ -18,8 +18,8 @@ content_hash: cf64c1314251d600
 # Nudging the Boundaries of LLM Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25666](https://arxiv.org/abs/2509.25666)
-**Code**: [GitHub](https://github.com/SalesforceAIResearch/NuRL)
+**arXiv**: [2509.25666](https://arxiv.org/abs/2509.25666)  
+**Code**: [GitHub](https://github.com/SalesforceAIResearch/NuRL)  
 **Area**: LLM Reasoning
 **Keywords**: Reinforcement Learning Reasoning, GRPO Improvement, Self-Generated Hints, Capability Upper Bound, Zone of Proximal Development
 

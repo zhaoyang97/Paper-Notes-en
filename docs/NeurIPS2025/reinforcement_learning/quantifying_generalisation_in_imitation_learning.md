@@ -18,8 +18,8 @@ content_hash: 4af6652cf7514742
 # Quantifying Generalisation in Imitation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.24784](https://arxiv.org/abs/2509.24784)
-**Code**: [https://github.com/NathanGavenski/Labyrinth](https://github.com/NathanGavenski/Labyrinth)
+**arXiv**: [2509.24784](https://arxiv.org/abs/2509.24784)  
+**Code**: [https://github.com/NathanGavenski/Labyrinth](https://github.com/NathanGavenski/Labyrinth)  
 **Area**: Reinforcement Learning
 **Keywords**: imitation learning, generalisation evaluation, benchmark environment, maze navigation, benchmark
 

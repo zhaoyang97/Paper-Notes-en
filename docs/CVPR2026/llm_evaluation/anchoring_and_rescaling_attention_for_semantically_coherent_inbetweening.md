@@ -18,8 +18,8 @@ content_hash: 52640e8cf7e24530
 # Anchoring and Rescaling Attention for Semantically Coherent Inbetweening
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17651](https://arxiv.org/abs/2603.17651)
-**Code**: To be confirmed
+**arXiv**: [2603.17651](https://arxiv.org/abs/2603.17651)  
+**Code**: To be confirmed  
 **Area**: LLM Evaluation
 **Keywords**: Generative inbetweening, attention anchoring, temporal RoPE rescaling, keyframe guidance, video diffusion models
 

@@ -18,8 +18,8 @@ content_hash: 97cb76925394c740
 # F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14920](https://arxiv.org/abs/2603.14920)
-**Code**: [https://github.com/wei1895/F2HDR](https://github.com/wei1895/F2HDR)
+**arXiv**: [2603.14920](https://arxiv.org/abs/2603.14920)  
+**Code**: [https://github.com/wei1895/F2HDR](https://github.com/wei1895/F2HDR)  
 **Area**: Model Compression
 **Keywords**: HDR video reconstruction, flow adapter, physical motion modeling, alternating exposure, two-stage reconstruction
 

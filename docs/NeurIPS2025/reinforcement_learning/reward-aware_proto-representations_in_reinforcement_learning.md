@@ -18,8 +18,8 @@ content_hash: 4162ad3ece28c606
 # Reward-Aware Proto-Representations in Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16217](https://arxiv.org/abs/2505.16217)
-**Code**: None
+**arXiv**: [2505.16217](https://arxiv.org/abs/2505.16217)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Successor Representation, Default Representation, Reward-Aware Representation, Option Discovery, Transfer Learning
 

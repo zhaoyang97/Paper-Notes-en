@@ -18,8 +18,8 @@ content_hash: b1ec54fe1f0c9cfd
 # Balanced Conic Rectified Flow
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25229](https://arxiv.org/abs/2510.25229)
-**Code**: [Project Page](https://grainsack.github.io/BC_rectified_flow_project_page/)
+**arXiv**: [2510.25229](https://arxiv.org/abs/2510.25229)  
+**Code**: [Project Page](https://grainsack.github.io/BC_rectified_flow_project_page/)  
 **Area**: Image Generation / Flow Matching
 **Keywords**: rectified flow, reflow, conic interpolation, Slerp, distribution drift
 

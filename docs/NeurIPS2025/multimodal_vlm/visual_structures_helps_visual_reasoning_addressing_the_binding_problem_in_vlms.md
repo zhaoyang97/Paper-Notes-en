@@ -19,8 +19,8 @@ content_hash: bc5f75125c3877c8
 # Visual Structures Help Visual Reasoning: Addressing the Binding Problem in LVLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.22146](https://arxiv.org/abs/2506.22146)
-**Code**: [https://sharif-ml-lab.github.io/VISER/](https://sharif-ml-lab.github.io/VISER/)
+**arXiv**: [2506.22146](https://arxiv.org/abs/2506.22146)  
+**Code**: [https://sharif-ml-lab.github.io/VISER/](https://sharif-ml-lab.github.io/VISER/)  
 **Area**: Multimodal VLM
 **Keywords**: Visual reasoning, binding problem, visual prompting, LVLM, spatial structure, cognitive science
 

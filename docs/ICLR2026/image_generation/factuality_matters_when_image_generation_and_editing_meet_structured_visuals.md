@@ -18,8 +18,8 @@ content_hash: eb10aa251ea42175
 # Factuality Matters: When Image Generation and Editing Meet Structured Visuals
 
 **Conference**: ICLR2026
-**arXiv**: [2510.05091](https://arxiv.org/abs/2510.05091)
-**Code**: [structvisuals.github.io](https://structvisuals.github.io)
+**arXiv**: [2510.05091](https://arxiv.org/abs/2510.05091)  
+**Code**: [structvisuals.github.io](https://structvisuals.github.io)  
 **Area**: Image Generation
 **Keywords**: structured image generation, image editing, chain-of-thought reasoning, benchmark, diffusion transformer
 
@@ -60,10 +60,10 @@ How to systematically improve model capability for structured image generation a
 ### StructBench Benchmark
 - **Scale**: 1,714 samples; 32,031 Q&A pairs for editing evaluation; 37,941 Q&A pairs for generation evaluation; covering six categories: Math, Graph, Chart, Puzzle, Science, and Table
 - **StructScore metric**:
-  - A VLM-based multi-turn Q&A protocol that generates fine-grained atomic question–answer pairs from ground-truth images
-  - Open-ended answers are elicited from model-generated images, forming [question, predicted answer, ground-truth answer] triples for comparison
-  - Editing evaluation decouples visual consistency and instruction-following into two dimensions, combined via weighted scoring ($0.1 \times \text{consistency} + 0.9 \times \text{instruction-following}$)
-  - Atomized question decomposition and Q&A refinement improve ground-truth image accuracy from ~80% to >95%
+    - A VLM-based multi-turn Q&A protocol that generates fine-grained atomic question–answer pairs from ground-truth images
+    - Open-ended answers are elicited from model-generated images, forming [question, predicted answer, ground-truth answer] triples for comparison
+    - Editing evaluation decouples visual consistency and instruction-following into two dimensions, combined via weighted scoring ($0.1 \times \text{consistency} + 0.9 \times \text{instruction-following}$)
+    - Atomized question decomposition and Q&A refinement improve ground-truth image accuracy from ~80% to >95%
 
 ## Key Experimental Results
 - **Editing benchmark (StructEditBench)**: The proposed model ranks **first** overall (open- and closed-source) with 55.98% accuracy, surpassing Nano Banana (51.57%), GPT-Image (52.20%), and Seedream 4.0 (52.85%); Nano Banana 2.0 achieves the highest score at 67.05%

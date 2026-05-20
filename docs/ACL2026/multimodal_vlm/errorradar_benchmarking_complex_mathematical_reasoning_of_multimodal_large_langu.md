@@ -18,8 +18,8 @@ content_hash: fa71170fa6a49517
 # ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection
 
 **Conference**: ACL 2026
-**arXiv**: [2410.04509](https://arxiv.org/abs/2410.04509)
-**Code**: None
+**arXiv**: [2410.04509](https://arxiv.org/abs/2410.04509)  
+**Code**: None  
 **Area**: Multimodal VLM / Mathematical Reasoning Evaluation
 **Keywords**: Multimodal error detection, mathematical reasoning benchmark, K-12 education, error step localization, error classification
 

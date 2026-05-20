@@ -17,8 +17,8 @@ content_hash: b5973b899aab0190
 # Next-Scale Autoregressive Models for Text-to-Motion Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03799](https://arxiv.org/abs/2604.03799)
-**Code**: See project homepage
+**arXiv**: [2604.03799](https://arxiv.org/abs/2604.03799)  
+**Code**: See project homepage  
 **Area**: Other
 **Keywords**: text-to-motion generation, autoregressive models, multi-scale prediction, hierarchical generation, motion synthesis
 

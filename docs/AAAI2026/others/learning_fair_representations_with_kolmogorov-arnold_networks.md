@@ -17,8 +17,8 @@ content_hash: 9c5ef6b3f69a69e4
 # Learning Fair Representations with Kolmogorov-Arnold Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11767](https://arxiv.org/abs/2511.11767)
-**Code**: N/A
+**arXiv**: [2511.11767](https://arxiv.org/abs/2511.11767)  
+**Code**: N/A  
 **Area**: Fairness in Machine Learning / Explainable AI
 **Keywords**: Kolmogorov-Arnold Networks, adversarial debiasing, fairness, adaptive penalty, college admissions
 

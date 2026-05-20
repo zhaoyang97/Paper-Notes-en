@@ -17,8 +17,8 @@ content_hash: 179cf015b9ef4bbd
 # Variance Computation for Weighted Model Counting with Knowledge Compilation Approach
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.03523](https://arxiv.org/abs/2601.03523)
-**Code**: [https://github.com/nttcslab/variance-wmc](https://github.com/nttcslab/variance-wmc)
+**arXiv**: [2601.03523](https://arxiv.org/abs/2601.03523)  
+**Code**: [https://github.com/nttcslab/variance-wmc](https://github.com/nttcslab/variance-wmc)  
 **Area**: Knowledge Compilation / Probabilistic Inference / Weighted Model Counting
 **Keywords**: Weighted Model Counting, Knowledge Compilation, Variance Computation, Bayesian Networks, Structured d-DNNF
 

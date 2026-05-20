@@ -18,8 +18,8 @@ content_hash: f8976ca200011175
 # High-Resolution Spatiotemporal Modeling with Global-Local State Space Models for Video-Based Human Pose Estimation
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.11017](https://arxiv.org/abs/2510.11017)
-**Code**: N/A
+**arXiv**: [2510.11017](https://arxiv.org/abs/2510.11017)  
+**Code**: N/A  
 **Area**: Human Understanding
 **Keywords**: Video Human Pose Estimation, Mamba, State Space Model, Spatiotemporal Modeling, High-Resolution
 

@@ -18,8 +18,8 @@ content_hash: 89f937d93748b864
 # GRADIEND: Feature Learning within Neural Networks Exemplified through Biases
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.01406](https://arxiv.org/abs/2502.01406)
-**Code**: [https://github.com/aieng-lab/gradiend](https://github.com/aieng-lab/gradiend)
+**arXiv**: [2502.01406](https://arxiv.org/abs/2502.01406)  
+**Code**: [https://github.com/aieng-lab/gradiend](https://github.com/aieng-lab/gradiend)  
 **Area**: Social Computing
 **Keywords**: monosemantic feature learning, gender debiasing, gradient encoder-decoder, Transformer debiasing, interpretability
 

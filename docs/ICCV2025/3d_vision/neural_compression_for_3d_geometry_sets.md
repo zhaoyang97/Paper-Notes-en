@@ -18,8 +18,8 @@ content_hash: f3634867a0f916a1
 # Neural Compression for 3D Geometry Sets
 
 **Conference**: ICCV 2025
-**arXiv**: [2405.15034](https://arxiv.org/abs/2405.15034)
-**Code**: [GitHub](https://github.com/rsy6318/NeCGS)
+**arXiv**: [2405.15034](https://arxiv.org/abs/2405.15034)  
+**Code**: [GitHub](https://github.com/rsy6318/NeCGS)  
 **Area**: 3D Vision
 **Keywords**: 3D geometry compression, neural compression, TSDF, auto-decoder, geometry sets
 

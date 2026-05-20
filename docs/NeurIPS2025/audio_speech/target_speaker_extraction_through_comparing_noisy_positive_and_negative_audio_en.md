@@ -18,8 +18,8 @@ content_hash: 81f5bfd0fd12987d
 # Target Speaker Extraction Through Comparing Noisy Positive and Negative Audio Enrollments
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.16611](https://arxiv.org/abs/2502.16611)
-**Code**: [Available](https://github.com/xu-shitong/TSE-through-Positive-Negative-Enroll)
+**arXiv**: [2502.16611](https://arxiv.org/abs/2502.16611)  
+**Code**: [Available](https://github.com/xu-shitong/TSE-through-Positive-Negative-Enroll)  
 **Area**: Audio & Speech
 **Keywords**: Target speaker extraction, noisy enrollment, positive-negative contrastive, TF-GridNet, two-stage training
 

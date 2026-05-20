@@ -18,8 +18,8 @@ content_hash: f9dac52104b3136e
 # MagicMirror: ID-Preserved Video Generation in Video Diffusion Transformers
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.03931](https://arxiv.org/abs/2501.03931)
-**Code**: [https://github.com/dvlab-research/MagicMirror/](https://github.com/dvlab-research/MagicMirror/)
+**arXiv**: [2501.03931](https://arxiv.org/abs/2501.03931)  
+**Code**: [https://github.com/dvlab-research/MagicMirror/](https://github.com/dvlab-research/MagicMirror/)  
 **Area**: Diffusion Models
 **Keywords**: Identity-preserving video generation, Diffusion Transformer, facial feature extraction, adaptive normalization, two-stage training
 

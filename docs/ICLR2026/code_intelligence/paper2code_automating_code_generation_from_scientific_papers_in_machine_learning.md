@@ -18,8 +18,8 @@ content_hash: 150097f14c85dfa7
 # Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2504.17192](https://arxiv.org/abs/2504.17192)
-**Code**: [github.com/going-doer/Paper2Code](https://github.com/going-doer/Paper2Code)
+**arXiv**: [2504.17192](https://arxiv.org/abs/2504.17192)  
+**Code**: [github.com/going-doer/Paper2Code](https://github.com/going-doer/Paper2Code)  
 **Area**: Code Intelligence
 **Keywords**: paper-to-code, multi-agent framework, repository-level code generation, scientific reproducibility, LLM
 

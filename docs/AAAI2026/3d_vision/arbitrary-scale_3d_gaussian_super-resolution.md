@@ -18,8 +18,8 @@ content_hash: e54ffb20b1383c6b
 # Arbitrary-Scale 3D Gaussian Super-Resolution
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.16467](https://arxiv.org/abs/2508.16467)
-**Code**: [https://github.com/huimin-zeng/Arbi-3DGSR](https://github.com/huimin-zeng/Arbi-3DGSR)
+**arXiv**: [2508.16467](https://arxiv.org/abs/2508.16467)  
+**Code**: [https://github.com/huimin-zeng/Arbi-3DGSR](https://github.com/huimin-zeng/Arbi-3DGSR)  
 **Area**: 3D Vision / 3D Gaussian Splatting / Super-Resolution
 **Keywords**: 3DGS, arbitrary-scale super-resolution, scale-aware rendering, generative prior, progressive training
 

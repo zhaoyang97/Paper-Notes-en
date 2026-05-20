@@ -18,8 +18,8 @@ content_hash: bc508a13d36bd2f4
 # HiERO: Understanding the Hierarchy of Human Behavior Enhances Reasoning on Egocentric Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.12911](https://arxiv.org/abs/2505.12911)
-**Code**: [github.com/sapeirone/HiERO](https://github.com/sapeirone/HiERO)
+**arXiv**: [2505.12911](https://arxiv.org/abs/2505.12911)  
+**Code**: [github.com/sapeirone/HiERO](https://github.com/sapeirone/HiERO)  
 **Area**: LLM Evaluation
 **Keywords**: Egocentric video understanding, hierarchical behavior modeling, graph neural networks, procedure learning, zero-shot reasoning
 

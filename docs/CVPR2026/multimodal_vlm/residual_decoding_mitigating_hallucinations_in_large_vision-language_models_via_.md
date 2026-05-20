@@ -18,8 +18,8 @@ content_hash: 42a4f69e264fb23c
 # Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance
 
 **Conference**: CVPR2026
-**arXiv**: [2602.01047](https://arxiv.org/abs/2602.01047)
-**Code**: None
+**arXiv**: [2602.01047](https://arxiv.org/abs/2602.01047)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Hallucination Mitigation, Decoding Strategy, Vision-Language Models, Residual Guidance, Training-Free
 

@@ -18,8 +18,8 @@ content_hash: 21c88b6102bbb003
 # CyclicReflex: Improving Reasoning Models via Cyclical Reflection Token Scheduling
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.11077](https://arxiv.org/abs/2506.11077)
-**Code**: [https://github.com/OPTML-Group/CyclicReflex](https://github.com/OPTML-Group/CyclicReflex)
+**arXiv**: [2506.11077](https://arxiv.org/abs/2506.11077)  
+**Code**: [https://github.com/OPTML-Group/CyclicReflex](https://github.com/OPTML-Group/CyclicReflex)  
 **Area**: LLM Reasoning
 **Keywords**: large language reasoning models, reflection token scheduling, test-time scaling, cyclical learning rate, decoding strategy
 
@@ -45,9 +45,9 @@ CyclicReflex is a training-free decoding strategy that dynamically adjusts the l
 1. **Formalization of reflection token resource allocation**: Reflection tokens ("wait", "but", "alternatively", etc.) are treated as schedulable resources whose frequency and placement directly influence reasoning quality. Extended experiments with TIP (allowing positive and negative $\alpha$) reveal that TIP($-3$) yields the largest gain on hard problems but severely degrades performance on easy ones, while TIP($+1$) provides a slight improvement on easy problems. This demonstrates that a single fixed strategy cannot generalize across varying difficulty levels.
 
 2. **Validation via thought landscape analogy**: The Landscape of Thoughts visualization tool is used to project reasoning steps into a 2D space, validating three distinct patterns:
-   - Under-reflection: the reasoning trajectory is overly conservative and fails to move far from the starting point.
-   - Desired-reflection: the trajectory is well-structured and converges to the correct answer.
-   - Over-reflection: the model reaches a region close to the correct answer (e.g., "Alternatively, perhaps the correct answer is...") but excessive reflection causes it to overshoot and ultimately deviate from the correct answer.
+    - Under-reflection: the reasoning trajectory is overly conservative and fails to move far from the starting point.
+    - Desired-reflection: the trajectory is well-structured and converges to the correct answer.
+    - Over-reflection: the model reaches a region close to the correct answer (e.g., "Alternatively, perhaps the correct answer is...") but excessive reflection causes it to overshoot and ultimately deviate from the correct answer.
 
 3. **Core formulation of CyclicReflex**: A position-dependent bidirectional triangular waveform is used to modulate the logits of reflection tokens:
 
@@ -58,10 +58,10 @@ $$\delta(t) = A \left| \frac{4 \cdot (t - C/4) \bmod C}{C} - 2 \right| - A$$
 where $A$ is the amplitude (controlling adjustment magnitude), $C$ is the period (controlling oscillation frequency), and $\hat{V}$ is the set of reflection tokens. The schedule yields $\delta(C/4) = A > 0$, which promotes reflection, and $\delta(3C/4) = -A < 0$, which suppresses reflection.
 
 4. **Key distinctions from TIP**:
-   - TIP is **unidirectional and static** (fixed $\alpha \leq 0$), only suppressing reflection tokens.
-   - CyclicReflex is **bidirectional and dynamic**, alternately promoting and suppressing reflection.
-   - The ascending phase encourages exploration (switching reasoning directions), while the descending phase facilitates convergence (stabilizing the reasoning process).
-   - This mirrors the stepsize hedging strategy of cyclical learning rates.
+    - TIP is **unidirectional and static** (fixed $\alpha \leq 0$), only suppressing reflection tokens.
+    - CyclicReflex is **bidirectional and dynamic**, alternately promoting and suppressing reflection.
+    - The ascending phase encourages exploration (switching reasoning directions), while the descending phase facilitates convergence (stabilizing the reasoning process).
+    - This mirrors the stepsize hedging strategy of cyclical learning rates.
 
 ### Loss & Training
 The method requires no training whatsoever and is a purely inference-time strategy. Hyperparameters are determined via grid search: $A \in [1, 10]$ and $C \in [200, 2000]$ (varying by dataset).

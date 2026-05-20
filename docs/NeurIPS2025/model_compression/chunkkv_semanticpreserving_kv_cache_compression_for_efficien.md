@@ -18,8 +18,8 @@ content_hash: 09748806a4d4f34b
 # ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.00299](https://arxiv.org/abs/2502.00299)
-**Code**: [https://github.com/NVIDIA/kvpress](https://github.com/NVIDIA/kvpress)
+**arXiv**: [2502.00299](https://arxiv.org/abs/2502.00299)  
+**Code**: [https://github.com/NVIDIA/kvpress](https://github.com/NVIDIA/kvpress)  
 **Area**: Model Compression
 **Keywords**: KV cache compression, semantic chunk, layer-wise index reuse, long-context inference, memory efficiency
 

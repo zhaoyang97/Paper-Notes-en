@@ -18,8 +18,8 @@ content_hash: d1a648289a24fd49
 # IM-LUT: Interpolation Mixing Look-Up Tables for Image Super-Resolution
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.09923](https://arxiv.org/abs/2507.09923)
-**Code**: N/A
+**arXiv**: [2507.09923](https://arxiv.org/abs/2507.09923)  
+**Code**: N/A  
 **Area**: Image Restoration / Super-Resolution
 **Keywords**: Arbitrary-scale super-resolution, look-up table, interpolation function mixing, lightweight inference, CPU-friendly
 

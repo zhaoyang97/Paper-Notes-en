@@ -18,8 +18,8 @@ content_hash: 40e85e04d252b75a
 # SelfReflect: Can LLMs Communicate Their Internal Answer Distribution?
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.20295](https://arxiv.org/abs/2505.20295)
-**Code**: [apple/ml-selfreflect](https://github.com/apple/ml-selfreflect)
+**arXiv**: [2505.20295](https://arxiv.org/abs/2505.20295)  
+**Code**: [apple/ml-selfreflect](https://github.com/apple/ml-selfreflect)  
 **Area**: Causal Reasoning
 **Keywords**: LLM uncertainty, internal distribution, information-theoretic distance, faithfulness metric, uncertainty communication
 

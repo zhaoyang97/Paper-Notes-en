@@ -18,8 +18,8 @@ content_hash: 1452b4524d0bc781
 # Instance Generation for Meta-Black-Box Optimization through Latent Space Reverse Engineering
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.15810](https://arxiv.org/abs/2509.15810)
-**Code**: [https://github.com/MetaEvo/Diverse-BBO](https://github.com/MetaEvo/Diverse-BBO)
+**arXiv**: [2509.15810](https://arxiv.org/abs/2509.15810)  
+**Code**: [https://github.com/MetaEvo/Diverse-BBO](https://github.com/MetaEvo/Diverse-BBO)  
 **Area**: Optimization
 **Keywords**: Meta-Black-Box Optimization, Instance Generation, Genetic Programming, Latent Space, Benchmark
 

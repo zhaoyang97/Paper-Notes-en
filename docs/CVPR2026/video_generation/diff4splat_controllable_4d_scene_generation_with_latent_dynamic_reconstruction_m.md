@@ -18,8 +18,8 @@ content_hash: 0e6b780267f247d0
 # Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.00503](https://arxiv.org/abs/2511.00503)
-**Code**: [Project Page](https://paulpanwang.github.io/Diff4Splat)
+**arXiv**: [2511.00503](https://arxiv.org/abs/2511.00503)  
+**Code**: [Project Page](https://paulpanwang.github.io/Diff4Splat)  
 **Area**: Video Generation
 **Keywords**: 4D Generation, 3D Gaussian Splatting, Video Diffusion Models, Deformable Gaussian Fields, Feed-Forward Generation
 

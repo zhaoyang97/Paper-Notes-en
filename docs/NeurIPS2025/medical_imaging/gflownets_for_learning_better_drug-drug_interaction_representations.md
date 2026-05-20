@@ -18,8 +18,8 @@ content_hash: 550441606f9b7c16
 # GFlowNets for Learning Better Drug-Drug Interaction Representations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.06576](https://arxiv.org/abs/2508.06576)
-**Code**: N/A
+**arXiv**: [2508.06576](https://arxiv.org/abs/2508.06576)  
+**Code**: N/A  
 **Area**: Medical AI / Drug Discovery
 **Keywords**: Drug-drug interaction, GFlowNet, variational graph autoencoder, class imbalance, graph generation
 

@@ -18,8 +18,8 @@ content_hash: aac2fae2d3264a6c
 # SEMPO: Lightweight Foundation Models for Time Series Forecasting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19710](https://arxiv.org/abs/2510.19710)
-**Code**: [https://github.com/mala-lab/SEMPO](https://github.com/mala-lab/SEMPO)
+**arXiv**: [2510.19710](https://arxiv.org/abs/2510.19710)  
+**Code**: [https://github.com/mala-lab/SEMPO](https://github.com/mala-lab/SEMPO)  
 **Area**: Time Series Forecasting
 **Keywords**: Time series foundation models, lightweight, spectral decomposition, mixture of prompts, zero-shot/few-shot forecasting
 

@@ -18,8 +18,8 @@ content_hash: 1519bcb312444675
 # Characterizing the Expressivity of Fixed-Precision Transformer Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23623](https://arxiv.org/abs/2505.23623)
-**Code**: [GitHub](https://github.com/jiaoda-li/LTL-P-Transformer)
+**arXiv**: [2505.23623](https://arxiv.org/abs/2505.23623)  
+**Code**: [GitHub](https://github.com/jiaoda-li/LTL-P-Transformer)  
 **Area**: LLM Theory
 **Keywords**: transformer expressivity, formal language theory, linear temporal logic, fixed precision, length generalization
 
@@ -53,27 +53,27 @@ The proof proceeds in two steps: (1) Transformer $\to$ $\text{PFO}^2[<]$ (upper 
 
 1. **Upper Bound: Transformer → $\text{PFO}^2[<]$**
 
-   - **Function**: Proves that any language recognized by a fixed-precision Transformer can be described by a $\text{PFO}^2[<]$ formula.
-   - **Mechanism**: Under fixed precision, attention weights can only take finitely many values. Since attention distributions are position-invariant (NoPE), attention patterns depend only on which tokens have appeared in the past and how many times — truncated by finite precision — which is exactly what $\text{PFO}^2[<]$ can express.
-   - **Design Motivation**: The "weighted average" computed by soft attention under fixed precision can distinguish only finitely many cases, drastically reducing its power compared to the arbitrary-precision setting.
+    - **Function**: Proves that any language recognized by a fixed-precision Transformer can be described by a $\text{PFO}^2[<]$ formula.
+    - **Mechanism**: Under fixed precision, attention weights can only take finitely many values. Since attention distributions are position-invariant (NoPE), attention patterns depend only on which tokens have appeared in the past and how many times — truncated by finite precision — which is exactly what $\text{PFO}^2[<]$ can express.
+    - **Design Motivation**: The "weighted average" computed by soft attention under fixed precision can distinguish only finitely many cases, drastically reducing its power compared to the arbitrary-precision setting.
 
 2. **Lower Bound: LTL[P] → Transformer**
 
-   - **Function**: Proves that the language corresponding to any LTL[P] formula can be recognized by a Transformer.
-   - **Mechanism**: LTL[P] formulas are simulated by structural induction. Atomic formulas $\pi_a$ ("current symbol is $a$") are trivially realizable; Boolean operations are realizable at any precision; the past operator P ("does there exist a past position satisfying $\psi$") is realizable via the attention mechanism, which can attend to historical positions satisfying $\psi$.
-   - **Design Motivation**: Under the NoPE setting, there is no mechanism to simulate the future operator F, until operator U, or since operator S, so expressivity is strictly weaker than LTL[P,F,S,U].
+    - **Function**: Proves that the language corresponding to any LTL[P] formula can be recognized by a Transformer.
+    - **Mechanism**: LTL[P] formulas are simulated by structural induction. Atomic formulas $\pi_a$ ("current symbol is $a$") are trivially realizable; Boolean operations are realizable at any precision; the past operator P ("does there exist a past position satisfying $\psi$") is realizable via the attention mechanism, which can attend to historical positions satisfying $\psi$.
+    - **Design Motivation**: Under the NoPE setting, there is no mechanism to simulate the future operator F, until operator U, or since operator S, so expressivity is strictly weaker than LTL[P,F,S,U].
 
 3. **Equivalence of LTL[P] with PODFA and $\mathcal{R}$-trivial Monoids**
 
-   - **Function**: Connects the logical characterization to automata theory and algebraic theory.
-   - **PODFA**: Partially ordered deterministic finite automata — DFAs whose state transition graph forms a partial order.
-   - **$\mathcal{R}$-trivial monoids**: Monoids whose syntactic $\mathcal{R}$-classes are all trivial.
-   - **Formal Language Perspective**: This corresponds precisely to the class of languages recognized by left-deterministic polynomials.
+    - **Function**: Connects the logical characterization to automata theory and algebraic theory.
+    - **PODFA**: Partially ordered deterministic finite automata — DFAs whose state transition graph forms a partial order.
+    - **$\mathcal{R}$-trivial monoids**: Monoids whose syntactic $\mathcal{R}$-classes are all trivial.
+    - **Formal Language Perspective**: This corresponds precisely to the class of languages recognized by left-deterministic polynomials.
 
 4. **Extension to Transformer Language Models**
 
-   - **Function**: Proves that Transformer LMs (generative models rather than recognizers) have the same expressive power.
-   - **Mechanism**: A language model implicitly defines language recognition via thresholding $p(\text{eos} \mid \mathbf{w})$, which is equivalent to recognition by a classifier.
+    - **Function**: Proves that Transformer LMs (generative models rather than recognizers) have the same expressive power.
+    - **Mechanism**: A language model implicitly defines language recognition via thresholding $p(\text{eos} \mid \mathbf{w})$, which is equivalent to recognition by a classifier.
 
 ### Loss & Training
 No training methodology is proposed — this is a purely theoretical work with empirical validation.

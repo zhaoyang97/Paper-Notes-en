@@ -18,8 +18,8 @@ content_hash: 837423178cfa6b3d
 # Enhancing Rotation-Invariant 3D Learning with Global Pose Awareness and Attention Mechanisms
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08833](https://arxiv.org/abs/2511.08833)
-**Code**: [GitHub](https://github.com/jiaxunguo/EnRI-GAM)
+**arXiv**: [2511.08833](https://arxiv.org/abs/2511.08833)  
+**Code**: [GitHub](https://github.com/jiaxunguo/EnRI-GAM)  
 **Area**: 3D Vision
 **Keywords**: Rotation invariance, point cloud classification, part segmentation, attention mechanism, global pose awareness
 

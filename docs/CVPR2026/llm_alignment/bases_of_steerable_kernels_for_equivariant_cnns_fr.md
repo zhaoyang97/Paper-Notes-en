@@ -18,8 +18,8 @@ content_hash: fcbcf9cdbf697f0d
 # Bases of Steerable Kernels for Equivariant CNNs: From 2D Rotations to the Lorentz Group
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12459](https://arxiv.org/abs/2603.12459)
-**Code**: N/A
+**arXiv**: [2603.12459](https://arxiv.org/abs/2603.12459)  
+**Code**: N/A  
 **Area**: Equivariant Neural Networks / Group Theory
 **Keywords**: Steerable Kernels, Equivariant CNN, Symmetry Groups, Lorentz Group, Clebsch-Gordan Coefficients
 

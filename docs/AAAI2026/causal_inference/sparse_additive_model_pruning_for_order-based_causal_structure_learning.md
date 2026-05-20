@@ -18,8 +18,8 @@ content_hash: d0473e9a25d9572a
 # Sparse Additive Model Pruning for Order-Based Causal Structure Learning
 
 **Conference**: AAAI2026
-**arXiv**: [2602.15306](https://arxiv.org/abs/2602.15306)
-**Code**: To be confirmed
+**arXiv**: [2602.15306](https://arxiv.org/abs/2602.15306)  
+**Code**: To be confirmed  
 **Area**: Causal Inference
 **Keywords**: causal discovery, sparse additive model, DAG pruning, group lasso, randomized tree embedding
 

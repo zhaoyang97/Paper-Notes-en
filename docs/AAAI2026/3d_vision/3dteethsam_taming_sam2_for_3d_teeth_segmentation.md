@@ -18,8 +18,8 @@ content_hash: 4100f16abae870e4
 # 3DTeethSAM: Taming SAM2 for 3D Teeth Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.11557](https://arxiv.org/abs/2512.11557)
-**Code**: [https://github.com/Crisitofy/3DTeethSAM](https://github.com/Crisitofy/3DTeethSAM)
+**arXiv**: [2512.11557](https://arxiv.org/abs/2512.11557)  
+**Code**: [https://github.com/Crisitofy/3DTeethSAM](https://github.com/Crisitofy/3DTeethSAM)  
 **Area**: 3D Vision / Medical Image Segmentation
 **Keywords**: 3D teeth segmentation, SAM2 adaptation, multi-view rendering, deformable attention, foundation model transfer
 

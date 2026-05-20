@@ -18,8 +18,8 @@ content_hash: a0ad46e2996ca90c
 # M-Net: MRI Brain Tumor Sequential Segmentation Network via Mesh-Cast
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.20582](https://arxiv.org/abs/2507.20582)
-**Code**: N/A
+**arXiv**: [2507.20582](https://arxiv.org/abs/2507.20582)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: MRI brain tumor segmentation, sequential modeling, Mesh-Cast mechanism, spatiotemporal correlation, two-phase training
 

@@ -18,8 +18,8 @@ content_hash: 0ba7ab8b25e1b9cc
 # Certifying Stability of Reinforcement Learning Policies using Generalized Lyapunov Functions
 
 **Conference**: NEURIPS2025
-**arXiv**: [2505.10947](https://arxiv.org/abs/2505.10947)
-**Code**: [GitHub](https://github.com/ExistentialRobotics/Generalized_Policy_Stability)
+**arXiv**: [2505.10947](https://arxiv.org/abs/2505.10947)  
+**Code**: [GitHub](https://github.com/ExistentialRobotics/Generalized_Policy_Stability)  
 **Area**: Reinforcement Learning
 **Keywords**: Lyapunov stability, reinforcement-learning, stability certification, value function, region of attraction
 

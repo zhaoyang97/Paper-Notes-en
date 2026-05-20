@@ -18,8 +18,8 @@ content_hash: 8ab457930f4d941b
 # MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2601.03331](https://arxiv.org/abs/2601.03331)
-**Code**: [https://mmerror-benchmark.github.io](https://mmerror-benchmark.github.io)
+**arXiv**: [2601.03331](https://arxiv.org/abs/2601.03331)  
+**Code**: [https://mmerror-benchmark.github.io](https://mmerror-benchmark.github.io)  
 **Area**: Multimodal VLM
 **Keywords**: erroneous reasoning diagnosis, vision-language model evaluation, process-level assessment, error taxonomy, multimodal reasoning
 

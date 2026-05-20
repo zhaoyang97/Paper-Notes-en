@@ -18,8 +18,8 @@ content_hash: 6fe15da46b18bb6c
 # Semi-Supervised Regression with Heteroscedastic Pseudo-Labels
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.15266](https://arxiv.org/abs/2510.15266)
-**Code**: [GitHub](https://github.com/sxq/Heteroscedastic-Pseudo-Labels)
+**arXiv**: [2510.15266](https://arxiv.org/abs/2510.15266)  
+**Code**: [GitHub](https://github.com/sxq/Heteroscedastic-Pseudo-Labels)  
 **Area**: Semi-Supervised Learning / Regression
 **Keywords**: semi-supervised regression, pseudo-labels, heteroscedastic uncertainty, bilevel optimization, uncertainty estimation
 

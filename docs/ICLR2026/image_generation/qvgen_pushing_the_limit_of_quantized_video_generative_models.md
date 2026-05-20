@@ -18,8 +18,8 @@ content_hash: f14755a4de181634
 # QVGen: Pushing the Limit of Quantized Video Generative Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.11497](https://arxiv.org/abs/2505.11497)
-**Code**: [https://github.com/ModelTC/QVGen](https://github.com/ModelTC/QVGen)
+**arXiv**: [2505.11497](https://arxiv.org/abs/2505.11497)  
+**Code**: [https://github.com/ModelTC/QVGen](https://github.com/ModelTC/QVGen)  
 **Area**: Image Generation
 **Keywords**: Video Diffusion Models, Quantization-Aware Training, Low-Bit Quantization, Rank Decay Strategy, Auxiliary Modules
 

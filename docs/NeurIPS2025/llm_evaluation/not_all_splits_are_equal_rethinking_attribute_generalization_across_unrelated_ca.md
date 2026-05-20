@@ -19,8 +19,8 @@ content_hash: 221605ea9f094425
 # Not All Splits Are Equal: Rethinking Attribute Generalization Across Unrelated Categories
 
 **Conference**: NEURIPS2025
-**arXiv**: [2509.06998](https://arxiv.org/abs/2509.06998)
-**Code**: To be confirmed
+**arXiv**: [2509.06998](https://arxiv.org/abs/2509.06998)  
+**Code**: To be confirmed  
 **Area**: LLM Evaluation
 **Keywords**: attribute generalization, train/test splits, semantic leakage, clustering, linear probing, visual representations
 

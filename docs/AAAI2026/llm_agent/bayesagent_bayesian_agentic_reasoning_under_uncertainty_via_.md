@@ -17,8 +17,8 @@ content_hash: e98b8d541409f4de
 # BayesAgent: Bayesian Agentic Reasoning Under Uncertainty via Verbalized Probabilistic Graphical Modeling
 
 **Conference**: AAAI 2026
-**arXiv**: [2406.05516](https://arxiv.org/abs/2406.05516)
-**Code**: [https://github.com/xingbpshen/agentic-reasoning-vpgm](https://github.com/xingbpshen/agentic-reasoning-vpgm)
+**arXiv**: [2406.05516](https://arxiv.org/abs/2406.05516)  
+**Code**: [https://github.com/xingbpshen/agentic-reasoning-vpgm](https://github.com/xingbpshen/agentic-reasoning-vpgm)  
 **Area**: LLM Reasoning / Agent
 **Keywords**: Bayesian Inference, Probabilistic Graphical Models, LLM Agent, Uncertainty Calibration, Confidence Estimation
 
@@ -47,21 +47,21 @@ vPGM is a three-stage Bayesian agent reasoning framework: the input consists of 
 
 1. **Graphical Structure Discovery**:
 
-   - Function: Structured prompts elicit from the LLM a set of task-relevant latent variables $\mathbf{Z} = \{Z_1, Z_2, \ldots, Z_n\}$ along with their probabilistic dependency relations.
-   - Mechanism: A prompt comprising the task description, input-output examples, contextual information, and prior constraints is constructed; the LLM outputs a list of latent variables and dependency edges (e.g., $\mathbf{X} \to Z_1, Z_2 \to Z_3, Z_4 \to \mathbf{Y}$). Conditional probability distributions $P(Z_i | \text{Pa}(Z_i))$ are described in natural language rather than through explicit parameterization.
-   - Design Motivation: Conventional PGM structure learning requires expert validation of statistical dependencies or expensive scoring functions. vPGM leverages the LLM's intrinsic knowledge to directly generate plausible graph structures, substantially reducing reliance on domain expertise.
+    - Function: Structured prompts elicit from the LLM a set of task-relevant latent variables $\mathbf{Z} = \{Z_1, Z_2, \ldots, Z_n\}$ along with their probabilistic dependency relations.
+    - Mechanism: A prompt comprising the task description, input-output examples, contextual information, and prior constraints is constructed; the LLM outputs a list of latent variables and dependency edges (e.g., $\mathbf{X} \to Z_1, Z_2 \to Z_3, Z_4 \to \mathbf{Y}$). Conditional probability distributions $P(Z_i | \text{Pa}(Z_i))$ are described in natural language rather than through explicit parameterization.
+    - Design Motivation: Conventional PGM structure learning requires expert validation of statistical dependencies or expensive scoring functions. vPGM leverages the LLM's intrinsic knowledge to directly generate plausible graph structures, substantially reducing reliance on domain expertise.
 
 2. **Prompting-Based Bayesian Inference**:
 
-   - Function: Given new observations, the LLM incrementally infers the posterior distribution of each latent variable following the discovered graph structure.
-   - Mechanism: A meta-prompt is generated to guide the LLM through stepwise probabilistic reasoning aligned with the PGM structure, producing numerical conditional probabilities for each latent variable. In practice, $P(\mathbf{Z}|\mathbf{X})$ and $P(\mathbf{Y}|\mathbf{Z})$ are obtained jointly through a single inference prompt.
-   - Design Motivation: The traditional Bayesian inference pipeline is translated into natural language instructions, leveraging the LLM's reasoning capability to simulate posterior updates without an explicit probabilistic computation framework.
+    - Function: Given new observations, the LLM incrementally infers the posterior distribution of each latent variable following the discovered graph structure.
+    - Mechanism: A meta-prompt is generated to guide the LLM through stepwise probabilistic reasoning aligned with the PGM structure, producing numerical conditional probabilities for each latent variable. In practice, $P(\mathbf{Z}|\mathbf{X})$ and $P(\mathbf{Y}|\mathbf{Z})$ are obtained jointly through a single inference prompt.
+    - Design Motivation: The traditional Bayesian inference pipeline is translated into natural language instructions, leveraging the LLM's reasoning capability to simulate posterior updates without an explicit probabilistic computation framework.
 
 3. **BayesVPGM: Numerical Bayesian Refinement**:
 
-   - Function: After obtaining multiple prediction samples from repeated LLM queries, a Dirichlet prior combined with Bayesian posterior inference is used to refine the predictive distribution.
-   - Mechanism: Let the predictive distribution be $q(\mathbf{y}|\tilde{\mathbf{x}}) = \text{Cat}(\boldsymbol{\pi})$; a Dirichlet prior $\boldsymbol{\pi} \sim \text{Dirichlet}(\alpha_1, \ldots, \alpha_K)$ is placed on $\boldsymbol{\pi}$, where $\alpha_k = \lambda \cdot p(y=k|\mathbf{Z})$. Combining with class counts $n_k$ from $n$ LLM queries, the posterior is $\text{Dirichlet}(n_1+\alpha_1, \ldots, n_K+\alpha_K)$, and the posterior mean $\pi_k^{\text{mean}} = (n_k + \alpha_k) / \sum_j(n_j + \alpha_j)$ is used as the final prediction.
-   - Design Motivation: Verbalized probabilistic reasoning alone offers limited precision; numerical Bayesian inference integrates vPGM's prior knowledge with empirical frequencies from repeated sampling, yielding more reliable calibration.
+    - Function: After obtaining multiple prediction samples from repeated LLM queries, a Dirichlet prior combined with Bayesian posterior inference is used to refine the predictive distribution.
+    - Mechanism: Let the predictive distribution be $q(\mathbf{y}|\tilde{\mathbf{x}}) = \text{Cat}(\boldsymbol{\pi})$; a Dirichlet prior $\boldsymbol{\pi} \sim \text{Dirichlet}(\alpha_1, \ldots, \alpha_K)$ is placed on $\boldsymbol{\pi}$, where $\alpha_k = \lambda \cdot p(y=k|\mathbf{Z})$. Combining with class counts $n_k$ from $n$ LLM queries, the posterior is $\text{Dirichlet}(n_1+\alpha_1, \ldots, n_K+\alpha_K)$, and the posterior mean $\pi_k^{\text{mean}} = (n_k + \alpha_k) / \sum_j(n_j + \alpha_j)$ is used as the final prediction.
+    - Design Motivation: Verbalized probabilistic reasoning alone offers limited precision; numerical Bayesian inference integrates vPGM's prior knowledge with empirical frequencies from repeated sampling, yielding more reliable calibration.
 
 ### Loss & Training
 A differentiable calibration loss is used to automatically learn the hyperparameter $\lambda$:

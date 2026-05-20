@@ -18,8 +18,8 @@ content_hash: f9d0fd37c2a41aa1
 # VolumetricSMPL: A Neural Volumetric Body Model for Efficient Interactions, Contacts, and Collisions
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23236](https://arxiv.org/abs/2506.23236)
-**Code**: [Project Page](https://markomih.github.io/VolumetricSMPL)
+**arXiv**: [2506.23236](https://arxiv.org/abs/2506.23236)  
+**Code**: [Project Page](https://markomih.github.io/VolumetricSMPL)  
 **Area**: 3D Vision
 **Keywords**: Human Body Model, Signed Distance Field, Neural Weight Generation, Collision Detection, Human Interaction
 

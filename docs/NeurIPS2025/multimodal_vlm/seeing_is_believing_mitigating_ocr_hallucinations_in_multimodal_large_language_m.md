@@ -18,8 +18,8 @@ content_hash: 7b1398c7360044d6
 # Seeing is Believing? Mitigating OCR Hallucinations in Multimodal Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.20168](https://arxiv.org/abs/2506.20168)
-**Code**: [https://huggingface.co/datasets/bytedance-research/KIE-HVQA](https://huggingface.co/datasets/bytedance-research/KIE-HVQA) (dataset publicly available)
+**arXiv**: [2506.20168](https://arxiv.org/abs/2506.20168)  
+**Code**: [https://huggingface.co/datasets/bytedance-research/KIE-HVQA](https://huggingface.co/datasets/bytedance-research/KIE-HVQA) (dataset publicly available)  
 **Area**: Multimodal VLM
 **Keywords**: OCR hallucination, document understanding, reinforcement learning, GRPO, visual degradation
 

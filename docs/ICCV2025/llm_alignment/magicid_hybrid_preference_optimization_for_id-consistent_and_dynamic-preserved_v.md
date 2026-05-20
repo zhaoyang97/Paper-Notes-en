@@ -18,8 +18,8 @@ content_hash: 22cb96b6f57d5f04
 # MagicID: Hybrid Preference Optimization for ID-Consistent and Dynamic-Preserved Video Customization
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.12689](https://arxiv.org/abs/2503.12689)
-**Code**: [echopluto.github.io/MagicID-project](https://echopluto.github.io/MagicID-project/)
+**arXiv**: [2503.12689](https://arxiv.org/abs/2503.12689)  
+**Code**: [echopluto.github.io/MagicID-project](https://echopluto.github.io/MagicID-project/)  
 **Area**: Video Generation / Preference Alignment
 **Keywords**: Video Customization, Identity Consistency, Preference Optimization, Diffusion Models, Hybrid Sampling
 

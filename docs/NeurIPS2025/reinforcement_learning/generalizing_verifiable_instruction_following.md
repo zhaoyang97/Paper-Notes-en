@@ -18,8 +18,8 @@ content_hash: 535ae99550681650
 # Generalizing Verifiable Instruction Following
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.02833](https://arxiv.org/abs/2507.02833)
-**Code**: [Available](https://github.com/allenai/IFBench)
+**arXiv**: [2507.02833](https://arxiv.org/abs/2507.02833)  
+**Code**: [Available](https://github.com/allenai/IFBench)  
 **Area**: Reinforcement Learning
 **Keywords**: Instruction Following, Verifiable Constraints, RLVR, GRPO, Generalization
 
@@ -51,8 +51,8 @@ The work comprises three interrelated contributions:
 - **Selection Criteria**: Each constraint must be accompanied by a Python verification function to ensure reproducible evaluation.
 - **Test Prompt Construction**: Instantiated constraints are appended to held-out prompts from WildChat to prevent train–test leakage.
 - **Evaluation Setup**: 300 prompts, each with 1–2 constraints.
-  - **Single-turn**: Instruction and constraint are provided simultaneously.
-  - **Multi-turn**: The model first responds to the instruction, then is asked in a second turn to revise the response to satisfy the constraint.
+    - **Single-turn**: Instruction and constraint are provided simultaneously.
+    - **Multi-turn**: The model first responds to the instruction, then is asked in a second turn to revise the response to satisfy the constraint.
 
 **Representative Constraint Examples**: Maintaining a 2:1 ratio of declarative to interrogative sentences, using only unique words, copying a specific portion of the input, etc.
 

@@ -18,8 +18,8 @@ content_hash: a1035cef8c588e8b
 # Chain of Event-Centric Causal Thought for Physically Plausible Video Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09094](https://arxiv.org/abs/2603.09094)
-**Code**: Coming soon
+**arXiv**: [2603.09094](https://arxiv.org/abs/2603.09094)  
+**Code**: Coming soon  
 **Area**: Video Generation
 **Keywords**: Physically plausible video generation, causal reasoning, event chain, cross-modal prompting, chain-of-thought
 
@@ -34,8 +34,8 @@ Physically plausible video generation (PPVG) aims to produce videos that conform
 1. **Video diffusion models lack commonsense physical reasoning**: Models such as Kling and Sora can generate realistic scenes, but brief text prompts cannot convey detailed physical laws, and the models cannot implicitly infer physical commonsense.
 2. **Limitations of existing PPVG methods**: Approaches such as PhyT2V and DiffPhy leverage LLMs to embed physical concepts into prompts, but typically **reduce physical phenomena to static descriptions of a single moment**, lacking modeling of causal evolutionary processes.
 3. **Two core challenges**:
-   - **Causal ambiguity**: Real-world physical phenomena unfold as causally ordered event units; simple semantic labels cannot capture their dynamic nature, requiring structured causal decomposition.
-   - **Insufficient physical consistency constraints**: Language alone cannot convey causal continuity between events; visual cues (e.g., reference videos) can provide observational evidence of transitions, but visual priors tightly aligned with specific physical phenomena are difficult to obtain.
+    - **Causal ambiguity**: Real-world physical phenomena unfold as causally ordered event units; simple semantic labels cannot capture their dynamic nature, requiring structured causal decomposition.
+    - **Insufficient physical consistency constraints**: Language alone cannot convey causal continuity between events; visual cues (e.g., reference videos) can provide observational evidence of transitions, but visual priors tightly aligned with specific physical phenomena are difficult to obtain.
 
 The authors' key perspective shift: **treating physical phenomena as causally connected, dynamically evolving event sequences** rather than static descriptions of a single scene.
 
@@ -56,8 +56,8 @@ The generation process follows $\mathbf{Z}_{\tau_z-1} = \epsilon_\theta(\mathbf{
 2. **Physical Phenomena Decomposition**: Physical phenomena are decomposed into an ordered event sequence $\{\mathcal{E}_t\}_{t=1}^T = \{\{\mathcal{C}_t\}, \{\mathcal{G}_t\}\}$, where $\mathcal{C}_t$ denotes physical conditions and $\mathcal{G}_t$ denotes dynamic scene graphs. Event boundaries are determined by significant changes in physical parameters: $\mathcal{C}_t = \{(\mathbf{P}_t, \mathcal{F}^*(\mathbf{P}_t)) | \|\mathbf{P}_t - \mathbf{P}_{t-1}\| > \tau_p\}$. Scene graphs are updated via $\mathcal{G}_t = \Phi(\mathcal{G}_{t-1}, \mathcal{C}_t)$, covering changes in node appearance/semantic labels and edge interaction relations. Parameters of adjacent events are validated through physical continuity checks.
 
 3. **Transition-aware Cross-modal Prompting (TCP)**: Comprises two sub-modules:
-   - **Progressive Narrative Revision (PNR)**: Performs minimal progressive revision of event descriptions conditioned on preceding context, $w_t = \text{LLM}(w_{t-1} + \Delta(w_{t-1}, \mathcal{C}_t, \mathcal{G}_t))$. Multiple event descriptions are merged into positive semantic prompts via semantic condensation and causal connectives, while negative descriptions are simultaneously constructed. Physical conditions constrain physically permissible transitions (e.g., rising temperature permits "melting" but excludes "freezing"), and scene graphs maintain object identity consistency.
-   - **Interactive Keyframe Synthesis (IKS)**: Synthesizes keyframes for each event via interactive image editing, $v_t = \text{Edit}(v_{t-1}; \mathcal{O}_t)$, where edit operators $\mathcal{O}_t$ are determined by consecutive physical condition changes (constraining drag magnitude and regions of visual change). Keyframes are encoded with a VAE, and intermediate frames are generated via linear interpolation: $\mathbf{z}_{0,t} = \text{INTERP}(\psi_{\text{img}}(v_{t-1}), \psi_{\text{img}}(v_t); d_t)$, with noise added to serve as the denoising prior.
+    - **Progressive Narrative Revision (PNR)**: Performs minimal progressive revision of event descriptions conditioned on preceding context, $w_t = \text{LLM}(w_{t-1} + \Delta(w_{t-1}, \mathcal{C}_t, \mathcal{G}_t))$. Multiple event descriptions are merged into positive semantic prompts via semantic condensation and causal connectives, while negative descriptions are simultaneously constructed. Physical conditions constrain physically permissible transitions (e.g., rising temperature permits "melting" but excludes "freezing"), and scene graphs maintain object identity consistency.
+    - **Interactive Keyframe Synthesis (IKS)**: Synthesizes keyframes for each event via interactive image editing, $v_t = \text{Edit}(v_{t-1}; \mathcal{O}_t)$, where edit operators $\mathcal{O}_t$ are determined by consecutive physical condition changes (constraining drag magnitude and regions of visual change). Keyframes are encoded with a VAE, and intermediate frames are generated via linear interpolation: $\mathbf{z}_{0,t} = \text{INTERP}(\psi_{\text{img}}(v_{t-1}), \psi_{\text{img}}(v_t); d_t)$, with noise added to serve as the denoising prior.
 
 ### Loss & Training
 

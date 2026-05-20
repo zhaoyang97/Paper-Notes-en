@@ -18,8 +18,8 @@ content_hash: f1c93beada601dd0
 # Evaluating, Synthesizing, and Enhancing for Customer Support Conversation
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04423](https://arxiv.org/abs/2508.04423)
-**Code**: [https://github.com/aliyun/qwen-dianjin](https://github.com/aliyun/qwen-dianjin)
+**arXiv**: [2508.04423](https://arxiv.org/abs/2508.04423)  
+**Code**: [https://github.com/aliyun/qwen-dianjin](https://github.com/aliyun/qwen-dianjin)  
 **Area**: LLM Reasoning / Dialogue Systems
 **Keywords**: Customer support conversation, COPC standard, role-playing, data synthesis, strategy alignment
 

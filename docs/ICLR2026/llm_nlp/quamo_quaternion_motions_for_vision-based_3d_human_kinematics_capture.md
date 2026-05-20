@@ -18,8 +18,8 @@ content_hash: 638b37af51f40299
 # ConflictScope: Generative Value Conflicts Reveal LLM Priorities
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25369](https://arxiv.org/abs/2509.25369)
-**Code**: [GitHub](https://github.com/andyjliu/conflictscope)
+**arXiv**: [2509.25369](https://arxiv.org/abs/2509.25369)  
+**Code**: [GitHub](https://github.com/andyjliu/conflictscope)  
 **Area**: LLM/NLP
 **Keywords**: value conflicts, value prioritization, open-ended evaluation, Bradley-Terry model, system prompt steering
 

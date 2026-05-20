@@ -19,8 +19,8 @@ content_hash: 6d31637ae8e194b9
 # Large Language Models Can Learn and Generalize Steganographic Chain-of-Thought under Process Supervision
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01926](https://arxiv.org/abs/2506.01926)
-**Code**: Available (anonymous GitHub)
+**arXiv**: [2506.01926](https://arxiv.org/abs/2506.01926)  
+**Code**: Available (anonymous GitHub)  
 **Area**: LLM Reasoning / AI Safety
 **Keywords**: steganography, chain-of-thought, process supervision, obfuscated reasoning, AI safety, RL fine-tuning
 

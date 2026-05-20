@@ -17,8 +17,8 @@ content_hash: f48c87d065d9ff5a
 # Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.23008](https://arxiv.org/abs/2602.23008)
-**Code**: [https://github.com/agent-lightning/empo2](https://github.com/agent-lightning/empo2)
+**arXiv**: [2602.23008](https://arxiv.org/abs/2602.23008)  
+**Code**: [https://github.com/agent-lightning/empo2](https://github.com/agent-lightning/empo2)  
 **Area**: Agent
 **Keywords**: LLM Agent, Reinforcement Learning, Exploration, External Memory, Hybrid Policy Optimization
 

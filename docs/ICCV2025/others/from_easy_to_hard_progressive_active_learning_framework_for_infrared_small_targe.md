@@ -17,8 +17,8 @@ content_hash: 09a5ced1dd06a1d1
 # From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.11154](https://arxiv.org/abs/2412.11154)
-**Code**: [github.com/YuChuang1205/PAL](https://github.com/YuChuang1205/PAL)
+**arXiv**: [2412.11154](https://arxiv.org/abs/2412.11154)  
+**Code**: [github.com/YuChuang1205/PAL](https://github.com/YuChuang1205/PAL)  
 **Area**: Other
 **Keywords**: Infrared small target detection, single point supervision, progressive active learning, curriculum learning, pseudo-label evolution
 

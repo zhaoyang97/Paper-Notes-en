@@ -18,8 +18,8 @@ content_hash: 955d3a3b026a8f3a
 # Beyond Semantic Features: Pixel-Level Mapping for Generalized AI-Generated Image Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.17350](https://arxiv.org/abs/2512.17350)
-**Code**: None
+**arXiv**: [2512.17350](https://arxiv.org/abs/2512.17350)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: AI-generated image detection, pixel-level mapping, semantic bias, high-frequency artifacts, cross-model generalization
 

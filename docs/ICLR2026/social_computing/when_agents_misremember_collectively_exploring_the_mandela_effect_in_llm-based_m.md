@@ -18,8 +18,8 @@ content_hash: f72da46349b9a08f
 # When Agents "Misremember" Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.00428](https://arxiv.org/abs/2602.00428)
-**Code**: [github.com/bluedream02/Mandela-Effect](https://github.com/bluedream02/Mandela-Effect)
+**arXiv**: [2602.00428](https://arxiv.org/abs/2602.00428)  
+**Code**: [github.com/bluedream02/Mandela-Effect](https://github.com/bluedream02/Mandela-Effect)  
 **Area**: Social Computing
 **Keywords**: Mandela effect, multi-agent systems, collective false memory, cognitive bias, misinformation
 

@@ -18,8 +18,8 @@ content_hash: f714b9091e7bcfa5
 # Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25706](https://arxiv.org/abs/2603.25706)
-**Code**: [https://doubiiu.github.io/projects/WanWeaver](https://doubiiu.github.io/projects/WanWeaver)
+**arXiv**: [2603.25706](https://arxiv.org/abs/2603.25706)  
+**Code**: [https://doubiiu.github.io/projects/WanWeaver](https://doubiiu.github.io/projects/WanWeaver)  
 **Area**: Multimodal VLM
 **Keywords**: Interleaved multi-modal generation, decoupled training, textual-proxy data, visual consistency, planning-visualization
 

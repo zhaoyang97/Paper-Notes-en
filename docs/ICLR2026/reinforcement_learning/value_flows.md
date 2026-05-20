@@ -18,8 +18,8 @@ content_hash: e6cbc2b35a81fee9
 # Value Flows
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.07650](https://arxiv.org/abs/2510.07650)
-**Code**: [GitHub](https://github.com/chongyi-zheng/value-flows)
+**arXiv**: [2510.07650](https://arxiv.org/abs/2510.07650)  
+**Code**: [GitHub](https://github.com/chongyi-zheng/value-flows)  
 **Area**: Reinforcement Learning / Distributional RL / Generative Models
 **Keywords**: distributional RL, flow matching, return distribution, uncertainty quantification, OGBench
 

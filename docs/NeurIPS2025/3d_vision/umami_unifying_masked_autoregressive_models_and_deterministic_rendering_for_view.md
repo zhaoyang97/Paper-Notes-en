@@ -18,8 +18,8 @@ content_hash: d7317f52be9d38a5
 # UMAMI: Unifying Masked Autoregressive Models and Deterministic Rendering for View Synthesis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.20107](https://arxiv.org/abs/2512.20107)
-**Code**: None
+**arXiv**: [2512.20107](https://arxiv.org/abs/2512.20107)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: Novel View Synthesis, Masked Autoregressive, Diffusion Models, Deterministic Rendering, Hybrid Framework
 

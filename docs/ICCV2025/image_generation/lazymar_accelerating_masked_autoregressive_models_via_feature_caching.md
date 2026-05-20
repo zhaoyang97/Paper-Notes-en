@@ -18,8 +18,8 @@ content_hash: d0ef989cc00ea0da
 # LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.12450](https://arxiv.org/abs/2503.12450)
-**Code**: [https://github.com/feihongyan1/LazyMAR](https://github.com/feihongyan1/LazyMAR)
+**arXiv**: [2503.12450](https://arxiv.org/abs/2503.12450)  
+**Code**: [https://github.com/feihongyan1/LazyMAR](https://github.com/feihongyan1/LazyMAR)  
 **Area**: Image Generation
 **Keywords**: MAR acceleration, feature caching, token redundancy, condition redundancy, plug-and-play
 

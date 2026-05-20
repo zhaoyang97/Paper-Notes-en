@@ -19,8 +19,8 @@ content_hash: 7f4ac60758ea273e
 # FeatureBench: Benchmarking Agentic Coding for Complex Feature Development
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.10975](https://arxiv.org/abs/2602.10975)
-**Code**: [github.com/LiberCoders/FeatureBench](https://github.com/LiberCoders/FeatureBench)
+**arXiv**: [2602.10975](https://arxiv.org/abs/2602.10975)  
+**Code**: [github.com/LiberCoders/FeatureBench](https://github.com/LiberCoders/FeatureBench)  
 **Area**: LLM Agent
 **Keywords**: agentic coding, benchmark, feature development, test-driven, SWE-bench, code agent
 

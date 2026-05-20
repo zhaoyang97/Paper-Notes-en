@@ -17,8 +17,8 @@ content_hash: 26acd07219da5c3c
 # Cash Flow Underwriting with Bank Transaction Data: Advancing MSME Financial Inclusion in Malaysia
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.16066](https://arxiv.org/abs/2510.16066)
-**Code**: None
+**arXiv**: [2510.16066](https://arxiv.org/abs/2510.16066)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Credit Scoring, Financial Inclusion, Bank Statements, MSMEs, Cash Flow Underwriting
 

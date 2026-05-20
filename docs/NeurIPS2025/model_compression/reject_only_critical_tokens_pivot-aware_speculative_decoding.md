@@ -18,8 +18,8 @@ content_hash: cbe4d723d7032f85
 # Reject Only Critical Tokens: Pivot-Aware Speculative Decoding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00351](https://arxiv.org/abs/2511.00351)
-**Code**: [https://github.com/amir-zsh/PAD](https://github.com/amir-zsh/PAD)
+**arXiv**: [2511.00351](https://arxiv.org/abs/2511.00351)  
+**Code**: [https://github.com/amir-zsh/PAD](https://github.com/amir-zsh/PAD)  
 **Area**: Model Compression
 **Keywords**: speculative decoding, pivot token, utility preservation, LLM inference, acceptance rate
 
@@ -51,21 +51,21 @@ The PAD (Pivot-Aware Speculative Decoding) pipeline:
 ### Key Designs
 
 1. **Utility-Matching Objective (ε-Utility Preserving Decoding)**:
-   - Utility function defined as $u(y,x) = \mathbb{1}[\text{Eval}(y,x) \geq \theta_{\text{eval}}]$ (binarized: correct = 1, incorrect = 0).
-   - Objective: $\mathbb{E}[U(\hat{p}, x_c)] \geq \mathbb{E}[U(p_{\text{target}}, x_c)] - \epsilon$.
-   - This is a strictly weaker constraint than distribution matching, permitting more tokens to be accepted.
+    - Utility function defined as $u(y,x) = \mathbb{1}[\text{Eval}(y,x) \geq \theta_{\text{eval}}]$ (binarized: correct = 1, incorrect = 0).
+    - Objective: $\mathbb{E}[U(\hat{p}, x_c)] \geq \mathbb{E}[U(p_{\text{target}}, x_c)] - \epsilon$.
+    - This is a strictly weaker constraint than distribution matching, permitting more tokens to be accepted.
 
 2. **Pivot Token Definition**:
-   - Formal definition: token $\tilde{y}_t$ is a pivot if and only if accepting it causes the expected utility of subsequent target-model continuations to drop significantly:
+    - Formal definition: token $\tilde{y}_t$ is a pivot if and only if accepting it causes the expected utility of subsequent target-model continuations to drop significantly:
      $$U(p_{\text{target}}, (x_c, y_{<t}, \tilde{y}_t)) \leq U(p_{\text{target}}, (x_c, y_{<t})) - \epsilon$$
-   - Intuitively, a pivot token steers the generation trajectory into a low-utility region.
+    - Intuitively, a pivot token steers the generation trajectory into a low-utility region.
 
 3. **Pivot Classifier Training (Data & Features)**:
-   - **Candidate harvesting**: Only tokens that SD would reject are annotated, focusing on the rejection boundary.
-   - **Monte Carlo rollout estimation**: For each candidate token, the target model generates $N$ independent continuations; the mean utility $\hat{U}_{\text{cand}}$ and baseline $\hat{U}_{\text{base}}$ are computed. A tolerance α is introduced: when $\hat{U}_{\text{cand}} < \alpha \hat{U}_{\text{base}}$, the token is labeled pivot.
-   - **LLM-as-Judge safety check**: For candidates labeled non-pivot, rollouts that are "correct but with questionable reasoning" are sampled and evaluated by an LLM for reasoning soundness; if unsound, the label is flipped to pivot. Crucially, this flip is unidirectional—labels can only be upgraded to pivot, never introducing false acceptances.
-   - **Features**: Hidden states from layer ℓ of the target model, target probability, and entropy of the target distribution.
-   - **Model**: A small MLP classifier with negligible computational overhead.
+    - **Candidate harvesting**: Only tokens that SD would reject are annotated, focusing on the rejection boundary.
+    - **Monte Carlo rollout estimation**: For each candidate token, the target model generates $N$ independent continuations; the mean utility $\hat{U}_{\text{cand}}$ and baseline $\hat{U}_{\text{base}}$ are computed. A tolerance α is introduced: when $\hat{U}_{\text{cand}} < \alpha \hat{U}_{\text{base}}$, the token is labeled pivot.
+    - **LLM-as-Judge safety check**: For candidates labeled non-pivot, rollouts that are "correct but with questionable reasoning" are sampled and evaluated by an LLM for reasoning soundness; if unsound, the label is flipped to pivot. Crucially, this flip is unidirectional—labels can only be upgraded to pivot, never introducing false acceptances.
+    - **Features**: Hidden states from layer ℓ of the target model, target probability, and entropy of the target distribution.
+    - **Model**: A small MLP classifier with negligible computational overhead.
 
 4. **Safety Threshold**: Tokens with target probability below $10^{-4}$ are unconditionally rejected regardless of classifier output.
 

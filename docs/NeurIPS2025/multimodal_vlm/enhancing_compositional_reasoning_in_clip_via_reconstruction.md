@@ -18,8 +18,8 @@ content_hash: 68b7c5f2736f6b31
 # READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16540](https://arxiv.org/abs/2510.16540)
-**Code**: Available
+**arXiv**: [2510.16540](https://arxiv.org/abs/2510.16540)  
+**Code**: Available  
 **Area**: Multimodal VLM / CLIP Improvement
 **Keywords**: CLIP, compositional reasoning, text reconstruction, paraphrase alignment, contrastive learning
 

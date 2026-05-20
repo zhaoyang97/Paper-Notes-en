@@ -18,8 +18,8 @@ content_hash: b1c96c4724122eef
 # Guiding Diffusion-Based Articulated Object Generation by Partial Point Cloud Alignment and Physical Plausibility Constraints
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00558](https://arxiv.org/abs/2508.00558)
-**Code**: Not released
+**arXiv**: [2508.00558](https://arxiv.org/abs/2508.00558)  
+**Code**: Not released  
 **Area**: 3D Vision
 **Keywords**: Articulated object generation, diffusion models, point cloud alignment, physical constraints, SDF
 

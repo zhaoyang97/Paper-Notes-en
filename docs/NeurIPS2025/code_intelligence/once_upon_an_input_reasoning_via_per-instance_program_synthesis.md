@@ -18,8 +18,8 @@ content_hash: e3330fd034857db5
 # Once Upon an Input: Reasoning via Per-Instance Program Synthesis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22849](https://arxiv.org/abs/2510.22849)
-**Code**: [https://github.com/adaminsky/pips](https://github.com/adaminsky/pips)
+**arXiv**: [2510.22849](https://arxiv.org/abs/2510.22849)  
+**Code**: [https://github.com/adaminsky/pips](https://github.com/adaminsky/pips)  
 **Area**: Code Intelligence
 **Keywords**: Program Synthesis, LLM Reasoning, Code Generation, Neuro-Symbolic, Multi-Step Reasoning
 

@@ -18,8 +18,8 @@ content_hash: 4d7ada156f20489b
 # Learning Concept Bottleneck Models from Mechanistic Explanations
 
 **Conference**: ICLR2026
-**arXiv**: [2603.07343](https://arxiv.org/abs/2603.07343)
-**Code**: [GitHub](https://github.com/Antonio-Dee/M-CBM)
+**arXiv**: [2603.07343](https://arxiv.org/abs/2603.07343)  
+**Code**: [GitHub](https://github.com/Antonio-Dee/M-CBM)  
 **Area**: Graph Learning
 **Keywords**: Concept Bottleneck Model, Sparse Autoencoder, mechanistic interpretability, Explainable AI, Multimodal LLM
 

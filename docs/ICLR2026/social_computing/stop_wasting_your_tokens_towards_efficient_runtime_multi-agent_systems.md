@@ -18,8 +18,8 @@ content_hash: 235389b2f52eca35
 # Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.26585](https://arxiv.org/abs/2510.26585)
-**Code**: None
+**arXiv**: [2510.26585](https://arxiv.org/abs/2510.26585)  
+**Code**: None  
 **Area**: Social Computing
 **Keywords**: Multi-agent systems, Token efficiency, Runtime supervision, Adaptive filtering, Error correction
 

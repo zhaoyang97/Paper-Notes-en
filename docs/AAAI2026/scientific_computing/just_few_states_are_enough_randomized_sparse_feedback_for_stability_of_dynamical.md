@@ -18,8 +18,8 @@ content_hash: c6e798b824964929
 # Just Few States are Enough: Randomized Sparse Feedback for Stability of Dynamical Systems
 
 **Conference**: AAAI2026
-**arXiv**: [2511.13870](https://arxiv.org/abs/2511.13870)
-**Code**: None
+**arXiv**: [2511.13870](https://arxiv.org/abs/2511.13870)  
+**Code**: None  
 **Area**: Scientific Computing
 **Keywords**: sparse feedback control, randomized sparsification, asymptotic mean-square stability, LMI, large-scale systems
 

@@ -20,8 +20,8 @@ content_hash: 5f83d5701c5ccf29
 # Stable Score Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.09168](https://arxiv.org/abs/2507.09168)
-**Code**: [https://github.com/Alex-Zhu1/SSD](https://github.com/Alex-Zhu1/SSD)
+**arXiv**: [2507.09168](https://arxiv.org/abs/2507.09168)  
+**Code**: [https://github.com/Alex-Zhu1/SSD](https://github.com/Alex-Zhu1/SSD)  
 **Area**: 3D Vision / Text-Guided Editing
 **Keywords**: Score Distillation, 3D Scene Editing, 2D Image Editing, Diffusion Models, Classifier-Free Guidance, NeRF, 3DGS
 

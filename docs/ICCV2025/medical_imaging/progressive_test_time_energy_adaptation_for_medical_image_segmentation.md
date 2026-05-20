@@ -18,8 +18,8 @@ content_hash: f221299bc0eb5786
 # Progressive Test Time Energy Adaptation for Medical Image Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.16616](https://arxiv.org/abs/2503.16616)
-**Code**: None
+**arXiv**: [2503.16616](https://arxiv.org/abs/2503.16616)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: test-time adaptation, energy-based model, medical image segmentation, domain shift, shape prior
 

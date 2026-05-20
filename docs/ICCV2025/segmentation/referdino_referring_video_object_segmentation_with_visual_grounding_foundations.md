@@ -18,8 +18,8 @@ content_hash: 322ac2758e5d4898
 # ReferDINO: Referring Video Object Segmentation with Visual Grounding Foundations
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.14607](https://arxiv.org/abs/2501.14607)
-**Code**: [Project Page](https://isee-laboratory.github.io/ReferDINO)
+**arXiv**: [2501.14607](https://arxiv.org/abs/2501.14607)  
+**Code**: [Project Page](https://isee-laboratory.github.io/ReferDINO)  
 **Area**: Image Segmentation
 **Keywords**: Referring Video Object Segmentation, Visual Grounding, GroundingDINO, Deformable Attention, Query Pruning
 

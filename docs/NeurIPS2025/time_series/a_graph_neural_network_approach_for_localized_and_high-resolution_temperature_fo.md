@@ -18,8 +18,8 @@ content_hash: b363e83ccd7fe7d6
 # A Graph Neural Network Approach for Localized and High-Resolution Temperature Forecasting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.00546](https://arxiv.org/abs/2512.00546)
-**Code**: None
+**arXiv**: [2512.00546](https://arxiv.org/abs/2512.00546)  
+**Code**: None  
 **Area**: Time Series
 **Keywords**: GNN, temperature forecasting, high resolution, heat wave warning, climate equity
 

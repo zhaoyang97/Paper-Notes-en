@@ -18,8 +18,8 @@ content_hash: 1cfcd22a920e4941
 # Enhancing Transformers Through Conditioned Embedded Tokens
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.12789](https://arxiv.org/abs/2505.12789)
-**Code**: Unavailable
+**arXiv**: [2505.12789](https://arxiv.org/abs/2505.12789)  
+**Code**: Unavailable  
 **Area**: Image Segmentation / General Transformer Improvement
 **Keywords**: Transformer, condition number, self-attention, embedded tokens, optimization stability
 

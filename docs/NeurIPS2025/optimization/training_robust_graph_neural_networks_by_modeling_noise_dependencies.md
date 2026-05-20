@@ -18,8 +18,8 @@ content_hash: d84816be99728fac
 # Training Robust Graph Neural Networks by Modeling Noise Dependencies
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.19670](https://arxiv.org/abs/2502.19670)
-**Code**: [GitHub](https://github.com/yeonjun-in/torch-DA-GNN)
+**arXiv**: [2502.19670](https://arxiv.org/abs/2502.19670)  
+**Code**: [GitHub](https://github.com/yeonjun-in/torch-DA-GNN)  
 **Area**: Optimization
 **Keywords**: GNN robustness, noise dependency, causal modeling, variational inference, data generating process
 

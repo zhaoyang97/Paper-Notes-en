@@ -18,8 +18,8 @@ content_hash: 03171b47b03d2504
 # Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05546](https://arxiv.org/abs/2604.05546)
-**Code**: [https://github.com/SuDIS-ZJU/Efficient-LVLMs-Inference](https://github.com/SuDIS-ZJU/Efficient-LVLMs-Inference)
+**arXiv**: [2604.05546](https://arxiv.org/abs/2604.05546)  
+**Code**: [https://github.com/SuDIS-ZJU/Efficient-LVLMs-Inference](https://github.com/SuDIS-ZJU/Efficient-LVLMs-Inference)  
 **Area**: Multimodal VLM / LLM Efficiency
 **Keywords**: vision-language models, inference efficiency, visual token dominance, KV cache, token compression
 

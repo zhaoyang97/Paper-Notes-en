@@ -18,8 +18,8 @@ content_hash: 0957be9503446a64
 # On the Relation between Rectified Flows and Optimal Transport
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19712](https://arxiv.org/abs/2505.19712)
-**Code**: Unavailable
+**arXiv**: [2505.19712](https://arxiv.org/abs/2505.19712)  
+**Code**: Unavailable  
 **Area**: Diffusion Models / Flow Matching / Optimal Transport
 **Keywords**: Rectified Flow, Optimal Transport, Flow Matching, Counterexample Construction, Wasserstein Distance
 

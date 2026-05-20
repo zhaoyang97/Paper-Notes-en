@@ -18,8 +18,8 @@ content_hash: f478ef76e540e8b1
 # From Answers to Arguments: Toward Trustworthy Clinical Diagnostic Reasoning with Toulmin-Guided Curriculum Goal-Conditioned Learning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.11137](https://arxiv.org/abs/2604.11137)
-**Code**: [https://github.com/Leonard-zc/CGCL](https://github.com/Leonard-zc/CGCL)
+**arXiv**: [2604.11137](https://arxiv.org/abs/2604.11137)  
+**Code**: [https://github.com/Leonard-zc/CGCL](https://github.com/Leonard-zc/CGCL)  
 **Area**: Medical Imaging
 **Keywords**: Clinical Reasoning, Toulmin Argument Model, Curriculum Learning, Goal-Conditioned Learning, Trustworthy Diagnosis
 

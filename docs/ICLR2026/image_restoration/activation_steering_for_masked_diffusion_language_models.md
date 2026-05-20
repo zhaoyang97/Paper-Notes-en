@@ -18,8 +18,8 @@ content_hash: 1fcfc34c7b6a1d6b
 # Activation Steering for Masked Diffusion Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.24143](https://arxiv.org/abs/2512.24143)
-**Code**: Available
+**arXiv**: [2512.24143](https://arxiv.org/abs/2512.24143)  
+**Code**: Available  
 **Area**: Image Restoration
 **Keywords**: activation steering, masked diffusion LM, safety, refusal direction, LLaDA
 

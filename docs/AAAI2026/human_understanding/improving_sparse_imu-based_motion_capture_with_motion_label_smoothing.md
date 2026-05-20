@@ -18,9 +18,9 @@ content_hash: 4c485955def2df43
 # Improving Sparse IMU-based Motion Capture with Motion Label Smoothing
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.22288](https://arxiv.org/abs/2511.22288)
+**arXiv**: [2511.22288](https://arxiv.org/abs/2511.22288)  
 **Authors**: Zhaorui Meng, Lu Yin, Yangqing Hou, Anjun Chen, Shihui Guo, Yipeng Qin (Xiamen University, Cardiff University)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Human Understanding
 **Keywords**: Sparse IMU, Human Motion Capture, Label Smoothing, Perlin Noise, Regularization
 

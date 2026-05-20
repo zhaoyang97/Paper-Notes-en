@@ -18,8 +18,8 @@ content_hash: 26f7732787fd7f69
 # Augmenting Moment Retrieval: Zero-Dependency Two-Stage Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.19622](https://arxiv.org/abs/2510.19622)
-**Code**: [https://github.com/SooLab/AMR](https://github.com/SooLab/AMR)
+**arXiv**: [2510.19622](https://arxiv.org/abs/2510.19622)  
+**Code**: [https://github.com/SooLab/AMR](https://github.com/SooLab/AMR)  
 **Area**: Object Detection
 **Keywords**: Moment Retrieval, Data Augmentation, Knowledge Distillation, DETR, Video Temporal Grounding
 

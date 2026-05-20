@@ -18,8 +18,8 @@ content_hash: d00e1587d8b8a8d8
 # VGGSounder: Audio-Visual Evaluations for Foundation Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.08237](https://arxiv.org/abs/2508.08237)
-**Code**: [Project Page](https://vggsounder.github.io/)
+**arXiv**: [2508.08237](https://arxiv.org/abs/2508.08237)  
+**Code**: [Project Page](https://vggsounder.github.io/)  
 **Area**: Audio-Visual Learning / Benchmark Evaluation
 **Keywords**: Audio-visual classification, multi-label benchmark, modality annotation, foundation model evaluation, VGGSound
 

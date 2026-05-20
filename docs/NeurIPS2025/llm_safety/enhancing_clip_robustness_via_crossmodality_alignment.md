@@ -18,8 +18,8 @@ content_hash: 62becf33ecf40961
 # Enhancing CLIP Robustness via Cross-Modality Alignment
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2510.24038](https://arxiv.org/abs/2510.24038)
-**Code**: None
+**arXiv**: [2510.24038](https://arxiv.org/abs/2510.24038)  
+**Code**: None  
 **Area**: Multimodal VLM / Adversarial Robustness
 **Keywords**: CLIP, adversarial robustness, optimal transport, cross-modality alignment, subspace projection
 

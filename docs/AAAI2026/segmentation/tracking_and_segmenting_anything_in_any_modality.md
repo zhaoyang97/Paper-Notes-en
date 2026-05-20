@@ -18,8 +18,8 @@ content_hash: c6182d99a1db172e
 # Tracking and Segmenting Anything in Any Modality
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19475](https://arxiv.org/abs/2511.19475)
-**Code**: Available
+**arXiv**: [2511.19475](https://arxiv.org/abs/2511.19475)  
+**Code**: Available  
 **Area**: Segmentation / Video Understanding
 **Keywords**: Unified tracking and segmentation, any modality, mixture of experts, multi-task learning, generalist model
 

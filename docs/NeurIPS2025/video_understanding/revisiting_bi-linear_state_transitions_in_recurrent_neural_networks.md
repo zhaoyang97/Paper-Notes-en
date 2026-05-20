@@ -18,8 +18,8 @@ content_hash: 01a5a92bbab51105
 # Revisiting Bi-Linear State Transitions in Recurrent Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21749](https://arxiv.org/abs/2505.21749)
-**Code**: None
+**arXiv**: [2505.21749](https://arxiv.org/abs/2505.21749)  
+**Code**: None  
 **Area**: Sequence Modeling / Recurrent Neural Networks
 **Keywords**: Bilinear RNN, State Tracking, Finite Automata, Multiplicative Interaction, Parity
 

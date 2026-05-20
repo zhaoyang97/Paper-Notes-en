@@ -18,8 +18,8 @@ content_hash: 2128950d7be7ba1c
 # GeoComplete: Geometry-Aware Diffusion for Reference-Driven Image Completion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.03110](https://arxiv.org/abs/2510.03110)
-**Code**: N/A
+**arXiv**: [2510.03110](https://arxiv.org/abs/2510.03110)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: image completion, diffusion models, geometry guidance, point cloud projection, reference image
 

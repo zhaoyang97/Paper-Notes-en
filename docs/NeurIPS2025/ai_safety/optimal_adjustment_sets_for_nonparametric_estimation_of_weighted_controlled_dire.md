@@ -18,8 +18,8 @@ content_hash: 45345e6b7a5374b2
 # Optimal Adjustment Sets for Nonparametric Estimation of Weighted Controlled Direct Effect
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.09871](https://arxiv.org/abs/2506.09871)
-**Code**: None
+**arXiv**: [2506.09871](https://arxiv.org/abs/2506.09871)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: weighted controlled direct effect, causal inference, mediation analysis, optimal adjustment, fairness
 

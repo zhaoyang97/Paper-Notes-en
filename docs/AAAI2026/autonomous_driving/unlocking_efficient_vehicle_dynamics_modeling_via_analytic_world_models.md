@@ -18,8 +18,8 @@ content_hash: 47fb06fbe9ca5631
 # Unlocking Efficient Vehicle Dynamics Modeling via Analytic World Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2502.10012](https://arxiv.org/abs/2502.10012)
-**Code**: N/A
+**arXiv**: [2502.10012](https://arxiv.org/abs/2502.10012)  
+**Code**: N/A  
 **Area**: Autonomous Driving / World Models
 **Keywords**: Differentiable Simulator, World Models, Analytic Policy Gradients, Relative Odometry, Model Predictive Control
 

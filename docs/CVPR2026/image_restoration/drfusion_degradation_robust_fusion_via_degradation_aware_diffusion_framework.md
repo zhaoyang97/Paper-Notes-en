@@ -17,8 +17,8 @@ content_hash: c872f79483ec6ce5
 # DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08922](https://arxiv.org/abs/2604.08922)
-**Code**: [https://github.com/YShi-cool/DRFusion](https://github.com/YShi-cool/DRFusion)
+**arXiv**: [2604.08922](https://arxiv.org/abs/2604.08922)  
+**Code**: [https://github.com/YShi-cool/DRFusion](https://github.com/YShi-cool/DRFusion)  
 **Area**: Image Fusion / Image Restoration
 **Keywords**: multimodal image fusion, diffusion model, degradation-aware, joint observation model, image restoration
 

@@ -18,8 +18,8 @@ content_hash: c69c65a5ef9843e7
 # SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18740](https://arxiv.org/abs/2510.18740)
-**Code**: [Available](https://visual-ai.github.io/seal/)
+**arXiv**: [2510.18740](https://arxiv.org/abs/2510.18740)  
+**Code**: [Available](https://visual-ai.github.io/seal/)  
 **Area**: Self-Supervised Learning / Open-World Recognition
 **Keywords**: Generalized Category Discovery, Hierarchical Learning, Contrastive Learning, Semantic Hierarchy, Cross-Granularity Consistency
 

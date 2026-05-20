@@ -18,8 +18,8 @@ content_hash: 11ca1a38fe1eb578
 # OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.16177](https://arxiv.org/abs/2503.16177)
-**Code**: [Project Page](https://occlugaussian.github.io)
+**arXiv**: [2503.16177](https://arxiv.org/abs/2503.16177)  
+**Code**: [Project Page](https://occlugaussian.github.io)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Large Scene Reconstruction, Occlusion-Aware, Scene Partitioning, Rendering Acceleration
 

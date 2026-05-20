@@ -18,8 +18,8 @@ content_hash: b888d71a04f7e14b
 # CURE: Cultural Gaps in the Long Tail of Text-to-Image Systems
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.08071](https://arxiv.org/abs/2506.08071)
-**Code**: [https://aniketrege.github.io/cure/](https://aniketrege.github.io/cure/)
+**arXiv**: [2506.08071](https://arxiv.org/abs/2506.08071)  
+**Code**: [https://aniketrege.github.io/cure/](https://aniketrege.github.io/cure/)  
 **Area**: Image Generation / T2I Fairness
 **Keywords**: Text-to-image generation, cultural representation, benchmark evaluation, marginal information attribution, long-tail bias
 

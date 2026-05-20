@@ -18,8 +18,8 @@ content_hash: 60cb7d3326450c29
 # V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.20223](https://arxiv.org/abs/2511.20223)
-**Code**: [GitHub](https://github.com/Summu77/V-Attack)
+**arXiv**: [2511.20223](https://arxiv.org/abs/2511.20223)  
+**Code**: [GitHub](https://github.com/Summu77/V-Attack)  
 **Area**: AI Security
 **Keywords**: adversarial attack, vision-language models, Value features, semantic manipulation, controllable attack
 
@@ -49,11 +49,11 @@ Multi-surrogate-model Value feature extraction → Self-Value Enhancement → Te
 $$\widetilde{\mathbf{V}}^{(k)} = \text{Attn}(\mathbf{V}^{(k)}, \mathbf{V}^{(k)}, \mathbf{V}^{(k)})$$
 
 3. **Text-Guided Value Manipulation**:
-   - Source and target concepts are encoded via the CLIP text encoder.
-   - The cosine similarity between each enhanced Value token and the source text is computed.
-   - An adaptive threshold $\tau^{(k)}$ selects the token set $\mathcal{I}_{\text{align}}^{(k)}$ aligned with the source concept.
-   - Loss: $\mathcal{L} = \sum_{k} \sum_{i \in \mathcal{I}_{\text{align}}^{(k)}} [-s_i^{(k)}(t_s) + s_i^{(k)}(t_t)]$
-   - PGD iterations combined with random resizing augmentation to enhance transferability.
+    - Source and target concepts are encoded via the CLIP text encoder.
+    - The cosine similarity between each enhanced Value token and the source text is computed.
+    - An adaptive threshold $\tau^{(k)}$ selects the token set $\mathcal{I}_{\text{align}}^{(k)}$ aligned with the source concept.
+    - Loss: $\mathcal{L} = \sum_{k} \sum_{i \in \mathcal{I}_{\text{align}}^{(k)}} [-s_i^{(k)}(t_s) + s_i^{(k)}(t_t)]$
+    - PGD iterations combined with random resizing augmentation to enhance transferability.
 
 ### Loss & Training
 

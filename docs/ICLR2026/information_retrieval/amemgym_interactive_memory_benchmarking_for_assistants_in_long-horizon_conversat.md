@@ -18,8 +18,8 @@ content_hash: a013b1dfdc385443
 # AMemGym: Interactive Memory Benchmarking for Assistants in Long-Horizon Conversations
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01966](https://arxiv.org/abs/2603.01966)
-**Code**: [https://agi-eval-official.github.io/amemgym/](https://agi-eval-official.github.io/amemgym/)
+**arXiv**: [2603.01966](https://arxiv.org/abs/2603.01966)  
+**Code**: [https://agi-eval-official.github.io/amemgym/](https://agi-eval-official.github.io/amemgym/)  
 **Area**: Information Retrieval
 **Keywords**: conversational memory evaluation, on-policy evaluation, user state tracking, memory diagnostics, simulated user
 

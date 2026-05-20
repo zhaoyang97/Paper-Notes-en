@@ -18,8 +18,8 @@ content_hash: 84312c5cd5c62eeb
 # STAMP: Spatial-Temporal Adapter with Multi-Head Pooling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10848](https://arxiv.org/abs/2511.10848)
-**Code**: [https://github.com/autonlab/STAMP](https://github.com/autonlab/STAMP)
+**arXiv**: [2511.10848](https://arxiv.org/abs/2511.10848)  
+**Code**: [https://github.com/autonlab/STAMP](https://github.com/autonlab/STAMP)  
 **Area**: EEG Signals / Foundation Model Adaptation
 **Keywords**: EEG Classification, TSFM Adapter, Spatial-Temporal Encoding, Multi-Head Pooling, Parameter Efficiency
 

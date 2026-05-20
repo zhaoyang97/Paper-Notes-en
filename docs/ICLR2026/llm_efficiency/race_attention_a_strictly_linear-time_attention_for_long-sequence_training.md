@@ -18,8 +18,8 @@ content_hash: 31fc9d534fae7f27
 # RACE Attention: A Strictly Linear-Time Attention for Long-Sequence Training
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04008](https://arxiv.org/abs/2510.04008)
-**Code**: [https://github.com/sahiljoshi515/RACE_Attention](https://github.com/sahiljoshi515/RACE_Attention)
+**arXiv**: [2510.04008](https://arxiv.org/abs/2510.04008)  
+**Code**: [https://github.com/sahiljoshi515/RACE_Attention](https://github.com/sahiljoshi515/RACE_Attention)  
 **Area**: LLM Efficiency / Attention Mechanisms
 **Keywords**: Linear Attention, LSH, Angular Kernel, Long-Sequence Training, Attention Approximation
 

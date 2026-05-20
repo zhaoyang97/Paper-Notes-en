@@ -18,8 +18,8 @@ content_hash: bcac3306fe26ca8f
 # ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.13193](https://arxiv.org/abs/2510.13193)
-**Code**: [Available](https://github.com/kilgrims/ReMindRAG)
+**arXiv**: [2510.13193](https://arxiv.org/abs/2510.13193)  
+**Code**: [Available](https://github.com/kilgrims/ReMindRAG)  
 **Area**: Graph Learning / RAG
 **Keywords**: Knowledge Graph, RAG, LLM-Guided Graph Traversal, Memory Replay, Training-Free Memory
 

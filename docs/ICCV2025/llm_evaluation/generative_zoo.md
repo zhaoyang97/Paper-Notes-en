@@ -18,8 +18,8 @@ content_hash: 9af5bd76c8564a27
 # Generative Zoo
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.08101](https://arxiv.org/abs/2412.08101)
-**Code**: [https://genzoo.is.tue.mpg.de](https://genzoo.is.tue.mpg.de)
+**arXiv**: [2412.08101](https://arxiv.org/abs/2412.08101)  
+**Code**: [https://genzoo.is.tue.mpg.de](https://genzoo.is.tue.mpg.de)  
 **Area**: LLM Evaluation
 **Keywords**: Synthetic data generation, animal pose estimation, SMAL, conditional image generation, ControlNet
 

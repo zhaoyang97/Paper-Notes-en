@@ -18,8 +18,8 @@ content_hash: 9c97bd94db047312
 # CAGE: A Framework for Culturally Adaptive Red-Teaming Benchmark Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.20170](https://arxiv.org/abs/2602.20170)
-**Code**: [https://github.com/selectstar-ai/CAGE-paper](https://github.com/selectstar-ai/CAGE-paper)
+**arXiv**: [2602.20170](https://arxiv.org/abs/2602.20170)  
+**Code**: [https://github.com/selectstar-ai/CAGE-paper](https://github.com/selectstar-ai/CAGE-paper)  
 **Area**: LLM Alignment
 **Keywords**: red teaming, cultural adaptation, semantic mold, multilingual safety, benchmark generation
 

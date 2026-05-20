@@ -20,8 +20,8 @@ content_hash: f0dc260b45c95cce
 # KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.20299](https://arxiv.org/abs/2512.20299)
-**Code**: To be confirmed
+**arXiv**: [2512.20299](https://arxiv.org/abs/2512.20299)  
+**Code**: To be confirmed  
 **Area**: Autonomous Driving / Knowledge-Augmented Planning
 **Keywords**: end-to-end driving, knowledge graph, value model, world model, open-world perception, VLM, retrieval-augmented planning
 

@@ -19,8 +19,8 @@ content_hash: 56cc6601f47020e3
 # D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16590](https://arxiv.org/abs/2511.16590)
-**Code**: [sen0609/D-GARA](https://github.com/sen0609/D-GARA)
+**arXiv**: [2511.16590](https://arxiv.org/abs/2511.16590)  
+**Code**: [sen0609/D-GARA](https://github.com/sen0609/D-GARA)  
 **Area**: Agent / LLM
 **Keywords**: GUI Agent, robustness evaluation, dynamic benchmark, anomaly injection, Android, interruption handling
 

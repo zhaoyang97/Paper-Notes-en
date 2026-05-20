@@ -18,8 +18,8 @@ content_hash: aa16a920fd62b3f9
 # Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.18489](https://arxiv.org/abs/2510.18489)
-**Code**: [https://liujf1226.github.io/Mono4DGS-HDR](https://liujf1226.github.io/Mono4DGS-HDR)
+**arXiv**: [2510.18489](https://arxiv.org/abs/2510.18489)  
+**Code**: [https://liujf1226.github.io/Mono4DGS-HDR](https://liujf1226.github.io/Mono4DGS-HDR)  
 **Area**: 3D Vision / HDR Reconstruction
 **Keywords**: 4D Gaussian Splatting, HDR, monocular video, alternating exposure, dynamic scene
 

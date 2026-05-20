@@ -19,8 +19,8 @@ content_hash: 3d3b2c5e811e59ca
 # Back to Square Roots: An Optimal Bound on the Matrix Factorization Error for Multi-Epoch Differentially Private SGD
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.12128](https://arxiv.org/abs/2505.12128)
-**Code**: None (uses the jax-privacy library for baseline comparisons)
+**arXiv**: [2505.12128](https://arxiv.org/abs/2505.12128)  
+**Code**: None (uses the jax-privacy library for baseline comparisons)  
 **Area**: AI Safety / Differential Privacy
 **Keywords**: differential privacy, matrix factorization, DP-SGD, multi-epoch participation, banded factorization, optimal error bounds
 

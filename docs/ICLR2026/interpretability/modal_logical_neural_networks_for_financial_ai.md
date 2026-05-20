@@ -18,8 +18,8 @@ content_hash: 325f4ac55ea61f7f
 # Modal Logical Neural Networks for Financial AI
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.12487](https://arxiv.org/abs/2603.12487)
-**Code**: [https://github.com/sulcantonin/torchmodal](https://github.com/sulcantonin/torchmodal)
+**arXiv**: [2603.12487](https://arxiv.org/abs/2603.12487)  
+**Code**: [https://github.com/sulcantonin/torchmodal](https://github.com/sulcantonin/torchmodal)  
 **Area**: Interpretability
 **Keywords**: modal logic, neural networks, Kripke semantics, financial compliance, interpretable AI
 

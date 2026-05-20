@@ -18,8 +18,8 @@ content_hash: 9800010924f21dca
 # Open-Vocabulary Domain Generalization in Urban-Scene Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.18853](https://arxiv.org/abs/2602.18853)
-**Code**: [DZhaoXd/s2_corr](https://github.com/DZhaoXd/s2_corr)
+**arXiv**: [2602.18853](https://arxiv.org/abs/2602.18853)  
+**Code**: [DZhaoXd/s2_corr](https://github.com/DZhaoXd/s2_corr)  
 **Area**: Autonomous Driving
 **Keywords**: Open-vocabulary segmentation, domain generalization, state space models, text-image correlation, urban scene segmentation
 

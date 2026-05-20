@@ -18,12 +18,12 @@ content_hash: 0c8ebcb246f086e9
 # RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04308](https://arxiv.org/abs/2506.04308)
-**Code**: [zhoues.github.io/RoboRefer](https://zhoues.github.io/RoboRefer)
+**arXiv**: [2506.04308](https://arxiv.org/abs/2506.04308)  
+**Code**: [zhoues.github.io/RoboRefer](https://zhoues.github.io/RoboRefer)  
 **Area**: Multimodal VLM
 **Keywords**: Spatial Referring, Vision-Language Models, Multi-Step Reasoning, Reinforcement Fine-Tuning, Robot Manipulation
-**arXiv**: [2506.04308](https://arxiv.org/abs/2506.04308)
-**Code**: None
+**arXiv**: [2506.04308](https://arxiv.org/abs/2506.04308)  
+**Code**: None  
 **Area**: Multimodal VLM
 
 ## TL;DR
@@ -65,10 +65,10 @@ RoboRefer employs separate RGB and depth encoders to extract features independen
 
 - **Function**: Applies GRPO reinforcement learning on top of the SFT model to further improve the generalizability of multi-step reasoning.
 - **Four Reward Functions**:
-  - **Outcome Format Reward** $R_{OF}$: rewards correct output format
-  - **Point L1 Reward** $R_P$: binary reward for whether the final predicted point falls within the target region
-  - **Process Format Reward** $R_{PF}$: rewards correct intermediate step format "[Perception Type] [Target Object]:"
-  - **Accuracy Reward** $R_{Acc}$: measures prediction error at each key step according to perception type (e.g., L1 distance for coordinates)
+    - **Outcome Format Reward** $R_{OF}$: rewards correct output format
+    - **Point L1 Reward** $R_P$: binary reward for whether the final predicted point falls within the target region
+    - **Process Format Reward** $R_{PF}$: rewards correct intermediate step format "[Perception Type] [Target Object]:"
+    - **Accuracy Reward** $R_{Acc}$: measures prediction error at each key step according to perception type (e.g., L1 distance for coordinates)
 - **Total Reward**: $r_i = R_{OF}(a_i) + R_P(a_i) + \alpha R_{PF}(a_i) + \alpha R_{Acc}(a_i)$, where $\alpha = 0.25$
 - **Key Detail**: The process reward is order-invariant, imposing no fixed ordering on the reasoning trajectory.
 - **Design Motivation**: SFT tends to memorize answers, whereas RFT learns more generalizable reasoning strategies through exploration (sampling $N$ responses) and reward-driven supervision.

@@ -18,8 +18,8 @@ content_hash: 39995c3985b414ef
 # AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.24193](https://arxiv.org/abs/2509.24193)
-**Code**: [GitHub](https://github.com/ritaranx/AceSearcher/) / [HuggingFace](https://huggingface.co/AceSearcher)
+**arXiv**: [2509.24193](https://arxiv.org/abs/2509.24193)  
+**Code**: [GitHub](https://github.com/ritaranx/AceSearcher/) / [HuggingFace](https://huggingface.co/AceSearcher)  
 **Area**: LLM/NLP
 **Keywords**: Search-augmented LLM, multi-hop reasoning, question decomposition, self-play, iterative DPO
 

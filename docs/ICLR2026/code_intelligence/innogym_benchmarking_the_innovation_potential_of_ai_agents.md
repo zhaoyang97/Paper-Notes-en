@@ -18,8 +18,8 @@ content_hash: 29cc54ffe13e637c
 # InnoGym: Benchmarking the Innovation Potential of AI Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.01822](https://arxiv.org/abs/2512.01822)
-**Code**: [https://github.com/zjunlp/igym](https://github.com/zjunlp/igym)
+**arXiv**: [2512.01822](https://arxiv.org/abs/2512.01822)  
+**Code**: [https://github.com/zjunlp/igym](https://github.com/zjunlp/igym)  
 **Area**: Code Intelligence
 **Keywords**: AI agent benchmark, innovation evaluation, performance gain, novelty, improvable tasks
 

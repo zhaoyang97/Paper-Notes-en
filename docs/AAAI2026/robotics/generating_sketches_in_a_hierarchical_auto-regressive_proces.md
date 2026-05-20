@@ -18,8 +18,8 @@ content_hash: 82057af744f42fd1
 # Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07889](https://arxiv.org/abs/2511.07889)
-**Code**: [https://github.com/SCZang/Sketch-HARP](https://github.com/SCZang/Sketch-HARP)
+**arXiv**: [2511.07889](https://arxiv.org/abs/2511.07889)  
+**Code**: [https://github.com/SCZang/Sketch-HARP](https://github.com/SCZang/Sketch-HARP)  
 **Area**: Sketch Generation / Image Generation
 **Keywords**: Sketch Generation, Hierarchical Autoregressive, Stroke-Level Manipulation, Sketch-HARP, Sketch Editing
 

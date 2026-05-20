@@ -18,8 +18,8 @@ content_hash: 82c1841922d2d1f2
 # ReconDreamer++: Harmonizing Generative and Reconstructive Models for Driving Scene Representation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.18438](https://arxiv.org/abs/2503.18438)
-**Code**: [https://recondreamer-plus.github.io](https://recondreamer-plus.github.io) (project page)
+**arXiv**: [2503.18438](https://arxiv.org/abs/2503.18438)  
+**Code**: [https://recondreamer-plus.github.io](https://recondreamer-plus.github.io) (project page)  
 **Area**: Autonomous Driving
 **Keywords**: Driving scene reconstruction, 3D Gaussian splatting, novel view synthesis, domain gap bridging, ground modeling
 

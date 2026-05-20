@@ -18,8 +18,8 @@ content_hash: 18500a5cdee2d187
 # M2SFormer: Multi-Spectral and Multi-Scale Attention with Edge-Aware Difficulty Guidance for Image Forgery Localization
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.20922](https://arxiv.org/abs/2506.20922)
-**Code**: N/A
+**arXiv**: [2506.20922](https://arxiv.org/abs/2506.20922)  
+**Code**: N/A  
 **Area**: Image Forgery Detection / Image Generation
 **Keywords**: Image Forgery Localization, Multi-Spectral Attention, Multi-Scale Attention, Difficulty Guidance, Transformer
 

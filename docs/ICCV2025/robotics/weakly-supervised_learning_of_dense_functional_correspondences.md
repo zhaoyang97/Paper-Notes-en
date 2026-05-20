@@ -18,8 +18,8 @@ content_hash: 4f45338f04f9e0d5
 # Weakly-Supervised Learning of Dense Functional Correspondences
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.03893](https://arxiv.org/abs/2509.03893)
-**Code**: [Project Page](https://dense-functional-correspondence.github.io/)
+**arXiv**: [2509.03893](https://arxiv.org/abs/2509.03893)  
+**Code**: [Project Page](https://dense-functional-correspondence.github.io/)  
 **Area**: Robotics
 **Keywords**: Dense Functional Correspondence, Weakly-Supervised Learning, Vision-Language Models, Contrastive Learning, Robotic Manipulation
 

@@ -18,8 +18,8 @@ content_hash: dd10a1c1c0d0cbca
 # QuadSync: Quadrifocal Tensor Synchronization via Tucker Decomposition
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22639](https://arxiv.org/abs/2602.22639)
-**Code**: None
+**arXiv**: [2602.22639](https://arxiv.org/abs/2602.22639)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: Quadrifocal tensor, Tucker decomposition, Structure from Motion, global synchronization, multi-view geometry
 

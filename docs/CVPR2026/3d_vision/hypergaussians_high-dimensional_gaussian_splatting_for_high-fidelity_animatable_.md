@@ -18,8 +18,8 @@ content_hash: 6c313b6af36d5111
 # HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars
 
 **Conference**: CVPR 2026
-**arXiv**: [2507.02803](https://arxiv.org/abs/2507.02803)
-**Code**: [https://gserifi.github.io/HyperGaussians](https://gserifi.github.io/HyperGaussians)
+**arXiv**: [2507.02803](https://arxiv.org/abs/2507.02803)  
+**Code**: [https://gserifi.github.io/HyperGaussians](https://gserifi.github.io/HyperGaussians)  
 **Area**: 3D Vision
 **Keywords**: Gaussian splatting, face avatars, high-dimensional Gaussians, facial animation, conditional distribution
 

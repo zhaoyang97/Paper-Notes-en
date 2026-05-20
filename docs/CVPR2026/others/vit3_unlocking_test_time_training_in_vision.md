@@ -17,8 +17,8 @@ content_hash: 8637377a71ac6348
 # ViT3: Unlocking Test-Time Training in Vision
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.01643](https://arxiv.org/abs/2512.01643)
-**Code**: [GitHub](https://github.com/LeapLabTHU/ViTTT)
+**arXiv**: [2512.01643](https://arxiv.org/abs/2512.01643)  
+**Code**: [GitHub](https://github.com/LeapLabTHU/ViTTT)  
 **Area**: Efficient Architecture / Visual Sequence Modeling
 **Keywords**: Test-Time Training, Linear Complexity, Inner Model, Vision Transformer, Convolution
 
@@ -42,18 +42,18 @@ Input token sequence → projected into Q/K/V → K/V used as training data to t
 ### Key Designs (Six Insights)
 
 1. **Loss Function Selection (Insight 1)**:
-   - Losses for which the mixed second-order derivative $\partial^2 L / \partial \hat{V} \partial V = 0$ (e.g., MAE/L1) are unsuitable for TTT, as the outer-loop gradient signal vanishes when backpropagating through the inner update.
-   - Recommended: Dot Product Loss, MSE Loss.
+    - Losses for which the mixed second-order derivative $\partial^2 L / \partial \hat{V} \partial V = 0$ (e.g., MAE/L1) are unsuitable for TTT, as the outer-loop gradient signal vanishes when backpropagating through the inner update.
+    - Recommended: Dot Product Loss, MSE Loss.
 
 2. **Inner Training Configuration (Insights 2 & 3)**:
-   - Vision tasks favor single-epoch full-batch gradient descent ($B = N$), unlike the mini-batch setting preferred for language tasks.
-   - Causal mini-batches are suboptimal for non-causal visual data.
-   - A larger inner learning rate ($\eta = 1.0$) yields the best performance.
+    - Vision tasks favor single-epoch full-batch gradient descent ($B = N$), unlike the mini-batch setting preferred for language tasks.
+    - Causal mini-batches are suboptimal for non-causal visual data.
+    - A larger inner learning rate ($\eta = 1.0$) yields the best performance.
 
 3. **Inner Model Design (Insights 4, 5 & 6)**:
-   - Increasing inner model capacity (width scaling) consistently improves performance.
-   - Deep inner models suffer from optimization difficulties (higher training loss, i.e., underfitting); depth scaling is ineffective under current TTT settings.
-   - Convolutional architectures—especially depthwise separable convolutions (DWConv)—are particularly well-suited as inner models: **80.1% Top-1** vs. MLP at 78.9%.
+    - Increasing inner model capacity (width scaling) consistently improves performance.
+    - Deep inner models suffer from optimization difficulties (higher training loss, i.e., underfitting); depth scaling is ineffective under current TTT settings.
+    - Convolutional architectures—especially depthwise separable convolutions (DWConv)—are particularly well-suited as inner models: **80.1% Top-1** vs. MLP at 78.9%.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: ddb56e793a502493
 # Debiasing Diffusion Priors via 3D Attention for Consistent Gaussian Splatting
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.07345](https://arxiv.org/abs/2512.07345)
-**Code**: None
+**arXiv**: [2512.07345](https://arxiv.org/abs/2512.07345)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Diffusion Models, Multi-view Consistency, Janus Problem, Attention Modulation
 
@@ -75,13 +75,13 @@ The core idea is to exploit the explicit representation of 3DGS by back-projecti
 HAM performs fine-grained modulation to account for the heterogeneous response of different UNet layers to view bias:
 
 1. **Semantic Guided Tree (SGT) construction**: An LLM is used to construct a three-level hierarchy:
-   - Root: $M$ semantic categories (Object, Attribute, etc.)
-   - Intermediate: $F$ subcategories
-   - Leaf nodes: $F$ instance words
+    - Root: $M$ semantic categories (Object, Attribute, etc.)
+    - Intermediate: $F$ subcategories
+    - Leaf nodes: $F$ instance words
 
 2. **Semantic Response Profiling (SRP)**:
-   - **Head level**: Computes a response score $W_h^f$ of each CA head to each subcategory.
-   - **Layer level**: Computes a response score $W_l^m$ of each UNet layer to each semantic category.
+    - **Head level**: Computes a response score $W_h^f$ of each CA head to each subcategory.
+    - **Layer level**: Computes a response score $W_l^m$ of each UNet layer to each semantic category.
 
 3. **Attention modulation**:
    $\hat{\mathcal{A}}_h = \lambda W_l^{m^*} W_h^{f^*} \mathcal{A}_h$

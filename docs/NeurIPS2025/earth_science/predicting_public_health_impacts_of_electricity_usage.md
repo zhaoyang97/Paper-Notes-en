@@ -18,8 +18,8 @@ content_hash: 7c15e01fc930505c
 # Predicting Public Health Impacts of Electricity Usage
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.22031](https://arxiv.org/abs/2511.22031)
-**Code**: [https://github.com/Ren-Research/Health-Impact-Predictor](https://github.com/Ren-Research/Health-Impact-Predictor)
+**arXiv**: [2511.22031](https://arxiv.org/abs/2511.22031)  
+**Code**: [https://github.com/Ren-Research/Health-Impact-Predictor](https://github.com/Ren-Research/Health-Impact-Predictor)  
 **Area**: Earth Science / AI for Social Good
 **Keywords**: Public Health, Power Systems, Air Pollution, End-to-End Prediction, EV Charging Optimization
 

@@ -18,10 +18,10 @@ content_hash: af8ee43fedef52c3
 # Improving Forecasts of Suicide Attempts for Patients with Little Data
 
 **Conference**: NeurIPS 2025 (TS4H Workshop)
-**arXiv**: [2511.18199](https://arxiv.org/abs/2511.18199)
+**arXiv**: [2511.18199](https://arxiv.org/abs/2511.18199)  
 **Authors**: Genesis Hang, Annie Chen, Hope Neveux, Matthew K. Nock, Yaniv Yacoby
 **Institution**: Wellesley College, Harvard University
-**Code**: Not open-sourced
+**Code**: Not open-sourced  
 **Area**: Other
 **Keywords**: Gaussian Process, Ecological Momentary Assessment, suicide risk prediction, patient heterogeneity, latent variable model, time series for health
 

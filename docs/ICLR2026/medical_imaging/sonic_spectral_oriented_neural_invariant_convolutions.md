@@ -18,8 +18,8 @@ content_hash: 12778bb828df2ade
 # SONIC: Spectral Oriented Neural Invariant Convolutions
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19884](https://arxiv.org/abs/2601.19884)
-**Code**: N/A
+**arXiv**: [2601.19884](https://arxiv.org/abs/2601.19884)  
+**Code**: N/A  
 **Area**: Medical Imaging / Computer Vision
 **Keywords**: Spectral convolution, orientation invariance, continuous parameterization, global receptive field, resolution adaptability
 

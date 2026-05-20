@@ -18,8 +18,8 @@ content_hash: e8396d0fd2e89d12
 # Motion Matters: Compact Gaussian Streaming for Free-Viewpoint Video Reconstruction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16533](https://arxiv.org/abs/2505.16533)
-**Code**: [Project Page](https://chenjiacong-1005.github.io/ComGS/)
+**arXiv**: [2505.16533](https://arxiv.org/abs/2505.16533)  
+**Code**: [Project Page](https://chenjiacong-1005.github.io/ComGS/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Free-Viewpoint Video, Online Reconstruction, Motion Modeling, Streaming
 

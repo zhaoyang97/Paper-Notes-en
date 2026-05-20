@@ -18,8 +18,8 @@ content_hash: f9587a19f949211f
 # PRISM: Video Dataset Condensation with Progressive Refinement and Insertion for Sparse Motion
 
 **Conference**: CVPR 2026
-**arXiv**: [2505.22564](https://arxiv.org/abs/2505.22564)
-**Code**: None (no public code mentioned)
+**arXiv**: [2505.22564](https://arxiv.org/abs/2505.22564)  
+**Code**: None (no public code mentioned)  
 **Area**: LLM Evaluation
 **Keywords**: video dataset condensation, keyframe insertion, gradient guidance, spatiotemporal coupling, storage efficiency
 
@@ -51,21 +51,21 @@ PRISM takes a large-scale video dataset as input and produces a compact set of s
 
 1. **Temporal Frame Interpolation Parameterization**
 
-   - **Function**: Represent complete video sequences using sparse keyframes.
-   - **Mechanism**: Each synthetic video is defined by a keyframe set $\mathcal{K}_c^j = \{s_{c,k_1}, ..., s_{c,k_n}\}$, with $n=2$ initially (first and last frames). Non-keyframes are generated via linear interpolation: $s_{c,t} = \alpha_t s_{c,k_i} + (1-\alpha_t) s_{c,k_{i+1}}$, where $\alpha_t = (k_{i+1}-t)/(k_{i+1}-k_i)$. Only keyframes are trainable parameters; intermediate frames are updated indirectly through interpolation.
-   - **Design Motivation**: This parameterization ensures holistic spatiotemporal coupling — optimizing keyframes simultaneously affects all intermediate frames, so the video is optimized as a unified whole from the outset, rather than treating content and motion separately.
+    - **Function**: Represent complete video sequences using sparse keyframes.
+    - **Mechanism**: Each synthetic video is defined by a keyframe set $\mathcal{K}_c^j = \{s_{c,k_1}, ..., s_{c,k_n}\}$, with $n=2$ initially (first and last frames). Non-keyframes are generated via linear interpolation: $s_{c,t} = \alpha_t s_{c,k_i} + (1-\alpha_t) s_{c,k_{i+1}}$, where $\alpha_t = (k_{i+1}-t)/(k_{i+1}-k_i)$. Only keyframes are trainable parameters; intermediate frames are updated indirectly through interpolation.
+    - **Design Motivation**: This parameterization ensures holistic spatiotemporal coupling — optimizing keyframes simultaneously affects all intermediate frames, so the video is optimized as a unified whole from the outset, rather than treating content and motion separately.
 
 2. **Gradient-Guided Frame Insertion**
 
-   - **Function**: Adaptively identify temporal positions requiring additional keyframes.
-   - **Mechanism**: For each candidate intermediate frame $s_{c,t}$, the cosine similarities $\cos_i^t$ and $\cos_{i+1}^t$ between its gradient $\nabla \mathcal{L}(s_{c,t})$ and those of its two neighboring keyframes are computed. When both fall below threshold $\epsilon$ (default 0, i.e., negative), the frame is in a "gradient conflict" state — optimizing the endpoint keyframes increases rather than decreases the loss at this intermediate frame. Per the theoretical proof in Lemma 1, no convex combination update of the endpoints can reduce the intermediate frame's loss; it must be promoted to a keyframe for direct optimization. All frames satisfying this condition are inserted simultaneously at each iteration.
-   - **Design Motivation**: This direction-based selection criterion is more reliable than L2 distance — it captures semantic-level motion transitions rather than mere pixel differences. Ablation experiments confirm that cosine similarity significantly outperforms L2 distance (7.5% vs. 6.0%).
+    - **Function**: Adaptively identify temporal positions requiring additional keyframes.
+    - **Mechanism**: For each candidate intermediate frame $s_{c,t}$, the cosine similarities $\cos_i^t$ and $\cos_{i+1}^t$ between its gradient $\nabla \mathcal{L}(s_{c,t})$ and those of its two neighboring keyframes are computed. When both fall below threshold $\epsilon$ (default 0, i.e., negative), the frame is in a "gradient conflict" state — optimizing the endpoint keyframes increases rather than decreases the loss at this intermediate frame. Per the theoretical proof in Lemma 1, no convex combination update of the endpoints can reduce the intermediate frame's loss; it must be promoted to a keyframe for direct optimization. All frames satisfying this condition are inserted simultaneously at each iteration.
+    - **Design Motivation**: This direction-based selection criterion is more reliable than L2 distance — it captures semantic-level motion transitions rather than mere pixel differences. Ablation experiments confirm that cosine similarity significantly outperforms L2 distance (7.5% vs. 6.0%).
 
 3. **Warm-up and Cool-down Phases**
 
-   - **Function**: Ensure stability in the frame insertion dynamics.
-   - **Mechanism**: Frame insertion is disabled during the first 20% of iterations (warm-up), allowing the endpoint frames to stabilize before serving as reference anchors for subsequent insertions; insertion is also disabled during the last 20% of iterations (cool-down), ensuring that already-selected frames receive sufficient optimization. Progressive frame insertion is performed during the middle 60%.
-   - **Design Motivation**: Premature insertion leads to incorrect frame selection due to noisy gradients; frames inserted too late receive insufficient training. The two phases address "when to start" and "when to stop" insertion, respectively. Ablation results show that removing warm-up reduces accuracy by more than 0.7%, and removing cool-down by more than 1.0%.
+    - **Function**: Ensure stability in the frame insertion dynamics.
+    - **Mechanism**: Frame insertion is disabled during the first 20% of iterations (warm-up), allowing the endpoint frames to stabilize before serving as reference anchors for subsequent insertions; insertion is also disabled during the last 20% of iterations (cool-down), ensuring that already-selected frames receive sufficient optimization. Progressive frame insertion is performed during the middle 60%.
+    - **Design Motivation**: Premature insertion leads to incorrect frame selection due to noisy gradients; frames inserted too late receive insufficient training. The two phases address "when to start" and "when to stop" insertion, respectively. Ablation results show that removing warm-up reduces accuracy by more than 0.7%, and removing cool-down by more than 1.0%.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 4e74988a6feef83e
 # Constrained and Robust Policy Synthesis with Satisfiability-Modulo-Probabilistic-Model-Checking
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08078](https://arxiv.org/abs/2511.08078)
-**Code**: None
+**arXiv**: [2511.08078](https://arxiv.org/abs/2511.08078)  
+**Code**: None  
 **Area**: Reinforcement Learning / Formal Verification
 **Keywords**: Markov Decision Processes, Robust Policy, Constraint Satisfaction, Probabilistic Model Checking, SAT Solving
 

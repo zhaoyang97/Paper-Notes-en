@@ -17,8 +17,8 @@ content_hash: 31bd5893809edae2
 # Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19386](https://arxiv.org/abs/2505.19386)
-**Code**: [force-prompting.github.io](https://force-prompting.github.io/) (dataset + code + model weights fully open-sourced)
+**arXiv**: [2505.19386](https://arxiv.org/abs/2505.19386)  
+**Code**: [force-prompting.github.io](https://force-prompting.github.io/) (dataset + code + model weights fully open-sourced)  
 **Area**: Video Generation / Physics-Controllable Generation / World Models
 **Keywords**: force prompting, video generation, physics control, sim2real, CogVideoX
 

@@ -18,8 +18,8 @@ content_hash: f46e5824cab7303e
 # Condensed Data Expansion Using Model Inversion for Knowledge Distillation
 
 **Conference**: AAAI 2026
-**arXiv**: [2408.13850](https://arxiv.org/abs/2408.13850)
-**Code**: N/A
+**arXiv**: [2408.13850](https://arxiv.org/abs/2408.13850)  
+**Code**: N/A  
 **Area**: Model Compression
 **Keywords**: Knowledge Distillation, Dataset Condensation, Model Inversion, Feature Alignment, Data-Free Distillation
 

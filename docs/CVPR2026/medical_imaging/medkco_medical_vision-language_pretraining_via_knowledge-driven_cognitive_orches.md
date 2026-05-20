@@ -17,8 +17,8 @@ content_hash: d967fc99c5bc68e5
 # MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09101](https://arxiv.org/abs/2603.09101)
-**Code**: [Available](https://github.com/Mr-Talon/MedKCO)
+**arXiv**: [2603.09101](https://arxiv.org/abs/2603.09101)  
+**Code**: [Available](https://github.com/Mr-Talon/MedKCO)  
 **Area**: Medical Imaging
 **Keywords**: Vision-language pretraining, curriculum learning, contrastive learning, cognitive orchestration, medical imaging
 

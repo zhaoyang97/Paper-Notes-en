@@ -18,8 +18,8 @@ content_hash: 281f1c42a73acc8e
 # RefTon: Reference Person Shot Assist Virtual Try-on
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.00956](https://arxiv.org/abs/2511.00956)
-**Code**: [https://github.com/360CVGroup/RefTon](https://github.com/360CVGroup/RefTon)
+**arXiv**: [2511.00956](https://arxiv.org/abs/2511.00956)  
+**Code**: [https://github.com/360CVGroup/RefTon](https://github.com/360CVGroup/RefTon)  
 **Area**: Human Understanding
 **Keywords**: virtual try-on, reference image guidance, Flux-Kontext, mask-free try-on, diffusion models
 

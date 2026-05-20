@@ -17,8 +17,8 @@ content_hash: 7a493ad8832336c6
 # TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07988](https://arxiv.org/abs/2603.07988)
-**Code**: [Project Page](https://splionar.github.io/TeamHOI)
+**arXiv**: [2603.07988](https://arxiv.org/abs/2603.07988)  
+**Code**: [Project Page](https://splionar.github.io/TeamHOI)  
 **Area**: Other
 **Keywords**: multi-agent cooperation, physics-based human motion control, human-object interaction, Transformer policy network, adversarial motion prior
 

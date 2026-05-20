@@ -18,8 +18,8 @@ content_hash: 91555473cbcf327e
 # MarkushGrapher-2: End-to-end Multimodal Recognition of Chemical Structures
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28550](https://arxiv.org/abs/2603.28550)
-**Code**: [https://github.com/DS4SD/MarkushGrapher](https://github.com/DS4SD/MarkushGrapher)
+**arXiv**: [2603.28550](https://arxiv.org/abs/2603.28550)  
+**Code**: [https://github.com/DS4SD/MarkushGrapher](https://github.com/DS4SD/MarkushGrapher)  
 **Area**: Multimodal VLM / Document Understanding
 **Keywords**: Chemical Structure Recognition, Markush Structures, Multimodal Encoding, Patent Document Analysis, OCR
 

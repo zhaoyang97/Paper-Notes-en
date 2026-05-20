@@ -18,8 +18,8 @@ content_hash: 8ad5a220454b8d28
 # Towards Open-World Generation of Stereo Images and Unsupervised Matching
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.12720](https://arxiv.org/abs/2503.12720)
-**Code**: [Project Page](https://qjizhi.github.io/genstereo)
+**arXiv**: [2503.12720](https://arxiv.org/abs/2503.12720)  
+**Code**: [Project Page](https://qjizhi.github.io/genstereo)  
 **Area**: Autonomous Driving
 **Keywords**: Stereo image generation, diffusion models, unsupervised stereo matching, disparity-aware, adaptive fusion
 

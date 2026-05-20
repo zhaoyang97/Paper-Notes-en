@@ -18,8 +18,8 @@ content_hash: 260f55ba6336eb89
 # Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19716](https://arxiv.org/abs/2604.19716)
-**Code**: [https://github.com/lei-nlp-lab/logical_subspace_acl_2026](https://github.com/lei-nlp-lab/logical_subspace_acl_2026)
+**arXiv**: [2604.19716](https://arxiv.org/abs/2604.19716)  
+**Code**: [https://github.com/lei-nlp-lab/logical_subspace_acl_2026](https://github.com/lei-nlp-lab/logical_subspace_acl_2026)  
 **Area**: Human Understanding / LLM Reasoning
 **Keywords**: logical reasoning, multi-view subspace, activation steering, CCA alignment, training-free inference
 

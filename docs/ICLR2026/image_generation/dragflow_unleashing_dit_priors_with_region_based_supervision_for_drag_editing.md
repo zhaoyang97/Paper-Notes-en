@@ -18,8 +18,8 @@ content_hash: 26b572ee98e0c1c8
 # DragFlow: Unleashing DiT Priors with Region Based Supervision for Drag Editing
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.02253](https://arxiv.org/abs/2510.02253)
-**Code**: [GitHub](https://github.com/Edennnnnnnnnn/DragFlow)
+**arXiv**: [2510.02253](https://arxiv.org/abs/2510.02253)  
+**Code**: [GitHub](https://github.com/Edennnnnnnnnn/DragFlow)  
 **Area**: Diffusion Models / Image Editing
 **Keywords**: Drag Editing, DiT, Region-Based Supervision, FLUX, Affine Transformation
 

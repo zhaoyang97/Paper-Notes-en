@@ -18,8 +18,8 @@ content_hash: 84dad2402a268f5f
 # When Less Language is More: Language-Reasoning Disentanglement Makes LLMs Better Multilingual Reasoners
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15257](https://arxiv.org/abs/2505.15257)
-**Code**: [GitHub](https://github.com/MuyuenLP/Language-Reasoning-Disentangle)
+**arXiv**: [2505.15257](https://arxiv.org/abs/2505.15257)  
+**Code**: [GitHub](https://github.com/MuyuenLP/Language-Reasoning-Disentangle)  
 **Area**: Reinforcement Learning
 **Keywords**: Multilingual Reasoning, Language-Reasoning Disentanglement, Causal Intervention, Activation Space, Training-Free
 

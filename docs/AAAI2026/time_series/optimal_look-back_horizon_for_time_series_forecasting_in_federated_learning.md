@@ -18,8 +18,8 @@ content_hash: cecceebb6ec3afdf
 # Optimal Look-back Horizon for Time Series Forecasting in Federated Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12791](https://arxiv.org/abs/2511.12791)
-**Code**: None
+**arXiv**: [2511.12791](https://arxiv.org/abs/2511.12791)  
+**Code**: None  
 **Area**: Time Series Forecasting / Federated Learning
 **Keywords**: time series forecasting, federated learning, look-back horizon, intrinsic space, Bayesian loss decomposition
 

@@ -18,8 +18,8 @@ content_hash: 3ab31d439c33e59a
 # ASAP: An Agentic Solution to Auto-Optimize Performance of Large-Scale LLM Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.03844](https://arxiv.org/abs/2511.03844)
-**Code**: Not released (Google internal ADK)
+**arXiv**: [2511.03844](https://arxiv.org/abs/2511.03844)  
+**Code**: Not released (Google internal ADK)  
 **Area**: Recommender Systems
 **Keywords**: Multi-agent systems, distributed training optimization, sharding configuration, bottleneck analysis, Roofline model
 

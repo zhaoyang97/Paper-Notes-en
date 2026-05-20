@@ -18,8 +18,8 @@ content_hash: c74be223a73ae217
 # PPCL: Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.16156](https://arxiv.org/abs/2511.16156)
-**Code**: [GitHub](https://github.com/OPPO-Mente-Lab/Qwen-Image-Pruning)
+**arXiv**: [2511.16156](https://arxiv.org/abs/2511.16156)  
+**Code**: [GitHub](https://github.com/OPPO-Mente-Lab/Qwen-Image-Pruning)  
 **Area**: Model Compression / Diffusion Models
 **Keywords**: diffusion transformer, structured pruning, contiguous layer redundancy, knowledge distillation, MMDiT
 

@@ -18,8 +18,8 @@ content_hash: 70f419437664fcfd
 # FGM-HD: Boosting Generation Diversity of Fractal Generative Models through Hausdorff Dimension Induction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08945](https://arxiv.org/abs/2511.08945)
-**Code**: None
+**arXiv**: [2511.08945](https://arxiv.org/abs/2511.08945)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Fractal Generative Model, Hausdorff Dimension, Generation Diversity, Momentum-driven Scheduling Strategy, Rejection Sampling
 

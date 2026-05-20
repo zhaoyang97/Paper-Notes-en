@@ -18,8 +18,8 @@ content_hash: 078ec84467661918
 # NeurIPS Should Lead Scientific Consensus on AI Policy
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.00075](https://arxiv.org/abs/2510.00075)
-**Code**: None (Position Paper)
+**arXiv**: [2510.00075](https://arxiv.org/abs/2510.00075)  
+**Code**: None (Position Paper)  
 **Area**: AI Policy / AI Governance
 **Keywords**: Scientific Consensus, AI Policy, IPCC Model, NeurIPS, Evidence-Based Policy
 

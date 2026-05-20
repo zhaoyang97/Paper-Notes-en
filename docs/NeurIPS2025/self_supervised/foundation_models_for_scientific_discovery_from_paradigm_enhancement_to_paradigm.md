@@ -18,8 +18,8 @@ content_hash: 632217b4b17277ef
 # Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.15280](https://arxiv.org/abs/2510.15280)
-**Code**: [GitHub](https://github.com/usail-hkust/Awesome-Foundation-Models-for-Scientific-Discovery)
+**arXiv**: [2510.15280](https://arxiv.org/abs/2510.15280)  
+**Code**: [GitHub](https://github.com/usail-hkust/Awesome-Foundation-Models-for-Scientific-Discovery)  
 **Area**: Scientific Discovery / Foundation Model Survey
 **Keywords**: foundation models, scientific paradigms, autonomous scientific discovery, human-AI collaboration, AI for Science
 
@@ -149,9 +149,9 @@ Three major future directions are identified: embodied scientific agents, closed
 # Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.15280](https://arxiv.org/abs/2510.15280)
+**arXiv**: [2510.15280](https://arxiv.org/abs/2510.15280)  
 **Authors**: Fan Liu, Jindong Han, Tengfei Lyu, Weijia Zhang, Zhe-Rui Yang, Lu Dai, Cancheng Liu, Hao Liu (HKUST(GZ) & HKUST)
-**Code**: [GitHub](https://github.com/usail-hkust/Awesome-Foundation-Models-for-Scientific-Discovery)
+**Code**: [GitHub](https://github.com/usail-hkust/Awesome-Foundation-Models-for-Scientific-Discovery)  
 **Area**: Self-Supervised Learning / Foundation Models / AI for Science
 **Keywords**: foundation models, scientific discovery, paradigm shift, autonomous discovery, human-AI co-creation
 

@@ -20,8 +20,8 @@ content_hash: d00a12e44bcc81d3
 # C-LoRA: Contextual Low-Rank Adaptation for Uncertainty Estimation in Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17773](https://arxiv.org/abs/2505.17773)
-**Code**: [GitHub](https://github.com/ahra99/c_lora)
+**arXiv**: [2505.17773](https://arxiv.org/abs/2505.17773)  
+**Code**: [GitHub](https://github.com/ahra99/c_lora)  
 **Area**: Model Compression
 **Keywords**: LoRA, uncertainty estimation, Bayesian fine-tuning, parameter-efficient fine-tuning, LLM, variational inference, data-dependent
 

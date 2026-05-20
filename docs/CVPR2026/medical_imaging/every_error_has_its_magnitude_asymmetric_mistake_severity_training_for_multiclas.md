@@ -19,8 +19,8 @@ content_hash: 04d0b541c360c740
 # Every Error has Its Magnitude: Asymmetric Mistake Severity Training for Multiclass Multiple Instance Learning
 
 **Conference**: CVPR2026
-**arXiv**: [2603.13682](https://arxiv.org/abs/2603.13682)
-**Code**: To be confirmed
+**arXiv**: [2603.13682](https://arxiv.org/abs/2603.13682)  
+**Code**: To be confirmed  
 **Area**: Medical Imaging
 **Keywords**: Multiple Instance Learning, Mistake Severity, Whole Slide Image, Asymmetric Misclassification, Hierarchical Classification, Pathological Diagnosis
 

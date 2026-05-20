@@ -20,8 +20,8 @@ content_hash: 2b47571ce79ae715
 # KDR-Agent: A Multi-Agent LLM Framework for Multi-Domain Low-Resource In-Context NER via Knowledge Retrieval
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19083](https://arxiv.org/abs/2511.19083)
-**Code**: [GitHub](https://github.com/MWXGOD/KDR-Agent)
+**arXiv**: [2511.19083](https://arxiv.org/abs/2511.19083)  
+**Code**: [GitHub](https://github.com/MWXGOD/KDR-Agent)  
 **Area**: LLM Agent
 **Keywords**: Named Entity Recognition, Multi-Agent Collaboration, Knowledge Retrieval, Low-Resource NER, Entity Disambiguation, Contrastive Demonstrations, Reflective Error Correction
 
@@ -52,10 +52,10 @@ KDR-Agent operates in two stages: **Stage 1: Knowledge-Enhanced Context Construc
 1. **Natural Language Type Definitions**: Concise natural language descriptions (with inclusion/exclusion criteria) are authored for each entity type as prompt inputs, replacing conventional label names. These definitions can be automatically distilled from annotation guidelines using an LLM, offering strong scalability and substantially reducing reliance on large annotated sets.
 
 2. **Static Few-Shot Contrastive Demonstrations**: Rather than retrieval-based approaches, KDR-Agent employs a static set of demonstrations in which each example contains both correct annotations and deliberately constructed negative instances. Negatives are generated according to four error categories:
-   - Boundary errors (e.g., "Barack" instead of "Barack Obama")
-   - Type errors (e.g., labeling "Apple" as LOC rather than ORG)
-   - Hallucinated entities (entities not present in the input text)
-   - Omitted entities (valid entities that are missed)
+    - Boundary errors (e.g., "Barack" instead of "Barack Obama")
+    - Type errors (e.g., labeling "Apple" as LOC rather than ORG)
+    - Hallucinated entities (entities not present in the input text)
+    - Omitted entities (valid entities that are missed)
 
    This contrastive design enables the model to explicitly learn to distinguish boundary and type confusion without requiring a large retrieval candidate pool.
 

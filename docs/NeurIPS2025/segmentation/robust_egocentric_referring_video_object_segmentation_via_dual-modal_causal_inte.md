@@ -18,8 +18,8 @@ content_hash: fbdeebec933a7c2f
 # Robust Egocentric Referring Video Object Segmentation via Dual-Modal Causal Intervention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.24323](https://arxiv.org/abs/2512.24323)
-**Code**: N/A
+**arXiv**: [2512.24323](https://arxiv.org/abs/2512.24323)  
+**Code**: N/A  
 **Area**: Video Understanding / Segmentation
 **Keywords**: Egocentric video segmentation, causal inference, backdoor adjustment, frontdoor adjustment, depth guidance
 

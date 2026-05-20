@@ -18,8 +18,8 @@ content_hash: 8b0aabe065d71eef
 # SG-NLF: Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12903](https://arxiv.org/abs/2603.12903)
-**Code**: N/A
+**arXiv**: [2603.12903](https://arxiv.org/abs/2603.12903)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: Pose-free LiDAR, NeRF, spectral embedding, confidence-aware graph optimization, adversarial cross-frame consistency
 

@@ -18,8 +18,8 @@ content_hash: 13997c4fd705fa7f
 # RefiDiff: Progressive Refinement Diffusion for Efficient Missing Data Imputation
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.14451](https://arxiv.org/abs/2505.14451)
-**Code**: [GitHub](https://github.com/Atik-Ahamed/RefiDiff)
+**arXiv**: [2505.14451](https://arxiv.org/abs/2505.14451)  
+**Code**: [GitHub](https://github.com/Atik-Ahamed/RefiDiff)  
 **Area**: Data Imputation / Tabular Data
 **Keywords**: missing data imputation, diffusion model, Mamba, tabular data, MNAR
 

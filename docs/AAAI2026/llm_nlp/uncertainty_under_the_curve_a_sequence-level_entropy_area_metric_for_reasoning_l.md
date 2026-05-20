@@ -18,8 +18,8 @@ content_hash: f158eb035d58abb8
 # Uncertainty Under the Curve: A Sequence-Level Entropy Area Metric for Reasoning LLMs
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.20384](https://arxiv.org/abs/2508.20384)
-**Code**: Available
+**arXiv**: [2508.20384](https://arxiv.org/abs/2508.20384)  
+**Code**: Available  
 **Area**: LLM/NLP
 **Keywords**: Entropy Area Score, uncertainty estimation, token-level entropy, training data selection, reasoning LLM
 

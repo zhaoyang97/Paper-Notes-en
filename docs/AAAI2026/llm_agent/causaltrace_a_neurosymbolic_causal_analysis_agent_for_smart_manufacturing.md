@@ -18,8 +18,8 @@ content_hash: 6b23c5fa760e8ee5
 # CausalTrace: A Neurosymbolic Causal Analysis Agent for Smart Manufacturing
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.12033](https://arxiv.org/abs/2510.12033)
-**Code**: [GitHub](https://github.com/ChathurangiShyalika/SmartPilot)
+**arXiv**: [2510.12033](https://arxiv.org/abs/2510.12033)  
+**Code**: [GitHub](https://github.com/ChathurangiShyalika/SmartPilot)  
 **Area**: LLM Agents / Smart Manufacturing
 **Keywords**: Neurosymbolic Systems, Causal Analysis, Root Cause Analysis, Knowledge Graph, Industrial CoPilot
 

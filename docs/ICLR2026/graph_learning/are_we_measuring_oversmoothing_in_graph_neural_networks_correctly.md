@@ -20,7 +20,7 @@ content_hash: ee504d90a54ac08d
 # Are We Measuring Oversmoothing in Graph Neural Networks Correctly?
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.04591](https://arxiv.org/abs/2502.04591)
+**arXiv**: [2502.04591](https://arxiv.org/abs/2502.04591)  
 **Area**: Graph Neural Networks / Theoretical Analysis
 **Keywords**: oversmoothing, graph neural networks, Dirichlet energy, numerical rank, effective rank, rank collapse, GNN depth
 

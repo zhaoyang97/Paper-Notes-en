@@ -18,8 +18,8 @@ content_hash: 4bd5eb1d70d6a0a0
 # SCOPE: Semantic Coreset with Orthogonal Projection Embeddings for Federated learning
 
 **Conference**: CVPR2026
-**arXiv**: [2603.12976](https://arxiv.org/abs/2603.12976)
-**Code**: N/A
+**arXiv**: [2603.12976](https://arxiv.org/abs/2603.12976)  
+**Code**: N/A  
 **Area**: Optimization
 **Keywords**: Federated Learning, coreset selection, long-tail distribution, Vision-Language Model, data pruning
 
@@ -79,19 +79,19 @@ The resulting coreset is used in subsequent federated training. The coreset cons
 ### Key Designs
 
 1. **Three-Dimensional Semantic Scoring System ($RS$ / $DS$ / $S_{neg}$)**
-   - **Function**: Characterizes the retention value of each sample from three orthogonal dimensions within the shared CLIP semantic space.
-   - **Mechanism**: The representativeness score $RS_i = v_{img,i} \cdot t_{c_i}$ measures alignment between the sample and its class prototype; the diversity score captures intra-class variation beyond the class prototype via the orthogonal projection residual $DS_i = \|v_{img,i} - RS_i \, t_{c_i}\|_2$; the boundary proximity score $S_{neg,i} = \max_{j \neq c_i} v_{img,i} \cdot t_j$ characterizes the degree of confusion with the nearest negative class. The three scores are used jointly, enabling subsequent filtering to distinguish among noise, redundancy, and valuable boundary samples.
-   - **Design Motivation**: No single indicator can simultaneously address anchor retention, intra-class diversity, and decision boundary support. $RS$ preserves fundamentals, $DS$ eliminates redundancy, and $S_{neg}$ identifies boundary samples. The three are orthogonally complementary, providing a complete semantic criterion for two-stage filtering.
+    - **Function**: Characterizes the retention value of each sample from three orthogonal dimensions within the shared CLIP semantic space.
+    - **Mechanism**: The representativeness score $RS_i = v_{img,i} \cdot t_{c_i}$ measures alignment between the sample and its class prototype; the diversity score captures intra-class variation beyond the class prototype via the orthogonal projection residual $DS_i = \|v_{img,i} - RS_i \, t_{c_i}\|_2$; the boundary proximity score $S_{neg,i} = \max_{j \neq c_i} v_{img,i} \cdot t_j$ characterizes the degree of confusion with the nearest negative class. The three scores are used jointly, enabling subsequent filtering to distinguish among noise, redundancy, and valuable boundary samples.
+    - **Design Motivation**: No single indicator can simultaneously address anchor retention, intra-class diversity, and decision boundary support. $RS$ preserves fundamentals, $DS$ eliminates redundancy, and $S_{neg}$ identifies boundary samples. The three are orthogonally complementary, providing a complete semantic criterion for two-stage filtering.
 
 2. **Privacy-Preserving Global Profile Construction**
-   - **Function**: Establishes a unified federated semantic reference frame and class rarity without transmitting sample-level embeddings.
-   - **Mechanism**: Clients upload only the sample count per class and the mean and variance of the three scores per class. The server applies the law of total variance (decomposing within-group and between-group variance) to compute global means and variances for subsequent Z-score normalization. Global class frequencies are also used to construct rarity weights $W_c \propto (1/(F_c + \epsilon))^{\gamma}$, which encode the global long-tail structure.
-   - **Design Motivation**: In federated settings, data distribution heterogeneity across clients is substantial, and naive averaging underestimates this heterogeneity. Explicitly decomposing variance yields a reliable "global normal range," while class-level statistics ensure lightweight communication and privacy preservation.
+    - **Function**: Establishes a unified federated semantic reference frame and class rarity without transmitting sample-level embeddings.
+    - **Mechanism**: Clients upload only the sample count per class and the mean and variance of the three scores per class. The server applies the law of total variance (decomposing within-group and between-group variance) to compute global means and variances for subsequent Z-score normalization. Global class frequencies are also used to construct rarity weights $W_c \propto (1/(F_c + \epsilon))^{\gamma}$, which encode the global long-tail structure.
+    - **Design Motivation**: In federated settings, data distribution heterogeneity across clients is substantial, and naive averaging underestimates this heterogeneity. Explicitly decomposing variance yields a reliable "global normal range," while class-level statistics ensure lightweight communication and privacy preservation.
 
 3. **Two-Stage Structured Pruning (Consensus Filter + Dynamic Balancing)**
-   - **Function**: Removes semantically anomalous samples first, then selectively compresses head-class redundancies, constructing a coreset subject to global fairness constraints.
-   - **Mechanism**: Stage 1 computes an anomaly score $AS_i = \hat{Z}_{S_{neg},i} - \hat{Z}_{RS,i}$ (after Z-score normalization) and removes the top-$p_l$ fraction of high-anomaly samples—those that resemble the negative class more than the true class. Stage 2 defines a redundancy score $R_i = \hat{Z}_{RS,i} - \hat{Z}_{S_{neg},i} - \hat{Z}_{DS,i}$, identifying samples that are "typical, far from the boundary, and low in novelty," but applies removal of the top-$p_f$ fraction only to classes whose target index $T_c = f_c / W_c$ is high (i.e., locally frequent and globally non-rare).
-   - **Design Motivation**: The two stages decouple two distinct objectives. Stage 1 identifies noise via semantic alignment rather than high loss, avoiding the erroneous removal of genuinely difficult samples. Stage 2 restricts reduction to head classes, protecting tail classes and boundary samples, thereby achieving non-uniform structured compression.
+    - **Function**: Removes semantically anomalous samples first, then selectively compresses head-class redundancies, constructing a coreset subject to global fairness constraints.
+    - **Mechanism**: Stage 1 computes an anomaly score $AS_i = \hat{Z}_{S_{neg},i} - \hat{Z}_{RS,i}$ (after Z-score normalization) and removes the top-$p_l$ fraction of high-anomaly samples—those that resemble the negative class more than the true class. Stage 2 defines a redundancy score $R_i = \hat{Z}_{RS,i} - \hat{Z}_{S_{neg},i} - \hat{Z}_{DS,i}$, identifying samples that are "typical, far from the boundary, and low in novelty," but applies removal of the top-$p_f$ fraction only to classes whose target index $T_c = f_c / W_c$ is high (i.e., locally frequent and globally non-rare).
+    - **Design Motivation**: The two stages decouple two distinct objectives. Stage 1 identifies noise via semantic alignment rather than high loss, avoiding the erroneous removal of genuinely difficult samples. Stage 2 restricts reduction to head classes, protecting tail classes and boundary samples, thereby achieving non-uniform structured compression.
 
 ### Loss & Training
 

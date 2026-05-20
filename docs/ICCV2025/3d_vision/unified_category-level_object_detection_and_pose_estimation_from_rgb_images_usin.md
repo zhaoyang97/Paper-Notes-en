@@ -18,8 +18,8 @@ content_hash: bdcbe11117531283
 # Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.02157](https://arxiv.org/abs/2508.02157)
-**Code**: [GitHub](https://github.com/Fischer-Tom/unified-detection-and-pose-estimation)
+**arXiv**: [2508.02157](https://arxiv.org/abs/2508.02157)  
+**Code**: [GitHub](https://github.com/Fischer-Tom/unified-detection-and-pose-estimation)  
 **Area**: 3D Vision
 **Keywords**: Category-level pose estimation, object detection, Neural Mesh Models, single-stage method, RGB-only
 

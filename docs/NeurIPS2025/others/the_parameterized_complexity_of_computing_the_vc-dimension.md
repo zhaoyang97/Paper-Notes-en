@@ -17,8 +17,8 @@ content_hash: c9a801b07c2e67bf
 # The Parameterized Complexity of Computing the VC-Dimension
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17451](https://arxiv.org/abs/2510.17451)
-**Code**: None (purely theoretical work)
+**arXiv**: [2510.17451](https://arxiv.org/abs/2510.17451)  
+**Code**: None (purely theoretical work)  
 **Area**: Computational Complexity Theory, Machine Learning Theory
 **Keywords**: VC dimension, parameterized complexity, treewidth, fixed-parameter tractability, ETH lower bounds, hypergraphs
 
@@ -54,21 +54,21 @@ The paper contains three major technical contributions:
 
 1. **ETH-tight lower bound (Theorem 9)**: Via a reduction from 3-Coloring to Graph-VC-Dimension.
 
-   - **Function**: Proves that the naive exhaustive algorithm $2^{O(|V|)}$ is asymptotically optimal under ETH; no $2^{o(|V|)}$-time algorithm exists.
-   - **Mechanism**: The vertices of graph $G'$ are partitioned into $k = \lceil \epsilon_1 |V(G')| \rceil$ parts; all 3-colorings of each part are enumerated to form the vertex set $X$ (an independent set) of a new graph $G$. Three auxiliary vertex sets $I_1, I_2, I_{\geq 3}$ encode coloring consistency constraints, so that $G$ has a shattered set of size $k$ if and only if $G'$ has a valid 3-coloring. The reduction requires superpolynomial time — which is unavoidable, since VC dimension is solvable in quasipolynomial time while 3-Coloring is NP-hard.
-   - **Design Motivation**: Complements the LogNP-completeness result of Papadimitriou–Yannakakis by proving that even exponential brute-force search in $|V|$ is inherently unavoidable, providing strong motivation for the structural parameterization approach.
+    - **Function**: Proves that the naive exhaustive algorithm $2^{O(|V|)}$ is asymptotically optimal under ETH; no $2^{o(|V|)}$-time algorithm exists.
+    - **Mechanism**: The vertices of graph $G'$ are partitioned into $k = \lceil \epsilon_1 |V(G')| \rceil$ parts; all 3-colorings of each part are enumerated to form the vertex set $X$ (an independent set) of a new graph $G$. Three auxiliary vertex sets $I_1, I_2, I_{\geq 3}$ encode coloring consistency constraints, so that $G$ has a shattered set of size $k$ if and only if $G'$ has a valid 3-coloring. The reduction requires superpolynomial time — which is unavoidable, since VC dimension is solvable in quasipolynomial time while 3-Coloring is NP-hard.
+    - **Design Motivation**: Complements the LogNP-completeness result of Papadimitriou–Yannakakis by proving that even exponential brute-force search in $|V|$ is inherently unavoidable, providing strong motivation for the structural parameterization approach.
 
 2. **FPT 1-additive approximation parameterized by maximum degree $\Delta$ (Theorem 12)**: Based on the structural relationship between shattered sets and witness sets.
 
-   - **Function**: Yields an algorithm with running time $2^{O(\Delta \log \Delta)} \cdot |\mathcal{H}|^{O(1)}$ that, whenever a shattered set of size $k$ exists, is guaranteed to find one of size $k-1$.
-   - **Mechanism**: Uses the key observation (Lemma 11) — if $S$ is a shattered set of size $k$, then for any $v \in S$, a subset of $\text{inc}(v)$ shatters $S \setminus \{v\}$. The algorithm enumerates all subsets $W \subseteq \text{inc}(v)$ of size $2^{k-1}$ for each vertex $v$, and applies Lemma 10 to determine whether $W$ witnesses a shattered set of size $k-1$ (by checking all permutations of $W$ for a good ordering).
-   - **Design Motivation**: While solution size and degeneracy are both intractable, the maximum degree $\Delta$ naturally bounds both the size of shattered sets ($\leq \log\Delta + 1$) and the number of incident hyperedges per vertex. This is one of only two core hypergraph structural parameters that can be exploited (the other being dimension $D$).
+    - **Function**: Yields an algorithm with running time $2^{O(\Delta \log \Delta)} \cdot |\mathcal{H}|^{O(1)}$ that, whenever a shattered set of size $k$ exists, is guaranteed to find one of size $k-1$.
+    - **Mechanism**: Uses the key observation (Lemma 11) — if $S$ is a shattered set of size $k$, then for any $v \in S$, a subset of $\text{inc}(v)$ shatters $S \setminus \{v\}$. The algorithm enumerates all subsets $W \subseteq \text{inc}(v)$ of size $2^{k-1}$ for each vertex $v$, and applies Lemma 10 to determine whether $W$ witnesses a shattered set of size $k-1$ (by checking all permutations of $W$ for a good ordering).
+    - **Design Motivation**: While solution size and degeneracy are both intractable, the maximum degree $\Delta$ naturally bounds both the size of shattered sets ($\leq \log\Delta + 1$) and the number of incident hyperedges per vertex. This is one of only two core hypergraph structural parameters that can be exploited (the other being dimension $D$).
 
 3. **FPT exact algorithm parameterized by treewidth tw (Theorem 19)**: Two-phase dynamic programming.
 
-   - **Function**: Solves Gen-VC-Dimension exactly in $2^{O(\text{tw} \cdot \log \text{tw})} \cdot |V|$ time.
-   - **Mechanism**: **Phase 1** — Assuming the largest shattered set is contained within some bag; uses existing techniques to detect this in $2^{O(\text{tw})} \cdot |V|$ time. **Phase 2** — If the shattered set spans multiple bags, Lemma 15 guarantees $|S| \leq \log\text{tw} + 2$ (since the size of a shattered set crossing a separator is bounded by $O(\log|Z|)$), making $k$ small; the problem is then reduced to finding an embedding of a pattern graph $\mathcal{P}$ (containing $k$ shattered-set vertices and $2^k$ witness vertices) in the tree decomposition. DP states $\Gamma(t, f)$ record mappings from pattern graph vertices to $\text{bag} \cup \{\uparrow, \downarrow\}$.
-   - **Design Motivation**: Treewidth is the most successful graph parameter in parameterized algorithms. While Courcelle's theorem applies directly, it yields a tower-of-exponentials dependency. The single-exponential $2^{O(\text{tw} \cdot \log \text{tw})}$ dependence achieved here is far superior, and contrasts sharply with the (tight) double-exponential dependence required for closely related problems.
+    - **Function**: Solves Gen-VC-Dimension exactly in $2^{O(\text{tw} \cdot \log \text{tw})} \cdot |V|$ time.
+    - **Mechanism**: **Phase 1** — Assuming the largest shattered set is contained within some bag; uses existing techniques to detect this in $2^{O(\text{tw})} \cdot |V|$ time. **Phase 2** — If the shattered set spans multiple bags, Lemma 15 guarantees $|S| \leq \log\text{tw} + 2$ (since the size of a shattered set crossing a separator is bounded by $O(\log|Z|)$), making $k$ small; the problem is then reduced to finding an embedding of a pattern graph $\mathcal{P}$ (containing $k$ shattered-set vertices and $2^k$ witness vertices) in the tree decomposition. DP states $\Gamma(t, f)$ record mappings from pattern graph vertices to $\text{bag} \cup \{\uparrow, \downarrow\}$.
+    - **Design Motivation**: Treewidth is the most successful graph parameter in parameterized algorithms. While Courcelle's theorem applies directly, it yields a tower-of-exponentials dependency. The single-exponential $2^{O(\text{tw} \cdot \log \text{tw})}$ dependence achieved here is far superior, and contrasts sharply with the (tight) double-exponential dependence required for closely related problems.
 
 ### Loss & Training
 
@@ -156,8 +156,8 @@ tags:
 # The Parameterized Complexity of Computing the VC-Dimension
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17451](https://arxiv.org/abs/2510.17451)
-**Code**: None
+**arXiv**: [2510.17451](https://arxiv.org/abs/2510.17451)  
+**Code**: None  
 **Area**: Computational Complexity Theory, Machine Learning Theory
 **Keywords**: VC dimension, parameterized complexity, treewidth, fixed-parameter tractability, ETH lower bounds
 

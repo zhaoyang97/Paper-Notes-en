@@ -18,8 +18,8 @@ content_hash: da427a9a0f7e51e0
 # Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04403](https://arxiv.org/abs/2507.04403)
-**Code**: [ai4city-hkust/Sat2City](https://ai4city-hkust.github.io/Sat2City/)
+**arXiv**: [2507.04403](https://arxiv.org/abs/2507.04403)  
+**Code**: [ai4city-hkust/Sat2City](https://ai4city-hkust.github.io/Sat2City/)  
 **Area**: 3D Vision
 **Keywords**: City-scale 3D generation, satellite imagery, sparse voxel grids, cascaded latent diffusion, appearance modeling
 

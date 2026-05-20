@@ -18,8 +18,8 @@ content_hash: b9f249346e76789d
 # DC4GS: Directional Consistency-Driven Adaptive Density Control for 3D Gaussian Splatting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26921](https://arxiv.org/abs/2510.26921)
-**Code**: Available (Project Page)
+**arXiv**: [2510.26921](https://arxiv.org/abs/2510.26921)  
+**Code**: Available (Project Page)  
 **Area**: 3D Vision / Neural Rendering
 **Keywords**: 3D Gaussian Splatting, Adaptive Density Control, Directional Consistency, Primitive Splitting, Scene Reconstruction
 

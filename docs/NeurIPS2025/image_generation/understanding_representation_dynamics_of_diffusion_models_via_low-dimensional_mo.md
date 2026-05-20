@@ -18,8 +18,8 @@ content_hash: aba84b8c22c32358
 # Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.05743](https://arxiv.org/abs/2502.05743)
-**Code**: None
+**arXiv**: [2502.05743](https://arxiv.org/abs/2502.05743)  
+**Code**: None  
 **Area**: Image Generation / Diffusion Model Theory
 **Keywords**: Diffusion Models, Representation Learning, Unimodal Dynamics, Low-Rank Gaussian Mixture, Generalization-Memorization
 

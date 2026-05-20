@@ -18,8 +18,8 @@ content_hash: 99225e6c85d5f1d7
 # Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12779](https://arxiv.org/abs/2511.12779)
-**Code**: [github.com/VirtuosoResearch/PolicyGradEx](https://github.com/VirtuosoResearch/PolicyGradEx)
+**arXiv**: [2511.12779](https://arxiv.org/abs/2511.12779)  
+**Code**: [github.com/VirtuosoResearch/PolicyGradEx](https://github.com/VirtuosoResearch/PolicyGradEx)  
 **Area**: Reinforcement Learning
 **Keywords**: Multi-Objective Reinforcement Learning, Meta Reinforcement Learning, Gradient Estimation, Task Affinity, Task Grouping
 

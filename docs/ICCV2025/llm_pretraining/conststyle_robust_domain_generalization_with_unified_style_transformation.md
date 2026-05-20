@@ -18,8 +18,8 @@ content_hash: 56730ba87a69603d
 # ConstStyle: Robust Domain Generalization with Unified Style Transformation
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.05975](https://arxiv.org/abs/2509.05975)
-**Code**: [https://github.com/nduongw/ConstStyle](https://github.com/nduongw/ConstStyle)
+**arXiv**: [2509.05975](https://arxiv.org/abs/2509.05975)  
+**Code**: [https://github.com/nduongw/ConstStyle](https://github.com/nduongw/ConstStyle)  
 **Area**: Domain Generalization
 **Keywords**: domain generalization, style transformation, unified domain, distribution alignment, robustness
 

@@ -18,8 +18,8 @@ content_hash: 39ea30aa5acf0508
 # Evaluating LLMs for Combinatorial Optimization: One-Phase and Two-Phase Heuristics for 2D Bin-Packing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.22255](https://arxiv.org/abs/2509.22255)
-**Code**: [Provided in Appendix](https://arxiv.org/abs/2509.22255)
+**arXiv**: [2509.22255](https://arxiv.org/abs/2509.22255)  
+**Code**: [Provided in Appendix](https://arxiv.org/abs/2509.22255)  
 **Area**: Optimization / LLM Applications
 **Keywords**: LLM Evaluation, Combinatorial Optimization, 2D Bin-Packing, Evolutionary Algorithms, Heuristic Generation
 

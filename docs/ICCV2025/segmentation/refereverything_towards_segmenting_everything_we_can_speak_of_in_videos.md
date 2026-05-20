@@ -18,8 +18,8 @@ content_hash: 17f12a6a77824b58
 # ReferEverything: Towards Segmenting Everything We Can Speak of in Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.23287](https://arxiv.org/abs/2410.23287)
-**Code**: [Project Page](https://refereverything.github.io/)
+**arXiv**: [2410.23287](https://arxiv.org/abs/2410.23287)  
+**Code**: [Project Page](https://refereverything.github.io/)  
 **Area**: Image Segmentation
 **Keywords**: Referring Video Segmentation, Video Diffusion Models, Open-World Segmentation, Dynamic Process Segmentation, Generative Pre-training
 

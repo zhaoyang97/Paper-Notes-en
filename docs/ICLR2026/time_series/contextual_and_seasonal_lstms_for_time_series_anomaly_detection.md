@@ -18,8 +18,8 @@ content_hash: e8d73e561e287d9f
 # Contextual and Seasonal LSTMs for Time Series Anomaly Detection
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.09690](https://arxiv.org/abs/2602.09690)
-**Code**: [https://github.com/NESA-Lab/Contextual-and-Seasonal-LSTMs-for-TSAD](https://github.com/NESA-Lab/Contextual-and-Seasonal-LSTMs-for-TSAD)
+**arXiv**: [2602.09690](https://arxiv.org/abs/2602.09690)  
+**Code**: [https://github.com/NESA-Lab/Contextual-and-Seasonal-LSTMs-for-TSAD](https://github.com/NESA-Lab/Contextual-and-Seasonal-LSTMs-for-TSAD)  
 **Area**: AI Safety / Time Series Anomaly Detection
 **Keywords**: time series anomaly detection, LSTM, frequency domain, noise decomposition, univariate time series
 
@@ -49,21 +49,21 @@ Given a univariate time series $x_{0:t}$, wavelet noise decomposition is first a
 
 1. **Wavelet Noise Decomposition**:
 
-   - *Function*: Filters noise and anomalous points prior to training, retaining trend and periodic components.
-   - *Mechanism*: The signal is decomposed via wavelet transform into approximation coefficients $c_A$ and detail coefficients $c_D^{(i)}$ at each level. The noise level is estimated using MAD: $\sigma_i = \frac{\text{median}(|c_D^{(i)}|)}{\Phi^{-1}(0.75)}$. A universal threshold $\lambda_i = \sigma_i \sqrt{2\log n}$ is computed, soft-thresholding is applied to the detail coefficients, and the signal is reconstructed.
-   - *Design Motivation*: More precise than the pooling-based decomposition in DLinear and more efficient than STL decomposition. Crucially, only denoising is performed—trend/periodic decomposition is not applied—so the complete signal is preserved for the downstream branches.
+    - *Function*: Filters noise and anomalous points prior to training, retaining trend and periodic components.
+    - *Mechanism*: The signal is decomposed via wavelet transform into approximation coefficients $c_A$ and detail coefficients $c_D^{(i)}$ at each level. The noise level is estimated using MAD: $\sigma_i = \frac{\text{median}(|c_D^{(i)}|)}{\Phi^{-1}(0.75)}$. A universal threshold $\lambda_i = \sigma_i \sqrt{2\log n}$ is computed, soft-thresholding is applied to the detail coefficients, and the signal is reconstructed.
+    - *Design Motivation*: More precise than the pooling-based decomposition in DLinear and more efficient than STL decomposition. Crucially, only denoising is performed—trend/periodic decomposition is not applied—so the complete signal is preserved for the downstream branches.
 
 2. **S-LSTM (Seasonal Branch)**:
 
-   - *Function*: Learns the evolutionary trend of periodic patterns in the historical series.
-   - *Mechanism*: The historical series preceding the detection point is partitioned into equal-length, non-overlapping windows. FFT is applied to each window to obtain frequency-domain vectors $z_s \in \mathbb{R}^{n \times w_s}$, which are concatenated with the raw time-domain values as covariates and fed into a single-layer LSTM to predict future periodic patterns.
-   - *Design Motivation*: Periodicity evolves dynamically (period length and frequency vary over time), so examining only adjacent cycles is insufficient; modeling evolutionary trends across multiple cycles is necessary.
+    - *Function*: Learns the evolutionary trend of periodic patterns in the historical series.
+    - *Mechanism*: The historical series preceding the detection point is partitioned into equal-length, non-overlapping windows. FFT is applied to each window to obtain frequency-domain vectors $z_s \in \mathbb{R}^{n \times w_s}$, which are concatenated with the raw time-domain values as covariates and fed into a single-layer LSTM to predict future periodic patterns.
+    - *Design Motivation*: Periodicity evolves dynamically (period length and frequency vary over time), so examining only adjacent cycles is insufficient; modeling evolutionary trends across multiple cycles is necessary.
 
 3. **C-LSTM (Contextual Branch)**:
 
-   - *Function*: Captures short-term local trends and distributional shifts.
-   - *Mechanism*: The short historical series preceding the detection point is divided into overlapping windows (with a relatively small window size $w_c$). FFT is applied to each window, and the results are concatenated into $z_c \in \mathbb{R}^{n \times w_c}$, which is fed into a single-layer LSTM to predict future values.
-   - *Design Motivation*: Each time point in a UTS carries only a single value, making information scarce. Overlapping windows convert point-level learning into segment-level learning, alleviating the insufficiency of single-point information.
+    - *Function*: Captures short-term local trends and distributional shifts.
+    - *Mechanism*: The short historical series preceding the detection point is divided into overlapping windows (with a relatively small window size $w_c$). FFT is applied to each window, and the results are concatenated into $z_c \in \mathbb{R}^{n \times w_c}$, which is fed into a single-layer LSTM to predict future values.
+    - *Design Motivation*: Each time point in a UTS carries only a single value, making information scarce. Overlapping windows convert point-level learning into segment-level learning, alleviating the insufficiency of single-point information.
 
 ### Loss & Training
 A noise-decomposition-aware negative log-likelihood (NLL) loss is employed, jointly predicting mean $\mu$ and variance $\sigma^2$:

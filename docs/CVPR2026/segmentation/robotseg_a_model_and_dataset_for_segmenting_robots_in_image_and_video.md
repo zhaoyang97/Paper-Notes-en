@@ -18,8 +18,8 @@ content_hash: 3c6d66af9a60681c
 # RobotSeg: A Model and Dataset for Segmenting Robots in Image and Video
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.22950](https://arxiv.org/abs/2511.22950)
-**Code**: [https://github.com/showlab/RobotSeg](https://github.com/showlab/RobotSeg)
+**arXiv**: [2511.22950](https://arxiv.org/abs/2511.22950)  
+**Code**: [https://github.com/showlab/RobotSeg](https://github.com/showlab/RobotSeg)  
 **Area**: Segmentation
 **Keywords**: Robot Segmentation, SAM2, Structure-Aware, Automatic Segmentation, Label-Efficient Learning
 

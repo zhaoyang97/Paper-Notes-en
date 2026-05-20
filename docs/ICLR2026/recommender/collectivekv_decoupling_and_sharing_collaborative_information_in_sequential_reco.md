@@ -18,8 +18,8 @@ content_hash: 0884a393f09cbc3c
 # CollectiveKV: Decoupling and Sharing Collaborative Information in Sequential Recommendation
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19178](https://arxiv.org/abs/2601.19178)
-**Code**: To be confirmed
+**arXiv**: [2601.19178](https://arxiv.org/abs/2601.19178)  
+**Code**: To be confirmed  
 **Area**: Recommender Systems / Model Compression
 **Keywords**: KV cache compression, cross-user sharing, collaborative signals, sequential recommendation, SVD analysis
 
@@ -49,20 +49,20 @@ The framework consists of two stages—prefill and decode. During prefill, the u
 
 1. **KV Decomposition: User-Specific + Collective Shared**
 
-   - **Function**: Decomposes KV into low-dimensional $\mathbf{K}_u \in \mathbb{R}^{n \times d_u}$ and high-dimensional $\mathbf{K}_c \in \mathbb{R}^{n \times d_g}$.
-   - **Mechanism**: $\mathbf{K}_u = \mathbf{S} W_k + b_k$ (linear projection for dimensionality reduction); $\mathbf{K}_c[i] = P_k[\mathbf{I}_k[i]]$ (index-based retrieval from the global pool); final concatenation $\mathbf{K} = \text{concat}(\mathbf{K}_u, \mathbf{K}_c)$.
-   - **Design Motivation**: SVD analysis demonstrates that principal components are shareable across users while residuals are personalized; the shared pool thus carries high-dimensional primary information while the low-dimensional projection retains user-specific characteristics.
+    - **Function**: Decomposes KV into low-dimensional $\mathbf{K}_u \in \mathbb{R}^{n \times d_u}$ and high-dimensional $\mathbf{K}_c \in \mathbb{R}^{n \times d_g}$.
+    - **Mechanism**: $\mathbf{K}_u = \mathbf{S} W_k + b_k$ (linear projection for dimensionality reduction); $\mathbf{K}_c[i] = P_k[\mathbf{I}_k[i]]$ (index-based retrieval from the global pool); final concatenation $\mathbf{K} = \text{concat}(\mathbf{K}_u, \mathbf{K}_c)$.
+    - **Design Motivation**: SVD analysis demonstrates that principal components are shareable across users while residuals are personalized; the shared pool thus carries high-dimensional primary information while the low-dimensional projection retains user-specific characteristics.
 
 2. **CollectiveKV Router**
 
-   - **Function**: Maps sequence embeddings to global KV pool indices for each item.
-   - **Mechanism**: $\mathbf{M} = \mathbf{S} W_r + b_r$; $\mathbf{I}_k[i] = \arg\max_j \mathbf{M}_{ij}$. During training, sigmoid gating ensures gradient propagation: $\mathbf{K}_c[i] = \sigma(\mathbf{M}[i, \mathbf{I}_k[i]]) \cdot P_k[\mathbf{I}_k[i]]$.
-   - **Design Motivation**: Since argmax is non-differentiable, sigmoid gating combined with a peak loss ensures consistency between training and inference.
+    - **Function**: Maps sequence embeddings to global KV pool indices for each item.
+    - **Mechanism**: $\mathbf{M} = \mathbf{S} W_r + b_r$; $\mathbf{I}_k[i] = \arg\max_j \mathbf{M}_{ij}$. During training, sigmoid gating ensures gradient propagation: $\mathbf{K}_c[i] = \sigma(\mathbf{M}[i, \mathbf{I}_k[i]]) \cdot P_k[\mathbf{I}_k[i]]$.
+    - **Design Motivation**: Since argmax is non-differentiable, sigmoid gating combined with a peak loss ensures consistency between training and inference.
 
 3. **Global KV Pool**
 
-   - **Function**: $P_k, P_v \in \mathbb{R}^{m \times d_g}$ reside permanently in GPU memory and are shared across all users.
-   - **Design Motivation**: Pool size $m$ is far smaller than the product of user count and sequence length, dramatically reducing storage; the high dimensionality $d_g$ preserves information capacity.
+    - **Function**: $P_k, P_v \in \mathbb{R}^{m \times d_g}$ reside permanently in GPU memory and are shared across all users.
+    - **Design Motivation**: Pool size $m$ is far smaller than the product of user count and sequence length, dramatically reducing storage; the high dimensionality $d_g$ preserves information capacity.
 
 ### Loss & Training
 - Original recommendation loss + peak loss $\mathcal{L}_{\text{peak}} = -\frac{1}{n}\sum_i \log\sigma(\mathbf{M}[i, \mathbf{I}_k[i]])$ (ensuring sigmoid outputs approach 1).

@@ -18,8 +18,8 @@ content_hash: c45f82408bcb7d1d
 # FEAT: Free Energy Estimators with Adaptive Transport
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.11516](https://arxiv.org/abs/2504.11516)
-**Code**: [GitHub](https://github.com/jiajunhe98/FEAT)
+**arXiv**: [2504.11516](https://arxiv.org/abs/2504.11516)  
+**Code**: [GitHub](https://github.com/jiajunhe98/FEAT)  
 **Area**: Computational Physics / Molecular Simulation
 **Keywords**: Free energy estimation, stochastic interpolants, Jarzynski equality, Crooks theorem, variational bounds
 

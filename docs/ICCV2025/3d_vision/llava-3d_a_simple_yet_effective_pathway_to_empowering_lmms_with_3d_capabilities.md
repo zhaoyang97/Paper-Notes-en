@@ -18,8 +18,8 @@ content_hash: 82888ef685edc6ea
 # LLaVA-3D: A Simple yet Effective Pathway to Empowering LMMs with 3D Capabilities
 
 **Conference**: ICCV 2025
-**arXiv**: [2409.18125](https://arxiv.org/abs/2409.18125)
-**Code**: [https://zcmax.github.io/projects/LLaVA-3D](https://zcmax.github.io/projects/LLaVA-3D)
+**arXiv**: [2409.18125](https://arxiv.org/abs/2409.18125)  
+**Code**: [https://zcmax.github.io/projects/LLaVA-3D](https://zcmax.github.io/projects/LLaVA-3D)  
 **Area**: 3D Vision / Multimodal VLM
 **Keywords**: 3D Scene Understanding, Large Multimodal Models, 3D Patch, Positional Encoding, Visual Grounding
 

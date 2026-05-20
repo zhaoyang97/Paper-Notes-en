@@ -17,8 +17,8 @@ content_hash: 660d9fc7d2299a65
 # Lost in Time? A Meta-Learning Framework for Time-Shift-Tolerant Physiological Signal Transformation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.21500](https://arxiv.org/abs/2511.21500)
-**Code**: [GitHub](https://github.com/HQ-LV/ShiftSyncNet)
+**arXiv**: [2511.21500](https://arxiv.org/abs/2511.21500)  
+**Code**: [GitHub](https://github.com/HQ-LV/ShiftSyncNet)  
 **Area**: Physiological Signal Processing / Time Series Transformation
 **Keywords**: Meta-Learning, Time-Shift Correction, Fourier Phase Shift, Noisy Label Learning, Physiological Signal Waveform Transformation
 

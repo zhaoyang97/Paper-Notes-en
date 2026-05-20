@@ -18,8 +18,8 @@ content_hash: 92ec1b0ae71a1ea9
 # AIM: Amending Inherent Interpretability via Self-Supervised Masking
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.11502](https://arxiv.org/abs/2508.11502)
-**Code**: No public code available
+**arXiv**: [2508.11502](https://arxiv.org/abs/2508.11502)  
+**Code**: No public code available  
 **Area**: Self-Supervised Learning / Interpretability / Robust Representation Learning
 **Keywords**: self-supervised masking, inherent interpretability, spurious features, feature pyramid, Energy Pointing Game
 

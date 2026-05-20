@@ -18,8 +18,8 @@ content_hash: 10017f5b47e8b85c
 # Beyond Monotonicity: Revisiting Factorization Principles in Multi-Agent Q-Learning
 
 **Conference**: AAAI 2026 (Oral)
-**arXiv**: [2511.09792](https://arxiv.org/abs/2511.09792)
-**Code**: N/A
+**arXiv**: [2511.09792](https://arxiv.org/abs/2511.09792)  
+**Code**: N/A  
 **Area**: Reinforcement Learning
 **Keywords**: Multi-agent reinforcement learning, value function factorization, IGM consistency, non-monotonic mixing network, dynamical systems analysis
 

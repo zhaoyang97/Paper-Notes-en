@@ -18,8 +18,8 @@ content_hash: 5271ac624a4bcdca
 # On the Generalization of SFT: A Reinforcement Learning Perspective with Reward Rectification
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.05629](https://arxiv.org/abs/2508.05629)
-**Code**: [GitHub](https://github.com/yongliang-wu/DFT)
+**arXiv**: [2508.05629](https://arxiv.org/abs/2508.05629)  
+**Code**: [GitHub](https://github.com/yongliang-wu/DFT)  
 **Area**: Reinforcement Learning
 **Keywords**: SFT generalization, policy gradient, inverse probability weighting, Dynamic Fine-Tuning, reward rectification
 

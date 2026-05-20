@@ -18,8 +18,8 @@ content_hash: c41d8df965679063
 # TAdaRAG: Task Adaptive Retrieval-Augmented Generation via On-the-Fly Knowledge Graph Construction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12520](https://arxiv.org/abs/2511.12520)
-**Code**: [github.com/IAAR-Shanghai/TAdaRAG](https://github.com/IAAR-Shanghai/TAdaRAG)
+**arXiv**: [2511.12520](https://arxiv.org/abs/2511.12520)  
+**Code**: [github.com/IAAR-Shanghai/TAdaRAG](https://github.com/IAAR-Shanghai/TAdaRAG)  
 **Area**: Reinforcement Learning
 **Keywords**: RAG, Knowledge Graph, Task Adaptation, REINFORCE, Long-context Understanding
 

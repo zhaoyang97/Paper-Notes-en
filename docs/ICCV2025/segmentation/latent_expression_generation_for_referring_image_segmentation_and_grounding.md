@@ -18,8 +18,8 @@ content_hash: 5f190247a99a03bb
 # Latent Expression Generation for Referring Image Segmentation and Grounding
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.05123](https://arxiv.org/abs/2508.05123)
-**Code**: None
+**arXiv**: [2508.05123](https://arxiv.org/abs/2508.05123)  
+**Code**: None  
 **Area**: Image Segmentation
 **Keywords**: Referring image segmentation, visual grounding, latent expression generation, contrastive learning, multimodal fusion
 

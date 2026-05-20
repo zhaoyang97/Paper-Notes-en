@@ -19,8 +19,8 @@ content_hash: 09dcdaab70980f9c
 # ProPerSim: Developing Proactive and Personalized AI Assistants through User-Assistant Simulation
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21730](https://arxiv.org/abs/2509.21730)
-**Code**: [GitHub](https://github.com/jiho283/ProPerSim)
+**arXiv**: [2509.21730](https://arxiv.org/abs/2509.21730)  
+**Code**: [GitHub](https://github.com/jiho283/ProPerSim)  
 **Area**: Recommender Systems
 **Keywords**: proactive agent, personalization, user simulation, DPO, Big Five personality, generative agents
 

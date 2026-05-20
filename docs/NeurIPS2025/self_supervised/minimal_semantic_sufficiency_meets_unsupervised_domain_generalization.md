@@ -18,8 +18,8 @@ content_hash: 850e1fcc4999ec62
 # Minimal Semantic Sufficiency Meets Unsupervised Domain Generalization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15791](https://arxiv.org/abs/2509.15791)
-**Code**: To be confirmed
+**arXiv**: [2509.15791](https://arxiv.org/abs/2509.15791)  
+**Code**: To be confirmed  
 **Area**: Self-Supervised Learning / Domain Generalization
 **Keywords**: Unsupervised Domain Generalization, Information Disentanglement, Semantic Sufficiency, Minimality, Fourier Augmentation
 

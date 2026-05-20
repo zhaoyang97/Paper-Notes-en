@@ -17,8 +17,8 @@ content_hash: b9992c2c39574880
 # AFUNet: Cross-Iterative Alignment-Fusion Synergy for HDR Reconstruction via Deep Unfolding Paradigm
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23537](https://arxiv.org/abs/2506.23537)
-**Code**: [https://github.com/eezkni/AFUNet](https://github.com/eezkni/AFUNet)
+**arXiv**: [2506.23537](https://arxiv.org/abs/2506.23537)  
+**Code**: [https://github.com/eezkni/AFUNet](https://github.com/eezkni/AFUNet)  
 **Area**: Other
 **Keywords**: HDR imaging, deep unfolding network, MAP estimation, alignment-fusion alternating optimization, deghosting
 

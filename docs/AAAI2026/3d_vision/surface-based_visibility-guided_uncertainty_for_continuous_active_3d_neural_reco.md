@@ -18,8 +18,8 @@ content_hash: e7f27747d0b0d56c
 # Surface-Based Visibility-Guided Uncertainty for Continuous Active 3D Neural Reconstruction
 
 **Conference**: AAAI 2026
-**arXiv**: [2405.02568](https://arxiv.org/abs/2405.02568)
-**Code**: [https://github.com/hskAlena/Surface-Based-Visibility](https://github.com/hskAlena/Surface-Based-Visibility)
+**arXiv**: [2405.02568](https://arxiv.org/abs/2405.02568)  
+**Code**: [https://github.com/hskAlena/Surface-Based-Visibility](https://github.com/hskAlena/Surface-Based-Visibility)  
 **Area**: 3D Vision
 **Keywords**: Active 3D reconstruction, neural implicit surface, uncertainty estimation, Next-Best View, visibility reasoning
 

@@ -18,8 +18,8 @@ content_hash: bcef5401a964348f
 # CRAFT: Training-Free Cascaded Retrieval for Tabular QA
 
 **Conference**: ACL 2026
-**arXiv**: [2505.14984](https://arxiv.org/abs/2505.14984)
-**Code**: [Project Page](https://coral-lab-asu.github.io/CRAFT/)
+**arXiv**: [2505.14984](https://arxiv.org/abs/2505.14984)  
+**Code**: [Project Page](https://coral-lab-asu.github.io/CRAFT/)  
 **Area**: Information Retrieval / Tabular Question Answering
 **Keywords**: Table Retrieval, Cascaded Retrieval, Zero-Shot, Tabular QA, Training-Free
 

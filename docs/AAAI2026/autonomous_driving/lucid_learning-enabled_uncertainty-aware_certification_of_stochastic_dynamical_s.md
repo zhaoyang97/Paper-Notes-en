@@ -18,8 +18,8 @@ content_hash: bdfe9e0ba1675924
 # LUCID: Learning-Enabled Uncertainty-Aware Certification of Stochastic Dynamical Systems
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.11750](https://arxiv.org/abs/2512.11750)
-**Code**: None
+**arXiv**: [2512.11750](https://arxiv.org/abs/2512.11750)  
+**Code**: None  
 **Area**: Autonomous Driving / Formal Verification
 **Keywords**: Safety Certification, Stochastic Systems, Control Barrier Certificates, Kernel Methods, Robust Verification
 

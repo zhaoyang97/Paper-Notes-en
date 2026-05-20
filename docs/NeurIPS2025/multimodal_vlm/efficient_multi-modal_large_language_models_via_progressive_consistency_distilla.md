@@ -18,8 +18,8 @@ content_hash: 0da72548ff5de566
 # Efficient Multi-modal Large Language Models via Progressive Consistency Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.00515](https://arxiv.org/abs/2510.00515)
-**Code**: [Available](https://github.com/ZichenWen1/EPIC)
+**arXiv**: [2510.00515](https://arxiv.org/abs/2510.00515)  
+**Code**: [Available](https://github.com/ZichenWen1/EPIC)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal LLM, visual token compression, progressive distillation, consistency distillation, inference efficiency
 

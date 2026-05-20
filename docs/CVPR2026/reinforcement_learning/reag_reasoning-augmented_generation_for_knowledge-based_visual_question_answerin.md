@@ -17,8 +17,8 @@ content_hash: 3fcff8c723193eed
 # ReAG: Reasoning-Augmented Generation for Knowledge-based Visual Question Answering
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.22715](https://arxiv.org/abs/2511.22715)
-**Code**: [aimagelab.github.io/ReAG](https://aimagelab.github.io/ReAG)
+**arXiv**: [2511.22715](https://arxiv.org/abs/2511.22715)  
+**Code**: [aimagelab.github.io/ReAG](https://aimagelab.github.io/ReAG)  
 **Area**: Reinforcement Learning
 **Keywords**: KB-VQA, RAG, Reinforcement Learning, Reasoning Augmentation, Multimodal Retrieval
 

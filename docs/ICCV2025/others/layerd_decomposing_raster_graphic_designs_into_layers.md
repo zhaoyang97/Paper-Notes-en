@@ -17,8 +17,8 @@ content_hash: d5081727975e199e
 # LayerD: Decomposing Raster Graphic Designs into Layers
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.25134](https://arxiv.org/abs/2509.25134)
-**Code**: [https://cyberagentailab.github.io/LayerD/](https://cyberagentailab.github.io/LayerD/)
+**arXiv**: [2509.25134](https://arxiv.org/abs/2509.25134)  
+**Code**: [https://cyberagentailab.github.io/LayerD/](https://cyberagentailab.github.io/LayerD/)  
 **Area**: Other (Graphic Design / Image Decomposition)
 **Keywords**: Layer decomposition, graphic design, iterative matting, palette optimization, evaluation protocol
 

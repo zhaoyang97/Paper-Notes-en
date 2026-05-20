@@ -18,8 +18,8 @@ content_hash: d7791d9823a6758d
 # Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction
 
 **Conference**: NeurIPS 2025 (GenAI for Health Workshop)
-**arXiv**: [2508.17554](https://arxiv.org/abs/2508.17554)
-**Code**: [GitHub](https://github.com/ShuqiZi1/S2G-Net)
+**arXiv**: [2508.17554](https://arxiv.org/abs/2508.17554)  
+**Code**: [GitHub](https://github.com/ShuqiZi1/S2G-Net)  
 **Area**: Medical Informatics
 **Keywords**: ICU length-of-stay prediction, graph neural networks, state-space models, Mamba, multi-view graphs
 

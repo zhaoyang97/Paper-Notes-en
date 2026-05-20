@@ -18,8 +18,8 @@ content_hash: 267ea2181e801a68
 # LLaVA-FA: Learning Fourier Approximation for Compressing Large Multimodal Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.00135](https://arxiv.org/abs/2602.00135)
-**Code**: None
+**arXiv**: [2602.00135](https://arxiv.org/abs/2602.00135)  
+**Code**: None  
 **Area**: Multimodal Large Language Models
 **Keywords**: Model Compression, Fourier Transform, Low-Rank Decomposition, Quantization, Multimodal Language Models
 

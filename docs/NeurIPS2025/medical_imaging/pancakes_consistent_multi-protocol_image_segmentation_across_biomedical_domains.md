@@ -18,8 +18,8 @@ content_hash: 73bef1204f592af8
 # Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.13534](https://arxiv.org/abs/2512.13534)
-**Code**: Unavailable
+**arXiv**: [2512.13534](https://arxiv.org/abs/2512.13534)  
+**Code**: Unavailable  
 **Area**: Medical Imaging / Image Segmentation
 **Keywords**: Multi-protocol segmentation, semantic consistency, foundation models, biomedical imaging, unsupervised segmentation
 

@@ -18,8 +18,8 @@ content_hash: 81c63af490ab3404
 # InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11298](https://arxiv.org/abs/2603.11298)
-**Code**: Unavailable (to be released after review)
+**arXiv**: [2603.11298](https://arxiv.org/abs/2603.11298)  
+**Code**: Unavailable (to be released after review)  
 **Area**: 3D Reconstruction / High Dynamic Range Imaging
 **Keywords**: HDR novel view synthesis, feed-forward 3D reconstruction, 3D Gaussian splatting, multi-exposure fusion, tone mapping meta-network
 

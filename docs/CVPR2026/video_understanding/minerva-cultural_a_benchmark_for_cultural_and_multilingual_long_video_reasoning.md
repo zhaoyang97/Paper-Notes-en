@@ -18,8 +18,8 @@ content_hash: 8eca431c3c9fb9ee
 # MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.10649](https://arxiv.org/abs/2601.10649)
-**Code**: Coming soon
+**arXiv**: [2601.10649](https://arxiv.org/abs/2601.10649)  
+**Code**: Coming soon  
 **Area**: Video Understanding / Multicultural Benchmarking
 **Keywords**: Video QA, cross-cultural understanding, multilingual reasoning, long video, evidence graph error analysis
 

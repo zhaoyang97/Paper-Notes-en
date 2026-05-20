@@ -18,9 +18,9 @@ content_hash: c5aa661741daf178
 # Sample-Adaptivity Tradeoff in On-Demand Sampling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.15507](https://arxiv.org/abs/2511.15507)
+**arXiv**: [2511.15507](https://arxiv.org/abs/2511.15507)  
 **Authors**: Nika Haghtalab (UC Berkeley), Omar Montasser (Yale), Mingda Qiao (UMass Amherst)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Other
 **Keywords**: Multi-distribution learning, sample complexity, round complexity, adaptive sampling, online optimization, Boosting
 

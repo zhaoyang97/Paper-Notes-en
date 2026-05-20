@@ -18,8 +18,8 @@ content_hash: 01e77c1350232580
 # Angular Gradient Sign Method: Uncovering Vulnerabilities in Hyperbolic Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12985v2](https://arxiv.org/abs/2511.12985v2)
-**Code**: None
+**arXiv**: [2511.12985v2](https://arxiv.org/abs/2511.12985v2)  
+**Code**: None  
 **Area**: AI Security / Adversarial Attacks / Hyperbolic Space
 **Keywords**: Adversarial Attack, Hyperbolic Networks, Angular Gradient, Poincaré Ball, Cross-modal Retrieval
 

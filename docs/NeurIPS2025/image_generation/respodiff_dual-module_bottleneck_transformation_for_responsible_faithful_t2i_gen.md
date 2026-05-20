@@ -18,8 +18,8 @@ content_hash: 35eb8a877b44e22e
 # RespoDiff: Dual-Module Bottleneck Transformation for Responsible & Faithful T2I Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15257](https://arxiv.org/abs/2509.15257)
-**Code**: [Project Page](https://vssilpa.github.io/respodiff_project_page)
+**arXiv**: [2509.15257](https://arxiv.org/abs/2509.15257)  
+**Code**: [Project Page](https://vssilpa.github.io/respodiff_project_page)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Responsible Generation, Fairness, Safety, Bottleneck Transformation, Score Matching
 

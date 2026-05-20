@@ -18,8 +18,8 @@ content_hash: 9c50233716e96840
 # MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.18810](https://arxiv.org/abs/2511.18810)
-**Code**: None
+**arXiv**: [2511.18810](https://arxiv.org/abs/2511.18810)  
+**Code**: None  
 **Area**: Robotics / Embodied Intelligence
 **Keywords**: VLA model merging, multi-skill robotics, sparse LoRA masking, action expert redesign, test-time task routing
 

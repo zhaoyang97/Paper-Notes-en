@@ -18,8 +18,8 @@ content_hash: d5a5f8cf0918475d
 # Too Vivid to Be Real? Benchmarking and Calibrating Generative Color Fidelity
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10990](https://arxiv.org/abs/2603.10990)
-**Code**: [GitHub](https://github.com/ZhengyaoFang/CFM)
+**arXiv**: [2603.10990](https://arxiv.org/abs/2603.10990)  
+**Code**: [GitHub](https://github.com/ZhengyaoFang/CFM)  
 **Area**: Image Generation
 **Keywords**: color fidelity, text-to-image evaluation, guidance scale, realistic generation, evaluation bias
 

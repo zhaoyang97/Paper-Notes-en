@@ -18,8 +18,8 @@ content_hash: 2a6a8e92e6c977e1
 # Stroke3D: Lifting 2D Strokes into Rigged 3D Model via Latent Diffusion Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.09713](https://arxiv.org/abs/2602.09713)
-**Code**: [https://whalesong-zrs.github.io/Stroke3D_project_page/](https://whalesong-zrs.github.io/Stroke3D_project_page/)
+**arXiv**: [2602.09713](https://arxiv.org/abs/2602.09713)  
+**Code**: [https://whalesong-zrs.github.io/Stroke3D_project_page/](https://whalesong-zrs.github.io/Stroke3D_project_page/)  
 **Area**: 3D Vision
 **Keywords**: 3D Generation, Skeleton Generation, Graph Diffusion, Rigging, DPO
 

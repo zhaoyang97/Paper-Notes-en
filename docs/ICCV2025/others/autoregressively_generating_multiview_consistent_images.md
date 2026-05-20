@@ -17,8 +17,8 @@ content_hash: e3d88f5cf8c201d5
 # Auto-Regressively Generating Multi-View Consistent Images (MV-AR)
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.18527](https://arxiv.org/abs/2506.18527)
-**Code**: [https://github.com/MILab-PKU/MVAR](https://github.com/MILab-PKU/MVAR)
+**arXiv**: [2506.18527](https://arxiv.org/abs/2506.18527)  
+**Code**: [https://github.com/MILab-PKU/MVAR](https://github.com/MILab-PKU/MVAR)  
 **Area**: Other
 **Keywords**: autoregressive generation, multi-view consistency, condition injection, data augmentation, unified multimodal
 

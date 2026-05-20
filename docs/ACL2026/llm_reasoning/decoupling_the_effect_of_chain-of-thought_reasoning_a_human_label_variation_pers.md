@@ -18,8 +18,8 @@ content_hash: 19af6da5cca2f351
 # Decoupling the Effect of Chain-of-Thought Reasoning: A Human Label Variation Perspective
 
 **Conference**: ACL 2026
-**arXiv**: [2601.03154](https://arxiv.org/abs/2601.03154)
-**Code**: None
+**arXiv**: [2601.03154](https://arxiv.org/abs/2601.03154)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Chain-of-Thought, Human Label Variation, Distribution Alignment, Reasoning Decoupling, Model Prior
 

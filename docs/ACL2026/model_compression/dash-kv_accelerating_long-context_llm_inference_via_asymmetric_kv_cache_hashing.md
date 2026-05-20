@@ -14,8 +14,8 @@ content_hash: 3336a352660fbe84
 # DASH-KV: Accelerating Long-Context LLM Inference via Asymmetric KV Cache Hashing
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19351](https://arxiv.org/abs/2604.19351)
-**Code**: [https://github.com/Zhihan-Zh/DASH-KV](https://github.com/Zhihan-Zh/DASH-KV)
+**arXiv**: [2604.19351](https://arxiv.org/abs/2604.19351)  
+**Code**: [https://github.com/Zhihan-Zh/DASH-KV](https://github.com/Zhihan-Zh/DASH-KV)  
 **Area**: Model Compression
 **Keywords**: KV cache, deep hashing, asymmetric encoding, attention acceleration, long-context inference
 
@@ -118,7 +118,7 @@ The primary loss is a listwise distillation objective $\mathcal{L}_{\text{distil
 - **Novelty**: ⭐⭐⭐⭐⭐ Introducing deep hashing into the attention mechanism is pioneering; the asymmetric design and three-tier mixed-precision strategy are both well-motivated.
 - **Experimental Thoroughness**: ⭐⭐⭐⭐ Three models, LongBench, and detailed ablations are provided, though benchmark coverage is limited.
 - **Writing Quality**: ⭐⭐⭐⭐ The method is described systematically and thoroughly, though the heavy use of formulas makes some sections verbose.
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: model_compression
 **Keywords**: To be supplemented
 

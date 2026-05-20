@@ -18,8 +18,8 @@ content_hash: a2529b901294b1a0
 # First Frame Is the Place to Go for Video Content Customization
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.15700](https://arxiv.org/abs/2511.15700)
-**Code**: [http://firstframego.github.io](http://firstframego.github.io)
+**arXiv**: [2511.15700](https://arxiv.org/abs/2511.15700)  
+**Code**: [http://firstframego.github.io](http://firstframego.github.io)  
 **Area**: Video Understanding / Video Generation
 **Keywords**: Video content customization, first-frame conceptual buffer, multi-reference video generation, LoRA fine-tuning, vision-language model
 

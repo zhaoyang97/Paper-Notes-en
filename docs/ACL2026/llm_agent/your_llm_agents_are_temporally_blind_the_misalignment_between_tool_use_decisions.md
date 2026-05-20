@@ -18,8 +18,8 @@ content_hash: 1c0877d28ea24cf8
 # Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception
 
 **Conference**: ACL 2026
-**arXiv**: [2510.23853](https://arxiv.org/abs/2510.23853)
-**Code**: [GitHub](https://github.com/chengez/TicToc)
+**arXiv**: [2510.23853](https://arxiv.org/abs/2510.23853)  
+**Code**: [GitHub](https://github.com/chengez/TicToc)  
 **Area**: LLM Agent / Tool Use
 **Keywords**: temporal blindness, tool use decision, human preference alignment, multi-turn dialogue, time sensitivity
 

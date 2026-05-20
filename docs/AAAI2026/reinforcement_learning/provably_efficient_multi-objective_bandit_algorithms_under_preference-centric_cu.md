@@ -19,8 +19,8 @@ content_hash: 7685130fc6abcb8f
 # Provably Efficient Multi-Objective Bandit Algorithms under Preference-Centric Customization
 
 **Conference**: AAAI 2026
-**arXiv**: [2502.13457](https://arxiv.org/abs/2502.13457)
-**Code**: None
+**arXiv**: [2502.13457](https://arxiv.org/abs/2502.13457)  
+**Code**: None  
 **Area**: Online Learning / Multi-Armed Bandits
 **Keywords**: multi-objective bandits, user preference, Pareto optimality, UCB, regret bound, preference estimation
 

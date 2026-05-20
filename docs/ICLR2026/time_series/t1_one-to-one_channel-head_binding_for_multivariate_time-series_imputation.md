@@ -18,8 +18,8 @@ content_hash: ac5c882beab5c5b3
 # T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.21043](https://arxiv.org/abs/2602.21043)
-**Code**: [GitHub](https://github.com/Oppenheimerdinger/T1)
+**arXiv**: [2602.21043](https://arxiv.org/abs/2602.21043)  
+**Code**: [GitHub](https://github.com/Oppenheimerdinger/T1)  
 **Area**: Time Series / Missing Value Imputation
 **Keywords**: time series imputation, CNN-Transformer hybrid, channel-head binding, selective information transfer, missing pattern generalization
 

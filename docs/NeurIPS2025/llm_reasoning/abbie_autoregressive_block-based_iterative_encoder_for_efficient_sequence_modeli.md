@@ -18,8 +18,8 @@ content_hash: 297702ed39a48185
 # AbbIE: Autoregressive Block-Based Iterative Encoder for Efficient Sequence Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.08567](https://arxiv.org/abs/2507.08567)
-**Code**: None
+**arXiv**: [2507.08567](https://arxiv.org/abs/2507.08567)  
+**Code**: None  
 **Area**: LLM Inference
 **Keywords**: recurrent Transformer, iterative encoder, test-time scaling, fixed point, upward generalization
 

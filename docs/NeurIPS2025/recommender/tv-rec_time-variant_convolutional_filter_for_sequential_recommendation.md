@@ -18,8 +18,8 @@ content_hash: d8579138623e5346
 # TV-Rec: Time-Variant Convolutional Filter for Sequential Recommendation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25259](https://arxiv.org/abs/2510.25259)
-**Code**: N/A
+**arXiv**: [2510.25259](https://arxiv.org/abs/2510.25259)  
+**Code**: N/A  
 **Area**: Recommender Systems
 **Keywords**: Sequential recommendation, time-variant convolutional filter, graph signal processing, attention replacement, user behavior modeling
 

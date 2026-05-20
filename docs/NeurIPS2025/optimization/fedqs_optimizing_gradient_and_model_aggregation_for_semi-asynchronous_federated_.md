@@ -18,8 +18,8 @@ content_hash: 7a682d45a4444900
 # FedQS: Optimizing Gradient and Model Aggregation for Semi-Asynchronous Federated Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07664](https://arxiv.org/abs/2510.07664)
-**Code**: [GitHub](https://github.com/bkjod/FedQS_)
+**arXiv**: [2510.07664](https://arxiv.org/abs/2510.07664)  
+**Code**: [GitHub](https://github.com/bkjod/FedQS_)  
 **Area**: Optimization
 **Keywords**: Federated Learning, Semi-Asynchronous, Gradient Aggregation, Model Aggregation, Divide-and-Conquer
 

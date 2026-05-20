@@ -18,7 +18,7 @@ content_hash: f39591f4807921f7
 # Scalable Exploration for High-Dimensional Continuous Control via Value-Guided Flow
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19707](https://arxiv.org/abs/2601.19707)
+**arXiv**: [2601.19707](https://arxiv.org/abs/2601.19707)  
 **Area**: Reinforcement Learning / High-Dimensional Control
 **Keywords**: High-dimensional control, value-guided flow, probabilistic flow exploration, musculoskeletal model, actor-critic
 

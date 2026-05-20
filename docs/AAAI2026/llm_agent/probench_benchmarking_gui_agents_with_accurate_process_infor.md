@@ -18,8 +18,8 @@ content_hash: 82b04427f51aa972
 # ProBench: Benchmarking GUI Agents with Accurate Process Information
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09157](https://arxiv.org/abs/2511.09157)
-**Code**: None (based on adbutils)
+**arXiv**: [2511.09157](https://arxiv.org/abs/2511.09157)  
+**Code**: None (based on adbutils)  
 **Area**: LLM Agent / GUI Agent / Benchmark
 **Keywords**: GUI Agent evaluation, process information, mobile benchmark, Process Provider, bilingual applications
 

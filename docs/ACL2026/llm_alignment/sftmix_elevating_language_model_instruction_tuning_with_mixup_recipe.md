@@ -18,8 +18,8 @@ content_hash: 5b791890a77d6788
 # SFTMix: Elevating Language Model Instruction Tuning with Mixup Recipe
 
 **Conference**: ACL 2026
-**arXiv**: [2410.05248](https://arxiv.org/abs/2410.05248)
-**Code**: None
+**arXiv**: [2410.05248](https://arxiv.org/abs/2410.05248)  
+**Code**: None  
 **Area**: LLM Alignment
 **Keywords**: Instruction Tuning, Mixup Regularization, Training Dynamics, Confidence Partitioning, Data Utilization Efficiency
 

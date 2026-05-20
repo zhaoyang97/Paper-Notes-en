@@ -18,8 +18,8 @@ content_hash: 343f71b549463949
 # NTSFormer: A Self-Teaching Graph Transformer for Multimodal Isolated Cold-Start Node Classification
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.04870](https://arxiv.org/abs/2507.04870)
-**Code**: [https://github.com/CrawlScript/NTSFormer](https://github.com/CrawlScript/NTSFormer)
+**arXiv**: [2507.04870](https://arxiv.org/abs/2507.04870)  
+**Code**: [https://github.com/CrawlScript/NTSFormer](https://github.com/CrawlScript/NTSFormer)  
 **Area**: Graph Learning / Graph Transformer
 **Keywords**: Cold-start node classification, Graph Transformer, self-teaching, missing modalities, mixture of experts
 

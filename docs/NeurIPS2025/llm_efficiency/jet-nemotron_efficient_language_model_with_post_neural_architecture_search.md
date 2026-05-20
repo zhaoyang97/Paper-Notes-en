@@ -18,8 +18,8 @@ content_hash: 3136ad1c4df4271c
 # Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.15884](https://arxiv.org/abs/2508.15884)
-**Code**: [https://github.com/NVlabs/Jet-Nemotron](https://github.com/NVlabs/Jet-Nemotron)
+**arXiv**: [2508.15884](https://arxiv.org/abs/2508.15884)  
+**Code**: [https://github.com/NVlabs/Jet-Nemotron](https://github.com/NVlabs/Jet-Nemotron)  
 **Area**: LLM Efficiency
 **Keywords**: hybrid attention, linear attention, neural architecture search, efficient LLM, KV cache
 

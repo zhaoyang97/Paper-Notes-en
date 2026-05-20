@@ -18,8 +18,8 @@ content_hash: 341689bd2a6a5cf8
 # CLIPGaussian: Universal and Multimodal Style Transfer Based on Gaussian Splatting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22854](https://arxiv.org/abs/2505.22854)
-**Code**: Coming soon (promised in paper)
+**arXiv**: [2505.22854](https://arxiv.org/abs/2505.22854)  
+**Code**: Coming soon (promised in paper)  
 **Area**: 3D Vision / Style Transfer
 **Keywords**: Gaussian Splatting, style transfer, CLIP, multi-modal, 3D/4D
 

@@ -20,8 +20,8 @@ content_hash: 107fca8b18a21fee
 # StolenLoRA: Exploring LoRA Extraction Attacks via Synthetic Data
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.23594](https://arxiv.org/abs/2509.23594)
-**Code**: To be confirmed
+**arXiv**: [2509.23594](https://arxiv.org/abs/2509.23594)  
+**Code**: To be confirmed  
 **Area**: Model Security / Model Extraction Attack / LoRA / Parameter-Efficient Fine-Tuning
 **Keywords**: LoRA extraction, model extraction attack, PEFT, synthetic data, Stable Diffusion, disagreement-based semi-supervised learning, LLM-driven prompting
 
@@ -57,14 +57,14 @@ Given a victim model $F = F_\text{base} + \Delta F$ (where $F_\text{base}$ is pu
 The attacker typically has access to deployment context (functional description, target class names), which serves as the starting point for synthesizing training data:
 
 1. **LLM-Driven Prompt Generation**:
-   - Given a set of target class names $C = \{c_1, \ldots, c_n\}$, GPT-4o mini is used to generate diverse image descriptions.
-   - Prompt template $T = [\text{Subject, Background, Angle/Pose, Lighting, Style}]$.
-   - For each class, $m$ distinct prompt variants are generated: $p_{i,j} = \text{LLM}(c_i, T, \omega_j)$.
+    - Given a set of target class names $C = \{c_1, \ldots, c_n\}$, GPT-4o mini is used to generate diverse image descriptions.
+    - Prompt template $T = [\text{Subject, Background, Angle/Pose, Lighting, Style}]$.
+    - For each class, $m$ distinct prompt variants are generated: $p_{i,j} = \text{LLM}(c_i, T, \omega_j)$.
 
 2. **Image Synthesis**:
-   - SDXL-Turbo (requiring only 4 sampling steps) is used to generate one image per prompt.
-   - Full synthetic dataset: $X = \bigcup_i \{\text{SD}(p_{i,j})\}$.
-   - Synthesized images carry pseudo-labels derived from the class information in the generation prompts.
+    - SDXL-Turbo (requiring only 4 sampling steps) is used to generate one image per prompt.
+    - Full synthetic dataset: $X = \bigcup_i \{\text{SD}(p_{i,j})\}$.
+    - Synthesized images carry pseudo-labels derived from the class information in the generation prompts.
 
 ### Stage 2: Efficient Querying and Training
 
@@ -78,15 +78,15 @@ DSL iteratively improves attack efficiency through selective querying and label 
 
 1. **Initialization**: Generate an initial synthetic dataset $X_0$, and train an initial surrogate model $F'_0$ using pseudo-labels from generation prompts.
 2. **Iterative Process (each round $t$)**:
-   - Generate $\beta \cdot b_t$ new candidate samples $X_\text{cand}^t$.
-   - **Disagreement Filtering**: Apply the current surrogate $F'_t$ to predict class $\hat{c}$ and confidence $\hat{p}$ for each candidate:
+    - Generate $\beta \cdot b_t$ new candidate samples $X_\text{cand}^t$.
+    - **Disagreement Filtering**: Apply the current surrogate $F'_t$ to predict class $\hat{c}$ and confidence $\hat{p}$ for each candidate:
      - If $\hat{c} = \text{pseudo-label } c(x)$ and $\hat{p} \geq \tau$ (threshold 0.95): sample is high-confidence, added to $X_\text{conf}^t$, trained with pseudo-labels directly without querying the victim.
      - Otherwise: sample is uncertain, added to $X_\text{uncer}^t$.
-   - **Selective Querying**: Select the $b_t$ samples with lowest confidence from $X_\text{uncer}^t$ to query the victim model for true labels.
-   - **Training**: Merge $X_\text{conf}^t$ (pseudo-labels) and $X_\text{query}^t$ (true labels) to update the surrogate model.
+    - **Selective Querying**: Select the $b_t$ samples with lowest confidence from $X_\text{uncer}^t$ to query the victim model for true labels.
+    - **Training**: Merge $X_\text{conf}^t$ (pseudo-labels) and $X_\text{query}^t$ (true labels) to update the surrogate model.
 3. **Label Refining**:
-   - Soft labels are updated via EMA: $q^{(i+1)} = \mu \cdot q^{(i)} + (1-\mu) \cdot p^{(i+1)}$.
-   - The surrogate is trained with cross-entropy on soft labels, mitigating pseudo-label noise and distribution shift.
+    - Soft labels are updated via EMA: $q^{(i+1)} = \mu \cdot q^{(i)} + (1-\mu) \cdot p^{(i+1)}$.
+    - The surrogate is trained with cross-entropy on soft labels, mitigating pseudo-label noise and distribution shift.
 4. Repeat until the query budget is exhausted.
 
 ### Key Design Principles

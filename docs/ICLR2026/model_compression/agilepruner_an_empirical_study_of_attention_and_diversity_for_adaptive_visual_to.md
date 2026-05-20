@@ -18,8 +18,8 @@ content_hash: 2a357e1a4d5c201d
 # AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01236](https://arxiv.org/abs/2603.01236)
-**Code**: [https://cvsp-lab.github.io/AgilePruner](https://cvsp-lab.github.io/AgilePruner)
+**arXiv**: [2603.01236](https://arxiv.org/abs/2603.01236)  
+**Code**: [https://cvsp-lab.github.io/AgilePruner](https://cvsp-lab.github.io/AgilePruner)  
 **Area**: Model Compression
 **Keywords**: visual token pruning, attention, diversity, hallucination, adaptive pruning
 

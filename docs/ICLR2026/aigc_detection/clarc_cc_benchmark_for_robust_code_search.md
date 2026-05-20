@@ -19,8 +19,8 @@ content_hash: e775b641f91e4bd5
 # CLARC: C/C++ Benchmark for Robust Code Search
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.04484](https://arxiv.org/abs/2603.04484)
-**Code**: [GitHub](https://github.com/ClarcTeam/CLARC) / [HuggingFace](https://huggingface.co/datasets/ClarcTeam/CLARC)
+**arXiv**: [2603.04484](https://arxiv.org/abs/2603.04484)  
+**Code**: [GitHub](https://github.com/ClarcTeam/CLARC) / [HuggingFace](https://huggingface.co/datasets/ClarcTeam/CLARC)  
 **Area**: AIGC Detection
 **Keywords**: Code Retrieval, C/C++ Benchmark, Compilation Verification, Code Embedding, Assembly Language, Robustness
 

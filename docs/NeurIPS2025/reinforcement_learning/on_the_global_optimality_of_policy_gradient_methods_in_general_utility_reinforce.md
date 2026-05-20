@@ -18,8 +18,8 @@ content_hash: 48a6894a1f562158
 # On the Global Optimality of Policy Gradient Methods in General Utility Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.04108](https://arxiv.org/abs/2410.04108)
-**Code**: None
+**arXiv**: [2410.04108](https://arxiv.org/abs/2410.04108)  
+**Code**: None  
 **Area**: Reinforcement Learning Theory
 **Keywords**: general utility reinforcement learning, policy gradient, gradient dominance inequality, occupancy measure estimation, maximum likelihood estimation
 
@@ -51,21 +51,21 @@ The paper considers a discounted MDP $(S, A, P, F, \rho, \gamma)$, where $F$ is 
 
 1. **RLGU Gradient Dominance Inequality (Tabular Setting)**
 
-   - *Function*: Proves that the RLGU objective satisfies a gradient dominance property under direct policy parameterization, implying that every stationary point is a global optimum.
-   - *Mechanism*: By the chain rule, the RLGU gradient is decomposed as $\nabla_\theta F(\lambda(\theta)) = [\nabla_\theta \lambda(\theta)]^T \nabla_\lambda F(\lambda(\theta))$, which coincides exactly with the standard RL policy gradient evaluated at the pseudo-reward $r_\theta = \nabla_\lambda F(\lambda(\theta))$. The standard RL gradient dominance result (Agarwal 2021, Lemma 4) is then applied to this pseudo-reward, and the concavity of $F$ is used to translate the value function gap into a utility gap: $V^{\pi^*(r_\theta)}(r_\theta) - V^{\pi_\theta}(r_\theta) \geq \langle r_\theta, \lambda^{\pi^*} - \lambda^{\pi_\theta} \rangle \geq F(\lambda(\theta^*)) - F(\lambda(\theta))$.
-   - *Design Motivation*: To directly connect the optimization structure of RLGU with existing theory for standard RL, thereby opening a pathway for analyzing softmax and other parameterizations within the RLGU framework.
+    - *Function*: Proves that the RLGU objective satisfies a gradient dominance property under direct policy parameterization, implying that every stationary point is a global optimum.
+    - *Mechanism*: By the chain rule, the RLGU gradient is decomposed as $\nabla_\theta F(\lambda(\theta)) = [\nabla_\theta \lambda(\theta)]^T \nabla_\lambda F(\lambda(\theta))$, which coincides exactly with the standard RL policy gradient evaluated at the pseudo-reward $r_\theta = \nabla_\lambda F(\lambda(\theta))$. The standard RL gradient dominance result (Agarwal 2021, Lemma 4) is then applied to this pseudo-reward, and the concavity of $F$ is used to translate the value function gap into a utility gap: $V^{\pi^*(r_\theta)}(r_\theta) - V^{\pi_\theta}(r_\theta) \geq \langle r_\theta, \lambda^{\pi^*} - \lambda^{\pi_\theta} \rangle \geq F(\lambda(\theta^*)) - F(\lambda(\theta))$.
+    - *Design Motivation*: To directly connect the optimization structure of RLGU with existing theory for standard RL, thereby opening a pathway for analyzing softmax and other parameterizations within the RLGU framework.
 
 2. **MLE-Based Occupancy Measure Approximation (PG-OMA Algorithm)**
 
-   - *Function*: Scalably estimates the occupancy measure in large state-action spaces.
-   - *Mechanism*: The normalized state occupancy measure $d^{\pi_\theta}$ is treated as a probability distribution and approximated via maximum likelihood estimation within a parametric family $\Lambda = \{p_\omega : \omega \in \Omega \subseteq \mathbb{R}^m\}$: $\omega^* = \arg\max_\omega \frac{1}{n}\sum_{i=1}^n \log p_\omega(s_i)$. The key theoretical result is a total variation error bound $\|\hat\lambda - \lambda\|_1 \leq O(\sqrt{m/n})$ that depends only on the approximation class dimension $m$ and is independent of the state-action space size.
-   - *Design Motivation*: Compared to MSE-based methods, MLE is naturally suited to probability distribution estimation and is unaffected by the size of the space. The authors illustrate this with a simple yet instructive counterexample: when the true distribution is uniform, the MSE of a non-uniform estimator vanishes as the space grows, rendering it unable to distinguish good from poor estimates, whereas the MLE total variation error remains informative throughout.
+    - *Function*: Scalably estimates the occupancy measure in large state-action spaces.
+    - *Mechanism*: The normalized state occupancy measure $d^{\pi_\theta}$ is treated as a probability distribution and approximated via maximum likelihood estimation within a parametric family $\Lambda = \{p_\omega : \omega \in \Omega \subseteq \mathbb{R}^m\}$: $\omega^* = \arg\max_\omega \frac{1}{n}\sum_{i=1}^n \log p_\omega(s_i)$. The key theoretical result is a total variation error bound $\|\hat\lambda - \lambda\|_1 \leq O(\sqrt{m/n})$ that depends only on the approximation class dimension $m$ and is independent of the state-action space size.
+    - *Design Motivation*: Compared to MSE-based methods, MLE is naturally suited to probability distribution estimation and is unaffected by the size of the space. The authors illustrate this with a simple yet instructive counterexample: when the true distribution is uniform, the MSE of a non-uniform estimator vanishes as the space grows, rendering it unable to distinguish good from poor estimates, whereas the MLE total variation error remains informative throughout.
 
 3. **Two-Phase Iteration of PG-OMA**
 
-   - *Function*: At each iteration, first estimates the occupancy measure (Critic step), then updates the policy parameters (Actor step).
-   - *Mechanism*: Each iteration proceeds in two steps: (i) approximate the occupancy measure $\hat\lambda_t$ via MLE from states sampled under the current policy, and compute the pseudo-reward $\hat r_t = \nabla_\lambda F(\hat\lambda_t)$; (ii) perform stochastic policy gradient ascent using the REINFORCE estimator under pseudo-reward $\hat r_t$. The entire procedure requires no estimation of the transition kernel and is model-free.
-   - *Design Motivation*: Decoupling occupancy measure estimation into an independent statistical learning subproblem exploits the statistical efficiency of MLE; the pseudo-reward need only be evaluated at state-action pairs visited along the current trajectory (Remark 4), further reducing memory requirements.
+    - *Function*: At each iteration, first estimates the occupancy measure (Critic step), then updates the policy parameters (Actor step).
+    - *Mechanism*: Each iteration proceeds in two steps: (i) approximate the occupancy measure $\hat\lambda_t$ via MLE from states sampled under the current policy, and compute the pseudo-reward $\hat r_t = \nabla_\lambda F(\hat\lambda_t)$; (ii) perform stochastic policy gradient ascent using the REINFORCE estimator under pseudo-reward $\hat r_t$. The entire procedure requires no estimation of the transition kernel and is model-free.
+    - *Design Motivation*: Decoupling occupancy measure estimation into an independent statistical learning subproblem exploits the statistical efficiency of MLE; the pseudo-reward need only be evaluated at state-action pairs visited along the current trajectory (Remark 4), further reducing memory requirements.
 
 ### Loss & Training
 

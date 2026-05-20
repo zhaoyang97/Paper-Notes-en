@@ -18,8 +18,8 @@ content_hash: 9c988527d6a849eb
 # Pb4U-GNet: Resolution-Adaptive Garment Simulation via Propagation-before-Update Graph Network
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.15110](https://arxiv.org/abs/2601.15110)
-**Code**: [github.com/adam-lau709/PB4U-GNet](https://github.com/adam-lau709/PB4U-GNet)
+**arXiv**: [2601.15110](https://arxiv.org/abs/2601.15110)  
+**Code**: [github.com/adam-lau709/PB4U-GNet](https://github.com/adam-lau709/PB4U-GNet)  
 **Area**: 3D Vision
 **Keywords**: Garment Simulation, Graph Neural Network, Cross-Resolution Generalization, Message Propagation, Resolution Adaptation
 

@@ -18,8 +18,8 @@ content_hash: 5b9e2edc1b585366
 # Counteractive RL: Rethinking Core Principles for Efficient and Scalable Deep Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2603.15871](https://arxiv.org/abs/2603.15871)
-**Code**: To be confirmed
+**arXiv**: [2603.15871](https://arxiv.org/abs/2603.15871)  
+**Code**: To be confirmed  
 **Area**: Reinforcement Learning / Sample Efficiency
 **Keywords**: Counteractive TD, Q-value minimization, temporal difference, Atari 100K, zero overhead
 
@@ -48,22 +48,22 @@ In any TD-learning-based RL algorithm, the ε-greedy exploration is modified as 
 
 1. **CoAct TD Exploration Strategy**:
 
-   - Function: Replaces the random action in ε-greedy with $\arg\min Q(s,a)$.
-   - Mechanism (Theorem 3.4): Under $\eta$-uninformed (inaccurate Q function) and $\delta$-smooth (smoothly changing Q function) conditions, the absolute TD error of $\arg\min Q$ is no less than the expected absolute TD error of a random action.
-   - Design Motivation: TD error serves as the gradient signal for Q-learning. Larger TD errors lead to larger Q updates and faster convergence.
-   - Implementation: Requires only a 2-line code change (replacing `random.choice(actions)` with `argmin(Q_values)`).
+    - Function: Replaces the random action in ε-greedy with $\arg\min Q(s,a)$.
+    - Mechanism (Theorem 3.4): Under $\eta$-uninformed (inaccurate Q function) and $\delta$-smooth (smoothly changing Q function) conditions, the absolute TD error of $\arg\min Q$ is no less than the expected absolute TD error of a random action.
+    - Design Motivation: TD error serves as the gradient signal for Q-learning. Larger TD errors lead to larger Q updates and faster convergence.
+    - Implementation: Requires only a 2-line code change (replacing `random.choice(actions)` with `argmin(Q_values)`).
 
 2. **Zero Additional Computation**:
 
-   - Function: Computing $\arg\min Q$ has exactly the same complexity as computing $\arg\max Q$ — both require a single pass over the Q values.
-   - Comparison with NoisyNetworks: The latter requires maintaining additional noise parameters and performing sampling.
-   - Design Motivation: In sample-constrained settings (100K frames), the exploration strategy itself should not introduce additional computational overhead.
+    - Function: Computing $\arg\min Q$ has exactly the same complexity as computing $\arg\max Q$ — both require a single pass over the Q values.
+    - Comparison with NoisyNetworks: The latter requires maintaining additional noise parameters and performing sampling.
+    - Design Motivation: In sample-constrained settings (100K frames), the exploration strategy itself should not introduce additional computational overhead.
 
 3. **Generality and Modularity**:
 
-   - Function: Plug-and-play compatible with any TD-based algorithm (DDQN, QRDQN, C51, etc.).
-   - No modifications to network architecture, loss function, or hyperparameters.
-   - Only the action selection strategy during data collection is changed.
+    - Function: Plug-and-play compatible with any TD-based algorithm (DDQN, QRDQN, C51, etc.).
+    - No modifications to network architecture, loss function, or hyperparameters.
+    - Only the action selection strategy during data collection is changed.
 
 ### Loss & Training
 The original TD loss is kept unchanged. The sole modification is the action selection strategy during data collection.

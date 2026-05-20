@@ -18,8 +18,8 @@ content_hash: 064da8f2ab58a5c1
 # Global-Lens Transformers: Adaptive Token Mixing for Dynamic Link Prediction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12442](https://arxiv.org/abs/2511.12442)
-**Code**: N/A
+**arXiv**: [2511.12442](https://arxiv.org/abs/2511.12442)  
+**Code**: N/A  
 **Area**: Autonomous Driving / Graph Learning
 **Keywords**: dynamic graph learning, link prediction, attention mechanism replacement, adaptive token mixing, hierarchical aggregation
 

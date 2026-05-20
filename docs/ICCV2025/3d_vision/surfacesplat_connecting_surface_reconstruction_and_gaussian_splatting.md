@@ -18,8 +18,8 @@ content_hash: 0f0e7a4ba6991f89
 # SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.15602](https://arxiv.org/abs/2507.15602)
-**Code**: [https://github.com/aim-uofa/SurfaceSplat](https://github.com/aim-uofa/SurfaceSplat)
+**arXiv**: [2507.15602](https://arxiv.org/abs/2507.15602)  
+**Code**: [https://github.com/aim-uofa/SurfaceSplat](https://github.com/aim-uofa/SurfaceSplat)  
 **Area**: 3D Vision
 **Keywords**: Surface Reconstruction, Gaussian Splatting, SDF, Sparse-View, Novel View Synthesis
 
@@ -51,21 +51,21 @@ SurfaceSplat takes sparse-view images (with camera parameters) as input and prod
 
 1. **SDF→3DGS Geometry Enhancement**
 
-   - **Function**: Leverages global geometric knowledge from SDF to improve the Gaussian distribution in 3DGS.
-   - **Mechanism**: Extracts the zero-level set from the SDF network and uses mesh vertex positions and surface normals to initialize and constrain the 3DGS Gaussian primitives. Specifically, surface normals extracted from the SDF are used to regularize the orientation of Gaussians, and surface positions constrain the spatial distribution of Gaussian centers. This effectively reduces floaters commonly observed in 3DGS and causes Gaussian primitives to adhere more closely to the true surface.
-   - **Design Motivation**: Floaters in 3DGS under sparse-view settings fundamentally arise from the absence of global geometric constraints. SDF naturally provides surface priors, making it intuitive and efficient to use them to constrain the Gaussian distribution.
+    - **Function**: Leverages global geometric knowledge from SDF to improve the Gaussian distribution in 3DGS.
+    - **Mechanism**: Extracts the zero-level set from the SDF network and uses mesh vertex positions and surface normals to initialize and constrain the 3DGS Gaussian primitives. Specifically, surface normals extracted from the SDF are used to regularize the orientation of Gaussians, and surface positions constrain the spatial distribution of Gaussian centers. This effectively reduces floaters commonly observed in 3DGS and causes Gaussian primitives to adhere more closely to the true surface.
+    - **Design Motivation**: Floaters in 3DGS under sparse-view settings fundamentally arise from the absence of global geometric constraints. SDF naturally provides surface priors, making it intuitive and efficient to use them to constrain the Gaussian distribution.
 
 2. **3DGS→SDF Detail Refinement**
 
-   - **Function**: Uses novel-view images rendered by 3DGS to provide additional supervision signals for SDF.
-   - **Mechanism**: 3DGS can efficiently render images from arbitrary viewpoints. During training, additional "virtual-view" images are rendered by 3DGS and used as pseudo-label supervision for SDF optimization. This effectively uses 3DGS's rendering capability to "augment" SDF training data—supplementing the sparse real input views with rendered images from additional viewpoints. To avoid introducing rendering artifacts, a confidence-weighted strategy is adopted so that only high-confidence rendered pixels contribute to SDF supervision.
-   - **Design Motivation**: A key reason for poor SDF performance under sparse views is insufficient training data. As an effective interpolator, 3DGS can synthesize high-quality novel-view images between existing views, compensating for the data scarcity faced by SDF training.
+    - **Function**: Uses novel-view images rendered by 3DGS to provide additional supervision signals for SDF.
+    - **Mechanism**: 3DGS can efficiently render images from arbitrary viewpoints. During training, additional "virtual-view" images are rendered by 3DGS and used as pseudo-label supervision for SDF optimization. This effectively uses 3DGS's rendering capability to "augment" SDF training data—supplementing the sparse real input views with rendered images from additional viewpoints. To avoid introducing rendering artifacts, a confidence-weighted strategy is adopted so that only high-confidence rendered pixels contribute to SDF supervision.
+    - **Design Motivation**: A key reason for poor SDF performance under sparse views is insufficient training data. As an effective interpolator, 3DGS can synthesize high-quality novel-view images between existing views, compensating for the data scarcity faced by SDF training.
 
 3. **Joint Optimization Strategy**
 
-   - **Function**: Coordinates the training process of the two branches.
-   - **Mechanism**: An alternating optimization scheme is adopted—the SDF branch is first pre-trained to obtain initial geometry, which is then used to initialize 3DGS; thereafter, the two branches are optimized alternately while passing information to each other. The SDF→3DGS geometric constraints are updated at fixed intervals, while 3DGS-rendered images continuously supervise SDF. To prevent error propagation between branches, a progressive coupling strategy is introduced: the two branches operate relatively independently in early stages, with coupling strength gradually increased over time.
-   - **Design Motivation**: Direct end-to-end joint training tends to cause training instability, as signals exchanged between two unconverged branches are highly noisy. Progressive coupling allows each branch to first acquire basic competence independently before gradually establishing collaboration.
+    - **Function**: Coordinates the training process of the two branches.
+    - **Mechanism**: An alternating optimization scheme is adopted—the SDF branch is first pre-trained to obtain initial geometry, which is then used to initialize 3DGS; thereafter, the two branches are optimized alternately while passing information to each other. The SDF→3DGS geometric constraints are updated at fixed intervals, while 3DGS-rendered images continuously supervise SDF. To prevent error propagation between branches, a progressive coupling strategy is introduced: the two branches operate relatively independently in early stages, with coupling strength gradually increased over time.
+    - **Design Motivation**: Direct end-to-end joint training tends to cause training instability, as signals exchanged between two unconverged branches are highly noisy. Progressive coupling allows each branch to first acquire basic competence independently before gradually establishing collaboration.
 
 ### Loss & Training
 

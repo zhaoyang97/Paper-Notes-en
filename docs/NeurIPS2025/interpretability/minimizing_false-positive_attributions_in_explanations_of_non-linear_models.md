@@ -18,8 +18,8 @@ content_hash: 360347bf0da4c028
 # Minimizing False-Positive Attributions in Explanations of Non-Linear Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11210](https://arxiv.org/abs/2505.11210)
-**Code**: [GitHub](https://github.com/gjoelbye/PatternLocal)
+**arXiv**: [2505.11210](https://arxiv.org/abs/2505.11210)  
+**Code**: [GitHub](https://github.com/gjoelbye/PatternLocal)  
 **Area**: Explainable AI / Interpretability
 **Keywords**: XAI, suppressor variables, local explanations, generative explanation, LIME
 

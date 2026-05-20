@@ -18,8 +18,8 @@ content_hash: 83679085eab2e636
 # Envisioning the Future, One Step at a Time
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.09527](https://arxiv.org/abs/2604.09527)
-**Code**: [http://compvis.github.io/myriad](http://compvis.github.io/myriad)
+**arXiv**: [2604.09527](https://arxiv.org/abs/2604.09527)  
+**Code**: [http://compvis.github.io/myriad](http://compvis.github.io/myriad)  
 **Area**: Video Understanding / Motion Prediction
 **Keywords**: Open-set motion prediction, sparse trajectories, autoregressive diffusion model, future prediction, world model
 

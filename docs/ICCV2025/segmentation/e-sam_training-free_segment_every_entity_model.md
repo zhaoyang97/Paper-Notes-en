@@ -20,8 +20,8 @@ content_hash: c2b92219600a986c
 # E-SAM: Training-Free Segment Every Entity Model
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.12094](https://arxiv.org/abs/2503.12094)
-**Code**: Not released (mentioned in paper with link)
+**arXiv**: [2503.12094](https://arxiv.org/abs/2503.12094)  
+**Code**: Not released (mentioned in paper with link)  
 **Area**: Entity Segmentation / Foundation Models
 **Keywords**: Entity Segmentation, SAM, Training-Free, Automatic Mask Generation, Over-segmentation, Under-segmentation, NMS
 

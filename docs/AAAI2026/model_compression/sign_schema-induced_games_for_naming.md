@@ -18,8 +18,8 @@ content_hash: b766dfae9c1afba3
 # SIGN: Schema-Induced Games for Naming
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.21855](https://arxiv.org/abs/2510.21855)
-**Code**: [github.com/ryanzhangofficial/llm-naming-game-steering](https://github.com/ryanzhangofficial/llm-naming-game-steering)
+**arXiv**: [2510.21855](https://arxiv.org/abs/2510.21855)  
+**Code**: [github.com/ryanzhangofficial/llm-naming-game-steering](https://github.com/ryanzhangofficial/llm-naming-game-steering)  
 **Area**: Model Compression
 **Keywords**: Naming Game, LLM Multi-Agent, Convention Formation, Schema Guidance, Multi-Agent Coordination
 

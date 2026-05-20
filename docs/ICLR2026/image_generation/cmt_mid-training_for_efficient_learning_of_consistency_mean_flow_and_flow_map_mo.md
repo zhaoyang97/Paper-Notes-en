@@ -18,8 +18,8 @@ content_hash: 90583cb3488df71a
 # CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24526](https://arxiv.org/abs/2509.24526)
-**Code**: [https://github.com/sony/cmt](https://github.com/sony/cmt)
+**arXiv**: [2509.24526](https://arxiv.org/abs/2509.24526)  
+**Code**: [https://github.com/sony/cmt](https://github.com/sony/cmt)  
 **Area**: Diffusion Models / Few-Step Generation
 **Keywords**: flow map, consistency model, mid-training, few-step generation, diffusion distillation
 

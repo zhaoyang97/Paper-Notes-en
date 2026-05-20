@@ -18,8 +18,8 @@ content_hash: 9486ac8964f2230e
 # Towards Understanding Safety Alignment: A Mechanistic Perspective from Safety Neurons
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2406.14144](https://arxiv.org/abs/2406.14144)
-**Code**: [THU-KEG/SafetyNeuron](https://github.com/THU-KEG/SafetyNeuron)
+**arXiv**: [2406.14144](https://arxiv.org/abs/2406.14144)  
+**Code**: [THU-KEG/SafetyNeuron](https://github.com/THU-KEG/SafetyNeuron)  
 **Area**: LLM Alignment
 **Keywords**: safety alignment, mechanistic interpretability, safety neurons, activation patching, alignment tax
 

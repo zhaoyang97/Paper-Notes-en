@@ -18,8 +18,8 @@ content_hash: 46bdef9ea641617f
 # No-Regret Strategy Solving in Imperfect-Information Games via Pre-Trained Embedding
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12083](https://arxiv.org/abs/2511.12083)
-**Code**: [https://github.com/PhilEnchan/EmbeddingCFR](https://github.com/PhilEnchan/EmbeddingCFR)
+**arXiv**: [2511.12083](https://arxiv.org/abs/2511.12083)  
+**Code**: [https://github.com/PhilEnchan/EmbeddingCFR](https://github.com/PhilEnchan/EmbeddingCFR)  
 **Area**: LLM Pre-training
 **Keywords**: Game Theory, CFR, Information Set Abstraction, Embedding Space, Poker AI
 

@@ -18,8 +18,8 @@ content_hash: e0eedc094dd98d35
 # Supercharging Floorplan Localization with Semantic Rays
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.09291](https://arxiv.org/abs/2507.09291)
-**Code**: [GitHub](https://tau-vailab.github.io/SemRayLoc/)
+**arXiv**: [2507.09291](https://arxiv.org/abs/2507.09291)  
+**Code**: [GitHub](https://tau-vailab.github.io/SemRayLoc/)  
 **Area**: LLM Evaluation
 **Keywords**: Indoor Localization, Floorplan Localization, Semantic Rays, Probability Volume, Coarse-to-Fine
 

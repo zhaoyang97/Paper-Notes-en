@@ -18,8 +18,8 @@ content_hash: 73f43078a469d69a
 # PLMP -- Point-Line Minimal Problems for Projective SfM
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.04351](https://arxiv.org/abs/2503.04351)
-**Code**: N/A
+**arXiv**: [2503.04351](https://arxiv.org/abs/2503.04351)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: Minimal problems, SfM, point-line configurations, projective reconstruction, algebraic geometry
 

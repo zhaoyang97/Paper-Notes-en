@@ -17,8 +17,8 @@ content_hash: 5e60ba64b50e8232
 # IAP: Invisible Adversarial Patch Attack through Perceptibility-Aware Localization
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.06856](https://arxiv.org/abs/2507.06856)
-**Code**: [https://github.com/subratkishoredutta/IAP](https://github.com/subratkishoredutta/IAP)
+**arXiv**: [2507.06856](https://arxiv.org/abs/2507.06856)  
+**Code**: [https://github.com/subratkishoredutta/IAP](https://github.com/subratkishoredutta/IAP)  
 **Area**: Other
 **Keywords**: Adversarial patch, imperceptible attack, perceptual sensitivity, targeted attack, patch defense
 

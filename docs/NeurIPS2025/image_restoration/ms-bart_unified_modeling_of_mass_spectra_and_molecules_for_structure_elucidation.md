@@ -18,8 +18,8 @@ content_hash: cdfc64d3e39f506c
 # MS-BART: Unified Modeling of Mass Spectra and Molecules for Structure Elucidation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20615](https://arxiv.org/abs/2510.20615)
-**Code**: [Available](https://github.com/OpenDFM/MS-BART)
+**arXiv**: [2510.20615](https://arxiv.org/abs/2510.20615)  
+**Code**: [Available](https://github.com/OpenDFM/MS-BART)  
 **Area**: Scientific AI / Molecular Structure Elucidation
 **Keywords**: Mass spectrometry, molecular fingerprints, pretrain-finetune-align, BART, structure elucidation
 

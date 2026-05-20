@@ -19,7 +19,7 @@ content_hash: 14bd64b1c4a4e3f9
 # Spectral Image Tokenizer
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.09607](https://arxiv.org/abs/2412.09607)
+**arXiv**: [2412.09607](https://arxiv.org/abs/2412.09607)  
 **Authors**: Carlos Esteves, Mohammed Suhail, Ameesh Makadia (Google Research)
 **Area**: Image Generation
 **Keywords**: image tokenizer, discrete wavelet transform, autoregressive generation, coarse-to-fine, multiscale, VQ-VAE

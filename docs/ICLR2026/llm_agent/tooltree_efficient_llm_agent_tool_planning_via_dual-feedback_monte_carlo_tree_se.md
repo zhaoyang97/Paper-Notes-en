@@ -17,8 +17,8 @@ content_hash: 0afbb79b4cfe25bb
 # ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.12740](https://arxiv.org/abs/2603.12740)
-**Code**: [https://github.com/SYang2000/ICLR_2026_ToolTree](https://github.com/SYang2000/ICLR_2026_ToolTree)
+**arXiv**: [2603.12740](https://arxiv.org/abs/2603.12740)  
+**Code**: [https://github.com/SYang2000/ICLR_2026_ToolTree](https://github.com/SYang2000/ICLR_2026_ToolTree)  
 **Area**: Agent
 **Keywords**: Tool Planning, MCTS, LLM Agent, Search Planning, Pruning
 

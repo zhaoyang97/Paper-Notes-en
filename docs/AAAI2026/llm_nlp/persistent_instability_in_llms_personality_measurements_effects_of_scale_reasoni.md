@@ -18,8 +18,8 @@ content_hash: 52da12a9a3c077c0
 # PERSIST: Persistent Instability in LLM's Personality Measurements
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04826](https://arxiv.org/abs/2508.04826)
-**Code**: [https://github.com/tosatot/PERSIST](https://github.com/tosatot/PERSIST)
+**arXiv**: [2508.04826](https://arxiv.org/abs/2508.04826)  
+**Code**: [https://github.com/tosatot/PERSIST](https://github.com/tosatot/PERSIST)  
 **Area**: NLP Generation / LLM Evaluation
 **Keywords**: LLM personality measurement, behavioral consistency, reasoning mode, alignment evaluation, psychometrics
 

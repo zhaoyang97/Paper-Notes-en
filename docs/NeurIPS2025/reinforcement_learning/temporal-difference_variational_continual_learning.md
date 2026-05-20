@@ -18,8 +18,8 @@ content_hash: 6aa8a625d93e0328
 # Temporal-Difference Variational Continual Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.07812](https://arxiv.org/abs/2410.07812)
-**Code**: [https://github.com/luckeciano/TD-VCL](https://github.com/luckeciano/TD-VCL)
+**arXiv**: [2410.07812](https://arxiv.org/abs/2410.07812)  
+**Code**: [https://github.com/luckeciano/TD-VCL](https://github.com/luckeciano/TD-VCL)  
 **Area**: Reinforcement Learning / Continual Learning
 **Keywords**: Continual Learning, Variational Inference, Temporal Difference, Catastrophic Forgetting, Bayesian Learning
 

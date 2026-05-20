@@ -18,8 +18,8 @@ content_hash: ebdcd50fa21519a7
 # Scaling Image Geo-Localization to Continent Level
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26795](https://arxiv.org/abs/2510.26795)
-**Code**: [https://scaling-geoloc.github.io](https://scaling-geoloc.github.io)
+**arXiv**: [2510.26795](https://arxiv.org/abs/2510.26795)  
+**Code**: [https://scaling-geoloc.github.io](https://scaling-geoloc.github.io)  
 **Area**: Remote Sensing / Visual Localization
 **Keywords**: geo-localization, cross-view retrieval, classification prototypes, aerial-ground matching, large-scale
 

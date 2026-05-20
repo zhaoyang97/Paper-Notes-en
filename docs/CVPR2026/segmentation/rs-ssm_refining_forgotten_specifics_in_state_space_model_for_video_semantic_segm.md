@@ -18,8 +18,8 @@ content_hash: 94a3e7ab3a8777d3
 # RS-SSM: Refining Forgotten Specifics in State Space Model for Video Semantic Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24295](https://arxiv.org/abs/2603.24295)
-**Code**: [https://github.com/zhoujiahuan1991/CVPR2026-RS-SSM](https://github.com/zhoujiahuan1991/CVPR2026-RS-SSM)
+**arXiv**: [2603.24295](https://arxiv.org/abs/2603.24295)  
+**Code**: [https://github.com/zhoujiahuan1991/CVPR2026-RS-SSM](https://github.com/zhoujiahuan1991/CVPR2026-RS-SSM)  
 **Area**: Semantic Segmentation / Video Understanding
 **Keywords**: Video Semantic Segmentation, State Space Model, Forget Gate Refinement, Frequency Domain Analysis, Mamba
 

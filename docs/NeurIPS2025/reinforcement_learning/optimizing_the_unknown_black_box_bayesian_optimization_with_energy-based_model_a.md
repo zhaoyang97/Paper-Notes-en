@@ -18,8 +18,8 @@ content_hash: 9b347ba94a7a7dd2
 # Optimizing the Unknown: Black Box Bayesian Optimization with Energy-Based Model and Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19530](https://arxiv.org/abs/2510.19530)
-**Code**: Unavailable (no explicit link provided)
+**arXiv**: [2510.19530](https://arxiv.org/abs/2510.19530)  
+**Code**: Unavailable (no explicit link provided)  
 **Area**: Reinforcement Learning
 **Keywords**: Bayesian Optimization, Energy-Based Model, PPO, Black-Box Optimization, Multi-Step Look-Ahead
 
@@ -63,8 +63,8 @@ All three modules are updated synchronously after each evaluation, forming an ad
 **Module 2: EBM Global Exploration (Module B)**
 - Function: Learns a global energy landscape where low-energy regions correspond to high-probability/high-promise areas
 - Training: MLE via short-run MCMC
-  - Positive phase: Lower energy $E_\theta(\mathbf{x}_i)$ at observed data points
-  - Negative phase: Generate negative samples via Langevin dynamics and raise their energy
+    - Positive phase: Lower energy $E_\theta(\mathbf{x}_i)$ at observed data points
+    - Negative phase: Generate negative samples via Langevin dynamics and raise their energy
 - EBM-UCB acquisition function: $\alpha_{\text{EBM-UCB}}(\mathbf{x}) = \mu_{f,t}(\mathbf{x}) + \beta \sigma_{f,t}(\mathbf{x}) - \gamma E_\theta(\mathbf{x})$
 - Design Motivation: The $-\gamma E_\theta(\mathbf{x})$ term biases search toward globally promising regions identified by the EBM, preventing wasted evaluations in uncertain but unpromising areas
 

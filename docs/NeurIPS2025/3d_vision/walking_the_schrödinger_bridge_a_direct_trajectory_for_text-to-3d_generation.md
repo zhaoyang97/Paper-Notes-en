@@ -18,8 +18,8 @@ content_hash: b376eedbc9503e1a
 # Walking the Schrödinger Bridge: A Direct Trajectory for Text-to-3D Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05609](https://arxiv.org/abs/2511.05609)
-**Code**: [GitHub](https://github.com/emmaleee789/TraCe.git)
+**arXiv**: [2511.05609](https://arxiv.org/abs/2511.05609)  
+**Code**: [GitHub](https://github.com/emmaleee789/TraCe.git)  
 **Area**: 3D Vision
 **Keywords**: Text-to-3D Generation, Score Distillation Sampling, Schrödinger Bridge, Diffusion Models, 3D Gaussian Splatting
 

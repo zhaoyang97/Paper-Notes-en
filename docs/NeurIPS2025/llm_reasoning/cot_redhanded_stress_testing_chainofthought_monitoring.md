@@ -19,8 +19,8 @@ content_hash: 5a07aece37d5d74b
 # CoT Red-Handed: Stress Testing Chain-of-Thought Monitoring
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23575](https://arxiv.org/abs/2505.23575)
-**Code**: Based on the Inspect AI framework
+**arXiv**: [2505.23575](https://arxiv.org/abs/2505.23575)  
+**Code**: Based on the Inspect AI framework  
 **Area**: LLM Reasoning
 **Keywords**: CoT monitoring, AI control, red teaming, trusted monitoring, deceptive alignment, hybrid monitor
 

@@ -18,8 +18,8 @@ content_hash: 49eae87b8b6f95fc
 # VideoLucy: Deep Memory Backtracking for Long Video Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.12422](https://arxiv.org/abs/2510.12422)
-**Code**: [https://videolucy.github.io](https://videolucy.github.io)
+**arXiv**: [2510.12422](https://arxiv.org/abs/2510.12422)  
+**Code**: [https://videolucy.github.io](https://videolucy.github.io)  
 **Area**: Video Understanding
 **Keywords**: Long video understanding, hierarchical memory, agent system, memory backtracking, video question answering
 

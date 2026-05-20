@@ -18,8 +18,8 @@ content_hash: df2b4acefa92be8e
 # Rethinking VLMs for Image Forgery Detection and Localization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12930](https://arxiv.org/abs/2603.12930)
-**Code**: [sha0fengGuo/IFDL-VLM](https://github.com/sha0fengGuo/IFDL-VLM)
+**arXiv**: [2603.12930](https://arxiv.org/abs/2603.12930)  
+**Code**: [sha0fengGuo/IFDL-VLM](https://github.com/sha0fengGuo/IFDL-VLM)  
 **Area**: Multimodal VLM
 **Keywords**: Image forgery detection, vision-language models, forgery localization, interpretability, AIGC security
 

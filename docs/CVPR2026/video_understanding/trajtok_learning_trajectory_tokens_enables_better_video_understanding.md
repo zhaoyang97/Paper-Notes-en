@@ -20,8 +20,8 @@ content_hash: 177dfbddef4623a0
 # TrajTok: Learning Trajectory Tokens Enhances Video Understanding
 
 **Conference**: CVPR2026
-**arXiv**: [2602.22779](https://arxiv.org/abs/2602.22779)
-**Code**: To be confirmed
+**arXiv**: [2602.22779](https://arxiv.org/abs/2602.22779)  
+**Code**: To be confirmed  
 **Area**: Video Segmentation / Video Understanding
 **Keywords**: Video tokenization, trajectory token, end-to-end segmentation, video CLIP, VLM connector, token compression, object trajectory
 

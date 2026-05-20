@@ -19,8 +19,8 @@ content_hash: dc06503929af532b
 # Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.17061](https://arxiv.org/abs/2507.17061)
-**Code**: None
+**arXiv**: [2507.17061](https://arxiv.org/abs/2507.17061)  
+**Code**: None  
 **Area**: LLM Agents
 **Keywords**: Multi-Agent Systems, Parallel Processing, Document Understanding, Adaptive Scheduling, Financial Analysis, Competitive Evaluation
 
@@ -48,24 +48,24 @@ The system is centered on a coordinator agent that parses documents into structu
 
 1. **Parallel Agent Evaluation**
 
-   - When the coordinator detects that task uncertainty exceeds a threshold, it instantiates $k$ agents to independently process the same task.
-   - Each agent produces an output; an evaluator scores them and selects the highest-scoring result.
-   - Non-selected outputs are retained in shared memory as audit backups or fallback options.
-   - The scoring function comprises three dimensions: factuality (weight 0.5) + coherence (0.3) + relevance (0.2).
+    - When the coordinator detects that task uncertainty exceeds a threshold, it instantiates $k$ agents to independently process the same task.
+    - Each agent produces an output; an evaluator scores them and selects the highest-scoring result.
+    - Non-selected outputs are retained in shared memory as audit backups or fallback options.
+    - The scoring function comprises three dimensions: factuality (weight 0.5) + coherence (0.3) + relevance (0.2).
 
 2. **Dynamic Task Routing**
 
-   - Agents are not bound to fixed roles; subtasks can be dynamically reassigned based on current context, confidence, and capability.
-   - Routing decisions are based on task graph metadata: historical performance scores, expected token length, and domain tags.
-   - For example, a summarization agent encountering a deeply technical legal passage may invoke a compliance specialist agent.
-   - Overloaded agents can transfer non-critical tasks to idle peers.
+    - Agents are not bound to fixed roles; subtasks can be dynamically reassigned based on current context, confidence, and capability.
+    - Routing decisions are based on task graph metadata: historical performance scores, expected token length, and domain tags.
+    - For example, a summarization agent encountering a deeply technical legal passage may invoke a compliance specialist agent.
+    - Overloaded agents can transfer non-critical tasks to idle peers.
 
 3. **Bidirectional Feedback Loops**
 
-   - Downstream agents can issue revision requests to upstream agents, enabling real-time quality control.
-   - Feedback is transmitted via an asynchronous message bus with explicit references to the problematic output.
-   - Source agents may revise their results or escalate the issue to the coordinator.
-   - For example, when a QA agent detects an inconsistency between liquidity disclosures and the balance sheet, it triggers a clarification request.
+    - Downstream agents can issue revision requests to upstream agents, enabling real-time quality control.
+    - Feedback is transmitted via an asynchronous message bus with explicit references to the problematic output.
+    - Source agents may revise their results or escalate the issue to the coordinator.
+    - For example, when a QA agent detects an inconsistency between liquidity disclosures and the balance sheet, it triggers a clarification request.
 
 ### Loss & Training
 

@@ -17,8 +17,8 @@ content_hash: bca6e754a86df116
 # The Computational Complexity of Counting Linear Regions in ReLU Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16716](https://arxiv.org/abs/2505.16716)
-**Code**: Unavailable
+**arXiv**: [2505.16716](https://arxiv.org/abs/2505.16716)  
+**Code**: Unavailable  
 **Area**: Theoretical Deep Learning / Computational Complexity
 **Keywords**: ReLU networks, linear regions, computational complexity, #P-hard, NP-hard
 
@@ -44,30 +44,30 @@ The contributions are organized at three levels: (1) **definitional clarificatio
 
 1. **Systematic taxonomy of six linear region definitions**:
 
-   - **Definition 1 (Activation Region)**: The set $S_a$ of inputs sharing the same activation pattern $a \in \{0,1\}^{s(N)}$ (may be lower-dimensional or non-convex).
-   - **Definition 2 (Proper Activation Region)**: A full-dimensional activation region.
-   - **Definition 3 (Convex Region)**: A full-dimensional polyhedron in a polyhedral complex compatible with $f_N$ (using the minimum such count).
-   - **Definition 4 (Open Connected Region)**: A maximal open connected subset on which $f_N$ is affine.
-   - **Definition 5 (Closed Connected Region)**: A maximal closed connected subset on which $f_N$ is affine.
-   - **Definition 6 (Affine Region)**: A maximal subset on which $f_N$ is affine (connectivity not required).
+    - **Definition 1 (Activation Region)**: The set $S_a$ of inputs sharing the same activation pattern $a \in \{0,1\}^{s(N)}$ (may be lower-dimensional or non-convex).
+    - **Definition 2 (Proper Activation Region)**: A full-dimensional activation region.
+    - **Definition 3 (Convex Region)**: A full-dimensional polyhedron in a polyhedral complex compatible with $f_N$ (using the minimum such count).
+    - **Definition 4 (Open Connected Region)**: A maximal open connected subset on which $f_N$ is affine.
+    - **Definition 5 (Closed Connected Region)**: A maximal closed connected subset on which $f_N$ is affine.
+    - **Definition 6 (Affine Region)**: A maximal subset on which $f_N$ is affine (connectivity not required).
 
    Containment chain: $R_6 \leq R_5 \leq R_4 \leq R_3 \leq R_2 \leq R_1$, with each inequality being strict in general. **Design Motivation**: Rather than advocating a single "best" definition, the paper eliminates ambiguity by precisely characterizing the distinctions and relationships among all six, and annotates 20 representative prior works with the definition each actually employs.
 
 2. **Complexity analysis for shallow networks (one hidden layer)**:
 
-   - **Positive result**: Deciding whether a network has exactly one linear region (1-region-decision) lies in P for all six definitions. The key mechanism is checking whether the hyperplane associated with each neuron is "cancelled"—i.e., whether the gradient of $f_N$ is continuous across that hyperplane.
-   - **Negative result**: Exact counting is #P-complete for Definitions 1–4 and #P-hard for Definitions 5–6. The proofs proceed via reduction from counting cells in a hyperplane arrangement (known to be #P-complete), by constructing a neural network whose linear regions correspond exactly to the cells of the arrangement. **Design Motivation**: This establishes that exact counting is fundamentally intractable even for the simplest one-layer networks (unless #P = FP).
+    - **Positive result**: Deciding whether a network has exactly one linear region (1-region-decision) lies in P for all six definitions. The key mechanism is checking whether the hyperplane associated with each neuron is "cancelled"—i.e., whether the gradient of $f_N$ is continuous across that hyperplane.
+    - **Negative result**: Exact counting is #P-complete for Definitions 1–4 and #P-hard for Definitions 5–6. The proofs proceed via reduction from counting cells in a hyperplane arrangement (known to be #P-complete), by constructing a neural network whose linear regions correspond exactly to the cells of the arrangement. **Design Motivation**: This establishes that exact counting is fundamentally intractable even for the simplest one-layer networks (unless #P = FP).
 
 3. **Complexity analysis for deep networks (multiple hidden layers)**:
 
-   - **NP-hardness of the decision version** (Theorem 5.2): For any fixed constants $K, L \geq 2$, deciding whether an $L$-layer network has more than $K$ linear regions is NP-hard. **Key Lemma** (Lemma 5.3): Reduction from SAT—given a formula $\phi$, a two-layer network $N_\phi$ is constructed such that: (a) if $\phi$ is unsatisfiable, $N_\phi$ computes the constant zero function (1 region); (b) if $\phi$ is satisfiable, $N_\phi$ has at least 2 regions (a bounded non-zero region near each satisfying assignment). This improves upon Wang (2022), which required $\Theta(\log n)$ depth.
-   - **Inapproximability** (Theorem 5.7): For $L \geq 3$, no polynomial-time algorithm can approximate the number of linear regions to within a ratio greater than $(2^n+1)^{-1}$ unless NP = RP. Intuitively, an unsatisfiable formula yields 1 region while a satisfiable one yields at least $2^n + 1$; any effective approximation would thus resolve SAT.
-   - **Inapproximability for two-layer networks** (Theorem 5.8): For two-layer networks, the approximation ratio decays exponentially as $2^{-O(n^{1-\epsilon})}$.
+    - **NP-hardness of the decision version** (Theorem 5.2): For any fixed constants $K, L \geq 2$, deciding whether an $L$-layer network has more than $K$ linear regions is NP-hard. **Key Lemma** (Lemma 5.3): Reduction from SAT—given a formula $\phi$, a two-layer network $N_\phi$ is constructed such that: (a) if $\phi$ is unsatisfiable, $N_\phi$ computes the constant zero function (1 region); (b) if $\phi$ is satisfiable, $N_\phi$ has at least 2 regions (a bounded non-zero region near each satisfying assignment). This improves upon Wang (2022), which required $\Theta(\log n)$ depth.
+    - **Inapproximability** (Theorem 5.7): For $L \geq 3$, no polynomial-time algorithm can approximate the number of linear regions to within a ratio greater than $(2^n+1)^{-1}$ unless NP = RP. Intuitively, an unsatisfiable formula yields 1 region while a satisfiable one yields at least $2^n + 1$; any effective approximation would thus resolve SAT.
+    - **Inapproximability for two-layer networks** (Theorem 5.8): For two-layer networks, the approximation ratio decays exponentially as $2^{-O(n^{1-\epsilon})}$.
 
 4. **Polynomial-space upper bounds** (positive results): For Definitions 1, 2, and 6, linear region counting lies in FPSPACE. Algorithm sketch:
 
-   - Definitions 1–2: Enumerate all $2^{s(N)}$ possible activation patterns and verify each individually.
-   - Definition 6: Enumerate all combinations of affine function coefficients whose encoding length is within a polynomial bound, and check whether each is realized by some proper activation region.
+    - Definitions 1–2: Enumerate all $2^{s(N)}$ possible activation patterns and verify each individually.
+    - Definition 6: Enumerate all combinations of affine function coefficients whose encoding length is within a polynomial bound, and check whether each is realized by some proper activation region.
 
    **Design Motivation**: Although polynomial-time algorithms are not expected to exist, this establishes that the problem does not require exponential space.
 

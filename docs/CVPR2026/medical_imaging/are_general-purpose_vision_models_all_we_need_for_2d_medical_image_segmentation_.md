@@ -18,8 +18,8 @@ content_hash: d14c218dbd2dff5c
 # Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13044](https://arxiv.org/abs/2603.13044)
-**Code**: Available (GitHub)
+**arXiv**: [2603.13044](https://arxiv.org/abs/2603.13044)  
+**Code**: Available (GitHub)  
 **Area**: Medical Image Segmentation
 **Keywords**: general-purpose vision models, medical image segmentation, empirical study, cross-dataset evaluation, Grad-CAM
 
@@ -136,8 +136,8 @@ On the most challenging NeoPolyp C1 category, GP-VMs lead the best-performing SM
 # Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13044](https://arxiv.org/abs/2603.13044)
-**Code**: [GitHub](https://github.com/)
+**arXiv**: [2603.13044](https://arxiv.org/abs/2603.13044)  
+**Code**: [GitHub](https://github.com/)  
 **Area**: Medical Image Segmentation
 **Keywords**: medical image segmentation, general-purpose vision models, empirical study, benchmarking, Grad-CAM
 

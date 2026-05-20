@@ -20,8 +20,8 @@ content_hash: 8003b02a76bd407a
 # When Sensors Fail: Temporal Sequence Models for Robust PPO under Sensor Drift
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.04648](https://arxiv.org/abs/2603.04648)
-**Code**: None
+**arXiv**: [2603.04648](https://arxiv.org/abs/2603.04648)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: sensor failure, partial observability, robustness, Transformer, state space models, PPO, sequence modeling
 

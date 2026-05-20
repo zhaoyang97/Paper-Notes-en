@@ -18,8 +18,8 @@ content_hash: 3c3cf6f671c92fb8
 # AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07053](https://arxiv.org/abs/2604.07053)
-**Code**: Coming soon
+**arXiv**: [2604.07053](https://arxiv.org/abs/2604.07053)  
+**Code**: Coming soon  
 **Area**: 3D Vision / Novel View Synthesis
 **Keywords**: 3D Gaussian Splatting, feed-forward reconstruction, anchor alignment, geometric priors, novel view synthesis
 

@@ -18,8 +18,8 @@ content_hash: de2544c171e09fa1
 # MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.12332](https://arxiv.org/abs/2410.12332)
-**Code**: [github.com/xuyunqiu/MC-Bench](https://github.com/xuyunqiu/MC-Bench)
+**arXiv**: [2410.12332](https://arxiv.org/abs/2410.12332)  
+**Code**: [github.com/xuyunqiu/MC-Bench](https://github.com/xuyunqiu/MC-Bench)  
 **Area**: Multimodal VLM
 **Keywords**: Multi-context visual grounding, multi-image reasoning, instance-level evaluation, MLLM benchmark, cross-image understanding
 

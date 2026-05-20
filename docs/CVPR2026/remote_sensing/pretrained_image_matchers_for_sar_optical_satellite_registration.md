@@ -18,8 +18,8 @@ content_hash: c834374275cc568b
 # Are Pretrained Image Matchers Good Enough for SAR-Optical Satellite Registration?
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.10217](https://arxiv.org/abs/2604.10217)
-**Code**: None
+**arXiv**: [2604.10217](https://arxiv.org/abs/2604.10217)  
+**Code**: None  
 **Area**: Remote Sensing Imagery
 **Keywords**: SAR-optical registration, image matching, cross-modal, zero-shot transfer, satellite imagery
 

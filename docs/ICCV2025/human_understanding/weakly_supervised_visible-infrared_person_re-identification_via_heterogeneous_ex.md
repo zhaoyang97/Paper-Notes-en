@@ -18,8 +18,8 @@ content_hash: 8be8b39e8ade12cd
 # Weakly Supervised Visible-Infrared Person Re-Identification via Heterogeneous Expert Collaborative Consistency Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.12942](https://arxiv.org/abs/2507.12942)
-**Code**: [GitHub](https://github.com/KongLingqi2333/WSL-VIReID)
+**arXiv**: [2507.12942](https://arxiv.org/abs/2507.12942)  
+**Code**: [GitHub](https://github.com/KongLingqi2333/WSL-VIReID)  
 **Area**: Human Understanding
 **Keywords**: Visible-Infrared Person Re-Identification, Weakly Supervised Learning, Cross-Modal Matching, Heterogeneous Experts, Collaborative Consistency Learning
 

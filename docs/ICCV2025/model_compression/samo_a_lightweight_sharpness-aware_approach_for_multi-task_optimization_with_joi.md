@@ -18,8 +18,8 @@ content_hash: e1a566a6f75839c8
 # SAMO: A Lightweight Sharpness-Aware Approach for Multi-Task Optimization with Joint Global-Local Perturbation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.07883](https://arxiv.org/abs/2507.07883)
-**Code**: [GitHub](https://github.com/OptMN-Lab/SAMO)
+**arXiv**: [2507.07883](https://arxiv.org/abs/2507.07883)  
+**Code**: [GitHub](https://github.com/OptMN-Lab/SAMO)  
 **Area**: Model Compression
 **Keywords**: Multi-task learning, sharpness-aware minimization, gradient conflict, zeroth-order gradient estimation, layer-wise normalization
 

@@ -18,8 +18,8 @@ content_hash: dccb4c4bcc7bf575
 # Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.18108](https://arxiv.org/abs/2503.18108)
-**Code**: [GitHub](https://github.com/cancaries/SceneCrafter)
+**arXiv**: [2503.18108](https://arxiv.org/abs/2503.18108)  
+**Code**: [GitHub](https://github.com/cancaries/SceneCrafter)  
 **Area**: Autonomous Driving
 **Keywords**: Synthetic Data, End-to-End Autonomous Driving, 3D Gaussian Splatting, Closed-Loop Evaluation, Interactive Simulation
 

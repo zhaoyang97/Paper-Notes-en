@@ -17,8 +17,8 @@ content_hash: df69a5f8023cbbca
 # OrdShap: Feature Position Importance for Sequential Black-Box Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.11855](https://arxiv.org/abs/2507.11855)
-**Code**: Not available
+**arXiv**: [2507.11855](https://arxiv.org/abs/2507.11855)  
+**Code**: Not available  
 **Area**: Explainable AI / Feature Attribution
 **Keywords**: Shapley Value, Feature Position Importance, Sequential Models, Interpretability, Sanchez-Bergantiños Value
 

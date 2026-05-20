@@ -18,8 +18,8 @@ content_hash: b4e43ed8a1048bd3
 # InterSyn: Interleaved Learning for Dynamic Motion Synthesis in the Wild
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.10297](https://arxiv.org/abs/2508.10297)
-**Code**: Not released (open-source planned)
+**arXiv**: [2508.10297](https://arxiv.org/abs/2508.10297)  
+**Code**: Not released (open-source planned)  
 **Area**: Motion Generation
 **Keywords**: Text-to-motion generation, multi-person interaction, diffusion models, interleaved learning, motion coordination
 

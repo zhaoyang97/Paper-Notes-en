@@ -18,8 +18,8 @@ content_hash: 8d3a4db5d169130b
 # CodePromptZip: Code-specific Prompt Compression for Retrieval-Augmented Generation in Coding Tasks with LMs
 
 **Conference**: ACL 2026
-**arXiv**: [2502.14925](https://arxiv.org/abs/2502.14925)
-**Code**: None
+**arXiv**: [2502.14925](https://arxiv.org/abs/2502.14925)  
+**Code**: None  
 **Area**: Information Retrieval
 **Keywords**: code prompt compression, RAG, type-aware priority ranking, copy mechanism, coding tasks
 

@@ -18,8 +18,8 @@ content_hash: a567a64197ace769
 # RoleConflictBench: A Benchmark of Role Conflict Scenarios for Evaluating LLMs' Contextual Sensitivity
 
 **Conference**: ACL 2026
-**arXiv**: [2509.25897](https://arxiv.org/abs/2509.25897)
-**Code**: [https://github.com/ddindidu/RoleConflictBench](https://github.com/ddindidu/RoleConflictBench)
+**arXiv**: [2509.25897](https://arxiv.org/abs/2509.25897)  
+**Code**: [https://github.com/ddindidu/RoleConflictBench](https://github.com/ddindidu/RoleConflictBench)  
 **Area**: LLM Evaluation
 **Keywords**: role conflict, contextual sensitivity, social bias, situational urgency, benchmark
 

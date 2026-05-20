@@ -19,8 +19,8 @@ content_hash: 6070190080794979
 # Tiled Flash Linear Attention: More Efficient Linear RNN and xLSTM Kernels
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.14376](https://arxiv.org/abs/2503.14376)
-**Code**: [github](https://github.com/NX-AI/mlstm_kernels)
+**arXiv**: [2503.14376](https://arxiv.org/abs/2503.14376)  
+**Code**: [github](https://github.com/NX-AI/mlstm_kernels)  
 **Area**: LLM Efficiency / Efficient Attention Mechanisms
 **Keywords**: Tiled Flash Linear Attention, mLSTM, xLSTM, Linear RNN, CUDA Kernel, Chunked Parallelism
 
@@ -55,21 +55,21 @@ TFLA comprises two core kernels:
 
 1. **Inter-chunk Recurrence**:
 
-   - Function: Recursively computes chunk-level memory states $C_k = \bar{g}_k C_{k-1} + (\bar{a}_k \odot K^{(k)})^T V^{(k)}$.
-   - Mechanism: Compresses the $T$-step recurrence into $N_c = \lceil T/L \rceil$ chunk-level recurrences, substantially reducing the number of intermediate states that must be materialized.
-   - Design Motivation: Reduces intermediate states from $O(T)$ to $O(T/L)$; larger $L$ yields greater savings.
+    - Function: Recursively computes chunk-level memory states $C_k = \bar{g}_k C_{k-1} + (\bar{a}_k \odot K^{(k)})^T V^{(k)}$.
+    - Mechanism: Compresses the $T$-step recurrence into $N_c = \lceil T/L \rceil$ chunk-level recurrences, substantially reducing the number of intermediate states that must be materialized.
+    - Design Motivation: Reduces intermediate states from $O(T)$ to $O(T/L)$; larger $L$ yields greater savings.
 
 2. **Intra-chunk Parallelism and Tiling**:
 
-   - Function: Fuses and tiles matrix multiplications within each chunk, supporting arbitrarily large chunk sizes.
-   - Mechanism: Decomposes the intra-chunk output as $H^{(k)} = (\tilde{Q}^{(k)} K^{(k)T} V^{(k)}) + (Q^{(k)} C_{k-1})$, introducing block sizes $B_{L_{hq}}$ (sequence dimension) and $B_{d_{hv}}$ (embedding dimension) to parallelize over these two dimensions while looping over $L_{kv}$ and $d_{qk}$.
-   - Design Motivation: Large chunk sizes can exceed SRAM limits (FLA's $L=64$ → TFLA's $L=256+$), with tiling automatically decomposing operations into SRAM-friendly units. Arithmetic intensity increases with chunk size.
+    - Function: Fuses and tiles matrix multiplications within each chunk, supporting arbitrarily large chunk sizes.
+    - Mechanism: Decomposes the intra-chunk output as $H^{(k)} = (\tilde{Q}^{(k)} K^{(k)T} V^{(k)}) + (Q^{(k)} C_{k-1})$, introducing block sizes $B_{L_{hq}}$ (sequence dimension) and $B_{d_{hv}}$ (embedding dimension) to parallelize over these two dimensions while looping over $L_{kv}$ and $d_{qk}$.
+    - Design Motivation: Large chunk sizes can exceed SRAM limits (FLA's $L=64$ → TFLA's $L=256+$), with tiling automatically decomposing operations into SRAM-friendly units. Arithmetic intensity increases with chunk size.
 
 3. **mLSTMsig: Sigmoid Input Gate Variant**:
 
-   - Function: Replaces the exponential input gate in mLSTM with a sigmoid: $C_t = \sigma(\tilde{f}_t) C_{t-1} + \sigma(\tilde{i}_t) k_t v_t^T$.
-   - Mechanism: The sigmoid gate naturally enforces upper and lower bounds, eliminating the need to track max states and normalization states.
-   - Design Motivation: Simplifies kernel implementation by removing rescaling logic, achieving >30% faster forward passes. Transfer behavior analysis demonstrates equivalence with mLSTMexp.
+    - Function: Replaces the exponential input gate in mLSTM with a sigmoid: $C_t = \sigma(\tilde{f}_t) C_{t-1} + \sigma(\tilde{i}_t) k_t v_t^T$.
+    - Mechanism: The sigmoid gate naturally enforces upper and lower bounds, eliminating the need to track max states and normalization states.
+    - Design Motivation: Simplifies kernel implementation by removing rescaling logic, achieving >30% faster forward passes. Transfer behavior analysis demonstrates equivalence with mLSTMexp.
 
 ### Loss & Training
 - **Input Gate Bias Initialization**: The bias is initialized to $-10$ (rather than the default $0$) to keep pre-activations negative in early training, reducing gradient norm spikes and improving training stability.

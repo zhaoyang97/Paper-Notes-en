@@ -18,8 +18,8 @@ content_hash: 23fb825ccc295215
 # Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.08198](https://arxiv.org/abs/2601.08198)
-**Code**: To be confirmed
+**arXiv**: [2601.08198](https://arxiv.org/abs/2601.08198)  
+**Code**: To be confirmed  
 **Area**: LLM/NLP
 **Keywords**: self-play fine-tuning, triplet learning, LLM alignment, reference-free training, data scarcity
 

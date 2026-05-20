@@ -18,8 +18,8 @@ content_hash: 42c09fecac19b75f
 # Measuring What Matters!! Assessing Therapeutic Principles in Mental-Health Conversation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05795](https://arxiv.org/abs/2604.05795)
-**Code**: [https://github.com/](https://github.com/)
+**arXiv**: [2604.05795](https://arxiv.org/abs/2604.05795)  
+**Code**: [https://github.com/](https://github.com/)  
 **Area**: Medical Imaging / NLP Understanding
 **Keywords**: mental health conversation evaluation, therapeutic principle alignment, ordinal classification, knowledge distillation, chain-of-thought reasoning
 

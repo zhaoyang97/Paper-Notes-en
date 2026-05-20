@@ -17,8 +17,8 @@ content_hash: 1871d33237f21e48
 # Deviation Dynamics in Cardinal Hedonic Games
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11531](https://arxiv.org/abs/2511.11531)
-**Code**: None
+**arXiv**: [2511.11531](https://arxiv.org/abs/2511.11531)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Hedonic games, deviation dynamics, stable partitions, computational complexity, individual rationality
 

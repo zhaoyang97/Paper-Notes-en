@@ -18,8 +18,8 @@ content_hash: 37f9a437b6ab0a0d
 # Griffin: Aerial-Ground Cooperative Detection and Tracking Dataset and Benchmark
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.06983](https://arxiv.org/abs/2503.06983)
-**Code**: [https://github.com/wang-jh18-SVM/Griffin](https://github.com/wang-jh18-SVM/Griffin)
+**arXiv**: [2503.06983](https://arxiv.org/abs/2503.06983)  
+**Code**: [https://github.com/wang-jh18-SVM/Griffin](https://github.com/wang-jh18-SVM/Griffin)  
 **Area**: 3D Vision / Collaborative Perception
 **Keywords**: aerial-ground cooperative perception, UAV-vehicle collaboration, 3D object detection, multi-object tracking, collaborative perception dataset
 

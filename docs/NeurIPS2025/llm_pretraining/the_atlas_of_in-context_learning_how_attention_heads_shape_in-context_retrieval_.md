@@ -18,8 +18,8 @@ content_hash: 3f9c0c2cd0dabe25
 # The Atlas of In-Context Learning: How Attention Heads Shape In-Context Retrieval Augmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15807](https://arxiv.org/abs/2505.15807)
-**Code**: [https://github.com/pkhdipraja/in-context-atlas](https://github.com/pkhdipraja/in-context-atlas)
+**arXiv**: [2505.15807](https://arxiv.org/abs/2505.15807)  
+**Code**: [https://github.com/pkhdipraja/in-context-atlas](https://github.com/pkhdipraja/in-context-atlas)  
 **Area**: LLM Pretraining
 **Keywords**: In-Context Learning, Attention Head Analysis, Retrieval Augmentation, AttnLRP, Knowledge Attribution
 

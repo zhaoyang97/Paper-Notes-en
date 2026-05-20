@@ -18,8 +18,8 @@ content_hash: a6dc3e0227ea1eee
 # Bandit and Delayed Feedback in Online Structured Prediction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.18709](https://arxiv.org/abs/2502.18709)
-**Code**: None
+**arXiv**: [2502.18709](https://arxiv.org/abs/2502.18709)  
+**Code**: None  
 **Area**: Online Learning / Structured Prediction
 **Keywords**: Online Structured Prediction, Bandit Feedback, Delayed Feedback, Surrogate Regret, Fenchel-Young Loss
 

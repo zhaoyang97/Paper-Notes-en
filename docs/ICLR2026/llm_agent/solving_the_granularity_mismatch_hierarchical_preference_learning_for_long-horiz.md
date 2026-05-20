@@ -18,8 +18,8 @@ content_hash: 9abb4a4b3afcb249
 # Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03253](https://arxiv.org/abs/2510.03253)
-**Code**: To be confirmed
+**arXiv**: [2510.03253](https://arxiv.org/abs/2510.03253)  
+**Code**: To be confirmed  
 **Area**: Agent / Alignment
 **Keywords**: hierarchical DPO, preference learning, long-horizon agent, curriculum learning, action group
 

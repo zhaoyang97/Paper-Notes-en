@@ -18,8 +18,8 @@ content_hash: a592a700cbba03f4
 # LLM Interpretability with Identifiable Temporal-Instantaneous Representation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23323](https://arxiv.org/abs/2509.23323)
-**Code**: None
+**arXiv**: [2509.23323](https://arxiv.org/abs/2509.23323)  
+**Code**: None  
 **Area**: Causal Inference
 **Keywords**: LLM interpretability, causal representation learning, sparse autoencoders, temporal causality, identifiability
 

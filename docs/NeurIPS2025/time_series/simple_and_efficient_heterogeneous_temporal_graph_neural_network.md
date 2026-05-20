@@ -18,8 +18,8 @@ content_hash: 01f5cfe92c175fd3
 # Simple and Efficient Heterogeneous Temporal Graph Neural Network
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18467](https://arxiv.org/abs/2510.18467)
-**Code**: Not available
+**arXiv**: [2510.18467](https://arxiv.org/abs/2510.18467)  
+**Code**: Not available  
 **Area**: Time Series
 **Keywords**: Heterogeneous temporal graph, graph neural network, dynamic attention, LLM augmentation, spatiotemporal modeling
 

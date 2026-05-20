@@ -18,8 +18,8 @@ content_hash: 714a4c84b01b3881
 # Towards Strategic Persuasion with Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22989](https://arxiv.org/abs/2509.22989)
-**Code**: None
+**arXiv**: [2509.22989](https://arxiv.org/abs/2509.22989)  
+**Code**: None  
 **Area**: Reinforcement Learning / LLM Capability Evaluation
 **Keywords**: Bayesian Persuasion, Large Language Models, Strategic Persuasion, Information Design, Reinforcement Learning Training
 

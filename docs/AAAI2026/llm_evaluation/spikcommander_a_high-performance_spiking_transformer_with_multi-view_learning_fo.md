@@ -18,8 +18,8 @@ content_hash: 0f5b5cc640c07195
 # SpikCommander: A High-Performance Spiking Transformer with Multi-View Learning for Efficient Speech Command Recognition
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07883](https://arxiv.org/abs/2511.07883)
-**Code**: [https://github.com/JackieWang9811/SCommander](https://github.com/JackieWang9811/SCommander)
+**arXiv**: [2511.07883](https://arxiv.org/abs/2511.07883)  
+**Code**: [https://github.com/JackieWang9811/SCommander](https://github.com/JackieWang9811/SCommander)  
 **Area**: Spiking Neural Networks / Speech Recognition
 **Keywords**: Spiking Neural Networks, Speech Command Recognition, Spiking Transformer, Multi-View Learning, Energy Efficiency
 

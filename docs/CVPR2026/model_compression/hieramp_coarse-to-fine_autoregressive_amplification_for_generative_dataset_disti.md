@@ -18,8 +18,8 @@ content_hash: ed9e5d59cfb379be
 # HierAmp: Coarse-to-Fine Autoregressive Amplification for Generative Dataset Distillation
 
 **Conference**: CVPR2026
-**arXiv**: [2603.06932](https://arxiv.org/abs/2603.06932)
-**Code**: [Oshikaka/HIERAMP](https://github.com/Oshikaka/HIERAMP)
+**arXiv**: [2603.06932](https://arxiv.org/abs/2603.06932)  
+**Code**: [Oshikaka/HIERAMP](https://github.com/Oshikaka/HIERAMP)  
 **Area**: Model Compression / Dataset Distillation
 **Keywords**: dataset distillation, visual autoregressive model, hierarchical semantic amplification, coarse-to-fine generation, codebook token diversity
 

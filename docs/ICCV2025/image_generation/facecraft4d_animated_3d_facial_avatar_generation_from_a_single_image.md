@@ -18,8 +18,8 @@ content_hash: 5baca08a7a8181e1
 # FaceCraft4D: Animated 3D Facial Avatar Generation from a Single Image
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.15179](https://arxiv.org/abs/2504.15179)
-**Code**: N/A
+**arXiv**: [2504.15179](https://arxiv.org/abs/2504.15179)  
+**Code**: N/A  
 **Area**: Diffusion Models / 3D Vision / Face Generation
 **Keywords**: 4D head generation, single-image-driven, 3D Gaussian, FLAME, multi-view consistency
 

@@ -18,8 +18,8 @@ content_hash: fa7e4f4de1c5cb34
 # DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00648](https://arxiv.org/abs/2604.00648)
-**Code**: None
+**arXiv**: [2604.00648](https://arxiv.org/abs/2604.00648)  
+**Code**: None  
 **Area**: 3D Vision / Novel View Synthesis
 **Keywords**: 3D Gaussian Splatting, fisheye camera, cross-view joint optimization, novel view synthesis, Kannala-Brandt model
 
@@ -52,18 +52,18 @@ DirectFisheye-GS comprises two core innovations: (1) deep coupling of the Kannal
 
 1. **Kannala-Brandt Fisheye Projection Integration**: Natively supports fisheye distortion via a polynomial-expansion-based general model, avoiding the information loss introduced by pre-undistortion.
 
-   - Given a 3D point $\mu_{cam} = (x_c, y_c, z_c)^T$ in camera coordinates, the incident angle $\theta$ is computed.
-   - The effective incident angle is approximated by a four-parameter polynomial: $\theta_d = \theta + k_1\theta^3 + k_2\theta^5 + k_3\theta^7 + k_4\theta^9$
-   - After obtaining the projected pixel coordinates, the complete Jacobian matrix $\mathbf{J}_\theta \in \mathbb{R}^{3\times3}$ is derived.
-   - The Jacobian consists of two components: a radial variation term (related to $\theta_d'$) and a tangential variation term (related to $\theta_d/d$).
-   - **Design Motivation**: Preserves the fully rasterized architecture of 3DGS, ensuring complete compatibility with existing 3DGS viewers and commercial tools.
+    - Given a 3D point $\mu_{cam} = (x_c, y_c, z_c)^T$ in camera coordinates, the incident angle $\theta$ is computed.
+    - The effective incident angle is approximated by a four-parameter polynomial: $\theta_d = \theta + k_1\theta^3 + k_2\theta^5 + k_3\theta^7 + k_4\theta^9$
+    - After obtaining the projected pixel coordinates, the complete Jacobian matrix $\mathbf{J}_\theta \in \mathbb{R}^{3\times3}$ is derived.
+    - The Jacobian consists of two components: a radial variation term (related to $\theta_d'$) and a tangential variation term (related to $\theta_d/d$).
+    - **Design Motivation**: Preserves the fully rasterized architecture of 3DGS, ensuring complete compatibility with existing 3DGS viewers and commercial tools.
 
 2. **Cross-View Joint Optimization (CVO)**: Addresses geometric inconsistency from single-view optimization via adaptive view grouping based on feature overlap and viewpoint diversity, enabling each Gaussian to receive consistent constraints across multiple views.
 
-   - **Step 1 – Camera association graph**: Leverages COLMAP SfM feature matching results to rank neighboring cameras by the number of shared SIFT feature points.
-   - **Step 2 – Angular difference ranking**: Computes the pose angular difference for each camera pair in the association graph and sorts them in descending order.
-   - **During training**: Each iteration samples one primary view and the top-(batchsize-1) associated cameras, accumulates multi-view losses, and performs a unified backward pass.
-   - **Design Motivation**: Maximizes Gaussian overlap across training views while ensuring sufficient viewpoint diversity, promoting cross-view consistency in both shape and appearance.
+    - **Step 1 – Camera association graph**: Leverages COLMAP SfM feature matching results to rank neighboring cameras by the number of shared SIFT feature points.
+    - **Step 2 – Angular difference ranking**: Computes the pose angular difference for each camera pair in the association graph and sorts them in descending order.
+    - **During training**: Each iteration samples one primary view and the top-(batchsize-1) associated cameras, accumulates multi-view losses, and performs a unified backward pass.
+    - **Design Motivation**: Maximizes Gaussian overlap across training views while ensuring sufficient viewpoint diversity, promoting cross-view consistency in both shape and appearance.
 
 ### Loss & Training
 

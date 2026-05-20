@@ -18,8 +18,8 @@ content_hash: 4b9b0902fe9afe38
 # Structure-Guided Diffusion Models for High-Fidelity Portrait Shadow Removal
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04692](https://arxiv.org/abs/2507.04692)
-**Code**: [https://github.com/wanchang-yu/Structure-Guided-Diffusion-for-Portrait-Shadow-Removal](https://github.com/wanchang-yu/Structure-Guided-Diffusion-for-Portrait-Shadow-Removal)
+**arXiv**: [2507.04692](https://arxiv.org/abs/2507.04692)  
+**Code**: [https://github.com/wanchang-yu/Structure-Guided-Diffusion-for-Portrait-Shadow-Removal](https://github.com/wanchang-yu/Structure-Guided-Diffusion-for-Portrait-Shadow-Removal)  
 **Area**: Image Generation
 **Keywords**: Portrait Shadow Removal, Diffusion Inpainting, Structure Map Guidance, Detail Recovery, Relighting Data Synthesis
 

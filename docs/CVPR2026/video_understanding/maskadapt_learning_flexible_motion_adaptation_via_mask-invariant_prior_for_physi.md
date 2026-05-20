@@ -18,8 +18,8 @@ content_hash: fee8d7ffdd40cbcf
 # MaskAdapt: Learning Flexible Motion Adaptation via Mask-Invariant Prior for Physics-Based Characters
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29272](https://arxiv.org/abs/2603.29272)
-**Code**: Unavailable
+**arXiv**: [2603.29272](https://arxiv.org/abs/2603.29272)  
+**Code**: Unavailable  
 **Area**: Video Understanding / Physics-Based Character Control
 **Keywords**: Physics simulation, motion adaptation, residual learning, body-part masking, humanoid control
 

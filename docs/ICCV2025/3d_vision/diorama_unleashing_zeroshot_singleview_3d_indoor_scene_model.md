@@ -18,8 +18,8 @@ content_hash: c8acb305785c52d1
 # Diorama: Unleashing Zero-shot Single-view 3D Indoor Scene Modeling
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.19492](https://arxiv.org/abs/2411.19492)
-**Code**: [https://3dlg-hcvc.github.io/diorama/](https://3dlg-hcvc.github.io/diorama/)
+**arXiv**: [2411.19492](https://arxiv.org/abs/2411.19492)  
+**Code**: [https://3dlg-hcvc.github.io/diorama/](https://3dlg-hcvc.github.io/diorama/)  
 **Area**: 3D Vision
 **Keywords**: zero-shot 3D scene modeling, CAD retrieval, scene graph, pose estimation, layout optimization
 

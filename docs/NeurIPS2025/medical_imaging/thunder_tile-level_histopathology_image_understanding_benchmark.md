@@ -19,8 +19,8 @@ content_hash: 74b5e143a85fff31
 # THUNDER: Tile-level Histopathology image UNDERstanding benchmark
 
 **Conference**: NeurIPS 2025 Datasets and Benchmarks Track (Spotlight)
-**arXiv**: [2507.07860](https://arxiv.org/abs/2507.07860)
-**Code**: Available ([https://github.com/MICS-Lab/thunder](https://github.com/MICS-Lab/thunder))
+**arXiv**: [2507.07860](https://arxiv.org/abs/2507.07860)  
+**Code**: Available ([https://github.com/MICS-Lab/thunder](https://github.com/MICS-Lab/thunder))  
 **Area**: Medical Imaging / Digital Pathology
 **Keywords**: digital pathology, benchmark, foundation models, robustness, uncertainty, tile-level analysis
 

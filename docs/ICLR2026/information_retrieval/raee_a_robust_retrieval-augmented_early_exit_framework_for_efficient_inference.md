@@ -18,8 +18,8 @@ content_hash: d50a966e1a5274fa
 # RAEE: A Robust Retrieval-Augmented Early Exit Framework for Efficient Inference
 
 **Conference**: ICLR 2026
-**arXiv**: [2405.15198](https://arxiv.org/abs/2405.15198)
-**Code**: [GitHub](https://github.com/HugeRaabbit/RAEE)
+**arXiv**: [2405.15198](https://arxiv.org/abs/2405.15198)  
+**Code**: [GitHub](https://github.com/HugeRaabbit/RAEE)  
 **Area**: Information Retrieval
 **Keywords**: Early Exit, Retrieval Augmentation, Distribution Prediction, Inference Acceleration, Error Correction
 

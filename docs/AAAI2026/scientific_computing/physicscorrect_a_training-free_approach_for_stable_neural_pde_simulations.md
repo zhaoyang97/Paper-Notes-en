@@ -18,8 +18,8 @@ content_hash: f42c69ed0ae64d14
 # PhysicsCorrect: A Training-Free Approach for Stable Neural PDE Simulations
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.02227](https://arxiv.org/abs/2507.02227)
-**Code**: [https://github.com/summerwine668/PhysicsCorrect](https://github.com/summerwing668/PhysicsCorrect)
+**arXiv**: [2507.02227](https://arxiv.org/abs/2507.02227)  
+**Code**: [https://github.com/summerwine668/PhysicsCorrect](https://github.com/summerwing668/PhysicsCorrect)  
 **Area**: Scientific Computing / PDE Solving
 **Keywords**: Neural PDE Solver, Error Accumulation, Predict-Correct, Training-Free, Jacobian Caching
 
@@ -49,21 +49,21 @@ A predict-correct pipeline: (1) the neural operator $\phi_\theta$ predicts $\hat
 
 1. **Linearized Inverse Problem Solve**:
 
-   - Function: Reduces nonlinear PDE residual minimization to a linear system.
-   - Mechanism: A first-order Taylor expansion of the residual gives $L(\hat{u}+u^c) \approx L(\hat{u}) + \frac{\partial L}{\partial \hat{u}} u^c$; setting this to zero yields $Au^c = -r$, where $A = \frac{\partial L}{\partial \hat{u}}$ is the Jacobian.
-   - Design Motivation: Avoids iterative optimization; a single linear solve suffices under the small-error assumption, where linearization remains accurate.
+    - Function: Reduces nonlinear PDE residual minimization to a linear system.
+    - Mechanism: A first-order Taylor expansion of the residual gives $L(\hat{u}+u^c) \approx L(\hat{u}) + \frac{\partial L}{\partial \hat{u}} u^c$; setting this to zero yields $Au^c = -r$, where $A = \frac{\partial L}{\partial \hat{u}}$ is the Jacobian.
+    - Design Motivation: Avoids iterative optimization; a single linear solve suffices under the small-error assumption, where linearization remains accurate.
 
 2. **Jacobian / Pseudoinverse Caching**:
 
-   - Function: Reduces per-step correction cost from $O(n^3)$ to an $O(n^2)$ matrix–vector multiplication.
-   - Mechanism: For semi-implicit discretizations (linear terms treated implicitly, nonlinear terms explicitly), the Jacobian $A = \frac{I}{\Delta t} - \mathcal{L}$ is state-independent. The pseudoinverse $A^\dagger$ is computed once offline; at inference, each step requires only $u^c = A^\dagger \cdot (-r)$.
-   - Design Motivation: Empirically, caching reduces per-step overhead from 113 s to 0.9 s (163× speedup), yielding a total inference overhead below 5%.
+    - Function: Reduces per-step correction cost from $O(n^3)$ to an $O(n^2)$ matrix–vector multiplication.
+    - Mechanism: For semi-implicit discretizations (linear terms treated implicitly, nonlinear terms explicitly), the Jacobian $A = \frac{I}{\Delta t} - \mathcal{L}$ is state-independent. The pseudoinverse $A^\dagger$ is computed once offline; at inference, each step requires only $u^c = A^\dagger \cdot (-r)$.
+    - Design Motivation: Empirically, caching reduces per-step overhead from 113 s to 0.9 s (163× speedup), yielding a total inference overhead below 5%.
 
 3. **Semi-Implicit Discretization Scheme**:
 
-   - Function: Designs PDE-specific discretizations that guarantee a constant Jacobian.
-   - Mechanism: Navier–Stokes uses Crank–Nicolson (diffusion implicit, advection explicit); the wave equation uses a second-order central-difference scheme; the KS equation uses spectral methods with semi-implicit time integration.
-   - Design Motivation: Treating nonlinear terms implicitly would make the Jacobian state-dependent, invalidating the caching strategy.
+    - Function: Designs PDE-specific discretizations that guarantee a constant Jacobian.
+    - Mechanism: Navier–Stokes uses Crank–Nicolson (diffusion implicit, advection explicit); the wave equation uses a second-order central-difference scheme; the KS equation uses spectral methods with semi-implicit time integration.
+    - Design Motivation: Treating nonlinear terms implicitly would make the Jacobian state-dependent, invalidating the caching strategy.
 
 ### Loss & Training
 No training is required. Theoretical guarantee: under the relaxed update $u^c = -\gamma A^\dagger r$ with $0 < \gamma < 2$, the residual satisfies a contraction mapping condition.

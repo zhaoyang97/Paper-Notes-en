@@ -18,8 +18,8 @@ content_hash: d6ddc950f7a65882
 # OCK: Unsupervised Dynamic Video Prediction with Object-Centric Kinematics
 
 **Conference**: ICCV 2025
-**arXiv**: [2404.18423](https://arxiv.org/abs/2404.18423)
-**Code**: None
+**arXiv**: [2404.18423](https://arxiv.org/abs/2404.18423)  
+**Code**: None  
 **Area**: Video Generation
 **Keywords**: Object-centric learning, video prediction, kinematic modeling, Slot Attention, autoregressive Transformer
 

@@ -18,8 +18,8 @@ content_hash: 8d18dace281b1ce5
 # Flattery, Fluff, and Fog: Diagnosing and Mitigating Idiosyncratic Biases in Preference Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.05339](https://arxiv.org/abs/2506.05339)
-**Code**: [GitHub](https://github.com/anirudhb123/preference-model-biases)
+**arXiv**: [2506.05339](https://arxiv.org/abs/2506.05339)  
+**Code**: [GitHub](https://github.com/anirudhb123/preference-model-biases)  
 **Area**: Causal Inference
 **Keywords**: preference model, reward model bias, RLHF, counterfactual data augmentation, LLM alignment
 

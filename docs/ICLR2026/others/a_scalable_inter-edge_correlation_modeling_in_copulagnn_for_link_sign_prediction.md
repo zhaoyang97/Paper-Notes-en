@@ -17,8 +17,8 @@ content_hash: ec286aff41cf712b
 # A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19175](https://arxiv.org/abs/2601.19175)
-**Code**: None
+**arXiv**: [2601.19175](https://arxiv.org/abs/2601.19175)  
+**Code**: None  
 **Area**: Others
 **Keywords**: signed graphs, link sign prediction, Gaussian Copula, inter-edge correlation, Gramian matrix
 
@@ -48,21 +48,21 @@ Given a signed graph, an SGNN encoder produces node embeddings. Edge embeddings 
 
 1. **Gramian Correlation Matrix**:
 
-   - **Function**: Construct a scalable positive definite correlation matrix from edge embeddings via their Gramian.
-   - **Mechanism**: $\Sigma = \mathbf{QQ}^\top + \epsilon \mathbf{I}_n$, normalized to a correlation matrix $\mathbf{R} = \mathbf{D}^{-1}\Sigma\mathbf{D}^{-1}$. Since the edge embedding dimension $d \ll n$, parameter count is reduced from $O(n^2)$ to graph encoder parameters plus $O(nd)$.
-   - **Design Motivation**: The Gramian is naturally positive semi-definite; adding $\epsilon \mathbf{I}$ ensures positive definiteness, satisfying the requirements of the Gaussian Copula. The model learns encoder parameters rather than embeddings directly, further reducing parameter count.
+    - **Function**: Construct a scalable positive definite correlation matrix from edge embeddings via their Gramian.
+    - **Mechanism**: $\Sigma = \mathbf{QQ}^\top + \epsilon \mathbf{I}_n$, normalized to a correlation matrix $\mathbf{R} = \mathbf{D}^{-1}\Sigma\mathbf{D}^{-1}$. Since the edge embedding dimension $d \ll n$, parameter count is reduced from $O(n^2)$ to graph encoder parameters plus $O(nd)$.
+    - **Design Motivation**: The Gramian is naturally positive semi-definite; adding $\epsilon \mathbf{I}$ ensures positive definiteness, satisfying the requirements of the Gaussian Copula. The model learns encoder parameters rather than embeddings directly, further reducing parameter count.
 
 2. **Woodbury-Based Conditional Distribution**:
 
-   - **Function**: Apply the Woodbury identity to convert large matrix inversions during inference into operations on small matrices.
-   - **Mechanism**: For $\Sigma_{00}^{-1}$ (the inverse of the $m \times m$ covariance matrix of observed edges), the structure $\Sigma_{00} = \mathbf{Q}_0\mathbf{Q}_0^\top + \epsilon\mathbf{I}_m$ is exploited via the Woodbury identity to reduce the problem to a $d \times d$ matrix inversion.
-   - **Design Motivation**: Inference requires computing the conditional distribution of unobserved edge signs given observed ones, which involves an $m \times m$ matrix inversion. Since $d \ll m$, this reduces the cost from $O(m^3)$ to $O(d^3 + md^2)$.
+    - **Function**: Apply the Woodbury identity to convert large matrix inversions during inference into operations on small matrices.
+    - **Mechanism**: For $\Sigma_{00}^{-1}$ (the inverse of the $m \times m$ covariance matrix of observed edges), the structure $\Sigma_{00} = \mathbf{Q}_0\mathbf{Q}_0^\top + \epsilon\mathbf{I}_m$ is exploited via the Woodbury identity to reduce the problem to a $d \times d$ matrix inversion.
+    - **Design Motivation**: Inference requires computing the conditional distribution of unobserved edge signs given observed ones, which involves an $m \times m$ matrix inversion. Since $d \ll m$, this reduces the cost from $O(m^3)$ to $O(d^3 + md^2)$.
 
 3. **Relaxed Bernoulli Marginal Distribution**:
 
-   - **Function**: Model discrete edge signs using a continuously relaxed Bernoulli distribution.
-   - **Mechanism**: Each edge sign is parameterized by a location parameter $a_i$ and a temperature parameter $t_i$, with a closed-form CDF $F(x;a,t) = x^t/(a(1-x)^t + x^t)$, which can be directly substituted into the Gaussian Copula.
-   - **Design Motivation**: The Copula framework requires continuous marginal distributions. The relaxed Bernoulli preserves the semantics of binary classification while enabling differentiable training.
+    - **Function**: Model discrete edge signs using a continuously relaxed Bernoulli distribution.
+    - **Mechanism**: Each edge sign is parameterized by a location parameter $a_i$ and a temperature parameter $t_i$, with a closed-form CDF $F(x;a,t) = x^t/(a(1-x)^t + x^t)$, which can be directly substituted into the Gaussian Copula.
+    - **Design Motivation**: The Copula framework requires continuous marginal distributions. The relaxed Bernoulli preserves the semantics of binary classification while enabling differentiable training.
 
 ### Loss & Training
 The training objective maximizes the joint log-likelihood of observed edge signs: $\log \mathcal{H}'(x_{1:m}) = \log c(u_{1:m}; \mathbf{R}_{00}) + \sum \log f_i(x_i)$, where both the Copula density and marginal densities have closed-form expressions. Inference is performed by sampling from the conditional Gaussian distribution.

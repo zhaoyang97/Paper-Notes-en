@@ -17,8 +17,8 @@ content_hash: 9c5caffa6e722e9e
 # The Structural Complexity of Matrix-Vector Multiplication
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.21240](https://arxiv.org/abs/2502.21240)
-**Code**: Unavailable
+**arXiv**: [2502.21240](https://arxiv.org/abs/2502.21240)  
+**Code**: Unavailable  
 **Area**: Theoretical Computer Science / Algorithm Complexity
 **Keywords**: matrix-vector multiplication, VC dimension, structured matrices, dynamic algorithms, minimum spanning tree
 

@@ -18,8 +18,8 @@ content_hash: 1c400aaee379c505
 # Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17260](https://arxiv.org/abs/2604.17260)
-**Code**: [GitHub](https://github.com)
+**arXiv**: [2604.17260](https://arxiv.org/abs/2604.17260)  
+**Code**: [GitHub](https://github.com)  
 **Area**: LLM Evaluation
 **Keywords**: meeting effectiveness evaluation, temporal fine-grained evaluation, LLM-as-Judge, topic segmentation, multi-party dialogue
 

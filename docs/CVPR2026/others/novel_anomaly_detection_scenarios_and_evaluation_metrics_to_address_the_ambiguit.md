@@ -17,8 +17,8 @@ content_hash: a86dcfcf70ed7585
 # Novel Anomaly Detection Scenarios and Evaluation Metrics to Address the Ambiguity in the Definition of Normal Samples
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07097](https://arxiv.org/abs/2604.07097)
-**Code**: [https://github.com/ReijiSoftmaxSaito/Scenario](https://github.com/ReijiSoftmaxSaito/Scenario)
+**arXiv**: [2604.07097](https://arxiv.org/abs/2604.07097)  
+**Code**: [https://github.com/ReijiSoftmaxSaito/Scenario](https://github.com/ReijiSoftmaxSaito/Scenario)  
 **Area**: Other
 **Keywords**: anomaly detection, specification change, ambiguous normal definition, pseudo-anomaly, industrial defect detection
 

@@ -18,8 +18,8 @@ content_hash: 49709752cd546aee
 # Discounted Cuts: A Stackelberg Approach to Network Disruption
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10804](https://arxiv.org/abs/2511.10804)
-**Code**: None
+**arXiv**: [2511.10804](https://arxiv.org/abs/2511.10804)  
+**Code**: None  
 **Area**: Algorithmic Game Theory / Network Optimization
 **Keywords**: Stackelberg Games, Network Cuts, Discounted Cost, Bounded-Genus Graphs, Most Vital Links
 

@@ -18,8 +18,8 @@ content_hash: 13ea7f9e60bb6379
 # Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.13702](https://arxiv.org/abs/2603.13702)
-**Code**: [GitHub](https://github.com/Clearloveyuan/xCPD)
+**arXiv**: [2603.13702](https://arxiv.org/abs/2603.13702)  
+**Code**: [GitHub](https://github.com/Clearloveyuan/xCPD)  
 **Area**: Time Series Forecasting
 **Keywords**: Channel dependency, graph spectral decomposition, frequency-aware, MoE routing, plug-and-play
 

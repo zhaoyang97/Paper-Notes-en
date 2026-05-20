@@ -18,8 +18,8 @@ content_hash: d30d4aca3a828154
 # FlexiCodec: A Dynamic Neural Audio Codec for Low Frame Rates
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00981](https://arxiv.org/abs/2510.00981)
-**Code**: [amphionteam/flexicodec](https://github.com/amphionteam/flexicodec)
+**arXiv**: [2510.00981](https://arxiv.org/abs/2510.00981)  
+**Code**: [amphionteam/flexicodec](https://github.com/amphionteam/flexicodec)  
 **Area**: Audio & Speech
 **Keywords**: Neural Audio Codec, Dynamic Frame Rate, Low Frame Rate, Speech Tokenization, TTS
 

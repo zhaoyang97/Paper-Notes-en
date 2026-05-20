@@ -18,8 +18,8 @@ content_hash: 5ef64824c130fa55
 # Aggregation Hides OOD Generalization Failures from Spurious Correlations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24884](https://arxiv.org/abs/2510.24884)
-**Code**: [https://github.com/olawalesalaudeen/OODSELECT](https://github.com/olawalesalaudeen/OODSELECT)
+**arXiv**: [2510.24884](https://arxiv.org/abs/2510.24884)  
+**Code**: [https://github.com/olawalesalaudeen/OODSELECT](https://github.com/olawalesalaudeen/OODSELECT)  
 **Area**: OOD Generalization / Robustness
 **Keywords**: OOD generalization, spurious correlations, aggregation bias, accuracy-on-the-line, subset analysis
 

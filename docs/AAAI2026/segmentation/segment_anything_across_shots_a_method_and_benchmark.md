@@ -18,8 +18,8 @@ content_hash: 7f9d7fc6b05b5882
 # Segment Anything Across Shots: A Method and Benchmark
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13715](https://arxiv.org/abs/2511.13715)
-**Code**: [https://henghuiding.com/SAAS/](https://henghuiding.com/SAAS/)
+**arXiv**: [2511.13715](https://arxiv.org/abs/2511.13715)  
+**Code**: [https://henghuiding.com/SAAS/](https://henghuiding.com/SAAS/)  
 **Area**: Segmentation
 **Keywords**: multi-shot video segmentation, SAM2, data augmentation, shot transition detection, benchmark
 

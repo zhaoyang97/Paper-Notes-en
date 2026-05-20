@@ -18,8 +18,8 @@ content_hash: 026dbceab78edaac
 # RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction
 
 **Conference**: AAAI2026
-**arXiv**: [2508.16623](https://arxiv.org/abs/2508.16623)
-**Code**: [RWLinno/RAST](https://github.com/RWLinno/RAST)
+**arXiv**: [2508.16623](https://arxiv.org/abs/2508.16623)  
+**Code**: [RWLinno/RAST](https://github.com/RWLinno/RAST)  
 **Area**: Autonomous Driving
 **Keywords**: traffic prediction, retrieval-augmented, spatio-temporal forecasting, memory bank, STGNN
 

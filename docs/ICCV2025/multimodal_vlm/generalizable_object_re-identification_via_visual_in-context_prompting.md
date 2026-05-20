@@ -18,8 +18,8 @@ content_hash: 7f96f134b01a1cfb
 # Generalizable Object Re-Identification via Visual In-Context Prompting
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.21222](https://arxiv.org/abs/2508.21222)
-**Code**: [https://github.com/Hzzone/VICP](https://github.com/Hzzone/VICP)
+**arXiv**: [2508.21222](https://arxiv.org/abs/2508.21222)  
+**Code**: [https://github.com/Hzzone/VICP](https://github.com/Hzzone/VICP)  
 **Area**: Multimodal / Vision-Language Model
 **Keywords**: Object Re-Identification, Generalizable ReID, Visual In-Context Prompting, LLM-Guided, Visual Foundation Model
 
@@ -33,9 +33,9 @@ VICP proposes a generalizable object re-identification framework in which an LLM
 - **Self-supervised learning** (DINO, MoCo, etc.) reduces annotation requirements but learns semantic consistency rather than identity-sensitive features (e.g., stitching texture on a backpack, sole pattern on a shoe), yielding suboptimal ReID performance.
 - **Core Problem**: How to build a ReID model that generalizes to arbitrary object categories without category-specific training?
 - **Key Insights**:
-  - Visual Foundation Models (VFMs) possess strong visual priors, but their general-purpose features lack the fine-grained identity discriminability required for ReID.
-  - Large Language Models (LLMs) excel at in-context learning—inferring task rules from a handful of examples.
-  - Unifying both: LLM infers identity-discriminative rules → generates visual prompts → VFM extracts identity-sensitive features.
+    - Visual Foundation Models (VFMs) possess strong visual priors, but their general-purpose features lack the fine-grained identity discriminability required for ReID.
+    - Large Language Models (LLMs) excel at in-context learning—inferring task rules from a handful of examples.
+    - Unifying both: LLM infers identity-discriminative rules → generates visual prompts → VFM extracts identity-sensitive features.
 
 ## Method
 

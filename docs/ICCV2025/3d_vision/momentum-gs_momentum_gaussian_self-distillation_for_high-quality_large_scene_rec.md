@@ -18,8 +18,8 @@ content_hash: db4942f5d0e80000
 # Momentum-GS: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.04887](https://arxiv.org/abs/2412.04887)
-**Code**: [https://jixuan-fan.github.io/Momentum-GS_Page/](https://jixuan-fan.github.io/Momentum-GS_Page/)
+**arXiv**: [2412.04887](https://arxiv.org/abs/2412.04887)  
+**Code**: [https://jixuan-fan.github.io/Momentum-GS_Page/](https://jixuan-fan.github.io/Momentum-GS_Page/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Large-Scale Scene Reconstruction, Momentum Self-Distillation, Hybrid Representation, Block-Parallel Training
 

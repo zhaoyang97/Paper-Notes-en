@@ -18,8 +18,8 @@ content_hash: 808d1c6dae2ab875
 # Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22139](https://arxiv.org/abs/2506.22139)
-**Code**: N/A
+**arXiv**: [2506.22139](https://arxiv.org/abs/2506.22139)  
+**Code**: N/A  
 **Area**: Video Understanding / Video Large Language Models
 **Keywords**: Video Frame Selection, Multi-Resolution Adaptation, Video-LLM, CLIP, Gumbel-Max Sampling
 

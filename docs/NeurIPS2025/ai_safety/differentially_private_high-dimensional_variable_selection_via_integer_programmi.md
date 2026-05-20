@@ -18,8 +18,8 @@ content_hash: 914aa018bf77b7e7
 # Differentially Private High-dimensional Variable Selection via Integer Programming
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22062](https://arxiv.org/abs/2510.22062)
-**Code**: [github.com/petrosprastakos/DP-variable-selection](https://github.com/petrosprastakos/DP-variable-selection)
+**arXiv**: [2510.22062](https://arxiv.org/abs/2510.22062)  
+**Code**: [github.com/petrosprastakos/DP-variable-selection](https://github.com/petrosprastakos/DP-variable-selection)  
 **Area**: AI Safety / Differential Privacy
 **Keywords**: Differential Privacy, Sparse Variable Selection, Mixed Integer Programming, Exponential Mechanism, Best Subset Selection
 

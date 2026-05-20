@@ -18,8 +18,8 @@ content_hash: 4922acfe10c285b2
 # Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.15124](https://arxiv.org/abs/2602.15124)
-**Code**: [https://github.com/SY-Xuan/DA-HOI](https://github.com/SY-Xuan/DA-HOI)
+**arXiv**: [2602.15124](https://arxiv.org/abs/2602.15124)  
+**Code**: [https://github.com/SY-Xuan/DA-HOI](https://github.com/SY-Xuan/DA-HOI)  
 **Authors**: Shiyu Xuan, Dongkai Wang, Zechao Li, Jinhui Tang
 **Area**: Multimodal VLM
 **Keywords**: HOI detection, zero-shot, MLLM, interaction recognition, detector-agnostic

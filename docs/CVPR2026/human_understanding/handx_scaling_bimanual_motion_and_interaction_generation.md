@@ -18,8 +18,8 @@ content_hash: 153e8888fe3836a4
 # HandX: Scaling Bimanual Motion and Interaction Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28766](https://arxiv.org/abs/2603.28766)
-**Code**: [https://handx-project.github.io](https://handx-project.github.io)
+**arXiv**: [2603.28766](https://arxiv.org/abs/2603.28766)  
+**Code**: [https://handx-project.github.io](https://handx-project.github.io)  
 **Area**: Human Understanding / Motion Generation
 **Keywords**: Bimanual Motion Generation, Dexterous Hand Interaction, Motion Capture Dataset, Text-to-Motion, Scaling Law
 

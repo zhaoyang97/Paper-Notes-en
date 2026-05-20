@@ -18,8 +18,8 @@ content_hash: 0d27b77b659f2cfb
 # LoopLLM: Transferable Energy-Latency Attacks in LLMs via Repetitive Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07876](https://arxiv.org/abs/2511.07876)
-**Code**: [https://github.com/neuron-insight-lab/LoopLLM](https://github.com/neuron-insight-lab/LoopLLM)
+**arXiv**: [2511.07876](https://arxiv.org/abs/2511.07876)  
+**Code**: [https://github.com/neuron-insight-lab/LoopLLM](https://github.com/neuron-insight-lab/LoopLLM)  
 **Area**: LLM/NLP
 **Keywords**: energy-latency attack, repetitive generation, adversarial suffix, low-entropy loop, cross-model transferability
 

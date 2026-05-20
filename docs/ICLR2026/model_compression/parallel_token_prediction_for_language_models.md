@@ -18,8 +18,8 @@ content_hash: fcf41a57f45744c1
 # Parallel Token Prediction for Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.21323](https://arxiv.org/abs/2512.21323)
-**Code**: [GitHub](https://github.com/mandt-lab/ptp)
+**arXiv**: [2512.21323](https://arxiv.org/abs/2512.21323)  
+**Code**: [GitHub](https://github.com/mandt-lab/ptp)  
 **Area**: Model Compression
 **Keywords**: parallel decoding, speculative decoding, auxiliary variables, autoregressive models, inference acceleration
 

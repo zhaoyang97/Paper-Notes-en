@@ -18,8 +18,8 @@ content_hash: 3f342f94e108ab51
 # SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12193](https://arxiv.org/abs/2603.12193)
-**Code**: [https://lmzpai.github.io/SaPaVe](https://lmzpai.github.io/SaPaVe)
+**arXiv**: [2603.12193](https://arxiv.org/abs/2603.12193)  
+**Code**: [https://lmzpai.github.io/SaPaVe](https://lmzpai.github.io/SaPaVe)  
 **Area**: Multimodal VLM / Robotics
 **Keywords**: Active Perception, VLA Models, Decoupled Action Space, 3D Spatial Injection, Humanoid Robots
 
@@ -30,9 +30,9 @@ SaPaVe proposes an end-to-end active manipulation framework that decouples camer
 
 1. **Background**: Active perception and manipulation are core capabilities for robots interacting with complex scenes. Existing VLMs (e.g., Qwen2.5-VL, Gemini 2.5 Pro) have improved semantic understanding, while VLA models (e.g., π₀, GR00T N1) aim to bridge vision–language–action end-to-end.
 2. **Limitations of Prior Work**:
-   - VLMs treat active perception as a VQA task (selecting the best viewpoint from discrete candidates), precluding continuous fine-grained camera control.
-   - VLA models are typically trained and evaluated under fixed, optimal head-camera viewpoints, making them sensitive to viewpoint changes and unable to actively adjust perspective.
-   - Naively extending the VLA action space with camera actions causes conflicts and requires large amounts of expensive real-world active-perception-plus-manipulation data.
+    - VLMs treat active perception as a VQA task (selecting the best viewpoint from discrete candidates), precluding continuous fine-grained camera control.
+    - VLA models are typically trained and evaluated under fixed, optimal head-camera viewpoints, making them sensitive to viewpoint changes and unable to actively adjust perspective.
+    - Naively extending the VLA action space with camera actions causes conflicts and requires large amounts of expensive real-world active-perception-plus-manipulation data.
 3. **Key Challenge**: Active manipulation requires tight coupling of *semantic active perception* (adjusting viewpoint based on task strategy to acquire critical information) and *active-viewpoint execution* (robust manipulation under dynamic viewpoints), yet data scarcity and action-space conflicts make it difficult for existing methods to achieve both.
 4. **Goal**: Enable robots to simultaneously learn semantically driven active viewpoint adjustment and robust manipulation under viewpoint changes, in a data-efficient manner.
 5. **Key Insight**: The key insight is that camera motion is embodiment-agnostic and can therefore be learned independently before joint optimization, enabling an efficient bottom-up training pipeline.
@@ -47,23 +47,23 @@ SaPaVe builds on a VLA model backbone. Given RGB images and task instructions, i
 
 1. **Decoupled Action Heads & Camera Adapter**
 
-   - **Function**: Enable the model to learn camera control and manipulation actions separately without degrading the VLM's original semantic capabilities.
-   - **Mechanism**: A camera adapter applies LoRA on top of the VLM to learn semantic active-perception priors without modifying the original VLM weights. Two independent denoising decoders constitute the decoupled action heads, outputting camera actions and manipulation actions respectively. This lightweight decoupled design allows the model to learn both action types accurately while avoiding interference from a unified action space.
-   - **Design Motivation**: Adding camera motion directly to the existing VLA action space disrupts priors learned from large-scale fixed-viewpoint manipulation data. Since camera motion is inherently embodiment-agnostic, learning it via an independent adapter is more efficient and preserves manipulation capability. Experiments confirm that full fine-tuning of the VLM for camera motion is inferior to using a lightweight adapter (Tab. 5), as the adapter retains high-level semantic information.
+    - **Function**: Enable the model to learn camera control and manipulation actions separately without degrading the VLM's original semantic capabilities.
+    - **Mechanism**: A camera adapter applies LoRA on top of the VLM to learn semantic active-perception priors without modifying the original VLM weights. Two independent denoising decoders constitute the decoupled action heads, outputting camera actions and manipulation actions respectively. This lightweight decoupled design allows the model to learn both action types accurately while avoiding interference from a unified action space.
+    - **Design Motivation**: Adding camera motion directly to the existing VLA action space disrupts priors learned from large-scale fixed-viewpoint manipulation data. Since camera motion is inherently embodiment-agnostic, learning it via an independent adapter is more efficient and preserves manipulation capability. Experiments confirm that full fine-tuning of the VLM for camera motion is inferior to using a lightweight adapter (Tab. 5), as the adapter retains high-level semantic information.
 
 2. **Universal Spatial Knowledge Injection**
 
-   - **Function**: Enhance the model's 3D spatial awareness and robustness to dynamic viewpoint changes.
-   - **Mechanism**: A Universal Spatial Encoder inherited from a strong feed-forward 3D geometry model accepts arbitrary 3D geometric inputs (depth maps, camera intrinsics/extrinsics, etc.) without retraining or architectural modification. Encoded spatial tokens are element-wise added to VLM output tokens, and the fused tokens are injected into the action denoising process of the decoupled action heads.
-   - **Design Motivation**: VLA models lack 3D geometric priors and cannot maintain consistent spatial understanding under active viewpoint changes. Directly injecting diverse 3D information fundamentally improves robustness to viewpoint variation. Ablations show that removing this module causes a 15% drop in success rate even on simple occlusion-grasping tasks (Tab. 5).
+    - **Function**: Enhance the model's 3D spatial awareness and robustness to dynamic viewpoint changes.
+    - **Mechanism**: A Universal Spatial Encoder inherited from a strong feed-forward 3D geometry model accepts arbitrary 3D geometric inputs (depth maps, camera intrinsics/extrinsics, etc.) without retraining or architectural modification. Encoded spatial tokens are element-wise added to VLM output tokens, and the fused tokens are injected into the action denoising process of the decoupled action heads.
+    - **Design Motivation**: VLA models lack 3D geometric priors and cannot maintain consistent spatial understanding under active viewpoint changes. Directly injecting diverse 3D information fundamentally improves robustness to viewpoint variation. Ablations show that removing this module causes a 15% drop in success rate even on simple occlusion-grasping tasks (Tab. 5).
 
 3. **Two-Stage Bottom-Up Training Strategy**
 
-   - **Function**: Build active perception and active manipulation capabilities layer by layer in a data-efficient manner.
-   - **Mechanism**:
+    - **Function**: Build active perception and active manipulation capabilities layer by layer in a data-efficient manner.
+    - **Mechanism**:
      - **Stage 1 (Semantic Active Perception Alignment)**: Trains only the camera adapter and camera action decoder using the ActiveViewPose-200K dataset, with MSE loss $\mathcal{L}_{stage1} = \mathcal{L}_{MSE}(A_{head,t}, A_{head,t}^*)$. This stage establishes strong semantically driven viewpoint adjustment priors.
      - **Stage 2 (Active Manipulation Fine-tuning)**: Freezes the camera adapter and trains the decoupled action heads on mixed data (ActiveViewPose-200K + robot manipulation data), with $\mathcal{L}_{stage2} = \lambda_{head}\mathcal{L}_{head} + \lambda_{other}\mathcal{L}_{other}$.
-   - **Design Motivation**: Joint training from scratch requires large amounts of scarce active-manipulation data. By first building perception priors on abundantly available viewpoint-only data and then fine-tuning with a small amount of manipulation data, the approach achieves data-efficient transfer learning.
+    - **Design Motivation**: Joint training from scratch requires large amounts of scarce active-manipulation data. By first building perception priors on abundantly available viewpoint-only data and then fine-tuning with a small amount of manipulation data, the approach achieves data-efficient transfer learning.
 
 ### Loss & Training
 - Stage 1: MSE loss supervising camera action prediction only.

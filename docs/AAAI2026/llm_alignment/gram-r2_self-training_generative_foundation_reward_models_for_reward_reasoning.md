@@ -18,8 +18,8 @@ content_hash: a08f030bd96d6fd3
 # GRAM-R²: Self-Training Generative Foundation Reward Models for Reward Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.02492](https://arxiv.org/abs/2509.02492)
-**Code**: N/A
+**arXiv**: [2509.02492](https://arxiv.org/abs/2509.02492)  
+**Code**: N/A  
 **Area**: LLM Alignment
 **Keywords**: Reward modeling, self-training, generative reward, preference reasoning, RLHF
 

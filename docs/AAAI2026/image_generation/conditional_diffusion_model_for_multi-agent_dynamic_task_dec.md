@@ -18,8 +18,8 @@ content_hash: 83cf9c98a8d3dd15
 # Conditional Diffusion Model for Multi-Agent Dynamic Task Decomposition
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13137](https://arxiv.org/abs/2511.13137)
-**Code**: None (based on PyMARL)
+**arXiv**: [2511.13137](https://arxiv.org/abs/2511.13137)  
+**Code**: None (based on PyMARL)  
 **Area**: Image Generation
 **Keywords**: Task Decomposition, Conditional Diffusion Model, Action Semantic Representation, Value Decomposition, CTDE
 

@@ -18,8 +18,8 @@ content_hash: c3bf187b8a579c32
 # How Bias Binds: Measuring Hidden Associations for Bias Control in Text-to-Image Compositions
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07091](https://arxiv.org/abs/2511.07091)
-**Code**: None
+**arXiv**: [2511.07091](https://arxiv.org/abs/2511.07091)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Text-to-image generation, bias control, semantic binding, compositional generation, fairness
 

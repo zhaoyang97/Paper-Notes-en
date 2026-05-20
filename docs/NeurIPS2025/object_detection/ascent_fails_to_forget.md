@@ -18,8 +18,8 @@ content_hash: a7c87175a44b9b98
 # Ascent Fails to Forget
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.26427](https://arxiv.org/abs/2509.26427)
-**Code**: None
+**arXiv**: [2509.26427](https://arxiv.org/abs/2509.26427)  
+**Code**: None  
 **Area**: Object Detection
 **Keywords**: machine unlearning, gradient ascent, statistical dependence, descent-ascent, logistic regression
 

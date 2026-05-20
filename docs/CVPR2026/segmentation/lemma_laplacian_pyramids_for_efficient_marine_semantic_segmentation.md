@@ -18,8 +18,8 @@ content_hash: 49b8805dab701395
 # LEMMA: Laplacian Pyramids for Efficient Marine Semantic Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25689](https://arxiv.org/abs/2603.25689)
-**Code**: Unavailable
+**arXiv**: [2603.25689](https://arxiv.org/abs/2603.25689)  
+**Code**: Unavailable  
 **Area**: Semantic Segmentation
 **Keywords**: Lightweight semantic segmentation, Laplacian pyramid, marine semantic segmentation, edge detection, unmanned surface vehicle
 
@@ -44,19 +44,19 @@ LEMMA decomposes the input image into a depth-3 Laplacian pyramid ($L_1$, $L_2$,
 ### Key Designs
 
 1. **Laplacian Pyramid Decomposition**:
-   - **Function**: Decomposes the image into multi-resolution edge representations.
-   - **Mechanism**: Each pyramid level naturally encodes high-frequency edge details at the corresponding resolution, yielding multi-scale edge representations in a single decomposition step.
-   - **Design Motivation**: Edge information is a critical cue for distinguishing water surfaces, obstacles, and oil spills in marine scenes; the pyramid avoids the high cost of progressively learning edge features in deep networks.
+    - **Function**: Decomposes the image into multi-resolution edge representations.
+    - **Mechanism**: Each pyramid level naturally encodes high-frequency edge details at the corresponding resolution, yielding multi-scale edge representations in a single decomposition step.
+    - **Design Motivation**: Edge information is a critical cue for distinguishing water surfaces, obstacles, and oil spills in marine scenes; the pyramid avoids the high cost of progressively learning edge features in deep networks.
 
 2. **Three-Branch Residual Architecture (LFB/MFB/HFB)**:
-   - **Function**: Refines and fuses pyramid-level features at varying depths.
-   - **Mechanism**: LFB processes the lowest-resolution features (64 channels); MFB fuses low- and mid-level information; HFB reconstructs the mask at the highest resolution using only 16 channels.
-   - **Design Motivation**: Using 16 instead of 64 channels in HFB substantially reduces GFLOPs on high-resolution feature maps; concatenation preserves original information from each level, avoiding information loss.
+    - **Function**: Refines and fuses pyramid-level features at varying depths.
+    - **Mechanism**: LFB processes the lowest-resolution features (64 channels); MFB fuses low- and mid-level information; HFB reconstructs the mask at the highest resolution using only 16 channels.
+    - **Design Motivation**: Using 16 instead of 64 channels in HFB substantially reduces GFLOPs on high-resolution feature maps; concatenation preserves original information from each level, avoiding information loss.
 
 3. **Configurable Residual Block Chains**:
-   - **Function**: Controls the feature extraction depth within each branch.
-   - **Mechanism**: Each branch embeds a configurable number of residual blocks (NRBL/NRBM/NRBH), each consisting of conv–LeakyReLU–conv with a residual connection.
-   - **Design Motivation**: Ablation studies identify the optimal configuration per dataset (MaSTr1325: 7/7/1; Oil Spill: 6/7/4), achieving the best parameter–accuracy trade-off.
+    - **Function**: Controls the feature extraction depth within each branch.
+    - **Mechanism**: Each branch embeds a configurable number of residual blocks (NRBL/NRBM/NRBH), each consisting of conv–LeakyReLU–conv with a residual connection.
+    - **Design Motivation**: Ablation studies identify the optimal configuration per dataset (MaSTr1325: 7/7/1; Oil Spill: 6/7/4), achieving the best parameter–accuracy trade-off.
 
 ### Loss & Training
 

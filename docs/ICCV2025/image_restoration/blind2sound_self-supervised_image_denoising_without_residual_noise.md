@@ -18,9 +18,9 @@ content_hash: 4b5ff770dbaffb4f
 # Blind2Sound: Self-Supervised Image Denoising without Residual Noise
 
 **Conference**: ICCV2025
-**arXiv**: [2303.05183](https://arxiv.org/abs/2303.05183)
+**arXiv**: [2303.05183](https://arxiv.org/abs/2303.05183)  
 **Authors**: Zejin Wang, Jiazheng Liu, Hao Zhai, Hua Han (Institute of Automation, Chinese Academy of Sciences)
-**Code**: Provided in the paper's supplementary material
+**Code**: Provided in the paper's supplementary material  
 **Area**: Image Restoration
 **Keywords**: Self-supervised denoising, Poisson-Gaussian noise, blind denoising, residual noise elimination, noise awareness
 

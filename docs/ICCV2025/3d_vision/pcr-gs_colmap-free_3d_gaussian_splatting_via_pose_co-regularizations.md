@@ -19,7 +19,7 @@ content_hash: b13e3465d70aad1c
 # PCR-GS: COLMAP-Free 3D Gaussian Splatting via Pose Co-Regularizations
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.13891](https://arxiv.org/abs/2507.13891)
+**arXiv**: [2507.13891](https://arxiv.org/abs/2507.13891)  
 **Authors**: Yu Wei, Jiahui Zhang, Xiaoqin Zhang, Ling Shao, Shijian Lu (NTU, ZJUT, UCAS)
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, COLMAP-Free, Camera Pose Estimation, DINO Features, Wavelet Transform, Novel View Synthesis

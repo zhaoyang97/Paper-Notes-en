@@ -17,8 +17,8 @@ content_hash: 5be801944806212a
 # Improved Differentially Private Algorithms for Rank Aggregation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11319](https://arxiv.org/abs/2511.11319)
-**Code**: None
+**arXiv**: [2511.11319](https://arxiv.org/abs/2511.11319)  
+**Code**: None  
 **Area**: Other
 **Keywords**: differential privacy, rank aggregation, Kemeny ranking, footrule distance, approximation algorithms
 

@@ -18,8 +18,8 @@ content_hash: 2831eff685b823ba
 # Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17373](https://arxiv.org/abs/2505.17373)
-**Code**: None (research)
+**arXiv**: [2505.17373](https://arxiv.org/abs/2505.17373)  
+**Code**: None (research)  
 **Area**: LLM Reliability, Multi-Step Reasoning, Confidence Calibration
 **Keywords**: Failure Detection, Step-Level Evaluation, Self-Teaching, Multi-Hop Reasoning, Confidence Estimation
 

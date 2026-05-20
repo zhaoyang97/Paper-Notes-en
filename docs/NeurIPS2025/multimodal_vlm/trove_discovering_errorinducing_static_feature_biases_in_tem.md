@@ -18,8 +18,8 @@ content_hash: 23744a8221c9c8e7
 # TRoVe: Discovering Error-Inducing Static Feature Biases in Temporal Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.01048](https://arxiv.org/abs/2512.01048)
-**Code**: [GitHub](https://github.com/Stanford-AIMI/TRoVe)
+**arXiv**: [2512.01048](https://arxiv.org/abs/2512.01048)  
+**Code**: [GitHub](https://github.com/Stanford-AIMI/TRoVe)  
 **Area**: Multimodal VLM
 **Keywords**: Temporal VLM, Static Feature Bias, Model Robustness, Bias Discovery, Video Understanding
 

@@ -18,8 +18,8 @@ content_hash: 021817995443e615
 # Beyond the Individual: Virtualizing Multi-Disciplinary Reasoning for Clinical Intake via Collaborative Agents
 
 **Conference**: ACL 2026
-**arXiv**: [2604.08927](https://arxiv.org/abs/2604.08927)
-**Code**: [GitHub](https://github.com/HovChen/Aegle)
+**arXiv**: [2604.08927](https://arxiv.org/abs/2604.08927)  
+**Code**: [GitHub](https://github.com/HovChen/Aegle)  
 **Area**: Medical AI / Multi-Agent Systems
 **Keywords**: multidisciplinary team consultation, multi-agent systems, clinical intake, SOAP notes, dynamic topology
 

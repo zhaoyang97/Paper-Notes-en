@@ -18,8 +18,8 @@ content_hash: 69a595c93b5ea902
 # Memory-Augmented Potential Field Theory: A Framework for Adaptive Control in Non-Convex Domains
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19672](https://arxiv.org/abs/2509.19672)
-**Code**: [GitHub](https://anonymous.4open.science/r/MA_MPPI-6555)
+**arXiv**: [2509.19672](https://arxiv.org/abs/2509.19672)  
+**Code**: [GitHub](https://anonymous.4open.science/r/MA_MPPI-6555)  
 **Area**: Control Theory / Robot Control / Optimization
 **Keywords**: potential field, memory augmentation, MPPI, non-convex optimization, stochastic optimal control
 

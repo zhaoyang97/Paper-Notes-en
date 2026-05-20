@@ -18,8 +18,8 @@ content_hash: 2b56e0d7f71d47d2
 # ETA: Efficiency through Thinking Ahead, A Dual Approach to Self-Driving with Large Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.07725](https://arxiv.org/abs/2506.07725)
-**Code**: [https://github.com/OpenDriveLab/ETA](https://github.com/OpenDriveLab/ETA)
+**arXiv**: [2506.07725](https://arxiv.org/abs/2506.07725)  
+**Code**: [https://github.com/OpenDriveLab/ETA](https://github.com/OpenDriveLab/ETA)  
 **Area**: Autonomous Driving
 **Keywords**: End-to-end autonomous driving, dual-system architecture, asynchronous inference, real-time large model deployment, feature forecasting
 

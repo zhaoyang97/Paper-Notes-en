@@ -18,8 +18,8 @@ content_hash: 117c01251d654f4b
 # FreqPolicy: Efficient Flow-based Visuomotor Policy via Frequency Consistency
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.08822](https://arxiv.org/abs/2506.08822)
-**Code**: Not released
+**arXiv**: [2506.08822](https://arxiv.org/abs/2506.08822)  
+**Code**: Not released  
 **Area**: Image Generation
 **Keywords**: flow matching, visuomotor policy, one-step generation, frequency consistency, robotic manipulation
 

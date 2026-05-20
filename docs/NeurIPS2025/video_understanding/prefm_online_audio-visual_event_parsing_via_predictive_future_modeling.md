@@ -18,8 +18,8 @@ content_hash: e11c0449ebdd4739
 # PreFM: Online Audio-Visual Event Parsing via Predictive Future Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23155](https://arxiv.org/abs/2505.23155)
-**Code**: [GitHub](https://github.com/XiaoYu-1123/PreFM)
+**arXiv**: [2505.23155](https://arxiv.org/abs/2505.23155)  
+**Code**: [GitHub](https://github.com/XiaoYu-1123/PreFM)  
 **Area**: Video Understanding / Audio-Visual Event Parsing
 **Keywords**: Online audio-visual event parsing, predictive future modeling, multimodal fusion, real-time video understanding, knowledge distillation
 

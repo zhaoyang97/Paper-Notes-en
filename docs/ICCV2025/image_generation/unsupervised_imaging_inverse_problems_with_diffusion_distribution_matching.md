@@ -18,8 +18,8 @@ content_hash: d28efe16278d53fc
 # Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.14605](https://arxiv.org/abs/2506.14605)
-**Code**: [https://github.com/inria-thoth/ddm4ip](https://github.com/inria-thoth/ddm4ip)
+**arXiv**: [2506.14605](https://arxiv.org/abs/2506.14605)  
+**Code**: [https://github.com/inria-thoth/ddm4ip](https://github.com/inria-thoth/ddm4ip)  
 **Area**: Diffusion Models
 **Keywords**: Unsupervised Image Restoration, Inverse Problems, Conditional Flow Matching, Distribution Matching, Forward Model Learning
 
@@ -57,21 +57,21 @@ DDM4IP follows a three-stage pipeline:
 
 1. **Conditional Flow Matching for Degradation Distribution Modeling**
 
-   - **Function**: Models the degraded image distribution $p(y)$, serving as the reference target for subsequent distribution matching.
-   - **Mechanism**: Flow matching defines a linear interpolation path from noise $x_0 \sim \mathcal{N}(0,I)$ to data $x_1 \sim p(y)$ via $x_t = (1-t)x_0 + tx_1$, training a velocity field network $v_\theta$ to predict the direction $x_1 - x_0$. The loss is $L_{FM} = \mathbb{E}_{t, x_0, x_1}[\|v_\theta(x_t, t) - (x_1 - x_0)\|^2]$. The network architecture employs a precondition-free UNet (RFNoPrecond) with conditional input support for modeling conditional dependencies.
-   - **Design Motivation**: Compared to traditional diffusion models, the linear interpolation path of flow matching is simpler and yields more stable training. Moreover, velocity field matching naturally provides an interface for distribution matching—agreement between two velocity fields is equivalent to agreement between the corresponding distributions.
+    - **Function**: Models the degraded image distribution $p(y)$, serving as the reference target for subsequent distribution matching.
+    - **Mechanism**: Flow matching defines a linear interpolation path from noise $x_0 \sim \mathcal{N}(0,I)$ to data $x_1 \sim p(y)$ via $x_t = (1-t)x_0 + tx_1$, training a velocity field network $v_\theta$ to predict the direction $x_1 - x_0$. The loss is $L_{FM} = \mathbb{E}_{t, x_0, x_1}[\|v_\theta(x_t, t) - (x_1 - x_0)\|^2]$. The network architecture employs a precondition-free UNet (RFNoPrecond) with conditional input support for modeling conditional dependencies.
+    - **Design Motivation**: Compared to traditional diffusion models, the linear interpolation path of flow matching is simpler and yields more stable training. Moreover, velocity field matching naturally provides an interface for distribution matching—agreement between two velocity fields is equivalent to agreement between the corresponding distributions.
 
 2. **Distribution Matching Loss for Forward Model Learning (DiffInstruct-on-Y)**
 
-   - **Function**: Learns the forward degradation operator $A_\phi$ without requiring paired data.
-   - **Mechanism**: Given a clean image $x$, the learnable kernel network $A_\phi$ generates a degraded image $\hat{y} = A_\phi(x)$. An auxiliary flow model $v_\psi$ is trained on $\hat{y}$, while the distribution matching loss $L_{DI} = \mathbb{E}[(v_\psi(y_t, t) - v_\theta^{ref}(y_t, t)) \cdot x_1]$ is computed, where $v_\theta^{ref}$ is the fixed reference model from Stage 1. This loss is backpropagated into $A_\phi$, driving the degraded distribution it generates to approximate the true degradation distribution. $A_\phi$ is further regularized by multiple constraints (sparsity, Gaussianity, centrality, normalization) to ensure physical plausibility of the learned kernel.
-   - **Design Motivation**: Conventional paired learning requires $(x, y)$ pairs; distribution matching elevates the constraint from the sample level to the distribution level—the generated degraded images need only resemble the true degraded distribution, without requiring knowledge of which clean image corresponds to each degraded observation. This substantially reduces data requirements.
+    - **Function**: Learns the forward degradation operator $A_\phi$ without requiring paired data.
+    - **Mechanism**: Given a clean image $x$, the learnable kernel network $A_\phi$ generates a degraded image $\hat{y} = A_\phi(x)$. An auxiliary flow model $v_\psi$ is trained on $\hat{y}$, while the distribution matching loss $L_{DI} = \mathbb{E}[(v_\psi(y_t, t) - v_\theta^{ref}(y_t, t)) \cdot x_1]$ is computed, where $v_\theta^{ref}$ is the fixed reference model from Stage 1. This loss is backpropagated into $A_\phi$, driving the degraded distribution it generates to approximate the true degradation distribution. $A_\phi$ is further regularized by multiple constraints (sparsity, Gaussianity, centrality, normalization) to ensure physical plausibility of the learned kernel.
+    - **Design Motivation**: Conventional paired learning requires $(x, y)$ pairs; distribution matching elevates the constraint from the sample level to the distribution level—the generated degraded images need only resemble the true degraded distribution, without requiring knowledge of which clean image corresponds to each degraded observation. This substantially reduces data requirements.
 
 3. **Standard Inverse Problem Solvers for Model Inversion**
 
-   - **Function**: Applies the learned forward model $A_\phi$ within established inverse problem solvers for image restoration.
-   - **Mechanism**: The $A_\phi$ learned in Stage 2 can be embedded into any standard inverse problem framework. The paper employs GSPnP (Gradient-Step Plug-and-Play with RED prior), DPS (Diffusion Posterior Sampling), and DiffPIR from the DeepInv library, with DRUNet or DiffUNet as the denoising prior. Given $A_\phi$, these solvers iteratively recover the clean image.
-   - **Design Motivation**: Decoupling forward model learning from inverse problem solving makes the framework highly modular—any new inverse problem solver can be substituted as a drop-in replacement for Stage 3.
+    - **Function**: Applies the learned forward model $A_\phi$ within established inverse problem solvers for image restoration.
+    - **Mechanism**: The $A_\phi$ learned in Stage 2 can be embedded into any standard inverse problem framework. The paper employs GSPnP (Gradient-Step Plug-and-Play with RED prior), DPS (Diffusion Posterior Sampling), and DiffPIR from the DeepInv library, with DRUNet or DiffUNet as the denoising prior. Given $A_\phi$, these solvers iteratively recover the clean image.
+    - **Design Motivation**: Decoupling forward model learning from inverse problem solving makes the framework highly modular—any new inverse problem solver can be substituted as a drop-in replacement for Stage 3.
 
 ### Loss & Training
 

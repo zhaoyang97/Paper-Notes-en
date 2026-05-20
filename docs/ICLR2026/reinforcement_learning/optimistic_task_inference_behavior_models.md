@@ -19,8 +19,8 @@ content_hash: 5b78696e0a71f1af
 # Optimistic Task Inference for Behavior Foundation Models
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2510.20264](https://arxiv.org/abs/2510.20264)
-**Code**: [GitHub](https://github.com/ThomasRupf/opti-bfm)
+**arXiv**: [2510.20264](https://arxiv.org/abs/2510.20264)  
+**Code**: [GitHub](https://github.com/ThomasRupf/opti-bfm)  
 **Area**: Reinforcement Learning / Foundation Models / Zero-shot RL
 **Keywords**: behavior foundation models, task inference, zero-shot RL, successor features, UCB, linear bandits
 

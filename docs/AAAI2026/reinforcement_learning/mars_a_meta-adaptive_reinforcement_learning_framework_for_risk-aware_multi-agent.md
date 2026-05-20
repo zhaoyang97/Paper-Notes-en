@@ -18,8 +18,8 @@ content_hash: 4c307ca5661f2807
 # MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01173](https://arxiv.org/abs/2508.01173)
-**Code**: N/A
+**arXiv**: [2508.01173](https://arxiv.org/abs/2508.01173)  
+**Code**: N/A  
 **Area**: Reinforcement Learning
 **Keywords**: Portfolio Management, Multi-Agent Reinforcement Learning, Risk Management, Meta-Learning, Safety Critic
 

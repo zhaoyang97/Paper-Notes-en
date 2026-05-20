@@ -18,8 +18,8 @@ content_hash: c1c10feab5440463
 # Unlocking Transfer Learning for Open-World Few-Shot Recognition
 
 **Conference**: NeurIPS 2025 (Workshop)
-**arXiv**: [2411.09986](https://arxiv.org/abs/2411.09986)
-**Code**: N/A
+**arXiv**: [2411.09986](https://arxiv.org/abs/2411.09986)  
+**Code**: N/A  
 **Area**: Few-Shot Learning / Open-World Recognition
 **Keywords**: Few-shot open-set recognition, transfer learning, meta-learning, open world, pseudo open-set samples
 

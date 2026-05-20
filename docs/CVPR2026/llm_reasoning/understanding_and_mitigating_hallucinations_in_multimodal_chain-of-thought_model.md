@@ -18,8 +18,8 @@ content_hash: e886895d16b3bd6a
 # Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27201](https://arxiv.org/abs/2603.27201)
-**Code**: [https://github.com/ASGO-MM/MCoT-hallucination](https://github.com/ASGO-MM/MCoT-hallucination)
+**arXiv**: [2603.27201](https://arxiv.org/abs/2603.27201)  
+**Code**: [https://github.com/ASGO-MM/MCoT-hallucination](https://github.com/ASGO-MM/MCoT-hallucination)  
 **Area**: LLM Reasoning
 **Keywords**: Multimodal Hallucination, Chain-of-Thought Reasoning, Divergent Thinking, Visual Entropy, Decoding Intervention
 
@@ -46,21 +46,21 @@ Input image and user query → MCoT model generates a reasoning chain → visual
 
 1. **Visual Entropy**
 
-   - **Function**: Quantifies the model's internal certainty about visual input at each generation step.
-   - **Mechanism**: Visual token hidden states are mapped to a vocabulary probability distribution via the language head; for the predicted token $y_t$, the visual activation probability $\mathbf{p}_v(y_t) \in \mathbb{R}^m$ is extracted, and normalized entropy is computed as $E(y_t, v) = -\frac{\sum_{i=1}^m p_{v,i}(y_t) \log(p_{v,i}(y_t))}{\log m}$, normalized to the range $[0,1]$.
-   - **Design Motivation**: In divergent thinking steps, the model relies more on internal reasoning than on visual evidence, resulting in higher uncertainty about visual input. Experimental validation shows that logistic regression classification achieves a McFadden pseudo-$R^2$ exceeding 0.9, confirming that visual entropy reliably distinguishes divergent from normal thinking.
+    - **Function**: Quantifies the model's internal certainty about visual input at each generation step.
+    - **Mechanism**: Visual token hidden states are mapped to a vocabulary probability distribution via the language head; for the predicted token $y_t$, the visual activation probability $\mathbf{p}_v(y_t) \in \mathbb{R}^m$ is extracted, and normalized entropy is computed as $E(y_t, v) = -\frac{\sum_{i=1}^m p_{v,i}(y_t) \log(p_{v,i}(y_t))}{\log m}$, normalized to the range $[0,1]$.
+    - **Design Motivation**: In divergent thinking steps, the model relies more on internal reasoning than on visual evidence, resulting in higher uncertainty about visual input. Experimental validation shows that logistic regression classification achieves a McFadden pseudo-$R^2$ exceeding 0.9, confirming that visual entropy reliably distinguishes divergent from normal thinking.
 
 2. **Divergent Thinking Detection**
 
-   - **Function**: Identifies in real time when the model enters a divergent thinking mode during reasoning.
-   - **Mechanism**: Visual entropy is computed for each reasoning step; when $E(y_t, v) > \gamma$ (default $\gamma = 0.5$), the step is classified as divergent thinking.
-   - **Design Motivation**: Traditional methods require external annotation or additional inference overhead. The proposed approach leverages the model's existing visual token representations without any additional forward pass.
+    - **Function**: Identifies in real time when the model enters a divergent thinking mode during reasoning.
+    - **Mechanism**: Visual entropy is computed for each reasoning step; when $E(y_t, v) > \gamma$ (default $\gamma = 0.5$), the step is classified as divergent thinking.
+    - **Design Motivation**: Traditional methods require external annotation or additional inference overhead. The proposed approach leverages the model's existing visual token representations without any additional forward pass.
 
 3. **Decoding Intervention**
 
-   - **Function**: Dynamically adjusts decoding probabilities upon detection of divergent thinking to suppress hallucinations.
-   - **Mechanism**: The decoding probability for divergent thinking steps is corrected as $\hat{p}_t(\cdot|v,q,y_{<t}) = p_t(\cdot|v,q,y_{<t}) \cdot e^{-\alpha \cdot E(\cdot, v)}$, where $\alpha = 0.75$ controls intervention strength. Tokens with high visual entropy are penalized exponentially.
-   - **Design Motivation**: This avoids the doubled inference overhead of contrastive decoding and requires no complex hidden-state editing. Computational cost is negligible, as visual token probabilities are precomputed during the prefill stage.
+    - **Function**: Dynamically adjusts decoding probabilities upon detection of divergent thinking to suppress hallucinations.
+    - **Mechanism**: The decoding probability for divergent thinking steps is corrected as $\hat{p}_t(\cdot|v,q,y_{<t}) = p_t(\cdot|v,q,y_{<t}) \cdot e^{-\alpha \cdot E(\cdot, v)}$, where $\alpha = 0.75$ controls intervention strength. Tokens with high visual entropy are penalized exponentially.
+    - **Design Motivation**: This avoids the doubled inference overhead of contrastive decoding and requires no complex hidden-state editing. Computational cost is negligible, as visual token probabilities are precomputed during the prefill stage.
 
 ### Loss & Training
 

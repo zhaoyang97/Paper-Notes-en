@@ -18,8 +18,8 @@ content_hash: bf00d8578c29a259
 # ALE: Attribute-Leakage-free Editing for Text-based Image Editing
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.04715](https://arxiv.org/abs/2412.04715)
-**Code**: [https://mtablo.github.io/ALE_Edit_page/](https://mtablo.github.io/ALE_Edit_page/)
+**arXiv**: [2412.04715](https://arxiv.org/abs/2412.04715)  
+**Code**: [https://mtablo.github.io/ALE_Edit_page/](https://mtablo.github.io/ALE_Edit_page/)  
 **Area**: Image Generation
 **Keywords**: Text-guided image editing, attribute leakage, EOS embedding, cross-attention masking, multi-target editing
 

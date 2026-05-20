@@ -18,8 +18,8 @@ content_hash: e5c82f303805f2d1
 # Interaction-Merged Motion Planning: Effectively Leveraging Diverse Motion Datasets for Robust Planning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04790](https://arxiv.org/abs/2507.04790)
-**Code**: [GitHub](https://github.com/wooseong97/IMMP)
+**arXiv**: [2507.04790](https://arxiv.org/abs/2507.04790)  
+**Code**: [GitHub](https://github.com/wooseong97/IMMP)  
 **Area**: Robotics
 **Keywords**: Motion Planning, Model Merging, Domain Adaptation, Autonomous Driving, Task Vectors
 

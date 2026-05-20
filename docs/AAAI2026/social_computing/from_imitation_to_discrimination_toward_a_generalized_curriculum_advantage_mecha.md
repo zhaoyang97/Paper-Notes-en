@@ -18,8 +18,8 @@ content_hash: aa3b5d947b5fafe2
 # From Imitation to Discrimination: Toward A Generalized Curriculum Advantage Mechanism Enhancing Cross-Domain Reasoning Tasks
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.02580](https://arxiv.org/abs/2512.02580)
-**Code**: None
+**arXiv**: [2512.02580](https://arxiv.org/abs/2512.02580)  
+**Code**: None  
 **Area**: Social Computing
 **Keywords**: Reinforcement Learning, Curriculum Learning, Advantage Function, LLM Reasoning, Multimodal Reasoning
 

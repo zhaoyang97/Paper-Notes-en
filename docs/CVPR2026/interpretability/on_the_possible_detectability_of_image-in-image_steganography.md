@@ -18,9 +18,9 @@ content_hash: e0c8499cd5a67f43
 # On the Possible Detectability of Image-in-Image Steganography
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11876](https://arxiv.org/abs/2603.11876)
+**arXiv**: [2603.11876](https://arxiv.org/abs/2603.11876)  
 **Authors**: Antoine Mallet, Patrick Bas (CRIStAL, Université de Lille)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Interpretability
 **Keywords**: Steganography, Steganalysis, Independent Component Analysis, Wavelet Decomposition, Image Security
 

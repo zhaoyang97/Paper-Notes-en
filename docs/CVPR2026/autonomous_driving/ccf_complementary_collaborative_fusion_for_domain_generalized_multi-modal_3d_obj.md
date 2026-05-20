@@ -18,8 +18,8 @@ content_hash: 289e7744ad04a9eb
 # CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23276](https://arxiv.org/abs/2603.23276)
-**Code**: [GitHub](https://github.com/IMPL-Lab/CCF.git)
+**arXiv**: [2603.23276](https://arxiv.org/abs/2603.23276)  
+**Code**: [GitHub](https://github.com/IMPL-Lab/CCF.git)  
 **Area**: Autonomous Driving
 **Keywords**: multi-modal 3D detection, domain generalization, modality imbalance, LiDAR-camera fusion, cross-domain robustness
 

@@ -18,8 +18,8 @@ content_hash: b7b935c27e9b05d9
 # MotionCharacter: Fine-Grained Motion Controllable Human Video Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2411.18281](https://arxiv.org/abs/2411.18281)
-**Code**: [https://motioncharacter.github.io/](https://motioncharacter.github.io/)
+**arXiv**: [2411.18281](https://arxiv.org/abs/2411.18281)  
+**Code**: [https://motioncharacter.github.io/](https://motioncharacter.github.io/)  
 **Area**: Video Generation
 **Keywords**: human video generation, motion control, identity preservation, optical flow, diffusion models
 

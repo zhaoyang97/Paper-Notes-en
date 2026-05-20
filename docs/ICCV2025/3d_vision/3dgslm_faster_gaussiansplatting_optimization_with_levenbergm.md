@@ -18,8 +18,8 @@ content_hash: c904a420547afa03
 # 3DGS-LM: Faster Gaussian-Splatting Optimization with Levenberg-Marquardt
 
 **Conference**: ICCV 2025
-**arXiv**: [2409.12892](https://arxiv.org/abs/2409.12892)
-**Code**: [GitHub](https://github.com/lukasHoel/3DGS-LM)
+**arXiv**: [2409.12892](https://arxiv.org/abs/2409.12892)  
+**Code**: [GitHub](https://github.com/lukasHoel/3DGS-LM)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Levenberg-Marquardt, optimization acceleration, CUDA parallelism, second-order optimization
 
@@ -49,21 +49,21 @@ The method proceeds in two phases. **Phase 1** runs the original 3DGS ADAM optim
 
 1. **Adapting LM to 3DGS**
 
-   - **Function**: Reformulates the 3DGS rendering loss as a sum-of-squares energy function compatible with the LM framework.
-   - **Mechanism**: The L1 and SSIM loss terms are each converted to residuals by taking square roots: $r_i^{\text{abs}} = \sqrt{\lambda_1|c_i - C_i|}$ and $r_i^{\text{SSIM}} = \sqrt{\lambda_2(1-\text{SSIM}(c_i, C_i))}$, such that the objective $E(\mathbf{x}) = \sum r_i^2$ takes the standard least-squares form. Each step solves the normal equations $(\mathbf{J}^T\mathbf{J} + \lambda_{\text{reg}}\text{diag}(\mathbf{J}^T\mathbf{J}))\Delta = -\mathbf{J}^T\mathbf{F}$ for the update direction, followed by a line search to find the optimal step size $\gamma$.
-   - **Design Motivation**: Preserves the original L1+SSIM objective (experimentally verified to yield better quality than pure L2) while enabling LM to exploit curvature information for higher-quality update steps.
+    - **Function**: Reformulates the 3DGS rendering loss as a sum-of-squares energy function compatible with the LM framework.
+    - **Mechanism**: The L1 and SSIM loss terms are each converted to residuals by taking square roots: $r_i^{\text{abs}} = \sqrt{\lambda_1|c_i - C_i|}$ and $r_i^{\text{SSIM}} = \sqrt{\lambda_2(1-\text{SSIM}(c_i, C_i))}$, such that the objective $E(\mathbf{x}) = \sum r_i^2$ takes the standard least-squares form. Each step solves the normal equations $(\mathbf{J}^T\mathbf{J} + \lambda_{\text{reg}}\text{diag}(\mathbf{J}^T\mathbf{J}))\Delta = -\mathbf{J}^T\mathbf{F}$ for the update direction, followed by a line search to find the optimal step size $\gamma$.
+    - **Design Motivation**: Preserves the original L1+SSIM objective (experimentally verified to yield better quality than pure L2) while enabling LM to exploit curvature information for higher-quality update steps.
 
 2. **Gradient Caching and Per-Pixel-Per-Splat Parallelization**
 
-   - **Function**: Accelerates the Jacobian-vector products $\mathbf{J}\mathbf{p}$ and $\mathbf{J}^T\mathbf{u}$ repeatedly needed in PCG by caching intermediate gradients.
-   - **Mechanism**: In the original 3DGS per-pixel parallelization, each thread processes all splats along a ray, causing the intermediate $\alpha$-blending states ($T_s$, $\partial c/\partial \alpha_s$, $\partial c/\partial c_s$) to be recomputed up to 18 times during PCG. This work instead introduces a buildCache stage that computes and stores all intermediate gradients $\partial c/\partial s$ once; subsequent PCG steps adopt per-pixel-per-splat parallelization (one thread per splat per ray) and directly read from the cache. The cache is first stored in pixel order, then reordered via sortCacheByGaussians to enable coalesced memory access.
-   - **Design Motivation**: Eliminates redundant computation in PCG iterations, decomposes the computational granularity from per-pixel to per-pixel-per-splat, and substantially improves GPU occupancy and parallelism.
+    - **Function**: Accelerates the Jacobian-vector products $\mathbf{J}\mathbf{p}$ and $\mathbf{J}^T\mathbf{u}$ repeatedly needed in PCG by caching intermediate gradients.
+    - **Mechanism**: In the original 3DGS per-pixel parallelization, each thread processes all splats along a ray, causing the intermediate $\alpha$-blending states ($T_s$, $\partial c/\partial \alpha_s$, $\partial c/\partial c_s$) to be recomputed up to 18 times during PCG. This work instead introduces a buildCache stage that computes and stores all intermediate gradients $\partial c/\partial s$ once; subsequent PCG steps adopt per-pixel-per-splat parallelization (one thread per splat per ray) and directly read from the cache. The cache is first stored in pixel order, then reordered via sortCacheByGaussians to enable coalesced memory access.
+    - **Design Motivation**: Eliminates redundant computation in PCG iterations, decomposes the computational granularity from per-pixel to per-pixel-per-splat, and substantially improves GPU occupancy and parallelism.
 
 3. **Image Subsampling Scheme**
 
-   - **Function**: Controls cache memory usage to make the method scalable to high-resolution, densely captured scenes.
-   - **Mechanism**: Images are divided into $n_b$ batches; the normal equations are solved independently per batch to obtain update vectors $\Delta_i$, which are then merged via a weighted average: $\Delta = \sum_i \frac{\mathbf{M}_i \Delta_i}{\sum_k \mathbf{M}_k}$, where the weights $\mathbf{M}_i = \text{diag}(\mathbf{J}_i^T\mathbf{J}_i)$ are the diagonal entries of the Jacobi preconditioner for each batch. In practice, 25–70 images per batch and at most 4 batches are used.
-   - **Design Motivation**: In high-resolution scenes, caching all images simultaneously would exceed GPU memory (~53 GB for the full scheme). Batched processing reduces memory consumption to a manageable level, while the weighted merging ensures consistency of the update direction across batches.
+    - **Function**: Controls cache memory usage to make the method scalable to high-resolution, densely captured scenes.
+    - **Mechanism**: Images are divided into $n_b$ batches; the normal equations are solved independently per batch to obtain update vectors $\Delta_i$, which are then merged via a weighted average: $\Delta = \sum_i \frac{\mathbf{M}_i \Delta_i}{\sum_k \mathbf{M}_k}$, where the weights $\mathbf{M}_i = \text{diag}(\mathbf{J}_i^T\mathbf{J}_i)$ are the diagonal entries of the Jacobi preconditioner for each batch. In practice, 25–70 images per batch and at most 4 batches are used.
+    - **Design Motivation**: In high-resolution scenes, caching all images simultaneously would exceed GPU memory (~53 GB for the full scheme). Batched processing reduces memory consumption to a manageable level, while the weighted merging ensures consistency of the update direction across batches.
 
 ### Loss & Training
 - The objective function is identical to the original 3DGS (L1 + SSIM); only the optimizer is changed.

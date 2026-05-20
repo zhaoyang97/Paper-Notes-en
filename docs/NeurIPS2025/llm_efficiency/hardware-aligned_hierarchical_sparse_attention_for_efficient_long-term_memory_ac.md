@@ -20,8 +20,8 @@ content_hash: 917719aff4a8fe04
 # Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access
 
 **Conference**: NEURIPS2025
-**arXiv**: [2504.16795](https://arxiv.org/abs/2504.16795)
-**Code**: [ant-research/long-context-modeling](https://github.com/ant-research/long-context-modeling)
+**arXiv**: [2504.16795](https://arxiv.org/abs/2504.16795)  
+**Code**: [ant-research/long-context-modeling](https://github.com/ant-research/long-context-modeling)  
 **Area**: LLM Efficiency
 **Keywords**: sparse attention, RNN, Mamba, long context, length generalization, chunk selection, hardware-aligned kernel
 

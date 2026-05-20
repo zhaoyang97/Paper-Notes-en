@@ -18,8 +18,8 @@ content_hash: f81ceb990db05a2c
 # Multi-Modal Representation Learning via Semi-Supervised Rate Reduction for Generalized Category Discovery
 
 **Conference**: CVPR2026
-**arXiv**: [2602.19910](https://arxiv.org/abs/2602.19910)
-**Code**: To be confirmed
+**arXiv**: [2602.19910](https://arxiv.org/abs/2602.19910)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Generalized Category Discovery, Multi-Modal Representation Learning, Semi-Supervised Rate Reduction, Intra-Modal Alignment, CLIP
 

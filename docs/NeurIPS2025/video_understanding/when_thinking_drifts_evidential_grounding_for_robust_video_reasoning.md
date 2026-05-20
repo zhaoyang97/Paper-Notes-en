@@ -18,8 +18,8 @@ content_hash: b5ef29011df4a6a6
 # When Thinking Drifts: Evidential Grounding for Robust Video Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.06077](https://arxiv.org/abs/2510.06077)
-**Code**: Not available
+**arXiv**: [2510.06077](https://arxiv.org/abs/2510.06077)  
+**Code**: Not available  
 **Area**: Video Understanding
 **Keywords**: Video Reasoning, Chain-of-Thought, Visual Thinking Drift, Reinforcement Learning, Visual Evidence Reward
 

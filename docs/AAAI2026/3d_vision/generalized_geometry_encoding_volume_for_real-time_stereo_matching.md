@@ -18,8 +18,8 @@ content_hash: d1de77228d59c86f
 # Generalized Geometry Encoding Volume for Real-time Stereo Matching
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.06793](https://arxiv.org/abs/2512.06793)
-**Code**: [https://github.com/JiaxinLiu-A/GGEV](https://github.com/JiaxinLiu-A/GGEV)
+**arXiv**: [2512.06793](https://arxiv.org/abs/2512.06793)  
+**Code**: [https://github.com/JiaxinLiu-A/GGEV](https://github.com/JiaxinLiu-A/GGEV)  
 **Area**: 3D Vision / Stereo Matching
 **Keywords**: Stereo Matching, Real-time Inference, Zero-shot Generalization, Monocular Depth Foundation Model, Dynamic Cost Aggregation
 

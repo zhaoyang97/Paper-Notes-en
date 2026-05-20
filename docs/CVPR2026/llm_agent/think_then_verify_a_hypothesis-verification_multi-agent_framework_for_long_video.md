@@ -18,8 +18,8 @@ content_hash: ba88d0f51fa4d23d
 # Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04977](https://arxiv.org/abs/2603.04977)
-**Code**: [GitHub](https://github.com/Haorane/VideoHV-Agent)
+**arXiv**: [2603.04977](https://arxiv.org/abs/2603.04977)  
+**Code**: [GitHub](https://github.com/Haorane/VideoHV-Agent)  
 **Area**: LLM Agent
 **Keywords**: long video understanding, multi-agent, hypothesis verification, VideoQA, evidence reasoning
 
@@ -51,26 +51,26 @@ VideoHV-Agent comprises three stages: (1) context summarization, (2) two-step re
 
 1. **Context Summarization**:
 
-   - **Function**: Compress per-frame descriptions into a query-conditioned summary.
-   - **Mechanism**: Per-frame descriptions are reserved exclusively for clip localization (a local task), while the concise summary supports global reasoning in all other stages, decoupling the two roles.
-   - **Design Motivation**: Unlike prior methods that naively concatenate all frame descriptions into a long context, this decoupling retains detailed information while keeping the global context compact.
+    - **Function**: Compress per-frame descriptions into a query-conditioned summary.
+    - **Mechanism**: Per-frame descriptions are reserved exclusively for clip localization (a local task), while the concise summary supports global reasoning in all other stages, decoupling the two roles.
+    - **Design Motivation**: Unlike prior methods that naively concatenate all frame descriptions into a long context, this decoupling retains detailed information while keeping the global context compact.
 
 2. **Hypothesis Generation — Step 1**:
 
-   - **Thinker Agent**: For each candidate option $o_i$, generates a testable hypothesis $h_i$ that explicitly specifies the entities, actions, and temporal-causal constraints that must be present in the video if $o_i$ is correct. Obvious distractors are pre-filtered using the summary to reduce noise.
-   - **Judge Agent**: Extracts discriminative clues $\kappa$ from the hypothesis set $H$—the minimal observations (specific object interactions, event sequences, or visual outcomes) needed to distinguish among hypotheses.
-   - **Design Motivation**: Verifying all hypotheses independently ignores their logical relationships; the clue mechanism focuses verification on the critical points of differentiation.
+    - **Thinker Agent**: For each candidate option $o_i$, generates a testable hypothesis $h_i$ that explicitly specifies the entities, actions, and temporal-causal constraints that must be present in the video if $o_i$ is correct. Obvious distractors are pre-filtered using the summary to reduce noise.
+    - **Judge Agent**: Extracts discriminative clues $\kappa$ from the hypothesis set $H$—the minimal observations (specific object interactions, event sequences, or visual outcomes) needed to distinguish among hypotheses.
+    - **Design Motivation**: Verifying all hypotheses independently ignores their logical relationships; the clue mechanism focuses verification on the critical points of differentiation.
 
 3. **Hypothesis Verification — Step 2**:
 
-   - **Verifier Agent** proceeds in three steps: (i) temporal localization—use frame descriptions to identify the time window where the clue is most likely to appear; (ii) fine-grained captioning—invoke detailed captioning within the target window (at most 5 frames per call); (iii) clue verification—output $\text{status}(\kappa) \in \{\text{VERIFIED}, \text{PARTIAL}, \text{NOT\_VERIFIED}\}$ with a concise rationale.
-   - **Design Motivation**: Analyzing only the decision-relevant frames rather than scanning the entire video substantially reduces computational cost.
+    - **Verifier Agent** proceeds in three steps: (i) temporal localization—use frame descriptions to identify the time window where the clue is most likely to appear; (ii) fine-grained captioning—invoke detailed captioning within the target window (at most 5 frames per call); (iii) clue verification—output $\text{status}(\kappa) \in \{\text{VERIFIED}, \text{PARTIAL}, \text{NOT\_VERIFIED}\}$ with a concise rationale.
+    - **Design Motivation**: Analyzing only the decision-relevant frames rather than scanning the entire video substantially reduces computational cost.
 
 4. **Self-Refinement Loop**:
 
-   - **PARTIAL**: Triggers a minor verification-only loop to gather additional evidence from new timestamps.
-   - **NOT\_VERIFIED**: Triggers a major hypothesis-verification loop, regenerating hypotheses and clues (with specificity enhancement or discriminability enhancement).
-   - Experiments show that the majority of samples converge within a single loop iteration; the benefit of additional iterations diminishes rapidly.
+    - **PARTIAL**: Triggers a minor verification-only loop to gather additional evidence from new timestamps.
+    - **NOT\_VERIFIED**: Triggers a major hypothesis-verification loop, regenerating hypotheses and clues (with specificity enhancement or discriminability enhancement).
+    - Experiments show that the majority of samples converge within a single loop iteration; the benefit of additional iterations diminishes rapidly.
 
 ### Loss & Training
 This framework is zero-shot and involves no training. GPT-4o serves as the LLM backbone for all four agents; LaViLa/CogAgent is used as the frame-level captioner.

@@ -18,8 +18,8 @@ content_hash: 2dc9223a91e19578
 # Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.11579](https://arxiv.org/abs/2604.11579)
-**Code**: [https://mm.kaist.ac.kr/projects/SeeingThroughTouch/](https://mm.kaist.ac.kr/projects/SeeingThroughTouch/)
+**arXiv**: [2604.11579](https://arxiv.org/abs/2604.11579)  
+**Code**: [https://mm.kaist.ac.kr/projects/SeeingThroughTouch/](https://mm.kaist.ac.kr/projects/SeeingThroughTouch/)  
 **Area**: Multimodal VLM
 **Keywords**: tactile localization, visual-tactile alignment, material segmentation, cross-modal learning, dataset
 

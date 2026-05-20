@@ -18,8 +18,8 @@ content_hash: dbd947ed343b028e
 # Table2LaTeX-RL: High-Fidelity LaTeX Code Generation from Table Images via Reinforced Multimodal Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17589](https://arxiv.org/abs/2509.17589)
-**Code**: [GitHub](https://github.com/newLLing/Table2LaTeX-RL)
+**arXiv**: [2509.17589](https://arxiv.org/abs/2509.17589)  
+**Code**: [GitHub](https://github.com/newLLing/Table2LaTeX-RL)  
 **Area**: Code Intelligence
 **Keywords**: Table Recognition, LaTeX Generation, GRPO Reinforcement Learning, Dual Reward Mechanism, Multimodal Large Language Models
 
@@ -49,17 +49,17 @@ A three-stage pipeline: (1) large-scale data collection — crawling 1.2 million
 
 1. **Large-Scale Table2LaTeX Dataset Construction**: LaTeX source files are crawled from arXiv papers spanning October 2017 to April 2023. Regular expressions are used to extract `tabular` environments; after removing citation commands, color settings, and other control sequences, **1,209,986** table–LaTeX pairs are obtained. Tables are divided into three complexity levels:
 
-   - Simple: basic structure (94%)
-   - Medium: containing 2+ `\multirow` or `\multicolumn` commands and 100–160 cells (3%)
-   - Complex: more than 160 cells (3%)
+    - Simple: basic structure (94%)
+    - Medium: containing 2+ `\multirow` or `\multicolumn` commands and 100–160 cells (3%)
+    - Complex: more than 160 cells (3%)
 
    This stratification enables more fine-grained evaluation that accurately reflects model capability across different complexity levels.
 
 2. **VSGRPO Dual-Reward Reinforcement Learning Strategy**: The core innovation lies in incorporating LaTeX rendering (a non-differentiable operation) into the RL optimization loop. For each table image input, the model samples a set of LaTeX outputs $\{o_1, ..., o_N\}$, and two rewards are computed for each:
 
-   - **Visual Reward**: The generated LaTeX is compiled and rendered into an image, which is then compared against the ground-truth rendered image using CW-SSIM. A reward of 1 is assigned if the score exceeds a threshold (0.6), and 0 otherwise. CW-SSIM is specifically adapted for black-and-white table images: convert to grayscale → unify size → align rows and columns → 2×2 Haar wavelet decomposition into 4 sub-bands → compute SSIM independently on each sub-band → take the average.
+    - **Visual Reward**: The generated LaTeX is compiled and rendered into an image, which is then compared against the ground-truth rendered image using CW-SSIM. A reward of 1 is assigned if the score exceeds a threshold (0.6), and 0 otherwise. CW-SSIM is specifically adapted for black-and-white table images: convert to grayscale → unify size → align rows and columns → 2×2 Haar wavelet decomposition into 4 sub-bands → compute SSIM independently on each sub-band → take the average.
 
-   - **Structure Reward**: Both the generated and ground-truth LaTeX are converted to HTML, and TEDS-Structure is computed. A reward of 1 is assigned if the score exceeds a threshold (0.9), and 0 otherwise. TEDS-Structure measures table structure alignment via minimum tree edit distance.
+    - **Structure Reward**: Both the generated and ground-truth LaTeX are converted to HTML, and TEDS-Structure is computed. A reward of 1 is assigned if the score exceeds a threshold (0.9), and 0 otherwise. TEDS-Structure measures table structure alignment via minimum tree edit distance.
 
    The optimization objective is based on the GRPO framework:
    $$J_{\text{RFT}}(\theta) = \mathbb{E}\left[\frac{1}{N}\sum_{i=1}^N \min\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{old}}(o_i|q)}A_i, \text{clip}(\cdot, 1-\varepsilon, 1+\varepsilon)A_i\right) - \beta D_{KL}(\pi_\theta \| \pi_{ref})\right]$$
@@ -68,9 +68,9 @@ A three-stage pipeline: (1) large-scale data collection — crawling 1.2 million
 
 3. **Careful Training Strategy Design**:
 
-   - VSGRPO is trained exclusively on **5,936 complex tables** (ground-truth LaTeX < 3,000 characters), balancing complexity and computational feasibility
-   - SFT is a necessary prerequisite — performing RL directly without SFT yields drastically worse results (verified by ablation)
-   - Outputs that fail to compile automatically receive a reward of 0
+    - VSGRPO is trained exclusively on **5,936 complex tables** (ground-truth LaTeX < 3,000 characters), balancing complexity and computational feasibility
+    - SFT is a necessary prerequisite — performing RL directly without SFT yields drastically worse results (verified by ablation)
+    - Outputs that fail to compile automatically receive a reward of 0
 
 ### Loss & Training
 

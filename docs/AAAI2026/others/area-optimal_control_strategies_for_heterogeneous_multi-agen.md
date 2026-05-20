@@ -19,8 +19,8 @@ content_hash: c3391ddc31380ba3
 # Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.15036v2](https://arxiv.org/abs/2511.15036v2)
-**Code**: None
+**arXiv**: [2511.15036v2](https://arxiv.org/abs/2511.15036v2)  
+**Code**: None  
 **Area**: Other
 **Keywords**: pursuit-evasion game, heterogeneous multi-agent, Apollonius circle, area-optimal, closed-form control law, safe reachable set, zero-sum game
 

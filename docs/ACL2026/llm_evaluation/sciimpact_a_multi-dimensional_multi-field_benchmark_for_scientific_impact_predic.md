@@ -18,8 +18,8 @@ content_hash: df217a4670c9c3fc
 # SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17141](https://arxiv.org/abs/2604.17141)
-**Code**: [Project Page](https://flypig23.github.io/sciimpact-homepage/)
+**arXiv**: [2604.17141](https://arxiv.org/abs/2604.17141)  
+**Code**: [Project Page](https://flypig23.github.io/sciimpact-homepage/)  
 **Area**: LLM Evaluation
 **Keywords**: scientific impact prediction, multi-dimensional benchmark, citation prediction, academic awards, multi-task instruction fine-tuning
 

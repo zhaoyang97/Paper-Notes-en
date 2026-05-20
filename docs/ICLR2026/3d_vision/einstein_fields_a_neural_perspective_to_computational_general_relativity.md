@@ -18,8 +18,8 @@ content_hash: 52c52ab38aabcbe9
 # Einstein Fields: A Neural Perspective To Computational General Relativity
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.11589](https://arxiv.org/abs/2507.11589)
-**Code**: [github.com/AndreiB137/EinFields](https://github.com/AndreiB137/EinFields)
+**arXiv**: [2507.11589](https://arxiv.org/abs/2507.11589)  
+**Code**: [github.com/AndreiB137/EinFields](https://github.com/AndreiB137/EinFields)  
 **Area**: 3D Vision
 **Keywords**: Neural Fields, General Relativity, Tensor Field Compression, Numerical Relativity, Automatic Differentiation
 
@@ -60,28 +60,28 @@ This paper proposes EinFields, the first framework to apply neural implicit repr
 
 1. **Distortion Decomposition**
 
-   - **Function**: Decomposes the metric tensor into a flat background plus a distortion term $\Delta_{\alpha\beta} = g_{\alpha\beta} - \eta_{\alpha\beta}$.
-   - **Mechanism**: The network learns only the non-trivial curvature contributions, removing the dominant numerical contributions of flat spacetime (e.g., $g_{tt} \sim 1/r$, $g_{\theta\theta} \sim r^2$).
-   - **Design Motivation**: Concentrating the network's representational capacity on physically meaningful deviations accelerates convergence and improves scaling behavior.
+    - **Function**: Decomposes the metric tensor into a flat background plus a distortion term $\Delta_{\alpha\beta} = g_{\alpha\beta} - \eta_{\alpha\beta}$.
+    - **Mechanism**: The network learns only the non-trivial curvature contributions, removing the dominant numerical contributions of flat spacetime (e.g., $g_{tt} \sim 1/r$, $g_{\theta\theta} \sim r^2$).
+    - **Design Motivation**: Concentrating the network's representational capacity on physically meaningful deviations accelerates convergence and improves scaling behavior.
 
 2. **Sobolev Training (Higher-Order Derivative Supervision)**
 
-   - **Function**: Supervises not only the metric tensor itself but also its Jacobian (40 independent components) and Hessian (100 independent components).
-   - **Core Formula**: $\mathcal{L}^g_{\text{Sob}}(\theta) = \mathbb{E}_x[\lambda_0\|g - \hat{g}\|^2 + \lambda_1\|\partial g - \partial\hat{g}\|^2 + \lambda_2\|\partial^2 g - \partial^2\hat{g}\|^2]$
-   - **Design Motivation**: Physical quantities in GR (Christoffel symbols, Riemann tensor) are defined by the first and second derivatives of the metric; supervising the metric alone does not guarantee derivative accuracy. The Sobolev loss improves Christoffel symbol accuracy by 2 orders of magnitude.
+    - **Function**: Supervises not only the metric tensor itself but also its Jacobian (40 independent components) and Hessian (100 independent components).
+    - **Core Formula**: $\mathcal{L}^g_{\text{Sob}}(\theta) = \mathbb{E}_x[\lambda_0\|g - \hat{g}\|^2 + \lambda_1\|\partial g - \partial\hat{g}\|^2 + \lambda_2\|\partial^2 g - \partial^2\hat{g}\|^2]$
+    - **Design Motivation**: Physical quantities in GR (Christoffel symbols, Riemann tensor) are defined by the first and second derivatives of the metric; supervising the metric alone does not guarantee derivative accuracy. The Sobolev loss improves Christoffel symbol accuracy by 2 orders of magnitude.
 
 3. **Automatic Differentiation as a Replacement for Finite Differences**
 
-   - **Function**: Computes differential geometric quantities exactly via JAX's forward-mode AD.
-   - **Implementation Pipeline**: $g_{\alpha\beta} \xrightarrow{\texttt{jacfwd}} \Gamma^\gamma_{\alpha\beta} \xrightarrow{\nabla} R^\delta_{\alpha\beta\gamma} \xrightarrow{\text{Tr}_g} R_{\alpha\beta} \xrightarrow{\text{Tr}_g} R$
-   - **Design Motivation**: FD under FLOAT32 is constrained by truncation error ($O(h^n)$); AD improves accuracy by up to 5 orders of magnitude in single precision.
+    - **Function**: Computes differential geometric quantities exactly via JAX's forward-mode AD.
+    - **Implementation Pipeline**: $g_{\alpha\beta} \xrightarrow{\texttt{jacfwd}} \Gamma^\gamma_{\alpha\beta} \xrightarrow{\nabla} R^\delta_{\alpha\beta\gamma} \xrightarrow{\text{Tr}_g} R_{\alpha\beta} \xrightarrow{\text{Tr}_g} R$
+    - **Design Motivation**: FD under FLOAT32 is constrained by truncation error ($O(h^n)$); AD improves accuracy by up to 5 orders of magnitude in single precision.
 
 4. **Network Architecture Selection**
 
-   - MLP with SiLU activations (best performance under derivative supervision).
-   - SOAP optimizer (quasi-Newton method, outperforms Adam).
-   - GradNorm for multi-task gradient balancing.
-   - Parameter scale: 64×3 to 512×8 layers; total parameters <1.9M.
+    - MLP with SiLU activations (best performance under derivative supervision).
+    - SOAP optimizer (quasi-Newton method, outperforms Adam).
+    - GradNorm for multi-task gradient balancing.
+    - Parameter scale: 64×3 to 512×8 layers; total parameters <1.9M.
 
 ### Loss & Training
 - Sobolev loss: weighted sum of metric, Jacobian, and Hessian terms.

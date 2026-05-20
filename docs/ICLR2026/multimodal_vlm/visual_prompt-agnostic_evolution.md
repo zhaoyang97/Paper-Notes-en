@@ -19,8 +19,8 @@ content_hash: 42a5ba2ad4b410c1
 # Visual Prompt-Agnostic Evolution
 
 **Conference**: ICLR2026
-**arXiv**: [2601.20232](https://arxiv.org/abs/2601.20232)
-**Code**: [reeive/PAE](https://github.com/reeive/PAE)
+**arXiv**: [2601.20232](https://arxiv.org/abs/2601.20232)  
+**Code**: [reeive/PAE](https://github.com/reeive/PAE)  
 **Area**: Multimodal VLM
 **Keywords**: Visual Prompt Tuning, Vision Transformer, Parameter-Efficient Fine-Tuning, Koopman Operator, Frequency-Domain Initialization, Lyapunov Stability
 

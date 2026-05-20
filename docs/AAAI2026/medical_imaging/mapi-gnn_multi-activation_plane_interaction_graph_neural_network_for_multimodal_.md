@@ -18,8 +18,8 @@ content_hash: e5828ba308ec6f6d
 # MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.20026](https://arxiv.org/abs/2512.20026)
-**Code**: [GitHub](https://github.com/HecateBlair/MAPI-GNN)
+**arXiv**: [2512.20026](https://arxiv.org/abs/2512.20026)  
+**Code**: [GitHub](https://github.com/HecateBlair/MAPI-GNN)  
 **Area**: Medical Image Analysis / Multimodal Fusion
 **Keywords**: Graph Neural Networks, Multimodal Medical Diagnosis, Dynamic Graph Construction, Feature Discriminator, Hierarchical Fusion
 

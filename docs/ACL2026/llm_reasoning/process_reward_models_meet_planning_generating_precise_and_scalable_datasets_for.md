@@ -18,8 +18,8 @@ content_hash: 6dcc2b983535eda4
 # Process Reward Models Meet Planning: Generating Precise and Scalable Datasets for Step-Level Rewards
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17957](https://arxiv.org/abs/2604.17957)
-**Code**: [https://github.com/Babelscape/prm-meets-planning/](https://github.com/Babelscape/prm-meets-planning/)
+**arXiv**: [2604.17957](https://arxiv.org/abs/2604.17957)  
+**Code**: [https://github.com/Babelscape/prm-meets-planning/](https://github.com/Babelscape/prm-meets-planning/)  
 **Area**: LLM Reasoning
 **Keywords**: Process Reward Models, PDDL, Planning Problems, Step-Level Rewards, Reasoning Evaluation
 

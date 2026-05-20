@@ -18,8 +18,8 @@ content_hash: f4e8f5b5bf436606
 # PFΔ: A Benchmark Dataset for Power Flow under Load, Generation, and Topology Variations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22048](https://arxiv.org/abs/2510.22048)
-**Code**: [GitHub](https://github.com/MOSSLab-MIT/pfdelta)
+**arXiv**: [2510.22048](https://arxiv.org/abs/2510.22048)  
+**Code**: [GitHub](https://github.com/MOSSLab-MIT/pfdelta)  
 **Area**: Power Systems / Graph Neural Network Benchmarks
 **Keywords**: Power Flow, Benchmark Dataset, Graph Neural Networks, Topology Perturbation, Power Grid Simulation
 

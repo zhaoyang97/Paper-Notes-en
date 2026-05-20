@@ -18,8 +18,8 @@ content_hash: e5f91b50da78bdae
 # Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20069](https://arxiv.org/abs/2601.20069)
-**Code**: To be confirmed
+**arXiv**: [2601.20069](https://arxiv.org/abs/2601.20069)  
+**Code**: To be confirmed  
 **Area**: Representation Learning / Multi-Task Learning
 **Keywords**: multi-task learning, orthogonal pooling, latent space construction, representation collapse, composable representations
 
@@ -49,21 +49,21 @@ Domain Expansion is a three-step framework executed dynamically during training,
 
 1. **Find Principal Axes**:
 
-   - Compute the empirical mean $\mu$ and covariance matrix $\Sigma$ of the latent features at the current epoch.
-   - Perform eigendecomposition of $\Sigma$ to obtain orthogonal eigenvector bases $V = [v_0, v_1, \ldots, v_{D-1}]$.
-   - Apply the Hungarian algorithm across epochs to align eigenvectors and resolve instability in early training.
+    - Compute the empirical mean $\mu$ and covariance matrix $\Sigma$ of the latent features at the current epoch.
+    - Perform eigendecomposition of $\Sigma$ to obtain orthogonal eigenvector bases $V = [v_0, v_1, \ldots, v_{D-1}]$.
+    - Apply the Hungarian algorithm across epochs to align eigenvectors and resolve instability in early training.
 
 2. **Define Orthogonal Domain**:
 
-   - Select the top $M$ eigenvectors corresponding to the largest eigenvalues to form the "domain" $V_M$.
-   - Each eigenvector $v_m$ is exclusively assigned to one target concept $\mathcal{C}_m$ (e.g., azimuth, category, ID).
-   - Projection operator: $\text{Proj}_m = v_m v_m^\top$
+    - Select the top $M$ eigenvectors corresponding to the largest eigenvalues to form the "domain" $V_M$.
+    - Each eigenvector $v_m$ is exclusively assigned to one target concept $\mathcal{C}_m$ (e.g., azimuth, category, ID).
+    - Projection operator: $\text{Proj}_m = v_m v_m^\top$
 
 3. **Orthogonal Pooling**:
 
-   - Project latent features $f$ onto each orthogonal subspace: $f^{\text{proj},m} = \text{Proj}_m(f - \mu)$
-   - Loss gradients across subspaces are naturally decoupled—learning concept A cannot affect the subspace of concept B.
-   - Total loss = weighted sum of independent losses over each subspace: $\mathcal{L}_{\text{total}} = \sum_m w_m \cdot \mathcal{L}_m(\mathcal{F}_m^{\text{proj}}, \mathcal{C}_m)$
+    - Project latent features $f$ onto each orthogonal subspace: $f^{\text{proj},m} = \text{Proj}_m(f - \mu)$
+    - Loss gradients across subspaces are naturally decoupled—learning concept A cannot affect the subspace of concept B.
+    - Total loss = weighted sum of independent losses over each subspace: $\mathcal{L}_{\text{total}} = \sum_m w_m \cdot \mathcal{L}_m(\mathcal{F}_m^{\text{proj}}, \mathcal{C}_m)$
 
 ### Loss & Training
 - Regression concepts (azimuth, elevation, rotation) use Rank-N-Contrast (RNC) loss (temperature $\tau=2.0$, weight 1.0).

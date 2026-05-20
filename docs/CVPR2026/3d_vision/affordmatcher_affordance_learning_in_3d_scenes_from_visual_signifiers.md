@@ -18,8 +18,8 @@ content_hash: 02369d5ad25e76fe
 # AffordMatcher: Affordance Learning in 3D Scenes from Visual Signifiers
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27970](https://arxiv.org/abs/2603.27970)
-**Code**: [Project Page](https://aioz-ai.github.io/AffordMatcher/)
+**arXiv**: [2603.27970](https://arxiv.org/abs/2603.27970)  
+**Code**: [Project Page](https://aioz-ai.github.io/AffordMatcher/)  
 **Area**: 3D Vision / Scene Understanding
 **Keywords**: affordance learning, 3D scene understanding, visual signifiers, cross-modal alignment, zero-shot segmentation
 

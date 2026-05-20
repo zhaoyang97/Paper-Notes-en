@@ -18,8 +18,8 @@ content_hash: eb71275e0d698cb0
 # STEP: A Unified Spiking Transformer Evaluation Platform for Fair and Reproducible Benchmarking
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11151](https://arxiv.org/abs/2505.11151)
-**Code**: [GitHub](https://github.com/Fancyssc/STEP)
+**arXiv**: [2505.11151](https://arxiv.org/abs/2505.11151)  
+**Code**: [GitHub](https://github.com/Fancyssc/STEP)  
 **Area**: Image Segmentation
 **Keywords**: Spiking Transformer, unified benchmark, energy consumption modeling, spiking neural networks, reproducible evaluation
 

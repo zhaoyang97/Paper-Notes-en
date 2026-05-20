@@ -18,8 +18,8 @@ content_hash: 623117983bbe6ae9
 # CleanPose: Category-Level Object Pose Estimation via Causal Learning and Knowledge Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.01312](https://arxiv.org/abs/2502.01312)
-**Code**: [https://github.com/chrislin0621/CleanPose](https://github.com/chrislin0621/CleanPose)
+**arXiv**: [2502.01312](https://arxiv.org/abs/2502.01312)  
+**Code**: [https://github.com/chrislin0621/CleanPose](https://github.com/chrislin0621/CleanPose)  
 **Area**: Human Understanding
 **Keywords**: Category-level pose estimation, causal reasoning, knowledge distillation, front-door adjustment, data bias
 

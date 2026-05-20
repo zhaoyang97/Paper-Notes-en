@@ -18,8 +18,8 @@ content_hash: a539c08477cb6276
 # Gain-MLP: Improving HDR Gain Map Encoding via a Lightweight MLP
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11883](https://arxiv.org/abs/2503.11883)
-**Code**: None (authors state code will be released upon acceptance)
+**arXiv**: [2503.11883](https://arxiv.org/abs/2503.11883)  
+**Code**: None (authors state code will be released upon acceptance)  
 **Area**: Model Compression
 **Keywords**: HDR Gain Map, MLP, Implicit Neural Representation, Image Compression, Tone Mapping
 

@@ -18,8 +18,8 @@ content_hash: 7f0a7ec0a6e0ac45
 # StreamSplat: Towards Online Dynamic 3D Reconstruction from Uncalibrated Video Streams
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.08862](https://arxiv.org/abs/2506.08862)
-**Code**: [https://streamsplat3d.github.io/](https://streamsplat3d.github.io/)
+**arXiv**: [2506.08862](https://arxiv.org/abs/2506.08862)  
+**Code**: [https://streamsplat3d.github.io/](https://streamsplat3d.github.io/)  
 **Area**: 3D Vision
 **Keywords**: Dynamic 3D Reconstruction, 3D Gaussian Splatting, Online Reconstruction, Feed-Forward Model, Video Streams
 

@@ -18,8 +18,8 @@ content_hash: ea7028db2d2a7dc2
 # SeCon-RAG: A Two-Stage Semantic Filtering and Conflict-Free Framework for Trustworthy RAG
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.09710](https://arxiv.org/abs/2510.09710)
-**Code**: [GitHub](https://github.com/) (mentioned in paper)
+**arXiv**: [2510.09710](https://arxiv.org/abs/2510.09710)  
+**Code**: [GitHub](https://github.com/) (mentioned in paper)  
 **Area**: NLP Understanding / RAG Security / Adversarial Robustness
 **Keywords**: RAG, corpus poisoning defense, semantic filtering, conflict-aware reasoning, entity-intent-relation
 

@@ -18,8 +18,8 @@ content_hash: a48ec27e580e1381
 # PinPoint: Evaluation of Composed Image Retrieval with Explicit Negatives, Multi-Image Queries, and Paraphrase Testing
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04598](https://arxiv.org/abs/2603.04598)
-**Code**: None (dataset and evaluation code open-sourced)
+**arXiv**: [2603.04598](https://arxiv.org/abs/2603.04598)  
+**Code**: None (dataset and evaluation code open-sourced)  
 **Area**: AI Safety
 **Keywords**: Composed Image Retrieval, evaluation benchmark, explicit negatives, multi-image queries, linguistic robustness
 

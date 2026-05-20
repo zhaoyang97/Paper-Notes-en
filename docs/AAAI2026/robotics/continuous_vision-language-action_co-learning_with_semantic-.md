@@ -18,8 +18,8 @@ content_hash: 6e41ea90336cd108
 # Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14396](https://arxiv.org/abs/2511.14396)
-**Code**: Unavailable (not released)
+**arXiv**: [2511.14396](https://arxiv.org/abs/2511.14396)  
+**Code**: Unavailable (not released)  
 **Area**: Multimodal VLM / Robot Manipulation / Behavioral Cloning
 **Keywords**: Behavioral Cloning, Semantic-Physical Alignment, NeuralODE, Multimodal Continuous Co-Learning, Language-Conditioned Manipulation
 

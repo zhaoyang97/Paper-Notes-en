@@ -18,8 +18,8 @@ content_hash: 865bf04f6ec59cde
 # SlotVTG: Object-Centric Adapter for Generalizable Video Temporal Grounding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25733](https://arxiv.org/abs/2603.25733)
-**Code**: None
+**arXiv**: [2603.25733](https://arxiv.org/abs/2603.25733)  
+**Code**: None  
 **Area**: Video Understanding / Temporal Grounding
 **Keywords**: Video Temporal Grounding, Object-Centric Learning, Slot Attention, Out-of-Domain Generalization, Multimodal Large Language Models
 

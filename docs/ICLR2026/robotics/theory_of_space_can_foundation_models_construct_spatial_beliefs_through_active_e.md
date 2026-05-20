@@ -19,8 +19,8 @@ content_hash: f7872eaec50f257e
 # Theory of Space: Can Foundation Models Construct Spatial Beliefs through Active Exploration?
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07055](https://arxiv.org/abs/2602.07055)
-**Code**: [GitHub](https://github.com/mll-lab-nu/Theory-of-Space)
+**arXiv**: [2602.07055](https://arxiv.org/abs/2602.07055)  
+**Code**: [GitHub](https://github.com/mll-lab-nu/Theory-of-Space)  
 **Area**: Spatial Intelligence / Embodied AI
 **Keywords**: Theory of Space, active exploration, spatial belief, cognitive map, partial observability, belief inertia
 

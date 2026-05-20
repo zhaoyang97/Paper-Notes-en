@@ -18,8 +18,8 @@ content_hash: a8ac5d22454a30e7
 # Machine Learning for Sustainable Rice Production: Region-Scale Monitoring of Water-Saving Practices in Punjab, India
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.08605](https://arxiv.org/abs/2507.08605)
-**Code**: [GitHub](https://github.com/microsoft/rice-irrigation-mapping-s1s2)
+**arXiv**: [2507.08605](https://arxiv.org/abs/2507.08605)  
+**Code**: [GitHub](https://github.com/microsoft/rice-irrigation-mapping-s1s2)  
 **Area**: Remote Sensing / Agricultural Monitoring
 **Keywords**: Rice cultivation monitoring, water-saving practices, Sentinel-1 SAR, dimensional classification, direct-seeded rice (DSR)
 

@@ -18,8 +18,8 @@ content_hash: 0bf858881d35c003
 # Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.16156](https://arxiv.org/abs/2511.16156)
-**Code**: [https://github.com/OPPO-Mente-Lab/Qwen-Image-Pruning](https://github.com/OPPO-Mente-Lab/Qwen-Image-Pruning)
+**arXiv**: [2511.16156](https://arxiv.org/abs/2511.16156)  
+**Code**: [https://github.com/OPPO-Mente-Lab/Qwen-Image-Pruning](https://github.com/OPPO-Mente-Lab/Qwen-Image-Pruning)  
 **Area**: Diffusion Models / Model Compression
 **Keywords**: Diffusion Transformer Pruning, MMDiT Compression, Contiguous Layer Distillation, Plug-and-Play Inference, Structured Pruning
 

@@ -19,8 +19,8 @@ content_hash: 559546c238f44ec4
 # Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks
 
 **Conference**: ICLR2026
-**arXiv**: [2505.16204](https://arxiv.org/abs/2505.16204)
-**Code**: None
+**arXiv**: [2505.16204](https://arxiv.org/abs/2505.16204)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: benign overfitting, directional convergence, leaky ReLU, implicit bias, gradient descent, neural networks
 

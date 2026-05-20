@@ -18,8 +18,8 @@ content_hash: c5d854d9355637e3
 # Decoding with Structured Awareness: Integrating Directional, Frequency-Spatial, and Structural Attention for Medical Image Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.05494](https://arxiv.org/abs/2512.05494)
-**Code**: N/A
+**arXiv**: [2512.05494](https://arxiv.org/abs/2512.05494)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: Medical image segmentation, decoder design, frequency-spatial fusion, directional-aware attention, multi-scale feature fusion
 

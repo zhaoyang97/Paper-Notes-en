@@ -18,8 +18,8 @@ content_hash: ff3d74fb80039618
 # Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00629](https://arxiv.org/abs/2603.00629)
-**Code**: [https://github.com/thulab/TATO](https://github.com/thulab/TATO)
+**arXiv**: [2603.00629](https://arxiv.org/abs/2603.00629)  
+**Code**: [https://github.com/thulab/TATO](https://github.com/thulab/TATO)  
 **Area**: Self-supervised Learning / Time Series Forecasting
 **Keywords**: Time series foundation models, data transformation optimization, zero-shot forecasting, frozen model inference, Bayesian optimization
 
@@ -51,21 +51,21 @@ $$h^* = \arg\min_{h \in \mathcal{H}} \mathcal{L}(M, D_{\text{history}}, h)$$
 
 1. **Data Preparation**
 
-   - **Function**: Augments the diversity of historical samples during the optimization stage via multiple augmentation strategies.
-   - **Mechanism**: Eight augmentation methods are employed—magnitude/time flip, magnitude/time warp, noise injection (EWMA smoothing, jitter), translation, and slope addition—ensuring that the discovered transformation pipelines remain robust under distributional shifts.
-   - **Design Motivation**: A distribution gap may exist between the $D_{\text{history}}$ used during optimization and $D_{\text{future}}$ encountered at test time. Augmentation exposes candidate pipelines to more extreme scenarios, reducing the risk of overfitting to the optimization set.
+    - **Function**: Augments the diversity of historical samples during the optimization stage via multiple augmentation strategies.
+    - **Mechanism**: Eight augmentation methods are employed—magnitude/time flip, magnitude/time warp, noise injection (EWMA smoothing, jitter), translation, and slope addition—ensuring that the discovered transformation pipelines remain robust under distributional shifts.
+    - **Design Motivation**: A distribution gap may exist between the $D_{\text{history}}$ used during optimization and $D_{\text{future}}$ encountered at test time. Augmentation exposes candidate pipelines to more extreme scenarios, reducing the risk of overfitting to the optimization set.
 
 2. **Transformation Pipeline Search Space**
 
-   - **Function**: Defines nine tunable operators organized into three categories: (a) context transformations (Trimmer for input length cropping, Downsampler, Differencer); (b) normalization transformations (Scaler, e.g., Z-score / MinMax / BoxCox); and (c) outlier transformations (Denoiser, e.g., $k$-sigma detection with interpolation, IQR filtering).
-   - **Mechanism**: Each operator comprises a forward transformation (applied before feeding data to the LTM) and an inverse transformation (applied to the LTM output). The hyperparameters of all operators constitute the search space $\mathcal{H}$, which is explored via TPE (Tree-structured Parzen Estimator) Bayesian optimization.
-   - **Design Motivation**: The three operator categories address three distinct failure modes: input length mismatch, scale/distribution mismatch, and outlier interference, respectively. Operator ordering is predefined by heuristic rules (Trimmer is placed first to reduce downstream computation; outlier handling precedes normalization to prevent outliers from distorting normalization statistics).
+    - **Function**: Defines nine tunable operators organized into three categories: (a) context transformations (Trimmer for input length cropping, Downsampler, Differencer); (b) normalization transformations (Scaler, e.g., Z-score / MinMax / BoxCox); and (c) outlier transformations (Denoiser, e.g., $k$-sigma detection with interpolation, IQR filtering).
+    - **Mechanism**: Each operator comprises a forward transformation (applied before feeding data to the LTM) and an inverse transformation (applied to the LTM output). The hyperparameters of all operators constitute the search space $\mathcal{H}$, which is explored via TPE (Tree-structured Parzen Estimator) Bayesian optimization.
+    - **Design Motivation**: The three operator categories address three distinct failure modes: input length mismatch, scale/distribution mismatch, and outlier interference, respectively. Operator ordering is predefined by heuristic rules (Trimmer is placed first to reduce downstream computation; outlier handling precedes normalization to prevent outliers from distorting normalization statistics).
 
 3. **Two-stage Pareto Ranking**
 
-   - **Function**: Selects the single best pipeline from hundreds of candidates.
-   - **Mechanism**: **Stage 1**—Pareto filtering is applied across all augmented samples to eliminate pipelines that are dominated on any combination of metrics, retaining 16 candidates. **Stage 2**—The retained candidates are evaluated exclusively on the original (non-augmented) samples and ranked by a weighted multi-metric score (MSE, MAE, RMSE, MAPE, MSPE); the highest-scoring pipeline is selected.
-   - **Design Motivation**: Selecting by a single metric risks favoring pipelines that excel on one criterion while underperforming on others. Pareto filtering ensures robustness, while the second stage focuses on the original distribution to guarantee optimality in real-world conditions.
+    - **Function**: Selects the single best pipeline from hundreds of candidates.
+    - **Mechanism**: **Stage 1**—Pareto filtering is applied across all augmented samples to eliminate pipelines that are dominated on any combination of metrics, retaining 16 candidates. **Stage 2**—The retained candidates are evaluated exclusively on the original (non-augmented) samples and ranked by a weighted multi-metric score (MSE, MAE, RMSE, MAPE, MSPE); the highest-scoring pipeline is selected.
+    - **Design Motivation**: Selecting by a single metric risks favoring pipelines that excel on one criterion while underperforming on others. Pareto filtering ensures robustness, while the second stage focuses on the original distribution to guarantee optimality in real-world conditions.
 
 ### Loss & Training
 - Optimization requires only 500 historical samples (less than 2% of the full training set).

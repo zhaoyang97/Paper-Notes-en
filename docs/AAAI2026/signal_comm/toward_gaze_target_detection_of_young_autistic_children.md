@@ -18,8 +18,8 @@ content_hash: 8975ea353c41e4b8
 # Toward Gaze Target Detection in Young Autistic Children
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11244](https://arxiv.org/abs/2511.11244)
-**Code**: [ShijianDeng/AGT](https://github.com/ShijianDeng/AGT)
+**arXiv**: [2511.11244](https://arxiv.org/abs/2511.11244)  
+**Code**: [ShijianDeng/AGT](https://github.com/ShijianDeng/AGT)  
 **Area**: Signal & Communication
 **Keywords**: Gaze Target Detection, Autism Spectrum Disorder, Class Imbalance, Multimodal Large Language Models, Coarse-to-Fine Framework
 

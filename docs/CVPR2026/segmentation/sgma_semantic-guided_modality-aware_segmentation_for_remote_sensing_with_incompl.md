@@ -18,8 +18,8 @@ content_hash: aab09b4faf628c2c
 # SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02505](https://arxiv.org/abs/2603.02505)
-**Code**: N/A
+**arXiv**: [2603.02505](https://arxiv.org/abs/2603.02505)  
+**Code**: N/A  
 **Area**: Semantic Segmentation
 **Keywords**: Incomplete multimodal semantic segmentation, remote sensing, modality imbalance, semantic prototypes, adaptive fusion
 

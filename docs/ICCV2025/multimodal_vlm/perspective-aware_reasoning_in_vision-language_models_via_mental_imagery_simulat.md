@@ -18,8 +18,8 @@ content_hash: 5566567a3f41c75d
 # Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.17207](https://arxiv.org/abs/2504.17207)
-**Code**: [https://github.com/KAIST-Visual-AI-Group/APC-VLM](https://github.com/KAIST-Visual-AI-Group/APC-VLM)
+**arXiv**: [2504.17207](https://arxiv.org/abs/2504.17207)  
+**Code**: [https://github.com/KAIST-Visual-AI-Group/APC-VLM](https://github.com/KAIST-Visual-AI-Group/APC-VLM)  
 **Area**: Multimodal VLM
 **Keywords**: perspective-aware reasoning, mental imagery simulation, vision-language models, spatial reasoning, perspective transformation
 

@@ -18,8 +18,8 @@ content_hash: c6a5713c5b95b5c4
 # TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.01923](https://arxiv.org/abs/2506.01923)
-**Code**: [Project Page](https://amink8.github.io/TaxaDiffusion/)
+**arXiv**: [2506.01923](https://arxiv.org/abs/2506.01923)  
+**Code**: [Project Page](https://amink8.github.io/TaxaDiffusion/)  
 **Area**: Fine-Grained Image Generation / Diffusion Models
 **Keywords**: Taxonomic guidance, progressive training, fine-grained species generation, knowledge transfer, few-shot generation
 

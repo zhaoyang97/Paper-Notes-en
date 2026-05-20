@@ -18,8 +18,8 @@ content_hash: 5fa4322063e88c4f
 # AutoTool: Automatic Scaling of Tool-Use Capabilities in RL via Decoupled Entropy Constraints
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.13348](https://arxiv.org/abs/2603.13348)
-**Code**: None
+**arXiv**: [2603.13348](https://arxiv.org/abs/2603.13348)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: tool use, reinforcement learning, test-time scaling, entropy constraint, GRPO, agentic LLM
 

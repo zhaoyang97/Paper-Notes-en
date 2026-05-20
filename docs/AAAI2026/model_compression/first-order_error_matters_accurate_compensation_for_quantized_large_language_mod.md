@@ -18,8 +18,8 @@ content_hash: 69d383b331ea4bbc
 # First-Order Error Matters: Accurate Compensation for Quantized Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.11017](https://arxiv.org/abs/2507.11017)
-**Code**: [https://github.com/Xingyu-Zheng/FOEM](https://github.com/Xingyu-Zheng/FOEM)
+**arXiv**: [2507.11017](https://arxiv.org/abs/2507.11017)  
+**Code**: [https://github.com/Xingyu-Zheng/FOEM](https://github.com/Xingyu-Zheng/FOEM)  
 **Area**: Model Compression
 **Keywords**: Post-training quantization, large language models, first-order error compensation, GPTQ, weight quantization
 

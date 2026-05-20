@@ -18,8 +18,8 @@ content_hash: 2affe3080a9b5426
 # Unleashing Vision-Language Semantics for Deepfake Video Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24454](https://arxiv.org/abs/2603.24454)
-**Code**: [https://github.com/mala-lab/VLAForge](https://github.com/mala-lab/VLAForge)
+**arXiv**: [2603.24454](https://arxiv.org/abs/2603.24454)  
+**Code**: [https://github.com/mala-lab/VLAForge](https://github.com/mala-lab/VLAForge)  
 **Area**: Face Understanding / Deepfake Detection
 **Keywords**: Deepfake Detection, Vision-Language Alignment, CLIP, Attention Module, Identity-Aware
 

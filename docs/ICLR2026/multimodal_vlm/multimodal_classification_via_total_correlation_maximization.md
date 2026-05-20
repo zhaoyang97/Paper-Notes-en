@@ -18,8 +18,8 @@ content_hash: 20550135d6f4decd
 # Multimodal Classification via Total Correlation Maximization
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.13015](https://arxiv.org/abs/2602.13015)
-**Code**: [https://github.com/hubaak/TCMax](https://github.com/hubaak/TCMax)
+**arXiv**: [2602.13015](https://arxiv.org/abs/2602.13015)  
+**Code**: [https://github.com/hubaak/TCMax](https://github.com/hubaak/TCMax)  
 **Area**: Multimodal VLM
 **Keywords**: multimodal learning, modality competition, total correlation, information theory, loss function design
 
@@ -49,27 +49,27 @@ Given multimodal input $(x^{(1)}, \dots, x^{(M)})$, each modality is encoded by 
 
 1. **Information-Theoretic Analysis of Modality Competition**
 
-   - **Function**: Explains the root cause of modality competition via mutual information decomposition.
-   - **Mechanism**: Joint learning maximizes $I(y; z^{(a)}, z^{(v)}) = I(y; z^{(a)}) + I(y; z^{(v)}|z^{(a)})$. When $I(y; z^{(a)}) \approx H(y)$, the upper bound of $I(y; z^{(v)}|z^{(a)})$ approaches zero, leaving no learning space for the visual encoder.
-   - **Design Motivation**: Identifies the theoretical deficiency of joint learning—the optimization objective itself induces modality competition.
+    - **Function**: Explains the root cause of modality competition via mutual information decomposition.
+    - **Mechanism**: Joint learning maximizes $I(y; z^{(a)}, z^{(v)}) = I(y; z^{(a)}) + I(y; z^{(v)}|z^{(a)})$. When $I(y; z^{(a)}) \approx H(y)$, the upper bound of $I(y; z^{(v)}|z^{(a)})$ approaches zero, leaving no learning space for the visual encoder.
+    - **Design Motivation**: Identifies the theoretical deficiency of joint learning—the optimization objective itself induces modality competition.
 
 2. **Total Correlation Decomposition**
 
-   - **Function**: Unifies joint learning, unimodal learning, and cross-modal alignment into a single TC objective.
-   - **Mechanism**: For the two-modality case, $\text{TC}(z^{(a)}, z^{(v)}, y) = I(y; z^{(a)}, z^{(v)}) + I(z^{(a)}; z^{(v)})$, which also equals $I(y; z^{(a)}) + I(y; z^{(v)}) + I(z^{(a)}; z^{(v)}|y)$. The first decomposition encompasses joint learning and alignment; the second encompasses unimodal learning and conditional alignment.
-   - **Design Motivation**: TC naturally subsumes the individual advantages of existing methods, providing a unified and conflict-free optimization objective.
+    - **Function**: Unifies joint learning, unimodal learning, and cross-modal alignment into a single TC objective.
+    - **Mechanism**: For the two-modality case, $\text{TC}(z^{(a)}, z^{(v)}, y) = I(y; z^{(a)}, z^{(v)}) + I(z^{(a)}; z^{(v)})$, which also equals $I(y; z^{(a)}) + I(y; z^{(v)}) + I(z^{(a)}; z^{(v)}|y)$. The first decomposition encompasses joint learning and alignment; the second encompasses unimodal learning and conditional alignment.
+    - **Design Motivation**: TC naturally subsumes the individual advantages of existing methods, providing a unified and conflict-free optimization objective.
 
 3. **Total Correlation Neural Estimation (TCNE)**
 
-   - **Function**: Provides a computable lower bound for TC.
-   - **Mechanism**: Extends MINE (Mutual Information Neural Estimation) from bivariate to multivariate settings. Using the Donsker–Varadhan representation theorem: $\text{TC} \geq \sup_\theta \mathbb{E}_{\mathbb{P}_{joint}}[T_\theta] - \log(\mathbb{E}_{\mathbb{P}_{product}}[e^{T_\theta}])$, where $T_\theta$ is a neural network.
-   - **Design Motivation**: Direct computation of TC requires knowledge of the density ratio between the joint and marginal distributions, which is intractable in high-dimensional spaces. The variational lower bound circumvents this difficulty.
+    - **Function**: Provides a computable lower bound for TC.
+    - **Mechanism**: Extends MINE (Mutual Information Neural Estimation) from bivariate to multivariate settings. Using the Donsker–Varadhan representation theorem: $\text{TC} \geq \sup_\theta \mathbb{E}_{\mathbb{P}_{joint}}[T_\theta] - \log(\mathbb{E}_{\mathbb{P}_{product}}[e^{T_\theta}])$, where $T_\theta$ is a neural network.
+    - **Design Motivation**: Direct computation of TC requires knowledge of the density ratio between the joint and marginal distributions, which is intractable in high-dimensional spaces. The variational lower bound circumvents this difficulty.
 
 4. **TCMax Loss Function**
 
-   - **Function**: Reuses the classification head as the statistics network $T_\theta$ in TCNE, yielding a loss with no additional parameters.
-   - **Mechanism**: Setting $T_\theta(z^{(1)}, \dots, z^{(M)}, y) = f_\theta(z^{(1)}, \dots, z^{(M)})_y$ gives $\mathcal{L}_{\text{TCMax}} = -\mathbb{E}_{\mathbb{P}_{joint}}[F_\Theta] + \log(\mathbb{E}_{\mathbb{P}_{product}}[e^{F_\Theta}])$. Training requires contrasting positive samples (real samples from the joint distribution) against negative samples (random cross-sample combinations of modality features).
-   - **Design Motivation**: Introduces no additional network parameters—the prediction head itself serves as the TC estimator, enabling a drop-in replacement for cross-entropy without any architectural change.
+    - **Function**: Reuses the classification head as the statistics network $T_\theta$ in TCNE, yielding a loss with no additional parameters.
+    - **Mechanism**: Setting $T_\theta(z^{(1)}, \dots, z^{(M)}, y) = f_\theta(z^{(1)}, \dots, z^{(M)})_y$ gives $\mathcal{L}_{\text{TCMax}} = -\mathbb{E}_{\mathbb{P}_{joint}}[F_\Theta] + \log(\mathbb{E}_{\mathbb{P}_{product}}[e^{F_\Theta}])$. Training requires contrasting positive samples (real samples from the joint distribution) against negative samples (random cross-sample combinations of modality features).
+    - **Design Motivation**: Introduces no additional network parameters—the prediction head itself serves as the TC estimator, enabling a drop-in replacement for cross-entropy without any architectural change.
 
 ### Loss & Training
 

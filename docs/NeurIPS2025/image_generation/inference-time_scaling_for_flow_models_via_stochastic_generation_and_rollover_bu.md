@@ -20,8 +20,8 @@ content_hash: 3b4c37611636ab2a
 # Inference-Time Scaling for Flow Models via Stochastic Generation and Rollover Budget Forcing
 
 **Conference**: NeurIPS2025
-**arXiv**: [2503.19385](https://arxiv.org/abs/2503.19385)
-**Code**: [flow-inference-time-scaling](https://flow-inference-time-scaling.github.io/)
+**arXiv**: [2503.19385](https://arxiv.org/abs/2503.19385)  
+**Code**: [flow-inference-time-scaling](https://flow-inference-time-scaling.github.io/)  
 **Area**: Image Generation / Inference-Time Scaling
 **Keywords**: Flow Models, Inference-Time Scaling, Particle Sampling, SDE Conversion, Interpolant Conversion, Rollover Budget Forcing, FLUX
 

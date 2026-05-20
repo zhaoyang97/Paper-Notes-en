@@ -18,8 +18,8 @@ content_hash: e9faaafcf548ab2a
 # LACONIC: A 3D Layout Adapter for Controllable Image Creation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.03257](https://arxiv.org/abs/2507.03257)
-**Code**: N/A
+**arXiv**: [2507.03257](https://arxiv.org/abs/2507.03257)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: 3D layout guidance, image generation, diffusion model adapter, decoupled cross-attention, scene editing
 

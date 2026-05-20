@@ -18,8 +18,8 @@ content_hash: af7d6d64895f282f
 # GRAB: A Challenging GRaph Analysis Benchmark for Large Multimodal Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2408.11817](https://arxiv.org/abs/2408.11817)
-**Code**: [https://grab-benchmark.github.io](https://grab-benchmark.github.io)
+**arXiv**: [2408.11817](https://arxiv.org/abs/2408.11817)  
+**Code**: [https://grab-benchmark.github.io](https://grab-benchmark.github.io)  
 **Area**: Multimodal VLM
 **Keywords**: graph analysis, benchmark, large multimodal models, synthetic data, visual reasoning
 

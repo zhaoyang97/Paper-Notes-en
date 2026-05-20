@@ -19,8 +19,8 @@ content_hash: feaefa187c1f650e
 # AI Progress Should Be Measured by Capability-Per-Resource, Not Scale Alone: A Framework for Gradient-Guided Resource Allocation in LLMs
 
 **Conference**: NEURIPS2025
-**arXiv**: [2511.01077](https://arxiv.org/abs/2511.01077)
-**Code**: None (Position Paper)
+**arXiv**: [2511.01077](https://arxiv.org/abs/2511.01077)  
+**Code**: None (Position Paper)  
 **Area**: LLM Pre-training
 **Keywords**: capability-per-resource, gradient blueprint, parameter-efficient fine-tuning, resource efficiency, scaling law, sustainable AI
 

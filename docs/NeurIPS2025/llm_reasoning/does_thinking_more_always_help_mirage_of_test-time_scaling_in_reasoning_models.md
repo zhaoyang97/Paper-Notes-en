@@ -18,8 +18,8 @@ content_hash: 28ffc92ce6fe423b
 # Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04210](https://arxiv.org/abs/2506.04210)
-**Code**: None
+**arXiv**: [2506.04210](https://arxiv.org/abs/2506.04210)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Test-time scaling, overthinking, parallel thinking, variance analysis, Best-of-N
 
@@ -51,31 +51,31 @@ The paper is organized into two parts: analysis and solution. In the analysis pa
 
 1. **Two Test-Time Budget Control (TTBC) Strategies**
 
-   - **Function**: Systematically control the thinking length of reasoning models and observe performance changes.
-   - **Mechanism**:
+    - **Function**: Systematically control the thinking length of reasoning models and observe performance changes.
+    - **Mechanism**:
      - TTBC 1 (Wait & Think More): Whenever the model attempts to generate `</think>` to terminate thinking, this token is suppressed and "Wait" is appended, forcing the model to continue reasoning. The number of tokens is not fixed; only the number of "Wait" injections is controlled.
      - TTBC 2 (Exact Thinking Tokens): Forces the number of thinking tokens to be exactly $t_{\text{exact}}$, varied across [256, 512, 1024, 2048, 4096, 8192, 16384].
-   - **Design Motivation**: The two complementary control methods ensure that the observed non-monotonic trend is not an artifact of the control strategy itself.
+    - **Design Motivation**: The two complementary control methods ensure that the observed non-monotonic trend is not an artifact of the control strategy itself.
 
 2. **Probabilistic Framework — Theoretical Explanation of the Mirage Effect**
 
-   - **Function**: Explain using a simple one-dimensional Gaussian model why increasing variance leads to an expected reward that first rises and then falls.
-   - **Mechanism**: Assuming policy $\pi(y|x) = \mathcal{N}(\mu_\pi, \sigma_\pi^2)$ and reward $r(x,y) = \mathcal{N}(\mu_r, \sigma_r^2)$, the expected reward can be computed analytically as $\frac{1}{\sqrt{2\pi(\sigma_r^2 + \sigma_\pi^2)}} \cdot \exp\left(-\frac{(\mu_r - \mu_\pi)^2}{2(\sigma_r^2 + \sigma_\pi^2)}\right)$. Increasing $\sigma_\pi^2$ involves two competing effects: the **Coverage effect** (when variance is small, increasing it allows sampling to cover more of the region near the reward peak) vs. the **Dilution effect** (when variance is too large, probability mass disperses into regions far from the reward peak).
-   - **Design Motivation**: This framework explains why the non-monotonic trend does not imply that "moderate reasoning extension is beneficial"—the initial gain stems from increased randomness rather than improved reasoning quality.
+    - **Function**: Explain using a simple one-dimensional Gaussian model why increasing variance leads to an expected reward that first rises and then falls.
+    - **Mechanism**: Assuming policy $\pi(y|x) = \mathcal{N}(\mu_\pi, \sigma_\pi^2)$ and reward $r(x,y) = \mathcal{N}(\mu_r, \sigma_r^2)$, the expected reward can be computed analytically as $\frac{1}{\sqrt{2\pi(\sigma_r^2 + \sigma_\pi^2)}} \cdot \exp\left(-\frac{(\mu_r - \mu_\pi)^2}{2(\sigma_r^2 + \sigma_\pi^2)}\right)$. Increasing $\sigma_\pi^2$ involves two competing effects: the **Coverage effect** (when variance is small, increasing it allows sampling to cover more of the region near the reward peak) vs. the **Dilution effect** (when variance is too large, probability mass disperses into regions far from the reward peak).
+    - **Design Motivation**: This framework explains why the non-monotonic trend does not imply that "moderate reasoning extension is beneficial"—the initial gain stems from increased randomness rather than improved reasoning quality.
 
 3. **Empirical Validation via Entropy Measurement**
 
-   - **Function**: Directly measure the entropy of the model's output distribution at different thinking lengths.
-   - **Mechanism**: After each "Wait" injection, multiple answers are sampled from the model and the entropy $\mathbb{E}[-\log \pi(y|z_{1:i}, x)]$ of the answer distribution is computed. Results show that on GSM8K, entropy grows from 0.23 (standard reasoning, 385 tokens) to 2.79 (6,136 tokens)—a 12× increase.
-   - **Design Motivation**: Validates the theoretical prediction that extended thinking increases output variance rather than improving reasoning.
-   - **Additional Validation**: Repeating identical reasoning steps by concatenation (rather than continuing to reason) does not increase entropy, confirming that it is overthinking—not simply longer context—that causes variance inflation.
+    - **Function**: Directly measure the entropy of the model's output distribution at different thinking lengths.
+    - **Mechanism**: After each "Wait" injection, multiple answers are sampled from the model and the entropy $\mathbb{E}[-\log \pi(y|z_{1:i}, x)]$ of the answer distribution is computed. Results show that on GSM8K, entropy grows from 0.23 (standard reasoning, 385 tokens) to 2.79 (6,136 tokens)—a 12× increase.
+    - **Design Motivation**: Validates the theoretical prediction that extended thinking increases output variance rather than improving reasoning.
+    - **Additional Validation**: Repeating identical reasoning steps by concatenation (rather than continuing to reason) does not increase entropy, confirming that it is overthinking—not simply longer context—that causes variance inflation.
 
 4. **Parallel Thinking**
 
-   - **Function**: Under a fixed reasoning token budget $B$, generate $N$ independent reasoning paths and select the answer via majority voting.
-   - **Mechanism**: Generate $N$ independent paths $z^{(i)} \sim \pi(\cdot|x)$ satisfying $\sum_{i=1}^N |z^{(i)}| \leq B$. Each path produces an answer $y^{(i)}$, and the most frequently occurring answer is selected: $y^{\text{best}} = \arg\max_y \sum_i \mathbb{I}[y^{(i)} = y]$.
-   - **Design Motivation**: Avoids variance explosion along a single reasoning path. Multiple independent paths each maintain stable variance, and majority voting leverages consistency to filter for high-quality answers. This is essentially a reasoning-time variant of Best-of-N sampling.
-   - **Distinction from Prior Methods**: No additional reward model or verifier is required; self-consistency is used directly as the selection criterion.
+    - **Function**: Under a fixed reasoning token budget $B$, generate $N$ independent reasoning paths and select the answer via majority voting.
+    - **Mechanism**: Generate $N$ independent paths $z^{(i)} \sim \pi(\cdot|x)$ satisfying $\sum_{i=1}^N |z^{(i)}| \leq B$. Each path produces an answer $y^{(i)}$, and the most frequently occurring answer is selected: $y^{\text{best}} = \arg\max_y \sum_i \mathbb{I}[y^{(i)} = y]$.
+    - **Design Motivation**: Avoids variance explosion along a single reasoning path. Multiple independent paths each maintain stable variance, and majority voting leverages consistency to filter for high-quality answers. This is essentially a reasoning-time variant of Best-of-N sampling.
+    - **Distinction from Prior Methods**: No additional reward model or verifier is required; self-consistency is used directly as the selection criterion.
 
 ### Loss & Training
 

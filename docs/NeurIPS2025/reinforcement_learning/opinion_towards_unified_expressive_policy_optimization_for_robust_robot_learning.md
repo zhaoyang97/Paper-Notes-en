@@ -18,8 +18,8 @@ content_hash: 8cd2f68f61178620
 # Opinion: Towards Unified Expressive Policy Optimization for Robust Robot Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10087](https://arxiv.org/abs/2511.10087)
-**Code**: Unavailable
+**arXiv**: [2511.10087](https://arxiv.org/abs/2511.10087)  
+**Code**: Unavailable  
 **Area**: Reinforcement Learning / Robot Learning
 **Keywords**: Offline-to-Online RL, Diffusion Policy, Policy Diversity, Dynamics Modeling, D4RL
 

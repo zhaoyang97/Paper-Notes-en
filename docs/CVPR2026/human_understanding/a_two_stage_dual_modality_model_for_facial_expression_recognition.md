@@ -18,8 +18,8 @@ content_hash: 1c87c893350a27cc
 # A Two-Stage Dual-Modality Model for Facial Expression Recognition
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12221](https://arxiv.org/abs/2603.12221)
-**Code**: None
+**arXiv**: [2603.12221](https://arxiv.org/abs/2603.12221)  
+**Code**: None  
 **Area**: Human Understanding / Facial Expression Recognition
 **Keywords**: Facial Expression Recognition, DINOv2, Audio-Visual Fusion, Mixture of Experts, Data Augmentation
 

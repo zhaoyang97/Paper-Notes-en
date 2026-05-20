@@ -18,8 +18,8 @@ content_hash: b61d9387c0dea18d
 # Attention to the Burstiness in Visual Prompt Tuning!
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22908](https://arxiv.org/abs/2506.22908)
-**Code**: [GitHub](https://github.com/WangYZ1608/BPT)
+**arXiv**: [2506.22908](https://arxiv.org/abs/2506.22908)  
+**Code**: [GitHub](https://github.com/WangYZ1608/BPT)  
 **Area**: Parameter-Efficient Fine-Tuning / Visual Prompt Learning
 **Keywords**: Visual Prompt Tuning, Burstiness, Data Whitening, Bilinear Model, parameter-efficient fine-tuning
 

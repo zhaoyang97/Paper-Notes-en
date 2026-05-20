@@ -18,8 +18,8 @@ content_hash: fff3559160fa8d8e
 # Next Semantic Scale Prediction via Hierarchical Diffusion Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08632](https://arxiv.org/abs/2510.08632)
-**Code**: [https://github.com/zhouc20/HDLM](https://github.com/zhouc20/HDLM)
+**arXiv**: [2510.08632](https://arxiv.org/abs/2510.08632)  
+**Code**: [https://github.com/zhouc20/HDLM](https://github.com/zhouc20/HDLM)  
 **Area**: Image Generation / Diffusion Language Model
 **Keywords**: discrete diffusion model, hierarchical vocabulary, semantic scale prediction, language modeling, CTMC
 

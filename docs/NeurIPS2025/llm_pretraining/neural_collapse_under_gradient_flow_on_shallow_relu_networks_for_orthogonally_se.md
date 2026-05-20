@@ -19,9 +19,9 @@ content_hash: c71b5b79c217045a
 # Neural Collapse under Gradient Flow on Shallow ReLU Networks for Orthogonally Separable Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21078](https://arxiv.org/abs/2510.21078)
+**arXiv**: [2510.21078](https://arxiv.org/abs/2510.21078)  
 **Authors**: Hancheng Min (Shanghai Jiao Tong University), Zhihui Zhu (Ohio State University), René Vidal (University of Pennsylvania)
-**Code**: Not released
+**Code**: Not released  
 **Area**: LLM Pretraining
 **Keywords**: Neural Collapse, Gradient Flow, ReLU Networks, Implicit Bias, Orthogonally Separable Data, Maximum Margin
 

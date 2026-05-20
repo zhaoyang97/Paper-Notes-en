@@ -18,8 +18,8 @@ content_hash: 582d2f7db396732c
 # DisTime: Distribution-based Time Representation for Video Large Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.24329](https://arxiv.org/abs/2505.24329)
-**Code**: [GitHub](https://github.com/josephzpng/DisTime)
+**arXiv**: [2505.24329](https://arxiv.org/abs/2505.24329)  
+**Code**: [GitHub](https://github.com/josephzpng/DisTime)  
 **Area**: Video Understanding / Temporal Grounding
 **Keywords**: Video-LLM, time representation, distribution-based decoding, temporal grounding, time-sensitive datasets
 

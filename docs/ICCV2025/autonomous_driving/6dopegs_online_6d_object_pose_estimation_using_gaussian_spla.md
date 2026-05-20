@@ -18,8 +18,8 @@ content_hash: 645cba9ae9e55a1f
 # 6DOPE-GS: Online 6D Object Pose Estimation using Gaussian Splatting
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.01543](https://arxiv.org/abs/2412.01543)
-**Code**: No public code
+**arXiv**: [2412.01543](https://arxiv.org/abs/2412.01543)  
+**Code**: No public code  
 **Area**: Autonomous Driving
 **Keywords**: 6D Object Pose Estimation, Gaussian Splatting, Online Tracking, Model-Free, RGB-D
 

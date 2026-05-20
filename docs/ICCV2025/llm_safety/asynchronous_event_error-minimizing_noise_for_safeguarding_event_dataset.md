@@ -18,8 +18,8 @@ content_hash: 4bf66fd648ab1abc
 # Asynchronous Event Error-Minimizing Noise for Safeguarding Event Dataset
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.05728](https://arxiv.org/abs/2507.05728)
-**Code**: [https://github.com/rfww/uevs](https://github.com/rfww/uevs)
+**arXiv**: [2507.05728](https://arxiv.org/abs/2507.05728)  
+**Code**: [https://github.com/rfww/uevs](https://github.com/rfww/uevs)  
 **Area**: Data Security / Event Cameras
 **Keywords**: Unlearnable Examples, Event Camera, Dataset Protection, Error-Minimizing Noise, Asynchronous Event Stream
 

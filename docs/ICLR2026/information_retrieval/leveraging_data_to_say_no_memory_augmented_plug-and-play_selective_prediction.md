@@ -18,8 +18,8 @@ content_hash: 5966b808bd824e2a
 # Leveraging Data to Say No: Memory Augmented Plug-and-Play Selective Prediction
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.22570](https://arxiv.org/abs/2601.22570)
-**Code**: [https://github.com/kingston-aditya/MA-PaPSP](https://github.com/kingston-aditya/MA-PaPSP)
+**arXiv**: [2601.22570](https://arxiv.org/abs/2601.22570)  
+**Code**: [https://github.com/kingston-aditya/MA-PaPSP](https://github.com/kingston-aditya/MA-PaPSP)  
 **Area**: Information Retrieval
 **Keywords**: Selective Prediction, VLM Reliability, Retrieval Augmentation, Contrastive Scoring, CLIP
 

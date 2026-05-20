@@ -18,8 +18,8 @@ content_hash: 71c8f6ac6e45305b
 # CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.16966](https://arxiv.org/abs/2603.16966)
-**Code**: [Available](https://github.com/BSTLL/CineSRD)
+**arXiv**: [2603.16966](https://arxiv.org/abs/2603.16966)  
+**Code**: [Available](https://github.com/BSTLL/CineSRD)  
 **Area**: Video Understanding
 **Keywords**: Speaker Diarization, Multimodal Fusion, Visual Anchor Clustering, Audio Language Model, Open World
 

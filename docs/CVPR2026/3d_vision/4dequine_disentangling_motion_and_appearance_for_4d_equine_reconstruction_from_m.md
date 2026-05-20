@@ -19,8 +19,8 @@ content_hash: e9af4e1f98f55544
 # 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10125](https://arxiv.org/abs/2603.10125)
-**Code**: N/A
+**arXiv**: [2603.10125](https://arxiv.org/abs/2603.10125)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: 4D reconstruction, equine reconstruction, 3D Gaussian Splatting, parametric model, monocular video, feed-forward
 

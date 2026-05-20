@@ -18,8 +18,8 @@ content_hash: c057193ae0c31a25
 # Let's Think in Two Steps: Mitigating Agreement Bias in MLLMs with Self-Grounded Verification
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.11662](https://arxiv.org/abs/2507.11662)
-**Code**: [Project Page](https://github.com/GT-RIPL/SGV)
+**arXiv**: [2507.11662](https://arxiv.org/abs/2507.11662)  
+**Code**: [Project Page](https://github.com/GT-RIPL/SGV)  
 **Area**: Multimodal VLM
 **Keywords**: mllm-as-verifier, agreement-bias, self-grounded-verification, agent-evaluation, robotics
 

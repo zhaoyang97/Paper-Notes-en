@@ -18,8 +18,8 @@ content_hash: a3dcd5fd016393a8
 # Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21552](https://arxiv.org/abs/2602.21552)
-**Code**: [https://github.com/JuIvyy/GPOcc](https://github.com/JuIvyy/GPOcc)
+**arXiv**: [2602.21552](https://arxiv.org/abs/2602.21552)  
+**Code**: [https://github.com/JuIvyy/GPOcc](https://github.com/JuIvyy/GPOcc)  
 **Area**: Autonomous Driving
 **Keywords**: Occupancy Prediction, Visual Geometry Prior, Gaussian Representation, Ray Sampling, Streaming Update
 

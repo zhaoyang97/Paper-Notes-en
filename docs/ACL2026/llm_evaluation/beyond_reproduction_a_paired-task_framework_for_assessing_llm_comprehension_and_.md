@@ -17,8 +17,8 @@ content_hash: c38228812d107b5d
 # Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18169](https://arxiv.org/abs/2604.18169)
-**Code**: [github](https://github.com/NL2G/Beyond-Reproduction)
+**arXiv**: [2604.18169](https://arxiv.org/abs/2604.18169)  
+**Code**: [github](https://github.com/NL2G/Beyond-Reproduction)  
 **Area**: LLM Evaluation
 **Keywords**: Literary translation, translational creativity, source text comprehension, LLM evaluation, paired-task framework
 

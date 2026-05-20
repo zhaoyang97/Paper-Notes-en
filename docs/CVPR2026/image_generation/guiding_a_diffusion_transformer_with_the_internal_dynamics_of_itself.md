@@ -18,8 +18,8 @@ content_hash: e8656e9a3a094bd7
 # Guiding a Diffusion Transformer with the Internal Dynamics of Itself
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.24176](https://arxiv.org/abs/2512.24176)
-**Code**: [https://github.com/xy-chou/Internal-Guidance](https://github.com/xy-chou/Internal-Guidance) (project page)
+**arXiv**: [2512.24176](https://arxiv.org/abs/2512.24176)  
+**Code**: [https://github.com/xy-chou/Internal-Guidance](https://github.com/xy-chou/Internal-Guidance) (project page)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: internal guidance, intermediate-layer supervision, diffusion Transformer, sampling guidance, training acceleration
 

@@ -18,8 +18,8 @@ content_hash: 6a5f603285e3fb35
 # Addressing Overthinking in Large Vision-Language Models via Gated Perception-Reasoning Optimization
 
 **Conference**: ACL 2026
-**arXiv**: [2601.04442](https://arxiv.org/abs/2601.04442)
-**Code**: None
+**arXiv**: [2601.04442](https://arxiv.org/abs/2601.04442)  
+**Code**: None  
 **Area**: Multimodal VLM / Adaptive Computation
 **Keywords**: overthinking, perception-reasoning disentanglement, meta-reasoning controller, adaptive computation, multi-objective reinforcement learning
 

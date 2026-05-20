@@ -19,8 +19,8 @@ content_hash: 630974c313730861
 # Structure-based RNA Design by Step-wise Optimization of Latent Diffusion Model
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.19232](https://arxiv.org/abs/2601.19232)
-**Code**: [Available](https://github.com/darkflash03/SOLD)
+**arXiv**: [2601.19232](https://arxiv.org/abs/2601.19232)  
+**Code**: [Available](https://github.com/darkflash03/SOLD)  
 **Area**: Diffusion Models / RNA Inverse Folding / Reinforcement Learning
 **Keywords**: Latent Diffusion Model, RNA Inverse Folding, Reinforcement Learning, PPO, Step-wise Optimization, RNA-FM
 

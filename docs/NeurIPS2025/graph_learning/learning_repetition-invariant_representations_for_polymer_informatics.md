@@ -18,8 +18,8 @@ content_hash: 5a3ea91c903148f5
 # Learning Repetition-Invariant Representations for Polymer Informatics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.10726](https://arxiv.org/abs/2505.10726)
-**Code**: Available
+**arXiv**: [2505.10726](https://arxiv.org/abs/2505.10726)  
+**Code**: Available  
 **Area**: Graph Learning / Materials Science
 **Keywords**: Polymer Informatics, Repetition Invariance, Graph Neural Networks, Max Aggregation, Molecular Representation
 

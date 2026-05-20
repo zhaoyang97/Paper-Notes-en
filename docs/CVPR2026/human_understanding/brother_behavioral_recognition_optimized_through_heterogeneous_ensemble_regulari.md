@@ -18,8 +18,8 @@ content_hash: 00e1dfebfffb70bd
 # BROTHER: Behavioral Recognition Optimized Through Heterogeneous Ensemble Regularization for Ambivalence and Hesitancy
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14361](https://arxiv.org/abs/2603.14361)
-**Code**: Not released
+**arXiv**: [2603.14361](https://arxiv.org/abs/2603.14361)  
+**Code**: Not released  
 **Area**: Human Understanding
 **Keywords**: Ambivalence & Hesitancy Recognition, Multimodal Fusion, Ensemble Learning, Particle Swarm Optimization, Behavioral Analysis
 

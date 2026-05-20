@@ -18,8 +18,8 @@ content_hash: f42435bb1a58a910
 # TAPA: Training-Free Adaptation of Programmatic Agents via LLM-Guided Program Synthesis in Dynamic Environments
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.11425](https://arxiv.org/abs/2508.11425)
-**Code**: None
+**arXiv**: [2508.11425](https://arxiv.org/abs/2508.11425)  
+**Code**: None  
 **Area**: Code Intelligence
 **Keywords**: Programmatic Agent, LLM-guided program synthesis, dynamic environment adaptation, logical primitives, symbolic action space
 

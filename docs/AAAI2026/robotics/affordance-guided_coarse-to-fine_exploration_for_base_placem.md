@@ -18,8 +18,8 @@ content_hash: 58d1a28c19019728
 # Affordance-Guided Coarse-to-Fine Exploration for Base Placement in Open-Vocabulary Mobile Manipulation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06240](https://arxiv.org/abs/2511.06240)
-**Code**: None
+**arXiv**: [2511.06240](https://arxiv.org/abs/2511.06240)  
+**Code**: None  
 **Area**: Robot Manipulation / Mobile Manipulation / Embodied Intelligence
 **Keywords**: open-vocabulary mobile manipulation, base placement, affordance reasoning, VLM visual prompting, coarse-to-fine optimization
 

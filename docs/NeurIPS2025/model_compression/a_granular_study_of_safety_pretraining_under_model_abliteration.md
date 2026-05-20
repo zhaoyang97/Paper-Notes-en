@@ -18,8 +18,8 @@ content_hash: 0bc25f8b105dc99f
 # A Granular Study of Safety Pretraining under Model Abliteration
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.02768](https://arxiv.org/abs/2510.02768)
-**Code**: [GitHub](https://github.com/shashankskagnihotri/safety_pretraining)
+**arXiv**: [2510.02768](https://arxiv.org/abs/2510.02768)  
+**Code**: [GitHub](https://github.com/shashankskagnihotri/safety_pretraining)  
 **Area**: AI Safety / Model Compression
 **Keywords**: LLM safety, abliteration, safety pretraining, activation space editing, refusal behavior
 

@@ -17,8 +17,8 @@ content_hash: c81b4c7b16418cd8
 # Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.05790](https://arxiv.org/abs/2502.05790)
-**Code**: None
+**arXiv**: [2502.05790](https://arxiv.org/abs/2502.05790)  
+**Code**: None  
 **Area**: LLM Pretraining
 **Keywords**: Low-rank optimization, GaLore, importance sampling, LLM pretraining, memory efficiency
 

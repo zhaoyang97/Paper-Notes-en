@@ -19,7 +19,7 @@ content_hash: 9349f16f658988fc
 # Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.06043](https://arxiv.org/abs/2603.06043)
+**arXiv**: [2603.06043](https://arxiv.org/abs/2603.06043)  
 **Area**: Image Generation / Unified Multimodal Models
 **Keywords**: Unified Multimodal Models, Self-Supervised Reinforcement Learning, Intrinsic Reward, Text-Image Alignment, GRPO, Understanding-Enhanced Generation
 

@@ -18,8 +18,8 @@ content_hash: e98a86e5bac8959d
 # REINA: Regularized Entropy Information-Based Loss for Efficient Simultaneous Speech Translation
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04946](https://arxiv.org/abs/2508.04946)
-**Code**: None
+**arXiv**: [2508.04946](https://arxiv.org/abs/2508.04946)  
+**Code**: None  
 **Area**: Audio & Speech
 **Keywords**: Simultaneous speech translation, streaming translation, information theory, adaptive policy, speech translation
 

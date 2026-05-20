@@ -18,9 +18,9 @@ content_hash: 6b048e661653bcbc
 # Visual Instruction Bottleneck Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13946](https://arxiv.org/abs/2505.13946)
+**arXiv**: [2505.13946](https://arxiv.org/abs/2505.13946)  
 **Authors**: Changdae Oh, Jiatong Li, Shawn Im, Sharon Li (University of Wisconsin–Madison)
-**Code**: [deeplearning-wisc/vittle](https://github.com/deeplearning-wisc/vittle)
+**Code**: [deeplearning-wisc/vittle](https://github.com/deeplearning-wisc/vittle)  
 **Area**: Multimodal VLM
 **Keywords**: Information Bottleneck, Multimodal Large Language Models, Distribution Shift Robustness, Instruction Tuning, Representation Learning
 

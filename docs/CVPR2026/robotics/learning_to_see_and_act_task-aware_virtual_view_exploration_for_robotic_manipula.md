@@ -18,8 +18,8 @@ content_hash: 082b774c72fc058e
 # Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.05186](https://arxiv.org/abs/2508.05186)
-**Code**: [Available](https://github.com/) (TAVP)
+**arXiv**: [2508.05186](https://arxiv.org/abs/2508.05186)  
+**Code**: [Available](https://github.com/) (TAVP)  
 **Area**: Robotics / Embodied Intelligence
 **Keywords**: View exploration, multi-task manipulation, Mixture-of-Experts, virtual view rendering, reinforcement learning
 

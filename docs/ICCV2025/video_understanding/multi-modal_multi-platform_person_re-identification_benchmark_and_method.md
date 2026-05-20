@@ -18,8 +18,8 @@ content_hash: 08ae92bc2801f593
 # Multi-modal Multi-platform Person Re-Identification: Benchmark and Method
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.17096](https://arxiv.org/abs/2503.17096)
-**Code**: [GitHub](https://mp-reid.github.io/)
+**arXiv**: [2503.17096](https://arxiv.org/abs/2503.17096)  
+**Code**: [GitHub](https://mp-reid.github.io/)  
 **Area**: Video Understanding
 **Keywords**: Person Re-Identification, Multi-modal, Multi-platform, Prompt Learning, CLIP
 

@@ -18,8 +18,8 @@ content_hash: 19a6f6b43903b440
 # Learning Latent Transmission and Glare Maps for Lens Veiling Glare Removal
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.17353](https://arxiv.org/abs/2511.17353)
-**Code**: [GitHub](https://github.com/XiaolongQian/DeVeiler)
+**arXiv**: [2511.17353](https://arxiv.org/abs/2511.17353)  
+**Code**: [GitHub](https://github.com/XiaolongQian/DeVeiler)  
 **Area**: Image Generation
 **Keywords**: veiling glare removal, simplified optical systems, Stable Diffusion, physics-guided generation, invertible restoration
 

@@ -18,8 +18,8 @@ content_hash: e8f6890fffb7acda
 # Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.11146](https://arxiv.org/abs/2503.11146)
-**Code**: [swblaster/FedLUAR](https://github.com/swblaster/FedLUAR)
+**arXiv**: [2503.11146](https://arxiv.org/abs/2503.11146)  
+**Code**: [swblaster/FedLUAR](https://github.com/swblaster/FedLUAR)  
 **Area**: Optimization
 **Keywords**: federated learning, communication efficiency, gradient recycling, layer-wise aggregation, non-IID
 

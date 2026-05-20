@@ -18,8 +18,8 @@ content_hash: dd3da3528768dcde
 # How Far are AI-generated Videos from Simulating the 3D Visual World: A Learned 3D Evaluation Approach
 
 **Conference**: ICCV 2025
-**arXiv**: [2406.19568](https://arxiv.org/abs/2406.19568)
-**Code**: Not released
+**arXiv**: [2406.19568](https://arxiv.org/abs/2406.19568)  
+**Code**: Not released  
 **Area**: 3D Vision / Video Generation Evaluation / 3D Consistency
 **Keywords**: Video Evaluation, 3D Coherence, Monocular 3D Cues, Contrastive Learning, Deepfake Detection
 

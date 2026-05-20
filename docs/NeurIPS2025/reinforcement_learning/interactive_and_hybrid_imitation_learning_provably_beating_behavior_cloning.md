@@ -19,8 +19,8 @@ content_hash: 2675c727a60a94aa
 # Interactive and Hybrid Imitation Learning: Provably Beating Behavior Cloning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.07057](https://arxiv.org/abs/2412.07057)
-**Code**: None
+**arXiv**: [2412.07057](https://arxiv.org/abs/2412.07057)  
+**Code**: None  
 **Area**: Imitation Learning / Learning Theory
 **Keywords**: imitation learning, interactive learning, behavior cloning, DAgger, hybrid IL, sample complexity
 

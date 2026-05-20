@@ -18,8 +18,8 @@ content_hash: 4cfb921d9ff57bd3
 # GGTalker: Talking Head Synthesis with Generalizable Gaussian Priors and Identity-Specific Adaptation
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21513](https://arxiv.org/abs/2506.21513)
-**Code**: N/A
+**arXiv**: [2506.21513](https://arxiv.org/abs/2506.21513)  
+**Code**: N/A  
 **Area**: Human Understanding
 **Keywords**: Talking head synthesis, 3D Gaussian splatting, prior-adaptation, FLAME, large-scale pretraining
 
@@ -76,13 +76,13 @@ The FLAME parametric model is used as an intermediate representation throughout,
 
 3. **Customized Adaptation**
 
-   - **Expression-Visual Fine-tuning**: A coarse UV Gaussian map $\hat{M}_{id}$ is generated from the reference image, driven by FLAME parameters from the full training video, and rendered under supervision from ground-truth frames. FLAME parameters are first frozen while only $\hat{M}_{id}$ is optimized; both are then jointly optimized to correct monocular tracking errors.
+    - **Expression-Visual Fine-tuning**: A coarse UV Gaussian map $\hat{M}_{id}$ is generated from the reference image, driven by FLAME parameters from the full training video, and rendered under supervision from ground-truth frames. FLAME parameters are first frozen while only $\hat{M}_{id}$ is optimized; both are then jointly optimized to correct monocular tracking errors.
 
-   - **Audio-Expression Fine-tuning**: The audio encoder is frozen while the condition encoder and Transformer decoder are fine-tuned to adapt to the speaking style of the target identity. A low learning rate and early stopping are employed to prevent overfitting.
+    - **Audio-Expression Fine-tuning**: The audio encoder is frozen while the condition encoder and Transformer decoder are fine-tuned to adapt to the speaking style of the target identity. A low learning rate and early stopping are employed to prevent overfitting.
 
-   - **Color MLP $\mathcal{M}_{\text{SH}}$**: Dynamically adjusts Gaussian color attributes based on expression and pose parameters: $\mathbf{SH}_l = \mathcal{M}_{\text{SH}}(\hat{\mathbf{SH}_l}, \mathcal{F}_{exp}, \mathcal{F}_{pose})$, producing sharp textures aligned with motion.
+    - **Color MLP $\mathcal{M}_{\text{SH}}$**: Dynamically adjusts Gaussian color attributes based on expression and pose parameters: $\mathbf{SH}_l = \mathcal{M}_{\text{SH}}(\hat{\mathbf{SH}_l}, \mathcal{F}_{exp}, \mathcal{F}_{pose})$, producing sharp textures aligned with motion.
 
-   - **Body Inpainter $\mathcal{I}$**: A lightweight U-Net that blends the rendered head result with the torso and background, avoiding artifacts caused by hard compositing: $I_{vid} = \mathcal{I}(I_{res}, (1-\text{Dilate}(\mathbf{M}))I_{ori})$
+    - **Body Inpainter $\mathcal{I}$**: A lightweight U-Net that blends the rendered head result with the torso and background, avoiding artifacts caused by hard compositing: $I_{vid} = \mathcal{I}(I_{res}, (1-\text{Dilate}(\mathbf{M}))I_{ori})$
 
 ### Loss & Training
 

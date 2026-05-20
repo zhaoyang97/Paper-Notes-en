@@ -18,8 +18,8 @@ content_hash: f49960d9e1c26d57
 # Extend3D: Town-Scale 3D Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29387](https://arxiv.org/abs/2603.29387)
-**Code**: None (project page available)
+**arXiv**: [2603.29387](https://arxiv.org/abs/2603.29387)  
+**Code**: None (project page available)  
 **Area**: 3D Vision
 **Keywords**: 3D scene generation, large-scale scenes, training-free, extended latent space, voxel generation
 
@@ -31,9 +31,9 @@ This paper proposes Extend3D, a training-free 3D scene generation pipeline that 
 
 1. **Background**: 3D generative models (e.g., Trellis, Hunyuan3D) can already produce high-quality 3D objects, but are trained on object-level data and operate within fixed-size latent spaces for representing 3D content.
 2. **Limitations of Prior Work**:
-   - Fixed latent space size limits output detail; the larger the scene, the blurrier the result (analogous to low-resolution images);
-   - 3D scene datasets are scarce, restricting data-driven scene generation methods to a limited set of categories;
-   - Outpainting-based methods (e.g., SynCity, 3DTown) generate scenes block by block, resulting in inter-block inconsistencies and visible seams.
+    - Fixed latent space size limits output detail; the larger the scene, the blurrier the result (analogous to low-resolution images);
+    - 3D scene datasets are scarce, restricting data-driven scene generation methods to a limited set of categories;
+    - Outpainting-based methods (e.g., SynCity, 3DTown) generate scenes block by block, resulting in inter-block inconsistencies and visible seams.
 3. **Key Challenge**: The latent space of object-level models is insufficient to represent the fine-grained details of large-scale scenes, yet the lack of scene-level training data makes directly training a scene-level model infeasible.
 4. **Goal**: How to leverage pretrained object-level 3D generative models to achieve high-fidelity large-scale 3D scene generation?
 5. **Key Insight**: Drawing inspiration from MultiDiffusion for high-resolution 2D image generation, the authors extend the 3D latent space along the x/y directions and employ overlapping patch joint generation, while incorporating structural priors and optimization to address 3D-specific issues (e.g., ground plane disappearance, incorrect object rotation).
@@ -48,19 +48,19 @@ Extend3D follows a two-stage pipeline consistent with Trellis: sparse structure 
 ### Key Designs
 
 1. **Overlapping Patch-wise Flow**:
-   - **Function**: Enables multiple patches within the extended latent space to be generated simultaneously with mutual influence.
-   - **Mechanism**: The extended latent space $\mathbf{Z}_t \in \mathbb{R}^{aN \times bN \times N}$ (where $a, b$ are expansion factors) is partitioned into overlapping patches via a sliding window. Each patch independently computes a vector field, which is then aggregated by averaging over overlapping regions. Image conditions are cropped and aligned accordingly. The key formula is: $\bm{v}(\mathbf{Z}_t, \mathcal{I}, t) = \sum_{i,j} \phi_{i,j}^{-1}(\bm{v}_{i,j}) \oslash \sum_{i,j} \mathbf{1}_{\mathbb{W}_{i,j}}$
-   - **Design Motivation**: Unlike SynCity and similar methods that generate patches sequentially, overlapping patches allow adjacent regions to mutually correct each other. The small stride of the sliding window captures local structural variation, while central objects can leverage the strengths of the object-level model. Ablations show that $d=2$ causes local structural distortions, which are resolved at $d=4$.
+    - **Function**: Enables multiple patches within the extended latent space to be generated simultaneously with mutual influence.
+    - **Mechanism**: The extended latent space $\mathbf{Z}_t \in \mathbb{R}^{aN \times bN \times N}$ (where $a, b$ are expansion factors) is partitioned into overlapping patches via a sliding window. Each patch independently computes a vector field, which is then aggregated by averaging over overlapping regions. Image conditions are cropped and aligned accordingly. The key formula is: $\bm{v}(\mathbf{Z}_t, \mathcal{I}, t) = \sum_{i,j} \phi_{i,j}^{-1}(\bm{v}_{i,j}) \oslash \sum_{i,j} \mathbf{1}_{\mathbb{W}_{i,j}}$
+    - **Design Motivation**: Unlike SynCity and similar methods that generate patches sequentially, overlapping patches allow adjacent regions to mutually correct each other. The small stride of the sliding window captures local structural variation, while central objects can leverage the strengths of the object-level model. Ablations show that $d=2$ causes local structural distortions, which are resolved at $d=4$.
 
 2. **Under-noising SDEdit Initialization**:
-   - **Function**: Initializes scene structure from a monocular depth point cloud and inpaints occluded regions.
-   - **Mechanism**: The point cloud is voxelized and encoded into a latent variable $\mathbf{Z}_0^{(g)}$. Rather than using standard SDEdit (where $t_{\text{noise}} = t_{\text{start}}$), the method sets $t_{\text{start}} > t_{\text{noise}}$, i.e., the degree of denoising exceeds that of noising. This causes the model to treat missing or occluded regions as additional noise and complete them. The scene is progressively refined by iteratively applying $O_n = \text{SDEdit}(O_{n-1})$.
-   - **Design Motivation**: Standard SDEdit faces an inherent trade-off: a small $t_{\text{start}}$ fails to fill in gaps, while a large $t_{\text{start}}$ destroys existing structure. Under-noising breaks this trade-off, analogous to using high-frequency noise to enhance detail in super-resolution tasks.
+    - **Function**: Initializes scene structure from a monocular depth point cloud and inpaints occluded regions.
+    - **Mechanism**: The point cloud is voxelized and encoded into a latent variable $\mathbf{Z}_0^{(g)}$. Rather than using standard SDEdit (where $t_{\text{noise}} = t_{\text{start}}$), the method sets $t_{\text{start}} > t_{\text{noise}}$, i.e., the degree of denoising exceeds that of noising. This causes the model to treat missing or occluded regions as additional noise and complete them. The scene is progressively refined by iteratively applying $O_n = \text{SDEdit}(O_{n-1})$.
+    - **Design Motivation**: Standard SDEdit faces an inherent trade-off: a small $t_{\text{start}}$ fails to fill in gaps, while a large $t_{\text{start}}$ destroys existing structure. Under-noising breaks this trade-off, analogous to using high-frequency noise to enhance detail in super-resolution tasks.
 
 3. **3D-Aware Optimization (Optimize with Prior)**:
-   - **Function**: Optimizes the vector field at each denoising step to prevent the object-level model's denoising trajectory from drifting toward object-centric dynamics.
-   - **Mechanism**: Separate optimization losses are designed for each stage. For the sparse structure stage: $\mathcal{L}_{\text{SS}} = -\frac{1}{|\mathbb{P}|}\sum_{\bm{p}\in\mathbb{P}} \log \sigma((\mathcal{D}(\mathbf{Z}_t^{\text{SS}} - t\cdot\hat{\bm{v}}_t))_{\bm{p}})$, which constrains voxels at point cloud positions from vanishing. For the SLat stage: $\mathcal{L}_{\text{SLat}} = \text{LPIPS}(\hat{\mathcal{I}}, \mathcal{I}) - \text{SSIM}(\hat{\mathcal{I}}, \mathcal{I})$, which renders the 3D output to the input viewpoint via differentiable rendering and compares it against the original image.
-   - **Design Motivation**: During denoising, the object-level model tends to bias sub-scene outputs toward object-like structures (e.g., ground planes disappear, objects rotate arbitrarily). Optimization ensures that the denoising trajectory remains consistent with scene-level dynamics while eliminating inter-patch seams.
+    - **Function**: Optimizes the vector field at each denoising step to prevent the object-level model's denoising trajectory from drifting toward object-centric dynamics.
+    - **Mechanism**: Separate optimization losses are designed for each stage. For the sparse structure stage: $\mathcal{L}_{\text{SS}} = -\frac{1}{|\mathbb{P}|}\sum_{\bm{p}\in\mathbb{P}} \log \sigma((\mathcal{D}(\mathbf{Z}_t^{\text{SS}} - t\cdot\hat{\bm{v}}_t))_{\bm{p}})$, which constrains voxels at point cloud positions from vanishing. For the SLat stage: $\mathcal{L}_{\text{SLat}} = \text{LPIPS}(\hat{\mathcal{I}}, \mathcal{I}) - \text{SSIM}(\hat{\mathcal{I}}, \mathcal{I})$, which renders the 3D output to the input viewpoint via differentiable rendering and compares it against the original image.
+    - **Design Motivation**: During denoising, the object-level model tends to bias sub-scene outputs toward object-like structures (e.g., ground planes disappear, objects rotate arbitrarily). Optimization ensures that the denoising trajectory remains consistent with scene-level dynamics while eliminating inter-patch seams.
 
 ### Loss & Training
 

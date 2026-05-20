@@ -18,8 +18,8 @@ content_hash: b0e26a23cb23135b
 # MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01600](https://arxiv.org/abs/2604.01600)
-**Code**: [https://zitiantang.github.io/MM-ReCoder](https://zitiantang.github.io/MM-ReCoder)
+**arXiv**: [2604.01600](https://arxiv.org/abs/2604.01600)  
+**Code**: [https://zitiantang.github.io/MM-ReCoder](https://zitiantang.github.io/MM-ReCoder)  
 **Area**: Multimodal VLM / Code Generation
 **Keywords**: Chart-to-Code, Reinforcement Learning, Self-Correction, Multi-Turn Dialogue, GRPO
 

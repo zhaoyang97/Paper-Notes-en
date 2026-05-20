@@ -19,8 +19,8 @@ content_hash: ae81dc110fcb31f8
 # Beyond Pixel Simulation: Pathology Image Generation via Diagnostic Semantic Tokens and Prototype Control
 
 **Conference**: CVPR2026
-**arXiv**: [2512.21058](https://arxiv.org/abs/2512.21058)
-**Code**: [Hanminghao/UniPath](https://github.com/Hanminghao/UniPath)
+**arXiv**: [2512.21058](https://arxiv.org/abs/2512.21058)  
+**Code**: [Hanminghao/UniPath](https://github.com/Hanminghao/UniPath)  
 **Area**: Medical Imaging / Pathology Image Generation
 **Keywords**: pathology image generation, semantic control, diagnostic semantic tokens, prototype control, multi-stream condition injection, MLLM distillation
 

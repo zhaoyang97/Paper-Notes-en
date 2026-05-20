@@ -18,8 +18,8 @@ content_hash: 73701941f067130c
 # Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.12391](https://arxiv.org/abs/2604.12391)
-**Code**: [https://github.com/deep-optimization/CoM-PT](https://github.com/deep-optimization/CoM-PT)
+**arXiv**: [2604.12391](https://arxiv.org/abs/2604.12391)  
+**Code**: [https://github.com/deep-optimization/CoM-PT](https://github.com/deep-optimization/CoM-PT)  
 **Area**: Self-Supervised Learning / Training Acceleration
 **Keywords**: model chain, pre-training acceleration, inverse knowledge transfer, CLIP, vision foundation models
 
@@ -51,21 +51,21 @@ The model chain $C_M: m_1 \rightarrow m_2 \rightarrow \cdots \rightarrow m_n$ is
 
 1. **Inverse Weight Initialization**:
 
-   - **Function**: Reuses the knowledge of smaller models to initialize larger models in parameter space.
-   - **Mechanism**: (i) Width expansion: directly embeds the smaller teacher's parameters into the corresponding positions of the larger student, with remaining parameters randomly initialized; (ii) Depth expansion: copies each layer's weights as the successor layer. A straightforward function-preserving initialization strategy.
-   - **Design Motivation**: Leverages the already-trained smaller model's knowledge to provide a better starting point, accelerating convergence of the larger model.
+    - **Function**: Reuses the knowledge of smaller models to initialize larger models in parameter space.
+    - **Mechanism**: (i) Width expansion: directly embeds the smaller teacher's parameters into the corresponding positions of the larger student, with remaining parameters randomly initialized; (ii) Depth expansion: copies each layer's weights as the successor layer. A straightforward function-preserving initialization strategy.
+    - **Design Motivation**: Leverages the already-trained smaller model's knowledge to provide a better starting point, accelerating convergence of the larger model.
 
 2. **Inverse Feature Distillation**:
 
-   - **Function**: Reuses the dynamic knowledge of smaller models in feature space.
-   - **Mechanism**: $\mathcal{L}_{IFD}(F^t, F^s) = \alpha \| F^t - \mathbf{T}(F^s) \|_2^2$, projecting student features into the teacher feature space via transformation $\mathbf{T}(\cdot)$. In CLIP, distillation is applied to both visual and text features: $\hat{\mathcal{L}}_{IFD} = (\mathcal{L}_{IFD}(v^t,v^s) + \mathcal{L}_{IFD}(t^t,t^s))/2$.
-   - **Design Motivation**: Weight initialization transfers static knowledge, while feature distillation captures dynamic cross-sample knowledge; the two components work synergistically to ensure effective knowledge transfer relay.
+    - **Function**: Reuses the dynamic knowledge of smaller models in feature space.
+    - **Mechanism**: $\mathcal{L}_{IFD}(F^t, F^s) = \alpha \| F^t - \mathbf{T}(F^s) \|_2^2$, projecting student features into the teacher feature space via transformation $\mathbf{T}(\cdot)$. In CLIP, distillation is applied to both visual and text features: $\hat{\mathcal{L}}_{IFD} = (\mathcal{L}_{IFD}(v^t,v^s) + \mathcal{L}_{IFD}(t^t,t^s))/2$.
+    - **Design Motivation**: Weight initialization transfers static knowledge, while feature distillation captures dynamic cross-sample knowledge; the two components work synergistically to ensure effective knowledge transfer relay.
 
 3. **Three Principles for Model Chain Design**:
 
-   - **Function**: Guides the construction of an optimal model chain.
-   - **Mechanism**: (i) Optimal smallest model: selected based on data scale—small enough to maximize efficiency yet with sufficient capacity to fit the data distribution; (ii) Intermediate model variants: use expansion ratios of 2×–4×, with larger ratios optimizing cost and smaller ratios maximizing speedup; (iii) Training epoch allocation: decreases linearly along the model chain.
-   - **Design Motivation**: A counterintuitive phenomenon emerges—the ViT-T→S→B→L chain trains two additional models compared to ViT-B→L yet incurs 20% lower total cost.
+    - **Function**: Guides the construction of an optimal model chain.
+    - **Mechanism**: (i) Optimal smallest model: selected based on data scale—small enough to maximize efficiency yet with sufficient capacity to fit the data distribution; (ii) Intermediate model variants: use expansion ratios of 2×–4×, with larger ratios optimizing cost and smaller ratios maximizing speedup; (iii) Training epoch allocation: decreases linearly along the model chain.
+    - **Design Motivation**: A counterintuitive phenomenon emerges—the ViT-T→S→B→L chain trains two additional models compared to ViT-B→L yet incurs 20% lower total cost.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 57e586014443d065
 # Boost 3D Reconstruction using Diffusion-based Monocular Camera Calibration
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.17240](https://arxiv.org/abs/2411.17240)
-**Code**: [https://github.com/JunyuanDeng/DM-Calib](https://github.com/JunyuanDeng/DM-Calib)
+**arXiv**: [2411.17240](https://arxiv.org/abs/2411.17240)  
+**Code**: [https://github.com/JunyuanDeng/DM-Calib](https://github.com/JunyuanDeng/DM-Calib)  
 **Area**: 3D Vision
 **Keywords**: Monocular camera calibration, diffusion model, depth estimation, 3D reconstruction, Camera Image
 

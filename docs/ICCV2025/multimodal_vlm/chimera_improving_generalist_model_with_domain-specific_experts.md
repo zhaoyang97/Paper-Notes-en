@@ -18,8 +18,8 @@ content_hash: ea82601ee8ce52c3
 # Chimera: Improving Generalist Model with Domain-Specific Experts
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.05983](https://arxiv.org/abs/2412.05983)
-**Code**: Open-source (weights, data, evaluation)
+**arXiv**: [2412.05983](https://arxiv.org/abs/2412.05983)  
+**Code**: Open-source (weights, data, evaluation)  
 **Area**: Multimodal Large Models / VLM
 **Keywords**: Multimodal reasoning, expert model integration, domain adaptation, routing mechanism, visual content extraction
 

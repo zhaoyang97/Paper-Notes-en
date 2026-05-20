@@ -18,8 +18,8 @@ content_hash: 62dd7048a0396cc8
 # MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.09270](https://arxiv.org/abs/2512.09270)
-**Code**: [https://cmlab-korea.github.io/MoRel/](https://cmlab-korea.github.io/MoRel/)
+**arXiv**: [2512.09270](https://arxiv.org/abs/2512.09270)  
+**Code**: [https://cmlab-korea.github.io/MoRel/](https://cmlab-korea.github.io/MoRel/)  
 **Area**: 3D Vision
 **Keywords**: 4D Gaussian Splatting, dynamic scene reconstruction, long video modeling, temporal consistency, memory efficiency
 

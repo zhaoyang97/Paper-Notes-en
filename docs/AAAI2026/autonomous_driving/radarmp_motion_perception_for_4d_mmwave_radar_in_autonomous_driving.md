@@ -18,8 +18,8 @@ content_hash: deebdf573fbd9e58
 # RadarMP: Motion Perception for 4D mmWave Radar in Autonomous Driving
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12117](https://arxiv.org/abs/2511.12117)
-**Code**: [github.com/chengrui7/RadarMP](https://github.com/chengrui7/RadarMP)
+**arXiv**: [2511.12117](https://arxiv.org/abs/2511.12117)  
+**Code**: [github.com/chengrui7/RadarMP](https://github.com/chengrui7/RadarMP)  
 **Area**: Autonomous Driving
 **Keywords**: 4D mmWave radar, scene flow estimation, object detection, self-supervised learning, motion perception
 

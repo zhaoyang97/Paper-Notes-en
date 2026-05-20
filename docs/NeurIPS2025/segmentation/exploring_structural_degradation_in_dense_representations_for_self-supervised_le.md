@@ -18,8 +18,8 @@ content_hash: d34bf5096e30d4a4
 # Exploring Structural Degradation in Dense Representations for Self-supervised Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17299](https://arxiv.org/abs/2510.17299)
-**Code**: [GitHub](https://github.com/EldercatSAM/SSL-Degradation)
+**arXiv**: [2510.17299](https://arxiv.org/abs/2510.17299)  
+**Code**: [GitHub](https://github.com/EldercatSAM/SSL-Degradation)  
 **Area**: Image Segmentation
 **Keywords**: Self-supervised Learning, Dense Representations, Performance Degradation, Model Selection, Regularization
 

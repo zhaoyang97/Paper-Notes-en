@@ -18,8 +18,8 @@ content_hash: 8928b9ba5f83fb2a
 # Assessing LLMs for Serendipity Discovery in Knowledge Graphs: A Case for Drug Repurposing
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12472](https://arxiv.org/abs/2511.12472)
-**Code**: [cwru-db-group/serenQA](https://cwru-db-group.github.io/serenQA)
+**arXiv**: [2511.12472](https://arxiv.org/abs/2511.12472)  
+**Code**: [cwru-db-group/serenQA](https://cwru-db-group.github.io/serenQA)  
 **Area**: Graph Learning
 **Keywords**: Serendipity, Knowledge Graph Question Answering, LLM Evaluation, Drug Repurposing, information theory
 

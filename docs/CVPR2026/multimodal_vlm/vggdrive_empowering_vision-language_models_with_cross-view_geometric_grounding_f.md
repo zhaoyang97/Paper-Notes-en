@@ -18,8 +18,8 @@ content_hash: 7acc3e631e5d3d43
 # VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20794](https://arxiv.org/abs/2602.20794)
-**Code**: [https://github.com/WJ-CV/VGGDrive](https://github.com/WJ-CV/VGGDrive)
+**arXiv**: [2602.20794](https://arxiv.org/abs/2602.20794)  
+**Code**: [https://github.com/WJ-CV/VGGDrive](https://github.com/WJ-CV/VGGDrive)  
 **Area**: Multimodal VLM
 **Keywords**: Autonomous Driving, 3D Geometric Perception, VLM, VGGT, Cross-View
 

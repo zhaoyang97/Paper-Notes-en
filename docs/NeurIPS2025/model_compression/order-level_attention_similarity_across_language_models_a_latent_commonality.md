@@ -18,8 +18,8 @@ content_hash: 8239a6249570af74
 # Order-Level Attention Similarity Across Language Models: A Latent Commonality
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05064](https://arxiv.org/abs/2511.05064)
-**Code**: [Available](https://github.com/jinglin-liang/OLAS)
+**arXiv**: [2511.05064](https://arxiv.org/abs/2511.05064)  
+**Code**: [Available](https://github.com/jinglin-liang/OLAS)  
 **Area**: Model Analysis & Compression
 **Keywords**: Attention Mechanism, Language Model Similarity, Cross-Model Transfer, Syntactic Knowledge, Training-Free Adapter
 

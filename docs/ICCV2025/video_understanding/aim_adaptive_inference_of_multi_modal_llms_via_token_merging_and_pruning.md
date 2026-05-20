@@ -18,8 +18,8 @@ content_hash: 0778c46c636e6dea
 # AIM: Adaptive Inference of Multi-Modal LLMs via Token Merging and Pruning
 
 **Conference**: ICCV 2025
-**arXiv**: N/A
-**Code**: [GitHub](https://github.com/LaVi-Lab/AIM)
+**arXiv**: N/A  
+**Code**: [GitHub](https://github.com/LaVi-Lab/AIM)  
 **Area**: Video Understanding
 **Keywords**: token merging, token pruning, adaptive inference, multi-modal LLM, training-free
 

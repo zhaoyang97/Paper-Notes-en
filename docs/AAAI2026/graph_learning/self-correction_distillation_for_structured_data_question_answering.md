@@ -18,8 +18,8 @@ content_hash: bdef0876180608a9
 # Self-Correction Distillation for Structured Data Question Answering
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07998](https://arxiv.org/abs/2511.07998)
-**Code**: None
+**arXiv**: [2511.07998](https://arxiv.org/abs/2511.07998)  
+**Code**: None  
 **Area**: Graph Learning
 **Keywords**: Knowledge Distillation, Structured Data QA, CoT Distillation, Error Correction, Small Language Models
 

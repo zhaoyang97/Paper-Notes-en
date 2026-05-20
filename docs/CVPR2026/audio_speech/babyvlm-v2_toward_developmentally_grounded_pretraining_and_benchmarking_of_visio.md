@@ -18,8 +18,8 @@ content_hash: 3ba273b9298f8dfd
 # BabyVLM-V2: Toward Developmentally Grounded Pretraining and Benchmarking of Vision Foundation Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.10932](https://arxiv.org/abs/2512.10932)
-**Code**: [https://shawnking98.github.io/BabyVLM-v2/](https://shawnking98.github.io/BabyVLM-v2/)
+**arXiv**: [2512.10932](https://arxiv.org/abs/2512.10932)  
+**Code**: [https://shawnking98.github.io/BabyVLM-v2/](https://shawnking98.github.io/BabyVLM-v2/)  
 **Area**: Audio & Speech
 **Keywords**: Developmental Cognition, Infant Vision, Sample-Efficient Pretraining, NIH Baby Toolbox, DevCV Toolbox
 

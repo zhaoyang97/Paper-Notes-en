@@ -19,8 +19,8 @@ content_hash: bd335d05ce214c2a
 # Are Deep Speech Denoising Models Robust to Adversarial Noise?
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.11627](https://arxiv.org/abs/2503.11627)
-**Code**: [GitHub](https://github.com/audiolabs/speech-denoising-adversarial) (UMass Amherst + Dolby Labs)
+**arXiv**: [2503.11627](https://arxiv.org/abs/2503.11627)  
+**Code**: [GitHub](https://github.com/audiolabs/speech-denoising-adversarial) (UMass Amherst + Dolby Labs)  
 **Area**: Image Restoration
 **Keywords**: Adversarial Attack, Speech Denoising, Psychoacoustic Masking, DNS, Adversarial Robustness, PGD
 
@@ -48,31 +48,31 @@ Clean speech $x$ mixed with ambient noise $n$ is correctly processed by a DNS mo
 
 1. **Attack Objective — STOI Loss Minimization**
 
-   - **Function**: Minimize the Short-Time Objective Intelligibility (STOI) of the DNS output.
-   - **Mechanism**: STOI computes the frame-wise normalized cross-correlation between the clean reference and the denoised output and averages across frames. Its negation serves as the loss function, optimized via PGD gradient descent over the adversarial perturbation $\delta$.
-   - **Design Motivation**: STOI is highly correlated with human speech intelligibility and more directly reflects "comprehensibility" than perceptual quality metrics such as PESQ. Minimizing STOI is equivalent to maximizing speech unintelligibility.
-   - **Key Detail**: STOI is differentiable, enabling direct backpropagation of gradients to the input perturbation.
+    - **Function**: Minimize the Short-Time Objective Intelligibility (STOI) of the DNS output.
+    - **Mechanism**: STOI computes the frame-wise normalized cross-correlation between the clean reference and the denoised output and averages across frames. Its negation serves as the loss function, optimized via PGD gradient descent over the adversarial perturbation $\delta$.
+    - **Design Motivation**: STOI is highly correlated with human speech intelligibility and more directly reflects "comprehensibility" than perceptual quality metrics such as PESQ. Minimizing STOI is equivalent to maximizing speech unintelligibility.
+    - **Key Detail**: STOI is differentiable, enabling direct backpropagation of gradients to the input perturbation.
 
 2. **Psychoacoustic Imperceptibility Constraint**
 
-   - **Function**: Ensure that the adversarial perturbation remains below the auditory masking threshold so that the perturbed signal sounds identical to the original.
-   - **Mechanism**: The ISO MPEG-1 Psychoacoustic Model 2 (the standard model used in MP3 encoding) is employed to compute the masking threshold $T(k)$ for each frequency bin $k$. An additional 12 dB safety margin is applied to ensure sufficient imperceptibility, constraining the perturbation's power spectral density: $\mathrm{PSD}(\delta, k) \leq T(k) - 12\,\mathrm{dB}$.
-   - **Additional Consideration**: Pre-masking (~2 ms) and post-masking (~200 ms) temporal effects are incorporated, further relaxing the temporal-domain constraint to exploit the auditory system's temporal masking properties.
-   - **Design Motivation**: Traditional $L_\infty$ constraints do not reflect human auditory perception — the ear is more sensitive at low frequencies and tolerates larger perturbations at high frequencies. The psychoacoustic model precisely captures both frequency and temporal masking, providing a perceptually grounded bound rather than a fixed-norm constraint.
+    - **Function**: Ensure that the adversarial perturbation remains below the auditory masking threshold so that the perturbed signal sounds identical to the original.
+    - **Mechanism**: The ISO MPEG-1 Psychoacoustic Model 2 (the standard model used in MP3 encoding) is employed to compute the masking threshold $T(k)$ for each frequency bin $k$. An additional 12 dB safety margin is applied to ensure sufficient imperceptibility, constraining the perturbation's power spectral density: $\mathrm{PSD}(\delta, k) \leq T(k) - 12\,\mathrm{dB}$.
+    - **Additional Consideration**: Pre-masking (~2 ms) and post-masking (~200 ms) temporal effects are incorporated, further relaxing the temporal-domain constraint to exploit the auditory system's temporal masking properties.
+    - **Design Motivation**: Traditional $L_\infty$ constraints do not reflect human auditory perception — the ear is more sensitive at low frequencies and tolerates larger perturbations at high frequencies. The psychoacoustic model precisely captures both frequency and temporal masking, providing a perceptually grounded bound rather than a fixed-norm constraint.
 
 3. **PGD Optimization Procedure**
 
-   - **Function**: Iterative gradient projection to solve the constrained optimization problem.
-   - **Mechanism**: Standard PGD — gradient descent step followed by projection onto the psychoacoustic constraint set. Each update is $\delta \leftarrow \delta - \alpha \cdot \mathrm{sign}(\nabla)$, followed by per-frequency-bin clipping to remain below the masking threshold.
-   - **Key Detail**: 200 PGD steps with tuned learning rate; gradient clipping is applied for Full-SubNet+ to handle its known gradient explosion issue.
-   - **Initialization**: Zero initialization is more stable than random initialization.
+    - **Function**: Iterative gradient projection to solve the constrained optimization problem.
+    - **Mechanism**: Standard PGD — gradient descent step followed by projection onto the psychoacoustic constraint set. Each update is $\delta \leftarrow \delta - \alpha \cdot \mathrm{sign}(\nabla)$, followed by per-frequency-bin clipping to remain below the masking threshold.
+    - **Key Detail**: 200 PGD steps with tuned learning rate; gradient clipping is applied for Full-SubNet+ to handle its known gradient explosion issue.
+    - **Initialization**: Zero initialization is more stable than random initialization.
 
 4. **Four Evaluated DNS Models**
 
-   - **Demucs** (Meta): Time-domain U-Net with LSTM encoder-decoder architecture; largest parameter count.
-   - **Full-SubNet+ (FSN+)**: Frequency-domain full-band/sub-band network; known to suffer from gradient explosion (obfuscated gradients).
-   - **FRCRN** (Alibaba): Frequency-recurrent CRN with complex spectral processing; moderate parameter count.
-   - **MP-SENet**: Mask-enhanced network predicting both amplitude and phase simultaneously; most recent architecture.
+    - **Demucs** (Meta): Time-domain U-Net with LSTM encoder-decoder architecture; largest parameter count.
+    - **Full-SubNet+ (FSN+)**: Frequency-domain full-band/sub-band network; known to suffer from gradient explosion (obfuscated gradients).
+    - **FRCRN** (Alibaba): Frequency-recurrent CRN with complex spectral processing; moderate parameter count.
+    - **MP-SENet**: Mask-enhanced network predicting both amplitude and phase simultaneously; most recent architecture.
 
 ### Evaluation Conditions
 - **Acoustic Conditions**: Five SNR levels (70 dB / 30 dB / 10 dB / 5 dB / 0 dB) with and without reverberation, plus simulated over-the-air (OTA) transmission.

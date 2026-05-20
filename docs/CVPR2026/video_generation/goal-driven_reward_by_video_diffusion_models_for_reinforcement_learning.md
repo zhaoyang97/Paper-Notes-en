@@ -18,8 +18,8 @@ content_hash: 2d2c9ee81aef8837
 # Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.00961](https://arxiv.org/abs/2512.00961)
-**Code**: [https://qiwang067.github.io/genreward](https://qiwang067.github.io/genreward)
+**arXiv**: [2512.00961](https://arxiv.org/abs/2512.00961)  
+**Code**: [https://qiwang067.github.io/genreward](https://qiwang067.github.io/genreward)  
 **Area**: Diffusion Models / Reinforcement Learning
 **Keywords**: Video Diffusion Models, Goal-Driven Reward, Reinforcement Learning, Forward-Backward Representation, World Knowledge Transfer
 

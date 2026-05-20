@@ -18,8 +18,8 @@ content_hash: cb5ea030b1400aca
 # STAIR: Addressing Stage Misalignment through Temporal-Aligned Preference Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23802](https://arxiv.org/abs/2509.23802)
-**Code**: [GitHub](https://github.com/iiiiii11/STAIR)
+**arXiv**: [2509.23802](https://arxiv.org/abs/2509.23802)  
+**Code**: [GitHub](https://github.com/iiiiii11/STAIR)  
 **Area**: Reinforcement Learning
 **Keywords**: Preference-based Reinforcement Learning, Stage Alignment, Temporal Distance, Contrastive Learning, Multi-Stage Tasks
 

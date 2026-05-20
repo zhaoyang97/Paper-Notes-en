@@ -17,8 +17,8 @@ content_hash: 47ddb76b81494ee1
 # Structure-Aware Spectral Sparsification via Uniform Edge Sampling
 
 **Conference**: NEURIPS2025
-**arXiv**: [2510.12669](https://arxiv.org/abs/2510.12669)
-**Code**: None
+**arXiv**: [2510.12669](https://arxiv.org/abs/2510.12669)  
+**Code**: None  
 **Area**: Other
 **Keywords**: spectral sparsification, uniform sampling, spectral clustering, effective resistance, graph sparsification
 

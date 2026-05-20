@@ -18,8 +18,8 @@ content_hash: 2ab1494c9e4b93c0
 # Identifying and Evaluating Inactive Heads in Pretrained LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2504.03889](https://arxiv.org/abs/2504.03889)
-**Code**: [GitHub](https://github.com/psandovalsegura/inactive-heads)
+**arXiv**: [2504.03889](https://arxiv.org/abs/2504.03889)  
+**Code**: [GitHub](https://github.com/psandovalsegura/inactive-heads)  
 **Area**: LLM Pretraining / Model Analysis
 **Keywords**: Inactive Attention Head, Score Function, Attention Sink, Model Intervention, Head Output Norm
 
@@ -51,15 +51,15 @@ This paper systematically evaluates 12 scoring functions for identifying inactiv
 
 1. **12 Scoring Functions**
 
-   - **Function**: Quantify the activity level of attention heads along three dimensions.
-   - **Mechanism**: *Attention weight-based*—Avg Weight of First Token (AWFT): first-token average weight $\frac{1}{N}\sum_i \mathbf{A}_{i,0} > \tau$; Avg Entropy of Query Distributions (AEQD): average query distribution entropy $< \tau$ (low entropy = attention concentrated on few tokens). *Value vector-based*—First Token Value Vector Norm (FTVVN): first-token value norm $< \tau$; Avg Value Vector Norm (AVVN): average value norm $< \tau$. *Head output-based*—Last Token Head Output Norm (LTHON): last-token head output norm $< \tau$; Avg Head Output Norm (AHON): average head output norm $< \tau$. Each has a layer-normalized (LN) variant, dividing by the layer-average score across heads: $\frac{\text{AvgNorm}(\text{head}^i)}{\frac{1}{N_{\text{layer}}}\sum_j \text{AvgNorm}(\text{head}^j)}$.
-   - **Design Motivation**: Different functions capture different types of inactivity. IoU analysis reveals a maximum IoU of only 0.58 and maximum Precision of 0.73, confirming that different functions identify distinct head sets. Layer normalization addresses the large cross-layer and cross-model variance in raw scores.
+    - **Function**: Quantify the activity level of attention heads along three dimensions.
+    - **Mechanism**: *Attention weight-based*—Avg Weight of First Token (AWFT): first-token average weight $\frac{1}{N}\sum_i \mathbf{A}_{i,0} > \tau$; Avg Entropy of Query Distributions (AEQD): average query distribution entropy $< \tau$ (low entropy = attention concentrated on few tokens). *Value vector-based*—First Token Value Vector Norm (FTVVN): first-token value norm $< \tau$; Avg Value Vector Norm (AVVN): average value norm $< \tau$. *Head output-based*—Last Token Head Output Norm (LTHON): last-token head output norm $< \tau$; Avg Head Output Norm (AHON): average head output norm $< \tau$. Each has a layer-normalized (LN) variant, dividing by the layer-average score across heads: $\frac{\text{AvgNorm}(\text{head}^i)}{\frac{1}{N_{\text{layer}}}\sum_j \text{AvgNorm}(\text{head}^j)}$.
+    - **Design Motivation**: Different functions capture different types of inactivity. IoU analysis reveals a maximum IoU of only 0.58 and maximum Precision of 0.73, confirming that different functions identify distinct head sets. Layer normalization addresses the large cross-layer and cross-model variance in raw scores.
 
 2. **Dynamic Model Intervention Validation**
 
-   - **Function**: Verify whether heads identified by each scoring function are truly inactive.
-   - **Mechanism**: For each forward pass, a boolean mask $\mathbf{B} \in \{0,1\}^{N_{\text{heads}} \times N_{\text{layers}}}$ is constructed based on per-input scores and thresholds; heads marked True have their outputs zeroed prior to concatenation and output projection. MMLU 5-shot accuracy is then evaluated. Thresholds are dynamically selected via CDF quantiles ($p = 0, 5, 10, \ldots, 30$) computed over MMLU inputs, controlling the maximum fraction of zeroed heads to 30%. Random zeroing serves as a baseline.
-   - **Design Motivation**: Unlike permanent pruning, dynamic zeroing determines inactivity per input, providing a more precise measure of per-forward-pass computational waste. If identified heads are truly inactive, zeroing them should yield negligible accuracy degradation.
+    - **Function**: Verify whether heads identified by each scoring function are truly inactive.
+    - **Mechanism**: For each forward pass, a boolean mask $\mathbf{B} \in \{0,1\}^{N_{\text{heads}} \times N_{\text{layers}}}$ is constructed based on per-input scores and thresholds; heads marked True have their outputs zeroed prior to concatenation and output projection. MMLU 5-shot accuracy is then evaluated. Thresholds are dynamically selected via CDF quantiles ($p = 0, 5, 10, \ldots, 30$) computed over MMLU inputs, controlling the maximum fraction of zeroed heads to 30%. Random zeroing serves as a baseline.
+    - **Design Motivation**: Unlike permanent pruning, dynamic zeroing determines inactivity per input, providing a more precise measure of per-forward-pass computational waste. If identified heads are truly inactive, zeroing them should yield negligible accuracy degradation.
 
 ### Loss & Training
 

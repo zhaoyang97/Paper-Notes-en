@@ -18,8 +18,8 @@ content_hash: 4d4495f451b75362
 # MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.07021](https://arxiv.org/abs/2509.07021)
-**Code**: To be released
+**arXiv**: [2509.07021](https://arxiv.org/abs/2509.07021)  
+**Code**: To be released  
 **Area**: 3D Vision / Rendering Compression
 **Keywords**: 3D Gaussian Splatting, memory compression, spherical harmonic replacement, Spherical Gaussians, unified pruning
 

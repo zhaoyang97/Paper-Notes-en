@@ -18,8 +18,8 @@ content_hash: d70d99161ca2b732
 # Efficient Estimation of Kernel Surrogate Models for Task Attribution
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.03783](https://arxiv.org/abs/2602.03783)
-**Code**: [https://github.com/VirtuosoResearch/Kernel-surrogate-models](https://github.com/VirtuosoResearch/Kernel-surrogate-models)
+**arXiv**: [2602.03783](https://arxiv.org/abs/2602.03783)  
+**Code**: [https://github.com/VirtuosoResearch/Kernel-surrogate-models](https://github.com/VirtuosoResearch/Kernel-surrogate-models)  
 **Area**: Reinforcement Learning
 **Keywords**: task attribution, kernel surrogate model, influence function, data attribution, kernel ridge regression
 
@@ -49,22 +49,22 @@ Given $K$ training tasks → sample $m$ binary subset vectors $\mathbf{s} \in \{
 
 1. **Unified Analysis of Linear Surrogates and Influence Functions**:
 
-   - Function: Prove that linear surrogate model coefficients are equivalent to influence functions under a first-order approximation.
-   - Mechanism: Apply a second-order Taylor expansion to $F(\mathbf{s})$, substitute into the linear regression objective, and analyze the regression coefficients via the delta method. Proposition 3.1 establishes $\|\hat{\beta} - \nabla_\mathbf{s} F(\mathbf{s}^*) - \text{second-order correction}\| \lesssim c_3 K^{3/2} p^{-1}$.
-   - Design Motivation: Reveals the fundamental limitation of linear surrogates—when the norm of the Hessian $\mathbf{H}_\mathbf{s}$ is non-negligible, neither linear surrogates nor influence functions can accurately attribute task contributions.
+    - Function: Prove that linear surrogate model coefficients are equivalent to influence functions under a first-order approximation.
+    - Mechanism: Apply a second-order Taylor expansion to $F(\mathbf{s})$, substitute into the linear regression objective, and analyze the regression coefficients via the delta method. Proposition 3.1 establishes $\|\hat{\beta} - \nabla_\mathbf{s} F(\mathbf{s}^*) - \text{second-order correction}\| \lesssim c_3 K^{3/2} p^{-1}$.
+    - Design Motivation: Reveals the fundamental limitation of linear surrogates—when the norm of the Hessian $\mathbf{H}_\mathbf{s}$ is non-negligible, neither linear surrogates nor influence functions can accurately attribute task contributions.
 
 2. **RBF Kernel Surrogate Model (KernelSM)**:
 
-   - Function: Replace linear regression with kernel ridge regression to learn nonlinear task interactions.
-   - Mechanism: $g_\theta(\mathbf{s}) = \sum_i \theta_i k(\mathbf{s}^{(i)}, \mathbf{s})$, where $k(\mathbf{s}^{(a)}, \mathbf{s}^{(b)}) = \exp(-\gamma \|\mathbf{s}^{(a)} - \mathbf{s}^{(b)}\|^2)$. The closed-form solution for the coefficients is $\theta = (\mathcal{K} + \lambda I)^{-1} \mathbf{F}$.
-   - Design Motivation: The RBF kernel is a universal approximator on the binary space $\{0,1\}^K$, and its geometric intuition naturally matches the subset space—similar subsets (close in Hamming distance) should yield similar performance.
+    - Function: Replace linear regression with kernel ridge regression to learn nonlinear task interactions.
+    - Mechanism: $g_\theta(\mathbf{s}) = \sum_i \theta_i k(\mathbf{s}^{(i)}, \mathbf{s})$, where $k(\mathbf{s}^{(a)}, \mathbf{s}^{(b)}) = \exp(-\gamma \|\mathbf{s}^{(a)} - \mathbf{s}^{(b)}\|^2)$. The closed-form solution for the coefficients is $\theta = (\mathcal{K} + \lambda I)^{-1} \mathbf{F}$.
+    - Design Motivation: The RBF kernel is a universal approximator on the binary space $\{0,1\}^K$, and its geometric intuition naturally matches the subset space—similar subsets (close in Hamming distance) should yield similar performance.
 
 3. **Efficient Estimation via Gradient Projection (Core Contribution)**:
 
-   - Function: Avoid retraining the model for each subset $\mathbf{s}^{(i)}$ by using a first-order Taylor approximation to estimate $F(\mathbf{s}^{(i)})$.
-   - Mechanism: Perform a first-order expansion at the pretrained weights $W_0$: $f_W(x) \approx f_{W_0}(x) + \langle \nabla f_{W_0}(x), W - W_0 \rangle$. For each subset $\mathbf{s}^{(i)}$, solve for the optimal perturbation $Z^*_{\mathbf{s}^{(i)}}$ via multinomial logistic regression using projected gradients as features, then estimate $\hat{f}(x) = f_{W_0}(x) + \langle \nabla f_{W_0}(x), Z^*_{\mathbf{s}^{(i)}} \rangle$.
-   - Design Motivation: Gradients need only be computed once at $W_0$; all subsequent subset estimations reduce to linear algebra on CPU. Empirical validation shows that the first-order approximation error is less than 2%.
-   - Key Technique: Gaussian random convolution is used to project high-dimensional gradient vectors into a low-dimensional space, reducing regression solving to a matter of seconds.
+    - Function: Avoid retraining the model for each subset $\mathbf{s}^{(i)}$ by using a first-order Taylor approximation to estimate $F(\mathbf{s}^{(i)})$.
+    - Mechanism: Perform a first-order expansion at the pretrained weights $W_0$: $f_W(x) \approx f_{W_0}(x) + \langle \nabla f_{W_0}(x), W - W_0 \rangle$. For each subset $\mathbf{s}^{(i)}$, solve for the optimal perturbation $Z^*_{\mathbf{s}^{(i)}}$ via multinomial logistic regression using projected gradients as features, then estimate $\hat{f}(x) = f_{W_0}(x) + \langle \nabla f_{W_0}(x), Z^*_{\mathbf{s}^{(i)}} \rangle$.
+    - Design Motivation: Gradients need only be computed once at $W_0$; all subsequent subset estimations reduce to linear algebra on CPU. Empirical validation shows that the first-order approximation error is less than 2%.
+    - Key Technique: Gaussian random convolution is used to project high-dimensional gradient vectors into a low-dimensional space, reducing regression solving to a matter of seconds.
 
 ### Loss & Training
 Kernel ridge regression objective: $\min_{g_\theta} \sum_{i=1}^m (F(\mathbf{s}^{(i)}) - g_\theta(\mathbf{s}^{(i)}))^2 + \lambda \|g_\theta\|^2_\mathcal{K}$

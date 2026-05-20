@@ -18,8 +18,8 @@ content_hash: 7d6beef2ea7c19dd
 # GraphKeeper: Graph Domain-Incremental Learning via Knowledge Disentanglement and Preservation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00097](https://arxiv.org/abs/2511.00097)
-**Code**: [GitHub](https://github.com/RingBDStack/GraphKeeper)
+**arXiv**: [2511.00097](https://arxiv.org/abs/2511.00097)  
+**Code**: [GitHub](https://github.com/RingBDStack/GraphKeeper)  
 **Area**: Social Computing
 **Keywords**: Graph Incremental Learning, Domain-Incremental Learning, LoRA, Knowledge Disentanglement, Catastrophic Forgetting
 

@@ -19,8 +19,8 @@ content_hash: 5c06305e172a8f1d
 # BecomingLit: Relightable Gaussian Avatars with Hybrid Neural Shading
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06271](https://arxiv.org/abs/2506.06271)
-**Code**: [jonathsch.github.io/becominglit](https://jonathsch.github.io/becominglit)
+**arXiv**: [2506.06271](https://arxiv.org/abs/2506.06271)  
+**Code**: [jonathsch.github.io/becominglit](https://jonathsch.github.io/becominglit)  
 **Area**: 3D Vision
 **Keywords**: relightable avatar, 3D Gaussian Splatting, hybrid neural shading, light stage, BRDF, face reconstruction
 

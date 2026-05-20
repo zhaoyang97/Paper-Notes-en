@@ -18,8 +18,8 @@ content_hash: 91836e626112bf0b
 # LiveWeb-IE: A Benchmark For Online Web Information Extraction
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.13773](https://arxiv.org/abs/2603.13773)
-**Code**: [GitHub](https://github.com/sbY99/LiveWeb-IE)
+**arXiv**: [2603.13773](https://arxiv.org/abs/2603.13773)  
+**Code**: [GitHub](https://github.com/sbY99/LiveWeb-IE)  
 **Area**: Multimodal VLM
 **Keywords**: Web information extraction, online evaluation, visual grounding, XPath generation, multimodal agent
 

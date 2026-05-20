@@ -18,8 +18,8 @@ content_hash: a623f43062284611
 # Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.01422](https://arxiv.org/abs/2503.01422)
-**Code**: [https://github.com/Alsace08/ST-BoN](https://github.com/Alsace08/ST-BoN)
+**arXiv**: [2503.01422](https://arxiv.org/abs/2503.01422)  
+**Code**: [https://github.com/Alsace08/ST-BoN](https://github.com/Alsace08/ST-BoN)  
 **Area**: LLM Reasoning / Test-Time Computation
 **Keywords**: Best-of-N, test-time scaling, early truncation, latent consistency, token efficiency
 

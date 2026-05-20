@@ -18,8 +18,8 @@ content_hash: fe24d0cbfa41605a
 # Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.18184](https://arxiv.org/abs/2506.18184)
-**Code**: [GitHub](https://github.com/Intelligent-Computing-Lab-Panda/Memba)
+**arXiv**: [2506.18184](https://arxiv.org/abs/2506.18184)  
+**Code**: [GitHub](https://github.com/Intelligent-Computing-Lab-Panda/Memba)  
 **Area**: Model Compression
 **Keywords**: Mamba, PEFT, membrane potential, leaky integration, state space models
 

@@ -18,8 +18,8 @@ content_hash: e0d2935b2ae466d5
 # Text-Guided Channel Perturbation and Pretrained Knowledge Integration for Unified Multi-Modality Image Fusion
 
 **Conference**: AAAI2026
-**arXiv**: [2511.12432](https://arxiv.org/abs/2511.12432)
-**Code**: To be confirmed
+**arXiv**: [2511.12432](https://arxiv.org/abs/2511.12432)  
+**Code**: To be confirmed  
 **Area**: Image Fusion / Multi-Modality
 **Keywords**: Multi-modality image fusion, unified model, channel perturbation, CLIP text guidance, pretrained knowledge
 

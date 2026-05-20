@@ -18,8 +18,8 @@ content_hash: 5958eebd5b6dfc42
 # Shuffle-R1: Efficient RL Framework for Multimodal Large Language Models via Data-centric Dynamic Shuffle
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.05612](https://arxiv.org/abs/2508.05612)
-**Code**: [https://xenozlh.github.io/Shuffle-R1](https://xenozlh.github.io/Shuffle-R1)
+**arXiv**: [2508.05612](https://arxiv.org/abs/2508.05612)  
+**Code**: [https://xenozlh.github.io/Shuffle-R1](https://xenozlh.github.io/Shuffle-R1)  
 **Area**: Multimodal VLM
 **Keywords**: Reinforcement Learning, Multimodal Reasoning, Data-centric Optimization, Trajectory Sampling, GRPO
 

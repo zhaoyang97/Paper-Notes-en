@@ -20,8 +20,8 @@ content_hash: 2f098f0246adb4e3
 # Heterogeneous Decentralized Diffusion Models
 
 **Conference**: CVPR2026
-**arXiv**: [2603.06741](https://arxiv.org/abs/2603.06741)
-**Code**: To be confirmed
+**arXiv**: [2603.06741](https://arxiv.org/abs/2603.06741)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: Decentralized diffusion models, heterogeneous training objectives, DDPM, Flow Matching, mixture of experts, DiT, PixArt-α
 

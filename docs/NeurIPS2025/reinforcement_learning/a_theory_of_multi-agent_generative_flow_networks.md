@@ -18,8 +18,8 @@ content_hash: 84503cec4bae65d7
 # A Theory of Multi-Agent Generative Flow Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20408](https://arxiv.org/abs/2509.20408)
-**Code**: None
+**arXiv**: [2509.20408](https://arxiv.org/abs/2509.20408)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: GFlowNet, multi-agent, flow matching, CTDE, cooperative decision-making
 

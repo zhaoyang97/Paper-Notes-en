@@ -18,8 +18,8 @@ content_hash: e2f377905e3e3ebf
 # SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.13812](https://arxiv.org/abs/2507.13812)
-**Code**: N/A
+**arXiv**: [2507.13812](https://arxiv.org/abs/2507.13812)  
+**Code**: N/A  
 **Area**: 3D Vision / Remote Sensing
 **Keywords**: Remote sensing foundation model, multi-modal learning, unified Transformer, self-supervised learning, Mixture of Experts
 

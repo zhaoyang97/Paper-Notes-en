@@ -18,8 +18,8 @@ content_hash: a3bc9d3924eab415
 # Speeding Up the Learning of 3D Gaussians with Much Shorter Gaussian Lists
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09277](https://arxiv.org/abs/2603.09277)
-**Code**: [MachinePerceptionLab/ShorterSplatting](https://github.com/MachinePerceptionLab/ShorterSplatting)
+**arXiv**: [2603.09277](https://arxiv.org/abs/2603.09277)  
+**Code**: [MachinePerceptionLab/ShorterSplatting](https://github.com/MachinePerceptionLab/ShorterSplatting)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Training Acceleration, Scale Reset, Entropy Constraint, Gaussian List Shortening
 

@@ -18,8 +18,8 @@ content_hash: 90d558307a832cbe
 # Conformal Prediction for Causal Effects of Continuous Treatments
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2407.03094](https://arxiv.org/abs/2407.03094)
-**Code**: [GitHub](https://github.com/m-schroder/ContinuousCausalCP)
+**arXiv**: [2407.03094](https://arxiv.org/abs/2407.03094)  
+**Code**: [GitHub](https://github.com/m-schroder/ContinuousCausalCP)  
 **Area**: Causal Inference / Conformal Prediction
 **Keywords**: conformal prediction, Continuous Treatment, Causal Inference, Propensity Score, Uncertainty Quantification, Potential Outcomes
 

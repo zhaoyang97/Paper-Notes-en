@@ -18,8 +18,8 @@ content_hash: d0823c4791c0a061
 # Anti-Tamper Protection for Unauthorized Individual Image Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.06325](https://arxiv.org/abs/2508.06325)
-**Code**: [https://github.com/Seeyn/Anti-Tamper-Perturbation](https://github.com/Seeyn/Anti-Tamper-Perturbation)
+**arXiv**: [2508.06325](https://arxiv.org/abs/2508.06325)  
+**Code**: [https://github.com/Seeyn/Anti-Tamper-Perturbation](https://github.com/Seeyn/Anti-Tamper-Perturbation)  
 **Area**: AI Security / Image Generation Protection
 **Keywords**: anti-tamper protection, personalized image generation, adversarial perturbation, frequency-domain watermarking, image copyright
 

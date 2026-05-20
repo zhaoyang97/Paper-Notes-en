@@ -18,8 +18,8 @@ content_hash: ccf78032f0068934
 # From Attribution to Action: Jointly ALIGNing Predictions and Explanations
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06944](https://arxiv.org/abs/2511.06944)
-**Code**: None
+**arXiv**: [2511.06944](https://arxiv.org/abs/2511.06944)  
+**Code**: None  
 **Area**: Segmentation
 **Keywords**: Explanation-Guided Learning, Domain Generalization, Interpretability, Grad-CAM, Mask Learning
 

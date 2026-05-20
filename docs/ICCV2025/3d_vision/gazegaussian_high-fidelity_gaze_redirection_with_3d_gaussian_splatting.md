@@ -18,8 +18,8 @@ content_hash: 14706a0c72b6747c
 # GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.12981](https://arxiv.org/abs/2411.12981)
-**Code**: [GitHub](https://ucwxb.github.io/GazeGaussian)
+**arXiv**: [2411.12981](https://arxiv.org/abs/2411.12981)  
+**Code**: [GitHub](https://ucwxb.github.io/GazeGaussian)  
 **Area**: 3D Vision
 **Keywords**: Gaze Redirection, 3D Gaussian Splatting, Head Avatar Synthesis, Dual-Stream Model, Eyeball Rotation Representation
 

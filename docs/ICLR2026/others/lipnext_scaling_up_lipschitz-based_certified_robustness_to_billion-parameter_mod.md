@@ -17,8 +17,8 @@ content_hash: a92c87ff3be052f9
 # LipNeXt: Scaling up Lipschitz-based Certified Robustness to Billion-parameter Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.18513](https://arxiv.org/abs/2601.18513)
-**Code**: None
+**arXiv**: [2601.18513](https://arxiv.org/abs/2601.18513)  
+**Code**: None  
 **Area**: Others / Adversarial Robustness
 **Keywords**: Lipschitz constraints, certified robustness, orthogonal matrices, manifold optimization, spatial shift module
 

@@ -18,8 +18,8 @@ content_hash: 23a6603f4b6f9641
 # Predictive Feature Caching for Training-free Acceleration of Molecular Geometry Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04646](https://arxiv.org/abs/2510.04646)
-**Code**: None
+**arXiv**: [2510.04646](https://arxiv.org/abs/2510.04646)  
+**Code**: None  
 **Area**: Molecular Generation / Inference Acceleration
 **Keywords**: molecular geometry generation, flow matching, feature caching, training-free acceleration, SE(3) equivariance
 

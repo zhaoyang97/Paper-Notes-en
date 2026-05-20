@@ -18,8 +18,8 @@ content_hash: 7c93013d3bb9abe0
 # On the Robustness of Diffusion-Based Image Compression to Bit-Flip Errors
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05743](https://arxiv.org/abs/2604.05743)
-**Code**: None (the paper mentions a reference implementation but provides no specific link)
+**arXiv**: [2604.05743](https://arxiv.org/abs/2604.05743)  
+**Code**: None (the paper mentions a reference implementation but provides no specific link)  
 **Area**: Image Compression / Model Robustness
 **Keywords**: Diffusion Models, Image Compression, Bit-Flip Errors, Channel Robustness, Reverse Channel Coding
 

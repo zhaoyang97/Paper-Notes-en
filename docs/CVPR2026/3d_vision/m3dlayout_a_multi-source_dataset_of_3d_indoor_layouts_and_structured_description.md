@@ -18,8 +18,8 @@ content_hash: b51bb59c19595aa0
 # M3DLayout: A Multi-Source Dataset of 3D Indoor Layouts and Structured Descriptions for 3D Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.23728](https://arxiv.org/abs/2509.23728)
-**Code**: [GitHub](https://github.com/Graphic-Kiliani/M3DLayout-code)
+**arXiv**: [2509.23728](https://arxiv.org/abs/2509.23728)  
+**Code**: [GitHub](https://github.com/Graphic-Kiliani/M3DLayout-code)  
 **Area**: 3D Vision
 **Keywords**: 3D indoor layout, dataset, text-driven scene generation, diffusion model, autoregressive model
 

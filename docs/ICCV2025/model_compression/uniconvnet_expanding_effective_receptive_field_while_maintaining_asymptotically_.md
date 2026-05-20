@@ -18,8 +18,8 @@ content_hash: 156f5808df386e75
 # UniConvNet: Expanding Effective Receptive Field while Maintaining Asymptotically Gaussian Distribution for ConvNets of Any Scale
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.09000](https://arxiv.org/abs/2508.09000)
-**Code**: [https://github.com/ai-paperwithcode/UniConvNet](https://github.com/ai-paperwithcode/UniConvNet)
+**arXiv**: [2508.09000](https://arxiv.org/abs/2508.09000)  
+**Code**: [https://github.com/ai-paperwithcode/UniConvNet](https://github.com/ai-paperwithcode/UniConvNet)  
 **Area**: Model Compression / Efficient Network Design
 **Keywords**: Convolutional Neural Networks, Effective Receptive Field, Asymptotically Gaussian Distribution, Lightweight Networks, Large-Kernel Convolution
 

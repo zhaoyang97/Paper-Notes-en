@@ -18,8 +18,8 @@ content_hash: 69a88f3e0868b2d5
 # PhysInOne: Visual Physics Learning and Reasoning in One Suite
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.09415](https://arxiv.org/abs/2604.09415)
-**Code**: [https://vlar-group.github.io/PhysInOne.html](https://vlar-group.github.io/PhysInOne.html)
+**arXiv**: [2604.09415](https://arxiv.org/abs/2604.09415)  
+**Code**: [https://vlar-group.github.io/PhysInOne.html](https://vlar-group.github.io/PhysInOne.html)  
 **Area**: Multimodal VLM / Physical Reasoning
 **Keywords**: physics learning, synthetic dataset, world model, video generation, physical reasoning
 

@@ -19,8 +19,8 @@ content_hash: 942e8d66635779ba
 # Execution-Grounded Credit Assignment for GRPO in Code Generation
 
 **Conference**: ICLR 2026 Workshop (SPOT)
-**arXiv**: [2603.16158](https://arxiv.org/abs/2603.16158)
-**Code**: Not released
+**arXiv**: [2603.16158](https://arxiv.org/abs/2603.16158)  
+**Code**: Not released  
 **Area**: Code Intelligence
 **Keywords**: GRPO, code generation, credit assignment, reinforcement learning, execution tracing, RLVR
 

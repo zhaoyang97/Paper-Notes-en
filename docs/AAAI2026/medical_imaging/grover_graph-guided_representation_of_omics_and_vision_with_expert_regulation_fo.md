@@ -18,8 +18,8 @@ content_hash: a2272b5215eaa055
 # GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11730](https://arxiv.org/abs/2511.11730)
-**Code**: [GitHub](https://github.com/Xubin-s-Lab/GROVER)
+**arXiv**: [2511.11730](https://arxiv.org/abs/2511.11730)  
+**Code**: [GitHub](https://github.com/Xubin-s-Lab/GROVER)  
 **Area**: Computational Biology / Spatial Multi-omics Integration
 **Keywords**: Spatial omics, multimodal fusion, graph convolutional network, mixture of experts, contrastive learning
 

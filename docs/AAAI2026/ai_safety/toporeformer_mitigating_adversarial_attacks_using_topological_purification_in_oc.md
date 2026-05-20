@@ -18,8 +18,8 @@ content_hash: 2dce223cc10a57ea
 # TopoReformer: Mitigating Adversarial Attacks Using Topological Purification in OCR Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.15807](https://arxiv.org/abs/2511.15807)
-**Code**: [github](https://github.com/invi-bhagyesh/TopoReformer)
+**arXiv**: [2511.15807](https://arxiv.org/abs/2511.15807)  
+**Code**: [github](https://github.com/invi-bhagyesh/TopoReformer)  
 **Area**: AI Security
 **Keywords**: Adversarial Defense, Topological Autoencoder, OCR Security, Persistent Homology, Manifold Purification
 

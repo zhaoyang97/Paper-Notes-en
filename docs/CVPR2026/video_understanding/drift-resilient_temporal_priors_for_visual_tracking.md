@@ -18,8 +18,8 @@ content_hash: 68c913ea8a3d3bd6
 # Drift-Resilient Temporal Priors for Visual Tracking
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02654](https://arxiv.org/abs/2604.02654)
-**Code**: [GitHub](https://github.com/NorahGreen/DTPTrack)
+**arXiv**: [2604.02654](https://arxiv.org/abs/2604.02654)  
+**Code**: [GitHub](https://github.com/NorahGreen/DTPTrack)  
 **Area**: Object Detection / Visual Tracking
 **Keywords**: visual tracking, model drift, temporal modeling, Transformer, plug-and-play
 

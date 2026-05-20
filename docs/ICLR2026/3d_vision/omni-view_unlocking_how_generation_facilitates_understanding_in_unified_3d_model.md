@@ -18,8 +18,8 @@ content_hash: 4f9ac1b19ebf8631
 # Omni-View: Unlocking How Generation Facilitates Understanding in Unified 3D Model based on Multiview images
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.07222](https://arxiv.org/abs/2511.07222)
-**Code**: [https://github.com/AIDC-AI/Omni-View](https://github.com/AIDC-AI/Omni-View)
+**arXiv**: [2511.07222](https://arxiv.org/abs/2511.07222)  
+**Code**: [https://github.com/AIDC-AI/Omni-View](https://github.com/AIDC-AI/Omni-View)  
 **Area**: 3D Vision / Multi-view Understanding
 **Keywords**: Unified Understanding and Generation, 3D Scene Understanding, Novel View Synthesis, Spatial Reasoning, Multi-view
 

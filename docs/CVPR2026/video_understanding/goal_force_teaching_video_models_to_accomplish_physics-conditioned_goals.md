@@ -18,8 +18,8 @@ content_hash: 24175452cfc15e75
 # GoalForce: Teaching Video Models to Accomplish Physics-Conditioned Goals
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.05848](https://arxiv.org/abs/2601.05848)
-**Code**: [goal-force.github.io](https://goal-force.github.io/)
+**arXiv**: [2601.05848](https://arxiv.org/abs/2601.05848)  
+**Code**: [goal-force.github.io](https://goal-force.github.io/)  
 **Area**: Video Understanding
 **Keywords**: Video Generation, Physics-Conditioned Goals, world model, Force Prompting, Causal Reasoning
 
@@ -46,23 +46,23 @@ The framework is built on Wan2.2 (a MoE diffusion model) with a ControlNet archi
 
 1. **Three-channel physical control tensor $\tilde{\pi} \in \mathbb{R}^{f \times 3 \times h \times w}$**:
 
-   - **Channel 0 (Direct Force)**: Encodes the directly applied force (the "cause") using a moving Gaussian blob whose trajectory and duration are proportional to the force vector.
-   - **Channel 1 (Goal Force)**: Encodes the desired goal force (the "effect") using a moving Gaussian blob to represent the intended motion of the target object.
-   - **Channel 2 (Mass)**: Encodes physical properties such as object mass using a static Gaussian blob whose radius is proportional to mass; this channel is optional.
+    - **Channel 0 (Direct Force)**: Encodes the directly applied force (the "cause") using a moving Gaussian blob whose trajectory and duration are proportional to the force vector.
+    - **Channel 1 (Goal Force)**: Encodes the desired goal force (the "effect") using a moving Gaussian blob to represent the intended motion of the target object.
+    - **Channel 2 (Mass)**: Encodes physical properties such as object mass using a static Gaussian blob whose radius is proportional to mass; this channel is optional.
 
 2. **Goal achievement via implicit planning**: The key training strategy is **random masking of causal information**:
 
-   - For videos containing collisions, either the direct force (Ch0) or the goal force (Ch1) is provided at random, with the other channel set to zero.
-   - The model is thereby forced to learn bidirectional reasoning:
+    - For videos containing collisions, either the direct force (Ch0) or the goal force (Ch1) is provided at random, with the other channel set to zero.
+    - The model is thereby forced to learn bidirectional reasoning:
      - Goal → Plan: given a goal force, infer and generate the antecedent direct force event.
      - Action → Outcome: given a direct force, simulate the collision result.
-   - The mass channel is also randomly masked, compelling the model to operate with or without mass information.
+    - The mass channel is also randomly masked, compelling the model to operate with or without mass information.
 
 3. **Synthetic training data** (approximately 12k videos total):
 
-   - **Dominoes** (3k): generated in Blender; direct force → chain reaction → goal force.
-   - **Rolling balls** (6k): Blender scenes comprising 4.5k collision and 1.5k non-collision clips.
-   - **PhysDreamer carnations** (3k): non-rigid body dynamics.
+    - **Dominoes** (3k): generated in Blender; direct force → chain reaction → goal force.
+    - **Rolling balls** (6k): Blender scenes comprising 4.5k collision and 1.5k non-collision clips.
+    - **PhysDreamer carnations** (3k): non-rigid body dynamics.
 
 4. **Architecture details**: ControlNet fine-tunes only the High-Noise Expert (responsible for global structure and low-frequency dynamics), cloning the first 10 DiT layers and connecting to the frozen base model via zero-convolution. Training requires only 3,000 steps on 4× A100 GPUs in under 48 hours.
 

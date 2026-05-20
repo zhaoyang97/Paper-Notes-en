@@ -18,8 +18,8 @@ content_hash: 0ae6a0762f276cf3
 # Steering Information Utility in Key-Value Memory for Language Model Post-Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.05158](https://arxiv.org/abs/2507.05158)
-**Code**: [GitHub](https://github.com/chili-lab/InfoSteer)
+**arXiv**: [2507.05158](https://arxiv.org/abs/2507.05158)  
+**Code**: [GitHub](https://github.com/chili-lab/InfoSteer)  
 **Area**: Interpretability
 **Keywords**: post-training optimization, FFN key-value memory, information steering, memory vector activation, SFT enhancement
 

@@ -17,8 +17,8 @@ content_hash: 78abe2bae8a42ab8
 # Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14539](https://arxiv.org/abs/2511.14539)
-**Code**: [GitHub](https://github.com/eoozbq/Compact-SDF)
+**arXiv**: [2511.14539](https://arxiv.org/abs/2511.14539)  
+**Code**: [GitHub](https://github.com/eoozbq/Compact-SDF)  
 **Area**: Other
 **Keywords**: Neural Signed Distance Function, Implicit Representation, Compact Latent Space, Volumetric Grid, Geometric Detail
 

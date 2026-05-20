@@ -18,8 +18,8 @@ content_hash: 72a687c625c31ab1
 # Towards Inference-Time Scaling for Continuous Space Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.12167](https://arxiv.org/abs/2510.12167)
-**Code**: To be released
+**arXiv**: [2510.12167](https://arxiv.org/abs/2510.12167)  
+**Code**: To be released  
 **Area**: Information Retrieval
 **Keywords**: inference-time scaling, continuous reasoning, COCONUT, geometric homogeneity, process reward model
 

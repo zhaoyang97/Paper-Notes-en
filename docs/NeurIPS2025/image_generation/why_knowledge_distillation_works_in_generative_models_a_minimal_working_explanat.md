@@ -18,8 +18,8 @@ content_hash: 4686a088e7645aa6
 # Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13111](https://arxiv.org/abs/2505.13111)
-**Code**: [GitHub](https://github.com/csm9493/kd-minimal-explanation)
+**arXiv**: [2505.13111](https://arxiv.org/abs/2505.13111)  
+**Code**: [GitHub](https://github.com/csm9493/kd-minimal-explanation)  
 **Area**: Generative Models / Knowledge Distillation
 **Keywords**: Knowledge Distillation, Precision-Recall Tradeoff, Generative Models, Gaussian Mixture Models, Teacher Entropy
 

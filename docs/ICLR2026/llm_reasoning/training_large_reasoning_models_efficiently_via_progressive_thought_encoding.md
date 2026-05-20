@@ -18,8 +18,8 @@ content_hash: a709d7496de45bb2
 # Training Large Reasoning Models Efficiently via Progressive Thought Encoding
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.16839](https://arxiv.org/abs/2602.16839)
-**Code**: No public code
+**arXiv**: [2602.16839](https://arxiv.org/abs/2602.16839)  
+**Code**: No public code  
 **Area**: LLM Reasoning
 **Keywords**: Large Reasoning Models, RL Training Efficiency, KV Cache Compression, Parameter-Efficient Fine-Tuning, Progressive Thought Encoding
 

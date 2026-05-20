@@ -17,8 +17,8 @@ content_hash: 0053a1e2cd5bbd6f
 # Learning Vision-Language-Action World Models for Autonomous Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.09059](https://arxiv.org/abs/2604.09059)
-**Code**: [https://vlaworld.github.io](https://vlaworld.github.io)
+**arXiv**: [2604.09059](https://arxiv.org/abs/2604.09059)  
+**Code**: [https://vlaworld.github.io](https://vlaworld.github.io)  
 **Area**: Autonomous Driving
 **Keywords**: VLA model, world model, autonomous driving, reflective reasoning, reinforcement learning
 

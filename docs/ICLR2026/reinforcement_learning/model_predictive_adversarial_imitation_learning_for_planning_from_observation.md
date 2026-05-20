@@ -18,8 +18,8 @@ content_hash: 07dcbf26e610013e
 # Model Predictive Adversarial Imitation Learning for Planning from Observation
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.21533](https://arxiv.org/abs/2507.21533)
-**Code**: None
+**arXiv**: [2507.21533](https://arxiv.org/abs/2507.21533)  
+**Code**: None  
 **Area**: Imitation Learning / Robot Planning
 **Keywords**: Adversarial Imitation Learning, Model Predictive Control, Inverse Reinforcement Learning, Learning from Observation, MPPI
 

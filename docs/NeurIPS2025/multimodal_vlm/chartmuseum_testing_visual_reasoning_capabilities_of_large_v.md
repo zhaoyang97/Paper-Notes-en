@@ -18,8 +18,8 @@ content_hash: e53bafc733d19592
 # ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13444](https://arxiv.org/abs/2505.13444)
-**Code**: [https://chartmuseum-leaderboard.github.io](https://chartmuseum-leaderboard.github.io)
+**arXiv**: [2505.13444](https://arxiv.org/abs/2505.13444)  
+**Code**: [https://chartmuseum-leaderboard.github.io](https://chartmuseum-leaderboard.github.io)  
 **Area**: Multimodal VLM
 **Keywords**: Chart Understanding, Visual Reasoning, Benchmark, VLM Evaluation, Chart QA
 

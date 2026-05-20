@@ -18,8 +18,8 @@ content_hash: 46e061adbf765e1c
 # Remember Me: Bridging the Long-Range Gap in LVLMs with Three-Step Inference-Only Decay Resilience Strategies
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09868](https://arxiv.org/abs/2511.09868)
-**Code**: [https://github.com/labixiaoq-qq/Remember-me](https://github.com/labixiaoq-qq/Remember-me)
+**arXiv**: [2511.09868](https://arxiv.org/abs/2511.09868)  
+**Code**: [https://github.com/labixiaoq-qq/Remember-me](https://github.com/labixiaoq-qq/Remember-me)  
 **Area**: Multimodal VLM
 **Keywords**: Large Vision-Language Models, Positional Encoding, RoPE, Long-Range Attention Decay, Inference-Time Optimization
 

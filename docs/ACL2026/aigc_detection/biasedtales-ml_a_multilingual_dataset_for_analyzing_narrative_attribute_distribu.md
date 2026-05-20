@@ -18,8 +18,8 @@ content_hash: 0c54cb1278e57b87
 # BIASEDTALES-ML: A Multilingual Dataset for Analyzing Narrative Attribute Distributions in LLM-Generated Stories
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17008](https://arxiv.org/abs/2604.17008)
-**Code**: [https://huggingface.co/spaces/Linyuana/BIASEDTALES-ML](https://huggingface.co/spaces/Linyuana/BIASEDTALES-ML)
+**arXiv**: [2604.17008](https://arxiv.org/abs/2604.17008)  
+**Code**: [https://huggingface.co/spaces/Linyuana/BIASEDTALES-ML](https://huggingface.co/spaces/Linyuana/BIASEDTALES-ML)  
 **Area**: AIGC Detection
 **Keywords**: multilingual bias, narrative generation, social attribute distribution, cross-lingual consistency, children stories
 

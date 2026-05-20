@@ -18,8 +18,8 @@ content_hash: 7e3f3552cbf27bd0
 # HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.10772](https://arxiv.org/abs/2604.10772)
-**Code**: None
+**arXiv**: [2604.10772](https://arxiv.org/abs/2604.10772)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: 3D scene generation, scene editing, vision-language models, hierarchical optimization, RAG
 

@@ -18,8 +18,8 @@ content_hash: 4f45907704a7265a
 # YOLOE: Real-Time Seeing Anything
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07465](https://arxiv.org/abs/2503.07465)
-**Code**: [https://github.com/THU-MIG/yoloe](https://github.com/THU-MIG/yoloe)
+**arXiv**: [2503.07465](https://arxiv.org/abs/2503.07465)  
+**Code**: [https://github.com/THU-MIG/yoloe](https://github.com/THU-MIG/yoloe)  
 **Area**: Object Detection / Instance Segmentation / Open-Vocabulary
 **Keywords**: open-vocabulary detection, YOLO, text/visual/prompt-free, re-parameterization, real-time
 

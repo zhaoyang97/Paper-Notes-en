@@ -18,8 +18,8 @@ content_hash: d90b433610676ccf
 # Can Large Language Models Master Complex Card Games?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.01328](https://arxiv.org/abs/2509.01328)
-**Code**: [https://github.com/THUDM/LLM4CardGame](https://github.com/THUDM/LLM4CardGame)
+**arXiv**: [2509.01328](https://arxiv.org/abs/2509.01328)  
+**Code**: [https://github.com/THUDM/LLM4CardGame](https://github.com/THUDM/LLM4CardGame)  
 **Area**: LLM Evaluation
 **Keywords**: LLM game capability, card games, supervised fine-tuning, multi-task learning, general capability retention
 

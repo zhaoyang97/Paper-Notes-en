@@ -18,8 +18,8 @@ content_hash: 2f038cdb6acf90ac
 # Capability-Based Scaling Trends for LLM-Based Red-Teaming
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.20162](https://arxiv.org/abs/2505.20162)
-**Code**: [https://github.com/kotekjedi/capability-based-scaling](https://github.com/kotekjedi/capability-based-scaling)
+**arXiv**: [2505.20162](https://arxiv.org/abs/2505.20162)  
+**Code**: [https://github.com/kotekjedi/capability-based-scaling](https://github.com/kotekjedi/capability-based-scaling)  
 **Area**: Human Understanding / AI Safety / LLM Alignment
 **Keywords**: Red-teaming, Jailbreak attacks, Capability scaling, Safety evaluation, Attack success rate
 

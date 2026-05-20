@@ -17,8 +17,8 @@ content_hash: 61c825212201c9d3
 # One Language, Two Scripts: Probing Script-Invariance in LLM Concept Representations
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.08869](https://arxiv.org/abs/2603.08869)
-**Code**: None
+**arXiv**: [2603.08869](https://arxiv.org/abs/2603.08869)  
+**Code**: None  
 **Area**: LLM Interpretability / Multilingual
 **Keywords**: Sparse Autoencoders, script-invariance, Serbian digraphia, semantic representations, interpretability
 

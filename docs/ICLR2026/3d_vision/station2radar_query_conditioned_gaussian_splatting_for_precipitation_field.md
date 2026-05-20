@@ -18,8 +18,8 @@ content_hash: 06116aa8a89f57de
 # Station2Radar: Query-Conditioned Gaussian Splatting for Precipitation Field
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00418](https://arxiv.org/abs/2603.00418)
-**Code**: N/A
+**arXiv**: [2603.00418](https://arxiv.org/abs/2603.00418)  
+**Code**: N/A  
 **Area**: 3D Vision / Meteorological Remote Sensing
 **Keywords**: Gaussian Splatting, Precipitation Field Reconstruction, Implicit Neural Representation, Satellite-Station Fusion, Resolution-Agnostic Rendering
 

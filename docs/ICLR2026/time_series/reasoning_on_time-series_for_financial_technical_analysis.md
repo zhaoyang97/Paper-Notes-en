@@ -18,8 +18,8 @@ content_hash: 8f58b8cc468a3c75
 # Reasoning on Time-Series for Financial Technical Analysis
 
 **Conference**: ICLR2026
-**arXiv**: [2511.08616](https://arxiv.org/abs/2511.08616)
-**Code**: [chen-jan/VTA](https://github.com/chen-jan/VTA)
+**arXiv**: [2511.08616](https://arxiv.org/abs/2511.08616)  
+**Code**: [chen-jan/VTA](https://github.com/chen-jan/VTA)  
 **Area**: Time Series
 **Keywords**: Time series reasoning, financial technical analysis, reinforcement learning, LLM fine-tuning, interpretable forecasting
 **Authors**: Kelvin J.L. Koa, Jan Chen, Yunshan Ma, Huanhuan Zheng, Tat-Seng Chua (NUS, TUM, SMU, CityU HK)

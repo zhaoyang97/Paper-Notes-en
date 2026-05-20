@@ -17,8 +17,8 @@ content_hash: aa645ce718e3d72e
 # Model Counting for Dependency Quantified Boolean Formulas
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07337](https://arxiv.org/abs/2511.07337)
-**Code**: [GitHub](https://github.com/Sat-DQBF/sharp2DQR)
+**arXiv**: [2511.07337](https://arxiv.org/abs/2511.07337)  
+**Code**: [GitHub](https://github.com/Sat-DQBF/sharp2DQR)  
 **Area**: Theoretical Computer Science / Formal Methods
 **Keywords**: DQBF, model counting, #EXP-completeness, BDD, symbolic reachability
 

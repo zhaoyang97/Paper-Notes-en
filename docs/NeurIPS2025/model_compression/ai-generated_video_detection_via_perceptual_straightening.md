@@ -18,8 +18,8 @@ content_hash: f288eeca16657513
 # AI-Generated Video Detection via Perceptual Straightening
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.00583](https://arxiv.org/abs/2507.00583)
-**Code**: [GitHub](https://github.com/ChristianInterno/ReStraV)
+**arXiv**: [2507.00583](https://arxiv.org/abs/2507.00583)  
+**Code**: [GitHub](https://github.com/ChristianInterno/ReStraV)  
 **Area**: Model Compression
 **Keywords**: AI-generated video detection, perceptual straightening, DINOv2, temporal curvature, representation geometry
 

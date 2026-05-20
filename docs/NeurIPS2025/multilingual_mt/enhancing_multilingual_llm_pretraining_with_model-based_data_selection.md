@@ -18,8 +18,8 @@ content_hash: 5d9976982055fa10
 # Enhancing Multilingual LLM Pretraining with Model-Based Data Selection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.10361](https://arxiv.org/abs/2502.10361)
-**Code**: [github.com/epfml/fineweb2-hq](https://github.com/epfml/fineweb2-hq)
+**arXiv**: [2502.10361](https://arxiv.org/abs/2502.10361)  
+**Code**: [github.com/epfml/fineweb2-hq](https://github.com/epfml/fineweb2-hq)  
 **Area**: Multilingual Translation
 **Keywords**: multilingual pretraining, data selection, model-based filtering, FineWeb-2, data curation
 

@@ -18,8 +18,8 @@ content_hash: 7a7994c289e0eec1
 # FlexHook: Rethinking Two-Stage Referring-by-Tracking in RMOT
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.07516](https://arxiv.org/abs/2503.07516)
-**Code**: [GitHub](https://github.com/buptLwz/FlexHook)
+**arXiv**: [2503.07516](https://arxiv.org/abs/2503.07516)  
+**Code**: [GitHub](https://github.com/buptLwz/FlexHook)  
 **Area**: Video Understanding
 **Keywords**: Referring Multi-Object Tracking, Two-Stage RBT, Sampling-Based Feature Construction, Pairwise Correspondence Decoding, Language-Conditioned Enhancement
 

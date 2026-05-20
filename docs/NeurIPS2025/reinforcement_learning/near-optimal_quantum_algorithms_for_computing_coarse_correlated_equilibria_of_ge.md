@@ -18,8 +18,8 @@ content_hash: d067c9d71ce06284
 # Near-Optimal Quantum Algorithms for Computing (Coarse) Correlated Equilibria of General-Sum Games
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16782](https://arxiv.org/abs/2510.16782)
-**Code**: None
+**arXiv**: [2510.16782](https://arxiv.org/abs/2510.16782)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: quantum algorithms, game theory, correlated equilibrium, multiplicative weights update, query complexity
 

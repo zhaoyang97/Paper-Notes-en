@@ -18,8 +18,8 @@ content_hash: 2dac067d418ca06e
 # Prompt Tuning Decision Transformers with Structured and Scalable Bandits
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.04979](https://arxiv.org/abs/2502.04979)
-**Code**: Available (appendix materials)
+**arXiv**: [2502.04979](https://arxiv.org/abs/2502.04979)  
+**Code**: Available (appendix materials)  
 **Area**: Reinforcement Learning
 **Keywords**: Decision Transformer, prompt tuning, Multi-Armed Bandit, offline multi-task RL, few-shot generalization
 

@@ -19,8 +19,8 @@ content_hash: 88d26233ce44f585
 # Fix-CLIP: Dual-Branch Hierarchical Contrastive Learning via Synthetic Captions for Better Understanding of Long Text
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.10095](https://arxiv.org/abs/2507.10095)
-**Code**: [GitHub](https://github.com/bcwang-sjtu/Fix-CLIP)
+**arXiv**: [2507.10095](https://arxiv.org/abs/2507.10095)  
+**Code**: [GitHub](https://github.com/bcwang-sjtu/Fix-CLIP)  
 **Area**: Image Generation
 **Keywords**: CLIP, long-text understanding, dual-branch training, regional prompts, hierarchical feature alignment, synthetic data
 

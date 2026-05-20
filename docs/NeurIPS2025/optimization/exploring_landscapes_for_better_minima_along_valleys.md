@@ -18,8 +18,8 @@ content_hash: fa7ed389ce94b025
 # Exploring Landscapes for Better Minima along Valleys
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.27153](https://arxiv.org/abs/2510.27153)
-**Code**: [PyPI](https://pypi.org/project/alto-optimizer/)
+**arXiv**: [2510.27153](https://arxiv.org/abs/2510.27153)  
+**Code**: [PyPI](https://pypi.org/project/alto-optimizer/)  
 **Area**: Optimization / Large-Batch Training
 **Keywords**: Loss landscape exploration, valley tracking, large-batch training, ALTO optimizer, gradient difference
 

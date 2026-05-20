@@ -18,8 +18,8 @@ content_hash: b3e84e7b868a5739
 # SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.13059](https://arxiv.org/abs/2502.13059)
-**Code**: None
+**arXiv**: [2502.13059](https://arxiv.org/abs/2502.13059)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: factuality evaluation, multimodal benchmark, visual question answering, large language models, hallucination detection
 

@@ -18,8 +18,8 @@ content_hash: 3f421997dc559f1a
 # MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.23597](https://arxiv.org/abs/2507.23597)
-**Code**: [Project Page](https://zj-dong.github.io/MoGA/)
+**arXiv**: [2507.23597](https://arxiv.org/abs/2507.23597)  
+**Code**: [Project Page](https://zj-dong.github.io/MoGA/)  
 **Area**: 3D Vision
 **Keywords**: Single-view human reconstruction, 3D Gaussian Avatar, generative prior, model inversion, SMPL-X
 
@@ -63,7 +63,7 @@ The rendering loss comprises L2, perceptual, and regularization losses computed 
 **Triple role of the generative prior**:
 
 1. **Initialization**: A meaningful latent code is sampled from the prior via image-guided sampling:
-   - At each denoising step $t$, rendering gradients $g$ are computed and added to the denoised output as a correction.
+    - At each denoising step $t$, rendering gradients $g$ are computed and added to the denoised output as a correction.
 
 2. **Regularization**: Diffusion and rendering losses are jointly optimized with the diffusion model and decoder weights frozen:
    $$\min_X \lambda_{\text{rend}} \mathcal{L}'_{\text{rend}}(X) + \lambda'_{\text{diff}} \mathcal{L}_{\text{diff}}(X)$$

@@ -17,8 +17,8 @@ content_hash: 676b006173c20bb2
 # A Fast Heuristic Search Approach for Energy-Optimal Profile Routing for Electric Vehicles
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.01331](https://arxiv.org/abs/2512.01331)
-**Code**: The paper states code is publicly available (footnote 3); no link is attached on the arXiv page
+**arXiv**: [2512.01331](https://arxiv.org/abs/2512.01331)  
+**Code**: The paper states code is publicly available (footnote 3); no link is attached on the arXiv page  
 **Area**: Other
 **Keywords**: Electric vehicle routing, energy-optimal search, A* search, energy profile, multi-objective search
 

@@ -19,8 +19,8 @@ content_hash: e5c86b450c1cbb15
 # Bilevel MCTS for Amortized O(1) Node Selection in Classical Planning
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.08385](https://arxiv.org/abs/2508.08385)
-**Code**: [https://github.com/guicho271828/downward-mcts](https://github.com/guicho271828/downward-mcts)
+**arXiv**: [2508.08385](https://arxiv.org/abs/2508.08385)  
+**Code**: [https://github.com/guicho271828/downward-mcts](https://github.com/guicho271828/downward-mcts)  
 **Area**: Classical Planning / Search Algorithms
 **Keywords**: MCTS, Classical Planning, O(1) Node Selection, Tree Collapsing, UCB1-Normal2, IPC Benchmark, Agile Planning
 

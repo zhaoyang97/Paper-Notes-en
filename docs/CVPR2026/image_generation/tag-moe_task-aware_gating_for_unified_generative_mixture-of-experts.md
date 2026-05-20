@@ -18,8 +18,8 @@ content_hash: 483e8ae99572074b
 # TAG-MoE: Task-Aware Gating for Unified Generative Mixture-of-Experts
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.08881](https://arxiv.org/abs/2601.08881)
-**Code**: [Project Page](https://yuci-gpt.github.io/TAG-MoE/)
+**arXiv**: [2601.08881](https://arxiv.org/abs/2601.08881)  
+**Code**: [Project Page](https://yuci-gpt.github.io/TAG-MoE/)  
 **Area**: Image Generation / Diffusion Models / Image Editing
 **Keywords**: Mixture of Experts, Task-Aware Routing, Unified Image Generation and Editing, Diffusion Transformer, Task Interference
 

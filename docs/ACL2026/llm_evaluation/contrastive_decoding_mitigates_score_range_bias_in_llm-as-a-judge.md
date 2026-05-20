@@ -18,8 +18,8 @@ content_hash: e9a62c424a88e45f
 # Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge
 
 **Conference**: ACL 2026
-**arXiv**: [2510.18196](https://arxiv.org/abs/2510.18196)
-**Code**: N/A
+**arXiv**: [2510.18196](https://arxiv.org/abs/2510.18196)  
+**Code**: N/A  
 **Area**: LLM Evaluation
 **Keywords**: LLM-as-a-Judge, contrastive decoding, score range bias, direct assessment, model family bias
 

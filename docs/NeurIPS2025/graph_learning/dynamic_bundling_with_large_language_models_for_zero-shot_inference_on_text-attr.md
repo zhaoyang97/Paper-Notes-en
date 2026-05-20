@@ -18,8 +18,8 @@ content_hash: 678a05157a40058b
 # Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17599](https://arxiv.org/abs/2505.17599)
-**Code**: None
+**arXiv**: [2505.17599](https://arxiv.org/abs/2505.17599)  
+**Code**: None  
 **Area**: Graph Learning
 **Keywords**: Text-Attributed Graphs, Zero-Shot Inference, LLM, Graph Neural Networks, Bundle Supervision
 

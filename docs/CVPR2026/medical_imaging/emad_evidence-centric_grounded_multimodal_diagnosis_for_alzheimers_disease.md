@@ -18,8 +18,8 @@ content_hash: db1d74df25de8f84
 # EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19178](https://arxiv.org/abs/2602.19178)
-**Code**: Coming soon (including grounding annotations)
+**arXiv**: [2602.19178](https://arxiv.org/abs/2602.19178)  
+**Code**: Coming soon (including grounding annotations)  
 **Area**: Medical Imaging
 **Keywords**: Alzheimer's disease diagnosis, multimodal vision-language models, evidence alignment, reinforcement fine-tuning, 3D brain segmentation
 

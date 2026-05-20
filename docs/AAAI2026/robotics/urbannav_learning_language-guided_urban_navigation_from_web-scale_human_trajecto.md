@@ -18,8 +18,8 @@ content_hash: 3f028740de107b68
 # UrbanNav: Learning Language-Guided Urban Navigation from Web-Scale Human Trajectories
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.09607](https://arxiv.org/abs/2512.09607)
-**Code**: [https://github.com/CASIA-IVA-Lab/UrbanNav](https://github.com/CASIA-IVA-Lab/UrbanNav)
+**arXiv**: [2512.09607](https://arxiv.org/abs/2512.09607)  
+**Code**: [https://github.com/CASIA-IVA-Lab/UrbanNav](https://github.com/CASIA-IVA-Lab/UrbanNav)  
 **Area**: Robotics
 **Keywords**: Urban Navigation, Language Guidance, Large-Scale Web Video, Imitation Learning, Landmark Detection
 

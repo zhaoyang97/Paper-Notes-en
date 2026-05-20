@@ -18,8 +18,8 @@ content_hash: 0781d922c6869bbb
 # Self-Improving Loops for Visual Robotic Planning
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.06658](https://arxiv.org/abs/2506.06658)
-**Code**: [https://diffusion-supervision.github.io/silvr/](https://diffusion-supervision.github.io/silvr/)
+**arXiv**: [2506.06658](https://arxiv.org/abs/2506.06658)  
+**Code**: [https://diffusion-supervision.github.io/silvr/](https://diffusion-supervision.github.io/silvr/)  
 **Area**: Image Generation
 **Keywords**: Visual Planning, Self-Improvement, Video Generation Models, Inverse Dynamics Model, Online Experience
 

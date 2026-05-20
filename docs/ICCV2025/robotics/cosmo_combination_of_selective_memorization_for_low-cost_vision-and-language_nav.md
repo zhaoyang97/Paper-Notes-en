@@ -18,8 +18,8 @@ content_hash: cc4098ea55cc861d
 # COSMO: Combination of Selective Memorization for Low-cost Vision-and-Language Navigation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.24065](https://arxiv.org/abs/2503.24065)
-**Code**: N/A
+**arXiv**: [2503.24065](https://arxiv.org/abs/2503.24065)  
+**Code**: N/A  
 **Area**: Robotics
 **Keywords**: Vision-and-Language Navigation, State Space Model, Mamba, Hybrid Architecture, Low-cost Navigation
 

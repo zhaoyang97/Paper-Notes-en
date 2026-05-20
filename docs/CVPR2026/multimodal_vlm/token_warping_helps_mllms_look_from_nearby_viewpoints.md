@@ -18,8 +18,8 @@ content_hash: e52ae9f5c985d144
 # Token Warping Helps MLLMs Look from Nearby Viewpoints
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02870](https://arxiv.org/abs/2604.02870)
-**Code**: [https://token-warping-mllm.github.io/](https://token-warping-mllm.github.io/) (project page)
+**arXiv**: [2604.02870](https://arxiv.org/abs/2604.02870)  
+**Code**: [https://token-warping-mllm.github.io/](https://token-warping-mllm.github.io/) (project page)  
 **Area**: Multimodal VLM
 **Keywords**: viewpoint transformation, token warping, spatial reasoning, mental imagery, MLLM
 

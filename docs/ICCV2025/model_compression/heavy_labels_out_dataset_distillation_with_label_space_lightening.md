@@ -18,8 +18,8 @@ content_hash: 6179d56aeaf1bde0
 # Heavy Labels Out! Dataset Distillation with Label Space Lightening
 
 **Conference**: ICCV 2025
-**arXiv**: [2408.08201](https://arxiv.org/abs/2408.08201)
-**Code**: Coming soon
+**arXiv**: [2408.08201](https://arxiv.org/abs/2408.08201)  
+**Code**: Coming soon  
 **Area**: Model Compression / Dataset Distillation
 **Keywords**: dataset distillation, soft label compression, CLIP, LoRA, label space lightening
 

@@ -18,8 +18,8 @@ content_hash: 9855f155215fcac3
 # A Layer-wise Analysis of Supervised Fine-Tuning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.11838](https://arxiv.org/abs/2604.11838)
-**Code**: [GitHub](https://github.com/lshowway/base)
+**arXiv**: [2604.11838](https://arxiv.org/abs/2604.11838)  
+**Code**: [GitHub](https://github.com/lshowway/base)  
 **Area**: Model Compression
 **Keywords**: Supervised Fine-Tuning, Layer-wise Analysis, Parameter-Efficient Fine-Tuning, Catastrophic Forgetting, LoRA
 

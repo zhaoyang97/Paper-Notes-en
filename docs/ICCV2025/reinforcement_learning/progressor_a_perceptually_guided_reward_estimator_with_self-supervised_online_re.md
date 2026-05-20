@@ -18,8 +18,8 @@ content_hash: 9451e607de041b76
 # Progressor: A Perceptually Guided Reward Estimator with Self-Supervised Online Refinement
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.17764](https://arxiv.org/abs/2411.17764)
-**Code**: [https://ripl.github.io/progressor](https://ripl.github.io/progressor)
+**arXiv**: [2411.17764](https://arxiv.org/abs/2411.17764)  
+**Code**: [https://ripl.github.io/progressor](https://ripl.github.io/progressor)  
 **Area**: Reinforcement Learning / Robot Learning
 **Keywords**: Visual reward learning, self-supervised, goal-conditioned RL, adversarial online refinement, task progress estimation
 

@@ -18,8 +18,8 @@ content_hash: 78f4276d135acadb
 # CrossNovo: Bidirectional Representations Augmented Autoregressive Biological Sequence Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08169](https://arxiv.org/abs/2510.08169)
-**Code**: To be confirmed
+**arXiv**: [2510.08169](https://arxiv.org/abs/2510.08169)  
+**Code**: To be confirmed  
 **Area**: Biological Sequence Generation / Proteomics
 **Keywords**: de novo peptide sequencing, autoregressive, non-autoregressive, CTC, knowledge distillation
 

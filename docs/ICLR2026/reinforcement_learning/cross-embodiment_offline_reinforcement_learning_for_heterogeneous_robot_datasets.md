@@ -18,8 +18,8 @@ content_hash: e5be14d95b45ca49
 # Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.18025](https://arxiv.org/abs/2602.18025)
-**Code**: To be confirmed
+**arXiv**: [2602.18025](https://arxiv.org/abs/2602.18025)  
+**Code**: To be confirmed  
 **Area**: Reinforcement Learning / Robotics
 **Keywords**: cross-embodiment learning, offline RL, gradient conflict, robot foundation model, morphology grouping
 

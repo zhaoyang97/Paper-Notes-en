@@ -18,8 +18,8 @@ content_hash: e9753edac6d4291b
 # Reflection-Driven Control for Trustworthy Code Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.21354](https://arxiv.org/abs/2512.21354)
-**Code**: None
+**arXiv**: [2512.21354](https://arxiv.org/abs/2512.21354)  
+**Code**: None  
 **Area**: LLM Agent / Secure Code Generation
 **Keywords**: reflection-driven control, secure code generation, self-inspection mechanism, dynamic memory repository, trustworthy agent
 

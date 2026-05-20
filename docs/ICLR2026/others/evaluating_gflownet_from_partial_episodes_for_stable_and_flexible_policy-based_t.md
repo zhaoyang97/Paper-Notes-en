@@ -17,8 +17,8 @@ content_hash: 31e42d4f09175579
 # Evaluating GFlowNet from Partial Episodes for Stable and Flexible Policy-Based Training
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01047](https://arxiv.org/abs/2603.01047)
-**Code**: [github.com/niupuhua1234/Sub-EB](https://github.com/niupuhua1234/Sub-EB)
+**arXiv**: [2603.01047](https://arxiv.org/abs/2603.01047)  
+**Code**: [github.com/niupuhua1234/Sub-EB](https://github.com/niupuhua1234/Sub-EB)  
 **Area**: Other
 **Keywords**: GFlowNet, policy gradient, value function, flow balance, combinatorial optimization
 

@@ -18,8 +18,8 @@ content_hash: 698cc6636dd5049b
 # STRIDE: Subset-Free Functional Decomposition for XAI in Tabular Settings
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.09070](https://arxiv.org/abs/2509.09070)
-**Code**: None
+**arXiv**: [2509.09070](https://arxiv.org/abs/2509.09070)  
+**Code**: None  
 **Area**: Explainable AI / Kernel Methods
 **Keywords**: Functional Decomposition, RKHS, Centered Kernels, Feature Interaction, Component Surgery
 

@@ -18,8 +18,8 @@ content_hash: 45f701279a86b867
 # More Than Irrational: Modeling Belief-Biased Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12359](https://arxiv.org/abs/2511.12359)
-**Code**: [GitHub](https://github.com/Yifan-Zhu/More-Than-Irrational-Modeling-Belief-Biased-Agents)
+**arXiv**: [2511.12359](https://arxiv.org/abs/2511.12359)  
+**Code**: [GitHub](https://github.com/Yifan-Zhu/More-Than-Irrational-Modeling-Belief-Biased-Agents)  
 **Area**: User Modeling / Human-AI Collaboration
 **Keywords**: Computational Rationality, Memory Decay, Nested Particle Filter, Belief Bias, Adaptive Assistance
 

@@ -18,8 +18,8 @@ content_hash: f4a05fe8e66a7c84
 # FACE: Faithful Automatic Concept Extraction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11675](https://arxiv.org/abs/2510.11675)
-**Code**: [GitHub](https://github.com/dipkamal/FACE)
+**arXiv**: [2510.11675](https://arxiv.org/abs/2510.11675)  
+**Code**: [GitHub](https://github.com/dipkamal/FACE)  
 **Area**: Explainable AI / Concept Discovery
 **Keywords**: concept explanation, NMF, KL divergence, faithfulness, non-negative matrix factorization, interpretability
 

@@ -18,8 +18,8 @@ content_hash: a29af3bdc44e8303
 # Fair Representation Learning with Controllable High Confidence Guarantees via Adversarial Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21017](https://arxiv.org/abs/2510.21017)
-**Code**: [https://github.com/JamesLuoyh/FRG](https://github.com/JamesLuoyh/FRG)
+**arXiv**: [2510.21017](https://arxiv.org/abs/2510.21017)  
+**Code**: [https://github.com/JamesLuoyh/FRG](https://github.com/JamesLuoyh/FRG)  
 **Area**: AI Safety / Fairness
 **Keywords**: fair representation learning, high-confidence guarantees, adversarial inference, statistical testing, demographic parity
 

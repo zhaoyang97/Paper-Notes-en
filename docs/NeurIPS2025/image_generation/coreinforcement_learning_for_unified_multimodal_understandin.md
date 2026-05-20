@@ -18,8 +18,8 @@ content_hash: 6dcf2f41db8114dc
 # Co-Reinforcement Learning for Unified Multimodal Understanding and Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17534](https://arxiv.org/abs/2505.17534)
-**Code**: [https://github.com/mm-vl/ULM-R1](https://github.com/mm-vl/ULM-R1)
+**arXiv**: [2505.17534](https://arxiv.org/abs/2505.17534)  
+**Code**: [https://github.com/mm-vl/ULM-R1](https://github.com/mm-vl/ULM-R1)  
 **Area**: Image Generation
 **Keywords**: Unified Multimodal Models, Reinforcement Learning, GRPO, Text-to-Image Generation, Multimodal Understanding
 

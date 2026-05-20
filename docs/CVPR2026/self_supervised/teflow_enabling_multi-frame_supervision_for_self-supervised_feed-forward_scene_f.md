@@ -19,8 +19,8 @@ content_hash: e02b4da0f0def8b9
 # TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19053](https://arxiv.org/abs/2602.19053)
-**Code**: [github.com/KTH-RPL/OpenSceneFlow](https://github.com/KTH-RPL/OpenSceneFlow)
+**arXiv**: [2602.19053](https://arxiv.org/abs/2602.19053)  
+**Code**: [github.com/KTH-RPL/OpenSceneFlow](https://github.com/KTH-RPL/OpenSceneFlow)  
 **Area**: Self-Supervised Learning / Autonomous Driving
 **Keywords**: Scene Flow, Self-Supervised, Multi-frame Supervision, Temporal Aggregation, Feed-forward Network, Point Cloud
 

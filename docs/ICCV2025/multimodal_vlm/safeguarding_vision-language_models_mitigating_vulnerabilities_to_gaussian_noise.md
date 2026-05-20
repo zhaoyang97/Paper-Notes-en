@@ -18,8 +18,8 @@ content_hash: fec437232ebfbef3
 # Safeguarding Vision-Language Models: Mitigating Vulnerabilities to Gaussian Noise in Perturbation-based Attacks
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.01308](https://arxiv.org/abs/2504.01308)
-**Code**: [https://github.com/JarvisUSTC/DiffPure-RobustVLM](https://github.com/JarvisUSTC/DiffPure-RobustVLM)
+**arXiv**: [2504.01308](https://arxiv.org/abs/2504.01308)  
+**Code**: [https://github.com/JarvisUSTC/DiffPure-RobustVLM](https://github.com/JarvisUSTC/DiffPure-RobustVLM)  
 **Area**: Multimodal VLM
 **Keywords**: VLM safety, Gaussian noise, adversarial defense, diffusion purification, safety fine-tuning
 

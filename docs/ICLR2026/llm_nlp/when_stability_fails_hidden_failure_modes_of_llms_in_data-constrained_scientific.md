@@ -18,8 +18,8 @@ content_hash: e9b152a7ceb939ca
 # When Stability Fails: Hidden Failure Modes of LLMs in Data-Constrained Scientific Decision-Making
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.15840](https://arxiv.org/abs/2603.15840)
-**Code**: [https://github.com/NaziaRiasat/llm-prompt-sensitivity](https://github.com/NaziaRiasat/llm-prompt-sensitivity)
+**arXiv**: [2603.15840](https://arxiv.org/abs/2603.15840)  
+**Code**: [https://github.com/NaziaRiasat/llm-prompt-sensitivity](https://github.com/NaziaRiasat/llm-prompt-sensitivity)  
 **Area**: LLM/NLP
 **Keywords**: LLM reliability, stability vs. correctness, prompt sensitivity, scientific decision-making, gene prioritization
 

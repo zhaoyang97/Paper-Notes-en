@@ -18,8 +18,8 @@ content_hash: d8d1dd85a424e61b
 # Evaluating VLMs' Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.13100](https://arxiv.org/abs/2603.13100)
-**Code**: None
+**arXiv**: [2603.13100](https://arxiv.org/abs/2603.13100)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: VLM spatial reasoning, robot motion planning, motion preferences, path selection, vision-language model evaluation
 

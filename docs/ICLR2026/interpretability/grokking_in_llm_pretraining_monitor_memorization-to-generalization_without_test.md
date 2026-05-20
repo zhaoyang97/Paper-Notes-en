@@ -18,8 +18,8 @@ content_hash: 89b82bc1abe4c665
 # Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.21551](https://arxiv.org/abs/2506.21551)
-**Code**: None
+**arXiv**: [2506.21551](https://arxiv.org/abs/2506.21551)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: grokking, memorization, generalization, MoE pathway, pretraining dynamics
 

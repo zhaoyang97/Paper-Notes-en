@@ -18,8 +18,8 @@ content_hash: 0693557abf0b07ab
 # Distributional Consistency Loss: Beyond Pointwise Data Terms in Inverse Problems
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.13972](https://arxiv.org/abs/2510.13972)
-**Code**: [Available](https://github.com/GeorgeWebber/Distributional-Consistency-Loss)
+**arXiv**: [2510.13972](https://arxiv.org/abs/2510.13972)  
+**Code**: [Available](https://github.com/GeorgeWebber/Distributional-Consistency-Loss)  
 **Area**: Medical Imaging
 **Keywords**: Inverse Problems, Data Fidelity, Distributional Consistency, PET Reconstruction, Deep Image Prior
 

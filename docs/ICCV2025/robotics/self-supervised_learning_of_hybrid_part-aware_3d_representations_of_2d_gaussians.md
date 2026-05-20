@@ -18,8 +18,8 @@ content_hash: edb6d08763dfcd0c
 # Self-supervised Learning of Hybrid Part-aware 3D Representations of 2D Gaussians and Superquadrics
 
 **Conference**: ICCV 2025
-**arXiv**: [2408.10789](https://arxiv.org/abs/2408.10789)
-**Code**: [zhirui-gao/PartGS](https://zhirui-gao.github.io/PartGS)
+**arXiv**: [2408.10789](https://arxiv.org/abs/2408.10789)  
+**Code**: [zhirui-gao/PartGS](https://zhirui-gao.github.io/PartGS)  
 **Area**: Robotics
 **Keywords**: Part-aware reconstruction, 2D Gaussian splatting, superquadrics, self-supervised, shape decomposition
 

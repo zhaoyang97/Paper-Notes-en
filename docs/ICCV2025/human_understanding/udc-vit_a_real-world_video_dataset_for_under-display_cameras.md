@@ -18,8 +18,8 @@ content_hash: 8dcea759d349eee9
 # UDC-VIT: A Real-World Video Dataset for Under-Display Cameras
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.18545](https://arxiv.org/abs/2501.18545)
-**Code**: [GitHub](https://github.com/mcrl/UDC-VIT)
+**arXiv**: [2501.18545](https://arxiv.org/abs/2501.18545)  
+**Code**: [GitHub](https://github.com/mcrl/UDC-VIT)  
 **Area**: Human Understanding
 **Keywords**: Under-display camera, video dataset, image degradation, face recognition, video restoration
 

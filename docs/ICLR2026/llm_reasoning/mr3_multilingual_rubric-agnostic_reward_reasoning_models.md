@@ -18,8 +18,8 @@ content_hash: 932786bc15055935
 # mR3: Multilingual Rubric-Agnostic Reward Reasoning Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.01146](https://arxiv.org/abs/2510.01146)
-**Code**: [github.com/rubricreward/mr3](https://github.com/rubricreward/mr3)
+**arXiv**: [2510.01146](https://arxiv.org/abs/2510.01146)  
+**Code**: [github.com/rubricreward/mr3](https://github.com/rubricreward/mr3)  
 **Area**: LLM Reasoning / Alignment & RLHF
 **Keywords**: multilingual reward models, reasoning-based evaluation, curriculum learning, rubric-based assessment, knowledge distillation
 

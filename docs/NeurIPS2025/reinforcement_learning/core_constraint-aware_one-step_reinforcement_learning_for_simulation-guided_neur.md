@@ -18,8 +18,8 @@ content_hash: c0aec535105a6389
 # CORE: Constraint-Aware One-Step Reinforcement Learning for Simulation-Guided Neural Network Accelerator Design
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03474](https://arxiv.org/abs/2506.03474)
-**Code**: Not open-sourced
+**arXiv**: [2506.03474](https://arxiv.org/abs/2506.03474)  
+**Code**: Not open-sourced  
 **Area**: Reinforcement Learning
 **Keywords**: one-step RL, design space exploration, DNN accelerator, constraint-aware, scaling graph
 
@@ -51,23 +51,23 @@ The CORE pipeline operates in three cyclic stages: (1) the policy network output
 
 1. **Single-Step MDP and Conditional Distribution Sampling**:
 
-   - *Function*: Models design exploration as a single-step MDP $\mathcal{M}=(s_0, \mathcal{A}, R)$, where the policy generates a complete configuration in one forward pass.
-   - *Mechanism*: The policy network $\pi_\theta$ outputs the joint distribution over all design parameters via conditional factorization $\pi_\theta(a_1, \ldots, a_N; s_0) = \prod_{i=1}^{N} f_{i,\theta}(a_i \mid a_{i+1} \ldots a_N; s_0)$. Discrete parameters (e.g., parallelism dimension, 6-way categorical) use a **Categorical distribution**; large discrete parameters (e.g., PE count with 512 choices) use a **Beta distribution** quantized to discrete values.
-   - *Design Motivation*: This formulation eliminates reward propagation delays and intermediate state maintenance inherent to multi-step RL. The Beta distribution serves as a continuous relaxation, reducing the output dimensionality of the policy network.
+    - *Function*: Models design exploration as a single-step MDP $\mathcal{M}=(s_0, \mathcal{A}, R)$, where the policy generates a complete configuration in one forward pass.
+    - *Mechanism*: The policy network $\pi_\theta$ outputs the joint distribution over all design parameters via conditional factorization $\pi_\theta(a_1, \ldots, a_N; s_0) = \prod_{i=1}^{N} f_{i,\theta}(a_i \mid a_{i+1} \ldots a_N; s_0)$. Discrete parameters (e.g., parallelism dimension, 6-way categorical) use a **Categorical distribution**; large discrete parameters (e.g., PE count with 512 choices) use a **Beta distribution** quantized to discrete values.
+    - *Design Motivation*: This formulation eliminates reward propagation delays and intermediate state maintenance inherent to multi-step RL. The Beta distribution serves as a continuous relaxation, reducing the output dimensionality of the policy network.
 
 2. **Scaling-Graph Decoder**:
 
-   - *Function*: Encodes parameter dependencies via a directed graph and decodes sampled actions into feasible configurations following topological order.
-   - *Mechanism*: Each node represents a design variable; directed edges encode constraint/scaling relationships. The decoded value of a source parameter dynamically constrains the range of its target parameters. For a sampled action $b \in [0,1]$ and source parameter values $\{A_i\}$, decoding proceeds as $B = B_{low} + \lfloor(\frac{\min_i\{A_i\} - B_{low}}{B_s} + 1) b \rfloor B_s$, replacing fixed upper bounds with $\min_i\{A_i\}$.
-   - *Concrete Example*: The upper bound of parallelism $P_1$ is jointly constrained by PE count and the corresponding tile size: $P_1 = P_{low} + \lfloor(\min\{N_{pe}, X_2\} - P_{low} + 1) p_1 \rfloor$.
-   - *Design Motivation*: Conventional methods either ignore dependencies (yielding many infeasible designs) or apply heuristic masking (non-differentiable and incomplete). The scaling graph guarantees feasibility at sampling time and is fully differentiable, supporting end-to-end training.
-   - *Novelty vs. Prior Work*: ArchGym applies heuristic masking within a multi-step MDP to constrain the action space, which tends to miss complex transitive dependencies. The scaling graph is declarative; topological sorting automatically handles all transitive constraints.
+    - *Function*: Encodes parameter dependencies via a directed graph and decodes sampled actions into feasible configurations following topological order.
+    - *Mechanism*: Each node represents a design variable; directed edges encode constraint/scaling relationships. The decoded value of a source parameter dynamically constrains the range of its target parameters. For a sampled action $b \in [0,1]$ and source parameter values $\{A_i\}$, decoding proceeds as $B = B_{low} + \lfloor(\frac{\min_i\{A_i\} - B_{low}}{B_s} + 1) b \rfloor B_s$, replacing fixed upper bounds with $\min_i\{A_i\}$.
+    - *Concrete Example*: The upper bound of parallelism $P_1$ is jointly constrained by PE count and the corresponding tile size: $P_1 = P_{low} + \lfloor(\min\{N_{pe}, X_2\} - P_{low} + 1) p_1 \rfloor$.
+    - *Design Motivation*: Conventional methods either ignore dependencies (yielding many infeasible designs) or apply heuristic masking (non-differentiable and incomplete). The scaling graph guarantees feasibility at sampling time and is fully differentiable, supporting end-to-end training.
+    - *Novelty vs. Prior Work*: ArchGym applies heuristic masking within a multi-step MDP to constrain the action space, which tends to miss complex transitive dependencies. The scaling graph is declarative; topological sorting automatically handles all transitive constraints.
 
 3. **Constraint-Aware Reward Shaping**:
 
-   - *Function*: A three-tier reward design that distinguishes normal designs, constraint violations, and anomalous (non-simulatable) designs.
-   - *Mechanism*: Normal reward: $R(\xi_k) = \mathbf{w}^\top U(\xi_k)$; constraint violation: $R(\xi_k) = \mathbf{w}^\top U(\xi_k) - \alpha_c h(U(\xi_k))$, where $h$ quantifies the degree of violation; anomalous designs that cannot be simulated receive a penalty below the batch mean: $R_t(\xi') = \min(\mathbb{E}[R], \hat{R}_{t-1}) - \alpha_p \mathbb{E}[R]$.
-   - *Design Motivation*: Assigning a fixed negative reward to invalid designs provides insufficient learning signal. Quantifying the degree of constraint violation enables the policy to learn *how much* a constraint is violated, rather than merely *whether* it is violated.
+    - *Function*: A three-tier reward design that distinguishes normal designs, constraint violations, and anomalous (non-simulatable) designs.
+    - *Mechanism*: Normal reward: $R(\xi_k) = \mathbf{w}^\top U(\xi_k)$; constraint violation: $R(\xi_k) = \mathbf{w}^\top U(\xi_k) - \alpha_c h(U(\xi_k))$, where $h$ quantifies the degree of violation; anomalous designs that cannot be simulated receive a penalty below the batch mean: $R_t(\xi') = \min(\mathbb{E}[R], \hat{R}_{t-1}) - \alpha_p \mathbb{E}[R]$.
+    - *Design Motivation*: Assigning a fixed negative reward to invalid designs provides insufficient learning signal. Quantifying the degree of constraint violation enables the policy to learn *how much* a constraint is violated, rather than merely *whether* it is violated.
 
 ### Loss & Training
 

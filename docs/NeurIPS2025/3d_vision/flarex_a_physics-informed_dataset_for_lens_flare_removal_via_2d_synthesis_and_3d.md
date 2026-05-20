@@ -18,8 +18,8 @@ content_hash: a26b239b79ec0185
 # FlareX: A Physics-Informed Dataset for Lens Flare Removal via 2D Synthesis and 3D Rendering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.09995](https://arxiv.org/abs/2510.09995)
-**Code**: [https://github.com/qulishen/FlareX](https://github.com/qulishen/FlareX)
+**arXiv**: [2510.09995](https://arxiv.org/abs/2510.09995)  
+**Code**: [https://github.com/qulishen/FlareX](https://github.com/qulishen/FlareX)  
 **Area**: 3D Vision / Image Restoration
 **Keywords**: lens flare removal, dataset, physics-based simulation, 2D synthesis, 3D rendering
 

@@ -18,8 +18,8 @@ content_hash: 7ee270099f050e69
 # CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment
 
 **Conference**: ACL 2026
-**arXiv**: [2510.18471](https://arxiv.org/abs/2510.18471)
-**Code**: [https://github.com/jiangxxxue/CODERLPLUS](https://github.com/jiangxxxue/CODERLPLUS)
+**arXiv**: [2510.18471](https://arxiv.org/abs/2510.18471)  
+**Code**: [https://github.com/jiangxxxue/CODERLPLUS](https://github.com/jiangxxxue/CODERLPLUS)  
 **Area**: Code Generation / Reinforcement Learning
 **Keywords**: Code Generation, Execution Semantics Alignment, RLVR, GRPO, Program Execution Traces
 

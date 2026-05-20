@@ -18,8 +18,8 @@ content_hash: 865f116f2637c34e
 # Instance-Specific Test-Time Training for Speech Editing in the Wild
 
 **Conference**: NeurIPS 2025 (Workshop on GenProCC)
-**arXiv**: [2506.13295](https://arxiv.org/abs/2506.13295)
-**Code**: To be confirmed
+**arXiv**: [2506.13295](https://arxiv.org/abs/2506.13295)  
+**Code**: To be confirmed  
 **Area**: Speech Processing / Speech Editing
 **Keywords**: speech editing, test-time training, bandwidth discontinuity, phoneme prediction, in-the-wild adaptation
 

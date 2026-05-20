@@ -18,8 +18,8 @@ content_hash: b4d6783f099e28ae
 # TokenUnify: Scaling Up Autoregressive Pretraining for Neuron Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2405.16847](https://arxiv.org/abs/2405.16847)
-**Code**: [https://github.com/ydchen0806/TokenUnify](https://github.com/ydchen0806/TokenUnify)
+**arXiv**: [2405.16847](https://arxiv.org/abs/2405.16847)  
+**Code**: [https://github.com/ydchen0806/TokenUnify](https://github.com/ydchen0806/TokenUnify)  
 **Area**: 3D Vision / Neuron Segmentation
 **Keywords**: Autoregressive pretraining, neuron segmentation, electron microscopy, Mamba architecture, hierarchical predictive coding
 

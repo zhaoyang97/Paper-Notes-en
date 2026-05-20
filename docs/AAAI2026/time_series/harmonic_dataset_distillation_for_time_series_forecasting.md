@@ -18,8 +18,8 @@ content_hash: efc8f38a139efda1
 # Harmonic Dataset Distillation for Time Series Forecasting
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.03760](https://arxiv.org/abs/2603.03760)
-**Code**: None
+**arXiv**: [2603.03760](https://arxiv.org/abs/2603.03760)  
+**Code**: None  
 **Area**: Time Series Forecasting / Dataset Distillation
 **Keywords**: Dataset Distillation, Time Series Forecasting, Frequency-Domain Optimization, Harmonic Matching, Cross-Architecture Generalization
 

@@ -18,8 +18,8 @@ content_hash: 48f754d066ee4b5a
 # Event6D: Event-based Novel Object 6D Pose Tracking
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28045](https://arxiv.org/abs/2603.28045)
-**Code**: [https://chohoonhee.github.io/Event6D](https://chohoonhee.github.io/Event6D)
+**arXiv**: [2603.28045](https://arxiv.org/abs/2603.28045)  
+**Code**: [https://chohoonhee.github.io/Event6D](https://chohoonhee.github.io/Event6D)  
 **Area**: Video Understanding
 **Keywords**: Event Camera, 6D Pose Tracking, Novel Object Generalization, Bimodal Reconstruction, Sim-to-Real Transfer
 

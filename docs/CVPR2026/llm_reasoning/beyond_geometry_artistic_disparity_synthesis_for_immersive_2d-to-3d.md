@@ -18,8 +18,8 @@ content_hash: 8dd92e70783c6289
 # Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05906](https://arxiv.org/abs/2603.05906)
-**Code**: None (not yet open-sourced)
+**arXiv**: [2603.05906](https://arxiv.org/abs/2603.05906)  
+**Code**: None (not yet open-sourced)  
 **Area**: LLM Reasoning
 **Keywords**: 2D-to-3D conversion, artistic disparity synthesis, stereoscopic film, dual-path architecture, depth style
 

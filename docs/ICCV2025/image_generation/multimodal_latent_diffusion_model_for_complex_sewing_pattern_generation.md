@@ -18,8 +18,8 @@ content_hash: 427ac831e751145b
 # Multimodal Latent Diffusion Model for Complex Sewing Pattern Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.14453](https://arxiv.org/abs/2412.14453)
-**Code**: [Project Page](https://shengqiliu1.github.io/SewingLDM)
+**arXiv**: [2412.14453](https://arxiv.org/abs/2412.14453)  
+**Code**: [Project Page](https://shengqiliu1.github.io/SewingLDM)  
 **Area**: Diffusion Models / Garment Generation
 **Keywords**: Sewing pattern generation, latent diffusion model, multimodal conditioning, body-shape awareness, CG pipeline
 

@@ -18,8 +18,8 @@ content_hash: f5d3956dd7dc82ea
 # Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.12087](https://arxiv.org/abs/2603.12087)
-**Code**: [https://rl-bandits-lab.github.io/Cross-Domain-RL/](https://rl-bandits-lab.github.io/Cross-Domain-RL/)
+**arXiv**: [2603.12087](https://arxiv.org/abs/2603.12087)  
+**Code**: [https://rl-bandits-lab.github.io/Cross-Domain-RL/](https://rl-bandits-lab.github.io/Cross-Domain-RL/)  
 **Area**: Human Understanding
 **Keywords**: Cross-Domain Reinforcement Learning, Bellman Consistency, Hybrid Critic, Q-Function Transfer, Negative Transfer Prevention
 

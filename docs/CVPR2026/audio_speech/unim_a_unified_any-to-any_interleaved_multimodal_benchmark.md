@@ -18,8 +18,8 @@ content_hash: 040181549655782b
 # UniM: A Unified Any-to-Any Interleaved Multimodal Benchmark
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05075](https://arxiv.org/abs/2603.05075)
-**Code**: Available ([Project Page](https://any2any-mllm.github.io/unim))
+**arXiv**: [2603.05075](https://arxiv.org/abs/2603.05075)  
+**Code**: Available ([Project Page](https://any2any-mllm.github.io/unim))  
 **Area**: Audio/Speech (Multimodal Benchmark)
 **Keywords**: multimodal benchmark, any-to-any, interleaved multimodal, evaluation suite, agentic model
 

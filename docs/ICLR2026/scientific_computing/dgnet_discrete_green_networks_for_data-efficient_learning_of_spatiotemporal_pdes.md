@@ -18,8 +18,8 @@ content_hash: c4e1ffd4c6859db8
 # DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01762](https://arxiv.org/abs/2603.01762)
-**Code**: [Available](https://github.com/tanyingjie01/DGNet)
+**arXiv**: [2603.01762](https://arxiv.org/abs/2603.01762)  
+**Code**: [Available](https://github.com/tanyingjie01/DGNet)  
 **Area**: Scientific Computing
 **Keywords**: Neural PDE solvers, Green's function, graph neural networks, data-efficient learning, spatiotemporal PDEs
 

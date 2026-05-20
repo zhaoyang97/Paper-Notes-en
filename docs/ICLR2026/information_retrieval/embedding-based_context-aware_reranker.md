@@ -18,8 +18,8 @@ content_hash: 7ba9b732510159dc
 # Embedding-Based Context-Aware Reranker
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.13329](https://arxiv.org/abs/2510.13329)
-**Code**: [GitHub](https://github.com/BorealisAI/EBCAR)
+**arXiv**: [2510.13329](https://arxiv.org/abs/2510.13329)  
+**Code**: [GitHub](https://github.com/BorealisAI/EBCAR)  
 **Area**: Information Retrieval / RAG Efficiency
 **Keywords**: Reranking, RAG, Embedding Retrieval, Cross-Passage Reasoning, Hybrid Attention
 

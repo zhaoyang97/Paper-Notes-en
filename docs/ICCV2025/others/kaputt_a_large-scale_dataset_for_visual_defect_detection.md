@@ -17,8 +17,8 @@ content_hash: 2ad635cb25964714
 # Kaputt: A Large-Scale Dataset for Visual Defect Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.05903](https://arxiv.org/abs/2510.05903)
-**Code**: [Dataset](https://www.kaputt-dataset.com)
+**arXiv**: [2510.05903](https://arxiv.org/abs/2510.05903)  
+**Code**: [Dataset](https://www.kaputt-dataset.com)  
 **Area**: Other
 **Keywords**: defect detection, anomaly detection, large-scale dataset, retail logistics, benchmark
 

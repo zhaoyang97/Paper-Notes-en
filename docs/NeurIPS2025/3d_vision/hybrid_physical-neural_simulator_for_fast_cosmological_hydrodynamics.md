@@ -18,8 +18,8 @@ content_hash: 6f8ac344dca9df7a
 # Hybrid Physical-Neural Simulator for Fast Cosmological Hydrodynamics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26593](https://arxiv.org/abs/2510.26593)
-**Code**: Based on JaxPM (open-source); neural pressure model code TBD
+**arXiv**: [2510.26593](https://arxiv.org/abs/2510.26593)  
+**Code**: Based on JaxPM (open-source); neural pressure model code TBD  
 **Area**: 3D Vision
 **Keywords**: cosmological simulation, hybrid physical-neural method, particle-mesh, differentiable simulation, gas dynamics
 

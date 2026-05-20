@@ -18,8 +18,8 @@ content_hash: f3fad6652dad7ddb
 # Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.01423](https://arxiv.org/abs/2603.01423)
-**Code**: None
+**arXiv**: [2603.01423](https://arxiv.org/abs/2603.01423)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: LLM Evaluation, Multi-Turn Dialogue, Reliability, Instruction Following, Tool Selection
 
@@ -141,9 +141,9 @@ All models are decoded at temperature 0 to ensure deterministic outputs.
 3. **Entity extraction is most robust**: Because the target fields are structured short phrases or numbers (date, time, party size), models can capture final slot values with less ambiguity. Nevertheless, the date slot is consistently the weakest, reflecting difficulty in temporal tracking.
 
 4. **Three core failure modes**:
-   - **Instruction drift**: Global constraints are forgotten after multiple turns.
-   - **Intent confusion**: Models over-rely on recent context and reuse the previous tool (e.g., selecting Stock again when transitioning to a Weather request).
-   - **Context overwriting**: Nearby mentions interfere with working memory, overwriting already correctly updated slot values.
+    - **Instruction drift**: Global constraints are forgotten after multiple turns.
+    - **Intent confusion**: Models over-rely on recent context and reuse the previous tool (e.g., selecting Stock again when transitioning to a Weather request).
+    - **Context overwriting**: Nearby mentions interfere with working memory, overwriting already correctly updated slot values.
 
 ## Highlights & Insights
 

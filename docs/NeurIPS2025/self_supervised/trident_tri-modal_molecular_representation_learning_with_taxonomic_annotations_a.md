@@ -18,8 +18,8 @@ content_hash: 9d873c6c706ba848
 # TRIDENT: Tri-Modal Molecular Representation Learning with Taxonomic Annotations and Structural Relationships
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.21028](https://arxiv.org/abs/2506.21028)
-**Code**: [GitHub](https://github.com/uta-smile/TRIDENT)
+**arXiv**: [2506.21028](https://arxiv.org/abs/2506.21028)  
+**Code**: [GitHub](https://github.com/uta-smile/TRIDENT)  
 **Area**: Self-Supervised Learning
 **Keywords**: Molecular property prediction, tri-modal alignment, hierarchical taxonomic annotation, volumetric contrastive loss, local alignment
 
@@ -51,29 +51,29 @@ The model takes tri-modal inputs $\langle\text{SMILES, Text, HTA}\rangle$. SMILE
 
 1. **HTA Modality Construction**
 
-   - Molecular information is retrieved from PubChem, and multi-level functional annotations are extracted across 32 classification systems (LOTUS Tree, MeSH Tree, etc.).
-   - GPT-4o is used to synthesize structured annotations into high-fidelity, human-readable HTA text descriptions.
-   - A dataset of 47,269 $\langle\text{SMILES, Text, HTA}\rangle$ triplets is constructed.
-   - HTA is complementary to conventional descriptions: HTA provides multi-perspective information from 32 viewpoints (e.g., chemical origin, natural product classification, medical function), whereas conventional descriptions more directly highlight core molecular features.
+    - Molecular information is retrieved from PubChem, and multi-level functional annotations are extracted across 32 classification systems (LOTUS Tree, MeSH Tree, etc.).
+    - GPT-4o is used to synthesize structured annotations into high-fidelity, human-readable HTA text descriptions.
+    - A dataset of 47,269 $\langle\text{SMILES, Text, HTA}\rangle$ triplets is constructed.
+    - HTA is complementary to conventional descriptions: HTA provides multi-perspective information from 32 viewpoints (e.g., chemical origin, natural product classification, medical function), whereas conventional descriptions more directly highlight core molecular features.
 
 2. **Volumetric Global Tri-Modal Alignment**
 
-   - Rather than pairwise cosine similarity, the framework computes the parallelepiped volume spanned by three normalized embeddings $(m, t, h)$:
+    - Rather than pairwise cosine similarity, the framework computes the parallelepiped volume spanned by three normalized embeddings $(m, t, h)$:
      $$\text{Vol}(m,t,h) = \sqrt{1 - \langle m,t\rangle^2 - \langle m,h\rangle^2 - \langle t,h\rangle^2 + 2\langle m,t\rangle\langle t,h\rangle\langle h,m\rangle}$$
-   - Matched triplets should exhibit small volume (tri-modal convergence), while unmatched triplets should exhibit large volume.
-   - A bidirectional loss is used: $\mathcal{L}_{M2TH}$ (molecule retrieves Text + HTA) and $\mathcal{L}_{TH2M}$ (Text + HTA retrieves molecule), averaged symmetrically.
+    - Matched triplets should exhibit small volume (tri-modal convergence), while unmatched triplets should exhibit large volume.
+    - A bidirectional loss is used: $\mathcal{L}_{M2TH}$ (molecule retrieves Text + HTA) and $\mathcal{L}_{TH2M}$ (Text + HTA retrieves molecule), averaged symmetrically.
 
 3. **Functional Group–Text Local Alignment**
 
-   - RDKit is used to extract salient functional groups from SMILES (85 types, including hydroxyl, amine, carboxyl, and aromatic systems).
-   - High-quality textual descriptions are composed for each functional group via expert annotation and GPT-4o assistance.
-   - Functional group and text embeddings are encoded separately, aggregated via max-pooling, and aligned through a bidirectional contrastive loss: $\mathcal{L}_{FG2T} + \mathcal{L}_{T2FG}$.
+    - RDKit is used to extract salient functional groups from SMILES (85 types, including hydroxyl, amine, carboxyl, and aromatic systems).
+    - High-quality textual descriptions are composed for each functional group via expert annotation and GPT-4o assistance.
+    - Functional group and text embeddings are encoded separately, aggregated via max-pooling, and aligned through a bidirectional contrastive loss: $\mathcal{L}_{FG2T} + \mathcal{L}_{T2FG}$.
 
 4. **Momentum-Based Dynamic Balancing**
 
-   - Overall loss: $\mathcal{L} = \alpha \mathcal{L}_g + (1-\alpha) \mathcal{L}_l$
-   - $\alpha$ is updated dynamically via exponential moving average: $\alpha_t = \beta \alpha_{t-1} + (1-\beta) \frac{\mathcal{L}_g^{(t)}}{\mathcal{L}_g^{(t)} + \mathcal{L}_l^{(t)}}$, with momentum parameter $\beta = 0.9$.
-   - This enables the model to automatically focus on whichever alignment objective has a higher current loss.
+    - Overall loss: $\mathcal{L} = \alpha \mathcal{L}_g + (1-\alpha) \mathcal{L}_l$
+    - $\alpha$ is updated dynamically via exponential moving average: $\alpha_t = \beta \alpha_{t-1} + (1-\beta) \frac{\mathcal{L}_g^{(t)}}{\mathcal{L}_g^{(t)} + \mathcal{L}_l^{(t)}}$, with momentum parameter $\beta = 0.9$.
+    - This enables the model to automatically focus on whichever alignment objective has a higher current loss.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 216dd2abc7681080
 # From Simulations to Surveys: Domain Adaptation for Galaxy Observations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.18590](https://arxiv.org/abs/2511.18590)
-**Code**: [GitHub](https://github.com/ahmedsalim3/galaxy-da)
+**arXiv**: [2511.18590](https://arxiv.org/abs/2511.18590)  
+**Code**: [GitHub](https://github.com/ahmedsalim3/galaxy-da)  
 **Area**: Astrophysics / Domain Adaptation
 **Keywords**: domain adaptation, galaxy morphology, optimal transport, simulation-to-survey, GeomLoss
 

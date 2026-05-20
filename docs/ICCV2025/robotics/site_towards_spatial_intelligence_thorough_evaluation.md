@@ -18,8 +18,8 @@ content_hash: 42407cbf273c147d
 # SITE: towards Spatial Intelligence Thorough Evaluation
 
 **Conference**: ICCV2025
-**arXiv**: [2505.05456](https://arxiv.org/abs/2505.05456)
-**Code**: [https://github.com/SITE-project-page](https://github.com/SITE-project-page) (to be confirmed)
+**arXiv**: [2505.05456](https://arxiv.org/abs/2505.05456)  
+**Code**: [https://github.com/SITE-project-page](https://github.com/SITE-project-page) (to be confirmed)  
 **Area**: Robotics / Spatial Intelligence / VLM Evaluation
 **Keywords**: Spatial Intelligence, VLM Benchmark, Multi-View Reasoning, Cognitive Science, Embodied AI
 

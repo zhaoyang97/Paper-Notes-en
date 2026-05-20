@@ -18,8 +18,8 @@ content_hash: b4f5f0311f5c4f1b
 # Modeling Multi-Dimensional Cognitive States in Large Language Models under Cognitive Crowding
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17174](https://arxiv.org/abs/2604.17174)
-**Code**: [GitHub](https://github.com/Chips98/HyCoLLM_for_ACL2026)
+**arXiv**: [2604.17174](https://arxiv.org/abs/2604.17174)  
+**Code**: [GitHub](https://github.com/Chips98/HyCoLLM_for_ACL2026)  
 **Area**: LLM Evaluation
 **Keywords**: cognitive state modeling, cognitive crowding, hyperbolic space, multi-dimensional joint prediction, CognitiveBench
 

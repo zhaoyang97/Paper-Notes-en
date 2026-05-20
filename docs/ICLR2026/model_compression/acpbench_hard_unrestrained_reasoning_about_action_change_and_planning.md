@@ -18,8 +18,8 @@ content_hash: 56144ece10099091
 # ACPBench Hard: Unrestrained Reasoning about Action, Change, and Planning
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.24378](https://arxiv.org/abs/2503.24378)
-**Code**: [https://ibm.github.io/ACPBench](https://ibm.github.io/ACPBench)
+**arXiv**: [2503.24378](https://arxiv.org/abs/2503.24378)  
+**Code**: [https://ibm.github.io/ACPBench](https://ibm.github.io/ACPBench)  
 **Area**: Model Compression
 **Keywords**: planning benchmark, PDDL, generative evaluation, symbolic validator, action reasoning
 

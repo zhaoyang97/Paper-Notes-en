@@ -18,8 +18,8 @@ content_hash: 3e6e13a1aee2c978
 # Addressing Text Embedding Leakage in Diffusion-based Image Editing
 
 **Conference**: ICCV 2025
-**arXiv**: N/A
-**Code**: [GitHub](https://github.com/mtablo/ALE_Edit_page)
+**arXiv**: N/A  
+**Code**: [GitHub](https://github.com/mtablo/ALE_Edit_page)  
 **Area**: Image Editing / Diffusion Models
 **Keywords**: attribute leakage, diffusion image editing, EOS embedding, cross-attention masking, multi-object editing
 

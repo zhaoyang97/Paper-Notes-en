@@ -18,8 +18,8 @@ content_hash: 12007de1daf134a1
 # Synchronization of Multiple Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.14051](https://arxiv.org/abs/2510.14051)
-**Code**: [github.com/BGU-CS-VIL/TPL](https://github.com/BGU-CS-VIL/TPL)
+**arXiv**: [2510.14051](https://arxiv.org/abs/2510.14051)  
+**Code**: [github.com/BGU-CS-VIL/TPL](https://github.com/BGU-CS-VIL/TPL)  
 **Area**: Video Synchronization / Object Detection
 **Keywords**: Video Synchronization, Temporal Prototype Learning, Temporal Alignment, Dynamic Time Warping, Generative AI Video
 

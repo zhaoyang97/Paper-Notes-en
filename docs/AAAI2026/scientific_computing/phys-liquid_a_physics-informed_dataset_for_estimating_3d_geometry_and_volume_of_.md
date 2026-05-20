@@ -18,8 +18,8 @@ content_hash: 14c05c33f70f3f08
 # Phys-Liquid: A Physics-Informed Dataset for Estimating 3D Geometry and Volume of Transparent Deformable Liquids
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11077](https://arxiv.org/abs/2511.11077)
-**Code**: [https://dualtransparency.github.io/Phys-Liquid/](https://dualtransparency.github.io/Phys-Liquid/)
+**arXiv**: [2511.11077](https://arxiv.org/abs/2511.11077)  
+**Code**: [https://dualtransparency.github.io/Phys-Liquid/](https://dualtransparency.github.io/Phys-Liquid/)  
 **Area**: 3D Vision / Scientific Computing
 **Keywords**: physics-informed dataset, transparent liquid, 3D reconstruction, liquid simulation, deformable objects
 

@@ -18,8 +18,8 @@ content_hash: b7ab2a6add640fa6
 # EvoLMM: Self-Evolving Large Multimodal Models with Continuous Rewards
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.16672](https://arxiv.org/abs/2511.16672)
-**Code**: [https://github.com/mbzuai-oryx/EvoLMM](https://github.com/mbzuai-oryx/EvoLMM) (open-source)
+**arXiv**: [2511.16672](https://arxiv.org/abs/2511.16672)  
+**Code**: [https://github.com/mbzuai-oryx/EvoLMM](https://github.com/mbzuai-oryx/EvoLMM) (open-source)  
 **Area**: Multimodal VLM / Self-Evolving Learning
 **Keywords**: Self-evolving LMM, unsupervised self-improvement, continuous self-consistency reward, Proposer-Solver, visual mathematical reasoning
 
@@ -49,22 +49,22 @@ A pretrained LMM (e.g., Qwen2.5-VL-7B) is decomposed into two roles sharing a ba
 
 1. **Continuous Self-Consistency Solver Reward**
 
-   - **Function**: Quantifies the degree of consistency among multiple Solver responses to the same question and converts it into a continuous training signal.
-   - **Mechanism**: The reward equals the empirical probability of an answer across $N$ samples raised to the power $\gamma$, multiplied by a length penalty term. $\gamma$ controls reward softness (lower values amplify differences at intermediate consistency levels); the length penalty encourages concise response formats.
-   - **Design Motivation**: Discrete majority voting only checks whether an answer constitutes a majority — partial agreement of 2/5 and 3/5 receives identical zero signal. The continuous reward provides meaningful positive gradients even under model uncertainty, avoiding early-training stagnation. Experiments confirm that discrete rewards yield near-zero and unstable early Solver rewards, whereas continuous rewards rise smoothly.
-   - **Novelty**: SQLM uses discrete majority voting, which produces a large proportion of zero-reward updates in multimodal settings and leads to learning stagnation.
+    - **Function**: Quantifies the degree of consistency among multiple Solver responses to the same question and converts it into a continuous training signal.
+    - **Mechanism**: The reward equals the empirical probability of an answer across $N$ samples raised to the power $\gamma$, multiplied by a length penalty term. $\gamma$ controls reward softness (lower values amplify differences at intermediate consistency levels); the length penalty encourages concise response formats.
+    - **Design Motivation**: Discrete majority voting only checks whether an answer constitutes a majority — partial agreement of 2/5 and 3/5 receives identical zero signal. The continuous reward provides meaningful positive gradients even under model uncertainty, avoiding early-training stagnation. Experiments confirm that discrete rewards yield near-zero and unstable early Solver rewards, whereas continuous rewards rise smoothly.
+    - **Novelty**: SQLM uses discrete majority voting, which produces a large proportion of zero-reward updates in multimodal settings and leads to learning stagnation.
 
 2. **Entropy-Guided Continuous Proposer Reward**
 
-   - **Function**: Encourages the Proposer to generate questions of moderate difficulty — neither too easy nor too hard.
-   - **Mechanism**: A Gaussian band-pass function is applied, maximizing the reward when the entropy $H$ of Solver responses is at an intermediate value. Low $H$ indicates the question is too easy (all answers agree); high $H$ indicates the question is too hard or ambiguous. The center parameter is $\mu_H = 0.90$ with bandwidth $\sigma_H = 0.35$.
-   - **Design Motivation**: This implements adaptive curriculum learning. As the Solver improves, previously moderate questions become too easy (low entropy), prompting the Proposer to generate harder yet still solvable questions to obtain high rewards, naturally forming a progressive curriculum. Figure 6 clearly illustrates this emergent behavior.
-   - **Novelty**: No external Judge module or manually designed difficulty criteria are required.
+    - **Function**: Encourages the Proposer to generate questions of moderate difficulty — neither too easy nor too hard.
+    - **Mechanism**: A Gaussian band-pass function is applied, maximizing the reward when the entropy $H$ of Solver responses is at an intermediate value. Low $H$ indicates the question is too easy (all answers agree); high $H$ indicates the question is too hard or ambiguous. The center parameter is $\mu_H = 0.90$ with bandwidth $\sigma_H = 0.35$.
+    - **Design Motivation**: This implements adaptive curriculum learning. As the Solver improves, previously moderate questions become too easy (low entropy), prompting the Proposer to generate harder yet still solvable questions to obtain high rewards, naturally forming a progressive curriculum. Figure 6 clearly illustrates this emergent behavior.
+    - **Novelty**: No external Judge module or manually designed difficulty criteria are required.
 
 3. **KL-Regularized REINFORCE Optimization**
 
-   - **Function**: Stabilizes policy gradient training and prevents excessive deviation from the pretrained model.
-   - **Mechanism**: An exponential moving average baseline is used to reduce variance; a dynamic KL coefficient adaptively controls the degree of deviation. A tighter KL constraint is applied to the Solver for stability, while a looser constraint is applied to the Proposer to permit exploration.
+    - **Function**: Stabilizes policy gradient training and prevents excessive deviation from the pretrained model.
+    - **Mechanism**: An exponential moving average baseline is used to reduce variance; a dynamic KL coefficient adaptively controls the degree of deviation. A tighter KL constraint is applied to the Solver for stability, while a looser constraint is applied to the Proposer to permit exploration.
 
 ### Training Details
 - **Base model**: Qwen2.5-VL-7B; backbone frozen; two LoRA adapters

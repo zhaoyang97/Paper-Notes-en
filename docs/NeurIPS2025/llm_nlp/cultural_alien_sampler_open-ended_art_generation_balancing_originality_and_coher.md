@@ -18,8 +18,8 @@ content_hash: a5d9eb657ac8cf63
 # Cultural Alien Sampler: Open-ended Art Generation Balancing Originality and Coherence
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20849](https://arxiv.org/abs/2510.20849)
-**Code**: To be confirmed
+**arXiv**: [2510.20849](https://arxiv.org/abs/2510.20849)  
+**Code**: To be confirmed  
 **Area**: LLM/NLP
 **Keywords**: Creative generation, concept composition, cultural debiasing, open-ended art, GPT-2 fine-tuning
 

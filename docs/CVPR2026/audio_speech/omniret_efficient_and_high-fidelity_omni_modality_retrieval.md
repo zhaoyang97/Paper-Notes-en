@@ -18,8 +18,8 @@ content_hash: f95cf8672ced8c09
 # OmniRet: Efficient and High-Fidelity Omni Modality Retrieval
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02098](https://arxiv.org/abs/2603.02098)
-**Code**: [hmchuong/omniret](https://github.com/hmchuong/omniret)
+**arXiv**: [2603.02098](https://arxiv.org/abs/2603.02098)  
+**Code**: [hmchuong/omniret](https://github.com/hmchuong/omniret)  
 **Area**: Audio & Speech
 **Keywords**: omni-modal retrieval, multimodal embedding, Sliced Wasserstein, composed query, audio retrieval
 

@@ -18,8 +18,8 @@ content_hash: 1c605fa6dd0cdefc
 # SPRINT: Enabling Interleaved Planning and Parallelized Execution in Reasoning Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05745](https://arxiv.org/abs/2506.05745)
-**Code**: [https://github.com/stanford-futuredata/Sprint](https://github.com/stanford-futuredata/Sprint)
+**arXiv**: [2506.05745](https://arxiv.org/abs/2506.05745)  
+**Code**: [https://github.com/stanford-futuredata/Sprint](https://github.com/stanford-futuredata/Sprint)  
 **Area**: LLM Reasoning
 **Keywords**: Reasoning Acceleration, Parallel Inference, Planning and Execution, Chain-of-Thought, Reasoning Models
 

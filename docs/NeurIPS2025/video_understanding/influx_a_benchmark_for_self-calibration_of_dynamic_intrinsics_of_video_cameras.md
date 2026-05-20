@@ -18,8 +18,8 @@ content_hash: fdce33609e965eb9
 # InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23589](https://arxiv.org/abs/2510.23589)
-**Code**: [Project Page](https://influx.cs.princeton.edu/)
+**arXiv**: [2510.23589](https://arxiv.org/abs/2510.23589)  
+**Code**: [Project Page](https://influx.cs.princeton.edu/)  
 **Area**: Video Understanding
 **Keywords**: camera intrinsics, dynamic calibration, benchmark, lookup table, video 3D understanding
 

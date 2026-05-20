@@ -19,9 +19,9 @@ content_hash: c43d6c9b509afc39
 # Principled Data Augmentation for Learning to Solve Quadratic Programming Problems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01728](https://arxiv.org/abs/2506.01728)
+**arXiv**: [2506.01728](https://arxiv.org/abs/2506.01728)  
 **Authors**: Chendi Qian, Christopher Morris (RWTH Aachen University)
-**Code**: [GitHub](https://github.com/chendiqian/Data-Augmentation-for-Learning-to-Optimize)
+**Code**: [GitHub](https://github.com/chendiqian/Data-Augmentation-for-Learning-to-Optimize)  
 **Area**: Graph Learning
 **Keywords**: Data Augmentation, Quadratic Programming, Graph Neural Networks, Contrastive Learning, Learning to Optimize, KKT Conditions
 

@@ -18,8 +18,8 @@ content_hash: 9f6ace3905f2cbcc
 # HealthSLM-Bench: Benchmarking Small Language Models for Mobile and Wearable Healthcare Monitoring
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.07260](https://arxiv.org/abs/2509.07260)
-**Code**: None
+**arXiv**: [2509.07260](https://arxiv.org/abs/2509.07260)  
+**Code**: None  
 **Area**: AI Safety (Healthcare AI)
 **Keywords**: small language models, mobile health monitoring, wearable devices, privacy preservation, on-device deployment
 

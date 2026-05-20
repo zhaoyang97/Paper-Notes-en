@@ -18,8 +18,8 @@ content_hash: d41841c1e560d0e9
 # Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.11779](https://arxiv.org/abs/2602.11779)
-**Code**: None
+**arXiv**: [2602.11779](https://arxiv.org/abs/2602.11779)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Temperature Scheduling, Meta-Policy, GRPO, Adaptive Exploration, Mathematical Reasoning
 

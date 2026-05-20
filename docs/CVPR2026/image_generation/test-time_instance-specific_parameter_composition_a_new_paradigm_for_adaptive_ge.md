@@ -18,8 +18,8 @@ content_hash: 4d98e49138559ee9
 # Test-Time Instance-Specific Parameter Composition: A New Paradigm for Adaptive Generative Modeling
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27665](https://arxiv.org/abs/2603.27665)
-**Code**: [https://github.com/tmtuan1307/Composer](https://github.com/tmtuan1307/Composer)
+**arXiv**: [2603.27665](https://arxiv.org/abs/2603.27665)  
+**Code**: [https://github.com/tmtuan1307/Composer](https://github.com/tmtuan1307/Composer)  
 **Area**: Image Generation / Diffusion Models
 **Keywords**: Adaptive Generative Modeling, Test-Time Parameter Composition, Low-Rank Updates, Dynamic Weights, Meta-Generator
 

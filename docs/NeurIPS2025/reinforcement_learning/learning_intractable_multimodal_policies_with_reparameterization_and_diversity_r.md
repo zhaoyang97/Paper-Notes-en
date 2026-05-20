@@ -18,8 +18,8 @@ content_hash: 94fa6138d4b51274
 # Learning Intractable Multimodal Policies with Reparameterization and Diversity Regularization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01374](https://arxiv.org/abs/2511.01374)
-**Code**: [GitHub](https://github.com/PneuC/DrAC)
+**arXiv**: [2511.01374](https://arxiv.org/abs/2511.01374)  
+**Code**: [GitHub](https://github.com/PneuC/DrAC)  
 **Area**: Reinforcement Learning
 **Keywords**: multimodal policy, reparameterization, diversity regularization, diffusion policy, actor-critic
 

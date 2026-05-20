@@ -18,8 +18,8 @@ content_hash: ae9c0eb363e6f91d
 # NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23104](https://arxiv.org/abs/2603.23104)
-**Code**: [https://github.com/yy0007/NeurINO](https://github.com/yy0007/NeurINO)
+**arXiv**: [2603.23104](https://arxiv.org/abs/2603.23104)  
+**Code**: [https://github.com/yy0007/NeurINO](https://github.com/yy0007/NeurINO)  
 **Area**: Medical Imaging / 3D Segmentation
 **Keywords**: Neuron segmentation, DINOv3, 2D-to-3D transfer, topology-aware loss, data-efficient learning
 

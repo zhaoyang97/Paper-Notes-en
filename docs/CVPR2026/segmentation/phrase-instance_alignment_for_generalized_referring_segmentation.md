@@ -18,8 +18,8 @@ content_hash: 436f4759d122354c
 # Phrase-Instance Alignment for Generalized Referring Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2411.15087](https://arxiv.org/abs/2411.15087)
-**Code**: [https://eronguyen.github.io/InstAlign](https://eronguyen.github.io/InstAlign)
+**arXiv**: [2411.15087](https://arxiv.org/abs/2411.15087)  
+**Code**: [https://eronguyen.github.io/InstAlign](https://eronguyen.github.io/InstAlign)  
 **Area**: Image Segmentation
 **Keywords**: Generalized Referring Segmentation, Phrase-Instance Alignment, Instance-Level Reasoning, Multi-Target Segmentation, No-Target Detection
 

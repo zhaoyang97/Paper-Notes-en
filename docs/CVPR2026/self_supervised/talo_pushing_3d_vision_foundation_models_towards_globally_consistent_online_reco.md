@@ -18,8 +18,8 @@ content_hash: fb45b889bb79e4e9
 # TALO: Pushing 3D Vision Foundation Models Towards Globally Consistent Online Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.02341](https://arxiv.org/abs/2512.02341)
-**Code**: [GitHub](https://github.com/Xian-Bei/TALO)
+**arXiv**: [2512.02341](https://arxiv.org/abs/2512.02341)  
+**Code**: [GitHub](https://github.com/Xian-Bei/TALO)  
 **Area**: Self-Supervised Learning
 **Keywords**: 3D vision foundation models, online reconstruction, Thin Plate Spline, submap alignment, autonomous driving
 

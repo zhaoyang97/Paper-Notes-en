@@ -19,8 +19,8 @@ content_hash: e25774bc5c0547a2
 # StreamDiffusion: A Pipeline-level Solution for Real-time Interactive Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2312.12491](https://arxiv.org/abs/2312.12491)
-**Code**: [GitHub](https://github.com/cumulo-autumn/StreamDiffusion)
+**arXiv**: [2312.12491](https://arxiv.org/abs/2312.12491)  
+**Code**: [GitHub](https://github.com/cumulo-autumn/StreamDiffusion)  
 **Area**: Diffusion Models · Image Generation
 **Keywords**: real-time generation, streaming diffusion, Stream Batch, residual CFG, stochastic similarity filtering, pipeline optimization
 

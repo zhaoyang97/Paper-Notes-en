@@ -17,8 +17,8 @@ content_hash: de4690ae30a5ed8b
 # DirPA: Addressing Prior Shift in Imbalanced Few-shot Crop-type Classification
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12905](https://arxiv.org/abs/2603.12905)
-**Code**: None
+**arXiv**: [2603.12905](https://arxiv.org/abs/2603.12905)  
+**Code**: None  
 **Area**: Few-shot Learning / Remote Sensing Agricultural Classification
 **Keywords**: few-shot learning, class imbalance, prior shift, Dirichlet augmentation, crop classification
 

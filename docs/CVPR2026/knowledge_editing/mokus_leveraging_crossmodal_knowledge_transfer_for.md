@@ -17,8 +17,8 @@ content_hash: 7f47ce15fde46029
 # MoKus: Leveraging Cross-Modal Knowledge Transfer for Knowledge-Aware Concept Customization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12743](https://arxiv.org/abs/2603.12743)
-**Code**: None
+**arXiv**: [2603.12743](https://arxiv.org/abs/2603.12743)  
+**Code**: None  
 **Area**: Image Generation / Concept Customization / Knowledge Editing
 **Keywords**: Concept Customization, Cross-Modal Knowledge Transfer, Knowledge Editing, DiT, LLM Text Encoder
 

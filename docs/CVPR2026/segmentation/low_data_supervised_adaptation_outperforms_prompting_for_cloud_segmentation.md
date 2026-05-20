@@ -18,8 +18,8 @@ content_hash: 79b8aacdbe8de3e6
 # Low-Data Supervised Adaptation Outperforms Prompting for Cloud Segmentation Under Domain Shift
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08956](https://arxiv.org/abs/2604.08956)
-**Code**: [https://github.com/uga-gaim/2026_CVPRW_CloudPrompts](https://github.com/uga-gaim/2026_CVPRW_CloudPrompts)
+**arXiv**: [2604.08956](https://arxiv.org/abs/2604.08956)  
+**Code**: [https://github.com/uga-gaim/2026_CVPRW_CloudPrompts](https://github.com/uga-gaim/2026_CVPRW_CloudPrompts)  
 **Area**: Image Segmentation
 **Keywords**: Domain Shift, Cloud Segmentation, Prompt Engineering, Low-Data Fine-Tuning, Vision-Language Models
 

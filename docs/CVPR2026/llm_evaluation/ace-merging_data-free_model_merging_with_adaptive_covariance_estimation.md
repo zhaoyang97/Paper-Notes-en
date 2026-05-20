@@ -18,8 +18,8 @@ content_hash: 4da0f4fcddf1353b
 # ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02945](https://arxiv.org/abs/2603.02945)
-**Code**: N/A
+**arXiv**: [2603.02945](https://arxiv.org/abs/2603.02945)  
+**Code**: N/A  
 **Area**: LLM Evaluation
 **Keywords**: Model Merging, Data-Free, Covariance Estimation, Spectral Refinement, Closed-Form Solution
 

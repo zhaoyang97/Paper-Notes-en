@@ -18,8 +18,8 @@ content_hash: e5344442c1390406
 # Adaptive Social Learning via Mode Policy Optimization for Language Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.02156](https://arxiv.org/abs/2505.02156)
-**Code**: [https://github.com/MozerWang/AMPO](https://github.com/MozerWang/AMPO)
+**arXiv**: [2505.02156](https://arxiv.org/abs/2505.02156)  
+**Code**: [https://github.com/MozerWang/AMPO](https://github.com/MozerWang/AMPO)  
 **Area**: LLM Reasoning
 **Keywords**: social intelligence, adaptive reasoning, mode selection, reinforcement-learning, token efficiency
 

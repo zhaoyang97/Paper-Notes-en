@@ -20,8 +20,8 @@ content_hash: c8e0f8b53b919250
 # Faster Algorithms for Structured John Ellipsoid Computation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2211.14407](https://arxiv.org/abs/2211.14407)
-**Code**: None
+**arXiv**: [2211.14407](https://arxiv.org/abs/2211.14407)  
+**Code**: None  
 **Area**: Convex Optimization / Algorithm Design
 **Keywords**: John ellipsoid, convex optimization, input sparsity, treewidth, non-negative matrix factorization, Lewis weights, leverage scores
 

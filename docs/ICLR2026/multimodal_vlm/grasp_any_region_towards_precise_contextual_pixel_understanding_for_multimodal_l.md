@@ -17,8 +17,8 @@ content_hash: 9aa734900eee0bf8
 # Grasp Any Region: Towards Precise, Contextual Pixel Understanding for Multimodal LLMs
 
 **Conference**: ICLR2026
-**arXiv**: [2510.18876](https://arxiv.org/abs/2510.18876)
-**Code**: [GitHub](https://github.com/Haochen-Wang409/Grasp-Any-Region)
+**arXiv**: [2510.18876](https://arxiv.org/abs/2510.18876)  
+**Code**: [GitHub](https://github.com/Haochen-Wang409/Grasp-Any-Region)  
 **Area**: Multimodal VLM
 **Keywords**: Region-Level MLLM, RoI-Aligned Feature Replay, Multi-Prompt Reasoning, Visual Grounding
 

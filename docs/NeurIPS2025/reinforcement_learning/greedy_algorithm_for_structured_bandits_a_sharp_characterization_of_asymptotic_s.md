@@ -18,8 +18,8 @@ content_hash: c56880dbe5b79be2
 # Greedy Algorithm for Structured Bandits: A Sharp Characterization of Asymptotic Success / Failure
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.04010](https://arxiv.org/abs/2503.04010)
-**Code**: None
+**arXiv**: [2503.04010](https://arxiv.org/abs/2503.04010)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: structured bandits, greedy algorithm, regret, self-identifiability, contextual bandits
 

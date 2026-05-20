@@ -18,8 +18,8 @@ content_hash: c4478ada88d5a1d1
 # SLAyiNG: Towards Queer Language Processing
 
 **Conference**: NeurIPS 2025 (Queer in AI Workshop)
-**arXiv**: [2509.17449](https://arxiv.org/abs/2509.17449)
-**Code**: None
+**arXiv**: [2509.17449](https://arxiv.org/abs/2509.17449)  
+**Code**: None  
 **Area**: Social Computing
 **Keywords**: queer slang, dataset annotation, sense disambiguation, LLM evaluation, sociolinguistics
 

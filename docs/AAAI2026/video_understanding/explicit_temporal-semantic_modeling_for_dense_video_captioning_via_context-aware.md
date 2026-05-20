@@ -18,8 +18,8 @@ content_hash: 61f3d093c75f2c03
 # Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10134](https://arxiv.org/abs/2511.10134)
-**Code**: None
+**arXiv**: [2511.10134](https://arxiv.org/abs/2511.10134)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: Dense Video Captioning, Cross-modal Retrieval, Temporal Clustering, Feature Enhancement, Retrieval-Augmented Generation
 

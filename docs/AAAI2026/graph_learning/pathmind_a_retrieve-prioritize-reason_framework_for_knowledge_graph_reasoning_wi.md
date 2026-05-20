@@ -18,8 +18,8 @@ content_hash: 0d2df3e7e14840d4
 # PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14256](https://arxiv.org/abs/2511.14256)
-**Code**: [github.com/liuyudiy/PathMind](https://github.com/liuyudiy/PathMind)
+**arXiv**: [2511.14256](https://arxiv.org/abs/2511.14256)  
+**Code**: [github.com/liuyudiy/PathMind](https://github.com/liuyudiy/PathMind)  
 **Area**: Graph Learning
 **Keywords**: Knowledge Graph Reasoning, LLM, Path Prioritization, Retrieval Augmentation, Preference Alignment
 

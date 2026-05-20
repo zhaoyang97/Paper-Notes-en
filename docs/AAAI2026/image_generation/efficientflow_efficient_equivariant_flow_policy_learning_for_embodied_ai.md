@@ -18,8 +18,8 @@ content_hash: cc697d3c44ff068b
 # EfficientFlow: Efficient Equivariant Flow Policy Learning for Embodied AI
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.02020](https://arxiv.org/abs/2512.02020)
-**Code**: [GitHub](https://github.com/chang-jl/EfficientFlow)
+**arXiv**: [2512.02020](https://arxiv.org/abs/2512.02020)  
+**Code**: [GitHub](https://github.com/chang-jl/EfficientFlow)  
 **Area**: Image Generation / Embodied AI
 **Keywords**: Flow Matching, Equivariance, Policy Learning, Acceleration Regularization, Robotic Manipulation
 

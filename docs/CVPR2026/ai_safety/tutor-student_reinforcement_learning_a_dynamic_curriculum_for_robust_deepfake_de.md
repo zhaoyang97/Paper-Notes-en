@@ -18,8 +18,8 @@ content_hash: e8708fab6422af9f
 # Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24139](https://arxiv.org/abs/2603.24139)
-**Code**: [https://github.com/wannac1/TSRL](https://github.com/wannac1/TSRL)
+**arXiv**: [2603.24139](https://arxiv.org/abs/2603.24139)  
+**Code**: [https://github.com/wannac1/TSRL](https://github.com/wannac1/TSRL)  
 **Area**: AI Security / Deepfake Detection
 **Keywords**: deepfake detection, reinforcement learning, curriculum learning, dynamic sample weighting, cross-domain generalization
 

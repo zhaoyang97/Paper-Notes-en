@@ -18,8 +18,8 @@ content_hash: 53b44455c1cf6485
 # Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.20779](https://arxiv.org/abs/2506.20779)
-**Code**: None
+**arXiv**: [2506.20779](https://arxiv.org/abs/2506.20779)  
+**Code**: None  
 **Area**: Scientific Computing
 **Keywords**: stable minima, ReLU networks, curse of dimensionality, implicit bias, nonparametric estimation
 

@@ -18,8 +18,8 @@ content_hash: 62b988a96ee49cf9
 # Switchable Token-Specific Codebook Quantization for Face Image Compression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22943](https://arxiv.org/abs/2510.22943)
-**Code**: Not available
+**arXiv**: [2510.22943](https://arxiv.org/abs/2510.22943)  
+**Code**: Not available  
 **Area**: Human Understanding
 **Keywords**: face image compression, vector quantization, codebook learning, low bitrate, face recognition
 

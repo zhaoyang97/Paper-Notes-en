@@ -17,8 +17,8 @@ content_hash: 3d353ae48768deda
 # Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2509.15927](https://arxiv.org/abs/2509.15927)
-**Code**: None
+**arXiv**: [2509.15927](https://arxiv.org/abs/2509.15927)  
+**Code**: None  
 **Area**: Other
 **Keywords**: auto-bidding, generative planning, offline RL, trajectory evaluator, KL-Lipschitz constraint
 

@@ -18,8 +18,8 @@ content_hash: 3ea84c8be265d823
 # Aligning by Misaligning: Boundary-aware Curriculum Learning for Multimodal Alignment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.08399](https://arxiv.org/abs/2511.08399)
-**Code**: Not released
+**arXiv**: [2511.08399](https://arxiv.org/abs/2511.08399)  
+**Code**: Not released  
 **Area**: Multimodal VLM
 **Keywords**: multimodal alignment, contrastive learning, curriculum learning, hard negatives, boundary-aware sampling
 

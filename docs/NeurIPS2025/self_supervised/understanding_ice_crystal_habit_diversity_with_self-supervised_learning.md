@@ -17,8 +17,8 @@ content_hash: ce900d50d0e67f93
 # Understanding Ice Crystal Habit Diversity with Self-Supervised Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.07688](https://arxiv.org/abs/2509.07688)
-**Code**: None
+**arXiv**: [2509.07688](https://arxiv.org/abs/2509.07688)  
+**Code**: None  
 **Area**: Self-Supervised Learning / AI for Science
 **Keywords**: self-supervised learning, ice crystal habit, climate science, Vision Transformer, data curation
 

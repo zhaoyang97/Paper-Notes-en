@@ -18,8 +18,8 @@ content_hash: 028ef5085cc68721
 # Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning
 
 **Conference**: ACL 2026
-**arXiv**: [2601.02902](https://arxiv.org/abs/2601.02902)
-**Code**: [https://github.com/AI4SS/Logical-Phase-Transitions](https://github.com/AI4SS/Logical-Phase-Transitions)
+**arXiv**: [2601.02902](https://arxiv.org/abs/2601.02902)  
+**Code**: [https://github.com/AI4SS/Logical-Phase-Transitions](https://github.com/AI4SS/Logical-Phase-Transitions)  
 **Area**: LLM Reasoning
 **Keywords**: logical reasoning, phase transition, curriculum learning, neuro-symbolic alignment, reasoning collapse
 

@@ -18,8 +18,8 @@ content_hash: 5238eba7ec3af7dd
 # Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.20749](https://arxiv.org/abs/2604.20749)
-**Code**: [https://github.com/DongdingLin/SiPeR](https://github.com/DongdingLin/SiPeR)
+**arXiv**: [2604.20749](https://arxiv.org/abs/2604.20749)  
+**Code**: [https://github.com/DongdingLin/SiPeR](https://github.com/DongdingLin/SiPeR)  
 **Area**: Recommender Systems / Conversational Recommendation
 **Keywords**: Situated Conversational Recommendation, Scene Transition, Bayesian Inverse Inference, Implicit Preference, Multimodal
 

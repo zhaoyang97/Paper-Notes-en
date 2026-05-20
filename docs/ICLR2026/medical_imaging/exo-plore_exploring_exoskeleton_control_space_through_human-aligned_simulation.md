@@ -18,8 +18,8 @@ content_hash: ac37d5d6e594be83
 # Exo-Plore: Exploring Exoskeleton Control Space through Human-Aligned Simulation
 
 **Conference**: ICLR2026
-**arXiv**: [2601.22550](https://arxiv.org/abs/2601.22550)
-**Code**: [Project Page](https://daebangstn.github.io/exo-plore/)
+**arXiv**: [2601.22550](https://arxiv.org/abs/2601.22550)  
+**Code**: [Project Page](https://daebangstn.github.io/exo-plore/)  
 **Area**: Medical Imaging
 **Keywords**: exoskeleton optimization, neuromechanical simulation, deep reinforcement learning, human-in-the-loop, surrogate optimization
 

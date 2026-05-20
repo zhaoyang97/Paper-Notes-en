@@ -18,8 +18,8 @@ content_hash: a56be15901d729ac
 # SRSR: Enhancing Semantic Accuracy in Real-World Image Super-Resolution with Spatially Re-Focused Text-Conditioning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22534](https://arxiv.org/abs/2510.22534)
-**Code**: N/A
+**arXiv**: [2510.22534](https://arxiv.org/abs/2510.22534)  
+**Code**: N/A  
 **Area**: Image Segmentation
 **Keywords**: Super-Resolution, Semantic Accuracy, Cross-Attention, Classifier-Free Guidance, Plug-and-Play
 

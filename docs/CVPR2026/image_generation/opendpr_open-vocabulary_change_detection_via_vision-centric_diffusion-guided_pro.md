@@ -18,8 +18,8 @@ content_hash: 6b92c06d67e6805a
 # OpenDPR: Open-Vocabulary Change Detection via Vision-Centric Diffusion-Guided Prototype Retrieval for Remote Sensing Imagery
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27645](https://arxiv.org/abs/2603.27645)
-**Code**: [https://github.com/guoqi2002/OpenDPR](https://github.com/guoqi2002/OpenDPR) (available, to be released)
+**arXiv**: [2603.27645](https://arxiv.org/abs/2603.27645)  
+**Code**: [https://github.com/guoqi2002/OpenDPR](https://github.com/guoqi2002/OpenDPR) (available, to be released)  
 **Area**: Image Generation
 **Keywords**: open-vocabulary change detection, remote sensing imagery, diffusion models, prototype retrieval, vision foundation models
 

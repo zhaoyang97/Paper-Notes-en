@@ -18,8 +18,8 @@ content_hash: 5d955c8d9b8cf687
 # T-Rex: Task-Adaptive Spatial Representation Extraction for Robotic Manipulation with VLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.19498](https://arxiv.org/abs/2506.19498)
-**Code**: [https://github.com/](https://github.com/) (not provided)
+**arXiv**: [2506.19498](https://arxiv.org/abs/2506.19498)  
+**Code**: [https://github.com/](https://github.com/) (not provided)  
 **Area**: Multimodal VLM / Robotic Manipulation
 **Keywords**: VLM, robotic manipulation, spatial representation, task-adaptive, Chain of Grounding
 

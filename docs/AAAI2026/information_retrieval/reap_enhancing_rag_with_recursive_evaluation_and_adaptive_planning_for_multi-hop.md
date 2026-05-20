@@ -18,8 +18,8 @@ content_hash: 6a2cd9ca70114ea2
 # REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09966](https://arxiv.org/abs/2511.09966)
-**Code**: [https://github.com/Deus-Glen/REAP](https://github.com/Deus-Glen/REAP)
+**arXiv**: [2511.09966](https://arxiv.org/abs/2511.09966)  
+**Code**: [https://github.com/Deus-Glen/REAP](https://github.com/Deus-Glen/REAP)  
 **Area**: NLP Understanding / RAG
 **Keywords**: Multi-hop question answering, retrieval-augmented generation, adaptive planning, fact extraction, multi-task fine-tuning
 

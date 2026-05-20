@@ -18,8 +18,8 @@ content_hash: fdedc0f251e8cac6
 # ALOcc: Adaptive Lifting-Based 3D Semantic Occupancy and Cost Volume-Based Flow Predictions
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.07725](https://arxiv.org/abs/2411.07725)
-**Code**: [https://github.com/cdb342/ALOcc](https://github.com/cdb342/ALOcc)
+**arXiv**: [2411.07725](https://arxiv.org/abs/2411.07725)  
+**Code**: [https://github.com/cdb342/ALOcc](https://github.com/cdb342/ALOcc)  
 **Area**: 3D Vision / Autonomous Driving
 **Keywords**: 3D Occupancy Prediction, 2D-to-3D View Transformation, Occlusion-Aware Lifting, Semantic Prototype, Occupancy Flow
 

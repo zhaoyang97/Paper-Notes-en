@@ -18,8 +18,8 @@ content_hash: c9c8cd9d62a80886
 # UrbanIng-V2X: A Large-Scale Multi-Vehicle Multi-Infrastructure Dataset Across Multiple Intersections for Cooperative Perception
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23478](https://arxiv.org/abs/2510.23478)
-**Code**: [https://github.com/thi-ad/UrbanIng-V2X](https://github.com/thi-ad/UrbanIng-V2X)
+**arXiv**: [2510.23478](https://arxiv.org/abs/2510.23478)  
+**Code**: [https://github.com/thi-ad/UrbanIng-V2X](https://github.com/thi-ad/UrbanIng-V2X)  
 **Area**: Autonomous Driving / Cooperative Perception
 **Keywords**: Vehicle-to-Everything, V2X Dataset, Cooperative Perception, Multiple Intersections, 3D Object Detection
 

@@ -19,8 +19,8 @@ content_hash: 4ecd5a8c40f1f2bc
 # WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.22154](https://arxiv.org/abs/2511.22154)
-**Code**: [HuggingFace Dataset](https://huggingface.co/datasets/tonyliao-meta/WearVQA)
+**arXiv**: [2511.22154](https://arxiv.org/abs/2511.22154)  
+**Code**: [HuggingFace Dataset](https://huggingface.co/datasets/tonyliao-meta/WearVQA)  
 **Area**: Multimodal VLM / Wearable Devices
 **Keywords**: VQA, wearable devices, egocentric view, image quality degradation, smart glasses, benchmark
 **Authors**: Eun Chang, Zhuangqun Huang, Yiwei Liao et al. (Meta Reality Labs)
@@ -53,21 +53,21 @@ WearVQA consists of three components: (1) **Dataset**—2,520 image–question�
 
 1. **Three-Dimensional Systematic Data Construction (Domain × Task × Quality)**
 
-   - **Function**: Ensures comprehensive coverage of wearable VQA challenges, with each slice containing ≥220 samples to guarantee statistical significance (error <5.7% at 90% confidence).
-   - **Mechanism**: 7 domains (animals/pets, food/beverages, gardening/plants, hobbies/activities, landmarks/travel, shopping/products, text/documents) × 10 cognitive task types (recognition, activity recognition, how-to/usage, counting, spatial reasoning, reasoning, next-state prediction, math, etc.) × 6 quality degradation categories (blur, truncation, low light, unzoomed, occlusion, rotation); 60% of questions are reasoning-type, 54% of images have quality issues, and 42% involve hand-held/pointing.
-   - **Design Motivation**: Unlike existing benchmarks that focus on a single dimension, the three-dimensional cross design precisely locates where models fail—in which scenario, task type, and quality condition—providing actionable directions for model improvement.
+    - **Function**: Ensures comprehensive coverage of wearable VQA challenges, with each slice containing ≥220 samples to guarantee statistical significance (error <5.7% at 90% confidence).
+    - **Mechanism**: 7 domains (animals/pets, food/beverages, gardening/plants, hobbies/activities, landmarks/travel, shopping/products, text/documents) × 10 cognitive task types (recognition, activity recognition, how-to/usage, counting, spatial reasoning, reasoning, next-state prediction, math, etc.) × 6 quality degradation categories (blur, truncation, low light, unzoomed, occlusion, rotation); 60% of questions are reasoning-type, 54% of images have quality issues, and 42% involve hand-held/pointing.
+    - **Design Motivation**: Unlike existing benchmarks that focus on a single dimension, the three-dimensional cross design precisely locates where models fail—in which scenario, task type, and quality condition—providing actionable directions for model improvement.
 
 2. **Forward-looking Difficulty Calibration (Forward-looking Filtering)**
 
-   - **Function**: Filters out questions that all current SOTA models answer correctly, ensuring the benchmark remains challenging over time.
-   - **Mechanism**: Multiple SOTA models are first used to pre-evaluate all candidate questions; samples answered correctly by all models are removed, retaining only discriminative, difficult questions. All retained questions must satisfy four constraints: image-grounded, no external knowledge required, short answer, and unambiguous.
-   - **Design Motivation**: Traditional benchmarks rapidly saturate as models improve; forward-looking filtering keeps WearVQA effective as an evaluation tool in a rapidly evolving model landscape.
+    - **Function**: Filters out questions that all current SOTA models answer correctly, ensuring the benchmark remains challenging over time.
+    - **Mechanism**: Multiple SOTA models are first used to pre-evaluate all candidate questions; samples answered correctly by all models are removed, retaining only discriminative, difficult questions. All retained questions must satisfy four constraints: image-grounded, no external knowledge required, short answer, and unambiguous.
+    - **Design Motivation**: Traditional benchmarks rapidly saturate as models improve; forward-looking filtering keeps WearVQA effective as an evaluation tool in a rapidly evolving model landscape.
 
 3. **Five-Dimensional LLM-as-a-Judge Evaluation Framework**
 
-   - **Function**: Provides scalable and reliable automated evaluation supporting open-ended answer judgment.
-   - **Mechanism**: GPT-4o serves as the judge, scoring responses across five dimensions—factual correctness (no hallucination), relevance, completeness, egocentric perspective (whether the response aligns with the wearer's viewpoint), and conciseness. Human annotation validation yields 96% accuracy, 98.2% error-identification precision, 95.5% recall, and 96.8% F1.
-   - **Design Motivation**: Open-ended answers in wearable VQA cannot be reliably evaluated by simple string matching and require semantic-level judgment. The inclusion of "egocentric perspective" as a unique evaluation dimension ensures responses conform to the natural interaction style of wearable devices.
+    - **Function**: Provides scalable and reliable automated evaluation supporting open-ended answer judgment.
+    - **Mechanism**: GPT-4o serves as the judge, scoring responses across five dimensions—factual correctness (no hallucination), relevance, completeness, egocentric perspective (whether the response aligns with the wearer's viewpoint), and conciseness. Human annotation validation yields 96% accuracy, 98.2% error-identification precision, 95.5% recall, and 96.8% F1.
+    - **Design Motivation**: Open-ended answers in wearable VQA cannot be reliably evaluated by simple string matching and require semantic-level judgment. The inclusion of "egocentric perspective" as a unique evaluation dimension ensures responses conform to the natural interaction style of wearable devices.
 
 ### Loss & Training
 

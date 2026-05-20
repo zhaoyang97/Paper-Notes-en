@@ -18,8 +18,8 @@ content_hash: 96c74aba2092e269
 # Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.23038](https://arxiv.org/abs/2510.23038)
-**Code**: None
+**arXiv**: [2510.23038](https://arxiv.org/abs/2510.23038)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: LLM-as-a-Judge, tool-integrated reasoning, reinforcement learning, code execution, evaluation
 

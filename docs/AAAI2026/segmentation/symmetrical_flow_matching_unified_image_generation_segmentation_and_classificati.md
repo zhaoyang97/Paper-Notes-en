@@ -18,8 +18,8 @@ content_hash: 9c631f72c26a2b13
 # Symmetrical Flow Matching: Unified Image Generation, Segmentation, and Classification with Score-Based Generative Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.10634](https://arxiv.org/abs/2506.10634)
-**Code**: [github.com/caetas/SymmetricFlow](https://github.com/caetas/SymmetricFlow)
+**arXiv**: [2506.10634](https://arxiv.org/abs/2506.10634)  
+**Code**: [github.com/caetas/SymmetricFlow](https://github.com/caetas/SymmetricFlow)  
 **Area**: Segmentation
 **Keywords**: Flow Matching, Semantic Segmentation, Image Generation, Classification, Unified Framework
 

@@ -18,8 +18,8 @@ content_hash: fa9939c92f95f490
 # DIIP: Diffusion Image Prior
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.21410](https://arxiv.org/abs/2503.21410)
-**Code**: None
+**arXiv**: [2503.21410](https://arxiv.org/abs/2503.21410)  
+**Code**: None  
 **Area**: Image Generation / Image Restoration
 **Keywords**: diffusion model, Blind Image Restoration, Deep Image Prior, Early Stopping, Zero-shot
 

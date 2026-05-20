@@ -18,8 +18,8 @@ content_hash: 69bcb663095a46e4
 # Benchmarking Vision-Language Models under Contradictory Virtual Content Attacks in Augmented Reality
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05510](https://arxiv.org/abs/2604.05510)
-**Code**: [GitHub](https://github.com/YM-Xiu/ContrAR-Dataset)
+**arXiv**: [2604.05510](https://arxiv.org/abs/2604.05510)  
+**Code**: [GitHub](https://github.com/YM-Xiu/ContrAR-Dataset)  
 **Area**: Multimodal / AR Security
 **Keywords**: Augmented reality security, semantic contradiction detection, VLM robustness, benchmark, AR attacks
 

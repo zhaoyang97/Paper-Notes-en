@@ -18,8 +18,8 @@ content_hash: 141ae69d3c93bcc2
 # Radiation-Preserving Selective Imaging for Pediatric Hip Dysplasia: A Cross-Modal Approach
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18457](https://arxiv.org/abs/2511.18457)
-**Code**: None
+**arXiv**: [2511.18457](https://arxiv.org/abs/2511.18457)  
+**Code**: None  
 **Area**: Medical Imaging / Cross-Modal Learning / Selective Imaging
 **Keywords**: Developmental dysplasia of the hip, ultrasound–X-ray cross-modal learning, conformal prediction, selective imaging, self-supervised learning
 
@@ -63,21 +63,21 @@ After 10 epochs of training, the projection and prediction heads are discarded a
 
 2. **Measurement-faithful head networks**: A 512-dimensional global average-pooled feature $u = f_\phi(x)$ is extracted from the frozen encoder, and a small MLP is trained on top:
 
-   - **Ultrasound head**: Single hidden layer (128 units), 3 outputs predicting $\hat{\alpha}, \hat{\beta}, \widehat{\text{cov}}$, with loss $\mathcal{L}_{US} = \lambda_\alpha |\hat{\alpha} - y^\alpha| + \lambda_\beta |\hat{\beta} - y^\beta| + \lambda_{\text{cov}} |\widehat{\text{cov}} - y^{\text{cov}}|$
-   - **X-ray head**: Predicts AI and CE angles (MAE loss) with optional IHDI classification (cross-entropy)
+    - **Ultrasound head**: Single hidden layer (128 units), 3 outputs predicting $\hat{\alpha}, \hat{\beta}, \widehat{\text{cov}}$, with loss $\mathcal{L}_{US} = \lambda_\alpha |\hat{\alpha} - y^\alpha| + \lambda_\beta |\hat{\beta} - y^\beta| + \lambda_{\text{cov}} |\widehat{\text{cov}} - y^{\text{cov}}|$
+    - **X-ray head**: Predicts AI and CE angles (MAE loss) with optional IHDI classification (cross-entropy)
 
    The core design philosophy is **measurement faithfulness** — outputs are the named measurements used in daily clinical practice rather than black-box classifications, making the decision process fully traceable.
 
 3. **Conformal-calibrated one-sided lower bounds**: Constructed in two steps:
 
-   - (i) **Affine bias correction**: $\tilde{y}^t = a_t \hat{y}^t + b_t$ is fitted on the calibration set to reduce systematic bias without retraining the head.
-   - (ii) **One-sided residual quantile**: Residuals $r_i^t = y_i^t - \tilde{y}_i^t$ are computed, and a conformal radius $q_t^+(\delta_t)$ is calculated at miscoverage level $\delta_t$, ensuring that under exchangeability $y^t \geq \text{LB}_t(x; \delta_t)$ holds with probability $\geq 1 - \delta_t$. The calibrated lower bound is $\text{LB}_t(x; \delta_t) = \tilde{y}^t(x) - q_t^+(\delta_t)$.
+    - (i) **Affine bias correction**: $\tilde{y}^t = a_t \hat{y}^t + b_t$ is fitted on the calibration set to reduce systematic bias without retraining the head.
+    - (ii) **One-sided residual quantile**: Residuals $r_i^t = y_i^t - \tilde{y}_i^t$ are computed, and a conformal radius $q_t^+(\delta_t)$ is calculated at miscoverage level $\delta_t$, ensuring that under exchangeability $y^t \geq \text{LB}_t(x; \delta_t)$ holds with probability $\geq 1 - \delta_t$. The calibrated lower bound is $\text{LB}_t(x; \delta_t) = \tilde{y}^t(x) - q_t^+(\delta_t)$.
 
 4. **Three selective imaging rules**: Based on comparing calibrated lower bounds against clinical thresholds $T_\alpha = 60°$ and $T_{\text{cov}} = 50\%$:
 
-   - **Alpha-only**: $d_\alpha(x) = \mathbb{I}[\text{LB}_\alpha(x) \geq 60°]$
-   - **Alpha OR Coverage**: Either lower bound exceeding its threshold is sufficient to proceed with ultrasound alone
-   - **Alpha AND Coverage**: Both lower bounds must exceed their thresholds to proceed with ultrasound alone
+    - **Alpha-only**: $d_\alpha(x) = \mathbb{I}[\text{LB}_\alpha(x) \geq 60°]$
+    - **Alpha OR Coverage**: Either lower bound exceeding its threshold is sufficient to proceed with ultrasound alone
+    - **Alpha AND Coverage**: Both lower bounds must exceed their thresholds to proceed with ultrasound alone
 
    Sweeping over a grid of $(\delta_\alpha, \delta_{\text{cov}})$ values generates a family of policies. Conservative settings (small $\delta$) provide high coverage but low ultrasound pass rates; lenient settings (large $\delta$) increase the pass rate at the cost of higher missed-finding risk.
 

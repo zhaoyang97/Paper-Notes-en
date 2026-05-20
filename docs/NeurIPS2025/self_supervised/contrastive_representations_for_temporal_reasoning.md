@@ -18,8 +18,8 @@ content_hash: 9d604af71b048234
 # Contrastive Representations for Temporal Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.13113](https://arxiv.org/abs/2508.13113)
-**Code**: [GitHub](https://github.com/Princeton-RL/CRTR)
+**arXiv**: [2508.13113](https://arxiv.org/abs/2508.13113)  
+**Code**: [GitHub](https://github.com/Princeton-RL/CRTR)  
 **Area**: Self-Supervised Learning / Representation Learning
 **Keywords**: Contrastive Learning, Temporal Reasoning, Combinatorial Problems, Sokoban, Rubik's Cube
 
@@ -59,14 +59,14 @@ The core modification in CRTR is remarkably simple — only the negative samplin
 ### Key Designs
 
 1. **Intra-Trajectory Negative Sampling to Eliminate Context Dependence**:
-   - Function: Modifies data sampling so that multiple time steps from the same trajectory appear in a single batch.
-   - Mechanism: When negative pairs share the same context (e.g., identical wall layouts), contextual features provide no discriminative signal, compelling the model to encode temporal structure instead.
-   - Design Motivation: Theoretically, this objective constitutes a lower bound on the conditional mutual information $I(X;X^+|C)$, equivalent to maximizing $I(X;X^+) - I(X^+;C)$, which resembles adversarial feature learning but requires no adversarial training.
+    - Function: Modifies data sampling so that multiple time steps from the same trajectory appear in a single batch.
+    - Mechanism: When negative pairs share the same context (e.g., identical wall layouts), contextual features provide no discriminative signal, compelling the model to encode temporal structure instead.
+    - Design Motivation: Theoretically, this objective constitutes a lower bound on the conditional mutual information $I(X;X^+|C)$, equivalent to maximizing $I(X;X^+) - I(X^+;C)$, which resembles adversarial feature learning but requires no adversarial training.
 
 2. **From Idealized to Practical Formulation**:
-   - Function: The idealized approach requires knowledge of the context variable $C$ to condition negative sampling; the practical approach requires only repeating trajectory IDs.
-   - Mechanism: Repeating trajectory IDs naturally produces negative pairs sharing the same context (different time steps from the same episode), and all negatives are anchored (preventing representational collapse).
-   - Design Motivation: In practice, it is impossible to know a priori which features constitute "context" (e.g., upon first encountering a Sokoban board, how does one know walls are immovable?).
+    - Function: The idealized approach requires knowledge of the context variable $C$ to condition negative sampling; the practical approach requires only repeating trajectory IDs.
+    - Mechanism: Repeating trajectory IDs naturally produces negative pairs sharing the same context (different time steps from the same episode), and all negatives are anchored (preventing representational collapse).
+    - Design Motivation: In practice, it is impossible to know a priori which features constitute "context" (e.g., upon first encountering a Sokoban board, how does one know walls are immovable?).
 
 ### Loss & Training
 

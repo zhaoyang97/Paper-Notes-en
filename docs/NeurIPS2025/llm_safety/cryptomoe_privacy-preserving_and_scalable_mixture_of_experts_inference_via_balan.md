@@ -18,8 +18,8 @@ content_hash: 449ad53fccefcf2a
 # CryptoMoE: Privacy-Preserving and Scalable Mixture of Experts Inference via Balanced Expert Routing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01197](https://arxiv.org/abs/2511.01197)
-**Code**: [https://github.com/PKU-SEC-Lab/CryptoMoE](https://github.com/PKU-SEC-Lab/CryptoMoE)
+**arXiv**: [2511.01197](https://arxiv.org/abs/2511.01197)  
+**Code**: [https://github.com/PKU-SEC-Lab/CryptoMoE](https://github.com/PKU-SEC-Lab/CryptoMoE)  
 **Area**: AI Security
 **Keywords**: Privacy-preserving inference, MoE, Homomorphic Encryption, Secure Multi-Party Computation, Expert Routing
 

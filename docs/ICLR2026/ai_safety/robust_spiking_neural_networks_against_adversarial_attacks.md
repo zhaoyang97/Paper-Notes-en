@@ -18,8 +18,8 @@ content_hash: 2a8d65bac668c133
 # Robust Spiking Neural Networks Against Adversarial Attacks
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.20548](https://arxiv.org/abs/2602.20548)
-**Code**: To be confirmed
+**arXiv**: [2602.20548](https://arxiv.org/abs/2602.20548)  
+**Code**: To be confirmed  
 **Area**: AI Safety
 **Keywords**: Spiking Neural Networks, Adversarial Robustness, Membrane Potential Optimization, Threshold-Proximal Neurons, Noisy LIF Model
 

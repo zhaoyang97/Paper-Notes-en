@@ -18,8 +18,8 @@ content_hash: 0a42d2abd2e310a7
 # Sentient: Detecting APTs Via Capturing Indirect Dependencies and Behavioral Logic
 
 **Conference**: AAAI 2026
-**arXiv**: [2502.06521](https://arxiv.org/abs/2502.06521)
-**Code**: None
+**arXiv**: [2502.06521](https://arxiv.org/abs/2502.06521)  
+**Code**: None  
 **Area**: Graph Learning / Cybersecurity
 **Keywords**: APT Detection, Provenance Graph, Graph Transformer, Mamba, Behavioral Intent Analysis
 

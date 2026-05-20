@@ -18,8 +18,8 @@ content_hash: ff0cbd069ce051a1
 # MMaDA: Multimodal Large Diffusion Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15809](https://arxiv.org/abs/2505.15809)
-**Code**: [GitHub](https://github.com/Gen-Verse/MMaDA)
+**arXiv**: [2505.15809](https://arxiv.org/abs/2505.15809)  
+**Code**: [GitHub](https://github.com/Gen-Verse/MMaDA)  
 **Area**: Diffusion Models / Multimodal Foundation Models
 **Keywords**: Diffusion language models, unified multimodal architecture, UniGRPO, mixed long chain-of-thought, discrete diffusion
 

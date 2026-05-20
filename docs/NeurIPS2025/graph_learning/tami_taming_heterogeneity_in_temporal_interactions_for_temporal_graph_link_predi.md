@@ -18,8 +18,8 @@ content_hash: a8b7ba0afa2fc553
 # TAMI: Taming Heterogeneity in Temporal Interactions for Temporal Graph Link Prediction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23577](https://arxiv.org/abs/2510.23577)
-**Code**: [GitHub](https://github.com/Alleinx/TAMI_temporal_graph)
+**arXiv**: [2510.23577](https://arxiv.org/abs/2510.23577)  
+**Code**: [GitHub](https://github.com/Alleinx/TAMI_temporal_graph)  
 **Area**: Graph Learning
 **Keywords**: Temporal graphs, link prediction, time encoding, heterogeneity, interaction frequency
 

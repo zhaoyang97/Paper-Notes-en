@@ -19,8 +19,8 @@ content_hash: e456f2d62852e8d1
 # CAS-Spec: Cascade Adaptive Self-Speculative Decoding for On-the-Fly Lossless Inference Acceleration of LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26843](https://arxiv.org/abs/2510.26843)
-**Code**: Submitted (open-source)
+**arXiv**: [2510.26843](https://arxiv.org/abs/2510.26843)  
+**Code**: Submitted (open-source)  
 **Area**: Model Compression
 **Keywords**: speculative decoding, self-speculative, cascade, layer sparsity, training-free, DyTC
 

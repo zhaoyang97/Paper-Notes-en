@@ -18,8 +18,8 @@ content_hash: b8c3980b6aebb5ec
 # Embracing Discrete Search: A Reasonable Approach to Causal Structure Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04970](https://arxiv.org/abs/2510.04970)
-**Code**: [https://github.com/CausalDisco/flopsearch](https://github.com/CausalDisco/flopsearch)
+**arXiv**: [2510.04970](https://arxiv.org/abs/2510.04970)  
+**Code**: [https://github.com/CausalDisco/flopsearch](https://github.com/CausalDisco/flopsearch)  
 **Area**: Image Generation
 **Keywords**: Causal Structure Learning, Discrete Search, Score Optimization, DAG Learning, Linear Models
 
@@ -53,29 +53,29 @@ FLOP adopts an order-based DAG search strategy: it searches over variable orderi
 
 1. **Fast Parent Selection**: Parent sets are warm-started from those learned in the previous ordering iteration.
 
-   - Conventional methods recompute parent sets from scratch upon each ordering change.
-   - FLOP reuses the previous parent sets as a hot start, substantially reducing both computation and memory overhead.
-   - Experiments confirm this does not degrade search quality, as local ordering changes typically affect the optimal parents of only a small number of variables.
+    - Conventional methods recompute parent sets from scratch upon each ordering change.
+    - FLOP reuses the previous parent sets as a hot start, substantially reducing both computation and memory overhead.
+    - Experiments confirm this does not degrade search quality, as local ordering changes typically affect the optimal parents of only a small number of variables.
 
 2. **Iterative Cholesky-based Score Updates**: Accelerates computation of the linear Gaussian BIC score.
 
-   - BIC scoring under linear Gaussian models requires computing regression residuals.
-   - FLOP exploits the incremental update property of Cholesky factorization: when a local search move modifies only a single edge, only a rank-1 update to the Cholesky factor is needed rather than a full redecomposition.
-   - This **amortizes** score update costs across local moves, significantly reducing per-step computation.
-   - Implemented in Rust for efficiency and distributed as the Python pip package `flopsearch`.
+    - BIC scoring under linear Gaussian models requires computing regression residuals.
+    - FLOP exploits the incremental update property of Cholesky factorization: when a local search move modifies only a single edge, only a rank-1 update to the Cholesky factor is needed rather than a full redecomposition.
+    - This **amortizes** score update costs across local moves, significantly reducing per-step computation.
+    - Implemented in Rust for efficiency and distributed as the Python pip package `flopsearch`.
 
 3. **Principled Order Initialization**: Reduces parent selection failures for distant ancestor–descendant pairs compared to random initialization.
 
-   - Distant, weakly dependent ancestor–descendant pairs are particularly susceptible to errors under finite samples.
-   - FLOP employs a data-statistic-based initialization strategy to place the initial ordering closer to the true causal ordering.
-   - This provides a better starting point for subsequent local search.
+    - Distant, weakly dependent ancestor–descendant pairs are particularly susceptible to errors under finite samples.
+    - FLOP employs a data-statistic-based initialization strategy to place the initial ordering closer to the true causal ordering.
+    - This provides a better starting point for subsequent local search.
 
 4. **Iterated Local Search (ILS)**: Systematically escapes local optima.
 
-   - Traditional local search methods (e.g., BOSS) terminate upon reaching a local optimum.
-   - FLOP applies controlled perturbations at local optima and restarts the search, repeating this process iteratively.
-   - FLOP_k denotes $k$ ILS restarts, where $k$ serves as a **computational budget hyperparameter**.
-   - This establishes a direct link between runtime and finite-sample accuracy: more restarts → better graphs.
+    - Traditional local search methods (e.g., BOSS) terminate upon reaching a local optimum.
+    - FLOP applies controlled perturbations at local optima and restarts the search, repeating this process iteratively.
+    - FLOP_k denotes $k$ ILS restarts, where $k$ serves as a **computational budget hyperparameter**.
+    - This establishes a direct link between runtime and finite-sample accuracy: more restarts → better graphs.
 
 ### Loss & Training
 

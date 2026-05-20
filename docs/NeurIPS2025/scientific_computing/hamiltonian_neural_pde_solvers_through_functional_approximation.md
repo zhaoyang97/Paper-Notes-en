@@ -18,8 +18,8 @@ content_hash: 62e92d2e11146c98
 # Hamiltonian Neural PDE Solvers through Functional Approximation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13275](https://arxiv.org/abs/2505.13275)
-**Code**: [GitHub](https://github.com/anthonyzhou-1/hamiltonian_pdes)
+**arXiv**: [2505.13275](https://arxiv.org/abs/2505.13275)  
+**Code**: [GitHub](https://github.com/anthonyzhou-1/hamiltonian_pdes)  
 **Area**: Scientific Computing / Neural PDE Solvers
 **Keywords**: Hamiltonian mechanics, PDE solving, functional approximation, neural fields, energy conservation
 

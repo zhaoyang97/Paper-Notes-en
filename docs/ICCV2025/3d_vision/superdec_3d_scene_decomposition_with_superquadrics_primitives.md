@@ -18,8 +18,8 @@ content_hash: fc658b5b40f9a4b1
 # SuperDec: 3D Scene Decomposition with Superquadric Primitives
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.00992](https://arxiv.org/abs/2504.00992)
-**Code**: [Project Page](https://super-dec.github.io)
+**arXiv**: [2504.00992](https://arxiv.org/abs/2504.00992)  
+**Code**: [Project Page](https://super-dec.github.io)  
 **Area**: 3D Vision
 **Keywords**: Superquadrics, 3D scene decomposition, compact representation, Transformer, robot manipulation
 

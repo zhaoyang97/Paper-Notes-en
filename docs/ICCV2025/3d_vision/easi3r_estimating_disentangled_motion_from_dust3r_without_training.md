@@ -18,8 +18,8 @@ content_hash: c2b87dede1a8236f
 # Easi3R: Estimating Disentangled Motion from DUSt3R Without Training
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.24391](https://arxiv.org/abs/2503.24391)
-**Code**: [https://easi3r.github.io](https://easi3r.github.io)
+**arXiv**: [2503.24391](https://arxiv.org/abs/2503.24391)  
+**Code**: [https://easi3r.github.io](https://easi3r.github.io)  
 **Area**: 3D Vision / Dynamic Scene Reconstruction
 **Keywords**: 4D Reconstruction, DUSt3R, Attention Disentanglement, Dynamic Segmentation, Training-Free
 

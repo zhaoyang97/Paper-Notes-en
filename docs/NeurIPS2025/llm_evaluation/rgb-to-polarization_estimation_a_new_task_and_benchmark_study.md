@@ -18,8 +18,8 @@ content_hash: 3585d367d350bfbe
 # RGB-to-Polarization Estimation: A New Task and Benchmark Study
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13050](https://arxiv.org/abs/2505.13050)
-**Code**: To be released
+**arXiv**: [2505.13050](https://arxiv.org/abs/2505.13050)  
+**Code**: To be released  
 **Area**: Computer Vision / Polarization Imaging
 **Keywords**: polarization estimation, Stokes parameters, RGB images, benchmark, diffusion models
 

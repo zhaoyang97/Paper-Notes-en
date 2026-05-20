@@ -18,8 +18,8 @@ content_hash: 0edc42cc53f9cd0d
 # DGH: Dynamic Gaussian Hair
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.17094](https://arxiv.org/abs/2512.17094)
-**Code**: [Project Page](https://junyingw.github.io/paper/dgh)
+**arXiv**: [2512.17094](https://arxiv.org/abs/2512.17094)  
+**Code**: [Project Page](https://junyingw.github.io/paper/dgh)  
 **Area**: 3D Vision
 **Keywords**: Dynamic hair modeling, 3D Gaussian Splatting, hair dynamics, novel view synthesis, digital avatars
 

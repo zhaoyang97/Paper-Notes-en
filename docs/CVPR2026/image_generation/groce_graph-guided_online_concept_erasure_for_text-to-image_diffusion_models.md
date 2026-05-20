@@ -18,8 +18,8 @@ content_hash: 96c3c5d440f07a84
 # GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.12968](https://arxiv.org/abs/2511.12968)
-**Code**: Available
+**arXiv**: [2511.12968](https://arxiv.org/abs/2511.12968)  
+**Code**: Available  
 **Area**: Image Generation
 **Keywords**: Concept Erasure, Diffusion Models, Semantic Graph, Training-Free, Online Inference
 

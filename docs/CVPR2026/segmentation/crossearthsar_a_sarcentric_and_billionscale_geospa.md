@@ -18,8 +18,8 @@ content_hash: 517a6dff9e39c736
 # CrossEarth-SAR: A SAR-Centric and Billion-Scale Geospatial Foundation Model for Domain Generalizable Semantic Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12008](https://arxiv.org/abs/2603.12008)
-**Code**: [GitHub](https://github.com/VisionXLab/CrossEarth-SAR)
+**arXiv**: [2603.12008](https://arxiv.org/abs/2603.12008)  
+**Code**: [GitHub](https://github.com/VisionXLab/CrossEarth-SAR)  
 **Area**: Remote Sensing / SAR Foundation Model / Domain-Generalizable Semantic Segmentation
 **Keywords**: SAR, Foundation Model, Physics-Guided MoE, Domain Generalization, Semantic Segmentation
 

@@ -18,8 +18,8 @@ content_hash: cb370869d23a7a24
 # Precise Information Control in Long-Form Text Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06589](https://arxiv.org/abs/2506.06589)
-**Code**: None
+**arXiv**: [2506.06589](https://arxiv.org/abs/2506.06589)  
+**Code**: None  
 **Area**: Social Computing
 **Keywords**: precise information control, faithfulness hallucination, verifiable claims, preference learning, long-form generation
 

@@ -19,9 +19,9 @@ content_hash: 6d9ca4546998871e
 # Zeroth-Order Optimization Finds Flat Minima
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05454](https://arxiv.org/abs/2506.05454)
+**arXiv**: [2506.05454](https://arxiv.org/abs/2506.05454)  
 **Authors**: Liang Zhang (ETH Zurich / MPI-IS), Bingcong Li (ETH Zurich), Kiran Koshy Thekumparampil (Amazon), Sewoong Oh (UW), Michael Muehlebach (MPI-IS), Niao He (ETH Zurich)
-**Code**: [Liang137/FlatZero](https://github.com/Liang137/FlatZero)
+**Code**: [Liang137/FlatZero](https://github.com/Liang137/FlatZero)  
 **Area**: Reinforcement Learning
 **Keywords**: Zeroth-order optimization, implicit regularization, Hessian trace, flat minima, language model fine-tuning, sharpness-aware minimization
 

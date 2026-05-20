@@ -18,8 +18,8 @@ content_hash: 00913fc273917042
 # Systematic Reward Gap Optimization for Mitigating VLM Hallucinations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.17265](https://arxiv.org/abs/2411.17265)
-**Code**: [https://tpr-dpo.github.io](https://tpr-dpo.github.io)
+**arXiv**: [2411.17265](https://arxiv.org/abs/2411.17265)  
+**Code**: [https://tpr-dpo.github.io](https://tpr-dpo.github.io)  
 **Area**: Multimodal Large Models / VLM Hallucination Mitigation
 **Keywords**: VLM hallucination, DPO, preference learning, topic-level rewriting, curriculum learning
 

@@ -18,8 +18,8 @@ content_hash: 9164050a4b52f3cf
 # Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02071](https://arxiv.org/abs/2604.02071)
-**Code**: [https://github.com/nowuss/InCoM-Net](https://github.com/nowuss/InCoM-Net)
+**arXiv**: [2604.02071](https://arxiv.org/abs/2604.02071)  
+**Code**: [https://github.com/nowuss/InCoM-Net](https://github.com/nowuss/InCoM-Net)  
 **Area**: Object Detection / Human-Object Interaction Detection
 **Keywords**: Human-object interaction detection, vision-language model, instance-centric context, multi-context features, attention mechanism
 

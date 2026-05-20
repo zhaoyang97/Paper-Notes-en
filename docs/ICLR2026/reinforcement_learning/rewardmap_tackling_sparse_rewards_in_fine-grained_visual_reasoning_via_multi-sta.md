@@ -18,8 +18,8 @@ content_hash: aada1be69448ae97
 # RewardMap: Tackling Sparse Rewards in Fine-grained Visual Reasoning via Multi-Stage Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.02240](https://arxiv.org/abs/2510.02240)
-**Code**: [Project Page](https://fscdc.github.io/RewardMap)
+**arXiv**: [2510.02240](https://arxiv.org/abs/2510.02240)  
+**Code**: [Project Page](https://fscdc.github.io/RewardMap)  
 **Area**: Reinforcement Learning
 **Keywords**: Multimodal Large Language Models, Visual Reasoning, Sparse Rewards, Multi-Stage RL, Metro Route Planning
 

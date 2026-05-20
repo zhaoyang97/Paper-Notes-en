@@ -18,8 +18,8 @@ content_hash: 1794afe32dc24cdf
 # Enhancing Accuracy of Uncertainty Estimation in Appearance-based Gaze Tracking with Probabilistic Evaluation and Calibration
 
 **Conference**: CVPR 2026
-**arXiv**: [2501.14894](https://arxiv.org/abs/2501.14894)
-**Code**: Available (project page)
+**arXiv**: [2501.14894](https://arxiv.org/abs/2501.14894)  
+**Code**: Available (project page)  
 **Area**: Video Understanding
 **Keywords**: Gaze tracking, uncertainty estimation, post-hoc calibration, domain shift, coverage probability error
 

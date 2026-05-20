@@ -18,8 +18,8 @@ content_hash: 575beaafa2519e12
 # LH-Deception: Simulating and Understanding LLM Deceptive Behaviors in Long-Horizon Interactions
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03999](https://arxiv.org/abs/2510.03999)
-**Code**: [github](https://github.com/deeplearning-wisc/LongHorizonDeception)
+**arXiv**: [2510.03999](https://arxiv.org/abs/2510.03999)  
+**Code**: [github](https://github.com/deeplearning-wisc/LongHorizonDeception)  
 **Area**: LLM Safety / AI Deception
 **Keywords**: LLM deception, long-horizon interaction, multi-agent simulation, trust erosion, deception chain
 

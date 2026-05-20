@@ -18,8 +18,8 @@ content_hash: 0ce0264db4d9bb00
 # GeoDiv: Framework for Measuring Geographical Diversity in Text-to-Image Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.22120](https://arxiv.org/abs/2602.22120)
-**Code**: [GitHub](https://github.com/moha23/geodiv)
+**arXiv**: [2602.22120](https://arxiv.org/abs/2602.22120)  
+**Code**: [GitHub](https://github.com/moha23/geodiv)  
 **Area**: Text-to-Image Generation / Fairness Evaluation
 **Keywords**: Geographical Diversity, Text-to-Image Models, Socioeconomic Bias, VLM Evaluation, Interpretable Metrics
 

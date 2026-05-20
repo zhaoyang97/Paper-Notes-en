@@ -18,8 +18,8 @@ content_hash: 406f3e235d0b75b6
 # Sampling-Aware 3D Spatial Analysis in Multiplexed Imaging
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07890](https://arxiv.org/abs/2604.07890)
-**Code**: N/A
+**arXiv**: [2604.07890](https://arxiv.org/abs/2604.07890)  
+**Code**: N/A  
 **Area**: 3D Vision / Medical Imaging
 **Keywords**: Spatial proteomics, 3D reconstruction, sampling geometry, multiplexed imaging, spatial statistics
 
@@ -46,21 +46,21 @@ The work is organized into three components: (1) *simulation-controlled experime
 
 1. **MRF Tissue Simulation Framework**:
 
-   - **Function**: Generates synthetic 3D tissue data with known global composition and local interaction structure for controlled variable analysis.
-   - **Mechanism**: A Gibbs distribution is defined on a 3D lattice graph, $p(\mathbf{x}|\boldsymbol{\alpha}, \mathbf{B}) \propto \exp(\sum_i \alpha_{x_i} + \sum_{(i,j)} B_{x_i, x_j})$, where $\boldsymbol{\alpha}$ governs global abundance and $\mathbf{B}$ governs local interactions. Parameters are recovered via MPLE (Maximum Pseudo-Likelihood Estimation), and recovery errors are compared across sampling strategies.
-   - **Design Motivation**: Ground-truth parameters are unavailable in real data; simulation precisely isolates the effect of sampling geometry. Experiments reveal that global abundance is stably recovered under both strategies, whereas interaction structure exhibits significantly elevated error under independent 2D sampling.
+    - **Function**: Generates synthetic 3D tissue data with known global composition and local interaction structure for controlled variable analysis.
+    - **Mechanism**: A Gibbs distribution is defined on a 3D lattice graph, $p(\mathbf{x}|\boldsymbol{\alpha}, \mathbf{B}) \propto \exp(\sum_i \alpha_{x_i} + \sum_{(i,j)} B_{x_i, x_j})$, where $\boldsymbol{\alpha}$ governs global abundance and $\mathbf{B}$ governs local interactions. Parameters are recovered via MPLE (Maximum Pseudo-Likelihood Estimation), and recovery errors are compared across sampling strategies.
+    - **Design Motivation**: Ground-truth parameters are unavailable in real data; simulation precisely isolates the effect of sampling geometry. Experiments reveal that global abundance is stably recovered under both strategies, whereas interaction structure exhibits significantly elevated error under independent 2D sampling.
 
 2. **Constrained Hungarian Matching for Cross-Section Correspondence**:
 
-   - **Function**: Links cell projections in adjacent sections to the same biological cell.
-   - **Mechanism**: In-plane Euclidean distance matrices $D_{ij}$ between cell centroids in adjacent sections are computed, subject to two constraints—phenotypic consistency (non-matching types are set to $\infty$) and cell-type-specific neighborhood gating (based on empirical size distributions). The Hungarian algorithm then solves for a one-to-one optimal matching, partitioning cells into shared cells (SC, matched across sections) and lone cells (LC, appearing only once).
-   - **Design Motivation**: Pixel-level registration is infeasible for sparse serial sections; phenotype- and distance-constrained matching is both lightweight and robust to ambiguous correspondences.
+    - **Function**: Links cell projections in adjacent sections to the same biological cell.
+    - **Mechanism**: In-plane Euclidean distance matrices $D_{ij}$ between cell centroids in adjacent sections are computed, subject to two constraints—phenotypic consistency (non-matching types are set to $\infty$) and cell-type-specific neighborhood gating (based on empirical size distributions). The Hungarian algorithm then solves for a one-to-one optimal matching, partitioning cells into shared cells (SC, matched across sections) and lone cells (LC, appearing only once).
+    - **Design Motivation**: Pixel-level registration is infeasible for sparse serial sections; phenotype- and distance-constrained matching is both lightweight and robust to ambiguous correspondences.
 
 3. **Geometry-Aware Centroid Estimation**:
 
-   - **Function**: Infers 3D spatial coordinates of cells from matching results.
-   - **Mechanism**: Cells are approximated as ellipsoids whose cross-sectional area varies with the offset of the cutting plane. Cell-type-specific size parameters are estimated from empirical area distributions and used to (1) define distance tolerances during matching and (2) regularize depth inference. SCs have their centroids estimated from multi-section constraints; LCs retain their in-plane coordinates with depth constrained between adjacent sections.
-   - **Design Motivation**: Matching relationships alone do not provide depth localization; a weak ellipsoidal prior is sufficient to recover neighborhood-level spatial relationships under sparse sampling.
+    - **Function**: Infers 3D spatial coordinates of cells from matching results.
+    - **Mechanism**: Cells are approximated as ellipsoids whose cross-sectional area varies with the offset of the cutting plane. Cell-type-specific size parameters are estimated from empirical area distributions and used to (1) define distance tolerances during matching and (2) regularize depth inference. SCs have their centroids estimated from multi-section constraints; LCs retain their in-plane coordinates with depth constrained between adjacent sections.
+    - **Design Motivation**: Matching relationships alone do not provide depth localization; a weak ellipsoidal prior is sufficient to recover neighborhood-level spatial relationships under sparse sampling.
 
 ### Loss & Training
 

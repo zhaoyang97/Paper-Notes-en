@@ -18,8 +18,8 @@ content_hash: a894193d97cf9d21
 # Benchmarking is Broken — Don't Let AI be its Own Judge
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07575](https://arxiv.org/abs/2510.07575)
-**Code**: [https://peerbench.ai](https://peerbench.ai)
+**arXiv**: [2510.07575](https://arxiv.org/abs/2510.07575)  
+**Code**: [https://peerbench.ai](https://peerbench.ai)  
 **Area**: AI Safety / Evaluation Methodology
 **Keywords**: benchmark evaluation, data contamination, PeerBench, peer review, reputation system
 

@@ -18,8 +18,8 @@ content_hash: b9a693a3512eacad
 # Evaluating LLMs for Police Decision-Making: A Framework Based on Police Action Scenarios
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.03553](https://arxiv.org/abs/2601.03553)
-**Code**: [https://github.com/Heedou/PASFramework](https://github.com/Heedou/PASFramework)
+**arXiv**: [2601.03553](https://arxiv.org/abs/2601.03553)  
+**Code**: [https://github.com/Heedou/PASFramework](https://github.com/Heedou/PASFramework)  
 **Area**: Recommender Systems
 **Keywords**: LLM Evaluation, Police Decision-Making, Domain-Specific Evaluation, Scenario-Based Evaluation, LLM-as-Judge
 

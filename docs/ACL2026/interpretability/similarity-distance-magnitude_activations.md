@@ -18,8 +18,8 @@ content_hash: 5d561a2fa653b9e6
 # Similarity-Distance-Magnitude Activations
 
 **Conference**: ACL 2026
-**arXiv**: [2509.12760](https://arxiv.org/abs/2509.12760)
-**Code**: None
+**arXiv**: [2509.12760](https://arxiv.org/abs/2509.12760)  
+**Code**: None  
 **Area**: Interpretability / Uncertainty Estimation
 **Keywords**: Activation functions, softmax alternatives, selective classification, out-of-distribution detection, predictive uncertainty
 

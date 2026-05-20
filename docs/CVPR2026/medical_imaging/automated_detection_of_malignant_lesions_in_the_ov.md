@@ -18,8 +18,8 @@ content_hash: bba9e8c1467a642d
 # Automated Detection of Malignant Lesions in the Ovary Using Deep Learning Models and XAI
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11818](https://arxiv.org/abs/2603.11818)
-**Code**: None
+**arXiv**: [2603.11818](https://arxiv.org/abs/2603.11818)  
+**Code**: None  
 **Area**: Medical Image Classification / Explainable AI
 **Keywords**: Ovarian Cancer Detection, CNN Comparison, Explainable AI, Histopathology, InceptionV3
 
@@ -50,22 +50,22 @@ Acquire 5-class histopathology images (Clear Cell, Endometrioid, Mucinous, Non-C
 ### Key Designs
 
 1. **Data Augmentation Pipeline**
-   - Albumentations library is used for rotations (up to 180°), horizontal/vertical flips, and random brightness/contrast/saturation/hue transformations.
-   - Each original image generates 4 augmented copies, expanding the dataset from 498 to 2,490 images (~498 per class, maintaining class balance).
-   - After conversion to tensors, RGB values are normalized from 0–255 to 0–1, significantly improving training stability.
-   - Random 80:20 train-test split (1,992 training / 498 testing).
+    - Albumentations library is used for rotations (up to 180°), horizontal/vertical flips, and random brightness/contrast/saturation/hue transformations.
+    - Each original image generates 4 augmented copies, expanding the dataset from 498 to 2,490 images (~498 per class, maintaining class balance).
+    - After conversion to tensors, RGB values are normalized from 0–255 to 0–1, significantly improving training stability.
+    - Random 80:20 train-test split (1,992 training / 498 testing).
 
 2. **Systematic Comparison of 15 CNN Variants**
-   - **LeNet series** (3 variants): Base (lr=0.001) / +Dropout / +Step Decay, trained for 100 epochs.
-   - **ResNet series** (4 variants): ResNet-34 at two resolutions (32×32 and 224×224), ResNet-50, and ResNet-101; optimal lr and dropout rate determined via random search (10 iterations × 3 epochs).
-   - **VGG series** (4 variants): VGG16-A/B/C and VGG19, all using ImageNet transfer learning with frozen feature layers and only fully connected layers trained.
-   - **Inception series** (4 variants): InceptionV1-A (ReLU) / V1-B (Tanh) / V3-A (ReLU + BatchNorm) / V3-B (Tanh + BatchNorm), all trained from scratch for 80 epochs.
+    - **LeNet series** (3 variants): Base (lr=0.001) / +Dropout / +Step Decay, trained for 100 epochs.
+    - **ResNet series** (4 variants): ResNet-34 at two resolutions (32×32 and 224×224), ResNet-50, and ResNet-101; optimal lr and dropout rate determined via random search (10 iterations × 3 epochs).
+    - **VGG series** (4 variants): VGG16-A/B/C and VGG19, all using ImageNet transfer learning with frozen feature layers and only fully connected layers trained.
+    - **Inception series** (4 variants): InceptionV1-A (ReLU) / V1-B (Tanh) / V3-A (ReLU + BatchNorm) / V3-B (Tanh + BatchNorm), all trained from scratch for 80 epochs.
 
 3. **Comparative XAI Analysis Using Three Methods**
-   - **LIME**: Locally interpretable; generates superpixel-level explanation maps (limited to 10 most important features), revealing local rationale behind predictions.
-   - **Integrated Gradients**: Gradient attribution method that integrates gradients along the path from a baseline to the input, producing pixel-level importance maps.
-   - **SHAP**: Shapley value-based attribution method quantifying the marginal contribution of each pixel to the prediction.
-   - Highlighted regions produced by all three methods exhibit significant overlap, validating the consistency and reliability of black-box explanations.
+    - **LIME**: Locally interpretable; generates superpixel-level explanation maps (limited to 10 most important features), revealing local rationale behind predictions.
+    - **Integrated Gradients**: Gradient attribution method that integrates gradients along the path from a baseline to the input, producing pixel-level importance maps.
+    - **SHAP**: Shapley value-based attribution method quantifying the marginal contribution of each pixel to the prediction.
+    - Highlighted regions produced by all three methods exhibit significant overlap, validating the consistency and reliability of black-box explanations.
 
 ### Loss & Training
 

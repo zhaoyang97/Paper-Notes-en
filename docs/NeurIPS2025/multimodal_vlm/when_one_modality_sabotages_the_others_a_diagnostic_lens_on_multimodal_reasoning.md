@@ -18,8 +18,8 @@ content_hash: 133c19e2cad7a39a
 # When One Modality Sabotages the Others: A Diagnostic Lens on Multimodal Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02794](https://arxiv.org/abs/2511.02794)
-**Code**: None
+**arXiv**: [2511.02794](https://arxiv.org/abs/2511.02794)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: modality sabotage, multimodal fusion, sentiment recognition, interpretability, diagnostic framework
 

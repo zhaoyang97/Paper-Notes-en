@@ -18,9 +18,9 @@ content_hash: 25500e8fe04322dc
 # Multilingual Routing in Mixture-of-Experts
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04694](https://arxiv.org/abs/2510.04694)
+**arXiv**: [2510.04694](https://arxiv.org/abs/2510.04694)  
 **Authors**: Lucas Bandarkar, Chenyuan Yang, Mohsen Fayyaz, Junlin Hu, Nanyun Peng (UCLA, Fudan University)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Multilingual Translation
 **Keywords**: mixture-of-experts, multilingual routing, cross-lingual transfer, expert steering, interpretability
 

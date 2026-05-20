@@ -22,8 +22,8 @@ content_hash: c574a7ecc0473561
 # AdaRadar: Rate Adaptive Spectral Compression for Radar-based Perception
 
 **Conference**: CVPR2026
-**arXiv**: [2603.17979](https://arxiv.org/abs/2603.17979)
-**Code**: [Project Page](https://jp4327.github.io/adaradar/)
+**arXiv**: [2603.17979](https://arxiv.org/abs/2603.17979)  
+**Code**: [Project Page](https://jp4327.github.io/adaradar/)  
 **Area**: Autonomous Driving
 **Keywords**: radar perception, adaptive compression, spectral pruning, zeroth-order gradient, rate control, quantization, DCT, object detection, semantic segmentation
 

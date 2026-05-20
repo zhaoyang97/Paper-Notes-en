@@ -18,8 +18,8 @@ content_hash: b73fcb13dd4f3cd9
 # ConSurv: Multimodal Continual Learning for Survival Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09853](https://arxiv.org/abs/2511.09853)
-**Code**: N/A
+**arXiv**: [2511.09853](https://arxiv.org/abs/2511.09853)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: Continual Learning, Multimodal Fusion, Survival Analysis, Whole Slide Images, Catastrophic Forgetting
 

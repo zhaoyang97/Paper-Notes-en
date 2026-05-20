@@ -18,8 +18,8 @@ content_hash: 706849a7b548233c
 # AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26096](https://arxiv.org/abs/2603.26096)
-**Code**: [https://hyeongyu-kim.github.io/actta/](https://hyeongyu-kim.github.io/actta/)
+**arXiv**: [2603.26096](https://arxiv.org/abs/2603.26096)  
+**Code**: [https://hyeongyu-kim.github.io/actta/](https://hyeongyu-kim.github.io/actta/)  
 **Area**: Signal & Communication / Test-Time Adaptation
 **Keywords**: Test-time adaptation, activation function, distribution shift, normalization layer, dynamic activation
 

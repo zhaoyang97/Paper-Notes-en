@@ -19,8 +19,8 @@ content_hash: ad7bf68557eb42ae
 # Variation-Aware Vision Token Dropping for Faster Large Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.01552](https://arxiv.org/abs/2509.01552)
-**Code**: [xuyang-liu16/V2Drop](https://github.com/xuyang-liu16/V2Drop)
+**arXiv**: [2509.01552](https://arxiv.org/abs/2509.01552)  
+**Code**: [xuyang-liu16/V2Drop](https://github.com/xuyang-liu16/V2Drop)  
 **Area**: Multimodal VLM
 **Keywords**: token compression, vision token pruning, LVLM acceleration, variation-aware, training-free inference acceleration, FlashAttention compatibility
 

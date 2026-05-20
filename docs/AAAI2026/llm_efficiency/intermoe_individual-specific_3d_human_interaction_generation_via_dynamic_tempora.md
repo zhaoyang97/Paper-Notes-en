@@ -18,8 +18,8 @@ content_hash: b30242787fdb4eb9
 # InterMoE: Individual-Specific 3D Human Interaction Generation via Dynamic Temporal-Selective MoE
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13488](https://arxiv.org/abs/2511.13488)
-**Code**: [GitHub](https://github.com/Lighten001/InterMoE)
+**arXiv**: [2511.13488](https://arxiv.org/abs/2511.13488)  
+**Code**: [GitHub](https://github.com/Lighten001/InterMoE)  
 **Area**: LLM Efficiency
 **Keywords**: human interaction generation, MoE, motion generation, diffusion model, 3D motion synthesis
 

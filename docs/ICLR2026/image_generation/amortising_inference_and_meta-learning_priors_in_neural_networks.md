@@ -18,8 +18,8 @@ content_hash: aa9b713ed0624d9e
 # Amortising Inference and Meta-Learning Priors in Neural Networks (BNNP)
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.08782](https://arxiv.org/abs/2602.08782)
-**Code**: Available
+**arXiv**: [2602.08782](https://arxiv.org/abs/2602.08782)  
+**Code**: Available  
 **Area**: Bayesian Deep Learning
 **Keywords**: Bayesian neural network, neural process, meta-learning, amortised inference, prior learning
 

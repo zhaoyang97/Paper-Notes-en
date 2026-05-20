@@ -18,7 +18,7 @@ content_hash: eee097af87f9f6d5
 # Unifying Formal Explanations: A Complexity-Theoretic Perspective
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.18160](https://arxiv.org/abs/2602.18160)
+**arXiv**: [2602.18160](https://arxiv.org/abs/2602.18160)  
 **Area**: Optimization
 **Keywords**: Explainable AI, Computational Complexity, Sufficient Reasons, Contrastive Reasons, Submodular/Supermodular Functions
 

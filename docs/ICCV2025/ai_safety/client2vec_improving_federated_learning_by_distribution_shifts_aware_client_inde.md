@@ -18,8 +18,8 @@ content_hash: cfafd6622f0bdadf
 # Client2Vec: Improving Federated Learning by Distribution Shifts Aware Client Indexing
 
 **Conference**: ICCV 2025
-**arXiv**: [2405.16233](https://arxiv.org/abs/2405.16233)
-**Code**: [https://github.com/LINs-lab/client2vec](https://github.com/LINs-lab/client2vec)
+**arXiv**: [2405.16233](https://arxiv.org/abs/2405.16233)  
+**Code**: [https://github.com/LINs-lab/client2vec](https://github.com/LINs-lab/client2vec)  
 **Area**: AI Safety / Federated Learning
 **Keywords**: Federated Learning, Distribution Shifts, Client Indexing, CLIP, Non-IID Data
 

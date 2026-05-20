@@ -18,8 +18,8 @@ content_hash: cd0335e2875b382e
 # Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22880](https://arxiv.org/abs/2510.22880)
-**Code**: [GitHub](https://github.com/nmduonggg/PEPSY)
+**arXiv**: [2510.22880](https://arxiv.org/abs/2510.22880)  
+**Code**: [GitHub](https://github.com/nmduonggg/PEPSY)  
 **Area**: Optimization
 **Keywords**: Federated Learning, Multimodal Learning, Missing Data, Reconfigurable Representations, Embedding Controls
 
@@ -51,9 +51,9 @@ PEPSY operates through multi-round client-server communication. **Client side**:
 
 1. **Data-Missing Representations**: Decomposes multimodal instance information into three components:
 
-   - **Modality-specific features** $\mathbf{w}_{di}^{\text{mod}}$: learnable embeddings $W^{\text{mod}} = \{\mathbf{w}_i^{\text{mod}}\}_{i=1}^{|\mathcal{M}|}$, invariant across data samples, encoding modality identity.
-   - **Data-specific features** $\mathbf{w}_{di}^{\text{ins}}$: maps each observed modality to a representation $\mathbf{h}_{di}$; missing modalities are substituted by the mean of available modality features: $\mathbf{w}_{di}^{\text{ins}} = \mathbf{I}(i \notin \mathcal{S}_d)\mathbf{h}_{di} + \mathbf{I}(i \in \mathcal{S}_d) \frac{1}{|\mathcal{M}|-|\mathcal{S}_d|}\sum_{j \notin \mathcal{S}_d}\mathbf{h}_{dj}$
-   - **Data-specific contrastive loss** $\mathcal{L}_{ds}$: pulls features from different modalities of the same instance closer together while pushing those from different instances apart.
+    - **Modality-specific features** $\mathbf{w}_{di}^{\text{mod}}$: learnable embeddings $W^{\text{mod}} = \{\mathbf{w}_i^{\text{mod}}\}_{i=1}^{|\mathcal{M}|}$, invariant across data samples, encoding modality identity.
+    - **Data-specific features** $\mathbf{w}_{di}^{\text{ins}}$: maps each observed modality to a representation $\mathbf{h}_{di}$; missing modalities are substituted by the mean of available modality features: $\mathbf{w}_{di}^{\text{ins}} = \mathbf{I}(i \notin \mathcal{S}_d)\mathbf{h}_{di} + \mathbf{I}(i \in \mathcal{S}_d) \frac{1}{|\mathcal{M}|-|\mathcal{S}_d|}\sum_{j \notin \mathcal{S}_d}\mathbf{h}_{dj}$
+    - **Data-specific contrastive loss** $\mathcal{L}_{ds}$: pulls features from different modalities of the same instance closer together while pushing those from different instances apart.
 
 2. **Embedding Controls Selection**: A query-key matching mechanism enables interaction between data-missing features and embedding controls. Relevance is defined as:
    $\gamma(\mathbf{x}_{di}, \boldsymbol{\psi}_p) = e(\mathbf{q}(\mathbf{x}_{di}), \mathbf{k}(\boldsymbol{\psi}_p))$

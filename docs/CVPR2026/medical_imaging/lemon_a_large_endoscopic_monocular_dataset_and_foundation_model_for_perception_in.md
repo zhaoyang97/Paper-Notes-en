@@ -18,8 +18,8 @@ content_hash: 6038e6f80df48474
 # LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.19740](https://arxiv.org/abs/2503.19740)
-**Code**: [https://github.com/visurg-ai/LEMON](https://github.com/visurg-ai/LEMON)
+**arXiv**: [2503.19740](https://arxiv.org/abs/2503.19740)  
+**Code**: [https://github.com/visurg-ai/LEMON](https://github.com/visurg-ai/LEMON)  
 **Area**: Medical Imaging / Surgical Vision
 **Keywords**: Surgical Foundation Model, Endoscopic Dataset, Self-Supervised Learning, Knowledge Distillation, Surgical Scene Understanding
 

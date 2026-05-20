@@ -18,8 +18,8 @@ content_hash: 168e5deb705cb38b
 # PixPerfect: Seamless Latent Diffusion Local Editing with Discriminative Pixel-Space Refinement
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.03247](https://arxiv.org/abs/2512.03247)
-**Code**: None
+**arXiv**: [2512.03247](https://arxiv.org/abs/2512.03247)  
+**Code**: None  
 **Area**: Image Editing / Diffusion Models
 **Keywords**: Image inpainting, pixel-level refinement, discriminative pixel space, artifact simulation, local editing
 

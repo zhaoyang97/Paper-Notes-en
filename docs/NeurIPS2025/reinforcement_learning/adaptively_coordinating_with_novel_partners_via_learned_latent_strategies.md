@@ -19,8 +19,8 @@ content_hash: 4d9d6e740686f595
 # Adaptively Coordinating with Novel Partners via Learned Latent Strategies
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.12754](https://arxiv.org/abs/2511.12754)
-**Code**: To be confirmed
+**arXiv**: [2511.12754](https://arxiv.org/abs/2511.12754)  
+**Code**: To be confirmed  
 **Area**: Reinforcement Learning
 **Keywords**: zero-shot coordination, ad hoc teamwork, latent strategy, VAE, regret minimization, human-agent collaboration
 

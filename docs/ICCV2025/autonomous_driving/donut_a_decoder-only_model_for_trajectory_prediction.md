@@ -17,8 +17,8 @@ content_hash: 9c85ae8be65789a1
 # DONUT: A Decoder-Only Model for Trajectory Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.06854](https://arxiv.org/abs/2506.06854)
-**Code**: [https://vision.rwth-aachen.de/donut](https://vision.rwth-aachen.de/donut)
+**arXiv**: [2506.06854](https://arxiv.org/abs/2506.06854)  
+**Code**: [https://vision.rwth-aachen.de/donut](https://vision.rwth-aachen.de/donut)  
 **Area**: Autonomous Driving
 **Keywords**: trajectory prediction, decoder-only, autoregressive model, motion prediction, autonomous driving
 

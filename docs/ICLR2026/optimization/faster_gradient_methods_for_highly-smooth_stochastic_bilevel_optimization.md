@@ -18,8 +18,8 @@ content_hash: 6d6b6716edc4a9b8
 # Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization
 
 **Conference**: ICLR2026
-**arXiv**: [2509.02937](https://arxiv.org/abs/2509.02937)
-**Code**: [GitHub](https://github.com/TrueNobility303/F2BA)
+**arXiv**: [2509.02937](https://arxiv.org/abs/2509.02937)  
+**Code**: [GitHub](https://github.com/TrueNobility303/F2BA)  
 **Area**: Optimization
 **Keywords**: bilevel optimization, stochastic optimization, finite difference, hyper-gradient estimation, complexity lower bound
 

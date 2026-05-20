@@ -21,8 +21,8 @@ content_hash: 3a6c55b05008c358
 ## Basic Information
 
 **Conference**: CVPR2026
-**arXiv**: [2603.10470](https://arxiv.org/abs/2603.10470)
-**Code**: [Project Page](https://hamidreza-dastmalchi.github.io/cipher-cvpr2026/)
+**arXiv**: [2603.10470](https://arxiv.org/abs/2603.10470)  
+**Code**: [Project Page](https://hamidreza-dastmalchi.github.io/cipher-cvpr2026/)  
 **Area**: Causal Reasoning / Multimodal Hallucination Suppression
 **Keywords**: Large Vision-Language Models, Hallucination Suppression, Counterfactual Reasoning, Diffusion Models, Feature Projection, Training-Free
 

@@ -18,8 +18,8 @@ content_hash: f8173920cc08f4c5
 # Robust Neural Rendering in the Wild with Asymmetric Dual 3D Gaussian Splatting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03538](https://arxiv.org/abs/2506.03538)
-**Code**: [GitHub](https://steveli88.github.io/AsymGS)
+**arXiv**: [2506.03538](https://arxiv.org/abs/2506.03538)  
+**Code**: [GitHub](https://steveli88.github.io/AsymGS)  
 **Area**: 3D Vision / Neural Rendering
 **Keywords**: 3DGS, in-the-wild scene reconstruction, dual-model consistency, transient distractors, EMA proxy
 

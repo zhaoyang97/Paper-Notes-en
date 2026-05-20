@@ -19,8 +19,8 @@ content_hash: 8808a6030a0303ab
 # Ineq-Comp: Benchmarking Human-Intuitive Compositional Reasoning in Automated Theorem Proving on Inequalities
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12680](https://arxiv.org/abs/2505.12680)
-**Code**: [GitHub](https://github.com/haoyuzhao123/LeanIneqComp)
+**arXiv**: [2505.12680](https://arxiv.org/abs/2505.12680)  
+**Code**: [GitHub](https://github.com/haoyuzhao123/LeanIneqComp)  
 **Area**: LLM Evaluation
 **Keywords**: automated theorem proving, compositional reasoning, formal verification, Lean 4, mathematical inequalities, benchmark
 

@@ -20,7 +20,7 @@ content_hash: 2672c7633b298b12
 **Conference**: ICLR 2026
 **arXiv**: [2509.22500](https://arxiv.org/abs/2509.22500)
 
-**Code**: [GitHub](https://github.com/juan43ramirez/pi-control-is-alm)
+**Code**: [GitHub](https://github.com/juan43ramirez/pi-control-is-alm)  
 **Area**: Optimization Theory
 **Keywords**: Augmented Lagrangian, Dual Optimistic Ascent, PI Control, Constrained Optimization, Non-Convex Min-Max
 

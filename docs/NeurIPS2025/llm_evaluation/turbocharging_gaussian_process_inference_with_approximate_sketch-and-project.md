@@ -18,8 +18,8 @@ content_hash: bb953d5e0abd0568
 # Turbocharging Gaussian Process Inference with Approximate Sketch-and-Project
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13723](https://arxiv.org/abs/2505.13723)
-**Code**: [GitHub](https://github.com/pratikrathore8/scalable_gp_inference)
+**arXiv**: [2505.13723](https://arxiv.org/abs/2505.13723)  
+**Code**: [GitHub](https://github.com/pratikrathore8/scalable_gp_inference)  
 **Area**: Gaussian Process / Large-Scale Inference
 **Keywords**: Gaussian Process, Sketch-and-Project, Large-Scale Inference, Distributed Computing, Nyström Approximation
 

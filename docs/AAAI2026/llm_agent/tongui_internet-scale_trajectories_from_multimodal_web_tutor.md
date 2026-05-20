@@ -18,8 +18,8 @@ content_hash: 9044469f2daad3ab
 # TongUI: Internet-Scale Trajectories from Multimodal Web Tutorials for Generalized GUI Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.12679](https://arxiv.org/abs/2504.12679)
-**Code**: [https://github.com/TongUI-agent/TongUI-agent](https://github.com/TongUI-agent/TongUI-agent)
+**arXiv**: [2504.12679](https://arxiv.org/abs/2504.12679)  
+**Code**: [https://github.com/TongUI-agent/TongUI-agent](https://github.com/TongUI-agent/TongUI-agent)  
 **Area**: GUI Agent / Multimodal VLM
 **Keywords**: GUI Agent, Trajectory Data, Multimodal Tutorials, VLM Fine-tuning, Cross-platform Generalization
 

@@ -18,8 +18,8 @@ content_hash: 6ad3aee40d14b46e
 # Learning Parameterized Skills from Demonstrations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24095](https://arxiv.org/abs/2510.24095)
-**Code**: [GitHub](https://github.com/guptbot/DEPS)
+**arXiv**: [2510.24095](https://arxiv.org/abs/2510.24095)  
+**Code**: [GitHub](https://github.com/guptbot/DEPS)  
 **Area**: Optimization (Robot Learning / Skill Discovery)
 **Keywords**: Parameterized skills, learning from demonstrations, hierarchical policy, variational inference, robot manipulation
 

@@ -18,8 +18,8 @@ content_hash: 712abb8a1113f792
 # UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.10485](https://arxiv.org/abs/2604.10485)
-**Code**: VMIL/UDAPose
+**arXiv**: [2604.10485](https://arxiv.org/abs/2604.10485)  
+**Code**: VMIL/UDAPose  
 **Area**: Image Restoration
 **Keywords**: Low-light pose estimation, domain adaptation, stable diffusion, attention control, high-frequency injection
 

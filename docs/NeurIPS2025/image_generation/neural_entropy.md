@@ -18,8 +18,8 @@ content_hash: 0edb1570520bde5f
 # Neural Entropy
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2409.03817](https://arxiv.org/abs/2409.03817)
-**Code**: None
+**arXiv**: [2409.03817](https://arxiv.org/abs/2409.03817)  
+**Code**: None  
 **Area**: Generative Models / Information Theory
 **Keywords**: Diffusion Models, Information Theory, Entropy, Data Compression, Neural Networks
 

@@ -18,8 +18,8 @@ content_hash: 485593713dbd6646
 # Mind the (Data) Gap: Evaluating Vision Systems in Small Data Applications
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.06486](https://arxiv.org/abs/2504.06486)
-**Code**: Unavailable
+**arXiv**: [2504.06486](https://arxiv.org/abs/2504.06486)  
+**Code**: Unavailable  
 **Area**: Medical Imaging / Computer Vision Evaluation
 **Keywords**: small data evaluation, multimodal large language models, vision encoders, SVM, pretraining strategies
 
@@ -51,21 +51,21 @@ This paper is an empirical evaluation study rather than a proposal for a new mod
 
 1. **Near-Logarithmic Training Scale Sampling**:
 
-   - Function: Constructs eight training subsets of sizes 0, 1, 3, 10, 30, 100, 300, and the full dataset.
-   - Mechanism: Labeled samples are drawn uniformly while ensuring at least one sample per class. All methods are evaluated independently at each scale.
-   - Design Motivation: Logarithmic spacing covers multiple orders of magnitude, distinguishing behavioral differences between a few samples and a few hundred—precisely the range neglected by existing evaluations.
+    - Function: Constructs eight training subsets of sizes 0, 1, 3, 10, 30, 100, 300, and the full dataset.
+    - Mechanism: Labeled samples are drawn uniformly while ensuring at least one sample per class. All methods are evaluated independently at each scale.
+    - Design Motivation: Logarithmic spacing covers multiple orders of magnitude, distinguishing behavioral differences between a few samples and a few hundred—precisely the range neglected by existing evaluations.
 
 2. **MLLM Evaluation Protocol**:
 
-   - Function: Provides a unified evaluation of Gemini Flash 2.0, Gemini Flash 1.5 8B, Qwen2-VL 7B, and Qwen2.5-VL 72B.
-   - Mechanism: Labeled samples are inserted as few-shot demonstrations in the prompt; model responses are parsed into classification labels via deterministic regular expressions. When multiple species names appear in a response, the first mentioned is taken.
-   - Design Motivation: This is the only standard mechanism by which MLLMs can incorporate labeled information in the small-data setting—by "showing" examples to the model.
+    - Function: Provides a unified evaluation of Gemini Flash 2.0, Gemini Flash 1.5 8B, Qwen2-VL 7B, and Qwen2.5-VL 72B.
+    - Mechanism: Labeled samples are inserted as few-shot demonstrations in the prompt; model responses are parsed into classification labels via deterministic regular expressions. When multiple species names appear in a response, the first mentioned is taken.
+    - Design Motivation: This is the only standard mechanism by which MLLMs can incorporate labeled information in the small-data setting—by "showing" examples to the model.
 
 3. **Vision Encoder + SVM Pipeline**:
 
-   - Function: Evaluates vision encoders including DINOv2 (ViT-g/14), CLIP (ViT-L/14), and SigLIP (ViT-SO400M/14).
-   - Mechanism: Frozen pretrained encoders extract image features; binary classification is performed by an SVM with hyperparameters tuned via cross-validated grid search using scikit-learn.
-   - Design Motivation: SVMs are naturally well-suited for small-sample settings and are consistent with the original NeWT evaluation methodology, ensuring fair comparison.
+    - Function: Evaluates vision encoders including DINOv2 (ViT-g/14), CLIP (ViT-L/14), and SigLIP (ViT-SO400M/14).
+    - Mechanism: Frozen pretrained encoders extract image features; binary classification is performed by an SVM with hyperparameters tuned via cross-validated grid search using scikit-learn.
+    - Design Motivation: SVMs are naturally well-suited for small-sample settings and are consistent with the original NeWT evaluation methodology, ensuring fair comparison.
 
 ### Loss & Training
 

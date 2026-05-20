@@ -18,8 +18,8 @@ content_hash: be15a8143cc9a69c
 # A Unified Framework for Modeling Heterogeneous Financial Data via Dual-Granularity Prompting
 
 **Conference**: ACL 2026
-**arXiv**: [2404.13004](https://arxiv.org/abs/2404.13004)
-**Code**: [GitHub](https://github.com/didiglobal-fintech-credit-risk/FinLangNet)
+**arXiv**: [2404.13004](https://arxiv.org/abs/2404.13004)  
+**Code**: [GitHub](https://github.com/didiglobal-fintech-credit-risk/FinLangNet)  
 **Area**: Time Series / Financial NLP
 **Keywords**: credit risk prediction, heterogeneous financial data, dual-granularity prompting, multi-scale forecasting, industrial deployment
 

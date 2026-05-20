@@ -18,8 +18,8 @@ content_hash: 20a6e2ffd9c18ffd
 # CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.11988](https://arxiv.org/abs/2512.11988)
-**Code**: [Project Page](https://nvlabs.github.io/CARI4D/)
+**arXiv**: [2512.11988](https://arxiv.org/abs/2512.11988)  
+**Code**: [Project Page](https://nvlabs.github.io/CARI4D/)  
 **Area**: 3D Vision / Human Understanding
 **Keywords**: human-object interaction reconstruction, category-agnostic, monocular video, 4D tracking, contact reasoning
 
@@ -47,19 +47,19 @@ First-frame image → Hunyuan3D object reconstruction + UniDepth coarse-to-fine 
 ### Key Designs
 
 1. **Dynamic Pose Hypothesis Selection Algorithm**
-   - **Function**: Robustly track object pose under occlusion and noisy depth.
-   - **Mechanism**: FoundationPose internally generates $K$ candidate poses per frame. Rather than selecting the top-1 hypothesis, the algorithm dynamically filters candidates based on two criteria—mask IoU (with the human occlusion region subtracted) and temporal smoothness (geodesic distance between rotations). When all candidates are filtered out, the tracker jumps forward to an available frame and tracks backward.
-   - **Design Motivation**: Directly using FoundationPose's top-1 prediction frequently fails in interaction scenarios, yet the correct pose is typically present among the $K$ candidates.
+    - **Function**: Robustly track object pose under occlusion and noisy depth.
+    - **Mechanism**: FoundationPose internally generates $K$ candidate poses per frame. Rather than selecting the top-1 hypothesis, the algorithm dynamically filters candidates based on two criteria—mask IoU (with the human occlusion region subtracted) and temporal smoothness (geodesic distance between rotations). When all candidates are filtered out, the tracker jumps forward to an available frame and tracks backward.
+    - **Design Motivation**: Directly using FoundationPose's top-1 prediction frequently fails in interaction scenarios, yet the correct pose is typically present among the $K$ candidates.
 
 2. **CoCoNet (Category-Agnostic Contact Reasoning Network)**
-   - **Function**: Refine the human-object relative pose and predict hand contacts.
-   - **Mechanism**: A render-and-compare paradigm — the current estimates of the human (SMPL with per-vertex color texture) and the object are rendered as RGB/depth/mask images, which are compared against the input observations; spatio-temporal attention then predicts delta pose updates and binary hand contact labels.
-   - **Design Motivation**: Foundation models predict independently without accounting for interaction, resulting in floating or interpenetrating objects. A category-agnostic approach is needed to reason about contact.
+    - **Function**: Refine the human-object relative pose and predict hand contacts.
+    - **Mechanism**: A render-and-compare paradigm — the current estimates of the human (SMPL with per-vertex color texture) and the object are rendered as RGB/depth/mask images, which are compared against the input observations; spatio-temporal attention then predicts delta pose updates and binary hand contact labels.
+    - **Design Motivation**: Foundation models predict independently without accounting for interaction, resulting in floating or interpenetrating objects. A category-agnostic approach is needed to reason about contact.
 
 3. **Depth Alignment Strategy During Training**
-   - **Function**: Eliminate the absolute error between estimated and ground-truth depth in training data, enabling the network to focus on relative pose.
-   - **Mechanism**: A scale $s$ and offset $t$ are computed (based on medians) to align estimated depth to ground-truth depth before pose initialization; no alignment is applied at test time.
-   - **Design Motivation**: Depth estimation errors vary across datasets; without alignment, the network overfits to dataset-specific error patterns rather than learning interaction reasoning.
+    - **Function**: Eliminate the absolute error between estimated and ground-truth depth in training data, enabling the network to focus on relative pose.
+    - **Mechanism**: A scale $s$ and offset $t$ are computed (based on medians) to align estimated depth to ground-truth depth before pose initialization; no alignment is applied at test time.
+    - **Design Motivation**: Depth estimation errors vary across datasets; without alignment, the network overfits to dataset-specific error patterns rather than learning interaction reasoning.
 
 ### Loss & Training
 

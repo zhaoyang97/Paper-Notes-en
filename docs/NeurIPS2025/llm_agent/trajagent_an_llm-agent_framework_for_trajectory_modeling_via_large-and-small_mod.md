@@ -17,8 +17,8 @@ content_hash: ade540276dc7b2fc
 # TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.20445](https://arxiv.org/abs/2410.20445)
-**Code**: [GitHub](https://github.com/tsinghua-fib-lab/TrajAgent)
+**arXiv**: [2410.20445](https://arxiv.org/abs/2410.20445)  
+**Code**: [GitHub](https://github.com/tsinghua-fib-lab/TrajAgent)  
 **Area**: LLM Agent
 **Keywords**: trajectory modeling, LLM agent, large-and-small model collaboration, automated machine learning, data augmentation
 

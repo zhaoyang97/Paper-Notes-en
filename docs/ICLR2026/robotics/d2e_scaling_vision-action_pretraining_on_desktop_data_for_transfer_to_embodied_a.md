@@ -18,8 +18,8 @@ content_hash: a6e785253839bb6c
 # D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to Embodied AI
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.05684](https://arxiv.org/abs/2510.05684)
-**Code**: [Project Page](https://worv-ai.github.io/d2e/)
+**arXiv**: [2510.05684](https://arxiv.org/abs/2510.05684)  
+**Code**: [Project Page](https://worv-ai.github.io/d2e/)  
 **Area**: Robotics
 **Keywords**: embodied AI, desktop pretraining, inverse dynamics model, vision-action pretraining, robotics transfer
 

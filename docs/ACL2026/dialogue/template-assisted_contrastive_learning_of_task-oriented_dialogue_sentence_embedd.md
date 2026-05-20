@@ -18,8 +18,8 @@ content_hash: 7043f189ac71a496
 # Template-assisted Contrastive Learning of Task-oriented Dialogue Sentence Embeddings
 
 **Conference**: ACL 2026
-**arXiv**: [2305.14299](https://arxiv.org/abs/2305.14299)
-**Code**: [GitHub](https://github.com/minsik-ai/Template-Contrastive-Embedding)
+**arXiv**: [2305.14299](https://arxiv.org/abs/2305.14299)  
+**Code**: [GitHub](https://github.com/minsik-ai/Template-Contrastive-Embedding)  
 **Area**: Dialogue Systems
 **Keywords**: dialogue sentence embeddings, contrastive learning, template augmentation, intent classification, unsupervised representation learning
 

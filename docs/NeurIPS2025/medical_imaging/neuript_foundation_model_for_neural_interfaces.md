@@ -18,8 +18,8 @@ content_hash: 9fa95a5ceabdaf07
 # NeurIPT: Foundation Model for Neural Interfaces
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16548](https://arxiv.org/abs/2510.16548)
-**Code**: [https://github.com/](https://github.com/) (available; project page provided)
+**arXiv**: [2510.16548](https://arxiv.org/abs/2510.16548)  
+**Code**: [https://github.com/](https://github.com/) (available; project page provided)  
 **Area**: Medical Imaging / Brain–Computer Interfaces
 **Keywords**: EEG foundation model, self-supervised pre-training, Mixture-of-Experts, EEG signals, brain–computer interface
 

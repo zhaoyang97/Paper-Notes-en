@@ -18,8 +18,8 @@ content_hash: 1a381e89838ef08b
 # Seeing the Unseen: Zooming in the Dark with Event Cameras
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.02206](https://arxiv.org/abs/2601.02206)
-**Code**: [RetinexEVSR](https://github.com/DachunKai/RetinexEVSR)
+**arXiv**: [2601.02206](https://arxiv.org/abs/2601.02206)  
+**Code**: [RetinexEVSR](https://github.com/DachunKai/RetinexEVSR)  
 **Area**: Video Generation
 **Keywords**: Low-light video super-resolution, event camera, Retinex decomposition, cross-modal fusion, bidirectional enhancement
 

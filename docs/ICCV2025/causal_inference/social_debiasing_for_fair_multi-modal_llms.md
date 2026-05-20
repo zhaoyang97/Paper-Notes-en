@@ -18,8 +18,8 @@ content_hash: 7ba827bceabdf959
 # Social Debiasing for Fair Multi-modal LLMs
 
 **Conference**: ICCV 2025
-**arXiv**: [2408.06569](https://arxiv.org/abs/2408.06569)
-**Code**: Available (project page)
+**arXiv**: [2408.06569](https://arxiv.org/abs/2408.06569)  
+**Code**: Available (project page)  
 **Area**: Causal Inference / Fairness
 **Keywords**: Social bias, multimodal large language models, anti-stereotyping, fairness, data debiasing
 
@@ -51,21 +51,21 @@ The overall pipeline consists of two major components: (1) **CMSC dataset constr
 
 1. **CMSC Dataset: Multi-Concept Counterfactual Image Generation**
 
-   - **Function**: Addresses insufficient concept coverage in existing debiasing datasets.
-   - **Mechanism**: Eighteen social concepts are defined across three groups—personality (compassionate / belligerent / authority / pleasant / unpleasant), responsibility (tool / weapon / career / family / chef / earning money), and education (middle school / high school / university / good student / bad student / science / arts). Carefully designed prompt templates are created for each concept. A cross-generation strategy is employed: a set of base images covering different gender × age combinations is first generated with a fixed race, and Prompt-to-Prompt is then used to produce race variants while preserving visual consistency. After manual filtering, 60K high-quality images are retained.
-   - **Design Motivation**: A single occupation concept cannot capture the rich diversity of real-world stereotypes. CMSC's 18 concepts span multiple stereotype dimensions—from "tendency toward violence" to "educational attainment"—enabling the model to acquire more comprehensive debiasing knowledge.
+    - **Function**: Addresses insufficient concept coverage in existing debiasing datasets.
+    - **Mechanism**: Eighteen social concepts are defined across three groups—personality (compassionate / belligerent / authority / pleasant / unpleasant), responsibility (tool / weapon / career / family / chef / earning money), and education (middle school / high school / university / good student / bad student / science / arts). Carefully designed prompt templates are created for each concept. A cross-generation strategy is employed: a set of base images covering different gender × age combinations is first generated with a fixed race, and Prompt-to-Prompt is then used to produce race variants while preserving visual consistency. After manual filtering, 60K high-quality images are retained.
+    - **Design Motivation**: A single occupation concept cannot capture the rich diversity of real-world stereotypes. CMSC's 18 concepts span multiple stereotype dimensions—from "tendency toward violence" to "educational attainment"—enabling the model to acquire more comprehensive debiasing knowledge.
 
 2. **Dataset Resampling**
 
-   - **Function**: Increases the exposure of under-represented demographic groups at the data level.
-   - **Mechanism**: For each sample $\mathcal{P}_i$, its $\text{Skew}(\mathcal{P}_i)$ is computed as the maximum absolute Skew across all social attributes. If $\text{Skew} > 0$ (over-attended combination), the sample is discarded with probability $\text{Skew}/(\text{Skew}+\tau_1)$; if $\text{Skew} \leq 0$ (under-attended combination), it is retained and an over-sampling mechanism based on accumulated Skew is triggered—when $\text{AcmSkew}$ exceeds threshold $\tau_2$, additional copies of the sample are inserted. Training data is thus dynamically adjusted at every epoch.
-   - **Design Motivation**: A balanced dataset assigns equal occurrence probability to all samples, yet the model's degree of bias varies across combinations. Intuitively, "male nurse" samples should appear more frequently (since the model tends to overlook them), while "female nurse" samples can appear less often.
+    - **Function**: Increases the exposure of under-represented demographic groups at the data level.
+    - **Mechanism**: For each sample $\mathcal{P}_i$, its $\text{Skew}(\mathcal{P}_i)$ is computed as the maximum absolute Skew across all social attributes. If $\text{Skew} > 0$ (over-attended combination), the sample is discarded with probability $\text{Skew}/(\text{Skew}+\tau_1)$; if $\text{Skew} \leq 0$ (under-attended combination), it is retained and an over-sampling mechanism based on accumulated Skew is triggered—when $\text{AcmSkew}$ exceeds threshold $\tau_2$, additional copies of the sample are inserted. Training data is thus dynamically adjusted at every epoch.
+    - **Design Motivation**: A balanced dataset assigns equal occurrence probability to all samples, yet the model's degree of bias varies across combinations. Intuitively, "male nurse" samples should appear more frequently (since the model tends to overlook them), while "female nurse" samples can appear less often.
 
 3. **Social Fairness Loss (SFLoss)**
 
-   - **Function**: Treats samples with different bias levels differently at the loss level.
-   - **Mechanism**: The standard autoregressive loss $\mathcal{L}$ is multiplied by a weighting factor $e^{-\text{Skew}(\mathcal{P}_i)}$, yielding $\mathcal{E}_{fair} = \frac{1}{N}\sum_{i=1}^{N} e^{-\text{Skew}(\mathcal{P}_i)} \mathcal{L}(\mathbf{y}_i, \mathbf{x}_i^{\text{ins}}, \mathbf{x}_i^{\text{img}}; \theta)$. When $\text{Skew} > 0$, the weight is < 1 (down-weighting over-predicted combinations); when $\text{Skew} < 0$, the weight is > 1 (up-weighting under-predicted combinations).
-   - **Design Motivation**: The design is inspired by re-weighting strategies in class-imbalance research (e.g., focal loss), but weights are assigned according to bias magnitude rather than class frequency. The exponential form of $e^{-\text{Skew}}$ causes the adjustment magnitude to increase non-linearly with the degree of bias.
+    - **Function**: Treats samples with different bias levels differently at the loss level.
+    - **Mechanism**: The standard autoregressive loss $\mathcal{L}$ is multiplied by a weighting factor $e^{-\text{Skew}(\mathcal{P}_i)}$, yielding $\mathcal{E}_{fair} = \frac{1}{N}\sum_{i=1}^{N} e^{-\text{Skew}(\mathcal{P}_i)} \mathcal{L}(\mathbf{y}_i, \mathbf{x}_i^{\text{ins}}, \mathbf{x}_i^{\text{img}}; \theta)$. When $\text{Skew} > 0$, the weight is < 1 (down-weighting over-predicted combinations); when $\text{Skew} < 0$, the weight is > 1 (up-weighting under-predicted combinations).
+    - **Design Motivation**: The design is inspired by re-weighting strategies in class-imbalance research (e.g., focal loss), but weights are assigned according to bias magnitude rather than class frequency. The exponential form of $e^{-\text{Skew}}$ causes the adjustment magnitude to increase non-linearly with the degree of bias.
 
 ### Loss & Training
 

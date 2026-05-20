@@ -17,8 +17,8 @@ content_hash: d6d140b053bbb4de
 # R1-Onevision: Advancing Generalized Multimodal Reasoning through Cross-Modal Formalization
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.10615](https://arxiv.org/abs/2503.10615)
-**Code**: None
+**arXiv**: [2503.10615](https://arxiv.org/abs/2503.10615)  
+**Code**: None  
 **Area**: Reinforcement Learning / Multimodal Reasoning
 **Keywords**: multimodal reasoning, cross-modal formalization, reinforcement learning, vision-language model, reasoning benchmark
 

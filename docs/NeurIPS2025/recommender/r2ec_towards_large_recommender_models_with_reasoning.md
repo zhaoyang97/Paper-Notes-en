@@ -17,8 +17,8 @@ content_hash: 14fa4c951e03964d
 # R²ec: Towards Large Recommender Models with Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16994](https://arxiv.org/abs/2505.16994)
-**Code**: [GitHub](https://github.com/YRYangang/RRec)
+**arXiv**: [2505.16994](https://arxiv.org/abs/2505.16994)  
+**Code**: [GitHub](https://github.com/YRYangang/RRec)  
 **Area**: Recommender Systems
 **Keywords**: Recommender Systems, LLM Reasoning, Reinforcement Learning, Dual-Head Architecture, Test-Time Scaling
 

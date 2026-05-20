@@ -18,8 +18,8 @@ content_hash: be7b167b0f19fb08
 # CORE-3D: Context-aware Open-vocabulary Retrieval by Embeddings in 3D
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24528](https://arxiv.org/abs/2509.24528)
-**Code**: To be confirmed
+**arXiv**: [2509.24528](https://arxiv.org/abs/2509.24528)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: Open-vocabulary 3D semantic segmentation, scene graph, CLIP embeddings, language retrieval, SemanticSAM
 
@@ -52,28 +52,28 @@ Given an RGB-D sequence and camera poses, the pipeline consists of four stages: 
 
 1. **Progressive Mask Generation**
 
-   - **Function**: Replaces vanilla SAM to generate more accurate and complete 2D instance masks.
-   - **Mechanism**: Exploits the granularity parameter $g$ of SemanticSAM, generating masks over an increasing granularity sequence $\{g_1, g_2, \ldots, g_K\}$. At each level, only masks with confidence exceeding threshold $\tau_{cer}$ are retained, and a new mask is added only if its overlap with existing masks satisfies $\frac{|m \cap m'|}{|m|} < \tau_k$. Coarser granularities capture large objects, while finer granularities progressively recover small objects and fine-grained details.
-   - DBSCAN clustering in 3D projected space is further applied to separate objects that are adjacent in 2D but spatially separated in 3D (e.g., a vase overlapping a sofa in the image plane).
-   - **Design Motivation**: Addresses SAM's fragmentation problem in cluttered scenes while avoiding redundant masks.
+    - **Function**: Replaces vanilla SAM to generate more accurate and complete 2D instance masks.
+    - **Mechanism**: Exploits the granularity parameter $g$ of SemanticSAM, generating masks over an increasing granularity sequence $\{g_1, g_2, \ldots, g_K\}$. At each level, only masks with confidence exceeding threshold $\tau_{cer}$ are retained, and a new mask is added only if its overlap with existing masks satisfies $\frac{|m \cap m'|}{|m|} < \tau_k$. Coarser granularities capture large objects, while finer granularities progressively recover small objects and fine-grained details.
+    - DBSCAN clustering in 3D projected space is further applied to separate objects that are adjacent in 2D but spatially separated in 3D (e.g., a vase overlapping a sofa in the image plane).
+    - **Design Motivation**: Addresses SAM's fragmentation problem in cluttered scenes while avoiding redundant masks.
 
 2. **Context-Aware CLIP Embedding**
 
-   - **Function**: Generates semantically rich embedding vectors for each mask.
-   - **Mechanism**: For each mask, five complementary crops are extracted: mask crop (background zeroed out), bbox crop, large crop (2.5× expansion), huge crop (4× expansion), and surroundings crop (3× expansion with the object itself masked out). Each crop is encoded by a CLIP image encoder and fused with learned weights: $\mathbf{e}(m) = w_{mask}\mathbf{e}^{mask} + w_{bbox}\mathbf{e}^{bbox} + w_{large}\mathbf{e}^{large} + w_{huge}\mathbf{e}^{huge} - w_{sur}\mathbf{e}^{sur}$
-   - Crucially, the surroundings embedding is subtracted with a **negative weight**, producing a contrastive effect that penalizes features dominated by the surrounding context rather than the object itself.
-   - **Design Motivation**: Isolated mask crops provide insufficient context for accurate CLIP matching.
+    - **Function**: Generates semantically rich embedding vectors for each mask.
+    - **Mechanism**: For each mask, five complementary crops are extracted: mask crop (background zeroed out), bbox crop, large crop (2.5× expansion), huge crop (4× expansion), and surroundings crop (3× expansion with the object itself masked out). Each crop is encoded by a CLIP image encoder and fused with learned weights: $\mathbf{e}(m) = w_{mask}\mathbf{e}^{mask} + w_{bbox}\mathbf{e}^{bbox} + w_{large}\mathbf{e}^{large} + w_{huge}\mathbf{e}^{huge} - w_{sur}\mathbf{e}^{sur}$
+    - Crucially, the surroundings embedding is subtracted with a **negative weight**, producing a contrastive effect that penalizes features dominated by the surrounding context rather than the object itself.
+    - **Design Motivation**: Isolated mask crops provide insufficient context for accurate CLIP matching.
 
 3. **3D Mask Merging and Refinement**
 
-   - **Function**: Merges multi-view 2D masks in 3D space into a unified object representation.
-   - **Mechanism**: Computes the volumetric Intersection over Volume (IoV) between candidate mask pairs. Two masks are merged if both directional IoV values exceed threshold $\gamma$ and their difference is smaller than $\delta$: $\text{IoV}(m_a, m_b) > \gamma$ and $|\text{IoV}(m_a, m_b) - \text{IoV}(m_b, m_a)| < \delta$.
-   - The symmetric balance criterion prevents degenerate merges (e.g., a small cushion being absorbed by a large sofa). Merged embeddings are averaged.
+    - **Function**: Merges multi-view 2D masks in 3D space into a unified object representation.
+    - **Mechanism**: Computes the volumetric Intersection over Volume (IoV) between candidate mask pairs. Two masks are merged if both directional IoV values exceed threshold $\gamma$ and their difference is smaller than $\delta$: $\text{IoV}(m_a, m_b) > \gamma$ and $|\text{IoV}(m_a, m_b) - \text{IoV}(m_b, m_a)| < \delta$.
+    - The symmetric balance criterion prevents degenerate merges (e.g., a small cushion being absorbed by a large sofa). Merged embeddings are averaged.
 
 4. **Object Retrieval**
 
-   - **Function**: Localizes target objects in a 3D scene given natural language queries.
-   - **Mechanism**: A four-stage pipeline — an LLM parses the query into a structured form $\Pi(q) = (m, \mathcal{R}, \Omega)$ (target, reference objects, orientation constraints) → CLIP similarity-based Top-K candidate mining → VLM visual verification (querying with bounding boxes from the best viewpoint) → orientation inference (discretized yaw angle grid with VLM selection) → LLM final reasoning and output.
+    - **Function**: Localizes target objects in a 3D scene given natural language queries.
+    - **Mechanism**: A four-stage pipeline — an LLM parses the query into a structured form $\Pi(q) = (m, \mathcal{R}, \Omega)$ (target, reference objects, orientation constraints) → CLIP similarity-based Top-K candidate mining → VLM visual verification (querying with bounding boxes from the best viewpoint) → orientation inference (discretized yaw angle grid with VLM selection) → LLM final reasoning and output.
 
 ### Loss & Training
 The method is entirely training-free and operates as a zero-shot inference pipeline, relying on pretrained SemanticSAM, CLIP (Eva02-L), and VLM/LLM components.

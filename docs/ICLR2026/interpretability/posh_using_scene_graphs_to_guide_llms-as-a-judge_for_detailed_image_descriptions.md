@@ -18,8 +18,8 @@ content_hash: c28bab0e1cd27873
 # PoSh: Using Scene Graphs to Guide LLMs-as-a-Judge for Detailed Image Descriptions
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.19060](https://arxiv.org/abs/2510.19060)
-**Code**: [GitHub](https://github.com/amith-ananthram/posh)
+**arXiv**: [2510.19060](https://arxiv.org/abs/2510.19060)  
+**Code**: [GitHub](https://github.com/amith-ananthram/posh)  
 **Area**: Interpretability
 **Keywords**: detailed image description, scene graph, LLM-as-Judge, fine-grained evaluation, assistive text
 

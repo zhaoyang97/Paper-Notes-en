@@ -18,8 +18,8 @@ content_hash: e0d965dc97f2b282
 # CLCR: Cross-Level Semantic Collaborative Representation for Multimodal Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19605](https://arxiv.org/abs/2602.19605)
-**Code**: N/A
+**arXiv**: [2602.19605](https://arxiv.org/abs/2602.19605)  
+**Code**: N/A  
 **Area**: Video Understanding
 **Keywords**: Cross-level semantic alignment, shared-private disentanglement, multimodal fusion, sentiment analysis, event localization
 

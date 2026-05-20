@@ -18,8 +18,8 @@ content_hash: 448b84fe9a516fd4
 # GranAlign: Granularity-Aware Alignment Framework for Zero-Shot Video Moment Retrieval
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.00584](https://arxiv.org/abs/2601.00584)
-**Code**: N/A
+**arXiv**: [2601.00584](https://arxiv.org/abs/2601.00584)  
+**Code**: N/A  
 **Area**: LLM Evaluation
 **Keywords**: zero-shot video moment retrieval, semantic granularity alignment, query rewriting, LLM, vision-language models
 
@@ -47,27 +47,27 @@ GranAlign is a fully training-free three-stage framework: (1) **granularity-awar
 
 1. **Granularity-based Query Rewriting**
 
-   - **Function**: Rewrites the original query into two semantically complementary versions via LLaMA-3.
-   - **Mechanism**: The simplified query $Q_s$ replaces rare words with common ones, retains core entities and actions, and removes incidental details—providing high generalizability for retrieving broadly relevant candidates. The detailed query $Q_d$ preserves fine-grained expressions, temporal context, and specific lexical choices—enabling more precise alignment and localization.
-   - **Design Motivation**: Single-granularity rewriting cannot simultaneously achieve high recall and high precision. Multiple manually designed prompt pairs are used to generate both variants; experiments show the framework is robust to the specific choice of prompt pairs.
+    - **Function**: Rewrites the original query into two semantically complementary versions via LLaMA-3.
+    - **Mechanism**: The simplified query $Q_s$ replaces rare words with common ones, retains core entities and actions, and removes incidental details—providing high generalizability for retrieving broadly relevant candidates. The detailed query $Q_d$ preserves fine-grained expressions, temporal context, and specific lexical choices—enabling more precise alignment and localization.
+    - **Design Motivation**: Single-granularity rewriting cannot simultaneously achieve high recall and high precision. Multiple manually designed prompt pairs are used to generate both variants; experiments show the framework is robust to the specific choice of prompt pairs.
 
 2. **Query-Aware Captioning**
 
-   - **Function**: Generates two types of descriptions for video frames—generic and query-aware.
-   - **Mechanism**: Query-agnostic descriptions $C_{agn} \in \mathbb{R}^{L_v \times l}$ are first generated for all frames as a baseline. The top-K% frames (totaling $L_k$ frames) with the highest query similarity are then selected, and query-aware descriptions $C_{awr} \in \mathbb{R}^{L_k \times l}$ are generated for these frames only using Qwen2.5-VL, guided by entities and actions extracted from the query.
-   - **Design Motivation**: Generating query-aware descriptions for all frames is computationally prohibitive. This hybrid strategy applies semantically precise descriptions to critical regions while maintaining global computational efficiency. Since query-aware descriptions may suffer from hallucinations or over-imitation of the query's linguistic structure, error-tolerant mechanisms are incorporated at the scoring stage.
+    - **Function**: Generates two types of descriptions for video frames—generic and query-aware.
+    - **Mechanism**: Query-agnostic descriptions $C_{agn} \in \mathbb{R}^{L_v \times l}$ are first generated for all frames as a baseline. The top-K% frames (totaling $L_k$ frames) with the highest query similarity are then selected, and query-aware descriptions $C_{awr} \in \mathbb{R}^{L_k \times l}$ are generated for these frames only using Qwen2.5-VL, guided by entities and actions extracted from the query.
+    - **Design Motivation**: Generating query-aware descriptions for all frames is computationally prohibitive. This hybrid strategy applies semantically precise descriptions to critical regions while maintaining global computational efficiency. Since query-aware descriptions may suffer from hallucinations or over-imitation of the query's linguistic structure, error-tolerant mechanisms are incorporated at the scoring stage.
 
 3. **Granular Moment Scoring**
 
-   - **Function**: Fuses similarity scores from two query–description pairs.
-   - **Mechanism**: For each frame $f$, a composite similarity score is computed as: $S_f = \frac{1}{2m}\sum_{i=1}^{m}[g(q_s^{(i)}, C_{agn,f}) + g(q_d^{(i)}, C_{awr,f})]$, where $m$ is the number of rewriting pairs and $g(\cdot, \cdot)$ denotes normalized cosine similarity.
-   - **Design Motivation**: The simplified–agnostic pair $(Q_s, C_{agn})$ provides broad coverage and high recall, while the detailed–aware pair $(Q_d, C_{awr})$ delivers precise alignment but is susceptible to hallucinations. Fusing the complementary scores from both pairs eliminates biases and false positives introduced by either pair alone.
+    - **Function**: Fuses similarity scores from two query–description pairs.
+    - **Mechanism**: For each frame $f$, a composite similarity score is computed as: $S_f = \frac{1}{2m}\sum_{i=1}^{m}[g(q_s^{(i)}, C_{agn,f}) + g(q_d^{(i)}, C_{awr,f})]$, where $m$ is the number of rewriting pairs and $g(\cdot, \cdot)$ denotes normalized cosine similarity.
+    - **Design Motivation**: The simplified–agnostic pair $(Q_s, C_{agn})$ provides broad coverage and high recall, while the detailed–aware pair $(Q_d, C_{awr})$ delivers precise alignment but is susceptible to hallucinations. Fusing the complementary scores from both pairs eliminates biases and false positives introduced by either pair alone.
 
 4. **Moment Proposal Generation and Post-processing**
 
-   - **Function**: Generates and filters candidate temporal segments from frame-level scores.
-   - **Mechanism**: Adjacent high-scoring frames are merged into a single proposal if their gap does not exceed threshold $\tau$; proposals with average similarity in the bottom $n$% are discarded. Each candidate segment is scored as $\text{Score}(p) = (1-\lambda)\mu_p + \lambda\rho_p$, where $\mu_p$ is the average semantic similarity and $\rho_p$ is a normalized length regularization term, with $\lambda = 0.3$. NMS is applied to remove redundant proposals.
-   - **Design Motivation**: Length regularization prevents both overly long low-quality proposals and overly short fragmented ones.
+    - **Function**: Generates and filters candidate temporal segments from frame-level scores.
+    - **Mechanism**: Adjacent high-scoring frames are merged into a single proposal if their gap does not exceed threshold $\tau$; proposals with average similarity in the bottom $n$% are discarded. Each candidate segment is scored as $\text{Score}(p) = (1-\lambda)\mu_p + \lambda\rho_p$, where $\mu_p$ is the average semantic similarity and $\rho_p$ is a normalized length regularization term, with $\lambda = 0.3$. NMS is applied to remove redundant proposals.
+    - **Design Motivation**: Length regularization prevents both overly long low-quality proposals and overly short fragmented ones.
 
 ### Loss & Training
 

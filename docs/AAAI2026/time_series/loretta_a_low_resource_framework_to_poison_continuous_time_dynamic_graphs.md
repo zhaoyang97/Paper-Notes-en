@@ -19,8 +19,8 @@ content_hash: 4b20b698a2d44755
 # LoReTTA: A Low Resource Framework To Poison Continuous Time Dynamic Graphs
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07379](https://arxiv.org/abs/2511.07379)
-**Code**: [https://github.com/ansh997/LoReTTA](https://github.com/ansh997/LoReTTA)
+**arXiv**: [2511.07379](https://arxiv.org/abs/2511.07379)  
+**Code**: [https://github.com/ansh997/LoReTTA](https://github.com/ansh997/LoReTTA)  
 **Area**: Time Series / Graph Neural Network Security
 **Keywords**: Temporal Graph Neural Networks, Adversarial Attack, Data Poisoning, Continuous-Time Dynamic Graphs, Graph Sparsification, Temporal PageRank
 

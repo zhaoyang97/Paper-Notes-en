@@ -18,8 +18,8 @@ content_hash: dc5de1fba40385e6
 # Mask2IV: Interaction-Centric Video Generation via Mask Trajectories
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.03135](https://arxiv.org/abs/2510.03135)
-**Code**: [Project Page](https://reagan1311.github.io/mask2iv)
+**arXiv**: [2510.03135](https://arxiv.org/abs/2510.03135)  
+**Code**: [Project Page](https://reagan1311.github.io/mask2iv)  
 **Area**: Video Understanding / Video Generation
 **Keywords**: Interaction video generation, mask trajectories, human-object interaction, robot manipulation, two-stage diffusion
 

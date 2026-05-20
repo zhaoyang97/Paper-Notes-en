@@ -18,8 +18,8 @@ content_hash: 0e1fb12b0b3333c6
 # Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.22533](https://arxiv.org/abs/2511.22533)
-**Code**: [https://fast3dcache-agi.github.io](https://fast3dcache-agi.github.io)
+**arXiv**: [2511.22533](https://arxiv.org/abs/2511.22533)  
+**Code**: [https://fast3dcache-agi.github.io](https://fast3dcache-agi.github.io)  
 **Area**: 3D Vision
 **Keywords**: 3D geometry generation acceleration, caching mechanism, voxel stabilization, training-free, diffusion models
 
@@ -31,9 +31,9 @@ This paper proposes Fast3Dcache, a training-free geometry-aware caching framewor
 
 1. **Background**: Cache-based acceleration has achieved notable success in 2D image and video diffusion models by reusing intermediate computations from preceding timesteps to reduce redundant inference. Representative methods include various feature caching techniques.
 2. **Limitations of Prior Work**:
-   - Directly transferring 2D caching strategies to 3D diffusion models severely disrupts geometric consistency;
-   - Minor texture errors in 2D/video are perceptually negligible, whereas numerical errors in 3D voxel/point predictions directly affect topology and spatial integrity, leading to surface holes, geometric distortion, or non-manifold meshes;
-   - Existing 3D acceleration methods (e.g., Hash3D) are not applicable to diffusion frameworks.
+    - Directly transferring 2D caching strategies to 3D diffusion models severely disrupts geometric consistency;
+    - Minor texture errors in 2D/video are perceptually negligible, whereas numerical errors in 3D voxel/point predictions directly affect topology and spatial integrity, leading to surface holes, geometric distortion, or non-manifold meshes;
+    - Existing 3D acceleration methods (e.g., Hash3D) are not applicable to diffusion frameworks.
 3. **Key Challenge**: 2D caching exploits perceptual redundancy, whereas 3D geometry demands strict numerical correctness—small accumulated errors can lead to topological catastrophe.
 4. **Goal**: How to safely cache and reuse computations during 3D diffusion inference while maintaining geometric fidelity alongside acceleration?
 5. **Key Insight**: The paper analyzes the evolution of voxel occupancy fields during the sparse structure generation stage in the TRELLIS framework, revealing a three-phase stabilization pattern (unstable → log-linear decay → fine-tuning), and designs adaptive caching strategies accordingly.
@@ -48,19 +48,19 @@ Fast3Dcache divides inference into three phases: Phase 1 (full sampling) establi
 ### Key Designs
 
 1. **Predictive Cache Scheduling Constraint (PCSC)**:
-   - **Function**: Dynamically determines how many tokens to cache at each timestep based on the decay trend of voxel stabilization.
-   - **Mechanism**: The voxel occupancy change $\Delta s_t = \sum_{i,j,k} (\mathcal{O}_{t+1}(i,j,k) \oplus \mathcal{O}_t(i,j,k))$ during denoising exhibits a three-phase pattern: high volatility in Phase 1, log-linear decay in Phase 2, and rapid stabilization in Phase 3. At the anchor step marking the end of Phase 1, the initial change magnitude $\sigma$ is calibrated; subsequent changes are predicted using a fixed slope $\mu$: $\Delta\hat{s} = \sigma \cdot e^{\mu \cdot (t - \lceil T \cdot \rho_a \rceil)}$. The cache budget is then: $c_t = D^3 - \frac{\Delta\hat{s}_t}{\gamma_{\text{up}}}$
-   - **Design Motivation**: Unlike the fixed caching ratios used in 2D, the stability of 3D geometry generation varies dramatically across phases. PCSC adaptively allocates budget—caching less in early stages (to protect coarse structure formation) and more in later stages (to exploit geometric convergence). Experiments show that fixed ratios yield CD of 0.0956, whereas PCSC achieves 0.0697.
+    - **Function**: Dynamically determines how many tokens to cache at each timestep based on the decay trend of voxel stabilization.
+    - **Mechanism**: The voxel occupancy change $\Delta s_t = \sum_{i,j,k} (\mathcal{O}_{t+1}(i,j,k) \oplus \mathcal{O}_t(i,j,k))$ during denoising exhibits a three-phase pattern: high volatility in Phase 1, log-linear decay in Phase 2, and rapid stabilization in Phase 3. At the anchor step marking the end of Phase 1, the initial change magnitude $\sigma$ is calibrated; subsequent changes are predicted using a fixed slope $\mu$: $\Delta\hat{s} = \sigma \cdot e^{\mu \cdot (t - \lceil T \cdot \rho_a \rceil)}$. The cache budget is then: $c_t = D^3 - \frac{\Delta\hat{s}_t}{\gamma_{\text{up}}}$
+    - **Design Motivation**: Unlike the fixed caching ratios used in 2D, the stability of 3D geometry generation varies dramatically across phases. PCSC adaptively allocates budget—caching less in early stages (to protect coarse structure formation) and more in later stages (to exploit geometric convergence). Experiments show that fixed ratios yield CD of 0.0956, whereas PCSC achieves 0.0697.
 
 2. **Spatiotemporal Stability Criterion (SSC)**:
-   - **Function**: Precisely selects which tokens can be safely cached given a cache budget.
-   - **Mechanism**: A cacheability score is computed for each token: $C_i(t) = \omega \cdot \text{norm}(A_i(t)) + (1-\omega) \cdot \text{norm}(V_i(t))$, where velocity magnitude $V_i(t) = \|v_i(t)\|_2$ reflects feature update intensity, and acceleration $A_i(t) = \|v_i(t) - v_i(t-1)\|_2$ reflects velocity stability (i.e., instantaneous cache error, ICE). Tokens with lower scores are more stable and thus more suitable for caching. Self-attention is computed only for the unstable subset.
-   - **Design Motivation**: Velocity magnitude alone is insufficient—tokens with high but directionally stable velocity can still be cached safely (low error). Acceleration alone is also insufficient—tokens with low acceleration but high velocity are still undergoing large updates. The two metrics are complementary, providing finer-grained stability judgment. Ablations confirm that their joint use ($\omega=0.7$) significantly outperforms either individual metric.
+    - **Function**: Precisely selects which tokens can be safely cached given a cache budget.
+    - **Mechanism**: A cacheability score is computed for each token: $C_i(t) = \omega \cdot \text{norm}(A_i(t)) + (1-\omega) \cdot \text{norm}(V_i(t))$, where velocity magnitude $V_i(t) = \|v_i(t)\|_2$ reflects feature update intensity, and acceleration $A_i(t) = \|v_i(t) - v_i(t-1)\|_2$ reflects velocity stability (i.e., instantaneous cache error, ICE). Tokens with lower scores are more stable and thus more suitable for caching. Self-attention is computed only for the unstable subset.
+    - **Design Motivation**: Velocity magnitude alone is insufficient—tokens with high but directionally stable velocity can still be cached safely (low error). Acceleration alone is also insufficient—tokens with low acceleration but high velocity are still undergoing large updates. The two metrics are complementary, providing finer-grained stability judgment. Ablations confirm that their joint use ($\omega=0.7$) significantly outperforms either individual metric.
 
 3. **Three-Phase Pipeline Integration**:
-   - **Function**: Integrates PCSC and SSC into an end-to-end acceleration workflow.
-   - **Mechanism**: Phase 1 performs full sampling to establish base geometry and calibrates PCSC at its conclusion. Phase 2 applies dynamic caching with PCSC+SSC, with full refreshes every $\tau$ steps to eliminate error accumulation. Phase 3 uses a fixed high cache ratio $\xi$ with full refreshes every $f_{\text{corr}}$ steps.
-   - **Design Motivation**: The three phases correspond to the natural evolution of 3D generation. Error-accumulation elimination steps (full refresh every $\tau$ steps) are essential—completely disabling them degrades CD to 0.0724 and F-Score to 51.8157.
+    - **Function**: Integrates PCSC and SSC into an end-to-end acceleration workflow.
+    - **Mechanism**: Phase 1 performs full sampling to establish base geometry and calibrates PCSC at its conclusion. Phase 2 applies dynamic caching with PCSC+SSC, with full refreshes every $\tau$ steps to eliminate error accumulation. Phase 3 uses a fixed high cache ratio $\xi$ with full refreshes every $f_{\text{corr}}$ steps.
+    - **Design Motivation**: The three phases correspond to the natural evolution of 3D generation. Error-accumulation elimination steps (full refresh every $\tau$ steps) are essential—completely disabling them degrades CD to 0.0724 and F-Score to 51.8157.
 
 ### Loss & Training
 

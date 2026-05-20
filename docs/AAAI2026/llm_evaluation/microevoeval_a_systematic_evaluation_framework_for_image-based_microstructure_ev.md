@@ -18,8 +18,8 @@ content_hash: 016ca2136c0cd92a
 # MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08955](https://arxiv.org/abs/2511.08955)
-**Code**: [GitHub](https://github.com/ArcueidCroft/MircoEvoEval)
+**arXiv**: [2511.08955](https://arxiv.org/abs/2511.08955)  
+**Code**: [GitHub](https://github.com/ArcueidCroft/MircoEvoEval)  
 **Area**: LLM Evaluation
 **Keywords**: Microstructure evolution, spatiotemporal prediction, benchmark evaluation, deep learning surrogate models, materials science
 
@@ -53,8 +53,8 @@ All data are derived from 256×256 high-fidelity numerical simulations and downs
 
 1. **Numerical accuracy**: RMSE, SSIM — measure pixel-level prediction accuracy.
 2. **Physical fidelity (core innovation)**:
-   - **L-ETAP** (logarithmic error in total area proportion): Assesses whether the predicted total area fraction of each phase is correct — reflects conservation laws and phase equilibrium.
-   - **L-EAPSR** (logarithmic error in average per-segment area ratio): Assesses whether the average size of individual regions is correct — reflects coarsening dynamics.
+    - **L-ETAP** (logarithmic error in total area proportion): Assesses whether the predicted total area fraction of each phase is correct — reflects conservation laws and phase equilibrium.
+    - **L-EAPSR** (logarithmic error in average per-segment area ratio): Assesses whether the average size of individual regions is correct — reflects coarsening dynamics.
 3. **Computational efficiency**: Inference time.
 
 ### 14 Evaluated Models

@@ -18,8 +18,8 @@ content_hash: bb154d6f005ba0db
 # Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.13055](https://arxiv.org/abs/2512.13055)
-**Code**: [github.com/jaeyoon1603/AsymVPR](https://github.com/jaeyoon1603/AsymVPR)
+**arXiv**: [2512.13055](https://arxiv.org/abs/2512.13055)  
+**Code**: [github.com/jaeyoon1603/AsymVPR](https://github.com/jaeyoon1603/AsymVPR)  
 **Area**: Model Compression
 **Keywords**: Visual Place Recognition, Asymmetric Retrieval, Geographical Memory Bank, Implicit Embedding Augmentation, Lightweight Deployment
 

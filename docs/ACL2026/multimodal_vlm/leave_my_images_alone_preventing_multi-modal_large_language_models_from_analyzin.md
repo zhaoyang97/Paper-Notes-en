@@ -18,8 +18,8 @@ content_hash: 03e6a59fbd9b4911
 # Leave My Images Alone: Preventing Multi-Modal Large Language Models from Analyzing Unauthorized Images
 
 **Conference**: ACL 2026
-**arXiv**: [2604.09024](https://arxiv.org/abs/2604.09024)
-**Code**: None
+**arXiv**: [2604.09024](https://arxiv.org/abs/2604.09024)  
+**Code**: None  
 **Area**: AI Safety / Multimodal Privacy Protection
 **Keywords**: Visual prompt injection, image privacy protection, multimodal large language models, adversarial perturbation, refusal response
 

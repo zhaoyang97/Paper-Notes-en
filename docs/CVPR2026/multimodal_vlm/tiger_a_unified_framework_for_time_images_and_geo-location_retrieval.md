@@ -18,8 +18,8 @@ content_hash: 15d7a82331165bc8
 # TIGeR: A Unified Framework for Time, Images and Geo-location Retrieval
 
 **Conference**: CVPR2026
-**arXiv**: [2603.24749](https://arxiv.org/abs/2603.24749)
-**Code**: None
+**arXiv**: [2603.24749](https://arxiv.org/abs/2603.24749)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Geo-temporal retrieval, multimodal Transformer, geolocalization, temporal prediction, camera data cleaning
 

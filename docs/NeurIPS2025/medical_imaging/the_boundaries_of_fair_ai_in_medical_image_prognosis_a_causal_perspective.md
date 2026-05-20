@@ -17,8 +17,8 @@ content_hash: 26a967ac234b178f
 # The Boundaries of Fair AI in Medical Image Prognosis: A Causal Perspective
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08840](https://arxiv.org/abs/2510.08840)
-**Code**: [https://github.com/pth1993/FairTTE](https://github.com/pth1993/FairTTE)
+**arXiv**: [2510.08840](https://arxiv.org/abs/2510.08840)  
+**Code**: [https://github.com/pth1993/FairTTE](https://github.com/pth1993/FairTTE)  
 **Area**: Medical Imaging / AI Fairness
 **Keywords**: Fairness, Time-to-Event Prediction, Causal Analysis, Medical Imaging, Distribution Shift
 

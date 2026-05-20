@@ -18,8 +18,8 @@ content_hash: 189bd2a2178b496e
 # UST-SSM: Unified Spatio-Temporal State Space Models for Point Cloud Video Modeling
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.14604](https://arxiv.org/abs/2508.14604)
-**Code**: [GitHub](https://github.com/wangzy01/UST-SSM)
+**arXiv**: [2508.14604](https://arxiv.org/abs/2508.14604)  
+**Code**: [GitHub](https://github.com/wangzy01/UST-SSM)  
 **Area**: 3D Vision
 **Keywords**: Point cloud video, state space models, spatio-temporal modeling, action recognition, Mamba
 

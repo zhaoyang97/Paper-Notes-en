@@ -18,8 +18,8 @@ content_hash: 5b38311cd86a957b
 # From Observation to Action: Latent Action-based Primitive Segmentation for VLA Pre-training in Industrial Settings
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.21428](https://arxiv.org/abs/2511.21428)
-**Code**: None (industrial dataset to be partially released)
+**arXiv**: [2511.21428](https://arxiv.org/abs/2511.21428)  
+**Code**: None (industrial dataset to be partially released)  
 **Area**: Multimodal / VLM
 **Keywords**: VLA pre-training, action segmentation, latent action energy, unsupervised learning, industrial manufacturing
 

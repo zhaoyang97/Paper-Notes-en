@@ -18,8 +18,8 @@ content_hash: 6f142d10a53021f6
 # BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs
 
 **Conference**: ICLR2026
-**arXiv**: [2603.11991](https://arxiv.org/abs/2603.11991)
-**Code**: [GitHub](https://github.com/IliasAarab/btzsc)
+**arXiv**: [2603.11991](https://arxiv.org/abs/2603.11991)  
+**Code**: [GitHub](https://github.com/IliasAarab/btzsc)  
 **Area**: Information Retrieval
 **Keywords**: zero-shot classification, benchmark, reranker, embedding model, NLI
 

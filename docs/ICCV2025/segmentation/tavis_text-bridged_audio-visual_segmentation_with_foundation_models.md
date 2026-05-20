@@ -20,8 +20,8 @@ content_hash: 425f98b8249d1cbd
 # TAViS: Text-bridged Audio-Visual Segmentation with Foundation Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.11436](https://arxiv.org/abs/2506.11436)
-**Code**: Not released
+**arXiv**: [2506.11436](https://arxiv.org/abs/2506.11436)  
+**Code**: Not released  
 **Area**: Image Segmentation
 **Keywords**: Audio-visual segmentation, foundation models, SAM2, ImageBind, text bridging, cross-modal alignment, zero-shot segmentation
 

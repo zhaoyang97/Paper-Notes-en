@@ -18,8 +18,8 @@ content_hash: 736535c7165d888f
 # GOATex: Geometry & Occlusion-Aware Texturing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.23051](https://arxiv.org/abs/2511.23051)
-**Code**: Project page available; code to be confirmed
+**arXiv**: [2511.23051](https://arxiv.org/abs/2511.23051)  
+**Code**: Project page available; code to be confirmed  
 **Area**: 3D Vision
 **Keywords**: 3D texture generation, occlusion awareness, diffusion models, UV texture blending, multi-layer texturing
 

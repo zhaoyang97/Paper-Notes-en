@@ -18,8 +18,8 @@ content_hash: 82dfa91f1929e791
 # Conjuring Semantic Similarity
 
 **Conference**: ICLR 2026
-**arXiv**: [2410.16431](https://arxiv.org/abs/2410.16431)
-**Code**: To be confirmed
+**arXiv**: [2410.16431](https://arxiv.org/abs/2410.16431)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: semantic similarity, diffusion model, Jeffreys divergence, SDE, text-to-image
 

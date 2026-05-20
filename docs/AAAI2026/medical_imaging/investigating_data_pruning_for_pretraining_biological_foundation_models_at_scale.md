@@ -20,8 +20,8 @@ content_hash: 9a5efaf09fed802c
 # Investigating Data Pruning for Pretraining Biological Foundation Models at Scale
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.12932](https://arxiv.org/abs/2512.12932)
-**Code**: [github.com/victor-yifanwu/bio-coreset](https://github.com/victor-yifanwu/bio-coreset)
+**arXiv**: [2512.12932](https://arxiv.org/abs/2512.12932)  
+**Code**: [github.com/victor-yifanwu/bio-coreset](https://github.com/victor-yifanwu/bio-coreset)  
 **Area**: Medical Imaging / Bioinformatics / Foundation Models
 **Keywords**: Data Pruning, Biological Foundation Models, Influence Functions, Coreset Selection, RNA-FM, ESM, Protein Language Models
 

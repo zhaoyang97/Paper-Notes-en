@@ -18,8 +18,8 @@ content_hash: 97e3f0932bb7d2f5
 # Toward Complex-Valued Neural Networks for Waveform Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.11589](https://arxiv.org/abs/2603.11589)
-**Code**: [https://hs-oh-prml.github.io/ComVo/](https://hs-oh-prml.github.io/ComVo/)
+**arXiv**: [2603.11589](https://arxiv.org/abs/2603.11589)  
+**Code**: [https://hs-oh-prml.github.io/ComVo/](https://hs-oh-prml.github.io/ComVo/)  
 **Area**: Speech Synthesis / Vocoder
 **Keywords**: Complex-valued neural networks, iSTFT vocoder, phase quantization, GAN, waveform generation
 

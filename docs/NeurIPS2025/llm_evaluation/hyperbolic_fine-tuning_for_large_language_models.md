@@ -18,8 +18,8 @@ content_hash: c9ec9d1ffa41fe50
 # Hyperbolic Fine-Tuning for Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.04010](https://arxiv.org/abs/2410.04010)
-**Code**: [https://github.com/marlin-codes/HypLoRA](https://github.com/marlin-codes/HypLoRA)
+**arXiv**: [2410.04010](https://arxiv.org/abs/2410.04010)  
+**Code**: [https://github.com/marlin-codes/HypLoRA](https://github.com/marlin-codes/HypLoRA)  
 **Area**: LLM Evaluation
 **Keywords**: hyperbolic geometry, LoRA, parameter-efficient fine-tuning, Lorentz model, LLM reasoning
 

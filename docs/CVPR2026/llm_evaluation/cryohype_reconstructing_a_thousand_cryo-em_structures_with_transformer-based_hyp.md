@@ -18,8 +18,8 @@ content_hash: f405a3a3b59e8005
 # CryoHype: Reconstructing a Thousand Cryo-EM Structures with Transformer-Based Hypernetworks
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.06332](https://arxiv.org/abs/2512.06332)
-**Code**: [https://cryohype.cs.princeton.edu/](https://cryohype.cs.princeton.edu/)
+**arXiv**: [2512.06332](https://arxiv.org/abs/2512.06332)  
+**Code**: [https://cryohype.cs.princeton.edu/](https://cryohype.cs.princeton.edu/)  
 **Area**: LLM Evaluation
 **Keywords**: Cryo-EM, Heterogeneous Reconstruction, Hypernetwork, Transformer, Implicit Neural Representation
 

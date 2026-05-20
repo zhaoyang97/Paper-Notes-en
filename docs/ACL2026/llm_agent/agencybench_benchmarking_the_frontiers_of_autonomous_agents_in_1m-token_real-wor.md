@@ -18,8 +18,8 @@ content_hash: 4bfa638925a681e5
 # AgencyBench: Benchmarking the Frontiers of Autonomous Agents in 1M-Token Real-World Contexts
 
 **Conference**: ACL 2026
-**arXiv**: [2601.11044](https://arxiv.org/abs/2601.11044)
-**Code**: [GitHub](https://github.com/GAIR-NLP/AgencyBench)
+**arXiv**: [2601.11044](https://arxiv.org/abs/2601.11044)  
+**Code**: [GitHub](https://github.com/GAIR-NLP/AgencyBench)  
 **Area**: LLM Agent / Benchmark
 **Keywords**: autonomous agents, long-horizon tasks, real-world benchmark, user simulation, Docker sandbox evaluation
 

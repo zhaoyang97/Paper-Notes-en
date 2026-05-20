@@ -19,8 +19,8 @@ content_hash: 57cd160166c7f2e4
 # ConFu: Contemplate the Future for Better Speculative Sampling
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.08899](https://arxiv.org/abs/2603.08899)
-**Code**: To be confirmed
+**arXiv**: [2603.08899](https://arxiv.org/abs/2603.08899)  
+**Code**: To be confirmed  
 **Area**: Model Compression
 **Keywords**: speculative decoding, contemplate tokens, future prediction, MoE, draft model, EAGLE
 

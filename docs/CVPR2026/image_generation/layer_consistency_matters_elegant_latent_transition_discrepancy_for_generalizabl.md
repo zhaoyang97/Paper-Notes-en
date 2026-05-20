@@ -18,8 +18,8 @@ content_hash: 834f631bd185a80c
 # Layer Consistency Matters: Elegant Latent Transition Discrepancy for Generalizable Synthetic Image Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10598](https://arxiv.org/abs/2603.10598)
-**Code**: [https://github.com/yywencs/LTD](https://github.com/yywencs/LTD)
+**arXiv**: [2603.10598](https://arxiv.org/abs/2603.10598)  
+**Code**: [https://github.com/yywencs/LTD](https://github.com/yywencs/LTD)  
 **Area**: Image Generation / AI-Generated Image Detection
 **Keywords**: Synthetic Image Detection, Layer Transition Discrepancy, CLIP-ViT, Cross-Domain Generalization, Dynamic Layer Selection
 
@@ -48,19 +48,19 @@ A frozen CLIP ViT-L/14 is used as the backbone to extract hierarchical features.
 ### Key Designs
 
 1. **Dynamic Layer-wise Selection**:
-   - *Function*: Adaptively selects $n$ consecutive intermediate layers with the highest discriminability from the ViT's 24 layers.
-   - *Mechanism*: Learnable logits $\boldsymbol{\pi} \in \mathbb{R}^C$ are defined ($C = l - n + 1$ candidate windows); Gumbel-Softmax determines the optimal starting layer index $s$, maintaining differentiability during training.
-   - *Design Motivation*: The most discriminative layers may vary across images (experiments show layers 11–19 are optimal); fixed layer selection lacks flexibility. Gumbel-Softmax enables end-to-end differentiable discrete selection.
+    - *Function*: Adaptively selects $n$ consecutive intermediate layers with the highest discriminability from the ViT's 24 layers.
+    - *Mechanism*: Learnable logits $\boldsymbol{\pi} \in \mathbb{R}^C$ are defined ($C = l - n + 1$ candidate windows); Gumbel-Softmax determines the optimal starting layer index $s$, maintaining differentiability during training.
+    - *Design Motivation*: The most discriminative layers may vary across images (experiments show layers 11–19 are optimal); fixed layer selection lacks flexibility. Gumbel-Softmax enables end-to-end differentiable discrete selection.
 
 2. **Layer Transition Discrepancy (LTD)**:
-   - *Function*: Captures inter-layer transition differences between real and synthetic images in ViT intermediate layers.
-   - *Mechanism*: For $n$ selected consecutive layers $\{\mathbf{f}_s^{(k)}\}_{k=1}^n$, adjacent-layer CLS token differences are computed as $\mathbf{d}_s^{(k)} = \mathbf{f}_s^{(k+1)} - \mathbf{f}_s^{(k)}$, yielding $n-1$ LTD difference vectors.
-   - *Design Motivation*: Compared to using raw features directly, difference features focus on inter-layer change patterns and suppress irrelevant redundant information. Real images exhibit small, stable differences; synthetic images exhibit large, abrupt differences.
+    - *Function*: Captures inter-layer transition differences between real and synthetic images in ViT intermediate layers.
+    - *Mechanism*: For $n$ selected consecutive layers $\{\mathbf{f}_s^{(k)}\}_{k=1}^n$, adjacent-layer CLS token differences are computed as $\mathbf{d}_s^{(k)} = \mathbf{f}_s^{(k+1)} - \mathbf{f}_s^{(k)}$, yielding $n-1$ LTD difference vectors.
+    - *Design Motivation*: Compared to using raw features directly, difference features focus on inter-layer change patterns and suppress irrelevant redundant information. Real images exhibit small, stable differences; synthetic images exhibit large, abrupt differences.
 
 3. **Dual-Branch Weight-Sharing Detection Architecture**:
-   - *Function*: Jointly models global structural consistency and local inter-layer variation.
-   - *Mechanism*: The raw feature branch $\mathbf{F}_s = [\mathbf{f}_s, \mathbf{f}_{cls}, \mathbf{f}_p]$ and the LTD branch $\mathbf{D} = [\mathbf{d}, \mathbf{d}_{cls}, \mathbf{d}_p]$ each incorporate a CLS token and positional encoding, then interact through weight-sharing trainable Transformer blocks.
-   - *Design Motivation*: Weight sharing enforces feature alignment, mapping spatial consistency and inter-layer transitions into a unified semantic space and preventing distributional divergence.
+    - *Function*: Jointly models global structural consistency and local inter-layer variation.
+    - *Mechanism*: The raw feature branch $\mathbf{F}_s = [\mathbf{f}_s, \mathbf{f}_{cls}, \mathbf{f}_p]$ and the LTD branch $\mathbf{D} = [\mathbf{d}, \mathbf{d}_{cls}, \mathbf{d}_p]$ each incorporate a CLS token and positional encoding, then interact through weight-sharing trainable Transformer blocks.
+    - *Design Motivation*: Weight sharing enforces feature alignment, mapping spatial consistency and inter-layer transitions into a unified semantic space and preventing distributional divergence.
 
 ### Loss & Training
 

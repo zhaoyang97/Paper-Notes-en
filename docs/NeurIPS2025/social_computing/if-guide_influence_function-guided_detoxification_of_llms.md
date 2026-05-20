@@ -18,8 +18,8 @@ content_hash: e465b9129c69854d
 # IF-GUIDE: Influence Function-Guided Detoxification of LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01790](https://arxiv.org/abs/2506.01790)
-**Code**: [GitHub](https://github.com/ztcoalson/IF-Guide)
+**arXiv**: [2506.01790](https://arxiv.org/abs/2506.01790)  
+**Code**: [GitHub](https://github.com/ztcoalson/IF-Guide)  
 **Area**: Social Computing
 **Keywords**: LLM detoxification, influence functions, training data attribution, token-level suppression, proactive safety
 

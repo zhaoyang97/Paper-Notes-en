@@ -18,8 +18,8 @@ content_hash: 33e15d1a9d83c742
 # Scene-Aware Urban Design: A Human-AI Recommendation Framework Using Co-Occurrence Embeddings and Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.06201](https://arxiv.org/abs/2511.06201)
-**Code**: None
+**arXiv**: [2511.06201](https://arxiv.org/abs/2511.06201)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Urban Design, Human-AI Collaboration, Co-Occurrence Embeddings, VLM Recommendation, AR Interaction
 

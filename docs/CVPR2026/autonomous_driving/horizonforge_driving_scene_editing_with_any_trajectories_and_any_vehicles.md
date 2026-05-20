@@ -19,8 +19,8 @@ content_hash: c65cf7dbcfbcdc09
 # HorizonForge: Driving Scene Editing with Any Trajectories and Any Vehicles
 
 **Conference**: CVPR2026
-**arXiv**: [2602.21333](https://arxiv.org/abs/2602.21333)
-**Code**: [Project Page](https://horizonforge.github.io/)
+**arXiv**: [2602.21333](https://arxiv.org/abs/2602.21333)  
+**Code**: [Project Page](https://horizonforge.github.io/)  
 **Area**: Autonomous Driving / Scene Generation & Editing
 **Keywords**: Driving Scene Editing, 3D Gaussian Splatting, Video Diffusion Models, Trajectory Control, Mesh Insertion, Multi-Agent Simulation
 

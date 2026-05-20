@@ -19,8 +19,8 @@ content_hash: a65e204aaaf4dd9f
 # RAE: A Neural Network Dimensionality Reduction Method for Nearest Neighbors Preservation in Vector Search
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25839](https://arxiv.org/abs/2509.25839)
-**Code**: To be confirmed
+**arXiv**: [2509.25839](https://arxiv.org/abs/2509.25839)  
+**Code**: To be confirmed  
 **Area**: Vector Search / Dimensionality Reduction / Information Retrieval
 **Keywords**: dimensionality reduction, k-NN preservation, autoencoder, regularization, Rayleigh quotient, vector search
 

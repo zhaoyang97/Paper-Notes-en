@@ -18,8 +18,8 @@ content_hash: 989bb375201c69f7
 # SyncHuman: Synchronizing 2D and 3D Generative Models for Single-View Human Reconstruction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07723](https://arxiv.org/abs/2510.07723)
-**Code**: [GitHub](https://xishuxishu.github.io/SyncHuman.github.io)
+**arXiv**: [2510.07723](https://arxiv.org/abs/2510.07723)  
+**Code**: [GitHub](https://xishuxishu.github.io/SyncHuman.github.io)  
 **Area**: 3D Vision / Human Reconstruction
 **Keywords**: Single-view human reconstruction, 2D-3D generative model synchronization, multi-view generation, 3D Gaussian splatting, textured mesh
 

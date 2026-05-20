@@ -20,7 +20,7 @@ content_hash: e1fc733b75bd4138
 # Match-and-Fuse: Consistent Generation from Unstructured Image Sets
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.22287](https://arxiv.org/abs/2511.22287)
+**arXiv**: [2511.22287](https://arxiv.org/abs/2511.22287)  
 **Area**: Image Generation / Consistent Generation
 **Keywords**: Set-to-set generation, cross-image consistency, diffusion models, feature fusion, correspondences, training-free, zero-shot
 

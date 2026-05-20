@@ -18,8 +18,8 @@ content_hash: eed04e13745c628b
 # O-MaMa: Learning Object Mask Matching between Egocentric and Exocentric Views
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.06026](https://arxiv.org/abs/2506.06026)
-**Code**: [Maria-SanVil/O-MaMa](https://github.com/Maria-SanVil/O-MaMa)
+**arXiv**: [2506.06026](https://arxiv.org/abs/2506.06026)  
+**Code**: [Maria-SanVil/O-MaMa](https://github.com/Maria-SanVil/O-MaMa)  
 **Area**: Image Segmentation
 **Keywords**: Cross-View Segmentation, Mask Matching, Ego-Exo Correspondences, Contrastive Learning, DINOv2
 

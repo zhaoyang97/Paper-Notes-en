@@ -18,8 +18,8 @@ content_hash: e73e725339b95319
 # Uncovering Zero-Shot Generalization Gaps in Time-Series Foundation Models Using Real-World Videos
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.26347](https://arxiv.org/abs/2509.26347)
-**Code**: [github.com/DobricLilujun/benchmarking_nature_tsfm](https://github.com/DobricLilujun/benchmarking_nature_tsfm)
+**arXiv**: [2509.26347](https://arxiv.org/abs/2509.26347)  
+**Code**: [github.com/DobricLilujun/benchmarking_nature_tsfm](https://github.com/DobricLilujun/benchmarking_nature_tsfm)  
 **Area**: Video Understanding
 **Keywords**: Time-Series Foundation Models, Zero-Shot Generalization, Optical Flow, Video Data, Benchmark
 

@@ -18,8 +18,8 @@ content_hash: af73b261f63125a3
 # Sequential Gaussian Avatars with Hierarchical Motion Context
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.16768](https://arxiv.org/abs/2411.16768)
-**Code**: [Project Page](https://zezeaaa.github.io/projects/SeqAvatar/)
+**arXiv**: [2411.16768](https://arxiv.org/abs/2411.16768)  
+**Code**: [Project Page](https://zezeaaa.github.io/projects/SeqAvatar/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Human Avatars, Non-Rigid Deformation, Motion Context, SMPL
 

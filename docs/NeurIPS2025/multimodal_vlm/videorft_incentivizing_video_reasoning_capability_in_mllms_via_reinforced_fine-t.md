@@ -18,8 +18,8 @@ content_hash: 805aa9db777ddd8e
 # VideoRFT: Incentivizing Video Reasoning Capability in MLLMs via Reinforced Fine-Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12434](https://arxiv.org/abs/2505.12434)
-**Code**: [GitHub](https://github.com/QiWang98/VideoRFT)
+**arXiv**: [2505.12434](https://arxiv.org/abs/2505.12434)  
+**Code**: [GitHub](https://github.com/QiWang98/VideoRFT)  
 **Area**: Multimodal VLM
 **Keywords**: video reasoning, reinforced fine-tuning, chain-of-thought, multimodal large language models, semantic consistency reward
 

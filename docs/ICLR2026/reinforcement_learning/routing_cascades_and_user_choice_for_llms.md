@@ -18,8 +18,8 @@ content_hash: 96c6a724b2a2367b
 # Routing, Cascades, and User Choice for LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.09902](https://arxiv.org/abs/2602.09902)
-**Code**: None
+**arXiv**: [2602.09902](https://arxiv.org/abs/2602.09902)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: LLM routing, cascading, Stackelberg game, user-provider misalignment, throttling
 

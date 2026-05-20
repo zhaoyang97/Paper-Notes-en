@@ -18,8 +18,8 @@ content_hash: ee3d5f16386436de
 # HIVE: Query, Hypothesize, Verify — An LLM Framework for Multimodal Reasoning-Intensive Retrieval
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07220](https://arxiv.org/abs/2604.07220)
-**Code**: [https://github.com/mm-bright/multimodal-reasoning-retrieval](https://github.com/mm-bright/multimodal-reasoning-retrieval)
+**arXiv**: [2604.07220](https://arxiv.org/abs/2604.07220)  
+**Code**: [https://github.com/mm-bright/multimodal-reasoning-retrieval](https://github.com/mm-bright/multimodal-reasoning-retrieval)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal Retrieval, Visual Reasoning, Query Reformulation, LLM Reranking, Hypothesis-Driven Retrieval
 

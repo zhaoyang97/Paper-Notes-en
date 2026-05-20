@@ -19,8 +19,8 @@ content_hash: e74ababecbdfe386
 # RTMap: Real-Time Recursive Mapping with Change Detection and Localization
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.00980](https://arxiv.org/abs/2507.00980)
-**Code**: [github.com/CN-ADLab/RTMap](https://github.com/CN-ADLab/RTMap)
+**arXiv**: [2507.00980](https://arxiv.org/abs/2507.00980)  
+**Code**: [github.com/CN-ADLab/RTMap](https://github.com/CN-ADLab/RTMap)  
 **Area**: Autonomous Driving / Online HD Map Construction
 **Keywords**: HD Map, Crowdsourced Mapping, Change Detection, Map Localization, Uncertainty Modeling, Multi-Traversal Fusion
 

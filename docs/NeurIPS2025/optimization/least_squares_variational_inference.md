@@ -18,8 +18,8 @@ content_hash: 20402dbba876556e
 # Least Squares Variational Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.18475](https://arxiv.org/abs/2502.18475)
-**Code**: [https://github.com/ylefay/LSVI](https://github.com/ylefay/LSVI)
+**arXiv**: [2502.18475](https://arxiv.org/abs/2502.18475)  
+**Code**: [https://github.com/ylefay/LSVI](https://github.com/ylefay/LSVI)  
 **Area**: Optimization
 **Keywords**: variational inference, natural gradient descent, exponential family, least squares, gradient-free
 

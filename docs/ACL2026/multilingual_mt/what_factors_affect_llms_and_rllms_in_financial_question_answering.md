@@ -18,8 +18,8 @@ content_hash: f44c192575a777ab
 # What Factors Affect LLMs and RLLMs in Financial Question Answering?
 
 **Conference**: ACL 2026
-**arXiv**: [2507.08339](https://arxiv.org/abs/2507.08339)
-**Code**: [https://github.com/WPENGxs/LLM_RLLM_financial_analysis](https://github.com/WPENGxs/LLM_RLLM_financial_analysis)
+**arXiv**: [2507.08339](https://arxiv.org/abs/2507.08339)  
+**Code**: [https://github.com/WPENGxs/LLM_RLLM_financial_analysis](https://github.com/WPENGxs/LLM_RLLM_financial_analysis)  
 **Area**: Multilingual / Financial NLP
 **Keywords**: Financial QA, Reasoning LLMs, Long CoT, Prompting Methods, Multilingual Alignment
 

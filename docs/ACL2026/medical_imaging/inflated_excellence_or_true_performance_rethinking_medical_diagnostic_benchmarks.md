@@ -18,8 +18,8 @@ content_hash: c8c83e82fa54436c
 # Inflated Excellence or True Performance? Rethinking Medical Diagnostic Benchmarks with Dynamic Evaluation
 
 **Conference**: ACL 2026
-**arXiv**: [2510.09275](https://arxiv.org/abs/2510.09275)
-**Code**: [Official Repository](https://arxiv.org/abs/2510.09275)
+**arXiv**: [2510.09275](https://arxiv.org/abs/2510.09275)  
+**Code**: [Official Repository](https://arxiv.org/abs/2510.09275)  
 **Area**: Medical Imaging
 **Keywords**: Medical Diagnostic Benchmarks, Dynamic Evaluation, Data Contamination, Diagnostic Distractors, LLM Trustworthiness
 

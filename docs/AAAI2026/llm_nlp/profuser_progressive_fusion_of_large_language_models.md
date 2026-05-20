@@ -17,8 +17,8 @@ content_hash: cefb061e90fbc656
 # ProFuser: Progressive Fusion of Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2408.04998](https://arxiv.org/abs/2408.04998)
-**Code**: None
+**arXiv**: [2408.04998](https://arxiv.org/abs/2408.04998)  
+**Code**: None  
 **Area**: LLM NLP
 **Keywords**: model fusion, progressive fusion, multi-model ensemble, knowledge distillation
 

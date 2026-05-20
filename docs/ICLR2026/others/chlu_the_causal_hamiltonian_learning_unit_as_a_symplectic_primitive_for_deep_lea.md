@@ -17,8 +17,8 @@ content_hash: 5ac10bd1ff14d9f1
 # CHLU: The Causal Hamiltonian Learning Unit as a Symplectic Primitive for Deep Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01768](https://arxiv.org/abs/2603.01768)
-**Code**: Available (software package)
+**arXiv**: [2603.01768](https://arxiv.org/abs/2603.01768)  
+**Code**: Available (software package)  
 **Area**: Physics-Inspired Deep Learning / Sequential Modeling
 **Keywords**: Hamiltonian Neural Networks, Symplectic Integration, Relativistic Kinetic Energy, Energy Conservation, Long-Term Stability
 

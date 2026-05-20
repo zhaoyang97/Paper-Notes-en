@@ -18,8 +18,8 @@ content_hash: b7c736cc6511fddf
 # Erasing More Than Intended? How Concept Erasure Degrades the Generation of Non-Target Concepts
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.09833](https://arxiv.org/abs/2501.09833)
-**Code**: None
+**arXiv**: [2501.09833](https://arxiv.org/abs/2501.09833)  
+**Code**: None  
 **Area**: Diffusion Models / Text-to-Image Generation Safety
 **Keywords**: Concept Erasure, EraseBench, Concept Entanglement, Spillover Degradation, Text-to-Image Safety
 

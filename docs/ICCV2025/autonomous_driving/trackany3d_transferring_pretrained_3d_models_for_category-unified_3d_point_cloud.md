@@ -18,8 +18,8 @@ content_hash: ff17a9608238029c
 # TrackAny3D: Transferring Pretrained 3D Models for Category-unified 3D Point Cloud Tracking
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19908](https://arxiv.org/abs/2507.19908)
-**Code**: N/A
+**arXiv**: [2507.19908](https://arxiv.org/abs/2507.19908)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: 3D Single Object Tracking, Pretrained Model Transfer, Mixture of Geometry Experts, Parameter-Efficient Fine-Tuning, Point Cloud
 

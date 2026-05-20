@@ -18,8 +18,8 @@ content_hash: d8d4bad60c794b4b
 # MultiTab: A Scalable Foundation for Multitask Learning on Tabular Data
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09970](https://arxiv.org/abs/2511.09970)
-**Code**: [Armanfard-Lab/MultiTab](https://github.com/Armanfard-Lab/MultiTab)
+**arXiv**: [2511.09970](https://arxiv.org/abs/2511.09970)  
+**Code**: [Armanfard-Lab/MultiTab](https://github.com/Armanfard-Lab/MultiTab)  
 **Area**: Recommender Systems / Tabular Data
 **Keywords**: Multitask Learning, Transformer, Tabular Data, Masked Attention, Synthetic Data Benchmark
 

@@ -18,8 +18,8 @@ content_hash: f8c2b03812b799cc
 # DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.15689](https://arxiv.org/abs/2412.15689)
-**Code**: N/A
+**arXiv**: [2412.15689](https://arxiv.org/abs/2412.15689)  
+**Code**: N/A  
 **Area**: Video Generation / Diffusion Model Acceleration
 **Keywords**: video generation, distillation, consistency distillation, latent reward, few-step generation
 
@@ -50,24 +50,24 @@ DOLLAR employs a two-stage training strategy: (1) **Hybrid Distillation Stage**â
 ### Key Designs
 
 1. **Variational Score Distillation (VSD)**:
-   - *Function*: Aligns the multi-step sampling distribution of the teacher model to the few-step distribution of the student model via distribution matching.
-   - *Mechanism*: VSD minimizes the KL divergence between teacher and student output distributions. Denoting the teacher as $\epsilon_\phi$ and the student as $\epsilon_\theta$, the VSD objective is $\mathcal{L}_{\text{VSD}} = \mathbb{E}_{t,\epsilon}\left[\|\epsilon_\theta(x_t, t) - \epsilon_\phi(x_t, t)\|^2\right]$, where $x_t$ is the noise-perturbed video latent.
-   - *Design Motivation*: Pure consistency distillation may cause mode collapse; VSD preserves generative diversity through distribution matching.
+    - *Function*: Aligns the multi-step sampling distribution of the teacher model to the few-step distribution of the student model via distribution matching.
+    - *Mechanism*: VSD minimizes the KL divergence between teacher and student output distributions. Denoting the teacher as $\epsilon_\phi$ and the student as $\epsilon_\theta$, the VSD objective is $\mathcal{L}_{\text{VSD}} = \mathbb{E}_{t,\epsilon}\left[\|\epsilon_\theta(x_t, t) - \epsilon_\phi(x_t, t)\|^2\right]$, where $x_t$ is the noise-perturbed video latent.
+    - *Design Motivation*: Pure consistency distillation may cause mode collapse; VSD preserves generative diversity through distribution matching.
 
 2. **Consistency Distillation (CD)**:
-   - *Function*: Ensures the student model produces consistent outputs across different step counts.
-   - *Mechanism*: For the same noise input, the student is required to produce consistent predictions at any intermediate timestep, i.e., $f_\theta(x_t, t) \approx f_\theta(x_{t'}, t')$, where $x_t$ and $x_{t'}$ lie on the same PF-ODE trajectory.
-   - *Design Motivation*: Allows the student to operate flexibly between 1 and 4 steps without step-specific training.
+    - *Function*: Ensures the student model produces consistent outputs across different step counts.
+    - *Mechanism*: For the same noise input, the student is required to produce consistent predictions at any intermediate timestep, i.e., $f_\theta(x_t, t) \approx f_\theta(x_{t'}, t')$, where $x_t$ and $x_{t'}$ lie on the same PF-ODE trajectory.
+    - *Design Motivation*: Allows the student to operate flexibly between 1 and 4 steps without step-specific training.
 
 3. **Hybrid Distillation Strategy**:
-   - *Function*: Jointly trains VSD and CD with learned weighting.
-   - *Mechanism*: The total loss is $\mathcal{L} = \lambda_{\text{VSD}} \mathcal{L}_{\text{VSD}} + \lambda_{\text{CD}} \mathcal{L}_{\text{CD}}$.
-   - *Design Motivation*: VSD preserves diversity while CD preserves quality and step flexibility; the two objectives are complementary.
+    - *Function*: Jointly trains VSD and CD with learned weighting.
+    - *Mechanism*: The total loss is $\mathcal{L} = \lambda_{\text{VSD}} \mathcal{L}_{\text{VSD}} + \lambda_{\text{CD}} \mathcal{L}_{\text{CD}}$.
+    - *Design Motivation*: VSD preserves diversity while CD preserves quality and step flexibility; the two objectives are complementary.
 
 4. **Latent Reward Fine-tuning**:
-   - *Function*: Further fine-tunes the distilled student using a latent reward model to improve specified quality dimensions.
-   - *Mechanism*: The approach does not require a differentiable reward model; instead, reward signals are computed directly in latent space, bypassing video decoding to pixel space and substantially reducing GPU memory consumption. The method can target arbitrary reward metrics (aesthetic quality, text alignment, temporal consistency, etc.).
-   - *Design Motivation*: Conventional reward fine-tuning requires gradient computation in pixel space, which is prohibitive for 128-frame videos; operating in latent space simultaneously addresses memory and differentiability constraints.
+    - *Function*: Further fine-tunes the distilled student using a latent reward model to improve specified quality dimensions.
+    - *Mechanism*: The approach does not require a differentiable reward model; instead, reward signals are computed directly in latent space, bypassing video decoding to pixel space and substantially reducing GPU memory consumption. The method can target arbitrary reward metrics (aesthetic quality, text alignment, temporal consistency, etc.).
+    - *Design Motivation*: Conventional reward fine-tuning requires gradient computation in pixel space, which is prohibitive for 128-frame videos; operating in latent space simultaneously addresses memory and differentiability constraints.
 
 ### Loss & Training
 
@@ -140,8 +140,8 @@ DOLLAR employs a two-stage training strategy: (1) **Hybrid Distillation Stage**â
 # DOLLAR: Few-Step Video Generation via Distillation and Latent Reward Optimization
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.15689](https://arxiv.org/abs/2412.15689)
-**Code**: N/A
+**arXiv**: [2412.15689](https://arxiv.org/abs/2412.15689)  
+**Code**: N/A  
 **Area**: Video Generation / Diffusion Model Acceleration
 **Keywords**: video generation, distillation, consistency distillation, latent reward, few-step, VBench
 

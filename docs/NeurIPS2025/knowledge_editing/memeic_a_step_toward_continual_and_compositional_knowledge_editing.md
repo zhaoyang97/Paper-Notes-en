@@ -18,8 +18,8 @@ content_hash: 3fdcafa2a764fd96
 # MemEIC: A Step Toward Continual and Compositional Knowledge Editing
 
 **Conference**: NEURIPS2025
-**arXiv**: [2510.25798](https://arxiv.org/abs/2510.25798)
-**Code**: [MemEIC/MemEIC](https://github.com/MemEIC/MemEIC)
+**arXiv**: [2510.25798](https://arxiv.org/abs/2510.25798)  
+**Code**: [MemEIC/MemEIC](https://github.com/MemEIC/MemEIC)  
 **Area**: Knowledge Editing
 **Keywords**: Knowledge Editing, LVLM, Continual Learning, Compositional Reasoning, LoRA, External Memory
 
@@ -112,9 +112,9 @@ MemEIC outperforms WISE by +16.94 on Visual Reliability and +32.35 on Compositio
 1. **Incorporating visual cues into external memory is critical**: Mem-E (tex+vis) vs. Mem-E (tex) improves Reliability from 48.02 → 96.51 and Image Locality from 4.02 → 57.10.
 2. **Dual LoRA outperforms single LoRA**: Under matched total parameter budgets (r=8×2 vs. r=16), Dual-LoRA improves T-Loc by +17.77% and I-Loc by +2.86% (significant at p<0.05).
 3. **The Knowledge Connector is critical for compositional reasoning**:
-   - Base+RAG (perfect retrieval): Comp Rel only 64.93%—perfect retrieval alone is insufficient.
-   - Dual-LoRA+RAG: 78.16% at gap=0, degrades to 63.39% at gap=100—dual adapters without interaction are insufficient.
-   - **Dual-LoRA+RAG+Connector**: **99.21%** at gap=0, still **97.01%** at gap=100—approaching oracle-level performance.
+    - Base+RAG (perfect retrieval): Comp Rel only 64.93%—perfect retrieval alone is insufficient.
+    - Dual-LoRA+RAG: 78.16% at gap=0, degrades to 63.39% at gap=100—dual adapters without interaction are insufficient.
+    - **Dual-LoRA+RAG+Connector**: **99.21%** at gap=0, still **97.01%** at gap=100—approaching oracle-level performance.
 
 ## Highlights & Insights
 

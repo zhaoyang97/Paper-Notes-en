@@ -18,8 +18,8 @@ content_hash: 725053ba3366e946
 # Mixed Monotonicity Reachability Analysis of Neural ODE: A Trade-Off Between Tightness and Efficiency
 
 **Conference**: NeurIPS 2025 (NeurReps 2025 Workshop, co-located with NeurIPS 2025)
-**arXiv**: [2510.17859](https://arxiv.org/abs/2510.17859)
-**Code**: Available (TIRA tool)
+**arXiv**: [2510.17859](https://arxiv.org/abs/2510.17859)  
+**Code**: Available (TIRA tool)  
 **Area**: Formal Verification / Safety-Critical Systems
 **Keywords**: Neural ODE, Reachability Analysis, Mixed Monotonicity, Interval Propagation, Formal Verification
 

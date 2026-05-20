@@ -19,8 +19,8 @@ content_hash: 1529f5c254352816
 # DriverGaze360: OmniDirectional Driver Attention with Object-Level Guidance
 
 **Conference**: CVPR2026
-**arXiv**: [2512.14266](https://arxiv.org/abs/2512.14266)
-**Code**: [dfki-av/drivergaze360](https://github.com/dfki-av/drivergaze360)
+**arXiv**: [2512.14266](https://arxiv.org/abs/2512.14266)  
+**Code**: [dfki-av/drivergaze360](https://github.com/dfki-av/drivergaze360)  
 **Dataset**: [HuggingFace](https://huggingface.co/datasets/dfki-av/drivergaze360)
 **Area**: Autonomous Driving / Driver Attention Prediction
 **Keywords**: Driver Attention, Omnidirectional View, Gaze Prediction, Semantic Segmentation, 360° Field of View, Video Swin Transformer

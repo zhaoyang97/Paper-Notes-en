@@ -19,8 +19,8 @@ content_hash: 1cdb49f831463116
 # MRI Contrast Enhancement Kinetics World Model
 
 **Conference**: CVPR2026
-**arXiv**: [2602.19285](https://arxiv.org/abs/2602.19285)
-**Code**: [GitHub](https://github.com/DD0922/MRI-Contrast-Enhancement-Kinetics-World-Model)
+**arXiv**: [2602.19285](https://arxiv.org/abs/2602.19285)  
+**Code**: [GitHub](https://github.com/DD0922/MRI-Contrast-Enhancement-Kinetics-World-Model)  
 **Area**: Medical Imaging
 **Keywords**: MRI contrast enhancement, world model, spatiotemporal consistency learning, latent space alignment, diffusion model, DCE-MRI
 

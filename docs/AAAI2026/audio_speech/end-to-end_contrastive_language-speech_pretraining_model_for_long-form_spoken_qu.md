@@ -18,8 +18,8 @@ content_hash: 5d3eaea6b081a580
 # End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering
 
 **Conference**: AAAI2026
-**arXiv**: [2511.09282](https://arxiv.org/abs/2511.09282)
-**Code**: [193746/CLSR](https://github.com/193746/CLSR)
+**arXiv**: [2511.09282](https://arxiv.org/abs/2511.09282)  
+**Code**: [193746/CLSR](https://github.com/193746/CLSR)  
 **Area**: Audio & Speech
 **Keywords**: Spoken Question Answering, Contrastive Learning, Retrieval-Augmented Generation, Speech-Text Alignment, CIF
 

@@ -18,8 +18,8 @@ content_hash: 16a712f21590fcd5
 # On the Emergence of Linear Analogies in Word Embeddings
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18651](https://arxiv.org/abs/2505.18651)
-**Code**: [GitHub](https://github.com/DJKorchinski/linear-analogies-word-embedding-reproduction)
+**arXiv**: [2505.18651](https://arxiv.org/abs/2505.18651)  
+**Code**: [GitHub](https://github.com/DJKorchinski/linear-analogies-word-embedding-reproduction)  
 **Area**: Representation Learning / NLP Theory
 **Keywords**: Word Embeddings, Linear Analogies, Word2Vec, PMI Matrix, Semantic Attributes
 
@@ -65,9 +65,9 @@ Core assumption: each word $i$ is characterized by $d$ binary semantic attribute
 
 3. **Robustness Analysis**
 
-   - **Additive noise**: Adding zero-mean noise $\xi(i,j)$ to the PMI matrix yields a perturbation with spectral norm $\|\Delta\|_2 \sim 2\sigma_\xi \sqrt{2^d}$, which is negligible compared to the semantic eigenvalue spacing of $\mathcal{O}(2^d/d)$; analogy structures are thus preserved in the large-$d$ limit.
-   - **Vocabulary sparsification**: Retaining only a fraction $f = 0.15$ of words (removing 97%+ of the vocabulary), the Marchenko–Pastur theorem guarantees that the spectral structure of the PMI matrix converges to the full-vocabulary case as long as $m = f \cdot 2^d \gg d$.
-   - **Removal of specific analogy word pairs**: After removing all word pairs along a given attribute direction, the resulting perturbation matrix contains only $2^d$ nonzero entries, with spectral norm $\sim \sqrt{2^d}$, which remains negligible.
+    - **Additive noise**: Adding zero-mean noise $\xi(i,j)$ to the PMI matrix yields a perturbation with spectral norm $\|\Delta\|_2 \sim 2\sigma_\xi \sqrt{2^d}$, which is negligible compared to the semantic eigenvalue spacing of $\mathcal{O}(2^d/d)$; analogy structures are thus preserved in the large-$d$ limit.
+    - **Vocabulary sparsification**: Retaining only a fraction $f = 0.15$ of words (removing 97%+ of the vocabulary), the Marchenko–Pastur theorem guarantees that the spectral structure of the PMI matrix converges to the full-vocabulary case as long as $m = f \cdot 2^d \gg d$.
+    - **Removal of specific analogy word pairs**: After removing all word pairs along a given attribute direction, the resulting perturbation matrix contains only $2^d$ nonzero entries, with spectral norm $\sim \sqrt{2^d}$, which remains negligible.
 
 ### Loss & Training
 

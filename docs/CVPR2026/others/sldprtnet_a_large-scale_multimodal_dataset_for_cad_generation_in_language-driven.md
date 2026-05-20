@@ -19,8 +19,8 @@ content_hash: ba9489b778fbfad3
 # SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design
 
 **Conference**: CVPR2026
-**arXiv**: [2603.13098](https://arxiv.org/abs/2603.13098)
-**Code**: None
+**arXiv**: [2603.13098](https://arxiv.org/abs/2603.13098)  
+**Code**: None  
 **Area**: Others (3D CAD Generation / Multimodal Dataset)
 **Keywords**: CAD dataset, language-driven 3D design, multimodal alignment, parametric modeling, text-to-CAD, encoder-decoder, SolidWorks
 

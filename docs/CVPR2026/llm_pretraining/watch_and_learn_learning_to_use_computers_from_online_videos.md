@@ -19,8 +19,8 @@ content_hash: e70440f18b3ddf67
 # Watch and Learn: Learning to Use Computers from Online Videos
 
 **Conference**: CVPR2026
-**arXiv**: [2510.04673](https://arxiv.org/abs/2510.04673)
-**Code**: [Project Page](https://chanh.ee/wandl/)
+**arXiv**: [2510.04673](https://arxiv.org/abs/2510.04673)  
+**Code**: [Project Page](https://chanh.ee/wandl/)  
 **Area**: LLM Pretraining
 **Keywords**: computer-using agent, inverse dynamics model, video-to-trajectory, in-context learning, supervised fine-tuning, UI grounding
 

@@ -18,8 +18,8 @@ content_hash: 4e746f3b10b1eec7
 # Monocular Facial Appearance Capture in the Wild
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.12765](https://arxiv.org/abs/2412.12765)
-**Code**: N/A
+**arXiv**: [2412.12765](https://arxiv.org/abs/2412.12765)  
+**Code**: N/A  
 **Area**: Human Understanding
 **Keywords**: facial appearance capture, inverse rendering, occlusion-aware, monocular video, split-sum approximation
 

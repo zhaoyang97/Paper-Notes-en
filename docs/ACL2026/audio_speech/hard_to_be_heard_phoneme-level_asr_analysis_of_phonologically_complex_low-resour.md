@@ -21,8 +21,8 @@ content_hash: 95265276804fad63
 # Hard to Be Heard: Phoneme-Level ASR Analysis of Phonologically Complex, Low-Resource Endangered Languages
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18204](https://arxiv.org/abs/2604.18204)
-**Code**: [GitHub](https://github.com/mahesh-ak/north_caucasian_asr) | [Data](https://huggingface.co/datasets/mahesh27/archi_rutul_asr)
+**arXiv**: [2604.18204](https://arxiv.org/abs/2604.18204)  
+**Code**: [GitHub](https://github.com/mahesh-ak/north_caucasian_asr) | [Data](https://huggingface.co/datasets/mahesh27/archi_rutul_asr)  
 **Area**: Speech Recognition / Low-Resource Endangered Languages
 **Keywords**: ASR, low-resource, endangered languages, phoneme-level analysis, East Caucasian, wav2vec2, Whisper, frequency effect
 

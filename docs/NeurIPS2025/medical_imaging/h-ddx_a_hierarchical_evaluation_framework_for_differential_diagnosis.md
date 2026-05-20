@@ -18,8 +18,8 @@ content_hash: 7665ce31fd7f97b0
 # H-DDx: A Hierarchical Evaluation Framework for Differential Diagnosis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.03700](https://arxiv.org/abs/2510.03700)
-**Code**: To be confirmed
+**arXiv**: [2510.03700](https://arxiv.org/abs/2510.03700)  
+**Code**: To be confirmed  
 **Area**: Medical AI / LLM Evaluation
 **Keywords**: Differential Diagnosis, ICD-10 Hierarchy, Hierarchical F1, LLM Medical Evaluation, Approximate Correctness
 

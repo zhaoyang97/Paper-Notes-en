@@ -18,8 +18,8 @@ content_hash: a4b65c417beb2b64
 # Beyond Boundaries: Leveraging Vision Foundation Models for Source-Free Object Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07301](https://arxiv.org/abs/2511.07301)
-**Code**: [https://github.com/HuizaiVictorYao/VFM_SFOD](https://github.com/HuizaiVictorYao/VFM_SFOD)
+**arXiv**: [2511.07301](https://arxiv.org/abs/2511.07301)  
+**Code**: [https://github.com/HuizaiVictorYao/VFM_SFOD](https://github.com/HuizaiVictorYao/VFM_SFOD)  
 **Area**: Object Detection
 **Keywords**: Source-Free Object Detection, Vision Foundation Models, DINOv2, Grounding DINO, Pseudo-label Fusion
 

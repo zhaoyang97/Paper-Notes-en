@@ -18,8 +18,8 @@ content_hash: 9d72a6fb2f407b26
 # EditInfinity: Image Editing with Binary-Quantized Generative Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20217](https://arxiv.org/abs/2510.20217)
-**Code**: [Available](https://github.com/yx-chen-ust/EditInfinity)
+**arXiv**: [2510.20217](https://arxiv.org/abs/2510.20217)  
+**Code**: [Available](https://github.com/yx-chen-ust/EditInfinity)  
 **Area**: Image Generation / Image Editing / Autoregressive Models
 **Keywords**: Binary-quantized generative models, Infinity, image inversion, piecewise linear smoothing, multi-scale autoregressive editing
 

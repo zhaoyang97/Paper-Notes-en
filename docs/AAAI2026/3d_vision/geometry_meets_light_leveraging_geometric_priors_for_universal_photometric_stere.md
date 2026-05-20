@@ -18,8 +18,8 @@ content_hash: 22a4cc9a3893384e
 # Geometry Meets Light: Leveraging Geometric Priors for Universal Photometric Stereo under Limited Multi-Illumination Cues
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13015](https://arxiv.org/abs/2511.13015)
-**Code**: [https://github.com/marcotam2002/geounips](https://github.com/marcotam2002/geounips)
+**arXiv**: [2511.13015](https://arxiv.org/abs/2511.13015)  
+**Code**: [https://github.com/marcotam2002/geounips](https://github.com/marcotam2002/geounips)  
 **Area**: 3D Vision / Photometric Stereo
 **Keywords**: Photometric Stereo, Geometric Priors, 3D Reconstruction Foundation Model, VGGT, Perspective Projection
 

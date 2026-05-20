@@ -17,8 +17,8 @@ content_hash: 5ac3d56da7a20604
 # Safe-Sora: Safe Text-to-Video Generation via Graphical Watermarking
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12667](https://arxiv.org/abs/2505.12667)
-**Code**: [https://github.com/Sugewud/Safe-Sora](https://github.com/Sugewud/Safe-Sora)
+**arXiv**: [2505.12667](https://arxiv.org/abs/2505.12667)  
+**Code**: [https://github.com/Sugewud/Safe-Sora](https://github.com/Sugewud/Safe-Sora)  
 **Area**: Video Generation / Digital Watermarking / Copyright Protection
 **Keywords**: Graphical Watermarking, Video Generation, Mamba, 3D Wavelet Transform, Adaptive Matching
 

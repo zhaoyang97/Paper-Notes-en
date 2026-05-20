@@ -18,8 +18,8 @@ content_hash: 0996b5bd23522db4
 # Dependency Parsing is More Parameter-Efficient with Normalization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20215](https://arxiv.org/abs/2505.20215)
-**Code**: [https://github.com/paolo-gajo/EfficientSDP](https://github.com/paolo-gajo/EfficientSDP)
+**arXiv**: [2505.20215](https://arxiv.org/abs/2505.20215)  
+**Code**: [https://github.com/paolo-gajo/EfficientSDP](https://github.com/paolo-gajo/EfficientSDP)  
 **Area**: Model Compression
 **Keywords**: dependency parsing, biaffine scoring, normalization, parameter efficiency, overparameterization
 

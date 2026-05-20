@@ -18,8 +18,8 @@ content_hash: ed854974e214658b
 # Self-Refining Language Model Anonymizers via Adversarial Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01420](https://arxiv.org/abs/2506.01420)
-**Code**: [GitHub](https://github.com/kykim0/SEAL)
+**arXiv**: [2506.01420](https://arxiv.org/abs/2506.01420)  
+**Code**: [GitHub](https://github.com/kykim0/SEAL)  
 **Area**: AI Safety
 **Keywords**: Privacy Protection, Text Anonymization, Knowledge Distillation, Adversarial Learning, Self-Refinement
 

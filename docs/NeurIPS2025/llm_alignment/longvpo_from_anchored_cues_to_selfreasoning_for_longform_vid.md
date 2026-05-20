@@ -18,8 +18,8 @@ content_hash: ebb4d986d02234f3
 # LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.02341](https://arxiv.org/abs/2602.02341)
-**Code**: [GitHub](https://github.com/MCG-NJU/LongVPO)
+**arXiv**: [2602.02341](https://arxiv.org/abs/2602.02341)  
+**Code**: [GitHub](https://github.com/MCG-NJU/LongVPO)  
 **Area**: LLM Alignment
 **Keywords**: Long video understanding, DPO, vision-language models, preference optimization, short-to-long transfer
 

@@ -18,8 +18,8 @@ content_hash: b763f704be2f644e
 # 4C4D: 4 Camera 4D Gaussian Splatting
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04063](https://arxiv.org/abs/2604.04063)
-**Code**: [Project Page](https://junshengzhou.github.io/4C4D)
+**arXiv**: [2604.04063](https://arxiv.org/abs/2604.04063)  
+**Code**: [Project Page](https://junshengzhou.github.io/4C4D)  
 **Area**: 3D Vision
 **Keywords**: 4D Gaussian Splatting, Sparse-View, Dynamic Scene Reconstruction, Neural Decaying Function, Geometry-Appearance Balance
 
@@ -51,11 +51,11 @@ This paper proposes the 4C4D framework, which employs a Neural Decaying Function
    - **Design Motivation**: Opacity is a critical parameter for geometry learning in 4DGS. By modulating opacity via a neural network, additional learnable degrees of freedom are introduced, causing gradients to flow more toward geometric parameters (position, scale, etc.) rather than simply minimizing appearance error. This rebalances the optimization of geometry and appearance.
 
 2. **Visibility-Detection-Based Decoupled Decaying Strategy**:
-   - **Key Issue**: Gradients only exist for Gaussians visible at the current viewpoint/timestep. Applying the same decay to invisible Gaussians would distort the optimization.
-   - **Visibility Detection**: $G_m = Z_V(\tilde{v}, \sigma, Z_T(\tilde{t}, s_t, G))$
+    - **Key Issue**: Gradients only exist for Gaussians visible at the current viewpoint/timestep. Applying the same decay to invisible Gaussians would distort the optimization.
+    - **Visibility Detection**: $G_m = Z_V(\tilde{v}, \sigma, Z_T(\tilde{t}, s_t, G))$
      - $Z_V$: Spatial visibility (filters out Gaussians whose centers fall outside the current viewpoint)
      - $Z_T$: Temporal visibility (filters out Gaussians whose temporal span does not include the current timestep)
-   - **Decoupled Strategy**:
+    - **Decoupled Strategy**:
    $$\tau(g) = \begin{cases} f_\theta(x,y,z,o,r) & \text{if } g \in G_m \\ \beta=0.999 & \text{if } g \in G_m^* \end{cases}$$
    - **Design Motivation**: Visible Gaussians require precise decay learning; invisible Gaussians are stabilized with a small constant decay (consistent with observations in AbsGS).
 

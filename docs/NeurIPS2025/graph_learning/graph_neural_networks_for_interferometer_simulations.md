@@ -18,8 +18,8 @@ content_hash: 9bed7f4eda7c0ed1
 # Graph Neural Networks for Interferometer Simulations
 
 **Conference**: NeurIPS 2025 (AI for Science Workshop)
-**arXiv**: [2512.16051](https://arxiv.org/abs/2512.16051)
-**Code**: [LIGO GitLab](https://git.ligo.org/uc_riverside/gnn-ifosim)
+**arXiv**: [2512.16051](https://arxiv.org/abs/2512.16051)  
+**Code**: [LIGO GitLab](https://git.ligo.org/uc_riverside/gnn-ifosim)  
 **Area**: Graph Learning / Scientific Computing
 **Keywords**: GNN, interferometer simulation, LIGO, gravitational waves, optical simulation
 

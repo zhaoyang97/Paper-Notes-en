@@ -18,8 +18,8 @@ content_hash: 612add3f6060e8f4
 # Sparse4DGS: 4D Gaussian Splatting for Sparse-Frame Dynamic Scene Reconstruction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07122](https://arxiv.org/abs/2511.07122)
-**Code**: [Project Page](https://ChangyueShi.github.io/Sparse4DGS)
+**arXiv**: [2511.07122](https://arxiv.org/abs/2511.07122)  
+**Code**: [Project Page](https://ChangyueShi.github.io/Sparse4DGS)  
 **Area**: 3D Vision
 **Keywords**: dynamic scene reconstruction, 4D Gaussian splatting, sparse frames, texture-awareness, stochastic gradient Langevin dynamics
 

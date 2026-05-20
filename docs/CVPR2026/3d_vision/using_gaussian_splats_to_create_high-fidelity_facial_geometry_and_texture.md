@@ -19,8 +19,8 @@ content_hash: 2b51c18cc60cebd9
 # Using Gaussian Splats to Create High-Fidelity Facial Geometry and Texture
 
 **Conference**: CVPR2026
-**arXiv**: [2512.16397](https://arxiv.org/abs/2512.16397)
-**Code**: Not open-sourced (Epic Games / Stanford)
+**arXiv**: [2512.16397](https://arxiv.org/abs/2512.16397)  
+**Code**: Not open-sourced (Epic Games / Stanford)  
 **Area**: 3D Vision / Face Reconstruction
 **Keywords**: Gaussian Splatting, facial geometry reconstruction, de-lit texture, semantic segmentation constraint, neural texture, MetaHuman
 

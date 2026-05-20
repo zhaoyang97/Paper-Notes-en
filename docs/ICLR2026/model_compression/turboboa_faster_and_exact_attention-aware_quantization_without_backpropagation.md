@@ -18,8 +18,8 @@ content_hash: a2a41260f1624659
 # TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.04929](https://arxiv.org/abs/2602.04929)
-**Code**: [GitHub](https://github.com/SamsungLabs/TurboBoA)
+**arXiv**: [2602.04929](https://arxiv.org/abs/2602.04929)  
+**Code**: [GitHub](https://github.com/SamsungLabs/TurboBoA)  
 **Area**: Model Compression / Quantization / LLM
 **Keywords**: post-training quantization, attention-aware, backpropagation-free, low-bit quantization, LLM compression
 

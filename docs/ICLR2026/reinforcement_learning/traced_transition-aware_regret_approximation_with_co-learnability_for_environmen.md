@@ -19,8 +19,8 @@ content_hash: 1862dea58390b89d
 # TRACED: Transition-aware Regret Approximation with Co-learnability for Environment Design
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.19997](https://arxiv.org/abs/2506.19997)
-**Code**: [https://github.com/Cho-Geonwoo/TRACED](https://github.com/Cho-Geonwoo/TRACED)
+**arXiv**: [2506.19997](https://arxiv.org/abs/2506.19997)  
+**Code**: [https://github.com/Cho-Geonwoo/TRACED](https://github.com/Cho-Geonwoo/TRACED)  
 **Area**: Reinforcement Learning
 **Keywords**: Unsupervised Environment Design, Curriculum Learning, Regret Approximation, Transition Prediction Error, Co-Learnability, Zero-shot Transfer
 

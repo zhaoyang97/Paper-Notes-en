@@ -19,8 +19,8 @@ content_hash: 087ad1e7228e440a
 # Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16171](https://arxiv.org/abs/2510.16171)
-**Code**: [ifratmitul/Role-of-Equivariance](https://github.com/ifratmitul/Role-of-Equivariance)
+**arXiv**: [2510.16171](https://arxiv.org/abs/2510.16171)  
+**Code**: [ifratmitul/Role-of-Equivariance](https://github.com/ifratmitul/Role-of-Equivariance)  
 **Area**: AI Security
 **Keywords**: adversarial robustness, equivariance, group-equivariant CNN, CLEVER bound, rotation equivariance, scale equivariance
 

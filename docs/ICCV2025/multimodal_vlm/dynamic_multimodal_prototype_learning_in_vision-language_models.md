@@ -18,8 +18,8 @@ content_hash: 2334ce366a546f04
 # Dynamic Multimodal Prototype Learning in Vision-Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.03657](https://arxiv.org/abs/2507.03657)
-**Code**: None
+**arXiv**: [2507.03657](https://arxiv.org/abs/2507.03657)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: test-time adaptation, CLIP, Multimodal Prototype, optimal transport, Zero-Shot Classification
 

@@ -18,8 +18,8 @@ content_hash: 66464a73e6d603cc
 # Towards Reliable Code-as-Policies: A Neuro-Symbolic Framework for Embodied Task Planning
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2510.21302](https://arxiv.org/abs/2510.21302)
-**Code**: None
+**arXiv**: [2510.21302](https://arxiv.org/abs/2510.21302)  
+**Code**: None  
 **Area**: Robotics / Embodied Intelligence
 **Keywords**: Code-as-Policies, neuro-symbolic framework, task planning, LLM code generation, symbolic verification
 

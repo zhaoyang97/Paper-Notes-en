@@ -18,8 +18,8 @@ content_hash: 61e0f4691f3a9175
 # Parameter-efficient Prompt Tuning and Hierarchical Textual Guidance for Few-shot Whole Slide Image Classification
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21504](https://arxiv.org/abs/2603.21504)
-**Code**: Unavailable
+**arXiv**: [2603.21504](https://arxiv.org/abs/2603.21504)  
+**Code**: Unavailable  
 **Area**: Medical Imaging / Few-shot Learning
 **Keywords**: Whole slide image classification, few-shot learning, vision-language models, parameter-efficient fine-tuning, hierarchical textual guidance
 
@@ -32,9 +32,9 @@ HIPSS introduces two key innovations for few-shot WSI classification: (1) parame
 1. **Background**: WSI classification in computational pathology typically relies on multiple instance learning (MIL), which segments gigapixel-level WSIs into patches for weakly supervised training. However, MIL methods require large numbers of annotated WSIs and are thus limited in data-scarce medical settings.
 
 2. **Limitations of Prior Work**:
-   - Existing few-shot WSI classification (FSWC) methods employ CoOp for prompt tuning, which introduces a large number of trainable parameters and inference overhead, making them prone to overfitting under extreme few-shot settings.
-   - Methods that fuse visual and textual features via cross-attention (e.g., FOCUS, ViLa-MIL) incur even greater parameter costs.
-   - Existing approaches typically apply hard filtering to discard patches based on alignment scores with text embeddings—sometimes removing >60% of patches—potentially discarding diagnostically relevant information.
+    - Existing few-shot WSI classification (FSWC) methods employ CoOp for prompt tuning, which introduces a large number of trainable parameters and inference overhead, making them prone to overfitting under extreme few-shot settings.
+    - Methods that fuse visual and textual features via cross-attention (e.g., FOCUS, ViLa-MIL) incur even greater parameter costs.
+    - Existing approaches typically apply hard filtering to discard patches based on alignment scores with text embeddings—sometimes removing >60% of patches—potentially discarding diagnostically relevant information.
 
 3. **Key Challenge**: VLMs are pretrained on instance-level image–text pairs, whereas downstream tasks require slide-level classification, creating a semantic gap between local instance features and global slide labels. Furthermore, WSIs possess an inherent spatial hierarchy (cells → regions → slides) that existing aggregation methods largely ignore.
 
@@ -54,21 +54,21 @@ HIPSS comprises two core modules: SSF-based prompt tuning and hierarchical textu
 
 1. **SSF-based Prompt Tuning (Scaling and Shifting Features)**:
 
-   - **Function**: Adapts the pretrained text encoder to downstream WSI classification with minimal parameters.
-   - **Mechanism**: For selected layers of the text encoder, a pair of learnable scaling and shifting parameters $\gamma, \beta \in \mathbb{R}^{D_t}$ is attached to each layer's features $x \in \mathbb{R}^{D_t}$, applying the transformation $y = \gamma \cdot x + \beta$. Only $\gamma$ and $\beta$ are updated during training; pretrained weights remain frozen. A depth parameter $d_s$ controls the number of adapted layers, with SSF applied only to the last $d_s$ blocks. At inference, the transformation can be reparameterized and merged into the model weights, incurring zero additional inference cost.
-   - **Design Motivation**: CoOp learns context vectors in prompt embedding space, resulting in high parameter counts and additional inference overhead. SSF requires only $2 \times D_t$ parameters per layer for distribution alignment, achieving greater efficiency without affecting inference speed.
+    - **Function**: Adapts the pretrained text encoder to downstream WSI classification with minimal parameters.
+    - **Mechanism**: For selected layers of the text encoder, a pair of learnable scaling and shifting parameters $\gamma, \beta \in \mathbb{R}^{D_t}$ is attached to each layer's features $x \in \mathbb{R}^{D_t}$, applying the transformation $y = \gamma \cdot x + \beta$. Only $\gamma$ and $\beta$ are updated during training; pretrained weights remain frozen. A depth parameter $d_s$ controls the number of adapted layers, with SSF applied only to the last $d_s$ blocks. At inference, the transformation can be reparameterized and merged into the model weights, incurring zero additional inference cost.
+    - **Design Motivation**: CoOp learns context vectors in prompt embedding space, resulting in high parameter counts and additional inference overhead. SSF requires only $2 \times D_t$ parameters per layer for distribution alignment, achieving greater efficiency without affecting inference speed.
 
 2. **Hierarchical Textual Guidance for WSI Representation Learning**:
 
-   - **Function**: Incorporates the spatial hierarchical structure of WSIs into representation learning, using text embeddings to softly guide attention weights.
-   - **Mechanism**: WSIs are first divided into $4096 \times 4096$ regions, each of which is further partitioned into $256 \times 256$ instances. Two-level attention pooling is applied: the Region Encoder aggregates instance features within each region via attention pooling to obtain a region embedding $F(R_{i,m}) = \sum_j a_{i,m}^j h_{i,m}^j$; the WSI Encoder then aggregates all region embeddings into a slide-level representation. Crucially, a text-guided correction score $s_{i,m}^j$ is incorporated into the attention weights.
-   - **Design Motivation**: The natural spatial hierarchy of WSIs is exploited—local aggregation within regions first captures cellular interactions, followed by global aggregation to capture tissue-level patterns—which is more effective than flattening all patches into a single pool.
+    - **Function**: Incorporates the spatial hierarchical structure of WSIs into representation learning, using text embeddings to softly guide attention weights.
+    - **Mechanism**: WSIs are first divided into $4096 \times 4096$ regions, each of which is further partitioned into $256 \times 256$ instances. Two-level attention pooling is applied: the Region Encoder aggregates instance features within each region via attention pooling to obtain a region embedding $F(R_{i,m}) = \sum_j a_{i,m}^j h_{i,m}^j$; the WSI Encoder then aggregates all region embeddings into a slide-level representation. Crucially, a text-guided correction score $s_{i,m}^j$ is incorporated into the attention weights.
+    - **Design Motivation**: The natural spatial hierarchy of WSIs is exploited—local aggregation within regions first captures cellular interactions, followed by global aggregation to capture tissue-level patterns—which is more effective than flattening all patches into a single pool.
 
 3. **Soft Textual Guidance for Attention Correction**:
 
-   - **Function**: Guides attention weights using text embeddings without discarding any patches.
-   - **Mechanism**: The cosine similarity between each instance feature and the text embedding $T$ is computed and processed in three tiers: negative similarity is set to 0 (semantically inconsistent; suppressed); low positive similarity retains its linear weight (uncertain but potentially informative); similarity above a threshold $\alpha$ is amplified by a factor $\lambda$ (high-confidence semantic match). Formally: $s_{i,m}^j = \lambda \cdot \cos(h_{i,m}^j, T)$ when $\cos > \alpha$; $s_{i,m}^j = \cos(h_{i,m}^j, T)$ when $0 < \cos < \alpha$; and $s_{i,m}^j = 0$ otherwise.
-   - **Design Motivation**: Hard filtering (e.g., FOCUS discards >60% of patches) risks losing diagnostic information not covered by text embeddings. Soft guidance retains all patches through reliability-aware gated weighting, yielding greater robustness in few-shot settings.
+    - **Function**: Guides attention weights using text embeddings without discarding any patches.
+    - **Mechanism**: The cosine similarity between each instance feature and the text embedding $T$ is computed and processed in three tiers: negative similarity is set to 0 (semantically inconsistent; suppressed); low positive similarity retains its linear weight (uncertain but potentially informative); similarity above a threshold $\alpha$ is amplified by a factor $\lambda$ (high-confidence semantic match). Formally: $s_{i,m}^j = \lambda \cdot \cos(h_{i,m}^j, T)$ when $\cos > \alpha$; $s_{i,m}^j = \cos(h_{i,m}^j, T)$ when $0 < \cos < \alpha$; and $s_{i,m}^j = 0$ otherwise.
+    - **Design Motivation**: Hard filtering (e.g., FOCUS discards >60% of patches) risks losing diagnostic information not covered by text embeddings. Soft guidance retains all patches through reliability-aware gated weighting, yielding greater robustness in few-shot settings.
 
 ### Loss & Training
 

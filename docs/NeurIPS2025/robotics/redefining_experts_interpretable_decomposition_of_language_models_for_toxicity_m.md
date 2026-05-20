@@ -18,8 +18,8 @@ content_hash: ef2416daeb4fd8e2
 # Redefining Experts: Interpretable Decomposition of Language Models for Toxicity Mitigation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16660](https://arxiv.org/abs/2509.16660)
-**Code**: [GitHub](https://github.com/flamenlp/EigenShift)
+**arXiv**: [2509.16660](https://arxiv.org/abs/2509.16660)  
+**Code**: [GitHub](https://github.com/flamenlp/EigenShift)  
 **Area**: Robotics
 **Keywords**: toxicity mitigation, eigenvalue decomposition, interpretability, language model safety, neuron experts
 

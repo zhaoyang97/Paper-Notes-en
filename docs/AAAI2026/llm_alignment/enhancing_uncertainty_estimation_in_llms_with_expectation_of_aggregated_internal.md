@@ -18,8 +18,8 @@ content_hash: 1384b0078a8a0844
 # Enhancing Uncertainty Estimation in LLMs with Expectation of Aggregated Internal States
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.01564](https://arxiv.org/abs/2509.01564)
-**Code**: None
+**arXiv**: [2509.01564](https://arxiv.org/abs/2509.01564)  
+**Code**: None  
 **Area**: LLM Alignment
 **Keywords**: uncertainty estimation, internal state aggregation, confidence calibration, EAGLE, hidden layers
 
@@ -46,27 +46,27 @@ The EAGLE (**E**xpectation of **AG**gregated internaL b**E**lief) pipeline proce
 
 1. **Cross-Layer Hidden State Extraction and Projection**
 
-   - Hidden states $H_n^{(l)}$ at the confidence-token positions are extracted from the last $k$ layers.
-   - The model's unembedding matrix projects each layer's hidden state into the vocabulary space: $z_n^{(l)} = f_{\text{unembed}}(H_n^{(l)})$.
-   - Each layer thus yields a set of logits reflecting that layer's "preference" over tokens at the target position.
+    - Hidden states $H_n^{(l)}$ at the confidence-token positions are extracted from the last $k$ layers.
+    - The model's unembedding matrix projects each layer's hidden state into the vocabulary space: $z_n^{(l)} = f_{\text{unembed}}(H_n^{(l)})$.
+    - Each layer thus yields a set of logits reflecting that layer's "preference" over tokens at the target position.
 
 2. **Logits Aggregation**
 
-   - Logits from the $k$ layers are combined via a weighted average: $z_n = \sum(w_l \cdot z_n^{(l)}) / k$, with uniform weights by default.
-   - Aggregation reduces per-layer noise and overfitting, capturing a more stable internal belief signal.
-   - Different layers encode different levels of linguistic and semantic information; aggregation effectively integrates the model's judgments across all processing stages.
+    - Logits from the $k$ layers are combined via a weighted average: $z_n = \sum(w_l \cdot z_n^{(l)}) / k$, with uniform weights by default.
+    - Aggregation reduces per-layer noise and overfitting, capturing a more stable internal belief signal.
+    - Different layers encode different levels of linguistic and semantic information; aggregation effectively integrates the model's judgments across all processing stages.
 
 3. **Expectation Instead of Argmax**
 
-   - A softmax is applied to the subset of aggregated logits corresponding to the confidence-score tokens (0–9), yielding a probability distribution.
-   - The final confidence score is the expectation $\sum(w_s \cdot s)$ rather than the argmax.
-   - The expectation captures the full uncertainty of the distribution—if the model is uncertain between "7" and "8," an expected value of approximately 7.5 is more faithful than simply selecting "8."
+    - A softmax is applied to the subset of aggregated logits corresponding to the confidence-score tokens (0–9), yielding a probability distribution.
+    - The final confidence score is the expectation $\sum(w_s \cdot s)$ rather than the argmax.
+    - The expectation captures the full uncertainty of the distribution—if the model is uncertain between "7" and "8," an expected value of approximately 7.5 is more faithful than simply selecting "8."
 
 4. **Fully Training-Free**
 
-   - No probe networks or additional parameters are required.
-   - Only a single forward pass is needed (identical to standard self-evaluation); the only additional cost is extracting intermediate hidden states and performing matrix multiplications.
-   - Applicable to any open-source decoder-only Transformer.
+    - No probe networks or additional parameters are required.
+    - Only a single forward pass is needed (identical to standard self-evaluation); the only additional cost is extracting intermediate hidden states and performing matrix multiplications.
+    - Applicable to any open-source decoder-only Transformer.
 
 ### Loss & Training
 

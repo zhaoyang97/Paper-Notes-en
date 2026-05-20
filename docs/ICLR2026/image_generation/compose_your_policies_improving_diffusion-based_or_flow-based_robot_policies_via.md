@@ -18,8 +18,8 @@ content_hash: db9461a05ab20321
 # Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.01068](https://arxiv.org/abs/2510.01068)
-**Code**: [https://sagecao1125.github.io/GPC-Site/](https://sagecao1125.github.io/GPC-Site/)
+**arXiv**: [2510.01068](https://arxiv.org/abs/2510.01068)  
+**Code**: [https://sagecao1125.github.io/GPC-Site/](https://sagecao1125.github.io/GPC-Site/)  
 **Area**: Image Generation
 **Keywords**: policy composition, diffusion policy, distribution-level composition, test-time search, robot manipulation
 

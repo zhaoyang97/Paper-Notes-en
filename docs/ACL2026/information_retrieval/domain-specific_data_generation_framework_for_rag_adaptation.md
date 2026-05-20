@@ -18,8 +18,8 @@ content_hash: 560eff340649a1ed
 # Domain-Specific Data Generation Framework for RAG Adaptation
 
 **Conference**: ACL 2026
-**arXiv**: [2510.11217](https://arxiv.org/abs/2510.11217)
-**Code**: None
+**arXiv**: [2510.11217](https://arxiv.org/abs/2510.11217)  
+**Code**: None  
 **Area**: Information Retrieval / RAG
 **Keywords**: RAG Adaptation, Data Generation, Domain-Specific, Embedding Fine-tuning, Bloom's Taxonomy
 

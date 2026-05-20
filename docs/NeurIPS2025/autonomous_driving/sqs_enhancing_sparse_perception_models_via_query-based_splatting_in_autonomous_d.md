@@ -17,8 +17,8 @@ content_hash: 491c3b289ce5a6fd
 # SQS: Enhancing Sparse Perception Models via Query-based Splatting in Autonomous Driving
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16588](https://arxiv.org/abs/2509.16588)
-**Code**: N/A
+**arXiv**: [2509.16588](https://arxiv.org/abs/2509.16588)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: sparse perception model, 3D Gaussian splatting, pre-training, query interaction, autonomous driving
 

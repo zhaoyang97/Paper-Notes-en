@@ -18,8 +18,8 @@ content_hash: 67571b3ee73a9aa6
 # Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality
 
 **Conference**: ACL 2026
-**arXiv**: [2603.17512](https://arxiv.org/abs/2603.17512)
-**Code**: [GitHub](https://github.com/ictnlp/XBridge)
+**arXiv**: [2603.17512](https://arxiv.org/abs/2603.17512)  
+**Code**: [GitHub](https://github.com/ictnlp/XBridge)  
 **Area**: Multilingual Translation
 **Keywords**: Multilingual LLM, Model Composition, Encoder-Decoder Translation Model, Optimal Transport Alignment, Low-Resource Languages
 

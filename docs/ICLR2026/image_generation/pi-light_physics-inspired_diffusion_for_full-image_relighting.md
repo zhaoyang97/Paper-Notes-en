@@ -18,8 +18,8 @@ content_hash: 46f2fb0bd928da89
 # PI-Light: Physics-Inspired Diffusion for Full-Image Relighting
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.22135](https://arxiv.org/abs/2601.22135)
-**Code**: None
+**arXiv**: [2601.22135](https://arxiv.org/abs/2601.22135)  
+**Code**: None  
 **Area**: Image Generation / Image Relighting
 **Keywords**: Diffusion Models, Image Relighting, Inverse Rendering, Physics-Guided, Intrinsic Decomposition
 

@@ -18,8 +18,8 @@ content_hash: 0ac5c93ce625c792
 # FA: Forced Prompt Learning of Vision-Language Models for Out-of-Distribution Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04511](https://arxiv.org/abs/2507.04511)
-**Code**: [https://github.com/0xFAFA/FA](https://github.com/0xFAFA/FA)
+**arXiv**: [2507.04511](https://arxiv.org/abs/2507.04511)  
+**Code**: [https://github.com/0xFAFA/FA](https://github.com/0xFAFA/FA)  
 **Area**: Multimodal VLM
 **Keywords**: OOD detection, CLIP prompt learning, few-shot learning, out-of-distribution detection, forced prompt
 

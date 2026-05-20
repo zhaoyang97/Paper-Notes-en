@@ -18,8 +18,8 @@ content_hash: 18c977f198b79ce6
 # Spikingformer: A Key Foundation Model for Spiking Neural Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2304.11954](https://arxiv.org/abs/2304.11954)
-**Code**: [GitHub](https://github.com/TheBrainLab/Spikingformer)
+**arXiv**: [2304.11954](https://arxiv.org/abs/2304.11954)  
+**Code**: [GitHub](https://github.com/TheBrainLab/Spikingformer)  
 **Area**: Self-Supervised
 **Keywords**: Spiking Neural Networks, Transformer, spike-driven, residual connection, energy-efficient AI
 

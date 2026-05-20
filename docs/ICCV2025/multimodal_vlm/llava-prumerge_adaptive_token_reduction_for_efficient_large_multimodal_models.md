@@ -18,8 +18,8 @@ content_hash: 6d887f649a6fb9cc
 # LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2403.15388](https://arxiv.org/abs/2403.15388)
-**Code**: [https://github.com/yuzhangshang/LLaVA-PruMerge](https://github.com/yuzhangshang/LLaVA-PruMerge)
+**arXiv**: [2403.15388](https://arxiv.org/abs/2403.15388)  
+**Code**: [https://github.com/yuzhangshang/LLaVA-PruMerge](https://github.com/yuzhangshang/LLaVA-PruMerge)  
 **Area**: Multimodal VLM
 **Keywords**: visual token compression, large multimodal models, token pruning and merging, attention sparsity, efficient inference
 

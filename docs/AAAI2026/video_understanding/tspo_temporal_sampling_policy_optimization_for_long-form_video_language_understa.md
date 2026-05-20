@@ -18,8 +18,8 @@ content_hash: cc84218d53bfdf0c
 # TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04369](https://arxiv.org/abs/2508.04369)
-**Code**: [https://github.com/Hui-design/TSPO](https://github.com/Hui-design/TSPO)
+**arXiv**: [2508.04369](https://arxiv.org/abs/2508.04369)  
+**Code**: [https://github.com/Hui-design/TSPO](https://github.com/Hui-design/TSPO)  
 **Area**: Video Understanding / Multimodal Large Language Models
 **Keywords**: Long-form video understanding, keyframe sampling, reinforcement learning, temporal policy optimization, video multimodal large language models
 

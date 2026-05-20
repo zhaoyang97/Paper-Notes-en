@@ -18,8 +18,8 @@ content_hash: f730fbc5490fa1de
 # Soft Separation and Distillation: Toward Global Uniformity in Federated Unsupervised Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.01251](https://arxiv.org/abs/2508.01251)
-**Code**: [https://ssd-uniformity.github.io/](https://ssd-uniformity.github.io/)
+**arXiv**: [2508.01251](https://arxiv.org/abs/2508.01251)  
+**Code**: [https://ssd-uniformity.github.io/](https://ssd-uniformity.github.io/)  
 **Area**: Model Compression / Federated Learning
 **Keywords**: Federated Unsupervised Learning, Representation Uniformity, Dimension Scaling Regularization, Projector Distillation, Non-IID
 

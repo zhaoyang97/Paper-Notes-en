@@ -18,8 +18,8 @@ content_hash: d238b96c433769e4
 # CaO2: Rectifying Inconsistencies in Diffusion-Based Dataset Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22637](https://arxiv.org/abs/2506.22637)
-**Code**: [GitHub](https://github.com/hatchetProject/CaO2)
+**arXiv**: [2506.22637](https://arxiv.org/abs/2506.22637)  
+**Code**: [GitHub](https://github.com/hatchetProject/CaO2)  
 **Area**: Image Generation / Dataset Distillation
 **Keywords**: Dataset Distillation, Diffusion Models, Condition Consistency, Objective Consistency, Latent Space Optimization
 

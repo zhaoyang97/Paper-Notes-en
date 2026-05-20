@@ -20,8 +20,8 @@ content_hash: 5e32720a979f6c5a
 # How Reliable is Language Model Micro-Benchmarking?
 
 **Conference**: ICLR2026
-**arXiv**: [2510.08730](https://arxiv.org/abs/2510.08730)
-**Code**: [dill-lab/micro-benchmarking-reliability](https://github.com/dill-lab/micro-benchmarking-reliability)
+**arXiv**: [2510.08730](https://arxiv.org/abs/2510.08730)  
+**Code**: [dill-lab/micro-benchmarking-reliability](https://github.com/dill-lab/micro-benchmarking-reliability)  
 **Area**: LLM Evaluation
 **Keywords**: micro-benchmarking, evaluation reliability, MDAD, pairwise ranking, random sampling, MMLU-Pro, BIG-bench Hard
 

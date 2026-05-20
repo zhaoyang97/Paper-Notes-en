@@ -18,8 +18,8 @@ content_hash: 18cfef7a638f421b
 # Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robots
 
 **Conference**: CVPR2026
-**arXiv**: [2603.13108](https://arxiv.org/abs/2603.13108)
-**Code**: [PanoMMOcc](https://github.com/) (coming soon)
+**arXiv**: [2603.13108](https://arxiv.org/abs/2603.13108)  
+**Code**: [PanoMMOcc](https://github.com/) (coming soon)  
 **Area**: Autonomous Driving
 **Keywords**: Panoramic occupancy prediction, multimodal fusion, quadruped robots, semantic occupancy, BEV perception
 

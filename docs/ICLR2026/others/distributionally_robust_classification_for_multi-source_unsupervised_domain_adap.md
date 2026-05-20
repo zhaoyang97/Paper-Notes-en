@@ -17,8 +17,8 @@ content_hash: c9e3e475de4b56fa
 # Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21315](https://arxiv.org/abs/2601.21315)
-**Code**: N/A
+**arXiv**: [2601.21315](https://arxiv.org/abs/2601.21315)  
+**Code**: N/A  
 **Area**: Other
 **Keywords**: Distributionally robust optimization, unsupervised domain adaptation, multi-source domain adaptation, Wasserstein distance, pseudo-labels
 

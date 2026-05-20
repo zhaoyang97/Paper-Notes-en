@@ -18,8 +18,8 @@ content_hash: d35edf810cd5d3da
 # MMAT-1M: A Large Reasoning Dataset for Multimodal Agent Tuning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.21924](https://arxiv.org/abs/2507.21924)
-**Code**: [https://github.com/VIS-MPU-Agent/MMAT-1M](https://github.com/VIS-MPU-Agent/MMAT-1M)
+**arXiv**: [2507.21924](https://arxiv.org/abs/2507.21924)  
+**Code**: [https://github.com/VIS-MPU-Agent/MMAT-1M](https://github.com/VIS-MPU-Agent/MMAT-1M)  
 **Area**: Multimodal VLM / Agent
 **Keywords**: multimodal agent tuning, chain-of-thought, reflection, tool usage, reasoning dataset
 

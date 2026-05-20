@@ -18,8 +18,8 @@ content_hash: 6abeed277a537b71
 # Panoptic Captioning: An Equivalence Bridge for Image and Text
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16334](https://arxiv.org/abs/2505.16334)
-**Code**: [https://visual-ai.github.io/pancap/](https://visual-ai.github.io/pancap/)
+**arXiv**: [2505.16334](https://arxiv.org/abs/2505.16334)  
+**Code**: [https://visual-ai.github.io/pancap/](https://visual-ai.github.io/pancap/)  
 **Area**: Image Segmentation
 **Keywords**: panoptic captioning, minimum text equivalence, PancapScore, PancapChain, grounding
 
@@ -47,21 +47,21 @@ The paper makes three main contributions: (1) a five-dimensional task definition
 
 1. **Five-Dimensional Task Definition**:
 
-   - **Function**: Groups the semantic content of a panoptic caption into five dimensions.
-   - **Mechanism**: Semantic Tag (entity category labels) + Location (bounding box coordinates) + Attribute (appearance/state/material) + Relation (spatial/action/part relations between entities) + Global State (lighting/tone/scene style).
-   - **Design Motivation**: Bounding box coordinates provide precise localization with only a few numbers, outperforming free-form textual location descriptions. The five-dimensional decomposition ensures both completeness and evaluability.
+    - **Function**: Groups the semantic content of a panoptic caption into five dimensions.
+    - **Mechanism**: Semantic Tag (entity category labels) + Location (bounding box coordinates) + Attribute (appearance/state/material) + Relation (spatial/action/part relations between entities) + Global State (lighting/tone/scene style).
+    - **Design Motivation**: Bounding box coordinates provide precise localization with only a few numbers, outperforming free-form textual location descriptions. The five-dimensional decomposition ensures both completeness and evaluability.
 
 2. **PancapEngine Data Engine (detect-then-caption)**:
 
-   - **Function**: Automatically generates high-quality panoptic caption data.
-   - **Mechanism**: Entity Detection Suite (OLN class-agnostic detection + RAM 6400+ category label assignment + Grounding-DINO/OW-DETR supplementary detection) → Entity-Aware Caption Generation (Gemini-Exp-1121 generation + Qwen2-VL-72B cross-validation for consistency).
-   - **Design Motivation**: Conventional detectors are constrained to fixed categories (e.g., 80 COCO classes); the OLN+RAM combination effectively removes this category ceiling.
+    - **Function**: Automatically generates high-quality panoptic caption data.
+    - **Mechanism**: Entity Detection Suite (OLN class-agnostic detection + RAM 6400+ category label assignment + Grounding-DINO/OW-DETR supplementary detection) → Entity-Aware Caption Generation (Gemini-Exp-1121 generation + Qwen2-VL-72B cross-validation for consistency).
+    - **Design Motivation**: Conventional detectors are constrained to fixed categories (e.g., 80 COCO classes); the OLN+RAM combination effectively removes this category ceiling.
 
 3. **PancapChain Decoupled Generation Method**:
 
-   - **Function**: Decomposes panoptic captioning into sequential sub-tasks across multiple stages.
-   - **Mechanism**: Stage 1: entity localization (bounding boxes) → Stage 2: semantic tag assignment → Stage 3: supplementary entity discovery → Stage 4: comprehensive panoptic caption generation.
-   - **Design Motivation**: Requiring a model to generate a complete panoptic caption end-to-end is highly challenging, as it must simultaneously localize, classify, and describe all entities. Decoupling allows each stage to focus on a specific sub-task.
+    - **Function**: Decomposes panoptic captioning into sequential sub-tasks across multiple stages.
+    - **Mechanism**: Stage 1: entity localization (bounding boxes) → Stage 2: semantic tag assignment → Stage 3: supplementary entity discovery → Stage 4: comprehensive panoptic caption generation.
+    - **Design Motivation**: Requiring a model to generate a complete panoptic caption end-to-end is highly challenging, as it must simultaneously localize, classify, and describe all entities. Decoupling allows each stage to focus on a specific sub-task.
 
 ### Loss & Training
 

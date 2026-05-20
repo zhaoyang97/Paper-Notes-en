@@ -17,8 +17,8 @@ content_hash: 0c6f87a5351357c8
 # Depth-Bounds for Neural Networks via the Braid Arrangement
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.09324](https://arxiv.org/abs/2502.09324)
-**Code**: None
+**arXiv**: [2502.09324](https://arxiv.org/abs/2502.09324)  
+**Code**: None  
 **Area**: Others (Deep Learning Theory / Expressivity Analysis)
 **Keywords**: ReLU network depth lower bounds, piecewise linear functions, braid arrangement, maxout networks, combinatorial proof
 

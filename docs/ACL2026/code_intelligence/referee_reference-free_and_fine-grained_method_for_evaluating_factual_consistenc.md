@@ -18,8 +18,8 @@ content_hash: f1bad693c266fbde
 # ReFEree: Reference-Free and Fine-Grained Method for Evaluating Factual Consistency in Real-World Code Summarization
 
 **Conference**: ACL 2026
-**arXiv**: [2604.10520](https://arxiv.org/abs/2604.10520)
-**Code**: [GitHub](https://github.com/bsy99615/ReFEree)
+**arXiv**: [2604.10520](https://arxiv.org/abs/2604.10520)  
+**Code**: [GitHub](https://github.com/bsy99615/ReFEree)  
 **Area**: Code Intelligence / Code Summarization Evaluation
 **Keywords**: Factual Consistency, Code Summarization, Reference-Free Evaluation, Fine-Grained Evaluation, Dependency Analysis
 

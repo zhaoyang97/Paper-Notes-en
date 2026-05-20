@@ -18,8 +18,8 @@ content_hash: d9605a34a7afed33
 # Vocabulary Customization for Efficient Domain-Specific LLM Deployment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.26124](https://arxiv.org/abs/2509.26124)
-**Code**: None
+**arXiv**: [2509.26124](https://arxiv.org/abs/2509.26124)  
+**Code**: None  
 **Area**: LLM Pretraining
 **Keywords**: vocabulary expansion, tokenizer adaptation, domain adaptation, BPE, inference acceleration
 

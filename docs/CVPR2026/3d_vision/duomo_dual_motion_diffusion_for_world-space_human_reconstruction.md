@@ -18,8 +18,8 @@ content_hash: f0e4bd72e2f75b7d
 # DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.03265](https://arxiv.org/abs/2603.03265)
-**Code**: [Project Page](https://yufu-wang.github.io/duomo/)
+**arXiv**: [2603.03265](https://arxiv.org/abs/2603.03265)  
+**Code**: [Project Page](https://yufu-wang.github.io/duomo/)  
 **Area**: 3D Vision
 **Keywords**: Human motion reconstruction, diffusion model, world coordinate system, camera space, mesh vertices
 

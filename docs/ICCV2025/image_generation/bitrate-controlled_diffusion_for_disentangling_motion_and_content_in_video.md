@@ -18,8 +18,8 @@ content_hash: 59727055043105db
 # Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.08376](https://arxiv.org/abs/2509.08376)
-**Code**: None
+**arXiv**: [2509.08376](https://arxiv.org/abs/2509.08376)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: video disentanglement, motion-content separation, information bottleneck, vector quantization, diffusion models
 

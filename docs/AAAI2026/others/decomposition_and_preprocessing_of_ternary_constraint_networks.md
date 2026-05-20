@@ -17,8 +17,8 @@ content_hash: 38aeb2520aae93e4
 # Decomposition and Preprocessing of Ternary Constraint Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11872](https://arxiv.org/abs/2511.11872)
-**Code**: [Turbo solver](https://github.com/ptal/turbo)
+**arXiv**: [2511.11872](https://arxiv.org/abs/2511.11872)  
+**Code**: [Turbo solver](https://github.com/ptal/turbo)  
 **Area**: Other
 **Keywords**: Constraint Programming, Ternary Constraint Networks, GPU Solving, Preprocessing, MiniZinc
 

@@ -18,8 +18,8 @@ content_hash: 3d95cc0bb40be63b
 # Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.20083](https://arxiv.org/abs/2503.20083)
-**Code**: [https://github.com/bminixhofer/tokenkit](https://github.com/bminixhofer/tokenkit)
+**arXiv**: [2503.20083](https://arxiv.org/abs/2503.20083)  
+**Code**: [https://github.com/bminixhofer/tokenkit](https://github.com/bminixhofer/tokenkit)  
 **Area**: Model Compression / Knowledge Distillation
 **Keywords**: cross-tokenizer distillation, approximate likelihood matching, tokenizer transfer, f-divergence, LLM distillation
 

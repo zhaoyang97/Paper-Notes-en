@@ -20,7 +20,7 @@ content_hash: 907a826bf0e3dd52
 # 10 Open Challenges Steering the Future of Vision-Language-Action Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.05936](https://arxiv.org/abs/2511.05936)
+**arXiv**: [2511.05936](https://arxiv.org/abs/2511.05936)  
 **Area**: Embodied AI / Robot Learning
 **Keywords**: VLA models, robot manipulation, imitation learning, multimodal perception, cross-robot generalization, world models, post-training
 

@@ -14,8 +14,8 @@ content_hash: 76a941dc8e9bd0d9
 # Latent-Condensed Transformer for Efficient Long Context Modeling
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12452](https://arxiv.org/abs/2604.12452)
-**Code**: None
+**arXiv**: [2604.12452](https://arxiv.org/abs/2604.12452)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: long context modeling, KV cache compression, MLA, latent space compression, efficient attention
 
@@ -120,8 +120,8 @@ Lightweight fine-tuning on SlimPajama for 1,000 steps. No additional parameters 
 - Value: ⭐⭐⭐⭐⭐ Addresses a practical problem at the intersection of MLA and efficient attention.
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12452](https://arxiv.org/abs/2604.12452)
-**Code**: To be confirmed
+**arXiv**: [2604.12452](https://arxiv.org/abs/2604.12452)  
+**Code**: To be confirmed  
 **Area**: object_detection
 **Keywords**: To be supplemented
 

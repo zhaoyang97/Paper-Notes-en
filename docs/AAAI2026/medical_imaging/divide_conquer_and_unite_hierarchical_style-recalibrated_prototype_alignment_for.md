@@ -18,8 +18,8 @@ content_hash: 729a31f315b0a219
 # Divide, Conquer and Unite: Hierarchical Style-Recalibrated Prototype Alignment for Federated Medical Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10945](https://arxiv.org/abs/2511.10945)
-**Code**: [https://github.com/zxy1234321/FedBCS](https://github.com/zxy1234321/FedBCS)
+**arXiv**: [2511.10945](https://arxiv.org/abs/2511.10945)  
+**Code**: [https://github.com/zxy1234321/FedBCS](https://github.com/zxy1234321/FedBCS)  
 **Area**: Medical Imaging / Federated Learning
 **Keywords**: Federated Learning, Medical Image Segmentation, Prototype Alignment, Frequency-domain Style Calibration, Feature Heterogeneity
 
@@ -49,21 +49,21 @@ FedBCS is built upon the standard FL pipeline (FedAvg framework), where clients 
 
 1. **Frequency-domain Style Recalibration (FSR)**:
 
-   - **Function**: Removes domain-specific style variations from features prior to prototype construction, preserving semantic content.
-   - **Mechanism**: A 2D Fourier transform is applied to encoder features, decomposing them into an amplitude spectrum (encoding style) and a phase spectrum (preserving semantic content). Learnable parameters adaptively weight the normalized and original amplitude spectra: $\hat{z}_{enc} = IFT(\lambda_s^{norm}\chi_{norm} + \lambda_s^{org}\chi, \gamma)$. The weights are generated via global average pooling, a learnable linear mapping, and sigmoid activation.
-   - **Design Motivation**: Style information is naturally encoded in the amplitude spectrum of the frequency domain, while semantic content resides in the phase spectrum. Although instance normalization of the amplitude can remove style, it may discard useful information. The learnable parameters allow the model to adaptively determine how much original style to retain.
+    - **Function**: Removes domain-specific style variations from features prior to prototype construction, preserving semantic content.
+    - **Mechanism**: A 2D Fourier transform is applied to encoder features, decomposing them into an amplitude spectrum (encoding style) and a phase spectrum (preserving semantic content). Learnable parameters adaptively weight the normalized and original amplitude spectra: $\hat{z}_{enc} = IFT(\lambda_s^{norm}\chi_{norm} + \lambda_s^{org}\chi, \gamma)$. The weights are generated via global average pooling, a learnable linear mapping, and sigmoid activation.
+    - **Design Motivation**: Style information is naturally encoded in the amplitude spectrum of the frequency domain, while semantic content resides in the phase spectrum. Although instance normalization of the amplitude can remove style, it may discard useful information. The learnable parameters allow the model to adaptively determine how much original style to retain.
 
 2. **Context-aware Dual-level Prototype Alignment (CDPA)**:
 
-   - **Function**: Extracts domain-invariant prototypes from multiple levels of the encoder and decoder, and performs inter-level fusion and cross-client alignment.
-   - **Mechanism**: At each level $k$, class prototypes are extracted from both the encoder and decoder respectively. Prototypes from adjacent levels (shallow + deep) are concatenated and compressed via a lightweight $1\times1$ convolution fusion module to yield compact multi-scale prototypes. On the server side, FINCH clustering groups same-class prototypes from different clients and computes mean prototypes.
-   - **Design Motivation**: Shallow layers encode local tissue texture and edges, while deep layers encode global anatomical structures. Knowledge of the overall organ shape (deep-level information) facilitates more accurate tissue boundary delineation in ambiguous regions (shallow-level information).
+    - **Function**: Extracts domain-invariant prototypes from multiple levels of the encoder and decoder, and performs inter-level fusion and cross-client alignment.
+    - **Mechanism**: At each level $k$, class prototypes are extracted from both the encoder and decoder respectively. Prototypes from adjacent levels (shallow + deep) are concatenated and compressed via a lightweight $1\times1$ convolution fusion module to yield compact multi-scale prototypes. On the server side, FINCH clustering groups same-class prototypes from different clients and computes mean prototypes.
+    - **Design Motivation**: Shallow layers encode local tissue texture and edges, while deep layers encode global anatomical structures. Knowledge of the overall organ shape (deep-level information) facilitates more accurate tissue boundary delineation in ambiguous regions (shallow-level information).
 
 3. **Joint Contrastive and Consistency Loss**:
 
-   - **Function**: Aligns local features with global prototypes.
-   - **Mechanism**: The contrastive loss pulls features toward same-class prototypes and pushes them away from different-class prototypes; the consistency loss encourages encoder and decoder features to align with their respective global mean prototypes.
-   - **Design Motivation**: The contrastive loss captures inter-class discriminability, while the consistency loss ensures cross-institutional feature coherence.
+    - **Function**: Aligns local features with global prototypes.
+    - **Mechanism**: The contrastive loss pulls features toward same-class prototypes and pushes them away from different-class prototypes; the consistency loss encourages encoder and decoder features to align with their respective global mean prototypes.
+    - **Design Motivation**: The contrastive loss captures inter-class discriminability, while the consistency loss ensures cross-institutional feature coherence.
 
 ### Loss & Training
 

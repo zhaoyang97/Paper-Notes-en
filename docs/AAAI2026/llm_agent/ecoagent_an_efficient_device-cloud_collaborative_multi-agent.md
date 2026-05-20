@@ -18,8 +18,8 @@ content_hash: a28124262ba1dbc5
 # EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.05440](https://arxiv.org/abs/2505.05440)
-**Code**: [https://github.com/Yi-Biao/EcoAgent](https://github.com/Yi-Biao/EcoAgent)
+**arXiv**: [2505.05440](https://arxiv.org/abs/2505.05440)  
+**Code**: [https://github.com/Yi-Biao/EcoAgent](https://github.com/Yi-Biao/EcoAgent)  
 **Area**: Agent / Mobile Automation
 **Keywords**: Device-Cloud Collaboration, Multi-Agent System, Mobile Automation, Privacy Protection, Dual-ReACT
 
@@ -48,21 +48,21 @@ EcoAgent consists of three agents: (1) a cloud-based **Planning Agent** (GPT-4o)
 
 1. **Dual-ReACT Two-Level Reasoning and Planning**:
 
-   - **Function**: Extends conventional ReACT into two-level global and local reasoning, generating a complete executable plan in a single pass.
-   - **Mechanism**: Given user instruction $Ins$ and initial screen $S_0$, Global ReACT first decomposes the task into a sequence of sub-goals; Local ReACT then generates concrete action steps $ST_t$ and corresponding expected outcomes $EX_t$ for each sub-goal. The plan is formalized as $P_0 = \text{GlReACT}(Ins, S_0) = \{\text{LoReACT}(ST_1, EX_1), \ldots, \text{LoReACT}(ST_t, EX_t)\}$.
-   - **Design Motivation**: The generated $EX_t$ is the critical enabler—it allows the on-device Observation Agent to verify execution without understanding the global task semantics, reducing the complex verification problem to a simple text-image matching task that lightweight models can handle.
+    - **Function**: Extends conventional ReACT into two-level global and local reasoning, generating a complete executable plan in a single pass.
+    - **Mechanism**: Given user instruction $Ins$ and initial screen $S_0$, Global ReACT first decomposes the task into a sequence of sub-goals; Local ReACT then generates concrete action steps $ST_t$ and corresponding expected outcomes $EX_t$ for each sub-goal. The plan is formalized as $P_0 = \text{GlReACT}(Ins, S_0) = \{\text{LoReACT}(ST_1, EX_1), \ldots, \text{LoReACT}(ST_t, EX_t)\}$.
+    - **Design Motivation**: The generated $EX_t$ is the critical enabler—it allows the on-device Observation Agent to verify execution without understanding the global task semantics, reducing the complex verification problem to a simple text-image matching task that lightweight models can handle.
 
 2. **Pre-Understanding Module**:
 
-   - **Function**: Compresses a screenshot into a 50–150 token textual description, replacing raw image transmission to the cloud.
-   - **Mechanism**: $T_{t+1} = \text{PreUnderstand}(S_{t+1})$, where the Observation Agent (Qwen2-VL 2B) summarizes the screenshot into a 3–5 sentence functional description using a simple prompt.
-   - **Design Motivation**: (1) Raw screenshots consume approximately 1,400+ tokens, whereas compressed descriptions use only 50–150 tokens, substantially reducing communication overhead and MLLM token consumption. (2) Transmitting text rather than raw images fundamentally eliminates privacy risks from screen content leakage. (3) Replanning requires only the semantic change trajectory across screens, not full visual detail.
+    - **Function**: Compresses a screenshot into a 50–150 token textual description, replacing raw image transmission to the cloud.
+    - **Mechanism**: $T_{t+1} = \text{PreUnderstand}(S_{t+1})$, where the Observation Agent (Qwen2-VL 2B) summarizes the screenshot into a 3–5 sentence functional description using a simple prompt.
+    - **Design Motivation**: (1) Raw screenshots consume approximately 1,400+ tokens, whereas compressed descriptions use only 50–150 tokens, substantially reducing communication overhead and MLLM token consumption. (2) Transmitting text rather than raw images fundamentally eliminates privacy risks from screen content leakage. (3) Replanning requires only the semantic change trajectory across screens, not full visual detail.
 
 3. **Memory + Reflection Replanning**:
 
-   - **Function**: Upon execution failure, the Planning Agent reflects using stored screen description trajectories and failure reasons to generate a revised plan.
-   - **Mechanism**: The Memory Module stores textual screen trajectories and action history. Upon failure, the Reflection Module analyzes the error trajectory and produces a new plan $P_n = \text{Reflection}(Ins, P_{n-1}, \text{Memory})$.
-   - **Design Motivation**: Inspired by Reflexion-style iterative improvement, this mechanism enables the system to learn from mistakes and recover adaptively—a core advantage of closed-loop over open-loop systems.
+    - **Function**: Upon execution failure, the Planning Agent reflects using stored screen description trajectories and failure reasons to generate a revised plan.
+    - **Mechanism**: The Memory Module stores textual screen trajectories and action history. Upon failure, the Reflection Module analyzes the error trajectory and produces a new plan $P_n = \text{Reflection}(Ins, P_{n-1}, \text{Memory})$.
+    - **Design Motivation**: Inspired by Reflexion-style iterative improvement, this mechanism enables the system to learn from mistakes and recover adaptively—a core advantage of closed-loop over open-loop systems.
 
 ### Loss & Training
 EcoAgent does not involve end-to-end training. The Execution Agent uses existing GUI fine-tuned models (ShowUI 2B / OS-Atlas 4B); the Observation Agent uses the general-purpose Qwen2-VL 2B without fine-tuning; the Planning Agent uses GPT-4o. The entire framework is plug-and-play.

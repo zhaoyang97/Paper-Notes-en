@@ -18,8 +18,8 @@ content_hash: 5b865cd792e52aa2
 # Global Minimizers of Sigmoid Contrastive Loss
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.18552](https://arxiv.org/abs/2509.18552)
-**Code**: [RepresentationLearningTheory/SigLIP](https://github.com/RepresentationLearningTheory/SigLIP)
+**arXiv**: [2509.18552](https://arxiv.org/abs/2509.18552)  
+**Code**: [RepresentationLearningTheory/SigLIP](https://github.com/RepresentationLearningTheory/SigLIP)  
 **Area**: LLM Pretraining
 **Keywords**: Contrastive Learning, Sigmoid Loss, SigLIP, Representation Synchronization, Modality Gap
 

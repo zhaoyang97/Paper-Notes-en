@@ -18,8 +18,8 @@ content_hash: b80110817b94308e
 # BlazeFL: Fast and Deterministic Federated Learning Simulation
 
 **Conference**: CVPR 2026 (Workshop: FedVision)
-**arXiv**: [2604.03606](https://arxiv.org/abs/2604.03606)
-**Code**: [GitHub](https://github.com/kitsuyaazuma/blazefl)
+**arXiv**: [2604.03606](https://arxiv.org/abs/2604.03606)  
+**Code**: [GitHub](https://github.com/kitsuyaazuma/blazefl)  
 **Area**: Federated Learning / System Optimization
 **Keywords**: Federated learning simulation, deterministic reproducibility, free-threading, shared memory, FedAvg
 

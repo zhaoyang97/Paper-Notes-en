@@ -18,8 +18,8 @@ content_hash: e2df6e6281597651
 # On the Expressive Power of GNNs for Boolean Satisfiability
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.08745](https://arxiv.org/abs/2602.08745)
-**Code**: [GitHub](https://github.com/sakupeltonen/sat-expressivity)
+**arXiv**: [2602.08745](https://arxiv.org/abs/2602.08745)  
+**Code**: [GitHub](https://github.com/sakupeltonen/sat-expressivity)  
 **Area**: Graph Learning
 **Keywords**: GNN expressiveness, Boolean satisfiability, Weisfeiler-Leman test, SAT solving, theoretical analysis
 

@@ -18,8 +18,8 @@ content_hash: 7c7fbc033ba2d1bf
 # VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07071](https://arxiv.org/abs/2603.07071)
-**Code**: None
+**arXiv**: [2603.07071](https://arxiv.org/abs/2603.07071)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: Video Understanding Benchmark, Trustworthiness under Uncertainty, Long Video Understanding, Refusal Behavior Evaluation, VLM Evaluation
 

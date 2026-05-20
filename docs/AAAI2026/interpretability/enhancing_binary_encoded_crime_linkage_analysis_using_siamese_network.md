@@ -18,8 +18,8 @@ content_hash: e9502cce46c0b002
 # Enhancing Binary Encoded Crime Linkage Analysis Using Siamese Network
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07651](https://arxiv.org/abs/2511.07651)
-**Code**: [https://github.com/AlberTgarY/CrimeLinkageSiamese](https://github.com/AlberTgarY/CrimeLinkageSiamese)
+**arXiv**: [2511.07651](https://arxiv.org/abs/2511.07651)  
+**Code**: [https://github.com/AlberTgarY/CrimeLinkageSiamese](https://github.com/AlberTgarY/CrimeLinkageSiamese)  
 **Area**: Interpretability
 **Keywords**: Crime Linkage Analysis, Siamese Network, Autoencoder, Geo-temporal Feature Fusion, ViCLAS Database
 
@@ -66,19 +66,19 @@ The framework comprises three core components:
 - **Geo-temporal fusion**: After the first decoder layer output, log-transformed spatial-temporal features are mapped via a linear layer and fused additively
 - **Parameter count**: 21,740 parameters (vs. 22,981 for Naive Siamese)—fewer parameters, better performance
 - **Design Motivation**:
-  - The reconstruction constraint of the autoencoder ensures the latent representation retains structural information
-  - The 8-dimensional bottleneck forces the network to learn the most compact behavioral representation
+    - The reconstruction constraint of the autoencoder ensures the latent representation retains structural information
+    - The 8-dimensional bottleneck forces the network to learn the most compact behavioral representation
 
 #### 2. **Decoder-Stage Geo-temporal Fusion**
 
 - **Core Idea**: Geo-temporal data inherently reflects **pairwise relationships** (distance and time interval between two crimes); fusing it after encoding individual behavioral features is more consistent with investigative logic
 - **Implementation**:
-  - Log-transform spatial distance and temporal interval
-  - Map 2D geo-temporal features to 128 dimensions via a linear layer
-  - **Additively fuse** with the first decoder layer output
+    - Log-transform spatial distance and temporal interval
+    - Map 2D geo-temporal features to 128 dimensions via a linear layer
+    - **Additively fuse** with the first decoder layer output
 - **Advantage over alternatives**:
-  - Input-layer concatenation: 2D signal in 446D accounts for <1%, nearly no effect
-  - Decoder fusion: Introduced after behavioral abstraction is complete, yielding significant signal amplification
+    - Input-layer concatenation: 2D signal in 446D accounts for <1%, nearly no effect
+    - Decoder fusion: Introduced after behavioral abstraction is complete, yielding significant signal amplification
 - **Experimental Validation**: Consistently improves AUC by 0.86–3.29% across network variants (Table 4)
 
 #### 3. **Domain Expert-Driven Dimensionality Reduction**

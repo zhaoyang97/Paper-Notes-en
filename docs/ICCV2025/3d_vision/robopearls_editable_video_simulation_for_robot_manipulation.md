@@ -18,8 +18,8 @@ content_hash: 8a46b20dbba0f207
 # RoboPearls: Editable Video Simulation for Robot Manipulation
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22756](https://arxiv.org/abs/2506.22756)
-**Code**: [Project Page](https://robopearls.github.io/)
+**arXiv**: [2506.22756](https://arxiv.org/abs/2506.22756)  
+**Code**: [Project Page](https://robopearls.github.io/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Editable Simulation, Robot Manipulation, LLM Agent, Sim-to-Real
 

@@ -18,8 +18,8 @@ content_hash: 24255f60a0254080
 # TIDMAD: Time Series Dataset for Discovering Dark Matter with AI Denoising
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2406.04378](https://arxiv.org/abs/2406.04378)
-**Code**: [GitHub](https://github.com/jessicafry/TIDMAD)
+**arXiv**: [2406.04378](https://arxiv.org/abs/2406.04378)  
+**Code**: [GitHub](https://github.com/jessicafry/TIDMAD)  
 **Area**: Dataset / Time Series Denoising
 **Keywords**: Dark matter detection, time series denoising, ABRACADABRA, benchmark dataset, signal recovery
 
@@ -83,9 +83,9 @@ TIDMAD does not propose a new algorithm; rather, it constructs a complete ecosys
 Training strategies for the 8 baseline denoising algorithms:
 - Conventional methods (moving average, Savitzky-Golay filter, Fourier averaging) are applied directly without training.
 - Deep learning models (FC Net, PU Net, Transformer, WaveNet, RNN Seq2Seq) are trained on the training set.
-  - Due to memory constraints imposed by ultra-long sequences, sequences are divided into segments (segment length $2\times10^4$ to $4\times10^4$).
-  - PU Net / Transformer / RNN Seq2Seq reformulate denoising as a 256-class classification task and are trained with Focal Loss.
-  - All models except WaveNet employ frequency splitting (multiple specialized versions handling different frequency ranges).
+    - Due to memory constraints imposed by ultra-long sequences, sequences are divided into segments (segment length $2\times10^4$ to $4\times10^4$).
+    - PU Net / Transformer / RNN Seq2Seq reformulate denoising as a 256-class classification task and are trained with Focal Loss.
+    - All models except WaveNet employ frequency splitting (multiple specialized versions handling different frequency ranges).
 
 ## Key Experimental Results
 

@@ -18,8 +18,8 @@ content_hash: ded975abded5120d
 # GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.08194](https://arxiv.org/abs/2506.08194)
-**Code**: [Available](https://toomanymatts.github.io/giq-benchmark/)
+**arXiv**: [2506.08194](https://arxiv.org/abs/2506.08194)  
+**Code**: [Available](https://toomanymatts.github.io/giq-benchmark/)  
 **Area**: 3D Vision
 **Keywords**: geometric reasoning, benchmark, polyhedra, vision foundation models, VLM evaluation
 

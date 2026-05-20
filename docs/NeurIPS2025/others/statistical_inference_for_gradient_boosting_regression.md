@@ -17,8 +17,8 @@ content_hash: 93d7f753eedeb61a
 # Statistical Inference for Gradient Boosting Regression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23127](https://arxiv.org/abs/2509.23127)
-**Code**: None
+**arXiv**: [2509.23127](https://arxiv.org/abs/2509.23127)  
+**Code**: None  
 **Area**: Statistical Inference / Ensemble Learning
 **Keywords**: Gradient Boosting, Central Limit Theorem, Confidence Intervals, Hypothesis Testing, Random Forests
 

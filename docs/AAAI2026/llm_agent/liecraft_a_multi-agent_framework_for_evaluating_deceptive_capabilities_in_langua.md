@@ -18,8 +18,8 @@ content_hash: 2e45b77092a5e03e
 # LieCraft: A Multi-Agent Framework for Evaluating Deceptive Capabilities in Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.06874](https://arxiv.org/abs/2603.06874)
-**Code**: [GitHub](https://github.com/LieCraftGame/LieCraft)
+**arXiv**: [2603.06874](https://arxiv.org/abs/2603.06874)  
+**Code**: [GitHub](https://github.com/LieCraftGame/LieCraft)  
 **Area**: LLM Agent / AI Safety
 **Keywords**: deception evaluation, multi-agent game, hidden role, strategic deception, safety evaluation
 

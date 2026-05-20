@@ -18,8 +18,8 @@ content_hash: 619584b29141e152
 # Efficient Process Reward Modeling via Contrastive Mutual Information
 
 **Conference**: ACL 2026
-**arXiv**: [2604.10660](https://arxiv.org/abs/2604.10660)
-**Code**: [GitHub](https://github.com/nakyungLee20/CPMI)
+**arXiv**: [2604.10660](https://arxiv.org/abs/2604.10660)  
+**Code**: [GitHub](https://github.com/nakyungLee20/CPMI)  
 **Area**: LLM Reasoning
 **Keywords**: Process Reward Model, Step-level Supervision, Mutual Information, Contrastive Learning, Mathematical Reasoning
 

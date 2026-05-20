@@ -19,7 +19,7 @@ content_hash: f3c9320e2561c056
 # NuiScene: Exploring Efficient Generation of Unbounded Outdoor Scenes
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.16375](https://arxiv.org/abs/2503.16375)
+**arXiv**: [2503.16375](https://arxiv.org/abs/2503.16375)  
 **Area**: 3D Generation · Scene Generation
 **Keywords**: unbounded scene generation, vector set representation, outpainting, diffusion model, outdoor scenes, 3D generation
 

@@ -18,8 +18,8 @@ content_hash: 65cbc277c83932cf
 # Multi-Cache Enhanced Prototype Learning for Test-Time Generalization of Vision-Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.01225](https://arxiv.org/abs/2508.01225)
-**Code**: [Project Page](https://zhaihaotian.github.io/MCP-ICCV25/)
+**arXiv**: [2508.01225](https://arxiv.org/abs/2508.01225)  
+**Code**: [Project Page](https://zhaihaotian.github.io/MCP-ICCV25/)  
 **Area**: Multimodal VLM
 **Keywords**: Test-time adaptation, vision-language models, CLIP, cache mechanism, prototype learning
 

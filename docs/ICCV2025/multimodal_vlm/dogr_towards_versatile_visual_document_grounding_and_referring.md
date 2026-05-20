@@ -18,8 +18,8 @@ content_hash: 43496fcadd97c133
 # DOGR: Towards Versatile Visual Document Grounding and Referring
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.17125](https://arxiv.org/abs/2411.17125)
-**Code**: [https://github.com/zyinan99/DOGR](https://github.com/zyinan99/DOGR)
+**arXiv**: [2411.17125](https://arxiv.org/abs/2411.17125)  
+**Code**: [https://github.com/zyinan99/DOGR](https://github.com/zyinan99/DOGR)  
 **Area**: Multimodal VLM / Document Understanding
 **Keywords**: Document Understanding, Visual Grounding, Multimodal Large Language Models, Data Engine, OCR
 

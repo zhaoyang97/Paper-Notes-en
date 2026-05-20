@@ -18,8 +18,8 @@ content_hash: 9534f1a8244e242b
 # Behavior Learning (BL): Learning Hierarchical Optimization Structures from Data
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.20152](https://arxiv.org/abs/2602.20152)
-**Code**: [https://github.com/MoonYLiang/Behavior-Learning](https://github.com/MoonYLiang/Behavior-Learning) (pip install blnetwork)
+**arXiv**: [2602.20152](https://arxiv.org/abs/2602.20152)  
+**Code**: [https://github.com/MoonYLiang/Behavior-Learning](https://github.com/MoonYLiang/Behavior-Learning) (pip install blnetwork)  
 **Area**: Interpretability
 **Keywords**: Interpretable ML, Utility Maximization, Hierarchical Optimization Structure, Identifiability, Gibbs Distribution
 

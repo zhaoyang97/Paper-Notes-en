@@ -18,8 +18,8 @@ content_hash: c7fcf1a58221c2f0
 # AutoToM: Scaling Model-based Mental Inference via Automated Agent Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.15676](https://arxiv.org/abs/2502.15676)
-**Code**: Available
+**arXiv**: [2502.15676](https://arxiv.org/abs/2502.15676)  
+**Code**: Available  
 **Area**: Theory of Mind / LLM Agent
 **Keywords**: Theory of Mind, Bayesian inverse planning, automated agent modeling, mental inference, LLM
 

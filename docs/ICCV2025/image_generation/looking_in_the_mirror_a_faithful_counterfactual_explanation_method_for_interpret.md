@@ -18,8 +18,8 @@ content_hash: 999a058d679e6e8e
 # Looking in the Mirror: A Faithful Counterfactual Explanation Method for Interpreting Deep Image Classification Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.16822](https://arxiv.org/abs/2509.16822)
-**Code**: [https://github.com/AIML-MED/Mirror-CFE](https://github.com/AIML-MED/Mirror-CFE)
+**arXiv**: [2509.16822](https://arxiv.org/abs/2509.16822)  
+**Code**: [https://github.com/AIML-MED/Mirror-CFE](https://github.com/AIML-MED/Mirror-CFE)  
 **Area**: Explainable AI / Counterfactual Explanation
 **Keywords**: counterfactual explanation, decision boundary, faithful explanation, classifier interpretability, animated transition
 

@@ -19,8 +19,8 @@ content_hash: e65da9e01103f982
 # WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.14351](https://arxiv.org/abs/2602.14351)
-**Code**: None (Apex Lab, SFU)
+**arXiv**: [2602.14351](https://arxiv.org/abs/2602.14351)  
+**Code**: None (Apex Lab, SFU)  
 **Area**: Reinforcement Learning
 **Keywords**: Model-Based Reinforcement Learning, IMLE, Uncertainty Estimation, Multimodal World Models, Sample Efficiency, Continuous Control
 

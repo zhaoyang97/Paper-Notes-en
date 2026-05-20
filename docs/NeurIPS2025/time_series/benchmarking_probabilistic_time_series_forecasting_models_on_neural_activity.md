@@ -18,8 +18,8 @@ content_hash: ce92c59f9ee61d38
 # Benchmarking Probabilistic Time Series Forecasting Models on Neural Activity
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18037](https://arxiv.org/abs/2510.18037)
-**Code**: To be confirmed
+**arXiv**: [2510.18037](https://arxiv.org/abs/2510.18037)  
+**Code**: To be confirmed  
 **Area**: Neuroscience / Time Series Forecasting
 **Keywords**: neural activity prediction, probabilistic forecasting, calcium imaging, benchmarking, foundation models
 

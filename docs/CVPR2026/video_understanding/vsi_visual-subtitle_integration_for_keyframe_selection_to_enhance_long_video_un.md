@@ -18,8 +18,8 @@ content_hash: 7abe477d99a42490
 # VSI: Visual-Subtitle Integration for Keyframe Selection to Enhance Long Video Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.06869](https://arxiv.org/abs/2508.06869)
-**Code**: [https://github.com/Jacksonha7/Visual-Subtitle-Integration.git](https://github.com/Jacksonha7/Visual-Subtitle-Integration.git)
+**arXiv**: [2508.06869](https://arxiv.org/abs/2508.06869)  
+**Code**: [https://github.com/Jacksonha7/Visual-Subtitle-Integration.git](https://github.com/Jacksonha7/Visual-Subtitle-Integration.git)  
 **Area**: Video Understanding
 **Keywords**: Long video understanding, keyframe retrieval, multimodal fusion, video question answering, subtitle matching
 

@@ -19,8 +19,8 @@ content_hash: 0d1af8861d89b9bc
 # Zatom-1: A Multimodal Flow Foundation Model for 3D Molecules and Materials
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.22251](https://arxiv.org/abs/2602.22251)
-**Code**: Open-source (fully open-source)
+**arXiv**: [2602.22251](https://arxiv.org/abs/2602.22251)  
+**Code**: Open-source (fully open-source)  
 **Area**: Image Generation / Scientific Machine Learning
 **Keywords**: Foundation model, flow matching, 3D molecules, 3D materials, multimodal generation, property prediction
 

@@ -18,8 +18,8 @@ content_hash: 925ce3efafeef799
 # ⊘ Source Models Leak What They Shouldn't ↛: Unlearning Zero-Shot Transfer in Domain Adaptation Through Adversarial Optimization
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08238](https://arxiv.org/abs/2604.08238)
-**Code**: [https://github.com/D-Arnav/SCADA](https://github.com/D-Arnav/SCADA)
+**arXiv**: [2604.08238](https://arxiv.org/abs/2604.08238)  
+**Code**: [https://github.com/D-Arnav/SCADA](https://github.com/D-Arnav/SCADA)  
 **Area**: Machine Unlearning / Domain Adaptation / Privacy Preservation
 **Keywords**: Machine Unlearning, Source Domain Privacy Leakage, Source-Free Domain Adaptation, Adversarial Optimization, Zero-Shot Transfer
 

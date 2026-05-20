@@ -18,8 +18,8 @@ content_hash: f6bdd0e22ed9aa6c
 # Distilling Deep Reinforcement Learning into Interpretable Fuzzy Rules: An Explainable AI Framework
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.13257](https://arxiv.org/abs/2603.13257)
-**Code**: None
+**arXiv**: [2603.13257](https://arxiv.org/abs/2603.13257)  
+**Code**: None  
 **Area**: Explainable Reinforcement Learning
 **Keywords**: Fuzzy Logic, TSK System, Policy Distillation, Explainable AI, Continuous Control
 

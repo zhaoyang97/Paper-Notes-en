@@ -18,8 +18,8 @@ content_hash: 8f58b645b63b8a14
 # First-Order Representation Languages for Goal-Conditioned RL
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.19355](https://arxiv.org/abs/2512.19355)
-**Code**: None
+**arXiv**: [2512.19355](https://arxiv.org/abs/2512.19355)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Goal-conditioned reinforcement learning, first-order representation languages, Hindsight Experience Replay, generalized planning, curriculum learning
 

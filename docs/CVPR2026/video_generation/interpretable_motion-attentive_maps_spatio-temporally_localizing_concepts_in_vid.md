@@ -18,8 +18,8 @@ content_hash: 45d67b7cd3ea6f51
 # I'm a Map! Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02919](https://arxiv.org/abs/2603.02919)
-**Code**: [https://github.com/youngjun-jun/IMAP](https://github.com/youngjun-jun/IMAP)
+**arXiv**: [2603.02919](https://arxiv.org/abs/2603.02919)  
+**Code**: [https://github.com/youngjun-jun/IMAP](https://github.com/youngjun-jun/IMAP)  
 **Area**: Video Generation
 **Keywords**: Video Diffusion Models, Interpretability, Motion Localization, Attention Analysis, Saliency Maps
 

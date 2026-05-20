@@ -18,8 +18,8 @@ content_hash: e4daa391f207a6a6
 # SPOT-Trip: Dual-Preference Driven Out-of-Town Trip Recommendation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01705](https://arxiv.org/abs/2506.01705)
-**Code**: Not available
+**arXiv**: [2506.01705](https://arxiv.org/abs/2506.01705)  
+**Code**: Not available  
 **Area**: Graph Learning
 **Keywords**: Trip recommendation, knowledge graph, neural ODE, temporal point process, static-dynamic preference fusion
 

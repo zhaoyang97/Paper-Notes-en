@@ -18,8 +18,8 @@ content_hash: d3a575e80e8867ef
 # EMD: Explicit Motion Modeling for High-Quality Street Gaussian Splatting
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.15582](https://arxiv.org/abs/2411.15582)
-**Code**: [qingpowuwu.github.io/emd](https://qingpowuwu.github.io/emd)
+**arXiv**: [2411.15582](https://arxiv.org/abs/2411.15582)  
+**Code**: [qingpowuwu.github.io/emd](https://qingpowuwu.github.io/emd)  
 **Area**: Autonomous Driving
 **Keywords**: 3D Gaussian Splatting, Dynamic Scene Reconstruction, Motion Modeling, Self-Supervised Learning, Street View Simulation
 

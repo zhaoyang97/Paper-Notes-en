@@ -18,8 +18,8 @@ content_hash: 265a5535ca590e36
 # MVGD-Net: A Novel Motion-aware Video Glass Surface Detection Network
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.13715](https://arxiv.org/abs/2601.13715)
-**Code**: [github](https://github.com/YT3DVision/MVGDNet)
+**arXiv**: [2601.13715](https://arxiv.org/abs/2601.13715)  
+**Code**: [github](https://github.com/YT3DVision/MVGDNet)  
 **Area**: Human Understanding
 **Keywords**: Glass surface detection, video segmentation, optical flow motion cues, cross-modal fusion, temporal attention
 

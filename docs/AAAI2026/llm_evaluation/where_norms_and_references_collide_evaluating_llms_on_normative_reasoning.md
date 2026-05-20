@@ -18,8 +18,8 @@ content_hash: 7057a0ba5d4a4b14
 # Where Norms and References Collide: Evaluating LLMs on Normative Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.02975](https://arxiv.org/abs/2602.02975)
-**Code**: [https://github.com/TheSittingCat/SNIC](https://github.com/TheSittingCat/SNIC)
+**arXiv**: [2602.02975](https://arxiv.org/abs/2602.02975)  
+**Code**: [https://github.com/TheSittingCat/SNIC](https://github.com/TheSittingCat/SNIC)  
 **Area**: LLM Evaluation
 **Keywords**: Social norm reasoning, reference resolution, embodied agents, diagnostic testbed, implicit knowledge
 

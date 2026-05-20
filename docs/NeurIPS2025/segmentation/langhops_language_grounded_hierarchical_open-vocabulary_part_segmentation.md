@@ -18,8 +18,8 @@ content_hash: 7dd5a36e0582e6cb
 # LangHOPS: Language Grounded Hierarchical Open-Vocabulary Part Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25263](https://arxiv.org/abs/2510.25263)
-**Code**: Available (to be released)
+**arXiv**: [2510.25263](https://arxiv.org/abs/2510.25263)  
+**Code**: Available (to be released)  
 **Area**: Segmentation
 **Keywords**: Open-vocabulary part segmentation, object-part hierarchy, MLLM, language-space hierarchical modeling, instance segmentation
 

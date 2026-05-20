@@ -18,8 +18,8 @@ content_hash: b793ee0f16a6a6a9
 # PixelDiT: Pixel Diffusion Transformers for Image Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.20645](https://arxiv.org/abs/2511.20645)
-**Code**: [https://github.com/](https://github.com/)
+**arXiv**: [2511.20645](https://arxiv.org/abs/2511.20645)  
+**Code**: [https://github.com/](https://github.com/)  
 **Area**: Image Generation
 **Keywords**: Pixel diffusion, dual-level Transformer, end-to-end generation, pixel modeling, text-to-image
 
@@ -42,19 +42,19 @@ The dual-level architecture comprises a patch-level DiT that processes short tok
 ### Key Designs
 
 1. **Pixel-wise AdaLN Modulation**
-   - **Function**: Injects patch-level semantic information into the processing of each individual pixel token.
-   - **Mechanism**: Unlike standard AdaLN, which conditions on a single global signal (e.g., timestep), PixelDiT uses patch-level semantic tokens to generate independent modulation parameters for each pixel token. Each pixel token receives spatially corresponding scale and shift values derived from its associated semantic token.
-   - **Design Motivation**: A global condition treats all pixels uniformly, yet different spatial locations require distinct semantic guidance. Pixel-level modulation enables spatially adaptive conditioning.
+    - **Function**: Injects patch-level semantic information into the processing of each individual pixel token.
+    - **Mechanism**: Unlike standard AdaLN, which conditions on a single global signal (e.g., timestep), PixelDiT uses patch-level semantic tokens to generate independent modulation parameters for each pixel token. Each pixel token receives spatially corresponding scale and shift values derived from its associated semantic token.
+    - **Design Motivation**: A global condition treats all pixels uniformly, yet different spatial locations require distinct semantic guidance. Pixel-level modulation enables spatially adaptive conditioning.
 
 2. **Pixel Token Compaction**
-   - **Function**: Makes global attention over per-pixel tokens computationally tractable while preserving full spatial resolution.
-   - **Mechanism**: Before global attention, each pixel token is projected to a lower-dimensional representation via a linear projection; after attention, it is decompressed back to its original dimensionality. This allows the pixel-level pathway to perform global attention over the full-resolution token sequence without incurring computational explosion.
-   - **Design Motivation**: The number of pixel-level tokens is prohibitively large (e.g., 65,536 tokens at 256×256 resolution), making direct full attention infeasible. Compaction reduces dimensionality rather than spatial count, thereby preserving spatial resolution.
+    - **Function**: Makes global attention over per-pixel tokens computationally tractable while preserving full spatial resolution.
+    - **Mechanism**: Before global attention, each pixel token is projected to a lower-dimensional representation via a linear projection; after attention, it is decompressed back to its original dimensionality. This allows the pixel-level pathway to perform global attention over the full-resolution token sequence without incurring computational explosion.
+    - **Design Motivation**: The number of pixel-level tokens is prohibitively large (e.g., 65,536 tokens at 256×256 resolution), making direct full attention infeasible. Compaction reduces dimensionality rather than spatial count, thereby preserving spatial resolution.
 
 3. **Dual-Level Pathway Fusion**
-   - **Function**: Architecturally separates semantic learning from texture refinement.
-   - **Mechanism**: The patch-level pathway consists of $N$ enhanced DiT blocks using RMSNorm and 2D RoPE. The pixel-level pathway's PiT blocks receive patch-level outputs as semantic conditioning and produce the final per-pixel velocity predictions via pixel-wise AdaLN and compaction attention.
-   - **Design Motivation**: Concentrating the majority of semantic reasoning on a low-resolution grid alleviates the burden on the pixel-level pathway and accelerates learning.
+    - **Function**: Architecturally separates semantic learning from texture refinement.
+    - **Mechanism**: The patch-level pathway consists of $N$ enhanced DiT blocks using RMSNorm and 2D RoPE. The pixel-level pathway's PiT blocks receive patch-level outputs as semantic conditioning and produce the final per-pixel velocity predictions via pixel-wise AdaLN and compaction attention.
+    - **Design Motivation**: Concentrating the majority of semantic reasoning on a low-resolution grid alleviates the burden on the pixel-level pathway and accelerates learning.
 
 ### Loss & Training
 Standard conditional flow matching loss applied directly in pixel space. Multi-modal DiT blocks are used for text-to-image generation.

@@ -18,8 +18,8 @@ content_hash: 077817760f83e077
 # QuEPT: Quantized Elastic Precision Transformers with One-Shot Calibration for Multi-Bit Switching
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.12609](https://arxiv.org/abs/2602.12609)
-**Code**: [https://github.com/xuke225/QuEPT](https://github.com/xuke225/QuEPT)
+**arXiv**: [2602.12609](https://arxiv.org/abs/2602.12609)  
+**Code**: [https://github.com/xuke225/QuEPT](https://github.com/xuke225/QuEPT)  
 **Area**: Model Compression
 **Keywords**: Elastic Precision Quantization, Post-Training Quantization, Multi-Bit Switching, Cascaded LoRA, Token Merging
 

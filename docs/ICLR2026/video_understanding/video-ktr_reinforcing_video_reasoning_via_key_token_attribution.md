@@ -18,7 +18,7 @@ content_hash: 2601e96d4cff5e44
 # Video-KTR: Enhancing Video Reasoning via Key Token Attribution
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19686](https://arxiv.org/abs/2601.19686)
+**arXiv**: [2601.19686](https://arxiv.org/abs/2601.19686)  
 **Area**: Video Understanding
 **Keywords**: Video Reasoning, Reinforcement Learning, Token Attribution, Multimodal LLM, GRPO
 

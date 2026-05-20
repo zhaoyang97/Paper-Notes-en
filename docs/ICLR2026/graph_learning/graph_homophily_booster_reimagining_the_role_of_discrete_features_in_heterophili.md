@@ -18,8 +18,8 @@ content_hash: 407711f57e5ead7d
 # GRAPHITE: Graph Homophily Booster — Reimagining the Role of Discrete Features in Heterophilic Graph Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07256](https://arxiv.org/abs/2602.07256)
-**Code**: [https://github.com/q-rz/ICLR26-GRAPHITE](https://github.com/q-rz/ICLR26-GRAPHITE)
+**arXiv**: [2602.07256](https://arxiv.org/abs/2602.07256)  
+**Code**: [https://github.com/q-rz/ICLR26-GRAPHITE](https://github.com/q-rz/ICLR26-GRAPHITE)  
 **Area**: Graph Learning
 **Keywords**: heterophilic graph, homophily boosting, graph transformation, feature nodes, GNN
 

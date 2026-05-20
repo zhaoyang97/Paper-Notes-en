@@ -17,8 +17,8 @@ content_hash: 77640815d2f09cf9
 # On the Edge of Core (Non-)Emptiness: An Automated Reasoning Approach to Approval-Based Multi-Winner Voting
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.16895](https://arxiv.org/abs/2512.16895)
-**Code**: [GitHub](https://github.com/emanueltewolde/Core-MILP)
+**arXiv**: [2512.16895](https://arxiv.org/abs/2512.16895)  
+**Code**: [GitHub](https://github.com/emanueltewolde/Core-MILP)  
 **Area**: Computational Social Choice / Automated Reasoning
 **Keywords**: Core Stability, Multi-Winner Voting, Mixed Integer Linear Programming, Automated Reasoning, Proportional Representation
 

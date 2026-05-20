@@ -18,8 +18,8 @@ content_hash: 8dddb0c57ded80d1
 # A Token is Worth over 1,000 Tokens: Efficient Knowledge Distillation through Low-Rank Clone
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12781](https://arxiv.org/abs/2505.12781)
-**Code**: GitHub + HuggingFace (mentioned in the paper)
+**arXiv**: [2505.12781](https://arxiv.org/abs/2505.12781)  
+**Code**: GitHub + HuggingFace (mentioned in the paper)  
 **Area**: Model Compression / Knowledge Distillation
 **Keywords**: knowledge distillation, low-rank projection, small language models, activation cloning, efficient pretraining
 

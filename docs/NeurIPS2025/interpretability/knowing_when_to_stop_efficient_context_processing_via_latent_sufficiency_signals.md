@@ -18,8 +18,8 @@ content_hash: 9577fae8684cdd73
 # Knowing When to Stop: Efficient Context Processing via Latent Sufficiency Signals
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.01025](https://arxiv.org/abs/2502.01025)
-**Code**: [GitHub](https://github.com/ruoyuxie/when-to-stop)
+**arXiv**: [2502.01025](https://arxiv.org/abs/2502.01025)  
+**Code**: [GitHub](https://github.com/ruoyuxie/when-to-stop)  
 **Area**: Interpretability
 **Keywords**: Dynamic context cutoff, attention head probing, information sufficiency, inference efficiency, KV cache
 

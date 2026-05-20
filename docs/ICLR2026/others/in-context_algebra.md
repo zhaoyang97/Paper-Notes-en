@@ -17,8 +17,8 @@ content_hash: 464ce6ef5af14674
 # In-Context Algebra
 
 **Conference**: ICLR2026
-**arXiv**: [2512.16902](https://arxiv.org/abs/2512.16902)
-**Code**: [algebra.baulab.info](https://algebra.baulab.info)
+**arXiv**: [2512.16902](https://arxiv.org/abs/2512.16902)  
+**Code**: [algebra.baulab.info](https://algebra.baulab.info)  
 **Area**: Other
 **Keywords**: in-context learning, mechanistic interpretability, symbolic reasoning, finite groups, transformer mechanisms
 

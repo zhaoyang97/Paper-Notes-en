@@ -18,8 +18,8 @@ content_hash: 964833709987968a
 # IDER: IDempotent Experience Replay for Reliable Continual Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00624](https://arxiv.org/abs/2603.00624)
-**Code**: [GitHub](https://github.com/YutingLi0606/Idempotent-Continual-Learning)
+**arXiv**: [2603.00624](https://arxiv.org/abs/2603.00624)  
+**Code**: [GitHub](https://github.com/YutingLi0606/Idempotent-Continual-Learning)  
 **Area**: Model Compression
 **Keywords**: Continual Learning, Idempotency, Experience Replay, Calibration Error, Catastrophic Forgetting
 

@@ -18,8 +18,8 @@ content_hash: a087c0c0497a7569
 # Diagnosing and Repairing Unsafe Channels in Vision-Language Models via Causal Discovery and Dual-Modal Safety Subspace Projection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27240](https://arxiv.org/abs/2603.27240)
-**Code**: N/A
+**arXiv**: [2603.27240](https://arxiv.org/abs/2603.27240)  
+**Code**: N/A  
 **Area**: Multimodal / VLM
 **Keywords**: VLM safety, causal mediation analysis, safety subspace projection, adversarial attack defense, dual-modal repair
 
@@ -49,8 +49,8 @@ Three steps: (1) layer-level causal tracing (ablation) → (2) dual-modal token 
 
 2. **Dual-Modal Token Attribution**:
 
-   - **Visual Attribution**: Cross-modal correlation between visual and text tokens is computed using an RBF kernel: $MI_i^v = \frac{s_i - s_{min}}{s_{max} - s_{min}}$, where $s_i = \|\tilde{K}_{i,:}\|_2^2$ is the L2 norm of rows of the centered cross-modal kernel matrix. The top-k visual tokens most correlated with the attack are selected.
-   - **Text Attribution**: A self-modal RBF kernel matrix is used to compute semantic independence scores for text tokens, selecting the most influential ones.
+    - **Visual Attribution**: Cross-modal correlation between visual and text tokens is computed using an RBF kernel: $MI_i^v = \frac{s_i - s_{min}}{s_{max} - s_{min}}$, where $s_i = \|\tilde{K}_{i,:}\|_2^2$ is the L2 norm of rows of the centered cross-modal kernel matrix. The top-k visual tokens most correlated with the attack are selected.
+    - **Text Attribution**: A self-modal RBF kernel matrix is used to compute semantic independence scores for text tokens, selecting the most influential ones.
    Design Motivation: Not all tokens are equally related to jailbreak behavior; focusing on high-attribution tokens enables more precise subsequent projection.
 
 3. **Safety Subspace Projection**: Activations $A_b, A_m$ at the target layer are collected from benign and malicious samples respectively. After centering, covariance matrices $C_b, C_m$ are computed, and generalized eigendecomposition $C_m u = \lambda C_b u$ identifies the directions of maximal malicious deviation. The top-k eigenvectors $U_k$ form the malicious subspace, and the safety projection operator is constructed as:

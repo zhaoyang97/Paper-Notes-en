@@ -18,7 +18,7 @@ content_hash: 70e7672da4bbf90d
 # Nonparametric Teaching of Attention Learners
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.20461](https://arxiv.org/abs/2602.20461)
+**arXiv**: [2602.20461](https://arxiv.org/abs/2602.20461)  
 **Area**: Training Efficiency / Learning Theory
 **Keywords**: nonparametric teaching, attention mechanism, functional gradient, training acceleration, kernel methods
 

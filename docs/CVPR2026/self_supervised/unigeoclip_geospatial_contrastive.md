@@ -18,8 +18,8 @@ content_hash: a9f5fe93831e22a9
 # UniGeoCLIP: Unified Geospatial Contrastive Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.11668](https://arxiv.org/abs/2604.11668)
-**Code**: [https://gastruc.github.io/unigeoclip](https://gastruc.github.io/unigeoclip)
+**arXiv**: [2604.11668](https://arxiv.org/abs/2604.11668)  
+**Code**: [https://gastruc.github.io/unigeoclip](https://gastruc.github.io/unigeoclip)  
 **Area**: Self-Supervised Learning
 **Keywords**: geospatial representation learning, contrastive learning, multimodal, coordinate encoding, unified embedding space
 

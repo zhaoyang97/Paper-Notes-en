@@ -18,8 +18,8 @@ content_hash: 7f4ba17075a2024f
 # Does YOLO Really Need to See Every Training Image in Every Epoch?
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17684](https://arxiv.org/abs/2603.17684)
-**Code**: None
+**arXiv**: [2603.17684](https://arxiv.org/abs/2603.17684)  
+**Code**: None  
 **Area**: Object Detection
 **Keywords**: YOLO, training acceleration, adaptive sampling, anti-forgetting, data-efficient learning
 

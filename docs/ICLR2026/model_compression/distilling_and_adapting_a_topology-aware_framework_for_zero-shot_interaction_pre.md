@@ -18,8 +18,8 @@ content_hash: ed557d0030ef7523
 # Distilling and Adapting: A Topology-Aware Framework for Zero-Shot Interaction Prediction in Multiplex Biological Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.06618](https://arxiv.org/abs/2603.06618)
-**Code**: [Available](https://github.com/alanadeng/CAZI-MBN)
+**arXiv**: [2603.06618](https://arxiv.org/abs/2603.06618)  
+**Code**: [Available](https://github.com/alanadeng/CAZI-MBN)  
 **Area**: Model Compression
 **Keywords**: multiplex biological networks, zero-shot prediction, knowledge distillation, graph Transformer, multimodal representation learning
 

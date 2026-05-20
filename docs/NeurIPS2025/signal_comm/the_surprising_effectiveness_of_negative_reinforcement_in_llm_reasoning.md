@@ -18,8 +18,8 @@ content_hash: 2670a3193af6e035
 # The Surprising Effectiveness of Negative Reinforcement in LLM Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01347](https://arxiv.org/abs/2506.01347)
-**Code**: [GitHub](https://github.com/TianHongZXY/RLVR-Decomposed)
+**arXiv**: [2506.01347](https://arxiv.org/abs/2506.01347)  
+**Code**: [GitHub](https://github.com/TianHongZXY/RLVR-Decomposed)  
 **Area**: Signal Communication
 **Keywords**: RLVR decomposition, negative sample reinforcement, positive sample reinforcement, Pass@k, Weighted-REINFORCE
 

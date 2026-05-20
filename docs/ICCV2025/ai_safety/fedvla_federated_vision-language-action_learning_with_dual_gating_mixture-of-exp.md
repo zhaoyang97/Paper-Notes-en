@@ -18,8 +18,8 @@ content_hash: 048ecc78337f2456
 # FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.02190](https://arxiv.org/abs/2508.02190)
-**Code**: None
+**arXiv**: [2508.02190](https://arxiv.org/abs/2508.02190)  
+**Code**: None  
 **Area**: AI Safety / Privacy Protection / Robotic Manipulation
 **Keywords**: Federated Learning, Vision-Language-Action Model, Mixture-of-Experts, Robotic Manipulation, Privacy Preservation
 

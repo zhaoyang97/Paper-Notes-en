@@ -18,8 +18,8 @@ content_hash: d711e8197f026e37
 # DAP-MAE: Domain-Adaptive Point Cloud Masked Autoencoder for Effective Cross-Domain Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.21635](https://arxiv.org/abs/2510.21635)
-**Code**: [https://github.com/CVI-SZU/DAP-MAE](https://github.com/CVI-SZU/DAP-MAE)
+**arXiv**: [2510.21635](https://arxiv.org/abs/2510.21635)  
+**Code**: [https://github.com/CVI-SZU/DAP-MAE](https://github.com/CVI-SZU/DAP-MAE)  
 **Area**: 3D Vision / Point Cloud Analysis / Self-Supervised Learning
 **Keywords**: masked autoencoder, cross-domain learning, point cloud, domain adaptation, self-supervised learning
 

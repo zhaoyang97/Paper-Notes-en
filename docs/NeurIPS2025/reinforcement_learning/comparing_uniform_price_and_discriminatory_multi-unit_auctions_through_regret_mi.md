@@ -18,8 +18,8 @@ content_hash: 47ae75bb682e4500
 # Comparing Uniform Price and Discriminatory Multi-Unit Auctions through Regret Minimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19591](https://arxiv.org/abs/2510.19591)
-**Code**: None
+**arXiv**: [2510.19591](https://arxiv.org/abs/2510.19591)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: multi-unit auctions, online learning, regret minimization, uniform-price auction, discriminatory auction
 

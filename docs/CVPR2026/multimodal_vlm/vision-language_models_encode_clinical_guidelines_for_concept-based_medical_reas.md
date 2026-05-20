@@ -18,8 +18,8 @@ content_hash: 115c2d937a5c54e2
 # Vision-Language Models Encode Clinical Guidelines for Concept-Based Medical Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.08921](https://arxiv.org/abs/2603.08921)
-**Code**: None
+**arXiv**: [2603.08921](https://arxiv.org/abs/2603.08921)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Concept Bottleneck Models, Medical Imaging, Explainable AI, Clinical Guidelines, CLIP
 

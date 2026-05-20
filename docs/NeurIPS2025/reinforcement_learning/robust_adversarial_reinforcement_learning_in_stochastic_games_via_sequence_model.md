@@ -18,8 +18,8 @@ content_hash: f5824b945f29c51e
 # Robust Adversarial Reinforcement Learning in Stochastic Games via Sequence Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11877](https://arxiv.org/abs/2510.11877)
-**Code**: Unavailable
+**arXiv**: [2510.11877](https://arxiv.org/abs/2510.11877)  
+**Code**: Unavailable  
 **Area**: Reinforcement Learning
 **Keywords**: Adversarial Robustness, Decision Transformer, Stochastic Games, NashQ, Expectile Regression
 

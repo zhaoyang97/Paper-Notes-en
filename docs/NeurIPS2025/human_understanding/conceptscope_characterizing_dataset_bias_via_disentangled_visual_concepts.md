@@ -18,8 +18,8 @@ content_hash: 0d39dfbee3042bae
 # ConceptScope: Characterizing Dataset Bias via Disentangled Visual Concepts
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26186](https://arxiv.org/abs/2510.26186)
-**Code**: [GitHub](https://github.com/jjho-choi/ConceptScope)
+**arXiv**: [2510.26186](https://arxiv.org/abs/2510.26186)  
+**Code**: [GitHub](https://github.com/jjho-choi/ConceptScope)  
 **Area**: Human Understanding
 **Keywords**: Dataset Bias, Sparse Autoencoder, Visual Concepts, Bias Detection, Interpretability
 

@@ -19,8 +19,8 @@ content_hash: a73e797ca849d6b6
 # Better Tokens for Better 3D: Advancing Vision-Language Modeling in 3D Medical Imaging
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20639](https://arxiv.org/abs/2510.20639)
-**Code**: [ibrahimethemhamamci/BTB3D](https://github.com/ibrahimethemhamamci/BTB3D)
+**arXiv**: [2510.20639](https://arxiv.org/abs/2510.20639)  
+**Code**: [ibrahimethemhamamci/BTB3D](https://github.com/ibrahimethemhamamci/BTB3D)  
 **Area**: Multimodal VLM
 **Keywords**: 3D medical VLM, CT tokenization, causal convolution, wavelet transform, report generation, text-to-CT synthesis
 

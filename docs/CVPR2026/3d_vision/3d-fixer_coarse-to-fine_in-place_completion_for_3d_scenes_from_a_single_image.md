@@ -18,8 +18,8 @@ content_hash: 2a6293c53d658ffb
 # 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04406](https://arxiv.org/abs/2604.04406)
-**Code**: [Project Page](https://zx-yin.github.io/3dfixer) (coming soon)
+**arXiv**: [2604.04406](https://arxiv.org/abs/2604.04406)  
+**Code**: [Project Page](https://zx-yin.github.io/3dfixer) (coming soon)  
 **Area**: 3D Vision
 **Keywords**: Single-image 3D scene generation, in-place completion, coarse-to-fine completion, occlusion robustness, large-scale scene dataset
 

@@ -18,8 +18,8 @@ content_hash: 83679905ca70cef4
 # DreamDance: Animating Human Images by Enriching 3D Geometry Cues from 2D Poses
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.00397](https://arxiv.org/abs/2412.00397)
-**Code**: [Project Page](https://pang-yatian.github.io/Dreamdance-webpage/)
+**arXiv**: [2412.00397](https://arxiv.org/abs/2412.00397)  
+**Code**: [Project Page](https://pang-yatian.github.io/Dreamdance-webpage/)  
 **Area**: Human Image Animation / Video Generation
 **Keywords**: Human image animation, depth-normal map generation, geometry attention, SVD ControlNet, cross-domain controller
 

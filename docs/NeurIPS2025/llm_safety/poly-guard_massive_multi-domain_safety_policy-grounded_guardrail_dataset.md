@@ -18,8 +18,8 @@ content_hash: 63a83bc77d197854
 # Poly-Guard: Massive Multi-Domain Safety Policy-Grounded Guardrail Dataset
 
 **Conference**: NeurIPS 2025 (Dataset & Benchmark)
-**arXiv**: [2506.19054](https://arxiv.org/abs/2506.19054)
-**Code**: [github.com/AI-secure/PolyGuard](https://github.com/AI-secure/PolyGuard)
+**arXiv**: [2506.19054](https://arxiv.org/abs/2506.19054)  
+**Code**: [github.com/AI-secure/PolyGuard](https://github.com/AI-secure/PolyGuard)  
 **Data**: [huggingface.co/datasets/AI-Secure/PolyGuard](https://huggingface.co/datasets/AI-Secure/PolyGuard)
 **Authors**: Mintong Kang, Zhaorun Chen, Chejian Xu, Jiawei Zhang, Chengquan Guo, Minzhou Pan, Ivan Revilla, Yu Sun, Bo Li
 **Affiliations**: UIUC, UChicago, CSU, Virtue AI

@@ -17,8 +17,8 @@ content_hash: 93fd1aab7993cade
 # Latent Equivariant Operators for Robust Object Recognition: Promises and Challenges
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.18406](https://arxiv.org/abs/2602.18406)
-**Code**: [GitHub](https://github.com/BRAIN-Aalto/equivariant_operator)
+**arXiv**: [2602.18406](https://arxiv.org/abs/2602.18406)  
+**Code**: [GitHub](https://github.com/BRAIN-Aalto/equivariant_operator)  
 **Area**: Robust Vision / Equivariant Learning
 **Keywords**: Equivariant Operators, OOD Generalization, Group Transformations, Latent Space, KNN Inference
 
@@ -46,27 +46,27 @@ The pipeline consists of two phases: training and inference. During training, gi
 
 1. **Shift Operator**:
 
-   - *Function*: Simulates the group action in latent space, mapping transformed representations back to a canonical pose.
-   - *Mechanism*: A cyclic shift matrix $M$ is constructed as the fundamental generator, with a $k$-degree transformation corresponding to $M^k$. The size of $M$ equals the order of the transformation group. A Kronecker product construction repeats the matrix along the diagonal to match the latent space dimensionality. The key property is that successive transformations compose additively in representation space: $T^{k_2} T^{k_1} x = f_E^{-1}(M^{k_1+k_2} f_E(x))$.
-   - *Design Motivation*: There is no need to explicitly know the transformation parameter of each input; only the cyclic order of the transformation group is required. The closure property of group actions guarantees extrapolation capability.
+    - *Function*: Simulates the group action in latent space, mapping transformed representations back to a canonical pose.
+    - *Mechanism*: A cyclic shift matrix $M$ is constructed as the fundamental generator, with a $k$-degree transformation corresponding to $M^k$. The size of $M$ equals the order of the transformation group. A Kronecker product construction repeats the matrix along the diagonal to match the latent space dimensionality. The key property is that successive transformations compose additively in representation space: $T^{k_2} T^{k_1} x = f_E^{-1}(M^{k_1+k_2} f_E(x))$.
+    - *Design Motivation*: There is no need to explicitly know the transformation parameter of each input; only the cyclic order of the transformation group is required. The closure property of group actions guarantees extrapolation capability.
 
 2. **Learned Operator**:
 
-   - *Function*: Replaces the predefined shift matrix with trainable parameters, allowing the operator to be adaptively learned from data.
-   - *Mechanism*: Initialized as the orthogonal factor $Q$ from a QR decomposition of a random matrix (ensuring a stable starting point) and jointly optimized. To enforce periodicity, an additional regularization term $\mathcal{L}_{op} = \|\varphi^N - I\|_2$ is introduced, where $N$ is the prescribed operator order (uniformly set to the latent space dimension of 70, much larger than the true transformation period, e.g., 10 for rotation or 7 for translation).
-   - *Design Motivation*: The predefined operator serves as an existence proof but may not be optimal within the full learning pipeline. The learned operator can adapt to data characteristics, but requires a periodicity prior to prevent degenerate solutions.
+    - *Function*: Replaces the predefined shift matrix with trainable parameters, allowing the operator to be adaptively learned from data.
+    - *Mechanism*: Initialized as the orthogonal factor $Q$ from a QR decomposition of a random matrix (ensuring a stable starting point) and jointly optimized. To enforce periodicity, an additional regularization term $\mathcal{L}_{op} = \|\varphi^N - I\|_2$ is introduced, where $N$ is the prescribed operator order (uniformly set to the latent space dimension of 70, much larger than the true transformation period, e.g., 10 for rotation or 7 for translation).
+    - *Design Motivation*: The predefined operator serves as an existence proof but may not be optimal within the full learning pipeline. The learned operator can adapt to data characteristics, but requires a periodicity prior to prevent degenerate solutions.
 
 3. **Compound Transformation Decomposition**:
 
-   - *Function*: Handles simultaneous multi-axis transformations (e.g., joint X and Y translation).
-   - *Mechanism*: During training, only single-axis transformations are used—separate views are generated for X-axis and Y-axis transformations for each sample, normalized independently via stacked encoders and corresponding inverse operators, with a consistency loss $\mathcal{L}_{reg} = \|Z_x - Z_y\|_2^2$ enforcing alignment. At inference, inverse operators for each axis are applied sequentially to recover the canonical representation.
-   - *Design Motivation*: Directly enumerating all transformation combinations requires $O(N^M)$ samples, whereas decomposing into single-axis transformations requires only $O(NM)$, substantially reducing data requirements and operator space size.
+    - *Function*: Handles simultaneous multi-axis transformations (e.g., joint X and Y translation).
+    - *Mechanism*: During training, only single-axis transformations are used—separate views are generated for X-axis and Y-axis transformations for each sample, normalized independently via stacked encoders and corresponding inverse operators, with a consistency loss $\mathcal{L}_{reg} = \|Z_x - Z_y\|_2^2$ enforcing alignment. At inference, inverse operators for each axis are applied sequentially to recover the canonical representation.
+    - *Design Motivation*: Directly enumerating all transformation combinations requires $O(N^M)$ samples, whereas decomposing into single-axis transformations requires only $O(NM)$, substantially reducing data requirements and operator space size.
 
 4. **K-Nearest Neighbor Inference**:
 
-   - *Function*: Estimates transformation parameters of test inputs without transformation labels at inference time.
-   - *Mechanism*: A class-agnostic reference database $\mathcal{R} = \{r_j = \varphi^{-\ell_j} f(x_j)\}$ is constructed in advance. For a test input, embeddings $z_\ell = f(\varphi_\ell(x))$ are computed over all candidate transformations. Euclidean distances to reference embeddings are computed, and the most likely transformation is selected via Top-K voting: $\hat{\ell} = \text{mode}(\text{TopK}(\{\|z_\ell - r_j\|_2\}_{\ell,j}))$.
-   - *Design Motivation*: Not requiring transformation parameters at test time is one of the core advantages of this approach; KNN provides a simple and effective estimation mechanism.
+    - *Function*: Estimates transformation parameters of test inputs without transformation labels at inference time.
+    - *Mechanism*: A class-agnostic reference database $\mathcal{R} = \{r_j = \varphi^{-\ell_j} f(x_j)\}$ is constructed in advance. For a test input, embeddings $z_\ell = f(\varphi_\ell(x))$ are computed over all candidate transformations. Euclidean distances to reference embeddings are computed, and the most likely transformation is selected via Top-K voting: $\hat{\ell} = \text{mode}(\text{TopK}(\{\|z_\ell - r_j\|_2\}_{\ell,j}))$.
+    - *Design Motivation*: Not requiring transformation parameters at test time is one of the core advantages of this approach; KNN provides a simple and effective estimation mechanism.
 
 ### Loss & Training
 The total loss is:

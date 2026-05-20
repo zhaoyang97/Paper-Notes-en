@@ -19,8 +19,8 @@ content_hash: 170e234658c3d32d
 # UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.00992](https://arxiv.org/abs/2507.00992)
-**Code**: Not released
+**arXiv**: [2507.00992](https://arxiv.org/abs/2507.00992)  
+**Code**: Not released  
 **Area**: Image Segmentation
 **Keywords**: Visual text generation, segmentation mask conditioning, diffusion models, bilingual glyph, small-font generation, ControlNet
 

@@ -18,8 +18,8 @@ content_hash: e88a2adf177fe016
 # Scheduling Weight Transitions for Quantization-Aware Training
 
 **Conference**: ICCV 2025
-**arXiv**: [2404.19248](https://arxiv.org/abs/2404.19248)
-**Code**: [https://cvlab.yonsei.ac.kr/projects/TRS/](https://cvlab.yonsei.ac.kr/projects/TRS/)
+**arXiv**: [2404.19248](https://arxiv.org/abs/2404.19248)  
+**Code**: [https://cvlab.yonsei.ac.kr/projects/TRS/](https://cvlab.yonsei.ac.kr/projects/TRS/)  
 **Area**: Model Compression
 **Keywords**: Quantization-aware training, transition rate scheduling, adaptive learning rate, network quantization, low-bit precision
 

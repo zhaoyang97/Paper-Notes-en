@@ -18,8 +18,8 @@ content_hash: bc2f3cecf5b62cbb
 # Difference Vector Equalization for Robust Fine-tuning of Vision-Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09973](https://arxiv.org/abs/2511.09973)
-**Code**: No public code
+**arXiv**: [2511.09973](https://arxiv.org/abs/2511.09973)  
+**Code**: No public code  
 **Area**: Multimodal VLM
 **Keywords**: CLIP fine-tuning, robust fine-tuning, embedding geometry preservation, out-of-distribution generalization, zero-shot performance
 

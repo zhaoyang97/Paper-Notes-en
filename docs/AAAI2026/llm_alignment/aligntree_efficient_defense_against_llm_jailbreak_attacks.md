@@ -18,8 +18,8 @@ content_hash: 4627e7b4ad227e8f
 # AlignTree: Efficient Defense Against LLM Jailbreak Attacks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12217v1](https://arxiv.org/abs/2511.12217v1)
-**Code**: [https://github.com/Gilgo2/AlignTree](https://github.com/Gilgo2/AlignTree)
+**arXiv**: [2511.12217v1](https://arxiv.org/abs/2511.12217v1)  
+**Code**: [https://github.com/Gilgo2/AlignTree](https://github.com/Gilgo2/AlignTree)  
 **Area**: LLM Alignment
 **Keywords**: LLM Safety, Jailbreak Attack Defense, Random Forest Classifier, Refusal Direction, SVM
 

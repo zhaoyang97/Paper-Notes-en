@@ -18,8 +18,8 @@ content_hash: c9de68b66fc816a6
 # Foundation Cures Personalization: Improving Personalized Models' Prompt Consistency via Hidden Foundation Knowledge
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.15277](https://arxiv.org/abs/2411.15277)
-**Code**: [Project Page](https://yiyangcai.github.io/freecure-aigc.github.io/)
+**arXiv**: [2411.15277](https://arxiv.org/abs/2411.15277)  
+**Code**: [Project Page](https://yiyangcai.github.io/freecure-aigc.github.io/)  
 **Area**: Human Understanding
 **Keywords**: Face Personalization, Diffusion Models, Prompt Consistency, Training-Free, Self-Attention
 

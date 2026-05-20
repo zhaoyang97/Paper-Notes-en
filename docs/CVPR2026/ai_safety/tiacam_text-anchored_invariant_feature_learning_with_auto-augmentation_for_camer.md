@@ -20,8 +20,8 @@ content_hash: e375c640f2d72cad
 # TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking
 
 **Conference**: CVPR2026
-**arXiv**: [2602.18863](https://arxiv.org/abs/2602.18863)
-**Code**: To be confirmed
+**arXiv**: [2602.18863](https://arxiv.org/abs/2602.18863)  
+**Code**: To be confirmed  
 **Area**: Object Detection (actually Multimedia Security / Watermarking)
 **Keywords**: Zero-watermarking, cross-modal alignment, learnable data augmentation, camera robustness, CLIP, adversarial training, invariant feature learning
 

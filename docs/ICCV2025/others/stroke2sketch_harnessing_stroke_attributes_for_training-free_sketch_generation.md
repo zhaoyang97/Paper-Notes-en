@@ -17,8 +17,8 @@ content_hash: cb71d67e67c01495
 # Stroke2Sketch: Harnessing Stroke Attributes for Training-Free Sketch Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.16319](https://arxiv.org/abs/2510.16319)
-**Code**: [https://github.com/rane7/Stroke2Sketch](https://github.com/rane7/Stroke2Sketch)
+**arXiv**: [2510.16319](https://arxiv.org/abs/2510.16319)  
+**Code**: [https://github.com/rane7/Stroke2Sketch](https://github.com/rane7/Stroke2Sketch)  
 **Area**: Sketch Generation / Style Transfer
 **Keywords**: sketch generation, stroke attribute transfer, training-free, diffusion models, cross-image attention
 

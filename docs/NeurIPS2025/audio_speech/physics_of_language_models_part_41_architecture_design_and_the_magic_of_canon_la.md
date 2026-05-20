@@ -18,8 +18,8 @@ content_hash: 6c1b25e5496cb8fd
 # Physics of Language Models: Part 4.1, Architecture Design and the Magic of Canon Layers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.17351](https://arxiv.org/abs/2512.17351)
-**Code**: Available (github.com/facebookresearch/PhysicsLM4)
+**arXiv**: [2512.17351](https://arxiv.org/abs/2512.17351)  
+**Code**: Available (github.com/facebookresearch/PhysicsLM4)  
 **Area**: Audio & Speech
 **Keywords**: Canon layer, horizontal information flow, synthetic pretraining, architecture comparison, linear attention
 

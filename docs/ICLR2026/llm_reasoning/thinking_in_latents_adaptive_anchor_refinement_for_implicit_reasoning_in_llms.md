@@ -18,8 +18,8 @@ content_hash: 7953455c92088609
 # Thinking in Latents: Adaptive Anchor Refinement for Implicit Reasoning in LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.15051](https://arxiv.org/abs/2603.15051)
-**Code**: None
+**arXiv**: [2603.15051](https://arxiv.org/abs/2603.15051)  
+**Code**: None  
 **Area**: LLM Reasoning / Efficiency
 **Keywords**: latent-space reasoning, adaptive stopping, anchor vectors, CoT compression, implicit computation
 

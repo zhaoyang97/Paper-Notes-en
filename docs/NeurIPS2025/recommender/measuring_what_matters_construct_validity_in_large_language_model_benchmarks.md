@@ -18,8 +18,8 @@ content_hash: f7ff57a48d875342
 # Measuring What Matters: Construct Validity in Large Language Model Benchmarks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.04703](https://arxiv.org/abs/2511.04703)
-**Code**: None
+**arXiv**: [2511.04703](https://arxiv.org/abs/2511.04703)  
+**Code**: None  
 **Area**: Recommender Systems
 **Keywords**: LLM evaluation, benchmark, construct validity, systematic review, evaluation methodology
 

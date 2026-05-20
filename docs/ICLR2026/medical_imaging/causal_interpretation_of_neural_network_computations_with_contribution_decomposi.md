@@ -18,8 +18,8 @@ content_hash: dad8018abf49e58f
 # Causal Interpretation of Neural Network Computations with Contribution Decomposition
 
 **Conference**: ICLR2026
-**arXiv**: [2603.06557](https://arxiv.org/abs/2603.06557)
-**Code**: [https://github.com/baccuslab/CODEC_ICLR_2026](https://github.com/baccuslab/CODEC_ICLR_2026)
+**arXiv**: [2603.06557](https://arxiv.org/abs/2603.06557)  
+**Code**: [https://github.com/baccuslab/CODEC_ICLR_2026](https://github.com/baccuslab/CODEC_ICLR_2026)  
 **Area**: Medical Imaging
 **Keywords**: neural network interpretability, contribution decomposition, sparse autoencoder, causal analysis, retinal modeling
 

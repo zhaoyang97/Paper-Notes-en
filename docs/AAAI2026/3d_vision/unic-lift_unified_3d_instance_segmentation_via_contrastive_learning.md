@@ -18,8 +18,8 @@ content_hash: b2bff2a9a5c1fd56
 # UniC-Lift: Unified 3D Instance Segmentation via Contrastive Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.24763](https://arxiv.org/abs/2512.24763)
-**Code**: [github.com/val-iisc/UniC-Lift](https://github.com/val-iisc/UniC-Lift)
+**arXiv**: [2512.24763](https://arxiv.org/abs/2512.24763)  
+**Code**: [github.com/val-iisc/UniC-Lift](https://github.com/val-iisc/UniC-Lift)  
 **Area**: 3D Vision
 **Keywords**: 3D instance segmentation, 3D Gaussian splatting, contrastive learning, multi-view consistency, embedding-to-label
 

@@ -18,8 +18,8 @@ content_hash: e3e5bb65f6bba34f
 # Explainable Melanoma Diagnosis with Contrastive Learning and LLM-based Report Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.06105](https://arxiv.org/abs/2512.06105)
-**Code**: [https://eattt-wen.github.io/CEFM/](https://eattt-wen.github.io/CEFM/)
+**arXiv**: [2512.06105](https://arxiv.org/abs/2512.06105)  
+**Code**: [https://eattt-wen.github.io/CEFM/](https://eattt-wen.github.io/CEFM/)  
 **Area**: Interpretability
 **Keywords**: Melanoma Diagnosis, Contrastive Learning, Explainable AI, ABCD Rule, Report Generation
 

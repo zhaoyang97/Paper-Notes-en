@@ -18,8 +18,8 @@ content_hash: 898a600fc4fcaa63
 # Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25827](https://arxiv.org/abs/2509.25827)
-**Code**: [github.com/pixas/DECS](https://github.com/pixas/DECS)
+**arXiv**: [2509.25827](https://arxiv.org/abs/2509.25827)  
+**Code**: [github.com/pixas/DECS](https://github.com/pixas/DECS)  
 **Area**: Medical Imaging
 **Keywords**: overthinking, decoupled rewards, curriculum learning, RLVR, NRP
 
@@ -50,19 +50,19 @@ This paper theoretically identifies two fundamental flaws in existing length-pen
 ### Key Designs
 
 1. **NRP Detection and Decoupled Reward**:
-   - **Function**: Precisely identify the boundary in each correct trajectory beyond which the correct answer can already be derived, and assign differentiated token-level rewards accordingly.
-   - **Mechanism**: A lightweight model $\mathcal{M}_{\text{judge}}$ segments the reasoning process into chunks $\{s_1, \ldots, s_{|S|}\}$ and judges whether each chunk already contains the correct answer: $j_{s_c} \sim \mathcal{M}_{\text{judge}}(\cdot | q, s_c, y^*)$. The NRP is defined as the first chunk containing the correct answer together with all preceding chunks. Token-level rewards are: $r_{i,j} = r_+ \cdot \mathbf{1}_{\text{correct}}$ (when $j \leq K_{o_i}^*$), or $r_{i,j} = (r_0 - (r_+ - r_0)L_i/L_{\max}) \cdot \mathbf{1}_{\text{correct}}$ (when $j > K_{o_i}^*$ and the token is a thinking token).
-   - **Design Motivation**: Theorem 2 proves that under sequence-level length rewards, the gradient signal for the first redundant token immediately following the NRP satisfies $\mathcal{J}(A; j=K^*+1) > 0$—i.e., the model is encouraged to continue generating rather than stopping. The decoupled reward ensures any leading redundant token beyond the NRP receives a negative advantage, thereby exploiting the autoregressive property to suppress the entire redundant segment.
+    - **Function**: Precisely identify the boundary in each correct trajectory beyond which the correct answer can already be derived, and assign differentiated token-level rewards accordingly.
+    - **Mechanism**: A lightweight model $\mathcal{M}_{\text{judge}}$ segments the reasoning process into chunks $\{s_1, \ldots, s_{|S|}\}$ and judges whether each chunk already contains the correct answer: $j_{s_c} \sim \mathcal{M}_{\text{judge}}(\cdot | q, s_c, y^*)$. The NRP is defined as the first chunk containing the correct answer together with all preceding chunks. Token-level rewards are: $r_{i,j} = r_+ \cdot \mathbf{1}_{\text{correct}}$ (when $j \leq K_{o_i}^*$), or $r_{i,j} = (r_0 - (r_+ - r_0)L_i/L_{\max}) \cdot \mathbf{1}_{\text{correct}}$ (when $j > K_{o_i}^*$ and the token is a thinking token).
+    - **Design Motivation**: Theorem 2 proves that under sequence-level length rewards, the gradient signal for the first redundant token immediately following the NRP satisfies $\mathcal{J}(A; j=K^*+1) > 0$—i.e., the model is encouraged to continue generating rather than stopping. The decoupled reward ensures any leading redundant token beyond the NRP receives a negative advantage, thereby exploiting the autoregressive property to suppress the entire redundant segment.
 
 2. **Curriculum Prompt Schedule**:
-   - **Function**: Adaptively control the proportion of easy samples (prompts for which all rollouts are correct) in training batches.
-   - **Mechanism**: $\kappa_m = \text{clip}(\kappa_{m-1} + \beta(\mathcal{R}_m - \mathcal{R}_{m-1}), 0, \kappa_m^0)$, where $\mathcal{R}_m$ is the NRP ratio among correct sequences in the current batch. When the NRP ratio increases (i.e., redundancy decreases), more easy samples are permitted in training. Theorem 1 provides the condition $\kappa \sigma_L < C$ for maintaining the generation probability of high-entropy tokens.
-   - **Design Motivation**: Easy samples are the primary source of efficiency gains (since length becomes the only discriminating signal when all rollouts are correct), but an excessive proportion of easy samples causes the logit decline of high-entropy tokens to dominate the batch gradient, leading to performance degradation. Curriculum scheduling achieves a dynamic balance between exploration and compression.
+    - **Function**: Adaptively control the proportion of easy samples (prompts for which all rollouts are correct) in training batches.
+    - **Mechanism**: $\kappa_m = \text{clip}(\kappa_{m-1} + \beta(\mathcal{R}_m - \mathcal{R}_{m-1}), 0, \kappa_m^0)$, where $\mathcal{R}_m$ is the NRP ratio among correct sequences in the current batch. When the NRP ratio increases (i.e., redundancy decreases), more easy samples are permitted in training. Theorem 1 provides the condition $\kappa \sigma_L < C$ for maintaining the generation probability of high-entropy tokens.
+    - **Design Motivation**: Easy samples are the primary source of efficiency gains (since length becomes the only discriminating signal when all rollouts are correct), but an excessive proportion of easy samples causes the logit decline of high-entropy tokens to dominate the batch gradient, leading to performance degradation. Curriculum scheduling achieves a dynamic balance between exploration and compression.
 
 3. **Theoretical Analysis Framework**:
-   - **Function**: Provide theoretical grounding for the method design.
-   - **Mechanism**: Lemma 1 establishes a linear relationship between logit changes and advantages under policy gradient; Lemma 2 proves that length penalties cause the expected logit change of high-entropy tokens to be strictly negative; Theorem 1 gives a necessary and sufficient condition for maintaining high-entropy tokens during batch learning; Theorem 2 proves that sequence-level length rewards cannot halt generation at the NRP boundary.
-   - **Design Motivation**: The failure of existing methods is not an accidental empirical phenomenon but is theoretically grounded—this directly guides the precise design of decoupled rewards and curriculum scheduling.
+    - **Function**: Provide theoretical grounding for the method design.
+    - **Mechanism**: Lemma 1 establishes a linear relationship between logit changes and advantages under policy gradient; Lemma 2 proves that length penalties cause the expected logit change of high-entropy tokens to be strictly negative; Theorem 1 gives a necessary and sufficient condition for maintaining high-entropy tokens during batch learning; Theorem 2 proves that sequence-level length rewards cannot halt generation at the NRP boundary.
+    - **Design Motivation**: The failure of existing methods is not an accidental empirical phenomenon but is theoretically grounded—this directly guides the precise design of decoupled rewards and curriculum scheduling.
 
 ### Loss & Training
 

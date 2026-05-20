@@ -18,8 +18,8 @@ content_hash: 919141a9f697d955
 # SceneWeaver: All-in-One 3D Scene Synthesis with an Extensible and Self-Reflective Agent
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20414](https://arxiv.org/abs/2509.20414)
-**Code**: [Project Page](https://scene-weaver.github.io/)
+**arXiv**: [2509.20414](https://arxiv.org/abs/2509.20414)  
+**Code**: [Project Page](https://scene-weaver.github.io/)  
 **Area**: 3D Vision
 **Keywords**: 3D scene synthesis, LLM agent, self-reflection, tool calling, embodied AI
 

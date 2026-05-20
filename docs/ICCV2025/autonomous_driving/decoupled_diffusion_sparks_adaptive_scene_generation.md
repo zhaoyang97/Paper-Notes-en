@@ -18,8 +18,8 @@ content_hash: 5bff3410beffce5b
 # Decoupled Diffusion Sparks Adaptive Scene Generation
 
 **Conference**: ICCV2025
-**arXiv**: [2504.10485](https://arxiv.org/abs/2504.10485)
-**Code**: [opendrivelab.com/Nexus](https://opendrivelab.com/Nexus)
+**arXiv**: [2504.10485](https://arxiv.org/abs/2504.10485)  
+**Code**: [opendrivelab.com/Nexus](https://opendrivelab.com/Nexus)  
 **Area**: Autonomous Driving
 **Keywords**: Scene Generation, Decoupled Diffusion, Autonomous Driving Simulation, Safety-Critical Scenes, Traffic Layout
 

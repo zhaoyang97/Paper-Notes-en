@@ -18,8 +18,8 @@ content_hash: 1b56078abc4c4fac
 # Group-in-Group Policy Optimization for LLM Agent Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.10978](https://arxiv.org/abs/2505.10978)
-**Code**: [https://github.com/langfengQ/verl-agent](https://github.com/langfengQ/verl-agent)
+**arXiv**: [2505.10978](https://arxiv.org/abs/2505.10978)  
+**Code**: [https://github.com/langfengQ/verl-agent](https://github.com/langfengQ/verl-agent)  
 **Area**: LLM Agent / Reinforcement Learning
 **Keywords**: GiGPO, credit assignment, anchor state grouping, multi-turn agent, GRPO
 
@@ -49,25 +49,25 @@ GiGPO employs a two-level advantage estimation scheme: (1) an episode-level macr
 
 1. **Episode Relative Advantage $A_E$**
 
-   - **Function**: Captures the overall quality of a trajectory.
-   - **Mechanism**: Normalizes the total return $R(\tau_i) = \sum_t r_t^{(i)}$ across $N$ trajectories: $A_E(\tau_i) = \frac{R(\tau_i) - \text{mean}}{F_{\text{norm}}}$.
-   - **Design Motivation**: Provides a stable global training signal that encourages the policy to develop coherent trajectory-level behavior.
+    - **Function**: Captures the overall quality of a trajectory.
+    - **Mechanism**: Normalizes the total return $R(\tau_i) = \sum_t r_t^{(i)}$ across $N$ trajectories: $A_E(\tau_i) = \frac{R(\tau_i) - \text{mean}}{F_{\text{norm}}}$.
+    - **Design Motivation**: Provides a stable global training signal that encourages the policy to develop coherent trajectory-level behavior.
 
 2. **Anchor State Grouping**
 
-   - **Function**: Constructs step-level contrastive groups at zero additional cost.
-   - **Mechanism**: Identifies the set $\mathcal{U}$ of unique environment states appearing across all trajectories. For each state $\tilde{s}$, all (action, return) pairs departing from that state are collected to form a step-level group $G_S(\tilde{s})$. Implementation requires only lightweight hashmap key matching without triggering any additional LLM inference.
-   - **Design Motivation**: Agents naturally revisit states during exploration (e.g., returning to the same webpage, room, or search result). These natural recurrences provide free data for step-level comparison.
+    - **Function**: Constructs step-level contrastive groups at zero additional cost.
+    - **Mechanism**: Identifies the set $\mathcal{U}$ of unique environment states appearing across all trajectories. For each state $\tilde{s}$, all (action, return) pairs departing from that state are collected to form a step-level group $G_S(\tilde{s})$. Implementation requires only lightweight hashmap key matching without triggering any additional LLM inference.
+    - **Design Motivation**: Agents naturally revisit states during exploration (e.g., returning to the same webpage, room, or search result). These natural recurrences provide free data for step-level comparison.
 
 3. **Step Relative Advantage $A_S$**
 
-   - **Function**: Evaluates the relative quality of different actions taken from the same state.
-   - **Mechanism**: Computes the discounted return $R_t^{(i)} = \sum_{k=t}^{T} \gamma^{k-t} r_k^{(i)}$ for each action within a step-level group, followed by within-group normalization. For example, in WebShop, among actions taken from the same search result page, clicking on the correct item and successfully completing the purchase receives the highest $A_S$.
-   - **Design Motivation**: Using discounted returns rather than immediate rewards $r_t$ captures the long-term consequences of actions.
+    - **Function**: Evaluates the relative quality of different actions taken from the same state.
+    - **Mechanism**: Computes the discounted return $R_t^{(i)} = \sum_{k=t}^{T} \gamma^{k-t} r_k^{(i)}$ for each action within a step-level group, followed by within-group normalization. For example, in WebShop, among actions taken from the same search result page, clicking on the correct item and successfully completing the purchase receives the highest $A_S$.
+    - **Design Motivation**: Using discounted returns rather than immediate rewards $r_t$ captures the long-term consequences of actions.
 
 4. **Similarity-based Grouping (Extension)**
 
-   - **Function**: Handles scenarios where exact state matching is infeasible (e.g., QA tasks where search results differ slightly), using longest common subsequence similarity >0.9 for approximate grouping.
+    - **Function**: Handles scenarios where exact state matching is infeasible (e.g., QA tasks where search results differ slightly), using longest common subsequence similarity >0.9 for approximate grouping.
 
 ### Loss & Training
 - Standard PPO-clip objective with KL regularization; advantage replaced by $A = A_E + \omega \cdot A_S$.

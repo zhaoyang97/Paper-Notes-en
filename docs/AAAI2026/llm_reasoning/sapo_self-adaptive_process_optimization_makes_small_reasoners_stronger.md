@@ -18,8 +18,8 @@ content_hash: ceec10a6ef9b2f3a
 # SAPO: Self-Adaptive Process Optimization Makes Small Reasoners Stronger
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.20312](https://arxiv.org/abs/2601.20312)
-**Code**: N/A
+**arXiv**: [2601.20312](https://arxiv.org/abs/2601.20312)  
+**Code**: N/A  
 **Area**: LLM Reasoning
 **Keywords**: process supervision, self-evolution, first error detection, small language models, reasoner-verifier gap
 
@@ -50,24 +50,24 @@ SAPO adopts an iterative explore-exploit paradigm. In each iteration: the verifi
 ### Key Designs
 1. **First Error Detection**
 
-   - Function: The verifier $V$ scores each step in a trajectory, and the position with the largest score drop is identified as the candidate first error location.
-   - Mechanism: Computes score differences between adjacent steps $\Delta_j = \hat{c}_{j-1} - \hat{c}_j$, and selects $\hat{t} = \arg\max_j \Delta_j$.
-   - Design Motivation: The first error position alone is sufficient to provide effective process supervision (Uesato et al. 2022), eliminating the need to annotate every step.
+    - Function: The verifier $V$ scores each step in a trajectory, and the position with the largest score drop is identified as the candidate first error location.
+    - Mechanism: Computes score differences between adjacent steps $\Delta_j = \hat{c}_{j-1} - \hat{c}_j$, and selects $\hat{t} = \arg\max_j \Delta_j$.
+    - Design Motivation: The first error position alone is sufficient to provide effective process supervision (Uesato et al. 2022), eliminating the need to annotate every step.
 
 2. **Self-Verification**
 
-   - Function: The reasoner performs posterior estimation at the verifier-predicted first error location to correct pre-annotated labels.
-   - Mechanism: Rollout verification is conducted only at positions $\hat{t}-1$ and $\hat{t}$, covering three cases:
+    - Function: The reasoner performs posterior estimation at the verifier-predicted first error location to correct pre-annotated labels.
+    - Mechanism: Rollout verification is conducted only at positions $\hat{t}-1$ and $\hat{t}$, covering three cases:
      - Case (a): $c_{\hat{t}-1}=1, c_{\hat{t}}=0$ → prediction is correct.
      - Case (b): $c_{\hat{t}-1}=1, c_{\hat{t}}=1$ → first error lies further ahead ($\hat{t}<t$); extend correct labels.
      - Case (c): $c_{\hat{t}-1}=0, c_{\hat{t}}=0$ → first error occurred earlier ($\hat{t}>t$); shift error label backward.
-   - Design Motivation: Only 2 rollouts are required for verification, compared to full step-wise rollouts under MC estimation.
+    - Design Motivation: Only 2 rollouts are required for verification, compared to full step-wise rollouts under MC estimation.
 
 3. **Expansion**
 
-   - Function: Leverages trajectories generated during rollout to improve the generalization of verification.
-   - Mechanism: If $c_{\hat{t}}=1$, all steps of the correct trajectory prefixed by $s_{(0:\hat{t})}$ are labeled correct; if $c_{\hat{t}}=0$, all suffixes starting from $s_{\hat{t}}$ are labeled incorrect.
-   - Design Motivation: Rollouts naturally yield diverse samples that can be reused to augment PRM training data.
+    - Function: Leverages trajectories generated during rollout to improve the generalization of verification.
+    - Mechanism: If $c_{\hat{t}}=1$, all steps of the correct trajectory prefixed by $s_{(0:\hat{t})}$ are labeled correct; if $c_{\hat{t}}=0$, all suffixes starting from $s_{\hat{t}}$ are labeled incorrect.
+    - Design Motivation: Rollouts naturally yield diverse samples that can be reused to augment PRM training data.
 
 ### Loss & Training
 - **Verifier Training**: A classification PRM trained with MSE loss — $\mathcal{L}_{PRM} = \frac{1}{n}\sum_i\sum_j(f(s_{(0:j)}^i;q) - c^k)^2$

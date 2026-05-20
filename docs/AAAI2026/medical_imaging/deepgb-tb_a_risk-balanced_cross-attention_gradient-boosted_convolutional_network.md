@@ -18,8 +18,8 @@ content_hash: 6cf5770a88638f70
 # DeepGB-TB: A Risk-Balanced Cross-Attention Gradient-Boosted Convolutional Network for Rapid, Interpretable Tuberculosis Screening
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.02741](https://arxiv.org/abs/2508.02741)
-**Code**: None
+**arXiv**: [2508.02741](https://arxiv.org/abs/2508.02741)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: tuberculosis screening, cough audio, multimodal fusion, cross-attention, imbalanced loss
 

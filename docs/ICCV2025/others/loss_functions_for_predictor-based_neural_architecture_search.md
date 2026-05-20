@@ -17,8 +17,8 @@ content_hash: ee96d9217690ec7a
 # Loss Functions for Predictor-based Neural Architecture Search
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.05869](https://arxiv.org/abs/2506.05869)
-**Code**: N/A
+**arXiv**: [2506.05869](https://arxiv.org/abs/2506.05869)  
+**Code**: N/A  
 **Area**: Neural Architecture Search
 **Keywords**: Neural Architecture Search, Performance Predictor, Loss Functions, Learning to Rank, Weighted Loss
 

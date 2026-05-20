@@ -18,8 +18,8 @@ content_hash: f311d72bd41b6ae3
 # Rep-MTL: Unleashing the Power of Representation-Level Task Saliency for Multi-Task Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.21049](https://arxiv.org/abs/2507.21049)
-**Code**: None (project page available)
+**arXiv**: [2507.21049](https://arxiv.org/abs/2507.21049)  
+**Code**: None (project page available)  
 **Area**: Robotics
 **Keywords**: Multi-task learning, task saliency, representation space, contrastive learning, negative transfer mitigation
 

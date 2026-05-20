@@ -17,8 +17,8 @@ content_hash: 33384dc14011e9bd
 # Toward Material-Agnostic System Identification from Videos
 
 **Conference**: ICCV2025
-**arXiv**: [2508.01112](https://arxiv.org/abs/2508.01112)
-**Code**: [Skaldak/MASIV](https://github.com/Skaldak/MASIV)
+**arXiv**: [2508.01112](https://arxiv.org/abs/2508.01112)  
+**Code**: [Skaldak/MASIV](https://github.com/Skaldak/MASIV)  
 **Area**: Physical Simulation / System Identification / Differentiable Rendering
 **Keywords**: system identification, neural constitutive model, material point method, 3D Gaussian splatting, differentiable simulation
 

@@ -17,8 +17,8 @@ content_hash: ccb8024a08c74979
 # On the Information Processing of One-Dimensional Wasserstein Distances with Finite Samples
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12881](https://arxiv.org/abs/2511.12881)
-**Code**: [GitHub](https://github.com/cheongjae/one-dim-wasserstein)
+**arXiv**: [2511.12881](https://arxiv.org/abs/2511.12881)  
+**Code**: [GitHub](https://github.com/cheongjae/one-dim-wasserstein)  
 **Area**: Statistical Learning Theory / Optimal Transport
 **Keywords**: Wasserstein Distance, Finite Samples, Poisson Process, Rate Coding, Support Difference
 

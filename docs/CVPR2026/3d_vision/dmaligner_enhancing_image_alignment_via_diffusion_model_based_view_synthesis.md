@@ -18,8 +18,8 @@ content_hash: 51da9c2c0ae0734c
 # DMAligner: Enhancing Image Alignment via Diffusion Model Based View Synthesis
 
 **Conference**: CVPR2026
-**arXiv**: [2602.23022](https://arxiv.org/abs/2602.23022)
-**Code**: [boomluo02/DMAligner](https://github.com/boomluo02/DMAligner)
+**arXiv**: [2602.23022](https://arxiv.org/abs/2602.23022)  
+**Code**: [boomluo02/DMAligner](https://github.com/boomluo02/DMAligner)  
 **Area**: 3D Vision
 **Keywords**: image alignment, diffusion model, view synthesis, dynamic scenes, occlusion handling
 

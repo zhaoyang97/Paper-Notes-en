@@ -17,8 +17,8 @@ content_hash: 795e62dd85f723ab
 # Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00859](https://arxiv.org/abs/2511.00859)
-**Code**: N/A
+**arXiv**: [2511.00859](https://arxiv.org/abs/2511.00859)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: interpretability, sensor fusion, autonomous driving, modality decomposition, LRP
 
@@ -62,9 +62,9 @@ This paper proposes LMD (Layer-Wise Modality Decomposition), a post-hoc, model-a
 - **Function**: Decompose BatchNorm and LayerNorm into modality-specific terms and bias terms, and achieve modality separation via different bias allocation rules (identity/uniform/ratio).
 - **Why**: The bias terms in normalization layers (mean subtraction and affine $\beta$) do not belong to any specific modality and must be allocated appropriately to maintain separation; LayerNorm's variance depends on the current input and requires special handling.
 - **How**:
-  - **BatchNorm**: Statistics are fixed after training; the identity rule is applied to uniformly assign the bias to the bias term ($\delta_c = \delta_r = 0,\ \delta_b = 1$).
-  - **LayerNorm**: Variance is cached as a constant from the first forward pass; the ratio rule is applied—each modality is independently centered by computing its mean over the spatial dimension.
-  - Experiments confirm that the identity (BN) + ratio (LN) combination achieves the best modality separation.
+    - **BatchNorm**: Statistics are fixed after training; the identity rule is applied to uniformly assign the bias to the bias term ($\delta_c = \delta_r = 0,\ \delta_b = 1$).
+    - **LayerNorm**: Variance is cached as a constant from the first forward pass; the ratio rule is applied—each modality is independently centered by computing its mean over the spatial dimension.
+    - Experiments confirm that the identity (BN) + ratio (LN) combination achieves the best modality separation.
 
 ### Key Design 3: Perturbation-based Evaluation Metrics
 

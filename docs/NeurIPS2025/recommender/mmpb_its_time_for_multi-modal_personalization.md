@@ -18,8 +18,8 @@ content_hash: dd9e7c7af97092a5
 # MMPB: It's Time for Multi-Modal Personalization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.22820](https://arxiv.org/abs/2509.22820)
-**Code**: [https://aidaslab.github.io/MMPB](https://aidaslab.github.io/MMPB) (project page)
+**arXiv**: [2509.22820](https://arxiv.org/abs/2509.22820)  
+**Code**: [https://aidaslab.github.io/MMPB](https://aidaslab.github.io/MMPB) (project page)  
 **Area**: Recommender Systems
 **Keywords**: VLM, Personalization, benchmark, visual question answering, Cold-start
 

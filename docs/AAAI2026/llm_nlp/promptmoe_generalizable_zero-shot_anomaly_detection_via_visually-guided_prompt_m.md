@@ -18,8 +18,8 @@ content_hash: 327bd406bb0ea4b1
 # PromptMoE: Generalizable Zero-Shot Anomaly Detection via Visually-Guided Prompt Mixing of Experts
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18116](https://arxiv.org/abs/2511.18116)
-**Code**: Unavailable
+**arXiv**: [2511.18116](https://arxiv.org/abs/2511.18116)  
+**Code**: Unavailable  
 **Area**: Anomaly Detection / Vision-Language Models
 **Keywords**: Zero-Shot Anomaly Detection, CLIP, Mixture of Experts, Compositional Prompt Learning, Visually-Guided Routing
 

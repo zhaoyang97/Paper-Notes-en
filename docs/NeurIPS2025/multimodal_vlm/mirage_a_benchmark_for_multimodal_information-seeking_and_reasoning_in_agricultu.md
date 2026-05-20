@@ -19,8 +19,8 @@ content_hash: 5051449ed705904e
 # MIRAGE: A Benchmark for Multimodal Information-Seeking and Reasoning in Agriculture
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.20100](https://arxiv.org/abs/2506.20100)
-**Code**: None
+**arXiv**: [2506.20100](https://arxiv.org/abs/2506.20100)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: benchmark, multimodal, VLM, agriculture, visual grounding, multi-turn dialogue
 

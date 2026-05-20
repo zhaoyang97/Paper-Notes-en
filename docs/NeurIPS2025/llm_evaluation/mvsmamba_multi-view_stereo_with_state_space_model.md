@@ -18,8 +18,8 @@ content_hash: fe55b55a63e82e71
 # MVSMamba: Multi-View Stereo with State Space Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01315](https://arxiv.org/abs/2511.01315)
-**Code**: [https://github.com/JianfeiJ/MVSMamba](https://github.com/JianfeiJ/MVSMamba)
+**arXiv**: [2511.01315](https://arxiv.org/abs/2511.01315)  
+**Code**: [https://github.com/JianfeiJ/MVSMamba](https://github.com/JianfeiJ/MVSMamba)  
 **Area**: LLM Evaluation
 **Keywords**: Multi-View Stereo, Mamba, State Space Model, Feature Matching, Depth Estimation
 

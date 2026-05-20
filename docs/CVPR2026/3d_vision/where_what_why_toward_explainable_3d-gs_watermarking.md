@@ -18,9 +18,9 @@ content_hash: 1bc309cf9964afd7
 # Where, What, Why: Toward Explainable 3D-GS Watermarking
 
 **Conference**: CVPR2026
-**arXiv**: [2603.08809](https://arxiv.org/abs/2603.08809)
+**arXiv**: [2603.08809](https://arxiv.org/abs/2603.08809)  
 **Authors**: Mingshu Cai (Waseda University), Jiajun Li (Southeast University), Osamu Yoshie, Yuya Ieiri, Yixuan Li (NTU)
-**Code**: Not released
+**Code**: Not released  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Digital Watermarking, Copyright Protection, Explainability, Robust Embedding
 

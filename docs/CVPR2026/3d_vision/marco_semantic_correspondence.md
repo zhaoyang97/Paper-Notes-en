@@ -18,8 +18,8 @@ content_hash: b09be64aea9493e0
 # MARCO: Navigating the Unseen Space of Semantic Correspondence
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.18267](https://arxiv.org/abs/2604.18267)
-**Code**: [https://visinf.github.io/MARCO](https://visinf.github.io/MARCO)
+**arXiv**: [2604.18267](https://arxiv.org/abs/2604.18267)  
+**Code**: [https://visinf.github.io/MARCO](https://visinf.github.io/MARCO)  
 **Area**: 3D Vision
 **Keywords**: Semantic Correspondence, DINOv2, Self-Distillation, Coarse-to-Fine, Generalization
 

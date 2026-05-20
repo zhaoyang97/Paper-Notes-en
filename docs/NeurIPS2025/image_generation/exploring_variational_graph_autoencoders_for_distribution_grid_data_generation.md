@@ -18,8 +18,8 @@ content_hash: 2834b84adfb7cfb2
 # Exploring Variational Graph Autoencoders for Distribution Grid Data Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.02469](https://arxiv.org/abs/2509.02469)
-**Code**: [GitHub](https://github.com/SyedZainAbbas/GridGEN)
+**arXiv**: [2509.02469](https://arxiv.org/abs/2509.02469)  
+**Code**: [GitHub](https://github.com/SyedZainAbbas/GridGEN)  
 **Area**: Graph Generation / Energy Systems
 **Keywords**: Variational Graph Autoencoder, Distribution Grid Generation, Synthetic Graph Data, Graph Neural Networks, Energy AI
 

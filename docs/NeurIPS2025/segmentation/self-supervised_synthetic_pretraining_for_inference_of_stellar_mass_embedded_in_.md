@@ -20,8 +20,8 @@ content_hash: e86ef25c4c8c9c6b
 # Self-supervised Synthetic Pretraining for Inference of Stellar Mass Embedded in Dense Gas
 
 **Conference**: NeurIPS 2025 (Workshop: ML and the Physical Sciences)
-**arXiv**: [2510.24159](https://arxiv.org/abs/2510.24159)
-**Code**: None
+**arXiv**: [2510.24159](https://arxiv.org/abs/2510.24159)  
+**Code**: None  
 **Area**: Self-supervised Learning / Astrophysics / Image Segmentation
 **Keywords**: self-supervised pretraining, synthetic fractal images, DINOv2, ViT, stellar mass inference, MHD simulation, zero-shot semantic segmentation
 

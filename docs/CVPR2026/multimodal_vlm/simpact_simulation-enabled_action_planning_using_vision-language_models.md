@@ -18,8 +18,8 @@ content_hash: 695a2ceec6d18682
 # SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.05955](https://arxiv.org/abs/2512.05955)
-**Code**: None (coming soon)
+**arXiv**: [2512.05955](https://arxiv.org/abs/2512.05955)  
+**Code**: None (coming soon)  
 **Area**: Multimodal VLM / Robotic Manipulation
 **Keywords**: Simulation-based reasoning, vision-language models, action planning, physical reasoning, robotic manipulation
 

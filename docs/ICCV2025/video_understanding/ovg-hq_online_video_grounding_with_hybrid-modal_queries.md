@@ -18,8 +18,8 @@ content_hash: 2db7670fc9ce5df7
 # OVG-HQ: Online Video Grounding with Hybrid-modal Queries
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.11903](https://arxiv.org/abs/2508.11903)
-**Code**: [GitHub](https://github.com/maojiaqi2324/OVG-HQ)
+**arXiv**: [2508.11903](https://arxiv.org/abs/2508.11903)  
+**Code**: [GitHub](https://github.com/maojiaqi2324/OVG-HQ)  
 **Area**: Video Understanding
 **Keywords**: Online video grounding, hybrid-modal queries, parametric memory block, cross-modal distillation, streaming video
 

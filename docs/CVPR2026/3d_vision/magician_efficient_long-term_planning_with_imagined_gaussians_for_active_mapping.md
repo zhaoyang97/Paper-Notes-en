@@ -18,8 +18,8 @@ content_hash: ce48e59abcee3d45
 # MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22650](https://arxiv.org/abs/2603.22650)
-**Code**: [https://shiyao-li.github.io/magician/](https://shiyao-li.github.io/magician/)
+**arXiv**: [2603.22650](https://arxiv.org/abs/2603.22650)  
+**Code**: [https://shiyao-li.github.io/magician/](https://shiyao-li.github.io/magician/)  
 **Area**: 3D Vision
 **Keywords**: Active Mapping, Long-Term Planning, 3D Gaussian Splatting, Scene Reconstruction, Viewpoint Selection
 

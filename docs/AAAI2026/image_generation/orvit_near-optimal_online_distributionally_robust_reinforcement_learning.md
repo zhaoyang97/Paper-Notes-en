@@ -18,8 +18,8 @@ content_hash: 134668bfb8b00168
 # ORVIT: Near-Optimal Online Distributionally Robust Reinforcement Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.03768](https://arxiv.org/abs/2508.03768)
-**Code**: None
+**arXiv**: [2508.03768](https://arxiv.org/abs/2508.03768)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Distributionally Robust RL, online learning, f-divergence, Minimax Optimal, Sample Complexity
 

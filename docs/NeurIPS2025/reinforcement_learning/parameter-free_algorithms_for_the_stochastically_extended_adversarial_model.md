@@ -18,8 +18,8 @@ content_hash: 59cfe3beb13b980d
 # Parameter-Free Algorithms for the Stochastically Extended Adversarial Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04685](https://arxiv.org/abs/2510.04685)
-**Code**: None
+**arXiv**: [2510.04685](https://arxiv.org/abs/2510.04685)  
+**Code**: None  
 **Area**: Reinforcement Learning / Online Learning
 **Keywords**: online convex optimization, parameter-free algorithms, SEA model, comparator-adaptive, Lipschitz-adaptive
 

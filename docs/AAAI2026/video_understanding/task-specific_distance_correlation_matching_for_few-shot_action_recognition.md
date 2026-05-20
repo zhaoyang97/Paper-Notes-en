@@ -18,8 +18,8 @@ content_hash: 59df263621c18222
 # Task-Specific Distance Correlation Matching for Few-Shot Action Recognition
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.11340](https://arxiv.org/abs/2512.11340)
-**Code**: None
+**arXiv**: [2512.11340](https://arxiv.org/abs/2512.11340)  
+**Code**: None  
 **Area**: Video Understanding / Few-Shot Learning
 **Keywords**: Few-Shot Action Recognition, Distance Correlation, CLIP Fine-tuning, Task-Specific Matching, Side-Tuning
 

@@ -20,8 +20,8 @@ content_hash: df3669f5c10b2fec
 # Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models
 
 **Conference**: ICLR2026
-**arXiv**: [2508.12880](https://arxiv.org/abs/2508.12880)
-**Code**: [Project Page](https://s2guidance.github.io/)
+**arXiv**: [2508.12880](https://arxiv.org/abs/2508.12880)  
+**Code**: [Project Page](https://s2guidance.github.io/)  
 **Area**: Image Generation
 **Keywords**: Diffusion Models, Classifier-Free Guidance, Subnetwork, Stochastic Block-Dropping, Self-Guidance, Text-to-Image, Text-to-Video
 

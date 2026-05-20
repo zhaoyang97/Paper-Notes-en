@@ -18,8 +18,8 @@ content_hash: a4795e842869b899
 # Agent-GWO: Collaborative Agents for Dynamic Prompt Optimization in Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18612](https://arxiv.org/abs/2604.18612)
-**Code**: Coming soon
+**arXiv**: [2604.18612](https://arxiv.org/abs/2604.18612)  
+**Code**: Coming soon  
 **Area**: LLM Agent
 **Keywords**: Prompt optimization, Grey Wolf Optimizer, multi-agent, reasoning enhancement, decoding hyperparameters
 

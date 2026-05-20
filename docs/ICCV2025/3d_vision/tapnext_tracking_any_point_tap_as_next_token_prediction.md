@@ -18,8 +18,8 @@ content_hash: 3caf03f7fc42ec4d
 # TAPNext: Tracking Any Point (TAP) as Next Token Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.05579](https://arxiv.org/abs/2504.05579)
-**Code**: [https://tap-next.github.io/](https://tap-next.github.io/)
+**arXiv**: [2504.05579](https://arxiv.org/abs/2504.05579)  
+**Code**: [https://tap-next.github.io/](https://tap-next.github.io/)  
 **Area**: 3D Vision / Video Understanding
 **Keywords**: Point Tracking, Next Token Prediction, Online Tracking, Occlusion Handling, TAP
 

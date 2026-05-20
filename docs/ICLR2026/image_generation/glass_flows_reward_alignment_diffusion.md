@@ -21,7 +21,7 @@ content_hash: c601510c9137f8b2
 
 **Conference**: ICLR 2026 Oral
 **OpenReview**: [vH7OAPZ2dR](https://openreview.net/forum?id=vH7OAPZ2dR)
-**Code**: Available
+**Code**: Available  
 **Area**: Image Generation / Diffusion Models
 **Keywords**: flow matching, diffusion models, reward alignment, Feynman-Kac steering, GLASS, stochastic transitions, inference-time scaling
 

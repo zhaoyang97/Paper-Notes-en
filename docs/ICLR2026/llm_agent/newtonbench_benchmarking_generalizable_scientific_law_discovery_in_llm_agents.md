@@ -18,8 +18,8 @@ content_hash: 62cc79d4eddd3a7c
 # NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.07172](https://arxiv.org/abs/2510.07172)
-**Code**: Available
+**arXiv**: [2510.07172](https://arxiv.org/abs/2510.07172)  
+**Code**: Available  
 **Area**: LLM Agent
 **Keywords**: scientific discovery, benchmark, counterfactual physical laws, symbolic regression, interactive exploration
 

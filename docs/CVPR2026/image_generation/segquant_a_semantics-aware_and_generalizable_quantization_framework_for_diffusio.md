@@ -18,8 +18,8 @@ content_hash: 513e3df9d0ad6fd1
 # SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models
 
 **Conference**: CVPR2026
-**arXiv**: [2507.14811](https://arxiv.org/abs/2507.14811)
-**Code**: None
+**arXiv**: [2507.14811](https://arxiv.org/abs/2507.14811)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: diffusion model quantization, post-training quantization, semantics-aware segmentation, polarity preservation, deployment-friendly
 

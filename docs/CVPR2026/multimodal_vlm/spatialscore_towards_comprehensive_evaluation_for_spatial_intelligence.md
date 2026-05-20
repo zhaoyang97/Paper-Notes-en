@@ -18,8 +18,8 @@ content_hash: 52e5beba7d04c378
 # SpatialScore: Towards Comprehensive Evaluation for Spatial Intelligence
 
 **Conference**: CVPR 2026
-**arXiv**: [2505.17012](https://arxiv.org/abs/2505.17012)
-**Code**: [https://github.com/haoningwu3639/SpatialScore/](https://github.com/haoningwu3639/SpatialScore/)
+**arXiv**: [2505.17012](https://arxiv.org/abs/2505.17012)  
+**Code**: [https://github.com/haoningwu3639/SpatialScore/](https://github.com/haoningwu3639/SpatialScore/)  
 **Area**: Multimodal VLM
 **Keywords**: Spatial Intelligence, Multimodal Evaluation, Spatial Reasoning, Agent Systems, Spatial Corpus
 

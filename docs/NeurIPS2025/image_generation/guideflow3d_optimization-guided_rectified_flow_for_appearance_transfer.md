@@ -18,8 +18,8 @@ content_hash: c122010dd2e1cc66
 # GuideFlow3D: Optimization-Guided Rectified Flow For Appearance Transfer
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16136](https://arxiv.org/abs/2510.16136)
-**Code**: [Project Page](https://sayands.github.io/guideflow3d)
+**arXiv**: [2510.16136](https://arxiv.org/abs/2510.16136)  
+**Code**: [Project Page](https://sayands.github.io/guideflow3d)  
 **Area**: Image Generation
 **Keywords**: 3D appearance transfer, rectified flow, universal guidance, structured latent, part-aware loss
 

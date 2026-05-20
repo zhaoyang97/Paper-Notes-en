@@ -18,8 +18,8 @@ content_hash: a8dc8f2fce9262fa
 # Detecting Misbehaviors of Large Vision-Language Models by Evidential Uncertainty Quantification
 
 **Conference**: ICLR2026
-**arXiv**: [2602.05535](https://arxiv.org/abs/2602.05535)
-**Code**: [HT86159/EUQ](https://github.com/HT86159/EUQ)
+**arXiv**: [2602.05535](https://arxiv.org/abs/2602.05535)  
+**Code**: [HT86159/EUQ](https://github.com/HT86159/EUQ)  
 **Area**: Multimodal VLM
 **Keywords**: LVLM uncertainty, evidential reasoning, Dempster-Shafer, misbehavior detection, hallucination
 

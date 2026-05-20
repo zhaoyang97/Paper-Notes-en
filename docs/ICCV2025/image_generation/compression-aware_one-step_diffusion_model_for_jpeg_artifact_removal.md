@@ -18,8 +18,8 @@ content_hash: 807966ddc8aa402f
 # Compression-Aware One-Step Diffusion Model for JPEG Artifact Removal
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.09873](https://arxiv.org/abs/2502.09873)
-**Code**: [github.com/jp-guo/CODiff](https://github.com/jp-guo/CODiff)
+**arXiv**: [2502.09873](https://arxiv.org/abs/2502.09873)  
+**Code**: [github.com/jp-guo/CODiff](https://github.com/jp-guo/CODiff)  
 **Area**: Image Generation / Image Restoration
 **Keywords**: JPEG artifact removal, one-step diffusion model, compression prior, dual learning, image restoration
 
@@ -77,7 +77,7 @@ $$\mathcal{L}_{rec} = \frac{1}{B}\sum_{i=1}^{B}\|\hat{\mathbf{I}}_H^i - \mathbf{
   - Motivation: The reconstruction objective forces the embedding to capture the complete information of the compression process, rather than a single QF integer.
 
 - **Joint objective**: $\mathcal{L}_{CaVE} = \mathcal{L}_{QF} + \lambda \cdot \mathcal{L}_{rec}$, where $\lambda=1000$.
-  - Key finding: After dual learning, CaVE can effectively distinguish **unseen** compression levels (QF=1, 5) at test time, whereas purely explicit learning cannot.
+    - Key finding: After dual learning, CaVE can effectively distinguish **unseen** compression levels (QF=1, 5) at test time, whereas purely explicit learning cannot.
 
 #### 3. One-Step Diffusion Generator
 

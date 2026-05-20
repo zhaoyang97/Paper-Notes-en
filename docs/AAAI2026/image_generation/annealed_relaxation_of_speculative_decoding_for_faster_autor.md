@@ -18,8 +18,8 @@ content_hash: 0e9944bca88c854f
 # Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.09212v1](https://arxiv.org/abs/2601.09212v1)
-**Code**: [https://github.com/xingyaoL/COOL-SD](https://github.com/xingyaoL/COOL-SD)
+**arXiv**: [2601.09212v1](https://arxiv.org/abs/2601.09212v1)  
+**Code**: [https://github.com/xingyaoL/COOL-SD](https://github.com/xingyaoL/COOL-SD)  
 **Area**: Image Generation / Efficient Inference
 **Keywords**: speculative decoding, autoregressive image generation, annealed relaxation, total variation distance, inference acceleration
 

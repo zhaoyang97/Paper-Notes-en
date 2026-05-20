@@ -18,8 +18,8 @@ content_hash: c3a03ee2392ff650
 # STRUCTURE: With Limited Data for Multimodal Alignment, Let the Structure Guide You
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.16895](https://arxiv.org/abs/2506.16895)
-**Code**: [https://brbiclab.epfl.ch/projects/structure](https://brbiclab.epfl.ch/projects/structure)
+**arXiv**: [2506.16895](https://arxiv.org/abs/2506.16895)  
+**Code**: [https://brbiclab.epfl.ch/projects/structure](https://brbiclab.epfl.ch/projects/structure)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal alignment, low-data learning, structure regularization, frozen-encoder alignment, layer selection
 

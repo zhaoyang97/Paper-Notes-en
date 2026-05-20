@@ -18,8 +18,8 @@ content_hash: fc2273a8b598bda5
 # NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21069](https://arxiv.org/abs/2603.21069)
-**Code**: N/A
+**arXiv**: [2603.21069](https://arxiv.org/abs/2603.21069)  
+**Code**: N/A  
 **Area**: Object Detection
 **Keywords**: Open-Vocabulary Object Detection, Novel Category Discovery, Self-Distillation, K-FPN, Frozen VLM
 

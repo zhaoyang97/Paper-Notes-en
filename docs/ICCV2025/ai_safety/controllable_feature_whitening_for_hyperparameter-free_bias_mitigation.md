@@ -18,8 +18,8 @@ content_hash: 71a688b0c91bbf42
 # Controllable Feature Whitening for Hyperparameter-Free Bias Mitigation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.20284](https://arxiv.org/abs/2507.20284)
-**Code**: N/A
+**arXiv**: [2507.20284](https://arxiv.org/abs/2507.20284)  
+**Code**: N/A  
 **Area**: AI Safety / Fairness & Bias Mitigation
 **Keywords**: bias mitigation, feature whitening, fairness, demographic parity, equalized odds
 
@@ -51,27 +51,27 @@ The core insight of this work is that, while zero covariance does not imply stat
 
 1. **Feature Whitening for Debiasing**:
 
-   - Whitening transform: $\tilde{X} = \Sigma^{-1/2} \cdot (X - \mu \cdot \mathbf{1}^\top)$
-   - Target and bias features are concatenated as $z = [z_t; z_b]$ and jointly whitened.
-   - After whitening, all channel pairs between $z_{wt}$ and $z_{wb}$ are orthogonal, preventing the linear classifier $g_{wt}$ from extracting bias information from $z_{wt}$ linearly.
-   - $\Sigma^{-1/2}$ is computed via coupled Newton-Schultz iterations for numerical stability and computational efficiency.
-   - The non-uniqueness of $\Sigma^{-1/2}$ is exploited to keep $z_{wt}$ as close as possible to the original $z_t$, preserving task-relevant information.
+    - Whitening transform: $\tilde{X} = \Sigma^{-1/2} \cdot (X - \mu \cdot \mathbf{1}^\top)$
+    - Target and bias features are concatenated as $z = [z_t; z_b]$ and jointly whitened.
+    - After whitening, all channel pairs between $z_{wt}$ and $z_{wb}$ are orthogonal, preventing the linear classifier $g_{wt}$ from extracting bias information from $z_{wt}$ linearly.
+    - $\Sigma^{-1/2}$ is computed via coupled Newton-Schultz iterations for numerical stability and computational efficiency.
+    - The non-uniqueness of $\Sigma^{-1/2}$ is exploited to keep $z_{wt}$ as close as possible to the original $z_t$, preserving task-relevant information.
 
 2. **Covariance Reweighting Strategy**:
 
-   - Biased covariance $\Sigma_b$: estimated directly from biased training data.
-   - Unbiased covariance $\Sigma_u$: computed by upweighting rare groups and downweighting majority groups such that $P(y,b|\mathcal{D}_u) = \frac{1}{N_Y \cdot N_B}$.
-   - Key insight: under an unbiased distribution, demographic parity is equivalent to equalized odds.
-   - Whitening with $\Sigma_b$ promotes demographic parity (unconditional independence of $\hat{Y}$ and $B$).
-   - Whitening with $\Sigma_u$ promotes equalized odds (conditional independence of $\hat{Y}$ and $B$ given $Y$).
+    - Biased covariance $\Sigma_b$: estimated directly from biased training data.
+    - Unbiased covariance $\Sigma_u$: computed by upweighting rare groups and downweighting majority groups such that $P(y,b|\mathcal{D}_u) = \frac{1}{N_Y \cdot N_B}$.
+    - Key insight: under an unbiased distribution, demographic parity is equivalent to equalized odds.
+    - Whitening with $\Sigma_b$ promotes demographic parity (unconditional independence of $\hat{Y}$ and $B$).
+    - Whitening with $\Sigma_u$ promotes equalized odds (conditional independence of $\hat{Y}$ and $B$ given $Y$).
 
 3. **Controllable Feature Whitening (CFW)**:
 
-   - Mixed covariance: $\Sigma_\lambda = \lambda \cdot \Sigma_u + (1-\lambda) \cdot \Sigma_b$
-   - $\lambda = 0$: whitening with pure biased covariance, reducing $\Delta_{DP}$ but potentially discarding target-relevant information.
-   - $\lambda = 1$: whitening with pure unbiased covariance, reducing $\Delta_{EO}$ but susceptible to overfitting due to limited diversity in rare groups.
-   - $\lambda = 0.25$: empirically optimal, consistently performing well across all datasets; the method can thus be regarded as hyperparameter-free in practice.
-   - Training objective: $\min_{g_{wt}} \mathcal{L}_t + \min_{h_b, g_{wb}} \mathcal{L}_b$
+    - Mixed covariance: $\Sigma_\lambda = \lambda \cdot \Sigma_u + (1-\lambda) \cdot \Sigma_b$
+    - $\lambda = 0$: whitening with pure biased covariance, reducing $\Delta_{DP}$ but potentially discarding target-relevant information.
+    - $\lambda = 1$: whitening with pure unbiased covariance, reducing $\Delta_{EO}$ but susceptible to overfitting due to limited diversity in rare groups.
+    - $\lambda = 0.25$: empirically optimal, consistently performing well across all datasets; the method can thus be regarded as hyperparameter-free in practice.
+    - Training objective: $\min_{g_{wt}} \mathcal{L}_t + \min_{h_b, g_{wb}} \mathcal{L}_b$
 
 ### Loss & Training
 

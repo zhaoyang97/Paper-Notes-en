@@ -18,8 +18,8 @@ content_hash: bcaa8542f137bcb5
 # LLM Strategic Reasoning: Agentic Study through Behavioral Game Theory
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.20432](https://arxiv.org/abs/2502.20432)
-**Code**: None
+**arXiv**: [2502.20432](https://arxiv.org/abs/2502.20432)  
+**Code**: None  
 **Area**: AI Safety / LLM Evaluation
 **Keywords**: Strategic Reasoning, Behavioral Game Theory, TQRE, Reasoning Depth, Demographic Bias
 

@@ -17,8 +17,8 @@ content_hash: dbdfa18a2f4d4114
 # On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.24403](https://arxiv.org/abs/2505.24403)
-**Code**: None
+**arXiv**: [2505.24403](https://arxiv.org/abs/2505.24403)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Lipschitz continuity, set aggregation functions, multisets, robustness, generalization
 
@@ -41,24 +41,24 @@ The paper considers three multiset distance functions — Earth Mover's Distance
 ### Key Designs
 
 1. **Lipschitz Continuity Analysis of Aggregation Functions**:
-   - Function: Proves that each aggregation function is Lipschitz continuous with respect to exactly one distance function.
-   - Mechanism: mean is continuous under EMD ($L=1$), sum under Matching distance ($L=1$), and max under Hausdorff distance ($L=\sqrt{d}$).
-   - Design Motivation: A natural correspondence exists between aggregation functions and distance functions; understanding this correspondence guides appropriate model and metric selection.
+    - Function: Proves that each aggregation function is Lipschitz continuous with respect to exactly one distance function.
+    - Mechanism: mean is continuous under EMD ($L=1$), sum under Matching distance ($L=1$), and max under Hausdorff distance ($L=\sqrt{d}$).
+    - Design Motivation: A natural correspondence exists between aggregation functions and distance functions; understanding this correspondence guides appropriate model and metric selection.
 
 2. **Extended Analysis for Equicardinality Multisets**:
-   - Function: When all multisets share the same cardinality, aggregation functions exhibit Lipschitz continuity under additional distance functions.
-   - Mechanism: Exploits the relationship between EMD and Matching distance for equal-sized multisets ($d_M = M \cdot d_{\mathrm{EMD}}$) to derive additional Lipschitz constants.
-   - Design Motivation: In practice (e.g., point clouds), multiset sizes are often fixed, enabling stronger stability guarantees.
+    - Function: When all multisets share the same cardinality, aggregation functions exhibit Lipschitz continuity under additional distance functions.
+    - Mechanism: Exploits the relationship between EMD and Matching distance for equal-sized multisets ($d_M = M \cdot d_{\mathrm{EMD}}$) to derive additional Lipschitz constants.
+    - Design Motivation: In practice (e.g., point clouds), multiset sizes are often fixed, enabling stronger stability guarantees.
 
 3. **Analysis of Attention Aggregation**:
-   - Function: Proves that attention mechanisms are not Lipschitz continuous under any of the three considered distance functions.
-   - Mechanism: Constructs counterexamples showing that even $\ell_2$ attention variants fail to achieve Lipschitz continuity.
-   - Design Motivation: Exposes a fundamental limitation of attention mechanisms with respect to stability.
+    - Function: Proves that attention mechanisms are not Lipschitz continuous under any of the three considered distance functions.
+    - Mechanism: Constructs counterexamples showing that even $\ell_2$ attention variants fail to achieve Lipschitz continuity.
+    - Design Motivation: Exposes a fundamental limitation of attention mechanisms with respect to stability.
 
 4. **Lipschitz Constant Upper Bounds for Set Neural Networks**:
-   - Function: Derives Lipschitz upper bounds for $\mathrm{NN}_{\mathrm{mean}}$ and $\mathrm{NN}_{\mathrm{max}}$, and shows that $\mathrm{NN}_{\mathrm{sum}}$ may not be Lipschitz continuous.
-   - Mechanism: Decomposes the network into $\mathrm{MLP}_1$ + aggregation + $\mathrm{MLP}_2$ and exploits the composability of Lipschitz constants.
-   - Design Motivation: Provides theoretical tools for robustness analysis of practical models.
+    - Function: Derives Lipschitz upper bounds for $\mathrm{NN}_{\mathrm{mean}}$ and $\mathrm{NN}_{\mathrm{max}}$, and shows that $\mathrm{NN}_{\mathrm{sum}}$ may not be Lipschitz continuous.
+    - Mechanism: Decomposes the network into $\mathrm{MLP}_1$ + aggregation + $\mathrm{MLP}_2$ and exploits the composability of Lipschitz constants.
+    - Design Motivation: Provides theoretical tools for robustness analysis of practical models.
 
 ### Generalization Analysis
 

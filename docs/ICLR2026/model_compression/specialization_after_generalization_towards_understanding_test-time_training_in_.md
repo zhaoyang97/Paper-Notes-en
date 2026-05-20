@@ -18,8 +18,8 @@ content_hash: a7ab91bb9e4d859d
 # Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24510](https://arxiv.org/abs/2509.24510)
-**Code**: None
+**arXiv**: [2509.24510](https://arxiv.org/abs/2509.24510)  
+**Code**: None  
 **Area**: Model Compression / Test-Time Training
 **Keywords**: Test-Time Training, Linear Representation Hypothesis, Sparse Autoencoders, Specialization after Generalization, Foundation Models
 
@@ -53,24 +53,24 @@ Given a test sample $x^*$, the method retrieves its $k=50$ nearest neighbors fro
 
 1. **SAE Validation Framework: Constructing an Analyzable Concept Space**
 
-   - *Function*: Decompose dense model activations into sparse concept representations via sparse autoencoders, enabling empirical examination of theoretical assumptions.
-   - *Mechanism*: CLIP ViT-B/32 is used to extract $d_2=512$-dimensional features $\Psi(x)$ on ImageNet-1K. A top-$k$ SAE is trained to encode these into $d_1=4096$-dimensional, $s=16$-sparse concept vectors $\hat{\Phi}(x)$. The encoder $E \in \mathbb{R}^{d_1 \times d_2}$ retains the $s$ largest activations; the decoder $D \in \mathbb{R}^{d_2 \times d_1}$ reconstructs the original features from the sparse representation. The optimization objective is the reconstruction error $\mathbb{E}_x\|\Psi(x) - D \cdot \text{top}_s(E \cdot \Psi(x))\|_2^2$. A ghost gradient auxiliary loss mitigates dead feature problems (only 4% inactive concepts).
-   - *Design Motivation*: The "true concept space" $\Phi$ in the theory is not directly accessible; an approximate concept space $\hat{\Phi}$ is learned via the SAE to validate three key assumptions. Experiments are conducted on SAE-reconstructed features $\hat{\Psi}(x)$ rather than raw CLIP features to align the experimental setup with the theoretical model, at the cost of approximately 6% reduction in global classification accuracy.
+    - *Function*: Decompose dense model activations into sparse concept representations via sparse autoencoders, enabling empirical examination of theoretical assumptions.
+    - *Mechanism*: CLIP ViT-B/32 is used to extract $d_2=512$-dimensional features $\Psi(x)$ on ImageNet-1K. A top-$k$ SAE is trained to encode these into $d_1=4096$-dimensional, $s=16$-sparse concept vectors $\hat{\Phi}(x)$. The encoder $E \in \mathbb{R}^{d_1 \times d_2}$ retains the $s$ largest activations; the decoder $D \in \mathbb{R}^{d_2 \times d_1}$ reconstructs the original features from the sparse representation. The optimization objective is the reconstruction error $\mathbb{E}_x\|\Psi(x) - D \cdot \text{top}_s(E \cdot \Psi(x))\|_2^2$. A ghost gradient auxiliary loss mitigates dead feature problems (only 4% inactive concepts).
+    - *Design Motivation*: The "true concept space" $\Phi$ in the theory is not directly accessible; an approximate concept space $\hat{\Phi}$ is learned via the SAE to validate three key assumptions. Experiments are conducted on SAE-reconstructed features $\hat{\Psi}(x)$ rather than raw CLIP features to align the experimental setup with the theoretical model, at the cost of approximately 6% reduction in global classification accuracy.
 
 2. **Three Key Observations (O1–O3): Connecting Theory and Empirics**
 
-   - *Function*: Establish three empirical hypotheses for TTT's effectiveness, serving as the foundation for theoretical derivations.
-   - *Mechanism*:
+    - *Function*: Establish three empirical hypotheses for TTT's effectiveness, serving as the foundation for theoretical derivations.
+    - *Mechanism*:
      - **O1 (Local Geometry Preservation)**: Neighborhoods of test points are selected in each of the three spaces $\Psi$, $\hat{\Psi}$, and $\hat{\Phi}$, and the distribution of cosine similarities in concept space is measured—the three distributions are nearly identical, demonstrating that the SAE mapping preserves local angular structure.
      - **O2 (Neighborhoods Are Supported by Few Concepts)**: An adaptive binary mask $m$ is learned per neighborhood using a straight-through estimator to optimize $\hat{\Phi}_m(x) = m \odot \hat{\Phi}(x)$ with an $\ell_2$ sparsity penalty. On average, only ~40 concepts are required (out of ~180 activated across the neighborhood) without degrading TTT accuracy. More strikingly, a non-adaptive mask (retaining only the 16 concepts activated by the test point itself) achieves only 71.51%, far below the adaptive mask's 72.64%, indicating that mask learning can identify and remove spuriously correlated features.
      - **O3 (Implicit Sparsity)**: TTT performed in $\hat{\Psi}$ space and $\hat{\Phi}_m$ space yields consistent predictions on ~89% of samples, with highly similar top-10 probability distributions, indicating that feature-space TTT implicitly favors sparse solutions in concept space.
-   - *Design Motivation*: Direct mathematical analysis of TTT's properties is intractable; empirical regularities are first established and then used as the conditions for theoretical proofs.
+    - *Design Motivation*: Direct mathematical analysis of TTT's properties is intractable; empirical regularities are first established and then used as the conditions for theoretical proofs.
 
 3. **Theoretical Analysis of TTT Error: Proving Local Specialization Outperforms Global Training**
 
-   - *Function*: Theoretically quantify TTT's generalization ability and prove that TTT error is substantially smaller than that of global models under underparameterization.
-   - *Mechanism*: Three formal assumptions based on O1–O3 are established: (H1) feature-space neighborhoods are contained within slightly enlarged concept-space neighborhoods (supported by the Johnson–Lindenstrauss lemma, with deviation $\delta \leq O(\sqrt{\log N / d_2})$); (H2) there exist $\Theta(s)$-sparse local concept vectors within the neighborhood that approximate the true function; (H3) TTT implicitly finds sparse solutions in concept space. Under these conditions, sparse recovery techniques are applied to prove that the TTT test error satisfies $(f(x^*) - \langle \Psi(x^*), \hat{v}_{x^*}^{\text{TTT}} \rangle)^2 \leq O(\sigma^2 s \log(d_1/s)/k)$, achieving the minimax optimal rate. As a contrast, a lower bound on the global model error is constructed: when the feature space is a random projection of the concept space, the global error is $1 - d_2/d_1$, which approaches 1 as $d_1 \to \infty$.
-   - *Design Motivation*: The key contrast is that TTT error improves with neighborhood size $k$ and depends on the concept space dimension only logarithmically as $\log d_1$, whereas global model error degrades linearly as $d_2/d_1$. When $d_1$ is large (i.e., real-world concepts are extremely numerous), TTT holds an exponential advantage.
+    - *Function*: Theoretically quantify TTT's generalization ability and prove that TTT error is substantially smaller than that of global models under underparameterization.
+    - *Mechanism*: Three formal assumptions based on O1–O3 are established: (H1) feature-space neighborhoods are contained within slightly enlarged concept-space neighborhoods (supported by the Johnson–Lindenstrauss lemma, with deviation $\delta \leq O(\sqrt{\log N / d_2})$); (H2) there exist $\Theta(s)$-sparse local concept vectors within the neighborhood that approximate the true function; (H3) TTT implicitly finds sparse solutions in concept space. Under these conditions, sparse recovery techniques are applied to prove that the TTT test error satisfies $(f(x^*) - \langle \Psi(x^*), \hat{v}_{x^*}^{\text{TTT}} \rangle)^2 \leq O(\sigma^2 s \log(d_1/s)/k)$, achieving the minimax optimal rate. As a contrast, a lower bound on the global model error is constructed: when the feature space is a random projection of the concept space, the global error is $1 - d_2/d_1$, which approaches 1 as $d_1 \to \infty$.
+    - *Design Motivation*: The key contrast is that TTT error improves with neighborhood size $k$ and depends on the concept space dimension only logarithmically as $\log d_1$, whereas global model error degrades linearly as $d_2/d_1$. When $d_1$ is large (i.e., real-world concepts are extremely numerous), TTT holds an exponential advantage.
 
 ### Loss & Training
 

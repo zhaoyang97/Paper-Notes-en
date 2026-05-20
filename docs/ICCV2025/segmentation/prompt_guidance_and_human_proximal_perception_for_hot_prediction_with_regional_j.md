@@ -18,8 +18,8 @@ content_hash: 201eeb18e13377dc
 # Prompt Guidance and Human Proximal Perception for HOT Prediction with Regional Joint Loss
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.01630](https://arxiv.org/abs/2507.01630)
-**Code**: [github.com/YuxiaoWang-AI/P3HOT](https://github.com/YuxiaoWang-AI/P3HOT)
+**arXiv**: [2507.01630](https://arxiv.org/abs/2507.01630)  
+**Code**: [github.com/YuxiaoWang-AI/P3HOT](https://github.com/YuxiaoWang-AI/P3HOT)  
 **Area**: Image Segmentation
 **Keywords**: Human-Object Contact Detection, Text Guidance, Depth Perception, Regional Joint Loss, Semantic Segmentation
 

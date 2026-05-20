@@ -18,8 +18,8 @@ content_hash: 2bc17bc5275f5460
 # Connecting the Dots: Training-Free Visual Grounding via Agentic Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19516](https://arxiv.org/abs/2511.19516)
-**Code**: [https://github.com/loiqy/GroundingAgent](https://github.com/loiqy/GroundingAgent)
+**arXiv**: [2511.19516](https://arxiv.org/abs/2511.19516)  
+**Code**: [https://github.com/loiqy/GroundingAgent](https://github.com/loiqy/GroundingAgent)  
 **Area**: Object Detection
 **Keywords**: Visual Grounding, training-free, Agentic Reasoning, Chain-of-Thought, Open-Vocabulary Detection
 

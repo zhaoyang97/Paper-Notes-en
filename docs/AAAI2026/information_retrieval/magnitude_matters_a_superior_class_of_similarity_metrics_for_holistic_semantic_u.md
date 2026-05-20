@@ -18,8 +18,8 @@ content_hash: 76e664213954c1a2
 # Magnitude Matters: A Superior Class of Similarity Metrics for Holistic Semantic Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.19323](https://arxiv.org/abs/2509.19323)
-**Code**: To be released (MIT License)
+**arXiv**: [2509.19323](https://arxiv.org/abs/2509.19323)  
+**Code**: To be released (MIT License)  
 **Area**: Information Retrieval
 **Keywords**: Similarity Metrics, Sentence Embeddings, Anisotropy, Overlap Similarity, Hyperbolic Tangent Similarity
 
@@ -51,21 +51,21 @@ The approach is purely post-hoc—given a pair of sentence embeddings $(\mathbf{
 
 1. **Overlap Similarity (OS)**
 
-   - **Function**: Integrates magnitude information while performing robust normalization.
-   - **Mechanism**: $\text{sim}_{OS}(\mathbf{x}, \mathbf{y}) = \frac{\mathbf{x} \cdot \mathbf{y}}{\|\mathbf{x}\|^2 + \|\mathbf{y}\|^2 - |\mathbf{x} \cdot \mathbf{y}| + \epsilon}$. The denominator is analogous to the inclusion-exclusion principle in set theory: it computes the total "energy" of the two vectors ($\|\mathbf{x}\|^2 + \|\mathbf{y}\|^2$) and subtracts their shared component ($|\mathbf{x} \cdot \mathbf{y}|$), effectively measuring the "union" of the two vectors' energies.
-   - **Design Motivation**: In contrast to Cosine, which normalizes by $\|\mathbf{x}\| \cdot \|\mathbf{y}\|$ (depending solely on each vector's independent properties), the normalization factor in OS depends on the relationship between the vectors. This yields more stable and meaningful scores when all vectors already point in similar directions (anisotropy).
+    - **Function**: Integrates magnitude information while performing robust normalization.
+    - **Mechanism**: $\text{sim}_{OS}(\mathbf{x}, \mathbf{y}) = \frac{\mathbf{x} \cdot \mathbf{y}}{\|\mathbf{x}\|^2 + \|\mathbf{y}\|^2 - |\mathbf{x} \cdot \mathbf{y}| + \epsilon}$. The denominator is analogous to the inclusion-exclusion principle in set theory: it computes the total "energy" of the two vectors ($\|\mathbf{x}\|^2 + \|\mathbf{y}\|^2$) and subtracts their shared component ($|\mathbf{x} \cdot \mathbf{y}|$), effectively measuring the "union" of the two vectors' energies.
+    - **Design Motivation**: In contrast to Cosine, which normalizes by $\|\mathbf{x}\| \cdot \|\mathbf{y}\|$ (depending solely on each vector's independent properties), the normalization factor in OS depends on the relationship between the vectors. This yields more stable and meaningful scores when all vectors already point in similar directions (anisotropy).
 
 2. **Hyperbolic Tangent Similarity (HTS)**
 
-   - **Function**: Achieves magnitude-aware, bounded similarity measurement through nonlinear transformation.
-   - **Mechanism**: $\text{sim}_{HTS}(\mathbf{x}, \mathbf{y}) = \tanh\left(2 \cdot \frac{\mathbf{x} \cdot \mathbf{y}}{\|\mathbf{x}\|^2 + \|\mathbf{y}\|^2 + \epsilon}\right)$. The dot product is first normalized by the sum of squared norms, then compressed into $[-1, 1]$ via $\tanh$.
-   - **Design Motivation**: (1) The S-shaped curve of $\tanh$ amplifies differences in the intermediate range and compresses extreme values, providing robustness to outliers; (2) The relationship between semantic similarity and vector similarity may be inherently nonlinear, and $\tanh$ may more closely reflect human perception.
+    - **Function**: Achieves magnitude-aware, bounded similarity measurement through nonlinear transformation.
+    - **Mechanism**: $\text{sim}_{HTS}(\mathbf{x}, \mathbf{y}) = \tanh\left(2 \cdot \frac{\mathbf{x} \cdot \mathbf{y}}{\|\mathbf{x}\|^2 + \|\mathbf{y}\|^2 + \epsilon}\right)$. The dot product is first normalized by the sum of squared norms, then compressed into $[-1, 1]$ via $\tanh$.
+    - **Design Motivation**: (1) The S-shaped curve of $\tanh$ amplifies differences in the intermediate range and compresses extreme values, providing robustness to outliers; (2) The relationship between semantic similarity and vector similarity may be inherently nonlinear, and $\tanh$ may more closely reflect human perception.
 
 3. **Evaluation Protocol**
 
-   - **Function**: Zero-shot application of four metrics on fixed embeddings, evaluated using both MSE and Spearman $\rho$.
-   - **Mechanism**: MSE measures absolute error; Spearman $\rho$ measures rank correlation. Statistical significance is assessed via the Wilcoxon signed-rank test, and bootstrapped 95% confidence intervals quantify the magnitude of improvement.
-   - **Design Motivation**: A single metric may be misleading; the combination of dual metrics and statistical testing ensures reliability of conclusions.
+    - **Function**: Zero-shot application of four metrics on fixed embeddings, evaluated using both MSE and Spearman $\rho$.
+    - **Mechanism**: MSE measures absolute error; Spearman $\rho$ measures rank correlation. Statistical significance is assessed via the Wilcoxon signed-rank test, and bootstrapped 95% confidence intervals quantify the magnitude of improvement.
+    - **Design Motivation**: A single metric may be misleading; the combination of dual metrics and statistical testing ensures reliability of conclusions.
 
 ### Loss & Training
 

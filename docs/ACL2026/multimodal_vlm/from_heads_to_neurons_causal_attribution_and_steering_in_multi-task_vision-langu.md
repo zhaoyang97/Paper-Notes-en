@@ -18,8 +18,8 @@ content_hash: 3418e776be7bae4d
 # From Heads to Neurons: Causal Attribution and Steering in Multi-Task Vision-Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17941](https://arxiv.org/abs/2604.17941)
-**Code**: [github](https://github.com/petergit1/HONES)
+**arXiv**: [2604.17941](https://arxiv.org/abs/2604.17941)  
+**Code**: [github](https://github.com/petergit1/HONES)  
 **Area**: Multimodal VLM
 **Keywords**: neuron attribution, causal analysis, multi-task VLM, attention heads, model interpretability
 

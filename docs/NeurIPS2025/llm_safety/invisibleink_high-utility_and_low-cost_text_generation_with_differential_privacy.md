@@ -18,8 +18,8 @@ content_hash: c3aeddb730bd64ef
 # InvisibleInk: High-Utility and Low-Cost Text Generation with Differential Privacy
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.02974](https://arxiv.org/abs/2507.02974)
-**Code**: [cerai-iitm/invisibleink](https://github.com/cerai-iitm/invisibleink)
+**arXiv**: [2507.02974](https://arxiv.org/abs/2507.02974)  
+**Code**: [cerai-iitm/invisibleink](https://github.com/cerai-iitm/invisibleink)  
 **Area**: AI Safety
 **Keywords**: differential privacy, text generation, exponential mechanism, LLM decoding, privacy-preserving inference
 

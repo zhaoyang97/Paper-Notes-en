@@ -18,8 +18,8 @@ content_hash: ae346eb081f819d7
 # Beyond the Ground Truth: Enhanced Supervision for Image Restoration
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.03932](https://arxiv.org/abs/2512.03932)
-**Code**: [Project Page](https://hij1112.github.io/beyond-the-ground-truth/)
+**arXiv**: [2512.03932](https://arxiv.org/abs/2512.03932)  
+**Code**: [Project Page](https://hij1112.github.io/beyond-the-ground-truth/)  
 **Area**: Image Restoration
 **Keywords**: Supervision Enhancement, Frequency-Domain Mixup, Super-Resolution, Output Refinement Network, Perceptual Quality
 

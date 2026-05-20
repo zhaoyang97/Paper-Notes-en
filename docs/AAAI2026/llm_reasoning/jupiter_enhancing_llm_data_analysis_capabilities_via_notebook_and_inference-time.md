@@ -18,8 +18,8 @@ content_hash: 9cf97680be5c9db8
 # Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.09245](https://arxiv.org/abs/2509.09245)
-**Code**: [https://github.com/microsoft/Jupiter](https://github.com/microsoft/Jupiter)
+**arXiv**: [2509.09245](https://arxiv.org/abs/2509.09245)  
+**Code**: [https://github.com/microsoft/Jupiter](https://github.com/microsoft/Jupiter)  
 **Area**: LLM Reasoning
 **Keywords**: Data Analysis, Jupyter Notebook, Value-Guided Search, MCTS, Test-Time Compute
 

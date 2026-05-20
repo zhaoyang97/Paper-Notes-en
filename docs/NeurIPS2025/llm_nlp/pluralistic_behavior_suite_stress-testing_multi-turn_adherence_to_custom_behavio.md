@@ -18,8 +18,8 @@ content_hash: 0e26ad80f84061dc
 # PluralisticBehaviorSuite: Stress-Testing Multi-Turn Adherence to Custom Behavioral Policies
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05018](https://arxiv.org/abs/2511.05018)
-**Code**: To be confirmed
+**arXiv**: [2511.05018](https://arxiv.org/abs/2511.05018)  
+**Code**: To be confirmed  
 **Area**: LLM/NLP
 **Keywords**: pluralistic alignment, behavioral policy, multi-turn evaluation, red-teaming, LLM safety
 

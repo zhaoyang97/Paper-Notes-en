@@ -18,8 +18,8 @@ content_hash: 85eede20057cb6ec
 # Retrieving Objects from 3D Scenes with Box-Guided Open-Vocabulary Instance Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.19088](https://arxiv.org/abs/2512.19088)
-**Code**: [https://github.com/ndkhanh360/BoxOVIS](https://github.com/ndkhanh360/BoxOVIS)
+**arXiv**: [2512.19088](https://arxiv.org/abs/2512.19088)  
+**Code**: [https://github.com/ndkhanh360/BoxOVIS](https://github.com/ndkhanh360/BoxOVIS)  
 **Area**: 3D Vision
 **Keywords**: Open-vocabulary 3D instance segmentation, 3D object retrieval, superpoints, YOLO-World, 2D-to-3D lifting
 

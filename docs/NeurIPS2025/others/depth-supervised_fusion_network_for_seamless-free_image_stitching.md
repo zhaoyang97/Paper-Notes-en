@@ -17,8 +17,8 @@ content_hash: 5eb20a92780b69d4
 # Depth-Supervised Fusion Network for Seamless-Free Image Stitching
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21396](https://arxiv.org/abs/2510.21396)
-**Code**: [GitHub](https://github.com/DLUT-YRH/DSFN)
+**arXiv**: [2510.21396](https://arxiv.org/abs/2510.21396)  
+**Code**: [GitHub](https://github.com/DLUT-YRH/DSFN)  
 **Area**: Others (Computer Vision / Image Stitching)
 **Keywords**: image stitching, depth supervision, large-parallax alignment, soft-seam fusion, re-parameterization
 

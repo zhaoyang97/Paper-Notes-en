@@ -18,8 +18,8 @@ content_hash: 408a2669f09cb3cc
 # Learnable Fractional Reaction-Diffusion Dynamics for Under-Display ToF Imaging and Beyond
 
 **Conference**: ICCV 2025
-**arXiv**: [2511.01704](https://arxiv.org/abs/2511.01704)
-**Code**: [https://github.com/wudiqx106/LFRD2](https://github.com/wudiqx106/LFRD2)
+**arXiv**: [2511.01704](https://arxiv.org/abs/2511.01704)  
+**Code**: [https://github.com/wudiqx106/LFRD2](https://github.com/wudiqx106/LFRD2)  
 **Area**: Depth Restoration / Computational Imaging
 **Keywords**: Under-display ToF imaging, fractional reaction-diffusion, continuous convolution, depth restoration, physics-driven
 

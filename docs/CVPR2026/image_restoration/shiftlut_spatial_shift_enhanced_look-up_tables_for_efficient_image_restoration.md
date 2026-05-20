@@ -18,8 +18,8 @@ content_hash: c454e034fffc3b2f
 # ShiftLUT: Spatial Shift Enhanced Look-Up Tables for Efficient Image Restoration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00906](https://arxiv.org/abs/2603.00906)
-**Code**: [GitHub](https://github.com/Sailor-t/ShiftLUT)
+**arXiv**: [2603.00906](https://arxiv.org/abs/2603.00906)  
+**Code**: [GitHub](https://github.com/Sailor-t/ShiftLUT)  
 **Area**: Efficient Image Restoration
 **Keywords**: Look-Up Table, Efficient Super-Resolution, Spatial Shift, Asymmetric Architecture, Adaptive Sampling
 

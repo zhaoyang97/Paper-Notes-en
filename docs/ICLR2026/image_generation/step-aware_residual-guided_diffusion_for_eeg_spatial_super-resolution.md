@@ -18,8 +18,8 @@ content_hash: d9f93e8a3b36b861
 # Step-Aware Residual-Guided Diffusion for EEG Spatial Super-Resolution
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.19166](https://arxiv.org/abs/2510.19166)
-**Code**: [GitHub](https://github.com/DhrLhj/ICLR2026SRGDiff)
+**arXiv**: [2510.19166](https://arxiv.org/abs/2510.19166)  
+**Code**: [GitHub](https://github.com/DhrLhj/ICLR2026SRGDiff)  
 **Area**: Diffusion Models / EEG Signals / Super-Resolution
 **Keywords**: EEG super-resolution, residual-guided diffusion, step-aware modulation, brain-computer interface, conditional generation
 

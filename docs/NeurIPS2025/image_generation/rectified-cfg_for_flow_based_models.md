@@ -18,9 +18,9 @@ content_hash: 0ab9facc51ca273a
 # Rectified-CFG++ for Flow Based Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07631](https://arxiv.org/abs/2510.07631)
+**arXiv**: [2510.07631](https://arxiv.org/abs/2510.07631)  
 **Authors**: Shreshth Saini, Shashank Gupta, Alan C. Bovik (UT Austin)
-**Code**: [rectified-cfgpp.github.io](https://rectified-cfgpp.github.io/)
+**Code**: [rectified-cfgpp.github.io](https://rectified-cfgpp.github.io/)  
 **Area**: Image Generation
 **Keywords**: Classifier-Free Guidance, Rectified Flow, Text-to-Image Generation, Predictor-Corrector Sampling, Flow Models
 

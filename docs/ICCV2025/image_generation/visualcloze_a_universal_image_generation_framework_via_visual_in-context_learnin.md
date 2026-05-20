@@ -18,8 +18,8 @@ content_hash: 2d0c01ca74caa0ea
 # VisualCloze: A Universal Image Generation Framework via Visual In-Context Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.07960](https://arxiv.org/abs/2504.07960)
-**Code**: [https://visualcloze.github.io/](https://visualcloze.github.io/)
+**arXiv**: [2504.07960](https://arxiv.org/abs/2504.07960)  
+**Code**: [https://visualcloze.github.io/](https://visualcloze.github.io/)  
 **Area**: Image Generation / Unified Framework / In-Context Learning
 **Keywords**: universal image generation, visual in-context learning, image infilling, Graph200K, multi-task unification
 

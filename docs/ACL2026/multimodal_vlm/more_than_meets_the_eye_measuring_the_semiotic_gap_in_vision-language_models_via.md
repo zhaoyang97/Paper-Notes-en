@@ -18,8 +18,8 @@ content_hash: 7438ac8a607c87b9
 # More Than Meets the Eye: Measuring the Semiotic Gap in Vision-Language Models via Semantic Anchorage
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17354](https://arxiv.org/abs/2604.17354)
-**Code**: [GitHub](https://github.com/risehnhew/More-than-meets-the-eye)
+**arXiv**: [2604.17354](https://arxiv.org/abs/2604.17354)  
+**Code**: [GitHub](https://github.com/risehnhew/More-than-meets-the-eye)  
 **Area**: Multimodal VLM / Semiotic Understanding
 **Keywords**: Vision-Language Models, Semiotic Gap, Literal Bias, Iconographic Abstraction, Noun Compounds
 

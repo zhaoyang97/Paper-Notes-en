@@ -18,8 +18,8 @@ content_hash: d5508f7a63405738
 # From Policy to Logic for Efficient and Interpretable Coverage Assessment
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.01266](https://arxiv.org/abs/2601.01266)
-**Code**: None
+**arXiv**: [2601.01266](https://arxiv.org/abs/2601.01266)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Neuro-symbolic reasoning, coverage policy, rule engine, retrieval augmentation, explainable AI
 

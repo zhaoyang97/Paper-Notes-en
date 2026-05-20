@@ -18,8 +18,8 @@ content_hash: 4bedba7d8119506b
 # Active Membership Inference Test (aMINT): Enhancing Model Auditability with Multi-Task Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.07879](https://arxiv.org/abs/2509.07879)
-**Code**: [GitHub](https://github.com/DanieldeAlcala/Membership-Inference-Test.git)
+**arXiv**: [2509.07879](https://arxiv.org/abs/2509.07879)  
+**Code**: [GitHub](https://github.com/DanieldeAlcala/Membership-Inference-Test.git)  
 **Area**: AI Security & Auditability
 **Keywords**: Membership Inference, Data Auditing, Multi-Task Learning, AI Trustworthiness, Model Transparency
 

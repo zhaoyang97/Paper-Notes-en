@@ -18,8 +18,8 @@ content_hash: d2d1887c7f0eab8b
 # Fairness under Competition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16291](https://arxiv.org/abs/2505.16291)
-**Code**: [GitHub](https://github.com/eilamshapira/FairnessUnderCompetition)
+**arXiv**: [2505.16291](https://arxiv.org/abs/2505.16291)  
+**Code**: [GitHub](https://github.com/eilamshapira/FairnessUnderCompetition)  
 **Area**: AI Safety
 **Keywords**: Algorithmic Fairness, Competitive Ecosystems, Equal Opportunity, Multi-Classifier Fairness, Ecosystem Fairness
 
@@ -49,14 +49,14 @@ The framework involves two types of players: borrowers $(x, a, y) \in X \times A
 ### Key Definitions
 
 1. **Equal Opportunity (EO)**:
-   - Function: Requires that a classifier's false negative rates be equal across both groups.
-   - Core Definition: EO level $= |E[c_\ell(X,A)|Y=1,A=0] - E[c_\ell(X,A)|Y=1,A=1]|$; an EO level of 0 indicates that EO is satisfied.
-   - Design Motivation: Ensures that qualified applicants from different groups receive equal acceptance probabilities.
+    - Function: Requires that a classifier's false negative rates be equal across both groups.
+    - Core Definition: EO level $= |E[c_\ell(X,A)|Y=1,A=0] - E[c_\ell(X,A)|Y=1,A=1]|$; an EO level of 0 indicates that EO is satisfied.
+    - Design Motivation: Ensures that qualified applicants from different groups receive equal acceptance probabilities.
 
 2. **Equal Opportunity under Competition (EOC)**:
-   - Function: Defines a fairness measure for settings with multiple competing classifiers.
-   - Core Definition: Let $d(x,a) = \Pr[R(x,a) \geq 1]$ denote the probability of receiving at least one offer, where $R(x,a) = \sum_{\ell \in L} c_\ell(x,a)$. EOC level $= |E[d(X,A)|Y=1,A=0] - E[d(X,A)|Y=1,A=1]|$.
-   - Design Motivation: In a competitive ecosystem, individuals care about whether they receive at least one offer, rather than whether any single classifier is fair.
+    - Function: Defines a fairness measure for settings with multiple competing classifiers.
+    - Core Definition: Let $d(x,a) = \Pr[R(x,a) \geq 1]$ denote the probability of receiving at least one offer, where $R(x,a) = \sum_{\ell \in L} c_\ell(x,a)$. EOC level $= |E[d(X,A)|Y=1,A=0] - E[d(X,A)|Y=1,A=1]|$.
+    - Design Motivation: In a competitive ecosystem, individuals care about whether they receive at least one offer, rather than whether any single classifier is fair.
 
 ### Force I: Differences in Inter-Classifier Correlation (Section 3.1)
 

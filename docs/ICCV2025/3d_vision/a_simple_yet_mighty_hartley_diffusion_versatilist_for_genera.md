@@ -19,8 +19,8 @@ content_hash: 08ae39230cf936a0
 # A Simple yet Mighty Hartley Diffusion Versatilist for Generalizable Dense Vision Tasks
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF only)
-**Code**: No public information
+**arXiv**: N/A (CVF only)  
+**Code**: No public information  
 **Area**: Dense Prediction / Diffusion Models / Domain Generalization
 **Keywords**: Diffusion Models, Discrete Hartley Transform, Domain Generalization, Semantic Segmentation, Depth Estimation, Dehazing
 

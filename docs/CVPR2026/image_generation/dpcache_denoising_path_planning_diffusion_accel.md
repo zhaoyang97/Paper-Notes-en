@@ -18,8 +18,8 @@ content_hash: a281e04a17808aff
 # Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22654](https://arxiv.org/abs/2602.22654)
-**Code**: [https://github.com/argsss/DPCache](https://github.com/argsss/DPCache)
+**arXiv**: [2602.22654](https://arxiv.org/abs/2602.22654)  
+**Code**: [https://github.com/argsss/DPCache](https://github.com/argsss/DPCache)  
 **Area**: Diffusion Models
 **Keywords**: diffusion model acceleration, feature caching, dynamic programming, path planning, training-free
 

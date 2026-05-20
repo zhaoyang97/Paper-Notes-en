@@ -18,8 +18,8 @@ content_hash: 7f9bff50ee4613e8
 # SVAgent: Storyline-Guided Long Video Understanding via Cross-Modal Multi-Agent Collaboration
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05079](https://arxiv.org/abs/2604.05079)
-**Code**: None
+**arXiv**: [2604.05079](https://arxiv.org/abs/2604.05079)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: long video QA, multi-agent, storyline, cross-modal reasoning, DPP
 

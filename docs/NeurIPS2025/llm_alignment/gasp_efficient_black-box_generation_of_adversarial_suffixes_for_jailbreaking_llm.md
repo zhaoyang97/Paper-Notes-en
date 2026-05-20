@@ -18,8 +18,8 @@ content_hash: c475cb54f5a1e687
 # GASP: Efficient Black-Box Generation of Adversarial Suffixes for Jailbreaking LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.14133](https://arxiv.org/abs/2411.14133)
-**Code**: [https://github.com/TrustMLRG/GASP](https://github.com/TrustMLRG/GASP)
+**arXiv**: [2411.14133](https://arxiv.org/abs/2411.14133)  
+**Code**: [https://github.com/TrustMLRG/GASP](https://github.com/TrustMLRG/GASP)  
 **Area**: LLM Alignment / AI Safety
 **Keywords**: adversarial suffix, jailbreak attack, Bayesian optimization, black-box attack, red teaming
 

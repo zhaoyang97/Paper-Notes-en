@@ -18,8 +18,8 @@ content_hash: 980628cb097abcd4
 # Extremely Simple Multimodal Outlier Synthesis for Out-of-Distribution Detection and Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16985](https://arxiv.org/abs/2505.16985)
-**Code**: [https://github.com/mona4399/FeatureMixing](https://github.com/mona4399/FeatureMixing)
+**arXiv**: [2505.16985](https://arxiv.org/abs/2505.16985)  
+**Code**: [https://github.com/mona4399/FeatureMixing](https://github.com/mona4399/FeatureMixing)  
 **Area**: Autonomous Driving
 **Keywords**: OOD Detection, OOD Segmentation, Multimodal, Outlier Synthesis, Feature Mixing
 

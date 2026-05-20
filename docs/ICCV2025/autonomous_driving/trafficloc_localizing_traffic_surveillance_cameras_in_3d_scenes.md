@@ -18,8 +18,8 @@ content_hash: 1682b500a1bd6ae7
 # TrafficLoc: Localizing Traffic Surveillance Cameras in 3D Scenes
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.10308](https://arxiv.org/abs/2412.10308)
-**Code**: [GitHub](https://tum-luk.github.io/projects/trafficloc/)
+**arXiv**: [2412.10308](https://arxiv.org/abs/2412.10308)  
+**Code**: [GitHub](https://tum-luk.github.io/projects/trafficloc/)  
 **Area**: Autonomous Driving
 **Keywords**: Image-to-point cloud registration, traffic camera localization, cross-modal feature fusion, contrastive learning, 6-DoF pose estimation
 

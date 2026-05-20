@@ -20,8 +20,8 @@ content_hash: a707b32ed028a593
 # FIPER: Factorized Features for Robust Image Super-Resolution and Compression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.18083](https://arxiv.org/abs/2410.18083)
-**Code**: [Project Page](https://jayisaking.github.io/FIPER/)
+**arXiv**: [2410.18083](https://arxiv.org/abs/2410.18083)  
+**Code**: [Project Page](https://jayisaking.github.io/FIPER/)  
 **Area**: Image Restoration / Super-Resolution and Compression
 **Keywords**: super-resolution, image compression, factorized features, basis-coefficient decomposition, coordinate transformation, multi-frequency modulation, multi-frame compression
 

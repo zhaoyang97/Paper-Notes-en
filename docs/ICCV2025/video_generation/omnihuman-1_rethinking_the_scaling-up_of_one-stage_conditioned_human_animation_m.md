@@ -18,8 +18,8 @@ content_hash: d06261000fa3875a
 # OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.01061](https://arxiv.org/abs/2502.01061)
-**Code**: Unavailable (Project page: [https://omnihuman-lab.github.io/](https://omnihuman-lab.github.io/))
+**arXiv**: [2502.01061](https://arxiv.org/abs/2502.01061)  
+**Code**: Unavailable (Project page: [https://omnihuman-lab.github.io/](https://omnihuman-lab.github.io/))  
 **Area**: Video Generation
 **Keywords**: human animation, diffusion transformer, audio-driven, omni-conditions training, data scaling
 
@@ -43,16 +43,16 @@ OmniHuman builds upon a text-to-video pretrained model with an MMDiT backbone an
 
 1. **Driving Condition Injection**:
 
-   - **Audio condition**: Multi-scale acoustic features extracted by wav2vec → compressed and aligned to the DiT hidden dimension and 25 fps frame rate via MLP → concatenated with adjacent timestamp audio → injected into each MMDiT block via per-frame cross-attention.
-   - **Pose condition**: Skeleton sequence encoded by a Pose Guider → concatenated with adjacent frames → stacked channel-wise with the noisy latent before being fed into the model.
-   - **Text condition**: Processed through the original MMDiT text branch without modification.
+    - **Audio condition**: Multi-scale acoustic features extracted by wav2vec → compressed and aligned to the DiT hidden dimension and 25 fps frame rate via MLP → concatenated with adjacent timestamp audio → injected into each MMDiT block via per-frame cross-attention.
+    - **Pose condition**: Skeleton sequence encoded by a Pose Guider → concatenated with adjacent frames → stacked channel-wise with the noisy latent before being fed into the model.
+    - **Text condition**: Processed through the original MMDiT text branch without modification.
 
 2. **Appearance Condition Injection (Minimalist Design)**: Rather than introducing an additional reference network (which would double parameters), the original DiT backbone is reused to encode the reference image. The reference image and noisy video latents are flattened into token sequences, packed together, and fed into the DiT for interaction via self-attention. Reference and video tokens are distinguished by setting the temporal component of the 3D RoPE to zero for reference image tokens, incurring zero additional parameter overhead.
 
 3. **Omni-Conditions Training Strategy (Core Innovation)**: The strategy follows two principles:
 
-   - **Principle 1**: Stronger-condition tasks can leverage weaker-condition tasks and their data to expand training data. For example, data filtered out due to poor lip-sync quality can still be used for text+image→video tasks. Stage 1 trains only the text+image→video task to maximize data utilization.
-   - **Principle 2**: Stronger conditions should occupy a lower training proportion. Strong conditions (e.g., pose) provide precise control but may suppress the learning of weaker conditions (e.g., audio). Stage 2 introduces audio without pose; Stage 3 introduces all conditions, with training proportions progressively halved for text/audio/pose (T=90%, A=50%, P=25%), assigning higher gradient weight to more challenging tasks.
+    - **Principle 1**: Stronger-condition tasks can leverage weaker-condition tasks and their data to expand training data. For example, data filtered out due to poor lip-sync quality can still be used for text+image→video tasks. Stage 1 trains only the text+image→video task to maximize data utilization.
+    - **Principle 2**: Stronger conditions should occupy a lower training proportion. Strong conditions (e.g., pose) provide precise control but may suppress the learning of weaker conditions (e.g., audio). Stage 2 introduces audio without pose; Stage 3 introduces all conditions, with training proportions progressively halved for text/audio/pose (T=90%, A=50%, P=25%), assigning higher gradient weight to more challenging tasks.
 
 ### Loss & Training
 

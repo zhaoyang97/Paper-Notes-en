@@ -17,8 +17,8 @@ content_hash: d2d1b1d7835e7566
 # Inferring Stochastic Dynamics with Growth from Cross-Sectional Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13197](https://arxiv.org/abs/2505.13197)
-**Code**: None
+**arXiv**: [2505.13197](https://arxiv.org/abs/2505.13197)  
+**Code**: None  
 **Area**: Computational Biology / Stochastic Dynamics Inference
 **Keywords**: Probability flow inference, Fokker-Planck equation, cell dynamics, optimal transport, branching diffusion process
 

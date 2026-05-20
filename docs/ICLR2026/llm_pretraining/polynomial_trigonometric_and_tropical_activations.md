@@ -18,8 +18,8 @@ content_hash: 9f24df0eaaec1a53
 # Polynomial, trigonometric, and tropical activations
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.01247](https://arxiv.org/abs/2502.01247)
-**Code**: [K-H-Ismail/torchortho](https://github.com/K-H-Ismail/torchortho)
+**arXiv**: [2502.01247](https://arxiv.org/abs/2502.01247)  
+**Code**: [K-H-Ismail/torchortho](https://github.com/K-H-Ismail/torchortho)  
 **Area**: LLM Pre-training
 **Keywords**: Activation functions, Hermite polynomials, Fourier trigonometric basis, Tropical polynomials, Variance-preserving initialization
 

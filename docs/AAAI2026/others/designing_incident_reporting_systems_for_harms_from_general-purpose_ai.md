@@ -17,8 +17,8 @@ content_hash: 923b836d5f96e2ce
 # Designing Incident Reporting Systems for Harms from General-Purpose AI
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.05914](https://arxiv.org/abs/2511.05914)
-**Code**: None
+**arXiv**: [2511.05914](https://arxiv.org/abs/2511.05914)  
+**Code**: None  
 **Area**: AI Safety & Governance
 **Keywords**: AI Incident Reporting, AI Governance, Safety-Critical Systems, Policy Design, General-Purpose AI
 

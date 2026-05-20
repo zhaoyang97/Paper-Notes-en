@@ -18,8 +18,8 @@ content_hash: eef20ead4675d66e
 # GRAZE: Grounded Refinement and Motion-Aware Zero-Shot Event Localization
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01383](https://arxiv.org/abs/2604.01383)
-**Code**: None
+**arXiv**: [2604.01383](https://arxiv.org/abs/2604.01383)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Zero-shot temporal localization, contact detection, SAM2, Grounding DINO, motion-aware
 
@@ -52,26 +52,26 @@ GRAZE is a four-stage zero-shot pipeline requiring no domain-specific training:
 ### Key Designs
 
 1. **Hierarchical Prompting and Progressive Search**:
-   - Three-level prompt hierarchy: $\mathcal{P} = \{P_{\text{gear}}, P_{\text{nogear}}, P_{\text{generic}}\}$, ranging from most detailed (helmet + sprint posture description) to most generic (person running toward a red object)
-   - Six temporal positions are probed per video; each position attempts three progressively relaxed detection thresholds
-   - All valid candidates are **exhaustively collected** rather than stopping at first success—because detection quality and contact quality are not monotonically correlated
+    - Three-level prompt hierarchy: $\mathcal{P} = \{P_{\text{gear}}, P_{\text{nogear}}, P_{\text{generic}}\}$, ranging from most detailed (helmet + sprint posture description) to most generic (person running toward a red object)
+    - Six temporal positions are probed per video; each position attempts three progressively relaxed detection thresholds
+    - All valid candidates are **exhaustively collected** rather than stopping at first success—because detection quality and contact quality are not monotonically correlated
 
 2. **Directional Motion Scoring**:
-   - Displacement score $m_{\text{disp}}$: measures the displacement of the candidate athlete within the validation window (normalized to 200 pixels)
-   - Directional proximity score $m_{\text{dir}}$: cosine similarity between the motion vector and the direction toward the dummy, scaled to $[0,1]$
-   - Combined ranking score: $\text{conf}_{\text{overall}} = 0.3\, c_{\text{cons}} + 0.3\, m_{\text{disp}} + 0.4\, m_{\text{dir}}$
-   - Static bystanders and laterally moving athletes are filtered via $m_{\text{disp}} < 0.08$ or $m_{\text{dir}} < 0.30$
+    - Displacement score $m_{\text{disp}}$: measures the displacement of the candidate athlete within the validation window (normalized to 200 pixels)
+    - Directional proximity score $m_{\text{dir}}$: cosine similarity between the motion vector and the direction toward the dummy, scaled to $[0,1]$
+    - Combined ranking score: $\text{conf}_{\text{overall}} = 0.3\, c_{\text{cons}} + 0.3\, m_{\text{disp}} + 0.4\, m_{\text{dir}}$
+    - Static bystanders and laterally moving athletes are filtered via $m_{\text{disp}} < 0.08$ or $m_{\text{dir}} < 0.30$
 
 3. **Two-Phase Backward Refinement**:
-   - Phase 1: Steps backward frame by frame from the grounding frame, allowing at most one consecutive miss
-   - Phase 2: Exponential offset probing ($\{5, 10, 20, 50\}$ frames), followed by binary search to locate the earliest consistent frame after a candidate is found
-   - Addresses grounding bias: grounding is most reliable mid-contact (when both objects are simultaneously salient), causing $t_g$ to be systematically later than the true onset
+    - Phase 1: Steps backward frame by frame from the grounding frame, allowing at most one consecutive miss
+    - Phase 2: Exponential offset probing ($\{5, 10, 20, 50\}$ frames), followed by binary search to locate the earliest consistent frame after a candidate is found
+    - Addresses grounding bias: grounding is most reliable mid-contact (when both objects are simultaneously salient), causing $t_g$ to be systematically later than the true onset
 
 4. **SAM2 Contact Verification**:
-   - SAM2 is initialized at $t_{\text{FFBO}}$ using the refined bounding boxes, propagating binary masks for both the athlete and the dummy
-   - Contact quantification: $\text{overlap}_t = \sum_{x,y} \mathcal{M}_t^{(P)}(x,y) \wedge \mathcal{M}_t^{(D)}(x,y)$
-   - FPOC is defined as the earliest frame where mask overlap reaches at least 1 pixel
-   - If no overlap is found, the current candidate is rejected and the next-ranked candidate is evaluated—**multi-candidate fallback** mechanism
+    - SAM2 is initialized at $t_{\text{FFBO}}$ using the refined bounding boxes, propagating binary masks for both the athlete and the dummy
+    - Contact quantification: $\text{overlap}_t = \sum_{x,y} \mathcal{M}_t^{(P)}(x,y) \wedge \mathcal{M}_t^{(D)}(x,y)$
+    - FPOC is defined as the earliest frame where mask overlap reaches at least 1 pixel
+    - If no overlap is found, the current candidate is rejected and the next-ranked candidate is evaluated—**multi-candidate fallback** mechanism
 
 ### Loss & Training
 

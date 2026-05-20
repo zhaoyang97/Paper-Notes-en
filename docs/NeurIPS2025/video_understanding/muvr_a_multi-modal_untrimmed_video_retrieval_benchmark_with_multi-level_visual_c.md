@@ -18,8 +18,8 @@ content_hash: 0ba1dd70b2ef019f
 # MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21406](https://arxiv.org/abs/2510.21406)
-**Code**: [GitHub](https://github.com/debby-0527/MUVR)
+**arXiv**: [2510.21406](https://arxiv.org/abs/2510.21406)  
+**Code**: [GitHub](https://github.com/debby-0527/MUVR)  
 **Area**: Video Understanding
 **Keywords**: Video Retrieval, Multi-Modal Query, Untrimmed Video, Multi-Level Visual Correspondence, Benchmark Dataset
 

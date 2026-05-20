@@ -18,8 +18,8 @@ content_hash: 946f9abedc17f4d3
 # Test-Time Iterative Error Correction for Efficient Diffusion Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.06250](https://arxiv.org/abs/2511.06250)
-**Code**: [GitHub](https://github.com/zysxmu/IEC)
+**arXiv**: [2511.06250](https://arxiv.org/abs/2511.06250)  
+**Code**: [GitHub](https://github.com/zysxmu/IEC)  
 **Area**: Diffusion Models / Model Efficiency / Test-Time Optimization
 **Keywords**: iterative error correction, test-time enhancement, quantized diffusion, feature caching, error propagation
 

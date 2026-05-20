@@ -18,8 +18,8 @@ content_hash: 62e42e43f4c945cc
 # EdgeDiT: Hardware-Aware Diffusion Transformers for Efficient On-Device Image Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28405](https://arxiv.org/abs/2603.28405)
-**Code**: N/A
+**arXiv**: [2603.28405](https://arxiv.org/abs/2603.28405)  
+**Code**: N/A  
 **Area**: Diffusion Models / Model Compression
 **Keywords**: Diffusion Transformer, on-device deployment, hardware-aware optimization, knowledge distillation, architecture search
 
@@ -31,15 +31,15 @@ EdgeDiT proposes a hardware-aware optimization framework for Diffusion Transform
 1. **Background**: Diffusion Transformers (DiT) have emerged as a new paradigm for high-fidelity image generation, replacing U-Net backbones with Vision Transformers for improved scalability. Subsequent works such as MDT (masked modeling) and SiT (interpolant Transformer) have further advanced performance.
 
 2. **Limitations of Prior Work**:
-   - Existing DiT models impose enormous computational and memory demands, making them infeasible on resource-constrained edge devices.
-   - Cloud-based inference is viable but raises privacy concerns, network dependency, and increased energy consumption.
-   - Theoretical compute metrics (FLOPs/GMACs) do not reliably predict actual on-device latency—NPUs are specifically optimized for certain operations (e.g., GEMM), so reducing arithmetic computation does not proportionally reduce latency.
+    - Existing DiT models impose enormous computational and memory demands, making them infeasible on resource-constrained edge devices.
+    - Cloud-based inference is viable but raises privacy concerns, network dependency, and increased energy consumption.
+    - Theoretical compute metrics (FLOPs/GMACs) do not reliably predict actual on-device latency—NPUs are specifically optimized for certain operations (e.g., GEMM), so reducing arithmetic computation does not proportionally reduce latency.
 
 3. **Key Challenge**: The strong generative capability of DiT stems from large-scale parameters and deep architectures, yet on-device deployment demands low latency and small memory footprint. Compressing the model while preserving generation quality is the core challenge, and actual hardware characteristics must be accounted for rather than optimizing theoretical metrics alone.
 
 4. **Goal**:
-   - How to systematically discover efficient DiT architectures suited to mobile NPUs?
-   - How to avoid full training of every candidate architecture in the search space?
+    - How to systematically discover efficient DiT architectures suited to mobile NPUs?
+    - How to avoid full training of every candidate architecture in the search space?
 
 5. **Key Insight**: Decompose the DiT architecture into replaceable, hardware-friendly proxy blocks; rapidly train proxies via hierarchical knowledge distillation; then apply multi-objective Bayesian optimization to identify Pareto-optimal architectures in the quality–latency space.
 
@@ -53,19 +53,19 @@ Using DiT-XL/2 (28 layers, 675M parameters) as the teacher model, the EdgeDiT fr
 ### Key Designs
 
 1. **Hardware-Aware Proxy Block Search Space**:
-   - *Function*: Define a set of hardware-friendly lightweight substitute modules constituting a structured search space.
-   - *Mechanism*: Three proxy types are defined—(a) block removal: every two consecutive DiT layers are merged into one (Stage 1, $2^{14}$ combinations); (b) MLP ratio modification: FFN expansion ratio reduced from 4 to 2 (Stage 2); (c) hidden dimension reduction: projection dimension reduced from 1152 to 512 (Stage 2). In Stage 2, each layer has 4 options (2 MLP ratios × 2 dimensions), yielding $4^{28}$ combinations. The total search space is $2^{14} + 4^{28}$.
-   - *Design Motivation*: Targeting the dataflow characteristics of mobile NPUs, computationally intensive and redundant operations are identified for structured simplification rather than random search.
+    - *Function*: Define a set of hardware-friendly lightweight substitute modules constituting a structured search space.
+    - *Mechanism*: Three proxy types are defined—(a) block removal: every two consecutive DiT layers are merged into one (Stage 1, $2^{14}$ combinations); (b) MLP ratio modification: FFN expansion ratio reduced from 4 to 2 (Stage 2); (c) hidden dimension reduction: projection dimension reduced from 1152 to 512 (Stage 2). In Stage 2, each layer has 4 options (2 MLP ratios × 2 dimensions), yielding $4^{28}$ combinations. The total search space is $2^{14} + 4^{28}$.
+    - *Design Motivation*: Targeting the dataflow characteristics of mobile NPUs, computationally intensive and redundant operations are identified for structured simplification rather than random search.
 
 2. **Feature-wise Knowledge Distillation (FwKD)**:
-   - *Function*: Efficiently train proxy blocks to avoid the prohibitive cost of training the entire network from scratch.
-   - *Mechanism*: A divide-and-conquer strategy is adopted—each proxy block is trained independently to minimize the discrepancy between its output $S_l(x)$ and the corresponding teacher block output $T_l(x)$, with loss $\mathcal{L}_{KD}^l = \|T_l(x) - S_l(x)\|_2^2$. Stage 1 trains 14 proxies (two-layer → one-layer); Stage 2 trains 56 proxies (28 layers × 2 variants). Since blocks are distilled independently, the process is highly parallelizable.
-   - *Design Motivation*: Training every candidate architecture from scratch over a search space of $2^{14} + 4^{28}$ is entirely infeasible. Hierarchical distillation enables proxy blocks to rapidly approximate local behavior, requiring only minimal end-to-end fine-tuning afterward.
+    - *Function*: Efficiently train proxy blocks to avoid the prohibitive cost of training the entire network from scratch.
+    - *Mechanism*: A divide-and-conquer strategy is adopted—each proxy block is trained independently to minimize the discrepancy between its output $S_l(x)$ and the corresponding teacher block output $T_l(x)$, with loss $\mathcal{L}_{KD}^l = \|T_l(x) - S_l(x)\|_2^2$. Stage 1 trains 14 proxies (two-layer → one-layer); Stage 2 trains 56 proxies (28 layers × 2 variants). Since blocks are distilled independently, the process is highly parallelizable.
+    - *Design Motivation*: Training every candidate architecture from scratch over a search space of $2^{14} + 4^{28}$ is entirely infeasible. Hierarchical distillation enables proxy blocks to rapidly approximate local behavior, requiring only minimal end-to-end fine-tuning afterward.
 
 3. **Multi-Objective Bayesian Optimization (MOBO) for Architecture Selection**:
-   - *Function*: Efficiently identify Pareto-optimal architectures in the two-dimensional FID–latency space.
-   - *Mechanism*: Architecture configuration selection is formalized as a bi-objective optimization problem: $\max f(a)$ (generation quality / FID) and $\min g(a)$ (on-device latency). A Gaussian process serves as the surrogate model to predict objective values for candidate architectures, with the Expected Hypervolume Improvement (EHVI) acquisition function balancing exploration and exploitation. Discrete architecture configurations are relaxed to a continuous representation $x \in [0,1]^{28}$ and then mapped back to the nearest feasible architecture.
-   - *Design Motivation*: Exhaustive evaluation is infeasible; Bayesian optimization efficiently approximates the Pareto frontier with a small number of evaluations.
+    - *Function*: Efficiently identify Pareto-optimal architectures in the two-dimensional FID–latency space.
+    - *Mechanism*: Architecture configuration selection is formalized as a bi-objective optimization problem: $\max f(a)$ (generation quality / FID) and $\min g(a)$ (on-device latency). A Gaussian process serves as the surrogate model to predict objective values for candidate architectures, with the Expected Hypervolume Improvement (EHVI) acquisition function balancing exploration and exploitation. Discrete architecture configurations are relaxed to a continuous representation $x \in [0,1]^{28}$ and then mapped back to the nearest feasible architecture.
+    - *Design Motivation*: Exhaustive evaluation is infeasible; Bayesian optimization efficiently approximates the Pareto frontier with a small number of evaluations.
 
 ### Loss & Training
 - Distillation stage: $\mathcal{L}_{KD}^l = \|T_l(x) - S_l(x)\|_2^2$, with each proxy block trained independently.

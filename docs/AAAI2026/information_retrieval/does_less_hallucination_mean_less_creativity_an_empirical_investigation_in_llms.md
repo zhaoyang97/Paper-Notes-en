@@ -18,8 +18,8 @@ content_hash: b74355fa47b354fc
 # Does Less Hallucination Mean Less Creativity? An Empirical Investigation in LLMs
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.11509](https://arxiv.org/abs/2512.11509)
-**Code**: None
+**arXiv**: [2512.11509](https://arxiv.org/abs/2512.11509)  
+**Code**: None  
 **Area**: Information Retrieval
 **Keywords**: Hallucination Mitigation, Creativity, LLM, Divergent Thinking, Convergent Thinking
 

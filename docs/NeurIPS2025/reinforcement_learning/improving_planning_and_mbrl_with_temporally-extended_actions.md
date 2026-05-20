@@ -18,8 +18,8 @@ content_hash: 248a1afedfdd2130
 # Improving Planning and MBRL with Temporally-Extended Actions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15754](https://arxiv.org/abs/2505.15754)
-**Code**: None
+**arXiv**: [2505.15754](https://arxiv.org/abs/2505.15754)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: temporally-extended actions, model-based RL, planning, action duration, multi-armed bandit
 

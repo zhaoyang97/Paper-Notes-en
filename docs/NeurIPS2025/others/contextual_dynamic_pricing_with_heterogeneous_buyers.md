@@ -18,7 +18,7 @@ content_hash: cc35052a3b8503b5
 # Contextual Dynamic Pricing with Heterogeneous Buyers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.09513](https://arxiv.org/abs/2512.09513)
+**arXiv**: [2512.09513](https://arxiv.org/abs/2512.09513)  
 **Area**: Others
 **Keywords**: Dynamic Pricing, Heterogeneous Buyers, Contextual Bandits, Posterior Sampling, Disagreement Coefficient, Lipschitz Bandits
 

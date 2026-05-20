@@ -18,8 +18,8 @@ content_hash: e9473c5ac8f02695
 # CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17779](https://arxiv.org/abs/2603.17779)
-**Code**: None
+**arXiv**: [2603.17779](https://arxiv.org/abs/2603.17779)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: Human body reconstruction, 3D Gaussian splatting, occlusion recovery, diffusion model refinement, crowd scenes
 

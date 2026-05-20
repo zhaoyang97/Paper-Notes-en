@@ -17,8 +17,8 @@ content_hash: 008d392d27fc6e38
 # DFDT: Dynamic Fast Decision Tree for IoT Data Stream Mining on Edge Devices
 
 **Conference**: AAAI 2026
-**arXiv**: [2502.14011](https://arxiv.org/abs/2502.14011)
-**Code**: [github.com/vturrisi/pystream](https://github.com/vturrisi/pystream) (based on the pystream framework)
+**arXiv**: [2502.14011](https://arxiv.org/abs/2502.14011)  
+**Code**: [github.com/vturrisi/pystream](https://github.com/vturrisi/pystream) (based on the pystream framework)  
 **Area**: Other (Data Stream Mining / Edge Computing)
 **Keywords**: Decision Tree, Data Stream Mining, Edge Devices, Concept Drift, Memory Constraints
 

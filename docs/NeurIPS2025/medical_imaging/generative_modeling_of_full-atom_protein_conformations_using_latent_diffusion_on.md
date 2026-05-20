@@ -18,12 +18,12 @@ content_hash: e26a9e392036b162
 # Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.17064](https://arxiv.org/abs/2506.17064)
-**Code**: Available (open-source)
+**arXiv**: [2506.17064](https://arxiv.org/abs/2506.17064)  
+**Code**: Available (open-source)  
 **Area**: Medical Imaging
 **Keywords**: protein conformation generation, latent diffusion, graph neural networks, full-atom modeling, GPCR
-**arXiv**: [2506.17064](https://arxiv.org/abs/2506.17064)
-**Code**: Unavailable
+**arXiv**: [2506.17064](https://arxiv.org/abs/2506.17064)  
+**Code**: Unavailable  
 **Area**: Medical Imaging
 
 ## TL;DR

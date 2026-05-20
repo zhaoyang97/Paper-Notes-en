@@ -18,8 +18,8 @@ content_hash: 18c52fcfcef09934
 # Adapting Speech Language Model to Singing Voice Synthesis
 
 **Conference**: NeurIPS 2025 (Workshop)
-**arXiv**: [2512.14657](https://arxiv.org/abs/2512.14657)
-**Code**: [https://tsukasane.github.io/SLMSVS/](https://tsukasane.github.io/SLMSVS/)
+**arXiv**: [2512.14657](https://arxiv.org/abs/2512.14657)  
+**Code**: [https://tsukasane.github.io/SLMSVS/](https://tsukasane.github.io/SLMSVS/)  
 **Area**: Image Generation
 **Keywords**: Speech Language Model, SVS, Flow Matching, Codec, Singing Voice Synthesis
 
@@ -51,21 +51,21 @@ This paper adapts a 1.7B-parameter TTS-pretrained Speech Language Model to the S
 
 1. **Score Tokenization (`svs_lb`)**:
 
-   - **Function**: Encodes phonemes, MIDI pitch, and duration into frame-level discrete tokens.
-   - **Mechanism**: Each frame is represented as a (phoneme\_token, pitch\_token) tuple; duration is implicitly encoded via repetition count: $\text{repeat} = (\text{end} - \text{start}) \times \text{fps}$. A new `svs_lb` modality is introduced to extend the TTS vocabulary.
-   - **Design Motivation**: Maintains consistency with the SLM's token prediction paradigm and reuses the TTS pretrained encoder.
+    - **Function**: Encodes phonemes, MIDI pitch, and duration into frame-level discrete tokens.
+    - **Mechanism**: Each frame is represented as a (phoneme\_token, pitch\_token) tuple; duration is implicitly encoded via repetition count: $\text{repeat} = (\text{end} - \text{start}) \times \text{fps}$. A new `svs_lb` modality is introduced to extend the TTS vocabulary.
+    - **Design Motivation**: Maintains consistency with the SLM's token prediction paradigm and reuses the TTS pretrained encoder.
 
 2. **Multi-stream LM Token Prediction**:
 
-   - **Function**: Uses the 1.7B SLM to predict concatenated SSL and 8-layer codec tokens.
-   - **Mechanism**: Built on ESPNet-SpeechLM; the model takes score conditions and a speaker prompt as input and is trained with cross-entropy loss over frame-level SSL+codec tokens.
-   - **Design Motivation**: SSL tokens capture high-level semantics while codec tokens encode acoustic details; concatenating both combines their complementary strengths.
+    - **Function**: Uses the 1.7B SLM to predict concatenated SSL and 8-layer codec tokens.
+    - **Mechanism**: Built on ESPNet-SpeechLM; the model takes score conditions and a speaker prompt as input and is trained with cross-entropy loss over frame-level SSL+codec tokens.
+    - **Design Motivation**: SSL tokens capture high-level semantics while codec tokens encode acoustic details; concatenating both combines their complementary strengths.
 
 3. **Flow Matching Refinement**:
 
-   - **Function**: Refines the noisy codec tokens predicted by the LM into clean mel spectrograms.
-   - **Mechanism**: Conditional Flow Matching (CFM) starts from Gaussian noise and learns a velocity field conditioned on codec tokens and pitch signals to transport samples toward the target mel distribution. A linear interpolation path is used: $\psi_t(x|x_1) = (1-t)x + tx_1$.
-   - **Design Motivation**: Tokens directly predicted by the LM are noisy, causing temporal discontinuities and perceptual artifacts; furthermore, the codec decoder pretrained on speech cannot faithfully resynthesize singing. Flow matching circumvents both bottlenecks.
+    - **Function**: Refines the noisy codec tokens predicted by the LM into clean mel spectrograms.
+    - **Mechanism**: Conditional Flow Matching (CFM) starts from Gaussian noise and learns a velocity field conditioned on codec tokens and pitch signals to transport samples toward the target mel distribution. A linear interpolation path is used: $\psi_t(x|x_1) = (1-t)x + tx_1$.
+    - **Design Motivation**: Tokens directly predicted by the LM are noisy, causing temporal discontinuities and perceptual artifacts; furthermore, the codec decoder pretrained on speech cannot faithfully resynthesize singing. Flow matching circumvents both bottlenecks.
 
 ### Loss & Training
 - **LM fine-tuning**: Cross-entropy loss, maximizing $P(s|m,p)$.

@@ -18,8 +18,8 @@ content_hash: c1783fcc19f91e6e
 # Simba: Towards High-Fidelity and Geometrically-Consistent Point Cloud Completion via Transformation Diffusion
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16161](https://arxiv.org/abs/2511.16161)
-**Code**: [https://github.com/I2-Multimedia-Lab/Simba](https://github.com/I2-Multimedia-Lab/Simba)
+**arXiv**: [2511.16161](https://arxiv.org/abs/2511.16161)  
+**Code**: [https://github.com/I2-Multimedia-Lab/Simba](https://github.com/I2-Multimedia-Lab/Simba)  
 **Area**: 3D Vision
 **Keywords**: Point Cloud Completion, Diffusion Models, Symmetry Prior, Mamba, Affine Transformation
 
@@ -67,8 +67,8 @@ Two-stage design:
 
 - **Stage 1**: Pre-train a SymmGT network to generate target transformation matrices (used as supervision targets for Stage 2 diffusion).
 - **Stage 2**:
-  - **Sym-Diffuser** (Symmetry Diffusion Module): performs conditional diffusion in transformation field space to generate coarse completions.
-  - **MBA-Refiner** (Cascaded Mamba Refiner): three-level cascaded refinement with upsampling.
+    - **Sym-Diffuser** (Symmetry Diffusion Module): performs conditional diffusion in transformation field space to generate coarse completions.
+    - **MBA-Refiner** (Cascaded Mamba Refiner): three-level cascaded refinement with upsampling.
 
 ### Key Designs
 
@@ -113,14 +113,14 @@ $$\mathcal{L}_{\text{proxy}} = \mathbb{E}_{t, \mathcal{Z}_0, \epsilon}\left[\lam
 **Heterogeneous fusion strategy**—different fusion mechanisms are applied at different density levels:
 
 - **Blocks 1–2** (low-density): **Cross-Attention Fusion**, prioritizing performance.
-  - Base features $\mathcal{F}_l$ attend to keypoint features $\mathcal{F}_k$ and symmetric point features $\mathcal{F}_s$ respectively.
-  - Concatenated outputs are fused via MLP.
+    - Base features $\mathcal{F}_l$ attend to keypoint features $\mathcal{F}_k$ and symmetric point features $\mathcal{F}_s$ respectively.
+    - Concatenated outputs are fused via MLP.
 
 $$\mathbf{f}_{in}^l = \boldsymbol{\psi}\left([\text{MCA}(\mathcal{F}_l, \mathcal{F}_g)]_{g \in \{k,s\}}\right)$$
 
 - **Block 3** (high-density): **Mamba Fusion**, prioritizing efficiency.
-  - The $\mathcal{O}(N^2)$ complexity of attention is prohibitive at high point densities.
-  - Mamba's linear complexity $\mathcal{O}(N)$ significantly reduces memory and computational overhead.
+    - The $\mathcal{O}(N^2)$ complexity of attention is prohibitive at high point densities.
+    - Mamba's linear complexity $\mathcal{O}(N)$ significantly reduces memory and computational overhead.
 
 **MambaForward Module**: A shared refinement-and-upsampling module used across all levels, comprising MLP → Mamba block (with residual connection) → upsampling layer.
 

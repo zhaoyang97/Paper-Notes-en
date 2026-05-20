@@ -18,8 +18,8 @@ content_hash: 87c12df6a8a80b4f
 # A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.20693](https://arxiv.org/abs/2511.20693)
-**Code**: [https://github.com/pandawei-ele/A2FLOW](https://github.com/pandawei-ele/A2FLOW)
+**arXiv**: [2511.20693](https://arxiv.org/abs/2511.20693)  
+**Code**: [https://github.com/pandawei-ele/A2FLOW](https://github.com/pandawei-ele/A2FLOW)  
 **Area**: LLM Agent
 **Keywords**: Workflow Automation, Abstraction Operators, MCTS, Operator Memory Mechanism, Embodied Task Generalization
 

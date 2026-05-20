@@ -18,8 +18,8 @@ content_hash: c7b6d99be5fd4224
 # FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08136](https://arxiv.org/abs/2503.08136)
-**Code**: [GitHub](https://github.com/FlowDPS-Inverse/FlowDPS)
+**arXiv**: [2503.08136](https://arxiv.org/abs/2503.08136)  
+**Code**: [GitHub](https://github.com/FlowDPS-Inverse/FlowDPS)  
 **Area**: Diffusion Models / Inverse Problem Solving
 **Keywords**: Flow Matching, Posterior Sampling, Inverse Problems, Tweedie Formula, Stable Diffusion 3.0
 

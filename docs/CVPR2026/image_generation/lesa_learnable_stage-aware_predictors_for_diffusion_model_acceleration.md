@@ -20,7 +20,7 @@ content_hash: e5b300dba773be32
 # LESA: Learnable Stage-Aware Predictors for Diffusion Model Acceleration
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20497](https://arxiv.org/abs/2602.20497)
+**arXiv**: [2602.20497](https://arxiv.org/abs/2602.20497)  
 **Area**: Image Generation / Diffusion Model Acceleration
 **Keywords**: Diffusion model acceleration, feature caching, KAN, stage-awareness, DiT, text-to-image, text-to-video
 

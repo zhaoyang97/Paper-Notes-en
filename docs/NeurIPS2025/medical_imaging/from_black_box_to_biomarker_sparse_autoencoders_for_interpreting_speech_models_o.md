@@ -20,8 +20,8 @@ content_hash: 0e2b89409d974a87
 # From Black Box to Biomarker: Sparse Autoencoders for Interpreting Speech Models of Parkinson's Disease
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.16836](https://arxiv.org/abs/2507.16836)
-**Code**: Not provided
+**arXiv**: [2507.16836](https://arxiv.org/abs/2507.16836)  
+**Code**: Not provided  
 **Area**: Medical Imaging
 **Keywords**: Sparse Autoencoders, Parkinson's Disease, Speech Detection, Mechanistic Interpretability, Whisper, Spectral Flux, Putamen
 

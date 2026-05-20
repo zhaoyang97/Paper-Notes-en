@@ -18,8 +18,8 @@ content_hash: b43243d5264d769d
 # NGD: Neural Gradient Based Deformation for Monocular Garment Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.17712](https://arxiv.org/abs/2508.17712)
-**Code**: [https://github.com/astonishingwolf/NGD/](https://github.com/astonishingwolf/NGD/)
+**arXiv**: [2508.17712](https://arxiv.org/abs/2508.17712)  
+**Code**: [https://github.com/astonishingwolf/NGD/](https://github.com/astonishingwolf/NGD/)  
 **Area**: Human Understanding
 **Keywords**: garment reconstruction, neural Jacobian field, adaptive remeshing, monocular video, differentiable rendering
 
@@ -47,25 +47,25 @@ NGD consists of a geometry reconstruction module and an appearance reconstructio
 
 1. **Intrinsic Deformation Fields**: The per-frame Jacobian field $J_t^F$ is decomposed into two sub-fields:
 
-   - **Static Jacobian field $J^S \in \mathbb{R}^{M \times 3 \times 3}$**: Frame-invariant, defined at each face center of the base mesh, capturing global garment shape features (e.g., neckline, skirt hem), optimized directly across all frames.
-   - **Dynamic Jacobian field $J_t^D \in \mathbb{R}^{M \times 3 \times 3}$**: Frame-dependent, predicted by a neural network $f_G = f_\Theta \circ f_\varphi$, taking face centers, face normals, and PCA-encoded pose parameters $\gamma(\theta_t)$ as input.
-   - The final $J_t^F = J^S + J_t^D$; a Poisson solve yields the canonical-space garment mesh $M_t^C$, which is then transformed via skinning to produce the reposed mesh $M_t^P$.
-   - Core advantage: The Jacobian field combined with Poisson solving guarantees global smoothness, eliminating the jagged artifacts associated with vertex displacements.
+    - **Static Jacobian field $J^S \in \mathbb{R}^{M \times 3 \times 3}$**: Frame-invariant, defined at each face center of the base mesh, capturing global garment shape features (e.g., neckline, skirt hem), optimized directly across all frames.
+    - **Dynamic Jacobian field $J_t^D \in \mathbb{R}^{M \times 3 \times 3}$**: Frame-dependent, predicted by a neural network $f_G = f_\Theta \circ f_\varphi$, taking face centers, face normals, and PCA-encoded pose parameters $\gamma(\theta_t)$ as input.
+    - The final $J_t^F = J^S + J_t^D$; a Poisson solve yields the canonical-space garment mesh $M_t^C$, which is then transformed via skinning to produce the reposed mesh $M_t^P$.
+    - Core advantage: The Jacobian field combined with Poisson solving guarantees global smoothness, eliminating the jagged artifacts associated with vertex displacements.
 
 2. **Gradient-Based Adaptive Remeshing**:
 
-   - **Edge selection**: The gradient $\mathcal{G}(p)$ of the diffuse rendering loss with respect to each pixel is computed and aggregated to each face to obtain face-level gradient values; faces in the top quantile by gradient magnitude are selected.
-   - **Pruning**: Faces with edge lengths below threshold $\delta_{\text{length}}$ are excluded; this threshold decays linearly during training.
-   - **Remeshing operations**: Edge splitting and edge flipping are applied to selected edges, producing a new topology $M_r^B$.
-   - Attribute recomputation: The static Jacobian field, optimizer moments, and skinning weights are recomputed via k-NN interpolation.
-   - Core significance: Allows high-frequency detail regions (wrinkles, pockets) to obtain higher resolution, and enables free deformation of the template to model extremely loose garments.
+    - **Edge selection**: The gradient $\mathcal{G}(p)$ of the diffuse rendering loss with respect to each pixel is computed and aggregated to each face to obtain face-level gradient values; faces in the top quantile by gradient magnitude are selected.
+    - **Pruning**: Faces with edge lengths below threshold $\delta_{\text{length}}$ are excluded; this threshold decays linearly during training.
+    - **Remeshing operations**: Edge splitting and edge flipping are applied to selected edges, producing a new topology $M_r^B$.
+    - Attribute recomputation: The static Jacobian field, optimizer moments, and skinning weights are recomputed via k-NN interpolation.
+    - Core significance: Allows high-frequency detail regions (wrinkles, pockets) to obtain higher resolution, and enables free deformation of the template to model extremely loose garments.
 
 3. **Appearance Reconstruction Module**:
 
-   - Static texture $T^S \in \mathbb{R}^{q \times q \times 3}$: A directly optimized, frame-invariant base texture.
-   - Dynamic texture $T_t^D$: Predicted by an MLP $f_T$ conditioned on hash-encoded UV coordinates and pose parameters.
-   - $T_t^F = T^S + T_t^D$, optimized via color loss and SSIM loss through differentiable rendering.
-   - Innovation: Linearly decaying Gaussian noise is introduced to pose parameters to prevent overfitting.
+    - Static texture $T^S \in \mathbb{R}^{q \times q \times 3}$: A directly optimized, frame-invariant base texture.
+    - Dynamic texture $T_t^D$: Predicted by an MLP $f_T$ conditioned on hash-encoded UV coordinates and pose parameters.
+    - $T_t^F = T^S + T_t^D$, optimized via color loss and SSIM loss through differentiable rendering.
+    - Innovation: Linearly decaying Gaussian noise is introduced to pose parameters to prevent overfitting.
 
 ### Loss & Training
 

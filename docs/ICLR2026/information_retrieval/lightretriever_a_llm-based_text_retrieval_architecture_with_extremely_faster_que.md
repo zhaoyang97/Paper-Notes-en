@@ -18,8 +18,8 @@ content_hash: 80e19703ac9a586c
 # LightRetriever: A LLM-based Text Retrieval Architecture with Extremely Faster Query Inference
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.12260](https://arxiv.org/abs/2505.12260)
-**Code**: [GitHub](https://github.com/caskcsg/lightretriever)
+**arXiv**: [2505.12260](https://arxiv.org/abs/2505.12260)  
+**Code**: [GitHub](https://github.com/caskcsg/lightretriever)  
 **Area**: Information Retrieval
 **Keywords**: LLM retrieval, asymmetric encoder, ultra-fast query inference, hybrid retrieval, embedding cache
 

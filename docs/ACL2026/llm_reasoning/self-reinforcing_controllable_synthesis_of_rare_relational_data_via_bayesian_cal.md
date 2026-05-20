@@ -18,8 +18,8 @@ content_hash: 511ccb7137f2fce2
 # Self-Reinforcing Controllable Synthesis of Rare Relational Data via Bayesian Calibration
 
 **Conference**: ACL 2026
-**arXiv**: [2604.16817](https://arxiv.org/abs/2604.16817)
-**Code**: [GitHub](https://github.com/cszhangLMU/RDDG)
+**arXiv**: [2604.16817](https://arxiv.org/abs/2604.16817)  
+**Code**: [GitHub](https://github.com/cszhangLMU/RDDG)  
 **Area**: LLM Reasoning / Tabular Data Generation
 **Keywords**: Tabular data synthesis, imbalanced classification, self-reinforcing feedback, Bayesian calibration, in-context learning
 

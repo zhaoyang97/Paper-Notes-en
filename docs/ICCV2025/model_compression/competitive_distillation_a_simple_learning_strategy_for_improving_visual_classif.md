@@ -18,8 +18,8 @@ content_hash: e2c8a379d878b156
 # Competitive Distillation: A Simple Learning Strategy for Improving Visual Classification
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23285](https://arxiv.org/abs/2506.23285)
-**Code**: N/A
+**arXiv**: [2506.23285](https://arxiv.org/abs/2506.23285)  
+**Code**: N/A  
 **Area**: Model Compression & Knowledge Distillation
 **Keywords**: Competitive Distillation, Knowledge Distillation, Mutual Learning, Stochastic Perturbation, Collective Intelligence
 

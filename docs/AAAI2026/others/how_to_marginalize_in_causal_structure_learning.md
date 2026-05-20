@@ -17,8 +17,8 @@ content_hash: 1eedb4ef736e5564
 # How to Marginalize in Causal Structure Learning?
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14001](https://arxiv.org/abs/2511.14001)
-**Code**: None
+**arXiv**: [2511.14001](https://arxiv.org/abs/2511.14001)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Bayesian structure learning, probabilistic circuits, marginalization, directed acyclic graphs, causal discovery
 

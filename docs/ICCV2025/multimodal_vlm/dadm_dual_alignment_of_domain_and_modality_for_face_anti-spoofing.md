@@ -18,8 +18,8 @@ content_hash: 8407e5b42a9c8e90
 # DADM: Dual Alignment of Domain and Modality for Face Anti-Spoofing
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.00429](https://arxiv.org/abs/2503.00429)
-**Code**: [GitHub](https://github.com/)
+**arXiv**: [2503.00429](https://arxiv.org/abs/2503.00429)  
+**Code**: [GitHub](https://github.com/)  
 **Area**: Multimodal VLM
 **Keywords**: Face Anti-Spoofing, Multimodal Fusion, Domain Generalization, Mutual Information, Invariant Risk Minimization
 
@@ -47,29 +47,29 @@ DADM is built upon a frozen pre-trained ViT-B/16 and extracts features from RGB,
 
 1. **Mutual Information Mask (MIM) Module**:
 
-   - Function: Dynamically generates attention masks for each modality pair to enhance reliable regions and suppress unreliable ones.
-   - Mechanism: The features of two modalities are concatenated and passed through a lightweight interaction convolution and a mask generation network, producing two sigmoid-activated masks $\mathbf{m}_{m1}, \mathbf{m}_{m2}$ that reweight the original features:
+    - Function: Dynamically generates attention masks for each modality pair to enhance reliable regions and suppress unreliable ones.
+    - Mechanism: The features of two modalities are concatenated and passed through a lightweight interaction convolution and a mask generation network, producing two sigmoid-activated masks $\mathbf{m}_{m1}, \mathbf{m}_{m2}$ that reweight the original features:
      $\mathbf{z}_{\text{aligned}\_m1} = \mathbf{m}_{m1} \mathbf{z}_{m1}$
      The aligned features are then globally average-pooled to yield MI tokens $z_{\text{mi1}}, z_{\text{mi2}}$, and mutual information is maximized via a simplified MINE estimator:
      $\mathcal{L}_{\text{mi}} = -\left[\mathbb{E}_{p(z_{\text{mi1}}, z_{\text{mi2}})}\left[\frac{z_{\text{mi1}} + z_{\text{mi2}}}{2}\right] - \log\left(\mathbb{E}_{p(z_{\text{mi1}})p(z_{\text{mi2}})}\left[e^{\frac{z_{\text{mi1}} + z_{\text{mi2}}}{2}}\right]\right)\right]$
-   - Design Motivation: By directly using the mask-reweighted MI tokens as a special case of the score function, the method avoids the additional burden of training a separate neural network estimator as required in standard MINE. High mask values indicate informative and reliable regions, while low values correspond to redundant or detrimental information regions.
+    - Design Motivation: By directly using the mask-reweighted MI tokens as a special case of the score function, the method avoids the additional burden of training a separate neural network estimator as required in standard MINE. High mask values indicate informative and reliable regions, while low values correspond to redundant or detrimental information regions.
 
 2. **MI-Guided Gradient Modulation (ReGrad)**:
 
-   - Function: Adaptively adjusts the gradient direction of each MIM module based on the magnitude of MI tokens.
-   - Mechanism: When the gradient directions of two modalities conflict (dot product < 0), the gradient of the modality with lower MI is projected and corrected; when directions are consistent, the modality with higher MI receives greater weight. This is implemented via four conditional branches:
+    - Function: Adaptively adjusts the gradient direction of each MIM module based on the magnitude of MI tokens.
+    - Mechanism: When the gradient directions of two modalities conflict (dot product < 0), the gradient of the modality with lower MI is projected and corrected; when directions are consistent, the modality with higher MI receives greater weight. This is implemented via four conditional branches:
      $\text{ReGrad}(\mathbf{g}_1, \mathbf{g}_2) = \begin{cases} \mathbf{g}_1 + \frac{\mathbf{g}_1 \cdot \mathbf{g}_2}{\|\mathbf{g}_1\|_2^2} \mathbf{g}_1 \cdot \text{mi}_2, & \text{if } \mathbf{g}_1 \cdot \mathbf{g}_2 < 0, \text{mi}_1 < \text{mi}_2 \\ \cdots & \end{cases}$
-   - Design Motivation: Unlike the uncertainty-based ReGrad in MMDG, this approach measures modality reliability through mutual information magnitude, yielding a more deterministic and stable modulation.
+    - Design Motivation: Unlike the uncertainty-based ReGrad in MMDG, this approach measures modality reliability through mutual information magnitude, yielding a more deterministic and stable modulation.
 
 3. **Dual Domain-Modality Alignment Optimization Strategy**:
 
-   - Function: Simultaneously aligns sub-domain classification hyperplanes and inter-modality angular margins.
-   - Mechanism:
+    - Function: Simultaneously aligns sub-domain classification hyperplanes and inter-modality angular margins.
+    - Mechanism:
      - **Hyperplane Alignment**: Adopts PG-IRM (Projected Gradient IRM) optimization to ensure that the globally optimal hyperplane is also locally optimal for each sub-domain, i.e., $\beta^* \in \arg\min_\beta R^e(\phi, \beta), \forall e \in \mathcal{E}$
      - **Angular Margin Alignment**: Constrains the cosine consistency between modality features of the same class across different domains:
        $$\mathcal{L}_{\text{angle}} = \sum_{e_1 \neq e_2} \sum_{i \neq j} \mathbb{I}(y_i=1) \cdot \left(\frac{\mathbf{z}_i^{e_1} \cdot \mathbf{z}_i^{e_2}}{\|\mathbf{z}_i^{e_1}\| \|\mathbf{z}_i^{e_2}\|} - \tau_l\right)^2 + \cdots$$
        where $\tau_l=1.0$ (strict alignment for live samples) and $\tau_s=0.85$ (relaxed alignment for spoof samples).
-   - Design Motivation: Unimodal DG methods align only classification hyperplanes; however, in multimodal settings, significant domain shift (angular deviation) in any single modality can severely degrade overall performance. Explicitly constraining inter-modality angular consistency is therefore essential.
+    - Design Motivation: Unimodal DG methods align only classification hyperplanes; however, in multimodal settings, significant domain shift (angular deviation) in any single modality can severely degrade overall performance. Explicitly constraining inter-modality angular consistency is therefore essential.
 
 ### Loss & Training
 

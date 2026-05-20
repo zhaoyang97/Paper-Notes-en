@@ -18,8 +18,8 @@ content_hash: a629aaecf7d91d91
 # The Unseen Threat: Residual Knowledge in Machine Unlearning under Perturbed Samples
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.22359](https://arxiv.org/abs/2601.22359)
-**Code**: To be confirmed
+**arXiv**: [2601.22359](https://arxiv.org/abs/2601.22359)  
+**Code**: To be confirmed  
 **Area**: AI Safety / Machine Unlearning
 **Keywords**: machine unlearning, residual knowledge, perturbed samples, adversarial robustness, RURK
 

@@ -18,8 +18,8 @@ content_hash: 0b7b8434deb1c89a
 # Token Perturbation Guidance for Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10036](https://arxiv.org/abs/2506.10036)
-**Code**: [https://github.com/TaatiTeam/Token-Perturbation-Guidance](https://github.com/TaatiTeam/Token-Perturbation-Guidance)
+**arXiv**: [2506.10036](https://arxiv.org/abs/2506.10036)  
+**Code**: [https://github.com/TaatiTeam/Token-Perturbation-Guidance](https://github.com/TaatiTeam/Token-Perturbation-Guidance)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Training-free guidance, token perturbation, unconditional generation, CFG alternative, diffusion models
 

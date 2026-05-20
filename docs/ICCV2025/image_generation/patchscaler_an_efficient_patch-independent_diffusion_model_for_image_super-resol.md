@@ -18,8 +18,8 @@ content_hash: acc63c593e9da5d6
 # PatchScaler: An Efficient Patch-Independent Diffusion Model for Image Super-Resolution
 
 **Conference**: ICCV 2025
-**arXiv**: [2405.17158](https://arxiv.org/abs/2405.17158)
-**Code**: [https://github.com/yongliuy/PatchScaler](https://github.com/yongliuy/PatchScaler)
+**arXiv**: [2405.17158](https://arxiv.org/abs/2405.17158)  
+**Code**: [https://github.com/yongliuy/PatchScaler](https://github.com/yongliuy/PatchScaler)  
 **Area**: Image Generation
 **Keywords**: Super-Resolution, Patch-Adaptive Sampling, Diffusion Acceleration, Texture Prompt, DiT
 

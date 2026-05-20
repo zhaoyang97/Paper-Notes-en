@@ -18,8 +18,8 @@ content_hash: 6daf61bc34ed677e
 # LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.25896](https://arxiv.org/abs/2509.25896)
-**Code**: [Project Page](https://leost123456.github.io/LLaVAShield/)
+**arXiv**: [2509.25896](https://arxiv.org/abs/2509.25896)  
+**Code**: [Project Page](https://leost123456.github.io/LLaVAShield/)  
 **Area**: Multimodal VLM / AI Safety
 **Keywords**: Multimodal multi-turn dialogue safety, content moderation, red-teaming, MCTS, risk taxonomy
 

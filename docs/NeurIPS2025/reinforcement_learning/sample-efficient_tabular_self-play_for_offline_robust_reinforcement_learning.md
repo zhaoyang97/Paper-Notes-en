@@ -18,8 +18,8 @@ content_hash: 05a03963f2fc6108
 # Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.00352](https://arxiv.org/abs/2512.00352)
-**Code**: None
+**arXiv**: [2512.00352](https://arxiv.org/abs/2512.00352)  
+**Code**: None  
 **Area**: Robust Reinforcement Learning / Offline RL
 **Keywords**: offline RL, robust MDP, zero-sum Markov game, sample complexity, pessimism
 

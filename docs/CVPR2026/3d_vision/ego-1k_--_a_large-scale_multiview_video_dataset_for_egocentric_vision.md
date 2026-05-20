@@ -18,8 +18,8 @@ content_hash: f0979773b182d9e1
 # Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13741](https://arxiv.org/abs/2603.13741)
-**Code**: [Dataset](https://huggingface.co/datasets/facebook/ego-1k)
+**arXiv**: [2603.13741](https://arxiv.org/abs/2603.13741)  
+**Code**: [Dataset](https://huggingface.co/datasets/facebook/ego-1k)  
 **Area**: 3D Vision
 **Keywords**: Egocentric Vision, Multiview Dataset, Dynamic Scene Reconstruction, Novel View Synthesis, Hand-Object Interaction
 
@@ -48,18 +48,18 @@ Ego-1K is a dataset and benchmark paper rather than an algorithmic contribution.
 1. **Multi-camera capture system**: A custom head-mounted device integrates a Quest 3 headset (4 forward-facing cameras) and 12 external fisheye cameras (8MP global shutter, 190° FOV, f/2.8). All 16 cameras are hardware-synchronized at 60Hz via a wireless synchronizer. The 12 external cameras stream via USB 3.1 to a backpack computer (dual 8-port USB adapters) in 8-bit raw Bayer format. The system also includes 2 iToF sensors (30Hz alternating) and an IMU (800Hz), with a total raw data throughput of approximately 15 GB/s. **Design Motivation**: existing head-mounted devices support at most 2–3 cameras, which is insufficient for dense 3D reconstruction.
 
 2. **Calibration system (offline + online)**:
-   - **Offline calibration**: conducted in a laboratory environment using 5 large Calibu calibration boards to solve intrinsic and extrinsic parameters for all cameras
-   - **Online calibration**: compensates for 0.1–0.2° rotational drift caused by lens motion and focal length variation induced by temperature changes (corresponding to 1–3 pixel shifts), optimizing camera orientation and focal length while keeping other parameters fixed
-   - Online calibration reduces the median MAD score by 35%
+    - **Offline calibration**: conducted in a laboratory environment using 5 large Calibu calibration boards to solve intrinsic and extrinsic parameters for all cameras
+    - **Online calibration**: compensates for 0.1–0.2° rotational drift caused by lens motion and focal length variation induced by temperature changes (corresponding to 1–3 pixel shifts), optimizing camera orientation and focal length while keeping other parameters fixed
+    - Online calibration reduces the median MAD score by 35%
 
 3. **Research-release dataset**: The 12 fisheye cameras are undistorted into 6 rectified stereo pairs (1280×1280, 130° horizontal FOV) for ease of processing. Quest 3 RGB cameras are excluded due to rolling shutter, and differing resolution and color configurations relative to the external cameras. Each recording clip is approximately 19 GB; the full dataset totals 17.5 TB.
 
 4. **Stereo depth-guided 3DGS baseline**: A core finding is that existing NVS methods are severely insufficient on this dataset, while stereo foundation models provide reasonably accurate depth estimates. The proposed baseline:
-   - Runs Foundation Stereo bidirectionally (L→R and R→L) to obtain depth maps
-   - Fuses all stereo depth maps via TSDF to obtain a watertight surface
-   - Samples points (with normals and colors) from the fused surface to initialize 3D Gaussians
-   - Fine-tunes with a small number of iterations, minimizing the photometric loss $\mathcal{L}=(1-\lambda)\mathcal{L}_1 + \lambda\mathcal{L}_{\text{D-SSIM}}$ ($\lambda=0.1$)
-   - Optimizes each frame independently to form a dense 4D reconstruction
+    - Runs Foundation Stereo bidirectionally (L→R and R→L) to obtain depth maps
+    - Fuses all stereo depth maps via TSDF to obtain a watertight surface
+    - Samples points (with normals and colors) from the fused surface to initialize 3D Gaussians
+    - Fine-tunes with a small number of iterations, minimizing the photometric loss $\mathcal{L}=(1-\lambda)\mathcal{L}_1 + \lambda\mathcal{L}_{\text{D-SSIM}}$ ($\lambda=0.1$)
+    - Optimizes each frame independently to form a dense 4D reconstruction
 
 ### Loss & Training
 

@@ -19,8 +19,8 @@ content_hash: bfd0bc02bd6fe1ac
 # Long-Context State-Space Video World Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.20171](https://arxiv.org/abs/2505.20171)
-**Code**: To be confirmed
+**arXiv**: [2505.20171](https://arxiv.org/abs/2505.20171)  
+**Code**: To be confirmed  
 **Area**: Video World Models / State Space Models
 **Keywords**: World Models, SSM, Mamba, Long-Term Memory, Video Diffusion Models, Autoregressive Generation
 

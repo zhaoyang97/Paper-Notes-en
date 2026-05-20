@@ -18,8 +18,8 @@ content_hash: 669c2106612917d6
 # Doctor Approved: Generating Medically Accurate Skin Disease Images through AI-Expert Feedback
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.12323](https://arxiv.org/abs/2506.12323)
-**Code**: [https://github.com/janet-sw/MAGIC.git](https://github.com/janet-sw/MAGIC.git)
+**arXiv**: [2506.12323](https://arxiv.org/abs/2506.12323)  
+**Code**: [https://github.com/janet-sw/MAGIC.git](https://github.com/janet-sw/MAGIC.git)  
 **Area**: Medical Imaging
 **Keywords**: Medical image generation, diffusion models, DPO, AI feedback, skin disease diagnosis
 

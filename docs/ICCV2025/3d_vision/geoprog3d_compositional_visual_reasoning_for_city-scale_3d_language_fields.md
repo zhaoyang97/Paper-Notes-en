@@ -18,8 +18,8 @@ content_hash: f2fddcb6141d1a45
 # GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23352](https://arxiv.org/abs/2506.23352)
-**Code**: [snskysk/GeoProg3D](https://snskysk.github.io/GeoProg3D/)
+**arXiv**: [2506.23352](https://arxiv.org/abs/2506.23352)  
+**Code**: [snskysk/GeoProg3D](https://snskysk.github.io/GeoProg3D/)  
 **Area**: 3D Vision
 **Keywords**: 3D language fields, city-scale scenes, visual programming, compositional reasoning, geographic information
 

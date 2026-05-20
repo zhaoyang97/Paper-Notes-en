@@ -19,8 +19,8 @@ content_hash: a228dfd509fbc450
 # Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.10612](https://arxiv.org/abs/2504.10612)
-**Code**: [GitHub](https://github.com/m1balcerak/EnergyMatching)
+**arXiv**: [2504.10612](https://arxiv.org/abs/2504.10612)  
+**Code**: [GitHub](https://github.com/m1balcerak/EnergyMatching)  
 **Area**: Medical Imaging
 **Keywords**: Energy-Based Models, Flow Matching, Optimal Transport, Boltzmann Distribution, Inverse Problems, Local Intrinsic Dimensionality
 

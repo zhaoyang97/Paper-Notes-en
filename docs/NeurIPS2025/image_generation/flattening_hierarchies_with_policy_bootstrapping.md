@@ -18,8 +18,8 @@ content_hash: af4b3987b4a252c6
 # Flattening Hierarchies with Policy Bootstrapping
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.14975](https://arxiv.org/abs/2505.14975)
-**Code**: [https://johnlyzhou.github.io/saw/](https://johnlyzhou.github.io/saw/)
+**arXiv**: [2505.14975](https://arxiv.org/abs/2505.14975)  
+**Code**: [https://johnlyzhou.github.io/saw/](https://johnlyzhou.github.io/saw/)  
 **Area**: Image Generation
 **Keywords**: Offline goal-conditioned reinforcement learning, hierarchical reinforcement learning, policy bootstrapping, subgoals, long-horizon tasks
 

@@ -18,8 +18,8 @@ content_hash: 688cd41e8dfb74e7
 # Evolutionary Caching to Accelerate Your Off-the-Shelf Diffusion Model
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.15682](https://arxiv.org/abs/2506.15682)
-**Code**: Available ([Project Page](https://research.aniaggarwal.com/ecad))
+**arXiv**: [2506.15682](https://arxiv.org/abs/2506.15682)  
+**Code**: Available ([Project Page](https://research.aniaggarwal.com/ecad))  
 **Area**: Image Generation
 **Keywords**: Diffusion model acceleration, caching schedule, genetic algorithm, Pareto optimization, training-free
 

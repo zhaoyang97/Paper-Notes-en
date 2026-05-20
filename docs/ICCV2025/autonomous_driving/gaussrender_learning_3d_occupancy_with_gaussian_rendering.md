@@ -17,8 +17,8 @@ content_hash: 1d2dd7d25acf7310
 # GaussRender: Learning 3D Occupancy with Gaussian Rendering
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.05040](https://arxiv.org/abs/2502.05040)
-**Code**: [https://github.com/valeoai/GaussRender](https://github.com/valeoai/GaussRender)
+**arXiv**: [2502.05040](https://arxiv.org/abs/2502.05040)  
+**Code**: [https://github.com/valeoai/GaussRender](https://github.com/valeoai/GaussRender)  
 **Area**: Autonomous Driving
 **Keywords**: 3D Occupancy Prediction, Gaussian Splatting, Differentiable Rendering, Projective Consistency, autonomous driving
 

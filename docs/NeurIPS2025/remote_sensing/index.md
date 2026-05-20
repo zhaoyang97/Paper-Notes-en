@@ -2,7 +2,7 @@
 title: >-
   NeurIPS2025 · Remote Sensing · 11 Paper Notes
 description: >-
-  11 NeurIPS2025 papers in the Remote Sensing area, covering Time-Series Forecasting, Remote Sensing, Reinforcement Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  11 NeurIPS2025 papers in the Remote Sensing area, covering Remote Sensing, Time-Series Forecasting, Reinforcement Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "NeurIPS2025"
   - "Remote Sensing"
@@ -17,9 +17,9 @@ tags:
 
 **🧠 NeurIPS2025** · **11** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (1)](../../ACL2026/remote_sensing/index.md) · [📷 CVPR2026 (15)](../../CVPR2026/remote_sensing/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/remote_sensing/index.md) · [🤖 AAAI2026 (8)](../../AAAI2026/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (15)](../../CVPR2026/remote_sensing/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/remote_sensing/index.md) · [🤖 AAAI2026 (8)](../../AAAI2026/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
 
-🔥 **Top topics:** Time-Series Forecasting ×2 · Remote Sensing ×2
+🔥 **Top topics:** Remote Sensing ×2
 
 **[C3PO: Cross-View Cross-Modality Correspondence by Pointmap Prediction](c3po_cross-view_cross-modality_correspondence_by_pointmap_prediction.md)**
 
@@ -29,9 +29,9 @@ tags:
 
 :   This paper proposes ChA-MAEViT, which enhances cross-channel feature learning for multi-channel images (MCI) through four key components: dynamic channel-patch joint masking, memory tokens, hybrid token fusion, and a channel-aware decoder. The method outperforms the state of the art by an average of 3.0–21.5% across three satellite and microscopy datasets.
 
-**[Connecting the Dots: A Machine Learning Ready Dataset for Ionospheric Forecasting Models](connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting.md)**
+**[Connecting the Dots: A Machine Learning Dataset for Ionospheric Prediction](connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting.md)**
 
-:   As a product of the 2025 NASA Frontier Development Lab (FDL) Heliolab program, this paper presents the first comprehensive ML-ready dataset for ionospheric forecasting. It unifies seven categories of heterogeneous data sources — Solar Dynamics Observatory (SDO) extreme ultraviolet (EUV) irradiance embeddings, solar wind parameters, interplanetary magnetic field (IMF), geomagnetic activity indices, JPL dense TEC global ionospheric maps (GIMs), Madrigal sparse TEC, solar flux indices, and orbital mechanics parameters — into a consistent temporal-spatial structure. Building on this dataset, multiple spatiotemporal forecasting architectures are trained, including LSTM, Spherical Fourier Neural Operator (SFNO), and GraphCast, achieving autoregressive prediction of global vertical total electron content (vTEC) up to 12 hours ahead under both quiet and geomagnetically active conditions, surpassing the persistence baseline.
+:   This paper constructs an open, ML-ready ionospheric prediction dataset that integrates 8 heterogeneous data sources (solar observations, geomagnetic indices, TEC maps, etc.) spanning approximately 14 years (2010–2024). Three spatiotemporal baseline models—LSTM, SFNO, and GraphCast—are trained on this dataset, achieving TEC forecasts with lead times up to 12 hours.
 
 **[EcoCast: A Spatio-Temporal Model for Continual Biodiversity and Climate Risk Forecasting](ecocast_a_spatio-temporal_model_for_continual_biodiversity_and_climate_risk_fore.md)**
 
@@ -51,11 +51,11 @@ tags:
 
 **[OrbitZoo: Real Orbital Systems Challenges for Reinforcement Learning](orbitzoo_real_orbital_systems_challenges_for_reinforcement_learning.md)**
 
-:   This paper presents OrbitZoo, a multi-agent RL environment built on the industrial-grade Orekit orbital mechanics library, supporting realistic orbital tasks such as collision avoidance, Hohmann transfers, and constellation coordination. It provides standardized MARL training through the PettingZoo interface, and achieves 24-meter RMSE (over a 16.6-hour propagation) for the low-error group in validation against real Starlink ephemeris data.
+:   This paper presents OrbitZoo, a multi-agent RL environment built on the industrial-grade astrodynamics library Orekit. It integrates high-fidelity orbital dynamics (including atmospheric drag, solar radiation pressure, and third-body effects), a PettingZoo multi-agent interface, and real-time 3D visualization. Validation against real Starlink ephemerides yields a mean MAPE of only 0.16%.
 
 **[OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata](ortholoc_uav_6-dof_localization_and_calibration_using_orthographic_geodata.md)**
 
-:   OrthoLoC introduces the first large-scale UAV 6-DoF localization benchmark built upon orthographic geodata (DOP+DSM), comprising 16,425 real UAV images across 47 regions in Germany and the United States. It further proposes AdHoP (Adaptive Homography Preprocessing), a plug-and-play matching enhancement that improves matching performance by 95% and reduces translation error by 63% without modifying the underlying feature matcher.
+:   OrthoLoC establishes the first large-scale UAV 6-DoF localization benchmark dataset based on orthographic geodata (DOP+DSM), comprising 16,425 real UAV images across 47 regions in Germany and the United States. It further introduces AdHoP (Adaptive Homography Preprocessing), a matching enhancement technique that improves matching performance by 95% and reduces translation error by 63% without modifying the underlying feature matcher.
 
 **[RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events](rscc_a_large-scale_remote_sensing_change_caption_dataset_for_disaster_events.md)**
 

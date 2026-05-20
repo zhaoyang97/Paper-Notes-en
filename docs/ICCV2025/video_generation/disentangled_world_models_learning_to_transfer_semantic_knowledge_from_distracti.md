@@ -18,8 +18,8 @@ content_hash: 5969c8342089649e
 # Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08751](https://arxiv.org/abs/2503.08751)
-**Code**: [https://qiwang067.github.io/diswm](https://qiwang067.github.io/diswm)
+**arXiv**: [2503.08751](https://arxiv.org/abs/2503.08751)  
+**Code**: [https://qiwang067.github.io/diswm](https://qiwang067.github.io/diswm)  
 **Area**: Video Generation
 **Keywords**: Visual Reinforcement Learning, World Models, Disentangled Representation, Knowledge Transfer, Latent Space Distillation
 

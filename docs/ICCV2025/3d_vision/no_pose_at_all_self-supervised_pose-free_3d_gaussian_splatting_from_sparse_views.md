@@ -18,8 +18,8 @@ content_hash: c58cc11df73e98f8
 # No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.01171](https://arxiv.org/abs/2508.01171)
-**Code**: [Project Page](https://ranrhuang.github.io/spfsplat/)
+**arXiv**: [2508.01171](https://arxiv.org/abs/2508.01171)  
+**Code**: [Project Page](https://ranrhuang.github.io/spfsplat/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, pose-free training, self-supervised, sparse views, pose estimation
 

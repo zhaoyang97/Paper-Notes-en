@@ -18,8 +18,8 @@ content_hash: 367460aa065f69a5
 # OneOcc: Semantic Occupancy Prediction for Legged Robots with a Single Panoramic Camera
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.03571](https://arxiv.org/abs/2511.03571)
-**Code**: Available
+**arXiv**: [2511.03571](https://arxiv.org/abs/2511.03571)  
+**Code**: Available  
 **Area**: Autonomous Driving
 **Keywords**: Semantic Scene Completion, Panoramic Camera, Legged Robots, Voxel Occupancy Prediction, Gait Compensation
 

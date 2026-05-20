@@ -18,8 +18,8 @@ content_hash: c5a004e74ffa935c
 # Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.16955](https://arxiv.org/abs/2511.16955)
-**Code**: None
+**arXiv**: [2511.16955](https://arxiv.org/abs/2511.16955)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: GRPO, Flow Matching, Human Preference Alignment, Contrastive Learning, ODE Sampling
 

@@ -20,8 +20,8 @@ content_hash: 7f59d605e704c21c
 # ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02216](https://arxiv.org/abs/2603.02216)
-**Code**: [https://github.com/Quark-Medical/ATPO](https://github.com/Quark-Medical/ATPO)
+**arXiv**: [2603.02216](https://arxiv.org/abs/2603.02216)  
+**Code**: [https://github.com/Quark-Medical/ATPO](https://github.com/Quark-Medical/ATPO)  
 **Area**: Medical Imaging
 **Keywords**: multi-turn medical dialogue, tree search, policy optimization, uncertainty-guided exploration, hierarchical MDP, value function estimation, LLM alignment
 

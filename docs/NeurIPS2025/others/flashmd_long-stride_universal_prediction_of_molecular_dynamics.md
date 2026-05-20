@@ -18,9 +18,9 @@ content_hash: b996e39000e92873
 # FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19350](https://arxiv.org/abs/2505.19350)
+**arXiv**: [2505.19350](https://arxiv.org/abs/2505.19350)  
 **Authors**: Filippo Bigi*, Sanggyu Chong* (EPFL), Agustinus Kristiadi (Western/Vector), Michele Ceriotti (EPFL)
-**Code**: [flashmd (PyPI)](https://flashmd.org) | [HuggingFace](https://huggingface.co/) | [Materials Cloud](https://www.materialscloud.org/)
+**Code**: [flashmd (PyPI)](https://flashmd.org) | [HuggingFace](https://huggingface.co/) | [Materials Cloud](https://www.materialscloud.org/)  
 **Area**: Other
 **Keywords**: molecular dynamics, graph neural network, long-stride prediction, universal model, Hamiltonian dynamics, energy conservation
 

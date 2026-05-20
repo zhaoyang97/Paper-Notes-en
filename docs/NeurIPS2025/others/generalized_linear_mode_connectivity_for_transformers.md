@@ -18,8 +18,8 @@ content_hash: 8f4328b5c1d6ee13
 # Generalized Linear Mode Connectivity for Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.22712](https://arxiv.org/abs/2506.22712)
-**Code**: Available (link provided in the paper)
+**arXiv**: [2506.22712](https://arxiv.org/abs/2506.22712)  
+**Code**: Available (link provided in the paper)  
 **Area**: Model Merging / Transformer Theory
 **Keywords**: linear mode connectivity, model merging, permutation symmetry, orthogonal symmetry, ViT, GPT-2
 **Authors**: Alexander Theus, Alessandro Cabodi, Sotiris Anagnostidis, Antonio Orvieto, Sidak Pal Singh, Valentina Boeva (ETH Zürich, MPI, et al.)

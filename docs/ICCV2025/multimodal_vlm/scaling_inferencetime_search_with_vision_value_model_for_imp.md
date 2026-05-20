@@ -18,8 +18,8 @@ content_hash: 892e6195d1bb625e
 # Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.03704](https://arxiv.org/abs/2412.03704)
-**Code**: None
+**arXiv**: [2412.03704](https://arxiv.org/abs/2412.03704)  
+**Code**: None  
 **Area**: Multimodal VLM / Inference-Time Search
 **Keywords**: inference-time scaling, value model, hallucination reduction, self-training, vision-language model
 

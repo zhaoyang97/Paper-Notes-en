@@ -18,8 +18,8 @@ content_hash: 686fadfe77ed0aa5
 # CausalDynamics: A Large-Scale Benchmark for Structural Discovery of Dynamical Causal Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16620](https://arxiv.org/abs/2505.16620)
-**Code**: [kausable/CausalDynamics](https://github.com/kausable/CausalDynamics)
+**arXiv**: [2505.16620](https://arxiv.org/abs/2505.16620)  
+**Code**: [kausable/CausalDynamics](https://github.com/kausable/CausalDynamics)  
 **Area**: Time Series
 **Keywords**: causal discovery, dynamical systems, benchmark, time series, ODE/SDE, causal graph
 

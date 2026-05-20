@@ -18,8 +18,8 @@ content_hash: e487aa2686ec5b82
 # Two-Steps Diffusion Policy for Robotic Manipulation via Genetic Denoising
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21991](https://arxiv.org/abs/2510.21991)
-**Code**: None
+**arXiv**: [2510.21991](https://arxiv.org/abs/2510.21991)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Genetic Denoising Policy, Clipping Artifacts, Few-Step Denoising, Population Sampling, OoD Risk
 
@@ -54,19 +54,19 @@ GDP builds on three progressive levels of improvement:
 ### Key Designs
 
 1. **Clipping Artifact Analysis and Schedule Optimization**
-   - **Function**: Eliminates ineffective computation in early denoising stages and reduces distributional mismatch.
-   - **Mechanism**: When $t \approx T$, $\bar{\alpha}_t \approx 0$ renders the denominator $\sqrt{\bar{\alpha}_t}$ ill-conditioned, causing clipping to push nearly all coordinates of $\hat{x}_0$ to the $\{-1,1\}$ boundary. The denoising start is lowered from $T$ to $t_\delta = 90$, and the endpoint is raised from $0$ to $t_0 = 20$, skipping the weakest-signal steps at both ends. Simultaneously, the noise injection ratio $\gamma$ is reduced (from 1.0 to 0.2), collapsing the denoising process from a stochastic Langevin process toward a near-deterministic probability flow ODE, biasing it toward high-density modes.
-   - **Design Motivation**: Robot action distributions are low-dimensional and simple. Stochasticity is needed during training to prevent mode collapse, but diversity is unnecessary at inference—"always selecting the same feasible solution" is entirely acceptable in robotic settings. Reducing noise injection simultaneously decreases clipping frequency, directly improving sample quality.
+    - **Function**: Eliminates ineffective computation in early denoising stages and reduces distributional mismatch.
+    - **Mechanism**: When $t \approx T$, $\bar{\alpha}_t \approx 0$ renders the denominator $\sqrt{\bar{\alpha}_t}$ ill-conditioned, causing clipping to push nearly all coordinates of $\hat{x}_0$ to the $\{-1,1\}$ boundary. The denoising start is lowered from $T$ to $t_\delta = 90$, and the endpoint is raised from $0$ to $t_0 = 20$, skipping the weakest-signal steps at both ends. Simultaneously, the noise injection ratio $\gamma$ is reduced (from 1.0 to 0.2), collapsing the denoising process from a stochastic Langevin process toward a near-deterministic probability flow ODE, biasing it toward high-density modes.
+    - **Design Motivation**: Robot action distributions are low-dimensional and simple. Stochasticity is needed during training to prevent mode collapse, but diversity is unnecessary at inference—"always selecting the same feasible solution" is entirely acceptable in robotic settings. Reducing noise injection simultaneously decreases clipping frequency, directly improving sample quality.
 
 2. **Population Selection Mechanism of Genetic Denoising (GDP Core)**
-   - **Function**: At each denoising step, selects from multiple candidate trajectories those most likely to remain within the distribution.
-   - **Mechanism**: Maintains $P$ parallel denoising trajectories. Before each denoising step: (a) compute a fitness score $\phi$ for each sample (measuring OoD degree); (b) perform multinomial sampling weighted by fitness to select $S$ survivors; (c) replicate survivors to repopulate to $P$; (d) apply the standard DDPM denoising step to all samples. The final top-ranked sample $x_0^0$ is returned.
-   - **Design Motivation**: Robot action spaces are low-dimensional (compared to $2^{16}$ for images), making the memory overhead of population sampling negligible—only a 20% increase in inference time at $P=16$, which would be infeasible for image generation. Genetic selection in essence uses parallel exploration to compensate for the random exploration lost by reducing noise injection.
+    - **Function**: At each denoising step, selects from multiple candidate trajectories those most likely to remain within the distribution.
+    - **Mechanism**: Maintains $P$ parallel denoising trajectories. Before each denoising step: (a) compute a fitness score $\phi$ for each sample (measuring OoD degree); (b) perform multinomial sampling weighted by fitness to select $S$ survivors; (c) replicate survivors to repopulate to $P$; (d) apply the standard DDPM denoising step to all samples. The final top-ranked sample $x_0^0$ is returned.
+    - **Design Motivation**: Robot action spaces are low-dimensional (compared to $2^{16}$ for images), making the memory overhead of population sampling negligible—only a 20% increase in inference time at $P=16$, which would be infeasible for image generation. Genetic selection in essence uses parallel exploration to compensate for the random exploration lost by reducing noise injection.
 
 3. **Dual-Family Fitness Function Design**
-   - **Function**: Quantifies the OoD risk of each denoising trajectory.
-   - **Mechanism**: Two families of fitness functions are proposed: **$\phi_\text{clip}$** measures the degree of clipping via the difference between $\hat{x}_0$ and $\text{clip}(\hat{x}_0)$ (more clipping = more OoD); **$\phi_\text{stein}$** measures the distance from the mode center via the noise estimator norm $\|\epsilon_\theta(x_t, t)\|$ (larger norm = farther from all modes). Both are modulated by a temperature parameter $T$ and a scaling function $f$ to control selection pressure.
-   - **Design Motivation**: $\phi_\text{clip}$ directly follows from the diagnostic finding on clipping artifacts; $\phi_\text{stein}$ has dual theoretical support—it both mimics the effect of the reduced Langevin noise injection and serves as a direct OoD measure (high noise estimate = sample far from the support of the training distribution).
+    - **Function**: Quantifies the OoD risk of each denoising trajectory.
+    - **Mechanism**: Two families of fitness functions are proposed: **$\phi_\text{clip}$** measures the degree of clipping via the difference between $\hat{x}_0$ and $\text{clip}(\hat{x}_0)$ (more clipping = more OoD); **$\phi_\text{stein}$** measures the distance from the mode center via the noise estimator norm $\|\epsilon_\theta(x_t, t)\|$ (larger norm = farther from all modes). Both are modulated by a temperature parameter $T$ and a scaling function $f$ to control selection pressure.
+    - **Design Motivation**: $\phi_\text{clip}$ directly follows from the diagnostic finding on clipping artifacts; $\phi_\text{stein}$ has dual theoretical support—it both mimics the effect of the reduced Langevin noise injection and serves as a direct OoD measure (high noise estimate = sample far from the support of the training distribution).
 
 ### Loss & Training
 

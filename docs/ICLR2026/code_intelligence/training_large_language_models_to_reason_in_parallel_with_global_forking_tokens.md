@@ -18,8 +18,8 @@ content_hash: c1f80cc84cca0a6b
 # Training Large Language Models To Reason In Parallel With Global Forking Tokens
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.05132](https://arxiv.org/abs/2510.05132)
-**Code**: [Sheng-J/SSFT](https://github.com/Sheng-J/SSFT)
+**arXiv**: [2510.05132](https://arxiv.org/abs/2510.05132)  
+**Code**: [Sheng-J/SSFT](https://github.com/Sheng-J/SSFT)  
 **Area**: Code Intelligence
 **Keywords**: parallel reasoning, global forking tokens, set supervised fine-tuning, bipartite matching, test-time compute
 

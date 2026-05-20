@@ -18,8 +18,8 @@ content_hash: 0e16236d79be40b1
 # OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02390](https://arxiv.org/abs/2603.02390)
-**Code**: Available (dataset and code provided on the OpenMarcie official website)
+**arXiv**: [2603.02390](https://arxiv.org/abs/2603.02390)  
+**Code**: Available (dataset and code provided on the OpenMarcie official website)  
 **Area**: Video Understanding
 **Keywords**: Multimodal dataset, human action recognition, industrial manufacturing, wearable sensors, cross-modal alignment
 

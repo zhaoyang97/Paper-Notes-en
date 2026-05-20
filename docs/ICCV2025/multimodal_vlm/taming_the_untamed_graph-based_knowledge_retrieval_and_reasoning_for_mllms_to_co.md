@@ -18,8 +18,8 @@ content_hash: 0ac1dca44814a634
 # Taming the Untamed: Graph-Based Knowledge Retrieval and Reasoning for MLLMs to Conquer the Unknown
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.17589](https://arxiv.org/abs/2506.17589)
-**Code**: [github.com/wbw520/MH-MMKG](https://github.com/wbw520/MH-MMKG)
+**arXiv**: [2506.17589](https://arxiv.org/abs/2506.17589)  
+**Code**: [github.com/wbw520/MH-MMKG](https://github.com/wbw520/MH-MMKG)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal Knowledge Graph, Multi-Agent Retrieval, MLLM, Knowledge-Augmented Reasoning, Game Cognition
 
@@ -71,10 +71,10 @@ Given an input query $Q$ (comprising question $q$, video/image $d$, and auxiliar
 
 - **Function**: Three agents collaborate to automatically retrieve the subgraph required to answer a given question from the knowledge graph.
 - **Mechanism**:
-  - **Topic Selection Agent** $L$: Analyzes the question to identify the root entity $e_0 = L(q, z, \mathcal{E}_o)$.
-  - **Expansion Agent** $W$: Expands the subgraph via BFS, determining whether neighboring entities are useful for answering: $\mathcal{N}(e) = W(e, \mathcal{K}_t; Q, \mathcal{G}, \mathcal{A})$.
-  - **Verification Agent** $U$: Checks whether the path from the root to the current open entity provides sufficient knowledge: $o(e) = U(e, \mathcal{K}_{t+1}; Q, \mathcal{G}, \mathcal{A})$.
-  - Iteration continues until no open entities remain to be expanded: $\mathcal{O}_t = \emptyset$.
+    - **Topic Selection Agent** $L$: Analyzes the question to identify the root entity $e_0 = L(q, z, \mathcal{E}_o)$.
+    - **Expansion Agent** $W$: Expands the subgraph via BFS, determining whether neighboring entities are useful for answering: $\mathcal{N}(e) = W(e, \mathcal{K}_t; Q, \mathcal{G}, \mathcal{A})$.
+    - **Verification Agent** $U$: Checks whether the path from the root to the current open entity provides sufficient knowledge: $o(e) = U(e, \mathcal{K}_{t+1}; Q, \mathcal{G}, \mathcal{A})$.
+    - Iteration continues until no open entities remain to be expanded: $\mathcal{O}_t = \emptyset$.
 - **Design Motivation**: Leveraging MLLMs' self-search capability enables training-free navigation over the knowledge graph, making the method compatible with closed-source models.
 
 #### 3. **Knowledge-Augmented Reasoning**

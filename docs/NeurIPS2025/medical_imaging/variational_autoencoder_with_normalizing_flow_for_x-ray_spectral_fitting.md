@@ -18,8 +18,8 @@ content_hash: c41a55221ae9c0c9
 # Variational Autoencoder with Normalizing Flow for X-ray Spectral Fitting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.07440](https://arxiv.org/abs/2601.07440)
-**Code**: [GitHub](https://github.com/fi-redmen/fspnet-var.git)
+**arXiv**: [2601.07440](https://arxiv.org/abs/2601.07440)  
+**Code**: [GitHub](https://github.com/fi-redmen/fspnet-var.git)  
 **Area**: Medical Imaging / Astrophysics, Variational Inference, Spectral Fitting
 **Keywords**: Variational Autoencoder, Normalizing Flow, X-ray Spectra, Black Hole X-ray Binaries, Posterior Distribution
 

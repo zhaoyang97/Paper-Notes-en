@@ -18,8 +18,8 @@ content_hash: c7b6e96ecff9b06f
 # Margin-aware Preference Optimization for Aligning Diffusion Models without Reference
 
 **Conference**: AAAI 2026
-**arXiv**: [2406.06424](https://arxiv.org/abs/2406.06424)
-**Code**: [https://github.com/mapo-t2i/mapo](https://github.com/mapo-t2i/mapo)
+**arXiv**: [2406.06424](https://arxiv.org/abs/2406.06424)  
+**Code**: [https://github.com/mapo-t2i/mapo](https://github.com/mapo-t2i/mapo)  
 **Area**: Diffusion Models / Alignment RLHF
 **Keywords**: Preference Alignment, Diffusion Models, Text-to-Image Generation, Reference-free, DPO
 

@@ -18,8 +18,8 @@ content_hash: c0156d29ab7ce3eb
 # Sequentially Auditing Differential Privacy
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.07055](https://arxiv.org/abs/2509.07055)
-**Code**: [Available](https://github.com/google-research/google-research/tree/master/dp_sequential_test)
+**arXiv**: [2509.07055](https://arxiv.org/abs/2509.07055)  
+**Code**: [Available](https://github.com/google-research/google-research/tree/master/dp_sequential_test)  
 **Area**: AI Safety
 **Keywords**: differential privacy, Sequential Testing, MMD, E-values, DP-SGD Auditing
 

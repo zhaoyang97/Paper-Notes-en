@@ -18,8 +18,8 @@ content_hash: 6f9406256030cc2f
 # UGM2N: An Unsupervised and Generalizable Mesh Movement Network via M-Uniform Loss
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.08615](https://arxiv.org/abs/2508.08615)
-**Code**: N/A
+**arXiv**: [2508.08615](https://arxiv.org/abs/2508.08615)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: mesh movement, PDE solver, unsupervised learning, zero-shot generalization, equidistribution
 

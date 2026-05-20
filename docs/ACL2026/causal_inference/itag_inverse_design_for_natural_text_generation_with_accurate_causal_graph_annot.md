@@ -17,8 +17,8 @@ content_hash: def5080f744d420c
 # iTAG: Inverse Design for Natural Text Generation with Accurate Causal Graph Annotations
 
 **Conference**: ACL 2026
-**arXiv**: [2604.06902](https://arxiv.org/abs/2604.06902)
-**Code**: Available
+**arXiv**: [2604.06902](https://arxiv.org/abs/2604.06902)  
+**Code**: Available  
 **Area**: Causal Inference / Text Generation
 **Keywords**: Causal Graph Annotation, Inverse Design, Text Generation, Benchmark Data, CoT Reasoning
 

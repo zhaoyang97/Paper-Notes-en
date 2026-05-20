@@ -18,8 +18,8 @@ content_hash: ff2adc497d41aef5
 # BeeRNA: Tertiary Structure-Based RNA Inverse Folding Using Artificial Bee Colony
 
 **Conference**: AAAI2026
-**arXiv**: [2511.21781](https://arxiv.org/abs/2511.21781)
-**Code**: To be released
+**arXiv**: [2511.21781](https://arxiv.org/abs/2511.21781)  
+**Code**: To be released  
 **Area**: Optimization
 **Keywords**: RNA inverse folding, Artificial Bee Colony, tertiary structure, bio-inspired optimization, RhoFold
 

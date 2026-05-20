@@ -19,8 +19,8 @@ content_hash: a4e5adc3e1c38133
 # Echoes of Ownership: Adversarial-Guided Dual Injection for Copyright Protection in MLLMs
 
 **Conference**: CVPR2026
-**arXiv**: [2602.18845](https://arxiv.org/abs/2602.18845)
-**Code**: [GitHub](https://github.com/kunzhan/AGDI)
+**arXiv**: [2602.18845](https://arxiv.org/abs/2602.18845)  
+**Code**: [GitHub](https://github.com/kunzhan/AGDI)  
 **Area**: Multimodal Large Language Model Security
 **Keywords**: MLLM copyright protection, adversarial attack, trigger image, dual injection, CLIP semantic alignment, black-box tracking
 

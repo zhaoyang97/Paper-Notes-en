@@ -18,8 +18,8 @@ content_hash: f0c6f4cb81dd4663
 # Zero-Ablation Overstates Register Content Dependence in DINO Vision Transformers
 
 **Conference**: CVPR 2026 (HOW Workshop)
-**arXiv**: [2604.14433](https://arxiv.org/abs/2604.14433)
-**Code**: None
+**arXiv**: [2604.14433](https://arxiv.org/abs/2604.14433)  
+**Code**: None  
 **Area**: Self-Supervised Learning
 **Keywords**: register tokens, vision transformers, zero-ablation, DINO, interpretability
 

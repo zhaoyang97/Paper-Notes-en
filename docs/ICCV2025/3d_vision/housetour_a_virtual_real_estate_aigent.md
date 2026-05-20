@@ -18,8 +18,8 @@ content_hash: df50ede9ba77540d
 # HouseTour: A Virtual Real Estate A(I)gent
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.18054](https://arxiv.org/abs/2510.18054)
-**Code**: [https://house-tour.github.io/](https://house-tour.github.io/)
+**arXiv**: [2510.18054](https://arxiv.org/abs/2510.18054)  
+**Code**: [https://house-tour.github.io/](https://house-tour.github.io/)  
 **Area**: 3D Vision / Vision-Language Models / Trajectory Generation
 **Keywords**: Camera Trajectory Generation, Real Estate, Diffusion, VLM, 3D Gaussian Splatting
 
@@ -66,9 +66,9 @@ $$\mathcal{L}_\theta = \mathbb{E}_{t,\tau,\epsilon}\left[\|\epsilon_{pos} - \eps
 **Two-Stage Training**:
 1. **LoRA Fine-tuning**: Qwen2-VL is fine-tuned on 96-frame multi-image inputs to learn the linguistic style and architectural terminology of real estate descriptions.
 2. **Spatial Feature Integration**:
-   - Special tokens `<|traj_start|>`, `<|traj_pad|>`, and `<|traj_end|>` are introduced.
-   - The denoised poses $p_0^i$ and bottleneck features $f_0^i$ from the Residual Diffuser are concatenated and projected into the VLM's language embedding space via a linear layer.
-   - Spatial information for each frame is encoded using a single token.
+    - Special tokens `<|traj_start|>`, `<|traj_pad|>`, and `<|traj_end|>` are introduced.
+    - The denoised poses $p_0^i$ and bottleneck features $f_0^i$ from the Residual Diffuser are concatenated and projected into the VLM's language embedding space via a linear layer.
+    - Spatial information for each frame is encoded using a single token.
 
 ### HouseTour Dataset
 - 1,639 tour videos covering diverse properties ranging from apartments to multi-story villas.

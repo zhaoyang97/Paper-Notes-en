@@ -19,8 +19,8 @@ content_hash: 5b9087cc3153dd54
 # Constrained Discrete Diffusion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.09790](https://arxiv.org/abs/2503.09790)
-**Code**: To be confirmed
+**arXiv**: [2503.09790](https://arxiv.org/abs/2503.09790)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: Discrete diffusion models, constrained optimization, augmented Lagrangian, controllable text generation, molecular generation, toxicity mitigation
 
@@ -45,8 +45,8 @@ Discrete diffusion models (e.g., MDLM, UDLM) have demonstrated strong capabiliti
 The CDD pipeline:
 1. Standard discrete diffusion initialization (all [MASK] or uniform distribution)
 2. After each denoising step, a **projection operation** is applied:
-   - Input: probability distribution $\bm{x}_t'$ output by the denoiser
-   - Output: projected distribution $\bm{x}_s$ satisfying the constraints
+    - Input: probability distribution $\bm{x}_t'$ output by the denoiser
+    - Output: projected distribution $\bm{x}_s$ satisfying the constraints
 3. The projected distribution is used to continue to the next denoising step
 
 Key property: **Training-free**—projection is applied only at sampling time and does not modify model weights.

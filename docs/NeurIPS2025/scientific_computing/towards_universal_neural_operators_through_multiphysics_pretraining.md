@@ -18,8 +18,8 @@ content_hash: b37a121c2551c025
 # Towards Universal Neural Operators through Multiphysics Pretraining
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10829](https://arxiv.org/abs/2511.10829)
-**Code**: To be confirmed
+**arXiv**: [2511.10829](https://arxiv.org/abs/2511.10829)  
+**Code**: To be confirmed  
 **Area**: Scientific Computing / Neural Operators
 **Keywords**: neural operator, transfer learning, PDE, multiphysics, foundation model
 

@@ -18,8 +18,8 @@ content_hash: d41e252074064fde
 # HiVid: LLM-Guided Video Saliency For Content-Aware VOD And Live Streaming
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.14214](https://arxiv.org/abs/2602.14214)
-**Code**: To be confirmed
+**arXiv**: [2602.14214](https://arxiv.org/abs/2602.14214)  
+**Code**: To be confirmed  
 **Area**: Time Series
 **Keywords**: video saliency, LLM-as-judge, content-aware streaming, time series forecasting, adaptive bitrate
 

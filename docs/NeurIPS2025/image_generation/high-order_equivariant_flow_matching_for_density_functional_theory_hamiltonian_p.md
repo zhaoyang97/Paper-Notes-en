@@ -19,8 +19,8 @@ content_hash: f125a4d3fa2a9ca0
 # High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18817](https://arxiv.org/abs/2505.18817)
-**Code**: [seongsukim-ml/QHFlow](https://github.com/seongsukim-ml/QHFlow)
+**arXiv**: [2505.18817](https://arxiv.org/abs/2505.18817)  
+**Code**: [seongsukim-ml/QHFlow](https://github.com/seongsukim-ml/QHFlow)  
 **Area**: Image Generation
 **Keywords**: flow matching, DFT, Hamiltonian prediction, SE(3)-equivariance, quantum chemistry, SCF acceleration
 

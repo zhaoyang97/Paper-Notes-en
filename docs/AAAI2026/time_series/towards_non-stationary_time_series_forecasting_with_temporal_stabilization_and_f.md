@@ -18,8 +18,8 @@ content_hash: 2327115f82aa2bc3
 # Towards Non-Stationary Time Series Forecasting with Temporal Stabilization and Frequency Differencing
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08229](https://arxiv.org/abs/2511.08229)
-**Code**: [https://github.com/decisionintelligence/DTAF](https://github.com/decisionintelligence/DTAF)
+**arXiv**: [2511.08229](https://arxiv.org/abs/2511.08229)  
+**Code**: [https://github.com/decisionintelligence/DTAF](https://github.com/decisionintelligence/DTAF)  
 **Area**: Time Series
 **Keywords**: Non-stationary time series, mixture of experts, frequency differencing, dual-branch modeling, time series forecasting
 

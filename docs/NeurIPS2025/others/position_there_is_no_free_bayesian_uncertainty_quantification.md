@@ -17,8 +17,8 @@ content_hash: 4e1760d12e8addb2
 # Position: There Is No Free Bayesian Uncertainty Quantification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03670](https://arxiv.org/abs/2506.03670)
-**Code**: None
+**arXiv**: [2506.03670](https://arxiv.org/abs/2506.03670)  
+**Code**: None  
 **Area**: Statistical Learning Theory / Uncertainty Quantification
 **Keywords**: Bayesian Inference, Uncertainty Quantification, Frequentist, PAC-Bayes, Prediction Intervals
 

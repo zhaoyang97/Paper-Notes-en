@@ -18,8 +18,8 @@ content_hash: 58e42f88222db9d7
 # FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02692](https://arxiv.org/abs/2603.02692)
-**Code**: [GitHub](https://github.com/Ar0Kim/FiDeSR)
+**arXiv**: [2603.02692](https://arxiv.org/abs/2603.02692)  
+**Code**: [GitHub](https://github.com/Ar0Kim/FiDeSR)  
 **Area**: Image Super-Resolution
 **Keywords**: one-step diffusion SR, frequency-aware, residual refinement, detail weighting, high fidelity
 

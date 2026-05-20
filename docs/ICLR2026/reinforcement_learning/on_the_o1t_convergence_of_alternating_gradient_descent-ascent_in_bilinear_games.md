@@ -18,8 +18,8 @@ content_hash: 667ab7ac6b234d3c
 # On the $O(1/T)$ Convergence of Alternating Gradient Descent-Ascent in Bilinear Games
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03855](https://arxiv.org/abs/2510.03855)
-**Code**: None
+**arXiv**: [2510.03855](https://arxiv.org/abs/2510.03855)  
+**Code**: None  
 **Area**: Reinforcement Learning / Game Theory / Optimization
 **Keywords**: Alternating gradient descent-ascent, bilinear games, Nash equilibrium, convergence rate, performance estimation programming
 

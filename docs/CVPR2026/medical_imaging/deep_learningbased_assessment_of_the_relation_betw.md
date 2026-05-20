@@ -18,8 +18,8 @@ content_hash: d0a73b091a180e56
 # Deep Learning-based Assessment of the Relation Between the Third Molar and Mandibular Canal on Panoramic Radiographs using Local, Centralized, and Federated Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11850](https://arxiv.org/abs/2603.11850)
-**Code**: None
+**arXiv**: [2603.11850](https://arxiv.org/abs/2603.11850)  
+**Code**: None  
 **Area**: Medical Image Analysis / Federated Learning / Dental Imaging
 **Keywords**: Federated Learning, Panoramic Radiograph, Third Molar, Mandibular Canal, Privacy Preservation
 
@@ -49,21 +49,21 @@ The full pipeline comprises four stages: (1) cropping ROIs containing the third 
 
 1. **Fair Three-Paradigm Comparison Framework**
 
-   - *Function*: Compare LL, FL, and CL under identical data partitioning and backbone settings.
-   - *Mechanism*: LL — each annotator's data independently trains a ResNet-34 model, yielding 8 independent models; FL — the FedAvg algorithm aggregates model parameters on the server as $w_{t+1} = \sum_{k=1}^{K} \frac{n_k}{n} w_t^k$, with only model updates (not raw data) leaving each client; CL — all 8 clients' data are centrally pooled to train a single unified model. All three paradigms share the same pretrained ResNet-34 initialization and hyperparameter configuration.
-   - *Design Motivation*: Controlling variables is a prerequisite for fair comparison. The natural data partition by 8 annotators more faithfully reflects the data heterogeneity found in real clinical scenarios than artificial random splits.
+    - *Function*: Compare LL, FL, and CL under identical data partitioning and backbone settings.
+    - *Mechanism*: LL — each annotator's data independently trains a ResNet-34 model, yielding 8 independent models; FL — the FedAvg algorithm aggregates model parameters on the server as $w_{t+1} = \sum_{k=1}^{K} \frac{n_k}{n} w_t^k$, with only model updates (not raw data) leaving each client; CL — all 8 clients' data are centrally pooled to train a single unified model. All three paradigms share the same pretrained ResNet-34 initialization and hyperparameter configuration.
+    - *Design Motivation*: Controlling variables is a prerequisite for fair comparison. The natural data partition by 8 annotators more faithfully reflects the data heterogeneity found in real clinical scenarios than artificial random splits.
 
 2. **Dual-Track Evaluation Protocol**
 
-   - *Function*: Evaluate model performance from both local deployment and cross-center generalization perspectives.
-   - *Mechanism*: Per-client evaluation — the classification threshold is independently optimized on each client's validation set, and models are assessed on the local test set using the locally optimal threshold, reflecting best-case local deployment; pooled evaluation — a single global threshold is applied across the merged test set, reflecting cross-center generalization. Primary metrics include AUC and threshold-dependent accuracy, sensitivity, and specificity.
-   - *Design Motivation*: Real-world FL deployment may follow either a "global model + local threshold" or a "global model + global threshold" strategy; the two evaluation tracks correspond to these distinct deployment scenarios.
+    - *Function*: Evaluate model performance from both local deployment and cross-center generalization perspectives.
+    - *Mechanism*: Per-client evaluation — the classification threshold is independently optimized on each client's validation set, and models are assessed on the local test set using the locally optimal threshold, reflecting best-case local deployment; pooled evaluation — a single global threshold is applied across the merged test set, reflecting cross-center generalization. Primary metrics include AUC and threshold-dependent accuracy, sensitivity, and specificity.
+    - *Design Motivation*: Real-world FL deployment may follow either a "global model + local threshold" or a "global model + global threshold" strategy; the two evaluation tracks correspond to these distinct deployment scenarios.
 
 3. **Interpretability and Training Dynamics Analysis**
 
-   - *Function*: Analyze behavioral differences among the three paradigms via Grad-CAM and training curves.
-   - *Mechanism*: Grad-CAM visualizes attention heatmaps of models trained under each paradigm, examining whether attention is directed toward anatomically relevant regions (third molar root apex and mandibular canal trajectory). Training curves monitor convergence behavior and overfitting across paradigms; server-side aggregation signals (e.g., global validation loss, consistency of client update magnitudes) are additionally monitored in the FL setting to track global training stability.
-   - *Design Motivation*: Beyond identifying which paradigm performs better, understanding why is essential. Grad-CAM validates whether models rely on correct anatomical features rather than data artifacts, while training dynamics analysis elucidates the mechanisms underlying LL overfitting.
+    - *Function*: Analyze behavioral differences among the three paradigms via Grad-CAM and training curves.
+    - *Mechanism*: Grad-CAM visualizes attention heatmaps of models trained under each paradigm, examining whether attention is directed toward anatomically relevant regions (third molar root apex and mandibular canal trajectory). Training curves monitor convergence behavior and overfitting across paradigms; server-side aggregation signals (e.g., global validation loss, consistency of client update magnitudes) are additionally monitored in the FL setting to track global training stability.
+    - *Design Motivation*: Beyond identifying which paradigm performs better, understanding why is essential. Grad-CAM validates whether models rely on correct anatomical features rather than data artifacts, while training dynamics analysis elucidates the mechanisms underlying LL overfitting.
 
 ### Loss & Training
 - ImageNet-pretrained ResNet-34 serves as the backbone, with the final fully connected layer replaced by a binary classification head.

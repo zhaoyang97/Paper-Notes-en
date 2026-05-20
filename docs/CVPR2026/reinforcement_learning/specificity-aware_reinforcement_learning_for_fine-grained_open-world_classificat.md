@@ -18,8 +18,8 @@ content_hash: c69d5ab34a11fe88
 # Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification
 
 **Conference**: CVPR2026
-**arXiv**: [2603.03197](https://arxiv.org/abs/2603.03197)
-**Code**: [s-angheben/SpeciaRL](https://github.com/s-angheben/SpeciaRL)
+**arXiv**: [2603.03197](https://arxiv.org/abs/2603.03197)  
+**Code**: [s-angheben/SpeciaRL](https://github.com/s-angheben/SpeciaRL)  
 **Area**: Reinforcement Learning
 **Keywords**: open-world classification, fine-grained recognition, reinforcement learning, large multimodal models, GRPO, specificity-aware reward
 

@@ -18,8 +18,8 @@ content_hash: 16438dc0e24b2d8d
 # Graph Smoothing for Enhanced Local Geometry Learning in Point Cloud Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.11102](https://arxiv.org/abs/2601.11102)
-**Code**: [https://github.com/shangboyuan/GSPoint](https://github.com/shangboyuan/GSPoint)
+**arXiv**: [2601.11102](https://arxiv.org/abs/2601.11102)  
+**Code**: [https://github.com/shangboyuan/GSPoint](https://github.com/shangboyuan/GSPoint)  
 **Area**: 3D Vision / Point Cloud Analysis
 **Keywords**: Point Cloud Analysis, Graph Smoothing, Local Geometry Learning, von Neumann Kernel, Cylindrical Coordinate System
 

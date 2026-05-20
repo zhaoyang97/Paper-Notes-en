@@ -18,7 +18,7 @@ content_hash: 147c776d46df346b
 # ConfRover: Simultaneous Modeling of Protein Conformation and Dynamics via Autoregression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17478](https://arxiv.org/abs/2505.17478)
+**arXiv**: [2505.17478](https://arxiv.org/abs/2505.17478)  
 **Project**: https://bytedance-seed.github.io/ConfRover
 **Institution**: ByteDance Seed, Tongji University, Tsinghua University
 **Area**: Protein Conformation Modeling / Molecular Dynamics

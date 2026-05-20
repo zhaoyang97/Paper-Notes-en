@@ -18,8 +18,8 @@ content_hash: ab395bb67b83bc5d
 # Latent Diffusion Model without Variational Autoencoder
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.15301](https://arxiv.org/abs/2510.15301)
-**Code**: [GitHub](https://github.com/shiml20/SVG)
+**arXiv**: [2510.15301](https://arxiv.org/abs/2510.15301)  
+**Code**: [GitHub](https://github.com/shiml20/SVG)  
 **Area**: Diffusion Models / Visual Representation
 **Keywords**: Self-supervised representation, DINOv3, VAE-free latent diffusion, unified feature space, few-step generation
 

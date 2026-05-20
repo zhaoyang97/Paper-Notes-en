@@ -18,8 +18,8 @@ content_hash: 2fa8d2856400acb0
 # InfoCLIP: Bridging Vision-Language Pretraining and Open-Vocabulary Semantic Segmentation via Information-Theoretic Alignment Transfer
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.15967](https://arxiv.org/abs/2511.15967)
-**Code**: [https://muyaoyuan.github.io/InfoCLIP-Page](https://muyaoyuan.github.io/InfoCLIP-Page)
+**arXiv**: [2511.15967](https://arxiv.org/abs/2511.15967)  
+**Code**: [https://muyaoyuan.github.io/InfoCLIP-Page](https://muyaoyuan.github.io/InfoCLIP-Page)  
 **Area**: Semantic Segmentation / Multimodal VLM
 **Keywords**: Open-vocabulary semantic segmentation, CLIP fine-tuning, information bottleneck, mutual information distillation, modality alignment
 

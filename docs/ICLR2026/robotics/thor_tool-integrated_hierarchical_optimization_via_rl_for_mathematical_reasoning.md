@@ -19,8 +19,8 @@ content_hash: 92442fb7efbd74aa
 # THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.13761](https://arxiv.org/abs/2509.13761)
-**Code**: [GitHub](https://github.com/JingMog/THOR)
+**arXiv**: [2509.13761](https://arxiv.org/abs/2509.13761)  
+**Code**: [GitHub](https://github.com/JingMog/THOR)  
 **Area**: Robotics
 **Keywords**: tool-integrated reasoning, hierarchical RL, GRPO, code generation, self-correction, mathematical reasoning
 

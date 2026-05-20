@@ -18,8 +18,8 @@ content_hash: 94d0b2788b69e6b3
 # VertexRegen: Mesh Generation with Continuous Level of Detail
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.09062](https://arxiv.org/abs/2508.09062)
-**Code**: [Project Page](https://vertexregen.github.io)
+**arXiv**: [2508.09062](https://arxiv.org/abs/2508.09062)  
+**Code**: [Project Page](https://vertexregen.github.io)  
 **Area**: 3D Vision
 **Keywords**: Mesh Generation, Progressive Meshes, Continuous Level of Detail, Autoregressive, Vertex Split
 

@@ -18,8 +18,8 @@ content_hash: a04691db1c4cdeed
 # TOGA: Temporally Grounded Open-Ended Video QA with Weak Supervision
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.09445](https://arxiv.org/abs/2506.09445)
-**Code**: Not released
+**arXiv**: [2506.09445](https://arxiv.org/abs/2506.09445)  
+**Code**: Not released  
 **Area**: Video Understanding / Video QA / Temporal Grounding
 **Keywords**: Video QA, temporal grounding, weak supervision, vision-language models, multi-scale temporal modeling
 

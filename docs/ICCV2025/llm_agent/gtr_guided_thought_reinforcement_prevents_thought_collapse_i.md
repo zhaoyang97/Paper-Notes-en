@@ -18,8 +18,8 @@ content_hash: 76dc3c2ab8e3a025
 # GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-based VLM Agent Training
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08525](https://arxiv.org/abs/2503.08525)
-**Code**: [GitHub](see paper)
+**arXiv**: [2503.08525](https://arxiv.org/abs/2503.08525)  
+**Code**: [GitHub](see paper)  
 **Area**: VLM Agent / Reinforcement Learning
 **Keywords**: Thought Collapse, CoT Reasoning, Process Guidance, PPO, VLM Agent
 

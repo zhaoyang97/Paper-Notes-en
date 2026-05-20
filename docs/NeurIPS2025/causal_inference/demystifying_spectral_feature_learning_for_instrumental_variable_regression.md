@@ -18,8 +18,8 @@ content_hash: 786ba94a8713bb9e
 # Demystifying Spectral Feature Learning for Instrumental Variable Regression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10899](https://arxiv.org/abs/2506.10899)
-**Code**: None
+**arXiv**: [2506.10899](https://arxiv.org/abs/2506.10899)  
+**Code**: None  
 **Area**: Causal Inference
 **Keywords**: Instrumental Variables, Spectral Features, Two-Stage Least Squares, Contrastive Learning, Causal Effect Estimation
 

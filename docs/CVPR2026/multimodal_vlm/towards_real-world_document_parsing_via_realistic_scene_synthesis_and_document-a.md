@@ -18,8 +18,8 @@ content_hash: 2b320693972f21b3
 # Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23885](https://arxiv.org/abs/2603.23885)
-**Code**: To be released
+**arXiv**: [2603.23885](https://arxiv.org/abs/2603.23885)  
+**Code**: To be released  
 **Area**: Document Understanding / End-to-End Document Parsing
 **Keywords**: document parsing, synthetic data, progressive training, structure token weighting, real-world robustness
 

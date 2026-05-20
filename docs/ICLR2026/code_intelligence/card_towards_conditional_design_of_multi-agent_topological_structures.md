@@ -18,8 +18,8 @@ content_hash: d5c68c1fc8edec2d
 # CARD: Towards Conditional Design of Multi-agent Topological Structures
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01089](https://arxiv.org/abs/2603.01089)
-**Code**: [https://github.com/Warma10032/CARD](https://github.com/Warma10032/CARD)
+**arXiv**: [2603.01089](https://arxiv.org/abs/2603.01089)  
+**Code**: [https://github.com/Warma10032/CARD](https://github.com/Warma10032/CARD)  
 **Area**: Code Intelligence
 **Keywords**: Multi-Agent Communication Topology, Conditional Graph Generation, Graph Neural Networks, Dynamic Environment Signals, Agent Collaboration
 

@@ -18,8 +18,8 @@ content_hash: 047e6ef0e0ee32af
 # MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20782](https://arxiv.org/abs/2603.20782)
-**Code**: [https://github.com/cplusx/MEMO_Edge_Detection](https://github.com/cplusx/MEMO_Edge_Detection)
+**arXiv**: [2603.20782](https://arxiv.org/abs/2603.20782)  
+**Code**: [https://github.com/cplusx/MEMO_Edge_Detection](https://github.com/cplusx/MEMO_Edge_Detection)  
 **Area**: Model Compression / Edge Detection
 **Keywords**: edge detection, masked prediction, confidence-ordered inference, multi-granularity prediction, synthetic data pre-training
 

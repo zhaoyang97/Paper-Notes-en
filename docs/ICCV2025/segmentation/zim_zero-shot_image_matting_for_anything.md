@@ -18,8 +18,8 @@ content_hash: d38c858eeb7358ae
 # ZIM: Zero-Shot Image Matting for Anything
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.00626](https://arxiv.org/abs/2411.00626)
-**Code**: [https://naver-ai.github.io/ZIM](https://naver-ai.github.io/ZIM)
+**arXiv**: [2411.00626](https://arxiv.org/abs/2411.00626)  
+**Code**: [https://naver-ai.github.io/ZIM](https://naver-ai.github.io/ZIM)  
 **Area**: Image Segmentation
 **Keywords**: Image Matting, Zero-Shot, SAM, Label Conversion, Hierarchical Decoder
 
@@ -57,9 +57,9 @@ ZIM is built upon the SAM architecture, comprising four components: (1) an image
 2. **Hierarchical Pixel Decoder**: The original SAM decoder contains only two transposed convolution layers (stride 4), which are prone to checkerboard artifacts. The proposed decoder adopts a multi-resolution feature pyramid design, generating feature maps at stride 2/4/8 from the input image. The image embeddings are progressively upsampled and concatenated with features at the corresponding resolution, yielding a high-resolution feature map at stride 2. **Only 10 ms of additional inference latency is incurred.**
 
 3. **Prompt-Aware Masked Attention**:
-   - Box prompt: Generates a binary attention mask $\mathcal{M}^b \in \{0, -\infty\}$ to constrain model attention within the box region.
-   - Point prompt: Generates a soft attention mask $\mathcal{M}^p \in [0,1]$ based on a 2D Gaussian distribution (standard deviation $\sigma=21$).
-   - Applied exclusively to token-to-image cross-attention layers (experiments show that applying it to image-to-token attention disrupts global feature capture).
+    - Box prompt: Generates a binary attention mask $\mathcal{M}^b \in \{0, -\infty\}$ to constrain model attention within the box region.
+    - Point prompt: Generates a soft attention mask $\mathcal{M}^p \in [0,1]$ based on a 2D Gaussian distribution (standard deviation $\sigma=21$).
+    - Applied exclusively to token-to-image cross-attention layers (experiments show that applying it to image-to-token attention disrupts global feature capture).
 
 ### Loss & Training
 

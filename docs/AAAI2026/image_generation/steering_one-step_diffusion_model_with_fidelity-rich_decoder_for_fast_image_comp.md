@@ -18,8 +18,8 @@ content_hash: 6c821bc59eeca94c
 # Steering One-Step Diffusion Model with Fidelity-Rich Decoder for Fast Image Compression
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04979](https://arxiv.org/abs/2508.04979)
-**Code**: [https://github.com/zhengchen1999/SODEC](https://github.com/zhengchen1999/SODEC)
+**arXiv**: [2508.04979](https://arxiv.org/abs/2508.04979)  
+**Code**: [https://github.com/zhengchen1999/SODEC](https://github.com/zhengchen1999/SODEC)  
 **Area**: Image Generation
 **Keywords**: Image Compression, Diffusion Model, One-Step Decoding, Fidelity Guidance, Rate Annealing
 

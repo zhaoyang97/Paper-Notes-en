@@ -20,7 +20,7 @@ content_hash: f5dec10bbf20b019
 # Comparative Evaluation of Traditional Methods and Deep Learning for Brain Glioma Imaging
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04796](https://arxiv.org/abs/2603.04796)
+**arXiv**: [2603.04796](https://arxiv.org/abs/2603.04796)  
 **Authors**: Kiranmayee Janardhan, Vinay Martin DSa Prabhu, T. Christy Bobby
 **Area**: Image Segmentation
 **Keywords**: brain glioma, MRI segmentation, classification, deep learning, CNN, traditional methods, medical imaging

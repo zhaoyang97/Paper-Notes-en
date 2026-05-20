@@ -18,8 +18,8 @@ content_hash: 515ccf84a29695b1
 # Radiant Foam: Real-Time Differentiable Ray Tracing
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.01157](https://arxiv.org/abs/2502.01157)
-**Code**: None
+**arXiv**: [2502.01157](https://arxiv.org/abs/2502.01157)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: Differentiable Rendering, Ray Tracing, Voxel Grid, Scene Representation, Real-Time Rendering
 

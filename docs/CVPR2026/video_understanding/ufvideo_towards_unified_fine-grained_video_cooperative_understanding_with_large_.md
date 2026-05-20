@@ -18,8 +18,8 @@ content_hash: eda9af7d11d3bfef
 # UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.11336](https://arxiv.org/abs/2512.11336)
-**Code**: [https://github.com/Heven-Pan/UFVideo](https://github.com/Heven-Pan/UFVideo)
+**arXiv**: [2512.11336](https://arxiv.org/abs/2512.11336)  
+**Code**: [https://github.com/Heven-Pan/UFVideo](https://github.com/Heven-Pan/UFVideo)  
 **Area**: Video Understanding / Multimodal VLM
 **Keywords**: Unified video understanding, multi-grained cooperation, pixel-level segmentation, temporal grounding, Video LLM
 

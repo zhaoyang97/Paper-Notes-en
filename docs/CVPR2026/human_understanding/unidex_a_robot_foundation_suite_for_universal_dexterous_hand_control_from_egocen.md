@@ -18,8 +18,8 @@ content_hash: a827024219c00d50
 # UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22264](https://arxiv.org/abs/2603.22264)
-**Code**: [https://unidex-ai.github.io/](https://unidex-ai.github.io/)
+**arXiv**: [2603.22264](https://arxiv.org/abs/2603.22264)  
+**Code**: [https://unidex-ai.github.io/](https://unidex-ai.github.io/)  
 **Area**: Human Understanding
 **Keywords**: Dexterous Manipulation, VLA Foundation Model, Unified Action Space, Learning from Human Videos, Cross-Hand Transfer
 

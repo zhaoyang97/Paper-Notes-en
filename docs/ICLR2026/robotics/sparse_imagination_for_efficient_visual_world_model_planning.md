@@ -20,8 +20,8 @@ content_hash: ce8f83bec9377aa2
 # Sparse Imagination for Efficient Visual World Model Planning
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.01392](https://arxiv.org/abs/2506.01392)
-**Code**: None (built on DINO-WM framework)
+**arXiv**: [2506.01392](https://arxiv.org/abs/2506.01392)  
+**Code**: None (built on DINO-WM framework)  
 **Area**: Robotics
 **Keywords**: world model, sparse tokens, MPC, DINO, VLA, token dropout, planning efficiency
 

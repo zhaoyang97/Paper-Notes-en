@@ -19,8 +19,8 @@ content_hash: e23329daf0de8a27
 # Knolling Bot: Teaching Robots the Human Notion of Tidiness
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2310.04566](https://arxiv.org/abs/2310.04566)
-**Code**: [https://github.com/yuhanghu/knolling](https://github.com/yuhanghu/knolling) (available, includes dataset and benchmark)
+**arXiv**: [2310.04566](https://arxiv.org/abs/2310.04566)  
+**Code**: [https://github.com/yuhanghu/knolling](https://github.com/yuhanghu/knolling) (available, includes dataset and benchmark)  
 **Area**: Robotics
 **Keywords**: knolling, object arrangement, Transformer, GMM, self-supervised learning, autoregressive generation
 

@@ -18,8 +18,8 @@ content_hash: a9646fd4e368bc71
 # Autoregressive Image Generation with Randomized Parallel Decoding
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.10568](https://arxiv.org/abs/2503.10568)
-**Code**: [https://github.com/hp-l33/ARPG](https://github.com/hp-l33/ARPG)
+**arXiv**: [2503.10568](https://arxiv.org/abs/2503.10568)  
+**Code**: [https://github.com/hp-l33/ARPG](https://github.com/hp-l33/ARPG)  
 **Area**: Image Generation
 **Keywords**: autoregressive image generation, random-order modeling, parallel decoding, KV cache, controllable generation
 

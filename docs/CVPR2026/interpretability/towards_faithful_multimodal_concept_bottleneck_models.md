@@ -17,8 +17,8 @@ content_hash: b740c4d6b0f21005
 # Towards Faithful Multimodal Concept Bottleneck Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13163](https://arxiv.org/abs/2603.13163)
-**Code**: To be confirmed
+**arXiv**: [2603.13163](https://arxiv.org/abs/2603.13163)  
+**Code**: To be confirmed  
 **Area**: Interpretability
 **Keywords**: Concept Bottleneck Models, Interpretability, Leakage Mitigation, KAN Network, Multimodal Classification
 

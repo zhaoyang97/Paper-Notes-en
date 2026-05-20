@@ -18,8 +18,8 @@ content_hash: e135656a961dc5c4
 # Adaptive Articulated Object Manipulation On The Fly with Foundation Model Reasoning and Part Grounding
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.18276](https://arxiv.org/abs/2507.18276)
-**Code**: None
+**arXiv**: [2507.18276](https://arxiv.org/abs/2507.18276)  
+**Code**: None  
 **Area**: Robotic Manipulation
 **Keywords**: articulated object manipulation, foundation models, part segmentation, affordance prediction, adaptive policy
 

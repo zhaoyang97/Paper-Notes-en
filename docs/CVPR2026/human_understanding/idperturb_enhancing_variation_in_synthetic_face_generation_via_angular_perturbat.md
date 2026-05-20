@@ -18,8 +18,8 @@ content_hash: e4a65b83a4838866
 # IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.18831](https://arxiv.org/abs/2602.18831)
-**Code**: [GitHub](https://github.com/fdbtrs/IDiff-Face) (based on IDiff-Face)
+**arXiv**: [2602.18831](https://arxiv.org/abs/2602.18831)  
+**Code**: [GitHub](https://github.com/fdbtrs/IDiff-Face) (based on IDiff-Face)  
 **Area**: Image Generation / Face Recognition
 **Keywords**: Synthetic faces, identity perturbation, angular sampling, diffusion models, face recognition
 

@@ -18,8 +18,8 @@ content_hash: 4db98fae3a72da58
 # Jackpot: Optimal Budgeted Rejection Sampling for Extreme Actor-Policy Mismatch RL
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.06107](https://arxiv.org/abs/2602.06107)
-**Code**: [Infini-AI-Lab/jackpot](https://github.com/Infini-AI-Lab/jackpot)
+**arXiv**: [2602.06107](https://arxiv.org/abs/2602.06107)  
+**Code**: [Infini-AI-Lab/jackpot](https://github.com/Infini-AI-Lab/jackpot)  
 **Area**: Others
 **Keywords**: rejection sampling, actor-policy mismatch, decoupled RL, importance sampling, OBRS, off-policy RL
 

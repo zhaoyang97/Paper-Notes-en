@@ -18,8 +18,8 @@ content_hash: 18275f0ea372f9d9
 # Object-level Correlation for Few-Shot Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.07917](https://arxiv.org/abs/2509.07917)
-**Code**: N/A
+**arXiv**: [2509.07917](https://arxiv.org/abs/2509.07917)  
+**Code**: N/A  
 **Area**: Image Segmentation
 **Keywords**: few-shot segmentation, object-level correlation, prototype learning, optimal transport, hard pixel noise
 

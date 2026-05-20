@@ -18,8 +18,8 @@ content_hash: 59ca117ce07d46b0
 # When No Paths Lead to Rome: Benchmarking Systematic Neural Relational Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23532](https://arxiv.org/abs/2510.23532)
-**Code**: [GitHub](https://github.com/axd353/WhenNoPathsLeadToRome/)
+**arXiv**: [2510.23532](https://arxiv.org/abs/2510.23532)  
+**Code**: [GitHub](https://github.com/axd353/WhenNoPathsLeadToRome/)  
 **Area**: Graph Learning
 **Keywords**: relational reasoning, benchmark, off-path reasoning, systematic generalization, graph neural networks
 

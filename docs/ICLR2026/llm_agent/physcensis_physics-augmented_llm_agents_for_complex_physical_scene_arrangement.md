@@ -19,8 +19,8 @@ content_hash: 761660db022d8dd5
 # PhyScensis: Physics-Augmented LLM Agents for Complex Physical Scene Arrangement
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.14968](https://arxiv.org/abs/2602.14968)
-**Code**: [Project Page](https://physcensis.github.io)
+**arXiv**: [2602.14968](https://arxiv.org/abs/2602.14968)  
+**Code**: [Project Page](https://physcensis.github.io)  
 **Area**: LLM Agent
 **Keywords**: 3D scene generation, physics engine, LLM agent, physical plausibility, predicate-based placement, probabilistic programming, robotic manipulation
 

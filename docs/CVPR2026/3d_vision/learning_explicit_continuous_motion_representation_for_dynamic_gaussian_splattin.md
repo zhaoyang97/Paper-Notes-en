@@ -18,8 +18,8 @@ content_hash: 1770996c8695b14b
 # Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25058](https://arxiv.org/abs/2603.25058)
-**Code**: [https://github.com/hhhddddddd/se3bsplinegs](https://github.com/hhhddddddd/se3bsplinegs)
+**arXiv**: [2603.25058](https://arxiv.org/abs/2603.25058)  
+**Code**: [https://github.com/hhhddddddd/se3bsplinegs](https://github.com/hhhddddddd/se3bsplinegs)  
 **Area**: 3D Vision
 **Keywords**: Dynamic Gaussian Splatting, Monocular Video, SE(3) B-Spline, Motion Representation, Novel View Synthesis
 

@@ -18,8 +18,8 @@ content_hash: 4c26c1a9dfdd0d91
 # Beyond Global Similarity: Towards Fine-Grained, Multi-Condition Multimodal Retrieval
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01082](https://arxiv.org/abs/2603.01082)
-**Code**: [github.com/EIT-NLP/MCMR](https://github.com/EIT-NLP/MCMR)
+**arXiv**: [2603.01082](https://arxiv.org/abs/2603.01082)  
+**Code**: [github.com/EIT-NLP/MCMR](https://github.com/EIT-NLP/MCMR)  
 **Area**: Information Retrieval
 **Keywords**: multi-condition retrieval, fine-grained matching, dual-evidence, MLLM reranking, cross-modal reasoning
 

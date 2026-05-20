@@ -18,8 +18,8 @@ content_hash: 6df6015af74dec93
 # Saddle-to-Saddle Dynamics Explains A Simplicity Bias Across Neural Network Architectures
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.20607](https://arxiv.org/abs/2512.20607)
-**Code**: None
+**arXiv**: [2512.20607](https://arxiv.org/abs/2512.20607)  
+**Code**: None  
 **Area**: Optimization Theory / Deep Learning Theory
 **Keywords**: simplicity bias, saddle-to-saddle dynamics, neural network learning dynamics, invariant manifolds, gradient descent
 

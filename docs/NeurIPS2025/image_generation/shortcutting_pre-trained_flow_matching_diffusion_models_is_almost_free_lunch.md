@@ -18,8 +18,8 @@ content_hash: f03b131d0f048f00
 # Shortcutting Pre-trained Flow Matching Diffusion Models is Almost Free Lunch
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17858](https://arxiv.org/abs/2510.17858)
-**Code**: [Project Page](https://shortcutfm.github.io)
+**arXiv**: [2510.17858](https://arxiv.org/abs/2510.17858)  
+**Code**: [Project Page](https://shortcutfm.github.io)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: flow matching, distillation, few-step sampling, velocity field consistency, LoRA
 

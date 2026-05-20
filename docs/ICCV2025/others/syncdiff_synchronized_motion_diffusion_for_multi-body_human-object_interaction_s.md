@@ -17,8 +17,8 @@ content_hash: 754b6f3a4001455b
 # SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.20104](https://arxiv.org/abs/2412.20104)
-**Code**: [https://syncdiff.github.io/](https://syncdiff.github.io/)
+**arXiv**: [2412.20104](https://arxiv.org/abs/2412.20104)  
+**Code**: [https://syncdiff.github.io/](https://syncdiff.github.io/)  
 **Area**: Others
 **Keywords**: Human-Object Interaction, Motion Synthesis, Diffusion Models, Multi-Body Synchronization, Frequency Decomposition
 

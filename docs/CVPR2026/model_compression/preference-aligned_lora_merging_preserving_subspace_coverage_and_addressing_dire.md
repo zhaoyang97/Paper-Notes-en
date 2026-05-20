@@ -18,8 +18,8 @@ content_hash: 560a3032152f257d
 # Preference-Aligned LoRA Merging: Preserving Subspace Coverage and Addressing Directional Anisotropy
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26299](https://arxiv.org/abs/2603.26299)
-**Code**: [https://github.com/wooseong97/TARA-Merge](https://github.com/wooseong97/TARA-Merge)
+**arXiv**: [2603.26299](https://arxiv.org/abs/2603.26299)  
+**Code**: [https://github.com/wooseong97/TARA-Merge](https://github.com/wooseong97/TARA-Merge)  
 **Area**: Model Compression / Model Merging
 **Keywords**: LoRA merging, subspace coverage, anisotropy, multi-objective optimization, model merging
 

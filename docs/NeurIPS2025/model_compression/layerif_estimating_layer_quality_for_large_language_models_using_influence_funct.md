@@ -18,8 +18,8 @@ content_hash: 9834d22cac95ed0b
 # LayerIF: Estimating Layer Quality for Large Language Models using Influence Functions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23811](https://arxiv.org/abs/2505.23811)
-**Code**: None
+**arXiv**: [2505.23811](https://arxiv.org/abs/2505.23811)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Influence Functions, Layer Quality Estimation, LoRA-MoE, Model Pruning, Layer-wise Sparsity Allocation
 

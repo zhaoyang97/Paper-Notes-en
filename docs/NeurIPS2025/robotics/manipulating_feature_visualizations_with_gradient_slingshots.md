@@ -18,8 +18,8 @@ content_hash: 679f3dddbd3df0d7
 # Manipulating Feature Visualizations with Gradient Slingshots
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2401.06122](https://arxiv.org/abs/2401.06122)
-**Code**: [GitHub](https://github.com/dilyabareeva/grad-slingshot)
+**arXiv**: [2401.06122](https://arxiv.org/abs/2401.06122)  
+**Code**: [GitHub](https://github.com/dilyabareeva/grad-slingshot)  
 **Area**: Explainable AI / Adversarial Attacks
 **Keywords**: Feature Visualization, Gradient Slingshot, Activation Maximization, XAI Security, Adversarial Fine-tuning
 
@@ -51,21 +51,21 @@ The adversary selects a target feature $f$ and a target image $\bm{x^t}$, then f
 
 1. **Theoretical Framework: Quadratic Attraction Field**
 
-   - **Function**: Guarantees convergence of FV optimization to the target image from any initialization.
-   - **Mechanism**: An auxiliary function $\phi$ is constructed such that $\nabla(\phi \circ \eta)(\bm{q}) = \gamma(\bm{q^t} - \bm{q})$, i.e., the gradient always points toward the target. Integration yields the quadratic form $(\phi \circ \eta)(\bm{q}) = -\frac{\gamma}{2}\|\bm{q^t} - \bm{q}\|_2^2 + C$. Under step size $\epsilon < 1/\gamma$, the iteration $\bm{q}^{(i+1)} = (1-\epsilon\gamma)\bm{q}^{(i)} + \epsilon\gamma\bm{q^t}$ guarantees geometric convergence $d^{(i+1)} = (1-\epsilon\gamma)d^{(i)}$.
-   - **Design Motivation**: Provides rigorous theoretical convergence guarantees without heuristics, enabling the adversary to precisely control FV outcomes.
+    - **Function**: Guarantees convergence of FV optimization to the target image from any initialization.
+    - **Mechanism**: An auxiliary function $\phi$ is constructed such that $\nabla(\phi \circ \eta)(\bm{q}) = \gamma(\bm{q^t} - \bm{q})$, i.e., the gradient always points toward the target. Integration yields the quadratic form $(\phi \circ \eta)(\bm{q}) = -\frac{\gamma}{2}\|\bm{q^t} - \bm{q}\|_2^2 + C$. Under step size $\epsilon < 1/\gamma$, the iteration $\bm{q}^{(i+1)} = (1-\epsilon\gamma)\bm{q}^{(i)} + \epsilon\gamma\bm{q^t}$ guarantees geometric convergence $d^{(i+1)} = (1-\epsilon\gamma)d^{(i)}$.
+    - **Design Motivation**: Provides rigorous theoretical convergence guarantees without heuristics, enabling the adversary to precisely control FV outcomes.
 
 2. **Manipulation Loss and Preservation Loss**
 
-   - **Function**: Respectively achieve the two conflicting objectives of "FV output becomes the target image" and "normal model functionality is preserved."
-   - **Mechanism**: The manipulation loss $\mathcal{L_M}$ takes two forms—a gradient form that directly constrains the gradient field direction, and an activation form $\mathcal{L_M^{act}}$ that constrains activations to approximate the quadratic function. The preservation loss $\mathcal{L_P}$ uses MSE to constrain the fine-tuned feature extractor to match the original activations on the training set, assigning higher weight $w$ to the target feature $f$. Total loss: $\mathcal{L} = \alpha\mathcal{L_P} + (1-\alpha)\mathcal{L_M}$.
-   - **Design Motivation**: Only the OOD region's behavior needs to be modified while the ID region remains intact. The gradient form directly controls the optimization trajectory but requires second-order optimization; the activation form is a more practical alternative.
+    - **Function**: Respectively achieve the two conflicting objectives of "FV output becomes the target image" and "normal model functionality is preserved."
+    - **Mechanism**: The manipulation loss $\mathcal{L_M}$ takes two forms—a gradient form that directly constrains the gradient field direction, and an activation form $\mathcal{L_M^{act}}$ that constrains activations to approximate the quadratic function. The preservation loss $\mathcal{L_P}$ uses MSE to constrain the fine-tuned feature extractor to match the original activations on the training set, assigning higher weight $w$ to the target feature $f$. Total loss: $\mathcal{L} = \alpha\mathcal{L_P} + (1-\alpha)\mathcal{L_M}$.
+    - **Design Motivation**: Only the OOD region's behavior needs to be modified while the ID region remains intact. The gradient form directly controls the optimization trajectory but requires second-order optimization; the activation form is a more practical alternative.
 
 3. **Three-Region Decomposition: Slingshot Region–Tunnel–Landing Region**
 
-   - **Function**: Precisely delineates the subset of parameter space to be manipulated, minimizing impact on the model.
-   - **Mechanism**: The **slingshot region** $\mathbb{B}$ is a neighborhood of the FV initialization distribution—gradients are largest here, producing the "launch" effect. The **landing region** $\mathbb{L}$ is a neighborhood of the target image—gradients vanish here, ensuring stable convergence. The **tunnel** $\mathbb{T}_{B,L}$ is the convex hull connecting the two—ensuring the optimization trajectory remains within the manipulated region. Only points sampled inside the tunnel are used for fine-tuning.
-   - **Design Motivation**: This precise spatial decomposition confines manipulation to the OOD region visited by FV optimization, leaving natural image processing entirely unaffected.
+    - **Function**: Precisely delineates the subset of parameter space to be manipulated, minimizing impact on the model.
+    - **Mechanism**: The **slingshot region** $\mathbb{B}$ is a neighborhood of the FV initialization distribution—gradients are largest here, producing the "launch" effect. The **landing region** $\mathbb{L}$ is a neighborhood of the target image—gradients vanish here, ensuring stable convergence. The **tunnel** $\mathbb{T}_{B,L}$ is the convex hull connecting the two—ensuring the optimization trajectory remains within the manipulated region. Only points sampled inside the tunnel are used for fine-tuning.
+    - **Design Motivation**: This precise spatial decomposition confines manipulation to the OOD region visited by FV optimization, leaving natural image processing entirely unaffected.
 
 ### Loss & Training
 

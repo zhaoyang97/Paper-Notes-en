@@ -18,8 +18,8 @@ content_hash: 873e44dbea4cf221
 # From Linearity to Non-Linearity: How Masked Autoencoders Capture Spatial Correlations
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.15404](https://arxiv.org/abs/2508.15404)
-**Code**: None
+**arXiv**: [2508.15404](https://arxiv.org/abs/2508.15404)  
+**Code**: None  
 **Area**: Self-Supervised Learning / Theory
 **Keywords**: Masked Autoencoder, spatial correlation, linear analysis, hyperparameter selection, ViT
 

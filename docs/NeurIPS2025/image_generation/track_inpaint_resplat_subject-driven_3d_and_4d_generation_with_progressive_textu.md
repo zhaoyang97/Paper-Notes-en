@@ -18,8 +18,8 @@ content_hash: 8a3af282a4db64a0
 # Track, Inpaint, Resplat: Subject-driven 3D and 4D Generation with Progressive Texture Infilling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23605](https://arxiv.org/abs/2510.23605)
-**Code**: [Project Page](https://zsh2000.github.io/track-inpaint-resplat.github.io/)
+**arXiv**: [2510.23605](https://arxiv.org/abs/2510.23605)  
+**Code**: [Project Page](https://zsh2000.github.io/track-inpaint-resplat.github.io/)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Subject-driven generation, 3D/4D generation, Identity preservation, Texture infilling, Video tracking
 

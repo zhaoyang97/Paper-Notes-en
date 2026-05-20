@@ -18,8 +18,8 @@ content_hash: ffca6c0e2c87c71b
 # MAB-DQA: Addressing Query Aspect Importance in Document Question Answering with Multi-Armed Bandits
 
 **Conference**: ACL 2026
-**arXiv**: [2604.08952](https://arxiv.org/abs/2604.08952)
-**Code**: [GitHub](https://github.com/ElephantOH/MAB-DQA)
+**arXiv**: [2604.08952](https://arxiv.org/abs/2604.08952)  
+**Code**: [GitHub](https://github.com/ElephantOH/MAB-DQA)  
 **Area**: Document Question Answering & Information Retrieval
 **Keywords**: Document Question Answering, Multi-Armed Bandits, Query Decomposition, Multimodal RAG, Hypergraph Reasoning
 

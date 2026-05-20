@@ -18,8 +18,8 @@ content_hash: 58220dd2298f5558
 # Unsupervised Conformal Inference: Bootstrapping and Alignment to Control LLM Uncertainty
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23002](https://arxiv.org/abs/2509.23002)
-**Code**: None
+**arXiv**: [2509.23002](https://arxiv.org/abs/2509.23002)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Unsupervised conformal inference, bootstrapping, LLM hallucination detection, Gram matrix, conformal alignment
 

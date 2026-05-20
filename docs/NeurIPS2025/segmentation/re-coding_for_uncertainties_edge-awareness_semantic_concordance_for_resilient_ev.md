@@ -18,8 +18,8 @@ content_hash: 45297b774b470a83
 # Re-coding for Uncertainties: Edge-awareness Semantic Concordance for Resilient Event-RGB Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.08269](https://arxiv.org/abs/2511.08269)
-**Code**: [https://github.com/iCVTEAM/ESC](https://github.com/iCVTEAM/ESC)
+**arXiv**: [2511.08269](https://arxiv.org/abs/2511.08269)  
+**Code**: [https://github.com/iCVTEAM/ESC](https://github.com/iCVTEAM/ESC)  
 **Area**: Semantic Segmentation / Multimodal Fusion
 **Keywords**: Event-RGB Fusion, Semantic Edge, Discrete Latent Space, Uncertainty Optimization, Extreme Conditions
 

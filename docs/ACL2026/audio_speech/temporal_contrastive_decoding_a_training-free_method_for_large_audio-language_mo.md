@@ -18,8 +18,8 @@ content_hash: 92cc4efb48833aeb
 # Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.15383](https://arxiv.org/abs/2604.15383)
-**Code**: None
+**arXiv**: [2604.15383](https://arxiv.org/abs/2604.15383)  
+**Code**: None  
 **Area**: Audio & Speech
 **Keywords**: audio-language models, contrastive decoding, temporal smoothing bias, training-free inference, gated update
 

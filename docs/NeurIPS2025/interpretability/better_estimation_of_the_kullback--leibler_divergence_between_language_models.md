@@ -18,8 +18,8 @@ content_hash: ba2bedbc9e5a5029
 # Better Estimation of the Kullback-Leibler Divergence Between Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.10637](https://arxiv.org/abs/2504.10637)
-**Code**: [https://github.com/rycolab/kl-rb](https://github.com/rycolab/kl-rb)
+**arXiv**: [2504.10637](https://arxiv.org/abs/2504.10637)  
+**Code**: [https://github.com/rycolab/kl-rb](https://github.com/rycolab/kl-rb)  
 **Area**: Interpretability
 **Keywords**: KL divergence estimation, Rao-Blackwellization, RLHF, variance reduction, language models
 

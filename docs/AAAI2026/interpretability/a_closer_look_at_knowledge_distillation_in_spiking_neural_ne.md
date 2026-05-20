@@ -18,8 +18,8 @@ content_hash: 657556c450ce4dfb
 # A Closer Look at Knowledge Distillation in Spiking Neural Network Training
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06902](https://arxiv.org/abs/2511.06902)
-**Code**: [https://github.com/SinoLeu/CKDSNN](https://github.com/SinoLeu/CKDSNN)
+**arXiv**: [2511.06902](https://arxiv.org/abs/2511.06902)  
+**Code**: [https://github.com/SinoLeu/CKDSNN](https://github.com/SinoLeu/CKDSNN)  
 **Area**: Interpretability
 **Keywords**: Knowledge Distillation, Spiking Neural Networks, Activation Map Alignment, Noise Smoothing, Energy-Efficient Training
 

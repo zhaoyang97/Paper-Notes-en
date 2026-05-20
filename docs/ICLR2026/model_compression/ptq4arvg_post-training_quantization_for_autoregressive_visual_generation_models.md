@@ -18,8 +18,8 @@ content_hash: 3f98144cb6368582
 # PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21238](https://arxiv.org/abs/2601.21238)
-**Code**: [GitHub](http://github.com/BienLuky/PTQ4ARVG)
+**arXiv**: [2601.21238](https://arxiv.org/abs/2601.21238)  
+**Code**: [GitHub](http://github.com/BienLuky/PTQ4ARVG)  
 **Area**: Model Compression
 **Keywords**: Visual Generation, Autoregressive Models, Post-Training Quantization, Activation Quantization, Outlier Suppression
 
@@ -49,23 +49,23 @@ PTQ4ARVG comprises three targeted components addressing channel-level, token-lev
 
 1. **Gain-Projected Scaling (GPS)**:
 
-   - Applies Taylor expansion to the quantization loss, separately quantifying activation and weight losses.
-   - Defines the scaling gain as: $g(s_2) = g_{\bm{x}} - g_{\bm{W}_{:,1}}$ (reduction in activation loss minus increase in weight loss).
-   - Derives a closed-form optimal scaling factor via differentiation: $s_2 = s_1 \frac{\sqrt{\sum|{\Delta W_{2,i} x_2}|}}{\sqrt{\sum|{W_{2,i} \Delta x_2}|}}$
-   - Represents the first mathematically optimized quantization scaling strategy, outperforming empirically designed alternatives.
+    - Applies Taylor expansion to the quantization loss, separately quantifying activation and weight losses.
+    - Defines the scaling gain as: $g(s_2) = g_{\bm{x}} - g_{\bm{W}_{:,1}}$ (reduction in activation loss minus increase in weight loss).
+    - Derives a closed-form optimal scaling factor via differentiation: $s_2 = s_1 \frac{\sqrt{\sum|{\Delta W_{2,i} x_2}|}}{\sqrt{\sum|{W_{2,i} \Delta x_2}|}}$
+    - Represents the first mathematically optimized quantization scaling strategy, outperforming empirically designed alternatives.
 
 2. **Static Token-Wise Quantization (STWQ)**:
 
-   - Exploits two distinctive properties of ARVG: **fixed token sequence length** and **position-invariant cross-sample distributions**.
-   - Assigns static quantization parameters along the token sequence for AdaLN modules.
-   - Handles sink tokens and regular tokens separately for linear layers.
-   - Quantization parameters are set offline with no online calibration overhead, remaining compatible with standard CUDA kernels.
+    - Exploits two distinctive properties of ARVG: **fixed token sequence length** and **position-invariant cross-sample distributions**.
+    - Assigns static quantization parameters along the token sequence for AdaLN modules.
+    - Handles sink tokens and regular tokens separately for linear layers.
+    - Quantization parameters are set offline with no online calibration overhead, remaining compatible with standard CUDA kernels.
 
 3. **Distribution-Guided Calibration (DGC)**:
 
-   - Measures the distributional entropy of each sample via Mahalanobis distance: $\rho(x) = \sqrt{(x-u)^T S^{-1} (x-u)}$
-   - Selects the top-50% samples with the highest distributional entropy as the calibration set.
-   - Eliminates redundant samples to ensure that the calibration distribution matches the true data distribution.
+    - Measures the distributional entropy of each sample via Mahalanobis distance: $\rho(x) = \sqrt{(x-u)^T S^{-1} (x-u)}$
+    - Selects the top-50% samples with the highest distributional entropy as the calibration set.
+    - Eliminates redundant samples to ensure that the calibration distribution matches the true data distribution.
 
 ### Loss & Training
 

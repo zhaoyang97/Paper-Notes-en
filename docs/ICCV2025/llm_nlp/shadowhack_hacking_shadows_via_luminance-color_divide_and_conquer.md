@@ -18,8 +18,8 @@ content_hash: eeab4e9ffed2738b
 # ShadowHack: Hacking Shadows via Luminance-Color Divide and Conquer
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.02545](https://arxiv.org/abs/2412.02545)
-**Code**: Coming soon
+**arXiv**: [2412.02545](https://arxiv.org/abs/2412.02545)  
+**Code**: Coming soon  
 **Area**: LLM/NLP
 **Keywords**: shadow removal, luminance-color decomposition, Transformer, attention mechanism, divide-and-conquer strategy
 

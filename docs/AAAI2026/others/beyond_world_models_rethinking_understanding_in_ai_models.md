@@ -17,8 +17,8 @@ content_hash: 222f8ef4fc854f3b
 # Beyond World Models: Rethinking Understanding in AI Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12239](https://arxiv.org/abs/2511.12239)
-**Code**: None
+**arXiv**: [2511.12239](https://arxiv.org/abs/2511.12239)  
+**Code**: None  
 **Area**: Other
 **Keywords**: World Models, AI Understanding, Philosophy of Science, Cognitive Science, Representation Learning
 

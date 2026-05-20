@@ -18,8 +18,8 @@ content_hash: b9416e188117ee8e
 # RMFlow: Refined Mean Flow by a Noise-Injection Step for Multimodal Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.00849](https://arxiv.org/abs/2602.00849)
-**Code**: None
+**arXiv**: [2602.00849](https://arxiv.org/abs/2602.00849)  
+**Code**: None  
 **Area**: Diffusion Models / One-Step Generation / Mean Flow Improvement
 **Keywords**: mean flow, noise injection refinement, 1-NFE, likelihood maximization, multimodal generation
 

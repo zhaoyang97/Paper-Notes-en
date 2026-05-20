@@ -18,8 +18,8 @@ content_hash: 1f3cb857abb007e1
 # To Distill or Decide? Understanding the Algorithmic Trade-off in Partially Observable Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.03207](https://arxiv.org/abs/2510.03207)
-**Code**: None
+**arXiv**: [2510.03207](https://arxiv.org/abs/2510.03207)  
+**Code**: None  
 **Area**: Reinforcement Learning / Partially Observable RL
 **Keywords**: Partial observability, privileged information, expert distillation, Block MDP, algorithmic trade-off
 

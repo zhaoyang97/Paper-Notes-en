@@ -18,7 +18,7 @@ content_hash: 7bd7906ee4258262
 # OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.18510](https://arxiv.org/abs/2603.18510)
+**arXiv**: [2603.18510](https://arxiv.org/abs/2603.18510)  
 **Institution**: State Key Lab of CAD&CG, Zhejiang University; VIVO BlueImage Lab; HKUST
 **Area**: 3D Vision
 **Keywords**: Panoptic Mapping, Open-Vocabulary, 3D Gaussian Splatting, Online Reconstruction, Instance Segmentation

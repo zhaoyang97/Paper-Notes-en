@@ -18,8 +18,8 @@ content_hash: 4779adba20b2f80e
 # Generative AI Agents for Controllable and Protected Content Creation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.12348](https://arxiv.org/abs/2601.12348)
-**Code**: To be confirmed
+**arXiv**: [2601.12348](https://arxiv.org/abs/2601.12348)  
+**Code**: To be confirmed  
 **Area**: LLM Agent
 **Keywords**: Multi-agent systems, content protection, controllable generation, watermarking, creative AI pipeline
 

@@ -18,8 +18,8 @@ content_hash: 6dac24ce2591e475
 # Controlling Repetition in Protein Language Models
 
 **Conference**: ICLR2026
-**arXiv**: [2602.00782](https://arxiv.org/abs/2602.00782)
-**Code**: To be confirmed
+**arXiv**: [2602.00782](https://arxiv.org/abs/2602.00782)  
+**Code**: To be confirmed  
 **Area**: Protein / AI4Science
 **Keywords**: protein language models, repetition control, contrastive steering, representation engineering, sequence generation
 

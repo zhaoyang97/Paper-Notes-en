@@ -18,8 +18,8 @@ content_hash: 79dfdc58aa9e394b
 # RoMA: Scaling up Mamba-based Foundation Models for Remote Sensing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.10392](https://arxiv.org/abs/2503.10392)
-**Code**: [GitHub](https://github.com/VisionXLab/RoMA)
+**arXiv**: [2503.10392](https://arxiv.org/abs/2503.10392)  
+**Code**: [GitHub](https://github.com/VisionXLab/RoMA)  
 **Area**: Image Segmentation
 **Keywords**: Remote sensing foundation models, Mamba, autoregressive pre-training, rotation invariance, multi-scale prediction
 
@@ -35,9 +35,9 @@ This paper proposes RoMA — the first self-supervised autoregressive pre-traini
 
 - **Key Challenge**: Applying autoregressive pre-training to remote sensing Mamba presents three unique challenges:
 
-  - **Sparse and unevenly distributed information**: Foreground objects are sparsely distributed against complex backgrounds in remote sensing imagery (e.g., aircraft on airport runways).
-  - **Arbitrary orientation**: Objects captured from a nadir viewpoint can appear at any orientation, unlike natural images constrained by gravity.
-  - **Extreme scale variation**: Object scales in remote sensing imagery span several orders of magnitude, from buildings to vehicles.
+    - **Sparse and unevenly distributed information**: Foreground objects are sparsely distributed against complex backgrounds in remote sensing imagery (e.g., aircraft on airport runways).
+    - **Arbitrary orientation**: Objects captured from a nadir viewpoint can appear at any orientation, unlike natural images constrained by gravity.
+    - **Extreme scale variation**: Object scales in remote sensing imagery span several orders of magnitude, from buildings to vehicles.
 
 - **Goal**: Furthermore, whether Mamba autoregressive pre-training can yield consistent performance gains with increasing data volume and model scale — analogous to ViT+MAE — remains an unvalidated open question.
 

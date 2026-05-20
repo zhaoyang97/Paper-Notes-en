@@ -21,8 +21,8 @@ content_hash: ba13d90cad2cec2b
 # On the Expressive Power of Mixture-of-Experts for Structured Complex Tasks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.24205](https://arxiv.org/abs/2505.24205)
-**Code**: None
+**arXiv**: [2505.24205](https://arxiv.org/abs/2505.24205)  
+**Code**: None  
 **Area**: LLM Efficiency / MoE Theory / Approximation Theory
 **Keywords**: Mixture-of-Experts, expressive power, approximation theory, compositional sparsity, curse of dimensionality, manifold, piecewise function, gating mechanism
 

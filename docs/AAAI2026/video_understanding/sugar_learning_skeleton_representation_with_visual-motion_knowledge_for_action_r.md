@@ -18,8 +18,8 @@ content_hash: f3130a252b6ec20c
 # SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10091](https://arxiv.org/abs/2511.10091)
-**Code**: N/A
+**arXiv**: [2511.10091](https://arxiv.org/abs/2511.10091)  
+**Code**: N/A  
 **Area**: Video Understanding / Action Recognition
 **Keywords**: Skeleton-based action recognition, large language models, visual-motion knowledge, contrastive learning, zero-shot recognition
 

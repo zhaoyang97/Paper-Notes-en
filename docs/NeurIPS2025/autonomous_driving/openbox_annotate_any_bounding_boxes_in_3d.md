@@ -17,8 +17,8 @@ content_hash: 4024f84a073faffa
 # OpenBox: Annotate Any Bounding Boxes in 3D
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.01352](https://arxiv.org/abs/2512.01352)
-**Code**: Available (to be released)
+**arXiv**: [2512.01352](https://arxiv.org/abs/2512.01352)  
+**Code**: Available (to be released)  
 **Area**: Autonomous Driving / 3D Object Detection
 **Keywords**: 3D auto-annotation, open-vocabulary, visual foundation models, point cloud, autonomous driving
 

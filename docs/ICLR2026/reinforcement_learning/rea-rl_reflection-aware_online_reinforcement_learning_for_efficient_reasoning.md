@@ -18,8 +18,8 @@ content_hash: 15a315f58211c177
 # REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.19862](https://arxiv.org/abs/2505.19862)
-**Code**: [GitHub](https://github.com/hexuandeng/REA-RL)
+**arXiv**: [2505.19862](https://arxiv.org/abs/2505.19862)  
+**Code**: [GitHub](https://github.com/hexuandeng/REA-RL)  
 **Area**: Reinforcement Learning
 **Keywords**: overthinking in reasoning, reflection-awareness, online RL, GRPO, reasoning efficiency
 

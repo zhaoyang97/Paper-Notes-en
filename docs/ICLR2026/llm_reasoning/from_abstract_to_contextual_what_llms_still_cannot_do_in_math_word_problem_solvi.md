@@ -19,8 +19,8 @@ content_hash: f4163e4390dd22e5
 # From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.23048](https://arxiv.org/abs/2601.23048)
-**Code**: Not released
+**arXiv**: [2601.23048](https://arxiv.org/abs/2601.23048)  
+**Code**: Not released  
 **Area**: LLM Reasoning
 **Keywords**: Mathematical Reasoning, Contextual Reasoning, Problem Formulation, Benchmark, LLM Evaluation, AIME
 

@@ -18,8 +18,8 @@ content_hash: 3fa1d08f61a3739a
 # Orientation Matters: Making 3D Generative Models Orientation-Aligned
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.08640](https://arxiv.org/abs/2506.08640)
-**Code**: [Project Page](https://xdimlab.github.io/Orientation_Matters)
+**arXiv**: [2506.08640](https://arxiv.org/abs/2506.08640)  
+**Code**: [Project Page](https://xdimlab.github.io/Orientation_Matters)  
 **Area**: 3D Vision
 **Keywords**: 3D generation, orientation alignment, dataset construction, Objaverse, pose estimation
 

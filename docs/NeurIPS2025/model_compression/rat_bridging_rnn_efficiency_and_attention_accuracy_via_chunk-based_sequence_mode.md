@@ -18,8 +18,8 @@ content_hash: e747bbb5af1d9cb9
 # RAT: Bridging RNN Efficiency and Attention Accuracy via Chunk-based Sequence Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.04416](https://arxiv.org/abs/2507.04416)
-**Code**: [GitHub](https://github.com/CLAIRE-Labo/RAT)
+**arXiv**: [2507.04416](https://arxiv.org/abs/2507.04416)  
+**Code**: [GitHub](https://github.com/CLAIRE-Labo/RAT)  
 **Area**: Model Compression
 **Keywords**: Efficient Sequence Modeling, Chunk-based Architecture, RNN-Attention Hybrid, Long Context, Linear Complexity
 

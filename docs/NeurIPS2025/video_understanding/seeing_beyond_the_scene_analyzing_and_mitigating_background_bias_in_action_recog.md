@@ -13,7 +13,7 @@ content_hash: 24142ae9c23d0114
 
 **Conference/Journal**: NeurIPS 2025 Workshop
 **Authors**: Ellie Zhou, Jihoon Chung, Olga Russakovsky (Princeton University)
-**arXiv**: [2512.17953](https://arxiv.org/abs/2512.17953)
+**arXiv**: [2512.17953](https://arxiv.org/abs/2512.17953)  
 **Area**: Video Understanding / Action Recognition / Bias Analysis
 
 ## TL;DR

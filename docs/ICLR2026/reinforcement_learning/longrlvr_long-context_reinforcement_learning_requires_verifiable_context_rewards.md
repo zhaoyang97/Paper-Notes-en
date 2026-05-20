@@ -19,8 +19,8 @@ content_hash: 800e964adbeba6e7
 # LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02146](https://arxiv.org/abs/2603.02146)
-**Code**: [real-absolute-AI/LongRLVR](https://github.com/real-absolute-AI/LongRLVR)
+**arXiv**: [2603.02146](https://arxiv.org/abs/2603.02146)  
+**Code**: [real-absolute-AI/LongRLVR](https://github.com/real-absolute-AI/LongRLVR)  
 **Area**: Reinforcement Learning
 **Keywords**: RLVR, long-context reasoning, contextual grounding, verifiable rewards, gradient vanishing, GRPO
 

@@ -18,8 +18,8 @@ content_hash: 7b7228c049072a1c
 # Auto-Regressively Generating Multi-View Consistent Images
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.18527](https://arxiv.org/abs/2506.18527)
-**Code**: Available (released as mentioned in the paper)
+**arXiv**: [2506.18527](https://arxiv.org/abs/2506.18527)  
+**Code**: Available (released as mentioned in the paper)  
 **Area**: 3D Vision
 **Keywords**: Multi-view generation, autoregressive models, 3D content creation, multimodal conditioning, view consistency
 

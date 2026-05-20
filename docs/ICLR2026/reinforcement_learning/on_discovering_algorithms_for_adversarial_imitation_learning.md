@@ -18,8 +18,8 @@ content_hash: e25d0cf8c2db4bdc
 # On Discovering Algorithms for Adversarial Imitation Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00922](https://arxiv.org/abs/2510.00922)
-**Code**: None
+**arXiv**: [2510.00922](https://arxiv.org/abs/2510.00922)  
+**Code**: None  
 **Area**: Imitation Learning / Meta-Learning
 **Keywords**: adversarial imitation learning, reward assignment function, LLM-guided evolution, meta-learning, training stability
 

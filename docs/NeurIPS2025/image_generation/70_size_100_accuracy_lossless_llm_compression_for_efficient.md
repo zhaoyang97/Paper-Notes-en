@@ -18,8 +18,8 @@ content_hash: d346c0b3dcf1f3c9
 # 70% Size, 100% Accuracy: Lossless LLM Compression for Efficient GPU Inference via Dynamic-Length Float (DFloat11)
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.11651](https://arxiv.org/abs/2504.11651)
-**Code**: [https://github.com/LeanModels/DFloat11](https://github.com/LeanModels/DFloat11)
+**arXiv**: [2504.11651](https://arxiv.org/abs/2504.11651)  
+**Code**: [https://github.com/LeanModels/DFloat11](https://github.com/LeanModels/DFloat11)  
 **Area**: Image Generation
 **Keywords**: Lossless Compression, Huffman Coding, BFloat16, GPU Inference, Entropy Coding
 

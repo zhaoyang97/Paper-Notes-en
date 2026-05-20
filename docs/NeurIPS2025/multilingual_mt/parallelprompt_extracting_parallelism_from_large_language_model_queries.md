@@ -18,8 +18,8 @@ content_hash: 9edeead904d71ac7
 # ParallelPrompt: Extracting Parallelism from Large Language Model Queries
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.18728](https://arxiv.org/abs/2506.18728)
-**Code**: Available (open-source benchmark + C++ execution framework)
+**arXiv**: [2506.18728](https://arxiv.org/abs/2506.18728)  
+**Code**: Available (open-source benchmark + C++ execution framework)  
 **Area**: Multilingual Translation
 **Keywords**: Intra-query parallelism, prompt decomposition, LLM inference acceleration, benchmark, semantic fidelity
 

@@ -18,8 +18,8 @@ content_hash: 9afc09730875f8db
 # DeepSketcher: Internalizing Visual Manipulation for Multimodal Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.25866](https://arxiv.org/abs/2509.25866)
-**Code**: [GitHub](https://github.com/MiliLab/DeepSketcher)
+**arXiv**: [2509.25866](https://arxiv.org/abs/2509.25866)  
+**Code**: [GitHub](https://github.com/MiliLab/DeepSketcher)  
 **Area**: Robotics
 **Keywords**: Visual Reasoning, Interleaved Image-Text Reasoning, Visual Thinking, Embedding Editor, Code Rendering
 
@@ -46,19 +46,19 @@ Code-rendered image + question → VLM generates reasoning text + editing instru
 ### Key Designs
 
 1. **Data Construction in Code Space**:
-   - **Function**: Generate high-quality interleaved image-text CoT training trajectories.
-   - **Mechanism**: A dual-agent collaboration system in which a Solver LLM performs reasoning and issues manipulation requests, while a Code Editor LLM modifies the rendering code and regenerates the image, forming a closed loop of "reasoning → instruction → code editing → rendering → reasoning."
-   - **Design Motivation**: Editing in code space is precise and controllable, avoiding the localization noise of pixel-level operations and the uncontrollability of generative models.
+    - **Function**: Generate high-quality interleaved image-text CoT training trajectories.
+    - **Mechanism**: A dual-agent collaboration system in which a Solver LLM performs reasoning and issues manipulation requests, while a Code Editor LLM modifies the rendering code and regenerates the image, forming a closed loop of "reasoning → instruction → code editing → rendering → reasoning."
+    - **Design Motivation**: Editing in code space is precise and controllable, avoiding the localization noise of pixel-level operations and the uncontrollability of generative models.
 
 2. **Embedding Editor**:
-   - **Function**: Execute visual operations directly in the visual embedding space without external tool calls.
-   - **Mechanism**: A Q-Former-style cross-attention architecture in which visual tokens serve as queries, and the hidden states of editing instructions — after adaptive pooling — serve as keys and values; cross-attention followed by FFN updates the visual embeddings.
-   - **Design Motivation**: Eliminate dependence on code execution, external tools, and repeated image encoding, enabling more flexible "thinking with images."
+    - **Function**: Execute visual operations directly in the visual embedding space without external tool calls.
+    - **Mechanism**: A Q-Former-style cross-attention architecture in which visual tokens serve as queries, and the hidden states of editing instructions — after adaptive pooling — serve as keys and values; cross-attention followed by FFN updates the visual embeddings.
+    - **Design Motivation**: Eliminate dependence on code execution, external tools, and repeated image encoding, enabling more flexible "thinking with images."
 
 3. **Three-Stage Progressive Training**:
-   - **Function**: Progressively decouple the model's dependence on ground-truth visual inputs.
-   - **Mechanism**: Phase 1 (reasoning warm-up using GT image features) → Phase 2 (Editor training with L1 loss aligning predicted embeddings to GT edited image embeddings, other modules frozen) → Phase 3 (joint adaptation, unfreezing the LLM backbone to accommodate Editor outputs).
-   - **Design Motivation**: Direct end-to-end training causes the Editor to produce noisy embeddings that interfere with reasoning; progressive training ensures each component stabilizes before the next stage.
+    - **Function**: Progressively decouple the model's dependence on ground-truth visual inputs.
+    - **Mechanism**: Phase 1 (reasoning warm-up using GT image features) → Phase 2 (Editor training with L1 loss aligning predicted embeddings to GT edited image embeddings, other modules frozen) → Phase 3 (joint adaptation, unfreezing the LLM backbone to accommodate Editor outputs).
+    - **Design Motivation**: Direct end-to-end training causes the Editor to produce noisy embeddings that interfere with reasoning; progressive training ensures each component stabilizes before the next stage.
 
 ### Loss & Training
 

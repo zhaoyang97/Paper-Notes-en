@@ -18,8 +18,8 @@ content_hash: 0b50e79314943853
 # "Excuse Me, May I Say Something…" CoLabScience: A Proactive AI Assistant for Biomedical Discovery
 
 **Conference**: ACL 2026
-**arXiv**: [2604.15588](https://arxiv.org/abs/2604.15588)
-**Code**: [https://github.com/YANGWU001/CoLabScience](https://github.com/YANGWU001/CoLabScience)
+**arXiv**: [2604.15588](https://arxiv.org/abs/2604.15588)  
+**Code**: [https://github.com/YANGWU001/CoLabScience](https://github.com/YANGWU001/CoLabScience)  
 **Area**: Medical Imaging
 **Keywords**: Proactive Intervention, Scientific Collaboration, Positive-Unlabeled Learning, Reinforcement Learning, Biomedical Dialogue
 

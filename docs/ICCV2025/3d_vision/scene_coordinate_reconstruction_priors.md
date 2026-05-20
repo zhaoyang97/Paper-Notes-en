@@ -18,8 +18,8 @@ content_hash: 7618a28a69276520
 # Scene Coordinate Reconstruction Priors
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.12387](https://arxiv.org/abs/2510.12387)
-**Code**: [nianticspatial.github.io/scr-priors](https://nianticspatial.github.io/scr-priors/)
+**arXiv**: [2510.12387](https://arxiv.org/abs/2510.12387)  
+**Code**: [nianticspatial.github.io/scr-priors](https://nianticspatial.github.io/scr-priors/)  
 **Area**: 3D Vision
 **Keywords**: Scene Coordinate Regression, Reconstruction Priors, 3D Diffusion Models, Visual Relocalization, Structure from Motion
 

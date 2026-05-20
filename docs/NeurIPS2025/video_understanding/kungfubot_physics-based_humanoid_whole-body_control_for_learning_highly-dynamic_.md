@@ -18,8 +18,8 @@ content_hash: d8ad4fe1f04ae4df
 # KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.12851](https://arxiv.org/abs/2506.12851)
-**Code**: [Project Page](https://kungfu-bot.github.io)
+**arXiv**: [2506.12851](https://arxiv.org/abs/2506.12851)  
+**Code**: [Project Page](https://kungfu-bot.github.io)  
 **Area**: Video Understanding
 **Keywords**: humanoid control, motion imitation, reinforcement-learning, adaptive tracking, sim-to-real
 

@@ -19,7 +19,7 @@ content_hash: 78b055ab0f23efa3
 # Neural Multi-View Self-Calibrated Photometric Stereo without Photometric Stereo Cues
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.23162](https://arxiv.org/abs/2507.23162)
+**arXiv**: [2507.23162](https://arxiv.org/abs/2507.23162)  
 **Area**: 3D Reconstruction / Inverse Rendering / Photometric Stereo
 **Keywords**: multi-view photometric stereo, neural inverse rendering, self-calibration, end-to-end optimization, neural BRDF, shadow-aware volume rendering
 

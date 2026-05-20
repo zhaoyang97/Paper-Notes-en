@@ -18,8 +18,8 @@ content_hash: 5573c8b694b25a02
 # SceneCOT: Eliciting Grounded Chain-of-Thought Reasoning in 3D Scenes
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.16714](https://arxiv.org/abs/2510.16714)
-**Code**: Available (project page)
+**arXiv**: [2510.16714](https://arxiv.org/abs/2510.16714)  
+**Code**: Available (project page)  
 **Area**: LLM Reasoning
 **Keywords**: 3D reasoning, chain-of-thought, grounded QA, 3D-LLM, scene understanding
 

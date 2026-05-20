@@ -18,8 +18,8 @@ content_hash: 7dca5c8652812bcf
 # A Reasoning Paradigm for Named Entity Recognition
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11978](https://arxiv.org/abs/2511.11978)
-**Code**: [https://github.com/HuiResearch/ReasoningIE](https://github.com/HuiResearch/ReasoningIE)
+**arXiv**: [2511.11978](https://arxiv.org/abs/2511.11978)  
+**Code**: [https://github.com/HuiResearch/ReasoningIE](https://github.com/HuiResearch/ReasoningIE)  
 **Area**: LLM Reasoning
 **Keywords**: NER, Chain-of-Thought, Reasoning Paradigm, GRPO Reinforcement Learning, Zero-Shot Generalization
 
@@ -51,9 +51,9 @@ ReasoningNER redefines NER as a reasoning task: given input text and entity type
 
 3. **Reasoning Enhancement (RE stage)**: GRPO is applied to further refine reasoning capability. A stratified sample of 4,703 examples is drawn from 20 NER datasets in InstructUIE. For each query, 16 candidate outputs are sampled and evaluated using a composite reward:
 
-   - **F1 reward** $R_{F1}$: span-level micro F1 between predicted and gold entities, linearly scaled to $[0,1]$
-   - **Format reward** $R_{schema}$: binary reward (0 or 1) for adherence to the predefined output format and entity type constraints
-   - Total reward: $R(o_i) = \lambda_{F1} R_{F1} + \lambda_{schema} R_{schema}$, where $\lambda_{F1}=10$, $\lambda_{schema}=1$
+    - **F1 reward** $R_{F1}$: span-level micro F1 between predicted and gold entities, linearly scaled to $[0,1]$
+    - **Format reward** $R_{schema}$: binary reward (0 or 1) for adherence to the predefined output format and entity type constraints
+    - Total reward: $R(o_i) = \lambda_{F1} R_{F1} + \lambda_{schema} R_{schema}$, where $\lambda_{F1}=10$, $\lambda_{schema}=1$
 
    Group-relative advantage is computed as $A_i = R(o_i) - \bar{R}$, and the policy is updated via a PPO-clip objective with KL divergence regularization to prevent excessive deviation from the reference model.
 

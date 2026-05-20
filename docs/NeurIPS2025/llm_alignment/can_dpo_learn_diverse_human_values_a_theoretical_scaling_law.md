@@ -19,8 +19,8 @@ content_hash: b98dd354fd40ed7a
 # Can DPO Learn Diverse Human Values? A Theoretical Scaling Law
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2408.03459](https://arxiv.org/abs/2408.03459)
-**Code**: [https://github.com/shawn-im/dpo-diverse](https://github.com/shawn-im/dpo-diverse)
+**arXiv**: [2408.03459](https://arxiv.org/abs/2408.03459)  
+**Code**: [https://github.com/shawn-im/dpo-diverse](https://github.com/shawn-im/dpo-diverse)  
 **Area**: LLM Alignment Theory / DPO
 **Keywords**: DPO, value diversity, scaling law, generalization error, reward margin, preference learning theory
 

@@ -18,8 +18,8 @@ content_hash: 97883c186feee3a0
 # TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery
 
 **Conference**: CVPR2026
-**arXiv**: [2603.08075](https://arxiv.org/abs/2603.08075)
-**Code**: [ynanwu/TALON](https://github.com/ynanwu/TALON)
+**arXiv**: [2603.08075](https://arxiv.org/abs/2603.08075)  
+**Code**: [ynanwu/TALON](https://github.com/ynanwu/TALON)  
 **Area**: Model Compression / Open-World Learning
 **Keywords**: On-the-Fly Category Discovery, Test-Time Adaptation, Prototype Learning, Category Explosion, Semantic Shift
 

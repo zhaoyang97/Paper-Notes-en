@@ -18,8 +18,8 @@ content_hash: d58dc448219ce33e
 # Revealing Multimodal Causality with Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17784](https://arxiv.org/abs/2509.17784)
-**Code**: [GitHub](https://github.com/JinLi-i/MLLM-CD)
+**arXiv**: [2509.17784](https://arxiv.org/abs/2509.17784)  
+**Code**: [GitHub](https://github.com/JinLi-i/MLLM-CD)  
 **Area**: Causal Inference
 **Keywords**: Multimodal causal discovery, large language models, contrastive factor discovery, counterfactual reasoning, unstructured data
 

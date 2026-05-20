@@ -19,8 +19,8 @@ content_hash: 23c5e29fa80add44
 # Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.00507](https://arxiv.org/abs/2510.00507)
-**Code**: [github.com/YurunChen/Graph2Eval](https://github.com/YurunChen/Graph2Eval)
+**arXiv**: [2510.00507](https://arxiv.org/abs/2510.00507)  
+**Code**: [github.com/YurunChen/Graph2Eval](https://github.com/YurunChen/Graph2Eval)  
 **Area**: Human-Machine Understanding / Agent Evaluation
 **Keywords**: knowledge graphs, automatic task generation, agent evaluation, document understanding, web understanding, benchmark construction
 

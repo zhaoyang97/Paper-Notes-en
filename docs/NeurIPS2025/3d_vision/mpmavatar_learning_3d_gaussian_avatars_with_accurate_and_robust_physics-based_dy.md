@@ -18,8 +18,8 @@ content_hash: 8c3b28c467dff0d1
 # MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.01619](https://arxiv.org/abs/2510.01619)
-**Code**: [https://KAISTChangmin.github.io/MPMAvatar/](https://KAISTChangmin.github.io/MPMAvatar/)
+**arXiv**: [2510.01619](https://arxiv.org/abs/2510.01619)  
+**Code**: [https://KAISTChangmin.github.io/MPMAvatar/](https://KAISTChangmin.github.io/MPMAvatar/)  
 **Area**: 3D Vision
 **Keywords**: 3D human avatar, physics-based simulation, MPM, 3D Gaussian Splatting, garment dynamics
 

@@ -18,8 +18,8 @@ content_hash: 77f6d75333440390
 # SparseLaneSTP: Leveraging Spatio-Temporal Priors with Sparse Transformers for 3D Lane Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2601.04968](https://arxiv.org/abs/2601.04968)
-**Code**: N/A
+**arXiv**: [2601.04968](https://arxiv.org/abs/2601.04968)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: 3D lane detection, sparse Transformer, spatio-temporal priors, Catmull-Rom spline, temporal fusion
 

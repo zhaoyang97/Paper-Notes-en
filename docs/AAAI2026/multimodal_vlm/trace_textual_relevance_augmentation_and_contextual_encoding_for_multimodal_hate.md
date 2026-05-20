@@ -18,8 +18,8 @@ content_hash: 943f04b5c119ae65
 # CAMU: Context Augmentation for Meme Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.17902](https://arxiv.org/abs/2504.17902)
-**Code**: To be released
+**arXiv**: [2504.17902](https://arxiv.org/abs/2504.17902)  
+**Code**: To be released  
 **Area**: Multimodal VLM
 **Keywords**: Hateful meme detection, multimodal fusion, CLIP fine-tuning, visual grounding, caption generation
 

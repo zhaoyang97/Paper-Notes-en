@@ -18,8 +18,8 @@ content_hash: 0cef5e4d89c14f09
 # Reinforcement Learning with Backtracking Feedback
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.08377](https://arxiv.org/abs/2602.08377)
-**Code**: Available
+**arXiv**: [2602.08377](https://arxiv.org/abs/2602.08377)  
+**Code**: Available  
 **Area**: AI Safety
 **Keywords**: RL, backtracking feedback, exploration strategy, credit assignment, trajectory optimization
 
@@ -51,21 +51,21 @@ The standard MDP is extended into a backtrackable MDP: the action space is augme
 
 1. **Backtrackable MDP**
 
-   - **Function**: Introduces backtracking actions $a_{bt}^k$ into the action space; upon execution, the environment resets to state $s_k$.
-   - **Mechanism**: A checkpoint buffer is maintained, from which the agent can select any state to backtrack to.
-   - **Design Motivation**: Eliminates the cascading failure problem where a single wrong step propagates through subsequent decisions.
+    - **Function**: Introduces backtracking actions $a_{bt}^k$ into the action space; upon execution, the environment resets to state $s_k$.
+    - **Mechanism**: A checkpoint buffer is maintained, from which the agent can select any state to backtrack to.
+    - **Design Motivation**: Eliminates the cascading failure problem where a single wrong step propagates through subsequent decisions.
 
 2. **Backtracking Credit Assignment**
 
-   - **Function**: Backtracking events serve as negative signals, marking the trajectory from the backtrack point to the current step as a failed exploration.
-   - **Mechanism**: Negative rewards are applied to the action sequence preceding the backtrack, while neutral rewards are assigned to the subsequent re-exploration.
-   - **Design Motivation**: Backtracking implicitly encodes the information that "the previous direction was incorrect."
+    - **Function**: Backtracking events serve as negative signals, marking the trajectory from the backtrack point to the current step as a failed exploration.
+    - **Mechanism**: Negative rewards are applied to the action sequence preceding the backtrack, while neutral rewards are assigned to the subsequent re-exploration.
+    - **Design Motivation**: Backtracking implicitly encodes the information that "the previous direction was incorrect."
 
 3. **Adaptive Backtracking Policy**
 
-   - **Function**: Learns when to backtrack and which checkpoint to return to.
-   - **Mechanism**: An auxiliary backtracking value network evaluates the backtracking value of the current state; backtracking is triggered when this value falls below a threshold.
-   - **Design Motivation**: Prevents both excessive backtracking (wasting steps) and insufficient backtracking (remaining trapped in dead ends).
+    - **Function**: Learns when to backtrack and which checkpoint to return to.
+    - **Mechanism**: An auxiliary backtracking value network evaluates the backtracking value of the current state; backtracking is triggered when this value falls below a threshold.
+    - **Design Motivation**: Prevents both excessive backtracking (wasting steps) and insufficient backtracking (remaining trapped in dead ends).
 
 ### Loss & Training
 

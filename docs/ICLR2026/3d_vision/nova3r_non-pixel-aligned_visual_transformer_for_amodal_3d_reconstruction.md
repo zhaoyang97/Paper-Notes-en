@@ -18,8 +18,8 @@ content_hash: bb7c43c87cce791c
 # NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.04179](https://arxiv.org/abs/2603.04179)
-**Code**: [Project Page](https://wrchen530.github.io/nova3r)
+**arXiv**: [2603.04179](https://arxiv.org/abs/2603.04179)  
+**Code**: [Project Page](https://wrchen530.github.io/nova3r)  
 **Area**: 3D Vision / Reconstruction
 **Keywords**: non-pixel-aligned, amodal 3D reconstruction, scene tokens, flow-matching, complete point cloud
 

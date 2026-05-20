@@ -18,8 +18,8 @@ content_hash: 33a5911ccf62462c
 # Learning Unified Representation of 3D Gaussian Splatting
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22917](https://arxiv.org/abs/2509.22917)
-**Code**: [GitHub](https://github.com/cilix-ai/gs-embedding)
+**arXiv**: [2509.22917](https://arxiv.org/abs/2509.22917)  
+**Code**: [GitHub](https://github.com/cilix-ai/gs-embedding)  
 **Area**: 3D Vision / Representation Learning
 **Keywords**: 3D Gaussian Splatting, Submanifold Field Representation, Representation Uniqueness, VAE, Optimal Transport
 

@@ -17,8 +17,8 @@ content_hash: 7363a100f1093d97
 # Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.19142](https://arxiv.org/abs/2601.19142)
-**Code**: [FuxiCTR](https://github.com/reczoo/FuxiCTR)
+**arXiv**: [2601.19142](https://arxiv.org/abs/2601.19142)  
+**Code**: [FuxiCTR](https://github.com/reczoo/FuxiCTR)  
 **Area**: Recommender Systems
 **Keywords**: CTR prediction, sequence length adaptation, attention polarization, long/short sequence modeling, recommender systems
 

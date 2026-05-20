@@ -18,8 +18,8 @@ content_hash: 660e2a024241bed0
 # DreamRelation: Relation-Centric Video Customization
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07602](https://arxiv.org/abs/2503.07602)
-**Code**: Available (coming soon)
+**arXiv**: [2503.07602](https://arxiv.org/abs/2503.07602)  
+**Code**: Available (coming soon)  
 **Area**: Video Generation / Video Customization
 **Keywords**: Relation video customization, MM-DiT, LoRA, contrastive learning, disentangled learning
 

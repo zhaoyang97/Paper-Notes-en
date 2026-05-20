@@ -18,8 +18,8 @@ content_hash: 8e075f000e9a1819
 # BuildAnyPoint: 3D Building Structured Abstraction from Diverse Point Clouds
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23645](https://arxiv.org/abs/2602.23645)
-**Code**: [Project Page](https://ai4city-hkust.github.io/BuildAnyPoint/)
+**arXiv**: [2602.23645](https://arxiv.org/abs/2602.23645)  
+**Code**: [Project Page](https://ai4city-hkust.github.io/BuildAnyPoint/)  
 **Area**: Autonomous Driving / 3D Vision / Urban Reconstruction
 **Keywords**: Building abstraction reconstruction, point cloud completion, latent diffusion, autoregressive mesh generation, cascaded generation framework
 

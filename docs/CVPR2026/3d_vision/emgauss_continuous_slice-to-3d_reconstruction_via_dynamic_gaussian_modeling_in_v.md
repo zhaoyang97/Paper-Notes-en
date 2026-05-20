@@ -18,8 +18,8 @@ content_hash: de4b7ff0f362345c
 # EMGauss: Continuous Slice-to-3D Reconstruction via Dynamic Gaussian Modeling in Volume Electron Microscopy
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.06684](https://arxiv.org/abs/2512.06684)
-**Code**: None
+**arXiv**: [2512.06684](https://arxiv.org/abs/2512.06684)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, volume electron microscopy, anisotropic reconstruction, dynamic scene modeling, self-supervised learning
 

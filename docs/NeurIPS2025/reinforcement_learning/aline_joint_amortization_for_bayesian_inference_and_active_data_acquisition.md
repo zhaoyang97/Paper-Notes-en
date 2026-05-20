@@ -18,8 +18,8 @@ content_hash: 1e751f03a44845f2
 # ALINE: Joint Amortization for Bayesian Inference and Active Data Acquisition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07259](https://arxiv.org/abs/2506.07259)
-**Code**: Available
+**arXiv**: [2506.07259](https://arxiv.org/abs/2506.07259)  
+**Code**: Available  
 **Area**: Reinforcement Learning / Bayesian Inference
 **Keywords**: Amortized Inference, Active Learning, Bayesian Experimental Design, Transformer, Information Gain
 

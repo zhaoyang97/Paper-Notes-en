@@ -18,8 +18,8 @@ content_hash: 28cd8495073a0067
 # UniLS: End-to-End Audio-Driven Avatars for Unified Listening and Speaking
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.09327](https://arxiv.org/abs/2512.09327)
-**Code**: None
+**arXiv**: [2512.09327](https://arxiv.org/abs/2512.09327)  
+**Code**: None  
 **Area**: Human Understanding
 **Keywords**: conversational avatars, unified speaking-listening generation, audio-driven, facial animation, two-stage training
 

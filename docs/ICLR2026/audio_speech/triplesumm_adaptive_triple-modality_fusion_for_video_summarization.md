@@ -18,8 +18,8 @@ content_hash: 7a0ca7c4ee54ef45
 # TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01169](https://arxiv.org/abs/2603.01169)
-**Code**: [https://github.com/smkim37/TripleSumm](https://github.com/smkim37/TripleSumm)
+**arXiv**: [2603.01169](https://arxiv.org/abs/2603.01169)  
+**Code**: [https://github.com/smkim37/TripleSumm](https://github.com/smkim37/TripleSumm)  
 **Area**: Audio & Speech
 **Keywords**: video summarization, triple-modality fusion, adaptive weighting, multi-scale temporal, large-scale dataset
 

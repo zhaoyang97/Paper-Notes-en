@@ -18,8 +18,8 @@ content_hash: 79e2e1735aa1baaa
 # Multi-head Temporal Latent Attention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13544](https://arxiv.org/abs/2505.13544)
-**Code**: [https://github.com/D-Keqi/mtla](https://github.com/D-Keqi/mtla)
+**arXiv**: [2505.13544](https://arxiv.org/abs/2505.13544)  
+**Code**: [https://github.com/D-Keqi/mtla](https://github.com/D-Keqi/mtla)  
 **Area**: Efficient Attention / Speech Processing
 **Keywords**: KV cache compression, temporal dimension compression, MLA, hyper-network, stride-aware causal mask
 

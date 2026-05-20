@@ -18,8 +18,8 @@ content_hash: fd24adaf3b67f2b6
 # ChA-MAEViT: Unifying Channel-Aware Masked Autoencoders and Multi-Channel Vision Transformers for Improved Cross-Channel Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.19331](https://arxiv.org/abs/2503.19331)
-**Code**: [GitHub](https://github.com/chaudatascience/cha_mae_vit)
+**arXiv**: [2503.19331](https://arxiv.org/abs/2503.19331)  
+**Code**: [GitHub](https://github.com/chaudatascience/cha_mae_vit)  
 **Area**: Multi-Channel Image Processing / Remote Sensing / Cell Microscopy
 **Keywords**: Masked Autoencoder, Multi-Channel Imaging, Vision Transformer, Cross-Channel Learning, Self-Supervised Learning
 

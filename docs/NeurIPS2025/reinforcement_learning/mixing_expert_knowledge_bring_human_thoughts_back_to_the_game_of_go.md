@@ -17,8 +17,8 @@ content_hash: 0dd99a6f6a420f0a
 # Mixing Expert Knowledge: Bring Human Thoughts Back to the Game of Go
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.16447](https://arxiv.org/abs/2601.16447)
-**Code**: [GitHub](https://github.com/Entarochuan/LoGos)
+**arXiv**: [2601.16447](https://arxiv.org/abs/2601.16447)  
+**Code**: [GitHub](https://github.com/Entarochuan/LoGos)  
 **Area**: Reinforcement Learning
 **Keywords**: LLM, Go, Domain Expert Knowledge, Reinforcement Learning, GRPO
 
@@ -52,8 +52,8 @@ The system consists of three stages: (1) **Data Construction** — Go game recor
 
 2. **Expert-Level Go Dataset Construction**:
 
-   - **Next-Move Prediction Dataset** (∼10M scale): Game states are sampled from 5M+ professional and top-amateur game records. KataGo annotates each state with the top-10 candidate moves along with their win rates and follow-up variations. A heuristic template then structures each sample into four parts: confirming the player to move → analyzing candidate moves → summarizing the optimal choice → producing structured output.
-   - **Commentary Dataset** (∼100K scale): Open-source Go commentary data is collected and processed into (game-state, commentary) training pairs.
+    - **Next-Move Prediction Dataset** (∼10M scale): Game states are sampled from 5M+ professional and top-amateur game records. KataGo annotates each state with the top-10 candidate moves along with their win rates and follow-up variations. A heuristic template then structures each sample into four parts: confirming the player to move → analyzing candidate moves → summarizing the optimal choice → producing structured output.
+    - **Commentary Dataset** (∼100K scale): Open-source Go commentary data is collected and processed into (game-state, commentary) training pairs.
 
 3. **Mixed Cold-Start Fine-Tuning**: Go-specific professional data is mixed with general long-CoT reasoning data (Openthoughts-114K, NuminaMath-QwQ-CoT-5M, OpenCodeReasoning, and other math/code reasoning datasets) to fine-tune the Qwen2.5 base model. This simultaneously injects Go domain knowledge and initializes the model with a long-CoT reasoning format.
 

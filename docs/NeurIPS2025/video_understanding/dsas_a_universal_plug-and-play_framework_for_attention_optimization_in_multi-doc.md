@@ -18,8 +18,8 @@ content_hash: 6983a2c04cd6d102
 # DSAS: A Universal Plug-and-Play Framework for Attention Optimization in Multi-Document Question Answering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.12251](https://arxiv.org/abs/2510.12251)
-**Code**: None
+**arXiv**: [2510.12251](https://arxiv.org/abs/2510.12251)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: Multi-doc QA, attention sharpening, lost-in-the-middle, plug-and-play, information flow
 

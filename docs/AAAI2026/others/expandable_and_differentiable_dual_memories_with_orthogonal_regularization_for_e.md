@@ -17,8 +17,8 @@ content_hash: b4bf59268a782237
 # Expandable and Differentiable Dual Memories with Orthogonal Regularization for Exemplar-free Continual Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09871](https://arxiv.org/abs/2511.09871)
-**Code**: [https://github.com/axtabio/EDD](https://github.com/axtabio/EDD)
+**arXiv**: [2511.09871](https://arxiv.org/abs/2511.09871)  
+**Code**: [https://github.com/axtabio/EDD](https://github.com/axtabio/EDD)  
 **Area**: Other
 **Keywords**: Continual Learning, Catastrophic Forgetting, Dual Memory System, Orthogonal Regularization, Exemplar-free Replay
 

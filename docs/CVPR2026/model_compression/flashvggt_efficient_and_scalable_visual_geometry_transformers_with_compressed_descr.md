@@ -18,8 +18,8 @@ content_hash: 29220148e2e5c01c
 # FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.01540](https://arxiv.org/abs/2512.01540)
-**Code**: [Project Page](https://wzpscott.github.io/flashvggt_page/)
+**arXiv**: [2512.01540](https://arxiv.org/abs/2512.01540)  
+**Code**: [Project Page](https://wzpscott.github.io/flashvggt_page/)  
 **Area**: Model Compression
 **Keywords**: 3D Reconstruction, Efficient Transformer, Descriptor Attention, Online Inference, Multi-View Geometry
 

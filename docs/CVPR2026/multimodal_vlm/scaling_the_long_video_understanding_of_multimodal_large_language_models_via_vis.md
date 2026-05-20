@@ -18,8 +18,8 @@ content_hash: 38ab3408df844d56
 # Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism
 
 **Conference**: CVPR2026
-**arXiv**: [2603.29252](https://arxiv.org/abs/2603.29252)
-**Code**: [FlexMem](https://github.com/FlexMem)
+**arXiv**: [2603.29252](https://arxiv.org/abs/2603.29252)  
+**Code**: [FlexMem](https://github.com/FlexMem)  
 **Area**: Multimodal VLM
 **Keywords**: Long video understanding, visual memory, KV cache compression, training-free, streaming video
 

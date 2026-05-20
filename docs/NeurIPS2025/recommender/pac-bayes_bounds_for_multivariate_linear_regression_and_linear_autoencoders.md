@@ -17,8 +17,8 @@ content_hash: 09284f8c926bb805
 # PAC-Bayes Bounds for Multivariate Linear Regression and Linear Autoencoders
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.12905](https://arxiv.org/abs/2512.12905)
-**Code**: None
+**arXiv**: [2512.12905](https://arxiv.org/abs/2512.12905)  
+**Code**: None  
 **Area**: Statistical Learning Theory / Recommender Systems
 **Keywords**: PAC-Bayes, generalization bounds, linear autoencoder, multivariate linear regression, recommender systems
 

@@ -18,8 +18,8 @@ content_hash: b1af6ff24c0e855e
 # Last Iterate Convergence in Monotone Mean Field Games
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.05127](https://arxiv.org/abs/2410.05127)
-**Code**: None
+**arXiv**: [2410.05127](https://arxiv.org/abs/2410.05127)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: mean field games, last iterate convergence, proximal point, mirror descent, monotone games
 
@@ -61,23 +61,23 @@ The input is an MFG definition $(\mathcal{S}, \mathcal{A}, H, P, r, \mu_1)$ and 
 
 1. **KL-Proximal Point (PP) Method (Theorem 3.1)**:
 
-   - **Function**: Iteratively updates the policy via $\sigma^{k+1} = \arg\max_\pi \{J(\mu^{k+1}, \pi) - \lambda D_{m[\pi]}(\pi, \sigma^k)\}$;
-   - **Mechanism**: At each step, cumulative reward maximization is augmented with a KL divergence penalty to prevent large deviations from the previous policy. The KL divergence is weighted by the mean field: $D_\mu(\pi, \sigma) = \sum_h \mathbb{E}_{s \sim \mu_h}[D_{\text{KL}}(\pi_h(s), \sigma_h(s))]$;
-   - **Design Motivation**: Classical OMD linearizes the objective $J$ in the PP update (using only gradient information), whereas PP uses the full non-linearized objective, making it more robust to approximation errors. The Łojasiewicz inequality is employed to handle the difficulty arising from $\mu$ depending on $\pi$;
-   - **Distinction from Prior Work**: Prior LIC results required strict monotonicity; this result holds under non-strict monotonicity.
+    - **Function**: Iteratively updates the policy via $\sigma^{k+1} = \arg\max_\pi \{J(\mu^{k+1}, \pi) - \lambda D_{m[\pi]}(\pi, \sigma^k)\}$;
+    - **Mechanism**: At each step, cumulative reward maximization is augmented with a KL divergence penalty to prevent large deviations from the previous policy. The KL divergence is weighted by the mean field: $D_\mu(\pi, \sigma) = \sum_h \mathbb{E}_{s \sim \mu_h}[D_{\text{KL}}(\pi_h(s), \sigma_h(s))]$;
+    - **Design Motivation**: Classical OMD linearizes the objective $J$ in the PP update (using only gradient information), whereas PP uses the full non-linearized objective, making it more robust to approximation errors. The Łojasiewicz inequality is employed to handle the difficulty arising from $\mu$ depending on $\pi$;
+    - **Distinction from Prior Work**: Prior LIC results required strict monotonicity; this result holds under non-strict monotonicity.
 
 2. **Regularized Mirror Descent RMD (Theorem 4.3)**:
 
-   - **Function**: Finds regularized equilibria at an exponential rate within KL-regularized MFGs;
-   - **Mechanism**: Each step updates $\pi_h^{t+1}(a|s) \propto (\sigma_h(a|s))^{\lambda\eta} (\pi_h^t(a|s))^{1-\lambda\eta} \cdot \exp(\eta Q_h^{\lambda,\sigma}(s,a,\pi^t,\mu^t))$, mixing the reference policy $\sigma$ via KL regularization into the softmax update;
-   - **Design Motivation**: The subproblem of each PP step (finding a regularized equilibrium) is implicit; RMD provides an efficient explicit approximation. The exponential convergence rate significantly improves upon prior polynomial rates ($O(\lambda \log^2 T / \sqrt{T})$ → exponential decay);
-   - **Technical Challenge**: The Q-function $Q_h^{\lambda,\sigma}(s,a,\pi,\mu)$ is not Lipschitz continuous in $\pi$ (derivatives explode as $\pi$ approaches the boundary of the probability simplex); this is resolved by exploiting the regularization effect of KL divergence.
+    - **Function**: Finds regularized equilibria at an exponential rate within KL-regularized MFGs;
+    - **Mechanism**: Each step updates $\pi_h^{t+1}(a|s) \propto (\sigma_h(a|s))^{\lambda\eta} (\pi_h^t(a|s))^{1-\lambda\eta} \cdot \exp(\eta Q_h^{\lambda,\sigma}(s,a,\pi^t,\mu^t))$, mixing the reference policy $\sigma$ via KL regularization into the softmax update;
+    - **Design Motivation**: The subproblem of each PP step (finding a regularized equilibrium) is implicit; RMD provides an efficient explicit approximation. The exponential convergence rate significantly improves upon prior polynomial rates ($O(\lambda \log^2 T / \sqrt{T})$ → exponential decay);
+    - **Technical Challenge**: The Q-function $Q_h^{\lambda,\sigma}(s,a,\pi,\mu)$ is not Lipschitz continuous in $\pi$ (derivatives explode as $\pi$ approaches the boundary of the probability simplex); this is resolved by exploiting the regularization effect of KL divergence.
 
 3. **Approximate Proximal Point (APP) Algorithm**:
 
-   - **Function**: Combines PP and RMD into a practical algorithm;
-   - **Mechanism**: In the outer loop, each step uses a small number of RMD iterations to approximately solve the PP subproblem, followed by an update of the reference policy $\sigma$. The key step is updating $\sigma$ — without this, RMD only converges to a regularized equilibrium, which deviates from the true equilibrium by $O(\lambda)$;
-   - **Practical Effect**: Only a minor modification to standard RMD (periodically updating the reference $\sigma$) enables convergence to the non-regularized equilibrium in experiments.
+    - **Function**: Combines PP and RMD into a practical algorithm;
+    - **Mechanism**: In the outer loop, each step uses a small number of RMD iterations to approximately solve the PP subproblem, followed by an update of the reference policy $\sigma$. The key step is updating $\sigma$ — without this, RMD only converges to a regularized equilibrium, which deviates from the true equilibrium by $O(\lambda)$;
+    - **Practical Effect**: Only a minor modification to standard RMD (periodically updating the reference $\sigma$) enables convergence to the non-regularized equilibrium in experiments.
 
 ### Loss & Training
 
@@ -125,9 +125,9 @@ Validation on the classical one-dimensional torus random walk MFG benchmark: $|\
 - **Deep learning compatibility not validated**: Although PP/RMD can in principle be combined with neural network function approximation, the paper does not study approximation errors, stability, or high-dimensional nonlinear settings.
 - **Strict LIC proof for APP remains open**: Only experimental evidence (decreasing exploitability) is provided; a rigorous proof is left as an open problem, conjectured to require a uniform positive lower bound on $\eta^*$.
 - **Future Directions**:
-  - Extension to model-free and sample-based settings;
-  - Integration with deep RL for large-scale MFGs (e.g., traffic, multi-robot coordination);
-  - Analysis of asynchronous feedback (stability under delayed index effects).
+    - Extension to model-free and sample-based settings;
+    - Integration with deep RL for large-scale MFGs (e.g., traffic, multi-robot coordination);
+    - Analysis of asynchronous feedback (stability under delayed index effects).
 
 ## Related Work & Insights
 

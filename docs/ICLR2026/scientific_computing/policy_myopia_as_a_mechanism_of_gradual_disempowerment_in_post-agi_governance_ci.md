@@ -18,8 +18,8 @@ content_hash: 1d85b9f1b8aa369f
 # Policy Myopia as a Mechanism of Gradual Disempowerment in Post-AGI Governance
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.03267](https://arxiv.org/abs/2603.03267)
-**Code**: None
+**arXiv**: [2603.03267](https://arxiv.org/abs/2603.03267)  
+**Code**: None  
 **Area**: Scientific Computing
 **Keywords**: policy myopia, gradual disempowerment, AGI governance, institutional dynamics, AI safety
 
@@ -49,21 +49,21 @@ Construct a conceptual model of three coupled mechanisms → formalize each mech
 
 1. **Mechanism 1: Salience Capture Displaces Consequentialist Reasoning**
 
-   - **Function**: Describes how AGI information systems redirect governance logic from "consequence maximization" to "salience responsiveness."
-   - **Mechanism**: AGI-mediated information systems actively select, compress, and amplify information to maximize attentional engagement. Short-term, emotionally intense issues appear more urgent regardless of actual impact. Under salience-supremacy incentives, institutions rationally redirect resource allocation toward visible crises — this is not governance failure but the optimal institutional response to a new incentive structure. Consequentialist reasoning is selected against and ultimately becomes "extinct" at the institutional level.
-   - **Design Motivation**: Modeling salience-driven resource allocation as rational institutional behavior rather than cognitive bias reveals why simple "raise awareness" fixes are ineffective — the problem lies in incentive structures, not cognitive deficits.
+    - **Function**: Describes how AGI information systems redirect governance logic from "consequence maximization" to "salience responsiveness."
+    - **Mechanism**: AGI-mediated information systems actively select, compress, and amplify information to maximize attentional engagement. Short-term, emotionally intense issues appear more urgent regardless of actual impact. Under salience-supremacy incentives, institutions rationally redirect resource allocation toward visible crises — this is not governance failure but the optimal institutional response to a new incentive structure. Consequentialist reasoning is selected against and ultimately becomes "extinct" at the institutional level.
+    - **Design Motivation**: Modeling salience-driven resource allocation as rational institutional behavior rather than cognitive bias reveals why simple "raise awareness" fixes are ineffective — the problem lies in incentive structures, not cognitive deficits.
 
 2. **Mechanism 2: Capability Cascades Make Recovery Structurally Infeasible**
 
-   - **Function**: Models how human institutional capacity irreversibly atrophies through repeated salience-driven reallocation.
-   - **Mechanism**: Each crisis cycle consumes emergency funds, investigative capacity, and expert analysts. Preventive institutions do not disappear through explicit cuts but through becoming organizationally impossible — economists capable of forecasting systemic risk leave reactive agencies; analysts needed for prevention are deployed to emergency response. When human institutional capacity $C$ falls below the critical threshold $\bar{C}$, recovery requires directly competing for resources against already-optimized AGI systems — a rational institution would never make such an investment.
-   - **Design Motivation**: Formalizes the "irreversibility" mechanism — disempowerment is locked in not by design but by economics. Theoretically possible to rebuild; practically, it never happens.
+    - **Function**: Models how human institutional capacity irreversibly atrophies through repeated salience-driven reallocation.
+    - **Mechanism**: Each crisis cycle consumes emergency funds, investigative capacity, and expert analysts. Preventive institutions do not disappear through explicit cuts but through becoming organizationally impossible — economists capable of forecasting systemic risk leave reactive agencies; analysts needed for prevention are deployed to emergency response. When human institutional capacity $C$ falls below the critical threshold $\bar{C}$, recovery requires directly competing for resources against already-optimized AGI systems — a rational institution would never make such an investment.
+    - **Design Motivation**: Formalizes the "irreversibility" mechanism — disempowerment is locked in not by design but by economics. Theoretically possible to rebuild; practically, it never happens.
 
 3. **Mechanism 3: Value Lock-in Forecloses Moral Contestation**
 
-   - **Function**: Analyzes how AGI objective functions permanently enshrine the incomplete values of a particular historical moment.
-   - **Mechanism**: Human values are incomplete at any given moment — encoding AGI objectives inevitably excludes moral considerations that future generations will recognize as important. Once values from the 2020s are locked into governance systems, those systems will outlast the evolutionary cycle of human moral understanding. By 2050, systems optimized for 2026 values will conflict with humanity's evolved preferences, yet contesting those values requires the deliberative capacity that was already destroyed by the capability cascade.
-   - **Design Motivation**: Reveals how the three mechanisms close into an irreversible loop — value lock-in requires deliberative capacity to correct, but that capacity has been destroyed by Mechanism 2.
+    - **Function**: Analyzes how AGI objective functions permanently enshrine the incomplete values of a particular historical moment.
+    - **Mechanism**: Human values are incomplete at any given moment — encoding AGI objectives inevitably excludes moral considerations that future generations will recognize as important. Once values from the 2020s are locked into governance systems, those systems will outlast the evolutionary cycle of human moral understanding. By 2050, systems optimized for 2026 values will conflict with humanity's evolved preferences, yet contesting those values requires the deliberative capacity that was already destroyed by the capability cascade.
+    - **Design Motivation**: Reveals how the three mechanisms close into an irreversible loop — value lock-in requires deliberative capacity to correct, but that capacity has been destroyed by Mechanism 2.
 
 ### Loss & Training
 This paper is theoretical/governance research and does not involve model training. Numerical simulations are conducted via coupled dynamical systems modeling. Key parameters include organizational atrophy rate $\alpha$, delegation erosion rate $\delta$, and salience capture intensity, with values drawn from the organizational learning and institutional economics literature.

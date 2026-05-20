@@ -18,8 +18,8 @@ content_hash: 3fbc803f834afca9
 # Hyperbolic Hierarchical Alignment Reasoning Network for Text-3D Retrieval
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11045](https://arxiv.org/abs/2511.11045)
-**Code**: [https://github.com/liwrui/H2ARN](https://github.com/liwrui/H2ARN)
+**arXiv**: [2511.11045](https://arxiv.org/abs/2511.11045)  
+**Code**: [https://github.com/liwrui/H2ARN](https://github.com/liwrui/H2ARN)  
 **Area**: Image Generation
 **Keywords**: Text-3D Retrieval, Hyperbolic Space, Hierarchical Alignment, Entailment Cones, Contribution-Aware Aggregation
 

@@ -18,8 +18,8 @@ content_hash: cc8dcf72b930a7d1
 # Enhancing Interpretability in Deep Reinforcement Learning through Semantic Clustering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2409.17411](https://arxiv.org/abs/2409.17411)
-**Code**: [github.com/ualiangzhang/semantic_rl](https://github.com/ualiangzhang/semantic_rl)
+**arXiv**: [2409.17411](https://arxiv.org/abs/2409.17411)  
+**Code**: [github.com/ualiangzhang/semantic_rl](https://github.com/ualiangzhang/semantic_rl)  
 **Area**: Reinforcement Learning
 **Keywords**: interpretability, semantic clustering, VQ-VAE, dimensionality reduction, Procgen
 

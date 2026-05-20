@@ -18,8 +18,8 @@ content_hash: b2f71fbd2b5bbf0c
 # In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09865](https://arxiv.org/abs/2511.09865)
-**Code**: None
+**arXiv**: [2511.09865](https://arxiv.org/abs/2511.09865)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Chain-of-Thought reasoning, token-level exploration, self-feedback, KL divergence alignment, mathematical reasoning
 

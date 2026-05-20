@@ -19,9 +19,9 @@ content_hash: 48adc42c55fca746
 # Schrödinger Bridge Matching for Tree-Structured Costs and Entropic Wasserstein Barycentres
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.17197](https://arxiv.org/abs/2506.17197)
+**arXiv**: [2506.17197](https://arxiv.org/abs/2506.17197)  
 **Authors**: Samuel Howard, Peter Potaptchik, George Deligiannidis (Oxford)
-**Code**: [samuel-howard/Tree_SB_Matching_Barycentres](https://github.com/samuel-howard/Tree_SB_Matching_Barycentres)
+**Code**: [samuel-howard/Tree_SB_Matching_Barycentres](https://github.com/samuel-howard/Tree_SB_Matching_Barycentres)  
 **Area**: Image Generation
 **Keywords**: Schrödinger Bridge, Iterative Markovian Fitting, Wasserstein Barycentre, Optimal Transport, Tree-Structured Cost, Generative Model
 

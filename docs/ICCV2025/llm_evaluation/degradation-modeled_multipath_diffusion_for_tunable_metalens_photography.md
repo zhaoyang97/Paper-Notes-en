@@ -18,8 +18,8 @@ content_hash: df111ebd67bf8315
 # Degradation-Modeled Multipath Diffusion for Tunable Metalens Photography
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22753](https://arxiv.org/abs/2506.22753)
-**Code**: [https://dmdiff.github.io/](https://dmdiff.github.io/)
+**arXiv**: [2506.22753](https://arxiv.org/abs/2506.22753)  
+**Code**: [https://dmdiff.github.io/](https://dmdiff.github.io/)  
 **Area**: LLM Evaluation
 **Keywords**: metalens, diffusion model, image restoration, computational imaging, LoRA
 

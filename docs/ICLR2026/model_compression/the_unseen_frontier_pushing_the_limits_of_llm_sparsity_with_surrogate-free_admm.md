@@ -18,8 +18,8 @@ content_hash: b91741b6f1905966
 # The Unseen Frontier: Pushing the Limits of LLM Sparsity with Surrogate-Free ADMM
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.01650](https://arxiv.org/abs/2510.01650)
-**Code**: [https://github.com/log-postech/elsa](https://github.com/log-postech/elsa)
+**arXiv**: [2510.01650](https://arxiv.org/abs/2510.01650)  
+**Code**: [https://github.com/log-postech/elsa](https://github.com/log-postech/elsa)  
 **Area**: Model Compression
 **Keywords**: LLM Pruning, Extreme Sparsity, ADMM, Surrogate-Free Objective, Network Compression
 

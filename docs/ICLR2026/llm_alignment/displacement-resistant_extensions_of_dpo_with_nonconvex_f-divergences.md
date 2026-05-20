@@ -18,8 +18,8 @@ content_hash: 4447c59e6bfa83f3
 # Displacement-Resistant Extensions of DPO with Nonconvex $f$-Divergences
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.06788](https://arxiv.org/abs/2602.06788)
-**Code**: None
+**arXiv**: [2602.06788](https://arxiv.org/abs/2602.06788)  
+**Code**: None  
 **Area**: LLM Alignment / Preference Optimization
 **Keywords**: DPO, f-divergence, likelihood displacement, preference optimization, SquaredPO
 

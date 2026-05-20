@@ -18,8 +18,8 @@ content_hash: b36067dc32257541
 # Exploring the Translation Mechanism of Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.11806](https://arxiv.org/abs/2502.11806)
-**Code**: Available (link provided in paper)
+**arXiv**: [2502.11806](https://arxiv.org/abs/2502.11806)  
+**Code**: Available (link provided in paper)  
 **Area**: Multilingual Translation
 **Keywords**: translation mechanism, mechanistic interpretability, attention head, path patching, subspace intervention
 

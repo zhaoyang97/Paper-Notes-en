@@ -18,8 +18,8 @@ content_hash: 0fefe16721eabc07
 # Syntax as a Rosetta Stone: Universal Dependencies for In-Context Coptic Translation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18758](https://arxiv.org/abs/2604.18758)
-**Code**: [GitHub](https://github.com/gucorpling/in-context-coptic-translation)
+**arXiv**: [2604.18758](https://arxiv.org/abs/2604.18758)  
+**Code**: [GitHub](https://github.com/gucorpling/in-context-coptic-translation)  
 **Area**: Low-Resource Machine Translation / Multilingual NLP
 **Keywords**: Low-resource machine translation, Coptic, Universal Dependencies, in-context learning, syntax-augmented translation
 

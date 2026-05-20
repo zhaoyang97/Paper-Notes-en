@@ -18,8 +18,8 @@ content_hash: 81c20b33e96dc264
 # Distilling Future Temporal Knowledge with Masked Feature Reconstruction for 3D Object Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.08247](https://arxiv.org/abs/2512.08247)
-**Code**: None
+**arXiv**: [2512.08247](https://arxiv.org/abs/2512.08247)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D Object Detection, Knowledge Distillation, Temporal Modeling, Future Frame Knowledge, Sparse Query
 
@@ -76,8 +76,8 @@ FFR performs feature reconstruction on both perspective-view (PV) and sparse BEV
 
 1. A random mask is applied to the student features (mask ratio $\lambda = 0.5$): $M_{k,i} = \begin{cases} 0, & R_{k,i} < \lambda \\ 1, & \text{otherwise} \end{cases}$
 2. A generation layer recovers the masked features: $\hat{F}^S = \mathcal{G}(F^S \cdot M)$
-   - PV features: $\mathcal{G}$ consists of two $3 \times 3$ convolution layers with ReLU.
-   - BEV query features: $\mathcal{G}$ consists of FFN + LayerNorm.
+    - PV features: $\mathcal{G}$ consists of two $3 \times 3$ convolution layers with ReLU.
+    - BEV query features: $\mathcal{G}$ consists of FFN + LayerNorm.
 3. MSE reconstruction is performed with the teacher's aggregated features as targets.
 
 **PV reconstruction loss**:

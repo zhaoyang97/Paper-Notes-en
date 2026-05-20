@@ -18,8 +18,8 @@ content_hash: b516929e18e86e5d
 # All Changes May Have Invariant Principles: Improving Ever-Shifting Harmful Meme Detection via Design Concept Reproduction
 
 **Conference**: ACL 2026
-**arXiv**: [2601.04567](https://arxiv.org/abs/2601.04567)
-**Code**: [GitHub](https://github.com/jzySaber1996/RepMD)
+**arXiv**: [2601.04567](https://arxiv.org/abs/2601.04567)  
+**Code**: [GitHub](https://github.com/jzySaber1996/RepMD)  
 **Area**: Multimodal Safety / Meme Detection
 **Keywords**: harmful meme detection, design concept graph, attack tree, MLLM reasoning guidance, category drift
 

@@ -17,8 +17,8 @@ content_hash: 3ed5e63531e25601
 # Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.07873](https://arxiv.org/abs/2601.07873)
-**Code**: [https://github.com/famoustourist/MOSE](https://github.com/famoustourist/MOSE)
+**arXiv**: [2601.07873](https://arxiv.org/abs/2601.07873)  
+**Code**: [https://github.com/famoustourist/MOSE](https://github.com/famoustourist/MOSE)  
 **Area**: Knowledge Editing
 **Keywords**: Knowledge Editing, Orthogonal Transformation, Sequential Editing, Numerical Stability, Model Editing
 

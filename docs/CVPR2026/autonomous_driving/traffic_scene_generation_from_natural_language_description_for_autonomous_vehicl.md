@@ -18,8 +18,8 @@ content_hash: 5ca62bda7f3443b9
 # Traffic Scene Generation from Natural Language Description for Autonomous Vehicles with Large Language Model
 
 **Conference**: CVPR 2026
-**arXiv**: [2409.09575](https://arxiv.org/abs/2409.09575)
-**Code**: [https://basiclab.github.io/TTSG](https://basiclab.github.io/TTSG)
+**arXiv**: [2409.09575](https://arxiv.org/abs/2409.09575)  
+**Code**: [https://basiclab.github.io/TTSG](https://basiclab.github.io/TTSG)  
 **Area**: Autonomous Driving / Scene Generation
 **Keywords**: Traffic scene generation, natural language-driven, large language model, autonomous driving simulation, CARLA
 

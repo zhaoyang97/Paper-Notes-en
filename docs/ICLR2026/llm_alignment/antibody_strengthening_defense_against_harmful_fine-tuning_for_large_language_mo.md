@@ -18,8 +18,8 @@ content_hash: c6c76a8c81a70ce5
 # Antibody: Strengthening Defense Against Harmful Fine-Tuning for Large Language Models via Attenuating Harmful Gradient Influence
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00498](https://arxiv.org/abs/2603.00498)
-**Code**: To be released
+**arXiv**: [2603.00498](https://arxiv.org/abs/2603.00498)  
+**Code**: To be released  
 **Area**: LLM Alignment
 **Keywords**: Harmful fine-tuning attack, safety alignment, loss flatness, sample weighting, FTaaS safety
 

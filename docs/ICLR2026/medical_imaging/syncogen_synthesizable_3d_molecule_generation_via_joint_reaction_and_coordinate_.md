@@ -18,8 +18,8 @@ content_hash: 30a265fd98276167
 # SynCoGen: Synthesizable 3D Molecule Generation via Joint Reaction and Coordinate Modeling
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.11818](https://arxiv.org/abs/2507.11818)
-**Code**: [GitHub](https://github.com/andreirekesh/SynCoGen)
+**arXiv**: [2507.11818](https://arxiv.org/abs/2507.11818)  
+**Code**: [GitHub](https://github.com/andreirekesh/SynCoGen)  
 **Area**: Medical Imaging / Molecule Generation
 **Keywords**: synthesizable molecule generation, 3D conformation generation, masked graph diffusion, flow matching, drug discovery
 

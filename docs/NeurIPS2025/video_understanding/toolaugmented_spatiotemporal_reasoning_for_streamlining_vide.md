@@ -18,8 +18,8 @@ content_hash: 3aa0f0f383c996c4
 # Tool-Augmented Spatiotemporal Reasoning for Streamlining Video Question Answering Task
 
 **Conference**: NeurIPS2025
-**arXiv**: [2512.10359](https://arxiv.org/abs/2512.10359)
-**Code**: [GitHub](https://github.com/fansunqi/VideoTool)
+**arXiv**: [2512.10359](https://arxiv.org/abs/2512.10359)  
+**Code**: [GitHub](https://github.com/fansunqi/VideoTool)  
 **Area**: Video Understanding / Multimodal Reasoning
 **Keywords**: [VideoQA, tool-augmented LLM, spatiotemporal reasoning, agentic framework, video toolkit]
 

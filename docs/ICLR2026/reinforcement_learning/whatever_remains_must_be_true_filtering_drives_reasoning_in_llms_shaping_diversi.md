@@ -18,8 +18,8 @@ content_hash: 94b7d0c30df58b35
 # Whatever Remains Must Be True: Filtering Drives Reasoning in LLMs, Shaping Diversity
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.05962](https://arxiv.org/abs/2512.05962)
-**Code**: [https://github.com/naver/alpha-dpg](https://github.com/naver/alpha-dpg)
+**arXiv**: [2512.05962](https://arxiv.org/abs/2512.05962)  
+**Code**: [https://github.com/naver/alpha-dpg](https://github.com/naver/alpha-dpg)  
 **Area**: LLM NLP / Reinforcement Learning / LLM Reasoning
 **Keywords**: α-divergence, distributional matching, RLVR, diversity preservation, theorem proving
 

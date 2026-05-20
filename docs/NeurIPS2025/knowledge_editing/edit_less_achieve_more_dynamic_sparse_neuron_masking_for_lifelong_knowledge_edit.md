@@ -17,8 +17,8 @@ content_hash: b8cde85bed3535ab
 # Edit Less, Achieve More: Dynamic Sparse Neuron Masking for Lifelong Knowledge Editing in LLMs
 
 **Conference**: NEURIPS2025
-**arXiv**: [2510.22139](https://arxiv.org/abs/2510.22139)
-**Code**: [LiuJinzhe-Keepgoing/NMKE](https://github.com/LiuJinzhe-Keepgoing/NMKE)
+**arXiv**: [2510.22139](https://arxiv.org/abs/2510.22139)  
+**Code**: [LiuJinzhe-Keepgoing/NMKE](https://github.com/LiuJinzhe-Keepgoing/NMKE)  
 **Area**: Knowledge Editing
 **Keywords**: knowledge editing, lifelong learning, sparse masking, neuron attribution, LLM
 

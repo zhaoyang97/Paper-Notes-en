@@ -18,8 +18,8 @@ content_hash: f667cf7fffd62718
 # Epistemic Uncertainty for Generated Image Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.05897](https://arxiv.org/abs/2412.05897)
-**Code**: [tmlr-group/WePe](https://github.com/tmlr-group/WePe)
+**arXiv**: [2412.05897](https://arxiv.org/abs/2412.05897)  
+**Code**: [tmlr-group/WePe](https://github.com/tmlr-group/WePe)  
 **Area**: Image Generation
 **Keywords**: AI-generated image detection, epistemic uncertainty, weight perturbation, DINOv2, out-of-distribution detection
 

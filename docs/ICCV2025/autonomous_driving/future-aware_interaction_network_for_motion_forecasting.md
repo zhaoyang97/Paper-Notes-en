@@ -17,8 +17,8 @@ content_hash: f884dfe56c1a54a7
 # Future-Aware Interaction Network For Motion Forecasting
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06565](https://arxiv.org/abs/2503.06565)
-**Code**: Unavailable (authors indicate code will be released upon acceptance)
+**arXiv**: [2503.06565](https://arxiv.org/abs/2503.06565)  
+**Code**: Unavailable (authors indicate code will be released upon acceptance)  
 **Area**: Autonomous Driving
 **Keywords**: Motion Forecasting, Mamba, State Space Model, Autonomous Driving, Trajectory Prediction
 

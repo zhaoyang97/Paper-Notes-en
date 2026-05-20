@@ -18,8 +18,8 @@ content_hash: f200d1a379605736
 # Tropical Attention: Neural Algorithmic Reasoning for Combinatorial Algorithms
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17190](https://arxiv.org/abs/2505.17190)
-**Code**: [GitHub](https://github.com/Baran-phys/Tropical-Attention/)
+**arXiv**: [2505.17190](https://arxiv.org/abs/2505.17190)  
+**Code**: [GitHub](https://github.com/Baran-phys/Tropical-Attention/)  
 **Area**: Interpretability / Neural Algorithmic Reasoning
 **Keywords**: Tropical geometry, attention mechanism, combinatorial optimization, out-of-distribution generalization, neural algorithmic reasoning
 

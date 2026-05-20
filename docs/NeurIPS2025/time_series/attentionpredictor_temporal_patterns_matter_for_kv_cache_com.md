@@ -18,8 +18,8 @@ content_hash: 0705173784ef2ff5
 # AttentionPredictor: Temporal Patterns Matter for KV Cache Compression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.04077](https://arxiv.org/abs/2502.04077)
-**Code**: [GitHub](https://github.com/MIRALab-USTC/LLM-AttentionPredictor)
+**arXiv**: [2502.04077](https://arxiv.org/abs/2502.04077)  
+**Code**: [GitHub](https://github.com/MIRALab-USTC/LLM-AttentionPredictor)  
 **Area**: Time Series / Efficient Inference
 **Keywords**: KV cache compression, attention prediction, temporal patterns, LLM inference acceleration, cache prefetching
 

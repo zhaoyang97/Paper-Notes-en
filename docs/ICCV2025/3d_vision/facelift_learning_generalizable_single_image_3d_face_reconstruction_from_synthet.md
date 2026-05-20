@@ -19,8 +19,8 @@ content_hash: 96959ea788791448
 # FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.17812](https://arxiv.org/abs/2412.17812)
-**Code**: [weijielyu.github.io/FaceLift](https://weijielyu.github.io/FaceLift)
+**arXiv**: [2412.17812](https://arxiv.org/abs/2412.17812)  
+**Code**: [weijielyu.github.io/FaceLift](https://weijielyu.github.io/FaceLift)  
 **Area**: 3D Vision
 **Keywords**: 3D face reconstruction, 3D Gaussian splatting, synthetic data, multi-view diffusion, single-image reconstruction, identity preservation
 

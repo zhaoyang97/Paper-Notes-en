@@ -18,8 +18,8 @@ content_hash: 3575a1d96cd66831
 # Optimas: Optimizing Compound AI Systems with Globally Aligned Local Rewards
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.03041](https://arxiv.org/abs/2507.03041)
-**Code**: [https://optimas.stanford.edu/](https://optimas.stanford.edu/)
+**arXiv**: [2507.03041](https://arxiv.org/abs/2507.03041)  
+**Code**: [https://optimas.stanford.edu/](https://optimas.stanford.edu/)  
 **Area**: LLM NLP / System Optimization
 **Keywords**: compound AI systems, local reward functions, global alignment, heterogeneous parameter optimization, convergence guarantees
 

@@ -18,8 +18,8 @@ content_hash: fedd30583ef75415
 # Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05744](https://arxiv.org/abs/2506.05744)
-**Code**: [GitHub](https://github.com/gouki510/Topology_of_Reasoning)
+**arXiv**: [2506.05744](https://arxiv.org/abs/2506.05744)  
+**Code**: [GitHub](https://github.com/gouki510/Topology_of_Reasoning)  
 **Area**: LLM Reasoning / Interpretability / Graph-Theoretic Analysis
 **Keywords**: reasoning graph, induction heads, small-world, cycle detection, chain-of-thought
 

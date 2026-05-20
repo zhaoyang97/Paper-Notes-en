@@ -19,8 +19,8 @@ content_hash: 7a628e18218fd39a
 # Learning to Instruct for Visual Instruction Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.22215](https://arxiv.org/abs/2503.22215)
-**Code**: [https://github.com/Feng-Hong/L2T](https://github.com/Feng-Hong/L2T)
+**arXiv**: [2503.22215](https://arxiv.org/abs/2503.22215)  
+**Code**: [https://github.com/Feng-Hong/L2T](https://github.com/Feng-Hong/L2T)  
 **Area**: Multimodal VLM
 **Keywords**: visual instruction tuning, L2T, MLLM, loss function, hallucination, captioning
 

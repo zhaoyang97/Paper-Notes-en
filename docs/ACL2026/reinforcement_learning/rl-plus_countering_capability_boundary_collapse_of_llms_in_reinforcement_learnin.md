@@ -18,8 +18,8 @@ content_hash: f227cc456bd2379d
 # RL-PLUS: Countering Capability Boundary Collapse of LLMs in Reinforcement Learning with Hybrid-policy Optimization
 
 **Conference**: ACL 2026
-**arXiv**: [2508.00222](https://arxiv.org/abs/2508.00222)
-**Code**: [GitHub](https://github.com/YihongDong/RL-PLUS)
+**arXiv**: [2508.00222](https://arxiv.org/abs/2508.00222)  
+**Code**: [GitHub](https://github.com/YihongDong/RL-PLUS)  
 **Area**: LLM Reasoning / Reinforcement Learning
 **Keywords**: Capability Boundary Collapse, Hybrid-Policy Optimization, Multiple Importance Sampling, Exploration-Based Advantage Function, RLVR
 

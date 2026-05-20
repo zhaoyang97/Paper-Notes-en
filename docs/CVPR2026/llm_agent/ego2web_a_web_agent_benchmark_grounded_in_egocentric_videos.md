@@ -18,8 +18,8 @@ content_hash: 96671c84e02eff4f
 # Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22529](https://arxiv.org/abs/2603.22529)
-**Code**: [https://github.com/Yui010206/Ego2Web](https://github.com/Yui010206/Ego2Web)
+**arXiv**: [2603.22529](https://arxiv.org/abs/2603.22529)  
+**Code**: [https://github.com/Yui010206/Ego2Web](https://github.com/Yui010206/Ego2Web)  
 **Area**: Agent
 **Keywords**: Web Agent, Egocentric Video, Multimodal Benchmark, Cross-Modal Transfer, Automatic Evaluation
 
@@ -51,21 +51,21 @@ Ego2Web consists of a three-stage system: (1) **Semi-automatic data construction
 
 1. **Semi-Automatic Data Generation Pipeline**:
 
-   - *Function*: Transforms raw egocentric videos into high-quality "video + web task" pairs.
-   - *Mechanism*: A VLM (e.g., Gemini) first performs structured parsing of egocentric videos to generate clip-level captions and visual metadata (identifying objects, brands, actions, etc.); an LLM then uses this visual metadata to generate web task instructions targeting live websites (e.g., Amazon, YouTube, Wikipedia); finally, human annotators verify each sample for visual grounding accuracy, web feasibility, and instruction quality.
-   - *Design Motivation*: Purely manual annotation is prohibitively costly, while fully automatic generation lacks quality control. The semi-automatic pipeline balances efficiency and quality, ensuring each sample has authentic visual grounding and an executable web task.
+    - *Function*: Transforms raw egocentric videos into high-quality "video + web task" pairs.
+    - *Mechanism*: A VLM (e.g., Gemini) first performs structured parsing of egocentric videos to generate clip-level captions and visual metadata (identifying objects, brands, actions, etc.); an LLM then uses this visual metadata to generate web task instructions targeting live websites (e.g., Amazon, YouTube, Wikipedia); finally, human annotators verify each sample for visual grounding accuracy, web feasibility, and instruction quality.
+    - *Design Motivation*: Purely manual annotation is prohibitively costly, while fully automatic generation lacks quality control. The semi-automatic pipeline balances efficiency and quality, ensuring each sample has authentic visual grounding and an executable web task.
 
 2. **Multi-Type Web Task Design**:
 
-   - *Function*: Covers diverse web interaction scenarios that a daily AI assistant would need to handle.
-   - *Mechanism*: Tasks are divided into four categories—e-commerce (e.g., spotting a snack and searching to purchase it), media retrieval (e.g., seeing a fitness movement and searching for tutorial videos), knowledge query (e.g., seeing a university name and looking up admission information), and local/map services (e.g., spotting a store and searching for navigation routes). Each task requires the agent to first extract key visual evidence from the video and then complete the corresponding operation on the web.
-   - *Design Motivation*: Different task types demand different agent capabilities—e-commerce requires fine-grained object recognition, media retrieval requires action understanding, knowledge queries require text recognition, and map services require spatial localization. Multi-type evaluation comprehensively exposes agent capability gaps.
+    - *Function*: Covers diverse web interaction scenarios that a daily AI assistant would need to handle.
+    - *Mechanism*: Tasks are divided into four categories—e-commerce (e.g., spotting a snack and searching to purchase it), media retrieval (e.g., seeing a fitness movement and searching for tutorial videos), knowledge query (e.g., seeing a university name and looking up admission information), and local/map services (e.g., spotting a store and searching for navigation routes). Each task requires the agent to first extract key visual evidence from the video and then complete the corresponding operation on the web.
+    - *Design Motivation*: Different task types demand different agent capabilities—e-commerce requires fine-grained object recognition, media retrieval requires action understanding, knowledge queries require text recognition, and map services require spatial localization. Multi-type evaluation comprehensively exposes agent capability gaps.
 
 3. **Ego2WebJudge Automatic Evaluation Method**:
 
-   - *Function*: Enables scalable automated evaluation in live web environments.
-   - *Mechanism*: Given the task instruction, the agent's action trajectory, web screenshots, and annotated visual evidence from the video, Ego2WebJudge first extracts key success criteria, then selects the most relevant screenshots from the agent's web action trajectory, and finally determines whether the agent completed the task correctly and consistently. Unlike simple URL/text matching, Ego2WebJudge considers the consistency between visual evidence and web content.
-   - *Design Motivation*: In live web environments, traditional exact-match methods (e.g., URL matching) are too brittle, while human evaluation does not scale. Ego2WebJudge achieves approximately 84% human judgment agreement, substantially outperforming existing evaluation methods.
+    - *Function*: Enables scalable automated evaluation in live web environments.
+    - *Mechanism*: Given the task instruction, the agent's action trajectory, web screenshots, and annotated visual evidence from the video, Ego2WebJudge first extracts key success criteria, then selects the most relevant screenshots from the agent's web action trajectory, and finally determines whether the agent completed the task correctly and consistently. Unlike simple URL/text matching, Ego2WebJudge considers the consistency between visual evidence and web content.
+    - *Design Motivation*: In live web environments, traditional exact-match methods (e.g., URL matching) are too brittle, while human evaluation does not scale. Ego2WebJudge achieves approximately 84% human judgment agreement, substantially outperforming existing evaluation methods.
 
 ### Loss & Training
 

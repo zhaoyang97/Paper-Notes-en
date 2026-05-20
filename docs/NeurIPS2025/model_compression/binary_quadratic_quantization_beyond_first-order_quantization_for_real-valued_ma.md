@@ -18,8 +18,8 @@ content_hash: e158348ba8b42521
 # Binary Quadratic Quantization: Beyond First-Order Quantization for Real-Valued Matrix Compression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18650](https://arxiv.org/abs/2510.18650)
-**Code**: To be confirmed
+**arXiv**: [2510.18650](https://arxiv.org/abs/2510.18650)  
+**Code**: To be confirmed  
 **Area**: Model Compression / Quantization
 **Keywords**: Binary quantization, quadratic coding, mixed-integer programming, ViT compression, ultra-low bitwidth
 

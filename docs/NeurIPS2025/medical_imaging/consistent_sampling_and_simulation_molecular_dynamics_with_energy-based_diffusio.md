@@ -18,8 +18,8 @@ content_hash: e89f86947480aae8
 # Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.17139](https://arxiv.org/abs/2506.17139)
-**Code**: [https://github.com/noegroup/ScoreMD](https://github.com/noegroup/ScoreMD)
+**arXiv**: [2506.17139](https://arxiv.org/abs/2506.17139)  
+**Code**: [https://github.com/noegroup/ScoreMD](https://github.com/noegroup/ScoreMD)  
 **Area**: Molecular Dynamics / Diffusion Models
 **Keywords**: Diffusion Models, Molecular Dynamics Simulation, Fokker-Planck Equation, Energy-Based Models, Coarse-Graining
 

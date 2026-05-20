@@ -18,8 +18,8 @@ content_hash: 675b473bc2340a80
 # Towards a Unified Copernicus Foundation Model for Earth Vision
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11849](https://arxiv.org/abs/2503.11849)
-**Code**: [GitHub](https://github.com/zhu-xlab/Copernicus-FM)
+**arXiv**: [2503.11849](https://arxiv.org/abs/2503.11849)  
+**Code**: [GitHub](https://github.com/zhu-xlab/Copernicus-FM)  
 **Area**: Remote Sensing
 **Keywords**: Earth observation foundation model, multimodal pretraining, Copernicus Sentinel, dynamic hypernetwork, atmospheric monitoring
 

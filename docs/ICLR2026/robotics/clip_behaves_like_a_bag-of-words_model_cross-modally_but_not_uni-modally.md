@@ -18,8 +18,8 @@ content_hash: f7fd968255e3384a
 # CLIP Behaves like a Bag-of-Words Model Cross-modally but not Uni-modally
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.03566](https://arxiv.org/abs/2502.03566)
-**Code**: [GitHub](https://github.com/kdariina/CLIP-not-BoW-unimodally)
+**arXiv**: [2502.03566](https://arxiv.org/abs/2502.03566)  
+**Code**: [GitHub](https://github.com/kdariina/CLIP-not-BoW-unimodally)  
 **Area**: Robotics
 **Keywords**: CLIP, compositionality, bag-of-words, attribute-object binding, cross-modal alignment
 

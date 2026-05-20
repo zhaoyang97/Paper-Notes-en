@@ -17,8 +17,8 @@ content_hash: 544657001c081183
 # Why Is Attention Sparse in Particle Transformer?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.00210](https://arxiv.org/abs/2512.00210)
-**Code**: [Available](https://github.com/)
+**arXiv**: [2512.00210](https://arxiv.org/abs/2512.00210)  
+**Code**: [Available](https://github.com/)  
 **Area**: Interpretability / Physics AI / Transformer
 **Keywords**: Particle Transformer, sparse attention, jet tagging, interaction matrix, interpretability
 

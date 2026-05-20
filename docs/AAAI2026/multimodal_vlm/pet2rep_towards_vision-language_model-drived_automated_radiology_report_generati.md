@@ -18,8 +18,8 @@ content_hash: 273bc093e9dc4e78
 # PET2Rep: Towards Vision-Language Model-Driven Automated Radiology Report Generation for Positron Emission Tomography
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04062](https://arxiv.org/abs/2508.04062)
-**Code**: [https://github.com/YichiZhang98/PET2Rep](https://github.com/YichiZhang98/PET2Rep)
+**arXiv**: [2508.04062](https://arxiv.org/abs/2508.04062)  
+**Code**: [https://github.com/YichiZhang98/PET2Rep](https://github.com/YichiZhang98/PET2Rep)  
 **Area**: Multimodal VLM
 **Keywords**: PET imaging, radiology report generation, vision-language model, benchmark evaluation, clinical efficacy metrics
 

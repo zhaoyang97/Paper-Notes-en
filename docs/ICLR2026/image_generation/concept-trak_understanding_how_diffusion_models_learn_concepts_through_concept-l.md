@@ -18,8 +18,8 @@ content_hash: 7156977b70b068c9
 # Concept-TRAK: Understanding how diffusion models learn concepts through concept-level attribution
 
 **Conference**: ICLR2026
-**arXiv**: [2507.06547](https://arxiv.org/abs/2507.06547)
-**Code**: To be confirmed
+**arXiv**: [2507.06547](https://arxiv.org/abs/2507.06547)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: Diffusion Models, Data Attribution, Concept Attribution, Influence Functions, Copyright
 

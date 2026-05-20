@@ -18,7 +18,7 @@ content_hash: 4e15a824aff6a384
 # Think How Your Teammates Think: Active Inference Can Benefit Decentralized Execution
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18761](https://arxiv.org/abs/2511.18761)
+**arXiv**: [2511.18761](https://arxiv.org/abs/2511.18761)  
 **Area**: LLM Evaluation
 **Keywords**: Multi-agent cooperation, active inference, teammate modeling, communication-free framework, decentralized execution
 

@@ -17,8 +17,8 @@ content_hash: 88e39b784a417e67
 # RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.11284](https://arxiv.org/abs/2512.11284)
-**Code**: None
+**arXiv**: [2512.11284](https://arxiv.org/abs/2512.11284)  
+**Code**: None  
 **Area**: Other
 **Keywords**: anomaly detection, autoencoder, recursive reconstruction, industrial defect detection, unsupervised learning
 

@@ -17,8 +17,8 @@ content_hash: 17643d770ea3bd3f
 # Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.06526](https://arxiv.org/abs/2602.06526)
-**Code**: [GitHub](https://github.com/DISL-Lab/DREAM-ICLR-26)
+**arXiv**: [2602.06526](https://arxiv.org/abs/2602.06526)  
+**Code**: [GitHub](https://github.com/DISL-Lab/DREAM-ICLR-26)  
 **Area**: Other
 **Keywords**: IR evaluation, multi-agent debate, relevance annotation, human-AI collaboration, BRIDGE benchmark
 

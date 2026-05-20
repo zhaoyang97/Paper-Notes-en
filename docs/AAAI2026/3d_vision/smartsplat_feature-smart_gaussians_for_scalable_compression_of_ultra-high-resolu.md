@@ -18,8 +18,8 @@ content_hash: a80cefcb62efa47d
 # SmartSplat: Feature-Smart Gaussians for Scalable Compression of Ultra-High-Resolution Images
 
 **Conference**: AAAI2026
-**arXiv**: [2512.20377](https://arxiv.org/abs/2512.20377)
-**Code**: [lif314/SmartSplat](https://github.com/lif314/SmartSplat)
+**arXiv**: [2512.20377](https://arxiv.org/abs/2512.20377)  
+**Code**: [lif314/SmartSplat](https://github.com/lif314/SmartSplat)  
 **Authors**: Linfei Li, Lin Zhang, Zhong Wang, Ying Shen
 **Area**: 3D Vision
 **Keywords**: 2D Gaussian Splatting, image compression, ultra-high-resolution, feature-guided sampling, high compression ratio

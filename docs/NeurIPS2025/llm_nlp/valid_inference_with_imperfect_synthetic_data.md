@@ -18,8 +18,8 @@ content_hash: 8b1cb1c084bf6167
 # Valid Inference with Imperfect Synthetic Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.06635](https://arxiv.org/abs/2508.06635)
-**Code**: To be confirmed
+**arXiv**: [2508.06635](https://arxiv.org/abs/2508.06635)  
+**Code**: To be confirmed  
 **Area**: LLM/NLP
 **Keywords**: synthetic data, statistical inference, GMM, prediction-powered inference, computational social science
 

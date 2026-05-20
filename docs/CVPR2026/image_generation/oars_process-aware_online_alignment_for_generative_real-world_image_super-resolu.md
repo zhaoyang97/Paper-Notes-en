@@ -20,8 +20,8 @@ content_hash: aa36402e2c77fcc7
 # OARS: Process-Aware Online Alignment for Generative Real-World Image Super-Resolution
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12811](https://arxiv.org/abs/2603.12811)
-**Code**: None
+**arXiv**: [2603.12811](https://arxiv.org/abs/2603.12811)  
+**Code**: None  
 **Area**: Image Generation / Image Super-Resolution
 **Keywords**: Real-World Super-Resolution, RLHF, reward model, Online RL, Flow Matching, MLLM, Image Quality Assessment
 

@@ -18,8 +18,8 @@ content_hash: 8346e24e0203192c
 # Meta-World+: An Improved, Standardized, RL Benchmark
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11289](https://arxiv.org/abs/2505.11289)
-**Code**: [GitHub](https://github.com/Farama-Foundation/Metaworld/)
+**arXiv**: [2505.11289](https://arxiv.org/abs/2505.11289)  
+**Code**: [GitHub](https://github.com/Farama-Foundation/Metaworld/)  
 **Area**: Reinforcement Learning
 **Keywords**: multi-task reinforcement learning, meta-reinforcement learning, benchmark, reward function, reproducibility
 

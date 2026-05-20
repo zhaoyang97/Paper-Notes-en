@@ -18,8 +18,8 @@ content_hash: fb95e96ff7801051
 # On Entropy Control in LLM-RL Algorithms
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.03493](https://arxiv.org/abs/2509.03493)
-**Code**: None
+**arXiv**: [2509.03493](https://arxiv.org/abs/2509.03493)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: Entropy control, RLVR, LLM-RL, policy optimization, exploration-exploitation
 
@@ -41,24 +41,24 @@ This paper provides a theoretical explanation for why conventional entropy regul
 ### Theoretical Analysis
 
 1. **Proposition 1 (Without Entropy Control)**:
-   - Policy entropy serves as an upper bound on the policy gradient: $\|\nabla V^{\pi_\theta}\| \leq 2\mathcal{H}(\pi_\theta)$ → entropy collapse leads to learning stagnation.
-   - Performance bound: $V^{\pi^*} - V^{\pi_\theta} \leq \frac{\epsilon}{C^{\pi_\theta}(s_0)}$
+    - Policy entropy serves as an upper bound on the policy gradient: $\|\nabla V^{\pi_\theta}\| \leq 2\mathcal{H}(\pi_\theta)$ → entropy collapse leads to learning stagnation.
+    - Performance bound: $V^{\pi^*} - V^{\pi_\theta} \leq \frac{\epsilon}{C^{\pi_\theta}(s_0)}$
 
 2. **Proposition 2 (Conventional Entropy Regularization)**:
-   - Performance bound: $V^{\pi^*} - V^{\pi_\theta} \leq \frac{\epsilon^2}{2\lambda C_\lambda} + \lambda H\log\frac{|\mathcal{A}|}{|\mathcal{A}_H^*|^{1/H}}$
-   - The optimization term improves ($\epsilon^2/2\lambda$), but the bias term $\lambda H\log|\mathcal{A}|/|\mathcal{A}_H^*|^{1/H}$ dominates in the LLM setting.
+    - Performance bound: $V^{\pi^*} - V^{\pi_\theta} \leq \frac{\epsilon^2}{2\lambda C_\lambda} + \lambda H\log\frac{|\mathcal{A}|}{|\mathcal{A}_H^*|^{1/H}}$
+    - The optimization term improves ($\epsilon^2/2\lambda$), but the bias term $\lambda H\log|\mathcal{A}|/|\mathcal{A}_H^*|^{1/H}$ dominates in the LLM setting.
 
 ### AEnt Method
 
 1. **Clamped Entropy**:
-   - Function: Entropy is computed not over the full vocabulary but over the top-$k$ tokens after renormalization.
-   - Mechanism: Define subspace $\mathcal{A}_k(s) = \text{top-k tokens}$, renormalize the policy as $\tilde{\pi}(a|s) = \pi(a|s)/\sum_{a' \in \mathcal{A}_k} \pi(a'|s)$, and compute entropy using $\tilde{\pi}$.
-   - Design Motivation: Encouraging exploration only among plausible candidates reduces the bias from $\log|\mathcal{A}|$ to $\log k$ (where $k \ll |\mathcal{A}|$).
+    - Function: Entropy is computed not over the full vocabulary but over the top-$k$ tokens after renormalization.
+    - Mechanism: Define subspace $\mathcal{A}_k(s) = \text{top-k tokens}$, renormalize the policy as $\tilde{\pi}(a|s) = \pi(a|s)/\sum_{a' \in \mathcal{A}_k} \pi(a'|s)$, and compute entropy using $\tilde{\pi}$.
+    - Design Motivation: Encouraging exploration only among plausible candidates reduces the bias from $\log|\mathcal{A}|$ to $\log k$ (where $k \ll |\mathcal{A}|$).
 
 2. **Adaptive Coefficient**:
-   - Function: The coefficient $\lambda$ is automatically adjusted based on the current clamped entropy value.
-   - Mechanism: High clamped entropy → small $\lambda$ (policy is already sufficiently stochastic); low clamped entropy → large $\lambda$ (more exploration is needed).
-   - Design Motivation: A fixed $\lambda$ cannot adapt to the dynamic changes in entropy throughout training.
+    - Function: The coefficient $\lambda$ is automatically adjusted based on the current clamped entropy value.
+    - Mechanism: High clamped entropy → small $\lambda$ (policy is already sufficiently stochastic); low clamped entropy → large $\lambda$ (more exploration is needed).
+    - Design Motivation: A fixed $\lambda$ cannot adapt to the dynamic changes in entropy throughout training.
 
 ### Loss & Training
 - $\mathcal{L} = \mathcal{L}_{\text{PO}}(\theta) + \lambda \cdot \min(\mathcal{H}_k(\pi_\theta), H_{\text{target}})$

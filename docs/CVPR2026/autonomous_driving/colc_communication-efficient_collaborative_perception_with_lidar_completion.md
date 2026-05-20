@@ -18,8 +18,8 @@ content_hash: 6dc2d289926b61e0
 # CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00682](https://arxiv.org/abs/2603.00682)
-**Code**: Unavailable
+**arXiv**: [2603.00682](https://arxiv.org/abs/2603.00682)  
+**Code**: Unavailable  
 **Area**: Autonomous Driving
 **Keywords**: Collaborative Perception, Communication Efficiency, Point Cloud Completion, Early Fusion, Vector Quantization
 

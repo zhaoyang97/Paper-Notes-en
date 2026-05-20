@@ -18,8 +18,8 @@ content_hash: 327540910ce2204c
 # Cog-RAG: Cognitive-Inspired Dual-Hypergraph with Theme Alignment Retrieval-Augmented Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13201](https://arxiv.org/abs/2511.13201)
-**Code**: None
+**arXiv**: [2511.13201](https://arxiv.org/abs/2511.13201)  
+**Code**: None  
 **Area**: Retrieval-Augmented Generation (RAG)
 **Keywords**: Hypergraph, Dual-Hypergraph Indexing, Theme Alignment, Cognitive-Inspired Retrieval, RAG
 

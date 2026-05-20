@@ -18,8 +18,8 @@ content_hash: 1539126a80e0aae9
 # When Large Multimodal Models Confront Evolving Knowledge: Challenges and Explorations
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.24449](https://arxiv.org/abs/2505.24449)
-**Code**: None
+**arXiv**: [2505.24449](https://arxiv.org/abs/2505.24449)  
+**Code**: None  
 **Area**: Multimodal / VLM
 **Keywords**: Large Multimodal Models, Knowledge Injection, Evolving Knowledge, Catastrophic Forgetting, Continual Learning
 
@@ -60,8 +60,8 @@ The contribution of this paper is a complete "benchmark + evaluation + path" fra
     - **Data Scale**: 9,422 knowledge–image pairs.
     - **Timeline**: Data from 2024, ensuring novelty for LMMs released in 2023.
     - **Data Format**: Each knowledge entry consists of:
-      - Injection data $\mathcal{D}_\mathcal{K} = \{(i_k, x_k, y_k)\}$: knowledge image, heuristic query, knowledge summary.
-      - Evaluation data $\mathcal{D}_\mathcal{Q} = \{(i_q, x_q, y_q)\}$: query image, question, ground truth.
+        - Injection data $\mathcal{D}_\mathcal{K} = \{(i_k, x_k, y_k)\}$: knowledge image, heuristic query, knowledge summary.
+        - Evaluation data $\mathcal{D}_\mathcal{Q} = \{(i_q, x_q, y_q)\}$: query image, question, ground truth.
     - **Quality Assurance**: Popularity filtering → GPT-4o summarization → GPT-4o QA generation → Google Image retrieval → CLIP clustering for denoising → human review.
 
 2. **Knowledge Injection Method Evaluation**: Comprehensive coverage across three major categories
@@ -87,9 +87,9 @@ The contribution of this paper is a complete "benchmark + evaluation + path" fra
 
     - **When training data is available**: Replay—randomly sampling 10% of original training data and training jointly with new knowledge.
     - **When training data is unavailable**:
-      - EWC (Elastic Weight Consolidation): parameter regularization.
-      - LwF (Learning without Forgetting): knowledge distillation.
-      - MoELoRA: mixture-of-experts LoRA leveraging multiple experts for diverse knowledge acquisition.
+        - EWC (Elastic Weight Consolidation): parameter regularization.
+        - LwF (Learning without Forgetting): knowledge distillation.
+        - MoELoRA: mixture-of-experts LoRA leveraging multiple experts for diverse knowledge acquisition.
     - Overall ranking: Replay+LoRA (Rank 1) > MoELoRA (Rank 2) > Replay+Full-FT (Rank 3).
 
 ### Loss & Training

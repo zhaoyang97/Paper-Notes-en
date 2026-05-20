@@ -18,8 +18,8 @@ content_hash: 6487c121b7750821
 # Redundant Queries in DETR-Based 3D Detection: Unnecessary and Prunable
 
 **Conference**: AAAI 2026
-**arXiv**: [2412.02054](https://arxiv.org/abs/2412.02054)
-**Code**: To be confirmed
+**arXiv**: [2412.02054](https://arxiv.org/abs/2412.02054)  
+**Code**: To be confirmed  
 **Area**: 3D Vision / 3D Object Detection
 **Keywords**: 3D Object Detection, DETR, Query Pruning, Model Compression, Autonomous Driving
 

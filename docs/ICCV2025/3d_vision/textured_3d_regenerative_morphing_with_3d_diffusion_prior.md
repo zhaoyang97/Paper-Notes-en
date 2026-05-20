@@ -18,8 +18,8 @@ content_hash: 6b83b5b73a859d4c
 # Textured 3D Regenerative Morphing with 3D Diffusion Prior
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.14316](https://arxiv.org/abs/2502.14316)
-**Code**: None
+**arXiv**: [2502.14316](https://arxiv.org/abs/2502.14316)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 3D Morphing, Diffusion Models, Textured 3D Representation, Attention Fusion, Frequency-Domain Enhancement
 

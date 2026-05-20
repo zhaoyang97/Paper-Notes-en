@@ -18,8 +18,8 @@ content_hash: 5ccca7c9a3544245
 # Enhancing Multimodal Misinformation Detection by Replaying the Whole Story from Image Modality Perspective
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06284](https://arxiv.org/abs/2511.06284)
-**Code**: [https://github.com/wangbing1416/RETSIMD](https://github.com/wangbing1416/RETSIMD)
+**arXiv**: [2511.06284](https://arxiv.org/abs/2511.06284)  
+**Code**: [https://github.com/wangbing1416/RETSIMD](https://github.com/wangbing1416/RETSIMD)  
 **Area**: Image Generation / Multimodal
 **Keywords**: Multimodal misinformation detection, text-to-image generation, graph neural network, modality contribution, information gain
 

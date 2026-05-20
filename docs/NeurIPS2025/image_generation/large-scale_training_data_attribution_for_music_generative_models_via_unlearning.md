@@ -18,8 +18,8 @@ content_hash: 6541efd5d74a8986
 # Large-Scale Training Data Attribution for Music Generative Models via Unlearning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.18312](https://arxiv.org/abs/2506.18312)
-**Code**: N/A
+**arXiv**: [2506.18312](https://arxiv.org/abs/2506.18312)  
+**Code**: N/A  
 **Area**: Image Generation
 **Keywords**: Training Data Attribution, Machine Unlearning, Music Generation, Diffusion Models, Copyright Attribution
 

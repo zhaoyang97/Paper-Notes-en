@@ -18,8 +18,8 @@ content_hash: e422a8a24d3ac377
 # Efficient Vision-Language Reasoning via Adaptive Token Pruning
 
 **Conference**: NeurIPS 2025 (Workshop on VLM4RWD)
-**arXiv**: [2512.12701](https://arxiv.org/abs/2512.12701)
-**Code**: None
+**arXiv**: [2512.12701](https://arxiv.org/abs/2512.12701)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: visual token pruning, inference acceleration, multimodal efficiency, training-free compression, edge deployment
 

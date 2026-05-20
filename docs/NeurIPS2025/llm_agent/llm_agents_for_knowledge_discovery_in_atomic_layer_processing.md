@@ -17,8 +17,8 @@ content_hash: bbbbd98c60fdaa26
 # LLM Agents for Knowledge Discovery in Atomic Layer Processing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.26201](https://arxiv.org/abs/2509.26201)
-**Code**: [https://github.com/awwerbro/ALDReactor](https://github.com/awwerbro/ALDReactor)
+**arXiv**: [2509.26201](https://arxiv.org/abs/2509.26201)  
+**Code**: [https://github.com/awwerbro/ALDReactor](https://github.com/awwerbro/ALDReactor)  
 **Area**: LLM Agent
 **Keywords**: LLM agent, knowledge discovery, atomic layer processing, scientific exploration, tool-augmented reasoning
 

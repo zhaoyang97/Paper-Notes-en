@@ -18,8 +18,8 @@ content_hash: 12476475e583c8b7
 # RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.04356](https://arxiv.org/abs/2603.04356)
-**Code**: [https://robocasa.ai](https://robocasa.ai) (project page with open-source code and models)
+**arXiv**: [2603.04356](https://arxiv.org/abs/2603.04356)  
+**Code**: [https://robocasa.ai](https://robocasa.ai) (project page with open-source code and models)  
 **Area**: Robotics / Simulation Benchmarks / Generalist Robots
 **Keywords**: simulation platform, household mobile manipulation, multi-task learning, foundation model training, lifelong learning
 

@@ -18,8 +18,8 @@ content_hash: 2a8004b2643c3dec
 # π-Flow: Policy-Based Few-Step Generation via Imitation Distillation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.14974](https://arxiv.org/abs/2510.14974)
-**Code**: Available (see paper Comments)
+**arXiv**: [2510.14974](https://arxiv.org/abs/2510.14974)  
+**Code**: Available (see paper Comments)  
 **Area**: Image Generation / Diffusion Model Distillation
 **Keywords**: Flow matching distillation, few-step generation, policy learning, imitation distillation, DiT
 

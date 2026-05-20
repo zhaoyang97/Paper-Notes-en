@@ -17,8 +17,8 @@ content_hash: 98ba8bd36e079aff
 # Condition Matters in Full-head 3D GANs
 
 **Conference**: ICLR2026
-**arXiv**: [2602.07198](https://arxiv.org/abs/2602.07198)
-**Code**: [https://lhyfst.github.io/balancehead/](https://lhyfst.github.io/balancehead/)
+**arXiv**: [2602.07198](https://arxiv.org/abs/2602.07198)  
+**Code**: [https://lhyfst.github.io/balancehead/](https://lhyfst.github.io/balancehead/)  
 **Area**: Others
 **Keywords**: 3D-aware GAN, full-head generation, semantic conditioning, view conditioning, synthetic data
 

@@ -18,8 +18,8 @@ content_hash: 0f551faf34acfd3b
 # NanoVDR: Distilling a 2B Vision-Language Retriever into a 70M Text-Only Encoder for Visual Document Retrieval
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12824](https://arxiv.org/abs/2603.12824)
-**Code**: [HuggingFace Models](https://huggingface.co/nanovdr/NanoVDR-S-Multi)
+**arXiv**: [2603.12824](https://arxiv.org/abs/2603.12824)  
+**Code**: [HuggingFace Models](https://huggingface.co/nanovdr/NanoVDR-S-Multi)  
 **Area**: Information Retrieval
 **Keywords**: Visual Document Retrieval, Asymmetric Distillation, VLM Compression, Text-Only Query Encoding, Cross-Modal Transfer
 

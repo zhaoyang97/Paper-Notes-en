@@ -18,8 +18,8 @@ content_hash: ac8889a07afc8cdc
 # Embodied Navigation with Auxiliary Task of Action Description Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.21809](https://arxiv.org/abs/2510.21809)
-**Code**: None
+**arXiv**: [2510.21809](https://arxiv.org/abs/2510.21809)  
+**Code**: None  
 **Area**: Reinforcement Learning / Embodied Navigation
 **Keywords**: Embodied Navigation, Action Description, Auxiliary Task, Knowledge Distillation, Semantic Audio-Visual Navigation
 

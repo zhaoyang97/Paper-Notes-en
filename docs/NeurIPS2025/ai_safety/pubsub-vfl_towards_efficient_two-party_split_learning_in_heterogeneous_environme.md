@@ -18,8 +18,8 @@ content_hash: 016f816a25797e28
 # PubSub-VFL: Towards Efficient Two-Party Split Learning in Heterogeneous Environments via Publisher/Subscriber Architecture
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.12494](https://arxiv.org/abs/2510.12494)
-**Code**: Not available
+**arXiv**: [2510.12494](https://arxiv.org/abs/2510.12494)  
+**Code**: Not available  
 **Area**: AI Safety
 **Keywords**: Vertical Federated Learning, Split Learning, Pub/Sub Architecture, Asynchronous Training, Resource Heterogeneity
 

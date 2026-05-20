@@ -18,8 +18,8 @@ content_hash: 211bbd9d37bf9969
 # Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20614](https://arxiv.org/abs/2601.20614)
-**Code**: [GitHub](https://github.com/AMAP-ML/MathForge)
+**arXiv**: [2601.20614](https://arxiv.org/abs/2601.20614)  
+**Code**: [GitHub](https://github.com/AMAP-ML/MathForge)  
 **Area**: LLM Reasoning / Reinforcement Learning
 **Keywords**: GRPO, difficulty-aware, mathematical reasoning, RLVR, data augmentation
 

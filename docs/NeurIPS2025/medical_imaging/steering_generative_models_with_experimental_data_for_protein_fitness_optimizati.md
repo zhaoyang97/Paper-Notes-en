@@ -18,8 +18,8 @@ content_hash: 710d737ce7e8e6d6
 # Steering Generative Models with Experimental Data for Protein Fitness Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15093](https://arxiv.org/abs/2505.15093)
-**Code**: [Available](https://github.com/jsunn-y/SGPO)
+**arXiv**: [2505.15093](https://arxiv.org/abs/2505.15093)  
+**Code**: [Available](https://github.com/jsunn-y/SGPO)  
 **Area**: Medical Imaging / Computational Biology
 **Keywords**: protein fitness optimization, generative model steering, discrete diffusion models, protein language models, Bayesian optimization
 
@@ -153,9 +153,9 @@ SGPO operates in two stages:
 
 2. **Three plug-and-play steering strategies**
 
-   - **Classifier guidance (CG)**: Trains a time-dependent value function $p(y|x_t, t)$ and biases the rate matrix during the reverse discrete diffusion process. Requires a classifier trained at each noise level $t$.
-   - **Decoupled annealed posterior sampling (DAPS)**: A variable-splitting approach that decomposes posterior sampling into alternating denoising and data-consistency steps. Requires only a clean-data value function $p(y|x_0)$; simpler and generally most effective.
-   - **Noise-optimized sampling (NOS)**: Trains a value function in the continuous embedding space of discrete tokens and optimizes embeddings for higher fitness.
+    - **Classifier guidance (CG)**: Trains a time-dependent value function $p(y|x_t, t)$ and biases the rate matrix during the reverse discrete diffusion process. Requires a classifier trained at each noise level $t$.
+    - **Decoupled annealed posterior sampling (DAPS)**: A variable-splitting approach that decomposes posterior sampling into alternating denoising and data-consistency steps. Requires only a clean-data value function $p(y|x_0)$; simpler and generally most effective.
+    - **Noise-optimized sampling (NOS)**: Trains a value function in the continuous embedding space of discrete tokens and optimizes embeddings for higher fitness.
 
    Baseline: **DPO fine-tuning of ARLM**—direct preference optimization of language model weights.
 

@@ -18,8 +18,8 @@ content_hash: 7b5dffed42f894fa
 # Training-free Online Video Step Grounding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16989](https://arxiv.org/abs/2510.16989)
-**Code**: [GitHub](https://lucazanella.github.io/baglm/)
+**arXiv**: [2510.16989](https://arxiv.org/abs/2510.16989)  
+**Code**: [GitHub](https://lucazanella.github.io/baglm/)  
 **Area**: Multimodal VLM
 **Keywords**: Video step grounding, Bayesian filtering, LMM zero-shot, online inference, training-free
 

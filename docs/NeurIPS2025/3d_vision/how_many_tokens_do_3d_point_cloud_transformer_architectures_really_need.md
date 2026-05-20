@@ -18,8 +18,8 @@ content_hash: 78d42f2212149378
 # How Many Tokens Do 3D Point Cloud Transformer Architectures Really Need?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05449](https://arxiv.org/abs/2511.05449)
-**Code**: [https://gitmerge3d.github.io](https://gitmerge3d.github.io)
+**arXiv**: [2511.05449](https://arxiv.org/abs/2511.05449)  
+**Code**: [https://gitmerge3d.github.io](https://gitmerge3d.github.io)  
 **Area**: 3D Vision
 **Keywords**: Point Cloud Transformer, Token Redundancy, Token Merging, 3D Semantic Segmentation, Computational Efficiency
 

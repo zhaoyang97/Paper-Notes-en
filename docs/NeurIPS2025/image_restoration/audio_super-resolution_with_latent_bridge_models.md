@@ -18,8 +18,8 @@ content_hash: 5e3ab61e57f13f87
 # Audio Super-Resolution with Latent Bridge Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17609](https://arxiv.org/abs/2509.17609)
-**Code**: Available (Demo: [https://AudioLBM.github.io/](https://AudioLBM.github.io/))
+**arXiv**: [2509.17609](https://arxiv.org/abs/2509.17609)  
+**Code**: Available (Demo: [https://AudioLBM.github.io/](https://AudioLBM.github.io/))  
 **Area**: Audio Super-Resolution / Generative Models
 **Keywords**: Audio super-resolution, latent bridge model, frequency-aware training, cascaded super-resolution, any-to-192kHz
 

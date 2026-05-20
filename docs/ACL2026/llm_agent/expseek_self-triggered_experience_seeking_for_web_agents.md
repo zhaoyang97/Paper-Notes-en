@@ -18,8 +18,8 @@ content_hash: ecd003aed2699335
 # ExpSeek: Self-Triggered Experience Seeking for Web Agents
 
 **Conference**: ACL 2026
-**arXiv**: [2601.08605](https://arxiv.org/abs/2601.08605)
-**Code**: [https://github.com/WYRipple/ExpSeek](https://github.com/WYRipple/ExpSeek)
+**arXiv**: [2601.08605](https://arxiv.org/abs/2601.08605)  
+**Code**: [https://github.com/WYRipple/ExpSeek](https://github.com/WYRipple/ExpSeek)  
 **Area**: LLM Agent
 **Keywords**: Web Agent, experience intervention, entropy triggering, proactive guidance seeking, multi-turn interaction
 

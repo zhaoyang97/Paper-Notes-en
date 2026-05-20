@@ -18,8 +18,8 @@ content_hash: 2d47b29f3aa8a701
 # Towards Open Environments and Instructions: General Vision-Language Navigation via Fast-Slow Interactive Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.09111](https://arxiv.org/abs/2601.09111)
-**Code**: None
+**arXiv**: [2601.09111](https://arxiv.org/abs/2601.09111)  
+**Code**: None  
 **Area**: Robotics / Embodied Intelligence / Vision-Language Navigation
 **Keywords**: Vision-Language Navigation, fast-slow reasoning, experience repository, scene generalization, instruction style conversion
 

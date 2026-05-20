@@ -18,8 +18,8 @@ content_hash: 86ce22475e934b6a
 # Does Object Binding Naturally Emerge in Large Pretrained Vision Transformers?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24709](https://arxiv.org/abs/2510.24709)
-**Code**: [GitHub](https://github.com/liyihao0302/vit-object-binding)
+**arXiv**: [2510.24709](https://arxiv.org/abs/2510.24709)  
+**Code**: [GitHub](https://github.com/liyihao0302/vit-object-binding)  
 **Area**: LLM Pretraining
 **Keywords**: Object Binding, Vision Transformer, IsSameObject, Self-Supervised Learning, Probing Analysis
 

@@ -19,8 +19,8 @@ content_hash: e870a3bcac344119
 # ABRA: Teleporting Fine-Tuned Knowledge Across Domains for Open-Vocabulary Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12409](https://arxiv.org/abs/2603.12409)
-**Code**: None
+**arXiv**: [2603.12409](https://arxiv.org/abs/2603.12409)  
+**Code**: None  
 **Area**: Object Detection
 **Keywords**: Open-vocabulary object detection, domain adaptation, weight-space transfer, SVD fine-tuning, cross-domain knowledge transfer, Orthogonal Procrustes
 

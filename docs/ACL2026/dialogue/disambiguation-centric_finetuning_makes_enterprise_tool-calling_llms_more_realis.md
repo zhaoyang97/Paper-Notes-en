@@ -18,8 +18,8 @@ content_hash: ba04565a840dc889
 # Disambiguation-Centric Finetuning Makes Enterprise Tool-Calling LLMs More Realistic and Less Risky
 
 **Conference**: ACL 2026
-**arXiv**: [2507.03336](https://arxiv.org/abs/2507.03336)
-**Code**: [HuggingFace](https://huggingface.co/SAP/diaforge-utc-r-0725)
+**arXiv**: [2507.03336](https://arxiv.org/abs/2507.03336)  
+**Code**: [HuggingFace](https://huggingface.co/SAP/diaforge-utc-r-0725)  
 **Area**: Dialogue Systems / LLM Agent
 **Keywords**: tool calling, disambiguation, multi-turn dialogue, enterprise API, fine-tuning
 

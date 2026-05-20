@@ -20,8 +20,8 @@ content_hash: fad1205cbd9bdf8f
 # Towards Adversarial Robustness via Debiased High-Confidence Logit Alignment
 
 **Conference**: ICCV 2025
-**arXiv**: [2408.06079](https://arxiv.org/abs/2408.06079)
-**Code**: [KejiaZhang-Robust/DHAT](https://github.com/KejiaZhang-Robust/DHAT)
+**arXiv**: [2408.06079](https://arxiv.org/abs/2408.06079)  
+**Code**: [KejiaZhang-Robust/DHAT](https://github.com/KejiaZhang-Robust/DHAT)  
 **Authors**: Kejia Zhang, Juanjuan Weng, Shaozi Li, Zhiming Luo (Xiamen University, Jinan University)
 **Area**: AI Safety
 **Keywords**: adversarial training, adversarial robustness, inverse adversarial attack, spurious correlations, logit alignment, debiasing, attention shift

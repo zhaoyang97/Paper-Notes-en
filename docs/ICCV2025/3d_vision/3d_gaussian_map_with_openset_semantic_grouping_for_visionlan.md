@@ -18,9 +18,9 @@ content_hash: a7b4482094daa4ff
 # 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation
 
 **Conference**: ICCV 2025
-**arXiv**: Preprint not available
+**arXiv**: Preprint not available  
 **CVF**: [Paper PDF](https://openaccess.thecvf.com/content/ICCV2025/papers/Gao_3D_Gaussian_Map_with_Open-Set_Semantic_Grouping_for_Vision-Language_Navigation_ICCV_2025_paper.pdf)
-**Code**: [GitHub](https://github.com/Gaozzzz/3D-Gaussian-Map-VLN) (not yet released; README only)
+**Code**: [GitHub](https://github.com/Gaozzzz/3D-Gaussian-Map-VLN) (not yet released; README only)  
 **Authors**: Jianzhe Gao, Rui Liu, Wenguan Wang (Zhejiang University)
 **Area**: 3D Vision / Embodied Navigation
 **Keywords**: 3D Gaussian Splatting, Vision-Language Navigation, Open-Vocabulary Semantic Grouping, Multi-Level Action Prediction, Scene Representation
@@ -61,20 +61,20 @@ The proposed framework comprises three core components:
 ### Key Designs
 
 1. **3D Gaussian Map**:
-   - Constructs a 3D Gaussian field from multi-view RGB observations using 3D Gaussian Splatting.
-   - Each Gaussian carries both geometric attributes (position $\mu$, covariance $\Sigma$, opacity $\alpha$) and a semantic feature vector.
-   - The map is incrementally built and updated online as the agent navigates.
+    - Constructs a 3D Gaussian field from multi-view RGB observations using 3D Gaussian Splatting.
+    - Each Gaussian carries both geometric attributes (position $\mu$, covariance $\Sigma$, opacity $\alpha$) and a semantic feature vector.
+    - The map is incrementally built and updated online as the agent navigates.
 
 2. **Open-Set Semantic Grouping**:
-   - Extracts open-vocabulary semantic features using vision-language models (e.g., CLIP, OpenSeg).
-   - Incorporates semantic features into the 3D Gaussian representation.
-   - Groups semantically similar Gaussians into the same object or region via clustering/grouping mechanisms.
-   - Supports recognition of unseen object categories, enhancing generalization.
+    - Extracts open-vocabulary semantic features using vision-language models (e.g., CLIP, OpenSeg).
+    - Incorporates semantic features into the 3D Gaussian representation.
+    - Groups semantically similar Gaussians into the same object or region via clustering/grouping mechanisms.
+    - Supports recognition of unseen object categories, enhancing generalization.
 
 3. **Multi-Level Action Prediction**:
-   - Extracts features at multiple spatial granularities: global scene-level, region/object-level, and local detail-level.
-   - Performs cross-attention reasoning by combining language instructions with multi-granularity 3D semantic features.
-   - Predicts the next navigation action (direction selection and stop decision).
+    - Extracts features at multiple spatial granularities: global scene-level, region/object-level, and local detail-level.
+    - Performs cross-attention reasoning by combining language instructions with multi-granularity 3D semantic features.
+    - Predicts the next navigation action (direction selection and stop decision).
 
 ### Loss & Training
 

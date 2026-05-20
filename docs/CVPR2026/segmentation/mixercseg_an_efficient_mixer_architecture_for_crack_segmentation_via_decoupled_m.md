@@ -18,8 +18,8 @@ content_hash: 77186ae5a2e8f751
 # MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01361](https://arxiv.org/abs/2603.01361)
-**Code**: [GitHub](https://github.com/spiderforest/MixerCSeg)
+**arXiv**: [2603.01361](https://arxiv.org/abs/2603.01361)  
+**Code**: [GitHub](https://github.com/spiderforest/MixerCSeg)  
 **Area**: Segmentation / Crack Segmentation
 **Keywords**: crack segmentation, hybrid architecture, Mamba attention decoupling, direction-guided edge convolution, lightweight and efficient
 

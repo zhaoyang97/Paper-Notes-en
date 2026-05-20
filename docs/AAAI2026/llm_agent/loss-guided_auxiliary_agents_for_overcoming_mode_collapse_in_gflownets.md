@@ -18,8 +18,8 @@ content_hash: a158ecdae2c7c74f
 # Loss-Guided Auxiliary Agents for Overcoming Mode Collapse in GFlowNets
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.15251](https://arxiv.org/abs/2505.15251)
-**Code**: Available
+**arXiv**: [2505.15251](https://arxiv.org/abs/2505.15251)  
+**Code**: Available  
 **Area**: Generative Flow Networks / Exploration
 **Keywords**: GFlowNet, mode collapse, auxiliary agent, loss-guided, diversity sampling
 

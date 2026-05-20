@@ -18,8 +18,8 @@ content_hash: a8c32a890b83e27a
 # Compress, Gather, and Recompute: REFORMing Long-Context Processing in Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01215](https://arxiv.org/abs/2506.01215)
-**Code**: To be confirmed
+**arXiv**: [2506.01215](https://arxiv.org/abs/2506.01215)  
+**Code**: To be confirmed  
 **Area**: Model Compression
 **Keywords**: KV cache compression, long-context inference, token retrieval, early exit, on-demand recomputation
 

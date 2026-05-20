@@ -18,8 +18,8 @@ content_hash: 8eeb51154f777976
 # Matchings Under Biased and Correlated Evaluations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23628](https://arxiv.org/abs/2510.23628)
-**Code**: None
+**arXiv**: [2510.23628](https://arxiv.org/abs/2510.23628)  
+**Code**: None  
 **Area**: Algorithmic Fairness / Matching Theory
 **Keywords**: stable matching, bias, correlation, fairness, representation ratio
 

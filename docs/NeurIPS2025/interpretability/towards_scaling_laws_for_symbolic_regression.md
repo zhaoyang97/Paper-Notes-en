@@ -18,8 +18,8 @@ content_hash: 68ce99f6416e41a8
 # Towards Scaling Laws for Symbolic Regression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26064](https://arxiv.org/abs/2510.26064)
-**Code**: None
+**arXiv**: [2510.26064](https://arxiv.org/abs/2510.26064)  
+**Code**: None  
 **Area**: Interpretability / Symbolic Regression
 **Keywords**: Symbolic Regression, Scaling Laws, Transformer, Power Law, Compute-Optimal
 
@@ -48,20 +48,20 @@ An end-to-end encoder-decoder Transformer architecture is adopted. The input is 
 ### Key Designs
 
 1. **Two-step data generation**:
-   - Step 1: Starting from variables $\{x_1, x_2\}$, recursively apply unary operators (exp, sin, neg, sqrt) and binary operators (+, −, ·, ÷) to generate all expression trees with depth ≤ 3; apply SymPy for canonicalization and deduplication, yielding $|E| = 100{,}000$ base expressions.
-   - Step 2: For each base expression, sample $k = 3{,}600$ (expression, dataset) pairs — randomly insert integer constants (range −9 to 9, probability $p = 0.2$) and sample 64 data points from a Gaussian mixture distribution.
-   - Advantage: Avoids over-sampling bias present in traditional approaches, yielding cleaner training data.
+    - Step 1: Starting from variables $\{x_1, x_2\}$, recursively apply unary operators (exp, sin, neg, sqrt) and binary operators (+, −, ·, ÷) to generate all expression trees with depth ≤ 3; apply SymPy for canonicalization and deduplication, yielding $|E| = 100{,}000$ base expressions.
+    - Step 2: For each base expression, sample $k = 3{,}600$ (expression, dataset) pairs — randomly insert integer constants (range −9 to 9, probability $p = 0.2$) and sample 64 data points from a Gaussian mixture distribution.
+    - Advantage: Avoids over-sampling bias present in traditional approaches, yielding cleaner training data.
 
 2. **Table-aware encoder architecture**:
-   - Traditional methods merge each input point into a single embedding; this work generates independent embeddings for each **cell** in the table.
-   - Mantissa and exponent are each up-projected to the embedding dimension and summed.
-   - Inspired by tabular foundation models (TabPFN, etc.), each layer performs both **row attention** (across variables) and **column attention** (across data points).
-   - The decoder cross-attends only to the updated embeddings of target cells.
+    - Traditional methods merge each input point into a single embedding; this work generates independent embeddings for each **cell** in the table.
+    - Mantissa and exponent are each up-projected to the embedding dimension and summed.
+    - Inspired by tabular foundation models (TabPFN, etc.), each layer performs both **row attention** (across variables) and **column attention** (across data points).
+    - The decoder cross-attends only to the updated embeddings of target cells.
 
 3. **End-to-end training pipeline**:
-   - Expressions including constants are predicted directly, without BFGS post-processing.
-   - Target expressions are represented as LaTeX strings, with constants tokenized digit by digit.
-   - All model scales share the same data generation and evaluation protocol, ensuring fair scaling analysis.
+    - Expressions including constants are predicted directly, without BFGS post-processing.
+    - Target expressions are represented as LaTeX strings, with constants tokenized digit by digit.
+    - All model scales share the same data generation and evaluation protocol, ensuring fair scaling analysis.
 
 ### Loss & Training
 
@@ -121,9 +121,9 @@ Best performance of each model at maximum compute budget:
 - **Limited compute range**: Three orders of magnitude provide limited reliability for extrapolation predictions.
 - **No comparison with existing SR methods**: The focus is on scaling insights without verifying whether the approach surpasses GP or other deep SR methods.
 - **Directions for improvement**:
-  - Extend to more variables, floating-point constants, and more complex operator sets.
-  - Verify whether end-to-end SR + improved data generation + scaling comprehensively outperforms alternative methods.
-  - Train at larger scale (> 100M parameters) to validate extrapolation predictions.
+    - Extend to more variables, floating-point constants, and more complex operator sets.
+    - Verify whether end-to-end SR + improved data generation + scaling comprehensively outperforms alternative methods.
+    - Train at larger scale (> 100M parameters) to validate extrapolation predictions.
 
 ## Related Work & Insights
 

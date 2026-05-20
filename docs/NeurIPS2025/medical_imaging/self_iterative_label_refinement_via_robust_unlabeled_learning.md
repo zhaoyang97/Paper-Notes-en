@@ -18,8 +18,8 @@ content_hash: fa773208b6b0ebe5
 # Self Iterative Label Refinement via Robust Unlabeled Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.12565](https://arxiv.org/abs/2502.12565)
-**Code**: [GitHub](https://github.com/HikaruAsano/self-iterative-label-refinement)
+**arXiv**: [2502.12565](https://arxiv.org/abs/2502.12565)  
+**Code**: [GitHub](https://github.com/HikaruAsano/self-iterative-label-refinement)  
 **Area**: Medical Imaging
 **Keywords**: self-refinement, pseudo-labels, UU learning, LLM alignment, weakly supervised classification
 

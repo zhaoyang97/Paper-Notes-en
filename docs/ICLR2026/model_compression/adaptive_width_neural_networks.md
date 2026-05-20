@@ -18,8 +18,8 @@ content_hash: 5fa7bfe2776aa810
 # Adaptive Width Neural Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2501.15889](https://arxiv.org/abs/2501.15889)
-**Code**: [https://github.com/nec-research/Adaptive-Width-Neural-Networks](https://github.com/nec-research/Adaptive-Width-Neural-Networks)
+**arXiv**: [2501.15889](https://arxiv.org/abs/2501.15889)  
+**Code**: [https://github.com/nec-research/Adaptive-Width-Neural-Networks](https://github.com/nec-research/Adaptive-Width-Neural-Networks)  
 **Area**: Model Compression / Neural Architecture Learning
 **Keywords**: adaptive width, variational inference, neuron importance ordering, network compression, hyperparameter learning
 

@@ -18,8 +18,8 @@ content_hash: a59a96f12afbf931
 # One-Shot Knowledge Transfer for Scalable Person Re-Identification
 
 **Conference**: ICCV 2025
-**arXiv**: [2511.06016](https://arxiv.org/abs/2511.06016)
-**Code**: N/A
+**arXiv**: [2511.06016](https://arxiv.org/abs/2511.06016)  
+**Code**: N/A  
 **Area**: Person Re-Identification / Model Compression
 **Keywords**: Knowledge Transfer, Weight Chain, Person Re-Identification, Model Compression, One-Shot Computation
 

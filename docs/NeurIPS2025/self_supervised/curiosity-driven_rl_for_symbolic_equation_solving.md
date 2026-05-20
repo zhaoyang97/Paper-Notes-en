@@ -18,8 +18,8 @@ content_hash: a9ccefc1854d8c2c
 # Curiosity-driven RL for Symbolic Equation Solving
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17022](https://arxiv.org/abs/2510.17022)
-**Code**: None
+**arXiv**: [2510.17022](https://arxiv.org/abs/2510.17022)  
+**Code**: None  
 **Area**: Self-Supervised
 **Keywords**: Reinforcement Learning, Symbolic Mathematics, Curiosity-driven Exploration, PPO, Expression Tree
 

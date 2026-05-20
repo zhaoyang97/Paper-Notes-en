@@ -18,8 +18,8 @@ content_hash: f47d163fa1d84da5
 # Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24963](https://arxiv.org/abs/2510.24963)
-**Code**: [https://github.com/jmichaelov/lm-behavioral-phases](https://github.com/jmichaelov/lm-behavioral-phases)
+**arXiv**: [2510.24963](https://arxiv.org/abs/2510.24963)  
+**Code**: [https://github.com/jmichaelov/lm-behavioral-phases](https://github.com/jmichaelov/lm-behavioral-phases)  
 **Area**: LLM Pre-training
 **Keywords**: language model training dynamics, n-gram behavioral phases, cross-architecture consistency, pre-training analysis, semantic similarity
 
@@ -51,21 +51,21 @@ Two complementary experiments are conducted. **Experiment 1 (Correlation Analysi
 
 1. **Parc Model Suite (Parallel Multi-Architecture Training)**
 
-   - **Function**: Enables comparison of learning behavior across architectures under strictly controlled conditions.
-   - **Mechanism**: Three architectures are trained in parallel using identical random seeds (×6), identical OpenWebText training data, and an identical tokenizer: Parc-Pythia (160M Transformer), Parc-Mamba (130M SSM), and Parc-RWKV (169M RNN). Each seed is trained for 4,000 steps (batch size 512, 1024-token sequences), with 73 checkpoints saved. Crucially, all three architectures observe exactly the same training sequences at every step.
-   - **Design Motivation**: Eliminates confounds from data ordering and initialization, making architecture the sole variable. To the authors' knowledge, this constitutes the first publicly released Mamba and RWKV models with intermediate checkpoints.
+    - **Function**: Enables comparison of learning behavior across architectures under strictly controlled conditions.
+    - **Mechanism**: Three architectures are trained in parallel using identical random seeds (×6), identical OpenWebText training data, and an identical tokenizer: Parc-Pythia (160M Transformer), Parc-Mamba (130M SSM), and Parc-RWKV (169M RNN). Each seed is trained for 4,000 steps (batch size 512, 1024-token sequences), with 73 checkpoints saved. Crucially, all three architectures observe exactly the same training sequences at every step.
+    - **Design Motivation**: Eliminates confounds from data ordering and initialization, making architecture the sole variable. To the authors' knowledge, this constitutes the first publicly released Mamba and RWKV models with intermediate checkpoints.
 
 2. **NaWoCo Decontaminated Evaluation Dataset**
 
-   - **Function**: Provides natural language evaluation samples free of training data contamination.
-   - **Mechanism**: Word–context pairs are sampled from the FineWeb corpus under strict filtering criteria: target words must be a single token shared across all model vocabularies, appear after the 5th word of a sentence, contain no capitalized words (except sentence-initial), have toxicity probability < 0.1, and—critically—be verified via infini-gram counts as absent from any test model's training data. The final dataset comprises 78K training, 39K validation, and 41K test samples.
-   - **Design Motivation**: Prevents spurious correlations from training data contamination and ensures that target words are single tokens under different tokenizers, enabling fair cross-model comparison.
+    - **Function**: Provides natural language evaluation samples free of training data contamination.
+    - **Mechanism**: Word–context pairs are sampled from the FineWeb corpus under strict filtering criteria: target words must be a single token shared across all model vocabularies, appear after the 5th word of a sentence, contain no capitalized words (except sentence-initial), have toxicity probability < 0.1, and—critically—be verified via infini-gram counts as absent from any test model's training data. The final dataset comprises 78K training, 39K validation, and 41K test samples.
+    - **Design Motivation**: Prevents spurious correlations from training data contamination and ensures that target words are single tokens under different tokenizers, enabling fair cross-model comparison.
 
 3. **N-gram Probability Computation (infini-gram + Stupid Backoff)**
 
-   - **Function**: Computes n-gram probabilities accurately over large corpora.
-   - **Mechanism**: The infini-gram toolkit is used to build indices over The Pile (Pythia's training data) and OpenWebText (other models' training data), retrieving exact sequence counts with Stupid Backoff smoothing. All n-grams are computed at the word level rather than the token level to avoid tokenizer discrepancies.
-   - **Design Motivation**: Exact counting is preferable to sampling-based estimation. Robustness is verified via matched/unmatched training corpus comparisons.
+    - **Function**: Computes n-gram probabilities accurately over large corpora.
+    - **Mechanism**: The infini-gram toolkit is used to build indices over The Pile (Pythia's training data) and OpenWebText (other models' training data), retrieving exact sequence counts with Stupid Backoff smoothing. All n-grams are computed at the word level rather than the token level to avoid tokenizer discrepancies.
+    - **Design Motivation**: Exact counting is preferable to sampling-based estimation. Robustness is verified via matched/unmatched training corpus comparisons.
 
 ### Loss & Training
 

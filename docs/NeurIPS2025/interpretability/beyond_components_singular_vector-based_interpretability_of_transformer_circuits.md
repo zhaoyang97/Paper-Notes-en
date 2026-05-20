@@ -19,8 +19,8 @@ content_hash: efd92117bb27567e
 # Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.20273](https://arxiv.org/abs/2511.20273)
-**Code**: [GitHub](https://github.com/Exploration-Lab/Beyond-Components)
+**arXiv**: [2511.20273](https://arxiv.org/abs/2511.20273)  
+**Code**: [GitHub](https://github.com/Exploration-Lab/Beyond-Components)  
 **Area**: LLM Interpretability / Transformer Circuit Analysis
 **Keywords**: SVD interpretability, transformer circuits, singular vectors, mechanistic interpretability, directional masking
 

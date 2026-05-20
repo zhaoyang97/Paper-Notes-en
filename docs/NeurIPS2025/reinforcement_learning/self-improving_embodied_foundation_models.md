@@ -18,8 +18,8 @@ content_hash: 8019b99f80928bb6
 # Self-Improving Embodied Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15155](https://arxiv.org/abs/2509.15155)
-**Code**: Not available
+**arXiv**: [2509.15155](https://arxiv.org/abs/2509.15155)  
+**Code**: Not available  
 **Area**: Reinforcement Learning
 **Keywords**: Embodied foundation models, self-improvement, RL post-training, steps-to-go prediction, robot manipulation
 

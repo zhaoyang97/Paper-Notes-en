@@ -17,8 +17,8 @@ content_hash: 14f45865fba6bebe
 # A Hyperdimensional One Place Signature to Represent Them All: Stackable Descriptors For Visual Place Recognition
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.06153](https://arxiv.org/abs/2412.06153)
-**Code**: [GitHub](https://github.com/CMalone-Jupiter/HOPS)
+**arXiv**: [2412.06153](https://arxiv.org/abs/2412.06153)  
+**Code**: [GitHub](https://github.com/CMalone-Jupiter/HOPS)  
 **Area**: Visual Localization & Place Recognition
 **Keywords**: Visual Place Recognition, Hyperdimensional Computing, Descriptor Fusion, Multi-Reference Traversal, Appearance Invariance
 

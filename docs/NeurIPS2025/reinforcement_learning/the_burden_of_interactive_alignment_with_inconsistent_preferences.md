@@ -18,9 +18,9 @@ content_hash: 2a8f62bb325b027b
 # The Burden of Interactive Alignment with Inconsistent Preferences
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16368](https://arxiv.org/abs/2510.16368)
+**arXiv**: [2510.16368](https://arxiv.org/abs/2510.16368)  
 **Authors**: Ali Shirali (UC Berkeley)
-**Code**: None
+**Code**: None  
 **Area**: Reinforcement Learning / Alignment Theory / Game Theory
 **Keywords**: interactive alignment, inconsistent preferences, Stackelberg game, engagement optimization, costly signaling
 

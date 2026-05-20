@@ -18,8 +18,8 @@ content_hash: beb053aec6b898b7
 # MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs
 
 **Conference**: ACL 2026
-**arXiv**: [2604.16929](https://arxiv.org/abs/2604.16929)
-**Code**: [GitHub](https://github.com/CAS-SIAT-XinHai/MeasHalu)
+**arXiv**: [2604.16929](https://arxiv.org/abs/2604.16929)  
+**Code**: [GitHub](https://github.com/CAS-SIAT-XinHai/MeasHalu)  
 **Area**: LLM Safety
 **Keywords**: Scientific measurement hallucination, information extraction, reasoning-enhanced fine-tuning, GRPO reinforcement learning, MeasEval
 

@@ -18,8 +18,8 @@ content_hash: a54cd931b221df05
 # VLRMBench: A Comprehensive and Challenging Benchmark for Vision-Language Reward Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07478](https://arxiv.org/abs/2503.07478)
-**Code**: [https://github.com/JCruan519/VLRMBench](https://github.com/JCruan519/VLRMBench)
+**arXiv**: [2503.07478](https://arxiv.org/abs/2503.07478)  
+**Code**: [https://github.com/JCruan519/VLRMBench](https://github.com/JCruan519/VLRMBench)  
 **Area**: Time Series / Multimodal Evaluation
 **Keywords**: reward model, vision-language understanding, benchmark, process reasoning, multimodal evaluation
 

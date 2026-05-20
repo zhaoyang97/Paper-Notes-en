@@ -18,8 +18,8 @@ content_hash: c6caf255fa4d3ba1
 # Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11842](https://arxiv.org/abs/2505.11842)
-**Code**: [https://liuxuannan.github.io/Video-SafetyBench.github.io/](https://liuxuannan.github.io/Video-SafetyBench.github.io/)
+**arXiv**: [2505.11842](https://arxiv.org/abs/2505.11842)  
+**Code**: [https://liuxuannan.github.io/Video-SafetyBench.github.io/](https://liuxuannan.github.io/Video-SafetyBench.github.io/)  
 **Area**: Multimodal / VLM Safety
 **Keywords**: Video Safety, LVLM Evaluation, Attack Success Rate, Multimodal Safety Benchmark, RJScore
 

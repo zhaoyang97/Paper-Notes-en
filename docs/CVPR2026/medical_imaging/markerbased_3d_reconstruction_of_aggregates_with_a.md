@@ -19,7 +19,7 @@ content_hash: 0c585cc05eb75a44
 # Marker-Based 3D Reconstruction of Aggregates with a Comparative Analysis of 2D and 3D Morphologies
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12667](https://arxiv.org/abs/2603.12667)
+**arXiv**: [2603.12667](https://arxiv.org/abs/2603.12667)  
 **Authors**: Haohang Huang, Jiayi Luo, Issam Qamhia, Erol Tutumluer, John M. Hart, Andrew J. Stolba
 **Area**: Medical Image
 **Keywords**: 3D reconstruction, photogrammetry, aggregate morphology, point cloud, marker-based, 2D-3D comparison

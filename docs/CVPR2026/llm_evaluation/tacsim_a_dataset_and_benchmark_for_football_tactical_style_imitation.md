@@ -18,8 +18,8 @@ content_hash: 8c4434d803192491
 # TacSIm: A Dataset and Benchmark for Football Tactical Style Imitation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25199](https://arxiv.org/abs/2603.25199)
-**Code**: TacSIm (publicly available)
+**arXiv**: [2603.25199](https://arxiv.org/abs/2603.25199)  
+**Code**: TacSIm (publicly available)  
 **Area**: Sports Analytics / Multi-Agent Imitation Learning
 **Keywords**: Football tactical imitation, multi-agent learning, trajectory reconstruction, tactical evaluation, virtual simulation
 

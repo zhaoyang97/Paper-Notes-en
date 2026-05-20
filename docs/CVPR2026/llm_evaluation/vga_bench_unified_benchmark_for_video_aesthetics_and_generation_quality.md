@@ -18,8 +18,8 @@ content_hash: 5fc62552e36a3180
 # VGA-Bench: A Unified Benchmark for Video Aesthetics and Generation Quality Evaluation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.10127](https://arxiv.org/abs/2604.10127)
-**Code**: Available
+**arXiv**: [2604.10127](https://arxiv.org/abs/2604.10127)  
+**Code**: Available  
 **Area**: Image/Video Generation Evaluation
 **Keywords**: Video quality assessment, aesthetic evaluation, AIGC evaluation, multi-task evaluator, video generation
 

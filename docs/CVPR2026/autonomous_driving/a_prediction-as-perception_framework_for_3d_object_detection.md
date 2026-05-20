@@ -18,8 +18,8 @@ content_hash: a095023eb82b42fe
 # A Prediction-as-Perception Framework for 3D Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12599](https://arxiv.org/abs/2603.12599)
-**Code**: To be confirmed
+**arXiv**: [2603.12599](https://arxiv.org/abs/2603.12599)  
+**Code**: To be confirmed  
 **Area**: Autonomous Driving
 **Keywords**: 3D Perception, Object Detection, Prediction-as-Perception, Autonomous Driving, nuScenes, End-to-End
 

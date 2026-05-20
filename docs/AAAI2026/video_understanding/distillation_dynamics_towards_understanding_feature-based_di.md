@@ -18,8 +18,8 @@ content_hash: 66155f8d8e8c9b95
 # Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06848](https://arxiv.org/abs/2511.06848)
-**Code**: [GitHub](https://github.com/thy960112/Distillation-Dynamics)
+**arXiv**: [2511.06848](https://arxiv.org/abs/2511.06848)  
+**Code**: [GitHub](https://github.com/thy960112/Distillation-Dynamics)  
 **Area**: Video Understanding
 **Keywords**: Knowledge Distillation, Vision Transformer, Spectral Analysis, Information Bottleneck, Negative Transfer
 

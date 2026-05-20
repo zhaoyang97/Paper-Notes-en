@@ -17,8 +17,8 @@ content_hash: 852517afcea32df6
 # AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.12137](https://arxiv.org/abs/2507.12137)
-**Code**: [Project Page](https://jiaweixu8.github.io/AD-GS-web/)
+**arXiv**: [2507.12137](https://arxiv.org/abs/2507.12137)  
+**Code**: [Project Page](https://jiaweixu8.github.io/AD-GS-web/)  
 **Area**: Autonomous Driving Scene Reconstruction
 **Keywords**: Gaussian Splatting, Autonomous Driving, Self-Supervised Learning, B-Spline Motion Modeling, Dynamic Scene Rendering
 

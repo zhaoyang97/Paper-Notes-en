@@ -18,8 +18,8 @@ content_hash: 1c246b4654d91d66
 # Breaking Scale Anchoring: Frequency Representation Learning for Accurate High-Resolution Inference from Low-Resolution Training
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.05132](https://arxiv.org/abs/2512.05132)
-**Code**: To be confirmed
+**arXiv**: [2512.05132](https://arxiv.org/abs/2512.05132)  
+**Code**: To be confirmed  
 **Area**: Object Detection (Spatiotemporal Forecasting / Zero-Shot Super-Resolution)
 **Keywords**: scale anchoring, frequency representation, zero-shot super-resolution, spatiotemporal forecasting, Nyquist frequency
 

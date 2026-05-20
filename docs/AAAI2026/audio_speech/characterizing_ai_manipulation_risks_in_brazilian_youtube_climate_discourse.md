@@ -19,8 +19,8 @@ content_hash: 2987a7a2ac97a2e8
 # Characterizing AI Manipulation Risks in Brazilian YouTube Climate Discourse
 
 **Conference**: AAAI2026
-**arXiv**: [2511.06091](https://arxiv.org/abs/2511.06091)
-**Code**: To be confirmed
+**arXiv**: [2511.06091](https://arxiv.org/abs/2511.06091)  
+**Code**: To be confirmed  
 **Area**: Audio & Speech
 **Keywords**: Climate Discourse, Persuasion, Theory of Mind, YouTube, LLM-generated Manipulation, Social Media Analysis
 

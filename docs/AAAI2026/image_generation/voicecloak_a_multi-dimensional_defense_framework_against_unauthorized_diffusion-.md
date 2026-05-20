@@ -18,8 +18,8 @@ content_hash: 96962ca9ddccdd5d
 # VoiceCloak: A Multi-Dimensional Defense Framework against Unauthorized Diffusion-based Voice Cloning
 
 **Conference**: AAAI2026
-**arXiv**: [2505.12332](https://arxiv.org/abs/2505.12332)
-**Code**: [Demo](https://voice-cloak.github.io/VoiceCloak/)
+**arXiv**: [2505.12332](https://arxiv.org/abs/2505.12332)  
+**Code**: [Demo](https://voice-cloak.github.io/VoiceCloak/)  
 **Area**: Image Generation
 **Keywords**: voice cloning defense, adversarial perturbation, diffusion model, speaker identity, proactive defense
 

@@ -18,8 +18,8 @@ content_hash: 34326b03633f333f
 # Mind the Cost of Scaffold! Benign Clients May Even Become Accomplices of Backdoor Attack
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.16167](https://arxiv.org/abs/2411.16167)
-**Code**: None
+**arXiv**: [2411.16167](https://arxiv.org/abs/2411.16167)  
+**Code**: None  
 **Area**: AI Security
 **Keywords**: federated learning, backdoor attack, Scaffold, control variate, Non-IID
 

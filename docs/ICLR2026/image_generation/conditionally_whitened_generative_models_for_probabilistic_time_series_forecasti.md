@@ -18,8 +18,8 @@ content_hash: b30b69395ede7e3e
 # Conditionally Whitened Generative Models for Probabilistic Time Series Forecasting
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.20928](https://arxiv.org/abs/2509.20928)
-**Code**: To be confirmed
+**arXiv**: [2509.20928](https://arxiv.org/abs/2509.20928)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: probabilistic forecasting, diffusion model, flow matching, conditional whitening, covariance estimation
 

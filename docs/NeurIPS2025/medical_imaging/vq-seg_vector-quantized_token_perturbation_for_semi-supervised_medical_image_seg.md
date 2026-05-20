@@ -18,8 +18,8 @@ content_hash: f411ad4f9205e894
 # VQ-Seg: Vector-Quantized Token Perturbation for Semi-Supervised Medical Image Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.10124](https://arxiv.org/abs/2601.10124)
-**Code**: [GitHub](https://github.com/script-Yang/VQ-Seg)
+**arXiv**: [2601.10124](https://arxiv.org/abs/2601.10124)  
+**Code**: [GitHub](https://github.com/script-Yang/VQ-Seg)  
 **Area**: Medical Imaging
 **Keywords**: Semi-supervised segmentation, vector quantization, feature perturbation, consistency learning, medical image segmentation
 

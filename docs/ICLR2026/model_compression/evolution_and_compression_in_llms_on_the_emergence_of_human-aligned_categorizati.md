@@ -18,8 +18,8 @@ content_hash: bec3533cc3aef582
 # Evolution and compression in LLMs: On the emergence of human-aligned categorization
 
 **Conference**: ICLR2026
-**arXiv**: [2509.08093](https://arxiv.org/abs/2509.08093)
-**Code**: [infocoglab/evolution-compression-llms](https://infocoglab.github.io/evolution-compression-llms)
+**arXiv**: [2509.08093](https://arxiv.org/abs/2509.08093)  
+**Code**: [infocoglab/evolution-compression-llms](https://infocoglab.github.io/evolution-compression-llms)  
 **Area**: Model Compression
 **Keywords**: information bottleneck, color naming, iterated learning, semantic categories, LLM alignment
 

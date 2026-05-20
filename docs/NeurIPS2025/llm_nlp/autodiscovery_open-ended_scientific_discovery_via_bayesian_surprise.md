@@ -18,8 +18,8 @@ content_hash: fc1ce7c1fe924ffe
 # AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.00310](https://arxiv.org/abs/2507.00310)
-**Code**: [https://github.com/allenai/autodiscovery](https://github.com/allenai/autodiscovery)
+**arXiv**: [2507.00310](https://arxiv.org/abs/2507.00310)  
+**Code**: [https://github.com/allenai/autodiscovery](https://github.com/allenai/autodiscovery)  
 **Area**: Automated Scientific Discovery
 **Keywords**: Bayesian Surprise, Open-ended Discovery, MCTS, Hypothesis Generation, LLM Agent
 

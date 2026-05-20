@@ -17,8 +17,8 @@ content_hash: 1b84b99ab0449211
 # Jigsaw++: Imagining Complete Shape Priors for Object Reassembly
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.11816](https://arxiv.org/abs/2410.11816)
-**Code**: [GitHub](https://github.com/Jiaxin-Lu/Jigsaw-PlusPlus)
+**arXiv**: [2410.11816](https://arxiv.org/abs/2410.11816)  
+**Code**: [GitHub](https://github.com/Jiaxin-Lu/Jigsaw-PlusPlus)  
 **Area**: Other
 **Keywords**: object reassembly, 3D shape completion, point cloud generation, Rectified Flow, shape prior
 

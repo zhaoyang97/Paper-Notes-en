@@ -18,8 +18,8 @@ content_hash: eb7a2da2cd19b847
 # Entropy-Preserving Reinforcement Learning (REPO / ADAPO)
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.11682](https://arxiv.org/abs/2603.11682)
-**Code**: None
+**arXiv**: [2603.11682](https://arxiv.org/abs/2603.11682)  
+**Code**: None  
 **Area**: Reinforcement Learning / LLM Training
 **Keywords**: Entropy preservation, policy gradient, LLM post-training, GRPO, exploration
 

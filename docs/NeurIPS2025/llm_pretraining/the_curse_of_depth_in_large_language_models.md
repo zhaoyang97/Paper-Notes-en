@@ -18,8 +18,8 @@ content_hash: 6909a690b0c9a163
 # The Curse of Depth in Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.05795](https://arxiv.org/abs/2502.05795)
-**Code**: [https://github.com/wenfang-sun/LayerNorm-Scaling](https://github.com/wenfang-sun/LayerNorm-Scaling)
+**arXiv**: [2502.05795](https://arxiv.org/abs/2502.05795)  
+**Code**: [https://github.com/wenfang-sun/LayerNorm-Scaling](https://github.com/wenfang-sun/LayerNorm-Scaling)  
 **Area**: LLM Pre-training
 **Keywords**: Pre-Layer Normalization, Curse of Depth, Variance Control, LayerNorm Scaling, Transformer
 

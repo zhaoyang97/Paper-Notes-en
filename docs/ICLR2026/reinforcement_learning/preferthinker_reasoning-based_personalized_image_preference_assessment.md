@@ -51,9 +51,9 @@ Given a user's personalized reference images (liked/disliked) and two candidate 
 
 ### Key Design 2: PreferImg-CoT Large-scale Dataset
 - **PreferImg Construction**: 80K simulated users (including 20K multi-preference users), 1.36M images.
-  - Randomly samples 5 visual preference elements to assign profiles.
-  - Uses T2I models to generate reference and candidate images.
-  - 190K initial prompts covering Lexica, DiffusionDB, and COCO.
+    - Randomly samples 5 visual preference elements to assign profiles.
+    - Uses T2I models to generate reference and candidate images.
+    - 190K initial prompts covering Lexica, DiffusionDB, and COCO.
 - **CoT Annotation**: Claude 3.7 generates reasoning chains in the predict-then-assess format.
 - **Quality Filtering**: Removes samples with logical inconsistencies or mismatched answers.
 - Final dataset contains 60K high-quality CoT samples.

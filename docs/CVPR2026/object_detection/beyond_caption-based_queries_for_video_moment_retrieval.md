@@ -18,8 +18,8 @@ content_hash: 9496eb590671f126
 # Beyond Caption-Based Queries for Video Moment Retrieval
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02363](https://arxiv.org/abs/2603.02363)
-**Code**: Available (code, models, and data provided on the project page)
+**arXiv**: [2603.02363](https://arxiv.org/abs/2603.02363)  
+**Code**: Available (code, models, and data provided on the project page)  
 **Area**: Object Detection
 **Keywords**: Video moment retrieval, search query generalization, DETR decoder query collapse, multi-moment retrieval, query under-specification
 

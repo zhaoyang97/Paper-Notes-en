@@ -20,7 +20,7 @@ tags:
 
 **🔬 ICLR2026** · **10** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (13)](../../ACL2026/recommender/index.md) · [🤖 AAAI2026 (26)](../../AAAI2026/recommender/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/recommender/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (1)](../../ICML2026/recommender/index.md) · [💬 ACL2026 (12)](../../ACL2026/recommender/index.md) · [🤖 AAAI2026 (26)](../../AAAI2026/recommender/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/recommender/index.md)
 
 🔥 **Top topics:** Recommendation ×4 · LLM ×3
 

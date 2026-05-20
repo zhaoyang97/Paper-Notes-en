@@ -18,8 +18,8 @@ content_hash: c0787257ab86d675
 # M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.05959](https://arxiv.org/abs/2512.05959)
-**Code**: [https://github.com/davidanugraha/M4-RAG](https://github.com/davidanugraha/M4-RAG)
+**arXiv**: [2512.05959](https://arxiv.org/abs/2512.05959)  
+**Code**: [https://github.com/davidanugraha/M4-RAG](https://github.com/davidanugraha/M4-RAG)  
 **Area**: Information Retrieval
 **Keywords**: Retrieval-Augmented Generation, Multilingual, Multicultural, Visual Question Answering, Multimodal Retrieval
 

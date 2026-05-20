@@ -18,8 +18,8 @@ content_hash: 0ef07a1f2931f79f
 # Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.13161](https://arxiv.org/abs/2504.13161)
-**Code**: [Data available](https://huggingface.co/nvidia/Nemotron-ClimbMix)
+**arXiv**: [2504.13161](https://arxiv.org/abs/2504.13161)  
+**Code**: [Data available](https://huggingface.co/nvidia/Nemotron-ClimbMix)  
 **Area**: LLM Pre-training
 **Keywords**: data mixture, pre-training, clustering, iterative optimization, LLM
 

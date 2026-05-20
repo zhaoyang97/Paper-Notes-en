@@ -18,8 +18,8 @@ content_hash: e49ff2a067a38e61
 # OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.03135](https://arxiv.org/abs/2506.03135)
-**Code**: [Project Page](https://github.com/omnispatial)
+**arXiv**: [2506.03135](https://arxiv.org/abs/2506.03135)  
+**Code**: [Project Page](https://github.com/omnispatial)  
 **Area**: Multimodal VLM / Benchmarking
 **Keywords**: Spatial Reasoning, VLM Benchmark, Cognitive Psychology, Dynamic Reasoning, Perspective Transformation
 

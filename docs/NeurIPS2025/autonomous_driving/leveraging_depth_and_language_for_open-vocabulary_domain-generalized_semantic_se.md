@@ -18,8 +18,8 @@ content_hash: 96417e6056feea9f
 # Leveraging Depth and Language for Open-Vocabulary Domain-Generalized Semantic Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.09881](https://arxiv.org/abs/2506.09881)
-**Code**: [GitHub](https://github.com/SY-Ch/Vireo)
+**arXiv**: [2506.09881](https://arxiv.org/abs/2506.09881)  
+**Code**: [GitHub](https://github.com/SY-Ch/Vireo)  
 **Area**: Autonomous Driving / Semantic Segmentation
 **Keywords**: open-vocabulary segmentation, domain generalization, depth estimation, visual foundation models, semantic segmentation
 

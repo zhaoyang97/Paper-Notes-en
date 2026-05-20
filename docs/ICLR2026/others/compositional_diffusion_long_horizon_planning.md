@@ -17,8 +17,8 @@ content_hash: 13342ae37d9c7d8e
 # Compositional Diffusion with Guided Search for Long-Horizon Planning
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.00126](https://arxiv.org/abs/2601.00126)
-**Code**: [cdgsearch.github.io](https://cdgsearch.github.io/)
+**arXiv**: [2601.00126](https://arxiv.org/abs/2601.00126)  
+**Code**: [cdgsearch.github.io](https://cdgsearch.github.io/)  
 **Area**: Other
 **Keywords**: compositional diffusion, long-horizon planning, mode averaging, guided search, inference-time compute
 

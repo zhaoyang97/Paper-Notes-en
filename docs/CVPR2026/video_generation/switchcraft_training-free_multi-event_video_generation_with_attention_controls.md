@@ -18,8 +18,8 @@ content_hash: f5473682ac0049e4
 # SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23956](https://arxiv.org/abs/2602.23956)
-**Code**: Available (coming soon)
+**arXiv**: [2602.23956](https://arxiv.org/abs/2602.23956)  
+**Code**: Available (coming soon)  
 **Area**: Video Generation
 **Keywords**: Multi-event video generation, attention control, training-free framework, diffusion models, temporal alignment
 

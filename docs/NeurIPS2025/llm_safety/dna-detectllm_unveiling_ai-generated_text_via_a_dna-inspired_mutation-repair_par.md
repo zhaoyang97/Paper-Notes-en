@@ -18,8 +18,8 @@ content_hash: 46a9fab00f8a5806
 # DNA-DetectLLM: Unveiling AI-Generated Text via a DNA-Inspired Mutation-Repair Paradigm
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15550](https://arxiv.org/abs/2509.15550)
-**Code**: [github.com/Xiaoweizhu57/DNA-DetectLLM](https://github.com/Xiaoweizhu57/DNA-DetectLLM)
+**arXiv**: [2509.15550](https://arxiv.org/abs/2509.15550)  
+**Code**: [github.com/Xiaoweizhu57/DNA-DetectLLM](https://github.com/Xiaoweizhu57/DNA-DetectLLM)  
 **Area**: AI Safety / AI-Generated Text Detection
 **Keywords**: AI-generated text detection, zero-shot detection, DNA mutation repair, perplexity, adversarial robustness
 

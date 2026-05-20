@@ -18,8 +18,8 @@ content_hash: 3ab2f751064550a1
 # Improving Black-Box Generative Attacks via Generator Semantic Consistency
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.18248](https://arxiv.org/abs/2506.18248)
-**Code**: To be released
+**arXiv**: [2506.18248](https://arxiv.org/abs/2506.18248)  
+**Code**: To be released  
 **Area**: Audio & Speech
 **Keywords**: Generative adversarial attacks, black-box transferability, Mean Teacher, semantic consistency, feature distillation
 

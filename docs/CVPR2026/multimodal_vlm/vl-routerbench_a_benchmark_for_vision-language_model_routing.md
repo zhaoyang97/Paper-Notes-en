@@ -18,8 +18,8 @@ content_hash: ae5fb5785b686d75
 # VL-RouterBench: A Benchmark for Vision-Language Model Routing
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.23562](https://arxiv.org/abs/2512.23562)
-**Code**: [https://github.com/VL-RouterBench](https://github.com/VL-RouterBench)
+**arXiv**: [2512.23562](https://arxiv.org/abs/2512.23562)  
+**Code**: [https://github.com/VL-RouterBench](https://github.com/VL-RouterBench)  
 **Area**: Multimodal VLM
 **Keywords**: model routing, VLM, benchmark, efficiency-quality tradeoff, multi-model selection
 

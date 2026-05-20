@@ -18,8 +18,8 @@ content_hash: c1745636ab575e3d
 # UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24262](https://arxiv.org/abs/2510.24262)
-**Code**: Not available
+**arXiv**: [2510.24262](https://arxiv.org/abs/2510.24262)  
+**Code**: Not available  
 **Area**: Diffusion Models / Image Generation / Data Augmentation
 **Keywords**: Data Augmentation, Task Utility, Diffusion Models, Bi-level Optimization, DPO
 

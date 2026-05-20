@@ -18,8 +18,8 @@ content_hash: 35b3836e60c36511
 # Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15510](https://arxiv.org/abs/2505.15510)
-**Code**: None
+**arXiv**: [2505.15510](https://arxiv.org/abs/2505.15510)  
+**Code**: None  
 **Area**: LLM Reasoning / Multimodal
 **Keywords**: Multimodal CoT, Visual Thoughts, T-MCoT, I-MCoT, Visual Information Transfer
 

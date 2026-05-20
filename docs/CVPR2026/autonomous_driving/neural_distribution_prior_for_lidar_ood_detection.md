@@ -18,8 +18,8 @@ content_hash: 5a2602f6a7d37e12
 # Neural Distribution Prior for LiDAR Out-of-Distribution Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.09232](https://arxiv.org/abs/2604.09232)
-**Code**: [https://cs-lzz.github.io/ndp-demo](https://cs-lzz.github.io/ndp-demo)
+**arXiv**: [2604.09232](https://arxiv.org/abs/2604.09232)  
+**Code**: [https://cs-lzz.github.io/ndp-demo](https://cs-lzz.github.io/ndp-demo)  
 **Area**: Autonomous Driving / Safety Perception
 **Keywords**: OOD Detection, LiDAR Perception, Class Imbalance, Perlin Noise, Distribution Prior
 

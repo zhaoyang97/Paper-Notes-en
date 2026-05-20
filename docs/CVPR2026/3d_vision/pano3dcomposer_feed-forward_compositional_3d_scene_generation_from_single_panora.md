@@ -18,8 +18,8 @@ content_hash: 53c4ead9d07e8ea0
 # Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05908](https://arxiv.org/abs/2603.05908)
-**Code**: Available (project page)
+**arXiv**: [2603.05908](https://arxiv.org/abs/2603.05908)  
+**Code**: Available (project page)  
 **Area**: 3D Vision
 **Keywords**: Panoramic 3D reconstruction, compositional scene generation, feed-forward transformation prediction, VGGT, 3D Gaussian splatting
 

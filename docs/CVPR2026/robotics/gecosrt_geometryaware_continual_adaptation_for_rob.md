@@ -18,8 +18,8 @@ content_hash: e3a6f1291f399db5
 # GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20871](https://arxiv.org/abs/2602.20871)
-**Code**: N/A
+**arXiv**: [2602.20871](https://arxiv.org/abs/2602.20871)  
+**Code**: N/A  
 **Area**: Robotics / Embodied Intelligence
 **Keywords**: Sim-to-Real Transfer, Continual Learning, Geometry-aware MoE, Point Cloud Representation, Experience Replay
 
@@ -197,8 +197,8 @@ tags:
 # GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20871](https://arxiv.org/abs/2602.20871)
-**Code**: N/A
+**arXiv**: [2602.20871](https://arxiv.org/abs/2602.20871)  
+**Code**: N/A  
 **Area**: Robotics / Embodied Intelligence
 **Keywords**: Sim-to-Real Transfer, Continual Learning, Geometry-aware MoE, Point Cloud Representation, Experience Replay
 

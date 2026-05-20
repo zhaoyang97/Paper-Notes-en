@@ -18,8 +18,8 @@ content_hash: 76c5100c27ecf375
 # PRE-Mamba: A 4D State Space Model for Ultra-High-Frequent Event Camera Deraining
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.05307](https://arxiv.org/abs/2505.05307)
-**Code**: [https://github.com/softword-tt/PRE-Mamba](https://github.com/softword-tt/PRE-Mamba)
+**arXiv**: [2505.05307](https://arxiv.org/abs/2505.05307)  
+**Code**: [https://github.com/softword-tt/PRE-Mamba](https://github.com/softword-tt/PRE-Mamba)  
 **Area**: Image Restoration / Event Camera
 **Keywords**: event camera deraining, state space model, Mamba, point cloud processing, spatiotemporal modeling
 

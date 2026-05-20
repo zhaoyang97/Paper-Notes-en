@@ -18,8 +18,8 @@ content_hash: d383a2a3952c5453
 # Multimodal Data Fusion to Capture Dynamic Interactions between Built Environment and Vulnerable Older Adults
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.11545](https://arxiv.org/abs/2601.11545)
-**Code**: None
+**arXiv**: [2601.11545](https://arxiv.org/abs/2601.11545)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: Multimodal Data Fusion, Built Environment, Older Adult Walking, SLAM Trajectory Reconstruction, Urban Planning
 

@@ -18,8 +18,8 @@ content_hash: 2f088fce638a4db9
 # RankLLM: Weighted Ranking of LLMs by Quantifying Question Difficulty
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.12424](https://arxiv.org/abs/2602.12424)
-**Code**: Not released (a HuggingFace leaderboard platform has been established)
+**arXiv**: [2602.12424](https://arxiv.org/abs/2602.12424)  
+**Code**: Not released (a HuggingFace leaderboard platform has been established)  
 **Area**: LLM Evaluation
 **Keywords**: LLM evaluation, question difficulty, model competency, bipartite graph, score propagation, benchmark
 

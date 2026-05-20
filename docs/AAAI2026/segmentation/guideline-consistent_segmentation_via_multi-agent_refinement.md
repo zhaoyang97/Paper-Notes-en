@@ -18,8 +18,8 @@ content_hash: 59afddbe911de030
 # Guideline-Consistent Segmentation via Multi-Agent Refinement
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.04687](https://arxiv.org/abs/2509.04687)
-**Code**: [Project Page](https://guideline-seg.github.io/)
+**arXiv**: [2509.04687](https://arxiv.org/abs/2509.04687)  
+**Code**: [Project Page](https://guideline-seg.github.io/)  
 **Area**: Segmentation
 **Keywords**: guideline-consistent segmentation, multi-agent, VLM, reinforcement learning, training-free framework
 

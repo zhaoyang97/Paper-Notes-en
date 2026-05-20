@@ -18,8 +18,8 @@ content_hash: e7808a519a89a0ee
 # Distilling LLM Agent into Small Models with Retrieval and Code Tools
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17612](https://arxiv.org/abs/2505.17612)
-**Code**: [https://github.com/Nardien/agent-distillation](https://github.com/Nardien/agent-distillation)
+**arXiv**: [2505.17612](https://arxiv.org/abs/2505.17612)  
+**Code**: [https://github.com/Nardien/agent-distillation](https://github.com/Nardien/agent-distillation)  
 **Area**: LLM Agent / Knowledge Distillation
 **Keywords**: agent distillation, first-thought prefix, self-consistent action generation, small language model, CodeAct
 

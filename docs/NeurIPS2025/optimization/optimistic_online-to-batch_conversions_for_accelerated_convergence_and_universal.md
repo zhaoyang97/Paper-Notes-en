@@ -18,8 +18,8 @@ content_hash: 989f86d26e1b017c
 # Optimistic Online-to-Batch Conversions for Accelerated Convergence and Universality
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.06597](https://arxiv.org/abs/2511.06597)
-**Code**: None
+**arXiv**: [2511.06597](https://arxiv.org/abs/2511.06597)  
+**Code**: None  
 **Area**: Optimization Theory
 **Keywords**: Online Learning, Accelerated Convergence, Nesterov Acceleration, O2B Conversion, Universal Optimization
 

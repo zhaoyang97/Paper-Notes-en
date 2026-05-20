@@ -18,8 +18,8 @@ content_hash: fa055d80c6a159b2
 # BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications
 
 **Conference**: ACL 2026 Findings
-**arXiv**: [2604.17305](https://arxiv.org/abs/2604.17305)
-**Code**: [https://bizcompass.dev.ypemc.com/](https://bizcompass.dev.ypemc.com/)
+**arXiv**: [2604.17305](https://arxiv.org/abs/2604.17305)  
+**Code**: [https://bizcompass.dev.ypemc.com/](https://bizcompass.dev.ypemc.com/)  
 **Area**: LLM Evaluation
 **Keywords**: Business reasoning benchmark, knowledge and application evaluation, LLM capability diagnosis, finance and economics, dual-axis design
 

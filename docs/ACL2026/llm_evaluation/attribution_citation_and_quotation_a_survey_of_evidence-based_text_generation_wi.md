@@ -18,8 +18,8 @@ content_hash: ca9711b5c7f594cc
 # Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2508.15396](https://arxiv.org/abs/2508.15396)
-**Code**: [https://github.com/faerber-lab/AttributeCiteQuote](https://github.com/faerber-lab/AttributeCiteQuote)
+**arXiv**: [2508.15396](https://arxiv.org/abs/2508.15396)  
+**Code**: [https://github.com/faerber-lab/AttributeCiteQuote](https://github.com/faerber-lab/AttributeCiteQuote)  
 **Area**: Survey / NLP
 **Keywords**: Evidence-based text generation, citation attribution, LLM trustworthiness, evaluation framework, RAG
 

@@ -18,8 +18,8 @@ content_hash: b9d49a8d446b98c7
 # ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training
 
 **Conference**: ACL 2026
-**arXiv**: [2604.07484](https://arxiv.org/abs/2604.07484)
-**Code**: [GitHub](https://github.com/yuliangCarmelo/ConsistRM)
+**arXiv**: [2604.07484](https://arxiv.org/abs/2604.07484)  
+**Code**: [GitHub](https://github.com/yuliangCarmelo/ConsistRM)  
 **Area**: Alignment RLHF / Reward Modeling
 **Keywords**: Generative Reward Model, Self-Training, Consistency-Aware, Pseudo Labels, Position Bias
 

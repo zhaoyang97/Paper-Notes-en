@@ -18,8 +18,8 @@ content_hash: 0e3d4496642a3096
 # SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01713](https://arxiv.org/abs/2506.01713)
-**Code**: [https://srpo.pages.dev/](https://srpo.pages.dev/)
+**arXiv**: [2506.01713](https://arxiv.org/abs/2506.01713)  
+**Code**: [https://srpo.pages.dev/](https://srpo.pages.dev/)  
 **Area**: Multimodal VLM / LLM Reasoning
 **Keywords**: Multimodal Reasoning, Self-Reflection, Reinforcement Learning, GRPO, Reflection-Aware RL
 

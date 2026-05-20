@@ -18,8 +18,8 @@ content_hash: 07b783fef21b3acf
 # Capabilities and Evaluation Biases of Large Language Models in Classical Chinese Poetry Generation: A Case Study on Tang Poetry
 
 **Conference**: ACL 2026
-**arXiv**: [2510.15313](https://arxiv.org/abs/2510.15313)
-**Code**: [https://github.com/boleima/Tang-Poetry](https://github.com/boleima/Tang-Poetry)
+**arXiv**: [2510.15313](https://arxiv.org/abs/2510.15313)  
+**Code**: [https://github.com/boleima/Tang-Poetry](https://github.com/boleima/Tang-Poetry)  
 **Area**: LLM Evaluation
 **Keywords**: Classical poetry generation, Tang poetry, LLM evaluation bias, echo chamber effect, human-machine evaluation
 

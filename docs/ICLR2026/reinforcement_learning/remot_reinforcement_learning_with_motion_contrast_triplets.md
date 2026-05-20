@@ -17,8 +17,8 @@ content_hash: cf7163025fe0ceac
 # ReMoT: Reinforcement Learning with Motion Contrast Triplets
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00461](https://arxiv.org/abs/2603.00461)
-**Code**: None
+**arXiv**: [2603.00461](https://arxiv.org/abs/2603.00461)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Vision-Language Models, Spatiotemporal Reasoning, Motion Contrast Triplets, GRPO, Reinforcement Learning
 

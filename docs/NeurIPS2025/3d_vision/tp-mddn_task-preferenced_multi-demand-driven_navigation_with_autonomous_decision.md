@@ -18,8 +18,8 @@ content_hash: f906511a669b936e
 # TP-MDDN: Task-Preferenced Multi-Demand-Driven Navigation with Autonomous Decision-Making
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.17225](https://arxiv.org/abs/2511.17225)
-**Code**: Unavailable
+**arXiv**: [2511.17225](https://arxiv.org/abs/2511.17225)  
+**Code**: Unavailable  
 **Area**: 3D Vision
 **Keywords**: Embodied Navigation, Long-Horizon Task Planning, Multi-Demand-Driven, Semantic Map, Large Language Models
 

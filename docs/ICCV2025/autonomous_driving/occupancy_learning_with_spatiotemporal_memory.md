@@ -17,8 +17,8 @@ content_hash: 7101dd5569e2ef4f
 # Occupancy Learning with Spatiotemporal Memory
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.04705](https://arxiv.org/abs/2508.04705)
-**Code**: [https://github.com/matthew-leng/ST-Occ](https://github.com/matthew-leng/ST-Occ)
+**arXiv**: [2508.04705](https://arxiv.org/abs/2508.04705)  
+**Code**: [https://github.com/matthew-leng/ST-Occ](https://github.com/matthew-leng/ST-Occ)  
 **Area**: Autonomous Driving
 **Keywords**: 3D occupancy prediction, temporal fusion, spatiotemporal memory, autonomous driving, uncertainty awareness
 

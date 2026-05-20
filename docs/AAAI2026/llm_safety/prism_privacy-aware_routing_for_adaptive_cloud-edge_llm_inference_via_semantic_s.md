@@ -18,8 +18,8 @@ content_hash: b219740b9c8e07bf
 # PRISM: Privacy-Aware Routing for Adaptive Cloud-Edge LLM Inference via Semantic Sketch Collaboration
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.22788](https://arxiv.org/abs/2511.22788)
-**Code**: [https://github.com/Junfei-Z/PRISM](https://github.com/Junfei-Z/PRISM)
+**arXiv**: [2511.22788](https://arxiv.org/abs/2511.22788)  
+**Code**: [https://github.com/Junfei-Z/PRISM](https://github.com/Junfei-Z/PRISM)  
 **Area**: AI Security
 **Keywords**: Privacy Protection, Cloud-Edge Collaborative Inference, LLM Privacy, Differential Privacy, Semantic Sketch
 

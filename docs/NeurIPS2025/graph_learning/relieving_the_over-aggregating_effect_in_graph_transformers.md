@@ -18,8 +18,8 @@ content_hash: 66cc6ca81d5ef53d
 # Relieving the Over-Aggregating Effect in Graph Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21267](https://arxiv.org/abs/2510.21267)
-**Code**: [https://github.com/sunjss/over-aggregating](https://github.com/sunjss/over-aggregating)
+**arXiv**: [2510.21267](https://arxiv.org/abs/2510.21267)  
+**Code**: [https://github.com/sunjss/over-aggregating](https://github.com/sunjss/over-aggregating)  
 **Area**: Graph Learning / Graph Transformer
 **Keywords**: Over-Aggregating, Graph Transformer, Attention Entropy, Wideformer, Linear Attention
 
@@ -54,21 +54,21 @@ Output: Enhanced representation for each target node
 
 1. **Cluster Center Selection (K-Means++-based variant)**:
 
-   - **Function**: Selects $m$ representative cluster centers in the query space.
-   - **Mechanism**: Following Algorithm 1, the node with the largest query feature norm is selected as the first center; subsequent centers are greedily chosen to maximize dissimilarity with existing centers.
-   - **Design Motivation**: Maximizing inter-center diversity ensures that the cluster partition is semantically meaningful.
+    - **Function**: Selects $m$ representative cluster centers in the query space.
+    - **Mechanism**: Following Algorithm 1, the node with the largest query feature norm is selected as the first center; subsequent centers are greedily chosen to maximize dissimilarity with existing centers.
+    - **Design Motivation**: Maximizing inter-center diversity ensures that the cluster partition is semantically meaningful.
 
 2. **Source Node Assignment**:
 
-   - **Function**: Assigns each source node to the most similar cluster via $\mathbf{k}_i = \arg\max_j [(\mathbf{KC}^\top)_{i,j}]$.
-   - **Mechanism**: Hard assignment based on key–center similarity.
-   - **Design Motivation**: Grouping semantically similar nodes together yields more coherent intra-cluster aggregation and greater discriminability.
+    - **Function**: Assigns each source node to the most similar cluster via $\mathbf{k}_i = \arg\max_j [(\mathbf{KC}^\top)_{i,j}]$.
+    - **Mechanism**: Hard assignment based on key–center similarity.
+    - **Design Motivation**: Grouping semantically similar nodes together yields more coherent intra-cluster aggregation and greater discriminability.
 
 3. **Cluster-wise Aggregation + Guiding**:
 
-   - **Function**: Each cluster performs attention aggregation independently, producing $m$ output vectors; these are then ranked and weighted according to their attention scores with the target node.
-   - **Mechanism**: Reducing the aggregation input from $n$ to $n/m$ naturally lowers attention entropy; a secondary attention over the $m$ outputs preserves global information.
-   - **Design Motivation**: Combining small-input aggregation with second-level ranking achieves both information retention and discriminability.
+    - **Function**: Each cluster performs attention aggregation independently, producing $m$ output vectors; these are then ranked and weighted according to their attention scores with the target node.
+    - **Mechanism**: Reducing the aggregation input from $n$ to $n/m$ naturally lowers attention entropy; a secondary attention over the $m$ outputs preserves global information.
+    - **Design Motivation**: Combining small-input aggregation with second-level ranking achieves both information retention and discriminability.
 
 ### Loss & Training
 - Wideformer is embedded directly into the backbone training pipeline without additional loss terms.

@@ -17,8 +17,8 @@ content_hash: 1d30ece24f8691bb
 # The Publication Choice Problem
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13678](https://arxiv.org/abs/2511.13678)
-**Code**: None
+**arXiv**: [2511.13678](https://arxiv.org/abs/2511.13678)  
+**Code**: None  
 **Area**: Other
 **Keywords**: publication game, game-theoretic equilibrium, academic venue influence, Spotlight label, researcher strategy
 

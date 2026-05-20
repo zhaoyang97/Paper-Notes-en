@@ -18,8 +18,8 @@ content_hash: 47149824f6ce1dd2
 # DreamRunner: Fine-Grained Compositional Story-to-Video Generation with Retrieval-Augmented Motion Adaptation
 
 **Conference**: AAAI 2026
-**arXiv**: [2411.16657](https://arxiv.org/abs/2411.16657)
-**Code**: Not released
+**arXiv**: [2411.16657](https://arxiv.org/abs/2411.16657)  
+**Code**: Not released  
 **Area**: Video Generation
 **Authors**: Zun Wang, Jialu Li, Han Lin, Jaehong Yoon, Mohit Bansal (UNC Chapel Hill)
 **Keywords**: Story video generation, retrieval-augmented motion adaptation, regional attention, compositional video generation, LoRA injection
@@ -54,12 +54,12 @@ DreamRunner consists of three stages:
 
 **Stage 2: Motion Retrieval & Prior Learning**
 - **Motion video retrieval** from the InternVid large-scale video database:
-  - BM25 text retrieval (400 candidates) → attribute filtering (duration ≥ 2s, frames ≥ 40, aspect ratio ≥ 0.9) → YOLOv5 object tracking and cropping → CLIP + ViCLIP semantic similarity ranking.
-  - 4–20 video clips retrieved per motion.
+    - BM25 text retrieval (400 candidates) → attribute filtering (duration ≥ 2s, frames ≥ 40, aspect ratio ≥ 0.9) → YOLOv5 object tracking and cropping → CLIP + ViCLIP semantic similarity ranking.
+    - 4–20 video clips retrieved per motion.
 - **Motion prior training**: Test-time fine-tuning based on MotionDirector.
-  - Even-indexed layers of CogVideoX's 3D full attention are manually designated as "spatial layers" and odd-indexed layers as "temporal layers."
-  - Spatial LoRA learns appearance; temporal LoRA learns motion.
-  - **Key innovation**: Per-video prompts (rather than a single shared prompt) are used to help the model disentangle motion from irrelevant background and appearance.
+    - Even-indexed layers of CogVideoX's 3D full attention are manually designated as "spatial layers" and odd-indexed layers as "temporal layers."
+    - Spatial LoRA learns appearance; temporal LoRA learns motion.
+    - **Key innovation**: Per-video prompts (rather than a single shared prompt) are used to help the model disentangle motion from irrelevant background and appearance.
 - **Character prior learning**: Reference images are repeated 48 times to construct pseudo-videos; LoRA is injected into spatial layers and only the first frame is reconstructed to prevent overfitting.
 
 **Stage 3: Spatial-Temporal Region-Based Diffusion (SR3AI)**
@@ -71,14 +71,14 @@ DreamRunner consists of three stages:
 SR3AI regionalizes the 3D full attention of CogVideoX through two mechanisms:
 
 1. **Regional 3D Attention**:
-   - Given $N$ region text descriptions $C_1, \ldots, C_N$ and corresponding layouts $L_1, \ldots, L_N$, each condition is encoded to obtain embeddings $T_1, \ldots, T_N$.
-   - Attention masking rule: each region visual latent $L_i$ attends to its corresponding text $T_i$ and all visual latents $L_1, \ldots, L_N$; each text embedding $T_i$ attends only to itself and its corresponding $L_i$.
-   - This ensures each region is constrained by its own text while visual latents maintain cross-region interaction (soft, rather than hard, isolation).
+    - Given $N$ region text descriptions $C_1, \ldots, C_N$ and corresponding layouts $L_1, \ldots, L_N$, each condition is encoded to obtain embeddings $T_1, \ldots, T_N$.
+    - Attention masking rule: each region visual latent $L_i$ attends to its corresponding text $T_i$ and all visual latents $L_1, \ldots, L_N$; each text embedding $T_i$ attends only to itself and its corresponding $L_i$.
+    - This ensures each region is constrained by its own text while visual latents maintain cross-region interaction (soft, rather than hard, isolation).
 
 2. **Regional LoRA Injection**:
-   - For each LoRA, a latent mask is computed based on the text description and layout.
-   - Formulation: $Wx = W_0x + A_{\text{witch}}B_{\text{witch}}(Mask_{\text{witch}} \cdot x) + A_{\text{cat}}B_{\text{cat}}(Mask_{\text{cat}} \cdot x)$
-   - Character LoRAs are injected into spatial layers; motion LoRAs into temporal layers — with no layer-level overlap, avoiding multi-LoRA conflicts.
+    - For each LoRA, a latent mask is computed based on the text description and layout.
+    - Formulation: $Wx = W_0x + A_{\text{witch}}B_{\text{witch}}(Mask_{\text{witch}} \cdot x) + A_{\text{cat}}B_{\text{cat}}(Mask_{\text{cat}} \cdot x)$
+    - Character LoRAs are injected into spatial layers; motion LoRAs into temporal layers — with no layer-level overlap, avoiding multi-LoRA conflicts.
 
 ### Loss & Training
 

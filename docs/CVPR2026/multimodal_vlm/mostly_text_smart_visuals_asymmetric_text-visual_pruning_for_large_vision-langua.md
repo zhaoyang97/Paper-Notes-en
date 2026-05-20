@@ -18,8 +18,8 @@ content_hash: 144e494f539b48ec
 # Mostly Text, Smart Visuals: Asymmetric Text-Visual Pruning for Large Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.16001](https://arxiv.org/abs/2603.16001)
-**Code**: [https://github.com/LezJ/ATV-Pruning](https://github.com/LezJ/ATV-Pruning)
+**arXiv**: [2603.16001](https://arxiv.org/abs/2603.16001)  
+**Code**: [https://github.com/LezJ/ATV-Pruning](https://github.com/LezJ/ATV-Pruning)  
 **Area**: Multimodal VLM
 **Keywords**: Weight Pruning, LVLM, Modality Asymmetry, Calibration Strategy, Sparsification
 

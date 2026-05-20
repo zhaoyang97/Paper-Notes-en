@@ -17,8 +17,8 @@ content_hash: 70c6d852f9c1f1a4
 # Hypothesis Generation via LLM-Automated Language Bias for ILP
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.21486](https://arxiv.org/abs/2505.21486)
-**Code**: None
+**arXiv**: [2505.21486](https://arxiv.org/abs/2505.21486)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Inductive Logic Programming, Language Bias, Multi-Agent, Prolog, Interpretability
 

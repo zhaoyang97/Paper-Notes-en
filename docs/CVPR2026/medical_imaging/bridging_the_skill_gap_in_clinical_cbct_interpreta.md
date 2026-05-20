@@ -18,8 +18,8 @@ content_hash: 7823d0b407f97547
 # Bridging the Skill Gap in Clinical CBCT Interpretation with CBCTRepD
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10933](https://arxiv.org/abs/2603.10933)
-**Code**: None
+**arXiv**: [2603.10933](https://arxiv.org/abs/2603.10933)  
+**Code**: None  
 **Area**: Medical Imaging / Report Generation
 **Keywords**: CBCT, oral-maxillofacial report generation, bilingual system, human-AI collaboration, multi-level evaluation
 

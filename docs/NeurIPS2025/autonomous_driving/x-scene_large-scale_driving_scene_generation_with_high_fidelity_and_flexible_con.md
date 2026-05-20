@@ -18,8 +18,8 @@ content_hash: f8823c3356e41816
 # X-Scene: Large-Scale Driving Scene Generation with High Fidelity and Flexible Controllability
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.13558](https://arxiv.org/abs/2506.13558)
-**Code**: [https://x-scene.github.io/](https://x-scene.github.io/)
+**arXiv**: [2506.13558](https://arxiv.org/abs/2506.13558)  
+**Code**: [https://x-scene.github.io/](https://x-scene.github.io/)  
 **Area**: Autonomous Driving / Scene Generation
 **Keywords**: large-scale scene generation, multi-granularity control, occupancy generation, 3DGS reconstruction, autonomous driving simulation
 

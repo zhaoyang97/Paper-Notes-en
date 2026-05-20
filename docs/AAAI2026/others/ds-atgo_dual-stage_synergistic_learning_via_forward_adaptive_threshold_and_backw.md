@@ -17,8 +17,8 @@ content_hash: 44d10d1699b9d5a3
 # DS-ATGO: Dual-Stage Synergistic Learning via Forward Adaptive Threshold and Backward Gradient Optimization for Spiking Neural Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13050](https://arxiv.org/abs/2511.13050)
-**Code**: [github.com/jqjiang1999/DS-ATGO](https://github.com/jqjiang1999/DS-ATGO)
+**arXiv**: [2511.13050](https://arxiv.org/abs/2511.13050)  
+**Code**: [github.com/jqjiang1999/DS-ATGO](https://github.com/jqjiang1999/DS-ATGO)  
 **Area**: Spiking Neural Networks / Neuromorphic Computing
 **Keywords**: Spiking Neural Networks, Adaptive Threshold, Surrogate Gradient Optimization, Membrane Potential Dynamics, Low-Latency Inference
 

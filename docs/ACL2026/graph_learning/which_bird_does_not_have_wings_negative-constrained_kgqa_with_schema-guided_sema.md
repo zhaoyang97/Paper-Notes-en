@@ -17,8 +17,8 @@ content_hash: 19e07d32d6165793
 # Which Bird Does Not Have Wings: Negative-Constrained KGQA with Schema-Guided Semantic Matching and Self-Directed Refinement
 
 **Conference**: ACL 2026
-**arXiv**: [2604.14749](https://arxiv.org/abs/2604.14749)
-**Code**: [https://github.com/midannii/CUCKOO](https://github.com/midannii/CUCKOO)
+**arXiv**: [2604.14749](https://arxiv.org/abs/2604.14749)  
+**Code**: [https://github.com/midannii/CUCKOO](https://github.com/midannii/CUCKOO)  
 **Area**: Graph Learning / Knowledge Graph QA
 **Keywords**: Knowledge Graph QA, Negation Constraint, Semantic Parsing, Logical Form, Schema-Guided
 

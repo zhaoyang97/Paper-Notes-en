@@ -18,8 +18,8 @@ content_hash: e76775149adc629b
 # Learning From Design Procedure To Generate CAD Programs for Data Augmentation
 
 **Conference**: NeurIPS 2025 (Workshop: Deep Learning for Code in the Agentic Era)
-**arXiv**: [2603.06894](https://arxiv.org/abs/2603.06894)
-**Code**: None
+**arXiv**: [2603.06894](https://arxiv.org/abs/2603.06894)  
+**Code**: None  
 **Area**: Code Intelligence
 **Keywords**: CAD program generation, data augmentation, LLM prompting strategy, B-Spline geometry, industrial design
 

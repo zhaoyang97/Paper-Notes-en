@@ -18,8 +18,8 @@ content_hash: 40900e79551343dd
 # Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17364](https://arxiv.org/abs/2510.17364)
-**Code**: Unavailable
+**arXiv**: [2510.17364](https://arxiv.org/abs/2510.17364)  
+**Code**: Unavailable  
 **Area**: Model Compression
 **Keywords**: Streaming video understanding, visual token compression, attention-based selection, long video, Video-LLM
 
@@ -31,9 +31,9 @@ This paper proposes rLiVS (Recurrent LLM-informed Visual Selection), a training-
 
 - **Background**: Video-LLMs achieve strong performance on short video understanding, but face severe challenges in streaming scenarios involving hour-long online video processing with real-time question answering. The number of visual tokens grows linearly with frame count, making brute-force full-frame processing computationally infeasible for long videos and often exceeding context length limits.
 - **Limitations of Prior Work**: Existing long-video understanding approaches each have notable drawbacks:
-  - **Training-based methods** (e.g., VideoStreaming, Flash-VStream): require additional training, suffer from extrapolation issues on arbitrary-length videos, and incur high training costs.
-  - **KV-cache methods** (e.g., ReKV): store complete decoder KV-caches, leading to large memory consumption (18.8 GB/hour) with significant redundancy.
-  - **Caption-only methods** (e.g., Goldfish): process short clips independently, lacking temporal continuity and making entity tracking difficult.
+    - **Training-based methods** (e.g., VideoStreaming, Flash-VStream): require additional training, suffer from extrapolation issues on arbitrary-length videos, and incur high training costs.
+    - **KV-cache methods** (e.g., ReKV): store complete decoder KV-caches, leading to large memory consumption (18.8 GB/hour) with significant redundancy.
+    - **Caption-only methods** (e.g., Goldfish): process short clips independently, lacking temporal continuity and making entity tracking difficult.
 - **Key Insight**: Inspired by cognitive neuroscience—where selective attention governs encoding under limited memory capacity and past experience shapes current attention—the authors propose combining LLM self-attention for visual token selection, recurrent propagation of historical context, and text-based retrieval for question answering.
 
 ## Method

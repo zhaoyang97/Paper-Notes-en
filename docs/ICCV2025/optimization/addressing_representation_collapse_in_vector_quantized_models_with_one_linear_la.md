@@ -18,8 +18,8 @@ content_hash: 39d5e40ff4e9aec1
 # Addressing Representation Collapse in Vector Quantized Models with One Linear Layer
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.02038](https://arxiv.org/abs/2411.02038)
-**Code**: [https://github.com/youngsheen/SimVQ](https://github.com/youngsheen/SimVQ)
+**arXiv**: [2411.02038](https://arxiv.org/abs/2411.02038)  
+**Code**: [https://github.com/youngsheen/SimVQ](https://github.com/youngsheen/SimVQ)  
 **Area**: Optimization
 **Keywords**: Vector Quantization, Representation Collapse, Codebook Utilization, Linear Transformation, Multimodal
 

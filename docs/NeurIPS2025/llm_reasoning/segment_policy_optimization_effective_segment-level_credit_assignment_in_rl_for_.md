@@ -18,8 +18,8 @@ content_hash: 48c082e47f9bf778
 # Segment Policy Optimization: Effective Segment-Level Credit Assignment in RL for Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23564](https://arxiv.org/abs/2505.23564)
-**Code**: [GitHub](https://github.com/AIFrameResearch/SPO)
+**arXiv**: [2505.23564](https://arxiv.org/abs/2505.23564)  
+**Code**: [GitHub](https://github.com/AIFrameResearch/SPO)  
 **Area**: LLM Reasoning
 **Keywords**: credit assignment, segment-level advantages, Monte Carlo estimation, tree-based sampling, PPO improvement
 

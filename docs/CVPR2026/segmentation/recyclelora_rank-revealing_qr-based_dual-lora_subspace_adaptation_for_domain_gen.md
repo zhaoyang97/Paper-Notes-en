@@ -18,8 +18,8 @@ content_hash: d20d81ef0ea358ad
 # RecycleLoRA: Rank-Revealing QR-Based Dual-LoRA Subspace Adaptation for Domain Generalized Semantic Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28142](https://arxiv.org/abs/2603.28142)
-**Code**: [https://github.com/chanseul01/RecycleLoRA.git](https://github.com/chanseul01/RecycleLoRA.git)
+**arXiv**: [2603.28142](https://arxiv.org/abs/2603.28142)  
+**Code**: [https://github.com/chanseul01/RecycleLoRA.git](https://github.com/chanseul01/RecycleLoRA.git)  
 **Area**: Semantic Segmentation / Domain Generalization / Parameter-Efficient Fine-Tuning
 **Keywords**: Domain Generalized Semantic Segmentation, LoRA, RRQR Decomposition, Dual Adapter, Subspace Structure
 
@@ -31,9 +31,9 @@ This paper proposes RecycleLoRA, which employs Rank-Revealing QR (RRQR) decompos
 
 1. **Background**: Domain Generalized Semantic Segmentation (DGSS) aims to enable models to maintain robust performance on unseen target domains. With the advent of Vision Foundation Models (VFMs) such as DINOv2 and CLIP, the focus of DGSS has shifted from data augmentation toward efficiently adapting the rich multi-domain knowledge encoded in VFMs.
 2. **Limitations of Prior Work**:
-   - Existing SVD-based methods (e.g., SoMA) achieve reasonable results by attending to minor singular value directions, yet SVD prioritizes variance preservation and is not necessarily the most effective decomposition for downstream adaptation;
-   - SoMA adapts only minor directions while completely freezing major directions, limiting the model's capacity to handle complex novel tasks;
-   - Many LoRA methods suffer from **representational redundancy** among basis vectors, resulting in low parameter utilization efficiency (effective rank far below the target rank).
+    - Existing SVD-based methods (e.g., SoMA) achieve reasonable results by attending to minor singular value directions, yet SVD prioritizes variance preservation and is not necessarily the most effective decomposition for downstream adaptation;
+    - SoMA adapts only minor directions while completely freezing major directions, limiting the model's capacity to handle complex novel tasks;
+    - Many LoRA methods suffer from **representational redundancy** among basis vectors, resulting in low parameter utilization efficiency (effective rank far below the target rank).
 3. **Key Challenge**: How to simultaneously address "better exploitation of VFM subspace structures" and "enhanced LoRA representational diversity."
 4. **Goal**: (1) Identify a decomposition strategy more suitable for VFM adaptation than SVD; (2) eliminate representational redundancy among LoRA basis vectors; (3) fully leverage both major and minor directions in pretrained weights.
 5. **Key Insight**: RRQR greedily selects the most informative columns from the original weight matrix via column pivoting, naturally guaranteeing directional independence and structural diversity.
@@ -49,21 +49,21 @@ Given the pretrained weight matrix $\mathbf{W}_0 \in \mathbb{R}^{d \times k}$ of
 
 1. **RRQR Decomposition Initialization Strategy**:
 
-   - **Function**: Provides structurally diverse, directionally independent initialization for LoRA adapters.
-   - **Mechanism**: The weight matrix is factorized as $\mathbf{W}_0 \mathbf{P} = \mathbf{Q}\mathbf{R}$. At each step, RRQR selects the column with the largest norm after orthogonal projection, inherently minimizing redundancy. The columns of $\mathbf{Q}$ supply orthogonal basis directions, while $\mathbf{P}$ records the importance ordering. The primary adapter matrix $\mathbf{B}$ is initialized to the last $r$ columns of $\mathbf{Q}$ (minor directions), and $\mathbf{A}$ adopts a sparse initialization setting selected column indices to 1.
-   - **Design Motivation**: Unlike SVD, which seeks new globally variance-maximizing orthogonal bases, RRQR directly selects from the original weight columns, preserving local structural information and dimensional correspondence. Post-training analysis confirms that the column norms at sparse initialization positions are on average 1.22× higher (up to 1.63×) than those at zero-initialized positions, indicating that the initialization bias is maintained throughout training.
+    - **Function**: Provides structurally diverse, directionally independent initialization for LoRA adapters.
+    - **Mechanism**: The weight matrix is factorized as $\mathbf{W}_0 \mathbf{P} = \mathbf{Q}\mathbf{R}$. At each step, RRQR selects the column with the largest norm after orthogonal projection, inherently minimizing redundancy. The columns of $\mathbf{Q}$ supply orthogonal basis directions, while $\mathbf{P}$ records the importance ordering. The primary adapter matrix $\mathbf{B}$ is initialized to the last $r$ columns of $\mathbf{Q}$ (minor directions), and $\mathbf{A}$ adopts a sparse initialization setting selected column indices to 1.
+    - **Design Motivation**: Unlike SVD, which seeks new globally variance-maximizing orthogonal bases, RRQR directly selects from the original weight columns, preserving local structural information and dimensional correspondence. Post-training analysis confirms that the column norms at sparse initialization positions are on average 1.22× higher (up to 1.63×) than those at zero-initialized positions, indicating that the initialization bias is maintained throughout training.
 
 2. **Complementary Dual-Adapter Structure**:
 
-   - **Function**: Enables the primary and secondary adapters to learn representations from distinct subspaces, achieving complementarity without additional regularization.
-   - **Mechanism**: The primary adapter uses RRQR minor directions (rank=32, lr=1e-4); the secondary adapter uses major directions (rank=4, lr=5e-5). A key finding is that initialization directions are intrinsically linked to optimal learning rates — major directions encode core VFM knowledge and require more conservative updates, while minor directions provide a safer learning space amenable to more aggressive adaptation.
-   - **Design Motivation**: Grassmann distance analysis confirms that after training, the two adapters maintain near-orthogonal subspaces (similarity far lower than that of dual adapters with Kaiming initialization). PCA visualizations further reveal complementary feature modification patterns — the primary adapter focuses on foreground objects while the secondary adapter covers background regions.
+    - **Function**: Enables the primary and secondary adapters to learn representations from distinct subspaces, achieving complementarity without additional regularization.
+    - **Mechanism**: The primary adapter uses RRQR minor directions (rank=32, lr=1e-4); the secondary adapter uses major directions (rank=4, lr=5e-5). A key finding is that initialization directions are intrinsically linked to optimal learning rates — major directions encode core VFM knowledge and require more conservative updates, while minor directions provide a safer learning space amenable to more aggressive adaptation.
+    - **Design Motivation**: Grassmann distance analysis confirms that after training, the two adapters maintain near-orthogonal subspaces (similarity far lower than that of dual adapters with Kaiming initialization). PCA visualizations further reveal complementary feature modification patterns — the primary adapter focuses on foreground objects while the secondary adapter covers background regions.
 
 3. **Effective Rank Enhancement**:
 
-   - **Function**: Improves the representational capacity of LoRA under a limited parameter budget.
-   - **Mechanism**: RRQR's greedy selection ensures directional independence among basis vectors, directly increasing effective rank. At rank=16, RecycleLoRA achieves a Rank Efficiency of 0.850 versus 0.611 for SoMA; at rank=32, the values are 0.770 and 0.650, respectively. Cosine similarity heatmaps also show that inter-row similarity of $\mathbf{A}$ and inter-column similarity of $\mathbf{B}$ in RecycleLoRA are substantially lower than those of SoMA.
-   - **Design Motivation**: Higher effective rank implies that each low-rank component captures more independent and distinctive features, directly benefiting domain generalization performance.
+    - **Function**: Improves the representational capacity of LoRA under a limited parameter budget.
+    - **Mechanism**: RRQR's greedy selection ensures directional independence among basis vectors, directly increasing effective rank. At rank=16, RecycleLoRA achieves a Rank Efficiency of 0.850 versus 0.611 for SoMA; at rank=32, the values are 0.770 and 0.650, respectively. Cosine similarity heatmaps also show that inter-row similarity of $\mathbf{A}$ and inter-column similarity of $\mathbf{B}$ in RecycleLoRA are substantially lower than those of SoMA.
+    - **Design Motivation**: Higher effective rank implies that each low-rank component captures more independent and distinctive features, directly benefiting domain generalization performance.
 
 ### Loss & Training
 

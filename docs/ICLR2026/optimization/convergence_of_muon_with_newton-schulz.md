@@ -18,8 +18,8 @@ content_hash: dc56b6998365d590
 # Convergence of Muon with Newton-Schulz
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19156](https://arxiv.org/abs/2601.19156)
-**Code**: To be confirmed
+**arXiv**: [2601.19156](https://arxiv.org/abs/2601.19156)  
+**Code**: To be confirmed  
 **Area**: Optimization / Theory
 **Keywords**: Muon optimizer, Newton-Schulz, polar decomposition, matrix optimization, convergence analysis
 
@@ -46,17 +46,17 @@ At each step, Muon performs: (1) stochastic gradient computation $G_t$; (2) mome
 ### Key Designs (Theoretical Contributions)
 
 1. **Theorem 1: Non-convex convergence of NS-Muon**:
-   - Number of iterations for Muon with $q$ NS steps to reach an $\epsilon$-stationary point: $T = O\left(\frac{C_q \cdot L D}{\epsilon^2}\right)$
-   - $C_q$ is the sole constant factor depending on the NS approximation quality.
+    - Number of iterations for Muon with $q$ NS steps to reach an $\epsilon$-stationary point: $T = O\left(\frac{C_q \cdot L D}{\epsilon^2}\right)$
+    - $C_q$ is the sole constant factor depending on the NS approximation quality.
 
 2. **Theorem 2: Doubly exponential decay of polar decomposition approximation error**:
-   - $\varepsilon_q \leq \varepsilon_0^{(2\kappa+1)^q}$ — doubly exponential decay in $q$ and decay in polynomial degree $\kappa$.
-   - Implication: $q = 3\text{–}5$ steps with $\kappa = 2\text{–}3$ suffices to achieve $C_q \approx 1$, matching the SVD variant.
-   - Wall-clock advantage: NS requires only matrix multiplications (GPU-efficient), whereas SVD costs $O(mn\min(m,n))$.
+    - $\varepsilon_q \leq \varepsilon_0^{(2\kappa+1)^q}$ — doubly exponential decay in $q$ and decay in polynomial degree $\kappa$.
+    - Implication: $q = 3\text{–}5$ steps with $\kappa = 2\text{–}3$ suffices to achieve $C_q \approx 1$, matching the SVD variant.
+    - Wall-clock advantage: NS requires only matrix multiplications (GPU-efficient), whereas SVD costs $O(mn\min(m,n))$.
 
 3. **Theorem 3: Rank advantage over SGD-M**:
-   - Muon converges $\sqrt{r}$ times faster than SGD-M, where $r = \min(m,n)$ is the matrix rank.
-   - Reason: Muon operates under the nuclear norm → exploits low-rank matrix structure → more efficient search directions.
+    - Muon converges $\sqrt{r}$ times faster than SGD-M, where $r = \min(m,n)$ is the matrix rank.
+    - Reason: Muon operates under the nuclear norm → exploits low-rank matrix structure → more efficient search directions.
 
 ## Key Experimental Results
 

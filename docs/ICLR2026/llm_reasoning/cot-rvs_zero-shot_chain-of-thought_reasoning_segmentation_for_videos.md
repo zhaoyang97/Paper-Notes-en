@@ -18,8 +18,8 @@ content_hash: 4bc7555a0eaa3cc1
 # CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.18561](https://arxiv.org/abs/2505.18561)
-**Code**: None
+**arXiv**: [2505.18561](https://arxiv.org/abs/2505.18561)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Reasoning Video Segmentation, Chain-of-Thought, Zero-Shot, Keyframe Selection, Multimodal Large Language Models
 

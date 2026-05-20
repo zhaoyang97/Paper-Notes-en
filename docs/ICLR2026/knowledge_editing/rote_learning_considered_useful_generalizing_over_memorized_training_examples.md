@@ -17,8 +17,8 @@ content_hash: 61bc767ce645d48f
 # Rote Learning Considered Useful: Generalizing over Memorized Training Examples
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.21914](https://arxiv.org/abs/2507.21914)
-**Code**: [QinyuanWu0710/memorize-then-generalize](https://github.com/QinyuanWu0710/memorize-then-generalize)
+**arXiv**: [2507.21914](https://arxiv.org/abs/2507.21914)  
+**Code**: [QinyuanWu0710/memorize-then-generalize](https://github.com/QinyuanWu0710/memorize-then-generalize)  
 **Area**: Knowledge Editing
 **Keywords**: memorization, generalization, knowledge_injection, LLM_learning_dynamics
 

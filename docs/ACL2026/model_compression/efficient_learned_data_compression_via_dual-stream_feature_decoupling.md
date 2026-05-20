@@ -18,8 +18,8 @@ content_hash: 5f04a155298c1463
 # Efficient Learned Data Compression via Dual-Stream Feature Decoupling
 
 **Conference**: ACL 2026
-**arXiv**: [2604.07239](https://arxiv.org/abs/2604.07239)
-**Code**: [https://github.com/huidong-ma/FADE](https://github.com/huidong-ma/FADE)
+**arXiv**: [2604.07239](https://arxiv.org/abs/2604.07239)  
+**Code**: [https://github.com/huidong-ma/FADE](https://github.com/huidong-ma/FADE)  
 **Area**: Model Compression / Data Compression
 **Keywords**: learned data compression, dual-stream feature decoupling, probability modeling, parallel pipeline, lossless compression
 

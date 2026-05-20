@@ -17,8 +17,8 @@ content_hash: de08c5628a8693af
 # Robust Tabular Foundation Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.03307](https://arxiv.org/abs/2512.03307)
-**Code**: To be confirmed
+**arXiv**: [2512.03307](https://arxiv.org/abs/2512.03307)  
+**Code**: To be confirmed  
 **Area**: Self-Supervised Learning / Tabular Foundation Models
 **Keywords**: tabular foundation model, adversarial training, synthetic data, distributionally robust optimization
 

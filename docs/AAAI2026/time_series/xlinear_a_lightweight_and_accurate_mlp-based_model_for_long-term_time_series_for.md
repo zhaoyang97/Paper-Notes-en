@@ -18,8 +18,8 @@ content_hash: ab7c367b5777fe09
 # XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs
 
 **Conference**: AAAI2026
-**arXiv**: [2601.09237](https://arxiv.org/abs/2601.09237)
-**Code**: [Zaiwen/XLinear](https://github.com/Zaiwen/XLinear)
+**arXiv**: [2601.09237](https://arxiv.org/abs/2601.09237)  
+**Code**: [Zaiwen/XLinear](https://github.com/Zaiwen/XLinear)  
 **Area**: Time Series
 **Keywords**: time series forecasting, MLP, exogenous inputs, gating mechanism, lightweight model
 

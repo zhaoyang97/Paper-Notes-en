@@ -18,8 +18,8 @@ content_hash: 2dc74f33eda58f22
 # Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24322](https://arxiv.org/abs/2603.24322)
-**Code**: N/A
+**arXiv**: [2603.24322](https://arxiv.org/abs/2603.24322)  
+**Code**: N/A  
 **Area**: Semantic Segmentation / Domain Adaptation
 **Keywords**: Unsupervised Domain Adaptation, Semantic Segmentation, Curriculum Learning, Reinforcement Learning, Adverse Weather
 

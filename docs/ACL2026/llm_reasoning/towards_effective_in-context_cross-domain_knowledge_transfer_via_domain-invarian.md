@@ -18,8 +18,8 @@ content_hash: ffb9062bf3bb8a6f
 # Towards Effective In-context Cross-domain Knowledge Transfer via Domain-invariant-neurons-based Retrieval
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05383](https://arxiv.org/abs/2604.05383)
-**Code**: [GitHub](https://github.com/Leon221220/DIN-Retrieval)
+**arXiv**: [2604.05383](https://arxiv.org/abs/2604.05383)  
+**Code**: [GitHub](https://github.com/Leon221220/DIN-Retrieval)  
 **Area**: LLM Reasoning
 **Keywords**: Cross-domain knowledge transfer, domain-invariant neurons, in-context learning retrieval, reasoning structure alignment, mathematical-logical reasoning
 

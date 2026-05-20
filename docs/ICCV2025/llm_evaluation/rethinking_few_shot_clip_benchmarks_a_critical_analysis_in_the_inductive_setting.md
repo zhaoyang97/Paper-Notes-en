@@ -18,8 +18,8 @@ content_hash: 3733b4c8a1b4f2b4
 # Rethinking Few Shot CLIP Benchmarks: A Critical Analysis in the Inductive Setting
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.20834](https://arxiv.org/abs/2507.20834)
-**Code**: None
+**arXiv**: [2507.20834](https://arxiv.org/abs/2507.20834)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: CLIP, few-shot learning, inductive setting, machine unlearning, benchmark evaluation
 

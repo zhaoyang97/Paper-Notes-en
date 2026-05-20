@@ -18,8 +18,8 @@ content_hash: 4cd3a8cff381c307
 # UniFusion: A Unified Image Fusion Framework with Robust Representation and Source-Aware Preservation
 
 **Conference**: CVPR2026
-**arXiv**: [2603.14214](https://arxiv.org/abs/2603.14214)
-**Code**: [dusongcheng/UniFusion](https://github.com/dusongcheng/UniFusion)
+**arXiv**: [2603.14214](https://arxiv.org/abs/2603.14214)  
+**Code**: [dusongcheng/UniFusion](https://github.com/dusongcheng/UniFusion)  
 **Area**: Optimization
 **Keywords**: unified image fusion, DINOv3, bilevel optimization, reconstruction alignment, cross-task generalization
 

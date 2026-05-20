@@ -18,8 +18,8 @@ content_hash: 1f08f98b173a76f4
 # MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24103](https://arxiv.org/abs/2510.24103)
-**Code**: [GitHub](https://github.com/pantheon5100/mgaudio)
+**arXiv**: [2510.24103](https://arxiv.org/abs/2510.24103)  
+**Code**: [GitHub](https://github.com/pantheon5100/mgaudio)  
 **Area**: Image Generation
 **Keywords**: Video-to-Audio, Model Guidance, Flow Matching, Dual-Role Alignment, CFG Alternative
 
@@ -31,8 +31,8 @@ This paper proposes MGAudio, the first video-to-audio generation framework that 
 
 - **Background**: Video-to-audio (V2A) generation aims to synthesize semantically aligned and temporally synchronized audio for silent videos. Mainstream approaches—including Diff-Foley, FRIEREN, MDSGen, and MMAudio—rely on **classifier-free guidance (CFG)**, which randomly drops 10% of conditioning signals during training to jointly learn conditional and unconditional objectives.
 - **Limitations of Prior Work**: CFG introduces two key problems:
-  - **Multi-task dilution**: Simultaneously learning conditional and unconditional objectives may divide model capacity, leaving both sub-tasks underoptimized.
-  - **Train-inference mismatch**: The condition-dropout behavior during training is inconsistent with the CFG-scaling behavior during inference, leading to misaligned sampling dynamics.
+    - **Multi-task dilution**: Simultaneously learning conditional and unconditional objectives may divide model capacity, leaving both sub-tasks underoptimized.
+    - **Train-inference mismatch**: The condition-dropout behavior during training is inconsistent with the CFG-scaling behavior during inference, leading to misaligned sampling dynamics.
 - **Key Challenge**: Vision Model-Guidance (VMG) has demonstrated the feasibility of replacing CFG with direct self-guidance in image generation, but its design targets discrete class labels and has not been explored for continuous video-conditioned audio generation. The authors further observe a **modality-specific behavior**: unlike in the visual domain, MG training in audio accelerates convergence but still requires CFG at inference time for peak quality, potentially due to the temporal sensitivity of audio signals. Additionally, prior methods typically use only the video encoder from CAVP for condition injection, discarding the audio encoder—which the authors argue can serve as an alignment target for intermediate representations, analogous to REPA in the visual domain.
 - **Goal**: To develop a V2A generation framework that (1) replaces CFG training with model-guided objectives, (2) fully exploits both branches of a pretrained audio-video encoder for condition injection and representation alignment, and (3) achieves strong performance with reduced model size and data requirements.
 

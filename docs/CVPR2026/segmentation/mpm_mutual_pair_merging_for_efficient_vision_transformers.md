@@ -18,8 +18,8 @@ content_hash: eda93c276a22c78c
 # MPM: Mutual Pair Merging for Efficient Vision Transformers
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05718](https://arxiv.org/abs/2604.05718)
-**Code**: None
+**arXiv**: [2604.05718](https://arxiv.org/abs/2604.05718)  
+**Code**: None  
 **Area**: Segmentation
 **Keywords**: Token Merging, Semantic Segmentation, Vision Transformer, Inference Acceleration, Training-Free Method
 

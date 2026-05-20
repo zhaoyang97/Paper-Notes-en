@@ -18,8 +18,8 @@ content_hash: 9a8e9f2af6429653
 # Decisive: Guiding User Decisions with Optimal Preference Elicitation from Unstructured Documents
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18122](https://arxiv.org/abs/2604.18122)
-**Code**: None
+**arXiv**: [2604.18122](https://arxiv.org/abs/2604.18122)  
+**Code**: None  
 **Area**: Recommender Systems
 **Keywords**: Decision Support, Preference Elicitation, Bayesian Inference, Document Grounding, Interactive Systems
 

@@ -18,8 +18,8 @@ content_hash: 39a89b4f3bad9c9c
 # InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.02981](https://arxiv.org/abs/2512.02981)
-**Code**: N/A
+**arXiv**: [2512.02981](https://arxiv.org/abs/2512.02981)  
+**Code**: N/A  
 **Area**: Multimodal VLM / Hallucination Mitigation / Multi-Agent
 **Keywords**: Multimodal hallucination, uncertainty estimation, cross-modal verification, multi-agent collaboration, training-free
 

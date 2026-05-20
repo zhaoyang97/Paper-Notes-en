@@ -18,8 +18,8 @@ content_hash: 06176f5d2059590f
 # KINDLE: Knowledge-Guided Distillation for Prior-Free Gene Regulatory Network Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.09664](https://arxiv.org/abs/2505.09664)
-**Code**: To be confirmed
+**arXiv**: [2505.09664](https://arxiv.org/abs/2505.09664)  
+**Code**: To be confirmed  
 **Area**: Model Compression
 **Keywords**: Gene Regulatory Network, knowledge distillation, Prior-Free Inference, Temporal Attention, Single-Cell RNA-seq
 
@@ -33,8 +33,8 @@ Gene regulatory networks (GRNs) describe regulatory relationships between transc
 
 1. **Enormous search space**: For a genome with approximately 30,000 genes, there are roughly one billion potential TF–TG interaction pairs, severely limiting the performance of expression-data-only approaches.
 2. **Limitations of prior-dependent methods**: Mainstream methods rely on external priors such as scATAC-seq and Hi-C data to narrow the search space, but suffer from two critical issues:
-   - Algorithmic performance is highly sensitive to the overlap between the prior and the true network; inaccurate priors cause performance collapse.
-   - Restricting the search to known interactions precludes the discovery of novel regulatory relationships, severely constraining the potential for scientific discovery.
+    - Algorithmic performance is highly sensitive to the overlap between the prior and the true network; inaccurate priors cause performance collapse.
+    - Restricting the search to known interactions precludes the discovery of novel regulatory relationships, severely constraining the potential for scientific discovery.
 3. **Practical necessity**: In settings such as non-model organisms or emerging pathological states, reliable prior networks are often unavailable.
 
 Inspired by the **privileged information learning** paradigm, the authors propose a novel strategy: leveraging prior-guided teacher models during training, then transferring regulatory knowledge to a student model that requires no prior at inference time via knowledge distillation.
@@ -110,12 +110,12 @@ A key observation is that KINDLE's advantage is especially pronounced on AUPRC a
 ### Biological Validation
 
 1. **Key TF identification (mESC)**: KINDLE successfully identifies 25 key TFs, of which 18 (72%) are confirmed by existing literature to participate in mESC differentiation. Hierarchical clustering reveals two groups with antiphasic activation patterns:
-   - Early regulators (Nanog, Sox2, Nr0b1, etc.): highly active during early differentiation and subsequently declining, consistent with their known roles in maintaining stem cell pluripotency.
-   - Late regulators (Gata4, Sox17, Kdm5b, etc.): silenced initially and significantly activated from the third stage onward, consistent with lineage specification mechanisms.
+    - Early regulators (Nanog, Sox2, Nr0b1, etc.): highly active during early differentiation and subsequently declining, consistent with their known roles in maintaining stem cell pluripotency.
+    - Late regulators (Gata4, Sox17, Kdm5b, etc.): silenced initially and significantly activated from the third stage onward, consistent with lineage specification mechanisms.
 
 2. **In vitro perturbation prediction (mHSC)**:
-   - **Gata1** knockout: perturbation vectors for erythroid cells (CMP, MEP) point opposite to the differentiation direction, indicating differentiation suppression → consistent with experimental results.
-   - **Spi1** knockout: CMP differentiation toward the erythroid lineage is promoted while LMPP/GMP differentiation is suppressed → consistent with experimental results.
+    - **Gata1** knockout: perturbation vectors for erythroid cells (CMP, MEP) point opposite to the differentiation direction, indicating differentiation suppression → consistent with experimental results.
+    - **Spi1** knockout: CMP differentiation toward the erythroid lineage is promoted while LMPP/GMP differentiation is suppressed → consistent with experimental results.
 
 ## Highlights & Insights
 

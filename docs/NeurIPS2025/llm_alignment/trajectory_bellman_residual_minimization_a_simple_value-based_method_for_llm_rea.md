@@ -18,8 +18,8 @@ content_hash: 76913e8d29cf6703
 # Trajectory Bellman Residual Minimization: A Simple Value-Based Method for LLM Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15311](https://arxiv.org/abs/2505.15311)
-**Code**: To be released
+**arXiv**: [2505.15311](https://arxiv.org/abs/2505.15311)  
+**Code**: To be released  
 **Area**: LLM Alignment
 **Keywords**: Bellman residual, value learning, single-sample, critic-free, mathematical reasoning
 

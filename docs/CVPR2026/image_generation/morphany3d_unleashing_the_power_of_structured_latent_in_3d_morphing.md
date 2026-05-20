@@ -18,8 +18,8 @@ content_hash: 114a629cdf08c8ca
 # MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.00204](https://arxiv.org/abs/2601.00204)
-**Code**: [https://xiaokunsun.github.io/MorphAny3D.github.io/](https://xiaokunsun.github.io/MorphAny3D.github.io/)
+**arXiv**: [2601.00204](https://arxiv.org/abs/2601.00204)  
+**Code**: [https://xiaokunsun.github.io/MorphAny3D.github.io/](https://xiaokunsun.github.io/MorphAny3D.github.io/)  
 **Area**: Image Generation / 3D Vision
 **Keywords**: 3D Morphing, SLAT, Attention Mechanism, Training-Free, Trellis
 

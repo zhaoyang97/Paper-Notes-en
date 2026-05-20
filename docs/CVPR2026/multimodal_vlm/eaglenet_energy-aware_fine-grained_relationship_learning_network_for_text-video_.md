@@ -18,8 +18,8 @@ content_hash: 12399bcf405875bd
 # EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25267](https://arxiv.org/abs/2603.25267)
-**Code**: [https://github.com/draym28/EagleNet](https://github.com/draym28/EagleNet)
+**arXiv**: [2603.25267](https://arxiv.org/abs/2603.25267)  
+**Code**: [https://github.com/draym28/EagleNet](https://github.com/draym28/EagleNet)  
 **Area**: Multimodal VLM / Video Understanding
 **Keywords**: Text-video retrieval, graph attention network, energy-based model, fine-grained relationship learning, cross-modal alignment
 

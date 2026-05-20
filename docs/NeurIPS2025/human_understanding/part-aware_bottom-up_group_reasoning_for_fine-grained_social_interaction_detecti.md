@@ -18,8 +18,8 @@ content_hash: af25ec3c7cc8799f
 # Part-Aware Bottom-Up Group Reasoning for Fine-Grained Social Interaction Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.03666](https://arxiv.org/abs/2511.03666)
-**Code**: N/A
+**arXiv**: [2511.03666](https://arxiv.org/abs/2511.03666)  
+**Code**: N/A  
 **Area**: Human Understanding
 **Keywords**: Social Interaction Detection, Body Part Awareness, Bottom-Up Reasoning, Nonverbal Interaction, Pose Guidance
 

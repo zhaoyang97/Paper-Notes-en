@@ -18,8 +18,8 @@ content_hash: e91ba2b2a46e5404
 # UKP_Psycontrol at SemEval-2026 Task 2: Modeling Valence and Arousal Dynamics from Text
 
 **Conference**: ACL 2026
-**arXiv**: [2604.21534](https://arxiv.org/abs/2604.21534)
-**Code**: [GitHub](https://github.com/)
+**arXiv**: [2604.21534](https://arxiv.org/abs/2604.21534)  
+**Code**: [GitHub](https://github.com/)  
 **Area**: Affective Computing / Longitudinal Affect Modeling
 **Keywords**: Affect Assessment, Longitudinal Analysis, Valence-Arousal, LLM Prompting, MaxEnt Model
 

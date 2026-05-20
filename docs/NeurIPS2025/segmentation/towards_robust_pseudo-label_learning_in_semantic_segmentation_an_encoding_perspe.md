@@ -18,8 +18,8 @@ content_hash: 7f27f9c42075ee36
 # Towards Robust Pseudo-Label Learning in Semantic Segmentation: An Encoding Perspective
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.06870](https://arxiv.org/abs/2512.06870)
-**Code**: [https://github.com/Woof6/ECOCSeg](https://github.com/Woof6/ECOCSeg)
+**arXiv**: [2512.06870](https://arxiv.org/abs/2512.06870)  
+**Code**: [https://github.com/Woof6/ECOCSeg](https://github.com/Woof6/ECOCSeg)  
 **Area**: Segmentation
 **Keywords**: Pseudo-label learning, semantic segmentation, error-correcting output codes, unsupervised domain adaptation, semi-supervised learning
 

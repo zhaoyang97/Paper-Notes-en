@@ -18,8 +18,8 @@ content_hash: b31976da02bd5ecf
 # QiMeng-Kernel: Macro-Thinking Micro-Coding Paradigm for LLM-Based High-Performance GPU Kernel Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.20100](https://arxiv.org/abs/2511.20100)
-**Code**: None (paper states model and dataset will be released)
+**arXiv**: [2511.20100](https://arxiv.org/abs/2511.20100)  
+**Code**: None (paper states model and dataset will be released)  
 **Area**: Reinforcement Learning
 **Keywords**: GPU kernel generation, LLM code generation, reinforcement learning policy, hierarchical optimization, high-performance computing
 

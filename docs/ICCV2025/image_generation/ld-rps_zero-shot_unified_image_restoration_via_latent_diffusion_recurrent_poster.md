@@ -18,8 +18,8 @@ content_hash: ed825afbae2a242c
 # LD-RPS: Zero-Shot Unified Image Restoration via Latent Diffusion Recurrent Posterior Sampling
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.00790](https://arxiv.org/abs/2507.00790)
-**Code**: [https://github.com/AMAP-ML/LD-RPS](https://github.com/AMAP-ML/LD-RPS)
+**arXiv**: [2507.00790](https://arxiv.org/abs/2507.00790)  
+**Code**: [https://github.com/AMAP-ML/LD-RPS](https://github.com/AMAP-ML/LD-RPS)  
 **Area**: Image Generation
 **Keywords**: Zero-shot image restoration, posterior sampling, latent diffusion, recurrent refinement, multimodal prior
 

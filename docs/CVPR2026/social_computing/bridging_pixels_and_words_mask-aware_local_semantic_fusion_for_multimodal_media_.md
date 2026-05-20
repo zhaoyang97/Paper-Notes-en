@@ -18,8 +18,8 @@ content_hash: 0bc9d444bb12005e
 # Bridging Pixels and Words: Mask-Aware Local Semantic Fusion for Multimodal Media Verification
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26052](https://arxiv.org/abs/2603.26052)
-**Code**: None
+**arXiv**: [2603.26052](https://arxiv.org/abs/2603.26052)  
+**Code**: None  
 **Area**: Social Computing
 **Keywords**: multimodal misinformation, bidirectional cross-modal verification, mask-label pairs, hierarchical semantic aggregation, deepfake detection
 

@@ -18,8 +18,8 @@ content_hash: f7458ad7967087a1
 # Fast Catch-Up, Late Switching: Optimal Batch Size Scheduling via Functional Scaling Laws
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.14208](https://arxiv.org/abs/2602.14208)
-**Code**: None
+**arXiv**: [2602.14208](https://arxiv.org/abs/2602.14208)  
+**Code**: None  
 **Area**: LLM Efficiency
 **Keywords**: batch size scheduling, scaling laws, LLM pretraining, fast catch-up, optimization theory
 

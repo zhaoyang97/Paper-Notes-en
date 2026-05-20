@@ -18,8 +18,8 @@ content_hash: 6331057c0c523241
 # Beyond Literal Mapping: Benchmarking and Improving Non-Literal Translation Evaluation
 
 **Conference**: ACL 2026
-**arXiv**: [2601.07338](https://arxiv.org/abs/2601.07338)
-**Code**: [GitHub](https://github.com/BITHLP/RATE)
+**arXiv**: [2601.07338](https://arxiv.org/abs/2601.07338)  
+**Code**: [GitHub](https://github.com/BITHLP/RATE)  
 **Area**: Multilingual / MT Evaluation
 **Keywords**: machine translation evaluation, non-literal translation, meta-evaluation benchmark, agentic evaluation framework, LLM-as-Judge
 

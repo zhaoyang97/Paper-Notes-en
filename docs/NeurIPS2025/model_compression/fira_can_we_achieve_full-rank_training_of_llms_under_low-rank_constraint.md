@@ -18,8 +18,8 @@ content_hash: 4a9026915543ff2a
 # FiRA: Can We Achieve Full-Rank Training of LLMs Under Low-Rank Constraint?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.01623](https://arxiv.org/abs/2410.01623)
-**Code**: Available (github.com/xichen-fy/Fira)
+**arXiv**: [2410.01623](https://arxiv.org/abs/2410.01623)  
+**Code**: Available (github.com/xichen-fy/Fira)  
 **Area**: Model Compression / LLM Efficiency
 **Keywords**: low-rank training, memory-efficient, full-rank gradient, Adam optimizer, gradient projection
 

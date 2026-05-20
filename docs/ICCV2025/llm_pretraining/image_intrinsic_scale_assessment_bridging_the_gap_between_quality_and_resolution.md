@@ -18,8 +18,8 @@ content_hash: 3b32b57e44ef7180
 # Image Intrinsic Scale Assessment: Bridging the Gap Between Quality and Resolution
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.06476](https://arxiv.org/abs/2502.06476)
-**Code**: [GitHub](https://github.com/SonyResearch/IISA)
+**arXiv**: [2502.06476](https://arxiv.org/abs/2502.06476)  
+**Code**: [GitHub](https://github.com/SonyResearch/IISA)  
 **Area**: LLM Pretraining
 **Keywords**: Image Quality Assessment, Intrinsic Scale, Weak Labels, Multi-Scale Perception, Subjective Annotation
 

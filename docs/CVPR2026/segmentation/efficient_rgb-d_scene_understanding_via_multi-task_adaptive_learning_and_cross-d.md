@@ -18,8 +18,8 @@ content_hash: d3ac23ada7e9219a
 # Efficient RGB-D Scene Understanding via Multi-task Adaptive Learning and Cross-dimensional Feature Guidance
 
 **Conference**: CVPR2026
-**arXiv**: [2603.07570](https://arxiv.org/abs/2603.07570)
-**Code**: Not yet released
+**arXiv**: [2603.07570](https://arxiv.org/abs/2603.07570)  
+**Code**: Not yet released  
 **Area**: Semantic Segmentation / Panoptic Segmentation / Multi-task Learning
 **Keywords**: RGB-D Scene Understanding, Multi-task Adaptive Learning, Cross-dimensional Feature Guidance, Panoptic Segmentation, Fusion Encoder
 

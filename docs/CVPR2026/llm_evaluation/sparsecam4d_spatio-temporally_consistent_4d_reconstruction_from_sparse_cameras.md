@@ -18,8 +18,8 @@ content_hash: 441f78d7d62e070d
 # SparseCam4D: Spatio-Temporally Consistent 4D Reconstruction from Sparse Cameras
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26481](https://arxiv.org/abs/2603.26481)
-**Code**: [https://inspatio.github.io/sparse-cam4d/](https://inspatio.github.io/sparse-cam4d/)
+**arXiv**: [2603.26481](https://arxiv.org/abs/2603.26481)  
+**Code**: [https://inspatio.github.io/sparse-cam4d/](https://inspatio.github.io/sparse-cam4d/)  
 **Area**: LLM Evaluation
 **Keywords**: sparse-camera 4D reconstruction, spatio-temporal distortion field, 4D Gaussian splatting, video diffusion models, dynamic scenes
 

@@ -18,8 +18,8 @@ content_hash: 104b1bb2617d55ae
 # Traversal Verification for Speculative Tree Decoding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12398](https://arxiv.org/abs/2505.12398)
-**Code**: Unavailable
+**arXiv**: [2505.12398](https://arxiv.org/abs/2505.12398)  
+**Code**: Unavailable  
 **Area**: Model Compression
 **Keywords**: Speculative Decoding, Tree Decoding, Verification Algorithm, Lossless Inference Acceleration, Sequence-Level Acceptance
 
@@ -55,8 +55,8 @@ Traversal Verification is a plug-and-play verification module that replaces the 
 
 2. **Bottom-up traversal order**: Verification begins at the first leaf node (i.e., the deepest leftmost node), drawing $\eta \sim U(0,1)$:
 
-   - If $\eta < p_\alpha(X_{\gamma_\alpha})$: accept the entire path $(X_0, \ldots, X_{\gamma_\alpha})$
-   - If rejected: remove the current leaf node, update the residual and draft distributions, and move to the sibling node or backtrack to the parent
+    - If $\eta < p_\alpha(X_{\gamma_\alpha})$: accept the entire path $(X_0, \ldots, X_{\gamma_\alpha})$
+    - If rejected: remove the current leaf node, update the residual and draft distributions, and move to the sibling node or backtrack to the parent
 
    An example traversal order for the tree in Figure 1: $X_3 \to X_4 \to X_1 \to X_5 \to X_2$. A key property is that a parent node is only verified after all its children have been rejected, maximizing candidate utilization.
 

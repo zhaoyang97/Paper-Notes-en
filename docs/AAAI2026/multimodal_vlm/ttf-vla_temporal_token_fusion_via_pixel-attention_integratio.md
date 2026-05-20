@@ -18,8 +18,8 @@ content_hash: 4c63621ffb4af4d5
 # TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.19257](https://arxiv.org/abs/2508.19257)
-**Code**: [https://github.com/PKU-XLab/TTF-VLA](https://github.com/PKU-XLab/TTF-VLA)
+**arXiv**: [2508.19257](https://arxiv.org/abs/2508.19257)  
+**Code**: [https://github.com/PKU-XLab/TTF-VLA](https://github.com/PKU-XLab/TTF-VLA)  
 **Area**: Robotic Manipulation / VLA Models
 **Keywords**: VLA, Temporal Token Fusion, Training-Free Inference Enhancement, Dual-Dimension Detection, Keyframe Mechanism
 

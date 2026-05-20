@@ -18,8 +18,8 @@ content_hash: 3c0bcc04fd4157b2
 # A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.21314](https://arxiv.org/abs/2510.21314)
-**Code**: None
+**arXiv**: [2510.21314](https://arxiv.org/abs/2510.21314)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: Low-precision training, Adam, Muon, floating-point quantization, convergence analysis
 

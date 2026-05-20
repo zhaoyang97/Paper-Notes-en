@@ -18,8 +18,8 @@ content_hash: 3dd2c8e0fdb3d008
 # Deep Learning for Subspace Regression
 
 **Conference**: ICLR2026
-**arXiv**: [2509.23249](https://arxiv.org/abs/2509.23249)
-**Code**: [GitHub](https://github.com/VLSF/subreg)
+**arXiv**: [2509.23249](https://arxiv.org/abs/2509.23249)  
+**Code**: [GitHub](https://github.com/VLSF/subreg)  
 **Area**: Scientific Computing
 **Keywords**: subspace regression, Grassmann manifold, reduced order modeling, neural operator, eigenspace
 

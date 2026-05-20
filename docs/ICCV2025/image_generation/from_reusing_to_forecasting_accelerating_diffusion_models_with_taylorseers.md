@@ -20,8 +20,8 @@ content_hash: f6ea46a956f00efa
 # From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers
 
 **Conference**: ICCV 2025
-**arXiv**: 2503.06923
-**Code**: [https://github.com/Shenyi-Z/TaylorSeer](https://github.com/Shenyi-Z/TaylorSeer)
+**arXiv**: 2503.06923  
+**Code**: [https://github.com/Shenyi-Z/TaylorSeer](https://github.com/Shenyi-Z/TaylorSeer)  
 **Area**: Image Generation
 **Keywords**: Diffusion model acceleration, feature caching, Taylor expansion, training-free acceleration, DiT, FLUX, HunyuanVideo
 

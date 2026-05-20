@@ -18,8 +18,8 @@ content_hash: 80dd732feb01158c
 # Stylos: Multi-View 3D Stylization with Single-Forward Gaussian Splatting
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26455](https://arxiv.org/abs/2509.26455)
-**Code**: [https://github.com/HanzhouLiu/Stylos](https://github.com/HanzhouLiu/Stylos)
+**arXiv**: [2509.26455](https://arxiv.org/abs/2509.26455)  
+**Code**: [https://github.com/HanzhouLiu/Stylos](https://github.com/HanzhouLiu/Stylos)  
 **Area**: 3D Vision
 **Keywords**: 3D style transfer, Gaussian splatting, cross-view consistency, voxel style loss, feed-forward model
 
@@ -66,9 +66,9 @@ Stylos uses VGGT as the geometry backbone and introduces a Style Aggregator bran
 
 3. **Prediction Head Design**
 
-   - Geometry head: DPT regression head outputting position, scale, rotation, and opacity.
-   - Style head: Color head predicting spherical harmonic coefficients.
-   - Auxiliary heads: VGGT camera head estimating intrinsic/extrinsic parameters; depth head predicting scene geometry.
+    - Geometry head: DPT regression head outputting position, scale, rotation, and opacity.
+    - Style head: Color head predicting spherical harmonic coefficients.
+    - Auxiliary heads: VGGT camera head estimating intrinsic/extrinsic parameters; depth head predicting scene geometry.
 
 ### Loss & Training
 

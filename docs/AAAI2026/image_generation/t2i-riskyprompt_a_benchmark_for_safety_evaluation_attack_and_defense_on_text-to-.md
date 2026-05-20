@@ -18,8 +18,8 @@ content_hash: b1a30221e593b2ae
 # T2I-RiskyPrompt: A Benchmark for Safety Evaluation, Attack, and Defense on Text-to-Image Model
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.22300](https://arxiv.org/abs/2510.22300)
-**Code**: [https://github.com/datar001/T2I-RiskyPrompt](https://github.com/datar001/T2I-RiskyPrompt)
+**arXiv**: [2510.22300](https://arxiv.org/abs/2510.22300)  
+**Code**: [https://github.com/datar001/T2I-RiskyPrompt](https://github.com/datar001/T2I-RiskyPrompt)  
 **Area**: Diffusion Models
 **Keywords**: T2I Safety, Risk Evaluation, Hierarchical Risk Taxonomy, Jailbreak Attack, Safety Filter
 

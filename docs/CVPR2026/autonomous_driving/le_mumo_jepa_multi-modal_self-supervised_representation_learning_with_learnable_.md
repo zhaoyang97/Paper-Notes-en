@@ -18,8 +18,8 @@ content_hash: 35950d824289b706
 # Le MuMo JEPA: Multi-Modal Self-Supervised Representation Learning with Learnable Fusion Tokens
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24327](https://arxiv.org/abs/2603.24327)
-**Code**: N/A
+**arXiv**: [2603.24327](https://arxiv.org/abs/2603.24327)  
+**Code**: N/A  
 **Area**: Autonomous Driving / Multi-Modal Self-Supervised Learning
 **Keywords**: Multi-modal self-supervision, JEPA, fusion tokens, latent bottleneck, RGB-LiDAR fusion
 

@@ -18,8 +18,8 @@ content_hash: 90190c45124e03a0
 # From Black-box to Causal-box: Towards Building More Interpretable Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21998](https://arxiv.org/abs/2510.21998)
-**Code**: To be confirmed
+**arXiv**: [2510.21998](https://arxiv.org/abs/2510.21998)  
+**Code**: To be confirmed  
 **Area**: Causal Inference / Explainable AI
 **Keywords**: causal interpretability, counterfactual reasoning, concept-based models, structural causal models, interpretability-accuracy tradeoff
 
@@ -48,39 +48,39 @@ The paper develops a theoretical framework proceeding as follows: define causal 
 
 1. **Augmented Structural Causal Model (ASCM, Definition 1)**
 
-   - *Function*: Jointly models the image-generation process and model predictions.
-   - *Mechanism*: Extends a generative-level SCM $\mathcal{M}_0$ (encoding causal relationships among latent concepts $\mathbf{V}$) with an image-generation mechanism $\mathbf{X} \leftarrow f_\mathbf{X}(\mathbf{V}, \mathbf{U_X})$ and a classifier $\hat{Y} \leftarrow f_{\hat{Y}}(\text{subset of } \{\mathbf{V}, \mathbf{X}\})$.
-   - *Design Motivation*: Incorporating "how the model predicts" into the causal framework enables counterfactual analysis to simultaneously account for data generation and model behavior.
+    - *Function*: Jointly models the image-generation process and model predictions.
+    - *Mechanism*: Extends a generative-level SCM $\mathcal{M}_0$ (encoding causal relationships among latent concepts $\mathbf{V}$) with an image-generation mechanism $\mathbf{X} \leftarrow f_\mathbf{X}(\mathbf{V}, \mathbf{U_X})$ and a classifier $\hat{Y} \leftarrow f_{\hat{Y}}(\text{subset of } \{\mathbf{V}, \mathbf{X}\})$.
+    - *Design Motivation*: Incorporating "how the model predicts" into the causal framework enables counterfactual analysis to simultaneously account for data generation and model behavior.
 
 2. **Definition of Causal Interpretability (Definition 2)**
 
-   - *Function*: Formalizes the condition under which a model class can consistently answer counterfactual queries.
-   - *Core Definition*: A model class $\Omega'$ is causally interpretable with respect to query $Q$ if and only if, for all $\mathcal{M}_1, \mathcal{M}_2 \in \Omega'$, agreement on the observational distribution ($P^{\mathcal{M}_1}(\mathbf{V}, \mathbf{X}, \hat{Y}) = P^{\mathcal{M}_2}(\mathbf{V}, \mathbf{X}, \hat{Y})$) implies agreement on the counterfactual quantity ($Q^{\mathcal{M}_1} = Q^{\mathcal{M}_2}$).
-   - *Design Motivation*: Directly captures the core requirement of counterfactual reliability—models that are observationally indistinguishable within the same class should also be counterfactually indistinguishable.
+    - *Function*: Formalizes the condition under which a model class can consistently answer counterfactual queries.
+    - *Core Definition*: A model class $\Omega'$ is causally interpretable with respect to query $Q$ if and only if, for all $\mathcal{M}_1, \mathcal{M}_2 \in \Omega'$, agreement on the observational distribution ($P^{\mathcal{M}_1}(\mathbf{V}, \mathbf{X}, \hat{Y}) = P^{\mathcal{M}_2}(\mathbf{V}, \mathbf{X}, \hat{Y})$) implies agreement on the counterfactual quantity ($Q^{\mathcal{M}_1} = Q^{\mathcal{M}_2}$).
+    - *Design Motivation*: Directly captures the core requirement of counterfactual reliability—models that are observationally indistinguishable within the same class should also be counterfactually indistinguishable.
 
 3. **Non-Interpretability Results (Proposition 1 + Example 4)**
 
-   - Black-box models never satisfy causal interpretability (Proposition 1): since $\hat{Y}$ depends on $\mathbf{X}$, which is a descendant of all variables.
-   - CBMs do not necessarily satisfy causal interpretability (Example 4): when the concepts used for prediction include descendants of the intervention target, different models may still yield divergent counterfactual answers.
-   - *Design Motivation*: Dispels the misconception that concept bottleneck models are inherently interpretable.
+    - Black-box models never satisfy causal interpretability (Proposition 1): since $\hat{Y}$ depends on $\mathbf{X}$, which is a descendant of all variables.
+    - CBMs do not necessarily satisfy causal interpretability (Example 4): when the concepts used for prediction include descendants of the intervention target, different models may still yield divergent counterfactual answers.
+    - *Design Motivation*: Dispels the misconception that concept bottleneck models are inherently interpretable.
 
 4. **Graphical Criterion (Theorem 1) and Maximal Admissible Set (Theorem 2)**
 
-   - *Function*: Identifies which feature sets $\mathbf{T}$ render a model causally interpretable.
-   - *Core Result*: $\Omega_{GCP(\mathbf{T})}$ is causally interpretable with respect to $Q(\mathbf{W})$ **if and only if** $\mathbf{T} \subseteq \mathbf{W} \cup ND(\mathbf{W})$ (i.e., $\mathbf{T}$ may only contain the intervention target and its non-descendants).
-   - The maximal admissible set is unique: $\text{Max-T-Ad}(\mathbf{W}_\star) = \cap_{\mathbf{W}_i \in \mathbf{W}_\star} (\mathbf{W}_i \cup ND(\mathbf{W}_i))$.
-   - *Design Motivation*: Maximizing the admissible feature set maximizes predictive accuracy while preserving causal interpretability. Only the descendant relationships of the intervention target need be known; a complete causal graph is not required.
+    - *Function*: Identifies which feature sets $\mathbf{T}$ render a model causally interpretable.
+    - *Core Result*: $\Omega_{GCP(\mathbf{T})}$ is causally interpretable with respect to $Q(\mathbf{W})$ **if and only if** $\mathbf{T} \subseteq \mathbf{W} \cup ND(\mathbf{W})$ (i.e., $\mathbf{T}$ may only contain the intervention target and its non-descendants).
+    - The maximal admissible set is unique: $\text{Max-T-Ad}(\mathbf{W}_\star) = \cap_{\mathbf{W}_i \in \mathbf{W}_\star} (\mathbf{W}_i \cup ND(\mathbf{W}_i))$.
+    - *Design Motivation*: Maximizing the admissible feature set maximizes predictive accuracy while preserving causal interpretability. Only the descendant relationships of the intervention target need be known; a complete causal graph is not required.
 
 5. **Closed-Form Counterfactual Computation (Theorem 3)**
 
-   - $P(\hat{Y}_{\mathbf{w}'} | \mathbf{x}) = \sum_\mathbf{t} P(\hat{Y} | \mathbf{w}' \cap \mathbf{T}, \mathbf{t} \setminus \mathbf{W}) P(\mathbf{t} | \mathbf{x})$
-   - Computation from data requires two steps: a feature extractor $P(\mathbf{T}|\mathbf{X})$ and a classifier $P(\hat{Y}|\mathbf{T})$, with the intervention target substituted accordingly.
+    - $P(\hat{Y}_{\mathbf{w}'} | \mathbf{x}) = \sum_\mathbf{t} P(\hat{Y} | \mathbf{w}' \cap \mathbf{T}, \mathbf{t} \setminus \mathbf{W}) P(\mathbf{t} | \mathbf{x})$
+    - Computation from data requires two steps: a feature extractor $P(\mathbf{T}|\mathbf{X})$ and a classifier $P(\hat{Y}|\mathbf{T})$, with the intervention target substituted accordingly.
 
 6. **Interpretability–Accuracy Tradeoff (Theorem 4)**
 
-   - More features yield higher predictive accuracy but reduce the set of answerable counterfactual queries.
-   - Answering a broader range of counterfactual queries requires fewer admissible features, which in turn reduces predictive accuracy.
-   - This constitutes a fundamental information-theoretic tradeoff.
+    - More features yield higher predictive accuracy but reduce the set of answerable counterfactual queries.
+    - Answering a broader range of counterfactual queries requires fewer admissible features, which in turn reduces predictive accuracy.
+    - This constitutes a fundamental information-theoretic tradeoff.
 
 ### Loss & Training
 This is a theoretical contribution; no specific loss function is proposed. Experiments employ standard classification training for GCP models.

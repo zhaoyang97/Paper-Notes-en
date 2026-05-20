@@ -18,8 +18,8 @@ content_hash: 6c96c4376e462942
 # WonderTurbo: Generating Interactive 3D World in 0.72 Seconds
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.02261](https://arxiv.org/abs/2504.02261)
-**Code**: [https://github.com/GigaAI-research/WonderTurbo](https://github.com/GigaAI-research/WonderTurbo)
+**arXiv**: [2504.02261](https://arxiv.org/abs/2504.02261)  
+**Code**: [https://github.com/GigaAI-research/WonderTurbo](https://github.com/GigaAI-research/WonderTurbo)  
 **Area**: 3D Vision
 **Keywords**: Real-time 3D scene generation, Gaussian splatting, depth completion, diffusion distillation, interactive generation
 

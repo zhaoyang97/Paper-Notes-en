@@ -18,8 +18,8 @@ content_hash: 3a47b5b08fd48dc7
 # Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08145](https://arxiv.org/abs/2503.08145)
-**Code**: Unavailable (paper states code will be released)
+**arXiv**: [2503.08145](https://arxiv.org/abs/2503.08145)  
+**Code**: Unavailable (paper states code will be released)  
 **Area**: Video Understanding / Multi-Object Tracking
 **Keywords**: Open-Vocabulary MOT, Trajectory Information, CLIP, Association, Classification
 

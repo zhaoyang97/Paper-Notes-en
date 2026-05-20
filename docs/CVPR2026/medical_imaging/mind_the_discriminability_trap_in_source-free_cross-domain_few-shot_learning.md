@@ -18,8 +18,8 @@ content_hash: dd7202c15f98d0aa
 # Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning
 
 **Conference**: CVPR2026
-**arXiv**: [2603.13341](https://arxiv.org/abs/2603.13341)
-**Code**: [zhenyuZ-HUST/CVPR26-Mind-the-Discriminability-Trap](https://github.com/zhenyuZ-HUST/CVPR26-Mind-the-Discriminability-Trap)
+**arXiv**: [2603.13341](https://arxiv.org/abs/2603.13341)  
+**Code**: [zhenyuZ-HUST/CVPR26-Mind-the-Discriminability-Trap](https://github.com/zhenyuZ-HUST/CVPR26-Mind-the-Discriminability-Trap)  
 **Area**: Medical Imaging / Cross-Domain Few-Shot Learning
 **Keywords**: Source-Free CDFSL, Vision-Language Model, Cross-Modal Alignment, Visual Discriminability Trap, CLIP Fine-tuning
 

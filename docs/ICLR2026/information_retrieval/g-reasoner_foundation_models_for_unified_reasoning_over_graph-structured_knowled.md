@@ -18,8 +18,8 @@ content_hash: bc44dcac26cccd3a
 # G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24276](https://arxiv.org/abs/2509.24276)
-**Code**: [Project Page](https://rmanluo.github.io/gfm-rag/)
+**arXiv**: [2509.24276](https://arxiv.org/abs/2509.24276)  
+**Code**: [Project Page](https://rmanluo.github.io/gfm-rag/)  
 **Area**: Self-Supervised Learning / Graph Foundation Models / RAG
 **Keywords**: graph foundation model, RAG, knowledge graph, GNN, LLM reasoning
 
@@ -49,21 +49,21 @@ This paper proposes G-reasoner, which standardizes heterogeneous knowledge sourc
 
 1. **QuadGraph Unified Graph Interface**:
 
-   - **Function**: Standardize heterogeneous knowledge sources.
-   - **Four-layer structure**: Attribute layer (common node properties) → Knowledge graph layer (entity + relational triples) → Document layer (unstructured text) → Community layer (global information from semantic/structural clustering).
-   - **Design Motivation**: Knowledge graphs, document graphs, and hierarchical graphs can all be mapped onto these four layers, eliminating dependence on specific graph structure designs.
+    - **Function**: Standardize heterogeneous knowledge sources.
+    - **Four-layer structure**: Attribute layer (common node properties) → Knowledge graph layer (entity + relational triples) → Document layer (unstructured text) → Community layer (global information from semantic/structural clustering).
+    - **Design Motivation**: Knowledge graphs, document graphs, and hierarchical graphs can all be mapped onto these four layers, eliminating dependence on specific graph structure designs.
 
 2. **GNN Graph Foundation Model (GFM)**:
 
-   - **Function**: Jointly reason over graph topology and textual semantics.
-   - **Mechanism**: Employs a query-dependent GNN with a DistMult message function; node embeddings are initialized via a pretrained text encoder; after $L$ layers of message passing, type-specific predictors score the relevance of each node type.
-   - **Weak supervision training**: A pretrained text encoder serves as a "teacher" providing pseudo-labels, which are distilled into the GFM via KL divergence, alleviating the scarcity of annotated data.
+    - **Function**: Jointly reason over graph topology and textual semantics.
+    - **Mechanism**: Employs a query-dependent GNN with a DistMult message function; node embeddings are initialized via a pretrained text encoder; after $L$ layers of message passing, type-specific predictors score the relevance of each node type.
+    - **Weak supervision training**: A pretrained text encoder serves as a "teacher" providing pseudo-labels, which are distilled into the GFM via KL divergence, alleviating the scarcity of annotated data.
 
 3. **Distributed Message Passing**:
 
-   - **Function**: Enable large-scale training and inference.
-   - **Mechanism**: The METIS algorithm partitions the graph across multiple GPUs, with each device storing a subgraph; message passing proceeds via local aggregation followed by cross-device communication.
-   - Mixed-precision training yields a 2.1× throughput improvement and a 17.5% reduction in GPU memory usage.
+    - **Function**: Enable large-scale training and inference.
+    - **Mechanism**: The METIS algorithm partitions the graph across multiple GPUs, with each device storing a subgraph; message passing proceeds via local aggregation followed by cross-device communication.
+    - Mixed-precision training yields a 2.1× throughput improvement and a 17.5% reduction in GPU memory usage.
 
 ### Loss & Training
 Log-likelihood over labeled nodes + $\lambda \times$ KL distillation loss from teacher pseudo-labels; large-scale weakly supervised training across multiple datasets.

@@ -18,8 +18,8 @@ content_hash: 98d8325bac262b87
 # HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26362](https://arxiv.org/abs/2603.26362)
-**Code**: [https://kcsayem.github.io/handvqa/](https://kcsayem.github.io/handvqa/)
+**arXiv**: [2603.26362](https://arxiv.org/abs/2603.26362)  
+**Code**: [https://kcsayem.github.io/handvqa/](https://kcsayem.github.io/handvqa/)  
 **Area**: Multimodal VLM
 **Keywords**: hand spatial reasoning, VQA benchmark, vision-language models, fine-grained understanding, zero-shot transfer
 

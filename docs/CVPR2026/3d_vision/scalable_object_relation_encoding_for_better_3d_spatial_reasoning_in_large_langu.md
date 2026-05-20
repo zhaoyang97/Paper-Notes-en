@@ -18,8 +18,8 @@ content_hash: 37a6d6553be9ee99
 # Scalable Object Relation Encoding for Better 3D Spatial Reasoning in Large Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24721](https://arxiv.org/abs/2603.24721)
-**Code**: [https://github.com/oceanflowlab/QuatRoPE](https://github.com/oceanflowlab/QuatRoPE)
+**arXiv**: [2603.24721](https://arxiv.org/abs/2603.24721)  
+**Code**: [https://github.com/oceanflowlab/QuatRoPE](https://github.com/oceanflowlab/QuatRoPE)  
 **Area**: 3D Vision / Multimodal VLM
 **Keywords**: 3D spatial reasoning, positional encoding, quaternion rotation, large language models, 3D vision-language
 

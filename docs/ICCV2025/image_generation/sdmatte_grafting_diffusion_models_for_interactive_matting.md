@@ -18,8 +18,8 @@ content_hash: 1636fed3dbe50f1b
 # SDMatte: Grafting Diffusion Models for Interactive Matting
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00443](https://arxiv.org/abs/2508.00443)
-**Code**: [https://github.com/vivoCameraResearch/SDMatte](https://github.com/vivoCameraResearch/SDMatte)
+**arXiv**: [2508.00443](https://arxiv.org/abs/2508.00443)  
+**Code**: [https://github.com/vivoCameraResearch/SDMatte](https://github.com/vivoCameraResearch/SDMatte)  
 **Area**: Diffusion Models / Image Matting
 **Keywords**: Interactive Matting, Diffusion Model Priors, Visual Prompts, Alpha Matte, Attention Mechanism
 

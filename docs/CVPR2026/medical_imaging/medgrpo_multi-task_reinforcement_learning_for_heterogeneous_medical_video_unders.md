@@ -18,8 +18,8 @@ content_hash: c4518d86040eb825
 # MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.06581](https://arxiv.org/abs/2512.06581)
-**Code**: [https://uii-america.github.io/MedGRPO/](https://uii-america.github.io/MedGRPO/)
+**arXiv**: [2512.06581](https://arxiv.org/abs/2512.06581)  
+**Code**: [https://uii-america.github.io/MedGRPO/](https://uii-america.github.io/MedGRPO/)  
 **Area**: Medical Imaging / Video Understanding
 **Keywords**: Medical video understanding, reinforcement learning, cross-dataset reward normalization, VLM fine-tuning, multi-task learning
 
@@ -32,9 +32,9 @@ MedGRPO introduces two key innovations to address training collapse in multi-dat
 1. **Background**: Large vision-language models have achieved notable progress in general video understanding, but their performance degrades substantially on medical video understanding. Medical video understanding demands fine-grained surgical action interpretation, domain-specific terminology (e.g., distinguishing "grasper" from "tool"), surgical safety assessment, and multi-stage temporal reasoning.
 
 2. **Limitations of Prior Work**:
-   - **Lack of instruction-following training data**: Existing medical video datasets (CholecT50, EgoSurgery, etc.) contain rich annotations but not in QA dialogue format.
-   - **Standard RL collapses on heterogeneous datasets**: Difficulty varies dramatically across datasets (e.g., median mIoU ≈ 0.5 for CoPESD spatio-temporal grounding vs. ≈ 0.12 for EgoSurgery); raw rewards in standard GRPO cause the model to overfit easy datasets and abandon difficult ones.
-   - **General semantic similarity metrics fail to capture clinical distinctions**: "The tool grasps tissue" vs. "The grasper dissects the cystic duct" yields a cosine similarity ≈ 0.82, yet the clinical meanings are entirely different.
+    - **Lack of instruction-following training data**: Existing medical video datasets (CholecT50, EgoSurgery, etc.) contain rich annotations but not in QA dialogue format.
+    - **Standard RL collapses on heterogeneous datasets**: Difficulty varies dramatically across datasets (e.g., median mIoU ≈ 0.5 for CoPESD spatio-temporal grounding vs. ≈ 0.12 for EgoSurgery); raw rewards in standard GRPO cause the model to overfit easy datasets and abandon difficult ones.
+    - **General semantic similarity metrics fail to capture clinical distinctions**: "The tool grasps tissue" vs. "The grasper dissects the cystic duct" yields a cosine similarity ≈ 0.82, yet the clinical meanings are entirely different.
 
 3. **Key Challenge**: How to conduct balanced multi-task reinforcement learning across heterogeneous medical video datasets with drastically different difficulty levels?
 
@@ -56,21 +56,21 @@ Input: Medical video frames (adaptive sampling at 0.1–3 FPS) + instruction →
 
 1. **MedVidBench Data Construction and Quality Assurance Pipeline**:
 
-   - **Function**: Systematically converts existing expert-annotated data into large-scale instruction-following QA pairs.
-   - **Mechanism**: A three-stage pipeline — (1) *Expert annotation prompting*: source-specific strategies are applied; for frame-annotated datasets (CholecT50, etc.), bounding boxes and labels are overlaid on frames; for web-sourced datasets (AVOS, etc.), audio transcripts are extracted via Whisper-X and video metadata is incorporated. (2) *Dual-model generation*: GPT-4.1 and Gemini-2.5-Flash independently generate descriptions to prevent single-model bias. (3) *Quality validation*: sentence similarity between the two model outputs is computed, and low-quality pairs (similarity < 0.3) are filtered; train/test splits are partitioned by source video (ratio 0.85/0.15). The final dataset contains 532K samples spanning 8 data sources × 8 task types (video-level / segment-level / frame-level).
-   - **Design Motivation**: Converting medical annotations to QA format requires expert-level understanding, making manual annotation costly; VLM-based conversion with dual-model validation offers a scalable, high-quality alternative.
+    - **Function**: Systematically converts existing expert-annotated data into large-scale instruction-following QA pairs.
+    - **Mechanism**: A three-stage pipeline — (1) *Expert annotation prompting*: source-specific strategies are applied; for frame-annotated datasets (CholecT50, etc.), bounding boxes and labels are overlaid on frames; for web-sourced datasets (AVOS, etc.), audio transcripts are extracted via Whisper-X and video metadata is incorporated. (2) *Dual-model generation*: GPT-4.1 and Gemini-2.5-Flash independently generate descriptions to prevent single-model bias. (3) *Quality validation*: sentence similarity between the two model outputs is computed, and low-quality pairs (similarity < 0.3) are filtered; train/test splits are partitioned by source video (ratio 0.85/0.15). The final dataset contains 532K samples spanning 8 data sources × 8 task types (video-level / segment-level / frame-level).
+    - **Design Motivation**: Converting medical annotations to QA format requires expert-level understanding, making manual annotation costly; VLM-based conversion with dual-model validation offers a scalable, high-quality alternative.
 
 2. **Cross-Dataset Reward Normalization**:
 
-   - **Function**: Ensures fair gradient contribution from dataset–task pairs of varying difficulty during optimization.
-   - **Mechanism**: For each dataset–task pair $(d,t)$, a logistic transformation is applied: $r_{norm}^{(d,t)}(x) = \frac{1}{1 + \exp(-k \cdot \frac{x - p_{50}^{(d,t)}}{IQR^{(d,t)}})}$, where $p_{50}$ is the median, $IQR = p_{75} - p_{25}$ is the interquartile range, and $k=3.0$ controls the slope. Percentile statistics are computed from SFT baseline predictions. Key properties: when $x = p_{50}$, the normalized reward is always 0.5 (median fairness); the logistic function provides non-zero gradients everywhere (no dead zones); IQR scaling is robust to outliers.
-   - **Design Motivation**: Without normalization, training collapses immediately — CVS drops from 0.894 to 0.020, STG from 0.177 to 0.010, and TAG from 0.142 to 0.004, with highly unstable training entropy. The root cause is that high-magnitude rewards from easy datasets dominate gradient updates.
+    - **Function**: Ensures fair gradient contribution from dataset–task pairs of varying difficulty during optimization.
+    - **Mechanism**: For each dataset–task pair $(d,t)$, a logistic transformation is applied: $r_{norm}^{(d,t)}(x) = \frac{1}{1 + \exp(-k \cdot \frac{x - p_{50}^{(d,t)}}{IQR^{(d,t)}})}$, where $p_{50}$ is the median, $IQR = p_{75} - p_{25}$ is the interquartile range, and $k=3.0$ controls the slope. Percentile statistics are computed from SFT baseline predictions. Key properties: when $x = p_{50}$, the normalized reward is always 0.5 (median fairness); the logistic function provides non-zero gradients everywhere (no dead zones); IQR scaling is robust to outliers.
+    - **Design Motivation**: Without normalization, training collapses immediately — CVS drops from 0.894 to 0.020, STG from 0.177 to 0.010, and TAG from 0.142 to 0.004, with highly unstable training entropy. The root cause is that high-magnitude rewards from easy datasets dominate gradient updates.
 
 3. **Medical LLM Judge**:
 
-   - **Function**: Evaluates fine-grained clinical correctness of medical descriptions.
-   - **Mechanism**: GPT-4.1 is used for comparative similarity scoring ("How closely does the generated description match the reference?" rather than absolute quality rating) to avoid score inflation. Five clinical dimensions are assessed (1–5 points each): medical terminology precision, instrument–anatomy identification, specificity vs. vagueness, surgical workflow context, and action accuracy. A hybrid design is adopted: final reward = 50% normalized semantic similarity + 50% normalized LLM judge score, balancing passage-level semantic consistency with detail-level clinical correctness.
-   - **Design Motivation**: Standard embedding metrics cannot distinguish clinically critical differences such as "tool" vs. "grasper," "grasps" vs. "dissects," or "tissue" vs. "cystic duct." Comparative scoring discriminates model quality differences more effectively than absolute scoring.
+    - **Function**: Evaluates fine-grained clinical correctness of medical descriptions.
+    - **Mechanism**: GPT-4.1 is used for comparative similarity scoring ("How closely does the generated description match the reference?" rather than absolute quality rating) to avoid score inflation. Five clinical dimensions are assessed (1–5 points each): medical terminology precision, instrument–anatomy identification, specificity vs. vagueness, surgical workflow context, and action accuracy. A hybrid design is adopted: final reward = 50% normalized semantic similarity + 50% normalized LLM judge score, balancing passage-level semantic consistency with detail-level clinical correctness.
+    - **Design Motivation**: Standard embedding metrics cannot distinguish clinically critical differences such as "tool" vs. "grasper," "grasps" vs. "dissects," or "tissue" vs. "cystic duct." Comparative scoring discriminates model quality differences more effectively than absolute scoring.
 
 ### Loss & Training
 

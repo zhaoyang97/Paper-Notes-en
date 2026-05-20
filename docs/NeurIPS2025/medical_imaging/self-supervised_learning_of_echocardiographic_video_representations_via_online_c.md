@@ -18,8 +18,8 @@ content_hash: 8fb85b9f9360d2d7
 # Self-supervised Learning of Echocardiographic Video Representations via Online Cluster Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.11777](https://arxiv.org/abs/2506.11777)
-**Code**: [GitHub](https://github.com/mdivyanshu97/DISCOVR)
+**arXiv**: [2506.11777](https://arxiv.org/abs/2506.11777)  
+**Code**: [GitHub](https://github.com/mdivyanshu97/DISCOVR)  
 **Area**: Medical Imaging
 **Keywords**: Self-supervised learning, echocardiography, video representation learning, cross-modal distillation, semantic clustering
 

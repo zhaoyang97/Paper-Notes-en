@@ -18,8 +18,8 @@ content_hash: c50bba7a3b337feb
 # Affostruction: 3D Affordance Grounding with Generative Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.09211](https://arxiv.org/abs/2601.09211)
-**Code**: [Project Page](https://chrockey.github.io/Affostruction/)
+**arXiv**: [2601.09211](https://arxiv.org/abs/2601.09211)  
+**Code**: [Project Page](https://chrockey.github.io/Affostruction/)  
 **Area**: 3D Vision / Robot Perception
 **Keywords**: 3D Affordance Grounding, Generative Reconstruction, Sparse Voxel Fusion, Flow Matching, Active View Selection
 
@@ -42,19 +42,19 @@ Multi-view RGBD → DINOv2 feature extraction + depth projection to 3D → Spars
 ### Key Designs
 
 1. **Sparse Voxel Fusion Conditioning**:
-   - Function: Aggregates multi-view RGBD features into a constant-complexity 3D conditioning signal.
-   - Mechanism: DINOv2 features from each view are projected into 3D world coordinates via depth and camera parameters; overlapping voxels are averaged and non-overlapping voxels are unioned, followed by 3D sinusoidal positional encoding.
-   - Design Motivation: Maintains $O(1)$ token count (independent of the number of views), enabling the Flow Transformer to generalize across 1–8 input views.
+    - Function: Aggregates multi-view RGBD features into a constant-complexity 3D conditioning signal.
+    - Mechanism: DINOv2 features from each view are projected into 3D world coordinates via depth and camera parameters; overlapping voxels are averaged and non-overlapping voxels are unioned, followed by 3D sinusoidal positional encoding.
+    - Design Motivation: Maintains $O(1)$ token count (independent of the number of views), enabling the Flow Transformer to generalize across 1–8 input views.
 
 2. **Flow-based Affordance Grounding**:
-   - Function: Generates affordance heatmaps on the reconstructed geometry.
-   - Mechanism: A sparse Flow Transformer is trained to denoise affordance logits conditioned on CLIP text embeddings, using a BCE + Dice mask loss in place of MSE.
-   - Design Motivation: Affordances are inherently multimodal — a single query may correspond to multiple valid interaction regions (e.g., multiple grasp locations). Generative modeling captures this distribution.
+    - Function: Generates affordance heatmaps on the reconstructed geometry.
+    - Mechanism: A sparse Flow Transformer is trained to denoise affordance logits conditioned on CLIP text embeddings, using a BCE + Dice mask loss in place of MSE.
+    - Design Motivation: Affordances are inherently multimodal — a single query may correspond to multiple valid interaction regions (e.g., multiple grasp locations). Generative modeling captures this distribution.
 
 3. **Affordance-Driven Active View Selection**:
-   - Function: Prioritizes coverage of functional regions under a limited view budget.
-   - Mechanism: Affordance heatmaps are rendered onto 2D images from candidate viewpoints; the viewpoint with the highest aggregate heatmap value is selected as the next observation.
-   - Design Motivation: A single additional view yields twice the improvement of sequential sampling.
+    - Function: Prioritizes coverage of functional regions under a limited view budget.
+    - Mechanism: Affordance heatmaps are rendered onto 2D images from candidate viewpoints; the viewpoint with the highest aggregate heatmap value is selected as the next observation.
+    - Design Motivation: A single additional view yields twice the improvement of sequential sampling.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 47cabbad0502b0c6
 # TopoTTA: Topology-Enhanced Test-Time Adaptation for Tubular Structure Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00442](https://arxiv.org/abs/2508.00442)
-**Code**: None
+**arXiv**: [2508.00442](https://arxiv.org/abs/2508.00442)  
+**Code**: None  
 **Area**: Image Segmentation
 **Keywords**: tubular structure segmentation, test-time adaptation, topological continuity, differential convolution, domain shift
 

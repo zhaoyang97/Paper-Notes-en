@@ -17,8 +17,8 @@ content_hash: 773c3d3180a4ab9a
 # RSCC: A Large-Scale Remote Sensing Change Caption Dataset for Disaster Events
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.01907](https://arxiv.org/abs/2509.01907)
-**Code**: [https://github.com/Bili-Sakura/RSCC](https://github.com/Bili-Sakura/RSCC)
+**arXiv**: [2509.01907](https://arxiv.org/abs/2509.01907)  
+**Code**: [https://github.com/Bili-Sakura/RSCC](https://github.com/Bili-Sakura/RSCC)  
 **Area**: Remote Sensing / Vision-Language
 **Keywords**: remote sensing, change captioning, disaster monitoring, bi-temporal, vision-language model
 

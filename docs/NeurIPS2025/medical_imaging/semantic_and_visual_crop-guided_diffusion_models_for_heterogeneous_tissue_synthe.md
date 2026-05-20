@@ -18,8 +18,8 @@ content_hash: e0a1e5dc2bb9b799
 # Semantic and Visual Crop-Guided Diffusion Models for Heterogeneous Tissue Synthesis in Histopathology
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17847](https://arxiv.org/abs/2509.17847)
-**Code**: [Project Page](https://kimialabmayo.github.io/hetero_tissue_diffuse_page/)
+**arXiv**: [2509.17847](https://arxiv.org/abs/2509.17847)  
+**Code**: [Project Page](https://kimialabmayo.github.io/hetero_tissue_diffuse_page/)  
 **Area**: Medical Imaging / Computational Pathology
 **Keywords**: Pathology Image Synthesis, Diffusion Models, Dual-Condition Generation, Heterogeneous Tissue, Self-Supervised Clustering
 

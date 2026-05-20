@@ -18,8 +18,8 @@ content_hash: ab567e804c33466f
 # Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks
 
 **Conference**: NEURIPS2025
-**arXiv**: [2503.04223](https://arxiv.org/abs/2503.04223)
-**Code**: [https://github.com/XY-boy/SpikeSR](https://github.com/XY-boy/SpikeSR)
+**arXiv**: [2503.04223](https://arxiv.org/abs/2503.04223)  
+**Code**: [https://github.com/XY-boy/SpikeSR](https://github.com/XY-boy/SpikeSR)  
 **Area**: Image Restoration
 **Keywords**: Spiking Neural Networks, Remote Sensing Super-Resolution, Attention Mechanism, Deformable Similarity Attention, Energy-Efficient AI
 

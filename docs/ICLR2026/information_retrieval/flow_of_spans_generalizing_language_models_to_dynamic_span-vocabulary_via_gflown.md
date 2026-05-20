@@ -18,8 +18,8 @@ content_hash: 11cfc66fcd9d9434
 # Flow of Spans: Generalizing Language Models to Dynamic Span-Vocabulary via GFlowNets
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.10583](https://arxiv.org/abs/2602.10583)
-**Code**: [GitHub](https://github.com/sappho-x/Flow-of-Spans)
+**arXiv**: [2602.10583](https://arxiv.org/abs/2602.10583)  
+**Code**: [GitHub](https://github.com/sappho-x/Flow-of-Spans)  
 **Area**: Information Retrieval
 **Keywords**: GFlowNets, dynamic vocabulary, span generation, DAG state space, text generation
 

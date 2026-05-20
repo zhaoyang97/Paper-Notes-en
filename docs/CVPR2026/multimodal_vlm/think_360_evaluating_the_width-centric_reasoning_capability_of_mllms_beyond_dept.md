@@ -18,8 +18,8 @@ content_hash: a41bed4dfffeecd4
 # Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22689](https://arxiv.org/abs/2603.22689)
-**Code**: [Think360](https://github.com/Think360-Benchmark/Think360)
+**arXiv**: [2603.22689](https://arxiv.org/abs/2603.22689)  
+**Code**: [Think360](https://github.com/Think360-Benchmark/Think360)  
 **Area**: Multimodal VLM / LLM Reasoning
 **Keywords**: Multimodal reasoning, reasoning width, Tree-of-Thought evaluation, benchmark, large language models
 
@@ -51,27 +51,27 @@ Think360 is an evaluation benchmark rather than a model. The construction pipeli
 
 1. **Formal Definition of Reasoning Width**
 
-   - **Function**: Explicitly distinguishes reasoning width from reasoning depth as two orthogonal dimensions.
-   - **Mechanism**: Reasoning depth measures the ability to extend step-by-step along a single reasoning chain; reasoning width focuses on five cognitive capabilities: systematic trial-and-error search, branch-and-bound pruning, divide-and-conquer strategy, hypothesize-and-test, and perceive-and-comprehend. These five capabilities correspond to different "lateral" search strategies, analogous to dropout↔pruning and shortcut connections↔backtracking in neural networks.
-   - **Design Motivation**: Existing benchmarks provide virtually no dedicated quantification of width reasoning, leading to models being considered "capable of reasoning" when they can merely traverse a fixed path at length, without any systematic evaluation of multi-path search capability.
+    - **Function**: Explicitly distinguishes reasoning width from reasoning depth as two orthogonal dimensions.
+    - **Mechanism**: Reasoning depth measures the ability to extend step-by-step along a single reasoning chain; reasoning width focuses on five cognitive capabilities: systematic trial-and-error search, branch-and-bound pruning, divide-and-conquer strategy, hypothesize-and-test, and perceive-and-comprehend. These five capabilities correspond to different "lateral" search strategies, analogous to dropout↔pruning and shortcut connections↔backtracking in neural networks.
+    - **Design Motivation**: Existing benchmarks provide virtually no dedicated quantification of width reasoning, leading to models being considered "capable of reasoning" when they can merely traverse a fixed path at length, without any systematic evaluation of multi-path search capability.
 
 2. **Multi-source Data Construction and Quality Filtering**
 
-   - **Function**: Constructs 1,225 high-quality multimodal reasoning problems.
-   - **Mechanism**: Data is sourced from four categories—math/logic competition problems, textbook examples, existing benchmarks (MathVision, DynaMath, MME-Reasoning, etc.), and online puzzles/IQ tests. Filtering adopts a two-stage strategy: coarse filtering uses keyword matching (e.g., *maximum/minimum*, *possible ways*) combined with GPT-4o as a judge; fine filtering involves manual secondary quality and diversity checks. Proof-based problems are rewritten to yield verifiable answers, and game problems are reformulated into enumerable QA formats.
-   - **Design Motivation**: Width-reasoning problems directly drawn from existing benchmarks constitute an extremely small fraction (e.g., only 2.7% in MathVista, 1.7% in OlympiadBench), necessitating dedicated collection and adaptation. The significant format heterogeneity across sources also requires unification into objectively verifiable forms.
+    - **Function**: Constructs 1,225 high-quality multimodal reasoning problems.
+    - **Mechanism**: Data is sourced from four categories—math/logic competition problems, textbook examples, existing benchmarks (MathVision, DynaMath, MME-Reasoning, etc.), and online puzzles/IQ tests. Filtering adopts a two-stage strategy: coarse filtering uses keyword matching (e.g., *maximum/minimum*, *possible ways*) combined with GPT-4o as a judge; fine filtering involves manual secondary quality and diversity checks. Proof-based problems are rewritten to yield verifiable answers, and game problems are reformulated into enumerable QA formats.
+    - **Design Motivation**: Width-reasoning problems directly drawn from existing benchmarks constitute an extremely small fraction (e.g., only 2.7% in MathVista, 1.7% in OlympiadBench), necessitating dedicated collection and adaptation. The significant format heterogeneity across sources also requires unification into objectively verifiable forms.
 
 3. **Fine-grained Taxonomy**
 
-   - **Function**: Categorizes problems along multiple axes to support fine-grained analysis.
-   - **Mechanism**: Four classification axes are employed—answer type (multiple choice 16.9%, free response 83.1%), difficulty level (five tiers: Easy/Basic/Medium/Hard/Olympiad, approximately normally distributed), cognitive capability (5 non-exclusive categories), and problem type (6 non-exclusive categories). Non-exclusive categorization allows a single problem to be annotated with multiple cognitive capabilities simultaneously.
-   - **Design Motivation**: Exclusive categorization fails to capture the fact that width-reasoning problems typically require multiple cognitive capabilities at once. Non-exclusive categorization, visualized through frequency statistics and chord diagrams, reveals co-occurrence patterns among different capabilities.
+    - **Function**: Categorizes problems along multiple axes to support fine-grained analysis.
+    - **Mechanism**: Four classification axes are employed—answer type (multiple choice 16.9%, free response 83.1%), difficulty level (five tiers: Easy/Basic/Medium/Hard/Olympiad, approximately normally distributed), cognitive capability (5 non-exclusive categories), and problem type (6 non-exclusive categories). Non-exclusive categorization allows a single problem to be annotated with multiple cognitive capabilities simultaneously.
+    - **Design Motivation**: Exclusive categorization fails to capture the fact that width-reasoning problems typically require multiple cognitive capabilities at once. Non-exclusive categorization, visualized through frequency statistics and chord diagrams, reveals co-occurrence patterns among different capabilities.
 
 4. **Tree-of-Thought Evaluation Protocol (ToT-Eval)**
 
-   - **Function**: Goes beyond traditional pass@1 accuracy by quantifying model reasoning processes along both depth and width dimensions.
-   - **Mechanism**: The protocol proceeds in two steps—(a) *Tree construction*: given a problem and the model's complete response, GPT-4o extracts key reasoning steps and organizes them into a hierarchical tree, where depth represents sequential reasoning dependencies (parent–child relationships) and width represents parallel alternative explorations (sibling nodes at the same level). (b) *Depth/width scoring*: GPT-4o assesses the correctness of each node (logical validity and factual accuracy). The depth score equals the length of the longest correct reasoning chain; the width score counts the number of valid parallel reasoning branches.
-   - **Design Motivation**: Traditional outcome-based evaluation considers only the correctness of the final answer, making it impossible to distinguish whether a model arrived at the answer directly or through thorough exploration and verification. ToT-Eval simultaneously quantifies exploratory breadth and reasoning depth, providing a more precise characterization of width-centric reasoning capability.
+    - **Function**: Goes beyond traditional pass@1 accuracy by quantifying model reasoning processes along both depth and width dimensions.
+    - **Mechanism**: The protocol proceeds in two steps—(a) *Tree construction*: given a problem and the model's complete response, GPT-4o extracts key reasoning steps and organizes them into a hierarchical tree, where depth represents sequential reasoning dependencies (parent–child relationships) and width represents parallel alternative explorations (sibling nodes at the same level). (b) *Depth/width scoring*: GPT-4o assesses the correctness of each node (logical validity and factual accuracy). The depth score equals the length of the longest correct reasoning chain; the width score counts the number of valid parallel reasoning branches.
+    - **Design Motivation**: Traditional outcome-based evaluation considers only the correctness of the final answer, making it impossible to distinguish whether a model arrived at the answer directly or through thorough exploration and verification. ToT-Eval simultaneously quantifies exploratory breadth and reasoning depth, providing a more precise characterization of width-centric reasoning capability.
 
 ### Loss & Training
 

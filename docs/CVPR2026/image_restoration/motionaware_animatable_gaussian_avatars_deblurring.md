@@ -18,8 +18,8 @@ content_hash: 84394b0d2cd20241
 # MAD-Avatar: Motion-Aware Animatable Gaussian Avatars Deblurring
 
 **Conference**: CVPR 2026
-**arXiv**: [2411.16758](https://arxiv.org/abs/2411.16758)
-**Code**: [GitHub](https://github.com/MyNiuuu/MAD-Avatar)
+**arXiv**: [2411.16758](https://arxiv.org/abs/2411.16758)  
+**Code**: [GitHub](https://github.com/MyNiuuu/MAD-Avatar)  
 **Area**: 3D Vision / Human Body Reconstruction / Deblurring
 **Keywords**: 3D human avatar, Gaussian splatting, motion blur, SMPL, deblurring
 

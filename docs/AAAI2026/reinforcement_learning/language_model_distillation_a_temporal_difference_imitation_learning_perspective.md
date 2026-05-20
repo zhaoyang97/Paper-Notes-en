@@ -18,8 +18,8 @@ content_hash: 619ac080eb52359c
 # Language Model Distillation: A Temporal Difference Imitation Learning Perspective
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.20335](https://arxiv.org/abs/2505.20335)
-**Code**: N/A
+**arXiv**: [2505.20335](https://arxiv.org/abs/2505.20335)  
+**Code**: N/A  
 **Area**: Reinforcement Learning
 **Keywords**: knowledge distillation, imitation learning, temporal difference learning, top-p action space, inverse reinforcement learning
 

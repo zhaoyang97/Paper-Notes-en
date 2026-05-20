@@ -16,8 +16,8 @@ content_hash: 2d1300890a538464
 # VideoNSA: Native Sparse Attention Scales Video Understanding
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.02295](https://arxiv.org/abs/2510.02295)
-**Code**: N/A
+**arXiv**: [2510.02295](https://arxiv.org/abs/2510.02295)  
+**Code**: N/A  
 **Area**: Video Understanding
 **Keywords**: sparse attention, video understanding, long context, multimodal LLM
 

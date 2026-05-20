@@ -18,8 +18,8 @@ content_hash: 3232f72c54b59eee
 # AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.15597](https://arxiv.org/abs/2603.15597)
-**Code**: None
+**arXiv**: [2603.15597](https://arxiv.org/abs/2603.15597)  
+**Code**: None  
 **Area**: Audio Generation
 **Keywords**: Video-to-Audio, Foley Synthesis, Reference Audio Control, Timbre Transfer, Flow Matching
 

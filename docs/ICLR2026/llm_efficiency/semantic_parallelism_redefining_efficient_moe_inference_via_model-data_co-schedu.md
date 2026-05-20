@@ -18,8 +18,8 @@ content_hash: b6f4b5edb9c06236
 # Semantic Parallelism: Redefining Efficient MoE Inference via Model-Data Co-Scheduling
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.04398](https://arxiv.org/abs/2503.04398)
-**Code**: Implemented on SGLang (~5000 lines of Python + Triton kernels)
+**arXiv**: [2503.04398](https://arxiv.org/abs/2503.04398)  
+**Code**: Implemented on SGLang (~5000 lines of Python + Triton kernels)  
 **Area**: LLM Efficiency
 **Keywords**: Mixture-of-Experts, Expert Parallelism, all-to-all communication, model-data co-scheduling, token-expert affinity
 

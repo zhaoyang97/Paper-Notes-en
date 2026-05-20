@@ -18,8 +18,8 @@ content_hash: aceb87b6480fe2ff
 # GSAlign: Geometric and Semantic Alignment Network for Aerial-Ground Person Re-Identification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22268](https://arxiv.org/abs/2510.22268)
-**Code**: To be confirmed
+**arXiv**: [2510.22268](https://arxiv.org/abs/2510.22268)  
+**Code**: To be confirmed  
 **Area**: Autonomous Driving
 **Keywords**: Aerial-Ground Person Re-Identification, Thin Plate Spline, Geometric Alignment, Semantic Masking, Vision Transformer
 

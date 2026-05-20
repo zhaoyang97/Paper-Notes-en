@@ -18,8 +18,8 @@ content_hash: ccf38708f7e8537c
 # Writing in Symbiosis: Mapping Human Creative Agency in the AI Era
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.13697](https://arxiv.org/abs/2512.13697)
-**Code**: Not yet open-sourced (paper states code available on request)
+**arXiv**: [2512.13697](https://arxiv.org/abs/2512.13697)  
+**Code**: Not yet open-sourced (paper states code available on request)  
 **Area**: LLM/NLP
 **Keywords**: human-AI coevolution, creative writing, stylometric analysis, authorial archetypes, LLM influence detection
 

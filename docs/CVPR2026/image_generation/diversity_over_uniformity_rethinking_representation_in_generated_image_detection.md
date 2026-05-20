@@ -18,8 +18,8 @@ content_hash: 1affe9d39cdf7c2f
 # Diversity over Uniformity: Rethinking Representation in Generated Image Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00717](https://arxiv.org/abs/2603.00717)
-**Code**: [GitHub](https://github.com/Yanmou-Hui/DoU)
+**arXiv**: [2603.00717](https://arxiv.org/abs/2603.00717)  
+**Code**: [GitHub](https://github.com/Yanmou-Hui/DoU)  
 **Area**: Image Forensics / AI-Generated Image Detection
 **Keywords**: Generated image detection, feature collapse, representation diversity, information bottleneck, CLIP
 

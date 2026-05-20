@@ -18,8 +18,8 @@ content_hash: 0606e2ec7504bbac
 # Tree-Guided Diffusion Planner
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.21800](https://arxiv.org/abs/2508.21800)
-**Code**: [Project Page](https://tree-diffusion-planner.github.io)
+**arXiv**: [2508.21800](https://arxiv.org/abs/2508.21800)  
+**Code**: [Project Page](https://tree-diffusion-planner.github.io)  
 **Area**: Diffusion Models / Planning & Generation
 **Keywords**: Diffusion planning, tree search, test-time guidance, zero-shot planning, trajectory generation
 

@@ -18,8 +18,8 @@ content_hash: 5c4030c5a7e1a159
 # DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.19239](https://arxiv.org/abs/2505.19239)
-**Code**: N/A
+**arXiv**: [2505.19239](https://arxiv.org/abs/2505.19239)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: World Model, Self-supervised Learning, BEV Representation, Point Cloud Prediction, End-to-End Driving
 

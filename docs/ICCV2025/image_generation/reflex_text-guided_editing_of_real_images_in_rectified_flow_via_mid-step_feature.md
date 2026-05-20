@@ -18,8 +18,8 @@ content_hash: a380285e03cefd49
 # ReFlex: Text-Guided Editing of Real Images in Rectified Flow via Mid-Step Feature Extraction and Attention Adaptation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.01496](https://arxiv.org/abs/2507.01496)
-**Code**: None
+**arXiv**: [2507.01496](https://arxiv.org/abs/2507.01496)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Image Editing, Rectified Flow, FLUX, Feature Injection, Attention Adaptation
 

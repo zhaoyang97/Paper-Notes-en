@@ -18,8 +18,8 @@ content_hash: 6ab55d4356f102af
 # Skip to the Good Part: Representation Structure & Inference-Time Layer Skipping in Diffusion vs. Autoregressive LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.07475](https://arxiv.org/abs/2603.07475)
-**Code**: None
+**arXiv**: [2603.07475](https://arxiv.org/abs/2603.07475)  
+**Code**: None  
 **Area**: Image Restoration
 **Keywords**: Diffusion Language Models, Layer Skipping, Representation Redundancy, Inference Acceleration, LLaDA
 

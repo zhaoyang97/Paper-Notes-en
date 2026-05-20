@@ -18,8 +18,8 @@ content_hash: 329015a8241aad6e
 # Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00543](https://arxiv.org/abs/2603.00543)
-**Code**: [GitHub](https://github.com/caoke-963/ScaleFormer)
+**arXiv**: [2603.00543](https://arxiv.org/abs/2603.00543)  
+**Code**: [GitHub](https://github.com/caoke-963/ScaleFormer)  
 **Area**: LLM Evaluation
 **Keywords**: Remote sensing image fusion, cross-scale generalization, Transformer, rotary position encoding, pansharpening
 

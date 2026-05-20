@@ -18,8 +18,8 @@ content_hash: cabaca6805103bc7
 # MetaBox-v2: A Unified Benchmark Platform for Meta-Black-Box Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17745](https://arxiv.org/abs/2505.17745)
-**Code**: [GitHub](https://github.com/MetaEvo/MetaBox)
+**arXiv**: [2505.17745](https://arxiv.org/abs/2505.17745)  
+**Code**: [GitHub](https://github.com/MetaEvo/MetaBox)  
 **Area**: Reinforcement Learning
 **Keywords**: Meta-Black-Box Optimization, benchmark platform, parallelization, RL-based optimization, generalization
 

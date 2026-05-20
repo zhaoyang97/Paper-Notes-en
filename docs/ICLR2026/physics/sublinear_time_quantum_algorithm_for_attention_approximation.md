@@ -18,8 +18,8 @@ content_hash: d22be61fb4325847
 # Sublinear Time Quantum Algorithm for Attention Approximation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.00874](https://arxiv.org/abs/2602.00874)
-**Code**: None
+**arXiv**: [2602.00874](https://arxiv.org/abs/2602.00874)  
+**Code**: None  
 **Area**: Physics
 **Keywords**: Quantum Computing, Attention Approximation, Sublinear Algorithm, Nyström Approximation, Quantum Sampling
 **Authors**: Zhao Song (UC Berkeley/Simons), Jianfei Xue (NYU), Jiahao Zhang, Lichen Zhang (MIT)

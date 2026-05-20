@@ -18,8 +18,8 @@ content_hash: 0ed68177d13e8b68
 # Feel-Good Thompson Sampling for Contextual Bandits: a Markov Chain Monte Carlo Showdown
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.15290](https://arxiv.org/abs/2507.15290)
-**Code**: [GitHub](https://github.com/SarahLiaw/ctx-bandits-mcmc-showdown)
+**arXiv**: [2507.15290](https://arxiv.org/abs/2507.15290)  
+**Code**: [GitHub](https://github.com/SarahLiaw/ctx-bandits-mcmc-showdown)  
 **Area**: Reinforcement Learning
 **Keywords**: Thompson Sampling, Contextual Bandits, MCMC, Exploration-Exploitation, Posterior Sampling
 

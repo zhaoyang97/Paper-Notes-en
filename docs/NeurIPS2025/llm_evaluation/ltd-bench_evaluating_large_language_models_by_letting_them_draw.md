@@ -17,8 +17,8 @@ content_hash: b8c806a9d0636b07
 # LTD-Bench: Evaluating Large Language Models by Letting Them Draw
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02347](https://arxiv.org/abs/2511.02347)
-**Code**: [walktaster/LTD-Bench](https://github.com/walktaster/LTD-Bench)
+**arXiv**: [2511.02347](https://arxiv.org/abs/2511.02347)  
+**Code**: [walktaster/LTD-Bench](https://github.com/walktaster/LTD-Bench)  
 **Area**: LLM Evaluation
 **Keywords**: LLM evaluation, spatial reasoning, visual generation, benchmark, drawing ability
 

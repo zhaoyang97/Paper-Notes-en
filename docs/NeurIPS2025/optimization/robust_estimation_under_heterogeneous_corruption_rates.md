@@ -18,8 +18,8 @@ content_hash: 784ea98e16e89abf
 # Robust Estimation Under Heterogeneous Corruption Rates
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.15051](https://arxiv.org/abs/2508.15051)
-**Code**: Unavailable
+**arXiv**: [2508.15051](https://arxiv.org/abs/2508.15051)  
+**Code**: Unavailable  
 **Area**: Optimization
 **Keywords**: robust estimation, heterogeneous corruption, minimax rates, mean estimation, linear regression
 

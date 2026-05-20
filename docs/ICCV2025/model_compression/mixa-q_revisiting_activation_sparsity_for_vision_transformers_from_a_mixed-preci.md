@@ -18,8 +18,8 @@ content_hash: 8044fe4658f292b6
 # MixA-Q: Revisiting Activation Sparsity for Vision Transformers from a Mixed-Precision Quantization Perspective
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19131](https://arxiv.org/abs/2507.19131)
-**Code**: None
+**arXiv**: [2507.19131](https://arxiv.org/abs/2507.19131)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Mixed-Precision Quantization, Activation Sparsity, Vision Transformer, Swin Transformer, Efficient Inference
 

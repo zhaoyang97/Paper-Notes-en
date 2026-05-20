@@ -18,8 +18,8 @@ content_hash: 9e9afecf5cb35faf
 # Decomposition of Small Transformer Models
 
 **Conference**: NeurIPS 2025 (Workshop: Mechanistic Interpretability)
-**arXiv**: [2511.08854](https://arxiv.org/abs/2511.08854)
-**Code**: None (built on the SPD open-source framework)
+**arXiv**: [2511.08854](https://arxiv.org/abs/2511.08854)  
+**Code**: None (built on the SPD open-source framework)  
 **Area**: Time Series
 **Keywords**: Parameter space decomposition, Stochastic Parameter Decomposition, Induction Head, GPT-2, Causal importance
 

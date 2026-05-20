@@ -81,8 +81,8 @@ $$\vec{v} = \frac{p_{tip}^{3D} - p_{base}^{3D}}{\|p_{tip}^{3D} - p_{base}^{3D}\|
 
 - **Text disambiguation benchmarks**: IN3 and CLAMBER.
 - **New benchmark VRA-Ego**: 1,000 samples collected with AR glasses (Ray-Ban Meta, RayNeo X2/X3 Pro):
-  - Visual Ambiguity Set (500 images): contains blurry and poorly framed images.
-  - Referential Ambiguity Set (500 samples): contains finger-pointing gestures and ambiguous queries.
+    - Visual Ambiguity Set (500 images): contains blurry and poorly framed images.
+    - Referential Ambiguity Set (500 samples): contains finger-pointing gestures and ambiguous queries.
 - **Evaluation metrics**: Vagueness Judgement Accuracy, Missing Details Recover Rate, number of dialogue turns, Strict/Loose Recover Rate, and Semantic Answer Recover Rate.
 
 ### Table 1: Text Disambiguation (CLAMBER Benchmark)

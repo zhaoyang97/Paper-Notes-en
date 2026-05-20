@@ -20,7 +20,7 @@ content_hash: 77e6af847a52e472
 # Reangle-A-Video: 4D Video Generation as Video-to-Video Translation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.09151](https://arxiv.org/abs/2503.09151)
+**arXiv**: [2503.09151](https://arxiv.org/abs/2503.09151)  
 **Area**: Video Generation · 4D Generation
 **Keywords**: Multi-view video, video translation, view transfer, camera control, diffusion models, LoRA, DUSt3R
 

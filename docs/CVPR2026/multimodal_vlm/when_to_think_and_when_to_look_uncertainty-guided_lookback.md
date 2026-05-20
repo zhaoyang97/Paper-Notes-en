@@ -18,8 +18,8 @@ content_hash: f318f264f05fd036
 # When to Think and When to Look: Uncertainty-Guided Lookback
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.15613](https://arxiv.org/abs/2511.15613)
-**Code**: None
+**arXiv**: [2511.15613](https://arxiv.org/abs/2511.15613)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Visual reasoning, chain-of-thought, large vision-language models, adaptive decoding, uncertainty guidance
 

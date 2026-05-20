@@ -19,8 +19,8 @@ content_hash: 96325f192a5e3a5a
 # Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21363](https://arxiv.org/abs/2601.21363)
-**Code**: [https://lift-humanoid.github.io](https://lift-humanoid.github.io)
+**arXiv**: [2601.21363](https://arxiv.org/abs/2601.21363)  
+**Code**: [https://lift-humanoid.github.io](https://lift-humanoid.github.io)  
 **Area**: Reinforcement Learning
 **Keywords**: humanoid robot control, large-scale pretraining, efficient finetuning, SAC, physics-prior world model, sim-to-real
 

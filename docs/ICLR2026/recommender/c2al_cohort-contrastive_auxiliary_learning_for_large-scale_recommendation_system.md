@@ -18,8 +18,8 @@ content_hash: dc4c3e380bde0453
 # C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems
 
 **Conference**: ICLR2026
-**arXiv**: [2510.02215](https://arxiv.org/abs/2510.02215)
-**Code**: To be confirmed
+**arXiv**: [2510.02215](https://arxiv.org/abs/2510.02215)  
+**Code**: To be confirmed  
 **Area**: Recommendation Systems
 **Keywords**: recommendation system, auxiliary learning, cohort contrastive, attention mechanism, representation bias
 

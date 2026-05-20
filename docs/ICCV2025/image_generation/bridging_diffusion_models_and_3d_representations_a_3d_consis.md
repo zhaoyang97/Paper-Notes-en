@@ -18,8 +18,8 @@ content_hash: f2d222192ee64741
 # 3DSR: Bridging Diffusion Models and 3D Representations for 3D Consistent Super-Resolution
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.04090](https://arxiv.org/abs/2508.04090)
-**Code**: [https://consistent3dsr.github.io/](https://consistent3dsr.github.io/)
+**arXiv**: [2508.04090](https://arxiv.org/abs/2508.04090)  
+**Code**: [https://consistent3dsr.github.io/](https://consistent3dsr.github.io/)  
 **Area**: Image Generation
 **Keywords**: 3D-consistent super-resolution, diffusion models, 3DGS, multi-view consistency, denoising guidance
 

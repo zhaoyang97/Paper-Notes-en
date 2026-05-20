@@ -17,8 +17,8 @@ content_hash: 59df2a2692ab107e
 # Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.08801](https://arxiv.org/abs/2507.08801)
-**Code**: [https://github.com/alibaba-damo-academy/Lumos](https://github.com/alibaba-damo-academy/Lumos)
+**arXiv**: [2507.08801](https://arxiv.org/abs/2507.08801)  
+**Code**: [https://github.com/alibaba-damo-academy/Lumos](https://github.com/alibaba-damo-academy/Lumos)  
 **Area**: Diffusion Models / Video Generation
 **Keywords**: Autoregressive, Discrete Diffusion, RoPE, Unified Model, Video Generation
 

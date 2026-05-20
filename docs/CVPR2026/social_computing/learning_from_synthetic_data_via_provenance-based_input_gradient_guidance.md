@@ -18,8 +18,8 @@ content_hash: bc9b48e81dbdef5e
 # Learning from Synthetic Data via Provenance-Based Input Gradient Guidance
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02946](https://arxiv.org/abs/2604.02946)
-**Code**: None
+**arXiv**: [2604.02946](https://arxiv.org/abs/2604.02946)  
+**Code**: None  
 **Area**: Deep Learning Methods
 **Keywords**: learning from synthetic data, input gradient guidance, spurious correlation suppression, data augmentation, provenance information
 

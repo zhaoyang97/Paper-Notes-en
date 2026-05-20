@@ -18,8 +18,8 @@ content_hash: 3f3ce503635435c0
 # Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20739](https://arxiv.org/abs/2603.20739)
-**Code**: [https://github.com/Jinec98/SADG](https://github.com/Jinec98/SADG)
+**arXiv**: [2603.20739](https://arxiv.org/abs/2603.20739)  
+**Code**: [https://github.com/Jinec98/SADG](https://github.com/Jinec98/SADG)  
 **Area**: 3D Vision
 **Keywords**: Point Cloud Understanding, Domain Generalization, Mamba, In-Context Learning, Structure-Aware Serialization
 

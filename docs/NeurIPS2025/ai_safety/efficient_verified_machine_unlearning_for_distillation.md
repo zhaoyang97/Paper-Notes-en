@@ -18,8 +18,8 @@ content_hash: 2abaa4f23e9e5b66
 # Efficient Verified Machine Unlearning for Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.22539](https://arxiv.org/abs/2503.22539)
-**Code**: N/A
+**arXiv**: [2503.22539](https://arxiv.org/abs/2503.22539)  
+**Code**: N/A  
 **Area**: AI Safety / Machine Unlearning
 **Keywords**: machine unlearning, knowledge distillation, SISA, data privacy, ensemble learning
 

@@ -18,8 +18,8 @@ content_hash: f7416bad38755814
 # BadVideo: Stealthy Backdoor Attack against Text-to-Video Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.16907](https://arxiv.org/abs/2504.16907)
-**Code**: [https://wrt2000.github.io/BadVideo2025/](https://wrt2000.github.io/BadVideo2025/) (project page)
+**arXiv**: [2504.16907](https://arxiv.org/abs/2504.16907)  
+**Code**: [https://wrt2000.github.io/BadVideo2025/](https://wrt2000.github.io/BadVideo2025/) (project page)  
 **Area**: Image/Video Generation Security
 **Keywords**: text-to-video generation, backdoor attack, redundancy exploitation, spatio-temporal composition, content safety
 

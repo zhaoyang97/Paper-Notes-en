@@ -17,8 +17,8 @@ content_hash: fe931c61f4d11b3d
 # Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.09033](https://arxiv.org/abs/2506.09033)
-**Code**: [GitHub](https://github.com/ulab-uiuc/Router-R1)
+**arXiv**: [2506.09033](https://arxiv.org/abs/2506.09033)  
+**Code**: [GitHub](https://github.com/ulab-uiuc/Router-R1)  
 **Area**: Reinforcement Learning
 **Keywords**: LLM routing, multi-round interaction, reinforcement learning, model coordination, cost optimization
 
@@ -57,9 +57,9 @@ The final answer is wrapped in an `<answer>` tag, with a maximum of 4 routing ro
 
 2. **Triple Reward Function Design**:
 
-   - **Format Reward $\mathbf{R}_{\text{format}}$**: Assigns $-1$ if the output violates the predefined format, otherwise $0$. A hierarchical design is adopted—non-compliant format zeroes out all other rewards.
-   - **Outcome Reward $\mathbf{R}_{\text{outcome}}$**: Extracts the prediction from the `<answer>` tag and performs exact match (EM) against the ground truth; 1 for match, 0 otherwise.
-   - **Cost Reward $\mathbf{R}_{\text{cost}}$**: Inversely proportional to the candidate LLM's parameter count and the number of output tokens: $\mathbf{R}_{\text{cost}} \propto -m(P_{\text{LLM}}) \cdot T_{\text{out}}$, normalized to $[0, 1]$.
+    - **Format Reward $\mathbf{R}_{\text{format}}$**: Assigns $-1$ if the output violates the predefined format, otherwise $0$. A hierarchical design is adopted—non-compliant format zeroes out all other rewards.
+    - **Outcome Reward $\mathbf{R}_{\text{outcome}}$**: Extracts the prediction from the `<answer>` tag and performs exact match (EM) against the ground truth; 1 for match, 0 otherwise.
+    - **Cost Reward $\mathbf{R}_{\text{cost}}$**: Inversely proportional to the candidate LLM's parameter count and the number of output tokens: $\mathbf{R}_{\text{cost}} \propto -m(P_{\text{LLM}}) \cdot T_{\text{out}}$, normalized to $[0, 1]$.
 
    Total reward: $r_\phi(x,y) = \mathbf{R}_{\text{format}} + (1-\alpha)\mathbf{R}_{\text{outcome}} + \alpha\mathbf{R}_{\text{cost}}$
 

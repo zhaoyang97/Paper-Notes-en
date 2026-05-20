@@ -18,8 +18,8 @@ content_hash: 2c33a2a6691b0dbd
 # C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19674](https://arxiv.org/abs/2509.19674)
-**Code**: [https://github.com/zhoujiahuan1991/NeurIPS2025-C2Prompt](https://github.com/zhoujiahuan1991/NeurIPS2025-C2Prompt)
+**arXiv**: [2509.19674](https://arxiv.org/abs/2509.19674)  
+**Code**: [https://github.com/zhoujiahuan1991/NeurIPS2025-C2Prompt](https://github.com/zhoujiahuan1991/NeurIPS2025-C2Prompt)  
 **Area**: LLM/NLP
 **Keywords**: federated continual learning, prompt learning, class-aware aggregation, distribution compensation, knowledge conflict
 

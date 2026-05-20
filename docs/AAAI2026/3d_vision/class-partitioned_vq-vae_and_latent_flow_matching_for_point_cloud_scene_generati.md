@@ -18,8 +18,8 @@ content_hash: 33bf60e5e38e0106
 # Class-Partitioned VQ-VAE and Latent Flow Matching for Point Cloud Scene Generation
 
 **Conference**: AAAI2026
-**arXiv**: [2601.12391](https://arxiv.org/abs/2601.12391)
-**Code**: [ddsediri/CPVQ-VAE-LFMM](https://github.com/ddsediri/CPVQ-VAE-LFMM)
+**arXiv**: [2601.12391](https://arxiv.org/abs/2601.12391)  
+**Code**: [ddsediri/CPVQ-VAE-LFMM](https://github.com/ddsediri/CPVQ-VAE-LFMM)  
 **Area**: 3D Vision
 **Keywords**: point cloud generation, scene generation, VQ-VAE, flow matching, codebook partitioning
 

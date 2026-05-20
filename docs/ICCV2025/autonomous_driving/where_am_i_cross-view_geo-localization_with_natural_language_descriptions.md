@@ -20,8 +20,8 @@ content_hash: bc79bac523cef9ef
 # Where am I? Cross-View Geo-localization with Natural Language Descriptions
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.17007](https://arxiv.org/abs/2412.17007)
-**Code**: [yejy53.github.io/CVG-Text](https://yejy53.github.io/CVG-Text/)
+**arXiv**: [2412.17007](https://arxiv.org/abs/2412.17007)  
+**Code**: [yejy53.github.io/CVG-Text](https://yejy53.github.io/CVG-Text/)  
 **Area**: Autonomous Driving / Cross-View Geo-localization
 **Keywords**: Cross-View Geo-localization, Natural Language, Text-to-Image Retrieval, Satellite, OSM, LMM, Explainable Retrieval
 

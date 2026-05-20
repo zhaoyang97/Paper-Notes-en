@@ -19,8 +19,8 @@ content_hash: 32260b239c3c4180
 # Mastering Negation: Boosting Grounding Models via Grouped Opposition-Based Learning
 
 **Conference**: CVPR2026
-**arXiv**: [2603.12606](https://arxiv.org/abs/2603.12606)
-**Code**: To be confirmed
+**arXiv**: [2603.12606](https://arxiv.org/abs/2603.12606)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Visual Grounding, Negation Semantics Understanding, Opposition-Based Learning, Parameter-Efficient Fine-Tuning, Vision-Language Fusion, Negative Samples
 

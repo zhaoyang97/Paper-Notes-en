@@ -18,8 +18,8 @@ content_hash: 53b4ef93379919f7
 # A Unifying View of Linear Function Approximation in Off-Policy RL Through Matrix Splitting and Preconditioning
 
 **Conference**: NeurIPS 2025 (Spotlight, top 3%)
-**arXiv**: [2501.01774](https://arxiv.org/abs/2501.01774)
-**Code**: None
+**arXiv**: [2501.01774](https://arxiv.org/abs/2501.01774)  
+**Code**: None  
 **Area**: Reinforcement Learning / Policy Evaluation / Theoretical Analysis
 **Keywords**: temporal difference learning, fitted Q-iteration, matrix splitting, preconditioning, convergence analysis
 

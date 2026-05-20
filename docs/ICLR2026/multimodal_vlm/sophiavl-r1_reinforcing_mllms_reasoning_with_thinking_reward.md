@@ -18,8 +18,8 @@ content_hash: a04900acb055383a
 # SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.17018](https://arxiv.org/abs/2505.17018)
-**Code**: [GitHub](https://github.com/kxfan2002/SophiaVL-R1)
+**arXiv**: [2505.17018](https://arxiv.org/abs/2505.17018)  
+**Code**: [GitHub](https://github.com/kxfan2002/SophiaVL-R1)  
 **Area**: Multimodal Reasoning / RL Alignment
 **Keywords**: Thinking Reward, MLLM Reasoning, Trust-GRPO, Annealing Strategy, Process Supervision
 

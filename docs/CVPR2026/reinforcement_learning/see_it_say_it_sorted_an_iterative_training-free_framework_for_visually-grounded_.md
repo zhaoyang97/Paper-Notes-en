@@ -18,8 +18,8 @@ content_hash: 52095e54507f9c98
 # See It, Say It, Sorted: An Iterative Training-Free Framework for Visually-Grounded Multimodal Reasoning in LVLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21497](https://arxiv.org/abs/2602.21497)
-**Code**: [GitHub](https://github.com/uuuuZYC/See-It-Say-It-Sorted)
+**arXiv**: [2602.21497](https://arxiv.org/abs/2602.21497)  
+**Code**: [GitHub](https://github.com/uuuuZYC/See-It-Say-It-Sorted)  
 **Area**: Reinforcement Learning
 **Keywords**: ECRD, visual grounding, hallucination mitigation, training-free, evidence pool
 

@@ -18,8 +18,8 @@ content_hash: 1b4f944af5428670
 # Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.22496](https://arxiv.org/abs/2512.22496)
-**Code**: None
+**arXiv**: [2512.22496](https://arxiv.org/abs/2512.22496)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Multi-agent adversarial framework, Educational AI, Sycophancy, Tutoring quality assessment, Debate protocol
 

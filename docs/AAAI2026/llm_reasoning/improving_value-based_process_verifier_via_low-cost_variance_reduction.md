@@ -18,8 +18,8 @@ content_hash: 27faa95b0aa3e9a1
 # Improving Value-based Process Verifier via Low-Cost Variance Reduction
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.10539](https://arxiv.org/abs/2508.10539)
-**Code**: None
+**arXiv**: [2508.10539](https://arxiv.org/abs/2508.10539)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Process verifier, variance reduction, Monte Carlo sampling, mathematical reasoning, test-time scaling
 
@@ -49,21 +49,21 @@ Mathematical reasoning is modeled as an MDP → the statistical properties of MC
 
 1. **Statistical Analysis of MC Estimates**:
 
-   - **Function**: Establish the equivalence between MC estimates and the binomial distribution, and prove the MVUE property.
-   - **Mechanism**: In an MDP with binary rewards ($\{0,1\}$), the total number of successes from $N$ MC samples follows $B(N, V^\pi(s))$. The MC estimate $\hat{V}^\pi(s) = \frac{1}{N}\sum_i G^{(i)}$ is unbiased with variance $\frac{V^\pi(s)(1-V^\pi(s))}{N}$. As the MVUE, its variance cannot be further reduced given fixed information.
-   - **Design Motivation**: This analysis clarifies that the performance bottleneck stems from variance rather than bias, and that "additional information" is necessary to break through the theoretical limit.
+    - **Function**: Establish the equivalence between MC estimates and the binomial distribution, and prove the MVUE property.
+    - **Mechanism**: In an MDP with binary rewards ($\{0,1\}$), the total number of successes from $N$ MC samples follows $B(N, V^\pi(s))$. The MC estimate $\hat{V}^\pi(s) = \frac{1}{N}\sum_i G^{(i)}$ is unbiased with variance $\frac{V^\pi(s)(1-V^\pi(s))}{N}$. As the MVUE, its variance cannot be further reduced given fixed information.
+    - **Design Motivation**: This analysis clarifies that the performance bottleneck stems from variance rather than bias, and that "additional information" is necessary to break through the theoretical limit.
 
 2. **Compound Monte Carlo Sampling (ComMCS)**:
 
-   - **Function**: Construct a new unbiased low-variance estimator by linearly combining MC estimates from the current and subsequent steps.
-   - **Mechanism**: By the Bellman equation $V^\pi(s_n) = \mathbb{E}_\pi[V^\pi(s_m | s_n)]$, the MC estimate at a subsequent step is also an unbiased estimator of the current step's value. Setting $\hat{V}_{n \to m} = \sum_i c_i \cdot \hat{V}^\pi(s_{n+i})$ (with $\sum c_i = 1$) preserves unbiasedness while potentially reducing variance. The compound variance formula is: $\mathbb{V}[\hat{V}_{n\to m}|s_n] = \sum_i c_i^2 (\frac{1}{N}\mathbb{E}[\sigma_i^2|s_n] + \mathbb{V}[V_i|s_n])$
-   - **Design Motivation**: MC results from subsequent steps are already collected within the same trajectory; ComMCS leverages this free auxiliary information to reduce variance.
+    - **Function**: Construct a new unbiased low-variance estimator by linearly combining MC estimates from the current and subsequent steps.
+    - **Mechanism**: By the Bellman equation $V^\pi(s_n) = \mathbb{E}_\pi[V^\pi(s_m | s_n)]$, the MC estimate at a subsequent step is also an unbiased estimator of the current step's value. Setting $\hat{V}_{n \to m} = \sum_i c_i \cdot \hat{V}^\pi(s_{n+i})$ (with $\sum c_i = 1$) preserves unbiasedness while potentially reducing variance. The compound variance formula is: $\mathbb{V}[\hat{V}_{n\to m}|s_n] = \sum_i c_i^2 (\frac{1}{N}\mathbb{E}[\sigma_i^2|s_n] + \mathbb{V}[V_i|s_n])$
+    - **Design Motivation**: MC results from subsequent steps are already collected within the same trajectory; ComMCS leverages this free auxiliary information to reduce variance.
 
 3. **One-Step Value Distribution Modeling**:
 
-   - **Function**: Approximate the next-step value distribution with a categorical distribution to estimate variance and determine optimal combination coefficients.
-   - **Mechanism**: In practice, $m = n+1$ (only the next step is used), simplifying the variance formula to two terms. The value distribution is assumed to belong to a Gaussian family; the verifier's softmax outputs are used to model a categorical distribution approximating the value distribution. MC estimate values serve as proxies for the ground truth to estimate variance, and optimal coefficients $c_n, c_{n+1}$ are found heuristically.
-   - **Design Motivation**: Exact variance computation is infeasible in practice, but the categorical distribution combined with the Gaussian assumption provides a sufficiently practical approximation.
+    - **Function**: Approximate the next-step value distribution with a categorical distribution to estimate variance and determine optimal combination coefficients.
+    - **Mechanism**: In practice, $m = n+1$ (only the next step is used), simplifying the variance formula to two terms. The value distribution is assumed to belong to a Gaussian family; the verifier's softmax outputs are used to model a categorical distribution approximating the value distribution. MC estimate values serve as proxies for the ground truth to estimate variance, and optimal coefficients $c_n, c_{n+1}$ are found heuristically.
+    - **Design Motivation**: Exact variance computation is infeasible in practice, but the categorical distribution combined with the Gaussian assumption provides a sufficiently practical approximation.
 
 ### Loss & Training
 - The verifier is trained with cross-entropy loss; MC estimate values are binned to obtain categorical labels.

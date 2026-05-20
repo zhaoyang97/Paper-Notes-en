@@ -18,8 +18,8 @@ content_hash: 87c740b36e4e971b
 # Mixed Signals: A Diverse Point Cloud Dataset for Heterogeneous LiDAR V2X Collaboration
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.14156](https://arxiv.org/abs/2502.14156)
-**Code**: [https://mixedsignalsdataset.cs.cornell.edu/](https://mixedsignalsdataset.cs.cornell.edu/)
+**arXiv**: [2502.14156](https://arxiv.org/abs/2502.14156)  
+**Code**: [https://mixedsignalsdataset.cs.cornell.edu/](https://mixedsignalsdataset.cs.cornell.edu/)  
 **Area**: Autonomous Driving
 **Keywords**: V2X Collaborative Perception, Point Cloud Dataset, Heterogeneous Sensors, 3D Object Detection, Vulnerable Road Users
 

@@ -18,8 +18,8 @@ content_hash: 42ae34a8654181d7
 # Belief-Calibrated Multi-Agent Consensus Seeking for Complex NLP Tasks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.06307](https://arxiv.org/abs/2510.06307)
-**Code**: [https://github.com/dengwentao99/BCCS](https://github.com/dengwentao99/BCCS)
+**arXiv**: [2510.06307](https://arxiv.org/abs/2510.06307)  
+**Code**: [https://github.com/dengwentao99/BCCS](https://github.com/dengwentao99/BCCS)  
 **Area**: LLM Evaluation
 **Keywords**: Multi-agent systems, consensus mechanism, belief calibration, collaborative reasoning, LLM collaboration
 

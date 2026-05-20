@@ -18,8 +18,8 @@ content_hash: 60ebf2edf0a929c7
 # Generative Video Compression with One-Dimensional Latent Representation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.15302](https://arxiv.org/abs/2603.15302)
-**Code**: [https://gvc1d.github.io/](https://gvc1d.github.io/)
+**arXiv**: [2603.15302](https://arxiv.org/abs/2603.15302)  
+**Code**: [https://gvc1d.github.io/](https://gvc1d.github.io/)  
 **Area**: Model Compression
 **Keywords**: Video Compression, 1D Latent Representation, Generative Codec, Long-term Memory, Token Compression
 

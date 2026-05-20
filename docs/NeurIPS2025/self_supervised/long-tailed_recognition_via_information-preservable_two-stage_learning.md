@@ -19,8 +19,8 @@ content_hash: 2a6ec90450e4bc7a
 # Long-Tailed Recognition via Information-Preservable Two-Stage Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08836](https://arxiv.org/abs/2510.08836)
-**Code**: [github.com/fudong03/BNS_IPDPP](https://github.com/fudong03/BNS_IPDPP)
+**arXiv**: [2510.08836](https://arxiv.org/abs/2510.08836)  
+**Code**: [github.com/fudong03/BNS_IPDPP](https://github.com/fudong03/BNS_IPDPP)  
 **Authors**: Fudong Lin, Xu Yuan (University of Delaware)
 **Area**: Self-Supervised Learning
 **Keywords**: Long-tailed recognition, contrastive learning, information theory, determinantal point process, two-stage learning, representation learning

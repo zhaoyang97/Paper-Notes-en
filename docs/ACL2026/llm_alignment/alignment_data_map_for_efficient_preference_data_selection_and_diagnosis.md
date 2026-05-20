@@ -18,8 +18,8 @@ content_hash: 74fa050e70b03e0d
 # Alignment Data Map for Efficient Preference Data Selection and Diagnosis
 
 **Conference**: ACL 2026
-**arXiv**: [2505.23114](https://arxiv.org/abs/2505.23114)
-**Code**: [GitHub](https://github.com/01choco/Alignment-Data-Map)
+**arXiv**: [2505.23114](https://arxiv.org/abs/2505.23114)  
+**Code**: [GitHub](https://github.com/01choco/Alignment-Data-Map)  
 **Area**: LLM Alignment / Data Selection
 **Keywords**: Preference learning, data selection, alignment data map, annotation quality diagnosis, DPO
 

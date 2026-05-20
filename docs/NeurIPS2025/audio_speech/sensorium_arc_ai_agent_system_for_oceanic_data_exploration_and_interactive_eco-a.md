@@ -19,8 +19,8 @@ content_hash: 4459264bf9053c9d
 # Sensorium Arc: AI Agent System for Oceanic Data Exploration and Interactive Eco-Art
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.15997](https://arxiv.org/abs/2511.15997)
-**Code**: None
+**arXiv**: [2511.15997](https://arxiv.org/abs/2511.15997)  
+**Code**: None  
 **Area**: Human-Computer Interaction / Eco-Art / Multi-Agent Systems
 **Keywords**: Ocean data visualization, RAG, multi-agent LLM, interactive eco-art, conversational AI, immersive media
 

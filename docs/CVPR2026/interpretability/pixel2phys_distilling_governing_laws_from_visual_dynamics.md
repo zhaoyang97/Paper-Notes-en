@@ -18,8 +18,8 @@ content_hash: 79560e4f259bd029
 # Pixel2Phys: Distilling Governing Laws from Visual Dynamics
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19516](https://arxiv.org/abs/2602.19516)
-**Code**: None
+**arXiv**: [2602.19516](https://arxiv.org/abs/2602.19516)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Physical law discovery, multi-agent framework, symbolic regression, video understanding, AI for Science
 

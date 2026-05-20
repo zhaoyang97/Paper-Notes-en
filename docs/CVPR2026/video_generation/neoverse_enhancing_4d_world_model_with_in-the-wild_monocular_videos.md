@@ -18,8 +18,8 @@ content_hash: 6954b88ea7ff77c0
 # NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.00393](https://arxiv.org/abs/2601.00393)
-**Code**: [https://neoverse-4d.github.io](https://neoverse-4d.github.io) (coming soon)
+**arXiv**: [2601.00393](https://arxiv.org/abs/2601.00393)  
+**Code**: [https://neoverse-4d.github.io](https://neoverse-4d.github.io) (coming soon)  
 **Area**: Video Generation
 **Keywords**: 4D world model, Gaussian splatting, monocular video, novel view synthesis, feed-forward reconstruction
 

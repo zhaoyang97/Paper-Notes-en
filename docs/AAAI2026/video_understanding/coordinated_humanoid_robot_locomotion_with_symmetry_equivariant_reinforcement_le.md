@@ -19,8 +19,8 @@ content_hash: dfd2b8462fb6b251
 # Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01247](https://arxiv.org/abs/2508.01247)
-**Code**: None
+**arXiv**: [2508.01247](https://arxiv.org/abs/2508.01247)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: Humanoid Robot, Symmetry Equivariance, Deep Reinforcement Learning, Motion Coordination, PPO, Sim-to-Real
 

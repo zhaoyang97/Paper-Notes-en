@@ -18,8 +18,8 @@ content_hash: 5711db1ef29c06f3
 # ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.16148](https://arxiv.org/abs/2601.16148)
-**Code**: [Project Page](https://remysabathier.github.io/actionmesh/)
+**arXiv**: [2601.16148](https://arxiv.org/abs/2601.16148)  
+**Code**: [Project Page](https://remysabathier.github.io/actionmesh/)  
 **Area**: 3D Vision / 4D Generation
 **Keywords**: animated 3D mesh generation, temporal 3D diffusion, topology-consistent, rig-free, feed-forward
 

@@ -18,8 +18,8 @@ content_hash: 5e651d80db38b063
 # ContextAgent: Context-Aware Proactive LLM Agents with Open-World Sensory Perceptions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.14668](https://arxiv.org/abs/2505.14668)
-**Code**: [https://github.com/openaiotlab/ContextAgent](https://github.com/openaiotlab/ContextAgent)
+**arXiv**: [2505.14668](https://arxiv.org/abs/2505.14668)  
+**Code**: [https://github.com/openaiotlab/ContextAgent](https://github.com/openaiotlab/ContextAgent)  
 **Area**: Agent
 **Keywords**: Proactive Agent, context awareness, wearable sensors, tool invocation, benchmark
 

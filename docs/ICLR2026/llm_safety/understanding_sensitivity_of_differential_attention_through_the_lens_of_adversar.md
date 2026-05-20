@@ -18,8 +18,8 @@ content_hash: a26dad58998e68cb
 # Understanding Sensitivity of Differential Attention through the Lens of Adversarial Robustness
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00517](https://arxiv.org/abs/2510.00517)
-**Code**: None
+**arXiv**: [2510.00517](https://arxiv.org/abs/2510.00517)  
+**Code**: None  
 **Area**: LLM Security
 **Keywords**: Differential Attention, adversarial robustness, gradient alignment, Lipschitz constant, attention mechanism
 

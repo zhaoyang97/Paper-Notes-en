@@ -18,8 +18,8 @@ content_hash: b1a1591dc87b79a0
 # Hyperbolic Continuous Structural Entropy for Hierarchical Clustering
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.00524](https://arxiv.org/abs/2512.00524)
-**Code**: [GitHub](https://github.com/SELGroup/HypCSE)
+**arXiv**: [2512.00524](https://arxiv.org/abs/2512.00524)  
+**Code**: [GitHub](https://github.com/SELGroup/HypCSE)  
 **Area**: Graph Learning / Hierarchical Clustering
 **Keywords**: Hierarchical Clustering, Structural Entropy, Hyperbolic Space, Graph Structure Learning, Contrastive Learning
 

@@ -18,8 +18,8 @@ content_hash: 3ac78598058fedcc
 # Point-SRA: Self-Representation Alignment for 3D Representation Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.01746](https://arxiv.org/abs/2601.01746)
-**Code**: To be confirmed
+**arXiv**: [2601.01746](https://arxiv.org/abs/2601.01746)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: 3D representation learning, masked autoencoder, self-distillation, MeanFlow, point cloud
 

@@ -18,8 +18,8 @@ content_hash: 2a52f214aa749f76
 # VideoLLaMB: Long Streaming Video Understanding with Recurrent Memory Bridges
 
 **Conference**: ICCV 2025
-**arXiv**: [2409.01071](https://arxiv.org/abs/2409.01071)
-**Code**: [https://github.com/bigai-nlco/VideoLLaMB](https://github.com/bigai-nlco/VideoLLaMB)
+**arXiv**: [2409.01071](https://arxiv.org/abs/2409.01071)  
+**Code**: [https://github.com/bigai-nlco/VideoLLaMB](https://github.com/bigai-nlco/VideoLLaMB)  
 **Area**: Video Understanding
 **Keywords**: Long video understanding, recurrent memory, streaming video, video-language models, frame retrieval
 

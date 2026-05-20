@@ -18,8 +18,8 @@ content_hash: c3cbdf035ce5f7f6
 # DIsoN: Decentralized Isolation Networks for Out-of-Distribution Detection in Medical Imaging
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.09024](https://arxiv.org/abs/2506.09024)
-**Code**: [GitHub](https://github.com/FelixWag/DIsoN)
+**arXiv**: [2506.09024](https://arxiv.org/abs/2506.09024)  
+**Code**: [GitHub](https://github.com/FelixWag/DIsoN)  
 **Area**: Medical Imaging
 **Keywords**: OOD detection, decentralized learning, isolation networks, medical imaging safety, privacy preservation
 

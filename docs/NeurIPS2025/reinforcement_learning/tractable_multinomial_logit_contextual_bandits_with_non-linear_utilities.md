@@ -19,9 +19,9 @@ content_hash: e9b645d2ccec762e
 # Tractable Multinomial Logit Contextual Bandits with Non-Linear Utilities
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.06913](https://arxiv.org/abs/2601.06913)
+**arXiv**: [2601.06913](https://arxiv.org/abs/2601.06913)  
 **Authors**: Taehyun Hwang, Dahngoon Kim, Min-hwan Oh (Seoul National University)
-**Code**: Not available
+**Code**: Not available  
 **Area**: Reinforcement Learning
 **Keywords**: contextual bandits, multinomial logit, non-linear utility functions, combinatorial assortment optimization, UCB, neural networks
 

@@ -17,8 +17,8 @@ content_hash: 907109cf1f0ead36
 # Temporal Slowness in Central Vision Drives Semantic Object Learning
 
 **Conference**: ICLR2026
-**arXiv**: [2602.04462](https://arxiv.org/abs/2602.04462)
-**Code**: None
+**arXiv**: [2602.04462](https://arxiv.org/abs/2602.04462)  
+**Code**: None  
 **Area**: Self-Supervised Learning
 **Keywords**: central vision, temporal slowness, self-supervised learning, Ego4D, semantic representation
 

@@ -18,8 +18,8 @@ content_hash: 94d183ee30a11b00
 # Graph-of-Mark: Promote Spatial Reasoning in Multimodal Language Models with Graph-Based Visual Prompting
 
 **Conference**: AAAI 2026 (Main Track)
-**arXiv**: [2603.06663](https://arxiv.org/abs/2603.06663)
-**Code**: None
+**arXiv**: [2603.06663](https://arxiv.org/abs/2603.06663)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Visual Prompting, Spatial Reasoning, Scene Graph, Multimodal Language Models, Zero-Shot Reasoning
 
@@ -53,9 +53,9 @@ GoM upgrades SoM's "set annotation" paradigm to a "graph annotation" paradigm. T
 
 2. **Three-Dimensional Spatial Relationship Estimation**: This is the most critical capability GoM adds over SoM. For each pair of objects, relationships are assessed along three dimensions:
 
-   - **2D Directional Relations**: horizontal and vertical displacements between bounding-box centers are computed; a threshold $\tau_{dir}$ determines "above/below/left/right". Formally: $R_{dir}(i,j) = \text{above} \iff \Delta y > |\Delta x| + \tau_{dir}$
-   - **3D Depth Relations**: the monocular depth estimator MiDaS assigns a relative depth value to each object; a threshold $\tau_z$ determines "in_front_of / behind"
-   - **Proximity Relations**: Euclidean distances between objects are computed to determine "near/touching/very close"
+    - **2D Directional Relations**: horizontal and vertical displacements between bounding-box centers are computed; a threshold $\tau_{dir}$ determines "above/below/left/right". Formally: $R_{dir}(i,j) = \text{above} \iff \Delta y > |\Delta x| + \tau_{dir}$
+    - **3D Depth Relations**: the monocular depth estimator MiDaS assigns a relative depth value to each object; a threshold $\tau_z$ determines "in_front_of / behind"
+    - **Proximity Relations**: Euclidean distances between objects are computed to determine "near/touching/very close"
 
 3. **Query-Aware Filtering**: Overlaying all pairwise relationships would clutter the image. GoM applies semantic similarity matching against the text query, retaining only objects mentioned in the query and their immediate spatial neighbors, ensuring the visual prompt remains task-relevant.
 

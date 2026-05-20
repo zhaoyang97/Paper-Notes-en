@@ -18,8 +18,8 @@ content_hash: 944a52eeb0fbbb0c
 # Beyond the Mean: Fisher-Orthogonal Projection for Natural Gradient Descent in Large Batch Training
 
 **Conference**: AAAI2026
-**arXiv**: [2508.13898](https://arxiv.org/abs/2508.13898)
-**Code**: [yishunlu-222/fop](https://github.com/yishunlu-222/fop)
+**arXiv**: [2508.13898](https://arxiv.org/abs/2508.13898)  
+**Code**: [yishunlu-222/fop](https://github.com/yishunlu-222/fop)  
 **Area**: Optimization
 **Keywords**: Natural Gradient Descent, Fisher Information Matrix, KFAC, Large Batch Training, Second-Order Optimization
 

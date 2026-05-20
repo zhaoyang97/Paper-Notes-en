@@ -18,8 +18,8 @@ content_hash: 34a603f34770bbd0
 # Global Motion Corresponder for 3D Point-Based Scene Interpolation under Large Motion
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.20136](https://arxiv.org/abs/2508.20136)
-**Code**: [Project Page](https://junrul.github.io/gmc/)
+**arXiv**: [2508.20136](https://arxiv.org/abs/2508.20136)  
+**Code**: [Project Page](https://junrul.github.io/gmc/)  
 **Area**: 3D Vision
 **Keywords**: Scene interpolation, large motion, 3D Gaussian Splatting, SE(3) transformation, semantic correspondence
 

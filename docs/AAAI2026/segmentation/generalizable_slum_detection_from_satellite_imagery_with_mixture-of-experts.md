@@ -18,8 +18,8 @@ content_hash: 79b6d0669f84c44b
 # Generalizable Slum Detection from Satellite Imagery with Mixture-of-Experts
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10300](https://arxiv.org/abs/2511.10300)
-**Code**: [GitHub](https://github.com/DS4H-GIS/GRAM)
+**arXiv**: [2511.10300](https://arxiv.org/abs/2511.10300)  
+**Code**: [GitHub](https://github.com/DS4H-GIS/GRAM)  
 **Area**: Segmentation
 **Keywords**: slum detection, satellite image segmentation, mixture-of-experts, test-time adaptation, domain generalization
 

@@ -18,8 +18,8 @@ content_hash: 57acf41992f81817
 # EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26346](https://arxiv.org/abs/2509.26346)
-**Code**: [GitHub](https://tiger-ai-lab.github.io/EditReward)
+**arXiv**: [2509.26346](https://arxiv.org/abs/2509.26346)  
+**Code**: [GitHub](https://tiger-ai-lab.github.io/EditReward)  
 **Area**: Image Editing / Reward Model
 **Keywords**: Image Editing, Reward Model, Human Preference, Data Filtering, VLM
 

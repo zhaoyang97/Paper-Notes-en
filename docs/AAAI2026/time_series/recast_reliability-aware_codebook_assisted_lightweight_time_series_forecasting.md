@@ -18,8 +18,8 @@ content_hash: 7346ae4a855c289b
 # ReCast: Reliability-aware Codebook Assisted Lightweight Time Series Forecasting
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11991](https://arxiv.org/abs/2511.11991)
-**Code**: N/A
+**arXiv**: [2511.11991](https://arxiv.org/abs/2511.11991)  
+**Code**: N/A  
 **Area**: Time Series
 **Keywords**: Codebook quantization, lightweight forecasting, dual-path architecture, reliability-aware update, distributionally robust optimization
 

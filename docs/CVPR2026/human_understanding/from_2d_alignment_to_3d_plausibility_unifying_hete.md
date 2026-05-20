@@ -18,8 +18,8 @@ content_hash: ed673bf46d0cba40
 # A2P: From 2D Alignment to 3D Plausibility for Occlusion-Robust Two-Hand Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.17788](https://arxiv.org/abs/2503.17788)
-**Code**: [Project Page](https://gaogehan.github.io/A2P/)
+**arXiv**: [2503.17788](https://arxiv.org/abs/2503.17788)  
+**Code**: [Project Page](https://gaogehan.github.io/A2P/)  
 **Area**: Human Understanding / Hand Reconstruction
 **Keywords**: two-hand reconstruction, fusion alignment encoder, penetration-free diffusion, MANO, Sapiens
 

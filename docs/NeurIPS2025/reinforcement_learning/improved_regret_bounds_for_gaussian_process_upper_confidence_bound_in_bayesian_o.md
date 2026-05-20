@@ -18,8 +18,8 @@ content_hash: c5ca965b4b51f52c
 # Improved Regret Bounds for GP-UCB in Bayesian Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01393](https://arxiv.org/abs/2506.01393)
-**Code**: None
+**arXiv**: [2506.01393](https://arxiv.org/abs/2506.01393)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Bayesian optimization, GP-UCB, regret bound, information gain, Gaussian process
 

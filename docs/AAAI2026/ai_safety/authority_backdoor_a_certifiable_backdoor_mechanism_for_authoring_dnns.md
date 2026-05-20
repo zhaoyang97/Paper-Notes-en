@@ -19,8 +19,8 @@ content_hash: f9f6a256b84f4939
 # Authority Backdoor: A Certifiable Backdoor Mechanism for Authoring DNNs
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.10600](https://arxiv.org/abs/2512.10600)
-**Code**: [PlayerYangh/Authority-Trigger](https://github.com/PlayerYangh/Authority-Trigger)
+**arXiv**: [2512.10600](https://arxiv.org/abs/2512.10600)  
+**Code**: [PlayerYangh/Authority-Trigger](https://github.com/PlayerYangh/Authority-Trigger)  
 **Area**: AI Security
 **Keywords**: DNN intellectual property protection, active defense, backdoor learning, certified robustness, randomized smoothing, hardware fingerprint
 

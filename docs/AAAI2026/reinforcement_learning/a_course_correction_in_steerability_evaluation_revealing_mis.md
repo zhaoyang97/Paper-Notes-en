@@ -18,8 +18,8 @@ content_hash: cb5515d72734388d
 # A Course Correction in Steerability Evaluation: Revealing Miscalibration and Side Effects in LLMs
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.23816](https://arxiv.org/abs/2505.23816)
-**Code**: [https://github.com/MLD3/steerability](https://github.com/MLD3/steerability)
+**arXiv**: [2505.23816](https://arxiv.org/abs/2505.23816)  
+**Code**: [https://github.com/MLD3/steerability](https://github.com/MLD3/steerability)  
 **Area**: Reinforcement Learning
 **Keywords**: steerability evaluation, side effects, miscalibration, RL fine-tuning, text rewriting
 

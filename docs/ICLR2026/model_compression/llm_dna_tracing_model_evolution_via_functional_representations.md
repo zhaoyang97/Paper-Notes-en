@@ -18,8 +18,8 @@ content_hash: 4f7f058ae4489a01
 # LLM DNA: Tracing Model Evolution via Functional Representations
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24496](https://arxiv.org/abs/2509.24496)
-**Code**: [GitHub](https://github.com/Xtra-Computing/LLM-DNA)
+**arXiv**: [2509.24496](https://arxiv.org/abs/2509.24496)  
+**Code**: [GitHub](https://github.com/Xtra-Computing/LLM-DNA)  
 **Area**: Model Compression
 **Keywords**: LLM DNA, model phylogenetic tree, functional representation, phylogenetic analysis, model provenance tracing
 

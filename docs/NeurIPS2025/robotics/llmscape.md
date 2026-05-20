@@ -18,8 +18,8 @@ content_hash: f0caa4cc3bc59359
 # LLMscape
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.07161](https://arxiv.org/abs/2511.07161)
-**Code**: None
+**arXiv**: [2511.07161](https://arxiv.org/abs/2511.07161)  
+**Code**: None  
 **Area**: Human-Computer Interaction / LLM Agent / Interactive Art
 **Keywords**: Interactive Installation, LLM Agent, Embodied Cognition, Multimodal Perception, Collaborative Sensemaking
 
@@ -51,21 +51,21 @@ LLMscape is a projection-mapped sandscape installation in which participants phy
 
 1. **First Iteration: Simple Multi-Turn LLM Interaction**
 
-   - **Function**: An exploratory prototype validating the feasibility of LLM interaction with a physical environment.
-   - **Mechanism**: Implemented using p5.js educational tools for rudimentary multi-turn LLM interaction. The sandscape is physically manipulated by visitors; tangible changes such as sand rearrangement affect the behavior of simulated entities.
-   - **Design Motivation**: As a minimum viable experiment, this iteration verifies whether LLMs can produce meaningful responses to changes in the physical environment.
+    - **Function**: An exploratory prototype validating the feasibility of LLM interaction with a physical environment.
+    - **Mechanism**: Implemented using p5.js educational tools for rudimentary multi-turn LLM interaction. The sandscape is physically manipulated by visitors; tangible changes such as sand rearrangement affect the behavior of simulated entities.
+    - **Design Motivation**: As a minimum viable experiment, this iteration verifies whether LLMs can produce meaningful responses to changes in the physical environment.
 
 2. **Second Iteration: Generative Agents Framework**
 
-   - **Function**: A complete system publicly exhibited at Chronus Art Center, featuring three agents with full cognitive architectures (a woman, a boy, and a flamingo).
-   - **Mechanism**: Drawing on design principles from Generative Agents and the Concordia project, each agent is equipped with Associative Memory, periodic Reflection and Planning, and internal Somatic States (e.g., fatigue tracking). Agents are integrated into a Unity environment and can perform a range of actions including conversing, piling sand, resting, walking, dancing, setting goals, and self-reflecting.
-   - **Design Motivation**: To endow agents with richer cognitive capabilities, bringing their behavior closer to genuine sensemaking processes rather than simple response generation.
+    - **Function**: A complete system publicly exhibited at Chronus Art Center, featuring three agents with full cognitive architectures (a woman, a boy, and a flamingo).
+    - **Mechanism**: Drawing on design principles from Generative Agents and the Concordia project, each agent is equipped with Associative Memory, periodic Reflection and Planning, and internal Somatic States (e.g., fatigue tracking). Agents are integrated into a Unity environment and can perform a range of actions including conversing, piling sand, resting, walking, dancing, setting goals, and self-reflecting.
+    - **Design Motivation**: To endow agents with richer cognitive capabilities, bringing their behavior closer to genuine sensemaking processes rather than simple response generation.
 
 3. **Third Iteration: Tool Calling and Context Engineering**
 
-   - **Function**: Integrates the Model Context Protocol (MCP) and an MCP–game engine adapter on top of the Generative Agents foundation.
-   - **Mechanism**: Inspired by recent research on context engineering, agents dynamically invoke tools and adapt their behavior based on real-time context. The long-context and multimodal capabilities of modern models are leveraged to extend the relatively static architecture of prior versions.
-   - **Design Motivation**: The architectures of the first two iterations were relatively static; the multimodal and long-context capabilities of newer-generation models open up possibilities for more flexible agent–environment interaction.
+    - **Function**: Integrates the Model Context Protocol (MCP) and an MCP–game engine adapter on top of the Generative Agents foundation.
+    - **Mechanism**: Inspired by recent research on context engineering, agents dynamically invoke tools and adapt their behavior based on real-time context. The long-context and multimodal capabilities of modern models are leveraged to extend the relatively static architecture of prior versions.
+    - **Design Motivation**: The architectures of the first two iterations were relatively static; the multimodal and long-context capabilities of newer-generation models open up possibilities for more flexible agent–environment interaction.
 
 ### Multimodal Perception Pipeline
 

@@ -19,8 +19,8 @@ content_hash: 3c5cc8cd4af8487d
 # TT-Occ: Test-Time 3D Occupancy Prediction
 
 **Conference**: CVPR2026
-**arXiv**: [2503.08485](https://arxiv.org/abs/2503.08485)
-**Code**: [Xian-Bei/TT-Occ](https://github.com/Xian-Bei/TT-Occ)
+**arXiv**: [2503.08485](https://arxiv.org/abs/2503.08485)  
+**Code**: [Xian-Bei/TT-Occ](https://github.com/Xian-Bei/TT-Occ)  
 **Area**: Autonomous Driving / 3D Occupancy Prediction
 **Keywords**: 3D occupancy prediction, test-time, 3D Gaussian Splatting, vision foundation models, self-supervised, open-vocabulary
 

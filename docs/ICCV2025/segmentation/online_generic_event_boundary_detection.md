@@ -18,8 +18,8 @@ content_hash: 542948cf8d8c4097
 # Online Generic Event Boundary Detection
 
 **Conference**: ICCV2025
-**arXiv**: [2510.06855](https://arxiv.org/abs/2510.06855)
-**Code**: To be confirmed
+**arXiv**: [2510.06855](https://arxiv.org/abs/2510.06855)  
+**Code**: To be confirmed  
 **Area**: Video Understanding / Event Segmentation
 **Keywords**: Online event boundary detection, Event Segmentation Theory, streaming video, dynamic thresholding, Transformer decoder
 

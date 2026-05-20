@@ -18,8 +18,8 @@ content_hash: 0951b19611bdc81f
 # T1: A Tool-Oriented Conversational Dataset for Multi-Turn Agentic Planning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16986](https://arxiv.org/abs/2505.16986)
-**Code**: [https://github.com/CapitalOne-Research/T1](https://github.com/CapitalOne-Research/T1)
+**arXiv**: [2505.16986](https://arxiv.org/abs/2505.16986)  
+**Code**: [https://github.com/CapitalOne-Research/T1](https://github.com/CapitalOne-Research/T1)  
 **Area**: LLM Agent
 **Keywords**: tool-use, multi-turn dialogue, agentic planning, benchmark, inter-tool dependency
 

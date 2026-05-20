@@ -18,8 +18,8 @@ content_hash: df6af8b7fb46d1a1
 # WMCopier: Forging Invisible Image Watermarks on Arbitrary Images
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.22330](https://arxiv.org/abs/2503.22330)
-**Code**: [GitHub](https://github.com/holdrain/WMCopier)
+**arXiv**: [2503.22330](https://arxiv.org/abs/2503.22330)  
+**Code**: [GitHub](https://github.com/holdrain/WMCopier)  
 **Area**: Image Generation
 **Keywords**: Watermark Forging Attack, Diffusion Models, DDIM Inversion, Invisible Watermark, No-Box Attack
 

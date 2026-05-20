@@ -18,8 +18,8 @@ content_hash: 13ef8c0bc80ccf5f
 # TSGDiff: Rethinking Synthetic Time Series Generation from a Pure Graph Perspective
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12174](https://arxiv.org/abs/2511.12174)
-**Code**: [TSGDiff](https://github.com/jvaeylee/TSGDiff)
+**arXiv**: [2511.12174](https://arxiv.org/abs/2511.12174)  
+**Code**: [TSGDiff](https://github.com/jvaeylee/TSGDiff)  
 **Area**: image_generation (actually time series generation)
 **Keywords**: time series generation, graph neural networks, diffusion models, Fourier transform, topological fidelity
 

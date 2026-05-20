@@ -18,8 +18,8 @@ content_hash: b6730b1fb453f7a7
 # Towards Source-Aware Object Swapping with Initial Noise Perturbation
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23697](https://arxiv.org/abs/2602.23697)
-**Code**: None
+**arXiv**: [2602.23697](https://arxiv.org/abs/2602.23697)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Object Swapping, Diffusion Models, Initial Noise Perturbation, Self-Supervised, Cross-Object Alignment
 

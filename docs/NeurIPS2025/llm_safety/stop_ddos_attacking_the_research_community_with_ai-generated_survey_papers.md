@@ -19,9 +19,9 @@ content_hash: 78b2f09db6e85f63
 # Stop DDoS Attacking the Research Community with AI-Generated Survey Papers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.09686](https://arxiv.org/abs/2510.09686)
+**arXiv**: [2510.09686](https://arxiv.org/abs/2510.09686)  
 **Authors**: Jianghao Lin, Rong Shan, Jiachen Zhu, Yunjia Xi, Yong Yu, Weinan Zhang (Shanghai Jiao Tong University)
-**Code**: None
+**Code**: None  
 **Area**: LLM Safety
 **Keywords**: AI-generated surveys, survey paper DDoS attack, academic integrity, dynamic live surveys, paper quality detection, research culture
 

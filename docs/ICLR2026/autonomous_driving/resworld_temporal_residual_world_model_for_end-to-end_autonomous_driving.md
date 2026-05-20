@@ -18,8 +18,8 @@ content_hash: ba60bd15153b4e8c
 # ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.10884](https://arxiv.org/abs/2602.10884)
-**Code**: [https://github.com/mengtan00/ResWorld](https://github.com/mengtan00/ResWorld)
+**arXiv**: [2602.10884](https://arxiv.org/abs/2602.10884)  
+**Code**: [https://github.com/mengtan00/ResWorld](https://github.com/mengtan00/ResWorld)  
 **Area**: Autonomous Driving / World Models
 **Keywords**: Temporal Residual, World Model, End-to-End Autonomous Driving, BEV Features, Trajectory Refinement
 

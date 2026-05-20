@@ -18,8 +18,8 @@ content_hash: 8ef3e70d71dfad61
 # Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.08431](https://arxiv.org/abs/2510.08431)
-**Code**: [Project Page](https://research.nvidia.com/labs/dir/rcm)
+**arXiv**: [2510.08431](https://arxiv.org/abs/2510.08431)  
+**Code**: [Project Page](https://research.nvidia.com/labs/dir/rcm)  
 **Area**: Image Generation
 **Keywords**: Continuous-time consistency models, score distillation, large-scale distillation, JVP, few-step generation
 
@@ -46,8 +46,8 @@ $$\mathcal{L}_{\text{rCM}}(\theta) = \mathcal{L}_{\text{sCM}}(\theta) + \lambda 
    with $\lambda=0.01$ being universal across models and tasks. sCM provides mode-covering (high diversity), while DMD provides mode-seeking (high quality).
 
 3. **Stable Time-Derivative Computation**: To address JVP training instability in large models, two strategies are proposed:
-   - Semi-continuous time: JVP is used for spatial components, while finite differences approximate the temporal component ($\Delta t = 10^{-4}$).
-   - High-precision time: FP32 precision is enforced on time-embedding layers.
+    - Semi-continuous time: JVP is used for spatial components, while finite differences approximate the temporal component ($\Delta t = 10^{-4}$).
+    - High-precision time: FP32 precision is enforced on time-embedding layers.
 
 4. **Rollout Strategy**: The student can perform arbitrary-step sampling; the number of steps $N \in [1, N_{\max}]$ is randomly selected. DMD loss is backpropagated only through the final step, with random timesteps ensuring coverage of the full time range.
 

@@ -19,8 +19,8 @@ content_hash: 006ebb5f29fe0427
 # PINGS-X: Physics-Informed Normalized Gaussian Splatting with Axes Alignment for Efficient Super-Resolution of 4D Flow MRI
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11048](https://arxiv.org/abs/2511.11048)
-**Code**: [GitHub](https://github.com/SpatialAILab/PINGS-X)
+**arXiv**: [2511.11048](https://arxiv.org/abs/2511.11048)  
+**Code**: [GitHub](https://github.com/SpatialAILab/PINGS-X)  
 **Area**: Medical Imaging / 4D Flow MRI Super-Resolution
 **Keywords**: 4D Flow MRI, Gaussian Splatting, Physics-Informed Learning, Super-Resolution, Navier-Stokes Equations, Normalized Kernel Regression
 

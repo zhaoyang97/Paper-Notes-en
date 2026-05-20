@@ -18,8 +18,8 @@ content_hash: 85bf65ae6f3255e0
 # Distributional Autoencoders Know the Score
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.11583](https://arxiv.org/abs/2502.11583)
-**Code**: [https://github.com/andleb/DistributionalAutoencodersScore](https://github.com/andleb/DistributionalAutoencodersScore)
+**arXiv**: [2502.11583](https://arxiv.org/abs/2502.11583)  
+**Code**: [https://github.com/andleb/DistributionalAutoencodersScore](https://github.com/andleb/DistributionalAutoencodersScore)  
 **Area**: Interpretability
 **Keywords**: Autoencoders, Distributional Reconstruction, Score Function, Manifold Learning, Intrinsic Dimensionality
 

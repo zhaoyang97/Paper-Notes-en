@@ -18,8 +18,8 @@ content_hash: 49c6ff40efb5fc63
 # TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24803](https://arxiv.org/abs/2509.24803)
-**Code**: [GitHub](https://github.com/AntonGuan/TimeOmni-1)
+**arXiv**: [2509.24803](https://arxiv.org/abs/2509.24803)  
+**Code**: [GitHub](https://github.com/AntonGuan/TimeOmni-1)  
 **Area**: Human Understanding / Time Series
 **Keywords**: Time Series Reasoning, LLM, Reinforcement Learning, Multi-task Joint Training, Causal Discovery
 

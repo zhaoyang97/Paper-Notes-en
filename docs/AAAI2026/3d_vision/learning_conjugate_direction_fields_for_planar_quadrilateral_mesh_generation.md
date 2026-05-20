@@ -18,8 +18,8 @@ content_hash: 7e24ee5d1b85110a
 # Learning Conjugate Direction Fields for Planar Quadrilateral Mesh Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11865](https://arxiv.org/abs/2511.11865)
-**Code**: [https://github.com/jiongtj/Learning-CDF](https://github.com/jiongtj/Learning-CDF)
+**arXiv**: [2511.11865](https://arxiv.org/abs/2511.11865)  
+**Code**: [https://github.com/jiongtj/Learning-CDF](https://github.com/jiongtj/Learning-CDF)  
 **Area**: 3D Vision
 **Keywords**: Planar Quadrilateral Mesh, Conjugate Direction Field, Deep Learning, Architectural Design, Controllable Generation
 

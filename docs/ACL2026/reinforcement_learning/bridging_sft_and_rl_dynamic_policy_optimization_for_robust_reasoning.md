@@ -18,8 +18,8 @@ content_hash: 683c40a5f1f4d788
 # Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.08926](https://arxiv.org/abs/2604.08926)
-**Code**: [GitHub](https://github.com/Tocci-Zhu/DYPO)
+**arXiv**: [2604.08926](https://arxiv.org/abs/2604.08926)  
+**Code**: [GitHub](https://github.com/Tocci-Zhu/DYPO)  
 **Area**: Reinforcement Learning
 **Keywords**: SFT-RL integration, bias-variance tradeoff, dynamic difficulty grading, multi-teacher distillation, gradient variance reduction
 

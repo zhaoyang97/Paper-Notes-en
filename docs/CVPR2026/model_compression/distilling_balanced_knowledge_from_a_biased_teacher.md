@@ -17,8 +17,8 @@ content_hash: 58d6f4958889e2fc
 # Distilling Balanced Knowledge from a Biased Teacher
 
 **Conference**: CVPR 2026
-**arXiv**: [2506.18496](https://arxiv.org/abs/2506.18496)
-**Code**: N/A
+**arXiv**: [2506.18496](https://arxiv.org/abs/2506.18496)  
+**Code**: N/A  
 **Area**: Model Compression
 **Keywords**: Knowledge Distillation, Long-Tail Distribution, Model Compression, KL Divergence Decomposition, Class Imbalance
 
@@ -47,21 +47,21 @@ LTKD partitions classes into three groups: Head (33%), Medium (34%), and Tail (3
 
 1. **Cross-Group and Within-Group Decomposition of KL Divergence**
 
-   - **Function**: Reveals the failure mechanism of standard KD under long-tailed settings.
-   - **Mechanism**: Group-level probability $p_\mathcal{G} = \sum_{i \in \mathcal{G}} p_i$ and within-group probability $\tilde{p}_{\mathcal{G}_i} = p_i / p_\mathcal{G}$ are defined. Using the identity $p_i = p_\mathcal{G} \cdot \tilde{p}_{\mathcal{G}_i}$, the KL divergence is exactly decomposed into a cross-group KL term plus a sum of within-group KL terms weighted by the teacher's cross-group probabilities.
-   - **Design Motivation**: This is a mathematical identity that introduces no approximation error, yet separates two distinct pathways through which bias manifests.
+    - **Function**: Reveals the failure mechanism of standard KD under long-tailed settings.
+    - **Mechanism**: Group-level probability $p_\mathcal{G} = \sum_{i \in \mathcal{G}} p_i$ and within-group probability $\tilde{p}_{\mathcal{G}_i} = p_i / p_\mathcal{G}$ are defined. Using the identity $p_i = p_\mathcal{G} \cdot \tilde{p}_{\mathcal{G}_i}$, the KL divergence is exactly decomposed into a cross-group KL term plus a sum of within-group KL terms weighted by the teacher's cross-group probabilities.
+    - **Design Motivation**: This is a mathematical identity that introduces no approximation error, yet separates two distinct pathways through which bias manifests.
 
 2. **Rebalanced Cross-Group Loss**
 
-   - **Function**: Calibrates the teacher's skewed group-level probability distribution.
-   - **Mechanism**: Within each batch, the teacher's group-level probability sums are aggregated, and scaling factors are computed to align all three groups toward a uniform distribution. Per-sample probabilities are scaled and renormalized to maintain valid probability distributions.
-   - **Design Motivation**: Empirical observation shows that a biased teacher outputs approximately uniform predictions $[22.54, 20.76, 20.70]$ on balanced data, but skewed predictions $[27.88, 19.28, 16.83]$ on long-tailed data.
+    - **Function**: Calibrates the teacher's skewed group-level probability distribution.
+    - **Mechanism**: Within each batch, the teacher's group-level probability sums are aggregated, and scaling factors are computed to align all three groups toward a uniform distribution. Per-sample probabilities are scaled and renormalized to maintain valid probability distributions.
+    - **Design Motivation**: Empirical observation shows that a biased teacher outputs approximately uniform predictions $[22.54, 20.76, 20.70]$ on balanced data, but skewed predictions $[27.88, 19.28, 16.83]$ on long-tailed data.
 
 3. **Reweighted Within-Group Loss**
 
-   - **Function**: Eliminates imbalanced weighting of within-group KL divergence terms.
-   - **Mechanism**: Unequal weights (i.e., the teacher's cross-group probabilities) are replaced by a uniform constant, ensuring each group contributes equally to the total loss.
-   - **Design Motivation**: Prevents head groups from dominating gradient flow, enabling tail groups to receive sufficient supervision signals.
+    - **Function**: Eliminates imbalanced weighting of within-group KL divergence terms.
+    - **Mechanism**: Unequal weights (i.e., the teacher's cross-group probabilities) are replaced by a uniform constant, ensuring each group contributes equally to the total loss.
+    - **Design Motivation**: Prevents head groups from dominating gradient flow, enabling tail groups to receive sufficient supervision signals.
 
 ### Loss & Training
 

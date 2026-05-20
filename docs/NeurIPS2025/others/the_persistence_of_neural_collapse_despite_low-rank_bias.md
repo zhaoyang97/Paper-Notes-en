@@ -17,8 +17,8 @@ content_hash: 0d63244bf89c7f2b
 # The Persistence of Neural Collapse Despite Low-Rank Bias
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.23169](https://arxiv.org/abs/2410.23169)
-**Code**: None
+**arXiv**: [2410.23169](https://arxiv.org/abs/2410.23169)  
+**Code**: None  
 **Area**: Deep Learning Theory
 **Keywords**: Neural Collapse, Low-Rank Bias, Deep Unconstrained Feature Model, Loss Landscape, Schatten Quasi-Norm
 

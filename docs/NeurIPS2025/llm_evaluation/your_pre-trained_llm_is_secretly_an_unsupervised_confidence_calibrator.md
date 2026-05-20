@@ -19,8 +19,8 @@ content_hash: ec64a0e29c495bac
 # Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16690](https://arxiv.org/abs/2505.16690)
-**Code**: [GitHub](https://github.com/ml-stat-Sustech/Disagreement-Aware-Calibration)
+**arXiv**: [2505.16690](https://arxiv.org/abs/2505.16690)  
+**Code**: [GitHub](https://github.com/ml-stat-Sustech/Disagreement-Aware-Calibration)  
 **Area**: LLM Evaluation
 **Keywords**: confidence calibration, temperature scaling, pre-trained LM, post-trained LM, unsupervised calibration, DACA
 

@@ -18,8 +18,8 @@ content_hash: 436f6aff706c2cc4
 # Modulation of Temporal Decision-Making in a Deep Reinforcement Learning Agent under the Dual-Task Paradigm
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01415](https://arxiv.org/abs/2511.01415)
-**Code**: Unavailable
+**arXiv**: [2511.01415](https://arxiv.org/abs/2511.01415)  
+**Code**: Unavailable  
 **Area**: Reinforcement Learning
 **Keywords**: Temporal perception, dual-task paradigm, DRL agent, cognitive science, LSTM neural dynamics
 

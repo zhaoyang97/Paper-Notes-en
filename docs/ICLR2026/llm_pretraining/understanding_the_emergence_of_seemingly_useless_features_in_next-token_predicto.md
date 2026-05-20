@@ -18,8 +18,8 @@ content_hash: d04ea2c4cf1446b0
 # Understanding the Emergence of Seemingly Useless Features in Next-Token Predictors
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.14087](https://arxiv.org/abs/2603.14087)
-**Code**: [https://github.com/Markfryazino/useless-features-iclr-code](https://github.com/Markfryazino/useless-features-iclr-code)
+**arXiv**: [2603.14087](https://arxiv.org/abs/2603.14087)  
+**Code**: [https://github.com/Markfryazino/useless-features-iclr-code](https://github.com/Markfryazino/useless-features-iclr-code)  
 **Area**: LLM Pre-training
 **Keywords**: next-token prediction, feature emergence, pre-caching, circuit sharing, mechanistic interpretability
 

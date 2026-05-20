@@ -17,8 +17,8 @@ content_hash: 84e6fcb8d0fe4d75
 # Deep Continuous-Time State-Space Models for Marked Event Sequences
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.19634](https://arxiv.org/abs/2412.19634)
-**Code**: Integrated into [EasyTPP](https://github.com/ant-research/EasyTPP)
+**arXiv**: [2412.19634](https://arxiv.org/abs/2412.19634)  
+**Code**: Integrated into [EasyTPP](https://github.com/ant-research/EasyTPP)  
 **Area**: Others (Temporal Point Processes / State Space Models)
 **Keywords**: Marked Temporal Point Processes, State Space Models, Hawkes Process, Parallel Scan, Continuous-Time Modeling
 

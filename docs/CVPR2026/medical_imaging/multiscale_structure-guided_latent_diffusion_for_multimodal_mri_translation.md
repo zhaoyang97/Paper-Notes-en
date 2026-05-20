@@ -18,8 +18,8 @@ content_hash: 50534cdf3a82fa50
 # Multiscale Structure-Guided Latent Diffusion for Multimodal MRI Translation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12581](https://arxiv.org/abs/2603.12581)
-**Code**: [Available](https://github.com/ziyi-start/MSG-LDM)
+**arXiv**: [2603.12581](https://arxiv.org/abs/2603.12581)  
+**Code**: [Available](https://github.com/ziyi-start/MSG-LDM)  
 **Area**: Medical Imaging
 **Keywords**: MRI synthesis, latent diffusion model, structure guidance, style-structure disentanglement, missing modality
 

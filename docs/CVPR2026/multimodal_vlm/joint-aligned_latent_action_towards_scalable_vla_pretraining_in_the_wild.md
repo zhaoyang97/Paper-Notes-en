@@ -18,8 +18,8 @@ content_hash: 0b19ccdeff5a0eb8
 # Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21736](https://arxiv.org/abs/2602.21736)
-**Code**: [https://research.beingbeyond.com/jala](https://research.beingbeyond.com/jala)
+**arXiv**: [2602.21736](https://arxiv.org/abs/2602.21736)  
+**Code**: [https://research.beingbeyond.com/jala](https://research.beingbeyond.com/jala)  
 **Area**: Multimodal VLM
 **Keywords**: VLA pretraining, latent action, human video, hand motion, robot manipulation
 

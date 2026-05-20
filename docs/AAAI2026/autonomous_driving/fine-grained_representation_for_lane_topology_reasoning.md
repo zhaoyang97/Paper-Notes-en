@@ -18,9 +18,9 @@ content_hash: 2bb0f1ce812aac38
 # Fine-Grained Representation for Lane Topology Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12590](https://arxiv.org/abs/2511.12590)
+**arXiv**: [2511.12590](https://arxiv.org/abs/2511.12590)  
 **Authors**: Guoqing Xu, Yiheng Li, Yang Yang (Beijing Institute of Technology)
-**Code**: [GitHub](https://github.com/GXmmm18/TopoFG)
+**Code**: [GitHub](https://github.com/GXmmm18/TopoFG)  
 **Area**: Autonomous Driving
 **Keywords**: Lane topology reasoning, fine-grained queries, BEV perception, boundary point topology, denoising training
 

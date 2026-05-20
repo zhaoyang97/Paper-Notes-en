@@ -17,8 +17,8 @@ content_hash: 302de82b35a53203
 # HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition
 
 **Conference**: CVPR 2026
-**arXiv**: [2506.04764](https://arxiv.org/abs/2506.04764)
-**Code**: [https://suhan-woo.github.io/HypeVPR/](https://suhan-woo.github.io/HypeVPR/) (Project Page)
+**arXiv**: [2506.04764](https://arxiv.org/abs/2506.04764)  
+**Code**: [https://suhan-woo.github.io/HypeVPR/](https://suhan-woo.github.io/HypeVPR/) (Project Page)  
 **Area**: Other
 **Keywords**: Visual Place Recognition, Hyperbolic Space, Panoramic Images, Hierarchical Embedding, Perspective-to-Equirectangular Matching
 

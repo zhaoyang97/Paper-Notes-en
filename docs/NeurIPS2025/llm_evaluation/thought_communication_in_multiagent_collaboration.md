@@ -19,8 +19,8 @@ content_hash: 42d585eb8d86ce1e
 # Thought Communication in Multiagent Collaboration
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20733](https://arxiv.org/abs/2510.20733)
-**Code**: Not released
+**arXiv**: [2510.20733](https://arxiv.org/abs/2510.20733)  
+**Code**: Not released  
 **Area**: LLM Evaluation
 **Keywords**: multiagent collaboration, thought communication, latent variable model, identifiability theory, prefix injection, sparse autoencoder
 

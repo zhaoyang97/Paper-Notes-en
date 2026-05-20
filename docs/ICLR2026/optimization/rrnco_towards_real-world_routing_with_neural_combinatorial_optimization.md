@@ -18,8 +18,8 @@ content_hash: 7c81a0c2212c34c1
 # RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.16159](https://arxiv.org/abs/2503.16159)
-**Code**: [https://github.com/ai4co/real-routing-nco](https://github.com/ai4co/real-routing-nco)
+**arXiv**: [2503.16159](https://arxiv.org/abs/2503.16159)  
+**Code**: [https://github.com/ai4co/real-routing-nco](https://github.com/ai4co/real-routing-nco)  
 **Area**: Combinatorial Optimization / Neural Routing Planning
 **Keywords**: Neural Combinatorial Optimization, Vehicle Routing Problem, Asymmetric Routing, Sim-to-Real Gap, Attention-Free Module
 

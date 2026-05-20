@@ -18,8 +18,8 @@ content_hash: 186cffdb7285599f
 # The Trilemma of Truth in Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.23921](https://arxiv.org/abs/2506.23921)
-**Code**: [GitHub](https://github.com/carlomarxdk/trilemma-of-truth)
+**arXiv**: [2506.23921](https://arxiv.org/abs/2506.23921)  
+**Code**: [GitHub](https://github.com/carlomarxdk/trilemma-of-truth)  
 **Area**: LLM NLP / Interpretability / Veracity Probing
 **Keywords**: veracity probing, multiple-instance learning, conformal prediction, truth direction, LLM internals
 

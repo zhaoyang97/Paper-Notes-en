@@ -18,8 +18,8 @@ content_hash: 15cecffae76bbe66
 # VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05418](https://arxiv.org/abs/2604.05418)
-**Code**: [https://github.com/RomGai/VideoStir](https://github.com/RomGai/VideoStir)
+**arXiv**: [2604.05418](https://arxiv.org/abs/2604.05418)  
+**Code**: [https://github.com/RomGai/VideoStir](https://github.com/RomGai/VideoStir)  
 **Area**: Information Retrieval
 **Keywords**: long video understanding, retrieval-augmented generation, spatio-temporal graph structure, intent-aware retrieval, multi-hop reasoning
 

@@ -18,8 +18,8 @@ content_hash: 9a8e583249784fad
 # AnyBCQ: Hardware Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.10467](https://arxiv.org/abs/2510.10467)
-**Code**: [https://github.com/naver-aics/anybcq](https://github.com/naver-aics/anybcq)
+**arXiv**: [2510.10467](https://arxiv.org/abs/2510.10467)  
+**Code**: [https://github.com/naver-aics/anybcq](https://github.com/naver-aics/anybcq)  
 **Area**: Model Compression / LLM Quantization
 **Keywords**: binary-coded quantization, multi-precision inference, bit-plane operations, LLM deployment, CUDA kernels
 

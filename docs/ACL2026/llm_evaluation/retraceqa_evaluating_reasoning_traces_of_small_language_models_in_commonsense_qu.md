@@ -18,8 +18,8 @@ content_hash: 28d69383b891e1f8
 # ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering
 
 **Conference**: ACL 2026
-**arXiv**: [2510.09351](https://arxiv.org/abs/2510.09351)
-**Code**: [https://github.com/SapienzaNLP/ReTraceQA](https://github.com/SapienzaNLP/ReTraceQA)
+**arXiv**: [2510.09351](https://arxiv.org/abs/2510.09351)  
+**Code**: [https://github.com/SapienzaNLP/ReTraceQA](https://github.com/SapienzaNLP/ReTraceQA)  
 **Area**: LLM Evaluation / Commonsense Reasoning
 **Keywords**: Reasoning process evaluation, small language models, commonsense reasoning, process reward models, LLM-as-Judge
 

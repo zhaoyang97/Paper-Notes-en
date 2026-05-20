@@ -17,8 +17,8 @@ content_hash: a4f3f23a5e9d26a5
 # PIPHEN: Physical Interaction Prediction with Hamiltonian Energy Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16200](https://arxiv.org/abs/2511.16200)
-**Code**: None
+**arXiv**: [2511.16200](https://arxiv.org/abs/2511.16200)  
+**Code**: None  
 **Area**: Other
 **Keywords**: multi-robot collaboration, semantic communication, Hamiltonian energy networks, knowledge distillation, physical interaction prediction
 

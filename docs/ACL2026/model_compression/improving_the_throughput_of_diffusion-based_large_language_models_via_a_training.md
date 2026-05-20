@@ -18,8 +18,8 @@ content_hash: a0610ffbc3f3d71b
 # CadLLM: Improving the Throughput of Diffusion-based LLMs via Training-Free Confidence-Aware Calibration
 
 **Conference**: ACL 2026
-**arXiv**: [2512.07173](https://arxiv.org/abs/2512.07173)
-**Code**: Available
+**arXiv**: [2512.07173](https://arxiv.org/abs/2512.07173)  
+**Code**: Available  
 **Area**: Model Compression
 **Keywords**: Diffusion language models, inference acceleration, adaptive decoding, confidence calibration, training-free methods
 

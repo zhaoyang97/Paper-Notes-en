@@ -18,8 +18,8 @@ content_hash: 80e9f7d347eba455
 # Why Did Apple Fall: Evaluating Curiosity in Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2510.20635](https://arxiv.org/abs/2510.20635)
-**Code**: [https://github.com/Yukijudaii1352/CuriosityEval](https://github.com/Yukijudaii1352/CuriosityEval)
+**arXiv**: [2510.20635](https://arxiv.org/abs/2510.20635)  
+**Code**: [https://github.com/Yukijudaii1352/CuriosityEval](https://github.com/Yukijudaii1352/CuriosityEval)  
 **Area**: LLM Evaluation / Cognitive Science
 **Keywords**: Curiosity, LLM Behavioral Evaluation, Psychological Scales, Behavioral Experiments, Reasoning Enhancement
 

@@ -18,8 +18,8 @@ content_hash: c8717d2d005673f3
 # ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23186](https://arxiv.org/abs/2603.23186)
-**Code**: [https://github.com/MICV-yonsei/ViKey](https://github.com/MICV-yonsei/ViKey)
+**arXiv**: [2603.23186](https://arxiv.org/abs/2603.23186)  
+**Code**: [https://github.com/MICV-yonsei/ViKey](https://github.com/MICV-yonsei/ViKey)  
 **Area**: Multimodal VLM
 **Keywords**: Visual Prompting, Video Large Language Models, Temporal Understanding, Frame Index, Training-Free
 

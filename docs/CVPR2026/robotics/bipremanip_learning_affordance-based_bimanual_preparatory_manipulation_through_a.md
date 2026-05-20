@@ -18,8 +18,8 @@ content_hash: 6b0ab7e9c5207802
 # BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21679](https://arxiv.org/abs/2603.21679)
-**Code**: [Project Page](https://sites.google.com/view/bipremanip)
+**arXiv**: [2603.21679](https://arxiv.org/abs/2603.21679)  
+**Code**: [Project Page](https://sites.google.com/view/bipremanip)  
 **Area**: Robotic Manipulation / Human Understanding
 **Keywords**: Bimanual collaborative manipulation, visual affordance, preparatory manipulation, anticipatory reasoning, point cloud
 

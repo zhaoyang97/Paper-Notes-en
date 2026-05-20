@@ -17,8 +17,8 @@ content_hash: 73a83bbf29802780
 # MathSmith: Towards Extremely Hard Mathematical Reasoning by Forging Synthetic Problems with a Reinforced Policy
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.05592](https://arxiv.org/abs/2508.05592)
-**Code**: [https://github.com/Jasaxion/MathSmith](https://github.com/Jasaxion/MathSmith)
+**arXiv**: [2508.05592](https://arxiv.org/abs/2508.05592)  
+**Code**: [https://github.com/Jasaxion/MathSmith](https://github.com/Jasaxion/MathSmith)  
 **Area**: Reinforcement Learning
 **Keywords**: Mathematical Reasoning, Synthetic Data, Reinforcement Learning, Large Language Models, Difficulty Control
 

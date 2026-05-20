@@ -18,8 +18,8 @@ content_hash: d531e4f39d8769ae
 # Video-R1: Reinforcing Video Reasoning in MLLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.21776](https://arxiv.org/abs/2503.21776)
-**Code**: [GitHub](https://github.com/tulerfeng/Video-R1)
+**arXiv**: [2503.21776](https://arxiv.org/abs/2503.21776)  
+**Code**: [GitHub](https://github.com/tulerfeng/Video-R1)  
 **Area**: Multimodal VLM
 **Keywords**: video reasoning, reinforcement learning, GRPO, temporal modeling, chain-of-thought
 

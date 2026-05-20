@@ -18,8 +18,8 @@ content_hash: bd20da943e9fe965
 # PoseCrafter: Extreme Pose Estimation with Hybrid Video Synthesis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19527](https://arxiv.org/abs/2510.19527)
-**Code**: [https://github.com/maoqingsunny/PoseCrafter](https://github.com/maoqingsunny/PoseCrafter)
+**arXiv**: [2510.19527](https://arxiv.org/abs/2510.19527)  
+**Code**: [https://github.com/maoqingsunny/PoseCrafter](https://github.com/maoqingsunny/PoseCrafter)  
 **Area**: Video Generation
 **Keywords**: Extreme Pose Estimation, Video Diffusion, Hybrid Video Generation, Feature Matching Selection, Sparse Overlap
 

@@ -17,8 +17,8 @@ content_hash: 3880087512442fd0
 # From Biased Chatbots to Biased Agents: Examining Role Assignment Effects on LLM Agent Robustness
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.12285](https://arxiv.org/abs/2602.12285)
-**Code**: None
+**arXiv**: [2602.12285](https://arxiv.org/abs/2602.12285)  
+**Code**: None  
 **Area**: LLM Agent / AI Safety
 **Keywords**: LLM Agent, implicit bias, persona, demographic bias, robustness
 

@@ -18,8 +18,8 @@ content_hash: 51e167f8b2f24e27
 # Bridging Human and LLM Judgments: Understanding and Narrowing the Gap
 
 **Conference**: NEURIPS2025
-**arXiv**: [2508.12792](https://arxiv.org/abs/2508.12792)
-**Code**: [https://github.com/felipemaiapolo/bridge](https://github.com/felipemaiapolo/bridge)
+**arXiv**: [2508.12792](https://arxiv.org/abs/2508.12792)  
+**Code**: [https://github.com/felipemaiapolo/bridge](https://github.com/felipemaiapolo/bridge)  
 **Area**: Dialogue Systems
 **Keywords**: LLM-as-Judge, Human-LLM Alignment, Statistical Framework, Calibration, Bias Testing
 

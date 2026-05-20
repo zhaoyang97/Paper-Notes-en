@@ -18,8 +18,8 @@ content_hash: 008f0ce09cacc1b8
 # 2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.00958](https://arxiv.org/abs/2501.00958)
-**Code**: [GitHub](https://github.com/DAMO-NLP-SG/multimodal_textbook) (open-sourced)
+**arXiv**: [2501.00958](https://arxiv.org/abs/2501.00958)  
+**Code**: [GitHub](https://github.com/DAMO-NLP-SG/multimodal_textbook) (open-sourced)  
 **Authors**: Wenqi Zhang, Hang Zhang, Xin Li, Jiashuo Sun, Yongliang Shen, Weiming Lu, Deli Zhao, Yueting Zhuang, Lidong Bing (Zhejiang University & Alibaba DAMO Academy)
 **Area**: Audio & Speech
 **Keywords**: multimodal textbook, interleaved image-text corpus, instructional videos, VLM pretraining, in-context learning

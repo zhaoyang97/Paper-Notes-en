@@ -18,8 +18,8 @@ content_hash: 994084e69f0dc4ea
 # Personality-guided Public-Private Domain Disentangled Hypergraph-Former Network for Multimodal Depression Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12460](https://arxiv.org/abs/2511.12460)
-**Code**: [https://github.com/hacilab/P3HF](https://github.com/hacilab/P3HF)
+**arXiv**: [2511.12460](https://arxiv.org/abs/2511.12460)  
+**Code**: [https://github.com/hacilab/P3HF](https://github.com/hacilab/P3HF)  
 **Area**: Medical Imaging
 **Keywords**: Depression Detection, Multimodal Fusion, Hypergraph Neural Network, Personality-guided, Domain Disentanglement
 

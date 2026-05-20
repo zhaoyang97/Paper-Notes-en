@@ -19,8 +19,8 @@ content_hash: b34769888d16f0b1
 # E-MoFlow: Learning Egomotion and Optical Flow from Event Data via Implicit Regularization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.12753](https://arxiv.org/abs/2510.12753)
-**Code**: [Project Page](https://akawincent.github.io/EMoFlow/)
+**arXiv**: [2510.12753](https://arxiv.org/abs/2510.12753)  
+**Code**: [Project Page](https://akawincent.github.io/EMoFlow/)  
 **Area**: 3D Vision
 **Keywords**: Event Camera, Optical Flow Estimation, Egomotion Estimation, Implicit Regularization, Unsupervised Learning, Neural ODE
 

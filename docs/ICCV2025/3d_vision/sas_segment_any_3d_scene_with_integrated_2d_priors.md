@@ -18,8 +18,8 @@ content_hash: 4bc6ec82ea560a39
 # SAS: Segment Any 3D Scene with Integrated 2D Priors
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08512](https://arxiv.org/abs/2503.08512)
-**Code**: [Project Page](https://peoplelu.github.io/SAS.github.io)
+**arXiv**: [2503.08512](https://arxiv.org/abs/2503.08512)  
+**Code**: [Project Page](https://peoplelu.github.io/SAS.github.io)  
 **Area**: 3D Vision
 **Keywords**: Open-vocabulary 3D segmentation, multi-model fusion, knowledge distillation, diffusion models, model capability construction
 

@@ -18,8 +18,8 @@ content_hash: dab5f8f60bb14cc2
 # Let LRMs Break Free from Overthinking via Self-Braking Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.14604](https://arxiv.org/abs/2505.14604)
-**Code**: [https://github.com/ZJU-REAL/Self-Braking-Tuning](https://github.com/ZJU-REAL/Self-Braking-Tuning)
+**arXiv**: [2505.14604](https://arxiv.org/abs/2505.14604)  
+**Code**: [https://github.com/ZJU-REAL/Self-Braking-Tuning](https://github.com/ZJU-REAL/Self-Braking-Tuning)  
 **Area**: LLM Reasoning
 **Keywords**: Efficient Reasoning, Overthinking, Self-Braking, Chain-of-Thought, Reasoning Efficiency
 

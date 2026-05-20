@@ -18,8 +18,8 @@ content_hash: 9dfb0a8f413417ed
 # A Theoretical Analysis of Detecting Large Model-Generated Time Series
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07104](https://arxiv.org/abs/2511.07104)
-**Code**: None
+**arXiv**: [2511.07104](https://arxiv.org/abs/2511.07104)  
+**Code**: None  
 **Area**: Time Series / AI-Generated Content Detection
 **Keywords**: time series large model, generation detection, uncertainty contraction, recursive forecasting, UCE
 

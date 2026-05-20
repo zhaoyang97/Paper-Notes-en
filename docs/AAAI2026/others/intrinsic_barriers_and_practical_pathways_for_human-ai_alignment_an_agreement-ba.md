@@ -17,8 +17,8 @@ content_hash: 7b59fba969cfaeef
 # Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2502.05934](https://arxiv.org/abs/2502.05934)
-**Code**: None
+**arXiv**: [2502.05934](https://arxiv.org/abs/2502.05934)  
+**Code**: None  
 **Area**: Other
 **Keywords**: AI alignment, communication complexity, agreement framework, No-Free-Lunch, reward hacking
 

@@ -18,8 +18,8 @@ content_hash: 84e873a7d6c7f8ee
 # BADiff: Bandwidth Adaptive Diffusion Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21366](https://arxiv.org/abs/2510.21366)
-**Code**: [GitHub](https://github.com/xzhang9308/BADiff)
+**arXiv**: [2510.21366](https://arxiv.org/abs/2510.21366)  
+**Code**: [GitHub](https://github.com/xzhang9308/BADiff)  
 **Authors**: Xi Zhang, Hanwei Zhu, Yan Zhong, Jiamang Wang, Weisi Lin (NTU & Alibaba)
 **Area**: Diffusion Models / Image Compression / Bandwidth-Adaptive Generation
 **Keywords**: bandwidth-adaptive, diffusion model, entropy conditioning, early stopping, cloud streaming

@@ -18,8 +18,8 @@ content_hash: dd3462116b63fefe
 # FlowEdit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.08629](https://arxiv.org/abs/2412.08629)
-**Code**: [https://github.com/fallenshock/FlowEdit](https://github.com/fallenshock/FlowEdit)
+**arXiv**: [2412.08629](https://arxiv.org/abs/2412.08629)  
+**Code**: [https://github.com/fallenshock/FlowEdit](https://github.com/fallenshock/FlowEdit)  
 **Area**: Image Editing / Flow Models
 **Keywords**: Image Editing, Flow Models, Rectified Flow, Inversion-Free Editing, FLUX
 

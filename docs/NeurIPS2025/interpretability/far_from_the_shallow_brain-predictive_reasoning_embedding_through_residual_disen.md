@@ -19,8 +19,8 @@ content_hash: 18f7c862600a37e1
 # Far from the Shallow: Brain-Predictive Reasoning Embedding through Residual Disentanglement
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22860](https://arxiv.org/abs/2510.22860)
-**Code**: Available (footnote link in paper)
+**arXiv**: [2510.22860](https://arxiv.org/abs/2510.22860)  
+**Code**: Available (footnote link in paper)  
 **Area**: Neuroscience / Language Encoding Models
 **Keywords**: Brain encoding, LLM alignment, residual disentanglement, ECoG, reasoning representations, language hierarchy
 

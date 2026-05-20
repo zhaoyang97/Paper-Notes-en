@@ -18,8 +18,8 @@ content_hash: e5dde0b43cbec291
 # Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16331](https://arxiv.org/abs/2511.16331)
-**Code**: N/A
+**arXiv**: [2511.16331](https://arxiv.org/abs/2511.16331)  
+**Code**: N/A  
 **Area**: LLM Reasoning
 **Keywords**: Reasoning quality improvement, self-rewriting, GRPO, reasoning length control, over-thinking
 

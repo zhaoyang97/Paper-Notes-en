@@ -18,8 +18,8 @@ content_hash: 4c01bc1291eded5f
 # Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21936](https://arxiv.org/abs/2603.21936)
-**Code**: [https://bgu-cs-vil.github.io/GSA-project](https://bgu-cs-vil.github.io/GSA-project)
+**arXiv**: [2603.21936](https://arxiv.org/abs/2603.21936)  
+**Code**: [https://bgu-cs-vil.github.io/GSA-project](https://bgu-cs-vil.github.io/GSA-project)  
 **Area**: 3D Vision / 3D Registration
 **Keywords**: 3D Gaussian Splatting, cross-instance registration, similarity transformation, geometry-aware features, inverse radiance field
 

@@ -18,8 +18,8 @@ content_hash: 52022e004d6f3adf
 # Common to Whom? Regional Cultural Commonsense and LLM Bias in India
 
 **Conference**: ACL 2026
-**arXiv**: [2601.15550](https://arxiv.org/abs/2601.15550)
-**Code**: None
+**arXiv**: [2601.15550](https://arxiv.org/abs/2601.15550)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: Cultural commonsense, regional bias, Indian cultural diversity, benchmark construction, LLM bias
 

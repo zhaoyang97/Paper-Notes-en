@@ -18,8 +18,8 @@ content_hash: 8ed3c387ebe57103
 # Computational Narrative Understanding for Expressive Text-to-Speech
 
 **Conference**: ACL 2026
-**arXiv**: [2509.04072](https://arxiv.org/abs/2509.04072)
-**Code**: [GitHub](https://github.com/deezer/libriquote)
+**arXiv**: [2509.04072](https://arxiv.org/abs/2509.04072)  
+**Code**: [GitHub](https://github.com/deezer/libriquote)  
 **Area**: Speech Synthesis / Expressive TTS
 **Keywords**: Audiobooks, Expressive Speech, Narrative Understanding, Character Dialogue, Dataset
 

@@ -18,8 +18,8 @@ content_hash: d99d2f274efb6e31
 # DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18904](https://arxiv.org/abs/2510.18904)
-**Code**: Available (includes training and evaluation scripts)
+**arXiv**: [2510.18904](https://arxiv.org/abs/2510.18904)  
+**Code**: Available (includes training and evaluation scripts)  
 **Area**: AIGC Detection
 **Keywords**: AI-generated text detection, code detection, multilingual, SLM, BERT
 

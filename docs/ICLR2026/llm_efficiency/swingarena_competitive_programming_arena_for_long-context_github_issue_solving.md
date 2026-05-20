@@ -18,8 +18,8 @@ content_hash: 48a8d3be7213ba6d
 # SwingArena: Adversarial Programming Arena for Long-context GitHub Issue Solving
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.23932](https://arxiv.org/abs/2505.23932)
-**Code**: [GitHub](https://github.com/) / [HuggingFace Dataset](https://huggingface.co/)
+**arXiv**: [2505.23932](https://arxiv.org/abs/2505.23932)  
+**Code**: [GitHub](https://github.com/) / [HuggingFace Dataset](https://huggingface.co/)  
 **Area**: LLM Efficiency
 **Keywords**: Adversarial Evaluation, CI Pipeline, Submitter-Reviewer, Retrieval-Augmented Code Generation (RACG), Multilingual Code Benchmark
 

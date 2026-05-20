@@ -18,8 +18,8 @@ content_hash: 1fdd7988de2353fa
 # FreeScale: Unleashing the Resolution of Diffusion Models via Tuning-Free Scale Fusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.09626](https://arxiv.org/abs/2412.09626)
-**Code**: [http://haonanqiu.com/projects/FreeScale.html](http://haonanqiu.com/projects/FreeScale.html)
+**arXiv**: [2412.09626](https://arxiv.org/abs/2412.09626)  
+**Code**: [http://haonanqiu.com/projects/FreeScale.html](http://haonanqiu.com/projects/FreeScale.html)  
 **Area**: Image Generation
 **Keywords**: High-resolution generation, diffusion models, training-free, scale fusion, frequency decomposition
 

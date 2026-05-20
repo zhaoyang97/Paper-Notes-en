@@ -18,8 +18,8 @@ content_hash: 7476d5ebd35a4bb5
 # A Law of Data Reconstruction for Random Features (and Beyond)
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22214](https://arxiv.org/abs/2509.22214)
-**Code**: [https://github.com/iurada/data-reconstruction-law](https://github.com/iurada/data-reconstruction-law)
+**arXiv**: [2509.22214](https://arxiv.org/abs/2509.22214)  
+**Code**: [https://github.com/iurada/data-reconstruction-law](https://github.com/iurada/data-reconstruction-law)  
 **Area**: Machine Learning Theory / Privacy
 **Keywords**: Data Reconstruction, Overparameterization, Random Features, Memorization, Privacy
 

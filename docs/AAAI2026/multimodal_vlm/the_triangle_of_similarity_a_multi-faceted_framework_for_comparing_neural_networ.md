@@ -18,8 +18,8 @@ content_hash: 6208ed94d48a6e99
 # The Triangle of Similarity: A Multi-Faceted Framework for Comparing Neural Network Representations
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.17093](https://arxiv.org/abs/2601.17093)
-**Code**: None
+**arXiv**: [2601.17093](https://arxiv.org/abs/2601.17093)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: neural network representation comparison, CKA, linear mode connectivity, network pruning, model similarity
 

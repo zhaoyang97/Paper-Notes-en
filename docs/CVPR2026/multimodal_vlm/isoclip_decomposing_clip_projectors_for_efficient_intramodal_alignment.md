@@ -18,8 +18,8 @@ content_hash: 3af9396f40149bac
 # IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19862](https://arxiv.org/abs/2603.19862)
-**Code**: [https://github.com/simomagi/IsoCLIP](https://github.com/simomagi/IsoCLIP)
+**arXiv**: [2603.19862](https://arxiv.org/abs/2603.19862)  
+**Code**: [https://github.com/simomagi/IsoCLIP](https://github.com/simomagi/IsoCLIP)  
 **Area**: Multimodal VLM / CLIP Analysis
 **Keywords**: CLIP, intra-modal alignment, projection head analysis, singular value decomposition, isotropic subspace
 

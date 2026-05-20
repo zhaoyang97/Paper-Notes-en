@@ -19,8 +19,8 @@ content_hash: 08486fb5292b4521
 # Improving Perturbation-based Explanations by Understanding the Role of Uncertainty Calibration
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10439](https://arxiv.org/abs/2511.10439)
-**Code**: [GitHub](https://github.com/thomdeck/recalx)
+**arXiv**: [2511.10439](https://arxiv.org/abs/2511.10439)  
+**Code**: [GitHub](https://github.com/thomdeck/recalx)  
 **Area**: Interpretability
 **Keywords**: Interpretability, Perturbation-based Explanations, Uncertainty Calibration, ReCalX, Shapley Values, LIME, Temperature Scaling
 

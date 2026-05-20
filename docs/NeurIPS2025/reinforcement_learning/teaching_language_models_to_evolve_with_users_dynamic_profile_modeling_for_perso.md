@@ -17,8 +17,8 @@ content_hash: f26d31c2e01c1e6b
 # Teaching Language Models to Evolve with Users: Dynamic Profile Modeling for Personalized Alignment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15456](https://arxiv.org/abs/2505.15456)
-**Code**: [GitHub](https://github.com/XingYuSSS/RLPA)
+**arXiv**: [2505.15456](https://arxiv.org/abs/2505.15456)  
+**Code**: [GitHub](https://github.com/XingYuSSS/RLPA)  
 **Area**: Reinforcement Learning
 **Keywords**: Personalized Alignment, User Profile Modeling, Reinforcement Learning, Multi-turn Dialogue, Cold Start
 

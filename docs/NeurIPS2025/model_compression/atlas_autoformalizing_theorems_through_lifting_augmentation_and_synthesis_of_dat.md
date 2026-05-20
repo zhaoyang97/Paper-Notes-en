@@ -18,8 +18,8 @@ content_hash: 8e7b725301be6872
 # ATLAS: Autoformalizing Theorems through Lifting, Augmentation, and Synthesis of Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.05567](https://arxiv.org/abs/2502.05567)
-**Code**: [GitHub](https://github.com/XiaoyangLiu-sjtu/ATLAS)
+**arXiv**: [2502.05567](https://arxiv.org/abs/2502.05567)  
+**Code**: [GitHub](https://github.com/XiaoyangLiu-sjtu/ATLAS)  
 **Area**: Autoformalization / Theorem Proving
 **Keywords**: Autoformalization, Lean4, Knowledge Distillation, Expert Iteration, Data Augmentation
 

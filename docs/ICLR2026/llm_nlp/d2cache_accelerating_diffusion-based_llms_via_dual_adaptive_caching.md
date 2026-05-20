@@ -18,8 +18,8 @@ content_hash: c594ebd71769e37e
 # d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23094](https://arxiv.org/abs/2509.23094)
-**Code**: [https://github.com/Kamichanw/d2Cache](https://github.com/Kamichanw/d2Cache)
+**arXiv**: [2509.23094](https://arxiv.org/abs/2509.23094)  
+**Code**: [https://github.com/Kamichanw/d2Cache](https://github.com/Kamichanw/d2Cache)  
 **Area**: LLM/NLP
 **Keywords**: Diffusion LLM, KV Cache, Inference Acceleration, dLLM, Attention Pruning
 

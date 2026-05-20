@@ -19,8 +19,8 @@ content_hash: 8a2bf8622b695ec2
 # Empirical Stability Analysis of Kolmogorov-Arnold Networks in Hard-Constrained Recurrent Physics-Informed Discovery
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.09988](https://arxiv.org/abs/2602.09988)
-**Code**: Not open-sourced
+**arXiv**: [2602.09988](https://arxiv.org/abs/2602.09988)  
+**Code**: Not open-sourced  
 **Area**: Scientific Computing / Physics-Informed Neural Networks
 **Keywords**: KAN, physics-informed, oscillator, HRPINN, neural ODE, residual discovery
 

@@ -18,8 +18,8 @@ content_hash: 086d976409e5156a
 # PANDA: Towards Generalist Video Anomaly Detection via Agentic AI Engineer
 
 **Conference**: NEURIPS2025
-**arXiv**: [2509.26386](https://arxiv.org/abs/2509.26386)
-**Code**: [GitHub](https://github.com/showlab/PANDA)
+**arXiv**: [2509.26386](https://arxiv.org/abs/2509.26386)  
+**Code**: [GitHub](https://github.com/showlab/PANDA)  
 **Area**: LLM Agent
 **Keywords**: video anomaly detection, agentic AI, RAG, self-reflection, chain-of-memory
 

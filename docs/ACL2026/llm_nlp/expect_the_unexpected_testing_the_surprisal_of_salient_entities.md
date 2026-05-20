@@ -18,8 +18,8 @@ content_hash: 972cdee229e14b93
 # Expect the Unexpected? Testing the Surprisal of Salient Entities
 
 **Conference**: ACL 2026
-**arXiv**: [2604.10724](https://arxiv.org/abs/2604.10724)
-**Code**: None
+**arXiv**: [2604.10724](https://arxiv.org/abs/2604.10724)  
+**Code**: None  
 **Area**: Computational Linguistics / Information Theory
 **Keywords**: Uniform Information Density, discourse salience, surprisal, entity prominence, discourse structure
 

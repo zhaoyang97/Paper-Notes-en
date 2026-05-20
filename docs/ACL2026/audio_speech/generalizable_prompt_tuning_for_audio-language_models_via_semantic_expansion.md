@@ -18,8 +18,8 @@ content_hash: c26d231263875c02
 # SEPT: Semantically Expanded Prompt Tuning for Audio-Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2601.20867](https://arxiv.org/abs/2601.20867)
-**Code**: None
+**arXiv**: [2601.20867](https://arxiv.org/abs/2601.20867)  
+**Code**: None  
 **Area**: Audio & Speech
 **Keywords**: Prompt Tuning, Audio-Language Models, Semantic Expansion, Base-New Tradeoff, Generalization
 

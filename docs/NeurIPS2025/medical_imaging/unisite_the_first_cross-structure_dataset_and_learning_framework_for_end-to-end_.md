@@ -18,8 +18,8 @@ content_hash: d501078bbf94ab08
 # UniSite: The First Cross-Structure Dataset and Learning Framework for End-to-End Ligand Binding Site Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03237](https://arxiv.org/abs/2506.03237)
-**Code**: [GitHub](https://github.com/quanlin-wu/unisite)
+**arXiv**: [2506.03237](https://arxiv.org/abs/2506.03237)  
+**Code**: [GitHub](https://github.com/quanlin-wu/unisite)  
 **Area**: Medical Imaging / Structural Biology
 **Keywords**: protein binding site detection, end-to-end set prediction, UniProt-centric dataset, Hungarian matching, IoU evaluation metric
 

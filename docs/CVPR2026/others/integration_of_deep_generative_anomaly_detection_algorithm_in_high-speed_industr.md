@@ -17,8 +17,8 @@ content_hash: e28ebd95e886480d
 # Integration of Deep Generative Anomaly Detection Algorithm in High-Speed Industrial Line
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07577](https://arxiv.org/abs/2603.07577)
-**Code**: N/A
+**arXiv**: [2603.07577](https://arxiv.org/abs/2603.07577)  
+**Code**: N/A  
 **Area**: Other
 **Keywords**: Anomaly Detection, Industrial Visual Inspection, Generative Adversarial Network, Residual Autoencoder, Online Deployment
 

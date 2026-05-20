@@ -19,8 +19,8 @@ content_hash: 8cf6c4938ac73dde
 # Imagine How To Change: Explicit Procedure Modeling for Change Captioning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.05969](https://arxiv.org/abs/2603.05969)
-**Code**: [GitHub](https://github.com/BlueberryOreo/ProCap)
+**arXiv**: [2603.05969](https://arxiv.org/abs/2603.05969)  
+**Code**: [GitHub](https://github.com/BlueberryOreo/ProCap)  
 **Area**: LLM Pre-training
 **Keywords**: change captioning, procedure modeling, frame interpolation, masked reconstruction, learnable queries, vision-language
 

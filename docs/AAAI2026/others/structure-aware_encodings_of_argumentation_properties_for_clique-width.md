@@ -19,9 +19,9 @@ content_hash: b2fe7ad88776d237
 # Structure-Aware Encodings of Argumentation Properties for Clique-width
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10767](https://arxiv.org/abs/2511.10767)
+**arXiv**: [2511.10767](https://arxiv.org/abs/2511.10767)  
 **Authors**: Yasir Mahmood (Paderborn University), Markus Hecher (CNRS/University of Artois), Johanna Groven (Linköping University), Johannes K. Fichte (Linköping University)
-**Code**: Not available
+**Code**: Not available  
 **Area**: Other
 **Keywords**: Abstract Argumentation, Clique-width, Parameterized Complexity, SAT Encoding, QBF, $k$-expressions, Decomposition-Guided Reductions
 

@@ -18,8 +18,8 @@ content_hash: 2629c9ba48d5a05d
 # Rectified Noise: A Generative Model Using Positive-incentive Noise
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07911](https://arxiv.org/abs/2511.07911)
-**Code**: [https://github.com/simulateuser538/Rectified-Noise](https://github.com/simulateuser538/Rectified-Noise)
+**arXiv**: [2511.07911](https://arxiv.org/abs/2511.07911)  
+**Code**: [https://github.com/simulateuser538/Rectified-Noise](https://github.com/simulateuser538/Rectified-Noise)  
 **Area**: Image Generation
 **Keywords**: Rectified Flow, Positive-incentive Noise, Flow Matching, SiT, Generative Models
 

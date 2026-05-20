@@ -18,8 +18,8 @@ content_hash: 131474fdd3b39435
 # Semi-Supervised Diseased Detection from Speech Dialogues with Multi-Level Data Modeling
 
 **Conference**: ACL 2026
-**arXiv**: [2601.04744](https://arxiv.org/abs/2601.04744)
-**Code**: [GitHub](https://github.com/fispresent/semi_pathological)
+**arXiv**: [2601.04744](https://arxiv.org/abs/2601.04744)  
+**Code**: [GitHub](https://github.com/fispresent/semi_pathological)  
 **Area**: Medical Imaging
 **Keywords**: Semi-supervised learning, pathological speech detection, multi-granularity modeling, pseudo-labeling, clinical dialogue
 

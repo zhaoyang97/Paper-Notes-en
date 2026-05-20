@@ -18,8 +18,8 @@ content_hash: d06e723810398b7e
 # Attention (as Discrete-Time Markov) Chains
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.17657](https://arxiv.org/abs/2507.17657)
-**Code**: [https://yoterel.github.io/attention_chains/](https://yoterel.github.io/attention_chains/)
+**arXiv**: [2507.17657](https://arxiv.org/abs/2507.17657)  
+**Code**: [https://yoterel.github.io/attention_chains/](https://yoterel.github.io/attention_chains/)  
 **Area**: Attention Analysis / Visualization
 **Keywords**: Attention Markov Chains, TokenRank, PageRank, Multi-Bounce Attention, Image Segmentation
 

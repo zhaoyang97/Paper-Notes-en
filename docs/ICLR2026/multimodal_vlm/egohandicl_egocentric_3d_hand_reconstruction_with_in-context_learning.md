@@ -18,8 +18,8 @@ content_hash: b4cba30d5d131f52
 # EgoHandICL: Egocentric 3D Hand Reconstruction with In-Context Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19850](https://arxiv.org/abs/2601.19850)
-**Code**: [Available](https://github.com/Nicous20/EgoHandICL)
+**arXiv**: [2601.19850](https://arxiv.org/abs/2601.19850)  
+**Code**: [Available](https://github.com/Nicous20/EgoHandICL)  
 **Area**: Multimodal VLM
 **Keywords**: Egocentric view, 3D hand reconstruction, in-context learning, vision-language model, MANO
 

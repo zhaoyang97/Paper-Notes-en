@@ -18,8 +18,8 @@ content_hash: dc1d90cff31ce629
 # EAGLE: Episodic Appearance- and Geometry-Aware Memory for Unified 2D-3D Visual Query Localization
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08007](https://arxiv.org/abs/2511.08007)
-**Code**: N/A
+**arXiv**: [2511.08007](https://arxiv.org/abs/2511.08007)  
+**Code**: N/A  
 **Area**: Segmentation
 **Keywords**: Egocentric vision, visual query localization, episodic memory, meta-learning segmentation, unified 2D-3D
 
@@ -92,8 +92,8 @@ The score map $\mathcal{H}_\mathcal{J}$ from the tracking branch is encoded via 
 1. VGGT infers camera parameters, depth maps, and depth uncertainty for each frame in a single forward pass.
 2. Results are aligned to a reference coordinate frame via a Sim(3) transformation.
 3. **Multi-view aggregation**: Fusion weights are defined as $\mathcal{FW}_i = s_{conf}^i \cdot g_{conf}^i$, where:
-   - Semantic confidence $s_{conf}$: combines three sub-metrics—mean probability, peak probability, and high-threshold probability.
-   - Geometric confidence $g_{conf} = \exp(-\zeta \tau_i)$: derived from VGGT depth uncertainty.
+    - Semantic confidence $s_{conf}$: combines three sub-metrics—mean probability, peak probability, and high-threshold probability.
+    - Geometric confidence $g_{conf} = \exp(-\zeta \tau_i)$: derived from VGGT depth uncertainty.
 4. The final 3D position is obtained by the weighted average of multi-view 3D coordinates.
 
 ### Loss & Training

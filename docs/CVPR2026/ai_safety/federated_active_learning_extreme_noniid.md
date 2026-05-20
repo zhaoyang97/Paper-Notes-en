@@ -20,8 +20,8 @@ content_hash: f70f321c0e1b7f53
 # Federated Active Learning Under Extreme Non-IID and Global Class Imbalance
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10341](https://arxiv.org/abs/2603.10341)
-**Code**: [GitHub](https://github.com/chenchenzong/FairFAL)
+**arXiv**: [2603.10341](https://arxiv.org/abs/2603.10341)  
+**Code**: [GitHub](https://github.com/chenchenzong/FairFAL)  
 **Area**: AI Security
 **Keywords**: Federated Learning, Active Learning, non-IID, Class Imbalance, Query Selection, Class-Fair Sampling, Prototype-Guided
 

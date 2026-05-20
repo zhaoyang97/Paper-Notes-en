@@ -18,8 +18,8 @@ content_hash: 1890fa6c55955c7e
 # FourierPET: Deep Fourier-based Unrolled Network for Low-count PET Reconstruction
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.11680](https://arxiv.org/abs/2601.11680)
-**Code**: Unavailable
+**arXiv**: [2601.11680](https://arxiv.org/abs/2601.11680)  
+**Code**: Unavailable  
 **Area**: Interpretability
 **Keywords**: PET reconstruction, frequency domain analysis, ADMM unrolling, amplitude-phase decoupling, low-dose imaging
 

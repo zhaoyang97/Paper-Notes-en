@@ -18,8 +18,8 @@ content_hash: 4b225c1ffa436c4c
 # Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04500](https://arxiv.org/abs/2604.04500)
-**Code**: [https://github.com/peterant330/Saliency_R1](https://github.com/peterant330/Saliency_R1)
+**arXiv**: [2604.04500](https://arxiv.org/abs/2604.04500)  
+**Code**: [https://github.com/peterant330/Saliency_R1](https://github.com/peterant330/Saliency_R1)  
 **Area**: Object Detection
 **Keywords**: Vision-language models, saliency maps, GRPO reinforcement learning, interpretable reasoning, attention alignment
 

@@ -18,9 +18,9 @@ content_hash: 3877eee8d00c8b66
 # Highlighting What Matters: Promptable Embeddings for Attribute-Focused Image Retrieval
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15877](https://arxiv.org/abs/2505.15877)
+**arXiv**: [2505.15877](https://arxiv.org/abs/2505.15877)  
 **Authors**: Siting Li, Xiang Gao, Simon Shaolei Du
-**Code**: N/A
+**Code**: N/A  
 **Area**: Computer Vision / Image Retrieval
 **Keywords**: attribute-focused retrieval, promptable image embeddings, CLIP, multimodal large language models, text-to-image retrieval
 

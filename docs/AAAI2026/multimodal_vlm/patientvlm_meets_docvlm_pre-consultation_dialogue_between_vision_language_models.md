@@ -18,8 +18,8 @@ content_hash: 0634e006db90d991
 # PatientVLM Meets DocVLM: Pre-Consultation Dialogue Between Vision-Language Models for Efficient Diagnosis
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.10945](https://arxiv.org/abs/2601.10945)
-**Code**: [https://vl2g.github.io/projects/pcdf](https://vl2g.github.io/projects/pcdf)
+**arXiv**: [2601.10945](https://arxiv.org/abs/2601.10945)  
+**Code**: [https://vl2g.github.io/projects/pcdf](https://vl2g.github.io/projects/pcdf)  
 **Area**: Multimodal VLM
 **Keywords**: Medical Diagnosis, Vision-Language Models, Doctor-Patient Dialogue Simulation, Multi-turn Dialogue, Data Augmentation
 

@@ -18,8 +18,8 @@ content_hash: 12136cfbb362872b
 # Detect All-Type Deepfake Audio: Wavelet Prompt Tuning for Enhanced Auditory Perception
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.06753](https://arxiv.org/abs/2504.06753)
-**Code**: None
+**arXiv**: [2504.06753](https://arxiv.org/abs/2504.06753)  
+**Code**: None  
 **Area**: AI Security
 **Keywords**: deepfake audio detection, wavelet prompt tuning, self-supervised learning, cross-type detection, frequency domain analysis
 

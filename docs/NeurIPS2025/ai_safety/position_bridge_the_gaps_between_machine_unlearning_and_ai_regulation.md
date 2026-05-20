@@ -18,8 +18,8 @@ content_hash: 65a64dc4752be33e
 # Position: Bridge the Gaps between Machine Unlearning and AI Regulation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.12430](https://arxiv.org/abs/2502.12430)
-**Code**: Unavailable
+**arXiv**: [2502.12430](https://arxiv.org/abs/2502.12430)  
+**Code**: Unavailable  
 **Area**: AI Safety
 **Keywords**: Machine Unlearning, AI Regulation, EU AI Act, Data Privacy, Compliance
 
@@ -56,36 +56,36 @@ Rather than proposing a new algorithm, this paper **establishes a comprehensive 
 ### Key Designs (Analysis of Six Application Scenarios)
 
 1. **Accuracy**:
-   - AIA requirement: High-risk AI systems must achieve an appropriate level of accuracy consistent with their intended purpose and the state of the art.
-   - Potential MU role: Unlearning mislabeled, outdated, or anomalous training data to improve accuracy.
-   - Technical gaps: Identifying all data points responsible for inaccuracies is inherently difficult; partial unlearning may be counterproductive; approximate unlearning should not be expected to yield higher accuracy than exact retraining.
-   - Formal definition: An unlearning algorithm $U$ is an $(\epsilon, \delta)$-unlearner if the distribution of $U(M; D_f, D_r)$ is $(\epsilon, \delta)$-close to the distribution of $A(D_r)$.
+    - AIA requirement: High-risk AI systems must achieve an appropriate level of accuracy consistent with their intended purpose and the state of the art.
+    - Potential MU role: Unlearning mislabeled, outdated, or anomalous training data to improve accuracy.
+    - Technical gaps: Identifying all data points responsible for inaccuracies is inherently difficult; partial unlearning may be counterproductive; approximate unlearning should not be expected to yield higher accuracy than exact retraining.
+    - Formal definition: An unlearning algorithm $U$ is an $(\epsilon, \delta)$-unlearner if the distribution of $U(M; D_f, D_r)$ is $(\epsilon, \delta)$-close to the distribution of $A(D_r)$.
 
 2. **Bias**:
-   - AIA requirement: High-risk AI systems and GPAI models posing systemic risks must mitigate discriminatory bias.
-   - Potential MU role: Unlearning data points or training patterns that introduce bias.
-   - Technical gaps: If bias originates from data absence rather than data presence, MU cannot help; how to evaluate bias remains an "open problem"; MU is primarily a post-processing approach and cannot address the root causes of bias.
+    - AIA requirement: High-risk AI systems and GPAI models posing systemic risks must mitigate discriminatory bias.
+    - Potential MU role: Unlearning data points or training patterns that introduce bias.
+    - Technical gaps: If bias originates from data absence rather than data presence, MU cannot help; how to evaluate bias remains an "open problem"; MU is primarily a post-processing approach and cannot address the root causes of bias.
 
 3. **Confidentiality Attacks**:
-   - AIA requirement: Detection and mitigation of confidentiality attacks, including membership inference and data reconstruction.
-   - Potential MU role: Unlearning confidential information that is vulnerable to such attacks.
-   - Technical gaps: Unlearning certain data points may inadvertently expose the privacy of neighboring data (the "Onion Effect"); over-unlearning may expose the membership of the forgotten data itself (the "Streisand Effect"); approximate unlearning involves trade-offs with accuracy and bias.
-   - Alternative: Differential privacy (DP) may be preferable in certain scenarios.
+    - AIA requirement: Detection and mitigation of confidentiality attacks, including membership inference and data reconstruction.
+    - Potential MU role: Unlearning confidential information that is vulnerable to such attacks.
+    - Technical gaps: Unlearning certain data points may inadvertently expose the privacy of neighboring data (the "Onion Effect"); over-unlearning may expose the membership of the forgotten data itself (the "Streisand Effect"); approximate unlearning involves trade-offs with accuracy and bias.
+    - Alternative: Differential privacy (DP) may be preferable in certain scenarios.
 
 4. **Data Poisoning**:
-   - AIA requirement: Prevention, detection, and mitigation of data poisoning attacks.
-   - Potential MU role: Removing the influence of identified poisoned data.
-   - Technical gaps: Identifying the complete set of poisoned samples is highly challenging; poisoned data may be visually indistinguishable from clean data; some methods incur significant accuracy trade-offs.
+    - AIA requirement: Prevention, detection, and mitigation of data poisoning attacks.
+    - Potential MU role: Removing the influence of identified poisoned data.
+    - Technical gaps: Identifying the complete set of poisoned samples is highly challenging; poisoned data may be visually indistinguishable from clean data; some methods incur significant accuracy trade-offs.
 
 5. **Generative AI Risk**:
-   - AIA requirement: Mitigation of harmful generative outputs, including harmful medical advice, CBRN-related knowledge, and discriminatory content.
-   - Potential MU role: Unlearning data or concepts in the training set responsible for harmful outputs.
-   - Technical gaps: Broad concepts such as non-discrimination are difficult to operationalize as discrete forget sets; even after removing directly harmful data, models may reconstruct dangerous outputs from latent information in the remaining data; dual-use issues further complicate forget set identification.
+    - AIA requirement: Mitigation of harmful generative outputs, including harmful medical advice, CBRN-related knowledge, and discriminatory content.
+    - Potential MU role: Unlearning data or concepts in the training set responsible for harmful outputs.
+    - Technical gaps: Broad concepts such as non-discrimination are difficult to operationalize as discrete forget sets; even after removing directly harmful data, models may reconstruct dangerous outputs from latent information in the remaining data; dual-use issues further complicate forget set identification.
 
 6. **Copyright**:
-   - AIA requirement: GPAI providers must implement copyright compliance policies and respect data mining opt-out requests.
-   - Potential MU role: Preventing reproduction of copyrighted training data at the output stage.
-   - Technical gaps: Even exact retraining with copyrighted data removed cannot guarantee non-infringing outputs, as models may generalize similar representations from remaining data; approximate unlearning is deemed "insufficient" for copyright scenarios.
+    - AIA requirement: GPAI providers must implement copyright compliance policies and respect data mining opt-out requests.
+    - Potential MU role: Preventing reproduction of copyrighted training data at the output stage.
+    - Technical gaps: Even exact retraining with copyrighted data removed cannot guarantee non-infringing outputs, as models may generalize similar representations from remaining data; approximate unlearning is deemed "insufficient" for copyright scenarios.
 
 ### Loss & Training
 

@@ -20,8 +20,8 @@ content_hash: 395b2d317cda2439
 # Bayesian Network Structural Consensus via Greedy Min-Cut Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.00467](https://arxiv.org/abs/2504.00467)
-**Code**: [https://github.com/ptorrijos99/BayesFL](https://github.com/ptorrijos99/BayesFL)
+**arXiv**: [2504.00467](https://arxiv.org/abs/2504.00467)  
+**Code**: [https://github.com/ptorrijos99/BayesFL](https://github.com/ptorrijos99/BayesFL)  
 **Area**: Others (Bayesian Networks / Federated Learning)
 **Keywords**: Bayesian network, structural fusion, consensus, min-cut, max-flow, greedy equivalence search, federated learning, treewidth
 

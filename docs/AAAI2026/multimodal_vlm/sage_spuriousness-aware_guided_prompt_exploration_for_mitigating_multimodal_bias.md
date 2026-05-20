@@ -18,8 +18,8 @@ content_hash: fbd860bdfdaf0ad5
 # SAGE: Spuriousness-Aware Guided Prompt Exploration for Mitigating Multimodal Bias
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13005](https://arxiv.org/abs/2511.13005)
-**Code**: [https://github.com/wenqian-ye/spurious_vlm](https://github.com/wenqian-ye/spurious_vlm)
+**arXiv**: [2511.13005](https://arxiv.org/abs/2511.13005)  
+**Code**: [https://github.com/wenqian-ye/spurious_vlm](https://github.com/wenqian-ye/spurious_vlm)  
 **Area**: Multimodal VLM
 **Keywords**: Spurious correlations, CLIP, zero-shot classification, prompt selection, robustness
 

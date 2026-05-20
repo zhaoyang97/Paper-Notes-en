@@ -17,8 +17,8 @@ content_hash: 6241a15bbd92d7dd
 # DeepRWCap: Neural-Guided Random-Walk Capacitance Solver for IC Design
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06831](https://arxiv.org/abs/2511.06831)
-**Code**: [github.com/THU-numbda/deepRWCap](https://github.com/THU-numbda/deepRWCap)
+**arXiv**: [2511.06831](https://arxiv.org/abs/2511.06831)  
+**Code**: [github.com/THU-numbda/deepRWCap](https://github.com/THU-numbda/deepRWCap)  
 **Area**: Other
 **Keywords**: Capacitance Extraction, Random Walk, CNN, IC Design, EDA
 
@@ -77,10 +77,10 @@ DeepRWCap builds upon the Floating Random Walk (FRW) framework. The FRW method u
 
 3. **High-Throughput GPU Inference Engine**:
 
-   - **Asynchronous producer-consumer architecture**: Walker threads (producers) generate sampling tasks; sampler threads (consumers) execute GPU inference.
-   - **Multi-instance model deployment**: One Poisson solver instance is deployed per 2 walker threads; one gradient solver is shared.
-   - **Custom CUDA kernels**: Voxelization is performed directly on the GPU; TensorRT FP16 compilation accelerates inference.
-   - Compact structural descriptions are transmitted rather than voxelized data, reducing GPU memory transfer overhead.
+    - **Asynchronous producer-consumer architecture**: Walker threads (producers) generate sampling tasks; sampler threads (consumers) execute GPU inference.
+    - **Multi-instance model deployment**: One Poisson solver instance is deployed per 2 walker threads; one gradient solver is shared.
+    - **Custom CUDA kernels**: Voxelization is performed directly on the GPU; TensorRT FP16 compilation accelerates inference.
+    - Compact structural descriptions are transmitted rather than voxelized data, reducing GPU memory transfer overhead.
 
 ### Loss & Training
 

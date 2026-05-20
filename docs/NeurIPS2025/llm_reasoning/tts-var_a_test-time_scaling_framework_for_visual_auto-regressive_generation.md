@@ -18,8 +18,8 @@ content_hash: 5b37b0582e8c0bda
 # TTS-VAR: A Test-Time Scaling Framework for Visual Auto-Regressive Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.18537](https://arxiv.org/abs/2507.18537)
-**Code**: [GitHub](https://github.com/ali-vilab/TTS-VAR)
+**arXiv**: [2507.18537](https://arxiv.org/abs/2507.18537)  
+**Code**: [GitHub](https://github.com/ali-vilab/TTS-VAR)  
 **Area**: LLM Inference
 **Keywords**: test-time scaling, visual auto-regressive, VAR, path searching, image generation
 

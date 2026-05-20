@@ -18,8 +18,8 @@ content_hash: e9bdba42ff54322b
 # Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2504.01445](https://arxiv.org/abs/2504.01445)
-**Code**: To be confirmed
+**arXiv**: [2504.01445](https://arxiv.org/abs/2504.01445)  
+**Code**: To be confirmed  
 **Area**: LLM/NLP
 **Keywords**: systematic generalization, meta-learning for compositionality, ARC, abstract reasoning, few-shot learning
 

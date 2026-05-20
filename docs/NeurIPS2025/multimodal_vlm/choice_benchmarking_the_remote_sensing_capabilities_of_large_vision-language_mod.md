@@ -18,8 +18,8 @@ content_hash: c508229e29cbf72e
 # CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.18145](https://arxiv.org/abs/2411.18145)
-**Code**: [GitHub](https://github.com/xiaoan-whu/CHOICE)
+**arXiv**: [2411.18145](https://arxiv.org/abs/2411.18145)  
+**Code**: [GitHub](https://github.com/xiaoan-whu/CHOICE)  
 **Area**: Multimodal VLM
 **Keywords**: Remote Sensing, VLM Benchmark, Multi-level Evaluation, Multiple Choice Questions, Visual Reasoning
 

@@ -18,8 +18,8 @@ content_hash: 3da4439fd0b62af7
 # Transferable Hypergraph Attack via Injecting Nodes into Pivotal Hyperedges
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10698](https://arxiv.org/abs/2511.10698)
-**Code**: None
+**arXiv**: [2511.10698](https://arxiv.org/abs/2511.10698)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: Hypergraph Neural Networks, Adversarial Attack, Node Injection, Hyperedge Pivotality, Transferable Attack
 

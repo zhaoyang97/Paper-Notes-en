@@ -18,8 +18,8 @@ content_hash: 69e6c3ce18c334ee
 # Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17583](https://arxiv.org/abs/2603.17583)
-**Code**: [GitHub](https://seongraenoh.github.io/edit-as-act/)
+**arXiv**: [2603.17583](https://arxiv.org/abs/2603.17583)  
+**Code**: [GitHub](https://seongraenoh.github.io/edit-as-act/)  
 **Area**: Interpretability
 **Keywords**: 3D scene editing, goal regression, PDDL, LLM planning, symbolic reasoning
 
@@ -49,21 +49,21 @@ Given a source 3D scene $S_0$ and a natural language instruction $I$, the system
 
 1. **EditLang Symbolic Editing Language**
 
-   - **Function**: Defines a PDDL-style domain for scene editing, encompassing predicates and actions.
-   - **Mechanism**: Predicates encode geometric, topological, and physical relations (e.g., `supported(x,y)`, `contact(x,y)`, `collision(x,y)`, `stable(x)`, `facing(x,y)`). Each action is defined as a triple $\langle \text{pre}(a), \text{add}(a), \text{del}(a) \rangle$, with state transitions given by $s' = (s \setminus \text{del}(a)) \cup \text{add}(a)$. Three operation types are supported: geometric rearrangement, object addition (Add), and appearance modification (Stylize).
-   - **Design Motivation**: Mapping free-form text to a structured symbolic space renders the editing process verifiable, interpretable, and compositional. Unlike conventional PDDL, EditLang dynamically binds to concrete objects in the scene, supporting open vocabulary.
+    - **Function**: Defines a PDDL-style domain for scene editing, encompassing predicates and actions.
+    - **Mechanism**: Predicates encode geometric, topological, and physical relations (e.g., `supported(x,y)`, `contact(x,y)`, `collision(x,y)`, `stable(x)`, `facing(x,y)`). Each action is defined as a triple $\langle \text{pre}(a), \text{add}(a), \text{del}(a) \rangle$, with state transitions given by $s' = (s \setminus \text{del}(a)) \cup \text{add}(a)$. Three operation types are supported: geometric rearrangement, object addition (Add), and appearance modification (Stylize).
+    - **Design Motivation**: Mapping free-form text to a structured symbolic space renders the editing process verifiable, interpretable, and compositional. Unlike conventional PDDL, EditLang dynamically binds to concrete objects in the scene, supporting open vocabulary.
 
 2. **Source-Aware Goal Regression**
 
-   - **Function**: Derives the necessary action sequence by reasoning backward from the goal state.
-   - **Mechanism**: Classical STRIPS regression repeatedly reasons about already-satisfied conditions. The proposed source-aware variant is formulated as $G_{t-1} = (G_t \setminus \text{add}(a_t)) \cup (\text{pre}(a_t) \setminus S_0)$ — propagating only preconditions not already satisfied in the source scene, automatically skipping those that are.
-   - **Design Motivation**: Avoids unnecessary "reconstruction" of already-correct scene elements, ensuring edit minimality — a guarantee that forward generative methods cannot provide.
+    - **Function**: Derives the necessary action sequence by reasoning backward from the goal state.
+    - **Mechanism**: Classical STRIPS regression repeatedly reasons about already-satisfied conditions. The proposed source-aware variant is formulated as $G_{t-1} = (G_t \setminus \text{add}(a_t)) \cup (\text{pre}(a_t) \setminus S_0)$ — propagating only preconditions not already satisfied in the source scene, automatically skipping those that are.
+    - **Design Motivation**: Avoids unnecessary "reconstruction" of already-correct scene elements, ensuring edit minimality — a guarantee that forward generative methods cannot provide.
 
 3. **Planner-Validator Dual-Module Verification**
 
-   - **Function**: The Planner proposes actions; the Validator applies a four-way check before accepting or rejecting each proposal.
-   - **Mechanism**: The Validator enforces — (1) *Goal-directedness*: $\text{add}(a_t)$ must satisfy at least one goal in $G_t$; (2) *Monotonicity*: $\text{del}(a_t) \cap G^{\text{sat}}_{\leq t} = \emptyset$, preventing retraction of already-achieved goals; (3) *Contextual consistency*: edit outcomes comply with room-specific constraints; (4) *Formal validity*: conformance to the EditLang schema. Domain invariants (no collisions, single support surface, etc.) are continuously maintained.
-   - **Design Motivation**: LLM-generated plans are not guaranteed to be correct; the Validator provides a formal safety net. The monotonicity constraint combined with a finite state space ensures the planning loop is guaranteed to terminate.
+    - **Function**: The Planner proposes actions; the Validator applies a four-way check before accepting or rejecting each proposal.
+    - **Mechanism**: The Validator enforces — (1) *Goal-directedness*: $\text{add}(a_t)$ must satisfy at least one goal in $G_t$; (2) *Monotonicity*: $\text{del}(a_t) \cap G^{\text{sat}}_{\leq t} = \emptyset$, preventing retraction of already-achieved goals; (3) *Contextual consistency*: edit outcomes comply with room-specific constraints; (4) *Formal validity*: conformance to the EditLang schema. Domain invariants (no collisions, single support surface, etc.) are continuously maintained.
+    - **Design Motivation**: LLM-generated plans are not guaranteed to be correct; the Validator provides a formal safety net. The monotonicity constraint combined with a finite state space ensures the planning loop is guaranteed to terminate.
 
 ### Loss & Training
 The method is entirely training-free, relying solely on LLM inference. Both the Planner and Validator are driven by prompting an LLM (e.g., GPT-4). After each action is executed, predicates are recomputed from geometry to keep the symbolic state synchronized with the 3D scene.

@@ -18,8 +18,8 @@ content_hash: 69d3360787cce1aa
 # Narrative Weaver: Towards Controllable Long-Range Visual Consistency with Multi-Modal Conditioning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.06688](https://arxiv.org/abs/2603.06688)
-**Code**: To be confirmed
+**arXiv**: [2603.06688](https://arxiv.org/abs/2603.06688)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Long-range visual consistency, narrative generation, AR+Diffusion, Memory Bank, e-commerce advertising
 

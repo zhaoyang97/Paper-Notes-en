@@ -18,8 +18,8 @@ content_hash: 716957567429dca1
 # EvoSpark: Endogenous Interactive Agent Societies for Unified Long-Horizon Narrative Evolution
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12776](https://arxiv.org/abs/2604.12776)
-**Code**: None
+**arXiv**: [2604.12776](https://arxiv.org/abs/2604.12776)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: multi-agent narrative, long-horizon story evolution, social memory metabolism, spatial alignment, emergent characters
 

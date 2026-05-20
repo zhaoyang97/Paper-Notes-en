@@ -18,8 +18,8 @@ content_hash: 2fd10935063e39de
 # StableGuard: Towards Unified Copyright Protection and Tamper Localization in Latent Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17993](https://arxiv.org/abs/2509.17993)
-**Code**: [GitHub](https://github.com/Harxis/StableGuard)
+**arXiv**: [2509.17993](https://arxiv.org/abs/2509.17993)  
+**Code**: [GitHub](https://github.com/Harxis/StableGuard)  
 **Area**: Image Generation
 **Keywords**: Latent Diffusion Models, Watermark Embedding, Tamper Localization, Mixture of Experts, Self-Supervised Learning
 

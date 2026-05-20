@@ -18,8 +18,8 @@ content_hash: 33cc8b469308a1c7
 # Mamba-3: Improved Sequence Modeling using State Space Principles
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.15569](https://arxiv.org/abs/2603.15569)
-**Code**: [Available](https://github.com/state-spaces/mamba)
+**arXiv**: [2603.15569](https://arxiv.org/abs/2603.15569)  
+**Code**: [Available](https://github.com/state-spaces/mamba)  
 **Area**: Video Understanding
 **Keywords**: State Space Models, Mamba, Sequence Modeling, Inference Efficiency, MIMO
 

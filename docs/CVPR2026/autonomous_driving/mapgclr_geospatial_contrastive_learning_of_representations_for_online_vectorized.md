@@ -18,8 +18,8 @@ content_hash: af031a53c3264231
 # MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10688](https://arxiv.org/abs/2603.10688)
-**Code**: None
+**arXiv**: [2603.10688](https://arxiv.org/abs/2603.10688)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: Online HD map construction, semi-supervised learning, contrastive learning, BEV features, multi-traversal
 

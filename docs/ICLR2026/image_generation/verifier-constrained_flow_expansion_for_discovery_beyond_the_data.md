@@ -18,8 +18,8 @@ content_hash: 866b11c17cb3623e
 # Verifier-Constrained Flow Expansion for Discovery Beyond the Data
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.15984](https://arxiv.org/abs/2602.15984)
-**Code**: None
+**arXiv**: [2602.15984](https://arxiv.org/abs/2602.15984)  
+**Code**: None  
 **Area**: Flow Models / Scientific Discovery
 **Keywords**: Flow Expansion, Verifier Constraint, Entropy Maximization, Mirror Descent, Molecular Design
 

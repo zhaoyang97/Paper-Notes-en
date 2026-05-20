@@ -18,8 +18,8 @@ content_hash: 516765b70cbf479e
 # YOLO-Count: Differentiable Object Counting for Text-to-Image Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00728](https://arxiv.org/abs/2508.00728)
-**Code**: None
+**arXiv**: [2508.00728](https://arxiv.org/abs/2508.00728)  
+**Code**: None  
 **Area**: Object Detection
 **Keywords**: Object Counting, Differentiable, Text-to-Image Generation, Cardinality Map, Open Vocabulary
 

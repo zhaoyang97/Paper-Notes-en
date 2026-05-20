@@ -17,8 +17,8 @@ content_hash: 3bd5fed8dbde092a
 # Emergency Response Measures for Catastrophic AI Risk
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05526](https://arxiv.org/abs/2511.05526)
-**Code**: None
+**arXiv**: [2511.05526](https://arxiv.org/abs/2511.05526)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Catastrophic AI risk, emergency response, frontier safety policies, AI governance, dangerous capability evaluation
 

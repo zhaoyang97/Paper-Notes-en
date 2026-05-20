@@ -20,8 +20,8 @@ content_hash: 5f508e3767165b4e
 # Emergent World Beliefs: Exploring Transformers in Stochastic Games
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.23722](https://arxiv.org/abs/2512.23722)
-**Code**: [GitHub](https://anonymous.4open.science/r/poker-interp-4653/)
+**arXiv**: [2512.23722](https://arxiv.org/abs/2512.23722)  
+**Code**: [GitHub](https://anonymous.4open.science/r/poker-interp-4653/)  
 **Area**: Reinforcement Learning
 **Keywords**: Emergent World Models, Transformer, Poker, POMDP, Belief State, Activation Probing, GPT-2
 

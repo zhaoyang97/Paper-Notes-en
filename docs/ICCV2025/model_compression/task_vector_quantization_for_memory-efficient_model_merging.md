@@ -18,8 +18,8 @@ content_hash: 678b00baed8c6e18
 # Task Vector Quantization for Memory-Efficient Model Merging
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06921](https://arxiv.org/abs/2503.06921)
-**Code**: [https://aim-skku.github.io/TVQ/](https://aim-skku.github.io/TVQ/)
+**arXiv**: [2503.06921](https://arxiv.org/abs/2503.06921)  
+**Code**: [https://aim-skku.github.io/TVQ/](https://aim-skku.github.io/TVQ/)  
 **Area**: Model Compression
 **Keywords**: Model Merging, Task Vector Quantization, Low-Bit Storage, Residual Quantization, Multi-Task Learning
 

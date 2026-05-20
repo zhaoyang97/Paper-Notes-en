@@ -19,8 +19,8 @@ content_hash: c1d5a829b6f4ac7b
 # ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.24414](https://arxiv.org/abs/2509.24414)
-**Code**: [GitHub](https://github.com/jk-sounds/ScatterAD)
+**arXiv**: [2509.24414](https://arxiv.org/abs/2509.24414)  
+**Code**: [GitHub](https://github.com/jk-sounds/ScatterAD)  
 **Area**: Time Series / Anomaly Detection
 **Keywords**: time series anomaly detection, scattering mechanism, information bottleneck, temporal-topological fusion, contrastive learning, hypersphere
 

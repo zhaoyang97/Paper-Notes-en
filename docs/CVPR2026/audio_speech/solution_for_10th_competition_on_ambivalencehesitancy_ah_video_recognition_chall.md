@@ -18,7 +18,7 @@ content_hash: 2e380e21d4e38227
 # Solution for 10th Competition on Ambivalence/Hesitancy (AH) Video Recognition Challenge using Divergence-Based Multimodal Fusion
 
 **Conference**: CVPR2026
-**arXiv**: [2603.16939](https://arxiv.org/abs/2603.16939)
+**arXiv**: [2603.16939](https://arxiv.org/abs/2603.16939)  
 **Authors**: Aislan Gabriel O. Souza, Agostinho Freire, Leandro Honorato Silva et al. (Universidade de Pernambuco)
 **Area**: Audio & Speech
 **Keywords**: Multimodal Fusion, Ambivalence/Hesitancy Recognition, Action Units, Cross-Modal Conflict, Affective Computing

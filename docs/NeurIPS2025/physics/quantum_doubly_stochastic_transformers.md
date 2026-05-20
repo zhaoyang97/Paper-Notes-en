@@ -18,8 +18,8 @@ content_hash: 9325a668bd5e851a
 # Quantum Doubly Stochastic Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.16275](https://arxiv.org/abs/2504.16275)
-**Code**: None
+**arXiv**: [2504.16275](https://arxiv.org/abs/2504.16275)  
+**Code**: None  
 **Area**: Quantum Computing / Transformer
 **Keywords**: Variational quantum circuits, doubly stochastic matrices, attention mechanism, ViT, Birkhoff polytope
 

@@ -18,8 +18,8 @@ content_hash: 6fbf66c7f80efc81
 # Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17998](https://arxiv.org/abs/2509.17998)
-**Code**: [https://github.com/richardcsuwandi/cake](https://github.com/richardcsuwandi/cake)
+**arXiv**: [2509.17998](https://arxiv.org/abs/2509.17998)  
+**Code**: [https://github.com/richardcsuwandi/cake](https://github.com/richardcsuwandi/cake)  
 **Area**: Bayesian Optimization / LLM Applications
 **Keywords**: Bayesian Optimization, Gaussian Process, Kernel Design, LLM, Genetic Algorithm
 

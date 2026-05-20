@@ -18,8 +18,8 @@ content_hash: 201bc386fa897744
 # Geometry-Guided Camera Motion Understanding in VideoLLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13119](https://arxiv.org/abs/2603.13119)
-**Code**: To be confirmed
+**arXiv**: [2603.13119](https://arxiv.org/abs/2603.13119)  
+**Code**: To be confirmed  
 **Area**: Interpretability
 **Keywords**: VideoLLM, camera motion recognition, 3D foundation model, structured prompting, VGGT
 

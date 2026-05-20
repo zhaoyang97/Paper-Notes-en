@@ -18,8 +18,8 @@ content_hash: b0bdf8e6de1f5a57
 # The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.23419](https://arxiv.org/abs/2512.23419)
-**Code**: [GitHub](https://github.com/AlexLewandowski/bigger-world-interactivity)
+**arXiv**: [2512.23419](https://arxiv.org/abs/2512.23419)  
+**Code**: [GitHub](https://github.com/AlexLewandowski/bigger-world-interactivity)  
 **Area**: Reinforcement Learning
 **Keywords**: Continual Learning, Big World Hypothesis, Embedded Agents, Algorithmic Information Theory, Interactivity
 
@@ -60,8 +60,8 @@ The paper constructs a three-level theoretical framework:
 
 1. **Universal-Local Environment**: Defined as an algorithmic Markov process $\mathcal{E} = (\Omega, \Xi, \mathbb{T})$ satisfying two properties:
 
-   - **Computational universality**: the transition function can simulate any algorithm (equivalent to a universal Turing machine)
-   - **Uniform locality**: the transition function decomposes into identical local transition functions acting on local regions of the state space
+    - **Computational universality**: the transition function can simulate any algorithm (equivalent to a universal Turing machine)
+    - **Uniform locality**: the transition function decomposes into identical local transition functions acting on local regions of the state space
 
    Conway's Game of Life is a concrete example — it is computationally universal (capable of simulating a universal Turing machine) and uniformly local (each cell's transition rule is identical and depends only on 8 neighbors).
 

@@ -18,8 +18,8 @@ content_hash: 848fe7147af9be1a
 # Benchmarking Egocentric Multimodal Goal Inference for Assistive Wearable Agents
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2510.22443](https://arxiv.org/abs/2510.22443)
-**Code**: [https://github.com/facebookresearch/WAGIBench/](https://github.com/facebookresearch/WAGIBench/)
+**arXiv**: [2510.22443](https://arxiv.org/abs/2510.22443)  
+**Code**: [https://github.com/facebookresearch/WAGIBench/](https://github.com/facebookresearch/WAGIBench/)  
 **Area**: Audio & Speech
 **Keywords**: goal inference, wearable agents, multimodal benchmark, egocentric video, VLM evaluation
 

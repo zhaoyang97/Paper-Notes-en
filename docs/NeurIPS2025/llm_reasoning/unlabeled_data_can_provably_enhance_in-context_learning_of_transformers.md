@@ -19,8 +19,8 @@ content_hash: b8001dcf4c599f49
 # Unlabeled Data Can Provably Enhance In-Context Learning of Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.10058](https://arxiv.org/abs/2601.10058)
-**Code**: None
+**arXiv**: [2601.10058](https://arxiv.org/abs/2601.10058)  
+**Code**: None  
 **Area**: LLM Reasoning / Theory
 **Keywords**: in-context learning, unlabeled data, semi-supervised learning, EM algorithm, chain-of-thought, transformer theory
 

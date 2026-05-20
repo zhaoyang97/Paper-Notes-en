@@ -18,8 +18,8 @@ content_hash: 7ad6b4d493a4a20d
 # Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.13331](https://arxiv.org/abs/2604.13331)
-**Code**: None
+**arXiv**: [2604.13331](https://arxiv.org/abs/2604.13331)  
+**Code**: None  
 **Area**: Medical Imaging / Graph Learning
 **Keywords**: Medical Concept Representation, Knowledge Graph, LLM-GNN Joint Learning, Electronic Health Records, Text-Attributed Graph
 

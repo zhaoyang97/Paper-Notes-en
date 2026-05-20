@@ -18,8 +18,8 @@ content_hash: af97058426f190d5
 # Hallucination Begins Where Saliency Drops
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20279](https://arxiv.org/abs/2601.20279)
-**Code**: [https://github.com/zhangbaijin/LVLMs-Saliency](https://github.com/zhangbaijin/LVLMs-Saliency)
+**arXiv**: [2601.20279](https://arxiv.org/abs/2601.20279)  
+**Code**: [https://github.com/zhangbaijin/LVLMs-Saliency](https://github.com/zhangbaijin/LVLMs-Saliency)  
 **Area**: Interpretability
 **Keywords**: Hallucination Mitigation, Large Vision-Language Models, Saliency Analysis, Attention Mechanism, Inference-Time Intervention
 

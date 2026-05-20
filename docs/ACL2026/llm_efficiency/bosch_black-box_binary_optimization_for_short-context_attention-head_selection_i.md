@@ -17,8 +17,8 @@ content_hash: 3865638624679721
 # BOSCH: Black-Box Binary Optimization for Short-Context Attention-Head Selection in LLMs
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05942](https://arxiv.org/abs/2604.05942)
-**Code**: N/A
+**arXiv**: [2604.05942](https://arxiv.org/abs/2604.05942)  
+**Code**: N/A  
 **Area**: LLM Efficiency / Attention Optimization
 **Keywords**: Sliding Window Attention, Attention Head Selection, Black-Box Optimization, Large Neighborhood Search, KV-Cache
 

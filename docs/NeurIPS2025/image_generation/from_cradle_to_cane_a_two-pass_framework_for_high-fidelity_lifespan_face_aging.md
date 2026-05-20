@@ -19,8 +19,8 @@ content_hash: b13c8419a6b03bcd
 # From Cradle to Cane: A Two-Pass Framework for High-Fidelity Lifespan Face Aging
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.20977](https://arxiv.org/abs/2506.20977)
-**Code**: [https://github.com/byliutao/Cradle2Cane](https://github.com/byliutao/Cradle2Cane)
+**arXiv**: [2506.20977](https://arxiv.org/abs/2506.20977)  
+**Code**: [https://github.com/byliutao/Cradle2Cane](https://github.com/byliutao/Cradle2Cane)  
 **Area**: Image Generation
 **Keywords**: Face aging, diffusion models, identity preservation, adaptive noise injection, SDXL-Turbo, age-identity trade-off
 

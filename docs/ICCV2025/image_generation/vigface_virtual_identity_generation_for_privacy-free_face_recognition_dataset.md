@@ -18,8 +18,8 @@ content_hash: 9917ca3228c40a4b
 # VIGFace: Virtual Identity Generation for Privacy-Free Face Recognition Dataset
 
 **Conference**: ICCV 2025
-**arXiv**: [2403.08277](https://arxiv.org/abs/2403.08277)
-**Code**: [GitHub](https://github.com/kim1102/VIGFace)
+**arXiv**: [2403.08277](https://arxiv.org/abs/2403.08277)  
+**Code**: [GitHub](https://github.com/kim1102/VIGFace)  
 **Area**: Diffusion Models / Face Recognition
 **Keywords**: Virtual Identity Generation, Privacy Safety, Synthetic Face Dataset, Diffusion Model, Face Recognition
 

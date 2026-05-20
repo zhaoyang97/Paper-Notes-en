@@ -18,8 +18,8 @@ content_hash: 39e11bb02cf1b072
 # In-Context Learning of Temporal Point Processes with Foundation Inference Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24762](https://arxiv.org/abs/2509.24762)
-**Code**: [OpenFIM](https://fim4science.github.io/OpenFIM/intro.html)
+**arXiv**: [2509.24762](https://arxiv.org/abs/2509.24762)  
+**Code**: [OpenFIM](https://fim4science.github.io/OpenFIM/intro.html)  
 **Area**: LLM Evaluation
 **Keywords**: Temporal Point Processes, Foundation Inference Model, In-Context Learning, Hawkes Process, Conditional Intensity Function
 

@@ -20,8 +20,8 @@ content_hash: bbf82048ae6097ab
 # Reflective Translation: Improving Low-Resource Machine Translation via Structured Self-Reflection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.19871](https://arxiv.org/abs/2601.19871)
-**Code**: [GitHub](https://github.com/Nickcheng123/reflective-translation-mt)
+**arXiv**: [2601.19871](https://arxiv.org/abs/2601.19871)  
+**Code**: [GitHub](https://github.com/Nickcheng123/reflective-translation-mt)  
 **Area**: Machine Translation / Low-Resource Languages / Prompt Engineering
 **Keywords**: low-resource translation, self-reflection, structured prompting, LLM translation, isiZulu, isiXhosa, RAKE masking
 

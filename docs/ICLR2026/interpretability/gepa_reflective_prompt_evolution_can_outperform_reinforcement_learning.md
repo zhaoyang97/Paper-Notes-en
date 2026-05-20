@@ -18,8 +18,8 @@ content_hash: fdda59ce7940708a
 # GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning
 
 **Conference**: ICLR 2026 (Oral)
-**arXiv**: [2507.19457](https://arxiv.org/abs/2507.19457)
-**Code**: [https://github.com/gepa-ai/gepa](https://github.com/gepa-ai/gepa)
+**arXiv**: [2507.19457](https://arxiv.org/abs/2507.19457)  
+**Code**: [https://github.com/gepa-ai/gepa](https://github.com/gepa-ai/gepa)  
 **Area**: Interpretability
 **Keywords**: Prompt Optimization, Evolutionary Search, Natural Language Reflection, Pareto Front, GRPO Alternative
 

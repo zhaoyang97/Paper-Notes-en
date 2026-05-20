@@ -18,8 +18,8 @@ content_hash: 475bce88a53a7be8
 # SciArena: An Open Evaluation Platform for Non-Verifiable Scientific Literature-Grounded Tasks
 
 **Conference**: NeurIPS 2025 (Datasets & Benchmarks Track, Spotlight)
-**arXiv**: [2507.01001](https://arxiv.org/abs/2507.01001)
-**Code**: Available
+**arXiv**: [2507.01001](https://arxiv.org/abs/2507.01001)  
+**Code**: Available  
 **Area**: Dialogue Systems
 **Keywords**: scientific literature evaluation, foundation models, human preference, Chatbot Arena, meta-benchmark
 

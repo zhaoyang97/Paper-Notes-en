@@ -18,8 +18,8 @@ content_hash: b944f05b200302ef
 # PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10136](https://arxiv.org/abs/2510.10136)
-**Code**: [GitHub](https://github.com/lanchengzou/PermLLM)
+**arXiv**: [2510.10136](https://arxiv.org/abs/2510.10136)  
+**Code**: [GitHub](https://github.com/lanchengzou/PermLLM)  
 **Area**: Model Compression
 **Keywords**: N:M sparsity, channel permutation, model pruning, LLM compression, Sinkhorn normalization
 

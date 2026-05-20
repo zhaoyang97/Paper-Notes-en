@@ -17,8 +17,8 @@ content_hash: 65f2cb19cf662f02
 # RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Perturbations
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.17053](https://arxiv.org/abs/2602.17053)
-**Code**: [AIDASLab/RFEval](https://github.com/AIDASLab/RFEval)
+**arXiv**: [2602.17053](https://arxiv.org/abs/2602.17053)  
+**Code**: [AIDASLab/RFEval](https://github.com/AIDASLab/RFEval)  
 **Area**: Causal Reasoning
 **Keywords**: reasoning_faithfulness, LRM_evaluation, counterfactual_intervention, benchmark
 

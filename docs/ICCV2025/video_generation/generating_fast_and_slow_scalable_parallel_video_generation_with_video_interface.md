@@ -17,8 +17,8 @@ content_hash: 0ab937dd07c1add6
 # Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.17539](https://arxiv.org/abs/2503.17539)
-**Code**: None
+**arXiv**: [2503.17539](https://arxiv.org/abs/2503.17539)  
+**Code**: None  
 **Area**: Video Generation
 **Keywords**: video generation, diffusion transformer, parallel inference, temporal consistency, long video
 

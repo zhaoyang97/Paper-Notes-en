@@ -18,8 +18,8 @@ content_hash: 8f43ac817dc7e3b3
 # Kernelized Edge Attention: Addressing Semantic Attention Blurring in Temporal Graph Neural Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.00596](https://arxiv.org/abs/2602.00596)
-**Code**: N/A
+**arXiv**: [2602.00596](https://arxiv.org/abs/2602.00596)  
+**Code**: N/A  
 **Area**: Graph Learning
 **Keywords**: Temporal Graph Neural Networks, Edge Attention, Continuous-Time Kernel, Semantic Blurring, Link Prediction
 
@@ -51,21 +51,21 @@ KEAT is an attention module that can be seamlessly integrated into both Transfor
 
 1. **Continuous-Time Kernel Function Family**
 
-   - **Function**: Provides time-difference-based weight modulation for edge features.
-   - **Mechanism**: Three temporal kernels are designed: (a) Laplacian kernel $K(t) = \exp(-|t|/\sigma)$, applying exponential decay over time differences; (b) RBF kernel $K(t) = \exp(-t^2/(2\sigma^2))$, applying Gaussian decay; (c) learnable MLP kernel, which directly learns the mapping from time differences to weights via a small MLP. Each kernel acts on the difference between an edge's timestamp and the current time, assigning high weights to recent interactions and attenuating distant ones.
-   - **Design Motivation**: Fixed time encodings (e.g., sinusoidal encodings) cannot distinguish temporal spans of varying importance. Continuous-time kernels provide a natural "recency-first" decay pattern, and different kernel forms accommodate different temporal dependency structures.
+    - **Function**: Provides time-difference-based weight modulation for edge features.
+    - **Mechanism**: Three temporal kernels are designed: (a) Laplacian kernel $K(t) = \exp(-|t|/\sigma)$, applying exponential decay over time differences; (b) RBF kernel $K(t) = \exp(-t^2/(2\sigma^2))$, applying Gaussian decay; (c) learnable MLP kernel, which directly learns the mapping from time differences to weights via a small MLP. Each kernel acts on the difference between an edge's timestamp and the current time, assigning high weights to recent interactions and attenuating distant ones.
+    - **Design Motivation**: Fixed time encodings (e.g., sinusoidal encodings) cannot distinguish temporal spans of varying importance. Continuous-time kernels provide a natural "recency-first" decay pattern, and different kernel forms accommodate different temporal dependency structures.
 
 2. **Kernelized Edge Attention Mechanism**
 
-   - **Function**: Maintains a clear separation between the roles of nodes and edges during attention computation.
-   - **Mechanism**: Standard attention concatenates node and edge features before computing attention scores. KEAT instead first modulates edge features with the temporal kernel as $e'_{ij} = K(\Delta t_{ij}) \cdot e_{ij}$, then explicitly distinguishes node query/key from kernelized edge values during attention. Attention scores are primarily determined by inter-node similarity, while the content of information aggregation is determined by the kernelized edge features.
-   - **Design Motivation**: The "who to attend to" aspect of attention should be governed by node relationships (structurally similar nodes attend to each other), while "what to aggregate" should be governed by edge features (recent interactions carry the most current information). Separating the two avoids semantic confusion.
+    - **Function**: Maintains a clear separation between the roles of nodes and edges during attention computation.
+    - **Mechanism**: Standard attention concatenates node and edge features before computing attention scores. KEAT instead first modulates edge features with the temporal kernel as $e'_{ij} = K(\Delta t_{ij}) \cdot e_{ij}$, then explicitly distinguishes node query/key from kernelized edge values during attention. Attention scores are primarily determined by inter-node similarity, while the content of information aggregation is determined by the kernelized edge features.
+    - **Design Motivation**: The "who to attend to" aspect of attention should be governed by node relationships (structurally similar nodes attend to each other), while "what to aggregate" should be governed by edge features (recent interactions carry the most current information). Separating the two avoids semantic confusion.
 
 3. **Architecture-Agnostic Plug-and-Play Design**
 
-   - **Function**: Enables KEAT to be combined with diverse TGNN backbone architectures.
-   - **Mechanism**: KEAT adheres to the standard attention interface (Q, K, V) and can directly replace the self-attention layers in DyGFormer or the message aggregation layers in TGN. The only modification is that edge features are passed through the temporal kernel modulation before entering the attention computation.
-   - **Design Motivation**: Given the architectural diversity in the TGNN field, a strong attention improvement should be general rather than tailored to a specific architecture.
+    - **Function**: Enables KEAT to be combined with diverse TGNN backbone architectures.
+    - **Mechanism**: KEAT adheres to the standard attention interface (Q, K, V) and can directly replace the self-attention layers in DyGFormer or the message aggregation layers in TGN. The only modification is that edge features are passed through the temporal kernel modulation before entering the attention computation.
+    - **Design Motivation**: Given the architectural diversity in the TGNN field, a strong attention improvement should be general rather than tailored to a specific architecture.
 
 ### Loss & Training
 

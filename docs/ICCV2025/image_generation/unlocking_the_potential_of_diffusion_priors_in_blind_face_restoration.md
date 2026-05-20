@@ -18,8 +18,8 @@ content_hash: d0a4809a59d1743d
 # Unlocking the Potential of Diffusion Priors in Blind Face Restoration
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.08556](https://arxiv.org/abs/2508.08556)
-**Code**: Not available
+**arXiv**: [2508.08556](https://arxiv.org/abs/2508.08556)  
+**Code**: Not available  
 **Area**: Image Generation
 **Keywords**: Blind face restoration, diffusion priors, dual-mode network, degradation modeling, LoRA
 
@@ -67,10 +67,10 @@ Face recognition embeddings such as ArcFace are found to be ill-suited for BFR â
 
 **Two-stage training**:
 1. **Reconstruction stage**: HQ and LQ autoencoders are trained independently to reconstruct their inputs from a latent space.
-   - Loss: $\mathcal{L}_{ae} = \mathcal{L}_1 + \lambda_{ap}\mathcal{L}_p + \lambda_{adv}\mathcal{L}_{adv}$
+    - Loss: $\mathcal{L}_{ae} = \mathcal{L}_1 + \lambda_{ap}\mathcal{L}_p + \lambda_{adv}\mathcal{L}_{adv}$
 2. **Association stage**: Cross-entropy loss is used to align the HQ and LQ latent spaces.
-   - A similarity matrix $\mathcal{M} \in \mathbb{R}^{N \times N}$ is computed over HQ/LQ patch features.
-   - Diagonal similarity is maximized: $\mathcal{L}^{H(L)}_{ce} = -\frac{1}{N}\sum_i\sum_j y_{i,j}\log(z_{x(y)}^{i,j})$
+    - A similarity matrix $\mathcal{M} \in \mathbb{R}^{N \times N}$ is computed over HQ/LQ patch features.
+    - Diagonal similarity is maximized: $\mathcal{L}^{H(L)}_{ce} = -\frac{1}{N}\sum_i\sum_j y_{i,j}\log(z_{x(y)}^{i,j})$
 
 The trained LQ encoder extracts facial embeddings $\mathbf{z}_y$, which are projected to the text token dimension via Adapter $\tau$ and integrated through cross-attention.
 

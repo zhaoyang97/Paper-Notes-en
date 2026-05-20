@@ -18,8 +18,8 @@ content_hash: b29980a692c983e2
 # VQToken: Neural Discrete Token Representation Learning for Extreme Token Reduction in Video Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.16980](https://arxiv.org/abs/2503.16980)
-**Code**: [https://github.com/](https://github.com/) (available, includes Homepage, GitHub, HuggingFace)
+**arXiv**: [2503.16980](https://arxiv.org/abs/2503.16980)  
+**Code**: [https://github.com/](https://github.com/) (available, includes Homepage, GitHub, HuggingFace)  
 **Area**: Model Compression / Video LLM Efficiency
 **Keywords**: token reduction, vector quantization, video LLM, discrete representation, token information density
 

@@ -18,8 +18,8 @@ content_hash: fcbd841f25555ae1
 # Scaling Diffusion Transformers Efficiently via μP
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15270](https://arxiv.org/abs/2505.15270)
-**Code**: [Available](https://github.com/ML-GSAI/Scaling-Diffusion-Transformers-muP)
+**arXiv**: [2505.15270](https://arxiv.org/abs/2505.15270)  
+**Code**: [Available](https://github.com/ML-GSAI/Scaling-Diffusion-Transformers-muP)  
 **Area**: Image Generation
 **Keywords**: Diffusion Transformer, μP, hyperparameter transfer, model scaling, efficient training
 

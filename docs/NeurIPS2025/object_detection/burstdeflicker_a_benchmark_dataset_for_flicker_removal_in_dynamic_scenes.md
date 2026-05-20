@@ -18,8 +18,8 @@ content_hash: 11b69d5cfb8cbeae
 # BurstDeflicker: A Benchmark Dataset for Flicker Removal in Dynamic Scenes
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.09996](https://arxiv.org/abs/2510.09996)
-**Code**: [qulishen/BurstDeflicker](https://github.com/qulishen/BurstDeflicker)
+**arXiv**: [2510.09996](https://arxiv.org/abs/2510.09996)  
+**Code**: [qulishen/BurstDeflicker](https://github.com/qulishen/BurstDeflicker)  
 **Area**: Object Detection
 **Keywords**: flicker removal, rolling shutter, burst imaging, dataset, Retinex
 

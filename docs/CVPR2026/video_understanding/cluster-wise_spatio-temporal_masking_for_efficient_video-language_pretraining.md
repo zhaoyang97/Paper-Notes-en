@@ -18,8 +18,8 @@ content_hash: 3c5c6545af809efd
 # Cluster-Wise Spatio-Temporal Masking for Efficient Video-Language Pretraining
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22953](https://arxiv.org/abs/2603.22953)
-**Code**: N/A
+**arXiv**: [2603.22953](https://arxiv.org/abs/2603.22953)  
+**Code**: N/A  
 **Area**: Video Understanding
 **Keywords**: Video-language pretraining, masked visual modeling, spatio-temporal clustering, efficient pretraining, video-text alignment
 

@@ -17,8 +17,8 @@ content_hash: 9db82b8ef60696c9
 # CoMind: Towards Community-Driven Agents for Machine Learning Engineering
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.20640](https://arxiv.org/abs/2506.20640)
-**Code**: [https://github.com/comind-ml/CoMind](https://github.com/comind-ml/CoMind)
+**arXiv**: [2506.20640](https://arxiv.org/abs/2506.20640)  
+**Code**: [https://github.com/comind-ml/CoMind](https://github.com/comind-ml/CoMind)  
 **Area**: LLM Agent
 **Keywords**: LLM Agent, Machine Learning Engineering, Kaggle Competition, Community Knowledge, Multi-Agent Collaboration
 

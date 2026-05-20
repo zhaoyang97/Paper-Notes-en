@@ -18,8 +18,8 @@ content_hash: ae76ed5e6d16a7c4
 # Mem-PAL: Towards Memory-based Personalized Dialogue Assistants for Long-term User-Agent Interaction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13410](https://arxiv.org/abs/2511.13410)
-**Code**: [GitHub](https://github.com/hzp3517/Mem-PAL)
+**arXiv**: [2511.13410](https://arxiv.org/abs/2511.13410)  
+**Code**: [GitHub](https://github.com/hzp3517/Mem-PAL)  
 **Area**: Information Retrieval
 **Keywords**: Personalized Dialogue, Long-term Memory, Hierarchical Memory, User Modeling, Dialogue Assistant
 

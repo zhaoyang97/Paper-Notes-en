@@ -18,8 +18,8 @@ content_hash: 117757efa6fa707c
 # Computation and Communication Efficient Federated Unlearning via On-server Gradient Conflict Mitigation and Expression
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13795](https://arxiv.org/abs/2603.13795)
-**Code**: Paper claims reproducibility but no public link provided
+**arXiv**: [2603.13795](https://arxiv.org/abs/2603.13795)  
+**Code**: Paper claims reproducibility but no public link provided  
 **Area**: AI Safety
 **Keywords**: Federated Unlearning, Gradient Conflict, Causal Disentanglement, On-server Aggregation, Privacy
 

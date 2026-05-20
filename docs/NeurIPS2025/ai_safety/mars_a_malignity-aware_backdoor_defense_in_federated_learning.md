@@ -18,8 +18,8 @@ content_hash: 239e29e537d2717b
 # MARS: A Malignity-Aware Backdoor Defense in Federated Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20383](https://arxiv.org/abs/2509.20383)
-**Code**: [GitHub](https://github.com/yunming181920/MARS)
+**arXiv**: [2509.20383](https://arxiv.org/abs/2509.20383)  
+**Code**: [GitHub](https://github.com/yunming181920/MARS)  
 **Area**: AI Safety / Federated Learning
 **Keywords**: backdoor attack defense, federated learning, Wasserstein distance, backdoor energy, clustering-based detection
 

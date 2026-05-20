@@ -18,8 +18,8 @@ content_hash: 857c9052a3faf15a
 # Membership Privacy Risks of Sharpness Aware Minimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2310.00488](https://arxiv.org/abs/2310.00488)
-**Code**: None
+**arXiv**: [2310.00488](https://arxiv.org/abs/2310.00488)  
+**Code**: None  
 **Area**: AI Security / Privacy
 **Keywords**: Sharpness-Aware Minimization, Membership Inference Attack, Privacy Leakage, Memorization, Variance Reduction
 

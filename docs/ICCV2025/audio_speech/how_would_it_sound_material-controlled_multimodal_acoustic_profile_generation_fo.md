@@ -18,8 +18,8 @@ content_hash: b1075dc106637feb
 # How Would It Sound? Material-Controlled Multimodal Acoustic Profile Generation for Objects
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.02905](https://arxiv.org/abs/2508.02905)
-**Code**: [Project Page](https://mahnoor-fatima-saad.github.io/m-capa.html)
+**arXiv**: [2508.02905](https://arxiv.org/abs/2508.02905)  
+**Code**: [Project Page](https://mahnoor-fatima-saad.github.io/m-capa.html)  
 **Area**: Audio & Speech
 **Keywords**: Room Impulse Response, Material Control, Audio-Visual Learning, RIR Generation, Acoustic Simulation
 

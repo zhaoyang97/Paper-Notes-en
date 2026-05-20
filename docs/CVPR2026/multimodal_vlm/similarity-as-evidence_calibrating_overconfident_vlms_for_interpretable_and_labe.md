@@ -20,8 +20,8 @@ content_hash: b3aedfd817f45c41
 # Similarity-as-Evidence: Calibrating Overconfident VLMs for Interpretable and Label-Efficient Medical Active Learning
 
 **Conference**: CVPR2026
-**arXiv**: [2602.18867](https://arxiv.org/abs/2602.18867)
-**Code**: To be confirmed
+**arXiv**: [2602.18867](https://arxiv.org/abs/2602.18867)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Active Learning, Vision-Language Models, Uncertainty Quantification, Dirichlet Distribution, Evidential Deep Learning, Medical Image Classification, Calibration
 

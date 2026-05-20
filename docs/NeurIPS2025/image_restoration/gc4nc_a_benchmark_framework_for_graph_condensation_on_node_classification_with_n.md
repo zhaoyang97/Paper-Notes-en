@@ -18,8 +18,8 @@ content_hash: a3e11eb62c053955
 # GC4NC: A Benchmark Framework for Graph Condensation on Node Classification with New Insights
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2406.16715](https://arxiv.org/abs/2406.16715)
-**Code**: [https://github.com/Emory-Melody/GraphSlim](https://github.com/Emory-Melody/GraphSlim)
+**arXiv**: [2406.16715](https://arxiv.org/abs/2406.16715)  
+**Code**: [https://github.com/Emory-Melody/GraphSlim](https://github.com/Emory-Melody/GraphSlim)  
 **Area**: Image Restoration
 **Keywords**: Graph Condensation, Dataset Distillation, Node Classification, Benchmark Evaluation, Privacy Protection
 

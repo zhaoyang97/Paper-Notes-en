@@ -18,8 +18,8 @@ content_hash: fd75406ae11f70f9
 # Sparfels: Fast Reconstruction from Sparse Unposed Imagery
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.02178](https://arxiv.org/abs/2505.02178)
-**Code**: [Available](https://shubhendu-jena.github.io/Sparfels-web/)
+**arXiv**: [2505.02178](https://arxiv.org/abs/2505.02178)  
+**Code**: [Available](https://shubhendu-jena.github.io/Sparfels-web/)  
 **Area**: 3D Vision
 **Keywords**: Sparse-view reconstruction, unposed reconstruction, 2D Gaussian splatting, MASt3R, color variance regularization
 

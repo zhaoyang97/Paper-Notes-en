@@ -18,8 +18,8 @@ content_hash: 6d0bc6727dbe2d7c
 # Implicit Bias and Loss of Plasticity in Matrix Completion: Depth Promotes Low-Rank
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.04703](https://arxiv.org/abs/2603.04703)
-**Code**: None
+**arXiv**: [2603.04703](https://arxiv.org/abs/2603.04703)  
+**Code**: None  
 **Area**: LLM Pretraining
 **Keywords**: matrix completion, deep matrix factorization, implicit bias, low-rank preference, loss of plasticity
 

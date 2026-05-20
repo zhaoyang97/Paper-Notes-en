@@ -17,8 +17,8 @@ content_hash: 40ae8aa00630cf88
 # MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision
 
 **Conference**: NeurIPS 2025 (SEA Workshop, Oral)
-**arXiv**: [2505.14996](https://arxiv.org/abs/2505.14996)
-**Code**: [https://github.com/SalesforceAIResearch/MAS-Zero](https://github.com/SalesforceAIResearch/MAS-Zero)
+**arXiv**: [2505.14996](https://arxiv.org/abs/2505.14996)  
+**Code**: [https://github.com/SalesforceAIResearch/MAS-Zero](https://github.com/SalesforceAIResearch/MAS-Zero)  
 **Area**: Other
 **Keywords**: multi-agent system, automatic MAS design, meta-agent, zero supervision, inference-time optimization
 

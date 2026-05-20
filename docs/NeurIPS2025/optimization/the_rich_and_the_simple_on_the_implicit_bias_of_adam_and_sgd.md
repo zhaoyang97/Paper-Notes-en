@@ -18,8 +18,8 @@ content_hash: cfa4365504912054
 # The Rich and the Simple: On the Implicit Bias of Adam and SGD
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.24022](https://arxiv.org/abs/2505.24022)
-**Code**: Unavailable
+**arXiv**: [2505.24022](https://arxiv.org/abs/2505.24022)  
+**Code**: Unavailable  
 **Area**: Optimization
 **Keywords**: Implicit bias, Adam, SGD, simplicity bias, feature learning
 

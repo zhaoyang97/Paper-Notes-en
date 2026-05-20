@@ -18,8 +18,8 @@ content_hash: 3218b238d94933e7
 # gQIR: Generative Quanta Image Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20417](https://arxiv.org/abs/2602.20417)
-**Code**: [GitHub](https://github.com/Aryan-Garg/gQIR)
+**arXiv**: [2602.20417](https://arxiv.org/abs/2602.20417)  
+**Code**: [GitHub](https://github.com/Aryan-Garg/gQIR)  
 **Area**: Image Generation / Image Reconstruction / Computational Imaging
 **Keywords**: Single-photon sensor, diffusion model, image reconstruction, burst imaging, VAE alignment
 

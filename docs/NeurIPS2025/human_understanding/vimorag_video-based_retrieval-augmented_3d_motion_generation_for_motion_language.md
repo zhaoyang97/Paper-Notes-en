@@ -18,8 +18,8 @@ content_hash: 8550f33cd6aa0476
 # VimoRAG: Video-based Retrieval-augmented 3D Motion Generation for Motion Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.12081](https://arxiv.org/abs/2508.12081)
-**Code**: [GitHub](https://walkermitty.github.io/VimoRAG/)
+**arXiv**: [2508.12081](https://arxiv.org/abs/2508.12081)  
+**Code**: [GitHub](https://walkermitty.github.io/VimoRAG/)  
 **Area**: Human Understanding / Human-Computer Interaction
 **Keywords**: Motion Generation, Retrieval-Augmented Generation, Video Priors, Motion Language Model, DPO
 
@@ -32,8 +32,8 @@ This paper proposes VimoRAG, a framework that leverages large-scale in-the-wild 
 - **Background**: Generating diverse and realistic 3D human motions from text has broad applications in gaming, robotics, and VR. Motion Language Models (Motion LLMs) unify motion understanding and generation within an LLM framework, but suffer from severe **out-of-distribution (OOD) / out-of-vocabulary (OOV)** problems—existing text–motion paired datasets contain only ~14K samples with prohibitively high annotation costs.
 - **Limitations of Prior Work**: ReMoDiffuse proposed retrieval-augmented generation from a 3D motion database, but that database itself is limited to 14K samples. In contrast, in-the-wild videos are nearly unlimited in scale, rich in motion diversity, and 2D human motions in videos share intrinsically similar features with 3D motions.
 - **Key Challenge**: Video-based motion RAG faces two key challenges:
-  - **Retrieval difficulty**: Existing video foundation models (VFMs), while strong at recognizing objects and attributes, perform poorly at discriminating human poses and actions.
-  - **Error propagation**: When retrieval quality is low, inaccurate video priors severely degrade generation quality.
+    - **Retrieval difficulty**: Existing video foundation models (VFMs), while strong at recognizing objects and attributes, perform poorly at discriminating human poses and actions.
+    - **Error propagation**: When retrieval quality is low, inaccurate video priors severely degrade generation quality.
 
 ## Method
 

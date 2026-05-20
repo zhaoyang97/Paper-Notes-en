@@ -20,8 +20,8 @@ content_hash: bffe6b28d40b0c3f
 # Functional Embeddings Enable Aggregation of Multi-Area SEEG Data for Robust BCI
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.27090](https://arxiv.org/abs/2510.27090)
-**Code**: [GitHub](https://github.com/ICLR-Functional-Embedding/ICLR2026_Functional_Map)
+**arXiv**: [2510.27090](https://arxiv.org/abs/2510.27090)  
+**Code**: [GitHub](https://github.com/ICLR-Functional-Embedding/ICLR2026_Functional_Map)  
 **Area**: Social Computing
 **Keywords**: Brain-Computer Interface, SEEG, Functional Embedding, Contrastive Learning, Transformer, Cross-Subject Modeling, Neural Signals
 

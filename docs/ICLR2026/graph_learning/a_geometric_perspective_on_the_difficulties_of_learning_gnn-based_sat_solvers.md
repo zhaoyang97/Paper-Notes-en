@@ -18,8 +18,8 @@ content_hash: 15c50b85b52030cb
 # A Geometric Perspective on the Difficulties of Learning GNN-based SAT Solvers
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.21513](https://arxiv.org/abs/2508.21513)
-**Code**: None
+**arXiv**: [2508.21513](https://arxiv.org/abs/2508.21513)  
+**Code**: None  
 **Area**: Graph Neural Networks / Theory
 **Keywords**: GNN, SAT solver, Ricci curvature, oversquashing, graph geometry
 

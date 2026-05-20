@@ -17,8 +17,8 @@ content_hash: 7c4d5bd306730e51
 # Addressing Mark Imbalance in Integration-free Neural Marked Temporal Point Processes
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20414](https://arxiv.org/abs/2510.20414)
-**Code**: [GitHub](https://github.com/undes1red/IFNMTPP)
+**arXiv**: [2510.20414](https://arxiv.org/abs/2510.20414)  
+**Code**: [GitHub](https://github.com/undes1red/IFNMTPP)  
 **Area**: Others
 **Keywords**: marked temporal point processes, mark imbalance, thresholding method, integration-free approximation, event prediction
 

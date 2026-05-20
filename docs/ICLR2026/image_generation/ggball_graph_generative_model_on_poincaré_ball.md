@@ -18,8 +18,8 @@ content_hash: 00469fe2ac488e2e
 # GGBall: Graph Generative Model on Poincaré Ball
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.07198](https://arxiv.org/abs/2506.07198)
-**Code**: [GitHub](https://github.com/AI4Science-WestlakeU/GGBall)
+**arXiv**: [2506.07198](https://arxiv.org/abs/2506.07198)  
+**Code**: [GitHub](https://github.com/AI4Science-WestlakeU/GGBall)  
 **Area**: Graph Generation / Hyperbolic Geometry
 **Keywords**: Hyperbolic Space, Graph Generation, Poincaré Ball Model, Vector Quantization, Flow Matching
 

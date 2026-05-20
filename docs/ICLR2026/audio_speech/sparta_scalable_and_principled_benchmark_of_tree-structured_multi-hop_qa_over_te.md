@@ -18,8 +18,8 @@ content_hash: 44bd8548d0acfc70
 # SPARTA: Scalable and Principled Benchmark of Tree-Structured Multi-hop QA over Text and Tables
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.23286](https://arxiv.org/abs/2602.23286)
-**Code**: [github.com/pshlego/SPARTA](https://github.com/pshlego/SPARTA)
+**arXiv**: [2602.23286](https://arxiv.org/abs/2602.23286)  
+**Code**: [github.com/pshlego/SPARTA](https://github.com/pshlego/SPARTA)  
 **Area**: Audio & Speech
 **Keywords**: Multi-hop Reasoning, Table-Text QA, Benchmark Construction, SQL, Cross-modal Reasoning
 

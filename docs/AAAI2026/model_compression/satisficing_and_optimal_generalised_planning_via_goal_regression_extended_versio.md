@@ -18,8 +18,8 @@ content_hash: 88d8f7c512ef0823
 # Satisficing and Optimal Generalised Planning via Goal Regression (Extended Version)
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11095](https://arxiv.org/abs/2511.11095)
-**Code**: [https://github.com/dillonzchen/moose](https://github.com/dillonzchen/moose)
+**arXiv**: [2511.11095](https://arxiv.org/abs/2511.11095)  
+**Code**: [https://github.com/dillonzchen/moose](https://github.com/dillonzchen/moose)  
 **Area**: Model Compression
 **Keywords**: generalised planning, goal regression, policy synthesis, search pruning, planning domains
 
@@ -61,24 +61,24 @@ Moose operates in two phases:
 
 1. **Moose Rule**:
 
-   - *Function*: Compactly represents a generalised policy as first-order condition–action pairs.
-   - *Mechanism*: Each rule contains a set of free variables, state conditions (atoms the current state must satisfy), goal conditions (unsatisfied goal atoms), and an action sequence (including macro-actions).
-   - *Design Motivation*: Rule preconditions compactly capture families of states; lifted rules generalise across varying numbers of objects.
-   - Each rule carries a priority (cost-to-go) that determines execution order.
+    - *Function*: Compactly represents a generalised policy as first-order condition–action pairs.
+    - *Mechanism*: Each rule contains a set of free variables, state conditions (atoms the current state must satisfy), goal conditions (unsatisfied goal atoms), and an action sequence (including macro-actions).
+    - *Design Motivation*: Rule preconditions compactly capture families of states; lifted rules generalise across varying numbers of objects.
+    - Each rule carries a priority (cost-to-go) that determines execution order.
 
 2. **Goal Regression + Lifting**:
 
-   - *Function*: Extracts generalised condition–action rules from concrete plans.
-   - *Mechanism*: Regression computes the preimage of an action—the minimal set of atoms that must hold before execution—after which concrete objects are replaced by free variables.
-   - *Key Property*: Regression naturally eliminates atoms irrelevant to the goal (e.g., the location of a dog is ignored in a plan for transporting a cake), endowing rules with strong generalisation.
+    - *Function*: Extracts generalised condition–action rules from concrete plans.
+    - *Mechanism*: Regression computes the preimage of an action—the minimal set of atoms that must hold before execution—after which concrete objects are replaced by free variables.
+    - *Key Property*: Regression naturally eliminates atoms irrelevant to the goal (e.g., the location of a dog is ignored in a plan for transporting a cake), endowing rules with strong generalisation.
 
 3. **Goal Independence Classification (TGI / SGI / OGI)**:
 
-   - *Function*: Formally classifies the degree to which goals in a planning domain can be solved independently.
-   - TGI (True Goal Independence): A greedy algorithm is effective under any goal ordering.
-   - SGI (Serialisable Goal Independence): Some goal ordering exists under which the greedy algorithm is effective.
-   - OGI (Optimal Goal Independence): Some ordering exists under which the greedy algorithm yields an optimal solution.
-   - *Computational Complexity*: pTGI is in P; pSGI and pOGI are NP-complete.
+    - *Function*: Formally classifies the degree to which goals in a planning domain can be solved independently.
+    - TGI (True Goal Independence): A greedy algorithm is effective under any goal ordering.
+    - SGI (Serialisable Goal Independence): Some goal ordering exists under which the greedy algorithm is effective.
+    - OGI (Optimal Goal Independence): Some ordering exists under which the greedy algorithm yields an optimal solution.
+    - *Computational Complexity*: pTGI is in P; pSGI and pOGI are NP-complete.
 
 ### Loss & Training
 

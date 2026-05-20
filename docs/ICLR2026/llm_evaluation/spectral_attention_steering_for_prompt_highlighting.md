@@ -18,8 +18,8 @@ content_hash: 3701c105c56f2782
 # Spectral Attention Steering for Prompt Highlighting
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01281](https://arxiv.org/abs/2603.01281)
-**Code**: [waylonli/SEKA](https://github.com/waylonli/SEKA)
+**arXiv**: [2603.01281](https://arxiv.org/abs/2603.01281)  
+**Code**: [waylonli/SEKA](https://github.com/waylonli/SEKA)  
 **Area**: LLM Evaluation
 **Keywords**: attention steering, prompt highlighting, spectral decomposition, FlashAttention, key embedding editing
 **Authors**: Weixian Waylon Li, Yuchen Niu, Yongxin Yang, Keshuang Li, Tiejun Ma, Shay B. Cohen (University of Edinburgh, RayNeo, Huawei Research, QMUL)

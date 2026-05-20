@@ -18,8 +18,8 @@ content_hash: 67652b0796285e67
 # First SFT, Second RL, Third UPT: Continual Improving Multi-Modal LLM Reasoning via Unsupervised Post-Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22453](https://arxiv.org/abs/2505.22453)
-**Code**: [https://github.com/waltonfuture/MM-UPT](https://github.com/waltonfuture/MM-UPT)
+**arXiv**: [2505.22453](https://arxiv.org/abs/2505.22453)  
+**Code**: [https://github.com/waltonfuture/MM-UPT](https://github.com/waltonfuture/MM-UPT)  
 **Area**: Multimodal VLM / LLM Reasoning
 **Keywords**: unsupervised post-training, multimodal reasoning, GRPO, majority voting, self-improvement
 

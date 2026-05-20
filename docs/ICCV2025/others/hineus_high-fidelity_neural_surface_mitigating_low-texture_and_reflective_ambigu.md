@@ -17,8 +17,8 @@ content_hash: 74630da5023f1e5d
 # HiNeuS: High-fidelity Neural Surface Mitigating Low-texture and Reflective Ambiguity
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23854](https://arxiv.org/abs/2506.23854)
-**Code**: Coming soon
+**arXiv**: [2506.23854](https://arxiv.org/abs/2506.23854)  
+**Code**: Coming soon  
 **Area**: Other
 **Keywords**: Neural surface reconstruction, SDF, reflection handling, low-texture regions, Eikonal constraint
 

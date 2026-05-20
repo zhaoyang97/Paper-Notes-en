@@ -18,8 +18,8 @@ content_hash: 217990e95b6372ef
 # NSW-EPNews: A News-Augmented Benchmark for Electricity Price Forecasting with LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.11050](https://arxiv.org/abs/2506.11050)
-**Code**: [Figshare Dataset](https://figshare.com/s/e25f3a98679d347f2a2e)
+**arXiv**: [2506.11050](https://arxiv.org/abs/2506.11050)  
+**Code**: [Figshare Dataset](https://figshare.com/s/e25f3a98679d347f2a2e)  
 **Area**: Time Series
 **Keywords**: Electricity price forecasting, LLM forecasting, multimodal benchmark, hallucination detection, prompt engineering
 
@@ -51,17 +51,17 @@ The NSW-EPNews benchmark comprises three core components: data construction, pro
 
 2. **Four Prompt Template Designs**: To comprehensively evaluate LLMs, four prompt formats are designed, varying along two dimensions:
 
-   - Zero-shot vs. few-shot (with or without example Q&A pairs)
-   - With or without chain-of-thought (CoT) reasoning
+    - Zero-shot vs. few-shot (with or without example Q&A pairs)
+    - With or without chain-of-thought (CoT) reasoning
 
    Each prompt integrates 48 historical price points, news summaries, temperature, and date information. Ablation prompts containing only historical prices are also designed to analyze the marginal contribution of news and temperature data.
 
 3. **Hallucination and Error Detection Framework**: Four types of LLM output anomalies are defined and detected:
 
-   - **Echoing Failure**: ≥10 predicted values are directly copied from the historical input.
-   - **Trivial Transformation**: Predicted values equal historical values plus a fixed offset (matching ≥20 points).
-   - **Degenerate Copying**: A single value appears more than 5 times in the output.
-   - **Format Violation**: The output cannot be parsed as a price list.
+    - **Echoing Failure**: ≥10 predicted values are directly copied from the historical input.
+    - **Trivial Transformation**: Predicted values equal historical values plus a fixed offset (matching ≥20 points).
+    - **Degenerate Copying**: A single value appears more than 5 times in the output.
+    - **Format Violation**: The output cannot be parsed as a price list.
 
 ### Loss & Training
 

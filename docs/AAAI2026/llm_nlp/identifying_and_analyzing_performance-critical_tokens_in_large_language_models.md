@@ -18,8 +18,8 @@ content_hash: a623910ce7d1eeeb
 # Identifying and Analyzing Performance-Critical Tokens in Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2401.11323](https://arxiv.org/abs/2401.11323)
-**Code**: [https://github.com/ybai-nlp/PCT_ICL](https://github.com/ybai-nlp/PCT_ICL)
+**arXiv**: [2401.11323](https://arxiv.org/abs/2401.11323)  
+**Code**: [https://github.com/ybai-nlp/PCT_ICL](https://github.com/ybai-nlp/PCT_ICL)  
 **Area**: LLM/NLP
 **Keywords**: In-context learning, performance-critical tokens, attention ablation, template tokens, information aggregation
 

@@ -18,8 +18,8 @@ content_hash: fea9f21d4722e5ed
 # BLISS: Bandit Layer Importance Sampling Strategy for Efficient Training of Graph Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.22388](https://arxiv.org/abs/2512.22388)
-**Code**: [https://github.com/linhthi/BLISS-GNN](https://github.com/linhthi/BLISS-GNN)
+**arXiv**: [2512.22388](https://arxiv.org/abs/2512.22388)  
+**Code**: [https://github.com/linhthi/BLISS-GNN](https://github.com/linhthi/BLISS-GNN)  
 **Area**: Graph Neural Networks / Efficient Training
 **Keywords**: Graph Sampling, Layer-wise Importance Sampling, Multi-Armed Bandit, GNN Training, Scalability
 

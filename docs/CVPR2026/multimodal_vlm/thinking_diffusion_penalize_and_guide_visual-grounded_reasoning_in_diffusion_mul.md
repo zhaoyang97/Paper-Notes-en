@@ -18,8 +18,8 @@ content_hash: 8c7380ef343b3bf1
 # Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models
 
 **Conference**: CVPR2026
-**arXiv**: [2604.05497](https://arxiv.org/abs/2604.05497)
-**Code**: None
+**arXiv**: [2604.05497](https://arxiv.org/abs/2604.05497)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Diffusion language models, multimodal reasoning, Chain-of-Thought, visual grounding, remasking strategy
 
@@ -46,16 +46,16 @@ Two training-free inference-time methods are proposed: PSP suppresses premature 
 ### Key Designs
 
 1. **Position & Step Penalty (PSP)**:
-   - **Core Idea**: Apply penalties to tokens at the tail of the sequence (where answers typically reside) during early timesteps.
-   - $\tilde{C}_j^i = C_j^i \cdot [1 - \gamma(1-\tau_i)\text{rel}(j)]$
-   - $\tau_i = i/K$: diffusion progress; $\text{rel}(j)$: relative token position (0–1); $\gamma$: penalty strength.
-   - **Effect**: Tokens at later positions are strongly penalized in early timesteps, encouraging the model to complete reasoning before generating the answer.
+    - **Core Idea**: Apply penalties to tokens at the tail of the sequence (where answers typically reside) during early timesteps.
+    - $\tilde{C}_j^i = C_j^i \cdot [1 - \gamma(1-\tau_i)\text{rel}(j)]$
+    - $\tau_i = i/K$: diffusion progress; $\text{rel}(j)$: relative token position (0–1); $\gamma$: penalty strength.
+    - **Effect**: Tokens at later positions are strongly penalized in early timesteps, encouraging the model to complete reasoning before generating the answer.
 
 2. **Visual Reasoning Guidance (VRG)**:
-   - Inspired by Classifier-Free Guidance.
-   - $\text{logits}_{vrg} = \text{logits}_u + (s_{vrg}+1) \cdot (\text{logits}_c - \text{logits}_u)$
-   - $\text{logits}_c$: logits conditioned on the visual prompt; $\text{logits}_u$: unconditional logits.
-   - Amplifies the visual conditioning signal, enhancing the model's utilization of visual information.
+    - Inspired by Classifier-Free Guidance.
+    - $\text{logits}_{vrg} = \text{logits}_u + (s_{vrg}+1) \cdot (\text{logits}_c - \text{logits}_u)$
+    - $\text{logits}_c$: logits conditioned on the visual prompt; $\text{logits}_u$: unconditional logits.
+    - Amplifies the visual conditioning signal, enhancing the model's utilization of visual information.
 
 ### Loss & Training
 Fully training-free; applied at inference time only. Hyperparameters: $\gamma=0.5$, $s_{vrg}=0.5$. Greedy decoding is used throughout.

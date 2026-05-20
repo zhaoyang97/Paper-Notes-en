@@ -18,8 +18,8 @@ content_hash: e42dcaaa0c11ff20
 # SMART-R1: Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23993](https://arxiv.org/abs/2509.23993)
-**Code**: N/A
+**arXiv**: [2509.23993](https://arxiv.org/abs/2509.23993)  
+**Code**: N/A  
 **Area**: Autonomous Driving / Reinforcement Learning
 **Keywords**: multi-agent traffic simulation, R1-style, reinforcement fine-tuning, next-token prediction, policy optimization
 

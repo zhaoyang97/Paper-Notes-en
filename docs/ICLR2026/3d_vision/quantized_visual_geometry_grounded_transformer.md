@@ -18,8 +18,8 @@ content_hash: 160addc047d863a8
 # Quantized Visual Geometry Grounded Transformer
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21302](https://arxiv.org/abs/2509.21302)
-**Code**: [https://github.com/wlfeng0509/QuantVGGT](https://github.com/wlfeng0509/QuantVGGT)
+**arXiv**: [2509.21302](https://arxiv.org/abs/2509.21302)  
+**Code**: [https://github.com/wlfeng0509/QuantVGGT](https://github.com/wlfeng0509/QuantVGGT)  
 **Area**: 3D Vision / Model Compression
 **Keywords**: VGGT, post-training quantization, 3D reconstruction, Hadamard rotation, calibration
 

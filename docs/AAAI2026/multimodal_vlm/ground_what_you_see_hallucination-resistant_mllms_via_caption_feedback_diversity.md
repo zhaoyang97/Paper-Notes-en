@@ -19,8 +19,8 @@ content_hash: 02d4fbd3ef9e26c5
 # Ground What You See: Hallucination-Resistant MLLMs via Caption Feedback, Diversity-Aware Sampling, and Conflict Regularization
 
 **Conference**: AAAI2026
-**arXiv**: [2601.06224](https://arxiv.org/abs/2601.06224)
-**Code**: [ZJU-OmniAI/OMNEX-VL](https://github.com/ZJU-OmniAI/OMNEX-VL)
+**arXiv**: [2601.06224](https://arxiv.org/abs/2601.06224)  
+**Code**: [ZJU-OmniAI/OMNEX-VL](https://github.com/ZJU-OmniAI/OMNEX-VL)  
 **Area**: Multimodal VLM
 **Keywords**: MLLM hallucination, reinforcement-learning, GRPO, caption reward, NTK similarity, InfoNCE
 

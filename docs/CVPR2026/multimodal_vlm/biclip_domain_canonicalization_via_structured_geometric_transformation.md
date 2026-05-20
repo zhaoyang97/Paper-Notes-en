@@ -18,8 +18,8 @@ content_hash: 59f607c580e60346
 # BiCLIP: Domain Canonicalization via Structured Geometric Transformation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.08942](https://arxiv.org/abs/2603.08942)
-**Code**: [https://github.com/QuantitativeImagingLaboratory/BilinearCLIP](https://github.com/QuantitativeImagingLaboratory/BilinearCLIP)
+**arXiv**: [2603.08942](https://arxiv.org/abs/2603.08942)  
+**Code**: [https://github.com/QuantitativeImagingLaboratory/BilinearCLIP](https://github.com/QuantitativeImagingLaboratory/BilinearCLIP)  
 **Area**: Multimodal VLM / Few-Shot Learning
 **Keywords**: CLIP adaptation, few-shot classification, bilinear transformation, modality alignment, domain generalization
 

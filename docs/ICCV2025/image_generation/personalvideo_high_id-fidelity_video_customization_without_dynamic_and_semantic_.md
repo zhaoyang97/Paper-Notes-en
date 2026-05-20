@@ -18,8 +18,8 @@ content_hash: 1517ee819e1ddfe4
 # PersonalVideo: High ID-Fidelity Video Customization without Dynamic and Semantic Degradation
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.17048](https://arxiv.org/abs/2411.17048)
-**Code**: [https://personalvideo.github.io/](https://personalvideo.github.io/)
+**arXiv**: [2411.17048](https://arxiv.org/abs/2411.17048)  
+**Code**: [https://personalvideo.github.io/](https://personalvideo.github.io/)  
 **Area**: Image Generation
 **Keywords**: Video customization, identity preservation, reward supervision, T2V generation, semantic consistency
 

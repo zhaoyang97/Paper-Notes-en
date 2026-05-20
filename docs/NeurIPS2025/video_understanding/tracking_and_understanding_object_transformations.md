@@ -17,8 +17,8 @@ content_hash: 777ea96e61a6ebd7
 # Tracking and Understanding Object Transformations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.04678](https://arxiv.org/abs/2511.04678)
-**Code**: [Available](https://tubelet-graph.github.io)
+**arXiv**: [2511.04678](https://arxiv.org/abs/2511.04678)  
+**Code**: [Available](https://tubelet-graph.github.io)  
 **Area**: Video Understanding
 **Keywords**: object tracking, state change, video understanding, zero-shot, spatiotemporal segmentation
 

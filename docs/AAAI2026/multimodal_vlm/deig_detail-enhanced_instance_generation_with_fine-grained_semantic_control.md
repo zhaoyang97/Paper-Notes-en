@@ -18,8 +18,8 @@ content_hash: 376987692234ca9a
 # DEIG: Detail-Enhanced Instance Generation with Fine-Grained Semantic Control
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.18282](https://arxiv.org/abs/2602.18282)
-**Code**: [dushy5/DEIG](https://github.com/dushy5/DEIG)
+**arXiv**: [2602.18282](https://arxiv.org/abs/2602.18282)  
+**Code**: [dushy5/DEIG](https://github.com/dushy5/DEIG)  
 **Area**: Multimodal VLM
 **Keywords**: Multi-Instance Generation, Fine-Grained Semantic Control, Diffusion Models, Attribute Binding, Masked Attention
 

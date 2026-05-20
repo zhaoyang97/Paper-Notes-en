@@ -18,8 +18,8 @@ content_hash: 1d701475653ab7e6
 # Adjacent Words, Divergent Intents: Jailbreaking Large Language Models via Task Concurrency
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21189](https://arxiv.org/abs/2510.21189)
-**Code**: None
+**arXiv**: [2510.21189](https://arxiv.org/abs/2510.21189)  
+**Code**: None  
 **Area**: LLM Alignment
 **Keywords**: Jailbreak Attack, Task Concurrency, LLM Safety, Guardrail Bypass, Adversarial Robustness
 

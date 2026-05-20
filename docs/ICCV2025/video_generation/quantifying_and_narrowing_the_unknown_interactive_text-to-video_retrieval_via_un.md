@@ -18,8 +18,8 @@ content_hash: 06432aa3f0633c84
 # Quantifying and Narrowing the Unknown: Interactive Text-to-Video Retrieval via Uncertainty Minimization
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.15504](https://arxiv.org/abs/2507.15504)
-**Code**: [GitHub](https://github.com/bingqingzhang/umivr)
+**arXiv**: [2507.15504](https://arxiv.org/abs/2507.15504)  
+**Code**: [GitHub](https://github.com/bingqingzhang/umivr)  
 **Area**: Video Generation
 **Keywords**: Text-to-video retrieval, uncertainty quantification, interactive retrieval, semantic entropy, frame quality sampling
 

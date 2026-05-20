@@ -18,8 +18,8 @@ content_hash: 099249bbde611275
 # Learn2Synth: Learning Optimal Data Synthesis Using Hypergradients for Brain Image Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.16719](https://arxiv.org/abs/2411.16719)
-**Code**: [https://github.com/HuXiaoling/Learn2Synth](https://github.com/HuXiaoling/Learn2Synth)
+**arXiv**: [2411.16719](https://arxiv.org/abs/2411.16719)  
+**Code**: [https://github.com/HuXiaoling/Learn2Synth](https://github.com/HuXiaoling/Learn2Synth)  
 **Area**: Image Segmentation
 **Keywords**: Domain Randomization, Hypergradients, Synthetic Data Augmentation, Brain Image Segmentation, Domain Generalization
 

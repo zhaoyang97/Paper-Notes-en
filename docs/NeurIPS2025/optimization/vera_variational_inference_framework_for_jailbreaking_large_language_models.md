@@ -18,8 +18,8 @@ content_hash: a076b9731580e86d
 # VERA: Variational Inference Framework for Jailbreaking Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.22666](https://arxiv.org/abs/2506.22666)
-**Code**: None
+**arXiv**: [2506.22666](https://arxiv.org/abs/2506.22666)  
+**Code**: None  
 **Area**: AI Safety, LLM Red-Teaming, Variational Inference
 **Keywords**: Jailbreak Attack, Variational Inference, Black-Box Attack, Red-Teaming, Adversarial Prompt
 

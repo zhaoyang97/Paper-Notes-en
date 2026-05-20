@@ -18,8 +18,8 @@ content_hash: 53730a6cd3f278ba
 # SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning
 
 **Conference**: CVPR2026
-**arXiv**: [2603.27437](https://arxiv.org/abs/2603.27437)
-**Code**: [https://spatial-stack.github.io/](https://spatial-stack.github.io/)
+**arXiv**: [2603.27437](https://arxiv.org/abs/2603.27437)  
+**Code**: [https://spatial-stack.github.io/](https://spatial-stack.github.io/)  
 **Area**: Multimodal VLM
 **Keywords**: 3D spatial reasoning, geometry-language fusion, hierarchical feature fusion, VLM, VGGT
 

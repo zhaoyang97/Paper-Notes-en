@@ -18,8 +18,8 @@ content_hash: 8caf2c88c887a5f5
 # RTGaze: Real-Time 3D-Aware Gaze Redirection from a Single Image
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11289](https://arxiv.org/abs/2511.11289)
-**Code**: Unavailable
+**arXiv**: [2511.11289](https://arxiv.org/abs/2511.11289)  
+**Code**: Unavailable  
 **Area**: 3D Vision
 **Keywords**: Gaze redirection, 3D-aware, NeRF, knowledge distillation, real-time inference
 

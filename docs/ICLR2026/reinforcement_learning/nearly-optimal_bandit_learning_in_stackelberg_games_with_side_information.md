@@ -18,8 +18,8 @@ content_hash: 86e8571daa0d07a1
 # Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.00204](https://arxiv.org/abs/2502.00204)
-**Code**: None
+**arXiv**: [2502.00204](https://arxiv.org/abs/2502.00204)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Stackelberg games, online learning, contextual bandits, side information, regret bounds
 

@@ -18,8 +18,8 @@ content_hash: ed4581e6d020d459
 # VITRIX-CLIPIN: Enhancing Fine-Grained Visual Understanding in CLIP via Instruction Editing Data and Long Captions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.02329](https://arxiv.org/abs/2508.02329)
-**Code**: None
+**arXiv**: [2508.02329](https://arxiv.org/abs/2508.02329)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: CLIP, fine-grained visual understanding, instruction editing data, hard negatives, long captions
 

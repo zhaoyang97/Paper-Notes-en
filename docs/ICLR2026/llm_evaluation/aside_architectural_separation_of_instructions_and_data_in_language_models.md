@@ -18,8 +18,8 @@ content_hash: 5c883613f2a07eba
 # ASIDE: Architectural Separation of Instructions and Data in Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.10566](https://arxiv.org/abs/2503.10566)
-**Code**: None
+**arXiv**: [2503.10566](https://arxiv.org/abs/2503.10566)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: instruction-data separation, prompt injection, orthogonal rotation, token embedding, architectural safety
 

@@ -18,8 +18,8 @@ content_hash: 03168ef1f85a4dfa
 # SALMUBench: A Benchmark for Sensitive Association-Level Multimodal Unlearning
 
 **Conference**: CVPR2026
-**arXiv**: [2603.26316](https://arxiv.org/abs/2603.26316)
-**Code**: [cvc-mmu.github.io/salmubench](http://cvc-mmu.github.io/salmubench)
+**arXiv**: [2603.26316](https://arxiv.org/abs/2603.26316)  
+**Code**: [cvc-mmu.github.io/salmubench](http://cvc-mmu.github.io/salmubench)  
 **Area**: Multimodal VLM
 **Keywords**: machine unlearning, CLIP, privacy protection, association-level unlearning, benchmark
 

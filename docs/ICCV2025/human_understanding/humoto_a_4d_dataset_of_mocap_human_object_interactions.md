@@ -18,8 +18,8 @@ content_hash: 962ca4df2616e8e2
 # HUMOTO: A 4D Dataset of Mocap Human Object Interactions
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.10414](https://arxiv.org/abs/2504.10414)
-**Code**: [https://jiaxin-lu.github.io/humoto/](https://jiaxin-lu.github.io/humoto/)
+**arXiv**: [2504.10414](https://arxiv.org/abs/2504.10414)  
+**Code**: [https://jiaxin-lu.github.io/humoto/](https://jiaxin-lu.github.io/humoto/)  
 **Area**: Human Understanding / Human-Object Interaction
 **Keywords**: HOI dataset, motion capture, hand pose, multi-object interaction, LLM script generation
 
@@ -49,16 +49,16 @@ Data acquisition pipeline: Scene design → LLM script generation → Mocap + ca
 1. **Scene-Driven LLM Scripting**: Drawing inspiration from filmmaking workflows, 63 objects are first grouped logically into "rooms" (e.g., kitchen, study), and these object groups are then provided to an LLM to generate coherent interaction scripts. The LLM generates content hierarchically: first determining the scene theme, then elaborating specific action sequences (e.g., "open drawer to retrieve item → organize on table → prepare meal"), ensuring each action has a clear purpose and natural transition, avoiding isolated or meaningless motions.
 
 2. **Multi-Sensor Capture System**:
-   - **Body mocap**: Rokoko smart motion capture suit with matching gloves; 30fps inertial sensor network tracking full-body skeleton and finger joints.
-   - **Object tracking**: Dual Kinect RGB-D cameras to maximize coverage and minimize occlusion; FoundationPose algorithm for 6DoF object pose estimation.
-   - **Custom environment**: Wooden elevated stage (reducing magnetic interference from metal on inertial sensors); dual-computer UDP time synchronization.
-   - **Occlusion handling**: SAM2 combined with manual annotation for object masks; dynamic reset mechanism to handle tracking loss caused by rapid motion.
+    - **Body mocap**: Rokoko smart motion capture suit with matching gloves; 30fps inertial sensor network tracking full-body skeleton and finger joints.
+    - **Object tracking**: Dual Kinect RGB-D cameras to maximize coverage and minimize occlusion; FoundationPose algorithm for 6DoF object pose estimation.
+    - **Custom environment**: Wooden elevated stage (reducing magnetic interference from metal on inertial sensors); dual-computer UDP time synchronization.
+    - **Occlusion handling**: SAM2 combined with manual annotation for object masks; dynamic reset mechanism to handle tracking loss caused by rapid motion.
 
 3. **Multi-Stage Quality Assurance**:
-   - **Technical refinement**: Professional animators correct capture artifacts (drift, tracking errors) and ensure interaction logical consistency.
-   - **Independent validation**: A separate team verifies natural and plausible interactions and fixes joint jitter and foot sliding issues.
-   - Both stages iterate until all quality criteria are met.
-   - **Text annotation**: Three-level annotation — short title, brief script, and detailed long script.
+    - **Technical refinement**: Professional animators correct capture artifacts (drift, tracking errors) and ensure interaction logical consistency.
+    - **Independent validation**: A separate team verifies natural and plausible interactions and fixes joint jitter and foot sliding issues.
+    - Both stages iterate until all quality criteria are met.
+    - **Text annotation**: Three-level annotation — short title, brief script, and detailed long script.
 
 ### Loss & Training
 

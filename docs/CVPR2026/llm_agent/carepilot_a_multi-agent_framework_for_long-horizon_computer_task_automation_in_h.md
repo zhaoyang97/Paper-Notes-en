@@ -18,8 +18,8 @@ content_hash: 58921e14e5e7ac0f
 # CarePilot: A Multi-Agent Framework for Long-Horizon Computer Task Automation in Healthcare
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24157](https://arxiv.org/abs/2603.24157)
-**Code**: Available (CarePilot project page)
+**arXiv**: [2603.24157](https://arxiv.org/abs/2603.24157)  
+**Code**: Available (CarePilot project page)  
 **Area**: LLM Agent / Healthcare Automation
 **Keywords**: Medical software automation, multi-agent framework, Actor-Critic, long-horizon GUI interaction, dual memory mechanism
 
@@ -47,34 +47,34 @@ Natural language goal + current screenshot → Tool Grounding (UI detection + OC
 
 1. **CareFlow Benchmark (Four-Stage Annotation Pipeline)**:
 
-   - **(i) Seed Task Design**: Collaborates with domain experts to map usage patterns and operational constraints of each software system and extract a core task list.
-   - **(ii) Diversity Expansion**: Controlled substitution (e.g., "MRI report" → "X-ray report"), parameter adjustment, and step addition/removal.
-   - **(iii) Step-by-Step GUI Annotation**: Screenshot per step with precise semantic action labels for the next step.
-   - **(iv) Quality Filtering**: Temporal consistency + task completeness + instruction clarity; Cohen's $\kappa = 0.78$.
-   - Coverage: Weasis/Orthanc (DICOM), 3D Slicer (annotation), OpenEMR (EMR), OpenHospital (LIS).
-   - Scale: 1,050 tasks (735 train + 315 test, including 50 OOD), 8–24 steps per task, 6 action types (CLICK/SCROLL/ZOOM/TEXT/SEGMENT/COMPLETE).
+    - **(i) Seed Task Design**: Collaborates with domain experts to map usage patterns and operational constraints of each software system and extract a core task list.
+    - **(ii) Diversity Expansion**: Controlled substitution (e.g., "MRI report" → "X-ray report"), parameter adjustment, and step addition/removal.
+    - **(iii) Step-by-Step GUI Annotation**: Screenshot per step with precise semantic action labels for the next step.
+    - **(iv) Quality Filtering**: Temporal consistency + task completeness + instruction clarity; Cohen's $\kappa = 0.78$.
+    - Coverage: Weasis/Orthanc (DICOM), 3D Slicer (annotation), OpenEMR (EMR), OpenHospital (LIS).
+    - Scale: 1,050 tasks (735 train + 315 test, including 50 OOD), 8–24 steps per task, 6 action types (CLICK/SCROLL/ZOOM/TEXT/SEGMENT/COMPLETE).
 
 2. **Tool Grounding (Four Perception Modules)**:
 
-   - **UI Object Detection** (open-vocabulary): Given a text query, returns the bounding box of the target UI element.
-   - **Zoom/Crop**: Magnifies and inspects small controls.
-   - **OCR**: Extracts text labels (series names, patient fields, order numbers).
-   - **Template/Icon Matching**: Robust to theme, zoom, and language variations.
-   - Outputs from all four modules are aggregated into a unified grounding signal $\phi_t$.
+    - **UI Object Detection** (open-vocabulary): Given a text query, returns the bounding box of the target UI element.
+    - **Zoom/Crop**: Magnifies and inspects small controls.
+    - **OCR**: Extracts text labels (series names, patient fields, order numbers).
+    - **Template/Icon Matching**: Robust to theme, zoom, and language variations.
+    - Outputs from all four modules are aggregated into a unified grounding signal $\phi_t$.
 
 3. **Dual Memory Mechanism**:
 
-   - **Short-term memory** $\mathcal{M}_t^S = f^S(x_{t-1}, a_{t-1}, r_{t-1})$: screenshot, action, and Critic feedback from the previous step.
-   - **Long-term memory** $\mathcal{M}_t^L = f^L(\mathcal{M}_{t-1}^L, \mathcal{M}_t^S, \phi_t)$: compact trajectory embedding integrating historical states, actions, and outcomes.
-   - Action prediction is conditioned on both memory streams: $a_t = \pi_\theta(g, x_t, \mathcal{M}_t^S, \mathcal{M}_t^L)$.
-   - **Design Motivation**: Errors accumulate in long-horizon workflows; the dual memory mechanism balances rapid short-term response with long-term context retention.
+    - **Short-term memory** $\mathcal{M}_t^S = f^S(x_{t-1}, a_{t-1}, r_{t-1})$: screenshot, action, and Critic feedback from the previous step.
+    - **Long-term memory** $\mathcal{M}_t^L = f^L(\mathcal{M}_{t-1}^L, \mathcal{M}_t^S, \phi_t)$: compact trajectory embedding integrating historical states, actions, and outcomes.
+    - Action prediction is conditioned on both memory streams: $a_t = \pi_\theta(g, x_t, \mathcal{M}_t^S, \mathcal{M}_t^L)$.
+    - **Design Motivation**: Errors accumulate in long-horizon workflows; the dual memory mechanism balances rapid short-term response with long-term context retention.
 
 4. **Actor-Critic Framework**:
 
-   - Both Actor and Critic are instantiated from Qwen-VL 2.5-7B, differing only in input conditioning and functional role.
-   - Actor: observes current interface + instruction + grounding signal + memory → predicts semantic action.
-   - Critic: evaluates the Actor's proposal → provides corrective feedback or approves execution → updates dual memory.
-   - Iterative simulation training: during training, the Critic compares against reference trajectories; during inference, it relies on execution results or verifier feedback.
+    - Both Actor and Critic are instantiated from Qwen-VL 2.5-7B, differing only in input conditioning and functional role.
+    - Actor: observes current interface + instruction + grounding signal + memory → predicts semantic action.
+    - Critic: evaluates the Actor's proposal → provides corrective feedback or approves execution → updates dual memory.
+    - Iterative simulation training: during training, the Critic compares against reference trajectories; during inference, it relies on execution results or verifier feedback.
 
 ### Loss & Training
 The task is formulated as sequential decision-making: $\hat{a}_{1:T} = \mathbb{1}[V(g, x_{1:T}, a_{1:T}) = 1]$, where verifier $V$ determines whether the workflow has been successfully completed.

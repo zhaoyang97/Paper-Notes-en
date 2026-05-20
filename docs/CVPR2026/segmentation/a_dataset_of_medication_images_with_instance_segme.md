@@ -18,8 +18,8 @@ content_hash: 953be241b6a12f5e
 # MEDISEG: A Medication Image Instance Segmentation Dataset for Preventing Adverse Drug Events
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10825](https://arxiv.org/abs/2603.10825)
-**Code**: [github.com/williamcwi/MEDISEG](https://github.com/williamcwi/MEDISEG)
+**arXiv**: [2603.10825](https://arxiv.org/abs/2603.10825)  
+**Code**: [github.com/williamcwi/MEDISEG](https://github.com/williamcwi/MEDISEG)  
 **Area**: Instance Segmentation / Medical Imaging / Dataset
 **Keywords**: Medication recognition, instance segmentation, few-shot detection, dataset, medication safety
 

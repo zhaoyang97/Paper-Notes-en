@@ -18,8 +18,8 @@ content_hash: 5f9f0d518b37b2be
 # Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22069](https://arxiv.org/abs/2506.22069)
-**Code**: Coming soon
+**arXiv**: [2506.22069](https://arxiv.org/abs/2506.22069)  
+**Code**: Coming soon  
 **Area**: 3D Vision
 **Keywords**: Rolling shutter, relative pose estimation, minimal solvers, motion artifact, line field motion
 

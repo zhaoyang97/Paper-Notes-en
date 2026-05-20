@@ -18,8 +18,8 @@ content_hash: 4d32cd6652989c2e
 # Long-Context Generalization with Sparse Attention
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.16640](https://arxiv.org/abs/2506.16640)
-**Code**: [deep-spin/asentmax](https://github.com/deep-spin/asentmax)
+**arXiv**: [2506.16640](https://arxiv.org/abs/2506.16640)  
+**Code**: [deep-spin/asentmax](https://github.com/deep-spin/asentmax)  
 **Area**: Object Detection
 **Keywords**: Sparse Attention, Long-Context Generalization, α-entmax, Length Extrapolation, Transformer
 

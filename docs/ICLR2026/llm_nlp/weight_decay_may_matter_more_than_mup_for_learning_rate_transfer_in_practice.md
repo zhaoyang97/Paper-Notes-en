@@ -18,8 +18,8 @@ content_hash: a57f44e92c6db695
 # Weight Decay may matter more than μP for Learning Rate Transfer in Practice
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.19093](https://arxiv.org/abs/2510.19093)
-**Code**: N/A
+**arXiv**: [2510.19093](https://arxiv.org/abs/2510.19093)  
+**Code**: N/A  
 **Area**: LLM Training Optimization
 **Keywords**: [μP, learning rate transfer, weight decay, AdamW, feature learning]
 

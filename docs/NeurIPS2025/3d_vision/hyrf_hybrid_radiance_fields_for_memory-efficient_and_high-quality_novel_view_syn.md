@@ -18,8 +18,8 @@ content_hash: 30c9a041c4c58ac7
 # HyRF: Hybrid Radiance Fields for Memory-efficient and High-quality Novel View Synthesis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17083](https://arxiv.org/abs/2509.17083)
-**Code**: [Project Page](https://wzpscott.github.io/hyrf/)
+**arXiv**: [2509.17083](https://arxiv.org/abs/2509.17083)  
+**Code**: [Project Page](https://wzpscott.github.io/hyrf/)  
 **Area**: 3D Vision / Novel View Synthesis
 **Keywords**: 3D Gaussian Splatting, Neural Radiance Fields, Hybrid Representation, Model Compression, Real-time Rendering
 

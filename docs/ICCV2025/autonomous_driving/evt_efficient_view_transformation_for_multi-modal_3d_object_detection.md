@@ -18,8 +18,8 @@ content_hash: 52ad0836b4b99c04
 # EVT: Efficient View Transformation for Multi-Modal 3D Object Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.10715](https://arxiv.org/abs/2411.10715)
-**Code**: N/A
+**arXiv**: [2411.10715](https://arxiv.org/abs/2411.10715)  
+**Code**: N/A  
 **Area**: Autonomous Driving / 3D Object Detection
 **Keywords**: BEV representation, LiDAR-Camera fusion, view transformation, multi-modal 3D detection, real-time inference
 

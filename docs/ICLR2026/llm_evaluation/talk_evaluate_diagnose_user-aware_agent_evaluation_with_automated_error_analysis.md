@@ -18,8 +18,8 @@ content_hash: 71a246ab2fa32f96
 # Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.15483](https://arxiv.org/abs/2603.15483)
-**Code**: [GitHub](https://github.com/SAP-samples/agent-quality-inspect)
+**arXiv**: [2603.15483](https://arxiv.org/abs/2603.15483)  
+**Code**: [GitHub](https://github.com/SAP-samples/agent-quality-inspect)  
 **Area**: LLM Evaluation
 **Keywords**: Agent Evaluation, User Awareness, LLM-as-Judge, Error Analysis, Efficiency Metrics
 

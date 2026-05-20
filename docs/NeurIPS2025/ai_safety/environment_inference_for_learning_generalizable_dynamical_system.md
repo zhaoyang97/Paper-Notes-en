@@ -18,8 +18,8 @@ content_hash: fa1eb2aabf69656f
 # Environment Inference for Learning Generalizable Dynamical System
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19784](https://arxiv.org/abs/2510.19784)
-**Code**: [GitHub](https://github.com/shixuanliu-andy/DynaInfer)
+**arXiv**: [2510.19784](https://arxiv.org/abs/2510.19784)  
+**Code**: [GitHub](https://github.com/shixuanliu-andy/DynaInfer)  
 **Area**: AI Safety / Dynamical System Generalization
 **Keywords**: dynamical systems, environment inference, OOD generalization, multi-environment learning, K-means analogy
 

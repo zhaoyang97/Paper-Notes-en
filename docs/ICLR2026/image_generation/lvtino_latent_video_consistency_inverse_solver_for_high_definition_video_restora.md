@@ -18,8 +18,8 @@ content_hash: 67767fb217a4c725
 # LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.01339](https://arxiv.org/abs/2510.01339)
-**Code**: [GitHub](https://github.com/aspagnoletti/LVTINO)
+**arXiv**: [2510.01339](https://arxiv.org/abs/2510.01339)  
+**Code**: [GitHub](https://github.com/aspagnoletti/LVTINO)  
 **Area**: Video Restoration / Diffusion Models
 **Keywords**: Video Restoration, Consistency Models, Inverse Problem Solving, Zero-Shot, Diffusion Models
 

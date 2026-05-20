@@ -18,8 +18,8 @@ content_hash: 7416217c7e778c44
 # HOG-Diff: Higher-Order Guided Diffusion for Graph Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.04308](https://arxiv.org/abs/2502.04308)
-**Code**: Unavailable
+**arXiv**: [2502.04308](https://arxiv.org/abs/2502.04308)  
+**Code**: Unavailable  
 **Area**: Graph Generation
 **Keywords**: Graph generation, diffusion models, higher-order topology, cell complexes, diffusion bridges
 

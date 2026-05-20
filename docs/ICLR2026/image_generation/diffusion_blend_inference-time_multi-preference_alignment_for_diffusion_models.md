@@ -18,8 +18,8 @@ content_hash: e84af13955db82a1
 # Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.18547](https://arxiv.org/abs/2505.18547)
-**Code**: Available (GitHub)
+**arXiv**: [2505.18547](https://arxiv.org/abs/2505.18547)  
+**Code**: Available (GitHub)  
 **Area**: Diffusion Models / Multi-Objective Alignment
 **Keywords**: multi-preference alignment, inference-time, backward SDE blending, KL regularization control, Pareto-optimal
 
@@ -52,31 +52,31 @@ Two phases:
 
 1. **Proposition 1: SDE Decomposition of Aligned Models**
 
-   - Function: Decomposes the backward drift of an aligned model into a pretrained drift and a control term.
-   - Mechanism: $f^{(r,\alpha)}(x_t, t) = f^{\text{pre}}(x_t, t) - \beta(t) u^{(r,\alpha)}(x_t, t)$, where $u^{(r,\alpha)} = \nabla_{x_t} \log \mathbb{E}_{x_0 \sim p_{0|t}^{\text{pre}}}[\exp(r(x_0)/\alpha)]$.
-   - Design Motivation: Isolating the alignment effect into the control term $u^{(r,\alpha)}$ establishes the foundation for subsequent linear combination.
+    - Function: Decomposes the backward drift of an aligned model into a pretrained drift and a control term.
+    - Mechanism: $f^{(r,\alpha)}(x_t, t) = f^{\text{pre}}(x_t, t) - \beta(t) u^{(r,\alpha)}(x_t, t)$, where $u^{(r,\alpha)} = \nabla_{x_t} \log \mathbb{E}_{x_0 \sim p_{0|t}^{\text{pre}}}[\exp(r(x_0)/\alpha)]$.
+    - Design Motivation: Isolating the alignment effect into the control term $u^{(r,\alpha)}$ establishes the foundation for subsequent linear combination.
 
 2. **Jensen Gap Approximation + Linearization (Lemma 2)**
 
-   - Function: Approximates $\log \mathbb{E}[\exp(\cdot)]$ by $\mathbb{E}[\cdot]$ (exchanging the order of log-exp and expectation).
-   - Mechanism: $u^{(r,\alpha)} \approx \bar{u}^{(r,\alpha)} = \nabla_x \mathbb{E}[r(x_0)/\alpha]$. By linearity of expectation, for a linear reward $r(w) = \sum w_i r_i$, it follows that $f^{(r(w),\alpha)} \approx \sum w_i f^{(r_i, \alpha)}$.
-   - Design Motivation: The Jensen gap approximation is widely used in diffusion models (e.g., DPS/RGG), and the approximation error vanishes as $t \to 0$.
+    - Function: Approximates $\log \mathbb{E}[\exp(\cdot)]$ by $\mathbb{E}[\cdot]$ (exchanging the order of log-exp and expectation).
+    - Mechanism: $u^{(r,\alpha)} \approx \bar{u}^{(r,\alpha)} = \nabla_x \mathbb{E}[r(x_0)/\alpha]$. By linearity of expectation, for a linear reward $r(w) = \sum w_i r_i$, it follows that $f^{(r(w),\alpha)} \approx \sum w_i f^{(r_i, \alpha)}$.
+    - Design Motivation: The Jensen gap approximation is widely used in diffusion models (e.g., DPS/RGG), and the approximation error vanishes as $t \to 0$.
 
 3. **DB-MPA (Multi-Preference Alignment)**
 
-   - Function: Blends the backward SDEs of reward-finetuned models at inference time according to user weights $w$.
-   - Mechanism: At each denoising step, computes $\hat{\epsilon}_t = \sum w_i \epsilon_{\theta_i^{\text{rl}}}(x_t, t)$.
+    - Function: Blends the backward SDEs of reward-finetuned models at inference time according to user weights $w$.
+    - Mechanism: At each denoising step, computes $\hat{\epsilon}_t = \sum w_i \epsilon_{\theta_i^{\text{rl}}}(x_t, t)$.
 
 4. **DB-KLA (KL Alignment Control)**
 
-   - Function: Adjusts KL regularization strength at inference time.
-   - Mechanism: $f^{(r, \alpha/\lambda)} \approx (1-\lambda) f^{\text{pre}} + \lambda f^{(r,\alpha)}$, blending the pretrained and fine-tuned models.
+    - Function: Adjusts KL regularization strength at inference time.
+    - Mechanism: $f^{(r, \alpha/\lambda)} \approx (1-\lambda) f^{\text{pre}} + \lambda f^{(r,\alpha)}$, blending the pretrained and fine-tuned models.
 
 5. **DB-MPA-LS (Overhead-Free Approximation)**
 
-   - Function: Eliminates the $m\times$ inference overhead of DB-MPA.
-   - Mechanism: At each denoising step, a single LoRA adapter is stochastically sampled according to weights $w$ (Bernoulli/Categorical sampling) rather than evaluating all models. Proposition 2 proves that the blended SDE and the stochastic sampling SDE share identical marginal distributions.
-   - Design Motivation: Exploits the stochasticity of the diffusion process—noise injection makes step-wise stochastic sampling statistically equivalent to weighted averaging.
+    - Function: Eliminates the $m\times$ inference overhead of DB-MPA.
+    - Mechanism: At each denoising step, a single LoRA adapter is stochastically sampled according to weights $w$ (Bernoulli/Categorical sampling) rather than evaluating all models. Proposition 2 proves that the blended SDE and the stochastic sampling SDE share identical marginal distributions.
+    - Design Motivation: Exploits the stochasticity of the diffusion process—noise injection makes step-wise stochastic sampling statistically equivalent to weighted averaging.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 96755b1ede567d37
 # DLF: Extreme Image Compression with Dual-generative Latent Fusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.01428](https://arxiv.org/abs/2503.01428)
-**Code**: [dlfcodec.github.io](https://dlfcodec.github.io/)
+**arXiv**: [2503.01428](https://arxiv.org/abs/2503.01428)  
+**Code**: [dlfcodec.github.io](https://dlfcodec.github.io/)  
 **Area**: Model Compression / Image Compression
 **Keywords**: extreme low-bitrate image compression, generative codec, dual-branch encoding, vector quantization, semantic-detail decomposition
 

@@ -18,8 +18,8 @@ content_hash: 77c816b53da5841b
 # Revealing POMDPs: Qualitative and Quantitative Analysis for Parity Objectives
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13134](https://arxiv.org/abs/2511.13134)
-**Code**: None
+**arXiv**: [2511.13134](https://arxiv.org/abs/2511.13134)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: POMDP, Revealing POMDP, Parity Objectives, Computational Complexity, Quantitative Analysis
 

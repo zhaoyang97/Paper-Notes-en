@@ -20,8 +20,8 @@ content_hash: cd36305f4008ea89
 # S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07006](https://arxiv.org/abs/2511.07006)
-**Code**: Available (provided in appendix)
+**arXiv**: [2511.07006](https://arxiv.org/abs/2511.07006)  
+**Code**: Available (provided in appendix)  
 **Area**: Medical Imaging / Drug Discovery / Virtual Screening
 **Keywords**: Virtual screening, protein–ligand interaction, contrastive learning, protein sequence, 3D structure, binding site prediction, drug discovery
 

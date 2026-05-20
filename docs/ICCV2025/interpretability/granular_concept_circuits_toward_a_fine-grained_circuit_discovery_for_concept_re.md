@@ -17,8 +17,8 @@ content_hash: 2e42911c7618135a
 # Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.01728](https://arxiv.org/abs/2508.01728)
-**Code**: [https://github.com/daheekwon/GCC](https://github.com/daheekwon/GCC)
+**arXiv**: [2508.01728](https://arxiv.org/abs/2508.01728)  
+**Code**: [https://github.com/daheekwon/GCC](https://github.com/daheekwon/GCC)  
 **Area**: Interpretability
 **Keywords**: Interpretability, Visual Circuit Discovery, Concept Representations, Neuron Connectivity, Mechanistic Interpretability
 
@@ -70,10 +70,10 @@ GCC aims to discover multiple fine-grained concept circuits for a given query, e
 
 3. **Circuit Construction Algorithm**:
 
-   - **Root node extraction**: Selects neurons whose activations rank in the top 1% across all samples.
-   - **Connection criterion**: A connection is accepted when both $S_{NS} > \tau_{NS}$ and $S_{SF} > \tau_{SF}$; $\tau_{NS}$ is determined automatically via the Peak-over-Threshold (POT) method from extreme value theory; $\tau_{SF}$ uses the mean score across all nodes.
-   - **Iterative expansion**: Newly added nodes serve as new starting points, extending the search to the next layer until no further qualifying connections are found.
-   - **Efficient computation**: Previously computed source-node connections are reused, and recursive techniques avoid redundant computation.
+    - **Root node extraction**: Selects neurons whose activations rank in the top 1% across all samples.
+    - **Connection criterion**: A connection is accepted when both $S_{NS} > \tau_{NS}$ and $S_{SF} > \tau_{SF}$; $\tau_{NS}$ is determined automatically via the Peak-over-Threshold (POT) method from extreme value theory; $\tau_{SF}$ uses the mean score across all nodes.
+    - **Iterative expansion**: Newly added nodes serve as new starting points, extending the search to the next layer until no further qualifying connections are found.
+    - **Efficient computation**: Previously computed source-node connections are reused, and recursive techniques avoid redundant computation.
 
 ### Loss & Training
 

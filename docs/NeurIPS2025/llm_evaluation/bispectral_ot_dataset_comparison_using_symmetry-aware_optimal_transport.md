@@ -18,8 +18,8 @@ content_hash: 905ec2d2879ee486
 # Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20678](https://arxiv.org/abs/2509.20678)
-**Code**: [https://github.com/annabel-ma/bispectral-ot](https://github.com/annabel-ma/bispectral-ot)
+**arXiv**: [2509.20678](https://arxiv.org/abs/2509.20678)  
+**Code**: [https://github.com/annabel-ma/bispectral-ot](https://github.com/annabel-ma/bispectral-ot)  
 **Area**: Machine Learning Theory
 **Keywords**: optimal transport, bispectrum, symmetry invariance, dataset comparison, Fourier transform
 

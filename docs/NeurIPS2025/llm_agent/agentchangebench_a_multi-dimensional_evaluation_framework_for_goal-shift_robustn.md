@@ -18,8 +18,8 @@ content_hash: ad551498c7a895eb
 # AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18170](https://arxiv.org/abs/2510.18170)
-**Code**: Available (released with paper)
+**arXiv**: [2510.18170](https://arxiv.org/abs/2510.18170)  
+**Code**: Available (released with paper)  
 **Area**: LLM Agent
 **Keywords**: benchmark, goal shift, multi-turn dialogue, agent robustness, tool calling
 

@@ -19,8 +19,8 @@ content_hash: fe65d80569e9d411
 # Understanding the Role of Training Data in Test-Time Scaling
 
 **Conference**: ICLR2026
-**arXiv**: [2510.03605](https://arxiv.org/abs/2510.03605)
-**Code**: N/A
+**arXiv**: [2510.03605](https://arxiv.org/abs/2510.03605)  
+**Code**: N/A  
 **Area**: LLM Reasoning
 **Keywords**: test-time scaling, chain-of-thought, in-context learning, task hardness, overthinking, training data selection
 

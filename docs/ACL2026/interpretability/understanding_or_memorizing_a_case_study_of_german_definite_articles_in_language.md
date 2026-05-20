@@ -18,8 +18,8 @@ content_hash: ab593475a2b61816
 # Understanding or Memorizing? A Case Study of German Definite Articles in Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2601.09313](https://arxiv.org/abs/2601.09313)
-**Code**: None
+**arXiv**: [2601.09313](https://arxiv.org/abs/2601.09313)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: grammatical encoding, memorization vs. generalization, German articles, gradient-based interpretability, Gradiend
 

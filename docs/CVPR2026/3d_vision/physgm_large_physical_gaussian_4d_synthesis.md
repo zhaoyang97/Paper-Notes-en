@@ -19,8 +19,8 @@ content_hash: 283dceb7fa7062ad
 # PhysGM: Large Physical Gaussian Model for Feed-Forward 4D Synthesis
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.13911](https://arxiv.org/abs/2508.13911)
-**Code**: [Project Page](https://hihixiaolv.github.io/PhysGM.github.io/)
+**arXiv**: [2508.13911](https://arxiv.org/abs/2508.13911)  
+**Code**: [Project Page](https://hihixiaolv.github.io/PhysGM.github.io/)  
 **Area**: 3D Vision / Physical Simulation
 **Keywords**: 4D synthesis, physics-aware Gaussian, feed-forward inference, DPO alignment, single image to 4D, MPM simulation
 

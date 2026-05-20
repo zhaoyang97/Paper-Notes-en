@@ -18,8 +18,8 @@ content_hash: ba12dcd513698137
 # CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.14361](https://arxiv.org/abs/2512.14361)
-**Code**: Provided in appendix
+**arXiv**: [2512.14361](https://arxiv.org/abs/2512.14361)  
+**Code**: Provided in appendix  
 **Area**: Causal Inference / Dynamical Systems
 **Keywords**: Causal Discovery, Gaussian Processes, MDL Principle, Dynamical Systems, Irregular Sampling
 

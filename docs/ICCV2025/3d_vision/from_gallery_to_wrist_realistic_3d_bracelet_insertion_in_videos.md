@@ -19,8 +19,8 @@ content_hash: 5854d5579db2aecd
 # From Gallery to Wrist: Realistic 3D Bracelet Insertion in Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.20331](https://arxiv.org/abs/2507.20331)
-**Code**: [https://cjeen.github.io/BraceletPaper/](https://cjeen.github.io/BraceletPaper/)
+**arXiv**: [2507.20331](https://arxiv.org/abs/2507.20331)  
+**Code**: [https://cjeen.github.io/BraceletPaper/](https://cjeen.github.io/BraceletPaper/)  
 **Area**: 3D Vision
 **Keywords**: video object insertion, 3D Gaussian splatting, diffusion models, illumination enhancement, temporal consistency, virtual try-on
 

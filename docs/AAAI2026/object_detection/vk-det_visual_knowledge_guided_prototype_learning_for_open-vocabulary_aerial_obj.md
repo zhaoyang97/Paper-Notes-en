@@ -18,8 +18,8 @@ content_hash: e20755677ee50f1d
 # VK-Det: Visual Knowledge Guided Prototype Learning for Open-Vocabulary Aerial Object Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18075](https://arxiv.org/abs/2511.18075)
-**Code**: None
+**arXiv**: [2511.18075](https://arxiv.org/abs/2511.18075)  
+**Code**: None  
 **Area**: Object Detection
 **Keywords**: Open-vocabulary detection, aerial remote sensing imagery, prototype learning, knowledge distillation, pseudo-labels
 

@@ -18,8 +18,8 @@ content_hash: e3506cde1ad72ebc
 # Continuous Diffusion Model for Language Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.11564](https://arxiv.org/abs/2502.11564)
-**Code**: [GitHub](https://github.com/harryjo97/RDLM)
+**arXiv**: [2502.11564](https://arxiv.org/abs/2502.11564)  
+**Code**: [GitHub](https://github.com/harryjo97/RDLM)  
 **Area**: Generative Models / Language Modeling
 **Keywords**: [Riemannian diffusion, statistical manifold, discrete data, sphere, language model]
 

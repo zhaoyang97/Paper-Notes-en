@@ -19,7 +19,7 @@ content_hash: 7d8e981bebd62695
 # Segment and Matte Anything in a Unified Model (SAMA)
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.12147](https://arxiv.org/abs/2601.12147)
+**arXiv**: [2601.12147](https://arxiv.org/abs/2601.12147)  
 **Authors**: Zezhong Fan, Xiaohan Li, Topojoy Biswas, Kaushiki Nag, Kannan Achan
 **Area**: Image Segmentation / Image Matting
 **Keywords**: SAM Extension, Unified Segmentation and Matting, Multi-View Local Encoder, Local-Adapter, Interactive Segmentation, Alpha Matting

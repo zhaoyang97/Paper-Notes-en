@@ -19,8 +19,8 @@ content_hash: 8a717193bd5301fd
 # ToolVQA: A Dataset for Multi-step Reasoning VQA with External Tools
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.03284](https://arxiv.org/abs/2508.03284)
-**Code**: [GitHub](https://github.com/Fugtemypt123/ToolVQA-release)
+**arXiv**: [2508.03284](https://arxiv.org/abs/2508.03284)  
+**Code**: [GitHub](https://github.com/Fugtemypt123/ToolVQA-release)  
 **Area**: Multimodal VLM
 **Keywords**: Visual Question Answering, Tool Use, Multi-step Reasoning, Dataset, Large Models, Tool Agent
 

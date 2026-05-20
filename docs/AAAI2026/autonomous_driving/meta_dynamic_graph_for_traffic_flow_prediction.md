@@ -20,8 +20,8 @@ content_hash: de0c20f5f3e4c83d
 # Meta Dynamic Graph for Traffic Flow Prediction
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.10328](https://arxiv.org/abs/2601.10328)
-**Code**: [zouyiqing-221/MetaDG](https://github.com/zouyiqing-221/MetaDG)
+**arXiv**: [2601.10328](https://arxiv.org/abs/2601.10328)  
+**Code**: [zouyiqing-221/MetaDG](https://github.com/zouyiqing-221/MetaDG)  
 **Authors**: Yiqing Zou, Hanning Yuan, Qianyu Yang, Ziqiang Yuan, Shuliang Wang, Sijie Ruan (Beijing Institute of Technology)
 **Area**: Autonomous Driving
 **Keywords**: Traffic Flow Prediction, Spatio-Temporal Graph, Dynamic Graph, Meta-Learning, GCN, GRU, Spatio-Temporal Heterogeneity

@@ -18,8 +18,8 @@ content_hash: b6f9ddc3bdfd13d8
 # Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data
 
 **Conference**: ICCV 2025
-**arXiv**: [2602.07081](https://arxiv.org/abs/2602.07081)
-**Code**: [github.com/hangpt01/FedPrime](https://github.com/hangpt01/FedPrime)
+**arXiv**: [2602.07081](https://arxiv.org/abs/2602.07081)  
+**Code**: [github.com/hangpt01/FedPrime](https://github.com/hangpt01/FedPrime)  
 **Area**: Optimization
 **Keywords**: Federated Learning, Prompt-Tuning, Multimodal, Missing Modality, Heterogeneous Data
 

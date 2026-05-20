@@ -18,8 +18,8 @@ content_hash: 65645f0ad654e21a
 # Learning Dynamic Representations and Policies from Multimodal Clinical Time-Series with Informative Missingness
 
 **Conference**: ACL 2026
-**arXiv**: [2604.21235](https://arxiv.org/abs/2604.21235)
-**Code**: [GitHub](https://github.com/CausalMLResearch/OPL-MT-MNAR)
+**arXiv**: [2604.21235](https://arxiv.org/abs/2604.21235)  
+**Code**: [GitHub](https://github.com/CausalMLResearch/OPL-MT-MNAR)  
 **Area**: Medical Imaging
 **Keywords**: Multimodal clinical time-series, informative missingness, offline reinforcement learning, Bayesian filtering, ICU treatment policy
 

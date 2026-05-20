@@ -17,8 +17,8 @@ content_hash: 0c70fa9b2ad63116
 # VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions
 
 **Conference**: ACL 2026
-**arXiv**: [2604.10533](https://arxiv.org/abs/2604.10533)
-**Code**: [https://vln-nf.github.io/](https://vln-nf.github.io/)
+**arXiv**: [2604.10533](https://arxiv.org/abs/2604.10533)  
+**Code**: [https://vln-nf.github.io/](https://vln-nf.github.io/)  
 **Area**: Robotics & Embodied AI
 **Keywords**: Vision-Language Navigation, False Premise, NOT-FOUND, Embodied Exploration, Feasibility Awareness
 

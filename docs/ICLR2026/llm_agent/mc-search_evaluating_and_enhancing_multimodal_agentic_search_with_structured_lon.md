@@ -18,8 +18,8 @@ content_hash: 8cb4c108d08f9300
 # MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00873](https://arxiv.org/abs/2603.00873)
-**Code**: [https://mc-search-project.github.io](https://mc-search-project.github.io)
+**arXiv**: [2603.00873](https://arxiv.org/abs/2603.00873)  
+**Code**: [https://mc-search-project.github.io](https://mc-search-project.github.io)  
 **Area**: LLM Agent
 **Keywords**: Multimodal RAG, Agentic Search, Multi-hop Reasoning, Process-level Evaluation, Retrieval-Augmented Reasoning
 

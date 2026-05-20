@@ -18,8 +18,8 @@ content_hash: 655a9f6808079aff
 # Solving Inequality Proofs with Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07927](https://arxiv.org/abs/2506.07927)
-**Code**: [IneqMath](https://ineqmath.github.io/)
+**arXiv**: [2506.07927](https://arxiv.org/abs/2506.07927)  
+**Code**: [IneqMath](https://ineqmath.github.io/)  
 **Area**: LLM/NLP
 **Keywords**: mathematical reasoning, inequality proving, LLM-as-Judge, benchmark, reasoning evaluation
 

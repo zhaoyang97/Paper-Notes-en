@@ -18,8 +18,8 @@ content_hash: 6db571c368b19271
 # AID: Adapting Image2Video Diffusion Models for Instruction-guided Video Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2406.06465](https://arxiv.org/abs/2406.06465)
-**Code**: [https://chenhsing.github.io/AID](https://chenhsing.github.io/AID)
+**arXiv**: [2406.06465](https://arxiv.org/abs/2406.06465)  
+**Code**: [https://chenhsing.github.io/AID](https://chenhsing.github.io/AID)  
 **Area**: Image Generation
 **Keywords**: Video Prediction, Diffusion Models, Text-Guided, Stable Video Diffusion, Adapter
 

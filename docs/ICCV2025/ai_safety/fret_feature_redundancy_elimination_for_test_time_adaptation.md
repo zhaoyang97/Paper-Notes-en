@@ -18,8 +18,8 @@ content_hash: 51a1e495bf21160d
 # FRET: Feature Redundancy Elimination for Test Time Adaptation
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.10641](https://arxiv.org/abs/2505.10641)
-**Code**: [GitHub](https://anonymous.4open.science/r/fret-21BD)
+**arXiv**: [2505.10641](https://arxiv.org/abs/2505.10641)  
+**Code**: [GitHub](https://anonymous.4open.science/r/fret-21BD)  
 **Area**: AI Safety
 **Keywords**: Test-time adaptation, feature redundancy elimination, distribution shift, graph convolutional network, contrastive learning
 

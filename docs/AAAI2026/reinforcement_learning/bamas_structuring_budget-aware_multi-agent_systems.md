@@ -17,8 +17,8 @@ content_hash: 56bb7e763cec67fb
 # BAMAS: Structuring Budget-Aware Multi-Agent Systems
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.21572](https://arxiv.org/abs/2511.21572)
-**Code**: [https://github.com/chunfenri/BAMAS](https://github.com/chunfenri/BAMAS)
+**arXiv**: [2511.21572](https://arxiv.org/abs/2511.21572)  
+**Code**: [https://github.com/chunfenri/BAMAS](https://github.com/chunfenri/BAMAS)  
 **Area**: Reinforcement Learning
 **Keywords**: Budget-Aware, Multi-Agent Collaboration, Integer Linear Programming, Topology Selection, Reinforcement Learning
 

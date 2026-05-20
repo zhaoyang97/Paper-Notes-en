@@ -18,8 +18,8 @@ content_hash: ccc2303bb4263206
 # MinCD-PnP: Learning 2D-3D Correspondences with Approximate Blind PnP
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.15257](https://arxiv.org/abs/2507.15257)
-**Code**: [https://github.com/anpei96/mincd-pnp-demo](https://github.com/anpei96/mincd-pnp-demo)
+**arXiv**: [2507.15257](https://arxiv.org/abs/2507.15257)  
+**Code**: [https://github.com/anpei96/mincd-pnp-demo](https://github.com/anpei96/mincd-pnp-demo)  
 **Area**: 3D Vision
 **Keywords**: Image-to-point cloud registration, 2D-3D correspondences, PnP, Chamfer distance, multi-task learning
 

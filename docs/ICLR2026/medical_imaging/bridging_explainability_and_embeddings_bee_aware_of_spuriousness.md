@@ -18,8 +18,8 @@ content_hash: 75885aa334579338
 # Bridging Explainability and Embeddings: BEE Aware of Spuriousness
 
 **Conference**: ICLR 2026
-**arXiv**: [2410.18970](https://arxiv.org/abs/2410.18970)
-**Code**: [Publicly Available](https://arxiv.org/abs/2410.18970)
+**arXiv**: [2410.18970](https://arxiv.org/abs/2410.18970)  
+**Code**: [Publicly Available](https://arxiv.org/abs/2410.18970)  
 **Area**: Medical Imaging
 **Keywords**: Spurious correlation detection, weight space analysis, embedding geometry, linear probing, foundation models
 

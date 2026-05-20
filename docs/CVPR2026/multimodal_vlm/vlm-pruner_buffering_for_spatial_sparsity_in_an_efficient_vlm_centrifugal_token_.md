@@ -18,8 +18,8 @@ content_hash: 08e0b9c33b076a28
 # VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.02700](https://arxiv.org/abs/2512.02700)
-**Code**: [https://github.com/Casey-bit/VLMPruner](https://github.com/Casey-bit/VLMPruner)
+**arXiv**: [2512.02700](https://arxiv.org/abs/2512.02700)  
+**Code**: [https://github.com/Casey-bit/VLMPruner](https://github.com/Casey-bit/VLMPruner)  
 **Area**: Multimodal VLM
 **Keywords**: visual token pruning, inference acceleration, spatial sparsity, training-free, VLM efficiency
 

@@ -18,8 +18,8 @@ content_hash: 295088048ce4d398
 # BayesG: Bayesian Ego-Graph Inference for Networked Multi-Agent Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16606](https://arxiv.org/abs/2509.16606)
-**Code**: [https://github.com/Wei9711/BayesG](https://github.com/Wei9711/BayesG)
+**arXiv**: [2509.16606](https://arxiv.org/abs/2509.16606)  
+**Code**: [https://github.com/Wei9711/BayesG](https://github.com/Wei9711/BayesG)  
 **Area**: Autonomous Driving
 **Keywords**: Bayesian inference, ego-graph, networked MARL, dynamic communication graph, decentralization
 

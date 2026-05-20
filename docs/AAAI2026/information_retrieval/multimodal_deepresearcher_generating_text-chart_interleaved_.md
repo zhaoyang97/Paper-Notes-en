@@ -18,8 +18,8 @@ content_hash: 4f91cc0c5193f593
 # Multimodal DeepResearcher: Generating Text-Chart Interleaved Reports From Scratch with Agentic Framework
 
 **Conference**: AAAI 2026 (Oral)
-**arXiv**: [2506.02454](https://arxiv.org/abs/2506.02454)
-**Code**: [https://github.com/rickyang1114/multimodal-deepresearcher](https://github.com/rickyang1114/multimodal-deepresearcher)
+**arXiv**: [2506.02454](https://arxiv.org/abs/2506.02454)  
+**Code**: [https://github.com/rickyang1114/multimodal-deepresearcher](https://github.com/rickyang1114/multimodal-deepresearcher)  
 **Area**: Information Retrieval
 **Keywords**: Deep Research Agent, Text-Chart Interleaved Reports, Formal Description of Visualization (FDV), D3.js Chart Generation, Actor-Critic Chart Refinement
 

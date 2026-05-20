@@ -18,8 +18,8 @@ content_hash: b0a8cb6b97cf226c
 # PRISMM-Bench: A Benchmark of Peer-Review Grounded Multimodal Inconsistencies
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.16505](https://arxiv.org/abs/2510.16505)
-**Code**: [Project Page](https://da-luggas.github.io/prismm-bench/)
+**arXiv**: [2510.16505](https://arxiv.org/abs/2510.16505)  
+**Code**: [Project Page](https://da-luggas.github.io/prismm-bench/)  
 **Area**: Multimodal Evaluation / Scientific Documents
 **Keywords**: Multimodal Inconsistency, Peer Review, Scientific Papers, LMM Benchmark, JSON Debiasing
 

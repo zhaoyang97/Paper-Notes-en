@@ -18,8 +18,8 @@ content_hash: 31969d1094fd8e05
 # Unlocking Multimodal Mathematical Reasoning via Process Reward Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.04686](https://arxiv.org/abs/2501.04686)
-**Code**: [URSA-MATH](https://github.com/URSA-MATH)
+**arXiv**: [2501.04686](https://arxiv.org/abs/2501.04686)  
+**Code**: [URSA-MATH](https://github.com/URSA-MATH)  
 **Area**: LLM Reasoning
 **Keywords**: process reward model, multimodal math, GRPO, test-time scaling, chain-of-thought
 

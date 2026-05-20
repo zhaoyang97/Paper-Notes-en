@@ -18,8 +18,8 @@ content_hash: f7799de4f35c6c05
 # scDFM: Distributional Flow Matching for Robust Single-Cell Perturbation Prediction
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07103](https://arxiv.org/abs/2602.07103)
-**Code**: [GitHub](https://github.com/AI4Science-WestlakeU/scDFM)
+**arXiv**: [2602.07103](https://arxiv.org/abs/2602.07103)  
+**Code**: [GitHub](https://github.com/AI4Science-WestlakeU/scDFM)  
 **Area**: Image Generation
 **Keywords**: single-cell perturbation prediction, conditional flow matching, MMD regularization, differential attention, gene co-expression graph
 

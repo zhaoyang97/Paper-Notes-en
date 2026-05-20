@@ -18,8 +18,8 @@ content_hash: 699ff503e663b859
 # Perturbation-Induced Linearization: Constructing Unlearnable Data with Solely Linear Classifiers
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19967](https://arxiv.org/abs/2601.19967)
-**Code**: [GitHub](https://github.com/jinlinll/pil)
+**arXiv**: [2601.19967](https://arxiv.org/abs/2601.19967)  
+**Code**: [GitHub](https://github.com/jinlinll/pil)  
 **Area**: LLM Safety
 **Keywords**: Unlearnable Examples, Data Protection, Linearization, Shortcut Learning, Adversarial Perturbation
 
@@ -47,22 +47,22 @@ PIL follows a two-step pipeline: (1) train a bias-free linear classifier on clea
 
 1. **Semantic Obfuscation**:
 
-   - Function: Renders the semantic information of the original image useless after perturbation.
-   - Mechanism: Optimizes $\delta_1$ such that $f_{lin}(x - \delta_1)$ approximates a uniform distribution (minimizing KL divergence).
-   - Design Motivation: Once the deep model is linearized, the $x - \delta$ component no longer carries useful classification information.
+    - Function: Renders the semantic information of the original image useless after perturbation.
+    - Mechanism: Optimizes $\delta_1$ such that $f_{lin}(x - \delta_1)$ approximates a uniform distribution (minimizing KL divergence).
+    - Design Motivation: Once the deep model is linearized, the $x - \delta$ component no longer carries useful classification information.
 
 2. **Shortcut Learning**:
 
-   - Function: Makes the perturbation itself a strong class-discriminative signal.
-   - Mechanism: Optimizes $\delta_2$ such that the linear model can directly predict the label from $\delta_2$ with high accuracy (minimizing cross-entropy).
-   - Design Motivation: Deep models tend to take shortcuts by learning perturbation-based cues rather than the semantic features of the images.
+    - Function: Makes the perturbation itself a strong class-discriminative signal.
+    - Mechanism: Optimizes $\delta_2$ such that the linear model can directly predict the label from $\delta_2$ with high accuracy (minimizing cross-entropy).
+    - Design Motivation: Deep models tend to take shortcuts by learning perturbation-based cues rather than the semantic features of the images.
 
 3. **Joint Optimization**:
 
-   - Function: Combines both objectives into a single optimization.
-   - Mechanism: $L_{total} = \lambda L_{CE}(f_{lin}(\delta), y) + (1-\lambda) L_{KL}(f_{lin}(x-\delta), \text{uniform})$, with $\lambda=0.9$ emphasizing shortcut learning.
-   - Design Motivation: In practice, a single perturbation $\delta$ is optimized rather than separate $\delta_1$ and $\delta_2$.
-   - Key Detail: PGD-style updates are used with step size $\alpha = 8/2550$; the linear model is pre-trained before perturbation optimization begins.
+    - Function: Combines both objectives into a single optimization.
+    - Mechanism: $L_{total} = \lambda L_{CE}(f_{lin}(\delta), y) + (1-\lambda) L_{KL}(f_{lin}(x-\delta), \text{uniform})$, with $\lambda=0.9$ emphasizing shortcut learning.
+    - Design Motivation: In practice, a single perturbation $\delta$ is optimized rather than separate $\delta_1$ and $\delta_2$.
+    - Key Detail: PGD-style updates are used with step size $\alpha = 8/2550$; the linear model is pre-trained before perturbation optimization begins.
 
 ### Loss & Training
 

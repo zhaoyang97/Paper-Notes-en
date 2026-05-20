@@ -18,8 +18,8 @@ content_hash: 2827fd9dc402fa43
 # DualFocus: Depth from Focus with Spatio-Focal Dual Variational Constraints
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.21992](https://arxiv.org/abs/2509.21992)
-**Code**: Not released
+**arXiv**: [2509.21992](https://arxiv.org/abs/2509.21992)  
+**Code**: Not released  
 **Area**: 3D Vision
 **Keywords**: Depth from Focus, Variational Constraints, Focal Stack, Depth Estimation, Spatio-Focal Dual Constraints
 

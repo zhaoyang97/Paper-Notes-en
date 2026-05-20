@@ -18,8 +18,8 @@ content_hash: 852cbd30951e427c
 # DACoN: DINO for Anime Paint Bucket Colorization with Any Number of Reference Images
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.14685](https://arxiv.org/abs/2509.14685)
-**Code**: [https://github.com/kzmngt/DACoN](https://github.com/kzmngt/DACoN)
+**arXiv**: [2509.14685](https://arxiv.org/abs/2509.14685)  
+**Code**: [https://github.com/kzmngt/DACoN](https://github.com/kzmngt/DACoN)  
 **Area**: Video Generation
 **Keywords**: Anime colorization, DINOv2, line art coloring, multi-reference images, semantic correspondence
 

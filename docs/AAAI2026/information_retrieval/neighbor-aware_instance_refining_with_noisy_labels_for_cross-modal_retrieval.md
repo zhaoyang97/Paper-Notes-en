@@ -18,8 +18,8 @@ content_hash: 87a0df37eba283f9
 # Neighbor-aware Instance Refining with Noisy Labels for Cross-Modal Retrieval
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.24064](https://arxiv.org/abs/2512.24064)
-**Code**: [GitHub](https://github.com/perquisite/NIRNL)
+**arXiv**: [2512.24064](https://arxiv.org/abs/2512.24064)  
+**Code**: [GitHub](https://github.com/perquisite/NIRNL)  
 **Area**: Information Retrieval
 **Keywords**: Cross-modal retrieval, noisy labels, neighbor-aware, instance refining, robust learning
 
@@ -64,9 +64,9 @@ plus the symmetric text→image direction. Here $\mathcal{M}$ is a predefined ma
     $\hat{p}(c|\mathcal{V}_i) = \frac{1}{K} \sum_{k=1, \mathcal{V}_k \in \mathcal{N}_i^{\mathcal{V}}}^{K} \mathbb{I}[y_k^c = 1]$
 
     - **Three-way Dataset Partition**: Samples are divided into three categories based on the consistency between soft labels and ground-truth labels:
-      - **Clean subset** $\mathcal{D}_P$: Soft labels from both modalities agree with the ground truth (highly reliable labels).
-      - **Hard subset** $\mathcal{D}_H$: Only one modality agrees (uncertain label reliability).
-      - **Noisy subset** $\mathcal{D}_N$: Soft labels from both modalities disagree with the ground truth (labels are likely incorrect).
+        - **Clean subset** $\mathcal{D}_P$: Soft labels from both modalities agree with the ground truth (highly reliable labels).
+        - **Hard subset** $\mathcal{D}_H$: Only one modality agrees (uncertain label reliability).
+        - **Noisy subset** $\mathcal{D}_N$: Soft labels from both modalities disagree with the ground truth (labels are likely incorrect).
 
     - **Wasserstein Barycenter Extraction**: An EM algorithm is used to compute the semantic barycenter $\bar{u}_c$ of each class in the shared space, which is subsequently used in the loss computation for each subset.
 

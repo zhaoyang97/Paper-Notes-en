@@ -20,8 +20,8 @@ content_hash: 01b8e667a5e72d40
 # Ethics Statements in AI Music Papers: The Effective and the Ineffective
 
 **Conference**: NeurIPS 2025 (AI for Music Workshop)
-**arXiv**: [2509.25496](https://arxiv.org/abs/2509.25496)
-**Code**: None
+**arXiv**: [2509.25496](https://arxiv.org/abs/2509.25496)  
+**Code**: None  
 **Area**: AI Ethics / Music AI
 **Keywords**: ethics statements, AI music, broader impact, responsible AI, ISMIR, NIME, music generation
 

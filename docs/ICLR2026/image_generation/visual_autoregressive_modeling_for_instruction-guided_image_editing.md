@@ -18,8 +18,8 @@ content_hash: 1d228708876304c7
 # Visual Autoregressive Modeling for Instruction-Guided Image Editing
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.15772](https://arxiv.org/abs/2508.15772)
-**Code**: [GitHub](https://github.com/HiDream-ai/VAREdit)
+**arXiv**: [2508.15772](https://arxiv.org/abs/2508.15772)  
+**Code**: [GitHub](https://github.com/HiDream-ai/VAREdit)  
 **Area**: Image Generation
 **Keywords**: Image Editing, Visual Autoregressive, Multi-Scale Prediction, Instruction-Guided, Scale Alignment
 

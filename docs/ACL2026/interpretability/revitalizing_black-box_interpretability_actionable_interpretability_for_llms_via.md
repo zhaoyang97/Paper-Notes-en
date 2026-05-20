@@ -18,8 +18,8 @@ content_hash: c809fdf773bad16e
 # Revitalizing Black-Box Interpretability: Actionable Interpretability for LLMs via Proxy Models
 
 **Conference**: ACL 2026
-**arXiv**: [2505.12509](https://arxiv.org/abs/2505.12509)
-**Code**: [https://github.com/outerform/Large-Model-Explanation-Benchmark](https://github.com/outerform/Large-Model-Explanation-Benchmark)
+**arXiv**: [2505.12509](https://arxiv.org/abs/2505.12509)  
+**Code**: [https://github.com/outerform/Large-Model-Explanation-Benchmark](https://github.com/outerform/Large-Model-Explanation-Benchmark)  
 **Area**: Interpretability / LLM Optimization
 **Keywords**: Model-agnostic explanation, proxy models, black-box interpretability, prompt compression, feature attribution
 

@@ -19,8 +19,8 @@ content_hash: d0be312de86b51bb
 # Exploration of Incremental Synthetic Non-Morphed Images for Single Morphing Attack Detection
 
 **Conference**: NeurIPS 2025 (LXAI Workshop)
-**arXiv**: [2510.09836](https://arxiv.org/abs/2510.09836)
-**Code**: No public code
+**arXiv**: [2510.09836](https://arxiv.org/abs/2510.09836)  
+**Code**: No public code  
 **Area**: AI Security
 **Keywords**: S-MAD, synthetic face data, incremental training, EfficientNet, MobileNet, cross-dataset generalization
 

@@ -18,8 +18,8 @@ content_hash: 3e122de7cd676e20
 # MOOSE-Chem2: Exploring LLM Limits in Fine-Grained Scientific Hypothesis Discovery
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19209](https://arxiv.org/abs/2505.19209)
-**Code**: [https://github.com/ZonglinY/MOOSE-Chem2](https://github.com/ZonglinY/MOOSE-Chem2)
+**arXiv**: [2505.19209](https://arxiv.org/abs/2505.19209)  
+**Code**: [https://github.com/ZonglinY/MOOSE-Chem2](https://github.com/ZonglinY/MOOSE-Chem2)  
 **Area**: LLM / Scientific Discovery
 **Keywords**: Hypothesis Generation, Hierarchical Search, Chemistry, LLM Reasoning, Combinatorial Optimization
 

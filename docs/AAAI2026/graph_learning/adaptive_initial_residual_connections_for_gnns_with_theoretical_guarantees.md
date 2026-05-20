@@ -19,8 +19,8 @@ content_hash: 6b19c318fefed8d3
 # Adaptive Initial Residual Connections for GNNs with Theoretical Guarantees
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06598](https://arxiv.org/abs/2511.06598)
-**Code**: [Adaptive-IRC](https://rb.gy/dlgx42)
+**arXiv**: [2511.06598](https://arxiv.org/abs/2511.06598)  
+**Code**: [Adaptive-IRC](https://rb.gy/dlgx42)  
 **Area**: Graph Neural Networks
 **Keywords**: Adaptive residual connections, over-smoothing, Dirichlet energy, PageRank, heterophilic graphs, GNN depth
 
@@ -51,21 +51,21 @@ where $\Lambda = \text{diag}(\lambda_1, \dots, \lambda_n)$ denotes node-level re
 ### Key Designs
 
 1. **Parameterization of Adaptive Residual Strength**
-   - **Function**: Generates personalized residual weights for each node.
-   - **Mechanism**: $\Lambda = \text{diag}(\sigma(H^{(0)} W_{\text{att}}))$, where sigmoid ensures outputs lie in $(0,1)$.
-   - **Design Motivation**: Weights derived from initial features generalize to unseen nodes; sharing weights across layers reduces parameter count.
+    - **Function**: Generates personalized residual weights for each node.
+    - **Mechanism**: $\Lambda = \text{diag}(\sigma(H^{(0)} W_{\text{att}}))$, where sigmoid ensures outputs lie in $(0,1)$.
+    - **Design Motivation**: Weights derived from initial features generalize to unseen nodes; sharing weights across layers reduces parameter count.
 
 2. **Proof of a Positive Lower Bound on Dirichlet Energy (Theorem 2)**
-   - **Core Result**: $\mathcal{E}(H^{(\ell+1)}) \geq \dfrac{\zeta \bar{\sigma}_r(\Theta)}{1 - \eta \bar{\sigma}_r} \mathcal{E}(H^{(0)}) > 0$
-   - **Key Quantities**: $\eta = \alpha^2 \lambda_{\min}^2 \sigma_r^2(\mathcal{A})$, $\zeta = \alpha^2 (1 - \lambda_{\max})^2$
-   - **Proof Outline**: Lemma 1 (energy lower bound for weight matrices) + Lemma 2 (energy lower bound for the adjacency operation) → Corollary 1 → energy preservation under Leaky ReLU → recursive unrolling to obtain the convergence lower bound.
-   - **Significance**: First theoretical guarantee of over-smoothing mitigation for nonlinear IRC.
+    - **Core Result**: $\mathcal{E}(H^{(\ell+1)}) \geq \dfrac{\zeta \bar{\sigma}_r(\Theta)}{1 - \eta \bar{\sigma}_r} \mathcal{E}(H^{(0)}) > 0$
+    - **Key Quantities**: $\eta = \alpha^2 \lambda_{\min}^2 \sigma_r^2(\mathcal{A})$, $\zeta = \alpha^2 (1 - \lambda_{\max})^2$
+    - **Proof Outline**: Lemma 1 (energy lower bound for weight matrices) + Lemma 2 (energy lower bound for the adjacency operation) → Corollary 1 → energy preservation under Leaky ReLU → recursive unrolling to obtain the convergence lower bound.
+    - **Significance**: First theoretical guarantee of over-smoothing mitigation for nonlinear IRC.
 
 3. **PageRank-Based Heuristic Variant**
-   - **Function**: Replaces learned residual strengths with PageRank scores.
-   - **Mechanism**: The top-$k$% of nodes by PageRank are assigned $\lambda_{\max}$; the remainder are assigned $\lambda_{\min}$.
-   - **Design Motivation**: Node centrality is positively correlated with optimal residual strength.
-   - **Advantage**: Requires no additional learned parameters while achieving comparable or superior performance.
+    - **Function**: Replaces learned residual strengths with PageRank scores.
+    - **Mechanism**: The top-$k$% of nodes by PageRank are assigned $\lambda_{\max}$; the remainder are assigned $\lambda_{\min}$.
+    - **Design Motivation**: Node centrality is positively correlated with optimal residual strength.
+    - **Advantage**: Requires no additional learned parameters while achieving comparable or superior performance.
 
 ### Complexity
 

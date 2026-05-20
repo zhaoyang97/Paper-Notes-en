@@ -17,8 +17,8 @@ content_hash: 47386aff1dc0f3c9
 # Exploring Interpretability for Visual Prompt Tuning with Cross-layer Concepts
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.06084](https://arxiv.org/abs/2503.06084)
-**Code**: [github.com/ThomasWangY/IVPT](https://github.com/ThomasWangY/IVPT)
+**arXiv**: [2503.06084](https://arxiv.org/abs/2503.06084)  
+**Code**: [github.com/ThomasWangY/IVPT](https://github.com/ThomasWangY/IVPT)  
 **Area**: Interpretability
 **Keywords**: Visual Prompt Tuning, Interpretability, Concept Prototypes, Cross-layer Fusion, Fine-grained Classification
 

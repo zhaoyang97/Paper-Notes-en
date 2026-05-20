@@ -18,8 +18,8 @@ content_hash: 5eca387d29e407a1
 # TRACE: Your Diffusion Model is Secretly an Instance Edge Detector
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.07982](https://arxiv.org/abs/2503.07982)
-**Code**: [Project Page](https://shjo-april.github.io/TRACE)
+**arXiv**: [2503.07982](https://arxiv.org/abs/2503.07982)  
+**Code**: [Project Page](https://shjo-april.github.io/TRACE)  
 **Area**: Instance Segmentation / Panoptic Segmentation
 **Keywords**: Diffusion Models, Instance Edges, Self-Attention, IEP, Unsupervised Segmentation
 

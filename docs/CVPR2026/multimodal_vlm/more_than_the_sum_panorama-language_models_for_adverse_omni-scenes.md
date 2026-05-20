@@ -18,8 +18,8 @@ content_hash: 1d4485485fa97b93
 # More than the Sum: Panorama-Language Models for Adverse Omni-Scenes
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09573](https://arxiv.org/abs/2603.09573)
-**Code**: [https://github.com/InSAI-Lab/PanoVQA](https://github.com/InSAI-Lab/PanoVQA)
+**arXiv**: [2603.09573](https://arxiv.org/abs/2603.09573)  
+**Code**: [https://github.com/InSAI-Lab/PanoVQA](https://github.com/InSAI-Lab/PanoVQA)  
 **Area**: Multimodal VLM
 **Keywords**: Panoramic image understanding, 360° vision, VQA, sparse attention, autonomous driving
 

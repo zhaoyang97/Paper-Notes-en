@@ -18,8 +18,8 @@ content_hash: d8dfbbdb92c51df9
 # Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.12309](https://arxiv.org/abs/2604.12309)
-**Code**: N/A
+**arXiv**: [2604.12309](https://arxiv.org/abs/2604.12309)  
+**Code**: N/A  
 **Area**: 3D Vision / Video Generation
 **Keywords**: orbital video generation, 3D priors, video diffusion, multi-view consistency, geometric realism
 

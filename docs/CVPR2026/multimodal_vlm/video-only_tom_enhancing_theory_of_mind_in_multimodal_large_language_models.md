@@ -18,8 +18,8 @@ content_hash: e0f415126553f813
 # Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24484](https://arxiv.org/abs/2603.24484)
-**Code**: None (Project page: [https://founce.github.io/VisionToM](https://founce.github.io/VisionToM))
+**arXiv**: [2603.24484](https://arxiv.org/abs/2603.24484)  
+**Code**: None (Project page: [https://founce.github.io/VisionToM](https://founce.github.io/VisionToM))  
 **Area**: Multimodal VLM / Theory of Mind
 **Keywords**: Theory of Mind, Multimodal Large Language Models, Attention Intervention, Visual Reasoning, Hallucination Mitigation
 

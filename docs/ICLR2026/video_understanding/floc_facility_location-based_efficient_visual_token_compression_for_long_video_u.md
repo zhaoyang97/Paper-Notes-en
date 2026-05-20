@@ -18,8 +18,8 @@ content_hash: aac35dc69779aace
 # FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.00141](https://arxiv.org/abs/2511.00141)
-**Code**: N/A
+**arXiv**: [2511.00141](https://arxiv.org/abs/2511.00141)  
+**Code**: N/A  
 **Area**: Video Understanding / Visual Token Compression
 **Keywords**: Long video understanding, token compression, facility location, submodular function optimization, training-free
 

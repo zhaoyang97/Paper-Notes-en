@@ -18,8 +18,8 @@ content_hash: 39dbe5c451c869ed
 # Guiding a Diffusion Model by Swapping Its Tokens
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08048](https://arxiv.org/abs/2604.08048)
-**Code**: [https://github.com/VISION-SJTU/SSG](https://github.com/VISION-SJTU/SSG)
+**arXiv**: [2604.08048](https://arxiv.org/abs/2604.08048)  
+**Code**: [https://github.com/VISION-SJTU/SSG](https://github.com/VISION-SJTU/SSG)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Sampling Guidance, Training-Free Guidance, Token Swapping, Self-Perturbation, Image Fidelity
 

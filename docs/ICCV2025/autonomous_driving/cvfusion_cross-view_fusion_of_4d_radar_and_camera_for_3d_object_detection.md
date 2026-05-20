@@ -18,8 +18,8 @@ content_hash: dfe479773938fefc
 # CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04587](https://arxiv.org/abs/2507.04587)
-**Code**: [https://github.com/zhzhzhzhzhz/CVFusion](https://github.com/zhzhzhzhzhz/CVFusion)
+**arXiv**: [2507.04587](https://arxiv.org/abs/2507.04587)  
+**Code**: [https://github.com/zhzhzhzhzhz/CVFusion](https://github.com/zhzhzhzhzhz/CVFusion)  
 **Area**: Autonomous Driving
 **Keywords**: 4D millimeter-wave radar, camera fusion, 3D object detection, two-stage detection, BEV fusion
 

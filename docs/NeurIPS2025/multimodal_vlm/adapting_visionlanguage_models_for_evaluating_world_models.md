@@ -18,8 +18,8 @@ content_hash: 2a8d3135ad042aab
 # Adapting Vision-Language Models for Evaluating World Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.17967](https://arxiv.org/abs/2506.17967)
-**Code**: None
+**arXiv**: [2506.17967](https://arxiv.org/abs/2506.17967)  
+**Code**: None  
 **Area**: Multimodal VLM / World Model Evaluation
 **Keywords**: world model evaluation, VLM adaptation, action recognition, character recognition, lightweight fine-tuning
 

@@ -18,8 +18,8 @@ content_hash: 5a5d31a364525ee8
 # AICA-Bench: Holistically Examining the Capabilities of VLMs in Affective Image Content Analysis
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05900](https://arxiv.org/abs/2604.05900)
-**Code**: None
+**arXiv**: [2604.05900](https://arxiv.org/abs/2604.05900)  
+**Code**: None  
 **Area**: Multimodal VLM / Affective Computing
 **Keywords**: Sentiment Analysis, Vision-Language Models, Benchmark, Affective Reasoning, Prompt Engineering
 

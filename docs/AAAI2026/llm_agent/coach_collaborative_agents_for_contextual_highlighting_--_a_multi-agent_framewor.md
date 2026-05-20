@@ -18,8 +18,8 @@ content_hash: ed8e1cfff018188d
 # COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.01853](https://arxiv.org/abs/2512.01853)
-**Code**: [Project Page](https://aiden1020.github.io/COACH-project-page/)
+**arXiv**: [2512.01853](https://arxiv.org/abs/2512.01853)  
+**Code**: [Project Page](https://aiden1020.github.io/COACH-project-page/)  
 **Area**: LLM Agents / Sports Video Analysis
 **Keywords**: Multi-Agent Systems, Video QA, Video Summarization, Structured Chain-of-Thought, Role Specialization
 
@@ -59,9 +59,9 @@ COACH adopts a single shared backbone (Flan-T5-XL) with multi-strategy orchestra
 
 - **Function**: Enables functionally distinct role behaviors within a single shared backbone model, avoiding task interference.
 - **Mechanism**: Fine-tuning is performed by mixing multiple sets of role-specific structured CoT instruction data, inducing "multi-persona reasoning modes." Role switching relies not on different weights but on different CoT structural templates. The chain-of-thought designs for the three roles are distinctly different:
-  - **Orchestrator**: A high-degree-of-freedom "strategist" using conditional routing CoT — analyzes query intent first; single-step reasoning for text tasks; multi-step visual reasoning for video tasks; decomposes summarization tasks into sub-queries.
-  - **Localizer**: A high-precision "executor" using a rigid "observe → report" CoT — strictly parses instructions and reports only factual temporal positions; reports an empty set if nothing is found.
-  - **Critic**: An adversarial "fact-checking engine" using an "analyze assertion → compare evidence → render verdict" CoT — performs backward verification as opposed to the Orchestrator's forward reasoning.
+    - **Orchestrator**: A high-degree-of-freedom "strategist" using conditional routing CoT — analyzes query intent first; single-step reasoning for text tasks; multi-step visual reasoning for video tasks; decomposes summarization tasks into sub-queries.
+    - **Localizer**: A high-precision "executor" using a rigid "observe → report" CoT — strictly parses instructions and reports only factual temporal positions; reports an empty set if nothing is found.
+    - **Critic**: An adversarial "fact-checking engine" using an "analyze assertion → compare evidence → render verdict" CoT — performs backward verification as opposed to the Orchestrator's forward reasoning.
 - **Design Motivation**: The central challenge of a single-backbone multi-role design is role conflict. By constraining reasoning patterns through structured CoT, drastically different behaviors can be realized within the same weights while reducing deployment cost (only one model required).
 
 **Module 3: Instruction Conditioning (Role-Switching Mechanism)**

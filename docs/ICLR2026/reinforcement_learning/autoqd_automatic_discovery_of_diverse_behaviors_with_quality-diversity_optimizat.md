@@ -18,8 +18,8 @@ content_hash: cf0ad1392256c32c
 # AutoQD: Automatic Discovery of Diverse Behaviors with Quality-Diversity Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.05634](https://arxiv.org/abs/2506.05634)
-**Code**: [conflictednerd/autoqd-code](https://github.com/conflictednerd/autoqd-code)
+**arXiv**: [2506.05634](https://arxiv.org/abs/2506.05634)  
+**Code**: [conflictednerd/autoqd-code](https://github.com/conflictednerd/autoqd-code)  
 **Area**: Reinforcement Learning / Quality-Diversity Optimization
 **Keywords**: quality-diversity, occupancy measure, random Fourier features, behavior descriptor, CMA-MAE
 

@@ -18,8 +18,8 @@ content_hash: 27edcf77a3f3c2a9
 # TRAN-D: 2D Gaussian Splatting-based Sparse-view Transparent Object Depth Reconstruction via Physics Simulation for Scene Update
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.11069](https://arxiv.org/abs/2507.11069)
-**Code**: [Project Page](https://jeongyun0609.github.io/TRAN-D/)
+**arXiv**: [2507.11069](https://arxiv.org/abs/2507.11069)  
+**Code**: [Project Page](https://jeongyun0609.github.io/TRAN-D/)  
 **Area**: 3D Vision
 **Keywords**: 2D Gaussian Splatting, transparent object depth reconstruction, sparse-view, physics simulation, scene update
 

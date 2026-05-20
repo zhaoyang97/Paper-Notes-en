@@ -18,8 +18,8 @@ content_hash: 34e6c7e4ce1589c1
 # Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19918](https://arxiv.org/abs/2603.19918)
-**Code**: [GitHub](https://github.com/zhou-9527/AnaLogical-GCD)
+**arXiv**: [2603.19918](https://arxiv.org/abs/2603.19918)  
+**Code**: [GitHub](https://github.com/zhou-9527/AnaLogical-GCD)  
 **Area**: Visual Representation Learning / Category Discovery
 **Keywords**: Generalized Category Discovery, Analogical Learning, Vision-Language Models, Cross-Modal Reasoning, CLIP
 

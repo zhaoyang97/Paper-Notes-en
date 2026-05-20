@@ -18,8 +18,8 @@ content_hash: e955f489c6adc475
 # Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01864](https://arxiv.org/abs/2602.01864)
-**Code**: [https://github.com/vivoCameraResearch/AdaRefSR](https://github.com/vivoCameraResearch/AdaRefSR)
+**arXiv**: [2602.01864](https://arxiv.org/abs/2602.01864)  
+**Code**: [https://github.com/vivoCameraResearch/AdaRefSR](https://github.com/vivoCameraResearch/AdaRefSR)  
 **Area**: Image Restoration
 **Keywords**: Reference-based Super-Resolution, diffusion model, Adaptive Gating, Implicit Correlation, Single-step Diffusion
 

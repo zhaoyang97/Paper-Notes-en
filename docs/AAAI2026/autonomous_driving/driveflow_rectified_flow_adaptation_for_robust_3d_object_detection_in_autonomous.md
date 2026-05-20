@@ -18,8 +18,8 @@ content_hash: 1b9485f26e13b51c
 # DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18713](https://arxiv.org/abs/2511.18713)
-**Code**: [Available](https://github.com/Hongbin98/DriveFlow)
+**arXiv**: [2511.18713](https://arxiv.org/abs/2511.18713)  
+**Code**: [Available](https://github.com/Hongbin98/DriveFlow)  
 **Area**: Autonomous Driving
 **Keywords**: 3D Object Detection, Data Augmentation, Rectified Flow, Image Editing, Robustness
 

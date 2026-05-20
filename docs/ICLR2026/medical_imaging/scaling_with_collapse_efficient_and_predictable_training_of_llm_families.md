@@ -18,8 +18,8 @@ content_hash: 9c8f371aab2c2d82
 # Scaling with Collapse: Efficient and Predictable Training of LLM Families
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25087](https://arxiv.org/abs/2509.25087)
-**Code**: None
+**arXiv**: [2509.25087](https://arxiv.org/abs/2509.25087)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: training loss curve collapse, hyperparameter scaling, training diagnostics, early stopping, Cerebras
 

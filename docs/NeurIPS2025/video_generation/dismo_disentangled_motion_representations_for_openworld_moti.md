@@ -18,8 +18,8 @@ content_hash: 8a01b4c70eb316f3
 # DisMo: Disentangled Motion Representations for Open-World Motion Transfer
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.23428](https://arxiv.org/abs/2511.23428)
-**Code**: [https://compvis.github.io/DisMo](https://compvis.github.io/DisMo) (project page)
+**arXiv**: [2511.23428](https://arxiv.org/abs/2511.23428)  
+**Code**: [https://compvis.github.io/DisMo](https://compvis.github.io/DisMo) (project page)  
 **Area**: Video Generation / Motion Transfer / Representation Learning
 **Keywords**: motion disentanglement, open-world motion transfer, flow matching, abstract motion representation, action classification
 

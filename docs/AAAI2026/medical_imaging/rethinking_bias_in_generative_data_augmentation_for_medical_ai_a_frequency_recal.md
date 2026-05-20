@@ -18,8 +18,8 @@ content_hash: 1a58087081b1c071
 # Rethinking Bias in Generative Data Augmentation for Medical AI: a Frequency Recalibration Approach
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12301](https://arxiv.org/abs/2511.12301)
-**Code**: None
+**arXiv**: [2511.12301](https://arxiv.org/abs/2511.12301)  
+**Code**: None  
 **Area**: Medical Imaging / Data Augmentation / Frequency Domain Analysis
 **Keywords**: Generative data augmentation, frequency bias, medical image classification, denoising autoencoder, frequency recalibration
 

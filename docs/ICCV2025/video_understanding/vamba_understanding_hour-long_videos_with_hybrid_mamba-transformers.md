@@ -18,8 +18,8 @@ content_hash: 301c46c1e2ce5cd3
 # Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11579](https://arxiv.org/abs/2503.11579)
-**Code**: [GitHub](https://tiger-ai-lab.github.io/Vamba/)
+**arXiv**: [2503.11579](https://arxiv.org/abs/2503.11579)  
+**Code**: [GitHub](https://tiger-ai-lab.github.io/Vamba/)  
 **Area**: Video Understanding
 **Keywords**: Long video understanding, Mamba, hybrid architecture, large multimodal models, computational efficiency
 
@@ -72,8 +72,8 @@ The overall prefill complexity is reduced from $O(d(M+N)^2)$ to $O(dMN + d^2M)$.
 
 3. **Two-stage training**
 
-   - **Pretraining**: Pretrained weights are frozen; only the newly introduced cross-attention and Mamba layers are trained, using approximately 3 million image caption samples to recover visual understanding capability.
-   - **Instruction tuning**: Full fine-tuning on approximately 7 million image and video instruction samples to enhance instruction-following ability.
+    - **Pretraining**: Pretrained weights are frozen; only the newly introduced cross-attention and Mamba layers are trained, using approximately 3 million image caption samples to recover visual understanding capability.
+    - **Instruction tuning**: Full fine-tuning on approximately 7 million image and video instruction samples to enhance instruction-following ability.
 
 ### Loss & Training
 

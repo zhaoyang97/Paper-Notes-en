@@ -18,8 +18,8 @@ content_hash: 58f01fda8584a312
 # Enhancing Hallucination Detection via Future Context
 
 **Conference**: ACL 2026
-**arXiv**: [2507.20546](https://arxiv.org/abs/2507.20546)
-**Code**: N/A
+**arXiv**: [2507.20546](https://arxiv.org/abs/2507.20546)  
+**Code**: N/A  
 **Area**: LLM Safety
 **Keywords**: hallucination detection, future context, black-box generator, sampling methods, snowball effect
 

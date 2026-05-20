@@ -18,8 +18,8 @@ content_hash: aee92c06ba21d564
 # Referring Expression Comprehension for Small Objects
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.03701](https://arxiv.org/abs/2510.03701)
-**Code**: [GitHub](https://github.com/mmaiLab/sorec)
+**arXiv**: [2510.03701](https://arxiv.org/abs/2510.03701)  
+**Code**: [GitHub](https://github.com/mmaiLab/sorec)  
 **Area**: Autonomous Driving
 **Keywords**: Referring Expression Comprehension, Small Object Detection, Parameter-Efficient Fine-Tuning, Progressive Zooming, GroundingDINO
 

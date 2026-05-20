@@ -18,8 +18,8 @@ content_hash: e362c43d5730b0b5
 # On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study
 
 **Conference**: ICLR2026
-**arXiv**: [2505.11839](https://arxiv.org/abs/2505.11839)
-**Code**: To be confirmed
+**arXiv**: [2505.11839](https://arxiv.org/abs/2505.11839)  
+**Code**: To be confirmed  
 **Area**: Causal Reasoning
 **Keywords**: counterfactual reasoning, structural causal model, LLM evaluation, decompositional analysis, tool-augmented learning
 

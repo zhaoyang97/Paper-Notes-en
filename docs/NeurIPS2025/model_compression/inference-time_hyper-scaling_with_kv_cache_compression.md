@@ -18,8 +18,8 @@ content_hash: be0baa7559ea8da0
 # Inference-Time Hyper-Scaling with KV Cache Compression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05345](https://arxiv.org/abs/2506.05345)
-**Code**: [HuggingFace Models](https://huggingface.co/nvidia/Qwen3-8B-DMS-8x) (NVIDIA Open Source)
+**arXiv**: [2506.05345](https://arxiv.org/abs/2506.05345)  
+**Code**: [HuggingFace Models](https://huggingface.co/nvidia/Qwen3-8B-DMS-8x) (NVIDIA Open Source)  
 **Area**: Model Compression / Inference Acceleration
 **Keywords**: KV Cache Compression, Inference-Time Scaling, Sparse Attention, Dynamic Memory Sparsification, Long-Sequence Reasoning
 

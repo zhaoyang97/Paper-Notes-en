@@ -19,8 +19,8 @@ content_hash: bc66afa5a3ed122c
 # Rooftop Wind Field Reconstruction Using Sparse Sensors: From Deterministic to Generative Learning Methods
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13077](https://arxiv.org/abs/2603.13077)
-**Code**: [github.com/Yng314/windreconstruction](https://github.com/Yng314/windreconstruction)
+**arXiv**: [2603.13077](https://arxiv.org/abs/2603.13077)  
+**Code**: [github.com/Yng314/windreconstruction](https://github.com/Yng314/windreconstruction)  
 **Area**: Other / Fluid Reconstruction
 **Keywords**: wind field reconstruction, sparse sensors, UNet, ViTAE, CWGAN, PIV experimental data, sensor optimization
 
@@ -51,22 +51,22 @@ Experimental data were acquired in the boundary layer wind tunnel at the Institu
 ### Key Designs
 
 1. **Complementary Design of Four Comparison Methods**:
-   - Kriging interpolation: traditional geostatistical method with Gaussian variogram (correlation length 0.5–10.0 grid units), zero nugget effect enforcing exact interpolation, reliant on spatial stationarity assumptions; serves as baseline
-   - UNet (472K parameters / 0.03 GFLOPs): encoder-decoder with skip connections, deterministic mapping, 3-layer downsampling (16→8→4→2), filters scaling from 32 to 128 channels, 1×1 convolution output
-   - ViTAE (467K parameters / 0.02 GFLOPs): Transformer–CNN hybrid architecture, 3×3 patch partitioning producing 25 patches, linearly projected to 64 dimensions, 8-layer Transformer encoder (8-head attention), CNN decoder restoring spatial resolution
-   - CWGAN (8.77M parameters / 1.3 GFLOPs): conditional Wasserstein GAN; generator follows UNet architecture (64→128→256 channels); discriminator uses strided convolutions + LeakyReLU, with sigmoid removed to accommodate the Wasserstein distance
-   - **Design Motivation**: the three DL architectures represent three distinct modeling philosophies—deterministic mapping, hybrid attention, and generative adversarial modeling
+    - Kriging interpolation: traditional geostatistical method with Gaussian variogram (correlation length 0.5–10.0 grid units), zero nugget effect enforcing exact interpolation, reliant on spatial stationarity assumptions; serves as baseline
+    - UNet (472K parameters / 0.03 GFLOPs): encoder-decoder with skip connections, deterministic mapping, 3-layer downsampling (16→8→4→2), filters scaling from 32 to 128 channels, 1×1 convolution output
+    - ViTAE (467K parameters / 0.02 GFLOPs): Transformer–CNN hybrid architecture, 3×3 patch partitioning producing 25 patches, linearly projected to 64 dimensions, 8-layer Transformer encoder (8-head attention), CNN decoder restoring spatial resolution
+    - CWGAN (8.77M parameters / 1.3 GFLOPs): conditional Wasserstein GAN; generator follows UNet architecture (64→128→256 channels); discriminator uses strided convolutions + LeakyReLU, with sigmoid removed to accommodate the Wasserstein distance
+    - **Design Motivation**: the three DL architectures represent three distinct modeling philosophies—deterministic mapping, hybrid attention, and generative adversarial modeling
 
 2. **SDT vs. MDT Training Strategies**:
-   - SDT (single-direction training): trained exclusively on three experimental runs at 0°, tested on 22.5° and 45° for cross-directional generalization
-   - MDT (multi-direction training): one experimental run per wind direction ($\mathcal{D}_{0°}^{(1)}, \mathcal{D}_{22.5°}^{(1)}, \mathcal{D}_{45°}^{(1)}$) used for training; remaining independent runs used for testing
-   - Data splits are performed by independent experimental runs rather than random snapshot sampling; no temporal continuity exists across runs → prevents temporal leakage
-   - **Design Motivation**: wind direction varies in real-world deployment; MDT evaluates model generalization under realistic conditions
+    - SDT (single-direction training): trained exclusively on three experimental runs at 0°, tested on 22.5° and 45° for cross-directional generalization
+    - MDT (multi-direction training): one experimental run per wind direction ($\mathcal{D}_{0°}^{(1)}, \mathcal{D}_{22.5°}^{(1)}, \mathcal{D}_{45°}^{(1)}$) used for training; remaining independent runs used for testing
+    - Data splits are performed by independent experimental runs rather than random snapshot sampling; no temporal continuity exists across runs → prevents temporal leakage
+    - **Design Motivation**: wind direction varies in real-world deployment; MDT evaluates model generalization under realistic conditions
 
 3. **QR Decomposition-Based Sensor Placement Optimization**:
-   - A wind field data matrix $\mathbf{Y} \in \mathbb{R}^{N \times 450}$ is constructed from training data; after centering, SVD extracts POD modes, retaining the top $r=40$ modes (covering 84.6% of total energy) to form the reduced basis matrix $\boldsymbol{\Psi}_r \in \mathbb{R}^{450 \times r}$
-   - Column-pivoted QR decomposition is applied to $\boldsymbol{\Psi}_r^T$: $\boldsymbol{\Psi}_r^T \mathbf{P} = \mathbf{Q}\mathbf{R}$; the column ordering of the permutation matrix $\mathbf{P}$ yields the sensor importance ranking
-   - **Design Motivation**: maximizes the linear independence of the measurement matrix $\mathbf{H}\boldsymbol{\Psi}_r$, ensuring selected sensors provide maximum information about dominant flow structures
+    - A wind field data matrix $\mathbf{Y} \in \mathbb{R}^{N \times 450}$ is constructed from training data; after centering, SVD extracts POD modes, retaining the top $r=40$ modes (covering 84.6% of total energy) to form the reduced basis matrix $\boldsymbol{\Psi}_r \in \mathbb{R}^{450 \times r}$
+    - Column-pivoted QR decomposition is applied to $\boldsymbol{\Psi}_r^T$: $\boldsymbol{\Psi}_r^T \mathbf{P} = \mathbf{Q}\mathbf{R}$; the column ordering of the permutation matrix $\mathbf{P}$ yields the sensor importance ranking
+    - **Design Motivation**: maximizes the linear independence of the measurement matrix $\mathbf{H}\boldsymbol{\Psi}_r$, ensuring selected sensors provide maximum information about dominant flow structures
 
 ### Loss & Training
 

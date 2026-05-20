@@ -17,8 +17,8 @@ content_hash: d1520a2e3f5f6ebc
 # Locality-Sensitive Hashing-Based Efficient Point Transformer for Charged Particle Reconstruction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07594](https://arxiv.org/abs/2510.07594)
-**Code**: Available
+**arXiv**: [2510.07594](https://arxiv.org/abs/2510.07594)  
+**Code**: Available  
 **Area**: 3D Vision / Particle Physics
 **Keywords**: Point Transformer, Locality-Sensitive Hashing, Particle Tracking, End-to-End Learning
 
@@ -46,21 +46,21 @@ A three-stage pipeline: (1) Metric learning (LSH encoding) — hashing detector 
 
 1. **LSH Encoder**
 
-   - Function: The E2LSH scheme maps nearby hits to the same 1D bucket, enabling block-diagonal attention.
-   - Mechanism: The OR construction uses $m_1$ independent hash tables; the AND construction concatenates $m_2$ hash functions per table, $h_j(x) = \lfloor(a_j \cdot x + b_j)/r\rfloor$.
-   - Design Motivation: Regular memory access patterns are GPU-friendly; intra-bucket self-attention incurs $O(1)$ cost.
+    - Function: The E2LSH scheme maps nearby hits to the same 1D bucket, enabling block-diagonal attention.
+    - Mechanism: The OR construction uses $m_1$ independent hash tables; the AND construction concatenates $m_2$ hash functions per table, $h_j(x) = \lfloor(a_j \cdot x + b_j)/r\rfloor$.
+    - Design Motivation: Regular memory access patterns are GPU-friendly; intra-bucket self-attention incurs $O(1)$ cost.
 
 2. **End-to-End Track Assignment Decoder**
 
-   - Function: A fixed set of 3,000 learnable track queries predicts track assignments via self-attention and cross-attention.
-   - Mechanism: A binary hit classifier determines whether a hit belongs to a track; the query-based decoder (self-attention → cross-attention → feed-forward layer) outputs per-query confidence scores and dense mask logits.
-   - Design Motivation: Eliminates DBScan post-processing, adding only 17% computational overhead (4 ms) compared to the 1,401 ms required by DBScan.
+    - Function: A fixed set of 3,000 learnable track queries predicts track assignments via self-attention and cross-attention.
+    - Mechanism: A binary hit classifier determines whether a hit belongs to a track; the query-based decoder (self-attention → cross-attention → feed-forward layer) outputs per-query confidence scores and dense mask logits.
+    - Design Motivation: Eliminates DBScan post-processing, adding only 17% computational overhead (4 ms) compared to the 1,401 ms required by DBScan.
 
 3. **Joint Loss Function**
 
-   - Function: Five loss terms are jointly optimized.
-   - Mechanism: $\mathcal{L} = \lambda_{nce}\mathcal{L}_{NCE} + \lambda_{clf}\mathcal{L}_{CLF} + \lambda_{ce}\mathcal{L}_{CE} + \lambda_{mask}\mathcal{L}_{BCE} + \lambda_{dice}\mathcal{L}_{Dice}$
-   - Design Motivation: The InfoNCE contrastive loss clusters hits from the same particle, complemented by classification and mask losses, covering the full pipeline from embedding to assignment.
+    - Function: Five loss terms are jointly optimized.
+    - Mechanism: $\mathcal{L} = \lambda_{nce}\mathcal{L}_{NCE} + \lambda_{clf}\mathcal{L}_{CLF} + \lambda_{ce}\mathcal{L}_{CE} + \lambda_{mask}\mathcal{L}_{BCE} + \lambda_{dice}\mathcal{L}_{Dice}$
+    - Design Motivation: The InfoNCE contrastive loss clusters hits from the same particle, complemented by classification and mask losses, covering the full pipeline from embedding to assignment.
 
 ### Loss & Training
 

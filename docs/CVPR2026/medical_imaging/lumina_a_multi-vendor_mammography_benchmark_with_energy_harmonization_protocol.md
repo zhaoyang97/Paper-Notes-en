@@ -18,8 +18,8 @@ content_hash: 8090fb235833770f
 # LUMINA: A Multi-Vendor Mammography Benchmark with Energy Harmonization Protocol
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14644](https://arxiv.org/abs/2603.14644)
-**Code**: [Available](https://github.com/NUBagciLab/LUMINA)
+**arXiv**: [2603.14644](https://arxiv.org/abs/2603.14644)  
+**Code**: [Available](https://github.com/NUBagciLab/LUMINA)  
 **Area**: Medical Imaging
 **Keywords**: mammography, multi-vendor dataset, energy harmonization, histogram matching, benchmark
 

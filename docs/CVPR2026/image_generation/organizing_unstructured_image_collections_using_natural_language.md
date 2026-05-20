@@ -18,8 +18,8 @@ content_hash: db37724ee29c8c95
 # Organizing Unstructured Image Collections using Natural Language
 
 **Conference**: CVPR 2026
-**arXiv**: [2410.05217](https://arxiv.org/abs/2410.05217)
-**Code**: [https://oatmealliu.github.io/xcluster.html](https://oatmealliu.github.io/xcluster.html)
+**arXiv**: [2410.05217](https://arxiv.org/abs/2410.05217)  
+**Code**: [https://oatmealliu.github.io/xcluster.html](https://oatmealliu.github.io/xcluster.html)  
 **Area**: Image Generation
 **Keywords**: Open Semantic Multi-Clustering, Image Organization, Natural Language, Large Language Models, Multi-Granularity Clustering
 

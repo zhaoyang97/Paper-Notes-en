@@ -18,8 +18,8 @@ content_hash: b37ea4bfa518100e
 # The Invisibility Hypothesis: Promises of AGI and the Future of the Global South
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01616](https://arxiv.org/abs/2603.01616)
-**Code**: None
+**arXiv**: [2603.01616](https://arxiv.org/abs/2603.01616)  
+**Code**: None  
 **Area**: AI & Society / AI Ethics
 **Keywords**: AGI, Global South, Invisibility Hypothesis, economic inequality, informal economy, AI governance
 
@@ -53,19 +53,19 @@ This is a conceptual analysis paper. The argumentative chain proceeds as follows
 ### Key Designs
 
 1. **Formal Definition of the Invisibility Hypothesis**:
-   - *Function*: Operationally define "economic invisibility" under AI systems.
-   - *Mechanism*: As AI systems become the coordination layer for economic and political allocation, AI-mediated allocation optimizes for measurable and verifiable entities—$\text{Visibility} \propto f(\text{digital identity}, \text{standardized transactions}, \text{auditable outputs})$—individuals lacking these attributes face managed exclusion.
-   - *Design Motivation*: Unlike the traditional "digital divide" (which concerns access), the Invisibility Hypothesis addresses relevance and participation in the AI era.
+    - *Function*: Operationally define "economic invisibility" under AI systems.
+    - *Mechanism*: As AI systems become the coordination layer for economic and political allocation, AI-mediated allocation optimizes for measurable and verifiable entities—$\text{Visibility} \propto f(\text{digital identity}, \text{standardized transactions}, \text{auditable outputs})$—individuals lacking these attributes face managed exclusion.
+    - *Design Motivation*: Unlike the traditional "digital divide" (which concerns access), the Invisibility Hypothesis addresses relevance and participation in the AI era.
 
 2. **Self-Reinforcing Exclusion Cycle**:
-   - *Function*: Reveal the positive feedback mechanism of exclusion—why invisibility, once initiated, is difficult to reverse.
-   - *Mechanism*: Denied credit/contracts/insurance → fewer verifiable records and standardized signals generated → further reduced visibility in AI systems → harder to re-enter → $\text{Exclusion}_t \to \text{Less Data}_{t+1} \to \text{Lower Visibility}_{t+2} \to \text{More Exclusion}_{t+3}$
-   - *Design Motivation*: This cycle explains why being *ignored* is harder to reverse than being *oppressed*—oppression still implies the system depends on you; being ignored means the system has already bypassed you.
+    - *Function*: Reveal the positive feedback mechanism of exclusion—why invisibility, once initiated, is difficult to reverse.
+    - *Mechanism*: Denied credit/contracts/insurance → fewer verifiable records and standardized signals generated → further reduced visibility in AI systems → harder to re-enter → $\text{Exclusion}_t \to \text{Less Data}_{t+1} \to \text{Lower Visibility}_{t+2} \to \text{More Exclusion}_{t+3}$
+    - *Design Motivation*: This cycle explains why being *ignored* is harder to reverse than being *oppressed*—oppression still implies the system depends on you; being ignored means the system has already bypassed you.
 
 3. **Three-Trajectory Analytical Framework**:
-   - *Function*: Systematically derive three differentiated impact trajectories of AGI on the Global South.
-   - *Mechanism*: Structural factors (compute, infrastructure, institutions, geopolitics) serve as branching variables, yielding three trajectories: utopia (geography becomes irrelevant), collapse (from exploitation to irrelevance), and middle ground (existing inequalities amplified).
-   - *Design Motivation*: Avoid the single narrative of technological determinism; acknowledge uncertainty and provide a multi-path framework for risk analysis.
+    - *Function*: Systematically derive three differentiated impact trajectories of AGI on the Global South.
+    - *Mechanism*: Structural factors (compute, infrastructure, institutions, geopolitics) serve as branching variables, yielding three trajectories: utopia (geography becomes irrelevant), collapse (from exploitation to irrelevance), and middle ground (existing inequalities amplified).
+    - *Design Motivation*: Avoid the single narrative of technological determinism; acknowledge uncertainty and provide a multi-path framework for risk analysis.
 
 ## Key Experimental Results
 

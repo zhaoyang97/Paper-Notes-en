@@ -20,8 +20,8 @@ content_hash: c959bd530bd430ad
 # Hybrid-TTA: Continual Test-time Adaptation via Dynamic Domain Shift Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2409.08566](https://arxiv.org/abs/2409.08566)
-**Code**: Not released
+**arXiv**: [2409.08566](https://arxiv.org/abs/2409.08566)  
+**Code**: Not released  
 **Area**: Continual Test-Time Adaptation / Semantic Segmentation
 **Keywords**: Test-time adaptation, domain shift detection, full fine-tuning, efficient fine-tuning, masked image modeling, semantic segmentation, Teacher-Student
 

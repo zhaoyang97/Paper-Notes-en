@@ -18,8 +18,8 @@ content_hash: 5c553feb7a841669
 # Shoot First, Ask Questions Later? Building Rational Agents that Explore and Act Like People
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.20886](https://arxiv.org/abs/2510.20886)
-**Code**: [Project Page](https://gabegrand.github.io/battleship)
+**arXiv**: [2510.20886](https://arxiv.org/abs/2510.20886)  
+**Code**: [Project Page](https://gabegrand.github.io/battleship)  
 **Area**: Medical Imaging (classified as such; actually AI Agent / Cognitive Science)
 **Keywords**: Information-seeking agents, Bayesian experimental design, language model reasoning, exploration-exploitation trade-off, Monte Carlo inference
 

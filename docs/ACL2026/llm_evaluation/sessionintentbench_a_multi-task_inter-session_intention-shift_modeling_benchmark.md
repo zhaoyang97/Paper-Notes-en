@@ -18,8 +18,8 @@ content_hash: 3a453704ee6e24ad
 # SessionIntentBench: A Multi-Task Inter-Session Intention-Shift Modeling Benchmark
 
 **Conference**: ACL 2026
-**arXiv**: [2507.20185](https://arxiv.org/abs/2507.20185)
-**Code**: None
+**arXiv**: [2507.20185](https://arxiv.org/abs/2507.20185)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: shopping intent, session modeling, e-commerce recommendation, intent shift, large language model evaluation
 

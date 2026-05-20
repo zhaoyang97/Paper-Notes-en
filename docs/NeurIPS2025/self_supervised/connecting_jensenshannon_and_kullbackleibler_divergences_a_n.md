@@ -18,8 +18,8 @@ content_hash: c8e754e1ed6a6f85
 # Connecting Jensen-Shannon and Kullback-Leibler Divergences: A New Bound for Representation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20644](https://arxiv.org/abs/2510.20644)
-**Code**: [https://github.com/ReubenDo/JSDlowerbound](https://github.com/ReubenDo/JSDlowerbound)
+**arXiv**: [2510.20644](https://arxiv.org/abs/2510.20644)  
+**Code**: [https://github.com/ReubenDo/JSDlowerbound](https://github.com/ReubenDo/JSDlowerbound)  
 **Area**: Self-Supervised Learning / Information Theory
 **Keywords**: mutual information, Jensen-Shannon divergence, KL divergence, variational bound, representation learning
 

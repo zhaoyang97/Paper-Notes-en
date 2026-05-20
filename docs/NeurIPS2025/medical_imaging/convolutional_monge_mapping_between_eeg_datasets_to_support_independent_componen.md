@@ -18,8 +18,8 @@ content_hash: d4e31ee2b24c2c09
 # Convolutional Monge Mapping between EEG Datasets to Support Independent Component Labeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.01721](https://arxiv.org/abs/2509.01721)
-**Code**: [https://github.com/cniel-ud/ICWaves](https://github.com/cniel-ud/ICWaves)
+**arXiv**: [2509.01721](https://arxiv.org/abs/2509.01721)  
+**Code**: [https://github.com/cniel-ud/ICWaves](https://github.com/cniel-ud/ICWaves)  
 **Area**: EEG Signal Processing / Domain Adaptation
 **Keywords**: EEG, Domain Adaptation, Optimal Transport, Convolutional Monge Mapping, Independent Component Classification
 

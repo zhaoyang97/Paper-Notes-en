@@ -19,8 +19,8 @@ content_hash: 4d9604b441761c21
 # Let it Snow! Animating 3D Gaussian Scenes with Dynamic Weather Effects via Physics-Guided Score Distillation
 
 **Conference**: CVPR2026
-**arXiv**: [2504.05296](https://arxiv.org/abs/2504.05296)
-**Code**: [Project Page](https://galfiebelman.github.io/let-it-snow/)
+**arXiv**: [2504.05296](https://arxiv.org/abs/2504.05296)  
+**Code**: [Project Page](https://galfiebelman.github.io/let-it-snow/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Dynamic Scene Editing, Weather Effects, Physics Simulation, Score Distillation Sampling, MPM
 

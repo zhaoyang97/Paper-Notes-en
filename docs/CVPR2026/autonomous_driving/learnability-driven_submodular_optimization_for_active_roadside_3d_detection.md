@@ -20,8 +20,8 @@ content_hash: 812d6a0820856e33
 # Learnability-Driven Submodular Optimization for Active Roadside 3D Detection
 
 **Conference**: CVPR2026
-**arXiv**: [2601.01695](https://arxiv.org/abs/2601.01695)
-**Code**: Not released
+**arXiv**: [2601.01695](https://arxiv.org/abs/2601.01695)  
+**Code**: Not released  
 **Area**: Autonomous Driving
 **Keywords**: Active Learning, Roadside Perception, Monocular 3D Detection, BEV, Submodular Optimization, Learnability, Data Selection
 

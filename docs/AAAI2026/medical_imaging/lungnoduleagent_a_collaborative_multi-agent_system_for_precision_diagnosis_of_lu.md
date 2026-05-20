@@ -18,8 +18,8 @@ content_hash: 4608c48a623a9905
 # LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.21042](https://arxiv.org/abs/2511.21042)
-**Code**: [GitHub](https://github.com/ImYangC7/LungNoduleAgent)
+**arXiv**: [2511.21042](https://arxiv.org/abs/2511.21042)  
+**Code**: [GitHub](https://github.com/ImYangC7/LungNoduleAgent)  
 **Area**: Medical Imaging / Multi-Agent Systems
 **Keywords**: lung nodule diagnosis, multi-agent collaboration, vision-language model, CT report generation, malignancy grading
 

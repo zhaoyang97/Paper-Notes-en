@@ -18,8 +18,8 @@ content_hash: a0acf2751853b794
 # TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15193](https://arxiv.org/abs/2509.15193)
-**Code**: GitHub (open-source)
+**arXiv**: [2509.15193](https://arxiv.org/abs/2509.15193)  
+**Code**: GitHub (open-source)  
 **Area**: Physics
 **Keywords**: VQE, parameter freezing, barren plateau, quantum chemistry, deep learning-assisted quantum computing
 

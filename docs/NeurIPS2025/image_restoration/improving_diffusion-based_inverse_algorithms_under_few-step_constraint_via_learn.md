@@ -18,8 +18,8 @@ content_hash: 90ae36ac54dd1e96
 # Improving Diffusion-based Inverse Algorithms under Few-Step Constraint via Learnable Linear Extrapolation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.10103](https://arxiv.org/abs/2503.10103)
-**Code**: To be confirmed
+**arXiv**: [2503.10103](https://arxiv.org/abs/2503.10103)  
+**Code**: To be confirmed  
 **Area**: Image Restoration / Diffusion Models
 **Keywords**: Diffusion inverse problems, few-step acceleration, linear extrapolation, learnable coefficients, plug-and-play
 

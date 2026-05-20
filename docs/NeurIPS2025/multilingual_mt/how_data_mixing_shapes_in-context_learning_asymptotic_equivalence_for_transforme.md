@@ -18,8 +18,8 @@ content_hash: 77913215ae7ce548
 # How Data Mixing Shapes In-Context Learning: Asymptotic Equivalence for Transformers with MLPs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25753](https://arxiv.org/abs/2510.25753)
-**Code**: [GitHub](https://github.com/KU-MLIP/Data-Mixing-Shapes-ICL-by-Transformers)
+**arXiv**: [2510.25753](https://arxiv.org/abs/2510.25753)  
+**Code**: [GitHub](https://github.com/KU-MLIP/Data-Mixing-Shapes-ICL-by-Transformers)  
 **Area**: Multilingual Translation
 **Keywords**: In-context learning, data mixing, high-dimensional asymptotics, polynomial equivalence, feature learning
 

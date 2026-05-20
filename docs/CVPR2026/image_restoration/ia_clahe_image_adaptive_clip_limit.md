@@ -18,8 +18,8 @@ content_hash: 9f6de8a4c033bdf7
 # IA-CLAHE: Image-Adaptive Clip Limit Estimation for CLAHE
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.16010](https://arxiv.org/abs/2604.16010)
-**Code**: N/A
+**arXiv**: [2604.16010](https://arxiv.org/abs/2604.16010)  
+**Code**: N/A  
 **Area**: Image Enhancement / Restoration
 **Keywords**: CLAHE, differentiable, adaptive enhancement, contrast limiting, zero-shot generalization
 

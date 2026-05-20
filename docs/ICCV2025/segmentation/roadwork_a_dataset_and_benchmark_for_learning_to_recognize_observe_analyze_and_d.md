@@ -18,8 +18,8 @@ content_hash: eb5b4f71d4c62a3f
 # ROADWork: A Dataset and Benchmark for Learning to Recognize, Observe, Analyze and Drive Through Work Zones
 
 **Conference**: ICCV 2025
-**arXiv**: [2406.07661](https://arxiv.org/abs/2406.07661)
-**Code**: [https://www.cs.cmu.edu/~roadwork/](https://www.cs.cmu.edu/~roadwork/)
+**arXiv**: [2406.07661](https://arxiv.org/abs/2406.07661)  
+**Code**: [https://www.cs.cmu.edu/~roadwork/](https://www.cs.cmu.edu/~roadwork/)  
 **Area**: Image Segmentation
 **Keywords**: Work Zone Perception, Autonomous Driving Dataset, Instance Segmentation, Long-Tail Scenarios, Foundation Models
 

@@ -18,8 +18,8 @@ content_hash: 391e75da51fcd0a9
 # RAS: Retrieval-And-Structuring for Knowledge-Intensive LLM Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.10996](https://arxiv.org/abs/2502.10996)
-**Code**: Available
+**arXiv**: [2502.10996](https://arxiv.org/abs/2502.10996)  
+**Code**: Available  
 **Area**: Graph Learning
 **Keywords**: Retrieval-Augmented Generation, Knowledge Graph Construction, Iterative Retrieval, Graph-Structured Reasoning, LLM Generation
 

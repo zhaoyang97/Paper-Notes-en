@@ -18,8 +18,8 @@ content_hash: ad93354b2236ae85
 # Procedural Mistake Detection via Action Effect Modeling
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.03474](https://arxiv.org/abs/2512.03474)
-**Code**: [https://wenliangguo.github.io/Mistake_Detection](https://wenliangguo.github.io/Mistake_Detection) (project page)
+**arXiv**: [2512.03474](https://arxiv.org/abs/2512.03474)  
+**Code**: [https://wenliangguo.github.io/Mistake_Detection](https://wenliangguo.github.io/Mistake_Detection) (project page)  
 **Area**: Multimodal VLM
 **Keywords**: procedural mistake detection, action effect modeling, egocentric video, scene graph, multimodal supervision
 

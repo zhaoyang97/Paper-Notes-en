@@ -18,8 +18,8 @@ content_hash: a6e21ad324b22520
 # Gradient-Sign Masking for Task Vector Transport Across Pre-Trained Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.09658](https://arxiv.org/abs/2510.09658)
-**Code**: [GitHub](https://github.com/fillo-rinaldi/GradFix)
+**arXiv**: [2510.09658](https://arxiv.org/abs/2510.09658)  
+**Code**: [GitHub](https://github.com/fillo-rinaldi/GradFix)  
 **Area**: Self-Supervised Learning / Model Merging / Transfer Learning
 **Keywords**: task vector, model merging, gradient masking, foundation models, transfer learning
 

@@ -18,8 +18,8 @@ content_hash: ea524f72eb091bbe
 # Pyramidal Patchification Flow for Visual Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.23543](https://arxiv.org/abs/2506.23543)
-**Code**: [GitHub](https://github.com/fudan-generative-vision/PPFlow)
+**arXiv**: [2506.23543](https://arxiv.org/abs/2506.23543)  
+**Code**: [GitHub](https://github.com/fudan-generative-vision/PPFlow)  
 **Area**: Diffusion Model Acceleration / Image Generation
 **Keywords**: Pyramidal patchification, flow matching, DiT, inference acceleration, variable token count
 

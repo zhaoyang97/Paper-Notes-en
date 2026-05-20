@@ -18,8 +18,8 @@ content_hash: 295d602afcb44fdc
 # SAO-Instruct: Free-form Audio Editing using Natural Language Instructions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22795](https://arxiv.org/abs/2510.22795)
-**Code**: [GitHub](https://eth-disco.github.io/sao-instruct)
+**arXiv**: [2510.22795](https://arxiv.org/abs/2510.22795)  
+**Code**: [GitHub](https://eth-disco.github.io/sao-instruct)  
 **Area**: Image Generation
 **Keywords**: Audio Editing, Natural Language Instructions, Stable Audio Open, Prompt-to-Prompt, Diffusion Models
 

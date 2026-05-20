@@ -17,8 +17,8 @@ content_hash: 07498eb8698a3e70
 # DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.15208](https://arxiv.org/abs/2503.15208)
-**Code**: [https://royalmelon0505.github.io/DiST-4D](https://royalmelon0505.github.io/DiST-4D)
+**arXiv**: [2503.15208](https://arxiv.org/abs/2503.15208)  
+**Code**: [https://royalmelon0505.github.io/DiST-4D](https://royalmelon0505.github.io/DiST-4D)  
 **Area**: Autonomous Driving
 **Keywords**: 4D scene generation, spatiotemporal disentangled diffusion, metric depth, novel view synthesis, autonomous driving
 

@@ -18,8 +18,8 @@ content_hash: 6bec89e9d057d7bd
 # DictPFL: Efficient and Private Federated Learning on Encrypted Gradients
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21086](https://arxiv.org/abs/2510.21086)
-**Code**: [UCF-ML-Research/DictPFL](https://github.com/UCF-ML-Research/DictPFL)
+**arXiv**: [2510.21086](https://arxiv.org/abs/2510.21086)  
+**Code**: [UCF-ML-Research/DictPFL](https://github.com/UCF-ML-Research/DictPFL)  
 **Area**: AI Security
 **Keywords**: federated learning, Homomorphic Encryption, Privacy-Preserving, Gradient Pruning, Dictionary Decomposition
 

@@ -18,8 +18,8 @@ content_hash: 4dd071edba4e0982
 # AnyI2V: Animating Any Conditional Image with Motion Control
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.02857](https://arxiv.org/abs/2507.02857)
-**Code**: [https://henghuiding.com/AnyI2V/](https://henghuiding.com/AnyI2V/) (project page available)
+**arXiv**: [2507.02857](https://arxiv.org/abs/2507.02857)  
+**Code**: [https://henghuiding.com/AnyI2V/](https://henghuiding.com/AnyI2V/) (project page available)  
 **Area**: 3D Vision
 **Keywords**: training-free, Image-to-Video, Motion Control, diffusion model, multimodal conditioning
 

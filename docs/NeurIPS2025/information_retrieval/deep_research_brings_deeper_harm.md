@@ -18,8 +18,8 @@ content_hash: 44a205e67db9d5c2
 # Deep Research Brings Deeper Harm
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11851](https://arxiv.org/abs/2510.11851)
-**Code**: Available (mentioned in paper)
+**arXiv**: [2510.11851](https://arxiv.org/abs/2510.11851)  
+**Code**: Available (mentioned in paper)  
 **Area**: Information Retrieval
 **Keywords**: deep research agent, jailbreak, safety alignment, biosecurity, plan injection
 

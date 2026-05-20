@@ -17,8 +17,8 @@ content_hash: b8cb558911833a0d
 # Partially Shared Concept Bottleneck Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.22170](https://arxiv.org/abs/2511.22170)
-**Code**: [github.com/7494zdl/PS-CBM](https://github.com/7494zdl/PS-CBM)
+**arXiv**: [2511.22170](https://arxiv.org/abs/2511.22170)  
+**Code**: [github.com/7494zdl/PS-CBM](https://github.com/7494zdl/PS-CBM)  
 **Area**: Interpretability
 **Keywords**: Concept Bottleneck Models, Interpretability, Vision-Language Models, Concept Efficiency, Image Classification
 

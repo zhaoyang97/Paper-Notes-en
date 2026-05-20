@@ -18,8 +18,8 @@ content_hash: 99c35a2262c52fef
 # EU-Agent-Bench: Measuring Illegal Behavior of LLM Agents Under EU Law
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21524](https://arxiv.org/abs/2510.21524)
-**Code**: [To Be Confirmed]
+**arXiv**: [2510.21524](https://arxiv.org/abs/2510.21524)  
+**Code**: [To Be Confirmed]  
 **Area**: LLM Agent
 **Keywords**: LLM agent safety, EU law compliance, benchmark, function calling, legal AI
 

@@ -18,8 +18,8 @@ content_hash: 79e01a1d50dff1fe
 # EgoAgent: A Joint Predictive Agent Model in Egocentric Worlds
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.05857](https://arxiv.org/abs/2502.05857)
-**Code**: [https://github.com/zju3dv/EgoAgent](https://github.com/zju3dv/EgoAgent)
+**arXiv**: [2502.05857](https://arxiv.org/abs/2502.05857)  
+**Code**: [https://github.com/zju3dv/EgoAgent](https://github.com/zju3dv/EgoAgent)  
 **Area**: Human Understanding
 **Keywords**: egocentric vision, agent model, world model, 3D human motion prediction, joint embedding predictive architecture
 

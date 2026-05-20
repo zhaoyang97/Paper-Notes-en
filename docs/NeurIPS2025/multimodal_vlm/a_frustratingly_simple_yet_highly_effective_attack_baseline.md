@@ -18,8 +18,8 @@ content_hash: a3f992988203f6b3
 # A Frustratingly Simple Yet Highly Effective Attack Baseline: Over 90% Success Rate Against the Strong Black-box Models of GPT-4.5/4o/o1
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.10635](https://arxiv.org/abs/2503.10635)
-**Code**: [https://github.com/VILA-Lab/M-Attack](https://github.com/VILA-Lab/M-Attack)
+**arXiv**: [2503.10635](https://arxiv.org/abs/2503.10635)  
+**Code**: [https://github.com/VILA-Lab/M-Attack](https://github.com/VILA-Lab/M-Attack)  
 **Area**: Multimodal VLM / Adversarial Attack
 **Keywords**: Black-box transfer attack, local semantic matching, adversarial perturbation, LVLM safety, model ensemble
 

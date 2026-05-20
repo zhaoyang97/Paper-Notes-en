@@ -18,8 +18,8 @@ content_hash: 1987cae50f73c6e4
 # CuMPerLay: Learning Cubical Multiparameter Persistence Vectorizations
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.12795](https://arxiv.org/abs/2510.12795)
-**Code**: [circle-group/cumperlay](https://github.com/circle-group/cumperlay)
+**arXiv**: [2510.12795](https://arxiv.org/abs/2510.12795)  
+**Code**: [circle-group/cumperlay](https://github.com/circle-group/cumperlay)  
 **Area**: Medical Imaging / Topological Deep Learning
 **Keywords**: Multiparameter Persistent Homology, Cubical Complex, Differentiable Vectorization, Topological Data Analysis, Swin Transformer
 **Institution**: Imperial College London + UT Dallas

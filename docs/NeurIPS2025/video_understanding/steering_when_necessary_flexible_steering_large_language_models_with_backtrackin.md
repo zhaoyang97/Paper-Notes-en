@@ -18,8 +18,8 @@ content_hash: 585c39d09fc4b5ab
 # Steering When Necessary: Flexible Steering Large Language Models with Backtracking
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.17621](https://arxiv.org/abs/2508.17621)
-**Code**: [https://github.com/gjw185/FASB](https://github.com/gjw185/FASB)
+**arXiv**: [2508.17621](https://arxiv.org/abs/2508.17621)  
+**Code**: [https://github.com/gjw185/FASB](https://github.com/gjw185/FASB)  
 **Area**: Video Understanding / LLM Alignment
 **Keywords**: activation steering, representation engineering, backtracking mechanism, truthfulness, dynamic intervention
 

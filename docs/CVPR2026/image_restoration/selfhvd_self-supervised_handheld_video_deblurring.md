@@ -18,8 +18,8 @@ content_hash: 956f2105445f2bc7
 # SelfHVD: Self-Supervised Handheld Video Deblurring
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.08605](https://arxiv.org/abs/2508.08605)
-**Code**: [https://cshonglei.github.io/SelfHVD](https://cshonglei.github.io/SelfHVD)
+**arXiv**: [2508.08605](https://arxiv.org/abs/2508.08605)  
+**Code**: [https://cshonglei.github.io/SelfHVD](https://cshonglei.github.io/SelfHVD)  
 **Area**: Image Restoration
 **Keywords**: Video Deblurring, Self-Supervised Learning, Handheld Devices, Optical Image Stabilization, Self-Enhancement Training
 

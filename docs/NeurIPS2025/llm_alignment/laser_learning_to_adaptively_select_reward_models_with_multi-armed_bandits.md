@@ -18,8 +18,8 @@ content_hash: 15d62d9ada7968d0
 # LASeR: Learning to Adaptively Select Reward Models with Multi-Armed Bandits
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.01735](https://arxiv.org/abs/2410.01735)
-**Code**: [https://github.com/duykhuongnguyen/LASeR-MAB](https://github.com/duykhuongnguyen/LASeR-MAB)
+**arXiv**: [2410.01735](https://arxiv.org/abs/2410.01735)  
+**Code**: [https://github.com/duykhuongnguyen/LASeR-MAB](https://github.com/duykhuongnguyen/LASeR-MAB)  
 **Area**: Alignment / RLHF
 **Keywords**: reward model selection, multi-armed bandits, iterative training, DPO, multi-RM alignment
 

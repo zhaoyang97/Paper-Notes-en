@@ -19,8 +19,8 @@ content_hash: 0949e81ab8994c30
 # DriveX: Driving View Synthesis on Free-form Trajectories with Generative Prior
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.01717](https://arxiv.org/abs/2412.01717)
-**Code**: [https://fudan-zvg.github.io/DriveX](https://fudan-zvg.github.io/DriveX)
+**arXiv**: [2412.01717](https://arxiv.org/abs/2412.01717)  
+**Code**: [https://fudan-zvg.github.io/DriveX](https://fudan-zvg.github.io/DriveX)  
 **Area**: 3D Vision
 **Keywords**: Autonomous driving simulation, free-trajectory view synthesis, 3D Gaussian splatting, video diffusion, generative prior distillation, inpainting restoration
 

@@ -1,146 +1,155 @@
 ---
 title: >-
-  [Paper Note] EvoRefuse: Evolutionary Prompt Optimization for Evaluation and Mitigation of LLM Over-Refusal to Pseudo-Malicious Instructions
+  [Paper Note] EvoRefuse: Evaluating and Mitigating LLM Over-Refusal via Evolutionary Prompt Optimization
 description: >-
-  [NeurIPS 2025][LLM Alignment][over-refusal] This paper proposes EvoRefuse—a framework that employs evolutionary search (mutation/recombination + ELBO fitness function + simulated annealing) to automatically generate sema…
+  [NeurIPS 2025][LLM/NLP][over-refusal] This paper proposes EvoRefuse, a framework that employs evolutionary search to maximize the ELBO for automatically generating diverse pseudo-malicious instructions…
 tags:
   - "NeurIPS 2025"
-  - "LLM Alignment"
+  - "LLM/NLP"
   - "over-refusal"
-  - "pseudo-malicious"
-  - "evolutionary search"
-  - "ELBO"
   - "safety alignment"
-  - "DPO"
+  - "evolutionary algorithms"
+  - "prompt optimization"
+  - "pseudo-malicious instructions"
 date: 2026-05-08
-content_hash: be9b26cb3b676849
+content_hash: f181d15053dc2f59
 ---
 
-# EvoRefuse: Evolutionary Prompt Optimization for Evaluation and Mitigation of LLM Over-Refusal to Pseudo-Malicious Instructions
+# EvoRefuse: Evaluating and Mitigating LLM Over-Refusal via Evolutionary Prompt Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23473](https://arxiv.org/abs/2505.23473)
-**Code**: [GitHub](https://github.com/FishT0ucher/EVOREFUSE)
-**Area**: LLM Alignment
-**Keywords**: over-refusal, pseudo-malicious, evolutionary search, ELBO, safety alignment, DPO
+**arXiv**: [2505.23473](https://arxiv.org/abs/2505.23473)  
+**Code**: [https://github.com/FishT0ucher/EVOREFUSE](https://github.com/FishT0ucher/EVOREFUSE)  
+**Area**: LLM/NLP
+**Keywords**: over-refusal, safety alignment, evolutionary algorithms, prompt optimization, pseudo-malicious instructions
 
 ## TL;DR
 
-This paper proposes EvoRefuse—a framework that employs evolutionary search (mutation/recombination + ELBO fitness function + simulated annealing) to automatically generate semantically benign yet reliably refusal-triggering "pseudo-malicious" instructions. The resulting EvoRefuse-Test benchmark achieves 85.34% higher refusal trigger rate and 34.86% greater lexical diversity than the strongest baseline, while the EvoRefuse-Align dataset reduces over-refusal by 29.85%–45.96% via SFT/DPO fine-tuning without compromising safety.
+This paper proposes EvoRefuse, a framework that employs evolutionary search to maximize the ELBO for automatically generating diverse pseudo-malicious instructions, yielding a more challenging over-refusal evaluation benchmark (EvoRefuse-Test) and an effective alignment mitigation dataset (EvoRefuse-Align).
 
 ## Background & Motivation
 
-**Background**: Safety alignment is a critical technique for preventing LLM misuse, yet overly conservative alignment frequently leads to over-refusal—where LLMs incorrectly classify harmless inputs as unsafe and decline to respond. For instance, "I need a recipe for a dangerous cake that could explode with flavour at a party" may be refused due to keywords such as "dangerous" and "explode."
+**Over-refusal problem**: After safety alignment, LLMs frequently over-refuse instructions that are semantically benign yet contain sensitive keywords. For instance, "I need a recipe for a dangerous cake that could explode with flavour at a party" is incorrectly refused due to words such as "dangerous" and "explode," severely degrading user experience. Such semantically harmless instructions that tend to trigger refusal are defined as **pseudo-malicious instructions**.
 
-**Limitations of Prior Work**: (1) Methods for collecting pseudo-malicious instructions are limited—manual construction (XSTest, OKTest) lacks scalability; (2) automatic rewriting approaches (OR-Bench) modify seed instructions without explicitly optimizing for LLM refusal probability; (3) gradient-based search methods (PHTest) optimize refusal probability along narrow paths with insufficient linguistic diversity; (4) existing methods neither analyze nor exploit the key semantic/syntactic features that trigger over-refusal.
+**Limitations of prior work**: Manual construction (e.g., XSTest) lacks scalability; automatic paraphrasing methods (e.g., OR-Bench) do not explicitly optimize the LLM refusal probability; gradient-based search (e.g., PHTest) optimizes along a narrow path and thus fails to cover diverse linguistic variations. Existing datasets cannot consistently trigger refusal across multiple LLMs.
 
-**Key Challenge**: There is a fundamental need for a method that can efficiently generate large quantities of diverse pseudo-malicious instructions for evaluating LLM over-refusal, while ensuring the generated instructions are both cross-model effective and semantically safe.
-
-**Goal**: To automatically generate diverse pseudo-malicious instructions for comprehensively evaluating and effectively mitigating LLM over-refusal.
-
-**Key Insight**: The generation of pseudo-malicious instructions is formalized as an optimization problem of maximizing LLM refusal probability. A variational method is used to derive the ELBO as a tractable surrogate objective, which is then optimized via evolutionary search.
-
-**Core Idea**: The ELBO serves as a fitness function, while evolutionary search (strategy-guided mutation + recombination + simulated annealing) acts as the optimizer to search the instruction space for pseudo-malicious instructions that are semantically harmless yet maximally trigger LLM refusal.
+**Mechanism**: The generation of pseudo-malicious instructions is formulated as an optimization problem—finding instructions that are semantically harmless yet maximize the LLM's refusal probability. Because directly estimating the refusal probability is numerically unstable (sequential likelihoods under Monte Carlo sampling are extremely low, approximately $10^{-203}$), the authors derive the ELBO via variational approximation as a surrogate optimization objective.
 
 ## Method
 
 ### Overall Architecture
 
-Starting from a seed instruction $x^0$, the framework proceeds through multi-strategy mutation (introducing deceptive contexts / sensitive words / extreme emotions) → safety classifier filtering → ELBO fitness evaluation → selection of top-$L$ candidates for recombination → safety verification → simulated annealing acceptance/rejection → iteration for $I$ rounds → output of the highest-fitness instruction $x^*$.
+EvoRefuse is a prompt optimization framework based on evolutionary search, comprising four core components: Mutation, Recombination, Fitness Evaluation, and Simulated Annealing.
+
+Pipeline: seed instruction $x^0$ → multiple mutators generate candidates → safety classifier filtering → ELBO fitness scoring → select top-$L$ for recombination to generate $N$ new candidates → second safety filtering → select highest-fitness candidate $x'$ → simulated annealing acceptance decision → iterate for $I$ rounds → output global optimum $x^*$.
 
 ### Key Designs
 
-1. **ELBO Variational Objective**
-    - Direct computation of the refusal probability $\log p_\theta(\mathbf{r}|\mathbf{x},\mathbf{s})$ is intractable (Monte Carlo sampling is numerically unstable), so a variational approach is adopted to derive the ELBO:
-    - $\text{ELBO}(\mathbf{x}) = \mathbb{E}_{q_\theta(\mathbf{y}|\mathbf{x})}[\underbrace{\log p_\theta(\mathbf{y}|\mathbf{x},\mathbf{s})}_{\text{response confidence}} + \underbrace{\log p_\theta(\mathbf{r}|\mathbf{x},\mathbf{y},\mathbf{s})}_{\text{refusal log-prob}}] + c$
-    - In practice, Monte Carlo estimation with $K$ sampled responses is used: $\mathcal{F}(\mathbf{x}) = \frac{1}{K}\sum_{k=1}^{K}[\log \hat{p}_\phi(\mathbf{r}|\mathbf{y}_k) + \frac{\lambda}{T_k}\sum_{t=1}^{T_k}\log p_\theta(y_{k,t}|\mathbf{y}_{k,<t},\mathbf{x},\mathbf{s})]$
-    - Refusal probability is estimated via the publicly available distilroberta-base-rejection classifier; response confidence is computed from LLaMA3.1-8B token logits.
-    - **Design Motivation**: The ELBO implicitly balances two factors—rewarding responses that are both classified as refusals and generated with high confidence.
+1. **Mutation**: By analyzing 500 instances from existing over-refusal datasets with low pairwise similarity, GPT-4o identifies triggering strategies and clusters them (SentenceBERT embeddings, similarity threshold 0.75), yielding three mutation strategy categories:
+    - Introducing deceptive contexts (controversial topics, fictional scenarios, implied potential harm)
+    - Adding sensitive keywords (violence, bias, other sensitive terms)
+    - Extreme emotions (anger, disgust, despair)
+    - Each mutator simultaneously generates the modified instruction and a safety explanation; GPT-4o serves as the judge to verify safety.
 
-2. **Strategy-Guided Mutation and Recombination**
-    - Five hundred low-similarity instructions from XSTest and OR-Bench are analyzed; GPT-4o extracts triggering factors, and SentenceBERT embeddings with clustering (threshold 0.75) yield three mutation strategy categories: (a) introducing deceptive contexts (controversial topics / fictional scenarios / implied potential harm); (b) adding sensitive words (violence / bias / sensitive terminology); (c) extreme emotions (anger / disgust / despair).
-    - Recombination: the top-$L$ fitness variants are selected, and $N$ pairs are sampled for GPT-4o to synthesize new candidate instructions.
-    - Safety verification: each mutated/recombined instruction is accompanied by a safety rationale, with GPT-4o serving as the judge.
-    - **Design Motivation**: Unlike random perturbation, strategy-guided mutation ensures that mutation directions align with known over-refusal triggers.
+2. **Recombination**: $N$ pairs are sampled from the top-$L$ safe mutated instructions, and a GPT-4o recombiner synthesizes new candidate instructions by combining semantically salient fragments from both instructions. Recombined candidates also undergo safety verification.
 
-3. **Simulated Annealing Acceptance Strategy**
-    - Acceptance probability: $\delta = \min\{1, \exp[\frac{\mathcal{F}(x') - \mathcal{F}(x^t)}{\tau_t}]\}$
-    - Linear cooling schedule: $\tau_t \leftarrow \max\{\tau_f, \tau_0 - \beta \cdot t\}$
-    - Occasionally accepting lower-fitness candidates prevents the search from becoming trapped in local optima.
-    - **Design Motivation**: Balances exploration and exploitation, preventing premature convergence of evolutionary search.
+3. **Fitness Evaluation**: The surrogate ELBO objective is estimated via Monte Carlo. For each candidate instruction $x$, $K$ responses are sampled and the following is computed:
 
-### Dataset Construction
+$$\mathcal{F}(x) = \frac{1}{K}\sum_{k=1}^{K}\left[\log \hat{p}_\phi(r|y_k) + \frac{\lambda}{T_k}\sum_{t=1}^{T_k}\log p_\theta(y_{k,t}|y_{k,<t}, x, s)\right]$$
 
-- **EvoRefuse-Test**: 800 diverse instructions are selected from TRIDENT-Core → optimized by EvoRefuse → 582 pseudo-malicious instructions retained after safety filtering.
-- **EvoRefuse-Align**: 3,000 instructions paired with GPT-4o-generated helpful/refusal responses, supporting both SFT and DPO.
+where the first term is the refusal log-probability (estimated by a pretrained binary classifier) and the second term is response confidence (token logits from the target LLM). $\lambda/T_k$ balances the two terms and normalizes for response length.
+
+### Loss & Training
+
+**Variational approximation derivation**: The objective is to maximize $\log p_\theta(r|x,s)$. By introducing the sampling distribution $q_\theta(y|x)$ and applying Jensen's inequality, the ELBO is derived as:
+
+$$\text{ELBO}(x) = \mathbb{E}_{q_\theta(y|x)}\left[\log p_\theta(y|x,s) + \log p_\theta(r|x,y,s)\right] + c$$
+
+where $c$ is the conditional entropy term (empirically verified to contribute only 0.4% of the variance in response confidence, thus approximated as a constant). The ELBO simultaneously rewards two objectives: "the response is a refusal" (refusal log-probability) and "the model generates the response with high confidence" (response confidence).
+
+**Simulated Annealing**: The acceptance probability is $\delta = \min\{1, \exp[(\mathcal{F}(x') - \mathcal{F}(x^t))/\tau_t]\}$, with linear cooling $\tau_t = \max\{\tau_f, \tau_0 - \beta \cdot t\}$, allowing occasional acceptance of lower-fitness candidates to escape local optima.
+
+**Dataset construction**:
+- **EvoRefuse-Test**: 800 instructions selected from TRIDENT-Core are optimized; after safety filtering, 582 pseudo-malicious instructions are retained.
+- **EvoRefuse-Align**: 3,000 instructions are sampled; GPT-4o generates helpful (chosen) and refusal (rejected) response pairs for SFT and DPO training.
+
+**Hyperparameters**: $\lambda=0.03$, $K=10$, $L=4$, $N=2$, $\tau_0=0.1$, $\beta=0.005$, $\tau_f=0.05$
 
 ## Key Experimental Results
 
-### Refusal Trigger Rate (PRR, without safety-prior system prompt)
+### Main Results
 
-| Benchmark | DeepSeek-7B | Gemma-7B | LLaMA-8B | Mistral-7B | Qwen-7B | GPT-4o | DeepSeek-V3 | Gemini | Claude | Avg. |
-|-----------|-------------|----------|----------|------------|---------|--------|-------------|--------|--------|------|
-| XSTest | 0.05 | 0.11 | 0.13 | 0.00 | 0.05 | 0.08 | 0.07 | 0.08 | 0.19 | 0.08 |
-| OR-Bench | 0.14 | 0.15 | 0.05 | 0.04 | 0.07 | 0.09 | 0.27 | 0.06 | 0.18 | 0.12 |
-| PHTest | 0.10 | 0.19 | 0.08 | 0.09 | 0.03 | 0.10 | 0.12 | 0.09 | 0.31 | 0.12 |
-| **EvoRefuse-Test** | **0.24** | **0.26** | **0.65** | **0.12** | **0.25** | **0.27** | **0.38** | **0.24** | **0.74** | **0.35** |
+**Benchmark comparison (PRR, without safety-prior system prompt)**:
 
-### Diversity, Confidence, and Safety
+| Benchmark | DeepSeek | Gemma | LLaMA | Mistral | Qwen | GPT-4o | DeepSeek-V3 | Gemini | Claude |
+|-----------|----------|-------|-------|---------|------|--------|-------------|--------|--------|
+| XSTest | 0.05 | 0.11 | 0.13 | 0.00 | 0.05 | 0.08 | 0.07 | 0.08 | 0.19 |
+| OR-Bench | 0.14 | 0.15 | 0.05 | 0.04 | 0.07 | 0.09 | 0.27 | 0.06 | 0.18 |
+| PHTest | 0.10 | 0.19 | 0.08 | 0.09 | 0.03 | 0.10 | 0.12 | 0.09 | 0.31 |
+| PH-Gen | 0.19 | 0.14 | 0.07 | 0.11 | 0.11 | 0.19 | 0.45 | 0.16 | 0.28 |
+| **EvoRefuse-Test** | **0.24** | **0.26** | **0.65** | **0.12** | **0.25** | **0.27** | **0.38** | **0.24** | **0.74** |
 
-| Benchmark | MSTTR↑ | MTLD↑ | Log-Prob(y\|x)↑ | LongPPL↓ | Safe Rate |
-|-----------|--------|-------|----------------|----------|-----------|
-| XSTest | 0.36 | 39.95 | -72.62 | 1.34 | 0.97 |
-| OR-Bench | 0.47 | 137.65 | -93.45 | 1.26 | 0.93 |
-| PH-Gen | 0.48 | 134.84 | -103.08 | 1.15 | 0.90 |
-| **EvoRefuse-Test** | **0.54** | **152.52** | **-43.55** | **1.12** | 0.93 |
+EvoRefuse-Test achieves an average refusal rate **85.34%** higher than the second-best benchmark PH-Gen, with the largest gain on LLaMA3.1 (364.29%).
 
-### Over-Refusal Mitigation Results (LLaMA3.1-8B-Instruct)
+**Over-refusal mitigation comparison (LLaMA3.1-8B-Instruct fine-tuning)**:
 
-| Method | XSTest PRR↓ | SGTest PRR↓ | EvoRefuse PRR↓ | AdvBench PRR↑ | HarmBench PRR↑ |
-|--------|------------|------------|---------------|--------------|---------------|
-| Base model | 0.11 | 0.14 | 0.65 | 0.94 | 0.94 |
-| + OR-Bench (SFT) | 0.10 | 0.14 | 0.45 | 1.00 | 0.98 |
-| + PHTest (SFT) | 0.09 | 0.11 | 0.39 | 1.00 | 0.97 |
-| + EvoRefuse (SFT) | **0.06** | **0.05** | **0.28** | 1.00 | 0.96 |
-| + EvoRefuse (DPO) | **0.03** | **0.05** | **0.15** | 0.99 | 0.97 |
+| Method | AdvBench PRR | HarmBench PRR | XSTest PRR | SGTest PRR | EvoRefuse PRR |
+|--------|-------------|---------------|------------|------------|---------------|
+| LLaMA-3.1-Chat | 0.94 | 0.94 | 0.11 | 0.14 | 0.65 |
+| + Few Shots | 0.97 | 0.99 | 0.12 | 0.21 | 0.48 |
+| + OR-Bench (SFT) | 1.00 | 0.98 | 0.10 | 0.14 | 0.45 |
+| + PHTest (SFT) | 1.00 | 0.97 | 0.09 | 0.11 | 0.39 |
+| + PromptAgent (SFT) | 0.99 | 0.98 | 0.09 | 0.10 | 0.43 |
+| + **EvoRefuse-Align (SFT)** | 1.00 | 0.96 | **0.06** | **0.08** | **0.32** |
+| + **EvoRefuse-Align (DPO)** | 0.97 | 0.89 | **0.02** | **0.01** | **0.30** |
+
+SFT reduces over-refusal by **29.85%** and DPO by **45.96%**, with only a 4.82% decrease in safety.
+
+### Ablation Study
+
+- **Seed selection has minimal impact**: Starting from either pseudo-malicious or unsafe instructions, both converge to high PRR after 5 iterations (unsafe seeds reach 75%).
+- **Removing recombination**: Convergence slows noticeably and candidate exploration is limited.
+- **Removing fitness evaluation**: Update directions become inconsistent, rendering optimization unpredictable.
+- **Replacing with OR-Bench/PHTest pipelines**: OR-Bench shows fluctuating progress; PHTest is stable but slow due to a narrow search space.
+- **Success rates of different mutation strategies**: Fictional scenarios (0.20) > violence keywords (0.15) > anger emotion (0.14) > others (0.12) > despair (0.08) > controversial topics (0.07).
+- **Alternative mutator**: Replacing GPT-4o with open-source DarkIdol yields a PRR of 0.46 after 5 iterations (vs. 0.72 for GPT-4o)—still effective but with a noticeable gap.
 
 ### Key Findings
 
-- EvoRefuse-Test achieves a refusal trigger rate of 0.65 on LLaMA3.1-8B, 3.64× that of the next-best baseline (as LLaMA is the target model for EvoRefuse).
-- Strong cross-model generalization: a refusal rate of 0.74 is achieved on Claude, a non-target model.
-- DPO fine-tuning outperforms SFT: PRR on EvoRefuse-Test drops from 0.65 to 0.15 (a 45.96% reduction) with no safety degradation.
-- Attribution analysis reveals that over-refusal is primarily driven by "shortcut learning"—models over-attend to salient textual cues (sensitive keywords) while neglecting the broader harmless context.
-- Early Transformer layers play a critical role in safety judgments.
+- **Shortcut learning underlies over-refusal**: Gradient attribution analysis reveals that LLaMA3.1 over-attends to sensitive keywords such as "dangerous" and "explode" while ignoring overall semantic context. Replacing these with neutral words ("bold," "burst") shifts the model's attention to benign tokens such as "recipe" and "cake," resulting in a normal response.
+- **Early Transformer layers determine safety judgments**: Information flow analysis shows that sensitive tokens exhibit significantly higher information flow than average in the first 15 layers, indicating that early layers play a critical role in safety decisions.
+- **High-attribution vocabulary patterns**: Word clouds consistently show that words associated with harmful behavior—such as "Manipulate," "Exploit," and "Fraud"—receive the highest attribution scores.
 
 ## Highlights & Insights
 
-- The variational ELBO framework elevates the generation of refusal-triggering instructions from heuristic search to a theoretically grounded optimization problem, yielding greater numerical stability than direct Monte Carlo estimation of refusal probability.
-- The three mutation strategy categories (deceptive context / sensitive words / extreme emotions) are derived from empirical analysis rather than intuition, making them interpretable and extensible.
-- The alignment data generated by EvoRefuse-Align reduces over-refusal while preserving safety—a non-trivial balance.
-- Attribution analysis combining gradient-based saliency and information flow provides two complementary lenses that together reveal the "shortcut learning" mechanism underlying over-refusal.
+- **Theory-driven optimization objective**: Unlike heuristic paraphrasing methods, EvoRefuse derives the ELBO from variational inference as the optimization objective, simultaneously accounting for refusal probability and response confidence, providing a principled theoretical foundation.
+- **Strong generalization**: Although LLaMA3.1-8B-Instruct is used as the target model during optimization, the generated instructions effectively trigger over-refusal across all nine evaluated models including GPT-4o and Claude-3.5, demonstrating that the discovered mechanisms are universal.
+- **Diversity and effectiveness achieved simultaneously**: The evolutionary search combined with recombination allows EvoRefuse-Test to lead on both lexical diversity (MSTTR 0.54, MTLD 152.52) and refusal triggering rate.
+- **Diagnostic insight**: Attribution analysis reveals that over-refusal is fundamentally a shortcut learning phenomenon—models rely on surface-level lexical cues rather than understanding instruction semantics.
 
 ## Limitations & Future Work
 
-- The default target model is LLaMA3.1-8B-Instruct, on which performance is strongest (0.65 PRR); cross-model generalization, while favorable, still shows a gap.
-- Reliance on GPT-4o as the mutator/recombiner/safety verifier incurs substantial API cost.
-- The ELBO is a lower bound on refusal probability but is not order-preserving; maximizing the ELBO does not guarantee monotonic improvement of the true objective at every step.
-- Safety verification still relies on LLM-as-judge, which carries the risk of inconsistent judgments.
-- Over-refusal in multi-turn dialogue settings is not addressed.
+- White-box access to the target model (for token logits) is required, precluding application to black-box or proprietary models.
+- The optimization process requires repeated calls to GPT-4o for mutation, recombination, and safety filtering, incurring substantial computational cost.
+- The boundary between pseudo-malicious and genuinely malicious instructions remains subjective; the current classification scheme lacks a systematic quantitative foundation.
+- Safety filtering relies on GPT-4o's judgment, which may produce errors.
+- Future work could explore finer-grained risk categorization or model-driven probabilistic risk scoring.
 
 ## Related Work & Insights
 
-- **vs XSTest**: 250 manually crafted pseudo-malicious instructions with limited diversity and scale; EvoRefuse-Test (582 instructions) achieves 34.86% higher lexical diversity and 85.34% higher refusal trigger rate.
-- **vs OR-Bench**: Instruction rewriting without an explicit optimization objective; EvoRefuse uses the ELBO to explicitly guide search direction.
-- **vs PHTest**: Gradient-based search along a narrow path; EvoRefuse uses evolutionary search to cover a broader range of linguistic variants.
-- **vs AutoDAN / GCG**: These methods generate malicious jailbreak prompts; EvoRefuse pursues the opposite goal—generating instructions that appear sensitive but are actually harmless.
-- **Methodological inspiration**: The combination of ELBO and evolutionary search is generalizable to other prompt optimization scenarios where the true objective function is difficult to optimize directly.
+- **XSTest/OR-Bench/PHTest**: Representative benchmarks for over-refusal evaluation that generate test instructions via manual construction, automatic paraphrasing, and gradient-based search, respectively; EvoRefuse surpasses all of them across every dimension.
+- **AutoDAN/GCG/PAIR**: Prompt optimization methods in the adversarial attack domain. EvoRefuse draws on ideas from evolutionary algorithms and genetic search, but with the opposite goal—generating harmless yet refused instructions rather than genuine jailbreak attacks.
+- **Insights**: The approach of using the ELBO as an optimization objective is generalizable to other scenarios requiring optimization of LLM behavioral probabilities; evolutionary search combined with LLM-based mutation and recombination constitutes an effective paradigm for exploring discrete instruction spaces.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The combination of ELBO variational objective and evolutionary search is novel; the problem framing (systematic evaluation + mitigation of over-refusal) is clear.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation across 9 LLMs, multi-dimensional comparisons (refusal rate / diversity / confidence / safety), and complete ablation studies.
-- Writing Quality: ⭐⭐⭐⭐ The problem formalization is clear, and the logical flow from ELBO derivation to the evolutionary framework is coherent.
-- Value: ⭐⭐⭐⭐ Provides both a stronger over-refusal evaluation benchmark and an effective mitigation pipeline, with direct practical value for LLM safety alignment.
+| Dimension | Score | Notes |
+|-----------|-------|-------|
+| Novelty | ⭐⭐⭐⭐ | Combining variational inference with evolutionary search to address over-refusal presents a novel theoretical perspective. |
+| Technical Depth | ⭐⭐⭐⭐ | The ELBO derivation is complete, the framework design is systematic, and ablation studies are thorough. |
+| Experimental Thoroughness | ⭐⭐⭐⭐⭐ | Covers 9 models, 8 benchmarks, multi-dimensional metrics, comprehensive ablation, and attribution analysis. |
+| Practicality | ⭐⭐⭐⭐ | Datasets and code are open-sourced and directly applicable to evaluating and mitigating over-refusal. |
+| Writing Quality | ⭐⭐⭐⭐ | Clear structure with rigorous mathematical derivations. |
 
 <!-- RELATED:START -->
 
@@ -148,11 +157,11 @@ Starting from a seed instruction $x^0$, the framework proceeds through multi-str
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)
-- [\[NeurIPS 2025\] LLM Safety Alignment is Divergence Estimation in Disguise](llm_safety_alignment_is_divergence_estimation_in_disguise.md)
-- [\[NeurIPS 2025\] A Systematic Evaluation of Preference Aggregation in Federated RLHF for Pluralistic Alignment of LLMs](a_systematic_evaluation_of_preference_aggregation_in_federated_rlhf_for_pluralis.md)
-- [\[NeurIPS 2025\] Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning](simplicity_prevails_rethinking_negative_preference_optimization_for_llm_unlearni.md)
-- [\[NeurIPS 2025\] ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation](orpo-distill_mixed-policy_preference_optimization_for_cross-architecture_llm_dis.md)
+- [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](system_prompt_optimization_with_meta-learning.md)
+- [\[ACL 2026\] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding](../../ACL2026/llm_nlp/please_refuse_to_answer_me_mitigating_over-refusal_in_large_language_models_via_.md)
+- [\[NeurIPS 2025\] SolverLLM: Solving Optimization Problems via Test-Time Scaling with LLM-Guided Search](solverllm_leveraging_test-time_scaling_for_optimization_problem_via_llm-guided_s.md)
+- [\[NeurIPS 2025\] C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning](c2prompt_class-aware_client_knowledge_interaction_for_federated_continual_learni.md)
+- [\[NeurIPS 2025\] Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs](adaptive_kernel_design_for_bayesian_optimization_is_a_piece_of_cake_with_llms.md)
 
 </div>
 

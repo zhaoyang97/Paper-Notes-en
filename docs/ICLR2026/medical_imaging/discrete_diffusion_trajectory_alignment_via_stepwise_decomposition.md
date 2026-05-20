@@ -18,8 +18,8 @@ content_hash: f7f258901ce902b1
 # Discrete Diffusion Trajectory Alignment via Stepwise Decomposition
 
 **Conference**: ICLR2026
-**arXiv**: [2507.04832](https://arxiv.org/abs/2507.04832)
-**Code**: [hanjq17/discrete-diffusion-sdpo](https://github.com/hanjq17/discrete-diffusion-sdpo)
+**arXiv**: [2507.04832](https://arxiv.org/abs/2507.04832)  
+**Code**: [hanjq17/discrete-diffusion-sdpo](https://github.com/hanjq17/discrete-diffusion-sdpo)  
 **Area**: Medical Imaging
 **Keywords**: discrete diffusion, preference optimization, RLHF, trajectory alignment, stepwise decomposition
 **Authors**: Jiaqi Han, Austin Wang, Minkai Xu, Wenda Chu, Meihua Dang, Haotian Ye, Huayu Chen, Yisong Yue, Stefano Ermon (Stanford, Caltech, Tsinghua)

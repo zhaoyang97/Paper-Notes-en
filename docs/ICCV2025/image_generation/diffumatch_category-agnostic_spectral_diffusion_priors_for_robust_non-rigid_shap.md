@@ -18,8 +18,8 @@ content_hash: 9c1299fbe4ad17fe
 # DiffuMatch: Category-Agnostic Spectral Diffusion Priors for Robust Non-rigid Shape Matching
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.23715](https://arxiv.org/abs/2507.23715)
-**Code**: [https://github.com/daidedou/diffumatch/](https://github.com/daidedou/diffumatch/)
+**arXiv**: [2507.23715](https://arxiv.org/abs/2507.23715)  
+**Code**: [https://github.com/daidedou/diffumatch/](https://github.com/daidedou/diffumatch/)  
 **Area**: Diffusion Models / 3D Shape Matching
 **Keywords**: Functional Maps, Spectral Diffusion Priors, Non-rigid Shape Matching, Score Distillation, Zero-shot Generalization
 
@@ -47,24 +47,24 @@ The pipeline consists of two stages: (1) training a spectral diffusion model on 
 
 1. **Spectral Diffusion Model Training**:
 
-   - Approximately 40,000 template-to-shape functional maps ($30 \times 30$) from the D-FAUST dataset are used, with absolute values $|C_{gt}|$ as training inputs to handle sign ambiguity.
-   - The architecture is DiT-S (Diffusion Transformer) with patch size 5, trained under the EDM framework for 1,000 epochs.
-   - The denoiser $D(C_\sigma, \sigma)$ learns the structural distribution of functional maps at varying noise levels.
+    - Approximately 40,000 template-to-shape functional maps ($30 \times 30$) from the D-FAUST dataset are used, with absolute values $|C_{gt}|$ as training inputs to handle sign ambiguity.
+    - The architecture is DiT-S (Diffusion Transformer) with patch size 5, trained under the EDM framework for 1,000 epochs.
+    - The denoiser $D(C_\sigma, \sigma)$ learns the structural distribution of functional maps at varying noise levels.
 
 2. **Mask Distillation (Core Contribution)**:
 
-   - Traditional methods derive sparse masks $M_{reg}$ via Laplacian commutativity; this paper directly distills masks from the score function of the diffusion model.
-   - Assuming the functional map likelihood is $p(C_\sigma;\sigma) \propto \exp(-\|M_\sigma \cdot C_\sigma\|^2)$, its score is $s(C_\sigma;\sigma) = -2M_\sigma^2 \cdot C_\sigma$.
-   - Combined with the diffusion model's score estimate $(D(C_\sigma;\sigma) - C_\sigma)/\sigma^2$, the mask is computed as:
+    - Traditional methods derive sparse masks $M_{reg}$ via Laplacian commutativity; this paper directly distills masks from the score function of the diffusion model.
+    - Assuming the functional map likelihood is $p(C_\sigma;\sigma) \propto \exp(-\|M_\sigma \cdot C_\sigma\|^2)$, its score is $s(C_\sigma;\sigma) = -2M_\sigma^2 \cdot C_\sigma$.
+    - Combined with the diffusion model's score estimate $(D(C_\sigma;\sigma) - C_\sigma)/\sigma^2$, the mask is computed as:
    $$M_\sigma^2 = \mathbb{E}_{n_\sigma \sim \mathcal{N}(0,\sigma^2 I), n_\sigma > 0}\left[\frac{|C|_\sigma - D(|C|_\sigma;\sigma)}{2\sigma^2 |C|_\sigma}\right]$$
    - Only positive noise samples $n_\sigma > 0$ are used to avoid division-by-zero instability.
 
 3. **Zero-shot Matching Pipeline**:
 
-   - Given a novel shape pair, point features are extracted via DiffusionNet;
-   - A "raw" functional map $C_{raw}$ is estimated through an FMReg layer ($\alpha=0$);
-   - The diffusion model distills a mask $M_\sigma$ from $C_{raw}$ ($\sigma=1$, 100 noise samples);
-   - $M_\sigma$ regularizes a refined solution $C_{reg}$, which is further processed by Zoomout to obtain the final proper map.
+    - Given a novel shape pair, point features are extracted via DiffusionNet;
+    - A "raw" functional map $C_{raw}$ is estimated through an FMReg layer ($\alpha=0$);
+    - The diffusion model distills a mask $M_\sigma$ from $C_{raw}$ ($\sigma=1$, 100 noise samples);
+    - $M_\sigma$ regularizes a refined solution $C_{reg}$, which is further processed by Zoomout to obtain the final proper map.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 2b8e76298fa32259
 # UAVScenes: A Multi-Modal Dataset for UAVs
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22412](https://arxiv.org/abs/2507.22412)
-**Code**: [https://github.com/sijieaaa/UAVScenes](https://github.com/sijieaaa/UAVScenes)
+**arXiv**: [2507.22412](https://arxiv.org/abs/2507.22412)  
+**Code**: [https://github.com/sijieaaa/UAVScenes](https://github.com/sijieaaa/UAVScenes)  
 **Area**: Autonomous Driving
 **Keywords**: UAV perception, multi-modal dataset, semantic segmentation, depth estimation, LiDAR point cloud
 

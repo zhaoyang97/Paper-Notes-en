@@ -18,8 +18,8 @@ content_hash: d6e102485fa3c605
 # Dynamic Gaussian Scene Reconstruction from Unsynchronized Videos
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11175](https://arxiv.org/abs/2511.11175)
-**Code**: None
+**arXiv**: [2511.11175](https://arxiv.org/abs/2511.11175)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 4D Gaussian Splatting, temporal alignment, dynamic scene reconstruction, multi-view video, unsynchronized cameras
 

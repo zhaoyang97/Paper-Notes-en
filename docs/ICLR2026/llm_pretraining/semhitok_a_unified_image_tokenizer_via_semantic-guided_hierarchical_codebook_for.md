@@ -19,7 +19,7 @@ content_hash: 08036eefb752297f
 # SemHiTok: A Unified Image Tokenizer via Semantic-Guided Hierarchical Codebook
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.06764](https://arxiv.org/abs/2503.06764)
+**arXiv**: [2503.06764](https://arxiv.org/abs/2503.06764)  
 **Area**: LLM Pretraining
 **Keywords**: image tokenizer, hierarchical codebook, semantic guidance, unified understanding + generation, SGHC, MLLM
 

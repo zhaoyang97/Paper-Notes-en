@@ -18,8 +18,8 @@ content_hash: f7af2860a3a634cf
 # Image Generation as a Visual Planner for Robotic Manipulation
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.00532](https://arxiv.org/abs/2512.00532)
-**Code**: [GitHub](https://github.com/pangye202264690373/Image-Generation-as-a-Visual-Planner-for-Robotic-Manipulation)
+**arXiv**: [2512.00532](https://arxiv.org/abs/2512.00532)  
+**Code**: [GitHub](https://github.com/pangye202264690373/Image-Generation-as-a-Visual-Planner-for-Robotic-Manipulation)  
 **Area**: Image Generation / Robotic Manipulation
 **Keywords**: Visual Planning, Robotic Manipulation, Diffusion Models, Grid Image Generation, LoRA
 
@@ -49,9 +49,9 @@ $$\mathbf{D} = \begin{bmatrix} D^{\text{img}_1} & D^{\text{img}_2} & D^{\text{im
 
 2. **Dual-Mode Conditioning**:
 
-   - **Text-conditioned generation**: Given a language instruction (e.g., "pick up the red cup") and the first frame, text embeddings $c_{\text{text}} = \{e_{\text{clip}}, E_{\text{t5}}\}$ are encoded via CLIP and T5 and injected into the DiT via cross-attention. This mode emphasizes **semantic understanding**—the model must interpret high-level semantics and translate them into a plausible action sequence.
+    - **Text-conditioned generation**: Given a language instruction (e.g., "pick up the red cup") and the first frame, text embeddings $c_{\text{text}} = \{e_{\text{clip}}, E_{\text{t5}}\}$ are encoded via CLIP and T5 and injected into the DiT via cross-attention. This mode emphasizes **semantic understanding**—the model must interpret high-level semantics and translate them into a plausible action sequence.
 
-   - **Trajectory-conditioned generation**: A 2D end-effector trajectory (color-coded red→blue to indicate temporal progression) is rendered onto the first frame, and the composited image replaces the first frame as the conditioning input $\tilde{\mathbf{D}}^{\tau}$. This mode emphasizes **spatial precision**—the model generates actions along the provided trajectory path.
+    - **Trajectory-conditioned generation**: A 2D end-effector trajectory (color-coded red→blue to indicate temporal progression) is rendered onto the first frame, and the composited image replaces the first frame as the conditioning input $\tilde{\mathbf{D}}^{\tau}$. This mode emphasizes **spatial precision**—the model generates actions along the provided trajectory path.
 
 3. **Parameter-Efficient Adaptation via LoRA**: LoRA is applied to the query/value projections of self-attention layers and feed-forward layers in the DiT (with low rank $r \ll d$), training only $O(rd)$ parameters instead of $O(d^2)$. This enables efficient transfer from general image generation to the robotic video domain without increasing inference latency.
 

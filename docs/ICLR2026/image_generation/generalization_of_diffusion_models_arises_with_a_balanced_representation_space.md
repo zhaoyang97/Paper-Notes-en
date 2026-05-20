@@ -13,7 +13,7 @@ content_hash: 5e5332ba3eb6a136
 # Generalization of Diffusion Models Arises with a Balanced Representation Space
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.20963](https://arxiv.org/abs/2512.20963)
+**arXiv**: [2512.20963](https://arxiv.org/abs/2512.20963)  
 **Area**: Image Generation / Diffusion Model Theory
 
 ## TL;DR

@@ -18,8 +18,8 @@ content_hash: a917c0d75b82bba5
 # x²-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.16671](https://arxiv.org/abs/2603.16671)
-**Code**: None
+**arXiv**: [2603.16671](https://arxiv.org/abs/2603.16671)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: Optical Flow Estimation, Scene Flow Estimation, Event Camera, Multimodal Fusion, Edge Space
 
@@ -59,9 +59,9 @@ Image + Event + LiDAR → Pre-trained and frozen event edge encoder → Align im
 
 2. **Reliability-aware Adaptive Fusion**:
     - **Global Reliability Score**: Per-modality reliability is estimated via spatiotemporal decomposition.
-      - Temporal stream $\mathcal{T}(\hat{Z}) = \sigma(\mathbb{L}(\Delta_t(\text{Conv}(\hat{Z}))))$: captures fine-grained temporal variation.
-      - Spatial stream $\mathcal{S}(\hat{Z}) = \|\nabla(\text{DConv}(\hat{Z}))\|_2$: encodes spatial structure.
-      - Global reliability score $\omega_m = \text{softmax}_m((\mathcal{T} \otimes \mathcal{S})\hat{Z})$.
+        - Temporal stream $\mathcal{T}(\hat{Z}) = \sigma(\mathbb{L}(\Delta_t(\text{Conv}(\hat{Z}))))$: captures fine-grained temporal variation.
+        - Spatial stream $\mathcal{S}(\hat{Z}) = \|\nabla(\text{DConv}(\hat{Z}))\|_2$: encodes spatial structure.
+        - Global reliability score $\omega_m = \text{softmax}_m((\mathcal{T} \otimes \mathcal{S})\hat{Z})$.
     - **Local Attention Mechanism**: $\mathcal{A}_m(x) = \text{softmax}((\mathcal{H} \oplus \mathcal{P} \oplus \mathcal{G})\tilde{Z})_m$, utilizing high-pass filtering, average pooling, and grouped convolution.
     - Fused features: $F_{\text{fused}}(x) = \sum_m \frac{\omega_m \mathcal{A}_m(x)}{\sum_n \omega_n \mathcal{A}_n(x)} Z_m(x)$.
     - A cross-attention Transformer further enhances multi-modal interaction.

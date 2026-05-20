@@ -18,8 +18,8 @@ content_hash: 690aa91f99ac0e82
 # Global and Local Entailment Learning for Natural World Imagery
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21476](https://arxiv.org/abs/2506.21476)
-**Code**: [GitHub](https://vishu26.github.io/RCME/index.html)
+**arXiv**: [2506.21476](https://arxiv.org/abs/2506.21476)  
+**Code**: [GitHub](https://vishu26.github.io/RCME/index.html)  
 **Area**: Multimodal VLM
 **Keywords**: Hierarchical Representation Learning, Entailment Learning, Vision-Language Models, Biological Taxonomy, Partial Order Relations
 

@@ -18,8 +18,8 @@ content_hash: b9d52c71155efaf0
 # Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23899](https://arxiv.org/abs/2509.23899)
-**Code**: None
+**arXiv**: [2509.23899](https://arxiv.org/abs/2509.23899)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Medical VQA, Frequency-Domain Fusion, Quantum Retrieval Augmentation, Multimodal Fusion, Contrastive Learning
 

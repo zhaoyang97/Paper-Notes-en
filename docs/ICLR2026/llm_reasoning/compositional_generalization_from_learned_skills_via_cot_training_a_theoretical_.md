@@ -18,8 +18,8 @@ content_hash: b1877680afa737f3
 # Compositional Generalization from Learned Skills via CoT Training: A Theoretical and Structural Analysis for Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.04667](https://arxiv.org/abs/2502.04667)
-**Code**: [https://github.com/chen123CtrlS/T-CotMechanism](https://github.com/chen123CtrlS/T-CotMechanism)
+**arXiv**: [2502.04667](https://arxiv.org/abs/2502.04667)  
+**Code**: [https://github.com/chen123CtrlS/T-CotMechanism](https://github.com/chen123CtrlS/T-CotMechanism)  
 **Area**: AI Safety / LLM Reasoning
 **Keywords**: Compositional Generalization, Chain-of-Thought Training, Information-Theoretic Generalization Bounds, Reasoning Circuits, OOD Generalization
 

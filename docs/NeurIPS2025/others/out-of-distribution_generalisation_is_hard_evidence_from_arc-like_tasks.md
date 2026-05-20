@@ -17,8 +17,8 @@ content_hash: 3d37b42b5a58f219
 # Out-of-distribution Generalisation is Hard: Evidence from ARC-like Tasks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.09716](https://arxiv.org/abs/2505.09716)
-**Code**: None
+**arXiv**: [2505.09716](https://arxiv.org/abs/2505.09716)  
+**Code**: None  
 **Area**: Other
 **Keywords**: OOD generalisation, compositional generalisation, ARC tasks, inductive bias, feature learning
 

@@ -18,8 +18,8 @@ content_hash: 214c3cd3b8d40e61
 # Noise2Score3D: Tweedie's Approach for Unsupervised Point Cloud Denoising
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.09283](https://arxiv.org/abs/2503.09283)
-**Code**: [GitHub](https://github.com/)
+**arXiv**: [2503.09283](https://arxiv.org/abs/2503.09283)  
+**Code**: [GitHub](https://github.com/)  
 **Area**: 3D Vision
 **Keywords**: Point cloud denoising, unsupervised learning, Tweedie's formula, score function, total variation
 

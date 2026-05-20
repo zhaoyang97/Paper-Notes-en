@@ -18,8 +18,8 @@ content_hash: 5810cdf48de9a264
 # InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.10305](https://arxiv.org/abs/2512.10305)
-**Code**: [GitHub](https://weiquanmin.github.io/infocom)
+**arXiv**: [2512.10305](https://arxiv.org/abs/2512.10305)  
+**Code**: [GitHub](https://weiquanmin.github.io/infocom)  
 **Area**: Model Compression
 **Keywords**: Collaborative Perception, Communication Efficiency, Information Bottleneck, Feature Compression, 3D Object Detection
 

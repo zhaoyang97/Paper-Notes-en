@@ -18,8 +18,8 @@ content_hash: 58156c589ed8c1a3
 # UniRain: Unified Image Deraining with RAG-based Dataset Distillation and Multi-objective Reweighted Optimization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.03967](https://arxiv.org/abs/2603.03967)
-**Code**: [https://github.com/QianfengY/UniRain](https://github.com/QianfengY/UniRain)
+**arXiv**: [2603.03967](https://arxiv.org/abs/2603.03967)  
+**Code**: [https://github.com/QianfengY/UniRain](https://github.com/QianfengY/UniRain)  
 **Area**: Image Restoration / Image Deraining
 **Keywords**: Unified Deraining, RAG Dataset Distillation, Multi-objective Optimization, Mixture of Experts, Day/Night
 

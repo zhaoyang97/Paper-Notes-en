@@ -17,8 +17,8 @@ content_hash: 4514fd932e370047
 # Neural Force Field: Few-shot Learning of Generalized Physical Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.08987](https://arxiv.org/abs/2502.08987)
-**Code**: [Project Page](https://neuralforcefield.github.io/)
+**arXiv**: [2502.08987](https://arxiv.org/abs/2502.08987)  
+**Code**: [Project Page](https://neuralforcefield.github.io/)  
 **Area**: Other
 **Keywords**: neural force field, Neural ODE, few-shot physical reasoning, ODE solver, interactive planning
 
@@ -53,19 +53,19 @@ The NFF framework operates in three stages: (1) construct a dynamic interaction 
 ### Key Designs
 
 1. **Neural Operator Force Field**:
-   - **Function**: Predicts a continuous force field from object states and the interaction graph.
-   - **Mechanism**: Based on the DeepONet framework, the force field function is defined as $\mathbf{F}(\mathbf{z}^q(t)) = \sum_{i \in \mathcal{G}(q)} \mathbf{W}(f_\theta(\mathbf{z}^i(t)) \odot f_\phi(\mathbf{z}^q(t))) + \mathbf{b}$, where $\mathcal{G}(q)$ is the neighbor set of the query object, $f_\theta$ and $f_\phi$ are neural networks, $\odot$ denotes element-wise multiplication, and $\mathbf{W} \in \mathbb{R}^{d_\text{hidden} \times d_\text{force}}$ maps hidden features to the low-dimensional force space.
-   - **Design Motivation**: Force fields are low-dimensional (2D/3D force vectors), making them easier to learn from few samples than high-dimensional latent vectors. The function-space learning capacity of neural operators enables force field patterns to generalize to novel interaction graphs.
+    - **Function**: Predicts a continuous force field from object states and the interaction graph.
+    - **Mechanism**: Based on the DeepONet framework, the force field function is defined as $\mathbf{F}(\mathbf{z}^q(t)) = \sum_{i \in \mathcal{G}(q)} \mathbf{W}(f_\theta(\mathbf{z}^i(t)) \odot f_\phi(\mathbf{z}^q(t))) + \mathbf{b}$, where $\mathcal{G}(q)$ is the neighbor set of the query object, $f_\theta$ and $f_\phi$ are neural networks, $\odot$ denotes element-wise multiplication, and $\mathbf{W} \in \mathbb{R}^{d_\text{hidden} \times d_\text{force}}$ maps hidden features to the low-dimensional force space.
+    - **Design Motivation**: Force fields are low-dimensional (2D/3D force vectors), making them easier to learn from few samples than high-dimensional latent vectors. The function-space learning capacity of neural operators enables force field patterns to generalize to novel interaction graphs.
 
 2. **ODE Integration for Trajectory Decoding**:
-   - **Function**: Converts the learned force field into physically consistent trajectories.
-   - **Mechanism**: Object motion is governed by a second-order ODE: $\mathbf{a}^q(t) = \frac{d^2 x^q(t)}{dt^2} = \frac{\mathbf{F}(\mathbf{z}^q(t))}{m^q}$, integrated to yield $\mathbf{x}(t) = \mathbf{x}(0) + \int_0^t \mathbf{v}(t)dt$ and $\mathbf{v}(t) = \mathbf{v}(0) + \int_0^t \frac{\mathbf{F}(\mathbf{z}^q(t))}{m^q}dt$.
-   - **Design Motivation**: ODE integration guarantees trajectory continuity and physical consistency, eliminating the object-tunneling artifacts of discrete decoding. High-precision integration (step size $1e\text{-}3$) improves fine-grained collision modeling.
+    - **Function**: Converts the learned force field into physically consistent trajectories.
+    - **Mechanism**: Object motion is governed by a second-order ODE: $\mathbf{a}^q(t) = \frac{d^2 x^q(t)}{dt^2} = \frac{\mathbf{F}(\mathbf{z}^q(t))}{m^q}$, integrated to yield $\mathbf{x}(t) = \mathbf{x}(0) + \int_0^t \mathbf{v}(t)dt$ and $\mathbf{v}(t) = \mathbf{v}(0) + \int_0^t \frac{\mathbf{F}(\mathbf{z}^q(t))}{m^q}dt$.
+    - **Design Motivation**: ODE integration guarantees trajectory continuity and physical consistency, eliminating the object-tunneling artifacts of discrete decoding. High-precision integration (step size $1e\text{-}3$) improves fine-grained collision modeling.
 
 3. **Forward-Backward Interactive Planning**:
-   - **Function**: Uses the learned force field for goal-directed planning.
-   - **Mechanism**: Forward planning samples 500 action candidates, evaluates them using NFF as a mental simulator, and executes the optimal sequence. Backward planning reverses the ODE time direction to infer initial conditions from a goal state: $\mathbf{x}(0) = \mathbf{x}(t) + \int_t^0 \mathbf{v}(t)dt$.
-   - **Design Motivation**: The reversibility of ODEs makes backward computation naturally efficient. A 5-round interactive learning protocol (execute → observe deviation → update model → replan) mimics human trial-and-error learning.
+    - **Function**: Uses the learned force field for goal-directed planning.
+    - **Mechanism**: Forward planning samples 500 action candidates, evaluates them using NFF as a mental simulator, and executes the optimal sequence. Backward planning reverses the ODE time direction to infer initial conditions from a goal state: $\mathbf{x}(0) = \mathbf{x}(t) + \int_t^0 \mathbf{v}(t)dt$.
+    - **Design Motivation**: The reversibility of ODEs makes backward computation naturally efficient. A 5-round interactive learning protocol (execute → observe deviation → update model → replan) mimics human trial-and-error learning.
 
 ### Loss & Training
 

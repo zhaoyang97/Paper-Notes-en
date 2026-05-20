@@ -20,8 +20,8 @@ content_hash: adc558399802ccdc
 # Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00920](https://arxiv.org/abs/2603.00920)
-**Code**: [IHCLab/UALNet](https://github.com/IHCLab/UALNet)
+**arXiv**: [2603.00920](https://arxiv.org/abs/2603.00920)  
+**Code**: [IHCLab/UALNet](https://github.com/IHCLab/UALNet)  
 **Area**: Image Restoration
 **Keywords**: Spectral Super-Resolution, Deep Unfolding, Adversarial Learning, Hyperspectral Reconstruction, Remote Sensing, Sentinel-2, AVIRIS
 

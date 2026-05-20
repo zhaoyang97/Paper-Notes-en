@@ -18,8 +18,8 @@ content_hash: 62e0fa1d8bd1bc31
 # Renormalization Group Guided Tensor Network Structure Search
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.24663](https://arxiv.org/abs/2512.24663)
-**Code**: [Available](https://github.com/Applied-Machine-Learning-Lab/RGTN)
+**arXiv**: [2512.24663](https://arxiv.org/abs/2512.24663)  
+**Code**: [Available](https://github.com/Applied-Machine-Learning-Lab/RGTN)  
 **Area**: Model Compression
 **Keywords**: Tensor Network, Structure Search, Renormalization Group, Multi-Scale Optimization, Tensor Decomposition
 

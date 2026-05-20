@@ -18,8 +18,8 @@ content_hash: a2de346953f28f0b
 # Token-level Data Selection for Safe LLM Fine-tuning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01185](https://arxiv.org/abs/2603.01185)
-**Code**: [github.com/Polly-LYP/TOSS](https://github.com/Polly-LYP/TOSS)
+**arXiv**: [2603.01185](https://arxiv.org/abs/2603.01185)  
+**Code**: [github.com/Polly-LYP/TOSS](https://github.com/Polly-LYP/TOSS)  
 **Area**: LLM Pre-training
 **Keywords**: LLM safety, fine-tuning safety, token-level selection, data curation, safety-utility tradeoff
 

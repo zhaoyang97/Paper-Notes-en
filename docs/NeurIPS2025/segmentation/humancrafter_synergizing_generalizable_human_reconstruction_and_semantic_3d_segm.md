@@ -19,8 +19,8 @@ content_hash: d8399847beaa33e3
 # HumanCrafter: Synergizing Generalizable Human Reconstruction and Semantic 3D Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00468](https://arxiv.org/abs/2511.00468)
-**Code**: [https://paulpanwang.github.io/HumanCrafter](https://paulpanwang.github.io/HumanCrafter)
+**arXiv**: [2511.00468](https://arxiv.org/abs/2511.00468)  
+**Code**: [https://paulpanwang.github.io/HumanCrafter](https://paulpanwang.github.io/HumanCrafter)  
 **Area**: 3D Human Reconstruction / 3D Semantic Segmentation
 **Keywords**: 3D Gaussian Splatting, Human Reconstruction, 3D Semantic Segmentation, Single-Image Reconstruction, Multi-Task Learning, DINOv2
 

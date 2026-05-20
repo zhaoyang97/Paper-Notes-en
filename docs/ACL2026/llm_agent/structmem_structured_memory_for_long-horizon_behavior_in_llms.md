@@ -18,8 +18,8 @@ content_hash: 988090ecb0dd3299
 # StructMem: Structured Memory for Long-Horizon Behavior in LLMs
 
 **Conference**: ACL 2026
-**arXiv**: [2604.21748](https://arxiv.org/abs/2604.21748)
-**Code**: [https://github.com/zjunlp/LightMem](https://github.com/zjunlp/LightMem)
+**arXiv**: [2604.21748](https://arxiv.org/abs/2604.21748)  
+**Code**: [https://github.com/zjunlp/LightMem](https://github.com/zjunlp/LightMem)  
 **Area**: LLM Agent / Dialogue Systems
 **Keywords**: long-term memory, event-level binding, cross-event consolidation, hierarchical memory, multi-hop reasoning
 

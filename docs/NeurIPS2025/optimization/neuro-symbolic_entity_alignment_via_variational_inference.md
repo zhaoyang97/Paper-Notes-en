@@ -18,8 +18,8 @@ content_hash: f1f094977a1b19d3
 # NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.04153](https://arxiv.org/abs/2410.04153)
-**Code**: [GitHub](https://github.com/chensyCN/NeuSymEA-NeurIPS25)
+**arXiv**: [2410.04153](https://arxiv.org/abs/2410.04153)  
+**Code**: [GitHub](https://github.com/chensyCN/NeuSymEA-NeurIPS25)  
 **Area**: Optimization
 **Keywords**: Entity Alignment, Neuro-symbolic Reasoning, Variational Inference, Knowledge Graph, Markov Random Field
 

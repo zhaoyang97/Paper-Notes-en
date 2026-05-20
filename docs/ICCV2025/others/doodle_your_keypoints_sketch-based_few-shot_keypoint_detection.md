@@ -17,8 +17,8 @@ content_hash: dcb8e19bdcf389a1
 # Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.07994](https://arxiv.org/abs/2507.07994)
-**Code**: [https://subhajitmaity.me/DYKp](https://subhajitmaity.me/DYKp)
+**arXiv**: [2507.07994](https://arxiv.org/abs/2507.07994)  
+**Code**: [https://subhajitmaity.me/DYKp](https://subhajitmaity.me/DYKp)  
 **Area**: Keypoint Detection / Few-Shot Learning
 **Keywords**: keypoint detection, few-shot learning, sketch, cross-modal, domain adaptation
 

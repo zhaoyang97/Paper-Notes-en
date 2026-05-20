@@ -18,8 +18,8 @@ content_hash: cd5fd2d51544fec3
 # A Differentiable Model of Supply-Chain Shocks
 
 **Conference**: NeurIPS 2025 (Workshop: Differentiable Systems and Scientific ML)
-**arXiv**: [2511.05231](https://arxiv.org/abs/2511.05231)
-**Code**: None
+**arXiv**: [2511.05231](https://arxiv.org/abs/2511.05231)  
+**Code**: None  
 **Area**: Other
 **Keywords**: supply chain, differentiable simulation, agent-based model, JAX, GPU acceleration, variational inference
 
@@ -30,14 +30,14 @@ A JAX-based differentiable Agent-Based Model (ABM) of supply chains (~1,000 firm
 
 1. **Background**: Modeling shock propagation in supply chains has grown increasingly important in the wake of Covid-19 and the Russia–Ukraine war. Established approaches include the Leontief input-output framework (comparative-static analysis) and Agent-Based Models (ABMs, bottom-up dynamic simulation). ABMs can capture inventory adjustment, time-varying recovery, and other dynamic features, making them a natural choice for shock-propagation modeling.
 2. **Limitations of Prior Work**:
-   - The likelihood function of ABMs is analytically intractable, so conventional calibration relies on Approximate Bayesian Computation (ABC)—repeated sampling compared against summary statistics—which scales poorly in high-dimensional parameter spaces.
-   - Surrogate-model approaches introduce approximation error; neural simulation-based inference (SBI) offers amortized inference but cannot exploit gradient information.
-   - Traditional ABM implementations are CPU-serial; calibration requires tens of thousands of forward simulations, entailing prohibitive computational cost.
+    - The likelihood function of ABMs is analytically intractable, so conventional calibration relies on Approximate Bayesian Computation (ABC)—repeated sampling compared against summary statistics—which scales poorly in high-dimensional parameter spaces.
+    - Surrogate-model approaches introduce approximation error; neural simulation-based inference (SBI) offers amortized inference but cannot exploit gradient information.
+    - Traditional ABM implementations are CPU-serial; calibration requires tens of thousands of forward simulations, entailing prohibitive computational cost.
 3. **Key Challenge**: ABMs involve discrete stochasticity and control-flow structures that resist direct differentiation, while high-dimensional parameters (one set per firm) render gradient-free methods highly inefficient.
 4. **Goal**:
-   - Implement a supply-chain ABM as a JAX differentiable program supporting automatic differentiation.
-   - Leverage GPU tensorization for large-scale parallel simulation.
-   - Replace ABC with Generalized Variational Inference (GVI) for high-dimensional Bayesian calibration.
+    - Implement a supply-chain ABM as a JAX differentiable program supporting automatic differentiation.
+    - Leverage GPU tensorization for large-scale parallel simulation.
+    - Replace ABC with Generalized Variational Inference (GVI) for high-dimensional Bayesian calibration.
 5. **Key Insight**: Exploit JAX's AD + GPU acceleration + NumPyro probabilistic programming ecosystem to recast ABM calibration as a gradient-based optimization problem.
 6. **Core Idea**: Express the supply-chain ABM as a JAX differentiable program and use GPU parallelism + automatic differentiation to accelerate calibration by three orders of magnitude.
 
@@ -52,19 +52,19 @@ A JAX-based differentiable Agent-Based Model (ABM) of supply chains (~1,000 firm
 ### Key Designs
 
 1. **Supply-Chain ABM**:
-   - **Function**: Simulate shock propagation through the production network.
-   - **Mechanism**: Each firm $i$ maintains a target inventory $S_{ij}^{\text{target}} = n_i S_{ij}(0)$; output is the minimum of demand, capacity, and input constraints: $x_i(t) = \min\{D_i(t-1),\, z_i(t)\, f(S_{ji}(t))\}$. Shocks are modeled via a productivity recovery process: $z_i(t) = 1 - \delta_i \exp(-\lambda_i(t-t^*)^+)$.
-   - **Design Motivation**: ARIO-type models, while parsimonious, capture the core dynamics of inventory depletion → output decline → upstream/downstream cascades.
+    - **Function**: Simulate shock propagation through the production network.
+    - **Mechanism**: Each firm $i$ maintains a target inventory $S_{ij}^{\text{target}} = n_i S_{ij}(0)$; output is the minimum of demand, capacity, and input constraints: $x_i(t) = \min\{D_i(t-1),\, z_i(t)\, f(S_{ji}(t))\}$. Shocks are modeled via a productivity recovery process: $z_i(t) = 1 - \delta_i \exp(-\lambda_i(t-t^*)^+)$.
+    - **Design Motivation**: ARIO-type models, while parsimonious, capture the core dynamics of inventory depletion → output decline → upstream/downstream cascades.
 
 2. **JAX Tensorization**:
-   - **Function**: Replace serial firm-by-firm simulation with GPU-parallel tensor operations.
-   - **Mechanism**: All firm states (inventories, orders, output) are unified as tensors; single-step updates become matrix operations. JAX's `vmap`/`pmap` handles batch parallelism automatically.
-   - **Design Motivation**: Conventional Python ABMs loop over firms sequentially. The GPU implementation yields massive speedups at 3,000 firms—CPU time grows sharply while GPU time remains nearly constant.
+    - **Function**: Replace serial firm-by-firm simulation with GPU-parallel tensor operations.
+    - **Mechanism**: All firm states (inventories, orders, output) are unified as tensors; single-step updates become matrix operations. JAX's `vmap`/`pmap` handles batch parallelism automatically.
+    - **Design Motivation**: Conventional Python ABMs loop over firms sequentially. The GPU implementation yields massive speedups at 3,000 firms—CPU time grows sharply while GPU time remains nearly constant.
 
 3. **Generalized Variational Inference (GVI) Calibration**:
-   - **Function**: Infer the posterior over latent parameters via gradient-based optimization.
-   - **Mechanism**: Minimize $q^*(\mathbf{n}) = \arg\min_{q \in \mathcal{Q}} \mathbb{E}_{\mathbf{n} \sim q}[\ell(\mathbf{y}; \mathbf{n})] + D_{\text{KL}}(q(\mathbf{n}) \| p(\mathbf{n}))$, where $\ell$ is an L2 loss and $q$ is a Gaussian variational family. JAX's AD computes gradients of the ELBO with respect to variational parameters $\phi$, which are optimized via SGD.
-   - **Design Motivation**: GVI exploits gradient information for efficient search in high-dimensional parameter spaces; ABC is essentially infeasible in a 2,000-dimensional space (two parameters per firm).
+    - **Function**: Infer the posterior over latent parameters via gradient-based optimization.
+    - **Mechanism**: Minimize $q^*(\mathbf{n}) = \arg\min_{q \in \mathcal{Q}} \mathbb{E}_{\mathbf{n} \sim q}[\ell(\mathbf{y}; \mathbf{n})] + D_{\text{KL}}(q(\mathbf{n}) \| p(\mathbf{n}))$, where $\ell$ is an L2 loss and $q$ is a Gaussian variational family. JAX's AD computes gradients of the ELBO with respect to variational parameters $\phi$, which are optimized via SGD.
+    - **Design Motivation**: GVI exploits gradient information for efficient search in high-dimensional parameter spaces; ABC is essentially infeasible in a 2,000-dimensional space (two parameters per firm).
 
 ### Loss & Training
 
@@ -111,9 +111,9 @@ After 300 model evaluations, SVI achieves lower in-sample and out-of-sample loss
 - **Simplified model**: The production function is Leontief (no input substitutability); price mechanisms, firm entry/exit, and multi-product settings are not considered.
 - **Handling of discrete stochasticity**: The paper does not detail how discrete stochasticity in the ABM (e.g., order allocation) is handled; relaxation approximations may have been employed.
 - **Future directions**:
-  - End-to-end calibration using real input-output tables (e.g., WIOD global data) and real shock events (e.g., Covid-19 shutdowns).
-  - Incorporation of price adjustment mechanisms and inventory substitution elasticities.
-  - Exploration of structured variational distributions (e.g., normalizing flows capturing inter-firm correlations).
+    - End-to-end calibration using real input-output tables (e.g., WIOD global data) and real shock events (e.g., Covid-19 shutdowns).
+    - Incorporation of price adjustment mechanisms and inventory substitution elasticities.
+    - Exploration of structured variational distributions (e.g., normalizing flows capturing inter-firm correlations).
 
 ## Related Work & Insights
 

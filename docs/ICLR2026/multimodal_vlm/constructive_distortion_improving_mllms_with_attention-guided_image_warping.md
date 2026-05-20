@@ -18,8 +18,8 @@ content_hash: 58baab97ad56cc2e
 # Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.09741](https://arxiv.org/abs/2510.09741)
-**Code**: [Project Page](https://dwipddalal.github.io/Attwarp/)
+**arXiv**: [2510.09741](https://arxiv.org/abs/2510.09741)  
+**Code**: [Project Page](https://dwipddalal.github.io/Attwarp/)  
 **Area**: Multimodal VLM
 **Keywords**: MLLM, image warping, attention-guided, fine-grained perception, test-time intervention
 

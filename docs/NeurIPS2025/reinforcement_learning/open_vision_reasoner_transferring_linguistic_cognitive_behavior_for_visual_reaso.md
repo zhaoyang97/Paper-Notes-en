@@ -57,9 +57,9 @@ OVR adopts the widely used "RL with cold start" paradigm, consisting of two trai
    - **Goal-driven Visual Tracing**: Evidence in the image is located by reasoning backward from the desired conclusion, analogous to "backward induction."
 
 2. **Large-Scale Data Curation**:
-   - Cold-start data: ~2M reasoning trajectories distilled from DeepSeek-R1, covering AIME, MATH, Numina-Math, and synthetic logic problems.
-   - RL data: ~300K multimodal samples including geometry problems (Geometry3k, GeoQA), visual discrimination (IconQA, ChartQA), visual puzzles (PuzzleVQA), and STEM tasks.
-   - Multi-step curation: pretrained model filtering of high-loss noisy samples → rule- and model-assisted removal of undesirable patterns → reweighting for category balance → removal of samples incompatible with the reward function.
+    - Cold-start data: ~2M reasoning trajectories distilled from DeepSeek-R1, covering AIME, MATH, Numina-Math, and synthetic logic problems.
+    - RL data: ~300K multimodal samples including geometry problems (Geometry3k, GeoQA), visual discrimination (IconQA, ChartQA), visual puzzles (PuzzleVQA), and STEM tasks.
+    - Multi-step curation: pretrained model filtering of high-loss noisy samples → rule- and model-assisted removal of undesirable patterns → reweighting for category balance → removal of samples incompatible with the reward function.
 
 3. **PPO + GAE Optimization**:  
    A lightweight PPO algorithm is adopted with Generalized Advantage Estimation (GAE). The advantage estimate is:

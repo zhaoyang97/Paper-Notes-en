@@ -17,8 +17,8 @@ content_hash: d3786f070caddf1d
 # MetaFind: Scene-Aware 3D Asset Retrieval for Coherent Metaverse Scene Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04057](https://arxiv.org/abs/2510.04057)
-**Code**: None
+**arXiv**: [2510.04057](https://arxiv.org/abs/2510.04057)  
+**Code**: None  
 **Area**: Others
 **Keywords**: 3D asset retrieval, scene awareness, graph neural networks, SE(3) equivariance, multimodal fusion
 

@@ -18,8 +18,8 @@ content_hash: c52da716e8abe486
 # Semi-Supervised Conformal Prediction With Unlabeled Nonconformity Score
 
 **Conference**: CVPR 2026
-**arXiv**: [2505.21147](https://arxiv.org/abs/2505.21147)
-**Code**: Available (integrated into TorchCP library)
+**arXiv**: [2505.21147](https://arxiv.org/abs/2505.21147)  
+**Code**: Available (integrated into TorchCP library)  
 **Area**: LLM Evaluation
 **Keywords**: Conformal Prediction, Semi-Supervised Learning, Uncertainty Quantification, Prediction Sets, Nearest Neighbor Matching
 

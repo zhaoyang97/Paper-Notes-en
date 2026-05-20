@@ -19,8 +19,8 @@ content_hash: 8ca2bec8c4ac07ca
 # Classical Planning with LLM-Generated Heuristics: Challenging the State of the Art with Python Code
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.18809](https://arxiv.org/abs/2503.18809)
-**Code**: [Publicly Available](https://doi.org/10.5281/zenodo.14964025)
+**arXiv**: [2503.18809](https://arxiv.org/abs/2503.18809)  
+**Code**: [Publicly Available](https://doi.org/10.5281/zenodo.14964025)  
 **Authors**: Augusto B. Corrêa, André G. Pereira, Jendrik Seipp
 **Area**: AI Planning — Classical Planning, Heuristic Search
 **Keywords**: Classical Planning, LLM Code Generation, Heuristic Function, PDDL, Greedy Best-First Search, Domain-Dependent Planning

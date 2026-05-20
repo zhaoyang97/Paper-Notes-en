@@ -18,8 +18,8 @@ content_hash: 3a44b243aa7f25b9
 # Beyond Simple Graphs: Neural Multi-Objective Routing on Multigraphs
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.22095](https://arxiv.org/abs/2506.22095)
-**Code**: [https://github.com/filiprydin/GMS](https://github.com/filiprydin/GMS)
+**arXiv**: [2506.22095](https://arxiv.org/abs/2506.22095)  
+**Code**: [https://github.com/filiprydin/GMS](https://github.com/filiprydin/GMS)  
 **Area**: Combinatorial Optimization / Graph Neural Networks / Vehicle Routing
 **Keywords**: Multi-objective routing, multigraph, graph neural networks, autoregressive construction, Pareto optimization
 

@@ -17,8 +17,8 @@ content_hash: 4ddcf5e4f4321af0
 # DECOR: Deep Embedding Clustering with Orientation Robustness
 
 **Conference**: AAAI 2026 (KGML Bridge, non-archival)
-**arXiv**: [2510.03328](https://arxiv.org/abs/2510.03328)
-**Code**: None
+**arXiv**: [2510.03328](https://arxiv.org/abs/2510.03328)  
+**Code**: None  
 **Area**: Other
 **Keywords**: deep clustering, rotation invariance, wafer defect detection, non-parametric clustering, anomaly detection
 

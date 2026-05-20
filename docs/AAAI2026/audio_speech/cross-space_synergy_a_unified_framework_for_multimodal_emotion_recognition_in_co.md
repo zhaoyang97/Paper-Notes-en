@@ -18,8 +18,8 @@ content_hash: cf94f56bcf14b9bd
 # Cross-Space Synergy: A Unified Framework for Multimodal Emotion Recognition in Conversation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.03521](https://arxiv.org/abs/2512.03521)
-**Code**: N/A
+**arXiv**: [2512.03521](https://arxiv.org/abs/2512.03521)  
+**Code**: N/A  
 **Area**: Audio & Speech / Multimodal Emotion Recognition
 **Keywords**: multimodal emotion recognition, high-order fusion, gradient conflict, Pareto optimization, conversational emotion
 

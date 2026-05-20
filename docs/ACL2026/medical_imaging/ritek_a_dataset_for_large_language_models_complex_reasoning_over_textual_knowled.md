@@ -18,8 +18,8 @@ content_hash: 0024d46366fd5bf5
 # RiTeK: A Dataset for Large Language Models Complex Reasoning over Textual Knowledge Graphs in Medicine
 
 **Conference**: ACL 2026
-**arXiv**: [2410.13987](https://arxiv.org/abs/2410.13987)
-**Code**: [https://github.com/ToneLi/Medical-Textual-KG-Reasoning-Benchmark](https://github.com/ToneLi/Medical-Textual-KG-Reasoning-Benchmark)
+**arXiv**: [2410.13987](https://arxiv.org/abs/2410.13987)  
+**Code**: [https://github.com/ToneLi/Medical-Textual-KG-Reasoning-Benchmark](https://github.com/ToneLi/Medical-Textual-KG-Reasoning-Benchmark)  
 **Area**: Medical Imaging
 **Keywords**: Textual Knowledge Graph, Medical QA, Complex Reasoning, Retrieval System, Topological Structure
 

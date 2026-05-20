@@ -18,8 +18,8 @@ content_hash: a9bede8a57029e5f
 # SynFER: Towards Boosting Facial Expression Recognition with Synthetic Data
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.09865](https://arxiv.org/abs/2410.09865)
-**Code**: [Available](https://github.com/)
+**arXiv**: [2410.09865](https://arxiv.org/abs/2410.09865)  
+**Code**: [Available](https://github.com/)  
 **Area**: Facial Expression Recognition / Synthetic Data
 **Keywords**: Facial expression recognition, synthetic data, diffusion models, facial action units, label calibration
 

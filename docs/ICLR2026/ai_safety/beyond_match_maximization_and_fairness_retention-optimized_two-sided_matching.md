@@ -18,8 +18,8 @@ content_hash: 0b72c20b955a5223
 # Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.15752](https://arxiv.org/abs/2602.15752)
-**Code**: [GitHub](https://github.com/kishi6/ICLR2026_MRet)
+**arXiv**: [2602.15752](https://arxiv.org/abs/2602.15752)  
+**Code**: [GitHub](https://github.com/kishi6/ICLR2026_MRet)  
 **Area**: Recommender Systems / AI Safety
 **Keywords**: Two-sided matching, user retention, dynamic learning-to-rank, online dating platforms, retention optimization
 

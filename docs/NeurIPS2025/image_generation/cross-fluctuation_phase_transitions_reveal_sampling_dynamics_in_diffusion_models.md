@@ -18,12 +18,12 @@ content_hash: 4102443bc13e6002
 # Cross-fluctuation Phase Transitions Reveal Sampling Dynamics in Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00124](https://arxiv.org/abs/2511.00124)
-**Code**: None
+**arXiv**: [2511.00124](https://arxiv.org/abs/2511.00124)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Diffusion models, phase transitions, cross-fluctuation, sampling dynamics, conditional generation
-**arXiv**: [2511.00124](https://arxiv.org/abs/2511.00124)
-**Code**: None
+**arXiv**: [2511.00124](https://arxiv.org/abs/2511.00124)  
+**Code**: None  
 **Area**: Image Generation
 
 ## TL;DR

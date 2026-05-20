@@ -18,8 +18,8 @@ content_hash: 653bbd610798599a
 # Learning a Distance Measure from the Information-Estimation Geometry of Data
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.02514](https://arxiv.org/abs/2510.02514)
-**Code**: [GitHub](https://github.com/ohayonguy/information-estimation-metric)
+**arXiv**: [2510.02514](https://arxiv.org/abs/2510.02514)  
+**Code**: [GitHub](https://github.com/ohayonguy/information-estimation-metric)  
 **Area**: Metric Learning / Perceptual Quality Assessment
 **Keywords**: information-estimation metric, denoising error, probability density geometry, perceptual distance, diffusion models
 

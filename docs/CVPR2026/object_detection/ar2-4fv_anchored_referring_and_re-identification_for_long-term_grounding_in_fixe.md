@@ -18,8 +18,8 @@ content_hash: 8c4a7ec7b7c532d2
 # AR²-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07758](https://arxiv.org/abs/2603.07758)
-**Code**: To be confirmed
+**arXiv**: [2603.07758](https://arxiv.org/abs/2603.07758)  
+**Code**: To be confirmed  
 **Area**: Object Detection / Video Understanding / Language-Guided Object Grounding
 **Keywords**: Long-term referring, fixed-view video, background anchor, re-entry detection, identity re-identification
 

@@ -18,8 +18,8 @@ content_hash: fec1e66d183093bc
 # ThermalGen: Style-Disentangled Flow-Based Generative Models for RGB-to-Thermal Image Translation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.24878](https://arxiv.org/abs/2509.24878)
-**Code**: [Project Page](https://xjh19971.github.io/ThermalGen)
+**arXiv**: [2509.24878](https://arxiv.org/abs/2509.24878)  
+**Code**: [Project Page](https://xjh19971.github.io/ThermalGen)  
 **Area**: Image Generation / Cross-Modal Translation
 **Keywords**: RGB-to-Thermal Translation, Flow-Based Generative Models, Style Disentanglement, Multi-Dataset Joint Training, Thermal Imaging
 

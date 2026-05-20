@@ -18,8 +18,8 @@ content_hash: d877e79377712296
 # SafeFlowMatcher: Safe and Fast Planning using Flow Matching with Control Barrier Functions
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24243](https://arxiv.org/abs/2509.24243)
-**Code**: See project page
+**arXiv**: [2509.24243](https://arxiv.org/abs/2509.24243)  
+**Code**: See project page  
 **Area**: Image Generation
 **Keywords**: Flow Matching, Control Barrier Functions (CBF), Safe Planning, Predictor-Corrector Integrator, Finite-Time Convergence
 

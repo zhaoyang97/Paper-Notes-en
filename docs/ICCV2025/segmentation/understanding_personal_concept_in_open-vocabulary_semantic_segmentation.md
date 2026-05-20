@@ -18,8 +18,8 @@ content_hash: dd89ef7c9b449125
 # Personalized OVSS: Understanding Personal Concept in Open-Vocabulary Semantic Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.11030](https://arxiv.org/abs/2507.11030)
-**Code**: None
+**arXiv**: [2507.11030](https://arxiv.org/abs/2507.11030)  
+**Code**: None  
 **Area**: Image Segmentation
 **Keywords**: personalized segmentation, open-vocabulary semantic segmentation, text prompt tuning, negative mask proposal, few-shot learning
 

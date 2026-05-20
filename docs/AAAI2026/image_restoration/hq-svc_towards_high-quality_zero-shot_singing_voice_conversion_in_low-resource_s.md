@@ -19,8 +19,8 @@ content_hash: 778e84b117903c92
 # HQ-SVC: Towards High-Quality Zero-Shot Singing Voice Conversion in Low-Resource Scenarios
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08496](https://arxiv.org/abs/2511.08496)
-**Code**: [ShawnPi233/HQ-SVC](https://github.com/ShawnPi233/HQ-SVC)
+**arXiv**: [2511.08496](https://arxiv.org/abs/2511.08496)  
+**Code**: [ShawnPi233/HQ-SVC](https://github.com/ShawnPi233/HQ-SVC)  
 **Area**: Image Restoration
 **Keywords**: Singing Voice Conversion, Zero-Shot, Low-Resource, Diffusion Model, DDSP, Audio Codec
 

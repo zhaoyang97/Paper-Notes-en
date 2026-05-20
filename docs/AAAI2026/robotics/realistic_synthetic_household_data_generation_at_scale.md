@@ -18,8 +18,8 @@ content_hash: e4b84d604767a953
 # Realistic Synthetic Household Data Generation at Scale
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.07243](https://arxiv.org/abs/2602.07243)
-**Code**: None
+**arXiv**: [2602.07243](https://arxiv.org/abs/2602.07243)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: synthetic data generation, household environment modeling, bidirectional coupling, LLM-driven, embodied AI
 

@@ -18,8 +18,8 @@ content_hash: be6fb72f20a11f83
 # NTK-Guided Implicit Neural Teaching
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.15487](https://arxiv.org/abs/2511.15487)
-**Code**: Available (Project page)
+**arXiv**: [2511.15487](https://arxiv.org/abs/2511.15487)  
+**Code**: Available (Project page)  
 **Area**: 3D Vision
 **Keywords**: Implicit Neural Representations, Neural Tangent Kernel, Training Acceleration, Coordinate Sampling, INR
 

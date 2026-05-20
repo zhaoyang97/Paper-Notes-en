@@ -18,8 +18,8 @@ content_hash: 35bd0260b10b7130
 # Sky2Ground: A Benchmark for Site Modeling under Varying Altitude
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13740](https://arxiv.org/abs/2603.13740)
-**Code**: Coming soon
+**arXiv**: [2603.13740](https://arxiv.org/abs/2603.13740)  
+**Code**: Coming soon  
 **Area**: 3D Vision / Cross-View Localization
 **Keywords**: Cross-view localization, satellite–aerial–ground, multi-altitude 3D reconstruction, Gaussian splatting, curriculum learning
 

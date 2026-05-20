@@ -18,8 +18,8 @@ content_hash: d152242bae310715
 # Automated Detection of Visual Attribute Reliance with a Self-Reflective Agent
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21704](https://arxiv.org/abs/2510.21704)
-**Code**: [https://christykl.github.io/saia-website/](https://christykl.github.io/saia-website/)
+**arXiv**: [2510.21704](https://arxiv.org/abs/2510.21704)  
+**Code**: [https://christykl.github.io/saia-website/](https://christykl.github.io/saia-website/)  
 **Area**: Object Detection
 **Keywords**: visual attribute reliance, self-reflective agent, interpretability, hypothesis testing, bias detection
 

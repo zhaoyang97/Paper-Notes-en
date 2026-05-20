@@ -19,8 +19,8 @@ content_hash: 8023b95c5bf8d412
 # When and Where to Reset Matters for Long-Term Test-Time Adaptation
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.03796](https://arxiv.org/abs/2603.03796)
-**Code**: [https://github.com/YonseiML/asr](https://github.com/YonseiML/asr)
+**arXiv**: [2603.03796](https://arxiv.org/abs/2603.03796)  
+**Code**: [https://github.com/YonseiML/asr](https://github.com/YonseiML/asr)  
 **Area**: Audio & Speech
 **Keywords**: test-time adaptation, model collapse, adaptive reset, selective reset, Fisher information, long-term domain shift
 

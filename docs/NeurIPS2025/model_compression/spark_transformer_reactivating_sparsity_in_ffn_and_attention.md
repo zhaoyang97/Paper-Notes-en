@@ -18,8 +18,8 @@ content_hash: a2a8adf64be243b3
 # Spark Transformer: Reactivating Sparsity in FFN and Attention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06644](https://arxiv.org/abs/2506.06644)
-**Code**: None (Google internal project using Gemma-2 and gemma.cpp)
+**arXiv**: [2506.06644](https://arxiv.org/abs/2506.06644)  
+**Code**: None (Google internal project using Gemma-2 and gemma.cpp)  
 **Area**: Model Compression / Efficient Transformers
 **Keywords**: activation sparsity, Statistical Top-k, inference acceleration, FFN sparsity, attention sparsity
 

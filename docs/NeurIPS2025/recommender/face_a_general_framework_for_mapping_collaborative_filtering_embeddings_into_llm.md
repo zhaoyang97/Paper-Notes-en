@@ -18,8 +18,8 @@ content_hash: 39098d270020f11a
 # FACE: A General Framework for Mapping Collaborative Filtering Embeddings into LLM Tokens
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.15729](https://arxiv.org/abs/2510.15729)
-**Code**: [https://github.com/YixinRoll/FACE](https://github.com/YixinRoll/FACE)
+**arXiv**: [2510.15729](https://arxiv.org/abs/2510.15729)  
+**Code**: [https://github.com/YixinRoll/FACE](https://github.com/YixinRoll/FACE)  
 **Area**: Recommender Systems / LLM Alignment
 **Keywords**: Collaborative Filtering, LLM Token Mapping, Vector Quantization, Contrastive Learning, Explainable Recommendation
 

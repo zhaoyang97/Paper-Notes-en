@@ -18,8 +18,8 @@ content_hash: e45616e4199e2f06
 # Long-term Traffic Simulation with Interleaved Autoregressive Motion and Scenario Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.17213](https://arxiv.org/abs/2506.17213)
-**Code**: [orangesodahub.github.io/InfGen](https://orangesodahub.github.io/InfGen)
+**arXiv**: [2506.17213](https://arxiv.org/abs/2506.17213)  
+**Code**: [orangesodahub.github.io/InfGen](https://orangesodahub.github.io/InfGen)  
 **Area**: Autonomous Driving
 **Keywords**: Traffic Simulation, Long-term Simulation, Autoregressive Generation, Scenario Generation, Next-Token Prediction
 
@@ -102,9 +102,9 @@ $$p(\mathcal{A}'_{t+1:T'} | \mathcal{M}, \mathcal{A}_{0:t_0}) = \prod_{t=t_0}^{T
   The control token is restricted to `<ADD AGENT>` or `<BEGIN MOTION>`. Upon `<ADD AGENT>`, a new row is inserted and assigned a pose token; upon `<BEGIN MOTION>`, scenario generation concludes and the next timestep's motion simulation begins.
 
 - **Design Motivation**:
-  - Interleaved execution naturally couples the two tasks, enabling the model to autonomously determine whether agents should be added or removed based on the current scene state.
-  - Occupancy grid encoding provides the scenario generation module with spatial awareness of the current scene, preventing redundant insertion at already-occupied locations.
-  - The autoregressive nature of next-token prediction allows the model to **generalize from short logs during training to long-term simulation at inference** (6× extension).
+    - Interleaved execution naturally couples the two tasks, enabling the model to autonomously determine whether agents should be added or removed based on the current scene state.
+    - Occupancy grid encoding provides the scenario generation module with spatial awareness of the current scene, preventing redundant insertion at already-occupied locations.
+    - The autoregressive nature of next-token prediction allows the model to **generalize from short logs during training to long-term simulation at inference** (6× extension).
 
 #### 3. **Occupancy Grid Encoder**
 

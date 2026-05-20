@@ -18,8 +18,8 @@ content_hash: 7ba39057228ee48b
 # ConInstruct: Evaluating Large Language Models on Conflict Detection and Resolution in Instructions
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14342](https://arxiv.org/abs/2511.14342)
-**Code**: [GitHub](https://github.com/NLPCode/ConInstruct)
+**arXiv**: [2511.14342](https://arxiv.org/abs/2511.14342)  
+**Code**: [GitHub](https://github.com/NLPCode/ConInstruct)  
 **Area**: LLM Evaluation
 **Keywords**: instruction conflict detection, conflict resolution, constraint satisfaction, instruction following, evaluation benchmark
 

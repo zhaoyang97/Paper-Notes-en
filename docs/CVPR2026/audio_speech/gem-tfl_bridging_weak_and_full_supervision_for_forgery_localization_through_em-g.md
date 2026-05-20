@@ -18,8 +18,8 @@ content_hash: 8fc36b35154c3bd7
 # GEM-TFL: Bridging Weak and Full Supervision for Forgery Localization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05095](https://arxiv.org/abs/2603.05095)
-**Code**: None
+**arXiv**: [2603.05095](https://arxiv.org/abs/2603.05095)  
+**Code**: None  
 **Area**: Speech/Audio
 **Keywords**: temporal forgery localization, weak supervision, EM algorithm, graph diffusion, temporal consistency
 

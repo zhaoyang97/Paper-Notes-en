@@ -18,8 +18,8 @@ content_hash: 9e68b8105b694661
 # Background Invariance Testing According to Semantic Proximity
 
 **Conference**: ICCV 2025
-**arXiv**: [2208.09286](https://arxiv.org/abs/2208.09286)
-**Code**: [https://github.com/Zukang-Liao/background_invariance_testing](https://github.com/Zukang-Liao/background_invariance_testing)
+**arXiv**: [2208.09286](https://arxiv.org/abs/2208.09286)  
+**Code**: [https://github.com/Zukang-Liao/background_invariance_testing](https://github.com/Zukang-Liao/background_invariance_testing)  
 **Area**: Multimodal VLM / AI Safety
 **Keywords**: background invariance testing, association ontology, semantic distance, visualization-based testing, neuron coverage
 

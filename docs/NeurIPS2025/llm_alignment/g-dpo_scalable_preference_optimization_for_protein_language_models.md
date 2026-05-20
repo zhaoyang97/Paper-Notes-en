@@ -18,8 +18,8 @@ content_hash: bf310ded7c224f25
 # g-DPO: Scalable Preference Optimization for Protein Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19474](https://arxiv.org/abs/2510.19474)
-**Code**: Available
+**arXiv**: [2510.19474](https://arxiv.org/abs/2510.19474)  
+**Code**: Available  
 **Area**: LLM Alignment / Protein Engineering
 **Keywords**: DPO, Protein Language Models, Preference Optimization, Scalability, Mutational Landscape
 

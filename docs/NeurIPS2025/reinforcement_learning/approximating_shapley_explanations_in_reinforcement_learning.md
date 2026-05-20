@@ -18,8 +18,8 @@ content_hash: 03e9100872055f40
 # Approximating Shapley Explanations in Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.06094](https://arxiv.org/abs/2511.06094)
-**Code**: [Available](https://github.com/djeb20/fastsverl)
+**arXiv**: [2511.06094](https://arxiv.org/abs/2511.06094)  
+**Code**: [Available](https://github.com/djeb20/fastsverl)  
 **Area**: Reinforcement Learning / Interpretability
 **Keywords**: Shapley values, RL interpretability, feature attribution, parametric approximation, off-policy learning
 

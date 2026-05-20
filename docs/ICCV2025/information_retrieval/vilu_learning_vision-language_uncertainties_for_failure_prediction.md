@@ -18,8 +18,8 @@ content_hash: 82364fe62c36842a
 # ViLU: Learning Vision-Language Uncertainties for Failure Prediction
 
 **Conference**: ICCV2025
-**arXiv**: [2507.07620](https://arxiv.org/abs/2507.07620)
-**Code**: [GitHub](https://github.com/ViLU-uncertainty/ViLU)
+**arXiv**: [2507.07620](https://arxiv.org/abs/2507.07620)  
+**Code**: [GitHub](https://github.com/ViLU-uncertainty/ViLU)  
 **Area**: Information Retrieval
 **Keywords**: Uncertainty Quantification, Failure Prediction, VLM, Cross-Attention, Post-Hoc Estimation
 

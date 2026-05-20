@@ -17,8 +17,8 @@ content_hash: 76576fb2109b5dd4
 # Federated ADMM from Bayesian Duality
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.13150](https://arxiv.org/abs/2506.13150)
-**Code**: [Available](https://github.com/xxx)
+**arXiv**: [2506.13150](https://arxiv.org/abs/2506.13150)  
+**Code**: [Available](https://github.com/xxx)  
 **Area**: Others
 **Keywords**: ADMM, Variational Bayes, Natural Gradient, Federated Learning, Bayesian Duality
 

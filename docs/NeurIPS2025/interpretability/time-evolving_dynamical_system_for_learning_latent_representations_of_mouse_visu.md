@@ -18,8 +18,8 @@ content_hash: 6a4264d89e43e3d0
 # Time-Evolving Dynamical System for Learning Latent Representations of Mouse Visual Cortex
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2408.07908](https://arxiv.org/abs/2408.07908)
-**Code**: [Available](https://github.com/Grasshlw/Time-Evolving-Visual-Dynamical-System)
+**arXiv**: [2408.07908](https://arxiv.org/abs/2408.07908)  
+**Code**: [Available](https://github.com/Grasshlw/Time-Evolving-Visual-Dynamical-System)  
 **Area**: Interpretability
 **Keywords**: latent variable models, visual neural activity, time-evolving dynamical systems, contrastive learning, mouse visual cortex
 

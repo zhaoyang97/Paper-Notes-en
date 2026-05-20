@@ -18,8 +18,8 @@ content_hash: dd0677ac6ffb65c3
 # VolleyBots: A Testbed for Multi-Drone Volleyball Game Combining Motion Control and Strategic Play
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.01932](https://arxiv.org/abs/2502.01932)
-**Code**: [https://github.com/thu-uav/VolleyBots](https://github.com/thu-uav/VolleyBots)
+**arXiv**: [2502.01932](https://arxiv.org/abs/2502.01932)  
+**Code**: [https://github.com/thu-uav/VolleyBots](https://github.com/thu-uav/VolleyBots)  
 **Area**: Reinforcement Learning
 **Keywords**: Multi-drone systems, robot sports, multi-agent reinforcement learning, game theory, sim-to-real
 

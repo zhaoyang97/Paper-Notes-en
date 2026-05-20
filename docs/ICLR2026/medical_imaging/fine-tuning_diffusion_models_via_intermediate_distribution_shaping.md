@@ -18,8 +18,8 @@ content_hash: 177fb96c5cb54668
 # Fine-Tuning Diffusion Models via Intermediate Distribution Shaping
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.02692](https://arxiv.org/abs/2510.02692)
-**Code**: None
+**arXiv**: [2510.02692](https://arxiv.org/abs/2510.02692)  
+**Code**: None  
 **Area**: Diffusion Models / Fine-Tuning
 **Keywords**: diffusion model fine-tuning, rejection sampling, KL regularization, intermediate distribution, inverse noise correction
 
@@ -47,21 +47,21 @@ Two main contributions: (1) **P-GRAFT**: fine-tuning via rejection sampling at a
 
 1. **GRAFT Unified Framework**:
 
-   - **Function**: Unifies classical rejection sampling, Best-of-N, Top-K, and related methods under a Generalized Rejection Sampling (GRS) framework.
-   - **Mechanism**: Lemma 2.3 proves that the distribution of samples accepted by GRS is the solution to KL-regularized reward maximization, $p^{\text{RL}}(x) \propto \exp(\hat{r}(x)/\alpha)\bar{p}(x)$, with reward reshaping incorporated.
-   - **Design Motivation**: Although the marginal KL of diffusion models is intractable, GRS implicitly realizes it.
+    - **Function**: Unifies classical rejection sampling, Best-of-N, Top-K, and related methods under a Generalized Rejection Sampling (GRS) framework.
+    - **Mechanism**: Lemma 2.3 proves that the distribution of samples accepted by GRS is the solution to KL-regularized reward maximization, $p^{\text{RL}}(x) \propto \exp(\hat{r}(x)/\alpha)\bar{p}(x)$, with reward reshaping incorporated.
+    - **Design Motivation**: Although the marginal KL of diffusion models is intractable, GRS implicitly realizes it.
 
 2. **P-GRAFT (Partial-GRAFT)**:
 
-   - **Function**: Performs rejection sampling on intermediate denoising states $X_t$ rather than on final generated samples.
-   - **Mechanism**: Lemma 3.2 proves that P-GRS shapes the intermediate distribution $\bar{p}_t$ rather than the final distribution. The fine-tuned model handles denoising from $T \to t$, while the original model handles $t \to 0$. Bias–variance trade-off: large $t$ yields high reward variance but a simpler learning problem (simpler score function); small $t$ yields more accurate reward estimates but a harder learning problem.
-   - **Design Motivation**: Choosing an appropriate intermediate time $t$ allows both aspects to be balanced simultaneously.
+    - **Function**: Performs rejection sampling on intermediate denoising states $X_t$ rather than on final generated samples.
+    - **Mechanism**: Lemma 3.2 proves that P-GRS shapes the intermediate distribution $\bar{p}_t$ rather than the final distribution. The fine-tuned model handles denoising from $T \to t$, while the original model handles $t \to 0$. Bias–variance trade-off: large $t$ yields high reward variance but a simpler learning problem (simpler score function); small $t$ yields more accurate reward estimates but a harder learning problem.
+    - **Design Motivation**: Choosing an appropriate intermediate time $t$ allows both aspects to be balanced simultaneously.
 
 3. **Inverse Noise Correction**:
 
-   - **Function**: Inverts the flow model's mapping from data to noise to learn an improved initial noise distribution.
-   - **Mechanism**: An adapter is trained to apply corrections in the noise space without requiring an explicit reward function.
-   - **Design Motivation**: The invertibility of flow models enables inference of the initial noise distribution.
+    - **Function**: Inverts the flow model's mapping from data to noise to learn an improved initial noise distribution.
+    - **Mechanism**: An adapter is trained to apply corrections in the noise space without requiring an explicit reward function.
+    - **Design Motivation**: The invertibility of flow models enables inference of the initial noise distribution.
 
 ### Loss & Training
 - **P-GRAFT**: Generate $M$ trajectories → apply GRS at the intermediate step to select accepted samples → fine-tune the $T \to t$ denoising segment via supervised fine-tuning (SFT).

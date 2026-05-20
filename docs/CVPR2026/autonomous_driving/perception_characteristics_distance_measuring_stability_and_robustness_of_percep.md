@@ -18,8 +18,8 @@ content_hash: e8953a4fcd985b0f
 # Perception Characteristics Distance: Measuring Stability and Robustness of Perception System in Dynamic Conditions under a Certain Decision Rule
 
 **Conference**: CVPR2026
-**arXiv**: [2506.09217](https://arxiv.org/abs/2506.09217)
-**Code**: [datadrivenwheels/PCD_Python](https://github.com/datadrivenwheels/PCD_Python)
+**arXiv**: [2506.09217](https://arxiv.org/abs/2506.09217)  
+**Code**: [datadrivenwheels/PCD_Python](https://github.com/datadrivenwheels/PCD_Python)  
 **Area**: Autonomous Driving / Perception Evaluation
 **Keywords**: Perception evaluation metrics, detection range reliability, uncertainty modeling, variance change-point detection, autonomous driving safety
 

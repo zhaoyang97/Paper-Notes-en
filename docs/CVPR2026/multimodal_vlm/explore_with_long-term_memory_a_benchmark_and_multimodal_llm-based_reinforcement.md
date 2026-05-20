@@ -18,8 +18,8 @@ content_hash: 25c316cc50dc0a3b
 # Explore with Long-term Memory: A Benchmark and Multimodal LLM-based Reinforcement Learning Framework for Embodied Exploration
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.10744](https://arxiv.org/abs/2601.10744)
-**Code**: [https://wangsen99.github.io/papers/lmee/](https://wangsen99.github.io/papers/lmee/)
+**arXiv**: [2601.10744](https://arxiv.org/abs/2601.10744)  
+**Code**: [https://wangsen99.github.io/papers/lmee/](https://wangsen99.github.io/papers/lmee/)  
 **Area**: Multimodal VLM / Embodied AI / Agent
 **Keywords**: Embodied Exploration, Long-term Memory, Multi-object Navigation, Reinforcement Learning Fine-tuning, Memory Retrieval
 

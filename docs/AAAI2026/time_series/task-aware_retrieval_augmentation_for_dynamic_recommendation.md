@@ -18,8 +18,8 @@ content_hash: 400a28a2e604eb28
 # Task-Aware Retrieval Augmentation for Dynamic Recommendation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12495](https://arxiv.org/abs/2511.12495)
-**Code**: None
+**arXiv**: [2511.12495](https://arxiv.org/abs/2511.12495)  
+**Code**: None  
 **Area**: Time Series / Dynamic Recommendation Systems
 **Keywords**: Retrieval Augmentation, Dynamic Graph Recommendation, Task-Awareness, Graph Transformer, Temporal Generalization
 

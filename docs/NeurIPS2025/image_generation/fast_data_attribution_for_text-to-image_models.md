@@ -18,8 +18,8 @@ content_hash: 3366ad0907ac8ba9
 # Fast Data Attribution for Text-to-Image Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10721](https://arxiv.org/abs/2511.10721)
-**Code**: [https://peterwang512.github.io/FastGDA](https://peterwang512.github.io/FastGDA)
+**arXiv**: [2511.10721](https://arxiv.org/abs/2511.10721)  
+**Code**: [https://peterwang512.github.io/FastGDA](https://peterwang512.github.io/FastGDA)  
 **Area**: Image Generation
 **Keywords**: Data Attribution, Text-to-Image Models, Learning-to-Rank, Feature Distillation, Efficient Retrieval
 

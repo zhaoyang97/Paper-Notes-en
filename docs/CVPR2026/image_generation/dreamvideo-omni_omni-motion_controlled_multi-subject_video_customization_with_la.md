@@ -18,8 +18,8 @@ content_hash: ca6e6f65306172df
 # DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12257](https://arxiv.org/abs/2603.12257)
-**Code**: [Project Page](https://dreamvideo-omni.github.io)
+**arXiv**: [2603.12257](https://arxiv.org/abs/2603.12257)  
+**Code**: [Project Page](https://dreamvideo-omni.github.io)  
 **Area**: Image Generation
 **Keywords**: Video customization, multi-subject identity preservation, omni-motion control, latent space reinforcement learning, DiT
 

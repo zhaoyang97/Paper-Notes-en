@@ -18,8 +18,8 @@ content_hash: 998248761903d96a
 # Cheating Stereo Matching in Full-Scale: Physical Adversarial Attack against Binocular Depth Estimation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14386](https://arxiv.org/abs/2511.14386)
-**Code**: None
+**arXiv**: [2511.14386](https://arxiv.org/abs/2511.14386)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: adversarial attack, stereo matching, binocular depth estimation, 3D texture camouflage, physical adversarial examples
 

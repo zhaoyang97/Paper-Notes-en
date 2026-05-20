@@ -18,8 +18,8 @@ content_hash: a0649822d15c6cfe
 # Region-based Cluster Discrimination for Visual Representation Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.20025](https://arxiv.org/abs/2507.20025)
-**Code**: [GitHub](https://github.com/deepglint/MVT)
+**arXiv**: [2507.20025](https://arxiv.org/abs/2507.20025)  
+**Code**: [GitHub](https://github.com/deepglint/MVT)  
 **Area**: Image Segmentation
 **Keywords**: Region representation learning, cluster discrimination, OCR-awareness, visual encoder, multimodal large language models
 

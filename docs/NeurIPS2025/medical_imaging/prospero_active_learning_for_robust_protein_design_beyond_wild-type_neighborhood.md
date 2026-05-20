@@ -18,8 +18,8 @@ content_hash: 78a68b6b2e05bc69
 # PROSPERO: Active Learning for Robust Protein Design Beyond Wild-Type Neighborhood
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22494](https://arxiv.org/abs/2505.22494)
-**Code**: [GitHub](https://github.com/szczurek-lab/ProSpero)
+**arXiv**: [2505.22494](https://arxiv.org/abs/2505.22494)  
+**Code**: [GitHub](https://github.com/szczurek-lab/ProSpero)  
 **Area**: Medical Imaging / Protein Engineering
 **Keywords**: protein design, active learning, sequential Monte Carlo, pretrained generative model guidance, surrogate model robustness
 

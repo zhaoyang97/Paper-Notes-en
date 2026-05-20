@@ -18,8 +18,8 @@ content_hash: 7a2abe539425da09
 # FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22102](https://arxiv.org/abs/2603.22102)
-**Code**: [https://freeartgs.github.io/](https://freeartgs.github.io/)
+**arXiv**: [2603.22102](https://arxiv.org/abs/2603.22102)  
+**Code**: [https://freeartgs.github.io/](https://freeartgs.github.io/)  
 **Area**: 3D Vision
 **Keywords**: Articulated object reconstruction, Gaussian splatting, free-moving scenario, joint estimation, motion segmentation
 

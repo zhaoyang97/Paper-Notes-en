@@ -18,8 +18,8 @@ content_hash: bad2d7364226ddee
 # Do Not Merge My Model! Safeguarding Open-Source LLMs Against Unauthorized Model Merging
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10712](https://arxiv.org/abs/2511.10712)
-**Code**: None
+**arXiv**: [2511.10712](https://arxiv.org/abs/2511.10712)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: model merging theft, MergeBarrier, orthogonal projection, weight reparameterization, linear mode connectivity
 

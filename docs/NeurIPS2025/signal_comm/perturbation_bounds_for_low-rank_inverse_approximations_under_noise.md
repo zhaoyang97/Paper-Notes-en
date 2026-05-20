@@ -18,8 +18,8 @@ content_hash: 3748a22ffca5500c
 # Perturbation Bounds for Low-Rank Inverse Approximations under Noise
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25571](https://arxiv.org/abs/2510.25571)
-**Code**: None
+**arXiv**: [2510.25571](https://arxiv.org/abs/2510.25571)  
+**Code**: None  
 **Area**: Signal & Communications / Numerical Linear Algebra
 **Keywords**: low-rank inverse approximation, matrix perturbation theory, spectral norm bounds, contour integration, eigengap
 

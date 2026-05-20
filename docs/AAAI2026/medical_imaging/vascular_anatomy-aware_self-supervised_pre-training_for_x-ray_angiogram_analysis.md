@@ -20,8 +20,8 @@ content_hash: f3973de9ad39c64b
 # Vascular Anatomy-aware Self-supervised Pre-training for X-ray Angiogram Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.11536](https://arxiv.org/abs/2602.11536)
-**Code**: [GitHub](https://github.com/Dxhuang-CASIA/XA-SSL)
+**arXiv**: [2602.11536](https://arxiv.org/abs/2602.11536)  
+**Code**: [GitHub](https://github.com/Dxhuang-CASIA/XA-SSL)  
 **Area**: Medical Imaging / Self-supervised Pre-training
 **Keywords**: X-ray angiography, self-supervised learning, masked image modeling, vascular anatomy awareness, foundation model, vessel segmentation, stenosis detection
 

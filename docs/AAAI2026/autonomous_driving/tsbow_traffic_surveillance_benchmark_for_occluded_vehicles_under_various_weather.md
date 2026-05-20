@@ -19,8 +19,8 @@ content_hash: 8d0379530749605b
 # TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions
 
 **Conference**: AAAI2026
-**arXiv**: [2602.05414](https://arxiv.org/abs/2602.05414)
-**Code**: [SKKUAutoLab/TSBOW](https://github.com/SKKUAutoLab/TSBOW)
+**arXiv**: [2602.05414](https://arxiv.org/abs/2602.05414)  
+**Code**: [SKKUAutoLab/TSBOW](https://github.com/SKKUAutoLab/TSBOW)  
 **Authors**: Ngoc Doan-Minh Huynh, Duong Nguyen-Ngoc Tran, Long Hoang Pham et al. (Sungkyunkwan University)
 **Area**: Autonomous Driving
 **Keywords**: Object Detection, Traffic Surveillance, Benchmark Dataset, Occlusion Detection, Adverse Weather, CCTV

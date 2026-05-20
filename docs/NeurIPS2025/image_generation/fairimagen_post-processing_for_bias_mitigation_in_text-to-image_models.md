@@ -18,8 +18,8 @@ content_hash: bb090292842ac315
 # FairImagen: Post-Processing for Bias Mitigation in Text-to-Image Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21363](https://arxiv.org/abs/2510.21363)
-**Code**: [fuzihaofzh/FairImagen](https://github.com/fuzihaofzh/FairImagen)
+**arXiv**: [2510.21363](https://arxiv.org/abs/2510.21363)  
+**Code**: [fuzihaofzh/FairImagen](https://github.com/fuzihaofzh/FairImagen)  
 **Area**: Image Generation
 **Keywords**: Fairness, Bias Mitigation, Stable Diffusion, FairPCA, Text-to-Image
 

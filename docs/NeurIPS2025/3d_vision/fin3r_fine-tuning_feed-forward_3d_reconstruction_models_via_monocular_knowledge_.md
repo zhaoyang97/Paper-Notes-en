@@ -22,8 +22,8 @@ content_hash: c360e6541abb3c96
 # Fin3R: Fine-tuning Feed-forward 3D Reconstruction Models via Monocular Knowledge Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.22429](https://arxiv.org/abs/2511.22429)
-**Code**: [visual-ai/fin3r](https://github.com/visual-ai/fin3r)
+**arXiv**: [2511.22429](https://arxiv.org/abs/2511.22429)  
+**Code**: [visual-ai/fin3r](https://github.com/visual-ai/fin3r)  
 **Area**: 3D Vision
 **Keywords**: 3D Reconstruction, Feed-forward Reconstruction, Knowledge Distillation, LoRA Fine-tuning, Monocular Depth Estimation, DUSt3R, MASt3R, CUT3R, VGGT
 

@@ -18,8 +18,8 @@ content_hash: f4df4abf7bdb3254
 # Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.09651](https://arxiv.org/abs/2509.09651)
-**Code**: [GitHub](https://github.com/Zakaria010/Radio-RAG)
+**arXiv**: [2509.09651](https://arxiv.org/abs/2509.09651)  
+**Code**: [GitHub](https://github.com/Zakaria010/Radio-RAG)  
 **Area**: NLP Understanding / RAG / Domain-Specific QA
 **Keywords**: RAG, Radio Regulations, Domain QA, Retrieval-Augmented Generation, ITU
 

@@ -18,8 +18,8 @@ content_hash: d314aae4f41c0323
 # Amodal3R: Amodal 3D Reconstruction from Occluded 2D Images
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.13439](https://arxiv.org/abs/2503.13439)
-**Code**: [Project Page](https://sm0kywu.github.io/Amodal3R/)
+**arXiv**: [2503.13439](https://arxiv.org/abs/2503.13439)  
+**Code**: [Project Page](https://sm0kywu.github.io/Amodal3R/)  
 **Area**: 3D Vision / 3D Reconstruction / Occlusion Completion
 **Keywords**: Amodal 3D Reconstruction, Occlusion-aware, diffusion model, Cross-Attention, TRELLIS
 

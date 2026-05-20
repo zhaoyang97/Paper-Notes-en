@@ -18,8 +18,8 @@ content_hash: e1fda81adcc0601c
 # Exploring the Limits of Strong Membership Inference Attacks on Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18773](https://arxiv.org/abs/2505.18773)
-**Code**: None (Internal experiments at Google DeepMind)
+**arXiv**: [2505.18773](https://arxiv.org/abs/2505.18773)  
+**Code**: None (Internal experiments at Google DeepMind)  
 **Area**: AI Security
 **Keywords**: Membership Inference Attack, LLM Privacy, LiRA, Differential Privacy, Pre-trained Language Models
 

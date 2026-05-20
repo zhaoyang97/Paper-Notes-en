@@ -18,8 +18,8 @@ content_hash: bd346843db5b06b4
 # O3SLM: Open Weight, Open Data, and Open Vocabulary Sketch-Language Model
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14368](https://arxiv.org/abs/2511.14368)
-**Code**: [Project Page](https://vcl-iisc.github.io/O3SLM/)
+**arXiv**: [2511.14368](https://arxiv.org/abs/2511.14368)  
+**Code**: [Project Page](https://vcl-iisc.github.io/O3SLM/)  
 **Area**: Multimodal VLM
 **Keywords**: Sketch understanding, large vision-language model, sketch-image-text alignment, open vocabulary, instruction tuning
 

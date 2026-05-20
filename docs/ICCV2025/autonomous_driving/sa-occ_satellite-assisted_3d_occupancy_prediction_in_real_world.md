@@ -17,8 +17,8 @@ content_hash: dfc114ba26df1baf
 # SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.16399](https://arxiv.org/abs/2503.16399)
-**Code**: [https://github.com/chenchen235/SA-Occ](https://github.com/chenchen235/SA-Occ)
+**arXiv**: [2503.16399](https://arxiv.org/abs/2503.16399)  
+**Code**: [https://github.com/chenchen235/SA-Occ](https://github.com/chenchen235/SA-Occ)  
 **Area**: Autonomous Driving
 **Keywords**: 3D occupancy prediction, satellite imagery, cross-view fusion, autonomous driving, multi-sensor fusion
 

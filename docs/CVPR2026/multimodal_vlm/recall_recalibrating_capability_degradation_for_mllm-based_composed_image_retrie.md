@@ -18,8 +18,8 @@ content_hash: e9d9a364afae903b
 # ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.01639](https://arxiv.org/abs/2602.01639)
-**Code**: [https://github.com/RemRico/Recall](https://github.com/RemRico/Recall)
+**arXiv**: [2602.01639](https://arxiv.org/abs/2602.01639)  
+**Code**: [https://github.com/RemRico/Recall](https://github.com/RemRico/Recall)  
 **Area**: Multimodal Retrieval
 **Keywords**: Composed Image Retrieval, Capability Degradation, MLLM Self-Improvement, Contrastive Learning, Diagnose-Generate-Refine
 
@@ -49,21 +49,21 @@ ReCALL is a model-agnostic four-stage framework. Stage 1 trains a baseline retri
 
 1. **Self-Guided Informative Instance Mining (Stage 2: Diagnose)**
 
-   - **Function**: Automatically discovers the retriever's "cognitive blind spots" — samples that are ranked highly by the retriever yet are actually incorrect.
-   - **Mechanism**: $\mathcal{R}_{\text{base}}$ performs retrieval inference on the training set; queries where retrieval succeeds are filtered out (they already have sufficient discriminative power), and the pipeline focuses on failure cases. For each failure case, the Top-K images incorrectly ranked above the ground truth are extracted as informative instances $\{I_h\}$. These instances are "informative" because they share subtle visual/semantic similarity with the target, precisely exposing the degraded reasoning capabilities of the retriever.
-   - **Design Motivation**: Compared to blind large-scale data synthesis (Random Mining), self-guided mining concentrates the generation budget precisely on the model's actual failure points, achieving high data efficiency.
+    - **Function**: Automatically discovers the retriever's "cognitive blind spots" — samples that are ranked highly by the retriever yet are actually incorrect.
+    - **Mechanism**: $\mathcal{R}_{\text{base}}$ performs retrieval inference on the training set; queries where retrieval succeeds are filtered out (they already have sufficient discriminative power), and the pipeline focuses on failure cases. For each failure case, the Top-K images incorrectly ranked above the ground truth are extracted as informative instances $\{I_h\}$. These instances are "informative" because they share subtle visual/semantic similarity with the target, precisely exposing the degraded reasoning capabilities of the retriever.
+    - **Design Motivation**: Compared to blind large-scale data synthesis (Random Mining), self-guided mining concentrates the generation budget precisely on the model's actual failure points, achieving high data efficiency.
 
 2. **Generative Calibration (Stage 3: Generate)**
 
-   - **Function**: Leverages the base MLLM's native reasoning capabilities to produce targeted corrective supervision signals.
-   - **Mechanism**: (a) **CoT-assisted generation** — $\mathcal{F}$ performs two-step reasoning for each informative instance $I_h$: first decomposing the original instruction $T_m$ into atomic intents and verifying each intent on $(I_r, I_h)$, then retaining consistent intents and regenerating only the violated parts to yield the corrective instruction $\tilde{T}_m$. The resulting triplet $(I_r, \tilde{T}_m, I_h)$ has text edits that directly correspond to visual differences between $I_t$ and $I_h$. (b) **VQA quality control** — $\mathcal{F}$ is queried about key attributes in $\tilde{T}_m$, retaining only triplets with high confidence and internal consistency.
-   - **Design Motivation**: The minimal-edit strategy preserves the original distribution while introducing precise fine-grained supervision — the difference between the corrective and original instructions exactly reflects the visual differences the retriever must learn to distinguish. VQA filtering ensures the generated supervision signals are reliable.
+    - **Function**: Leverages the base MLLM's native reasoning capabilities to produce targeted corrective supervision signals.
+    - **Mechanism**: (a) **CoT-assisted generation** — $\mathcal{F}$ performs two-step reasoning for each informative instance $I_h$: first decomposing the original instruction $T_m$ into atomic intents and verifying each intent on $(I_r, I_h)$, then retaining consistent intents and regenerating only the violated parts to yield the corrective instruction $\tilde{T}_m$. The resulting triplet $(I_r, \tilde{T}_m, I_h)$ has text edits that directly correspond to visual differences between $I_t$ and $I_h$. (b) **VQA quality control** — $\mathcal{F}$ is queried about key attributes in $\tilde{T}_m$, retaining only triplets with high confidence and internal consistency.
+    - **Design Motivation**: The minimal-edit strategy preserves the original distribution while introducing precise fine-grained supervision — the difference between the corrective and original instructions exactly reflects the visual differences the retriever must learn to distinguish. VQA filtering ensures the generated supervision signals are reliable.
 
 3. **Grouped Contrastive Refinement (Stage 4: Refine)**
 
-   - **Function**: Efficiently internalizes corrective supervision signals into the retriever's embedding space.
-   - **Mechanism**: A micro-group is constructed for each query, containing the original positive triplet $(I_r, T_m, I_t)$ and the corrective triplet $(I_r, \tilde{T}_m, I_h)$. A dual-objective optimization is applied: (a) **InfoNCE loss** preserves global structure; (b) **intra-group triplet margin loss** $\mathcal{L}_{\text{triplet}} = \max(0, s(z_q, z_{t^-}) - s(z_q, z_{t^+}) + m)$ explicitly enforces separation between the target and informative instances. Total loss: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{infoNCE}} + \lambda\mathcal{L}_{\text{triplet}}$.
-   - **Design Motivation**: Placing the target alongside its confusable neighbors with subtly different instructions in the same batch forces the model to resolve the most challenging ambiguities in a single gradient update. This structured batching maximizes the transfer efficiency of corrective signals compared to random batching.
+    - **Function**: Efficiently internalizes corrective supervision signals into the retriever's embedding space.
+    - **Mechanism**: A micro-group is constructed for each query, containing the original positive triplet $(I_r, T_m, I_t)$ and the corrective triplet $(I_r, \tilde{T}_m, I_h)$. A dual-objective optimization is applied: (a) **InfoNCE loss** preserves global structure; (b) **intra-group triplet margin loss** $\mathcal{L}_{\text{triplet}} = \max(0, s(z_q, z_{t^-}) - s(z_q, z_{t^+}) + m)$ explicitly enforces separation between the target and informative instances. Total loss: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{infoNCE}} + \lambda\mathcal{L}_{\text{triplet}}$.
+    - **Design Motivation**: Placing the target alongside its confusable neighbors with subtly different instructions in the same batch forces the model to resolve the most challenging ambiguities in a single gradient update. This structured batching maximizes the transfer efficiency of corrective signals compared to random batching.
 
 ### Loss & Training
 Qwen2.5-VL-7B is used as the backbone, fine-tuned with LoRA (rank=16). FashionIQ: lr=$4\times10^{-5}$, $\tau=0.03$, batch=512, Stage 1 200 steps + Stage 4 250 steps. CIRR: lr=$2\times10^{-5}$, $\tau=0.02$, Stage 1 300 steps + Stage 4 350 steps. Triplet margin $m=0.05$, $\lambda$=0.30 (FashionIQ) / 0.25 (CIRR).

@@ -18,8 +18,8 @@ content_hash: b8bce44a978abf75
 # Constrained Particle Seeking: Solving Diffusion Inverse Problems with Just Forward Passes
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.01837](https://arxiv.org/abs/2603.01837)
-**Code**: [GitHub](https://github.com/deng-ai-lab/CPS)
+**arXiv**: [2603.01837](https://arxiv.org/abs/2603.01837)  
+**Code**: [GitHub](https://github.com/deng-ai-lab/CPS)  
 **Area**: Diffusion Models / Inverse Problem Solving
 **Keywords**: Diffusion Models, Inverse Problems, Gradient-Free Methods, Particle Optimization, Constrained Optimization
 

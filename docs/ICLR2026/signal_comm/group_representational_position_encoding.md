@@ -20,8 +20,8 @@ content_hash: 26f23b6b71394a03
 # Group Representational Position Encoding (GRAPE)
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.07805](https://arxiv.org/abs/2512.07805)
-**Code**: [github.com/model-architectures/GRAPE](https://github.com/model-architectures/GRAPE)
+**arXiv**: [2512.07805](https://arxiv.org/abs/2512.07805)  
+**Code**: [github.com/model-architectures/GRAPE](https://github.com/model-architectures/GRAPE)  
 **Area**: Signal & Communication
 **Keywords**: positional encoding, group theory, RoPE, ALiBi, Lie groups, rotary encoding, long context
 

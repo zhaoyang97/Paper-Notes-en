@@ -18,8 +18,8 @@ content_hash: 916dd0679b54125c
 # GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.09446](https://arxiv.org/abs/2603.09446)
-**Code**: N/A
+**arXiv**: [2603.09446](https://arxiv.org/abs/2603.09446)  
+**Code**: N/A  
 **Area**: Medical Image Analysis / Multi-view Diagnosis
 **Keywords**: Graph Neural Networks, Multi-view Learning, Heterogeneous Graphs, Missing Views, Medical Image Classification
 

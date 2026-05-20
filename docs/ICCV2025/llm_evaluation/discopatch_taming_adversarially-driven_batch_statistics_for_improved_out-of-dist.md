@@ -18,8 +18,8 @@ content_hash: 59a51d098f571c53
 # DisCoPatch: Taming Adversarially-driven Batch Statistics for Improved Out-of-Distribution Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.08005](https://arxiv.org/abs/2501.08005)
-**Code**: [https://github.com/caetas/DisCoPatch](https://github.com/caetas/DisCoPatch)
+**arXiv**: [2501.08005](https://arxiv.org/abs/2501.08005)  
+**Code**: [https://github.com/caetas/DisCoPatch](https://github.com/caetas/DisCoPatch)  
 **Area**: LLM Evaluation
 **Keywords**: Out-of-Distribution Detection, Batch Normalization, Adversarial VAE, Covariate Shift, Patch Strategy
 

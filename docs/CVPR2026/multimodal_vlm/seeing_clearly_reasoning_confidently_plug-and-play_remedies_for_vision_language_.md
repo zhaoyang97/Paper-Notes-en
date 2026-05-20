@@ -18,8 +18,8 @@ content_hash: a7f4916b551b8aa2
 # Seeing Clearly, Reasoning Confidently: Plug-and-Play Remedies for Vision Language Model Blindness
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19615](https://arxiv.org/abs/2602.19615)
-**Code**: N/A
+**arXiv**: [2602.19615](https://arxiv.org/abs/2602.19615)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: rare object recognition, visual token enhancement, multimodal class embeddings, plug-and-play, VLM robustness
 

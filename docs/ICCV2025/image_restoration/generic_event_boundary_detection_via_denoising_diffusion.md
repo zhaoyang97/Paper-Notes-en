@@ -18,8 +18,8 @@ content_hash: bcb8195f0c5cb2cd
 # Generic Event Boundary Detection via Denoising Diffusion (DiffGEBD)
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.12084](https://arxiv.org/abs/2508.12084)
-**Code**: [https://cvlab.postech.ac.kr/research/DiffGEBD](https://cvlab.postech.ac.kr/research/DiffGEBD)
+**arXiv**: [2508.12084](https://arxiv.org/abs/2508.12084)  
+**Code**: [https://cvlab.postech.ac.kr/research/DiffGEBD](https://cvlab.postech.ac.kr/research/DiffGEBD)  
 **Area**: Image Restoration
 **Keywords**: Generic Event Boundary Detection, Diffusion Models, Classifier-Free Guidance, Diversity Evaluation, Temporal Self-Similarity
 

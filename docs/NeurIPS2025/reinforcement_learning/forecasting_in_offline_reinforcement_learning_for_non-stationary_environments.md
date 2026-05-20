@@ -18,8 +18,8 @@ content_hash: 1e729627e27c5d62
 # Forecasting in Offline Reinforcement Learning for Non-stationary Environments
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.01987](https://arxiv.org/abs/2512.01987)
-**Code**: None
+**arXiv**: [2512.01987](https://arxiv.org/abs/2512.01987)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Offline Reinforcement Learning, Non-stationary Environments, Diffusion Models, Time Series Forecasting, State Estimation
 

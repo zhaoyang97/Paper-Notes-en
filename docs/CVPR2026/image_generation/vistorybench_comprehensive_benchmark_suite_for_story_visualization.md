@@ -18,8 +18,8 @@ content_hash: 4cc290ce9eac39d4
 # ViStoryBench: Comprehensive Benchmark Suite for Story Visualization
 
 **Conference**: CVPR 2026
-**arXiv**: [2505.24862](https://arxiv.org/abs/2505.24862)
-**Code**: [https://github.com/ViStoryBench/ViStoryBench](https://github.com/ViStoryBench/ViStoryBench)
+**arXiv**: [2505.24862](https://arxiv.org/abs/2505.24862)  
+**Code**: [https://github.com/ViStoryBench/ViStoryBench](https://github.com/ViStoryBench/ViStoryBench)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Story Visualization, Benchmark, Character Consistency, Multi-dimensional Evaluation, Narrative Generation
 

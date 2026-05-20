@@ -18,8 +18,8 @@ content_hash: a1ed0d1cab0bcbc2
 # X-WIN: Building Chest Radiograph World Model via Predictive Sensing
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.14918](https://arxiv.org/abs/2511.14918)
-**Code**: None
+**arXiv**: [2511.14918](https://arxiv.org/abs/2511.14918)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: World model, chest radiograph representation learning, CT knowledge distillation, contrastive learning, domain adaptation
 

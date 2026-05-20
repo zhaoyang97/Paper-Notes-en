@@ -18,8 +18,8 @@ content_hash: 71ed9ba50ded9fad
 # AceTone: Bridging Words and Colors for Conditional Image Grading
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00530](https://arxiv.org/abs/2604.00530)
-**Code**: [https://github.com/martian422/AceTone](https://github.com/martian422/AceTone)
+**arXiv**: [2604.00530](https://arxiv.org/abs/2604.00530)  
+**Code**: [https://github.com/martian422/AceTone](https://github.com/martian422/AceTone)  
 **Area**: Image Processing / Color Grading
 **Keywords**: Color grading, 3D-LUT, VQ-VAE tokenizer, VLM, GRPO reinforcement learning
 

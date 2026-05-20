@@ -18,8 +18,8 @@ content_hash: 673d967c83a7646d
 # Thucy: An LLM-based Multi-Agent System for Claim Verification across Relational Databases
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.03278](https://arxiv.org/abs/2512.03278)
-**Code**: [GitHub](https://github.com/michaeltheologitis/thucy)
+**arXiv**: [2512.03278](https://arxiv.org/abs/2512.03278)  
+**Code**: [GitHub](https://github.com/michaeltheologitis/thucy)  
 **Area**: Audio & Speech
 **Keywords**: Multi-Agent System, Claim Verification, Relational Databases, SQL Evidence Generation, Cross-Database Reasoning
 

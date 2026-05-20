@@ -18,8 +18,8 @@ content_hash: d11f3b844cf1000c
 # Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00805](https://arxiv.org/abs/2603.00805)
-**Code**: To be open-sourced
+**arXiv**: [2603.00805](https://arxiv.org/abs/2603.00805)  
+**Code**: To be open-sourced  
 **Area**: LLM Agent
 **Keywords**: NeRF, paper-to-code, multi-agent, code synthesis, Nerfstudio
 
@@ -131,8 +131,8 @@ Executability comparison (all baselines fail to produce trainable code):
 # Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00805](https://arxiv.org/abs/2603.00805)
-**Code**: To be open-sourced
+**arXiv**: [2603.00805](https://arxiv.org/abs/2603.00805)  
+**Code**: To be open-sourced  
 **Area**: 3D Vision / Code Generation
 **Keywords**: NeRF, paper-to-code, multi-agent, code synthesis, Nerfstudio
 
@@ -242,8 +242,8 @@ All baselines (Paper2Code, AutoP2C, GPT-5, R1) **fail to produce trainable code*
 # Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00805](https://arxiv.org/abs/2603.00805)
-**Code**: Coming soon
+**arXiv**: [2603.00805](https://arxiv.org/abs/2603.00805)  
+**Code**: Coming soon  
 **Area**: 3D Vision / Code Generation
 **Keywords**: NeRF, paper-to-code, multi-agent, code synthesis, context-free grammar
 

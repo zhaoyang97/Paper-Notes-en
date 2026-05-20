@@ -18,8 +18,8 @@ content_hash: 67330db766c75b8a
 # WebDevJudge: Evaluating (M)LLMs as Critiques for Web Development Quality
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.18560](https://arxiv.org/abs/2510.18560)
-**Code**: [github.com/lcy2723/WebDevJudge](https://github.com/lcy2723/WebDevJudge)
+**arXiv**: [2510.18560](https://arxiv.org/abs/2510.18560)  
+**Code**: [github.com/lcy2723/WebDevJudge](https://github.com/lcy2723/WebDevJudge)  
 **Area**: LLM/NLP
 **Keywords**: LLM-as-a-judge, meta-evaluation, web development, pairwise comparison, agentic workflow
 

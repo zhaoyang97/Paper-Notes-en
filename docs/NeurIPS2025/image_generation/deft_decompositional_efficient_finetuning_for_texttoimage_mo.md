@@ -18,8 +18,8 @@ content_hash: c423362c76ce4844
 # DEFT: Decompositional Efficient Fine-Tuning for Text-to-Image Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.22793](https://arxiv.org/abs/2509.22793)
-**Code**: [DEFT](https://github.com/DEFT)
+**arXiv**: [2509.22793](https://arxiv.org/abs/2509.22793)  
+**Code**: [DEFT](https://github.com/DEFT)  
 **Area**: Image Generation
 **Keywords**: Efficient Fine-Tuning, Diffusion Models, Low-Rank Decomposition, Personalized Generation, General Image Generation
 

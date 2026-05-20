@@ -18,8 +18,8 @@ content_hash: c127249104916fa2
 # Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02109](https://arxiv.org/abs/2511.02109)
-**Code**: [GitHub](https://github.com/josh-ashkinaze/deep-value-benchmark-neurips)
+**arXiv**: [2511.02109](https://arxiv.org/abs/2511.02109)  
+**Code**: [GitHub](https://github.com/josh-ashkinaze/deep-value-benchmark-neurips)  
 **Area**: Interpretability
 **Keywords**: AI alignment, deep values, shallow preferences, benchmark, value generalization
 

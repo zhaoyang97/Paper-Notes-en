@@ -17,8 +17,8 @@ content_hash: 038c61c70f1d86bf
 # Real-Time Trust Verification for Safe Agentic Actions Using TrustBench
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.09157](https://arxiv.org/abs/2603.09157)
-**Code**: None
+**arXiv**: [2603.09157](https://arxiv.org/abs/2603.09157)  
+**Code**: None  
 **Area**: LLM Agents
 **Keywords**: Trust Verification, Agent Safety, TrustBench, Real-Time Monitoring
 

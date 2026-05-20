@@ -18,8 +18,8 @@ content_hash: 3894534319f80305
 # SimWorld-Robotics: Synthesizing Photorealistic and Dynamic Urban Environments for Multimodal Robot Navigation and Collaboration
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.10046](https://arxiv.org/abs/2512.10046)
-**Code**: None
+**arXiv**: [2512.10046](https://arxiv.org/abs/2512.10046)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: simulation, embodied-ai, urban-navigation, multi-robot, benchmark
 

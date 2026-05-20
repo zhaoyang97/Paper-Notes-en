@@ -18,8 +18,8 @@ content_hash: 66e1998c42b3c2f8
 # RoCo-Sim: Enhancing Roadside Collaborative Perception through Foreground Simulation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.10410](https://arxiv.org/abs/2503.10410)
-**Code**: [https://github.com/duyuwen-duen/RoCo-Sim](https://github.com/duyuwen-duen/RoCo-Sim)
+**arXiv**: [2503.10410](https://arxiv.org/abs/2503.10410)  
+**Code**: [https://github.com/duyuwen-duen/RoCo-Sim](https://github.com/duyuwen-duen/RoCo-Sim)  
 **Area**: 3D Vision / Collaborative Perception
 **Keywords**: roadside collaborative perception, simulation data, foreground editing, 3D detection, multi-view consistency
 

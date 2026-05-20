@@ -18,8 +18,8 @@ content_hash: a8a168ec07320dcb
 # Dynamic Regret Reduces to Kernelized Static Regret
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.05478](https://arxiv.org/abs/2507.05478)
-**Code**: None
+**arXiv**: [2507.05478](https://arxiv.org/abs/2507.05478)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: dynamic regret, online convex optimization, RKHS, kernel methods, path-length
 

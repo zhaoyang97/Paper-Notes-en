@@ -18,8 +18,8 @@ content_hash: 9733166984705a9e
 # Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12533](https://arxiv.org/abs/2603.12533)
-**Code**: [https://yuuraa.github.io/papers/choi2026egovqa](https://yuuraa.github.io/papers/choi2026egovqa) (coming soon)
+**arXiv**: [2603.12533](https://arxiv.org/abs/2603.12533)  
+**Code**: [https://yuuraa.github.io/papers/choi2026egovqa](https://yuuraa.github.io/papers/choi2026egovqa) (coming soon)  
 **Area**: Video Understanding
 **Keywords**: Egocentric Video QA, Gesture Understanding, Deictic Reference, 3D Hand Keypoints, Multimodal Large Language Models
 

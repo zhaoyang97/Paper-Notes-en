@@ -18,8 +18,8 @@ content_hash: e674a48d423e0403
 # DISTIL: Data-Free Inversion of Suspicious Trojan Inputs via Latent Diffusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22813](https://arxiv.org/abs/2507.22813)
-**Code**: [https://github.com/AdaptiveMotorControlLab/DISTIL](https://github.com/AdaptiveMotorControlLab/DISTIL)
+**arXiv**: [2507.22813](https://arxiv.org/abs/2507.22813)  
+**Code**: [https://github.com/AdaptiveMotorControlLab/DISTIL](https://github.com/AdaptiveMotorControlLab/DISTIL)  
 **Area**: Object Detection / Model Security
 **Keywords**: Backdoor defense, trigger inversion, diffusion models, zero-shot detection, model security
 

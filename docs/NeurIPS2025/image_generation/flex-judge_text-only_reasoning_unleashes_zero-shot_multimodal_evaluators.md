@@ -19,8 +19,8 @@ content_hash: 5ae82e25ad6be89d
 # Flex-Judge: Text-Only Reasoning Unleashes Zero-Shot Multimodal Evaluators
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18601](https://arxiv.org/abs/2505.18601)
-**Code**: [https://flex-judge.github.io](https://flex-judge.github.io)
+**arXiv**: [2505.18601](https://arxiv.org/abs/2505.18601)  
+**Code**: [https://flex-judge.github.io](https://flex-judge.github.io)  
 **Area**: Image Generation
 **Keywords**: LLM-as-a-Judge, Multimodal Evaluation, Reasoning-Guided Training, Cross-Modal Transfer, Zero-Shot Generalization, Preference Optimization
 

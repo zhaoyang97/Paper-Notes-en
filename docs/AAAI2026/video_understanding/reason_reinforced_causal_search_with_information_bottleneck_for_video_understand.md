@@ -18,8 +18,8 @@ content_hash: cf6a9b7cf21bf694
 # ReaSon: Reinforced Causal Search with Information Bottleneck for Video Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12530](https://arxiv.org/abs/2511.12530)
-**Code**: [github.com/robin-hlt/AAAI26-ReaSon](https://github.com/robin-hlt/AAAI26-ReaSon)
+**arXiv**: [2511.12530](https://arxiv.org/abs/2511.12530)  
+**Code**: [github.com/robin-hlt/AAAI26-ReaSon](https://github.com/robin-hlt/AAAI26-ReaSon)  
 **Area**: Video Understanding
 **Keywords**: Key Frame Selection, Causal Information Bottleneck, Reinforcement Learning, Counterfactual Reasoning, Video Question Answering
 

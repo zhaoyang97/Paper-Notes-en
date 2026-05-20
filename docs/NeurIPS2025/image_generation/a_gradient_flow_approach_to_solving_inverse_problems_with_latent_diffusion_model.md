@@ -18,8 +18,8 @@ content_hash: 5bb72e87a79a10e7
 # A Gradient Flow Approach to Solving Inverse Problems with Latent Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19276](https://arxiv.org/abs/2509.19276)
-**Code**: None
+**arXiv**: [2509.19276](https://arxiv.org/abs/2509.19276)  
+**Code**: None  
 **Area**: Diffusion Models / Inverse Problems / Bayesian Inference
 **Keywords**: latent diffusion model, Wasserstein gradient flow, inverse problem, posterior sampling, KL divergence
 

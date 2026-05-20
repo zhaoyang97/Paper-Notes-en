@@ -18,8 +18,8 @@ content_hash: ac8851e09347416d
 # RegionMarker: A Region-Triggered Semantic Watermarking Framework for Embedding-as-a-Service
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13329](https://arxiv.org/abs/2511.13329)
-**Code**: Not released
+**arXiv**: [2511.13329](https://arxiv.org/abs/2511.13329)  
+**Code**: Not released  
 **Area**: AI Security
 **Keywords**: EaaS copyright protection, embedding watermarking, semantic region triggering, model extraction attack defense, locality-sensitive hashing
 

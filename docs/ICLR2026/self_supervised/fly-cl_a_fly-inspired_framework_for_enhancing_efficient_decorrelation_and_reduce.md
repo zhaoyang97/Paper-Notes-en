@@ -18,8 +18,8 @@ content_hash: 7b1fe955076ac7ff
 # Fly-CL: A Fly-Inspired Framework for Enhancing Efficient Decorrelation and Reduced Training Time in Pre-trained Model-based Continual Representation Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.16877](https://arxiv.org/abs/2510.16877)
-**Code**: [GitHub](https://github.com/gfyddha/Fly-CL)
+**arXiv**: [2510.16877](https://arxiv.org/abs/2510.16877)  
+**Code**: [GitHub](https://github.com/gfyddha/Fly-CL)  
 **Area**: Self-Supervised Learning / Continual Learning / Bio-Inspired Computing
 **Keywords**: continual learning, fly olfactory circuit, decorrelation, representation learning, prototype
 

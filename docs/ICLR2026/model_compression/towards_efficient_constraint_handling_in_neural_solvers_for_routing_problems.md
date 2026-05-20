@@ -18,8 +18,8 @@ content_hash: 5db12a5ba6f3ce2f
 # Towards Efficient Constraint Handling in Neural Solvers for Routing Problems
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.16012](https://arxiv.org/abs/2602.16012)
-**Code**: [https://github.com/jieyibi/CaR-constraint](https://github.com/jieyibi/CaR-constraint)
+**arXiv**: [2602.16012](https://arxiv.org/abs/2602.16012)  
+**Code**: [https://github.com/jieyibi/CaR-constraint](https://github.com/jieyibi/CaR-constraint)  
 **Area**: Model Compression
 **Keywords**: Neural Combinatorial Optimization, Vehicle Routing Problem, Constraint Handling, Construct-and-Refine Hybrid, Feasibility Repair
 

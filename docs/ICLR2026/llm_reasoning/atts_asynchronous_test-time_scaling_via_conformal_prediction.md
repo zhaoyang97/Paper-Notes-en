@@ -18,8 +18,8 @@ content_hash: 9535c18d7a604cca
 # ATTS: Asynchronous Test-Time Scaling via Conformal Prediction
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.15148](https://arxiv.org/abs/2509.15148)
-**Code**: [https://github.com/menik1126/Asynchronous-Test-Time-Scaling](https://github.com/menik1126/Asynchronous-Test-Time-Scaling)
+**arXiv**: [2509.15148](https://arxiv.org/abs/2509.15148)  
+**Code**: [https://github.com/menik1126/Asynchronous-Test-Time-Scaling](https://github.com/menik1126/Asynchronous-Test-Time-Scaling)  
 **Area**: LLM Reasoning
 **Keywords**: test-time scaling, speculative decoding, conformal prediction, asynchronous inference, rejection sampling
 

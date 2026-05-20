@@ -18,8 +18,8 @@ content_hash: 02c31ff5717c3c59
 # Induce, Align, Predict: Zero-Shot Stance Detection via Cognitive Inductive Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.13470](https://arxiv.org/abs/2506.13470)
-**Code**: None
+**arXiv**: [2506.13470](https://arxiv.org/abs/2506.13470)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: zero-shot stance detection, cognitive schema, first-order logic, graph kernel, low-resource
 

@@ -18,8 +18,8 @@ content_hash: bd99068231db335d
 # Learning Interactive World Model for Object-Centric Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02225](https://arxiv.org/abs/2511.02225)
-**Code**: None
+**arXiv**: [2511.02225](https://arxiv.org/abs/2511.02225)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: world model, Object-Centric RL, Interaction Learning, Hierarchical Policy, Compositional Generalization
 

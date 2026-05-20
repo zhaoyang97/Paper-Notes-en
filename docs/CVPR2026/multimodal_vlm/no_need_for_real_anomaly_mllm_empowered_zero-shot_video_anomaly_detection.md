@@ -18,8 +18,8 @@ content_hash: ba626da2a9eb27f1
 # No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19248](https://arxiv.org/abs/2602.19248)
-**Code**: [https://github.com/VitaminCreed/LAVIDA](https://github.com/VitaminCreed/LAVIDA)
+**arXiv**: [2602.19248](https://arxiv.org/abs/2602.19248)  
+**Code**: [https://github.com/VitaminCreed/LAVIDA](https://github.com/VitaminCreed/LAVIDA)  
 **Area**: Multimodal VLM
 **Keywords**: Video Anomaly Detection, Zero-Shot, MLLM, Pseudo Anomaly, Token Compression
 

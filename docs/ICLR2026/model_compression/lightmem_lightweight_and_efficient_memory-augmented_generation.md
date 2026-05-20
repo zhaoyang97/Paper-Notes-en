@@ -18,8 +18,8 @@ content_hash: c5d00edb1ff4dfdc
 # LightMem: Lightweight and Efficient Memory-Augmented Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.18866](https://arxiv.org/abs/2510.18866)
-**Code**: [GitHub](https://github.com/zjunlp/LightMem)
+**arXiv**: [2510.18866](https://arxiv.org/abs/2510.18866)  
+**Code**: [GitHub](https://github.com/zjunlp/LightMem)  
 **Area**: Model Compression
 **Keywords**: LLM memory system, sensory memory, short-term memory, long-term memory, sleep-time updating
 

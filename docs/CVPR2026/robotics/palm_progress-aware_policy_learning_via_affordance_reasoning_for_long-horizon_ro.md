@@ -18,8 +18,8 @@ content_hash: 8db28c3e8df199d4
 # PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.07060](https://arxiv.org/abs/2601.07060)
-**Code**: [Project Page](https://plan-lab.github.io/palm)
+**arXiv**: [2601.07060](https://arxiv.org/abs/2601.07060)  
+**Code**: [Project Page](https://plan-lab.github.io/palm)  
 **Area**: Object Detection / Robotic Manipulation / VLA Models
 **Keywords**: Long-horizon manipulation, affordance reasoning, progress awareness, vision-language-action model, diffusion Transformer
 

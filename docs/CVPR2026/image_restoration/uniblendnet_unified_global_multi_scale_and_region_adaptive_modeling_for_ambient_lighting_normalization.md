@@ -18,8 +18,8 @@ content_hash: 57f6e0363573f411
 # UniBlendNet: Unified Global, Multi-Scale, and Region-Adaptive Modeling for Ambient Lighting Normalization
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.13383](https://arxiv.org/abs/2604.13383)
-**Code**: None
+**arXiv**: [2604.13383](https://arxiv.org/abs/2604.13383)  
+**Code**: None  
 **Area**: Image Restoration
 **Keywords**: ambient lighting normalization, shadow removal, multi-scale aggregation, mask-guided refinement, frequency-spatial restoration
 

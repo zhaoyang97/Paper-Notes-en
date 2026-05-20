@@ -18,8 +18,8 @@ content_hash: de38f63577ef177b
 # Dynamic Parameter Memory: Temporary LoRA-Enhanced LLM for Long-Sequence Emotion Recognition in Conversation
 
 **Conference**: ICLR2026
-**arXiv**: [2507.09076](https://arxiv.org/abs/2507.09076)
-**Code**: To be confirmed
+**arXiv**: [2507.09076](https://arxiv.org/abs/2507.09076)  
+**Code**: To be confirmed  
 **Area**: Audio & Speech
 **Keywords**: Speech Emotion Recognition, Large Language Model, LoRA, Long-Sequence Processing, Emotion Recognition in Conversation
 

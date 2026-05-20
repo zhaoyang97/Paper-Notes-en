@@ -18,8 +18,8 @@ content_hash: acbc590b88e0fb5b
 # Iterative Foundation Model Fine-Tuning on Multiple Rewards
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00220](https://arxiv.org/abs/2511.00220)
-**Code**: [GitHub](https://github.com/pouyamghari/IterativeRS)
+**arXiv**: [2511.00220](https://arxiv.org/abs/2511.00220)  
+**Code**: [GitHub](https://github.com/pouyamghari/IterativeRS)  
 **Area**: Medical Imaging / Multi-Objective Reinforcement Learning Fine-Tuning
 **Keywords**: Multi-objective fine-tuning, reinforcement learning, foundation models, iterative merging, Rewarded Soups
 

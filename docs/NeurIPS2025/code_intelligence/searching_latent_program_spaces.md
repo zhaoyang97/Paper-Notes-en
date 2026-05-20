@@ -18,8 +18,8 @@ content_hash: 1800a6be6c1286b2
 # Searching Latent Program Spaces
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.08706](https://arxiv.org/abs/2411.08706)
-**Code**: Available (presumed open-source, trained on the re-ARC dataset)
+**arXiv**: [2411.08706](https://arxiv.org/abs/2411.08706)  
+**Code**: Available (presumed open-source, trained on the re-ARC dataset)  
 **Area**: Program Synthesis / Few-Shot Learning / Test-Time Adaptation
 **Keywords**: Latent Program Network, Program Synthesis, Test-Time Search, ARC-AGI, Variational Inference
 

@@ -17,8 +17,8 @@ content_hash: f24a55eedfce69a5
 # ChatInject: Abusing Chat Templates for Prompt Injection in LLM Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22830](https://arxiv.org/abs/2509.22830)
-**Code**: [https://github.com/hwanchang00/ChatInject](https://github.com/hwanchang00/ChatInject)
+**arXiv**: [2509.22830](https://arxiv.org/abs/2509.22830)  
+**Code**: [https://github.com/hwanchang00/ChatInject](https://github.com/hwanchang00/ChatInject)  
 **Area**: LLM Agent
 **Keywords**: prompt injection, chat template, LLM agent, role hierarchy, multi-turn attack
 

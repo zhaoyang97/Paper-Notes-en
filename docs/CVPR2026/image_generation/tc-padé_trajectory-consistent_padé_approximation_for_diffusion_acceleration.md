@@ -18,7 +18,7 @@ content_hash: 08f1f45eed79be81
 # TC-Padé: Trajectory-Consistent Padé Approximation for Diffusion Acceleration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02943](https://arxiv.org/abs/2603.02943)
+**arXiv**: [2603.02943](https://arxiv.org/abs/2603.02943)  
 **Area**: Image Generation
 **Keywords**: diffusion model acceleration, feature caching, Padé approximation, trajectory consistency, residual prediction
 

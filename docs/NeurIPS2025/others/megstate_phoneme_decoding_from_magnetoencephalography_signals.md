@@ -17,8 +17,8 @@ content_hash: 765c302858dab998
 # MEGState: Phoneme Decoding from Magnetoencephalography Signals
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.17978](https://arxiv.org/abs/2512.17978)
-**Code**: None
+**arXiv**: [2512.17978](https://arxiv.org/abs/2512.17978)  
+**Code**: None  
 **Area**: Brain-Computer Interface / Speech Decoding
 **Keywords**: MEG, phoneme decoding, state space model, multi-resolution convolution, brain-computer interface
 

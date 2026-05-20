@@ -18,8 +18,8 @@ content_hash: ae7cc73750518cb6
 # A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.21596](https://arxiv.org/abs/2602.21596)
-**Code**: Available
+**arXiv**: [2602.21596](https://arxiv.org/abs/2602.21596)  
+**Code**: Available  
 **Area**: Diffusion Models
 **Keywords**: diffusion transformer, conditioning, embedding sparsity, cosine similarity, AdaLN
 
@@ -48,21 +48,21 @@ This is a purely analytical paper with no new method proposed. Three findings ar
 
 1. **Extreme Angular Similarity Analysis**:
 
-   - Finding: Pairwise cosine similarity among the conditional embeddings of 1,000 ImageNet classes exceeds 99% (reaching 99.46% for REPA). Continuous conditioning tasks (pose/video) exhibit even higher similarity, exceeding 99.9%.
-   - Explanatory Hypothesis: Diffusion training optimizes embeddings across all timesteps, biasing the model toward globally aligned embeddings that provide stable denoising signals. Semantic differences are encoded in a small number of high-magnitude head dimensions.
+    - Finding: Pairwise cosine similarity among the conditional embeddings of 1,000 ImageNet classes exceeds 99% (reaching 99.46% for REPA). Continuous conditioning tasks (pose/video) exhibit even higher similarity, exceeding 99.9%.
+    - Explanatory Hypothesis: Diffusion training optimizes embeddings across all timesteps, biasing the model toward globally aligned embeddings that provide stable denoising signals. Semantic differences are encoded in a small number of high-magnitude head dimensions.
 
 2. **Participation Ratio (PR) Analysis**:
 
-   - Metric: $\alpha_{norm} = \text{PR}(|c|) / d$, measuring the proportion of dimensions effectively utilized.
-   - Finding: The nPR of SOTA models (MDT/REPA/MG) is only 1.5–2.3%, meaning only ~18–26 of 1,152 dimensions are effectively used. DiT is an exception (10.5%) due to its older architecture.
-   - Continuous conditioning tasks exhibit higher nPR (13–48%), as they require encoding finer-grained continuous conditioning information.
+    - Metric: $\alpha_{norm} = \text{PR}(|c|) / d$, measuring the proportion of dimensions effectively utilized.
+    - Finding: The nPR of SOTA models (MDT/REPA/MG) is only 1.5–2.3%, meaning only ~18–26 of 1,152 dimensions are effectively used. DiT is an exception (10.5%) due to its older architecture.
+    - Continuous conditioning tasks exhibit higher nPR (13–48%), as they require encoding finer-grained continuous conditioning information.
 
 3. **Pruning Experiments—Roles of Head vs. Tail Dimensions**:
 
-   - Tail pruning ($\tau=0.01$): Removing 38.9% of low-magnitude dimensions changes FID from 7.17 to 7.16 (virtually unchanged).
-   - Tail pruning ($\tau=0.02$): Removing 66.2% of dimensions raises FID from 7.17 to 9.22 (still acceptable).
-   - Head pruning: Removing only 2/1,152 (0.2%) of the highest-magnitude dimensions raises FID slightly to 7.85; removing 8/1,152 (0.69%) causes FID to spike to 523.
-   - Conclusion: Semantic information is entirely concentrated in a small number of head dimensions.
+    - Tail pruning ($\tau=0.01$): Removing 38.9% of low-magnitude dimensions changes FID from 7.17 to 7.16 (virtually unchanged).
+    - Tail pruning ($\tau=0.02$): Removing 66.2% of dimensions raises FID from 7.17 to 9.22 (still acceptable).
+    - Head pruning: Removing only 2/1,152 (0.2%) of the highest-magnitude dimensions raises FID slightly to 7.85; removing 8/1,152 (0.69%) causes FID to spike to 523.
+    - Conclusion: Semantic information is entirely concentrated in a small number of head dimensions.
 
 ### Loss & Training
 N/A (analytical paper; no model training performed).

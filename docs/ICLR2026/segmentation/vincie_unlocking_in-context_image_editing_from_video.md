@@ -18,8 +18,8 @@ content_hash: 1193c16881205058
 # VINCIE: Unlocking In-context Image Editing from Video
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.10941](https://arxiv.org/abs/2506.10941)
-**Code**: [vincie2025.github.io](https://vincie2025.github.io/)
+**arXiv**: [2506.10941](https://arxiv.org/abs/2506.10941)  
+**Code**: [vincie2025.github.io](https://vincie2025.github.io/)  
 **Area**: Image Segmentation
 **Keywords**: in-context editing, video learning, multi-turn editing, DiT, segmentation prediction
 

@@ -18,8 +18,8 @@ content_hash: b2b743a0a475be56
 # A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00053](https://arxiv.org/abs/2508.00053)
-**Code**: [GitHub](https://github.com/jiezhu23/QME_ICCV25)
+**arXiv**: [2508.00053](https://arxiv.org/abs/2508.00053)  
+**Code**: [GitHub](https://github.com/jiezhu23/QME_ICCV25)  
 **Area**: Multimodal VLM
 **Keywords**: Whole-body biometric recognition, score fusion, mixture of experts, quality estimation, multimodal fusion
 

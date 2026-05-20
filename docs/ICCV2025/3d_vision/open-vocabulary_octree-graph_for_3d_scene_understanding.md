@@ -18,8 +18,8 @@ content_hash: 92d915d1dca7ab12
 # Open-Vocabulary Octree-Graph for 3D Scene Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.16253](https://arxiv.org/abs/2411.16253)
-**Code**: [GitHub](https://github.com/wangzg1/Octree-Graph)
+**arXiv**: [2411.16253](https://arxiv.org/abs/2411.16253)  
+**Code**: [GitHub](https://github.com/wangzg1/Octree-Graph)  
 **Area**: 3D Vision
 **Keywords**: Open-vocabulary, 3D scene understanding, octree, scene graph, semantic segmentation
 

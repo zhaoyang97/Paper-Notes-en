@@ -18,8 +18,8 @@ content_hash: a4fe8478dc8c23b9
 # Segment-Level Attribution for Selective Learning of Long Reasoning Traces
 
 **Conference**: ICLR2026
-**arXiv**: [2602.00425](https://arxiv.org/abs/2602.00425)
-**Code**: [GitHub](https://github.com/SiyuanWangw/SegmentSelectiveSFT)
+**arXiv**: [2602.00425](https://arxiv.org/abs/2602.00425)  
+**Code**: [GitHub](https://github.com/SiyuanWangw/SegmentSelectiveSFT)  
 **Area**: LLM Reasoning
 **Keywords**: reasoning trace, integrated gradients, selective SFT, segment attribution, CoT compression
 

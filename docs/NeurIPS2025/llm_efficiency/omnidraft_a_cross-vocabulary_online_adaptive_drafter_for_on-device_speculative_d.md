@@ -18,8 +18,8 @@ content_hash: e4c55d97bad6832a
 # OmniDraft: A Cross-Vocabulary Online Adaptive Drafter for On-Device Speculative Decoding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.02659](https://arxiv.org/abs/2507.02659)
-**Code**: Not available
+**arXiv**: [2507.02659](https://arxiv.org/abs/2507.02659)  
+**Code**: Not available  
 **Area**: LLM Efficiency
 **Keywords**: Speculative decoding, cross-vocabulary, online distillation, adaptive drafting, on-device inference
 

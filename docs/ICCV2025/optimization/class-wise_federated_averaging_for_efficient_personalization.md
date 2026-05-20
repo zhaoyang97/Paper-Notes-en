@@ -18,8 +18,8 @@ content_hash: 62fe67dfec4ef494
 # Class-Wise Federated Averaging for Efficient Personalization
 
 **Conference**: ICCV 2025
-**arXiv**: [2406.07800](https://arxiv.org/abs/2406.07800)
-**Code**: [github.com/regulationLee/cwFedAvg](https://github.com/regulationLee/cwFedAvg)
+**arXiv**: [2406.07800](https://arxiv.org/abs/2406.07800)  
+**Code**: [github.com/regulationLee/cwFedAvg](https://github.com/regulationLee/cwFedAvg)  
 **Area**: Federated Learning / Optimization
 **Keywords**: Personalized Federated Learning, Class-Wise Aggregation, Weight Distribution Regularization, Data Heterogeneity, Privacy Preservation
 

@@ -18,8 +18,8 @@ content_hash: 65163a8dfa17c360
 # AI Should Sense Better, Not Just Scale Bigger: Adaptive Sensing as a Paradigm Shift
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.07820](https://arxiv.org/abs/2507.07820)
-**Code**: None (Position Paper)
+**arXiv**: [2507.07820](https://arxiv.org/abs/2507.07820)  
+**Code**: None (Position Paper)  
 **Area**: Perception Systems / Embodied AI
 **Keywords**: Adaptive Sensing, Paradigm Shift, Sensor Optimization, Closed-Loop Perception, Embodied AI
 

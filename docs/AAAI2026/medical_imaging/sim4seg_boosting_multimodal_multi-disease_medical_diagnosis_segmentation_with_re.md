@@ -18,8 +18,8 @@ content_hash: c2d689973a938fbe
 # Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06665](https://arxiv.org/abs/2511.06665)
-**Code**: [https://github.com/SLR567/Sim4Seg](https://github.com/SLR567/Sim4Seg)
+**arXiv**: [2511.06665](https://arxiv.org/abs/2511.06665)  
+**Code**: [https://github.com/SLR567/Sim4Seg](https://github.com/SLR567/Sim4Seg)  
 **Area**: Medical Imaging / Vision-Language Models
 **Keywords**: Medical Diagnosis Segmentation, Vision-Language Similarity, Chain-of-Thought Diagnosis, Multimodal Multi-disease, Test-Time Scaling
 

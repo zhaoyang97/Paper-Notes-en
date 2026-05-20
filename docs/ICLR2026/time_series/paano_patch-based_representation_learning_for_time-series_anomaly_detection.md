@@ -18,8 +18,8 @@ content_hash: 89998455ce131f0c
 # PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01359](https://arxiv.org/abs/2602.01359)
-**Code**: [Available](https://github.com/jinnnju/PaAno)
+**arXiv**: [2602.01359](https://arxiv.org/abs/2602.01359)  
+**Code**: [Available](https://github.com/jinnnju/PaAno)  
 **Area**: Time Series
 **Keywords**: Time series anomaly detection, patch representation learning, lightweight CNN, memory bank, metric learning
 

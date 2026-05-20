@@ -18,8 +18,8 @@ content_hash: 7b7682d553f39577
 # Angular Steering: Behavior Control via Rotation in Activation Space
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26243](https://arxiv.org/abs/2510.26243)
-**Code**: [https://github.com/lone17/angular-steering/](https://github.com/lone17/angular-steering/)
+**arXiv**: [2510.26243](https://arxiv.org/abs/2510.26243)  
+**Code**: [https://github.com/lone17/angular-steering/](https://github.com/lone17/angular-steering/)  
 **Area**: Signal Communication
 **Keywords**: activation steering, behavior control, rotation transformation, refusal steering, norm preservation
 

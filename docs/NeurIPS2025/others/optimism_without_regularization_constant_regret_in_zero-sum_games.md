@@ -17,8 +17,8 @@ content_hash: d092618b5496449d
 # Optimism Without Regularization: Constant Regret in Zero-Sum Games
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.16736](https://arxiv.org/abs/2506.16736)
-**Code**: Not available
+**arXiv**: [2506.16736](https://arxiv.org/abs/2506.16736)  
+**Code**: Not available  
 **Area**: Other
 **Keywords**: Fictitious Play, Optimistic Learning, Zero-Sum Games, Regret Bounds, No Regularization
 

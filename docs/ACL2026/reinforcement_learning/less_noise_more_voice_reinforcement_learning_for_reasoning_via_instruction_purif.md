@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LENS: Less Noise, More Voice — Reinforcement Learning for Reasoning via Instruction Purification
 description: >-
-  [ACL 2026][Reinforcement Learning][RLVR] LENS identifies that many exploration failures in RLVR stem not from problem difficulty but from a small fraction (&lt;5%) of distractor tokens in the prompt. By detecting and removi…
+  [ACL 2026][Reinforcement Learning][RLVR] LENS identifies that many exploration failures in RLVR stem not from problem difficulty but from a small fraction (<5%) of distractor tokens in the prompt. By detecting and removi…
 tags:
   - "ACL 2026"
   - "Reinforcement Learning"
@@ -18,8 +18,8 @@ content_hash: b1cb64e6f58315b4
 # LENS: Less Noise, More Voice — Reinforcement Learning for Reasoning via Instruction Purification
 
 **Conference**: ACL 2026
-**arXiv**: [2601.21244](https://arxiv.org/abs/2601.21244)
-**Code**: [https://github.com/RUCBM/LENS](https://github.com/RUCBM/LENS)
+**arXiv**: [2601.21244](https://arxiv.org/abs/2601.21244)  
+**Code**: [https://github.com/RUCBM/LENS](https://github.com/RUCBM/LENS)  
 **Area**: Reinforcement Learning / LLM Reasoning
 **Keywords**: RLVR, distractor tokens, instruction purification, rollout efficiency, reasoning enhancement
 

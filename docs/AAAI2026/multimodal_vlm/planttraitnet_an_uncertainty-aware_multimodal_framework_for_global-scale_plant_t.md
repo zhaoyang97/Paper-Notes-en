@@ -18,8 +18,8 @@ content_hash: 5896f5d5564536f4
 # PlantTraitNet: An Uncertainty-Aware Multimodal Framework for Global-Scale Plant Trait Inference from Citizen Science Data
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06943](https://arxiv.org/abs/2511.06943)
-**Code**: [https://github.com/GeoSense-Freiburg/PlantTraitNet](https://github.com/GeoSense-Freiburg/PlantTraitNet)
+**arXiv**: [2511.06943](https://arxiv.org/abs/2511.06943)  
+**Code**: [https://github.com/GeoSense-Freiburg/PlantTraitNet](https://github.com/GeoSense-Freiburg/PlantTraitNet)  
 **Area**: Multimodal VLM
 **Keywords**: Plant trait prediction, multimodal fusion, uncertainty estimation, citizen science, global-scale mapping
 

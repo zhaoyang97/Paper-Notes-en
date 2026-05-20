@@ -18,8 +18,8 @@ content_hash: 1deceacf696a0d98
 # MagShield: Towards Better Robustness in Sparse Inertial Motion Capture Under Magnetic Disturbances
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22907](https://arxiv.org/abs/2506.22907)
-**Code**: Coming soon
+**arXiv**: [2506.22907](https://arxiv.org/abs/2506.22907)  
+**Code**: Coming soon  
 **Area**: Human Understanding
 **Keywords**: motion capture, IMU, magnetic disturbance, sensor fusion, human pose estimation
 

@@ -18,8 +18,8 @@ content_hash: 614b5716ae75c9ea
 # Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision
 
 **Conference**: ICLR2026
-**arXiv**: [2508.05606](https://arxiv.org/abs/2508.05606)
-**Code**: [https://github.com/Fr0zenCrane/UniCoT](https://github.com/Fr0zenCrane/UniCoT)
+**arXiv**: [2508.05606](https://arxiv.org/abs/2508.05606)  
+**Code**: [https://github.com/Fr0zenCrane/UniCoT](https://github.com/Fr0zenCrane/UniCoT)  
 **Area**: LLM Reasoning
 **Keywords**: Multimodal chain-of-thought, interleaved text-image reasoning, macro-micro hierarchy, MDP self-reflection, unified generation
 

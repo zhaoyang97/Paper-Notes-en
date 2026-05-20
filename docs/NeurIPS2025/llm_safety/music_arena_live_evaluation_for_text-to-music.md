@@ -18,8 +18,8 @@ content_hash: 67ad7bf843dca0e6
 # Music Arena: Live Evaluation for Text-to-Music
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.20900](https://arxiv.org/abs/2507.20900)
-**Code**: [Available](https://github.com/gclef-cmu/music-arena)
+**arXiv**: [2507.20900](https://arxiv.org/abs/2507.20900)  
+**Code**: [Available](https://github.com/gclef-cmu/music-arena)  
 **Area**: AI Safety
 **Keywords**: text-to-music, human preference evaluation, live evaluation, leaderboard, preference data
 

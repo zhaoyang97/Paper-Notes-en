@@ -18,8 +18,8 @@ content_hash: e27207174ceb5e34
 # Towards Resilient Safety-Driven Unlearning for Diffusion Models Against Downstream Fine-tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.16302](https://arxiv.org/abs/2507.16302)
-**Code**: [https://github.com/](https://github.com/) (Code and pretrained models are publicly available)
+**arXiv**: [2507.16302](https://arxiv.org/abs/2507.16302)  
+**Code**: [https://github.com/](https://github.com/) (Code and pretrained models are publicly available)  
 **Area**: Image Generation / AI Safety
 **Keywords**: Diffusion models, safety unlearning, fine-tuning resilience, meta-learning, Moreau envelope
 

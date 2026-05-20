@@ -18,8 +18,8 @@ content_hash: b2a14e1f14bafaae
 # GEWDiff: Geometric Enhanced Wavelet-based Diffusion Model for Hyperspectral Image Super-resolution
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07103](https://arxiv.org/abs/2511.07103)
-**Code**: [https://github.com/zhu-xlab/GEWDiff](https://github.com/zhu-xlab/GEWDiff)
+**arXiv**: [2511.07103](https://arxiv.org/abs/2511.07103)  
+**Code**: [https://github.com/zhu-xlab/GEWDiff](https://github.com/zhu-xlab/GEWDiff)  
 **Area**: Image Generation
 **Keywords**: Hyperspectral Image Super-resolution, Diffusion Model, Wavelet Transform, Geometric Enhancement, Remote Sensing
 

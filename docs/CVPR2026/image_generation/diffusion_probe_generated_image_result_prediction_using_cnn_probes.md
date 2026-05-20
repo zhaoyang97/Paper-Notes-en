@@ -18,8 +18,8 @@ content_hash: 6cb0780ae8b8e6e4
 # Diffusion Probe: Generated Image Result Prediction Using CNN Probes
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23783](https://arxiv.org/abs/2602.23783)
-**Code**: None
+**arXiv**: [2602.23783](https://arxiv.org/abs/2602.23783)  
+**Code**: None  
 **Area**: Diffusion Models / Image Quality Prediction
 **Keywords**: Diffusion Models, Probe, Cross-Attention, Early Quality Prediction, Generation Acceleration
 

@@ -18,8 +18,8 @@ content_hash: ff3c867ebc48cd59
 # Latent Swap Joint Diffusion for 2D Long-Form Latent Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.05130](https://arxiv.org/abs/2502.05130)
-**Code**: [https://swapforward.github.io](https://swapforward.github.io)
+**arXiv**: [2502.05130](https://arxiv.org/abs/2502.05130)  
+**Code**: [https://swapforward.github.io](https://swapforward.github.io)  
 **Area**: Audio / Image Generation
 **Keywords**: Diffusion Models, Long Audio Generation, Panorama Generation, Joint Diffusion, Latent Swap
 

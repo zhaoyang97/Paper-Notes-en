@@ -19,8 +19,8 @@ content_hash: 609c8985a9aa09a1
 # Language Driven Occupancy Prediction (LOcc)
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.16072](https://arxiv.org/abs/2411.16072)
-**Code**: [https://github.com/pkqbajng/LOcc](https://github.com/pkqbajng/LOcc)
+**arXiv**: [2411.16072](https://arxiv.org/abs/2411.16072)  
+**Code**: [https://github.com/pkqbajng/LOcc](https://github.com/pkqbajng/LOcc)  
 **Institution**: Zhejiang University, CaiNiao (Alibaba)
 **Area**: Autonomous Driving / Occupancy Prediction / Open-Vocabulary
 **Keywords**: open-vocabulary occupancy, language-driven, semantic transitive labeling, 3D perception, occupancy prediction, CLIP

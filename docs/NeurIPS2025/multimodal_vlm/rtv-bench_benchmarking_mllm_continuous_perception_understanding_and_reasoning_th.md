@@ -8,6 +8,7 @@ tags:
 date: 2026-05-08
 content_hash: 4b41fc7e0445c6c3
 ---
+
 ## TL;DR
 
 This paper proposes RTV-Bench, a benchmark comprising 552 videos and 4,608 QA pairs, designed to systematically evaluate MLLMs' continuous analysis capabilities in real-time video streams through three core designs: **multi-timestamp QA** (the same question yields different correct answers at different timestamps), **hierarchical question structure**, and **multidimensional evaluation**. Key findings include that online models outperform offline models, and that simply scaling model size or increasing frame count yields limited gains.

@@ -19,8 +19,8 @@ content_hash: e73133a820fbf053
 # Can LLMs Outshine Conventional Recommenders? A Comparative Evaluation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.05493](https://arxiv.org/abs/2503.05493)
-**Code**: [RecBench](https://recbench.github.io)
+**arXiv**: [2503.05493](https://arxiv.org/abs/2503.05493)  
+**Code**: [RecBench](https://recbench.github.io)  
 **Area**: Audio & Speech
 **Keywords**: LLM-as-RS, RecBench, CTR prediction, sequential recommendation, item representation, inference efficiency
 

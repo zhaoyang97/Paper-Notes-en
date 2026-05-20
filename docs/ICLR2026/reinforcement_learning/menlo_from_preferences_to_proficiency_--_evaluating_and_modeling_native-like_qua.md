@@ -18,8 +18,8 @@ content_hash: a6a4fb6877d1f824
 # Menlo: From Preferences to Proficiency – Evaluating and Modeling Native-like Quality Across 47 Languages
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26601](https://arxiv.org/abs/2509.26601)
-**Code**: [https://huggingface.co/datasets/facebook/menlo](https://huggingface.co/datasets/facebook/menlo)
+**arXiv**: [2509.26601](https://arxiv.org/abs/2509.26601)  
+**Code**: [https://huggingface.co/datasets/facebook/menlo](https://huggingface.co/datasets/facebook/menlo)  
 **Area**: Reinforcement Learning
 **Keywords**: Multilingual Evaluation, Native-like Quality, LLM-as-Judge, Preference Learning, Audience Design
 

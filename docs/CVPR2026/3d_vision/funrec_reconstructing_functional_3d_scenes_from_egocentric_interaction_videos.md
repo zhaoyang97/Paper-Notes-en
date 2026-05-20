@@ -18,8 +18,8 @@ content_hash: 29ed9eddfedba838
 # FunREC: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05621](https://arxiv.org/abs/2604.05621)
-**Code**: [https://functionalscenes.github.io/](https://functionalscenes.github.io/)
+**arXiv**: [2604.05621](https://arxiv.org/abs/2604.05621)  
+**Code**: [https://functionalscenes.github.io/](https://functionalscenes.github.io/)  
 **Area**: 3D Vision
 **Keywords**: functional 3D reconstruction, egocentric video, articulated object reconstruction, digital twin, motion estimation
 

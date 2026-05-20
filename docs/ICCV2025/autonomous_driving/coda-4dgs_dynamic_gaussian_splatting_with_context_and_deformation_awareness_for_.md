@@ -18,8 +18,8 @@ content_hash: c6569e5584eb0c65
 # CoDa-4DGS: Dynamic Gaussian Splatting with Context and Deformation Awareness for Autonomous Driving
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06744](https://arxiv.org/abs/2503.06744)
-**Code**: N/A
+**arXiv**: [2503.06744](https://arxiv.org/abs/2503.06744)  
+**Code**: N/A  
 **Area**: Autonomous Driving / 3D Reconstruction
 **Keywords**: 4D Gaussian Splatting, dynamic scene rendering, semantic self-supervision, temporal deformation tracking, autonomous driving simulation
 

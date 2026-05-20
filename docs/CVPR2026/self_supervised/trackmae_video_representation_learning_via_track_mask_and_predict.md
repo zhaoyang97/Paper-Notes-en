@@ -18,8 +18,8 @@ content_hash: 100920ca93bb2da4
 # TrackMAE: Video Representation Learning via Track, Mask, and Predict
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27268](https://arxiv.org/abs/2603.27268)
-**Code**: [https://github.com/rvandeghen/TrackMAE](https://github.com/rvandeghen/TrackMAE)
+**arXiv**: [2603.27268](https://arxiv.org/abs/2603.27268)  
+**Code**: [https://github.com/rvandeghen/TrackMAE](https://github.com/rvandeghen/TrackMAE)  
 **Area**: Self-Supervised Learning / Video Understanding
 **Keywords**: Masked Video Modeling, Point Tracking, Motion Prediction, Self-Supervised Pretraining, Video Representation
 

@@ -18,8 +18,8 @@ content_hash: 0fa9e15608af6fbf
 # VowelPrompt: Hearing Speech Emotions from Text via Vowel-level Prosodic Augmentation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.06270](https://arxiv.org/abs/2602.06270)
-**Code**: None
+**arXiv**: [2602.06270](https://arxiv.org/abs/2602.06270)  
+**Code**: None  
 **Area**: Speech Emotion Recognition
 **Keywords**: Speech Emotion Recognition, Prosodic Features, Vowel-level, LLM Reasoning, GRPO
 

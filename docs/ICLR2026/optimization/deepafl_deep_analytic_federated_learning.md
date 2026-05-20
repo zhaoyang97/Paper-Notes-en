@@ -18,8 +18,8 @@ content_hash: 158548346f801c25
 # DeepAFL: Deep Analytic Federated Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00579](https://arxiv.org/abs/2603.00579)
-**Code**: None
+**arXiv**: [2603.00579](https://arxiv.org/abs/2603.00579)  
+**Code**: None  
 **Area**: Optimization / Federated Learning
 **Keywords**: Federated Learning, Analytic Learning, Gradient-Free Training, Residual Blocks, Data Heterogeneity
 

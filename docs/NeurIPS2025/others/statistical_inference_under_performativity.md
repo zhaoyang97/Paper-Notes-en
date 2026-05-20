@@ -17,8 +17,8 @@ content_hash: 4dc07e8cd4cccf14
 # Statistical Inference Under Performativity
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18493](https://arxiv.org/abs/2505.18493)
-**Code**: None
+**arXiv**: [2505.18493](https://arxiv.org/abs/2505.18493)  
+**Code**: None  
 **Area**: Other
 **Keywords**: performative prediction, statistical inference, central limit theorem, prediction-powered inference, confidence intervals
 
@@ -50,21 +50,21 @@ The framework proceeds along two main lines: (1) **basic inference**—establish
 
 1. **Central Limit Theorem in the Dynamic Setting**
 
-   - **Function**: Establishes the asymptotic distribution of the RRM estimator $\hat\theta_t$, enabling confidence interval construction.
-   - **Mechanism**: The central challenge is error propagation—the error in $\hat\theta_t$ is transmitted through the distribution map $\mathcal{D}(\cdot)$ to the next iteration. The theorem proves $\sqrt{n}(\hat\theta_t - \theta_t) \xrightarrow{D} \mathcal{N}(0, V_t)$, where the asymptotic variance is $$V_t = \sum_{i=1}^t \prod_{k=i}^{t-1}\nabla G(\theta_k) \cdot \Sigma_{\theta_{i-1}}(\theta_i) \cdot \prod_{k=i}^{t-1}\nabla G(\theta_k)^\top.$$ This is a recursively accumulated variance in which the error at each step is propagated through subsequent steps via the Jacobian $\nabla G(\theta_k)$ of the map $G$.
-   - **Design Motivation**: Unlike static CLTs, this analysis must simultaneously account for per-step estimation error and inter-step error propagation. The assumption $\varepsilon < \gamma/\beta$ (distribution sensitivity smaller than the ratio of strong convexity to smoothness) ensures that errors are not amplified.
+    - **Function**: Establishes the asymptotic distribution of the RRM estimator $\hat\theta_t$, enabling confidence interval construction.
+    - **Mechanism**: The central challenge is error propagation—the error in $\hat\theta_t$ is transmitted through the distribution map $\mathcal{D}(\cdot)$ to the next iteration. The theorem proves $\sqrt{n}(\hat\theta_t - \theta_t) \xrightarrow{D} \mathcal{N}(0, V_t)$, where the asymptotic variance is $$V_t = \sum_{i=1}^t \prod_{k=i}^{t-1}\nabla G(\theta_k) \cdot \Sigma_{\theta_{i-1}}(\theta_i) \cdot \prod_{k=i}^{t-1}\nabla G(\theta_k)^\top.$$ This is a recursively accumulated variance in which the error at each step is propagated through subsequent steps via the Jacobian $\nabla G(\theta_k)$ of the map $G$.
+    - **Design Motivation**: Unlike static CLTs, this analysis must simultaneously account for per-step estimation error and inter-step error propagation. The assumption $\varepsilon < \gamma/\beta$ (distribution sensitivity smaller than the ratio of strong convexity to smoothness) ensures that errors are not amplified.
 
 2. **Policy-Perturbation-Based Score Matching**
 
-   - **Function**: Data-driven estimation of the distribution map gradient $\nabla G(\theta_k)$, which is the key unknown quantity in constructing $V_t$.
-   - **Mechanism**: The expression for $\nabla G(\theta_k)$ involves the score function $\nabla_\theta \log p(z, \theta)$, but the distribution $p(z,\theta)$ is unknown. A parametric model $M(z,\theta;\psi)$ is trained to approximate $p$ via a score matching objective. The additional difficulty is that differentiation with respect to $\theta$ (rather than $z$) is required. This is addressed through a policy perturbation technique: in addition to sampling at $\hat\theta_t$, samples are also collected at $\hat\theta_t + \eta e_i$ (small perturbations along each coordinate direction), and finite differences are used to approximate the $\theta$-partial derivative inside the integral. Since the policy dimension $d$ is typically low, the cost of $d$ additional perturbation sample sets is acceptable.
-   - **Design Motivation**: This is a gradient-free estimation approach that requires no knowledge of the functional form of the distribution map, only the ability to sample observations under multiple policy values.
+    - **Function**: Data-driven estimation of the distribution map gradient $\nabla G(\theta_k)$, which is the key unknown quantity in constructing $V_t$.
+    - **Mechanism**: The expression for $\nabla G(\theta_k)$ involves the score function $\nabla_\theta \log p(z, \theta)$, but the distribution $p(z,\theta)$ is unknown. A parametric model $M(z,\theta;\psi)$ is trained to approximate $p$ via a score matching objective. The additional difficulty is that differentiation with respect to $\theta$ (rather than $z$) is required. This is addressed through a policy perturbation technique: in addition to sampling at $\hat\theta_t$, samples are also collected at $\hat\theta_t + \eta e_i$ (small perturbations along each coordinate direction), and finite differences are used to approximate the $\theta$-partial derivative inside the integral. Since the policy dimension $d$ is typically low, the cost of $d$ additional perturbation sample sets is acceptable.
+    - **Design Motivation**: This is a gradient-free estimation approach that requires no knowledge of the functional form of the distribution map, only the ability to sample observations under multiple policy values.
 
 3. **PPI under Performativity**
 
-   - **Function**: Uses a large volume of unlabeled data together with a labeling model $f$ to reduce the variance of the RRM estimator.
-   - **Mechanism**: At each iteration, in addition to a small labeled dataset $\{(x_i,y_i)\}_{i=1}^n$, a large unlabeled dataset $\{x_i^u\}_{i=1}^N$ ($N \gg n$) is used to obtain pseudo-labels via the labeling model $f$. The PPI estimator is $$\hat\theta_{t+1}^{\text{PPI}}(\lambda) = \arg\min_\theta \frac{\lambda}{N}\sum \ell(x_i^u, f(x_i^u);\theta) + \frac{1}{n}\sum\left[\ell(x_i,y_i;\theta) - \lambda\ell(x_i,f(x_i);\theta)\right].$$ The weight $\lambda_t$ is selected via greedy step-wise optimization that minimizes a scalar function of the asymptotic variance.
-   - **Design Motivation**: Policy feedback data (e.g., survey responses) are often scarce and costly to collect. PPI allows researchers to augment inference precision using large quantities of easily accessible unlabeled data.
+    - **Function**: Uses a large volume of unlabeled data together with a labeling model $f$ to reduce the variance of the RRM estimator.
+    - **Mechanism**: At each iteration, in addition to a small labeled dataset $\{(x_i,y_i)\}_{i=1}^n$, a large unlabeled dataset $\{x_i^u\}_{i=1}^N$ ($N \gg n$) is used to obtain pseudo-labels via the labeling model $f$. The PPI estimator is $$\hat\theta_{t+1}^{\text{PPI}}(\lambda) = \arg\min_\theta \frac{\lambda}{N}\sum \ell(x_i^u, f(x_i^u);\theta) + \frac{1}{n}\sum\left[\ell(x_i,y_i;\theta) - \lambda\ell(x_i,f(x_i);\theta)\right].$$ The weight $\lambda_t$ is selected via greedy step-wise optimization that minimizes a scalar function of the asymptotic variance.
+    - **Design Motivation**: Policy feedback data (e.g., survey responses) are often scarce and costly to collect. PPI allows researchers to augment inference precision using large quantities of easily accessible unlabeled data.
 
 ### Loss & Training
 

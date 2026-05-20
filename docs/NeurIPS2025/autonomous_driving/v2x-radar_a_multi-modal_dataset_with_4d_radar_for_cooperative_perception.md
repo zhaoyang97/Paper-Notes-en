@@ -18,8 +18,8 @@ content_hash: 4713b7ae97bda12a
 # V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.10962](https://arxiv.org/abs/2411.10962)
-**Code**: [GitHub](https://github.com/yanglei18/V2X-Radar)
+**arXiv**: [2411.10962](https://arxiv.org/abs/2411.10962)  
+**Code**: [GitHub](https://github.com/yanglei18/V2X-Radar)  
 **Area**: Autonomous Driving
 **Keywords**: cooperative perception, 4D radar, V2X, multi-modal dataset, 3D object detection
 

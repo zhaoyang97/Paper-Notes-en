@@ -18,8 +18,8 @@ content_hash: 93913ab2a75f3072
 # Hyperbolic Busemann Neural Networks
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.18858](https://arxiv.org/abs/2602.18858)
-**Code**: [Available](https://github.com/GitZH-Chen/HBNN)
+**arXiv**: [2602.18858](https://arxiv.org/abs/2602.18858)  
+**Code**: [Available](https://github.com/GitZH-Chen/HBNN)  
 **Area**: Graph Learning
 **Keywords**: Hyperbolic neural networks, Busemann function, hyperbolic classification, fully connected layer, manifold learning
 

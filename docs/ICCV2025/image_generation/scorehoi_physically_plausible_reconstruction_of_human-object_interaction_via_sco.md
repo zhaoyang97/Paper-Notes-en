@@ -18,8 +18,8 @@ content_hash: fd7d76c44afddae9
 # ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.07920](https://arxiv.org/abs/2509.07920)
-**Code**: [https://github.com/RammusLeo/ScoreHOI.git](https://github.com/RammusLeo/ScoreHOI.git)
+**arXiv**: [2509.07920](https://arxiv.org/abs/2509.07920)  
+**Code**: [https://github.com/RammusLeo/ScoreHOI.git](https://github.com/RammusLeo/ScoreHOI.git)  
 **Area**: Image Generation
 **Keywords**: human-object interaction reconstruction, diffusion models, score-guided sampling, physical constraints, contact prediction
 

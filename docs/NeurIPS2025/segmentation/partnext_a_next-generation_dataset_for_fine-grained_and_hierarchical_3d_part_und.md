@@ -18,8 +18,8 @@ content_hash: 1df14771298cc658
 # PartNeXt: A Next-Generation Dataset for Fine-Grained and Hierarchical 3D Part Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20155](https://arxiv.org/abs/2510.20155)
-**Code**: [GitHub](https://authoritywang.github.io/partnext)
+**arXiv**: [2510.20155](https://arxiv.org/abs/2510.20155)  
+**Code**: [GitHub](https://authoritywang.github.io/partnext)  
 **Area**: Image Segmentation
 **Keywords**: 3D part segmentation, dataset, hierarchical annotation, crowdsourced annotation, 3D vision-language models
 

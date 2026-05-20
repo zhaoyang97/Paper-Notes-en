@@ -18,8 +18,8 @@ content_hash: 3780d14f4cb71ecc
 # REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment
 
 **Conference**: ICCV 2025
-**arXiv**: [2405.18525](https://arxiv.org/abs/2405.18525)
-**Code**: [Project Page](https://reparo-3d.github.io/)
+**arXiv**: [2405.18525](https://arxiv.org/abs/2405.18525)  
+**Code**: [Project Page](https://reparo-3d.github.io/)  
 **Area**: 3D Vision
 **Keywords**: Compositional 3D Generation, Differentiable Rendering, Optimal Transport, Layout Alignment, Multi-Object Scene
 

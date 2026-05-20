@@ -17,8 +17,8 @@ content_hash: c4d5fbd7b3449ed5
 # Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.03227](https://arxiv.org/abs/2511.03227)
-**Code**: Expected to be released
+**arXiv**: [2511.03227](https://arxiv.org/abs/2511.03227)  
+**Code**: Expected to be released  
 **Area**: Human-Computer Interaction / AI-Assisted Creation
 **Keywords**: Node graph interface, narrative generation, multimodal generation, human-AI collaboration
 

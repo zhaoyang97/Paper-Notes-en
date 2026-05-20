@@ -18,8 +18,8 @@ content_hash: e04d7dc42f300e8c
 # Selective Contrastive Learning for Weakly Supervised Affordance Grounding
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.07877](https://arxiv.org/abs/2508.07877)
-**Code**: [https://github.com/hynnsk/SelectiveCL](https://github.com/hynnsk/SelectiveCL)
+**arXiv**: [2508.07877](https://arxiv.org/abs/2508.07877)  
+**Code**: [https://github.com/hynnsk/SelectiveCL](https://github.com/hynnsk/SelectiveCL)  
 **Area**: Robotics
 **Keywords**: Affordance Grounding, Weak Supervision, Contrastive Learning, Part Discovery, CLIP
 

@@ -18,8 +18,8 @@ content_hash: bacae85eb597d59f
 # When Can Model-Free Reinforcement Learning be Enough for Thinking?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.17124](https://arxiv.org/abs/2506.17124)
-**Code**: [https://github.com/prediction-action-lab/thinking-as-control](https://github.com/prediction-action-lab/thinking-as-control)
+**arXiv**: [2506.17124](https://arxiv.org/abs/2506.17124)  
+**Code**: [https://github.com/prediction-action-lab/thinking-as-control](https://github.com/prediction-action-lab/thinking-as-control)  
 **Area**: Reinforcement Learning
 **Keywords**: Thought MDP, model-free RL, emergence of thinking behavior, policy initialization, dual-process theory
 

@@ -18,9 +18,9 @@ content_hash: 1e876891928083ea
 # Sample Complexity of Distributionally Robust Average-Reward Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.10007](https://arxiv.org/abs/2505.10007)
+**arXiv**: [2505.10007](https://arxiv.org/abs/2505.10007)  
 **Authors**: Zijun Chen (HKUST), Shengbo Wang (USC), Nian Si (HKUST)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Reinforcement Learning
 **Keywords**: Distributionally robust optimization, average-reward reinforcement learning, sample complexity, Markov decision processes, KL divergence
 

@@ -18,8 +18,8 @@ content_hash: d09c59a50d0651c5
 # DynaNav: Dynamic Feature and Layer Selection for Efficient Visual Navigation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.21930](https://arxiv.org/abs/2509.21930)
-**Code**: To be confirmed
+**arXiv**: [2509.21930](https://arxiv.org/abs/2509.21930)  
+**Code**: To be confirmed  
 **Area**: Robotics
 **Keywords**: visual navigation, dynamic inference, early exit, feature selection, efficient deployment
 

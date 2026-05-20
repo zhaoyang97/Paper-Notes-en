@@ -18,8 +18,8 @@ content_hash: bc1ad6f1f77e1e2b
 # S2AM3D: Scale-controllable Part Segmentation of 3D Point Clouds
 
 **Conference**: CVPR2026
-**arXiv**: [2512.00995](https://arxiv.org/abs/2512.00995)
-**Code**: [Project Page](https://sumuru789.github.io/S2AM3D-website/)
+**arXiv**: [2512.00995](https://arxiv.org/abs/2512.00995)  
+**Code**: [Project Page](https://sumuru789.github.io/S2AM3D-website/)  
 **Area**: 3D Vision
 **Keywords**: Point cloud part segmentation, multi-granularity control, contrastive learning, 2D-3D joint supervision, SAM
 

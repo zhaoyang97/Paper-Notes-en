@@ -18,8 +18,8 @@ content_hash: 0bfde85fc66e980b
 # Gradient-Weight Alignment as a Train-Time Proxy for Generalization in Classification Tasks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25480](https://arxiv.org/abs/2510.25480)
-**Code**: [hlzl/gwa](https://github.com/hlzl/gwa)
+**arXiv**: [2510.25480](https://arxiv.org/abs/2510.25480)  
+**Code**: [hlzl/gwa](https://github.com/hlzl/gwa)  
 **Area**: LLM Pre-training
 **Keywords**: generalization, gradient-weight alignment, early stopping, training dynamics, sample influence
 

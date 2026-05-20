@@ -18,8 +18,8 @@ content_hash: 0c931b17ec7c06f7
 # MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.04297](https://arxiv.org/abs/2508.04297)
-**Code**: [https://github.com/EuclidLou/MuGS](https://github.com/EuclidLou/MuGS)
+**arXiv**: [2508.04297](https://arxiv.org/abs/2508.04297)  
+**Code**: [https://github.com/EuclidLou/MuGS](https://github.com/EuclidLou/MuGS)  
 **Area**: 3D Vision / Novel View Synthesis
 **Keywords**: 3D Gaussian Splatting, Multi-Baseline Generalization, Monocular Depth Estimation, Multi-View Stereo, Novel View Synthesis
 

@@ -18,8 +18,8 @@ content_hash: 1daf202174516868
 # Linear Transformers Implicitly Discover Unified Numerical Algorithms
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19702](https://arxiv.org/abs/2509.19702)
-**Code**: To be confirmed
+**arXiv**: [2509.19702](https://arxiv.org/abs/2509.19702)  
+**Code**: To be confirmed  
 **Area**: LLM/NLP
 **Keywords**: in-context learning, linear transformer, numerical algorithm discovery, matrix completion, Newton-Schulz
 

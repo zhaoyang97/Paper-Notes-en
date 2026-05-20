@@ -18,8 +18,8 @@ content_hash: 07f59841d8b0bfd4
 # Blue Teaming Function-Calling Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.09292](https://arxiv.org/abs/2601.09292)
-**Code**: None
+**arXiv**: [2601.09292](https://arxiv.org/abs/2601.09292)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: function-calling, prompt injection attack, tool poisoning, blue teaming defense, open-source LLM
 

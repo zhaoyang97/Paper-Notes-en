@@ -19,8 +19,8 @@ content_hash: cc6f83f9120f8c7c
 # In Search of Adam's Secret Sauce
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21829](https://arxiv.org/abs/2505.21829)
-**Code**: [GitHub](https://github.com/aorvieto/SecretSauce)
+**arXiv**: [2505.21829](https://arxiv.org/abs/2505.21829)  
+**Code**: [GitHub](https://github.com/aorvieto/SecretSauce)  
 **Area**: Optimization
 **Keywords**: Adam, Signum, implicit bias, variational inference, signal-to-noise ratio, language modeling
 

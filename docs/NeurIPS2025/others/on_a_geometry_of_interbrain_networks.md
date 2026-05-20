@@ -17,8 +17,8 @@ content_hash: d6e721d4503a757c
 # On a Geometry of Interbrain Networks
 
 **Conference**: NeurIPS 2025 (Symmetry and Geometry in Neural Representations Workshop)
-**arXiv**: [2509.10650](https://arxiv.org/abs/2509.10650)
-**Code**: None
+**arXiv**: [2509.10650](https://arxiv.org/abs/2509.10650)  
+**Code**: None  
 **Area**: Computational Neuroscience / Network Science
 **Keywords**: Discrete curvature, Forman-Ricci curvature, Ollivier-Ricci curvature, hyperscanning, interbrain synchrony
 

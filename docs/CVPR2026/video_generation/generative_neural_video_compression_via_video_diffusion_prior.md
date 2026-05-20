@@ -18,8 +18,8 @@ content_hash: 08934f314d6f6268
 # Generative Neural Video Compression via Video Diffusion Prior
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.05016](https://arxiv.org/abs/2512.05016)
-**Code**: N/A
+**arXiv**: [2512.05016](https://arxiv.org/abs/2512.05016)  
+**Code**: N/A  
 **Area**: Video Generation
 **Keywords**: Video Compression, Video Diffusion Model, Flow Matching, Perceptual Quality, Temporal Consistency
 

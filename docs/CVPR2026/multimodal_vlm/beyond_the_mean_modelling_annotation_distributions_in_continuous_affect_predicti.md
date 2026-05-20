@@ -18,8 +18,8 @@ content_hash: 5b41f3481eb802cc
 # Beyond the Mean: Modelling Annotation Distributions in Continuous Affect Prediction
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07198](https://arxiv.org/abs/2604.07198)
-**Code**: N/A
+**arXiv**: [2604.07198](https://arxiv.org/abs/2604.07198)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: affect prediction, annotation distribution modelling, Beta distribution, annotator disagreement, uncertainty
 
@@ -48,16 +48,16 @@ Annotator signals → Compute empirical $(μ, σ)$ → Moment matching to Beta p
    - **Rationale for Beta distribution**: Its bounded-interval property matches the value range of affective dimensions; its shape flexibility captures diverse patterns of annotator behaviour.
 
 2. **Closed-Form Derivation of Higher-Order Descriptors**:
-   - Skewness: $\text{Skew}(X) = \frac{2(\beta-\alpha)\sqrt{\alpha+\beta+1}}{(\alpha+\beta+2)\sqrt{\alpha\beta}}$ → captures asymmetry in annotator disagreement
-   - Kurtosis: measures the concentration of annotations
-   - Quantiles: obtained via the inverse regularised incomplete Beta function
-   - **Advantage**: The model need only learn to predict two scalars $(μ, σ)$; all higher-order statistics are obtained at no additional cost.
+    - Skewness: $\text{Skew}(X) = \frac{2(\beta-\alpha)\sqrt{\alpha+\beta+1}}{(\alpha+\beta+2)\sqrt{\alpha\beta}}$ → captures asymmetry in annotator disagreement
+    - Kurtosis: measures the concentration of annotations
+    - Quantiles: obtained via the inverse regularised incomplete Beta function
+    - **Advantage**: The model need only learn to predict two scalars $(μ, σ)$; all higher-order statistics are obtained at no additional cost.
 
 3. **Model Variants**:
-   - $M_I$: Two independent networks predicting $μ$ and $σ$ separately
-   - $M_S$: Shared first layer with branching second layer
-   - $M_F$: Fully shared network with two output heads
-   - Baseline $B$: Separate regression networks trained independently for each descriptor ($μ$, $σ$, skewness, kurtosis, quantiles)
+    - $M_I$: Two independent networks predicting $μ$ and $σ$ separately
+    - $M_S$: Shared first layer with branching second layer
+    - $M_F$: Fully shared network with two output heads
+    - Baseline $B$: Separate regression networks trained independently for each descriptor ($μ$, $σ$, skewness, kurtosis, quantiles)
 
 ### Loss & Training
 - MSE loss for optimising $(μ, σ)$ predictions

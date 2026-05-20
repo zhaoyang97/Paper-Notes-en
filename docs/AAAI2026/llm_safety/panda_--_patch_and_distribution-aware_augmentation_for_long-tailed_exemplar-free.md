@@ -18,8 +18,8 @@ content_hash: 22121dfb4a35892b
 # PANDA: Patch and Distribution-Aware Augmentation for Long-Tailed Exemplar-Free Continual Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09791](https://arxiv.org/abs/2511.09791)
-**Code**: [GitLab](https://gitlab.com/viper-purdue/panda)
+**arXiv**: [2511.09791](https://arxiv.org/abs/2511.09791)  
+**Code**: [GitLab](https://gitlab.com/viper-purdue/panda)  
 **Area**: Continual Learning / Long-Tailed Distribution / Data Augmentation
 **Keywords**: Exemplar-Free Continual Learning, Long-Tailed Distribution, CLIP-guided Augmentation, Dual-Level Imbalance, Distribution Smoothening
 

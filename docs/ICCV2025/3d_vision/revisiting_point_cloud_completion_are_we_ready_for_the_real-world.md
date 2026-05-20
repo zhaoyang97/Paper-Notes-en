@@ -18,8 +18,8 @@ content_hash: 7e5be38b78a927f2
 # Revisiting Point Cloud Completion: Are We Ready For The Real-World?
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.17580](https://arxiv.org/abs/2411.17580)
-**Code**: Coming soon (RealPC dataset + BOSHNet code)
+**arXiv**: [2411.17580](https://arxiv.org/abs/2411.17580)  
+**Code**: Coming soon (RealPC dataset + BOSHNet code)  
 **Area**: 3D Vision
 **Keywords**: Point cloud completion, real-world dataset, persistent homology, topological prior, industrial point cloud
 

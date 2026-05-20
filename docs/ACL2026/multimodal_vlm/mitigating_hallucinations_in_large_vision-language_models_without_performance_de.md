@@ -18,8 +18,8 @@ content_hash: eb1e6c4765abcbb4
 # Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.20366](https://arxiv.org/abs/2604.20366)
-**Code**: None
+**arXiv**: [2604.20366](https://arxiv.org/abs/2604.20366)  
+**Code**: None  
 **Area**: Multimodal VLM / Hallucination Mitigation
 **Keywords**: Vision-language models, object hallucination, representation intervention, orthogonal projection, selective parameter editing
 

@@ -18,8 +18,8 @@ content_hash: f1a4d5d0466187e6
 # Contractive Diffusion Policies: Robust Action Diffusion via Contractive Score-Based Sampling with Differential Equations
 
 **Conference**: ICLR2026
-**arXiv**: [2601.01003](https://arxiv.org/abs/2601.01003)
-**Code**: To be confirmed
+**arXiv**: [2601.01003](https://arxiv.org/abs/2601.01003)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: Diffusion Policy, Contraction Theory, Offline Reinforcement Learning, Imitation Learning, Score-Based Models
 

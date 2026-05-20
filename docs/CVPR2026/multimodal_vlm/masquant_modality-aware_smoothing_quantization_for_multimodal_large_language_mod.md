@@ -18,8 +18,8 @@ content_hash: ae8a895f6b1101cb
 # MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04800](https://arxiv.org/abs/2603.04800)
-**Code**: [https://github.com/alibaba/EfficientAI](https://github.com/alibaba/EfficientAI)
+**arXiv**: [2603.04800](https://arxiv.org/abs/2603.04800)  
+**Code**: [https://github.com/alibaba/EfficientAI](https://github.com/alibaba/EfficientAI)  
 **Area**: Multimodal VLM
 **Keywords**: Post-training quantization, multimodal LLM, smooth quantization, cross-modal compensation, low-rank decomposition
 

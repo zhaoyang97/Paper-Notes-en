@@ -18,8 +18,8 @@ content_hash: 30f00d61cfac44da
 # To See or To Read: User Behavior Reasoning in Multimodal LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.03845](https://arxiv.org/abs/2511.03845)
-**Code**: None
+**arXiv**: [2511.03845](https://arxiv.org/abs/2511.03845)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: User behavior reasoning, modality trade-off, sequential recommendation, visual representation, BehaviorLens
 

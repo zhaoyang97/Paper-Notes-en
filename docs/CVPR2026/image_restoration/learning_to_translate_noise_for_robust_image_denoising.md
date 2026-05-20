@@ -18,8 +18,8 @@ content_hash: 59ab6f9748b05c57
 # Learning to Translate Noise for Robust Image Denoising
 
 **Conference**: CVPR 2026
-**arXiv**: [2412.04727](https://arxiv.org/abs/2412.04727)
-**Code**: [https://hij1112.github.io/learning-to-translate-noise/](https://hij1112.github.io/learning-to-translate-noise/)
+**arXiv**: [2412.04727](https://arxiv.org/abs/2412.04727)  
+**Code**: [https://hij1112.github.io/learning-to-translate-noise/](https://hij1112.github.io/learning-to-translate-noise/)  
 **Area**: Image Restoration
 **Keywords**: image denoising, noise translation, Gaussian noise, out-of-distribution generalization, Wasserstein distance
 

@@ -19,8 +19,8 @@ content_hash: 47081e564eec2643
 # zip2zip: Inference-Time Adaptive Tokenization via Online Compression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01084](https://arxiv.org/abs/2506.01084)
-**Code**: [https://github.com/epfl-dlab/zip2zip](https://github.com/epfl-dlab/zip2zip)
+**arXiv**: [2506.01084](https://arxiv.org/abs/2506.01084)  
+**Code**: [https://github.com/epfl-dlab/zip2zip](https://github.com/epfl-dlab/zip2zip)  
 **Area**: Model Compression
 **Keywords**: Adaptive Tokenization, LZW Compression, Hypertoken, Inference Acceleration, Vocabulary Expansion, Dynamic Embedding
 

@@ -18,8 +18,8 @@ content_hash: b8941b4392d233d2
 # Aether: Geometric-Aware Unified World Modeling
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.18945](https://arxiv.org/abs/2503.18945)
-**Code**: [https://github.com/AetherWorld](https://github.com/AetherWorld)
+**arXiv**: [2503.18945](https://arxiv.org/abs/2503.18945)  
+**Code**: [https://github.com/AetherWorld](https://github.com/AetherWorld)  
 **Area**: World Models / Video Generation
 **Keywords**: World Model, 4D Reconstruction, Action-Conditioned Video Prediction, Visual Planning, Diffusion Model
 

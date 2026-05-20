@@ -18,8 +18,8 @@ content_hash: 706dff0cf48986ff
 # Revisiting [CLS] and Patch Token Interaction in Vision Transformers
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.08626](https://arxiv.org/abs/2602.08626)
-**Code**: N/A
+**arXiv**: [2602.08626](https://arxiv.org/abs/2602.08626)  
+**Code**: N/A  
 **Area**: Image Segmentation / Vision Transformer
 **Keywords**: Vision Transformer, [CLS] token, patch token, normalization layer, dense prediction
 

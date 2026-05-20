@@ -18,8 +18,8 @@ content_hash: 8b8695f0cb977378
 # GeoPurify: A Data-Efficient Geometric Distillation Framework for Open-Vocabulary 3D Segmentation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.02186](https://arxiv.org/abs/2510.02186)
-**Code**: [Available](https://github.com/tj12323/GeoPurify)
+**arXiv**: [2510.02186](https://arxiv.org/abs/2510.02186)  
+**Code**: [Available](https://github.com/tj12323/GeoPurify)  
 **Area**: 3D Vision
 **Keywords**: Open-vocabulary 3D segmentation, knowledge distillation, geometric priors, VLM feature purification, data efficiency
 

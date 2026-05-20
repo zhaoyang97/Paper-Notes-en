@@ -18,8 +18,8 @@ content_hash: 3db9da865ddd9c18
 # FantasyStyle: Controllable Stylized Distillation for 3D Gaussian Splatting
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.08136](https://arxiv.org/abs/2508.08136)
-**Code**: [https://github.com/yangyt46/FantasyStyle](https://github.com/yangyt46/FantasyStyle)
+**arXiv**: [2508.08136](https://arxiv.org/abs/2508.08136)  
+**Code**: [https://github.com/yangyt46/FantasyStyle](https://github.com/yangyt46/FantasyStyle)  
 **Area**: 3D Vision / Style Transfer
 **Keywords**: 3DGS style transfer, diffusion model distillation, multi-view consistency, frequency analysis, negative guidance
 

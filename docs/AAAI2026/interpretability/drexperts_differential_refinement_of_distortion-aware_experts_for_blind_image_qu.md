@@ -18,8 +18,8 @@ content_hash: 62b768c597bc2556
 # DR.Experts: Differential Refinement of Distortion-Aware Experts for Blind Image Quality Assessment
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.09531](https://arxiv.org/abs/2602.09531)
-**Code**: [https://github.com/FuBohan01/DR.Experts](https://github.com/FuBohan01/DR.Experts)
+**arXiv**: [2602.09531](https://arxiv.org/abs/2602.09531)  
+**Code**: [https://github.com/FuBohan01/DR.Experts](https://github.com/FuBohan01/DR.Experts)  
 **Area**: Interpretability
 **Keywords**: Blind Image Quality Assessment, Distortion Prior, Mixture of Experts, DA-CLIP, Differential Attention
 

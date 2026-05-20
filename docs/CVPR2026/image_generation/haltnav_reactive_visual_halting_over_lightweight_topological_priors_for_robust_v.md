@@ -18,8 +18,8 @@ content_hash: 01601605362c24ce
 # HaltNav: Reactive Visual Halting over Lightweight Topological Priors for Robust Vision-Language Navigation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12696](https://arxiv.org/abs/2603.12696)
-**Code**: N/A
+**arXiv**: [2603.12696](https://arxiv.org/abs/2603.12696)  
+**Code**: N/A  
 **Area**: Image Generation
 **Keywords**: VLN, topological prior, osmAG, reactive halting, hierarchical navigation
 

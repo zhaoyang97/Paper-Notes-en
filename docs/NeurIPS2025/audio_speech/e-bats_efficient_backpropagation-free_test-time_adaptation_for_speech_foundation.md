@@ -18,8 +18,8 @@ content_hash: e3ce91eedcfa69d4
 # E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07078](https://arxiv.org/abs/2506.07078)
-**Code**: [JiahengDong/E-BATS](https://github.com/JiahengDong/E-BATS)
+**arXiv**: [2506.07078](https://arxiv.org/abs/2506.07078)  
+**Code**: [JiahengDong/E-BATS](https://github.com/JiahengDong/E-BATS)  
 **Area**: Audio & Speech
 **Keywords**: test-time adaptation, speech foundation model, backpropagation-free, prompt tuning, CMA-ES
 

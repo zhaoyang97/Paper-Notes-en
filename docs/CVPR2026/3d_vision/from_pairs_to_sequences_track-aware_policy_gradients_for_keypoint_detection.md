@@ -18,8 +18,8 @@ content_hash: 8225376541c010eb
 # From Pairs to Sequences: Track-Aware Policy Gradients for Keypoint Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20630](https://arxiv.org/abs/2602.20630)
-**Code**: None
+**arXiv**: [2602.20630](https://arxiv.org/abs/2602.20630)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: keypoint detection, reinforcement learning, long-term trackability, sequential decision-making, feature matching
 

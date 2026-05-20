@@ -18,8 +18,8 @@ content_hash: 626cdb8c411ad370
 # MA-Bench: Towards Fine-grained Micro-Action Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26586](https://arxiv.org/abs/2603.26586)
-**Code**: [https://MA-Bench.github.io](https://MA-Bench.github.io)
+**arXiv**: [2603.26586](https://arxiv.org/abs/2603.26586)  
+**Code**: [https://MA-Bench.github.io](https://MA-Bench.github.io)  
 **Area**: Video Understanding / Multimodal VLM
 **Keywords**: micro-action understanding, fine-grained action recognition, multimodal large model evaluation, affective analysis, video question answering
 

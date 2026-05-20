@@ -18,8 +18,8 @@ content_hash: f63346b2067eb47d
 # Protein Counterfactuals via Diffusion-Guided Latent Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.10811](https://arxiv.org/abs/2603.10811)
-**Code**: [GitHub](https://github.com/weroks/mccop)
+**arXiv**: [2603.10811](https://arxiv.org/abs/2603.10811)  
+**Code**: [GitHub](https://github.com/weroks/mccop)  
 **Area**: Protein Engineering / Explainable AI
 **Keywords**: Counterfactual Explanation, Protein Engineering, Diffusion Models, Manifold Constraints, Sequence–Structure Embedding
 

@@ -18,8 +18,8 @@ content_hash: dfe04899200e84cf
 # SAGE: Sign-Adaptive Gradient for Memory-Efficient LLM Optimization
 
 **Conference**: ACL 2026
-**arXiv**: [2604.07663](https://arxiv.org/abs/2604.07663)
-**Code**: [GitHub](https://github.com/naubull2/SAGE-optimizer)
+**arXiv**: [2604.07663](https://arxiv.org/abs/2604.07663)  
+**Code**: [GitHub](https://github.com/naubull2/SAGE-optimizer)  
 **Area**: LLM Pre-training
 **Keywords**: Optimizer, Memory Efficiency, Embedding Layer, Sign-based Optimization, Adaptive Scaling
 

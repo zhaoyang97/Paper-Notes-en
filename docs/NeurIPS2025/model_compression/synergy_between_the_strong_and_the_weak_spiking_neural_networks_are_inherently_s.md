@@ -18,8 +18,8 @@ content_hash: 4f094195234fe38f
 # Synergy between the Strong and the Weak: Spiking Neural Networks Are Inherently Superior in Temporal Processing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07924](https://arxiv.org/abs/2510.07924)
-**Code**: None
+**arXiv**: [2510.07924](https://arxiv.org/abs/2510.07924)  
+**Code**: None  
 **Area**: Model Compression / Spiking Neural Networks
 **Keywords**: Spiking Neural Networks, Self-Distillation, Knowledge Distillation, Temporal Dimension, Strong2Weak
 

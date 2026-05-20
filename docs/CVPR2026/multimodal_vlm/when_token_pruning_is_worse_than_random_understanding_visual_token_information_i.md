@@ -18,8 +18,8 @@ content_hash: 438ef42da6a13464
 # When Token Pruning is Worse than Random: Understanding Visual Token Information in VLLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.07580](https://arxiv.org/abs/2512.07580)
-**Code**: [https://github.com/YahongWang1/Information-Horizon](https://github.com/YahongWang1/Information-Horizon)
+**arXiv**: [2512.07580](https://arxiv.org/abs/2512.07580)  
+**Code**: [https://github.com/YahongWang1/Information-Horizon](https://github.com/YahongWang1/Information-Horizon)  
 **Area**: Multimodal VLM
 **Keywords**: token pruning, information horizon, visual token informativeness, random pruning, VLM inference acceleration
 

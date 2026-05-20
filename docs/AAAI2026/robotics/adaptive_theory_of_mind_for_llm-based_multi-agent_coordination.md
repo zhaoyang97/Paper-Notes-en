@@ -18,8 +18,8 @@ content_hash: 2f0c8f3815cc5227
 # Adaptive Theory of Mind for LLM-based Multi-Agent Coordination
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.16264](https://arxiv.org/abs/2603.16264)
-**Code**: [https://github.com/ChunjiangMonkey/Adaptive-ToM](https://github.com/ChunjiangMonkey/Adaptive-ToM)
+**arXiv**: [2603.16264](https://arxiv.org/abs/2603.16264)  
+**Code**: [https://github.com/ChunjiangMonkey/Adaptive-ToM](https://github.com/ChunjiangMonkey/Adaptive-ToM)  
 **Area**: Robotics
 **Keywords**: Theory of Mind, LLM Multi-Agent, Zero-Shot Coordination, Online Learning, Expert Advice
 

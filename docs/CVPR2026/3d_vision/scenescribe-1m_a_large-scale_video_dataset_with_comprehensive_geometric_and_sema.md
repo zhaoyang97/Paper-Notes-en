@@ -18,8 +18,8 @@ content_hash: b77e65e2ef48b796
 # SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07990](https://arxiv.org/abs/2604.07990)
-**Code**: [https://wangyunnan.github.io/SceneScribe-1M](https://wangyunnan.github.io/SceneScribe-1M)
+**arXiv**: [2604.07990](https://arxiv.org/abs/2604.07990)  
+**Code**: [https://wangyunnan.github.io/SceneScribe-1M](https://wangyunnan.github.io/SceneScribe-1M)  
 **Area**: 3D Vision / Video Understanding
 **Keywords**: Video Dataset, Geometric Annotation, Semantic Annotation, World Foundation Model, Depth Estimation
 

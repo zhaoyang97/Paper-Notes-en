@@ -18,8 +18,8 @@ content_hash: 8249d0e08d1255f6
 # Plug-and-Play Parameter-Efficient Tuning of Embeddings for Federated Recommendation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.13734](https://arxiv.org/abs/2512.13734)
-**Code**: [https://github.com/young1010/FedPEFT](https://github.com/young1010/FedPEFT)
+**arXiv**: [2512.13734](https://arxiv.org/abs/2512.13734)  
+**Code**: [https://github.com/young1010/FedPEFT](https://github.com/young1010/FedPEFT)  
 **Area**: AI Safety
 **Keywords**: Federated Recommendation, Parameter-Efficient Fine-Tuning, Embedding Compression, Communication Efficiency, Privacy Protection
 

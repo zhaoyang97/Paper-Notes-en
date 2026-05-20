@@ -18,8 +18,8 @@ content_hash: 75ad9d14abc20309
 # U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23739](https://arxiv.org/abs/2602.23739)
-**Code**: None
+**arXiv**: [2602.23739](https://arxiv.org/abs/2602.23739)  
+**Code**: None  
 **Area**: Video Generation
 **Keywords**: multimodal interaction, real-time generation, digital human, speech-motion synchronization, chain-of-thought reasoning
 

@@ -18,8 +18,8 @@ content_hash: 8977b81b32a3596f
 # VidTAG: Temporally Aligned Video to GPS Geolocalization
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.12159](https://arxiv.org/abs/2604.12159)
-**Code**: [https://parthpk.github.io/vidtag_webpage](https://parthpk.github.io/vidtag_webpage)
+**arXiv**: [2604.12159](https://arxiv.org/abs/2604.12159)  
+**Code**: [https://parthpk.github.io/vidtag_webpage](https://parthpk.github.io/vidtag_webpage)  
 **Area**: Video Understanding / Geolocalization
 **Keywords**: Video geolocalization, frame-to-GPS retrieval, temporal consistency, trajectory prediction, denoising
 

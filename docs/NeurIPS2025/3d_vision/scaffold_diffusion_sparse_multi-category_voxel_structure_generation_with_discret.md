@@ -18,8 +18,8 @@ content_hash: dec4b334900d896a
 # Scaffold Diffusion: Sparse Multi-Category Voxel Structure Generation with Discrete Diffusion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.00062](https://arxiv.org/abs/2509.00062)
-**Code**: [https://scaffold.deepexploration.org/](https://scaffold.deepexploration.org/) (Online Demo)
+**arXiv**: [2509.00062](https://arxiv.org/abs/2509.00062)  
+**Code**: [https://scaffold.deepexploration.org/](https://scaffold.deepexploration.org/) (Online Demo)  
 **Area**: 3D Vision
 **Keywords**: Discrete diffusion models, voxel generation, sparse structures, 3D generation, Minecraft
 

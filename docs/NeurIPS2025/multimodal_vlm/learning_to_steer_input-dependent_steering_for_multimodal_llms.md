@@ -18,8 +18,8 @@ content_hash: 367fd9032d46804f
 # Learning to Steer: Input-dependent Steering for Multimodal LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.12815](https://arxiv.org/abs/2508.12815)
-**Code**: [https://github.com/jayneelparekh/learn-to-steer](https://github.com/jayneelparekh/learn-to-steer)
+**arXiv**: [2508.12815](https://arxiv.org/abs/2508.12815)  
+**Code**: [https://github.com/jayneelparekh/learn-to-steer](https://github.com/jayneelparekh/learn-to-steer)  
 **Area**: Multimodal VLM / Model Safety / Hallucination Mitigation / Representation Steering
 **Keywords**: steering, input-dependent, hallucination mitigation, safety enforcement, contrastive prompting
 

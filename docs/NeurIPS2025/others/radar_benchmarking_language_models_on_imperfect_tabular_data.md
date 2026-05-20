@@ -17,8 +17,8 @@ content_hash: 4730009a9cd0212e
 # Radar: Benchmarking Language Models on Imperfect Tabular Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.08249](https://arxiv.org/abs/2506.08249)
-**Code**: [GitHub](https://github.com/kenqgu/RADAR) / [HuggingFace](https://huggingface.co/datasets/kenqgu/RADAR)
+**arXiv**: [2506.08249](https://arxiv.org/abs/2506.08249)  
+**Code**: [GitHub](https://github.com/kenqgu/RADAR) / [HuggingFace](https://huggingface.co/datasets/kenqgu/RADAR)  
 **Area**: Other
 **Keywords**: tabular reasoning, data awareness, data artifacts, language model benchmarking, robustness evaluation
 

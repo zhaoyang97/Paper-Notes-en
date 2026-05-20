@@ -13,8 +13,8 @@ content_hash: 417049df088f5e68
 # Dataless Weight Disentanglement in Task Arithmetic via Kronecker-Factored Approximate Curvature
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.17385](https://arxiv.org/abs/2602.17385)
-**Code**: [https://github.com/aimagelab/mammoth](https://github.com/aimagelab/mammoth)
+**arXiv**: [2602.17385](https://arxiv.org/abs/2602.17385)  
+**Code**: [https://github.com/aimagelab/mammoth](https://github.com/aimagelab/mammoth)  
 **Area**: AI Safety / Model Editing
 
 ## TL;DR

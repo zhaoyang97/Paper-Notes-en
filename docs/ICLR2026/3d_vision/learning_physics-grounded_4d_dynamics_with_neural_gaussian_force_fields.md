@@ -18,8 +18,8 @@ content_hash: 97f07a10778ed9a5
 # Learning Physics-Grounded 4D Dynamics with Neural Gaussian Force Fields
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.00148](https://arxiv.org/abs/2602.00148)
-**Code**: [Project Page](https://neuralgaussianforcefield.github.io/)
+**arXiv**: [2602.00148](https://arxiv.org/abs/2602.00148)  
+**Code**: [Project Page](https://neuralgaussianforcefield.github.io/)  
 **Area**: 3D Vision / Physics Simulation
 **Keywords**: 3D Gaussian Splatting, Force Field Learning, Physical Reasoning, 4D Video Prediction, Neural Operator
 

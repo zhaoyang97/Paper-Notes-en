@@ -18,8 +18,8 @@ content_hash: 4a05f5566dc17722
 # Communicating Plans, Not Percepts: Scalable Multi-Agent Coordination with Embodied World Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.02912](https://arxiv.org/abs/2508.02912)
-**Code**: To be confirmed
+**arXiv**: [2508.02912](https://arxiv.org/abs/2508.02912)  
+**Code**: To be confirmed  
 **Area**: Reinforcement Learning
 **Keywords**: Multi-Agent Reinforcement Learning, World Models, Communication Protocol, Intention Communication, Dec-POMDP
 

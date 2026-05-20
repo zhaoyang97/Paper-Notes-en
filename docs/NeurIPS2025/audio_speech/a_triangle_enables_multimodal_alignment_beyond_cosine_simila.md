@@ -18,8 +18,8 @@ content_hash: 05829216014d047a
 # A TRIANGLE Enables Multimodal Alignment Beyond Cosine Similarity
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.24734](https://arxiv.org/abs/2509.24734)
-**Code**: [https://github.com/ispamm/TRIANGLE/](https://github.com/ispamm/TRIANGLE/)
+**arXiv**: [2509.24734](https://arxiv.org/abs/2509.24734)  
+**Code**: [https://github.com/ispamm/TRIANGLE/](https://github.com/ispamm/TRIANGLE/)  
 **Area**: Multimodal VLM / Audio & Speech
 **Keywords**: Tri-modal alignment, cosine similarity alternative, triangle area similarity, contrastive learning, video-text retrieval
 

@@ -17,8 +17,8 @@ content_hash: 22de007183fe42ac
 # Seeing is Improving: Visual Feedback for Iterative Text Layout Refinement
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22187](https://arxiv.org/abs/2603.22187)
-**Code**: [https://github.com/FolSpark/VFLM](https://github.com/FolSpark/VFLM)
+**arXiv**: [2603.22187](https://arxiv.org/abs/2603.22187)  
+**Code**: [https://github.com/FolSpark/VFLM](https://github.com/FolSpark/VFLM)  
 **Area**: Reinforcement Learning / Multimodal Generation
 **Keywords**: visual feedback, text layout, layout generation, reinforcement learning, iterative refinement
 

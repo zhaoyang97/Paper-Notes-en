@@ -18,8 +18,8 @@ content_hash: d04a5035cb3ccbee
 # EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25135](https://arxiv.org/abs/2603.25135)
-**Code**: [https://taegyoun88.github.io/EgoXtreme/](https://taegyoun88.github.io/EgoXtreme/)
+**arXiv**: [2603.25135](https://arxiv.org/abs/2603.25135)  
+**Code**: [https://taegyoun88.github.io/EgoXtreme/](https://taegyoun88.github.io/EgoXtreme/)  
 **Area**: Video Understanding / 6D Pose Estimation
 **Keywords**: egocentric view, 6D pose estimation, extreme conditions, smart glasses, benchmark dataset
 

@@ -18,8 +18,8 @@ content_hash: c268a859750aec7f
 # Geminio: Language-Guided Gradient Inversion Attacks in Federated Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.14937](https://arxiv.org/abs/2411.14937)
-**Code**: [GitHub](https://github.com/HKU-TASR/Geminio)
+**arXiv**: [2411.14937](https://arxiv.org/abs/2411.14937)  
+**Code**: [GitHub](https://github.com/HKU-TASR/Geminio)  
 **Area**: AI Security
 **Keywords**: Federated Learning, Gradient Inversion Attack, Vision-Language Model, Privacy Attack, Natural Language Guidance
 

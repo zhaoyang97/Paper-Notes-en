@@ -18,8 +18,8 @@ content_hash: ddd35048c1820f61
 # Pseudo-Nonlinear Data Augmentation: A Constrained Energy Minimization Viewpoint
 
 **Conference**: ICLR 2026
-**arXiv**: [2410.00718](https://arxiv.org/abs/2410.00718)
-**Code**: [GitHub](https://github.com/sleepymalc/Pseudo-Nonlinear)
+**arXiv**: [2410.00718](https://arxiv.org/abs/2410.00718)  
+**Code**: [GitHub](https://github.com/sleepymalc/Pseudo-Nonlinear)  
 **Area**: Data Augmentation / Information Geometry
 **Keywords**: data augmentation, information geometry, energy-based models, partially ordered sets, training-free methods
 

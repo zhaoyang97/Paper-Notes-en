@@ -18,8 +18,8 @@ content_hash: cade70ae78989dc5
 # FlashCap: Millisecond-Accurate Human Motion Capture via Flashing LEDs and Event-Based Vision
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19770](https://arxiv.org/abs/2603.19770)
-**Code**: Coming soon
+**arXiv**: [2603.19770](https://arxiv.org/abs/2603.19770)  
+**Code**: Coming soon  
 **Area**: Autonomous Driving / Human Pose Estimation
 **Keywords**: Event camera, human motion capture, LED markers, high temporal resolution, spiking neural network
 

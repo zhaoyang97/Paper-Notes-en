@@ -18,7 +18,7 @@ content_hash: 13a7ce58477cbfea
 # Weakly Supervised Teacher-Student Framework with Progressive Pseudo-mask Refinement for Gland Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.08605](https://arxiv.org/abs/2603.08605)
+**arXiv**: [2603.08605](https://arxiv.org/abs/2603.08605)  
 **Authors**: Hikmat Khan, Wei Chen, Muhammad Khalid Khan Niazi (The Ohio State University Wexner Medical Center)
 **Area**: Medical Imaging
 **Keywords**: Weakly supervised semantic segmentation, teacher-student framework, pseudo-mask refinement, gland segmentation, colorectal cancer pathology

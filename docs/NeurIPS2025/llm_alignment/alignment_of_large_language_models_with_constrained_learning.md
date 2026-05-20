@@ -18,8 +18,8 @@ content_hash: 41ebcb5bc9b36453
 # Alignment of Large Language Models with Constrained Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19387](https://arxiv.org/abs/2505.19387)
-**Code**: None
+**arXiv**: [2505.19387](https://arxiv.org/abs/2505.19387)  
+**Code**: None  
 **Area**: Alignment / RLHF
 **Keywords**: Constrained Alignment, Lagrangian Duality, Multi-objective Optimization, Safe RLHF, DPO
 

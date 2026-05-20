@@ -18,8 +18,8 @@ content_hash: 33bb2c3807d1ebe2
 # AnthroTAP: Learning Point Tracking with Real-World Motion
 
 **Conference**: CVPR 2026
-**arXiv**: [2507.06233](https://arxiv.org/abs/2507.06233)
-**Code**: [Project Page](https://cvlab-kaist.github.io/AnthroTAP/)
+**arXiv**: [2507.06233](https://arxiv.org/abs/2507.06233)  
+**Code**: [Project Page](https://cvlab-kaist.github.io/AnthroTAP/)  
 **Area**: 3D Vision / Point Tracking
 **Keywords**: point tracking, human motion, pseudo-labels, SMPL, optical flow consistency
 

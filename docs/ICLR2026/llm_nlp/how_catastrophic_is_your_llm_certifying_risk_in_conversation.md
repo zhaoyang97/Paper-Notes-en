@@ -18,8 +18,8 @@ content_hash: 5b11e30833842910
 # How Catastrophic is Your LLM? Certifying Risk in Conversation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03969](https://arxiv.org/abs/2510.03969)
-**Code**: None
+**arXiv**: [2510.03969](https://arxiv.org/abs/2510.03969)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: safety certification, multi-turn attack, Markov process, catastrophic risk, statistical guarantee
 
@@ -54,9 +54,9 @@ This paper proposes C3LLM (Certification of Catastrophic risks in multi-turn Con
 
 1. **Lifted State Space to Avoid Revisiting Nodes**:
 
-   - State $(v, S)$: current query $v$ + visited set $S$
-   - Terminal state $\tau$: entered when no transferable neighbors exist
-   - Ensures no repeated queries within a sequence (reflecting realistic adversary behavior)
+    - State $(v, S)$: current query $v$ + visited set $S$
+    - Terminal state $\tau$: entered when no transferable neighbors exist
+    - Ensures no repeated queries within a sequence (reflecting realistic adversary behavior)
 
 2. **Three Conversation Distributions**:
 
@@ -68,15 +68,15 @@ This paper proposes C3LLM (Certification of Catastrophic risks in multi-turn Con
 
 3. **Weight Design for Adaptive Distribution**:
 
-   - Define progressive neighbors $A_{\text{prog}}$ (closer to $q^*$) and deprogressive neighbors $A_{\text{deprog}}$ (farther from $q^*$)
-   - Model accepts current query ($r_v=0$): high weight $\lambda_h$ assigned to $A_{\text{prog}}$, encouraging advancement
-   - Model rejects current query ($r_v=1$): high weight $\lambda_h$ assigned to $A_{\text{deprog}}$, retreating to a safer region to retry
+    - Define progressive neighbors $A_{\text{prog}}$ (closer to $q^*$) and deprogressive neighbors $A_{\text{deprog}}$ (farther from $q^*$)
+    - Model accepts current query ($r_v=0$): high weight $\lambda_h$ assigned to $A_{\text{prog}}$, encouraging advancement
+    - Model rejects current query ($r_v=1$): high weight $\lambda_h$ assigned to $A_{\text{deprog}}$, retreating to a safer region to retry
 
 4. **Jailbreak Augmentation Layer**:
 
-   - Each query is augmented with a jailbreak prefix with probability $p$
-   - Augmented sequence probability: $\Pr(\tilde\gamma) = \Pr(\gamma) \prod_t \Pr_{\mathcal{D}_{jb}}(\tilde{v}_t | v_t)$
-   - Covers a spectrum from identity transformation (no modification) to structured modifications
+    - Each query is augmented with a jailbreak prefix with probability $p$
+    - Augmented sequence probability: $\Pr(\tilde\gamma) = \Pr(\gamma) \prod_t \Pr_{\mathcal{D}_{jb}}(\tilde{v}_t | v_t)$
+    - Covers a spectrum from identity transformation (no modification) to structured modifications
 
 ### Graph Construction Details
 

@@ -18,8 +18,8 @@ content_hash: 2c6105cbe804d4fc
 # Lossless Vocabulary Reduction for Auto-Regressive Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.08102](https://arxiv.org/abs/2510.08102)
-**Code**: N/A
+**arXiv**: [2510.08102](https://arxiv.org/abs/2510.08102)  
+**Code**: N/A  
 **Area**: LLM Pretraining
 **Keywords**: Vocabulary Reduction, Auto-Regressive LM, Tokenization, Model Ensemble, Maximal Common Vocabulary
 
@@ -164,8 +164,8 @@ tags:
 # Lossless Vocabulary Reduction for Auto-Regressive Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.08102](https://arxiv.org/abs/2510.08102)
-**Code**: N/A
+**arXiv**: [2510.08102](https://arxiv.org/abs/2510.08102)  
+**Code**: N/A  
 **Area**: NLP / Language Models
 **Keywords**: Vocabulary Reduction, Auto-Regressive Language Models, Tokenization, Model Ensembling, Lossless Conversion
 

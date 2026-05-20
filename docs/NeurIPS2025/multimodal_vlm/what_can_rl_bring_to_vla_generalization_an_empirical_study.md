@@ -18,8 +18,8 @@ content_hash: 2ae569179ddedc11
 # What Can RL Bring to VLA Generalization? An Empirical Study
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19789](https://arxiv.org/abs/2505.19789)
-**Code**: [Project Page](https://rlvla.github.io)
+**arXiv**: [2505.19789](https://arxiv.org/abs/2505.19789)  
+**Code**: [Project Page](https://rlvla.github.io)  
 **Area**: Multimodal VLM
 **Keywords**: VLA models, reinforcement learning, PPO, generalization, robot manipulation
 

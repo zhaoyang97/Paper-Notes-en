@@ -18,8 +18,8 @@ content_hash: b37180bf35fa8389
 # SceneForge: Enhancing 3D-text alignment with Structured Scene Compositions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15693](https://arxiv.org/abs/2509.15693)
-**Code**: Not available
+**arXiv**: [2509.15693](https://arxiv.org/abs/2509.15693)  
+**Code**: Not available  
 **Area**: 3D Vision
 **Keywords**: 3D-text contrastive learning, compositional augmentation, point cloud scene composition, spatial relations, zero-shot classification
 

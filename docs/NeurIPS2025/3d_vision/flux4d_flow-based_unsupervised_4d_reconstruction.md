@@ -18,8 +18,8 @@ content_hash: d1f74e86b3da3d36
 # Flux4D: Flow-based Unsupervised 4D Reconstruction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.03210](https://arxiv.org/abs/2512.03210)
-**Code**: [https://waabi.ai/flux4d](https://waabi.ai/flux4d)
+**arXiv**: [2512.03210](https://arxiv.org/abs/2512.03210)  
+**Code**: [https://waabi.ai/flux4d](https://waabi.ai/flux4d)  
 **Area**: 3D Vision / Autonomous Driving / 4D Reconstruction
 **Keywords**: 4D reconstruction, unsupervised, 3D Gaussian, scene flow, autonomous driving
 

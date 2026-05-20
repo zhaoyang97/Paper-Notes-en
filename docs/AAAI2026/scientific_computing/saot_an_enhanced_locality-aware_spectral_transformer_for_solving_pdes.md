@@ -18,8 +18,8 @@ content_hash: 0d579bc2accb113d
 # SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18777](https://arxiv.org/abs/2511.18777)
-**Code**: [https://github.com/chenhong-zhou/SAOT](https://github.com/chenhong-zhou/SAOT)
+**arXiv**: [2511.18777](https://arxiv.org/abs/2511.18777)  
+**Code**: [https://github.com/chenhong-zhou/SAOT](https://github.com/chenhong-zhou/SAOT)  
 **Authors**: Chenhong Zhou, Jie Chen, Zaifeng Yang
 **Area**: Scientific Computing / Operator Learning
 **Keywords**: Neural Operator, Wavelet Transform, Fourier Attention, Spectral Transformer, PDE Solving

@@ -18,8 +18,8 @@ content_hash: 2f97ec58f1ddacbc
 # AdaptiveAD: Decoupling Scene Perception and Ego Status for End-to-End Autonomous Driving
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13079](https://arxiv.org/abs/2511.13079)
-**Code**: N/A
+**arXiv**: [2511.13079](https://arxiv.org/abs/2511.13079)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: end-to-end autonomous driving, causal confusion, ego-status over-reliance, dual-branch architecture, multi-context fusion
 

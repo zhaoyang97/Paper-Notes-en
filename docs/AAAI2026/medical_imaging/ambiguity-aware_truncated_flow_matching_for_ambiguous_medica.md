@@ -18,8 +18,8 @@ content_hash: 957d8c51e92bbeed
 # Ambiguity-aware Truncated Flow Matching for Ambiguous Medical Image Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06857v2](https://arxiv.org/abs/2511.06857v2)
-**Code**: [https://github.com/PerceptionComputingLab/ATFM](https://github.com/PerceptionComputingLab/ATFM)
+**arXiv**: [2511.06857v2](https://arxiv.org/abs/2511.06857v2)  
+**Code**: [https://github.com/PerceptionComputingLab/ATFM](https://github.com/PerceptionComputingLab/ATFM)  
 **Area**: Medical Imaging
 **Keywords**: Ambiguous medical image segmentation, truncated diffusion model, Flow Matching, Gaussian truncation representation, semantic consistency
 

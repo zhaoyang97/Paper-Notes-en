@@ -18,8 +18,8 @@ content_hash: c84b41263417f541
 # CoRVid: Improving Multimodal Large Language Models Towards Chain-of-Thought Reasoning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.07424](https://arxiv.org/abs/2507.07424)
-**Code**: [Project Page](https://mm-vl.github.io/corvid)
+**arXiv**: [2507.07424](https://arxiv.org/abs/2507.07424)  
+**Code**: [Project Page](https://mm-vl.github.io/corvid)  
 **Area**: LLM Reasoning
 **Keywords**: Multimodal Large Language Models, Chain-of-Thought Reasoning, Visual Encoder, Test-Time Scaling, CoT
 

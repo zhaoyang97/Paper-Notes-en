@@ -18,8 +18,8 @@ content_hash: f15ce4000ed59656
 # BUFFER-X: Towards Zero-Shot Point Cloud Registration in Diverse Scenes
 
 **Conference**: ICCV 2025 (Highlight)
-**arXiv**: [2503.07940](https://arxiv.org/abs/2503.07940)
-**Code**: [https://github.com/MIT-SPARK/BUFFER-X](https://github.com/MIT-SPARK/BUFFER-X)
+**arXiv**: [2503.07940](https://arxiv.org/abs/2503.07940)  
+**Code**: [https://github.com/MIT-SPARK/BUFFER-X](https://github.com/MIT-SPARK/BUFFER-X)  
 **Area**: 3D Vision / Point Cloud Registration
 **Keywords**: point cloud registration, zero-shot generalization, multi-scale descriptors, adaptive parameters, cross-domain robustness
 

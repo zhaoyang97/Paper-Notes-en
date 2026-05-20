@@ -18,8 +18,8 @@ content_hash: 8170e6438e0e2995
 # Aligning What LLMs Do and Say: Towards Self-Consistent Explanations
 
 **Conference**: ACL 2026
-**arXiv**: [2506.07523](https://arxiv.org/abs/2506.07523)
-**Code**: [GitHub](https://github.com/saharad1/ConstLLM)
+**arXiv**: [2506.07523](https://arxiv.org/abs/2506.07523)  
+**Code**: [GitHub](https://github.com/saharad1/ConstLLM)  
 **Area**: Interpretability
 **Keywords**: Self-consistency, Feature Attribution, Explanation Faithfulness, DPO Optimization, Attribution Alignment
 

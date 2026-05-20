@@ -18,8 +18,8 @@ content_hash: 3b1cc4feaeb94a7e
 # OptScale: Probabilistic Optimality for Inference-time Scaling
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.22376](https://arxiv.org/abs/2506.22376)
-**Code**: [GitHub](https://github.com/Albertwyk/OptScale)
+**arXiv**: [2506.22376](https://arxiv.org/abs/2506.22376)  
+**Code**: [GitHub](https://github.com/Albertwyk/OptScale)  
 **Area**: LLM Evaluation
 **Keywords**: Inference-time scaling, parallel sampling, probabilistic optimality, Best-of-N, computational efficiency
 

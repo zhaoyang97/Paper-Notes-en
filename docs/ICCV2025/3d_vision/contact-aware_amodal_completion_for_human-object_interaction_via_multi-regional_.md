@@ -18,8 +18,8 @@ content_hash: 33e90e614089f07b
 # Contact-Aware Amodal Completion for Human-Object Interaction via Multi-Regional Inpainting
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00427](https://arxiv.org/abs/2508.00427)
-**Code**: None
+**arXiv**: [2508.00427](https://arxiv.org/abs/2508.00427)  
+**Code**: None  
 **Area**: 3D Vision / Human-Object Interaction Understanding
 **Keywords**: Amodal completion, human-object interaction, multi-regional inpainting, diffusion models, contact estimation
 

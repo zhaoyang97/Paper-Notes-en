@@ -18,8 +18,8 @@ content_hash: 5425f536659a3f26
 # Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.09974](https://arxiv.org/abs/2603.09974)
-**Code**: To be confirmed
+**arXiv**: [2603.09974](https://arxiv.org/abs/2603.09974)  
+**Code**: To be confirmed  
 **Area**: Signal Communication
 **Keywords**: carbon flux upscaling, meta-learning, FiLM modulation, knowledge-guided loss, zero-shot transfer
 

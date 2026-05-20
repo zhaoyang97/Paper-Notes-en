@@ -18,8 +18,8 @@ content_hash: 16fe7ca796b80a9d
 # FedALT: Federated Fine-Tuning through Adaptive Local Training with Rest-of-World LoRA
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.11880](https://arxiv.org/abs/2503.11880)
-**Code**: None
+**arXiv**: [2503.11880](https://arxiv.org/abs/2503.11880)  
+**Code**: None  
 **Area**: AI Safety / Federated Learning
 **Keywords**: Federated Learning, LoRA Fine-Tuning, Personalization, Cross-Client Interference, MoE
 

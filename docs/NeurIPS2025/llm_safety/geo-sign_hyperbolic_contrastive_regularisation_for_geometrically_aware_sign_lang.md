@@ -18,8 +18,8 @@ content_hash: 8e2c2ca5fa9250e4
 # Geo-Sign: Hyperbolic Contrastive Regularisation for Geometrically Aware Sign Language Translation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.00129](https://arxiv.org/abs/2506.00129)
-**Code**: [GitHub](https://github.com/ed-fish/geo-sign)
+**arXiv**: [2506.00129](https://arxiv.org/abs/2506.00129)  
+**Code**: [GitHub](https://github.com/ed-fish/geo-sign)  
 **Area**: AI Safety
 **Keywords**: Sign language translation, hyperbolic geometry, Poincaré ball, contrastive learning, skeleton representation
 
@@ -50,31 +50,31 @@ Input 2D skeleton keypoints (extracted by RTM-Pose) → grouped by body part (bo
 
 1. **Hyperbolic Projection Layer**:
 
-   - Function: Maps Euclidean part features $\bar{\mathbf{f}}_p$ onto the Poincaré ball.
-   - Core formula: $\mathbf{h}_p = \exp_{\mathbf{0}}^c(s_p \mathbf{W}^p \bar{\mathbf{f}}_p)$, where the exponential map is $\exp_{\mathbf{0}}^c(\mathbf{v}) = \tanh(\frac{\sqrt{c}\|\mathbf{v}\|_2}{2}) \frac{\mathbf{v}}{\frac{\sqrt{c}}{2}\|\mathbf{v}\|_2}$.
-   - A learnable scaling scalar $s_p$ controls the "depth" of each part in hyperbolic space — high-amplitude arm motions remain near the origin, while fine-grained finger motions are pushed toward the boundary.
-   - Design Motivation: Exploit the distance-amplification effect of the boundary region in hyperbolic space to better discriminate fine-grained finger motions.
+    - Function: Maps Euclidean part features $\bar{\mathbf{f}}_p$ onto the Poincaré ball.
+    - Core formula: $\mathbf{h}_p = \exp_{\mathbf{0}}^c(s_p \mathbf{W}^p \bar{\mathbf{f}}_p)$, where the exponential map is $\exp_{\mathbf{0}}^c(\mathbf{v}) = \tanh(\frac{\sqrt{c}\|\mathbf{v}\|_2}{2}) \frac{\mathbf{v}}{\frac{\sqrt{c}}{2}\|\mathbf{v}\|_2}$.
+    - A learnable scaling scalar $s_p$ controls the "depth" of each part in hyperbolic space — high-amplitude arm motions remain near the origin, while fine-grained finger motions are pushed toward the boundary.
+    - Design Motivation: Exploit the distance-amplification effect of the boundary region in hyperbolic space to better discriminate fine-grained finger motions.
 
 2. **Weighted Fréchet Mean Aggregation (Pooled Strategy)**:
 
-   - Function: Aggregates multiple part embeddings $\{\mathbf{h}_p\}$ into a global pose embedding $\boldsymbol{\mu}_\text{pose}$.
-   - Mechanism: Weights $w_p \propto \exp(d_{\mathbb{B}_c}(\mathbf{0}, \mathbf{h}_p))$ assign higher importance to parts farther from the origin (i.e., closer to the boundary, encoding finer-grained information).
-   - Iterative algorithm: Compute a weighted sum of logarithmic maps in the tangent space, then map back to the manifold via the exponential map.
-   - Design Motivation: The Fréchet mean is the geometrically correct averaging operation in hyperbolic space, outperforming Euclidean averaging in fidelity.
+    - Function: Aggregates multiple part embeddings $\{\mathbf{h}_p\}$ into a global pose embedding $\boldsymbol{\mu}_\text{pose}$.
+    - Mechanism: Weights $w_p \propto \exp(d_{\mathbb{B}_c}(\mathbf{0}, \mathbf{h}_p))$ assign higher importance to parts farther from the origin (i.e., closer to the boundary, encoding finer-grained information).
+    - Iterative algorithm: Compute a weighted sum of logarithmic maps in the tangent space, then map back to the manifold via the exponential map.
+    - Design Motivation: The Fréchet mean is the geometrically correct averaging operation in hyperbolic space, outperforming Euclidean averaging in fidelity.
 
 3. **Hyperbolic Attention Alignment (Token Strategy)**:
 
-   - Function: Each pose part $\mathbf{h}_p$ serves as a Query attending over text token embeddings via hyperbolic attention, producing part-specific context vectors $\mathbf{c}_p$.
-   - Key transformation: $\mathbf{k}_t = (\mathbf{M} \otimes \mathbf{v}_t) \oplus \mathbf{b}$ (Möbius affine transformation).
-   - Attention score: $s_{pt} = -d_{\mathbb{B}_c}(\mathbf{h}_p, \mathbf{k}_t)$ (negative geodesic distance).
-   - Context vector: $\mathbf{c}_p = \mu_{\mathcal{B}_c}(\{\mathbf{v}_t\}, \{\alpha_{pt}\})$ (hyperbolic weighted midpoint).
-   - Design Motivation: Allows different body parts to attend to different text tokens, enabling finer-grained pose–semantics alignment.
+    - Function: Each pose part $\mathbf{h}_p$ serves as a Query attending over text token embeddings via hyperbolic attention, producing part-specific context vectors $\mathbf{c}_p$.
+    - Key transformation: $\mathbf{k}_t = (\mathbf{M} \otimes \mathbf{v}_t) \oplus \mathbf{b}$ (Möbius affine transformation).
+    - Attention score: $s_{pt} = -d_{\mathbb{B}_c}(\mathbf{h}_p, \mathbf{k}_t)$ (negative geodesic distance).
+    - Context vector: $\mathbf{c}_p = \mu_{\mathcal{B}_c}(\{\mathbf{v}_t\}, \{\alpha_{pt}\})$ (hyperbolic weighted midpoint).
+    - Design Motivation: Allows different body parts to attend to different text tokens, enabling finer-grained pose–semantics alignment.
 
 4. **Hyperbolic Contrastive Loss (Geometric Contrastive Loss)**:
 
-   - Core formula: $\mathcal{L}_\text{hyp\_pair}(\mathbf{p}_i, \mathbf{t}_i) = -\log \frac{\exp(-d_{\mathbb{B}_c}(\mathbf{p}_i, \mathbf{t}_i)/\tau)}{\sum_{j=1}^B \exp(-d_{\mathbb{B}_c}(\mathbf{p}_i, \mathbf{t}_j)/\tau + m \cdot \mathbb{I}(i \neq j))}$
-   - Learnable temperature $\tau$ and learnable margin $m$.
-   - Geodesic distance: $d_{\mathbb{B}_c}(\mathbf{u}, \mathbf{v}) = \frac{2}{\sqrt{c}} \text{artanh}(\sqrt{c}\|(-\mathbf{u}) \oplus_c \mathbf{v}\|_2)$.
+    - Core formula: $\mathcal{L}_\text{hyp\_pair}(\mathbf{p}_i, \mathbf{t}_i) = -\log \frac{\exp(-d_{\mathbb{B}_c}(\mathbf{p}_i, \mathbf{t}_i)/\tau)}{\sum_{j=1}^B \exp(-d_{\mathbb{B}_c}(\mathbf{p}_i, \mathbf{t}_j)/\tau + m \cdot \mathbb{I}(i \neq j))}$
+    - Learnable temperature $\tau$ and learnable margin $m$.
+    - Geodesic distance: $d_{\mathbb{B}_c}(\mathbf{u}, \mathbf{v}) = \frac{2}{\sqrt{c}} \text{artanh}(\sqrt{c}\|(-\mathbf{u}) \oplus_c \mathbf{v}\|_2)$.
 
 ### Loss & Training
 - Total loss: $\mathcal{L}_\text{total} = \alpha \cdot \mathcal{L}_{CE} + (1-\alpha) \cdot \mathcal{L}_{hyp\_reg}$, where $\alpha$ is dynamically adjusted during training, with greater emphasis on hyperbolic regularization in early stages.

@@ -18,8 +18,8 @@ content_hash: 58122b27b66310d7
 # Availability-aware Sensor Fusion via Unified Canonical Space
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.07029](https://arxiv.org/abs/2503.07029)
-**Code**: [https://github.com/kaist-avelab/k-radar](https://github.com/kaist-avelab/k-radar)
+**arXiv**: [2503.07029](https://arxiv.org/abs/2503.07029)  
+**Code**: [https://github.com/kaist-avelab/k-radar](https://github.com/kaist-avelab/k-radar)  
 **Area**: Autonomous Driving / Sensor Fusion
 **Keywords**: Multi-sensor fusion, sensor degradation robustness, unified canonical space, 4D Radar, CASAP
 

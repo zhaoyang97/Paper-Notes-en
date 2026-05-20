@@ -18,8 +18,8 @@ content_hash: 6f6f067cc8ec7291
 # Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation
 
 **Conference**: ACL 2026
-**arXiv**: [2510.10925](https://arxiv.org/abs/2510.10925)
-**Code**: None (but PerSyn-Math dataset is open-sourced)
+**arXiv**: [2510.10925](https://arxiv.org/abs/2510.10925)  
+**Code**: None (but PerSyn-Math dataset is open-sourced)  
 **Area**: Model Compression / Knowledge Distillation
 **Keywords**: Knowledge Distillation, Synthetic Data, Multi-Teacher, Routing Mechanism, Personalized Distillation
 

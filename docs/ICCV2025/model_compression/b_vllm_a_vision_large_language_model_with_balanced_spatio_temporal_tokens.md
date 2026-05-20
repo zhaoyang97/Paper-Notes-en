@@ -18,8 +18,8 @@ content_hash: 54a0cea0b080fc0a
 # B-VLLM: A Vision Large Language Model with Balanced Spatio-Temporal Tokens
 
 **Conference**: ICCV 2025
-**arXiv**: N/A
-**Code**: [GitHub](https://github.com/zhuqiangLu/B-VLLM)
+**arXiv**: N/A  
+**Code**: [GitHub](https://github.com/zhuqiangLu/B-VLLM)  
 **Area**: Model Compression
 **Keywords**: video LLM, spatio-temporal balance, frame selection, token merging, adaptive token sampling
 

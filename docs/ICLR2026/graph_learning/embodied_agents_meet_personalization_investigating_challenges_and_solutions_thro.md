@@ -18,8 +18,8 @@ content_hash: 54b7576ae6219fd7
 # Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilization
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.16348](https://arxiv.org/abs/2505.16348)
-**Code**: [https://github.com/Connoriginal/MEMENTO](https://github.com/Connoriginal/MEMENTO)
+**arXiv**: [2505.16348](https://arxiv.org/abs/2505.16348)  
+**Code**: [https://github.com/Connoriginal/MEMENTO](https://github.com/Connoriginal/MEMENTO)  
 **Area**: Graph Learning
 **Keywords**: Personalized Embodied Intelligence, Memory Utilization, Episodic Memory, Knowledge Graph, LLM Agent
 

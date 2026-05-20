@@ -18,8 +18,8 @@ content_hash: 5ad8738875c6df58
 # SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09870](https://arxiv.org/abs/2511.09870)
-**Code**: [https://github.com/LinJ0866/SAM-DAQ](https://github.com/LinJ0866/SAM-DAQ)
+**arXiv**: [2511.09870](https://arxiv.org/abs/2511.09870)  
+**Code**: [https://github.com/LinJ0866/SAM-DAQ](https://github.com/LinJ0866/SAM-DAQ)  
 **Area**: Segmentation
 **Keywords**: SAM2, RGB-D Salient Object Detection, Video Understanding, Depth Guidance, Query-driven Memory
 

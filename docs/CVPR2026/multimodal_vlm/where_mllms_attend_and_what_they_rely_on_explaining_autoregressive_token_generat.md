@@ -18,8 +18,8 @@ content_hash: ef7c3318c4f38615
 # Where MLLMs Attend and What They Rely On: Explaining Autoregressive Token Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.22496](https://arxiv.org/abs/2509.22496)
-**Code**: [https://ruoyuchen10.github.io/EAGLE/](https://ruoyuchen10.github.io/EAGLE/)
+**arXiv**: [2509.22496](https://arxiv.org/abs/2509.22496)  
+**Code**: [https://ruoyuchen10.github.io/EAGLE/](https://ruoyuchen10.github.io/EAGLE/)  
 **Area**: Multimodal VLM
 **Keywords**: MLLM interpretability, attribution analysis, hallucination diagnosis, language prior vs. perceptual evidence, black-box methods
 

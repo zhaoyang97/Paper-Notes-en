@@ -18,8 +18,8 @@ content_hash: a845fe31b75d3254
 # PolySHAP: Extending KernelSHAP with Interaction-Informed Polynomial Regression
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.18608](https://arxiv.org/abs/2601.18608)
-**Code**: [GitHub](https://github.com/FFmgll/PolySHAP)
+**arXiv**: [2601.18608](https://arxiv.org/abs/2601.18608)  
+**Code**: [GitHub](https://github.com/FFmgll/PolySHAP)  
 **Area**: Interpretability
 **Keywords**: Shapley values, Explainable AI, Polynomial regression, Feature interactions, KernelSHAP
 

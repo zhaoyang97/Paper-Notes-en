@@ -18,8 +18,8 @@ content_hash: 14c295dc602e0662
 # Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08503](https://arxiv.org/abs/2604.08503)
-**Code**: [https://plan-lab.github.io/phantom](https://plan-lab.github.io/phantom)
+**arXiv**: [2604.08503](https://arxiv.org/abs/2604.08503)  
+**Code**: [https://plan-lab.github.io/phantom](https://plan-lab.github.io/phantom)  
 **Area**: Video Generation / Physical Consistency
 **Keywords**: Physically consistent video generation, flow matching, dual-branch architecture, V-JEPA2, latent physical dynamics
 

@@ -18,8 +18,8 @@ content_hash: a4f9a485e50a0354
 # A Little Depth Goes a Long Way: The Expressive Power of Log-Depth Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.03961](https://arxiv.org/abs/2503.03961)
-**Code**: Available (provided in the camera-ready version)
+**arXiv**: [2503.03961](https://arxiv.org/abs/2503.03961)  
+**Code**: Available (provided in the camera-ready version)  
 **Area**: Video Understanding
 **Keywords**: log-depth transformer, expressive power, regular language recognition, graph connectivity, computational complexity
 
@@ -55,8 +55,8 @@ Key assumptions include: (1) averaging-hard attention (saturated attention); (2)
 3. **Theorem 2 (Graph Connectivity)**: A $(17, 2, 1)$-universal transformer, looped $\lceil \log_2 n \rceil$ times, solves $s$-$t$ connectivity for $n$-vertex graphs. The approach is classical doubling reachability: a predicate $B_\ell(i,j)$ (existence of a path of length $\leq 2^\ell$) is maintained over $n^2$ adjacency matrix tokens, and an intermediate predicate $C_\ell(i,k,j)$ is computed over $n^3$ padding tokens. Each loop alternately updates $C$ and $B$; after $\lceil \log n \rceil$ rounds, full reachability information is obtained.
 
 4. **Theorems 3 & 4 (Disadvantages of Width and CoT Scaling)**:
-   - Width scaling: Fixed-depth Transformers remain within TC⁰ even with polynomial width growth; escaping TC⁰ requires super-polynomial width expansion — which is infeasible.
-   - CoT scaling: $O(\log n)$ CoT steps also cannot escape TC⁰; thus logarithmic CoT is insufficient to solve regular languages and graph connectivity, making depth scaling strictly more powerful.
+    - Width scaling: Fixed-depth Transformers remain within TC⁰ even with polynomial width growth; escaping TC⁰ requires super-polynomial width expansion — which is infeasible.
+    - CoT scaling: $O(\log n)$ CoT steps also cannot escape TC⁰; thus logarithmic CoT is insufficient to solve regular languages and graph connectivity, making depth scaling strictly more powerful.
 
 ### Loss & Training
 

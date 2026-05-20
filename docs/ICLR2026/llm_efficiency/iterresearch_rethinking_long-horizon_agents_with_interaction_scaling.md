@@ -18,8 +18,8 @@ content_hash: ea15f3d149080b3c
 # IterResearch: Rethinking Long-Horizon Agents with Interaction Scaling
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.07327](https://arxiv.org/abs/2511.07327)
-**Code**: Available
+**arXiv**: [2511.07327](https://arxiv.org/abs/2511.07327)  
+**Code**: Available  
 **Area**: LLM Efficiency
 **Keywords**: Deep Research Agent, Iterative Workspace, MDP Framework, Interaction Scaling, Reinforcement Learning
 

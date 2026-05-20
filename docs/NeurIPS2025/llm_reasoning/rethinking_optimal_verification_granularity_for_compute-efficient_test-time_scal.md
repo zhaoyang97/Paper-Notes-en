@@ -18,8 +18,8 @@ content_hash: a6dadfbc77a45e02
 # Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11730](https://arxiv.org/abs/2505.11730)
-**Code**: [https://github.com/hmarkc/VG-Search](https://github.com/hmarkc/VG-Search)
+**arXiv**: [2505.11730](https://arxiv.org/abs/2505.11730)  
+**Code**: [https://github.com/hmarkc/VG-Search](https://github.com/hmarkc/VG-Search)  
 **Area**: LLM Reasoning / Test-Time Compute
 **Keywords**: test-time scaling, verification granularity, beam search, process reward model, compute efficiency
 

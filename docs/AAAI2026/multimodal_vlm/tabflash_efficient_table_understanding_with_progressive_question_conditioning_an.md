@@ -18,8 +18,8 @@ content_hash: 1eb1135ea75b059c
 # TabFlash: Efficient Table Understanding with Progressive Question Conditioning and Token Focusing
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13283](https://arxiv.org/abs/2511.13283)
-**Code**: [github](https://github.com/mlvlab/TabFlash)
+**arXiv**: [2511.13283](https://arxiv.org/abs/2511.13283)  
+**Code**: [github](https://github.com/mlvlab/TabFlash)  
 **Area**: Multimodal VLM
 **Keywords**: table understanding, multimodal large language models, visual token pruning, question conditioning, computational efficiency
 

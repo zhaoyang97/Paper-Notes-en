@@ -18,8 +18,8 @@ content_hash: 1498a59930fd8641
 # MuRating: A High Quality Data Selecting Approach to Multilingual Large Language Model Pretraining
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.01785](https://arxiv.org/abs/2507.01785)
-**Code**: [https://github.com/aialt/MuRater](https://github.com/aialt/MuRater)
+**arXiv**: [2507.01785](https://arxiv.org/abs/2507.01785)  
+**Code**: [https://github.com/aialt/MuRater](https://github.com/aialt/MuRater)  
 **Area**: Information Retrieval
 **Keywords**: multilingual data selection, pretraining data quality, Bradley-Terry model, pairwise comparison, cross-lingual alignment
 

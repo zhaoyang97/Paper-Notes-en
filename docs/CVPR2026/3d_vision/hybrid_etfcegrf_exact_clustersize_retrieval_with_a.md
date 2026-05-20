@@ -18,8 +18,8 @@ content_hash: 3a3d5a8efa951ce1
 # Hybrid eTFCE–GRF: Exact Cluster-Size Retrieval with Analytical p-Values for Voxel-Based Morphometry
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11344](https://arxiv.org/abs/2603.11344)
-**Code**: [pytfce](https://pypi.org/project/pytfce/) (`pip install pytfce`)
+**arXiv**: [2603.11344](https://arxiv.org/abs/2603.11344)  
+**Code**: [pytfce](https://pypi.org/project/pytfce/) (`pip install pytfce`)  
 **Area**: Neuroimaging Analysis / Statistical Inference
 **Keywords**: TFCE, Gaussian Random Field, Union-Find, Voxel-Based Morphometry, Permutation-Free Inference
 

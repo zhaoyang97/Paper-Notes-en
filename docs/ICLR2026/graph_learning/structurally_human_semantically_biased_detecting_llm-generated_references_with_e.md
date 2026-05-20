@@ -18,8 +18,8 @@ content_hash: f2875fd718fcf258
 # Structurally Human, Semantically Biased: Detecting LLM-Generated References with Embeddings and GNNs
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20704](https://arxiv.org/abs/2601.20704)
-**Code**: None
+**arXiv**: [2601.20704](https://arxiv.org/abs/2601.20704)  
+**Code**: None  
 **Area**: AI Safety / Graph Learning
 **Keywords**: LLM reference detection, citation graph, graph neural networks, semantic embeddings, academic integrity
 

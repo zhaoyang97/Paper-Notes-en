@@ -18,8 +18,8 @@ content_hash: d755f05dc9a0e3fd
 # RacketVision: A Multiple Racket Sports Benchmark for Unified Ball and Racket Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.17045](https://arxiv.org/abs/2511.17045)
-**Code**: None
+**arXiv**: [2511.17045](https://arxiv.org/abs/2511.17045)  
+**Code**: None  
 **Area**: Sports Analysis / Computer Vision
 **Keywords**: Ball Sports Analysis, Racket Pose Estimation, Trajectory Prediction, Multimodal Fusion, Cross-Sport Learning
 
@@ -62,8 +62,8 @@ The relationship among the three tasks is as follows: ball trackers and racket p
 
 - **Video source**: 942 top-level professional match broadcast videos collected from YouTube, covering three racket sports.
 - **Two-stage annotation pipeline**:
-  - **Stage 1**: Crowdsourced annotators segment raw videos into valid clips (5–10 seconds, with the ball in motion).
-  - **Stage 2**: A sparse annotation strategy is applied—20% of frames are uniformly sampled from each clip for manual annotation.
+    - **Stage 1**: Crowdsourced annotators segment raw videos into valid clips (5–10 seconds, with the ball in motion).
+    - **Stage 2**: A sparse annotation strategy is applied—20% of frames are uniformly sampled from each clip for manual annotation.
 - **Annotation content**: Ball position (red dot) + visibility flag; racket bounding box (orange rectangle) + 5 sport-specific keypoints.
 - **Dataset scale**: 1,672 video clips, 435,179 frames, approximately 12,755 seconds, 64,042 ball annotations, and 24,621 racket annotations.
 

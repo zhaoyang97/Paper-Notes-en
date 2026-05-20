@@ -19,8 +19,8 @@ content_hash: bd9d1337e3b4a2c9
 # Explaining and Mitigating Crosslingual Tokenizer Inequities
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21909](https://arxiv.org/abs/2510.21909)
-**Code**: [MonTok](https://huggingface.co/datasets/catherinearnett/montok)
+**arXiv**: [2510.21909](https://arxiv.org/abs/2510.21909)  
+**Code**: [MonTok](https://huggingface.co/datasets/catherinearnett/montok)  
 **Area**: Robotics
 **Keywords**: Token Premium, Crosslingual Tokenization, BPE, Vocabulary Size, Pre-tokenization, Compression Rate
 

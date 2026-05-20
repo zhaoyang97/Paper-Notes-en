@@ -18,8 +18,8 @@ content_hash: fa67c53850adfb8b
 # Keep It Real: Challenges in Attacking Compression-Based Adversarial Purification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.05489](https://arxiv.org/abs/2508.05489)
-**Code**: None
+**arXiv**: [2508.05489](https://arxiv.org/abs/2508.05489)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: adversarial robustness, image compression, adversarial purification, realistic reconstruction, adaptive attacks
 

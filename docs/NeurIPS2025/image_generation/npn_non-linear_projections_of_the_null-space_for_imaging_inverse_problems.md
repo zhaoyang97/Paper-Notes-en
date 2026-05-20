@@ -18,8 +18,8 @@ content_hash: cfa2deb18aafd345
 # NPN: Non-Linear Projections of the Null-Space for Imaging Inverse Problems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.01608](https://arxiv.org/abs/2510.01608)
-**Code**: [GitHub](https://github.com/yromariogh/NPN)
+**arXiv**: [2510.01608](https://arxiv.org/abs/2510.01608)  
+**Code**: [GitHub](https://github.com/yromariogh/NPN)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Null-space projection, imaging inverse problems, regularization, plug-and-play methods, compressed sensing
 

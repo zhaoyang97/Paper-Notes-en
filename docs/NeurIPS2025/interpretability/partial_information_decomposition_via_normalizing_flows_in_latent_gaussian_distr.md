@@ -18,8 +18,8 @@ content_hash: 1f514dc9937353c1
 # Partial Information Decomposition via Normalizing Flows in Latent Gaussian Distributions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04417](https://arxiv.org/abs/2510.04417)
-**Code**: [https://github.com/warrenzha/flow-pid](https://github.com/warrenzha/flow-pid)
+**arXiv**: [2510.04417](https://arxiv.org/abs/2510.04417)  
+**Code**: [https://github.com/warrenzha/flow-pid](https://github.com/warrenzha/flow-pid)  
 **Area**: Interpretability / Information Theory
 **Keywords**: Partial Information Decomposition, normalizing flow, Gaussian distribution, multimodal learning, mutual information
 
@@ -51,21 +51,21 @@ The framework operates at two levels: (1) **Thin-PID** handles Gaussian PID — 
 
 1. **Thin-PID: Efficient Gaussian PID Algorithm**
 
-   - **Function**: Efficiently solves the PID optimization problem when the marginals are known to be Gaussian.
-   - **Mechanism**: PID is reinterpreted via a Gaussian broadcast channel model — $Y$ is the transmitted signal, with $X_1 = H_1 Y + n_1$ and $X_2 = H_2 Y + n_2$. Synergistic information is equivalent to the cooperative gain under the worst-case noise correlation. The optimization variable is reduced to the noise cross-covariance matrix $\Sigma_{n_1 n_2}^{\text{off}}$ (of size $d_{X_1} \times d_{X_2}$), solved via projected gradient descent. Gradients have closed-form expressions (Proposition 3.4), and projection is implemented via SVD (truncating singular values to $[0,1]$). Complexity is $O(\min(d_{X_1}, d_{X_2})^3)$.
-   - **Design Motivation**: Tilde-PID requires eigendecomposition of the full $(d_{X_1}+d_{X_2}) \times (d_{X_1}+d_{X_2})$ matrix, whereas Thin-PID only performs SVD on the $d_{X_1} \times d_{X_2}$ cross-covariance, yielding significant speedups when $d_{X_1} \gg d_{X_2}$.
+    - **Function**: Efficiently solves the PID optimization problem when the marginals are known to be Gaussian.
+    - **Mechanism**: PID is reinterpreted via a Gaussian broadcast channel model — $Y$ is the transmitted signal, with $X_1 = H_1 Y + n_1$ and $X_2 = H_2 Y + n_2$. Synergistic information is equivalent to the cooperative gain under the worst-case noise correlation. The optimization variable is reduced to the noise cross-covariance matrix $\Sigma_{n_1 n_2}^{\text{off}}$ (of size $d_{X_1} \times d_{X_2}$), solved via projected gradient descent. Gradients have closed-form expressions (Proposition 3.4), and projection is implemented via SVD (truncating singular values to $[0,1]$). Complexity is $O(\min(d_{X_1}, d_{X_2})^3)$.
+    - **Design Motivation**: Tilde-PID requires eigendecomposition of the full $(d_{X_1}+d_{X_2}) \times (d_{X_1}+d_{X_2})$ matrix, whereas Thin-PID only performs SVD on the $d_{X_1} \times d_{X_2}$ cross-covariance, yielding significant speedups when $d_{X_1} \gg d_{X_2}$.
 
 2. **Proof of Joint Gaussian Optimality**
 
-   - **Function**: Proves that the optimal joint distribution under the GPID definition is necessarily Gaussian, resolving an open problem.
-   - **Mechanism**: The key lemma establishes that for any $q$, $h_q(Y|X_1,X_2) \leq h_{\hat{q}}(Y|X_1,X_2)$, where $\hat{q}$ is the Gaussian distribution sharing the same first and second moments as $q$ (via the Gaussian upper bound property of conditional entropy). Since the optimization objective is equivalent to maximizing $h_q(Y|X_1,X_2)$ and $\hat{q}$ preserves the marginal constraints, the Gaussian solution is necessarily optimal.
-   - **Design Motivation**: The prior Tilde-PID merely assumed that the Gaussian solution was sufficiently good without formal proof. This result elevates a "heuristic approximation" to an "exact solution."
+    - **Function**: Proves that the optimal joint distribution under the GPID definition is necessarily Gaussian, resolving an open problem.
+    - **Mechanism**: The key lemma establishes that for any $q$, $h_q(Y|X_1,X_2) \leq h_{\hat{q}}(Y|X_1,X_2)$, where $\hat{q}$ is the Gaussian distribution sharing the same first and second moments as $q$ (via the Gaussian upper bound property of conditional entropy). Since the optimization objective is equivalent to maximizing $h_q(Y|X_1,X_2)$ and $\hat{q}$ preserves the marginal constraints, the Gaussian solution is necessarily optimal.
+    - **Design Motivation**: The prior Tilde-PID merely assumed that the Gaussian solution was sufficiently good without formal proof. This result elevates a "heuristic approximation" to an "exact solution."
 
 3. **Flow-PID: Normalizing Flow Encoder**
 
-   - **Function**: Transforms non-Gaussian continuous data into a marginal Gaussian space, enabling Thin-PID.
-   - **Mechanism**: Three independent normalizing flows $f_1, f_2, f_Y$ are trained so that the marginals of $(f_1(X_1), f_Y(Y))$ and $(f_2(X_2), f_Y(Y))$ approximate Gaussians. By Theorem 4.1, invertible mappings preserve total mutual information; Corollary 4.2 guarantees that the PID decomposition is likewise preserved. The training objective minimizes KL divergence to variational Gaussian marginals.
-   - **Design Motivation**: Direct estimation of MI in high dimensions is extremely difficult, whereas Gaussian MI has a closed-form solution. The invertibility of the flows ensures that PID in the latent space is equivalent to PID in the original space.
+    - **Function**: Transforms non-Gaussian continuous data into a marginal Gaussian space, enabling Thin-PID.
+    - **Mechanism**: Three independent normalizing flows $f_1, f_2, f_Y$ are trained so that the marginals of $(f_1(X_1), f_Y(Y))$ and $(f_2(X_2), f_Y(Y))$ approximate Gaussians. By Theorem 4.1, invertible mappings preserve total mutual information; Corollary 4.2 guarantees that the PID decomposition is likewise preserved. The training objective minimizes KL divergence to variational Gaussian marginals.
+    - **Design Motivation**: Direct estimation of MI in high dimensions is extremely difficult, whereas Gaussian MI has a closed-form solution. The invertibility of the flows ensures that PID in the latent space is equivalent to PID in the original space.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 9137554d801f33ac
 # Estimating 2D Camera Motion with Hybrid Motion Basis
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22480](https://arxiv.org/abs/2507.22480)
-**Code**: [lhaippp.github.io/CamFlow](https://lhaippp.github.io/CamFlow/)
+**arXiv**: [2507.22480](https://arxiv.org/abs/2507.22480)  
+**Code**: [lhaippp.github.io/CamFlow](https://lhaippp.github.io/CamFlow/)  
 **Area**: 3D Vision
 **Keywords**: Camera motion estimation, homography, motion basis, optical flow, video stabilization
 
@@ -75,9 +75,9 @@ The CamFlow pipeline: image pair input → multi-scale feature pyramid → Motio
 - **Function**: Model uncertainty in motion estimation via a Laplace distribution.
 - **Core formulation**: Horizontal and vertical components are each modeled as Laplace distributions, with the confidence mask $\mathbf{d}$ controlling variance.
 - **Dual losses**:
-  - Motion supervision loss $\ell_{NLL_m}$: negative log-likelihood using pseudo-labels.
-  - Photometric loss $\ell_{NLL_p}$: negative log-likelihood of warped feature consistency.
-  - Adaptive balancing: $\ell_{overall} = \ell_{NLL_p} + \mathbf{w} \times \frac{|\ell_{NLL_p}|}{|\ell_{NLL_m}|} \cdot \ell_{NLL_m}$
+    - Motion supervision loss $\ell_{NLL_m}$: negative log-likelihood using pseudo-labels.
+    - Photometric loss $\ell_{NLL_p}$: negative log-likelihood of warped feature consistency.
+    - Adaptive balancing: $\ell_{overall} = \ell_{NLL_p} + \mathbf{w} \times \frac{|\ell_{NLL_p}|}{|\ell_{NLL_m}|} \cdot \ell_{NLL_m}$
 - **Design Motivation**: The photometric loss provides fine-grained constraints while the motion loss supplies coarse-grained guidance; the Laplace distribution is more robust than the Gaussian.
 
 ### Loss & Training

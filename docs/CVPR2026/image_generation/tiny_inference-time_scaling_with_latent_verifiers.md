@@ -18,8 +18,8 @@ content_hash: 956084c8f925e6a4
 # Tiny Inference-Time Scaling with Latent Verifiers
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22492](https://arxiv.org/abs/2603.22492)
-**Code**: [https://aimagelab.github.io/VHS](https://aimagelab.github.io/VHS)
+**arXiv**: [2603.22492](https://arxiv.org/abs/2603.22492)  
+**Code**: [https://aimagelab.github.io/VHS](https://aimagelab.github.io/VHS)  
 **Area**: Diffusion Models / Image Generation / LLM Efficiency
 **Keywords**: Inference-time scaling, latent verifier, single-step generation, DiT, MLLM
 

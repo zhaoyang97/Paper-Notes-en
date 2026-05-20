@@ -17,8 +17,8 @@ content_hash: 6bd8860c75a6ea40
 # How Hard is it to Explain Preferences Using Few Boolean Attributes?
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13445](https://arxiv.org/abs/2511.13445)
-**Code**: None
+**arXiv**: [2511.13445](https://arxiv.org/abs/2511.13445)  
+**Code**: None  
 **Area**: Computational Complexity / Social Choice Theory / Preference Modeling
 **Keywords**: Boolean Attribute Model, Computational Complexity, Parameterized Complexity, Preference Explanation, NP-Complete
 

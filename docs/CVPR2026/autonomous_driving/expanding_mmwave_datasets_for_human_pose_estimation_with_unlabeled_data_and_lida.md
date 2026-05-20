@@ -18,8 +18,8 @@ content_hash: 96dec2d629988844
 # EMDUL: Expanding mmWave Datasets for Human Pose Estimation with Unlabeled Data and LiDAR Datasets
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14507](https://arxiv.org/abs/2603.14507)
-**Code**: [GitHub](https://github.com/Shimmer93/EMDUL)
+**arXiv**: [2603.14507](https://arxiv.org/abs/2603.14507)  
+**Code**: [GitHub](https://github.com/Shimmer93/EMDUL)  
 **Area**: Autonomous Driving
 **Keywords**: mmWave radar, human pose estimation, dataset expansion, LiDAR point cloud conversion, semi-supervised learning
 

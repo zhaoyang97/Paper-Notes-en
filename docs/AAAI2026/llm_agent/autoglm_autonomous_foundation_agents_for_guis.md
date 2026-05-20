@@ -18,8 +18,8 @@ content_hash: e190459c1fbb7911
 # AutoGLM: Autonomous Foundation Agents for GUIs
 
 **Conference**: AAAI 2026
-**arXiv**: [2411.00820](https://arxiv.org/abs/2411.00820)
-**Code**: [https://github.com/THUDM/AutoGLM](https://github.com/THUDM/AutoGLM)
+**arXiv**: [2411.00820](https://arxiv.org/abs/2411.00820)  
+**Code**: [https://github.com/THUDM/AutoGLM](https://github.com/THUDM/AutoGLM)  
 **Area**: Agent
 **Keywords**: GUI Agent, Reinforcement Learning, Intermediate Interface Design, Self-Evolving Curriculum Learning, Foundation Agent
 

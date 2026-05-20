@@ -18,8 +18,8 @@ content_hash: 9fabed3cdc2a1af8
 # Evolutionary Prediction Games
 
 **Conference**: NEURIPS2025
-**arXiv**: [2503.03401](https://arxiv.org/abs/2503.03401)
-**Code**: To be confirmed
+**arXiv**: [2503.03401](https://arxiv.org/abs/2503.03401)  
+**Code**: To be confirmed  
 **Area**: Other
 **Keywords**: evolutionary game theory, prediction algorithms, user feedback loops, competitive exclusion, coexistence mechanisms, fairness
 

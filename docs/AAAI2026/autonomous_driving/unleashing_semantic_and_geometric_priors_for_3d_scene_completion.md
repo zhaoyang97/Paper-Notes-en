@@ -17,8 +17,8 @@ content_hash: 998170f10d177611
 # Unleashing Semantic and Geometric Priors for 3D Scene Completion
 
 **Conference**: AAAI2026
-**arXiv**: [2508.13601](https://arxiv.org/abs/2508.13601)
-**Code**: [D-Robotics-AI-Lab/FoundationSSC](https://github.com/D-Robotics-AI-Lab/FoundationSSC)
+**arXiv**: [2508.13601](https://arxiv.org/abs/2508.13601)  
+**Code**: [D-Robotics-AI-Lab/FoundationSSC](https://github.com/D-Robotics-AI-Lab/FoundationSSC)  
 **Area**: Autonomous Driving
 **Keywords**: 3D scene completion, vision foundation model, semantic-geometric decoupling, stereo cost volume, autonomous driving
 

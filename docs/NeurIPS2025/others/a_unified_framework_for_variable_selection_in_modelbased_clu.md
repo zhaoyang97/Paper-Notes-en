@@ -18,8 +18,8 @@ content_hash: 626df3a437e21727
 # A Unified Framework for Variable Selection in Model-Based Clustering with Missing Not at Random
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19093](https://arxiv.org/abs/2505.19093)
-**Code**: None
+**arXiv**: [2505.19093](https://arxiv.org/abs/2505.19093)  
+**Code**: None  
 **Area**: Statistical Learning / Clustering / Missing Data Handling
 **Keywords**: Model-based clustering, variable selection, MNAR, Gaussian mixture model, LASSO penalty, BIC consistency
 
@@ -49,21 +49,21 @@ The input is a data matrix $\mathbf{Y} \in \mathbb{R}^{N \times D}$ with missing
 
 1. **SRUW-MNARz Joint Model**:
 
-   - **Function**: Unified modeling of variable roles and the missingness mechanism.
-   - **Mechanism**: The complete-data density is decomposed as a product of three components—a clustering component $f_{\text{clust}}(\mathbf{y}^{\mathbb{S}}|\alpha_k)$, a regression component $f_{\text{reg}}(\mathbf{y}^{\mathbb{U}}|\mathbf{y}^{\mathbb{R}})$, and an independent component $f_{\text{indep}}(\mathbf{y}^{\mathbb{W}})$—multiplied by the MNARz missingness component $f_{\text{MNARz}}(\mathbf{c}_n|z_{nk}=1;\psi_k)$. Because MNARz assumes that missingness probability depends only on the class label $k$, the missingness term factors out of the integral, preserving ignorability.
-   - **Design Motivation**: The key advantage of the MNARz mechanism is that it transforms MNAR into MAR on augmented data—inference on $(Y, C)$ is equivalent to MAR inference. This avoids the non-identifiability issues of general MNAR while allowing the missingness pattern itself to carry clustering information.
+    - **Function**: Unified modeling of variable roles and the missingness mechanism.
+    - **Mechanism**: The complete-data density is decomposed as a product of three components—a clustering component $f_{\text{clust}}(\mathbf{y}^{\mathbb{S}}|\alpha_k)$, a regression component $f_{\text{reg}}(\mathbf{y}^{\mathbb{U}}|\mathbf{y}^{\mathbb{R}})$, and an independent component $f_{\text{indep}}(\mathbf{y}^{\mathbb{W}})$—multiplied by the MNARz missingness component $f_{\text{MNARz}}(\mathbf{c}_n|z_{nk}=1;\psi_k)$. Because MNARz assumes that missingness probability depends only on the class label $k$, the missingness term factors out of the integral, preserving ignorability.
+    - **Design Motivation**: The key advantage of the MNARz mechanism is that it transforms MNAR into MAR on augmented data—inference on $(Y, C)$ is equivalent to MAR inference. This avoids the non-identifiability issues of general MNAR while allowing the missingness pattern itself to carry clustering information.
 
 2. **Spectral-Distance Adaptive Penalty Weights**:
 
-   - **Function**: Replaces traditional inverse partial correlations to construct the penalty matrix $\mathbf{P}_k$.
-   - **Mechanism**: An undirected graph $\mathcal{G}^{(k)}$ is constructed from an initial precision matrix estimate $\hat{\Psi}_k^{(0)}$; the symmetric normalized Laplacian $\mathbf{L}_{sym}^{(k)}$ is computed with the goal of shrinking $\Psi_k$ toward a diagonal matrix (empty graph). The spectral distance is $D_{\text{LS}} = \|\text{spec}(\mathbf{L}_{sym}^k)\|_2$, and the adaptive weight is $\mathbf{P}_{k,ij} = (D_{\text{LS}} + \epsilon)^{-1}$.
-   - **Design Motivation**: The spectral distance provides a global measure of graph structural complexity that is more stable than element-wise partial correlations, particularly in high-dimensional, small-sample settings with missing data.
+    - **Function**: Replaces traditional inverse partial correlations to construct the penalty matrix $\mathbf{P}_k$.
+    - **Mechanism**: An undirected graph $\mathcal{G}^{(k)}$ is constructed from an initial precision matrix estimate $\hat{\Psi}_k^{(0)}$; the symmetric normalized Laplacian $\mathbf{L}_{sym}^{(k)}$ is computed with the goal of shrinking $\Psi_k$ toward a diagonal matrix (empty graph). The spectral distance is $D_{\text{LS}} = \|\text{spec}(\mathbf{L}_{sym}^k)\|_2$, and the adaptive weight is $\mathbf{P}_{k,ij} = (D_{\text{LS}} + \epsilon)^{-1}$.
+    - **Design Motivation**: The spectral distance provides a global measure of graph structural complexity that is more stable than element-wise partial correlations, particularly in high-dimensional, small-sample settings with missing data.
 
 3. **Two-Stage Selection Strategy**:
 
-   - **Function**: Efficiently performs variable ranking and role assignment.
-   - **Mechanism**: Stage A fits a penalized GMM on quickly imputed data along a $(\lambda, \rho)$ regularization path and computes a ranking score $\mathcal{O}_K(d)$ for each variable based on how frequently its mean is shrunk to zero. Stage B performs a single pass through the ranked list, fitting an unpenalized SRUW-MNARz model on the original incomplete data each time a new variable is added, and assigns roles via BIC.
-   - **Design Motivation**: Stage A uses fast imputation and a penalized model for low-cost ranking (avoiding combinatorial explosion); Stage B performs exact inference on the original data (avoiding error propagation from imputation). Decoupling the two stages reduces computational complexity from exponential to linear.
+    - **Function**: Efficiently performs variable ranking and role assignment.
+    - **Mechanism**: Stage A fits a penalized GMM on quickly imputed data along a $(\lambda, \rho)$ regularization path and computes a ranking score $\mathcal{O}_K(d)$ for each variable based on how frequently its mean is shrunk to zero. Stage B performs a single pass through the ranked list, fitting an unpenalized SRUW-MNARz model on the original incomplete data each time a new variable is added, and assigns roles via BIC.
+    - **Design Motivation**: Stage A uses fast imputation and a penalized model for low-cost ranking (avoiding combinatorial explosion); Stage B performs exact inference on the original data (avoiding error propagation from imputation). Decoupling the two stages reduces computational complexity from exponential to linear.
 
 ### Loss & Training
 Stage A uses a penalized log-likelihood with an $\ell_1$ mean penalty and an adaptive graphical lasso penalty on the precision matrix, searching along a data-driven geometric path over $(\lambda, \rho)$. Stage B maximizes the BIC criterion for SRUW-MNARz via standard EM. Initialization employs K-means++ / hierarchical clustering combined with a soft E-step to estimate missingness rates.

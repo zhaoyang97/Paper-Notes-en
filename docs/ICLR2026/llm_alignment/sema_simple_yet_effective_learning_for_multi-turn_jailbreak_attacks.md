@@ -18,8 +18,8 @@ content_hash: 16a28736d2c36963
 # SEMA: Simple yet Effective Learning for Multi-Turn Jailbreak Attacks
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.06854](https://arxiv.org/abs/2602.06854)
-**Code**: [https://github.com/fmmarkmq/SEMA](https://github.com/fmmarkmq/SEMA)
+**arXiv**: [2602.06854](https://arxiv.org/abs/2602.06854)  
+**Code**: [https://github.com/fmmarkmq/SEMA](https://github.com/fmmarkmq/SEMA)  
 **Area**: Alignment & RLHF
 **Keywords**: multi-turn jailbreak attack, reinforcement learning red-teaming, intent drift, open-loop attack, LLM safety
 

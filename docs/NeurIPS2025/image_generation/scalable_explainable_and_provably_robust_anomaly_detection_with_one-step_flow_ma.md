@@ -18,8 +18,8 @@ content_hash: 557b5c07af12d01e
 # Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18328](https://arxiv.org/abs/2510.18328)
-**Code**: [ZhongLIFR/TCCM-NIPS](https://github.com/ZhongLIFR/TCCM-NIPS)
+**arXiv**: [2510.18328](https://arxiv.org/abs/2510.18328)  
+**Code**: [ZhongLIFR/TCCM-NIPS](https://github.com/ZhongLIFR/TCCM-NIPS)  
 **Area**: Image Generation
 **Keywords**: anomaly detection, flow matching, tabular data, explainability, Lipschitz robustness
 
@@ -50,28 +50,28 @@ This paper proposes TCCM (Time-Conditioned Contraction Matching), a flow matchin
 
 1. **Time-Conditioned Contraction Matching (TCCM)**
 
-   - **Function**: Learns a time-conditioned velocity field such that normal data always points toward the origin.
-   - **Mechanism**: The training loss is $\min_\theta \mathbb{E}_{z,t}[\|f_\theta([z; \text{Embed}(t)]) + z\|_2]$, enforcing consistent prediction of $-z$ across all time steps.
-   - **Design Motivation**: Unlike standard flow matching, full ODE trajectory simulation is unnecessary because the target distribution is a degenerate Dirac delta (the origin), making the contraction direction always $-z$. This renders both training and inference remarkably simple.
-   - **Distinction from Flow Matching**: Standard flow matching requires ODE integration to generate samples; TCCM evaluates at a single time point to assess deviation from the contraction pattern.
+    - **Function**: Learns a time-conditioned velocity field such that normal data always points toward the origin.
+    - **Mechanism**: The training loss is $\min_\theta \mathbb{E}_{z,t}[\|f_\theta([z; \text{Embed}(t)]) + z\|_2]$, enforcing consistent prediction of $-z$ across all time steps.
+    - **Design Motivation**: Unlike standard flow matching, full ODE trajectory simulation is unnecessary because the target distribution is a degenerate Dirac delta (the origin), making the contraction direction always $-z$. This renders both training and inference remarkably simple.
+    - **Distinction from Flow Matching**: Standard flow matching requires ODE integration to generate samples; TCCM evaluates at a single time point to assess deviation from the contraction pattern.
 
 2. **One Time-Step Deviation Scoring**
 
-   - **Function**: Computes the anomaly score via a single forward pass at a fixed time point $t_{\text{fixed}}$.
-   - **Mechanism**: Normal samples satisfy $f_\theta \approx -z$, yielding near-zero residuals; anomalous samples deviate from the learned contraction pattern, producing large residuals.
-   - **Design Motivation**: Eliminates the high inference cost of multi-step ODE integration required by methods such as DTE. Experiments show that the choice of $t_{\text{fixed}}$ has negligible effect on performance.
+    - **Function**: Computes the anomaly score via a single forward pass at a fixed time point $t_{\text{fixed}}$.
+    - **Mechanism**: Normal samples satisfy $f_\theta \approx -z$, yielding near-zero residuals; anomalous samples deviate from the learned contraction pattern, producing large residuals.
+    - **Design Motivation**: Eliminates the high inference cost of multi-step ODE integration required by methods such as DTE. Experiments show that the choice of $t_{\text{fixed}}$ has negligible effect on performance.
 
 3. **Intrinsic Explainability**
 
-   - **Function**: Uses the component-wise absolute values of the residual vector $f_\theta([z; \text{Embed}(t)]) + z$ as feature-level importance scores.
-   - **Mechanism**: Since the residual vector lives in the original feature space, each dimension directly quantifies that feature's contribution to the anomaly score.
-   - **Design Motivation**: Eliminates the need for post-hoc explanation methods such as SHAP or LIME; attribution is intrinsic to the model. On MNIST, the model successfully highlights the extra horizontal stroke in digit 7 compared to digit 1.
+    - **Function**: Uses the component-wise absolute values of the residual vector $f_\theta([z; \text{Embed}(t)]) + z$ as feature-level importance scores.
+    - **Mechanism**: Since the residual vector lives in the original feature space, each dimension directly quantifies that feature's contribution to the anomaly score.
+    - **Design Motivation**: Eliminates the need for post-hoc explanation methods such as SHAP or LIME; attribution is intrinsic to the model. On MNIST, the model successfully highlights the extra horizontal stroke in digit 7 compared to digit 1.
 
 4. **Lipschitz Continuity Robustness Guarantee**
 
-   - **Function**: Proves that the anomaly score function is $(L+1)$-Lipschitz continuous.
-   - **Mechanism**: If $f_\theta$ is $L$-Lipschitz (naturally satisfied by MLP + ReLU), then $|S(x_1) - S(x_2)| \leq (L+1)\|x_1 - x_2\|_2$.
-   - **Significance**: Provides a provable robustness bound—small input perturbations induce only small changes in the anomaly score.
+    - **Function**: Proves that the anomaly score function is $(L+1)$-Lipschitz continuous.
+    - **Mechanism**: If $f_\theta$ is $L$-Lipschitz (naturally satisfied by MLP + ReLU), then $|S(x_1) - S(x_2)| \leq (L+1)\|x_1 - x_2\|_2$.
+    - **Significance**: Provides a provable robustness bound—small input perturbations induce only small changes in the anomaly score.
 
 ### Loss & Training
 - Training loss: $\mathcal{L} = \mathbb{E}_{z \sim p_{\text{data}}, t \sim \mathcal{U}(0,1)}[\|f_\theta([z; \text{Embed}(t)]) + z\|_2]$

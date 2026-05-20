@@ -18,8 +18,8 @@ content_hash: 127ce85398d88e7e
 # AnyPcc: Compressing Any Point Cloud with a Single Universal Model
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.20331](https://arxiv.org/abs/2510.20331)
-**Code**: [anypcc.github.io](https://anypcc.github.io)
+**arXiv**: [2510.20331](https://arxiv.org/abs/2510.20331)  
+**Code**: [anypcc.github.io](https://anypcc.github.io)  
 **Area**: 3D Vision
 **Keywords**: point cloud compression, universal context model, instance-adaptive fine-tuning, occupancy code, lossless/lossy compression
 

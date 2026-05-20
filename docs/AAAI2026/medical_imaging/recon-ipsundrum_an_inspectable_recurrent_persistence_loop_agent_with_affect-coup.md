@@ -18,8 +18,8 @@ content_hash: 470cabae257451b5
 # ReCoN-Ipsundrum: An Inspectable Recurrent Persistence Loop Agent with Affect-Coupled Cognition
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.23232](https://arxiv.org/abs/2602.23232)
-**Code**: [GitHub](https://github.com/xcellect/recips)
+**arXiv**: [2602.23232](https://arxiv.org/abs/2602.23232)  
+**Code**: [GitHub](https://github.com/xcellect/recips)  
 **Area**: Machine Consciousness / Cognitive Architecture / AI Safety & Ethics
 **Keywords**: machine consciousness, sentience loop, affect coupling, causal ablation, consciousness indicators
 

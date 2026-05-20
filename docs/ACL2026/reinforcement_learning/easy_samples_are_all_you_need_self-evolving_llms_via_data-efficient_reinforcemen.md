@@ -14,8 +14,8 @@ content_hash: 2dc8c59083d3f1c2
 # Easy Samples Are All You Need: Self-Evolving LLMs via Data-Efficient Reinforcement Learning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18639](https://arxiv.org/abs/2604.18639)
-**Code**: [https://github.com/YuZhiyin/EasyRL](https://github.com/YuZhiyin/EasyRL)
+**arXiv**: [2604.18639](https://arxiv.org/abs/2604.18639)  
+**Code**: [https://github.com/YuZhiyin/EasyRL](https://github.com/YuZhiyin/EasyRL)  
 **Area**: Reinforcement Learning / Data-Efficient Training
 **Keywords**: Data-efficient RL, self-evolving LLM, pseudo-labeling, easy-to-hard curriculum, cognitive learning theory
 
@@ -121,7 +121,7 @@ Standard GRPO objective. Correctness rewards: $r=1$ (correct), $r=-0.5$ (format 
 - **Novelty**: ⭐⭐⭐⭐ — The integration of cognitive learning theory is inspiring; the combination of divide-and-conquer pseudo-labeling and progressive self-training is elegantly designed.
 - **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Three model backbones, math and science benchmarks, multi-round iteration ablations, and pseudo-label quality analysis; very comprehensive.
 - **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clearly articulated; the correspondence between theoretical motivation and method design is well presented.
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: reinforcement_learning
 **Keywords**: To be supplemented
 

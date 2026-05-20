@@ -17,8 +17,8 @@ content_hash: 17a0cf6c36969906
 # ResNets Are Deeper Than You Think
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.14386](https://arxiv.org/abs/2506.14386)
-**Code**: Not yet available
+**arXiv**: [2506.14386](https://arxiv.org/abs/2506.14386)  
+**Code**: Not yet available  
 **Area**: Deep Learning Theory / Network Architecture
 **Keywords**: Residual networks, function space, inductive bias, trainability, variable-depth networks
 
@@ -46,10 +46,10 @@ The paper adopts a two-pronged strategy: (1) analytic arguments establishing tha
 
 2. **Post-training partial linearization experimental design**: This is the most elegant experimental contribution of the paper. Starting from an **already-trained feedforward network** (RepVGG-A2), a subset of ReLU units are linearized during post-training via regularization:
 
-   - ReLU units are replaced by PReLU (parametric ReLU) with learnable slopes $\alpha_i$
-   - A regularization term $L_{0.5} = \sum |\mathcal{1} - \alpha_i|^{0.5}$ is added to encourage $\alpha_i \to 1$ (i.e., linearization)
-   - **Channel-wise linearization**: one $\alpha_i$ per channel, capable of producing variable-depth networks (channels that remain nonlinear yield ResNet-like structures)
-   - **Layer-wise linearization**: one $\alpha_i$ per layer, producing only fixed-depth networks (shallower feedforward networks)
+    - ReLU units are replaced by PReLU (parametric ReLU) with learnable slopes $\alpha_i$
+    - A regularization term $L_{0.5} = \sum |\mathcal{1} - \alpha_i|^{0.5}$ is added to encourage $\alpha_i \to 1$ (i.e., linearization)
+    - **Channel-wise linearization**: one $\alpha_i$ per channel, capable of producing variable-depth networks (channels that remain nonlinear yield ResNet-like structures)
+    - **Layer-wise linearization**: one $\alpha_i$ per layer, producing only fixed-depth networks (shallower feedforward networks)
 
    Design Motivation: starting from the same pre-trained network (eliminating training differences), the two linearization strategies produce networks of different "shapes," enabling a fair comparison of generalization.
 

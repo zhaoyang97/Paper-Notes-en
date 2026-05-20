@@ -18,8 +18,8 @@ content_hash: 8784f437261e0480
 # CountSteer: Steering Attention for Object Counting in Diffusion Models
 
 **Conference**: AAAI2026
-**arXiv**: [2511.11253](https://arxiv.org/abs/2511.11253)
-**Code**: To be confirmed
+**arXiv**: [2511.11253](https://arxiv.org/abs/2511.11253)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: diffusion models, object counting, steering vector, cross-attention, training-free
 

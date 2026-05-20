@@ -18,8 +18,8 @@ content_hash: 955e257d4e8285a6
 # PriVi: Towards a General-Purpose Video Model for Primate Behavior in the Wild
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.09675](https://arxiv.org/abs/2511.09675)
-**Code**: [https://privi.eckerlab.org](https://privi.eckerlab.org) (data + models + code)
+**arXiv**: [2511.09675](https://arxiv.org/abs/2511.09675)  
+**Code**: [https://privi.eckerlab.org](https://privi.eckerlab.org) (data + models + code)  
 **Area**: Model Compression
 **Keywords**: primate behavior recognition, self-supervised pretraining, V-JEPA, domain-level pretraining, data curation pipeline
 

@@ -18,8 +18,8 @@ content_hash: 03b95c99d9f880e2
 # Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses
 
 **Conference**: ICLR2026
-**arXiv**: [2602.01285](https://arxiv.org/abs/2602.01285)
-**Code**: [GitHub](https://github.com/MLAI-Yonsei/MACI)
+**arXiv**: [2602.01285](https://arxiv.org/abs/2602.01285)  
+**Code**: [GitHub](https://github.com/MLAI-Yonsei/MACI)  
 **Area**: LLM Evaluation
 **Keywords**: Conformal Inference, LLM Factuality, Multi-LLM Ensemble, False-Claim Filtering, Distribution-Free Guarantee
 **Authors**: Kangjun Noh, Seongchan Lee, Ilmun Kim, Kyungwoo Song (Yonsei University & KAIST)

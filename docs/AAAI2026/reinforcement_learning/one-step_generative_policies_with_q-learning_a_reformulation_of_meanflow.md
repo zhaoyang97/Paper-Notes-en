@@ -18,8 +18,8 @@ content_hash: 4554eed98679a622
 # One-Step Generative Policies with Q-Learning: A Reformulation of MeanFlow
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13035](https://arxiv.org/abs/2511.13035)
-**Code**: [https://github.com/HiccupRL/MeanFlowQL](https://github.com/HiccupRL/MeanFlowQL)
+**arXiv**: [2511.13035](https://arxiv.org/abs/2511.13035)  
+**Code**: [https://github.com/HiccupRL/MeanFlowQL](https://github.com/HiccupRL/MeanFlowQL)  
 **Area**: Reinforcement Learning / Offline RL
 **Keywords**: Offline reinforcement learning, generative policy, MeanFlow, one-step sampling, Q-learning
 

@@ -18,8 +18,8 @@ content_hash: 3ed64f94efc3a17d
 # Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22025](https://arxiv.org/abs/2602.22025)
-**Code**: [Project](https://gdaosu.github.io/olbedo/)
+**arXiv**: [2602.22025](https://arxiv.org/abs/2602.22025)  
+**Code**: [Project](https://gdaosu.github.io/olbedo/)  
 **Area**: Remote Sensing
 **Keywords**: Intrinsic image decomposition, albedo, aerial dataset, inverse rendering, urban digital twin
 

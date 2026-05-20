@@ -18,8 +18,8 @@ content_hash: d9cfbdfa8f062e86
 # LTGS: Long-Term Gaussian Scene Chronology From Sparse View Updates
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.09881](https://arxiv.org/abs/2510.09881)
-**Code**: N/A
+**arXiv**: [2510.09881](https://arxiv.org/abs/2510.09881)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, scene updating, sparse-view, temporal reconstruction, object-level tracking
 

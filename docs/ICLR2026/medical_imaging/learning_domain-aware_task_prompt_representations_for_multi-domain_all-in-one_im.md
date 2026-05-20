@@ -18,8 +18,8 @@ content_hash: 33eac1c515b9534a
 # Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01725](https://arxiv.org/abs/2603.01725)
-**Code**: [GitHub](https://github.com/GuangluDong0728/DATPRL-IR)
+**arXiv**: [2603.01725](https://arxiv.org/abs/2603.01725)  
+**Code**: [GitHub](https://github.com/GuangluDong0728/DATPRL-IR)  
 **Area**: Medical Imaging
 **Keywords**: All-in-one image restoration, multi-domain restoration, prompt learning, dual prompt pool, cross-modal alignment
 

@@ -18,8 +18,8 @@ content_hash: f811371dc4db0817
 # Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.05566v1](https://arxiv.org/abs/2603.05566v1)
-**Code**: None
+**arXiv**: [2603.05566v1](https://arxiv.org/abs/2603.05566v1)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Cross-modal alignment, embedding decoupling, distribution sampling, image-text retrieval, contrastive learning
 

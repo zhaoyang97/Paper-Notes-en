@@ -18,8 +18,8 @@ content_hash: 0f1465008e92f03c
 # Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06852](https://arxiv.org/abs/2511.06852)
-**Code**: None
+**arXiv**: [2511.06852](https://arxiv.org/abs/2511.06852)  
+**Code**: None  
 **Area**: LLM Alignment
 **Keywords**: LLM safety, jailbreak attacks, activation manipulation, safety alignment, interpretability
 

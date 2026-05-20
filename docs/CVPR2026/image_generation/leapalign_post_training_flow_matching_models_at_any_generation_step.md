@@ -18,8 +18,8 @@ content_hash: 28d3f9390485913c
 # LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.15311](https://arxiv.org/abs/2604.15311)
-**Code**: [rockeycoss.github.io/leapalign/](https://rockeycoss.github.io/leapalign/)
+**arXiv**: [2604.15311](https://arxiv.org/abs/2604.15311)  
+**Code**: [rockeycoss.github.io/leapalign/](https://rockeycoss.github.io/leapalign/)  
 **Area**: Image Generation
 **Keywords**: flow matching, post-training, reward alignment, human preference, diffusion model
 

@@ -19,8 +19,8 @@ content_hash: 79e7e443061b1362
 # Towards Comprehensive Scene Understanding: Integrating First and Third-Person Views for LVLMs
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2505.21955](https://arxiv.org/abs/2505.21955)
-**Code**: Available ([https://github.com/Leeinsu1/Towards-Comprehensive-Scene-Understanding](https://github.com/Leeinsu1/Towards-Comprehensive-Scene-Understanding))
+**arXiv**: [2505.21955](https://arxiv.org/abs/2505.21955)  
+**Code**: Available ([https://github.com/Leeinsu1/Towards-Comprehensive-Scene-Understanding](https://github.com/Leeinsu1/Towards-Comprehensive-Scene-Understanding))  
 **Area**: Multimodal VLM / Scene Understanding
 **Keywords**: Multi-view understanding, egocentric view, exocentric view, scene graph, VQA, CoT
 

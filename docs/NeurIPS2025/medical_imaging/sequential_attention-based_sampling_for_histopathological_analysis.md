@@ -18,8 +18,8 @@ content_hash: 5215aeba051fcdbc
 # Sequential Attention-based Sampling for Histopathological Analysis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.05077](https://arxiv.org/abs/2507.05077)
-**Code**: [GitHub](https://github.com/coglabiisc/SASHA)
+**arXiv**: [2507.05077](https://arxiv.org/abs/2507.05077)  
+**Code**: [GitHub](https://github.com/coglabiisc/SASHA)  
 **Area**: Medical Imaging
 **Keywords**: Whole slide image analysis, deep reinforcement learning, multiple instance learning, attention-based sampling, pathological diagnosis
 
@@ -55,10 +55,10 @@ SASHA formulates WSI analysis as a **Markov Decision Process (MDP)**: an RL agen
 
 2. **Targeted State Update (TSU)**: The initial state is $S_0 = Z$ (low-resolution features). After the RL agent selects patch $a_t$ and obtains high-resolution features $V(a_t)$, **only patches whose features are similar to $a_t$ are updated**:
 
-   - Cosine similarity is computed: $C = \{i: \cos\angle(S_t(i), S_t(a_t)) \geq \tau\}$
-   - Patches in $C$ are updated via an MLP: $S_{t+1}(i) = f_S([S_t(i), S_t(a_t), V(a_t)])$
-   - The sampled patch is directly replaced: $S_{t+1}(a_t) = V(a_t)$
-   - Previously visited patches are masked to prevent re-sampling
+    - Cosine similarity is computed: $C = \{i: \cos\angle(S_t(i), S_t(a_t)) \geq \tau\}$
+    - Patches in $C$ are updated via an MLP: $S_{t+1}(i) = f_S([S_t(i), S_t(a_t), V(a_t)])$
+    - The sampled patch is directly replaced: $S_{t+1}(a_t) = V(a_t)$
+    - Previously visited patches are masked to prevent re-sampling
 
    Compared to RLogist's **global update** (which updates all patches), TSU avoids information contamination of unrelated patches. Ablation experiments show that global updates cause a 12.7% drop in accuracy.
 

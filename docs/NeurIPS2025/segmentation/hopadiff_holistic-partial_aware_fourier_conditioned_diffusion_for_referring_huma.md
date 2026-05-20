@@ -19,8 +19,8 @@ content_hash: 0531897bc79eb466
 # HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.09650](https://arxiv.org/abs/2506.09650)
-**Code**: [https://github.com/KPeng9510/HopaDIFF](https://github.com/KPeng9510/HopaDIFF)
+**arXiv**: [2506.09650](https://arxiv.org/abs/2506.09650)  
+**Code**: [https://github.com/KPeng9510/HopaDIFF](https://github.com/KPeng9510/HopaDIFF)  
 **Area**: Temporal Action Segmentation / Multi-Person Video Understanding
 **Keywords**: Referring Human Action Segmentation, Multi-Person Scenarios, Diffusion Models, xLSTM, Fourier Conditioning, RHAS
 

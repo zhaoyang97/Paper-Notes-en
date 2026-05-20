@@ -18,8 +18,8 @@ content_hash: 149bd6724ddd3c9d
 # DiA-gnostic VLVAE: Disentangled Alignment-Constrained Vision Language Variational AutoEncoder for Robust Radiology Reporting with Missing Modalities
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.05968](https://arxiv.org/abs/2511.05968)
-**Code**: N/A
+**arXiv**: [2511.05968](https://arxiv.org/abs/2511.05968)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: Radiology Report Generation, Missing Modalities, Disentangled Representation, VAE, MoE
 

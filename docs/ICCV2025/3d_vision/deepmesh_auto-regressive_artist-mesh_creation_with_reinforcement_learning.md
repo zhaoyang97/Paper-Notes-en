@@ -19,8 +19,8 @@ content_hash: 3c477702bc84541f
 # DeepMesh: Auto-Regressive Artist-Mesh Creation with Reinforcement Learning
 
 **Conference**: ICCV 2025
-**arXiv**: 2503.15265
-**Code**: [https://zhaorw02.github.io/DeepMesh/](https://zhaorw02.github.io/DeepMesh/)
+**arXiv**: 2503.15265  
+**Code**: [https://zhaorw02.github.io/DeepMesh/](https://zhaorw02.github.io/DeepMesh/)  
 **Area**: 3D Vision
 **Keywords**: 3D mesh generation, auto-regressive model, reinforcement learning, DPO, mesh tokenization, point cloud conditioned generation
 

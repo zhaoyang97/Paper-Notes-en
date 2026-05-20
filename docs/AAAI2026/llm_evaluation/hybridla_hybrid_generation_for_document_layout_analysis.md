@@ -18,8 +18,8 @@ content_hash: 4bafa26a1d7984e9
 # HybriDLA: Hybrid Generation for Document Layout Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19919](https://arxiv.org/abs/2511.19919)
-**Code**: [GitHub](https://yufanchen96.github.io/projects/HybriDLA)
+**arXiv**: [2511.19919](https://arxiv.org/abs/2511.19919)  
+**Code**: [GitHub](https://yufanchen96.github.io/projects/HybriDLA)  
 **Area**: Document Analysis / Object Detection
 **Keywords**: Document layout analysis, diffusion models, autoregressive generation, hybrid decoding, multi-scale feature fusion
 
@@ -45,21 +45,21 @@ HybriDLA adopts a two-stage hierarchical generation pipeline: a Feature Fusion E
 
 1. **Feature Fusion Encoder (FFE)**:
 
-   - Function: Fuses the backbone's multi-scale feature maps $F_{l=1}^{L}$ into a unified spatially-aware representation $G$.
-   - Mechanism: Consists of two steps—local feature encoding and cross-scale fusion. Local encoding $H_l = \phi(F_l)$ combines self-attention and convolution to capture long-range dependencies and local texture patterns within each scale; cross-scale fusion $G = \Psi(H_{l=1}^L)$ employs cross-scale attention and lateral convolutional layers to enable adaptive information exchange across scales, allowing fine-grained feature maps to acquire global context and coarse feature maps to acquire local detail.
-   - Design Motivation: Layout elements in documents vary dramatically in scale (titles, footnotes, and figures differ greatly in size), making single-scale representations insufficient to capture both global structure and local detail simultaneously.
+    - Function: Fuses the backbone's multi-scale feature maps $F_{l=1}^{L}$ into a unified spatially-aware representation $G$.
+    - Mechanism: Consists of two steps—local feature encoding and cross-scale fusion. Local encoding $H_l = \phi(F_l)$ combines self-attention and convolution to capture long-range dependencies and local texture patterns within each scale; cross-scale fusion $G = \Psi(H_{l=1}^L)$ employs cross-scale attention and lateral convolutional layers to enable adaptive information exchange across scales, allowing fine-grained feature maps to acquire global context and coarse feature maps to acquire local detail.
+    - Design Motivation: Layout elements in documents vary dramatically in scale (titles, footnotes, and figures differ greatly in size), making single-scale representations insufficient to capture both global structure and local detail simultaneously.
 
 2. **Autoregressive Query Expansion (AQE)**:
 
-   - Function: Models the query generation process autoregressively, dynamically determining how many queries to generate and their semantic content.
-   - Mechanism: Given image features $X$, the model defines a joint distribution over a variable-length query sequence $Q = (q_1, q_2, \dots, q_N)$, factorized as $P(Q|X) = \prod_{t=1}^{N} P(q_t | X, q_{1:t-1}) \cdot P(\text{EOS} | X, q_{1:N})$. At each step, the next query is conditioned on the existing query context, and expansion terminates adaptively via a learned EOS criterion.
-   - Design Motivation: The number of elements varies enormously across documents, inherently limiting fixed-query methods such as DETR. The autoregressive formulation enables the model to condition queries on prior context and dynamically adjust the query count according to document complexity.
+    - Function: Models the query generation process autoregressively, dynamically determining how many queries to generate and their semantic content.
+    - Mechanism: Given image features $X$, the model defines a joint distribution over a variable-length query sequence $Q = (q_1, q_2, \dots, q_N)$, factorized as $P(Q|X) = \prod_{t=1}^{N} P(q_t | X, q_{1:t-1}) \cdot P(\text{EOS} | X, q_{1:N})$. At each step, the next query is conditioned on the existing query context, and expansion terminates adaptively via a learned EOS criterion.
+    - Design Motivation: The number of elements varies enormously across documents, inherently limiting fixed-query methods such as DETR. The autoregressive formulation enables the model to condition queries on prior context and dynamically adjust the query count according to document complexity.
 
 3. **Diffusion-based Refinement (DR)**:
 
-   - Function: Models layout prediction as an implicit denoising operation, applying residual corrections to current predictions at each decoding layer.
-   - Mechanism: The update rule is $\hat{y}^{(t+1)} = \hat{y}^{(t)} + \Delta^{(t)}$, where $\Delta^{(t)}$ denotes the predicted residual at step $t$. Within each decoding layer, self-attention enables queries to share contextual information, cross-attention integrates visual features, and the feed-forward network applies the residual correction.
-   - Design Motivation: Directly predicting precise coordinates is difficult; iterative denoising progressively eliminates spatial errors. During training, a subset of queries is initialized with perturbed ground-truth boxes (denoising queries), and layer-wise intermediate supervision is applied to accelerate convergence.
+    - Function: Models layout prediction as an implicit denoising operation, applying residual corrections to current predictions at each decoding layer.
+    - Mechanism: The update rule is $\hat{y}^{(t+1)} = \hat{y}^{(t)} + \Delta^{(t)}$, where $\Delta^{(t)}$ denotes the predicted residual at step $t$. Within each decoding layer, self-attention enables queries to share contextual information, cross-attention integrates visual features, and the feed-forward network applies the residual correction.
+    - Design Motivation: Directly predicting precise coordinates is difficult; iterative denoising progressively eliminates spatial errors. During training, a subset of queries is initialized with perturbed ground-truth boxes (denoising queries), and layer-wise intermediate supervision is applied to accelerate convergence.
 
 ### Loss & Training
 

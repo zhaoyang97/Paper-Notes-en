@@ -18,8 +18,8 @@ content_hash: 035f8c031b97e05e
 # Beyond Confidence: The Rhythms of Reasoning in Generative Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.10816](https://arxiv.org/abs/2602.10816)
-**Code**: None
+**arXiv**: [2602.10816](https://arxiv.org/abs/2602.10816)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Token Constraint Bound, prediction robustness, hidden state perturbation, output embedding geometry, prompt engineering
 

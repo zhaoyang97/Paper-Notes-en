@@ -18,8 +18,8 @@ content_hash: 114d986ab811ef97
 # Web-Scale Collection of Video Data for 4D Animal Reconstruction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01169](https://arxiv.org/abs/2511.01169)
-**Code**: [https://github.com/briannlongzhao/Animal-in-Motion](https://github.com/briannlongzhao/Animal-in-Motion)
+**arXiv**: [2511.01169](https://arxiv.org/abs/2511.01169)  
+**Code**: [https://github.com/briannlongzhao/Animal-in-Motion](https://github.com/briannlongzhao/Animal-in-Motion)  
 **Area**: Video Understanding / 3D Vision
 **Keywords**: 4D animal reconstruction, data pipeline, YouTube video mining, benchmark dataset, single-view reconstruction
 

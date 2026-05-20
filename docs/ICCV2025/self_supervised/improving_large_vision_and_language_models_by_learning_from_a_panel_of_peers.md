@@ -18,8 +18,8 @@ content_hash: 356fc99e37827c92
 # Improving Large Vision and Language Models by Learning from a Panel of Peers
 
 **Conference**: ICCV2025
-**arXiv**: [2509.01610](https://arxiv.org/abs/2509.01610)
-**Code**: -
+**arXiv**: [2509.01610](https://arxiv.org/abs/2509.01610)  
+**Code**: -  
 **Area**: Self-Supervised Learning
 **Keywords**: Self-improvement, Preference Alignment, Peer Learning, LVLM, Reward Modeling
 

@@ -18,8 +18,8 @@ content_hash: cee93ad76b1b943f
 # SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27516](https://arxiv.org/abs/2603.27516)
-**Code**: [https://github.com/GrumpySloths/SGS_Intrinsic.github.io](https://github.com/GrumpySloths/SGS_Intrinsic.github.io)
+**arXiv**: [2603.27516](https://arxiv.org/abs/2603.27516)  
+**Code**: [https://github.com/GrumpySloths/SGS_Intrinsic.github.io](https://github.com/GrumpySloths/SGS_Intrinsic.github.io)  
 **Area**: 3D Vision
 **Keywords**: inverse rendering, sparse-view, Gaussian splatting, material decomposition, indoor scenes
 

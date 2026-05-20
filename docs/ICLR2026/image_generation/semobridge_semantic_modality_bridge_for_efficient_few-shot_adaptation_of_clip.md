@@ -18,8 +18,8 @@ content_hash: 61eb860e3c1e7473
 # SeMoBridge: Semantic Modality Bridge for Efficient Few-Shot Adaptation of CLIP
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26036](https://arxiv.org/abs/2509.26036)
-**Code**: [https://github.com/christti98/semobridge](https://github.com/christti98/semobridge)
+**arXiv**: [2509.26036](https://arxiv.org/abs/2509.26036)  
+**Code**: [https://github.com/christti98/semobridge](https://github.com/christti98/semobridge)  
 **Area**: Few-Shot Learning / Vision-Language Models
 **Keywords**: CLIP adaptation, modality gap, intra-modal misalignment, few-shot classification, pseudo EOS token
 

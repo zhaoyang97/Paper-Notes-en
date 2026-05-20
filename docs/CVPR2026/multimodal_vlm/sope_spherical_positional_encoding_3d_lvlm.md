@@ -19,8 +19,8 @@ content_hash: ed8dcdf5fa1586d2
 # SoPE: Spherical Coordinate-Based Positional Embedding for 3D LVLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22716](https://arxiv.org/abs/2602.22716)
-**Code**: None
+**arXiv**: [2602.22716](https://arxiv.org/abs/2602.22716)  
+**Code**: None  
 **Area**: 3D Vision / Multimodal VLM / Positional Encoding
 **Keywords**: 3D LVLM, positional encoding, spherical coordinates, RoPE, SpatialLM, spatial reasoning
 

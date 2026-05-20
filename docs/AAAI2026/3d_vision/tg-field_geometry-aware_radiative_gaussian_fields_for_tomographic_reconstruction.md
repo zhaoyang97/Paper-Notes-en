@@ -18,8 +18,8 @@ content_hash: 501a813f717637cd
 # TG-Field: Geometry-Aware Radiative Gaussian Fields for Tomographic Reconstruction
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.11705](https://arxiv.org/abs/2602.11705)
-**Code**: N/A
+**arXiv**: [2602.11705](https://arxiv.org/abs/2602.11705)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: CT Reconstruction, 3D Gaussian Splatting, Sparse-View, Dynamic CT, Deformation Field
 

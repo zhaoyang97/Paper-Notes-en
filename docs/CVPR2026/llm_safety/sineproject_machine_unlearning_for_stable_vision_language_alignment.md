@@ -18,8 +18,8 @@ content_hash: 5f68c363f8ca3bad
 # SineProject: Machine Unlearning for Stable Vision–Language Alignment
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.18444](https://arxiv.org/abs/2511.18444)
-**Code**: [Available](https://github.com/arpit2412/SineProject)
+**arXiv**: [2511.18444](https://arxiv.org/abs/2511.18444)  
+**Code**: [Available](https://github.com/arpit2412/SineProject)  
 **Area**: LLM Safety
 **Keywords**: Machine Unlearning, Multimodal Large Language Models, Vision–Language Alignment, Projector Stability, Jacobian Condition Number
 

@@ -18,8 +18,8 @@ content_hash: 81a0d4ec9beedf8d
 # Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21929](https://arxiv.org/abs/2602.21929)
-**Code**: None
+**arXiv**: [2602.21929](https://arxiv.org/abs/2602.21929)  
+**Code**: None  
 **Area**: Video Generation
 **Keywords**: scene-consistent video generation, geometry context, autoregressive generation, camera control, 3D reconstruction
 
@@ -49,9 +49,9 @@ GaC "flattens" the iterative pipeline of reconstruction-based methods into a sin
 
 2. **Camera Gated Attention (CGA)**: Enhances the model's utilization of camera pose. The Plücker ray-encoded camera pose $r_i$ is added to the self-attention query, and a gating matrix is generated to modulate the attention output:
 
-   - $\{Q_{res}, Gate\} = \text{Linear}_2(Q + r_i)$
-   - $O = \text{SDPA}(Q + Q_{res}, K, V)$
-   - $O = \text{Linear}_3(O * \sigma(Gate))$
+    - $\{Q_{res}, Gate\} = \text{Linear}_2(Q + r_i)$
+    - $O = \text{SDPA}(Q + Q_{res}, K, V)$
+    - $O = \text{Linear}_3(O * \sigma(Gate))$
 
    This design enables the model to distinguish the different roles of camera pose in geometry prediction vs. novel view synthesis.
 

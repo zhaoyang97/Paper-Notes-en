@@ -18,8 +18,8 @@ content_hash: 546f4494f798eace
 # COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.06495](https://arxiv.org/abs/2603.06495)
-**Code**: [https://github.com/Ksartik/cold-steer](https://github.com/Ksartik/cold-steer)
+**arXiv**: [2603.06495](https://arxiv.org/abs/2603.06495)  
+**Code**: [https://github.com/Ksartik/cold-steer](https://github.com/Ksartik/cold-steer)  
 **Area**: Optimization
 **Keywords**: Activation Steering, Learning Dynamics, Training-Free Inference, Sample Efficiency, Pluralistic Alignment
 

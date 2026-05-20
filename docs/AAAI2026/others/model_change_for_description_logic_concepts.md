@@ -17,8 +17,8 @@ content_hash: 7dadf53820624988
 # Model Change for Description Logic Concepts
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.05562](https://arxiv.org/abs/2603.05562)
-**Code**: None
+**arXiv**: [2603.05562](https://arxiv.org/abs/2603.05562)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Description Logic, Model Change, Belief Revision, EL/ALC, Satisfiability
 

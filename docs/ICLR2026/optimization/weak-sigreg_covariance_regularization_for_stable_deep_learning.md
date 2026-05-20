@@ -19,8 +19,8 @@ content_hash: b0381222b0a66cf4
 # Weak-SIGReg: Covariance Regularization for Stable Deep Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.05924](https://arxiv.org/abs/2603.05924)
-**Code**: [GitHub](https://github.com/kreasof-ai/sigreg)
+**arXiv**: [2603.05924](https://arxiv.org/abs/2603.05924)  
+**Code**: [GitHub](https://github.com/kreasof-ai/sigreg)  
 **Area**: Optimization Stability / Representation Regularization
 **Keywords**: covariance regularization, optimization stability, ViT, SIGReg, representation collapse, random sketching
 
@@ -48,27 +48,27 @@ Encoder $f_\theta$ outputs batch representations $Z \in \mathbb{R}^{N \times C}$
 
 1. **Strong SIGReg (from LeJEPA)**
 
-   - Function: Matches the empirical characteristic function (ECF) to the analytically derived Gaussian characteristic function.
-   - Matching is performed after random projection to a $K$-dimensional space.
-   - Theoretically constrains **all moments** (mean, covariance, skewness, kurtosis, …), driving representations toward a perfectly isotropic Gaussian.
-   - Computationally heavy—requires evaluation of the characteristic function.
+    - Function: Matches the empirical characteristic function (ECF) to the analytically derived Gaussian characteristic function.
+    - Matching is performed after random projection to a $K$-dimensional space.
+    - Theoretically constrains **all moments** (mean, covariance, skewness, kurtosis, …), driving representations toward a perfectly isotropic Gaussian.
+    - Computationally heavy—requires evaluation of the characteristic function.
 
 2. **Weak-SIGReg (this paper)**
 
-   - Function: **Constrains only the second-order moment (covariance)**, discarding higher-order moment constraints.
-   - Core assumption: In supervised learning, preventing dimensional collapse primarily requires covariance conditioning; full distributional matching is unnecessary.
-   - Loss function: $\mathcal{L} = \mathcal{L}_{CE} + \lambda \|\text{Cov}(ZS) - I\|_F$
-   - $S \in \mathbb{R}^{C \times K}$ is a fixed random projection matrix (Johnson–Lindenstrauss guarantees geometric structure preservation).
-   - **Memory advantage**: Direct computation of the $C \times C$ covariance requires $O(C^2)$; after random projection, only $O(CK)$ is needed (e.g., $C=1024, K=64$).
-   - Minimalist implementation: ~10 lines of PyTorch code, plug-and-play.
-   - Relation to VICReg/Barlow Twins: Conceptually similar but used as a purely internal regularizer (no dual-branch architecture or augmented views required), applied directly on top of the supervised loss.
+    - Function: **Constrains only the second-order moment (covariance)**, discarding higher-order moment constraints.
+    - Core assumption: In supervised learning, preventing dimensional collapse primarily requires covariance conditioning; full distributional matching is unnecessary.
+    - Loss function: $\mathcal{L} = \mathcal{L}_{CE} + \lambda \|\text{Cov}(ZS) - I\|_F$
+    - $S \in \mathbb{R}^{C \times K}$ is a fixed random projection matrix (Johnson–Lindenstrauss guarantees geometric structure preservation).
+    - **Memory advantage**: Direct computation of the $C \times C$ covariance requires $O(C^2)$; after random projection, only $O(CK)$ is needed (e.g., $C=1024, K=64$).
+    - Minimalist implementation: ~10 lines of PyTorch code, plug-and-play.
+    - Relation to VICReg/Barlow Twins: Conceptually similar but used as a purely internal regularizer (no dual-branch architecture or augmented views required), applied directly on top of the supervised loss.
 
 3. **Physical Intuition (Interacting Particle Systems)**
 
-   - Batch representations are treated as particles evolving under Dean–Kawasaki stochastic dynamics.
-   - "Stochastic flux" (SGD noise, small batch size, strong augmentation) → representation density drifts onto a low-dimensional manifold (collapse).
-   - SIGReg constrains the representation density toward an isotropic Gaussian → prevents density degeneracy.
-   - Strong SIGReg = constrains density toward a perfect sphere; Weak-SIGReg = constrains only the covariance (permits more flexible geometry while preventing collapse).
+    - Batch representations are treated as particles evolving under Dean–Kawasaki stochastic dynamics.
+    - "Stochastic flux" (SGD noise, small batch size, strong augmentation) → representation density drifts onto a low-dimensional manifold (collapse).
+    - SIGReg constrains the representation density toward an isotropic Gaussian → prevents density degeneracy.
+    - Strong SIGReg = constrains density toward a perfect sphere; Weak-SIGReg = constrains only the covariance (permits more flexible geometry while preventing collapse).
 
 ### Loss & Training
 - Added as a regularization term to the standard cross-entropy loss.

@@ -18,8 +18,8 @@ content_hash: 636037b0885d027c
 # Data Whitening Improves Sparse Autoencoder Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13981](https://arxiv.org/abs/2511.13981)
-**Code**: None
+**arXiv**: [2511.13981](https://arxiv.org/abs/2511.13981)  
+**Code**: None  
 **Area**: Model Compression / Mechanistic Interpretability
 **Keywords**: Sparse Autoencoder, PCA Whitening, mechanistic interpretability, Feature Disentanglement, SAEBench
 

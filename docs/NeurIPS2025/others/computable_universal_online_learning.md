@@ -18,8 +18,8 @@ content_hash: f96b004375b29bf5
 # Computable Universal Online Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18352](https://arxiv.org/abs/2510.18352)
-**Code**: None (purely theoretical work)
+**arXiv**: [2510.18352](https://arxiv.org/abs/2510.18352)  
+**Code**: None (purely theoretical work)  
 **Area**: Other
 **Keywords**: universal online learning, computability, online binary classification, Littlestone dimension, agnostic learning, proper learning
 

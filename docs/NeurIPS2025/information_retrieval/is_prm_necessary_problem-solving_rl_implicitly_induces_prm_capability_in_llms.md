@@ -18,8 +18,8 @@ content_hash: 1ab27a126bc8ac83
 # Is PRM Necessary? Problem-Solving RL Implicitly Induces PRM Capability in LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11227](https://arxiv.org/abs/2505.11227)
-**Code**: None (uses public models DeepSeek-R1, QwQ-32B)
+**arXiv**: [2505.11227](https://arxiv.org/abs/2505.11227)  
+**Code**: None (uses public models DeepSeek-R1, QwQ-32B)  
 **Area**: Information Retrieval
 **Keywords**: Process Reward Model, Reinforcement Learning, Self-PRM, Reasoning Verification, Introspective Evaluation
 

@@ -17,8 +17,8 @@ content_hash: 125e45ef7bfcb5dd
 # AdaDrive: Self-Adaptive Slow-Fast System for Language-Grounded Autonomous Driving
 
 **Conference**: ICCV 2025
-**arXiv**: [2511.06253](https://arxiv.org/abs/2511.06253)
-**Code**: [https://github.com/ReaFly/AdaDrive](https://github.com/ReaFly/AdaDrive)
+**arXiv**: [2511.06253](https://arxiv.org/abs/2511.06253)  
+**Code**: [https://github.com/ReaFly/AdaDrive](https://github.com/ReaFly/AdaDrive)  
 **Area**: Autonomous Driving
 **Keywords**: Large Language Models, Autonomous Driving, Adaptive Slow-Fast System, Language-Grounded Driving, Efficient Inference
 
@@ -41,38 +41,38 @@ AdaDrive adopts a parallel slow-fast dual-path architecture: the fast path (ligh
 
 1. **Connector-W: Adaptive LLM Activation**
 
-   - **Function**: Dynamically determines whether the LLM should be activated for the current frame.
-   - **Mechanism**: An MLP predicts a confidence score $\theta_T$ from the current driving context feature $f_T'$, which is converted to a binary decision $\pi_T \in \{0, 1\}$ via Gumbel-Softmax.
-   - **Adaptive Activation Loss (Core Innovation)**:
+    - **Function**: Dynamically determines whether the LLM should be activated for the current frame.
+    - **Mechanism**: An MLP predicts a confidence score $\theta_T$ from the current driving context feature $f_T'$, which is converted to a binary decision $\pi_T \in \{0, 1\}$ via Gumbel-Softmax.
+    - **Adaptive Activation Loss (Core Innovation)**:
      $$\mathcal{L}_{ada} = \pi_T \cdot (\mathcal{L}_T^{LLM} + \gamma) + (1-\pi_T) \cdot \mathcal{L}_T$$
      where $\gamma = \max(d - (L_T - L_T^{LLM}), 0)$.
-   - **Training Mechanism**: Two forward passes are performed at each step—one with LLM assistance ($W_T^{LLM}$) and one without ($W_T$)—comparing their respective trajectory losses. The model automatically learns to activate the LLM when it provides significant benefit ($\mathcal{L}_T^{LLM} \ll \mathcal{L}_T$).
-   - **Role of Penalty Term $\gamma$**: Controls activation frequency via a preset margin $d=0.3$, ensuring LLM activation only when its contribution is sufficiently significant.
-   - **Design Motivation**: No manual annotation of ground truth for "when to use the LLM" is required; comparative learning automatically discovers the optimal activation timing.
+    - **Training Mechanism**: Two forward passes are performed at each step—one with LLM assistance ($W_T^{LLM}$) and one without ($W_T$)—comparing their respective trajectory losses. The model automatically learns to activate the LLM when it provides significant benefit ($\mathcal{L}_T^{LLM} \ll \mathcal{L}_T$).
+    - **Role of Penalty Term $\gamma$**: Controls activation frequency via a preset margin $d=0.3$, ensuring LLM activation only when its contribution is sufficiently significant.
+    - **Design Motivation**: No manual annotation of ground truth for "when to use the LLM" is required; comparative learning automatically discovers the optimal activation timing.
 
 2. **Connector-H: Dynamic LLM Contribution Scaling**
 
-   - **Function**: Controls the degree to which LLM features contribute to trajectory prediction when the LLM is activated.
-   - **Mechanism**: The confidence score $\theta_T$ predicted by Connector-W serves as a continuous weighting coefficient rather than a simple full-weight fusion.
-   - **Fusion Formula**: $W_T^{Fuse} = \mathcal{P}(f_T' + \theta_T \cdot f_T'')$
-   - **Unified Inference Formula**:
+    - **Function**: Controls the degree to which LLM features contribute to trajectory prediction when the LLM is activated.
+    - **Mechanism**: The confidence score $\theta_T$ predicted by Connector-W serves as a continuous weighting coefficient rather than a simple full-weight fusion.
+    - **Fusion Formula**: $W_T^{Fuse} = \mathcal{P}(f_T' + \theta_T \cdot f_T'')$
+    - **Unified Inference Formula**:
      $$W_T = \begin{cases} \mathcal{P}(f_T'), & \text{LLM not activated} \\ \mathcal{P}(f_T' + \theta_T \cdot f_T''), & \text{LLM activated} \end{cases}$$
-   - **Design Motivation**: Experiments demonstrate that continuous weighting (e.g., $\theta_T=0.7$) outperforms binary full-weight fusion ($\theta_T=1.0$), and adaptive scaling yields finer-grained feature integration.
+    - **Design Motivation**: Experiments demonstrate that continuous weighting (e.g., $\theta_T=0.7$) outperforms binary full-weight fusion ($\theta_T=1.0$), and adaptive scaling yields finer-grained feature integration.
 
 3. **Long-Short Q-former (LS-Qformer)**
 
-   - **Function**: Enhances temporal modeling of visual features, balancing current-frame precision with long-range context retention.
-   - **Mechanism**: Learnable tokens are divided into two groups—memory tokens $\mathbf{Q}^m$ propagate across frames to aggregate long-range information, while local tokens $\mathbf{Q}^l$ focus on the current frame.
-   - **Formula**: $f_T' = [\mathbf{Q}^l; \mathbf{Q}_T^m] = \text{Q-former}(\mathbf{Q}^l, \mathbf{Q}_{T-1}^m, f_T, \mathbf{I}_T)$
-   - **Hyperparameters**: 20 local tokens + 20 memory tokens.
-   - **Design Motivation**: Standard Q-formers process each frame independently, neglecting temporal dependencies. LS-Qformer simultaneously extracts salient current-frame features and models temporal evolution through its grouped design.
+    - **Function**: Enhances temporal modeling of visual features, balancing current-frame precision with long-range context retention.
+    - **Mechanism**: Learnable tokens are divided into two groups—memory tokens $\mathbf{Q}^m$ propagate across frames to aggregate long-range information, while local tokens $\mathbf{Q}^l$ focus on the current frame.
+    - **Formula**: $f_T' = [\mathbf{Q}^l; \mathbf{Q}_T^m] = \text{Q-former}(\mathbf{Q}^l, \mathbf{Q}_{T-1}^m, f_T, \mathbf{I}_T)$
+    - **Hyperparameters**: 20 local tokens + 20 memory tokens.
+    - **Design Motivation**: Standard Q-formers process each frame independently, neglecting temporal dependencies. LS-Qformer simultaneously extracts salient current-frame features and models temporal evolution through its grouped design.
 
 4. **Propagative Memory Fusion (PMF)**
 
-   - **Function**: Manages a fixed-size memory buffer for streaming data, preventing unbounded GPU memory growth.
-   - **Mechanism**: When the buffer is full, features of the frame to be evicted are fused into adjacent frames: $\hat{f}_{T-k+1}' = (f_{T-k}' + f_{T-k+1}')/2$
-   - **Comparison with FIFO**: FIFO directly discards information from the oldest frame; PMF preserves historical context through fusion.
-   - **Buffer Capacity**: $k=10$.
+    - **Function**: Manages a fixed-size memory buffer for streaming data, preventing unbounded GPU memory growth.
+    - **Mechanism**: When the buffer is full, features of the frame to be evicted are fused into adjacent frames: $\hat{f}_{T-k+1}' = (f_{T-k}' + f_{T-k+1}')/2$
+    - **Comparison with FIFO**: FIFO directly discards information from the oldest frame; PMF preserves historical context through fusion.
+    - **Buffer Capacity**: $k=10$.
 
 ### Loss & Training
 - AdamW optimizer with cosine learning rate scheduling; initial learning rate $1 \times 10^{-5}$.

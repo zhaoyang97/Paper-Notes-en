@@ -18,8 +18,8 @@ content_hash: 43e97b27699d6238
 # Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13660](https://arxiv.org/abs/2603.13660)
-**Code**: Available (mentioned in the paper)
+**arXiv**: [2603.13660](https://arxiv.org/abs/2603.13660)  
+**Code**: Available (mentioned in the paper)  
 **Area**: Medical Imaging
 **Keywords**: Self-supervised learning, 3D medical imaging, mask-guided pretraining, in-context segmentation, foundation model
 

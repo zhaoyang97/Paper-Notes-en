@@ -18,8 +18,8 @@ content_hash: 6bff4484138b420b
 # Tokenizing Single-Channel EEG with Time-Frequency Motif Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.16060](https://arxiv.org/abs/2502.16060)
-**Code**: [https://github.com/Jathurshan0330/TFM-Tokenizer](https://github.com/Jathurshan0330/TFM-Tokenizer)
+**arXiv**: [2502.16060](https://arxiv.org/abs/2502.16060)  
+**Code**: [https://github.com/Jathurshan0330/TFM-Tokenizer](https://github.com/Jathurshan0330/TFM-Tokenizer)  
 **Area**: Interpretability
 **Keywords**: EEG signal analysis, discrete tokenization, time-frequency motif, vector quantization, foundation models
 

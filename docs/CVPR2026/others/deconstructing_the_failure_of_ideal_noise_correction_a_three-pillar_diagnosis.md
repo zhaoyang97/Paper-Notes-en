@@ -17,8 +17,8 @@ content_hash: dc5570414cfdbb59
 # Deconstructing the Failure of Ideal Noise Correction: A Three-Pillar Diagnosis
 
 **Conference**: CVPR2026
-**arXiv**: [2603.12997](https://arxiv.org/abs/2603.12997)
-**Code**: To be confirmed
+**arXiv**: [2603.12997](https://arxiv.org/abs/2603.12997)  
+**Code**: To be confirmed  
 **Area**: Other
 **Keywords**: Learning with noisy labels, noise transition matrix, forward correction, statistical consistency, information theory
 

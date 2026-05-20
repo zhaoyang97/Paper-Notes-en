@@ -18,8 +18,8 @@ content_hash: 4ba3bb266c79db6d
 # LR-SGS: Robust LiDAR-Reflectance-Guided Salient Gaussian Splatting for Self-Driving Scene Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12647](https://arxiv.org/abs/2603.12647)
-**Code**: To be confirmed
+**arXiv**: [2603.12647](https://arxiv.org/abs/2603.12647)  
+**Code**: To be confirmed  
 **Area**: Autonomous Driving
 **Keywords**: 3D Gaussian Splatting, LiDAR Reflectance, Self-Driving Scene Reconstruction, Novel View Synthesis, Multimodal Fusion
 

@@ -18,8 +18,8 @@ content_hash: c3e73d0b58655575
 # Decoding Open-Ended Information Seeking Goals from Eye Movements in Reading
 
 **Conference**: ICLR2026
-**arXiv**: [2505.02872](https://arxiv.org/abs/2505.02872)
-**Code**: To be confirmed
+**arXiv**: [2505.02872](https://arxiv.org/abs/2505.02872)  
+**Code**: To be confirmed  
 **Area**: Video Understanding
 **Keywords**: eye tracking, reading comprehension, information seeking goal decoding, multimodal LLM, cognitive state decoding
 

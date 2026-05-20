@@ -18,8 +18,8 @@ content_hash: 85b16e9d7d22b861
 # DAMap: Distance-aware MapNet for High Quality HD Map Construction
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.22675](https://arxiv.org/abs/2510.22675)
-**Code**: [github.com/jpdong-xjtu/DAMap](https://github.com/jpdong-xjtu/DAMap)
+**arXiv**: [2510.22675](https://arxiv.org/abs/2510.22675)  
+**Code**: [github.com/jpdong-xjtu/DAMap](https://github.com/jpdong-xjtu/DAMap)  
 **Area**: Autonomous Driving / Online HD Map Construction
 **Keywords**: HD Map, High-Quality Prediction, Task Alignment, Deformable Attention, Focal Loss
 

@@ -18,9 +18,9 @@ content_hash: 7da45edc25d4a47b
 # Parametrized Multi-Agent Routing via Deep Attention Models
 
 **Conference**: AAAI2026
-**arXiv**: [2507.22338](https://arxiv.org/abs/2507.22338)
+**arXiv**: [2507.22338](https://arxiv.org/abs/2507.22338)  
 **Authors**: Salar Basiri, Dhananjay Tiwari, Srinivasa M. Salapaka (UIUC)
-**Code**: [GitHub](https://github.com/salar96/LearningFLPO)
+**Code**: [GitHub](https://github.com/salar96/LearningFLPO)  
 **Area**: Optimization
 **Keywords**: Combinatorial Optimization, Multi-Agent Path Planning, Maximum Entropy Principle, Transformer, Facility Location
 

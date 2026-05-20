@@ -17,8 +17,8 @@ content_hash: e1c97df221002740
 # SHREC: A Spectral Embedding-Based Approach for Ab-Initio Reconstruction of Helical Molecules
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12307](https://arxiv.org/abs/2603.12307)
-**Code**: None
+**arXiv**: [2603.12307](https://arxiv.org/abs/2603.12307)  
+**Code**: None  
 **Area**: Other (Computational Biology / Cryo-EM)
 **Keywords**: cryo-EM, helical reconstruction, spectral embedding, graph Laplacian, manifold learning
 

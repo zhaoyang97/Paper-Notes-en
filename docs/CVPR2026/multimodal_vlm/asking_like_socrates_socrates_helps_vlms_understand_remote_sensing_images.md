@@ -18,8 +18,8 @@ content_hash: d9822168776fd042
 # Asking like Socrates: Socrates helps VLMs understand remote sensing images
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.22396](https://arxiv.org/abs/2511.22396)
-**Code**: [https://geox-lab.github.io/Asking_like_Socrates](https://geox-lab.github.io/Asking_like_Socrates)
+**arXiv**: [2511.22396](https://arxiv.org/abs/2511.22396)  
+**Code**: [https://geox-lab.github.io/Asking_like_Socrates](https://geox-lab.github.io/Asking_like_Socrates)  
 **Area**: Remote Sensing / Multimodal Reasoning
 **Keywords**: Remote sensing image understanding, evidence-chain reasoning, pseudo-reasoning, Socratic method, two-stage reinforcement learning
 

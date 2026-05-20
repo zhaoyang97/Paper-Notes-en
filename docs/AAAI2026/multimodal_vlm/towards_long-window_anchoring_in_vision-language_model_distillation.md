@@ -18,8 +18,8 @@ content_hash: 1316785ef6d58425
 # Towards Long-window Anchoring in Vision-Language Model Distillation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.21576](https://arxiv.org/abs/2512.21576)
-**Code**: None
+**arXiv**: [2512.21576](https://arxiv.org/abs/2512.21576)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Knowledge Distillation, Long-context VLM, RoPE Positional Encoding, Fourier Analysis, Context Window Extension
 

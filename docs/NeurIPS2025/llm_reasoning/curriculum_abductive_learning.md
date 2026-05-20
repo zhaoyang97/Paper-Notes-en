@@ -18,8 +18,8 @@ content_hash: 50fdcd902aa679e3
 # Curriculum Abductive Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12275](https://arxiv.org/abs/2505.12275)
-**Code**: None
+**arXiv**: [2505.12275](https://arxiv.org/abs/2505.12275)  
+**Code**: None  
 **Area**: LLM Reasoning / Neuro-Symbolic Learning
 **Keywords**: Abductive Learning, Curriculum Learning, Knowledge Base Partitioning, Neuro-Symbolic Reasoning, Training Stability
 

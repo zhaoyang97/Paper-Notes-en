@@ -18,8 +18,8 @@ content_hash: 837a51b2d711abab
 # Adaptive Dual Reasoner: Large Reasoning Models Can Think Efficiently by Hybrid Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10207](https://arxiv.org/abs/2510.10207)
-**Code**: None (Tencent YouTu Lab)
+**arXiv**: [2510.10207](https://arxiv.org/abs/2510.10207)  
+**Code**: None (Tencent YouTu Lab)  
 **Area**: LLM Reasoning / LLM Efficiency
 **Keywords**: Reasoning Efficiency, Hybrid Reasoning, Fast-and-Slow Thinking, Entropy Guidance, Reinforcement Learning
 

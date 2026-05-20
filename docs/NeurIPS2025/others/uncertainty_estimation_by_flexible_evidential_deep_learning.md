@@ -17,8 +17,8 @@ content_hash: 8873f9c497589c74
 # Uncertainty Estimation by Flexible Evidential Deep Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18322](https://arxiv.org/abs/2510.18322)
-**Code**: [Available](https://github.com/TaeseongYoon/F-EDL)
+**arXiv**: [2510.18322](https://arxiv.org/abs/2510.18322)  
+**Code**: [Available](https://github.com/TaeseongYoon/F-EDL)  
 **Area**: Uncertainty Quantification
 **Keywords**: uncertainty quantification, evidential deep learning, Flexible Dirichlet distribution, OOD detection, single forward pass
 

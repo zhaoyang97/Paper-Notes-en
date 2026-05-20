@@ -18,8 +18,8 @@ content_hash: cc63b27de436ae84
 # Towards 3D Object-Centric Feature Learning for Semantic Scene Completion
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13031](https://arxiv.org/abs/2511.13031)
-**Code**: None
+**arXiv**: [2511.13031](https://arxiv.org/abs/2511.13031)  
+**Code**: None  
 **Area**: Autonomous Driving / 3D Semantic Scene Completion
 **Keywords**: Semantic Scene Completion, Object-Centric Learning, MobileSAM, Linear Attention, BEV Representation
 

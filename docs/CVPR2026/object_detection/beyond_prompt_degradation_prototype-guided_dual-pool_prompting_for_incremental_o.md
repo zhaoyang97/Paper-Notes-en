@@ -18,8 +18,8 @@ content_hash: efb75e82c8535735
 # Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02286](https://arxiv.org/abs/2603.02286)
-**Code**: [Available](https://github.com/zyt95579/PDP_IOD/tree/main)
+**arXiv**: [2603.02286](https://arxiv.org/abs/2603.02286)  
+**Code**: [Available](https://github.com/zyt95579/PDP_IOD/tree/main)  
 **Area**: Object Detection
 **Keywords**: Incremental Object Detection, Prompt Learning, Dual-Pool Paradigm, Prototype Pseudo-Labels, Catastrophic Forgetting
 

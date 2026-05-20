@@ -18,8 +18,8 @@ content_hash: c3bf00e89753ca08
 # LAOF: Robust Latent Action Learning with Optical Flow Constraints
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.16407](https://arxiv.org/abs/2511.16407)
-**Code**: [GitHub](https://github.com/XizoB/LAOF)
+**arXiv**: [2511.16407](https://arxiv.org/abs/2511.16407)  
+**Code**: [GitHub](https://github.com/XizoB/LAOF)  
 **Area**: Video Understanding
 **Keywords**: Latent action learning, optical flow constraints, embodied intelligence, imitation learning, video pretraining
 

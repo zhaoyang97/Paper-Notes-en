@@ -18,8 +18,8 @@ content_hash: 7128ac00f8678d68
 # Dual Goal Representations
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.06714](https://arxiv.org/abs/2510.06714)
-**Code**: None
+**arXiv**: [2510.06714](https://arxiv.org/abs/2510.06714)  
+**Code**: None  
 **Area**: Reinforcement Learning / Goal-Conditioned RL
 **Keywords**: goal-conditioned RL, dual goal representation, temporal distance, asymmetric inner product parameterization, OGBench
 

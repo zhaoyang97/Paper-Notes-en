@@ -18,8 +18,8 @@ content_hash: 452354c3b4aef8a4
 # Superficial Safety Alignment Hypothesis
 
 **Conference**: ICLR 2026
-**arXiv**: [2410.10862](https://arxiv.org/abs/2410.10862)
-**Code**: [https://ssa-h.github.io/](https://ssa-h.github.io/)
+**arXiv**: [2410.10862](https://arxiv.org/abs/2410.10862)  
+**Code**: [https://ssa-h.github.io/](https://ssa-h.github.io/)  
 **Area**: AI Safety / LLM Alignment
 **Keywords**: safety alignment, alignment fragility, neuron-level analysis, alignment tax, model pruning
 
@@ -52,35 +52,35 @@ SSAH is not a concrete algorithm but a hypothesis framework about the nature of 
 
 1. **Superficial Safety Alignment Hypothesis (SSAH)**:
 
-   - **Function**: Reframes safety alignment as an implicit safety-related binary classification task.
-   - **Mechanism**: A model capable of executing malicious requests already possesses the relevant knowledge; safety alignment only needs to teach it to select the correct "reasoning direction" — whether to execute or refuse a request. Alignment also provides a standardized refusal mechanism and alternative response templates.
-   - **Design Motivation**: Compared to the general Safety Alignment Hypothesis (SAH), SSAH is more specific and verifiable — it focuses on models that already possess the requisite knowledge, eliminating confounding factors arising from knowledge deficits.
-   - **Explanation of Jailbreaks**: Current alignment only determines the reasoning direction at the initial token; attackers bypass the safety mechanism by manipulating tokens. Ideal alignment should re-evaluate the reasoning direction at every generation step.
+    - **Function**: Reframes safety alignment as an implicit safety-related binary classification task.
+    - **Mechanism**: A model capable of executing malicious requests already possesses the relevant knowledge; safety alignment only needs to teach it to select the correct "reasoning direction" — whether to execute or refuse a request. Alignment also provides a standardized refusal mechanism and alternative response templates.
+    - **Design Motivation**: Compared to the general Safety Alignment Hypothesis (SAH), SSAH is more specific and verifiable — it focuses on models that already possess the requisite knowledge, eliminating confounding factors arising from knowledge deficits.
+    - **Explanation of Jailbreaks**: Current alignment only determines the reasoning direction at the initial token; attackers bypass the safety mechanism by manipulating tokens. Ideal alignment should re-evaluate the reasoning direction at every generation step.
 
 2. **Probing Experiments to Validate Reasoning Directions**:
 
-   - **Function**: Validates that safety alignment indeed shifts the model's reasoning direction by comparing hidden-state distances.
-   - **Mechanism**: Three types of queries are constructed — original malicious queries (Clean), malicious queries prepended with a benign token ("Sorry, I can't..."), and malicious queries prepended with a malicious token ("Here's how..."). For an aligned model, the hidden-state distance between Clean and the benign-token variant should be smaller than that between Clean and the malicious-token variant; the reverse holds for unaligned models.
-   - **Design Motivation**: Directly observing reasoning direction is infeasible, but it can be inferred indirectly through distance relationships in the hidden-state space.
-   - **Key Findings**: Aligned models exhibit a preference for safe reasoning across all Transformer blocks, not merely in later layers.
+    - **Function**: Validates that safety alignment indeed shifts the model's reasoning direction by comparing hidden-state distances.
+    - **Mechanism**: Three types of queries are constructed — original malicious queries (Clean), malicious queries prepended with a benign token ("Sorry, I can't..."), and malicious queries prepended with a malicious token ("Here's how..."). For an aligned model, the hidden-state distance between Clean and the benign-token variant should be smaller than that between Clean and the malicious-token variant; the reverse holds for unaligned models.
+    - **Design Motivation**: Directly observing reasoning direction is infeasible, but it can be inferred indirectly through distance relationships in the hidden-state space.
+    - **Key Findings**: Aligned models exhibit a preference for safe reasoning across all Transformer blocks, not merely in later layers.
 
 3. **Identification of Four Types of Computational Units (SCU/UCU/CU/RU)**:
 
-   - **Function**: Classifies model neurons/channels into four types: Safety-Critical Units (SCU), Utility-Critical Units (UCU), Composite Units (CU), and Redundant Units (RU).
-   - **Mechanism**: A structured pruning strategy is employed. For each depth-2 module $f(X) = B\sigma(AX)$, an importance score is computed as $\mathbf{I}_{:,j} = \frac{1}{N-1}\sum_{n=1}^{N}(X^B_{n,j,:} - \bar{X}^B_{:,j,:})^2 \cdot \|\mathbf{W}^B_{:,j}\|_2^2$. Scores $\mathbf{I_S}$ and $\mathbf{I_U}$ are computed on safety and utility datasets respectively, and the four unit types are distinguished via their differences and sums.
-   - **Design Motivation**: If safety alignment is truly a simple binary classification task, then only a small number of neurons should be required to establish safety guardrails.
+    - **Function**: Classifies model neurons/channels into four types: Safety-Critical Units (SCU), Utility-Critical Units (UCU), Composite Units (CU), and Redundant Units (RU).
+    - **Mechanism**: A structured pruning strategy is employed. For each depth-2 module $f(X) = B\sigma(AX)$, an importance score is computed as $\mathbf{I}_{:,j} = \frac{1}{N-1}\sum_{n=1}^{N}(X^B_{n,j,:} - \bar{X}^B_{:,j,:})^2 \cdot \|\mathbf{W}^B_{:,j}\|_2^2$. Scores $\mathbf{I_S}$ and $\mathbf{I_U}$ are computed on safety and utility datasets respectively, and the four unit types are distinguished via their differences and sums.
+    - **Design Motivation**: If safety alignment is truly a simple binary classification task, then only a small number of neurons should be required to establish safety guardrails.
 
 4. **Freezing Strategy Against Fine-Tuning Attacks**:
 
-   - **Function**: Freezes safety-critical components (SCU + top CU) during fine-tuning to prevent safety degradation.
-   - **Mechanism**: Attribute migration analysis reveals that fine-tuning converts SCUs and CUs into UCUs, causing safety degradation. Freezing these units prevents such attribute migration.
-   - **Effect**: Freezing SCU + all CU reduces ASR on AdvBench for LLaMA2 from 11.92% to 2.88%.
+    - **Function**: Freezes safety-critical components (SCU + top CU) during fine-tuning to prevent safety degradation.
+    - **Mechanism**: Attribute migration analysis reveals that fine-tuning converts SCUs and CUs into UCUs, causing safety degradation. Freezing these units prevents such attribute migration.
+    - **Effect**: Freezing SCU + all CU reduces ASR on AdvBench for LLaMA2 from 11.92% to 2.88%.
 
 5. **Redundant Units as Alignment Budget**:
 
-   - **Function**: Performs alignment fine-tuning exclusively on the redundant units (~20% of parameters) of the pre-trained model.
-   - **Mechanism**: Approximately 20% of pre-trained model parameters are redundant; updating only these parameters achieves alignment while avoiding modification of utility-critical units.
-   - **Effect**: Updating 20% of parameters achieves comparable alignment quality, while mathematical capability (GSM8K) improves from 9.24 to 13.4 — outperforming full-parameter fine-tuning, which yields 8.8.
+    - **Function**: Performs alignment fine-tuning exclusively on the redundant units (~20% of parameters) of the pre-trained model.
+    - **Mechanism**: Approximately 20% of pre-trained model parameters are redundant; updating only these parameters achieves alignment while avoiding modification of utility-critical units.
+    - **Effect**: Updating 20% of parameters achieves comparable alignment quality, while mathematical capability (GSM8K) improves from 9.24 to 13.4 — outperforming full-parameter fine-tuning, which yields 8.8.
 
 ### Loss & Training
 - During pruning, an activation-variance-based importance score is used to remove channels/neurons in a structured manner.

@@ -19,8 +19,8 @@ content_hash: 8a3e82e1ce5bf96f
 # TROLL: Trust Regions improve Reinforcement Learning for Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03817](https://arxiv.org/abs/2510.03817)
-**Code**: None
+**arXiv**: [2510.03817](https://arxiv.org/abs/2510.03817)  
+**Code**: None  
 **Area**: Reinforcement Learning / LLM Fine-tuning
 **Keywords**: Trust Region, PPO, Policy Clipping, KL Constraint, LLM Reinforcement Learning, Token-level Optimization
 

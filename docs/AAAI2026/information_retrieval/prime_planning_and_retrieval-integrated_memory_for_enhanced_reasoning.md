@@ -18,8 +18,8 @@ content_hash: 7d3480fb3e6274c6
 # PRIME: Planning and Retrieval-Integrated Memory for Enhanced Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.22315](https://arxiv.org/abs/2509.22315)
-**Code**: Available
+**arXiv**: [2509.22315](https://arxiv.org/abs/2509.22315)  
+**Code**: Available  
 **Area**: Information Retrieval
 **Keywords**: Dual-system reasoning, fast-and-slow thinking, retrieval augmentation, multi-agent, planning
 

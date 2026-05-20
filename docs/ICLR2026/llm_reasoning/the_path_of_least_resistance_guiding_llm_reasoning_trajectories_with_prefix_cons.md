@@ -18,8 +18,8 @@ content_hash: 6fe1929cc2ca12b7
 # The Path of Least Resistance: Guiding LLM Reasoning Trajectories with Prefix Consensus
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21494](https://arxiv.org/abs/2601.21494)
-**Code**: To be confirmed
+**arXiv**: [2601.21494](https://arxiv.org/abs/2601.21494)  
+**Code**: To be confirmed  
 **Area**: LLM Reasoning
 **Keywords**: Self-consistency decoding, prefix consensus, reasoning efficiency, cluster pruning, inference-time computation
 

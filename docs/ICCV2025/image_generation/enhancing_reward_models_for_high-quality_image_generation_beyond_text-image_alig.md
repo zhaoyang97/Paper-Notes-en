@@ -19,8 +19,8 @@ content_hash: 06ff5b6e04bac7e6
 # Enhancing Reward Models for High-quality Image Generation: Beyond Text-Image Alignment
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19002](https://arxiv.org/abs/2507.19002)
-**Code**: [GitHub](https://github.com/BarretBa/ICTHP)
+**arXiv**: [2507.19002](https://arxiv.org/abs/2507.19002)  
+**Code**: [GitHub](https://github.com/BarretBa/ICTHP)  
 **Area**: Image Generation Evaluation / Reward Models
 **Keywords**: Reward Model, ICT Score, HP Score, Text-Image Alignment, Human Preference, Diffusion Model Optimization
 

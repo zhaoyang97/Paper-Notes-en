@@ -18,8 +18,8 @@ content_hash: 8e094d225c6326e1
 # Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21511](https://arxiv.org/abs/2603.21511)
-**Code**: [https://github.com/wistful-8029/BTP-3DAD](https://github.com/wistful-8029/BTP-3DAD)
+**arXiv**: [2603.21511](https://arxiv.org/abs/2603.21511)  
+**Code**: [https://github.com/wistful-8029/BTP-3DAD](https://github.com/wistful-8029/BTP-3DAD)  
 **Area**: 3D Vision / Anomaly Detection
 **Keywords**: Zero-Shot 3D Anomaly Detection, Point-Language Model, ULIP, Multi-Granularity, Geometric Feature
 

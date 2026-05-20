@@ -18,8 +18,8 @@ content_hash: 1f012ce9271827a3
 # Creating Blank Canvas Against AI-Enabled Image Forgery
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.22237](https://arxiv.org/abs/2511.22237)
-**Code**: [GitHub](https://github.com/qsong2001/blank_canvas)
+**arXiv**: [2511.22237](https://arxiv.org/abs/2511.22237)  
+**Code**: [GitHub](https://github.com/qsong2001/blank_canvas)  
 **Area**: Image Generation
 **Keywords**: Image Tampering Localization, Adversarial Perturbation, SAM, Frequency-Aware Optimization, Proactive Protection
 

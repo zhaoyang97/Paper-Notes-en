@@ -19,8 +19,8 @@ content_hash: ba64df31ce83cf4f
 # From Programs to Poses: Factored Real-World Scene Generation via Learned Program Libraries
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10292](https://arxiv.org/abs/2510.10292)
-**Code**: To be confirmed
+**arXiv**: [2510.10292](https://arxiv.org/abs/2510.10292)  
+**Code**: To be confirmed  
 **Area**: 3D Scene Generation / Program Synthesis
 **Keywords**: 3D scene generation, program synthesis, LLM, layout program library, pose prediction, ScanNet
 

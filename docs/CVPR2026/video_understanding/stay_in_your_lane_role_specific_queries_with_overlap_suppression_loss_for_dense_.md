@@ -18,8 +18,8 @@ content_hash: 23c9e0019d3acd8e
 # Stay in your Lane: Role Specific Queries with Overlap Suppression Loss for Dense Video Captioning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11439](https://arxiv.org/abs/2603.11439)
-**Code**: [https://github.com/edwardback/ROS-DVC](https://github.com/edwardback/ROS-DVC)
+**arXiv**: [2603.11439](https://arxiv.org/abs/2603.11439)  
+**Code**: [https://github.com/edwardback/ROS-DVC](https://github.com/edwardback/ROS-DVC)  
 **Area**: Video Understanding
 **Keywords**: Dense Video Captioning, Role-Specific Queries, Overlap Suppression Loss, Contrastive Alignment, Concept Guidance
 

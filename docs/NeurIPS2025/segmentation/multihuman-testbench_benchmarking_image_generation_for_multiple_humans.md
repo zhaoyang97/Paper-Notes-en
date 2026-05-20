@@ -18,8 +18,8 @@ content_hash: 5b8c289b36c24be7
 # MultiHuman-Testbench: Benchmarking Image Generation for Multiple Humans
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.20879](https://arxiv.org/abs/2506.20879)
-**Code**: [GitHub](https://github.com/Qualcomm-AI-research/MultiHuman-Testbench)
+**arXiv**: [2506.20879](https://arxiv.org/abs/2506.20879)  
+**Code**: [GitHub](https://github.com/Qualcomm-AI-research/MultiHuman-Testbench)  
 **Area**: Image Segmentation
 **Keywords**: Multi-human image generation, identity preservation, benchmark, diffusion models, regional isolation
 

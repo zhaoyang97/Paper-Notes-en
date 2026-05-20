@@ -18,8 +18,8 @@ content_hash: 85c5f4c9b9883a52
 # STARC-9: A Large-scale Dataset for Multi-Class Tissue Classification for CRC Histopathology
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00383](https://arxiv.org/abs/2511.00383)
-**Code**: [GitHub](https://github.com/Path2AI/STARC-9)
+**arXiv**: [2511.00383](https://arxiv.org/abs/2511.00383)  
+**Code**: [GitHub](https://github.com/Path2AI/STARC-9)  
 **Area**: Medical Imaging
 **Keywords**: Colorectal Cancer, Tissue Classification, Dataset, Histopathology, Deep Clustering
 
@@ -55,9 +55,9 @@ DeepCluster++ is a semi-automated dataset construction framework operating in th
 
 2. **Clustering and diversity sampling**: For each WSI, frozen encoder features are extracted → global average pooling reduces dimensionality to 512 → PCA reduces to 256 → K-means clustering (with $m=400$ samples per cluster). The key innovation is **Equal-Frequency Binning**:
 
-   - Compute the Euclidean distance from each patch to its cluster centroid: $d_i = \|v_i - c\|$
-   - Sort patches by distance and divide into $g=5$ equal-frequency bins
-   - Sample 20% of patches from each bin
+    - Compute the Euclidean distance from each patch to its cluster centroid: $d_i = \|v_i - c\|$
+    - Sort patches by distance and divide into $g=5$ equal-frequency bins
+    - Sample 20% of patches from each bin
 
    This approach ensures uniform representation from near-centroid (homogeneous) to cluster-boundary (diverse) patches, avoiding oversampling in dense regions. Compared to equal-width binning, equal-frequency binning maintains consistent patch counts across bins.
 

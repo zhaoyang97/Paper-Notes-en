@@ -18,8 +18,8 @@ content_hash: fa1982542236cbac
 # CAMERA: Multi-Matrix Joint Compression for MoE Models via Micro-Expert Redundancy Analysis
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.02322](https://arxiv.org/abs/2508.02322)
-**Code**: [https://github.com/xuyuzhuang11/CAMERA](https://github.com/xuyuzhuang11/CAMERA)
+**arXiv**: [2508.02322](https://arxiv.org/abs/2508.02322)  
+**Code**: [https://github.com/xuyuzhuang11/CAMERA](https://github.com/xuyuzhuang11/CAMERA)  
 **Area**: Model Compression
 **Keywords**: MoE compression, micro-expert, structured pruning, mixed-precision quantization, training-free
 

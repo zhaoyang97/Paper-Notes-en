@@ -18,8 +18,8 @@ content_hash: a3e125833a1e552d
 # Towards Interpretability Without Sacrifice: Faithful Dense Layer Decomposition with Mixture of Decoders
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21364](https://arxiv.org/abs/2505.21364)
-**Code**: [GitHub](https://github.com/james-oldfield/MxD/)
+**arXiv**: [2505.21364](https://arxiv.org/abs/2505.21364)  
+**Code**: [GitHub](https://github.com/james-oldfield/MxD/)  
 **Area**: LLM Efficiency / Interpretability
 **Keywords**: mechanistic interpretability, sparse approximation, mixture of experts, tensor factorization, MLP decomposition
 
@@ -50,20 +50,20 @@ where $\mathbf{z} = \phi(\mathbf{E}^\top\mathbf{x})$ is the dense hidden represe
 
 1. **Hadamard Product Tensor Factorization**:
 
-   - **Function**: Parameter-efficiently stores $N$ full-rank expert weights.
-   - **Mechanism**: $\boldsymbol{\mathcal{W}}(n,h,:) = \mathbf{c}_n * \mathbf{d}_h$, where $\mathbf{C} \in \mathbb{R}^{N \times O}$ are expert-specific parameters and $\mathbf{D} \in \mathbb{R}^{H \times O}$ is a shared transformation. Parameter count reduces from $NHO$ to $O(N+H)$.
-   - Equivalent forward pass: $\text{MxD}(\mathbf{x}) = (\mathbf{C}^\top\mathbf{a}) * (\mathbf{D}^\top\mathbf{z})$.
+    - **Function**: Parameter-efficiently stores $N$ full-rank expert weights.
+    - **Mechanism**: $\boldsymbol{\mathcal{W}}(n,h,:) = \mathbf{c}_n * \mathbf{d}_h$, where $\mathbf{C} \in \mathbb{R}^{N \times O}$ are expert-specific parameters and $\mathbf{D} \in \mathbb{R}^{H \times O}$ is a shared transformation. Parameter count reduces from $NHO$ to $O(N+H)$.
+    - Equivalent forward pass: $\text{MxD}(\mathbf{x}) = (\mathbf{C}^\top\mathbf{a}) * (\mathbf{D}^\top\mathbf{z})$.
 
 2. **Full-Rank Guarantee (Lemma 1)**:
 
-   - **Function**: Proves that each expert weight matrix is full rank.
-   - **Core Result**: $\mathbf{W}_n = \mathbf{D}\,\text{diag}(\mathbf{c}_n)$; as long as $\mathbf{c}_n$ contains no zero entries, $\text{rank}(\mathbf{W}_n) = \text{rank}(\mathbf{D})$.
-   - **Design Motivation**: At sparsity $K$, Transcoder output is confined to a $K$-dimensional subspace, whereas MxD sums $K$ full-rank transformations, yielding substantially greater expressive power.
+    - **Function**: Proves that each expert weight matrix is full rank.
+    - **Core Result**: $\mathbf{W}_n = \mathbf{D}\,\text{diag}(\mathbf{c}_n)$; as long as $\mathbf{c}_n$ contains no zero entries, $\text{rank}(\mathbf{W}_n) = \text{rank}(\mathbf{D})$.
+    - **Design Motivation**: At sparsity $K$, Transcoder output is confined to a $K$-dimensional subspace, whereas MxD sums $K$ full-rank transformations, yielding substantially greater expressive power.
 
 3. **GLU Extension**:
 
-   - **Function**: Generalizes to the Gated Linear Unit architecture used in modern LLMs.
-   - **Mechanism**: Directly substitutes the GLU hidden representation $\mathbf{z}_{\text{GLU}} = \psi(\mathbf{E}_{\text{GLU}}^\top\mathbf{x}) * (\mathbf{E}^\top\mathbf{x})$ into MxD.
+    - **Function**: Generalizes to the Gated Linear Unit architecture used in modern LLMs.
+    - **Mechanism**: Directly substitutes the GLU hidden representation $\mathbf{z}_{\text{GLU}} = \psi(\mathbf{E}_{\text{GLU}}^\top\mathbf{x}) * (\mathbf{E}^\top\mathbf{x})$ into MxD.
 
 ### Loss & Training
 - MSE distillation loss (MxD output vs. original MLP output).

@@ -18,8 +18,8 @@ content_hash: 1b046fe6682eb4e7
 # Causal-Tune: Mining Causal Factors from Vision Foundation Models for Domain Generalized Semantic Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.16567](https://arxiv.org/abs/2512.16567)
-**Code**: [https://github.com/zhangyin1996/Causal-Tune](https://github.com/zhangyin1996/Causal-Tune)
+**arXiv**: [2512.16567](https://arxiv.org/abs/2512.16567)  
+**Code**: [https://github.com/zhangyin1996/Causal-Tune](https://github.com/zhangyin1996/Causal-Tune)  
 **Area**: Semantic Segmentation / Domain Generalization
 **Keywords**: Causal Analysis, VFM Fine-tuning, Frequency Domain Decomposition, Band-pass Filtering, Domain Generalized Segmentation
 

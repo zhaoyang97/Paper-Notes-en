@@ -18,8 +18,8 @@ content_hash: c3b0ed70f0d43963
 # INC: An Indirect Neural Corrector for Auto-Regressive Hybrid PDE Solvers
 
 **Conference**: NEURIPS2025
-**arXiv**: [2511.12764](https://arxiv.org/abs/2511.12764)
-**Code**: None
+**arXiv**: [2511.12764](https://arxiv.org/abs/2511.12764)  
+**Code**: None  
 **Area**: Scientific Computing
 **Keywords**: PDE solving, hybrid solver, neural corrector, auto-regressive stability, indirect correction
 

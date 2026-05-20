@@ -18,8 +18,8 @@ content_hash: f0a172d7270787d9
 # Contribution of Task-Irrelevant Stimuli to Drift of Neural Representations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21588](https://arxiv.org/abs/2510.21588)
-**Code**: None
+**arXiv**: [2510.21588](https://arxiv.org/abs/2510.21588)  
+**Code**: None  
 **Area**: Neuroscience / Representation Learning / Optimization Theory
 **Keywords**: representational drift, task-irrelevant noise, online learning, Hebbian learning, SGD noise
 
@@ -45,22 +45,22 @@ Under the online learning setting, once the network has converged to an optimal 
 
 1. **SDE Decomposition Framework**
 
-   - **Function**: Approximates post-convergence parameter dynamics as a continuous-time SDE, decomposed into normal and tangential components relative to the solution manifold.
-   - **Mechanism**: Near the solution point $\tilde{\theta}$, the normal component $d\theta_N = -H(\theta_N - \tilde{\theta})dt + \sqrt{\eta}C_N d B_t$ has a Hessian-driven restoring force (mean reversion), while the tangential component $d\theta_T = \sqrt{\eta}C_T dB_t'$ is pure Brownian motion. The drift rate is determined by the tangential diffusion coefficient $C_T$.
-   - **Design Motivation**: Reduces complex high-dimensional stochastic dynamics to a diffusion problem on a manifold, enabling closed-form solutions.
+    - **Function**: Approximates post-convergence parameter dynamics as a continuous-time SDE, decomposed into normal and tangential components relative to the solution manifold.
+    - **Mechanism**: Near the solution point $\tilde{\theta}$, the normal component $d\theta_N = -H(\theta_N - \tilde{\theta})dt + \sqrt{\eta}C_N d B_t$ has a Hessian-driven restoring force (mean reversion), while the tangential component $d\theta_T = \sqrt{\eta}C_T dB_t'$ is pure Brownian motion. The drift rate is determined by the tangential diffusion coefficient $C_T$.
+    - **Design Motivation**: Reduces complex high-dimensional stochastic dynamics to a diffusion problem on a manifold, enabling closed-form solutions.
 
 2. **Unified Analysis Across Four Architectures**
 
-   - **Oja's Rule** (unsupervised): Single-layer network learning the $m$-dimensional principal subspace. The solution manifold has $O(m)$ rotational symmetry. Drift rate: $D_y \approx \frac{\eta^3 \lambda_\perp^2}{8}(m-1)(n-m)$
-   - **Similarity Matching** (unsupervised): Same principal subspace learning objective as Oja's rule but using a different biologically plausible learning rule. Yields the same drift rate formula — indicating drift characteristics are determined by task structure rather than learning rule details.
-   - **Linear Autoencoder** (SGD): Bottleneck hidden layer learning a $p$-dimensional principal subspace. $D_h \approx \frac{\eta^3 \lambda_\perp^2}{32}(p-1)(n-p)$
-   - **Supervised Two-Layer Network** (SGD): Task-irrelevant subspace determined by the null space of the input-output mapping $P$. $D_h \approx \frac{\eta^3 \gamma^4}{16}(k-1)(k+2+(n-k)\lambda_\perp/2)$
+    - **Oja's Rule** (unsupervised): Single-layer network learning the $m$-dimensional principal subspace. The solution manifold has $O(m)$ rotational symmetry. Drift rate: $D_y \approx \frac{\eta^3 \lambda_\perp^2}{8}(m-1)(n-m)$
+    - **Similarity Matching** (unsupervised): Same principal subspace learning objective as Oja's rule but using a different biologically plausible learning rule. Yields the same drift rate formula — indicating drift characteristics are determined by task structure rather than learning rule details.
+    - **Linear Autoencoder** (SGD): Bottleneck hidden layer learning a $p$-dimensional principal subspace. $D_h \approx \frac{\eta^3 \lambda_\perp^2}{32}(p-1)(n-p)$
+    - **Supervised Two-Layer Network** (SGD): Task-irrelevant subspace determined by the null space of the input-output mapping $P$. $D_h \approx \frac{\eta^3 \gamma^4}{16}(k-1)(k+2+(n-k)\lambda_\perp/2)$
 
 3. **Geometric Distinction: Learning Noise vs. Synaptic Noise**
 
-   - **Function**: Contrasts drift characteristics induced by learning noise (from online sampling stochasticity) and Gaussian synaptic noise ($\varepsilon_{ij} \sim \mathcal{N}(0, \eta\sigma^2_{syn})$).
-   - **Core Finding**: Learning-noise-induced drift is **anisotropic** (drift rates differ across directions), whereas synaptic noise induces **isotropic** drift. The two also differ qualitatively in how drift rate depends on output dimensionality — non-monotonic (first increasing then decreasing) under learning noise, and monotonically increasing under synaptic noise.
-   - **Design Motivation**: If these two geometric patterns can be distinguished experimentally, they can reveal the dominant mechanism driving drift in the brain.
+    - **Function**: Contrasts drift characteristics induced by learning noise (from online sampling stochasticity) and Gaussian synaptic noise ($\varepsilon_{ij} \sim \mathcal{N}(0, \eta\sigma^2_{syn})$).
+    - **Core Finding**: Learning-noise-induced drift is **anisotropic** (drift rates differ across directions), whereas synaptic noise induces **isotropic** drift. The two also differ qualitatively in how drift rate depends on output dimensionality — non-monotonic (first increasing then decreasing) under learning noise, and monotonically increasing under synaptic noise.
+    - **Design Motivation**: If these two geometric patterns can be distinguished experimentally, they can reveal the dominant mechanism driving drift in the brain.
 
 ### Loss & Training
 - Oja / SM: No explicit loss; online Hebbian updates.

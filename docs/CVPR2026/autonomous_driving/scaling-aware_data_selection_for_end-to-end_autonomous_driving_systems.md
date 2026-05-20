@@ -18,8 +18,8 @@ content_hash: a8bb82c3196135a0
 # Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08366](https://arxiv.org/abs/2604.08366)
-**Code**: None
+**arXiv**: [2604.08366](https://arxiv.org/abs/2604.08366)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: Data Selection, Neural Scaling Laws, Data Mixture Optimization, End-to-End Autonomous Driving, EPDMS
 

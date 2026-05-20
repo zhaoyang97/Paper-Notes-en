@@ -17,8 +17,8 @@ content_hash: fa84651b26f40e27
 # Processing and Acquisition Traces in Visual Encoders: What Does CLIP Know About Your Camera?
 
 **Conference**: ICCV 2025 (Highlight)
-**arXiv**: [2508.10637](https://arxiv.org/abs/2508.10637)
-**Code**: [https://github.com/ryan-caesar-ramos/visual-encoder-traces](https://github.com/ryan-caesar-ramos/visual-encoder-traces)
+**arXiv**: [2508.10637](https://arxiv.org/abs/2508.10637)  
+**Code**: [https://github.com/ryan-caesar-ramos/visual-encoder-traces](https://github.com/ryan-caesar-ramos/visual-encoder-traces)  
 **Area**: Visual Encoder Analysis
 **Keywords**: CLIP, image acquisition parameters, visual representation analysis, distribution shift, semantic prediction bias
 

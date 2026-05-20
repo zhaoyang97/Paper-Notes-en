@@ -18,8 +18,8 @@ content_hash: 91c004f5032bb0f3
 # Learning Memory-Enhanced Improvement Heuristics for Flexible Job Shop Scheduling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2603.02846](https://arxiv.org/abs/2603.02846)
-**Code**: None
+**arXiv**: [2603.02846](https://arxiv.org/abs/2603.02846)  
+**Code**: None  
 **Area**: Combinatorial Optimization / Reinforcement Learning / Scheduling
 **Keywords**: flexible job shop scheduling, improvement heuristics, memory-enhanced GNN, heterogeneous disjunctive graph, parallel greedy search
 

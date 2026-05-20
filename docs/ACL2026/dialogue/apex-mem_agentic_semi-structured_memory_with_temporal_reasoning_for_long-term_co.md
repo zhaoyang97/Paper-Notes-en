@@ -14,8 +14,8 @@ content_hash: 2a504f4e21c62b8d
 # APEX-MEM: Agentic Semi-Structured Memory with Temporal Reasoning for Long-Term Conversational AI
 
 **Conference**: ACL 2026
-**arXiv**: [2604.14362](https://arxiv.org/abs/2604.14362)
-**Code**: None
+**arXiv**: [2604.14362](https://arxiv.org/abs/2604.14362)  
+**Code**: None  
 **Area**: Agent / Dialogue Systems
 **Keywords**: Long-term memory, property graph, temporal reasoning, conversational AI, multi-tool retrieval
 
@@ -109,7 +109,7 @@ The graph construction stage uses few-shot prompted LLMs for fact extraction; en
 - Experimental Thoroughness: ⭐⭐⭐⭐ Multi-dataset comparisons are comprehensive, though ablations could be more fine-grained.
 - Writing Quality: ⭐⭐⭐⭐ Structure is clear and mathematical formalization is complete.
 - Value: ⭐⭐⭐⭐⭐ Provides a practical and effective solution for long-term conversational memory.
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: dialogue
 **Keywords**: To be supplemented
 

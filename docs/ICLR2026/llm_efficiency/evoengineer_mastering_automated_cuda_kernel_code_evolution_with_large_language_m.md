@@ -18,8 +18,8 @@ content_hash: d2848e21503509a6
 # EvoEngineer: Mastering Automated CUDA Kernel Code Evolution with Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03760](https://arxiv.org/abs/2510.03760)
-**Code**: Available (open-source platform)
+**arXiv**: [2510.03760](https://arxiv.org/abs/2510.03760)  
+**Code**: Available (open-source platform)  
 **Area**: LLM Efficiency
 **Keywords**: CUDA Kernel Optimization, LLM Code Evolution, Evolutionary Search, Code Generation, Prompt Engineering
 

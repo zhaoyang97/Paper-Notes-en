@@ -18,8 +18,8 @@ content_hash: cd2444986da0425b
 # Recurrent Memory for Online Interdomain Gaussian Processes
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.08736](https://arxiv.org/abs/2502.08736)
-**Code**: [GitHub](https://github.com/harrisonzhu508/HIPPOSVGP)
+**arXiv**: [2502.08736](https://arxiv.org/abs/2502.08736)  
+**Code**: [GitHub](https://github.com/harrisonzhu508/HIPPOSVGP)  
 **Area**: Gaussian Processes / Online Learning
 **Keywords**: Gaussian Processes, HiPPO, Online Learning, Long-term Memory, State Space Models
 

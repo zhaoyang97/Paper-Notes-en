@@ -18,8 +18,8 @@ content_hash: 6d8e3d4ded867ac8
 # Simultaneous Swap Regret Minimization via KL-Calibration
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.16387](https://arxiv.org/abs/2502.16387)
-**Code**: None
+**arXiv**: [2502.16387](https://arxiv.org/abs/2502.16387)  
+**Code**: None  
 **Area**: Online Learning / Calibration Theory
 **Keywords**: Swap Regret, KL-Calibration, Proper Loss, Online Forecasting, Blum-Mansour Reduction
 

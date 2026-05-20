@@ -18,8 +18,8 @@ content_hash: 3486982d3b55ffb4
 # Momentum Memory for Knowledge Distillation in Computational Pathology
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21395](https://arxiv.org/abs/2602.21395)
-**Code**: [Available](https://github.com/CAIR-LAB-WFUSM/MoMKD)
+**arXiv**: [2602.21395](https://arxiv.org/abs/2602.21395)  
+**Code**: [Available](https://github.com/CAIR-LAB-WFUSM/MoMKD)  
 **Area**: Medical Imaging
 **Keywords**: Knowledge Distillation, Computational Pathology, Momentum Memory, Cross-modal Alignment, Multiple Instance Learning
 

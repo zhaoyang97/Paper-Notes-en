@@ -18,8 +18,8 @@ content_hash: b4afab44540d8572
 # TopoMesh: High-Fidelity Mesh Autoencoding via Topological Unification
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24278](https://arxiv.org/abs/2603.24278)
-**Code**: [Project Page](https://logan0601.github.io/projects/topomesh/index.html)
+**arXiv**: [2603.24278](https://arxiv.org/abs/2603.24278)  
+**Code**: [Project Page](https://logan0601.github.io/projects/topomesh/index.html)  
 **Area**: 3D Vision / 3D Generation
 **Keywords**: 3D VAE, Mesh Autoencoding, Topological Unification, Dual Marching Cubes, Sharp Feature Preservation
 

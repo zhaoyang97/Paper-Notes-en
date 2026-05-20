@@ -18,8 +18,8 @@ content_hash: ac7de94a3bed985e
 # Block-Sample MAC-Bayes Generalization Bounds
 
 **Conference**: ICLR2026
-**arXiv**: [2602.12605](https://arxiv.org/abs/2602.12605)
-**Code**: None
+**arXiv**: [2602.12605](https://arxiv.org/abs/2602.12605)  
+**Code**: None  
 **Area**: LLM Pretraining
 **Keywords**: PAC-Bayes, MAC-Bayes, generalization bounds, information theory, block samples
 

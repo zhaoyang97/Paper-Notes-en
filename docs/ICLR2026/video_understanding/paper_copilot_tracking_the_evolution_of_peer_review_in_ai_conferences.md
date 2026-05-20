@@ -19,8 +19,8 @@ content_hash: bd2ce84d33cef910
 # Paper Copilot: Tracking the Evolution of Peer Review in AI Conferences
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.13201](https://arxiv.org/abs/2510.13201)
-**Code**: [Project Page](https://papercopilot.com)
+**arXiv**: [2510.13201](https://arxiv.org/abs/2510.13201)  
+**Code**: [Project Page](https://papercopilot.com)  
 **Area**: Scientometrics / Review Analysis
 **Keywords**: peer review, score dynamics, decision entropy, conference statistics, dataset, LLM metadata extraction
 

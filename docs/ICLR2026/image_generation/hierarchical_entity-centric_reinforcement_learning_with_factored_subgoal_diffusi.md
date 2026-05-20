@@ -18,8 +18,8 @@ content_hash: 47782615fb313989
 # Hierarchical Entity-centric Reinforcement Learning with Factored Subgoal Diffusion
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.02722](https://arxiv.org/abs/2602.02722)
-**Code**: [GitHub](https://github.com/DanHrmti/HECRL)
+**arXiv**: [2602.02722](https://arxiv.org/abs/2602.02722)  
+**Code**: [GitHub](https://github.com/DanHrmti/HECRL)  
 **Area**: Diffusion Models
 **Keywords**: Hierarchical Reinforcement Learning, Goal-Conditioned RL, Diffusion Models, Entity-Centric, Subgoal Generation
 

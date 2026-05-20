@@ -18,8 +18,8 @@ content_hash: d40aaa0134423064
 # TurboReg: TurboClique for Robust and Efficient Point Cloud Registration
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.01439](https://arxiv.org/abs/2507.01439)
-**Code**: [GitHub](https://github.com/ShaochengYan/TurboReg)
+**arXiv**: [2507.01439](https://arxiv.org/abs/2507.01439)  
+**Code**: [GitHub](https://github.com/ShaochengYan/TurboReg)  
 **Area**: 3D Vision
 **Keywords**: Point cloud registration, graph matching, maximum clique search, spatial consistency, robust estimation
 

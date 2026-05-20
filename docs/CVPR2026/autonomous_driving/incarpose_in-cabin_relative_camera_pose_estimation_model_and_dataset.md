@@ -18,8 +18,8 @@ content_hash: 7f9d8cb237ef6f5f
 # InCaRPose: In-Cabin Relative Camera Pose Estimation Model and Dataset
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03814](https://arxiv.org/abs/2604.03814)
-**Code**: [https://github.com/felixstillger/InCaRPose](https://github.com/felixstillger/InCaRPose)
+**arXiv**: [2604.03814](https://arxiv.org/abs/2604.03814)  
+**Code**: [https://github.com/felixstillger/InCaRPose](https://github.com/felixstillger/InCaRPose)  
 **Area**: Autonomous Driving / 3D Vision
 **Keywords**: Camera Pose Estimation, In-Cabin Perception, Fisheye Camera, Sim-to-Real Transfer, Transformer
 

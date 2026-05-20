@@ -18,8 +18,8 @@ content_hash: 0b44a763e148d107
 # Reasoning Compiler: LLM-Guided Optimizations for Efficient Model Serving
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01374](https://arxiv.org/abs/2506.01374)
-**Code**: [https://github.com/he-actlab/REASONING_COMPILER](https://github.com/he-actlab/REASONING_COMPILER)
+**arXiv**: [2506.01374](https://arxiv.org/abs/2506.01374)  
+**Code**: [https://github.com/he-actlab/REASONING_COMPILER](https://github.com/he-actlab/REASONING_COMPILER)  
 **Area**: AIGC Detection
 **Keywords**: LLM-guided compilation, MCTS, program optimization, neural compiler, sampling efficiency
 

@@ -18,8 +18,8 @@ content_hash: d1c96965319106a6
 # WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.02425](https://arxiv.org/abs/2512.02425)
-**Code**: [https://worldmm.github.io](https://worldmm.github.io)
+**arXiv**: [2512.02425](https://arxiv.org/abs/2512.02425)  
+**Code**: [https://worldmm.github.io](https://worldmm.github.io)  
 **Area**: Video Understanding / LLM Agent / Long Video Reasoning
 **Keywords**: Multimodal Memory, Long Video Understanding, Adaptive Retrieval, Knowledge Graph, Multi-Temporal Scale
 

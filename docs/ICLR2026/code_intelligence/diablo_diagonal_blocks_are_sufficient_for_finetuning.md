@@ -18,8 +18,8 @@ content_hash: 6f301567ab92225e
 # DiaBlo: Diagonal Blocks Are Sufficient For Finetuning
 
 **Conference**: ICLR2026
-**arXiv**: [2506.03230](https://arxiv.org/abs/2506.03230)
-**Code**: [ziyangjoy/DiaBlo](https://github.com/ziyangjoy/DiaBlo)
+**arXiv**: [2506.03230](https://arxiv.org/abs/2506.03230)  
+**Code**: [ziyangjoy/DiaBlo](https://github.com/ziyangjoy/DiaBlo)  
 **Area**: Code Intelligence
 **Keywords**: PEFT, diagonal blocks, LoRA alternative, LLM fine-tuning, parameter efficiency
 

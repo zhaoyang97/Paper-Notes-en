@@ -18,8 +18,8 @@ content_hash: 2c75120c99bef26a
 # FlowCut: Rethinking Redundancy via Information Flow for Efficient Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19536](https://arxiv.org/abs/2505.19536)
-**Code**: [https://github.com/TungChintao/FlowCut](https://github.com/TungChintao/FlowCut)
+**arXiv**: [2505.19536](https://arxiv.org/abs/2505.19536)  
+**Code**: [https://github.com/TungChintao/FlowCut](https://github.com/TungChintao/FlowCut)  
 **Area**: Model Compression / Multimodal VLM
 **Keywords**: visual token pruning, information flow, multi-criteria scoring, attention entropy, training-free
 
@@ -150,8 +150,8 @@ tags:
 # FlowCut: Rethinking Redundancy via Information Flow for Efficient Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19536](https://arxiv.org/abs/2505.19536)
-**Code**: [https://github.com/TungChintao/FlowCut](https://github.com/TungChintao/FlowCut)
+**arXiv**: [2505.19536](https://arxiv.org/abs/2505.19536)  
+**Code**: [https://github.com/TungChintao/FlowCut](https://github.com/TungChintao/FlowCut)  
 **Area**: Model Compression / Multimodal VLM
 **Keywords**: visual token pruning, information flow, VLM efficiency, attention analysis, training-free
 

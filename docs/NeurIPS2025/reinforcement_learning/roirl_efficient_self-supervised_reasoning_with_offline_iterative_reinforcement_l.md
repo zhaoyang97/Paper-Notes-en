@@ -18,8 +18,8 @@ content_hash: 5b76fb1ca4ace8d4
 # RoiRL: Efficient, Self-Supervised Reasoning with Offline Iterative Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.02892](https://arxiv.org/abs/2510.02892)
-**Code**: Not available
+**arXiv**: [2510.02892](https://arxiv.org/abs/2510.02892)  
+**Code**: Not available  
 **Area**: Reinforcement Learning
 **Keywords**: Offline reinforcement learning, LLM reasoning, self-supervised learning, majority voting, weighted likelihood
 

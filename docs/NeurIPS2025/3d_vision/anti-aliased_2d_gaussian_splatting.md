@@ -18,9 +18,9 @@ content_hash: bf317825e46032f6
 # Anti-Aliased 2D Gaussian Splatting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.11252](https://arxiv.org/abs/2506.11252)
+**arXiv**: [2506.11252](https://arxiv.org/abs/2506.11252)  
 **Authors**: Mae Younes, Adnane Boukhayma (INRIA France, University of Rennes, CNRS, IRISA)
-**Code**: [AA-2DGS](https://github.com/maeyounes/AA-2DGS)
+**Code**: [AA-2DGS](https://github.com/maeyounes/AA-2DGS)  
 **Area**: 3D Vision
 **Keywords**: 2D Gaussian Splatting, Anti-Aliasing, Novel View Synthesis, Surface Reconstruction, Mip Filtering
 

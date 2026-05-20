@@ -18,9 +18,9 @@ content_hash: 527f5a987ded36ef
 # SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.18599](https://arxiv.org/abs/2603.18599)
+**arXiv**: [2603.18599](https://arxiv.org/abs/2603.18599)  
 **Authors**: Jialiang Kang (Peking University), Han Shu, Wenshuo Li, Yingjie Zhai, Xinghao Chen (Huawei)
-**Code**: Unavailable
+**Code**: Unavailable  
 **Area**: Image Generation
 **Keywords**: Autoregressive image generation, inference acceleration, speculative decoding, Jacobi decoding, lossless acceleration
 

@@ -18,8 +18,8 @@ content_hash: 2a7777ae305151c1
 # Reference Recommendation based Membership Inference Attack against Hybrid-based Recommender Systems
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.09442](https://arxiv.org/abs/2512.09442)
-**Code**: None (implementation code provided in the appendix)
+**arXiv**: [2512.09442](https://arxiv.org/abs/2512.09442)  
+**Code**: None (implementation code provided in the appendix)  
 **Area**: AI Security
 **Keywords**: Membership Inference Attack, Hybrid-based Recommender Systems, Reference Recommendation, Relative Membership Metric, Privacy Attack
 

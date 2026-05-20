@@ -17,8 +17,8 @@ content_hash: bec3c27d4f476ec8
 # DH-FaceVid-1K: A Large-Scale High-Quality Dataset for Face Video Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.07151](https://arxiv.org/abs/2410.07151)
-**Code**: [Project Page](https://luna-ai-lab.github.io/DH-FaceVid-1K/)
+**arXiv**: [2410.07151](https://arxiv.org/abs/2410.07151)  
+**Code**: [Project Page](https://luna-ai-lab.github.io/DH-FaceVid-1K/)  
 **Area**: Image Generation / Face Video Generation
 **Keywords**: face video dataset, video generation, text-to-video, image-to-video, diffusion models
 

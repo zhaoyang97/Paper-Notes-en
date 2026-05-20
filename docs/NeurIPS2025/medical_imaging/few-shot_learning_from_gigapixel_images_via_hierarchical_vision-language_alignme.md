@@ -19,8 +19,8 @@ content_hash: 9240438f465fca80
 # Few-Shot Learning from Gigapixel Images via Hierarchical Vision-Language Alignment and Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17982](https://arxiv.org/abs/2505.17982)
-**Code**: [GitHub](https://github.com/bryanwong17/HiVE-MIL)
+**arXiv**: [2505.17982](https://arxiv.org/abs/2505.17982)  
+**Code**: [GitHub](https://github.com/bryanwong17/HiVE-MIL)  
 **Area**: Computational Pathology / Few-Shot Learning
 **Keywords**: Multiple Instance Learning, Vision-Language Models, Hierarchical Graph, Whole Slide Images, Few-Shot Classification, Pathology
 

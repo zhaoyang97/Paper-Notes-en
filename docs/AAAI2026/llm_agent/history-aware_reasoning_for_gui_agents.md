@@ -18,8 +18,8 @@ content_hash: e78e90807b72035c
 # History-Aware Reasoning for GUI Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09127](https://arxiv.org/abs/2511.09127)
-**Code**: [https://github.com/BigTaige/HAR-GUI](https://github.com/BigTaige/HAR-GUI)
+**arXiv**: [2511.09127](https://arxiv.org/abs/2511.09127)  
+**Code**: [https://github.com/BigTaige/HAR-GUI](https://github.com/BigTaige/HAR-GUI)  
 **Area**: Agent / GUI Automation
 **Keywords**: GUI Agent, Short-term Memory, Reinforcement Learning, Reflective Learning, History-Aware Reasoning
 

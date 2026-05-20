@@ -18,8 +18,8 @@ content_hash: d7c6118c79b7b6d2
 # EHETM: High-Quality and Efficient Turbulence Mitigation with Events
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20708](https://arxiv.org/abs/2603.20708)
-**Code**: [https://github.com/Xavier667/EHETM](https://github.com/Xavier667/EHETM)
+**arXiv**: [2603.20708](https://arxiv.org/abs/2603.20708)  
+**Code**: [https://github.com/Xavier667/EHETM](https://github.com/Xavier667/EHETM)  
 **Area**: Scientific Computing / Event Cameras
 **Keywords**: Atmospheric Turbulence Mitigation, Event Camera, Polarity-Weighted Gradient, Event Tube Constraint, Motion Decoupling
 

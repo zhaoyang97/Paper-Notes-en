@@ -18,8 +18,8 @@ content_hash: e15591bf5bb4ab06
 # UnCLe: Towards Scalable Dynamic Causal Discovery in Non-Linear Temporal Systems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.03168](https://arxiv.org/abs/2511.03168)
-**Code**: [GitHub](https://github.com/etigerstudio/uncle-causal-discovery)
+**arXiv**: [2511.03168](https://arxiv.org/abs/2511.03168)  
+**Code**: [GitHub](https://github.com/etigerstudio/uncle-causal-discovery)  
 **Area**: Causal Discovery / Time Series Analysis
 **Keywords**: dynamic causal discovery, time series, Granger causality, temporal perturbation, nonlinear systems
 

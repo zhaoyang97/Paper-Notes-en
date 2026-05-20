@@ -18,8 +18,8 @@ content_hash: 7cf65e3081d7986c
 # Bayesian Influence Functions for Hessian-Free Data Attribution
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26544](https://arxiv.org/abs/2509.26544)
-**Code**: None
+**arXiv**: [2509.26544](https://arxiv.org/abs/2509.26544)  
+**Code**: None  
 **Area**: Other
 **Keywords**: influence functions, training data attribution, Bayesian inference, SGMCMC, Hessian-free, data valuation
 

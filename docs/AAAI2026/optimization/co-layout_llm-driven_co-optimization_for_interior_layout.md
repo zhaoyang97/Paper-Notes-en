@@ -18,8 +18,8 @@ content_hash: 90482c16b793187f
 # Co-Layout: LLM-driven Co-optimization for Interior Layout
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12474](https://arxiv.org/abs/2511.12474)
-**Code**: None
+**arXiv**: [2511.12474](https://arxiv.org/abs/2511.12474)  
+**Code**: None  
 **Project Page**: [https://xccelephant.github.io/paper/co-layout/](https://xccelephant.github.io/paper/co-layout/)
 **Area**: Optimization / Interior Design
 **Keywords**: Interior layout, integer programming, large language models, co-optimization, coarse-to-fine strategy

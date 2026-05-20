@@ -18,8 +18,8 @@ content_hash: 4778e96774700e94
 # A Step to Decouple Optimization in 3DGS
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.16736](https://arxiv.org/abs/2601.16736)
-**Code**: [https://eliottdjay.github.io/adamwgs/](https://eliottdjay.github.io/adamwgs/)
+**arXiv**: [2601.16736](https://arxiv.org/abs/2601.16736)  
+**Code**: [https://eliottdjay.github.io/adamwgs/](https://eliottdjay.github.io/adamwgs/)  
 **Area**: 3D Vision
 **Keywords**: 3DGS, Optimizer, Adam, Weight Decay, Sparse Optimization
 

@@ -18,8 +18,8 @@ content_hash: 94f09541deef0ea0
 # Seeing Beyond: Extrapolative Domain Adaptive Panoramic Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.15475](https://arxiv.org/abs/2603.15475)
-**Code**: [Available](https://github.com/zyfone/EDA-PSeg)
+**arXiv**: [2603.15475](https://arxiv.org/abs/2603.15475)  
+**Code**: [Available](https://github.com/zyfone/EDA-PSeg)  
 **Area**: Semantic Segmentation
 **Keywords**: Panoramic semantic segmentation, open-set domain adaptation, field-of-view transfer, graph matching, Euler attention
 

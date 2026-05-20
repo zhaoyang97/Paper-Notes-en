@@ -18,8 +18,8 @@ content_hash: 06c350d701458037
 # Open-World Drone Active Tracking with Goal-Centered Rewards
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.00744](https://arxiv.org/abs/2412.00744)
-**Code**: [DAT_Benchmark](https://github.com/SHWplus/DAT_Benchmark)
+**arXiv**: [2412.00744](https://arxiv.org/abs/2412.00744)  
+**Code**: [DAT_Benchmark](https://github.com/SHWplus/DAT_Benchmark)  
 **Area**: Video Understanding / Drone Tracking
 **Keywords**: Drone Active Tracking, Reinforcement Learning, Goal-Centered Reward, Curriculum Learning, Open-World Benchmark
 

@@ -18,8 +18,8 @@ content_hash: 4ea69679a9be4090
 # Masked by Consensus: Disentangling Privileged Knowledge in LLM Correctness
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12373](https://arxiv.org/abs/2604.12373)
-**Code**: None
+**arXiv**: [2604.12373](https://arxiv.org/abs/2604.12373)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: privileged knowledge, correctness prediction, hidden-state probing, inter-model agreement, domain specificity
 

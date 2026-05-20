@@ -18,8 +18,8 @@ content_hash: 993b0b54c00e2150
 # 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: N/A (CVF Open Access)
-**Code**: [https://4dbench.github.io/](https://4dbench.github.io/)
+**arXiv**: N/A (CVF Open Access)  
+**Code**: [https://4dbench.github.io/](https://4dbench.github.io/)  
 **Area**: Video Understanding
 **Keywords**: 4D understanding, MLLM evaluation, spatiotemporal reasoning, benchmark, video question answering
 

@@ -18,8 +18,8 @@ content_hash: 562f51ae3a5f5c41
 # Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12684](https://arxiv.org/abs/2505.12684)
-**Code**: N/A
+**arXiv**: [2505.12684](https://arxiv.org/abs/2505.12684)  
+**Code**: N/A  
 **Area**: Model Compression
 **Keywords**: Federated Graph Learning, Graph Foundation Model, Knowledge Entanglement, Vector Quantization, Prompt Learning
 

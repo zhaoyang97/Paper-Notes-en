@@ -18,8 +18,8 @@ content_hash: 3aa27f74a88551fe
 # Federated Modality-specific Encoders and Partially Personalized Fusion Decoder for Multimodal Brain Tumor Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04887](https://arxiv.org/abs/2603.04887)
-**Code**: [GitHub](https://github.com/ccarliu/FedMEPD)
+**arXiv**: [2603.04887](https://arxiv.org/abs/2603.04887)  
+**Code**: [GitHub](https://github.com/ccarliu/FedMEPD)  
 **Area**: Medical Imaging
 **Keywords**: Federated Learning, Multimodal Brain Tumor Segmentation, Intermodal Heterogeneity, Personalized FL, Cross-Attention Calibration
 

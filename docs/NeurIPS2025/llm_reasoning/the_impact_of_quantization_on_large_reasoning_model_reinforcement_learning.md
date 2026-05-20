@@ -18,8 +18,8 @@ content_hash: d915624dcb9badc8
 # The Impact of Quantization on Large Reasoning Model Reinforcement Learning
 
 **Conference**: NeurIPS 2025 (Workshop: Efficient Reasoning)
-**arXiv**: [2511.15694](https://arxiv.org/abs/2511.15694)
-**Code**: [https://github.com/d-matrix-ai/rlquant](https://github.com/d-matrix-ai/rlquant)
+**arXiv**: [2511.15694](https://arxiv.org/abs/2511.15694)  
+**Code**: [https://github.com/d-matrix-ai/rlquant](https://github.com/d-matrix-ai/rlquant)  
 **Area**: LLM Reasoning
 **Keywords**: Quantization, Reasoning Models, Reinforcement Learning, GRPO, QLoRA
 

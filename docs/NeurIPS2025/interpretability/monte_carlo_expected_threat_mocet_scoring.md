@@ -20,8 +20,8 @@ content_hash: 59d71116c9199355
 # Monte Carlo Expected Threat (MOCET) Scoring
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.16823](https://arxiv.org/abs/2511.16823)
-**Code**: available upon request
+**arXiv**: [2511.16823](https://arxiv.org/abs/2511.16823)  
+**Code**: available upon request  
 **Area**: Interpretability
 **Keywords**: AI safety, biosecurity, LLM risk assessment, Monte Carlo simulation, threat scoring, k-NN, ASL
 

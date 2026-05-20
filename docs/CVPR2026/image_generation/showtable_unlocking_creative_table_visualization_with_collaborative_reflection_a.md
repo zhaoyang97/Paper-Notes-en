@@ -18,8 +18,8 @@ content_hash: be240aca546997f2
 # ShowTable: Unlocking Creative Table Visualization with Collaborative Reflection and Refinement
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.13303](https://arxiv.org/abs/2512.13303)
-**Code**: [https://lntzm.github.io/showtable-page/](https://lntzm.github.io/showtable-page/)
+**arXiv**: [2512.13303](https://arxiv.org/abs/2512.13303)  
+**Code**: [https://lntzm.github.io/showtable-page/](https://lntzm.github.io/showtable-page/)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Table Visualization, Self-Correction, MLLM Reasoning, Diffusion Models, Reinforcement Learning
 

@@ -18,8 +18,8 @@ content_hash: a26a0df2015247b5
 # Difficulty Controlled Diffusion Model for Synthesizing Effective Training Data
 
 **Conference**: AAAI 2026
-**arXiv**: [2411.18109](https://arxiv.org/abs/2411.18109)
-**Code**: [https://github.com/komejisatori/Difficulty-Aware-Synthesis](https://github.com/komejisatori/Difficulty-Aware-Synthesis)
+**arXiv**: [2411.18109](https://arxiv.org/abs/2411.18109)  
+**Code**: [https://github.com/komejisatori/Difficulty-Aware-Synthesis](https://github.com/komejisatori/Difficulty-Aware-Synthesis)  
 **Area**: Image Generation / Data Synthesis
 **Keywords**: Diffusion Models, Difficulty-Controllable Generation, Training Data Synthesis, Curriculum Learning, Difficulty Encoder
 

@@ -18,8 +18,8 @@ content_hash: 749f68ddadeb67c5
 # FlexAC: Towards Flexible Control of Associative Reasoning in Multimodal Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11190](https://arxiv.org/abs/2510.11190)
-**Code**: [github.com/ylhz/FlexAC](https://github.com/ylhz/FlexAC)
+**arXiv**: [2510.11190](https://arxiv.org/abs/2510.11190)  
+**Code**: [github.com/ylhz/FlexAC](https://github.com/ylhz/FlexAC)  
 **Area**: Multimodal VLM
 **Keywords**: hallucination control, creativity enhancement, associative reasoning, intermediate-layer intervention, steering vectors
 

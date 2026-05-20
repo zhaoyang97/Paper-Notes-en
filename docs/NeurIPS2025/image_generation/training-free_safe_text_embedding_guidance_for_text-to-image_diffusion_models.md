@@ -18,8 +18,8 @@ content_hash: 4df4536cd28d5302
 # Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24012](https://arxiv.org/abs/2510.24012)
-**Code**: [GitHub](https://github.com/aailab-kaist/STG)
+**arXiv**: [2510.24012](https://arxiv.org/abs/2510.24012)  
+**Code**: [GitHub](https://github.com/aailab-kaist/STG)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Safe generation, text embedding guidance, diffusion models, training-free methods, content safety
 

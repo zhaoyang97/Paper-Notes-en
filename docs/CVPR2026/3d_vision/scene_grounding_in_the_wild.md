@@ -18,8 +18,8 @@ content_hash: 06052b3d0abb3aa8
 # Scene Grounding In the Wild
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26584](https://arxiv.org/abs/2603.26584)
-**Code**: [https://tau-vailab.github.io/SceneGround/](https://tau-vailab.github.io/SceneGround/)
+**arXiv**: [2603.26584](https://arxiv.org/abs/2603.26584)  
+**Code**: [https://tau-vailab.github.io/SceneGround/](https://tau-vailab.github.io/SceneGround/)  
 **Area**: 3D Vision
 **Keywords**: Scene Grounding, 3D Reconstruction, Gaussian Splatting, Semantic Features, Cross-Domain Alignment
 

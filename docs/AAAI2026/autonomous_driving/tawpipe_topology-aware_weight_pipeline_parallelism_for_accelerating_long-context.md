@@ -18,8 +18,8 @@ content_hash: 0afaf454a5891bed
 # TawPipe: Topology-Aware Weight Pipeline Parallelism for Accelerating Long-Context Large Models Training
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09741](https://arxiv.org/abs/2511.09741)
-**Code**: [github.com/wuhouming/TawPipe](https://github.com/wuhouming/TawPipe)
+**arXiv**: [2511.09741](https://arxiv.org/abs/2511.09741)  
+**Code**: [github.com/wuhouming/TawPipe](https://github.com/wuhouming/TawPipe)  
 **Area**: Distributed Training / System Optimization
 **Keywords**: Pipeline Parallelism, Weight Passing, Topology-Aware, Long-Context Training, LLM Training Acceleration
 

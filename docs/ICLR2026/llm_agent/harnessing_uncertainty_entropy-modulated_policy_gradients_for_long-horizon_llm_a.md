@@ -18,8 +18,8 @@ content_hash: 65fc7a1a8519f8aa
 # Harnessing Uncertainty: Entropy-Modulated Policy Gradients for Long-Horizon LLM Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.09265](https://arxiv.org/abs/2509.09265)
-**Code**: [Project Page](https://empgseed-seed.github.io/)
+**arXiv**: [2509.09265](https://arxiv.org/abs/2509.09265)  
+**Code**: [Project Page](https://empgseed-seed.github.io/)  
 **Area**: LLM Agent
 **Keywords**: policy gradients, entropy modulation, long-horizon agents, credit assignment, reinforcement learning
 

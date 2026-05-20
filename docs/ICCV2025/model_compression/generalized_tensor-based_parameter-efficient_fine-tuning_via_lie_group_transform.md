@@ -18,8 +18,8 @@ content_hash: ebc37777e2a6d307
 # Generalized Tensor-based Parameter-Efficient Fine-Tuning via Lie Group Transformations
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.00851](https://arxiv.org/abs/2504.00851)
-**Code**: [https://github.com/Chongjie-Si/Subspace-Tuning](https://github.com/Chongjie-Si/Subspace-Tuning)
+**arXiv**: [2504.00851](https://arxiv.org/abs/2504.00851)  
+**Code**: [https://github.com/Chongjie-Si/Subspace-Tuning](https://github.com/Chongjie-Si/Subspace-Tuning)  
 **Area**: Parameter-Efficient Fine-Tuning / Model Compression
 **Keywords**: PEFT, LoRA, Lie Group, High-Dimensional Parameter Space, Convolutional Kernel Fine-Tuning
 
@@ -43,24 +43,24 @@ Parameters are treated as elements of a Lie group, and updates are modeled as pe
 
 1. **Lie Group Construction**:
 
-   - The set of convolutional kernel parameters $G = \{\mathcal{W} \in \mathbb{R}^{C_{in} \times C_{out} \times k \times k} | W_{c,i,j,l} \neq 0\}$ is treated as a Lie group.
-   - The group operation is defined as element-wise multiplication (Hadamard product) $\odot$.
-   - The identity element is the all-ones tensor $\mathcal{I}$, and the inverse is the element-wise reciprocal.
-   - $G \cong \prod_{c,i,j,l} (\mathbb{R} \setminus \{0\})$ is a Cartesian product of one-dimensional Lie groups, naturally endowed with a smooth manifold structure.
-   - The corresponding Lie algebra $\mathfrak{g}$ is isomorphic to $\mathbb{R}^{C_{out} \times C_{in} \times k \times k}$, forming a linear vector space.
+    - The set of convolutional kernel parameters $G = \{\mathcal{W} \in \mathbb{R}^{C_{in} \times C_{out} \times k \times k} | W_{c,i,j,l} \neq 0\}$ is treated as a Lie group.
+    - The group operation is defined as element-wise multiplication (Hadamard product) $\odot$.
+    - The identity element is the all-ones tensor $\mathcal{I}$, and the inverse is the element-wise reciprocal.
+    - $G \cong \prod_{c,i,j,l} (\mathbb{R} \setminus \{0\})$ is a Cartesian product of one-dimensional Lie groups, naturally endowed with a smooth manifold structure.
+    - The corresponding Lie algebra $\mathfrak{g}$ is isomorphic to $\mathbb{R}^{C_{out} \times C_{in} \times k \times k}$, forming a linear vector space.
 
 2. **Multiplicative Parameter Update**:
 
-   - Conventional additive update: $\mathcal{W} \rightarrow \mathcal{W} + \Delta\mathcal{W}$ (structure-breaking).
-   - LieRA multiplicative update: $\mathcal{W} \rightarrow \mathcal{W} \odot \exp(\Delta\mathcal{W})$.
-   - The multiplicative update scales each element proportionally, preserving relative structure and spatial locality within the kernel.
-   - Since $G$ is closed under the group operation, updated parameters remain in $G$, maintaining manifold structure.
+    - Conventional additive update: $\mathcal{W} \rightarrow \mathcal{W} + \Delta\mathcal{W}$ (structure-breaking).
+    - LieRA multiplicative update: $\mathcal{W} \rightarrow \mathcal{W} \odot \exp(\Delta\mathcal{W})$.
+    - The multiplicative update scales each element proportionally, preserving relative structure and spatial locality within the kernel.
+    - Since $G$ is closed under the group operation, updated parameters remain in $G$, maintaining manifold structure.
 
 3. **First-Order Taylor Approximation**:
 
-   - Since $\Delta\mathcal{W}$ is small, $\exp(\Delta\mathcal{W}) \approx \mathcal{I} + \Delta\mathcal{W}$.
-   - The update rule simplifies to: $\mathcal{W} \odot \exp(\Delta\mathcal{W}) \approx \mathcal{W} + \mathcal{W} \odot \Delta\mathcal{W}$.
-   - This approximation substantially reduces computational overhead with negligible performance loss.
+    - Since $\Delta\mathcal{W}$ is small, $\exp(\Delta\mathcal{W}) \approx \mathcal{I} + \Delta\mathcal{W}$.
+    - The update rule simplifies to: $\mathcal{W} \odot \exp(\Delta\mathcal{W}) \approx \mathcal{W} + \mathcal{W} \odot \Delta\mathcal{W}$.
+    - This approximation substantially reduces computational overhead with negligible performance loss.
 
 ### Theoretical Analysis: Rank Capacity
 

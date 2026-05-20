@@ -17,8 +17,8 @@ content_hash: 0d895bce5266e4d6
 # Do Vision Models Perceive Illusory Motion in Static Images Like Humans?
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.09853](https://arxiv.org/abs/2604.09853)
-**Code**: Available
+**arXiv**: [2604.09853](https://arxiv.org/abs/2604.09853)  
+**Code**: Available  
 **Area**: Visual Perception / Computational Neuroscience
 **Keywords**: motion illusion, optical flow models, human vision, rotating snakes illusion, biologically-inspired models
 

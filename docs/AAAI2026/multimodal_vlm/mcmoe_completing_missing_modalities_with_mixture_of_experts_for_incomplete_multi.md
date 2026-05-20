@@ -18,8 +18,8 @@ content_hash: 1603538f3cbc120a
 # MCMoE: Completing Missing Modalities with Mixture of Experts for Incomplete Multimodal Action Quality Assessment
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.17397](https://arxiv.org/abs/2511.17397)
-**Code**: [https://github.com/XuHuangbiao/MCMoE](https://github.com/XuHuangbiao/MCMoE)
+**arXiv**: [2511.17397](https://arxiv.org/abs/2511.17397)  
+**Code**: [https://github.com/XuHuangbiao/MCMoE](https://github.com/XuHuangbiao/MCMoE)  
 **Area**: Multimodal VLM
 **Keywords**: Incomplete multimodal learning, action quality assessment, mixture of experts, modality completion, cross-modal fusion
 

@@ -19,8 +19,8 @@ content_hash: 479d3de85a53fdc1
 # Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.19144](https://arxiv.org/abs/2601.19144)
-**Code**: None
+**arXiv**: [2601.19144](https://arxiv.org/abs/2601.19144)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: grid-based storage, out-of-order retrieval, maximum capacity, k-bounded perturbation, robust storage, relocation minimization
 
@@ -68,9 +68,9 @@ When $k$ exceeds the theoretical upper bound and relocations are unavoidable:
 
 1. Compute the retrieval path $\pi$ with the fewest blockers for target item $x$.
 2. Relocate each blocker $b$ along $\pi$ from outside to inside:
-   - Compute the current set $U$ of unblocked items (those with direct I/O access).
-   - Preferentially relocate $b$ within $W$, choosing the nearest empty cell that does not block items in $U$.
-   - If no empty cell exists in $W$, temporarily move $b$ to the I/O row, retrieve $x$, and then return $b$ to its original position.
+    - Compute the current set $U$ of unblocked items (those with direct I/O access).
+    - Preferentially relocate $b$ within $W$, choosing the nearest empty cell that does not block items in $U$.
+    - If no empty cell exists in $W$, temporarily move $b$ to the I/O row, retrieve $x$, and then return $b$ to its original position.
 3. Constraint: the I/O row must be cleared after each retrieval.
 
 ## Key Experimental Results

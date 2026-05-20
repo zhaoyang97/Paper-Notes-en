@@ -19,8 +19,8 @@ content_hash: a16764603fb4c94c
 # SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.08600](https://arxiv.org/abs/2504.08600)
-**Code**: [https://github.com/IDEA-FinAI/SQL-R1](https://github.com/IDEA-FinAI/SQL-R1)
+**arXiv**: [2504.08600](https://arxiv.org/abs/2504.08600)  
+**Code**: [https://github.com/IDEA-FinAI/SQL-R1](https://github.com/IDEA-FinAI/SQL-R1)  
 **Area**: LLM Reasoning
 **Keywords**: NL2SQL, Reinforcement Learning, GRPO, Cold Start, Synthetic Data, Reasoning Capability
 

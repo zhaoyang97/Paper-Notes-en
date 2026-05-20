@@ -18,8 +18,8 @@ content_hash: 833750a7d639a4b9
 # Beyond One Shot, Beyond One Perspective: Cross-View and Long-Horizon Distillation for Better LiDAR Representations
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.05260](https://arxiv.org/abs/2507.05260)
-**Code**: Available (publicly released as noted in the paper)
+**arXiv**: [2507.05260](https://arxiv.org/abs/2507.05260)  
+**Code**: Available (publicly released as noted in the paper)  
 **Area**: Autonomous Driving / 3D Point Cloud Representation Learning
 **Keywords**: LiDAR representation learning, image-to-LiDAR distillation, cross-view aggregation, long-horizon feature propagation, pre-training
 

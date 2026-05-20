@@ -17,8 +17,8 @@ content_hash: 8ebb078c609dd08b
 # Frequency-Aware Flow Matching for High-Quality Image Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.15521](https://arxiv.org/abs/2604.15521)
-**Code**: [https://github.com/OliverRensu/FreqFlow](https://github.com/OliverRensu/FreqFlow)
+**arXiv**: [2604.15521](https://arxiv.org/abs/2604.15521)  
+**Code**: [https://github.com/OliverRensu/FreqFlow](https://github.com/OliverRensu/FreqFlow)  
 **Area**: Image Generation
 **Keywords**: Flow Matching, Frequency-Domain Awareness, Image Generation, Dual-Branch Architecture, Adaptive Weighting
 

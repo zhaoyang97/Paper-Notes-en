@@ -18,8 +18,8 @@ content_hash: b64ab8b915a0f4d9
 # Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.08892](https://arxiv.org/abs/2512.08892)
-**Code**: [GitHub](https://github.com/Teddy-XiongGZ/RAGLens)
+**arXiv**: [2512.08892](https://arxiv.org/abs/2512.08892)  
+**Code**: [GitHub](https://github.com/Teddy-XiongGZ/RAGLens)  
 **Area**: RAG / Interpretable AI
 **Keywords**: Retrieval-Augmented Generation, Sparse Autoencoders, Hallucination Detection, Interpretability, Faithfulness
 

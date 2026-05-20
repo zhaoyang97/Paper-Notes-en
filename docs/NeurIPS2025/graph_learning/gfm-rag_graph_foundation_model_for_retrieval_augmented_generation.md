@@ -18,8 +18,8 @@ content_hash: 7d0595fd887a9425
 # GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.01113](https://arxiv.org/abs/2502.01113)
-**Code**: [https://github.com/rmanluo/gfm-rag](https://github.com/rmanluo/gfm-rag)
+**arXiv**: [2502.01113](https://arxiv.org/abs/2502.01113)  
+**Code**: [https://github.com/rmanluo/gfm-rag](https://github.com/rmanluo/gfm-rag)  
 **Area**: Graph Learning / RAG / Knowledge Graphs
 **Keywords**: Graph Foundation Model, RAG, Knowledge Graph, Multi-hop Reasoning, GNN
 

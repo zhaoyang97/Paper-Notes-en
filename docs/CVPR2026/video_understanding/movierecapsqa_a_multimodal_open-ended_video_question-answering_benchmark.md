@@ -18,8 +18,8 @@ content_hash: b28d6b1f957afa3e
 # MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.02536](https://arxiv.org/abs/2601.02536)
-**Code**: [MovieRecapsQA](https://github.com/MovieRecapsQA) (publicly available)
+**arXiv**: [2601.02536](https://arxiv.org/abs/2601.02536)  
+**Code**: [MovieRecapsQA](https://github.com/MovieRecapsQA) (publicly available)  
 **Area**: Video Understanding
 **Keywords**: Video Question Answering, Multimodal Understanding, Open-Ended Evaluation, Movie Understanding, Reference-Free Evaluation
 

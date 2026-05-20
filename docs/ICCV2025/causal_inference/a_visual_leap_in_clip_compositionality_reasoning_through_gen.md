@@ -18,8 +18,8 @@ content_hash: ec02299e1ddf7257
 # A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04699](https://arxiv.org/abs/2507.04699)
-**Code**: None (not released)
+**arXiv**: [2507.04699](https://arxiv.org/abs/2507.04699)  
+**Code**: None (not released)  
 **Area**: Causal Reasoning
 **Keywords**: CLIP, compositional reasoning, counterfactual data augmentation, diffusion models, contrastive learning
 
@@ -157,9 +157,9 @@ The overall concept is analogous to assembling a jigsaw puzzle: the LLM designs 
 1. **Counterfactual Data Augmentation Pipeline**
     - **Entity parsing**: GPT-4o parses dense COCO captions (original short annotations are first expanded into dense descriptions by an LLM), identifying key entities along with their attributes and spatial relations. For example, from "a white dog on the left of a black cat," two entities—white dog and black cat—are extracted.
     - **Three-dimensional variant generation**:
-      - **Attribute modification**: alter a property (color/type/state) of one object (e.g., black cat → yellow cat) while preserving position.
-      - **Position modification**: swap the relative position description of objects (left ↔ right) while preserving attributes.
-      - **Relation modification**: after constraining the number of objects, use Chain-of-Thought reasoning to analyze parts and interactions before generating variants (the most challenging dimension).
+        - **Attribute modification**: alter a property (color/type/state) of one object (e.g., black cat → yellow cat) while preserving position.
+        - **Position modification**: swap the relative position description of objects (left ↔ right) while preserving attributes.
+        - **Relation modification**: after constraining the number of objects, use Chain-of-Thought reasoning to analyze parts and interactions before generating variants (the most challenging dimension).
     - **Four operations**: for each original sample, four operations—add entity, remove entity, modify entity attribute, and regenerate with the same subject—each contribute 25% of counterfactual samples.
     - **Real image stitching supplement**: real images from COCO are stitched according to coordinates provided by the LLM, supplementing the generated data to form the training set.
     - **Quality filtering**: CLIP computes image-text similarity scores, filtering out low-quality generated results.
@@ -187,8 +187,8 @@ $$w_{local}(t) = \begin{cases} w_{max}, & t \leq t_{th} \\ w_{max}\left(1 - \fra
 3. **Set-structured Loss Function**
     - Standard contrastive loss (InfoNCE) contrasts each positive sample against all other samples in the batch; its effectiveness is highly dependent on negative sample quality and batch size.
     - This paper exploits the natural grouping structure of counterfactual sets, decomposing computation into two levels:
-      - **Intra-set loss $\mathcal{L}_{intra}$**: fine-grained discrimination within each counterfactual set—matching pairs within the same set are positives; non-matching pairs are negatives.
-      - **Inter-set loss $\mathcal{L}_{inter}$**: each set is represented solely by its ground-truth image-text pair for coarse-grained cross-set contrastive learning.
+        - **Intra-set loss $\mathcal{L}_{intra}$**: fine-grained discrimination within each counterfactual set—matching pairs within the same set are positives; non-matching pairs are negatives.
+        - **Inter-set loss $\mathcal{L}_{inter}$**: each set is represented solely by its ground-truth image-text pair for coarse-grained cross-set contrastive learning.
     - Advantage: avoids the full $O(N^2)$ negative-pair computation; the intra-set already provides sufficiently hard negatives (counterfactual variants), while inter-set requires only coarse-grained discrimination.
 
 ### Loss & Training

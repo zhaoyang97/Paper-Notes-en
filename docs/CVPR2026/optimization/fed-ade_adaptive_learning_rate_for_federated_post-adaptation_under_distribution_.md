@@ -18,8 +18,8 @@ content_hash: f3437d7bb5e7d461
 # Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift
 
 **Conference**: CVPR2026
-**arXiv**: [2603.01040](https://arxiv.org/abs/2603.01040)
-**Code**: [h2w1/Fed-ADE](https://github.com/h2w1/Fed-ADE)
+**arXiv**: [2603.01040](https://arxiv.org/abs/2603.01040)  
+**Code**: [h2w1/Fed-ADE](https://github.com/h2w1/Fed-ADE)  
 **Area**: Optimization
 **Keywords**: federated learning, distribution shift, adaptive learning rate, online adaptation, unsupervised adaptation
 

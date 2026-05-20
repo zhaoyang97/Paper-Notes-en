@@ -18,8 +18,8 @@ content_hash: eb997a1c21b308e1
 # KVComm: Enabling Efficient LLM Communication through Selective KV Sharing
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03346](https://arxiv.org/abs/2510.03346)
-**Code**: To be confirmed
+**arXiv**: [2510.03346](https://arxiv.org/abs/2510.03346)  
+**Code**: To be confirmed  
 **Area**: Agent / LLM Efficiency
 **Keywords**: LLM communication, KV cache sharing, multi-agent LLM, selective layer, attention importance
 
@@ -48,20 +48,20 @@ The Sender processes context → extracts KV pairs → applies a layer selection
 
 1. **Hidden States vs. KV Pairs**:
 
-   - Hidden states drawback: the last-token representation is most informative, yet direct transmission replaces the receiver's own representations.
-   - KV pairs advantage: can be injected at arbitrary layers without overwriting receiver information; the attention mechanism naturally determines how much to attend to the shared content.
+    - Hidden states drawback: the last-token representation is most informative, yet direct transmission replaces the receiver's own representations.
+    - KV pairs advantage: can be injected at arbitrary layers without overwriting receiver information; the attention mechanism naturally determines how much to attend to the shared content.
 
 2. **Layer Selection Strategy**:
 
-   - Attention importance score: $\hat{S}_a^l = \frac{1}{H|Q|}\sum_h\sum_q\sum_c a_{h,q,c}^l$
-   - Gaussian prior: $P^l = \exp(-\frac{(l-\mu)^2}{2\sigma^2})$ (encourages selection of intermediate layers)
-   - Final score: $S^l = \alpha S_a^l + (1-\alpha) P^l$; top-$M$ layers are selected
-   - Only 1 calibration sample is required for robust layer selection
+    - Attention importance score: $\hat{S}_a^l = \frac{1}{H|Q|}\sum_h\sum_q\sum_c a_{h,q,c}^l$
+    - Gaussian prior: $P^l = \exp(-\frac{(l-\mu)^2}{2\sigma^2})$ (encourages selection of intermediate layers)
+    - Final score: $S^l = \alpha S_a^l + (1-\alpha) P^l$; top-$M$ layers are selected
+    - Only 1 calibration sample is required for robust layer selection
 
 3. **Two Hypotheses Validated**:
 
-   - H1: KVs from intermediate layers carry the most transferable semantic knowledge.
-   - H2: Layers with more concentrated attention are more informative.
+    - H1: KVs from intermediate layers carry the most transferable semantic knowledge.
+    - H2: Layers with more concentrated attention are more informative.
 
 ## Key Experimental Results
 

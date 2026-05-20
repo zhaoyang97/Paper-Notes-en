@@ -18,8 +18,8 @@ content_hash: 7f05b6051f613461
 # Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.20525](https://arxiv.org/abs/2511.20525)
-**Code**: [https://yayuanli.github.io/MATT](https://yayuanli.github.io/MATT)
+**arXiv**: [2511.20525](https://arxiv.org/abs/2511.20525)  
+**Code**: [https://yayuanli.github.io/MATT](https://yayuanli.github.io/MATT)  
 **Area**: Video Understanding
 **Keywords**: mistake attribution, egocentric video, semantic role labeling, spatiotemporal localization, instruction alignment
 

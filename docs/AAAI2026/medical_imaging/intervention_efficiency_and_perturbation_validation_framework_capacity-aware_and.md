@@ -19,8 +19,8 @@ content_hash: a084574a7b232db6
 # Intervention Efficiency and Perturbation Validation Framework: Capacity-Aware and Robust Clinical Model Selection under the Rashomon Effect
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14317](https://arxiv.org/abs/2511.14317)
-**Code**: [GitHub](https://github.com/YuwenZhang-Peter/PVF-IE)
+**arXiv**: [2511.14317](https://arxiv.org/abs/2511.14317)  
+**Code**: [GitHub](https://github.com/YuwenZhang-Peter/PVF-IE)  
 **Area**: Medical Imaging / Clinical Machine Learning
 **Keywords**: Rashomon Effect, Model Selection, Intervention Efficiency, Perturbation Validation, Class Imbalance, Clinical Deployment
 

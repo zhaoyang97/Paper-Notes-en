@@ -18,8 +18,8 @@ content_hash: 332f648cef0b239d
 # Self-Supervised Sparse Sensor Fusion for Long Range Perception
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.13995](https://arxiv.org/abs/2508.13995)
-**Code**: [https://light.princeton.edu/LRS4Fusion](https://light.princeton.edu/LRS4Fusion)
+**arXiv**: [2508.13995](https://arxiv.org/abs/2508.13995)  
+**Code**: [https://light.princeton.edu/LRS4Fusion](https://light.princeton.edu/LRS4Fusion)  
 **Area**: Autonomous Driving
 **Keywords**: long-range perception, sparse voxel fusion, self-supervised pretraining, LiDAR-camera fusion, depth estimation
 

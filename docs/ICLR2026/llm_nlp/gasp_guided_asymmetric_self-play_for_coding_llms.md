@@ -18,8 +18,8 @@ content_hash: faf97c8e1179cba7
 # GASP: Guided Asymmetric Self-Play For Coding LLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.15957](https://arxiv.org/abs/2603.15957)
-**Code**: None
+**arXiv**: [2603.15957](https://arxiv.org/abs/2603.15957)  
+**Code**: None  
 **Area**: LLM Training / Code Reasoning
 **Keywords**: Asymmetric self-play, code generation, curriculum learning, RLVR, goal-guided
 

@@ -18,8 +18,8 @@ content_hash: 39eb07f741265eba
 # GENMO: A GENeralist Model for Human MOtion
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.01425](https://arxiv.org/abs/2505.01425)
-**Code**: [Project Page](https://research.nvidia.com/labs/dair/genmo)
+**arXiv**: [2505.01425](https://arxiv.org/abs/2505.01425)  
+**Code**: [Project Page](https://research.nvidia.com/labs/dair/genmo)  
 **Area**: Human Understanding
 **Keywords**: Human motion modeling, motion estimation, motion generation, diffusion models, multimodal conditioning
 

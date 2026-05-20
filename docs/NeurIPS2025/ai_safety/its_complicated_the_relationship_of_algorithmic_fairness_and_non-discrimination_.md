@@ -18,8 +18,8 @@ content_hash: f7cb249d01830954
 # It's Complicated: The Relationship of Algorithmic Fairness and Non-Discrimination Provisions for High-Risk Systems in the EU AI Act
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.12962](https://arxiv.org/abs/2501.12962)
-**Code**: None
+**arXiv**: [2501.12962](https://arxiv.org/abs/2501.12962)  
+**Code**: None  
 **Area**: AI Safety / Algorithmic Fairness / Legal Policy
 **Keywords**: EU AI Act, High-Risk AI Systems, Algorithmic Fairness, Anti-Discrimination Law, Standardization
 
@@ -59,9 +59,9 @@ The paper employs legal text analysis, beginning with a scan of the full AIA for
 
     - **Function**: Maps AIA legal provisions onto the technical framework of algorithmic fairness.
     - **Mechanism**: Three core provisions are identified:
-      - **Article 10(2)(f)**: Requires bias checks on training, validation, and testing data, but only on the input side, with "bias" left undefined.
-      - **Article 10(2)(g)**: Requires bias detection, prevention, and mitigation measures—seemingly drawing on fairness metrics—but likewise applies only to input data.
-      - **Article 15(4)**: The only provision addressing the output side, yet limited to feedback-loop scenarios in continuously learning systems.
+        - **Article 10(2)(f)**: Requires bias checks on training, validation, and testing data, but only on the input side, with "bias" left undefined.
+        - **Article 10(2)(g)**: Requires bias detection, prevention, and mitigation measures—seemingly drawing on fairness metrics—but likewise applies only to input data.
+        - **Article 15(4)**: The only provision addressing the output side, yet limited to feedback-loop scenarios in continuously learning systems.
     - **Design Motivation**: To expose the asymmetry between input-side and output-side protections in the AIA, which may give rise to systematic gaps in protection.
 
 3. **Analysis of Standardization and Interaction with Traditional Law (Sections 4–5)**:

@@ -18,8 +18,8 @@ content_hash: 3468a60a12703792
 # Learning to Reason without External Rewards
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.19590](https://arxiv.org/abs/2505.19590)
-**Code**: [https://github.com/sunblaze-ucb/Intuitor](https://github.com/sunblaze-ucb/Intuitor)
+**arXiv**: [2505.19590](https://arxiv.org/abs/2505.19590)  
+**Code**: [https://github.com/sunblaze-ucb/Intuitor](https://github.com/sunblaze-ucb/Intuitor)  
 **Area**: Code Intelligence
 **Keywords**: RLIF, Self-Certainty, Intrinsic Reward, GRPO, Unsupervised Reinforcement Learning
 

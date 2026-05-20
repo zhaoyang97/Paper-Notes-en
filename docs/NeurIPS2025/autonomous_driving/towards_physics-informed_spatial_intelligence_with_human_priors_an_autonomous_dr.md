@@ -18,8 +18,8 @@ content_hash: 4e26bff2cb65508d
 # Towards Physics-Informed Spatial Intelligence with Human Priors: An Autonomous Driving Perspective
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21160](https://arxiv.org/abs/2510.21160)
-**Code**: [Project Page](https://guanlinwu123.github.io/sigbench)
+**arXiv**: [2510.21160](https://arxiv.org/abs/2510.21160)  
+**Code**: [Project Page](https://guanlinwu123.github.io/sigbench)  
 **Area**: Autonomous Driving / Spatial Intelligence
 **Keywords**: Spatial Intelligence Grid, Visual Spatial Reasoning, Human Priors, Multimodal Large Language Models, Driving Scene Understanding
 

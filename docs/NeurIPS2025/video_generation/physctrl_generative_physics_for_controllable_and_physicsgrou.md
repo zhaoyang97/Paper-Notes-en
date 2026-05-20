@@ -18,8 +18,8 @@ content_hash: a1e6bba6d1a76490
 # PhysCtrl: Generative Physics for Controllable and Physics-Grounded Video Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20358](https://arxiv.org/abs/2509.20358)
-**Code**: [Project Page](https://cwchenwang.github.io/physctrl)
+**arXiv**: [2509.20358](https://arxiv.org/abs/2509.20358)  
+**Code**: [Project Page](https://cwchenwang.github.io/physctrl)  
 **Area**: Image/Video Generation
 **Keywords**: Physics-driven video generation, diffusion models, 3D point trajectories, material simulation, force control
 

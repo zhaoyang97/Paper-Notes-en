@@ -19,8 +19,8 @@ content_hash: 4ab52044e3239597
 # Information-Theoretic Discrete Diffusion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24088](https://arxiv.org/abs/2510.24088)
-**Code**: [github.com/Dongjae0324/infodis](https://github.com/Dongjae0324/infodis)
+**arXiv**: [2510.24088](https://arxiv.org/abs/2510.24088)  
+**Code**: [github.com/Dongjae0324/infodis](https://github.com/Dongjae0324/infodis)  
 **Area**: Generative Model Theory / Discrete Diffusion
 **Keywords**: discrete diffusion models, information theory, likelihood estimation, score matching, masked diffusion, I-MMSE
 

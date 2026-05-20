@@ -18,8 +18,8 @@ content_hash: ceb9840896f92795
 # TinyViM: Frequency Decoupling for Tiny Hybrid Vision Mamba
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.17473](https://arxiv.org/abs/2411.17473)
-**Code**: [GitHub](https://github.com/xwmaxwma/TinyViM)
+**arXiv**: [2411.17473](https://arxiv.org/abs/2411.17473)  
+**Code**: [GitHub](https://github.com/xwmaxwma/TinyViM)  
 **Area**: Image Segmentation
 **Keywords**: Lightweight visual backbone, Mamba, frequency decoupling, Laplacian pyramid, high-low frequency separation
 

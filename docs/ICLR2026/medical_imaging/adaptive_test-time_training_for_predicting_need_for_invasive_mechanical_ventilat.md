@@ -18,8 +18,8 @@ content_hash: ec2b2a70cac67d0e
 # Adaptive Test-Time Training for Predicting Need for Invasive Mechanical Ventilation in Multi-Center Cohorts
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.06652](https://arxiv.org/abs/2512.06652)
-**Code**: To be released
+**arXiv**: [2512.06652](https://arxiv.org/abs/2512.06652)  
+**Code**: To be released  
 **Area**: Medical Imaging / EHR Clinical Prediction
 **Keywords**: Test-time training, domain shift, invasive mechanical ventilation prediction, dynamic feature masking, partial optimal transport
 

@@ -19,8 +19,8 @@ content_hash: 1427eb72e6c86416
 # A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.06699](https://arxiv.org/abs/2510.06699)
-**Code**: [GitHub](https://github.com/azencot-group/ImagenI2R)
+**arXiv**: [2510.06699](https://arxiv.org/abs/2510.06699)  
+**Code**: [GitHub](https://github.com/azencot-group/ImagenI2R)  
 **Area**: Diffusion Models / Time Series Generation
 **Keywords**: irregular time series, diffusion model, image representation, completion, masking, ImagenTime
 

@@ -19,8 +19,8 @@ content_hash: 091913593bc6e235
 # Bayesian Meta-Analyses Could Be More: A Case Study in Trial of Labor After a Cesarean-section Outcomes and Complications
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.10089](https://arxiv.org/abs/2601.10089)
-**Code**: Not released
+**arXiv**: [2601.10089](https://arxiv.org/abs/2601.10089)  
+**Code**: Not released  
 **Area**: Medical Imaging
 **Keywords**: Bayesian meta-analysis, hidden confounders, probabilistic programming, TOLAC, Bishop score, hierarchical Bayesian model
 

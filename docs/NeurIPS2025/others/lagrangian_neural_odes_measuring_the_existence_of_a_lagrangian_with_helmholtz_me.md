@@ -17,8 +17,8 @@ content_hash: d89f4b38bc22a8ac
 # Lagrangian neural ODEs: Measuring the existence of a Lagrangian with Helmholtz metrics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.06367](https://arxiv.org/abs/2510.06367)
-**Code**: [GitHub](https://github.com/luwo9/LagrangianNeuralODEs)
+**arXiv**: [2510.06367](https://arxiv.org/abs/2510.06367)  
+**Code**: [GitHub](https://github.com/luwo9/LagrangianNeuralODEs)  
 **Area**: Physics-Informed Learning / Neural ODE
 **Keywords**: Neural ODE, Lagrangian mechanics, Helmholtz conditions, physics regularization, Euler-Lagrange equations
 

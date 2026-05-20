@@ -18,8 +18,8 @@ content_hash: 40db9e6231347e7c
 # VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.13444](https://arxiv.org/abs/2503.13444)
-**Code**: [https://github.com/yeliudev/VideoMind](https://videomind.github.io/)
+**arXiv**: [2503.13444](https://arxiv.org/abs/2503.13444)  
+**Code**: [https://github.com/yeliudev/VideoMind](https://videomind.github.io/)  
 **Area**: LLM Agent
 **Keywords**: Video Reasoning, Temporal Grounding, LoRA, Multimodal Agent, Video Question Answering
 

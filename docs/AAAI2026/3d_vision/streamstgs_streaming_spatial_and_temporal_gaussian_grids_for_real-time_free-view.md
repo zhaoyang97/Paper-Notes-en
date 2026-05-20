@@ -18,8 +18,8 @@ content_hash: f64012ea2ff4aea1
 # StreamSTGS: Streaming Spatial and Temporal Gaussian Grids for Real-Time Free-Viewpoint Video
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06046](https://arxiv.org/abs/2511.06046)
-**Code**: Unavailable
+**arXiv**: [2511.06046](https://arxiv.org/abs/2511.06046)  
+**Code**: Unavailable  
 **Area**: 3D Vision
 **Keywords**: Free-viewpoint video, 3D Gaussian splatting, real-time streaming, dynamic scene reconstruction, adaptive bitrate
 

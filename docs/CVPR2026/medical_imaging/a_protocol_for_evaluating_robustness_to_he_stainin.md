@@ -18,8 +18,8 @@ content_hash: ac18bd1cbe9035cb
 # A protocol for evaluating robustness to H&E staining variation in computational pathology models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12886](https://arxiv.org/abs/2603.12886)
-**Code**: [GitHub](https://github.com/CTPLab/staining-robustness-evaluation) / [HuggingFace](https://huggingface.co/datasets/CTPLab-DBE-UniBas/staining-robustness-evaluation)
+**arXiv**: [2603.12886](https://arxiv.org/abs/2603.12886)  
+**Code**: [GitHub](https://github.com/CTPLab/staining-robustness-evaluation) / [HuggingFace](https://huggingface.co/datasets/CTPLab-DBE-UniBas/staining-robustness-evaluation)  
 **Area**: Medical Imaging / Computational Pathology
 **Keywords**: Computational pathology, H&E staining, robustness evaluation, model selection, microsatellite instability (MSI)
 

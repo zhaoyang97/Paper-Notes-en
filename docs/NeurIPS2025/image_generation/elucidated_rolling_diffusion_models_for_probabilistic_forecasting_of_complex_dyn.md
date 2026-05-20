@@ -18,8 +18,8 @@ content_hash: abf3c60cf0cdcde4
 # Elucidated Rolling Diffusion Models for Probabilistic Forecasting of Complex Dynamics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.20024](https://arxiv.org/abs/2506.20024)
-**Code**: [NVlabs/ERDM](https://github.com/NVlabs/ERDM)
+**arXiv**: [2506.20024](https://arxiv.org/abs/2506.20024)  
+**Code**: [NVlabs/ERDM](https://github.com/NVlabs/ERDM)  
 **Area**: Image Generation
 **Keywords**: rolling diffusion, EDM, probabilistic forecasting, weather prediction, Navier-Stokes
 

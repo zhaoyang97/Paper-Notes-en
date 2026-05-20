@@ -17,8 +17,8 @@ content_hash: 3d13da56d91fe894
 # Center-Outward q-Dominance: A Sample-Computable Proxy for Strong Stochastic Dominance in Multi-Objective Optimisation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12545](https://arxiv.org/abs/2511.12545)
-**Code**: None
+**arXiv**: [2511.12545](https://arxiv.org/abs/2511.12545)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Stochastic multi-objective optimisation, stochastic dominance, optimal transport, hyperparameter tuning, center-outward quantiles
 

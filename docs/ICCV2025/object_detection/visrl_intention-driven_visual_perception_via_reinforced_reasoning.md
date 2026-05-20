@@ -18,8 +18,8 @@ content_hash: e6451363136be5ce
 # VisRL: Intention-Driven Visual Perception via Reinforced Reasoning
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07523](https://arxiv.org/abs/2503.07523)
-**Code**: [https://github.com/zhangquanchen/VisRL](https://github.com/zhangquanchen/VisRL)
+**arXiv**: [2503.07523](https://arxiv.org/abs/2503.07523)  
+**Code**: [https://github.com/zhangquanchen/VisRL](https://github.com/zhangquanchen/VisRL)  
 **Area**: Object Detection / Multimodal Reasoning
 **Keywords**: Intention-driven visual perception, reinforcement learning, Visual CoT, DPO, large multimodal models
 

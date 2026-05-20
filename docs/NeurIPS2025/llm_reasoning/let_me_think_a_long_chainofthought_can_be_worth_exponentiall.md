@@ -18,8 +18,8 @@ content_hash: c3cc1bdee0d897e3
 # Let Me Think! A Long Chain-of-Thought Can Be Worth Exponentially Many Short Ones
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21825](https://arxiv.org/abs/2505.21825)
-**Code**: [github.com/seyedparsa/let-me-think](https://github.com/seyedparsa/let-me-think)
+**arXiv**: [2505.21825](https://arxiv.org/abs/2505.21825)  
+**Code**: [github.com/seyedparsa/let-me-think](https://github.com/seyedparsa/let-me-think)  
 **Area**: LLM Reasoning
 **Keywords**: Test-time scaling, sequential scaling vs. parallel scaling, chain-of-thought, complexity theory, graph connectivity
 

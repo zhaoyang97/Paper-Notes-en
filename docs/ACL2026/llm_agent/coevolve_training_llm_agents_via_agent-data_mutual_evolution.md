@@ -18,8 +18,8 @@ content_hash: 321a1d5ebed635db
 # CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution
 
 **Conference**: ACL 2026
-**arXiv**: [2604.15840](https://arxiv.org/abs/2604.15840)
-**Code**: [https://github.com/AMAP-ML/CoEvolve](https://github.com/AMAP-ML/CoEvolve)
+**arXiv**: [2604.15840](https://arxiv.org/abs/2604.15840)  
+**Code**: [https://github.com/AMAP-ML/CoEvolve](https://github.com/AMAP-ML/CoEvolve)  
 **Area**: LLM Agent
 **Keywords**: agent training, data synthesis, co-evolution, forgetting signals, reinforcement learning
 

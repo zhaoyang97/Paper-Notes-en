@@ -17,8 +17,8 @@ content_hash: 697be345485df979
 # Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry
 
 **Conference**: ICLR 2026
-**arXiv**: [2407.02607](https://arxiv.org/abs/2407.02607)
-**Code**: [github.com/GitZH-Chen/PCM_BWCM](https://github.com/GitZH-Chen/PCM_BWCM)
+**arXiv**: [2407.02607](https://arxiv.org/abs/2407.02607)  
+**Code**: [github.com/GitZH-Chen/PCM_BWCM](https://github.com/GitZH-Chen/PCM_BWCM)  
 **Area**: Other
 **Keywords**: SPD manifold, Riemannian metric, Cholesky decomposition, product geometry, SPD neural networks
 

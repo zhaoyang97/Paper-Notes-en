@@ -18,8 +18,8 @@ content_hash: fb33fa8a4d9a265c
 # Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data
 
 **Conference**: ACL 2026
-**arXiv**: [2601.11038](https://arxiv.org/abs/2601.11038)
-**Code**: None
+**arXiv**: [2601.11038](https://arxiv.org/abs/2601.11038)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: budget-aware reasoning, Anytime Index, preference data prompting, test-time scaling, reasoning efficiency
 

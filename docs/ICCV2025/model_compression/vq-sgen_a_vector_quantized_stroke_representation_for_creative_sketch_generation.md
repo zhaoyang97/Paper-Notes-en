@@ -18,8 +18,8 @@ content_hash: 5350ec563a4e74f3
 # VQ-SGen: A Vector Quantized Stroke Representation for Creative Sketch Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.16446](https://arxiv.org/abs/2411.16446)
-**Code**: [Project Page](https://enigma-li.github.io/projects/VQ-SGen/VQ-SGen.html)
+**arXiv**: [2411.16446](https://arxiv.org/abs/2411.16446)  
+**Code**: [Project Page](https://enigma-li.github.io/projects/VQ-SGen/VQ-SGen.html)  
 **Area**: Model Compression
 **Keywords**: sketch generation, vector quantization, stroke representation, autoregressive, creative sketch
 

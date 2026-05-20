@@ -18,8 +18,8 @@ content_hash: b7a841bc9bce4748
 # Controllable Exploration in Hybrid-Policy RLVR for Multi-Modal Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.20197](https://arxiv.org/abs/2602.20197)
-**Code**: [https://github.com/zhh6425/CalibRL](https://github.com/zhh6425/CalibRL)
+**arXiv**: [2602.20197](https://arxiv.org/abs/2602.20197)  
+**Code**: [https://github.com/zhh6425/CalibRL](https://github.com/zhh6425/CalibRL)  
 **Area**: Multimodal VLM / Reinforcement Learning
 **Keywords**: RLVR, hybrid-policy optimization, multimodal reasoning, entropy collapse, controllable exploration
 

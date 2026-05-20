@@ -18,8 +18,8 @@ content_hash: 7623dba9396b779d
 # Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference
 
 **Conference**: ACL 2026
-**arXiv**: [2601.07667](https://arxiv.org/abs/2601.07667)
-**Code**: [GitHub](https://github.com/TANIGUCHIREI/ASL)
+**arXiv**: [2601.07667](https://arxiv.org/abs/2601.07667)  
+**Code**: [GitHub](https://github.com/TANIGUCHIREI/ASL)  
 **Area**: Model Compression / KV Cache Optimization
 **Keywords**: KV cache compression, adaptive layer selection, attention pruning, long-context inference, training-free method
 

@@ -18,8 +18,8 @@ content_hash: ca4b06a1c01c0886
 # SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22732](https://arxiv.org/abs/2603.22732)
-**Code**: None
+**arXiv**: [2603.22732](https://arxiv.org/abs/2603.22732)  
+**Code**: None  
 **Area**: Segmentation / Audio-Visual Localization
 **Keywords**: audio-visual localization, prompt learning, CLIP adaptation, sound source segmentation, contrastive learning
 

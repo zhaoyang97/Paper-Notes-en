@@ -18,8 +18,8 @@ content_hash: 6787deef981e0138
 # Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22263](https://arxiv.org/abs/2509.22263)
-**Code**: None
+**arXiv**: [2509.22263](https://arxiv.org/abs/2509.22263)  
+**Code**: None  
 **Area**: AI Safety / Machine Unlearning
 **Keywords**: machine unlearning, spurious neurons, shallow alignment, attribution, privacy
 

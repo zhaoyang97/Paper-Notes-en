@@ -17,8 +17,8 @@ content_hash: e523455fb9da3d40
 # Impact of Layer Norm on Memorization and Generalization in Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10566](https://arxiv.org/abs/2511.10566)
-**Code**: [GitHub](https://github.com/JEKimLab/NeurIPS2025_LayernormMemorization)
+**arXiv**: [2511.10566](https://arxiv.org/abs/2511.10566)  
+**Code**: [GitHub](https://github.com/JEKimLab/NeurIPS2025_LayernormMemorization)  
 **Area**: Transformer Architecture Analysis / Deep Learning Theory
 **Keywords**: Layer Normalization, memorization, generalization, Pre-LN, Post-LN
 **Authors**: Rishi Singhal, Jung-Eun Kim

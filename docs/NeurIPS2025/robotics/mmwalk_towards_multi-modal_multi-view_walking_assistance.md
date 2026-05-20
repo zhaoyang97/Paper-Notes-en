@@ -18,8 +18,8 @@ content_hash: 1d0d56b95e355b54
 # mmWalk: Towards Multi-modal Multi-view Walking Assistance
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11520](https://arxiv.org/abs/2510.11520)
-**Code**: [https://github.com/KediYing/mmWalk](https://github.com/KediYing/mmWalk)
+**arXiv**: [2510.11520](https://arxiv.org/abs/2510.11520)  
+**Code**: [https://github.com/KediYing/mmWalk](https://github.com/KediYing/mmWalk)  
 **Area**: Robotics
 **Keywords**: blind and low-vision assistance, VQA benchmark, multi-modal, multi-view, CARLA simulation
 

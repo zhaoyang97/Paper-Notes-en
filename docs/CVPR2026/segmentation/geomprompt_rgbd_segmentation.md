@@ -18,8 +18,8 @@ content_hash: 8ef44f2719f61554
 # GeomPrompt: Geometric Prompt Learning for RGB-D Semantic Segmentation Under Missing and Degraded Depth
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.11585](https://arxiv.org/abs/2604.11585)
-**Code**: [https://geomprompt.github.io](https://geomprompt.github.io)
+**arXiv**: [2604.11585](https://arxiv.org/abs/2604.11585)  
+**Code**: [https://geomprompt.github.io](https://geomprompt.github.io)  
 **Area**: Semantic Segmentation
 **Keywords**: RGB-D semantic segmentation, depth missing, modality robustness, geometric prompt, lightweight adaptation
 

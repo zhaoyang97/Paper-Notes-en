@@ -18,8 +18,8 @@ content_hash: 10438a6ce42b2908
 # Topic-Based Watermarks for Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2404.02138](https://arxiv.org/abs/2404.02138)
-**Code**: [GitHub](https://github.com/ANCP2021/Topic-Based-Watermarks)
+**arXiv**: [2404.02138](https://arxiv.org/abs/2404.02138)  
+**Code**: [GitHub](https://github.com/ANCP2021/Topic-Based-Watermarks)  
 **Area**: AI Safety / Text Watermarking
 **Keywords**: Text Watermarking, Topic Alignment, Semantic Partitioning, Paraphrase Robustness, Lightweight Detection
 

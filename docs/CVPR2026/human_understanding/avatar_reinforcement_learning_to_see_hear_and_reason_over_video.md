@@ -18,8 +18,8 @@ content_hash: 81b69ea5a695a332
 # AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.03100](https://arxiv.org/abs/2508.03100)
-**Code**: [https://people-robots.github.io/AVATAR/](https://people-robots.github.io/AVATAR/)
+**arXiv**: [2508.03100](https://arxiv.org/abs/2508.03100)  
+**Code**: [https://people-robots.github.io/AVATAR/](https://people-robots.github.io/AVATAR/)  
 **Area**: Human Understanding / Multimodal Reasoning
 **Keywords**: Multimodal Reasoning, Reinforcement Learning, GRPO, Audio-Visual Understanding, Temporal Advantage Shaping
 
@@ -123,8 +123,8 @@ AVATAR vs. GRPO: OmniBench **+3.7**, Video-Holmes +1.9. Sample efficiency: 5× i
 # AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.03100](https://arxiv.org/abs/2508.03100)
-**Code**: [https://people-robots.github.io/AVATAR/](https://people-robots.github.io/AVATAR/)
+**arXiv**: [2508.03100](https://arxiv.org/abs/2508.03100)  
+**Code**: [https://people-robots.github.io/AVATAR/](https://people-robots.github.io/AVATAR/)  
 **Area**: Human Understanding / Multimodal Reasoning
 **Keywords**: Audio-Visual Reasoning, GRPO Improvement, Off-Policy Reinforcement Learning, Temporal Advantage Shaping, Multimodal Large Language Models
 

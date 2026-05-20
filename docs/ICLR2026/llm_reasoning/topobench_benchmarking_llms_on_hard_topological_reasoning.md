@@ -19,8 +19,8 @@ content_hash: cf690c779cba1112
 # TopoBench: Benchmarking LLMs on Hard Topological Reasoning
 
 **Conference**: ICLR2026
-**arXiv**: [2603.12133](https://arxiv.org/abs/2603.12133)
-**Code**: [GitHub](https://github.com/mayug/topobench-benchmark)
+**arXiv**: [2603.12133](https://arxiv.org/abs/2603.12133)  
+**Code**: [GitHub](https://github.com/mayug/topobench-benchmark)  
 **Area**: LLM Reasoning
 **Keywords**: benchmark, topological reasoning, spatial reasoning, puzzle, error diagnosis, causal intervention
 

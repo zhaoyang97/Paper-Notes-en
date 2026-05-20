@@ -19,8 +19,8 @@ content_hash: f8c5b2164184218d
 # Beyond Static Artifacts: A Forensic Benchmark for Video Deepfake Reasoning in Vision Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21779](https://arxiv.org/abs/2602.21779)
-**Code**: To be confirmed
+**arXiv**: [2602.21779](https://arxiv.org/abs/2602.21779)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM / Deepfake Detection
 **Keywords**: deepfake detection, video forensics, VLM reasoning, temporal inconsistency, multiple-choice benchmark, instruction tuning
 
@@ -52,24 +52,24 @@ The FAQ benchmark construction pipeline proceeds as follows: video collection an
 
 1. **Three-Level Progressive Task Hierarchy**
 
-   - **Function**: Progressively evaluate and train VLM forensic capability from basic perception to complex reasoning.
-   - **Mechanism**:
+    - **Function**: Progressively evaluate and train VLM forensic capability from basic perception to complex reasoning.
+    - **Mechanism**:
      - **Level 1 – Facial Perception**: Region perception (judging clarity/blur quality of specific facial regions) + edge perception (distinguishing sharp vs. blurred facial boundaries); tests basic visual discrimination.
      - **Level 2 – Temporal Deepfake Localization**: Three sub-tasks—type understanding (given a time window and facial region, identify the artifact type), region localization (given a time segment and artifact type, identify the facial region), and temporal localization (given a facial region and artifact type, identify the time window); tests spatiotemporal localization ability.
      - **Level 3 – Forensic Reasoning**: Forgery analysis (autonomously identify artifact type → localize region → determine time segment without any hints, selecting the best match from carefully designed distractors) + final verdict (determine video authenticity by integrating all evidence).
-   - **Design Motivation**: Directly tackling the complex reasoning of Level 3 is too difficult. The progressive design allows models to first establish basic perceptual ability, then learn spatiotemporal localization, and only then engage in comprehensive reasoning. Ablation experiments confirm that training with only static QA is nearly ineffective (LLaVA-NeXT average gain of only 3.5%); temporal information is essential.
+    - **Design Motivation**: Directly tackling the complex reasoning of Level 3 is too difficult. The progressive design allows models to first establish basic perceptual ability, then learn spatiotemporal localization, and only then engage in comprehensive reasoning. Ablation experiments confirm that training with only static QA is nearly ineffective (LLaVA-NeXT average gain of only 3.5%); temporal information is essential.
 
 2. **Spatiotemporal Clustering and Forgery Trajectory Construction**
 
-   - **Function**: Convert sparse manual click annotations into coherent forgery segments and their spatiotemporal trajectories.
-   - **Mechanism**: A spatiotemporal adjacency function is defined as $f(c_i, c_j) = (\|c_i - c_j\|_2 \leq \tau_s) \wedge (\|c_i - c_j\|_1 \leq \tau_t)$, with $\tau_s=4$ and $\tau_t=1$. This clusters 50K+ sparse clicks into 14,392 forgery segments (average duration 2.1 seconds). For each segment, dlib extracts facial landmarks (5 categories: eyes, nose, mouth, jawline, ears); the most relevant facial region is determined by $n^* = \arg\min_n S_n$ based on spatial centroid; concatenating keypoints across all frames forms the forgery motion trajectory.
-   - **Design Motivation**: Sparse click annotations are inexpensive but cannot directly generate QA; an automated intermediate representation (segments + trajectories) is needed to bridge manual annotations and QA generation.
+    - **Function**: Convert sparse manual click annotations into coherent forgery segments and their spatiotemporal trajectories.
+    - **Mechanism**: A spatiotemporal adjacency function is defined as $f(c_i, c_j) = (\|c_i - c_j\|_2 \leq \tau_s) \wedge (\|c_i - c_j\|_1 \leq \tau_t)$, with $\tau_s=4$ and $\tau_t=1$. This clusters 50K+ sparse clicks into 14,392 forgery segments (average duration 2.1 seconds). For each segment, dlib extracts facial landmarks (5 categories: eyes, nose, mouth, jawline, ears); the most relevant facial region is determined by $n^* = \arg\min_n S_n$ based on spatial centroid; concatenating keypoints across all frames forms the forgery motion trajectory.
+    - **Design Motivation**: Sparse click annotations are inexpensive but cannot directly generate QA; an automated intermediate representation (segments + trajectories) is needed to bridge manual annotations and QA generation.
 
 3. **Carefully Designed Distractors and Human Verification**
 
-   - **Function**: Ensure MCQ options are sufficiently challenging so that models cannot rely on linguistic priors to guess answers.
-   - **Mechanism**: Distractors are restricted to visually and temporally plausible options—adjacent facial regions for region tasks, nearby time windows for temporal localization tasks, and "partially correct" options for forensic reasoning. Each QA pair undergoes human verification (average 1.5 min/question at Level 1; average 5 min/question at Level 3); items that fail are revised or discarded.
-   - **Design Motivation**: Prevent models from exploiting LLM linguistic priors rather than genuine visual understanding, ensuring the benchmark truly tests forensic capability.
+    - **Function**: Ensure MCQ options are sufficiently challenging so that models cannot rely on linguistic priors to guess answers.
+    - **Mechanism**: Distractors are restricted to visually and temporally plausible options—adjacent facial regions for region tasks, nearby time windows for temporal localization tasks, and "partially correct" options for forensic reasoning. Each QA pair undergoes human verification (average 1.5 min/question at Level 1; average 5 min/question at Level 3); items that fail are revised or discarded.
+    - **Design Motivation**: Prevent models from exploiting LLM linguistic priors rather than genuine visual understanding, ensuring the benchmark truly tests forensic capability.
 
 ### Loss & Training
 

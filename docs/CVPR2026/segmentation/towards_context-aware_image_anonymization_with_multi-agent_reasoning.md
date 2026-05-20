@@ -18,8 +18,8 @@ content_hash: 2c62f39a5ae5f3aa
 # Towards Context-Aware Image Anonymization with Multi-Agent Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27817](https://arxiv.org/abs/2603.27817)
-**Code**: None
+**arXiv**: [2603.27817](https://arxiv.org/abs/2603.27817)  
+**Code**: None  
 **Area**: Image Segmentation
 **Keywords**: Image Anonymization, Multi-Agent Reasoning, Diffusion-Based Inpainting, Privacy Protection, GDPR Compliance
 

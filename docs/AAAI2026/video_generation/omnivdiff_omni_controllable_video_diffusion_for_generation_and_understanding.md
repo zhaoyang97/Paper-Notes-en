@@ -18,8 +18,8 @@ content_hash: 1a87da7a27218406
 # OmniVDiff: Omni Controllable Video Diffusion for Generation and Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.10825](https://arxiv.org/abs/2504.10825)
-**Code**: [https://tele-ai.github.io/OmniVDiff/](https://tele-ai.github.io/OmniVDiff/) (project page available)
+**arXiv**: [2504.10825](https://arxiv.org/abs/2504.10825)  
+**Code**: [https://tele-ai.github.io/OmniVDiff/](https://tele-ai.github.io/OmniVDiff/) (project page available)  
 **Area**: Video Generation
 **Keywords**: Video diffusion models, multimodal generation, controllable video generation, video understanding, unified framework
 

@@ -18,8 +18,8 @@ content_hash: ae904df1969e7702
 # Inference-Time Dynamic Modality Selection for Incomplete Multimodal Classification
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.22853](https://arxiv.org/abs/2601.22853)
-**Code**: [GitHub](https://github.com/siyi-wind/DyMo)
+**arXiv**: [2601.22853](https://arxiv.org/abs/2601.22853)  
+**Code**: [GitHub](https://github.com/siyi-wind/DyMo)  
 **Area**: Multimodal Learning / Medical Imaging
 **Keywords**: incomplete multimodal, dynamic modality selection, inference-time, information gain, discarding-imputation dilemma
 
@@ -55,16 +55,16 @@ The network $f$ consists of modality-specific encoders $h^{(m)}$, a multimodal T
 
 1. **Multimodal Task-relevant Information Reward (MTIR)**
 
-   - Theoretical basis: a lower-bound relationship between mutual information $I(Y;\mathbf{Z})$ and empirical cross-entropy loss $\hat{\mathcal{L}}_{ce}$ is established—$I(Y;\mathbf{Z}) \geq H(Y) - \hat{\mathcal{L}}_{ce} - G\sqrt{\frac{\ln(1/\delta)}{2|\mathcal{D}|}}$—such that reducing the loss tightens the information lower bound.
-   - Classification is modeled as mixture density estimation in feature space: $p(y=k|\mathbf{z}) = \frac{\exp(-d_\phi(\mathbf{z}, \mathbf{c}_k))}{\sum_{k'}\exp(-d_\phi(\mathbf{z}, \mathbf{c}_{k'}))}$, where $\mathbf{c}_k$ denotes the class prototype computed from the training set.
-   - MTIR is defined as the change in classification loss before and after adding a recovered modality: a positive value indicates that the recovered modality provides useful information, while a negative value indicates that it introduces harmful information.
-   - **Intra-Class Similarity (ICS) Calibration**: An asymmetric calibration term $\alpha$ is introduced to down-weight the reward when the recovered representation is less representative within its predicted class cluster than the pre-recovery representation ($\alpha < 1$), enhancing the reward function's sensitivity to semantic misalignment.
+    - Theoretical basis: a lower-bound relationship between mutual information $I(Y;\mathbf{Z})$ and empirical cross-entropy loss $\hat{\mathcal{L}}_{ce}$ is established—$I(Y;\mathbf{Z}) \geq H(Y) - \hat{\mathcal{L}}_{ce} - G\sqrt{\frac{\ln(1/\delta)}{2|\mathcal{D}|}}$—such that reducing the loss tightens the information lower bound.
+    - Classification is modeled as mixture density estimation in feature space: $p(y=k|\mathbf{z}) = \frac{\exp(-d_\phi(\mathbf{z}, \mathbf{c}_k))}{\sum_{k'}\exp(-d_\phi(\mathbf{z}, \mathbf{c}_{k'}))}$, where $\mathbf{c}_k$ denotes the class prototype computed from the training set.
+    - MTIR is defined as the change in classification loss before and after adding a recovered modality: a positive value indicates that the recovered modality provides useful information, while a negative value indicates that it introduces harmful information.
+    - **Intra-Class Similarity (ICS) Calibration**: An asymmetric calibration term $\alpha$ is introduced to down-weight the reward when the recovered representation is less representative within its predicted class cluster than the pre-recovery representation ($\alpha < 1$), enhancing the reward function's sensitivity to semantic misalignment.
 
 2. **Iterative Selection Algorithm + Flexible Multimodal Architecture**
 
-   - Greedy iterative selection: at each step, the recovered modality with the highest MTIR is added to the observed set; all modalities with non-positive reward are removed; the process repeats until the candidate set is empty.
-   - The multimodal Transformer supports arbitrary modality combinations: missing modality positions use dummy tokens with attention masking.
-   - During training, random subsets simulate missing modalities ($A$ random subsets per sample), paired with a missingness-agnostic contrastive loss $\mathcal{L}_{aux}$ to encourage intra-class clustering.
+    - Greedy iterative selection: at each step, the recovered modality with the highest MTIR is added to the observed set; all modalities with non-positive reward are removed; the process repeats until the candidate set is empty.
+    - The multimodal Transformer supports arbitrary modality combinations: missing modality positions use dummy tokens with attention masking.
+    - During training, random subsets simulate missing modalities ($A$ random subsets per sample), paired with a missingness-agnostic contrastive loss $\mathcal{L}_{aux}$ to encourage intra-class clustering.
 
 ### Loss & Training
 

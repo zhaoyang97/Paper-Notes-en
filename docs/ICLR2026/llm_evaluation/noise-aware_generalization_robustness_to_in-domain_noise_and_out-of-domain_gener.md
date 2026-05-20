@@ -18,8 +18,8 @@ content_hash: 078c657547568c1b
 # Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization
 
 **Conference**: ICLR 2026
-**arXiv**: [2504.02996](https://arxiv.org/abs/2504.02996)
-**Code**: [GitHub](https://github.com/SunnySiqi/Noise-Aware-Generalization)
+**arXiv**: [2504.02996](https://arxiv.org/abs/2504.02996)  
+**Code**: [GitHub](https://github.com/SunnySiqi/Noise-Aware-Generalization)  
 **Area**: Robust Learning / Domain Generalization
 **Keywords**: Noise-Aware Generalization, Domain Generalization, Learning with Noisy Labels, Cross-Domain Noise Detection, DL4ND
 
@@ -48,9 +48,9 @@ DL4ND proceeds in three stages:
 
 1. **Warmup Stage**: Standard training using ERM or any DG method, during which the influence of noisy labels is minimal.
 2. **Noise Detection Stage**:
-   - A GMM is applied to the loss distribution to separate low-loss (clean) and high-loss (noisy) clusters.
-   - Low-loss samples are grouped by $(class, domain)$ to construct proxy representations $\bar{g}_{c,i}$.
-   - High-loss samples are re-labeled via cross-domain comparison.
+    - A GMM is applied to the loss distribution to separate low-loss (clean) and high-loss (noisy) clusters.
+    - Low-loss samples are grouped by $(class, domain)$ to construct proxy representations $\bar{g}_{c,i}$.
+    - High-loss samples are re-labeled via cross-domain comparison.
 3. **Continued Training**: Training resumes with updated labels, optionally combined with any DG method.
 
 Formally, the multi-domain dataset is $\mathcal{D} = \{\mathcal{D}_1, \mathcal{D}_2, \ldots, \mathcal{D}_m\}$, where each domain $\mathcal{D}_i = \{(x_{i,j}, \tilde{y}_{i,j})\}_{j=1}^{n_i}$ and $\tilde{y}$ may be noisy. The objective is to learn a feature extractor $f_\theta(\cdot)$ that performs well on all source domains and unseen target domains.

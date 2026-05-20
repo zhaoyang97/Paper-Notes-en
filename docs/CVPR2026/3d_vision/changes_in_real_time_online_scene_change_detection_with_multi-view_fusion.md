@@ -18,8 +18,8 @@ content_hash: 32a33ffdf8aa8a46
 # Changes in Real Time: Online Scene Change Detection with Multi-View Fusion
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.12370](https://arxiv.org/abs/2511.12370)
-**Code**: [https://chumsy0725.github.io/O-SCD/](https://chumsy0725.github.io/O-SCD/)
+**arXiv**: [2511.12370](https://arxiv.org/abs/2511.12370)  
+**Code**: [https://chumsy0725.github.io/O-SCD/](https://chumsy0725.github.io/O-SCD/)  
 **Area**: 3D Vision
 **Keywords**: Scene Change Detection, 3D Gaussian Splatting, Online Inference, Self-Supervised Fusion, Scene Update
 

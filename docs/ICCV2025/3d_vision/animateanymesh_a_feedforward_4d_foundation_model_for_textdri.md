@@ -18,8 +18,8 @@ content_hash: 4ca6eaaa8cabad1a
 # AnimateAnyMesh: A Feed-Forward 4D Foundation Model for Text-Driven Universal Mesh Animation
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.09982](https://arxiv.org/abs/2506.09982)
-**Code**: [Project Page](https://animateanymesh.github.io/AnimateAnyMesh/) (available; code, data, and models promised to be open-sourced)
+**arXiv**: [2506.09982](https://arxiv.org/abs/2506.09982)  
+**Code**: [Project Page](https://animateanymesh.github.io/AnimateAnyMesh/) (available; code, data, and models promised to be open-sourced)  
 **Area**: 3D Vision / 4D Generation / Mesh Animation
 **Keywords**: 4D Generation, Text-Driven Animation, Dynamic Mesh, VAE, Rectified Flow
 

@@ -18,8 +18,8 @@ content_hash: 0e9a4193a9491bb6
 # RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13204](https://arxiv.org/abs/2511.13204)
-**Code**: [GitHub](https://github.com/VisualScienceLab-KHU/RefineVAD)
+**arXiv**: [2511.13204](https://arxiv.org/abs/2511.13204)  
+**Code**: [GitHub](https://github.com/VisualScienceLab-KHU/RefineVAD)  
 **Area**: LLM Evaluation
 **Keywords**: Weakly supervised video anomaly detection, multiple instance learning, semantic guidance, temporal modeling, category prototypes
 

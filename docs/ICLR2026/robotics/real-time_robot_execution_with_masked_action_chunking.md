@@ -19,8 +19,8 @@ content_hash: cd634f26ed30a486
 # Real-Time Robot Execution with Masked Action Chunking
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20130](https://arxiv.org/abs/2601.20130)
-**Code**: [Project Page](https://remac-robot.github.io)
+**arXiv**: [2601.20130](https://arxiv.org/abs/2601.20130)  
+**Code**: [Project Page](https://remac-robot.github.io)  
 **Area**: Robot Learning
 **Keywords**: Real-time execution, action chunking, asynchronous inference, VLA, flow matching, LoRA
 

@@ -18,8 +18,8 @@ content_hash: 6615a735d49517bb
 # MoToRec: Sparse-Regularized Multimodal Tokenization for Cold-Start Recommendation
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.11062](https://arxiv.org/abs/2602.11062)
-**Code**: N/A
+**arXiv**: [2602.11062](https://arxiv.org/abs/2602.11062)  
+**Code**: N/A  
 **Area**: Graph Learning / Recommender Systems
 **Keywords**: Cold-start recommendation, multimodal recommendation, discrete semantic tokenization, residual quantization VAE, graph neural networks
 

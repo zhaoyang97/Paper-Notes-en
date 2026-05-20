@@ -18,8 +18,8 @@ content_hash: 5399edf3b70542be
 # A Recipe for Generating 3D Worlds from a Single Image
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.16611](https://arxiv.org/abs/2503.16611)
-**Code**: [https://katjaschwarz.github.io/worlds/](https://katjaschwarz.github.io/worlds/) (project page)
+**arXiv**: [2503.16611](https://arxiv.org/abs/2503.16611)  
+**Code**: [https://katjaschwarz.github.io/worlds/](https://katjaschwarz.github.io/worlds/) (project page)  
 **Area**: 3D Vision
 **Keywords**: Single-image 3D scene generation, panorama synthesis, point-cloud-conditioned inpainting, 3DGS, VR
 

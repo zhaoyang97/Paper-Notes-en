@@ -19,8 +19,8 @@ content_hash: e56b3628f6b3f076
 # Scaling View Synthesis Transformers (SVSM)
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21341](https://arxiv.org/abs/2602.21341)
-**Code**: [https://www.evn.kim/research/svsm](https://www.evn.kim/research/svsm)
+**arXiv**: [2602.21341](https://arxiv.org/abs/2602.21341)  
+**Code**: [https://www.evn.kim/research/svsm](https://www.evn.kim/research/svsm)  
 **Area**: 3D Vision / Novel View Synthesis / Scaling Laws
 **Keywords**: Novel View Synthesis, Scaling Laws, Transformer, Encoder-Decoder, Computational Efficiency, PRoPE
 

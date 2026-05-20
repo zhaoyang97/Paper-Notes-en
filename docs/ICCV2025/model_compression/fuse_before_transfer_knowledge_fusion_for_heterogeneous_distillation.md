@@ -18,8 +18,8 @@ content_hash: 28246cca53c9a74b
 # Fuse Before Transfer: Knowledge Fusion for Heterogeneous Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.12342](https://arxiv.org/abs/2410.12342)
-**Code**: [https://github.com/liguopeng0923/FBT](https://github.com/liguopeng0923/FBT)
+**arXiv**: [2410.12342](https://arxiv.org/abs/2410.12342)  
+**Code**: [https://github.com/liguopeng0923/FBT](https://github.com/liguopeng0923/FBT)  
 **Area**: Model Compression / Knowledge Distillation
 **Keywords**: Cross-architecture knowledge distillation, heterogeneous model fusion, CNN-ViT-MLP, InfoNCE loss, feature alignment
 

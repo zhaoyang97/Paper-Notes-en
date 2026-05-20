@@ -19,8 +19,8 @@ content_hash: c4b90492025e0b3d
 # Beyond Benign Overfitting in Nadaraya-Watson Interpolators
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.07480](https://arxiv.org/abs/2502.07480)
-**Code**: None
+**arXiv**: [2502.07480](https://arxiv.org/abs/2502.07480)  
+**Code**: None  
 **Area**: Statistical Learning Theory
 **Keywords**: benign overfitting, Nadaraya-Watson, kernel regression, interpolation, generalization theory, overfitting phase transition
 

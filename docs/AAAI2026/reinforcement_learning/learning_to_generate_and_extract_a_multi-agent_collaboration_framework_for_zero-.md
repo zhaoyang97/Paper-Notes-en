@@ -17,8 +17,8 @@ content_hash: 0d56fdfbb5341e23
 # Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.02909](https://arxiv.org/abs/2603.02909)
-**Code**: [github](https://github.com/GJZhang2866/GenExtract)
+**arXiv**: [2603.02909](https://arxiv.org/abs/2603.02909)  
+**Code**: [github](https://github.com/GJZhang2866/GenExtract)  
 **Area**: Information Extraction / Event Argument Extraction
 **Keywords**: Zero-shot Learning, Document-level Event Argument Extraction, Multi-Agent Collaboration, Reinforcement Learning, Synthetic Data
 

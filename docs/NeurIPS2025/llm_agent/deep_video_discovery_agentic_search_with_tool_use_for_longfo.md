@@ -19,8 +19,8 @@ content_hash: 81b3838145fe21c3
 # Deep Video Discovery: Agentic Search with Tool Use for Long-form Video Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18079](https://arxiv.org/abs/2505.18079)
-**Code**: [https://github.com/microsoft/DeepVideoDiscovery](https://github.com/microsoft/DeepVideoDiscovery)
+**arXiv**: [2505.18079](https://arxiv.org/abs/2505.18079)  
+**Code**: [https://github.com/microsoft/DeepVideoDiscovery](https://github.com/microsoft/DeepVideoDiscovery)  
 **Area**: LLM Agent / Video Understanding
 **Keywords**: video understanding, agentic search, tool use, long-form video, multi-granular database, adaptive workflow
 

@@ -19,8 +19,8 @@ content_hash: 3f24b572b9d791eb
 # ECKConv: Learning Coordinate-based Convolutional Kernels for Continuous SE(3) Equivariant Point Cloud Analysis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17538](https://arxiv.org/abs/2603.17538)
-**Code**: N/A
+**arXiv**: [2603.17538](https://arxiv.org/abs/2603.17538)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: Point cloud analysis, SE(3) equivariance, group convolution, double coset space, coordinate network, intertwiner framework
 

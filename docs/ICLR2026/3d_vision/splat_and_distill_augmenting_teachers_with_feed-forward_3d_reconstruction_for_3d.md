@@ -18,8 +18,8 @@ content_hash: f015b8e12dd13626
 # Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction for 3D-Aware Distillation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.06032](https://arxiv.org/abs/2602.06032)
-**Code**: Available (GitHub)
+**arXiv**: [2602.06032](https://arxiv.org/abs/2602.06032)  
+**Code**: Available (GitHub)  
 **Area**: 3D Vision / Vision Foundation Models
 **Keywords**: 3D-Aware Distillation, 3D Gaussian Splatting, Feed-Forward Reconstruction, Vision Foundation Models, Student-Teacher
 

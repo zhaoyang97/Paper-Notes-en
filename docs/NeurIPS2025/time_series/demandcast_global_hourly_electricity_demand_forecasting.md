@@ -18,8 +18,8 @@ content_hash: 49b42fcbc401a576
 # DemandCast: Global hourly electricity demand forecasting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08000](https://arxiv.org/abs/2510.08000)
-**Code**: [GitHub](https://github.com/open-energy-transition/demandcast)
+**arXiv**: [2510.08000](https://arxiv.org/abs/2510.08000)  
+**Code**: [GitHub](https://github.com/open-energy-transition/demandcast)  
 **Area**: Time Series Forecasting / Energy
 **Keywords**: Electricity demand forecasting, XGBoost, global scale, ERA5 meteorological data, normalized target
 

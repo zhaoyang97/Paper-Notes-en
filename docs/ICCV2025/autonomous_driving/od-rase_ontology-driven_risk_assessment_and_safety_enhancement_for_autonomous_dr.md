@@ -18,8 +18,8 @@ content_hash: de6a9903b5a3579f
 # OD-RASE: Ontology-Driven Risk Assessment and Safety Enhancement for Autonomous Driving
 
 **Conference**: ICCV 2025
-**arXiv**: [2603.05936](https://arxiv.org/abs/2603.05936)
-**Code**: [https://kotashimomura.github.io/odrase/](https://kotashimomura.github.io/odrase/)
+**arXiv**: [2603.05936](https://arxiv.org/abs/2603.05936)  
+**Code**: [https://kotashimomura.github.io/odrase/](https://kotashimomura.github.io/odrase/)  
 **Area**: Autonomous Driving Safety
 **Keywords**: Ontology-driven, Risk Assessment, Infrastructure Improvement, Large-scale Vision-Language Models, Diffusion Models
 

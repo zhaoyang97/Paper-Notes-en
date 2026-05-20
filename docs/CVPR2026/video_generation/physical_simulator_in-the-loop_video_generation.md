@@ -18,8 +18,8 @@ content_hash: a726a98c0373f0f1
 # Physical Simulator In-the-Loop Video Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.06408](https://arxiv.org/abs/2603.06408)
-**Code**: [https://vcai.mpi-inf.mpg.de/projects/PSIVG](https://vcai.mpi-inf.mpg.de/projects/PSIVG)
+**arXiv**: [2603.06408](https://arxiv.org/abs/2603.06408)  
+**Code**: [https://vcai.mpi-inf.mpg.de/projects/PSIVG](https://vcai.mpi-inf.mpg.de/projects/PSIVG)  
 **Area**: Video Generation / Physical Consistency
 **Keywords**: physical simulator in-the-loop, video diffusion model, MPM simulation, test-time optimization, physically consistent generation
 

@@ -18,8 +18,8 @@ content_hash: d765a0522105e966
 # CompCap: Improving Multimodal Large Language Models with Composite Captions
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.05243](https://arxiv.org/abs/2412.05243)
-**Code**: N/A
+**arXiv**: [2412.05243](https://arxiv.org/abs/2412.05243)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: composite images, image captioning, multimodal large language models, data synthesis, vision-language alignment
 

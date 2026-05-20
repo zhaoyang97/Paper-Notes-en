@@ -18,8 +18,8 @@ content_hash: ccb0103436f6ca41
 # Implicit Counterfactual Learning for Audio-Visual Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.20740](https://arxiv.org/abs/2507.20740)
-**Code**: N/A
+**arXiv**: [2507.20740](https://arxiv.org/abs/2507.20740)  
+**Code**: N/A  
 **Area**: Semantic Segmentation / Audio-Visual Segmentation
 **Keywords**: audio-visual segmentation, counterfactual learning, cross-modal alignment, implicit text bridging, contrastive learning
 

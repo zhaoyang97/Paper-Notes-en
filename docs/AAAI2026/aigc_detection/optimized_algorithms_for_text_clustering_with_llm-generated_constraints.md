@@ -18,8 +18,8 @@ content_hash: fa1aabd8929ac86d
 # Optimized Algorithms for Text Clustering with LLM-Generated Constraints
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.11118](https://arxiv.org/abs/2601.11118)
-**Code**: [https://github.com/weihong-wu/LSCK-HC](https://github.com/weihong-wu/LSCK-HC)
+**arXiv**: [2601.11118](https://arxiv.org/abs/2601.11118)  
+**Code**: [https://github.com/weihong-wu/LSCK-HC](https://github.com/weihong-wu/LSCK-HC)  
 **Area**: AIGC Detection / Text Clustering
 **Keywords**: Text Clustering, LLM Constraint Generation, k-means, Semi-supervised Clustering, Local Search
 

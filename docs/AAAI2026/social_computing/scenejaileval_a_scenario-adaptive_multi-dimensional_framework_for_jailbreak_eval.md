@@ -18,8 +18,8 @@ content_hash: b507dc8fc9ec2272
 # SceneJailEval: A Scenario-Adaptive Multi-Dimensional Framework for Jailbreak Evaluation
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.06194](https://arxiv.org/abs/2508.06194)
-**Code**: [GitHub](https://github.com/FutureSJTU/SceneJailEval)
+**arXiv**: [2508.06194](https://arxiv.org/abs/2508.06194)  
+**Code**: [GitHub](https://github.com/FutureSJTU/SceneJailEval)  
 **Area**: Social Computing
 **Keywords**: Jailbreak Evaluation, Scenario-Adaptive, Multi-Dimensional Evaluation, LLM Safety, Harm Quantification
 

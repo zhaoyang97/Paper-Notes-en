@@ -18,8 +18,8 @@ content_hash: d84dc5f6adc428dc
 # Decentralized Attention Fails Centralized Signals: Rethinking Transformers for Medical Time Series
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.18473](https://arxiv.org/abs/2602.18473)
-**Code**: [https://github.com/Levi-Ackman/TeCh](https://github.com/Levi-Ackman/TeCh)
+**arXiv**: [2602.18473](https://arxiv.org/abs/2602.18473)  
+**Code**: [https://github.com/Levi-Ackman/TeCh](https://github.com/Levi-Ackman/TeCh)  
 **Area**: Medical Imaging
 **Keywords**: Medical Time Series, Transformer, Channel Dependency, Core Token, Linear Complexity
 

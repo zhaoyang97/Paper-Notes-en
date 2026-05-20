@@ -18,8 +18,8 @@ content_hash: 689759aff7cd1f37
 # COS3D: Collaborative Open-Vocabulary 3D Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20238](https://arxiv.org/abs/2510.20238)
-**Code**: [GitHub](https://github.com/Runsong123/COS3D)
+**arXiv**: [2510.20238](https://arxiv.org/abs/2510.20238)  
+**Code**: [GitHub](https://github.com/Runsong123/COS3D)  
 **Area**: 3D Segmentation
 **Keywords**: Open-vocabulary 3D segmentation, 3D Gaussian, collaborative segmentation, instance-language mapping, prompt segmentation
 

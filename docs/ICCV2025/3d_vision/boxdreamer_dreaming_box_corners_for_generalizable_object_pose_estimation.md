@@ -18,8 +18,8 @@ content_hash: 5d65d74d996ade02
 # BoxDreamer: Dreaming Box Corners for Generalizable Object Pose Estimation
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.07955](https://arxiv.org/abs/2504.07955)
-**Code**: [https://zju3dv.github.io/boxdreamer](https://zju3dv.github.io/boxdreamer)
+**arXiv**: [2504.07955](https://arxiv.org/abs/2504.07955)  
+**Code**: [https://zju3dv.github.io/boxdreamer](https://zju3dv.github.io/boxdreamer)  
 **Area**: 3D Vision
 **Keywords**: Object Pose Estimation, Sparse-View, 3D Bounding Box, Occlusion Handling, Generalizable
 

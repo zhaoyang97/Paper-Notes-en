@@ -18,8 +18,8 @@ content_hash: 140da55be4ca1140
 # Convex Clustering Redefined: Robust Learning with the Median of Means Estimator
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14784](https://arxiv.org/abs/2511.14784)
-**Code**: [https://tinyurl.com/2v3dx75x](https://tinyurl.com/2v3dx75x)
+**arXiv**: [2511.14784](https://arxiv.org/abs/2511.14784)  
+**Code**: [https://tinyurl.com/2v3dx75x](https://tinyurl.com/2v3dx75x)  
 **Area**: Clustering / Robust Optimization
 **Keywords**: Convex Clustering, Median of Means, Robust Clustering, Outlier Detection, Adam Optimization
 

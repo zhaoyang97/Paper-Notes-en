@@ -18,8 +18,8 @@ content_hash: af5c8bc9ae19650d
 # TRACE: Structure-Aware Character Encoding for Robust and Generalizable Document Watermarking
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12873](https://arxiv.org/abs/2603.12873)
-**Code**: To be confirmed
+**arXiv**: [2603.12873](https://arxiv.org/abs/2603.12873)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: document watermarking, data hiding, diffusion model, character structure, cross-media robustness
 

@@ -20,8 +20,8 @@ content_hash: c44dc0791972be82
 # Attributing Response to Context: A Jensen-Shannon Divergence Driven Mechanistic Study of Context Attribution in Retrieval-Augmented Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.16415](https://arxiv.org/abs/2505.16415)
-**Code**: [https://github.com/ruizheliUOA/ARC_JSD](https://github.com/ruizheliUOA/ARC_JSD)
+**arXiv**: [2505.16415](https://arxiv.org/abs/2505.16415)  
+**Code**: [https://github.com/ruizheliUOA/ARC_JSD](https://github.com/ruizheliUOA/ARC_JSD)  
 **Area**: RAG / Interpretability / Mechanistic Analysis
 **Keywords**: Context Attribution, Jensen-Shannon Divergence, RAG, Mechanistic Interpretability, Attention Heads, MLP Layers, Hallucination Mitigation
 

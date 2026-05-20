@@ -17,8 +17,8 @@ content_hash: 04540af513173184
 # Certified but Fooled! Breaking Certified Defences with Ghost Certificates
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14003](https://arxiv.org/abs/2511.14003)
-**Code**: [github.com/ghostcert](https://github.com/ghostcert)
+**arXiv**: [2511.14003](https://arxiv.org/abs/2511.14003)  
+**Code**: [github.com/ghostcert](https://github.com/ghostcert)  
 **Area**: Other
 **Keywords**: adversarial attack, certified defence, randomized smoothing, certificate spoofing, region-based perturbation
 

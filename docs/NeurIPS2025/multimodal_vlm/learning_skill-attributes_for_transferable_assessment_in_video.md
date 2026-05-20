@@ -18,8 +18,8 @@ content_hash: e807fa2855353f75
 # Learning Skill-Attributes for Transferable Assessment in Video
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.13993](https://arxiv.org/abs/2511.13993)
-**Code**: [https://vision.cs.utexas.edu/projects/CrossTrainer/](https://vision.cs.utexas.edu/projects/CrossTrainer/)
+**arXiv**: [2511.13993](https://arxiv.org/abs/2511.13993)  
+**Code**: [https://vision.cs.utexas.edu/projects/CrossTrainer/](https://vision.cs.utexas.edu/projects/CrossTrainer/)  
 **Area**: Multimodal VLM
 **Keywords**: Skill assessment, cross-sport transfer, video understanding, multimodal LLM, actionable feedback
 

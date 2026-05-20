@@ -18,8 +18,8 @@ content_hash: 7104003ef257f817
 # AbstRaL: Augmenting LLMs' Reasoning by Reinforcing Abstract Thinking
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.07751](https://arxiv.org/abs/2506.07751)
-**Code**: Available
+**arXiv**: [2506.07751](https://arxiv.org/abs/2506.07751)  
+**Code**: Available  
 **Area**: Reinforcement Learning
 **Keywords**: abstract reasoning, reinforcement-learning, GSM robustness, symbolic reasoning, distribution shift
 

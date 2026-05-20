@@ -18,8 +18,8 @@ content_hash: b78292aca15d38b6
 # Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24332](https://arxiv.org/abs/2509.24332)
-**Code**: [GitHub](https://github.com/LSY-Cython/iMOOE)
+**arXiv**: [2509.24332](https://arxiv.org/abs/2509.24332)  
+**Code**: [GitHub](https://github.com/LSY-Cython/iMOOE)  
 **Area**: Time Series / PDE Dynamics Forecasting
 **Keywords**: PDE Invariant Learning, Zero-shot OOD Generalization, Mixture of Operator Experts, Frequency Enhancement, Neural Operators
 

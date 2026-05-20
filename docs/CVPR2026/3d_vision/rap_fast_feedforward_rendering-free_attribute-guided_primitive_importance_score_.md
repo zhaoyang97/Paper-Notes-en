@@ -18,9 +18,9 @@ content_hash: 5ed9719dbfebea92
 # RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance Score Prediction for Efficient 3D Gaussian Splatting Processing
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19753](https://arxiv.org/abs/2602.19753)
+**arXiv**: [2602.19753](https://arxiv.org/abs/2602.19753)  
 **Authors**: Kaifa Yang, Qi Yang, Yiling Xu, Zhu Li (Shanghai Jiao Tong University, UMKC)
-**Code**: [GitHub](https://github.com/yyyykf/RAP)
+**Code**: [GitHub](https://github.com/yyyykf/RAP)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, importance estimation, rendering-free inference, feedforward prediction, pruning
 

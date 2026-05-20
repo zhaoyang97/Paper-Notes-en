@@ -18,8 +18,8 @@ content_hash: 42d153369019218a
 # Flow Density Control: Generative Optimization Beyond Entropy-Regularized Fine-Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.22640](https://arxiv.org/abs/2511.22640)
-**Code**: None
+**arXiv**: [2511.22640](https://arxiv.org/abs/2511.22640)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: flow model fine-tuning, generative optimization, mirror descent, density control, nonlinear utility functions
 

@@ -18,8 +18,8 @@ content_hash: 7da2558abc87e765
 # DMQ: Dissecting Outliers of Diffusion Models for Post-Training Quantization
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.12933](https://arxiv.org/abs/2507.12933)
-**Code**: [GitHub](https://github.com/LeeDongYeun/dmq)
+**arXiv**: [2507.12933](https://arxiv.org/abs/2507.12933)  
+**Code**: [GitHub](https://github.com/LeeDongYeun/dmq)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Post-training quantization, diffusion model quantization, outlier handling, equivalent scaling, Power-of-Two scaling
 

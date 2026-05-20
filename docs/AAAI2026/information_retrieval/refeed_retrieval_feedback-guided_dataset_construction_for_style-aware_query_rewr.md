@@ -18,8 +18,8 @@ content_hash: 012b1725395e6367
 # ReFeed: Retrieval Feedback-Guided Dataset Construction for Style-Aware Query Rewriting
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.01417](https://arxiv.org/abs/2603.01417)
-**Code**: None
+**arXiv**: [2603.01417](https://arxiv.org/abs/2603.01417)  
+**Code**: None  
 **Area**: Alignment RLHF / Information Retrieval & RAG
 **Keywords**: query rewriting, retrieval feedback, style-aware, data-centric IR, RAG
 
@@ -47,21 +47,21 @@ The ReFeed framework consists of four stages: initial retrieval → LLM-guided r
 ### Key Designs
 1. **Initial Retrieval and Failure Identification**
 
-   - **Function**: Dense retrieval is performed for each query in the QA dataset, and retrieval failure cases are flagged (i.e., the ground-truth document does not appear in the top-$k$ results).
-   - **Mechanism**: An e5-base-v2 embedding model combined with a FAISS index is used to retrieve the top-3 documents; queries for which the ground-truth document is absent are labeled as misses.
-   - **Design Motivation**: Failure cases represent the most valuable rewriting opportunities, and targeting these cases yields the greatest retrieval gains.
+    - **Function**: Dense retrieval is performed for each query in the QA dataset, and retrieval failure cases are flagged (i.e., the ground-truth document does not appear in the top-$k$ results).
+    - **Mechanism**: An e5-base-v2 embedding model combined with a FAISS index is used to retrieve the top-3 documents; queries for which the ground-truth document is absent are labeled as misses.
+    - **Design Motivation**: Failure cases represent the most valuable rewriting opportunities, and targeting these cases yields the greatest retrieval gains.
 
 2. **LLM-Guided Stylistic Rewriting**
 
-   - **Function**: An LLM rewrites queries for each miss case in a style-aware manner.
-   - **Mechanism**: The prompt contains three key elements — the original query $q_i$, the incorrectly retrieved document $D_{\text{neg}}$, and the ground-truth document $D_{\text{pos}}$. By exposing the LLM to both positive and negative samples, it implicitly learns the linguistic and stylistic characteristics of the target document.
-   - **Design Motivation**: By contrasting the stylistic differences between positive and negative documents, the rewritten query naturally aligns with the linguistic patterns of the target document, rather than performing simple semantic paraphrasing.
+    - **Function**: An LLM rewrites queries for each miss case in a style-aware manner.
+    - **Mechanism**: The prompt contains three key elements — the original query $q_i$, the incorrectly retrieved document $D_{\text{neg}}$, and the ground-truth document $D_{\text{pos}}$. By exposing the LLM to both positive and negative samples, it implicitly learns the linguistic and stylistic characteristics of the target document.
+    - **Design Motivation**: By contrasting the stylistic differences between positive and negative documents, the rewritten query naturally aligns with the linguistic patterns of the target document, rather than performing simple semantic paraphrasing.
 
 3. **Verification via Re-Retrieval**
 
-   - **Function**: The rewritten query is submitted to retrieval again to verify whether the ground-truth document appears in the top-$k$ results.
-   - **Mechanism**: Only successfully verified rewriting pairs are retained, ensuring that every data point is empirically validated.
-   - **Design Motivation**: This establishes a closed-loop quality assurance mechanism, ensuring that every (original, rewritten) pair in the dataset carries a measurable retrieval gain.
+    - **Function**: The rewritten query is submitted to retrieval again to verify whether the ground-truth document appears in the top-$k$ results.
+    - **Mechanism**: Only successfully verified rewriting pairs are retained, ensuring that every data point is empirically validated.
+    - **Design Motivation**: This establishes a closed-loop quality assurance mechanism, ensuring that every (original, rewritten) pair in the dataset carries a measurable retrieval gain.
 
 ### Loss & Training
 ReFeed is a data generation framework rather than a model training method. The generated dataset can be used for:

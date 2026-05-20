@@ -18,8 +18,8 @@ content_hash: d0ea6d152644209e
 # A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19858](https://arxiv.org/abs/2505.19858)
-**Code**: [vfbench.github.io](https://vfbench.github.io)
+**arXiv**: [2505.19858](https://arxiv.org/abs/2505.19858)  
+**Code**: [vfbench.github.io](https://vfbench.github.io)  
 **Area**: Medical Imaging
 **Keywords**: video fusion, multi-frame learning, optical flow alignment, temporal consistency, benchmark
 **Authors**: Zixiang Zhao (ETH Zürich), Haowen Bai, Bingxin Ke, Yukun Cui, Lilun Deng, Yulun Zhang, Kai Zhang, Konrad Schindler

@@ -19,8 +19,8 @@ content_hash: 8485112ba84a2343
 # VIRST: Video-Instructed Reasoning Assistant for SpatioTemporal Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27060](https://arxiv.org/abs/2603.27060)
-**Code**: [https://github.com/AIDASLab/VIRST](https://github.com/AIDASLab/VIRST)
+**arXiv**: [2603.27060](https://arxiv.org/abs/2603.27060)  
+**Code**: [https://github.com/AIDASLab/VIRST](https://github.com/AIDASLab/VIRST)  
 **Area**: Segmentation
 **Keywords**: Video Object Segmentation, RVOS, Vision-Language Models, Spatiotemporal Fusion, Dynamic Anchors, Reasoning Segmentation
 

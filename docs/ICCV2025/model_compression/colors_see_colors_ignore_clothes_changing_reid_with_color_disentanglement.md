@@ -18,8 +18,8 @@ content_hash: 9cd6d0f8259e44fc
 # Colors See Colors Ignore: Clothes Changing ReID with Color Disentanglement
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.07230](https://arxiv.org/abs/2507.07230)
-**Code**: [https://github.com/ppriyank/ICCV-CSCI-Person-ReID](https://github.com/ppriyank/ICCV-CSCI-Person-ReID)
+**arXiv**: [2507.07230](https://arxiv.org/abs/2507.07230)  
+**Code**: [https://github.com/ppriyank/ICCV-CSCI-Person-ReID](https://github.com/ppriyank/ICCV-CSCI-Person-ReID)  
 **Area**: Person Re-Identification / Model Compression
 **Keywords**: Clothes-Changing ReID, Color Disentanglement, Self-Attention Mechanism, Vision Transformer, Appearance Bias Elimination
 

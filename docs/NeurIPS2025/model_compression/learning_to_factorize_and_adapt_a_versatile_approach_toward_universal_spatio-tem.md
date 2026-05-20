@@ -18,8 +18,8 @@ content_hash: fb7ba368ef87c9b5
 # Learning to Factorize and Adapt: A Versatile Approach Toward Universal Spatio-Temporal Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.12083](https://arxiv.org/abs/2601.12083)
-**Code**: [GitHub](https://github.com/CityMind-Lab/FactoST)
+**arXiv**: [2601.12083](https://arxiv.org/abs/2601.12083)  
+**Code**: [GitHub](https://github.com/CityMind-Lab/FactoST)  
 **Area**: Model Compression
 **Keywords**: spatio-temporal foundation models, time series forecasting, factorization paradigm, spatio-temporal adaptation, zero-shot generalization
 

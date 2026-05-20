@@ -18,8 +18,8 @@ content_hash: c21f2b83358440cc
 # SAFE: Multitask Failure Detection for Vision-Language-Action Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.09937](https://arxiv.org/abs/2506.09937)
-**Code**: [https://vla-safe.github.io/](https://vla-safe.github.io/)
+**arXiv**: [2506.09937](https://arxiv.org/abs/2506.09937)  
+**Code**: [https://vla-safe.github.io/](https://vla-safe.github.io/)  
 **Area**: Robot Learning / VLA Safety
 **Keywords**: Failure Detection, VLA Models, Multitask Generalization, Functional Conformal Prediction, MLP/LSTM Detector
 

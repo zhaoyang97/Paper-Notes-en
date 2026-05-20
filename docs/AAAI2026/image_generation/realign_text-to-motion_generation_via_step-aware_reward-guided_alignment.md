@@ -18,8 +18,8 @@ content_hash: d4d379a4bad428fd
 # ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19217](https://arxiv.org/abs/2511.19217)
-**Code**: [https://wengwanjiang.github.io/ReAlign-page](https://wengwanjiang.github.io/ReAlign-page)
+**arXiv**: [2511.19217](https://arxiv.org/abs/2511.19217)  
+**Code**: [https://wengwanjiang.github.io/ReAlign-page](https://wengwanjiang.github.io/ReAlign-page)  
 **Area**: Image Generation
 **Keywords**: Text-to-Motion Generation, Diffusion Models, Reward-Guided Sampling, Text-Motion Alignment, Plug-and-Play
 

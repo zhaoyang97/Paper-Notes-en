@@ -19,8 +19,8 @@ content_hash: 0bc57a9141efb16c
 # Argumentative Debates for Transparent Bias Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04511](https://arxiv.org/abs/2508.04511)
-**Code**: [ABIDE](https://github.com/hamed-ayoobi/ABIDE)
+**arXiv**: [2508.04511](https://arxiv.org/abs/2508.04511)  
+**Code**: [ABIDE](https://github.com/hamed-ayoobi/ABIDE)  
 **Area**: Social Computing
 **Keywords**: Bias Detection, Argumentation Framework, QBAF, Transparency, Fairness, Debate
 

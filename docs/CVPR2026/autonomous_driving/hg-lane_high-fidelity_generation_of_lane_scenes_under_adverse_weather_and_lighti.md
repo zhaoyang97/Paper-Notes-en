@@ -20,8 +20,8 @@ content_hash: 6d9cf876cbe3f9ff
 # HG-Lane: High-Fidelity Generation of Lane Scenes under Adverse Weather and Lighting Conditions without Re-annotation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10128](https://arxiv.org/abs/2603.10128)
-**Code**: [zdc233/HG-Lane](https://github.com/zdc233/HG-Lane)
+**arXiv**: [2603.10128](https://arxiv.org/abs/2603.10128)  
+**Code**: [zdc233/HG-Lane](https://github.com/zdc233/HG-Lane)  
 **Area**: Autonomous Driving
 **Keywords**: lane detection, adverse weather, diffusion model, ControlNet, data augmentation, CULane, TuSimple
 

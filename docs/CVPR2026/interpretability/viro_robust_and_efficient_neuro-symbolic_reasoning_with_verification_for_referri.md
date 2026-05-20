@@ -18,8 +18,8 @@ content_hash: ade76f478b34ffc8
 # VIRO: Robust and Efficient Neuro-Symbolic Reasoning with Verification for Referring Expression Comprehension
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.12781](https://arxiv.org/abs/2601.12781)
-**Code**: [https://github.com/ml-postech/VIRO-neuro-symbolic-reasoning-with-verification](https://github.com/ml-postech/VIRO-neuro-symbolic-reasoning-with-verification)
+**arXiv**: [2601.12781](https://arxiv.org/abs/2601.12781)  
+**Code**: [https://github.com/ml-postech/VIRO-neuro-symbolic-reasoning-with-verification](https://github.com/ml-postech/VIRO-neuro-symbolic-reasoning-with-verification)  
 **Area**: Interpretability
 **Keywords**: Referring Expression Comprehension, Neuro-Symbolic Reasoning, Operator-Level Verification, Zero-Shot Learning, Target-Absent Detection
 

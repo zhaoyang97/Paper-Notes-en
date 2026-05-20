@@ -18,8 +18,8 @@ content_hash: 392eb59ea7bbc85d
 # Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.01603](https://arxiv.org/abs/2508.01603)
-**Code**: Available
+**arXiv**: [2508.01603](https://arxiv.org/abs/2508.01603)  
+**Code**: Available  
 **Area**: Model Compression
 **Keywords**: AI-generated image detection, prompt learning, test-time adaptation, CLIP, forgery detection
 

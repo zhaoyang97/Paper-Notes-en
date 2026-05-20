@@ -18,8 +18,8 @@ content_hash: c39aad851e186c37
 # WPT: World-to-Policy Transfer via Online World Model Distillation
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.20095](https://arxiv.org/abs/2511.20095)
-**Code**: None
+**arXiv**: [2511.20095](https://arxiv.org/abs/2511.20095)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: World Model, Policy Distillation, Reward Model, Autonomous Driving, Online Distillation
 

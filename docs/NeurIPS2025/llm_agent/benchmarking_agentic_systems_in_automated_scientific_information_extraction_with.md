@@ -18,8 +18,8 @@ content_hash: 059569eaf1ec3cac
 # Benchmarking Agentic Systems in Automated Scientific Information Extraction with ChemX
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.00795](https://arxiv.org/abs/2510.00795)
-**Code**: [ChemX](https://ai-chem.github.io/ChemX)
+**arXiv**: [2510.00795](https://arxiv.org/abs/2510.00795)  
+**Code**: [ChemX](https://ai-chem.github.io/ChemX)  
 **Area**: Agent / Scientific Information Extraction
 **Keywords**: Chemical Information Extraction, Multimodal Benchmark, Agent Evaluation, Nanomaterials, Small Molecules
 

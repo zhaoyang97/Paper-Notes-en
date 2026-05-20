@@ -18,8 +18,8 @@ content_hash: 2d2b0cfe444b08d1
 # CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.14119](https://arxiv.org/abs/2504.14119)
-**Code**: [Website](https://cuhk-arise.github.io/CodeCrash/)
+**arXiv**: [2504.14119](https://arxiv.org/abs/2504.14119)  
+**Code**: [Website](https://cuhk-arise.github.io/CodeCrash/)  
 **Area**: Medical Imaging
 **Keywords**: LLM robustness, code reasoning, natural language perturbation, reasoning collapse, benchmark
 

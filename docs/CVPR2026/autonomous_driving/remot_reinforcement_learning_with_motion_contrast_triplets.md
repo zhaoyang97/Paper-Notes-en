@@ -18,8 +18,8 @@ content_hash: 79ae269f85e1a3a1
 # ReMoT: Reinforcement Learning with Motion Contrast Triplets
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00461](https://arxiv.org/abs/2603.00461)
-**Code**: None
+**arXiv**: [2603.00461](https://arxiv.org/abs/2603.00461)  
+**Code**: None  
 **Area**: Autonomous Driving / Vision-Language Models
 **Keywords**: Motion Contrast Triplets, Spatiotemporal Reasoning, GRPO, VLM, Reinforcement Learning
 
@@ -149,8 +149,8 @@ ReMoT comprises three core components: (1) **ReMoT-16K Data Construction**: a mu
 # ReMoT: Reinforcement Learning with Motion Contrast Triplets
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00461](https://arxiv.org/abs/2603.00461)
-**Code**: None
+**arXiv**: [2603.00461](https://arxiv.org/abs/2603.00461)  
+**Code**: None  
 **Area**: Vision-Language Models / Spatiotemporal Reasoning
 **Keywords**: Motion Contrast Triplets, GRPO, Spatiotemporal Reasoning, VLM, Data Construction
 

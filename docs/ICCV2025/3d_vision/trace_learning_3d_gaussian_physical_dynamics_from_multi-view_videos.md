@@ -18,7 +18,7 @@ content_hash: dcfb4d7265566c04
 # TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.09811](https://arxiv.org/abs/2508.09811)
+**arXiv**: [2508.09811](https://arxiv.org/abs/2508.09811)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, physical dynamics learning, future frame extrapolation, translational-rotational dynamical systems, dynamic scene reconstruction
 

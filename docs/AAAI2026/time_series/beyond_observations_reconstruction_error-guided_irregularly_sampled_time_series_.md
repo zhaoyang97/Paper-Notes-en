@@ -18,8 +18,8 @@ content_hash: 43cfaa3fb8b081f6
 # iTimER: Reconstruction Error-Guided Irregularly Sampled Time Series Representation Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06854](https://arxiv.org/abs/2511.06854)
-**Code**: N/A
+**arXiv**: [2511.06854](https://arxiv.org/abs/2511.06854)  
+**Code**: N/A  
 **Area**: Time Series / Self-Supervised Learning
 **Keywords**: Irregularly sampled time series, reconstruction error, self-supervised pretraining, Wasserstein alignment, pseudo-observations
 

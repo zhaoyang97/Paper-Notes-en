@@ -18,8 +18,8 @@ content_hash: 807e16810f3ba2e0
 # SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11663](https://arxiv.org/abs/2511.11663)
-**Code**: None
+**arXiv**: [2511.11663](https://arxiv.org/abs/2511.11663)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Quantization, Frequency-Domain Decomposition, Outlier Mitigation, Ultra-Low-Bit, Fourier Truncation
 

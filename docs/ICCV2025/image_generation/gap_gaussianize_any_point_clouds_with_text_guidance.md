@@ -18,8 +18,8 @@ content_hash: 01d94fe2df96275a
 # GAP: Gaussianize Any Point Clouds with Text Guidance
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.05631](https://arxiv.org/abs/2508.05631)
-**Code**: [Project Page](https://weiqi-zhang.github.io/GAP)
+**arXiv**: [2508.05631](https://arxiv.org/abs/2508.05631)  
+**Code**: [Project Page](https://weiqi-zhang.github.io/GAP)  
 **Area**: Image Generation
 **Keywords**: Point Cloud to Gaussian, Text Guidance, Diffusion Model, Surface Anchoring, Appearance Generation
 

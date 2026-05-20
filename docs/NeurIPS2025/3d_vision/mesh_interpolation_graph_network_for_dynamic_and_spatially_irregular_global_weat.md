@@ -18,8 +18,8 @@ content_hash: 7181c128c0498d12
 # Mesh Interpolation Graph Network for Dynamic and Spatially Irregular Global Weather Forecasting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20911](https://arxiv.org/abs/2509.20911)
-**Code**: [Available](https://github.com/compasszzn/MIGN)
+**arXiv**: [2509.20911](https://arxiv.org/abs/2509.20911)  
+**Code**: [Available](https://github.com/compasszzn/MIGN)  
 **Area**: 3D Vision / Spatiotemporal Forecasting
 **Keywords**: Graph Neural Networks, Global Weather Forecasting, Mesh Interpolation, Spherical Harmonics, Spatial Generalization
 

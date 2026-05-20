@@ -18,8 +18,8 @@ content_hash: 303c0e5f06ec2119
 # OCN: Effectively Utilizing Higher-Order Common Neighbors for Better Link Prediction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19719](https://arxiv.org/abs/2505.19719)
-**Code**: [GitHub](https://github.com/qingpingmo/OCN)
+**arXiv**: [2505.19719](https://arxiv.org/abs/2505.19719)  
+**Code**: [GitHub](https://github.com/qingpingmo/OCN)  
 **Area**: Graph Learning / Link Prediction
 **Keywords**: Link Prediction, Higher-Order Common Neighbors, Orthogonalization, Gram-Schmidt, Resource Allocation Heuristic
 

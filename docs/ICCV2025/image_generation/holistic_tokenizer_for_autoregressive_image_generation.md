@@ -18,8 +18,8 @@ content_hash: c54497f32e8026d4
 # Holistic Tokenizer for Autoregressive Image Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.02358](https://arxiv.org/abs/2507.02358)
-**Code**: [https://github.com/CVMI-Lab/Hita](https://github.com/CVMI-Lab/Hita)
+**arXiv**: [2507.02358](https://arxiv.org/abs/2507.02358)  
+**Code**: [https://github.com/CVMI-Lab/Hita](https://github.com/CVMI-Lab/Hita)  
 **Area**: Image Generation / Autoregressive Models / Image Tokenization
 **Keywords**: Image Tokenizer, Autoregressive Generation, Holistic Tokens, VQGAN, LlamaGen
 

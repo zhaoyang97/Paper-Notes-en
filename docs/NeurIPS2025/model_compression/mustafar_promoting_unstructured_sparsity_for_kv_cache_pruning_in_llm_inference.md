@@ -18,8 +18,8 @@ content_hash: 551ceb7c6e4888aa
 # MUSTAFAR: Promoting Unstructured Sparsity for KV Cache Pruning in LLM Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22913](https://arxiv.org/abs/2505.22913)
-**Code**: [GitHub](https://github.com/dhjoo98/mustafar)
+**arXiv**: [2505.22913](https://arxiv.org/abs/2505.22913)  
+**Code**: [GitHub](https://github.com/dhjoo98/mustafar)  
 **Area**: Model Compression
 **Keywords**: KV cache compression, unstructured sparsity, LLM inference, attention acceleration, sparse format
 

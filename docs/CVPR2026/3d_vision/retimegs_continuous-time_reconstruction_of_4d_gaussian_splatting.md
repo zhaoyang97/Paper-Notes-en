@@ -19,8 +19,8 @@ content_hash: d4f2b511b191e355
 # RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting
 
 **Conference**: CVPR2026
-**arXiv**: [2603.13783](https://arxiv.org/abs/2603.13783)
-**Code**: None
+**arXiv**: [2603.13783](https://arxiv.org/abs/2603.13783)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: 4D Gaussian Splatting, dynamic scene reconstruction, temporal interpolation, optical flow supervision, Catmull-Rom spline, temporal aliasing
 

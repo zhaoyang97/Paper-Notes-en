@@ -18,8 +18,8 @@ content_hash: acacf4193b26ed70
 # Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20850](https://arxiv.org/abs/2603.20850)
-**Code**: [https://mlzxy.github.io/glove2hand](https://mlzxy.github.io/glove2hand)
+**arXiv**: [2603.20850](https://arxiv.org/abs/2603.20850)  
+**Code**: [https://mlzxy.github.io/glove2hand](https://mlzxy.github.io/glove2hand)  
 **Area**: 3D Vision
 **Keywords**: hand-object interaction, sensing gloves, video translation, 3D Gaussian hand model, diffusion model
 

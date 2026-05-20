@@ -18,8 +18,8 @@ content_hash: 740180e8e37a983a
 # PARCO: Parallel AutoRegressive Models for Multi-Agent Combinatorial Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2409.03811](https://arxiv.org/abs/2409.03811)
-**Code**: [Available](https://github.com/ai4co/parco)
+**arXiv**: [2409.03811](https://arxiv.org/abs/2409.03811)  
+**Code**: [Available](https://github.com/ai4co/parco)  
 **Area**: Combinatorial Optimization / Multi-Agent Reinforcement Learning
 **Keywords**: Combinatorial Optimization, Autoregressive Models, Multi-Agent, Parallel Decoding, Vehicle Routing
 

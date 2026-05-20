@@ -18,8 +18,8 @@ content_hash: fdd98919fcd1cfa5
 # Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01000](https://arxiv.org/abs/2603.01000)
-**Code**: [Project Page](https://ethan-li123.github.io/FlexiMMT_page/)
+**arXiv**: [2603.01000](https://arxiv.org/abs/2603.01000)  
+**Code**: [Project Page](https://ethan-li123.github.io/FlexiMMT_page/)  
 **Area**: Video Generation
 **Keywords**: Motion Transfer, Multi-Object Multi-Motion, Attention Mask, Video Diffusion Model, I2V Generation
 
@@ -50,19 +50,19 @@ FlexiMMT is built upon the CogVideoX-5B-I2V diffusion model. During training, gi
 ### Key Designs
 
 1. **Motion Decoupling Mask Attention (MDMA)**:
-   - **Function**: Explicitly decouples motion signals of different objects at the attention level.
-   - **Mechanism**: Constructs a mask matrix $\mathcal{M}$ comprising two categories of sub-masks: Motion-to-X (M2X) and Text-to-X (T2X). M2X ensures motion tokens interact only with video tokens of their corresponding object ($\mathcal{M}_{m \to v}$), and different motion tokens do not interfere with each other ($\mathcal{M}_{m \to m} = \mathbf{0}$). T2X ensures text tokens describing a motion attend only to their corresponding object.
-   - **Design Motivation**: Global token interaction in the original MM-DiT leads to motion entanglement; the masking mechanism achieves precise motion isolation with minimal architectural modification.
+    - **Function**: Explicitly decouples motion signals of different objects at the attention level.
+    - **Mechanism**: Constructs a mask matrix $\mathcal{M}$ comprising two categories of sub-masks: Motion-to-X (M2X) and Text-to-X (T2X). M2X ensures motion tokens interact only with video tokens of their corresponding object ($\mathcal{M}_{m \to v}$), and different motion tokens do not interfere with each other ($\mathcal{M}_{m \to m} = \mathbf{0}$). T2X ensures text tokens describing a motion attend only to their corresponding object.
+    - **Design Motivation**: Global token interaction in the original MM-DiT leads to motion entanglement; the masking mechanism achieves precise motion isolation with minimal architectural modification.
 
 2. **Differential Mask Extraction Mechanism (DMEM)**:
-   - **Function**: Provides object masks for the training and inference stages respectively.
-   - **Mechanism**: During training (single object), the attention map between text query $Q_y^k$ and video key $K_v$ is used to automatically extract the object region, binarized with a mean threshold. During inference (multiple objects), a semantic segmentation model extracts the first-frame mask, which is then propagated to subsequent frames via RMPM.
-   - **Design Motivation**: During training, this avoids the computational overhead of external segmentation models and training-inference inconsistency. During inference, simple attention-based methods cannot distinguish multiple objects due to feature entanglement, necessitating the segmentation-plus-propagation approach.
+    - **Function**: Provides object masks for the training and inference stages respectively.
+    - **Mechanism**: During training (single object), the attention map between text query $Q_y^k$ and video key $K_v$ is used to automatically extract the object region, binarized with a mean threshold. During inference (multiple objects), a semantic segmentation model extracts the first-frame mask, which is then propagated to subsequent frames via RMPM.
+    - **Design Motivation**: During training, this avoids the computational overhead of external segmentation models and training-inference inconsistency. During inference, simple attention-based methods cannot distinguish multiple objects due to feature entanglement, necessitating the segmentation-plus-propagation approach.
 
 3. **Regression-based Mask Propagation Module (RMPM)**:
-   - **Function**: Accurately propagates the first-frame object mask to all frames of the video.
-   - **Mechanism**: Maintains a sliding-window anchor set (first frame + neighboring frames) and propagates anchor masks to the current frame via a feature correlation matrix $\mathcal{C}_l^k$. Dynamic RMPM further optimizes this: propagation stops when the mask change across consecutive steps falls below threshold $\alpha=5\%$, reusing the stable mask thereafter.
-   - **Design Motivation**: Motion transfer in diffusion models is primarily accomplished during early denoising steps, after which mask changes are negligible. Dynamic termination substantially improves inference efficiency.
+    - **Function**: Accurately propagates the first-frame object mask to all frames of the video.
+    - **Mechanism**: Maintains a sliding-window anchor set (first frame + neighboring frames) and propagates anchor masks to the current frame via a feature correlation matrix $\mathcal{C}_l^k$. Dynamic RMPM further optimizes this: propagation stops when the mask change across consecutive steps falls below threshold $\alpha=5\%$, reusing the stable mask thereafter.
+    - **Design Motivation**: Motion transfer in diffusion models is primarily accomplished during early denoising steps, after which mask changes are negligible. Dynamic termination substantially improves inference efficiency.
 
 ### Loss & Training
 

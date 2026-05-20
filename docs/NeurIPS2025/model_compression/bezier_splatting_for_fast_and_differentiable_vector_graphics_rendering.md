@@ -18,8 +18,8 @@ content_hash: 3fa22ac5b04e54c3
 # Bézier Splatting for Fast and Differentiable Vector Graphics Rendering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.16424](https://arxiv.org/abs/2503.16424)
-**Code**: [https://xiliu8006.github.io/Bezier_splatting_project](https://xiliu8006.github.io/Bezier_splatting_project)
+**arXiv**: [2503.16424](https://arxiv.org/abs/2503.16424)  
+**Code**: [https://xiliu8006.github.io/Bezier_splatting_project](https://xiliu8006.github.io/Bezier_splatting_project)  
 **Area**: Vector Graphics Rendering
 **Keywords**: Differentiable Rendering, Bézier Curves, Gaussian Splatting, Vectorization, Image Optimization
 
@@ -49,21 +49,21 @@ Input image → Initialize a set of Bézier curves → Uniformly sample points a
 
 1. **Parameterization of Bézier Curves as 2D Gaussians**:
 
-   - **Function**: Convert each Bézier curve into a sequence of 2D Gaussian points.
-   - **Mechanism**: Position = uniformly sampled points on the curve; rotation $\theta$ = local tangent angle; $\sigma_x$ (along the curve) = distance to neighboring sample points; $\sigma_y$ (perpendicular to the curve) = learnable width parameter. For closed curves, a "paired Bézier curve" structure linearly interpolates control points between two boundary curves to fill the interior region.
-   - **Design Motivation**: 2D Gaussians are the native representation in Gaussian Splatting, enabling direct reuse of its efficient rendering pipeline. Automatically deriving parameters from tangent direction and inter-point distances avoids additional learning overhead.
+    - **Function**: Convert each Bézier curve into a sequence of 2D Gaussian points.
+    - **Mechanism**: Position = uniformly sampled points on the curve; rotation $\theta$ = local tangent angle; $\sigma_x$ (along the curve) = distance to neighboring sample points; $\sigma_y$ (perpendicular to the curve) = learnable width parameter. For closed curves, a "paired Bézier curve" structure linearly interpolates control points between two boundary curves to fill the interior region.
+    - **Design Motivation**: 2D Gaussians are the native representation in Gaussian Splatting, enabling direct reuse of its efficient rendering pipeline. Automatically deriving parameters from tangent direction and inter-point distances avoids additional learning overhead.
 
 2. **α-blending Rendering (Non-accumulative)**:
 
-   - **Function**: Correctly handle occlusion relationships between curves.
-   - **Mechanism**: Curves are sorted by depth and rendered front-to-back as $C = \sum_i T_i \alpha_i c_i$, where $T_i = \prod_{j<i}(1-\alpha_j)$. Unlike DiffVG's per-pixel color accumulation, α-blending naturally supports occlusion.
-   - **Design Motivation**: DiffVG's accumulative rendering leads to color aliasing, whereas α-blending better reflects the physical occlusion model.
+    - **Function**: Correctly handle occlusion relationships between curves.
+    - **Mechanism**: Curves are sorted by depth and rendered front-to-back as $C = \sum_i T_i \alpha_i c_i$, where $T_i = \prod_{j<i}(1-\alpha_j)$. Unlike DiffVG's per-pixel color accumulation, α-blending naturally supports occlusion.
+    - **Design Motivation**: DiffVG's accumulative rendering leads to color aliasing, whereas α-blending better reflects the physical occlusion model.
 
 3. **Adaptive Pruning and Densification**:
 
-   - **Function**: Dynamically adjust the number and distribution of curves.
-   - **Mechanism**: Pruning—remove curves whose opacity falls below a threshold or whose area is too small; Densification—randomly initialize new curves in regions with high residual error; executed periodically.
-   - **Design Motivation**: Initially random curves may be unevenly distributed; the adaptive strategy concentrates curves in regions requiring fine detail.
+    - **Function**: Dynamically adjust the number and distribution of curves.
+    - **Mechanism**: Pruning—remove curves whose opacity falls below a threshold or whose area is too small; Densification—randomly initialize new curves in regions with high residual error; executed periodically.
+    - **Design Motivation**: Initially random curves may be unevenly distributed; the adaptive strategy concentrates curves in regions requiring fine detail.
 
 ### Loss & Training
 - $\mathcal{L} = \lambda_1 \|\hat{I} - I\|_2^2 + \lambda_2 \mathcal{L}_{Xing}$

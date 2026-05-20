@@ -18,8 +18,8 @@ content_hash: 2327c5ab5513b125
 # Object-WIPER: Training-Free Object and Associated Effect Removal in Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.06391](https://arxiv.org/abs/2601.06391)
-**Code**: Coming soon
+**arXiv**: [2601.06391](https://arxiv.org/abs/2601.06391)  
+**Code**: Coming soon  
 **Area**: Image Generation / Video Editing
 **Keywords**: Video object removal, associated effects, training-free, attention mechanism, diffusion models
 

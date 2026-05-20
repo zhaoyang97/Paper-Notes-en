@@ -19,8 +19,8 @@ content_hash: 751e318900d8c7e4
 # VisRef: Visual Refocusing while Thinking Improves Test-Time Scaling in Multi-Modal Large Reasoning Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00207](https://arxiv.org/abs/2603.00207)
-**Code**: None
+**arXiv**: [2603.00207](https://arxiv.org/abs/2603.00207)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: visual refocusing, test-time scaling, multimodal reasoning, DPP, visual token selection, training-free
 

@@ -18,8 +18,8 @@ content_hash: 8fbe7ff4743df0b3
 # 3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.01367](https://arxiv.org/abs/2507.01367)
-**Code**: [https://github.com/TRLou/PGA](https://github.com/TRLou/PGA)
+**arXiv**: [2507.01367](https://arxiv.org/abs/2507.01367)  
+**Code**: [https://github.com/TRLou/PGA](https://github.com/TRLou/PGA)  
 **Area**: Autonomous Driving
 **Keywords**: 3D Gaussian Splatting, Physical Adversarial Attack, Adversarial Camouflage, Multi-View Robustness, Autonomous Driving Security
 

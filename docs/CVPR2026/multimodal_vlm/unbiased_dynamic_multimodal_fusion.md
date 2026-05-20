@@ -18,8 +18,8 @@ content_hash: a0df6a4b4b5c6f0a
 # Unbiased Dynamic Multimodal Fusion
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19681](https://arxiv.org/abs/2603.19681)
-**Code**: [https://github.com/shicaiwei123/UDML](https://github.com/shicaiwei123/UDML)
+**arXiv**: [2603.19681](https://arxiv.org/abs/2603.19681)  
+**Code**: [https://github.com/shicaiwei123/UDML](https://github.com/shicaiwei123/UDML)  
 **Area**: Multimodal VLM / Multimodal Fusion
 **Keywords**: Dynamic multimodal fusion, uncertainty estimation, modality-dependency bias, noise-awareness, dual suppression
 
@@ -46,21 +46,21 @@ UDML is an architecture-agnostic general framework consisting of two core compon
 
 1. **Noise-Aware Uncertainty Estimator**:
 
-   - **Function**: Accurately measures modality quality across all noise levels, from clean input to severe corruption.
-   - **Mechanism**: During training, controllable noise of known intensity is injected into the modality data, and the estimator predicts the noise intensity from the encoded features. A probabilistic representation technique is introduced: each modality is mapped to a distribution (mean encodes semantic information; variance reflects noise characteristics), and the estimator infers noise intensity from the variance. This establishes a direct supervisory signal between feature corruption and noise level.
-   - **Design Motivation**: Empirical metrics (energy scores, probabilistic embeddings) lack direct supervision over noise; the noise-aware estimator builds accurate correspondences through an explicit noise prediction task.
+    - **Function**: Accurately measures modality quality across all noise levels, from clean input to severe corruption.
+    - **Mechanism**: During training, controllable noise of known intensity is injected into the modality data, and the estimator predicts the noise intensity from the encoded features. A probabilistic representation technique is introduced: each modality is mapped to a distribution (mean encodes semantic information; variance reflects noise characteristics), and the estimator infers noise intensity from the variance. This establishes a direct supervisory signal between feature corruption and noise level.
+    - **Design Motivation**: Empirical metrics (energy scores, probabilistic embeddings) lack direct supervision over noise; the noise-aware estimator builds accurate correspondences through an explicit noise prediction task.
 
 2. **Modality Dependency Calculator**:
 
-   - **Function**: Quantifies and compensates for the inherent dependency bias of the multimodal network toward each modality.
-   - **Mechanism**: Modality Dropout is used to quantify the model's dependency on each modality $\alpha^m$, which is then incorporated into the weight computation: $w_i^{m_1} = g(\frac{1}{s(z_i^{m_1}) \cdot \alpha^{m_1}})$. Modalities with high dependency are not excessively penalized by uncertainty, and harder-to-learn modalities with low dependency are protected from dual suppression.
-   - **Design Motivation**: Eliminate the dual suppression of harder modalities caused by the compound effect of optimization bias and high uncertainty.
+    - **Function**: Quantifies and compensates for the inherent dependency bias of the multimodal network toward each modality.
+    - **Mechanism**: Modality Dropout is used to quantify the model's dependency on each modality $\alpha^m$, which is then incorporated into the weight computation: $w_i^{m_1} = g(\frac{1}{s(z_i^{m_1}) \cdot \alpha^{m_1}})$. Modalities with high dependency are not excessively penalized by uncertainty, and harder-to-learn modalities with low dependency are protected from dual suppression.
+    - **Design Motivation**: Eliminate the dual suppression of harder modalities caused by the compound effect of optimization bias and high uncertainty.
 
 3. **Progressive Optimization Strategy**:
 
-   - **Function**: Jointly learns multimodal representations, noise estimation, and the main task within the standard training pipeline.
-   - **Mechanism**: Progressive training that first stabilizes multimodal representations before gradually introducing noise-aware estimation and dependency compensation.
-   - **Design Motivation**: Avoid interference among multiple learning objectives.
+    - **Function**: Jointly learns multimodal representations, noise estimation, and the main task within the standard training pipeline.
+    - **Mechanism**: Progressive training that first stabilizes multimodal representations before gradually introducing noise-aware estimation and dependency compensation.
+    - **Design Motivation**: Avoid interference among multiple learning objectives.
 
 ### Loss & Training
 

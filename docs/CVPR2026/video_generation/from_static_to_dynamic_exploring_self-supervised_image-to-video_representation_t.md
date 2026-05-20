@@ -18,8 +18,8 @@ content_hash: 61ef6710d3896abe
 # From Static to Dynamic: Exploring Self-supervised Image-to-Video Representation Transfer Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26597](https://arxiv.org/abs/2603.26597)
-**Code**: [https://github.com/yafeng19/Co-Settle](https://github.com/yafeng19/Co-Settle)
+**arXiv**: [2603.26597](https://arxiv.org/abs/2603.26597)  
+**Code**: [https://github.com/yafeng19/Co-Settle](https://github.com/yafeng19/Co-Settle)  
 **Area**: Video Generation
 **Keywords**: Image-to-video transfer, self-supervised learning, temporal consistency, semantic separability, lightweight projection
 

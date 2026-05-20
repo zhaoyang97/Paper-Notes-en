@@ -18,8 +18,8 @@ content_hash: e43379fc5be27024
 # Multimodal In-Context Learning for ASR of Low-Resource Languages
 
 **Conference**: ACL 2026
-**arXiv**: [2601.05707](https://arxiv.org/abs/2601.05707)
-**Code**: [github](https://github.com/ZL-KA/MICL)
+**arXiv**: [2601.05707](https://arxiv.org/abs/2601.05707)  
+**Code**: [github](https://github.com/ZL-KA/MICL)  
 **Area**: Audio & Speech / Low-Resource ASR
 **Keywords**: Multimodal in-context learning, low-resource ASR, speech large language model, cross-lingual transfer, hypothesis selection
 

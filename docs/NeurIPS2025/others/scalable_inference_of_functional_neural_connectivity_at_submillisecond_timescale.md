@@ -17,8 +17,8 @@ content_hash: 4ad817bb5295e1be
 # Scalable Inference of Functional Neural Connectivity at Submillisecond Timescales
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20966](https://arxiv.org/abs/2510.20966)
-**Code**: [Available](https://github.com/macari216/poisson-process-glm.git)
+**arXiv**: [2510.20966](https://arxiv.org/abs/2510.20966)  
+**Code**: [Available](https://github.com/macari216/poisson-process-glm.git)  
 **Area**: Computational Neuroscience
 **Keywords**: Functional connectivity, Poisson point process, GLM, Monte Carlo estimation, synaptic coupling filters
 
@@ -48,21 +48,21 @@ The input consists of multi-neuron spike time sequences $\mathbf{X} = \{(n_s, t_
 
 1. **Monte Carlo (MC) Estimation of the CIF**
 
-   - *Function*: Approximate the CIF integral $\int_0^T \lambda(t)\, dt$ via stratified sampling.
-   - *Mechanism*: The interval $[0, T]$ is divided into $M$ equal subintervals, from each of which one sample point $\tau_m$ is drawn uniformly. The integral is approximated as $\frac{T}{M}\sum_{m=1}^M \lambda(\tau_m)$. Samples are redrawn at each gradient update to maintain an unbiased estimate.
-   - *Design Motivation*: Unlike discrete batched methods, the MC approach evaluates the spike-time term exactly over all observed spikes rather than a subset. Stratified sampling ensures uniform coverage of the full recording, yielding substantially lower gradient variance—achieving high-quality fits even with $M \ll T/\Delta t$ samples.
+    - *Function*: Approximate the CIF integral $\int_0^T \lambda(t)\, dt$ via stratified sampling.
+    - *Mechanism*: The interval $[0, T]$ is divided into $M$ equal subintervals, from each of which one sample point $\tau_m$ is drawn uniformly. The integral is approximated as $\frac{T}{M}\sum_{m=1}^M \lambda(\tau_m)$. Samples are redrawn at each gradient update to maintain an unbiased estimate.
+    - *Design Motivation*: Unlike discrete batched methods, the MC approach evaluates the spike-time term exactly over all observed spikes rather than a subset. Stratified sampling ensures uniform coverage of the full recording, yielding substantially lower gradient variance—achieving high-quality fits even with $M \ll T/\Delta t$ samples.
 
 2. **Polynomial Approximation (PA) for the Continuous GLM**
 
-   - *Function*: Approximate the nonlinear function in the CIF with a second-order Chebyshev polynomial, reducing the likelihood to a quadratic form in the model parameters.
-   - *Mechanism*: Approximating $\exp(x)\Delta$ as $a_2 x^2 + a_1 x + a_0$ yields a CIF of the form $a_2 \mathbf{w}^\top \mathbf{M} \mathbf{w} + a_1 \mathbf{m}^\top \mathbf{w} + Ta_0$, where $\mathbf{M}$ and $\mathbf{m}$ are precomputable sufficient statistics. The resulting log-likelihood is quadratic and admits a closed-form solution.
-   - *Design Motivation*: The closed-form solution eliminates iterative optimization, enabling extremely fast computation. The polynomial approximation does introduce error, particularly when firing rates vary substantially. PA can serve as a high-quality warm-start initialization for MC, and a hybrid PA-MC mode combines the advantages of both.
+    - *Function*: Approximate the nonlinear function in the CIF with a second-order Chebyshev polynomial, reducing the likelihood to a quadratic form in the model parameters.
+    - *Mechanism*: Approximating $\exp(x)\Delta$ as $a_2 x^2 + a_1 x + a_0$ yields a CIF of the form $a_2 \mathbf{w}^\top \mathbf{M} \mathbf{w} + a_1 \mathbf{m}^\top \mathbf{w} + Ta_0$, where $\mathbf{M}$ and $\mathbf{m}$ are precomputable sufficient statistics. The resulting log-likelihood is quadratic and admits a closed-form solution.
+    - *Design Motivation*: The closed-form solution eliminates iterative optimization, enabling extremely fast computation. The polynomial approximation does introduce error, particularly when firing rates vary substantially. PA can serve as a high-quality warm-start initialization for MC, and a hybrid PA-MC mode combines the advantages of both.
 
 3. **Generalized Laguerre (GL) Polynomial Basis Functions**
 
-   - *Function*: Replace conventional raised cosine (RC) basis functions for parameterizing coupling filters.
-   - *Mechanism*: Laguerre polynomials of the form $L_n^{(\alpha)}(ct) \cdot e^{-ct/2} \cdot (ct)^{\alpha/2}$, parameterized by $\alpha$ and scale $c$, are orthogonal under the weight $t^\alpha e^{-t}$ and exhibit a gamma-function-like envelope that naturally matches the fast-rise, slow-decay profile of synaptic conductances.
-   - *Design Motivation*: (1) Orthogonality enables efficient filter representation with fewer basis functions (3 GL bases outperform 4 RC bases); (2) integrals of individual and pairwise basis functions have analytic closed forms via the lower incomplete gamma function, eliminating numerical integration; (3) GL bases are defined over the full history window, avoiding the need to specify support boundaries for each cosine bump as required by RC bases.
+    - *Function*: Replace conventional raised cosine (RC) basis functions for parameterizing coupling filters.
+    - *Mechanism*: Laguerre polynomials of the form $L_n^{(\alpha)}(ct) \cdot e^{-ct/2} \cdot (ct)^{\alpha/2}$, parameterized by $\alpha$ and scale $c$, are orthogonal under the weight $t^\alpha e^{-t}$ and exhibit a gamma-function-like envelope that naturally matches the fast-rise, slow-decay profile of synaptic conductances.
+    - *Design Motivation*: (1) Orthogonality enables efficient filter representation with fewer basis functions (3 GL bases outperform 4 RC bases); (2) integrals of individual and pairwise basis functions have analytic closed forms via the lower incomplete gamma function, eliminating numerical integration; (3) GL bases are defined over the full history window, avoiding the need to specify support boundaries for each cosine bump as required by RC bases.
 
 ### Loss & Training
 The MC model is optimized via gradient descent with adaptive step sizes (backtracking line search), and convergence is assessed by the gradient step norm $u_t = \|\eta_t \cdot \nabla \mathcal{L}(\theta_t)\|$. The hybrid PA-MC model initializes parameters using the PA closed-form solution and then refines them with MC. All models employ ridge regularization ($\beta = 1000$) to encourage connection sparsity.

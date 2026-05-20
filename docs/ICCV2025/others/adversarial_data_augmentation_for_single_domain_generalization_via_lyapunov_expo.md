@@ -17,8 +17,8 @@ content_hash: d739de6612a9b28f
 # Adversarial Data Augmentation for Single Domain Generalization via Lyapunov Exponents
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04302](https://arxiv.org/abs/2507.04302)
-**Code**: N/A
+**arXiv**: [2507.04302](https://arxiv.org/abs/2507.04302)  
+**Code**: N/A  
 **Area**: Other
 **Keywords**: single domain generalization, adversarial data augmentation, Lyapunov exponents, edge of chaos, optimizer
 
@@ -54,9 +54,9 @@ Recursively expanding and substituting into the LE definition $LE = \lim_{t \to 
 
 2. **LE-guided learning rate adjustment**: The core innovation. The LE change $\Delta LE_t = LE_t - LE_{t-1}$ is computed at each step:
 
-   - When $\Delta LE_t > 0$ (the model approaches the edge of chaos), the learning rate is decreased to deeply explore that region:
+    - When $\Delta LE_t > 0$ (the model approaches the edge of chaos), the learning rate is decreased to deeply explore that region:
      $\eta_{t+1} = \eta_t \cdot \exp(-\beta \cdot \Delta LE_t)$
-   - When $\Delta LE_t \leq 0$, the learning rate is kept unchanged.
+    - When $\Delta LE_t \leq 0$, the learning rate is kept unchanged.
 
    The parameter $\beta$ controls adjustment sensitivity. This design ensures the model slows down to thoroughly explore the region when LE increases (i.e., when it approaches areas rich in generalizable features), rather than passing through rapidly.
 
@@ -138,8 +138,8 @@ Evaluated on three standard SDG benchmarks â€” PACS, OfficeHome, and DomainNet â
 # Adversarial Data Augmentation for Single Domain Generalization via Lyapunov Exponents
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04302](https://arxiv.org/abs/2507.04302)
-**Code**: N/A
+**arXiv**: [2507.04302](https://arxiv.org/abs/2507.04302)  
+**Code**: N/A  
 **Area**: optimization
 **Keywords**: single domain generalization, adversarial data augmentation, Lyapunov exponents, edge of chaos, learning rate adjustment
 

@@ -18,8 +18,8 @@ content_hash: 63172456ed37c8f6
 # Toward Enhancing Representation Learning in Federated Multi-Task Settings
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01626](https://arxiv.org/abs/2602.01626)
-**Code**: Available (provided in supplementary materials)
+**arXiv**: [2602.01626](https://arxiv.org/abs/2602.01626)  
+**Code**: Available (provided in supplementary materials)  
 **Institution**: Huawei Noah's Ark Lab, Montreal
 **Area**: AI Safety
 **Keywords**: Federated multi-task learning, contrastive learning, Muscle loss, model heterogeneity, mutual information maximization

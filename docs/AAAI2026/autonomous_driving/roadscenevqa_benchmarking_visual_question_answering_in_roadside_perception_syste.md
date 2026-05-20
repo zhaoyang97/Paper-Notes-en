@@ -18,8 +18,8 @@ content_hash: 4b0a3be7398f6aec
 # RoadSceneVQA: Benchmarking Visual Question Answering in Roadside Perception Systems for Intelligent Transportation System
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18286](https://arxiv.org/abs/2511.18286)
-**Code**: [github.com/GuanRunwei/RS-VQA](https://github.com/GuanRunwei/RS-VQA)
+**arXiv**: [2511.18286](https://arxiv.org/abs/2511.18286)  
+**Code**: [github.com/GuanRunwei/RS-VQA](https://github.com/GuanRunwei/RS-VQA)  
 **Area**: Autonomous Driving / Intelligent Transportation
 **Keywords**: Visual Question Answering, Roadside Perception, Multimodal Large Language Models, Chain-of-Thought Reasoning, Vision-Language Fusion
 

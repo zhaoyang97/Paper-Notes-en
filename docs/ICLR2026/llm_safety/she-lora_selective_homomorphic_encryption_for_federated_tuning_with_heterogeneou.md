@@ -18,8 +18,8 @@ content_hash: 14d90c5533e41a7c
 # SHE-LoRA: Selective Homomorphic Encryption for Federated Tuning with Heterogeneous LoRA
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.21051](https://arxiv.org/abs/2505.21051)
-**Code**: [GitHub](https://github.com/liyan2015/SHE-LoRA)
+**arXiv**: [2505.21051](https://arxiv.org/abs/2505.21051)  
+**Code**: [GitHub](https://github.com/liyan2015/SHE-LoRA)  
 **Area**: AI Security / Privacy Protection
 **Keywords**: Federated Learning, Homomorphic Encryption, LoRA, Privacy Protection, Heterogeneous Devices
 

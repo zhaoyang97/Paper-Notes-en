@@ -18,8 +18,8 @@ content_hash: 190583c5c1c8b287
 # SALVE: Sparse Autoencoder-Latent Vector Editing for Mechanistic Control of Neural Networks
 
 **Conference**: ICLR2026
-**arXiv**: [2512.15938](https://arxiv.org/abs/2512.15938)
-**Code**: To be confirmed
+**arXiv**: [2512.15938](https://arxiv.org/abs/2512.15938)  
+**Code**: To be confirmed  
 **Area**: Interpretability
 **Keywords**: Mechanistic Interpretability, Sparse Autoencoder, Model Editing, Feature Visualization, Weight-Space Intervention
 

@@ -18,8 +18,8 @@ content_hash: dd1baefa2c791fdf
 # SPADE: Spatial-Aware Denoising Network for Open-vocabulary Panoptic Scene Graph Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.05798](https://arxiv.org/abs/2507.05798)
-**Code**: None (mentioned on project page)
+**arXiv**: [2507.05798](https://arxiv.org/abs/2507.05798)  
+**Code**: None (mentioned on project page)  
 **Area**: Image Segmentation
 **Keywords**: Panoptic Scene Graph Generation, Open-Vocabulary, Diffusion Models, Spatial Relation Reasoning, Graph Transformer
 

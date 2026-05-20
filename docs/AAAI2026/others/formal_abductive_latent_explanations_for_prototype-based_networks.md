@@ -17,8 +17,8 @@ content_hash: 53272ed9b34ab846
 # Formal Abductive Latent Explanations for Prototype-Based Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16588](https://arxiv.org/abs/2511.16588)
-**Code**: [GitHub](https://github.com/julsoria/ale)
+**arXiv**: [2511.16588](https://arxiv.org/abs/2511.16588)  
+**Code**: [GitHub](https://github.com/julsoria/ale)  
 **Area**: Explainable AI / Formal Reasoning
 **Keywords**: Prototype Networks, Abductive Explanation, Formal XAI, Latent Space, Case-Based Reasoning
 

@@ -18,8 +18,8 @@ content_hash: ee24d56e00a2b639
 # AnyPortal: Zero-Shot Consistent Video Background Replacement
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.07472](https://arxiv.org/abs/2509.07472)
-**Code**: To be released
+**arXiv**: [2509.07472](https://arxiv.org/abs/2509.07472)  
+**Code**: To be released  
 **Area**: Diffusion Models / Video Editing
 **Keywords**: Video background replacement, foreground relighting, zero-shot, diffusion models, temporal consistency
 

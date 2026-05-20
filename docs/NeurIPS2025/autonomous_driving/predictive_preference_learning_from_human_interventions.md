@@ -18,8 +18,8 @@ content_hash: eecda7ee91ddb47e
 # Predictive Preference Learning from Human Interventions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.01545](https://arxiv.org/abs/2510.01545)
-**Code**: [https://metadriverse.github.io/ppl](https://metadriverse.github.io/ppl)
+**arXiv**: [2510.01545](https://arxiv.org/abs/2510.01545)  
+**Code**: [https://metadriverse.github.io/ppl](https://metadriverse.github.io/ppl)  
 **Area**: Autonomous Driving / Imitation Learning
 **Keywords**: Interactive Imitation Learning, Preference Learning, Human Interventions, Trajectory Prediction, DPO
 

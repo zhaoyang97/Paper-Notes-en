@@ -18,8 +18,8 @@ content_hash: db3a53f5d60144ad
 # Physics-Informed Autonomous LLM Agents for Explainable Power Electronics Modulation Design
 
 **Conference**: AAAI 2026
-**arXiv**: [2411.14214](https://arxiv.org/abs/2411.14214)
-**Code**: None
+**arXiv**: [2411.14214](https://arxiv.org/abs/2411.14214)  
+**Code**: None  
 **Area**: LLM Agent / Industrial Applications
 **Keywords**: physics-informed agent, power electronics, modulation design, PINN, explainability
 

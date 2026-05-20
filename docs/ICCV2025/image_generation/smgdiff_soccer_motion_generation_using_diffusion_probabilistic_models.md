@@ -18,8 +18,8 @@ content_hash: 563f0d7d3ba3b73c
 # SMGDiff: Soccer Motion Generation using Diffusion Probabilistic Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.16216](https://arxiv.org/abs/2411.16216)
-**Code**: [https://github.com/SMGDiff/SMGDiff](https://github.com/SMGDiff/SMGDiff)
+**arXiv**: [2411.16216](https://arxiv.org/abs/2411.16216)  
+**Code**: [https://github.com/SMGDiff/SMGDiff](https://github.com/SMGDiff/SMGDiff)  
 **Area**: Image Generation
 **Keywords**: motion generation, diffusion model, soccer animation, human-object interaction, character control
 

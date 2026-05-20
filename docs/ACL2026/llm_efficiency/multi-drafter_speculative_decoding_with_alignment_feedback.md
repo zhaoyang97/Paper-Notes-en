@@ -17,8 +17,8 @@ content_hash: 5ac96b5ea4720e71
 # Multi-Drafter Speculative Decoding with Alignment Feedback
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05417](https://arxiv.org/abs/2604.05417)
-**Code**: Available
+**arXiv**: [2604.05417](https://arxiv.org/abs/2604.05417)  
+**Code**: Available  
 **Area**: LLM Efficiency
 **Keywords**: Speculative Decoding, Multi-Armed Bandit, Multi-Drafter, Alignment Feedback, Inference Acceleration
 

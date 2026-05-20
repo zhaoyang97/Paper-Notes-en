@@ -18,8 +18,8 @@ content_hash: e06b68054842e5f7
 # IDFace: Face Template Protection for Efficient and Secure Identification
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.12050](https://arxiv.org/abs/2507.12050)
-**Code**: N/A
+**arXiv**: [2507.12050](https://arxiv.org/abs/2507.12050)  
+**Code**: N/A  
 **Area**: Human Understanding / Face Recognition Security
 **Keywords**: face template protection, homomorphic encryption, biometric privacy, large-scale identification, ternary quantization
 

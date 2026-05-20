@@ -18,8 +18,8 @@ content_hash: 077164ddc39a2815
 # MVCustom: Multi-View Customized Diffusion via Geometric Latent Rendering and Completion
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.13702](https://arxiv.org/abs/2510.13702)
-**Code**: [Project Page](https://minjung-s.github.io/mvcustom/)
+**arXiv**: [2510.13702](https://arxiv.org/abs/2510.13702)  
+**Code**: [Project Page](https://minjung-s.github.io/mvcustom/)  
 **Area**: Diffusion Models / Personalized Generation
 **Keywords**: Multi-view customized generation, camera pose control, feature field rendering, video diffusion, geometric consistency
 

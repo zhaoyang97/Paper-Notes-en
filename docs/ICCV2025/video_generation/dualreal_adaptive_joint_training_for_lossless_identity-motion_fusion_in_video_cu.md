@@ -18,8 +18,8 @@ content_hash: 52aa5468726ed52a
 # DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video Customization
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.02192](https://arxiv.org/abs/2505.02192)
-**Code**: [https://wenc-k.github.io/dualreal-customization](https://wenc-k.github.io/dualreal-customization) (Project Page)
+**arXiv**: [2505.02192](https://arxiv.org/abs/2505.02192)  
+**Code**: [https://wenc-k.github.io/dualreal-customization](https://wenc-k.github.io/dualreal-customization) (Project Page)  
 **Area**: Video Generation
 **Keywords**: Video Customized Generation, Identity-Motion Fusion, Joint Training, Diffusion Transformer, Adaptive Control
 

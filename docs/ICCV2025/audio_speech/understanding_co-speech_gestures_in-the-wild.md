@@ -18,8 +18,8 @@ content_hash: 4720a85b977bbed3
 # Understanding Co-speech Gestures in-the-wild
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.22668](https://arxiv.org/abs/2503.22668)
-**Code**: [Project Page](https://www.robots.ox.ac.uk/~vgg/research/jegal)
+**arXiv**: [2503.22668](https://arxiv.org/abs/2503.22668)  
+**Code**: [Project Page](https://www.robots.ox.ac.uk/~vgg/research/jegal)  
 **Area**: Audio & Speech
 **Keywords**: Co-speech gestures, tri-modal representation learning, gesture retrieval, gesture word spotting, active speaker detection
 
@@ -57,10 +57,10 @@ JEGAL (Joint Embedding space for Gestures, Audio, and Language) learns tri-modal
 
 1. **Three modal encoders + fusion module**
 
-   - **Gesture encoder $\mathbb{G}$**: A 3D convolutional layer (temporal receptive field of 5 frames in the first layer) followed by a Transformer encoder, producing frame-level features $\mathbf{g}^T \in \mathbb{R}^{T \times d}$. The backbone is initialized from GestSync and frozen; only the Transformer head is trained. Facial regions are masked to prevent lip-motion information leakage.
-   - **Text encoder $\mathbb{L}$**: Multilingual RoBERTa XLM-Base extracts subword features, which are encoded and projected by a Transformer head to yield $\mathbf{l}^w \in \mathbb{R}^{W \times d/2}$.
-   - **Speech encoder $\mathbb{S}$**: A 2D-CNN encodes mel-spectrograms, outputting $\mathbf{s} \in \mathbb{R}^{T' \times d/2}$.
-   - **Fusion module**: Subword text embeddings are aggregated into word-level embeddings $\mathbf{l}^w$; speech features are aggregated into word-level features $\mathbf{s}^w$ according to word boundaries; these are concatenated along the feature dimension to obtain the joint word-level representation $\mathbf{c}^w \in \mathbb{R}^{W \times d}$.
+    - **Gesture encoder $\mathbb{G}$**: A 3D convolutional layer (temporal receptive field of 5 frames in the first layer) followed by a Transformer encoder, producing frame-level features $\mathbf{g}^T \in \mathbb{R}^{T \times d}$. The backbone is initialized from GestSync and frozen; only the Transformer head is trained. Facial regions are masked to prevent lip-motion information leakage.
+    - **Text encoder $\mathbb{L}$**: Multilingual RoBERTa XLM-Base extracts subword features, which are encoded and projected by a Transformer head to yield $\mathbf{l}^w \in \mathbb{R}^{W \times d/2}$.
+    - **Speech encoder $\mathbb{S}$**: A 2D-CNN encodes mel-spectrograms, outputting $\mathbf{s} \in \mathbb{R}^{T' \times d/2}$.
+    - **Fusion module**: Subword text embeddings are aggregated into word-level embeddings $\mathbf{l}^w$; speech features are aggregated into word-level features $\mathbf{s}^w$ according to word boundaries; these are concatenated along the feature dimension to obtain the joint word-level representation $\mathbf{c}^w \in \mathbb{R}^{W \times d}$.
 
    During training, speech or text input is randomly zeroed out with 50% probability (modality dropout), encouraging the model to learn from both modalities in a balanced manner and enabling single-modality inference at test time.
 

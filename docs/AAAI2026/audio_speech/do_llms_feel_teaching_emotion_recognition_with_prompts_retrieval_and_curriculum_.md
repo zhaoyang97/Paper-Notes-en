@@ -18,8 +18,8 @@ content_hash: b1d48b0a3368e693
 # Do LLMs Feel? Teaching Emotion Recognition with Prompts, Retrieval, and Curriculum Learning
 
 **Conference**: AAAI2026
-**arXiv**: [2511.07061](https://arxiv.org/abs/2511.07061)
-**Code**: [LiXinran6/PRC-Emo](https://github.com/LiXinran6/PRC-Emo)
+**arXiv**: [2511.07061](https://arxiv.org/abs/2511.07061)  
+**Code**: [LiXinran6/PRC-Emo](https://github.com/LiXinran6/PRC-Emo)  
 **Area**: Audio & Speech
 **Keywords**: Emotion Recognition in Conversation, Prompt Engineering, Retrieval-Augmented Generation, Curriculum Learning, LLM Fine-tuning
 

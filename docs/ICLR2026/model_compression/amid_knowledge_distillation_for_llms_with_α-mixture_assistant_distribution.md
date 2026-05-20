@@ -18,8 +18,8 @@ content_hash: b745c16362b5c78e
 # AMiD: Knowledge Distillation for LLMs with α-mixture Assistant Distribution
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.15982](https://arxiv.org/abs/2510.15982)
-**Code**: [https://github.com/aailab-kaist/AMiD](https://github.com/aailab-kaist/AMiD)
+**arXiv**: [2510.15982](https://arxiv.org/abs/2510.15982)  
+**Code**: [https://github.com/aailab-kaist/AMiD](https://github.com/aailab-kaist/AMiD)  
 **Area**: Model Compression / Knowledge Distillation
 **Keywords**: Knowledge Distillation, Assistant Distribution, α-mixture, f-divergence, LLM Compression
 
@@ -51,21 +51,21 @@ which is normalized to yield a valid probability distribution. The distillation 
 
 1. **α-mixture Assistant Distribution Family**
 
-   - **Function**: Controls the geometric shape of the interpolation path between teacher and student distributions via the parameter α.
-   - **Mechanism**: At α=−1, the distribution reduces to the arithmetic mean (m-mixture, a linear path); at α=1, it reduces to the geometric mean (e-mixture, a linear path in log-space); at α=3, it yields the harmonic mean; other values of α define novel interpolation paths. Theorem 3.2 proves that $r^{(\alpha,\lambda)}$ is an interior point (a point on the geodesic) between p and q in the sense of α-divergence.
-   - **Design Motivation**: When α<1, the support is the union of those of p and q (mode-covering); when α≥1, the support is the intersection (mode-seeking)—a distinction that directly governs distillation behavior.
+    - **Function**: Controls the geometric shape of the interpolation path between teacher and student distributions via the parameter α.
+    - **Mechanism**: At α=−1, the distribution reduces to the arithmetic mean (m-mixture, a linear path); at α=1, it reduces to the geometric mean (e-mixture, a linear path in log-space); at α=3, it yields the harmonic mean; other values of α define novel interpolation paths. Theorem 3.2 proves that $r^{(\alpha,\lambda)}$ is an interior point (a point on the geodesic) between p and q in the sense of α-divergence.
+    - **Design Motivation**: When α<1, the support is the union of those of p and q (mode-covering); when α≥1, the support is the intersection (mode-seeking)—a distinction that directly governs distillation behavior.
 
 2. **Optimality Guarantee (Theorem 3.4)**
 
-   - **Function**: Proves that for any regular divergence D and any α, the optimal solution of AMiD is equivalent to p=q_θ.
-   - **Mechanism**: If the assistant distribution perfectly matches the teacher, then q_θ must equal p—when the interpolation point coincides with one endpoint, it must coincide with the other.
-   - **Design Motivation**: Ensures that introducing an assistant distribution does not alter the ultimate objective of distillation.
+    - **Function**: Proves that for any regular divergence D and any α, the optimal solution of AMiD is equivalent to p=q_θ.
+    - **Mechanism**: If the assistant distribution perfectly matches the teacher, then q_θ must equal p—when the interpolation point coincides with one endpoint, it must coincide with the other.
+    - **Design Motivation**: Ensures that introducing an assistant distribution does not alter the ultimate objective of distillation.
 
 3. **Gradient Analysis and Mode-Covering/Seeking Control (Proposition 3.5)**
 
-   - **Function**: Analyzes how α influences gradient behavior under f-divergence.
-   - **Mechanism**: The gradient contains a weighting term $w = \frac{(1-\lambda)q_\theta^{\frac{1-\alpha}{2}}}{\lambda p^{\frac{1-\alpha}{2}} + (1-\lambda)q_\theta^{\frac{1-\alpha}{2}}}$; larger α amplifies w in regions where p>q_θ (mode-covering), while smaller α amplifies w where p<q_θ (mode-seeking).
-   - **Design Motivation**: Even with a fixed divergence D, the quality–diversity trade-off can still be controlled through α.
+    - **Function**: Analyzes how α influences gradient behavior under f-divergence.
+    - **Mechanism**: The gradient contains a weighting term $w = \frac{(1-\lambda)q_\theta^{\frac{1-\alpha}{2}}}{\lambda p^{\frac{1-\alpha}{2}} + (1-\lambda)q_\theta^{\frac{1-\alpha}{2}}}$; larger α amplifies w in regions where p>q_θ (mode-covering), while smaller α amplifies w where p<q_θ (mode-seeking).
+    - **Design Motivation**: Even with a fixed divergence D, the quality–diversity trade-off can still be controlled through α.
 
 ### Loss & Training
 - Compatible with arbitrary divergences and data strategies; α-β divergence with λ=0.1 is recommended.

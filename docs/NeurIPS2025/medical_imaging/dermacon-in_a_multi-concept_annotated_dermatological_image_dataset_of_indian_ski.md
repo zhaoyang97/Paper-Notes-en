@@ -18,8 +18,8 @@ content_hash: 3fe3cce7c2c964a9
 # DermaCon-IN: A Multi-concept Annotated Dermatological Image Dataset of Indian Skin Disorders
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06099](https://arxiv.org/abs/2506.06099)
-**Code**: [GitHub](https://github.com/) / [Harvard Dataverse](https://dataverse.harvard.edu/)
+**arXiv**: [2506.06099](https://arxiv.org/abs/2506.06099)  
+**Code**: [GitHub](https://github.com/) / [Harvard Dataverse](https://dataverse.harvard.edu/)  
 **Area**: Medical Imaging
 **Keywords**: dermatology dataset, Indian skin tone, concept bottleneck model, hierarchical classification, explainable AI
 

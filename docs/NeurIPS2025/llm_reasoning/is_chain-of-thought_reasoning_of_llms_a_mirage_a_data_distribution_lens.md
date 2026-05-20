@@ -18,8 +18,8 @@ content_hash: 4e4c6dbc989b0347
 # Note 1: Is CoT a Hallucination? A Data Distribution Perspective
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.01191](https://arxiv.org/abs/2508.01191)
-**Code**: [GitHub](https://github.com/ChengshuaiZhao0/DataAlchemy)
+**arXiv**: [2508.01191](https://arxiv.org/abs/2508.01191)  
+**Code**: [GitHub](https://github.com/ChengshuaiZhao0/DataAlchemy)  
 **Area**: LLM Reasoning
 **Keywords**: Chain-of-Thought, Data Distribution, Distribution Shift, DataAlchemy, Reasoning Capability
 

@@ -18,8 +18,8 @@ content_hash: b73ca13d5d252e0f
 # From Classification to Ranking: Enhancing LLM Reasoning for MBTI Personality Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.18582](https://arxiv.org/abs/2601.18582)
-**Code**: None
+**arXiv**: [2601.18582](https://arxiv.org/abs/2601.18582)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: MBTI, learning to rank, GRPO, NDCG, personality detection
 

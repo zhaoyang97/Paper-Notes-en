@@ -19,8 +19,8 @@ content_hash: 2652f235d63a08bc
 # Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06328](https://arxiv.org/abs/2511.06328)
-**Code**: To be confirmed
+**arXiv**: [2511.06328](https://arxiv.org/abs/2511.06328)  
+**Code**: To be confirmed  
 **Area**: Audio & Speech
 **Keywords**: multimodal sentiment analysis, dynamic modality selection, graph convolutional network, capsule network, cross-modal attention, sequence compression
 

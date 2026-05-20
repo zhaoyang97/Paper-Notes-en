@@ -18,8 +18,8 @@ content_hash: 183f6db0bb941cf0
 # Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.09572](https://arxiv.org/abs/2411.09572)
-**Code**: [sites.google.com/view/vitam-d](https://sites.google.com/view/vitam-d/)
+**arXiv**: [2411.09572](https://arxiv.org/abs/2411.09572)  
+**Code**: [sites.google.com/view/vitam-d](https://sites.google.com/view/vitam-d/)  
 **Area**: Human Understanding
 **Keywords**: hand-object interaction, tactile perception, contact modeling, deformable objects, SDF reconstruction
 

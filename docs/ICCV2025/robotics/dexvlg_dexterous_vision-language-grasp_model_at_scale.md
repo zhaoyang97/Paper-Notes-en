@@ -18,8 +18,8 @@ content_hash: 88637b9d65838028
 # DexVLG: Dexterous Vision-Language-Grasp Model at Scale
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.02747](https://arxiv.org/abs/2507.02747)
-**Code**: None
+**arXiv**: [2507.02747](https://arxiv.org/abs/2507.02747)  
+**Code**: None  
 **Area**: Robotics / Dexterous Grasping
 **Keywords**: Dexterous grasping, vision-language model, Flow Matching, semantic part grasping, large-scale dataset
 

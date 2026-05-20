@@ -18,8 +18,8 @@ content_hash: d316dfb63dc9129e
 # Multi-View Attention Multiple-Instance Learning Enhanced by LLM Reasoning for Cognitive Distortion Detection
 
 **Conference**: ACL 2026
-**arXiv**: [2509.17292](https://arxiv.org/abs/2509.17292)
-**Code**: [GitHub](https://github.com/cocoboldongle/MVACD)
+**arXiv**: [2509.17292](https://arxiv.org/abs/2509.17292)  
+**Code**: [GitHub](https://github.com/cocoboldongle/MVACD)  
 **Area**: Medical Imaging
 **Keywords**: Cognitive Distortion Detection, Multiple Instance Learning, LLM Reasoning, Psychological Decomposition, Gated Attention
 

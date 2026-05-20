@@ -18,8 +18,8 @@ content_hash: e7a58d90c6779fc2
 # Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01025](https://arxiv.org/abs/2602.01025)
-**Code**: Available (GitHub)
+**arXiv**: [2602.01025](https://arxiv.org/abs/2602.01025)  
+**Code**: Available (GitHub)  
 **Area**: LLM Alignment
 **Keywords**: VLM jailbreak, adversarial attack, universal adversarial image, semantic loss, transferable attack
 

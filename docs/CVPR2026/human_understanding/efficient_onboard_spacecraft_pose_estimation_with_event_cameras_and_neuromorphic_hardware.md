@@ -18,8 +18,8 @@ content_hash: bf0566309f308b10
 # Efficient Onboard Spacecraft Pose Estimation with Event Cameras and Neuromorphic Hardware
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04117](https://arxiv.org/abs/2604.04117)
-**Code**: None
+**arXiv**: [2604.04117](https://arxiv.org/abs/2604.04117)  
+**Code**: None  
 **Area**: Event Camera / Space Perception
 **Keywords**: event camera, spacecraft pose estimation, neuromorphic hardware, Akida, SNN
 

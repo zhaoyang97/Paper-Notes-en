@@ -21,8 +21,8 @@ content_hash: 2d8bca9ce33d6b69
 # DuET: Dual Incremental Object Detection via Exemplar-Free Task Arithmetic
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21260](https://arxiv.org/abs/2506.21260)
-**Code**: To be confirmed
+**arXiv**: [2506.21260](https://arxiv.org/abs/2506.21260)  
+**Code**: To be confirmed  
 **Area**: Autonomous Driving
 **Keywords**: Incremental Object Detection, Class Incremental, Domain Incremental, Task Arithmetic, Model Merging, Catastrophic Forgetting, YOLO11, RT-DETR
 

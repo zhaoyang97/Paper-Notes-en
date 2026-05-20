@@ -18,8 +18,8 @@ content_hash: 488c9ec9aeb51271
 # Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.12255](https://arxiv.org/abs/2510.12255)
-**Code**: [GitHub](https://github.com) / [HuggingFace](https://huggingface.co)
+**arXiv**: [2510.12255](https://arxiv.org/abs/2510.12255)  
+**Code**: [GitHub](https://github.com) / [HuggingFace](https://huggingface.co)  
 **Area**: Medical Imaging
 **Keywords**: Medical LLM, Multi-Turn Dialogue Robustness, Cognitive Bias, MedQA, Clinical Safety
 

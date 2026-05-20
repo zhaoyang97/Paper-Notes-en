@@ -18,8 +18,8 @@ content_hash: 9890bac22ab0ad18
 # Fourier Angle Alignment for Oriented Object Detection in Remote Sensing
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23790](https://arxiv.org/abs/2602.23790)
-**Code**: [https://github.com/gcy0423/Fourier-Angle-Alignment](https://github.com/gcy0423/Fourier-Angle-Alignment)
+**arXiv**: [2602.23790](https://arxiv.org/abs/2602.23790)  
+**Code**: [https://github.com/gcy0423/Fourier-Angle-Alignment](https://github.com/gcy0423/Fourier-Angle-Alignment)  
 **Area**: Object Detection
 **Keywords**: Oriented object detection, Fourier rotational equivariance, frequency-domain orientation estimation, feature fusion, remote sensing
 

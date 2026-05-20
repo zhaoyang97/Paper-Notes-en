@@ -18,8 +18,8 @@ content_hash: 68779f41514d103c
 # Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07659](https://arxiv.org/abs/2603.07659)
-**Code**: [https://github.com/KaihuaTang/Self-Critical-Inference-Framework](https://github.com/KaihuaTang/Self-Critical-Inference-Framework)
+**arXiv**: [2603.07659](https://arxiv.org/abs/2603.07659)  
+**Code**: [https://github.com/KaihuaTang/Self-Critical-Inference-Framework](https://github.com/KaihuaTang/Self-Critical-Inference-Framework)  
 **Area**: Multimodal VLM
 **Keywords**: LVLM robustness, counterfactual reasoning, language bias, language sensitivity, test-time scaling
 

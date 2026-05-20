@@ -19,7 +19,7 @@ content_hash: d8de1814a43e7942
 # Understanding Flatness in Generative Models: Its Role and Benefits
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11078](https://arxiv.org/abs/2503.11078)
+**arXiv**: [2503.11078](https://arxiv.org/abs/2503.11078)  
 **Area**: Diffusion Models · Image Generation
 **Keywords**: flat minima, diffusion models, SAM, generalization, quantization robustness, exposure bias
 

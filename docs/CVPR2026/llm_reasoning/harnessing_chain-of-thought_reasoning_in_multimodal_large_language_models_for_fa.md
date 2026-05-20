@@ -18,8 +18,8 @@ content_hash: 7607f3e94b69e4bc
 # Harnessing Chain-of-Thought Reasoning in Multimodal Large Language Models for Face Anti-Spoofing
 
 **Conference**: CVPR 2026
-**arXiv**: [2506.01783](https://arxiv.org/abs/2506.01783)
-**Code**: None
+**arXiv**: [2506.01783](https://arxiv.org/abs/2506.01783)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Face Anti-Spoofing, Chain-of-Thought Reasoning, Multimodal Large Language Models, VQA Dataset, Progressive Learning
 

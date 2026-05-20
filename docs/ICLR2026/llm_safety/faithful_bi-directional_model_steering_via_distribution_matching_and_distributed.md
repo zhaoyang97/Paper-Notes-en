@@ -17,8 +17,8 @@ content_hash: ebefdeeea2b1cc4b
 # Faithful Bi-Directional Model Steering via Distribution Matching and Distributed Interchange Interventions
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.05234](https://arxiv.org/abs/2602.05234)
-**Code**: [colored-dye/concept_das](https://github.com/colored-dye/concept_das)
+**arXiv**: [2602.05234](https://arxiv.org/abs/2602.05234)  
+**Code**: [colored-dye/concept_das](https://github.com/colored-dye/concept_das)  
 **Area**: AI Safety
 **Keywords**: model steering, distribution matching, interchange intervention, mechanistic interpretability, LLM safety
 

@@ -18,8 +18,8 @@ content_hash: e48b633c30c2c240
 # To Label or Not to Label: PALM – A Predictive Model for Evaluating Sample Efficiency in Active Learning Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.15381](https://arxiv.org/abs/2507.15381)
-**Code**: [github.com/juliamachnio/PALM](https://github.com/juliamachnio/PALM)
+**arXiv**: [2507.15381](https://arxiv.org/abs/2507.15381)  
+**Code**: [github.com/juliamachnio/PALM](https://github.com/juliamachnio/PALM)  
 **Area**: Self-Supervised Learning / Active Learning
 **Keywords**: Active Learning, Sample Efficiency, Learning Curve Prediction, Coverage Efficiency, Self-Supervised Representations
 

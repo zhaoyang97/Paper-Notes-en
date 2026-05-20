@@ -18,8 +18,8 @@ content_hash: 0bb33d861e9dcbf7
 # Does Semantic Noise Initialization Transfer from Images to Videos? A Paired Diagnostic Study
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.06672](https://arxiv.org/abs/2603.06672)
-**Code**: [GitHub](https://github.com/klkds/golden-noise-transfer)
+**arXiv**: [2603.06672](https://arxiv.org/abs/2603.06672)  
+**Code**: [GitHub](https://github.com/klkds/golden-noise-transfer)  
 **Area**: Image/Video Generation
 **Keywords**: semantic noise initialization, text-to-video diffusion, golden noise, paired evaluation, noise-space diagnostics
 
@@ -48,18 +48,18 @@ The study is framed as a diagnostic rather than a breakthrough contribution. The
 1. **Semantic (Golden) Noise Targets**: Semantically aligned target noise $z_T^*$ is constructed by searching in noise space for initializations that produce higher semantic and temporal quality. Concretely, DDIM inversion or optimization within a teacher diffusion model is used to extract target noise. For video, this is computationally expensive, as each candidate noise requires a full spatiotemporal denoising pass.
 
 2. **NPNet Lightweight Noise Mapper**: A prompt-conditioned mapping network $f_\phi$ is trained to transform standard Gaussian noise into semantically initialized noise:
-   - Input: standard Gaussian noise $z_T$ and text prompt $p$ (injected via text embedding)
-   - Output: semantically aligned noise $\hat{z}_T = f_\phi(z_T, p)$
-   - Training loss: regression loss $\mathcal{L}(\phi) = \mathbb{E}[\|f_\phi(z_T, p) - z_T^*\|^2]$
-   - At inference, only the initial noise is replaced; the backbone remains fully frozen.
+    - Input: standard Gaussian noise $z_T$ and text prompt $p$ (injected via text embedding)
+    - Output: semantically aligned noise $\hat{z}_T = f_\phi(z_T, p)$
+    - Training loss: regression loss $\mathcal{L}(\phi) = \mathbb{E}[\|f_\phi(z_T, p) - z_T^*\|^2]$
+    - At inference, only the initial noise is replaced; the backbone remains fully frozen.
 
 3. **Paired Statistical Testing Design**: This constitutes the paper's core methodological contribution. For each prompt, 5 random seeds are used; scores are averaged over seeds and then subjected to prompt-level paired difference analysis (statistical unit: prompt, $N=100$). Bootstrap 95% CIs and sign-flip permutation test $p$-values are reported.
 
 4. **Cross-Model Noise-Space Diagnostics**: The geometry and frequency characteristics of golden noise are analyzed across two video diffusion models, Open-Sora2 and VideoCrafter:
-   - Displacement vector $d = z_g - z$ (difference between golden and standard noise)
-   - Directional Stability (DirStab): mean cosine similarity of unit displacement vectors across seeds
-   - Explained Variance Ratio (EVR1): variance fraction captured by the first PCA component
-   - Spatial/temporal high-frequency ratio: FFT analysis of the frequency structure of displacements
+    - Displacement vector $d = z_g - z$ (difference between golden and standard noise)
+    - Directional Stability (DirStab): mean cosine similarity of unit displacement vectors across seeds
+    - Explained Variance Ratio (EVR1): variance fraction captured by the first PCA component
+    - Spatial/temporal high-frequency ratio: FFT analysis of the frequency structure of displacements
 
 ### Loss & Training
 

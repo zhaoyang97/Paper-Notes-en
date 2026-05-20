@@ -18,8 +18,8 @@ content_hash: 1c63016d036aa47e
 # DataRater: Meta-Learned Dataset Curation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17895](https://arxiv.org/abs/2505.17895)
-**Code**: None
+**arXiv**: [2505.17895](https://arxiv.org/abs/2505.17895)  
+**Code**: None  
 **Area**: Data Curation / Meta-Learning / LLM Pre-training
 **Keywords**: Data curation, meta-learning, meta-gradient, data quality assessment, pre-training efficiency
 

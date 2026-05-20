@@ -18,8 +18,8 @@ content_hash: e9133a28dce461b5
 # What You Have is What You Track: Adaptive and Robust Multimodal Tracking
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.05899](https://arxiv.org/abs/2507.05899)
-**Code**: Coming soon
+**arXiv**: [2507.05899](https://arxiv.org/abs/2507.05899)  
+**Code**: Coming soon  
 **Area**: Video Understanding / Object Tracking / Multimodal Fusion
 **Keywords**: Multimodal tracking, missing modality, Mixture-of-Experts, video-level masking, adaptive complexity
 

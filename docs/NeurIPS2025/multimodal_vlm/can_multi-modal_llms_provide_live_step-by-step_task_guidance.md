@@ -18,8 +18,8 @@ content_hash: 61da81d3c3cf0d41
 # Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.21998](https://arxiv.org/abs/2511.21998)
-**Code**: [GitHub](https://github.com/qualcomm-ai-research/livemamba)
+**arXiv**: [2511.21998](https://arxiv.org/abs/2511.21998)  
+**Code**: [GitHub](https://github.com/qualcomm-ai-research/livemamba)  
 **Area**: Multimodal VLM
 **Keywords**: streaming video understanding, interactive guidance, error detection, Mamba, step-by-step guidance
 

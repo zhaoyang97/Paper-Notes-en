@@ -18,8 +18,8 @@ content_hash: 75102ffd0af253f3
 # Preventing Shortcuts in Adapter Training via Providing the Shortcuts
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20887](https://arxiv.org/abs/2510.20887)
-**Code**: [Project Page](https://snap-research.github.io/shortcut-rerouting/)
+**arXiv**: [2510.20887](https://arxiv.org/abs/2510.20887)  
+**Code**: [Project Page](https://snap-research.github.io/shortcut-rerouting/)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Adapter Training, Shortcut Learning, Disentanglement, Personalized Generation, Identity Preservation
 

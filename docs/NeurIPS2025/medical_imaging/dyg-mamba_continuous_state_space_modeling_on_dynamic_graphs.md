@@ -18,8 +18,8 @@ content_hash: 6875858122d6cc9d
 # DyG-Mamba: Continuous State Space Modeling on Dynamic Graphs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2408.06966](https://arxiv.org/abs/2408.06966)
-**Code**: [https://github.com/Clearloveyuan/DyG-Mamba](https://github.com/Clearloveyuan/DyG-Mamba)
+**arXiv**: [2408.06966](https://arxiv.org/abs/2408.06966)  
+**Code**: [https://github.com/Clearloveyuan/DyG-Mamba](https://github.com/Clearloveyuan/DyG-Mamba)  
 **Area**: Medical Imaging
 **Keywords**: State Space Models, Dynamic Graphs, Temporal Span Awareness, Mamba, Link Prediction
 

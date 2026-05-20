@@ -20,8 +20,8 @@ content_hash: 7d09088d78297e8f
 # Statistical Advantage of Softmax Attention: Insights from Single-Location Regression
 
 **Conference**: ICLR2026
-**arXiv**: [2509.21936](https://arxiv.org/abs/2509.21936)
-**Code**: Available (reproduction code included with the paper)
+**arXiv**: [2509.21936](https://arxiv.org/abs/2509.21936)  
+**Code**: Available (reproduction code included with the paper)  
 **Area**: LLM/NLP
 **Keywords**: softmax attention, linear attention, information retrieval, statistical physics, high-dimensional analysis, Bayes-optimal, single-location regression
 

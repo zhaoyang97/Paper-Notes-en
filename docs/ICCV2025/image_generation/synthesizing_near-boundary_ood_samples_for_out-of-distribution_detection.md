@@ -18,8 +18,8 @@ content_hash: d6a591382382d391
 # Synthesizing Near-Boundary OOD Samples for Out-of-Distribution Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.10225](https://arxiv.org/abs/2507.10225)
-**Code**: [https://github.com/Jarvisgivemeasuit/SynOOD](https://github.com/Jarvisgivemeasuit/SynOOD)
+**arXiv**: [2507.10225](https://arxiv.org/abs/2507.10225)  
+**Code**: [https://github.com/Jarvisgivemeasuit/SynOOD](https://github.com/Jarvisgivemeasuit/SynOOD)  
 **Area**: Image Generation
 **Keywords**: Out-of-distribution detection, near-boundary sample synthesis, CLIP fine-tuning, diffusion model generation, negative labels
 

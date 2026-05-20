@@ -18,9 +18,9 @@ content_hash: 96c482ae5da0c78f
 # Novel View Synthesis from A Few Glimpses via Test-Time Natural Video Completion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.17932](https://arxiv.org/abs/2511.17932)
+**arXiv**: [2511.17932](https://arxiv.org/abs/2511.17932)  
 **Authors**: Yan Xu, Yixing Wang, Stella X. Yu
-**Code**: N/A
+**Code**: N/A  
 **Area**: 3D Vision / Novel View Synthesis
 **Keywords**: Novel View Synthesis, Video Diffusion Models, 3D Gaussian Splatting, Sparse Input, Test-Time Inference
 

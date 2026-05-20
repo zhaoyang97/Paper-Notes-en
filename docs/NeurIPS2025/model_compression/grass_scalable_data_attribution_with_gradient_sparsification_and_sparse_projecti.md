@@ -18,8 +18,8 @@ content_hash: 65425eac3f12e11e
 # GraSS: Scalable Data Attribution with Gradient Sparsification and Sparse Projection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18976](https://arxiv.org/abs/2505.18976)
-**Code**: [GitHub](https://github.com/TRAIS-Lab/GraSS)
+**arXiv**: [2505.18976](https://arxiv.org/abs/2505.18976)  
+**Code**: [GitHub](https://github.com/TRAIS-Lab/GraSS)  
 **Area**: Model Compression / Data Attribution
 **Keywords**: Data Attribution, Gradient Compression, Sparse Projection, Influence Functions, Random Projection
 

@@ -18,8 +18,8 @@ content_hash: a1ead00f439af961
 # Randomization Boosts KV Caching, Learning Balances Query Load: A Joint Perspective
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.18999](https://arxiv.org/abs/2601.18999)
-**Code**: [GitHub](https://github.com/fzwark/KVRouting)
+**arXiv**: [2601.18999](https://arxiv.org/abs/2601.18999)  
+**Code**: [GitHub](https://github.com/fzwark/KVRouting)  
 **Area**: LLM Serving / KV Cache / Load Balancing
 **Keywords**: KV cache eviction policy, randomized algorithms, load-balanced routing, multi-LLM serving, competitive ratio analysis
 

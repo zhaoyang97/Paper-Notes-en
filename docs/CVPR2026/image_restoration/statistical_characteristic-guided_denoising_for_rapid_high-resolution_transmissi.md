@@ -18,9 +18,9 @@ content_hash: 085a2f233afe20ef
 # Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.18834](https://arxiv.org/abs/2603.18834)
+**arXiv**: [2603.18834](https://arxiv.org/abs/2603.18834)  
 **Authors**: Hesong Li, Ziqi Wu, Ruiwen Shao, Ying Fu
-**Code**: [HeasonLee/SCGN](https://github.com/HeasonLee/SCGN)
+**Code**: [HeasonLee/SCGN](https://github.com/HeasonLee/SCGN)  
 **Area**: Image Restoration
 **Keywords**: HRTEM Denoising, Statistical Characteristic Guidance, Frequency-Domain Denoising, Spatial Deviation Weighting, Noise Calibration
 

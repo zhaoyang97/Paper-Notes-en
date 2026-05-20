@@ -18,8 +18,8 @@ content_hash: 1e587a3026df1cd1
 # Celo2: Towards Learned Optimization Free Lunch
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.19142](https://arxiv.org/abs/2602.19142)
-**Code**: [https://github.com/amoudgl/celo2](https://github.com/amoudgl/celo2)
+**arXiv**: [2602.19142](https://arxiv.org/abs/2602.19142)  
+**Code**: [https://github.com/amoudgl/celo2](https://github.com/amoudgl/celo2)  
 **Area**: Optimization
 **Keywords**: learned optimizer, meta-learning, meta-generalization, normalized update rule, AdamW alternative
 

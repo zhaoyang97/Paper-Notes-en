@@ -18,8 +18,8 @@ content_hash: 1e4fc3760f1d638b
 # VSRM: A Robust Mamba-Based Framework for Video Super-Resolution
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22762](https://arxiv.org/abs/2506.22762)
-**Code**: N/A
+**arXiv**: [2506.22762](https://arxiv.org/abs/2506.22762)  
+**Code**: N/A  
 **Area**: Video Generation
 **Keywords**: Video Super-Resolution, Mamba, State Space Model, Deformable Alignment, Frequency Loss
 
@@ -140,8 +140,8 @@ Under the 6-frame setting, VSRM also outperforms IART by 0.28 dB (32.43 vs. 32.1
 # VSRM: A Robust Mamba-Based Framework for Video Super-Resolution
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22762](https://arxiv.org/abs/2506.22762)
-**Code**: N/A
+**arXiv**: [2506.22762](https://arxiv.org/abs/2506.22762)  
+**Code**: N/A  
 **Area**: Image Restoration / Video Super-Resolution
 **Keywords**: Video Super-Resolution, Mamba, State Space Model, Deformable Alignment, Frequency Loss
 

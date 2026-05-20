@@ -19,8 +19,8 @@ content_hash: b276933a04be86e2
 # Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models
 
 **Conference**: NEURIPS2025
-**arXiv**: [2511.05633](https://arxiv.org/abs/2511.05633)
-**Code**: To be confirmed
+**arXiv**: [2511.05633](https://arxiv.org/abs/2511.05633)  
+**Code**: To be confirmed  
 **Area**: Scientific Computing
 **Keywords**: turbulence modeling, uncertainty quantification, CNN, eigenspace perturbation, RANS, physics-guided ML
 

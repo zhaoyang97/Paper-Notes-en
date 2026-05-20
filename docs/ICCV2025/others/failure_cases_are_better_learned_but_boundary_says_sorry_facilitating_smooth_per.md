@@ -17,8 +17,8 @@ content_hash: 99e20e40341a5b72
 # Failure Cases Are Better Learned But Boundary Says Sorry: Facilitating Smooth Perception Change for Accuracy-Robustness Trade-Off in Adversarial Training
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.02186](https://arxiv.org/abs/2508.02186)
-**Code**: [https://github.com/FlaAI/RPAT](https://github.com/FlaAI/RPAT)
+**arXiv**: [2508.02186](https://arxiv.org/abs/2508.02186)  
+**Code**: [https://github.com/FlaAI/RPAT](https://github.com/FlaAI/RPAT)  
 **Area**: Other
 **Keywords**: adversarial training, accuracy-robustness trade-off, perceptual consistency, decision boundary, robust perception
 
@@ -48,8 +48,8 @@ That is, the model's perception should change linearly in proportion to the pert
 
 2. **Theoretical support** (two theorems):
 
-   - *Theorem 1* (Local Linearity): The Robust Perception constraint drives the quadratic form of the Hessian matrix toward zero, $\Delta^\top H_{h_\theta}(\mathbf{x}) \Delta \to 0$, suppressing higher-order nonlinear effects so that perception changes primarily along the linear term of the perturbation.
-   - *Theorem 2* (Lipschitz Regularization): Guarantees that the variation of the Jacobian along the perturbation direction is bounded, and the increment of the global Lipschitz constant is constrained to an infinitesimal $\gamma$, thereby smoothing the decision boundary.
+    - *Theorem 1* (Local Linearity): The Robust Perception constraint drives the quadratic form of the Hessian matrix toward zero, $\Delta^\top H_{h_\theta}(\mathbf{x}) \Delta \to 0$, suppressing higher-order nonlinear effects so that perception changes primarily along the linear term of the perturbation.
+    - *Theorem 2* (Lipschitz Regularization): Guarantees that the variation of the Jacobian along the perturbation direction is bounded, and the increment of the global Lipschitz constant is constrained to an infinitesimal $\gamma$, thereby smoothing the decision boundary.
 
 3. **RPAT loss function**: Using logits as the model perception representation, an MSE regularization is applied among the benign sample $\mathbf{x}$, interpolated sample $\tilde{\mathbf{x}} = \mathbf{x} + \alpha \cdot \Delta$, and adversarial sample $\hat{\mathbf{x}}'$:
 $$\mathcal{L}^{\text{RPAT}} = \frac{1}{n}\sum_{i=1}^n \left(\mathcal{L}^{\text{CE}}(\mathbf{p}(\hat{\mathbf{x}}_i', \bm{\theta}), y_i) + \lambda \cdot \mathcal{L}^{\text{MSE}}\left(\frac{\mathbf{z}(\tilde{\mathbf{x}}_i) - \mathbf{z}(\mathbf{x}_i)}{\alpha} \bigg\| \frac{\mathbf{z}(\hat{\mathbf{x}}_i') - \mathbf{z}(\tilde{\mathbf{x}}_i)}{1-\alpha}\right)\right)$$

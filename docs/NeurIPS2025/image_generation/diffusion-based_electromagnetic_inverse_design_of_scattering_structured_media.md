@@ -18,8 +18,8 @@ content_hash: 836750ccb7ca2e10
 # Diffusion-Based Electromagnetic Inverse Design of Scattering Structured Media
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05357](https://arxiv.org/abs/2511.05357)
-**Code**: Available ([https://github.com/mikzuker/inverse_design_metasurface_generation](https://github.com/mikzuker/inverse_design_metasurface_generation))
+**arXiv**: [2511.05357](https://arxiv.org/abs/2511.05357)  
+**Code**: Available ([https://github.com/mikzuker/inverse_design_metasurface_generation](https://github.com/mikzuker/inverse_design_metasurface_generation))  
 **Area**: Image Generation / Diffusion Models / Electromagnetic Inverse Design
 **Keywords**: Conditional Diffusion Model, Metasurface Inverse Design, Electromagnetic Scattering, FiLM Conditioning, Meta-structure Generation
 

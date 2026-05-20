@@ -18,8 +18,8 @@ content_hash: a61a08142eb10a9e
 # NOSE: Neural Olfactory-Semantic Embedding with Tri-Modal Orthogonal Contrastive Learning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.10452](https://arxiv.org/abs/2604.10452)
-**Code**: [GitHub](https://github.com/Xianyusyy/NOSE)
+**arXiv**: [2604.10452](https://arxiv.org/abs/2604.10452)  
+**Code**: [GitHub](https://github.com/Xianyusyy/NOSE)  
 **Area**: Interpretability
 **Keywords**: olfactory representation learning, tri-modal alignment, orthogonal disentanglement, contrastive learning, weak positive samples
 

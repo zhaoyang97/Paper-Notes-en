@@ -18,8 +18,8 @@ content_hash: c6c647fc70327c8e
 # JPEG Processing Neural Operator for Backward-Compatible Coding
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.23521](https://arxiv.org/abs/2507.23521)
-**Code**: [github.com/WooKyoungHan/JPNeO](https://github.com/WooKyoungHan/JPNeO)
+**arXiv**: [2507.23521](https://arxiv.org/abs/2507.23521)  
+**Code**: [github.com/WooKyoungHan/JPNeO](https://github.com/WooKyoungHan/JPNeO)  
 **Area**: Scientific Computing
 **Keywords**: JPEG, Neural Operator, Backward Compatibility, Image Compression, Chroma Preservation
 

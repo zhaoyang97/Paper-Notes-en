@@ -18,8 +18,8 @@ content_hash: 1296bb7f095dc21c
 # DisCode: Distribution-Aware Score Decoder for Robust Automatic Evaluation of Image Captioning
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.14420](https://arxiv.org/abs/2512.14420)
-**Code**: Not released
+**arXiv**: [2512.14420](https://arxiv.org/abs/2512.14420)  
+**Code**: Not released  
 **Area**: Multimodal VLM
 **Keywords**: Image captioning evaluation, large vision-language models, test-time adaptation, scoring robustness, distribution prior
 

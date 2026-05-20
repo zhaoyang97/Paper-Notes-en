@@ -18,8 +18,8 @@ content_hash: e5854f3538f06d5c
 # Multi-identity Human Image Animation with Structural Video Diffusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.04126](https://arxiv.org/abs/2504.04126)
-**Code**: [GitHub](https://github.com/AvatarAnything/StructuralVideoDiffusion)
+**arXiv**: [2504.04126](https://arxiv.org/abs/2504.04126)  
+**Code**: [GitHub](https://github.com/AvatarAnything/StructuralVideoDiffusion)  
 **Area**: Video Generation
 **Keywords**: Multi-identity human animation, video diffusion model, identity embedding, joint depth-normal learning, human interaction
 

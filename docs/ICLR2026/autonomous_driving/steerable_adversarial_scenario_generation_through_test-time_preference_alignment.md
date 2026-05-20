@@ -18,8 +18,8 @@ content_hash: c2dfb33c2b1004b3
 # Steerable Adversarial Scenario Generation through Test-Time Preference Alignment (SAGE)
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.20102](https://arxiv.org/abs/2509.20102)
-**Code**: [https://tongnie.github.io/SAGE/](https://tongnie.github.io/SAGE/)
+**arXiv**: [2509.20102](https://arxiv.org/abs/2509.20102)  
+**Code**: [https://tongnie.github.io/SAGE/](https://tongnie.github.io/SAGE/)  
 **Area**: Autonomous Driving / AI Safety
 **Keywords**: adversarial scenario generation, preference alignment, multi-objective optimization, linear mode connectivity, closed-loop training
 

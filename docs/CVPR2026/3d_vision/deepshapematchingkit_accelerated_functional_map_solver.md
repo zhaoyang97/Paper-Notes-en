@@ -18,8 +18,8 @@ content_hash: 2362254a1b017d3e
 # DeepShapeMatchingKit: Accelerated Functional Map Solver and Shape Matching Pipelines Revisited
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.10377](https://arxiv.org/abs/2604.10377)
-**Code**: [https://github.com/xieyizheng/DeepShapeMatchingKit](https://github.com/xieyizheng/DeepShapeMatchingKit)
+**arXiv**: [2604.10377](https://arxiv.org/abs/2604.10377)  
+**Code**: [https://github.com/xieyizheng/DeepShapeMatchingKit](https://github.com/xieyizheng/DeepShapeMatchingKit)  
 **Area**: 3D Vision / Shape Matching
 **Keywords**: Functional Maps, Shape Matching, Accelerated Solver, DiffusionNet, Open-Source Toolkit
 

@@ -18,8 +18,8 @@ content_hash: 80a759c0a7b50500
 # PaTH Attention: Position Encoding via Accumulating Householder Transformations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16381](https://arxiv.org/abs/2505.16381)
-**Code**: [fla-org/flash-linear-attention](https://github.com/fla-org/flash-linear-attention)
+**arXiv**: [2505.16381](https://arxiv.org/abs/2505.16381)  
+**Code**: [fla-org/flash-linear-attention](https://github.com/fla-org/flash-linear-attention)  
 **Area**: LLM Evaluation
 **Keywords**: position encoding, Householder transformation, attention mechanism, state tracking, RoPE
 

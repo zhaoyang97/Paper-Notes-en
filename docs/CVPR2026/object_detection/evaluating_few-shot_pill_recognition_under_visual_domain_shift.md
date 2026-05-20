@@ -18,8 +18,8 @@ content_hash: 78e75cf997fb9077
 # Evaluating Few-Shot Pill Recognition Under Visual Domain Shift
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10833](https://arxiv.org/abs/2603.10833)
-**Code**: None (based on FsDet/Detectron2 open-source framework)
+**arXiv**: [2603.10833](https://arxiv.org/abs/2603.10833)  
+**Code**: None (based on FsDet/Detectron2 open-source framework)  
 **Area**: Object Detection / Medical Imaging
 **Keywords**: few-shot object detection, pill recognition, domain shift, deployment readiness, cross-dataset evaluation
 
@@ -55,27 +55,27 @@ A two-stage few-shot object detection framework implemented on top of FsDet (Fru
 
 1. **Dataset Design and Contrast**
 
-   - Function: Two datasets with substantially different visual complexity are deliberately selected as sources for base training.
-   - Mechanism: CURE (8,973 images / 196 classes / single-pill controlled environment / full-image bbox annotations) vs. MEDISEG (8,262 images / 32 classes / multi-pill real-world scenes / instance-level bbox annotations). The two datasets have non-overlapping class sets, and neither overlaps with the novel classes.
-   - Design Motivation: By controlling the visual realism of the base domain, the variable of "training data realism" is isolated to assess its effect on few-shot generalization. CURE offers larger data volume and more categories but visually simple scenes; MEDISEG offers fewer images and categories but higher visual complexity—constituting a natural "quantity vs. quality" experiment.
+    - Function: Two datasets with substantially different visual complexity are deliberately selected as sources for base training.
+    - Mechanism: CURE (8,973 images / 196 classes / single-pill controlled environment / full-image bbox annotations) vs. MEDISEG (8,262 images / 32 classes / multi-pill real-world scenes / instance-level bbox annotations). The two datasets have non-overlapping class sets, and neither overlaps with the novel classes.
+    - Design Motivation: By controlling the visual realism of the base domain, the variable of "training data realism" is isolated to assess its effect on few-shot generalization. CURE offers larger data volume and more categories but visually simple scenes; MEDISEG offers fewer images and categories but higher visual complexity—constituting a natural "quantity vs. quality" experiment.
 
 2. **Few-Shot Adaptation Protocol**
 
-   - Function: Perform 5-way K-shot adaptation on the novel deployment dataset.
-   - Mechanism: $K \in \{1, 5, 10\}$; support sets are sampled from the deployment dataset, while the query set (516 images) and overlap-only set (133 images) are strictly separated. Fine-tuning is fixed at 2,000 iterations with SGD + momentum 0.9, lr $= 1\times10^{-3}$; the backbone is frozen and only ROI heads and partial RPN layers are fine-tuned.
-   - Design Motivation: A fixed training budget eliminates confounds from training duration; freezing the backbone preserves base knowledge; strict data separation ensures that observed differences are attributable to base-domain characteristics rather than data leakage.
+    - Function: Perform 5-way K-shot adaptation on the novel deployment dataset.
+    - Mechanism: $K \in \{1, 5, 10\}$; support sets are sampled from the deployment dataset, while the query set (516 images) and overlap-only set (133 images) are strictly separated. Fine-tuning is fixed at 2,000 iterations with SGD + momentum 0.9, lr $= 1\times10^{-3}$; the backbone is frozen and only ROI heads and partial RPN layers are fine-tuned.
+    - Design Motivation: A fixed training budget eliminates confounds from training duration; freezing the backbone preserves base knowledge; strict data separation ensures that observed differences are attributable to base-domain characteristics rather than data leakage.
 
 3. **Classification-Centric Evaluation Framework**
 
-   - Function: Replace traditional mAP with foreground classification accuracy (FG-Acc), false negative rate (FN rate), RPN classification loss, and total loss as primary metrics.
-   - Mechanism: $\text{FG-Acc} = \frac{\text{number of correctly classified foreground proposals}}{\text{total foreground proposals}}$, $\text{FN} = \frac{\text{number of missed GT objects}}{\text{total GT objects}}$.
-   - Design Motivation: CURE (full-image bboxes) and MEDISEG (instance bboxes) differ in annotation granularity, leading to inconsistent IoU matching; AP is therefore not comparable across annotation strategies. Classification and error metrics isolate semantic recognition from localization failures, exposing failure modes that mAP obscures.
+    - Function: Replace traditional mAP with foreground classification accuracy (FG-Acc), false negative rate (FN rate), RPN classification loss, and total loss as primary metrics.
+    - Mechanism: $\text{FG-Acc} = \frac{\text{number of correctly classified foreground proposals}}{\text{total foreground proposals}}$, $\text{FN} = \frac{\text{number of missed GT objects}}{\text{total GT objects}}$.
+    - Design Motivation: CURE (full-image bboxes) and MEDISEG (instance bboxes) differ in annotation granularity, leading to inconsistent IoU matching; AP is therefore not comparable across annotation strategies. Classification and error metrics isolate semantic recognition from localization failures, exposing failure modes that mAP obscures.
 
 4. **Overlap-Only Stress Test**
 
-   - Function: A subset of 133 images with severe pill overlap is filtered from the deployment dataset to serve as an independent test set.
-   - Mechanism: Each image is manually verified to contain significant occlusion or boundary ambiguity; instance-level bbox and segmentation mask annotations are provided. The overlap-only set shares the label space with the standard evaluation set but presents a structurally more challenging scene configuration.
-   - Design Motivation: Standard evaluation may conflate performance on easy and hard scenes; the overlap-only set isolates the most challenging visual conditions to directly expose model fragility under occlusion.
+    - Function: A subset of 133 images with severe pill overlap is filtered from the deployment dataset to serve as an independent test set.
+    - Mechanism: Each image is manually verified to contain significant occlusion or boundary ambiguity; instance-level bbox and segmentation mask annotations are provided. The overlap-only set shares the label space with the standard evaluation set but presents a structurally more challenging scene configuration.
+    - Design Motivation: Standard evaluation may conflate performance on easy and hard scenes; the overlap-only set isolates the most challenging visual conditions to directly expose model fragility under occlusion.
 
 ### Loss & Training
 - Base training: Standard Faster R-CNN training with fixed hyperparameters across all experiments.

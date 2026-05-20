@@ -19,8 +19,8 @@ content_hash: 1401d02bc546a195
 # Adaptive Confidence Regularization for Multimodal Failure Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02200](https://arxiv.org/abs/2603.02200)
-**Code**: [mona4399/ACR](https://github.com/mona4399/ACR)
+**arXiv**: [2603.02200](https://arxiv.org/abs/2603.02200)  
+**Code**: [mona4399/ACR](https://github.com/mona4399/ACR)  
 **Area**: Medical Imaging / Multimodal Reliability
 **Keywords**: multimodal failure detection, confidence degradation, adaptive confidence regularization, feature swapping, misclassification detection, selective prediction
 

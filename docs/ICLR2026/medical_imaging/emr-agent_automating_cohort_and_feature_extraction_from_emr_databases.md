@@ -18,8 +18,8 @@ content_hash: acbda8f8ee4b4238
 # EMR-AGENT: Automating Cohort and Feature Extraction from EMR Databases
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00549](https://arxiv.org/abs/2510.00549)
-**Code**: [Available](https://github.com/AITRICS/EMR-AGENT)
+**arXiv**: [2510.00549](https://arxiv.org/abs/2510.00549)  
+**Code**: [Available](https://github.com/AITRICS/EMR-AGENT)  
 **Area**: Medical Imaging
 **Keywords**: Electronic Medical Records, LLM Agent, Cohort Selection, Feature Extraction, Code Mapping
 

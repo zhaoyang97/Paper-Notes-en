@@ -18,8 +18,8 @@ content_hash: e92a47d620b586ba
 # Just Use XML: Revisiting Joint Translation and Label Projection
 
 **Conference**: ACL 2026
-**arXiv**: [2603.12021](https://arxiv.org/abs/2603.12021)
-**Code**: [https://github.com/thennal10/LabelPigeon](https://github.com/thennal10/LabelPigeon)
+**arXiv**: [2603.12021](https://arxiv.org/abs/2603.12021)  
+**Code**: [https://github.com/thennal10/LabelPigeon](https://github.com/thennal10/LabelPigeon)  
 **Area**: Multilingual Translation / Cross-lingual Transfer
 **Keywords**: Label Projection, XML Markup, Joint Translation, Cross-lingual Transfer, NER
 

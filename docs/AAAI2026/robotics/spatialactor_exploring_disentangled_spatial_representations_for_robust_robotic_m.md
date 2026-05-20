@@ -18,9 +18,9 @@ content_hash: 3bb0259524ff78f2
 # SpatialActor: Exploring Disentangled Spatial Representations for Robust Robotic Manipulation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09555](https://arxiv.org/abs/2511.09555)
+**arXiv**: [2511.09555](https://arxiv.org/abs/2511.09555)  
 **Authors**: Hao Shi, Bin Xie, Yingfei Liu, Yang Yue, Tiancai Wang, Haoqiang Fan, Xiangyu Zhang, Gao Huang
-**Code**: [GitHub](https://github.com/shihao1895/SpatialActor)
+**Code**: [GitHub](https://github.com/shihao1895/SpatialActor)  
 **Area**: Robotic Manipulation / Spatial Representation Learning
 **Keywords**: Semantic-geometric disentanglement, depth estimation prior, spatial Transformer, robust manipulation, RLBench
 

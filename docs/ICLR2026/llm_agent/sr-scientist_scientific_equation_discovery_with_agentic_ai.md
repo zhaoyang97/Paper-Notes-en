@@ -18,8 +18,8 @@ content_hash: 8b6498f776eda8c3
 # SR-Scientist: Scientific Equation Discovery With Agentic AI
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.11661](https://arxiv.org/abs/2510.11661)
-**Code**: [GitHub](https://github.com/GAIR-NLP/SR-Scientist)
+**arXiv**: [2510.11661](https://arxiv.org/abs/2510.11661)  
+**Code**: [GitHub](https://github.com/GAIR-NLP/SR-Scientist)  
 **Area**: LLM Agent
 **Keywords**: symbolic regression, agentic AI, equation discovery, reinforcement-learning, scientific discovery
 

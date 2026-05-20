@@ -18,8 +18,8 @@ content_hash: 01c0ead8b3f470fa
 # Linear Attention for Efficient Bidirectional Sequence Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.16249](https://arxiv.org/abs/2502.16249)
-**Code**: [GitHub](https://github.com/LIONS-EPFL/Lion)
+**arXiv**: [2502.16249](https://arxiv.org/abs/2502.16249)  
+**Code**: [GitHub](https://github.com/LIONS-EPFL/Lion)  
 **Area**: Model Compression / Efficient Sequence Modeling
 **Keywords**: Linear Attention, Bidirectional Sequence Modeling, State Space Models, Efficient Inference, Bidirectional RNN
 

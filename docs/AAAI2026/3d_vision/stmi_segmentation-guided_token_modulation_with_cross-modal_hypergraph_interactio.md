@@ -18,8 +18,8 @@ content_hash: 507342f3349ff978
 # STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.00695](https://arxiv.org/abs/2603.00695)
-**Code**: None
+**arXiv**: [2603.00695](https://arxiv.org/abs/2603.00695)  
+**Code**: None  
 **Area**: 3D Vision / Multi-Modal
 **Keywords**: Multi-Modal ReID, Cross-Modal Fusion, Hypergraph Interaction, Segmentation Guidance, Token Modulation
 

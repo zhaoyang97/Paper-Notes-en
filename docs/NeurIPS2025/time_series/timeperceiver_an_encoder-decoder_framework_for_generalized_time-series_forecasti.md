@@ -18,8 +18,8 @@ content_hash: d3ecafc55c3efcef
 # TimePerceiver: An Encoder-Decoder Framework for Generalized Time-Series Forecasting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.22550](https://arxiv.org/abs/2512.22550)
-**Code**: [GitHub](https://github.com/efficient-learning-lab/TimePerceiver)
+**arXiv**: [2512.22550](https://arxiv.org/abs/2512.22550)  
+**Code**: [GitHub](https://github.com/efficient-learning-lab/TimePerceiver)  
 **Area**: Time Series
 **Keywords**: Time series forecasting, encoder-decoder, latent bottleneck, generalized forecasting formulation, cross-attention
 

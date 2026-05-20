@@ -18,8 +18,8 @@ content_hash: 7e28204277beb421
 # Robust Fair Disease Diagnosis in CT Images
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.09710](https://arxiv.org/abs/2604.09710)
-**Code**: [https://github.com/Purdue-M2/Fair-Disease-Diagnosis](https://github.com/Purdue-M2/Fair-Disease-Diagnosis)
+**arXiv**: [2604.09710](https://arxiv.org/abs/2604.09710)  
+**Code**: [https://github.com/Purdue-M2/Fair-Disease-Diagnosis](https://github.com/Purdue-M2/Fair-Disease-Diagnosis)  
 **Area**: Medical Imaging
 **Keywords**: CT Diagnosis, Fairness, Class Imbalance, CVaR, Logit Adjustment
 

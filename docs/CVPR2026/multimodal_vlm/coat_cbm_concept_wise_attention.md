@@ -18,8 +18,8 @@ content_hash: ceeee7243432bb76
 # Concept-wise Attention for Fine-grained Concept Bottleneck Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.15748](https://arxiv.org/abs/2604.15748)
-**Code**: Unavailable (to be released upon acceptance)
+**arXiv**: [2604.15748](https://arxiv.org/abs/2604.15748)  
+**Code**: Unavailable (to be released upon acceptance)  
 **Area**: Multimodal VLM
 **Keywords**: Concept Bottleneck Models, Interpretability, CLIP, Contrastive Learning, Fine-grained Alignment
 

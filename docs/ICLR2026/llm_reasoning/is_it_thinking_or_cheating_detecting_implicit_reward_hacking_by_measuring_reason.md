@@ -19,8 +19,8 @@ content_hash: c9d771ae26e82d41
 # Is It Thinking or Cheating? Detecting Implicit Reward Hacking by Measuring Reasoning Effort
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.01367](https://arxiv.org/abs/2510.01367)
-**Code**: To be released
+**arXiv**: [2510.01367](https://arxiv.org/abs/2510.01367)  
+**Code**: To be released  
 **Area**: LLM Reasoning
 **Keywords**: reward hacking, chain-of-thought, reasoning effort, TRACE, AI safety, scalable oversight
 

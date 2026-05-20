@@ -18,8 +18,8 @@ content_hash: de5ebd5c4bfc7a25
 # Training-free Motion Factorization for Compositional Video Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09104](https://arxiv.org/abs/2603.09104)
-**Code**: To be released
+**arXiv**: [2603.09104](https://arxiv.org/abs/2603.09104)  
+**Code**: To be released  
 **Area**: Diffusion Models / Video Generation / Motion Control
 **Keywords**: Compositional video generation, motion factorization, structured reasoning, decoupled guidance, training-free
 

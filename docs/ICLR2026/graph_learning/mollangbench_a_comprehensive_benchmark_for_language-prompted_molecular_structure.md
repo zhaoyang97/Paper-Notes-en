@@ -18,8 +18,8 @@ content_hash: 99ed43011555f317
 # MolLangBench: A Comprehensive Benchmark for Language-Prompted Molecular Structure Recognition, Editing, and Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.15054](https://arxiv.org/abs/2505.15054)
-**Code**: [GitHub](https://github.com/TheLuoFengLab/MolLangBench) / [HuggingFace](https://huggingface.co/datasets/ChemFM/MolLangBench)
+**arXiv**: [2505.15054](https://arxiv.org/abs/2505.15054)  
+**Code**: [GitHub](https://github.com/TheLuoFengLab/MolLangBench) / [HuggingFace](https://huggingface.co/datasets/ChemFM/MolLangBench)  
 **Area**: AI for Chemistry
 **Keywords**: molecular recognition, molecule editing, molecule generation, molecule-language alignment, benchmark
 

@@ -18,8 +18,8 @@ content_hash: caf3c3ed3cdde990
 # FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.23504](https://arxiv.org/abs/2602.23504)
-**Code**: [https://tinyurl.com/2rbkb3zu](https://tinyurl.com/2rbkb3zu)
+**arXiv**: [2602.23504](https://arxiv.org/abs/2602.23504)  
+**Code**: [https://tinyurl.com/2rbkb3zu](https://tinyurl.com/2rbkb3zu)  
 **Area**: Optimization / Federated Learning
 **Keywords**: Clustered Federated Learning, Data Heterogeneity, Dual-Encoder Architecture, Cross-Cluster Knowledge Sharing, Adaptive Clustering
 

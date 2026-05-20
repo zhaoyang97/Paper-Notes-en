@@ -18,8 +18,8 @@ content_hash: 9144d5846a6648df
 # Curve-Aware Gaussian Splatting for 3D Parametric Curve Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21401](https://arxiv.org/abs/2506.21401)
-**Code**: [Project Page](https://zhirui-gao.github.io/CurveGaussian)
+**arXiv**: [2506.21401](https://arxiv.org/abs/2506.21401)  
+**Code**: [Project Page](https://zhirui-gao.github.io/CurveGaussian)  
 **Area**: 3D Vision
 **Keywords**: Parametric curve reconstruction, 3DGS, Bézier curves, end-to-end optimization, edge reconstruction
 

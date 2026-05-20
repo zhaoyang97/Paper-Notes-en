@@ -18,8 +18,8 @@ content_hash: 128fe46d411d4354
 # ActiShade: Activating Overshadowed Knowledge to Guide Multi-Hop Reasoning in Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.07260](https://arxiv.org/abs/2601.07260)
-**Code**: Not available
+**arXiv**: [2601.07260](https://arxiv.org/abs/2601.07260)  
+**Code**: Not available  
 **Area**: AIGC Detection
 **Keywords**: Knowledge Overshadowing, Multi-Hop Reasoning, Retrieval-Augmented Generation, Gaussian Perturbation Detection, Contrastive Learning Retriever
 

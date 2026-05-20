@@ -19,8 +19,8 @@ content_hash: c9185aa5b05e91a7
 # Scale-invariant Attention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17083](https://arxiv.org/abs/2505.17083)
-**Code**: None
+**arXiv**: [2505.17083](https://arxiv.org/abs/2505.17083)  
+**Code**: None  
 **Area**: LLM Efficiency / Attention Mechanism / Long Context
 **Keywords**: scale invariance, long context, attention logits, zero-shot length generalization, pp-RoPE, entropy control
 
@@ -48,29 +48,29 @@ Within the FlexAttention framework, a position-dependent affine transformation $
 ### Key Designs
 
 1. **Scale-Invariant Total Attention (Def 3.1)**
-   - **Function**: Requires that the total unnormalized attention $\mathbb{E}[\sum_{t'=t}^{t\Delta-1} \exp(L_{t'})]$ over any range $[t, t\Delta)$ is $\Theta(1)$.
-   - **Mechanism**: If $\mathbb{E}[\tilde{A}_t] = \alpha / (t/\tau + 1)$, then the total attention over $[t, t\Delta)$ is $\sum \alpha/(t'/\tau+1) \approx \alpha\tau \log\Delta$, which is independent of $t$.
-   - **Design Motivation**: Ensures the model attends to both local and global context simultaneously, preventing long-sequence growth from causing attention to completely favor distant tokens.
+    - **Function**: Requires that the total unnormalized attention $\mathbb{E}[\sum_{t'=t}^{t\Delta-1} \exp(L_{t'})]$ over any range $[t, t\Delta)$ is $\Theta(1)$.
+    - **Mechanism**: If $\mathbb{E}[\tilde{A}_t] = \alpha / (t/\tau + 1)$, then the total attention over $[t, t\Delta)$ is $\sum \alpha/(t'/\tau+1) \approx \alpha\tau \log\Delta$, which is independent of $t$.
+    - **Design Motivation**: Ensures the model attends to both local and global context simultaneously, preventing long-sequence growth from causing attention to completely favor distant tokens.
 
 2. **Scale-Invariant Attention Sparsity (Def 3.3/3.4)**
-   - **Function**: The weak form requires the within-range entropy $\mathbb{E}[H_t^{t\Delta}] = o(\log t)$; the strong form requires $\Theta(1)$.
-   - **Mechanism**: Achieved by controlling the unnormalized negative entropy $\mathbb{E}[\tilde{A}_t \log\tilde{A}_t] = \beta/(t/\tau+1)$.
-   - **Design Motivation**: Ensures that attention over distant ranges concentrates on a few key tokens rather than distributing uniformly.
+    - **Function**: The weak form requires the within-range entropy $\mathbb{E}[H_t^{t\Delta}] = o(\log t)$; the strong form requires $\Theta(1)$.
+    - **Mechanism**: Achieved by controlling the unnormalized negative entropy $\mathbb{E}[\tilde{A}_t \log\tilde{A}_t] = \beta/(t/\tau+1)$.
+    - **Design Motivation**: Ensures that attention over distant ranges concentrates on a few key tokens rather than distributing uniformly.
 
 3. **Closed-Form Solution under Gaussian Assumption**
-   - **Function**: Assuming the base logits $\bar{L}_t \sim \mathcal{N}(0,1)$, the transformation is $L_t = a_t \bar{L}_t + m_t$.
-   - **Mechanism**: Jointly solving the two conditions yields $a_t = \sqrt{2[\log(t/\tau+1) - \log\alpha + \beta/\alpha]}$ and $m_t = -a_t^2 + \beta/\alpha$.
-   - **Design Motivation**: $a_t^2$ grows as $\log t$ (increasing variance to sharpen distant attention), while $m_t$ decreases as $\log t$ (lowering the mean to suppress total distant weight).
+    - **Function**: Assuming the base logits $\bar{L}_t \sim \mathcal{N}(0,1)$, the transformation is $L_t = a_t \bar{L}_t + m_t$.
+    - **Mechanism**: Jointly solving the two conditions yields $a_t = \sqrt{2[\log(t/\tau+1) - \log\alpha + \beta/\alpha]}$ and $m_t = -a_t^2 + \beta/\alpha$.
+    - **Design Motivation**: $a_t^2$ grows as $\log t$ (increasing variance to sharpen distant attention), while $m_t$ decreases as $\log t$ (lowering the mean to suppress total distant weight).
 
 4. **Single Hyperparameter Simplification: Only $\tau$**
-   - **Function**: Applying boundary conditions $a_0^2 = 1,\, m_0 = 0$ (no modification for local tokens) reduces the three parameters $\alpha, \beta, \tau$ to one.
-   - **Mechanism**: Solving yields $\alpha = \beta = e^{0.5}$, leaving only $\tau$ to be tuned. $\tau$ defines the size of the "local region"—for $t \ll \tau$, attention is nearly unmodified.
-   - **Design Motivation**: Reduces tuning burden; $\tau = 10$ achieves the best performance in experiments.
+    - **Function**: Applying boundary conditions $a_0^2 = 1,\, m_0 = 0$ (no modification for local tokens) reduces the three parameters $\alpha, \beta, \tau$ to one.
+    - **Mechanism**: Solving yields $\alpha = \beta = e^{0.5}$, leaving only $\tau$ to be tuned. $\tau$ defines the size of the "local region"—for $t \ll \tau$, attention is nearly unmodified.
+    - **Design Motivation**: Reduces tuning burden; $\tau = 10$ achieves the best performance in experiments.
 
 5. **Integration with pp-RoPE**
-   - **Function**: Applies the scale-invariant transformation to pp-RoPE, a RoPE variant that removes low-frequency (long-wavelength) components.
-   - **Mechanism**: Low-frequency components of standard RoPE may interfere with the position-dependent logits transformation; removing them yields better results.
-   - **Design Motivation**: Experiments show that scale-invariant RoPE performs poorly, while scale-invariant pp-RoPE performs excellently.
+    - **Function**: Applies the scale-invariant transformation to pp-RoPE, a RoPE variant that removes low-frequency (long-wavelength) components.
+    - **Mechanism**: Low-frequency components of standard RoPE may interfere with the position-dependent logits transformation; removing them yields better results.
+    - **Design Motivation**: Experiments show that scale-invariant RoPE performs poorly, while scale-invariant pp-RoPE performs excellently.
 
 ### Loss & Training
 - The logits transformation is implemented via FlexAttention without modifying the model architecture.

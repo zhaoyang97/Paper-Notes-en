@@ -18,8 +18,8 @@ content_hash: 4d79d6d27f7857fe
 # ParetoHqD: Fast Offline Multiobjective Alignment of Large Language Models Using Pareto High-Quality Data
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.16628](https://arxiv.org/abs/2504.16628)
-**Code**: None
+**arXiv**: [2504.16628](https://arxiv.org/abs/2504.16628)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: multi-objective alignment, Pareto optimality, SFT, preference direction, data selection
 
@@ -51,21 +51,21 @@ ParetoHqD consists of two stages. Stage 1 selects high-quality data from the Par
 
 1. **Preference direction representation (replacing linear scalarization)**
 
-   - In objective space, preference $\omega$ is defined as a ray originating from the ideal point $r^{\max}$ and pointing toward the compromise point $W$
-   - Compromise point: $W = r^{\min} + \omega \odot (r^{\max} - r^{\min})$
-   - Advantage: Data along the same direction maintains a fixed ratio of objective values, faithfully reflecting the user's trade-off intent; also capable of covering non-convex Pareto fronts
+    - In objective space, preference $\omega$ is defined as a ray originating from the ideal point $r^{\max}$ and pointing toward the compromise point $W$
+    - Compromise point: $W = r^{\min} + \omega \odot (r^{\max} - r^{\min})$
+    - Advantage: Data along the same direction maintains a fixed ratio of objective values, faithfully reflecting the user's trade-off intent; also capable of covering non-convex Pareto fronts
 
 2. **Pareto high-quality data selection**
 
-   - $M$ reward models are used to score the entire dataset; data from the top few Pareto layers are extracted to form $\mathcal{D}^{\text{Pareto}}$
-   - For each preference $\omega_i$, the $k=100$ data points in $\mathcal{D}^{\text{Pareto}}$ closest to preference direction $\mathcal{P}_i$ are selected for SFT
-   - Only a minimal number of high-quality samples (100) are needed per preference, with training completing in 200 steps
+    - $M$ reward models are used to score the entire dataset; data from the top few Pareto layers are extracted to form $\mathcal{D}^{\text{Pareto}}$
+    - For each preference $\omega_i$, the $k=100$ data points in $\mathcal{D}^{\text{Pareto}}$ closest to preference direction $\mathcal{P}_i$ are selected for SFT
+    - Only a minimal number of high-quality samples (100) are needed per preference, with training completing in 200 steps
 
 3. **Two-stage training with data augmentation**
 
-   - Stage 1: original dataset → Pareto high-quality data → SFT
-   - Stage 2: $M{+}1$ representative Stage 1 models (each emphasizing one objective plus a balanced preference) generate new responses for 10,000 random prompts; Pareto high-quality data are then extracted from these responses
-   - Stage 2 fine-tunes each preference using $k/2=50$ samples to mitigate overfitting caused by the small data volume in Stage 1
+    - Stage 1: original dataset → Pareto high-quality data → SFT
+    - Stage 2: $M{+}1$ representative Stage 1 models (each emphasizing one objective plus a balanced preference) generate new responses for 10,000 random prompts; Pareto high-quality data are then extracted from these responses
+    - Stage 2 fine-tunes each preference using $k/2=50$ samples to mitigate overfitting caused by the small data volume in Stage 1
 
 ### Loss & Training
 

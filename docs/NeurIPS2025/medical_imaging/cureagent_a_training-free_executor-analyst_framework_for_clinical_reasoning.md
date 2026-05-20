@@ -18,8 +18,8 @@ content_hash: 4dad6f87ea5e2741
 # CureAgent: A Training-Free Executor-Analyst Framework for Clinical Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.05576](https://arxiv.org/abs/2512.05576)
-**Code**: [https://github.com/June01/CureAgent](https://github.com/June01/CureAgent)
+**arXiv**: [2512.05576](https://arxiv.org/abs/2512.05576)  
+**Code**: [https://github.com/June01/CureAgent](https://github.com/June01/CureAgent)  
 **Area**: Clinical AI / Multi-Agent Systems
 **Keywords**: Clinical Reasoning, Multi-Agent, Executor-Analyst, Stratified Ensemble, Training-Free Architecture Engineering
 

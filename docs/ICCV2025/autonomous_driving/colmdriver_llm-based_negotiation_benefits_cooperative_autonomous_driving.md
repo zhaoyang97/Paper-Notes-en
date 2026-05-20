@@ -19,8 +19,8 @@ content_hash: 160b0ae6f1d64db3
 # CoLMDriver: LLM-based Negotiation Benefits Cooperative Autonomous Driving
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08683](https://arxiv.org/abs/2503.08683)
-**Code**: [cxliu0314/CoLMDriver](https://github.com/cxliu0314/CoLMDriver)
+**arXiv**: [2503.08683](https://arxiv.org/abs/2503.08683)  
+**Code**: [cxliu0314/CoLMDriver](https://github.com/cxliu0314/CoLMDriver)  
 **Area**: Autonomous Driving
 **Keywords**: cooperative driving, V2V, LLM negotiation, actor-critic, waypoint planning, CARLA
 

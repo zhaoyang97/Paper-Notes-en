@@ -18,8 +18,8 @@ content_hash: 7ca53e302199e755
 # LadderSym: A Multimodal Interleaved Transformer for Music Practice Error Detection
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.08580](https://arxiv.org/abs/2510.08580)
-**Code**: [GitHub](https://github.com/ben2002chou/LadderSYM)
+**arXiv**: [2510.08580](https://arxiv.org/abs/2510.08580)  
+**Code**: [GitHub](https://github.com/ben2002chou/LadderSYM)  
 **Area**: Reinforcement Learning
 **Keywords**: music error detection, multimodal fusion, cross-attention, symbolic prompting, alignment module
 

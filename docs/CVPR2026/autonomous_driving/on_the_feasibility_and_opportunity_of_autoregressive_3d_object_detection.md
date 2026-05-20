@@ -19,8 +19,8 @@ content_hash: e471960adaa50bf5
 # On the Feasibility and Opportunity of Autoregressive 3D Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07985](https://arxiv.org/abs/2603.07985)
-**Code**: To be confirmed
+**arXiv**: [2603.07985](https://arxiv.org/abs/2603.07985)  
+**Code**: To be confirmed  
 **Area**: Autonomous Driving / 3D Object Detection
 **Keywords**: Autoregressive detection, LiDAR 3D detection, sequence generation, tokenization, GRPO reinforcement learning, NMS-free
 
@@ -64,7 +64,7 @@ AutoReg3D adopts an **encoder–decoder architecture**: an arbitrary point cloud
 
 - The encoder is frozen; only the autoregressive detection head is optimized.
 - $G=8$ detection sequences are sampled per scene, and an **IoU-based F1 reward** is designed:
-  - For each class, the maximum IoU between predicted and ground-truth boxes is computed, and the harmonic mean of precision and recall is derived.
+    - For each class, the maximum IoU between predicted and ground-truth boxes is computed, and the harmonic mean of precision and recall is derived.
 - The GRPO objective is used ($\beta=0$, no KL penalty) to directly optimize set-level detection quality.
 
 ### Cascading Refinement

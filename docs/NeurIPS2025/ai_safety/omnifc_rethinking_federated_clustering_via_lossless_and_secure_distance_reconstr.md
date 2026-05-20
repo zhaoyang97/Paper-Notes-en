@@ -18,8 +18,8 @@ content_hash: c9ee33b536f63c14
 # OmniFC: Rethinking Federated Clustering via Lossless and Secure Distance Reconstruction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13071](https://arxiv.org/abs/2505.13071)
-**Code**: To be released
+**arXiv**: [2505.13071](https://arxiv.org/abs/2505.13071)  
+**Code**: To be released  
 **Area**: AI Safety / Federated Learning
 **Keywords**: Federated Clustering, Lagrange Coded Computing, Distance Matrix Reconstruction, Lossless Aggregation, Secure Computation
 

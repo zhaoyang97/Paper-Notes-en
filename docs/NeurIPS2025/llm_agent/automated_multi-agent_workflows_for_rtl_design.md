@@ -1,200 +1,128 @@
 ---
 title: >-
-  [Paper Note] Automated Multi-Agent Workflows for RTL Design
+  [Paper Note] VeriMaAS: Automated Multi-Agent Workflows for RTL Design
 description: >-
-  [NeurIPS 2025 (ML for Systems Workshop)][LLM Agent][multi-agent workflow] VeriMaAS is a multi-agent framework that integrates HDL formal verification feedback (Yosys + OpenSTA) into the automated workflow generation proc…
+  [NeurIPS 2025][Code Intelligence][RTL code generation] VeriMaAS proposes a framework for automatically composing multi-agent workflows for RTL code generation. Its core innovation is the direct integration of formal veri…
 tags:
-  - "NeurIPS 2025 (ML for Systems Workshop)"
-  - "LLM Agent"
-  - "multi-agent workflow"
+  - "NeurIPS 2025"
+  - "Code Intelligence"
   - "RTL code generation"
+  - "multi-agent workflow"
   - "formal verification"
-  - "Verilog"
-  - "automated workflow orchestration"
+  - "HDL"
+  - "EDA"
 date: 2026-05-08
-content_hash: 640ef3292ed02f0d
+content_hash: 7a0a6a4e9189d789
 ---
 
-# Automated Multi-Agent Workflows for RTL Design
+# VeriMaAS: Automated Multi-Agent Workflows for RTL Design
 
-**Conference**: NeurIPS 2025 (ML for Systems Workshop)
-**arXiv**: [2509.20182](https://arxiv.org/abs/2509.20182)
-**Code**: Available ([GitHub](https://github.com/dstamoulis/maas/tree/verimaas/verithoughts))
-**Area**: LLM Agent / EDA / Hardware Design
-**Keywords**: multi-agent workflow, RTL code generation, formal verification, Verilog, automated workflow orchestration
+**Conference**: NeurIPS 2025
+**arXiv**: [2509.20182](https://arxiv.org/abs/2509.20182)  
+**Code**: [https://github.com/](https://github.com/) (available, mentioned in the paper)  
+**Area**: Code Generation / Hardware Design Automation
+**Keywords**: RTL code generation, multi-agent workflow, formal verification, HDL, EDA
 
 ## TL;DR
 
-VeriMaAS is a multi-agent framework that integrates HDL formal verification feedback (Yosys + OpenSTA) into the automated workflow generation process, adaptively selecting reasoning operators (I/O → CoT → ReAct → SelfRefine → Debate) for RTL code generation tasks. With only a few hundred training samples, it achieves 5–7% higher pass@k performance than fine-tuning baselines.
+VeriMaAS proposes a framework for automatically composing multi-agent workflows for RTL code generation. Its core innovation is the direct integration of formal verification feedback from HDL tools (Yosys synthesis + OpenSTA timing analysis) into workflow orchestration, achieving a 2–12% pass@1 improvement on VeriThoughts while requiring only a few hundred samples for controller tuning—an order of magnitude fewer than full fine-tuning.
 
 ## Background & Motivation
 
-**Challenges in RTL Code Generation**: As LLMs achieve breakthroughs in code generation, RTL (Register-Transfer Level) hardware design code generation has emerged as a new frontier. Compared to general-purpose programming tasks, HDL and EDA resources are relatively scarce on the internet, introducing unique challenges:
+**The RTL Code Generation Dilemma.** Existing approaches follow two main directions: (1) fine-tuning LLMs on RTL/HDL data, which demands substantial GPU resources and tens of thousands of training samples with poor generalization; (2) using frontier reasoning models (e.g., o4), which eliminates the need for fine-tuning but incurs prohibitively high inference costs. Both directions are fundamentally constrained by the scarcity of HDL-domain data relative to general-purpose programming languages.
 
-**High Fine-tuning Cost**: Existing methods [RTLCoder, VeriThoughts] rely on expensive task-specific fine-tuning, requiring substantial GPU budgets and tens of thousands of training samples.
+**The Multi-Agent Workflow Paradigm.** Recent works such as MaAS and AFlow have demonstrated the advantages of automated multi-agent workflows on QA and general programming tasks. However, these methods primarily target "general knowledge" domains (e.g., Wikipedia-based QA, math competitions), and naive prompting strategies (e.g., Debate) do not transfer directly to specialized domains such as RTL design.
 
-**High Inference Cost**: Large reasoning models (e.g., o4) eliminate the need for fine-tuning but shift the computational burden to the inference stage.
-
-**Manual Workflow Design**: Existing multi-agent workflow methods are primarily designed for QA and mathematical tasks, leaving an applicability gap for specialized domains such as RTL design.
-
-**Core Insight**: The HDL domain offers a unique advantage — formal verification and synthesis tools (Yosys, OpenSTA) can provide precise design quality feedback. The key idea of this paper is to directly integrate feedback from these EDA tools into the workflow generation process to dynamically guide operator selection.
+**Core Insight and Starting Point.** A distinctive advantage of RTL design is the availability of mature formal verification toolchains—Yosys synthesis and OpenSTA timing analysis provide precise pass/fail judgments. The core idea of VeriMaAS is to embed this verification feedback directly into the workflow orchestration process, allowing the agent controller to dynamically adjust reasoning strategies based on compilation/synthesis results, rather than relying on the LLM's own assessment of code quality.
 
 ## Method
 
 ### Overall Architecture
 
-The VeriMaAS pipeline proceeds as follows:
-
-1. Given an RTL design task, the system adaptively samples a set of reasoning operators based on the input query and task difficulty.
-2. Verilog candidate designs produced at each stage are evaluated via Yosys (synthesis verification) and OpenSTA (timing/power analysis).
-3. Synthesis logs and error messages are fed back to the controller, which dynamically adjusts subsequent operator selection strategies.
+The VeriMaAS workflow proceeds as follows: given an RTL design task → adaptively sample agent operators to generate $K=20$ candidate Verilog designs → validate via Yosys synthesis + OpenSTA timing/power analysis → feed verification logs and error messages back to the controller → the controller decides whether to escalate to a more complex reasoning operator or terminate → return the candidate design pool.
 
 ### Key Designs
 
-**Solution Space Definition**:
+1. **Cascading Controller**:
 
-Define the operator set $O = \{\text{Zero-shot I/O, CoT, ReAct, SelfRefine, Debate}\}$. Most existing prompting schemes can be viewed as a single operator sequence within this solution space. For example:
-- Always using CoT → $O = \{O_{\text{CoT}}\}$
-- Self-Refine → $O = \{O_{\text{CoT}}, O_{\text{SelfRefine}}\}$
+    - *Function*: Adaptively selects reasoning operator complexity according to task difficulty.
+    - *Mechanism*: Defines an operator complexity sequence I/O → CoT → ReAct → SelfRefine → Debate. At each stage, a confidence score $s_c$ is computed based on the validation failure rate of current candidate designs; if the failure rate exceeds a threshold $\tau_c$, the system escalates to the next operator.
+    - *Design Motivation*: Different RTL tasks require different levels of reasoning—simple modules can be handled with zero-shot inference, while complex modules warrant multi-round reflection or debate. The cascading design avoids applying the most expensive strategy uniformly across all tasks.
 
-The objective is to find the optimal operator combination $O$ for each task, maximizing pass@k over $K=20$ candidate samples.
+2. **Formal Verification Feedback Loop**:
 
-**Cascade Controller**:
+    - *Function*: Provides agents with precise correctness signals for designs.
+    - *Mechanism*: The $K=20$ Verilog candidates at each stage are evaluated through a full EDA toolchain—Yosys for synthesis and area estimation, OpenSTA for timing and static power analysis (using the Skywater 130nm PDK). Verification logs and error messages are fed directly to the controller and subsequent reasoning steps.
+    - *Design Motivation*: Conventional LLM-based code generation relies on the model's own judgment of code quality, whereas HDL verification requires precise tool feedback. The binary signals (pass/fail) from EDA tools are more reliable than the LLM's ambiguous self-evaluation.
 
-The controller $C$ is the core of VeriMaAS, employing a **cascade strategy** to select operators in order of increasing complexity:
+3. **Low-Cost Controller Tuning**:
 
-```
-I/O → CoT → ReAct → SelfRefine → Debate
-```
-
-At each stage $c$, the controller computes a confidence score $s_c$:
-- Run $K=20$ Verilog candidate designs through Yosys and OpenSTA.
-- $s_c$ = percentage of designs failing verification/synthesis/timing/power analysis.
-- If $s_c$ exceeds the stage threshold $\tau_c$, proceed to the next stage with a more complex operator.
-- Otherwise, return the current candidate solutions.
-
-**Formal Verification Integration**:
-
-This is the fundamental distinction between this work and general-purpose multi-agent workflow methods:
-- Yosys is used for synthesis and area estimation.
-- OpenSTA is used for timing and static power analysis.
-- Synthesis is performed using the Skywater 130nm PDK.
-- The failure rate serves as a proxy for task complexity, directly driving operator escalation decisions.
+    - *Function*: Achieves controller policy learning with minimal data requirements.
+    - *Mechanism*: 500 data points are randomly sampled from the VeriThoughts training set; $K=20$ candidates are generated for each point and validation failure rates are recorded. The 20th/40th/60th/80th percentiles are used as stage thresholds $\mathcal{T}$. The objective is $\max_{\mathcal{T}} \mathbb{E}[U(\mathcal{T}) - \lambda \cdot C(\mathcal{T})]$, where $U$ denotes pass@k and $C$ denotes token consumption.
+    - *Design Motivation*: Compared to full fine-tuning requiring tens of thousands of samples, only a few hundred suffice to determine the thresholds, since the controller only needs to learn *when to escalate* rather than *how to write RTL code*.
 
 ### Loss & Training
 
-**Multi-Objective Optimization**:
+The controller tuning objective is a Pareto optimization over performance and cost:
 
-$$\max_T \mathbb{E}_{(q,a)\sim\mathcal{D}} \left[ U(T; q, a, O) - \lambda \cdot C(T; q, a, O) \right]$$
+$$\max_{\mathcal{T}} \mathbb{E}_{(q,a)\sim D}[U(\mathcal{T};q,a,\mathbb{O}) - \lambda \cdot C(\mathcal{T};q,a,\mathbb{O})]$$
 
-where:
-- $U(\cdot)$ = pass@k score (utility)
-- $C(\cdot)$ = average token count per query (cost)
-- $\lambda = 1\text{e-}3$
-
-**Threshold Learning**:
-
-500 data points are randomly sampled from the VeriThoughts training set. Based on synthesis failure statistics over $K=20$ candidate designs, the 20th/40th/60th/80th percentiles are computed to serve as the stage thresholds for the five operators: $T = \{\tau_1, \ldots, \tau_C\}$.
-
-Core advantage: This "calibration" process requires only a few hundred data points — **an order of magnitude fewer** than the tens of thousands of samples needed for full fine-tuning.
+with $\lambda=10^{-3}$. In the PPA-aware optimization variant, the cost term is replaced by Yosys-reported area $C=\text{Area}(\mathcal{T};q,a,\mathbb{O})$, enabling joint optimization of functional correctness and physical design metrics.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Table 1: VeriMaAS vs. Various Baseline Models (pass@k Comparison)**
-
-| Model | Method | VeriThoughts pass@1 | VeriThoughts pass@10 | VerilogEval pass@1 | VerilogEval pass@10 |
-|------|------|:---:|:---:|:---:|:---:|
-| GPT-4o-mini | Instruct | 80.64 | 90.87 | 50.26 | 61.02 |
-| GPT-4o-mini + VeriMaAS | Agent | **83.09** (+2.45) | **92.85** (+1.98) | **52.05** (+1.79) | **64.02** (+3.00) |
-| o4-mini | Reasoning | 93.85 | 97.88 | 75.67 | 85.13 |
-| o4-mini + VeriMaAS | Agent | **94.09** (+0.24) | **98.17** (+0.29) | **76.15** (+0.48) | 84.50 (-0.63) |
-| Qwen2.5-7B | Instruct | 44.90 | 82.33 | 22.92 | 51.47 |
-| RTLCoder-7B | Fine-tuned | – | – | 34.60 | 45.50 |
-| Qwen2.5-7B + VeriMaAS | Agent | **56.62** (+11.72) | **86.29** (+3.96) | **29.10** (+6.18) | **56.45** (+4.98) |
-| Qwen2.5-14B | Instruct | 67.89 | 94.13 | 33.78 | 62.04 |
-| VeriThoughts-14B | Fine-tuned | 78.50 | 92.10 | 43.70 | 55.14 |
-| Qwen2.5-14B + VeriMaAS | Agent | **74.24** (+6.35) | **95.78** (+1.65) | **41.47** (+7.69) | **62.48** (+0.44) |
-| Qwen3-8B | Reasoning | 84.11 | 98.82 | 58.21 | 74.64 |
-| Qwen3-8B + VeriMaAS | Agent | **88.13** (+4.02) | **99.05** (+0.23) | **59.87** (+1.66) | 74.18 (-0.46) |
-| Qwen3-14B | Reasoning | 89.35 | 98.64 | 65.87 | 75.62 |
-| Qwen3-14B + VeriMaAS | Agent | **92.16** (+2.81) | **98.75** (+0.11) | **66.96** (+1.09) | **75.71** (+0.09) |
-
-Key observations:
-- Gains are most pronounced on open-source LLMs: Qwen2.5-7B pass@1 improves by +11.72%, surpassing the RTLCoder-7B fine-tuning baseline.
-- Gains on proprietary models are smaller but consistent (o4-mini pass@1 +0.24%), demonstrating that multi-agent orchestration retains value even at high baselines.
-- Minor pass@10 regressions on VerilogEval for some models may be attributable to diversity changes introduced by operator switching.
-
-**Table 2: VeriMaAS vs. Single-Agent Prompting Strategies (with Token Cost)**
-
-| Model | Prompting | VT pass@1 | VT pass@10 | Tokens (k) | VE pass@1 | VE pass@10 | Tokens (k) |
-|------|----------|:---:|:---:|:---:|:---:|:---:|:---:|
-| o4-mini | + CoT | 94.11 (+0.26) | 97.86 | 1.10 (1.09×) | 76.06 (+0.39) | 84.35 | 1.60 (1.06×) |
-| o4-mini | + ReAct | 91.96 (-1.89) | 98.04 | 1.70 (1.68×) | 74.33 (-1.34) | 84.10 | 2.14 (1.42×) |
-| o4-mini | + SelfRefine | 94.31 (+0.46) | 98.57 | 2.24 (2.22×) | 75.71 (+0.04) | 84.05 | 3.23 (2.14×) |
-| o4-mini | + VeriMaAS | 94.09 (+0.24) | 98.17 | **1.21 (1.20×)** | **76.15** (+0.48) | 84.50 | **1.71 (1.13×)** |
-| GPT-4o-mini | + CoT | 82.25 (+1.61) | 92.05 | 0.71 (1.42×) | 51.25 (+0.99) | 62.07 | 0.77 (1.33×) |
-| GPT-4o-mini | + VeriMaAS | **83.09** (+2.45) | **92.85** | 1.26 (2.52×) | 52.05 (+1.79) | **64.02** | **0.85 (1.47×)** |
-
-VeriMaAS incurs token costs comparable to lightweight CoT and far below SelfRefine (approximately 2× overhead), while achieving superior performance.
+| Model + Method | VeriThoughts pass@1 | VeriThoughts pass@10 | VerilogEval pass@1 | VerilogEval pass@10 |
+|---|---|---|---|---|
+| GPT-4o-mini (Instruct) | 80.64 | 90.87 | 50.26 | 61.02 |
+| GPT-4o-mini + VeriMaAS | **83.09** (+2.45) | **92.85** (+1.98) | **52.05** (+1.79) | **64.02** (+3.00) |
+| Qwen2.5-7B (Instruct) | 44.90 | 82.33 | 22.92 | 51.47 |
+| RTLCoder-7B (fine-tuned) | - | - | 34.60 | 45.50 |
+| Qwen2.5-7B + VeriMaAS | **56.62** (+11.72) | **86.29** (+3.96) | **29.10** (+6.18) | **56.45** (+4.98) |
+| Qwen2.5-14B (Instruct) | 67.89 | 94.13 | 33.78 | 62.04 |
+| VeriThoughts-14B (fine-tuned) | 78.50 | 92.10 | 43.70 | 55.14 |
+| Qwen2.5-14B + VeriMaAS | **74.24** (+6.35) | **95.78** (+1.65) | **41.47** (+7.69) | **62.48** (+0.44) |
+| Qwen3-14B (Reasoning) | 89.35 | 98.64 | 65.87 | 75.62 |
+| Qwen3-14B + VeriMaAS | **92.16** (+2.81) | **98.75** (+0.11) | **66.96** (+1.09) | **75.71** (+0.09) |
 
 ### Ablation Study
 
-**Table 3: Post-Synthesis Metric Changes with PPA-Aware Optimization**
-
-| Model | VT Pass@10 | ΔArea% | ΔPower% | ΔDelay% | VE Pass@10 | ΔArea% | ΔPower% | ΔDelay% |
-|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| GPT-4o-mini | 92.46 (-0.39) | -9.18↓ | +1.6↑ | -10.32↓ | 62.93 (-1.09) | -18.83↓ | -3.26↓ | -19.47↓ |
-| o4-mini | 98.06 (-0.11) | -14.86↓ | 0.00 | -15.87↓ | 84.18 (-0.32) | -12.22↓ | +1.70↑ | -3.52↓ |
-| Qwen2.5-7B | 86.33 (+0.04) | -13.44↓ | -8.67↓ | -13.91↓ | 56.45 (0.00) | **-28.79↓** | +4.07↑ | -24.58↓ |
-| Qwen2.5-14B | 95.72 (-0.06) | -16.8↓ | -14.57↓ | -21.39↓ | 62.33 (-0.15) | -16.17↓ | +5.22↑ | -15.53↓ |
-| Qwen3-8B | 99.04 (-0.01) | -22.81↓ | -3.68↓ | -20.14↓ | 74.06 (-0.12) | -9.98↓ | -6.04↓ | -9.03↓ |
-| Qwen3-14B | 98.75 (0.00) | -9.99↓ | +2.12↑ | -9.94↓ | 75.64 (-0.07) | -11.66↓ | -7.85↓ | -11.39↓ |
-
-Key findings:
-- Area and delay are broadly and substantially reduced (up to -28.79% area, -24.58% delay).
-- Power exhibits trade-offs: some models show slight power increases (e.g., Qwen2.5-14B on VerilogEval, +5.22%).
-- pass@10 is nearly unaffected (maximum drop of only -1.09%), demonstrating that PPA optimization does not sacrifice functional correctness.
-- This confirms that the controller **can be flexibly re-optimized** toward different design objectives, whereas fine-tuning methods embed objectives into model weights.
+| Configuration (o4-mini baseline) | VeriThoughts pass@1 | Token Cost (k) | Note |
+|---|---|---|---|
+| + CoT | 94.11 (+0.26) | 1.10 (1.09×) | Lightweight improvement |
+| + ReAct | 91.96 (−1.89) | 1.70 (1.68×) | Performance degrades |
+| + SelfRefine | 94.31 (+0.46) | 2.24 (2.22×) | Strong but costly |
+| + VeriMaAS | 94.09 (+0.24) | 1.21 (1.20×) | Near-optimal performance at near-minimal cost |
 
 ### Key Findings
-
-1. **Open-source models benefit most**: VeriMaAS yields substantially larger gains on Qwen2.5-7B/14B (+6–12% pass@1) than on o4-mini (+0.24%), indicating that workflow automation can effectively compensate for limited model capacity.
-2. **Cost efficiency advantage**: Only approximately 500 training data points are required for threshold calibration — an order of magnitude fewer than the tens of thousands of samples needed by fine-tuning methods such as VeriThoughts.
-3. **Effectiveness of the cascade strategy**: Tasks of varying complexity are automatically matched to reasoning operators of appropriate sophistication, from I/O for simple tasks to Debate for complex ones.
-4. **Flexible PPA optimization**: As a proof of concept, area/delay optimization is achieved by simply modifying the cost term in the objective function, demonstrating the extensibility of the framework.
+- The largest gains are observed on open-source LLMs: Qwen2.5-7B pass@1 improves from 44.90 to 56.62 (+11.72), surpassing the fine-tuned RTLCoder-7B on pass@10.
+- VeriMaAS matches or exceeds fine-tuned baselines on pass@10 while also improving pass@1, indicating that the framework both improves best-candidate quality and expands the effective candidate pool.
+- Compared to single-agent strategies, VeriMaAS maintains competitive performance at near-minimal token cost (only 1.20× vs. SelfRefine's 2.22×).
+- PPA-aware optimization reduces area by 9–23% and latency by 4–21% with negligible pass@10 degradation.
 
 ## Highlights & Insights
-
-- **Formal verification as a natural task difficulty signal**: This is the most elegant design choice in the paper. In general QA settings, obtaining an objective signal for "answer quality" is difficult; in RTL design, however, the Yosys compilation failure rate directly reflects task complexity, providing the controller with precise feedback.
-- **Training-free workflow automation**: Unlike fine-tuning methods that require gradient updates, VeriMaAS achieves workflow optimization through statistical threshold calibration, dramatically reducing the cost of domain adaptation.
-- **Bridging general to specialized domains**: This paper demonstrates how general-purpose multi-agent workflow methods (MaAS, AFlow) can be adapted to the specialized domain of hardware design, with the key being the identification of domain-specific feedback signals.
+- The use of formal verification as an agent feedback source has broad applicability across the hardware design AI field—EDA tools provide precise verification signals unavailable in general software programming.
+- Controller tuning requires only a few hundred samples (vs. tens of thousands for fine-tuning), substantially lowering the deployment barrier.
+- The cascading controller achieves a favorable performance–cost trade-off, avoiding the wasteful application of the strongest strategy to all tasks.
+- PPA-aware optimization demonstrates the flexibility of the framework—optimization objectives can be switched without retraining.
 
 ## Limitations & Future Work
-
-1. The controller currently employs a simple cascade strategy with percentile-based thresholds; future work could explore tree search or reinforcement learning policies for finer-grained workflow decisions.
-2. The current implementation relies solely on open-source Yosys + OpenSTA; extending to commercial EDA tools and industrial PDKs may unlock greater PPA optimization potential.
-3. The PPA optimization benchmark subset (-PPA-Tiny) is selected via pseudo-oracle from o4, introducing evaluation bias.
-4. Minor pass@10 regressions on VerilogEval under some configurations suggest that operator switching strategies may reduce candidate diversity.
-5. Only five fixed operators are evaluated; the possibility of operator composition or custom operator design remains unexplored.
+- This is a NeurIPS ML for Systems Workshop paper; the experimental scale is relatively limited.
+- Controller thresholds are determined via simple percentile-based statistics; more sophisticated learning methods (e.g., RL) may yield further improvements.
+- The workflow search space (a cascading sequence of 5 fixed operators) is relatively constrained; free composition may discover superior strategies.
+- Validation is limited to RTL code generation; extension to other EDA tasks (placement and routing, timing repair) remains to be explored.
 
 ## Related Work & Insights
-
-- **MaAS** [Zhang et al., 2025]: The cascade controller in this paper is directly built upon the Multi-Agent as a Service framework of MaAS.
-- **AFlow** [Zhang et al., 2025]: An alternative automated workflow generation method focused on general-purpose QA.
-- **VeriThoughts** [Yubeaton et al., 2025]: An RTL benchmark and fine-tuning method serving as the primary comparison baseline.
-- **RTLCoder** [Liu et al., 2024]: A lightweight fine-tuning approach for RTL; VeriMaAS surpasses its performance at comparable model sizes.
-
-This paper motivates a broader direction: in any specialized domain with formal verification tools (e.g., theorem proving, circuit design, compiler optimization), verification feedback can be integrated into multi-agent workflows to enable automated reasoning strategy selection.
+- **Comparison with MaAS/AFlow**: While all three fall under automated multi-agent workflow frameworks, VeriMaAS introduces domain-specific formal verification feedback, enabling the general framework to adapt to specialized hardware design tasks.
+- **Comparison with fine-tuning approaches (RTLCoder/VeriThoughts)**: VeriMaAS is orthogonal to fine-tuning—it can be applied on top of any base model, including fine-tuned ones, and the two approaches are complementary.
+- **Broader Insight**: The formal verification feedback paradigm can be generalized to any code generation domain with precise checking tools (e.g., SQL verification, mathematical proof checking).
 
 ## Rating
-
-- **Novelty**: ⭐⭐⭐⭐ — Incorporating formal verification feedback into automated multi-agent workflow generation is a meaningful contribution.
-- **Technical Depth**: ⭐⭐⭐ — The method is relatively straightforward (cascade controller + percentile thresholds), though well-motivated.
-- **Experimental Quality**: ⭐⭐⭐⭐ — Covers 6 models × 2 benchmarks, including cost analysis and PPA ablation.
-- **Practicality**: ⭐⭐⭐⭐⭐ — Low training cost, plug-and-play design, and compatibility with multiple LLMs make it highly deployable.
-- **Writing Quality**: ⭐⭐⭐⭐ — Well-structured, though the workshop paper format limits the depth of some details.
+- Novelty: ⭐⭐⭐⭐ The combination of formal verification and automated agent workflows is pioneering in the RTL domain.
+- Experimental Thoroughness: ⭐⭐⭐ Workshop-scale paper, but covers multiple models and two benchmarks.
+- Writing Quality: ⭐⭐⭐⭐ Method description is clear; experimental design is systematic.
+- Value: ⭐⭐⭐⭐ Practically relevant for hardware design automation; low supervision cost facilitates deployment.
 
 <!-- RELATED:START -->
 
@@ -202,11 +130,11 @@ This paper motivates a broader direction: in any specialized domain with formal 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](../../ICLR2026/llm_agent/multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
-- [\[NeurIPS 2025\] Benchmarking Agentic Systems in Automated Scientific Information Extraction with ChemX](benchmarking_agentic_systems_in_automated_scientific_information_extraction_with.md)
-- [\[NeurIPS 2025\] Automated Composition of Agents: A Knapsack Approach for Agentic Component Selection](automated_composition_of_agents_a_knapsack_approach_for_agentic_component_select.md)
-- [\[NeurIPS 2025\] MAT-Agent: Adaptive Multi-Agent Training Optimization](mat-agent_adaptive_multi-agent_training_optimization.md)
-- [\[NeurIPS 2025\] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning](zero-shot_large_language_model_agents_for_fully_automated_radiotherapy_treatment.md)
+- [\[ICLR 2026\] CARD: Towards Conditional Design of Multi-agent Topological Structures](../../ICLR2026/code_intelligence/card_towards_conditional_design_of_multi-agent_topological_structures.md)
+- [\[NeurIPS 2025\] A Self-Improving Coding Agent](a_selfimproving_coding_agent.md)
+- [\[NeurIPS 2025\] A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions](a_stochastic_differential_equation_framework_for_multi-objective_llm_interaction.md)
+- [\[NeurIPS 2025\] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents](swe-rebench_an_automated_pipeline_for_task_collection_and_decontaminated_evaluat.md)
+- [\[NeurIPS 2025\] Learning From Design Procedure To Generate CAD Programs for Data Augmentation](learning_from_design_procedure_to_generate_cad_programs_for_data_augmentation.md)
 
 </div>
 

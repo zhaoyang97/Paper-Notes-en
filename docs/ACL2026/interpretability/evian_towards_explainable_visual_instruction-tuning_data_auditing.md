@@ -18,8 +18,8 @@ content_hash: 8c73501efdb0d378
 # Evian: Towards Explainable Visual Instruction-tuning Data Auditing
 
 **Conference**: ACL 2026
-**arXiv**: [2604.20544](https://arxiv.org/abs/2604.20544)
-**Code**: N/A
+**arXiv**: [2604.20544](https://arxiv.org/abs/2604.20544)  
+**Code**: N/A  
 **Area**: Interpretability
 **Keywords**: Data Auditing, Visual Instruction Tuning, Explainable Evaluation, Data Quality, Multimodal Large Language Models
 

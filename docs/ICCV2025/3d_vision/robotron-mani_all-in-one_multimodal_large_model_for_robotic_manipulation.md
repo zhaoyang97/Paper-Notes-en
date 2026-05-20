@@ -18,8 +18,8 @@ content_hash: c33a74a20f2a2121
 # RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.07215](https://arxiv.org/abs/2412.07215)
-**Code**: [GitHub](https://github.com/EmbodiedAI-RoboTron/RoboTron-Mani)
+**arXiv**: [2412.07215](https://arxiv.org/abs/2412.07215)  
+**Code**: [GitHub](https://github.com/EmbodiedAI-RoboTron/RoboTron-Mani)  
 **Area**: 3D Vision
 **Keywords**: robotic manipulation, multimodal large model, 3D perception, cross-embodiment generalization, data alignment
 

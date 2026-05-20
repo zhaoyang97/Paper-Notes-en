@@ -18,8 +18,8 @@ content_hash: be2fbd21d920e4fe
 # Multi-agent Coordination via Flow Matching
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.05005](https://arxiv.org/abs/2511.05005)
-**Code**: N/A
+**arXiv**: [2511.05005](https://arxiv.org/abs/2511.05005)  
+**Code**: N/A  
 **Area**: Image Generation
 **Keywords**: Multi-agent coordination, Flow Matching, Offline MARL, IGM policy distillation, Decentralized execution
 

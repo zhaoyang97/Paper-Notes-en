@@ -18,8 +18,8 @@ content_hash: 7e0e419682d58886
 # Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2410.12657](https://arxiv.org/abs/2410.12657)
-**Code**: [https://github.com/realMoana/EPA-GRL](https://github.com/realMoana/EPA-GRL)
+**arXiv**: [2410.12657](https://arxiv.org/abs/2410.12657)  
+**Code**: [https://github.com/realMoana/EPA-GRL](https://github.com/realMoana/EPA-GRL)  
 **Area**: Self-Supervised Learning
 **Keywords**: Graph Contrastive Learning, Semantics-Preserving Augmentation, Explainable AI, Semi-Supervised Learning, GNN Explainer
 

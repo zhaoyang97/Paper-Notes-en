@@ -18,8 +18,8 @@ content_hash: fd3a13aef2e94fd1
 # Realistic Curriculum Reinforcement Learning for Autonomous and Sustainable Marine Vessel Navigation
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.10911](https://arxiv.org/abs/2601.10911)
-**Code**: None
+**arXiv**: [2601.10911](https://arxiv.org/abs/2601.10911)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Curriculum Reinforcement Learning, Autonomous Navigation, Marine Sustainability, Diffusion Models, Fuel Consumption Prediction
 

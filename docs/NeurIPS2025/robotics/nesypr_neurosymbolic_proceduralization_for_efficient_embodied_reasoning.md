@@ -18,8 +18,8 @@ content_hash: b0830a11e974bd37
 # NeSyPr: Neurosymbolic Proceduralization For Efficient Embodied Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19429](https://arxiv.org/abs/2510.19429)
-**Code**: N/A
+**arXiv**: [2510.19429](https://arxiv.org/abs/2510.19429)  
+**Code**: N/A  
 **Area**: Robotics / LLM Agent
 **Keywords**: Neurosymbolic Reasoning, Knowledge Compilation, Embodied Intelligence, Procedural Knowledge, Language Models
 

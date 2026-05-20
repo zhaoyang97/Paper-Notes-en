@@ -18,8 +18,8 @@ content_hash: 42aee8a2d3733291
 # General Compression Framework for Efficient Transformer Object Tracking
 
 **Conference**: ICCV 2025
-**arXiv**: [2409.17564](https://arxiv.org/abs/2409.17564)
-**Code**: [GitHub](https://github.com/honglyhly/CompressTracker) (code available as stated in the paper)
+**arXiv**: [2409.17564](https://arxiv.org/abs/2409.17564)  
+**Code**: [GitHub](https://github.com/honglyhly/CompressTracker) (code available as stated in the paper)  
 **Area**: Video Understanding
 **Keywords**: Object Tracking, Model Compression, Knowledge Distillation, Transformer, Efficient Inference
 

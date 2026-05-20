@@ -18,8 +18,8 @@ content_hash: 74eed64e12c7dce2
 # qa-FLoRA: Data-free Query-Adaptive Fusion of LoRAs for LLMs
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.11366](https://arxiv.org/abs/2512.11366)
-**Code**: None
+**arXiv**: [2512.11366](https://arxiv.org/abs/2512.11366)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: LoRA fusion, query-adaptive, training-free, KL divergence, multi-domain adaptation
 

@@ -18,8 +18,8 @@ content_hash: 840aafda2bbe6220
 # Guiding Diffusion Models with Semantically Degraded Conditions
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10780](https://arxiv.org/abs/2603.10780)
-**Code**: [Ming-321/Classifier-Degradation-Guidance](https://github.com/Ming-321/Classifier-Degradation-Guidance)
+**arXiv**: [2603.10780](https://arxiv.org/abs/2603.10780)  
+**Code**: [Ming-321/Classifier-Degradation-Guidance](https://github.com/Ming-321/Classifier-Degradation-Guidance)  
 **Area**: Image Generation
 **Keywords**: Classifier-Free Guidance, Condition Degradation Guidance, Text-to-Image, Diffusion Models, Compositional Generation
 

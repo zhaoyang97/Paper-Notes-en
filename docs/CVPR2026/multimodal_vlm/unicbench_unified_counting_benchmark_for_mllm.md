@@ -18,8 +18,8 @@ content_hash: ab6fc9718a71e450
 # UNICBench: UNIfied Counting Benchmark for MLLM
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00595](https://arxiv.org/abs/2603.00595)
-**Code**: Public evaluation toolkit
+**arXiv**: [2603.00595](https://arxiv.org/abs/2603.00595)  
+**Code**: Public evaluation toolkit  
 **Area**: Multimodal Benchmarking / MLLM Evaluation
 **Keywords**: counting benchmark, multimodal LLM, image-text-audio, unified evaluation, stratified difficulty
 
@@ -50,23 +50,23 @@ UNICBench comprises QA corpora across three modalities, a unified QA-evidence sc
 ### Key Designs
 
 1. **Three-Level Capability × Three-Level Difficulty Taxonomy**
-   - Pattern (L1): Direct perceptual counting, $y=|E|$, e.g., "How many people are in the image?"
-   - Semantic (L2): Attribute filtering / deduplication, $y=|\{e \in E \mid P(e)\}|$, e.g., "How many people are wearing red?"
-   - Reasoning (L3): Rule-driven / compositional counting, $y=g(|S_1|,\ldots)$, e.g., "How many folders were modified in 2022?"
-   - Difficulty is mapped via objective metrics (density/occlusion/repetition rate) to Easy (1–10) / Medium (11–100) / Hard (>100).
-   - **Design Motivation**: The cross-classification enables precise diagnosis—distinguishing "poor perception vs. poor reasoning" and "failure on simple vs. dense scenes."
+    - Pattern (L1): Direct perceptual counting, $y=|E|$, e.g., "How many people are in the image?"
+    - Semantic (L2): Attribute filtering / deduplication, $y=|\{e \in E \mid P(e)\}|$, e.g., "How many people are wearing red?"
+    - Reasoning (L3): Rule-driven / compositional counting, $y=g(|S_1|,\ldots)$, e.g., "How many folders were modified in 2022?"
+    - Difficulty is mapped via objective metrics (density/occlusion/repetition rate) to Easy (1–10) / Medium (11–100) / Hard (>100).
+    - **Design Motivation**: The cross-classification enables precise diagnosis—distinguishing "poor perception vs. poor reasoning" and "failure on simple vs. dense scenes."
 
 2. **Evidence-First Ground Truth and Cross-Modal Unified Schema**
-   - Each GT entry includes `gt_count` and structured `gt_evidence` (images: instance coordinates; text: character spans; audio: timestamps).
-   - Question templates: L1 uses deterministic templates to reduce linguistic variation; L2/L3 use free-form templates with explicit filtering rules.
-   - Multi-stage quality control: dual independent annotation + arbitration, with 100% annotation consistency.
-   - **Design Motivation**: Evidence traceability ensures GT verifiability; the unified schema makes cross-modal comparisons meaningful.
+    - Each GT entry includes `gt_count` and structured `gt_evidence` (images: instance coordinates; text: character spans; audio: timestamps).
+    - Question templates: L1 uses deterministic templates to reduce linguistic variation; L2/L3 use free-form templates with explicit filtering rules.
+    - Multi-stage quality control: dual independent annotation + arbitration, with 100% annotation consistency.
+    - **Design Motivation**: Evidence traceability ensures GT verifiability; the unified schema makes cross-modal comparisons meaningful.
 
 3. **Standardized Evaluation Protocol**
-   - Fixed split/prompt/seed eliminates stochasticity.
-   - Modality-specific matching rules (exact numeric match vs. ε-tolerance).
-   - Deterministic numeric parsing to extract numbers from natural-language responses.
-   - Evaluation metrics: MAE, MSE, SuccessRate, HitRate (@100%/@90%/@80%).
+    - Fixed split/prompt/seed eliminates stochasticity.
+    - Modality-specific matching rules (exact numeric match vs. ε-tolerance).
+    - Deterministic numeric parsing to extract numbers from natural-language responses.
+    - Evaluation metrics: MAE, MSE, SuccessRate, HitRate (@100%/@90%/@80%).
 
 ### Loss & Training
 

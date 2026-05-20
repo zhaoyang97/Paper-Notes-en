@@ -18,8 +18,8 @@ content_hash: d27d0df3831e471a
 # Horizon Reduction Makes RL Scalable
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04168](https://arxiv.org/abs/2506.04168)
-**Code**: None
+**arXiv**: [2506.04168](https://arxiv.org/abs/2506.04168)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: offline RL, scalability, horizon reduction, hierarchical RL, goal-conditioned RL
 

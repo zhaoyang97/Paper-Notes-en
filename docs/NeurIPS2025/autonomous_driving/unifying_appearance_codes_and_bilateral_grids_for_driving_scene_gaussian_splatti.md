@@ -18,8 +18,8 @@ content_hash: 68d071d9b110d3c2
 # Unifying Appearance Codes and Bilateral Grids for Driving Scene Gaussian Splatting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05280](https://arxiv.org/abs/2506.05280)
-**Code**: [https://bigcileng.github.io/bilateral-driving](https://bigcileng.github.io/bilateral-driving)
+**arXiv**: [2506.05280](https://arxiv.org/abs/2506.05280)  
+**Code**: [https://bigcileng.github.io/bilateral-driving](https://bigcileng.github.io/bilateral-driving)  
 **Area**: Autonomous Driving / Neural Rendering
 **Keywords**: Gaussian Splatting, Bilateral Grid, Appearance Modeling, Driving Scene, Photometric Consistency
 

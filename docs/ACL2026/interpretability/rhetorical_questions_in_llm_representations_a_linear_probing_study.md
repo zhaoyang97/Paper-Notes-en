@@ -18,8 +18,8 @@ content_hash: 1cac2a2a631f8050
 # Rhetorical Questions in LLM Representations: A Linear Probing Study
 
 **Conference**: ACL 2026
-**arXiv**: [2604.14128](https://arxiv.org/abs/2604.14128)
-**Code**: [GitHub](https://github.com/ruyi101/rq-representation-probing)
+**arXiv**: [2604.14128](https://arxiv.org/abs/2604.14128)  
+**Code**: [GitHub](https://github.com/ruyi101/rq-representation-probing)  
 **Area**: Interpretability
 **Keywords**: rhetorical questions, linear probing, LLM representations, cross-dataset transfer, rhetorical analysis
 

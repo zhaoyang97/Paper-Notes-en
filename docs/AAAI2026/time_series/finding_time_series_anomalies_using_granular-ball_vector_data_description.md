@@ -13,7 +13,7 @@ content_hash: 8c2bb15b6796925c
 # Finding Time Series Anomalies using Granular-ball Vector Data Description
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12147](https://arxiv.org/abs/2511.12147)
+**arXiv**: [2511.12147](https://arxiv.org/abs/2511.12147)  
 **Authors**: Lifeng Shen, Liang Peng, Ruiwen Liu, Shuyin Xia, Yi Liu
 **Code**: [https://github.com/notshine/GBOC](https://github.com/notshine/GBOC)
 

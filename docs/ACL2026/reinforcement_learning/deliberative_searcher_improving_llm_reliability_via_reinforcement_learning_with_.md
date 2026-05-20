@@ -18,8 +18,8 @@ content_hash: 53f732f4409e4dfb
 # Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints
 
 **Conference**: ACL 2026
-**arXiv**: [2507.16727](https://arxiv.org/abs/2507.16727)
-**Code**: None
+**arXiv**: [2507.16727](https://arxiv.org/abs/2507.16727)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: confidence calibration, search-augmented LLM, constrained reinforcement learning, reliability, inference efficiency
 

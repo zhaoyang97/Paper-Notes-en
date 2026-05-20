@@ -18,8 +18,8 @@ content_hash: 1734f3c81abc493a
 # MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29296](https://arxiv.org/abs/2603.29296)
-**Code**: [Project Page](https://hrzhou2.github.io/motion-scale-web/)
+**arXiv**: [2603.29296](https://arxiv.org/abs/2603.29296)  
+**Code**: [Project Page](https://hrzhou2.github.io/motion-scale-web/)  
 **Area**: 3D Vision
 **Keywords**: 4D Reconstruction, Gaussian Splatting, Dynamic Scenes, Motion Field, Monocular Video
 

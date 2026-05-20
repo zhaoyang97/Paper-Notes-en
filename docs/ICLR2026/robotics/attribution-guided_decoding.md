@@ -19,8 +19,8 @@ content_hash: f1afa67caa9fb207
 # Attribution-Guided Decoding
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26307](https://arxiv.org/abs/2509.26307)
-**Code**: [GitHub](https://github.com/piotr-komorowski/AGD)
+**arXiv**: [2509.26307](https://arxiv.org/abs/2509.26307)  
+**Code**: [GitHub](https://github.com/piotr-komorowski/AGD)  
 **Area**: Robotics
 **Keywords**: attribution method, LRP, instruction following, factuality, entropy-gating, controlled decoding
 

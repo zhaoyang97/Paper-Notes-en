@@ -18,8 +18,8 @@ content_hash: dfc40b75e680f98a
 # Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17647](https://arxiv.org/abs/2604.17647)
-**Code**: [Project Page](https://helixometry.github.io/NOVA-ARC---ACL26/)
+**arXiv**: [2604.17647](https://arxiv.org/abs/2604.17647)  
+**Code**: [Project Page](https://helixometry.github.io/NOVA-ARC---ACL26/)  
 **Area**: Multilingual Translation
 **Keywords**: Non-verbal vocalization supervision, hyperbolic representation learning, optimal transport alignment, prosody codebook, cross-lingual emotion transfer
 

@@ -18,8 +18,8 @@ content_hash: a0b45b851c098408
 # Learning Shared Representations from Unpaired Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21524](https://arxiv.org/abs/2505.21524)
-**Code**: [https://shaham-lab.github.io/SUE_page](https://shaham-lab.github.io/SUE_page)
+**arXiv**: [2505.21524](https://arxiv.org/abs/2505.21524)  
+**Code**: [https://shaham-lab.github.io/SUE_page](https://shaham-lab.github.io/SUE_page)  
 **Area**: Multimodal VLM / Cross-Modal Representation Learning / Weakly Paired Learning
 **Keywords**: spectral embedding, universal embedding, unpaired multimodal learning, MMD, CCA
 

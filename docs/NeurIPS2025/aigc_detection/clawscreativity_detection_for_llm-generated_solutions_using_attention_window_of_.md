@@ -18,8 +18,8 @@ content_hash: fabe7d8fd53f4835
 # CLAWS: Creativity Detection for LLM-Generated Solutions Using Attention Window of Sections
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17921](https://arxiv.org/abs/2510.17921)
-**Code**: [GitHub](https://github.com/kkt94/CLAWS)
+**arXiv**: [2510.17921](https://arxiv.org/abs/2510.17921)  
+**Code**: [GitHub](https://github.com/kkt94/CLAWS)  
 **Area**: AIGC Detection
 **Keywords**: LLM creativity detection, attention analysis, mathematical reasoning, hallucination detection, white-box method
 

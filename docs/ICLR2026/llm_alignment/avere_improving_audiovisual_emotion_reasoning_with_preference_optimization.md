@@ -18,8 +18,8 @@ content_hash: 3c40c43ded489867
 # AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07054](https://arxiv.org/abs/2602.07054)
-**Code**: [https://github.com/ihp-lab/AVERE](https://github.com/ihp-lab/AVERE)
+**arXiv**: [2602.07054](https://arxiv.org/abs/2602.07054)  
+**Code**: [https://github.com/ihp-lab/AVERE](https://github.com/ihp-lab/AVERE)  
 **Area**: Alignment & RLHF
 **Keywords**: Multimodal Emotion Understanding, Preference Optimization, DPO, Hallucination Mitigation, Audiovisual Reasoning
 

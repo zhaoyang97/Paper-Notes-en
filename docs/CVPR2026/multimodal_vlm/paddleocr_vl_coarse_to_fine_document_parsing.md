@@ -18,8 +18,8 @@ content_hash: 2416b54f449d5261
 # PaddleOCR-VL: Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24326](https://arxiv.org/abs/2603.24326)
-**Code**: [https://github.com/PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)
+**arXiv**: [2603.24326](https://arxiv.org/abs/2603.24326)  
+**Code**: [https://github.com/PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)  
 **Area**: Multimodal VLM
 **Keywords**: Document Parsing, Vision-Language Model, Coarse-to-Fine Processing, Visual Redundancy Elimination, OCR
 

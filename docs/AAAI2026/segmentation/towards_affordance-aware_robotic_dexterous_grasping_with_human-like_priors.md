@@ -18,8 +18,8 @@ content_hash: aa6be460be9b7bca
 # Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.08896](https://arxiv.org/abs/2508.08896)
-**Code**: [afforddex.github.io](https://afforddex.github.io/)
+**arXiv**: [2508.08896](https://arxiv.org/abs/2508.08896)  
+**Code**: [afforddex.github.io](https://afforddex.github.io/)  
 **Area**: Segmentation
 **Keywords**: Dexterous Grasping, Functional Affordance, Human Motion Priors, Negative Affordance Segmentation, Reinforcement Learning
 

@@ -18,8 +18,8 @@ content_hash: 3044f7e3a92a7056
 # JanusDNA: A Powerful Bi-directional Hybrid DNA Foundation Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17257](https://arxiv.org/abs/2505.17257)
-**Code**: [GitHub](https://github.com/Qihao-Duan/JanusDNA)
+**arXiv**: [2505.17257](https://arxiv.org/abs/2505.17257)  
+**Code**: [GitHub](https://github.com/Qihao-Duan/JanusDNA)  
 **Area**: Medical Imaging
 **Keywords**: DNA foundation model, bidirectional modeling, Mamba-Attention, Mixture-of-Experts, genomics
 

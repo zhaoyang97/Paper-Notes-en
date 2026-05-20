@@ -18,8 +18,8 @@ content_hash: e01dd2773b3afbb6
 # GSNR: Graph Smooth Null-Space Representation for Inverse Problems
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20328](https://arxiv.org/abs/2602.20328)
-**Code**: N/A
+**arXiv**: [2602.20328](https://arxiv.org/abs/2602.20328)  
+**Code**: N/A  
 **Area**: Image Restoration / Inverse Problems
 **Keywords**: Inverse Problems, Null-Space Representation, Graph Smoothness, Spectral Graph Theory, Plug-and-Play
 

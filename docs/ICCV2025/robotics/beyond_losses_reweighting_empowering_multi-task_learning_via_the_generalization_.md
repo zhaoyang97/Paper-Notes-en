@@ -18,8 +18,8 @@ content_hash: 5808fa6dc6c9c2e6
 # Beyond Losses Reweighting: Empowering Multi-Task Learning via the Generalization Perspective
 
 **Conference**: ICCV 2025
-**arXiv**: [2211.13723](https://arxiv.org/abs/2211.13723)
-**Code**: None
+**arXiv**: [2211.13723](https://arxiv.org/abs/2211.13723)  
+**Code**: None  
 **Area**: Multi-Task Learning / Optimization
 **Keywords**: Multi-task learning, flat minima, sharpness-aware minimization, gradient conflict, generalization
 
@@ -54,9 +54,9 @@ The approximate SAM gradient is obtained via first-order Taylor expansion and re
 
 2. **Gradient Decomposition Strategy**: This is the paper's most critical design. For the shared-parameter gradient of each task $i$:
 
-   - **Loss gradient** $\boldsymbol{g}_{sh}^{i,loss}$: the standard gradient at the current parameters, pointing toward lower loss.
-   - **SAM gradient** $\boldsymbol{g}_{sh}^{i,SAM}$: the gradient evaluated at the perturbed parameters.
-   - **Flat gradient** $\boldsymbol{g}_{sh}^{i,flat} = \boldsymbol{g}_{sh}^{i,SAM} - \boldsymbol{g}_{sh}^{i,loss}$: points toward flatter regions.
+    - **Loss gradient** $\boldsymbol{g}_{sh}^{i,loss}$: the standard gradient at the current parameters, pointing toward lower loss.
+    - **SAM gradient** $\boldsymbol{g}_{sh}^{i,SAM}$: the gradient evaluated at the perturbed parameters.
+    - **Flat gradient** $\boldsymbol{g}_{sh}^{i,flat} = \boldsymbol{g}_{sh}^{i,SAM} - \boldsymbol{g}_{sh}^{i,loss}$: points toward flatter regions.
 
    Loss gradients and flat gradients across all tasks are then aggregated separately:
 

@@ -18,8 +18,8 @@ content_hash: 991a07ead08033f0
 # ARCHE: A Novel Task to Evaluate LLMs on Latent Reasoning Chain Extraction
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12485](https://arxiv.org/abs/2511.12485)
-**Code**: [GitHub](https://github.com/Linsonng/ARCHEBenchmark/)
+**arXiv**: [2511.12485](https://arxiv.org/abs/2511.12485)  
+**Code**: [GitHub](https://github.com/Linsonng/ARCHEBenchmark/)  
 **Area**: LLM Evaluation / Scientific Reasoning
 **Keywords**: Latent reasoning chain extraction, Peircean reasoning paradigms, deduction/induction/abduction, reasoning logic tree, benchmark
 

@@ -17,8 +17,8 @@ content_hash: 5e9b86a37f5673d2
 # Learning on a Razor's Edge: Identifiability and Singularity of Polynomial Neural Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.11846](https://arxiv.org/abs/2505.11846)
-**Code**: None
+**arXiv**: [2505.11846](https://arxiv.org/abs/2505.11846)  
+**Code**: None  
 **Area**: Deep Learning Theory / Algebraic Geometry
 **Keywords**: Identifiability, Neuromanifold Singularities, Polynomial Neural Networks, Sparsity Bias, Algebraic Geometry
 

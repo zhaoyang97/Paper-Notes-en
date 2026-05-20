@@ -18,8 +18,8 @@ content_hash: 9f008378a24cffca
 # Bayesian Evaluation of Large Language Model Behavior
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10661](https://arxiv.org/abs/2511.10661)
-**Code**: To be confirmed
+**arXiv**: [2511.10661](https://arxiv.org/abs/2511.10661)  
+**Code**: To be confirmed  
 **Area**: LLM Evaluation
 **Keywords**: Bayesian inference, LLM evaluation, uncertainty quantification, sequential sampling, Thompson sampling, binary metrics
 

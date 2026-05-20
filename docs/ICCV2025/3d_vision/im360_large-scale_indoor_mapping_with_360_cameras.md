@@ -18,8 +18,8 @@ content_hash: 0963ed78ceaad507
 # IM360: Large-scale Indoor Mapping with 360 Cameras
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.12545](https://arxiv.org/abs/2502.12545)
-**Code**: [https://jdk9405.github.io/IM360/](https://jdk9405.github.io/IM360/) (project page available)
+**arXiv**: [2502.12545](https://arxiv.org/abs/2502.12545)  
+**Code**: [https://jdk9405.github.io/IM360/](https://jdk9405.github.io/IM360/) (project page available)  
 **Area**: 3D Vision
 **Keywords**: indoor 3D mapping, 360° panoramic cameras, spherical SfM, texture optimization, large-scale indoor scenes
 

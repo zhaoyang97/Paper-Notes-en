@@ -18,8 +18,8 @@ content_hash: e089fc4a09509aa7
 # Think Outside the Policy: In-Context Steered Policy Optimization
 
 **Conference**: ACL 2026
-**arXiv**: [2510.26519](https://arxiv.org/abs/2510.26519)
-**Code**: [GitHub](https://github.com/Celine-hxy/ICPO)
+**arXiv**: [2510.26519](https://arxiv.org/abs/2510.26519)  
+**Code**: [GitHub](https://github.com/Celine-hxy/ICPO)  
 **Area**: LLM Reasoning / Reinforcement Learning
 **Keywords**: Reinforcement Learning, In-Context Learning Steering, Policy Optimization, Exploration Enhancement, Mathematical Reasoning
 

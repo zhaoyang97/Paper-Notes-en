@@ -18,8 +18,8 @@ content_hash: 9d8979be65b322d5
 # Detecting AI-Generated Forgeries via Iterative Manifold Deviation Amplification
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.18842](https://arxiv.org/abs/2602.18842)
-**Code**: To be confirmed
+**arXiv**: [2602.18842](https://arxiv.org/abs/2602.18842)  
+**Code**: To be confirmed  
 **Area**: Image Segmentation / AI Forgery Detection
 **Keywords**: AI-generated image detection, manifold deviation, MAE reconstruction, iterative amplification, image forgery localization
 

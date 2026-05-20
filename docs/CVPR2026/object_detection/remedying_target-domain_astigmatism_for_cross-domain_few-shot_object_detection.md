@@ -18,8 +18,8 @@ content_hash: 7f06f65a2c490720
 # Remedying Target-Domain Astigmatism for Cross-Domain Few-Shot Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.18541](https://arxiv.org/abs/2603.18541)
-**Code**: N/A
+**arXiv**: [2603.18541](https://arxiv.org/abs/2603.18541)  
+**Code**: N/A  
 **Area**: Object Detection
 **Keywords**: cross-domain few-shot detection, attention astigmatism, bio-inspired foveal vision, prototype learning, negative context modeling
 

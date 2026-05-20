@@ -17,8 +17,8 @@ content_hash: 23566fb652774979
 # The Counting Power of Transformers
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.11199](https://arxiv.org/abs/2505.11199)
-**Code**: None
+**arXiv**: [2505.11199](https://arxiv.org/abs/2505.11199)  
+**Code**: None  
 **Area**: Transformer Theory / Formal Languages
 **Keywords**: Transformer expressivity, counting properties, semi-algebraic properties, undecidability, formal languages
 

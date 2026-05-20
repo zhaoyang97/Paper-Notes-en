@@ -18,8 +18,8 @@ content_hash: b4b200078148908b
 # Counterfactual Reasoning for Steerable Pluralistic Value Alignment of Large Language Models
 
 **Conference**: NEURIPS2025
-**arXiv**: [2510.18526](https://arxiv.org/abs/2510.18526)
-**Code**: To be confirmed
+**arXiv**: [2510.18526](https://arxiv.org/abs/2510.18526)  
+**Code**: To be confirmed  
 **Area**: Causal Inference
 **Keywords**: Value alignment, counterfactual reasoning, structural causal model, pluralistic values, LLM alignment
 

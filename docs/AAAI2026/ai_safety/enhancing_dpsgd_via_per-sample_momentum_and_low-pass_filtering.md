@@ -18,8 +18,8 @@ content_hash: 8db8ac0d5a116602
 # Enhancing DPSGD via Per-Sample Momentum and Low-Pass Filtering
 
 **Conference**: AAAI2026
-**arXiv**: [2511.08841](https://arxiv.org/abs/2511.08841)
-**Code**: To be confirmed
+**arXiv**: [2511.08841](https://arxiv.org/abs/2511.08841)  
+**Code**: To be confirmed  
 **Area**: AI Safety
 **Keywords**: differential privacy, DPSGD, Per-Sample Momentum, Low-Pass Filtering, Privacy-Utility Trade-off
 

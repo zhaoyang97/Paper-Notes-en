@@ -18,8 +18,8 @@ content_hash: 25cfbc7d3265d766
 # Global Minimizers of ℓp-Regularized Objectives Yield the Sparsest ReLU Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21791](https://arxiv.org/abs/2505.21791)
-**Code**: None
+**arXiv**: [2505.21791](https://arxiv.org/abs/2505.21791)  
+**Code**: None  
 **Area**: Neural Network Sparsification / Optimization Theory
 **Keywords**: ℓp regularization, ReLU networks, sparsity, global minimizers, network pruning
 

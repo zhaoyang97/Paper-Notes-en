@@ -18,8 +18,8 @@ content_hash: 2e8236759afb32b0
 # ARC-JSD: Attributing Response to Context via Jensen-Shannon Divergence Driven Mechanistic Study
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16415](https://arxiv.org/abs/2505.16415)
-**Code**: [https://github.com/ruizheliUOA/ARC_JSD](https://github.com/ruizheliUOA/ARC_JSD)
+**arXiv**: [2505.16415](https://arxiv.org/abs/2505.16415)  
+**Code**: [https://github.com/ruizheliUOA/ARC_JSD](https://github.com/ruizheliUOA/ARC_JSD)  
 **Area**: RAG / Interpretability
 **Keywords**: Context Attribution, Jensen-Shannon Divergence, Mechanistic Interpretability, RAG Hallucination, Logit Lens
 

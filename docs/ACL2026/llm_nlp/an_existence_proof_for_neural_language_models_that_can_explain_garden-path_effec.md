@@ -18,8 +18,8 @@ content_hash: f7deeabb282a630e
 # An Existence Proof for Neural Language Models That Can Explain Garden-Path Effects via Surprisal
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18293](https://arxiv.org/abs/2604.18293)
-**Code**: [github](https://github.com/osekilab/RE-GPE)
+**arXiv**: [2604.18293](https://arxiv.org/abs/2604.18293)  
+**Code**: [github](https://github.com/osekilab/RE-GPE)  
 **Area**: LLM/NLP
 **Keywords**: surprisal theory, garden-path effects, human reading times, language model fine-tuning, psycholinguistics
 

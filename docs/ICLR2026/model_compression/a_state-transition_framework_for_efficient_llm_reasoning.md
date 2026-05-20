@@ -18,8 +18,8 @@ content_hash: a8e25008bbdea1b0
 # A State-Transition Framework for Efficient LLM Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01198](https://arxiv.org/abs/2602.01198)
-**Code**: Available
+**arXiv**: [2602.01198](https://arxiv.org/abs/2602.01198)  
+**Code**: Available  
 **Area**: Model Compression
 **Keywords**: efficient reasoning, linear attention, state transition, KV cache, long CoT
 

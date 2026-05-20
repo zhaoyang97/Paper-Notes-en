@@ -18,8 +18,8 @@ content_hash: 88975676f0835409
 # Unifying Symbolic Music Arrangement: Track-Aware Reconstruction and Structured Tokenization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2408.15176](https://arxiv.org/abs/2408.15176)
-**Code**: [https://www.oulongshen.xyz/automatic_arrangement](https://www.oulongshen.xyz/automatic_arrangement)
+**arXiv**: [2408.15176](https://arxiv.org/abs/2408.15176)  
+**Code**: [https://www.oulongshen.xyz/automatic_arrangement](https://www.oulongshen.xyz/automatic_arrangement)  
 **Area**: Audio & Speech / Symbolic Music Generation
 **Keywords**: music arrangement, symbolic music, multi-track music generation, music tokenization, self-supervised learning
 

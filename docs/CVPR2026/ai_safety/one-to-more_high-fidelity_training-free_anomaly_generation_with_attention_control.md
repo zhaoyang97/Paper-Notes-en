@@ -18,8 +18,8 @@ content_hash: de83199b3d9fb31f
 # One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.18093](https://arxiv.org/abs/2603.18093)
-**Code**: N/A
+**arXiv**: [2603.18093](https://arxiv.org/abs/2603.18093)  
+**Code**: N/A  
 **Area**: AI Safety / Anomaly Detection
 **Keywords**: anomaly generation, training-free, self-attention grafting, diffusion models, industrial anomaly detection
 

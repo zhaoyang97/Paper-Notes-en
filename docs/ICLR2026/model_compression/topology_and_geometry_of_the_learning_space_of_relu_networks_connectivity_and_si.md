@@ -19,8 +19,8 @@ content_hash: 81228b13669b172f
 # Topology and Geometry of the Learning Space of ReLU Networks: Connectivity and Size
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.00693](https://arxiv.org/abs/2602.00693)
-**Code**: None
+**arXiv**: [2602.00693](https://arxiv.org/abs/2602.00693)  
+**Code**: None  
 **Area**: Model Theory / Neural Network Theory
 **Keywords**: ReLU networks, parameter space topology, connectivity, singularity, DAG architecture, differentiable pruning
 

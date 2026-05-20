@@ -18,8 +18,8 @@ content_hash: 4e030b7e3116d2b7
 # PureCC: Pure Learning for Text-to-Image Concept Customization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07561](https://arxiv.org/abs/2603.07561)
-**Code**: [https://github.com/lzc-sg/PureCC](https://github.com/lzc-sg/PureCC)
+**arXiv**: [2603.07561](https://arxiv.org/abs/2603.07561)  
+**Code**: [https://github.com/lzc-sg/PureCC](https://github.com/lzc-sg/PureCC)  
 **Area**: Image Generation
 **Keywords**: Concept Customization, Diffusion Model Fine-tuning, Implicit Guidance, Model Preservation, Adaptive Scaling
 

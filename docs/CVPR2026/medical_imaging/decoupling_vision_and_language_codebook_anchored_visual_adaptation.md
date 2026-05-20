@@ -19,8 +19,8 @@ content_hash: 69822eca8fbdf3eb
 # Decoupling Vision and Language: Codebook Anchored Visual Adaptation
 
 **Conference**: CVPR2026
-**arXiv**: [2602.19449](https://arxiv.org/abs/2602.19449)
-**Code**: To be confirmed
+**arXiv**: [2602.19449](https://arxiv.org/abs/2602.19449)  
+**Code**: To be confirmed  
 **Area**: Medical Imaging / Vision-Language Models
 **Keywords**: Discrete visual tokens, codebook, visual encoder adaptation, domain transfer, token pruning, LVLM
 

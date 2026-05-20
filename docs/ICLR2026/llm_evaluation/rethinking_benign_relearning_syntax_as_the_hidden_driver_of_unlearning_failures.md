@@ -18,8 +18,8 @@ content_hash: 889d0544ef41df89
 # Rethinking Benign Relearning: Syntax as the Hidden Driver of Unlearning Failures
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.03379](https://arxiv.org/abs/2602.03379)
-**Code**: None
+**arXiv**: [2602.03379](https://arxiv.org/abs/2602.03379)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: Machine Unlearning, Benign Relearning, Syntactic Similarity, Unlearning Robustness, Syntactic Diversification
 

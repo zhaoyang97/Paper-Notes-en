@@ -18,8 +18,8 @@ content_hash: 44db79e56ffe3fb1
 # Magical: Medical Lay Language Generation via Semantic Invariance and Layperson-tailored Adaptation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.08730](https://arxiv.org/abs/2508.08730)
-**Code**: [GitHub](https://github.com/tianlwang/Magical.git)
+**arXiv**: [2508.08730](https://arxiv.org/abs/2508.08730)  
+**Code**: [GitHub](https://github.com/tianlwang/Magical.git)  
 **Area**: Medical Imaging / Medical NLP
 **Keywords**: Medical lay language generation, LoRA, semantic invariance, heterogeneous data, parameter-efficient fine-tuning
 

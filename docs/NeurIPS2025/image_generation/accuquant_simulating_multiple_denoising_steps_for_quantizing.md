@@ -18,8 +18,8 @@ content_hash: d54158358c0f19e0
 # AccuQuant: Simulating Multiple Denoising Steps for Quantizing Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20348](https://arxiv.org/abs/2510.20348)
-**Code**: None
+**arXiv**: [2510.20348](https://arxiv.org/abs/2510.20348)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Post-training quantization, diffusion models, error accumulation, multi-step sampling simulation, O(1) memory optimization
 

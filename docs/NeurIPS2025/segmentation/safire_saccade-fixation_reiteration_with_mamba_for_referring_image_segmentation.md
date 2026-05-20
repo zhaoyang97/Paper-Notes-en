@@ -18,8 +18,8 @@ content_hash: 9cbde6313937d6d3
 # SaFiRe: Saccade-Fixation Reiteration with Mamba for Referring Image Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10160](https://arxiv.org/abs/2510.10160)
-**Code**: Available (project page)
+**arXiv**: [2510.10160](https://arxiv.org/abs/2510.10160)  
+**Code**: Available (project page)  
 **Area**: Segmentation / Vision-Language
 **Keywords**: Referring image segmentation, Mamba, dual-stage cognition, ambiguous expressions, linear complexity
 

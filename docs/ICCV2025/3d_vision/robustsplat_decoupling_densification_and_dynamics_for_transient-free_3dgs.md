@@ -18,8 +18,8 @@ content_hash: 2abe2c42c48ac1e3
 # RobustSplat: Decoupling Densification and Dynamics for Transient-Free 3DGS
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.02751](https://arxiv.org/abs/2506.02751)
-**Code**: [https://fcyycf.github.io/RobustSplat/](https://fcyycf.github.io/RobustSplat/) (project page available)
+**arXiv**: [2506.02751](https://arxiv.org/abs/2506.02751)  
+**Code**: [https://fcyycf.github.io/RobustSplat/](https://fcyycf.github.io/RobustSplat/) (project page available)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Novel View Synthesis, Transient Object Removal, Gaussian Densification, Robust Reconstruction
 
@@ -52,23 +52,23 @@ RobustSplat builds upon the standard 3DGS + mask MLP framework and introduces tw
 
 1. **Delayed Gaussian Growth**
 
-   - **Function**: Postpones the start of Gaussian densification from the default 500 iterations to 10K iterations.
-   - **Mechanism**: During the first 10K iterations, only the shape, color, and opacity of existing Gaussians are optimized; splitting and cloning are disallowed. This focuses optimization on reconstructing the global structure of the static scene. Experiments demonstrate that later densification onset consistently yields better final results, as early densification causes new Gaussians to overfit transient objects.
-   - **Design Motivation**: The authors' diagnostic experiments (Fig. 5a) clearly show that as densification proceeds, vanilla 3DGS PSNR gradually declines (new Gaussians overfit transients), and delaying densification effectively mitigates this issue.
+    - **Function**: Postpones the start of Gaussian densification from the default 500 iterations to 10K iterations.
+    - **Mechanism**: During the first 10K iterations, only the shape, color, and opacity of existing Gaussians are optimized; splitting and cloning are disallowed. This focuses optimization on reconstructing the global structure of the static scene. Experiments demonstrate that later densification onset consistently yields better final results, as early densification causes new Gaussians to overfit transient objects.
+    - **Design Motivation**: The authors' diagnostic experiments (Fig. 5a) clearly show that as densification proceeds, vanilla 3DGS PSNR gradually declines (new Gaussians overfit transients), and delaying densification effectively mitigates this issue.
 
 2. **Mask Regularization at Early Stage**
 
-   - **Function**: Encourages the mask MLP to classify all regions as static during early training, gradually allowing dynamic region detection as training progresses.
-   - **Mechanism**: An exponentially decaying regularization term $\mathcal{L}_{reg} = e^{-i/\beta_{reg}} \|1 - M_t\|$ is introduced, where $i$ denotes the current iteration. At initialization, this term strongly constrains the mask toward 1 (i.e., all regions treated as static); it decays over iterations, progressively allowing the MLP to learn transient detection.
-   - **Design Motivation**: Since delayed densification ensures early optimization involves only the static scene, this regularization complements the delayed growth strategy and prevents biased mask learning from being introduced prematurely.
+    - **Function**: Encourages the mask MLP to classify all regions as static during early training, gradually allowing dynamic region detection as training progresses.
+    - **Mechanism**: An exponentially decaying regularization term $\mathcal{L}_{reg} = e^{-i/\beta_{reg}} \|1 - M_t\|$ is introduced, where $i$ denotes the current iteration. At initialization, this term strongly constrains the mask toward 1 (i.e., all regions treated as static); it decays over iterations, progressively allowing the MLP to learn transient detection.
+    - **Design Motivation**: Since delayed densification ensures early optimization involves only the static scene, this regularization complements the delayed growth strategy and prevents biased mask learning from being introduced prematurely.
 
 3. **Scale-Cascaded Mask Bootstrapping**
 
-   - **Function**: Transitions the mask MLP training supervision from low-resolution to high-resolution features and residuals progressively.
-   - **Mechanism**:
+    - **Function**: Transitions the mask MLP training supervision from low-resolution to high-resolution features and residuals progressively.
+    - **Mechanism**:
      - *Before densification onset*: 224×224 low-resolution images are used to extract DINOv2 features, and cosine similarity is computed as the mask supervision signal. Low-resolution features have larger receptive fields, effectively suppressing local noise and being more tolerant of under-reconstructed regions.
      - *After densification onset*: Supervision switches to 504×504 high-resolution images, leveraging finer feature similarity and image residuals for more precise transient region detection.
-   - **Design Motivation**: In early training, static regions are under-reconstructed due to sparse point initialization; high-resolution features and residuals erroneously label these regions as dynamic. Low-resolution features naturally smooth out local discrepancies and better capture global consistency (clearly illustrated in Fig. 6).
+    - **Design Motivation**: In early training, static regions are under-reconstructed due to sparse point initialization; high-resolution features and residuals erroneously label these regions as dynamic. Low-resolution features naturally smooth out local discrepancies and better capture global consistency (clearly illustrated in Fig. 6).
 
 ### Loss & Training
 

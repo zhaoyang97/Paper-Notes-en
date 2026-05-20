@@ -17,8 +17,8 @@ content_hash: 6ccf3be03f87ef55
 # SimRecon: SimReady Compositional Scene Reconstruction from Real Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02133](https://arxiv.org/abs/2603.02133)
-**Code**: [https://xiac20.github.io/SimRecon/](https://xiac20.github.io/SimRecon/)
+**arXiv**: [2603.02133](https://arxiv.org/abs/2603.02133)  
+**Code**: [https://xiac20.github.io/SimRecon/](https://xiac20.github.io/SimRecon/)  
 **Area**: Other
 **Keywords**: compositional scene reconstruction, simulation-ready, scene graph, active viewpoint optimization, physical assembly
 

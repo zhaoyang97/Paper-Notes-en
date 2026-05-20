@@ -18,8 +18,8 @@ content_hash: 6b6f1e53b8f78bc7
 # Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09948](https://arxiv.org/abs/2511.09948)
-**Code**: [https://github.com/zhix000/MA-CLIP](https://github.com/zhix000/MA-CLIP)
+**arXiv**: [2511.09948](https://arxiv.org/abs/2511.09948)  
+**Code**: [https://github.com/zhix000/MA-CLIP](https://github.com/zhix000/MA-CLIP)  
 **Area**: Image Quality Assessment / Vision-Language Models
 **Keywords**: NR-IQA, CLIP, feature magnitude, Box-Cox transformation, zero-shot quality assessment
 

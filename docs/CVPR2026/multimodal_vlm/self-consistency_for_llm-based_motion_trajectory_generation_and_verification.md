@@ -18,8 +18,8 @@ content_hash: 7b44aec49d853328
 # Self-Consistency for LLM-Based Motion Trajectory Generation and Verification
 
 **Conference**: CVPR2026
-**arXiv**: [2603.29301](https://arxiv.org/abs/2603.29301)
-**Code**: [majiaju.io/trajectory-self-consistency](https://majiaju.io/trajectory-self-consistency)
+**arXiv**: [2603.29301](https://arxiv.org/abs/2603.29301)  
+**Code**: [majiaju.io/trajectory-self-consistency](https://majiaju.io/trajectory-self-consistency)  
 **Area**: Multimodal VLM
 **Keywords**: self-consistency, motion trajectory, Lie transformation groups, shape family, unsupervised verification
 

@@ -18,8 +18,8 @@ content_hash: 52993b4eb57dcb6d
 # MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21473](https://arxiv.org/abs/2510.21473)
-**Code**: N/A
+**arXiv**: [2510.21473](https://arxiv.org/abs/2510.21473)  
+**Code**: N/A  
 **Area**: Image Restoration
 **Keywords**: Diffusion language models, multi-reward optimization, token correlation, reinforcement learning, SGRO
 

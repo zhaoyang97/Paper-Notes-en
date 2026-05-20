@@ -18,8 +18,8 @@ content_hash: e97912200920b52a
 # FastGHA: Generalized Few-Shot 3D Gaussian Head Avatars with Real-Time Animation
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.13837](https://arxiv.org/abs/2601.13837)
-**Code**: To be confirmed
+**arXiv**: [2601.13837](https://arxiv.org/abs/2601.13837)  
+**Code**: To be confirmed  
 **Area**: 3D Vision / Head Reconstruction
 **Keywords**: 3D Gaussian Splatting, head avatar, few-shot, real-time animation, feed-forward
 

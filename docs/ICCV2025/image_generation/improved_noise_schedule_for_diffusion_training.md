@@ -18,8 +18,8 @@ content_hash: 54d9203a7044671b
 # Improved Noise Schedule for Diffusion Training
 
 **Conference**: ICCV 2025
-**arXiv**: [2407.03297](https://arxiv.org/abs/2407.03297)
-**Code**: None
+**arXiv**: [2407.03297](https://arxiv.org/abs/2407.03297)  
+**Code**: None  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Noise schedule, diffusion model training, importance sampling, Laplace distribution, logSNR
 

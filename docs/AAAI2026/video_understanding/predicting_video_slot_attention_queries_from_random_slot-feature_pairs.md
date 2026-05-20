@@ -18,8 +18,8 @@ content_hash: 7d482f51a3bcefd3
 # Predicting Video Slot Attention Queries from Random Slot-Feature Pairs
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01345](https://arxiv.org/abs/2508.01345)
-**Code**: [https://github.com/Genera1Z/RandSF.Q](https://github.com/Genera1Z/RandSF.Q)
+**arXiv**: [2508.01345](https://arxiv.org/abs/2508.01345)  
+**Code**: [https://github.com/Genera1Z/RandSF.Q](https://github.com/Genera1Z/RandSF.Q)  
 **Area**: Video Understanding
 **Keywords**: Object-centric learning, video object discovery, Slot Attention, temporal modeling, self-supervised learning
 

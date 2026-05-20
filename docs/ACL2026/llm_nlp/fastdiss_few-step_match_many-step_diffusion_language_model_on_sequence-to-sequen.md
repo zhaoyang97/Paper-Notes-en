@@ -18,8 +18,8 @@ content_hash: b5884490e7d0fc88
 # FastDiSS: Few-step Match Many-step Diffusion Language Model on Sequence-to-Sequence Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05551](https://arxiv.org/abs/2604.05551)
-**Code**: None
+**arXiv**: [2604.05551](https://arxiv.org/abs/2604.05551)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: diffusion language model, few-step sampling, self-conditioning perturbation, noise scaling, sequence-to-sequence
 

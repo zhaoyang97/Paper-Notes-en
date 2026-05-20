@@ -18,8 +18,8 @@ content_hash: 8de05d348eea9370
 # CIARD: Cyclic Iterative Adversarial Robustness Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.12633](https://arxiv.org/abs/2509.12633)
-**Code**: [https://github.com/eminentgu/CIARD](https://github.com/eminentgu/CIARD)
+**arXiv**: [2509.12633](https://arxiv.org/abs/2509.12633)  
+**Code**: [https://github.com/eminentgu/CIARD](https://github.com/eminentgu/CIARD)  
 **Institution**: NJUST, HKUST(GZ), INSAIT Sofia University, Peking University
 **Area**: Model Compression / Adversarial Robustness Distillation / Knowledge Distillation
 **Keywords**: adversarial robustness distillation, knowledge distillation, adversarial training, dual-teacher, contrastive push loss, model compression

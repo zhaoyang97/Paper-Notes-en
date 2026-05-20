@@ -18,8 +18,8 @@ content_hash: 06e59a70da0cf04b
 # GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation
 
 **Conference**: CVPR2026
-**arXiv**: [2602.23814](https://arxiv.org/abs/2602.23814)
-**Code**: [https://github.com/Chongyang-99/GAP.git](https://github.com/Chongyang-99/GAP.git)
+**arXiv**: [2602.23814](https://arxiv.org/abs/2602.23814)  
+**Code**: [https://github.com/Chongyang-99/GAP.git](https://github.com/Chongyang-99/GAP.git)  
 **Area**: 3D Vision
 **Keywords**: Bimanual Manipulation, 3D Geometric Prior, Diffusion Policy, Point Map Prediction, Imitation Learning
 

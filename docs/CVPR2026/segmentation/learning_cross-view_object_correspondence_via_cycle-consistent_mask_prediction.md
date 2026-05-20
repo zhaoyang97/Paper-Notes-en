@@ -18,8 +18,8 @@ content_hash: 561390d9a89facca
 # Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.18996](https://arxiv.org/abs/2602.18996)
-**Code**: [GitHub](https://github.com/shannany0606/CCMP)
+**arXiv**: [2602.18996](https://arxiv.org/abs/2602.18996)  
+**Code**: [GitHub](https://github.com/shannany0606/CCMP)  
 **Area**: Segmentation / Cross-View Correspondence
 **Keywords**: cross-view correspondence, cycle consistency, conditional segmentation, test-time training, egocentric view
 

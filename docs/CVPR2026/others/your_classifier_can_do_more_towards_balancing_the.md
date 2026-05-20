@@ -17,8 +17,8 @@ content_hash: 3e0d225699d391d1
 # Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2505.19459](https://arxiv.org/abs/2505.19459)
-**Code**: [GitHub](https://github.com/yujkc/EB-JDAT)
+**arXiv**: [2505.19459](https://arxiv.org/abs/2505.19459)  
+**Code**: [GitHub](https://github.com/yujkc/EB-JDAT)  
 **Area**: AI Security / Adversarial Robustness / Energy-Based Models
 **Keywords**: adversarial training, energy-based model, JEM, robustness, generation
 
@@ -50,21 +50,21 @@ The joint distribution $p(\mathbf{x}, y)$ from JEM is extended to a three-way jo
 
 1. **Min-Max Energy Optimization for Modeling $p(\tilde{\mathbf{x}}|\mathbf{x})$**
 
-   - **Function**: Learns to pull adversarial examples back to low-energy regions through energy maximization-minimization, without requiring prior knowledge of the adversarial distribution.
-   - **Mechanism**: The key observation is that adversarial perturbations almost always push samples away from the high-density data manifold into low-density (high-energy) regions. **Inner max**: Reverse SGLD samples adversarial examples along the energy ascent direction, pushing them toward high-energy regions. **Outer min**: Minimizes the clean-adversarial energy gap $\min_\theta \mathbb{E}[\max_{\|\tilde{\mathbf{x}}-\mathbf{x}\| \in \Omega}(E_\theta(\tilde{\mathbf{x}}|\mathbf{x}) - E_\theta(\mathbf{x}))]$, pulling adversarial examples back to low-energy regions. The gradient is approximated as $h_2 \approx \frac{\partial}{\partial\theta}[\frac{1}{L_1}\sum E_\theta(\mathbf{x}_i^+) - \frac{1}{L_2}\sum E_\theta(\tilde{\mathbf{x}}_i|\mathbf{x}_i^+)]$.
-   - **Design Motivation**: Unlike conventional AT, which performs min-max over cross-entropy (finding the most misleading samples), EB-JDAT performs min-max over the energy gap (finding the highest-energy samples and then pulling them back), directly operating on the energy landscape rather than the cross-entropy loss.
+    - **Function**: Learns to pull adversarial examples back to low-energy regions through energy maximization-minimization, without requiring prior knowledge of the adversarial distribution.
+    - **Mechanism**: The key observation is that adversarial perturbations almost always push samples away from the high-density data manifold into low-density (high-energy) regions. **Inner max**: Reverse SGLD samples adversarial examples along the energy ascent direction, pushing them toward high-energy regions. **Outer min**: Minimizes the clean-adversarial energy gap $\min_\theta \mathbb{E}[\max_{\|\tilde{\mathbf{x}}-\mathbf{x}\| \in \Omega}(E_\theta(\tilde{\mathbf{x}}|\mathbf{x}) - E_\theta(\mathbf{x}))]$, pulling adversarial examples back to low-energy regions. The gradient is approximated as $h_2 \approx \frac{\partial}{\partial\theta}[\frac{1}{L_1}\sum E_\theta(\mathbf{x}_i^+) - \frac{1}{L_2}\sum E_\theta(\tilde{\mathbf{x}}_i|\mathbf{x}_i^+)]$.
+    - **Design Motivation**: Unlike conventional AT, which performs min-max over cross-entropy (finding the most misleading samples), EB-JDAT performs min-max over the energy gap (finding the highest-energy samples and then pulling them back), directly operating on the energy landscape rather than the cross-entropy loss.
 
 2. **Joint Optimization of Three Gradient Terms**
 
-   - **Function**: Simultaneously drives generation, energy alignment, and robust classification.
-   - **Mechanism**: $h_1 = \partial \log p(\mathbf{x})/\partial\theta$ (drives generation via SGLD positive/negative sample energy difference); $h_2 = \partial \log p(\tilde{\mathbf{x}}|\mathbf{x})/\partial\theta$ (clean-adversarial energy alignment); $h_3 = \partial \log p(y|\mathbf{x}, \tilde{\mathbf{x}})/\partial\theta$ (standard CE for robust classification). Default weights are $w_1=w_2=w_3=1$.
-   - **Design Motivation**: Ablations show that $h_2$ (energy alignment) is critical to preventing training collapse—removing $h_2$ causes collapse at epoch 41 (ECO=41), while retaining it stabilizes training throughout. $h_1$ contributes generative capability and additional classification accuracy.
+    - **Function**: Simultaneously drives generation, energy alignment, and robust classification.
+    - **Mechanism**: $h_1 = \partial \log p(\mathbf{x})/\partial\theta$ (drives generation via SGLD positive/negative sample energy difference); $h_2 = \partial \log p(\tilde{\mathbf{x}}|\mathbf{x})/\partial\theta$ (clean-adversarial energy alignment); $h_3 = \partial \log p(y|\mathbf{x}, \tilde{\mathbf{x}})/\partial\theta$ (standard CE for robust classification). Default weights are $w_1=w_2=w_3=1$.
+    - **Design Motivation**: Ablations show that $h_2$ (energy alignment) is critical to preventing training collapse—removing $h_2$ causes collapse at epoch 41 (ECO=41), while retaining it stabilizes training throughout. $h_1$ contributes generative capability and additional classification accuracy.
 
 3. **Plug-and-Play Compatibility**
 
-   - **Function**: EB-JDAT serves as a general framework that can be directly grafted onto existing JEM variants.
-   - **Mechanism**: Seamlessly integrates with JEM++ (faster SGLD sampling) or SADAJEM (more stable training), leveraging their improved sampling strategies without modifying the main framework. EB-JDAT-SADAJEM achieves the best robustness on CIFAR-10 at 68.76%/66.12% (PGD-20/AA); EB-JDAT-JEM++ trains faster (31.66h vs. 66.64h).
-   - **Design Motivation**: The modular design enhances practicality and allows the community's accumulated improvements to JEM variants to directly benefit from the framework.
+    - **Function**: EB-JDAT serves as a general framework that can be directly grafted onto existing JEM variants.
+    - **Mechanism**: Seamlessly integrates with JEM++ (faster SGLD sampling) or SADAJEM (more stable training), leveraging their improved sampling strategies without modifying the main framework. EB-JDAT-SADAJEM achieves the best robustness on CIFAR-10 at 68.76%/66.12% (PGD-20/AA); EB-JDAT-JEM++ trains faster (31.66h vs. 66.64h).
+    - **Design Motivation**: The modular design enhances practicality and allows the community's accumulated improvements to JEM variants to directly benefit from the framework.
 
 ### Loss & Training
 

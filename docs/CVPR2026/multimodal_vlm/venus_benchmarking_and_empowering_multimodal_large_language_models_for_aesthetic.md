@@ -18,8 +18,8 @@ content_hash: 3d1bed560eb0c166
 # Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23980](https://arxiv.org/abs/2602.23980)
-**Code**: [https://github.com/PKU-ICST-MIPL/Venus_CVPR2026](https://github.com/PKU-ICST-MIPL/Venus_CVPR2026)
+**arXiv**: [2602.23980](https://arxiv.org/abs/2602.23980)  
+**Code**: [https://github.com/PKU-ICST-MIPL/Venus_CVPR2026](https://github.com/PKU-ICST-MIPL/Venus_CVPR2026)  
 **Area**: Multimodal VLM
 **Keywords**: Aesthetic Guidance, Image Cropping, MLLM, Aesthetic Assessment, CoT Reasoning
 

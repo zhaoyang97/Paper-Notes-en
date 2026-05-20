@@ -18,8 +18,8 @@ content_hash: b884553913d3ce6e
 # MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.16175](https://arxiv.org/abs/2604.16175)
-**Code**: N/A
+**arXiv**: [2604.16175](https://arxiv.org/abs/2604.16175)  
+**Code**: N/A  
 **Area**: Medical Imaging / Report Generation
 **Keywords**: Multi-agent, Radiology Report Generation, Consensus-Driven, Retrieval-Augmented, 3D CT
 

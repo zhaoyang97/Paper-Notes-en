@@ -18,8 +18,8 @@ content_hash: 82cc57e42d25cfb2
 # Partial Forward Blocking: A Novel Data Pruning Paradigm for Lossless Training Acceleration
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23674](https://arxiv.org/abs/2506.23674)
-**Code**: None
+**arXiv**: [2506.23674](https://arxiv.org/abs/2506.23674)  
+**Code**: None  
 **Area**: Training Acceleration / Data Pruning
 **Keywords**: Data Pruning, Training Acceleration, Probability Density, Kernel Density Estimation, Forward Blocking
 

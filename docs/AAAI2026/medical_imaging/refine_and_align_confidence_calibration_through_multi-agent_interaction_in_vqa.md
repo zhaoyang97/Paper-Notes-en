@@ -19,8 +19,8 @@ content_hash: 7d58a0a3c9f6c89c
 # Refine and Align: Confidence Calibration through Multi-Agent Interaction in VQA
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11169](https://arxiv.org/abs/2511.11169)
-**Code**: [ayushp88/AgenticCalibration](https://github.com/ayushp88/AgenticCalibration)
+**arXiv**: [2511.11169](https://arxiv.org/abs/2511.11169)  
+**Code**: [ayushp88/AgenticCalibration](https://github.com/ayushp88/AgenticCalibration)  
 **Area**: Medical Imaging / Visual Question Answering
 **Keywords**: VQA, confidence calibration, multi-agent debate, vision-language models, AlignCal loss, medical image question answering
 

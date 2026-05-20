@@ -18,8 +18,8 @@ content_hash: a48d498c42864867
 # Image Diffusion Preview with Consistency Solver
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.13592](https://arxiv.org/abs/2512.13592)
-**Code**: [https://github.com/G-U-N/consolver](https://github.com/G-U-N/consolver)
+**arXiv**: [2512.13592](https://arxiv.org/abs/2512.13592)  
+**Code**: [https://github.com/G-U-N/consolver](https://github.com/G-U-N/consolver)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Diffusion model acceleration, ODE solver, reinforcement learning, preview-and-refine, sampling efficiency
 

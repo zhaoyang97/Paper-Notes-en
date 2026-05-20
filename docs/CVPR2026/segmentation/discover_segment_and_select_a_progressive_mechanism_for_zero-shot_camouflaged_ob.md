@@ -19,8 +19,8 @@ content_hash: 319723303b86c732
 # DSS: Discover, Segment, and Select for Zero-shot Camouflaged Object Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19944](https://arxiv.org/abs/2602.19944)
-**Code**: To be confirmed
+**arXiv**: [2602.19944](https://arxiv.org/abs/2602.19944)  
+**Code**: To be confirmed  
 **Area**: Zero-shot Camouflaged Object Segmentation
 **Keywords**: [zero-shot segmentation, camouflaged object detection, SAM, MLLM, training-free pipeline, clustering-based localization]
 

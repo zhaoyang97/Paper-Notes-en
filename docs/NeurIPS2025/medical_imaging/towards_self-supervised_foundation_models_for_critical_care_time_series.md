@@ -18,8 +18,8 @@ content_hash: a39938ce16b08c10
 # Towards Self-Supervised Foundation Models for Critical Care Time Series
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19885](https://arxiv.org/abs/2509.19885)
-**Code**: [GitHub](https://github.com/Katja-Jagd/YAIB)
+**arXiv**: [2509.19885](https://arxiv.org/abs/2509.19885)  
+**Code**: [GitHub](https://github.com/Katja-Jagd/YAIB)  
 **Area**: Medical Imaging
 **Keywords**: Self-Supervised Learning, Foundation Models, Critical Care, Time Series, Transfer Learning
 

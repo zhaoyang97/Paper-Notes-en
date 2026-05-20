@@ -18,8 +18,8 @@ content_hash: d0cefd8372ccfdc9
 # Optimizer Choice Matters for the Emergence of Neural Collapse
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.16642](https://arxiv.org/abs/2602.16642)
-**Code**: N/A
+**arXiv**: [2602.16642](https://arxiv.org/abs/2602.16642)  
+**Code**: N/A  
 **Area**: Optimization Theory / Deep Learning Theory
 **Keywords**: Neural Collapse, Optimizer Choice, Weight Decay Coupling, AdamW vs Adam, Implicit Bias
 

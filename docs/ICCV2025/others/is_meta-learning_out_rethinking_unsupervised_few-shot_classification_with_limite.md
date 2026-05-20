@@ -17,8 +17,8 @@ content_hash: 7e331adadc80fae5
 # Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.13185](https://arxiv.org/abs/2509.13185)
-**Code**: None
+**arXiv**: [2509.13185](https://arxiv.org/abs/2509.13185)  
+**Code**: None  
 **Area**: Other
 **Keywords**: meta-learning, few-shot classification, unsupervised learning, generalization bound, label noise robustness
 

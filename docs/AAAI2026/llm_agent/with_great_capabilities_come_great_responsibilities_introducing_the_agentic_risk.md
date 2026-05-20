@@ -18,8 +18,8 @@ content_hash: 9fecd0f0052e38cf
 # With Great Capabilities Come Great Responsibilities: Introducing the Agentic Risk & Capability Framework for Governing Agentic AI Systems
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.22211](https://arxiv.org/abs/2512.22211)
-**Code**: None (framework openly available)
+**arXiv**: [2512.22211](https://arxiv.org/abs/2512.22211)  
+**Code**: None (framework openly available)  
 **Area**: LLM Agent / AI Governance
 **Keywords**: agent governance, risk assessment framework, capability analysis, technical controls, AI safety
 

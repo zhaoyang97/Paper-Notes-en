@@ -18,8 +18,8 @@ content_hash: ec2d424e88ee1fe4
 # AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11299](https://arxiv.org/abs/2511.11299)
-**Code**: Available (code link noted on arXiv page)
+**arXiv**: [2511.11299](https://arxiv.org/abs/2511.11299)  
+**Code**: Available (code link noted on arXiv page)  
 **Area**: AI Safety / Multimodal VLM / Machine Unlearning
 **Keywords**: Machine Unlearning, Adversarial Perturbation, Multimodal Large Language Models, Visual Concept Forgetting, Privacy Protection
 

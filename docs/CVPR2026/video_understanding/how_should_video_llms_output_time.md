@@ -18,8 +18,8 @@ content_hash: 2d8832543013cc95
 # How Should Video LLMs Output Time? An Analysis of Efficient Temporal Grounding Paradigms
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08966](https://arxiv.org/abs/2604.08966)
-**Code**: [https://tg-paradigms.github.io/](https://tg-paradigms.github.io/)
+**arXiv**: [2604.08966](https://arxiv.org/abs/2604.08966)  
+**Code**: [https://tg-paradigms.github.io/](https://tg-paradigms.github.io/)  
 **Area**: Video Understanding
 **Keywords**: Video Temporal Grounding, Multimodal Large Language Models, Temporal Output Paradigm, Efficiency Analysis, Compact Models
 

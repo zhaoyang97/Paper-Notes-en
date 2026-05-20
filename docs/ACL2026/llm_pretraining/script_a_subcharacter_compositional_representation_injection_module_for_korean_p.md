@@ -18,8 +18,8 @@ content_hash: 7fb39bb5d61a476d
 # SCRIPT: A Subcharacter Compositional Representation Injection Module for Korean Pre-Trained Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12377](https://arxiv.org/abs/2604.12377)
-**Code**: [GitHub](https://github.com/SungHo3268/SCRIPT)
+**arXiv**: [2604.12377](https://arxiv.org/abs/2604.12377)  
+**Code**: [GitHub](https://github.com/SungHo3268/SCRIPT)  
 **Area**: LLM Pre-training / Korean NLP
 **Keywords**: Subcharacter compositional representation, Korean pre-trained language models, Hangul structure modeling, Morphophonological alternation, Plug-and-play module
 

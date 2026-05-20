@@ -18,8 +18,8 @@ content_hash: cdb110303719b565
 # PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2506.21076](https://arxiv.org/abs/2506.21076)
-**Code**: None (not yet open-sourced)
+**arXiv**: [2506.21076](https://arxiv.org/abs/2506.21076)  
+**Code**: None (not yet open-sourced)  
 **Area**: 3D Vision / Image Generation
 **Keywords**: 3D pose stylization, skeleton encoder, 3D native generation, data engine, end-to-end
 

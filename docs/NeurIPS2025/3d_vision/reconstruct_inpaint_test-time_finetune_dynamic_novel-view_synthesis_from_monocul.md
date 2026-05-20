@@ -18,8 +18,8 @@ content_hash: b00d3b471aec0d42
 # Reconstruct, Inpaint, Test-Time Finetune: Dynamic Novel-View Synthesis from Monocular Videos
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.12646](https://arxiv.org/abs/2507.12646)
-**Code**: [https://cog-nvs.github.io/](https://cog-nvs.github.io/)
+**arXiv**: [2507.12646](https://arxiv.org/abs/2507.12646)  
+**Code**: [https://cog-nvs.github.io/](https://cog-nvs.github.io/)  
 **Area**: 3D Vision
 **Keywords**: dynamic novel-view synthesis, monocular video, video inpainting, test-time finetuning, diffusion models
 

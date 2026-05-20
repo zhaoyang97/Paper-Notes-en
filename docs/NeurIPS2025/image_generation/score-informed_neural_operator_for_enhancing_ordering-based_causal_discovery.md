@@ -18,8 +18,8 @@ content_hash: 5240b2c94c05f443
 # Score-informed Neural Operator for Enhancing Ordering-based Causal Discovery
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.12650](https://arxiv.org/abs/2508.12650)
-**Code**: N/A
+**arXiv**: [2508.12650](https://arxiv.org/abs/2508.12650)  
+**Code**: N/A  
 **Area**: Image Generation
 **Keywords**: causal discovery, neural operator, score matching, Hessian diagonal, causal ordering
 
@@ -43,21 +43,21 @@ SciNO operates in two stages: (1) a neural operator is trained in a smooth funct
 ### Key Designs
 1. **Neural Operator in Smooth Function Space**
 
-   - **Function**: Learns the score function mapping within Sobolev spaces.
-   - **Mechanism**: Maps inputs into a smooth function space to ensure derivative stability.
-   - **Design Motivation**: Avoids the numerical instability of computing second-order derivatives directly through neural networks.
+    - **Function**: Learns the score function mapping within Sobolev spaces.
+    - **Mechanism**: Maps inputs into a smooth function space to ensure derivative stability.
+    - **Design Motivation**: Avoids the numerical instability of computing second-order derivatives directly through neural networks.
 
 2. **Structure-Preserving Score Modeling**
 
-   - **Function**: Retains causal structural information throughout the score modeling process.
-   - **Mechanism**: Exploits structural properties of the score function (e.g., sparsity) as inductive biases.
-   - **Design Motivation**: Ensures that Hessian estimates reflect genuine causal relationships.
+    - **Function**: Retains causal structural information throughout the score modeling process.
+    - **Mechanism**: Exploits structural properties of the score function (e.g., sparsity) as inductive biases.
+    - **Design Motivation**: Ensures that Hessian estimates reflect genuine causal relationships.
 
 3. **Probabilistic Control Algorithm**
 
-   - **Function**: Combines SciNO's probabilistic estimates with autoregressive model priors.
-   - **Mechanism**: $P(\text{order}|\text{data}) \propto P(\text{data}|\text{order}) \cdot P(\text{order}|\text{LLM})$
-   - **Design Motivation**: Leverages LLM semantic priors to enhance causal reasoning without fine-tuning.
+    - **Function**: Combines SciNO's probabilistic estimates with autoregressive model priors.
+    - **Mechanism**: $P(\text{order}|\text{data}) \propto P(\text{data}|\text{order}) \cdot P(\text{order}|\text{LLM})$
+    - **Design Motivation**: Leverages LLM semantic priors to enhance causal reasoning without fine-tuning.
 
 ### Loss & Training
 - A score matching loss is used to train the neural operator.

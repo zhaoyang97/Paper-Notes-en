@@ -20,8 +20,8 @@ content_hash: 6078e416bf7f6e03
 # Continual Learning with Vision-Language Models via Semantic-Geometry Preservation
 
 **Conference**: CVPR2026
-**arXiv**: [2603.12055](https://arxiv.org/abs/2603.12055)
-**Code**: To be confirmed
+**arXiv**: [2603.12055](https://arxiv.org/abs/2603.12055)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Continual Learning, Vision-Language Models, Semantic-Geometry Preservation, Adversarial Anchors, Cross-Modal Distillation, CLIP, Exemplar-Free Replay
 

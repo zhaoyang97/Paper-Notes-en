@@ -18,8 +18,8 @@ content_hash: a3685610da989138
 # Splat-LOAM: Gaussian Splatting LiDAR Odometry and Mapping
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.17491](https://arxiv.org/abs/2503.17491)
-**Code**: [GitHub](https://github.com/rvp-group/Splat-LOAM)
+**arXiv**: [2503.17491](https://arxiv.org/abs/2503.17491)  
+**Code**: [GitHub](https://github.com/rvp-group/Splat-LOAM)  
 **Area**: Autonomous Driving
 **Keywords**: Gaussian Splatting, LiDAR SLAM, Odometry, Mapping, Spherical Projection
 

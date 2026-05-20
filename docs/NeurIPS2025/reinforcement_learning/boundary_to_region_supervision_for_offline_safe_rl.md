@@ -18,8 +18,8 @@ content_hash: 2f564445f63ede62
 # Boundary-to-Region Supervision for Offline Safe Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25727](https://arxiv.org/abs/2509.25727)
-**Code**: [https://github.com/HuikangSu/B2R](https://github.com/HuikangSu/B2R)
+**arXiv**: [2509.25727](https://arxiv.org/abs/2509.25727)  
+**Code**: [https://github.com/HuikangSu/B2R](https://github.com/HuikangSu/B2R)  
 **Area**: Reinforcement Learning
 **Keywords**: Offline Safe Reinforcement Learning, Decision Transformer, Cost Constraints, Asymmetric Conditioning, Safe Region Supervision
 
@@ -49,21 +49,21 @@ B2R comprises three tightly coupled components: (1) trajectory filtering to remo
 
 1. **Trajectory Filtering**:
 
-   - Function: Define the safe region and remove violating trajectories.
-   - Mechanism: Retain trajectories with cumulative cost $C(\tau) \leq \kappa$ to form $\mathcal{D}_{\text{safe}}$, ensuring all training data satisfies the deployment constraint.
-   - Design Motivation: Prevent unsafe trajectories from negatively influencing the learned policy.
+    - Function: Define the safe region and remove violating trajectories.
+    - Mechanism: Retain trajectories with cumulative cost $C(\tau) \leq \kappa$ to form $\mathcal{D}_{\text{safe}}$, ensuring all training data satisfies the deployment constraint.
+    - Design Motivation: Prevent unsafe trajectories from negatively influencing the learned policy.
 
 2. **CTG Realignment**:
 
-   - Function: Create dense and uniform supervision signals.
-   - Mechanism: Add a constant offset to the CTG sequence of each safe trajectory, $\hat{C}_t' = \hat{C}_t + (\kappa - C(\tau))$, so that the initial CTG is uniformly set to $\kappa$ while preserving the original temporal variation pattern.
-   - Design Motivation: Conventional methods learn only from boundary trajectories whose cost is exactly $\kappa$ (sparse). After realignment, the model learns diverse behaviors from the entire safe region under a unified boundary token (dense).
+    - Function: Create dense and uniform supervision signals.
+    - Mechanism: Add a constant offset to the CTG sequence of each safe trajectory, $\hat{C}_t' = \hat{C}_t + (\kappa - C(\tau))$, so that the initial CTG is uniformly set to $\kappa$ while preserving the original temporal variation pattern.
+    - Design Motivation: Conventional methods learn only from boundary trajectories whose cost is exactly $\kappa$ (sparse). After realignment, the model learns diverse behaviors from the entire safe region under a unified boundary token (dense).
 
 3. **RoPE Positional Encoding**:
 
-   - Function: Improve temporal modeling and adapt to CTG Realignment.
-   - Mechanism: Replace the original absolute/learnable positional encoding in DT with Rotary Position Embedding (RoPE), whose relative positional encoding property is better suited to capturing the gradual dynamics of the realigned cost sequence.
-   - Design Motivation: Realignment alters the absolute values of the CTG sequence while preserving relative changes; the relative encoding nature of RoPE is naturally aligned with this property.
+    - Function: Improve temporal modeling and adapt to CTG Realignment.
+    - Mechanism: Replace the original absolute/learnable positional encoding in DT with Rotary Position Embedding (RoPE), whose relative positional encoding property is better suited to capturing the gradual dynamics of the realigned cost sequence.
+    - Design Motivation: Realignment alters the absolute values of the CTG sequence while preserving relative changes; the relative encoding nature of RoPE is naturally aligned with this property.
 
 ### Loss & Training
 The model is trained with standard behavior cloning loss:

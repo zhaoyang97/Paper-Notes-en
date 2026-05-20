@@ -21,8 +21,8 @@ content_hash: 19bb0d694bc8990a
 # GUAVA: Generalizable Upper Body 3D Gaussian Avatar
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.03351](https://arxiv.org/abs/2505.03351)
-**Code**: N/A (see project page)
+**arXiv**: [2505.03351](https://arxiv.org/abs/2505.03351)  
+**Code**: N/A (see project page)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian, upper-body avatar, generalizable reconstruction, single-image reconstruction, expression driving, real-time rendering, SMPLX, FLAME
 

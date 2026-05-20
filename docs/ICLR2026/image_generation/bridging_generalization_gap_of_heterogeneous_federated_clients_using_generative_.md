@@ -18,8 +18,8 @@ content_hash: 84258f5dceafdd48
 # Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.01669](https://arxiv.org/abs/2508.01669)
-**Code**: N/A
+**arXiv**: [2508.01669](https://arxiv.org/abs/2508.01669)  
+**Code**: N/A  
 **Area**: Federated Learning / Generative Models
 **Keywords**: Model-heterogeneous federated learning, variational transposed convolution, synthetic data fine-tuning, feature distribution alignment, communication efficiency
 

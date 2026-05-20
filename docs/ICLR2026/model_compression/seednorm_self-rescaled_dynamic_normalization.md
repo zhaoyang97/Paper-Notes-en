@@ -18,8 +18,8 @@ content_hash: 534ded3ccf27b6a7
 # SeeDNorm: Self-Rescaled Dynamic Normalization
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.22777](https://arxiv.org/abs/2510.22777)
-**Code**: None
+**arXiv**: [2510.22777](https://arxiv.org/abs/2510.22777)  
+**Code**: None  
 **Area**: Model Compression / Normalization Layers
 **Keywords**: Normalization layer, dynamic scaling, RMSNorm, DyT, large language models
 

@@ -19,8 +19,8 @@ content_hash: e6989a6018c7cad0
 # Dark3R: Learning Structure from Motion in the Dark
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05330](https://arxiv.org/abs/2603.05330)
-**Code**: [Project Page](https://andrewguo.com/pub/dark3r)
+**arXiv**: [2603.05330](https://arxiv.org/abs/2603.05330)  
+**Code**: [Project Page](https://andrewguo.com/pub/dark3r)  
 **Area**: 3D Vision
 **Keywords**: Low-light 3D reconstruction, Structure from Motion, knowledge distillation, feature matching, novel view synthesis, NeRF
 

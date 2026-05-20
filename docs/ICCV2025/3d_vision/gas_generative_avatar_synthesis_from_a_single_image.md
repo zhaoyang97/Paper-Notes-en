@@ -18,8 +18,8 @@ content_hash: 787e926ce9ed24e8
 # GAS: Generative Avatar Synthesis from a Single Image
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.06957](https://arxiv.org/abs/2502.06957)
-**Code**: [Project Page](https://humansensinglab.github.io/GAS/)
+**arXiv**: [2502.06957](https://arxiv.org/abs/2502.06957)  
+**Code**: [Project Page](https://humansensinglab.github.io/GAS/)  
 **Area**: 3D Vision
 **Keywords**: Human Avatar Generation, Single Image, Video Diffusion, NeRF, Multi-view Consistency
 

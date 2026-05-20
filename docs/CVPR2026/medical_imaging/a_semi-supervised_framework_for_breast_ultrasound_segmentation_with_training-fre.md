@@ -20,8 +20,8 @@ content_hash: 82fc073ad1cbffbb
 # A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.06167](https://arxiv.org/abs/2603.06167)
-**Code**: To be confirmed
+**arXiv**: [2603.06167](https://arxiv.org/abs/2603.06167)  
+**Code**: To be confirmed  
 **Area**: Medical Imaging
 **Keywords**: Semi-supervised segmentation, breast ultrasound, pseudo-labels, dual-teacher framework, contrastive learning, SAM, Grounding DINO
 

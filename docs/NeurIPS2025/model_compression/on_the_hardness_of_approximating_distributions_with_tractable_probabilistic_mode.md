@@ -18,8 +18,8 @@ content_hash: d362067bd531d1e4
 # On the Hardness of Approximating Distributions with Tractable Probabilistic Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01281](https://arxiv.org/abs/2506.01281)
-**Code**: None
+**arXiv**: [2506.01281](https://arxiv.org/abs/2506.01281)  
+**Code**: None  
 **Area**: Model Compression / Probabilistic Models
 **Keywords**: probabilistic circuits, tractable probabilistic models, approximate modeling, NP-hardness, expressive efficiency
 

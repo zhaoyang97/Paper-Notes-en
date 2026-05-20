@@ -18,8 +18,8 @@ content_hash: 99c53f0394b28108
 # Differential Privacy for Euclidean Jordan Algebra with Applications to Private Symmetric Cone Programming
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16915](https://arxiv.org/abs/2509.16915)
-**Code**: None
+**arXiv**: [2509.16915](https://arxiv.org/abs/2509.16915)  
+**Code**: None  
 **Area**: AI Security
 **Keywords**: differential privacy, Euclidean Jordan Algebra, Symmetric Cone Programming, Semidefinite Programming, Gaussian Mechanism
 

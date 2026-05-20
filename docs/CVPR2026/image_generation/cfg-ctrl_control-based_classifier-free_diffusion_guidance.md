@@ -18,8 +18,8 @@ content_hash: 91565268762ab60a
 # CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.03281](https://arxiv.org/abs/2603.03281)
-**Code**: [Project Page](https://hanyang-21.github.io/CFG-Ctrl)
+**arXiv**: [2603.03281](https://arxiv.org/abs/2603.03281)  
+**Code**: [Project Page](https://hanyang-21.github.io/CFG-Ctrl)  
 **Area**: Image Generation
 **Keywords**: Classifier-Free Guidance, Control Theory, Sliding Mode Control, Flow Matching, Text-to-Image Generation
 

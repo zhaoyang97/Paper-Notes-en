@@ -18,8 +18,8 @@ content_hash: 93d1f57d1f539dce
 # FAIR-Pruner: Leveraging Tolerance of Difference for Flexible Automatic Layer-Wise Neural Network Pruning
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.02291](https://arxiv.org/abs/2508.02291)
-**Code**: Unavailable (to be released after review)
+**arXiv**: [2508.02291](https://arxiv.org/abs/2508.02291)  
+**Code**: Unavailable (to be released after review)  
 **Area**: Model Compression
 **Keywords**: Structured pruning, non-uniform layer-wise pruning, Wasserstein distance, tolerance of differences, automatic sparsity allocation
 

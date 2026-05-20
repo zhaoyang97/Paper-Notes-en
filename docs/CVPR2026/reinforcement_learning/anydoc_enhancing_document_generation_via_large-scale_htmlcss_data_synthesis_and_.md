@@ -17,8 +17,8 @@ content_hash: bb3d42fc4380ff2a
 # AnyDoc: Enhancing Document Generation via Large-Scale HTML/CSS Data Synthesis and Height-Aware Reinforcement Optimization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25118](https://arxiv.org/abs/2603.25118)
-**Code**: None
+**arXiv**: [2603.25118](https://arxiv.org/abs/2603.25118)  
+**Code**: None  
 **Area**: Reinforcement Learning / Document Generation
 **Keywords**: Document Generation, HTML/CSS, Data Synthesis, Reinforcement Learning, Multimodal Large Language Models
 

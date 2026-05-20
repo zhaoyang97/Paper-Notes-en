@@ -18,8 +18,8 @@ content_hash: 4f291ee4dba0b185
 # PhysGen: Physically Grounded 3D Shape Generation for Industrial Design
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.00422](https://arxiv.org/abs/2512.00422)
-**Code**: [https://github.com/kasvii/PhysGen](https://github.com/kasvii/PhysGen)
+**arXiv**: [2512.00422](https://arxiv.org/abs/2512.00422)  
+**Code**: [https://github.com/kasvii/PhysGen](https://github.com/kasvii/PhysGen)  
 **Area**: Diffusion Models / 3D Generation
 **Keywords**: Physics-guided generation, 3D shape generation, Flow Matching, aerodynamic optimization, industrial design
 

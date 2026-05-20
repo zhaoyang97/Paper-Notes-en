@@ -18,8 +18,8 @@ content_hash: 1bddc6df4319f5db
 # CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20318](https://arxiv.org/abs/2601.20318)
-**Code**: [https://github.com/JasonStraka/CPiRi](https://github.com/JasonStraka/CPiRi)
+**arXiv**: [2601.20318](https://arxiv.org/abs/2601.20318)  
+**Code**: [https://github.com/JasonStraka/CPiRi](https://github.com/JasonStraka/CPiRi)  
 **Area**: Time Series
 **Keywords**: Multivariate time series forecasting, channel permutation invariance, spatiotemporal decoupling, foundation models, channel interaction
 

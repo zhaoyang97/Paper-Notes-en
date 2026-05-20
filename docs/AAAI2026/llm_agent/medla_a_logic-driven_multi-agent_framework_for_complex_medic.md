@@ -18,8 +18,8 @@ content_hash: c777b812c4cf6df0
 # MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.23725](https://arxiv.org/abs/2509.23725)
-**Code**: [https://github.com/alexander2618/MedLA](https://github.com/alexander2618/MedLA)
+**arXiv**: [2509.23725](https://arxiv.org/abs/2509.23725)  
+**Code**: [https://github.com/alexander2618/MedLA](https://github.com/alexander2618/MedLA)  
 **Area**: LLM Agent / Medical Reasoning / Multi-Agent Collaboration
 **Keywords**: Syllogistic Reasoning, Logic Tree, Multi-Agent Discussion, Medical QA, Premise-Level Alignment
 

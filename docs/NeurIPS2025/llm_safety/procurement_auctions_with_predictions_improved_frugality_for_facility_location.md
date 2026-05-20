@@ -18,8 +18,8 @@ content_hash: 970e85b5210f7593
 # Procurement Auctions with Predictions: Improved Frugality for Facility Location
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.09367](https://arxiv.org/abs/2512.09367)
-**Code**: None
+**arXiv**: [2512.09367](https://arxiv.org/abs/2512.09367)  
+**Code**: None  
 **Area**: LLM Safety
 **Keywords**: procurement auctions, facility location, frugality, learning-augmented mechanisms, VCG auctions
 

@@ -18,8 +18,8 @@ content_hash: 74e7b5f6d7617f90
 # A Study of LLMs' Preferences for Libraries and Programming Languages
 
 **Conference**: ACL 2026 (Findings)
-**arXiv**: [2503.17181](https://arxiv.org/abs/2503.17181)
-**Code**: [GitHub](https://github.com/itsluketwist/llm-code-bias)
+**arXiv**: [2503.17181](https://arxiv.org/abs/2503.17181)  
+**Code**: [GitHub](https://github.com/itsluketwist/llm-code-bias)  
 **Area**: LLM/NLP
 **Keywords**: code generation preference, library selection bias, programming language preference, LLM behavior analysis, technological diversity
 

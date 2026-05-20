@@ -18,8 +18,8 @@ content_hash: 01a6f4f74fda8733
 # Learning Robust Intervention Representations with Delta Embeddings
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.04492](https://arxiv.org/abs/2508.04492)
-**Code**: [Project Page](https://palimisis.github.io/Learning-Robust-Intervention-Representations-with-Delta-Embeddings/)
+**arXiv**: [2508.04492](https://arxiv.org/abs/2508.04492)  
+**Code**: [Project Page](https://palimisis.github.io/Learning-Robust-Intervention-Representations-with-Delta-Embeddings/)  
 **Area**: Causal Representation Learning / OOD Generalization
 **Keywords**: Causal Representation Learning, Delta Embeddings, out-of-distribution, Intervention, Contrastive Learning
 

@@ -17,8 +17,8 @@ content_hash: 9a6de6a6533d36ec
 # Chart Deep Research in LVLMs via Parallel Relative Policy Optimization
 
 **Conference**: ICLR2026
-**arXiv**: [2603.06677](https://arxiv.org/abs/2603.06677)
-**Code**: To be confirmed
+**arXiv**: [2603.06677](https://arxiv.org/abs/2603.06677)  
+**Code**: To be confirmed  
 **Area**: Others
 **Keywords**: chart understanding, deep research, RLHF, policy optimization, benchmark
 

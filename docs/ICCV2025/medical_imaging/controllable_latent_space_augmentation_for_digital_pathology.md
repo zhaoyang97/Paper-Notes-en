@@ -18,8 +18,8 @@ content_hash: 0dca07e59e0bf8d0
 # Controllable Latent Space Augmentation for Digital Pathology
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.14588](https://arxiv.org/abs/2508.14588)
-**Code**: [github.com/MICS-Lab/HistAug](https://github.com/MICS-Lab/HistAug)
+**arXiv**: [2508.14588](https://arxiv.org/abs/2508.14588)  
+**Code**: [github.com/MICS-Lab/HistAug](https://github.com/MICS-Lab/HistAug)  
 **Area**: Medical Imaging / Digital Pathology
 **Keywords**: Data Augmentation, Latent Space, MIL, Digital Pathology, Foundation Models
 

@@ -19,8 +19,8 @@ content_hash: d1757d17a506db4d
 # FedBPrompt: Federated Domain Generalization Person Re-Identification via Body Distribution Aware Visual Prompts
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12912](https://arxiv.org/abs/2603.12912)
-**Code**: [leavlong/FedBPrompt](https://github.com/leavlong/FedBPrompt)
+**arXiv**: [2603.12912](https://arxiv.org/abs/2603.12912)  
+**Code**: [leavlong/FedBPrompt](https://github.com/leavlong/FedBPrompt)  
 **Area**: Autonomous Driving
 **Keywords**: FedDG-ReID, Visual Prompts, Body Part Alignment, Parameter-Efficient Fine-Tuning, ViT, Federated Aggregation
 

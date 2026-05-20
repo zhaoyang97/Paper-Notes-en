@@ -18,8 +18,8 @@ content_hash: a1987f1682b67190
 # Neural MJD: Neural Non-Stationary Merton Jump Diffusion for Time Series Prediction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04542](https://arxiv.org/abs/2506.04542)
-**Code**: [https://github.com/DSL-Lab/neural-MJD](https://github.com/DSL-Lab/neural-MJD)
+**arXiv**: [2506.04542](https://arxiv.org/abs/2506.04542)  
+**Code**: [https://github.com/DSL-Lab/neural-MJD](https://github.com/DSL-Lab/neural-MJD)  
 **Area**: Time Series
 **Keywords**: Jump diffusion, stochastic differential equations, non-stationarity, time series forecasting, financial modeling
 

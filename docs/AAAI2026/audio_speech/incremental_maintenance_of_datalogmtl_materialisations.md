@@ -18,8 +18,8 @@ content_hash: 2377fbe87298e63e
 # Incremental Maintenance of DatalogMTL Materialisations
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12169](https://arxiv.org/abs/2511.12169)
-**Code**: [GitHub](https://github.com/Horizon12275/DREDmtl-for-DatalogMTL)
+**arXiv**: [2511.12169](https://arxiv.org/abs/2511.12169)  
+**Code**: [GitHub](https://github.com/Horizon12275/DREDmtl-for-DatalogMTL)  
 **Area**: Audio & Speech
 **Keywords**: DatalogMTL, incremental reasoning, materialisation, Delete/Rederive, temporal logic
 

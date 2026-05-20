@@ -18,8 +18,8 @@ content_hash: 6b1c602d4841a374
 # Harnessing Massive Satellite Imagery with Efficient Masked Image Modeling
 
 **Conference**: ICCV 2025
-**arXiv**: [2406.11933](https://arxiv.org/abs/2406.11933)
-**Code**: [SelectiveMAE](https://github.com/fengxiangwang/SelectiveMAE)
+**arXiv**: [2406.11933](https://arxiv.org/abs/2406.11933)  
+**Code**: [SelectiveMAE](https://github.com/fengxiangwang/SelectiveMAE)  
 **Area**: Image Segmentation
 **Keywords**: Remote Sensing Foundation Model, Masked Image Modeling, Large-Scale Dataset, Efficient Pre-training, SelectiveMAE
 

@@ -18,8 +18,8 @@ content_hash: b89ad46ad1e2fef0
 # Less is More: Clustered Cross-Covariance Control for Offline RL
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20765](https://arxiv.org/abs/2601.20765)
-**Code**: None
+**arXiv**: [2601.20765](https://arxiv.org/abs/2601.20765)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Offline reinforcement learning, distributional shift, TD cross-covariance, buffer partitioning, conservatism control
 

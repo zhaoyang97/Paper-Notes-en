@@ -18,8 +18,8 @@ content_hash: b0fe24adcd481e55
 # Cleaning the Pool: Progressive Filtering of Unlabeled Pools in Deep Active Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.22344](https://arxiv.org/abs/2511.22344)
-**Code**: [GitHub](https://github.com/dhuseljic/dal-toolbox)
+**arXiv**: [2511.22344](https://arxiv.org/abs/2511.22344)  
+**Code**: [GitHub](https://github.com/dhuseljic/dal-toolbox)  
 **Area**: Audio/Speech (Active Learning)
 **Keywords**: Active Learning, Ensemble Strategy, Progressive Filtering, Foundation Models, Coverage-Based Selection
 

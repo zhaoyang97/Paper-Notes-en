@@ -19,8 +19,8 @@ content_hash: 5fb6e4ed971407fb
 # PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12998](https://arxiv.org/abs/2511.12998)
-**Code**: [https://github.com/Auroral703/PerTouch](https://github.com/Auroral703/PerTouch)
+**arXiv**: [2511.12998](https://arxiv.org/abs/2511.12998)  
+**Code**: [https://github.com/Auroral703/PerTouch](https://github.com/Auroral703/PerTouch)  
 **Area**: LLM Agent
 **Keywords**: VLM Agent, Image Retouching, Personalized Editing, Semantic Awareness, Diffusion Model, Scene Memory
 

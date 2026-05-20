@@ -17,8 +17,8 @@ content_hash: bc1800159aa0a553
 # Fine-tuning Done Right in Model Editing
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22072](https://arxiv.org/abs/2509.22072)
-**Code**: [https://github.com/ICT-STAR/LocFT](https://github.com/ICT-STAR/LocFT)
+**arXiv**: [2509.22072](https://arxiv.org/abs/2509.22072)  
+**Code**: [https://github.com/ICT-STAR/LocFT](https://github.com/ICT-STAR/LocFT)  
 **Area**: Knowledge Editing
 **Keywords**: Model Editing, Fine-tuning, Knowledge Editing, Catastrophic Forgetting, Localized Fine-tuning
 
@@ -48,21 +48,21 @@ LocFT-BF = standard breadth-first mini-batch training + localized parameter upda
 
 1. **Pipeline Correction: Depth-First → Breadth-First**
 
-   - Function: Replaces single-pass per-sample training (DF) with multi-epoch traversal over the full edit set (BF).
-   - Mechanism: The root cause of catastrophic forgetting under DF is single-pass processing, where later edits overwrite earlier ones. BF allows the model to balance learning across all edits through repeated traversals.
-   - Design Motivation: This is the most critical finding — this single change alone (even with batch size = 1) yields dramatic improvements.
+    - Function: Replaces single-pass per-sample training (DF) with multi-epoch traversal over the full edit set (BF).
+    - Mechanism: The root cause of catastrophic forgetting under DF is single-pass processing, where later edits overwrite earlier ones. BF allows the model to balance learning across all edits through repeated traversals.
+    - Design Motivation: This is the most critical finding — this single change alone (even with batch size = 1) yields dramatic improvements.
 
 2. **Update Granularity Correction: Per-Sample → Mini-Batch**
 
-   - Function: Increases batch size from 1 to standard mini-batch sizes (e.g., 64).
-   - Mechanism: Per-sample gradients exhibit high variance and tend to degrade general capabilities; mini-batch gradient aggregation is more stable.
-   - Design Motivation: Further stabilizes training under the BF pipeline and substantially reduces degradation of general model capabilities.
+    - Function: Increases batch size from 1 to standard mini-batch sizes (e.g., 64).
+    - Mechanism: Per-sample gradients exhibit high variance and tend to degrade general capabilities; mini-batch gradient aggregation is more stable.
+    - Design Motivation: Further stabilizes training under the BF pipeline and substantially reduces degradation of general model capabilities.
 
 3. **Localized Parameter Selection**
 
-   - Function: Systematically evaluates the editing performance of different layers and modules (various projection matrices in attention and MLP blocks).
-   - Mechanism: Tuning the **down-projection or up-projection matrices of the last few layers** is found to be generally optimal — achieving near-100% edit success rate while preserving general capabilities.
-   - Design Motivation: Existing methods (e.g., FT-M) inherit the parameter locations from ROME (middle-layer MLPs), which are not optimized for fine-tuning. A systematic search reveals that later layers are more suitable for knowledge editing.
+    - Function: Systematically evaluates the editing performance of different layers and modules (various projection matrices in attention and MLP blocks).
+    - Mechanism: Tuning the **down-projection or up-projection matrices of the last few layers** is found to be generally optimal — achieving near-100% edit success rate while preserving general capabilities.
+    - Design Motivation: Existing methods (e.g., FT-M) inherit the parameter locations from ROME (middle-layer MLPs), which are not optimized for fine-tuning. A systematic search reveals that later layers are more suitable for knowledge editing.
 
 ### Loss & Training
 Standard cross-entropy loss, computed only on the target edit tokens. Key implementation details:

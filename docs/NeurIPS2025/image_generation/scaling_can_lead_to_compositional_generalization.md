@@ -18,8 +18,8 @@ content_hash: da7f3a48e6925c5a
 # Scaling Can Lead to Compositional Generalization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.07207](https://arxiv.org/abs/2507.07207)
-**Code**: [GitHub](https://github.com/smonsays/scale-compositionality)
+**arXiv**: [2507.07207](https://arxiv.org/abs/2507.07207)  
+**Code**: [GitHub](https://github.com/smonsays/scale-compositionality)  
 **Area**: Theoretical Machine Learning / Compositional Generalization
 **Keywords**: compositional generalization, scaling, linear decodability, hyperteacher, MLP
 

@@ -18,8 +18,8 @@ content_hash: aa51a724f7a3ad01
 # InfoDet: A Dataset for Infographic Element Detection
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.17473](https://arxiv.org/abs/2505.17473)
-**Code**: [https://github.com/InfoDet2025/InfoDet](https://github.com/InfoDet2025/InfoDet)
+**arXiv**: [2505.17473](https://arxiv.org/abs/2505.17473)  
+**Code**: [https://github.com/InfoDet2025/InfoDet](https://github.com/InfoDet2025/InfoDet)  
 **Area**: Object Detection / Document Understanding
 **Keywords**: Infographic Detection, Chart Understanding, Dataset, Grounded CoT, VLM
 

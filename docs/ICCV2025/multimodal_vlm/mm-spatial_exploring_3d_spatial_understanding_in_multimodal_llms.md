@@ -18,8 +18,8 @@ content_hash: f5e6d5b8a0ec848d
 # MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.13111](https://arxiv.org/abs/2503.13111)
-**Code**: [GitHub](https://github.com/apple/ml-cubifyanything)
+**arXiv**: [2503.13111](https://arxiv.org/abs/2503.13111)  
+**Code**: [GitHub](https://github.com/apple/ml-cubifyanything)  
 **Area**: Multimodal VLM
 **Keywords**: 3D spatial understanding, multimodal LLM, depth estimation, multi-view, spatial reasoning
 

@@ -18,8 +18,8 @@ content_hash: e6f8e4d3e23aff2c
 # CAPability: A Comprehensive Visual Caption Benchmark for Evaluating Both Correctness and Thoroughness
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.14914](https://arxiv.org/abs/2502.14914)
-**Code**: [Project Page](https://capability-bench.github.io)
+**arXiv**: [2502.14914](https://arxiv.org/abs/2502.14914)  
+**Code**: [Project Page](https://capability-bench.github.io)  
 **Area**: Multimodal VLM
 **Keywords**: Visual captioning evaluation, multi-dimensional benchmark, multimodal large language models, correctness and thoroughness, caption assessment
 

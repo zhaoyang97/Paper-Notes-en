@@ -18,8 +18,8 @@ content_hash: b3ac1cfea70ab22f
 # Online Optimization for Offline Safe Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22027](https://arxiv.org/abs/2510.22027)
-**Code**: [GitHub](https://github.com/yassineCh/O3SRL)
+**arXiv**: [2510.22027](https://arxiv.org/abs/2510.22027)  
+**Code**: [GitHub](https://github.com/yassineCh/O3SRL)  
 **Area**: Reinforcement Learning
 **Keywords**: Offline Safe Reinforcement Learning, Minimax Optimization, Multi-Armed Bandit, Constrained Policy Optimization, No-Regret Algorithm
 

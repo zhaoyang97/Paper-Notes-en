@@ -18,8 +18,8 @@ content_hash: b4d56ee132ebf35b
 # Beyond Recognition: Evaluating Visual Perspective Taking in Vision Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2505.03821](https://arxiv.org/abs/2505.03821)
-**Code**: None
+**arXiv**: [2505.03821](https://arxiv.org/abs/2505.03821)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Visual Perspective Taking, Theory of Mind, Spatial Reasoning, VLM Evaluation, Cognitive Science
 

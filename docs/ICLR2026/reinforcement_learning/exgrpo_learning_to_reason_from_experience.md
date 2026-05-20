@@ -18,8 +18,8 @@ content_hash: c4798edbd2c0e5ab
 # ExGRPO: Learning to Reason from Experience
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.02245](https://arxiv.org/abs/2510.02245)
-**Code**: [GitHub](https://github.com/RanranZhang/ExGRPO)
+**arXiv**: [2510.02245](https://arxiv.org/abs/2510.02245)  
+**Code**: [GitHub](https://github.com/RanranZhang/ExGRPO)  
 **Area**: LLM Reasoning / Reinforcement Learning
 **Keywords**: Experience Replay, RLVR, Reasoning RL, Experience Management, GRPO
 

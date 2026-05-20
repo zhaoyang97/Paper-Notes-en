@@ -19,8 +19,8 @@ content_hash: 44839605a942f590
 # The Geometry of LLM Quantization: GPTQ as Babai's Nearest Plane Algorithm
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.18553](https://arxiv.org/abs/2507.18553)
-**Code**: [GitHub](https://github.com/IST-DASLab/GPTQ-Babai)
+**arXiv**: [2507.18553](https://arxiv.org/abs/2507.18553)  
+**Code**: [GitHub](https://github.com/IST-DASLab/GPTQ-Babai)  
 **Area**: Model Compression / Quantization
 **Keywords**: GPTQ, Quantization, Lattice Theory, Closest Vector Problem, Babai's Algorithm, Error Bounds
 

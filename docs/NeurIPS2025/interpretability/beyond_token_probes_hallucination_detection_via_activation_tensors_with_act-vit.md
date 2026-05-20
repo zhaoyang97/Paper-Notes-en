@@ -18,8 +18,8 @@ content_hash: 1d805e99a76a2e2a
 # Beyond Token Probes: Hallucination Detection via Activation Tensors with ACT-ViT
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.00296](https://arxiv.org/abs/2510.00296)
-**Code**: [https://github.com/BarSGuy/ACT-ViT](https://github.com/BarSGuy/ACT-ViT)
+**arXiv**: [2510.00296](https://arxiv.org/abs/2510.00296)  
+**Code**: [https://github.com/BarSGuy/ACT-ViT](https://github.com/BarSGuy/ACT-ViT)  
 **Area**: Interpretability
 **Keywords**: Hallucination Detection, Activation Tensors, Vision Transformer, Cross-Model Generalization, Probing
 
@@ -47,21 +47,21 @@ Extract the LLM activation tensor → Apply pooling to compress spatial dimensio
 
 1. **Activation Tensor**:
 
-   - Definition: $\mathbf{A} \in \mathbb{R}^{L_M \times N \times D_M}$, containing the hidden states of all LLM layers across all output tokens.
-   - Analogy to images: layers → vertical spatial dimension; tokens → horizontal spatial dimension; hidden dimension → channels.
-   - Encodes the complete internal state, avoiding information loss caused by selecting specific layers or tokens.
+    - Definition: $\mathbf{A} \in \mathbb{R}^{L_M \times N \times D_M}$, containing the hidden states of all LLM layers across all output tokens.
+    - Analogy to images: layers → vertical spatial dimension; tokens → horizontal spatial dimension; hidden dimension → channels.
+    - Encodes the complete internal state, avoiding information loss caused by selecting specific layers or tokens.
 
 2. **Pooling + Linear Adapter**:
 
-   - Pooling: Max-pooling is applied over the "spatial" dimensions (layers and tokens) to produce a fixed size of $(L_p, N_p) = (8, 100)$, accommodating varying numbers of layers across LLMs and varying input token lengths.
-   - Linear Adapter: Each LLM $M$ has a dedicated linear transformation $\mathbf{W}_M \in \mathbb{R}^{D_M \times D'}$ that maps its hidden dimension to a shared dimension $D'$.
-   - Design Motivation: Motivated by the hypothesis that different LLMs learn approximately linearly transformable representations of real-world knowledge. A single linear layer is sufficient to align feature spaces across LLMs.
+    - Pooling: Max-pooling is applied over the "spatial" dimensions (layers and tokens) to produce a fixed size of $(L_p, N_p) = (8, 100)$, accommodating varying numbers of layers across LLMs and varying input token lengths.
+    - Linear Adapter: Each LLM $M$ has a dedicated linear transformation $\mathbf{W}_M \in \mathbb{R}^{D_M \times D'}$ that maps its hidden dimension to a shared dimension $D'$.
+    - Design Motivation: Motivated by the hypothesis that different LLMs learn approximately linearly transformable representations of real-world knowledge. A single linear layer is sufficient to align feature spaces across LLMs.
 
 3. **ViT-Based Backbone**:
 
-   - The pooled and adapted tensor is divided into non-overlapping patches; intra-patch positional encodings and global positional encodings are added.
-   - Flattened patches are processed by a standard Transformer encoder.
-   - The self-attention mechanism allows the model to adaptively attend to the layer–token positions most informative for hallucination detection, without requiring manual specification.
+    - The pooled and adapted tensor is divided into non-overlapping patches; intra-patch positional encodings and global positional encodings are added.
+    - Flattened patches are processed by a standard Transformer encoder.
+    - The self-attention mechanism allows the model to adaptively attend to the layer–token positions most informative for hallucination detection, without requiring manual specification.
 
 ### Loss & Training
 - Joint training: All available LLMs and datasets are trained simultaneously, sharing a single ViT backbone while maintaining independent Linear Adapters per LLM.

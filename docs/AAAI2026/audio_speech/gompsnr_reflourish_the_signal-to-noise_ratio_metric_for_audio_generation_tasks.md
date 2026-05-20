@@ -18,8 +18,8 @@ content_hash: 04b19f1890c78f8b
 # GOMPSNR: Reflourish the Signal-to-Noise Ratio Metric for Audio Generation Tasks
 
 **Conference**: AAAI2026
-**arXiv**: [2601.13758](https://arxiv.org/abs/2601.13758)
-**Code**: [lingling-dai/GOMPSNR](https://github.com/lingling-dai/GOMPSNR)
+**arXiv**: [2601.13758](https://arxiv.org/abs/2601.13758)  
+**Code**: [lingling-dai/GOMPSNR](https://github.com/lingling-dai/GOMPSNR)  
 **Area**: Audio & Speech
 **Keywords**: signal-to-noise ratio, phase derivatives, audio quality metric, loss function, neural vocoder
 

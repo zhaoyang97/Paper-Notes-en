@@ -18,8 +18,8 @@ content_hash: 431e7a3ffcb3d9ec
 # Graph Your Own Prompt
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23373](https://arxiv.org/abs/2509.23373)
-**Code**: To be confirmed (the paper mentions a Project website and Code link)
+**arXiv**: [2509.23373](https://arxiv.org/abs/2509.23373)  
+**Code**: To be confirmed (the paper mentions a Project website and Code link)  
 **Area**: Model Compression
 **Keywords**: Graph regularization, feature alignment, semantic consistency, classification, parameter-free module
 

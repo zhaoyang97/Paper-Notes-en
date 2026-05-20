@@ -18,8 +18,8 @@ content_hash: 334ff9e67f397a1f
 # MoVieDrive: Urban Scene Synthesis with Multi-Modal Multi-View Video Diffusion Transformer
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.14327](https://arxiv.org/abs/2508.14327)
-**Code**: Unavailable
+**arXiv**: [2508.14327](https://arxiv.org/abs/2508.14327)  
+**Code**: Unavailable  
 **Area**: Autonomous Driving / Video Generation
 **Keywords**: Multi-modal multi-view video generation, Diffusion Transformer, urban scene synthesis, conditional control, CogVideoX
 
@@ -51,21 +51,21 @@ Built upon CogVideoX (v1.1-2B). Three types of conditions (text, contextual refe
 
 1. **Diverse Condition Encoding**
 
-   - **Function**: Encodes text, layout constraints, and reference frames into unified conditional embeddings to control scene generation.
-   - **Mechanism**: (a) *Text conditioning* — camera intrinsics and extrinsics are encoded via Fourier encoding + MLP encoder $E^\text{cam}$; video descriptions are encoded by a frozen T5 encoder $E^\text{text}$; the concatenated embeddings are injected via cross-attention in the DiT. (b) *Layout conditioning* — 3D bounding box projection maps $c^b$, road structure maps $c^r$, and 3D occupancy sparse semantic maps $c^o$ are fused through a unified layout encoder (independent causal ResNets per condition + a shared causal ResNet): $f^\text{layout} = E_s^l(E_b^l(c^b) \otimes E_r^l(c^r) \otimes E_o^l(c^o))$. (c) *Contextual reference* — the first frame is encoded by the 3D VAE for future prediction.
-   - **Design Motivation**: The unified layout encoder achieves implicit alignment of condition embedding spaces, proving more effective than multiple independent encoders.
+    - **Function**: Encodes text, layout constraints, and reference frames into unified conditional embeddings to control scene generation.
+    - **Mechanism**: (a) *Text conditioning* — camera intrinsics and extrinsics are encoded via Fourier encoding + MLP encoder $E^\text{cam}$; video descriptions are encoded by a frozen T5 encoder $E^\text{text}$; the concatenated embeddings are injected via cross-attention in the DiT. (b) *Layout conditioning* — 3D bounding box projection maps $c^b$, road structure maps $c^r$, and 3D occupancy sparse semantic maps $c^o$ are fused through a unified layout encoder (independent causal ResNets per condition + a shared causal ResNet): $f^\text{layout} = E_s^l(E_b^l(c^b) \otimes E_r^l(c^r) \otimes E_o^l(c^o))$. (c) *Contextual reference* — the first frame is encoded by the 3D VAE for future prediction.
+    - **Design Motivation**: The unified layout encoder achieves implicit alignment of condition embedding spaces, proving more effective than multiple independent encoders.
 
 2. **Modal-Shared Components (Temporal + Multi-View Spatiotemporal Blocks)**
 
-   - **Function**: Learn temporal consistency and multi-view spatial structure shared across all modalities.
-   - **Mechanism**: (a) *Temporal attention layer* $D^\text{tem}$ — CogVideoX's 3D full attention learns inter-frame consistency; text is injected via cross-attention; operating on dimension $\mathcal{R}^{V \times (NKW) \times C}$. (b) *Multi-view spatiotemporal block* $D^\text{st}$ — inserted every $\alpha_1$ layers; contains 3D spatial attention ($\mathcal{R}^{K \times (VHW) \times C}$ for cross-view structure), Hash grid 3D spatial embeddings, and full spatiotemporal attention ($\mathcal{R}^{(VKHW) \times C}$ for global context).
-   - **Design Motivation**: Temporal attention alone cannot guarantee multi-view consistency (FVD degrades from 46.8 to 153.7 without spatiotemporal blocks); the multi-view spatiotemporal block explicitly models cross-view spatial relationships.
+    - **Function**: Learn temporal consistency and multi-view spatial structure shared across all modalities.
+    - **Mechanism**: (a) *Temporal attention layer* $D^\text{tem}$ — CogVideoX's 3D full attention learns inter-frame consistency; text is injected via cross-attention; operating on dimension $\mathcal{R}^{V \times (NKW) \times C}$. (b) *Multi-view spatiotemporal block* $D^\text{st}$ — inserted every $\alpha_1$ layers; contains 3D spatial attention ($\mathcal{R}^{K \times (VHW) \times C}$ for cross-view structure), Hash grid 3D spatial embeddings, and full spatiotemporal attention ($\mathcal{R}^{(VKHW) \times C}$ for global context).
+    - **Design Motivation**: Temporal attention alone cannot guarantee multi-view consistency (FVD degrades from 46.8 to 153.7 without spatiotemporal blocks); the multi-view spatiotemporal block explicitly models cross-view spatial relationships.
 
 3. **Modal-Specific Components (Cross-Modal Interaction + Projection Heads)**
 
-   - **Function**: Learn modality-specific content on top of shared representations while maintaining cross-modal alignment.
-   - **Mechanism**: Cross-modal interaction layers are inserted every $\alpha_2$ layers, comprising self-attention, cross-modal cross-attention (query = current modality latent; key/value = concatenated latents of other modalities), and FFN. Modality-specific projection heads (linear layer + adaptive normalization) independently predict noise for each modality: $h'_m = D_m^\text{cm}(h, h_m^\text{modal}, t)$.
-   - **Design Motivation**: Cross-modal cross-attention enables different modalities to exchange complementary information; unified generation yields higher quality than independent generation with external models.
+    - **Function**: Learn modality-specific content on top of shared representations while maintaining cross-modal alignment.
+    - **Mechanism**: Cross-modal interaction layers are inserted every $\alpha_2$ layers, comprising self-attention, cross-modal cross-attention (query = current modality latent; key/value = concatenated latents of other modalities), and FFN. Modality-specific projection heads (linear layer + adaptive normalization) independently predict noise for each modality: $h'_m = D_m^\text{cm}(h, h_m^\text{modal}, t)$.
+    - **Design Motivation**: Cross-modal cross-attention enables different modalities to exchange complementary information; unified generation yields higher quality than independent generation with external models.
 
 ### Loss & Training
 

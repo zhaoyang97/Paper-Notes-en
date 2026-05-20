@@ -18,8 +18,8 @@ content_hash: f54e26b4b8cfd09e
 # Spec-o3: A Tool-Augmented Vision-Language Agent for Rare Celestial Object Candidate Identification
 
 **Conference**: ACL 2026
-**arXiv**: [2601.06498](https://arxiv.org/abs/2601.06498)
-**Code**: [Project HomePage](https://github.com/jiaminghui/Spec-o3)
+**arXiv**: [2601.06498](https://arxiv.org/abs/2601.06498)  
+**Code**: [Project HomePage](https://github.com/jiaminghui/Spec-o3)  
 **Area**: LLM Agent
 **Keywords**: Tool-augmented agent, interleaved multimodal chain-of-thought, spectral inspection, reinforcement learning, domain VLM
 

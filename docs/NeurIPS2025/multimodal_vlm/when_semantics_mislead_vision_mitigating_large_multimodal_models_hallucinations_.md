@@ -18,8 +18,8 @@ content_hash: 8b7e88ed3617f316
 # When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05551](https://arxiv.org/abs/2506.05551)
-**Code**: [GitHub](https://github.com/shuyansy/MLLM-Semantic-Hallucination)
+**arXiv**: [2506.05551](https://arxiv.org/abs/2506.05551)  
+**Code**: [GitHub](https://github.com/shuyansy/MLLM-Semantic-Hallucination)  
 **Area**: Multimodal VLM
 **Keywords**: semantic hallucination, scene text recognition, large multimodal models, attention correction, training-free
 

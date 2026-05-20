@@ -18,8 +18,8 @@ content_hash: 70dbf371d6de344b
 # SPACE: Noise Contrastive Estimation Stabilizes Self-Play Fine-Tuning for Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.07175](https://arxiv.org/abs/2512.07175)
-**Code**: Not released
+**arXiv**: [2512.07175](https://arxiv.org/abs/2512.07175)  
+**Code**: Not released  
 **Area**: LLM/NLP
 **Keywords**: self-play fine-tuning, noise contrastive estimation, LLM alignment, distribution matching, iterative optimization
 

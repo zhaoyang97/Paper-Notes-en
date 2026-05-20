@@ -18,8 +18,8 @@ content_hash: 8bca4f2e0d149c40
 # PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21528](https://arxiv.org/abs/2603.21528)
-**Code**: [https://github.com/PGSmall/PEARL](https://github.com/PGSmall/PEARL)
+**arXiv**: [2603.21528](https://arxiv.org/abs/2603.21528)  
+**Code**: [https://github.com/PGSmall/PEARL](https://github.com/PGSmall/PEARL)  
 **Area**: Semantic Segmentation / Open-Vocabulary
 **Keywords**: Open-vocabulary semantic segmentation, training-free, Procrustes alignment, Laplacian propagation, CLIP
 

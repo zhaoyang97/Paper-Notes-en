@@ -18,8 +18,8 @@ content_hash: a2a402a1bccc59ab
 # GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.19872](https://arxiv.org/abs/2602.19872)
-**Code**: None
+**arXiv**: [2602.19872](https://arxiv.org/abs/2602.19872)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: continual generalized category discovery, Neural Collapse, ETF classifier, forgetting mitigation, confidence-guided alignment
 
@@ -50,21 +50,21 @@ GOAL consists of a base session and incremental sessions. In the base session, a
 
 1. **Predefined ETF Prototypes**
 
-   - **Function**: Predefine $K$ equiangular tight frame prototypes $\mathbf{P} = \{p_1, \ldots, p_K\}$ as fixed alignment targets for all categories.
-   - **Mechanism**: Construct unit vectors satisfying $p_k^\top p_j = -\frac{1}{K-1}$ ($k \neq j$), ensuring equal angular separation and maximum inter-class distance.
-   - **Design Motivation**: Neural Collapse (NC2) shows that the optimal classifier structure is a simplex ETF; directly using it as a fixed target eliminates the inconsistency caused by dynamic optimization.
+    - **Function**: Predefine $K$ equiangular tight frame prototypes $\mathbf{P} = \{p_1, \ldots, p_K\}$ as fixed alignment targets for all categories.
+    - **Mechanism**: Construct unit vectors satisfying $p_k^\top p_j = -\frac{1}{K-1}$ ($k \neq j$), ensuring equal angular separation and maximum inter-class distance.
+    - **Design Motivation**: Neural Collapse (NC2) shows that the optimal classifier structure is a simplex ETF; directly using it as a fixed target eliminates the inconsistency caused by dynamic optimization.
 
 2. **Supervised Alignment (Base Session)**
 
-   - **Function**: Align features to their corresponding ETF directions during the labeled base stage.
-   - **Mechanism**: The alignment loss $\mathcal{L}_{\text{Align}}^s = -\frac{1}{N} \sum_{i} \langle \hat{e}_i, p_{y_i} \rangle$ is combined with a supervised contrastive loss $\mathcal{L}_{\text{rep}}^s$ and standard cross-entropy $\mathcal{L}_{\text{cls}}$.
-   - **Design Motivation**: The three losses act synergistically—ETF alignment enforces global structure, contrastive learning promotes intra-class compactness, and cross-entropy trains a parametric classifier.
+    - **Function**: Align features to their corresponding ETF directions during the labeled base stage.
+    - **Mechanism**: The alignment loss $\mathcal{L}_{\text{Align}}^s = -\frac{1}{N} \sum_{i} \langle \hat{e}_i, p_{y_i} \rangle$ is combined with a supervised contrastive loss $\mathcal{L}_{\text{rep}}^s$ and standard cross-entropy $\mathcal{L}_{\text{cls}}$.
+    - **Design Motivation**: The three losses act synergistically—ETF alignment enforces global structure, contrastive learning promotes intra-class compactness, and cross-entropy trains a parametric classifier.
 
 3. **Confidence-Guided Unsupervised ETF Alignment (Incremental Sessions)**
 
-   - **Function**: Discover novel categories from unlabeled data and align them to unused ETF directions.
-   - **Mechanism**: The procedure consists of three steps—(1) initialize novel class weights via KMeans clustering, selecting cluster centers with the lowest similarity to the old classifier; (2) rank samples by prediction entropy and select the top-$\alpha\%$ high-confidence samples; (3) map high-confidence samples to unassigned ETF prototypes via cluster matching and optimize with $\mathcal{L}_{\text{Align}}^u$.
-   - **Design Motivation**: The ETF structure contains a large number of reserved directions; novel classes simply "occupy" new directions without affecting the alignment targets of old classes.
+    - **Function**: Discover novel categories from unlabeled data and align them to unused ETF directions.
+    - **Mechanism**: The procedure consists of three steps—(1) initialize novel class weights via KMeans clustering, selecting cluster centers with the lowest similarity to the old classifier; (2) rank samples by prediction entropy and select the top-$\alpha\%$ high-confidence samples; (3) map high-confidence samples to unassigned ETF prototypes via cluster matching and optimize with $\mathcal{L}_{\text{Align}}^u$.
+    - **Design Motivation**: The ETF structure contains a large number of reserved directions; novel classes simply "occupy" new directions without affecting the alignment targets of old classes.
 
 ### Loss & Training
 

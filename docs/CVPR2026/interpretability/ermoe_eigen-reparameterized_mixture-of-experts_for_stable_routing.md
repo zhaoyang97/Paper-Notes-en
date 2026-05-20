@@ -18,8 +18,8 @@ content_hash: f08bc36a12c3f624
 # ERMoE: Eigen-Reparameterized Mixture-of-Experts for Stable Routing and Interpretable Specialization
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.10971](https://arxiv.org/abs/2511.10971)
-**Code**: None
+**arXiv**: [2511.10971](https://arxiv.org/abs/2511.10971)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Mixture of Experts, eigen-reparameterization, routing stability, expert specialization, Vision Transformer
 
@@ -42,19 +42,19 @@ A ViT backbone extracts token embeddings. Within each ERMoE block, the router co
 ### Key Designs
 
 1. **Eigen-Reparameterized Experts**:
-   - **Function**: Constrain expert weights within an orthogonal basis space.
-   - **Mechanism**: Each expert weight is factorized as $\mathbf{W}^{(e)} = \mathbf{U}^{(e)} \text{diag}(s^{(e)}) \mathbf{V}^{(e)\top}$, where $\mathbf{U}, \mathbf{V}$ are orthogonal matrices and $s$ is a learnable scaling factor. Orthogonal constraints enforce separable expert directions, reducing feature redundancy and representation collapse.
-   - **Design Motivation**: The parameter spaces of conventional MoE experts overlap heavily, causing different experts to learn similar representations. Orthogonal basis constraints mathematically guarantee the separability of expert subspaces.
+    - **Function**: Constrain expert weights within an orthogonal basis space.
+    - **Mechanism**: Each expert weight is factorized as $\mathbf{W}^{(e)} = \mathbf{U}^{(e)} \text{diag}(s^{(e)}) \mathbf{V}^{(e)\top}$, where $\mathbf{U}, \mathbf{V}$ are orthogonal matrices and $s$ is a learnable scaling factor. Orthogonal constraints enforce separable expert directions, reducing feature redundancy and representation collapse.
+    - **Design Motivation**: The parameter spaces of conventional MoE experts overlap heavily, causing different experts to learn similar representations. Orthogonal basis constraints mathematically guarantee the separability of expert subspaces.
 
 2. **Eigenbasis Routing Scores**:
-   - **Function**: Route based on content alignment rather than unconstrained logits.
-   - **Mechanism**: For a given expert, the input token and its attention-weighted context are each projected onto that expert's eigenbasis; the routing score is the cosine similarity between the two projections. Only experts whose scores exceed confidence threshold $T$ are eligible for selection, from which top-$k$ are taken.
-   - **Design Motivation**: Binding routing to each expert's actual representation space ensures that assignment decisions directly reflect feature–basis alignment, eliminating the need for LBL and its gradient interference.
+    - **Function**: Route based on content alignment rather than unconstrained logits.
+    - **Mechanism**: For a given expert, the input token and its attention-weighted context are each projected onto that expert's eigenbasis; the routing score is the cosine similarity between the two projections. Only experts whose scores exceed confidence threshold $T$ are eligible for selection, from which top-$k$ are taken.
+    - **Design Motivation**: Binding routing to each expert's actual representation space ensures that assignment decisions directly reflect feature–basis alignment, eliminating the need for LBL and its gradient interference.
 
 3. **ERMoE-ba Variant for Brain Age Prediction**:
-   - **Function**: Extend ERMoE to 3D medical imaging.
-   - **Mechanism**: A 2D ViT is extended to a 3D ViT to process T1 MRI volumetric data; routing operates between regional experts and free experts, and the weighted output drives a brain age estimator. Expert routing patterns enable anatomically interpretable expert specialization.
-   - **Design Motivation**: Validate the effectiveness of ERMoE beyond natural images and demonstrate the interpretability of the routing mechanism.
+    - **Function**: Extend ERMoE to 3D medical imaging.
+    - **Mechanism**: A 2D ViT is extended to a 3D ViT to process T1 MRI volumetric data; routing operates between regional experts and free experts, and the weighted output drives a brain age estimator. Expert routing patterns enable anatomically interpretable expert specialization.
+    - **Design Motivation**: Validate the effectiveness of ERMoE beyond natural images and demonstrate the interpretability of the routing mechanism.
 
 ### Loss & Training
 Standard classification/regression losses are used; no auxiliary load-balancing loss is required. Orthogonality constraints are maintained via Cayley parameterization or Gram–Schmidt orthogonalization.

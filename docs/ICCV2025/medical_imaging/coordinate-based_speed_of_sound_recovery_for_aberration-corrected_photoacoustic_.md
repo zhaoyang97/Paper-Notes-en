@@ -18,8 +18,8 @@ content_hash: b636d46c44d6d9b9
 # Coordinate-based Speed of Sound Recovery for Aberration-Corrected Photoacoustic Computed Tomography
 
 **Conference**: ICCV 2025
-**arXiv**: [2409.10876](https://arxiv.org/abs/2409.10876)
-**Code**: [https://lukeli0425.github.io/Coord-SoS-PACT/](https://lukeli0425.github.io/Coord-SoS-PACT/)
+**arXiv**: [2409.10876](https://arxiv.org/abs/2409.10876)  
+**Code**: [https://lukeli0425.github.io/Coord-SoS-PACT/](https://lukeli0425.github.io/Coord-SoS-PACT/)  
 **Area**: Medical Imaging / Computational Imaging
 **Keywords**: Photoacoustic Computed Tomography, Speed of Sound Recovery, Neural Fields, Self-supervised Learning, Wavefront Aberration Correction
 

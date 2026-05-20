@@ -17,8 +17,8 @@ content_hash: 1800ca65343b595e
 # How Wide and How Deep? Mitigating Over-Squashing of GNNs via Channel Capacity Constrained Estimation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06443](https://arxiv.org/abs/2511.06443)
-**Code**: [GitHub](https://github.com/pixelhero98/C3E)
+**arXiv**: [2511.06443](https://arxiv.org/abs/2511.06443)  
+**Code**: [GitHub](https://github.com/pixelhero98/C3E)  
 **Area**: Others
 **Keywords**: over-squashing, graph neural networks, channel capacity, information theory, hidden dimension estimation
 

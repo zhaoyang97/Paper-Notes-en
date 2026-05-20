@@ -18,8 +18,8 @@ content_hash: 14e081b5479b09ce
 # GGPT: Geometry-Grounded Point Transformer
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11174](https://arxiv.org/abs/2603.11174)
-**Code**: [Available](https://chenyutongthu.github.io/research/ggpt)
+**arXiv**: [2603.11174](https://arxiv.org/abs/2603.11174)  
+**Code**: [Available](https://chenyutongthu.github.io/research/ggpt)  
 **Area**: 3D Vision / 3D Reconstruction
 **Keywords**: sparse-view 3D reconstruction, Point Transformer, SfM, feed-forward, multi-view geometry
 

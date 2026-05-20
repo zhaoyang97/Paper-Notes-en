@@ -18,8 +18,8 @@ content_hash: 91073247e37349f2
 # Designing Truthful Mechanisms for Asymptotic Fair Division
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.10892](https://arxiv.org/abs/2512.10892)
-**Code**: None
+**arXiv**: [2512.10892](https://arxiv.org/abs/2512.10892)  
+**Code**: None  
 **Area**: LLM Safety
 **Keywords**: Fair division, envy-freeness, strategyproofness, mechanism design, KL divergence
 

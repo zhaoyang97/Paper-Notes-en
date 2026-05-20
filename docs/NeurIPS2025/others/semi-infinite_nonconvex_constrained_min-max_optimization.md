@@ -17,8 +17,8 @@ content_hash: eb5ed38fe1606264
 # Semi-infinite Nonconvex Constrained Min-Max Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.12007](https://arxiv.org/abs/2510.12007)
-**Code**: Unavailable
+**arXiv**: [2510.12007](https://arxiv.org/abs/2510.12007)  
+**Code**: Unavailable  
 **Area**: Others
 **Keywords**: Semi-infinite programming, nonconvex constraints, min-max optimization, dynamic barrier method, convergence complexity
 

@@ -18,8 +18,8 @@ content_hash: 72ca5fe32ca7efb1
 # SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.06572](https://arxiv.org/abs/2603.06572)
-**Code**: [github.com/Surrey-UP-Lab/SCOPE](https://github.com/Surrey-UP-Lab/SCOPE)
+**arXiv**: [2603.06572](https://arxiv.org/abs/2603.06572)  
+**Code**: [github.com/Surrey-UP-Lab/SCOPE](https://github.com/Surrey-UP-Lab/SCOPE)  
 **Area**: 3D Point Cloud Segmentation / Incremental Few-Shot Learning
 **Keywords**: 3D point cloud segmentation, incremental few-shot, background mining, prototype enrichment, plug-and-play
 
@@ -48,14 +48,14 @@ SCOPE is a three-stage plug-and-play framework: (1) **Base Training**: encoder $
 ### Key Designs
 
 1. **Instance Prototype Bank (IPB)**:
-   - **Function**: Mines object-level pseudo-instances from background regions and constructs a reusable prototype bank.
-   - **Mechanism**: The class-agnostic model $\Theta$ predicts pseudo-masks $\{(\hat{M}_{i,j}, s_{i,j})\}$ for each scene; only masks in background regions with confidence $s_{i,j} > \tau$ are retained; masked average pooling over encoder features yields prototypes $\mu_{i,j} = \mathcal{F}_{\text{Pool}}(F_i, \hat{M}_{i,j})$.
-   - **Design Motivation**: Novel-class prototypes cannot be constructed when novel classes are unknown, but object structures in the background serve as generic transferable cues. The IPB is constructed once and frozen, incurring no overhead during incremental stages ($<1$ MB storage).
+    - **Function**: Mines object-level pseudo-instances from background regions and constructs a reusable prototype bank.
+    - **Mechanism**: The class-agnostic model $\Theta$ predicts pseudo-masks $\{(\hat{M}_{i,j}, s_{i,j})\}$ for each scene; only masks in background regions with confidence $s_{i,j} > \tau$ are retained; masked average pooling over encoder features yields prototypes $\mu_{i,j} = \mathcal{F}_{\text{Pool}}(F_i, \hat{M}_{i,j})$.
+    - **Design Motivation**: Novel-class prototypes cannot be constructed when novel classes are unknown, but object structures in the background serve as generic transferable cues. The IPB is constructed once and frozen, incurring no overhead during incremental stages ($<1$ MB storage).
 
 2. **Contextual Prototype Retrieval + Attention-Based Prototype Enrichment (CPR+APE)**:
-   - **Function**: Retrieves background prototypes relevant to the novel class from the IPB and enriches the few-shot prototype via attention-based fusion.
-   - **Mechanism**: CPR retrieves the top-$R$ prototypes via cosine similarity: $\mathcal{B}^c = \text{TopR}(\sigma^c_b)$; APE applies parameter-free cross-attention (query = few-shot prototype, key/value = retrieved prototypes) for weighted fusion: $\tilde{p}^c = \lambda p^c + (1-\lambda)h^c$, where $h^c = \sum_r \text{CrossAttn}(\bar{p}^c, \bar{\mathcal{B}}^c)_r \bar{\mu}^c_r$.
-   - **Design Motivation**: Not all background prototypes are informative—the attention mechanism adaptively suppresses noise while retaining transferable structural cues. The absence of learnable parameters prevents overfitting to sparse data.
+    - **Function**: Retrieves background prototypes relevant to the novel class from the IPB and enriches the few-shot prototype via attention-based fusion.
+    - **Mechanism**: CPR retrieves the top-$R$ prototypes via cosine similarity: $\mathcal{B}^c = \text{TopR}(\sigma^c_b)$; APE applies parameter-free cross-attention (query = few-shot prototype, key/value = retrieved prototypes) for weighted fusion: $\tilde{p}^c = \lambda p^c + (1-\lambda)h^c$, where $h^c = \sum_r \text{CrossAttn}(\bar{p}^c, \bar{\mathcal{B}}^c)_r \bar{\mu}^c_r$.
+    - **Design Motivation**: Not all background prototypes are informative—the attention mechanism adaptively suppresses noise while retaining transferable structural cues. The absence of learnable parameters prevents overfitting to sparse data.
 
 ### Loss & Training
 The base stage uses standard cross-entropy loss to train the encoder and base-class prototypes. The incremental stage requires no training—the backbone is frozen and all computations (retrieval, attention fusion) are analytical. Key hyperparameters: $\tau = 0.75$ (mask confidence threshold), $R = 50$ (retrieval count), $\lambda = 0.5$ (fusion weight). The class-agnostic model $\Theta$ is used only once offline and discarded thereafter.

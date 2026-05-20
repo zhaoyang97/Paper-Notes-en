@@ -18,8 +18,8 @@ content_hash: 98fda7d9601bbea5
 # MaskHand: Generative Masked Modeling for Robust Hand Mesh Reconstruction in the Wild
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.13393](https://arxiv.org/abs/2412.13393)
-**Code**: [github.com/m-usamasaleem/MaskHand](https://m-usamasaleem.github.io/publication/MaskHand/MaskHand.html)
+**arXiv**: [2412.13393](https://arxiv.org/abs/2412.13393)  
+**Code**: [github.com/m-usamasaleem/MaskHand](https://m-usamasaleem.github.io/publication/MaskHand/MaskHand.html)  
 **Area**: 3D Vision
 **Keywords**: hand mesh reconstruction, generative masked modeling, VQ-VAE, confidence-guided sampling, uncertainty quantification
 

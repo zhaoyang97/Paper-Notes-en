@@ -18,8 +18,8 @@ content_hash: fa22e8ac809d7927
 # FaCT: Faithful Concept Traces for Explaining Neural Network Decisions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25512](https://arxiv.org/abs/2510.25512)
-**Code**: [https://github.com/m-parchami/FaCT](https://github.com/m-parchami/FaCT)
+**arXiv**: [2510.25512](https://arxiv.org/abs/2510.25512)  
+**Code**: [https://github.com/m-parchami/FaCT](https://github.com/m-parchami/FaCT)  
 **Area**: Interpretability / Concept Explanation
 **Keywords**: concept explanation, faithful attribution, B-cos networks, sparse autoencoders, interpretable models
 

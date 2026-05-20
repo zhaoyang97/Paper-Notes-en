@@ -18,8 +18,8 @@ content_hash: 960db990058695b9
 # DynImg: Key Frames with Visual Prompts are Good Representation for Multi-Modal Video Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.15569](https://arxiv.org/abs/2507.15569)
-**Code**: [https://dynimg.github.io/](https://dynimg.github.io/)
+**arXiv**: [2507.15569](https://arxiv.org/abs/2507.15569)  
+**Code**: [https://dynimg.github.io/](https://dynimg.github.io/)  
 **Area**: Video Understanding / Multimodal Large Language Models
 **Keywords**: Video Representation, Spatiotemporal Interaction, Visual Prompts, Positional Encoding, Multimodal LLM
 

@@ -17,8 +17,8 @@ content_hash: fdb1ac99f59a85e2
 # Sign-In to the Lottery: Reparameterized Sparse Training from Scratch
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.12801](https://arxiv.org/abs/2504.12801)
-**Code**: None
+**arXiv**: [2504.12801](https://arxiv.org/abs/2504.12801)  
+**Code**: None  
 **Area**: Other
 **Keywords**: sparse training, lottery ticket hypothesis, sign flipping, reparameterization, pruning at initialization
 

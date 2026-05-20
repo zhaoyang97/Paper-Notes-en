@@ -18,8 +18,8 @@ content_hash: 7b79b530575f1174
 # Visual Modality Prompt for Adapting Vision-Language Object Detectors
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.00622](https://arxiv.org/abs/2412.00622)
-**Code**: [GitHub](https://github.com/heitorrapela/ModPrompt)
+**arXiv**: [2412.00622](https://arxiv.org/abs/2412.00622)  
+**Code**: [GitHub](https://github.com/heitorrapela/ModPrompt)  
 **Area**: Object Detection
 **Keywords**: Visual Prompt, Modality Adaptation, Vision-Language Detectors, Zero-Shot Detection, Cross-Modal Transfer
 

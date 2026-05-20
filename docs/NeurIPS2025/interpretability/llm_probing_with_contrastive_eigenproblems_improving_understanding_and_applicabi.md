@@ -18,8 +18,8 @@ content_hash: 8791a37f0b4baeec
 # LLM Probing with Contrastive Eigenproblems: Improving Understanding and Applicability of CCS
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02089](https://arxiv.org/abs/2511.02089)
-**Code**: To be confirmed
+**arXiv**: [2511.02089](https://arxiv.org/abs/2511.02089)  
+**Code**: To be confirmed  
 **Area**: Interpretability
 **Keywords**: CCS, contrastive probing, eigenproblems, mechanistic interpretability, latent knowledge elicitation
 

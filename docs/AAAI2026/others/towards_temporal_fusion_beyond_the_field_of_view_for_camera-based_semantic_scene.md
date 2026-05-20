@@ -17,8 +17,8 @@ content_hash: 5b40539846c953f0
 # Towards Temporal Fusion Beyond the Field of View for Camera-based Semantic Scene Completion
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12498](https://arxiv.org/abs/2511.12498)
-**Code**: None (Project Page available)
+**arXiv**: [2511.12498](https://arxiv.org/abs/2511.12498)  
+**Code**: None (Project Page available)  
 **Area**: Other
 **Keywords**: Semantic Scene Completion, Temporal Fusion, Out-of-View Completion, 3D Perception, Voxel Features
 

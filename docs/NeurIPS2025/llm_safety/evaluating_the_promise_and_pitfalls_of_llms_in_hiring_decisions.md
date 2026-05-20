@@ -18,8 +18,8 @@ content_hash: 7d4e963ac2e9bbf8
 # Evaluating the Promise and Pitfalls of LLMs in Hiring Decisions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.02087](https://arxiv.org/abs/2507.02087)
-**Code**: None
+**arXiv**: [2507.02087](https://arxiv.org/abs/2507.02087)  
+**Code**: None  
 **Area**: AI Safety / Fairness & Bias
 **Keywords**: LLM bias, hiring fairness, algorithmic auditing, disparate impact, EEOC four-fifths rule
 

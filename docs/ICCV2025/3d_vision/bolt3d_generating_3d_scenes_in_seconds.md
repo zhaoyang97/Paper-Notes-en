@@ -18,8 +18,8 @@ content_hash: 08fd85afa04fe44f
 # Bolt3D: Generating 3D Scenes in Seconds
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.14445](https://arxiv.org/abs/2503.14445)
-**Code**: [szymanowiczs.github.io/bolt3d](https://szymanowiczs.github.io/bolt3d) (project page; code not released)
+**arXiv**: [2503.14445](https://arxiv.org/abs/2503.14445)  
+**Code**: [szymanowiczs.github.io/bolt3d](https://szymanowiczs.github.io/bolt3d) (project page; code not released)  
 **Area**: 3D Vision / 3D Scene Generation / Novel View Synthesis
 **Keywords**: Latent Diffusion Model, 3D Gaussian Representation, Feed-Forward Generation, Geometry VAE, Splatter Image
 **Authors**: Stanislaw Szymanowicz, Jason Y. Zhang, Pratul Srinivasan, Ruiqi Gao, Arthur Brussee, Aleksander Hołyński, Ricardo Martin-Brualla, Jonathan T. Barron, Philipp Henzler (Google Research / Oxford)

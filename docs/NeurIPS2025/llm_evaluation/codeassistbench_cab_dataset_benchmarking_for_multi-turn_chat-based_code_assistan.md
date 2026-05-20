@@ -20,8 +20,8 @@ content_hash: 93fe9f6719fd74db
 # CodeAssistBench (CAB): Dataset & Benchmarking for Multi-turn Chat-Based Code Assistance
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.10646](https://arxiv.org/abs/2507.10646)
-**Code**: [amazon-science/CodeAssistBench](https://github.com/amazon-science/CodeAssistBench/)
+**arXiv**: [2507.10646](https://arxiv.org/abs/2507.10646)  
+**Code**: [amazon-science/CodeAssistBench](https://github.com/amazon-science/CodeAssistBench/)  
 **Area**: LLM Evaluation
 **Keywords**: code assistant, multi-turn dialogue, benchmark, programming assistance, GitHub Issues, repository-level evaluation, LLM Agent
 

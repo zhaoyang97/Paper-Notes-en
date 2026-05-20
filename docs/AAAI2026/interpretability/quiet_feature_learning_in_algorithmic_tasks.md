@@ -18,8 +18,8 @@ content_hash: dcd14a6eddf55f11
 # Quiet Feature Learning in Algorithmic Tasks
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.03997](https://arxiv.org/abs/2505.03997)
-**Code**: [https://github.com/prudhvirajn/quiet-feature-learning-in-algorithmic-tasks](https://github.com/prudhvirajn/quiet-feature-learning-in-algorithmic-tasks)
+**arXiv**: [2505.03997](https://arxiv.org/abs/2505.03997)  
+**Code**: [https://github.com/prudhvirajn/quiet-feature-learning-in-algorithmic-tasks](https://github.com/prudhvirajn/quiet-feature-learning-in-algorithmic-tasks)  
 **Area**: Deep Learning Theory / Emergence
 **Keywords**: Phase transition, implicit features, algorithmic tasks, loss plateau, Grokking
 

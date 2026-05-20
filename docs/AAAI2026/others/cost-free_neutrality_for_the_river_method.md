@@ -17,8 +17,8 @@ content_hash: ff96c2d21da57c09
 # Cost-Free Neutrality for the River Method
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.14409](https://arxiv.org/abs/2512.14409)
-**Code**: None
+**arXiv**: [2512.14409](https://arxiv.org/abs/2512.14409)  
+**Code**: None  
 **Area**: Other (Computational Social Choice / Voting Theory)
 **Keywords**: River voting method, parallel universes tiebreaking, neutrality, polynomial-time algorithm, social choice function
 

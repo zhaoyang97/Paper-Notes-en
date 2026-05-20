@@ -18,8 +18,8 @@ content_hash: 0cb071278c4adc59
 # Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.05337](https://arxiv.org/abs/2508.05337)
-**Code**: None
+**arXiv**: [2508.05337](https://arxiv.org/abs/2508.05337)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: reasoning efficiency, overthinking, reflection suppression, certainty estimation, large reasoning models
 

@@ -18,8 +18,8 @@ content_hash: 043f1ca53c76202a
 # CoIDO: Efficient Data Selection for Visual Instruction Tuning via Coupled Importance-Diversity Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17847](https://arxiv.org/abs/2510.17847)
-**Code**: [GitHub](https://github.com/SuDIS-ZJU/CoIDO)
+**arXiv**: [2510.17847](https://arxiv.org/abs/2510.17847)  
+**Code**: [GitHub](https://github.com/SuDIS-ZJU/CoIDO)  
 **Area**: Multimodal VLM
 **Keywords**: Data Selection, Instruction Tuning, Importance-Diversity Optimization, Lightweight Scorer, MLLM
 

@@ -19,8 +19,8 @@ content_hash: 7a62d0b28c45b604
 # Accelerating Stroke MRI with Diffusion Probabilistic Models through Large-Scale Pre-training and Target-Specific Fine-Tuning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13007](https://arxiv.org/abs/2603.13007)
-**Code**: To be confirmed
+**arXiv**: [2603.13007](https://arxiv.org/abs/2603.13007)  
+**Code**: To be confirmed  
 **Area**: Medical Imaging
 **Keywords**: Accelerated MRI reconstruction, diffusion probabilistic models, large-scale pre-training, fine-tuning transfer, stroke imaging, Diffusion Posterior Sampling
 

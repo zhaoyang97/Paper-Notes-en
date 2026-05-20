@@ -18,8 +18,8 @@ content_hash: 0b4d575293516d6b
 # Beyond the Frame: Generating 360° Panoramic Videos from Perspective Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.07940](https://arxiv.org/abs/2504.07940)
-**Code**: None (project page available)
+**arXiv**: [2504.07940](https://arxiv.org/abs/2504.07940)  
+**Code**: None (project page available)  
 **Area**: Video Understanding / Video Generation
 **Keywords**: 360° video generation, video outpainting, diffusion model, panoramic video, view synthesis
 

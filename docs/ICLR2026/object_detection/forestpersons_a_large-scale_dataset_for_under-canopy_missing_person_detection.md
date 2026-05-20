@@ -18,8 +18,8 @@ content_hash: 980dffa1b55e5275
 # ForestPersons: A Large-Scale Dataset for Under-Canopy Missing Person Detection
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02541](https://arxiv.org/abs/2603.02541)
-**Code**: [https://huggingface.co/datasets/etri/ForestPersons](https://huggingface.co/datasets/etri/ForestPersons)
+**arXiv**: [2603.02541](https://arxiv.org/abs/2603.02541)  
+**Code**: [https://huggingface.co/datasets/etri/ForestPersons](https://huggingface.co/datasets/etri/ForestPersons)  
 **Area**: Object Detection
 **Keywords**: person detection, forest search and rescue, UAV, occlusion-awareness, dataset
 

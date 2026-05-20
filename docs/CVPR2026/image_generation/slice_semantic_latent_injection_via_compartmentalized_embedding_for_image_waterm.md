@@ -18,8 +18,8 @@ content_hash: 4136452025e54dae
 # SLICE: Semantic Latent Injection via Compartmentalized Embedding for Image Watermarking
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12749](https://arxiv.org/abs/2603.12749)
-**Code**: Unavailable
+**arXiv**: [2603.12749](https://arxiv.org/abs/2603.12749)  
+**Code**: Unavailable  
 **Area**: Image Generation
 **Keywords**: Diffusion model watermarking, semantic watermarking, tamper localization, image provenance, privacy & security
 

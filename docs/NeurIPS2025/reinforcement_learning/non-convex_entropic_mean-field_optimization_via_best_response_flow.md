@@ -18,8 +18,8 @@ content_hash: 850170bc231642a6
 # Non-convex Entropic Mean-Field Optimization via Best Response Flow
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22760](https://arxiv.org/abs/2505.22760)
-**Code**: None
+**arXiv**: [2505.22760](https://arxiv.org/abs/2505.22760)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Mean-field optimization, Best Response Flow, Non-convex optimization, Entropic regularization, Wasserstein distance
 

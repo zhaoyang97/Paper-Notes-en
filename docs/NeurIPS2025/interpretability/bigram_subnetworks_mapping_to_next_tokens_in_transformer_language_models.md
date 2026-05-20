@@ -18,8 +18,8 @@ content_hash: 719cfa13e33fb486
 # Bigram Subnetworks: Mapping to Next Tokens in Transformer Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.15471](https://arxiv.org/abs/2504.15471)
-**Code**: [https://github.com/tylerachang/bigram-subnetworks](https://github.com/tylerachang/bigram-subnetworks)
+**arXiv**: [2504.15471](https://arxiv.org/abs/2504.15471)  
+**Code**: [https://github.com/tylerachang/bigram-subnetworks](https://github.com/tylerachang/bigram-subnetworks)  
 **Area**: Interpretability
 **Keywords**: Bigram Subnetworks, Mechanistic Interpretability, Continuous Sparsification, Residual Stream, Minimal Circuit
 

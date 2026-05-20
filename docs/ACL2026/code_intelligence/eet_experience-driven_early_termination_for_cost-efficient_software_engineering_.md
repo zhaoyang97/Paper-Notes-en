@@ -18,8 +18,8 @@ content_hash: 4d4bb648bba8f0ce
 # EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents
 
 **Conference**: ACL 2026
-**arXiv**: [2601.05777](https://arxiv.org/abs/2601.05777)
-**Code**: [GitHub](https://github.com/IanWalls/EET)
+**arXiv**: [2601.05777](https://arxiv.org/abs/2601.05777)  
+**Code**: [GitHub](https://github.com/IanWalls/EET)  
 **Area**: Code Intelligence
 **Keywords**: Software Engineering Agent, Cost Optimization, Experience-Driven, Early Termination, SWE-bench
 

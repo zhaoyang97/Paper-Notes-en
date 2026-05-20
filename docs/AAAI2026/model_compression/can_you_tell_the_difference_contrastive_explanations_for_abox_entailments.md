@@ -18,8 +18,8 @@ content_hash: 7aa04cb407170df8
 # Can You Tell the Difference? Contrastive Explanations for ABox Entailments
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11281](https://arxiv.org/abs/2511.11281)
-**Code**: None
+**arXiv**: [2511.11281](https://arxiv.org/abs/2511.11281)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Contrastive Explanation, Description Logic, ABox Reasoning, Knowledge Representation, Explainability
 

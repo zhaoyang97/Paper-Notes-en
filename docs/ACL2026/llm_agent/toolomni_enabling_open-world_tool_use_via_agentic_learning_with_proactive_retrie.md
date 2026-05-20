@@ -18,8 +18,8 @@ content_hash: 6b2352840d9e929b
 # ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution
 
 **Conference**: ACL 2026
-**arXiv**: [2604.13787](https://arxiv.org/abs/2604.13787)
-**Code**: [GitHub](https://github.com/Huangsz2021/ToolOmni)
+**arXiv**: [2604.13787](https://arxiv.org/abs/2604.13787)  
+**Code**: [GitHub](https://github.com/Huangsz2021/ToolOmni)  
 **Area**: LLM Agent
 **Keywords**: Tool Learning, Proactive Retrieval, Open-World, GRPO, End-to-End
 

@@ -18,8 +18,8 @@ content_hash: 63b60338a83e9b9f
 # ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25100](https://arxiv.org/abs/2509.25100)
-**Code**: Not released
+**arXiv**: [2509.25100](https://arxiv.org/abs/2509.25100)  
+**Code**: Not released  
 **Area**: LLM Alignment
 **Keywords**: Knowledge Distillation, Preference Optimization, ORPO, Mixed Policy, Cross-Architecture Distillation
 

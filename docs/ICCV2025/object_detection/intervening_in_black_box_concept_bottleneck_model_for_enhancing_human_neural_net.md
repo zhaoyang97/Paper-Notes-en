@@ -18,8 +18,8 @@ content_hash: 86975c00a34b1697
 # Intervening in Black Box: Concept Bottleneck Model for Enhancing Human-Neural Network Mutual Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22803](https://arxiv.org/abs/2506.22803)
-**Code**: [https://github.com/XiGuaBo/CBM-HNMU](https://github.com/XiGuaBo/CBM-HNMU)
+**arXiv**: [2506.22803](https://arxiv.org/abs/2506.22803)  
+**Code**: [https://github.com/XiGuaBo/CBM-HNMU](https://github.com/XiGuaBo/CBM-HNMU)  
 **Area**: Object Detection
 **Keywords**: Interpretability, Concept Bottleneck Model, Black-Box Intervention, Knowledge Distillation, Model Correction
 
@@ -57,8 +57,8 @@ $$S_i = \frac{1}{n} \sum_{k=1}^{n} E_{img}(C_k^{|}(i)) \times E_{text}(C^t)^T$$
 
 4. **Gradient-Based Concept Intervention**: The core innovation. Two types of harmful concepts are defined:
 
-   - $S_{nT}$: concepts with a negative influence on the correct class
-   - $S_{pF}$: concepts with a positive influence on the incorrectly predicted class
+    - $S_{nT}$: concepts with a negative influence on the correct class
+    - $S_{pF}$: concepts with a positive influence on the incorrectly predicted class
 
    Concept contributions are computed via gradient attribution $G(w_k, P_k(x_i)) = \frac{\partial P_k(x_i)}{\partial w_k} \odot w_k$, globally accumulated and ranked, and the Top-$\bar{q}$ most harmful concepts are selected for removal or replacement.
 

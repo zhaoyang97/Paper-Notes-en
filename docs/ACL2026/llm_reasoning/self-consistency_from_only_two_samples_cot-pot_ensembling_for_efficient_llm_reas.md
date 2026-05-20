@@ -14,8 +14,8 @@ content_hash: 988223a7051cc72d
 # Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17433](https://arxiv.org/abs/2604.17433)
-**Code**: None
+**arXiv**: [2604.17433](https://arxiv.org/abs/2604.17433)  
+**Code**: None  
 **Area**: LLM Reasoning Efficiency
 **Keywords**: Self-Consistency, Chain-of-Thought, Program-of-Thought, Cross-Modal Ensembling, Bayesian Early Stopping
 
@@ -120,7 +120,7 @@ No training is involved. Data-driven variants infer Bayesian parameters from 100
 - Novelty: ⭐⭐⭐⭐⭐ The cross-modal consistency insight is concise and profound; the Bayesian early-stopping framework is elegant.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 5 benchmarks × 5 LLMs, with full-budget, early-stopping, and multiple variant evaluations—exceptionally comprehensive.
 - Writing Quality: ⭐⭐⭐⭐⭐ Motivation is clearly articulated, theoretical derivations are rigorous, and experimental organization is excellent.
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: llm_reasoning
 **Keywords**: To be supplemented
 

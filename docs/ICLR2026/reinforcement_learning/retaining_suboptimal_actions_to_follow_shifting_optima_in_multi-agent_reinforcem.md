@@ -19,8 +19,8 @@ content_hash: 8b4bcefcf233daca
 # Retaining Suboptimal Actions to Follow Shifting Optima in Multi-Agent RL
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.17062](https://arxiv.org/abs/2602.17062)
-**Code**: [GitHub](https://github.com/hyeon1996/S2Q)
+**arXiv**: [2602.17062](https://arxiv.org/abs/2602.17062)  
+**Code**: [GitHub](https://github.com/hyeon1996/S2Q)  
 **Area**: Reinforcement Learning
 **Keywords**: Multi-Agent RL, Value Decomposition, Suboptimal Action Retention, Softmax Behavior Policy, S2Q, CTDE
 

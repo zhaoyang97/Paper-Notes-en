@@ -18,8 +18,8 @@ content_hash: 4c1d3298e872a9b5
 # GeoRA: Geometry-Aware Low-Rank Adaptation for RLVR
 
 **Conference**: ACL 2026
-**arXiv**: [2601.09361](https://arxiv.org/abs/2601.09361)
-**Code**: None
+**arXiv**: [2601.09361](https://arxiv.org/abs/2601.09361)  
+**Code**: None  
 **Area**: Parameter-Efficient Fine-Tuning / Reinforcement Learning with Verifiable Rewards
 **Keywords**: Low-rank adaptation, RLVR, geometry-aware, SVD initialization, parameter-efficient fine-tuning
 

@@ -18,8 +18,8 @@ content_hash: fb440801cd678608
 # SA-LUT: Spatial Adaptive 4D Look-Up Table for Photorealistic Style Transfer
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.13465](https://arxiv.org/abs/2506.13465)
-**Code**: [https://github.com/Ry3nG/SA-LUT](https://github.com/Ry3nG/SA-LUT)
+**arXiv**: [2506.13465](https://arxiv.org/abs/2506.13465)  
+**Code**: [https://github.com/Ry3nG/SA-LUT](https://github.com/Ry3nG/SA-LUT)  
 **Area**: Image Generation / Style Transfer
 **Keywords**: Photorealistic Style Transfer, 4D LUT, Spatial Adaptivity, Context Map, Real-Time Color Grading
 

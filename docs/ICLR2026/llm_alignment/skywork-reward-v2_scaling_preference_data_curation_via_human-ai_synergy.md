@@ -18,8 +18,8 @@ content_hash: cb4398a50f4999e4
 # Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.01352](https://arxiv.org/abs/2507.01352)
-**Code**: SynPref-40M dataset publicly available
+**arXiv**: [2507.01352](https://arxiv.org/abs/2507.01352)  
+**Code**: SynPref-40M dataset publicly available  
 **Area**: Alignment RLHF / Reward Modeling
 **Keywords**: Reward model, preference data curation, Human-AI synergy, data quality, scalable curation
 

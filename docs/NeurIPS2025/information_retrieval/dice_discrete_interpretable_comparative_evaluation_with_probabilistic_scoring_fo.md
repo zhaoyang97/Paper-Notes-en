@@ -18,8 +18,8 @@ content_hash: c537654ad75d4fba
 # DICE: Discrete Interpretable Comparative Evaluation with Probabilistic Scoring for RAG
 
 **Conference**: NeurIPS 2025 (ResponsibleFM Workshop)
-**arXiv**: [2512.22629](https://arxiv.org/abs/2512.22629)
-**Code**: [GitHub](https://github.com/shiyan-liu/DICE)
+**arXiv**: [2512.22629](https://arxiv.org/abs/2512.22629)  
+**Code**: [GitHub](https://github.com/shiyan-liu/DICE)  
 **Area**: LLM Efficiency / RAG Evaluation
 **Keywords**: RAG evaluation, LLM-as-judge, pairwise comparison, Swiss tournament, probabilistic scoring
 
@@ -48,21 +48,21 @@ The DICE framework comprises: (1) Stage I evidence-coupled deep analysis — an 
 
 1. **Two-Stage Evaluation Protocol**:
 
-   - Function: Stage I produces reasoning traces and preliminary judgments; Stage II quantifies those judgments as probability scores.
-   - Mechanism: Analysis and decision-making are decoupled — each evidence–answer pair is first comprehensively analyzed (factual accuracy, completeness, evidence integration quality), after which $P = \text{softmax}([l_A, l_B, l_{Tie}])$ is extracted from logits.
-   - Design Motivation: Separating deep analysis from numerical scoring ensures both transparency (traceable reasoning) and quantified confidence.
+    - Function: Stage I produces reasoning traces and preliminary judgments; Stage II quantifies those judgments as probability scores.
+    - Mechanism: Analysis and decision-making are decoupled — each evidence–answer pair is first comprehensively analyzed (factual accuracy, completeness, evidence integration quality), after which $P = \text{softmax}([l_A, l_B, l_{Tie}])$ is extracted from logits.
+    - Design Motivation: Separating deep analysis from numerical scoring ensures both transparency (traceable reasoning) and quantified confidence.
 
 2. **Confidence-Aware Scoring**:
 
-   - Function: Distinguish high- from low-confidence judgments via the probability margin $\Delta P = P_{max} - P_{second}$.
-   - Mechanism: High-confidence cases ($\Delta P \geq 0.1$) use hard scoring (1,0)/(0,1)/(0.5,0.5); low-confidence cases use soft scoring, redistributing the Tie probability proportionally between A and B.
-   - Design Motivation: Avoid forcing borderline cases into binary decisions; retaining probability information under low confidence yields more robust comparisons.
+    - Function: Distinguish high- from low-confidence judgments via the probability margin $\Delta P = P_{max} - P_{second}$.
+    - Mechanism: High-confidence cases ($\Delta P \geq 0.1$) use hard scoring (1,0)/(0,1)/(0.5,0.5); low-confidence cases use soft scoring, redistributing the Tie probability proportionally between A and B.
+    - Design Motivation: Avoid forcing borderline cases into binary decisions; retaining probability information under low confidence yields more robust comparisons.
 
 3. **Swiss-System Tournament**:
 
-   - Function: Reduce exhaustive $O(N^2)$ pairwise comparisons to an $O(N\log N)$ dynamic-pairing tournament.
-   - Mechanism: Systems are initialized at Elo 1500; each round pairs systems with similar current Elo scores (without repetition), and Elo updates are weighted with an upset bonus to accelerate convergence.
-   - Design Motivation: For 8 systems, only 16 comparisons are required (vs. 28 for exhaustive evaluation), saving 42.9% of computation while producing rankings identical to the exhaustive approach.
+    - Function: Reduce exhaustive $O(N^2)$ pairwise comparisons to an $O(N\log N)$ dynamic-pairing tournament.
+    - Mechanism: Systems are initialized at Elo 1500; each round pairs systems with similar current Elo scores (without repetition), and Elo updates are weighted with an upset bonus to accelerate convergence.
+    - Design Motivation: For 8 systems, only 16 comparisons are required (vs. 28 for exhaustive evaluation), saving 42.9% of computation while producing rankings identical to the exhaustive approach.
 
 ### Evaluation Judgment Hierarchy
 System responses are classified into four tiers: fully correct > partially correct > insufficient information > completely incorrect; pairwise outcomes are determined according to this hierarchy.

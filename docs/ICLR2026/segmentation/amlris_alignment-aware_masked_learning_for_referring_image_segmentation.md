@@ -17,8 +17,8 @@ content_hash: e10eac8222f7f9dd
 # AMLRIS: Alignment-aware Masked Learning for Referring Image Segmentation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.22740](https://arxiv.org/abs/2602.22740)
-**Code**: [GitHub](https://github.com/pipashu1/AMLRIS)
+**arXiv**: [2602.22740](https://arxiv.org/abs/2602.22740)  
+**Code**: [GitHub](https://github.com/pipashu1/AMLRIS)  
 **Area**: Image Segmentation
 **Keywords**: referring image segmentation, vision-language alignment, masked learning, cross-modal similarity
 

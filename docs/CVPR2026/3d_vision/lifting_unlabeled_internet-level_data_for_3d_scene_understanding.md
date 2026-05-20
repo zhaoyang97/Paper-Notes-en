@@ -18,8 +18,8 @@ content_hash: 0a6254254dbdff0d
 # Lifting Unlabeled Internet-level Data for 3D Scene Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01907](https://arxiv.org/abs/2604.01907)
-**Code**: [Project Page](https://sv-pp.github.io/)
+**arXiv**: [2604.01907](https://arxiv.org/abs/2604.01907)  
+**Code**: [Project Page](https://sv-pp.github.io/)  
 **Area**: 3D Vision
 **Keywords**: 3D scene understanding, internet videos, automated data engine, vision-language navigation, spatial reasoning
 
@@ -44,19 +44,19 @@ Starting from internet videos, the pipeline consists of three stages: (1) video 
 ### Key Designs
 
 1. **Video Filtering and SfM Reconstruction Pipeline**:
-   - **Function**: Extract high-quality camera poses and sparse 3D point clouds from raw internet videos.
-   - **Mechanism**: TransNetV2 shot detection → filtering of low-quality/outdoor/portrait content → disparity-based keyframe selection (rather than uniform sampling) → dense pixel matching + global bundle adjustment → spatial coverage and SfM quality checks.
-   - **Design Motivation**: Internet videos contain abundant irrelevant content; disparity-based frame selection ensures triangulation quality. Optimized pseudo-trajectory pixels are introduced to improve memory efficiency for long videos.
+    - **Function**: Extract high-quality camera poses and sparse 3D point clouds from raw internet videos.
+    - **Mechanism**: TransNetV2 shot detection → filtering of low-quality/outdoor/portrait content → disparity-based keyframe selection (rather than uniform sampling) → dense pixel matching + global bundle adjustment → spatial coverage and SfM quality checks.
+    - **Design Motivation**: Internet videos contain abundant irrelevant content; disparity-based frame selection ensures triangulation quality. Optimized pseudo-trajectory pixels are introduced to improve memory efficiency for long videos.
 
 2. **Dense Reconstruction and Instance Segmentation Pipeline**:
-   - **Function**: Produce complete 3D meshes and instance-level annotations from sparse SfM outputs.
-   - **Mechanism**: For reconstruction, sparse SfM points are projected onto image planes to obtain sparse depth priors; PriorDA then predicts dense metric depth, and TSDF fusion generates watertight meshes. For segmentation, CropFormer produces per-frame segmentation masks, which are aggregated into 3D space via inter-frame view consensus and spatial consistency; VLMs then generate text descriptions and semantic labels.
-   - **Design Motivation**: Neural rendering methods produce high-quality results but are too slow for per-scene optimization; end-to-end reconstruction methods are fast but suffer from memory constraints and geometric distortions on long videos. The metric depth + SfM approach strikes a balance between quality and efficiency (averaging 71 seconds for reconstruction and 96 seconds for segmentation per scene).
+    - **Function**: Produce complete 3D meshes and instance-level annotations from sparse SfM outputs.
+    - **Mechanism**: For reconstruction, sparse SfM points are projected onto image planes to obtain sparse depth priors; PriorDA then predicts dense metric depth, and TSDF fusion generates watertight meshes. For segmentation, CropFormer produces per-frame segmentation masks, which are aggregated into 3D space via inter-frame view consensus and spatial consistency; VLMs then generate text descriptions and semantic labels.
+    - **Design Motivation**: Neural rendering methods produce high-quality results but are too slow for per-scene optimization; end-to-end reconstruction methods are fast but suffer from memory constraints and geometric distortions on long videos. The metric depth + SfM approach strikes a balance between quality and efficiency (averaging 71 seconds for reconstruction and 96 seconds for segmentation per scene).
 
 3. **Task-Specific Data Generation**:
-   - **Function**: Transform 3D scenes into task-specific training data.
-   - **Mechanism**: 3D detection/segmentation directly uses the reconstruction and instance annotations. Spatial VQA generates templated QA pairs (632K) via 3D scene graphs. VLN converts free-exploration room-tour trajectories into R2R-style navigation data through a three-stage pipeline (trajectory preprocessing → action encoding → instruction generation).
-   - **Design Motivation**: The core challenge for VLN is bridging the gap between the irregular motion in room-tour videos and the goal-directed shortest paths in the R2R benchmark, necessitating dedicated trajectory refinement and action encoding.
+    - **Function**: Transform 3D scenes into task-specific training data.
+    - **Mechanism**: 3D detection/segmentation directly uses the reconstruction and instance annotations. Spatial VQA generates templated QA pairs (632K) via 3D scene graphs. VLN converts free-exploration room-tour trajectories into R2R-style navigation data through a three-stage pipeline (trajectory preprocessing → action encoding → instruction generation).
+    - **Design Motivation**: The core challenge for VLN is bridging the gap between the irregular motion in room-tour videos and the goal-directed shortest paths in the R2R benchmark, necessitating dedicated trajectory refinement and action encoding.
 
 ### Loss & Training
 

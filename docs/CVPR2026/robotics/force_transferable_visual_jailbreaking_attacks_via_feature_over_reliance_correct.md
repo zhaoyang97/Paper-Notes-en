@@ -19,8 +19,8 @@ content_hash: 7ee119449d9ade60
 # FORCE: Transferable Visual Jailbreaking Attacks via Feature Over-Reliance CorrEction
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.21029](https://arxiv.org/abs/2509.21029)
-**Code**: [tmllab/2026_CVPR_FORCE](https://github.com/tmllab/2026_CVPR_FORCE)
+**arXiv**: [2509.21029](https://arxiv.org/abs/2509.21029)  
+**Code**: [tmllab/2026_CVPR_FORCE](https://github.com/tmllab/2026_CVPR_FORCE)  
 **Area**: Robotics
 **Keywords**: visual jailbreaking, adversarial attacks, transferability, loss landscape, MLLM safety, red-teaming
 

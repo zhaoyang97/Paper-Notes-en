@@ -18,8 +18,8 @@ content_hash: d9a50af4b1f9c750
 # RAPTR: Radar-Based 3D Pose Estimation Using Transformer
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.08387](https://arxiv.org/abs/2511.08387)
-**Code**: [GitHub](https://github.com/merlresearch/radar-pose-transformer)
+**arXiv**: [2511.08387](https://arxiv.org/abs/2511.08387)  
+**Code**: [GitHub](https://github.com/merlresearch/radar-pose-transformer)  
 **Area**: Human Understanding
 **Keywords**: Radar Perception, 3D Human Pose Estimation, Transformer, Weak Supervision, Deformable Attention
 

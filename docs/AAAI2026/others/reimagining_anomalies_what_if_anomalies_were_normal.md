@@ -17,8 +17,8 @@ content_hash: 0b96e7ac8fdb5029
 # Reimagining Anomalies: What if Anomalies Were Normal?
 
 **Conference**: AAAI2026
-**arXiv**: [2402.14469](https://arxiv.org/abs/2402.14469)
-**Code**: [liznerski/counterfactual-xad](https://github.com/liznerski/counterfactual-xad)
+**arXiv**: [2402.14469](https://arxiv.org/abs/2402.14469)  
+**Code**: [liznerski/counterfactual-xad](https://github.com/liznerski/counterfactual-xad)  
 **Area**: Other
 **Keywords**: anomaly detection, counterfactual explanation, explainable AI, GAN, diffusion model
 

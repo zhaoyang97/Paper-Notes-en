@@ -17,8 +17,8 @@ content_hash: 8e52dfc6d7e3018b
 # Direct Doubly Robust Estimation of Conditional Quantile Contrasts
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19666](https://arxiv.org/abs/2601.19666)
-**Code**: Reproduction code provided in supplementary material
+**arXiv**: [2601.19666](https://arxiv.org/abs/2601.19666)  
+**Code**: Reproduction code provided in supplementary material  
 **Area**: Causal Inference
 **Keywords**: heterogeneous treatment effect, conditional quantile comparator, doubly robust estimation, causal inference, quantile treatment effect
 

@@ -18,8 +18,8 @@ content_hash: ae41d5e8936665d3
 # Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25250](https://arxiv.org/abs/2603.25250)
-**Code**: [GitHub](https://github.com/YBZh/OpenOOD-VLM)
+**arXiv**: [2603.25250](https://arxiv.org/abs/2603.25250)  
+**Code**: [GitHub](https://github.com/YBZh/OpenOOD-VLM)  
 **Area**: Multimodal VLM / AI Safety
 **Keywords**: OOD Detection, Vision-Language Models, Negative Labels, Test-Time Adaptation, Activation Metric
 

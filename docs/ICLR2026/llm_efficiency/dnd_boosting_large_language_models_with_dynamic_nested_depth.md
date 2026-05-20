@@ -18,8 +18,8 @@ content_hash: 97e230783e422637
 # DND: Boosting Large Language Models with Dynamic Nested Depth
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.11001](https://arxiv.org/abs/2510.11001)
-**Code**: None
+**arXiv**: [2510.11001](https://arxiv.org/abs/2510.11001)  
+**Code**: None  
 **Area**: LLM Efficiency / Adaptive Computation
 **Keywords**: Dynamic Depth, Adaptive Token Selection, Large Language Models, Post-Training Enhancement, MoE
 
@@ -65,8 +65,8 @@ The DND strategy is applied only to the middle layers of the model (the initial 
    Together, they form a "push-pull" dynamic: the entropy loss pushes scores apart to cover a wider range, while the MSE loss pulls scores toward the sigmoid center to maintain responsiveness.
 
 5. **Threshold Control Scheme (Section 3.2.2)**:
-   - **Buffered Ratio Control**: On each mini-batch, the error $e$ between the actual selection ratio and the target ratio $k_{target}$ is computed, and the threshold is updated in real time: $\tau \leftarrow \tau + \alpha \cdot e$.
-   - **EMA Synchronization**: Periodically (e.g., every 50 steps), the threshold is updated via EMA using the mean of the top-$k$ routing values $\bar{\tau}_{topk}$ from the buffer: $\tau = (1-\gamma)\tau + \gamma\bar{\tau}_{topk}$, preventing long-term misalignment between the router and threshold optimization directions.
+    - **Buffered Ratio Control**: On each mini-batch, the error $e$ between the actual selection ratio and the target ratio $k_{target}$ is computed, and the threshold is updated in real time: $\tau \leftarrow \tau + \alpha \cdot e$.
+    - **EMA Synchronization**: Periodically (e.g., every 50 steps), the threshold is updated via EMA using the mean of the top-$k$ routing values $\bar{\tau}_{topk}$ from the buffer: $\tau = (1-\gamma)\tau + \gamma\bar{\tau}_{topk}$, preventing long-term misalignment between the router and threshold optimization directions.
 
 ### Loss & Training
 Total Loss = Cross-Entropy Loss + $\lambda_{sd} \mathcal{L}_{sd}$ + $\lambda_{dp} \mathcal{L}_{dp}$

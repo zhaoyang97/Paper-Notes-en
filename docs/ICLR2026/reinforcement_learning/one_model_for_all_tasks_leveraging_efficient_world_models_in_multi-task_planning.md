@@ -19,8 +19,8 @@ content_hash: b70318927808b304
 # One Model for All Tasks: Leveraging Efficient World Models in Multi-Task Planning
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.07945](https://arxiv.org/abs/2509.07945)
-**Code**: [https://github.com/opendilab/LightZero](https://github.com/opendilab/LightZero)
+**arXiv**: [2509.07945](https://arxiv.org/abs/2509.07945)  
+**Code**: [https://github.com/opendilab/LightZero](https://github.com/opendilab/LightZero)  
 **Area**: Multi-Task Reinforcement Learning / World Models
 **Keywords**: multitask RL, world model, MoE, MCTS, plasticity collapse, dynamic parameter scaling
 

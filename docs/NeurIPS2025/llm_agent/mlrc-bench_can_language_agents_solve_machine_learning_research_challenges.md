@@ -18,8 +18,8 @@ content_hash: 154f96df33dfe6ea
 # MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.09702](https://arxiv.org/abs/2504.09702)
-**Code**: [HuggingFace](https://huggingface.co/spaces/launch/MLRC_Bench)
+**arXiv**: [2504.09702](https://arxiv.org/abs/2504.09702)  
+**Code**: [HuggingFace](https://huggingface.co/spaces/launch/MLRC_Bench)  
 **Area**: LLM Agent / AI for Science
 **Keywords**: Research Agent, Benchmark, ML Competition, Methodological Innovation, LLM-as-Judge
 

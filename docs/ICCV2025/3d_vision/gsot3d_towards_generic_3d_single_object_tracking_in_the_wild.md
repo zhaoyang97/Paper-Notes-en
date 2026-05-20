@@ -19,8 +19,8 @@ content_hash: 9b79844e94e6c77d
 # GSOT3D: Towards Generic 3D Single Object Tracking in the Wild
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.02129](https://arxiv.org/abs/2412.02129)
-**Code**: [ailovejinx/GSOT3D](https://github.com/ailovejinx/GSOT3D)
+**arXiv**: [2412.02129](https://arxiv.org/abs/2412.02129)  
+**Code**: [ailovejinx/GSOT3D](https://github.com/ailovejinx/GSOT3D)  
 **Area**: 3D Vision
 **Keywords**: 3D single object tracking, generic tracking, point cloud, multimodal, benchmark dataset, 9DoF
 

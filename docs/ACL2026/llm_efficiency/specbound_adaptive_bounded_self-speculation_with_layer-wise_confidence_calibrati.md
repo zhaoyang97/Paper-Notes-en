@@ -17,8 +17,8 @@ content_hash: 31313e65301c7e73
 # SpecBound: Adaptive Bounded Self-Speculation with Layer-wise Confidence Calibration
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12247](https://arxiv.org/abs/2604.12247)
-**Code**: [GitHub](https://github.com/ictnlp/SpecBound)
+**arXiv**: [2604.12247](https://arxiv.org/abs/2604.12247)  
+**Code**: [GitHub](https://github.com/ictnlp/SpecBound)  
 **Area**: LLM Efficiency
 **Keywords**: Speculative Decoding, Self-Draft, Early Exit, Confidence Calibration, Inference Acceleration
 

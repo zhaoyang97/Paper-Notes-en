@@ -18,8 +18,8 @@ content_hash: d79602a312c40f37
 # KEC: Hierarchical Textual Knowledge for Enhanced Image Clustering
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.11144](https://arxiv.org/abs/2604.11144)
-**Code**: None
+**arXiv**: [2604.11144](https://arxiv.org/abs/2604.11144)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Image Clustering, Textual Knowledge, Large Language Models, CLIP, Discriminative Attributes
 

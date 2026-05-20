@@ -18,8 +18,8 @@ content_hash: 35bffa62da240d1e
 # Enhanced Continual Learning of Vision-Language Models with Model Fusion
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.10705](https://arxiv.org/abs/2503.10705)
-**Code**: [GitHub](https://github.com/zhangzicong518/ConDU)
+**arXiv**: [2503.10705](https://arxiv.org/abs/2503.10705)  
+**Code**: [GitHub](https://github.com/zhangzicong518/ConDU)  
 **Area**: Multimodal VLM
 **Keywords**: Continual Learning, Model Fusion, Catastrophic Forgetting, CLIP, Zero-Shot Capability Preservation
 

@@ -18,8 +18,8 @@ content_hash: 858e00665a1d15f5
 # Copy-Paste to Mitigate Large Language Model Hallucinations
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00508](https://arxiv.org/abs/2510.00508)
-**Code**: [https://github.com/longyongchao/CopyPasteLLM](https://github.com/longyongchao/CopyPasteLLM)
+**arXiv**: [2510.00508](https://arxiv.org/abs/2510.00508)  
+**Code**: [https://github.com/longyongchao/CopyPasteLLM](https://github.com/longyongchao/CopyPasteLLM)  
 **Area**: Causal Reasoning
 **Keywords**: Hallucination Mitigation, RAG, Copy-Paste, DPO, Faithfulness
 

@@ -18,8 +18,8 @@ content_hash: 53be015e6e24850d
 # CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.07938](https://arxiv.org/abs/2503.07938)
-**Code**: None
+**arXiv**: [2503.07938](https://arxiv.org/abs/2503.07938)  
+**Code**: None  
 **Area**: Image Generation / Fairness
 **Keywords**: fair disentanglement, VAE, conditional mutual information, correlation-aware, counterfactual fairness
 

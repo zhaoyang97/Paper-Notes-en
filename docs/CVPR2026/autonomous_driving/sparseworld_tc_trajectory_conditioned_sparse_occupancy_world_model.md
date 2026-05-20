@@ -18,8 +18,8 @@ content_hash: 9e88554a3b8b6c08
 # SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.22039](https://arxiv.org/abs/2511.22039)
-**Code**: [GitHub](https://github.com/MrPicklesGG/SparseWorld)
+**arXiv**: [2511.22039](https://arxiv.org/abs/2511.22039)  
+**Code**: [GitHub](https://github.com/MrPicklesGG/SparseWorld)  
 **Area**: Autonomous Driving / World Models
 **Keywords**: 4D occupancy prediction, world model, sparse representation, trajectory conditioning, pure attention architecture
 

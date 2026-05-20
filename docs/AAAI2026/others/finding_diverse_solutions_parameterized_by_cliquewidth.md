@@ -18,9 +18,9 @@ content_hash: f35d055d7db37e03
 # Finding Diverse Solutions Parameterized by Cliquewidth
 
 **Conference**: AAAI 2026
-**arXiv**: [2405.20931](https://arxiv.org/abs/2405.20931)
+**arXiv**: [2405.20931](https://arxiv.org/abs/2405.20931)  
 **Authors**: Karolina Drabik, Tomáš Masařík (University of Warsaw)
-**Code**: Not released (purely theoretical work)
+**Code**: Not released (purely theoretical work)  
 **Area**: Other
 **Keywords**: Parameterized complexity, diverse solutions, cliquewidth, dynamic programming, MSO1 logic, Venn diversity measure
 

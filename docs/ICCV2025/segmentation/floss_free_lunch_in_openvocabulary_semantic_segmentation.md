@@ -19,8 +19,8 @@ content_hash: 86235135581dc867
 # FLOSS: Free Lunch in Open-vocabulary Semantic Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.10487](https://arxiv.org/abs/2504.10487)
-**Code**: [https://github.com/yasserben/FLOSS](https://github.com/yasserben/FLOSS)
+**arXiv**: [2504.10487](https://arxiv.org/abs/2504.10487)  
+**Code**: [https://github.com/yasserben/FLOSS](https://github.com/yasserben/FLOSS)  
 **Area**: Segmentation / Open-Vocabulary / Text Prompting
 **Keywords**: open-vocabulary segmentation, template selection, class-expert, entropy, plug-and-play, training-free
 

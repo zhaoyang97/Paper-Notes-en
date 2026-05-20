@@ -18,8 +18,8 @@ content_hash: 88f8443df381248e
 # Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.06749](https://arxiv.org/abs/2503.06749)
-**Code**: [GitHub](https://github.com/Osilly/Vision-R1)
+**arXiv**: [2503.06749](https://arxiv.org/abs/2503.06749)  
+**Code**: [GitHub](https://github.com/Osilly/Vision-R1)  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal Reasoning, Reinforcement Learning, Chain-of-Thought, GRPO, Cold-Start Initialization
 
@@ -49,9 +49,9 @@ A two-stage pipeline: (1) construct the Vision-R1-cold dataset → cold-start SF
 
 1. **Modality Bridging for Multimodal CoT Data Construction**: DeepSeek-R1 can generate human-like complex reasoning but cannot process images directly as a text-only model. The solution proceeds in three steps:
 
-   - Input image-text pairs into an MLLM to generate "pseudo-CoT" (containing image descriptions and reasoning processes), exposing richer visual details.
-   - Feed the "pseudo-CoT" along with the original image-text pair back into the MLLM to obtain detailed descriptions — achieving **modality bridging**.
-   - Pass the pure-text descriptions into DeepSeek-R1 to obtain high-quality complex CoT.
+    - Input image-text pairs into an MLLM to generate "pseudo-CoT" (containing image descriptions and reasoning processes), exposing richer visual details.
+    - Feed the "pseudo-CoT" along with the original image-text pair back into the MLLM to obtain detailed descriptions — achieving **modality bridging**.
+    - Pass the pure-text descriptions into DeepSeek-R1 to obtain high-quality complex CoT.
 
    After rule-based filtering, this yields the 200K Vision-R1-cold dataset, in which "Wait" appears 585K times (vs. 2.3K in LLaVA-CoT), demonstrating significantly richer self-reflection characteristics.
 

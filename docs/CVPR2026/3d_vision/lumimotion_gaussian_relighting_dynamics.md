@@ -18,8 +18,8 @@ content_hash: 9993eb7ac693fc1e
 # LumiMotion: Improving Gaussian Relighting with Scene Dynamics
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.10994](https://arxiv.org/abs/2604.10994)
-**Code**: [https://joaxkal.github.io/LumiMotion/](https://joaxkal.github.io/LumiMotion/)
+**arXiv**: [2604.10994](https://arxiv.org/abs/2604.10994)  
+**Code**: [https://joaxkal.github.io/LumiMotion/](https://joaxkal.github.io/LumiMotion/)  
 **Area**: 3D Vision
 **Keywords**: Inverse Rendering, 2D Gaussian Splatting, Dynamic Scenes, Material Estimation, Relighting
 

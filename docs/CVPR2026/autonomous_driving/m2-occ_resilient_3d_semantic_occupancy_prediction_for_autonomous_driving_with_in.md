@@ -18,8 +18,8 @@ content_hash: 84358337080c955d
 # M²-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09737](https://arxiv.org/abs/2603.09737)
-**Code**: [github.com/qixi7up/M2-Occ](https://github.com/qixi7up/M2-Occ)
+**arXiv**: [2603.09737](https://arxiv.org/abs/2603.09737)  
+**Code**: [github.com/qixi7up/M2-Occ](https://github.com/qixi7up/M2-Occ)  
 **Area**: Autonomous Driving / 3D Perception
 **Keywords**: Semantic occupancy prediction, sensor failure, missing view reconstruction, semantic prototypes, robust perception
 

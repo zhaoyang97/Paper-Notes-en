@@ -18,8 +18,8 @@ content_hash: 33d898047103adc4
 # PVChat: Personalized Video Chat with One-Shot Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.17069](https://arxiv.org/abs/2503.17069)
-**Code**: [https://github.com/PVChat](https://github.com/PVChat)
+**arXiv**: [2503.17069](https://arxiv.org/abs/2503.17069)  
+**Code**: [https://github.com/PVChat](https://github.com/PVChat)  
 **Area**: Medical Imaging
 **Keywords**: personalized video LLM, one-shot learning, mixture-of-heads, video question answering, identity-aware
 

@@ -18,8 +18,8 @@ content_hash: 1a77e3d6d4ec6904
 # FusionAgent: A Multimodal Agent with Dynamic Model Selection for Human Recognition
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26908](https://arxiv.org/abs/2603.26908)
-**Code**: [https://github.com/FusionAgent](https://github.com/FusionAgent) (project page)
+**arXiv**: [2603.26908](https://arxiv.org/abs/2603.26908)  
+**Code**: [https://github.com/FusionAgent](https://github.com/FusionAgent) (project page)  
 **Area**: Human Body Understanding
 **Keywords**: model fusion, multimodal large language model, dynamic model selection, biometric recognition, reinforcement fine-tuning
 

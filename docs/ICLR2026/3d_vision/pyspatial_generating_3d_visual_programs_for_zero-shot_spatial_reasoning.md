@@ -18,8 +18,8 @@ content_hash: 86a1855ecc3baa48
 # pySpatial: Generating 3D Visual Programs for Zero-Shot Spatial Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00905](https://arxiv.org/abs/2603.00905)
-**Code**: [Project Page](https://pySpatial.github.io)
+**arXiv**: [2603.00905](https://arxiv.org/abs/2603.00905)  
+**Code**: [Project Page](https://pySpatial.github.io)  
 **Area**: 3D Vision
 **Keywords**: Visual Programming, 3D Reconstruction, Spatial Reasoning, Zero-Shot, Robot Navigation
 

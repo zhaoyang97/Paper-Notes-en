@@ -18,8 +18,8 @@ content_hash: 940ac3c58314e759
 # UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.18094](https://arxiv.org/abs/2509.18094)
-**Code**: [Project Page](https://polyu-chenlab.github.io/unipixel/)
+**arXiv**: [2509.18094](https://arxiv.org/abs/2509.18094)  
+**Code**: [Project Page](https://polyu-chenlab.github.io/unipixel/)  
 **Area**: Image Segmentation
 **Keywords**: Multimodal Large Models, Pixel-Level Reasoning, Unified Object Referring and Segmentation, Object Memory Bank, Video Understanding
 

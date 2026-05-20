@@ -18,8 +18,8 @@ content_hash: c66e5bc04ddc1b09
 # Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.07951](https://arxiv.org/abs/2512.07951)
-**Code**: [Project Page](https://aim-uofa.github.io/LivingSwap)
+**arXiv**: [2512.07951](https://arxiv.org/abs/2512.07951)  
+**Code**: [Project Page](https://aim-uofa.github.io/LivingSwap)  
 **Area**: Diffusion Models / Video Editing
 **Keywords**: Face swapping, video reference guidance, keyframe injection, temporal stitching, cinematic quality
 

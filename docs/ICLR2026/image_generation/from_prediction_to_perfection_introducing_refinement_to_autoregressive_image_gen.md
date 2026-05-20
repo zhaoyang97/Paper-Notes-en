@@ -18,8 +18,8 @@ content_hash: 092492259160538d
 # From Prediction to Perfection: Introducing Refinement to Autoregressive Image Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.16324](https://arxiv.org/abs/2505.16324)
-**Code**: None
+**arXiv**: [2505.16324](https://arxiv.org/abs/2505.16324)  
+**Code**: None  
 **Area**: Image Generation / Autoregressive Models
 **Keywords**: autoregressive image generation, next-tensor prediction, discrete diffusion noise, iterative refinement, plug-and-play
 

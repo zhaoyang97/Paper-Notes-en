@@ -18,8 +18,8 @@ content_hash: 0dbaaac908d19b65
 # RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.22275](https://arxiv.org/abs/2511.22275)
-**Code**: [github.com/CGCL-codes/RecToM](https://github.com/CGCL-codes/RecToM)
+**arXiv**: [2511.22275](https://arxiv.org/abs/2511.22275)  
+**Code**: [github.com/CGCL-codes/RecToM](https://github.com/CGCL-codes/RecToM)  
 **Area**: Video Understanding / Conversational Recommendation
 **Keywords**: Theory of Mind, Conversational Recommender Systems, LLM Evaluation, Cognitive Reasoning, Behavioral Prediction
 

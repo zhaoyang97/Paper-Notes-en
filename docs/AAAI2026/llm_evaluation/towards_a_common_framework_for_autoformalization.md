@@ -18,8 +18,8 @@ content_hash: a23a9e69e90f62b4
 # Towards a Common Framework for Autoformalization
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.09810](https://arxiv.org/abs/2509.09810)
-**Code**: None
+**arXiv**: [2509.09810](https://arxiv.org/abs/2509.09810)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: autoformalization, formalization, LLM, semantic parsing, formal verification
 

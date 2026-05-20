@@ -18,8 +18,8 @@ content_hash: 9870537d64b7de91
 # Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22615](https://arxiv.org/abs/2507.22615)
-**Code**: N/A
+**arXiv**: [2507.22615](https://arxiv.org/abs/2507.22615)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: long-tail trajectory prediction, generative active learning, controllable diffusion model, traffic simulator, data augmentation
 

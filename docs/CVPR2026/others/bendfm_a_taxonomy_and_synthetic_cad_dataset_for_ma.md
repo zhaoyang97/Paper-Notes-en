@@ -17,8 +17,8 @@ content_hash: 72ee4ac68ba273ac
 # BenDFM: A Taxonomy and Synthetic CAD Dataset for Manufacturability Assessment in Sheet Metal Bending
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13102](https://arxiv.org/abs/2603.13102)
-**Code**: [github.com/UGent-CVAMO/bendfm](https://github.com/UGent-CVAMO/bendfm)
+**arXiv**: [2603.13102](https://arxiv.org/abs/2603.13102)  
+**Code**: [github.com/UGent-CVAMO/bendfm](https://github.com/UGent-CVAMO/bendfm)  
 **Area**: CAD / Intelligent Manufacturing / Geometric Deep Learning
 **Keywords**: Manufacturability Assessment, Sheet Metal Bending, Synthetic CAD Dataset, DFM Taxonomy, B-rep Learning
 

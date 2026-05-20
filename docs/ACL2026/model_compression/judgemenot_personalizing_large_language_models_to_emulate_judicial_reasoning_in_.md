@@ -18,8 +18,8 @@ content_hash: bd7d780d1e343fb0
 # JudgeMeNot: Personalizing Large Language Models to Emulate Judicial Reasoning in Hebrew
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18041](https://arxiv.org/abs/2604.18041)
-**Code**: [GitHub](https://github.com/Socially-Embedded-Lab/JudgeMeNot)
+**arXiv**: [2604.18041](https://arxiv.org/abs/2604.18041)  
+**Code**: [GitHub](https://github.com/Socially-Embedded-Lab/JudgeMeNot)  
 **Area**: Model Compression
 **Keywords**: LLM Personalization, Judicial Reasoning, Low-Resource Languages, Parameter-Efficient Fine-Tuning, Synthetic Instruction Data
 

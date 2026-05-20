@@ -18,8 +18,8 @@ content_hash: dffe4be723b790d9
 # Quantization with Unified Adaptive Distillation to enable multi-LoRA based one-for-all Generative Vision Models on edge
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29535](https://arxiv.org/abs/2603.29535)
-**Code**: None
+**arXiv**: [2603.29535](https://arxiv.org/abs/2603.29535)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: LoRA Quantization, Edge Deployment, Knowledge Distillation, Diffusion Models, Runtime Task Switching
 

@@ -18,8 +18,8 @@ content_hash: e1e7d81cbe62469c
 # Token Distillation: Attention-Aware Input Embeddings for New Tokens
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.20133](https://arxiv.org/abs/2505.20133)
-**Code**: [https://github.com/konstantinjdobler/token-distillation](https://github.com/konstantinjdobler/token-distillation)
+**arXiv**: [2505.20133](https://arxiv.org/abs/2505.20133)  
+**Code**: [https://github.com/konstantinjdobler/token-distillation](https://github.com/konstantinjdobler/token-distillation)  
 **Area**: Model Compression
 **Keywords**: Vocabulary Expansion, Token Embedding Initialization, Knowledge Distillation, Domain Adaptation, Language Adaptation
 

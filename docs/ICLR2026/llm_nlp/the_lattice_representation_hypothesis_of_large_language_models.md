@@ -19,7 +19,7 @@ content_hash: 45eeaf3a9106eafb
 # The Lattice Representation Hypothesis of Large Language Models
 
 **Conference**: ICLR2026
-**arXiv**: [2603.01227](https://arxiv.org/abs/2603.01227)
+**arXiv**: [2603.01227](https://arxiv.org/abs/2603.01227)  
 **Authors**: Bo Xiong (Stanford University)
 **Area**: LLM/NLP (Representation Learning / Interpretability)
 **Keywords**: Linear Representation Hypothesis, Formal Concept Analysis, Concept Lattice, Half-Space Model, Embedding Geometry, Symbolic Reasoning

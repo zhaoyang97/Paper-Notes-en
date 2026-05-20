@@ -18,8 +18,8 @@ content_hash: 6fb33176b6dec331
 # SD-VLM: Spatial Measuring and Understanding with Depth-Encoded Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17664](https://arxiv.org/abs/2509.17664)
-**Code**: [GitHub](https://github.com/cpystan/SD-VLM)
+**arXiv**: [2509.17664](https://arxiv.org/abs/2509.17664)  
+**Code**: [GitHub](https://github.com/cpystan/SD-VLM)  
 **Area**: Multimodal VLM
 **Keywords**: Spatial reasoning, depth encoding, VLM, quantitative spatial understanding, 3D perception
 

@@ -18,8 +18,8 @@ content_hash: 49f9895c218c141f
 # What Does It Take to Build a Performant Selective Classifier?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20242](https://arxiv.org/abs/2510.20242)
-**Code**: Not available
+**arXiv**: [2510.20242](https://arxiv.org/abs/2510.20242)  
+**Code**: Not available  
 **Area**: Reliable Machine Learning / Selective Classification
 **Keywords**: selective classification, confidence calibration, oracle bound, error decomposition, uncertainty estimation
 
@@ -66,9 +66,9 @@ $$\hat{\Delta}(c) \leq \underbrace{\varepsilon_{\text{Bayes}}(c)}_{\text{irreduc
 
 2. **Limited Effectiveness of Monotone Calibration (Section 3.4)**: A key insight—monotone post-hoc calibration methods (e.g., isotonic regression, the monotone component of temperature scaling) preserve score rankings and thus leave $A_c$ unchanged, leaving $\Delta(c)$ unchanged. Although temperature scaling may produce **weak** non-monotone re-ranking effects through the nonlinearity of softmax, this effect is fundamentally limited. Truly reducing the gap requires methods that alter rankings:
 
-   - Deep Ensembles: alter rankings through multi-model aggregation.
-   - SAT: alter rankings through relabeling.
-   - Feature-aware calibration heads: directly predict correctness using hidden-layer features.
+    - Deep Ensembles: alter rankings through multi-model aggregation.
+    - SAT: alter rankings through relabeling.
+    - Feature-aware calibration heads: directly predict correctness using hidden-layer features.
 
 3. **Characterization of Ranking Distance (Remark)**: The paper defines mis-ordered mass:
 

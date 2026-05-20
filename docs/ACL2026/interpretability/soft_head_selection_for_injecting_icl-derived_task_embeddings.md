@@ -18,8 +18,8 @@ content_hash: 688777e2536325ab
 # SITE: Soft Head Selection for Injecting ICL-Derived Task Embeddings
 
 **Conference**: ACL 2026
-**arXiv**: [2507.20906](https://arxiv.org/abs/2507.20906)
-**Code**: [https://github.com/SNU-DRL/Soft_Injection](https://github.com/SNU-DRL/Soft_Injection)
+**arXiv**: [2507.20906](https://arxiv.org/abs/2507.20906)  
+**Code**: [https://github.com/SNU-DRL/Soft_Injection](https://github.com/SNU-DRL/Soft_Injection)  
 **Area**: Interpretability / Parameter-Efficient Adaptation
 **Keywords**: Attention head selection, task embeddings, in-context learning, activation patching, parameter efficiency
 

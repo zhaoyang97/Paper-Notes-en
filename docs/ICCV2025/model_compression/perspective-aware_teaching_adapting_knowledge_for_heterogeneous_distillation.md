@@ -18,8 +18,8 @@ content_hash: fe75ac1f19303c15
 # Perspective-Aware Teaching: Adapting Knowledge for Heterogeneous Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.08885](https://arxiv.org/abs/2501.08885)
-**Code**: [https://github.com/jimmylin0979/PAT.git](https://github.com/jimmylin0979/PAT.git)
+**arXiv**: [2501.08885](https://arxiv.org/abs/2501.08885)  
+**Code**: [https://github.com/jimmylin0979/PAT.git](https://github.com/jimmylin0979/PAT.git)  
 **Area**: Model Compression
 **Keywords**: Knowledge Distillation, Heterogeneous Distillation, Perspective Alignment, Adaptive Teacher, Feature Distillation
 

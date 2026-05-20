@@ -18,8 +18,8 @@ content_hash: f6870b4410ab34e7
 # Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language
 
 **Conference**: ACL 2026
-**arXiv**: [2604.15841](https://arxiv.org/abs/2604.15841)
-**Code**: [GitHub](https://github.com/csdq777/Mouse)
+**arXiv**: [2604.15841](https://arxiv.org/abs/2604.15841)  
+**Code**: [GitHub](https://github.com/csdq777/Mouse)  
 **Area**: LLM Evaluation
 **Keywords**: Chouxiang language, internet subculture language, LLM benchmarking, Chinese internet slang, cross-cultural understanding
 

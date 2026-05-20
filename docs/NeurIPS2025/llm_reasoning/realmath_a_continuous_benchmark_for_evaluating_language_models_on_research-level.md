@@ -18,8 +18,8 @@ content_hash: b28014ed11bacd57
 # RealMath: A Continuous Benchmark for Evaluating Language Models on Research-Level Mathematics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12575](https://arxiv.org/abs/2505.12575)
-**Code**: [GitHub](https://github.com/) / [HuggingFace](https://huggingface.co/)
+**arXiv**: [2505.12575](https://arxiv.org/abs/2505.12575)  
+**Code**: [GitHub](https://github.com/) / [HuggingFace](https://huggingface.co/)  
 **Area**: LLM Reasoning / Mathematical Benchmark Evaluation
 **Keywords**: mathematical reasoning, research-level mathematics, benchmark, data contamination, automatic evaluation
 

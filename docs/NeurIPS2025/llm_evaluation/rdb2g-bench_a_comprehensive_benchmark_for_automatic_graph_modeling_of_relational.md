@@ -18,8 +18,8 @@ content_hash: 21790e3b8be9504c
 # RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01360](https://arxiv.org/abs/2506.01360)
-**Code**: [github.com/chlehdwon/RDB2G-Bench](https://github.com/chlehdwon/RDB2G-Bench)
+**arXiv**: [2506.01360](https://arxiv.org/abs/2506.01360)  
+**Code**: [github.com/chlehdwon/RDB2G-Bench](https://github.com/chlehdwon/RDB2G-Bench)  
 **Area**: LLM Evaluation
 **Keywords**: relational databases, graph modeling, benchmark, graph neural networks, automatic modeling
 

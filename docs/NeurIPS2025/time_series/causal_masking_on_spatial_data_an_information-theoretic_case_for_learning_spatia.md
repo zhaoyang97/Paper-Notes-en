@@ -20,8 +20,8 @@ content_hash: f3a9526d7bccc114
 # Causal Masking on Spatial Data: An Information-Theoretic Case for Learning Spatial Datasets with Unimodal Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.27009](https://arxiv.org/abs/2510.27009)
-**Code**: Not open-sourced
+**arXiv**: [2510.27009](https://arxiv.org/abs/2510.27009)  
+**Code**: Not open-sourced  
 **Area**: Time Series / Spatial Data
 **Keywords**: causal masking, spatial data, chess, FEN encoding, bidirectional attention, information theory, unimodal LLM
 

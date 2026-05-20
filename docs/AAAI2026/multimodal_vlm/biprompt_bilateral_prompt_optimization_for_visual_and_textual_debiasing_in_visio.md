@@ -18,8 +18,8 @@ content_hash: 54b099c55acd23d5
 # BiPrompt: Bilateral Prompt Optimization for Visual and Textual Debiasing in Vision-Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.02147](https://arxiv.org/abs/2601.02147)
-**Code**: None
+**arXiv**: [2601.02147](https://arxiv.org/abs/2601.02147)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Vision-language model debiasing, test-time adaptation, causal inference, prompt optimization, spurious correlations
 

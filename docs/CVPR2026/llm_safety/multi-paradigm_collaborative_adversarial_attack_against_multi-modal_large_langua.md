@@ -18,8 +18,8 @@ content_hash: 4de6bcf77896db8d
 # Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04846](https://arxiv.org/abs/2603.04846)
-**Code**: [LiYuanBoJNU/MPCAttack](https://github.com/LiYuanBoJNU/MPCAttack)
+**arXiv**: [2603.04846](https://arxiv.org/abs/2603.04846)  
+**Code**: [LiYuanBoJNU/MPCAttack](https://github.com/LiYuanBoJNU/MPCAttack)  
 **Area**: AI Safety / Adversarial Attack
 **Keywords**: adversarial attack, MLLM, Transferability, Multi-Paradigm, Collaborative Optimization
 

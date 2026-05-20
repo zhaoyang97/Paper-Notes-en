@@ -18,8 +18,8 @@ content_hash: d26a4243658e9587
 # Jasmine: Harnessing Diffusion Prior for Self-Supervised Depth Estimation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.15905](https://arxiv.org/abs/2503.15905)
-**Code**: Available (Project Page)
+**arXiv**: [2503.15905](https://arxiv.org/abs/2503.15905)  
+**Code**: Available (Project Page)  
 **Area**: 3D Vision / Depth Estimation
 **Keywords**: Self-supervised depth estimation, Stable Diffusion, diffusion prior, Mix-Batch Image Reconstruction, Scale-Shift GRU
 

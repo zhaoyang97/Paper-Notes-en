@@ -18,8 +18,8 @@ content_hash: 97fb1c7da3730e9d
 # RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation
 
 **Conference**: CVPR2026
-**arXiv**: [2603.03617](https://arxiv.org/abs/2603.03617)
-**Code**: [IdolLab/RAGTrack](https://github.com/IdolLab/RAGTrack)
+**arXiv**: [2603.03617](https://arxiv.org/abs/2603.03617)  
+**Code**: [IdolLab/RAGTrack](https://github.com/IdolLab/RAGTrack)  
 **Area**: Video Understanding / RGBT Tracking
 **Keywords**: RGBT Tracking, Retrieval-Augmented Generation, Multimodal Fusion, Language-Guided Tracking, Adaptive Token Fusion
 

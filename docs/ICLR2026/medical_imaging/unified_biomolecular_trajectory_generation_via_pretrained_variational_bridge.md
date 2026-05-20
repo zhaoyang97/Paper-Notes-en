@@ -18,8 +18,8 @@ content_hash: a8041aa8c9f9e7f8
 # Unified Biomolecular Trajectory Generation via Pretrained Variational Bridge
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07588](https://arxiv.org/abs/2602.07588)
-**Code**: None
+**arXiv**: [2602.07588](https://arxiv.org/abs/2602.07588)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: molecular dynamics, trajectory generation, variational bridge matching, pretraining, reinforcement learning fine-tuning
 

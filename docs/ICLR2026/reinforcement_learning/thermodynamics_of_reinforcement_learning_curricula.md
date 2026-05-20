@@ -19,8 +19,8 @@ content_hash: 0d37dc2fa6d7a1fd
 # Thermodynamics of Reinforcement Learning Curricula
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.12324](https://arxiv.org/abs/2603.12324)
-**Code**: None
+**arXiv**: [2603.12324](https://arxiv.org/abs/2603.12324)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Curriculum Learning, Non-equilibrium Thermodynamics, Maximum Entropy RL, Temperature Annealing, Riemannian Geometry, Geodesics
 

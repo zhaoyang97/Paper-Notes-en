@@ -18,8 +18,8 @@ content_hash: 89b05f953fbeb6db
 # Post-hoc Probabilistic Vision-Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2412.06014](https://arxiv.org/abs/2412.06014)
-**Code**: Available (Project page)
+**arXiv**: [2412.06014](https://arxiv.org/abs/2412.06014)  
+**Code**: Available (Project page)  
 **Area**: Multimodal VLM / Uncertainty Quantification
 **Keywords**: vision-language models, uncertainty quantification, Bayesian inference, Laplace approximation, active learning
 

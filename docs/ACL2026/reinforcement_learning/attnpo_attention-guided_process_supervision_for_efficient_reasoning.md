@@ -17,8 +17,8 @@ content_hash: bc14b613bb42f360
 # AttnPO: Attention-Guided Process Supervision for Efficient Reasoning
 
 **Conference**: ACL 2026
-**arXiv**: [2602.09953](https://arxiv.org/abs/2602.09953)
-**Code**: [GitHub](https://github.com/NieSYsc20/AttnPO)
+**arXiv**: [2602.09953](https://arxiv.org/abs/2602.09953)  
+**Code**: [GitHub](https://github.com/NieSYsc20/AttnPO)  
 **Area**: Reinforcement Learning / Efficient Reasoning
 **Keywords**: overthinking, process supervision, attention mechanism, reinforcement learning, reasoning efficiency
 

@@ -18,8 +18,8 @@ content_hash: 054e5bfccd029afd
 # GeoBridge: A Semantic-Anchored Multi-View Foundation Model for Geo-Localization
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.02697](https://arxiv.org/abs/2512.02697)
-**Code**: Coming soon
+**arXiv**: [2512.02697](https://arxiv.org/abs/2512.02697)  
+**Code**: Coming soon  
 **Area**: Self-supervised
 **Keywords**: Cross-view geo-localization, multi-view matching, semantic anchoring, UAV navigation, cross-modal retrieval
 
@@ -42,19 +42,19 @@ During training, the semantic anchoring mechanism simultaneously aligns text–v
 ### Key Designs
 
 1. **Semantic Anchoring Mechanism**:
-   - **Function**: Bridges multi-view feature spaces through textual descriptions.
-   - **Mechanism**: UAV, street-view panorama, and satellite images at each location are distilled into a unified, location- and viewpoint-aware textual description. Contrastive learning simultaneously pulls together text–visual pairs and view–view pairs during training.
-   - **Design Motivation**: Text serves as a naturally modality-agnostic representation that unifies visually disparate viewpoints within a common semantic space.
+    - **Function**: Bridges multi-view feature spaces through textual descriptions.
+    - **Mechanism**: UAV, street-view panorama, and satellite images at each location are distilled into a unified, location- and viewpoint-aware textual description. Contrastive learning simultaneously pulls together text–visual pairs and view–view pairs during training.
+    - **Design Motivation**: Text serves as a naturally modality-agnostic representation that unifies visually disparate viewpoints within a common semantic space.
 
 2. **GeoLoc Dataset**:
-   - **Function**: The first large-scale, fully aligned multi-view geo-localization dataset.
-   - **Mechanism**: Contains 50K+ locations, each with strictly co-located UAV imagery, Google Street View panoramas, and satellite images spanning 36 countries, accompanied by a unified textual description per location. A non-overlapping geographic coordinate design ensures rigorous evaluation.
-   - **Design Motivation**: Existing datasets are limited to the dual-view satellite-centric paradigm and lack fully aligned multi-view triplets with textual descriptions.
+    - **Function**: The first large-scale, fully aligned multi-view geo-localization dataset.
+    - **Mechanism**: Contains 50K+ locations, each with strictly co-located UAV imagery, Google Street View panoramas, and satellite images spanning 36 countries, accompanied by a unified textual description per location. A non-overlapping geographic coordinate design ensures rigorous evaluation.
+    - **Design Motivation**: Existing datasets are limited to the dual-view satellite-centric paradigm and lack fully aligned multi-view triplets with textual descriptions.
 
 3. **Bidirectional Cross-View Matching**:
-   - **Function**: Supports retrieval for arbitrary view pairs, with UAV–street-view matching introduced as a new task.
-   - **Mechanism**: Through semantic-anchored training, the model learns viewpoint-invariant location representations. At inference time, images from any two viewpoints can be directly matched via feature similarity without text involvement.
-   - **Design Motivation**: UAV–street-view matching addresses clear real-world needs in disaster response, low-altitude logistics verification, and infrastructure inspection.
+    - **Function**: Supports retrieval for arbitrary view pairs, with UAV–street-view matching introduced as a new task.
+    - **Mechanism**: Through semantic-anchored training, the model learns viewpoint-invariant location representations. At inference time, images from any two viewpoints can be directly matched via feature similarity without text involvement.
+    - **Design Motivation**: UAV–street-view matching addresses clear real-world needs in disaster response, low-altitude logistics verification, and infrastructure inspection.
 
 ### Loss & Training
 Multi-view and cross-modal contrastive learning losses combining text–visual alignment and view–view alignment objectives.

@@ -18,8 +18,8 @@ content_hash: 3c256327f39844cc
 # Gemstones: A Model Suite for Multi-Faceted Scaling Laws
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.06857](https://arxiv.org/abs/2502.06857)
-**Code**: [GitHub](https://github.com/mcleish7/gemstone-scaling-laws)
+**arXiv**: [2502.06857](https://arxiv.org/abs/2502.06857)  
+**Code**: [GitHub](https://github.com/mcleish7/gemstone-scaling-laws)  
 **Area**: Scaling Laws / Model Architecture
 **Keywords**: scaling laws, width-depth ratio, compute-optimality, model design, convex hull fitting
 

@@ -18,8 +18,8 @@ content_hash: eca4e214e4e4a60c
 # Online Reasoning Video Segmentation with Just-in-Time Digital Twins
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.21056](https://arxiv.org/abs/2503.21056)
-**Code**: None
+**arXiv**: [2503.21056](https://arxiv.org/abs/2503.21056)  
+**Code**: None  
 **Area**: Video Segmentation / Reasoning Segmentation
 **Keywords**: Reasoning Segmentation, Digital Twin, Video Understanding, Multi-Agent Framework, Online Processing
 

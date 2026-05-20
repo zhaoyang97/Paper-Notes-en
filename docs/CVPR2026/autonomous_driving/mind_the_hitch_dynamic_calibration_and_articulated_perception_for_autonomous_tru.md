@@ -18,8 +18,8 @@ content_hash: 8a044f7bc17ea944
 # Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23711](https://arxiv.org/abs/2603.23711)
-**Code**: Coming soon (the paper states that the dataset, development toolkit, and source code will be released)
+**arXiv**: [2603.23711](https://arxiv.org/abs/2603.23711)  
+**Code**: Coming soon (the paper states that the dataset, development toolkit, and source code will be released)  
 **Area**: 3D Vision / Autonomous Driving
 **Keywords**: Autonomous trucks, dynamic calibration, articulated perception, trailer pose estimation, BEV detection
 

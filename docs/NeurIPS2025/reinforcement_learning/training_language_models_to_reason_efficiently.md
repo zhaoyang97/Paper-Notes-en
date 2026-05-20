@@ -17,8 +17,8 @@ content_hash: fd4c8a454c87ddaa
 # Training Language Models to Reason Efficiently
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.04463](https://arxiv.org/abs/2502.04463)
-**Code**: [github.com/Zanette-Labs/efficient-reasoning](https://github.com/Zanette-Labs/efficient-reasoning)
+**arXiv**: [2502.04463](https://arxiv.org/abs/2502.04463)  
+**Code**: [github.com/Zanette-Labs/efficient-reasoning](https://github.com/Zanette-Labs/efficient-reasoning)  
 **Area**: Reinforcement Learning
 **Keywords**: Efficient Reasoning, CoT Compression, Length Penalty, Reinforcement Learning, Test-Time Compute
 

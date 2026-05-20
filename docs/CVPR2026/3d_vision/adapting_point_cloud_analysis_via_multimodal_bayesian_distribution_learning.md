@@ -18,8 +18,8 @@ content_hash: 21f57b17a5b55ac1
 # Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22070](https://arxiv.org/abs/2603.22070)
-**Code**: N/A
+**arXiv**: [2603.22070](https://arxiv.org/abs/2603.22070)  
+**Code**: N/A  
 **Area**: 3D Vision / Point Cloud Analysis
 **Keywords**: Test-time adaptation, point cloud recognition, Bayesian inference, multimodal distribution learning, zero-shot generalization
 

@@ -18,8 +18,8 @@ content_hash: 0a03d78f43409218
 # Scaling Language-Free Visual Representation Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.01017](https://arxiv.org/abs/2504.01017)
-**Code**: [https://davidfan.io/webssl/](https://davidfan.io/webssl/)
+**arXiv**: [2504.01017](https://arxiv.org/abs/2504.01017)  
+**Code**: [https://davidfan.io/webssl/](https://davidfan.io/webssl/)  
 **Area**: Self-Supervised Learning / Representation Learning
 **Keywords**: visual self-supervised learning, CLIP contrastive, scaling law, VQA evaluation, language-free supervision
 

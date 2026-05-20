@@ -18,8 +18,8 @@ content_hash: ca514c9a72b12167
 # ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.11508](https://arxiv.org/abs/2601.11508)
-**Code**: [Project Page](https://www.easteine.com/rescene4d/)
+**arXiv**: [2601.11508](https://arxiv.org/abs/2601.11508)  
+**Code**: [Project Page](https://www.easteine.com/rescene4d/)  
 **Area**: Autonomous Driving / 3D Vision / Instance Segmentation
 **Keywords**: 4D Semantic Instance Segmentation, Temporal Consistency, Indoor Scene Change, Contrastive Learning, Spatio-Temporal Queries
 

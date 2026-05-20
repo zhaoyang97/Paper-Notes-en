@@ -18,8 +18,8 @@ content_hash: 6e0f1908f4ab8658
 # Consistent Time-of-Flight Depth Denoising via Graph-Informed Geometric Attention
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23542](https://arxiv.org/abs/2506.23542)
-**Code**: [github.com/davidweidawang/GIGA-ToF](https://github.com/davidweidawang/GIGA-ToF)
+**arXiv**: [2506.23542](https://arxiv.org/abs/2506.23542)  
+**Code**: [github.com/davidweidawang/GIGA-ToF](https://github.com/davidweidawang/GIGA-ToF)  
 **Area**: Depth Map Denoising / Computational Imaging
 **Keywords**: ToF depth denoising, graph signal processing, geometric attention, algorithm unrolling, temporal consistency
 

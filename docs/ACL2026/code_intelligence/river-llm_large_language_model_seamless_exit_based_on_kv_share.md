@@ -18,8 +18,8 @@ content_hash: 1cb41e0310a45e95
 # River-LLM: Large Language Model Seamless Exit Based on KV Share
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18396](https://arxiv.org/abs/2604.18396)
-**Code**: N/A
+**arXiv**: [2604.18396](https://arxiv.org/abs/2604.18396)  
+**Code**: N/A  
 **Area**: Code Intelligence
 **Keywords**: Early Exit, KV Cache, Dynamic Inference, Model Acceleration, Quantization
 

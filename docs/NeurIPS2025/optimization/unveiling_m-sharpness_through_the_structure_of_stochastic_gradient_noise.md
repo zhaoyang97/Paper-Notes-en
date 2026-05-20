@@ -18,8 +18,8 @@ content_hash: 024eefd777cc1983
 # Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.18001](https://arxiv.org/abs/2509.18001)
-**Code**: Not available
+**arXiv**: [2509.18001](https://arxiv.org/abs/2509.18001)  
+**Code**: Not available  
 **Area**: Optimization
 **Keywords**: SAM, m-sharpness, stochastic gradient noise, SDE approximation, generalization
 

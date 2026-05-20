@@ -18,8 +18,8 @@ content_hash: fae13b71972e4a50
 # Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.10798](https://arxiv.org/abs/2509.10798)
-**Code**: [GitHub](https://github.com/Mambaaaaaaaaa/Judge-Q)
+**arXiv**: [2509.10798](https://arxiv.org/abs/2509.10798)  
+**Code**: [GitHub](https://github.com/Mambaaaaaaaaa/Judge-Q)  
 **Area**: LLM Efficiency / KV Cache Compression
 **Keywords**: KV Cache Pruning, Trainable Soft Tokens, Attention Distillation, Long-context Inference, Global Information Retention
 

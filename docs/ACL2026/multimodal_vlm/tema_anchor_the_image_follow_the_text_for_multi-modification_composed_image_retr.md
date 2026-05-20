@@ -18,8 +18,8 @@ content_hash: 813c86e206371c42
 # TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval
 
 **Conference**: ACL 2026
-**arXiv**: [2604.21806](https://arxiv.org/abs/2604.21806)
-**Code**: [https://github.com/lee-zixu/ACL26-TEMA/](https://github.com/lee-zixu/ACL26-TEMA/)
+**arXiv**: [2604.21806](https://arxiv.org/abs/2604.21806)  
+**Code**: [https://github.com/lee-zixu/ACL26-TEMA/](https://github.com/lee-zixu/ACL26-TEMA/)  
 **Area**: Image Retrieval / Multimodal
 **Keywords**: Composed Image Retrieval, Multi-Modification Text, Entity Mapping, Fine-Grained Retrieval, Vision-Language Pre-training
 

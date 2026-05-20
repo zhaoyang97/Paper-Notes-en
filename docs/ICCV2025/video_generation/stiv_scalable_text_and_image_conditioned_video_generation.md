@@ -17,8 +17,8 @@ content_hash: 54697b4ae890c0d4
 # STiV: Scalable Text and Image Conditioned Video Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.07730](https://arxiv.org/abs/2412.07730)
-**Code**: N/A
+**arXiv**: [2412.07730](https://arxiv.org/abs/2412.07730)  
+**Code**: N/A  
 **Area**: Video Generation
 **Keywords**: Video generation, Diffusion Transformer, image conditioning, text-to-video, scalable training
 

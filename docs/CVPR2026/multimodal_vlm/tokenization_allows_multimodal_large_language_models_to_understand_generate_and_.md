@@ -19,8 +19,8 @@ content_hash: 01fa30a58f8124c2
 # Tokenization Allows Multimodal Large Language Models to Understand, Generate and Edit Architectural Floor Plans (HouseMind)
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11640](https://arxiv.org/abs/2603.11640)
-**Code**: [housemind.github.io](https://housemind.github.io/)
+**arXiv**: [2603.11640](https://arxiv.org/abs/2603.11640)  
+**Code**: [housemind.github.io](https://housemind.github.io/)  
 **Area**: Multimodal VLM / Architectural Floor Plan Design
 **Keywords**: Multimodal large language models, VQ-VAE, spatial tokenization, floor plan generation, floor plan editing, instruction tuning
 

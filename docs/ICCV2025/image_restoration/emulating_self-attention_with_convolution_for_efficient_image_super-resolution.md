@@ -18,8 +18,8 @@ content_hash: 90c61e848cbda3f1
 # Emulating Self-Attention with Convolution for Efficient Image Super-Resolution
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06671](https://arxiv.org/abs/2503.06671)
-**Code**: [GitHub](https://github.com/dslisleedh/ESC)
+**arXiv**: [2503.06671](https://arxiv.org/abs/2503.06671)  
+**Code**: [GitHub](https://github.com/dslisleedh/ESC)  
 **Area**: Image Restoration
 **Keywords**: Image Super-Resolution, Self-Attention Substitution, Large-Kernel Convolution, Flash Attention, Lightweight Network
 

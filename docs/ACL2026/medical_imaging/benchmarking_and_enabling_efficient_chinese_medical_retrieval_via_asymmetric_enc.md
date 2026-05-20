@@ -18,8 +18,8 @@ content_hash: e7e83c337a9308be
 # Benchmarking and Enabling Efficient Chinese Medical Retrieval via Asymmetric Encoders
 
 **Conference**: ACL 2026
-**arXiv**: [2604.10937](https://arxiv.org/abs/2604.10937)
-**Code**: [GitHub](https://github.com/PhilipGAQ/CARE)
+**arXiv**: [2604.10937](https://arxiv.org/abs/2604.10937)  
+**Code**: [GitHub](https://github.com/PhilipGAQ/CARE)  
 **Area**: Medical Imaging
 **Keywords**: Medical text retrieval, asymmetric encoders, Chinese medical benchmark, embedding models, RAG
 

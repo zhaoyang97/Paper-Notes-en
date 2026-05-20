@@ -18,8 +18,8 @@ content_hash: 5a94cd937a0a2666
 # Detecting Unknown Objects via Energy-Based Separation for Open World Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29954](https://arxiv.org/abs/2603.29954)
-**Code**: N/A
+**arXiv**: [2603.29954](https://arxiv.org/abs/2603.29954)  
+**Code**: N/A  
 **Area**: Object Detection
 **Keywords**: Open World Object Detection, Energy Function, Unknown Object Detection, Incremental Learning, Catastrophic Forgetting
 

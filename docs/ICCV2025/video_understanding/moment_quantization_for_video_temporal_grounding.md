@@ -18,8 +18,8 @@ content_hash: 44a2c1a837c5846f
 # Moment Quantization for Video Temporal Grounding
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.02286](https://arxiv.org/abs/2504.02286)
-**Code**: None
+**arXiv**: [2504.02286](https://arxiv.org/abs/2504.02286)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: Video temporal grounding, vector quantization, moment codebook, highlight detection, discrete representation learning
 

@@ -18,9 +18,9 @@ content_hash: e8df895a802be242
 # ECPv2: Fast, Efficient, and Scalable Global Optimization of Lipschitz Functions
 
 **Conference**: AAAI2026
-**arXiv**: [2511.16575](https://arxiv.org/abs/2511.16575)
+**arXiv**: [2511.16575](https://arxiv.org/abs/2511.16575)  
 **Authors**: Fares Fourati (KAUST), Mohamed-Slim Alouini (KAUST), Vaneet Aggarwal (Purdue)
-**Code**: [GitHub](https://github.com/fouratifares/ECP)
+**Code**: [GitHub](https://github.com/fouratifares/ECP)  
 **Area**: Optimization
 **Keywords**: Global optimization, Lipschitz functions, black-box optimization, random projection, no-regret
 

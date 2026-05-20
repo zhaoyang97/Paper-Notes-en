@@ -18,8 +18,8 @@ content_hash: a36e7e67bed5cece
 # CAP: Evaluation of Persuasive and Creative Image Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.10426](https://arxiv.org/abs/2412.10426)
-**Code**: [https://aysanaghazadeh.github.io/CAP/](https://aysanaghazadeh.github.io/CAP/)
+**arXiv**: [2412.10426](https://arxiv.org/abs/2412.10426)  
+**Code**: [https://aysanaghazadeh.github.io/CAP/](https://aysanaghazadeh.github.io/CAP/)  
 **Area**: Image Generation
 **Keywords**: advertising image generation, creativity evaluation, persuasiveness evaluation, text-image alignment, implicit message
 

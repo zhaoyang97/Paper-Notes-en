@@ -18,8 +18,8 @@ content_hash: c1bee5e0115ec0bc
 # Markovian Scale Prediction: A New Era of Visual Autoregressive Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.23334](https://arxiv.org/abs/2511.23334)
-**Code**: [Available](https://luokairo.github.io/markov-var-page/)
+**arXiv**: [2511.23334](https://arxiv.org/abs/2511.23334)  
+**Code**: [Available](https://luokairo.github.io/markov-var-page/)  
 **Area**: Model Compression
 **Keywords**: Visual autoregressive generation, Markov process, multi-scale prediction, memory efficiency, image generation
 

@@ -18,8 +18,8 @@ content_hash: 39d899535d6293d4
 # An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2211.16780](https://arxiv.org/abs/2211.16780)
-**Code**: None
+**arXiv**: [2211.16780](https://arxiv.org/abs/2211.16780)  
+**Code**: None  
 **Area**: Continual Learning / Online Incremental Learning
 **Keywords**: Online Class-Incremental Learning, Optimal Transport, Gaussian Mixture Model, Catastrophic Forgetting, Latent Space
 
@@ -47,21 +47,21 @@ The OTC framework processes each time step through three stages: (1) initial tra
 
 1. **MMOT (Multimodal Modeling via Optimal Transport)**
 
-   - **Function**: Learns and incrementally updates multiple adaptive centroids and covariance matrices for each class.
-   - **Mechanism**: For each class $c$, a GMM $\mathbb{Q}_c = \sum_{k=1}^K \pi_{k,c} \mathcal{N}(\mu_{k,c}, \text{diag}(\sigma_{k,c}^2))$ is used to approximate the data distribution $\mathbb{P}_c$ by minimizing the Wasserstein distance between the two. The entropy-regularized dual formulation converts this into an expectation-form objective $\max_\phi \{ \mathbb{E}_{\mathbb{P}_c}[\phi(z^c)] + \mathbb{E}_{\mathbb{Q}_c}[\tilde{\phi}(\tilde{z}^c)] \}$. Gumbel-Softmax reparameterization makes the mixture weights differentiable, enabling gradient-based online updates of all GMM parameters. This avoids the multi-iteration overhead of traditional EM, and the Wasserstein distance remains numerically stable even when the supports of the two distributions do not overlap—an advantage over KL divergence.
-   - **Design Motivation**: OT is preferred over KL divergence for four reasons: the EM algorithm associated with KL is computationally expensive; the Wasserstein distance is a continuously differentiable metric; it is numerically stable when distribution supports are disjoint; and it respects the geometric structure of the data.
+    - **Function**: Learns and incrementally updates multiple adaptive centroids and covariance matrices for each class.
+    - **Mechanism**: For each class $c$, a GMM $\mathbb{Q}_c = \sum_{k=1}^K \pi_{k,c} \mathcal{N}(\mu_{k,c}, \text{diag}(\sigma_{k,c}^2))$ is used to approximate the data distribution $\mathbb{P}_c$ by minimizing the Wasserstein distance between the two. The entropy-regularized dual formulation converts this into an expectation-form objective $\max_\phi \{ \mathbb{E}_{\mathbb{P}_c}[\phi(z^c)] + \mathbb{E}_{\mathbb{Q}_c}[\tilde{\phi}(\tilde{z}^c)] \}$. Gumbel-Softmax reparameterization makes the mixture weights differentiable, enabling gradient-based online updates of all GMM parameters. This avoids the multi-iteration overhead of traditional EM, and the Wasserstein distance remains numerically stable even when the supports of the two distributions do not overlap—an advantage over KL divergence.
+    - **Design Motivation**: OT is preferred over KL divergence for four reasons: the EM algorithm associated with KL is computationally expensive; the Wasserstein distance is a continuously differentiable metric; it is numerically stable when distribution supports are disjoint; and it respects the geometric structure of the data.
 
 2. **Dynamic Preservation**
 
-   - **Function**: Leverages the multi-centroid information learned by MMOT to enhance the model's class discriminability.
-   - **Mechanism**: A contrastive-style loss $\mathcal{L}_{DP}$ is designed in which the positive term $g_{cen}^c$ pulls same-class representations toward all $K$ centroids by summing their similarities, while the negative term simultaneously repels representations from centroids and features of other classes. Multi-centroid representations provide finer-grained class boundary information compared to single-prototype approaches.
-   - **Design Motivation**: Using multiple centroids instead of a single prototype allows boundary-region centroids to more effectively enhance inter-class separation, compensating for the inability of single prototypes to express intra-class multimodal structure.
+    - **Function**: Leverages the multi-centroid information learned by MMOT to enhance the model's class discriminability.
+    - **Mechanism**: A contrastive-style loss $\mathcal{L}_{DP}$ is designed in which the positive term $g_{cen}^c$ pulls same-class representations toward all $K$ centroids by summing their similarities, while the negative term simultaneously repels representations from centroids and features of other classes. Multi-centroid representations provide finer-grained class boundary information compared to single-prototype approaches.
+    - **Design Motivation**: Using multiple centroids instead of a single prototype allows boundary-region centroids to more effectively enhance inter-class separation, compensating for the inability of single prototypes to express intra-class multimodal structure.
 
 3. **Centroid-based Memory Buffer Selection and Inference**
 
-   - **Function**: Uses centroid information to improve diversity of stored samples and classification accuracy at inference.
-   - **Mechanism**: During memory selection, the sample in the current batch closest to each centroid is added to the buffer, ensuring coverage of multiple sub-distributions per class. At inference, the Mahalanobis distance from a test sample to each Gaussian component of every class is computed, and the class with the minimum distance is predicted.
-   - **Design Motivation**: Random selection tends to underrepresent minority sub-distributions; centroid-based selection ensures buffer representativeness. Mahalanobis distance incorporates covariance information, making it more suitable than Euclidean distance for classes with varied distributional shapes.
+    - **Function**: Uses centroid information to improve diversity of stored samples and classification accuracy at inference.
+    - **Mechanism**: During memory selection, the sample in the current batch closest to each centroid is added to the buffer, ensuring coverage of multiple sub-distributions per class. At inference, the Mahalanobis distance from a test sample to each Gaussian component of every class is computed, and the class with the minimum distance is predicted.
+    - **Design Motivation**: Random selection tends to underrepresent minority sub-distributions; centroid-based selection ensures buffer representativeness. Mahalanobis distance incorporates covariance information, making it more suitable than Euclidean distance for classes with varied distributional shapes.
 
 ### Loss & Training
 

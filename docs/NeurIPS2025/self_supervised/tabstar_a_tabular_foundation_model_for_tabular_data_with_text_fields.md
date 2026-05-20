@@ -18,8 +18,8 @@ content_hash: c9528ccda6ca1db8
 # TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18125](https://arxiv.org/abs/2505.18125)
-**Code**: [https://github.com/alanarazi7/TabSTAR](https://github.com/alanarazi7/TabSTAR)
+**arXiv**: [2505.18125](https://arxiv.org/abs/2505.18125)  
+**Code**: [https://github.com/alanarazi7/TabSTAR](https://github.com/alanarazi7/TabSTAR)  
 **Area**: Tabular Learning / Foundation Models
 **Keywords**: tabular foundation model, text fields, target-aware tokens, cross-dataset learning, transfer learning
 

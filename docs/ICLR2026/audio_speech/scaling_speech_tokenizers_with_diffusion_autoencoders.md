@@ -18,8 +18,8 @@ content_hash: a28a0a94dfa224ef
 # Scaling Speech Tokenizers with Diffusion Autoencoders
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.06602](https://arxiv.org/abs/2602.06602)
-**Code**: None (Demo: [https://sitok-demo.github.io/](https://sitok-demo.github.io/))
+**arXiv**: [2602.06602](https://arxiv.org/abs/2602.06602)  
+**Code**: None (Demo: [https://sitok-demo.github.io/](https://sitok-demo.github.io/))  
 **Area**: Speech / Tokenization
 **Keywords**: Speech Tokenizer, Diffusion Autoencoder, Semantic Regularization, Low Bitrate, CTC Loss
 

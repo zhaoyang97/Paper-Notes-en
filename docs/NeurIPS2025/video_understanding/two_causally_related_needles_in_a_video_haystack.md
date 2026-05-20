@@ -18,8 +18,8 @@ content_hash: 5c90aea33b93dc59
 # Two Causally Related Needles in a Video Haystack
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19853](https://arxiv.org/abs/2505.19853)
-**Code**: [Project Page](https://limiaoyu.github.io/Causal2Needles)
+**arXiv**: [2505.19853](https://arxiv.org/abs/2505.19853)  
+**Code**: [Project Page](https://limiaoyu.github.io/Causal2Needles)  
 **Area**: Video Understanding / Causal Reasoning
 **Keywords**: Long video understanding, causal reasoning, needle-in-a-haystack, video-language models, benchmark
 

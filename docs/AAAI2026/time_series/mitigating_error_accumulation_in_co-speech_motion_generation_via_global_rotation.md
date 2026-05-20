@@ -18,8 +18,8 @@ content_hash: 3728bdbb66d4c1eb
 # Mitigating Error Accumulation in Co-Speech Motion Generation via Global Rotation Diffusion and Multi-Level Constraints
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10076](https://arxiv.org/abs/2511.10076)
-**Code**: [https://xiangyue-zhang.github.io/GlobalDiff](https://xiangyue-zhang.github.io/GlobalDiff)
+**arXiv**: [2511.10076](https://arxiv.org/abs/2511.10076)  
+**Code**: [https://xiangyue-zhang.github.io/GlobalDiff](https://xiangyue-zhang.github.io/GlobalDiff)  
 **Area**: Time Series
 **Keywords**: co-speech motion generation, global rotation, diffusion model, error accumulation, skeletal constraints
 

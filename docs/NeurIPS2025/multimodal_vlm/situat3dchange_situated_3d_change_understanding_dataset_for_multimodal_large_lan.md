@@ -18,8 +18,8 @@ content_hash: 45451fbe11a22174
 # Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11509](https://arxiv.org/abs/2510.11509)
-**Code**: [https://github.com/RuipingL/Situat3DChange](https://github.com/RuipingL/Situat3DChange)
+**arXiv**: [2510.11509](https://arxiv.org/abs/2510.11509)  
+**Code**: [https://github.com/RuipingL/Situat3DChange](https://github.com/RuipingL/Situat3DChange)  
 **Area**: Multimodal VLM
 **Keywords**: 3D scene change understanding, situation awareness, multimodal large language models, point cloud comparison, dataset
 

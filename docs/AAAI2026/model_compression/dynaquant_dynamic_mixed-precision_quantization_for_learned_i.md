@@ -18,8 +18,8 @@ content_hash: 27aa7884e7ca2fc6
 # DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07903](https://arxiv.org/abs/2511.07903)
-**Code**: [https://github.com/baoyu2020/DynaQuant](https://github.com/baoyu2020/DynaQuant)
+**arXiv**: [2511.07903](https://arxiv.org/abs/2511.07903)  
+**Code**: [https://github.com/baoyu2020/DynaQuant](https://github.com/baoyu2020/DynaQuant)  
 **Area**: Model Compression
 **Keywords**: Image compression quantization, mixed-precision, dynamic bit-width allocation, quantization-aware training, learned image compression
 

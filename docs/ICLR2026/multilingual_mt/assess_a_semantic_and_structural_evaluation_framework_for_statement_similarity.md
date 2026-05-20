@@ -18,8 +18,8 @@ content_hash: bd284c9792126b6b
 # ASSESS: A Semantic and Structural Evaluation Framework for Statement Similarity
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22246](https://arxiv.org/abs/2509.22246)
-**Code**: [https://github.com/XiaoyangLiu-sjtu/ASSESS](https://github.com/XiaoyangLiu-sjtu/ASSESS)
+**arXiv**: [2509.22246](https://arxiv.org/abs/2509.22246)  
+**Code**: [https://github.com/XiaoyangLiu-sjtu/ASSESS](https://github.com/XiaoyangLiu-sjtu/ASSESS)  
 **Area**: Formal Mathematics / Evaluation Metrics
 **Keywords**: autoformalization, evaluation metrics, tree edit distance, Lean, formal mathematics
 
@@ -49,21 +49,21 @@ ASSESS is a two-stage framework. In the first stage, the Lean Language Server pa
 
 1. **Operator Tree (OPT) Construction**:
 
-   - Function: Converts the raw text of a formal statement into a tree representation that preserves structural information.
-   - Mechanism: The Lean Language Server is used to parse formal statements; operators (e.g., function applications, quantifiers, logical connectives) become internal nodes, and operands become their ordered children. Two normalization steps are applied during construction: (1) non-leaf nodes are assigned a `<SLOT>` placeholder label to distinguish operators from operands; (2) parentheses are omitted, as precedence information is already implicitly encoded in the tree structure. This representation captures the hierarchical structure of statements more precisely than plain text.
-   - Design Motivation: The syntactic structure of formal languages inherently encodes rich semantic information; tree representations encode operator precedence and dependency relations more naturally than sequential representations.
+    - Function: Converts the raw text of a formal statement into a tree representation that preserves structural information.
+    - Mechanism: The Lean Language Server is used to parse formal statements; operators (e.g., function applications, quantifiers, logical connectives) become internal nodes, and operands become their ordered children. Two normalization steps are applied during construction: (1) non-leaf nodes are assigned a `<SLOT>` placeholder label to distinguish operators from operands; (2) parentheses are omitted, as precedence information is already implicitly encoded in the tree structure. This representation captures the hierarchical structure of statements more precisely than plain text.
+    - Design Motivation: The syntactic structure of formal languages inherently encodes rich semantic information; tree representations encode operator precedence and dependency relations more naturally than sequential representations.
 
 2. **TED Similarity (Baseline Metric)**:
 
-   - Function: Quantifies the structural difference between two OPTs.
-   - Mechanism: The set of OPTs is treated as a pseudometric space — permitting $d(x,y)=0$ while $x \neq y$ (since semantically equivalent but structurally different expressions should have zero distance). The tree edit distance $d_{\text{TED}}$ is defined as the minimum cost of transforming one tree into another via deletion, insertion, and relabeling operations. TED Similarity is normalized as $\text{sim}_{\text{TED}}(T_1, T_2) = 1 - d_{\text{TED}}(T_1, T_2) / \max(|T_1|, |T_2|)$, where $|T|$ denotes the number of nodes.
-   - Design Motivation: While TED is effective for structural matching, it exhibits systematic bias toward semantically equivalent expressions with different syntax (e.g., $a+b$ vs. $b+a$), which require multiple edit steps to align in tree form.
+    - Function: Quantifies the structural difference between two OPTs.
+    - Mechanism: The set of OPTs is treated as a pseudometric space — permitting $d(x,y)=0$ while $x \neq y$ (since semantically equivalent but structurally different expressions should have zero distance). The tree edit distance $d_{\text{TED}}$ is defined as the minimum cost of transforming one tree into another via deletion, insertion, and relabeling operations. TED Similarity is normalized as $\text{sim}_{\text{TED}}(T_1, T_2) = 1 - d_{\text{TED}}(T_1, T_2) / \max(|T_1|, |T_2|)$, where $|T|$ denotes the number of nodes.
+    - Design Motivation: While TED is effective for structural matching, it exhibits systematic bias toward semantically equivalent expressions with different syntax (e.g., $a+b$ vs. $b+a$), which require multiple edit steps to align in tree form.
 
 3. **TransTED Similarity (Core Contribution)**:
 
-   - Function: Augments TED with semantic transformations to address its bias toward semantically equivalent but syntactically different expressions.
-   - Mechanism: A new pseudometric $d^*$ is defined satisfying two constraints: (a) it is upper-bounded by TED, i.e., $d^*(T_1, T_2) \leq d_{\text{TED}}(T_1, T_2)$; (b) semantic transformation monotonicity — if an expression pair $(e_x, e_y)$ can be transformed into a logically stronger pair $(e_u, e_v)$ (i.e., $e_u=e_v \Rightarrow e_x=e_y$), then $d^*(OPT(e_x), OPT(e_y)) \leq d^*(OPT(e_u), OPT(e_v))$. The paper proves that the unique maximal pseudometric satisfying both constraints exists (Theorem 1), which is TransTED. In practice, a pair of statements is first connected by an equality to form an equation; a curated set of tactics (e.g., `rw?`, `apply congrArg`, `ext`, `norm_cast`) is then applied in the Lean REPL via heuristic search, using TED as a heuristic to prioritize transformations that reduce the OPT difference between both sides. Search terminates upon proof of equivalence, node limit exceeded (NLE), or time limit exceeded (TLE).
-   - Design Motivation: Pure structural distance cannot handle the large number of semantically equivalent but syntactically different expressions in formal mathematics. By leveraging Lean tactic-driven transformations, the distance metric gains awareness of commutativity, quantifier decomposition, and other semantic equivalences — achieving semantic sensitivity without sacrificing structural information.
+    - Function: Augments TED with semantic transformations to address its bias toward semantically equivalent but syntactically different expressions.
+    - Mechanism: A new pseudometric $d^*$ is defined satisfying two constraints: (a) it is upper-bounded by TED, i.e., $d^*(T_1, T_2) \leq d_{\text{TED}}(T_1, T_2)$; (b) semantic transformation monotonicity — if an expression pair $(e_x, e_y)$ can be transformed into a logically stronger pair $(e_u, e_v)$ (i.e., $e_u=e_v \Rightarrow e_x=e_y$), then $d^*(OPT(e_x), OPT(e_y)) \leq d^*(OPT(e_u), OPT(e_v))$. The paper proves that the unique maximal pseudometric satisfying both constraints exists (Theorem 1), which is TransTED. In practice, a pair of statements is first connected by an equality to form an equation; a curated set of tactics (e.g., `rw?`, `apply congrArg`, `ext`, `norm_cast`) is then applied in the Lean REPL via heuristic search, using TED as a heuristic to prioritize transformations that reduce the OPT difference between both sides. Search terminates upon proof of equivalence, node limit exceeded (NLE), or time limit exceeded (TLE).
+    - Design Motivation: Pure structural distance cannot handle the large number of semantically equivalent but syntactically different expressions in formal mathematics. By leveraging Lean tactic-driven transformations, the distance metric gains awareness of commutativity, quantifier decomposition, and other semantic equivalences — achieving semantic sensitivity without sacrificing structural information.
 
 ### EPLA Benchmark Dataset
 

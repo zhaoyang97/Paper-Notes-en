@@ -18,8 +18,8 @@ content_hash: dd42ceef29ca00f7
 # Online Time Series Prediction Using Feature Adjustment
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.03810](https://arxiv.org/abs/2509.03810)
-**Code**: [Available](https://github.com/xiannanhuang/ADAPT-Z)
+**arXiv**: [2509.03810](https://arxiv.org/abs/2509.03810)  
+**Code**: [Available](https://github.com/xiannanhuang/ADAPT-Z)  
 **Area**: Video Understanding
 **Keywords**: Online Learning, Distribution Shift, Feature Space Adaptation, Delayed Feedback, Time Series Forecasting
 

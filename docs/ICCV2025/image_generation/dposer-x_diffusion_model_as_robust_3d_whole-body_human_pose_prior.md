@@ -18,8 +18,8 @@ content_hash: 2d85ba8befe7367f
 # DPoser-X: Diffusion Model as Robust 3D Whole-Body Human Pose Prior
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00599](https://arxiv.org/abs/2508.00599)
-**Code**: [https://dposer.github.io/](https://dposer.github.io/)
+**arXiv**: [2508.00599](https://arxiv.org/abs/2508.00599)  
+**Code**: [https://dposer.github.io/](https://dposer.github.io/)  
 **Area**: Image Generation
 **Keywords**: Diffusion Model, Human Pose Prior, Whole-Body Modeling, Inverse Problems, Variational Diffusion Sampling
 

@@ -18,8 +18,8 @@ content_hash: eef029b38517c7dc
 # Enhancing Sample Selection Against Label Noise by Cutting Mislabeled Easy Examples
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.08227](https://arxiv.org/abs/2502.08227)
-**Code**: [tmllab/2025_NeurIPS_MEE](https://github.com/tmllab/2025_NeurIPS_MEE)
+**arXiv**: [2502.08227](https://arxiv.org/abs/2502.08227)  
+**Code**: [tmllab/2025_NeurIPS_MEE](https://github.com/tmllab/2025_NeurIPS_MEE)  
 **Area**: Robust Learning / Noisy Labels
 **Keywords**: noisy labels, sample selection, mislabeled easy examples, Early Cutting, robust training
 

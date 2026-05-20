@@ -18,8 +18,8 @@ content_hash: cd1fcf1c3b1f0a82
 # Robust Graph Condensation via Classification Complexity Mitigation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26451](https://arxiv.org/abs/2510.26451)
-**Code**: [GitHub](https://github.com/RingBDStack/MRGC)
+**arXiv**: [2510.26451](https://arxiv.org/abs/2510.26451)  
+**Code**: [GitHub](https://github.com/RingBDStack/MRGC)  
 **Area**: AI Security
 **Keywords**: Graph Condensation, Adversarial Robustness, Classification Complexity, Manifold Learning, Graph Neural Networks
 

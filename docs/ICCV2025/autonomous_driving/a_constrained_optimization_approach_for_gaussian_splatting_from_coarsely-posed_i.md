@@ -18,8 +18,8 @@ content_hash: 321176713b00d179
 # A Constrained Optimization Approach for Gaussian Splatting from Coarsely-posed Images and Noisy Lidar Point Clouds
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.09129](https://arxiv.org/abs/2504.09129)
-**Code**: Unavailable (dataset release planned)
+**arXiv**: [2504.09129](https://arxiv.org/abs/2504.09129)  
+**Code**: Unavailable (dataset release planned)  
 **Area**: Autonomous Driving / 3D Reconstruction / 3D Gaussian Splatting
 **Keywords**: 3D Gaussian Splatting, camera pose optimization, constrained optimization, multi-camera SLAM, LiDAR point cloud
 

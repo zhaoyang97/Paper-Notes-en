@@ -18,8 +18,8 @@ content_hash: 424ce364192b003f
 # TRIM: Scalable 3D Gaussian Diffusion Inference with Temporal and Spatial Trimming
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.16642](https://arxiv.org/abs/2511.16642)
-**Code**: Available (link in paper)
+**arXiv**: [2511.16642](https://arxiv.org/abs/2511.16642)  
+**Code**: Available (link in paper)  
 **Area**: 3D Vision
 **Keywords**: 3D generation, Gaussian diffusion, inference acceleration, inference-time scaling, post-training optimization
 

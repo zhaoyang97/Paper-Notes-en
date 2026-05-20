@@ -19,8 +19,8 @@ content_hash: a3f98cf5ecb6e6ad
 # FIA-Edit: Frequency-Interactive Attention for Efficient and High-Fidelity Inversion-Free Text-Guided Image Editing
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12151](https://arxiv.org/abs/2511.12151)
-**Code**: [kk42yy/FIA-Edit](https://github.com/kk42yy/FIA-Edit)
+**arXiv**: [2511.12151](https://arxiv.org/abs/2511.12151)  
+**Code**: [kk42yy/FIA-Edit](https://github.com/kk42yy/FIA-Edit)  
 **Area**: Medical Imaging / Image Editing
 **Keywords**: Text-guided image editing, inversion-free editing, frequency-domain interaction, Diffusion Transformer, medical data augmentation, surgical bleeding classification
 

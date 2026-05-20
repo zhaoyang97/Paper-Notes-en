@@ -18,8 +18,8 @@ content_hash: 484920abfcb6fb98
 # ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.16815](https://arxiv.org/abs/2507.16815)
-**Code**: [Project Page](https://jasper0314-huang.github.io/thinkact-vla/)
+**arXiv**: [2507.16815](https://arxiv.org/abs/2507.16815)  
+**Code**: [Project Page](https://jasper0314-huang.github.io/thinkact-vla/)  
 **Area**: Robotics
 **Keywords**: VLA reasoning, reinforcement learning, visual latent planning, embodied reasoning, dual-system architecture
 

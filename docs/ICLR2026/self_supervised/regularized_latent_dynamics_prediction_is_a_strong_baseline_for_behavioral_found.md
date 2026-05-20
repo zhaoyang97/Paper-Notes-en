@@ -18,8 +18,8 @@ content_hash: 172458a9db6f44ee
 # Regularized Latent Dynamics Prediction is a Strong Baseline for Behavioral Foundation Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.15857](https://arxiv.org/abs/2603.15857)
-**Code**: None
+**arXiv**: [2603.15857](https://arxiv.org/abs/2603.15857)  
+**Code**: None  
 **Area**: Self-Supervised Learning
 **Keywords**: behavioral foundation models, zero-shot RL, latent dynamics prediction, orthogonality regularization, state feature learning
 

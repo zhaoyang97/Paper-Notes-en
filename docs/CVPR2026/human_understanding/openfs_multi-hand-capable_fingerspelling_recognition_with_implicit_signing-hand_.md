@@ -19,8 +19,8 @@ content_hash: 390b2d97e2ba2db5
 # OpenFS: Multi-Hand-Capable Fingerspelling Recognition with Implicit Signing-Hand Detection and Frame-Wise Letter-Conditioned Synthesis
 
 **Conference**: CVPR2026
-**arXiv**: [2602.22949](https://arxiv.org/abs/2602.22949)
-**Code**: [JunukCha/OpenFS](https://github.com/JunukCha/OpenFS)
+**arXiv**: [2602.22949](https://arxiv.org/abs/2602.22949)  
+**Code**: [JunukCha/OpenFS](https://github.com/JunukCha/OpenFS)  
 **Area**: Human Body Understanding
 **Keywords**: Fingerspelling Recognition, Sign Language Understanding, Implicit Signing-Hand Detection, Monotonic Alignment Loss, Diffusion-based Generation, OOV Generalization
 

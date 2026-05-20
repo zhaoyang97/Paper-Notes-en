@@ -18,8 +18,8 @@ content_hash: dc90f7bfc78ad9a8
 # AutoJudge: Judge Decoding Without Manual Annotation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.20039](https://arxiv.org/abs/2504.20039)
-**Code**: [https://github.com/garipovroma/autojudge](https://github.com/garipovroma/autojudge)
+**arXiv**: [2504.20039](https://arxiv.org/abs/2504.20039)  
+**Code**: [https://github.com/garipovroma/autojudge](https://github.com/garipovroma/autojudge)  
 **Area**: Model Compression
 **Keywords**: Speculative Decoding, Judge Decoding, Critical Tokens, Automatic Annotation, Inference Acceleration
 

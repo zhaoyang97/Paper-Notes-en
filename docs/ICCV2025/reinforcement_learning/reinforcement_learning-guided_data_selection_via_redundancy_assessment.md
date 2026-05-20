@@ -19,8 +19,8 @@ content_hash: e3e2f7e5b5b0f0cd
 # RL-Selector: Reinforcement Learning-Guided Data Selection via Redundancy Assessment
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21037](https://arxiv.org/abs/2506.21037)
-**Code**: To be confirmed
+**arXiv**: [2506.21037](https://arxiv.org/abs/2506.21037)  
+**Code**: To be confirmed  
 **Area**: Reinforcement Learning / Data Selection
 **Keywords**: Data Selection, Data Redundancy, Reinforcement Learning, ε-sample cover, Coreset, A2C, Training Efficiency
 

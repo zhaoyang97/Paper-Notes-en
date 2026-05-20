@@ -18,8 +18,8 @@ content_hash: e12cfb704d9eac31
 # Reading Recognition in the Wild
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.24848](https://arxiv.org/abs/2505.24848)
-**Code**: [Project Aria](https://www.projectaria.com/datasets/reading-in-the-wild/)
+**arXiv**: [2505.24848](https://arxiv.org/abs/2505.24848)  
+**Code**: [Project Aria](https://www.projectaria.com/datasets/reading-in-the-wild/)  
 **Area**: Multimodal VLM
 **Keywords**: Reading recognition, wearable devices, multimodal fusion, eye tracking, egocentric vision
 

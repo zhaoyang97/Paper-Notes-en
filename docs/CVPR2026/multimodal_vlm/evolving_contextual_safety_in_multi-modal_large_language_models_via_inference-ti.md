@@ -18,8 +18,8 @@ content_hash: 1ec80582f8c92cdd
 # Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.15800](https://arxiv.org/abs/2603.15800)
-**Code**: [https://EchoSafe-mllm.github.io](https://EchoSafe-mllm.github.io)
+**arXiv**: [2603.15800](https://arxiv.org/abs/2603.15800)  
+**Code**: [https://EchoSafe-mllm.github.io](https://EchoSafe-mllm.github.io)  
 **Area**: Multimodal VLM
 **Keywords**: MLLM safety, contextual safety, self-reflective memory, inference-time defense, safety benchmark
 

@@ -18,8 +18,8 @@ content_hash: 9215d663da1e7a1f
 # Approximately Aligned Decoding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.01103](https://arxiv.org/abs/2410.01103)
-**Code**: None (detailed implementation description in appendix)
+**arXiv**: [2410.01103](https://arxiv.org/abs/2410.01103)  
+**Code**: None (detailed implementation description in appendix)  
 **Area**: LLM Efficiency
 **Keywords**: constrained decoding, error avoidance, speculative sampling, probability amplification, lipogram
 

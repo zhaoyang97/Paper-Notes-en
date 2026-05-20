@@ -19,8 +19,8 @@ content_hash: 509c3f84fcf44a34
 # CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12721](https://arxiv.org/abs/2603.12721)
-**Code**: [Available](https://github.com/DongXu-Zhang/CMHANet)
+**arXiv**: [2603.12721](https://arxiv.org/abs/2603.12721)  
+**Code**: [Available](https://github.com/DongXu-Zhang/CMHANet)  
 **Area**: 3D Vision / Point Cloud Registration
 **Keywords**: Point cloud registration, cross-modal fusion, hybrid attention, RGB-D, contrastive learning, KPConv
 

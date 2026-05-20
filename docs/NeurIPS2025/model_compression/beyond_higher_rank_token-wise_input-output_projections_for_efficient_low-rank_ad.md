@@ -18,8 +18,8 @@ content_hash: fef616351e67d1b6
 # Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23123](https://arxiv.org/abs/2510.23123)
-**Code**: [https://github.com/Leopold1423/toplora-neurips25](https://github.com/Leopold1423/toplora-neurips25)
+**arXiv**: [2510.23123](https://arxiv.org/abs/2510.23123)  
+**Code**: [https://github.com/Leopold1423/toplora-neurips25](https://github.com/Leopold1423/toplora-neurips25)  
 **Area**: Parameter-Efficient Fine-Tuning
 **Keywords**: LoRA, Low-Rank Adaptation, Token-wise Adaptation, Input-Output Projection, PEFT
 

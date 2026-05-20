@@ -18,8 +18,8 @@ content_hash: 7bbf8690f427d8d6
 # EvaGaussians: Event Stream Assisted Gaussian Splatting from Blurry Images
 
 **Conference**: ICCV 2025
-**arXiv**: [2405.20224](https://arxiv.org/abs/2405.20224)
-**Code**: Available (project page released)
+**arXiv**: [2405.20224](https://arxiv.org/abs/2405.20224)  
+**Code**: Available (project page released)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Event Camera, Motion Deblurring, Novel View Synthesis, Bundle Adjustment
 

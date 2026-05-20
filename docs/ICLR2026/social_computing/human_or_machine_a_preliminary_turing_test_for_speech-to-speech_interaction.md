@@ -18,8 +18,8 @@ content_hash: 7dbfa1770a9de5c9
 # Human or Machine? A Preliminary Turing Test for Speech-to-Speech Interaction
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.24080](https://arxiv.org/abs/2602.24080)
-**Code**: [GitHub](https://github.com/Carbohydrate1001/Turing-Test)
+**arXiv**: [2602.24080](https://arxiv.org/abs/2602.24080)  
+**Code**: [GitHub](https://github.com/Carbohydrate1001/Turing-Test)  
 **Area**: Social Computing
 **Keywords**: Turing Test, spoken dialogue, human-likeness, S2S systems, fine-grained evaluation
 

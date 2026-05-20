@@ -17,8 +17,8 @@ content_hash: f75afa1de0ad6765
 # Succeed or Learn Slowly: Sample Efficient Off-Policy Reinforcement Learning for Mobile App Control
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.01720](https://arxiv.org/abs/2509.01720)
-**Code**: Not yet available
+**arXiv**: [2509.01720](https://arxiv.org/abs/2509.01720)  
+**Code**: Not yet available  
 **Area**: Reinforcement Learning
 **Keywords**: reinforcement learning, mobile app control, off-policy learning, foundation model fine-tuning, sample efficiency
 

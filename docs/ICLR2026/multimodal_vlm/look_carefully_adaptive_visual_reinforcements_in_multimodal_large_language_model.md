@@ -18,8 +18,8 @@ content_hash: a8f53cce361a10df
 # Look Carefully: Adaptive Visual Reinforcements in Multimodal Large Language Models for Hallucination Mitigation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.24041](https://arxiv.org/abs/2602.24041)
-**Code**: Not yet released
+**arXiv**: [2602.24041](https://arxiv.org/abs/2602.24041)  
+**Code**: Not yet released  
 **Area**: Multimodal VLM
 **Keywords**: MLLM hallucination mitigation, visual reinforcement, optimal transport, token reduction, training-free inference
 

@@ -18,8 +18,8 @@ content_hash: 8bffa31b8a70a778
 # EnCompass: Enhancing Agent Programming with Search Over Program Execution Paths
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.03571](https://arxiv.org/abs/2512.03571)
-**Code**: To be confirmed
+**arXiv**: [2512.03571](https://arxiv.org/abs/2512.03571)  
+**Code**: To be confirmed  
 **Area**: LLM/NLP
 **Keywords**: Agent framework, inference-time search, nondeterministic programming, Beam Search, program execution paths
 

@@ -18,8 +18,8 @@ content_hash: f5849c63f2b6f0ae
 # Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.00142](https://arxiv.org/abs/2412.00142)
-**Code**: None
+**arXiv**: [2412.00142](https://arxiv.org/abs/2412.00142)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Sparse attention vectors, few-shot classification, feature extraction, training-free, vision-language classification
 

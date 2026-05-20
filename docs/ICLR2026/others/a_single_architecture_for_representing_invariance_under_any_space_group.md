@@ -17,8 +17,8 @@ content_hash: 62a2769cfb6c5de1
 # A Single Architecture for Representing Invariance Under Any Space Group
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.13989](https://arxiv.org/abs/2512.13989)
-**Code**: None
+**arXiv**: [2512.13989](https://arxiv.org/abs/2512.13989)  
+**Code**: None  
 **Area**: Geometric Deep Learning / Materials Science
 **Keywords**: Space groups, symmetry invariance, Fourier basis, crystal structures, zero-shot generalization
 
@@ -48,21 +48,21 @@ The input is a crystal structure (atomic positions + space group label) and the 
 
 1. **Derivation of Group Constraints in Fourier Space (Proposition 3.1 + Theorem 3.2)**:
 
-   - **Function**: Analytically derives the exact constraints imposed by group operations on Fourier coefficients.
-   - **Mechanism**: For a $G$-invariant function $f$ and a group operation $\phi(x) = Ax + t$, the Fourier coefficients satisfy $F(\omega) = e^{i2\pi\omega^\top A^\top t} F(A\omega)$. This partitions the reciprocal lattice points into disjoint orbits $\mathcal{O}$, each corresponding to a basis function $e_\mathcal{O}(x) = \sum_{\omega \in \mathcal{O}} w_{\xi \to \omega} e^{i2\pi\omega^\top x}$.
-   - **Design Motivation**: The infinite-dimensional problem over continuous function spaces is reduced to a discrete problem over reciprocal lattice points, making the constraints both computable and exact.
+    - **Function**: Analytically derives the exact constraints imposed by group operations on Fourier coefficients.
+    - **Mechanism**: For a $G$-invariant function $f$ and a group operation $\phi(x) = Ax + t$, the Fourier coefficients satisfy $F(\omega) = e^{i2\pi\omega^\top A^\top t} F(A\omega)$. This partitions the reciprocal lattice points into disjoint orbits $\mathcal{O}$, each corresponding to a basis function $e_\mathcal{O}(x) = \sum_{\omega \in \mathcal{O}} w_{\xi \to \omega} e^{i2\pi\omega^\top x}$.
+    - **Design Motivation**: The infinite-dimensional problem over continuous function spaces is reduced to a discrete problem over reciprocal lattice points, making the constraints both computable and exact.
 
 2. **Dual Graph Representation and Algorithmic Construction (Algorithm 1)**:
 
-   - **Function**: Represents group constraints as a directed weighted graph over reciprocal lattice points, used to automatically construct symmetry-adapted bases.
-   - **Mechanism**: Nodes correspond to frequencies $\omega$; a group operation $\phi$ introduces a directed edge $\omega \to A\omega$ with weight given by the phase factor. Connected components after removing inconsistent self-loops yield phase-consistent orbits, and the products of edge weights give the basis function coefficients.
-   - **Design Motivation**: The graph representation translates abstract group-theoretic constraints into a concrete graph-algorithmic problem that can be executed uniformly for any space group.
+    - **Function**: Represents group constraints as a directed weighted graph over reciprocal lattice points, used to automatically construct symmetry-adapted bases.
+    - **Mechanism**: Nodes correspond to frequencies $\omega$; a group operation $\phi$ introduces a directed edge $\omega \to A\omega$ with weight given by the phase factor. Connected components after removing inconsistent self-loops yield phase-consistent orbits, and the products of edge weights give the basis function coefficients.
+    - **Design Motivation**: The graph representation translates abstract group-theoretic constraints into a concrete graph-algorithmic problem that can be executed uniformly for any space group.
 
 3. **Crystal Fourier Transformer (CFT)**:
 
-   - **Function**: Uses symmetry-adapted Fourier bases as positional encodings to enable parameter sharing across space groups.
-   - **Mechanism**: Atomic positions are first expanded in a standard Fourier basis and then projected onto the invariant subspace via a group-dependent adjacency matrix. The adjacency matrix is precomputed; network weights are shared across all space groups.
-   - **Design Motivation**: Different space groups only alter the adjacency matrix (precomputed offline), while the network architecture and parameters remain unchanged—enabling zero-shot generalization.
+    - **Function**: Uses symmetry-adapted Fourier bases as positional encodings to enable parameter sharing across space groups.
+    - **Mechanism**: Atomic positions are first expanded in a standard Fourier basis and then projected onto the invariant subspace via a group-dependent adjacency matrix. The adjacency matrix is precomputed; network weights are shared across all space groups.
+    - **Design Motivation**: Different space groups only alter the adjacency matrix (precomputed offline), while the network architecture and parameters remain unchanged—enabling zero-shot generalization.
 
 ### Loss & Training
 Standard regression/classification losses for material property prediction. Crucially, data from different space groups can be mixed during training, with the model automatically adapting via the adjacency matrix.

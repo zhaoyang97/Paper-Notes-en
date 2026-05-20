@@ -18,8 +18,8 @@ content_hash: 90c8a9662c8ef127
 # Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15138](https://arxiv.org/abs/2505.15138)
-**Code**: None
+**arXiv**: [2505.15138](https://arxiv.org/abs/2505.15138)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Constrained MDP, Average Reward, Primal-Dual, Natural Policy Gradient, Global Convergence
 

@@ -18,8 +18,8 @@ content_hash: 6df8d5bbdc649a70
 # FSMC-Pose: Frequency and Spatial Fusion with Multiscale Self-calibration for Cattle Mounting Pose Estimation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.16596](https://arxiv.org/abs/2603.16596)
-**Code**: [https://github.com/](https://github.com/)
+**arXiv**: [2603.16596](https://arxiv.org/abs/2603.16596)  
+**Code**: [https://github.com/](https://github.com/)  
 **Area**: Human Understanding
 **Keywords**: cattle pose estimation, estrus detection, frequency-spatial fusion, multiscale self-calibration, lightweight backbone
 

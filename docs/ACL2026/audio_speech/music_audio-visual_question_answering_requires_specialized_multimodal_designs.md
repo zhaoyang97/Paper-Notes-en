@@ -18,8 +18,8 @@ content_hash: 040636e4504704ff
 # Music Audio-Visual Question Answering Requires Specialized Multimodal Designs
 
 **Conference**: ACL 2026
-**arXiv**: [2505.20638](https://arxiv.org/abs/2505.20638)
-**Code**: [https://github.com/WenhaoYou1/Survey4MusicAVQA](https://github.com/WenhaoYou1/Survey4MusicAVQA)
+**arXiv**: [2505.20638](https://arxiv.org/abs/2505.20638)  
+**Code**: [https://github.com/WenhaoYou1/Survey4MusicAVQA](https://github.com/WenhaoYou1/Survey4MusicAVQA)  
 **Area**: Multimodal / Music Understanding
 **Keywords**: Music Audio-Visual Question Answering, Spatiotemporal Reasoning, Multimodal Design, Domain Specialization, Survey
 

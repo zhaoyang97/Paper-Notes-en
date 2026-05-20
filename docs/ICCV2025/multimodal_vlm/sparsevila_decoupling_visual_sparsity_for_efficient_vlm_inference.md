@@ -19,8 +19,8 @@ content_hash: e5df2b0fc1c23cf2
 # SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.17777](https://arxiv.org/abs/2510.17777)
-**Code**: Not released (built on TinyChat + AWQ inference framework)
+**arXiv**: [2510.17777](https://arxiv.org/abs/2510.17777)  
+**Code**: Not released (built on TinyChat + AWQ inference framework)  
 **Area**: Multimodal Large Models / Inference Acceleration / Token Pruning
 **Keywords**: VLM, Token Pruning, KV-Cache, Decoupled Sparsity, Multi-turn Conversation, Prefill-Decode
 

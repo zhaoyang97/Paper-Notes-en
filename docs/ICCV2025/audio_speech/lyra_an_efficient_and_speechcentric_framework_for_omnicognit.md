@@ -19,8 +19,8 @@ content_hash: a6df411c1b5fe0d4
 # Lyra: An Efficient and Speech-Centric Framework for Omni-Cognition
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.09501](https://arxiv.org/abs/2412.09501)
-**Code**: [https://github.com/dvlab-research/Lyra](https://github.com/dvlab-research/Lyra)
+**arXiv**: [2412.09501](https://arxiv.org/abs/2412.09501)  
+**Code**: [https://github.com/dvlab-research/Lyra](https://github.com/dvlab-research/Lyra)  
 **Area**: Multimodal VLM / Omni-Modal Understanding / Speech Modality
 **Keywords**: omni-cognition, speech-centric, multi-modality LoRA, latent cross-modality regularizer, long speech, token extraction
 

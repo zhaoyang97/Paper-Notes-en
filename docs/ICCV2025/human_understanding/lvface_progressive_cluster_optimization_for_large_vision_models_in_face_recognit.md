@@ -18,8 +18,8 @@ content_hash: 0fafb13b405cac96
 # LVFace: Progressive Cluster Optimization for Large Vision Models in Face Recognition
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.13420](https://arxiv.org/abs/2501.13420)
-**Code**: [https://github.com/bytedance/LVFace](https://github.com/bytedance/LVFace)
+**arXiv**: [2501.13420](https://arxiv.org/abs/2501.13420)  
+**Code**: [https://github.com/bytedance/LVFace](https://github.com/bytedance/LVFace)  
 **Area**: Human Understanding
 **Keywords**: face recognition, Vision Transformer, progressive optimization, large vision model, margin-based loss
 

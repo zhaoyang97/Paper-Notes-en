@@ -18,8 +18,8 @@ content_hash: 8c69228c3014c8e5
 # Explore-on-Graph: Incentivizing Autonomous Exploration of LLMs on Knowledge Graphs
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.21728](https://arxiv.org/abs/2602.21728)
-**Code**: [Available](https://github.com/ysq111333/EoG)
+**arXiv**: [2602.21728](https://arxiv.org/abs/2602.21728)  
+**Code**: [Available](https://github.com/ysq111333/EoG)  
 **Area**: Graph Learning
 **Keywords**: Knowledge Graph Question Answering, Autonomous Exploration, Reinforcement Learning, Path-refined Reward, GRPO
 

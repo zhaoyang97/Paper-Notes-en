@@ -18,8 +18,8 @@ content_hash: 328f20684801ddf6
 # I-INR: Iterative Implicit Neural Representations
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.17364](https://arxiv.org/abs/2504.17364)
-**Code**: [https://github.com/optimizer077/I-INR](https://github.com/optimizer077/I-INR)
+**arXiv**: [2504.17364](https://arxiv.org/abs/2504.17364)  
+**Code**: [https://github.com/optimizer077/I-INR](https://github.com/optimizer077/I-INR)  
 **Area**: Computer Vision / Signal Representation
 **Keywords**: Implicit Neural Representations, Iterative Refinement, High-Frequency Reconstruction, Denoising Robustness, Plug-and-Play Framework
 

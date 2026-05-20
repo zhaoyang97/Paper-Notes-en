@@ -18,8 +18,8 @@ content_hash: ddadd598eeb0c85b
 # Expert Pyramid Tuning: Efficient Parameter Fine-Tuning for Expertise-Driven Task Allocation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12577](https://arxiv.org/abs/2603.12577)
-**Code**: [https://anonymous.4open.science/r/EPT-B0E4](https://anonymous.4open.science/r/EPT-B0E4)
+**arXiv**: [2603.12577](https://arxiv.org/abs/2603.12577)  
+**Code**: [https://anonymous.4open.science/r/EPT-B0E4](https://anonymous.4open.science/r/EPT-B0E4)  
 **Area**: Robotics
 **Keywords**: [PEFT, LoRA, Mixture-of-Experts, Multi-Scale Feature Pyramid, Deconvolution Projection]
 

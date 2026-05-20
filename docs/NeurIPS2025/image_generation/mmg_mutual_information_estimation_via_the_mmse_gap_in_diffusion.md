@@ -18,8 +18,8 @@ content_hash: 62274a830d604478
 # MMG: Mutual Information Estimation via the MMSE Gap in Diffusion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20609](https://arxiv.org/abs/2509.20609)
-**Code**: [GitHub](https://github.com/fengsxy/Diffusion_MI)
+**arXiv**: [2509.20609](https://arxiv.org/abs/2509.20609)  
+**Code**: [GitHub](https://github.com/fengsxy/Diffusion_MI)  
 **Area**: Information Theory / Diffusion Models
 **Keywords**: mutual information estimation, diffusion models, MMSE, denoising, importance sampling
 

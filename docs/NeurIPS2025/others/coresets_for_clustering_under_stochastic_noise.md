@@ -17,7 +17,7 @@ content_hash: 811bfc1115a22cc6
 # Coresets for Clustering Under Stochastic Noise
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23438](https://arxiv.org/abs/2510.23438)
+**arXiv**: [2510.23438](https://arxiv.org/abs/2510.23438)  
 **Area**: Others
 **Keywords**: Coreset, Clustering, Stochastic Noise, k-Means, Surrogate Error Metric
 

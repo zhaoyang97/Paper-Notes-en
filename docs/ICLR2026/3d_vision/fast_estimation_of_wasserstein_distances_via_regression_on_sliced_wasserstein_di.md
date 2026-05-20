@@ -18,8 +18,8 @@ content_hash: 59156d6c57f0cece
 # Fast Estimation of Wasserstein Distances via Regression on Sliced Wasserstein Distances
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.20508](https://arxiv.org/abs/2509.20508)
-**Code**: [Available](https://github.com/hainn2803/Regression-Wasserstein)
+**arXiv**: [2509.20508](https://arxiv.org/abs/2509.20508)  
+**Code**: [Available](https://github.com/hainn2803/Regression-Wasserstein)  
 **Area**: 3D Vision
 **Keywords**: Wasserstein distance, Sliced Wasserstein, optimal transport, linear regression, point cloud classification
 

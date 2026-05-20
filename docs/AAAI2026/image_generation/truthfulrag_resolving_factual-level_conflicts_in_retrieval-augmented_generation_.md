@@ -18,8 +18,8 @@ content_hash: 742ec1c9c167a9d9
 # TruthfulRAG: Resolving Factual-level Conflicts in Retrieval-Augmented Generation with Knowledge Graphs
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10375](https://arxiv.org/abs/2511.10375)
-**Code**: None
+**arXiv**: [2511.10375](https://arxiv.org/abs/2511.10375)  
+**Code**: None  
 **Area**: image_generation (actually NLP/RAG)
 **Keywords**: knowledge conflict, retrieval-augmented generation, knowledge graph, factual-level reasoning, entropy filtering
 

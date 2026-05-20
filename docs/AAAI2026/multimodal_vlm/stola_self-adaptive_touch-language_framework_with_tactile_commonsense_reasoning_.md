@@ -18,8 +18,8 @@ content_hash: cdb22f0509421551
 # SToLa: Self-Adaptive Touch-Language Framework with Tactile Commonsense Reasoning in Open-Ended Scenarios
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.04201](https://arxiv.org/abs/2505.04201)
-**Code**: [Project Page](https://cocacola-lab.github.io/SToLa-Page/)
+**arXiv**: [2505.04201](https://arxiv.org/abs/2505.04201)  
+**Code**: [Project Page](https://cocacola-lab.github.io/SToLa-Page/)  
 **Area**: Multimodal VLM
 **Keywords**: Tactile perception, multimodal reasoning, mixture of experts, touch-language model, commonsense reasoning
 

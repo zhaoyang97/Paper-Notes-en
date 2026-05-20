@@ -20,8 +20,8 @@ content_hash: 337320daac05d485
 # DPAD: Discriminative Perception via Anchored Description for Reasoning Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04002](https://arxiv.org/abs/2603.04002)
-**Code**: [https://github.com/mrazhou/DPAD](https://github.com/mrazhou/DPAD)
+**arXiv**: [2603.04002](https://arxiv.org/abs/2603.04002)  
+**Code**: [https://github.com/mrazhou/DPAD](https://github.com/mrazhou/DPAD)  
 **Area**: Reasoning Segmentation
 **Keywords**: [Reasoning Segmentation, Reinforcement Learning, GRPO, Discriminative Perception, CLIP, Anchored Description, Reward Design]
 

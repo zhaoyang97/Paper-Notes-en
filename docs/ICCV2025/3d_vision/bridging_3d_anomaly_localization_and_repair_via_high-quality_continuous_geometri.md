@@ -18,8 +18,8 @@ content_hash: 6552b6eee26b981d
 # Bridging 3D Anomaly Localization and Repair via High-Quality Continuous Geometric Representation
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.24431](https://arxiv.org/abs/2505.24431)
-**Code**: [https://github.com/ZZZBBBZZZ/PASDF](https://github.com/ZZZBBBZZZ/PASDF)
+**arXiv**: [2505.24431](https://arxiv.org/abs/2505.24431)  
+**Code**: [https://github.com/ZZZBBBZZZ/PASDF](https://github.com/ZZZBBBZZZ/PASDF)  
 **Area**: 3D Vision / Anomaly Detection / Point Cloud
 **Keywords**: 3D anomaly detection, signed distance function, pose alignment, anomaly repair, point cloud
 

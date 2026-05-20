@@ -18,8 +18,8 @@ content_hash: d5f81d14a6da20d2
 # LIFT: Latent Implicit Functions for Task- and Data-Agnostic Encoding
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.15420](https://arxiv.org/abs/2503.15420)
-**Code**: [GitHub](https://amirhossein-kz.github.io/lift/)
+**arXiv**: [2503.15420](https://arxiv.org/abs/2503.15420)  
+**Code**: [GitHub](https://amirhossein-kz.github.io/lift/)  
 **Area**: Implicit Neural Representations / Generative Models
 **Keywords**: implicit neural representations, meta-learning, multi-scale latent variables, classification, generative modeling
 

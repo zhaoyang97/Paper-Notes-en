@@ -18,8 +18,8 @@ content_hash: 92eb5d75bc79aa0e
 # Image Super-Resolution with Guarantees via Conformalized Generative Models
 
 **Conference**: NEURIPS2025
-**arXiv**: [2502.09664](https://arxiv.org/abs/2502.09664)
-**Code**: [adamesalles/experiments-conformal-superres](https://github.com/adamesalles/experiments-conformal-superres)
+**arXiv**: [2502.09664](https://arxiv.org/abs/2502.09664)  
+**Code**: [adamesalles/experiments-conformal-superres](https://github.com/adamesalles/experiments-conformal-superres)  
 **Area**: Image Generation
 **Keywords**: Super-Resolution, Uncertainty Quantification, Conformal Prediction, Diffusion Models, Confidence Masks
 

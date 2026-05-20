@@ -18,8 +18,8 @@ content_hash: 2fb6aa1c4d8a7417
 # DeRIS: Decoupling Perception and Cognition for Enhanced Referring Image Segmentation through Loopback Synergy
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.01738](https://arxiv.org/abs/2507.01738)
-**Code**: Available (link mentioned in paper)
+**arXiv**: [2507.01738](https://arxiv.org/abs/2507.01738)  
+**Code**: Available (link mentioned in paper)  
 **Area**: Image Segmentation
 **Keywords**: referring image segmentation, perception-cognition decoupling, loopback synergy, non-referent, GRES
 

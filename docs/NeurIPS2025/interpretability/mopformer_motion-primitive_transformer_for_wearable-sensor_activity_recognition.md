@@ -18,8 +18,8 @@ content_hash: a2b884a8f29f0d6b
 # MoPFormer: Motion-Primitive Transformer for Wearable-Sensor Activity Recognition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20744](https://arxiv.org/abs/2505.20744)
-**Code**: Available
+**arXiv**: [2505.20744](https://arxiv.org/abs/2505.20744)  
+**Code**: Available  
 **Area**: Interpretability
 **Keywords**: Motion Primitives, Transformer, Wearable Sensors, Activity Recognition, Temporal Decomposition
 
@@ -47,21 +47,21 @@ Input IMU signals → Motion primitive extraction (learned segmentation + encodi
 
 1. **Motion Primitive Extraction**
 
-   - **Function**: Automatically decomposes continuous sensor signals into discrete primitive sequences.
-   - **Mechanism**: A learned segmentation network identifies primitive boundaries in the signal; an encoder maps each segment to a fixed-length primitive embedding.
-   - **Design Motivation**: Primitives constitute more natural and stable representation units that are invariant to sampling rate variations.
+    - **Function**: Automatically decomposes continuous sensor signals into discrete primitive sequences.
+    - **Mechanism**: A learned segmentation network identifies primitive boundaries in the signal; an encoder maps each segment to a fixed-length primitive embedding.
+    - **Design Motivation**: Primitives constitute more natural and stable representation units that are invariant to sampling rate variations.
 
 2. **Primitive Transformer**
 
-   - **Function**: Models temporal dependencies among motion primitives.
-   - **Mechanism**: Standard Transformer encoder with positional encoding, multi-head self-attention, and feed-forward layers.
-   - **Design Motivation**: The primitive sequence is far shorter than the raw signal (10–20 primitives vs. hundreds of sample points), yielding high computational efficiency.
+    - **Function**: Models temporal dependencies among motion primitives.
+    - **Mechanism**: Standard Transformer encoder with positional encoding, multi-head self-attention, and feed-forward layers.
+    - **Design Motivation**: The primitive sequence is far shorter than the raw signal (10–20 primitives vs. hundreds of sample points), yielding high computational efficiency.
 
 3. **Lightweight Design**
 
-   - **Function**: Keeps the model compact for deployment on edge devices.
-   - **Mechanism**: Small embedding dimensions (64–128), shallow Transformer (2–4 layers), and parameter sharing.
-   - **Design Motivation**: Wearable devices have limited computational resources.
+    - **Function**: Keeps the model compact for deployment on edge devices.
+    - **Mechanism**: Small embedding dimensions (64–128), shallow Transformer (2–4 layers), and parameter sharing.
+    - **Design Motivation**: Wearable devices have limited computational resources.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: f243faddc17bc052
 # GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22862](https://arxiv.org/abs/2602.22862)
-**Code**: Available (Project Page)
+**arXiv**: [2602.22862](https://arxiv.org/abs/2602.22862)  
+**Code**: Available (Project Page)  
 **Area**: Reinforcement Learning
 **Keywords**: Robot Grasping, Latent Diffusion Policy, Grasp Prior, Imitation Learning, Generalization
 

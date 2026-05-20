@@ -18,8 +18,8 @@ content_hash: 1a1113fa0844e999
 # An FPGA Implementation of Displacement Vector Search for Intra Pattern Copy in JPEG XS
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10671](https://arxiv.org/abs/2603.10671)
-**Code**: None
+**arXiv**: [2603.10671](https://arxiv.org/abs/2603.10671)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: FPGA, JPEG XS, Intra Pattern Copy, Displacement Vector Search, Hardware Acceleration
 

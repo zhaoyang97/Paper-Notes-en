@@ -18,8 +18,8 @@ content_hash: 429fcd17ab870d66
 # PartField: Learning 3D Feature Fields for Part Segmentation and Beyond
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.11451](https://arxiv.org/abs/2504.11451)
-**Code**: [https://research.nvidia.com/labs/toronto-ai/partfield-release/](https://research.nvidia.com/labs/toronto-ai/partfield-release/) (project page)
+**arXiv**: [2504.11451](https://arxiv.org/abs/2504.11451)  
+**Code**: [https://research.nvidia.com/labs/toronto-ai/partfield-release/](https://research.nvidia.com/labs/toronto-ai/partfield-release/) (project page)  
 **Area**: Semantic Segmentation
 **Keywords**: 3D part segmentation, feature field, contrastive learning, feed-forward model, hierarchical decomposition
 

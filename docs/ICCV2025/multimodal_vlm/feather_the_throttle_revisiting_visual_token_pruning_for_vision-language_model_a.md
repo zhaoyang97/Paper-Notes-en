@@ -18,8 +18,8 @@ content_hash: ee94e71649246e6c
 # Feather the Throttle: Revisiting Visual Token Pruning for Vision-Language Model Acceleration
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.13180](https://arxiv.org/abs/2412.13180)
-**Code**: None
+**arXiv**: [2412.13180](https://arxiv.org/abs/2412.13180)  
+**Code**: None  
 **Area**: Multimodal VLM / Token Pruning
 **Keywords**: VLM acceleration, Visual Token Pruning, RoPE positional bias, visual grounding, FEATHER
 

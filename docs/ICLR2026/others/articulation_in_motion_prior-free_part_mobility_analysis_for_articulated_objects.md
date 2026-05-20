@@ -19,7 +19,7 @@ content_hash: 631cf6dc101ca885
 # Articulation in Motion: Prior-Free Part Mobility Analysis for Articulated Objects
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02910](https://arxiv.org/abs/2603.02910)
+**arXiv**: [2603.02910](https://arxiv.org/abs/2603.02910)  
 **Project Page**: [AiM](https://haoai-1997.github.io/AiM/)
 **Area**: Other
 **Keywords**: articulated objects, Gaussian splatting, part segmentation, joint estimation, sequential RANSAC, prior-free, interaction video
@@ -52,21 +52,21 @@ AiM takes as input an interaction video of a human manipulating an articulated o
 
 1. **Dual-Gaussian Representation**
 
-   - **Function**: Maintains two sets of 3D Gaussians — Static GS representing invariant background and stationary parts, and Deformable GS representing moving parts.
-   - **Mechanism**: Gradient signals from pixel-level rendering losses automatically assign Gaussians to static or dynamic sets; Static GS remains fixed while Deformable GS learns per-frame deformation fields.
-   - **Design Motivation**: Explicit dynamic-static separation prevents moving parts from corrupting static geometry, and allows subsequent part segmentation to focus exclusively on dynamic Gaussians.
+    - **Function**: Maintains two sets of 3D Gaussians — Static GS representing invariant background and stationary parts, and Deformable GS representing moving parts.
+    - **Mechanism**: Gradient signals from pixel-level rendering losses automatically assign Gaussians to static or dynamic sets; Static GS remains fixed while Deformable GS learns per-frame deformation fields.
+    - **Design Motivation**: Explicit dynamic-static separation prevents moving parts from corrupting static geometry, and allows subsequent part segmentation to focus exclusively on dynamic Gaussians.
 
 2. **Sequential RANSAC Part Segmentation**
 
-   - **Function**: Automatically discovers parts from the motion trajectories of dynamic Gaussians without presetting the number of parts.
-   - **Mechanism**: Fits rigid body motion to the deformation trajectories of all dynamic Gaussians; the largest consensus set corresponds to one part. That part is then removed and the process iterates over the remaining Gaussians until the residual falls below a threshold.
-   - **Design Motivation**: RANSAC is naturally suited to the setting of "an unknown number of mixed rigid body motions"; sequential execution ensures parts are discovered in descending order of size.
+    - **Function**: Automatically discovers parts from the motion trajectories of dynamic Gaussians without presetting the number of parts.
+    - **Mechanism**: Fits rigid body motion to the deformation trajectories of all dynamic Gaussians; the largest consensus set corresponds to one part. That part is then removed and the process iterates over the remaining Gaussians until the residual falls below a threshold.
+    - **Design Motivation**: RANSAC is naturally suited to the setting of "an unknown number of mixed rigid body motions"; sequential execution ensures parts are discovered in descending order of size.
 
 3. **SDMD Module (Static Dynamic Merging with Discovery)**
 
-   - **Function**: Handles static regions newly exposed after moving parts are displaced (e.g., the interior walls of a cabinet revealed when a drawer is opened).
-   - **Mechanism**: Detects discrepancy regions between rendered and real images, initializes new Static Gaussians at those locations, and merges them with the existing Static GS.
-   - **Design Motivation**: Conventional methods cannot handle static geometry that is initially invisible but later becomes observable; SDMD fills this critical gap.
+    - **Function**: Handles static regions newly exposed after moving parts are displaced (e.g., the interior walls of a cabinet revealed when a drawer is opened).
+    - **Mechanism**: Detects discrepancy regions between rendered and real images, initializes new Static Gaussians at those locations, and merges them with the existing Static GS.
+    - **Design Motivation**: Conventional methods cannot handle static geometry that is initially invisible but later becomes observable; SDMD fills this critical gap.
 
 ## Key Experimental Results
 

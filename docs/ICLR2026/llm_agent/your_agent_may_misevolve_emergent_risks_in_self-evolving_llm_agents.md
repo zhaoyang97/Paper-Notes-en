@@ -17,8 +17,8 @@ content_hash: 3a28821681b5724f
 # Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26354](https://arxiv.org/abs/2509.26354)
-**Code**: [GitHub](https://github.com/ShaoShuai0605/Misevolution)
+**arXiv**: [2509.26354](https://arxiv.org/abs/2509.26354)  
+**Code**: [GitHub](https://github.com/ShaoShuai0605/Misevolution)  
 **Area**: LLM Agent / AI Safety
 **Keywords**: Self-evolving Agent, Misevolution, AI Safety, Safety Alignment Degradation, Reward Hijacking
 
@@ -152,9 +152,9 @@ Key finding: Even Gemini-2.5-Pro—among the most safety-aligned models availabl
 - **RedCode**: A code security benchmark used to evaluate vulnerability risks in agent-created tools.
 - **RiOSWorld**: A GUI agent risk evaluation benchmark used to assess safety behaviors in GUI operations.
 - **Insights**:
-  - Agent systems require "evolution-aware" safety monitoring that not only evaluates point-in-time safety, but also continuously tracks safety changes along the evolution trajectory.
-  - Memory systems should incorporate built-in statistical bias detection and correction mechanisms.
-  - Tool creation pipelines should integrate automated code security review (e.g., static analysis, vulnerability scanning).
+    - Agent systems require "evolution-aware" safety monitoring that not only evaluates point-in-time safety, but also continuously tracks safety changes along the evolution trajectory.
+    - Memory systems should incorporate built-in statistical bias detection and correction mechanisms.
+    - Tool creation pipelines should integrate automated code security review (e.g., static analysis, vulnerability scanning).
 
 ## Rating
 
@@ -180,8 +180,8 @@ tags:
 # Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26354](https://arxiv.org/abs/2509.26354)
-**Code**: [GitHub](https://github.com/ShaoShuai0605/Misevolution)
+**arXiv**: [2509.26354](https://arxiv.org/abs/2509.26354)  
+**Code**: [GitHub](https://github.com/ShaoShuai0605/Misevolution)  
 **Area**: LLM Agent / AI Safety
 **Keywords**: Self-evolving Agent, Misevolution, AI Safety, LLM Agent, Safety Alignment Degradation
 
@@ -303,9 +303,9 @@ The authors propose the conceptual framework of "Misevolution," decomposing the 
 - **RedCode**: A code security evaluation benchmark used to assess vulnerability risks in tool creation.
 - **RiOSWorld**: A GUI agent risk evaluation benchmark used to assess safety behaviors during workflow evolution.
 - **Insights**:
-  - "Evolution-aware" safety evaluation frameworks are needed—ones that not only assess point-in-time safety but also track safety changes along the evolution trajectory.
-  - Agent memory systems require built-in safety auditing mechanisms.
-  - Tool creation pipelines should integrate automated security review (e.g., code vulnerability scanning).
+    - "Evolution-aware" safety evaluation frameworks are needed—ones that not only assess point-in-time safety but also track safety changes along the evolution trajectory.
+    - Agent memory systems require built-in safety auditing mechanisms.
+    - Tool creation pipelines should integrate automated security review (e.g., code vulnerability scanning).
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐

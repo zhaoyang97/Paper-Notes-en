@@ -19,8 +19,8 @@ content_hash: 2871cb1e06c701e7
 # Clip-and-Verify: Linear Constraint-Driven Domain Clipping for Accelerated Neural Network Verification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.11087](https://arxiv.org/abs/2512.11087)
-**Code**: [https://github.com/Verified-Intelligence/Clip_and_Verify](https://github.com/Verified-Intelligence/Clip_and_Verify)
+**arXiv**: [2512.11087](https://arxiv.org/abs/2512.11087)  
+**Code**: [https://github.com/Verified-Intelligence/Clip_and_Verify](https://github.com/Verified-Intelligence/Clip_and_Verify)  
 **Area**: LLM Reasoning
 **Keywords**: Neural network verification, branch-and-bound, linear constraints, domain clipping, α,β-CROWN
 

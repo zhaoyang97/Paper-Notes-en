@@ -18,8 +18,8 @@ content_hash: 54ca012989ae67e9
 # MOS: Mitigating Optical-SAR Modality Gap for Cross-Modal Ship Re-Identification
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.03404](https://arxiv.org/abs/2512.03404)
-**Code**: Coming soon
+**arXiv**: [2512.03404](https://arxiv.org/abs/2512.03404)  
+**Code**: Coming soon  
 **Area**: Image Generation / Cross-Modal Retrieval
 **Keywords**: Cross-modal ReID, Optical-SAR, Ship recognition, Diffusion bridge model, Modality alignment
 

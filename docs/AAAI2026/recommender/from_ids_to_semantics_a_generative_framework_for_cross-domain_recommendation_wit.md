@@ -18,8 +18,8 @@ content_hash: a71ef695f64ee7c4
 # From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08006](https://arxiv.org/abs/2511.08006)
-**Code**: [https://github.com/hupeiyu21/GenCDR](https://github.com/hupeiyu21/GenCDR)
+**arXiv**: [2511.08006](https://arxiv.org/abs/2511.08006)  
+**Code**: [https://github.com/hupeiyu21/GenCDR](https://github.com/hupeiyu21/GenCDR)  
 **Area**: Recommender Systems
 **Keywords**: Cross-domain recommendation, semantic ID, generative recommendation, large language models, domain adaptation
 

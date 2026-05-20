@@ -21,8 +21,8 @@ content_hash: 1aa041e09cc0c97b
 # EgoM2P: Egocentric Multimodal Multitask Pretraining
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.07886](https://arxiv.org/abs/2506.07886)
-**Code**: [Project Page](https://egom2p.github.io/)
+**arXiv**: [2506.07886](https://arxiv.org/abs/2506.07886)  
+**Code**: [Project Page](https://egom2p.github.io/)  
 **Area**: 3D Vision
 **Keywords**: Egocentric Vision, Multimodal Pretraining, Multitask Learning, Masked Modeling, Gaze Prediction, Camera Tracking, Depth Estimation, Video Generation
 

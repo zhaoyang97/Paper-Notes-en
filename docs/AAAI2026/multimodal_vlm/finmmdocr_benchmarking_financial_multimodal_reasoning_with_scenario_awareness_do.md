@@ -18,8 +18,8 @@ content_hash: ac12a151c237702a
 # FinMMDocR: Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.24903](https://arxiv.org/abs/2512.24903)
-**Code**: [https://bupt-reasoning-lab.github.io/FinMMDocR](https://bupt-reasoning-lab.github.io/FinMMDocR)
+**arXiv**: [2512.24903](https://arxiv.org/abs/2512.24903)  
+**Code**: [https://bupt-reasoning-lab.github.io/FinMMDocR](https://bupt-reasoning-lab.github.io/FinMMDocR)  
 **Area**: Multimodal VLM
 **Keywords**: Financial Reasoning, Multimodal Benchmark, Document Understanding, Multi-Step Computation, RAG
 

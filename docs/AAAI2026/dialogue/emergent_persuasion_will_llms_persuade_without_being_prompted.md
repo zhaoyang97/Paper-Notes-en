@@ -18,8 +18,8 @@ content_hash: 346aaa4c87ef56ca
 # Emergent Persuasion: Will LLMs Persuade Without Being Prompted?
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.22201](https://arxiv.org/abs/2512.22201)
-**Code**: [GitHub](https://github.com/ith8/persona_vectors)
+**arXiv**: [2512.22201](https://arxiv.org/abs/2512.22201)  
+**Code**: [GitHub](https://github.com/ith8/persona_vectors)  
 **Area**: Dialogue Systems
 **Keywords**: LLM Safety, Emergent Persuasion, Fine-tuning Risks, AI Governance, Alignment
 
@@ -54,21 +54,21 @@ Evaluation uses an adapted UnPromptedAPE benchmark (with persuasion instructions
 
 1. **UnPromptedAPE Evaluation Framework**:
 
-   - *Function*: Measures a model's tendency to spontaneously attempt persuasion without being prompted.
-   - *Mechanism*: Adapts the APE benchmark by modifying system prompts to remove "please persuade the user" instructions; simulates a user expressing low belief in a given statement and observes whether the model proactively attempts to change the user's belief.
-   - *Design Motivation*: Distinguishes between "persuasion attempts" and "persuasion success"—the model's spontaneous persuasive tendency is itself a safety signal detectable prior to deployment, even if the attempt ultimately fails.
+    - *Function*: Measures a model's tendency to spontaneously attempt persuasion without being prompted.
+    - *Mechanism*: Adapts the APE benchmark by modifying system prompts to remove "please persuade the user" instructions; simulates a user expressing low belief in a given statement and observes whether the model proactively attempts to change the user's belief.
+    - *Design Motivation*: Distinguishes between "persuasion attempts" and "persuasion success"—the model's spontaneous persuasive tendency is itself a safety signal detectable prior to deployment, even if the attempt ultimately fails.
 
 2. **Persona Vector Activation Steering**:
 
-   - *Function*: Guides the model at inference time by injecting evil, sycophantic, or hallucinating persona vectors.
-   - *Mechanism*: Extracts persona vectors and injects them incrementally at specific layers or all layers, observing changes in persuasion attempt rates.
-   - *Design Motivation*: Tests whether an internal "persuasion feature" exists that can be activated through activation manipulation.
+    - *Function*: Guides the model at inference time by injecting evil, sycophantic, or hallucinating persona vectors.
+    - *Mechanism*: Extracts persona vectors and injects them incrementally at specific layers or all layers, observing changes in persuasion attempt rates.
+    - *Design Motivation*: Tests whether an internal "persuasion feature" exists that can be activated through activation manipulation.
 
 3. **Benign Persuasion SFT**:
 
-   - *Function*: Fine-tunes the model on data containing only benign, non-deceptive persuasive arguments.
-   - *Mechanism*: Uses 1,294 claim–argument pairs from Durmus et al., excluding all deceptive arguments (280 entries), ensuring the training data is entirely factual and benign. Fine-tuning employs rs-LoRA on Qwen2.5-7B-Instruct ($r=32$, $\alpha=64$, $\text{lr}=1\text{e-}5$, 3 epochs).
-   - *Design Motivation*: If fine-tuning on purely benign data still produces emergent harmful persuasion, this constitutes a safety concern independent of emergent misalignment.
+    - *Function*: Fine-tunes the model on data containing only benign, non-deceptive persuasive arguments.
+    - *Mechanism*: Uses 1,294 claim–argument pairs from Durmus et al., excluding all deceptive arguments (280 entries), ensuring the training data is entirely factual and benign. Fine-tuning employs rs-LoRA on Qwen2.5-7B-Instruct ($r=32$, $\alpha=64$, $\text{lr}=1\text{e-}5$, 3 epochs).
+    - *Design Motivation*: If fine-tuning on purely benign data still produces emergent harmful persuasion, this constitutes a safety concern independent of emergent misalignment.
 
 ### Loss & Training
 All fine-tuning uses rs-LoRA on a single A40 GPU, with a maximum training duration of approximately 4 hours. The base model is Qwen2.5-7B-Instruct.

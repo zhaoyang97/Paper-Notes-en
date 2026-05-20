@@ -17,8 +17,8 @@ content_hash: bc1ea4ca50344e16
 # Product Distribution Learning with Imperfect Advice
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10366](https://arxiv.org/abs/2511.10366)
-**Code**: None
+**arXiv**: [2511.10366](https://arxiv.org/abs/2511.10366)  
+**Code**: None  
 **Area**: Learning Theory / Distribution Learning
 **Keywords**: distribution learning, algorithms with predictions, product distributions, sample complexity, tolerant testing
 

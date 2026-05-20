@@ -18,8 +18,8 @@ content_hash: 7977c5f6b79a14b5
 # DeepPrune: Parallel Scaling without Inter-Trace Redundancy
 
 **Conference**: ACL 2026
-**arXiv**: [2510.08483](https://arxiv.org/abs/2510.08483)
-**Code**: [https://deepprune.github.io/](https://deepprune.github.io/)
+**arXiv**: [2510.08483](https://arxiv.org/abs/2510.08483)  
+**Code**: [https://deepprune.github.io/](https://deepprune.github.io/)  
 **Area**: Model Compression
 **Keywords**: parallel inference, CoT pruning, reasoning redundancy, answer equivalence prediction, inference efficiency
 

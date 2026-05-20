@@ -18,8 +18,8 @@ content_hash: 7f2a480a18c1126a
 # SITCOM: Scaling Inference-Time COMpute for VLAs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04041](https://arxiv.org/abs/2510.04041)
-**Code**: N/A
+**arXiv**: [2510.04041](https://arxiv.org/abs/2510.04041)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: Inference-time compute scaling, VLA, world model, model predictive control, robotic manipulation
 

@@ -18,8 +18,8 @@ content_hash: 20c1de6c72bbd814
 # SPROD: Spurious-Aware Prototype Refinement for Reliable Out-of-Distribution Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.23881](https://arxiv.org/abs/2506.23881)
-**Code**: To be confirmed
+**arXiv**: [2506.23881](https://arxiv.org/abs/2506.23881)  
+**Code**: To be confirmed  
 **Area**: LLM Evaluation
 **Keywords**: Spurious correlations, prototype refinement, generative scoring, out-of-distribution detection, K-means
 

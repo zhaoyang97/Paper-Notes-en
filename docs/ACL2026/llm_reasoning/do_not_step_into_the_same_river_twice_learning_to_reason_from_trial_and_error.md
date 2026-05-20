@@ -18,8 +18,8 @@ content_hash: b32a67c27c46cb46
 # Do Not Step Into the Same River Twice: Learning to Reason from Trial and Error
 
 **Conference**: ACL 2026
-**arXiv**: [2510.26109](https://arxiv.org/abs/2510.26109)
-**Code**: [GitHub](https://github.com/JamyDon/LTE)
+**arXiv**: [2510.26109](https://arxiv.org/abs/2510.26109)  
+**Code**: [GitHub](https://github.com/JamyDon/LTE)  
 **Area**: LLM Reasoning / Reinforcement Learning
 **Keywords**: exploration stagnation, trial-and-error learning, reinforcement learning, hint-guided exploration, mathematical reasoning
 

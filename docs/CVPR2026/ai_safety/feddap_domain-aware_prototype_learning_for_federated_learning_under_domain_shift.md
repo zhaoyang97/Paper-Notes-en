@@ -18,8 +18,8 @@ content_hash: 03e5b542694bab20
 # FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.06795](https://arxiv.org/abs/2604.06795)
-**Code**: [GitHub](https://github.com/quanghuy6997/FedDAP)
+**arXiv**: [2604.06795](https://arxiv.org/abs/2604.06795)  
+**Code**: [GitHub](https://github.com/quanghuy6997/FedDAP)  
 **Area**: AI Security
 **Keywords**: Federated Learning, Domain Shift, Prototype Learning, Contrastive Learning, Domain-Aware
 

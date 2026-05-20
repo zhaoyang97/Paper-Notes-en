@@ -18,8 +18,8 @@ content_hash: b4f9f9cb92d41afb
 # Visual Symbolic Mechanisms: Emergent Symbol Processing in Vision Language Models
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2506.15871](https://arxiv.org/abs/2506.15871)
-**Code**: Available (dataset, analysis, and intervention code to be open-sourced)
+**arXiv**: [2506.15871](https://arxiv.org/abs/2506.15871)  
+**Code**: Available (dataset, analysis, and intervention code to be open-sourced)  
 **Area**: Multimodal VLM / Interpretability
 **Keywords**: visual binding, position IDs, mechanistic interpretability, causal mediation, VLM
 

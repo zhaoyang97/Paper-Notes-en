@@ -18,8 +18,8 @@ content_hash: 1c7648c752ddabe0
 # HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24043](https://arxiv.org/abs/2603.24043)
-**Code**: None
+**arXiv**: [2603.24043](https://arxiv.org/abs/2603.24043)  
+**Code**: None  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Style Transfer, Attention Modulation, Training-Free, Diffusion Models, Identity Preservation
 

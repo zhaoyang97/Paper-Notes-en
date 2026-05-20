@@ -18,8 +18,8 @@ content_hash: 9b181bc04d86394a
 # Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework
 
 **Conference**: AAAI 2026
-**arXiv**: [2406.15045](https://arxiv.org/abs/2406.15045)
-**Code**: [https://github.com/knowlab/MedKIC-Radiology-Proofreading](https://github.com/knowlab/MedKIC-Radiology-Proofreading)
+**arXiv**: [2406.15045](https://arxiv.org/abs/2406.15045)  
+**Code**: [https://github.com/knowlab/MedKIC-Radiology-Proofreading](https://github.com/knowlab/MedKIC-Radiology-Proofreading)  
 **Area**: Medical Imaging
 **Keywords**: Radiology report proofreading, large language models, knowledge graph distillation, staged inference, medical error detection
 

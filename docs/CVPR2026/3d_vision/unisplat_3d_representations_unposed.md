@@ -18,8 +18,8 @@ content_hash: 18a5ebbbf8a5f592
 # UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.10573](https://arxiv.org/abs/2604.10573)
-**Code**: [https://bobochow.github.io/UniSplat](https://bobochow.github.io/UniSplat)
+**arXiv**: [2604.10573](https://arxiv.org/abs/2604.10573)  
+**Code**: [https://bobochow.github.io/UniSplat](https://bobochow.github.io/UniSplat)  
 **Area**: 3D Vision
 **Keywords**: 3D representation learning, spatial intelligence, Gaussian splatting, self-supervised learning, unposed multi-view
 

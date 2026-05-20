@@ -18,8 +18,8 @@ content_hash: d6a54000a60bf9a6
 # Memory-Integrated Reconfigurable Adapters: A Unified Framework for Settings with Multiple Tasks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.00940](https://arxiv.org/abs/2512.00940)
-**Code**: [https://snimm.github.io/mira_web/](https://snimm.github.io/mira_web/)
+**arXiv**: [2512.00940](https://arxiv.org/abs/2512.00940)  
+**Code**: [https://snimm.github.io/mira_web/](https://snimm.github.io/mira_web/)  
 **Area**: Continual Learning / Domain Generalization
 **Keywords**: Associative Memory, Hopfield Networks, Adapters, Continual Learning, Domain Generalization
 

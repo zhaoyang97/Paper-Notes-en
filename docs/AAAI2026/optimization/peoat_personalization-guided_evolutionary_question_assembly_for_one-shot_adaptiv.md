@@ -18,8 +18,8 @@ content_hash: 765b1058055c41d4
 # PEOAT: Personalization-Guided Evolutionary Question Assembly for One-Shot Adaptive Testing
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.00439](https://arxiv.org/abs/2512.00439)
-**Code**: None
+**arXiv**: [2512.00439](https://arxiv.org/abs/2512.00439)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: Adaptive Testing, Evolutionary Algorithm, Personalization, Combinatorial Optimization, Intelligent Education
 

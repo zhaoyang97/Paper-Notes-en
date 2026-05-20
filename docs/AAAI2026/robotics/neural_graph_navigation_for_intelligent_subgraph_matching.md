@@ -18,8 +18,8 @@ content_hash: da2e9f110bfbdffc
 # Neural Graph Navigation for Intelligent Subgraph Matching
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.17939](https://arxiv.org/abs/2511.17939)
-**Code**: Available (provided in appendix)
+**arXiv**: [2511.17939](https://arxiv.org/abs/2511.17939)  
+**Code**: Available (provided in appendix)  
 **Area**: Graph Algorithms / Graph Neural Networks / Subgraph Matching
 **Keywords**: Subgraph Matching, Neural Navigation, Graph Generation, Transformer, Plug-and-Play
 

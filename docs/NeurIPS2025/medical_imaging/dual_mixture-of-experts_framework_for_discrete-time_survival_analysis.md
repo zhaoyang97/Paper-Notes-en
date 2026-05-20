@@ -18,8 +18,8 @@ content_hash: d1712ecbcdaeb657
 # Dual Mixture-of-Experts Framework for Discrete-Time Survival Analysis
 
 **Conference**: NeurIPS 2025 (TS4H Workshop)
-**arXiv**: [2510.26014](https://arxiv.org/abs/2510.26014)
-**Code**: N/A
+**arXiv**: [2510.26014](https://arxiv.org/abs/2510.26014)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: Survival Analysis, Mixture-of-Experts, Discrete Time, Patient Heterogeneity, Breast Cancer
 

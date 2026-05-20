@@ -18,8 +18,8 @@ content_hash: 70a4e8cfb09a8788
 # Locate-then-Sparsify: Attribution Guided Sparse Strategy for Visual Hallucination Mitigation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.16284](https://arxiv.org/abs/2603.16284)
-**Code**: [https://github.com/huttersadan/LTS-FS](https://github.com/huttersadan/LTS-FS)
+**arXiv**: [2603.16284](https://arxiv.org/abs/2603.16284)  
+**Code**: [https://github.com/huttersadan/LTS-FS](https://github.com/huttersadan/LTS-FS)  
 **Area**: Multimodal VLM
 **Keywords**: Visual Hallucination, Feature Steering, Layer-wise Attribution, Sparse Adjustment, LVLM
 

@@ -18,8 +18,8 @@ content_hash: 9256c232a70598ef
 # EASE: Practical and Efficient Safety Alignment for Small Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06512](https://arxiv.org/abs/2511.06512)
-**Code**: [https://github.com/horanshi/EASE](https://github.com/horanshi/EASE)
+**arXiv**: [2511.06512](https://arxiv.org/abs/2511.06512)  
+**Code**: [https://github.com/horanshi/EASE](https://github.com/horanshi/EASE)  
 **Area**: LLM Alignment / SLM Safety
 **Keywords**: small language models, safety alignment, selective reasoning, knowledge distillation, jailbreak defense
 

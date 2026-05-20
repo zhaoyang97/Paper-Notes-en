@@ -18,8 +18,8 @@ content_hash: 5af90e316ebd1715
 # Beyond Low-Rank Tuning: Model Prior-Guided Rank Allocation for Effective Transfer in Low-Data and Large-Gap Regimes
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.00327](https://arxiv.org/abs/2507.00327)
-**Code**: [https://github.com/EndoluminalSurgicalVision-IMR/SR-LoRA](https://github.com/EndoluminalSurgicalVision-IMR/SR-LoRA)
+**arXiv**: [2507.00327](https://arxiv.org/abs/2507.00327)  
+**Code**: [https://github.com/EndoluminalSurgicalVision-IMR/SR-LoRA](https://github.com/EndoluminalSurgicalVision-IMR/SR-LoRA)  
 **Area**: Model Compression / Parameter-Efficient Fine-Tuning
 **Keywords**: LoRA, Stable Rank, Parameter-Efficient Fine-Tuning, Rank Allocation, Few-Shot Transfer Learning
 

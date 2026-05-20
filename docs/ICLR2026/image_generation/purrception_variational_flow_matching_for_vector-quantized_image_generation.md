@@ -17,8 +17,8 @@ content_hash: 8fe67aec25c8ccfe
 # Purrception: Variational Flow Matching for Vector-Quantized Image Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.01478](https://arxiv.org/abs/2510.01478)
-**Code**: None
+**arXiv**: [2510.01478](https://arxiv.org/abs/2510.01478)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: variational flow matching, vector quantization, discrete diffusion, categorical posterior, image generation
 

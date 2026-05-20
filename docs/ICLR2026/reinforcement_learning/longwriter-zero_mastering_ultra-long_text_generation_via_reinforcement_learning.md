@@ -17,8 +17,8 @@ content_hash: e632a09b4a7b5b53
 # LongWriter-Zero: Mastering Ultra-Long Text Generation via Reinforcement Learning
 
 **Conference**: ICLR 2026 (Oral)
-**arXiv**: [2506.18841](https://arxiv.org/abs/2506.18841)
-**Code**: [https://huggingface.co/THU-KEG/LongWriter-Zero-32B](https://huggingface.co/THU-KEG/LongWriter-Zero-32B)
+**arXiv**: [2506.18841](https://arxiv.org/abs/2506.18841)  
+**Code**: [https://huggingface.co/THU-KEG/LongWriter-Zero-32B](https://huggingface.co/THU-KEG/LongWriter-Zero-32B)  
 **Area**: Reinforcement Learning / Long-form Generation
 **Keywords**: Ultra-long text generation, Reinforcement learning, GRPO, Composite reward model, Test-time reasoning
 

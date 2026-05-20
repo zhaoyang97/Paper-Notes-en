@@ -18,8 +18,8 @@ content_hash: 0a86fce1e6d829a4
 # ETA: Energy-based Test-time Adaptation for Depth Completion
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.05989](https://arxiv.org/abs/2508.05989)
-**Code**: [https://fuzzythecat.github.io/eta](https://fuzzythecat.github.io/eta)
+**arXiv**: [2508.05989](https://arxiv.org/abs/2508.05989)  
+**Code**: [https://fuzzythecat.github.io/eta](https://fuzzythecat.github.io/eta)  
 **Area**: LLM Pre-training
 **Keywords**: test-time adaptation, energy-based model, depth completion, domain adaptation, adversarial perturbation
 

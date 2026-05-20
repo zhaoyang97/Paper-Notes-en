@@ -17,8 +17,8 @@ content_hash: b716084ab1990fa7
 # C4D: 4D Made from 3D through Dual Correspondences
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.14960](https://arxiv.org/abs/2510.14960)
-**Code**: [https://littlepure2333.github.io/C4D](https://littlepure2333.github.io/C4D)
+**arXiv**: [2510.14960](https://arxiv.org/abs/2510.14960)  
+**Code**: [https://littlepure2333.github.io/C4D](https://littlepure2333.github.io/C4D)  
 **Area**: Other
 **Keywords**: 4D reconstruction, temporal correspondence, point tracking, motion segmentation, DUSt3R
 
@@ -40,9 +40,9 @@ Monocular video → DUSt3R/MASt3R/MonST3R predicts pointmaps + DynPT predicts lo
 1. **DynPT (Dynamic-aware Point Tracker)**: Built on the CoTracker architecture, augmented with a 3D-aware ViT encoder (frozen DUSt3R pretrained encoder) and a CNN dual-feature extractor. A Transformer iteratively updates each tracked point's position, confidence, visibility, and **mobility**. Trained on Kubric; mobility ground truth is generated via positional difference thresholding.
 2. **Correspondence-Guided Motion Mask**: Static points predicted by DynPT are used to sample static correspondences from optical flow → LMedS estimates the fundamental matrix (reflecting camera motion only) → Sampson distance identifies dynamic regions violating epipolar constraints → masks from multiple frames are fused via union. This yields more accurate motion masks than MonST3R.
 3. **Correspondence-Assisted Optimization**:
-   - CMA (Camera Motion Alignment): constrains the ego-motion field to be consistent with optical flow in static regions.
-   - CTS (Camera Trajectory Smoothing): penalizes abrupt changes in rotation and translation between adjacent frames.
-   - PTS (Point Trajectory Smoothing): adaptively weighted smoothing on sparse tracked points → linear blending displacement (LBD) propagated to dense points.
+    - CMA (Camera Motion Alignment): constrains the ego-motion field to be consistent with optical flow in static regions.
+    - CTS (Camera Trajectory Smoothing): penalizes abrupt changes in rotation and translation between adjacent frames.
+    - PTS (Point Trajectory Smoothing): adaptively weighted smoothing on sparse tracked points → linear blending displacement (LBD) propagated to dense points.
 4. **Plug-and-Play**: No modifications to DUSt3R/MASt3R/MonST3R weights; new objectives are introduced only at the optimization stage.
 
 ### Training / Optimization Details

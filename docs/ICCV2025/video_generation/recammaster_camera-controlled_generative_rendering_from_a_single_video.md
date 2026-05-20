@@ -17,8 +17,8 @@ content_hash: bb51b3e839734cbc
 # ReCamMaster: Camera-Controlled Generative Rendering from A Single Video
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11647](https://arxiv.org/abs/2503.11647)
-**Code**: [https://github.com/KwaiVGI/ReCamMaster](https://github.com/KwaiVGI/ReCamMaster)
+**arXiv**: [2503.11647](https://arxiv.org/abs/2503.11647)  
+**Code**: [https://github.com/KwaiVGI/ReCamMaster](https://github.com/KwaiVGI/ReCamMaster)  
 **Area**: Video Generation
 **Keywords**: Camera Control, Video Re-rendering, Video Generation, Diffusion Models, Multi-Camera Dataset
 

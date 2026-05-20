@@ -18,8 +18,8 @@ content_hash: c98c8ed3d8e605e7
 # LocalDPO: Direct Localized Detail Preference Optimization for Video Diffusion Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.04068](https://arxiv.org/abs/2601.04068)
-**Code**: Available
+**arXiv**: [2601.04068](https://arxiv.org/abs/2601.04068)  
+**Code**: Available  
 **Area**: Video Generation / LLM Alignment
 **Keywords**: Video Diffusion Models, DPO Preference Optimization, Local Corruption, Region-Aware Loss, Spatiotemporal Mask
 

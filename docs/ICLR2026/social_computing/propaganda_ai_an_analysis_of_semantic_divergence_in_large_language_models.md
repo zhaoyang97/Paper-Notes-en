@@ -18,8 +18,8 @@ content_hash: 5f1fed4450162b23
 # Propaganda AI: An Analysis of Semantic Divergence in Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2504.12344](https://arxiv.org/abs/2504.12344)
-**Code**: None
+**arXiv**: [2504.12344](https://arxiv.org/abs/2504.12344)  
+**Code**: None  
 **Area**: Social Computing
 **Keywords**: LLM Safety, Semantic Divergence, Concept Triggering, Audit Framework, Propaganda Behavior
 

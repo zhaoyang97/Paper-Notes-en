@@ -18,8 +18,8 @@ content_hash: 64a3aa434126e8b8
 # Fast Solvers for Discrete Diffusion Models: Theory and Applications of High-Order Algorithms
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.00234](https://arxiv.org/abs/2502.00234)
-**Code**: [DiscreteFastSolver](https://github.com/yuchen-zhu-zyc/DiscreteFastSolver)
+**arXiv**: [2502.00234](https://arxiv.org/abs/2502.00234)  
+**Code**: [DiscreteFastSolver](https://github.com/yuchen-zhu-zyc/DiscreteFastSolver)  
 **Area**: Diffusion Models
 **Keywords**: Discrete Diffusion, High-Order Solvers, τ-leaping, Trapezoidal, Text Generation, Image Generation
 

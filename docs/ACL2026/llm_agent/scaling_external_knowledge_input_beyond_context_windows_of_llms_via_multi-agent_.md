@@ -18,8 +18,8 @@ content_hash: 6a1679fc655d7479
 # Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration
 
 **Conference**: ACL 2026
-**arXiv**: [2505.21471](https://arxiv.org/abs/2505.21471)
-**Code**: [GitHub](https://github.com/THUNLP-MT/ExtAgents)
+**arXiv**: [2505.21471](https://arxiv.org/abs/2505.21471)  
+**Code**: [GitHub](https://github.com/THUNLP-MT/ExtAgents)  
 **Area**: LLM Agent
 **Keywords**: Context window extension, multi-agent collaboration, external knowledge scaling, multi-hop QA, knowledge synchronization
 

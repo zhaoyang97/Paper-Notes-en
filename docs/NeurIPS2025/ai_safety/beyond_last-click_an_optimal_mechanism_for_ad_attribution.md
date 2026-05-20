@@ -18,8 +18,8 @@ content_hash: 7147ebfe32bdb962
 # Beyond Last-Click: An Optimal Mechanism for Ad Attribution
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.22918](https://arxiv.org/abs/2511.22918)
-**Code**: To be confirmed
+**arXiv**: [2511.22918](https://arxiv.org/abs/2511.22918)  
+**Code**: To be confirmed  
 **Area**: Ad Attribution / Mechanism Design
 **Keywords**: Last-Click, Strategic Manipulation, Dominant Strategy Incentive Compatibility, Peer-Validated, Ad Platforms
 

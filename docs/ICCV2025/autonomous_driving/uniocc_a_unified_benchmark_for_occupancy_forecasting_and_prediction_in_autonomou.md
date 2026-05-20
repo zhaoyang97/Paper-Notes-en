@@ -18,8 +18,8 @@ content_hash: 5d08ca376575a498
 # UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.24381](https://arxiv.org/abs/2503.24381)
-**Code**: [uniocc.github.io](https://uniocc.github.io/)
+**arXiv**: [2503.24381](https://arxiv.org/abs/2503.24381)  
+**Code**: [uniocc.github.io](https://uniocc.github.io/)  
 **Area**: Autonomous Driving
 **Keywords**: Occupancy Grid Prediction, Occupancy Prediction Benchmark, Voxel Flow, Cross-Dataset Training, Cooperative Driving
 

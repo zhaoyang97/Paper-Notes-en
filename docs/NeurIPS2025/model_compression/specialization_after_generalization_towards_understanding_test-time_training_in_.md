@@ -19,9 +19,9 @@ content_hash: ceb06a3afdf3fdb6
 # Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.24510](https://arxiv.org/abs/2509.24510)
+**arXiv**: [2509.24510](https://arxiv.org/abs/2509.24510)  
 **Authors**: Jonas Hübotter, Patrik Wolf, Alexander Shevchenko, Dennis Jüni, Andreas Krause, Gil Kur (ETH Zürich, MPI)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Model Compression
 **Keywords**: test-time training, linear representation hypothesis, sparse autoencoders, foundation models, local specialization, underparameterization
 

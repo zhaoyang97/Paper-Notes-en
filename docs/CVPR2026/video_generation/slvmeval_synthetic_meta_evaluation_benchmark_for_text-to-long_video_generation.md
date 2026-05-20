@@ -18,8 +18,8 @@ content_hash: 6f898453663d33e3
 # SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29186](https://arxiv.org/abs/2603.29186)
-**Code**: [https://slvmeval.github.io/](https://slvmeval.github.io/)
+**arXiv**: [2603.29186](https://arxiv.org/abs/2603.29186)  
+**Code**: [https://slvmeval.github.io/](https://slvmeval.github.io/)  
 **Area**: Video Generation
 **Keywords**: Long video generation evaluation, meta-evaluation benchmark, text-to-video, synthetic degradation, VLM-as-a-judge
 

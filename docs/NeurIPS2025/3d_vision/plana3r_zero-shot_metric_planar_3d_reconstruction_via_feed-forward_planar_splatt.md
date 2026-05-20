@@ -18,8 +18,8 @@ content_hash: 8cdb34d9f677d0ec
 # Plana3R: Zero-shot Metric Planar 3D Reconstruction via Feed-Forward Planar Splatting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18714](https://arxiv.org/abs/2510.18714)
-**Code**: [Project Page](https://lck666666.github.io/plana3r/)
+**arXiv**: [2510.18714](https://arxiv.org/abs/2510.18714)  
+**Code**: [Project Page](https://lck666666.github.io/plana3r/)  
 **Area**: 3D Vision
 **Keywords**: Planar 3D reconstruction, metric reconstruction, planar splatting, indoor scenes, feed-forward model
 

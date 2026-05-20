@@ -17,8 +17,8 @@ content_hash: 6915c3be11b59f56
 # Higher-Order Responsibility
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.01003](https://arxiv.org/abs/2506.01003)
-**Code**: None
+**arXiv**: [2506.01003](https://arxiv.org/abs/2506.01003)  
+**Code**: None  
 **Area**: AI Ethics / Computational Social Choice / Formal Methods
 **Keywords**: higher-order responsibility, responsibility gap, sequential decision-making, computational complexity, polynomial hierarchy
 

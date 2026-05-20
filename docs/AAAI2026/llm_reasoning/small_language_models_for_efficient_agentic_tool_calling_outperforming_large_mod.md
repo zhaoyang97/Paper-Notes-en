@@ -18,8 +18,8 @@ content_hash: ab1355806058aaac
 # Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.15943](https://arxiv.org/abs/2512.15943)
-**Code**: None
+**arXiv**: [2512.15943](https://arxiv.org/abs/2512.15943)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Small Language Models, Tool Calling, SFT Fine-tuning, OPT-350M, ToolBench
 

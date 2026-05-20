@@ -14,8 +14,8 @@ content_hash: 69e7d89a44da4d52
 # Efficient Test-Time Scaling via Temporal Reasoning Aggregation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17304](https://arxiv.org/abs/2604.17304)
-**Code**: [https://github.com/qianfantianyuzhouzhou/TRACE](https://github.com/qianfantianyuzhouzhou/TRACE)
+**arXiv**: [2604.17304](https://arxiv.org/abs/2604.17304)  
+**Code**: [https://github.com/qianfantianyuzhouzhou/TRACE](https://github.com/qianfantianyuzhouzhou/TRACE)  
 **Area**: LLM Reasoning Efficiency
 **Keywords**: Test-time scaling, early exit, reasoning convergence, multi-step aggregation, overthinking
 
@@ -115,7 +115,7 @@ TRACE is a training-free inference-time method applied directly to off-the-shelf
 - **Novelty**: ⭐⭐⭐⭐ The multi-step aggregation idea is natural and well-motivated; the ACS+CTS design is elegant, though not technically complex.
 - **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Five mathematical benchmarks, two models, multiple baselines, and detailed ablations — very comprehensive.
 - **Writing Quality**: ⭐⭐⭐⭐ Motivation is clearly established through experiments; method description is concise.
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: llm_reasoning
 **Keywords**: To be supplemented
 

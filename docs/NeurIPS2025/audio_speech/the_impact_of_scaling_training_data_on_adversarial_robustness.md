@@ -18,8 +18,8 @@ content_hash: 8282124c5b57af13
 # The Impact of Scaling Training Data on Adversarial Robustness
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25927](https://arxiv.org/abs/2509.25927)
-**Code**: None
+**arXiv**: [2509.25927](https://arxiv.org/abs/2509.25927)  
+**Code**: None  
 **Area**: Audio/Speech (Adversarial Robustness)
 **Keywords**: Adversarial Robustness, Scaling Laws, Black-box Attacks, Data Quality, Vision Models
 

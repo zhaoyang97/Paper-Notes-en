@@ -18,8 +18,8 @@ content_hash: b7e7375311b9a373
 # Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.09206](https://arxiv.org/abs/2604.09206)
-**Code**: N/A
+**arXiv**: [2604.09206](https://arxiv.org/abs/2604.09206)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: Cooperative Perception, Sparse Architecture, Long-Range 3D Detection, Query Association, V2X
 

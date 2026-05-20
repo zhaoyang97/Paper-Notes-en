@@ -18,8 +18,8 @@ content_hash: 8a568aabb754dd72
 # Straighten Viscous Rectified Flow via Noise Optimization
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.10218](https://arxiv.org/abs/2507.10218)
-**Code**: None
+**arXiv**: [2507.10218](https://arxiv.org/abs/2507.10218)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Rectified Flow, Noise Optimization, Few-step Generation, Trajectory Straightening, Velocity Field
 

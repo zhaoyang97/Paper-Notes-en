@@ -18,8 +18,8 @@ content_hash: 9d6d6158f4878046
 # Pixel-Perfect Depth with Semantics-Prompted Diffusion Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07316](https://arxiv.org/abs/2510.07316)
-**Code**: [Project Page](https://pixel-perfect-depth.github.io)
+**arXiv**: [2510.07316](https://arxiv.org/abs/2510.07316)  
+**Code**: [Project Page](https://pixel-perfect-depth.github.io)  
 **Area**: 3D Vision
 **Keywords**: Monocular Depth Estimation, Pixel-Space Diffusion, DiT, Semantics Prompting, Flying Pixel Removal
 
@@ -32,8 +32,8 @@ This paper proposes Pixel-Perfect Depth, a monocular depth estimation model that
 - **Background**: Monocular depth estimation (MDE) is a foundational task for 3D reconstruction, novel view synthesis, and robotic manipulation. Depth maps produced by current models suffer from pervasive **flying pixels** at object boundaries when converted to point clouds—spurious floating points that severely limit practical applications such as free-viewpoint broadcasting and immersive content creation.
 
 - **Limitations of Prior Work**: The root cause of flying pixels differs by model type:
-  - **Discriminative models** (e.g., Depth Anything v2): tend to output **intermediate depth values** (mean bias) between foreground and background at depth-discontinuous edges to minimize regression loss.
-  - **Generative models** (e.g., Marigold): can theoretically capture the multimodal distribution at edges, but fine-tuning Stable Diffusion requires a VAE to compress depth maps into latent space—VAE compression **inevitably loses edge sharpness**.
+    - **Discriminative models** (e.g., Depth Anything v2): tend to output **intermediate depth values** (mean bias) between foreground and background at depth-discontinuous edges to minimize regression loss.
+    - **Generative models** (e.g., Marigold): can theoretically capture the multimodal distribution at edges, but fine-tuning Stable Diffusion requires a VAE to compress depth maps into latent space—VAE compression **inevitably loses edge sharpness**.
 
 - **Key Challenge**: An intuitive fix is to perform diffusion directly in pixel space. However, the authors find this **extremely challenging**—the core difficulty lies in simultaneously modeling **global semantic coherence** and **fine-grained visual detail** in high-resolution pixel-space generation. SNR analysis confirms that the primary challenge of high-resolution pixel-space diffusion is perceiving and modeling global image structure.
 

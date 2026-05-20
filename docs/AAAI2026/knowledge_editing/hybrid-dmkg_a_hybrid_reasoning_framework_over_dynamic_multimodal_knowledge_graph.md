@@ -19,9 +19,9 @@ content_hash: 347acb6dab74b868
 # Hybrid-DMKG: A Hybrid Reasoning Framework over Dynamic Multimodal Knowledge Graphs for Multimodal Multihop QA with Knowledge Editing
 
 **Conference**: AAAI2026
-**arXiv**: [2512.00881](https://arxiv.org/abs/2512.00881)
+**arXiv**: [2512.00881](https://arxiv.org/abs/2512.00881)  
 **Authors**: Li Yuan, Qingfei Huang, Bingshan Zhu, Yi Cai, Qingbao Huang, Changmeng Zheng, Zikun Deng, Tao Wang (SCUT et al.)
-**Code**: [YuanLi95/Hybrid-DMKG](https://github.com/YuanLi95/Hybrid-DMKG)
+**Code**: [YuanLi95/Hybrid-DMKG](https://github.com/YuanLi95/Hybrid-DMKG)  
 **Area**: Knowledge Editing
 **Keywords**: Multimodal Knowledge Editing, Multihop QA, Dynamic Knowledge Graph, Cross-modal Retrieval, RAG, Hybrid Reasoning
 

@@ -19,8 +19,8 @@ content_hash: fcbb8eb725a390cd
 # VideoMiner: Iteratively Grounding Key Frames of Hour-Long Videos via Tree-based Group Relative Policy Optimization
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.06040](https://arxiv.org/abs/2510.06040)
-**Code**: [GitHub](https://github.com/caoxinye/VideoMiner)
+**arXiv**: [2510.06040](https://arxiv.org/abs/2510.06040)  
+**Code**: [GitHub](https://github.com/caoxinye/VideoMiner)  
 **Area**: Video Understanding / Long-form Video QA
 **Keywords**: Long-form video understanding, key frame extraction, reinforcement learning, GRPO, tree structure, hierarchical video representation
 

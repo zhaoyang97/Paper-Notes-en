@@ -18,8 +18,8 @@ content_hash: 555df1348081be93
 # Unleashing Video Language Models for Fine-grained HRCT Report Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12469](https://arxiv.org/abs/2603.12469)
-**Code**: [GitHub](https://anonymous.4open.science/r/hrct-report-generation-video-vlm-728C/)
+**arXiv**: [2603.12469](https://arxiv.org/abs/2603.12469)  
+**Code**: [GitHub](https://anonymous.4open.science/r/hrct-report-generation-video-vlm-728C/)  
 **Area**: Medical Imaging
 **Keywords**: CT report generation, video language models, Chain-of-Thought, DPO, anomaly detection
 

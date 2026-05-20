@@ -18,8 +18,8 @@ content_hash: 9ff86321dc96a391
 # Improving Consistency in Retrieval-Augmented Systems with Group Similarity Rewards
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04392](https://arxiv.org/abs/2510.04392)
-**Code**: To be confirmed
+**arXiv**: [2510.04392](https://arxiv.org/abs/2510.04392)  
+**Code**: To be confirmed  
 **Area**: Information Retrieval
 **Keywords**: RAG consistency, GRPO, information consistency, semantically equivalent queries, reinforcement learning alignment
 

@@ -18,8 +18,8 @@ content_hash: f0fd57bd6ea47fb8
 # Synthetic Series-Symbol Data Generation for Time Series Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08445](https://arxiv.org/abs/2510.08445)
-**Code**: [GitHub](https://github.com/wwhenxuan/SymTime)
+**arXiv**: [2510.08445](https://arxiv.org/abs/2510.08445)  
+**Code**: [GitHub](https://github.com/wwhenxuan/SymTime)  
 **Area**: Time Series
 **Keywords**: time series foundation model, synthetic data generation, symbolic expressions, contrastive learning, pre-training
 

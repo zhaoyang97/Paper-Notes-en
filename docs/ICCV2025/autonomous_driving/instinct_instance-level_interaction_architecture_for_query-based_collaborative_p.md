@@ -18,8 +18,8 @@ content_hash: c32f5dd09543a6b2
 # INSTINCT: Instance-Level Interaction Architecture for Query-Based Collaborative Perception
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.23700](https://arxiv.org/abs/2509.23700)
-**Code**: [https://github.com/CrazyShout/INSTINCT](https://github.com/CrazyShout/INSTINCT)
+**arXiv**: [2509.23700](https://arxiv.org/abs/2509.23700)  
+**Code**: [https://github.com/CrazyShout/INSTINCT](https://github.com/CrazyShout/INSTINCT)  
 **Area**: Autonomous Driving
 **Keywords**: collaborative perception, instance-level fusion, V2X, LiDAR, bandwidth efficiency
 

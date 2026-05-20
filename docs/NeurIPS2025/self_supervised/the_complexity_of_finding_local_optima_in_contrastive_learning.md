@@ -19,8 +19,8 @@ content_hash: 16457dbc7e5e5e7b
 # The Complexity of Finding Local Optima in Contrastive Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16898](https://arxiv.org/abs/2509.16898)
-**Code**: Available (supplementary)
+**arXiv**: [2509.16898](https://arxiv.org/abs/2509.16898)  
+**Code**: Available (supplementary)  
 **Area**: Computational Complexity / Contrastive Learning
 **Keywords**: contrastive learning, local optima, PLS-hard, CLS-hard, triplet loss, computational complexity
 

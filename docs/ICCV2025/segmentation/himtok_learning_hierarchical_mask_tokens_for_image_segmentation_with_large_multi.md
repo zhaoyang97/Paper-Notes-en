@@ -17,8 +17,8 @@ content_hash: fdb07da5caef5bed
 # HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.13026](https://arxiv.org/abs/2503.13026)
-**Code**: [github.com/yayafengzi/LMM-HiMTok](https://github.com/yayafengzi/LMM-HiMTok)
+**arXiv**: [2503.13026](https://arxiv.org/abs/2503.13026)  
+**Code**: [github.com/yayafengzi/LMM-HiMTok](https://github.com/yayafengzi/LMM-HiMTok)  
 **Area**: Image Segmentation / Large Multimodal Models
 **Keywords**: Hierarchical Mask Tokenization, Large Multimodal Model, Segmentation, Vector Quantization, Visual Grounding
 

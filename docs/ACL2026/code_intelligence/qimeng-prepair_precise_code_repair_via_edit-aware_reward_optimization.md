@@ -18,8 +18,8 @@ content_hash: a11e03a922680338
 # QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05963](https://arxiv.org/abs/2604.05963)
-**Code**: [GitHub](https://github.com/...)
+**arXiv**: [2604.05963](https://arxiv.org/abs/2604.05963)  
+**Code**: [GitHub](https://github.com/...)  
 **Area**: Code Intelligence / Program Repair
 **Keywords**: precise code repair, over-editing, edit-aware reward, GRPO, speculative editing
 

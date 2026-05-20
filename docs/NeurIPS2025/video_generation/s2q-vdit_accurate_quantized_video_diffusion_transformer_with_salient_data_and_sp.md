@@ -18,8 +18,8 @@ content_hash: 3ec85a366c3971e7
 # S²Q-VDiT: Accurate Quantized Video Diffusion Transformer with Salient Data and Sparse Token Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.04016](https://arxiv.org/abs/2508.04016)
-**Code**: [GitHub](https://github.com/wlfeng0509/s2q-vdit)
+**arXiv**: [2508.04016](https://arxiv.org/abs/2508.04016)  
+**Code**: [GitHub](https://github.com/wlfeng0509/s2q-vdit)  
 **Area**: Diffusion Models / Video Generation / Model Compression
 **Keywords**: Post-training quantization, video diffusion models, calibration data selection, sparse attention, model compression
 

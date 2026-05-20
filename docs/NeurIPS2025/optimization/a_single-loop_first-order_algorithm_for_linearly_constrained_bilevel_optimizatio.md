@@ -18,8 +18,8 @@ content_hash: 6c8bd7a4e962280f
 # A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24710](https://arxiv.org/abs/2510.24710)
-**Code**: [ShenGroup/SFLCB](https://github.com/ShenGroup/SFLCB)
+**arXiv**: [2510.24710](https://arxiv.org/abs/2510.24710)  
+**Code**: [ShenGroup/SFLCB](https://github.com/ShenGroup/SFLCB)  
 **Area**: Optimization
 **Keywords**: bilevel optimization, constrained optimization, first-order methods, augmented Lagrangian, single-loop algorithm
 **Authors**: Wei Shen, Jiawei Zhang, Minhui Huang, Cong Shen (UVA, UW-Madison, Meta)

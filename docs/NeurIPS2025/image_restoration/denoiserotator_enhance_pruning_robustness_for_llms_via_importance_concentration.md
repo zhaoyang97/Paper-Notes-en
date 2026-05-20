@@ -18,8 +18,8 @@ content_hash: 1ee5559497f28f3c
 # DenoiseRotator: Enhance Pruning Robustness for LLMs via Importance Concentration
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23049](https://arxiv.org/abs/2505.23049)
-**Code**: [Axel-gu/DenoiseRotator](https://github.com/Axel-gu/DenoiseRotator)
+**arXiv**: [2505.23049](https://arxiv.org/abs/2505.23049)  
+**Code**: [Axel-gu/DenoiseRotator](https://github.com/Axel-gu/DenoiseRotator)  
 **Area**: Image Restoration
 **Keywords**: LLM pruning, orthogonal transformation, entropy minimization, importance concentration, semi-structured sparsity
 

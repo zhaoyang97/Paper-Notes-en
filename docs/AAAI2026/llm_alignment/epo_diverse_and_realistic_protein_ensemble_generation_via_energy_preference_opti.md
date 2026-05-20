@@ -18,8 +18,8 @@ content_hash: f526b4269ed3ab27
 # EPO: Diverse and Realistic Protein Ensemble Generation via Energy Preference Optimization
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10165](https://arxiv.org/abs/2511.10165)
-**Code**: None
+**arXiv**: [2511.10165](https://arxiv.org/abs/2511.10165)  
+**Code**: None  
 **Area**: Alignment & RLHF / Protein Generation
 **Keywords**: Protein conformational ensemble, energy preference optimization, SDE sampling, Boltzmann distribution, MD-free generation
 

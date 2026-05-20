@@ -18,8 +18,8 @@ content_hash: 57716243622a69d7
 # DualGround: Structured Phrase and Sentence-Level Temporal Grounding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20244](https://arxiv.org/abs/2510.20244)
-**Code**: None
+**arXiv**: [2510.20244](https://arxiv.org/abs/2510.20244)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: Video Temporal Grounding, Phrase-Level Semantics, Dual-Branch Architecture, Attention Decoupling, Highlight Detection
 

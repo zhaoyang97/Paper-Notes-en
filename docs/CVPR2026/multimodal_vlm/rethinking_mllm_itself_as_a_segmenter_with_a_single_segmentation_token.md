@@ -18,8 +18,8 @@ content_hash: 7fbdaf4a810c3c95
 # Rethinking MLLM Itself as a Segmenter with a Single Segmentation Token
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19026](https://arxiv.org/abs/2603.19026)
-**Code**: [https://github.com/ANDYZAQ/SELF1E](https://github.com/ANDYZAQ/SELF1E)
+**arXiv**: [2603.19026](https://arxiv.org/abs/2603.19026)  
+**Code**: [https://github.com/ANDYZAQ/SELF1E](https://github.com/ANDYZAQ/SELF1E)  
 **Area**: Multimodal VLM
 **Keywords**: MLLM segmentation, decoder-free segmentation, single-token segmentation, Pixel-Unshuffle, feature refinement
 

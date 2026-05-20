@@ -18,8 +18,8 @@ content_hash: 9809b0a189b81cf8
 # How LLMs Learn to Reason: A Complex Network Perspective
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23629](https://arxiv.org/abs/2509.23629)
-**Code**: [https://anonymous.4open.science/r/CoNet-83A4](https://anonymous.4open.science/r/CoNet-83A4)
+**arXiv**: [2509.23629](https://arxiv.org/abs/2509.23629)  
+**Code**: [https://anonymous.4open.science/r/CoNet-83A4](https://anonymous.4open.science/r/CoNet-83A4)  
 **Area**: LLM Reasoning / Reinforcement Learning
 **Keywords**: RLVR, concept network, sparse graph, catastrophic forgetting, annealing algorithm
 

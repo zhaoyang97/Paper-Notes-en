@@ -18,8 +18,8 @@ content_hash: 4bd2a2b339ebfafd
 # Learning Neural Exposure Fields for View Synthesis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08279](https://arxiv.org/abs/2510.08279)
-**Code**: [https://m-niemeyer.github.io/nexf](https://m-niemeyer.github.io/nexf)
+**arXiv**: [2510.08279](https://arxiv.org/abs/2510.08279)  
+**Code**: [https://m-niemeyer.github.io/nexf](https://m-niemeyer.github.io/nexf)  
 **Area**: 3D Vision / View Synthesis
 **Keywords**: Neural Radiance Fields, View Synthesis, Exposure Compensation, 3D Consistency, High Dynamic Range
 

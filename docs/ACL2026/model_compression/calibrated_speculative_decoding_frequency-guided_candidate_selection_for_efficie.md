@@ -18,8 +18,8 @@ content_hash: 6dbf218963f070ad
 # Calibrated Speculative Decoding: Frequency-Guided Candidate Selection for Efficient Inference
 
 **Conference**: ACL 2026
-**arXiv**: [2604.13634](https://arxiv.org/abs/2604.13634)
-**Code**: None
+**arXiv**: [2604.13634](https://arxiv.org/abs/2604.13634)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: speculative decoding, false rejection, online correction memory, semantic consistency gating, training-free
 

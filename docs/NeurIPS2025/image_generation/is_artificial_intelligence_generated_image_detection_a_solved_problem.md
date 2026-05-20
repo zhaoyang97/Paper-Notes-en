@@ -18,8 +18,8 @@ content_hash: aba17d76e86ea171
 # Is Artificial Intelligence Generated Image Detection a Solved Problem?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12335](https://arxiv.org/abs/2505.12335)
-**Code**: [HorizonTEL/AIGIBench](https://github.com/HorizonTEL/AIGIBench)
+**arXiv**: [2505.12335](https://arxiv.org/abs/2505.12335)  
+**Code**: [HorizonTEL/AIGIBench](https://github.com/HorizonTEL/AIGIBench)  
 **Area**: Image Generation
 **Keywords**: AI-generated image detection, benchmark, robustness evaluation, data augmentation, generalization
 

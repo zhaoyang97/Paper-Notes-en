@@ -17,8 +17,8 @@ content_hash: 758670a80607146e
 # GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17161](https://arxiv.org/abs/2603.17161)
-**Code**: [https://caizhuojiang.github.io/GazeOnce360/](https://caizhuojiang.github.io/GazeOnce360/) (Project Page)
+**arXiv**: [2603.17161](https://arxiv.org/abs/2603.17161)  
+**Code**: [https://caizhuojiang.github.io/GazeOnce360/](https://caizhuojiang.github.io/GazeOnce360/) (Project Page)  
 **Area**: Other
 **Keywords**: gaze estimation, fisheye camera, multi-person scene, dual-resolution fusion, synthetic data
 

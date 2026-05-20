@@ -18,8 +18,8 @@ content_hash: 408e6ce6253bdd6f
 # Reconstruction-Guided Slot Curriculum: Addressing Object Over-Fragmentation in Video Object-Centric Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22758](https://arxiv.org/abs/2603.22758)
-**Code**: [GitHub](https://github.com/wjun0830/SlotCurri)
+**arXiv**: [2603.22758](https://arxiv.org/abs/2603.22758)  
+**Code**: [GitHub](https://github.com/wjun0830/SlotCurri)  
 **Area**: Video Understanding / Object-Centric Learning
 **Keywords**: Object-centric representation, over-fragmentation, curriculum learning, Slot Attention, video segmentation
 
@@ -50,9 +50,9 @@ Built upon the SlotContrast baseline, comprising four core components:
 ### Key Designs
 
 1. **Reconstruction-Guided Slot Curriculum Learning**: Training begins with $K_{\text{init}}=2$ slots and expands progressively over $M=3$ stages. At each stage transition:
-   - The weighted reconstruction error per slot is computed: $\delta^{(k)} = \sum_{t,h,w} \alpha^{(k,t,h,w)} \cdot \mathcal{L}_{\text{MSE}}^{(t,h,w)}$
-   - Child slot counts are allocated proportionally to error magnitude (higher error → more children), with deterministic rounding to ensure the total count is exact.
-   - Child slots are initialized via **distance-aware noise perturbation**: $\hat{\mathbf{s}}^{(k^*)} = \hat{\mathbf{s}}^{(k)} + \beta \cdot d_{\text{nearest}}^{(k)} \cdot \frac{\|\hat{\mathbf{s}}^{(k)}\|}{\mu_{\text{norm}}} \cdot \mathbf{v}$, where the noise magnitude is proportional to the parent slot's distance to its nearest neighbor and its relative feature norm, ensuring children explore under-represented regions rather than duplicating the parent.
+    - The weighted reconstruction error per slot is computed: $\delta^{(k)} = \sum_{t,h,w} \alpha^{(k,t,h,w)} \cdot \mathcal{L}_{\text{MSE}}^{(t,h,w)}$
+    - Child slot counts are allocated proportionally to error magnitude (higher error → more children), with deterministic rounding to ensure the total count is exact.
+    - Child slots are initialized via **distance-aware noise perturbation**: $\hat{\mathbf{s}}^{(k^*)} = \hat{\mathbf{s}}^{(k)} + \beta \cdot d_{\text{nearest}}^{(k)} \cdot \frac{\|\hat{\mathbf{s}}^{(k)}\|}{\mu_{\text{norm}}} \cdot \mathbf{v}$, where the noise magnitude is proportional to the parent slot's distance to its nearest neighbor and its relative feature norm, ensuring children explore under-represented regions rather than duplicating the parent.
 
 2. **Structure-Aware Reconstruction Loss (SSIM3D)**: MSE processes each pixel independently, blurring spatial details and object boundaries — a problem especially pronounced in early stages with few slots. SSIM is computed over $3 \times 3 \times 3$ spatiotemporal windows, explicitly preserving local contrast and edge information. The final loss is: $\mathcal{L} = \mathcal{L}_{\text{MSE}} + \lambda_{\text{SSC}} \mathcal{L}_{\text{SSC}} + \lambda_{\text{SSIM3D}} \mathcal{L}_{\text{SSIM3D}}$
 

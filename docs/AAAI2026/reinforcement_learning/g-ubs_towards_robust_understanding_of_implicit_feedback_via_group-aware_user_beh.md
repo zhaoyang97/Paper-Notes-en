@@ -17,8 +17,8 @@ content_hash: 2bf5df7b614138d7
 # G-UBS: Towards Robust Understanding of Implicit Feedback via Group-Aware User Behavior Simulation
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.05709](https://arxiv.org/abs/2508.05709)
-**Code**: None
+**arXiv**: [2508.05709](https://arxiv.org/abs/2508.05709)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: implicit feedback, user behavior simulation, group-awareness, reinforcement learning, recommender systems
 

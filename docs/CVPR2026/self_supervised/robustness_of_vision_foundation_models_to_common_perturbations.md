@@ -19,8 +19,8 @@ content_hash: c4d8c3eacc7bdd28
 # Robustness of Vision Foundation Models to Common Perturbations
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.14973](https://arxiv.org/abs/2604.14973)
-**Code**: None
+**arXiv**: [2604.14973](https://arxiv.org/abs/2604.14973)  
+**Code**: None  
 **Area**: AI Safety / Robustness
 **Keywords**: foundation model, robustness, common perturbation, embedding, CLIP, DINOv2
 

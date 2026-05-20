@@ -18,8 +18,8 @@ content_hash: e698e832edaacb94
 # Grounding Generative Planners in Verifiable Logic: A Hybrid Architecture for Trustworthy Embodied AI
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.08373](https://arxiv.org/abs/2602.08373)
-**Code**: [https://github.com/Sn0wm1an/VIRF](https://github.com/Sn0wm1an/VIRF)
+**arXiv**: [2602.08373](https://arxiv.org/abs/2602.08373)  
+**Code**: [https://github.com/Sn0wm1an/VIRF](https://github.com/Sn0wm1an/VIRF)  
 **Area**: Robotics
 **Keywords**: embodied AI, neuro-symbolic, safe planning, LLM agent, formal verification
 

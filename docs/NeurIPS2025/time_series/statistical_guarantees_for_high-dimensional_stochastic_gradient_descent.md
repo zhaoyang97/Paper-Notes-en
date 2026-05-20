@@ -18,8 +18,8 @@ content_hash: 45a5ae8b848faf12
 # Statistical Guarantees for High-Dimensional Stochastic Gradient Descent
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.12013](https://arxiv.org/abs/2510.12013)
-**Code**: None
+**arXiv**: [2510.12013](https://arxiv.org/abs/2510.12013)  
+**Code**: None  
 **Area**: Time Series
 **Keywords**: stochastic gradient descent, high-dimensional statistics, constant learning rate, geometric moment contraction, concentration inequalities
 

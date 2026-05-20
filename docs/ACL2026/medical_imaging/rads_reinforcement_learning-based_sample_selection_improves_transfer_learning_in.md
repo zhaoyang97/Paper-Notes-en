@@ -18,8 +18,8 @@ content_hash: 5ea63119d8c99a13
 # RADS: Reinforcement Learning-Based Sample Selection Improves Transfer Learning in Low-resource and Imbalanced Clinical Settings
 
 **Conference**: ACL 2026
-**arXiv**: [2604.20256](https://arxiv.org/abs/2604.20256)
-**Code**: [https://github.com/Wei-0808/RADS](https://github.com/Wei-0808/RADS)
+**arXiv**: [2604.20256](https://arxiv.org/abs/2604.20256)  
+**Code**: [https://github.com/Wei-0808/RADS](https://github.com/Wei-0808/RADS)  
 **Area**: Medical Imaging
 **Keywords**: Reinforcement Learning, Sample Selection, Transfer Learning, Class Imbalance, Clinical NLP
 

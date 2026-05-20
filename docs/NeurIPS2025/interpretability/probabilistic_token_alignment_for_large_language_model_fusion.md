@@ -19,8 +19,8 @@ content_hash: bcc92a5d557d80c3
 # Probabilistic Token Alignment for Large Language Model Fusion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17276](https://arxiv.org/abs/2509.17276)
-**Code**: [runjia.tech/neurips_pta-llm](https://runjia.tech/neurips_pta-llm)
+**arXiv**: [2509.17276](https://arxiv.org/abs/2509.17276)  
+**Code**: [runjia.tech/neurips_pta-llm](https://runjia.tech/neurips_pta-llm)  
 **Area**: Interpretability
 **Keywords**: Optimal Transport, Sinkhorn Algorithm, Probabilistic Token Alignment, Logit Fusion, Cross-Architecture Model Fusion, Knowledge Fusion
 

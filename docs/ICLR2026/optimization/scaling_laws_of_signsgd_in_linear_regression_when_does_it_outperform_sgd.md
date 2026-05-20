@@ -18,8 +18,8 @@ content_hash: 0ba17b1b8a0e7c3f
 # Scaling Laws of SignSGD in Linear Regression: When Does It Outperform SGD?
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02069](https://arxiv.org/abs/2603.02069)
-**Code**: None
+**arXiv**: [2603.02069](https://arxiv.org/abs/2603.02069)  
+**Code**: None  
 **Area**: Optimization Theory
 **Keywords**: SignSGD, scaling laws, linear regression, random features, learning rate schedule
 

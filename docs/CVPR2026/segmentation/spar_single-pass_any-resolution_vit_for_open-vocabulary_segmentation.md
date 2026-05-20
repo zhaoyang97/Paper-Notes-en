@@ -18,8 +18,8 @@ content_hash: 277ed582dfb6f2bd
 # SPAR: Single-Pass Any-Resolution ViT for Open-Vocabulary Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02252](https://arxiv.org/abs/2604.02252)
-**Code**: [https://github.com/naomikombol/SPAR](https://github.com/naomikombol/SPAR)
+**arXiv**: [2604.02252](https://arxiv.org/abs/2604.02252)  
+**Code**: [https://github.com/naomikombol/SPAR](https://github.com/naomikombol/SPAR)  
 **Area**: Segmentation / Open-Vocabulary Segmentation
 **Keywords**: Open-vocabulary segmentation, resolution-agnostic, knowledge distillation, Vision Transformer, sliding window inference
 

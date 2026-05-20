@@ -18,7 +18,7 @@ content_hash: c2fc95046bf8f046
 # tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20160](https://arxiv.org/abs/2602.20160)
+**arXiv**: [2602.20160](https://arxiv.org/abs/2602.20160)  
 **Area**: 3D Vision
 **Keywords**: 3D Reconstruction, Test-Time Training, Large Reconstruction Model, Gaussian Splatting, Autoregressive Reconstruction
 

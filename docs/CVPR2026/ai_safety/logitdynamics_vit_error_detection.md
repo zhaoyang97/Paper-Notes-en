@@ -18,8 +18,8 @@ content_hash: 1dee92bc9235b277
 # LogitDynamics: Reliable ViT Error Detection from Layerwise Logit Trajectories
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.10643](https://arxiv.org/abs/2604.10643)
-**Code**: N/A
+**arXiv**: [2604.10643](https://arxiv.org/abs/2604.10643)  
+**Code**: N/A  
 **Area**: AI Safety / Reliability
 **Keywords**: Error prediction, confidence estimation, Vision Transformer, layerwise dynamics, hallucination detection
 

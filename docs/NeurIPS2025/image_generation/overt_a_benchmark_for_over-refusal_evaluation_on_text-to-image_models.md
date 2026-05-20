@@ -18,8 +18,8 @@ content_hash: ee8405368852e9f0
 # OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21347](https://arxiv.org/abs/2505.21347)
-**Code**: [GitHub](https://github.com/yixiao-huang/OVERT)
+**arXiv**: [2505.21347](https://arxiv.org/abs/2505.21347)  
+**Code**: [GitHub](https://github.com/yixiao-huang/OVERT)  
 **Area**: Image Generation / AI Safety / Benchmark Evaluation
 **Keywords**: over-refusal, text-to-image models, safety alignment, benchmark, safety-utility trade-off
 

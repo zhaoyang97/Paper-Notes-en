@@ -18,8 +18,8 @@ content_hash: 1a19905f9f9d7a84
 # Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24393](https://arxiv.org/abs/2509.24393)
-**Code**: To be confirmed
+**arXiv**: [2509.24393](https://arxiv.org/abs/2509.24393)  
+**Code**: To be confirmed  
 **Area**: LLM Reasoning
 **Keywords**: Reasoning safety, large reasoning models, preference optimization, safety triggers, compliance cues
 

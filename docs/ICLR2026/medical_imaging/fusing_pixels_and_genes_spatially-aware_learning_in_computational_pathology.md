@@ -18,8 +18,8 @@ content_hash: 09f26bcac80bf287
 # Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.13944](https://arxiv.org/abs/2602.13944)
-**Code**: [https://github.com/Hanminghao/STAMP](https://github.com/Hanminghao/STAMP)
+**arXiv**: [2602.13944](https://arxiv.org/abs/2602.13944)  
+**Code**: [https://github.com/Hanminghao/STAMP](https://github.com/Hanminghao/STAMP)  
 **Area**: Medical Imaging / Computational Pathology
 **Keywords**: Spatial Transcriptomics, Computational Pathology, Multimodal Pretraining, Gene Expression, Contrastive Learning
 

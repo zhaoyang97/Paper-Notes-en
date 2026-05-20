@@ -18,8 +18,8 @@ content_hash: dae4753aa9bf5e07
 # KScope: A Framework for Characterizing the Knowledge Status of Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07458](https://arxiv.org/abs/2506.07458)
-**Code**: [https://github.com/xiaoyuxin1002/KScope](https://github.com/xiaoyuxin1002/KScope)
+**arXiv**: [2506.07458](https://arxiv.org/abs/2506.07458)  
+**Code**: [https://github.com/xiaoyuxin1002/KScope](https://github.com/xiaoyuxin1002/KScope)  
 **Area**: Knowledge Editing
 **Keywords**: knowledge status characterization, knowledge conflict, hierarchical statistical testing, RAG knowledge updating, LLM reliability
 

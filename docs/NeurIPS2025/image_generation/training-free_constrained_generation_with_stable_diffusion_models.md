@@ -18,8 +18,8 @@ content_hash: 055c19aaca373d8a
 # Training-Free Constrained Generation with Stable Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.05625](https://arxiv.org/abs/2502.05625)
-**Code**: [GitHub](https://github.com/RAISELab-atUVA/Constrained-Stable-Diffusion)
+**arXiv**: [2502.05625](https://arxiv.org/abs/2502.05625)  
+**Code**: [GitHub](https://github.com/RAISELab-atUVA/Constrained-Stable-Diffusion)  
 **Area**: Image Generation
 **Keywords**: Constrained Generation, Stable Diffusion, Proximal Mapping, Latent Space Correction, Training-Free
 

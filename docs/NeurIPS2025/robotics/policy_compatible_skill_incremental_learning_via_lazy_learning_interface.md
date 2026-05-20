@@ -19,9 +19,9 @@ content_hash: 57f2014b798a8690
 # Policy Compatible Skill Incremental Learning via Lazy Learning Interface
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20612](https://arxiv.org/abs/2509.20612)
+**arXiv**: [2509.20612](https://arxiv.org/abs/2509.20612)  
 **Authors**: Daehee Lee (SKKU), Dongsu Lee (UT Austin), TaeYoon Kwack (SKKU), Wonje Choi (SKKU), Honguk Woo (SKKU)
-**Code**: [GitHub](https://github.com/L2dulgi/SIL-C)
+**Code**: [GitHub](https://github.com/L2dulgi/SIL-C)  
 **Area**: Robotics
 **Keywords**: Skill Incremental Learning, Hierarchical Policy, Continual Learning, Lazy Learning, Skill-Policy Compatibility, Embodied Intelligence
 

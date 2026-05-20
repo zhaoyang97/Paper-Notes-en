@@ -18,8 +18,8 @@ content_hash: 80759fd07e220ef9
 # IDEA: An Interpretable and Editable Decision-Making Framework for LLMs via Verbal-to-Numeric Calibration
 
 **Conference**: ACL 2026
-**arXiv**: [2604.12573](https://arxiv.org/abs/2604.12573)
-**Code**: [https://github.com/leonbig/IDEA](https://github.com/leonbig/IDEA)
+**arXiv**: [2604.12573](https://arxiv.org/abs/2604.12573)  
+**Code**: [https://github.com/leonbig/IDEA](https://github.com/leonbig/IDEA)  
 **Area**: Interpretability / LLM Decision-Making
 **Keywords**: Interpretable Decision-Making, Verbal Probability Calibration, EM Algorithm, Parameter Editing, Human-AI Collaboration
 

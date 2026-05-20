@@ -18,8 +18,8 @@ content_hash: 55d0af649272c84b
 # DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients
 
 **Conference**: AAAI2026
-**arXiv**: [2411.07484](https://arxiv.org/abs/2411.07484)
-**Code**: [alwaysbyx/DiffOP](https://github.com/alwaysbyx/DiffOP)
+**arXiv**: [2411.07484](https://arxiv.org/abs/2411.07484)  
+**Code**: [alwaysbyx/DiffOP](https://github.com/alwaysbyx/DiffOP)  
 **Area**: Reinforcement Learning
 **Keywords**: optimization-based control, implicit differentiation, policy gradient, model predictive control, bilevel optimization
 

@@ -18,8 +18,8 @@ content_hash: 6e7626f32e7cb05a
 # Improved Object-Centric Diffusion Learning with Registers and Contrastive Alignment (CODA)
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.01224](https://arxiv.org/abs/2601.01224)
-**Code**: [GitHub](https://github.com/sony/coda)
+**arXiv**: [2601.01224](https://arxiv.org/abs/2601.01224)  
+**Code**: [GitHub](https://github.com/sony/coda)  
 **Area**: Object-Centric Learning / Diffusion Models
 **Keywords**: Object-Centric Learning, Slot Attention, Register Slots, contrastive learning, compositional generation
 

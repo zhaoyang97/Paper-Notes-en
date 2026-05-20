@@ -18,8 +18,8 @@ content_hash: c83ed223409b70ee
 # Efficient Multiagent Planning via Shared Action Suggestions
 
 **Conference**: AAAI 2026
-**arXiv**: [2412.11430](https://arxiv.org/abs/2412.11430)
-**Code**: [github.com/sisl/MCAS](https://github.com/sisl/MCAS)
+**arXiv**: [2412.11430](https://arxiv.org/abs/2412.11430)  
+**Code**: [github.com/sisl/MCAS](https://github.com/sisl/MCAS)  
 **Area**: Reinforcement Learning
 **Keywords**: Dec-POMDP, multiagent planning, action suggestion communication, belief space pruning, human-agent teaming
 
@@ -163,8 +163,8 @@ Analysis of belief set size (maximum $|\hat{\mathcal{B}}^{1,j}|$ per simulation)
 # Efficient Multiagent Planning via Shared Action Suggestions
 
 **Conference**: AAAI 2026
-**arXiv**: [2412.11430](https://arxiv.org/abs/2412.11430)
-**Code**: [github.com/sisl/MCAS](https://github.com/sisl/MCAS)
+**arXiv**: [2412.11430](https://arxiv.org/abs/2412.11430)  
+**Code**: [github.com/sisl/MCAS](https://github.com/sisl/MCAS)  
 **Area**: Reinforcement Learning
 **Keywords**: Dec-POMDP, multiagent planning, action suggestion communication, belief inference, joint belief estimation
 

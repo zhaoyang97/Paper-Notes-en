@@ -18,8 +18,8 @@ content_hash: 7c6d4d30ac03c819
 # Counterfactual Explainable AI (XAI) Method for Deep Learning-Based Multivariate Time Series Classification
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13237](https://arxiv.org/abs/2511.13237)
-**Code**: [https://github.com/serval-uni-lu/confetti](https://github.com/serval-uni-lu/confetti)
+**arXiv**: [2511.13237](https://arxiv.org/abs/2511.13237)  
+**Code**: [https://github.com/serval-uni-lu/confetti](https://github.com/serval-uni-lu/confetti)  
 **Area**: Time Series / Explainable AI
 **Keywords**: Counterfactual Explanation, Multivariate Time Series, Multi-Objective Optimization, Explainable AI, NSGA-III
 

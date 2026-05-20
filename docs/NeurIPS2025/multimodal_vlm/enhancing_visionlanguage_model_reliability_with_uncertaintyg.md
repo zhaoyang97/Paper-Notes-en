@@ -18,8 +18,8 @@ content_hash: c6e7f42f80215aff
 # Enhancing Vision-Language Model Reliability with Uncertainty-Guided Dropout Decoding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.06474](https://arxiv.org/abs/2412.06474)
-**Code**: [https://github.com/kigb/DropoutDecoding](https://github.com/kigb/DropoutDecoding)
+**arXiv**: [2412.06474](https://arxiv.org/abs/2412.06474)  
+**Code**: [https://github.com/kigb/DropoutDecoding](https://github.com/kigb/DropoutDecoding)  
 **Area**: Multimodal VLM
 **Keywords**: VLM hallucination, uncertainty quantification, visual token dropout, epistemic uncertainty, ensemble decoding
 

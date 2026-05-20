@@ -18,8 +18,8 @@ content_hash: 7acf5f16e56ff763
 # DROID-W: DROID-SLAM in the Wild
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19076](https://arxiv.org/abs/2603.19076)
-**Code**: [MoyangLi00/DROID-W](https://github.com/MoyangLi00/DROID-W.git)
+**arXiv**: [2603.19076](https://arxiv.org/abs/2603.19076)  
+**Code**: [MoyangLi00/DROID-W](https://github.com/MoyangLi00/DROID-W.git)  
 **Area**: 3D Vision
 **Keywords**: SLAM, dynamic scenes, uncertainty estimation, bundle adjustment, DINOv2
 

@@ -18,8 +18,8 @@ content_hash: bb93639e181303f6
 # R&D-Agent-Quant: A Multi-Agent Framework for Data-Centric Factors and Model Joint Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15155](https://arxiv.org/abs/2505.15155)
-**Code**: [microsoft/RD-Agent](https://github.com/microsoft/RD-Agent)
+**arXiv**: [2505.15155](https://arxiv.org/abs/2505.15155)  
+**Code**: [microsoft/RD-Agent](https://github.com/microsoft/RD-Agent)  
 **Area**: LLM Agent / Quantitative Finance
 **Keywords**: multi-agent framework, quantitative factor mining, model optimization, data-driven, automated R&D
 

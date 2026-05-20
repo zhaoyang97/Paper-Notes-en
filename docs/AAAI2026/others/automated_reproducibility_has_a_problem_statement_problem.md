@@ -17,8 +17,8 @@ content_hash: 3b1e846d552086c2
 # Automated Reproducibility Has a Problem Statement Problem
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.04226](https://arxiv.org/abs/2601.04226)
-**Code**: [Available](https://github.com/thijssnelleman/automated-reproducibility)
+**arXiv**: [2601.04226](https://arxiv.org/abs/2601.04226)  
+**Code**: [Available](https://github.com/thijssnelleman/automated-reproducibility)  
 **Area**: Other
 **Keywords**: Reproducibility, Scientific Method, Problem Formalization, LLM Automation, Empirical Study
 

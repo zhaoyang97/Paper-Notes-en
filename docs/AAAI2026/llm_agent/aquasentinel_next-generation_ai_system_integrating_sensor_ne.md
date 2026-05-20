@@ -18,8 +18,8 @@ content_hash: 91d2d73cad59d353
 # AquaSentinel: Next-Generation AI System Integrating Sensor Networks for Urban Underground Water Pipeline Anomaly Detection via Collaborative MoE-LLM Agent Architecture
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.15870v1](https://arxiv.org/abs/2511.15870v1)
-**Code**: [https://github.com/VV123/STEPS](https://github.com/VV123/STEPS) (dataset)
+**arXiv**: [2511.15870v1](https://arxiv.org/abs/2511.15870v1)  
+**Code**: [https://github.com/VV123/STEPS](https://github.com/VV123/STEPS) (dataset)  
 **Area**: AI for Infrastructure / Spatiotemporal Graph Neural Networks / Anomaly Detection
 **Keywords**: Urban pipeline networks, leak detection, sparse sensing, physics-informed AI, MoE spatiotemporal forecasting
 

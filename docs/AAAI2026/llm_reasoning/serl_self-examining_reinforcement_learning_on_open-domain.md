@@ -18,8 +18,8 @@ content_hash: eb4f622211d1d916
 # SERL: Self-Examining Reinforcement Learning on Open-Domain
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07922](https://arxiv.org/abs/2511.07922)
-**Code**: [GitHub](https://github.com/AlwaysOu/SERL)
+**arXiv**: [2511.07922](https://arxiv.org/abs/2511.07922)  
+**Code**: [GitHub](https://github.com/AlwaysOu/SERL)  
 **Area**: LLM Reasoning / Self-Improvement
 **Keywords**: Self-improvement, Reinforcement Learning, Pairwise Comparison, Copeland Method, External-Reward-Free
 

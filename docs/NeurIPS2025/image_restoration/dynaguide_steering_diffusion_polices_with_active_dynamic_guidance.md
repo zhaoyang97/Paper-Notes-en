@@ -18,8 +18,8 @@ content_hash: c9152560c4bce1b6
 # DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.13922](https://arxiv.org/abs/2506.13922)
-**Code**: [dynaguide.github.io](https://dynaguide.github.io)
+**arXiv**: [2506.13922](https://arxiv.org/abs/2506.13922)  
+**Code**: [dynaguide.github.io](https://dynaguide.github.io)  
 **Area**: Image Restoration
 **Keywords**: Diffusion Policy, Classifier Guidance, Latent Dynamics Model, DinoV2, Robot Manipulation
 

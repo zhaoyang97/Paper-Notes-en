@@ -18,8 +18,8 @@ content_hash: 621a26f8d15e1a9f
 # RDFace: A Benchmark Dataset for Rare Disease Facial Image Analysis under Extreme Data Scarcity and Phenotype-Aware Synthetic Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03454](https://arxiv.org/abs/2604.03454)
-**Code**: [GitHub](https://github.com/Kkathyf/RDFace)
+**arXiv**: [2604.03454](https://arxiv.org/abs/2604.03454)  
+**Code**: [GitHub](https://github.com/Kkathyf/RDFace)  
 **Area**: Medical Imaging / Face Analysis / Rare Disease Diagnosis
 **Keywords**: Rare disease facial recognition, extreme data scarcity, synthetic data augmentation, phenotype alignment, DreamBooth
 

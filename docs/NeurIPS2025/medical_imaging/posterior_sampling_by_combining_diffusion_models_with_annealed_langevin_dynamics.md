@@ -18,8 +18,8 @@ content_hash: e289165faf416f33
 # Posterior Sampling by Combining Diffusion Models with Annealed Langevin Dynamics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26324](https://arxiv.org/abs/2510.26324)
-**Code**: N/A
+**arXiv**: [2510.26324](https://arxiv.org/abs/2510.26324)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: posterior sampling, diffusion models, Langevin dynamics, inverse problems, compressed sensing
 

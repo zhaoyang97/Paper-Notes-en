@@ -18,8 +18,8 @@ content_hash: 5b8cbd2fe0db2692
 # MMGait: Towards Multi-Modal Gait Recognition
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.15979](https://arxiv.org/abs/2604.15979)
-**Code**: [https://github.com/BNU-IVC/MMGait](https://github.com/BNU-IVC/MMGait)
+**arXiv**: [2604.15979](https://arxiv.org/abs/2604.15979)  
+**Code**: [https://github.com/BNU-IVC/MMGait](https://github.com/BNU-IVC/MMGait)  
 **Area**: Human Understanding
 **Keywords**: Gait Recognition, Multi-Modal Benchmark, Multi-Sensor Fusion, Cross-Modal Retrieval, Omni-Modal Recognition
 

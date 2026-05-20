@@ -18,8 +18,8 @@ content_hash: 8b6f75fe8bc8404d
 # DiffBench Meets DiffAgent: End-to-End LLM-Driven Diffusion Acceleration Code Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.03178](https://arxiv.org/abs/2601.03178)
-**Code**: Not released
+**arXiv**: [2601.03178](https://arxiv.org/abs/2601.03178)  
+**Code**: Not released  
 **Area**: Code Intelligence
 **Keywords**: LLM Agent, diffusion model acceleration, code generation, benchmark, genetic algorithm optimization
 

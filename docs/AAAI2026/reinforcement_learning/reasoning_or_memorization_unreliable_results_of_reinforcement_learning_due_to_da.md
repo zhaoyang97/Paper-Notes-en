@@ -18,8 +18,8 @@ content_hash: 7e5b4e1256d6a4a0
 # Reasoning or Memorization? Unreliable Results of Reinforcement Learning Due to Data Contamination
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.10532](https://arxiv.org/abs/2507.10532)
-**Code**: [github](https://github.com/wumingqi/LLM-Math-Evaluation)
+**arXiv**: [2507.10532](https://arxiv.org/abs/2507.10532)  
+**Code**: [github](https://github.com/wumingqi/LLM-Math-Evaluation)  
 **Area**: Reinforcement Learning
 **Keywords**: Data Contamination, LLM Reasoning, Spurious Rewards, RLVR, Math Reasoning Evaluation
 

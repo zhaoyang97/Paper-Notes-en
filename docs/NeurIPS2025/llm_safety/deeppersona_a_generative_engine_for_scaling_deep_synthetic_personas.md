@@ -18,8 +18,8 @@ content_hash: 14ca72a9d58eac12
 # DeepPersona: A Generative Engine for Scaling Deep Synthetic Personas
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.07338](https://arxiv.org/abs/2511.07338)
-**Code**: [https://deeppersona-ai.github.io/](https://deeppersona-ai.github.io/)
+**arXiv**: [2511.07338](https://arxiv.org/abs/2511.07338)  
+**Code**: [https://deeppersona-ai.github.io/](https://deeppersona-ai.github.io/)  
 **Area**: AI Safety
 **Keywords**: Synthetic Personas, Persona Simulation, LLM Personalization, Social Simulation, Attribute Taxonomy
 

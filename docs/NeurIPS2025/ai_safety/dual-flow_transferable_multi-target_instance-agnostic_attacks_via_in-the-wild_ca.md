@@ -18,8 +18,8 @@ content_hash: bf2e0b455cb9a542
 # Dual-Flow: Transferable Multi-Target, Instance-Agnostic Attacks via In-the-wild Cascading Flow Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.02096](https://arxiv.org/abs/2502.02096)
-**Code**: [github.com/Chyxx/Dual-Flow](https://github.com/Chyxx/Dual-Flow)
+**arXiv**: [2502.02096](https://arxiv.org/abs/2502.02096)  
+**Code**: [github.com/Chyxx/Dual-Flow](https://github.com/Chyxx/Dual-Flow)  
 **Area**: AI Security / Adversarial Attacks
 **Keywords**: adversarial attacks, black-box transfer attacks, diffusion models, flow matching, multi-target attacks
 

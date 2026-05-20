@@ -18,8 +18,8 @@ content_hash: 9204fdfe1e5fa0ab
 # LightMover: Generative Light Movement with Color and Intensity Controls
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27209](https://arxiv.org/abs/2603.27209)
-**Code**: [Project Page](https://gengzezhou.github.io/LightMover/)
+**arXiv**: [2603.27209](https://arxiv.org/abs/2603.27209)  
+**Code**: [Project Page](https://gengzezhou.github.io/LightMover/)  
 **Area**: Video Generation
 **Keywords**: Light source manipulation, video diffusion models, illumination editing, adaptive token pruning, physically rendered data
 

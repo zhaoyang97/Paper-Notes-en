@@ -18,8 +18,8 @@ content_hash: 76d18f33eb11619a
 # Continual Multimodal Contrastive Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.14963](https://arxiv.org/abs/2503.14963)
-**Code**: [https://github.com/Xiaohao-Liu/CMCL](https://github.com/Xiaohao-Liu/CMCL)
+**arXiv**: [2503.14963](https://arxiv.org/abs/2503.14963)  
+**Code**: [https://github.com/Xiaohao-Liu/CMCL](https://github.com/Xiaohao-Liu/CMCL)  
 **Area**: Multimodal VLM
 **Keywords**: Continual Learning, Multimodal Contrastive Learning, Gradient Projection, Catastrophic Forgetting, Modality Binding
 

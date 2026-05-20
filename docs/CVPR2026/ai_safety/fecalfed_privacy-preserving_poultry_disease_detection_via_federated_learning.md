@@ -19,8 +19,8 @@ content_hash: 2a4cee5122baf33a
 # FecalFed: Privacy-Preserving Poultry Disease Detection via Federated Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00559](https://arxiv.org/abs/2604.00559)
-**Code**: None
+**arXiv**: [2604.00559](https://arxiv.org/abs/2604.00559)  
+**Code**: None  
 **Area**: AI Safety / Privacy Preservation
 **Keywords**: Federated Learning, Privacy Preservation, Poultry Disease Detection, Data Deduplication, Non-IID, Vision Transformer
 

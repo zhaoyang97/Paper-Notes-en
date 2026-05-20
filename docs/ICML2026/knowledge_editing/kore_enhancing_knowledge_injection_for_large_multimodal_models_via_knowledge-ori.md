@@ -1,0 +1,147 @@
+---
+title: >-
+  [Paper Note] KORE: Enhancing Knowledge Injection for Large Multimodal Models via Knowledge-Oriented Controls
+description: >-
+  [ICML 2026][Knowledge Editing][Knowledge Injection] KORE injects new knowledge into LMMs via a two-stage "knowledge-oriented control": it automatically expands a single fact into structured multi-turn dialogues and instr…
+tags:
+  - "ICML 2026"
+  - "Knowledge Editing"
+  - "Knowledge Injection"
+  - "Large Multimodal Models"
+  - "Catastrophic Forgetting"
+  - "Null Space Projection"
+  - "Data Augmentation"
+date: 2026-05-08
+content_hash: 4058e260cb8f7359
+---
+
+# KORE: Enhancing Knowledge Injection for Large Multimodal Models via Knowledge-Oriented Controls
+
+**Conference**: ICML 2026  
+**arXiv**: [2510.19316](https://arxiv.org/abs/2510.19316)  
+**Code**: Not specified (paper mentions "to be released after acceptance")  
+**Area**: Knowledge Editing / Multimodal / Continual Learning  
+**Keywords**: Knowledge Injection, Large Multimodal Models, Catastrophic Forgetting, Null Space Projection, Data Augmentation
+
+## TL;DR
+KORE injects new knowledge into LMMs via a two-stage "knowledge-oriented control": it automatically expands a single fact into structured multi-turn dialogues and instruction tasks (improving generalization), while initializing LoRA adapters in the null space of the covariance matrix of prior knowledge (minimizing interference with old capabilities). This achieves both strong adaptation and retention on LLaVA-v1.5 / Qwen2.5-VL.
+
+## Background & Motivation
+**Background**: LMMs encode world knowledge in frozen pre-trained weights, but the real world evolves (new people, events, products), necessitating "knowledge injection" mechanisms: models must learn new knowledge (adaptation) without forgetting old skills (retention).
+
+**Limitations of Prior Work**: (1) Full fine-tuning is computationally expensive and prone to overfitting to training samples, lacking generalization (e.g., on EVOKE, Full-FT merely repeats the training prompt); (2) PEFT methods (LoRA, Prompt Tuning) are cheaper but still suffer catastrophic forgetting; (3) Continual learning methods (EWC, LwF) retain old knowledge but suppress new knowledge acquisition, often leading to "irrelevant answers + instruction forgetting".
+
+**Key Challenge**: Internalizing knowledge requires abundant, diverse training signals, which can disrupt existing representations; protecting old representations restricts the model's ability to shape new concepts—adaptation and retention are in tension.
+
+**Goal**: (1) Use knowledge augmentation to achieve genuine "internalization" of new knowledge rather than rote memorization; (2) Use structural constraints so fine-tuning directions avoid subspaces carrying old capabilities; (3) Integrate both into a two-stage optimization applicable to various LMM architectures and scales.
+
+**Key Insight**: The authors observe (a) conventional text/image augmentation is superficial paraphrasing and cannot construct logical relations between knowledge; (b) old knowledge is essentially the covariance structure of activations input to linear layers—modifying parameters in the null space of the covariance matrix is equivalent to "not changing outputs for old inputs".
+
+**Core Idea**: Transform "knowledge injection" control into two aspects—on the data dimension, expand a single piece of knowledge into a systematic knowledge tree (trunk: multi-turn dialogue, branches: visual recognition/Caption/VQA tasks); on the parameter dimension, initialize LoRA's $A$ matrix in the null space of the old knowledge covariance, ensuring $AC\approx 0$, thus $BAC\approx 0$, keeping old representations nearly unchanged.
+
+## Method
+
+### Overall Architecture
+KORE is a two-stage process: (1) KORE-augmentation—automatically generates four types of training samples (multi-turn dialogue, visual recognition, image caption, VQA) for each original (image, text) knowledge. Using EVOKE's original knowledge, the authors construct the KORE-74K dataset (75K dialogues + 46K VQA); (2) KORE-constraint—samples 256 OneVision examples on all linear layers of LLaVA/Qwen to obtain activation covariance matrix $C=XX^\top$, performs SVD to extract the smallest $r$ singular vectors as $\hat U$, forms the projector $P=\hat U\hat U^\top$, then uses $\text{SVD}(W_0P)$ to initialize LoRA's $B,A$, and adjusts the original weights as $W_0'=W_0-BA$ to ensure model behavior is unchanged at training start. During training, $A$ is frozen and only $B$ is updated.
+
+### Key Designs
+
+1. **KORE-augmentation: Knowledge Tree-Structured Augmentation**:
+
+    - **Function**: Automatically expands an isolated (image, knowledge) into a "trunk (multi-turn dialogue) + branches (three instruction tasks)" knowledge tree, forcing the model to understand internal logical relations rather than rote memorization.
+    - **Mechanism**: The trunk consists of "heuristic Q&A (template) + 10-turn dialogue generated by GPT-4o based on the original text"; branches use news headlines/entity names as keywords to retrieve top-5 images from Google, filter with CLIP cosine similarity to retain 2 relevant images, used for: ① visual recognition ("Is X in the image?" answer Yes), ② image caption (paragraph summary by GPT-4o), ③ VQA (GPT-4o generates $(Q,A,S,H)$ quadruples, $S$ is subject, $H$ is hypernym for retrieval).
+    - **Design Motivation**: Traditional augmentation (synonym replacement, image rotation) is superficial and discrete, only increasing "exposure" to training samples without contributing to knowledge structure. Presenting the same knowledge repeatedly from dialogue, recognition, description, and QA perspectives forces the model to cross-validate the knowledge at different abstraction levels, leading to true internalization.
+
+2. **KORE-constraint: Covariance Null Space Initialization**:
+
+    - **Function**: Forces LoRA's low-rank matrix $A$ to initialize in the null space of "old task activation covariance", so fine-tuning only occurs in directions that do not affect old representations.
+    - **Mechanism**: For each linear layer, collect activations $X\in\mathbb{R}^{d_{in}\times BL}$, compute $C=XX^\top$, perform $\text{SVD}(C)=\sum_i\sigma_i u_i u_i^\top$, select $r$ left singular vectors with smallest singular values to form $\hat U$, obtain projection $P=\hat U\hat U^\top$. Then, use $\text{SVD}(W_0 P)=U^*\Sigma^*(V^*)^\top$ to initialize $B=U^*\sqrt{\Sigma^*}$, $A=\sqrt{\Sigma^*}(V^*)^\top$, and set $W_0'=W_0-BA$. Only $B$ is updated during training; since $AC\approx 0$, $BAC\approx 0$, so outputs for old task inputs remain unchanged.
+    - **Design Motivation**: The authors use CO-SVD experiments to verify that "the covariance matrix indeed captures multimodal knowledge" (Fig. 4: removing small singular values from MME/ScienceQA covariance preserves performance much better than plain SVD/ASVD, and different tasks show distinguishable outlier patterns). Allocating the null space for "new knowledge writing" is equivalent to isolating new and old knowledge in orthogonal subspaces.
+
+3. **Customizable Covariance Source**:
+
+    - **Function**: Allows users to select the dataset for covariance construction based on the capabilities they most wish to retain (e.g., pure MME retention, pure OCR retention).
+    - **Mechanism**: The authors experiment with constructing "general covariance" by mixing 256 samples from four OneVision subsets (General / Doc/Chart / Math / OCR), and "specialized covariance" by sampling 256 from single benchmarks like MME / ScienceQA / POPE. The latter prioritizes performance retention for that benchmark (Fig. 6: MME-specialized constraint increases MME by 7.17).
+    - **Design Motivation**: Different deployment scenarios have different retention needs; making the covariance source configurable turns KORE-constraint from "one-size-fits-all" to "retention on demand".
+
+### Loss & Training
+Standard LoRA cross-entropy loss, no extra regularization. LLaVA-v1.5 (7B): rank=235, batch=54, $\eta=2\times10^{-4}$, cosine decay, 6 epochs, AdamW, DeepSpeed Zero3, 4 H100 GPUs; 7B/13B use the same config, Qwen2.5-VL uses rank=274, batch=24, grad accum=8. Covariance extraction is run once as inference.
+
+## Key Experimental Results
+
+### Main Results
+On LLaVA-v1.5 (7B), KORE is compared with 9 baselines on EVOKE (adaptation) + 12 retention benchmarks:
+
+| Method | Params | K.A (EVOKE F1) | K.R (Mean) | Avg | HARS |
+|--------|--------|----------------|------------|------|------|
+| Pre-trained | — | 9.34 | 54.32 | 46.74 | — |
+| Full-FT | 6759M | 15.17 | 16.09 | 31.66 | 24.13 |
+| LoRA | 340M | 18.31 | 41.38 | 33.47 | 25.12 |
+| Replay | 340M | 17.98 | 51.67 | 43.00 | 28.83 |
+| EWC | 340M | 19.42 | 43.50 | 35.14 | 26.30 |
+| CIA | 340M | 20.27 | 44.52 | 35.99 | 26.69 |
+| **KORE (r=235)** | 340M | **41.26** | 51.75 | **40.00** | **82.81** |
+| **KORE (r=256)** | 369M | **41.32** | 51.50 | **42.10** | **84.93** |
+
+KORE boosts LoRA's F1 from 18.31 to 41.26 on adaptation, while retaining scores on par with Replay—completely overcoming the adaptation-retention trade-off.
+
+### Ablation Study
+Dimension-wise retention + key ablations:
+
+| Config | K.A | K.R | Avg | HARS | Interpretation |
+|--------|-----|-----|-----|------|----------------|
+| Full KORE (r=235) | 35.96 | 40.00 | 37.98 | 82.81 | Complete |
+| W/o Augmentation | 14.57 | 40.16 | 27.37 | 64.14 | Adaptation drops 21.4—augmentation is key for adaptation |
+| W/o Constraint | 38.82 | 35.78 | 37.30 | 79.04 | Retention drops 4.2—constraint is key for retention |
+| W/o freezing $A$ | 36.85 | 38.92 | 37.88 | 81.96 | Freezing $A$ gives marginal positive effect |
+| KORE-aug vs Textual Knowledge-Aware Augmentation | K.A 38.82 vs 20.29 | — | — | — | Knowledge tree augmentation outperforms surface paraphrase by 18.5 |
+
+Same pattern on 13B and Qwen2.5-VL: HARS 85.46 and 67.10, far surpassing Replay's 66.73 / 30.89.
+
+### Key Findings
+- **The two mechanisms are complementary**: Removing augmentation mainly hurts adaptation (K.A drops by 21), removing constraint mainly hurts retention (K.R drops by 4); only using both achieves full scores in both dimensions.
+- **Knowledge tree augmentation is truly effective**: With the same GPT-4o augmenter, KORE-aug outperforms "knowledge-aware text augmentation" by 18.5 K.A, indicating performance comes from the "trunk+branch" structured design, not GPT-4o distillation.
+- **Finer-grained coverage**: KORE outperforms all baselines across 4 news subcategories and 4 entity subcategories; achieves best scores on OCR/MMMU/HallB retention dimensions.
+- **Customizable constraint is practical**: Using MME subset for covariance increases MME by 7.17 without significant drop in other dimensions; thus, "protection target" can be tuned per deployment scenario.
+- **Architecture-agnostic and scalable**: On LLaVA-13B, HARS reaches 85.46 (larger models benefit more from augmentation); on Qwen2.5-VL (different architecture), KORE still outperforms Replay, showing KORE is a truly general framework.
+
+## Highlights & Insights
+- "Knowledge tree augmentation" is a deeply insightful design: traditional augmentation expands a piece of knowledge into N isolated samples, while KORE builds their semantic relations, effectively teaching the model "this knowledge can answer these different questions". This structured exposure makes internalization more than memorization.
+- Using the "null space of input activation covariance" as the LoRA initialization basis turns "old knowledge protection" into a clean linear algebra operation—no KL regularization, no replay data, just a single SVD. This "geometric isolation vs. loss regularization" design is more scalable.
+- Freezing $A$ and only updating $B$ cleverly leverages LoRA asymmetry: theoretically, as long as $A$ is in the null space, any $B$ yields $BAC\approx 0$—turning "protection" from a "training-time constraint" into a "parameterization structure constraint".
+- The proposed HARS (harmonic adaptation-retention score) directly addresses bias in previous composite metrics; analogous to Precision-Recall F1, it enables natural comprehensive ranking.
+
+## Limitations & Future Work
+- Covariance $C$ is estimated from 256 samples, which may not sufficiently cover long-tail or novel inputs; although the authors show robustness with as few as 32 samples, extreme OOD scenarios are not fully tested.
+- Augmentation relies on GPT-4o, making KORE-74K construction costly, and GPT-4o's own biases may transfer to the student model.
+- The constraint method only ensures "forward output invariance", without constraining attention patterns or intermediate semantics, which may underperform explicit replay on multi-step reasoning tasks.
+- Larger LoRA rank yields better results, but there is a trade-off between parameter budget and performance; how to adaptively select rank remains unsolved.
+- No evaluation of continuous multi-round injection (task t+1, t+2, ...); in true "lifelong" scenarios, the null space may be gradually exhausted and needs extension.
+
+## Related Work & Insights
+- **vs AlphaEdit (Fang 2025)**: Both use null space projection for knowledge editing, but AlphaEdit targets factual editing in pure LLMs without data augmentation; KORE is for LMMs and bundles augmentation + constraint into a two-stage optimization.
+- **vs CorDA / CIA / EWC / LwF**: Traditional continual learning constrains all parameters via regularization, while KORE uses geometric isolation to only restrict directions that would disrupt old representations, resulting in less interference and greater capacity.
+- **vs Replay (image+text rehearsal)**: Replay requires storing original old data, posing privacy risks; KORE only needs a one-time covariance matrix (aggregate statistics), making it lighter and more privacy-friendly.
+- **vs SEFE**: SEFE divides forgetting into surface and essential types; KORE's augmentation + constraint correspond to both sides, with a more operational implementation.
+
+## Rating
+- Novelty: ⭐⭐⭐⭐ — Knowledge tree augmentation and covariance null space LoRA are not individually novel, but their combination as a "two-stage control" system in the multimodal context is new.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — 12 retention benchmarks × 3 model scales × 9 baselines, with 13B and Qwen results in the appendix; evidence is very comprehensive.
+- Writing Quality: ⭐⭐⭐⭐ — Clear concepts, intuitive illustrations (Figs. 1/2/3 are highly informative), rigorous mathematical derivations (Theorems C.1/C.2).
+- Value: ⭐⭐⭐⭐ — Provides a practical, cost-effective solution for LMM knowledge updates in production; HARS metric will serve as a reference for future work.
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] When Large Multimodal Models Confront Evolving Knowledge: Challenges and Explorations](../../ICLR2026/knowledge_editing/when_large_multimodal_models_confront_evolving_knowledge_challenges_and_explorat.md)
+- [\[ACL 2025\] Structure-aware Domain Knowledge Injection for Large Language Models](../../ACL2025/knowledge_editing/structure-aware_domain_knowledge_injection_for_large_language_models.md)
+- [\[AAAI 2026\] Hybrid-DMKG: A Hybrid Reasoning Framework over Dynamic Multimodal Knowledge Graphs for Multimodal Multihop QA with Knowledge Editing](../../AAAI2026/knowledge_editing/hybrid-dmkg_a_hybrid_reasoning_framework_over_dynamic_multimodal_knowledge_graph.md)
+- [\[ACL 2025\] A General Knowledge Injection Framework for ICD Coding](../../ACL2025/knowledge_editing/a_general_knowledge_injection_framework_for_icd_coding.md)
+- [\[NeurIPS 2025\] UniEdit: A Unified Knowledge Editing Benchmark for Large Language Models](../../NeurIPS2025/knowledge_editing/uniedit_a_unified_knowledge_editing_benchmark_for_large_language_models.md)
+
+</div>
+
+<!-- RELATED:END -->

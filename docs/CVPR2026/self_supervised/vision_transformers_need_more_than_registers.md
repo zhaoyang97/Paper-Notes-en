@@ -18,8 +18,8 @@ content_hash: 4f7899f38fe6dca2
 # Vision Transformers Need More Than Registers
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22394](https://arxiv.org/abs/2602.22394)
-**Code**: [https://github.com/ChengShiest/LAST-ViT](https://github.com/ChengShiest/LAST-ViT)
+**arXiv**: [2602.22394](https://arxiv.org/abs/2602.22394)  
+**Code**: [https://github.com/ChengShiest/LAST-ViT](https://github.com/ChengShiest/LAST-ViT)  
 **Area**: Self-Supervised Learning
 **Keywords**: Vision Transformer, Lazy Aggregation, Register Token, DINO, Dense Feature Alignment
 
@@ -67,33 +67,33 @@ From an input–output perspective, LaSt-ViT does not rewrite the ViT backbone o
 ### Key Designs
 
 1. **Patch Score and Point-in-Box: Unified Diagnostic for ViT Artifacts**
-   - *Function*: Uses CLS–patch cosine similarity as a unified probe to analyze whether the global semantics of a ViT fall on foreground or background regions.
-   - *Mechanism*: The patch score is defined as $\mathcal{S}_p = \frac{\mathbf{x}_{patch} \cdot Q_{CLS}}{\lVert \mathbf{x}_{patch} \rVert_2 \lVert Q_{CLS} \rVert_2}$. A higher score indicates that the patch is closer to the global semantic representation.
-   - *Design Motivation*: In a healthy dense feature space, the regions most representative of overall image semantics should typically coincide with the main object. If high-scoring patches consistently reside in the background, the model is taking shortcuts.
-   - Further quantification is provided by PiB, which records whether the highest patch score falls within the foreground bounding box. This metric is sufficiently direct and comparable across architectures and pretraining paradigms.
+    - *Function*: Uses CLS–patch cosine similarity as a unified probe to analyze whether the global semantics of a ViT fall on foreground or background regions.
+    - *Mechanism*: The patch score is defined as $\mathcal{S}_p = \frac{\mathbf{x}_{patch} \cdot Q_{CLS}}{\lVert \mathbf{x}_{patch} \rVert_2 \lVert Q_{CLS} \rVert_2}$. A higher score indicates that the patch is closer to the global semantic representation.
+    - *Design Motivation*: In a healthy dense feature space, the regions most representative of overall image semantics should typically coincide with the main object. If high-scoring patches consistently reside in the background, the model is taking shortcuts.
+    - Further quantification is provided by PiB, which records whether the highest patch score falls within the foreground bounding box. This metric is sufficiently direct and comparable across architectures and pretraining paradigms.
 
 2. **Lazy Aggregation Hypothesis: The Root Cause Is Background Shortcuts, Not Norm**
-   - *Function*: Validates the artifact formation mechanism through training dynamics, masking experiments, and structural interventions.
-   - *Mechanism*: The authors find that removing high-scoring patches does not harm classification accuracy—and occasionally produces marginal improvements—whereas removing low-scoring patches causes substantial accuracy drops. This indicates that high-scoring patches do not correspond to critical semantic regions.
-   - *Design Motivation*: If the highest-scoring patches were truly key foreground locations, removing them should degrade performance. The opposite result implies these positions function more as redundant but highly correlated background shortcuts.
-   - Further validation shows that ViT's PiB is already low very early in training and remains nearly constant throughout, even as classification accuracy continues to rise. This demonstrates that artifacts are a stable strategy adopted early in optimization, not a late-stage side effect.
+    - *Function*: Validates the artifact formation mechanism through training dynamics, masking experiments, and structural interventions.
+    - *Mechanism*: The authors find that removing high-scoring patches does not harm classification accuracy—and occasionally produces marginal improvements—whereas removing low-scoring patches causes substantial accuracy drops. This indicates that high-scoring patches do not correspond to critical semantic regions.
+    - *Design Motivation*: If the highest-scoring patches were truly key foreground locations, removing them should degrade performance. The opposite result implies these positions function more as redundant but highly correlated background shortcuts.
+    - Further validation shows that ViT's PiB is already low very early in training and remains nearly constant throughout, even as classification accuracy continues to rise. This demonstrates that artifacts are a stable strategy adopted early in optimization, not a late-stage side effect.
 
 3. **Frequency-Domain Stability Scoring: Identifying Foreground-Candidate Tokens via Channel Stability**
-   - *Function*: Assigns a stability score to each channel of each patch token, estimating which features remain stable after low-pass filtering.
-   - *Mechanism*: The intuition is that foreground regions exhibit more semantically consistent deep features, with smoother variation along the channel dimension, whereas background regions are semantically diverse and exhibit larger changes after low-pass filtering. A 1-D FFT is applied per patch along the channel dimension, multiplied by a Gaussian low-pass weight $\mathbf{g}$, and inverse-transformed to obtain a low-frequency version $\hat{\mathbf{x}}_{patch}$.
-   - Formally, the stability score is $\mathbf{S}_{i,j} = \frac{\hat{\mathbf{x}}_{patch}[i,j]}{|\hat{\mathbf{x}}_{patch}[i,j] - \mathbf{x}_{patch}[i,j]| + \varepsilon}$.
-   - *Design Motivation*: If a particular channel of a patch changes little after low-pass filtering, that channel's information is more "stable" and more likely to belong to continuously shared object semantics rather than scattered high-frequency background cues.
+    - *Function*: Assigns a stability score to each channel of each patch token, estimating which features remain stable after low-pass filtering.
+    - *Mechanism*: The intuition is that foreground regions exhibit more semantically consistent deep features, with smoother variation along the channel dimension, whereas background regions are semantically diverse and exhibit larger changes after low-pass filtering. A 1-D FFT is applied per patch along the channel dimension, multiplied by a Gaussian low-pass weight $\mathbf{g}$, and inverse-transformed to obtain a low-frequency version $\hat{\mathbf{x}}_{patch}$.
+    - Formally, the stability score is $\mathbf{S}_{i,j} = \frac{\hat{\mathbf{x}}_{patch}[i,j]}{|\hat{\mathbf{x}}_{patch}[i,j] - \mathbf{x}_{patch}[i,j]| + \varepsilon}$.
+    - *Design Motivation*: If a particular channel of a patch changes little after low-pass filtering, that channel's information is more "stable" and more likely to belong to continuously shared object semantics rather than scattered high-frequency background cues.
 
 4. **Channel-wise Top-K Aggregation: Restricting CLS to the Most Reliable Local Evidence**
-   - *Function*: Replaces uniform averaging over all patches and single attention pooling with per-channel selection of the K most stable patches, whose mean forms the corresponding channel of the new CLS representation.
-   - *Mechanism*: For the $j$-th channel, the set of indices with the highest stability scores $\mathcal{I}_K(j)$ is identified, and the aggregated value is $\mathcal{Q}_{CLS}[j] = \frac{1}{K}\sum_{i \in \mathcal{I}_K(j)} \mathbf{x}_{patch}[i,j]$.
-   - *Design Motivation*: A given patch need not be reliable across all channels; therefore, the authors perform channel-wise rather than token-wise selection. This preserves representational granularity while preventing global averaging from injecting substantial background noise into CLS.
-   - *Distinction from registers*: Register tokens provide additional storage slots; LaSt-ViT directly constrains the information sources of CLS. The former offers "a new container for the shortcut," while the latter "reduces the opportunity to take the shortcut."
+    - *Function*: Replaces uniform averaging over all patches and single attention pooling with per-channel selection of the K most stable patches, whose mean forms the corresponding channel of the new CLS representation.
+    - *Mechanism*: For the $j$-th channel, the set of indices with the highest stability scores $\mathcal{I}_K(j)$ is identified, and the aggregated value is $\mathcal{Q}_{CLS}[j] = \frac{1}{K}\sum_{i \in \mathcal{I}_K(j)} \mathbf{x}_{patch}[i,j]$.
+    - *Design Motivation*: A given patch need not be reliable across all channels; therefore, the authors perform channel-wise rather than token-wise selection. This preserves representational granularity while preventing global averaging from injecting substantial background noise into CLS.
+    - *Distinction from registers*: Register tokens provide additional storage slots; LaSt-ViT directly constrains the information sources of CLS. The former offers "a new container for the shortcut," while the latter "reduces the opportunity to take the shortcut."
 
 5. **Vote Count Visualization: Interpreting Where CLS Actually Attends**
-   - *Function*: Counts how many channel-wise Top-K sets include each patch, yielding a vote count per token.
-   - *Mechanism*: $v_i = \sum_{j=1}^{D} \mathbf{1}\{i \in \mathcal{I}_K(j)\}$. A higher vote count indicates that the patch is considered reliable evidence in more semantic channels.
-   - *Design Motivation*: The authors aim to demonstrate that LaSt-ViT is not a black-box trick but genuinely shifts CLS attention back toward foreground regions. Visualization results show that high-vote patches are strongly aligned with foreground areas and adapt naturally to the amount of foreground evidence present.
+    - *Function*: Counts how many channel-wise Top-K sets include each patch, yielding a vote count per token.
+    - *Mechanism*: $v_i = \sum_{j=1}^{D} \mathbf{1}\{i \in \mathcal{I}_K(j)\}$. A higher vote count indicates that the patch is considered reliable evidence in more semantic channels.
+    - *Design Motivation*: The authors aim to demonstrate that LaSt-ViT is not a black-box trick but genuinely shifts CLS attention back toward foreground regions. Visualization results show that high-vote patches are strongly aligned with foreground areas and adapt naturally to the amount of foreground evidence present.
 
 ### Loss & Training
 This paper introduces no new supervision objective; the original training paradigm is preserved, with modifications confined to the CLS aggregation mechanism.

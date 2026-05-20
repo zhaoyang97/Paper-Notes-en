@@ -18,8 +18,8 @@ content_hash: 40c01dc90658bfd2
 # 2HandedAfforder: Learning Precise Actionable Bimanual Affordances from Human Videos
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.09320](https://arxiv.org/abs/2503.09320)
-**Code**: [https://sites.google.com/view/2handedafforder](https://sites.google.com/view/2handedafforder)
+**arXiv**: [2503.09320](https://arxiv.org/abs/2503.09320)  
+**Code**: [https://sites.google.com/view/2handedafforder](https://sites.google.com/view/2handedafforder)  
 **Area**: Segmentation / Robotic Manipulation / Affordance
 **Keywords**: bimanual affordance, affordance segmentation, VLM, hand-object interaction, egocentric video
 

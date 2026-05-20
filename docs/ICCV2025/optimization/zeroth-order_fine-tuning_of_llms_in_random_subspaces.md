@@ -18,8 +18,8 @@ content_hash: 2db0942de733b570
 # Zeroth-Order Fine-Tuning of LLMs in Random Subspaces
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.08989](https://arxiv.org/abs/2410.08989)
-**Code**: [https://github.com/zimingyy/SubZero](https://github.com/zimingyy/SubZero)
+**arXiv**: [2410.08989](https://arxiv.org/abs/2410.08989)  
+**Code**: [https://github.com/zimingyy/SubZero](https://github.com/zimingyy/SubZero)  
 **Area**: Optimization
 **Keywords**: Zeroth-order optimization, LLM fine-tuning, random subspace, low-rank perturbation, memory-efficient
 

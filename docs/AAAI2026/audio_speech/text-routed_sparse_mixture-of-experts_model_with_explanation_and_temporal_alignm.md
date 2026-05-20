@@ -18,9 +18,9 @@ content_hash: 3f948588ff5e2cb7
 # TEXT: Text-Routed Sparse Mixture of Experts for Multimodal Sentiment Analysis with Explanation Enhancement and Temporal Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.22741](https://arxiv.org/abs/2512.22741)
+**arXiv**: [2512.22741](https://arxiv.org/abs/2512.22741)  
 **Authors**: Dongning Rao, Yunbiao Zeng, Zhihua Jiang, Jujian Lv
-**Code**: [fip-lab/TEXT](https://github.com/fip-lab/TEXT)
+**Code**: [fip-lab/TEXT](https://github.com/fip-lab/TEXT)  
 **Area**: Audio & Speech
 **Keywords**: Multimodal Sentiment Analysis, Sparse Mixture of Experts, Temporal Alignment, MLLM Explanation Enhancement, Gated Fusion
 

@@ -17,8 +17,8 @@ content_hash: a4a795c12fa13425
 # Adversarial Attention Perturbations for Large Object Detection Transformers
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.02987](https://arxiv.org/abs/2508.02987)
-**Code**: Available (noted in paper as "Code is available at: Link")
+**arXiv**: [2508.02987](https://arxiv.org/abs/2508.02987)  
+**Code**: Available (noted in paper as "Code is available at: Link")  
 **Area**: Object Detection / Adversarial Security
 **Keywords**: Adversarial Attack, Detection Transformer, Learnable Attention, Object Detection, Adversarial Robustness
 

@@ -18,9 +18,9 @@ content_hash: 75e017394b7b72d0
 # The First Impression Problem: Internal Bias Triggers Overthinking in Reasoning Models
 
 **Conference**: ICLR 2026 (Poster)
-**arXiv**: [2505.16448](https://arxiv.org/abs/2505.16448)
+**arXiv**: [2505.16448](https://arxiv.org/abs/2505.16448)  
 **Authors**: Renfei Dang, Zhening Li, Shujian Huang, Jiajun Chen (Nanjing University)
-**Code**: N/A
+**Code**: N/A  
 **Area**: LLM Reasoning
 **Keywords**: Overthinking, Internal Bias, Reasoning Models, Causal Intervention, Attention Mechanism
 

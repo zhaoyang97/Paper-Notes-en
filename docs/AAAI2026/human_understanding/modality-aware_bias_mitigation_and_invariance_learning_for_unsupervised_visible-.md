@@ -18,8 +18,8 @@ content_hash: deed593ca24b1bb7
 # Modality-Aware Bias Mitigation and Invariance Learning for Unsupervised Visible-Infrared Person Re-Identification
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.07760](https://arxiv.org/abs/2512.07760)
-**Code**: [github](https://github.com/Terminator8758/BMIL)
+**arXiv**: [2512.07760](https://arxiv.org/abs/2512.07760)  
+**Code**: [github](https://github.com/Terminator8758/BMIL)  
 **Area**: Human Understanding
 **Keywords**: Cross-Modality Person Re-Identification, Unsupervised Learning, Modality Bias Mitigation, Jaccard Distance Correction, Global Clustering
 

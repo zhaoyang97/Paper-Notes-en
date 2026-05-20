@@ -18,8 +18,8 @@ content_hash: 71411807b4ef41a7
 # LogicXGNN: Grounded Logical Rules for Explaining Graph Neural Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.19476](https://arxiv.org/abs/2503.19476)
-**Code**: None
+**arXiv**: [2503.19476](https://arxiv.org/abs/2503.19476)  
+**Code**: None  
 **Area**: Graph Learning
 **Keywords**: GNN explainability, logical rule extraction, decision trees, knowledge discovery, graph generation
 

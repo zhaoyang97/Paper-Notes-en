@@ -18,8 +18,8 @@ content_hash: ae6a5e618d27c960
 # Fine-tuning with RAG for Improving LLM Learning of New Skills
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.01375](https://arxiv.org/abs/2510.01375)
-**Code**: [Anonymous Repository](https://anonymous.4open.science/r/anonymized-submission-iclr/README.md)
+**arXiv**: [2510.01375](https://arxiv.org/abs/2510.01375)  
+**Code**: [Anonymous Repository](https://anonymous.4open.science/r/anonymized-submission-iclr/README.md)  
 **Area**: Information Retrieval
 **Keywords**: RAG distillation, LLM agent, hint extraction, ALFWorld, WebShop
 
@@ -58,21 +58,21 @@ The proposed pipeline consists of four stages:
 ### Key Designs
 
 1. **Failure-Driven Hint Extraction**:
-   - Requires no expert supervision; the agent learns from its own failures.
-   - GPT-4o diagnoses the cause of failure and generates corrective rules.
-   - Example hints: "Ensure {container} is opened before placing {object}" and "Use a systematic search pattern to avoid missing {object}."
-   - Deduplication is performed via fuzzy matching (Levenshtein distance threshold: 0.85).
-   - The pipeline generates 760/650 hints (ReAct/StateAct) for ALFWorld and 756/831 for WebShop.
+    - Requires no expert supervision; the agent learns from its own failures.
+    - GPT-4o diagnoses the cause of failure and generates corrective rules.
+    - Example hints: "Ensure {container} is opened before placing {object}" and "Use a systematic search pattern to avoid missing {object}."
+    - Deduplication is performed via fuzzy matching (Levenshtein distance threshold: 0.85).
+    - The pipeline generates 760/650 hints (ReAct/StateAct) for ALFWorld and 756/831 for WebShop.
 
 2. **One-Shot Retrieval**:
-   - Hints are retrieved only once at episode start ($t=0$), not dynamically during execution.
-   - This constrains token overhead while reflecting realistic conditions where guidance is provided a single time at task onset.
-   - LLM-based re-ranking is used instead of traditional embedding retrieval, yielding higher ranking quality.
+    - Hints are retrieved only once at episode start ($t=0$), not dynamically during execution.
+    - This constrains token overhead while reflecting realistic conditions where guidance is provided a single time at task onset.
+    - LLM-based re-ranking is used instead of traditional embedding retrieval, yielding higher ranking quality.
 
 3. **Hint Removal for Distillation**:
-   - Training data is derived from teacher trajectories produced with hints, but hint text is removed from the inputs.
-   - Few-shot examples are also removed, as they are fixed across tasks and provide no useful training signal.
-   - This compels the student to learn *behaviors* rather than *textual patterns*, achieving genuine internalization.
+    - Training data is derived from teacher trajectories produced with hints, but hint text is removed from the inputs.
+    - Few-shot examples are also removed, as they are fixed across tasks and provide no useful training signal.
+    - This compels the student to learn *behaviors* rather than *textual patterns*, achieving genuine internalization.
 
 ### Loss & Training
 

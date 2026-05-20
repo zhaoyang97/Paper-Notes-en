@@ -18,8 +18,8 @@ content_hash: 487114b491f94c2f
 # Spotlight on Token Perception for Multimodal Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.09285](https://arxiv.org/abs/2510.09285)
-**Code**: [https://github.com/huaixuheqing/VPPO-RL](https://github.com/huaixuheqing/VPPO-RL)
+**arXiv**: [2510.09285](https://arxiv.org/abs/2510.09285)  
+**Code**: [https://github.com/huaixuheqing/VPPO-RL](https://github.com/huaixuheqing/VPPO-RL)  
 **Area**: Multimodal Reinforcement Learning / Vision-Language Models
 **Keywords**: RLVR, multimodal reasoning, token perception, visual dependency, policy optimization
 

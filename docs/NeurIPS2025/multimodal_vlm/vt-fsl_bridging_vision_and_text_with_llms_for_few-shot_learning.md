@@ -19,9 +19,9 @@ content_hash: 50a62319d73a0edd
 # VT-FSL: Bridging Vision and Text with LLMs for Few-Shot Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25033](https://arxiv.org/abs/2509.25033)
+**arXiv**: [2509.25033](https://arxiv.org/abs/2509.25033)  
 **Authors**: Wenhao Li, Qiangchang Wang, Xianjing Meng, Zhibin Wu, Yilong Yin (Shandong University, Shenzhen Loop Area Research Institute, Shandong University of Finance and Economics)
-**Code**: [GitHub](https://github.com/peacelwh/VT-FSL)
+**Code**: [GitHub](https://github.com/peacelwh/VT-FSL)  
 **Area**: Multimodal VLM
 **Keywords**: Few-shot learning, large language models, cross-modal alignment, text prompting, visual synthesis, contrastive learning
 

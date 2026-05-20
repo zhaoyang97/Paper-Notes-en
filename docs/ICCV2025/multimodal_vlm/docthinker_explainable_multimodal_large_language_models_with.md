@@ -18,8 +18,8 @@ content_hash: ca50bb0a1d590807
 # DocThinker: Explainable Multimodal Large Language Models with Rule-based Reinforcement Learning for Document Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.08589](https://arxiv.org/abs/2508.08589)
-**Code**: [https://github.com/wenwenyu/DocThinker](https://github.com/wenwenyu/DocThinker)
+**arXiv**: [2508.08589](https://arxiv.org/abs/2508.08589)  
+**Code**: [https://github.com/wenwenyu/DocThinker](https://github.com/wenwenyu/DocThinker)  
 **Area**: Multimodal VLM / Document Understanding / Reinforcement Learning Reasoning
 **Keywords**: rule-based RL, GRPO, document understanding, interpretability, chain-of-thought
 

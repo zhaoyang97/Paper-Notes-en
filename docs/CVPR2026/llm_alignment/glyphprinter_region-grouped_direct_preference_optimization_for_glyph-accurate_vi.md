@@ -18,8 +18,8 @@ content_hash: 6ac03ceb14ecbb1e
 # GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.15616](https://arxiv.org/abs/2603.15616)
-**Code**: [https://github.com/FudanCVL/GlyphPrinter](https://github.com/FudanCVL/GlyphPrinter) (91 stars)
+**arXiv**: [2603.15616](https://arxiv.org/abs/2603.15616)  
+**Code**: [https://github.com/FudanCVL/GlyphPrinter](https://github.com/FudanCVL/GlyphPrinter) (91 stars)  
 **Area**: Alignment & RLHF / Image Generation
 **Keywords**: Visual Text Rendering, DPO, Glyph Accuracy, Region-level Preference Optimization, FLUX
 

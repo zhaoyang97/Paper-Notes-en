@@ -18,8 +18,8 @@ content_hash: be56c42760b881e8
 # GauDP: Reinventing Multi-Agent Collaboration through Gaussian-Image Synergy in Diffusion Policies
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00998](https://arxiv.org/abs/2511.00998)
-**Code**: [Available](https://ziyeeee.github.io/gaudp.io/)
+**arXiv**: [2511.00998](https://arxiv.org/abs/2511.00998)  
+**Code**: [Available](https://ziyeeee.github.io/gaudp.io/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Multi-Agent Collaboration, Diffusion Policy, Imitation Learning, Robot Manipulation
 

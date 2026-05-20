@@ -18,8 +18,8 @@ content_hash: c7dc4ba4fdf81cbe
 # IDF: Iterative Dynamic Filtering Networks for Generalizable Image Denoising
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.19649](https://arxiv.org/abs/2508.19649)
-**Code**: [dongjinkim9.github.io/projects/idf](https://dongjinkim9.github.io/projects/idf)
+**arXiv**: [2508.19649](https://arxiv.org/abs/2508.19649)  
+**Code**: [dongjinkim9.github.io/projects/idf](https://dongjinkim9.github.io/projects/idf)  
 **Area**: Medical Imaging
 **Keywords**: Image Denoising, Dynamic Filtering, Generalizability, Iterative Refinement, Lightweight Model
 

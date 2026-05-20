@@ -18,8 +18,8 @@ content_hash: 4d71a736b64db3d4
 # vCache: Verified Semantic Prompt Caching
 
 **Conference**: ICLR2026
-**arXiv**: [2502.03771](https://arxiv.org/abs/2502.03771)
-**Code**: [GitHub](https://github.com/vcache-project/vCache) | [Benchmarks](https://huggingface.co/vCache)
+**arXiv**: [2502.03771](https://arxiv.org/abs/2502.03771)  
+**Code**: [GitHub](https://github.com/vcache-project/vCache) | [Benchmarks](https://huggingface.co/vCache)  
 **Area**: LLM Evaluation
 **Keywords**: Semantic Caching, LLM Inference Optimization, Error-Rate Guarantee, online learning, Per-Embedding Threshold
 **Authors**: Luis Gaspar Schroeder, Aditya Desai, Alejandro Cuadron, Kyle Chu, Shu Liu, Mark Zhao, Stephan Krusche, Alfons Kemper, Matei Zaharia, Joseph E. Gonzalez (UC Berkeley, TU Munich, ETH Zurich, Stanford)

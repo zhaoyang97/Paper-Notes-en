@@ -18,9 +18,9 @@ content_hash: 19c6278822ac00a3
 # Improved Balanced Classification with Theoretically Grounded Loss Functions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.23947](https://arxiv.org/abs/2512.23947)
+**arXiv**: [2512.23947](https://arxiv.org/abs/2512.23947)  
 **Authors**: Corinna Cortes, Mehryar Mohri, Yutao Zhong
-**Code**: None
+**Code**: None  
 **Area**: Machine Learning Theory / Class-Imbalanced Classification
 **Keywords**: Balanced classification loss, surrogate loss, H-consistency, logit adjustment, class-aware weighting
 

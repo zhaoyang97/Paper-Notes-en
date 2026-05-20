@@ -18,8 +18,8 @@ content_hash: e78b8aac67704093
 # Online Linear Regression with Paid Stochastic Features
 
 **Conference**: AAAI2026
-**arXiv**: [2511.08073](https://arxiv.org/abs/2511.08073)
-**Code**: None
+**arXiv**: [2511.08073](https://arxiv.org/abs/2511.08073)  
+**Code**: None  
 **Area**: Online Learning / Linear Regression
 **Keywords**: online linear regression, noisy features, paid features, regret bounds, covariance estimation, matrix martingale concentration
 

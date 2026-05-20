@@ -18,8 +18,8 @@ content_hash: 9fd4d34805137b26
 # Pixel-level Scene Understanding in One Token: Visual States Need What-is-Where Composition
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13904](https://arxiv.org/abs/2603.13904)
-**Code**: [Project Page](https://seokminlee-chris.github.io/CroBo-ProjectPage)
+**arXiv**: [2603.13904](https://arxiv.org/abs/2603.13904)  
+**Code**: [Project Page](https://seokminlee-chris.github.io/CroBo-ProjectPage)  
 **Area**: Robotics / Self-Supervised Learning
 **Keywords**: Visual state representation, self-supervised learning, robot policy learning, bottleneck token, global-local reconstruction
 

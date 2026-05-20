@@ -17,8 +17,8 @@ content_hash: a6ebb168db24b79b
 # AMaPO: Adaptive Margin-attached Preference Optimization for Language Model Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09385v2](https://arxiv.org/abs/2511.09385v2)
-**Code**: None
+**arXiv**: [2511.09385v2](https://arxiv.org/abs/2511.09385v2)  
+**Code**: None  
 **Area**: LLM Alignment
 **Keywords**: Preference optimization, LLM alignment, adaptive margin, ranking accuracy, gradient dynamics analysis
 

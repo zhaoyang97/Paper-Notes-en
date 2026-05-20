@@ -19,8 +19,8 @@ content_hash: 503d41dfc1ecb202
 # Semantic Causality-Aware Vision-Based 3D Occupancy Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.08388](https://arxiv.org/abs/2509.08388)
-**Code**: [github.com/cdb342/CausalOcc](https://github.com/cdb342/CausalOcc)
+**arXiv**: [2509.08388](https://arxiv.org/abs/2509.08388)  
+**Code**: [github.com/cdb342/CausalOcc](https://github.com/cdb342/CausalOcc)  
 **Area**: Autonomous Driving / 3D Occupancy Prediction
 **Keywords**: 3D Occupancy Prediction, Causal Loss, LSS, 2D-to-3D Transformation, Semantic Consistency, Camera Robustness
 

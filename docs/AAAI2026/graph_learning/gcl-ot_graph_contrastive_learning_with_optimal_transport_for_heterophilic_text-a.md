@@ -20,8 +20,8 @@ content_hash: 01e22b7889c47535
 # GCL-OT: Graph Contrastive Learning with Optimal Transport for Heterophilic Text-Attributed Graphs
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16778](https://arxiv.org/abs/2511.16778)
-**Code**: [github.com/users-01/GCL-OT](https://github.com/users-01/GCL-OT)
+**arXiv**: [2511.16778](https://arxiv.org/abs/2511.16778)  
+**Code**: [github.com/users-01/GCL-OT](https://github.com/users-01/GCL-OT)  
 **Area**: Graph Learning / Graph Contrastive Learning
 **Keywords**: Graph Contrastive Learning, Optimal Transport, Heterophilic Graphs, Text-Attributed Graphs, Multi-Granularity Heterophily, RealSoftMax, Sinkhorn
 

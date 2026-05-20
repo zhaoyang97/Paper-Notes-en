@@ -18,8 +18,8 @@ content_hash: 951a1f5bce57d8e2
 # What We Don't C: Manifold Disentanglement for Structured Discovery
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.09433](https://arxiv.org/abs/2511.09433)
-**Code**: Available
+**arXiv**: [2511.09433](https://arxiv.org/abs/2511.09433)  
+**Code**: Available  
 **Area**: Representation Learning, Flow Matching, Disentanglement
 **Keywords**: Manifold Disentanglement, Flow Matching, VAE, Classifier-Free Guidance, Structured Discovery
 

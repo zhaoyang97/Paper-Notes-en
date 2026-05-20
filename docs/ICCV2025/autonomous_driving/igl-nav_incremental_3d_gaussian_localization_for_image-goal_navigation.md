@@ -18,8 +18,8 @@ content_hash: 8e1627b17ca0ba55
 # IGL-Nav: Incremental 3D Gaussian Localization for Image-goal Navigation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00823](https://arxiv.org/abs/2508.00823)
-**Code**: [Project Page](https://gwxuan.github.io/IGL-Nav/)
+**arXiv**: [2508.00823](https://arxiv.org/abs/2508.00823)  
+**Code**: [Project Page](https://gwxuan.github.io/IGL-Nav/)  
 **Area**: Autonomous Driving
 **Keywords**: image-goal navigation, 3D Gaussian Splatting, visual navigation, coarse-to-fine localization, embodied AI
 

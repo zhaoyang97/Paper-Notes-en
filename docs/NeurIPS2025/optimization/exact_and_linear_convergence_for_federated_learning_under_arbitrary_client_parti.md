@@ -18,8 +18,8 @@ content_hash: cc801a7019594cb4
 # Exact and Linear Convergence for Federated Learning under Arbitrary Client Participation is Attainable
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.20117](https://arxiv.org/abs/2503.20117)
-**Code**: [github.com/BichengYing/FedASL](https://github.com/BichengYing/FedASL)
+**arXiv**: [2503.20117](https://arxiv.org/abs/2503.20117)  
+**Code**: [github.com/BichengYing/FedASL](https://github.com/BichengYing/FedASL)  
 **Area**: Optimization / Federated Learning
 **Keywords**: Federated Learning, Arbitrary Client Participation, Exact Convergence, Push-Pull Strategy, Stochastic Matrices
 

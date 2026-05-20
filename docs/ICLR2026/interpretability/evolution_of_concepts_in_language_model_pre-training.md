@@ -20,8 +20,8 @@ content_hash: 39ed24e24d5930aa
 # Evolution of Concepts in Language Model Pre-Training
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.17196](https://arxiv.org/abs/2509.17196)
-**Code**: [GitHub](https://github.com/OpenMOSS/Language-Model-SAEs)
+**arXiv**: [2509.17196](https://arxiv.org/abs/2509.17196)  
+**Code**: [GitHub](https://github.com/OpenMOSS/Language-Model-SAEs)  
 **Area**: Interpretability
 **Keywords**: Mechanistic interpretability, crosscoders, sparse autoencoders, training dynamics, feature evolution, pre-training, Pythia
 

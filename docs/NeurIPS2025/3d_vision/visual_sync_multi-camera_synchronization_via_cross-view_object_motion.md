@@ -18,8 +18,8 @@ content_hash: 255230fbc6ffaa73
 # VisualSync: Multi-Camera Synchronization via Cross-View Object Motion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.02017](https://arxiv.org/abs/2512.02017)
-**Code**: [Project Page](https://stevenlsw.github.io/visualsync)
+**arXiv**: [2512.02017](https://arxiv.org/abs/2512.02017)  
+**Code**: [Project Page](https://stevenlsw.github.io/visualsync)  
 **Area**: 3D Vision
 **Keywords**: multi-camera synchronization, epipolar geometry, video alignment, dynamic scene reconstruction, temporal offset estimation
 

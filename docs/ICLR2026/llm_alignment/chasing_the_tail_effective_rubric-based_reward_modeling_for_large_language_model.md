@@ -18,8 +18,8 @@ content_hash: d7e87dcb4dad8d04
 # Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21500](https://arxiv.org/abs/2509.21500)
-**Code**: [https://github.com/Jun-Kai-Zhang/rubrics](https://github.com/Jun-Kai-Zhang/rubrics)
+**arXiv**: [2509.21500](https://arxiv.org/abs/2509.21500)  
+**Code**: [https://github.com/Jun-Kai-Zhang/rubrics](https://github.com/Jun-Kai-Zhang/rubrics)  
 **Area**: Alignment & RLHF
 **Keywords**: reward over-optimization, rubric-based reward, reinforcement fine-tuning, high-reward tail, off-policy data
 

@@ -18,8 +18,8 @@ content_hash: b8e5ebbb5f9f1a93
 # GS-LIVM: Real-Time Photo-Realistic LiDAR-Inertial-Visual Mapping with Gaussian Splatting
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.17084](https://arxiv.org/abs/2410.17084)
-**Code**: [GitHub](https://github.com/xieyuser/GS-LIVM)
+**arXiv**: [2410.17084](https://arxiv.org/abs/2410.17084)  
+**Code**: [GitHub](https://github.com/xieyuser/GS-LIVM)  
 **Area**: Autonomous Driving
 **Keywords**: 3D Gaussian Splatting, LiDAR-IMU-Visual Fusion, Real-Time Mapping, Gaussian Process Regression, Novel View Synthesis
 

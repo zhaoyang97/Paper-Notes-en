@@ -18,8 +18,8 @@ content_hash: f9f8c5578e2925e7
 # System-Embedded Diffusion Bridge Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.23726](https://arxiv.org/abs/2506.23726)
-**Code**: [https://github.com/sobieskibj/sdb](https://github.com/sobieskibj/sdb)
+**arXiv**: [2506.23726](https://arxiv.org/abs/2506.23726)  
+**Code**: [https://github.com/sobieskibj/sdb](https://github.com/sobieskibj/sdb)  
 **Area**: Image Generation / Inverse Problem Solving
 **Keywords**: Diffusion bridge models, inverse problems, matrix-valued SDE, measurement system embedding, pseudoinverse reconstruction
 

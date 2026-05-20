@@ -18,8 +18,8 @@ content_hash: 1e1000596de03780
 # SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23963](https://arxiv.org/abs/2602.23963)
-**Code**: Available (mentioned in paper)
+**arXiv**: [2602.23963](https://arxiv.org/abs/2602.23963)  
+**Code**: Available (mentioned in paper)  
 **Area**: Video Understanding
 **Keywords**: Spiking Neural Networks, Visual Tracking, Energy Efficiency, Asymmetric Architecture, Memory Retrieval
 

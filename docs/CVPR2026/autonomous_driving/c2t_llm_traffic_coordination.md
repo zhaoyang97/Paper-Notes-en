@@ -18,8 +18,8 @@ content_hash: 557b8466f4b33834
 # C2T: LLM-Aligned Common-Sense Reward Learning for Traffic-Vehicle Coordination
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.13098](https://arxiv.org/abs/2604.13098)
-**Code**: N/A
+**arXiv**: [2604.13098](https://arxiv.org/abs/2604.13098)  
+**Code**: N/A  
 **Area**: Autonomous Driving / Traffic Control
 **Keywords**: Traffic Signal Control, Multi-Agent Reinforcement Learning, LLM Preference Learning, Intrinsic Reward, Commonsense Reasoning
 

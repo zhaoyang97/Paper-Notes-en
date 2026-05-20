@@ -18,8 +18,8 @@ content_hash: ec1e6247c053db33
 # ARCHE: Autoregressive Residual Compression with Hyperprior and Excitation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10188](https://arxiv.org/abs/2603.10188)
-**Code**: [GitHub](https://github.com/sof-il/ARCHE)
+**arXiv**: [2603.10188](https://arxiv.org/abs/2603.10188)  
+**Code**: [GitHub](https://github.com/sof-il/ARCHE)  
 **Area**: Learned Image Compression
 **Keywords**: Autoregressive entropy model, hyperprior, Squeeze-and-Excitation, residual prediction, rate-distortion optimization
 
@@ -50,20 +50,20 @@ ARCHE is built on a VAE framework: the analysis transform $g_a$ maps the input t
 ### Key Designs
 
 1. **Autoregressive Hyperprior + Masked PixelCNN Context**
-   - The hyper-analysis transform $h_a$ maps $y$ to side information $z$, which is quantized and transmitted; the hyper-synthesis transform $h_s$ reconstructs conditional prior parameters (mean $\mu$ and scale $\sigma$) from $\hat{z}$
-   - The spatial autoregressive prior uses Masked PixelCNN to model $p(\hat{y}_i|\hat{y}_{<i}, \hat{z})$ in raster-scan order; Type A masks exclude the center and subsequent positions to ensure causality, while Type B masks include the center position
-   - Stacked masked convolutional layers with sigmoid nonlinearities expand the receptive field, achieving more stable training and partially parallelizable inference compared to ConvLSTM
-   - Hyperprior and context features are concatenated and passed through a parameter network (pointwise convolutions + small kernels + nonlinear activations) to produce the final Gaussian parameters
+    - The hyper-analysis transform $h_a$ maps $y$ to side information $z$, which is quantized and transmitted; the hyper-synthesis transform $h_s$ reconstructs conditional prior parameters (mean $\mu$ and scale $\sigma$) from $\hat{z}$
+    - The spatial autoregressive prior uses Masked PixelCNN to model $p(\hat{y}_i|\hat{y}_{<i}, \hat{z})$ in raster-scan order; Type A masks exclude the center and subsequent positions to ensure causality, while Type B masks include the center position
+    - Stacked masked convolutional layers with sigmoid nonlinearities expand the receptive field, achieving more stable training and partially parallelizable inference compared to ConvLSTM
+    - Hyperprior and context features are concatenated and passed through a parameter network (pointwise convolutions + small kernels + nonlinear activations) to produce the final Gaussian parameters
 
 2. **Channel Conditioning + SE Excitation**
-   - When decoding channel $c$, features from the preceding $c-1$ channels are used via lightweight convolutions to model the joint probability $p(\hat{y}_{i,c}|\hat{y}_{<i,c}, \hat{y}_{<c}, \hat{z})$, extending the dependency space from purely spatial to spatial + channel
-   - Squeeze-and-Excitation blocks are embedded within slice transforms: global average pooling produces channel descriptors → FC (reduction ratio 16) → ReLU → FC → sigmoid gating, adaptively amplifying informative channels and suppressing redundant ones
-   - Cross-channel dependencies are typically smoother than spatial dependencies, allowing the channel-conditional module to remain lightweight without sacrificing performance
+    - When decoding channel $c$, features from the preceding $c-1$ channels are used via lightweight convolutions to model the joint probability $p(\hat{y}_{i,c}|\hat{y}_{<i,c}, \hat{y}_{<c}, \hat{z})$, extending the dependency space from purely spatial to spatial + channel
+    - Squeeze-and-Excitation blocks are embedded within slice transforms: global average pooling produces channel descriptors → FC (reduction ratio 16) → ReLU → FC → sigmoid gating, adaptively amplifying informative channels and suppressing redundant ones
+    - Cross-channel dependencies are typically smoother than spatial dependencies, allowing the channel-conditional module to remain lightweight without sacrificing performance
 
 3. **Latent Residual Prediction (LRP)**
-   - A correction is predicted for each quantized slice: $\hat{y}'_m = \hat{y}_m + \lambda_{LRP} \cdot \text{softsign}(r_m)$
-   - Softsign replaces tanh to provide smoother gradients and bounded outputs; $\lambda_{LRP}$ is a learnable scaling factor
-   - LRP explicitly compensates for quantization noise that the hyperprior and context model cannot fully eliminate
+    - A correction is predicted for each quantized slice: $\hat{y}'_m = \hat{y}_m + \lambda_{LRP} \cdot \text{softsign}(r_m)$
+    - Softsign replaces tanh to provide smoother gradients and bounded outputs; $\lambda_{LRP}$ is a learnable scaling factor
+    - LRP explicitly compensates for quantization noise that the hyperprior and context model cannot fully eliminate
 
 ### Loss & Training
 

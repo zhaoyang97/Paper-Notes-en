@@ -18,8 +18,8 @@ content_hash: f2c0a5c4d2538e21
 # Target-Aware Video Diffusion Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.18950](https://arxiv.org/abs/2503.18950)
-**Code**: [taeksuu.github.io/tavid](https://taeksuu.github.io/tavid/)
+**arXiv**: [2503.18950](https://arxiv.org/abs/2503.18950)  
+**Code**: [taeksuu.github.io/tavid](https://taeksuu.github.io/tavid/)  
 **Area**: Video Generation / Human-Object Interaction
 **Keywords**: Video Diffusion Models, Target-Aware, Cross-Attention Loss, Human Interaction, Action Planning
 
@@ -44,17 +44,17 @@ The core idea is to mark a target object with a single segmentation mask and all
 
 2. **[TGT] Token and Cross-Attention Loss**: This is the core contribution of the paper.
 
-   - The phrase "The person interacts with [TGT] object." is appended to the text prompt, introducing a special token [TGT] to encode the spatial information of the target.
-   - A cross-attention loss is designed to align the cross-attention map of the [TGT] token with the input mask:
+    - The phrase "The person interacts with [TGT] object." is appended to the text prompt, introducing a special token [TGT] to encode the spatial information of the target.
+    - A cross-attention loss is designed to align the cross-attention map of the [TGT] token with the input mask:
      $$\mathcal{L}_{\text{attn}} = \mathbb{E}[\|A(\mathbf{z}_t^0, [\text{TGT}]) - M\|_2^2]$$
      where $A(\mathbf{z}_t^0, [\text{TGT}])$ denotes the cross-attention weights between the first-frame video latent and the [TGT] token.
-   - The total training objective is: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{rec}} + \lambda_{\text{attn}} \mathcal{L}_{\text{attn}}$ (with $\lambda_{\text{attn}} = 0.1$).
-   - During inference, [TGT] is prepended to the word referring to the target in the text, enabling the model to leverage the spatial cues provided by the mask.
+    - The total training objective is: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{rec}} + \lambda_{\text{attn}} \mathcal{L}_{\text{attn}}$ (with $\lambda_{\text{attn}} = 0.1$).
+    - During inference, [TGT] is prepended to the word referring to the target in the text, enabling the model to leverage the spatial cues provided by the mask.
 
 3. **Selective Cross-Attention Loss**: Rather than applying the loss indiscriminately across all transformer blocks and attention regions, the paper applies it selectively:
 
-   - **Selective Transformer Blocks**: Empirical evaluation identifies blocks 5–23 (out of 42) as having cross-attention maps most semantically aligned with the segmentation mask. At each training step, 7 blocks are sampled from this range.
-   - **Selective Attention Regions**: The MM-DiT architecture contains four attention types (text-to-text, T2V, V2T, video-to-video). **V2T (video-to-text) cross-attention** directly influences the values of video latent representations and yields the best results. T2V also encodes semantic information but has an indirect effect.
+    - **Selective Transformer Blocks**: Empirical evaluation identifies blocks 5–23 (out of 42) as having cross-attention maps most semantically aligned with the segmentation mask. At each training step, 7 blocks are sampled from this range.
+    - **Selective Attention Regions**: The MM-DiT architecture contains four attention types (text-to-text, T2V, V2T, video-to-video). **V2T (video-to-text) cross-attention** directly influences the values of video latent representations and yields the best results. T2V also encodes semantic information but has an indirect effect.
 
 4. **Dataset Construction**: A total of 1,290 video clips are extracted from the BEHAVE (simple human-object interactions) and Ego-Exo4D (complex scenarios such as cooking and car repair) datasets. Each clip satisfies: (1) the actor is present but not yet interacting with the target in the initial frame, and (2) the actor engages with the target in subsequent frames. Target masks are obtained using SAM, and text captions are generated using CogVLM2.
 

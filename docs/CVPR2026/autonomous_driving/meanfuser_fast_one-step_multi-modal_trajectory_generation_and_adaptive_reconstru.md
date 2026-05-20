@@ -18,8 +18,8 @@ content_hash: 139bb20bfda06143
 # MeanFuser: Fast One-Step Multi-Modal Trajectory Generation and Adaptive Reconstruction via MeanFlow for End-to-End Autonomous Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20060](https://arxiv.org/abs/2602.20060)
-**Code**: [https://github.com/wjl2244/MeanFuser](https://github.com/wjl2244/MeanFuser)
+**arXiv**: [2602.20060](https://arxiv.org/abs/2602.20060)  
+**Code**: [https://github.com/wjl2244/MeanFuser](https://github.com/wjl2244/MeanFuser)  
 **Area**: Autonomous Driving
 **Keywords**: End-to-end planning, MeanFlow, Gaussian mixture noise, one-step sampling, adaptive trajectory reconstruction
 

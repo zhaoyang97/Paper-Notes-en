@@ -18,8 +18,8 @@ content_hash: ce7332c9f99ab8fc
 # CAD-Assistant: Tool-Augmented VLLMs as Generic CAD Task Solvers
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.13810](https://arxiv.org/abs/2412.13810)
-**Code**: [https://github.com/dimitrismallis/CAD-Assistant](https://github.com/dimitrismallis/CAD-Assistant)
+**arXiv**: [2412.13810](https://arxiv.org/abs/2412.13810)  
+**Code**: [https://github.com/dimitrismallis/CAD-Assistant](https://github.com/dimitrismallis/CAD-Assistant)  
 **Area**: Multimodal VLM
 **Keywords**: CAD Agent, Tool-Augmentation, VLLM, Geometric Reasoning, FreeCAD
 

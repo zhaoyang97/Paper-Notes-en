@@ -18,8 +18,8 @@ content_hash: 5b564e4b0b5640ef
 # Language Models Can Explain Visual Features via Steering
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22593](https://arxiv.org/abs/2603.22593)
-**Code**: [GitHub](https://github.com/HPAI-BSC/vision-interp)
+**arXiv**: [2603.22593](https://arxiv.org/abs/2603.22593)  
+**Code**: [GitHub](https://github.com/HPAI-BSC/vision-interp)  
 **Area**: Interpretability
 **Keywords**: Sparse Autoencoders, Visual Feature Explanation, Causal Intervention, VLM, Automated Interpretability
 

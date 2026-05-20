@@ -18,8 +18,8 @@ content_hash: 3a68e1d43cf06422
 # Leveraging Textual Compositional Reasoning for Robust Change Captioning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.22903](https://arxiv.org/abs/2511.22903)
-**Code**: [https://github.com/VisualAIKHU/CORTEX](https://github.com/VisualAIKHU/CORTEX)
+**arXiv**: [2511.22903](https://arxiv.org/abs/2511.22903)  
+**Code**: [https://github.com/VisualAIKHU/CORTEX](https://github.com/VisualAIKHU/CORTEX)  
 **Area**: Multimodal VLM
 **Keywords**: Change Captioning, Compositional Reasoning, Vision-Language Models, Image-Text Alignment, Scene Change Description
 

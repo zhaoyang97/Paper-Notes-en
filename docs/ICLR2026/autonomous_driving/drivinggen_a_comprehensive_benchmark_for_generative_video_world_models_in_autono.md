@@ -18,8 +18,8 @@ content_hash: 4ebbf922b0c68e7b
 # DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.01528](https://arxiv.org/abs/2601.01528)
-**Code**: [https://drivinggen-bench.github.io/](https://drivinggen-bench.github.io/)
+**arXiv**: [2601.01528](https://arxiv.org/abs/2601.01528)  
+**Code**: [https://drivinggen-bench.github.io/](https://drivinggen-bench.github.io/)  
 **Area**: Autonomous Driving / World Models
 **Keywords**: Video world models, benchmark, driving scene generation, trajectory evaluation, temporal consistency
 

@@ -18,8 +18,8 @@ content_hash: 69f5b88b63561f4a
 # DeepTraverse: A Depth-First Search Inspired Network for Algorithmic Visual Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10084](https://arxiv.org/abs/2506.10084)
-**Code**: None
+**arXiv**: [2506.10084](https://arxiv.org/abs/2506.10084)  
+**Code**: None  
 **Area**: Social Computing
 **Keywords**: vision backbone, DFS inspired, recursive exploration, channel recalibration, parameter efficiency
 

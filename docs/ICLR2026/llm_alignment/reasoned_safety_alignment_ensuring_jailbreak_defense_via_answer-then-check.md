@@ -18,8 +18,8 @@ content_hash: 301cae7306fbf6d7
 # Reasoned Safety Alignment: Ensuring Jailbreak Defense via Answer-Then-Check
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.11629](https://arxiv.org/abs/2509.11629)
-**Code**: [https://huggingface.co/datasets/ByteDance-Seed/ReSA](https://huggingface.co/datasets/ByteDance-Seed/ReSA)
+**arXiv**: [2509.11629](https://arxiv.org/abs/2509.11629)  
+**Code**: [https://huggingface.co/datasets/ByteDance-Seed/ReSA](https://huggingface.co/datasets/ByteDance-Seed/ReSA)  
 **Area**: AI Safety / LLM Alignment
 **Keywords**: Jailbreak Defense, Answer-Then-Check, Safety Reasoning, Long Chain-of-Thought, Data-Efficient Alignment
 

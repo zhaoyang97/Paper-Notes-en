@@ -18,8 +18,8 @@ content_hash: 2b84cc76fdeec389
 # Competition-Aware CPC Forecasting with Near-Market Coverage
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13059](https://arxiv.org/abs/2603.13059)
-**Code**: None
+**arXiv**: [2603.13059](https://arxiv.org/abs/2603.13059)  
+**Code**: None  
 **Area**: Time Series
 **Keywords**: CPC forecasting, search advertising auction, competition proxy, spatiotemporal graph network, time series foundation model
 
@@ -60,8 +60,8 @@ The overall pipeline can be summarized in five steps:
 1. Construct a keyword-level weekly panel from Google Ads logs spanning 2021 to 2023.
 2. Generate three categories of competition proxies: semantic proxies, behavioral proxies, and geographic proxies.
 3. Route the proxies into models via two pathways:
-   - Covariate route: organize proxies into leakage-free exogenous features.
-   - Relational prior route: encode inter-keyword competition relationships as a fixed semantic graph.
+    - Covariate route: organize proxies into leakage-free exogenous features.
+    - Relational prior route: encode inter-keyword competition relationships as a fixed semantic graph.
 4. Compare three model families — traditional/neural baselines, time series foundation models (TSFMs), and spatiotemporal graph neural networks (STGNNs) — under a unified evaluation protocol.
 5. Analyze performance across the 1-week, 6-week, and 12-week horizons and within the high-risk competitive frontier subset.
 
@@ -71,34 +71,34 @@ The framework input is not simply historical CPC but a richer weekly panel encom
 The most important contributions of the paper are not specific formulas but the construction of three proxy categories and two representation pathways.
 
 1. **Semantic Neighborhood and Semantic Keyword Graph**
-   - Function: Approximate the set of keywords likely competing for the same traffic using semantic similarity of keyword text.
-   - Mechanism: Each keyword is encoded into a 384-dimensional vector $e_i \in \mathbb{R}^{384}$ using all-MiniLM-L6-v2, and cosine similarity is computed to identify semantic neighbors. Each keyword is connected to its $k=10$ most similar neighbors to form a fixed semantic graph, with the adjacency matrix row-normalized.
-   - Design Motivation: In ad auctions, true competitive relationships often do not arise from surface-level string matching but from substitutable search intent. For example, two differently worded "airport car rental" keywords may compete for the same high-intent traffic. Text semantics can recover this substitutability.
-   - Novelty: Many spatiotemporal graph models rely on naturally available physical graphs such as road networks or power grid topologies. Since no such topology exists here, the authors actively transform "semantic substitutability" into graph structure.
+    - Function: Approximate the set of keywords likely competing for the same traffic using semantic similarity of keyword text.
+    - Mechanism: Each keyword is encoded into a 384-dimensional vector $e_i \in \mathbb{R}^{384}$ using all-MiniLM-L6-v2, and cosine similarity is computed to identify semantic neighbors. Each keyword is connected to its $k=10$ most similar neighbors to form a fixed semantic graph, with the adjacency matrix row-normalized.
+    - Design Motivation: In ad auctions, true competitive relationships often do not arise from surface-level string matching but from substitutable search intent. For example, two differently worded "airport car rental" keywords may compete for the same high-intent traffic. Text semantics can recover this substitutability.
+    - Novelty: Many spatiotemporal graph models rely on naturally available physical graphs such as road networks or power grid topologies. Since no such topology exists here, the authors actively transform "semantic substitutability" into graph structure.
 
 2. **DTW-Based Behavioral Neighborhood**
-   - Function: Identify keywords whose historical CPC trajectories exhibit similar dynamics, potentially with temporal misalignment.
-   - Mechanism: Dynamic Time Warping (DTW) with a Sakoe-Chiba band constraint is used to measure pairwise CPC sequence similarity, avoiding pathological alignments. The resulting behavioral neighborhood is leakage-free, relying solely on historical trajectory statistics to form behavioral competition features.
-   - Design Motivation: Some keywords are textually dissimilar yet co-move under seasonal effects, budget adjustments, or market shocks. Text-based proxies cannot capture such co-movement; trajectory alignment supplements this by identifying keywords with correlated competitive exposure.
-   - Relationship to Semantic Neighborhood: The semantic proxy reflects static substitution relationships, while the DTW behavioral proxy captures dynamic co-resonance; the two are complementary rather than redundant.
+    - Function: Identify keywords whose historical CPC trajectories exhibit similar dynamics, potentially with temporal misalignment.
+    - Mechanism: Dynamic Time Warping (DTW) with a Sakoe-Chiba band constraint is used to measure pairwise CPC sequence similarity, avoiding pathological alignments. The resulting behavioral neighborhood is leakage-free, relying solely on historical trajectory statistics to form behavioral competition features.
+    - Design Motivation: Some keywords are textually dissimilar yet co-move under seasonal effects, budget adjustments, or market shocks. Text-based proxies cannot capture such co-movement; trajectory alignment supplements this by identifying keywords with correlated competitive exposure.
+    - Relationship to Semantic Neighborhood: The semantic proxy reflects static substitution relationships, while the DTW behavioral proxy captures dynamic co-resonance; the two are complementary rather than redundant.
 
 3. **Geographic Intent Proxy**
-   - Function: Extract hierarchical geographic information (continent, country, city) from keyword text as a proxy for local demand and competitive heterogeneity.
-   - Mechanism: Keyword text is combined with a geographic lexicon and hierarchical mapping to assign multi-scale geographic labels to each keyword, effectively transforming "geographic attribution of user intent" into structured variables.
-   - Design Motivation: Search demand in the car rental industry is highly localized; differences in airport, city, or country correspond to entirely different demand intensities and competitive densities. Geographic structure inherently determines local market congestion.
-   - Empirical Finding: Finer geographic granularity does not necessarily improve performance; coarser granularity such as continent proves more stable because it avoids fragmenting training samples excessively.
+    - Function: Extract hierarchical geographic information (continent, country, city) from keyword text as a proxy for local demand and competitive heterogeneity.
+    - Mechanism: Keyword text is combined with a geographic lexicon and hierarchical mapping to assign multi-scale geographic labels to each keyword, effectively transforming "geographic attribution of user intent" into structured variables.
+    - Design Motivation: Search demand in the car rental industry is highly localized; differences in airport, city, or country correspond to entirely different demand intensities and competitive densities. Geographic structure inherently determines local market congestion.
+    - Empirical Finding: Finer geographic granularity does not necessarily improve performance; coarser granularity such as continent proves more stable because it avoids fragmenting training samples excessively.
 
 4. **Two Proxy Representation Pathways**
-   - Function: Decouple the same competition proxies from any single model, injecting them as either covariates or graph priors.
-   - Mechanism: The covariate route feeds neighborhood history aggregates, geographic variables, and core operational variables jointly into TSFMs or traditional models. The graph route encodes semantic keyword edges as a fixed graph structure for STGNNs, enabling cross-keyword information propagation.
-   - Design Motivation: The authors seek to answer not which backbone is strongest, but which competition representation is most useful. This requires decoupling representation choice from model family for a controlled comparison.
-   - Implication: If the covariate route proves superior, it suggests competition proxies are better suited as exogenous conditions; if the graph route dominates, it suggests relational propagation itself is the key mechanism. The paper finds each pathway holds advantages at different horizons.
+    - Function: Decouple the same competition proxies from any single model, injecting them as either covariates or graph priors.
+    - Mechanism: The covariate route feeds neighborhood history aggregates, geographic variables, and core operational variables jointly into TSFMs or traditional models. The graph route encodes semantic keyword edges as a fixed graph structure for STGNNs, enabling cross-keyword information propagation.
+    - Design Motivation: The authors seek to answer not which backbone is strongest, but which competition representation is most useful. This requires decoupling representation choice from model family for a controlled comparison.
+    - Implication: If the covariate route proves superior, it suggests competition proxies are better suited as exogenous conditions; if the graph route dominates, it suggests relational propagation itself is the key mechanism. The paper finds each pathway holds advantages at different horizons.
 
 5. **Competitive Frontier Evaluation**
-   - Function: Segment keywords into four quadrants by mean CPC and volatility, with focused analysis on the high-risk upper-right quadrant of expensive and highly volatile keywords.
-   - Mechanism: Mean CPC represents value and coefficient of variation represents volatility. The paper emphasizes the frontier region of high CPC and high volatility.
-   - Design Motivation: Average error fails to reflect business risk; what must be stabilized are expensive, volatile keywords, because forecasting errors on these terms inflict the greatest budget damage.
-   - Value: This step connects prediction improvements directly to business risk rather than merely reporting average sMAPE.
+    - Function: Segment keywords into four quadrants by mean CPC and volatility, with focused analysis on the high-risk upper-right quadrant of expensive and highly volatile keywords.
+    - Mechanism: Mean CPC represents value and coefficient of variation represents volatility. The paper emphasizes the frontier region of high CPC and high volatility.
+    - Design Motivation: Average error fails to reflect business risk; what must be stabilized are expensive, volatile keywords, because forecasting errors on these terms inflict the greatest budget damage.
+    - Value: This step connects prediction improvements directly to business risk rather than merely reporting average sMAPE.
 
 ### Loss & Training
 The training and evaluation setup is largely unified, with emphasis on preventing temporal leakage and accommodating heavy-tailed distributions:

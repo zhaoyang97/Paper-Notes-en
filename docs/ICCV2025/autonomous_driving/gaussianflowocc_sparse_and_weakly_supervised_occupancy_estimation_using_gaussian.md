@@ -18,8 +18,8 @@ content_hash: a1715431061a771d
 # GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.17288](https://arxiv.org/abs/2502.17288)
-**Code**: [GitHub](https://github.com/boschresearch/GaussianFlowOcc)
+**arXiv**: [2502.17288](https://arxiv.org/abs/2502.17288)  
+**Code**: [GitHub](https://github.com/boschresearch/GaussianFlowOcc)  
 **Area**: Autonomous Driving
 **Keywords**: Occupancy Grid Estimation, 3D Gaussian Splatting, Weak Supervision, Temporal Flow, Sparse Representation
 

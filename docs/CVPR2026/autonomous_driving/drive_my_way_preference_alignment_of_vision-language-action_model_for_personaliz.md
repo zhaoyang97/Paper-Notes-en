@@ -18,8 +18,8 @@ content_hash: 1c0323a7ab97e4dc
 # Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25740](https://arxiv.org/abs/2603.25740)
-**Code**: [https://dmw-cvpr.github.io/](https://dmw-cvpr.github.io/)
+**arXiv**: [2603.25740](https://arxiv.org/abs/2603.25740)  
+**Code**: [https://dmw-cvpr.github.io/](https://dmw-cvpr.github.io/)  
 **Area**: Autonomous Driving
 **Keywords**: personalized driving, VLA model, preference alignment, reinforcement fine-tuning, user embedding
 

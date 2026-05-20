@@ -18,8 +18,8 @@ content_hash: cd4a6e5d2e3ee4f4
 # GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05721](https://arxiv.org/abs/2604.05721)
-**Code**: [https://weiqi-zhang.github.io/GaussianGrow](https://weiqi-zhang.github.io/GaussianGrow)
+**arXiv**: [2604.05721](https://arxiv.org/abs/2604.05721)  
+**Code**: [https://weiqi-zhang.github.io/GaussianGrow](https://weiqi-zhang.github.io/GaussianGrow)  
 **Area**: 3D Vision / 3D Generation
 **Keywords**: 3D Gaussian Splatting, Point Clouds, Text Guidance, Multi-view Diffusion, Appearance Generation
 

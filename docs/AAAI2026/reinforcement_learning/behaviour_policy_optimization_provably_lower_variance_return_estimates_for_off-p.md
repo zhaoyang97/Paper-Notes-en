@@ -18,8 +18,8 @@ content_hash: ae557662d4f70930
 # Behaviour Policy Optimization: Provably Lower Variance Return Estimates for Off-Policy Reinforcement Learning
 
 **Conference**: AAAI2026
-**arXiv**: [2511.10843](https://arxiv.org/abs/2511.10843)
-**Code**: [sacktock/BPO](https://github.com/sacktock/BPO)
+**arXiv**: [2511.10843](https://arxiv.org/abs/2511.10843)  
+**Code**: [sacktock/BPO](https://github.com/sacktock/BPO)  
 **Area**: Reinforcement Learning
 **Keywords**: off-policy reinforcement learning, variance reduction, importance sampling, behaviour policy, policy gradient
 

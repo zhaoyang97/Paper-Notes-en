@@ -18,8 +18,8 @@ content_hash: 1df208ba1533d738
 # PLA: Prompt Learning Attack against Text-to-Image Generative Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.03696](https://arxiv.org/abs/2508.03696)
-**Code**: None
+**arXiv**: [2508.03696](https://arxiv.org/abs/2508.03696)  
+**Code**: None  
 **Area**: Diffusion Models / AI Security
 **Keywords**: Adversarial Attack, T2I Safety, Black-box Attack, Prompt Learning, NSFW Content Detection
 

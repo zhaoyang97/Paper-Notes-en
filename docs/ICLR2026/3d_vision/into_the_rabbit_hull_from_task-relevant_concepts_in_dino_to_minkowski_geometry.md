@@ -19,8 +19,8 @@ content_hash: 6b9b43afdfe4b937
 # Into the Rabbit Hull: From Task-Relevant Concepts in DINO to Minkowski Geometry
 
 **Conference**: ICLR2026
-**arXiv**: [2510.08638](https://arxiv.org/abs/2510.08638)
-**Code**: [kempnerinstitute.github.io/dinovision](https://kempnerinstitute.github.io/dinovision)
+**arXiv**: [2510.08638](https://arxiv.org/abs/2510.08638)  
+**Code**: [kempnerinstitute.github.io/dinovision](https://kempnerinstitute.github.io/dinovision)  
 **Area**: 3D Vision
 **Keywords**: DINOv2, Sparse Autoencoder, Linear Representation Hypothesis, Minkowski Representation Hypothesis, interpretability, Vision Transformer
 

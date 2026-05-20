@@ -18,8 +18,8 @@ content_hash: 375ef791504a6b61
 # SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.06515](https://arxiv.org/abs/2503.06515)
-**Code**: [https://github.com/jingjing0419/SAQ-SAM](https://github.com/jingjing0419/SAQ-SAM)
+**arXiv**: [2503.06515](https://arxiv.org/abs/2503.06515)  
+**Code**: [https://github.com/jingjing0419/SAQ-SAM](https://github.com/jingjing0419/SAQ-SAM)  
 **Area**: Segmentation
 **Keywords**: SAM, post-training quantization, semantic alignment, attention-aware, model compression
 

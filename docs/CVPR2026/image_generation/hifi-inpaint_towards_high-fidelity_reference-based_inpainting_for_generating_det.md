@@ -18,8 +18,8 @@ content_hash: 0db227777ad86899
 # HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02210](https://arxiv.org/abs/2603.02210)
-**Code**: [Project Page](https://correr-zhou.github.io/HiFi-Inpaint)
+**arXiv**: [2603.02210](https://arxiv.org/abs/2603.02210)  
+**Code**: [Project Page](https://correr-zhou.github.io/HiFi-Inpaint)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Reference-based inpainting, high-fidelity detail preservation, human-product image generation, high-frequency guidance, DiT
 
@@ -53,9 +53,9 @@ HiFi-Inpaint is built upon FLUX.1-Dev (MMDiT architecture). Given a text prompt 
 
 2. **High-Frequency-Guided DiT + Shared Enhancement Attention (SEA)**:
 
-   - **High-Frequency Extraction**: The image is transformed to the frequency domain via DFT; a circular-mask high-pass filter (radius $r$) suppresses low-frequency components, and inverse DFT maps the result back to the spatial domain, yielding a high-frequency map $H(\mathbf{I}_p)$ that highlights textures, text, logos, and other fine details (more focused on salient details than Canny edge detection).
-   - **Token Concatenation**: VAE-encoded tokens from the masked human image, product image, and noised target image are concatenated into a joint visual token: $\mathbf{z}_0 = \text{Concat}(\mathcal{E}(\mathbf{I}_h), \mathcal{E}(\mathbf{I}_p), N(\mathcal{E}(\mathbf{I}_{gt}), t))$; a corresponding high-frequency visual token is constructed as $\mathbf{z}_0' = \text{Concat}(\mathcal{E}(\mathbf{I}_h), \mathcal{E}(H(\mathbf{I}_p)), N(\mathcal{E}(\mathbf{I}_{gt}), t))$.
-   - **SEA Core Formulation**: In each double-stream DiT block, a parameter-shared high-frequency branch is added. High-frequency features are fused into the original features via a learnable scalar weight $\alpha_i$, applied exclusively within the masked region to enhance fine-grained product features:
+    - **High-Frequency Extraction**: The image is transformed to the frequency domain via DFT; a circular-mask high-pass filter (radius $r$) suppresses low-frequency components, and inverse DFT maps the result back to the spatial domain, yielding a high-frequency map $H(\mathbf{I}_p)$ that highlights textures, text, logos, and other fine details (more focused on salient details than Canny edge detection).
+    - **Token Concatenation**: VAE-encoded tokens from the masked human image, product image, and noised target image are concatenated into a joint visual token: $\mathbf{z}_0 = \text{Concat}(\mathcal{E}(\mathbf{I}_h), \mathcal{E}(\mathbf{I}_p), N(\mathcal{E}(\mathbf{I}_{gt}), t))$; a corresponding high-frequency visual token is constructed as $\mathbf{z}_0' = \text{Concat}(\mathcal{E}(\mathbf{I}_h), \mathcal{E}(H(\mathbf{I}_p)), N(\mathcal{E}(\mathbf{I}_{gt}), t))$.
+    - **SEA Core Formulation**: In each double-stream DiT block, a parameter-shared high-frequency branch is added. High-frequency features are fused into the original features via a learnable scalar weight $\alpha_i$, applied exclusively within the masked region to enhance fine-grained product features:
      $\mathbf{z}_i = B_i(\mathbf{z}_{i-1}) + \alpha_i \cdot \text{Mask}(B_i(\mathbf{z}_{i-1}'), \mathbf{M}_{ds})$
      Through parameter sharing, SEA introduces only one additional scalar $\alpha_i$ per layer, keeping the model compact. The learnable $\alpha_i$ outperforms a fixed value of 1 by avoiding visual artifacts and feature conflicts.
 

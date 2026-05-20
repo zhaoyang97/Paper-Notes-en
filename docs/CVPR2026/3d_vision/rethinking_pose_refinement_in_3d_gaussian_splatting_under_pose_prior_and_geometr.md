@@ -19,8 +19,8 @@ content_hash: 3a55c1d931c4de4a
 # Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty
 
 **Conference**: CVPR2026
-**arXiv**: [2603.16538](https://arxiv.org/abs/2603.16538)
-**Code**: [Project Page](https://arxiv.org/abs/2603.16538) (code available)
+**arXiv**: [2603.16538](https://arxiv.org/abs/2603.16538)  
+**Code**: [Project Page](https://arxiv.org/abs/2603.16538) (code available)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, visual localization, pose refinement, Monte Carlo sampling, Fisher information, uncertainty modeling
 

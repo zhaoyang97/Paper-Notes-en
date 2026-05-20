@@ -18,8 +18,8 @@ content_hash: 205bd9a93fed8cd1
 # Understanding Language Prior of LVLMs by Contrasting Chain-of-Embedding
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23050](https://arxiv.org/abs/2509.23050)
-**Code**: None
+**arXiv**: [2509.23050](https://arxiv.org/abs/2509.23050)  
+**Code**: None  
 **Area**: Dialogue Systems
 **Keywords**: Language Prior, Visual Integration Point, Large Vision-Language Models, Representation Analysis, Interpretability
 

@@ -18,8 +18,8 @@ content_hash: d8f6b58821abeb82
 # Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2407.11550](https://arxiv.org/abs/2407.11550)
-**Code**: [GitHub](https://github.com/FFY0/AdaKV)
+**arXiv**: [2407.11550](https://arxiv.org/abs/2407.11550)  
+**Code**: [GitHub](https://github.com/FFY0/AdaKV)  
 **Area**: LLM Efficiency / Model Compression
 **Keywords**: KV Cache, Attention Eviction, Adaptive Budget Allocation, Long-Sequence Inference, Efficient Inference
 
@@ -47,28 +47,28 @@ Given total budget $B$ and per-head attention weights $\{A_i\}$ → concatenate 
 
 1. **Eviction Loss Upper Bound (Theorem 3.1)**
 
-   - Function: Quantifies the impact of cache eviction on attention output.
-   - Mechanism: The $L_1$ eviction loss satisfies $\|y - \hat{y}\|_1 \leq \epsilon = 2hC - 2C \sum_{i} \sum_{j} \mathcal{I}_i^j A_i^j$, where $C = \max\{\|V_i W_i^O\|_\infty\}$.
-   - Implication: A larger total sum of retained attention weights yields a tighter upper bound on eviction loss.
+    - Function: Quantifies the impact of cache eviction on attention output.
+    - Mechanism: The $L_1$ eviction loss satisfies $\|y - \hat{y}\|_1 \leq \epsilon = 2hC - 2C \sum_{i} \sum_{j} \mathcal{I}_i^j A_i^j$, where $C = \max\{\|V_i W_i^O\|_\infty\}$.
+    - Implication: A larger total sum of retained attention weights yields a tighter upper bound on eviction loss.
 
 2. **Optimality of Top-k Eviction (Theorem 3.2)**
 
-   - Function: Proves that given a fixed budget allocation, Top-k selection is the optimal eviction decision.
-   - Mechanism: $\{\mathcal{I}_i^*\} = \arg\min_{\{\mathcal{I}_i\}} \epsilon$ — under a fixed budget, retaining the $k$ elements with the largest attention weights minimizes the upper bound.
-   - Significance: Provides a theoretical justification for the optimization objective of existing methods.
+    - Function: Proves that given a fixed budget allocation, Top-k selection is the optimal eviction decision.
+    - Mechanism: $\{\mathcal{I}_i^*\} = \arg\min_{\{\mathcal{I}_i\}} \epsilon$ — under a fixed budget, retaining the $k$ elements with the largest attention weights minimizes the upper bound.
+    - Significance: Provides a theoretical justification for the optimization objective of existing methods.
 
 3. **Adaptive Budget Allocation (Algorithm 1, Theorem 3.3)**
 
-   - Function: Optimally distributes the total budget across heads.
-   - Mechanism: Concatenate all heads' attention weights into a single vector $A = \text{Cat}(\{A_i\})$, select the global Top-B, and use each head's selection frequency $f_i$ as its budget $B_i^* = f_i$.
-   - Theoretical Guarantee: **Theorem 3.3** proves this strategy achieves the global minimum of the upper bound: $\epsilon^{**} = \min_{\{B_i\}} \epsilon^*$.
-   - Design Motivation: Sparse heads naturally have only a few weights entering the global Top-B, automatically receiving smaller budgets; dispersed heads contribute more weights and automatically receive larger budgets.
+    - Function: Optimally distributes the total budget across heads.
+    - Mechanism: Concatenate all heads' attention weights into a single vector $A = \text{Cat}(\{A_i\})$, select the global Top-B, and use each head's selection frequency $f_i$ as its budget $B_i^* = f_i$.
+    - Theoretical Guarantee: **Theorem 3.3** proves this strategy achieves the global minimum of the upper bound: $\epsilon^{**} = \min_{\{B_i\}} \epsilon^*$.
+    - Design Motivation: Sparse heads naturally have only a few weights entering the global Top-B, automatically receiving smaller budgets; dispersed heads contribute more weights and automatically receive larger budgets.
 
 4. **Safeguard**
 
-   - Function: Interpolates between adaptive and uniform allocation.
-   - Mechanism: $B_i^* = \alpha \cdot B_i^* + (1-\alpha) \cdot B/h$, preventing extreme allocations that could leave certain heads with insufficient budget.
-   - The default $\alpha$ is close to 1, preserving the adaptive allocation in most cases.
+    - Function: Interpolates between adaptive and uniform allocation.
+    - Mechanism: $B_i^* = \alpha \cdot B_i^* + (1-\alpha) \cdot B/h$, preventing extreme allocations that could leave certain heads with insufficient budget.
+    - The default $\alpha$ is close to 1, preserving the adaptive allocation in most cases.
 
 ### Integration
 - **Ada-SnapKV**: Integrates Ada-KV into SnapKV (which uses an observation window to identify critical cache entries).

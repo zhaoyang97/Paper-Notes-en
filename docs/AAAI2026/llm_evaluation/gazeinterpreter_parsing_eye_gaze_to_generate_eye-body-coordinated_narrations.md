@@ -18,8 +18,8 @@ content_hash: 7e206fb028ea6aa1
 # GazeInterpreter: Parsing Eye Gaze to Generate Eye-Body-Coordinated Narrations
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16245](https://arxiv.org/abs/2511.16245)
-**Code**: [https://github.com/EvergreenChang/GazeInterpreter](https://github.com/EvergreenChang/GazeInterpreter)
+**arXiv**: [2511.16245](https://arxiv.org/abs/2511.16245)  
+**Code**: [https://github.com/EvergreenChang/GazeInterpreter](https://github.com/EvergreenChang/GazeInterpreter)  
 **Area**: LLM Evaluation
 **Keywords**: Eye Gaze Analysis, Human Behavior Understanding, Large Language Models, Multimodal Fusion, Motion Generation
 

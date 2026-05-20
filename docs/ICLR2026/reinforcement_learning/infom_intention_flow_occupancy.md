@@ -18,8 +18,8 @@ content_hash: 2a41e5f9a102e956
 # InFOM: Intention-Conditioned Flow Occupancy Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.08902](https://arxiv.org/abs/2506.08902)
-**Code**: [https://github.com/chongyi-zheng/infom](https://github.com/chongyi-zheng/infom)
+**arXiv**: [2506.08902](https://arxiv.org/abs/2506.08902)  
+**Code**: [https://github.com/chongyi-zheng/infom](https://github.com/chongyi-zheng/infom)  
 **Area**: Reinforcement Learning
 **Keywords**: Occupancy measures, flow matching, intention inference, pre-training & fine-tuning, generalized policy improvement
 

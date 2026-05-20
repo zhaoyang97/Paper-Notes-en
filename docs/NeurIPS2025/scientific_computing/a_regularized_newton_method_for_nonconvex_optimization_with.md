@@ -18,8 +18,8 @@ content_hash: c206217cc7191801
 # A Regularized Newton Method for Nonconvex Optimization with Global and Local Complexity Guarantees
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.04799](https://arxiv.org/abs/2502.04799)
-**Code**: No public code (MATLAB implementation; experiments based on the CUTEst benchmark)
+**arXiv**: [2502.04799](https://arxiv.org/abs/2502.04799)  
+**Code**: No public code (MATLAB implementation; experiments based on the CUTEst benchmark)  
 **Area**: Scientific Computing
 **Keywords**: Regularized Newton method, nonconvex optimization, optimal global complexity, quadratic local convergence, adaptive algorithm
 
@@ -60,24 +60,24 @@ Each iteration consists of three levels:
 
 1. **Novel regularizer construction**: Two families of regularizers are proposed, incorporating an extra parameter $\theta>0$ and a ratio $\delta_k$ to modulate the global–local trade-off:
 
-   - **Type I**: $\omega_k^f=\|g_k\|^{1/2}$, $\omega_k^t=\omega_k^f\cdot\min(1, (g_k/g_{k-1})^\theta)$
-   - **Type II**: $\omega_k^f=\epsilon_k^{1/2}$ (where $\epsilon_k=\min_{i\leq k}\|g_i\|$), $\omega_k^t=\omega_k^f\cdot(\epsilon_k/\epsilon_{k-1})^\theta$
+    - **Type I**: $\omega_k^f=\|g_k\|^{1/2}$, $\omega_k^t=\omega_k^f\cdot\min(1, (g_k/g_{k-1})^\theta)$
+    - **Type II**: $\omega_k^f=\epsilon_k^{1/2}$ (where $\epsilon_k=\min_{i\leq k}\|g_i\|$), $\omega_k^t=\omega_k^f\cdot(\epsilon_k/\epsilon_{k-1})^\theta$
 
    Key insight: when $\theta=0$, the method reduces to classical gradient-square-root regularization (local order $3/2$); when $\theta>0$, the additional factor $\delta_k^\theta$ decays rapidly once the iterates enter superlinear convergence, progressively lifting the local convergence order from $3/2$ toward $2$; full quadratic convergence is achieved for $\theta>1$.
 
 2. **Capped CG with negative-curvature detection**: Based on Royer et al. (2020), the subroutine returns one of three statuses:
 
-   - **SOL**: an approximate solution to the regularized Newton equation has been found.
-   - **NC**: a negative-curvature direction satisfying $d^T H d \leq -\rho\|d\|^2$ has been detected.
-   - **TERM**: the regularization parameter is too small, causing early termination due to excessive iterations.
+    - **SOL**: an approximate solution to the regularized Newton equation has been found.
+    - **NC**: a negative-curvature direction satisfying $d^T H d \leq -\rho\|d\|^2$ has been detected.
+    - **TERM**: the regularization parameter is too small, causing early termination due to excessive iterations.
 
    Each CG iteration requires exactly one Hessian–vector product, and negative-curvature monitoring incurs only one additional Hessian–vector product over the entire CG run.
 
 3. **Adaptive Lipschitz constant estimation**: The parameter $M_k$ adaptively estimates $L_H$ and is updated based on line-search outcomes:
 
-   - Successful step with sufficient decrease → decrease $M_k$ (set $\mathcal{J}_{-1}$)
-   - Successful step with moderate decrease → keep $M_k$ (set $\mathcal{J}_0$)
-   - Failed step → increase $M_k$ (set $\mathcal{J}_1$)
+    - Successful step with sufficient decrease → decrease $M_k$ (set $\mathcal{J}_{-1}$)
+    - Successful step with moderate decrease → keep $M_k$ (set $\mathcal{J}_0$)
+    - Failed step → increase $M_k$ (set $\mathcal{J}_1$)
 
    After $O(\log(M_0/L_H))$ iterations, $M_k$ stabilizes at $O(L_H)$.
 

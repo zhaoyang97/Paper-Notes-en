@@ -18,8 +18,8 @@ content_hash: ac33065ab88126be
 # Context Informs Pragmatic Interpretation in Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.03908](https://arxiv.org/abs/2511.03908)
-**Code**: [GitHub](https://github.com/benpry/vlm-tg-context/tree/coginterp)
+**arXiv**: [2511.03908](https://arxiv.org/abs/2511.03908)  
+**Code**: [GitHub](https://github.com/benpry/vlm-tg-context/tree/coginterp)  
 **Area**: Multimodal VLM
 **Keywords**: Pragmatic reasoning, reference games, context sensitivity, cognitive evaluation of VLMs, abstract visual reasoning
 

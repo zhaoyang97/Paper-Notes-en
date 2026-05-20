@@ -18,8 +18,8 @@ content_hash: d0e6ece4349678a4
 # InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.06692](https://arxiv.org/abs/2503.06692)
-**Code**: [Project Page](https://zju-real.github.io/InftyThink)
+**arXiv**: [2503.06692](https://arxiv.org/abs/2503.06692)  
+**Code**: [Project Page](https://zju-real.github.io/InftyThink)  
 **Area**: Model Compression
 **Keywords**: long-context reasoning, iterative reasoning, summarization compression, computational efficiency, reasoning paradigm
 

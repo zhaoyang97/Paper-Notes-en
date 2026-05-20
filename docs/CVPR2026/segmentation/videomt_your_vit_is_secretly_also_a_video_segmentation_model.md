@@ -20,8 +20,8 @@ content_hash: fd570e19224a6ddf
 # VidEoMT: Your ViT is Secretly Also a Video Segmentation Model
 
 **Conference**: CVPR2026
-**arXiv**: [2602.17807](https://arxiv.org/abs/2602.17807)
-**Code**: [tue-mps.org/videomt](https://www.tue-mps.org/videomt/)
+**arXiv**: [2602.17807](https://arxiv.org/abs/2602.17807)  
+**Code**: [tue-mps.org/videomt](https://www.tue-mps.org/videomt/)  
 **Area**: Video Segmentation
 **Keywords**: encoder-only, ViT, video instance segmentation, video panoptic segmentation, query propagation, query fusion, DINOv2
 

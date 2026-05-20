@@ -18,8 +18,8 @@ content_hash: 6e4d9e3569a4103a
 # Some Optimizers are More Equal: Understanding the Role of Optimizers in Group Fairness
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.14882](https://arxiv.org/abs/2504.14882)
-**Code**: [GitHub](https://github.com/Mkolahdoozi/Some-Optimizers-Are-More-Equal)
+**arXiv**: [2504.14882](https://arxiv.org/abs/2504.14882)  
+**Code**: [GitHub](https://github.com/Mkolahdoozi/Some-Optimizers-Are-More-Equal)  
 **Area**: Human Understanding
 **Keywords**: group fairness, optimizers, adaptive gradients, stochastic differential equations, fairness in deep learning
 

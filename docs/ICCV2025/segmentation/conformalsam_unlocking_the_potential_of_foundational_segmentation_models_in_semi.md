@@ -18,8 +18,8 @@ content_hash: 6090fc2774cfe5db
 # ConformalSAM: Unlocking the Potential of Foundational Segmentation Models in Semi-Supervised Semantic Segmentation with Conformal Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.15803](https://arxiv.org/abs/2507.15803)
-**Code**: N/A
+**arXiv**: [2507.15803](https://arxiv.org/abs/2507.15803)  
+**Code**: N/A  
 **Area**: Image Segmentation
 **Keywords**: Semi-supervised segmentation, conformal prediction, SAM/SEEM, uncertainty calibration, pseudo labels
 

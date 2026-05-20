@@ -18,8 +18,8 @@ content_hash: 4722f9da54366b75
 # Single Index Bandits: Generalized Linear Contextual Bandits with Unknown Reward Functions
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.12751](https://arxiv.org/abs/2506.12751)
-**Code**: None
+**arXiv**: [2506.12751](https://arxiv.org/abs/2506.12751)  
+**Code**: None  
 **Area**: Reinforcement Learning / Online Learning
 **Keywords**: Contextual multi-armed bandits, generalized linear models, single index models, Stein's method, regret bounds
 

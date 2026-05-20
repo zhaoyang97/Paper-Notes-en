@@ -18,8 +18,8 @@ content_hash: f27cd077bf6cf171
 # DMesh++: An Efficient Differentiable Mesh for Complex Shapes
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.16776](https://arxiv.org/abs/2412.16776)
-**Code**: Available on project page
+**arXiv**: [2412.16776](https://arxiv.org/abs/2412.16776)  
+**Code**: Available on project page  
 **Area**: 3D Vision
 **Keywords**: Differentiable mesh, triangulation, point cloud reconstruction, multi-view reconstruction, Minimum-Ball algorithm
 
@@ -51,33 +51,33 @@ Reconstruction follows a multi-stage optimization: (1) initialize point features
 
 1. **Minimum-Ball Condition (Definition 3.1)**:
 
-   - *Function*: Define the minimum enclosing ball $B_F$ of face $F$ (the smallest-radius ball passing through all vertices of $F$). If the interior of $B_F$ contains no other points from $\mathbb{P}$, then $F \in \mathbb{F}_{min}$.
-   - *Mechanism*: Validity of a face is reduced to a nearest-neighbor search. Given the center $B_F^c$ and radius $B_F^r$ of $B_F$, find the nearest neighbor of $B_F^c$ in $\mathbb{P} - F$:
+    - *Function*: Define the minimum enclosing ball $B_F$ of face $F$ (the smallest-radius ball passing through all vertices of $F$). If the interior of $B_F$ contains no other points from $\mathbb{P}$, then $F \in \mathbb{F}_{min}$.
+    - *Mechanism*: Validity of a face is reduced to a nearest-neighbor search. Given the center $B_F^c$ and radius $B_F^r$ of $B_F$, find the nearest neighbor of $B_F^c$ in $\mathbb{P} - F$:
 $$d(B_F, \mathbb{P}) = \min_{p \in \mathbb{P}-F} \|p - B_F^c\| - B_F^r$$
 $$F \in \mathbb{F}_{min} \Leftrightarrow d(B_F, \mathbb{P}) > 0$$
    - *Design Motivation*: Nearest-neighbor search is highly parallelizable on GPUs (via KD-tree), whereas WDT is nearly impossible to parallelize due to inherent race conditions.
 
 2. **Differentiable Probability Computation**:
 
-   - *Function*: Soften the discrete Minimum-Ball condition into a continuous probability using a sigmoid function.
-   - *Mechanism*:
+    - *Function*: Soften the discrete Minimum-Ball condition into a continuous probability using a sigmoid function.
+    - *Mechanism*:
 $$\Lambda_{min}(F) = \sigma\!\left(d(B_F, \mathbb{P}) \cdot \alpha_{min}\right)$$
      where $\alpha_{min}$ is a sharpness constant. The center and radius of $B_F$ are computed in a differentiable manner by solving geometric equations.
    - *Design Motivation*: Gradient propagation is maintained so that mesh topology can dynamically change during optimization of point positions.
 
 3. **Theoretical Guarantees**:
 
-   - $\mathbb{F}_{min} \subseteq \mathbb{F}_{dt}$ (the Minimum-Ball face set is a subset of the Delaunay triangulation face set), thus inheriting the no-self-intersection property.
-   - Although $\mathbb{F}_{min}$ does not necessarily tessellate the entire convex hull, this is beneficial for shape reconstruction as it avoids forcing "imaginary" faces into regions where none should exist.
-   - Minimum-Ball inherits Delaunay triangulation's property of minimizing degenerate (thin) triangles.
+    - $\mathbb{F}_{min} \subseteq \mathbb{F}_{dt}$ (the Minimum-Ball face set is a subset of the Delaunay triangulation face set), thus inheriting the no-self-intersection property.
+    - Although $\mathbb{F}_{min}$ does not necessarily tessellate the entire convex hull, this is beneficial for shape reconstruction as it avoids forcing "imaginary" faces into regions where none should exist.
+    - Minimum-Ball inherits Delaunay triangulation's property of minimizing degenerate (thin) triangles.
 
 4. **Reconstruction Pipeline Optimizations**:
 
-   - Multi-stage optimization: positions and real values are optimized separately to avoid instability from joint optimization.
-   - Mesh subdivision: new points are inserted on existing faces to add geometric detail.
-   - Loss functions: Chamfer Distance for point cloud reconstruction; differentiable rendering loss for multi-view reconstruction.
-   - Periodic caching of nearest neighbors to accelerate the optimization process.
-   - All experiments are conducted on AMD EPYC 7R32 CPU + NVIDIA A10 GPU.
+    - Multi-stage optimization: positions and real values are optimized separately to avoid instability from joint optimization.
+    - Mesh subdivision: new points are inserted on existing faces to add geometric detail.
+    - Loss functions: Chamfer Distance for point cloud reconstruction; differentiable rendering loss for multi-view reconstruction.
+    - Periodic caching of nearest neighbors to accelerate the optimization process.
+    - All experiments are conducted on AMD EPYC 7R32 CPU + NVIDIA A10 GPU.
 
 ### Loss & Training
 

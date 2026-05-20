@@ -18,8 +18,8 @@ content_hash: 200f159b6a42cdad
 # LQM: Linguistically Motivated Multidimensional Quality Metrics for Machine Translation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18490](https://arxiv.org/abs/2604.18490)
-**Code**: [GitHub](https://github.com/UBC-NLP/LQM_MT)
+**arXiv**: [2604.18490](https://arxiv.org/abs/2604.18490)  
+**Code**: [GitHub](https://github.com/UBC-NLP/LQM_MT)  
 **Area**: Multilingual Translation
 **Keywords**: Machine translation evaluation, error taxonomy, Arabic dialects, multidimensional quality metrics, linguistically motivated
 

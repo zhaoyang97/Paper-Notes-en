@@ -17,8 +17,8 @@ content_hash: fa72020b568f5808
 # Towards Universal Computational Aberration Correction in Photographic Cameras: A Comprehensive Benchmark Analysis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12083](https://arxiv.org/abs/2603.12083)
-**Code**: [https://github.com/XiaolongQian/UniCAC](https://github.com/XiaolongQian/UniCAC)
+**arXiv**: [2603.12083](https://arxiv.org/abs/2603.12083)  
+**Code**: [https://github.com/XiaolongQian/UniCAC](https://github.com/XiaolongQian/UniCAC)  
 **Area**: Image Restoration
 **Keywords**: Computational Aberration Correction, Optical Degradation Evaluation, Benchmark, Automatic Optical Design, Image Restoration
 

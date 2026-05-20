@@ -18,8 +18,8 @@ content_hash: e06702e7e846660d
 # Improved Regret and Contextual Linear Extension for Pandora's Box and Prophet Inequality
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18828](https://arxiv.org/abs/2505.18828)
-**Code**: None
+**arXiv**: [2505.18828](https://arxiv.org/abs/2505.18828)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Pandora's Box, prophet inequality, online learning, regret bound, contextual linear bandits
 

@@ -18,8 +18,8 @@ content_hash: 1aab191448490e09
 # RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.18711](https://arxiv.org/abs/2509.18711)
-**Code**: N/A
+**arXiv**: [2509.18711](https://arxiv.org/abs/2509.18711)  
+**Code**: N/A  
 **Area**: Segmentation
 **Keywords**: Remote sensing visual grounding, zero-shot, open-vocabulary, diffusion model, training-free
 

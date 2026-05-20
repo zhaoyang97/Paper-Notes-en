@@ -18,8 +18,8 @@ content_hash: f0f983e35e141157
 # Semantic Watermarking Reinvented: Enhancing Robustness and Generation Quality with Fourier Integrity
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.07647](https://arxiv.org/abs/2509.07647)
-**Code**: [https://github.com/thomas11809/SFWMark](https://github.com/thomas11809/SFWMark)
+**arXiv**: [2509.07647](https://arxiv.org/abs/2509.07647)  
+**Code**: [https://github.com/thomas11809/SFWMark](https://github.com/thomas11809/SFWMark)  
 **Area**: Diffusion Models / Digital Watermarking
 **Keywords**: semantic watermarking, latent-space Fourier watermarking, Hermitian symmetry, center-aware embedding, latent diffusion models
 

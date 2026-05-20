@@ -18,8 +18,8 @@ content_hash: a0cefc58f63ea25f
 # ProbRes: Probabilistic Jump Diffusion for Open-World Egocentric Activity Recognition
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.03948](https://arxiv.org/abs/2504.03948)
-**Code**: To be released
+**arXiv**: [2504.03948](https://arxiv.org/abs/2504.03948)  
+**Code**: To be released  
 **Area**: Multimodal VLM
 **Keywords**: Open-world activity recognition, egocentric vision, jump diffusion, structured search, VLM
 

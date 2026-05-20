@@ -18,8 +18,8 @@ content_hash: a881a98642d940c0
 # MixRI: Mixing Features of Reference Images for Novel Object Pose Estimation
 
 **Conference**: ICCV 2025
-**arXiv**: [2601.06883](https://arxiv.org/abs/2601.06883)
-**Code**: [Project Page](https://npucvr.github.io/MixRI/)
+**arXiv**: [2601.06883](https://arxiv.org/abs/2601.06883)  
+**Code**: [Project Page](https://npucvr.github.io/MixRI/)  
 **Area**: Human Understanding
 **Keywords**: Novel Object Pose Estimation, Feature Matching, Multi-View Fusion, Lightweight Network, Edge AI
 

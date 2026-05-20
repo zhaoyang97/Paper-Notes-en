@@ -18,8 +18,8 @@ content_hash: 927359c426f03cdc
 # Heuristic-Induced Multimodal Risk Distribution Jailbreak Attack for Multimodal Large Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.05934](https://arxiv.org/abs/2412.05934)
-**Code**: [GitHub](https://github.com/MaTengSYSU/HIMRD-jailbreak)
+**arXiv**: [2412.05934](https://arxiv.org/abs/2412.05934)  
+**Code**: [GitHub](https://github.com/MaTengSYSU/HIMRD-jailbreak)  
 **Area**: Alignment RLHF / AI Safety
 **Keywords**: jailbreak attack, multimodal large language models, risk distribution, heuristic search, black-box attack
 

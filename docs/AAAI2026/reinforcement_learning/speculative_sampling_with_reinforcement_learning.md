@@ -17,8 +17,8 @@ content_hash: d6ada54ff2947f34
 # Speculative Sampling with Reinforcement Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.12212](https://arxiv.org/abs/2601.12212)
-**Code**: [github.com/wmd3i/ReSpS](https://github.com/wmd3i/ReSpS)
+**arXiv**: [2601.12212](https://arxiv.org/abs/2601.12212)  
+**Code**: [github.com/wmd3i/ReSpS](https://github.com/wmd3i/ReSpS)  
 **Area**: Reinforcement Learning
 **Keywords**: Speculative Sampling, LLM Inference Acceleration, Reinforcement Learning, Draft Tree Optimization, PPO
 

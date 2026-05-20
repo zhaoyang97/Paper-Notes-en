@@ -18,8 +18,8 @@ content_hash: 12385ab107555c5f
 # Temporal Inconsistency Guidance for Super-resolution Video Quality Assessment
 
 **Conference**: AAAI 2026
-**arXiv**: [2412.18933](https://arxiv.org/abs/2412.18933)
-**Code**: [Lighting-YXLI/TIG-SVQA-main](https://github.com/Lighting-YXLI/TIG-SVQA-main)
+**arXiv**: [2412.18933](https://arxiv.org/abs/2412.18933)  
+**Code**: [Lighting-YXLI/TIG-SVQA-main](https://github.com/Lighting-YXLI/TIG-SVQA-main)  
 **Area**: Image Restoration
 **Keywords**: Video Quality Assessment, Super-Resolution, Temporal Inconsistency, Transformer, Visual Working Memory
 

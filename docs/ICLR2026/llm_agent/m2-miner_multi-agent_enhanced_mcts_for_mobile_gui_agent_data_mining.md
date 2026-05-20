@@ -18,8 +18,8 @@ content_hash: 333dd83736af78ce
 # M²-Miner: Multi-Agent Enhanced MCTS for Mobile GUI Agent Data Mining
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.05429](https://arxiv.org/abs/2602.05429)
-**Code**: Coming soon
+**arXiv**: [2602.05429](https://arxiv.org/abs/2602.05429)  
+**Code**: Coming soon  
 **Area**: LLM Agent
 **Keywords**: GUI Agent, MCTS, Data Mining, Multi-Agent Collaboration, Mobile Interaction
 

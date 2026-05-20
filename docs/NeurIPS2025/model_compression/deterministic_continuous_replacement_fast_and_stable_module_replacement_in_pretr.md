@@ -18,8 +18,8 @@ content_hash: 731d8c38f762586c
 # Deterministic Continuous Replacement: Fast and Stable Module Replacement in Pretrained Transformers
 
 **Conference**: NeurIPS 2025 (ScaleOPT Workshop)
-**arXiv**: [2511.18670](https://arxiv.org/abs/2511.18670)
-**Code**: Not yet released (authors state it will be made available in the extended version)
+**arXiv**: [2511.18670](https://arxiv.org/abs/2511.18670)  
+**Code**: Not yet released (authors state it will be made available in the extended version)  
 **Area**: Model Compression
 **Keywords**: Module replacement, deterministic mixing, gradient variance, knowledge distillation, Vision Transformer
 

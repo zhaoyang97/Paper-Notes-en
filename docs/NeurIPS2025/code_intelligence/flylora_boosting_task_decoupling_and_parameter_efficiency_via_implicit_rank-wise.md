@@ -18,8 +18,8 @@ content_hash: 0912bfa9e4425d3e
 # FlyLoRA: Boosting Task Decoupling and Parameter Efficiency via Implicit Rank-Wise Mixture-of-Experts
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08396](https://arxiv.org/abs/2510.08396)
-**Code**: [https://github.com/gfyddha/FlyLoRA](https://github.com/gfyddha/FlyLoRA)
+**arXiv**: [2510.08396](https://arxiv.org/abs/2510.08396)  
+**Code**: [https://github.com/gfyddha/FlyLoRA](https://github.com/gfyddha/FlyLoRA)  
 **Area**: Code Intelligence
 **Keywords**: LoRA, MoE, Parameter-Efficient Fine-Tuning, Fly Olfactory Circuit, Model Merging
 
@@ -49,29 +49,29 @@ Input $x \in \mathbb{R}^n$ → frozen sparse random projection $A \in \mathbb{R}
 
 1. **Frozen Sparse Random Projection as Implicit Router** (Section 3.1–3.2):
 
-   - **Function**: Each row of $A$ has only $p$ non-zero entries (sampled from $\mathcal{N}(0, 1/r^2)$). After computing $y = Ax$, the top-$k$ dimensions by absolute value are selected as activated expert indices.
-   - **Mechanism**: The forward pass computes $f_{\text{FlyLoRA}}(x) = W_0 x + \frac{\alpha}{r} \sum_{i=1}^r \mathbb{I}(i \in \mathcal{I}_{\text{topk}}) \cdot b_i a_i x$, where $\mathcal{I}_{\text{topk}}$ is determined by $(Ax + d)$.
-   - **Theoretical Guarantee** (Theorem 3.1): The sparse random projection preserves pairwise distances — $\mathbb{P}((1-\epsilon)\|x-y\|^2 \leq \frac{1}{r\sigma^2}\|Ax-Ay\|^2 \leq (1+\epsilon)\|x-y\|^2)$ holds with high probability.
-   - **Design Motivation**: Semantically similar inputs are projected to nearby positions and activate the same experts, while distinct inputs activate different experts. This enables geometry-based implicit routing without learned routing parameters, at the same computational cost as standard LoRA with $r = k$.
+    - **Function**: Each row of $A$ has only $p$ non-zero entries (sampled from $\mathcal{N}(0, 1/r^2)$). After computing $y = Ax$, the top-$k$ dimensions by absolute value are selected as activated expert indices.
+    - **Mechanism**: The forward pass computes $f_{\text{FlyLoRA}}(x) = W_0 x + \frac{\alpha}{r} \sum_{i=1}^r \mathbb{I}(i \in \mathcal{I}_{\text{topk}}) \cdot b_i a_i x$, where $\mathcal{I}_{\text{topk}}$ is determined by $(Ax + d)$.
+    - **Theoretical Guarantee** (Theorem 3.1): The sparse random projection preserves pairwise distances — $\mathbb{P}((1-\epsilon)\|x-y\|^2 \leq \frac{1}{r\sigma^2}\|Ax-Ay\|^2 \leq (1+\epsilon)\|x-y\|^2)$ holds with high probability.
+    - **Design Motivation**: Semantically similar inputs are projected to nearby positions and activate the same experts, while distinct inputs activate different experts. This enables geometry-based implicit routing without learned routing parameters, at the same computational cost as standard LoRA with $r = k$.
 
 2. **Top-$k$ Sparsity Induces Gradient Decoupling** (Section 3.3):
 
-   - **Function**: It is theoretically shown that top-$k$ activation reduces the gradient covariance between different columns of $B$.
-   - **Mechanism** (Theorem 3.3): Let $\tilde{\Sigma}$ and $\Sigma$ denote the gradient covariance matrices with and without top-$k$, respectively; then $\mathbb{E}[\tilde{\Sigma}_{(i,j)}] \approx \mathbb{E}[\Sigma_{(i,j)}] \cdot k^2/r^2$.
-   - **Design Motivation**: When $k=8$ and $r=32$, off-diagonal covariance is reduced to $6.25\%$, substantially mitigating inter-rank parameter interference.
+    - **Function**: It is theoretically shown that top-$k$ activation reduces the gradient covariance between different columns of $B$.
+    - **Mechanism** (Theorem 3.3): Let $\tilde{\Sigma}$ and $\Sigma$ denote the gradient covariance matrices with and without top-$k$, respectively; then $\mathbb{E}[\tilde{\Sigma}_{(i,j)}] \approx \mathbb{E}[\Sigma_{(i,j)}] \cdot k^2/r^2$.
+    - **Design Motivation**: When $k=8$ and $r=32$, off-diagonal covariance is reduced to $6.25\%$, substantially mitigating inter-rank parameter interference.
 
 3. **Natural Support for Multi-Task Model Merging** (Section 3.4):
 
-   - **Function**: FlyLoRA components from different tasks naturally occupy near-orthogonal subspaces via their distinct random $A$ matrices.
-   - **Mechanism** (Theorem 3.4): Independent random matrices $A_i, A_j$ satisfy $\mathbb{E}[A_i A_j^\top] = \mathbf{0}$, and $\mathbb{P}(\|A_i A_j^\top\|_2 \geq \epsilon r) \leq p^2/(nr^2\epsilon^2)$.
-   - **Corollary 3.5**: $\langle B_i A_i, B_j A_j \rangle_F \approx 0$, meaning parameter updates from different tasks are approximately orthogonal.
-   - **Design Motivation**: This directly supports post-training merging of multi-task LoRA modules via simple weight averaging, without requiring complex merging strategies.
+    - **Function**: FlyLoRA components from different tasks naturally occupy near-orthogonal subspaces via their distinct random $A$ matrices.
+    - **Mechanism** (Theorem 3.4): Independent random matrices $A_i, A_j$ satisfy $\mathbb{E}[A_i A_j^\top] = \mathbf{0}$, and $\mathbb{P}(\|A_i A_j^\top\|_2 \geq \epsilon r) \leq p^2/(nr^2\epsilon^2)$.
+    - **Corollary 3.5**: $\langle B_i A_i, B_j A_j \rangle_F \approx 0$, meaning parameter updates from different tasks are approximately orthogonal.
+    - **Design Motivation**: This directly supports post-training merging of multi-task LoRA modules via simple weight averaging, without requiring complex merging strategies.
 
 4. **Load-Balancing Bias** (Eq. 9–10):
 
-   - **Function**: A manually updated bias $d \in \mathbb{R}^r$ encourages uniform expert activation.
-   - **Mechanism**: $d_i \leftarrow d_i + u \cdot \text{sign}(\bar{c_i} - c_i)$, adjusted based on the discrepancy between actual and expected activation frequency.
-   - **Design Motivation**: Prevents certain ranks from never being activated (dead expert problem) and improves training stability.
+    - **Function**: A manually updated bias $d \in \mathbb{R}^r$ encourages uniform expert activation.
+    - **Mechanism**: $d_i \leftarrow d_i + u \cdot \text{sign}(\bar{c_i} - c_i)$, adjusted based on the discrepancy between actual and expected activation frequency.
+    - **Design Motivation**: Prevents certain ranks from never being activated (dead expert problem) and improves training stability.
 
 ### Loss & Training
 - FlyLoRA ($k=8$): total rank $r=32$, with only $k=8$ ranks activated; sparsity ratio $\rho = 8/32$.

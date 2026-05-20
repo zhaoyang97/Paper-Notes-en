@@ -18,8 +18,8 @@ content_hash: 6ab4b52f483f55b1
 # AlphaContext: An Evolutionary Tree-based Psychometric Context Generator for Creativity Assessment
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18398](https://arxiv.org/abs/2604.18398)
-**Code**: [https://github.com/yxwang19/AlphaContext](https://github.com/yxwang19/AlphaContext)
+**arXiv**: [2604.18398](https://arxiv.org/abs/2604.18398)  
+**Code**: [https://github.com/yxwang19/AlphaContext](https://github.com/yxwang19/AlphaContext)  
 **Area**: LLM/NLP
 **Keywords**: Creativity Assessment, Psychometrics, Evolutionary Algorithm, MCTS Text Generation, MAP-Elites
 

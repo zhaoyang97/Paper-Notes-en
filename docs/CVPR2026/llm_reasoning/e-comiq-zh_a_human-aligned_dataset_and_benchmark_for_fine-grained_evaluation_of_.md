@@ -18,8 +18,8 @@ content_hash: c9d36c34ba33cf09
 # E-comIQ-ZH: A Human-Aligned Dataset and Benchmark for Fine-Grained Evaluation of E-commerce Posters with Chain-of-Thought
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21698](https://arxiv.org/abs/2602.21698)
-**Code**: [GitHub](https://github.com/4mm7/E-comIQ-ZH)
+**arXiv**: [2602.21698](https://arxiv.org/abs/2602.21698)  
+**Code**: [GitHub](https://github.com/4mm7/E-comIQ-ZH)  
 **Area**: Image Quality Assessment / E-commerce AI
 **Keywords**: e-commerce poster evaluation, image quality assessment, Chain-of-Thought, multi-dimensional scoring, Chinese text quality
 

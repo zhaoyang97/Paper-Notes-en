@@ -19,8 +19,8 @@ content_hash: c66c2ff061a8683f
 # Consistent Text-to-Image Generation via Scene De-Contextualization
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.14553](https://arxiv.org/abs/2510.14553)
-**Code**: [https://github.com/tntek/SDeC](https://github.com/tntek/SDeC)
+**arXiv**: [2510.14553](https://arxiv.org/abs/2510.14553)  
+**Code**: [https://github.com/tntek/SDeC](https://github.com/tntek/SDeC)  
 **Area**: Diffusion Models / Consistent Generation
 **Keywords**: consistent T2I, identity preservation, scene contextualization, SVD, training-free, prompt embedding
 

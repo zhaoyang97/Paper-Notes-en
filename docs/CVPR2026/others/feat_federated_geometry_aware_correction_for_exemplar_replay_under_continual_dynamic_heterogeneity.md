@@ -17,8 +17,8 @@ content_hash: d67418cacfba7ef5
 # FEAT: Federated Geometry-Aware Correction for Exemplar Replay under Continual Dynamic Heterogeneity
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08617](https://arxiv.org/abs/2604.08617)
-**Code**: None
+**arXiv**: [2604.08617](https://arxiv.org/abs/2604.08617)  
+**Code**: None  
 **Area**: Other
 **Keywords**: federated continual learning, exemplar replay, equiangular tight frame, geometric correction, class imbalance
 

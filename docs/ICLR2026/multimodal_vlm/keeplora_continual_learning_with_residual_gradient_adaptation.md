@@ -18,8 +18,8 @@ content_hash: a681fe82ed516550
 # KeepLoRA: Continual Learning with Residual Gradient Adaptation
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19659](https://arxiv.org/abs/2601.19659)
-**Code**: [GitHub](https://github.com/MaolinLuo/KeepLoRA)
+**arXiv**: [2601.19659](https://arxiv.org/abs/2601.19659)  
+**Code**: [GitHub](https://github.com/MaolinLuo/KeepLoRA)  
 **Area**: Multimodal VLM
 **Keywords**: Continual Learning, LoRA, Gradient Projection, Subspace Constraint, Vision-Language Models
 

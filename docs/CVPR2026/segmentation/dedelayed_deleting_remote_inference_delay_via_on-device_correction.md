@@ -18,8 +18,8 @@ content_hash: 0d64ea7878037cb0
 # DeDelayed: Deleting Remote Inference Delay via On-Device Correction
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.13714](https://arxiv.org/abs/2510.13714)
-**Code**: [github.com/InterDigitalInc/dedelayed](https://github.com/InterDigitalInc/dedelayed)
+**arXiv**: [2510.13714](https://arxiv.org/abs/2510.13714)  
+**Code**: [github.com/InterDigitalInc/dedelayed](https://github.com/InterDigitalInc/dedelayed)  
 **Area**: Image Segmentation
 **Keywords**: Collaborative inference, real-time video segmentation, latency compensation, temporal prediction, edge-cloud collaboration
 

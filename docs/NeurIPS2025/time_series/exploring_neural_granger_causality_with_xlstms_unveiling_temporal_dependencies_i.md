@@ -17,8 +17,8 @@ content_hash: b711c8ecda87048a
 # Exploring Neural Granger Causality with xLSTMs: Unveiling Temporal Dependencies in Complex Data
 
 **Conference**: NEURIPS2025
-**arXiv**: [2502.09981](https://arxiv.org/abs/2502.09981)
-**Code**: [github.com/harpoonix/GC-xLSTM](https://github.com/harpoonix/GC-xLSTM)
+**arXiv**: [2502.09981](https://arxiv.org/abs/2502.09981)  
+**Code**: [github.com/harpoonix/GC-xLSTM](https://github.com/harpoonix/GC-xLSTM)  
 **Area**: Time Series
 **Keywords**: Granger Causality, xLSTM, Sparsity, Time Series, Causal Discovery
 

@@ -18,8 +18,8 @@ content_hash: 781f7c3630239f6a
 # VPN: Visual Prompt Navigation
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01766](https://arxiv.org/abs/2508.01766)
-**Code**: [github.com/farlit/VPN](https://github.com/farlit/VPN)
+**arXiv**: [2508.01766](https://arxiv.org/abs/2508.01766)  
+**Code**: [github.com/farlit/VPN](https://github.com/farlit/VPN)  
 **Area**: 3D Vision
 **Keywords**: Visual Navigation, Visual Prompt, Top-down View, Vision-Language Navigation, Data Augmentation
 

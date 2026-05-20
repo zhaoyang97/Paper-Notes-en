@@ -18,8 +18,8 @@ content_hash: 8eaa99acd3aaef59
 # Free Energy Mixer
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07160](https://arxiv.org/abs/2602.07160)
-**Code**: Available (linked in paper)
+**arXiv**: [2602.07160](https://arxiv.org/abs/2602.07160)  
+**Code**: Available (linked in paper)  
 **Area**: Time Series / LLM Efficiency
 **Keywords**: Attention mechanism, free energy, channel-wise selection, log-sum-exp, plug-and-play
 

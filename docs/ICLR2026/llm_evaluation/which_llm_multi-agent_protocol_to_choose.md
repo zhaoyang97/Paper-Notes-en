@@ -18,8 +18,8 @@ content_hash: cb5cd954dfa7bc57
 # Which LLM Multi-Agent Protocol to Choose?
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.17149](https://arxiv.org/abs/2510.17149)
-**Code**: Available (benchmark artifacts included)
+**arXiv**: [2510.17149](https://arxiv.org/abs/2510.17149)  
+**Code**: Available (benchmark artifacts included)  
 **Area**: LLM Evaluation
 **Keywords**: Multi-Agent Protocol, ProtocolBench, ProtocolRouter, A2A, Communication Protocol Evaluation
 

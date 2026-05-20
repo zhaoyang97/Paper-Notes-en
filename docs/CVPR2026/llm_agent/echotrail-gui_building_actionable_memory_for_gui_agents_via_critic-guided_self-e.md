@@ -18,8 +18,8 @@ content_hash: 0f5ecb247fb16aac
 # EchoTrail-GUI: Building Actionable Memory for GUI Agents via Critic-Guided Self-Exploration
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.19396](https://arxiv.org/abs/2512.19396)
-**Code**: Available
+**arXiv**: [2512.19396](https://arxiv.org/abs/2512.19396)  
+**Code**: Available  
 **Area**: LLM Agent / GUI Automation
 **Keywords**: GUI Agent, Actionable Memory, Self-Exploration, Critic-Guided, RAG Inference
 
@@ -63,8 +63,8 @@ Specific mechanism:
 - **Critic reward model** ($R_{critic}$, Gemini 2.5 Flash Lite): scores each complete trajectory on a 1–5 scale measuring coherence, efficiency, and goal achievement; only trajectories with $R_{critic}(\tau) \geq \theta_{good} = 4$ are stored in the permanent memory store.
 - **Trajectory abstraction**: Raw screenshots are not stored; instead, trajectories are converted into lightweight structured representations—(1) UI text description, (2) agent intent summary, (3) executed action—reducing storage cost, eliminating device bias, and enhancing cross-environment generalizability.
 - **Dual-database system**:
-  - Processing database $D_{proc}$ (short-term, volatile): stores in-progress trajectories (both successful and failed), providing real-time guidance $G_t$ for ongoing exploration to help the agent avoid repeated errors.
-  - Memory store $D_{mem}$ (permanent): stores only high-quality complete trajectories that pass critic filtering, serving as the core asset for downstream inference.
+    - Processing database $D_{proc}$ (short-term, volatile): stores in-progress trajectories (both successful and failed), providing real-time guidance $G_t$ for ongoing exploration to help the agent avoid repeated errors.
+    - Memory store $D_{mem}$ (permanent): stores only high-quality complete trajectories that pass critic filtering, serving as the core asset for downstream inference.
 
 #### 2. Dynamic Memory Injection (Stage II)
 

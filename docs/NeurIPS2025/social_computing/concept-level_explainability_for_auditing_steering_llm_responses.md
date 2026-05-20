@@ -18,8 +18,8 @@ content_hash: 2bc27b54faa399ce
 # Concept-Level Explainability for Auditing & Steering LLM Responses
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.07610](https://arxiv.org/abs/2505.07610)
-**Code**: [https://github.com/k-amara/ConceptX](https://github.com/k-amara/ConceptX)
+**arXiv**: [2505.07610](https://arxiv.org/abs/2505.07610)  
+**Code**: [https://github.com/k-amara/ConceptX](https://github.com/k-amara/ConceptX)  
 **Area**: Social Computing
 **Keywords**: Explainability, Concept-Level Attribution, LLM Safety, Shapley Values, Bias Auditing
 

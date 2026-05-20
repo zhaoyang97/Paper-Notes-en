@@ -18,8 +18,8 @@ content_hash: 0a3293919b6fb107
 # Graph of Verification: Structured Verification of LLM Reasoning with Directed Acyclic Graphs
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.12509](https://arxiv.org/abs/2506.12509)
-**Code**: [Frevor/Graph-of-Verification](https://github.com/Frevor/Graph-of-Verification)
+**arXiv**: [2506.12509](https://arxiv.org/abs/2506.12509)  
+**Code**: [Frevor/Graph-of-Verification](https://github.com/Frevor/Graph-of-Verification)  
 **Area**: LLM Reasoning
 **Keywords**: reasoning verification, directed acyclic graph, multi-granularity verification, decomposed verification, training-free method
 

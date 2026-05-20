@@ -18,8 +18,8 @@ content_hash: 1fcc4ab2dce8018b
 # Downscaling Intelligence: Exploring Perception and Reasoning Bottlenecks in Small VLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.17487](https://arxiv.org/abs/2511.17487)
-**Code**: [https://web.stanford.edu/~markendo/projects/downscaling_intelligence](https://web.stanford.edu/~markendo/projects/downscaling_intelligence) (project page available)
+**arXiv**: [2511.17487](https://arxiv.org/abs/2511.17487)  
+**Code**: [https://web.stanford.edu/~markendo/projects/downscaling_intelligence](https://web.stanford.edu/~markendo/projects/downscaling_intelligence) (project page available)  
 **Area**: Multimodal VLM / Small Language Models
 **Keywords**: multimodal model scaling, perception bottleneck, reasoning bottleneck, visual extraction tuning, small models
 

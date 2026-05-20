@@ -18,8 +18,8 @@ content_hash: 9b31b49c2e8f5829
 # Learning Generalizable Shape Completion with SIM(3) Equivariance
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.26631](https://arxiv.org/abs/2509.26631)
-**Code**: [Project Page](https://sime-completion.github.io)
+**arXiv**: [2509.26631](https://arxiv.org/abs/2509.26631)  
+**Code**: [Project Page](https://sime-completion.github.io)  
 **Area**: LLM Evaluation
 **Keywords**: shape completion, SIM(3) equivariance, vector neurons, point cloud, cross-domain generalization
 

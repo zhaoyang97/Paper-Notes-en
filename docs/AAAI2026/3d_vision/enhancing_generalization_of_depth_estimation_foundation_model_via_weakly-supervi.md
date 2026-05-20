@@ -18,8 +18,8 @@ content_hash: d0002036000c2e19
 # Enhancing Generalization of Depth Estimation Foundation Model via Weakly-Supervised Adaptation with Regularization
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14238](https://arxiv.org/abs/2511.14238)
-**Code**: None
+**arXiv**: [2511.14238](https://arxiv.org/abs/2511.14238)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: Monocular Depth Estimation, Domain Adaptation, Weak Supervision, LoRA, Self-Training
 

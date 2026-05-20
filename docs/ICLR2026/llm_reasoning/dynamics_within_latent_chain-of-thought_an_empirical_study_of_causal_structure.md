@@ -18,8 +18,8 @@ content_hash: 68096b6fbe61da33
 # Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure
 
 **Conference**: ICLR2026
-**arXiv**: [2602.08783](https://arxiv.org/abs/2602.08783)
-**Code**: [GitHub](https://github.com/J1mL1/causal-latent-cot)
+**arXiv**: [2602.08783](https://arxiv.org/abs/2602.08783)  
+**Code**: [GitHub](https://github.com/J1mL1/causal-latent-cot)  
 **Area**: LLM Reasoning
 **Keywords**: Latent Chain-of-Thought, Causal Analysis, do-Intervention, Structural Causal Model, Interpretability
 

@@ -18,8 +18,8 @@ content_hash: caa3856b70976f7f
 # Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.21498](https://arxiv.org/abs/2602.21498)
-**Code**: [Available](https://github.com/Ladbaby/PyOmniTS)
+**arXiv**: [2602.21498](https://arxiv.org/abs/2602.21498)  
+**Code**: [Available](https://github.com/Ladbaby/PyOmniTS)  
 **Area**: Time Series
 **Keywords**: Irregular time series, multi-scale modeling, recursive partitioning, sampling pattern preservation, forecasting
 

@@ -18,8 +18,8 @@ content_hash: fbc1f4c5100c456e
 # RefAny3D: 3D Asset-Referenced Diffusion Models for Image Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.22094](https://arxiv.org/abs/2601.22094)
-**Code**: [https://judgementh.github.io/RefAny3D](https://judgementh.github.io/RefAny3D)
+**arXiv**: [2601.22094](https://arxiv.org/abs/2601.22094)  
+**Code**: [https://judgementh.github.io/RefAny3D](https://judgementh.github.io/RefAny3D)  
 **Area**: 3D-Guided Image Generation / Diffusion Models
 **Keywords**: 3D asset reference, dual-branch generation, point map, domain decoupling, subject-driven generation
 

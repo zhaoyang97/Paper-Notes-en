@@ -18,8 +18,8 @@ content_hash: 03c98ab4507371de
 # Multimodal Classification of Radiation-Induced Contrast Enhancements and Tumor Recurrence Using Deep Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11827](https://arxiv.org/abs/2603.11827)
-**Code**: None
+**arXiv**: [2603.11827](https://arxiv.org/abs/2603.11827)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Brain tumor, radiation-induced contrast enhancement, multimodal classification, longitudinal MRI, radiotherapy dose map
 

@@ -18,8 +18,8 @@ content_hash: daa54e36dd377bb0
 # Fine-tuning Quantized Neural Networks with Zeroth-order Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.13430](https://arxiv.org/abs/2505.13430)
-**Code**: [GitHub](https://github.com/maifoundations/QZO)
+**arXiv**: [2505.13430](https://arxiv.org/abs/2505.13430)  
+**Code**: [GitHub](https://github.com/maifoundations/QZO)  
 **Area**: Model Compression / Efficient Fine-Tuning
 **Keywords**: Zeroth-order optimization, quantized model fine-tuning, memory-efficient training, quantization scaling factors, gradient variance
 

@@ -19,8 +19,8 @@ content_hash: f26f1577b2dc91e2
 # STEPH: Sparse Task Vector Mixup with Hypernetworks for Efficient Knowledge Transfer in WSI Prognosis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.10526](https://arxiv.org/abs/2603.10526)
-**Code**: [GitHub](https://github.com/liupei101/STEPH)
+**arXiv**: [2603.10526](https://arxiv.org/abs/2603.10526)  
+**Code**: [GitHub](https://github.com/liupei101/STEPH)  
 **Area**: Medical Imaging / Computational Pathology
 **Keywords**: Whole-Slide Image, Survival Analysis, Cross-Cancer Knowledge Transfer, Task Vector, Hypernetwork, Model Merging
 

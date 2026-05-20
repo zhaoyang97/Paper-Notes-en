@@ -17,8 +17,8 @@ content_hash: ed5a254f7d93f428
 # Clinician-in-the-Loop Smart Home System to Detect Urinary Tract Infection Flare-Ups via Uncertainty-Aware Decision Support
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18334](https://arxiv.org/abs/2511.18334)
-**Code**: None
+**arXiv**: [2511.18334](https://arxiv.org/abs/2511.18334)  
+**Code**: None  
 **Area**: Other (Smart Healthcare / Uncertainty Quantification)
 **Keywords**: Smart home, urinary tract infection detection, uncertainty quantification, conformal prediction, clinical decision support
 

@@ -18,8 +18,8 @@ content_hash: 539ad7a571b8c6a6
 # Failures to Surface Harmful Contents in Video Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.10974](https://arxiv.org/abs/2508.10974)
-**Code**: [https://github.com/yuxincao22/VideoLLM-Failures](https://github.com/yuxincao22/VideoLLM-Failures)
+**arXiv**: [2508.10974](https://arxiv.org/abs/2508.10974)  
+**Code**: [https://github.com/yuxincao22/VideoLLM-Failures](https://github.com/yuxincao22/VideoLLM-Failures)  
 **Area**: Model Compression
 **Keywords**: VideoLLM, Harmful Content Detection, Security Vulnerabilities, Black-box Attack, Multimodal Safety
 

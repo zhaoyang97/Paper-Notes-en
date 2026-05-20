@@ -18,8 +18,8 @@ content_hash: 3270e9baa9a02496
 # EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.18001](https://arxiv.org/abs/2603.18001)
-**Code**: None
+**arXiv**: [2603.18001](https://arxiv.org/abs/2603.18001)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Layout-controlled generation, image grounding, unified framework, cycle consistency, reinforcement learning
 

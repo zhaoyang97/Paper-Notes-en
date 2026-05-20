@@ -18,8 +18,8 @@ content_hash: c90d714f52377331
 # Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.10446](https://arxiv.org/abs/2505.10446)
-**Code**: [GitHub](https://github.com/maple-research-lab/LLaDOU)
+**arXiv**: [2505.10446](https://arxiv.org/abs/2505.10446)  
+**Code**: [GitHub](https://github.com/maple-research-lab/LLaDOU)  
 **Area**: Image Generation
 **Keywords**: Diffusion Language Models, Lateral Thinking, Reinforcement Learning, GRPO, Plackett-Luce
 

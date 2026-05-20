@@ -18,8 +18,8 @@ content_hash: 652cc1ba2f9fecff
 # Moscat: Mixture of Scope Experts at Test for Generalizing Deeper GNNs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2409.06998](https://arxiv.org/abs/2409.06998)
-**Code**: [https://github.com/Hydrapse/moscat](https://github.com/Hydrapse/moscat)
+**arXiv**: [2409.06998](https://arxiv.org/abs/2409.06998)  
+**Code**: [https://github.com/Hydrapse/moscat](https://github.com/Hydrapse/moscat)  
 **Area**: Graph Neural Networks / Generalization Theory
 **Keywords**: GNN depth dilemma, PAC-Bayes bound, decoupled mixture of experts, test-time gating, homophily subgroups
 

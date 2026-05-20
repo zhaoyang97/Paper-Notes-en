@@ -18,8 +18,8 @@ content_hash: b951087c991e3290
 # Divide, Harmonize, Then Conquer It: Shooting Multi-Commodity Flow Problems with Multimodal Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.11057](https://arxiv.org/abs/2602.11057)
-**Code**: [GitHub](https://github.com/Y-debug-sys/Pram)
+**arXiv**: [2602.11057](https://arxiv.org/abs/2602.11057)  
+**Code**: [GitHub](https://github.com/Y-debug-sys/Pram)  
 **Area**: Reinforcement Learning
 **Keywords**: Multi-Commodity Flow, Multimodal Language Models, Multi-Agent Reinforcement Learning, Network Optimization, Partitioned Solving
 

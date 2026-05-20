@@ -18,8 +18,8 @@ content_hash: 3607c1b0e2639f81
 # Idiom Understanding as a Tool to Measure the Dialect Gap
 
 **Conference**: ACL 2026
-**arXiv**: [2510.05026](https://arxiv.org/abs/2510.05026)
-**Code**: None
+**arXiv**: [2510.05026](https://arxiv.org/abs/2510.05026)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: dialect gap, idiom understanding, Quebec French, benchmark dataset, multilingual evaluation
 

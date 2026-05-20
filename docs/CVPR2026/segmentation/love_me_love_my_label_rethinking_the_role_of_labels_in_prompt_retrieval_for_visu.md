@@ -18,8 +18,8 @@ content_hash: f708f967594a1bff
 # Love Me, Love My Label: Rethinking the Role of Labels in Prompt Retrieval for Visual In-Context Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03657](https://arxiv.org/abs/2604.03657)
-**Code**: [https://github.com/luotc-why/CVPR26-LaPR](https://github.com/luotc-why/CVPR26-LaPR)
+**arXiv**: [2604.03657](https://arxiv.org/abs/2604.03657)  
+**Code**: [https://github.com/luotc-why/CVPR26-LaPR](https://github.com/luotc-why/CVPR26-LaPR)  
 **Area**: Multimodal VLM / Segmentation
 **Keywords**: Visual in-context learning, prompt retrieval, label consistency, mixture of experts, contrastive learning
 

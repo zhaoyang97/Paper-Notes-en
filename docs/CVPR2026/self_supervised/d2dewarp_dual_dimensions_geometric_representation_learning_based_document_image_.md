@@ -18,8 +18,8 @@ content_hash: aab685c3af02747d
 # D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping
 
 **Conference**: CVPR 2026
-**arXiv**: [2507.08492](https://arxiv.org/abs/2507.08492)
-**Code**: [Available](https://github.com/xiaomore/D2Dewarp)
+**arXiv**: [2507.08492](https://arxiv.org/abs/2507.08492)  
+**Code**: [Available](https://github.com/xiaomore/D2Dewarp)  
 **Area**: Self-Supervised Learning / Document Image Understanding
 **Keywords**: Document Dewarping, Dual Dimension, Geometric Lines, UNet, HV Fusion
 
@@ -77,10 +77,10 @@ The final output is a 2D backward mapping (displacement field) that maps each pi
 
 - **Function**: Fuses intermediate-layer features from the H-Decoder and V-Decoder so that each direction can provide contextual cues to the other.
 - **Core Structure**:
-  - **Direction-Aware Pooling**: Applies AvgPool along the X-axis on horizontal features (preserving vertical spatial information) and along the Y-axis on vertical features (preserving horizontal spatial information).
-  - **Mixed Attention**: Concatenates the pooled H/V features and applies cross-attention, enabling the horizontal branch to perceive vertical structures and vice versa.
-  - **Directional Self-Attention**: After fusion, X-Self Attention and Y-Self Attention are applied separately to restore spatial resolution in each direction.
-  - **Sigmoid Re-weighting**: A Sigmoid gate weights the fused features and adds them back to the original decoder features.
+    - **Direction-Aware Pooling**: Applies AvgPool along the X-axis on horizontal features (preserving vertical spatial information) and along the Y-axis on vertical features (preserving horizontal spatial information).
+    - **Mixed Attention**: Concatenates the pooled H/V features and applies cross-attention, enabling the horizontal branch to perceive vertical structures and vice versa.
+    - **Directional Self-Attention**: After fusion, X-Self Attention and Y-Self Attention are applied separately to restore spatial resolution in each direction.
+    - **Sigmoid Re-weighting**: A Sigmoid gate weights the fused features and adds them back to the original decoder features.
 - **Design Motivation**: Simple concatenation or addition cannot effectively model inter-directional dependencies. Direction-aware pooling first compresses the irrelevant dimension to reduce computation, while cross-attention explicitly models cross-direction correlations.
 
 #### Design 3: DocDewarpHV Dataset

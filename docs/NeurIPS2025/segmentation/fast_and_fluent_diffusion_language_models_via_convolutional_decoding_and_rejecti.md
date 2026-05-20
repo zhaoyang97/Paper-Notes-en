@@ -18,8 +18,8 @@ content_hash: 3135f9e15f67dd42
 # Fast and Fluent Diffusion Language Models via Convolutional Decoding and Rejective Fine-tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15188](https://arxiv.org/abs/2509.15188)
-**Code**: Not released
+**arXiv**: [2509.15188](https://arxiv.org/abs/2509.15188)  
+**Code**: Not released  
 **Area**: Image Segmentation
 **Keywords**: diffusion language model, convolutional decoding normalization, rejective fine-tuning, semi-autoregressive, time-gap expansion
 

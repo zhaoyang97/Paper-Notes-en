@@ -19,8 +19,8 @@ content_hash: 0d533e83c9757c6b
 # UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression
 
 **Conference**: CVPR2026
-**arXiv**: [2509.25934](https://arxiv.org/abs/2509.25934)
-**Code**: [yuanzhao-CVLAB/UniMMAD](https://github.com/yuanzhao-CVLAB/UniMMAD)
+**arXiv**: [2509.25934](https://arxiv.org/abs/2509.25934)  
+**Code**: [yuanzhao-CVLAB/UniMMAD](https://github.com/yuanzhao-CVLAB/UniMMAD)  
 **Area**: Multi-Modal VLM
 **Keywords**: Anomaly Detection, Multi-Modal Fusion, Mixture-of-Experts, Feature Decompression, Unified Framework, Multi-Class Anomaly Detection
 

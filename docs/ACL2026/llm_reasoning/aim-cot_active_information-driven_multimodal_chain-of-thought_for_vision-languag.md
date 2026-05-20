@@ -18,8 +18,8 @@ content_hash: c6b9eaa2e863ab56
 # AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning
 
 **Conference**: ACL 2026
-**arXiv**: [2509.25699](https://arxiv.org/abs/2509.25699)
-**Code**: [GitHub](https://anonymous.4open.science/r/AIMCoT)
+**arXiv**: [2509.25699](https://arxiv.org/abs/2509.25699)  
+**Code**: [GitHub](https://anonymous.4open.science/r/AIMCoT)  
 **Area**: Vision-Language Reasoning / Multimodal CoT
 **Keywords**: interleaved multimodal chain-of-thought, information foraging theory, active visual probing, dynamic triggering, visual question answering
 

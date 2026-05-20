@@ -18,8 +18,8 @@ content_hash: cd61f279525e9ae5
 # Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.07636](https://arxiv.org/abs/2601.07636)
-**Code**: Not available
+**arXiv**: [2601.07636](https://arxiv.org/abs/2601.07636)  
+**Code**: Not available  
 **Area**: Model Compression
 **Keywords**: continual learning, Sharpness-Aware Minimization, Flatness Decomposition, catastrophic forgetting, Loss Landscape
 

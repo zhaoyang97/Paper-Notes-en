@@ -18,8 +18,8 @@ content_hash: 261b851412ba2ae6
 # Pharos-ESG: A Framework for Multimodal Parsing, Contextual Narration, and Hierarchical Labeling of ESG Reports
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16417](https://arxiv.org/abs/2511.16417)
-**Code**: [https://github.com/liucun-zy/Pharos-ESG](https://github.com/liucun-zy/Pharos-ESG)
+**arXiv**: [2511.16417](https://arxiv.org/abs/2511.16417)  
+**Code**: [https://github.com/liucun-zy/Pharos-ESG](https://github.com/liucun-zy/Pharos-ESG)  
 **Area**: Multimodal VLM
 **Keywords**: ESG report parsing, document understanding, reading order modeling, hierarchical structure reconstruction, multi-level label prediction
 

@@ -19,7 +19,7 @@ content_hash: 62578c16ac3d1ca1
 # Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.08943](https://arxiv.org/abs/2502.08943)
+**arXiv**: [2502.08943](https://arxiv.org/abs/2502.08943)  
 **Authors**: Wenbo Zhang, Hengrui Cai (UC Irvine), Wenyu Chen (Meta)
 **Area**: LLM Evaluation
 **Keywords**: hierarchical statistical model, multiple generations, benchmark variance analysis, prompt difficulty quantification, label error detection, data maps

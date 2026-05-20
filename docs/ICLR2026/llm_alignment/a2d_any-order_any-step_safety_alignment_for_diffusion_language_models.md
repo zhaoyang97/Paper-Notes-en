@@ -18,8 +18,8 @@ content_hash: 3cf3134b463fc2b7
 # A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23286](https://arxiv.org/abs/2509.23286)
-**Code**: Available
+**arXiv**: [2509.23286](https://arxiv.org/abs/2509.23286)  
+**Code**: Available  
 **Area**: LLM Alignment
 **Keywords**: diffusion language model, safety alignment, token-level defense, jailbreak, masked diffusion
 

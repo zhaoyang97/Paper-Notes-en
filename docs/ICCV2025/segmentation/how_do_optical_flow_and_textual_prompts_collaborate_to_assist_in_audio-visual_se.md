@@ -18,8 +18,8 @@ content_hash: f23f7adea12d9970
 # How Do Optical Flow and Textual Prompts Collaborate to Assist in Audio-Visual Semantic Segmentation?
 
 **Conference**: ICCV 2025
-**arXiv**: [2601.08133](https://arxiv.org/abs/2601.08133)
-**Code**: None
+**arXiv**: [2601.08133](https://arxiv.org/abs/2601.08133)  
+**Code**: None  
 **Area**: Audio-Visual Segmentation
 **Keywords**: Audio-Visual Semantic Segmentation, Optical Flow, Textual Prompts, Cross-Modal Alignment, AVSS
 

@@ -18,8 +18,8 @@ content_hash: 92fc8ae17a7868c1
 # LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.07647](https://arxiv.org/abs/2508.07647)
-**Code**: [https://xiaohangzhan.github.io/projects/larender/](https://xiaohangzhan.github.io/projects/larender/)
+**arXiv**: [2508.07647](https://arxiv.org/abs/2508.07647)  
+**Code**: [https://xiaohangzhan.github.io/projects/larender/](https://xiaohangzhan.github.io/projects/larender/)  
 **Area**: Image Generation
 **Keywords**: Occlusion Control, Volume Rendering, Latent Rendering, Training-Free, Diffusion Models, Image Generation
 

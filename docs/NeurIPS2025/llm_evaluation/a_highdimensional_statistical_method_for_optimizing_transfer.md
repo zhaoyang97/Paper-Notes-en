@@ -18,8 +18,8 @@ content_hash: b1e1b3978b61c525
 # A High-Dimensional Statistical Method for Optimizing Transfer Quantities in Multi-Source Transfer Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.04242](https://arxiv.org/abs/2502.04242)
-**Code**: [https://github.com/zqy0126/OTQMS](https://github.com/zqy0126/OTQMS)
+**arXiv**: [2502.04242](https://arxiv.org/abs/2502.04242)  
+**Code**: [https://github.com/zqy0126/OTQMS](https://github.com/zqy0126/OTQMS)  
 **Area**: Transfer Learning / Multi-Source Transfer Learning / High-Dimensional Statistics
 **Keywords**: Multi-source transfer learning, optimal transfer quantity, K-L divergence, Fisher information matrix, data efficiency
 

@@ -19,8 +19,8 @@ content_hash: fdc356f2412674bd
 # REXO: Indoor Multi-View Radar Object Detection via 3D Bounding Box Diffusion
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.17806](https://arxiv.org/abs/2511.17806)
-**Code**: [https://github.com/merlresearch/radar-bbox-diffusion](https://github.com/merlresearch/radar-bbox-diffusion)
+**arXiv**: [2511.17806](https://arxiv.org/abs/2511.17806)  
+**Code**: [https://github.com/merlresearch/radar-bbox-diffusion](https://github.com/merlresearch/radar-bbox-diffusion)  
 **Area**: Object Detection
 **Keywords**: Radar Perception, Multi-View Fusion, Diffusion Model, 3D Object Detection, Indoor Human Detection, Cross-View Feature Association
 

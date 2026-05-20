@@ -18,8 +18,8 @@ content_hash: 1952ba25091fb40d
 # Enhancing Diffusion Model Guidance through Calibration and Regularization
 
 **Conference**: NeurIPS 2025 (SPIGM Workshop)
-**arXiv**: [2511.05844](https://arxiv.org/abs/2511.05844)
-**Code**: [ajavid34/guided-info-diffusion](https://github.com/ajavid34/guided-info-diffusion)
+**arXiv**: [2511.05844](https://arxiv.org/abs/2511.05844)  
+**Code**: [ajavid34/guided-info-diffusion](https://github.com/ajavid34/guided-info-diffusion)  
 **Area**: Image Generation
 **Keywords**: classifier guidance, diffusion model, f-divergence, calibration, conditional generation
 

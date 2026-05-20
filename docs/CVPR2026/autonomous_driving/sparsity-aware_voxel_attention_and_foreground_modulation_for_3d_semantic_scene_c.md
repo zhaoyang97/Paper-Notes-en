@@ -18,8 +18,8 @@ content_hash: 4b3dd26a534b957f
 # Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05780](https://arxiv.org/abs/2604.05780)
-**Code**: [https://github.com/xyandtyh/VoxSAMNet](https://github.com/xyandtyh/VoxSAMNet)
+**arXiv**: [2604.05780](https://arxiv.org/abs/2604.05780)  
+**Code**: [https://github.com/xyandtyh/VoxSAMNet](https://github.com/xyandtyh/VoxSAMNet)  
 **Area**: Autonomous Driving / Semantic Scene Completion
 **Keywords**: Semantic Scene Completion, Voxel Sparsity, Foreground Modulation, Deformable Attention, Long-Tail Distribution
 

@@ -18,8 +18,8 @@ content_hash: 5e22248997106a3d
 # Sample-Efficient Evidence Estimation of Score-Based Priors for Model Selection
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.20549](https://arxiv.org/abs/2602.20549)
-**Code**: —
+**arXiv**: [2602.20549](https://arxiv.org/abs/2602.20549)  
+**Code**: —  
 **Area**: Bayesian Inference / Diffusion Models
 **Keywords**: Model Evidence, Diffusion Priors, Posterior Sampling, Model Selection, Black Hole Imaging
 

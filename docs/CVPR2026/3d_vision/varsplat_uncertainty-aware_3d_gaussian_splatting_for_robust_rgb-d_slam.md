@@ -18,8 +18,8 @@ content_hash: 1bda8aaa170a2941
 # VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM
 
 **Conference**: CVPR2026
-**arXiv**: [2603.09673](https://arxiv.org/abs/2603.09673)
-**Code**: [Project Page](https://anhthuan1999.github.io/varsplat/)
+**arXiv**: [2603.09673](https://arxiv.org/abs/2603.09673)  
+**Code**: [Project Page](https://anhthuan1999.github.io/varsplat/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, SLAM, uncertainty modeling, RGB-D, alpha compositing
 

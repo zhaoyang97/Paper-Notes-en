@@ -18,8 +18,8 @@ content_hash: af1c057dc7aede03
 # Spiking Heterogeneous Graph Attention Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.02401](https://arxiv.org/abs/2601.02401)
-**Code**: [https://github.com/QianPeng369/SpikingHAN](https://github.com/QianPeng369/SpikingHAN)
+**arXiv**: [2601.02401](https://arxiv.org/abs/2601.02401)  
+**Code**: [https://github.com/QianPeng369/SpikingHAN](https://github.com/QianPeng369/SpikingHAN)  
 **Area**: Graph Learning / Spiking Neural Networks
 **Keywords**: Heterogeneous Graphs, Spiking Neural Networks, Meta-path, Graph Attention, Energy-Efficient Computing
 

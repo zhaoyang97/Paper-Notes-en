@@ -18,8 +18,8 @@ content_hash: 7ce49b954a1b365c
 # RelativeFlow: Taming Medical Image Denoising Learning with Noisy Reference
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.15459](https://arxiv.org/abs/2604.15459)
-**Code**: [github.com/Deliver0/RelativeFlow](https://github.com/Deliver0/RelativeFlow)
+**arXiv**: [2604.15459](https://arxiv.org/abs/2604.15459)  
+**Code**: [github.com/Deliver0/RelativeFlow](https://github.com/Deliver0/RelativeFlow)  
 **Area**: Medical Imaging
 **Keywords**: medical image denoising, flow matching, noisy reference, CT denoising, MR denoising
 

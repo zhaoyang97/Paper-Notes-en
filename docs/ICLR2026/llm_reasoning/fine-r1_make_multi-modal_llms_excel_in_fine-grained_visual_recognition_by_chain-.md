@@ -18,8 +18,8 @@ content_hash: de1e510edbb59615
 # Fine-R1: Make Multi-modal LLMs Excel in Fine-Grained Visual Recognition by Chain-of-Thought Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07605](https://arxiv.org/abs/2602.07605)
-**Code**: [https://github.com/PKU-ICST-MIPL/FineR1_ICLR2026](https://github.com/PKU-ICST-MIPL/FineR1_ICLR2026)
+**arXiv**: [2602.07605](https://arxiv.org/abs/2602.07605)  
+**Code**: [https://github.com/PKU-ICST-MIPL/FineR1_ICLR2026](https://github.com/PKU-ICST-MIPL/FineR1_ICLR2026)  
 **Area**: LLM Reasoning
 **Keywords**: Fine-grained recognition, CoT reasoning, triplet-augmented policy optimization, few-shot FGVR, DAPO
 

@@ -18,8 +18,8 @@ content_hash: 385dc56442ddd7a1
 # Domain Generalizable Portrait Style Transfer
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04243](https://arxiv.org/abs/2507.04243)
-**Code**: [https://github.com/wangxb29/DGPST](https://github.com/wangxb29/DGPST)
+**arXiv**: [2507.04243](https://arxiv.org/abs/2507.04243)  
+**Code**: [https://github.com/wangxb29/DGPST](https://github.com/wangxb29/DGPST)  
 **Area**: Image Style Transfer / Diffusion Models
 **Keywords**: Portrait Style Transfer, Semantic Correspondence, Wavelet Transform, Diffusion Model, Cross-Domain Generalization
 
@@ -53,30 +53,30 @@ Given a content image $z_0^c$ and a style reference image $z_0^s$, the model out
 
 1. **Semantic-Aware Style Alignment**
 
-   - **Function**: Establishes dense semantic correspondences between the content and reference portraits to produce a warped reference image $z_0^{s\_w}$.
-   - **Mechanism**:
+    - **Function**: Establishes dense semantic correspondences between the content and reference portraits to produce a warped reference image $z_0^{s\_w}$.
+    - **Mechanism**:
      - Image features are extracted via a CLIP image encoder and passed through a projection network into the SD U-Net via decoupled cross-attention.
      - Both images are fed into the SD U-Net (with semantic adapter features injected), and features $F_0^c, F_0^s \in \mathbb{R}^{HW \times C}$ are extracted from the third upsampling block.
      - A normalized correlation matrix $\mathcal{M}(i,j)$ is computed, and softmax-weighted warping is applied to the reference image: $z_0^{s\_w}(i) = \sum_j \text{softmax}(\mathcal{M}(i,j)/\tau) \cdot z_0^s(j)$.
-   - **Training Loss**: mask warping loss $\mathcal{L}_{mask} = \|M^c - M^{s\_w}\|_1$ (semantic mask alignment) + cyclic warping consistency loss $\mathcal{L}_{cwc} = \mathcal{L}_{LPIPS}(z_0^s, z^{s'\_w})$ (cycle consistency).
-   - **Design Motivation**: Raw SD features may yield incomplete semantic region correspondences; the semantic adapter together with the two loss terms constrains correspondence accuracy.
+    - **Training Loss**: mask warping loss $\mathcal{L}_{mask} = \|M^c - M^{s\_w}\|_1$ (semantic mask alignment) + cyclic warping consistency loss $\mathcal{L}_{cwc} = \mathcal{L}_{LPIPS}(z_0^s, z^{s'\_w})$ (cycle consistency).
+    - **Design Motivation**: Raw SD features may yield incomplete semantic region correspondences; the semantic adapter together with the two loss terms constrains correspondence accuracy.
 
 2. **Dual-Conditional Diffusion Model**
 
-   - **Function**: Simultaneously leverages structural and style guidance to generate high-quality portraits.
-   - **Structural Guidance (ControlNet)**: Haar discrete wavelet transform (DWT) is applied to the content image $z_0^c$, and the three high-frequency subbands (LH, HL, HH) are used as ControlNet input. Using only high-frequency information (edges/textures) rather than the original image provides style-agnostic structural guidance.
-   - **Style Guidance (Style Adapter)**: Following the IP-Adapter architecture, CLIP image features are extracted from the warped reference image, projected, and injected via decoupled cross-attention: $Z^{new} = \text{softmax}(\frac{QK^t}{\sqrt{d}})V^t + \lambda \cdot \text{softmax}(\frac{QK^i}{\sqrt{d}})V^i$.
-   - **Design Motivation**: Using high-frequency components rather than the original image in ControlNet avoids transferring the content's color style to the output; the warped reference image, being semantically aligned, provides more precise style guidance than the raw reference.
+    - **Function**: Simultaneously leverages structural and style guidance to generate high-quality portraits.
+    - **Structural Guidance (ControlNet)**: Haar discrete wavelet transform (DWT) is applied to the content image $z_0^c$, and the three high-frequency subbands (LH, HL, HH) are used as ControlNet input. Using only high-frequency information (edges/textures) rather than the original image provides style-agnostic structural guidance.
+    - **Style Guidance (Style Adapter)**: Following the IP-Adapter architecture, CLIP image features are extracted from the warped reference image, projected, and injected via decoupled cross-attention: $Z^{new} = \text{softmax}(\frac{QK^t}{\sqrt{d}})V^t + \lambda \cdot \text{softmax}(\frac{QK^i}{\sqrt{d}})V^i$.
+    - **Design Motivation**: Using high-frequency components rather than the original image in ControlNet avoids transferring the content's color style to the output; the warped reference image, being semantically aligned, provides more precise style guidance than the raw reference.
 
 3. **AdaIN-Wavelet Transform (Latent Space Initialization)**
 
-   - **Function**: Constructs an initial latent space that retains content structural detail while enhancing style tone transfer.
-   - **Mechanism**:
+    - **Function**: Constructs an initial latent space that retains content structural detail while enhancing style tone transfer.
+    - **Mechanism**:
      - DDIM inversion of the warped reference image yields $z_T^{s\_w}$ (initializing directly from this enhances color transfer but loses content detail, causing blurriness).
      - AdaIN is first applied: $z_T^{cs'} = \sigma(z_T^{s\_w}) \cdot \frac{z_T^c - \mu(z_T^c)}{\sigma(z_T^c)} + \mu(z_T^{s\_w})$ (channel-wise mean/variance alignment to bring the content latent statistics closer to the style).
      - Wavelet fusion is then performed: the low-frequency component of $z_T^{s\_w}$ is combined with the high-frequency component of $z_T^{cs'}$, and IDWT is applied to synthesize the final initial latent $z_T^{cs}$.
-   - A parameter $\gamma$ controls stylization strength via interpolation $z_T^{cs} = \gamma \cdot z_T^{cs} + (1-\gamma) \cdot z_T^c$, enabling continuous style intensity control.
-   - **Design Motivation**: Initializing from the content latent preserves the original color tone (insufficient style transfer), while initializing from the reference latent loses detail (excessive blurring). AdaIN aligns statistics, and Wavelet fusion combines the strengths of high- and low-frequency components.
+    - A parameter $\gamma$ controls stylization strength via interpolation $z_T^{cs} = \gamma \cdot z_T^{cs} + (1-\gamma) \cdot z_T^c$, enabling continuous style intensity control.
+    - **Design Motivation**: Initializing from the content latent preserves the original color tone (insufficient style transfer), while initializing from the reference latent loses detail (excessive blurring). AdaIN aligns statistics, and Wavelet fusion combines the strengths of high- and low-frequency components.
 
 ### Loss & Training
 Two-stage training:

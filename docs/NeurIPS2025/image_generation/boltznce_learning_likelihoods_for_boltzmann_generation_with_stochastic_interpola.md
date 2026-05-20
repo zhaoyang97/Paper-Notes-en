@@ -18,8 +18,8 @@ content_hash: cb0e70b6af1381e6
 # BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.00846](https://arxiv.org/abs/2507.00846)
-**Code**: Available
+**arXiv**: [2507.00846](https://arxiv.org/abs/2507.00846)  
+**Code**: Available  
 **Area**: Generative Models / Molecular Simulation
 **Keywords**: Boltzmann distribution, noise contrastive estimation, stochastic interpolants, molecular conformation, free energy
 

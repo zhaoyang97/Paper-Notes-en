@@ -18,8 +18,8 @@ content_hash: e64597a4d3798c08
 # ZeroDayBench: Evaluating LLM Agents on Unseen Zero-Day Vulnerabilities for Cyberdefense
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02297](https://arxiv.org/abs/2603.02297)
-**Code**: To be confirmed
+**arXiv**: [2603.02297](https://arxiv.org/abs/2603.02297)  
+**Code**: To be confirmed  
 **Area**: Agent / Security
 **Keywords**: zero-day vulnerability, LLM agent evaluation, CVE transplant, cyberdefense, pentest
 

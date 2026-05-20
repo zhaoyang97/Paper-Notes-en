@@ -18,8 +18,8 @@ content_hash: ffa583960c234ffb
 # PCA-Seg: Revisiting Cost Aggregation for Open-Vocabulary Semantic and Part Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17520](https://arxiv.org/abs/2603.17520)
-**Code**: [https://github.com/NUST-Machine-Intelligence-Laboratory/PCA-Seg](https://github.com/NUST-Machine-Intelligence-Laboratory/PCA-Seg)
+**arXiv**: [2603.17520](https://arxiv.org/abs/2603.17520)  
+**Code**: [https://github.com/NUST-Machine-Intelligence-Laboratory/PCA-Seg](https://github.com/NUST-Machine-Intelligence-Laboratory/PCA-Seg)  
 **Area**: Semantic Segmentation / Open-Vocabulary Segmentation
 **Keywords**: Open-vocabulary segmentation, cost aggregation, parallel architecture, expert-driven learning, feature orthogonal decoupling
 

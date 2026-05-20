@@ -18,8 +18,8 @@ content_hash: 9601e6b5ec55e6d2
 # Embedding Compression via Spherical Coordinates
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.00079](https://arxiv.org/abs/2602.00079)
-**Code**: None (algorithm fully specified in the paper)
+**arXiv**: [2602.00079](https://arxiv.org/abs/2602.00079)  
+**Code**: None (algorithm fully specified in the paper)  
 **Area**: Model Compression / Embedding Storage
 **Keywords**: embedding compression, spherical coordinates, IEEE 754, lossless compression, unit vectors
 

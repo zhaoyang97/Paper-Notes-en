@@ -18,8 +18,8 @@ content_hash: 35c318a40cf26f95
 # DICE: Staleness-Centric Optimizations for Parallel Diffusion MoE Inference
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.16786](https://arxiv.org/abs/2411.16786)
-**Code**: [https://github.com/Cobalt-27/DICE](https://github.com/Cobalt-27/DICE)
+**arXiv**: [2411.16786](https://arxiv.org/abs/2411.16786)  
+**Code**: [https://github.com/Cobalt-27/DICE](https://github.com/Cobalt-27/DICE)  
 **Area**: Image Generation / Parallel Inference for Diffusion Models
 **Keywords**: MoE, Diffusion Models, Expert Parallelism, Staleness Optimization, Communication Optimization
 

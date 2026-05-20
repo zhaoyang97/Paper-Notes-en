@@ -18,8 +18,8 @@ content_hash: 0cbadcca9a612678
 # Parameter-Free Fine-tuning via Redundancy Elimination for Vision Foundation Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.08915](https://arxiv.org/abs/2504.08915)
-**Code**: N/A
+**arXiv**: [2504.08915](https://arxiv.org/abs/2504.08915)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: Vision Foundation Models, Parameter-Free Fine-Tuning, Channel Redundancy, SAM, Feature Selection
 

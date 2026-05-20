@@ -18,8 +18,8 @@ content_hash: 614fb67193b75600
 # When Style Breaks Safety: Defending LLMs Against Superficial Style Alignment
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.07452](https://arxiv.org/abs/2506.07452)
-**Code**: [https://github.com/xiaoyuxin1002/SafeStyle](https://github.com/xiaoyuxin1002/SafeStyle)
+**arXiv**: [2506.07452](https://arxiv.org/abs/2506.07452)  
+**Code**: [https://github.com/xiaoyuxin1002/SafeStyle](https://github.com/xiaoyuxin1002/SafeStyle)  
 **Area**: Audio & Speech
 **Keywords**: LLM safety, jailbreak attacks, style alignment, ASR inflation, safety defense
 

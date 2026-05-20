@@ -18,8 +18,8 @@ content_hash: 419e17a9cc6c6486
 # Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12746](https://arxiv.org/abs/2603.12746)
-**Code**: [https://dyn-bench.github.io/](https://dyn-bench.github.io/)
+**arXiv**: [2603.12746](https://arxiv.org/abs/2603.12746)  
+**Code**: [https://dyn-bench.github.io/](https://dyn-bench.github.io/)  
 **Area**: Multimodal VLM / Video Spatio-Temporal Reasoning
 **Keywords**: 4D dynamics, Dyn-Bench benchmark, spatio-temporal reasoning, dynamic grounding, MLLM evaluation
 

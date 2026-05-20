@@ -17,8 +17,8 @@ content_hash: 452d6c6c976ace9a
 # Soft Equivariance Regularization for Invariant Self-Supervised Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.06693](https://arxiv.org/abs/2603.06693)
-**Code**: [https://github.com/aitrics-chris/SER](https://github.com/aitrics-chris/SER)
+**arXiv**: [2603.06693](https://arxiv.org/abs/2603.06693)  
+**Code**: [https://github.com/aitrics-chris/SER](https://github.com/aitrics-chris/SER)  
 **Area**: Self-Supervised Learning
 **Keywords**: self-supervised learning, equivariance, invariance, ViT, regularization
 

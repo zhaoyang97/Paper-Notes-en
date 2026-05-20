@@ -18,8 +18,8 @@ content_hash: e79b40b5b01c9dfe
 # Mod-Adapter: Tuning-Free and Versatile Multi-concept Personalization via Modulation Adapter
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.18612](https://arxiv.org/abs/2505.18612)
-**Code**: [Project Page](https://weizhi-zhong.github.io/Mod-Adapter)
+**arXiv**: [2505.18612](https://arxiv.org/abs/2505.18612)  
+**Code**: [Project Page](https://weizhi-zhong.github.io/Mod-Adapter)  
 **Area**: Diffusion Models / Personalized Generation
 **Keywords**: Multi-concept Personalization, Tuning-Free, DiT Modulation Space, Mixture-of-Experts, VLM Pre-training
 

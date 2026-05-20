@@ -18,8 +18,8 @@ content_hash: 53117340c645ffa2
 # MOMO: Mars Orbital Model — Foundation Model for Mars Orbital Applications
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02719](https://arxiv.org/abs/2604.02719)
-**Code**: [https://github.com/kerner-lab/MOMO](https://github.com/kerner-lab/MOMO)
+**arXiv**: [2604.02719](https://arxiv.org/abs/2604.02719)  
+**Code**: [https://github.com/kerner-lab/MOMO](https://github.com/kerner-lab/MOMO)  
 **Area**: Self-Supervised Learning
 **Keywords**: Mars remote sensing, foundation model, model merging, checkpoint selection strategy, multi-sensor
 

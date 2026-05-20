@@ -18,8 +18,8 @@ content_hash: 0ac705272e554406
 # Low-Rank Curvature for Zeroth-Order Optimization in LLM Fine-Tuning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07971](https://arxiv.org/abs/2511.07971)
-**Code**: [GitHub](https://github.com/hseung88/loren)
+**arXiv**: [2511.07971](https://arxiv.org/abs/2511.07971)  
+**Code**: [GitHub](https://github.com/hseung88/loren)  
 **Area**: LLM Evaluation
 **Keywords**: zeroth-order optimization, curvature-aware, low-rank preconditioner, variance reduction, memory-efficient
 

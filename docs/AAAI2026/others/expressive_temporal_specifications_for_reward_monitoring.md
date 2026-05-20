@@ -17,8 +17,8 @@ content_hash: 5f0c268547541ad5
 # Expressive Temporal Specifications for Reward Monitoring
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12808](https://arxiv.org/abs/2511.12808)
-**Code**: [github](https://github.com/nightly/quantitative-reward-monitoring)
+**arXiv**: [2511.12808](https://arxiv.org/abs/2511.12808)  
+**Code**: [github](https://github.com/nightly/quantitative-reward-monitoring)  
 **Area**: Other
 **Keywords**: Temporal Logic, Reward Monitor, Quantitative Semantics, Sparse Reward, Reinforcement Learning
 

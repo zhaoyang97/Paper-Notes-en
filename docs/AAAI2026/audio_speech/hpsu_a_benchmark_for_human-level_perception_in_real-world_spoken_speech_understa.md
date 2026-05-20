@@ -18,8 +18,8 @@ content_hash: 5e1ce1bf4c3426e1
 # HPSU: A Benchmark for Human-Level Perception in Real-World Spoken Speech Understanding
 
 **Conference**: AAAI2026
-**arXiv**: [2511.23178](https://arxiv.org/abs/2511.23178)
-**Code**: [Ichen12/HPSU-Benchmark](https://github.com/Ichen12/HPSU-Benchmark)
+**arXiv**: [2511.23178](https://arxiv.org/abs/2511.23178)  
+**Code**: [Ichen12/HPSU-Benchmark](https://github.com/Ichen12/HPSU-Benchmark)  
 **Area**: Audio & Speech
 **Keywords**: Speech LLM, benchmark, spoken language understanding, emotion reasoning, adversarial evaluation
 

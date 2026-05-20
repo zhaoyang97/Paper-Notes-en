@@ -18,8 +18,8 @@ content_hash: e50d0ccb3fca43ae
 # Outdoor Monocular SLAM with Global Scale-Consistent 3D Gaussian Pointmaps
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.03737](https://arxiv.org/abs/2507.03737)
-**Code**: [Project Page](https://3dagentworld.github.io/S3PO-GS/)
+**arXiv**: [2507.03737](https://arxiv.org/abs/2507.03737)  
+**Code**: [Project Page](https://3dagentworld.github.io/S3PO-GS/)  
 **Area**: 3D Vision
 **Keywords**: 3DGS SLAM, Monocular Vision, Scale Consistency, Pointmap, Outdoor Scenes
 

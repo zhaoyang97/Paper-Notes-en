@@ -18,8 +18,8 @@ content_hash: 5176fcbffa3bb42b
 # CHiQPM: Calibrated Hierarchical Interpretable Image Classification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.20779](https://arxiv.org/abs/2511.20779)
-**Code**: None
+**arXiv**: [2511.20779](https://arxiv.org/abs/2511.20779)  
+**Code**: None  
 **Area**: Explainable AI / Image Classification
 **Keywords**: Interpretable Machine Learning, Hierarchical Explanation, Conformal Prediction, Image Classification, Human-AI Complementarity
 

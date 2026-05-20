@@ -18,8 +18,8 @@ content_hash: aa0b163a07498da3
 # G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.14710](https://arxiv.org/abs/2604.14710)
-**Code**: [github.com/maya0395/gmixer](https://github.com/maya0395/gmixer)
+**arXiv**: [2604.14710](https://arxiv.org/abs/2604.14710)  
+**Code**: [github.com/maya0395/gmixer](https://github.com/maya0395/gmixer)  
 **Area**: Multimodal / Vision-Language Models
 **Keywords**: composed image retrieval, zero-shot, geodesic mixup, semantic expansion, re-ranking
 

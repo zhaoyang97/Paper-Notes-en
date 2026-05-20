@@ -18,8 +18,8 @@ content_hash: e8034efbb876d71d
 # Sequential Multi-Agent Dynamic Algorithm Configuration
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23535](https://arxiv.org/abs/2510.23535)
-**Code**: [https://github.com/lamda-bbo/seq-madac](https://github.com/lamda-bbo/seq-madac)
+**arXiv**: [2510.23535](https://arxiv.org/abs/2510.23535)  
+**Code**: [https://github.com/lamda-bbo/seq-madac](https://github.com/lamda-bbo/seq-madac)  
 **Area**: Reinforcement Learning
 **Keywords**: Dynamic Algorithm Configuration, Multi-Agent Reinforcement Learning, Sequential Dependency, Advantage Decomposition, Hyperparameter Optimization
 

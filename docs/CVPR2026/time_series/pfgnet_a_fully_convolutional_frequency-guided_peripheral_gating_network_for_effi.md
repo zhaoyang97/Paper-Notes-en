@@ -18,8 +18,8 @@ content_hash: 22a356785711b444
 # PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20537](https://arxiv.org/abs/2602.20537)
-**Code**: [fhjdqaq/PFGNet](https://github.com/fhjdqaq/PFGNet)
+**arXiv**: [2602.20537](https://arxiv.org/abs/2602.20537)  
+**Code**: [fhjdqaq/PFGNet](https://github.com/fhjdqaq/PFGNet)  
 **Area**: Time Series
 **Keywords**: spatiotemporal predictive learning, large-kernel convolution, frequency-guided gating, center-surround inhibition, fully convolutional architecture
 

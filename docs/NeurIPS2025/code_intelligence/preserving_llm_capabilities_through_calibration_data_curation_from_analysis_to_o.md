@@ -19,9 +19,9 @@ content_hash: 9ed626c90a272cf0
 # Preserving LLM Capabilities through Calibration Data Curation: From Analysis to Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10618](https://arxiv.org/abs/2510.10618)
+**arXiv**: [2510.10618](https://arxiv.org/abs/2510.10618)  
 **Authors**: Bowei He, Lihao Yin, Huiling Zhen, Shuqi Liu, Han Wu, Xiaokun Zhang, Mingxuan Yuan, Chen Ma (City University of Hong Kong, Huawei)
-**Code**: Publicly available
+**Code**: Publicly available  
 **Area**: Code Intelligence
 **Keywords**: LLM compression, calibration data, post-training quantization, post-training pruning, capability preservation, activation space
 

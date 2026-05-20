@@ -18,8 +18,8 @@ content_hash: 9a023939ce9c7d23
 # CAVIS: Context-Aware Video Instance Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2407.03010](https://arxiv.org/abs/2407.03010)
-**Code**: [https://github.com/seunghunlee918/cavis](https://github.com/seunghunlee918/cavis)
+**arXiv**: [2407.03010](https://arxiv.org/abs/2407.03010)  
+**Code**: [https://github.com/seunghunlee918/cavis](https://github.com/seunghunlee918/cavis)  
 **Area**: Segmentation
 **Keywords**: Video Instance Segmentation, Context-Aware, Contrastive Learning, Instance Tracking, Mask2Former
 

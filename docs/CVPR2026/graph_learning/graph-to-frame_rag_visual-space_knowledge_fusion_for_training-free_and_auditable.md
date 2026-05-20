@@ -18,8 +18,8 @@ content_hash: 4c880bc0f4e060eb
 # Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04372](https://arxiv.org/abs/2604.04372)
-**Code**: None
+**arXiv**: [2604.04372](https://arxiv.org/abs/2604.04372)  
+**Code**: None  
 **Area**: Multimodal VLM / Graph Learning
 **Keywords**: Video retrieval-augmented generation, knowledge graph, visual-space fusion, multi-agent framework, training-free video reasoning
 

@@ -20,8 +20,8 @@ content_hash: 0040e5ff6480c4ab
 # MUG: Meta-path-aware Universal Heterogeneous Graph Pre-Training
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.22645](https://arxiv.org/abs/2602.22645)
-**Code**: [github.com/slz1024/MUG](https://github.com/slz1024/MUG)
+**arXiv**: [2602.22645](https://arxiv.org/abs/2602.22645)  
+**Code**: [github.com/slz1024/MUG](https://github.com/slz1024/MUG)  
 **Area**: Graph Learning / Heterogeneous Graph Pre-Training
 **Keywords**: Heterogeneous graph, universal graph pre-training, meta-path, graph foundation model, cross-domain transfer, self-supervised learning, masked autoencoding
 

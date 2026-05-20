@@ -18,8 +18,8 @@ content_hash: 60fd73a1c9ddb049
 # Harnessing Feature Resonance under Arbitrary Target Alignment for Out-of-Distribution Node Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.16076](https://arxiv.org/abs/2502.16076)
-**Code**: [ShenzhiYang2000/RSL](https://github.com/ShenzhiYang2000/RSL)
+**arXiv**: [2502.16076](https://arxiv.org/abs/2502.16076)  
+**Code**: [ShenzhiYang2000/RSL](https://github.com/ShenzhiYang2000/RSL)  
 **Area**: Other
 **Keywords**: OOD detection, graph neural networks, feature resonance, unsupervised, node-level, label-agnostic
 

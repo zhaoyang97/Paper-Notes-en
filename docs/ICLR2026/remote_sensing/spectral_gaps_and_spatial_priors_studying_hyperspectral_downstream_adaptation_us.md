@@ -18,8 +18,8 @@ content_hash: 11debe1707c97b7b
 # Spectral Gaps and Spatial Priors: Studying Hyperspectral Downstream Adaptation Using TerraMind
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.06690](https://arxiv.org/abs/2603.06690)
-**Code**: None
+**arXiv**: [2603.06690](https://arxiv.org/abs/2603.06690)  
+**Code**: None  
 **Area**: Remote Sensing
 **Keywords**: Hyperspectral Imaging, Geospatial Foundation Models, Channel Adaptation, TerraMind, Spectral Response Function
 

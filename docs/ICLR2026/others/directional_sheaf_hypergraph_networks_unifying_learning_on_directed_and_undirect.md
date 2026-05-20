@@ -17,8 +17,8 @@ content_hash: 12e2638186d84435
 # Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04727](https://arxiv.org/abs/2510.04727)
-**Code**: [GitHub](https://github.com/EmaMule/DirectionalSheafHypergraphs)
+**arXiv**: [2510.04727](https://arxiv.org/abs/2510.04727)  
+**Code**: [GitHub](https://github.com/EmaMule/DirectionalSheafHypergraphs)  
 **Area**: Others
 **Keywords**: sheaf neural networks, directed hypergraphs, Laplacian, spectral methods, heterophily
 
@@ -48,31 +48,31 @@ DSHN proceeds in three steps: (1) define a Directed Hypergraph Cellular Sheaf wi
 
 1. **Directionality matrix $\mathcal{S}^{(q)}$ (Definition 1)**
 
-   - **Function**: Assigns complex-valued coefficients to node–hyperedge pairs to encode directional roles.
-   - **Mechanism**: Head nodes receive coefficient 1; tail nodes receive coefficient $e^{-2\pi i q}$; the parameter $q$ controls the strength of directional information.
-   - **Design Motivation**: Setting $q=0$ reduces to the undirected case; at $q=1/4$, directional encoding resides in the imaginary part, aligning with the Magnetic Laplacian.
+    - **Function**: Assigns complex-valued coefficients to node–hyperedge pairs to encode directional roles.
+    - **Mechanism**: Head nodes receive coefficient 1; tail nodes receive coefficient $e^{-2\pi i q}$; the parameter $q$ controls the strength of directional information.
+    - **Design Motivation**: Setting $q=0$ reduces to the undirected case; at $q=1/4$, directional encoding resides in the imaginary part, aligning with the Magnetic Laplacian.
 
 2. **Directed Sheaf Hypergraph Laplacian**
 
-   - **Function**: $\mathbf{L}^{\vec{\mathcal{F}}} = \mathbf{D}_V - \mathbf{B}^{(q)\dagger} \mathbf{D}_E^{-1} \mathbf{B}^{(q)}$
-   - **Mechanism**: Diagonal blocks are real-valued (self-information); off-diagonal blocks are complex-valued for directed cases. Diagonal term coefficients are corrected relative to Duta et al.
-   - **Design Motivation**: Ensures positive semi-definiteness and all other spectral properties required for graph convolution.
+    - **Function**: $\mathbf{L}^{\vec{\mathcal{F}}} = \mathbf{D}_V - \mathbf{B}^{(q)\dagger} \mathbf{D}_E^{-1} \mathbf{B}^{(q)}$
+    - **Mechanism**: Diagonal blocks are real-valued (self-information); off-diagonal blocks are complex-valued for directed cases. Diagonal term coefficients are corrected relative to Duta et al.
+    - **Design Motivation**: Ensures positive semi-definiteness and all other spectral properties required for graph convolution.
 
 3. **Spectral guarantees**
 
-   - **Function**: Proves diagonalizability, real non-negative eigenvalues, positive semi-definiteness, and a spectral upper bound of 1.
-   - **Mechanism**: Positive semi-definiteness follows from the non-negativity of the Dirichlet energy.
-   - **Design Motivation**: Ensures a well-defined Fourier transform and stable polynomial filters.
+    - **Function**: Proves diagonalizability, real non-negative eigenvalues, positive semi-definiteness, and a spectral upper bound of 1.
+    - **Mechanism**: Positive semi-definiteness follows from the non-negativity of the Dirichlet energy.
+    - **Design Motivation**: Ensures a well-defined Fourier transform and stable polynomial filters.
 
 4. **Unified generalization**
 
-   - **Function**: Demonstrates that the proposed operator reduces to the Graph Sheaf Laplacian, Magnetic Laplacian, Zhou Hypergraph Laplacian, and GeDi Laplacian under special cases.
-   - **Design Motivation**: A single framework subsumes all existing operators.
+    - **Function**: Demonstrates that the proposed operator reduces to the Graph Sheaf Laplacian, Magnetic Laplacian, Zhou Hypergraph Laplacian, and GeDi Laplacian under special cases.
+    - **Design Motivation**: A single framework subsumes all existing operators.
 
 5. **DSHNLight**
 
-   - **Function**: Detaches gradients from Laplacian construction and fixes restriction map parameters.
-   - **Design Motivation**: Significantly reduces computational cost while achieving comparable or superior performance on multiple datasets.
+    - **Function**: Detaches gradients from Laplacian construction and fixes restriction map parameters.
+    - **Design Motivation**: Significantly reduces computational cost while achieving comparable or superior performance on multiple datasets.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 29108a9715fa3483
 # DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04239](https://arxiv.org/abs/2603.04239)
-**Code**: [Available](https://github.com/kobeshegu/DiverseDiT)
+**arXiv**: [2603.04239](https://arxiv.org/abs/2603.04239)  
+**Code**: [Available](https://github.com/kobeshegu/DiverseDiT)  
 **Area**: Self-Supervised / Representation Learning
 **Keywords**: Diffusion Transformer, representation diversity, long residual connections, diversity loss, image generation
 

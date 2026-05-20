@@ -18,8 +18,8 @@ content_hash: 7ec85f95debab5d3
 # RelaCtrl: Relevance-Guided Efficient Control for Diffusion Transformers
 
 **Conference**: AAAI 2026
-**arXiv**: [2502.14377](https://arxiv.org/abs/2502.14377)
-**Code**: None
+**arXiv**: [2502.14377](https://arxiv.org/abs/2502.14377)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Controllable Generation, Diffusion Transformer, ControlNet, Parameter Efficiency, Channel-Token Shuffling
 

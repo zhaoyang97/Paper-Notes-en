@@ -17,8 +17,8 @@ content_hash: 268a1f9663c9c44e
 # Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.20120](https://arxiv.org/abs/2502.20120)
-**Code**: [https://github.com/njustkmg/NeurIPS25-AUG](https://github.com/njustkmg/NeurIPS25-AUG)
+**arXiv**: [2502.20120](https://arxiv.org/abs/2502.20120)  
+**Code**: [https://github.com/njustkmg/NeurIPS25-AUG](https://github.com/njustkmg/NeurIPS25-AUG)  
 **Authors**: Qing-Yuan Jiang, Longfei Huang, Yang Yang (Nanjing University of Science and Technology / Nanjing University)
 **Area**: Multimodal Learning · Modality Imbalance
 **Keywords**: modality imbalance, classification ability disproportion, sustained boosting, adaptive classifier assignment

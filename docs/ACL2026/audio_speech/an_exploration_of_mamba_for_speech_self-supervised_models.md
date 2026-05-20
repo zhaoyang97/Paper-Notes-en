@@ -18,8 +18,8 @@ content_hash: 6ae30010af3df406
 # An Exploration of Mamba for Speech Self-Supervised Models
 
 **Conference**: ACL 2026
-**arXiv**: [2506.12606](https://arxiv.org/abs/2506.12606)
-**Code**: [GitHub](https://github.com/hckuo145/Mamba-based-HuBERT)
+**arXiv**: [2506.12606](https://arxiv.org/abs/2506.12606)  
+**Code**: [GitHub](https://github.com/hckuo145/Mamba-based-HuBERT)  
 **Area**: Speech / Self-Supervised Learning
 **Keywords**: Mamba, speech self-supervised learning, HuBERT, state space model, streaming ASR
 

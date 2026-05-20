@@ -18,8 +18,8 @@ content_hash: 76dbb2017da820d1
 # When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.06787](https://arxiv.org/abs/2604.06787)
-**Code**: To be confirmed
+**arXiv**: [2604.06787](https://arxiv.org/abs/2604.06787)  
+**Code**: To be confirmed  
 **Area**: LLM Reasoning
 **Keywords**: Reasoning efficiency, early exit, overthinking, metacognition, chain-of-thought
 

@@ -18,8 +18,8 @@ content_hash: 5f4b1470f0419f29
 # 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.11147](https://arxiv.org/abs/2506.11147)
-**Code**: [https://github.com/Tang-xiaoxiao/3D-RAD](https://github.com/Tang-xiaoxiao/3D-RAD)
+**arXiv**: [2506.11147](https://arxiv.org/abs/2506.11147)  
+**Code**: [https://github.com/Tang-xiaoxiao/3D-RAD](https://github.com/Tang-xiaoxiao/3D-RAD)  
 **Area**: Medical VQA / 3D Medical Image Understanding / Multimodal
 **Keywords**: 3D Med-VQA, CT imaging, multi-temporal reasoning, longitudinal diagnosis, benchmark
 

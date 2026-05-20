@@ -17,8 +17,8 @@ content_hash: 4de4445d207c2769
 # RLP: Reinforcement as a Pretraining Objective
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.01265](https://arxiv.org/abs/2510.01265)
-**Code**: None
+**arXiv**: [2510.01265](https://arxiv.org/abs/2510.01265)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Pretraining, Information Gain, Chain-of-Thought, Reinforcement Learning, Next-Token Prediction
 
@@ -44,21 +44,21 @@ RLP inserts a CoT sampling step at each position $t$ of NTP. The model first gen
 
 1. **Information Gain Reward**:
 
-   - Function: Measures how much the CoT improves next-token prediction.
-   - Mechanism: $r(c_t) = S_{\text{pred}}(c_t) - S_{\text{ema}}$, where $S_{\text{pred}}(c_t) = \log p_\theta(x_t|x_{<t},c_t)$ is the log probability with thinking, and $S_{\text{ema}} = \log \bar{p}_\phi(x_t|x_{<t})$ is the EMA teacher (no-thinking) baseline.
-   - Design Motivation: The reward is positive when thinking genuinely improves prediction (Proposition 1: expected reward equals cross-entropy reduction), and provides a scalar signal at every position — eliminating the need for a value function or external verifier.
+    - Function: Measures how much the CoT improves next-token prediction.
+    - Mechanism: $r(c_t) = S_{\text{pred}}(c_t) - S_{\text{ema}}$, where $S_{\text{pred}}(c_t) = \log p_\theta(x_t|x_{<t},c_t)$ is the log probability with thinking, and $S_{\text{ema}} = \log \bar{p}_\phi(x_t|x_{<t})$ is the EMA teacher (no-thinking) baseline.
+    - Design Motivation: The reward is positive when thinking genuinely improves prediction (Proposition 1: expected reward equals cross-entropy reduction), and provides a scalar signal at every position — eliminating the need for a value function or external verifier.
 
 2. **EMA Teacher Baseline**:
 
-   - Function: Provides a counterfactual "no-thinking" reference.
-   - Mechanism: Teacher parameters $\phi \leftarrow \tau\phi + (1-\tau)\theta$, with $\tau=0.999$, initialized from the current model.
-   - Design Motivation: A frozen baseline diverges too far and causes reward hacking; full synchronization collapses the log-likelihood ratio to zero. The EMA provides a one-step-delayed smoothed reference, balancing informativeness and training stability.
+    - Function: Provides a counterfactual "no-thinking" reference.
+    - Mechanism: Teacher parameters $\phi \leftarrow \tau\phi + (1-\tau)\theta$, with $\tau=0.999$, initialized from the current model.
+    - Design Motivation: A frozen baseline diverges too far and causes reward hacking; full synchronization collapses the log-likelihood ratio to zero. The EMA provides a one-step-delayed smoothed reference, balancing informativeness and training stability.
 
 3. **Group-Relative Baseline and Clipped Surrogate**:
 
-   - Function: Reduces variance and stabilizes training.
-   - Mechanism: $G$ thoughts are sampled per position; a corrected inclusive-mean baseline $A^{(i)} = \frac{G}{G-1}(r(c_t^{(i)}) - \bar{r})$ is used. A PPO-style clipped surrogate loss $\mathcal{L}_{\text{clip}}$ is applied to thought tokens.
-   - Design Motivation: The group-relative baseline eliminates the $(1-1/G)$ shrinkage bias of the inclusive mean; clipping prevents excessively large policy updates.
+    - Function: Reduces variance and stabilizes training.
+    - Mechanism: $G$ thoughts are sampled per position; a corrected inclusive-mean baseline $A^{(i)} = \frac{G}{G-1}(r(c_t^{(i)}) - \bar{r})$ is used. A PPO-style clipped surrogate loss $\mathcal{L}_{\text{clip}}$ is applied to thought tokens.
+    - Design Motivation: The group-relative baseline eliminates the $(1-1/G)$ shrinkage bias of the inclusive mean; clipping prevents excessively large policy updates.
 
 ### Loss & Training
 

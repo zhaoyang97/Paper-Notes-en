@@ -19,8 +19,8 @@ content_hash: b2d21a43da480b5d
 # Sim-to-Real: An Unsupervised Noise Layer for Screen-Camera Watermarking Robustness
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.18906](https://arxiv.org/abs/2504.18906)
-**Code**: [GitHub](https://github.com/ttz0523/S2R-main)
+**arXiv**: [2504.18906](https://arxiv.org/abs/2504.18906)  
+**Code**: [GitHub](https://github.com/ttz0523/S2R-main)  
 **Area**: AI Security / Digital Watermarking
 **Keywords**: Screen-camera watermarking, noise approximation, unsupervised learning, domain transfer, GAN, robust watermarking
 

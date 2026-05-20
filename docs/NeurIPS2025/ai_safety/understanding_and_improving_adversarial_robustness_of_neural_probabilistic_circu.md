@@ -18,8 +18,8 @@ content_hash: 3f1902128127041f
 # Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20549](https://arxiv.org/abs/2509.20549)
-**Code**: [https://github.com/uiuctml/RNPC](https://github.com/uiuctml/RNPC)
+**arXiv**: [2509.20549](https://arxiv.org/abs/2509.20549)  
+**Code**: [https://github.com/uiuctml/RNPC](https://github.com/uiuctml/RNPC)  
 **Area**: AI Safety / Adversarial Robustness
 **Keywords**: Concept Bottleneck Models, Probabilistic Circuits, Adversarial Robustness, Class-wise Reasoning, Interpretability
 

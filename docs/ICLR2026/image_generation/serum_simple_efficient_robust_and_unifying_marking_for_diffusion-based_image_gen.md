@@ -18,8 +18,8 @@ content_hash: e1e17b4d49f3158e
 # SERUM: Simple, Efficient, Robust, and Unifying Marking for Diffusion-based Image Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.13396](https://arxiv.org/abs/2603.13396)
-**Code**: [GitHub](https://github.com/Hubizon/SERUM)
+**arXiv**: [2603.13396](https://arxiv.org/abs/2603.13396)  
+**Code**: [GitHub](https://github.com/Hubizon/SERUM)  
 **Area**: Image Generation
 **Keywords**: Diffusion model watermarking, lightweight detector, noise injection, robustness, multi-user
 

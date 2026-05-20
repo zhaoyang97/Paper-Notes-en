@@ -18,8 +18,8 @@ content_hash: b045d83b241e415c
 # TumorChain: Interleaved Multimodal Chain-of-Thought Reasoning for Traceable Clinical Tumor Analysis
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.05867](https://arxiv.org/abs/2603.05867)
-**Code**: [GitHub](https://github.com/ZJU4HealthCare/TumorChain)
+**arXiv**: [2603.05867](https://arxiv.org/abs/2603.05867)  
+**Code**: [GitHub](https://github.com/ZJU4HealthCare/TumorChain)  
 **Area**: LLM Reasoning
 **Keywords**: Tumor Analysis, Multimodal CoT Reasoning, Interleaved Reasoning, 3D CT, TNM Staging
 

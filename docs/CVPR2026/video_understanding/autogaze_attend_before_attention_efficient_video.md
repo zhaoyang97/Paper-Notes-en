@@ -18,8 +18,8 @@ content_hash: f8152f292a2e8606
 # AutoGaze: Attend Before Attention — Efficient and Scalable Video Understanding via Autoregressive Gazing
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12254](https://arxiv.org/abs/2603.12254)
-**Code**: [autogaze.github.io](https://autogaze.github.io/)
+**arXiv**: [2603.12254](https://arxiv.org/abs/2603.12254)  
+**Code**: [autogaze.github.io](https://autogaze.github.io/)  
 **Area**: Video Understanding / Efficient Inference
 **Keywords**: Autoregressive gazing, token compression, multi-scale patch selection, video MLLM, high-resolution long video
 

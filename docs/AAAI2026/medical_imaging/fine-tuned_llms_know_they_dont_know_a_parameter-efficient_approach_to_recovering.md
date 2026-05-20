@@ -18,8 +18,8 @@ content_hash: d36f2227d1e05c4b
 # Fine-Tuned LLMs Know They Don't Know: A Parameter-Efficient Approach to Recovering Honesty
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12991](https://arxiv.org/abs/2511.12991)
-**Code**: None
+**arXiv**: [2511.12991](https://arxiv.org/abs/2511.12991)  
+**Code**: None  
 **Area**: Medical Imaging / LLM Alignment
 **Keywords**: LLM honesty, supervised fine-tuning, knowledge boundary, neuron restoration, parameter-efficient
 

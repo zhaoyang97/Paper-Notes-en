@@ -18,8 +18,8 @@ content_hash: bfbb07ec756f67ec
 # OCR Hinders RAG: Evaluating the Cascading Impact of OCR on Retrieval-Augmented Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.02592](https://arxiv.org/abs/2412.02592)
-**Code**: [GitHub](https://github.com/opendatalab/OHR-Bench)
+**arXiv**: [2412.02592](https://arxiv.org/abs/2412.02592)  
+**Code**: [GitHub](https://github.com/opendatalab/OHR-Bench)  
 **Area**: Information Retrieval
 **Keywords**: OCR noise, RAG systems, document parsing, knowledge base quality, benchmark
 

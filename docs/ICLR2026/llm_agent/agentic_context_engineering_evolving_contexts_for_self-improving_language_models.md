@@ -18,8 +18,8 @@ content_hash: 47c2afc19cb7fc43
 # Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04618](https://arxiv.org/abs/2510.04618)
-**Code**: [https://github.com/ace-agent/ace](https://github.com/ace-agent/ace)
+**arXiv**: [2510.04618](https://arxiv.org/abs/2510.04618)  
+**Code**: [https://github.com/ace-agent/ace](https://github.com/ace-agent/ace)  
 **Area**: Agent
 **Keywords**: context engineering, self-improving agent, prompt optimization, evolving memory, playbook
 

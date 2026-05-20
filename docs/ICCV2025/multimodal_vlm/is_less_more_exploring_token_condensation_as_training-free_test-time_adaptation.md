@@ -18,8 +18,8 @@ content_hash: 03e907eea0ff0df0
 # Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.14729](https://arxiv.org/abs/2410.14729)
-**Code**: None
+**arXiv**: [2410.14729](https://arxiv.org/abs/2410.14729)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Test-time adaptation, Token pruning and merging, CLIP, Training-free, Vision-language models
 

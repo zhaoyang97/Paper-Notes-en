@@ -18,8 +18,8 @@ content_hash: 7be466f126b955d9
 # DCA: Graph-Guided Deep Embedding Clustering for Brain Atlases
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.01426](https://arxiv.org/abs/2509.01426)
-**Code**: [https://github.com/ncclab-sustech/DCA](https://github.com/ncclab-sustech/DCA)
+**arXiv**: [2509.01426](https://arxiv.org/abs/2509.01426)  
+**Code**: [https://github.com/ncclab-sustech/DCA](https://github.com/ncclab-sustech/DCA)  
 **Area**: Brain Imaging / Brain Atlas Construction
 **Keywords**: Brain atlas, deep clustering, Swin-UNETR, graph regularization, individualized parcellation
 

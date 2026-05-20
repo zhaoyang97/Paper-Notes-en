@@ -19,8 +19,8 @@ content_hash: 648770ac782f2df1
 # UVLM: Benchmarking Video Language Model for Underwater World Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.02373](https://arxiv.org/abs/2507.02373)
-**Code**: [GitHub](https://github.com/Cecilia-xue/UVLM-Benchmark)
+**arXiv**: [2507.02373](https://arxiv.org/abs/2507.02373)  
+**Code**: [GitHub](https://github.com/Cecilia-xue/UVLM-Benchmark)  
 **Area**: Video-Language Understanding / Underwater Vision
 **Keywords**: underwater video, VidLM, benchmark, marine biology, fine-grained recognition, human-AI annotation
 
@@ -51,20 +51,20 @@ Video collection (web crawling + WebUOT re-annotation) → Manual frame-level an
 ### Key Designs
 
 1. **Underwater-specific Video Collection and Quality Control**
-   - Dual-path collection strategy: (a) approximately 400 videos crawled from YouTube/Bilibili, covering marine, lake, river, and aquarium environments with typical degradations such as surface ripples, turbid water, and light scattering; (b) re-annotation of videos from WebUOT, including data cleaning (removal of subtitle watermarks), scene filtering (exclusion of non-natural underwater environments), and SAM+LaMa-based removal of small-area watermarks.
-   - **Design Motivation**: To ensure the data captures the unique challenges of the underwater environment, rather than merely collecting clear aquarium footage.
+    - Dual-path collection strategy: (a) approximately 400 videos crawled from YouTube/Bilibili, covering marine, lake, river, and aquarium environments with typical degradations such as surface ripples, turbid water, and light scattering; (b) re-annotation of videos from WebUOT, including data cleaning (removal of subtitle watermarks), scene filtering (exclusion of non-natural underwater environments), and SAM+LaMa-based removal of small-area watermarks.
+    - **Design Motivation**: To ensure the data captures the unique challenges of the underwater environment, rather than merely collecting clear aquarium footage.
 
 2. **Three-stage Fine-grained Taxonomic Annotation**
-   - Stage 1: Four annotators with marine biology expertise independently perform species-level identification and detailed taxonomic classification (kingdom, phylum, class, order, etc., following the Whittaker five-kingdom system).
-   - Stage 2: Annotators are paired for cross-validation, with disagreements resolved by majority consensus of a third annotator.
-   - Stage 3: Senior marine biology experts review and verify the annotations; disputed cases are resolved through collective discussion among five experts.
-   - **Design Motivation**: Fine-grained taxonomic information is incorporated as prior knowledge into the GPT-4o text generation process to ensure ecological accuracy.
+    - Stage 1: Four annotators with marine biology expertise independently perform species-level identification and detailed taxonomic classification (kingdom, phylum, class, order, etc., following the Whittaker five-kingdom system).
+    - Stage 2: Annotators are paired for cross-validation, with disagreements resolved by majority consensus of a third annotator.
+    - Stage 3: Senior marine biology experts review and verify the annotations; disputed cases are resolved through collective discussion among five experts.
+    - **Design Motivation**: Fine-grained taxonomic information is incorporated as prior knowledge into the GPT-4o text generation process to ensure ecological accuracy.
 
 3. **Structured Human-AI Collaborative Annotation Pipeline**
-   - Prompts are designed based on key marine biology research themes: biological dimension (static: species identification, morphological attributes; dynamic: behavioral analysis, locomotion patterns) + environmental dimension (static: substrate type, coral structure; dynamic: illumination variation, visibility fluctuation).
-   - Each video generates 16–20 video-text pairs, including both multiple-choice and open-ended questions.
-   - Two rounds of human correction: the first round by general reviewers to detect information conflicts; the second round by senior experts for in-depth editing to ensure factual precision.
-   - **Design Motivation**: To maintain data volume while ensuring the reliability of ecological knowledge through multi-round human review.
+    - Prompts are designed based on key marine biology research themes: biological dimension (static: species identification, morphological attributes; dynamic: behavioral analysis, locomotion patterns) + environmental dimension (static: substrate type, coral structure; dynamic: illumination variation, visibility fluctuation).
+    - Each video generates 16–20 video-text pairs, including both multiple-choice and open-ended questions.
+    - Two rounds of human correction: the first round by general reviewers to detect information conflicts; the second round by senior experts for in-depth editing to ensure factual precision.
+    - **Design Motivation**: To maintain data volume while ensuring the reliability of ecological knowledge through multi-round human review.
 
 ### Evaluation Metric System
 

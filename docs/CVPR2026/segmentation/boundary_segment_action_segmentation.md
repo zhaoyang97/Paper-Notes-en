@@ -18,8 +18,8 @@ content_hash: 07c174ee3896d7fb
 # Combining Boundary Supervision and Segment-Level Regularization for Fine-Grained Action Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01859](https://arxiv.org/abs/2604.01859)
-**Code**: None
+**arXiv**: [2604.01859](https://arxiv.org/abs/2604.01859)  
+**Code**: None  
 **Area**: Image Segmentation
 **Keywords**: Temporal Action Segmentation, Boundary Supervision, Segment-Level Regularization, CDF Loss, Plug-and-Play
 
@@ -51,21 +51,21 @@ Building upon an existing TAS backbone (e.g., MS-TCN), the proposed method adds 
 
 1. **Boundary Regression Loss $\mathcal{L}_B$**:
 
-   - **Function**: Promotes precise temporal localization of action transition boundaries.
-   - **Mechanism**: An additional single-channel output predicts a class-agnostic boundary probability curve. The supervision signal is a binary boundary mask (set to 1 at GT class-transition positions, 0 elsewhere). The loss is computed only within a temporal window around each boundary.
-   - **Design Motivation**: Unlike ASRF's dual-branch design, this approach requires only one extra channel without introducing auxiliary branches or post-processing. Boundary-aware representations are learned during training with no additional inference overhead.
+    - **Function**: Promotes precise temporal localization of action transition boundaries.
+    - **Mechanism**: An additional single-channel output predicts a class-agnostic boundary probability curve. The supervision signal is a binary boundary mask (set to 1 at GT class-transition positions, 0 elsewhere). The loss is computed only within a temporal window around each boundary.
+    - **Design Motivation**: Unlike ASRF's dual-branch design, this approach requires only one extra channel without introducing auxiliary branches or post-processing. Boundary-aware representations are learned during training with no additional inference overhead.
 
 2. **CDF Segment Shape Regularization Loss $\mathcal{L}_{CDF}$**:
 
-   - **Function**: Constrains the temporal structure of predictions at the segment level to reduce over-segmentation.
-   - **Mechanism**: For each GT segment, the cumulative distribution function (CDF) of predicted probabilities within that segment is computed and aligned with the uniform CDF of the GT. Deviations between the two CDFs are penalized, drawing inspiration from the relationship between the 1D Wasserstein distance and CDFs, but applied here as a straightforward segment-level shape constraint.
-   - **Design Motivation**: Frame-level cross-entropy only requires each frame to be predicted correctly, without regard for temporal coherence within a segment. CDF regularization enforces a uniformly increasing cumulative distribution within each segment, encouraging intra-segment coherence over fragmentation.
+    - **Function**: Constrains the temporal structure of predictions at the segment level to reduce over-segmentation.
+    - **Mechanism**: For each GT segment, the cumulative distribution function (CDF) of predicted probabilities within that segment is computed and aligned with the uniform CDF of the GT. Deviations between the two CDFs are penalized, drawing inspiration from the relationship between the 1D Wasserstein distance and CDFs, but applied here as a straightforward segment-level shape constraint.
+    - **Design Motivation**: Frame-level cross-entropy only requires each frame to be predicted correctly, without regard for temporal coherence within a segment. CDF regularization enforces a uniformly increasing cumulative distribution within each segment, encouraging intra-segment coherence over fragmentation.
 
 3. **Decoupled Loss Assignment Strategy**:
 
-   - **Function**: Assigns boundary loss and segment regularization loss to distinct temporal regions.
-   - **Mechanism**: The temporal axis is partitioned into boundary and non-boundary regions. $\mathcal{L}_B$ is computed exclusively within boundary regions; $\mathcal{L}_{CDF}$ is computed exclusively within non-boundary regions.
-   - **Design Motivation**: The optimization objectives at boundaries and within segment interiors are inherently conflicting—boundaries require rapid class switching, while interiors require stable predictions. Decoupled assignment allows each objective to operate independently, preventing mutual interference.
+    - **Function**: Assigns boundary loss and segment regularization loss to distinct temporal regions.
+    - **Mechanism**: The temporal axis is partitioned into boundary and non-boundary regions. $\mathcal{L}_B$ is computed exclusively within boundary regions; $\mathcal{L}_{CDF}$ is computed exclusively within non-boundary regions.
+    - **Design Motivation**: The optimization objectives at boundaries and within segment interiors are inherently conflicting—boundaries require rapid class switching, while interiors require stable predictions. Decoupled assignment allows each objective to operate independently, preventing mutual interference.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 15b06f577a9d60cf
 # LAMP: Learning Universal Adversarial Perturbations for Multi-Image Tasks via Pre-trained Models
 
 **Conference**: AAAI2026
-**arXiv**: [2601.21220](https://arxiv.org/abs/2601.21220)
-**Code**: None
+**arXiv**: [2601.21220](https://arxiv.org/abs/2601.21220)  
+**Code**: None  
 **Area**: AI Security
 **Keywords**: Universal Adversarial Perturbation, Multi-Image MLLM, Black-box Attack, Attention Manipulation, Transferable Attack
 

@@ -18,8 +18,8 @@ content_hash: 0735ba0fe8a0ed62
 # A Unified Approach to Submodular Maximization Under Noise
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21128](https://arxiv.org/abs/2510.21128)
-**Code**: None
+**arXiv**: [2510.21128](https://arxiv.org/abs/2510.21128)  
+**Code**: None  
 **Area**: Combinatorial Optimization / Theory
 **Keywords**: submodular maximization, noisy value oracle, meta-algorithm, approximation algorithms, matroid constraints
 

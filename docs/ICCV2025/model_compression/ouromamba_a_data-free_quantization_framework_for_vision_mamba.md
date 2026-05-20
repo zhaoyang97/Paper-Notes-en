@@ -18,8 +18,8 @@ content_hash: 7c669534eaefc284
 # OuroMamba: A Data-Free Quantization Framework for Vision Mamba
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.10959](https://arxiv.org/abs/2503.10959)
-**Code**: [GitHub](https://github.com/georgia-tech-synergy-lab/ICCV-OuroMamba)
+**arXiv**: [2503.10959](https://arxiv.org/abs/2503.10959)  
+**Code**: [GitHub](https://github.com/georgia-tech-synergy-lab/ICCV-OuroMamba)  
 **Area**: Model Compression / Quantization
 **Keywords**: Data-Free Quantization, Vision Mamba, SSM, Mixed-Precision, Post-Training Quantization
 

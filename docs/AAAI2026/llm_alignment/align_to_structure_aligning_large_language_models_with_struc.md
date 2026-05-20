@@ -18,8 +18,8 @@ content_hash: 735c3e74ec9982b1
 # Align to Structure: Aligning Large Language Models with Structural Information
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.03622v2](https://arxiv.org/abs/2504.03622v2)
-**Code**: [https://github.com/minnesotanlp/struct_align](https://github.com/minnesotanlp/struct_align)
+**arXiv**: [2504.03622v2](https://arxiv.org/abs/2504.03622v2)  
+**Code**: [https://github.com/minnesotanlp/struct_align](https://github.com/minnesotanlp/struct_align)  
 **Area**: LLM Alignment
 **Keywords**: Structural Alignment, Discourse Structure, PPO Reinforcement Learning, Long-form Text Generation, Dense Reward
 

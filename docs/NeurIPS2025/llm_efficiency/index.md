@@ -18,7 +18,7 @@ tags:
 
 **🧠 NeurIPS2025** · **35** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (8)](../../ACL2026/llm_efficiency/index.md) · [📷 CVPR2026 (4)](../../CVPR2026/llm_efficiency/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/llm_efficiency/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_efficiency/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/llm_efficiency/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (11)](../../ICML2026/llm_efficiency/index.md) · [💬 ACL2026 (13)](../../ACL2026/llm_efficiency/index.md) · [📷 CVPR2026 (4)](../../CVPR2026/llm_efficiency/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/llm_efficiency/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_efficiency/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/llm_efficiency/index.md)
 
 🔥 **Top topics:** LLM ×5
 
@@ -58,6 +58,10 @@ tags:
 
 :   This paper proposes PORT, the first training-free online LLM routing algorithm. PORT estimates query features via approximate nearest neighbor search (ANNS) and performs a one-shot optimization of dual variables as routing weights on a small set of initial queries. Under a limited token budget, PORT achieves near-offline-optimal routing performance with a $1-o(1)$ competitive ratio, delivering on average 3.55× performance improvement, 1.85× cost efficiency, and 4.25× throughput over baselines.
 
+**[FlowMoE: A Scalable Pipeline Scheduling Framework for Distributed MoE Training](flowmoe_a_scalable_pipeline_scheduling_framework_for_distributed_mixture-of-expe.md)**
+
+:   FlowMoE proposes a unified pipeline scheduling framework that integrates MHA computation, gating, expert computation, and A2A communication into a single pipeline. A priority-driven all-reduce tensor chunking mechanism maximizes communication–computation overlap, achieving 1.13×–1.82× speedup, 10–39% energy reduction, and 7–32% memory savings across multiple real-world MoE models.
+
 **[From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers](from_shortcut_to_induction_head_how_data_diversity_shapes_algorithm_selection_in.md)**
 
 :   This paper provides rigorous theoretical analysis demonstrating that the diversity of pretraining data—characterized by the *max-sum ratio*—determines whether a single-layer Transformer learns a generalizable induction head or a non-OOD-generalizing positional shortcut, and derives a closed-form optimal pretraining distribution that promotes induction head formation.
@@ -81,10 +85,6 @@ tags:
 **[Let the Experts Speak: Improving Survival Prediction & Calibration via Mixture-of-Experts Heads](let_the_experts_speak_improving_survival_prediction_calibration_via_mixture-of-e.md)**
 
 :   Three discrete-time deep Mixture-of-Experts (MoE) survival analysis architectures are proposed, among which Personalized MoE achieves superior clustering, calibration, and predictive accuracy simultaneously by allowing each expert to generate a patient-specific event distribution.
-
-**[Linear Attention for Efficient Bidirectional Sequence Modeling](linear_attention_for_efficient_bidirectional_sequence_modeling.md)**
-
-:   This paper proposes Lion, a framework that, for the first time, systematically extends linear Transformers to bidirectional sequence modeling. It unifies three equivalent representations—full linear attention, bidirectional RNN, and chunkwise parallel—and achieves training speeds up to 10× faster than SSM-based approaches while delivering performance comparable to softmax Transformers on image classification and MLM tasks.
 
 **[Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)**
 

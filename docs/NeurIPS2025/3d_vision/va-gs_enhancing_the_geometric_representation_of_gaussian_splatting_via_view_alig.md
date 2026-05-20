@@ -18,8 +18,8 @@ content_hash: dcebf2de4ddeeee0
 # VA-GS: Enhancing the Geometric Representation of Gaussian Splatting via View Alignment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11473](https://arxiv.org/abs/2510.11473)
-**Code**: [GitHub](https://github.com/LeoQLi/VA-GS)
+**arXiv**: [2510.11473](https://arxiv.org/abs/2510.11473)  
+**Code**: [GitHub](https://github.com/LeoQLi/VA-GS)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, surface reconstruction, multi-view alignment, normal consistency, geometric representation
 

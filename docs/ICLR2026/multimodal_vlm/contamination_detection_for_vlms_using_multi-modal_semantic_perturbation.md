@@ -18,8 +18,8 @@ content_hash: b85adb75432afbcf
 # Contamination Detection for VLMs using Multi-Modal Semantic Perturbation
 
 **Conference**: ICLR2026
-**arXiv**: [2511.03774](https://arxiv.org/abs/2511.03774)
-**Code**: [https://github.com/jadenpark0/mm-perturb](https://github.com/jadenpark0/mm-perturb)
+**arXiv**: [2511.03774](https://arxiv.org/abs/2511.03774)  
+**Code**: [https://github.com/jadenpark0/mm-perturb](https://github.com/jadenpark0/mm-perturb)  
 **Area**: Multimodal VLM
 **Keywords**: data contamination, VLM, benchmark leakage, semantic perturbation, ControlNet
 

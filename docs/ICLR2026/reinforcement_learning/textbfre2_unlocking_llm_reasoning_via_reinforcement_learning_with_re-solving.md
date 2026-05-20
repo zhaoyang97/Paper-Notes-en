@@ -18,8 +18,8 @@ content_hash: dd2f0a5fa65dbab8
 # $\textbf{Re}^{2}$: Unlocking LLM Reasoning via Reinforcement Learning with Re-solving
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.07197](https://arxiv.org/abs/2603.07197)
-**Code**: None
+**arXiv**: [2603.07197](https://arxiv.org/abs/2603.07197)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: RLVR, LLM reasoning, chain-of-thought optimization, re-solving, overthinking
 

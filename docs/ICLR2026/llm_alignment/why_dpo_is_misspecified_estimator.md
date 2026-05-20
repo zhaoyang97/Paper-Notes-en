@@ -18,8 +18,8 @@ content_hash: 831696c19f29e382
 # Why DPO is a Misspecified Estimator and How to Fix It
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2510.20413](https://arxiv.org/abs/2510.20413)
-**Code**: Available (AuxDPOTrainer implementation based on TRL)
+**arXiv**: [2510.20413](https://arxiv.org/abs/2510.20413)  
+**Code**: Available (AuxDPOTrainer implementation based on TRL)  
 **Area**: LLM Alignment / Preference Optimization
 **Keywords**: DPO, RLHF, misspecification, reward alignment, AuxDPO
 

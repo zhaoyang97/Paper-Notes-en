@@ -20,8 +20,8 @@ content_hash: a2f68a8e00fa3c87
 # Latent Speech-Text Transformer
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2510.06195](https://arxiv.org/abs/2510.06195)
-**Code**: [GitHub](https://github.com/facebookresearch/lst)
+**arXiv**: [2510.06195](https://arxiv.org/abs/2510.06195)  
+**Code**: [GitHub](https://github.com/facebookresearch/lst)  
 **Area**: Audio & Speech
 **Keywords**: speech-text modeling, latent patches, autoregressive, ASR, TTS, cross-modal alignment, BLT
 

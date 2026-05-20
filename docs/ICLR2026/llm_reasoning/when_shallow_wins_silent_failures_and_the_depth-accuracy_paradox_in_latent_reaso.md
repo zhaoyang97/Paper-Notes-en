@@ -18,8 +18,8 @@ content_hash: 7b7d6fc25219c99a
 # When Shallow Wins: Silent Failures and the Depth-Accuracy Paradox in Latent Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.03475](https://arxiv.org/abs/2603.03475)
-**Code**: [github.com/SubramanyamSahoo/When-Shallow-Wins](https://github.com/SubramanyamSahoo/When-Shallow-Wins)
+**arXiv**: [2603.03475](https://arxiv.org/abs/2603.03475)  
+**Code**: [github.com/SubramanyamSahoo/When-Shallow-Wins](https://github.com/SubramanyamSahoo/When-Shallow-Wins)  
 **Area**: LLM Reasoning
 **Keywords**: latent reasoning, faithfulness metrics, silent failures, depth-accuracy paradox, computational stability
 

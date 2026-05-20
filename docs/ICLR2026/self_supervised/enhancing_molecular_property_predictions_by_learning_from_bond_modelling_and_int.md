@@ -18,8 +18,8 @@ content_hash: 19243b4495a9e022
 # Enhancing Molecular Property Predictions by Learning from Bond Modelling and Interactions
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00568](https://arxiv.org/abs/2603.00568)
-**Code**: Available
+**arXiv**: [2603.00568](https://arxiv.org/abs/2603.00568)  
+**Code**: Available  
 **Area**: Self-Supervised Learning / Molecular Representation Learning / Graph Neural Networks
 **Keywords**: molecular representation, dual-graph, bond modeling, GNN, property prediction
 

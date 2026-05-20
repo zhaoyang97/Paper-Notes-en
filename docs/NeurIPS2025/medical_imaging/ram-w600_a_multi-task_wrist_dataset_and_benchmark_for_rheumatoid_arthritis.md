@@ -18,8 +18,8 @@ content_hash: 73c506986b697632
 # RAM-W600: A Multi-Task Wrist Dataset and Benchmark for Rheumatoid Arthritis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.05193](https://arxiv.org/abs/2507.05193)
-**Code**: [GitHub](https://github.com/YSongxiao/RAM-W600)
+**arXiv**: [2507.05193](https://arxiv.org/abs/2507.05193)  
+**Code**: [GitHub](https://github.com/YSongxiao/RAM-W600)  
 **Area**: Medical Imaging
 **Keywords**: Rheumatoid Arthritis, Carpal Bone Segmentation, Bone Erosion Scoring, Dataset, Instance Segmentation
 
@@ -66,8 +66,8 @@ RAM-W600 does not propose a new model; rather, it contributes a **dataset and be
 
 3. **Benchmark Evaluation Protocol**
 
-   - **Segmentation task**: Evaluation of 13 supervised models (UNet, DeepLabV3+, TransUNet, SwinUMamba, etc.) and 3 foundation models (SAM, MedSAM), using DSC, NSD, VOE, MSD, and RAVD metrics.
-   - **BE classification task**: Evaluation of 7 classification models (MobileViT, ResNet, MedMamba, etc.), using BACC, F1, DOR, ACC, SEN, SPC, and PRE metrics.
+    - **Segmentation task**: Evaluation of 13 supervised models (UNet, DeepLabV3+, TransUNet, SwinUMamba, etc.) and 3 foundation models (SAM, MedSAM), using DSC, NSD, VOE, MSD, and RAVD metrics.
+    - **BE classification task**: Evaluation of 7 classification models (MobileViT, ResNet, MedMamba, etc.), using BACC, F1, DOR, ACC, SEN, SPC, and PRE metrics.
 
 ### Loss & Training
 

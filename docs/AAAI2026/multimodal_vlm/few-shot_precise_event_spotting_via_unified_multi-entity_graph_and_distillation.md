@@ -18,8 +18,8 @@ content_hash: faf16d38ee45d27a
 # Few-Shot Precise Event Spotting via Unified Multi-Entity Graph and Distillation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14186](https://arxiv.org/abs/2511.14186)
-**Code**: [github.com/LZYAndy/UMEG-Net](https://github.com/LZYAndy/UMEG-Net)
+**arXiv**: [2511.14186](https://arxiv.org/abs/2511.14186)  
+**Code**: [github.com/LZYAndy/UMEG-Net](https://github.com/LZYAndy/UMEG-Net)  
 **Area**: Multimodal VLM
 **Keywords**: Precise Event Spotting, Few-Shot Learning, Unified Multi-Entity Graph, Knowledge Distillation, Sports Video Analysis
 

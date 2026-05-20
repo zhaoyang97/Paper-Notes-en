@@ -18,8 +18,8 @@ content_hash: 83811ac10c53f329
 # MCTS-SQL: Light-Weight LLMs can Master the Text-to-SQL through Monte Carlo Tree Search
 
 **Conference**: AAAI 2026
-**arXiv**: [2501.16607](https://arxiv.org/abs/2501.16607)
-**Code**: Available
+**arXiv**: [2501.16607](https://arxiv.org/abs/2501.16607)  
+**Code**: Available  
 **Area**: LLM Evaluation
 **Keywords**: Text-to-SQL, Monte Carlo Tree Search, Lightweight Models, Prefix Caching, Schema Pruning
 

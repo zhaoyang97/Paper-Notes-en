@@ -18,8 +18,8 @@ content_hash: cf7ace420e8d93ce
 # BlurDM: A Blur Diffusion Model for Image Deblurring
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.03979](https://arxiv.org/abs/2512.03979)
-**Code**: [https://jin-ting-he.github.io/BlurDM/](https://jin-ting-he.github.io/BlurDM/)
+**arXiv**: [2512.03979](https://arxiv.org/abs/2512.03979)  
+**Code**: [https://jin-ting-he.github.io/BlurDM/](https://jin-ting-he.github.io/BlurDM/)  
 **Area**: Image Generation
 **Keywords**: image deblurring, blur diffusion, dual diffusion, motion blur, prior generation
 

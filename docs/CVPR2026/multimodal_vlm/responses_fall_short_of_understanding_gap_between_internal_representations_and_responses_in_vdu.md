@@ -18,8 +18,8 @@ content_hash: 7bbfd30a621fb3fa
 # Responses Fall Short of Understanding: Revealing the Gap between Internal Representations and Responses in VDU
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04411](https://arxiv.org/abs/2604.04411)
-**Code**: None
+**arXiv**: [2604.04411](https://arxiv.org/abs/2604.04411)  
+**Code**: None  
 **Area**: Multimodal Large Language Models / Document Understanding
 **Keywords**: LVLM, visual document understanding, linear probing, internal representations, intermediate layers
 

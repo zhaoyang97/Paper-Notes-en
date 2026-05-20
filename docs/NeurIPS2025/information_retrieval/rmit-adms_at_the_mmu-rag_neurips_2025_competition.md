@@ -18,8 +18,8 @@ content_hash: e18dcc4ae0be7ae4
 # RMIT-ADM+S at the MMU-RAG NeurIPS 2025 Competition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.20735](https://arxiv.org/abs/2602.20735)
-**Code**: [GitHub](https://github.com/rmit-ir/NeurIPS-MMU-RAG)
+**arXiv**: [2602.20735](https://arxiv.org/abs/2602.20735)  
+**Code**: [GitHub](https://github.com/rmit-ir/NeurIPS-MMU-RAG)  
 **Area**: Information Retrieval / RAG
 **Keywords**: Retrieval-Augmented Generation, Query Classification, Adaptive Retrieval, Lightweight RAG, Dynamic Evaluation
 

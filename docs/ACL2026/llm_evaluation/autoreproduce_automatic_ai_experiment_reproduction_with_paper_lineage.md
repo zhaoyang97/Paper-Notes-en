@@ -18,8 +18,8 @@ content_hash: a34796fa74cd2407
 # AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage
 
 **Conference**: ACL 2026
-**arXiv**: [2505.20662](https://arxiv.org/abs/2505.20662)
-**Code**: [https://github.com/AI9Stars/AutoReproduce](https://github.com/AI9Stars/AutoReproduce)
+**arXiv**: [2505.20662](https://arxiv.org/abs/2505.20662)  
+**Code**: [https://github.com/AI9Stars/AutoReproduce](https://github.com/AI9Stars/AutoReproduce)  
 **Area**: LLM Evaluation
 **Keywords**: paper reproduction, paper lineage, multi-agent, code generation, research automation
 

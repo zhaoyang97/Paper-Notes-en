@@ -18,8 +18,8 @@ content_hash: 0d5965db7dfc71a6
 # Points-to-3D: Structure-Aware 3D Generation with Point Cloud Priors
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.18782](https://arxiv.org/abs/2603.18782)
-**Code**: [Project Page](https://jiatongxia.github.io/points2-3D/)
+**arXiv**: [2603.18782](https://arxiv.org/abs/2603.18782)  
+**Code**: [Project Page](https://jiatongxia.github.io/points2-3D/)  
 **Area**: Autonomous Driving / 3D Generation
 **Keywords**: Point Cloud Priors, 3D Generation, Diffusion Models, Structure Completion, Geometry-Controllable
 

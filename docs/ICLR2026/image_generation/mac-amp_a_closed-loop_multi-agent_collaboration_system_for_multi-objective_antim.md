@@ -18,8 +18,8 @@ content_hash: b23a974dc5c53947
 # MAC-AMP: A Closed-Loop Multi-Agent Collaboration System for Multi-Objective Antimicrobial Peptide Design
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.14926](https://arxiv.org/abs/2602.14926)
-**Code**: [GitHub](https://github.com/CLMFAP/MAC-AMP_v1/)
+**arXiv**: [2602.14926](https://arxiv.org/abs/2602.14926)  
+**Code**: [GitHub](https://github.com/CLMFAP/MAC-AMP_v1/)  
 **Area**: Image Generation
 **Keywords**: antimicrobial peptide design, multi-agent collaboration, closed-loop reinforcement learning, multi-objective optimization, LLM agent
 

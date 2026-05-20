@@ -18,8 +18,8 @@ content_hash: e58aec3487bd0ab7
 # Latent Space Factorization in LoRA
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19640](https://arxiv.org/abs/2510.19640)
-**Code**: [GitHub](https://github.com/idiap/FVAE-LoRA)
+**arXiv**: [2510.19640](https://arxiv.org/abs/2510.19640)  
+**Code**: [GitHub](https://github.com/idiap/FVAE-LoRA)  
 **Area**: Audio/Speech (Parameter-Efficient Fine-Tuning)
 **Keywords**: LoRA, VAE, latent space factorization, parameter-efficient fine-tuning, spurious correlation robustness
 

@@ -19,8 +19,8 @@ content_hash: 060913b14b01e771
 # Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model
 
 **Conference**: CVPR2026
-**arXiv**: [2603.05438](https://arxiv.org/abs/2603.05438)
-**Code**: [kdwonn/CompACT](https://kdwonn.github.io/CompACT)
+**arXiv**: [2603.05438](https://arxiv.org/abs/2603.05438)  
+**Code**: [kdwonn/CompACT](https://kdwonn.github.io/CompACT)  
 **Area**: Model Compression / World Models / Representation Learning
 **Keywords**: compact discrete tokenizer, world model, latent space planning, extreme compression, semantic encoding, generative decoding
 

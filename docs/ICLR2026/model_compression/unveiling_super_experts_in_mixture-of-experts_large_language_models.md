@@ -18,8 +18,8 @@ content_hash: 191ed4b78fa790ea
 # Unveiling Super Experts in Mixture-of-Experts Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.23279](https://arxiv.org/abs/2507.23279)
-**Code**: [GitHub](https://github.com/ZunhaiSu/Super-Experts-Profilling)
+**arXiv**: [2507.23279](https://arxiv.org/abs/2507.23279)  
+**Code**: [GitHub](https://github.com/ZunhaiSu/Super-Experts-Profilling)  
 **Area**: Model Compression / MoE / LLM Analysis
 **Keywords**: Mixture-of-Experts, super experts, massive activations, attention sinks, expert pruning, model compression
 

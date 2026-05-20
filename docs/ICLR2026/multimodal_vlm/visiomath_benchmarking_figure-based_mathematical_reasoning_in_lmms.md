@@ -18,8 +18,8 @@ content_hash: 62c0594ad5bc387f
 # VisioMath: Benchmarking Figure-based Mathematical Reasoning in LMMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.06727](https://arxiv.org/abs/2506.06727)
-**Code**: [GitHub](https://github.com/Nefefilibata/VisioMath)
+**arXiv**: [2506.06727](https://arxiv.org/abs/2506.06727)  
+**Code**: [GitHub](https://github.com/Nefefilibata/VisioMath)  
 **Area**: Multimodal VLM
 **Keywords**: mathematical reasoning benchmark, multi-image reasoning, visual similarity, image-text alignment, LMM evaluation
 

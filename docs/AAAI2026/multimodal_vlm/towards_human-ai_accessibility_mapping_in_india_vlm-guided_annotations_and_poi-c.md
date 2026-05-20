@@ -18,8 +18,8 @@ content_hash: 55d4d6a79d5323bf
 # Towards Human-AI Accessibility Mapping in India: VLM-Guided Annotations and POI-Centric Analysis in Chandigarh
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.09216](https://arxiv.org/abs/2602.09216)
-**Code**: None (custom deployment based on the Project Sidewalk platform)
+**arXiv**: [2602.09216](https://arxiv.org/abs/2602.09216)  
+**Code**: None (custom deployment based on the Project Sidewalk platform)  
 **Area**: Multimodal VLM
 **Keywords**: Accessibility mapping, VLM-assisted annotation, sidewalk accessibility, POI analysis, human-AI collaboration
 

@@ -18,8 +18,8 @@ content_hash: fb4339d9decb4e49
 # LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02320](https://arxiv.org/abs/2604.02320)
-**Code**: [https://junxuan-li.github.io/lca](https://junxuan-li.github.io/lca)
+**arXiv**: [2604.02320](https://arxiv.org/abs/2604.02320)  
+**Code**: [https://junxuan-li.github.io/lca](https://junxuan-li.github.io/lca)  
 **Area**: Human Understanding / 3D Vision
 **Keywords**: 3D avatars, large-scale pretraining, feed-forward generation, Gaussian splatting, expression control
 

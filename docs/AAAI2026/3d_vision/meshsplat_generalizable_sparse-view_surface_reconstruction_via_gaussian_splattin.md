@@ -18,8 +18,8 @@ content_hash: 0c420ef9db4dd577
 # MeshSplat: Generalizable Sparse-View Surface Reconstruction via Gaussian Splatting
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.17811](https://arxiv.org/abs/2508.17811)
-**Code**: [https://hanzhichang.github.io/meshsplat_web/](https://hanzhichang.github.io/meshsplat_web/)
+**arXiv**: [2508.17811](https://arxiv.org/abs/2508.17811)  
+**Code**: [https://hanzhichang.github.io/meshsplat_web/](https://hanzhichang.github.io/meshsplat_web/)  
 **Area**: 3D Vision
 **Keywords**: sparse-view reconstruction, surface reconstruction, 2D Gaussian splatting, feed-forward network, cross-scene generalization
 

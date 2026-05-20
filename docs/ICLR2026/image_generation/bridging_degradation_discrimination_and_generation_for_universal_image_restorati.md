@@ -18,8 +18,8 @@ content_hash: 83208fdb2a99ce23
 # Bridging Degradation Discrimination and Generation for Universal Image Restoration
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.00579](https://arxiv.org/abs/2602.00579)
-**Code**: N/A
+**arXiv**: [2602.00579](https://arxiv.org/abs/2602.00579)  
+**Code**: N/A  
 **Area**: Image Generation
 **Keywords**: universal image restoration, GLCM degradation representation, diffusion model, three-stage training, all-in-one restoration
 

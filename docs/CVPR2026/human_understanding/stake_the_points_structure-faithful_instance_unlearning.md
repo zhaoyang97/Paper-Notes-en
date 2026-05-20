@@ -18,8 +18,8 @@ content_hash: b197a5d46f6e0b01
 # Stake the Points: Structure-Faithful Instance Unlearning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12915](https://arxiv.org/abs/2603.12915)
-**Code**: To be confirmed
+**arXiv**: [2603.12915](https://arxiv.org/abs/2603.12915)  
+**Code**: To be confirmed  
 **Area**: Human Understanding
 **Keywords**: machine unlearning, instance-level unlearning, structural preservation, semantic anchors, CLIP
 

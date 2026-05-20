@@ -18,8 +18,8 @@ content_hash: f596b7c921693721
 # MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.13840](https://arxiv.org/abs/2512.13840)
-**Code**: [https://hynann.github.io/molingo/MoLingo.html](https://hynann.github.io/molingo/MoLingo.html)
+**arXiv**: [2512.13840](https://arxiv.org/abs/2512.13840)  
+**Code**: [https://hynann.github.io/molingo/MoLingo.html](https://hynann.github.io/molingo/MoLingo.html)  
 **Area**: Human Understanding
 **Keywords**: text-driven motion generation, semantically aligned latent space, cross-attention conditioning, autoregressive diffusion, continuous latent space
 

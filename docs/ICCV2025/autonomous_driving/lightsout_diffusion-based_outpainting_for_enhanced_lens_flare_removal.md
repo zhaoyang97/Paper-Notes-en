@@ -18,8 +18,8 @@ content_hash: 51fe9f94fd4cfdb0
 # LightsOut: Diffusion-based Outpainting for Enhanced Lens Flare Removal
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.15868](https://arxiv.org/abs/2510.15868)
-**Code**: [https://ray-1026.github.io/lightsout/](https://ray-1026.github.io/lightsout/)
+**arXiv**: [2510.15868](https://arxiv.org/abs/2510.15868)  
+**Code**: [https://ray-1026.github.io/lightsout/](https://ray-1026.github.io/lightsout/)  
 **Area**: Autonomous Driving / Image Restoration
 **Keywords**: Lens Flare Removal, Diffusion Model, Image Outpainting, LoRA Fine-tuning, Plug-and-Play
 

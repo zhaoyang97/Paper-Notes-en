@@ -18,8 +18,8 @@ content_hash: 38f111535f996e3d
 # MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.04779](https://arxiv.org/abs/2506.04779)
-**Code**: [https://huggingface.co/datasets/ddwang2000/MMSU](https://huggingface.co/datasets/ddwang2000/MMSU)
+**arXiv**: [2506.04779](https://arxiv.org/abs/2506.04779)  
+**Code**: [https://huggingface.co/datasets/ddwang2000/MMSU](https://huggingface.co/datasets/ddwang2000/MMSU)  
 **Area**: Audio & Speech
 **Keywords**: Speech Understanding, SpeechLLM, Linguistics Benchmark, Multi-task Evaluation, Perception and Reasoning
 

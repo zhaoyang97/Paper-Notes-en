@@ -17,8 +17,8 @@ content_hash: e0c451f97e4e8c0f
 # AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25494](https://arxiv.org/abs/2603.25494)
-**Code**: [https://github.com/alanWXZ/AdaSFormer](https://github.com/alanWXZ/AdaSFormer)
+**arXiv**: [2603.25494](https://arxiv.org/abs/2603.25494)  
+**Code**: [https://github.com/alanWXZ/AdaSFormer](https://github.com/alanWXZ/AdaSFormer)  
 **Area**: Other
 **Keywords**: Semantic Scene Completion, Serialized Transformer, Adaptive Attention, Indoor Scene, Monocular RGB
 

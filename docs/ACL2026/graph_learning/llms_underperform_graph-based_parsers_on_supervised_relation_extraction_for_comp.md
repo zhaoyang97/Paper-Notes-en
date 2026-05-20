@@ -17,8 +17,8 @@ content_hash: 66bdf9341ee7da35
 # LLMs Underperform Graph-Based Parsers on Supervised Relation Extraction for Complex Graphs
 
 **Conference**: ACL 2026
-**arXiv**: [2604.08752](https://arxiv.org/abs/2604.08752)
-**Code**: N/A
+**arXiv**: [2604.08752](https://arxiv.org/abs/2604.08752)  
+**Code**: N/A  
 **Area**: Information Extraction / Relation Extraction
 **Keywords**: Relation Extraction, Graph Parser, LLM Limitations, Graph Complexity, Supervised Learning
 

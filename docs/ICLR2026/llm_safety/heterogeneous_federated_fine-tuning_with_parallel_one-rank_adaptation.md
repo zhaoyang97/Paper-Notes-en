@@ -18,8 +18,8 @@ content_hash: 575d560621e51a5d
 # Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.16936](https://arxiv.org/abs/2602.16936)
-**Code**: [GitHub](https://github.com/TNI-playground/Fed-PLoRA)
+**arXiv**: [2602.16936](https://arxiv.org/abs/2602.16936)  
+**Code**: [GitHub](https://github.com/TNI-playground/Fed-PLoRA)  
 **Area**: AI Safety
 **Keywords**: Federated Fine-Tuning, LoRA, Heterogeneous Rank, Initialization Noise, Aggregation Noise
 

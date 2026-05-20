@@ -18,8 +18,8 @@ content_hash: 5881630d640b54e8
 # anyECG-chat: A Generalist ECG-MLLM for Flexible ECG Input and Multi-Task Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.00942v2](https://arxiv.org/abs/2506.00942v2)
-**Code**: [https://github.com/CuCl-2/anyECG-chat](https://github.com/CuCl-2/anyECG-chat)
+**arXiv**: [2506.00942v2](https://arxiv.org/abs/2506.00942v2)  
+**Code**: [https://github.com/CuCl-2/anyECG-chat](https://github.com/CuCl-2/anyECG-chat)  
 **Area**: Multimodal VLM
 **Keywords**: ECG-MLLM, electrocardiogram, multi-task understanding, dynamic input, curriculum learning
 

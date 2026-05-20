@@ -18,10 +18,10 @@ content_hash: ff889257d5d3dfa2
 # Generative Model Inversion Through the Lens of the Manifold Hypothesis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20177](https://arxiv.org/abs/2509.20177)
+**arXiv**: [2509.20177](https://arxiv.org/abs/2509.20177)  
 **Authors**: Xiong Peng, Bo Han, Fengfei Yu, Tongliang Liu, Feng Liu, Mingyuan Zhou
 **Affiliations**: Hong Kong Baptist University, University of Sydney, University of Melbourne, University of Texas at Austin
-**Code**: [tmlr-group/AlignMI](https://github.com/tmlr-group/AlignMI)
+**Code**: [tmlr-group/AlignMI](https://github.com/tmlr-group/AlignMI)  
 **Area**: Image Generation
 **Keywords**: Model Inversion Attack, Manifold Hypothesis, Gradient-Manifold Alignment, GAN, Privacy & Security
 

@@ -18,8 +18,8 @@ content_hash: 251b0af2da8a14c1
 # Regular Games – an Automata-Based General Game Playing Language
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10593](https://arxiv.org/abs/2511.10593)
-**Code**: [GitHub (RG)](https://github.com/radekmie/rg) / [GitHub (Compiler)](https://github.com/WoojtekP/RGcompiler)
+**arXiv**: [2511.10593](https://arxiv.org/abs/2511.10593)  
+**Code**: [GitHub (RG)](https://github.com/radekmie/rg) / [GitHub (Compiler)](https://github.com/WoojtekP/RGcompiler)  
 **Area**: General Game Playing / Formal Languages / Artificial Intelligence
 **Keywords**: General Game Playing, Game Description Language, Finite Automata, Forward Model, Procedural Content Generation
 

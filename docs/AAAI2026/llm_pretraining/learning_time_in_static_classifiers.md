@@ -18,8 +18,8 @@ content_hash: 65f5a3de642ae8ee
 # Learning Time in Static Classifiers
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12321](https://arxiv.org/abs/2511.12321)
-**Code**: [https://github.com/Darcyddx/time-seq](https://github.com/Darcyddx/time-seq)
+**arXiv**: [2511.12321](https://arxiv.org/abs/2511.12321)  
+**Code**: [https://github.com/Darcyddx/time-seq](https://github.com/Darcyddx/time-seq)  
 **Area**: Classification / Temporal Reasoning
 **Keywords**: temporal reasoning, fine-grained classification, soft DTW, temporal prototype alignment, video anomaly detection
 

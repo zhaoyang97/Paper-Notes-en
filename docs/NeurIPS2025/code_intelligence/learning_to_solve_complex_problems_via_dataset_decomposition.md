@@ -18,8 +18,8 @@ content_hash: f108d12bc040bd17
 # Learning to Solve Complex Problems via Dataset Decomposition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.20296](https://arxiv.org/abs/2602.20296)
-**Code**: None
+**arXiv**: [2602.20296](https://arxiv.org/abs/2602.20296)  
+**Code**: None  
 **Area**: Code Intelligence
 **Keywords**: dataset decomposition, curriculum learning, mathematical reasoning, subproblem generation, skill graph
 
@@ -49,21 +49,21 @@ This paper proposes Decomp, a method that employs a teacher model (GPT-4o) to re
 
 1. **Recursive Problem Decomposition**
 
-   - **Function**: Transforms each reasoning step of a complex problem into an independent subproblem; applicable recursively.
-   - **Mechanism**: Given a solution $cot$, the teacher model segments it into $\leq k$ reasoning steps $[s_1, \ldots, s_k]$. For each step $s_i$, a concept label $t_i$ (e.g., "GCD," "square root") is extracted, and an independent subproblem $q_i$ is generated with its solution $cot_i$ and answer $a_i$ provided by the teacher. Verification is performed by having the teacher re-solve the subproblem without the original context, and a symbolic verifier checks answer consistency. Upon passing verification, $cot_i$ is recursively decomposed until the maximum depth $D$ is reached.
-   - **Design Motivation**: Each reasoning step intrinsically defines a simpler problem. Recursive decomposition ensures full coverage of the skill spectrum, from the most elementary (e.g., "What is $3^3$?") to the original difficulty level. The verification step ensures that generated subproblems have correct answers.
+    - **Function**: Transforms each reasoning step of a complex problem into an independent subproblem; applicable recursively.
+    - **Mechanism**: Given a solution $cot$, the teacher model segments it into $\leq k$ reasoning steps $[s_1, \ldots, s_k]$. For each step $s_i$, a concept label $t_i$ (e.g., "GCD," "square root") is extracted, and an independent subproblem $q_i$ is generated with its solution $cot_i$ and answer $a_i$ provided by the teacher. Verification is performed by having the teacher re-solve the subproblem without the original context, and a symbolic verifier checks answer consistency. Upon passing verification, $cot_i$ is recursively decomposed until the maximum depth $D$ is reached.
+    - **Design Motivation**: Each reasoning step intrinsically defines a simpler problem. Recursive decomposition ensures full coverage of the skill spectrum, from the most elementary (e.g., "What is $3^3$?") to the original difficulty level. The verification step ensures that generated subproblems have correct answers.
 
 2. **Concept Dependency Graph and Difficulty Quantification**
 
-   - **Function**: Constructs a graph of prerequisite relations between concepts across the dataset and quantifies the difficulty of each subproblem.
-   - **Mechanism**: All concept labels from subproblems are organized into a directed acyclic graph (DAG); an edge $t_p \rightarrow t_c$ is added if concept $t_c$ is the label of a subproblem derived from a step labeled $t_p$. Synonym labels (e.g., "GCD" = "greatest common divisor") are merged via embedding-based clustering. The difficulty score is defined as $\alpha_1 \cdot SC(s)$ (structural complexity: number of subproblems) $+ \alpha_2 \cdot CD(s)$ (concept depth: depth of the label in the DAG).
-   - **Design Motivation**: Reasoning step count alone is insufficient (e.g., "$1+1+\cdots+1$" has many steps but trivial concepts), and concept depth alone is insufficient (the same concept can appear in applications of varying complexity). The two-dimensional combination yields more accurate difficulty estimates.
+    - **Function**: Constructs a graph of prerequisite relations between concepts across the dataset and quantifies the difficulty of each subproblem.
+    - **Mechanism**: All concept labels from subproblems are organized into a directed acyclic graph (DAG); an edge $t_p \rightarrow t_c$ is added if concept $t_c$ is the label of a subproblem derived from a step labeled $t_p$. Synonym labels (e.g., "GCD" = "greatest common divisor") are merged via embedding-based clustering. The difficulty score is defined as $\alpha_1 \cdot SC(s)$ (structural complexity: number of subproblems) $+ \alpha_2 \cdot CD(s)$ (concept depth: depth of the label in the DAG).
+    - **Design Motivation**: Reasoning step count alone is insufficient (e.g., "$1+1+\cdots+1$" has many steps but trivial concepts), and concept depth alone is insufficient (the same concept can appear in applications of varying complexity). The two-dimensional combination yields more accurate difficulty estimates.
 
 3. **Curriculum Learning Training**
 
-   - **Function**: Partitions data into difficulty buckets and trains sequentially from easiest to hardest.
-   - **Mechanism**: The decomposed dataset is divided into $K$ buckets $\mathcal{D}'_1, \ldots, \mathcal{D}'_K$ by difficulty quantile. The model is trained sequentially from $\mathcal{D}'_1$ to $\mathcal{D}'_K$ with early stopping at each stage. Total training budget is compute-matched to baselines.
-   - **Design Motivation**: With identical data, curriculum ordering yields a 25.6% relative improvement over random ordering on AIME, demonstrating that training order is critical for learning efficiency on small datasets.
+    - **Function**: Partitions data into difficulty buckets and trains sequentially from easiest to hardest.
+    - **Mechanism**: The decomposed dataset is divided into $K$ buckets $\mathcal{D}'_1, \ldots, \mathcal{D}'_K$ by difficulty quantile. The model is trained sequentially from $\mathcal{D}'_1$ to $\mathcal{D}'_K$ with early stopping at each stage. Total training budget is compute-matched to baselines.
+    - **Design Motivation**: With identical data, curriculum ordering yields a 25.6% relative improvement over random ordering on AIME, demonstrating that training order is critical for learning efficiency on small datasets.
 
 ### Loss & Training
 - Student models: Qwen2.5-1.5B / Qwen3-4B-Base

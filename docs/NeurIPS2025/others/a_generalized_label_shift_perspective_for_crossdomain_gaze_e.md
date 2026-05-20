@@ -17,8 +17,8 @@ content_hash: 41b248fdc65ec7b1
 # A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13043](https://arxiv.org/abs/2505.13043)
-**Code**: None
+**arXiv**: [2505.13043](https://arxiv.org/abs/2505.13043)  
+**Code**: None  
 **Area**: Other
 **Keywords**: cross-domain gaze estimation, generalized label shift, importance reweighting, conditional distribution alignment, kernel embedding
 

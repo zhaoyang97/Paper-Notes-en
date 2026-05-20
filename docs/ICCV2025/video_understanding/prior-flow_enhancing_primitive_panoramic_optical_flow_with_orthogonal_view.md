@@ -18,8 +18,8 @@ content_hash: a5abd40e952a50f0
 # PriOr-Flow: Enhancing Primitive Panoramic Optical Flow with Orthogonal View
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23897](https://arxiv.org/abs/2506.23897)
-**Code**: [GitHub](https://github.com/longliangLiu/PriOr-Flow)
+**arXiv**: [2506.23897](https://arxiv.org/abs/2506.23897)  
+**Code**: [GitHub](https://github.com/longliangLiu/PriOr-Flow)  
 **Area**: Video Understanding / Optical Flow Estimation / Panoramic Vision
 **Keywords**: panoramic optical flow, equirectangular projection, dual-branch, distortion compensation, orthogonal view
 

@@ -18,8 +18,8 @@ content_hash: 7bf67e23499f828d
 # Astra: General Interactive World Model with Autoregressive Denoising
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.08931](https://arxiv.org/abs/2512.08931)
-**Code**: [https://github.com/EternalEvan/Astra](https://github.com/EternalEvan/Astra)
+**arXiv**: [2512.08931](https://arxiv.org/abs/2512.08931)  
+**Code**: [https://github.com/EternalEvan/Astra](https://github.com/EternalEvan/Astra)  
 **Area**: Autonomous Driving / Video Generation
 **Keywords**: world model, autoregressive denoising, action control, interactive video, mixture of experts
 

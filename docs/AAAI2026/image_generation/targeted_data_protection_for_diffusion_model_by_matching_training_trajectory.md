@@ -18,8 +18,8 @@ content_hash: 9c1ad872448863b7
 # Targeted Data Protection for Diffusion Model by Matching Training Trajectory
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.10433](https://arxiv.org/abs/2512.10433)
-**Code**: N/A
+**arXiv**: [2512.10433](https://arxiv.org/abs/2512.10433)  
+**Code**: N/A  
 **Area**: Image Generation / AI Security
 **Keywords**: Diffusion model data protection, training trajectory matching, adversarial perturbation, dataset distillation, targeted protection
 

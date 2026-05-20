@@ -18,8 +18,8 @@ content_hash: 04f5e7180c8201a5
 # OMG-Bench: A New Challenging Benchmark for Skeleton-based Online Micro Hand Gesture Recognition
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.16727](https://arxiv.org/abs/2512.16727)
-**Code**: [Project Page](https://omg-bench.github.io/)
+**arXiv**: [2512.16727](https://arxiv.org/abs/2512.16727)  
+**Code**: [Project Page](https://omg-bench.github.io/)  
 **Area**: Human Understanding / Gesture Recognition
 **Keywords**: Micro gesture recognition, online gesture recognition, skeleton data, hierarchical memory, VR/AR interaction
 

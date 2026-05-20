@@ -18,8 +18,8 @@ content_hash: 44af582bf3acb977
 # A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.10034](https://arxiv.org/abs/2603.10034)
-**Code**: None
+**arXiv**: [2603.10034](https://arxiv.org/abs/2603.10034)  
+**Code**: None  
 **Area**: Dialogue Systems / Medical AI / LLM Applications
 **Keywords**: Cognitive Stimulation Therapy, Multi-party Dialogue, Dynamic User Modeling, Principle-Driven Policy, Reinforcement Learning
 

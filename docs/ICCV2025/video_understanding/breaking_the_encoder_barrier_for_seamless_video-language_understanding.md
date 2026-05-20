@@ -18,8 +18,8 @@ content_hash: 8e4b3301c141acf5
 # Breaking the Encoder Barrier for Seamless Video-Language Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.18422](https://arxiv.org/abs/2503.18422)
-**Code**: None
+**arXiv**: [2503.18422](https://arxiv.org/abs/2503.18422)  
+**Code**: None  
 **Area**: Video Understanding / Video Large Language Models
 **Keywords**: encoder-free, Video-LLM, token merging, video guidance, hybrid resolution
 

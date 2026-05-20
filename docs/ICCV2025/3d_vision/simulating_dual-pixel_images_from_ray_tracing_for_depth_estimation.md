@@ -18,8 +18,8 @@ content_hash: 13c4442df9b22f3c
 # Simulating Dual-Pixel Images From Ray Tracing For Depth Estimation
 
 **Conference**: ICCV2025
-**arXiv**: [2503.11213](https://arxiv.org/abs/2503.11213)
-**Code**: [GitHub](https://github.com/LinYark/Sdirt)
+**arXiv**: [2503.11213](https://arxiv.org/abs/2503.11213)  
+**Code**: [GitHub](https://github.com/LinYark/Sdirt)  
 **Area**: 3D Vision
 **Keywords**: dual-pixel, depth estimation, ray tracing, PSF simulation, domain gap
 

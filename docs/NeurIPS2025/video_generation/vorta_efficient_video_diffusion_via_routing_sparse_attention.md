@@ -17,8 +17,8 @@ content_hash: e04c1c175fdd5c7a
 # VORTA: Efficient Video Diffusion via Routing Sparse Attention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18809](https://arxiv.org/abs/2505.18809)
-**Code**: [GitHub](https://github.com/wenhao728/VORTA)
+**arXiv**: [2505.18809](https://arxiv.org/abs/2505.18809)  
+**Code**: [GitHub](https://github.com/wenhao728/VORTA)  
 **Area**: Video Generation
 **Keywords**: Video diffusion model acceleration, sparse attention, routing mechanism, coreset selection, video generation
 

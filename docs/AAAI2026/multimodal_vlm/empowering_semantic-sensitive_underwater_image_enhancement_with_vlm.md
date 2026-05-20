@@ -18,8 +18,8 @@ content_hash: 799f6e9b56dc15c7
 # Empowering Semantic-Sensitive Underwater Image Enhancement with VLM
 
 **Conference**: AAAI2026
-**arXiv**: [2603.12773](https://arxiv.org/abs/2603.12773)
-**Code**: To be confirmed
+**arXiv**: [2603.12773](https://arxiv.org/abs/2603.12773)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Underwater Image Enhancement, Vision-Language Model, Semantic Guidance, Cross-Attention, Downstream Tasks
 

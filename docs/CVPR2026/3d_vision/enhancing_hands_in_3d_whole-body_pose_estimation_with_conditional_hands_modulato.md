@@ -18,8 +18,8 @@ content_hash: d0b8b159edc60112
 # Enhancing Hands in 3D Whole-Body Pose Estimation with Conditional Hands Modulator
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14726](https://arxiv.org/abs/2603.14726)
-**Code**: [Available](https://mks0601.github.io/Hand4Whole-plus-plus)
+**arXiv**: [2603.14726](https://arxiv.org/abs/2603.14726)  
+**Code**: [Available](https://mks0601.github.io/Hand4Whole-plus-plus)  
 **Area**: 3D Vision
 **Keywords**: whole-body pose estimation, hand pose, SMPL-X, feature modulation, modular framework
 

@@ -18,8 +18,8 @@ content_hash: 3f52050c0b0f5ffa
 # Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation
 
 **Conference**: CVPR2026
-**arXiv**: [2501.05264](https://arxiv.org/abs/2501.05264)
-**Code**: [MICLAB-BUPT/AWC](https://github.com/MICLAB-BUPT/AWC)
+**arXiv**: [2501.05264](https://arxiv.org/abs/2501.05264)  
+**Code**: [MICLAB-BUPT/AWC](https://github.com/MICLAB-BUPT/AWC)  
 **Area**: Autonomous Driving
 **Keywords**: 3D human pose estimation, multi-modal learning, modality imbalance, Shapley value, Fisher Information Matrix
 

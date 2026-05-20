@@ -18,9 +18,9 @@ content_hash: dcb87e5103267d1b
 # Re-Depth Anything: Test-Time Depth Refinement via Self-Supervised Re-lighting
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.17908](https://arxiv.org/abs/2512.17908)
+**arXiv**: [2512.17908](https://arxiv.org/abs/2512.17908)  
 **Authors**: Ananta R. Bhattarai, Helge Rhodin (Bielefeld University)
-**Code**: [GitHub](https://github.com/anantarb/Re-Depth-Anything)
+**Code**: [GitHub](https://github.com/anantarb/Re-Depth-Anything)  
 **Area**: Self-Supervised
 **Keywords**: Monocular Depth Estimation, Test-Time Optimization, Score Distillation Sampling, Re-lighting, Depth Anything
 

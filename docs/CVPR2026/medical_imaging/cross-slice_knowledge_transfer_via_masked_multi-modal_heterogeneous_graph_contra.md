@@ -18,8 +18,8 @@ content_hash: 238d68990a0f2901
 # Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22821](https://arxiv.org/abs/2603.22821)
-**Code**: [https://github.com/wenwenmin/SpaHGC](https://github.com/wenwenmin/SpaHGC)
+**arXiv**: [2603.22821](https://arxiv.org/abs/2603.22821)  
+**Code**: [https://github.com/wenwenmin/SpaHGC](https://github.com/wenwenmin/SpaHGC)  
 **Area**: Medical Image Analysis / Spatial Transcriptomics
 **Keywords**: Spatial transcriptomics, heterogeneous graph learning, cross-slice knowledge transfer, contrastive learning, gene expression prediction
 

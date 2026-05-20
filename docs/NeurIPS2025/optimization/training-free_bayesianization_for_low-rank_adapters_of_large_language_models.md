@@ -18,8 +18,8 @@ content_hash: 9d4e22e49f1228a9
 # Training-Free Bayesianization for Low-Rank Adapters of Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.05723](https://arxiv.org/abs/2412.05723)
-**Code**: [https://github.com/Wang-ML-Lab/bayesian-peft](https://github.com/Wang-ML-Lab/bayesian-peft)
+**arXiv**: [2412.05723](https://arxiv.org/abs/2412.05723)  
+**Code**: [https://github.com/Wang-ML-Lab/bayesian-peft](https://github.com/Wang-ML-Lab/bayesian-peft)  
 **Area**: Optimization
 **Keywords**: Bayesian inference, LoRA, uncertainty estimation, LLM, training-free
 

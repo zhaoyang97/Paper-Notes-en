@@ -18,8 +18,8 @@ content_hash: 490e6b63dd58e4f6
 # ICL-Router: In-Context Learned Model Representations for LLM Routing
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.09719](https://arxiv.org/abs/2510.09719)
-**Code**: [GitHub](https://github.com/lalalamdbf/ICL-Router)
+**arXiv**: [2510.09719](https://arxiv.org/abs/2510.09719)  
+**Code**: [GitHub](https://github.com/lalalamdbf/ICL-Router)  
 **Area**: LLM Routing / Model Selection
 **Keywords**: model routing, in-context vectors, capability profiling, scalability, LLM collaboration
 

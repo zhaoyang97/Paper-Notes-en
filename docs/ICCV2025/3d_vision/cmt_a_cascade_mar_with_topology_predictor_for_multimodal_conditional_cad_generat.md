@@ -18,8 +18,8 @@ content_hash: f6952cc2a0058c42
 # CMT: A Cascade MAR with Topology Predictor for Multimodal Conditional CAD Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.20830](https://arxiv.org/abs/2504.20830)
-**Code**: N/A (dataset mmABC is publicly available)
+**arXiv**: [2504.20830](https://arxiv.org/abs/2504.20830)  
+**Code**: N/A (dataset mmABC is publicly available)  
 **Area**: 3D Vision / CAD Generation
 **Keywords**: CAD generation, B-Rep, cascade autoregression, topology prediction, multimodal conditional generation
 

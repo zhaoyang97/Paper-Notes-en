@@ -19,8 +19,8 @@ content_hash: 67079f812367f130
 # Narrow Finetuning Leaves Clearly Readable Traces in Activation Differences
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.13900](https://arxiv.org/abs/2510.13900)
-**Code**: [science-of-finetuning/diffing-toolkit](https://github.com/science-of-finetuning/diffing-toolkit)
+**arXiv**: [2510.13900](https://arxiv.org/abs/2510.13900)  
+**Code**: [science-of-finetuning/diffing-toolkit](https://github.com/science-of-finetuning/diffing-toolkit)  
 **Area**: Interpretability
 **Keywords**: Model Finetuning, Activation Differences, Model Diffing, Interpretability, AI Safety, Model Organisms, Patchscope
 

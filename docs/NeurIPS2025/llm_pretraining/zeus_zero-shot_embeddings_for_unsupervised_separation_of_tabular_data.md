@@ -18,8 +18,8 @@ content_hash: 7fa6b2bf9fa63330
 # ZEUS: Zero-shot Embeddings for Unsupervised Separation of Tabular Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.10704](https://arxiv.org/abs/2505.10704)
-**Code**: [GitHub](https://github.com/gmum/zeus)
+**arXiv**: [2505.10704](https://arxiv.org/abs/2505.10704)  
+**Code**: [GitHub](https://github.com/gmum/zeus)  
 **Area**: Tabular Data Clustering / Unsupervised Learning
 **Keywords**: Zero-shot Learning, Tabular Data, Clustering, Transformer, Prior-data Fitted Networks
 

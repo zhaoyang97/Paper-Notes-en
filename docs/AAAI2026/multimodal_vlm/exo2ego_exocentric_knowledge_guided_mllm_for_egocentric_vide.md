@@ -18,8 +18,8 @@ content_hash: 8cb9da7f2539ad42
 # Exo2Ego: Exocentric Knowledge Guided MLLM for Egocentric Video Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.09143](https://arxiv.org/abs/2503.09143)
-**Code**: [https://reurl.cc/Ebpyrm](https://reurl.cc/Ebpyrm)
+**arXiv**: [2503.09143](https://arxiv.org/abs/2503.09143)  
+**Code**: [https://reurl.cc/Ebpyrm](https://reurl.cc/Ebpyrm)  
 **Area**: Video Understanding / Multimodal VLM
 **Keywords**: Egocentric video understanding, exocentric-to-egocentric knowledge transfer, multimodal large language model, cross-view mapping learning, ego-exo alignment
 

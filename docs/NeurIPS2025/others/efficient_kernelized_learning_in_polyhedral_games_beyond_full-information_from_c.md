@@ -17,8 +17,8 @@ content_hash: 73123783df7b0dee
 # Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20919](https://arxiv.org/abs/2509.20919)
-**Code**: None
+**arXiv**: [2509.20919](https://arxiv.org/abs/2509.20919)  
+**Code**: None  
 **Area**: Other
 **Keywords**: polyhedral games, kernelization, coarse correlated equilibrium, Colonel Blotto, congestion games
 

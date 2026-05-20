@@ -17,8 +17,8 @@ content_hash: 0d4f72e7a587290a
 # ANO: Faster is Better in Noisy Landscapes
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.18258](https://arxiv.org/abs/2508.18258)
-**Code**: Available
+**arXiv**: [2508.18258](https://arxiv.org/abs/2508.18258)  
+**Code**: Available  
 **Area**: Other
 **Keywords**: optimizer, sign-based, noise robustness, reinforcement-learning, direction-magnitude decoupling
 

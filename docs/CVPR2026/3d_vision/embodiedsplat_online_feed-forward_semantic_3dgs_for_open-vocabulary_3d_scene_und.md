@@ -18,8 +18,8 @@ content_hash: 19df85714fcfd3d8
 # EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04254](https://arxiv.org/abs/2603.04254)
-**Code**: Available (project page: EmbodiedSplat.io)
+**arXiv**: [2603.04254](https://arxiv.org/abs/2603.04254)  
+**Code**: Available (project page: EmbodiedSplat.io)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, open-vocabulary scene understanding, online reconstruction, feed-forward 3DGS, semantic embedding
 

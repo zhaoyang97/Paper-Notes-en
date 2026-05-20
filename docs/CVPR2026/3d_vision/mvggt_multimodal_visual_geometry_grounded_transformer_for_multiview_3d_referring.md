@@ -18,8 +18,8 @@ content_hash: 14ecbf3f85cfd5b1
 # MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.06874](https://arxiv.org/abs/2601.06874)
-**Code**: [https://mvggt.github.io/](https://mvggt.github.io/)
+**arXiv**: [2601.06874](https://arxiv.org/abs/2601.06874)  
+**Code**: [https://mvggt.github.io/](https://mvggt.github.io/)  
 **Area**: 3D Vision / Multimodal Understanding
 **Keywords**: 3D referring segmentation, multiview, sparse-view reconstruction, foreground gradient dilution, language guidance
 

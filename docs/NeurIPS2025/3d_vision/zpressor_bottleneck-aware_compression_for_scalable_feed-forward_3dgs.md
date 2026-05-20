@@ -18,8 +18,8 @@ content_hash: 20cff4a6ac6cab8f
 # ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23734](https://arxiv.org/abs/2505.23734)
-**Code**: [Project Page](https://lhmd.top/zpressor)
+**arXiv**: [2505.23734](https://arxiv.org/abs/2505.23734)  
+**Code**: [Project Page](https://lhmd.top/zpressor)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Feed-Forward 3DGS, Information Bottleneck, Multi-View Compression, Novel View Synthesis
 

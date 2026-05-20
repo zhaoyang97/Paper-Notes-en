@@ -18,8 +18,8 @@ content_hash: 0cce568060c71af6
 # PASE: Leveraging the Phonological Prior of WavLM for Low-Hallucination Generative Speech Enhancement
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13300](https://arxiv.org/abs/2511.13300)
-**Code**: [https://github.com/cisco-open/pase](https://github.com/cisco-open/pase)
+**arXiv**: [2511.13300](https://arxiv.org/abs/2511.13300)  
+**Code**: [https://github.com/cisco-open/pase](https://github.com/cisco-open/pase)  
 **Area**: Image Generation
 **Keywords**: Speech Enhancement, Hallucination Suppression, WavLM, Phonological Prior, Representation Distillation
 

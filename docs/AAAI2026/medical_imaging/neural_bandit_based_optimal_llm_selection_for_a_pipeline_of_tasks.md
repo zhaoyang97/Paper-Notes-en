@@ -19,8 +19,8 @@ content_hash: 222ed1d6a1517102
 # Neural Bandit Based Optimal LLM Selection for a Pipeline of Tasks
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.09958](https://arxiv.org/abs/2508.09958)
-**Code**: Available (includes self-constructed dataset)
+**arXiv**: [2508.09958](https://arxiv.org/abs/2508.09958)  
+**Code**: Available (includes self-constructed dataset)  
 **Area**: Medical Imaging / LLM Routing & Selection
 **Keywords**: LLM selection, multi-armed bandit, neural contextual bandit, pipeline tasks, medical diagnosis prediction, cost-awareness
 

@@ -18,8 +18,8 @@ content_hash: eebcbe6b3bf13949
 # Task Prototype-Based Knowledge Retrieval for Multi-Task Learning from Partially Annotated Data
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.07474](https://arxiv.org/abs/2601.07474)
-**Code**: Not available
+**arXiv**: [2601.07474](https://arxiv.org/abs/2601.07474)  
+**Code**: Not available  
 **Area**: Multi-Task Learning / Dense Prediction / Partial Annotation
 **Keywords**: Multi-Task Learning, Task Prototype, Partial Annotation, Knowledge Retrieval Transformer, Task Affinity
 

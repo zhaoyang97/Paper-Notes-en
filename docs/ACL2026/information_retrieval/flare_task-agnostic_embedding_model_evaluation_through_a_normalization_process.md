@@ -18,8 +18,8 @@ content_hash: 442cc0c48aea2a3b
 # FLARE: Task-Agnostic Embedding Model Evaluation via Normalizing Flows
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17344](https://arxiv.org/abs/2604.17344)
-**Code**: None
+**arXiv**: [2604.17344](https://arxiv.org/abs/2604.17344)  
+**Code**: None  
 **Area**: Information Retrieval
 **Keywords**: embedding model evaluation, label-free evaluation, normalizing flows, informational sufficiency, high-dimensional density estimation
 

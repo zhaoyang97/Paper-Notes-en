@@ -18,8 +18,8 @@ content_hash: 2ace9b9a321cc67d
 # SWE-SQL: Illuminating LLM Pathways to Solve User SQL Issues in Real-World Applications
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.18951](https://arxiv.org/abs/2506.18951)
-**Code**: [https://bird-critic.github.io/](https://bird-critic.github.io/)
+**arXiv**: [2506.18951](https://arxiv.org/abs/2506.18951)  
+**Code**: [https://bird-critic.github.io/](https://bird-critic.github.io/)  
 **Area**: AI Safety
 **Keywords**: SQL debugging, LLM Agent, database security, code repair, open-source models
 

@@ -18,8 +18,8 @@ content_hash: 5cb97c69a5123d2a
 # Failure Prediction at Runtime for Generative Robot Policies
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.09459](https://arxiv.org/abs/2510.09459)
-**Code**: [GitHub](https://github.com/utiasDSL/fiper)
+**arXiv**: [2510.09459](https://arxiv.org/abs/2510.09459)  
+**Code**: [GitHub](https://github.com/utiasDSL/fiper)  
 **Project Page**: [FIPER Website](https://tum-lsy.github.io/fiper_website)
 **Authors**: Ralf Römer*, Adrian Kobras*, Luca Worbis, Angela P. Schoellig (TUM Learning Systems and Robotics Lab)
 **Area**: Image Generation
@@ -172,8 +172,8 @@ tags:
 # Failure Prediction at Runtime for Generative Robot Policies
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.09459](https://arxiv.org/abs/2510.09459)
-**Code**: [GitHub](https://github.com/utiasDSL/fiper)
+**arXiv**: [2510.09459](https://arxiv.org/abs/2510.09459)  
+**Code**: [GitHub](https://github.com/utiasDSL/fiper)  
 **Area**: Image Generation / Robot Learning
 **Keywords**: Failure Prediction, Imitation Learning, Diffusion Models, Out-of-Distribution Detection, Conformal Prediction
 

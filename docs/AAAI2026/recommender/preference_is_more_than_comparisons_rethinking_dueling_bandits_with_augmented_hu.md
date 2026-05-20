@@ -18,8 +18,8 @@ content_hash: 936a2745abc52332
 # Preference is More Than Comparisons: Rethinking Dueling Bandits with Augmented Human Feedback
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09047](https://arxiv.org/abs/2511.09047)
-**Code**: [COLA-Laboratory/IPEA-HF](https://github.com/COLA-Laboratory/IPEA-HF)
+**arXiv**: [2511.09047](https://arxiv.org/abs/2511.09047)  
+**Code**: [COLA-Laboratory/IPEA-HF](https://github.com/COLA-Laboratory/IPEA-HF)  
 **Area**: Recommender Systems / Preference Learning
 **Keywords**: Dueling Bandits, Preference Elicitation, Augmented Human Feedback, Confidence Bounds, Multi-Objective Optimization
 

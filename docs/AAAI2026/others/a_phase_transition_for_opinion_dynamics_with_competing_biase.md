@@ -17,8 +17,8 @@ content_hash: 48196f417ee482a4
 # A Phase Transition for Opinion Dynamics with Competing Biases
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09434](https://arxiv.org/abs/2511.09434)
-**Code**: None
+**arXiv**: [2511.09434](https://arxiv.org/abs/2511.09434)  
+**Code**: None  
 **Area**: Other
 **Keywords**: phase transition, opinion dynamics, directed graphs, competing biases, metastability
 
@@ -47,19 +47,19 @@ Each of the $n$ nodes in the network holds a binary opinion (red/blue), initiali
 1. **Graphical Construction**: A marked Poisson process is used to uniformly describe the update rule. Each update carries a four-dimensional mark $(N_1, N_2, M_1, M_2)$, representing two sampled neighbors and two independent Bernoulli bias variables. A node turns blue if and only if both neighbors are "perceived as blue" — i.e., $M_i=1$ (bias activates) or the neighbor is already blue.
 
 2. **COBRAD Dual Particle System**: This is the paper's core technical innovation. The authors construct a COalescing, BRAnching, and Dying (COBRAD) particle system as a dual process running in the **time-reversed** direction. The key duality relation is: **node $x$ is red at time $t$ if and only if the COBRAD particle initiated from $x$ is still alive at time $t$** (Proposition 1). In COBRAD:
-   - Both bias marks are 0: the particle branches into two, each sent to one of the two neighbors (branching).
-   - Exactly one bias mark is 1: the particle moves to the neighbor not affected by bias (coalescence/movement).
-   - Both bias marks are 1: the particle dies (dying).
+    - Both bias marks are 0: the particle branches into two, each sent to one of the two neighbors (branching).
+    - Exactly one bias mark is 1: the particle moves to the neighbor not affected by bias (coalescence/movement).
+    - Both bias marks are 1: the particle dies (dying).
 
    The survival/extinction properties of the particles indirectly characterize opinion evolution.
 
 3. **Random Tree Approximation**: Exploiting the locally tree-like structure of sparse random graphs, the COBRAD process on the DCM is approximated by a process on a random tree — essentially a branching process. On the tree, the particle's survival probability is fully determined by the generating function of the branching process. Key quantities:
-   - The expected offspring count satisfies $p_1 + 2p_2 \leq 1$ if and only if $p \geq p_c(\varrho)$, corresponding to extinction (supercritical regime).
-   - The smallest fixed point $z^\star = \frac{p^2}{(1-p)^2(1-\varrho)} \wedge 1$ gives the extinction probability.
+    - The expected offspring count satisfies $p_1 + 2p_2 \leq 1$ if and only if $p \geq p_c(\varrho)$, corresponding to extinction (supercritical regime).
+    - The smallest fixed point $z^\star = \frac{p^2}{(1-p)^2(1-\varrho)} \wedge 1$ gives the extinction probability.
 
 4. **Characterization via Degree Sequence Statistics**: Remarkably, the entire macroscopic behavior of the system depends on only two scalar quantities:
-   - $\varrho$: the harmonic mean of the reciprocal out-degree weighted by in-degree — reflecting "the influence of high-exposure nodes."
-   - $\lambda$: the uniform mean of the reciprocal out-degree — reflecting "the influence of typical nodes."
+    - $\varrho$: the harmonic mean of the reciprocal out-degree weighted by in-degree — reflecting "the influence of high-exposure nodes."
+    - $\lambda$: the uniform mean of the reciprocal out-degree — reflecting "the influence of typical nodes."
 
    The critical threshold is $p_c(\varrho) = 1 - \sqrt{\varrho} - (1-\sqrt{\varrho})\varrho$, and the metastable red density is $q^\star(p, \varrho, \lambda) = \left(1 - \frac{p^2}{(1-p)^2(1-\varrho)}\right)\left(1 - \frac{p^2(\lambda - \varrho)}{1 - \varrho}\right)$.
 

@@ -18,8 +18,8 @@ content_hash: 578b2e2a91dc1fb3
 # Backdooring Self-Supervised Contrastive Learning by Noisy Alignment
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.14015](https://arxiv.org/abs/2508.14015)
-**Code**: [https://github.com/jsrdcht/Noisy-Alignment](https://github.com/jsrdcht/Noisy-Alignment)
+**arXiv**: [2508.14015](https://arxiv.org/abs/2508.14015)  
+**Code**: [https://github.com/jsrdcht/Noisy-Alignment](https://github.com/jsrdcht/Noisy-Alignment)  
 **Area**: AI Security / Backdoor Attacks on Contrastive Learning
 **Keywords**: self-supervised learning, contrastive learning, backdoor attack, data poisoning, noisy alignment
 

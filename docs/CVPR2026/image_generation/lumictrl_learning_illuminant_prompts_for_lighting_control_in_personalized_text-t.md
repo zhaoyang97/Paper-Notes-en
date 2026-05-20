@@ -18,8 +18,8 @@ content_hash: d30256da2d5deef5
 # LumiCtrl: Learning Illuminant Prompts for Lighting Control in Personalized Text-to-Image Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.17489](https://arxiv.org/abs/2512.17489)
-**Code**: None
+**arXiv**: [2512.17489](https://arxiv.org/abs/2512.17489)  
+**Code**: None  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Lighting Control, Text-to-Image, Personalized Generation, Illumination Prompt Learning, ControlNet
 

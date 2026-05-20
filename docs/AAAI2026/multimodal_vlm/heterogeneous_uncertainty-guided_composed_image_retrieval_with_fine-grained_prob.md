@@ -18,8 +18,8 @@ content_hash: 15f605ec93805a34
 # Heterogeneous Uncertainty-Guided Composed Image Retrieval with Fine-Grained Probabilistic Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.11393](https://arxiv.org/abs/2601.11393)
-**Code**: [https://github.com/tanghme0w/AAAI26-HUG](https://github.com/tanghme0w/AAAI26-HUG)
+**arXiv**: [2601.11393](https://arxiv.org/abs/2601.11393)  
+**Code**: [https://github.com/tanghme0w/AAAI26-HUG](https://github.com/tanghme0w/AAAI26-HUG)  
 **Area**: Multimodal VLM
 **Keywords**: Composed Image Retrieval, Uncertainty Modeling, Probabilistic Embedding, Fine-Grained Matching, Gaussian Representation
 

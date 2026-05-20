@@ -17,8 +17,8 @@ content_hash: 1eec0eab89b4532e
 # Lost in Translation? A Comparative Study on the Cross-Lingual Transfer of Composite Harms
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.07963](https://arxiv.org/abs/2602.07963)
-**Code**: N/A (dataset available upon request from the corresponding author)
+**arXiv**: [2602.07963](https://arxiv.org/abs/2602.07963)  
+**Code**: N/A (dataset available upon request from the corresponding author)  
 **Area**: AI Safety
 **Keywords**: LLM Safety, Multilingual Evaluation, Adversarial Attacks, Cross-Lingual Transfer, Indic Languages
 

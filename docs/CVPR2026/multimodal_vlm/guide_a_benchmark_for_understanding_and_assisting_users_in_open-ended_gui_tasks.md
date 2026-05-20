@@ -18,8 +18,8 @@ content_hash: 63057183647b3d79
 # GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25864](https://arxiv.org/abs/2603.25864)
-**Code**: [https://guide-bench.github.io/](https://guide-bench.github.io/)
+**arXiv**: [2603.25864](https://arxiv.org/abs/2603.25864)  
+**Code**: [https://guide-bench.github.io/](https://guide-bench.github.io/)  
 **Area**: Multimodal VLM / Human-Computer Interaction / GUI Agents
 **Keywords**: GUI understanding, user behavior detection, intent prediction, assistance prediction, novice users
 

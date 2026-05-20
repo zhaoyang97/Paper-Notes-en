@@ -18,8 +18,8 @@ content_hash: 8dac4527f7442a59
 # ZeroS: Zero-Sum Linear Attention for Efficient Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.05230](https://arxiv.org/abs/2602.05230)
-**Code**: Available
+**arXiv**: [2602.05230](https://arxiv.org/abs/2602.05230)  
+**Code**: Available  
 **Area**: LLM Efficiency
 **Keywords**: zero-sum attention, linear attention, softmax decomposition, radial-angular decoupling, O(N) complexity
 

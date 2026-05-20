@@ -18,8 +18,8 @@ content_hash: 4fa0b8fdd82b5540
 # Information-Bottleneck Driven Binary Neural Network for Change Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.03504](https://arxiv.org/abs/2507.03504)
-**Code**: N/A
+**arXiv**: [2507.03504](https://arxiv.org/abs/2507.03504)  
+**Code**: N/A  
 **Area**: Remote Sensing / Change Detection
 **Keywords**: Binary Neural Network, Information Bottleneck, Change Detection, Model Compression, Auxiliary Objective
 

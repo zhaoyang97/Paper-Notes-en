@@ -18,8 +18,8 @@ content_hash: 3795b2b8504dddcb
 # PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17571](https://arxiv.org/abs/2603.17571)
-**Code**: Available (coming soon)
+**arXiv**: [2603.17571](https://arxiv.org/abs/2603.17571)  
+**Code**: Available (coming soon)  
 **Area**: 3D Vision
 **Keywords**: Panoramic 3D reconstruction, feed-forward multi-view reconstruction, spherical position encoding, SO(3) data augmentation, large-scale panoramic dataset
 

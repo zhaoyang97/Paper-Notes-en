@@ -17,8 +17,8 @@ content_hash: 578ef03b91e04a36
 # Regression Trees Know Calculus
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2405.13846](https://arxiv.org/abs/2405.13846)
-**Code**: Unavailable
+**arXiv**: [2405.13846](https://arxiv.org/abs/2405.13846)  
+**Code**: Unavailable  
 **Area**: Other
 **Keywords**: regression trees, gradient estimation, active subspace, integrated gradients, interpretability
 

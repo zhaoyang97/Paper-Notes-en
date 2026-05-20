@@ -18,8 +18,8 @@ content_hash: e8ac097589365068
 # Synthesising Counterfactual Explanations via Label-Conditional Gaussian Mixture Variational Autoencoders
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.04855](https://arxiv.org/abs/2510.04855)
-**Code**: None (uses CARLA library)
+**arXiv**: [2510.04855](https://arxiv.org/abs/2510.04855)  
+**Code**: None (uses CARLA library)  
 **Area**: Explainable AI / Causal Inference
 **Keywords**: Counterfactual explanations, variational autoencoder, Gaussian mixture, robustness, algorithmic recourse
 

@@ -18,8 +18,8 @@ content_hash: 51f50a01038dd0c4
 # Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00431](https://arxiv.org/abs/2603.00431)
-**Code**: [https://github.com/PKU-ICST-MIPL/TARA_CVPR2026](https://github.com/PKU-ICST-MIPL/TARA_CVPR2026)
+**arXiv**: [2603.00431](https://arxiv.org/abs/2603.00431)  
+**Code**: [https://github.com/PKU-ICST-MIPL/TARA_CVPR2026](https://github.com/PKU-ICST-MIPL/TARA_CVPR2026)  
 **Area**: Multimodal VLM
 **Keywords**: Hierarchical Visual Recognition, Biological Taxonomy, Representation Alignment, Biological Foundation Model, Reinforcement Learning Fine-Tuning
 

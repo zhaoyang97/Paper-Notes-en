@@ -18,8 +18,8 @@ content_hash: 61a8bb9b63582a16
 # AdaFuse: Accelerating Dynamic Adapter Inference via Token-Level Pre-Gating and Fused Kernel Optimization
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.11873v1](https://arxiv.org/abs/2603.11873v1)
-**Code**: N/A
+**arXiv**: [2603.11873v1](https://arxiv.org/abs/2603.11873v1)  
+**Code**: N/A  
 **Area**: Model Compression / Efficient LLM Inference
 **Keywords**: Dynamic Adapters, MoE-LoRA, CUDA Kernel Optimization, Inference Acceleration, Token-Level Routing
 

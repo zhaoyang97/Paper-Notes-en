@@ -18,8 +18,8 @@ content_hash: c35d85c4f126d54c
 # Alleviating Textual Reliance in Medical Language-guided Segmentation via Prototype-driven Semantic Approximation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.11055](https://arxiv.org/abs/2507.11055)
-**Code**: [https://github.com/ShuchangYe-bib/ProLearn](https://github.com/ShuchangYe-bib/ProLearn)
+**arXiv**: [2507.11055](https://arxiv.org/abs/2507.11055)  
+**Code**: [https://github.com/ShuchangYe-bib/ProLearn](https://github.com/ShuchangYe-bib/ProLearn)  
 **Area**: Medical Image Segmentation / Multimodal Learning
 **Keywords**: Medical image segmentation, language-guided segmentation, prototype learning, textual reliance, semantic approximation
 

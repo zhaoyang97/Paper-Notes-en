@@ -18,8 +18,8 @@ content_hash: da30ff6ea31e5dc4
 # Describe, Don't Dictate: Semantic Image Editing with Natural Language Intent
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.20505](https://arxiv.org/abs/2508.20505)
-**Code**: N/A
+**arXiv**: [2508.20505](https://arxiv.org/abs/2508.20505)  
+**Code**: N/A  
 **Area**: Image Generation / Image Editing
 **Keywords**: semantic image editing, descriptive editing, Cross-Attentive UNet, LoRA, diffusion models
 

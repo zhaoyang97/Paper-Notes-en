@@ -18,8 +18,8 @@ content_hash: 6a06384d90df8733
 # TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.14698](https://arxiv.org/abs/2512.14698)
-**Code**: [timelens-arc-lab.github.io](https://timelens-arc-lab.github.io/)
+**arXiv**: [2512.14698](https://arxiv.org/abs/2512.14698)  
+**Code**: [timelens-arc-lab.github.io](https://timelens-arc-lab.github.io/)  
 **Area**: Video Temporal Grounding / Multimodal LLM
 **Keywords**: video temporal grounding, data quality, RLVR, timestamp encoding, benchmark refinement
 

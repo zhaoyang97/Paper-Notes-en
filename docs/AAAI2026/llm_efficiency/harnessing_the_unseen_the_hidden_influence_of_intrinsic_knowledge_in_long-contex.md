@@ -18,8 +18,8 @@ content_hash: 7b4b7341980265ee
 # Harnessing the Unseen: The Hidden Influence of Intrinsic Knowledge in Long-Context Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.08202](https://arxiv.org/abs/2504.08202)
-**Code**: [GitHub](https://github.com/FYYFU/Hybrid-NIAH)
+**arXiv**: [2504.08202](https://arxiv.org/abs/2504.08202)  
+**Code**: [GitHub](https://github.com/FYYFU/Hybrid-NIAH)  
 **Area**: LLM Efficiency / Long-Context Evaluation
 **Keywords**: Long-context language models, parametric knowledge, extrinsic retrieval ability, Needle-in-a-Haystack, knowledge conflict
 

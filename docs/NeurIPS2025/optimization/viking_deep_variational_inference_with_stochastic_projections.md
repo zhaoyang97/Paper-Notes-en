@@ -18,8 +18,8 @@ content_hash: 1bca2cc96c89d26b
 # VIKING: Deep Variational Inference with Stochastic Projections
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23684](https://arxiv.org/abs/2510.23684)
-**Code**: [GitHub](https://github.com/fadel/viking)
+**arXiv**: [2510.23684](https://arxiv.org/abs/2510.23684)  
+**Code**: [GitHub](https://github.com/fadel/viking)  
 **Area**: Optimization
 **Keywords**: Variational Inference, Bayesian Deep Learning, Overparameterization, Fisher-Rao Metric, Stochastic Alternating Projections
 

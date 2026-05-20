@@ -18,8 +18,8 @@ content_hash: 44d5c3a5769d41f8
 # A Distributed Asynchronous Generalized Momentum Algorithm Without Delay Bounds
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.08218](https://arxiv.org/abs/2508.08218)
-**Code**: [GitHub](https://github.com/aaai26tagm-sim/TAGM)
+**arXiv**: [2508.08218](https://arxiv.org/abs/2508.08218)  
+**Code**: [GitHub](https://github.com/aaai26tagm-sim/TAGM)  
 **Area**: Optimization / Distributed Computing
 **Keywords**: Distributed Optimization, Total Asynchrony, Generalized Momentum, No Delay Bound, Linear Convergence
 

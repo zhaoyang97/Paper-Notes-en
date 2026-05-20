@@ -18,8 +18,8 @@ content_hash: 43df191e424b744e
 # MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23151](https://arxiv.org/abs/2506.23151)
-**Code**: [https://github.com/msu-video-group/memfof](https://github.com/msu-video-group/memfof)
+**arXiv**: [2506.23151](https://arxiv.org/abs/2506.23151)  
+**Code**: [https://github.com/msu-video-group/memfof](https://github.com/msu-video-group/memfof)  
 **Area**: Video Understanding
 **Keywords**: Optical Flow Estimation, Memory Efficiency, Multi-Frame Estimation, High-Resolution Training, RAFT
 

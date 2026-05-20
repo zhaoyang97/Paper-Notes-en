@@ -18,8 +18,8 @@ content_hash: be625c2cb4dd37f9
 # Principled Fast and Meta Knowledge Learners for Continual Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.00903](https://arxiv.org/abs/2603.00903)
-**Code**: [GitHub](https://github.com/datake/FAME)
+**arXiv**: [2603.00903](https://arxiv.org/abs/2603.00903)  
+**Code**: [GitHub](https://github.com/datake/FAME)  
 **Area**: Reinforcement Learning
 **Keywords**: continual RL, catastrophic forgetting, knowledge transfer, dual-learner, meta learning
 

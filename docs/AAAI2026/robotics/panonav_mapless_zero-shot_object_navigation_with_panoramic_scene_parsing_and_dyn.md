@@ -18,8 +18,8 @@ content_hash: a48fe511648efadc
 # PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06840](https://arxiv.org/abs/2511.06840)
-**Code**: None
+**arXiv**: [2511.06840](https://arxiv.org/abs/2511.06840)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: Zero-shot object navigation, panoramic scene parsing, dynamic memory, mapless navigation, MLLM
 

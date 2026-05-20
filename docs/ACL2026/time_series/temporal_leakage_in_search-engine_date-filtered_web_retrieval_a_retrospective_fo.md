@@ -18,8 +18,8 @@ content_hash: ab0c54428f69efb5
 # Temporal Leakage in Search-Engine Date-Filtered Web Retrieval: A Retrospective Forecasting Case Study
 
 **Conference**: ACL 2026
-**arXiv**: [2602.00758](https://arxiv.org/abs/2602.00758)
-**Code**: [GitHub](https://github.com/theolivecode/WebDataLeakageAudit)
+**arXiv**: [2602.00758](https://arxiv.org/abs/2602.00758)  
+**Code**: [GitHub](https://github.com/theolivecode/WebDataLeakageAudit)  
 **Area**: Time Series
 **Keywords**: temporal leakage, date filtering, retrospective forecasting, search engine audit, evaluation reliability
 

@@ -18,8 +18,8 @@ content_hash: f0695933d7e16c3a
 # From 2D Alignment to 3D Plausibility: Unifying Heterogeneous 2D Priors and Penetration-Free Diffusion for Occlusion-Robust Two-Hand Reconstruction
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.17788](https://arxiv.org/abs/2503.17788)
-**Code**: [Project Page](https://gaogehan.github.io/A2P/)
+**arXiv**: [2503.17788](https://arxiv.org/abs/2503.17788)  
+**Code**: [Project Page](https://gaogehan.github.io/A2P/)  
 **Area**: Segmentation / 3D Hand Reconstruction
 **Keywords**: two-hand reconstruction, 2D prior fusion, diffusion model, penetration elimination, occlusion robustness
 

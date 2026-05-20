@@ -18,8 +18,8 @@ content_hash: 2a7c2c87309efd45
 # Temporal Concept Dynamics in Diffusion Models via Prompt-Conditioned Interventions
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.08486](https://arxiv.org/abs/2512.08486)
-**Code**: [PCI Framework](https://github.com/agoerguen/PCI)
+**arXiv**: [2512.08486](https://arxiv.org/abs/2512.08486)  
+**Code**: [PCI Framework](https://github.com/agoerguen/PCI)  
 **Area**: Diffusion Models / Interpretability / Image Editing
 **Keywords**: Temporal concept dynamics, prompt-conditioned intervention, concept insertion success rate, diffusion interpretability, training-free editing
 

@@ -17,8 +17,8 @@ content_hash: f2c5cb752098f988
 # Reviving ConvNeXt for Efficient Convolutional Diffusion Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09408](https://arxiv.org/abs/2603.09408)
-**Code**: Available (official implementation released)
+**arXiv**: [2603.09408](https://arxiv.org/abs/2603.09408)  
+**Code**: Available (official implementation released)  
 **Area**: Image Generation
 **Keywords**: Diffusion models, ConvNeXt, fully convolutional, efficient generation, image generation
 **Institution**: KAIST, ETH Zürich, ISTI-CNR, University of Pisa

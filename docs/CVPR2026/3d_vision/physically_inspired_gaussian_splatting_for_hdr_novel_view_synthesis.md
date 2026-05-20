@@ -18,8 +18,8 @@ content_hash: 6e38bac6edbd3a36
 # Physically Inspired Gaussian Splatting for HDR Novel View Synthesis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28020](https://arxiv.org/abs/2603.28020)
-**Code**: [https://huimin-zeng.github.io/PhysHDR-GS/](https://huimin-zeng.github.io/PhysHDR-GS/)
+**arXiv**: [2603.28020](https://arxiv.org/abs/2603.28020)  
+**Code**: [https://huimin-zeng.github.io/PhysHDR-GS/](https://huimin-zeng.github.io/PhysHDR-GS/)  
 **Area**: 3D Vision / HDR Novel View Synthesis
 **Keywords**: HDR Novel View Synthesis, 3DGS, Physically-Inspired Rendering, Dual-Branch Architecture, Illumination-Guided Gradient Scaling
 

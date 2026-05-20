@@ -17,8 +17,8 @@ content_hash: b5fc456f9072e716
 # MF-Speech: Achieving Fine-Grained and Compositional Control in Speech Generation via Factor Disentanglement
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12074](https://arxiv.org/abs/2511.12074)
-**Code**: [GitHub (Demo)](https://guoyang25.github.io/mf-speech/)
+**arXiv**: [2511.12074](https://arxiv.org/abs/2511.12074)  
+**Code**: [GitHub (Demo)](https://guoyang25.github.io/mf-speech/)  
 **Area**: Others
 **Keywords**: Speech Generation, Factor Disentanglement, Controllable Speech Synthesis, Contrastive Learning, Adaptive Style Injection
 

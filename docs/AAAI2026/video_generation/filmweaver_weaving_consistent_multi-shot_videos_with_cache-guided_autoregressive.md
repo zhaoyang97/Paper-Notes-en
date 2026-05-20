@@ -18,8 +18,8 @@ content_hash: c9264cb18f0b5462
 # FilmWeaver: Weaving Consistent Multi-Shot Videos with Cache-Guided Autoregressive Diffusion
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.11274](https://arxiv.org/abs/2512.11274)
-**Code**: [Project Page](https://filmweaver.github.io)
+**arXiv**: [2512.11274](https://arxiv.org/abs/2512.11274)  
+**Code**: [Project Page](https://filmweaver.github.io)  
 **Area**: Video Generation
 **Keywords**: Multi-shot video generation, autoregressive diffusion, cache mechanism, consistency, long video generation
 

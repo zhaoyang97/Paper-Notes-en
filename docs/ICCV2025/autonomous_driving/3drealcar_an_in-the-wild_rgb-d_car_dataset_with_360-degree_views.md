@@ -17,8 +17,8 @@ content_hash: a1730ccd9b77a7b9
 # 3DRealCar: An In-the-wild RGB-D Car Dataset with 360-degree Views
 
 **Conference**: ICCV 2025
-**arXiv**: [2406.04875](https://arxiv.org/abs/2406.04875)
-**Code**: N/A (dataset project)
+**arXiv**: [2406.04875](https://arxiv.org/abs/2406.04875)  
+**Code**: N/A (dataset project)  
 **Area**: Autonomous Driving
 **Keywords**: 3D vehicle dataset, RGB-D, 360-degree views, 3D reconstruction, autonomous driving
 

@@ -18,8 +18,8 @@ content_hash: 7d34f00cf40ff9c6
 # Right Looks, Wrong Reasons: Compositional Fidelity in Text-to-Image Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10136](https://arxiv.org/abs/2511.10136)
-**Code**: None
+**arXiv**: [2511.10136](https://arxiv.org/abs/2511.10136)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Compositional generation, text-to-image, negation reasoning, counting, spatial relations
 

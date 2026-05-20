@@ -17,8 +17,8 @@ content_hash: 1ecb85ce39d04dad
 # Distilled Decoding 2: One-step Sampling of Image Auto-regressive Models with Conditional Score Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21003](https://arxiv.org/abs/2510.21003)
-**Code**: [GitHub](https://github.com/imagination-research/Distilled-Decoding-2)
+**arXiv**: [2510.21003](https://arxiv.org/abs/2510.21003)  
+**Code**: [GitHub](https://github.com/imagination-research/Distilled-Decoding-2)  
 **Area**: Image Generation / Model Acceleration
 **Keywords**: Auto-regressive model acceleration, one-step generation, score distillation, conditional score distillation, image generation
 
@@ -50,27 +50,27 @@ Training proceeds in two stages: (1) **Initialization stage** — the classifica
 
 1. **Teacher AR Model as a Conditional Score Model**
 
-   - **Function**: Converts discrete probability vectors into continuous score signals.
-   - **Mechanism**: The sampling of token $q_i$ is viewed as a flow matching process from a weighted sum of Dirac functions to a Gaussian distribution. Given the teacher's output probability vector $p = (p_1, \ldots, p_V)$ and flow matching timestep $t$, the conditional score is computed analytically as:
+    - **Function**: Converts discrete probability vectors into continuous score signals.
+    - **Mechanism**: The sampling of token $q_i$ is viewed as a flow matching process from a weighted sum of Dirac functions to a Gaussian distribution. Given the teacher's output probability vector $p = (p_1, \ldots, p_V)$ and flow matching timestep $t$, the conditional score is computed analytically as:
      $$s(x_t, t, p) = -\frac{\sum_j p_j(x_t - (1-t)c_j)e^{-\frac{(x_t-(1-t)c_j)^2}{2t^2}}}{t^2 \sum_j p_j e^{-\frac{(x_t-(1-t)c_j)^2}{2t^2}}}$$
      Unlike DD1, DD2 does not use this score to construct an ODE mapping but employs it directly for distillation.
-   - **Design Motivation**: AR models implicitly encode complete conditional score information at every token position. DD1 exploits only a portion of this information (for mapping construction), whereas DD2 utilizes it more fully.
+    - **Design Motivation**: AR models implicitly encode complete conditional score information at every token position. DD1 exploits only a portion of this information (for mapping construction), whereas DD2 utilizes it more fully.
 
 2. **Conditional Score Distillation Loss (CSD Loss)**
 
-   - **Function**: Trains a one-step generator whose output sequence joint distribution matches the teacher AR model.
-   - **Mechanism**: At each token position $i$, the teacher's conditional score $s_\Phi(q_i^{t_i}, t_i | q_{<i})$ is aligned with the fake conditional score $s_{\text{fake}}(q_i^{t_i}, t_i | q_{<i})$ learned by the guidance network. The CSD loss sums score distillation losses across all positions:
+    - **Function**: Trains a one-step generator whose output sequence joint distribution matches the teacher AR model.
+    - **Mechanism**: At each token position $i$, the teacher's conditional score $s_\Phi(q_i^{t_i}, t_i | q_{<i})$ is aligned with the fake conditional score $s_{\text{fake}}(q_i^{t_i}, t_i | q_{<i})$ learned by the guidance network. The CSD loss sums score distillation losses across all positions:
      $$\mathcal{L}_{CSD} = \mathbb{E}\sum_{i=1}^n d\!\left(s_\Phi(q_i^{t_i}, t_i | sg(q_{<i})),\, s_{\text{fake}}(q_i^{t_i}, t_i | sg(q_{<i}))\right)$$
      where $sg(\cdot)$ denotes stop-gradient. The SiD loss form is adopted. A key theoretical guarantee (Proposition 1) establishes that minimizing the CSD loss implies that the generator's joint distribution matches the teacher's.
-   - **Design Motivation**: The progressive alignment logic — first aligning the marginal distribution of $q_1$ (unconditional), then $q_2 | q_1$ conditioned on it, and so on — is more tractable to optimize than directly aligning the full joint distribution.
+    - **Design Motivation**: The progressive alignment logic — first aligning the marginal distribution of $q_1$ (unconditional), then $q_2 | q_1$ conditioned on it, and so on — is more tractable to optimize than directly aligning the full joint distribution.
 
 3. **AR-Diffusion Initialization Strategy**
 
-   - **Function**: Provides a well-conditioned initialization for both the generator and the guidance network.
-   - **Mechanism**: Directly initializing from the teacher AR model is infeasible since the teacher outputs discrete probabilities while the generator must output continuous values. The solution replaces the teacher's classification head with an MLP and fine-tunes it using the Ground Truth Score (GTS) loss:
+    - **Function**: Provides a well-conditioned initialization for both the generator and the guidance network.
+    - **Mechanism**: Directly initializing from the teacher AR model is infeasible since the teacher outputs discrete probabilities while the generator must output continuous values. The solution replaces the teacher's classification head with an MLP and fine-tunes it using the Ground Truth Score (GTS) loss:
      $$\mathcal{L}_{GTS} = \mathbb{E}\sum_{i=1}^n \|s_\psi(q_i^{t_i}, t_i | q_{<i}) - s_\Phi(q_i^{t_i}, t_i | q_{<i})\|^2$$
      i.e., directly regressing the analytic score of the teacher. The resulting model serves as the initialization for both the generator and the guidance network.
-   - **Design Motivation**: Experiments demonstrate that without proper initialization, score distillation collapses entirely. Even randomly initializing only the last layer of the generator leads to severe performance degradation. The GTS loss converges faster and more stably than the standard AR-diffusion loss.
+    - **Design Motivation**: Experiments demonstrate that without proper initialization, score distillation collapses entirely. Even randomly initializing only the last layer of the generator leads to severe performance degradation. The GTS loss converges faster and more stably than the standard AR-diffusion loss.
 
 ### Loss & Training
 

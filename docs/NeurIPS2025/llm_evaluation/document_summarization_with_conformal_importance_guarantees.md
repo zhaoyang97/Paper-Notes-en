@@ -18,8 +18,8 @@ content_hash: b7930cf24d68c4c8
 # Document Summarization with Conformal Importance Guarantees
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20461](https://arxiv.org/abs/2509.20461)
-**Code**: [https://github.com/layer6ai-labs/conformal-importance-summarization](https://github.com/layer6ai-labs/conformal-importance-summarization)
+**arXiv**: [2509.20461](https://arxiv.org/abs/2509.20461)  
+**Code**: [https://github.com/layer6ai-labs/conformal-importance-summarization](https://github.com/layer6ai-labs/conformal-importance-summarization)  
 **Area**: LLM Evaluation
 **Keywords**: Document Summarization, Conformal Prediction, Importance Coverage Guarantee, Extractive Summarization, Distribution-Free
 

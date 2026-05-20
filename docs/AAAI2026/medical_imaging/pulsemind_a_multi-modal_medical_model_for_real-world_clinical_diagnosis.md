@@ -18,8 +18,8 @@ content_hash: e03c9fb4d9d59ebc
 # PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.07344](https://arxiv.org/abs/2601.07344)
-**Code**: [GitHub](https://github.com/AQ-MedAI/PulseMind)
+**arXiv**: [2601.07344](https://arxiv.org/abs/2601.07344)  
+**Code**: [GitHub](https://github.com/AQ-MedAI/PulseMind)  
 **Area**: Medical Imaging
 **Keywords**: Medical multimodal model, multi-turn diagnostic dialogue, reinforcement learning, comparative reward, clinical evaluation benchmark
 

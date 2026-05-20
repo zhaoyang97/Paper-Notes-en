@@ -18,8 +18,8 @@ content_hash: e696200a55c5525c
 # Domain-Adaptive Transformer for Data-Efficient Glioma Segmentation in Sub-Saharan MRI
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02928](https://arxiv.org/abs/2511.02928)
-**Code**: None
+**arXiv**: [2511.02928](https://arxiv.org/abs/2511.02928)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Glioma segmentation, domain adaptation, Transformer, resource-constrained, BraTS-Africa
 

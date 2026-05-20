@@ -18,8 +18,8 @@ content_hash: 2aaa5cce7a0caa4d
 # Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.21662](https://arxiv.org/abs/2511.21662)
-**Code**: [https://multi-crit.github.io](https://multi-crit.github.io)
+**arXiv**: [2511.21662](https://arxiv.org/abs/2511.21662)  
+**Code**: [https://multi-crit.github.io](https://multi-crit.github.io)  
 **Area**: Multimodal VLM
 **Keywords**: LMM-as-Judge, multi-criteria evaluation, benchmark, preference conflict, evaluation reliability
 

@@ -18,8 +18,8 @@ content_hash: 6e7592559c651113
 # Reasoning by Superposition: A Theoretical Perspective on Chain of Continuous Thought
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12514](https://arxiv.org/abs/2505.12514)
-**Code**: [GitHub](https://github.com/Ber666/reasoning-by-superposition)
+**arXiv**: [2505.12514](https://arxiv.org/abs/2505.12514)  
+**Code**: [GitHub](https://github.com/Ber666/reasoning-by-superposition)  
 **Area**: LLM Reasoning
 **Keywords**: continuous chain of thought, superposition-state reasoning, graph reachability, Transformer expressiveness, Coconut
 

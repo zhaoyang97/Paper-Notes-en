@@ -18,8 +18,8 @@ content_hash: 320b0ce80d1594ea
 # Diffusion Reconstruction-Based Data Likelihood Estimation for Core-Set Selection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19274](https://arxiv.org/abs/2511.19274)
-**Code**: [GitHub](https://github.com/mchen725/DRD)
+**arXiv**: [2511.19274](https://arxiv.org/abs/2511.19274)  
+**Code**: [GitHub](https://github.com/mchen725/DRD)  
 **Area**: Image Generation
 **Keywords**: Core-set selection, diffusion models, data likelihood, reconstruction bias, information bottleneck
 

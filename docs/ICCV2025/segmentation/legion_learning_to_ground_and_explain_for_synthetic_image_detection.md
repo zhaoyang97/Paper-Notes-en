@@ -18,8 +18,8 @@ content_hash: 89943b610a7c8047
 # LEGION: Learning to Ground and Explain for Synthetic Image Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.15264](https://arxiv.org/abs/2503.15264)
-**Code**: [opendatalab.github.io/LEGION](https://opendatalab.github.io/LEGION)
+**arXiv**: [2503.15264](https://arxiv.org/abs/2503.15264)  
+**Code**: [opendatalab.github.io/LEGION](https://opendatalab.github.io/LEGION)  
 **Area**: Image Segmentation
 **Keywords**: Synthetic Image Detection, Artifact Localization, MLLM, Explainability, Image Refinement
 

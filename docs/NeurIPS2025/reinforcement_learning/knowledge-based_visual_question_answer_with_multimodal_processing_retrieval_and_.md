@@ -17,8 +17,8 @@ content_hash: e81be61340c0e7bb
 # Knowledge-based Visual Question Answer with Multimodal Processing, Retrieval and Filtering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.14605](https://arxiv.org/abs/2510.14605)
-**Code**: [GitHub](https://github.com/cqu-student/Wiki-PRF)
+**arXiv**: [2510.14605](https://arxiv.org/abs/2510.14605)  
+**Code**: [GitHub](https://github.com/cqu-student/Wiki-PRF)  
 **Area**: Reinforcement Learning / Visual Question Answering / Retrieval-Augmented Generation
 **Keywords**: KB-VQA, RAG, Multimodal Retrieval, Reinforcement Learning, Tool Calling
 

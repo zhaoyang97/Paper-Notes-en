@@ -18,8 +18,8 @@ content_hash: 53049a972dfffe32
 # Metropolis-Hastings Sampling for 3D Gaussian Reconstruction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.12945](https://arxiv.org/abs/2506.12945)
-**Code**: [Project Page](https://hjhyunjinkim.github.io/MH-3DGS)
+**arXiv**: [2506.12945](https://arxiv.org/abs/2506.12945)  
+**Code**: [Project Page](https://hjhyunjinkim.github.io/MH-3DGS)  
 **Area**: 3D Vision / Novel View Synthesis
 **Keywords**: 3D Gaussian Splatting, Metropolis-Hastings, Adaptive Density Control, Novel View Synthesis, MCMC
 

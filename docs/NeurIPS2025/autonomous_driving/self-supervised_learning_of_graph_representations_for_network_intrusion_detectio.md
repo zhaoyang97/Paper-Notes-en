@@ -18,8 +18,8 @@ content_hash: b40e6efc689906d1
 # Self-Supervised Learning of Graph Representations for Network Intrusion Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16625](https://arxiv.org/abs/2509.16625)
-**Code**: N/A
+**arXiv**: [2509.16625](https://arxiv.org/abs/2509.16625)  
+**Code**: N/A  
 **Area**: Cybersecurity / Graph Learning
 **Keywords**: network intrusion detection, graph neural networks, self-supervised learning, masked autoencoder, anomaly detection
 

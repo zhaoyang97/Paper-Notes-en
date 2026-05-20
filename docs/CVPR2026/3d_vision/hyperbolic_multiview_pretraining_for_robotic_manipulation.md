@@ -18,8 +18,8 @@ content_hash: 1df62fd3fe80ab4e
 # HyperMVP: Hyperbolic Multiview Pretraining for Robotic Manipulation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04848](https://arxiv.org/abs/2603.04848)
-**Code**: To be confirmed
+**arXiv**: [2603.04848](https://arxiv.org/abs/2603.04848)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: Hyperbolic space, multiview pretraining, robotic manipulation, self-supervised learning, 3D representation
 

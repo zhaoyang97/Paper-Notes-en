@@ -18,8 +18,8 @@ content_hash: 872e1bdb287baf39
 # General Exploratory Bonus for Optimistic Exploration in RLHF
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03269](https://arxiv.org/abs/2510.03269)
-**Code**: Available (see paper link)
+**arXiv**: [2510.03269](https://arxiv.org/abs/2510.03269)  
+**Code**: Available (see paper link)  
 **Area**: Alignment / RLHF
 **Keywords**: exploratory bonus, optimistic exploration, RLHF, α-divergence, sample efficiency
 

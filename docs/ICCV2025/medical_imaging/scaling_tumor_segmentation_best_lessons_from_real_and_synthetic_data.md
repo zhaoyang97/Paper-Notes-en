@@ -18,8 +18,8 @@ content_hash: bce159f358abe464
 # Scaling Tumor Segmentation: Best Lessons from Real and Synthetic Data
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.14831](https://arxiv.org/abs/2510.14831)
-**Code**: [https://github.com/BodyMaps/AbdomenAtlas2.0](https://github.com/BodyMaps/AbdomenAtlas2.0)
+**arXiv**: [2510.14831](https://arxiv.org/abs/2510.14831)  
+**Code**: [https://github.com/BodyMaps/AbdomenAtlas2.0](https://github.com/BodyMaps/AbdomenAtlas2.0)  
 **Area**: Medical Imaging / Tumor Segmentation
 **Keywords**: Data scaling laws, tumor segmentation, synthetic data, AbdomenAtlas, CT segmentation
 

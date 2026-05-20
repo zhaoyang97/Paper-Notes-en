@@ -17,8 +17,8 @@ content_hash: 960689c17ed43502
 # Robot-R1: Reinforcement Learning for Enhanced Embodied Reasoning in Robotics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.00070](https://arxiv.org/abs/2506.00070)
-**Code**: [GitHub](https://github.com/hiyouga/EasyR1)
+**arXiv**: [2506.00070](https://arxiv.org/abs/2506.00070)  
+**Code**: [GitHub](https://github.com/hiyouga/EasyR1)  
 **Area**: Reinforcement Learning
 **Keywords**: Embodied Reasoning, Reinforcement Learning, Robot Control, GRPO, Large Vision-Language Models
 
@@ -51,9 +51,9 @@ Robot-R1 follows a three-stage pipeline: (1) extracting metadata and keyframes f
 
 2. **Three MCQA task designs**:
 
-   - **Waypoint prediction QA** (primary task): Given current observation $o_t$, state $s_t$, and metadata $M$, predict the next keyframe state $s_{k^*}$. Each question contains the correct answer and 3 distractors randomly sampled from the valid state space.
-   - **Current state prediction QA** (auxiliary task): Identify the current state $s_t$ from visual observations, enhancing the model's understanding of its own state.
-   - **Motion prediction QA** (auxiliary task): Predict the motion direction from the current state to the next keyframe (e.g., "move upward," "slightly backward"). Motion labels are extracted from 3D Cartesian displacements via rule-based heuristics.
+    - **Waypoint prediction QA** (primary task): Given current observation $o_t$, state $s_t$, and metadata $M$, predict the next keyframe state $s_{k^*}$. Each question contains the correct answer and 3 distractors randomly sampled from the valid state space.
+    - **Current state prediction QA** (auxiliary task): Identify the current state $s_t$ from visual observations, enhancing the model's understanding of its own state.
+    - **Motion prediction QA** (auxiliary task): Predict the motion direction from the current state to the next keyframe (e.g., "move upward," "slightly backward"). Motion labels are extracted from 3D Cartesian displacements via rule-based heuristics.
 
    The core motivation for discretizing continuous state prediction into multiple-choice questions is that the continuous action space is too large for effective RL exploration; discretization narrows the action space, making learning more efficient.
 

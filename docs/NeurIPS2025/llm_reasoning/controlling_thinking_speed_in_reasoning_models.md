@@ -18,8 +18,8 @@ content_hash: 037945c92cf9e158
 # Controlling Thinking Speed in Reasoning Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.03704](https://arxiv.org/abs/2507.03704)
-**Code**: Implemented based on vLLM
+**arXiv**: [2507.03704](https://arxiv.org/abs/2507.03704)  
+**Code**: Implemented based on vLLM  
 **Area**: LLM Reasoning Efficiency / Representation Engineering
 **Keywords**: thinking speed, representation engineering, System 1/2, test-time scaling, steering vector
 

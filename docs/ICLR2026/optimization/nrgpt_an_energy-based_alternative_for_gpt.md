@@ -18,8 +18,8 @@ content_hash: fff714875a1c0f30
 # NRGPT: An Energy-based Alternative for GPT
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.16762](https://arxiv.org/abs/2512.16762)
-**Code**: None
+**arXiv**: [2512.16762](https://arxiv.org/abs/2512.16762)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: Energy-based models, GPT, autoregressive, gradient descent inference, asymptotic stability
 

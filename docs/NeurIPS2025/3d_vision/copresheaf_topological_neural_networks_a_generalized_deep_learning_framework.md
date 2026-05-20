@@ -18,8 +18,8 @@ content_hash: fafe389d02948055
 # Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21251](https://arxiv.org/abs/2505.21251)
-**Code**: None
+**arXiv**: [2505.21251](https://arxiv.org/abs/2505.21251)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: Topological Neural Networks, Copresheaf, Combinatorial Complex, Message Passing, Anisotropic Representation Learning
 

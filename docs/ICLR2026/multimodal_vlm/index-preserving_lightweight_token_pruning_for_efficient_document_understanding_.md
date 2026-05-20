@@ -18,8 +18,8 @@ content_hash: 05b9357e15fd4518
 # Index-Preserving Lightweight Token Pruning for Efficient Document Understanding
 
 **Conference**: ICLR 2026 (Workshop on MM Intelligence)
-**arXiv**: [2509.06415](https://arxiv.org/abs/2509.06415)
-**Code**: [GitHub](https://github.com/jaeminSon/index-preserving-lightweight-token-pruning)
+**arXiv**: [2509.06415](https://arxiv.org/abs/2509.06415)  
+**Code**: [GitHub](https://github.com/jaeminSon/index-preserving-lightweight-token-pruning)  
 **Area**: Multimodal VLM / Document Understanding
 **Keywords**: token pruning, document understanding, VLM efficiency, patch classifier, index preservation
 

@@ -18,8 +18,8 @@ content_hash: 812ad73dd1202ac2
 # Towards Reliable and Holistic Visual In-Context Learning Prompt Selection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25989](https://arxiv.org/abs/2509.25989)
-**Code**: [github.com/Wu-Wenxiao/RH-Partial2Global](https://github.com/Wu-Wenxiao/RH-Partial2Global)
+**arXiv**: [2509.25989](https://arxiv.org/abs/2509.25989)  
+**Code**: [github.com/Wu-Wenxiao/RH-Partial2Global](https://github.com/Wu-Wenxiao/RH-Partial2Global)  
 **Area**: Visual In-Context Learning / Prompt Selection
 **Keywords**: visual in-context learning, conformal prediction, covering design, prompt selection, global ranking
 

@@ -18,8 +18,8 @@ content_hash: 202fd0d775106b79
 # Robust Multi-Objective Controlled Decoding of Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.08796](https://arxiv.org/abs/2503.08796)
-**Code**: [GitHub](https://github.com/williambankes/robust-multi-objective-decoding)
+**arXiv**: [2503.08796](https://arxiv.org/abs/2503.08796)  
+**Code**: [GitHub](https://github.com/williambankes/robust-multi-objective-decoding)  
 **Area**: Reinforcement Learning
 **Keywords**: multi-objective alignment, inference-time alignment, controlled decoding, robust optimization, minimax game
 

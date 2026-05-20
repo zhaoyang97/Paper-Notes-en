@@ -18,8 +18,8 @@ content_hash: c6df223b48514a2f
 # Stackelberg Coupling of Online Representation Learning and Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.07452](https://arxiv.org/abs/2508.07452)
-**Code**: [https://github.com/fernando-ml/SCORER](https://github.com/fernando-ml/SCORER)
+**arXiv**: [2508.07452](https://arxiv.org/abs/2508.07452)  
+**Code**: [https://github.com/fernando-ml/SCORER](https://github.com/fernando-ml/SCORER)  
 **Area**: Reinforcement Learning / Representation Learning
 **Keywords**: Stackelberg Game, Representation Learning, Deep Q-Learning, Two-Timescale, Variance Minimization
 

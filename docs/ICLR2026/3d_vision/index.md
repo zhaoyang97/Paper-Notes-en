@@ -21,9 +21,9 @@ tags:
 
 **🔬 ICLR2026** · **63** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (230)](../../CVPR2026/3d_vision/index.md) · [🤖 AAAI2026 (74)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (254)](../../ICCV2025/3d_vision/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (8)](../../ICML2026/3d_vision/index.md) · [📷 CVPR2026 (230)](../../CVPR2026/3d_vision/index.md) · [🤖 AAAI2026 (76)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (112)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (263)](../../ICCV2025/3d_vision/index.md)
 
-🔥 **Top topics:** 3D Gaussian Splatting ×10 · Robotics ×4 · Dynamic Scenes ×4 · 3D Reconstruction ×4 · Novel View Synthesis ×3
+🔥 **Top topics:** 3D Gaussian Splatting ×11 · Robotics ×4 · Dynamic Scenes ×4 · 3D Reconstruction ×4 · Novel View Synthesis ×3
 
 **[3DGEER: 3D Gaussian Rendering Made Exact and Efficient for Generic Cameras](3dgeer_3d_gaussian_rendering_made_exact_and_efficient_for_generic_cameras.md)**
 
@@ -40,10 +40,6 @@ tags:
 **[Augmented Radiance Field: A General Framework for Enhanced Gaussian Splatting](augmented_radiance_field_a_general_framework_for_enhanced_gaussian_splatting.md)**
 
 :   This paper proposes the Augmented Radiance Field (ARF) framework, which explicitly models specular components by designing augmented Gaussian kernels with view-dependent opacity. An error-driven compensation strategy is introduced (2D Gaussian initialization → inverse projection to 3D → joint optimization) to enhance existing 3DGS scenes as a plug-and-play post-processing step. The method surpasses state-of-the-art NeRF approaches on multiple benchmarks while requiring only second-order spherical harmonics to capture complex illumination.
-
-**[Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer](brain-it_image_reconstruction_from_fmri_via_brain-interaction_transformer.md)**
-
-:   This paper proposes Brain-IT, a framework that employs a brain-inspired Brain Interaction Transformer (BIT) to cluster functionally similar brain voxels into cross-subject shared Brain Tokens, from which localized semantic and structural image features are predicted, enabling high-fidelity reconstruction of images from fMRI signals. With only 1 hour of data, Brain-IT achieves performance comparable to prior methods trained on 40 hours of data.
 
 **[CloDS: Visual-Only Unsupervised Cloth Dynamics Learning in Unknown Conditions](clods_visual-only_unsupervised_cloth_dynamics_learning_in_unknown_conditions.md)**
 
@@ -137,10 +133,6 @@ tags:
 
 :   This paper proposes Light-Geometry Interaction (LGI) maps, a 2.5D representation encoding light-occlusion relationships derived from monocular depth estimation. Embedded within a bridge matching generative framework, LGI maps enable joint modeling of shadow generation and object relighting, achieving state-of-the-art performance on both synthetic and real images.
 
-**[LaVCa: LLM-assisted Visual Cortex Captioning](lavca_llm-assisted_visual_cortex_captioning.md)**
-
-:   This paper proposes LaVCa, a method that leverages LLMs to generate natural language captions for individual voxels in the human visual cortex. Through a four-step pipeline—encoding model construction, optimal image selection, MLLM-based captioning, and LLM-driven keyword extraction with sentence composition—LaVCa reveals voxel-level visual selectivity more accurately and with greater semantic diversity than the prior method BrainSCUBA.
-
 **[Learning Part-Aware Dense 3D Feature Field for Generalizable Articulated Object Manipulation](learning_part-aware_dense_3d_feature_field_for_generalizable_articulated_object_.md)**
 
 :   This paper proposes PA3FF (Part-Aware 3D Feature Field), a natively 3D dense part-aware feature representation. By combining a Sonata pre-trained backbone with geometric and semantic contrastive learning, PA3FF yields zero-shot part-level features. Paired with a Part-Aware Diffusion Policy (PADP), the system achieves few-shot, highly generalizable articulated object manipulation, substantially outperforming baselines such as CLIP, DINOv2, and GenDP in both simulation and real-world settings.
@@ -160,6 +152,10 @@ tags:
 **[MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning](megs2_memory-efficient_gaussian_splatting_via_spherical_gaussians_and_unified_pr.md)**
 
 :   This paper proposes MEGS2, a method that compresses 3DGS from the perspective of rendering VRAM: it replaces spherical harmonics (SH) entirely with prunable, arbitrarily oriented spherical Gaussians (SG) to reduce per-primitive parameter count, and formulates the joint pruning of primitive count and lobe count as a single memory-constrained optimization problem via a unified soft pruning framework. The result is an 8× reduction in static VRAM and a 6× reduction in rendering VRAM with preserved rendering quality, enabling real-time 3DGS on mobile devices for the first time.
+
+**[MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)**
+
+:   This paper proposes MoE-GS, the first framework to introduce a Mixture-of-Experts architecture into dynamic Gaussian Splatting. Through a Volume-aware Pixel Router, it adaptively fuses multiple heterogeneous deformation priors (HexPlane / per-Gaussian / polynomial / interpolation), consistently surpassing state-of-the-art methods on the N3V and Technicolor datasets, while maintaining efficiency via single-pass rendering, gate-aware pruning, and knowledge distillation.
 
 **[Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos](mono4dgs-hdr_high_dynamic_range_4d_gaussian_splatting_from_alternating-exposure_.md)**
 
@@ -252,6 +248,10 @@ tags:
 **[SurfSplat: Conquering Feedforward 2D Gaussian Splatting with Surface Continuity Priors](surfsplat_conquering_feedforward_2d_gaussian_splatting_with_surface_continuity_p.md)**
 
 :   SurfSplat proposes a feedforward 3D reconstruction framework based on 2DGS that binds Gaussian rotation and scale to local neighborhood positions via surface continuity priors, resolves color bias through a forced alpha blending strategy, and introduces the HRRC metric to reveal reconstruction quality discrepancies at high resolutions.
+
+**[Text-to-3D by Stitching a Multi-view Reconstruction Network to a Video Generator](text-to-3d_by_stitching_a_multi-view_reconstruction_network_to_a_video_generator.md)**
+
+:   This paper proposes VIST3A, a framework that seamlessly connects the latent space of a pretrained video generator to a feed-forward 3D reconstruction model (e.g., AnySplat/MVDUSt3R/VGGT) via model stitching, and employs direct reward finetuning to align the generative model with the stitched 3D decoder. The approach enables high-quality end-to-end text-to-3DGS and text-to-pointmap generation, achieving state-of-the-art results on T3Bench, SceneBench, and DPG-Bench.
 
 **[Topology-Preserved Auto-regressive Mesh Generation in the Manner of Weaving Silk](topology-preserved_auto-regressive_mesh_generation_in_the_manner_of_weaving_silk.md)**
 

@@ -18,8 +18,8 @@ content_hash: 20394dcc23bbc87f
 # E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08543](https://arxiv.org/abs/2604.08543)
-**Code**: [https://4dqv.mpi-inf.mpg.de/E-3DPSM/](https://4dqv.mpi-inf.mpg.de/E-3DPSM/)
+**arXiv**: [2604.08543](https://arxiv.org/abs/2604.08543)  
+**Code**: [https://4dqv.mpi-inf.mpg.de/E-3DPSM/](https://4dqv.mpi-inf.mpg.de/E-3DPSM/)  
 **Area**: Human Understanding
 **Keywords**: event camera, egocentric pose estimation, state space model, 3D human pose, temporal consistency
 

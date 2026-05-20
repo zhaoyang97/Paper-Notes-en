@@ -18,8 +18,8 @@ content_hash: b24bbfe76624e27e
 # Model Inversion with Layer-Specific Modeling and Alignment for Data-Free Continual Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26311](https://arxiv.org/abs/2510.26311)
-**Code**: None
+**arXiv**: [2510.26311](https://arxiv.org/abs/2510.26311)  
+**Code**: None  
 **Area**: AI Safety / Continual Learning
 **Keywords**: Model inversion, data-free continual learning, per-layer optimization, feature alignment, privacy preservation
 

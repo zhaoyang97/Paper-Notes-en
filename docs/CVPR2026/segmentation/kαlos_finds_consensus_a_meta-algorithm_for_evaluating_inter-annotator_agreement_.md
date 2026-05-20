@@ -18,8 +18,8 @@ content_hash: 04470e43ce633fdf
 # Kαlos finds Consensus: A Meta-Algorithm for Evaluating Inter-Annotator Agreement in Complex Vision Tasks
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27197](https://arxiv.org/abs/2603.27197)
-**Code**: [GitHub](https://github.com/Madave94/kalos)
+**arXiv**: [2603.27197](https://arxiv.org/abs/2603.27197)  
+**Code**: [GitHub](https://github.com/Madave94/kalos)  
 **Area**: Segmentation
 **Keywords**: inter-annotator agreement, data quality assessment, Krippendorff's Alpha, object detection, benchmark evaluation
 
@@ -49,19 +49,19 @@ KαLOS is a meta-algorithm pipeline:
 ### Key Designs
 
 1. **Data-driven distance function and threshold calibration**:
-   - Function: Adaptively determines the optimal localization distance function and matching threshold for different tasks.
-   - Mechanism: Distributional analysis is used to distinguish "observed disagreement" ($D_o$, disagreement between annotators on the same image = signal) from "expected disagreement" ($D_e$, cross-image comparison between annotators = noise). The distance function that maximizes KS-statistic separation is selected, and a Bayesian decision rule identifies the crossing point $\tau^* = \{\delta \in \mathbb{R} \mid f_{D_o}(\delta) = f_{D_e}(\delta)\}$ as the calibration anchor.
-   - Design Motivation: Eliminates arbitrary hyperparameter tuning. Below $\tau^*$, the metric captures existential agreement (detection); above $\tau^*$, it isolates geometric precision (localization).
+    - Function: Adaptively determines the optimal localization distance function and matching threshold for different tasks.
+    - Mechanism: Distributional analysis is used to distinguish "observed disagreement" ($D_o$, disagreement between annotators on the same image = signal) from "expected disagreement" ($D_e$, cross-image comparison between annotators = noise). The distance function that maximizes KS-statistic separation is selected, and a Bayesian decision rule identifies the crossing point $\tau^* = \{\delta \in \mathbb{R} \mid f_{D_o}(\delta) = f_{D_e}(\delta)\}$ as the calibration anchor.
+    - Design Motivation: Eliminates arbitrary hyperparameter tuning. Below $\tau^*$, the metric captures existential agreement (detection); above $\tau^*$, it isolates geometric precision (localization).
 
 2. **Completeness assumption and existential disagreement**:
-   - Function: Correctly handles missed annotations (FN) and spurious annotations (FP).
-   - Mechanism: Annotators are assumed to have identified all assigned instances. If an annotator provides no annotation for a discovered unit, this is recorded as an explicit "no_object" (active disagreement) rather than missing data. True missing data is reserved solely for unassigned task scenarios.
-   - Design Motivation: Leverages K-α's native missing-value handling while strictly penalizing FN/FP.
+    - Function: Correctly handles missed annotations (FN) and spurious annotations (FP).
+    - Mechanism: Annotators are assumed to have identified all assigned instances. If an annotator provides no annotation for a discovered unit, this is recorded as an explicit "no_object" (active disagreement) rather than missing data. True missing data is reserved solely for unassigned task scenarios.
+    - Design Motivation: Leverages K-α's native missing-value handling while strictly penalizing FN/FP.
 
 3. **Empirically driven noise generator for validation**:
-   - Function: Provides controlled synthetic ground truth for validating IAA metric properties.
-   - Mechanism: The uniform noise assumption is rejected. Through a rigorous "empirical data → model fitting → statistical testing" cycle, human error distributions are modeled from real multi-annotator datasets. A two-tier framework is employed: (1) parametric drivers capture heavy-tailed, size-dependent geometric variation; (2) a validation proxy uses foundation models to sample "phantom" objects reflecting semantic and visual ambiguity.
-   - Design Motivation: Bridges the validation dilemma by using empirically modeled, non-isotropic noise rather than uniform assumptions to faithfully simulate human annotation behavior.
+    - Function: Provides controlled synthetic ground truth for validating IAA metric properties.
+    - Mechanism: The uniform noise assumption is rejected. Through a rigorous "empirical data → model fitting → statistical testing" cycle, human error distributions are modeled from real multi-annotator datasets. A two-tier framework is employed: (1) parametric drivers capture heavy-tailed, size-dependent geometric variation; (2) a validation proxy uses foundation models to sample "phantom" objects reflecting semantic and visual ambiguity.
+    - Design Motivation: Bridges the validation dilemma by using empirically modeled, non-isotropic noise rather than uniform assumptions to faithfully simulate human annotation behavior.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: e02b892a679ad183
 # Vicinity-Guided Discriminative Latent Diffusion for Privacy-Preserving Domain Adaptation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.00478](https://arxiv.org/abs/2510.00478)
-**Code**: None
+**arXiv**: [2510.00478](https://arxiv.org/abs/2510.00478)  
+**Code**: None  
 **Area**: Domain Adaptation / Image Generation
 **Keywords**: Latent diffusion models, source-free domain adaptation, privacy preservation, discriminative transfer, vicinity guidance
 

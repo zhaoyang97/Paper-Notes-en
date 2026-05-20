@@ -18,8 +18,8 @@ content_hash: 49a341df3bbed16b
 # GST-UNet: A Neural Framework for Spatiotemporal Causal Inference with Time-Varying Confounding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.05295](https://arxiv.org/abs/2502.05295)
-**Code**: [moprescu/GSTUNet](https://github.com/moprescu/GSTUNet)
+**arXiv**: [2502.05295](https://arxiv.org/abs/2502.05295)  
+**Code**: [moprescu/GSTUNet](https://github.com/moprescu/GSTUNet)  
 **Area**: Causal Inference
 **Keywords**: Spatiotemporal causal inference, G-computation, UNet, time-varying confounding, potential outcomes
 

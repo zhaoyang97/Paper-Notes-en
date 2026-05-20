@@ -18,8 +18,8 @@ content_hash: e5315073ad906d9f
 # ArtLLM: Generating Articulated Assets via 3D LLM
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01142](https://arxiv.org/abs/2603.01142)
-**Code**: [https://authoritywang.github.io/artllm](https://authoritywang.github.io/artllm)
+**arXiv**: [2603.01142](https://arxiv.org/abs/2603.01142)  
+**Code**: [https://authoritywang.github.io/artllm](https://authoritywang.github.io/artllm)  
 **Area**: 3D Vision / Articulated Object Generation
 **Keywords**: Articulated Object, 3D LLM, URDF, Autoregressive, Part-Aware Generation
 

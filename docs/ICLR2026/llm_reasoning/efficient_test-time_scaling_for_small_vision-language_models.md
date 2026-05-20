@@ -18,8 +18,8 @@ content_hash: 38a68d4a8e93b72e
 # Efficient Test-Time Scaling for Small Vision-Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03574](https://arxiv.org/abs/2510.03574)
-**Code**: [GitHub](https://github.com/monurcan/efficient_test_time_scaling)
+**arXiv**: [2510.03574](https://arxiv.org/abs/2510.03574)  
+**Code**: [GitHub](https://github.com/monurcan/efficient_test_time_scaling)  
 **Area**: LLM Reasoning / VLM Efficiency
 **Keywords**: test-time scaling, vision-language models, test-time augmentation, test-time adaptation, token-level aggregation
 
@@ -59,29 +59,29 @@ TTAug generates pseudo-labels → fine-tune VLM parameters on pseudo-labels → 
 
 1. **Dual-channel input augmentation**:
 
-   - **Image augmentation**: Applies semantics-preserving transformations to the input image (e.g., slight rotations, crops, color jitter) to generate multiple visual variants.
-   - **Text augmentation**: Introduces mild perturbations to the text prompt — injecting typos and tokenization noise (e.g., "Which country" → "Wh ich cou ntry") — while appending the original intact question as a reference (e.g., "In other words, ...").
-   - Design Motivation: Image augmentation provides viewpoint diversity; text augmentation forces the model to focus on core semantics rather than surface form.
+    - **Image augmentation**: Applies semantics-preserving transformations to the input image (e.g., slight rotations, crops, color jitter) to generate multiple visual variants.
+    - **Text augmentation**: Introduces mild perturbations to the text prompt — injecting typos and tokenization noise (e.g., "Which country" → "Wh ich cou ntry") — while appending the original intact question as a reference (e.g., "In other words, ...").
+    - Design Motivation: Image augmentation provides viewpoint diversity; text augmentation forces the model to focus on core semantics rather than surface form.
 
 2. **Token-level aggregation (Key Insight #2)**:
 
-   - At each step of autoregressive decoding, the next-token probability distributions produced by all augmented inputs are collected.
-   - These distributions are averaged (or weighted-averaged), and the token with the highest probability is greedily selected.
-   - Compared to answer-level aggregation (e.g., majority voting), token-level aggregation exploits local confidence signals.
-   - Example: If 6 out of 10 augmentations predict "Germany," 3 predict "France," and 1 predicts "UK" at a given position, token-level aggregation can leverage this 60% consensus signal.
+    - At each step of autoregressive decoding, the next-token probability distributions produced by all augmented inputs are collected.
+    - These distributions are averaged (or weighted-averaged), and the token with the highest probability is greedily selected.
+    - Compared to answer-level aggregation (e.g., majority voting), token-level aggregation exploits local confidence signals.
+    - Example: If 6 out of 10 augmentations predict "Germany," 3 predict "France," and 1 predicts "UK" at a given position, token-level aggregation can leverage this 60% consensus signal.
 
 3. **Consensus pseudo-label adaptation (TTAdapt)**:
 
-   - Uses TTAug outputs as high-quality pseudo-labels.
-   - Performs lightweight parameter adaptation (potentially via LoRA or direct fine-tuning of a subset of layers).
-   - The adapted model can subsequently re-run TTAug, forming an iterative optimization loop.
-   - Compared to the parameter-free TTAug, TTAdapt further internalizes the corrective signals introduced by augmentation.
+    - Uses TTAug outputs as high-quality pseudo-labels.
+    - Performs lightweight parameter adaptation (potentially via LoRA or direct fine-tuning of a subset of layers).
+    - The adapted model can subsequently re-run TTAug, forming an iterative optimization loop.
+    - Compared to the parameter-free TTAug, TTAdapt further internalizes the corrective signals introduced by augmentation.
 
 4. **Augmentation diversity vs. temperature sampling (Key Insight #1)**:
 
-   - Experiments demonstrate that input augmentation produces higher-quality answer diversity than temperature sampling.
-   - Temperature sampling only alters decoding stochasticity, whereas input augmentation changes the information received by the model, inducing more fundamental perspective variation.
-   - Under both Self-Consistency and Self-Selector TTS strategies, augmentation consistently outperforms temperature sampling.
+    - Experiments demonstrate that input augmentation produces higher-quality answer diversity than temperature sampling.
+    - Temperature sampling only alters decoding stochasticity, whereas input augmentation changes the information received by the model, inducing more fundamental perspective variation.
+    - Under both Self-Consistency and Self-Selector TTS strategies, augmentation consistently outperforms temperature sampling.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: b2d77fce8fcf88a9
 # Describe, Adapt and Combine: Empowering CLIP Encoders for Open-set 3D Object Retrieval
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.21489](https://arxiv.org/abs/2507.21489)
-**Code**: [GitHub](https://github.com/wangzhichuan123/DAC)
+**arXiv**: [2507.21489](https://arxiv.org/abs/2507.21489)  
+**Code**: [GitHub](https://github.com/wangzhichuan123/DAC)  
 **Area**: 3D Vision
 **Keywords**: Open-set 3D retrieval, CLIP, MLLM, LoRA, multi-view
 

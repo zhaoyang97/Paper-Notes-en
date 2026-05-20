@@ -18,8 +18,8 @@ content_hash: 1f532a54df40debf
 # Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.06824](https://arxiv.org/abs/2604.06824)
-**Code**: [https://github.com/VisualAIKHU/GAR-SSL](https://github.com/VisualAIKHU/GAR-SSL)
+**arXiv**: [2604.06824](https://arxiv.org/abs/2604.06824)  
+**Code**: [https://github.com/VisualAIKHU/GAR-SSL](https://github.com/VisualAIKHU/GAR-SSL)  
 **Area**: Multimodal VLM
 **Keywords**: Sound Source Localization, Multimodal Large Language Model, Training-Free, Meta-Reasoning, Audio-Visual Correspondence
 

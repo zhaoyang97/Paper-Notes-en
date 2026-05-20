@@ -18,8 +18,8 @@ content_hash: d90d38d6dbdc708f
 # VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.02175](https://arxiv.org/abs/2502.02175)
-**Code**: [Project Page](https://vla-cache.github.io)
+**arXiv**: [2502.02175](https://arxiv.org/abs/2502.02175)  
+**Code**: [Project Page](https://vla-cache.github.io)  
 **Area**: Multimodal VLM
 **Keywords**: VLA acceleration, token caching, inference speedup, training-free, robotic manipulation
 

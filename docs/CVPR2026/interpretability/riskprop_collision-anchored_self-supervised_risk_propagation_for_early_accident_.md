@@ -18,8 +18,8 @@ content_hash: 2834e4111234c0a4
 # RiskProp: Collision-Anchored Self-Supervised Risk Propagation for Early Accident Anticipation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27165](https://arxiv.org/abs/2603.27165)
-**Code**: [https://github.com/xingyueye5/RiskProp/](https://github.com/xingyueye5/RiskProp/)
+**arXiv**: [2603.27165](https://arxiv.org/abs/2603.27165)  
+**Code**: [https://github.com/xingyueye5/RiskProp/](https://github.com/xingyueye5/RiskProp/)  
 **Area**: Interpretability
 **Keywords**: Accident Anticipation, Self-Supervised Risk Propagation, Temporal Modeling, Monotonicity Constraint, Dashcam
 

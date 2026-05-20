@@ -17,8 +17,8 @@ content_hash: dffd62e762c6bb7a
 # Revisiting Image Fusion for Multi-Illuminant White-Balance Correction
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.14774](https://arxiv.org/abs/2503.14774)
-**Code**: N/A
+**arXiv**: [2503.14774](https://arxiv.org/abs/2503.14774)  
+**Code**: N/A  
 **Area**: Image Processing
 **Keywords**: White Balance, Multi-Illuminant, Image Fusion, Transformer, Dataset
 

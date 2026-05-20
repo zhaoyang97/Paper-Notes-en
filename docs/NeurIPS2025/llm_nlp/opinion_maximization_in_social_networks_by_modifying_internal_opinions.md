@@ -19,8 +19,8 @@ content_hash: d61532a605e7a4b5
 # Opinion Maximization in Social Networks by Modifying Internal Opinions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17226](https://arxiv.org/abs/2510.17226)
-**Code**: To be confirmed
+**arXiv**: [2510.17226](https://arxiv.org/abs/2510.17226)  
+**Code**: To be confirmed  
 **Area**: LLM/NLP
 **Keywords**: opinion dynamics, social networks, opinion maximization, random walk, asynchronous algorithm, structural centrality
 

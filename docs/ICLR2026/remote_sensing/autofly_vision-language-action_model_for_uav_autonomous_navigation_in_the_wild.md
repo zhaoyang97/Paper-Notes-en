@@ -18,8 +18,8 @@ content_hash: f34aaa93aa9a0ef1
 # AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.09657](https://arxiv.org/abs/2602.09657)
-**Code**: [https://xiaolousun.github.io/AutoFly](https://xiaolousun.github.io/AutoFly)
+**arXiv**: [2602.09657](https://arxiv.org/abs/2602.09657)  
+**Code**: [https://xiaolousun.github.io/AutoFly](https://xiaolousun.github.io/AutoFly)  
 **Area**: Remote Sensing
 **Keywords**: VLA, UAV navigation, pseudo-depth, autonomous navigation, sim-to-real
 

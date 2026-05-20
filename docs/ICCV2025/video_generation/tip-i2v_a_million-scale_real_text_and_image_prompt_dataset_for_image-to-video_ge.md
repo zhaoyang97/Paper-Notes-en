@@ -18,8 +18,8 @@ content_hash: 603edc50992a2468
 # TIP-I2V: A Million-Scale Real Text and Image Prompt Dataset for Image-to-Video Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.04709](https://arxiv.org/abs/2411.04709)
-**Code**: [GitHub](https://tip-i2v.github.io/)
+**arXiv**: [2411.04709](https://arxiv.org/abs/2411.04709)  
+**Code**: [GitHub](https://tip-i2v.github.io/)  
 **Area**: Video Generation / Dataset
 **Keywords**: Image-to-video, prompt dataset, user preference analysis, video generation evaluation, deepfake video detection
 
@@ -50,17 +50,17 @@ The TIP-I2V construction pipeline proceeds as follows: data collection (Pika Dis
 1. **Large-scale real prompt collection**: Chat messages from the official Pika Discord channel spanning July 2023 to October 2024 are collected using DiscordChatExporter. Regular expressions are applied to extract text prompts and corresponding video links, yielding **1,701,935** unique text prompts after deduplication. Since the original image prompts are not directly accessible, they are recovered by parsing the first frame of each Pika-generated video, as Pika renders the user-supplied image as the video's initial frame.
 
 2. **Rich metadata annotation**: Each data point includes:
-   - UUID and anonymized UserID
-   - Timestamp
-   - **Subject and direction**: GPT-4o is employed to infer the target subject and the intended motion direction from each prompt
-   - Text embeddings (text-embedding-3-large) and image embeddings (CLIP)
-   - NSFW status: text is screened via Detoxify; images are screened via nsfw_image_detection
+    - UUID and anonymized UserID
+    - Timestamp
+    - **Subject and direction**: GPT-4o is employed to infer the target subject and the intended motion direction from each prompt
+    - Text embeddings (text-embedding-3-large) and image embeddings (CLIP)
+    - NSFW status: text is screened via Detoxify; images are screened via nsfw_image_detection
 
 3. **Multi-model video generation**: Beyond the original Pika videos, 100K randomly sampled prompts are used to generate videos with the following models:
-   - Stable Video Diffusion
-   - Open-Sora
-   - I2VGen-XL
-   - CogVideoX-5B
+    - Stable Video Diffusion
+    - Open-Sora
+    - I2VGen-XL
+    - CogVideoX-5B
 
    Each model produces 100,000 videos, enabling cross-model comparative studies.
 

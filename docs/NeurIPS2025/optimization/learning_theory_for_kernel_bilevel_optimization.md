@@ -20,9 +20,9 @@ content_hash: ab1a9e37f586520e
 # Learning Theory for Kernel Bilevel Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.08457](https://arxiv.org/abs/2502.08457)
+**arXiv**: [2502.08457](https://arxiv.org/abs/2502.08457)  
 **Authors**: Fares El Khoury (INRIA/Université Grenoble Alpes), Edouard Pauwels (Toulouse School of Economics), Samuel Vaiter (CNRS/Université Côte d'Azur), Michael Arbel (INRIA/Université Grenoble Alpes)
-**Code**: [fareselkhoury/KBO](https://github.com/fareselkhoury/KBO)
+**Code**: [fareselkhoury/KBO](https://github.com/fareselkhoury/KBO)  
 **Area**: Optimization
 **Keywords**: Bilevel Optimization, Kernel Methods, Generalization Theory, RKHS, Empirical Processes, U-processes, Implicit Differentiation
 

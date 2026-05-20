@@ -18,8 +18,8 @@ content_hash: fc373ac625f1b455
 # Risk-Averse Constrained Reinforcement Learning with Optimized Certainty Equivalents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20199](https://arxiv.org/abs/2510.20199)
-**Code**: [Available](https://github.com/baturaysaglam/risk-averse-constrained-RL)
+**arXiv**: [2510.20199](https://arxiv.org/abs/2510.20199)  
+**Code**: [Available](https://github.com/baturaysaglam/risk-averse-constrained-RL)  
 **Area**: Reinforcement Learning / Risk Aversion
 **Keywords**: Constrained Reinforcement Learning, Risk Aversion, Optimized Certainty Equivalent (OCE), CVaR, Partial Lagrangian Relaxation
 

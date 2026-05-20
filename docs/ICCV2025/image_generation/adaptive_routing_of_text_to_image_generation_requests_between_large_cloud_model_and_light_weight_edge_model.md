@@ -18,8 +18,8 @@ content_hash: b0ea09ff5e0cbd0e
 # Adaptive Routing of Text-to-Image Generation Requests Between Large Cloud Model and Light-Weight Edge Model
 
 **Conference**: ICCV 2025
-**arXiv**: N/A
-**Code**: N/A
+**arXiv**: N/A  
+**Code**: N/A  
 **Area**: Text-to-Image Generation / Model Routing
 **Keywords**: text-to-image routing, edge-cloud collaboration, mixture-of-experts, Pareto relative superiority, dual-gate MoE
 

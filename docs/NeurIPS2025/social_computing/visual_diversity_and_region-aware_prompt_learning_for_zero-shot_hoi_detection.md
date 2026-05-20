@@ -18,8 +18,8 @@ content_hash: d76322f270f79346
 # VDRP: Visual Diversity and Region-aware Prompt Learning for Zero-shot HOI Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25094](https://arxiv.org/abs/2510.25094)
-**Code**: [https://github.com/mlvlab/VDRP](https://github.com/mlvlab/VDRP)
+**arXiv**: [2510.25094](https://arxiv.org/abs/2510.25094)  
+**Code**: [https://github.com/mlvlab/VDRP](https://github.com/mlvlab/VDRP)  
 **Area**: Video/Image Understanding
 **Keywords**: HOI Detection, Zero-shot Learning, Prompt Learning, CLIP, Visual Diversity
 

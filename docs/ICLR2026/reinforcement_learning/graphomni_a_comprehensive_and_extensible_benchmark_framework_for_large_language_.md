@@ -17,8 +17,8 @@ content_hash: 75cbb1fc61c5190c
 # GraphOmni: A Comprehensive and Extensible Benchmark Framework for Large Language Models on Graph-theoretic Tasks
 
 **Conference**: ICLR 2026
-**arXiv**: [2504.12764](https://arxiv.org/abs/2504.12764)
-**Code**: [GitHub](https://github.com/GAI-Community/GraphOmni)
+**arXiv**: [2504.12764](https://arxiv.org/abs/2504.12764)  
+**Code**: [GitHub](https://github.com/GAI-Community/GraphOmni)  
 **Area**: Reinforcement Learning
 **Keywords**: Graph Reasoning, LLM Benchmarking, Serialization Formats, Prompting Strategies, Reinforcement Learning
 

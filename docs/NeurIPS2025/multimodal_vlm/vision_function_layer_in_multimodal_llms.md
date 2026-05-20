@@ -18,8 +18,8 @@ content_hash: 5639fb3542fbec82
 # Vision Function Layer in Multimodal LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.24791](https://arxiv.org/abs/2509.24791)
-**Code**: [GitHub](https://github.com/ChengShiest/Vision-Function-Layer)
+**arXiv**: [2509.24791](https://arxiv.org/abs/2509.24791)  
+**Code**: [GitHub](https://github.com/ChengShiest/Vision-Function-Layer)  
 **Area**: Multimodal Large Language Models / Interpretability
 **Keywords**: MLLM Internal Mechanism, Vision Function Layer, Token Swapping, LoRA, Data Selection
 

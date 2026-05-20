@@ -18,8 +18,8 @@ content_hash: b36282b77b9113cf
 # VIM: Versatile Interactive Motion-Language Model
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.05628](https://arxiv.org/abs/2410.05628)
-**Code**: [https://vim-motion-language.github.io/](https://vim-motion-language.github.io/)
+**arXiv**: [2410.05628](https://arxiv.org/abs/2410.05628)  
+**Code**: [https://vim-motion-language.github.io/](https://vim-motion-language.github.io/)  
 **Area**: LLM/NLP
 **Keywords**: interactive motion generation, motion-language model, multi-turn dialogue, RQ-VAE, dyadic interaction
 
@@ -41,9 +41,9 @@ This paper proposes VIM, the first multimodal large language model capable of si
 1. **Interactive Motion Tokenizer**: An RQ-VAE is employed to encode dyadic motion sequences $\{m_a, m_b\}$ into discrete tokens, with tokens from both persons interleaved to preserve the temporal correspondence of the interaction.
 
 2. **Three-Stage Training**:
-   - Stage 1: Train the RQ-VAE motion tokenizer.
-   - Stage 2: Pre-train on motion-text paired data using LoRA for modality alignment.
-   - Stage 3: Instruction fine-tuning on Inter-MT² to handle complex multi-turn instructions.
+    - Stage 1: Train the RQ-VAE motion tokenizer.
+    - Stage 2: Pre-train on motion-text paired data using LoRA for modality alignment.
+    - Stage 3: Instruction fine-tuning on Inter-MT² to handle complex multi-turn instructions.
 
 3. **Inter-MT² Dataset**: GPT-4o is used to generate multi-turn instructions (editing, reasoning, and story generation), with corresponding motions synthesized via InterGEN.
 

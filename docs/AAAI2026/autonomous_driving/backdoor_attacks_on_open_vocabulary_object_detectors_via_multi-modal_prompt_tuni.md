@@ -19,8 +19,8 @@ content_hash: 5500b87f4eee123e
 # Backdoor Attacks on Open Vocabulary Object Detectors via Multi-Modal Prompt Tuning
 
 **Conference**: AAAI2026
-**arXiv**: [2511.12735](https://arxiv.org/abs/2511.12735)
-**Code**: [rajankita/TrAP](https://github.com/rajankita/TrAP)
+**arXiv**: [2511.12735](https://arxiv.org/abs/2511.12735)  
+**Code**: [rajankita/TrAP](https://github.com/rajankita/TrAP)  
 **Area**: Autonomous Driving
 **Keywords**: backdoor attack, open-vocabulary object detection, prompt tuning, Grounding DINO, GLIP, adversarial security
 

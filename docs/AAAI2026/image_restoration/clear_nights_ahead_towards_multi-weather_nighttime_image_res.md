@@ -18,8 +18,8 @@ content_hash: 3d699e166ca39613
 # Clear Nights Ahead: Towards Multi-Weather Nighttime Image Restoration
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.16479](https://arxiv.org/abs/2505.16479)
-**Code**: [https://henlyta.github.io/ClearNight/](https://henlyta.github.io/ClearNight/)
+**arXiv**: [2505.16479](https://arxiv.org/abs/2505.16479)  
+**Code**: [https://henlyta.github.io/ClearNight/](https://henlyta.github.io/ClearNight/)  
 **Area**: Image Restoration / Nighttime Adverse Weather Removal
 **Keywords**: nighttime image restoration, multi-weather, Retinex prior, dynamic MoE, AllWeatherNight dataset
 

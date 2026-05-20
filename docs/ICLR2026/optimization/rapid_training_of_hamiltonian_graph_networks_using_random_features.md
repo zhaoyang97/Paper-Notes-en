@@ -18,8 +18,8 @@ content_hash: bc87771f4c863c5a
 # Rapid Training of Hamiltonian Graph Networks using Random Features
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.06558](https://arxiv.org/abs/2506.06558)
-**Code**: [GitLab](https://gitlab.com/fd-research/swimhgn)
+**arXiv**: [2506.06558](https://arxiv.org/abs/2506.06558)  
+**Code**: [GitLab](https://gitlab.com/fd-research/swimhgn)  
 **Area**: Physics Simulation / Graph Neural Networks
 **Keywords**: Hamiltonian Graph Networks, Random Features, N-body Simulation, Zero-shot Generalization, Gradient-free Training
 

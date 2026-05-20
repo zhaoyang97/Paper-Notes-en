@@ -18,8 +18,8 @@ content_hash: 982407f85ce7cf9e
 # REOrdering Patches Improves Vision Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23751](https://arxiv.org/abs/2505.23751)
-**Code**: [Project Page](https://arxiv.org/abs/2505.23751)
+**arXiv**: [2505.23751](https://arxiv.org/abs/2505.23751)  
+**Code**: [Project Page](https://arxiv.org/abs/2505.23751)  
 **Area**: Model Compression
 **Keywords**: patch ordering, long-sequence models, Mamba, reinforcement learning, Plackett-Luce
 

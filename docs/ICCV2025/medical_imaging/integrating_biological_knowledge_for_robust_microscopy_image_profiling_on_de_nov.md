@@ -18,8 +18,8 @@ content_hash: 46949c0593884534
 # Integrating Biological Knowledge for Robust Microscopy Image Profiling on De Novo Cell Lines
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.10737](https://arxiv.org/abs/2507.10737)
-**Code**: [https://github.com/The-Real-JerryChen/BioMicroscopyProfiler](https://github.com/The-Real-JerryChen/BioMicroscopyProfiler)
+**arXiv**: [2507.10737](https://arxiv.org/abs/2507.10737)  
+**Code**: [https://github.com/The-Real-JerryChen/BioMicroscopyProfiler](https://github.com/The-Real-JerryChen/BioMicroscopyProfiler)  
 **Area**: Medical Imaging
 **Keywords**: Microscopy image representation learning, perturbation screening, biological knowledge graph, single-cell foundation model, de novo cell lines
 

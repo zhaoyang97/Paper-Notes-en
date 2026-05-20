@@ -18,8 +18,8 @@ content_hash: 9058019db07d0e9b
 # Draft and Refine with Visual Experts
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.11005](https://arxiv.org/abs/2511.11005)
-**Code**: [GitHub](https://github.com/SungheonJeong/DnR)
+**arXiv**: [2511.11005](https://arxiv.org/abs/2511.11005)  
+**Code**: [GitHub](https://github.com/SungheonJeong/DnR)  
 **Area**: Interpretability
 **Keywords**: Visual Utilization Quantification, Agent Framework, Hallucination Mitigation, Visual Expert Collaboration, Training-Free
 

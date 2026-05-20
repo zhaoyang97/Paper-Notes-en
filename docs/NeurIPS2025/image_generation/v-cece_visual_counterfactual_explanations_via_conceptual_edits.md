@@ -18,8 +18,8 @@ content_hash: fb76ce0781b35999
 # V-CECE: Visual Counterfactual Explanations via Conceptual Edits
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16567](https://arxiv.org/abs/2509.16567)
-**Code**: [Project Page](https://nickspanos55.github.io/vcece)
+**arXiv**: [2509.16567](https://arxiv.org/abs/2509.16567)  
+**Code**: [Project Page](https://nickspanos55.github.io/vcece)  
 **Area**: Explainable AI / Counterfactual Explanation / Diffusion Models
 **Keywords**: Counterfactual explanation, concept editing, black-box, knowledge graph, diffusion models
 

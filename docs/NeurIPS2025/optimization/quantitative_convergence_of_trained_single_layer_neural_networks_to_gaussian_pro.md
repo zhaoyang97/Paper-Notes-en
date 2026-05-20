@@ -18,8 +18,8 @@ content_hash: e005f5a98f1158e1
 # Quantitative Convergence of Trained Single Layer Neural Networks to Gaussian Processes
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.24544](https://arxiv.org/abs/2509.24544)
-**Code**: None
+**arXiv**: [2509.24544](https://arxiv.org/abs/2509.24544)  
+**Code**: None  
 **Area**: Optimization Theory / Neural Network Theory
 **Keywords**: Neural Tangent Kernel, Gaussian Process, Wasserstein Distance, Finite Width, Infinite-Width Limit
 

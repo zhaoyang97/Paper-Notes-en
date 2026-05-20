@@ -18,8 +18,8 @@ content_hash: 66dd5454392e1d3b
 # ConTextTab: A Semantics-Aware Tabular In-Context Learner
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10707](https://arxiv.org/abs/2506.10707)
-**Code**: [SAP-samples/sap-rpt-1-oss](https://github.com/SAP-samples/sap-rpt-1-oss)
+**arXiv**: [2506.10707](https://arxiv.org/abs/2506.10707)  
+**Code**: [SAP-samples/sap-rpt-1-oss](https://github.com/SAP-samples/sap-rpt-1-oss)  
 **Area**: Tabular Learning / In-Context Learning
 **Keywords**: Tabular Learning, In-Context Learning, Semantic Encoding, Foundation Models, Zero-Shot Prediction
 

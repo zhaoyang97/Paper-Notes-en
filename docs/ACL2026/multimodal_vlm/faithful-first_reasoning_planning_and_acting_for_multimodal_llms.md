@@ -18,8 +18,8 @@ content_hash: b41410b95bf21005
 # Faithful-First Reasoning, Planning, and Acting for Multimodal LLMs
 
 **Conference**: ACL 2026
-**arXiv**: [2511.08409](https://arxiv.org/abs/2511.08409)
-**Code**: [GitHub](https://github.com/lijunxian111/Faithful-First-RPA)
+**arXiv**: [2511.08409](https://arxiv.org/abs/2511.08409)  
+**Code**: [GitHub](https://github.com/lijunxian111/Faithful-First-RPA)  
 **Area**: Multimodal VLM / Reasoning Faithfulness
 **Keywords**: Perceptual faithfulness, reasoning planning and acting, multimodal hallucination, visual evidence verification, step-by-step reasoning
 

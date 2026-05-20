@@ -17,8 +17,8 @@ content_hash: fc2621c9c19ce62c
 # Deep Learning for Continuous-Time Stochastic Control with Jumps
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15602](https://arxiv.org/abs/2505.15602)
-**Code**: [GitHub](https://github.com/jdupret97/Deep-Learning-for-CT-Stochastic-Control-with-Jumps)
+**arXiv**: [2505.15602](https://arxiv.org/abs/2505.15602)  
+**Code**: [GitHub](https://github.com/jdupret97/Deep-Learning-for-CT-Stochastic-Control-with-Jumps)  
 **Area**: Other
 **Keywords**: Stochastic Control, Jump Diffusion, HJB Equation, Deep Learning, Actor-Critic
 

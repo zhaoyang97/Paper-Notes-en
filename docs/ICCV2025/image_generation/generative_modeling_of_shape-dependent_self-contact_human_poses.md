@@ -19,8 +19,8 @@ content_hash: d2639d0c12c86643
 # Generative Modeling of Shape-Dependent Self-Contact Human Poses
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.23393](https://arxiv.org/abs/2509.23393)
-**Code**: [https://tkhkaeio.github.io/projects/25-scgen](https://tkhkaeio.github.io/projects/25-scgen)
+**arXiv**: [2509.23393](https://arxiv.org/abs/2509.23393)  
+**Code**: [https://tkhkaeio.github.io/projects/25-scgen](https://tkhkaeio.github.io/projects/25-scgen)  
 **Area**: Image Generation / Human Pose Modeling / Self-Contact Pose
 **Keywords**: Self-Contact, Body Shape, diffusion model, SMPL-X, Pose Generation, Pose Refinement
 

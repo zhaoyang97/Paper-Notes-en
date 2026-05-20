@@ -19,8 +19,8 @@ content_hash: fb0575484342c087
 # Pruning as a Cooperative Game: Surrogate-Assisted Layer Contribution Estimation for Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07804](https://arxiv.org/abs/2602.07804)
-**Code**: [GitHub](https://github.com/920927/Pruning_As_A_Cooperative_Game)
+**arXiv**: [2602.07804](https://arxiv.org/abs/2602.07804)  
+**Code**: [GitHub](https://github.com/920927/Pruning_As_A_Cooperative_Game)  
 **Area**: Reinforcement Learning
 **Keywords**: Layer Pruning, Cooperative Game, Shapley Value, Surrogate Network, Monte Carlo Sampling, Depth Pruning
 

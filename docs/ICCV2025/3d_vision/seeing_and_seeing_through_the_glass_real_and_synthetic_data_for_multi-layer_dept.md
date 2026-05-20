@@ -18,8 +18,8 @@ content_hash: 33369bf3958226a5
 # Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11633](https://arxiv.org/abs/2503.11633)
-**Code**: [Project Page](https://layereddepth.cs.princeton.edu)
+**arXiv**: [2503.11633](https://arxiv.org/abs/2503.11633)  
+**Code**: [Project Page](https://layereddepth.cs.princeton.edu)  
 **Area**: 3D Vision
 **Keywords**: multi-layer depth estimation, transparent objects, synthetic data, relative depth, benchmark dataset
 

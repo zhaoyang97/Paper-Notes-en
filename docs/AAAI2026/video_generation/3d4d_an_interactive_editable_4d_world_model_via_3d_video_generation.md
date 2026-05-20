@@ -18,8 +18,8 @@ content_hash: 7c9a51eba27c726c
 # 3D4D: An Interactive Editable 4D World Model via 3D Video Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08536](https://arxiv.org/abs/2511.08536)
-**Code**: [Project Page](https://yunhonghe1021.github.io/NOVA/)
+**arXiv**: [2511.08536](https://arxiv.org/abs/2511.08536)  
+**Code**: [Project Page](https://yunhonghe1021.github.io/NOVA/)  
 **Area**: 4D Scene Generation / Interactive Visualization
 **Keywords**: 4D scene, WebGL, Gaussian Splatting, foveated rendering, VLM-guided
 

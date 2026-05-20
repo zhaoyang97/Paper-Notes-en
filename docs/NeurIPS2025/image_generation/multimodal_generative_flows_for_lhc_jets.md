@@ -18,8 +18,8 @@ content_hash: 42c5ee3523aeab61
 # Multimodal Generative Flows for LHC Jets
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.01736](https://arxiv.org/abs/2509.01736)
-**Code**: [Available](https://github.com/dfaroughy/Multimodal-flows)
+**arXiv**: [2509.01736](https://arxiv.org/abs/2509.01736)  
+**Code**: [Available](https://github.com/dfaroughy/Multimodal-flows)  
 **Area**: Generative Models / Scientific AI / High-Energy Physics
 **Keywords**: flow matching, multimodal generation, particle physics, continuous-time Markov jump, transformer
 
@@ -49,17 +49,17 @@ The first term is the continuity equation for the continuous modality (velocity 
 
 1. **Conditional Dynamics**:
 
-   - **Continuous modality**: Standard uniform flow with a straight-line path from source to target, $u_t^d = x_1^d - x_0^d$.
-   - **Discrete modality**: A generalized **multi-state telegraph process** is proposed, where the jump rate matrix depends on the target flavor token and a stochasticity hyperparameter $\beta$; jump frequency is controlled via $\omega_t = \exp(-S\beta(1-t))$.
+    - **Continuous modality**: Standard uniform flow with a straight-line path from source to target, $u_t^d = x_1^d - x_0^d$.
+    - **Discrete modality**: A generalized **multi-state telegraph process** is proposed, where the jump rate matrix depends on the target flavor token and a stochasticity hyperparameter $\beta$; jump frequency is controlled via $\omega_t = \exp(-S\beta(1-t))$.
 
 2. **Analytical Posterior Tractability**: The expected discrete jump rates can be computed **analytically** (without approximation), reducing posterior learning to a multi-class classification task. A time-dependent classifier $h_t^\theta$ outputs posterior probabilities via softmax and is trained with cross-entropy loss.
 
 3. **Multimodal ParticleFormer Architecture** (Fig. 2):
 
-   - **Two modality-specific encoders**: processing continuous kinematics and discrete flavor separately.
-   - **One fusion encoder**: based on a non-causal particle Transformer (stacked multi-head self-attention).
-   - **Two task heads**: a regression head predicting the velocity field (MSE loss) and a classification head outputting logits (CE loss).
-   - The overall architecture maintains **permutation equivariance**.
+    - **Two modality-specific encoders**: processing continuous kinematics and discrete flavor separately.
+    - **One fusion encoder**: based on a non-causal particle Transformer (stacked multi-head self-attention).
+    - **Two task heads**: a regression head predicting the velocity field (MSE loss) and a classification head outputting logits (CE loss).
+    - The overall architecture maintains **permutation equivariance**.
 
 ### Loss & Training
 

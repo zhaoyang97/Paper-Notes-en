@@ -18,8 +18,8 @@ content_hash: 61d3eef4f4d4d24e
 # Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.23447](https://arxiv.org/abs/2512.23447)
-**Code**: None
+**arXiv**: [2512.23447](https://arxiv.org/abs/2512.23447)  
+**Code**: None  
 **Area**: Model Architecture / MoE
 **Keywords**: Mixture-of-Experts, router-expert coupling, auxiliary loss, expert specialization, large language models
 

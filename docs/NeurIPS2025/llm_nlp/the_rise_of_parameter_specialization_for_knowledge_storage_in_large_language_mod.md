@@ -18,8 +18,8 @@ content_hash: 42f3f4a4a1f0336d
 # The Rise of Parameter Specialization for Knowledge Storage in Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17260](https://arxiv.org/abs/2505.17260)
-**Code**: Not released
+**arXiv**: [2505.17260](https://arxiv.org/abs/2505.17260)  
+**Code**: Not released  
 **Area**: LLM/NLP
 **Keywords**: Parameter Specialization, Knowledge Storage, MLP Interpretability, Knowledge Superposition, Large Language Models
 

@@ -18,8 +18,8 @@ content_hash: e3311351b0da939d
 # Agentified Assessment of Logical Reasoning Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02788](https://arxiv.org/abs/2603.02788)
-**Code**: [HuggingFace Dataset](https://huggingface.co/datasets/yfxiao/folio-refined)
+**arXiv**: [2603.02788](https://arxiv.org/abs/2603.02788)  
+**Code**: [HuggingFace Dataset](https://huggingface.co/datasets/yfxiao/folio-refined)  
 **Area**: LLM Reasoning
 **Keywords**: Logical Reasoning Evaluation, Agent-to-Agent Assessment, First-Order Logic, Automatic Formalization, SMT Solving
 

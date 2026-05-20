@@ -19,8 +19,8 @@ content_hash: be0bbe51e21053a9
 # Natural Gradient VI: Guarantees for Non-Conjugate Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19163](https://arxiv.org/abs/2510.19163)
-**Code**: None
+**arXiv**: [2510.19163](https://arxiv.org/abs/2510.19163)  
+**Code**: None  
 **Area**: Optimization / Variational Inference
 **Keywords**: natural gradient, variational inference, non-conjugate models, mirror descent, relative smoothness, convergence guarantees
 

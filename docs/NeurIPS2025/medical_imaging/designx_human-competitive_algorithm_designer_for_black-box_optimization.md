@@ -18,8 +18,8 @@ content_hash: de5adea6c770d4dd
 # DesignX: Human-Competitive Algorithm Designer for Black-Box Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17866](https://arxiv.org/abs/2505.17866)
-**Code**: [GitHub](https://github.com/MetaEvo/DesignX)
+**arXiv**: [2505.17866](https://arxiv.org/abs/2505.17866)  
+**Code**: [GitHub](https://github.com/MetaEvo/DesignX)  
 **Area**: Medical Imaging / Optimization Algorithm Design
 **Keywords**: Black-Box Optimization, Automated Algorithm Design, Dual-Agent Reinforcement Learning, MetaBBO, Transformer
 

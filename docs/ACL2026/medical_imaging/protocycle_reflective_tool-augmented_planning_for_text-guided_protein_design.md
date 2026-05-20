@@ -18,8 +18,8 @@ content_hash: 45d3d98a1bf8cb2b
 # ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design
 
 **Conference**: ACL 2026 (Findings)
-**arXiv**: [2604.16896](https://arxiv.org/abs/2604.16896)
-**Code**: N/A
+**arXiv**: [2604.16896](https://arxiv.org/abs/2604.16896)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: protein design, text-guided, reflective planning, tool augmentation, reinforcement learning
 

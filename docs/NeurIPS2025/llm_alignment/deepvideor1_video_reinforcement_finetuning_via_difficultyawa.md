@@ -18,8 +18,8 @@ content_hash: fc1b3331c1213652
 # DeepVideo-R1: Video Reinforcement Fine-Tuning via Difficulty-aware Regressive GRPO
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07464](https://arxiv.org/abs/2506.07464)
-**Code**: [GitHub](https://github.com/mlvlab/DeepVideoR1)
+**arXiv**: [2506.07464](https://arxiv.org/abs/2506.07464)  
+**Code**: [GitHub](https://github.com/mlvlab/DeepVideoR1)  
 **Area**: LLM Alignment / Video Large Language Models
 **Keywords**: Video reasoning, reinforcement fine-tuning, GRPO, regression objective, difficulty-aware augmentation
 

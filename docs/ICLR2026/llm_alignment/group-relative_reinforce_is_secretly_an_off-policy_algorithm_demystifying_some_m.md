@@ -19,8 +19,8 @@ content_hash: b3a29039e65b29c0
 # Group-Relative REINFORCE Is Secretly an Off-Policy Algorithm: Demystifying Some Myths About GRPO and Its Friends
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24203](https://arxiv.org/abs/2509.24203)
-**Code**: [Trinity-RFT](https://github.com/agentscope-ai/Trinity-RFT/tree/main/examples/rec_gsm8k)
+**arXiv**: [2509.24203](https://arxiv.org/abs/2509.24203)  
+**Code**: [Trinity-RFT](https://github.com/agentscope-ai/Trinity-RFT/tree/main/examples/rec_gsm8k)  
 **Area**: LLM Alignment / RL
 **Keywords**: GRPO, off-policy RL, importance sampling, clipping, REINFORCE, policy optimization
 
@@ -54,21 +54,21 @@ Building on this off-policy interpretation, the authors propose two augmentation
 
 1. **Three-Step Derivation: From Surrogate Objective to REINFORCE**
 
-   - **Function**: Prove that group-relative REINFORCE admits a natural off-policy interpretation.
-   - **Mechanism**: The optimal solution of the KL-regularized surrogate objective satisfies $\pi^*(y|x) \propto \pi_{\theta_t}(y|x) \exp(r(x,y)/\tau)$, from which the pairwise consistency condition for any two responses $y_1, y_2$ follows: $r_1 - \tau(\log\pi(y_1|x) - \log\pi_{\theta_t}(y_1|x)) = r_2 - \tau(\log\pi(y_2|x) - \log\pi_{\theta_t}(y_2|x))$. A mean-squared loss $\hat{L} = \frac{1}{K^2}\sum_{i<j}(a_i - a_j)^2$ is constructed to enforce this condition; taking its gradient at $\theta = \theta_t$ causes the log-probability difference terms to vanish, yielding $\frac{1}{K}\sum_i (r_i - \bar{r}) \nabla_\theta \log\pi_\theta(y_i|x)$—exactly the GRPO update.
-   - **Design Motivation**: Classical policy gradient theory requires on-policy sampling, limiting the theoretical justification of GRPO in asynchronous training pipelines. This derivation bypasses the sampling distribution assumption entirely, grounding off-policy usage in first-principles optimality conditions.
+    - **Function**: Prove that group-relative REINFORCE admits a natural off-policy interpretation.
+    - **Mechanism**: The optimal solution of the KL-regularized surrogate objective satisfies $\pi^*(y|x) \propto \pi_{\theta_t}(y|x) \exp(r(x,y)/\tau)$, from which the pairwise consistency condition for any two responses $y_1, y_2$ follows: $r_1 - \tau(\log\pi(y_1|x) - \log\pi_{\theta_t}(y_1|x)) = r_2 - \tau(\log\pi(y_2|x) - \log\pi_{\theta_t}(y_2|x))$. A mean-squared loss $\hat{L} = \frac{1}{K^2}\sum_{i<j}(a_i - a_j)^2$ is constructed to enforce this condition; taking its gradient at $\theta = \theta_t$ causes the log-probability difference terms to vanish, yielding $\frac{1}{K}\sum_i (r_i - \bar{r}) \nabla_\theta \log\pi_\theta(y_i|x)$—exactly the GRPO update.
+    - **Design Motivation**: Classical policy gradient theory requires on-policy sampling, limiting the theoretical justification of GRPO in asynchronous training pipelines. This derivation bypasses the sampling distribution assumption entirely, grounding off-policy usage in first-principles optimality conditions.
 
 2. **REC Variants: Isolating the Contributions of IS and Clipping**
 
-   - **Function**: Precisely identify the contribution of each GRPO component to training stability.
-   - **Mechanism**: A family of REINFORCE-with-Clipping (REC) ablations is designed. REC-OneSide-IS retains IS weights and one-sided clipping but removes advantage normalization; REC-OneSide-NoIS further removes IS weights, retaining only the clipping mask $M_i^t = \mathbb{1}(A_i > 0, \rho_i^t \leq 1+\epsilon_{\text{high}}) + \mathbb{1}(A_i < 0, \rho_i^t \geq 1-\epsilon_{\text{low}})$. Experiments also test expanding the clipping range from the standard $(0.2, 0.2)$ to the aggressive $(0.6, 2.0)$.
-   - **Design Motivation**: The community widely assumes IS is central to off-policy correction; experiments show that removing IS leaves performance virtually unchanged (reward curves overlap completely), whereas removing clipping causes immediate training collapse. This demonstrates that clipping functions as an implicit trust-region constraint—bounding the magnitude of each policy update to prevent divergence under limited sample coverage.
+    - **Function**: Precisely identify the contribution of each GRPO component to training stability.
+    - **Mechanism**: A family of REINFORCE-with-Clipping (REC) ablations is designed. REC-OneSide-IS retains IS weights and one-sided clipping but removes advantage normalization; REC-OneSide-NoIS further removes IS weights, retaining only the clipping mask $M_i^t = \mathbb{1}(A_i > 0, \rho_i^t \leq 1+\epsilon_{\text{high}}) + \mathbb{1}(A_i < 0, \rho_i^t \geq 1-\epsilon_{\text{low}})$. Experiments also test expanding the clipping range from the standard $(0.2, 0.2)$ to the aggressive $(0.6, 2.0)$.
+    - **Design Motivation**: The community widely assumes IS is central to off-policy correction; experiments show that removing IS leaves performance virtually unchanged (reward curves overlap completely), whereas removing clipping causes immediate training collapse. This demonstrates that clipping functions as an implicit trust-region constraint—bounding the magnitude of each policy update to prevent divergence under limited sample coverage.
 
 3. **Unified Interpretation of OPMD and AsymRE**
 
-   - **Function**: Reveal that three seemingly independent algorithms share the same underlying structure.
-   - **Mechanism**: The Kimi OPMD loss decomposes into REINFORCE loss plus a mean-squared regularizer $\frac{\beta}{2K}\sum_i(\log\pi_\theta(y_i|x) - \log\pi_{\text{old}}(y_i|x))^2$ with $\beta = \tau$. The Meta AsymRE baseline shift $\bar{r} - \beta$ is equivalent to REINFORCE loss plus a KL regularizer $\frac{\beta}{K}\sum_i \log\frac{\pi_{\text{old}}(y_i|x)}{\pi_\theta(y_i|x)}$, which converges to $\beta \cdot D_{\text{KL}}(\pi_{\text{old}} \| \pi_\theta)$ in the large-sample limit. Both are instantiations of the "regularized policy update" principle, differing only in the form of regularization.
-   - **Design Motivation**: The OPMD paper derives from a pointwise consistency condition of the KL-regularized objective (partially overlapping with this work before diverging at step 2), while the AsymRE paper justifies its baseline shift via a multi-armed bandit analysis. The unified view presented here is cleaner: both reduce to REINFORCE plus some regularization, corresponding to the first augmentation principle.
+    - **Function**: Reveal that three seemingly independent algorithms share the same underlying structure.
+    - **Mechanism**: The Kimi OPMD loss decomposes into REINFORCE loss plus a mean-squared regularizer $\frac{\beta}{2K}\sum_i(\log\pi_\theta(y_i|x) - \log\pi_{\text{old}}(y_i|x))^2$ with $\beta = \tau$. The Meta AsymRE baseline shift $\bar{r} - \beta$ is equivalent to REINFORCE loss plus a KL regularizer $\frac{\beta}{K}\sum_i \log\frac{\pi_{\text{old}}(y_i|x)}{\pi_\theta(y_i|x)}$, which converges to $\beta \cdot D_{\text{KL}}(\pi_{\text{old}} \| \pi_\theta)$ in the large-sample limit. Both are instantiations of the "regularized policy update" principle, differing only in the form of regularization.
+    - **Design Motivation**: The OPMD paper derives from a pointwise consistency condition of the KL-regularized objective (partially overlapping with this work before diverging at step 2), while the AsymRE paper justifies its baseline shift via a multi-armed bandit analysis. The unified view presented here is cleaner: both reduce to REINFORCE plus some regularization, corresponding to the first augmentation principle.
 
 ### Data Weighting Methods (RED Variants)
 

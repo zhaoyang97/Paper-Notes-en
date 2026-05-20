@@ -18,8 +18,8 @@ content_hash: cb1d5ccc721ec562
 # How Far Are LLMs from Professional Poker Players? Revisiting Game-Theoretic Reasoning with Agentic Tool Use
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.00528](https://arxiv.org/abs/2602.00528)
-**Code**: To be confirmed
+**arXiv**: [2602.00528](https://arxiv.org/abs/2602.00528)  
+**Code**: To be confirmed  
 **Area**: LLM/NLP
 **Keywords**: LLM poker, game-theoretic reasoning, tool-augmented LLM, CFR solver, incomplete information game
 

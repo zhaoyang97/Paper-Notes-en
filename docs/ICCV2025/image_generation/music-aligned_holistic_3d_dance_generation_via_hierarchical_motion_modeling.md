@@ -18,8 +18,8 @@ content_hash: a1a7eb68d82c3462
 # Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.14915](https://arxiv.org/abs/2507.14915)
-**Code**: [Project Page](https://xjli360.github.io/SoulDance)
+**arXiv**: [2507.14915](https://arxiv.org/abs/2507.14915)  
+**Code**: [Project Page](https://xjli360.github.io/SoulDance)  
 **Area**: image_generation (3D Dance Generation)
 **Keywords**: dance generation, music alignment, whole-body motion, hierarchical residual vector quantization, cross-modal retrieval
 

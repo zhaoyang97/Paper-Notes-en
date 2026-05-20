@@ -18,8 +18,8 @@ content_hash: cb66122756acf6ee
 # Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07587](https://arxiv.org/abs/2511.07587)
-**Code**: [Available](https://github.com/roychowdhuryresearch/gsw-memory)
+**arXiv**: [2511.07587](https://arxiv.org/abs/2511.07587)  
+**Code**: [Available](https://github.com/roychowdhuryresearch/gsw-memory)  
 **Area**: Video Understanding
 **Keywords**: Episodic Memory, RAG, Long-context Reasoning, Structured Representation, World Model
 

@@ -18,8 +18,8 @@ content_hash: dcaa22eb6e8f281e
 # Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10412](https://arxiv.org/abs/2506.10412)
-**Code**: [https://github.com/blacksnail789521/Time-IMM](https://github.com/blacksnail789521/Time-IMM)
+**arXiv**: [2506.10412](https://arxiv.org/abs/2506.10412)  
+**Code**: [https://github.com/blacksnail789521/Time-IMM](https://github.com/blacksnail789521/Time-IMM)  
 **Area**: Time Series / Multimodal
 **Keywords**: irregular time series, multimodal fusion, causally-driven irregularity, time series forecasting, benchmark
 

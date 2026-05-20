@@ -18,8 +18,8 @@ content_hash: 46ba763f5a93aa12
 # Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.08134](https://arxiv.org/abs/2508.08134)
-**Code**: [Project Page](https://follow-your-shape.github.io/)
+**arXiv**: [2508.08134](https://arxiv.org/abs/2508.08134)  
+**Code**: [Project Page](https://follow-your-shape.github.io/)  
 **Area**: Diffusion Models / Image Editing
 **Keywords**: Shape Editing, Trajectory Divergence Map, training-free, Flow Matching, KV Injection
 

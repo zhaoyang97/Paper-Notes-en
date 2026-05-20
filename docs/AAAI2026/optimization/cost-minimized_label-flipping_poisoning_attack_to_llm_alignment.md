@@ -18,8 +18,8 @@ content_hash: 447aaf46afbd93e3
 # Cost-Minimized Label-Flipping Poisoning Attack to LLM Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09105](https://arxiv.org/abs/2511.09105)
-**Code**: [https://github.com/akimotolab/PoisoningCostMinimization](https://github.com/akimotolab/PoisoningCostMinimization)
+**arXiv**: [2511.09105](https://arxiv.org/abs/2511.09105)  
+**Code**: [https://github.com/akimotolab/PoisoningCostMinimization](https://github.com/akimotolab/PoisoningCostMinimization)  
 **Area**: Optimization
 **Keywords**: Data poisoning attack, RLHF/DPO, label flipping, convex optimization, LLM alignment security
 

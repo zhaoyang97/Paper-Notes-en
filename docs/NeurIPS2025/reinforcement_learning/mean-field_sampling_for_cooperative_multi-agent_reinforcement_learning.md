@@ -18,8 +18,8 @@ content_hash: b65e74e9dfbe0118
 # Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.00661](https://arxiv.org/abs/2412.00661)
-**Code**: [emiletimothy/Mean-Field-Subsample-Q-Learning](https://github.com/emiletimothy/Mean-Field-Subsample-Q-Learning)
+**arXiv**: [2412.00661](https://arxiv.org/abs/2412.00661)  
+**Code**: [emiletimothy/Mean-Field-Subsample-Q-Learning](https://github.com/emiletimothy/Mean-Field-Subsample-Q-Learning)  
 **Area**: Multi-Agent Reinforcement Learning
 **Keywords**: MARL, mean-field, subsampling, Q-learning, cooperative
 

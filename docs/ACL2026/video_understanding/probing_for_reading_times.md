@@ -18,8 +18,8 @@ content_hash: 9c797ea3ab554dcc
 # Probing for Reading Times
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18712](https://arxiv.org/abs/2604.18712)
-**Code**: [GitHub](https://github.com/rycolab/llm-representations-rt)
+**arXiv**: [2604.18712](https://arxiv.org/abs/2604.18712)  
+**Code**: [GitHub](https://github.com/rycolab/llm-representations-rt)  
 **Area**: Video Understanding / Cognitive Science
 **Keywords**: reading time prediction, language model probing, eye-tracking, surprisal theory, cross-lingual analysis
 

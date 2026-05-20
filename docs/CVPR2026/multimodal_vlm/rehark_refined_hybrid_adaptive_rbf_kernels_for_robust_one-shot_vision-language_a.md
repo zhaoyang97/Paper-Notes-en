@@ -18,8 +18,8 @@ content_hash: e0eff3ec2b5337cb
 # ReHARK: Refined Hybrid Adaptive RBF Kernels for Robust One-Shot Vision-Language Adaptation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11542](https://arxiv.org/abs/2603.11542)
-**Code**: [Jahid12012021/ReHARK](https://github.com/Jahid12012021/ReHARK)
+**arXiv**: [2603.11542](https://arxiv.org/abs/2603.11542)  
+**Code**: [Jahid12012021/ReHARK](https://github.com/Jahid12012021/ReHARK)  
 **Area**: Multimodal VLM
 **Keywords**: Vision-Language Models, One-Shot Adaptation, Kernel Ridge Regression, CLIP, GPT-3 Semantics
 

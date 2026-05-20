@@ -18,8 +18,8 @@ content_hash: 068ef150bc35adab
 # COIN: Confidence Score-Guided Distillation for Annotation-Free Cell Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11439](https://arxiv.org/abs/2503.11439)
-**Code**: [https://shjo-april.github.io/COIN/](https://shjo-april.github.io/COIN/)
+**arXiv**: [2503.11439](https://arxiv.org/abs/2503.11439)  
+**Code**: [https://shjo-april.github.io/COIN/](https://shjo-april.github.io/COIN/)  
 **Area**: Medical Imaging
 **Keywords**: Cell Instance Segmentation, Annotation-Free, Confidence Score, Self-Distillation, Optimal Transport
 

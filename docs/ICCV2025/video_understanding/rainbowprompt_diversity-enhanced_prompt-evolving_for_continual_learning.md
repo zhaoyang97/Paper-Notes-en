@@ -18,8 +18,8 @@ content_hash: c8190f5c20d4a3f8
 # RainbowPrompt: Diversity-Enhanced Prompt-Evolving for Continual Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22553](https://arxiv.org/abs/2507.22553)
-**Code**: None
+**arXiv**: [2507.22553](https://arxiv.org/abs/2507.22553)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: Continual Learning, Prompt Learning, Knowledge Integration, Class-Incremental Learning, Video Action Recognition
 

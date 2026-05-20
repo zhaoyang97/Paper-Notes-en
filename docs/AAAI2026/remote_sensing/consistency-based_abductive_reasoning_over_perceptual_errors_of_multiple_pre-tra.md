@@ -18,8 +18,8 @@ content_hash: 061b734194818de7
 # Consistency-based Abductive Reasoning over Perceptual Errors of Multiple Pre-trained Models in Novel Environments
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.19361](https://arxiv.org/abs/2505.19361)
-**Code**: [GitHub](https://github.com/lab-v2/EDCR_PyReason_AirSim)
+**arXiv**: [2505.19361](https://arxiv.org/abs/2505.19361)  
+**Code**: [GitHub](https://github.com/lab-v2/EDCR_PyReason_AirSim)  
 **Area**: Remote Sensing / Multi-Model Ensemble
 **Keywords**: Abductive Reasoning, Metacognitive AI, Distribution Shift, Multi-Model Ensemble, Logic Programming
 
@@ -52,25 +52,25 @@ $\eta$ independently trained perception models generate predictions on novel-env
 
 1. **Metacognitive Error Detection Rules**:
 
-   - *Function*: Learn logic rules for each model to detect errors it may commit under specific conditions.
-   - *Mechanism*: Rules take the form $\text{error}(i,c,\omega) \leftarrow (f_i(\omega)=c) \wedge \text{cue}(\omega)$—when model $i$ predicts class $c$ for object $\omega$ and a metacognitive cue is present, the prediction is deemed erroneous. Cues are learned from training data; parameter $\epsilon$ controls the expected decrease in recall.
-   - *Design Motivation*: Rules are learned independently on training data (no test-data leakage), providing prior knowledge for abductive reasoning.
+    - *Function*: Learn logic rules for each model to detect errors it may commit under specific conditions.
+    - *Mechanism*: Rules take the form $\text{error}(i,c,\omega) \leftarrow (f_i(\omega)=c) \wedge \text{cue}(\omega)$—when model $i$ predicts class $c$ for object $\omega$ and a metacognitive cue is present, the prediction is deemed erroneous. Cues are learned from training data; parameter $\epsilon$ controls the expected decrease in recall.
+    - *Design Motivation*: Rules are learned independently on training data (no test-data leakage), providing prior knowledge for abductive reasoning.
 
 2. **Consistency-based Abductive Reasoning Optimization**:
 
-   - *Function*: Determine the optimal decision (hypothesis $H$) regarding which model–class pairs to accept.
-   - *Mechanism*: The atom $\text{accept}(i,c)$ denotes accepting model $i$'s predictions on class $c$. The objective maximizes $\text{Pred}(H)$ (the number of assigned objects) subject to $\text{Inc}(H) \leq \delta$ (domain knowledge inconsistency rate below threshold). Domain constraints $\Pi_{dom}$ prevent conflicting classes from being assigned to the same object.
-   - *Design Motivation*: Maximizing coverage while controlling consistency is more fine-grained than simple majority voting—it is possible to accept a model's output for certain classes while rejecting it for others.
+    - *Function*: Determine the optimal decision (hypothesis $H$) regarding which model–class pairs to accept.
+    - *Mechanism*: The atom $\text{accept}(i,c)$ denotes accepting model $i$'s predictions on class $c$. The objective maximizes $\text{Pred}(H)$ (the number of assigned objects) subject to $\text{Inc}(H) \leq \delta$ (domain knowledge inconsistency rate below threshold). Domain constraints $\Pi_{dom}$ prevent conflicting classes from being assigned to the same object.
+    - *Design Motivation*: Maximizing coverage while controlling consistency is more fine-grained than simple majority voting—it is possible to accept a model's output for certain classes while rejecting it for others.
 
 3. **Two Solving Algorithms**:
 
-   - **Integer Programming (IP)**: An exact method with variable and constraint complexity $O(N \cdot |\mathcal{F}| \cdot |\mathcal{C}|)$. Theoretically NP-hard but efficiently solvable in practice due to problem structure.
-   - **Heuristic Search (HS)**: A greedy method that evaluates model–class pairs one by one, selecting the $\epsilon$ value that maximizes the prediction set size without violating the $\delta$ constraint. Time complexity is $O(|\mathcal{F}| \cdot |\mathcal{C}| \cdot |E_{set}|)$.
+    - **Integer Programming (IP)**: An exact method with variable and constraint complexity $O(N \cdot |\mathcal{F}| \cdot |\mathcal{C}|)$. Theoretically NP-hard but efficiently solvable in practice due to problem structure.
+    - **Heuristic Search (HS)**: A greedy method that evaluates model–class pairs one by one, selecting the $\epsilon$ value that maximizes the prediction set size without violating the $\delta$ constraint. Time complexity is $O(|\mathcal{F}| \cdot |\mathcal{C}| \cdot |E_{set}|)$.
 
 4. **Tie-Breaker (TB)**:
 
-   - *Function*: When multiple valid labels exist for the same object, select the prediction from the model with the highest confidence.
-   - *Design Motivation*: Abductive reasoning may leave some ambiguity; the TB provides a deterministic final classification.
+    - *Function*: When multiple valid labels exist for the same object, select the prediction from the model with the highest confidence.
+    - *Design Motivation*: Abductive reasoning may leave some ambiguity; the TB provides a deterministic final classification.
 
 ### Loss & Training
 - Error detection rules are learned independently on each model's training data (no cross-model or test-data sharing).

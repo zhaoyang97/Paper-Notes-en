@@ -17,8 +17,8 @@ content_hash: c869a83213d79a94
 # STEM Faculty Perspectives on Generative AI in Higher Education
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.04001](https://arxiv.org/abs/2603.04001)
-**Code**: None
+**arXiv**: [2603.04001](https://arxiv.org/abs/2603.04001)  
+**Code**: None  
 **Area**: AI Education / Social Science
 **Keywords**: Generative AI, Higher Education, STEM Pedagogy, Focus Groups, Teaching Strategies
 

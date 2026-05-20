@@ -17,8 +17,8 @@ content_hash: 57bed5e2fca4e9c7
 # SD-FSMIS: Adapting Stable Diffusion for Few-Shot Medical Image Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03134](https://arxiv.org/abs/2604.03134)
-**Code**: N/A
+**arXiv**: [2604.03134](https://arxiv.org/abs/2604.03134)  
+**Code**: N/A  
 **Area**: Medical Image Segmentation
 **Keywords**: few-shot segmentation, medical imaging, stable diffusion, cross-domain, foundation model
 

@@ -18,8 +18,8 @@ content_hash: 1f7fb8118e637b11
 # Collapsing Taylor Mode Automatic Differentiation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13644](https://arxiv.org/abs/2505.13644)
-**Code**: To be confirmed
+**arXiv**: [2505.13644](https://arxiv.org/abs/2505.13644)  
+**Code**: To be confirmed  
 **Area**: Scientific Computing / Automatic Differentiation / PDE
 **Keywords**: Taylor mode AD, automatic differentiation, PDE operators, forward mode, computation graph optimization
 

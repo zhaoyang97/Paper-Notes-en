@@ -18,8 +18,8 @@ content_hash: 39028b0ad212b16c
 # E2EDev: Benchmarking Large Language Models in End-to-End Software Development Task
 
 **Conference**: ACL 2026
-**arXiv**: [2510.14509](https://arxiv.org/abs/2510.14509)
-**Code**: [https://github.com/SCUNLP/E2EDev](https://github.com/SCUNLP/E2EDev)
+**arXiv**: [2510.14509](https://arxiv.org/abs/2510.14509)  
+**Code**: [https://github.com/SCUNLP/E2EDev](https://github.com/SCUNLP/E2EDev)  
 **Area**: LLM Evaluation
 **Keywords**: end-to-end software development, behavior-driven development, benchmark, multi-agent coding, requirements verification
 

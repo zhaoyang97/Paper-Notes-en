@@ -18,8 +18,8 @@ content_hash: cc17212e596a145b
 # MEGA: Memory-Efficient 4D Gaussian Splatting for Dynamic Scenes
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.13613](https://arxiv.org/abs/2410.13613)
-**Code**: [Xinjie-Q/MEGA](https://github.com/Xinjie-Q/MEGA)
+**arXiv**: [2410.13613](https://arxiv.org/abs/2410.13613)  
+**Code**: [Xinjie-Q/MEGA](https://github.com/Xinjie-Q/MEGA)  
 **Area**: 3D Vision
 **Keywords**: 4D Gaussian Splatting, memory-efficient, dynamic scenes, color compression, entropy-constrained deformation
 

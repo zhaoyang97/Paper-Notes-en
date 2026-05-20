@@ -18,8 +18,8 @@ content_hash: e2f99c8d5ba5eca7
 # Adaptive Stochastic Coefficients for Accelerating Diffusion Sampling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23285](https://arxiv.org/abs/2510.23285)
-**Code**: [GitHub](https://github.com/WLU-wry02/AdaSDE)
+**arXiv**: [2510.23285](https://arxiv.org/abs/2510.23285)  
+**Code**: [GitHub](https://github.com/WLU-wry02/AdaSDE)  
 **Area**: Diffusion Models / Sampling Acceleration
 **Keywords**: diffusion sampling, SDE solver, ODE solver, adaptive noise injection, few-step generation
 

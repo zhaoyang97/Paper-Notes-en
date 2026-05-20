@@ -18,8 +18,8 @@ content_hash: d2a94f6fb64f36c4
 # Text–Image Conditioned 3D Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21295](https://arxiv.org/abs/2603.21295)
-**Code**: [https://jumpat.github.io/tigon-page](https://jumpat.github.io/tigon-page)
+**arXiv**: [2603.21295](https://arxiv.org/abs/2603.21295)  
+**Code**: [https://jumpat.github.io/tigon-page](https://jumpat.github.io/tigon-page)  
 **Area**: 3D Vision / 3D Generation
 **Keywords**: text-image joint conditioning, 3D generation, dual-branch DiT, cross-modal fusion, rectified flow
 

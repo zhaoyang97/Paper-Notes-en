@@ -18,8 +18,8 @@ content_hash: b061e5da4acc31b5
 # Retrv-R1: A Reasoning-Driven MLLM Framework for Universal and Efficient Multimodal Retrieval
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.02745](https://arxiv.org/abs/2510.02745)
-**Code**: Not available
+**arXiv**: [2510.02745](https://arxiv.org/abs/2510.02745)  
+**Code**: Not available  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal Retrieval, Reinforcement Learning, Reasoning MLLM, Information Compression, DeepSeek-R1
 

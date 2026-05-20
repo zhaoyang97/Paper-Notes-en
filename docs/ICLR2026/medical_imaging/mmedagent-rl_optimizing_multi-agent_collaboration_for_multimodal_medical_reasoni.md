@@ -19,8 +19,8 @@ content_hash: c08a6a9085651c40
 # MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning
 
 **Conference**: ICLR2026
-**arXiv**: [2506.00555](https://arxiv.org/abs/2506.00555)
-**Code**: Not released
+**arXiv**: [2506.00555](https://arxiv.org/abs/2506.00555)  
+**Code**: Not released  
 **Area**: Medical Imaging
 **Keywords**: multi-agent collaboration, reinforcement learning, medical VQA, curriculum learning, GRPO, clinical reasoning
 

@@ -18,8 +18,8 @@ content_hash: 158361c075c1f6dc
 # Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15185](https://arxiv.org/abs/2509.15185)
-**Code**: [https://github.com/yuexy/ST-AR](https://github.com/yuexy/ST-AR)
+**arXiv**: [2509.15185](https://arxiv.org/abs/2509.15185)  
+**Code**: [https://github.com/yuexy/ST-AR](https://github.com/yuexy/ST-AR)  
 **Area**: Autoregressive Image Generation / Self-Supervised Learning
 **Keywords**: Autoregressive models, visual understanding, contrastive learning, masked image modeling, LlamaGen
 

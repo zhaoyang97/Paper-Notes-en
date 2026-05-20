@@ -18,8 +18,8 @@ content_hash: 88309445a810b97d
 # Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training
 
 **Conference**: ACL 2026
-**arXiv**: [2601.03065](https://arxiv.org/abs/2601.03065)
-**Code**: [GitHub](https://github.com/yfyeung/CLSP)
+**arXiv**: [2601.03065](https://arxiv.org/abs/2601.03065)  
+**Code**: [GitHub](https://github.com/yfyeung/CLSP)  
 **Area**: Audio & Speech
 **Keywords**: Speech Style Modeling, Contrastive Learning Pre-training, Fine-Grained Annotation, Speech-Text Alignment, Paralinguistics
 

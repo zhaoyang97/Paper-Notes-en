@@ -18,8 +18,8 @@ content_hash: 41b3c015f3ab471c
 # Dense Associative Memory with Epanechnikov Energy
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10801](https://arxiv.org/abs/2506.10801)
-**Code**: None
+**arXiv**: [2506.10801](https://arxiv.org/abs/2506.10801)  
+**Code**: None  
 **Area**: Other
 **Keywords**: associative memory, Hopfield network, energy function, Epanechnikov kernel, emergent memory, ReLU
 

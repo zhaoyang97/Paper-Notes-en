@@ -18,8 +18,8 @@ content_hash: 3237562b3d49a87f
 # Intrinsic Concept Extraction Based on Compositional Interpretability
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11795](https://arxiv.org/abs/2603.11795)
-**Code**: None
+**arXiv**: [2603.11795](https://arxiv.org/abs/2603.11795)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Concept Extraction, Hyperbolic Space, Compositional Interpretability, Diffusion Models, Concept Disentanglement
 

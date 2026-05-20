@@ -16,8 +16,8 @@ content_hash: e0ef3a076dd3cdfe
 # Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.02093](https://arxiv.org/abs/2506.02093)
-**Code**: [GitHub](https://github.com/MrGiovanni/CARE)
+**arXiv**: [2506.02093](https://arxiv.org/abs/2506.02093)  
+**Code**: [GitHub](https://github.com/MrGiovanni/CARE)  
 **Area**: Other
 **Keywords**: sparse-view CT, anatomy-aware metrics, structural completeness, diffusion model
 

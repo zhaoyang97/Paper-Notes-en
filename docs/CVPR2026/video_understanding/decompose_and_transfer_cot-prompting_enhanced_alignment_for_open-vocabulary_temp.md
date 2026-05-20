@@ -18,8 +18,8 @@ content_hash: b6f8289f22012787
 # Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24030](https://arxiv.org/abs/2603.24030)
-**Code**: N/A
+**arXiv**: [2603.24030](https://arxiv.org/abs/2603.24030)  
+**Code**: N/A  
 **Area**: Video Understanding
 **Keywords**: open-vocabulary temporal action detection, chain-of-thought prompting, action phase decomposition, cross-modal alignment, knowledge transfer
 

@@ -17,8 +17,8 @@ content_hash: 2c8a7bcbffdaa7c7
 # PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23338](https://arxiv.org/abs/2509.23338)
-**Code**: [https://github.com/weAIDB/PARROT](https://github.com/weAIDB/PARROT)
+**arXiv**: [2509.23338](https://arxiv.org/abs/2509.23338)  
+**Code**: [https://github.com/weAIDB/PARROT](https://github.com/weAIDB/PARROT)  
 **Area**: LLM Evaluation
 **Keywords**: SQL translation, cross-database systems, SQL dialects, LLM evaluation, benchmark
 

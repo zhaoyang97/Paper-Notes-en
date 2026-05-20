@@ -19,8 +19,8 @@ content_hash: eeb5b21eb95ba6ea
 # Do-PFN: In-Context Learning for Causal Effect Estimation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06039](https://arxiv.org/abs/2506.06039)
-**Code**: [https://github.com/jr2021/Do-PFN](https://github.com/jr2021/Do-PFN)
+**arXiv**: [2506.06039](https://arxiv.org/abs/2506.06039)  
+**Code**: [https://github.com/jr2021/Do-PFN](https://github.com/jr2021/Do-PFN)  
 **Area**: Causal Inference / Foundation Models
 **Keywords**: Causal Effect Estimation, PFN, in-context learning, SCM, CATE, Amortized Inference
 

@@ -14,6 +14,7 @@ tags:
 date: 2026-05-08
 content_hash: 43c5837678fac6be
 ---
+
 ## TL;DR
 
 This paper argues that existing image tampering detection benchmarks rely on coarse mask annotations that are severely misaligned with actual edit signals. It proposes PIXAR—a pixel-level, semantically-aware tampering detection benchmark containing 420K+ image pairs—along with a new training framework and evaluation metrics that substantially outperform existing methods in precise localization and semantic understanding.

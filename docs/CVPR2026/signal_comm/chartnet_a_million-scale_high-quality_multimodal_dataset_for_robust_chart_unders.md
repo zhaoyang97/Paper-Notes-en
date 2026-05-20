@@ -18,8 +18,8 @@ content_hash: 85d0f51d7f490662
 # ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27064](https://arxiv.org/abs/2603.27064)
-**Code**: [HuggingFace](https://huggingface.co/datasets/ibm-granite/ChartNet)
+**arXiv**: [2603.27064](https://arxiv.org/abs/2603.27064)  
+**Code**: [HuggingFace](https://huggingface.co/datasets/ibm-granite/ChartNet)  
 **Area**: Signal & Communication
 **Keywords**: chart understanding, multimodal dataset, code-guided synthesis, vision-language models, data visualization
 

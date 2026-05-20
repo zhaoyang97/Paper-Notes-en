@@ -18,8 +18,8 @@ content_hash: 6015e10ff41fdc5d
 # The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.10636](https://arxiv.org/abs/2503.10636)
-**Code**: [https://github.com/hkchengrex/C2OT](https://github.com/hkchengrex/C2OT)
+**arXiv**: [2503.10636](https://arxiv.org/abs/2503.10636)  
+**Code**: [https://github.com/hkchengrex/C2OT](https://github.com/hkchengrex/C2OT)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Optimal Transport, Conditional Generation, Flow Matching, Conditionally Skewed Prior, ODE Solving
 

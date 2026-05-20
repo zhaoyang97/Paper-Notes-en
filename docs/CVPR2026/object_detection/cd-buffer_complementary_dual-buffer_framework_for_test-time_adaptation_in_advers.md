@@ -17,8 +17,8 @@ content_hash: d0d295d670873126
 # CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26092](https://arxiv.org/abs/2603.26092)
-**Code**: [Website](https://wkfsksdl99.github.io/cd_buffer/)
+**arXiv**: [2603.26092](https://arxiv.org/abs/2603.26092)  
+**Code**: [Website](https://wkfsksdl99.github.io/cd_buffer/)  
 **Area**: Object Detection
 **Keywords**: Test-time adaptation, adverse weather, object detection, channel adaptation, additive-subtractive complementarity
 

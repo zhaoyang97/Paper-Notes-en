@@ -17,8 +17,8 @@ content_hash: ffb5d02709452be3
 # Crucible: Quantifying the Potential of Control Algorithms through LLM Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18491](https://arxiv.org/abs/2510.18491)
-**Code**: [https://github.com/thu-media/Crucible](https://github.com/thu-media/Crucible)
+**arXiv**: [2510.18491](https://arxiv.org/abs/2510.18491)  
+**Code**: [https://github.com/thu-media/Crucible](https://github.com/thu-media/Crucible)  
 **Area**: LLM Agent / Control Algorithm Evaluation
 **Keywords**: tuning potential, LLM agent, control algorithm, parameter optimization, Bayesian optimization
 

@@ -18,8 +18,8 @@ content_hash: e80e9d423980ff8f
 # HollowFlow: Efficient Sample Likelihood Evaluation using Hollow Message Passing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21542](https://arxiv.org/abs/2510.21542)
-**Code**: Unavailable
+**arXiv**: [2510.21542](https://arxiv.org/abs/2510.21542)  
+**Code**: Unavailable  
 **Area**: Flow Models / Scientific Computing
 **Keywords**: Continuous Normalizing Flows, Boltzmann Generators, Message Passing, Non-Backtracking Graph Neural Networks, Likelihood Computation
 

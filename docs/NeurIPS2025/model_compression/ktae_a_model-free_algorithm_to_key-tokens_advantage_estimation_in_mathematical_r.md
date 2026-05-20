@@ -18,8 +18,8 @@ content_hash: b91f629d414ec851
 # KTAE: A Model-Free Algorithm to Key-Tokens Advantage Estimation in Mathematical Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16826](https://arxiv.org/abs/2505.16826)
-**Code**: [GitHub](https://github.com/ZNLP/KTAE)
+**arXiv**: [2505.16826](https://arxiv.org/abs/2505.16826)  
+**Code**: [GitHub](https://github.com/ZNLP/KTAE)  
 **Area**: Model Compression
 **Keywords**: token-level advantage estimation, GRPO, DAPO, mathematical reasoning, reinforcement learning
 

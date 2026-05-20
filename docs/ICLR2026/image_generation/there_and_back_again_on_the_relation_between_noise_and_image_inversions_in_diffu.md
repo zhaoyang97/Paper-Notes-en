@@ -18,8 +18,8 @@ content_hash: 3efd1f9d7337905b
 # There and Back Again: On the Relation between Noise and Image Inversions in Diffusion Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2410.23530](https://arxiv.org/abs/2410.23530)
-**Code**: [GitHub](https://github.com/luk-st/taba)
+**arXiv**: [2410.23530](https://arxiv.org/abs/2410.23530)  
+**Code**: [GitHub](https://github.com/luk-st/taba)  
 **Area**: Diffusion Models / Inversion Analysis / Image Editing
 **Keywords**: DDIM inversion, latent encoding, noise correlation, smooth regions, forward diffusion fix
 

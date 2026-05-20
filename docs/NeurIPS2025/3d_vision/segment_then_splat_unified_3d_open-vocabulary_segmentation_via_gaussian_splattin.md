@@ -18,8 +18,8 @@ content_hash: 0d2b75eecd0b259c
 # Segment then Splat: Unified 3D Open-Vocabulary Segmentation via Gaussian Splatting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.22204](https://arxiv.org/abs/2503.22204)
-**Code**: [GitHub](https://vulab-ai.github.io/Segment-then-Splat/)
+**arXiv**: [2503.22204](https://arxiv.org/abs/2503.22204)  
+**Code**: [GitHub](https://vulab-ai.github.io/Segment-then-Splat/)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, Open-Vocabulary Segmentation, Dynamic Scenes, CLIP Embeddings, Object Tracking
 

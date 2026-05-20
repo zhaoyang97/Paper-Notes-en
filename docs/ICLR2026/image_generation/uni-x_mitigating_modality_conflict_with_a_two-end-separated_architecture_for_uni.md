@@ -18,8 +18,8 @@ content_hash: 7cc74c9f6193adf7
 # Uni-X: Mitigating Modality Conflict with a Two-End-Separated Architecture for Unified Multimodal Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24365](https://arxiv.org/abs/2509.24365)
-**Code**: [https://github.com/CURRENTF/Uni-X](https://github.com/CURRENTF/Uni-X)
+**arXiv**: [2509.24365](https://arxiv.org/abs/2509.24365)  
+**Code**: [https://github.com/CURRENTF/Uni-X](https://github.com/CURRENTF/Uni-X)  
 **Area**: Image Generation
 **Keywords**: Unified Multimodal Models, Gradient Conflict, Modality Separation, Autoregressive Generation, Image Generation and Understanding
 

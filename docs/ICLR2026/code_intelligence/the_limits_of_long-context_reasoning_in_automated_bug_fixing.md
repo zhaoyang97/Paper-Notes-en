@@ -18,8 +18,8 @@ content_hash: 068c1dd31d9e3389
 # The Limits of Long-Context Reasoning in Automated Bug Fixing
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.16069](https://arxiv.org/abs/2602.16069)
-**Code**: None
+**arXiv**: [2602.16069](https://arxiv.org/abs/2602.16069)  
+**Code**: None  
 **Area**: Agent / Code
 **Keywords**: long-context reasoning, automated bug fixing, SWE-bench, agentic workflow, context window
 

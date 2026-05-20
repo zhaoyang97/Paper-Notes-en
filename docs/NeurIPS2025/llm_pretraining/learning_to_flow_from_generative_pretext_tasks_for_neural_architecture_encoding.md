@@ -18,8 +18,8 @@ content_hash: c67eb8354a48ef90
 # Learning to Flow from Generative Pretext Tasks for Neural Architecture Encoding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18360](https://arxiv.org/abs/2510.18360)
-**Code**: [GitHub](https://github.com/kswoo97/FGPAnom)
+**arXiv**: [2510.18360](https://arxiv.org/abs/2510.18360)  
+**Code**: [GitHub](https://github.com/kswoo97/FGPAnom)  
 **Area**: Neural Architecture Search / Representation Learning
 **Keywords**: Neural architecture encoding, information flow, generative pre-training, NAS, graph neural networks
 

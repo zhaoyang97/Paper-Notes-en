@@ -17,8 +17,8 @@ content_hash: a3e7981652e468fd
 # Do Different Prompting Methods Yield a Common Task Representation?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12075](https://arxiv.org/abs/2505.12075)
-**Code**: None
+**arXiv**: [2505.12075](https://arxiv.org/abs/2505.12075)  
+**Code**: None  
 **Area**: Interpretability / LLM Mechanisms
 **Keywords**: Task representation, function vectors, prompting methods, attention heads, interpretability
 
@@ -47,27 +47,27 @@ This paper generalizes the FV extraction pipeline of Todd et al. (2024) from few
 ### Key Designs
 
 1. **Generalized Function Vector Extraction**:
-   - Original method: Given a K-shot demonstration prompt, compute the **task-conditioned mean activation** $\bar{a}_{lj}^t$ for each attention head, then estimate the **Causal Indirect Effect (CIE)** using baseline prompts with shuffled labels; select the top-20 causally relevant attention heads $\mathcal{A}^D$ and sum their mean activations to form the function vector $v_t = \sum_{a_{lj} \in \mathcal{A}^D} \bar{a}_{lj}^t$.
-   - Proposed extension: Replace few-shot demonstrations with a task specification $Q_t$ (e.g., a text instruction) to construct prompts $p_i^t = [q_m^t, x_{iq}]$. Llama-3.1-405B is used to generate approximately 200 deduplicated instructions per task, from which the top $J=5$ instructions by accuracy are selected.
+    - Original method: Given a K-shot demonstration prompt, compute the **task-conditioned mean activation** $\bar{a}_{lj}^t$ for each attention head, then estimate the **Causal Indirect Effect (CIE)** using baseline prompts with shuffled labels; select the top-20 causally relevant attention heads $\mathcal{A}^D$ and sum their mean activations to form the function vector $v_t = \sum_{a_{lj} \in \mathcal{A}^D} \bar{a}_{lj}^t$.
+    - Proposed extension: Replace few-shot demonstrations with a task specification $Q_t$ (e.g., a text instruction) to construct prompts $p_i^t = [q_m^t, x_{iq}]$. Llama-3.1-405B is used to generate approximately 200 deduplicated instructions per task, from which the top $J=5$ instructions by accuracy are selected.
 
 2. **Instruction Function Vector Construction**:
-   - Mean task-conditioned activations are computed over 100 samples; CIEs are estimated over 25 samples.
-   - Short instructions (≤16 tokens) and long instructions (unconstrained) are generated separately, crossed with three baseline types, yielding 6 conditions in total.
-   - CIEs are averaged across the 6 conditions to identify the top-20 attention heads.
-   - For final evaluation, activations from short and long instruction conditions are averaged.
+    - Mean task-conditioned activations are computed over 100 samples; CIEs are estimated over 25 samples.
+    - Short instructions (≤16 tokens) and long instructions (unconstrained) are generated separately, crossed with three baseline types, yielding 6 conditions in total.
+    - CIEs are averaged across the 6 conditions to identify the top-20 attention heads.
+    - For final evaluation, activations from short and long instruction conditions are averaged.
 
 3. **Non-Informative Baseline Design**: Three methods are used to construct baselines that are equiprobable to the instructions but contain no task-relevant information:
-   - **Equiprobable token sequences**: Tokens are sampled position-by-position to match the conditional probability of the original instruction at each position.
-   - **Natural text**: Text segments from WikiText-103 are sampled to match the length and probability of the original instruction.
-   - **Other-task instructions**: Instructions from other tasks are used as baselines, matched by length and probability.
+    - **Equiprobable token sequences**: Tokens are sampled position-by-position to match the conditional probability of the original instruction at each position.
+    - **Natural text**: Text segments from WikiText-103 are sampled to match the length and probability of the original instruction.
+    - **Other-task instructions**: Instructions from other tasks are used as baselines, matched by length and probability.
 
 ### Loss & Training
 
 - This paper involves no model training; the core methodology is **causal intervention analysis**.
 - Evaluation protocol: FVs are injected as additive interventions into the residual stream at layer $\lfloor L/3 \rfloor$.
 - Two evaluation settings:
-  - **Shuffled-label 10-shot**: Used to evaluate demonstration FVs (matching their extraction context).
-  - **Zero-shot**: Used to evaluate instruction FVs (matching their extraction context).
+    - **Shuffled-label 10-shot**: Used to evaluate demonstration FVs (matching their extraction context).
+    - **Zero-shot**: Used to evaluate instruction FVs (matching their extraction context).
 
 ## Key Experimental Results
 

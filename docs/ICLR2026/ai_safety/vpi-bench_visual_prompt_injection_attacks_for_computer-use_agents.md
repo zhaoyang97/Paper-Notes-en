@@ -18,8 +18,8 @@ content_hash: a2cacd45faa4f33a
 # VPI-Bench: Visual Prompt Injection Attacks for Computer-Use Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.02456](https://arxiv.org/abs/2506.02456)
-**Code**: [https://github.com/cua-framework/agents](https://github.com/cua-framework/agents)
+**arXiv**: [2506.02456](https://arxiv.org/abs/2506.02456)  
+**Code**: [https://github.com/cua-framework/agents](https://github.com/cua-framework/agents)  
 **Area**: AI Safety / Agent Security
 **Keywords**: Visual Prompt Injection, Computer-Use Agent, Browser-Use Agent, Security Benchmark, System-Level Threats
 

@@ -19,8 +19,8 @@ content_hash: e083ad36c8d725ad
 # Inverse Optimization Latent Variable Models for Learning Costs Applied to Route Problems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15999](https://arxiv.org/abs/2509.15999)
-**Code**: None
+**arXiv**: [2509.15999](https://arxiv.org/abs/2509.15999)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: inverse optimization, latent variable model, Fenchel-Young loss, route planning, TSP, VAE
 

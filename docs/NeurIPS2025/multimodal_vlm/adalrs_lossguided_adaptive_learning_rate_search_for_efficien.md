@@ -18,8 +18,8 @@ content_hash: c872c2e3c6b317eb
 # AdaLRS: Loss-Guided Adaptive Learning Rate Search for Efficient Foundation Model Pretraining
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.13274](https://arxiv.org/abs/2506.13274)
-**Code**: None
+**arXiv**: [2506.13274](https://arxiv.org/abs/2506.13274)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: learning rate search, online optimization, loss velocity, foundation model pretraining, cosine scheduler
 

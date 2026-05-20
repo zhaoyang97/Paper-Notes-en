@@ -18,8 +18,8 @@ content_hash: fdd6512a4794e18b
 # Pay Attention to CTC: Fast and Robust Pseudo-Labelling for Unified Speech Recognition
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.19316](https://arxiv.org/abs/2602.19316)
-**Code**: None (extends the USR framework)
+**arXiv**: [2602.19316](https://arxiv.org/abs/2602.19316)  
+**Code**: None (extends the USR framework)  
 **Area**: Audio & Speech
 **Keywords**: unified speech recognition, CTC, pseudo-labelling, audio-visual speech recognition, out-of-distribution robustness
 

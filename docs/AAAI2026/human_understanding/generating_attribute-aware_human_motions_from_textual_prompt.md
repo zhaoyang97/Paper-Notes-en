@@ -18,8 +18,8 @@ content_hash: ada7807d97e57037
 # Generating Attribute-Aware Human Motions from Textual Prompt
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.21912](https://arxiv.org/abs/2506.21912)
-**Code**: None
+**arXiv**: [2506.21912](https://arxiv.org/abs/2506.21912)  
+**Code**: None  
 **Area**: Human Understanding
 **Keywords**: Human motion generation, attribute-awareness, causal decoupling, VQVAE, text-driven
 

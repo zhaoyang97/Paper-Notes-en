@@ -18,8 +18,8 @@ content_hash: 30d1a7d47119bd11
 # Consensus-Aligned Neuron Efficient Fine-Tuning Large Language Models for Multi-Domain Machine Translation
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.05694](https://arxiv.org/abs/2602.05694)
-**Code**: [GitHub](https://github.com/fortunatekiss/CANEFT)
+**arXiv**: [2602.05694](https://arxiv.org/abs/2602.05694)  
+**Code**: [GitHub](https://github.com/fortunatekiss/CANEFT)  
 **Area**: Multilingual Translation
 **Keywords**: Multi-domain machine translation, neuron selection, mutual information, parameter-efficient fine-tuning, LLM
 

@@ -18,8 +18,8 @@ content_hash: e331b1b11a4e6ab5
 # Enhancing Hallucination Detection through Noise Injection
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.03799](https://arxiv.org/abs/2502.03799)
-**Code**: Not released
+**arXiv**: [2502.03799](https://arxiv.org/abs/2502.03799)  
+**Code**: Not released  
 **Area**: LLM Safety
 **Keywords**: Hallucination detection, noise injection, epistemic uncertainty, Bayesian approximation, intermediate representations
 

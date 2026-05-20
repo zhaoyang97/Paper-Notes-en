@@ -18,8 +18,8 @@ content_hash: 8ef5a3658feb2808
 # Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction
 
 **Conference**: ACL 2026
-**arXiv**: [2601.05654](https://arxiv.org/abs/2601.05654)
-**Code**: [GitHub](https://github.com/holi-lab/ReCAP)
+**arXiv**: [2601.05654](https://arxiv.org/abs/2601.05654)  
+**Code**: [GitHub](https://github.com/holi-lab/ReCAP)  
 **Area**: Personalized Recommendation & User Modeling
 **Keywords**: persuasiveness prediction, user profiling, retrieval augmentation, DPO training, personalization
 

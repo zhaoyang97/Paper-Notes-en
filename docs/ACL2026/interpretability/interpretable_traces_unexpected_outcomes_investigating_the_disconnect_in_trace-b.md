@@ -17,8 +17,8 @@ content_hash: 1b4c28ce9027199c
 # Interpretable Traces, Unexpected Outcomes: Investigating the Disconnect in Trace-Based Knowledge Distillation
 
 **Conference**: ACL 2026
-**arXiv**: [2505.13792](https://arxiv.org/abs/2505.13792)
-**Code**: Available (GitHub)
+**arXiv**: [2505.13792](https://arxiv.org/abs/2505.13792)  
+**Code**: Available (GitHub)  
 **Area**: Interpretability / Knowledge Distillation
 **Keywords**: CoT reasoning traces, knowledge distillation, semantic correctness, interpretability, trace faithfulness
 

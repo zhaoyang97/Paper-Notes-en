@@ -18,8 +18,8 @@ content_hash: 37a3ce0ad8390809
 # Improving the Straight-Through Estimator with Zeroth-Order Information
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23926](https://arxiv.org/abs/2510.23926)
-**Code**: [GitHub](https://github.com/1733116199/fogzo)
+**arXiv**: [2510.23926](https://arxiv.org/abs/2510.23926)  
+**Code**: [GitHub](https://github.com/1733116199/fogzo)  
 **Area**: Optimization
 **Keywords**: quantization-aware training, straight-through estimator, zeroth-order optimization, FOGZO, gradient estimation
 

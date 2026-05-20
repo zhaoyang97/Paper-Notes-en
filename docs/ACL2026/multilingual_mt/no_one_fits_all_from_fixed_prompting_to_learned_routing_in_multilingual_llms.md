@@ -18,8 +18,8 @@ content_hash: 83fab188537683df
 # No One Fits All: From Fixed Prompting to Learned Routing in Multilingual LLMs
 
 **Conference**: ACL 2026
-**arXiv**: [2604.16937](https://arxiv.org/abs/2604.16937)
-**Code**: None
+**arXiv**: [2604.16937](https://arxiv.org/abs/2604.16937)  
+**Code**: None  
 **Area**: Multilingual MT / Prompting Strategies
 **Keywords**: Multilingual LLM, prompting strategy selection, translation routing, low-resource languages, learned classifier
 

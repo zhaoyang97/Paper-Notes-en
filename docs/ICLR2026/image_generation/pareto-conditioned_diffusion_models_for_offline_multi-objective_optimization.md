@@ -18,8 +18,8 @@ content_hash: ed702bd87280cd35
 # Pareto-Conditioned Diffusion Models for Offline Multi-Objective Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.00737](https://arxiv.org/abs/2602.00737)
-**Code**: [GitHub](https://github.com/jatan12/PCD)
+**arXiv**: [2602.00737](https://arxiv.org/abs/2602.00737)  
+**Code**: [GitHub](https://github.com/jatan12/PCD)  
 **Area**: Image Generation
 **Keywords**: Offline multi-objective optimization, conditional diffusion models, Pareto front, surrogate-free, reference directions
 

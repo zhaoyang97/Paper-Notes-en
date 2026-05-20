@@ -18,8 +18,8 @@ content_hash: 960b4d57c3194965
 # BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21105](https://arxiv.org/abs/2602.21105)
-**Code**: Coming soon (to be released upon acceptance)
+**arXiv**: [2602.21105](https://arxiv.org/abs/2602.21105)  
+**Code**: Coming soon (to be released upon acceptance)  
 **Area**: 3D Vision
 **Keywords**: CAD reconstruction, B-rep, Gaussian splatting, parametric surface fitting, contrastive learning
 

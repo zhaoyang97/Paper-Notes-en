@@ -17,8 +17,8 @@ content_hash: 44d466c30fefdd77
 # Judging by the Rules: Compliance-Aligned Framework for Modern Slavery Statement Monitoring
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07803](https://arxiv.org/abs/2511.07803)
-**Code**: [GitHub](https://github.com/mila-ai4h/aims-reasoning-alignment)
+**arXiv**: [2511.07803](https://arxiv.org/abs/2511.07803)  
+**Code**: [GitHub](https://github.com/mila-ai4h/aims-reasoning-alignment)  
 **Area**: Other
 **Keywords**: Compliance Verification, Modern Slavery Act, LLM-as-Judge, Rule Alignment, GRPO
 

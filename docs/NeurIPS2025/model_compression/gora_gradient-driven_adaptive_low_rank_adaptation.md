@@ -18,8 +18,8 @@ content_hash: 45f887c39154b673
 # GoRA: Gradient-Driven Adaptive Low Rank Adaptation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.12171](https://arxiv.org/abs/2502.12171)
-**Code**: [GitHub](https://github.com/hhnqqq/MyTransformers)
+**arXiv**: [2502.12171](https://arxiv.org/abs/2502.12171)  
+**Code**: [GitHub](https://github.com/hhnqqq/MyTransformers)  
 **Area**: Model Compression / LLM Efficiency
 **Keywords**: LoRA, adaptive rank allocation, gradient-driven initialization, parameter-efficient fine-tuning, LLM
 

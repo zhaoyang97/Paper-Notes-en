@@ -18,8 +18,8 @@ content_hash: bd8bd466a14b8163
 # MSU-Bench: Musical Score Understanding Benchmark
 
 **Conference**: ACL 2026
-**arXiv**: [2511.20697](https://arxiv.org/abs/2511.20697)
-**Code**: [https://github.com/Congren-Dai/MSU-Bench](https://github.com/Congren-Dai/MSU-Bench)
+**arXiv**: [2511.20697](https://arxiv.org/abs/2511.20697)  
+**Code**: [https://github.com/Congren-Dai/MSU-Bench](https://github.com/Congren-Dai/MSU-Bench)  
 **Area**: Multimodal / Music Understanding
 **Keywords**: musical score understanding, music information retrieval, ABC notation, multimodal benchmark, hallucination
 

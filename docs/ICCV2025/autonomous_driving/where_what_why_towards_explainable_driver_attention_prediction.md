@@ -18,8 +18,8 @@ content_hash: 5f953b187fb58b82
 # Where, What, Why: Towards Explainable Driver Attention Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23088](https://arxiv.org/abs/2506.23088)
-**Code**: [github.com/yuchen2199/Explainable-Driver-Attention-Prediction](https://github.com/yuchen2199/Explainable-Driver-Attention-Prediction)
+**arXiv**: [2506.23088](https://arxiv.org/abs/2506.23088)  
+**Code**: [github.com/yuchen2199/Explainable-Driver-Attention-Prediction](https://github.com/yuchen2199/Explainable-Driver-Attention-Prediction)  
 **Area**: Autonomous Driving / Attention Modeling
 **Keywords**: driver attention prediction, explainability, multimodal large language models, cognitive reasoning, gaze prediction
 

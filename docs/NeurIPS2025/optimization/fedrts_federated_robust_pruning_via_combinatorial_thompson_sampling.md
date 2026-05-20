@@ -18,8 +18,8 @@ content_hash: 11a07fd1f96fce83
 # FedRTS: Federated Robust Pruning via Combinatorial Thompson Sampling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.19122](https://arxiv.org/abs/2501.19122)
-**Code**: [GitHub](https://github.com/Little0o0/FedRTS)
+**arXiv**: [2501.19122](https://arxiv.org/abs/2501.19122)  
+**Code**: [GitHub](https://github.com/Little0o0/FedRTS)  
 **Area**: Optimization
 **Keywords**: Federated Learning, Dynamic Pruning, Thompson Sampling, Combinatorial Multi-Armed Bandit, Sparse Training
 

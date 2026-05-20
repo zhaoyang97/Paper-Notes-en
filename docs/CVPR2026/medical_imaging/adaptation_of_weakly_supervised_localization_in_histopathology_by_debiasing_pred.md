@@ -18,8 +18,8 @@ content_hash: 9f4f66d7347fed8c
 # Adaptation of Weakly Supervised Localization in Histopathology by Debiasing Predictions
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12468](https://arxiv.org/abs/2603.12468)
-**Code**: [anonymous.4open.science/r/SFDA-DeP-1797/](https://anonymous.4open.science/r/SFDA-DeP-1797/)
+**arXiv**: [2603.12468](https://arxiv.org/abs/2603.12468)  
+**Code**: [anonymous.4open.science/r/SFDA-DeP-1797/](https://anonymous.4open.science/r/SFDA-DeP-1797/)  
 **Authors**: Alexis Guichemerre et al. (ÉTS Montréal, Sorbonne Université, University of York, McGill University)
 **Area**: Medical Imaging / Histopathological Image Analysis
 **Keywords**: WSOL, Source-Free Domain Adaptation, Prediction Debiasing, Machine Unlearning, Histopathology

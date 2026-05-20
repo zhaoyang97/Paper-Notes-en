@@ -18,8 +18,8 @@ content_hash: 719af12cbe6dc4c5
 # Every Camera Effect, Every Time, All at Once: 4D Gaussian Ray Tracing for Physics-based Camera Effect Data Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.10759](https://arxiv.org/abs/2509.10759)
-**Code**: [Project Page](https://shigon255.github.io/4DGRT-project-page)
+**arXiv**: [2509.10759](https://arxiv.org/abs/2509.10759)  
+**Code**: [Project Page](https://shigon255.github.io/4DGRT-project-page)  
 **Area**: 3D Vision
 **Keywords**: 4D Gaussian Splatting, Ray Tracing, Camera Effects, Dynamic Scene Reconstruction, Data Generation
 

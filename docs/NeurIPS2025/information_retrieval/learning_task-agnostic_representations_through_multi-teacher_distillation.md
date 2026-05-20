@@ -18,8 +18,8 @@ content_hash: 1a3c1db392f36236
 # Learning Task-Agnostic Representations through Multi-Teacher Distillation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18680](https://arxiv.org/abs/2510.18680)
-**Code**: None
+**arXiv**: [2510.18680](https://arxiv.org/abs/2510.18680)  
+**Code**: None  
 **Area**: Information Retrieval
 **Keywords**: Knowledge Distillation, Multi-Teacher, Task-Agnostic, Representation Learning, Mutual Information
 

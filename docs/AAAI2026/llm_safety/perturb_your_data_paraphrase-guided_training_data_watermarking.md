@@ -19,9 +19,9 @@ content_hash: cc784b795504cf52
 # Perturb Your Data: Paraphrase-Guided Training Data Watermarking
 
 **Conference**: AAAI2026
-**arXiv**: [2512.17075](https://arxiv.org/abs/2512.17075)
+**arXiv**: [2512.17075](https://arxiv.org/abs/2512.17075)  
 **Authors**: Pranav Shetty, Mirazul Haque, Petr Babkin, Zhiqiang Ma, Xiaomo Liu, Manuela Veloso (JPMorgan AI Research)
-**Code**: Not available
+**Code**: Not available  
 **Area**: AI Safety
 **Keywords**: Training data watermarking, membership inference attack, data copyright protection, LLM, paraphrasing, Min-K%++
 

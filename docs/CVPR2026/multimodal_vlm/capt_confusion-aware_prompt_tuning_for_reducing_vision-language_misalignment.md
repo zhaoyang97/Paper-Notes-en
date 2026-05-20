@@ -19,8 +19,8 @@ content_hash: a0510a9aab369b26
 # CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment
 
 **Conference**: CVPR2026
-**arXiv**: [2603.02557](https://arxiv.org/abs/2603.02557)
-**Code**: [github.com/greatest-gourmet/CAPT](https://github.com/greatest-gourmet/CAPT)
+**arXiv**: [2603.02557](https://arxiv.org/abs/2603.02557)  
+**Code**: [github.com/greatest-gourmet/CAPT](https://github.com/greatest-gourmet/CAPT)  
 **Area**: Multimodal VLM
 **Keywords**: prompt tuning, vision-language alignment, confusion-awareness, CLIP, few-shot, fine-grained classification
 

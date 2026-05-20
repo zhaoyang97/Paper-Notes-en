@@ -17,8 +17,8 @@ content_hash: 5750ba6f413f039f
 # CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection
 
 **Conference**: AAAI2026
-**arXiv**: [2511.12909](https://arxiv.org/abs/2511.12909)
-**Code**: [GitHub](https://github.com/zyh16143998882/CASL)
+**arXiv**: [2511.12909](https://arxiv.org/abs/2511.12909)  
+**Code**: [GitHub](https://github.com/zyh16143998882/CASL)  
 **Area**: Others
 **Keywords**: 3D anomaly detection, self-supervised learning, curvature, point cloud, U-Net
 

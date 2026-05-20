@@ -18,8 +18,8 @@ content_hash: 9d3a33158ed41e4b
 # Spotlight and Shadow: Attention-Guided Dual-Anchor Introspective Decoding for MLLM Hallucination Mitigation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.10071](https://arxiv.org/abs/2604.10071)
-**Code**: N/A
+**arXiv**: [2604.10071](https://arxiv.org/abs/2604.10071)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal hallucination, contrastive decoding, layer-wise analysis, visual attention, training-free
 

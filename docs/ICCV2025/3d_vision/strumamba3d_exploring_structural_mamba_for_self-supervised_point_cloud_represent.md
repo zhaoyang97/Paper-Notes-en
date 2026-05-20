@@ -18,8 +18,8 @@ content_hash: 801fa0720ef7c537
 # StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21541](https://arxiv.org/abs/2506.21541)
-**Code**: None
+**arXiv**: [2506.21541](https://arxiv.org/abs/2506.21541)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: Point cloud representation learning, state space models, Mamba, self-supervised learning, structural modeling
 

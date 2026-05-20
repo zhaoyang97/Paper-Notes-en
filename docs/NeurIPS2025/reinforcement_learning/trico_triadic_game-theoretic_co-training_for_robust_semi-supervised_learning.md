@@ -18,8 +18,8 @@ content_hash: c53dfc4395c8c9a9
 # TRiCo: Triadic Game-Theoretic Co-Training for Robust Semi-Supervised Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.21526](https://arxiv.org/abs/2509.21526)
-**Code**: Unavailable
+**arXiv**: [2509.21526](https://arxiv.org/abs/2509.21526)  
+**Code**: Unavailable  
 **Area**: Reinforcement Learning
 **Keywords**: Semi-supervised learning, game theory, co-training, meta-learning, adversarial perturbation
 

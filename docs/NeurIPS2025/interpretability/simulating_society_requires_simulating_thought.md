@@ -18,8 +18,8 @@ content_hash: 3ef3e7efbc284cf8
 # Simulating Society Requires Simulating Thought
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06958](https://arxiv.org/abs/2506.06958)
-**Code**: None
+**arXiv**: [2506.06958](https://arxiv.org/abs/2506.06958)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: social simulation, cognitive modeling, causal reasoning, belief graphs, reasoning fidelity
 
@@ -50,24 +50,24 @@ The paper proposes GenMinds (a modeling framework) and RECAP (an evaluation fram
 
 1. **Cognitive Motifs**:
 
-   - **Function**: Extract minimal causal reasoning units from natural language.
-   - **Mechanism**: LLM-assisted parsing of interviews to identify concept nodes and directed causal relations. Cross-individual aggregation forms a shared cognitive motif topology.
-   - **Design Motivation**: Modular, reusable reasoning units support cross-domain generalization.
+    - **Function**: Extract minimal causal reasoning units from natural language.
+    - **Mechanism**: LLM-assisted parsing of interviews to identify concept nodes and directed causal relations. Cross-individual aggregation forms a shared cognitive motif topology.
+    - **Design Motivation**: Modular, reusable reasoning units support cross-domain generalization.
 
 2. **Causal Belief Networks (CBN)**:
 
-   - **Function**: Compile cognitive motifs into directed acyclic graphs.
-   - **Mechanism**: Nodes encode concepts; edges encode directional causal influence. Supports do-calculus for counterfactual intervention simulation.
-   - **Design Motivation**: Explicit causal graphs render reasoning paths traceable and interpretable.
+    - **Function**: Compile cognitive motifs into directed acyclic graphs.
+    - **Mechanism**: Nodes encode concepts; edges encode directional causal influence. Supports do-calculus for counterfactual intervention simulation.
+    - **Design Motivation**: Explicit causal graphs render reasoning paths traceable and interpretable.
 
 3. **Neuro-Symbolic Hybrid Reasoning**:
 
-   - **Function**: Combine the flexibility of LLMs with the rigor of symbolic reasoning.
-   - **Mechanism**: LLMs select interventions and assemble motifs into the CBN; probabilistic updates simulate belief dynamics.
+    - **Function**: Combine the flexibility of LLMs with the rigor of symbolic reasoning.
+    - **Mechanism**: LLMs select interventions and assemble motifs into the CBN; probabilistic updates simulate belief dynamics.
 
 4. **RECAP Evaluation Framework**:
 
-   - Three dimensions: motif alignment, belief consistency, and counterfactual robustness.
+    - Three dimensions: motif alignment, belief consistency, and counterfactual robustness.
 
 ## Key Experimental Results
 

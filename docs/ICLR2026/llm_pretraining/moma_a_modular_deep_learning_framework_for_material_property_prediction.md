@@ -18,8 +18,8 @@ content_hash: 73c370979d9c5ec4
 # MoMa: A Simple Modular Deep Learning Framework for Material Property Prediction
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.15483](https://arxiv.org/abs/2502.15483)
-**Code**: [https://github.com/GenSI-THUAIR/MoMa](https://github.com/GenSI-THUAIR/MoMa)
+**arXiv**: [2502.15483](https://arxiv.org/abs/2502.15483)  
+**Code**: [https://github.com/GenSI-THUAIR/MoMa](https://github.com/GenSI-THUAIR/MoMa)  
 **Area**: Materials Science / Modular Deep Learning
 **Keywords**: material property prediction, modular learning, adaptive combination, transfer learning, graph neural networks
 

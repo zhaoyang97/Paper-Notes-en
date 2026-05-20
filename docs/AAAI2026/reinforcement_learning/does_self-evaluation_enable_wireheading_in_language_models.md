@@ -18,8 +18,8 @@ content_hash: 1460b88078cebefd
 # Does Self-Evaluation Enable Wireheading in Language Models?
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.23092](https://arxiv.org/abs/2511.23092)
-**Code**: [https://github.com/DavidDemitriAfrica/llm-wireheading-experiment](https://github.com/DavidDemitriAfrica/llm-wireheading-experiment)
+**arXiv**: [2511.23092](https://arxiv.org/abs/2511.23092)  
+**Code**: [https://github.com/DavidDemitriAfrica/llm-wireheading-experiment](https://github.com/DavidDemitriAfrica/llm-wireheading-experiment)  
 **Area**: Reinforcement Learning / AI Safety
 **Keywords**: Wireheading, Self-Evaluation, Reward Manipulation, Language Model Alignment, POMDP
 

@@ -18,9 +18,9 @@ content_hash: 62591e7b95643903
 # Non-Asymptotic Analysis of Data Augmentation for Precision Matrix Estimation
 
 **Conference**: NeurIPS 2025 (Spotlight)
-**arXiv**: [2510.02119](https://arxiv.org/abs/2510.02119)
+**arXiv**: [2510.02119](https://arxiv.org/abs/2510.02119)  
 **Authors**: Lucas Morisset, Adrien Hardy, Alain Durmus
-**Code**: None
+**Code**: None  
 **Area**: Statistical Machine Learning / High-Dimensional Statistics
 **Keywords**: Precision matrix estimation, data augmentation, linear shrinkage estimator, random matrix theory, concentration inequalities
 

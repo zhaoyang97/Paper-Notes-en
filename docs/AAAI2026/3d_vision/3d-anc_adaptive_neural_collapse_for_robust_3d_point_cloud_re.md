@@ -18,8 +18,8 @@ content_hash: 11440df2b7d7eb18
 # 3D-ANC: Adaptive Neural Collapse for Robust 3D Point Cloud Recognition
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07040](https://arxiv.org/abs/2511.07040)
-**Code**: Unavailable
+**arXiv**: [2511.07040](https://arxiv.org/abs/2511.07040)  
+**Code**: Unavailable  
 **Area**: 3D Vision / Adversarial Robustness
 **Keywords**: Point Cloud Recognition, Adversarial Robustness, Neural Collapse, ETF Classifier, Feature Disentanglement
 

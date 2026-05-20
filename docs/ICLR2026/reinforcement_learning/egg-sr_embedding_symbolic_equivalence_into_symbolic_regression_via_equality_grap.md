@@ -18,8 +18,8 @@ content_hash: 50a130ebe5ff3b55
 # EGG-SR: Embedding Symbolic Equivalence into Symbolic Regression via Equality Graph
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.05849](https://arxiv.org/abs/2511.05849)
-**Code**: [Project Page](https://nan-jiang-group.github.io/egg-sr)
+**arXiv**: [2511.05849](https://arxiv.org/abs/2511.05849)  
+**Code**: [Project Page](https://nan-jiang-group.github.io/egg-sr)  
 **Area**: Reinforcement Learning
 **Keywords**: Symbolic Regression, Symbolic Equivalence, Equality Graph, Monte Carlo Tree Search, Deep Reinforcement Learning
 

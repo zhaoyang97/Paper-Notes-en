@@ -18,8 +18,8 @@ content_hash: b6c96f8047332882
 # One Operator to Rule Them All? On Boundary-Indexed Operator Families in Neural PDE Solvers
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01406](https://arxiv.org/abs/2603.01406)
-**Code**: [Available](https://github.com/lennonshikhman/boundary-indexed-neural-pde)
+**arXiv**: [2603.01406](https://arxiv.org/abs/2603.01406)  
+**Code**: [Available](https://github.com/lennonshikhman/boundary-indexed-neural-pde)  
 **Area**: Scientific Computing / Neural PDE Solvers
 **Keywords**: Neural Operator, Boundary Conditions, Distribution Shift, Non-Identifiability, Fourier Neural Operator
 

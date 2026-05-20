@@ -18,8 +18,8 @@ content_hash: 661c1c572ca6ab59
 # Out of Sight, Out of Track: Adversarial Attacks on Propagation-based Multi-Object Trackers via Query State Manipulation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00452](https://arxiv.org/abs/2604.00452)
-**Code**: None
+**arXiv**: [2604.00452](https://arxiv.org/abs/2604.00452)  
+**Code**: None  
 **Area**: Video Understanding / Multi-Object Tracking / Adversarial Attacks
 **Keywords**: Multi-object tracking, adversarial attacks, query propagation, temporal memory corruption, physical attacks
 

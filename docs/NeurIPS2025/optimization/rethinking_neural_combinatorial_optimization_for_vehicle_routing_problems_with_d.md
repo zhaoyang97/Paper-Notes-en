@@ -18,8 +18,8 @@ content_hash: 07063d7742dbbcdd
 # Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.24627](https://arxiv.org/abs/2505.24627)
-**Code**: [GitHub](https://github.com/CIAM-Group/Rethinking_Constraint_Tightness)
+**arXiv**: [2505.24627](https://arxiv.org/abs/2505.24627)  
+**Code**: [GitHub](https://github.com/CIAM-Group/Rethinking_Constraint_Tightness)  
 **Area**: Optimization
 **Keywords**: Neural Combinatorial Optimization, Vehicle Routing Problem, Constraint Tightness, Multiple Expert Module, Generalization
 

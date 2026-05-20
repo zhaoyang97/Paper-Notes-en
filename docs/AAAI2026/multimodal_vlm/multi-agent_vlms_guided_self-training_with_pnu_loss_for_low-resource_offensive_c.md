@@ -18,8 +18,8 @@ content_hash: ed019047c872797b
 # Multi-Agent VLMs Guided Self-Training with PNU Loss for Low-Resource Offensive Content Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13759](https://arxiv.org/abs/2511.13759)
-**Code**: [github](https://github.com/Social-AI-Studio/MA-VLM.git)
+**arXiv**: [2511.13759](https://arxiv.org/abs/2511.13759)  
+**Code**: [github](https://github.com/Social-AI-Studio/MA-VLM.git)  
 **Area**: Multimodal VLM
 **Keywords**: Self-training, Multi-agent VLM, Pseudo-labels, PNU loss, Offensive content detection
 

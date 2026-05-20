@@ -18,8 +18,8 @@ content_hash: a1508b561c18e665
 # Deep Hidden Cognition Facilitates Reliable Chain-of-Thought Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.10007](https://arxiv.org/abs/2507.10007)
-**Code**: [https://github.com/hfutml/cog-cot](https://github.com/hfutml/cog-cot)
+**arXiv**: [2507.10007](https://arxiv.org/abs/2507.10007)  
+**Code**: [https://github.com/hfutml/cog-cot](https://github.com/hfutml/cog-cot)  
 **Area**: LLM Reasoning / Interpretability
 **Keywords**: CoT reasoning reliability, internal cognition, attention head probing, confidence predictor, beam search guidance
 

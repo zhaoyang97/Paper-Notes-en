@@ -18,8 +18,8 @@ content_hash: ed975ac31849d1c0
 # From Woofs to Words: Towards Intelligent Robotic Guide Dogs with Verbal Communication
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.12574](https://arxiv.org/abs/2603.12574)
-**Code**: [Project Page](https://sites.google.com/view/woofs-words)
+**arXiv**: [2603.12574](https://arxiv.org/abs/2603.12574)  
+**Code**: [Project Page](https://sites.google.com/view/woofs-words)  
 **Area**: Robotics
 **Keywords**: Robotic Guide Dog, Dialogue System, LLM, Task Planning, Scene Verbalization
 

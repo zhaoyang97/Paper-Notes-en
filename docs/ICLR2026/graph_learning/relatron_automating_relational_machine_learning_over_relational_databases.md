@@ -18,8 +18,8 @@ content_hash: c68398b470c475d3
 # Relatron: Automating Relational Machine Learning over Relational Databases
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.22552](https://arxiv.org/abs/2602.22552)
-**Code**: [https://github.com/amazon-science/Automating-Relational-Machine-Learning](https://github.com/amazon-science/Automating-Relational-Machine-Learning)
+**arXiv**: [2602.22552](https://arxiv.org/abs/2602.22552)  
+**Code**: [https://github.com/amazon-science/Automating-Relational-Machine-Learning](https://github.com/amazon-science/Automating-Relational-Machine-Learning)  
 **Area**: Graph Learning / AutoML
 **Keywords**: Relational Databases, Graph Neural Networks, Deep Feature Synthesis, Architecture Selection, Homophily
 

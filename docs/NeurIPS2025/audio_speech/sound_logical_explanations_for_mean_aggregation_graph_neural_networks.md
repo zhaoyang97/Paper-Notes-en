@@ -18,8 +18,8 @@ content_hash: 80cb45e38c4eb69a
 # Sound Logical Explanations for Mean Aggregation Graph Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.11593](https://arxiv.org/abs/2511.11593)
-**Code**: None
+**arXiv**: [2511.11593](https://arxiv.org/abs/2511.11593)  
+**Code**: None  
 **Area**: graph_neural_networks / AI_theory
 **Keywords**: graph neural networks, explainability, logical rules, mean aggregation, knowledge graph completion
 

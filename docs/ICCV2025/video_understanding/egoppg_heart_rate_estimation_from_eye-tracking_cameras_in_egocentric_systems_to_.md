@@ -18,8 +18,8 @@ content_hash: d7559f84f2fc34b1
 # egoPPG: Heart Rate Estimation from Eye-Tracking Cameras in Egocentric Systems to Benefit Downstream Vision Tasks
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.20879](https://arxiv.org/abs/2502.20879)
-**Code**: [https://siplab.org/projects/egoPPG](https://siplab.org/projects/egoPPG)
+**arXiv**: [2502.20879](https://arxiv.org/abs/2502.20879)  
+**Code**: [https://siplab.org/projects/egoPPG](https://siplab.org/projects/egoPPG)  
 **Area**: Video Understanding
 **Keywords**: egocentric vision, heart rate estimation, rPPG, eye tracking, physiological sensing
 

@@ -18,8 +18,8 @@ content_hash: 8243dc400f6e261b
 # ViterbiPlanNet: Injecting Procedural Knowledge via Differentiable Viterbi for Planning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04265](https://arxiv.org/abs/2603.04265)
-**Code**: [Project Page](https://gigi-g.github.io/ViterbiPlanNet/)
+**arXiv**: [2603.04265](https://arxiv.org/abs/2603.04265)  
+**Code**: [Project Page](https://gigi-g.github.io/ViterbiPlanNet/)  
 **Area**: Graph Learning
 **Keywords**: Procedural Planning, Differentiable Viterbi, Procedural Knowledge Graph, Instructional Videos, Structure-Aware Training
 

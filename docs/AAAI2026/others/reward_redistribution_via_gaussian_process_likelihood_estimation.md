@@ -17,8 +17,8 @@ content_hash: ba86f25036843a4e
 # Reward Redistribution via Gaussian Process Likelihood Estimation
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.17409](https://arxiv.org/abs/2503.17409)
-**Code**: [GitHub](https://github.com/xiao-1120/AAAI-LRR)
+**arXiv**: [2503.17409](https://arxiv.org/abs/2503.17409)  
+**Code**: [GitHub](https://github.com/xiao-1120/AAAI-LRR)  
 **Area**: Other
 **Keywords**: Sparse Reward, Reward Redistribution, Gaussian Process, Likelihood Estimation, Credit Assignment
 

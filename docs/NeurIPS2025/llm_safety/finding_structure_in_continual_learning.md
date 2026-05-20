@@ -19,8 +19,8 @@ content_hash: 57baf19a1e192488
 # Finding Structure in Continual Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.04555](https://arxiv.org/abs/2602.04555)
-**Code**: To be confirmed
+**arXiv**: [2602.04555](https://arxiv.org/abs/2602.04555)  
+**Code**: To be confirmed  
 **Area**: LLM Safety
 **Keywords**: Continual Learning, Catastrophic Forgetting, Douglas-Rachford Splitting, Rényi Divergence, Bayesian Inference, Proximal Operator
 

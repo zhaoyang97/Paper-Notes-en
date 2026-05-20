@@ -19,8 +19,8 @@ content_hash: bf1f938d597dd158
 # CovMatch: Cross-Covariance Guided Multimodal Dataset Distillation with Trainable Text Encoder
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18583](https://arxiv.org/abs/2510.18583)
-**Code**: Not mentioned
+**arXiv**: [2510.18583](https://arxiv.org/abs/2510.18583)  
+**Code**: Not mentioned  
 **Area**: Multimodal VLM / Dataset Distillation
 **Keywords**: dataset distillation, multimodal, cross-covariance, CLIP, trainable text encoder, data efficiency
 

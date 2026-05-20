@@ -18,8 +18,8 @@ content_hash: bfd0cbdf2b1e8ce5
 # CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction
 
 **Conference**: ACL 2026
-**arXiv**: [2604.14651](https://arxiv.org/abs/2604.14651)
-**Code**: [GitHub](https://github.com/sizhe04/CURA)
+**arXiv**: [2604.14651](https://arxiv.org/abs/2604.14651)  
+**Code**: [GitHub](https://github.com/sizhe04/CURA)  
 **Area**: Medical Imaging
 **Keywords**: Clinical Risk Prediction, Uncertainty Calibration, Dual-Level Alignment, Cohort-Aware, Clinical Language Model
 

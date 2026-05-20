@@ -18,8 +18,8 @@ content_hash: 672116d9dbdc92d7
 # KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing
 
 **Conference**: CVPR2026
-**arXiv**: [2602.04268](https://arxiv.org/abs/2602.04268)
-**Code**: To be confirmed
+**arXiv**: [2602.04268](https://arxiv.org/abs/2602.04268)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Multimodal hallucination mitigation, KV-Cache smoothing, attention entropy, exponential moving average, training-free inference
 

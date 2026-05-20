@@ -17,8 +17,8 @@ content_hash: 9add2c97dfb443f9
 # Hybrid-Balance GFlowNet for Solving Vehicle Routing Problems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04792](https://arxiv.org/abs/2510.04792)
-**Code**: [GitHub](https://github.com/ZHANG-NI/HBG)
+**arXiv**: [2510.04792](https://arxiv.org/abs/2510.04792)  
+**Code**: [GitHub](https://github.com/ZHANG-NI/HBG)  
 **Area**: Others
 **Keywords**: GFlowNet, Vehicle Routing Problem, Trajectory Balance, Detailed Balance, Hybrid Optimization
 

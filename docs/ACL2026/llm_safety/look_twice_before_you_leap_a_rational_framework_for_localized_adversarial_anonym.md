@@ -18,8 +18,8 @@ content_hash: bc0af91cd2ae7efd
 # Look Twice before You Leap: A Rational Framework for Localized Adversarial Anonymization
 
 **Conference**: ACL 2026
-**arXiv**: [2512.06713](https://arxiv.org/abs/2512.06713)
-**Code**: [GitHub](https://github.com/SowingG2333/RLAA)
+**arXiv**: [2512.06713](https://arxiv.org/abs/2512.06713)  
+**Code**: [GitHub](https://github.com/SowingG2333/RLAA)  
 **Area**: AI Safety / Privacy Protection
 **Keywords**: Text Anonymization, Adversarial Game, Privacy Paradox, Local Deployment, Economic Rationality
 

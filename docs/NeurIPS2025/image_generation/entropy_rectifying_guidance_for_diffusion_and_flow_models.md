@@ -18,8 +18,8 @@ content_hash: 6b27460116c17dc7
 # Entropy Rectifying Guidance for Diffusion and Flow Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.13987](https://arxiv.org/abs/2504.13987)
-**Code**: None
+**arXiv**: [2504.13987](https://arxiv.org/abs/2504.13987)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: diffusion models, guidance mechanism, attention energy, classifier-free guidance, flow matching
 
@@ -31,10 +31,10 @@ This paper proposes Entropy Rectifying Guidance (ERG), which manipulates the Hop
 
 - **Background**: Diffusion models and flow matching models represent the current SOTA in image generation. Classifier-Free Guidance (CFG) is the most widely adopted guidance technique, enhancing generation quality and consistency by combining conditional and unconditional predictions.
 - **Limitations of Prior Work**: CFG suffers from an inherent quality–diversity–consistency trilemma:
-  - **Diversity collapse**: Higher guidance scales cause generated samples to converge to a narrow distribution.
-  - **Oversaturation**: Excessively strong guidance leads to oversaturated colors.
-  - **Unconditional training overhead**: Training resources must be allocated to unconditional generation.
-  - **Inapplicability to unconditional sampling**: CFG relies on conditional/unconditional contrast and cannot be applied to purely unconditional generation.
+    - **Diversity collapse**: Higher guidance scales cause generated samples to converge to a narrow distribution.
+    - **Oversaturation**: Excessively strong guidance leads to oversaturated colors.
+    - **Unconditional training overhead**: Training resources must be allocated to unconditional generation.
+    - **Inapplicability to unconditional sampling**: CFG relies on conditional/unconditional contrast and cannot be applied to purely unconditional generation.
 - **Key Challenge**: Existing approaches such as AutoGuidance require an additional weak model (increasing memory usage), while SEG/SAG are designed for U-Net architectures and are difficult to transfer to DiT.
 - **Goal**: To simultaneously improve all three dimensions of performance within a single model, without any additional training.
 

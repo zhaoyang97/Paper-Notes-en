@@ -18,8 +18,8 @@ content_hash: eaf7483c083af265
 # Set Smoothness Unlocks Clarke Hyper-stationarity in Bilevel Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04587](https://arxiv.org/abs/2506.04587)
-**Code**: Unavailable
+**arXiv**: [2506.04587](https://arxiv.org/abs/2506.04587)  
+**Code**: Unavailable  
 **Area**: Optimization
 **Keywords**: bilevel optimization, set smoothness, Clarke subdifferential, weak convexity, zeroth-order methods
 
@@ -50,8 +50,8 @@ The technical roadmap is: (1) introduce set smoothness → (2) prove it implies 
 
 1. **Set Smoothness (Definition 3)**: A set-valued mapping $\mathcal{Y}: \mathbb{R}^m \rightrightarrows \mathbb{R}^n$ is said to be $L$-smooth if, for all $\mathbf{x}_1, \mathbf{x}_2$, $\theta \in [0,1]$, and any $\mathbf{y} \in \mathcal{Y}(\theta\mathbf{x}_1 + (1-\theta)\mathbf{x}_2)$, there exist $\mathbf{y}_1 \in \mathcal{Y}(\mathbf{x}_1)$ and $\mathbf{y}_2 \in \mathcal{Y}(\mathbf{x}_2)$ such that:
 
-   - Convex combination approximation: $\|\theta\mathbf{y}_1 + (1-\theta)\mathbf{y}_2 - \mathbf{y}\| \leq \frac{L}{2}\theta(1-\theta)\|\mathbf{x}_1 - \mathbf{x}_2\|^2$
-   - Uniform branch selection: $\|\mathbf{y}_1 - \mathbf{y}_2\|^2 \leq L\|\mathbf{x}_1 - \mathbf{x}_2\|^2$
+    - Convex combination approximation: $\|\theta\mathbf{y}_1 + (1-\theta)\mathbf{y}_2 - \mathbf{y}\| \leq \frac{L}{2}\theta(1-\theta)\|\mathbf{x}_1 - \mathbf{x}_2\|^2$
+    - Uniform branch selection: $\|\mathbf{y}_1 - \mathbf{y}_2\|^2 \leq L\|\mathbf{x}_1 - \mathbf{x}_2\|^2$
 
    Condition (4) is a natural generalization of scalar smoothness to set-valued mappings — the approximation error of convex combinations is second order. Condition (5) prevents trivial satisfaction via cross-branch pairing (Example 1 provides a counterexample). Together, set smoothness is equivalent to $\mathcal{Y}(\theta\mathbf{x}_1 + (1-\theta)\mathbf{x}_2) \subseteq \theta\mathcal{Y}(\mathbf{x}_1) + (1-\theta)\mathcal{Y}(\mathbf{x}_2) + O(\|\mathbf{x}_1 - \mathbf{x}_2\|^2)\mathbb{B}$.
 

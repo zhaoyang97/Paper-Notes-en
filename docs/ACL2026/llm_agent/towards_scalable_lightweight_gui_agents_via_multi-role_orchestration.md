@@ -18,8 +18,8 @@ content_hash: 801956d14b57ffe3
 # Towards Scalable Lightweight GUI Agents via Multi-role Orchestration
 
 **Conference**: ACL 2026
-**arXiv**: [2604.13488](https://arxiv.org/abs/2604.13488)
-**Code**: [GitHub](https://github.com/BigTaige/LAMO)
+**arXiv**: [2604.13488](https://arxiv.org/abs/2604.13488)  
+**Code**: [GitHub](https://github.com/BigTaige/LAMO)  
 **Area**: LLM Agent / GUI Automation
 **Keywords**: GUI Agent, Lightweight Model, Multi-role Orchestration, Policy Executor, Reinforcement Learning
 

@@ -18,8 +18,8 @@ content_hash: 5c8b5f368ca45c8c
 # Grouped Speculative Decoding for Autoregressive Image Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.07747](https://arxiv.org/abs/2508.07747)
-**Code**: [GitHub](https://github.com/junhyukso/GSD)
+**arXiv**: [2508.07747](https://arxiv.org/abs/2508.07747)  
+**Code**: [GitHub](https://github.com/junhyukso/GSD)  
 **Area**: Image Generation
 **Keywords**: autoregressive image generation, speculative decoding, inference acceleration, training-free, visual token redundancy
 

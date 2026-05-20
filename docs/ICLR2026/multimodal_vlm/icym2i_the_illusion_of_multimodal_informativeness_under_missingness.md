@@ -18,8 +18,8 @@ content_hash: 14877910a78f0e84
 # ICYM2I: The Illusion of Multimodal Informativeness under Missingness
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.16953](https://arxiv.org/abs/2505.16953)
-**Code**: [https://github.com/reAIM-Lab/ICYM2I](https://github.com/reAIM-Lab/ICYM2I)
+**arXiv**: [2505.16953](https://arxiv.org/abs/2505.16953)  
+**Code**: [https://github.com/reAIM-Lab/ICYM2I](https://github.com/reAIM-Lab/ICYM2I)  
 **Area**: Multimodal VLM / Machine Learning Theory
 **Keywords**: multimodal missingness, distribution shift, inverse probability weighting, information decomposition, modality value estimation
 

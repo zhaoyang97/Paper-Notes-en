@@ -18,8 +18,8 @@ content_hash: 3a33460ff26def47
 # RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.07266](https://arxiv.org/abs/2503.07266)
-**Code**: [https://github.com/rongfu-dsb/RS2-SAM2](https://github.com/rongfu-dsb/RS2-SAM2)
+**arXiv**: [2503.07266](https://arxiv.org/abs/2503.07266)  
+**Code**: [https://github.com/rongfu-dsb/RS2-SAM2](https://github.com/rongfu-dsb/RS2-SAM2)  
 **Area**: Segmentation
 **Keywords**: SAM2, remote sensing imagery, referring segmentation, multimodal fusion, dense prompts
 

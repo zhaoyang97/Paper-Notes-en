@@ -18,8 +18,8 @@ content_hash: e2ef102cd542f2cc
 # Motion Prior Distillation in Time Reversal Sampling for Generative Inbetweening
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.12679](https://arxiv.org/abs/2602.12679)
-**Code**: [https://vvsjeon.github.io/MPD/](https://vvsjeon.github.io/MPD/)
+**arXiv**: [2602.12679](https://arxiv.org/abs/2602.12679)  
+**Code**: [https://vvsjeon.github.io/MPD/](https://vvsjeon.github.io/MPD/)  
 **Area**: Diffusion Models / Video Generation
 **Keywords**: Generative Inbetweening, Motion Prior, Time Reversal Sampling, Inference-Time Distillation, SVD
 

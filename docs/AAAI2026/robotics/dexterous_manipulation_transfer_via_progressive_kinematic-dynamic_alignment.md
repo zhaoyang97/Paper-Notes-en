@@ -18,8 +18,8 @@ content_hash: b41f92661682c584
 # Dexterous Manipulation Transfer via Progressive Kinematic-Dynamic Alignment
 
 **Conference**: AAAI2026
-**arXiv**: [2511.10987](https://arxiv.org/abs/2511.10987)
-**Code**: To be confirmed
+**arXiv**: [2511.10987](https://arxiv.org/abs/2511.10987)  
+**Code**: To be confirmed  
 **Area**: Robotics
 **Keywords**: dexterous manipulation, motion retargeting, reinforcement-learning, hand-object interaction, sim-to-real transfer
 

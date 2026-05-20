@@ -18,8 +18,8 @@ content_hash: c0d2cebb3a307620
 # Saliency-Aware Quantized Imitation Learning for Efficient Robotic Control
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.15304](https://arxiv.org/abs/2505.15304)
-**Code**: N/A
+**arXiv**: [2505.15304](https://arxiv.org/abs/2505.15304)  
+**Code**: N/A  
 **Area**: Autonomous Driving
 **Keywords**: Model Quantization, Imitation Learning, Saliency-Awareness, Vision-Language-Action Models, Edge Deployment
 

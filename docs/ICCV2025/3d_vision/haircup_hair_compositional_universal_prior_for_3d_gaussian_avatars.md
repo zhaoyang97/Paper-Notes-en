@@ -18,8 +18,8 @@ content_hash: 10562ddd61b52ec6
 # HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19481](https://arxiv.org/abs/2507.19481)
-**Code**: N/A (project page available)
+**arXiv**: [2507.19481](https://arxiv.org/abs/2507.19481)  
+**Code**: N/A (project page available)  
 **Area**: 3D Vision / Digital Human Generation
 **Keywords**: 3D head modeling, hair disentanglement, compositional prior, 3D Gaussian, avatar head
 

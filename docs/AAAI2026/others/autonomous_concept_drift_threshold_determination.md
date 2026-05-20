@@ -17,8 +17,8 @@ content_hash: 541ee6a32b0696da
 # Autonomous Concept Drift Threshold Determination
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09953](https://arxiv.org/abs/2511.09953)
-**Code**: [Available](https://github.com/AAII-DeSI/concept-drift-RocStone/tree/main/AAAI2026-DTD)
+**arXiv**: [2511.09953](https://arxiv.org/abs/2511.09953)  
+**Code**: [Available](https://github.com/AAII-DeSI/concept-drift-RocStone/tree/main/AAAI2026-DTD)  
 **Area**: Other
 **Keywords**: Concept Drift, Dynamic Threshold, Drift Detection, Data Streams, Online Learning
 

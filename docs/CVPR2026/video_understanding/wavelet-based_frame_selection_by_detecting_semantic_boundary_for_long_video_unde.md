@@ -19,8 +19,8 @@ content_hash: 2067352271e28a9e
 # Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding
 
 **Conference**: CVPR2026
-**arXiv**: [2603.00512](https://arxiv.org/abs/2603.00512)
-**Code**: [MAC-AutoML/WFS-SB](https://github.com/MAC-AutoML/WFS-SB)
+**arXiv**: [2603.00512](https://arxiv.org/abs/2603.00512)  
+**Code**: [MAC-AutoML/WFS-SB](https://github.com/MAC-AutoML/WFS-SB)  
 **Area**: Video Understanding
 **Keywords**: frame selection, long video understanding, wavelet transform, semantic boundary detection, large vision-language models, training-free
 

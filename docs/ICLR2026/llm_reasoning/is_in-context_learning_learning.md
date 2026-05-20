@@ -19,8 +19,8 @@ content_hash: af10d9e8362bd48b
 # Is In-Context Learning Learning?
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.10414](https://arxiv.org/abs/2509.10414)
-**Code**: Not open-sourced
+**arXiv**: [2509.10414](https://arxiv.org/abs/2509.10414)  
+**Code**: Not open-sourced  
 **Area**: LLM Reasoning
 **Keywords**: in-context learning, ICL, memorisation, distributional shift, generalization, autoregressive models
 

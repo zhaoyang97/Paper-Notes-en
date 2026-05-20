@@ -18,8 +18,8 @@ content_hash: 0dfef1e66c930652
 # HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.13719](https://arxiv.org/abs/2601.13719)
-**Code**: None
+**arXiv**: [2601.13719](https://arxiv.org/abs/2601.13719)  
+**Code**: None  
 **Area**: LLM Agent
 **Keywords**: long video understanding, hierarchical indexing, entity cohesion, agentic search, audiovisual fusion
 

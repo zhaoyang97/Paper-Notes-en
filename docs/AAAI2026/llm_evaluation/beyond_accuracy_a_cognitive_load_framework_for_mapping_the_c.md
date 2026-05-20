@@ -18,8 +18,8 @@ content_hash: a3e593d370cfdadc
 # Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.20412](https://arxiv.org/abs/2601.20412)
-**Code**: None
+**arXiv**: [2601.20412](https://arxiv.org/abs/2601.20412)  
+**Code**: None  
 **Area**: LLM Agent / Tool-use Evaluation
 **Keywords**: Cognitive Load Theory, Tool-use Agent, Capability Boundaries, Tool Interaction Graph, Benchmark
 

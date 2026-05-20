@@ -18,8 +18,8 @@ content_hash: 7b6629294f6bfd85
 # Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.06745](https://arxiv.org/abs/2603.06745)
-**Code**: [Available](https://github.com/mjk0618/directer)
+**arXiv**: [2603.06745](https://arxiv.org/abs/2603.06745)  
+**Code**: [Available](https://github.com/mjk0618/directer)  
 **Area**: Robotics
 **Keywords**: Activation Steering, Instruction Following, KV Cache Scaling, Dynamic Rejection, Oversteering Mitigation
 

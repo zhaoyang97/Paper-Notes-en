@@ -18,8 +18,8 @@ content_hash: fc9e68793b243f27
 # Aligning Compound AI Systems via System-level DPO
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.17721](https://arxiv.org/abs/2502.17721)
-**Code**: [GitHub](https://github.com/xwx84768/SysDPO/)
+**arXiv**: [2502.17721](https://arxiv.org/abs/2502.17721)  
+**Code**: [GitHub](https://github.com/xwx84768/SysDPO/)  
 **Area**: Image Generation
 **Keywords**: compound AI system, DPO, system alignment, DAG, multi-component optimization
 

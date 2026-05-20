@@ -20,8 +20,8 @@ content_hash: 5bf6deda843c3cb1
 # Discovering Transformer Circuits via a Hybrid Attribution and Pruning Framework
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.03282](https://arxiv.org/abs/2510.03282)
-**Code**: [GitHub](https://anonymous.4open.science/r/HAP-circuit-discovery)
+**arXiv**: [2510.03282](https://arxiv.org/abs/2510.03282)  
+**Code**: [GitHub](https://anonymous.4open.science/r/HAP-circuit-discovery)  
 **Area**: Mechanistic Interpretability / Circuit Discovery / Transformer Analysis
 **Keywords**: circuit discovery, attribution patching, edge pruning, hybrid framework, IOI, GPT-2, mechanistic interpretability
 

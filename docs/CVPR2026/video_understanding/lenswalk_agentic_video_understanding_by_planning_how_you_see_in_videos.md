@@ -18,8 +18,8 @@ content_hash: 1d64aab8fa48e023
 # LensWalk: Agentic Video Understanding by Planning How You See in Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24558](https://arxiv.org/abs/2603.24558)
-**Code**: N/A
+**arXiv**: [2603.24558](https://arxiv.org/abs/2603.24558)  
+**Code**: N/A  
 **Area**: Video Understanding
 **Keywords**: Video Agent, Active Observation, Vision-Language Models, Long Video Understanding, Tool Calling
 

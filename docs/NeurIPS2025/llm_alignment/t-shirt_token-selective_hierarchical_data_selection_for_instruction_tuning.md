@@ -18,8 +18,8 @@ content_hash: cd588d080fb989f1
 # T-SHIRT: Token-Selective Hierarchical Data Selection for Instruction Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01317](https://arxiv.org/abs/2506.01317)
-**Code**: [GitHub](https://github.com/Dynamite321/T-SHIRT)
+**arXiv**: [2506.01317](https://arxiv.org/abs/2506.01317)  
+**Code**: [GitHub](https://github.com/Dynamite321/T-SHIRT)  
 **Area**: LLM Alignment
 **Keywords**: Instruction Tuning, Data Selection, Token-Level Informativeness, Robustness, IFD Score
 

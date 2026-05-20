@@ -18,8 +18,8 @@ content_hash: d4a2ac75d4d76022
 # Controllable and Expressive One-Shot Video Head Swapping
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.16852](https://arxiv.org/abs/2506.16852)
-**Code**: [https://humanaigc.github.io/SwapAnyHead/](https://humanaigc.github.io/SwapAnyHead/)
+**arXiv**: [2506.16852](https://arxiv.org/abs/2506.16852)  
+**Code**: [https://humanaigc.github.io/SwapAnyHead/](https://humanaigc.github.io/SwapAnyHead/)  
 **Area**: Human Understanding / Face Generation
 **Keywords**: head swapping, diffusion model, expression transfer, identity preservation, video generation
 

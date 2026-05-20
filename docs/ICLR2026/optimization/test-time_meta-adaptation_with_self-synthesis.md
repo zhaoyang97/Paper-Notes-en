@@ -18,8 +18,8 @@ content_hash: 9b9eead055ffff51
 # Test-Time Meta-Adaptation with Self-Synthesis
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.03524](https://arxiv.org/abs/2603.03524)
-**Code**: None
+**arXiv**: [2603.03524](https://arxiv.org/abs/2603.03524)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: meta-learning, test-time training, bilevel optimization, synthetic data, self-adaptation
 

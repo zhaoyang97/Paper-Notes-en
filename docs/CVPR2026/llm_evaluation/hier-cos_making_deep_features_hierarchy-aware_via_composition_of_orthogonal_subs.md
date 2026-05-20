@@ -18,8 +18,8 @@ content_hash: 390df58e10f10694
 # Hier-COS: Making Deep Features Hierarchy-aware via Composition of Orthogonal Subspaces
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.07853](https://arxiv.org/abs/2503.07853)
-**Code**: [Project Page](https://sites.google.com/iiitd.ac.in/hier-cos)
+**arXiv**: [2503.07853](https://arxiv.org/abs/2503.07853)  
+**Code**: [Project Page](https://sites.google.com/iiitd.ac.in/hier-cos)  
 **Area**: LLM Evaluation
 **Keywords**: Hierarchical Classification, Orthogonal Subspaces, Hierarchy-aware Features, Evaluation Metrics, Label Hierarchy
 

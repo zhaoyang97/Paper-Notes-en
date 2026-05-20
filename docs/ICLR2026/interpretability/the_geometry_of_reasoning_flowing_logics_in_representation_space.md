@@ -18,8 +18,8 @@ content_hash: 0f70acf0239113f0
 # The Geometry of Reasoning: Flowing Logics in Representation Space
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.09782](https://arxiv.org/abs/2510.09782)
-**Code**: Available (see paper)
+**arXiv**: [2510.09782](https://arxiv.org/abs/2510.09782)  
+**Code**: Available (see paper)  
 **Area**: LLM Interpretability / Reasoning Mechanisms
 **Keywords**: Reasoning Geometry, Representation Flow, Logical Invariants, LLM Interpretability, Concept Space
 
@@ -51,21 +51,21 @@ The framework centers on treating the hidden representations produced by an LLM 
 
 1. **Geometric Modeling of Reasoning Flows**
 
-   - **Function**: Provides a mathematical formalization of the LLM reasoning process, modeling discrete inter-layer transformations as a continuous geometric flow.
-   - **Mechanism**: Defines the flow in representation space as the inter-layer trajectory of embeddings $\{h^{(l)}\}_{l=0}^{L}$, where $h^{(l)}$ is the hidden state at layer $l$. The velocity of the flow is defined as the finite difference between adjacent-layer representations, $v^{(l)} = h^{(l+1)} - h^{(l)}$, and curvature is measured via second-order changes in velocity. The authors establish correspondences between these geometric quantities and reasoning steps: logical operations (e.g., modus ponens) correspond to specific patterns in flow velocity, while reasoning "difficulty" can be quantified through curvature.
-   - **Design Motivation**: Reducing reasoning to geometric quantities enables formal mathematical analysis, moving beyond purely qualitative observation.
+    - **Function**: Provides a mathematical formalization of the LLM reasoning process, modeling discrete inter-layer transformations as a continuous geometric flow.
+    - **Mechanism**: Defines the flow in representation space as the inter-layer trajectory of embeddings $\{h^{(l)}\}_{l=0}^{L}$, where $h^{(l)}$ is the hidden state at layer $l$. The velocity of the flow is defined as the finite difference between adjacent-layer representations, $v^{(l)} = h^{(l+1)} - h^{(l)}$, and curvature is measured via second-order changes in velocity. The authors establish correspondences between these geometric quantities and reasoning steps: logical operations (e.g., modus ponens) correspond to specific patterns in flow velocity, while reasoning "difficulty" can be quantified through curvature.
+    - **Design Motivation**: Reducing reasoning to geometric quantities enables formal mathematical analysis, moving beyond purely qualitative observation.
 
 2. **Semantic–Logic Decoupling Experimental Design**
 
-   - **Function**: Verifies that LLMs internalize logical structure rather than surface semantic patterns.
-   - **Mechanism**: Experimental data are generated using the natural deduction framework—fixing the same logical reasoning chain (e.g., $A \rightarrow B$, $A$, therefore $B$) while substituting different semantic carriers (e.g., replacing "cats are animals" with "iron is a metal" and other domain-varied propositions). Geometric invariance of the reasoning flows under these different semantic carriers (e.g., consistency of velocity directions, similarity of curvature patterns) is analyzed to determine whether the model has internalized abstract logical rules independent of specific semantics.
-   - **Design Motivation**: This is the most critical experimental design in the work. If LLMs perform only statistical association, flows under different semantics should differ entirely; only when the model genuinely internalizes logical structure will the geometric properties of the flow remain invariant under semantic variation.
+    - **Function**: Verifies that LLMs internalize logical structure rather than surface semantic patterns.
+    - **Mechanism**: Experimental data are generated using the natural deduction framework—fixing the same logical reasoning chain (e.g., $A \rightarrow B$, $A$, therefore $B$) while substituting different semantic carriers (e.g., replacing "cats are animals" with "iron is a metal" and other domain-varied propositions). Geometric invariance of the reasoning flows under these different semantic carriers (e.g., consistency of velocity directions, similarity of curvature patterns) is analyzed to determine whether the model has internalized abstract logical rules independent of specific semantics.
+    - **Design Motivation**: This is the most critical experimental design in the work. If LLMs perform only statistical association, flows under different semantics should differ entirely; only when the model genuinely internalizes logical structure will the geometric properties of the flow remain invariant under semantic variation.
 
 3. **Learned Representation Proxies and Visualization**
 
-   - **Function**: Projects flows from high-dimensional representation space into a low-dimensional concept space amenable to analysis and visualization.
-   - **Mechanism**: Representation proxies are trained to map LLM high-dimensional embeddings into a low-dimensional concept space while preserving key geometric properties. In this concept space, reasoning flow trajectories, velocity fields, and curvature variations can be visualized and quantitatively analyzed. This approach bridges the abstract theoretical framework with concrete empirical validation.
-   - **Design Motivation**: High-dimensional representation spaces are difficult to analyze and visualize directly; dimensionality reduction is necessary, but standard methods (e.g., PCA/t-SNE) may destroy critical geometric structure, necessitating mappings specifically designed to preserve geometric properties.
+    - **Function**: Projects flows from high-dimensional representation space into a low-dimensional concept space amenable to analysis and visualization.
+    - **Mechanism**: Representation proxies are trained to map LLM high-dimensional embeddings into a low-dimensional concept space while preserving key geometric properties. In this concept space, reasoning flow trajectories, velocity fields, and curvature variations can be visualized and quantitatively analyzed. This approach bridges the abstract theoretical framework with concrete empirical validation.
+    - **Design Motivation**: High-dimensional representation spaces are difficult to analyze and visualize directly; dimensionality reduction is necessary, but standard methods (e.g., PCA/t-SNE) may destroy critical geometric structure, necessitating mappings specifically designed to preserve geometric properties.
 
 ### Loss & Training
 

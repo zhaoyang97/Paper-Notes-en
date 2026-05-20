@@ -18,8 +18,8 @@ content_hash: c79b5147d1d7388e
 # See&Trek: Training-Free Spatial Prompting for Multimodal Large Language Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16087](https://arxiv.org/abs/2509.16087)
-**Code**: None
+**arXiv**: [2509.16087](https://arxiv.org/abs/2509.16087)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Spatial Understanding, Multimodal Large Language Model, Visual Prompting, Visual Odometry, Training-Free
 

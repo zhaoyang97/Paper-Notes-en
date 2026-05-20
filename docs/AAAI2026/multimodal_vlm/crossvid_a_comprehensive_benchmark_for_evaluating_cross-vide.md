@@ -18,8 +18,8 @@ content_hash: 0680cbe786f6d0e2
 # CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12263](https://arxiv.org/abs/2511.12263)
-**Code**: [https://github.com/chuntianli666/CrossVid](https://github.com/chuntianli666/CrossVid)
+**arXiv**: [2511.12263](https://arxiv.org/abs/2511.12263)  
+**Code**: [https://github.com/chuntianli666/CrossVid](https://github.com/chuntianli666/CrossVid)  
 **Area**: Video Understanding / Multimodal VLM
 **Keywords**: Cross-video reasoning, video QA benchmark, multi-video understanding, multimodal large language model evaluation, spatiotemporal reasoning
 

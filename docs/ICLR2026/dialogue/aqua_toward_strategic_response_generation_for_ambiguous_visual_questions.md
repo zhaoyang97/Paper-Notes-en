@@ -18,8 +18,8 @@ content_hash: 6b651d53c06fe40c
 # AQuA: Toward Strategic Response Generation for Ambiguous Visual Questions
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.07394](https://arxiv.org/abs/2603.07394)
-**Code**: [https://aqua-iclr2026.github.io/](https://aqua-iclr2026.github.io/)
+**arXiv**: [2603.07394](https://arxiv.org/abs/2603.07394)  
+**Code**: [https://aqua-iclr2026.github.io/](https://aqua-iclr2026.github.io/)  
 **Area**: Dialogue Systems
 **Keywords**: ambiguity, VQA, response strategy, uncertainty handling, GRPO
 

@@ -18,8 +18,8 @@ content_hash: b66f7d1a49b54997
 # Influence Functions for Edge Edits in Non-Convex Graph Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04694](https://arxiv.org/abs/2506.04694)
-**Code**: None
+**arXiv**: [2506.04694](https://arxiv.org/abs/2506.04694)  
+**Code**: None  
 **Area**: Graph Neural Networks / AI Safety
 **Keywords**: Influence Functions, Graph Neural Networks, Edge Edits, Non-Convex Optimization, Graph Rewiring
 

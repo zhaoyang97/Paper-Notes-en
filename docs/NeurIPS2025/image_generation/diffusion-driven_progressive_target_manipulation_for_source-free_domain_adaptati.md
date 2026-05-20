@@ -18,8 +18,8 @@ content_hash: 6b5c9e7b276f18fd
 # Diffusion-Driven Progressive Target Manipulation for Source-Free Domain Adaptation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25279](https://arxiv.org/abs/2510.25279)
-**Code**: N/A
+**arXiv**: [2510.25279](https://arxiv.org/abs/2510.25279)  
+**Code**: N/A  
 **Area**: Image Generation / Diffusion Models / Domain Adaptation
 **Keywords**: Source-Free Domain Adaptation, Diffusion Models, Pseudo-Target Domain Generation, Progressive Optimization, Semantic Transformation
 

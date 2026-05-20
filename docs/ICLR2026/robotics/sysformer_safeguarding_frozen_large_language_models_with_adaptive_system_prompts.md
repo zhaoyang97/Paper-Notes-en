@@ -18,8 +18,8 @@ content_hash: 067ac07f7204acea
 # Sysformer: Safeguarding Frozen Large Language Models with Adaptive System Prompts
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.15751](https://arxiv.org/abs/2506.15751)
-**Code**: [GitHub](https://github.com/Ksartik/sysformer)
+**arXiv**: [2506.15751](https://arxiv.org/abs/2506.15751)  
+**Code**: [GitHub](https://github.com/Ksartik/sysformer)  
 **Area**: Robotics
 **Keywords**: system prompt, LLM safety, jailbreak defense, frozen model, adaptive prompting
 

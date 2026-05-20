@@ -18,8 +18,8 @@ content_hash: 7b3d79d6ea4320df
 # Motion4D: Learning 3D-Consistent Motion and Semantics for 4D Scene Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.03601](https://arxiv.org/abs/2512.03601)
-**Code**: [GitHub](https://hrzhou2.github.io/motion4d-web/)
+**arXiv**: [2512.03601](https://arxiv.org/abs/2512.03601)  
+**Code**: [GitHub](https://hrzhou2.github.io/motion4d-web/)  
 **Area**: 3D Vision
 **Keywords**: 4D scene understanding, 3D Gaussian splatting, motion estimation, semantic segmentation, video object segmentation
 

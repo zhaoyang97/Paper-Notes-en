@@ -17,8 +17,8 @@ content_hash: 395692f4611100a8
 # Modeling Cell Dynamics and Interactions with Unbalanced Mean Field Schrödinger Bridge
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11197](https://arxiv.org/abs/2505.11197)
-**Code**: [GitHub](https://github.com/zhenyiizhang/CytoBridge-NeurIPS)
+**arXiv**: [2505.11197](https://arxiv.org/abs/2505.11197)  
+**Code**: [GitHub](https://github.com/zhenyiizhang/CytoBridge-NeurIPS)  
 **Area**: Computational Biology / Optimal Transport
 **Keywords**: Schrödinger Bridge, cell dynamics, cell-cell interaction, single-cell RNA sequencing, optimal transport
 

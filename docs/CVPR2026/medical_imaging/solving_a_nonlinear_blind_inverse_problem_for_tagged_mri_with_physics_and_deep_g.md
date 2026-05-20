@@ -18,8 +18,8 @@ content_hash: f70924eb7219a1fb
 # Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00882](https://arxiv.org/abs/2603.00882)
-**Code**: None
+**arXiv**: [2603.00882](https://arxiv.org/abs/2603.00882)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Tagged MRI, Inverse Problem, Diffusion Prior, Motion Estimation, Image Super-Resolution
 

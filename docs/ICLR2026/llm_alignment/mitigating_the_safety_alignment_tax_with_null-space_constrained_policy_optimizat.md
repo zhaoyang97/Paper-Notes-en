@@ -18,8 +18,8 @@ content_hash: 8990dcfe2d02e1ea
 # Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.11391](https://arxiv.org/abs/2512.11391)
-**Code**: [https://github.com/ivanniu/NSPO](https://github.com/ivanniu/NSPO)
+**arXiv**: [2512.11391](https://arxiv.org/abs/2512.11391)  
+**Code**: [https://github.com/ivanniu/NSPO](https://github.com/ivanniu/NSPO)  
 **Area**: Alignment / RLHF
 **Keywords**: Safety Alignment, Null Space, Policy Optimization, Alignment Tax, Gradient Projection
 

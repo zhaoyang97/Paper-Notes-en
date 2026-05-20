@@ -18,8 +18,8 @@ content_hash: bbfa345a56a83483
 # GT-SNT: A Linear-Time Transformer for Large-Scale Graphs via Spiking Node Tokenization
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.11840](https://arxiv.org/abs/2504.11840)
-**Code**: [https://github.com/Zhhuizhe/GT-SNT](https://github.com/Zhhuizhe/GT-SNT)
+**arXiv**: [2504.11840](https://arxiv.org/abs/2504.11840)  
+**Code**: [https://github.com/Zhhuizhe/GT-SNT](https://github.com/Zhhuizhe/GT-SNT)  
 **Area**: Graph Learning
 **Keywords**: Graph Transformer, Spiking Neural Networks, Node Tokenization, Linear Complexity, Large-Scale Graphs
 

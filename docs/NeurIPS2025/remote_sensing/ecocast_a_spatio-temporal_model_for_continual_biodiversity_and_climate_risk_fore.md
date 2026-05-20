@@ -18,8 +18,8 @@ content_hash: a6d111cfd3c2c90f
 # EcoCast: A Spatio-Temporal Model for Continual Biodiversity and Climate Risk Forecasting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.02260](https://arxiv.org/abs/2512.02260)
-**Code**: None
+**arXiv**: [2512.02260](https://arxiv.org/abs/2512.02260)  
+**Code**: None  
 **Area**: Time Series / Remote Sensing / Ecological Conservation
 **Keywords**: Biodiversity Forecasting, Species Distribution Modeling, Transformer, Continual Learning, EWC
 

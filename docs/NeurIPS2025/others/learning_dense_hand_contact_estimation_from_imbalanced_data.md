@@ -17,8 +17,8 @@ content_hash: aa3f548a6396952b
 # Learning Dense Hand Contact Estimation from Imbalanced Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11152](https://arxiv.org/abs/2505.11152)
-**Code**: [Available](https://github.com/dqj5182/HACO_RELEASE)
+**arXiv**: [2505.11152](https://arxiv.org/abs/2505.11152)  
+**Code**: [Available](https://github.com/dqj5182/HACO_RELEASE)  
 **Area**: Other
 **Keywords**: hand contact estimation, data imbalance, class-balanced loss, large-scale training, ViT
 

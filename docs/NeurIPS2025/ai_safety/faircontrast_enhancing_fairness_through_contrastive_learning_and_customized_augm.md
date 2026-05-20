@@ -18,8 +18,8 @@ content_hash: 74e95e348ec53671
 # FairContrast: Enhancing Fairness through Contrastive Learning and Customized Augmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.02017](https://arxiv.org/abs/2510.02017)
-**Code**: None
+**arXiv**: [2510.02017](https://arxiv.org/abs/2510.02017)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: Fairness, Contrastive Learning, Tabular Data, Representation Learning, Demographic Parity
 

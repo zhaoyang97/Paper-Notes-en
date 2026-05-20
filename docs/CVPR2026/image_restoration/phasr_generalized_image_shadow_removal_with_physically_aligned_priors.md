@@ -18,8 +18,8 @@ content_hash: abde7e7bad7940c0
 # PhaSR: Generalized Image Shadow Removal with Physically Aligned Priors
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.17470](https://arxiv.org/abs/2601.17470)
-**Code**: [https://github.com/ming053l/PhaSR](https://github.com/ming053l/PhaSR)
+**arXiv**: [2601.17470](https://arxiv.org/abs/2601.17470)  
+**Code**: [https://github.com/ming053l/PhaSR](https://github.com/ming053l/PhaSR)  
 **Area**: Image Restoration
 **Keywords**: Shadow Removal, Retinex Decomposition, Differential Attention, Geometry-Semantic Prior Alignment, Ambient Light Normalization
 

@@ -18,8 +18,8 @@ content_hash: 9921539252ce6660
 # Post-training Large Language Models for Diverse High-Quality Responses
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.04784](https://arxiv.org/abs/2509.04784)
-**Code**: [https://github.com/fairytale9/diversity-quality-optimization](https://github.com/fairytale9/diversity-quality-optimization)
+**arXiv**: [2509.04784](https://arxiv.org/abs/2509.04784)  
+**Code**: [https://github.com/fairytale9/diversity-quality-optimization](https://github.com/fairytale9/diversity-quality-optimization)  
 **Area**: Reinforcement Learning
 **Keywords**: diversity, determinantal point process, GRPO, post-training, quality-diversity trade-off
 

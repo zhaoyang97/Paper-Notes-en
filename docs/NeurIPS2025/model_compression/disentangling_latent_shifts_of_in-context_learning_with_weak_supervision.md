@@ -18,8 +18,8 @@ content_hash: 16bbaab823e309fb
 # Disentangling Latent Shifts of In-Context Learning with Weak Supervision
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.01508](https://arxiv.org/abs/2410.01508)
-**Code**: [github.com/josipjukic/wilda](https://github.com/josipjukic/wilda)
+**arXiv**: [2410.01508](https://arxiv.org/abs/2410.01508)  
+**Code**: [github.com/josipjukic/wilda](https://github.com/josipjukic/wilda)  
 **Area**: Model Compression / LLM Efficiency
 **Keywords**: In-Context Learning, Weak Supervision, Adapter Arithmetic, Latent Shift Disentanglement, LoRA
 

@@ -18,8 +18,8 @@ content_hash: a2c7c88416e9ec3b
 # The Path Not Taken: Duality in Reasoning about Program Execution
 
 **Conference**: ACL 2026
-**arXiv**: [2604.20917](https://arxiv.org/abs/2604.20917)
-**Code**: [github.com/sail-ucf/dexbench](https://github.com/sail-ucf/dexbench)
+**arXiv**: [2604.20917](https://arxiv.org/abs/2604.20917)  
+**Code**: [github.com/sail-ucf/dexbench](https://github.com/sail-ucf/dexbench)  
 **Area**: Code Intelligence / Program Reasoning
 **Keywords**: Program Execution Reasoning, Counterfactual Reasoning, Dual-Path Reasoning, Code Coverage, LLM Code Understanding
 

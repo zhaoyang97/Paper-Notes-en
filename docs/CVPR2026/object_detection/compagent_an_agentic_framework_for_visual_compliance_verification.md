@@ -18,8 +18,8 @@ content_hash: a3f47dec74271db5
 # CompAgent: An Agentic Framework for Visual Compliance Verification
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.00171](https://arxiv.org/abs/2511.00171)
-**Code**: None
+**arXiv**: [2511.00171](https://arxiv.org/abs/2511.00171)  
+**Code**: None  
 **Area**: Object Detection / Content Safety
 **Keywords**: Visual Compliance Verification, Agentic Framework, Tool-Augmented Reasoning, Content Moderation, MLLM
 

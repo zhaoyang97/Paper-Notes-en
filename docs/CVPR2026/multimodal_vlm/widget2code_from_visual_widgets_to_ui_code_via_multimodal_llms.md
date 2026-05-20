@@ -18,8 +18,8 @@ content_hash: 3d262dd080a3f933
 # Widget2Code: From Visual Widgets to UI Code via Multimodal LLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.19918](https://arxiv.org/abs/2512.19918)
-**Code**: [https://djanghao.github.io/widget2code](https://djanghao.github.io/widget2code)
+**arXiv**: [2512.19918](https://arxiv.org/abs/2512.19918)  
+**Code**: [https://djanghao.github.io/widget2code](https://djanghao.github.io/widget2code)  
 **Area**: Multimodal VLM
 **Keywords**: UI Code Generation, Widget Reconstruction, Multimodal Large Language Models, Domain-Specific Language, Visual Perception
 

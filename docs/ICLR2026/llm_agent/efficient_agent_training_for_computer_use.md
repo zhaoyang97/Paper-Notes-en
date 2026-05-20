@@ -18,8 +18,8 @@ content_hash: 6dbe960f1f94afe9
 # Efficient Agent Training for Computer Use
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.13909](https://arxiv.org/abs/2505.13909)
-**Code**: [https://github.com/GAIR-NLP/PC-Agent-E](https://github.com/GAIR-NLP/PC-Agent-E)
+**arXiv**: [2505.13909](https://arxiv.org/abs/2505.13909)  
+**Code**: [https://github.com/GAIR-NLP/PC-Agent-E](https://github.com/GAIR-NLP/PC-Agent-E)  
 **Area**: Agent
 **Keywords**: computer use agent, trajectory augmentation, data efficiency, GUI agent, SFT
 

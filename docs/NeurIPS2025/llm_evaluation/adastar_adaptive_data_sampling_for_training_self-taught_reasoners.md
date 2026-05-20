@@ -18,8 +18,8 @@ content_hash: f6448f068c0c2434
 # AdaSTaR: Adaptive Data Sampling for Training Self-Taught Reasoners
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16322](https://arxiv.org/abs/2505.16322)
-**Code**: [GitHub](https://github.com/reiss-koh/AdaSTaR)
+**arXiv**: [2505.16322](https://arxiv.org/abs/2505.16322)  
+**Code**: [GitHub](https://github.com/reiss-koh/AdaSTaR)  
 **Area**: LLM Evaluation
 **Keywords**: self-improvement reasoning, STaR, adaptive sampling, curriculum learning, data efficiency
 

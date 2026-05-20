@@ -18,8 +18,8 @@ content_hash: 4406f43d9bd4dead
 # A Survey on MLLM-based Visually Rich Document Understanding: Methods, Challenges, and Emerging Trends
 
 **Conference**: ACL 2026
-**arXiv**: [2507.09861](https://arxiv.org/abs/2507.09861)
-**Code**: None
+**arXiv**: [2507.09861](https://arxiv.org/abs/2507.09861)  
+**Code**: None  
 **Area**: Document Understanding / Multimodal LLM
 **Keywords**: visually rich document understanding, multimodal large language models, OCR-free, document information extraction, retrieval-augmented generation
 

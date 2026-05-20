@@ -18,8 +18,8 @@ content_hash: c61d0c56f8c70596
 # DualReg: Dual-Space Filtering and Reinforcement for Rigid Registration
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.17034](https://arxiv.org/abs/2508.17034)
-**Code**: [https://ustc3dv.github.io/DualReg/](https://ustc3dv.github.io/DualReg/) (project page available)
+**arXiv**: [2508.17034](https://arxiv.org/abs/2508.17034)  
+**Code**: [https://ustc3dv.github.io/DualReg/](https://ustc3dv.github.io/DualReg/) (project page available)  
 **Area**: Model Compression
 **Keywords**: Rigid registration, dual-space optimization, RANSAC, point cloud correspondence, geometric proxy
 

@@ -18,8 +18,8 @@ content_hash: cea926ca1b33e5b7
 # Backdoor Attacks on Neural Networks via One-Bit Flip
 
 **Conference**: ICCV 2025
-**arXiv**: N/A
-**Code**: N/A
+**arXiv**: N/A  
+**Code**: N/A  
 **Area**: AI Security / Backdoor Attacks
 **Keywords**: backdoor attack, bit-flip attack, Rowhammer, quantized model, one-bit flip
 

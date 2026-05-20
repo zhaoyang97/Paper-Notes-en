@@ -18,8 +18,8 @@ content_hash: 8ad68f3e975374e7
 # Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.07334](https://arxiv.org/abs/2503.07334)
-**Code**: [https://github.com/HKU-HealthAI/ARRA](https://github.com/HKU-HealthAI/ARRA)
+**arXiv**: [2503.07334](https://arxiv.org/abs/2503.07334)  
+**Code**: [https://github.com/HKU-HealthAI/ARRA](https://github.com/HKU-HealthAI/ARRA)  
 **Area**: Medical Imaging / Image Generation
 **Keywords**: Autoregressive image generation, representation alignment, large language models, text-to-image, global consistency
 

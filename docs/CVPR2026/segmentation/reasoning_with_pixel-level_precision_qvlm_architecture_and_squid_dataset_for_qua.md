@@ -18,8 +18,8 @@ content_hash: aaacba461b90e8c7
 # Reasoning with Pixel-level Precision: QVLM Architecture and SQuID Dataset for Quantitative Geospatial Analytics
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.13401](https://arxiv.org/abs/2601.13401)
-**Code**: [GitHub](https://github.com/PeterAMassih/qvlm-squid)
+**arXiv**: [2601.13401](https://arxiv.org/abs/2601.13401)  
+**Code**: [GitHub](https://github.com/PeterAMassih/qvlm-squid)  
 **Area**: Semantic Segmentation
 **Keywords**: VLM, Quantitative Spatial Reasoning, Code Generation, Satellite Imagery, Semantic Segmentation
 

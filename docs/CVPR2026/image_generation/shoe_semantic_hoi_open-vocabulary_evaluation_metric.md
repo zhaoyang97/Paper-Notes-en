@@ -18,8 +18,8 @@ content_hash: e8fd0a305f2993b5
 # SHOE: Semantic HOI Open-Vocabulary Evaluation Metric
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.01586](https://arxiv.org/abs/2604.01586)
-**Code**: [https://github.com/majnoa/SHOE](https://github.com/majnoa/SHOE)
+**arXiv**: [2604.01586](https://arxiv.org/abs/2604.01586)  
+**Code**: [https://github.com/majnoa/SHOE](https://github.com/majnoa/SHOE)  
 **Area**: Image Generation
 **Keywords**: Open-vocabulary HOI detection, semantic similarity evaluation, LLM scoring, WordNet, evaluation metric
 

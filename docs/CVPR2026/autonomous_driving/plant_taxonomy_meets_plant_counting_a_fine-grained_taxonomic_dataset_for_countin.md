@@ -18,8 +18,8 @@ content_hash: ec20947011013b98
 # Plant Taxonomy Meets Plant Counting: A Fine-Grained, Taxonomic Dataset for Counting Hundreds of Plant Species
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21229](https://arxiv.org/abs/2603.21229)
-**Code**: [https://github.com/tiny-smart/TPC-268](https://github.com/tiny-smart/TPC-268)
+**arXiv**: [2603.21229](https://arxiv.org/abs/2603.21229)  
+**Code**: [https://github.com/tiny-smart/TPC-268](https://github.com/tiny-smart/TPC-268)  
 **Area**: Autonomous Driving
 **Keywords**: plant counting, class-agnostic counting, taxonomic hierarchy, fine-grained dataset, density estimation
 

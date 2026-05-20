@@ -17,8 +17,8 @@ content_hash: 47c19d6d125f0c5e
 # Tight Bounds On the Distortion of Randomized and Deterministic Distributed Voting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.17134](https://arxiv.org/abs/2509.17134)
-**Code**: None
+**arXiv**: [2509.17134](https://arxiv.org/abs/2509.17134)  
+**Code**: None  
 **Area**: Other
 **Keywords**: metric distortion, distributed voting, deterministic mechanisms, randomized mechanisms, social choice
 

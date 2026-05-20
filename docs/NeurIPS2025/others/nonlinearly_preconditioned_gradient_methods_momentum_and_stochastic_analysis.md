@@ -17,8 +17,8 @@ content_hash: 5be73fbdd050af8a
 # Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11312](https://arxiv.org/abs/2510.11312)
-**Code**: [GitHub](https://github.com/JanQ/nonlin-prec-mom-stoch)
+**arXiv**: [2510.11312](https://arxiv.org/abs/2510.11312)  
+**Code**: [GitHub](https://github.com/JanQ/nonlin-prec-mom-stoch)  
 **Area**: Others
 **Keywords**: nonlinear preconditioning, gradient clipping, anisotropic smoothness, heavy ball momentum, stochastic optimization
 

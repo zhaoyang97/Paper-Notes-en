@@ -18,8 +18,8 @@ content_hash: 02a8a5e4cb82c8b0
 # Learning to Clean: Reinforcement Learning for Noisy Label Correction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.19808](https://arxiv.org/abs/2511.19808)
-**Code**: Unavailable
+**arXiv**: [2511.19808](https://arxiv.org/abs/2511.19808)  
+**Code**: Unavailable  
 **Area**: Reinforcement Learning
 **Keywords**: Noisy Labels, Label Correction, Policy Gradient, Actor-Critic, k-Nearest Neighbors
 

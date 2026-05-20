@@ -17,8 +17,8 @@ content_hash: f7f1d1d389b3d668
 # Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14153](https://arxiv.org/abs/2603.14153)
-**Code**: [GitHub](https://github.com/ArtmeScienceLab/Garments2Look)
+**arXiv**: [2603.14153](https://arxiv.org/abs/2603.14153)  
+**Code**: [GitHub](https://github.com/ArtmeScienceLab/Garments2Look)  
 **Area**: Virtual Try-On / Dataset
 **Keywords**: virtual try-on, multi-reference images, outfit-level, dataset construction, image generation
 
@@ -71,10 +71,10 @@ The dataset construction follows a four-stage pipeline: Data Collection → Data
 
 4. **Three-Level Data Filtering**
 
-   - **Item level**: A standardized taxonomy of 40 major categories and 300+ fine-grained subcategories
-   - **Outfit level**: Rule-based rationality validation grounded in fashion domain knowledge (e.g., no outfit should contain two dresses simultaneously)
-   - **Pair level**: Automatic screening by Gemini-2.5-Flash + DWPose-based pose classification + **manual review by 10 fashion students and 3 domain experts**
-   - Only approximately 40% of synthesized look images pass the final review
+    - **Item level**: A standardized taxonomy of 40 major categories and 300+ fine-grained subcategories
+    - **Outfit level**: Rule-based rationality validation grounded in fashion domain knowledge (e.g., no outfit should contain two dresses simultaneously)
+    - **Pair level**: Automatic screening by Gemini-2.5-Flash + DWPose-based pose classification + **manual review by 10 fashion students and 3 domain experts**
+    - Only approximately 40% of synthesized look images pass the final review
 
 ### Loss & Training
 

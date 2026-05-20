@@ -18,9 +18,9 @@ content_hash: ab83ff018fdb4b55
 # Graph Alignment via Birkhoff Relaxation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.05323](https://arxiv.org/abs/2503.05323)
+**arXiv**: [2503.05323](https://arxiv.org/abs/2503.05323)  
 **Authors**: Sushil Mahavir Varma (University of Michigan), Irène Waldspurger (CNRS/INRIA, Université Paris Dauphine), Laurent Massoulié (INRIA, PSL Research University)
-**Code**: [GitHub](https://github.com/smv30/convex_rel_for_graph_alignment)
+**Code**: [GitHub](https://github.com/smv30/convex_rel_for_graph_alignment)  
 **Area**: Graph Matching / Combinatorial Optimization / Convex Relaxation
 
 ---
@@ -168,8 +168,8 @@ When sample objectives are replaced by their expectations, the optimal solution 
 # Graph Alignment via Birkhoff Relaxation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.05323](https://arxiv.org/abs/2503.05323)
-**Code**: [smv30/convex_rel_for_graph_alignment](https://github.com/smv30/convex_rel_for_graph_alignment)
+**arXiv**: [2503.05323](https://arxiv.org/abs/2503.05323)  
+**Code**: [smv30/convex_rel_for_graph_alignment](https://github.com/smv30/convex_rel_for_graph_alignment)  
 **Area**: Graph Algorithms / Combinatorial Optimization
 **Keywords**: graph alignment, quadratic assignment, Birkhoff polytope, convex relaxation, phase transition, Gaussian Wigner Model
 

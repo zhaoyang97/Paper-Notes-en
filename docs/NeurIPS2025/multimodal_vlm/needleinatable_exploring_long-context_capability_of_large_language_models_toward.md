@@ -18,8 +18,8 @@ content_hash: 0ca4b15ef73bdcdb
 # NeedleInATable: Exploring Long-Context Capability of Large Language Models towards Long-Structured Tables
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.06560](https://arxiv.org/abs/2504.06560)
-**Code**: [GitHub](https://github.com/wlr737/NeedleInATable)
+**arXiv**: [2504.06560](https://arxiv.org/abs/2504.06560)  
+**Code**: [GitHub](https://github.com/wlr737/NeedleInATable)  
 **Area**: Multimodal / VLM / Table Understanding
 **Keywords**: Long-context understanding, structured tables, LLM evaluation benchmark, table perception, data synthesis
 

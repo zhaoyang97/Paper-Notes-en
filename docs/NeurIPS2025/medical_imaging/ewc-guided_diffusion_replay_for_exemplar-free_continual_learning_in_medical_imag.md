@@ -19,8 +19,8 @@ content_hash: c043352593ea57f8
 # EWC-Guided Diffusion Replay for Exemplar-Free Continual Learning in Medical Imaging
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23906](https://arxiv.org/abs/2509.23906)
-**Code**: To be confirmed
+**arXiv**: [2509.23906](https://arxiv.org/abs/2509.23906)  
+**Code**: To be confirmed  
 **Area**: Medical Imaging / Continual Learning
 **Keywords**: Continual learning, diffusion replay, EWC, exemplar-free, medical imaging, privacy preservation, catastrophic forgetting
 

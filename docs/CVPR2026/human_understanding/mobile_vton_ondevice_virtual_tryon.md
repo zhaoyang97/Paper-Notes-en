@@ -18,8 +18,8 @@ content_hash: 65fe52499a51afa0
 # Mobile-VTON: High-Fidelity On-Device Virtual Try-On
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00947]([https://arxiv.org/abs/2603.00947](https://arxiv.org/abs/2603.00947))
-**Code**: Available ([https://zhenchenwan.github.io/Mobile-VTON/](https://zhenchenwan.github.io/Mobile-VTON/))
+**arXiv**: [2603.00947]([https://arxiv.org/abs/2603.00947](https://arxiv.org/abs/2603.00947))  
+**Code**: Available ([https://zhenchenwan.github.io/Mobile-VTON/](https://zhenchenwan.github.io/Mobile-VTON/))  
 **Area**: Human Understanding
 **Keywords**: Virtual Try-On, Mobile Deployment, Knowledge Distillation, Diffusion Models, Privacy Preservation
 

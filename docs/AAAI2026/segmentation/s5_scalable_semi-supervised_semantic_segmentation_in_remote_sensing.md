@@ -18,8 +18,8 @@ content_hash: c2fbee3ea4ce7ed1
 # S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.12409](https://arxiv.org/abs/2508.12409)
-**Code**: [S5](https://github.com/lianglyu/S5)
+**arXiv**: [2508.12409](https://arxiv.org/abs/2508.12409)  
+**Code**: [S5](https://github.com/lianglyu/S5)  
 **Area**: Remote Sensing Image Segmentation
 **Keywords**: semi-supervised learning, remote sensing, foundation model, semantic segmentation, mixture of experts
 

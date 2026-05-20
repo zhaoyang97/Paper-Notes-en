@@ -18,8 +18,8 @@ content_hash: 030540fe70345350
 # Predicting LLM Reasoning Performance with Small Proxy Model
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21013](https://arxiv.org/abs/2509.21013)
-**Code**: Available (dataset and code planned for open release)
+**arXiv**: [2509.21013](https://arxiv.org/abs/2509.21013)  
+**Code**: Available (dataset and code planned for open release)  
 **Area**: LLM Evaluation
 **Keywords**: scaling law, proxy model, reasoning, pre-training data selection, negative log-likelihood
 

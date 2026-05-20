@@ -18,8 +18,8 @@ content_hash: 338bb28a547c8bbb
 # Den-TP: A Density-Balanced Data Curation and Evaluation Framework for Trajectory Prediction
 
 **Conference**: CVPR 2026
-**arXiv**: [2409.17385](https://arxiv.org/abs/2409.17385)
-**Code**: None
+**arXiv**: [2409.17385](https://arxiv.org/abs/2409.17385)  
+**Code**: None  
 **Area**: Autonomous Driving / Trajectory Prediction
 **Keywords**: trajectory prediction, data-centric, density balancing, submodular optimization, long-tail distribution
 
@@ -47,21 +47,21 @@ Den-TP consists of two main stages: an extraction stage and a selection stage. I
 
 1. **Data Partitioning**:
 
-   - **Function**: Partition the dataset into interpretable subsets according to scene complexity.
-   - **Mechanism**: Compute the density level $\rho(S_j)$ of each sample (based on the number of agents in the scene), and partition the dataset into $K$ disjoint subsets $\mathcal{D}_k$ using a fixed interval $\tau$, where $S \in \mathcal{D}_k$ if and only if $\rho(S) \in [\rho_{\min}+(k-1)\tau,\, \rho_{\min}+k\tau)$. Although agent count does not fully capture scene complexity, it serves as a dataset-agnostic proxy that enables consistent cross-dataset analysis.
-   - **Design Motivation**: Without density partitioning, gradient updates are dominated by the large number of low-density samples, leading to systematic under-training on high-density scenes. Explicit partitioning is a prerequisite for the subsequent balanced selection.
+    - **Function**: Partition the dataset into interpretable subsets according to scene complexity.
+    - **Mechanism**: Compute the density level $\rho(S_j)$ of each sample (based on the number of agents in the scene), and partition the dataset into $K$ disjoint subsets $\mathcal{D}_k$ using a fixed interval $\tau$, where $S \in \mathcal{D}_k$ if and only if $\rho(S) \in [\rho_{\min}+(k-1)\tau,\, \rho_{\min}+k\tau)$. Although agent count does not fully capture scene complexity, it serves as a dataset-agnostic proxy that enables consistent cross-dataset analysis.
+    - **Design Motivation**: Without density partitioning, gradient updates are dominated by the large number of low-density samples, leading to systematic under-training on high-density scenes. Explicit partitioning is a prerequisite for the subsequent balanced selection.
 
 2. **Gradient Extraction & Submodular Selection**:
 
-   - **Function**: Select the most representative and least redundant samples within each density bin.
-   - **Mechanism**: For each sample, gradient features are extracted via backpropagation as $\mathbf{G} = \nabla_{\hat{\mathbf{Y}}} \mathcal{L}$, then fused with decoder embeddings via element-wise multiplication to yield $\mathbf{g} = \phi(\mathbf{G}) \odot \phi(\mathbf{E})$. A submodular scoring function is defined as $P(S_j) = \sum_{S_i \in \mathcal{C}_k} \frac{\mathbf{g}_i \cdot \mathbf{g}_j}{\|\mathbf{g}_i\|\|\mathbf{g}_j\|} - \sum_{S_i \in \mathcal{D}_k \setminus \mathcal{C}_k} \frac{\mathbf{g}_i \cdot \mathbf{g}_j}{\|\mathbf{g}_i\|\|\mathbf{g}_j\|}$, and samples minimizing $P$ are greedily selected—those that are least redundant with the already-selected set while most representative of the unselected portion.
-   - **Design Motivation**: Gradient features capture both loss sensitivity and decoder representation information, reflecting a sample's actual contribution to training more faithfully than clustering in pure feature space.
+    - **Function**: Select the most representative and least redundant samples within each density bin.
+    - **Mechanism**: For each sample, gradient features are extracted via backpropagation as $\mathbf{G} = \nabla_{\hat{\mathbf{Y}}} \mathcal{L}$, then fused with decoder embeddings via element-wise multiplication to yield $\mathbf{g} = \phi(\mathbf{G}) \odot \phi(\mathbf{E})$. A submodular scoring function is defined as $P(S_j) = \sum_{S_i \in \mathcal{C}_k} \frac{\mathbf{g}_i \cdot \mathbf{g}_j}{\|\mathbf{g}_i\|\|\mathbf{g}_j\|} - \sum_{S_i \in \mathcal{D}_k \setminus \mathcal{C}_k} \frac{\mathbf{g}_i \cdot \mathbf{g}_j}{\|\mathbf{g}_i\|\|\mathbf{g}_j\|}$, and samples minimizing $P$ are greedily selected—those that are least redundant with the already-selected set while most representative of the unselected portion.
+    - **Design Motivation**: Gradient features capture both loss sensitivity and decoder representation information, reflecting a sample's actual contribution to training more faithfully than clustering in pure feature space.
 
 3. **Dynamic Allocation**:
 
-   - **Function**: Fairly distribute the selection budget across density bins while prioritizing high-density scenes.
-   - **Mechanism**: Given a total budget $B = \lfloor \alpha |\mathcal{D}| \rfloor$, bins are processed in reverse order from highest to lowest density. The budget allocated to bin $\mathcal{D}_k$ is $n_k = \min(|\mathcal{D}_k|, \lfloor B/k \rfloor)$. If a bin contains fewer samples than its budget, all samples are retained without gradient-based selection. Remaining budget is then redistributed to lower-density bins.
-   - **Design Motivation**: High-density bins are naturally scarce; reverse-order processing ensures they are not eliminated early by insufficient budgets. A key finding is that capabilities learned from high-density scenes transfer to low-density scenes, whereas the reverse transfer is weak.
+    - **Function**: Fairly distribute the selection budget across density bins while prioritizing high-density scenes.
+    - **Mechanism**: Given a total budget $B = \lfloor \alpha |\mathcal{D}| \rfloor$, bins are processed in reverse order from highest to lowest density. The budget allocated to bin $\mathcal{D}_k$ is $n_k = \min(|\mathcal{D}_k|, \lfloor B/k \rfloor)$. If a bin contains fewer samples than its budget, all samples are retained without gradient-based selection. Remaining budget is then redistributed to lower-density bins.
+    - **Design Motivation**: High-density bins are naturally scarce; reverse-order processing ensures they are not eliminated early by insufficient budgets. A key finding is that capabilities learned from high-density scenes transfer to low-density scenes, whereas the reverse transfer is weak.
 
 ### Loss & Training
 

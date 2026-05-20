@@ -17,8 +17,8 @@ content_hash: 773f523b0152632a
 # Dual Distillation for Few-Shot Anomaly Detection
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01713](https://arxiv.org/abs/2603.01713)
-**Code**: [https://github.com/ttttqz/D24FAD](https://github.com/ttttqz/D24FAD)
+**arXiv**: [2603.01713](https://arxiv.org/abs/2603.01713)  
+**Code**: [https://github.com/ttttqz/D24FAD](https://github.com/ttttqz/D24FAD)  
 **Area**: Medical Imaging / Anomaly Detection / Few-Shot Learning
 **Keywords**: few-shot anomaly detection, dual distillation, teacher-student, self-distillation, medical imaging
 

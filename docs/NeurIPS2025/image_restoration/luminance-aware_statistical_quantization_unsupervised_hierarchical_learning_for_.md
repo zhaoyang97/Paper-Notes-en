@@ -18,8 +18,8 @@ content_hash: 21971895b66b7500
 # Luminance-Aware Statistical Quantization: Unsupervised Hierarchical Learning for Illumination Enhancement
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01510](https://arxiv.org/abs/2511.01510)
-**Code**: [GitHub](https://github.com/XYLGroup/LASQ)
+**arXiv**: [2511.01510](https://arxiv.org/abs/2511.01510)  
+**Code**: [GitHub](https://github.com/XYLGroup/LASQ)  
 **Area**: Low-Light Image Enhancement / Image Restoration
 **Keywords**: Low-light image enhancement, diffusion model, power-law distribution, MCMC sampling, unsupervised learning
 
@@ -54,32 +54,32 @@ Three core components: (1) **Hierarchical Luminance Modeling** — constructing 
 
 1. **Luminance Variation Coordinate System**:
 
-   - **Function**: Establishes a geometric framework for the relationship between low-light and normal-light luminance.
-   - **Design Motivation**: To mathematically formalize the physical laws governing luminance transitions.
-   - **Mechanism**: For each pixel $i$, the coordinate point $(I_L^{(i)}, I_N^{(i)})$ is observed to follow a power-law distribution $y = ax^\kappa$. Different values of $\kappa$ correspond to distinct adaptation strategies ($\kappa < 0.5$: dark-region recovery; $0.5 < \kappa < 1$: midtone enhancement; $\kappa \to 1$: highlight preservation).
+    - **Function**: Establishes a geometric framework for the relationship between low-light and normal-light luminance.
+    - **Design Motivation**: To mathematically formalize the physical laws governing luminance transitions.
+    - **Mechanism**: For each pixel $i$, the coordinate point $(I_L^{(i)}, I_N^{(i)})$ is observed to follow a power-law distribution $y = ax^\kappa$. Different values of $\kappa$ correspond to distinct adaptation strategies ($\kappa < 0.5$: dark-region recovery; $0.5 < \kappa < 1$: midtone enhancement; $\kappa \to 1$: highlight preservation).
 
 2. **Hierarchical Luminance Adaptation Operator (LAO)**:
 
-   - **Function**: Constructs multi-scale luminance correction operators ranging from global to local.
-   - **Mechanism**: For a region $\mathcal{P}$, a luminance scalar $G_\mathcal{P}$ and the corresponding LAO are computed as:
+    - **Function**: Constructs multi-scale luminance correction operators ranging from global to local.
+    - **Mechanism**: For a region $\mathcal{P}$, a luminance scalar $G_\mathcal{P}$ and the corresponding LAO are computed as:
      $$\gamma_\mathcal{P} = (\alpha + G_\mathcal{P})^{\beta_\mathcal{P}}, \quad \beta_\mathcal{P} = 2G_\mathcal{P} - 1 + \eta\frac{\sigma_{G_\mathcal{P}}^2}{\sigma_{G_\mathcal{P}}^2 + \delta}$$
-   - **Distribution Modeling**: LAOs follow a truncated Gaussian distribution $\gamma \sim \mathcal{N}_{\text{trunc}}(\mu=\gamma_0, \sigma^2; \gamma_{\min}, \gamma_{\max})$.
-   - **Physical Interpretation**: High-probability operators correspond to physically plausible global adaptations, while low-probability operators capture local fine-grained adjustments.
+    - **Distribution Modeling**: LAOs follow a truncated Gaussian distribution $\gamma \sim \mathcal{N}_{\text{trunc}}(\mu=\gamma_0, \sigma^2; \gamma_{\min}, \gamma_{\max})$.
+    - **Physical Interpretation**: High-probability operators correspond to physically plausible global adaptations, while low-probability operators capture local fine-grained adjustments.
 
 3. **MCMC Hierarchical Sampling**:
 
-   - **Function**: Progressively samples from the LAO distribution space to generate a coarse-to-fine set of enhanced images.
-   - **Mechanism**: The $n$-th iteration produces $2^{n-1}$ LAO configurations:
+    - **Function**: Progressively samples from the LAO distribution space to generate a coarse-to-fine set of enhanced images.
+    - **Mechanism**: The $n$-th iteration produces $2^{n-1}$ LAO configurations:
      $$p(\mathcal{I}_H^{(n)}) \approx \sum_{z=1}^{2^{n-1}} p(\mathcal{I}_H^{(n)}|\gamma_{\mathcal{P},z}^{(n)}) p(\gamma_{\mathcal{P},z}^{(n)})$$
      The transition kernel is a truncated Gaussian: $q(\gamma_z^{(n)}|\gamma_{z-1}^{(n)}) = \mathcal{N}_{\text{trunc}}(\gamma_z^{(n)}|\gamma_{z-1}^{(n)}, \lambda^2)$.
-   - **Grid Strategy**: At iteration $n$, the image is partitioned into $m_n \times w_n$ non-overlapping patches (where $m_n = 2^{\lceil(n-1)/2\rceil}$), realizing a coarse-to-fine spatial progression.
+    - **Grid Strategy**: At iteration $n$, the image is partitioned into $m_n \times w_n$ non-overlapping patches (where $m_n = 2^{\lceil(n-1)/2\rceil}$), realizing a coarse-to-fine spatial progression.
 
 4. **Hierarchically-Guided Diffusion**:
 
-   - **Function**: Embeds the MCMC-sampled hierarchical enhancements into the diffusion forward process.
-   - **Mechanism**: A time mapping $\psi(t) = \lfloor t \cdot N/T \rfloor$ aligns the $T$-step diffusion process with the $N$-level hierarchy. Within each time interval $T_n$, the corresponding $\mathcal{F}_H^{(\psi(t))}$ serves as the illumination-normalized reference.
-   - **Training**: The objective combines a noise prediction loss $\mathcal{L}_d$ and a global label weak guidance loss $\mathcal{L}_g$.
-   - **LASQ++ Extension**: An adversarial discriminator conditioned on unpaired normal-light references can optionally be incorporated:
+    - **Function**: Embeds the MCMC-sampled hierarchical enhancements into the diffusion forward process.
+    - **Mechanism**: A time mapping $\psi(t) = \lfloor t \cdot N/T \rfloor$ aligns the $T$-step diffusion process with the $N$-level hierarchy. Within each time interval $T_n$, the corresponding $\mathcal{F}_H^{(\psi(t))}$ serves as the illumination-normalized reference.
+    - **Training**: The objective combines a noise prediction loss $\mathcal{L}_d$ and a global label weak guidance loss $\mathcal{L}_g$.
+    - **LASQ++ Extension**: An adversarial discriminator conditioned on unpaired normal-light references can optionally be incorporated:
      $$\mathcal{L}_{\text{total}} = \lambda_d\mathcal{L}_d + \lambda_g\mathcal{L}_g + \lambda_{\text{GAN}}\mathbb{E}[-\log\mathcal{D}_\phi(G_\theta(\mathcal{I}_L))]$$
 
 ### Loss & Training

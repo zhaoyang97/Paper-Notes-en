@@ -18,8 +18,8 @@ content_hash: 31b5cc497339ea4d
 # V-Bridge: Bridging Video Generative Priors to Versatile Few-shot Image Restoration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13089](https://arxiv.org/abs/2603.13089)
-**Code**: Available (open-source)
+**arXiv**: [2603.13089](https://arxiv.org/abs/2603.13089)  
+**Code**: Available (open-source)  
 **Area**: Image Generation
 **Keywords**: Video generative priors, image restoration, few-shot learning, progressive restoration, drift correction
 

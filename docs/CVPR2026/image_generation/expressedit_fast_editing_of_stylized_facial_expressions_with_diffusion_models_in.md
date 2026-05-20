@@ -18,8 +18,8 @@ content_hash: 51ce8a2de86ccf23
 # ExpressEdit: Fast Editing of Stylized Facial Expressions with Diffusion Models in Photoshop
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03448](https://arxiv.org/abs/2604.03448)
-**Code**: [https://github.com/kenantang/ExpressEdit](https://github.com/kenantang/ExpressEdit)
+**arXiv**: [2604.03448](https://arxiv.org/abs/2604.03448)  
+**Code**: [https://github.com/kenantang/ExpressEdit](https://github.com/kenantang/ExpressEdit)  
 **Area**: Diffusion Models
 **Keywords**: Expression Editing, Photoshop Plugin, Diffusion Models, Stylized Characters, Retrieval-Augmented Generation
 
@@ -31,9 +31,9 @@ This paper presents ExpressEdit, a fully open-source Photoshop plugin that achie
 
 1. **Background**: Facial expressions are a core element of visual storytelling. Current AI image editing models (e.g., FLUX.2, GPT, Grok, Nano Banana 2) can assist with expression generation and editing, but are primarily designed for photorealistic faces with insufficient support for stylized expressions in 2D/3D animated characters.
 2. **Limitations of Prior Work**:
-   - High demands on textual descriptions — users must provide detailed expression prompts; otherwise, generated results lack diversity, imposing significant cognitive burden.
-   - Commercial models introduce global noise and watermarks during editing; noise accumulates over multiple editing steps, leading to severe image degradation.
-   - Poor integration with professional software such as Photoshop, causing resolution changes and pixel drift.
+    - High demands on textual descriptions — users must provide detailed expression prompts; otherwise, generated results lack diversity, imposing significant cognitive burden.
+    - Commercial models introduce global noise and watermarks during editing; noise accumulates over multiple editing steps, leading to severe image degradation.
+    - Poor integration with professional software such as Photoshop, causing resolution changes and pixel drift.
 3. **Key Challenge**: Existing models cannot simultaneously maintain image quality and precisely control the size and position of facial elements, and inference speed is slow (mostly 7–50 seconds).
 4. **Goal**: To achieve fast, noise-free, and iterative stylized expression editing within professional editing software.
 5. **Key Insight**: Leveraging the open-source diffusion model SPICE as the backend, combined with native Photoshop operations (Liquify, Selection, Scale) for precise spatial control, while constructing a database of 135 expression tags to lower the barrier to use.
@@ -48,19 +48,19 @@ ExpressEdit consists of two pipelines: (1) a Retrieval-Augmented Prompt Generato
 ### Key Designs
 
 1. **Retrieval-Augmented Prompt Generator (RAG)**:
-   - **Function**: Converts free-text user intent into tag-format prompts compatible with diffusion models.
-   - **Mechanism**: Constructs a multimodal database of 135 Danbooru expression tags, each accompanied by a definition, 3,375 example images, 332 alternative tags (in Chinese, Japanese, Korean, and English), and 2,700 short stories. Upon user input of a story, a VLM retrieves relevant tags from the database and inserts them into a prompt template composed of a prefix (image content) and suffix (style control).
-   - **Design Motivation**: Tag-format prompts differ fundamentally from natural language; directly inputting text is challenging for new users. The RAG system bridges the gap between large and small models, enabling use even with limited computational resources.
+    - **Function**: Converts free-text user intent into tag-format prompts compatible with diffusion models.
+    - **Mechanism**: Constructs a multimodal database of 135 Danbooru expression tags, each accompanied by a definition, 3,375 example images, 332 alternative tags (in Chinese, Japanese, Korean, and English), and 2,700 short stories. Upon user input of a story, a VLM retrieves relevant tags from the database and inserts them into a prompt template composed of a prefix (image content) and suffix (style control).
+    - **Design Motivation**: Tag-format prompts differ fundamentally from natural language; directly inputting text is challenging for new users. The RAG system bridges the gap between large and small models, enabling use even with limited computational resources.
 
 2. **SPICE-Based Noise-Free Editing Backend**:
-   - **Function**: Performs clean expression editing within the user-defined selection without affecting pixels outside it.
-   - **Mechanism**: Uses WAI-illustrious-SDXL as the base model, paired with SDXL Canny ControlNet. The SPICE backend employs explicit Canny edge control to ensure precise alignment between edited region edges and the original image, eliminating pixel drift. Users draw selections at full hardness using the Selection Brush; the model modifies only the selected content.
-   - **Design Motivation**: Even commercial models that offer selection functionality produce edge mismatches after editing (e.g., Nano Banana Pro generates artifacts at earlobes and chin). SPICE fundamentally resolves this issue via Canny edge constraints.
+    - **Function**: Performs clean expression editing within the user-defined selection without affecting pixels outside it.
+    - **Mechanism**: Uses WAI-illustrious-SDXL as the base model, paired with SDXL Canny ControlNet. The SPICE backend employs explicit Canny edge control to ensure precise alignment between edited region edges and the original image, eliminating pixel drift. Users draw selections at full hardness using the Selection Brush; the model modifies only the selected content.
+    - **Design Motivation**: Even commercial models that offer selection functionality produce edge mismatches after editing (e.g., Nano Banana Pro generates artifacts at earlobes and chin). SPICE fundamentally resolves this issue via Canny edge constraints.
 
 3. **Photoshop Native Operation Synergy**:
-   - **Function**: Leverages native Photoshop operations such as Liquify, Scale, and Quick Selection to provide precise spatial control.
-   - **Mechanism**: Users first roughly reposition facial elements via Liquify or adjust iris size via Scale; the diffusion model then corrects the resulting distortion artifacts into natural outputs. This eliminates the need to specify directional or numerical instructions in text, avoiding the insensitivity of multimodal models to spatial commands.
-   - **Design Motivation**: All baseline models fail to respond to precise numerical descriptions (e.g., "reduce iris diameter by 50%"), whereas SPICE correctly interprets and executes such instructions when Photoshop transformations are provided as visual prompts.
+    - **Function**: Leverages native Photoshop operations such as Liquify, Scale, and Quick Selection to provide precise spatial control.
+    - **Mechanism**: Users first roughly reposition facial elements via Liquify or adjust iris size via Scale; the diffusion model then corrects the resulting distortion artifacts into natural outputs. This eliminates the need to specify directional or numerical instructions in text, avoiding the insensitivity of multimodal models to spatial commands.
+    - **Design Motivation**: All baseline models fail to respond to precise numerical descriptions (e.g., "reduce iris diameter by 50%"), whereas SPICE correctly interprets and executes such instructions when Photoshop transformations are provided as visual prompts.
 
 ### Loss & Training
 

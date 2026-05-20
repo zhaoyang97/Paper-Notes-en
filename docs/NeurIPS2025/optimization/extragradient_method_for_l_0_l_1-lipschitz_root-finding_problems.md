@@ -19,8 +19,8 @@ content_hash: 54100d26b911cec1
 # Extragradient Method for $(L_0, L_1)$-Lipschitz Root-finding Problems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22421](https://arxiv.org/abs/2510.22421)
-**Code**: [github.com/isayantan/L0L1extragradient](https://github.com/isayantan/L0L1extragradient)
+**arXiv**: [2510.22421](https://arxiv.org/abs/2510.22421)  
+**Code**: [github.com/isayantan/L0L1extragradient](https://github.com/isayantan/L0L1extragradient)  
 **Area**: Optimization Theory / Variational Inequalities
 **Keywords**: Extragradient method, $(L_0,L_1)$-Lipschitz, root-finding, adaptive step size, min-max optimization
 

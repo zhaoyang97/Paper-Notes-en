@@ -18,8 +18,8 @@ content_hash: acc1ee4b3661f979
 # What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19440](https://arxiv.org/abs/2604.19440)
-**Code**: [https://github.io/traj_evo_search](https://github.io/traj_evo_search)
+**arXiv**: [2604.19440](https://arxiv.org/abs/2604.19440)  
+**Code**: [https://github.io/traj_evo_search](https://github.io/traj_evo_search)  
 **Area**: LLM Agent / Optimization
 **Keywords**: LLM optimizer, evolutionary search, trajectory analysis, exploration-exploitation trade-off, semantic geometry
 

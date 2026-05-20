@@ -18,8 +18,8 @@ content_hash: 4809b124a9f29a9b
 # Rethinking Nighttime Image Deraining via Learnable Color Space Transformation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17440](https://arxiv.org/abs/2510.17440)
-**Code**: [guanqiyuan/CST-Net](https://github.com/guanqiyuan/CST-Net)
+**arXiv**: [2510.17440](https://arxiv.org/abs/2510.17440)  
+**Code**: [guanqiyuan/CST-Net](https://github.com/guanqiyuan/CST-Net)  
 **Institution**: Dalian Polytechnic University / Nanjing University of Science and Technology / Dalian Maritime University
 **Area**: Image Restoration
 **Keywords**: nighttime image deraining, learnable color space transformation, YCbCr, implicit illumination guidance, HQ-NightRain dataset

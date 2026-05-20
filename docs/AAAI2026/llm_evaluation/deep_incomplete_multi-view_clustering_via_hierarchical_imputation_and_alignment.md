@@ -18,8 +18,8 @@ content_hash: d747a6b60a43ece2
 # Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.09051](https://arxiv.org/abs/2601.09051)
-**Code**: [Available](https://github.com/YMBest/DIMVC-HIA)
+**arXiv**: [2601.09051](https://arxiv.org/abs/2601.09051)  
+**Code**: [Available](https://github.com/YMBest/DIMVC-HIA)  
 **Area**: LLM Evaluation
 **Keywords**: Incomplete multi-view clustering, hierarchical imputation, energy-based model, contrastive alignment, missing views
 

@@ -18,8 +18,8 @@ content_hash: 8805530752b4a3a6
 # Taming Sampling Perturbations with Variance Expansion Loss for Latent Diffusion Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21085](https://arxiv.org/abs/2603.21085)
-**Code**: [https://github.com/CVL-UESTC/VE-Loss](https://github.com/CVL-UESTC/VE-Loss)
+**arXiv**: [2603.21085](https://arxiv.org/abs/2603.21085)  
+**Code**: [https://github.com/CVL-UESTC/VE-Loss](https://github.com/CVL-UESTC/VE-Loss)  
 **Area**: Diffusion Models
 **Keywords**: Latent Diffusion Models, Variance Expansion Loss, Sampling Robustness, Variance Collapse, VAE Tokenizer
 

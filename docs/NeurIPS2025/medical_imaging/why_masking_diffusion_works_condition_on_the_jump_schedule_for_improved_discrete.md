@@ -18,8 +18,8 @@ content_hash: 6b4e318151a91d43
 # Why Masking Diffusion Works: Condition on the Jump Schedule for Improved Discrete Diffusion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.08316](https://arxiv.org/abs/2506.08316)
-**Code**: [GitHub](https://github.com/AlanNawzadAmin/SCUD)
+**arXiv**: [2506.08316](https://arxiv.org/abs/2506.08316)  
+**Code**: [GitHub](https://github.com/AlanNawzadAmin/SCUD)  
 **Area**: Medical Imaging
 **Keywords**: discrete diffusion models, masking diffusion, jump schedule, SCUD, protein generation
 

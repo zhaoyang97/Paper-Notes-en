@@ -18,8 +18,8 @@ content_hash: 24d413b1a07a8ed9
 # The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06941](https://arxiv.org/abs/2506.06941)
-**Code**: Not yet open-sourced
+**arXiv**: [2506.06941](https://arxiv.org/abs/2506.06941)  
+**Code**: Not yet open-sourced  
 **Area**: LLM Reasoning
 **Keywords**: Large Reasoning Models, Problem Complexity, Thinking Tokens, Chain-of-Thought, Reasoning Collapse
 

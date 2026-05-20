@@ -18,8 +18,8 @@ content_hash: dda25c9c9d673905
 # BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.09383](https://arxiv.org/abs/2602.09383)
-**Code**: [https://github.com](https://github.com) (available, includes code and JudgeBench-Pro data)
+**arXiv**: [2602.09383](https://arxiv.org/abs/2602.09383)  
+**Code**: [https://github.com](https://github.com) (available, includes code and JudgeBench-Pro data)  
 **Area**: LLM Evaluation
 **Keywords**: LLM-as-a-Judge, bias discovery, evaluation robustness, automated bias mining, JudgeBench-Pro
 

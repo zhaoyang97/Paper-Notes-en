@@ -18,8 +18,8 @@ content_hash: 7536dd252d950efa
 # ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.05051](https://arxiv.org/abs/2602.05051)
-**Code**: [Project Page](https://mit-realm.github.io/reform/)
+**arXiv**: [2602.05051](https://arxiv.org/abs/2602.05051)  
+**Code**: [Project Page](https://mit-realm.github.io/reform/)  
 **Area**: Reinforcement Learning
 **Keywords**: Offline RL, Flow Matching, Support Constraint, Reflected Flows, OOD Problem
 

@@ -18,8 +18,8 @@ content_hash: 661b26e4ac1f263e
 # Beyond Greedy Exits: Improved Early Exit Decisions for Risk Control and Reliability
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23666](https://arxiv.org/abs/2509.23666)
-**Code**: To be confirmed
+**arXiv**: [2509.23666](https://arxiv.org/abs/2509.23666)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Early exit mechanism, risk control, multi-armed bandit, reliability function, adaptive thresholding
 

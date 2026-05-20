@@ -18,8 +18,8 @@ content_hash: d8c3a54b2c9aa1fc
 # A Multilingual Dataset and Empirical Validation for the Mutual Reinforcement Effect in Information Extraction
 
 **Conference**: ACL 2026
-**arXiv**: [2407.10953](https://arxiv.org/abs/2407.10953)
-**Code**: [GitHub/HuggingFace](https://ganchengguang.github.io/MRE/)
+**arXiv**: [2407.10953](https://arxiv.org/abs/2407.10953)  
+**Code**: [GitHub/HuggingFace](https://ganchengguang.github.io/MRE/)  
 **Area**: Information Extraction / Multilingual NLP
 **Keywords**: Mutual Reinforcement Effect, multilingual information extraction, word-level–text-level joint modeling, dataset construction, LLM-assisted translation
 

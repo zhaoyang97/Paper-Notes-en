@@ -18,8 +18,8 @@ content_hash: 114a0ab2b6904232
 # Vector Contrastive Learning for Pixel-wise Pretraining in Medical Vision
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.20850](https://arxiv.org/abs/2506.20850)
-**Code**: [GitHub](https://github.com/YutingHe-list/COVER)
+**arXiv**: [2506.20850](https://arxiv.org/abs/2506.20850)  
+**Code**: [GitHub](https://github.com/YutingHe-list/COVER)  
 **Area**: Medical Imaging
 **Keywords**: Contrastive Learning, Pixel-wise Pretraining, Medical Vision Foundation Model, Displacement Vector Regression, Over-dispersion Problem
 

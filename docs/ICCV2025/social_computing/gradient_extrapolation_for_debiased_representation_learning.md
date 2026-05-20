@@ -18,8 +18,8 @@ content_hash: 2ce86bc3d4388539
 # Gradient Extrapolation for Debiased Representation Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.13236](https://arxiv.org/abs/2503.13236)
-**Code**: [Project Page](https://gerne-debias.github.io/)
+**arXiv**: [2503.13236](https://arxiv.org/abs/2503.13236)  
+**Code**: [Project Page](https://gerne-debias.github.io/)  
 **Area**: Social Computing
 **Keywords**: debiasing, spurious correlations, gradient extrapolation, robustness, representation learning
 

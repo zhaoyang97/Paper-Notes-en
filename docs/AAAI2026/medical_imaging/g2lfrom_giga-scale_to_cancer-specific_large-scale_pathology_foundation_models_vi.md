@@ -18,8 +18,8 @@ content_hash: 715811333045d632
 # G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Efficient Fine-Tuning
 
 **Conference**: AAAI 2026
-**arXiv**: [2510.11176](https://arxiv.org/abs/2510.11176)
-**Code**: N/A
+**arXiv**: [2510.11176](https://arxiv.org/abs/2510.11176)  
+**Code**: N/A  
 **Area**: Computational Pathology / Foundation Models
 **Keywords**: Pathology Foundation Models, Knowledge Distillation, Model Compression, Cancer Specificity, Vision Transformer
 

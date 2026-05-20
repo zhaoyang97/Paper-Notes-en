@@ -18,8 +18,8 @@ content_hash: c40d79adfdf008f7
 # PHATNet: A Physics-guided Haze Transfer Network for Domain-adaptive Real-world Image Dehazing
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.14826](https://arxiv.org/abs/2507.14826)
-**Code**: [GitHub](https://github.com/pp00704831/PHATNet)
+**arXiv**: [2507.14826](https://arxiv.org/abs/2507.14826)  
+**Code**: [GitHub](https://github.com/pp00704831/PHATNet)  
 **Area**: LLM Evaluation
 **Keywords**: image dehazing, domain adaptation, haze transfer, atmospheric scattering model, disentangled learning
 

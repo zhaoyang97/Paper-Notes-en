@@ -18,8 +18,8 @@ content_hash: 13251eacdde5d635
 # Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.15567](https://arxiv.org/abs/2503.15567)
-**Code**: [GitHub](https://github.com/lyc0930/UAE-3D/)
+**arXiv**: [2503.15567](https://arxiv.org/abs/2503.15567)  
+**Code**: [GitHub](https://github.com/lyc0930/UAE-3D/)  
 **Area**: Medical Imaging
 **Keywords**: 3D molecule generation, latent diffusion model, variational autoencoder, drug discovery, SE(3) equivariance
 

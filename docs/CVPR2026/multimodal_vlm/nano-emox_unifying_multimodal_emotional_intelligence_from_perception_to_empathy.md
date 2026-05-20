@@ -18,8 +18,8 @@ content_hash: 701d221fe55cdab6
 # Nano-EmoX: Unifying Multimodal Emotional Intelligence from Perception to Empathy
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02123](https://arxiv.org/abs/2603.02123)
-**Code**: [https://github.com/waHAHJIAHAO/Nano-EmoX](https://github.com/waHAHJIAHAO/Nano-EmoX)
+**arXiv**: [2603.02123](https://arxiv.org/abs/2603.02123)  
+**Code**: [https://github.com/waHAHJIAHAO/Nano-EmoX](https://github.com/waHAHJIAHAO/Nano-EmoX)  
 **Area**: Multimodal VLM
 **Keywords**: Affective Computing, Multimodal Language Model, Cognitive Hierarchy, Emotion Recognition, Empathetic Interaction
 
@@ -42,19 +42,19 @@ Four modality branches (visual, speech, facial, fusion) + heterogeneous adapters
 ### Key Designs
 
 1. **Enhanced Facial Encoder**:
-   - **Function**: Extracts fine-grained, identity-agnostic facial affective representations.
-   - **Mechanism**: A FaceXFormer encoder extracts multi-scale facial features $E_f$ from video frames. A Temporal Modeling module reconstructs inter-frame temporal relationships via cross-attention $E_f^c = \text{CrossAttention}(Q, E_f^K, E_f^V)$, where $Q$ denotes learnable temporal query tokens. A two-layer fully connected network then projects the output to the language model dimension.
-   - **Design Motivation**: Facial expressions are critical visual cues for affective perception, yet general-purpose visual encoders (e.g., SigLIP) lack sufficient granularity. A dedicated facial encoder with temporal modeling captures the dynamic evolution of expressions.
+    - **Function**: Extracts fine-grained, identity-agnostic facial affective representations.
+    - **Mechanism**: A FaceXFormer encoder extracts multi-scale facial features $E_f$ from video frames. A Temporal Modeling module reconstructs inter-frame temporal relationships via cross-attention $E_f^c = \text{CrossAttention}(Q, E_f^K, E_f^V)$, where $Q$ denotes learnable temporal query tokens. A two-layer fully connected network then projects the output to the language model dimension.
+    - **Design Motivation**: Facial expressions are critical visual cues for affective perception, yet general-purpose visual encoders (e.g., SigLIP) lack sufficient granularity. A dedicated facial encoder with temporal modeling captures the dynamic evolution of expressions.
 
 2. **Cross-Modal Hierarchical Expert Fusion Encoder**:
-   - **Function**: Adaptively fuses complementary affective information from visual and speech modalities.
-   - **Mechanism**: Three fusion experts (with independent weights) each perform cross-attention fusion over features extracted from different layers of the visual and speech encoders (speech layers 16/18/22 + visual layers 12/16/22), producing $E_{mf}^i$. A gating network dynamically weights each expert's contribution $G_1, G_2, G_3$, yielding the final fusion embedding $E_{mf} = G_1 \odot E_{mf}^1 + G_2 \odot E_{mf}^2 + G_3 \odot E_{mf}^3$.
-   - **Design Motivation**: Tasks at different cognitive levels require feature fusion at different representational depths (e.g., low-level features suit prosodic perception, high-level features suit semantic reasoning). Hierarchical experts with dynamic gating enable task-adaptive fusion.
+    - **Function**: Adaptively fuses complementary affective information from visual and speech modalities.
+    - **Mechanism**: Three fusion experts (with independent weights) each perform cross-attention fusion over features extracted from different layers of the visual and speech encoders (speech layers 16/18/22 + visual layers 12/16/22), producing $E_{mf}^i$. A gating network dynamically weights each expert's contribution $G_1, G_2, G_3$, yielding the final fusion embedding $E_{mf} = G_1 \odot E_{mf}^1 + G_2 \odot E_{mf}^2 + G_3 \odot E_{mf}^3$.
+    - **Design Motivation**: Tasks at different cognitive levels require feature fusion at different representational depths (e.g., low-level features suit prosodic perception, high-level features suit semantic reasoning). Hierarchical experts with dynamic gating enable task-adaptive fusion.
 
 3. **P2E Progressive Training Framework**:
-   - **Function**: Cultivates the model's affective intelligence incrementally according to cognitive depth.
-   - **Mechanism**: A three-phase curriculum — (1) **Phase 1**: Fundamental modality alignment, training only the modality-specific adapters (visual + facial on FERV39K/CAER; speech on CREMA-D/M3ED); (2) **Phase 2**: Cross-modal fusion pre-training, activating and training the fusion encoder on MIntRec/MIntRec2.0; (3) **Phase 3**: Multi-task instruction fine-tuning, activating LoRA to fine-tune the LM and jointly training all six tasks with a carefully designed data mixture ratio (MER:OV-MER:MIR:ERI:ERG = 18:28:5:31:18).
-   - **Design Motivation**: Training proceeds from shallow to deep, following the principles of cognitive development — first establishing perceptual foundations, then cultivating cross-modal fusion, and finally developing higher-order reasoning and empathy.
+    - **Function**: Cultivates the model's affective intelligence incrementally according to cognitive depth.
+    - **Mechanism**: A three-phase curriculum — (1) **Phase 1**: Fundamental modality alignment, training only the modality-specific adapters (visual + facial on FERV39K/CAER; speech on CREMA-D/M3ED); (2) **Phase 2**: Cross-modal fusion pre-training, activating and training the fusion encoder on MIntRec/MIntRec2.0; (3) **Phase 3**: Multi-task instruction fine-tuning, activating LoRA to fine-tune the LM and jointly training all six tasks with a carefully designed data mixture ratio (MER:OV-MER:MIR:ERI:ERG = 18:28:5:31:18).
+    - **Design Motivation**: Training proceeds from shallow to deep, following the principles of cognitive development — first establishing perceptual foundations, then cultivating cross-modal fusion, and finally developing higher-order reasoning and empathy.
 
 ### Loss & Training
 A unified maximum likelihood estimation objective: $\theta^{MLE} = \arg\max_\theta \sum \log P(Y|T;\theta)$. Different modules are progressively unfrozen across the three training phases.

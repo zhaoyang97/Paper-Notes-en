@@ -18,8 +18,8 @@ content_hash: a56efe9d3a86517f
 # A Multi-Task Benchmark for Abusive Language Detection in Low-Resource Settings
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12116](https://arxiv.org/abs/2505.12116)
-**Code**: [https://github.com/fgaim/TiALD](https://github.com/fgaim/TiALD)
+**arXiv**: [2505.12116](https://arxiv.org/abs/2505.12116)  
+**Code**: [https://github.com/fgaim/TiALD](https://github.com/fgaim/TiALD)  
 **Area**: Audio & Speech
 **Keywords**: abusive language detection, low-resource languages, multi-task learning, Tigrinya, benchmark dataset
 

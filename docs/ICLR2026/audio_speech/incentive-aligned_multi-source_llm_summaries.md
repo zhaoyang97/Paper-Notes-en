@@ -18,8 +18,8 @@ content_hash: 73ca13ead75da418
 # Incentive-Aligned Multi-Source LLM Summaries
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25184](https://arxiv.org/abs/2509.25184)
-**Code**: None
+**arXiv**: [2509.25184](https://arxiv.org/abs/2509.25184)  
+**Code**: None  
 **Area**: Audio & Speech
 **Keywords**: truthful summarization, incentive alignment, peer prediction, prompt injection, source reliability
 

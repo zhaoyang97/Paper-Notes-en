@@ -18,8 +18,8 @@ content_hash: 8f1a9dd78ce60aa0
 # GAICo: A Deployed and Extensible Framework for Evaluating Diverse and Multimodal Generative AI Outputs
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.16753](https://arxiv.org/abs/2508.16753)
-**Code**: [github.com/ai4society/GenAIResultsComparator](https://github.com/ai4society/GenAIResultsComparator)
+**arXiv**: [2508.16753](https://arxiv.org/abs/2508.16753)  
+**Code**: [github.com/ai4society/GenAIResultsComparator](https://github.com/ai4society/GenAIResultsComparator)  
 **Area**: Time Series
 **Keywords**: Generative AI evaluation, multimodal comparison, evaluation framework, reproducibility, compound AI systems
 

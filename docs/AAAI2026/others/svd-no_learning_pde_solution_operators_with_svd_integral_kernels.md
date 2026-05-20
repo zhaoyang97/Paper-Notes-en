@@ -17,8 +17,8 @@ content_hash: 13468028efa79752
 # SVD-NO: Learning PDE Solution Operators with SVD Integral Kernels
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10025](https://arxiv.org/abs/2511.10025)
-**Code**: [GitHub](https://github.com/2noamk/SVDNO.git)
+**arXiv**: [2511.10025](https://arxiv.org/abs/2511.10025)  
+**Code**: [GitHub](https://github.com/2noamk/SVDNO.git)  
 **Area**: Other
 **Keywords**: Neural Operators, Singular Value Decomposition, Partial Differential Equations, Integral Kernels, Low-Rank Approximation
 
@@ -30,9 +30,9 @@ This paper proposes SVD-NO, a neural operator that explicitly parameterizes the 
 
 1. **Background**: Neural operators learn mappings between infinite-dimensional function spaces, i.e., operators from PDE specifications (initial conditions, boundary conditions, etc.) to solutions. Four major families exist: DeepONet, Fourier-based (FNO), Graph-based (GNO), and Physics-informed (PINO). FNO and its variants currently lead in accuracy.
 2. **Limitations of Prior Work**:
-   - **Fourier methods**: Assume the kernel is stationary (depending only on coordinate differences $\kappa(x-x')$) and independent of the input function, limiting expressiveness.
-   - **Graph methods**: Kernels are local ($\kappa$ is nonzero only for neighbors $x' \in \mathcal{N}(x)$), precluding direct modeling of long-range effects; stacking multiple layers leads to over-smoothing.
-   - **DeepONet**: Fully connected architectures are limited for high-dimensional inputs.
+    - **Fourier methods**: Assume the kernel is stationary (depending only on coordinate differences $\kappa(x-x')$) and independent of the input function, limiting expressiveness.
+    - **Graph methods**: Kernels are local ($\kappa$ is nonzero only for neighbors $x' \in \mathcal{N}(x)$), precluding direct modeling of long-range effects; stacking multiple layers leads to over-smoothing.
+    - **DeepONet**: Fully connected architectures are limited for high-dimensional inputs.
 3. **Key Challenge**: A fundamental trade-off between expressiveness and computational efficiency — the full kernel $\kappa(x, a(x), x', a(x'))$ permits arbitrary complex dependencies but incurs $O(n^2 d^2)$ cost, while existing methods reduce complexity through strong assumptions at the expense of expressiveness.
 4. **Goal**: To design a neural operator that retains the full kernel dependency (input-function dependence and long-range effects) while remaining computationally efficient.
 5. **Key Insight**: Leveraging the SVD decomposition theory of Hilbert-Schmidt operators from functional analysis to represent the kernel in a low-rank factored form.
@@ -47,21 +47,21 @@ SVD-NO follows the standard neural operator architecture: an encoder $P$ lifts t
 ### Key Designs
 
 1. **SVD-Parameterized Integral Kernel**:
-   - **Function**: Approximates arbitrary Hilbert-Schmidt kernels via low-rank SVD while retaining full dependence on both coordinates and input functions.
-   - **Mechanism**: For augmented coordinates $z = (x, a(x))$, the kernel is $\kappa(z, z') = \sum_{\ell=1}^L \sigma_\ell \phi_\ell(z) \psi_\ell(z')$. The vector-valued extension is $\kappa(z,z') = \Phi(z) \Sigma \Psi(z')^\top$, where $\Phi, \Psi \in \mathbb{R}^{d \times L}$ and $\Sigma = \text{diag}(\sigma_1, ..., \sigma_L)$.
-   - **Design Motivation**: Hilbert-Schmidt operators necessarily admit an SVD decomposition (a classical result in functional analysis); truncating to the leading $L$ terms yields the optimal low-rank approximation. Directly parameterizing the SVD factors avoids the intermediate step of first estimating $\kappa$ and then decomposing it.
+    - **Function**: Approximates arbitrary Hilbert-Schmidt kernels via low-rank SVD while retaining full dependence on both coordinates and input functions.
+    - **Mechanism**: For augmented coordinates $z = (x, a(x))$, the kernel is $\kappa(z, z') = \sum_{\ell=1}^L \sigma_\ell \phi_\ell(z) \psi_\ell(z')$. The vector-valued extension is $\kappa(z,z') = \Phi(z) \Sigma \Psi(z')^\top$, where $\Phi, \Psi \in \mathbb{R}^{d \times L}$ and $\Sigma = \text{diag}(\sigma_1, ..., \sigma_L)$.
+    - **Design Motivation**: Hilbert-Schmidt operators necessarily admit an SVD decomposition (a classical result in functional analysis); truncating to the leading $L$ terms yields the optimal low-rank approximation. Directly parameterizing the SVD factors avoids the intermediate step of first estimating $\kappa$ and then decomposing it.
 
 2. **Efficient Integral Computation**:
-   - **Function**: Reduces the cost of applying the integral operator from $O(n^2 d^2)$ to $O(ndL)$.
-   - **Mechanism**: The factored SVD structure allows the $z$-dependent term to be factored out of the integral:
+    - **Function**: Reduces the cost of applying the integral operator from $O(n^2 d^2)$ to $O(ndL)$.
+    - **Mechanism**: The factored SVD structure allows the $z$-dependent term to be factored out of the integral:
      (1) Compute the rank-$L$ representation $q = \sum_j \Psi(z_j)^\top v^t(z_j) \Delta z \in \mathbb{R}^L$, at cost $O(ndL)$;
      (2) For each output point, compute $v^{t+1}(z_i) = \Phi(z_i) \Sigma q$, at cost $O(ndL)$.
-   - **Design Motivation**: Since $L \ll nd$, the total complexity is linear in the spatial resolution $n$, which is key to practical scalability.
+    - **Design Motivation**: Since $L \ll nd$, the total complexity is linear in the spatial resolution $n$, which is key to practical scalability.
 
 3. **Orthogonality Regularization**:
-   - **Function**: Encourages the learned singular functions to form an orthonormal system, preserving the SVD structure.
-   - **Mechanism**: Gram matrices $G_\Phi = \int \Phi^\top \Phi\, dz$ and $G_\Psi = \int \Psi^\top \Psi\, dz$ are approximated via the trapezoidal rule, and the penalty $\mathcal{L}_{ortho} = \|G_\Phi - I_L\|_F^2 + \|G_\Psi - I_L\|_F^2$ is minimized.
-   - **Design Motivation**: True SVD singular functions are orthonormal; ablation experiments show that removing this constraint increases error by a factor of 2.97.
+    - **Function**: Encourages the learned singular functions to form an orthonormal system, preserving the SVD structure.
+    - **Mechanism**: Gram matrices $G_\Phi = \int \Phi^\top \Phi\, dz$ and $G_\Psi = \int \Psi^\top \Psi\, dz$ are approximated via the trapezoidal rule, and the penalty $\mathcal{L}_{ortho} = \|G_\Phi - I_L\|_F^2 + \|G_\Psi - I_L\|_F^2$ is minimized.
+    - **Design Motivation**: True SVD singular functions are orthonormal; ablation experiments show that removing this constraint increases error by a factor of 2.97.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 77b7b9595f95cde8
 # What Makes an Ideal Quote? Recommending "Unexpected yet Rational" Quotations via Novelty
 
 **Conference**: ACL 2026
-**arXiv**: [2602.22220](https://arxiv.org/abs/2602.22220)
-**Code**: None
+**arXiv**: [2602.22220](https://arxiv.org/abs/2602.22220)  
+**Code**: None  
 **Area**: Recommender Systems / Natural Language Generation
 **Keywords**: Quote recommendation, novelty estimation, defamiliarization theory, deep semantic retrieval, continuation bias
 

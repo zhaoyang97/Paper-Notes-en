@@ -18,8 +18,8 @@ content_hash: e761c490f266cead
 # Generalizing Linear Autoencoder Recommenders with Decoupled Expected Quadratic Loss
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.07402](https://arxiv.org/abs/2603.07402)
-**Code**: [https://github.com/coderaBruce/DEQL](https://github.com/coderaBruce/DEQL)
+**arXiv**: [2603.07402](https://arxiv.org/abs/2603.07402)  
+**Code**: [https://github.com/coderaBruce/DEQL](https://github.com/coderaBruce/DEQL)  
 **Area**: Image Restoration
 **Keywords**: Linear autoencoder, recommender systems, collaborative filtering, expected quadratic loss, closed-form solution
 

@@ -18,8 +18,8 @@ content_hash: 12353c306c3b6c03
 # A Partition Cover Approach for Tokenization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.06246](https://arxiv.org/abs/2501.06246)
-**Code**: [https://github.com/PreferredAI/pcatt/](https://github.com/PreferredAI/pcatt/)
+**arXiv**: [2501.06246](https://arxiv.org/abs/2501.06246)  
+**Code**: [https://github.com/PreferredAI/pcatt/](https://github.com/PreferredAI/pcatt/)  
 **Area**: Model Compression
 **Keywords**: tokenization, BPE, partition cover, NP-hard, greedy algorithm
 

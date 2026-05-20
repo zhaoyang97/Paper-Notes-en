@@ -18,8 +18,8 @@ content_hash: 67a4c6d9979eb8c1
 # ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09611](https://arxiv.org/abs/2603.09611)
-**Code**: [Project Page](https://heokunho.github.io/ParTY/)
+**arXiv**: [2603.09611](https://arxiv.org/abs/2603.09611)  
+**Code**: [Project Page](https://heokunho.github.io/ParTY/)  
 **Area**: Human Understanding
 **Keywords**: text-to-motion, body part guidance, VQ-VAE, part-aware text alignment, motion coherence
 

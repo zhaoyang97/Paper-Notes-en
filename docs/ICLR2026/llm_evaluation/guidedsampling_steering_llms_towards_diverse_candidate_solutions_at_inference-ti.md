@@ -18,8 +18,8 @@ content_hash: 8f5392ba18ffd7b2
 # GuidedSampling: Steering LLMs Towards Diverse Candidate Solutions at Inference-Time
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.03777](https://arxiv.org/abs/2510.03777)
-**Code**: [GitHub](https://github.com/DivijH/sampling_inference)
+**arXiv**: [2510.03777](https://arxiv.org/abs/2510.03777)  
+**Code**: [GitHub](https://github.com/DivijH/sampling_inference)  
 **Area**: LLM Evaluation
 **Keywords**: inference-time scaling, repeated sampling, diversity, concept exploration, pass@k
 

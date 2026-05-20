@@ -18,8 +18,8 @@ content_hash: 4dc083fead906146
 # Revisiting Orbital Minimization Method for Neural Operator Decomposition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21952](https://arxiv.org/abs/2510.21952)
-**Code**: [GitHub](https://github.com/jongharyu/operator-omm)
+**arXiv**: [2510.21952](https://arxiv.org/abs/2510.21952)  
+**Code**: [GitHub](https://github.com/jongharyu/operator-omm)  
 **Area**: Optimization
 **Keywords**: Spectral Decomposition, Orbital Minimization Method, Eigenfunction Learning, Neural Operator, Self-Supervised Learning
 
@@ -55,8 +55,8 @@ This minimizes the trace of the squared residual projection matrix $(I - VV^\top
 
 2. **Nesting Techniques**: To learn ordered eigenvectors, two nesting strategies are proposed:
 
-   - **Joint Nesting (OMMjnt)**: Minimizes the weighted objective $\sum_{i=1}^k \alpha_i \mathcal{L}_{\text{omm}}^{(p)}(V_{1:i})$, efficiently implemented via matrix masking.
-   - **Sequential Nesting (OMMseq)**: Uses stop-gradient to define a surrogate objective such that $\partial_{v_i} \mathcal{L}_{\text{omm}}^{\text{seq}} = \partial_{v_i} \mathcal{L}_{\text{omm}}^{(1)}(V_{1:i})$.
+    - **Joint Nesting (OMMjnt)**: Minimizes the weighted objective $\sum_{i=1}^k \alpha_i \mathcal{L}_{\text{omm}}^{(p)}(V_{1:i})$, efficiently implemented via matrix masking.
+    - **Sequential Nesting (OMMseq)**: Uses stop-gradient to define a surrogate objective such that $\partial_{v_i} \mathcal{L}_{\text{omm}}^{\text{seq}} = \partial_{v_i} \mathcal{L}_{\text{omm}}^{(1)}(V_{1:i})$.
 
 3. **Connection to Sanger's Rule**: The sequential nesting gradient of OMM is a symmetrized version of the Sanger update. The Sanger update $(I - V_{1:i}V_{1:i}^\top)A v_i$ is not itself the gradient of any function, whereas OMM naturally recovers this form from a well-defined objective. This connection is remarkable — a classical method from computational chemistry shares a deep relationship with the core algorithm of streaming PCA.
 

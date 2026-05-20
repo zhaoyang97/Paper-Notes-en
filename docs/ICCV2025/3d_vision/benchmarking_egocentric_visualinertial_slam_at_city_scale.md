@@ -18,8 +18,8 @@ content_hash: ffcc576ed79e351f
 # Benchmarking Egocentric Visual-Inertial SLAM at City Scale
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.26639](https://arxiv.org/abs/2509.26639)
-**Code**: [lamaria.ethz.ch](https://www.lamaria.ethz.ch/) (dataset & evaluation platform)
+**arXiv**: [2509.26639](https://arxiv.org/abs/2509.26639)  
+**Code**: [lamaria.ethz.ch](https://www.lamaria.ethz.ch/) (dataset & evaluation platform)  
 **Area**: 3D Vision / SLAM
 **Keywords**: Visual-Inertial SLAM, egocentric vision, benchmark, city-scale localization, wearable devices
 

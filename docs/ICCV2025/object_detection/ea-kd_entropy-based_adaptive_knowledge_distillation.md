@@ -18,8 +18,8 @@ content_hash: f95894634861732d
 # EA-KD: Entropy-based Adaptive Knowledge Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2311.13621](https://arxiv.org/abs/2311.13621)
-**Code**: [https://github.com/cpsu00/EA-KD](https://github.com/cpsu00/EA-KD)
+**arXiv**: [2311.13621](https://arxiv.org/abs/2311.13621)  
+**Code**: [https://github.com/cpsu00/EA-KD](https://github.com/cpsu00/EA-KD)  
 **Area**: Object Detection
 **Keywords**: Knowledge Distillation, Entropy, Adaptive Weighting, Plug-and-Play, Sample Importance
 

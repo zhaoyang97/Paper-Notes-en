@@ -18,8 +18,8 @@ content_hash: 6bc6b757a0139c5f
 # FiffDepth: Feed-forward Transformation of Diffusion-Based Generators for Detailed Depth Estimation
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.00671](https://arxiv.org/abs/2412.00671)
-**Code**: [Project Page](https://yunpeng1998.github.io/FiffDepth/)
+**arXiv**: [2412.00671](https://arxiv.org/abs/2412.00671)  
+**Code**: [Project Page](https://yunpeng1998.github.io/FiffDepth/)  
 **Area**: 3D Vision / Monocular Depth Estimation
 **Keywords**: Monocular depth estimation, diffusion models, feed-forward architecture, DINOv2 distillation, detail preservation
 
@@ -31,14 +31,14 @@ This paper proposes FiffDepth, which transforms a pretrained diffusion model int
 
 - **Monocular depth estimation (MDE) is a fundamental 3D vision problem**: widely applied in 3D scene reconstruction, autonomous navigation, and AI content creation.
 - **Core challenges of existing methods**:
-  - Real-world depth datasets are noisy, and synthetic data suffers from domain gaps.
-  - Generative methods (e.g., Marigold) directly fine-tune diffusion models as depth map generators, but the diffusion process introduces noise and uncertainty, which is suboptimal for dense prediction tasks.
-  - Feed-forward models (FFN) such as DINOv2 offer strong generalization but lack fine detail.
-  - Existing diffusion-based methods are inefficient, requiring multi-step denoising and test-time ensembling.
+    - Real-world depth datasets are noisy, and synthetic data suffers from domain gaps.
+    - Generative methods (e.g., Marigold) directly fine-tune diffusion models as depth map generators, but the diffusion process introduces noise and uncertainty, which is suboptimal for dense prediction tasks.
+    - Feed-forward models (FFN) such as DINOv2 offer strong generalization but lack fine detail.
+    - Existing diffusion-based methods are inefficient, requiring multi-step denoising and test-time ensembling.
 - **Key observations**:
-  - The denoising module of a diffusion model performs better and more stably when used directly in a feed-forward manner.
-  - DINOv2 accurately predicts low-frequency depth components but lacks high-frequency detail.
-  - The diffusion model itself can learn a filter to separate high- and low-frequency components.
+    - The denoising module of a diffusion model performs better and more stably when used directly in a feed-forward manner.
+    - DINOv2 accurately predicts low-frequency depth components but lacks high-frequency detail.
+    - The diffusion model itself can learn a filter to separate high- and low-frequency components.
 - **Mechanism**: Leverage an extension of the diffusion model trajectory for efficient depth estimation, while incorporating DINOv2 knowledge to enhance generalization.
 
 ## Method

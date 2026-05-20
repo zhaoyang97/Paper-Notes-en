@@ -18,8 +18,8 @@ content_hash: 8e14e9ef4c4f857a
 # PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21626](https://arxiv.org/abs/2603.21626)
-**Code**: [https://github.com/CNU-MedAI-Lab/PGR-Net](https://github.com/CNU-MedAI-Lab/PGR-Net)
+**arXiv**: [2603.21626](https://arxiv.org/abs/2603.21626)  
+**Code**: [https://github.com/CNU-MedAI-Lab/PGR-Net](https://github.com/CNU-MedAI-Lab/PGR-Net)  
 **Area**: Medical Image Segmentation
 **Keywords**: Brain tumor segmentation, ROI prior, spatial guidance, RetNet, MRI
 

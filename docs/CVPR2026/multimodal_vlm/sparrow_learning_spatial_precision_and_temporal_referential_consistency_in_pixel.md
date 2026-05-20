@@ -18,8 +18,8 @@ content_hash: b9219375d8aad398
 # SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12382](https://arxiv.org/abs/2603.12382)
-**Code**: None
+**arXiv**: [2603.12382](https://arxiv.org/abs/2603.12382)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: Video pixel-level grounding, referring video object segmentation, temporal consistency, dual-prompt decoding, multimodal large language models
 

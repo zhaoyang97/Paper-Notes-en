@@ -18,8 +18,8 @@ content_hash: dea3c03c1c4f0f4c
 # RenderFlow: Single-Step Neural Rendering via Flow Matching
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.06928](https://arxiv.org/abs/2601.06928)
-**Code**: Unavailable (Disney Research internal project)
+**arXiv**: [2601.06928](https://arxiv.org/abs/2601.06928)  
+**Code**: Unavailable (Disney Research internal project)  
 **Area**: Diffusion Models / Image Generation / 3D Vision
 **Keywords**: Neural rendering, flow matching, single-step inference, G-buffer, keyframe guidance
 

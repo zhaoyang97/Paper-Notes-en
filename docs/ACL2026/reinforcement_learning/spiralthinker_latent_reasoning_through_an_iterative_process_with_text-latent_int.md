@@ -18,8 +18,8 @@ content_hash: 7317ce701456baf1
 # SpiralThinker: Latent Reasoning through an Iterative Process with Text-Latent Interleaving
 
 **Conference**: ACL 2026
-**arXiv**: [2511.08983](https://arxiv.org/abs/2511.08983)
-**Code**: [GitHub](https://github.com/shengminp/SpiralThinker)
+**arXiv**: [2511.08983](https://arxiv.org/abs/2511.08983)  
+**Code**: [GitHub](https://github.com/shengminp/SpiralThinker)  
 **Area**: Reinforcement Learning
 **Keywords**: Latent Reasoning, Iterative Refinement, Text-Latent Interleaving, Progressive Alignment, Implicit Chain-of-Thought
 

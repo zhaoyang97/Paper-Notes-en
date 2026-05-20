@@ -19,8 +19,8 @@ content_hash: 581b090ffea52a32
 # GeoRemover: Removing Objects and Their Causal Visual Artifacts
 
 **Conference**: NeurIPS2025
-**arXiv**: [2509.18538](https://arxiv.org/abs/2509.18538)
-**Code**: [Project Page](https://buxiangzhiren.github.io/GeoRemover)
+**arXiv**: [2509.18538](https://arxiv.org/abs/2509.18538)  
+**Code**: [Project Page](https://buxiangzhiren.github.io/GeoRemover)  
 **Area**: Image Generation
 **Keywords**: Object Removal, Causal Visual Artifacts, Geometry-Awareness, Depth Maps, Diffusion Models, DPO
 

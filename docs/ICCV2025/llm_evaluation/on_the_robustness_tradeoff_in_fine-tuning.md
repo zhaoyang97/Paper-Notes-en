@@ -18,8 +18,8 @@ content_hash: e5f4e7f748507aa8
 # On the Robustness Tradeoff in Fine-Tuning
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.14836](https://arxiv.org/abs/2503.14836)
-**Code**: [https://github.com/kyangl/robustness-finetuning](https://github.com/kyangl/robustness-finetuning)
+**arXiv**: [2503.14836](https://arxiv.org/abs/2503.14836)  
+**Code**: [https://github.com/kyangl/robustness-finetuning](https://github.com/kyangl/robustness-finetuning)  
 **Area**: LLM Evaluation
 **Keywords**: fine-tuning robustness, adversarial robustness, parameter-efficient fine-tuning, Pareto frontier, OOD robustness
 

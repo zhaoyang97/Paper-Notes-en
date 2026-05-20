@@ -18,8 +18,8 @@ content_hash: f41fb24a94ac2616
 # When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors
 
 **Conference**: ACL 2026
-**arXiv**: [2604.21255](https://arxiv.org/abs/2604.21255)
-**Code**: [https://github.com/Syuchin/AgentEcho](https://github.com/Syuchin/AgentEcho)
+**arXiv**: [2604.21255](https://arxiv.org/abs/2604.21255)  
+**Code**: [https://github.com/Syuchin/AgentEcho](https://github.com/Syuchin/AgentEcho)  
 **Area**: LLM Agent
 **Keywords**: model distillation, behavioral homogenization, tool use, agent evaluation, behavioral similarity
 

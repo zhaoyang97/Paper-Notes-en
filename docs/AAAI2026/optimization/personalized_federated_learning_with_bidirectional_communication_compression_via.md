@@ -18,8 +18,8 @@ content_hash: 5ddb247c41bde799
 # pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13144](https://arxiv.org/abs/2511.13144)
-**Code**: To be confirmed
+**arXiv**: [2511.13144](https://arxiv.org/abs/2511.13144)  
+**Code**: To be confirmed  
 **Area**: Optimization / Federated Learning
 **Keywords**: Federated Learning, Communication Efficiency, Personalization, one-bit compression, random sketching
 

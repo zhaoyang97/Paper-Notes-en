@@ -18,8 +18,8 @@ content_hash: 85003f1de1e73555
 # Efficient Ensemble Conditional Independence Test Framework for Causal Discovery
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21021](https://arxiv.org/abs/2509.21021)
-**Code**: None
+**arXiv**: [2509.21021](https://arxiv.org/abs/2509.21021)  
+**Code**: None  
 **Area**: Causal Inference
 **Keywords**: conditional independence test, causal discovery, ensemble method, stable distribution, p-value combination
 

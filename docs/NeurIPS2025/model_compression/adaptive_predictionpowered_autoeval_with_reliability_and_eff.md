@@ -18,8 +18,8 @@ content_hash: b8af98ab592ee106
 # Adaptive Prediction-Powered AutoEval with Reliability and Efficiency Guarantees
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18659](https://arxiv.org/abs/2505.18659)
-**Code**: [https://github.com/kclip/R_AutoEval_plus](https://github.com/kclip/R_AutoEval_plus)
+**arXiv**: [2505.18659](https://arxiv.org/abs/2505.18659)  
+**Code**: [https://github.com/kclip/R_AutoEval_plus](https://github.com/kclip/R_AutoEval_plus)  
 **Area**: Model Compression
 **Keywords**: LLM evaluation, prediction-powered inference, autoevaluator, e-value, testing-by-betting
 
@@ -39,21 +39,21 @@ R-AutoEval+ conducts model evaluation within the testing-by-betting framework. G
 
 1. **PPI++ Effective Observation Construction**:
 
-   - Function: Fuses real and synthetic data into a single unbiased risk estimate.
-   - Mechanism: For each candidate factor $\rho_s$, the effective observation is constructed as $\ell_{s,i}^f = (\rho_s / r) \cdot \sum \ell(\tilde{X}, f(\tilde{X})) + \ell(X_i, Y_i) - \rho_s \cdot \ell(X_i, f(X_i))$, where the first term is the weighted contribution of synthetic data and the latter two terms are bias correction terms. The estimator is unbiased and bounded.
-   - Design Motivation: $\rho_s$ controls the degree of reliance on synthetic data — larger values increase dependence, potentially reducing variance (with a good judge) or increasing it (with a poor judge); $\rho_s = 0$ discards synthetic data entirely, reducing to standard Eval.
+    - Function: Fuses real and synthetic data into a single unbiased risk estimate.
+    - Mechanism: For each candidate factor $\rho_s$, the effective observation is constructed as $\ell_{s,i}^f = (\rho_s / r) \cdot \sum \ell(\tilde{X}, f(\tilde{X})) + \ell(X_i, Y_i) - \rho_s \cdot \ell(X_i, f(X_i))$, where the first term is the weighted contribution of synthetic data and the latter two terms are bias correction terms. The estimator is unbiased and bounded.
+    - Design Motivation: $\rho_s$ controls the degree of reliance on synthetic data — larger values increase dependence, potentially reducing variance (with a good judge) or increasing it (with a poor judge); $\rho_s = 0$ discards synthetic data entirely, reducing to standard Eval.
 
 2. **Exponential-Weight Adaptive Update Mechanism**:
 
-   - Function: Online learning of optimal allocation weights for each candidate factor $\rho_s$.
-   - Mechanism: $S$ independent e-value sets $\{E_{s,i}\}$ are maintained, and weights are updated as $w_{s,i} = w_{s,0} \cdot E_{s,i-1} / \sum w_{s',0} \cdot E_{s',i-1}$ — $\rho_s$ values with greater accumulated evidence (i.e., higher e-values) receive larger weights.
-   - Design Motivation: This is equivalent to the exponential-weight forecasting algorithm, which has a sublinear regret guarantee (Lemma 1) and can identify the optimal dependency level after processing $O(\log S)$ samples.
+    - Function: Online learning of optimal allocation weights for each candidate factor $\rho_s$.
+    - Mechanism: $S$ independent e-value sets $\{E_{s,i}\}$ are maintained, and weights are updated as $w_{s,i} = w_{s,0} \cdot E_{s,i-1} / \sum w_{s',0} \cdot E_{s',i-1}$ — $\rho_s$ values with greater accumulated evidence (i.e., higher e-values) receive larger weights.
+    - Design Motivation: This is equivalent to the exponential-weight forecasting algorithm, which has a sublinear regret guarantee (Lemma 1) and can identify the optimal dependency level after processing $O(\log S)$ samples.
 
 3. **Multi-Strategy E-Value Fusion**:
 
-   - Function: Fuses observations from $S$ candidate strategies into a single valid e-value statistic.
-   - Mechanism: The global e-value is defined as $E_n = \prod_{i=1}^n \sum_{s=1}^S w_{s,i} \cdot (1 - \lambda_{s,i} \cdot (\ell_{s,i}^f - \alpha))$; the convex combination form guarantees $\mathbb{E}[E_n \mid R > \alpha] \leq 1$.
-   - Design Motivation: Betting variables $\lambda_{s,i}$ are set adaptively via Universal Portfolio (UP) or WSR strategies; UP satisfies sublinear regret while WSR is computationally more efficient.
+    - Function: Fuses observations from $S$ candidate strategies into a single valid e-value statistic.
+    - Mechanism: The global e-value is defined as $E_n = \prod_{i=1}^n \sum_{s=1}^S w_{s,i} \cdot (1 - \lambda_{s,i} \cdot (\ell_{s,i}^f - \alpha))$; the convex combination form guarantees $\mathbb{E}[E_n \mid R > \alpha] \leq 1$.
+    - Design Motivation: Betting variables $\lambda_{s,i}$ are set adaptively via Universal Portfolio (UP) or WSR strategies; UP satisfies sublinear regret while WSR is computationally more efficient.
 
 ### Loss & Training
 The method requires no training. Betting variables are set adaptively via the UP strategy (discretizing the continuous domain of $\lambda$ into 10,000 grid points) or the WSR strategy (based on online variance estimation). Initial weights are set to uniform distribution $w_{s,0} = 1/S$.

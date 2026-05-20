@@ -18,8 +18,8 @@ content_hash: d6b4a864944f24b8
 # Exploring Multimodal Diffusion Transformers for Enhanced Prompt-based Image Editing
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.07519](https://arxiv.org/abs/2508.07519)
-**Code**: N/A
+**arXiv**: [2508.07519](https://arxiv.org/abs/2508.07519)  
+**Code**: N/A  
 **Area**: Diffusion Models / Image Editing
 **Keywords**: MM-DiT, Attention Mechanism Analysis, Prompt-based Editing, Stable Diffusion 3, Flux.1
 

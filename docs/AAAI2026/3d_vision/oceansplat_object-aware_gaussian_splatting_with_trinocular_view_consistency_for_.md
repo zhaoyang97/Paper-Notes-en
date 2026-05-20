@@ -18,8 +18,8 @@ content_hash: 8e8d4bfa9456c899
 # OceanSplat: Object-aware Gaussian Splatting with Trinocular View Consistency for Underwater Scene Reconstruction
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.04984](https://arxiv.org/abs/2601.04984)
-**Code**: [oceansplat.github.io](https://oceansplat.github.io)
+**arXiv**: [2601.04984](https://arxiv.org/abs/2601.04984)  
+**Code**: [oceansplat.github.io](https://oceansplat.github.io)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, underwater scene reconstruction, trinocular view consistency, depth regularization, scattering medium
 

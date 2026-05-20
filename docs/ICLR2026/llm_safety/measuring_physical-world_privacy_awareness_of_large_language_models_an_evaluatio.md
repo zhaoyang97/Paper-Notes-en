@@ -19,8 +19,8 @@ content_hash: 4c21e7cb30c30be8
 # Measuring Physical-World Privacy Awareness of Large Language Models: An Evaluation Benchmark
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.02356](https://arxiv.org/abs/2510.02356)
-**Code**: [GitHub](https://github.com/Graph-COM/EAPrivacy)
+**arXiv**: [2510.02356](https://arxiv.org/abs/2510.02356)  
+**Code**: [GitHub](https://github.com/Graph-COM/EAPrivacy)  
 **Area**: AI Safety / Privacy / Embodied Intelligence
 **Keywords**: privacy awareness, embodied agent, physical privacy, contextual integrity, benchmark, PDDL
 

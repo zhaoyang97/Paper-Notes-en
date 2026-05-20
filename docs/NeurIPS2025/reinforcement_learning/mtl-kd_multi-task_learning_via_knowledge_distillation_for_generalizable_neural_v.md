@@ -18,8 +18,8 @@ content_hash: 3e3cc5cc6787c8c8
 # MTL-KD: Multi-Task Learning Via Knowledge Distillation for Generalizable Neural Vehicle Routing Solver
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.02935](https://arxiv.org/abs/2506.02935)
-**Code**: [GitHub](https://github.com/CIAM-Group/MTLKD)
+**arXiv**: [2506.02935](https://arxiv.org/abs/2506.02935)  
+**Code**: [GitHub](https://github.com/CIAM-Group/MTLKD)  
 **Area**: Reinforcement Learning
 **Keywords**: Vehicle Routing Problem, Multi-Task Learning, Knowledge Distillation, Neural Combinatorial Optimization, Scale Generalization
 

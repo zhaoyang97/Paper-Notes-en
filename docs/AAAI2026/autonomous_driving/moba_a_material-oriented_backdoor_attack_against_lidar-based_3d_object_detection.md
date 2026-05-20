@@ -18,8 +18,8 @@ content_hash: ec0bbde577e05c6b
 # MOBA: A Material-Oriented Backdoor Attack against LiDAR-based 3D Object Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09999](https://arxiv.org/abs/2511.09999)
-**Code**: None
+**arXiv**: [2511.09999](https://arxiv.org/abs/2511.09999)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: backdoor attack, LiDAR 3D object detection, physically realizable attack, BRDF reflectance model, material modeling
 

@@ -18,8 +18,8 @@ content_hash: 7a0e13e575bab010
 # SPACeR: Self-Play Anchoring with Centralized Reference Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.18060](https://arxiv.org/abs/2510.18060)
-**Code**: N/A
+**arXiv**: [2510.18060](https://arxiv.org/abs/2510.18060)  
+**Code**: N/A  
 **Area**: Autonomous Driving / Reinforcement Learning
 **Keywords**: self-play reinforcement learning, traffic simulation, tokenized models, KL divergence alignment, human driving distribution
 

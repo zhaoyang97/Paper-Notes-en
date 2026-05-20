@@ -18,8 +18,8 @@ content_hash: 34ba543750e8b37e
 # Predicting LLM Reasoning Performance with Small Proxy Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21013](https://arxiv.org/abs/2509.21013)
-**Code**: Not released
+**arXiv**: [2509.21013](https://arxiv.org/abs/2509.21013)  
+**Code**: Not released  
 **Area**: LLM/NLP
 **Keywords**: small proxy models, reasoning performance prediction, pretraining data, scaling law, NLL
 

@@ -18,8 +18,8 @@ content_hash: f68717277a5aff86
 # Generalizable Insights for Graph Transformers in Theory and Practice
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.08028](https://arxiv.org/abs/2511.08028)
-**Code**: Available
+**arXiv**: [2511.08028](https://arxiv.org/abs/2511.08028)  
+**Code**: Available  
 **Area**: Object Detection
 **Keywords**: Graph Transformer, GD-WL, positional encoding expressiveness, few-shot transfer, large-scale evaluation
 

@@ -20,8 +20,8 @@ content_hash: 0271c37391b93234
 # Continuous Uniqueness and Novelty Metrics for Generative Modeling of Inorganic Crystals
 
 **Conference**: NeurIPS 2025 (AI4Mat Workshop)
-**arXiv**: [2510.12405](https://arxiv.org/abs/2510.12405)
-**Code**: [GitHub](https://github.com/WMD-group/xtalmet)
+**arXiv**: [2510.12405](https://arxiv.org/abs/2510.12405)  
+**Code**: [GitHub](https://github.com/WMD-group/xtalmet)  
 **Area**: Generative Models / Materials Science / Evaluation Metrics
 **Keywords**: crystal generation, uniqueness, novelty, distance function, AMD, Magpie, StructureMatcher
 

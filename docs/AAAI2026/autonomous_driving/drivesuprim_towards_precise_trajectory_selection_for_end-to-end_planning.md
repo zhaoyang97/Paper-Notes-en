@@ -18,8 +18,8 @@ content_hash: f611ac5767416847
 # DriveSuprim: Towards Precise Trajectory Selection for End-to-End Planning
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.06659](https://arxiv.org/abs/2506.06659)
-**Code**: [Available](https://github.com/William-Yao-2000/DriveSuprim)
+**arXiv**: [2506.06659](https://arxiv.org/abs/2506.06659)  
+**Code**: [Available](https://github.com/William-Yao-2000/DriveSuprim)  
 **Area**: Autonomous Driving
 **Keywords**: End-to-End Planning, Trajectory Selection, Coarse-to-Fine, Data Augmentation, Self-Distillation
 

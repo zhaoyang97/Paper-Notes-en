@@ -18,8 +18,8 @@ content_hash: 9b3e7c69b3b10905
 # DiffVax: Optimization-Free Image Immunization Against Diffusion-Based Editing
 
 **Conference**: ICLR 2026
-**arXiv**: [2411.17957](https://arxiv.org/abs/2411.17957)
-**Code**: Available (Project Webpage)
+**arXiv**: [2411.17957](https://arxiv.org/abs/2411.17957)  
+**Code**: Available (Project Webpage)  
 **Area**: Diffusion Models / Security
 **Keywords**: Image immunization, adversarial perturbation, diffusion model editing protection, feed-forward network, video protection
 

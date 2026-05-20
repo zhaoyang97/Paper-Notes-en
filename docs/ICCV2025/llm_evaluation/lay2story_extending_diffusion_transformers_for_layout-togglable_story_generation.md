@@ -18,8 +18,8 @@ content_hash: 8e8937a2f0f1a3de
 # Lay2Story: Extending Diffusion Transformers for Layout-Togglable Story Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.08949](https://arxiv.org/abs/2508.08949)
-**Code**: N/A
+**arXiv**: [2508.08949](https://arxiv.org/abs/2508.08949)  
+**Code**: N/A  
 **Area**: LLM Evaluation
 **Keywords**: story generation, layout control, diffusion Transformer, subject consistency, large-scale dataset
 

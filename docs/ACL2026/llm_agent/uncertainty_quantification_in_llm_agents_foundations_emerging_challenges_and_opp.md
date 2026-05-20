@@ -17,8 +17,8 @@ content_hash: 559901ddc30ea061
 # Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities
 
 **Conference**: ACL 2026
-**arXiv**: [2602.05073](https://arxiv.org/abs/2602.05073)
-**Code**: [Project Page](https://agentuq.github.io/)
+**arXiv**: [2602.05073](https://arxiv.org/abs/2602.05073)  
+**Code**: [Project Page](https://agentuq.github.io/)  
 **Area**: LLM Agent / Uncertainty Quantification
 **Keywords**: Uncertainty Quantification, LLM Agent, Dynamic Bayesian Network, Trajectory Uncertainty, Interactive Reasoning
 

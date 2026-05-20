@@ -18,8 +18,8 @@ content_hash: a8a56491239a5577
 # HydroDCM: Hydrological Domain-Conditioned Modulation for Cross-Reservoir Inflow Prediction
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.03300](https://arxiv.org/abs/2512.03300)
-**Code**: [github.com/humphreyhuu/HydroDCM](https://github.com/humphreyhuu/HydroDCM)
+**arXiv**: [2512.03300](https://arxiv.org/abs/2512.03300)  
+**Code**: [github.com/humphreyhuu/HydroDCM](https://github.com/humphreyhuu/HydroDCM)  
 **Area**: Time Series
 **Keywords**: Domain Generalization, Cross-Reservoir Inflow Prediction, Adversarial Training, FiLM Modulation, Spatial Meta-Attributes
 

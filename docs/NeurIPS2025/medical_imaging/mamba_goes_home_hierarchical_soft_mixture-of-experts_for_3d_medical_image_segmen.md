@@ -18,8 +18,8 @@ content_hash: ab60f98b73f6b96f
 # Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.06363](https://arxiv.org/abs/2507.06363)
-**Code**: [github.com/gmum/MambaHoME](https://github.com/gmum/MambaHoME)
+**arXiv**: [2507.06363](https://arxiv.org/abs/2507.06363)  
+**Code**: [github.com/gmum/MambaHoME](https://github.com/gmum/MambaHoME)  
 **Area**: Medical Imaging
 **Keywords**: 3D Medical Image Segmentation, Mamba, Mixture-of-Experts, State Space Models, Hierarchical Routing
 
@@ -43,21 +43,21 @@ Mamba-HoME adopts a U-shaped encoder-decoder architecture. The encoder consists 
 
 1. **Hierarchical Soft Mixture-of-Experts (HoME)**:
 
-   - **Function**: A two-level token routing layer that processes features first locally, then globally.
-   - **Mechanism**: The input sequence is first partitioned into $G_i$ groups, each containing $K_i$ tokens. During the **grouped slot assignment** phase, tokens within each group are soft-assigned to expert slots via dot products with learnable slot embeddings $E_{\text{slots}}^{(i)} \in \mathbb{R}^{M_i \times d}$ followed by softmax normalization: $A_{b,g,k,m} = \frac{\exp(S_{b,g,k,m})}{\sum_{m'}\exp(S_{b,g,k,m'})}$. The first level of $E_{1,i}$ local experts (FFNs) processes intra-group slot representations via routing-weight-weighted aggregation; the second level of $E_{2,i}$ global experts processes the concatenated slots from all groups to enable cross-group information fusion.
-   - **Design Motivation**: Global SMoE incurs a computational cost of $\mathcal{O}(N_i \cdot M_i)$ on long sequences; grouped routing reduces peak memory while preserving locality. The two-level design achieves local feature extraction combined with global context integration without significantly increasing computational overhead.
+    - **Function**: A two-level token routing layer that processes features first locally, then globally.
+    - **Mechanism**: The input sequence is first partitioned into $G_i$ groups, each containing $K_i$ tokens. During the **grouped slot assignment** phase, tokens within each group are soft-assigned to expert slots via dot products with learnable slot embeddings $E_{\text{slots}}^{(i)} \in \mathbb{R}^{M_i \times d}$ followed by softmax normalization: $A_{b,g,k,m} = \frac{\exp(S_{b,g,k,m})}{\sum_{m'}\exp(S_{b,g,k,m'})}$. The first level of $E_{1,i}$ local experts (FFNs) processes intra-group slot representations via routing-weight-weighted aggregation; the second level of $E_{2,i}$ global experts processes the concatenated slots from all groups to enable cross-group information fusion.
+    - **Design Motivation**: Global SMoE incurs a computational cost of $\mathcal{O}(N_i \cdot M_i)$ on long sequences; grouped routing reduces peak memory while preserving locality. The two-level design achieves local feature extraction combined with global context integration without significantly increasing computational overhead.
 
 2. **Mamba-HoMEB (Mamba-HoME Block)**:
 
-   - **Function**: Sequentially integrates the GSC, Mamba, and HoME modules.
-   - **Processing Pipeline**: $x_i'^l = f_{\text{GSC}}(x_i^l)$, $\bar{x}_i^l = f_{\text{Mamba}}(f_{\text{Norm}}(x_i'^l)) + x_i'^l$, $x_i^{l+1} = f_{\text{HoME}}(f_{\text{Norm}}(\bar{x}_i^l)) + \bar{x}_i^l$. The GSC module first extracts local spatial priors; the flattened 1D sequence is then passed to the Mamba layer for long-range modeling; finally, the HoME layer performs hierarchical expert refinement.
-   - **Design Motivation**: GSC captures local spatial priors, Mamba efficiently processes long sequences, and HoME provides hierarchical expert adaptivity — the three modules are complementary, forming a complete local-to-global modeling chain.
+    - **Function**: Sequentially integrates the GSC, Mamba, and HoME modules.
+    - **Processing Pipeline**: $x_i'^l = f_{\text{GSC}}(x_i^l)$, $\bar{x}_i^l = f_{\text{Mamba}}(f_{\text{Norm}}(x_i'^l)) + x_i'^l$, $x_i^{l+1} = f_{\text{HoME}}(f_{\text{Norm}}(\bar{x}_i^l)) + \bar{x}_i^l$. The GSC module first extracts local spatial priors; the flattened 1D sequence is then passed to the Mamba layer for long-range modeling; finally, the HoME layer performs hierarchical expert refinement.
+    - **Design Motivation**: GSC captures local spatial priors, Mamba efficiently processes long sequences, and HoME provides hierarchical expert adaptivity — the three modules are complementary, forming a complete local-to-global modeling chain.
 
 3. **Dynamic Tanh (DyT) Normalization**:
 
-   - **Function**: An efficient normalization method that replaces Layer Normalization.
-   - **Core Formula**: $f_{\text{DyT}}(x) = w \cdot \tanh(\alpha \cdot x) + b$, where $w, b \in \mathbb{R}^d$ are learnable parameters and $\alpha$ is a shared scalar.
-   - **Design Motivation**: The bounded nature of tanh inherently stabilizes gradients, avoiding the mean/variance computation overhead of LN. This achieves approximately 6% acceleration in both training and inference within the SSM architecture without performance degradation.
+    - **Function**: An efficient normalization method that replaces Layer Normalization.
+    - **Core Formula**: $f_{\text{DyT}}(x) = w \cdot \tanh(\alpha \cdot x) + b$, where $w, b \in \mathbb{R}^d$ are learnable parameters and $\alpha$ is a shared scalar.
+    - **Design Motivation**: The bounded nature of tanh inherently stabilizes gradients, avoiding the mean/variance computation overhead of LN. This achieves approximately 6% acceleration in both training and inference within the SSM architecture without performance degradation.
 
 ### Loss & Training
 The $\mathcal{L}_{\text{DiceCE}}$ loss function (Dice + Cross Entropy) is employed with the AdamW optimizer and an initial learning rate of 1e-4 with cosine annealing scheduling. Two configurations are supported: training from scratch and fine-tuning after supervised pre-training on large-scale CT/MRI datasets. Pre-training uses the AbdomenAtlas 1.1 (CT) and TotalSegmentator MRI datasets.

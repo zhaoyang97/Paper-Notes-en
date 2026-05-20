@@ -18,8 +18,8 @@ content_hash: 4c1b8d40c5e2dd82
 # When Does Divide and Conquer Work for Long Context LLM? A Noise Decomposition Framework
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.16411](https://arxiv.org/abs/2506.16411)
-**Code**: To be confirmed
+**arXiv**: [2506.16411](https://arxiv.org/abs/2506.16411)  
+**Code**: To be confirmed  
 **Area**: LLM Efficiency
 **Keywords**: long context, divide and conquer, noise decomposition, chunk size, task decomposition
 

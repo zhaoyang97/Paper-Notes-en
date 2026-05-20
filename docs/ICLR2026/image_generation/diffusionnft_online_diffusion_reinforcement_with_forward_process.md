@@ -18,8 +18,8 @@ content_hash: c9b8b9d402687d9e
 # DiffusionNFT: Online Diffusion Reinforcement with Forward Process
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.16117](https://arxiv.org/abs/2509.16117)
-**Code**: [https://research.nvidia.com/labs/dir/DiffusionNFT](https://research.nvidia.com/labs/dir/DiffusionNFT)
+**arXiv**: [2509.16117](https://arxiv.org/abs/2509.16117)  
+**Code**: [https://research.nvidia.com/labs/dir/DiffusionNFT](https://research.nvidia.com/labs/dir/DiffusionNFT)  
 **Area**: Diffusion Models / Reinforcement Learning Alignment
 **Keywords**: online RL, forward process, negative-aware finetuning, flow matching, CFG-free
 
@@ -54,27 +54,27 @@ Each iteration proceeds as follows:
 
 1. **Improvement Direction Theorem (Theorem 3.1)**:
 
-   - **Function**: Proves that the difference directions among the positive, negative, and old policy velocity fields are proportional.
-   - **Mechanism**: $\Delta := \alpha(\mathbf{x}_t)[\mathbf{v}^+(\mathbf{x}_t) - \mathbf{v}^{\text{old}}(\mathbf{x}_t)] = [1-\alpha(\mathbf{x}_t)][\mathbf{v}^{\text{old}}(\mathbf{x}_t) - \mathbf{v}^-(\mathbf{x}_t)]$, where $\alpha$ is a scalar related to the density ratio of the positive policy.
-   - **Design Motivation**: Establishes the equivalence "moving away from negatives = moving toward positives," a form analogous to CFG but derived from RL principles.
+    - **Function**: Proves that the difference directions among the positive, negative, and old policy velocity fields are proportional.
+    - **Mechanism**: $\Delta := \alpha(\mathbf{x}_t)[\mathbf{v}^+(\mathbf{x}_t) - \mathbf{v}^{\text{old}}(\mathbf{x}_t)] = [1-\alpha(\mathbf{x}_t)][\mathbf{v}^{\text{old}}(\mathbf{x}_t) - \mathbf{v}^-(\mathbf{x}_t)]$, where $\alpha$ is a scalar related to the density ratio of the positive policy.
+    - **Design Motivation**: Establishes the equivalence "moving away from negatives = moving toward positives," a form analogous to CFG but derived from RL principles.
 
 2. **Policy Optimization Objective (Theorem 3.2)**:
 
-   - **Function**: Designs a flow matching loss that jointly exploits positive and negative data.
-   - **Mechanism**: $\mathcal{L}(\theta) = \mathbb{E}[r \|\mathbf{v}_\theta^+ - \mathbf{v}\|^2 + (1-r)\|\mathbf{v}_\theta^- - \mathbf{v}\|^2]$, where $\mathbf{v}_\theta^+ = (1-\beta)\mathbf{v}^{\text{old}} + \beta \mathbf{v}_\theta$ (implicit positive policy) and $\mathbf{v}_\theta^- = (1+\beta)\mathbf{v}^{\text{old}} - \beta \mathbf{v}_\theta$ (implicit negative policy).
-   - **Design Motivation**: Through implicit parameterization, only a single model $\mathbf{v}_\theta$ is trained, yet it is equivalently pulled toward the positive policy and pushed away from the negative policy. The optimal solution $\mathbf{v}_{\theta^*} = \mathbf{v}^{\text{old}} + \frac{2}{\beta}\Delta$ automatically integrates reinforcement guidance into the policy.
+    - **Function**: Designs a flow matching loss that jointly exploits positive and negative data.
+    - **Mechanism**: $\mathcal{L}(\theta) = \mathbb{E}[r \|\mathbf{v}_\theta^+ - \mathbf{v}\|^2 + (1-r)\|\mathbf{v}_\theta^- - \mathbf{v}\|^2]$, where $\mathbf{v}_\theta^+ = (1-\beta)\mathbf{v}^{\text{old}} + \beta \mathbf{v}_\theta$ (implicit positive policy) and $\mathbf{v}_\theta^- = (1+\beta)\mathbf{v}^{\text{old}} - \beta \mathbf{v}_\theta$ (implicit negative policy).
+    - **Design Motivation**: Through implicit parameterization, only a single model $\mathbf{v}_\theta$ is trained, yet it is equivalently pulled toward the positive policy and pushed away from the negative policy. The optimal solution $\mathbf{v}_{\theta^*} = \mathbf{v}^{\text{old}} + \frac{2}{\beta}\Delta$ automatically integrates reinforcement guidance into the policy.
 
 3. **Forward Consistency**:
 
-   - **Function**: Guarantees that the trained model still corresponds to a valid forward process.
-   - **Mechanism**: DiffusionNFT employs the standard flow matching loss (forward process) rather than policy gradients over the reverse SDE.
-   - **Design Motivation**: FlowGRPO's exclusive optimization of the reverse process may break forward–reverse consistency.
+    - **Function**: Guarantees that the trained model still corresponds to a valid forward process.
+    - **Mechanism**: DiffusionNFT employs the standard flow matching loss (forward process) rather than policy gradients over the reverse SDE.
+    - **Design Motivation**: FlowGRPO's exclusive optimization of the reverse process may break forward–reverse consistency.
 
 4. **CFG-free Training**:
 
-   - **Function**: Operates without CFG; reinforcement guidance subsumes the role of CFG.
-   - **Mechanism**: The term $\Delta$ in Theorem 3.1 is formally equivalent to guidance—RL automatically learns the guidance direction.
-   - **Design Motivation**: Avoids the complexity of jointly training conditional and unconditional models as required by GRPO.
+    - **Function**: Operates without CFG; reinforcement guidance subsumes the role of CFG.
+    - **Mechanism**: The term $\Delta$ in Theorem 3.1 is formally equivalent to guidance—RL automatically learns the guidance direction.
+    - **Design Motivation**: Avoids the complexity of jointly training conditional and unconditional models as required by GRPO.
 
 ### Loss & Training
 

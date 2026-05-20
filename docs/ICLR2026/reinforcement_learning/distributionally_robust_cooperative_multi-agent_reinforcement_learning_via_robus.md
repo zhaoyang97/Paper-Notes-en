@@ -18,8 +18,8 @@ content_hash: 400081e52f4ee82b
 # Distributionally Robust Cooperative Multi-Agent Reinforcement Learning via Robust Value Factorization
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.11437](https://arxiv.org/abs/2602.11437)
-**Code**: [https://github.com/crqu/robust-coMARL](https://github.com/crqu/robust-coMARL)
+**arXiv**: [2602.11437](https://arxiv.org/abs/2602.11437)  
+**Code**: [https://github.com/crqu/robust-coMARL](https://github.com/crqu/robust-coMARL)  
 **Area**: Reinforcement Learning
 **Keywords**: Distributionally Robust Optimization, Multi-Agent Reinforcement Learning, Value Factorization, CTDE, Environmental Uncertainty
 

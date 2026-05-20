@@ -18,8 +18,8 @@ content_hash: bb5d61abb57e11c9
 # Streaming Federated Learning with Markovian Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.18807](https://arxiv.org/abs/2503.18807)
-**Code**: None
+**arXiv**: [2503.18807](https://arxiv.org/abs/2503.18807)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: Federated Learning, Markovian Data Streams, Stochastic Gradient Descent, Non-convex Optimization, Client Drift
 

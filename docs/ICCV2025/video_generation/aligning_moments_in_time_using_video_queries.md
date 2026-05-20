@@ -18,8 +18,8 @@ content_hash: 9e1a56827f0960b7
 # Aligning Moments in Time using Video Queries
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.15439](https://arxiv.org/abs/2508.15439)
-**Code**: [GitHub](https://github.com/vl2g/MATR)
+**arXiv**: [2508.15439](https://arxiv.org/abs/2508.15439)  
+**Code**: [GitHub](https://github.com/vl2g/MATR)  
 **Area**: Video Generation
 **Keywords**: Video Moment Retrieval, Video Query, Sequence Alignment, Self-Supervised Pretraining, Transformer
 

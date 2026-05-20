@@ -18,8 +18,8 @@ content_hash: adb273bc2cb37cba
 # CausalCLIP: Causally-Informed Feature Disentanglement and Filtering for Generalizable Detection of Generated Images
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.13285](https://arxiv.org/abs/2512.13285)
-**Code**: Unavailable
+**arXiv**: [2512.13285](https://arxiv.org/abs/2512.13285)  
+**Code**: Unavailable  
 **Area**: Image Generation
 **Keywords**: Generated image detection, causal reasoning, CLIP, feature disentanglement, adversarial training
 

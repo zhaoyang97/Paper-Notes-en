@@ -18,8 +18,8 @@ content_hash: 6e440f61df52af7b
 # BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00232](https://arxiv.org/abs/2510.00232)
-**Code**: [https://github.com/xxupiano/BiasFreeBench](https://github.com/xxupiano/BiasFreeBench)
+**arXiv**: [2510.00232](https://arxiv.org/abs/2510.00232)  
+**Code**: [https://github.com/xxupiano/BiasFreeBench](https://github.com/xxupiano/BiasFreeBench)  
 **Area**: Social Computing
 **Keywords**: bias mitigation, debiasing, LLM fairness, benchmark, Bias-Free Score
 
@@ -49,30 +49,30 @@ BiasFreeBench comprises three core components: (1) unified implementation of 8 d
 
 1. **Four Prompting-Based Debiasing Methods**
 
-   - **Self-Awareness**: Appends a bias-type hint to the query (e.g., "be aware of gender bias"), prompting the model to remain conscious of bias when responding. Incurs zero additional computational overhead.
-   - **Self-Reflection**: First prompts the LLM to generate an initial answer, then instructs it to reflect on and remove bias before regenerating. Analogous to the reflection mechanism in agent systems.
-   - **Self-Help**: Instructs the LLM to rewrite a potentially biased query, then obtains a response using the sanitized query in a new session. Requires two forward passes.
-   - **CoT (Chain-of-Thought)**: Instructs the model to reason step by step in order to avoid biased answers, reducing bias by exposing the reasoning process.
+    - **Self-Awareness**: Appends a bias-type hint to the query (e.g., "be aware of gender bias"), prompting the model to remain conscious of bias when responding. Incurs zero additional computational overhead.
+    - **Self-Reflection**: First prompts the LLM to generate an initial answer, then instructs it to reflect on and remove bias before regenerating. Analogous to the reflection mechanism in agent systems.
+    - **Self-Help**: Instructs the LLM to rewrite a potentially biased query, then obtains a response using the sanitized query in a new session. Requires two forward passes.
+    - **CoT (Chain-of-Thought)**: Instructs the model to reason step by step in order to avoid biased answers, reducing bias by exposing the reasoning process.
 
 2. **Four Training-Based Debiasing Methods**
 
-   - **SFT**: Fine-tunes on anti-stereotypical data, directly learning unbiased response patterns.
-   - **DPO**: Constructs preference pairs (anti-stereotypical as positive, stereotypical as negative) to learn to distinguish safe from unsafe behavior, adding a contrastive learning signal over SFT.
-   - **Safe RLHF**: A two-stage pipeline—first trains a reward model (helpfulness) and a cost model (harmlessness), then applies constrained optimization to train the LLM to jointly satisfy both objectives.
-   - **Task Vector**: Trains a biased model $\theta_{\text{biased}}$ via SFT, computes the bias vector $\tau = \theta_{\text{biased}} - \theta_{\text{pre}}$, and then applies a reverse update $\theta_{\text{biasfree}} = \theta_{\text{pre}} - \tau$ to "subtract" the bias.
+    - **SFT**: Fine-tunes on anti-stereotypical data, directly learning unbiased response patterns.
+    - **DPO**: Constructs preference pairs (anti-stereotypical as positive, stereotypical as negative) to learn to distinguish safe from unsafe behavior, adding a contrastive learning signal over SFT.
+    - **Safe RLHF**: A two-stage pipeline—first trains a reward model (helpfulness) and a cost model (harmlessness), then applies constrained optimization to train the LLM to jointly satisfy both objectives.
+    - **Task Vector**: Trains a biased model $\theta_{\text{biased}}$ via SFT, computes the bias vector $\tau = \theta_{\text{biased}} - \theta_{\text{pre}}$, and then applies a reverse update $\theta_{\text{biasfree}} = \theta_{\text{pre}} - \tau$ to "subtract" the bias.
 
 3. **Bias-Free Score (BFS) Metric**
 
-   - **Function**: Directly measures the proportion of unbiased/safe/anti-stereotypical responses in LLM outputs.
-   - BFS on BBQ: $\text{BFS}_{\text{BBQ}} = \frac{N_{\text{anti-stereo}} + N_{\text{unknown}}}{N_{\text{total}}}$, where *unknown* includes safe responses such as "insufficient information to determine."
-   - BFS on FairMT-Bench: $\text{BFS}_{\text{FairMT}} = \frac{N_{\text{unbiased}}}{N_{\text{total}}}$
-   - **Design Motivation**: Unlike probability-level metrics, BFS directly reflects whether the outputs actually seen by users are fair and safe.
+    - **Function**: Directly measures the proportion of unbiased/safe/anti-stereotypical responses in LLM outputs.
+    - BFS on BBQ: $\text{BFS}_{\text{BBQ}} = \frac{N_{\text{anti-stereo}} + N_{\text{unknown}}}{N_{\text{total}}}$, where *unknown* includes safe responses such as "insufficient information to determine."
+    - BFS on FairMT-Bench: $\text{BFS}_{\text{FairMT}} = \frac{N_{\text{unbiased}}}{N_{\text{total}}}$
+    - **Design Motivation**: Unlike probability-level metrics, BFS directly reflects whether the outputs actually seen by users are fair and safe.
 
 4. **Evaluation Pipeline (Three-Way Vote)**
 
-   - **Function**: Classifies LLM responses for bias.
-   - Uses three judges: GPT-4o-mini (majority vote over 3 queries), LlamaGuard-3-8B, and the OpenAI Moderation API.
-   - Human validation shows 100% agreement with human judgments on BBQ (Cohen's kappa = 1.0) and 94% agreement on FairMT-Bench (kappa = 0.7).
+    - **Function**: Classifies LLM responses for bias.
+    - Uses three judges: GPT-4o-mini (majority vote over 3 queries), LlamaGuard-3-8B, and the OpenAI Moderation API.
+    - Human validation shows 100% agreement with human judgments on BBQ (Cohen's kappa = 1.0) and 94% agreement on FairMT-Bench (kappa = 0.7).
 
 ### Training Data
 - The intersentence portion of StereoSet is used as training data for SFT, DPO, and Task Vector.

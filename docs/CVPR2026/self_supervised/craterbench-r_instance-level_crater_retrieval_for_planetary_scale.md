@@ -18,8 +18,8 @@ content_hash: b310e143340c8074
 # CraterBench-R: Instance-Level Crater Retrieval for Planetary Scale
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.06245](https://arxiv.org/abs/2604.06245)
-**Code**: [https://hf.co/datasets/jfang/CraterBench-R](https://hf.co/datasets/jfang/CraterBench-R)
+**arXiv**: [2604.06245](https://arxiv.org/abs/2604.06245)  
+**Code**: [https://hf.co/datasets/jfang/CraterBench-R](https://hf.co/datasets/jfang/CraterBench-R)  
 **Area**: Planetary Science / Image Retrieval
 **Keywords**: crater retrieval, instance-level retrieval, ViT patch token, training-free token aggregation, two-stage retrieval
 

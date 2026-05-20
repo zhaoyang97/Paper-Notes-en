@@ -18,8 +18,8 @@ content_hash: 531bd0679c721e10
 # Decoupled Entropy Minimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.03256](https://arxiv.org/abs/2511.03256)
-**Code**: [https://github.com/HAIV-Lab/DEM](https://github.com/HAIV-Lab/DEM)
+**arXiv**: [2511.03256](https://arxiv.org/abs/2511.03256)  
+**Code**: [https://github.com/HAIV-Lab/DEM](https://github.com/HAIV-Lab/DEM)  
 **Area**: LLM Evaluation
 **Keywords**: entropy minimization, domain adaptation, test-time adaptation, self-supervised learning, reward collapse
 

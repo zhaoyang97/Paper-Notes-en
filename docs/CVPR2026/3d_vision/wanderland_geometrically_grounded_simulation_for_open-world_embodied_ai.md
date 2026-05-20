@@ -19,8 +19,8 @@ content_hash: 42f66cb1c0b3ff2b
 # Wanderland: Geometrically Grounded Simulation for Open-World Embodied AI
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.20620](https://arxiv.org/abs/2511.20620)
-**Code**: [https://ai4ce.github.io/wanderland/](https://ai4ce.github.io/wanderland/)
+**arXiv**: [2511.20620](https://arxiv.org/abs/2511.20620)  
+**Code**: [https://ai4ce.github.io/wanderland/](https://ai4ce.github.io/wanderland/)  
 **Area**: 3D Vision / Embodied AI / Simulation Environments
 **Keywords**: real-to-sim, 3D Gaussian Splatting, LiDAR-Inertial-Visual SLAM, navigation simulation, geometric grounding, novel view synthesis
 
@@ -50,10 +50,10 @@ Multi-sensor capture → LIV-SLAM reconstruction (globally consistent metric poi
 - **LiDAR Mounting**: Tilt angle optimized to maximize ground detail capture and camera FOV overlap.
 - **Real-time Monitoring**: A companion mobile app displays colored point cloud previews in real time, enabling operators to actively fill coverage gaps.
 - **Capture Protocol**:
-  - Scene scale: 5,000–10,000 m², balancing complexity and coverage.
-  - Trigger strategy: RGB capture triggered by displacement/angle thresholds rather than fixed frame rates, ensuring uniform viewpoint distribution.
-  - Trajectory strategy: **Training trajectories** follow closed-loop paths with dense multi-view coverage of all navigable areas; **extrapolation trajectories** simulate natural navigation paths with minimal overlap with training trajectories. This contrasts sharply with the unidirectional urban walk videos used by Vid2Sim/GaussGym.
-  - Quality control: Dynamic obstacles and reflective surfaces are minimized; lighting is kept consistent within a single capture session; real-time point cloud monitoring verifies coverage completeness.
+    - Scene scale: 5,000–10,000 m², balancing complexity and coverage.
+    - Trigger strategy: RGB capture triggered by displacement/angle thresholds rather than fixed frame rates, ensuring uniform viewpoint distribution.
+    - Trajectory strategy: **Training trajectories** follow closed-loop paths with dense multi-view coverage of all navigable areas; **extrapolation trajectories** simulate natural navigation paths with minimal overlap with training trajectories. This contrasts sharply with the unidirectional urban walk videos used by Vid2Sim/GaussGym.
+    - Quality control: Dynamic obstacles and reflective surfaces are minimized; lighting is kept consistent within a single capture session; real-time point cloud monitoring verifies coverage completeness.
 - **Diversity**: Data collected in New York City and Jersey City, covering residential buildings, commercial districts, streets, plazas, and university campuses, under varying times of day (morning/midday/evening) and weather conditions (sunny/cloudy/light rain).
 
 ### 2. Data Processing Pipeline (Section 3.2)

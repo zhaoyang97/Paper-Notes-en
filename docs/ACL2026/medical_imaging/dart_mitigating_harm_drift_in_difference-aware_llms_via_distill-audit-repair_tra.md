@@ -14,8 +14,8 @@ content_hash: cb375ee700219765
 # DART: Mitigating Harm Drift in Difference-Aware LLMs via Distill-Audit-Repair Training
 
 **Conference**: ACL 2026
-**arXiv**: [2604.16845](https://arxiv.org/abs/2604.16845)
-**Code**: [GitHub](https://github.com/dart-framework)
+**arXiv**: [2604.16845](https://arxiv.org/abs/2604.16845)  
+**Code**: [GitHub](https://github.com/dart-framework)  
 **Area**: Medical Imaging
 **Keywords**: difference-awareness, harm drift, distill-audit-repair, safety alignment, over-refusal
 
@@ -108,7 +108,7 @@ Both Stage I and Stage III employ LoRA fine-tuning with standard next-token pred
 - Writing Quality: ⭐⭐⭐⭐⭐ Problem definition is clear and examples are intuitive.
 - Value: ⭐⭐⭐⭐⭐ Reveals a new safety risk in fine-tuning with important implications for LLM alignment research.
 
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: medical_imaging
 **Keywords**: To be supplemented
 

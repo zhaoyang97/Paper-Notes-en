@@ -18,8 +18,8 @@ content_hash: e83b7387b3547867
 # GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09446](https://arxiv.org/abs/2603.09446)
-**Code**: Unavailable
+**arXiv**: [2603.09446](https://arxiv.org/abs/2603.09446)  
+**Code**: Unavailable  
 **Area**: Medical Image Analysis / Graph Neural Networks / Computer-Aided Diagnosis
 **Keywords**: Multi-heterogeneous graph, multi-view diagnosis, intra-/inter-view dependencies, missing view handling, CADx
 
@@ -55,28 +55,28 @@ Two-stage training: (1) A ConvNeXt feature extractor is independently trained fo
 
 1. **Dual-type Node Representation**
 
-   - **Single-view node** $N_{single}^v = f_v(l_v)$: the feature of a lesion under a specific view.
-   - **Multi-view node** $M_{multi} = \|_{v=1}^V N_{single}^v$: an aggregated node formed by concatenating features from all views.
-   - For breast mammography, where lesion correspondences between CC and MLO views are uncertain, single-view nodes are replaced by the mean of all lesion features within that view.
+    - **Single-view node** $N_{single}^v = f_v(l_v)$: the feature of a lesion under a specific view.
+    - **Multi-view node** $M_{multi} = \|_{v=1}^V N_{single}^v$: an aggregated node formed by concatenating features from all views.
+    - For breast mammography, where lesion correspondences between CC and MLO views are uncertain, single-view nodes are replaced by the mean of all lesion features within that view.
 
 2. **Four Types of Edge Relations**
 
-   - $E_{intra}$: Same lesion across different views (e.g., arterial → venous → delayed phase) → captures temporal enhancement dynamics.
-   - $E_{s-m}$: Single-view nodes to their corresponding multi-view aggregation node → integrates information across phases.
-   - $E_{inter-s}$: Different lesions within the same view → models spatial co-occurrence (e.g., HCC commonly co-occurs with satellite nodules).
-   - $E_{inter-m}$: Between aggregated nodes of different lesions → captures high-level inter-lesion contextual relationships, allowing small lesions to leverage context from nearby larger lesions.
+    - $E_{intra}$: Same lesion across different views (e.g., arterial → venous → delayed phase) → captures temporal enhancement dynamics.
+    - $E_{s-m}$: Single-view nodes to their corresponding multi-view aggregation node → integrates information across phases.
+    - $E_{inter-s}$: Different lesions within the same view → models spatial co-occurrence (e.g., HCC commonly co-occurs with satellite nodules).
+    - $E_{inter-m}$: Between aggregated nodes of different lesions → captures high-level inter-lesion contextual relationships, allowing small lesions to leverage context from nearby larger lesions.
 
 3. **Heterogeneous Message Passing**
 
-   - For each node, messages are aggregated separately from single-view neighbors and multi-view neighbors (each with independent weight matrices $\mathbf{W}_{single}^k$ and $\mathbf{W}_{multi}^k$), concatenated with the node's previous state, and updated via a nonlinear transformation: $h_n^k = \sigma(\mathbf{W}^k \cdot \text{CONCAT}(h_n^{k-1}, h_{N_{single}(n)}^k, h_{M_{multi}(n)}^k))$
-   - Five layers of SAGEConv (512→256→128→64→number of classes), with the final layer directly outputting classification probabilities.
+    - For each node, messages are aggregated separately from single-view neighbors and multi-view neighbors (each with independent weight matrices $\mathbf{W}_{single}^k$ and $\mathbf{W}_{multi}^k$), concatenated with the node's previous state, and updated via a nonlinear transformation: $h_n^k = \sigma(\mathbf{W}^k \cdot \text{CONCAT}(h_n^{k-1}, h_{N_{single}(n)}^k, h_{M_{multi}(n)}^k))$
+    - Five layers of SAGEConv (512→256→128→64→number of classes), with the final layer directly outputting classification probabilities.
 
 4. **Four Missing-View Imputation Strategies**
 
-   - **Constant**: Zero-vector padding — simple, but encourages the model to learn to ignore missing nodes.
-   - **Learnable**: Learnable parameters normalized via the Frobenius norm.
-   - **RAG-based**: Retrieves the most similar complete sample from a database using available features, and borrows its missing-view features.
-   - **Covariance-based**: Computes inter-view feature-difference covariance to measure sample similarity, then selects the most similar complete sample for imputation.
+    - **Constant**: Zero-vector padding — simple, but encourages the model to learn to ignore missing nodes.
+    - **Learnable**: Learnable parameters normalized via the Frobenius norm.
+    - **RAG-based**: Retrieves the most similar complete sample from a database using available features, and borrows its missing-view features.
+    - **Covariance-based**: Computes inter-view feature-difference covariance to measure sample similarity, then selects the most similar complete sample for imputation.
 
 ### Loss & Training
 

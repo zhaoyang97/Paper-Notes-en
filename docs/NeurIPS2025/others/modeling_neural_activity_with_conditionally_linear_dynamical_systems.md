@@ -17,8 +17,8 @@ content_hash: 2d4143b5c94c9082
 # Modeling Neural Activity with Conditionally Linear Dynamical Systems
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.18347](https://arxiv.org/abs/2502.18347)
-**Code**: [GitHub](https://github.com/neurostatslab/clds)
+**arXiv**: [2502.18347](https://arxiv.org/abs/2502.18347)  
+**Code**: [GitHub](https://github.com/neurostatslab/clds)  
 **Area**: Computational Neuroscience / State Space Models
 **Keywords**: Linear Dynamical Systems, Gaussian Processes, Neural Activity Modeling, Bayesian Inference, Ring Attractor
 

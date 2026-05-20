@@ -18,8 +18,8 @@ content_hash: 9079ea77019484b3
 # Multi-Trajectory Physics-Informed Neural Networks for HJB Equations with Hard-Zero Terminal Inventory: Optimal Execution on Synthetic & SPY Data
 
 **Conference**: NeurIPS 2025 (Workshop on Generative AI in Finance)
-**arXiv**: [2512.12708](https://arxiv.org/abs/2512.12708)
-**Code**: [GitHub](https://github.com/anthimevalin/Multi-Trajectory-PINNs-Zero-Terminal-HJB)
+**arXiv**: [2512.12708](https://arxiv.org/abs/2512.12708)  
+**Code**: [GitHub](https://github.com/anthimevalin/Multi-Trajectory-PINNs-Zero-Terminal-HJB)  
 **Area**: Scientific Computing
 **Keywords**: Physics-Informed Neural Networks, Hamilton-Jacobi-Bellman, Optimal Execution, Terminal Inventory Constraint, Quantitative Finance
 

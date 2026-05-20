@@ -18,8 +18,8 @@ content_hash: 16624bc700a95778
 # Resolving Token-Space Gradient Conflicts: Token Space Manipulation for Transformer-Based Multi-Task Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.07485](https://arxiv.org/abs/2507.07485)
-**Code**: [GitHub](https://github.com/wooseong97/DTME-MTL)
+**arXiv**: [2507.07485](https://arxiv.org/abs/2507.07485)  
+**Code**: [GitHub](https://github.com/wooseong97/DTME-MTL)  
 **Area**: Robotics
 **Keywords**: Multi-Task Learning, Gradient Conflict, Token Space, Transformer, Dynamic Network Expansion
 

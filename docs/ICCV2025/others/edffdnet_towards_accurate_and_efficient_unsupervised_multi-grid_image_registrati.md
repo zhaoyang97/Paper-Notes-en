@@ -17,8 +17,8 @@ content_hash: c5d6ed8c69893513
 # EDFFDNet: Towards Accurate and Efficient Unsupervised Multi-Grid Image Registration
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.07662](https://arxiv.org/abs/2509.07662)
-**Code**: N/A
+**arXiv**: [2509.07662](https://arxiv.org/abs/2509.07662)  
+**Code**: N/A  
 **Area**: Other (Image Registration)
 **Keywords**: image registration, free-form deformation, exponentially decaying basis function, sparse motion aggregation, unsupervised learning
 

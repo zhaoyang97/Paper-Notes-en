@@ -18,8 +18,8 @@ content_hash: 3e4bf29c2470b14e
 # MoBGS: Motion Deblurring Dynamic 3D Gaussian Splatting for Blurry Monocular Video
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.15122](https://arxiv.org/abs/2504.15122)
-**Code**: To be confirmed
+**arXiv**: [2504.15122](https://arxiv.org/abs/2504.15122)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, motion deblurring, dynamic novel view synthesis, Neural ODE, monocular video
 

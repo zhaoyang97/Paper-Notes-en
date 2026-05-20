@@ -18,8 +18,8 @@ content_hash: 2fc80a1b68d76418
 # DisCO: Reinforcing Large Reasoning Models with Discriminative Constrained Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.12366](https://arxiv.org/abs/2505.12366)
-**Code**: [https://github.com/Optimization-AI/DisCO](https://github.com/Optimization-AI/DisCO)
+**arXiv**: [2505.12366](https://arxiv.org/abs/2505.12366)  
+**Code**: [https://github.com/Optimization-AI/DisCO](https://github.com/Optimization-AI/DisCO)  
 **Area**: LLM Reasoning
 **Keywords**: GRPO, discriminative optimization, AUC maximization, constrained optimization, data imbalance
 
@@ -54,29 +54,29 @@ Given a set of math problems, the policy model (e.g., DeepSeek-R1-Distill) gener
 
 1. **Discriminative Decomposition of the GRPO Objective (Theoretical Contribution)**
 
-   - **Function**: Proves that the GRPO objective is equivalent to a weighted discriminative objective.
-   - **Mechanism**: Proposition 1 establishes that $\mathcal{J}_{\text{GRPO}}(\theta) = \mathbb{E}_q \sqrt{p(q)(1-p(q))} \cdot \mathbb{E}_{o \sim \pi^+, o' \sim \pi^-}[s^+(o,q) - s^-(o',q)]$, where $\sqrt{p(q)(1-p(q))}$ is the difficulty bias weight and $s^+, s^-$ are the clipped scoring functions for positive and negative samples, respectively.
-   - **Design Motivation**: This decomposition simultaneously identifies the two root causes of GRPO's problems—the weight $\omega(q)$ induces difficulty bias, and the clipped scoring function causes entropy instability.
+    - **Function**: Proves that the GRPO objective is equivalent to a weighted discriminative objective.
+    - **Mechanism**: Proposition 1 establishes that $\mathcal{J}_{\text{GRPO}}(\theta) = \mathbb{E}_q \sqrt{p(q)(1-p(q))} \cdot \mathbb{E}_{o \sim \pi^+, o' \sim \pi^-}[s^+(o,q) - s^-(o',q)]$, where $\sqrt{p(q)(1-p(q))}$ is the difficulty bias weight and $s^+, s^-$ are the clipped scoring functions for positive and negative samples, respectively.
+    - **Design Motivation**: This decomposition simultaneously identifies the two root causes of GRPO's problems—the weight $\omega(q)$ induces difficulty bias, and the clipped scoring function causes entropy instability.
 
 2. **Clip-Free Scoring Function**
 
-   - **Function**: Replaces GRPO's clipped scoring function with log-likelihood or likelihood ratio.
-   - **Mechanism**:
+    - **Function**: Replaces GRPO's clipped scoring function with log-likelihood or likelihood ratio.
+    - **Mechanism**:
      - Log-likelihood: $s_\theta(o,q) = \frac{1}{|o|} \sum_t \log \pi_\theta(o_t|q, o_{<t})$
      - Likelihood ratio: $s_\theta(o,q) = \frac{1}{|o|} \sum_t \frac{\pi_\theta(o_t|q, o_{<t})}{\pi_{\text{old}}(o_t|q, o_{<t})}$
-   - **Design Motivation**: GRPO's clipping $\min(x, 1+\epsilon)$ limits update magnitude in the positive sample direction and is the root cause of entropy collapse. DAPO attempts to mitigate this with different $\epsilon$ values but introduces entropy explosion. Clip-free functions fundamentally avoid this dilemma.
+    - **Design Motivation**: GRPO's clipping $\min(x, 1+\epsilon)$ limits update magnitude in the positive sample direction and is the root cause of entropy collapse. DAPO attempts to mitigate this with different $\epsilon$ values but introduces entropy explosion. Clip-free functions fundamentally avoid this dilemma.
 
 3. **Squared Hinge Constrained Optimization (Replacing KL Regularization)**
 
-   - **Function**: Replaces standard KL regularization $\beta \cdot \mathbb{D}_{\text{KL}}$ with a constraint penalty $[\mathbb{D}_{\text{KL}}(\pi_{\text{old}}||\pi_\theta) - \delta]_+^2$.
-   - **Mechanism**: When the KL constraint is satisfied ($\mathbb{D}_{\text{KL}} \leq \delta$), the gradient of the penalty term is zero and does not interfere with learning; the penalty is applied only when the constraint is violated, with a magnitude proportional to the square of the violation.
-   - **Design Motivation**: Standard KL regularization continuously pulls the model regardless of necessity, and its hyperparameter $\beta$ is difficult to adapt throughout training as model characteristics change dramatically. The squared hinge penalty is self-adaptive—it corrects only when needed, with a force proportional to the degree of deviation.
+    - **Function**: Replaces standard KL regularization $\beta \cdot \mathbb{D}_{\text{KL}}$ with a constraint penalty $[\mathbb{D}_{\text{KL}}(\pi_{\text{old}}||\pi_\theta) - \delta]_+^2$.
+    - **Mechanism**: When the KL constraint is satisfied ($\mathbb{D}_{\text{KL}} \leq \delta$), the gradient of the penalty term is zero and does not interfere with learning; the penalty is applied only when the constraint is violated, with a magnitude proportional to the square of the violation.
+    - **Design Motivation**: Standard KL regularization continuously pulls the model regardless of necessity, and its hyperparameter $\beta$ is difficult to adapt throughout training as model characteristics change dramatically. The squared hinge penalty is self-adaptive—it corrects only when needed, with a force proportional to the degree of deviation.
 
 4. **DRO-Based Imbalanced Rollout Handling (Enhanced DisCO)**
 
-   - **Function**: For each positive sample, rather than treating all negative samples equally, the method focuses on the "most dangerous" negative samples (incorrect answers with the highest scores).
-   - **Mechanism**: Partial AUC maximization is formulated as a DRO objective: $\mathcal{J}_2(\theta) = -\mathbb{E}_q \mathbb{E}_{o \sim \pi^+} \tau \log(\mathbb{E}_{o' \sim \pi^-} \exp(\frac{s_\theta(o',q) - s_\theta(o,q)}{\tau}))$. The LogSumExp operator automatically focuses attention on the highest-scoring (most confusing) negative samples.
-   - **Design Motivation**: When there is 1 positive sample versus 100 negative samples, AUC may reach 0.99 while the model still tends to generate a particular incorrect answer (with score 0.9 > the correct answer's score of 0.5). DRO reweights the negative sample distribution to focus on the hardest-to-distinguish cases.
+    - **Function**: For each positive sample, rather than treating all negative samples equally, the method focuses on the "most dangerous" negative samples (incorrect answers with the highest scores).
+    - **Mechanism**: Partial AUC maximization is formulated as a DRO objective: $\mathcal{J}_2(\theta) = -\mathbb{E}_q \mathbb{E}_{o \sim \pi^+} \tau \log(\mathbb{E}_{o' \sim \pi^-} \exp(\frac{s_\theta(o',q) - s_\theta(o,q)}{\tau}))$. The LogSumExp operator automatically focuses attention on the highest-scoring (most confusing) negative samples.
+    - **Design Motivation**: When there is 1 positive sample versus 100 negative samples, AUC may reach 0.99 while the model still tends to generate a particular incorrect answer (with score 0.9 > the correct answer's score of 0.5). DRO reweights the negative sample distribution to focus on the hardest-to-distinguish cases.
 
 ### Loss & Training
 

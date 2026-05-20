@@ -19,8 +19,8 @@ content_hash: 63422d5c60435114
 # COG: Confidence-aware Optimal Geometric Correspondence for Unsupervised Single-reference Novel Object Pose Estimation
 
 **Conference**: CVPR2026
-**arXiv**: [2603.00493](https://arxiv.org/abs/2603.00493)
-**Code**: [YC-Che/COG](https://github.com/YC-Che/COG)
+**arXiv**: [2603.00493](https://arxiv.org/abs/2603.00493)  
+**Code**: [YC-Che/COG](https://github.com/YC-Che/COG)  
 **Area**: Human Understanding / 6DoF Object Pose Estimation
 **Keywords**: novel object pose estimation, optimal transport, confidence learning, unsupervised learning, point cloud registration, visual foundation models
 

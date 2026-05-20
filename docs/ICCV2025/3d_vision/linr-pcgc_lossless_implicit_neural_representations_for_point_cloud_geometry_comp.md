@@ -18,8 +18,8 @@ content_hash: 6ff258693e9c83c0
 # LINR-PCGC: Lossless Implicit Neural Representations for Point Cloud Geometry Compression
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.15686](https://arxiv.org/abs/2507.15686)
-**Code**: [https://huangwenjie2023.github.io/LINR-PCGC/](https://huangwenjie2023.github.io/LINR-PCGC/)
+**arXiv**: [2507.15686](https://arxiv.org/abs/2507.15686)  
+**Code**: [https://huangwenjie2023.github.io/LINR-PCGC/](https://huangwenjie2023.github.io/LINR-PCGC/)  
 **Area**: 3D Vision / Point Cloud Compression
 **Keywords**: Lossless point cloud compression, implicit neural representations, multi-scale sparse convolution, GoP coding, model compression
 

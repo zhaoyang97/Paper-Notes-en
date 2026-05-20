@@ -20,8 +20,8 @@ content_hash: 49f2ae6e8c20e7df
 # InstructSAM: A Training-Free Framework for Instruction-Oriented Remote Sensing Object Recognition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.15818](https://arxiv.org/abs/2505.15818)
-**Code**: [https://VoyagerXvoyagerx.github.io/InstructSAM/](https://VoyagerXvoyagerx.github.io/InstructSAM/)
+**arXiv**: [2505.15818](https://arxiv.org/abs/2505.15818)  
+**Code**: [https://VoyagerXvoyagerx.github.io/InstructSAM/](https://VoyagerXvoyagerx.github.io/InstructSAM/)  
 **Area**: Remote Sensing Object Recognition / Open-Vocabulary Segmentation
 **Keywords**: Remote sensing, instruction-oriented, training-free, SAM2, binary integer programming, object counting, open-vocabulary detection/segmentation
 

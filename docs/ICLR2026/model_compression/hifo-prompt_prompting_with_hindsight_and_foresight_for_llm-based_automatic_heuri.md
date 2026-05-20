@@ -18,8 +18,8 @@ content_hash: adf5df35128391d2
 # HiFo-Prompt: Prompting with Hindsight and Foresight for LLM-based Automatic Heuristic Design
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.13333](https://arxiv.org/abs/2508.13333)
-**Code**: [GitHub](https://github.com/Challenger-XJTU/HiFo-Prompt)
+**arXiv**: [2508.13333](https://arxiv.org/abs/2508.13333)  
+**Code**: [GitHub](https://github.com/Challenger-XJTU/HiFo-Prompt)  
 **Area**: Model Compression
 **Keywords**: Automatic Heuristic Design, LLM + Evolutionary Computation, Knowledge Management, Exploration-Exploitation Balance, Combinatorial Optimization
 
@@ -44,22 +44,22 @@ HiFo-Prompt constructs the LLM prompt for each generation via Guided Prompt Synt
 
 1. **Hindsight Module: Self-Evolving Insight Pool**
 
-   - **Function**: Distills abstract design principles (insights) from successful heuristic code and maintains a persistent knowledge repository.
-   - **Mechanism**: Comprises three stages—(1) *Insight Extraction and Admission*: at the end of each generation, design principles are extracted from elite individuals and deduplicated using a Jaccard similarity threshold $\theta_{\text{novelty}}$; (2) *Insight Retrieval and Credit Assignment*: the top-$s$ insights with the highest utility are selected for prompt injection, with a utility function that balances effectiveness, usage penalty, and recency bonus: $U(k_i, t) = E_i(t) - w_u \log(N_i(t)+1) + B_r(t, t_i^{\text{last}})$; (3) *Adaptive Pruning*: when pool capacity is exceeded, insights with the lowest eviction scores are discarded.
-   - Credit assignment employs a piecewise function that maps relative population performance to a credit signal: $g_{\text{eff}} = 0.8 + 0.2\tilde{\rho}$ when surpassing the best known, $0.2 + 0.6\tilde{\rho}$ when above the mean, and $-0.3 + 0.5\tilde{\rho}$ when below the mean; utility scores are updated via EMA.
-   - **Design Motivation**: Converts transient evolutionary successes into reusable knowledge assets, thereby addressing the knowledge decay problem.
+    - **Function**: Distills abstract design principles (insights) from successful heuristic code and maintains a persistent knowledge repository.
+    - **Mechanism**: Comprises three stages—(1) *Insight Extraction and Admission*: at the end of each generation, design principles are extracted from elite individuals and deduplicated using a Jaccard similarity threshold $\theta_{\text{novelty}}$; (2) *Insight Retrieval and Credit Assignment*: the top-$s$ insights with the highest utility are selected for prompt injection, with a utility function that balances effectiveness, usage penalty, and recency bonus: $U(k_i, t) = E_i(t) - w_u \log(N_i(t)+1) + B_r(t, t_i^{\text{last}})$; (3) *Adaptive Pruning*: when pool capacity is exceeded, insights with the lowest eviction scores are discarded.
+    - Credit assignment employs a piecewise function that maps relative population performance to a credit signal: $g_{\text{eff}} = 0.8 + 0.2\tilde{\rho}$ when surpassing the best known, $0.2 + 0.6\tilde{\rho}$ when above the mean, and $-0.3 + 0.5\tilde{\rho}$ when below the mean; utility scores are updated via EMA.
+    - **Design Motivation**: Converts transient evolutionary successes into reusable knowledge assets, thereby addressing the knowledge decay problem.
 
 2. **Foresight Module: Evolutionary Navigator**
 
-   - **Function**: Monitors population dynamics in real time and switches among three modes—exploration, exploitation, and balance.
-   - **Mechanism**: Maintains two mutually exclusive counters, $C_{\text{prog}}$ (progress) and $C_{\text{stag}}$ (stagnation), to track performance trends, while computing phenotypic diversity $\Delta_p(t)$—the proportion of non-duplicate pairs among all algorithm description texts in the population. A threshold-based rule selects the evolutionary regime: $\theta_{\text{explore}}$ (when stagnation is detected or diversity is low), $\theta_{\text{exploit}}$ (when sustained progress is observed), and $\theta_{\text{balance}}$ (otherwise).
-   - Diversity measurement uses exact string matching rather than embedding-based similarity, avoiding the risk that subtle logical differences are smoothed away by semantic representations.
-   - **Design Motivation**: Serves as a symbolic surrogate for "linguistic gradients," providing an interpretable global control strategy.
+    - **Function**: Monitors population dynamics in real time and switches among three modes—exploration, exploitation, and balance.
+    - **Mechanism**: Maintains two mutually exclusive counters, $C_{\text{prog}}$ (progress) and $C_{\text{stag}}$ (stagnation), to track performance trends, while computing phenotypic diversity $\Delta_p(t)$—the proportion of non-duplicate pairs among all algorithm description texts in the population. A threshold-based rule selects the evolutionary regime: $\theta_{\text{explore}}$ (when stagnation is detected or diversity is low), $\theta_{\text{exploit}}$ (when sustained progress is observed), and $\theta_{\text{balance}}$ (otherwise).
+    - Diversity measurement uses exact string matching rather than embedding-based similarity, avoiding the risk that subtle logical differences are smoothed away by semantic representations.
+    - **Design Motivation**: Serves as a symbolic surrogate for "linguistic gradients," providing an interpretable global control strategy.
 
 3. **Base Prompt Strategies**
 
-   - **Function**: Provides LLM-equivalent genetic operators.
-   - Includes an initialization strategy I1, recombination strategies (E1 synthesizes new structures from multiple parents; E2 abstracts commonalities to produce variants), and mutation strategies (M1 for structural modification, M2 for parameter tuning, M3 for simplification to prevent overfitting).
+    - **Function**: Provides LLM-equivalent genetic operators.
+    - Includes an initialization strategy I1, recombination strategies (E1 synthesizes new structures from multiple parents; E2 abstracts commonalities to produce variants), and mutation strategies (M1 for structural modification, M2 for parameter tuning, M3 for simplification to prevent overfitting).
 
 ### Loss & Training
 Population size is set to 8; combinatorial optimization tasks run for 8 generations and Bayesian optimization tasks for 4 generations. The backbone LLM is Qwen2.5-Max. The Insight Pool has a capacity of 30, Jaccard threshold of 0.7, top-3 retrieval, EMA rate of 0.3, stagnation threshold of 3, progress threshold of 2, and diversity threshold of 0.3.

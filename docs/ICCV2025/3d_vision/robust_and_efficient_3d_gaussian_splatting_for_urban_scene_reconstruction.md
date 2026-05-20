@@ -19,8 +19,8 @@ content_hash: d6f68787c60c57c2
 # Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.23006](https://arxiv.org/abs/2507.23006)
-**Code**: [https://yzslab.github.io/REUrbanGS](https://yzslab.github.io/REUrbanGS)
+**arXiv**: [2507.23006](https://arxiv.org/abs/2507.23006)  
+**Code**: [https://yzslab.github.io/REUrbanGS](https://yzslab.github.io/REUrbanGS)  
 **Area**: 3D Vision
 **Keywords**: 3DGS, urban scene reconstruction, LOD strategy, appearance transformation, partitioned training, real-time rendering
 

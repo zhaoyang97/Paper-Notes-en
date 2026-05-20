@@ -18,8 +18,8 @@ content_hash: 3b67f857d7329518
 # BabyVLM: Data-Efficient Pretraining of VLMs Inspired by Infant Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.09426](https://arxiv.org/abs/2504.09426)
-**Code**: [https://github.com/shawnking98/BabyVLM](https://github.com/shawnking98/BabyVLM) (Project page: shawnking98.github.io/BabyVLM)
+**arXiv**: [2504.09426](https://arxiv.org/abs/2504.09426)  
+**Code**: [https://github.com/shawnking98/BabyVLM](https://github.com/shawnking98/BabyVLM) (Project page: shawnking98.github.io/BabyVLM)  
 **Area**: Multimodal VLM
 **Keywords**: data-efficient pretraining, infant learning inspiration, vision-language models, developmental psychology, synthetic data
 

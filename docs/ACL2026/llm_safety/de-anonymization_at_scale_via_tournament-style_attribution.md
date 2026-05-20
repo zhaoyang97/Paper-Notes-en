@@ -18,8 +18,8 @@ content_hash: e68ccd7224042a83
 # De-Anonymization at Scale via Tournament-Style Attribution
 
 **Conference**: ACL 2026
-**arXiv**: [2601.12407](https://arxiv.org/abs/2601.12407)
-**Code**: None
+**arXiv**: [2601.12407](https://arxiv.org/abs/2601.12407)  
+**Code**: None  
 **Area**: AI Safety / Privacy
 **Keywords**: Authorship Attribution, De-Anonymization, LLM Privacy Threat, Tournament-Style Matching, Peer Review
 

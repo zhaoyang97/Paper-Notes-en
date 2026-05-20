@@ -18,8 +18,8 @@ content_hash: d19b51f3a570f82f
 # χ: Symmetry Understanding of 3D Shapes via Chirality Disentanglement
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.05505](https://arxiv.org/abs/2508.05505)
-**Code**: [Project Page](https://wei-kang-wang.github.io/chirality/)
+**arXiv**: [2508.05505](https://arxiv.org/abs/2508.05505)  
+**Code**: [Project Page](https://wei-kang-wang.github.io/chirality/)  
 **Area**: 3D Vision
 **Keywords**: Chirality features, symmetry, shape matching, left-right disambiguation, 2D foundation model distillation
 

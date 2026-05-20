@@ -18,8 +18,8 @@ content_hash: c9f04895630e05ac
 # GenDoP: Auto-regressive Camera Trajectory Generation as a Director of Photography
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.07083](https://arxiv.org/abs/2504.07083)
-**Code**: [Project Page](https://kszpxxzmc.github.io/GenDoP/)
+**arXiv**: [2504.07083](https://arxiv.org/abs/2504.07083)  
+**Code**: [Project Page](https://kszpxxzmc.github.io/GenDoP/)  
 **Area**: Multimodal VLM
 **Keywords**: camera trajectory generation, auto-regressive model, cinematography, multimodal conditional generation, dataset construction
 

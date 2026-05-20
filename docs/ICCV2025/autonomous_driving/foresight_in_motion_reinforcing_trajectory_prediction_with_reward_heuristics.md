@@ -17,8 +17,8 @@ content_hash: 7d37c3f7f537c334
 # Foresight in Motion: Reinforcing Trajectory Prediction with Reward Heuristics
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.12083](https://arxiv.org/abs/2507.12083)
-**Code**: None
+**arXiv**: [2507.12083](https://arxiv.org/abs/2507.12083)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: Trajectory Prediction, Inverse Reinforcement Learning, Intent Reasoning, Autonomous Driving, Mamba
 

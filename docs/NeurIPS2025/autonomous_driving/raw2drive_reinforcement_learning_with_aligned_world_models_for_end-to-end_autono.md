@@ -18,8 +18,8 @@ content_hash: 4bc3258681ae017c
 # RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16394](https://arxiv.org/abs/2505.16394)
-**Code**: None
+**arXiv**: [2505.16394](https://arxiv.org/abs/2505.16394)  
+**Code**: None  
 **Area**: Autonomous Driving
 **Keywords**: model-based reinforcement learning, world model, end-to-end driving, CARLA, dual-stream
 

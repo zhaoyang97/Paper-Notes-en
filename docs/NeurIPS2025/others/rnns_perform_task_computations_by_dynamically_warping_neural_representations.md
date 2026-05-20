@@ -17,8 +17,8 @@ content_hash: 734f3ffdbe9689c9
 # RNNs Perform Task Computations by Dynamically Warping Neural Representations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.04310](https://arxiv.org/abs/2512.04310)
-**Code**: None
+**arXiv**: [2512.04310](https://arxiv.org/abs/2512.04310)  
+**Code**: None  
 **Area**: Computational Neuroscience / Dynamical Systems
 **Keywords**: RNN, Riemannian geometry, representational geometry, dynamical systems, manifold warping
 

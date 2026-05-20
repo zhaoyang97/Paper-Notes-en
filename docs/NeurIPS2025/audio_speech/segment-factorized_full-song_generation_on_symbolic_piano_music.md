@@ -18,8 +18,8 @@ content_hash: 5ebba5739c753f43
 # Segment-Factorized Full-Song Generation on Symbolic Piano Music
 
 **Conference**: NeurIPS 2025 (AI for Music Workshop)
-**arXiv**: [2510.05881](https://arxiv.org/abs/2510.05881)
-**Code**: [Available](https://github.com/eri24816/segmented-full-song-gen)
+**arXiv**: [2510.05881](https://arxiv.org/abs/2510.05881)  
+**Code**: [Available](https://github.com/eri24816/segmented-full-song-gen)  
 **Area**: Music Generation / Object Detection (classification label)
 **Keywords**: symbolic music generation, full-song generation, Transformer, structure modeling, human-AI co-creation
 

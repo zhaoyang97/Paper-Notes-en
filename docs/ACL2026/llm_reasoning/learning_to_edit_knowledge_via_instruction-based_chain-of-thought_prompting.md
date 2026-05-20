@@ -14,8 +14,8 @@ content_hash: 73adda83c76b555e
 # Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05540](https://arxiv.org/abs/2604.05540)
-**Code**: [https://github.com/FredJDean/CoT2Edit](https://github.com/FredJDean/CoT2Edit)
+**arXiv**: [2604.05540](https://arxiv.org/abs/2604.05540)  
+**Code**: [https://github.com/FredJDean/CoT2Edit](https://github.com/FredJDean/CoT2Edit)  
 **Area**: LLM Reasoning / Knowledge Editing
 **Keywords**: Knowledge Editing, Chain-of-Thought, GRPO, RAG, Multi-hop Reasoning
 
@@ -119,7 +119,7 @@ SFT: standard autoregressive cross-entropy. GRPO: accuracy reward + format rewar
 - Writing Quality: ⭐⭐⭐⭐ Architecture diagram is clear; method description is complete.
 - Value: ⭐⭐⭐⭐ High practical value from single-training generalization across multiple scenarios.
 
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: llm_reasoning
 **Keywords**: To be supplemented
 

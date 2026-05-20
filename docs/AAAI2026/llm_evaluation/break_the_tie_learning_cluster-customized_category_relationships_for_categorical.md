@@ -18,8 +18,8 @@ content_hash: 0e5b6ae1cb630f94
 # Break the Tie: Learning Cluster-Customized Category Relationships for Categorical Data Clustering
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09049](https://arxiv.org/abs/2511.09049)
-**Code**: [GitHub - ZHAO-Mingjie/SCOF](https://github.com/ZHAO-Mingjie/SCOF)
+**arXiv**: [2511.09049](https://arxiv.org/abs/2511.09049)  
+**Code**: [GitHub - ZHAO-Mingjie/SCOF](https://github.com/ZHAO-Mingjie/SCOF)  
 **Area**: LLM Evaluation
 **Keywords**: categorical data clustering, distance metric learning, subspace clustering, category relationship, minimum spanning tree
 

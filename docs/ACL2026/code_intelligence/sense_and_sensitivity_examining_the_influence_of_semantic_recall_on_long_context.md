@@ -18,8 +18,8 @@ content_hash: ec10385910288a05
 # Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding
 
 **Conference**: ACL 2026
-**arXiv**: [2505.13353](https://arxiv.org/abs/2505.13353)
-**Code**: [GitHub](https://github.com/adamstorek/long-context-code-understanding)
+**arXiv**: [2505.13353](https://arxiv.org/abs/2505.13353)  
+**Code**: [GitHub](https://github.com/adamstorek/long-context-code-understanding)  
 **Area**: Long-Context Understanding / Code Understanding
 **Keywords**: Semantic Recall, Lexical Recall, Long Context, Code Understanding, Lost-in-the-Middle
 

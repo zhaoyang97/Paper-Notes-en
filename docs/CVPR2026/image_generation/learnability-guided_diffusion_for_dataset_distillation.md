@@ -18,8 +18,8 @@ content_hash: 5d8f64776d4c0587
 # Learnability-Guided Diffusion for Dataset Distillation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00519](https://arxiv.org/abs/2604.00519)
-**Code**: [https://jachansantiago.github.io/learnability-guided-distillation/](https://jachansantiago.github.io/learnability-guided-distillation/)
+**arXiv**: [2604.00519](https://arxiv.org/abs/2604.00519)  
+**Code**: [https://jachansantiago.github.io/learnability-guided-distillation/](https://jachansantiago.github.io/learnability-guided-distillation/)  
 **Area**: Image Generation / Dataset Distillation
 **Keywords**: Dataset Distillation, Learnability Guidance, Diffusion Models, Incremental Synthesis, Redundancy Analysis
 

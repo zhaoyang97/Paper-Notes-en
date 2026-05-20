@@ -18,8 +18,8 @@ content_hash: d5918878c2f0ecec
 # DETree: DEtecting Human-AI Collaborative Texts via Tree-Structured Hierarchical Representation Learning
 
 **Conference**: NEURIPS2025
-**arXiv**: [2510.17489](https://arxiv.org/abs/2510.17489)
-**Code**: [heyongxin233/DETree](https://github.com/heyongxin233/DETree)
+**arXiv**: [2510.17489](https://arxiv.org/abs/2510.17489)  
+**Code**: [heyongxin233/DETree](https://github.com/heyongxin233/DETree)  
 **Area**: Object Detection
 **Keywords**: AI text detection, human-AI collaborative text, hierarchical representation learning, contrastive learning, out-of-distribution generalization
 

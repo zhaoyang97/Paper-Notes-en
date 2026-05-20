@@ -18,8 +18,8 @@ content_hash: b47001871c8dbee4
 # STI-Bench: Are MLLMs Ready for Precise Spatial-Temporal World Understanding?
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.23765](https://arxiv.org/abs/2503.23765)
-**Code**: [Project Page](https://mint-sjtu.github.io/STI-Bench.io/)
+**arXiv**: [2503.23765](https://arxiv.org/abs/2503.23765)  
+**Code**: [Project Page](https://mint-sjtu.github.io/STI-Bench.io/)  
 **Area**: Multimodal VLM
 **Keywords**: MLLM benchmark, spatial-temporal understanding, embodied AI, video QA, autonomous driving
 
@@ -66,9 +66,9 @@ STI-Bench comprises 300+ real-world videos and 2,064 QA pairs, spanning three sc
 
 2. **Data sources and multi-scale design**: Three datasets covering different spatial scales:
 
-   - **Waymo** (outdoor): Autonomous driving scenes, decimeter-to-meter precision
-   - **ScanNet** (indoor): Indoor 3D scene reconstruction, centimeter-to-decimeter precision
-   - **Omni6DPose** (desktop): 6D object pose estimation, millimeter precision
+    - **Waymo** (outdoor): Autonomous driving scenes, decimeter-to-meter precision
+    - **ScanNet** (indoor): Indoor 3D scene reconstruction, centimeter-to-decimeter precision
+    - **Omni6DPose** (desktop): 6D object pose estimation, millimeter precision
 
 3. **Refined distractor design**: Different error ranges are specified per scene type (Desktop: 0.5–5 cm, Indoor: 5–50 cm, Outdoor: 0.5–5 m), with distractors generated via logarithmic sampling:
 

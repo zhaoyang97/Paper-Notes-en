@@ -18,8 +18,8 @@ content_hash: dc7d1d4b8b4e0996
 # Buffer Layers for Test-Time Adaptation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21271](https://arxiv.org/abs/2510.21271)
-**Code**: [hyeongyu-kim/Buffer_TTA](https://github.com/hyeongyu-kim/Buffer_TTA)
+**arXiv**: [2510.21271](https://arxiv.org/abs/2510.21271)  
+**Code**: [hyeongyu-kim/Buffer_TTA](https://github.com/hyeongyu-kim/Buffer_TTA)  
 **Area**: Test-Time Adaptation / Domain Adaptation
 **Keywords**: Test-Time Adaptation, Buffer Layers, Batch Normalization, Domain Shift, Catastrophic Forgetting
 

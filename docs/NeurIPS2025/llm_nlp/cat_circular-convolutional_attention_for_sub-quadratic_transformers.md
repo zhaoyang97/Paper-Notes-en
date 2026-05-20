@@ -18,8 +18,8 @@ content_hash: f82c1e8d1c524307
 # CAT: Circular-Convolutional Attention for Sub-Quadratic Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.06704](https://arxiv.org/abs/2504.06704)
-**Code**: Unavailable (not released by authors)
+**arXiv**: [2504.06704](https://arxiv.org/abs/2504.06704)  
+**Code**: Unavailable (not released by authors)  
 **Area**: LLM/NLP / Transformer Efficiency
 **Keywords**: Circulant convolution, FFT attention, sub-quadratic complexity, softmax preservation, EIT framework
 

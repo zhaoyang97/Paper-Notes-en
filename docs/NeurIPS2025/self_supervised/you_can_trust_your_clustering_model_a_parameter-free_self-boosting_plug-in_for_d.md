@@ -18,8 +18,8 @@ content_hash: 3bd0b0f4e5c2e781
 # You Can Trust Your Clustering Model: A Parameter-free Self-Boosting Plug-in for Deep Clustering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.21193](https://arxiv.org/abs/2511.21193)
-**Code**: [Available](https://github.com/l-h-y168/DCBoost)
+**arXiv**: [2511.21193](https://arxiv.org/abs/2511.21193)  
+**Code**: [Available](https://github.com/l-h-y168/DCBoost)  
 **Area**: Deep Clustering / Unsupervised Learning
 **Keywords**: Deep Clustering, Self-Boosting Plug-in, Local Structure, Global Structure Optimization, Parameter-free
 

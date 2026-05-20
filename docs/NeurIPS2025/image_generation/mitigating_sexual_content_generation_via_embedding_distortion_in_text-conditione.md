@@ -18,8 +18,8 @@ content_hash: e860e8dc7000920c
 # Mitigating Sexual Content Generation via Embedding Distortion in Text-conditioned Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.18877](https://arxiv.org/abs/2501.18877)
-**Code**: Unavailable
+**arXiv**: [2501.18877](https://arxiv.org/abs/2501.18877)  
+**Code**: Unavailable  
 **Area**: Diffusion Models / Safety & Defense
 **Keywords**: Unsafe content mitigation, embedding space distortion, text encoder, adversarial attack defense, NSFW filtering
 

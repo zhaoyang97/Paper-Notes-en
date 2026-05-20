@@ -18,8 +18,8 @@ content_hash: 48415dbb48ad0b13
 # Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.00862](https://arxiv.org/abs/2602.00862)
-**Code**: Unavailable
+**arXiv**: [2602.00862](https://arxiv.org/abs/2602.00862)  
+**Code**: Unavailable  
 **Area**: Medical Imaging
 **Keywords**: protein representation learning, graph neural networks, multiscale, secondary structure, hierarchical graph
 

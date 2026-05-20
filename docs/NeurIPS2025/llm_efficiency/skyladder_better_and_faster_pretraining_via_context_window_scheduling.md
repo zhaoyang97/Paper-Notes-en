@@ -18,8 +18,8 @@ content_hash: a7e3d7cc458d6cc8
 # SkyLadder: Better and Faster Pretraining via Context Window Scheduling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.15450](https://arxiv.org/abs/2503.15450)
-**Code**: [https://github.com/sail-sg/SkyLadder](https://github.com/sail-sg/SkyLadder)
+**arXiv**: [2503.15450](https://arxiv.org/abs/2503.15450)  
+**Code**: [https://github.com/sail-sg/SkyLadder](https://github.com/sail-sg/SkyLadder)  
 **Area**: LLM Efficiency
 **Keywords**: Context window scheduling, pretraining efficiency, long context, attention mechanism, training stability
 

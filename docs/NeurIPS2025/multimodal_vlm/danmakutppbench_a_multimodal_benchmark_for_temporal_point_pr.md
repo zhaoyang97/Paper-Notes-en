@@ -18,8 +18,8 @@ content_hash: da8703f2de7c1f23
 # DanmakuTPPBench: A Multi-modal Benchmark for Temporal Point Process Modeling and Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18411](https://arxiv.org/abs/2505.18411)
-**Code**: [GitHub](https://github.com/FRENKIE-CHIANG/DanmakuTPPBench)
+**arXiv**: [2505.18411](https://arxiv.org/abs/2505.18411)  
+**Code**: [GitHub](https://github.com/FRENKIE-CHIANG/DanmakuTPPBench)  
 **Area**: Multimodal Temporal Modeling / TPP / LLM Benchmark
 **Keywords**: temporal point process, multimodal benchmark, Danmaku, LLM evaluation, multi-agent pipeline
 

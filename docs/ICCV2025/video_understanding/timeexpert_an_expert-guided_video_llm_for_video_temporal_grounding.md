@@ -19,8 +19,8 @@ content_hash: 6d01f7e528a488a5
 # TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.01699](https://arxiv.org/abs/2508.01699)
-**Code**: [Project Page](https://mwxely.github.io/projects/yang2025time/index)
+**arXiv**: [2508.01699](https://arxiv.org/abs/2508.01699)  
+**Code**: [Project Page](https://mwxely.github.io/projects/yang2025time/index)  
 **Area**: Video Understanding / Temporal Grounding
 **Keywords**: Video Temporal Grounding, MoE, Dynamic Routing, Video-LLM, Dense Video Captioning, Moment Retrieval
 

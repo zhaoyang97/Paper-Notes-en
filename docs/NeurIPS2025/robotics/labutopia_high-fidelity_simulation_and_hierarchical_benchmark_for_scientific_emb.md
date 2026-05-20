@@ -18,8 +18,8 @@ content_hash: 716cd617987ecd70
 # LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22634](https://arxiv.org/abs/2505.22634)
-**Code**: Available (project page)
+**arXiv**: [2505.22634](https://arxiv.org/abs/2505.22634)  
+**Code**: Available (project page)  
 **Area**: Embodied AI / Scientific Experimentation / Simulation Platform
 **Keywords**: embodied agent, laboratory simulation, chemical reaction, hierarchical benchmark, imitation learning
 

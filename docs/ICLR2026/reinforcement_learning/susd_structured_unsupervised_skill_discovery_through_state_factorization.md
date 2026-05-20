@@ -18,8 +18,8 @@ content_hash: ba85b08544e2a196
 # SUSD: Structured Unsupervised Skill Discovery through State Factorization
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01619](https://arxiv.org/abs/2602.01619)
-**Code**: [https://github.com/hadi-hosseini/SUSD](https://github.com/hadi-hosseini/SUSD)
+**arXiv**: [2602.01619](https://arxiv.org/abs/2602.01619)  
+**Code**: [https://github.com/hadi-hosseini/SUSD](https://github.com/hadi-hosseini/SUSD)  
 **Area**: Unsupervised Skill Discovery / Reinforcement Learning
 **Keywords**: unsupervised skill discovery, state factorization, distance maximization, curiosity-driven, hierarchical reinforcement learning
 

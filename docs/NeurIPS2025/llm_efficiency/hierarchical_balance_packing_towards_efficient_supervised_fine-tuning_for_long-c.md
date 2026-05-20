@@ -18,8 +18,8 @@ content_hash: b9a0fd58678eec92
 # Hierarchical Balance Packing: Towards Efficient Supervised Fine-tuning for Long-Context LLM
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.07680](https://arxiv.org/abs/2503.07680)
-**Code**: [https://github.com/ModelTC/HBP](https://github.com/ModelTC/HBP)
+**arXiv**: [2503.07680](https://arxiv.org/abs/2503.07680)  
+**Code**: [https://github.com/ModelTC/HBP](https://github.com/ModelTC/HBP)  
 **Area**: LLM Efficiency
 **Keywords**: Data packing, long-context fine-tuning, sequence parallelism, attention balancing, curriculum learning
 

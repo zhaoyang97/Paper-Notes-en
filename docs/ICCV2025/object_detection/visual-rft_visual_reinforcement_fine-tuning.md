@@ -18,8 +18,8 @@ content_hash: 0e108acaced23420
 # Visual-RFT: Visual Reinforcement Fine-Tuning
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.01785](https://arxiv.org/abs/2503.01785)
-**Code**: [https://github.com/Liuziyu77/Visual-RFT](https://github.com/Liuziyu77/Visual-RFT)
+**arXiv**: [2503.01785](https://arxiv.org/abs/2503.01785)  
+**Code**: [https://github.com/Liuziyu77/Visual-RFT](https://github.com/Liuziyu77/Visual-RFT)  
 **Area**: Object Detection / Multimodal Reasoning
 **Keywords**: Reinforcement Fine-Tuning, GRPO, Verifiable Reward, Visual Perception, Few-Shot Learning
 

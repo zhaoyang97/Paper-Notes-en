@@ -19,8 +19,8 @@ content_hash: 62fb31f72d23d749
 # ShortFT: Diffusion Model Alignment via Shortcut-based Fine-Tuning
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22604](https://arxiv.org/abs/2507.22604)
-**Code**: [https://xiefan-guo.github.io/shortft](https://xiefan-guo.github.io/shortft)
+**arXiv**: [2507.22604](https://arxiv.org/abs/2507.22604)  
+**Code**: [https://xiefan-guo.github.io/shortft](https://xiefan-guo.github.io/shortft)  
 **Area**: Image Generation
 **Keywords**: Diffusion model alignment, reward fine-tuning, denoising shortcut, trajectory-preserving distillation, timestep-aware LoRA, backpropagation
 

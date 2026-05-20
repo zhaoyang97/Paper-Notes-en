@@ -18,8 +18,8 @@ content_hash: 98fc89d31f9adb87
 # NoisyRollout: Reinforcing Visual Reasoning with Data Augmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.13055](https://arxiv.org/abs/2504.13055)
-**Code**: [GitHub](https://github.com/NoisyRollout)
+**arXiv**: [2504.13055](https://arxiv.org/abs/2504.13055)  
+**Code**: [GitHub](https://github.com/NoisyRollout)  
 **Area**: Reinforcement Learning / VLM Reasoning
 **Keywords**: Visual Reasoning, Policy Exploration, Data Augmentation, GRPO, Noise Annealing
 

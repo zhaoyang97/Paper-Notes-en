@@ -18,8 +18,8 @@ content_hash: e4527b514c68942d
 # SymRTLO: Enhancing RTL Code Optimization with LLMs and Neuron-Inspired Symbolic Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.10369](https://arxiv.org/abs/2504.10369)
-**Code**: Not available
+**arXiv**: [2504.10369](https://arxiv.org/abs/2504.10369)  
+**Code**: Not available  
 **Area**: Information Retrieval
 **Keywords**: RTL code optimization, neurosymbolic reasoning, LLM, finite state machine, hardware design automation
 

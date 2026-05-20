@@ -18,8 +18,8 @@ content_hash: e2e93bdf6609ea5a
 # Generalizable End-to-End Tool-Use RL with Synthetic CodeGym
 
 **Conference**: ICLR2026
-**arXiv**: [2509.17325](https://arxiv.org/abs/2509.17325)
-**Code**: [StigLidu/CodeGym](https://github.com/StigLidu/CodeGym)
+**arXiv**: [2509.17325](https://arxiv.org/abs/2509.17325)  
+**Code**: [StigLidu/CodeGym](https://github.com/StigLidu/CodeGym)  
 **Area**: LLM Reasoning
 **Keywords**: tool-use, reinforcement-learning, LLM agent, synthetic environment, code-based training
 

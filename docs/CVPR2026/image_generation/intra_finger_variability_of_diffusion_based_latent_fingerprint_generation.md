@@ -18,8 +18,8 @@ content_hash: 5499f42f2752d7be
 # Intra-finger Variability of Diffusion-based Latent Fingerprint Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.10040](https://arxiv.org/abs/2604.10040)
-**Code**: None
+**arXiv**: [2604.10040](https://arxiv.org/abs/2604.10040)  
+**Code**: None  
 **Area**: Image Generation / Biometrics
 **Keywords**: fingerprint synthesis, diffusion models, latent fingerprints, identity consistency, style diversity
 

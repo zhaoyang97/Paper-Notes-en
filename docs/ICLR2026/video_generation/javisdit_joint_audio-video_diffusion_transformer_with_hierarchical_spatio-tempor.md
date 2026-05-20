@@ -18,8 +18,8 @@ content_hash: 3f04eba6300ecc2f
 # JavisDiT: Joint Audio-Video Diffusion Transformer with Hierarchical Spatio-Temporal Prior Synchronization
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.23377](https://arxiv.org/abs/2503.23377)
-**Code**: [https://javisverse.github.io/JavisDiT-page/](https://javisverse.github.io/JavisDiT-page/)
+**arXiv**: [2503.23377](https://arxiv.org/abs/2503.23377)  
+**Code**: [https://javisverse.github.io/JavisDiT-page/](https://javisverse.github.io/JavisDiT-page/)  
 **Area**: Diffusion Models / Video Generation
 **Keywords**: Joint Audio-Video Generation, DiT, Spatio-Temporal Synchronization, Contrastive Learning, Benchmark Dataset
 

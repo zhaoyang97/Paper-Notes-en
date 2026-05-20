@@ -18,8 +18,8 @@ content_hash: 6c8e17bbfb589617
 # Scalable Neural Incentive Design with Parameterized Mean-Field Approximation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21442](https://arxiv.org/abs/2510.21442)
-**Code**: None
+**arXiv**: [2510.21442](https://arxiv.org/abs/2510.21442)  
+**Code**: None  
 **Area**: Reinforcement Learning / Game Theory
 **Keywords**: incentive design, mean-field game, Nash equilibrium, auction, multi-agent
 

@@ -18,8 +18,8 @@ content_hash: 68a57d2021e2663f
 # MaskControl: Spatio-Temporal Control for Masked Motion Synthesis
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.10780](https://arxiv.org/abs/2410.10780)
-**Code**: [Project Page](https://www.ekkasit.com/ControlMM-page/)
+**arXiv**: [2410.10780](https://arxiv.org/abs/2410.10780)  
+**Code**: [Project Page](https://www.ekkasit.com/ControlMM-page/)  
 **Area**: Motion Generation / Controllable Generation
 **Keywords**: Masked Motion Model, Joint Control, Logits Optimization, Differentiable Sampling, Zero-Shot Goal Control
 

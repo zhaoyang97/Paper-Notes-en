@@ -19,8 +19,8 @@ content_hash: 7f499784047469e7
 # CorrCLIP: Reconstructing Patch Correlations in CLIP for Open-Vocabulary Semantic Segmentation
 
 **Conference**: ICCV 2025 (Oral)
-**arXiv**: [2411.10086](https://arxiv.org/abs/2411.10086)
-**Code**: [https://github.com/zdk258/CorrCLIP](https://github.com/zdk258/CorrCLIP)
+**arXiv**: [2411.10086](https://arxiv.org/abs/2411.10086)  
+**Code**: [https://github.com/zdk258/CorrCLIP](https://github.com/zdk258/CorrCLIP)  
 **Area**: Semantic Segmentation / Open-Vocabulary
 **Keywords**: open-vocabulary segmentation, CLIP, patch correlation, SAM, training-free, inter-class correlation
 

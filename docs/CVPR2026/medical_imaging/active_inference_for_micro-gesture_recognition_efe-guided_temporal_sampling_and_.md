@@ -18,7 +18,7 @@ content_hash: f18cd4295086a4d2
 # Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07559](https://arxiv.org/abs/2603.07559)
+**arXiv**: [2603.07559](https://arxiv.org/abs/2603.07559)  
 **Authors**: Weijia Feng et al. (Tianjin Normal University, Shenzhen University, Zhejiang University, Tianjin University)
 **Area**: Medical Imaging
 **Keywords**: Micro-Gesture Recognition, Active Inference, Expected Free Energy, POMDP, Uncertainty-Aware Augmentation

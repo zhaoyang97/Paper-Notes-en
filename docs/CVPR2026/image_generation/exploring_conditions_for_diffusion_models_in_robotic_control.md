@@ -18,8 +18,8 @@ content_hash: cfca8ea5c0e7f432
 # Exploring Conditions for Diffusion Models in Robotic Control
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.15510](https://arxiv.org/abs/2510.15510)
-**Code**: [https://orca-rc.github.io/](https://orca-rc.github.io/)
+**arXiv**: [2510.15510](https://arxiv.org/abs/2510.15510)  
+**Code**: [https://orca-rc.github.io/](https://orca-rc.github.io/)  
 **Area**: Diffusion Models / Robotic Control
 **Keywords**: Diffusion Models, Robotic Control, Visual Representations, Task Adaptation, Learnable Prompts
 
@@ -49,21 +49,21 @@ The ORCA pipeline: an input observation image $I$ is encoded into a latent varia
 
 1. **Task Prompts**:
 
-   - **Function**: Replace text conditioning to achieve correct semantic grounding in control environments.
-   - **Mechanism**: Implemented as learnable parameters ($l_t = 4$ tokens), shared across all training observations. Rather than using natural language, the model directly learns implicit "vocabulary," allowing cross-attention to automatically focus on task-relevant regions. Optimized end-to-end via the behavior cloning loss $\mathcal{L}_{\text{BC}}$.
-   - **Design Motivation**: Natural text fails to ground in control environments due to the domain gap; learnable tokens circumvent this issue by allowing the model to discover task-relevant regions autonomously. Visualizations show that task prompts attend simultaneously to the button and robotic arm in Button-press, and to the overall agent in Cheetah-run.
+    - **Function**: Replace text conditioning to achieve correct semantic grounding in control environments.
+    - **Mechanism**: Implemented as learnable parameters ($l_t = 4$ tokens), shared across all training observations. Rather than using natural language, the model directly learns implicit "vocabulary," allowing cross-attention to automatically focus on task-relevant regions. Optimized end-to-end via the behavior cloning loss $\mathcal{L}_{\text{BC}}$.
+    - **Design Motivation**: Natural text fails to ground in control environments due to the domain gap; learnable tokens circumvent this issue by allowing the model to discover task-relevant regions autonomously. Visualizations show that task prompts attend simultaneously to the button and robotic arm in Button-press, and to the overall agent in Cheetah-run.
 
 2. **Visual Prompts**:
 
-   - **Function**: Inject fine-grained, per-frame visual information into the conditioning signal to capture dynamic behavior.
-   - **Mechanism**: A pretrained DINOv2 encoder $\mathcal{E}_V$ extracts dense visual features (rather than global representations), which are projected via a lightweight convolutional layer into $l_v = 16$ visual tokens. These tokens are concatenated with the task prompts and passed through the text encoder as the conditioning signal.
-   - **Design Motivation**: Control tasks involve fine-grained motions of agents and objects, requiring per-frame conditioning to guide dynamic behavior. Global features cannot capture local action details (e.g., distinguishing front legs from hind legs), whereas dense features provide the necessary spatial granularity. Visualizations show that different visual tokens dynamically attend to distinct regions (hand, table, ball) across stages of the Relocate task.
+    - **Function**: Inject fine-grained, per-frame visual information into the conditioning signal to capture dynamic behavior.
+    - **Mechanism**: A pretrained DINOv2 encoder $\mathcal{E}_V$ extracts dense visual features (rather than global representations), which are projected via a lightweight convolutional layer into $l_v = 16$ visual tokens. These tokens are concatenated with the task prompts and passed through the text encoder as the conditioning signal.
+    - **Design Motivation**: Control tasks involve fine-grained motions of agents and objects, requiring per-frame conditioning to guide dynamic behavior. Global features cannot capture local action details (e.g., distinguishing front legs from hind legs), whereas dense features provide the necessary spatial granularity. Visualizations show that different visual tokens dynamically attend to distinct regions (hand, table, ball) across stages of the Relocate task.
 
 3. **End-to-End Behavior Cloning Training**:
 
-   - **Function**: Jointly learn the prompts and policy network during downstream policy training.
-   - **Mechanism**: Given trajectories $\{I_o^i, a_o^i\}$, the objective minimizes $\mathcal{L}_{\text{BC}}(\phi, \mathbf{p}) = \sum_{i,o} \|\pi_\phi(\epsilon_\theta(z_t, t; \mathcal{C}^*)) - a_o^i\|$, where $\mathcal{C}^* = \tau_\theta(p_t; p_v)$. The diffusion model is fully frozen; only 10.6M parameters are learned (prompts + compression layer + policy network).
-   - **Design Motivation**: Freezing the diffusion model prevents overfitting (experiments show full fine-tuning causes success rates to collapse by over 80%), while learnable prompts enable task adaptation—different tasks require only swapping the prompt module.
+    - **Function**: Jointly learn the prompts and policy network during downstream policy training.
+    - **Mechanism**: Given trajectories $\{I_o^i, a_o^i\}$, the objective minimizes $\mathcal{L}_{\text{BC}}(\phi, \mathbf{p}) = \sum_{i,o} \|\pi_\phi(\epsilon_\theta(z_t, t; \mathcal{C}^*)) - a_o^i\|$, where $\mathcal{C}^* = \tau_\theta(p_t; p_v)$. The diffusion model is fully frozen; only 10.6M parameters are learned (prompts + compression layer + policy network).
+    - **Design Motivation**: Freezing the diffusion model prevents overfitting (experiments show full fine-tuning causes success rates to collapse by over 80%), while learnable prompts enable task adaptation—different tasks require only swapping the prompt module.
 
 ### Loss & Training
 - Standard behavior cloning L1/L2 loss.

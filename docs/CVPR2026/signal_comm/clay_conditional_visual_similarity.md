@@ -18,8 +18,8 @@ content_hash: 58acd369207bb28d
 # CLAY: Conditional Visual Similarity Modulation in Vision-Language Embedding Space
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.11539](https://arxiv.org/abs/2604.11539)
-**Code**: None
+**arXiv**: [2604.11539](https://arxiv.org/abs/2604.11539)  
+**Code**: None  
 **Area**: Signal Communication
 **Keywords**: Conditional image retrieval, vision-language models, similarity modulation, training-free, hyperspherical geometry
 

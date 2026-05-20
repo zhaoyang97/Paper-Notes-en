@@ -18,8 +18,8 @@ content_hash: 01aed1b93eeaa777
 # ReflexDiffusion: Reflexion-Enhanced Trajectory Planning for High Lateral Acceleration in Autonomous Driving
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.09377](https://arxiv.org/abs/2601.09377)
-**Code**: [https://github.com/Luminous2028/ReflexDiffusion.git](https://github.com/Luminous2028/ReflexDiffusion.git)
+**arXiv**: [2601.09377](https://arxiv.org/abs/2601.09377)  
+**Code**: [https://github.com/Luminous2028/ReflexDiffusion.git](https://github.com/Luminous2028/ReflexDiffusion.git)  
 **Area**: Autonomous Driving / Trajectory Planning / Diffusion Models
 **Keywords**: Diffusion Planning, Reflection Mechanism, High Lateral Acceleration, Curvature-Velocity Coupling, Classifier-Free Guidance
 
@@ -56,17 +56,17 @@ $$\hat{\epsilon}_\theta^t = \epsilon_\theta(x|c_\text{decouple}) + \lambda_1 \cd
 where $\lambda_1 = 0.9$. A DDIM scheduler ensures deterministic denoising paths.
 
 3. **Physics-Aware Reflection Mechanism**: Triggered when confidence $C(x_{t-1}) < \gamma$. Core steps:
-   - Recover $x'_t$ from $x_{t-1}$ via reverse noising, approximating $\epsilon_\theta^t(x_t) \approx \epsilon_\theta^t(x_{t-1})$
-   - Compute conditional gradient difference $\Delta_\text{couple}$ encoding road curvature $\kappa$ and vehicle speed $v$ coupling
-   - Map gradients onto the centripetal force constraint manifold $a_y \approx \kappa v^2$ via projection matrix $P = \begin{bmatrix} v^2 & 2\kappa v \\ 0 & 1 \end{bmatrix}$
-   - Obtain physically consistent correction: $x'_t = \sqrt{\alpha_t} \cdot x_{t-1} + b \cdot \Delta_\text{proj}$
-   - Projection matrix $P$ design: the upper row exploits $\partial(\kappa v^2)/\partial\kappa = v^2$ and $\partial(\kappa v^2)/\partial v = 2\kappa v$ to amplify coupling; the lower row $[0, 1]$ preserves free motion.
+    - Recover $x'_t$ from $x_{t-1}$ via reverse noising, approximating $\epsilon_\theta^t(x_t) \approx \epsilon_\theta^t(x_{t-1})$
+    - Compute conditional gradient difference $\Delta_\text{couple}$ encoding road curvature $\kappa$ and vehicle speed $v$ coupling
+    - Map gradients onto the centripetal force constraint manifold $a_y \approx \kappa v^2$ via projection matrix $P = \begin{bmatrix} v^2 & 2\kappa v \\ 0 & 1 \end{bmatrix}$
+    - Obtain physically consistent correction: $x'_t = \sqrt{\alpha_t} \cdot x_{t-1} + b \cdot \Delta_\text{proj}$
+    - Projection matrix $P$ design: the upper row exploits $\partial(\kappa v^2)/\partial\kappa = v^2$ and $\partial(\kappa v^2)/\partial v = 2\kappa v$ to amplify coupling; the lower row $[0, 1]$ preserves free motion.
 
 4. **Trajectory Confidence Module**: Three-factor evaluation:
-   - $D_\text{kin}$ (kinematic consistency): checks deviation of $a_y^\text{traj}$ vs. $a_y^\text{ref}$, and whether lateral jerk $j_\text{lat}$ exceeds limits
-   - $G_\text{align}$ (geometric alignment): deviation between trajectory curvature $\kappa_\tau$ and road curvature $\kappa_\text{road}$, plus maximum lateral offset check
-   - $S_\text{margin}$ (safety margin): TTC $\geq 2.5\text{s}$, out-of-drivable-area probability $p_\text{ODA}$, heading deviation $\Delta\psi$
-   - Weighted combination compared against threshold $\gamma = 0.8$ to determine whether to trigger reflection
+    - $D_\text{kin}$ (kinematic consistency): checks deviation of $a_y^\text{traj}$ vs. $a_y^\text{ref}$, and whether lateral jerk $j_\text{lat}$ exceeds limits
+    - $G_\text{align}$ (geometric alignment): deviation between trajectory curvature $\kappa_\tau$ and road curvature $\kappa_\text{road}$, plus maximum lateral offset check
+    - $S_\text{margin}$ (safety margin): TTC $\geq 2.5\text{s}$, out-of-drivable-area probability $p_\text{ODA}$, heading deviation $\Delta\psi$
+    - Weighted combination compared against threshold $\gamma = 0.8$ to determine whether to trigger reflection
 
 ### Loss & Training
 

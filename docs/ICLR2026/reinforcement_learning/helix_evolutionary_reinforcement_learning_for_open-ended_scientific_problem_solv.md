@@ -18,8 +18,8 @@ content_hash: 1e01478443997668
 # Helix: Evolutionary Reinforcement Learning for Open-Ended Scientific Problem Solving
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.07642](https://arxiv.org/abs/2603.07642)
-**Code**: None (not provided by the authors)
+**arXiv**: [2603.07642](https://arxiv.org/abs/2603.07642)  
+**Code**: None (not provided by the authors)  
 **Area**: Reinforcement Learning / Scientific Discovery
 **Keywords**: Evolutionary Algorithms, GRPO, Scientific Optimization, NSGA-II, In-Context Learning
 

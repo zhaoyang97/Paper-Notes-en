@@ -18,8 +18,8 @@ content_hash: aa136a5b41b36ee2
 # Model Context Protocol for Vision Systems: Audit, Security, and Protocol Extensions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.22814](https://arxiv.org/abs/2509.22814)
-**Code**: Coming soon (benchmark and validator suite)
+**arXiv**: [2509.22814](https://arxiv.org/abs/2509.22814)  
+**Code**: Coming soon (benchmark and validator suite)  
 **Area**: AI Systems / Protocol Security / Computer Vision Workflows
 **Keywords**: Model Context Protocol, vision system orchestration, protocol security, schema validation, multimodal agents
 

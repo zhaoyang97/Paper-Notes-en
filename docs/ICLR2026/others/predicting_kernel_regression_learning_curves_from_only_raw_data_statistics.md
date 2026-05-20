@@ -17,8 +17,8 @@ content_hash: cf46ef8fb173c4ad
 # Predicting Kernel Regression Learning Curves from Only Raw Data Statistics
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.14878](https://arxiv.org/abs/2510.14878)
-**Code**: [https://github.com/JoeyTurn/hermite-eigenstructure-ansatz](https://github.com/JoeyTurn/hermite-eigenstructure-ansatz)
+**arXiv**: [2510.14878](https://arxiv.org/abs/2510.14878)  
+**Code**: [https://github.com/JoeyTurn/hermite-eigenstructure-ansatz](https://github.com/JoeyTurn/hermite-eigenstructure-ansatz)  
 **Area**: Others / Learning Theory / Kernel Methods
 **Keywords**: kernel regression learning curves, Hermite eigenstructure, anisotropic data, kernel ridge regression, feature learning
 
@@ -59,21 +59,21 @@ Key advantage: No kernel matrix needs to be constructed or diagonalized at any s
 
 1. **Hermite Eigenstructure Ansatz (HEA)**:
 
-   - Function: Asserts that the eigenstructure of a rotation-invariant kernel can be approximated by a simple analytic form.
-   - Mechanism: For any multi-index $\alpha \in \mathbb{N}_0^d$, the eigenvalues are proposed as $\lambda_\alpha = c_{|\alpha|} \cdot \prod_{i=1}^d \gamma_i^{\alpha_i}$ and the eigenfunctions as $\phi_\alpha = h_\alpha^{(\Sigma)}$ (multivariate Hermite polynomials), where $c_\ell$ are the on-sphere level coefficients of the kernel and $\gamma_i$ are the eigenvalues of the data covariance.
-   - Design Motivation: The intuition comes from analyzing the wide-kernel limit of the Gaussian kernel. When $\sigma^2 \gg \gamma$, the variance of each component of the kernel feature map decays exponentially as $\sigma^{-2\ell} \gamma^\ell$, and PCA of these components naturally yields Gram-Schmidt orthogonalization, recovering Hermite polynomials. This structure holds approximately for any rotation-invariant kernel and sufficiently high-dimensional data.
+    - Function: Asserts that the eigenstructure of a rotation-invariant kernel can be approximated by a simple analytic form.
+    - Mechanism: For any multi-index $\alpha \in \mathbb{N}_0^d$, the eigenvalues are proposed as $\lambda_\alpha = c_{|\alpha|} \cdot \prod_{i=1}^d \gamma_i^{\alpha_i}$ and the eigenfunctions as $\phi_\alpha = h_\alpha^{(\Sigma)}$ (multivariate Hermite polynomials), where $c_\ell$ are the on-sphere level coefficients of the kernel and $\gamma_i$ are the eigenvalues of the data covariance.
+    - Design Motivation: The intuition comes from analyzing the wide-kernel limit of the Gaussian kernel. When $\sigma^2 \gg \gamma$, the variance of each component of the kernel feature map decays exponentially as $\sigma^{-2\ell} \gamma^\ell$, and PCA of these components naturally yields Gram-Schmidt orthogonalization, recovering Hermite polynomials. This structure holds approximately for any rotation-invariant kernel and sufficiently high-dimensional data.
 
 2. **On-Sphere Level Coefficients**:
 
-   - Function: Converts any rotation-invariant kernel into a dot-product kernel and extracts the polynomial coefficients $c_\ell$ at each degree.
-   - Mechanism: On the sphere of typical data radius $r = \text{Tr}[\Sigma]^{1/2}$, a rotation-invariant kernel can be expanded as $K(x,x') = \sum_\ell \frac{c_\ell}{\ell!}(x^\top x')^\ell$. The paper derives level coefficients for the Gaussian kernel ($c_\ell = e^{-r^2/\sigma^2} \cdot \sigma^{-2\ell}$), the Laplace kernel (involving Bessel polynomials), and ReLU NNGP/NTK kernels.
-   - Design Motivation: Not all rotation-invariant kernels are naturally dot-product kernels (e.g., the Laplace kernel is non-analytic at zero), but high-dimensional data concentrates on a thin shell, making the dot-product approximation safe.
+    - Function: Converts any rotation-invariant kernel into a dot-product kernel and extracts the polynomial coefficients $c_\ell$ at each degree.
+    - Mechanism: On the sphere of typical data radius $r = \text{Tr}[\Sigma]^{1/2}$, a rotation-invariant kernel can be expanded as $K(x,x') = \sum_\ell \frac{c_\ell}{\ell!}(x^\top x')^\ell$. The paper derives level coefficients for the Gaussian kernel ($c_\ell = e^{-r^2/\sigma^2} \cdot \sigma^{-2\ell}$), the Laplace kernel (involving Bessel polynomials), and ReLU NNGP/NTK kernels.
+    - Design Motivation: Not all rotation-invariant kernels are naturally dot-product kernels (e.g., the Laplace kernel is non-analytic at zero), but high-dimensional data concentrates on a thin shell, making the dot-product approximation safe.
 
 3. **Hermite Decomposition of the Target Function**:
 
-   - Function: Estimates the projection of the target function onto the Hermite basis from finite labeled samples.
-   - Mechanism: Direct inner-product estimation can overestimate power in overlapping modes due to slight non-Gaussianity of real data, causing imperfect orthogonality of the Hermite basis. The solution is to first apply Gram-Schmidt orthogonalization to the empirical Hermite polynomials: $h_i^{(\text{GS})} = \text{unitnorm}(h_i - \sum_{j<i} \langle h_j^{(\text{GS})}, h_i \rangle h_j^{(\text{GS})})$, followed by projection $\hat{v}_i = \langle h_i^{(\text{GS})}, y \rangle$.
-   - Design Motivation: This step is independent of the kernel choice (does not depend on $c_\ell$), meaning a single decomposition can be reused for learning curve predictions across all kernels. Experiments use $P = 30000$ modes and $N = 80000$ samples.
+    - Function: Estimates the projection of the target function onto the Hermite basis from finite labeled samples.
+    - Mechanism: Direct inner-product estimation can overestimate power in overlapping modes due to slight non-Gaussianity of real data, causing imperfect orthogonality of the Hermite basis. The solution is to first apply Gram-Schmidt orthogonalization to the empirical Hermite polynomials: $h_i^{(\text{GS})} = \text{unitnorm}(h_i - \sum_{j<i} \langle h_j^{(\text{GS})}, h_i \rangle h_j^{(\text{GS})})$, followed by projection $\hat{v}_i = \langle h_i^{(\text{GS})}, y \rangle$.
+    - Design Motivation: This step is independent of the kernel choice (does not depend on $c_\ell$), meaning a single decomposition can be reused for learning curve predictions across all kernels. Experiments use $P = 30000$ modes and $N = 80000$ samples.
 
 ### Theoretical Analysis
 

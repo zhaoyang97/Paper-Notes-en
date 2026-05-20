@@ -19,8 +19,8 @@ content_hash: 47441aa050f1ce13
 # Provably Minimum-Length Conformal Prediction Sets for Ordinal Classification
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16845](https://arxiv.org/abs/2511.16845)
-**Code**: [github.com/xrty/OCP](https://github.com/xrty/OCP)
+**arXiv**: [2511.16845](https://arxiv.org/abs/2511.16845)  
+**Code**: [github.com/xrty/OCP](https://github.com/xrty/OCP)  
 **Area**: Medical Imaging / Uncertainty Quantification / Ordinal Classification
 **Keywords**: Conformal Prediction, Ordinal Classification, Prediction Set Size, Uncertainty Quantification, Sliding Window Algorithm, Model-Agnostic
 

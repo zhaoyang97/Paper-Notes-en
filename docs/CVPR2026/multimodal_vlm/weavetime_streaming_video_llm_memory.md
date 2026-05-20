@@ -18,8 +18,8 @@ content_hash: f0f02e46686f92f0
 # WeaveTime: Stream from Earlier Frames into Emergent Memory in VideoLLMs
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22142](https://arxiv.org/abs/2602.22142)
-**Code**: None (coming soon)
+**arXiv**: [2602.22142](https://arxiv.org/abs/2602.22142)  
+**Code**: None (coming soon)  
 **Area**: Multimodal / Streaming Video Understanding
 **Keywords**: Video-LLM, streaming VQA, temporal order, memory cache, uncertainty-gated retrieval
 
@@ -73,8 +73,8 @@ WeaveTime is a plug-and-play, Video-LLM-agnostic streaming video QA framework co
     - Core strategy: "Look Now, Recall if Needed."
     - When query $q$ arrives at time $t$, the model first generates an answer $a_t^{(0)}$ using only the short temporal window $\mathcal{M}_{t-1}[-C:]$.
     - The predictive entropy $H_t = \text{Entropy}(a_t^{(0)})$ is computed and compared against threshold $\delta$:
-      - If $H_t < \delta$: the current answer is used directly (no retrospection needed).
-      - If $H_t \geq \delta$: coarse-to-fine recall (C2F Recall) is triggered.
+        - If $H_t < \delta$: the current answer is used directly (no retrospection needed).
+        - If $H_t \geq \delta$: coarse-to-fine recall (C2F Recall) is triggered.
     - **Coarse-to-Fine Retrieval**: frame-level cosine similarity ($\text{Sim}(f_i^v, f^q)$) is first used to select $\mathcal{M}_{\text{coarse}}$, followed by late-interaction max-sim for fine-grained matching: $\text{maxSim}(\{f_{i,k}^v\}, \{f_j^q\}) = \sum_{j=1}^{N_q} \max_{1 \leq k \leq N_i} \langle f_j^q, f_{i,k}^v \rangle$
     - Top-$K$ frames are selected (capped at 64 frames), achieving token-level precision at only frame-level computational cost.
 

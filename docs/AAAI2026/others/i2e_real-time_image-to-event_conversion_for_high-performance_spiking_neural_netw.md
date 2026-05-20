@@ -17,8 +17,8 @@ content_hash: 13eaee403367f1ff
 # I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08065](https://arxiv.org/abs/2511.08065)
-**Code**: [GitHub](https://github.com/Ruichen0424/I2E)
+**arXiv**: [2511.08065](https://arxiv.org/abs/2511.08065)  
+**Code**: [GitHub](https://github.com/Ruichen0424/I2E)  
 **Area**: Neuromorphic Computing / Spiking Neural Networks
 **Keywords**: Spiking Neural Networks, Event Stream Generation, Image-to-Event Conversion, Data Augmentation, Sim-to-Real
 

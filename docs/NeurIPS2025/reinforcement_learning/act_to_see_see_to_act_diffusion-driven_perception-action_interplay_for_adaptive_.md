@@ -18,8 +18,8 @@ content_hash: 9bbf6c8ab697a55a
 # Act to See, See to Act: Diffusion-Driven Perception-Action Interplay for Adaptive Policies
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25822](https://arxiv.org/abs/2509.25822)
-**Code**: [Project Page](https://jingwang18.github.io/dp-ag.github.io/)
+**arXiv**: [2509.25822](https://arxiv.org/abs/2509.25822)  
+**Code**: [Project Page](https://jingwang18.github.io/dp-ag.github.io/)  
 **Area**: Diffusion Models / Robot Learning / Imitation Learning
 **Keywords**: diffusion policy, perception-action loop, VJP, variational inference, imitation learning
 

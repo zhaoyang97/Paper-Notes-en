@@ -18,8 +18,8 @@ content_hash: ed42e71551caae9a
 # Saying the Unsaid: Revealing the Hidden Language of Multimodal Systems Through Telephone Games
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10690](https://arxiv.org/abs/2511.10690)
-**Code**: None
+**arXiv**: [2511.10690](https://arxiv.org/abs/2511.10690)  
+**Code**: None  
 **Area**: Interpretability
 **Keywords**: Hidden language, telephone game, concept association, multimodal interpretability, test-time probing
 

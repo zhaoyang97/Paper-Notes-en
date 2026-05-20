@@ -18,8 +18,8 @@ content_hash: 1fef22cb804affc6
 # AtlasGS: Atlanta-world Guided Surface Reconstruction with Implicit Structured Gaussians
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25129](https://arxiv.org/abs/2510.25129)
-**Code**: To be confirmed
+**arXiv**: [2510.25129](https://arxiv.org/abs/2510.25129)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, surface reconstruction, Atlanta-world assumption, implicit representation, indoor/urban scenes
 

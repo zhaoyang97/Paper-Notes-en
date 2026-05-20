@@ -18,8 +18,8 @@ content_hash: 2155d130d7effddd
 # Disrupting Model Merging: A Parameter-Level Defense Without Sacrificing Accuracy
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07661](https://arxiv.org/abs/2503.07661)
-**Code**: None
+**arXiv**: [2503.07661](https://arxiv.org/abs/2503.07661)  
+**Code**: None  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: model merging defense, intellectual property protection, parameter rearrangement, attention head scaling, functionally equivalent transformation
 

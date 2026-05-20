@@ -18,8 +18,8 @@ content_hash: ac3f06b905516f2b
 # DictAS: A Framework for Class-Generalizable Few-Shot Anomaly Segmentation via Dictionary Lookup
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.13560](https://arxiv.org/abs/2508.13560)
-**Code**: [github.com/xiaozhen228/DictAS](https://github.com/xiaozhen228/DictAS)
+**arXiv**: [2508.13560](https://arxiv.org/abs/2508.13560)  
+**Code**: [github.com/xiaozhen228/DictAS](https://github.com/xiaozhen228/DictAS)  
 **Area**: Medical Imaging
 **Keywords**: Anomaly Detection, Few-Shot Anomaly Segmentation, Dictionary Lookup, CLIP, Self-Supervised Learning
 

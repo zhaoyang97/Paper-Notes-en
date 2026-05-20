@@ -18,8 +18,8 @@ content_hash: fb8640d23c0748f3
 # Free-MoRef: Instantly Multiplexing Context Perception Capabilities of Video-MLLMs within Single Inference
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.02134](https://arxiv.org/abs/2508.02134)
-**Code**: [github.com/wkfdb/Free-MoRef](https://github.com/wkfdb/Free-MoRef)
+**arXiv**: [2508.02134](https://arxiv.org/abs/2508.02134)  
+**Code**: [github.com/wkfdb/Free-MoRef](https://github.com/wkfdb/Free-MoRef)  
 **Area**: Video Understanding / Multimodal Large Language Models
 **Keywords**: Long Video Understanding, Video-MLLM, Training-Free Inference, MoE-Inspired, Attention Mechanism
 

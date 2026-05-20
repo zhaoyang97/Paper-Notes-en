@@ -19,8 +19,8 @@ content_hash: 620c070318a09172
 # SiM3D: Single-Instance Multiview Multimodal and Multisetup 3D Anomaly Detection Benchmark
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21549](https://arxiv.org/abs/2506.21549)
-**Code**: [alex-costanzino/SiM3D](https://alex-costanzino.github.io/SiM3D/)
+**arXiv**: [2506.21549](https://arxiv.org/abs/2506.21549)  
+**Code**: [alex-costanzino/SiM3D](https://alex-costanzino.github.io/SiM3D/)  
 **Area**: 3D Vision
 **Keywords**: 3D anomaly detection, multiview, multimodal, single-instance, anomaly volume, synthetic-to-real
 

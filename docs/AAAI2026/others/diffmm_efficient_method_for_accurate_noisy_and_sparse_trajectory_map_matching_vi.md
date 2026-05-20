@@ -17,8 +17,8 @@ content_hash: 7eb0b17d997583c6
 # DiffMM: Efficient Method for Accurate Noisy and Sparse Trajectory Map Matching via One Step Diffusion
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.08482](https://arxiv.org/abs/2601.08482)
-**Code**: [github.com/decisionintelligence/DiffMM](https://github.com/decisionintelligence/DiffMM)
+**arXiv**: [2601.08482](https://arxiv.org/abs/2601.08482)  
+**Code**: [github.com/decisionintelligence/DiffMM](https://github.com/decisionintelligence/DiffMM)  
 **Area**: Other (Trajectory Analysis / Map Matching)
 **Keywords**: Map Matching, Diffusion Model, Sparse Trajectory, Shortcut Model, Segment-Aware Encoder
 

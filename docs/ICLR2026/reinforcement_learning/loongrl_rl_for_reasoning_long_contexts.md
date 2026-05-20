@@ -18,8 +18,8 @@ content_hash: c2e40d5772b91370
 # LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2510.19363](https://arxiv.org/abs/2510.19363)
-**Code**: Available (training code and KeyChain data synthesis code provided in supplementary material)
+**arXiv**: [2510.19363](https://arxiv.org/abs/2510.19363)  
+**Code**: Available (training code and KeyChain data synthesis code provided in supplementary material)  
 **Area**: Reinforcement Learning
 **Keywords**: long-context reasoning, reinforcement-learning, GRPO, multi-hop QA, emergent reasoning patterns
 

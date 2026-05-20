@@ -18,8 +18,8 @@ content_hash: 3a2e1a936198deff
 # Multi-Class Support Vector Machine with Differential Privacy
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04027](https://arxiv.org/abs/2510.04027)
-**Code**: [GitHub](https://github.com/JinseongP/private_multiclass_svm)
+**arXiv**: [2510.04027](https://arxiv.org/abs/2510.04027)  
+**Code**: [GitHub](https://github.com/JinseongP/private_multiclass_svm)  
 **Area**: AI Safety
 **Keywords**: Differential Privacy, Multi-Class Classification, Support Vector Machine, Privacy-Preserving Machine Learning, Gradient Perturbation
 

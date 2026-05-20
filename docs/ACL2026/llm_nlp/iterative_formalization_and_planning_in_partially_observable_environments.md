@@ -18,8 +18,8 @@ content_hash: 9147d32f1e615bd2
 # Iterative Formalization and Planning in Partially Observable Environments
 
 **Conference**: ACL 2026
-**arXiv**: [2505.13126](https://arxiv.org/abs/2505.13126)
-**Code**: [GitHub](https://github.com/zharry29/pddlego-plus)
+**arXiv**: [2505.13126](https://arxiv.org/abs/2505.13126)  
+**Code**: [GitHub](https://github.com/zharry29/pddlego-plus)  
 **Area**: LLM NLP / AI Planning
 **Keywords**: partially observable environments, PDDL formalization, iterative planning, LLM-as-Formalizer, error refinement
 

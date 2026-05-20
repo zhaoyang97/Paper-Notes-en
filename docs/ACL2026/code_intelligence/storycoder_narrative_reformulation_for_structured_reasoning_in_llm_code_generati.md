@@ -18,8 +18,8 @@ content_hash: 14fde6262f7fb06d
 # StoryCoder: Narrative Reformulation for Structured Reasoning in LLM Code Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.14631](https://arxiv.org/abs/2604.14631)
-**Code**: Available
+**arXiv**: [2604.14631](https://arxiv.org/abs/2604.14631)  
+**Code**: Available  
 **Area**: Code Intelligence
 **Keywords**: Narrative reformulation, code generation, prompt engineering, structured reasoning, algorithm selection
 

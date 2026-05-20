@@ -17,8 +17,8 @@ content_hash: 701c1a14602e3cb0
 # Robust Sampling for Active Statistical Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.08991](https://arxiv.org/abs/2511.08991)
-**Code**: [Available](https://github.com/lphLeo/Robust-Active-Statistical-Inference)
+**arXiv**: [2511.08991](https://arxiv.org/abs/2511.08991)  
+**Code**: [Available](https://github.com/lphLeo/Robust-Active-Statistical-Inference)  
 **Area**: Statistical Inference / Active Sampling
 **Keywords**: Active Inference, Robust Sampling, Prediction-Powered Inference, Uncertainty Estimation, Inverse Probability Weighting
 

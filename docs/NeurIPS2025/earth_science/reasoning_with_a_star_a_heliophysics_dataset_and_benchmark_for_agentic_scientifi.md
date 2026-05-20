@@ -18,8 +18,8 @@ content_hash: 68cfe251992ffc12
 # Reasoning With a Star: A Heliophysics Dataset and Benchmark for Agentic Scientific Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.20694](https://arxiv.org/abs/2511.20694)
-**Code**: HuggingFace - SpaceML/ReasoningWithAStar
+**arXiv**: [2511.20694](https://arxiv.org/abs/2511.20694)  
+**Code**: HuggingFace - SpaceML/ReasoningWithAStar  
 **Area**: Earth Science
 **Keywords**: scientific reasoning, multi-agent, heliophysics, systems engineering, benchmark
 

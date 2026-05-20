@@ -18,8 +18,8 @@ content_hash: d5067148d9609142
 # Positional Bias in Multimodal Embedding Models: Do They Favor the Beginning, the Middle, or the End?
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11216](https://arxiv.org/abs/2511.11216)
-**Code**: [https://github.com/tiiuae/PosBias/](https://github.com/tiiuae/PosBias/)
+**arXiv**: [2511.11216](https://arxiv.org/abs/2511.11216)  
+**Code**: [https://github.com/tiiuae/PosBias/](https://github.com/tiiuae/PosBias/)  
 **Area**: Information Retrieval
 **Keywords**: Positional Bias, CLIP, Multimodal Representation Learning, Image-Text Retrieval, Attention Mechanism
 

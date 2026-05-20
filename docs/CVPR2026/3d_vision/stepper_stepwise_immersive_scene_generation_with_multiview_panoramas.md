@@ -18,8 +18,8 @@ content_hash: e0a0eebe6180864e
 # Stepper: Stepwise Immersive Scene Generation with Multiview Panoramas
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28980](https://arxiv.org/abs/2603.28980)
-**Code**: [Project Page](https://fwmb.github.io/stepper)
+**arXiv**: [2603.28980](https://arxiv.org/abs/2603.28980)  
+**Code**: [Project Page](https://fwmb.github.io/stepper)  
 **Area**: 3D Vision / Scene Generation
 **Keywords**: Panorama Generation, 3D Scene Synthesis, Diffusion Models, Multi-view Consistency, Immersive Scenes
 

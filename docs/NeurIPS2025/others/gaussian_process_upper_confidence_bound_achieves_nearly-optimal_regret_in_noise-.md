@@ -17,8 +17,8 @@ content_hash: a63fa9c17a1ba292
 # Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.19006](https://arxiv.org/abs/2502.19006)
-**Code**: None
+**arXiv**: [2502.19006](https://arxiv.org/abs/2502.19006)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Gaussian process, bandit problem, Bayesian optimization, regret bound, noise-free optimization
 

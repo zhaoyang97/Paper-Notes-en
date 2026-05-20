@@ -13,8 +13,8 @@ content_hash: a7501cafd189177c
 # HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22727](https://arxiv.org/abs/2602.22727)
-**Code**: [GitHub](https://github.com/VioAgnes/HulluEdit)
+**arXiv**: [2602.22727](https://arxiv.org/abs/2602.22727)  
+**Code**: [GitHub](https://github.com/VioAgnes/HulluEdit)  
 **Area**: Multimodal & VLM
 
 ## TL;DR

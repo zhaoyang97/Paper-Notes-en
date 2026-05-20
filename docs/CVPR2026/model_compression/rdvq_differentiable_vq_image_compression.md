@@ -18,8 +18,8 @@ content_hash: 9533f9d4402e808e
 # RDVQ: Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.10546](https://arxiv.org/abs/2604.10546)
-**Code**: [https://github.com/CVL-UESTC/RDVQ](https://github.com/CVL-UESTC/RDVQ)
+**arXiv**: [2604.10546](https://arxiv.org/abs/2604.10546)  
+**Code**: [https://github.com/CVL-UESTC/RDVQ](https://github.com/CVL-UESTC/RDVQ)  
 **Area**: Image Compression / Restoration
 **Keywords**: Vector Quantization, Rate-Distortion Optimization, Generative Image Compression, Entropy Model, Differentiable Relaxation
 

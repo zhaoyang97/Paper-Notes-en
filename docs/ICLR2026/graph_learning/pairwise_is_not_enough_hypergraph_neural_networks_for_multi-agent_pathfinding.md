@@ -18,8 +18,8 @@ content_hash: d2d9450e558870b3
 # Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding
 
 **Conference**: ICLR2026
-**arXiv**: [2602.06733](https://arxiv.org/abs/2602.06733)
-**Code**: [GitHub](https://github.com/proroklab/HMAGAT)
+**arXiv**: [2602.06733](https://arxiv.org/abs/2602.06733)  
+**Code**: [GitHub](https://github.com/proroklab/HMAGAT)  
 **Area**: Graph Learning
 **Keywords**: MAPF, Hypergraph Neural Networks, Attention Mechanism, Imitation Learning, Group Interaction
 
@@ -44,14 +44,14 @@ This paper proposes HMAGAT, which replaces the pairwise message passing of GNNs 
 
 - **Directed Hyperedge Design**: Single-head, multi-tail structure — multiple tail nodes (influencers) → single head node (influenced agent), naturally modeling "multiple agents jointly influencing one agent's decision."
 - **Two-Level Attention Mechanism**:
-  - Tail-to-hyperedge attention $\alpha_{ej}$: mean of head node features as query; tail node features + hyperedge features as key-value.
-  - Hyperedge-to-head attention $\alpha_{ie}$: head node as query; hyperedge representation as key-value.
-  - Softmax normalization at each level is restricted to its own scope, preventing cross-level dilution.
+    - Tail-to-hyperedge attention $\alpha_{ej}$: mean of head node features as query; tail node features + hyperedge features as key-value.
+    - Hyperedge-to-head attention $\alpha_{ie}$: head node as query; hyperedge representation as key-value.
+    - Softmax normalization at each level is restricted to its own scope, preventing cross-level dilution.
 - **Hypergraph Construction Strategies**:
-  - Lloyd hypergraph: Voronoi partitioning with soft boundaries for overlapping groupings; suited for medium-scale scenarios.
-  - k-means hypergraph: random point diffusion + clustering; complexity $O(k|V|)$; suited for large graphs.
-  - Shortest-distance hypergraph: constructed based on shortest-path distances between agents; suited for obstacle-dense environments.
-  - All strategies generate hyperedge features (relative position coordinates + Manhattan distance).
+    - Lloyd hypergraph: Voronoi partitioning with soft boundaries for overlapping groupings; suited for medium-scale scenarios.
+    - k-means hypergraph: random point diffusion + clustering; complexity $O(k|V|)$; suited for large graphs.
+    - Shortest-distance hypergraph: constructed based on shortest-path distances between agents; suited for obstacle-dense environments.
+    - All strategies generate hyperedge features (relative position coordinates + Manhattan distance).
 
 **Training Pipeline**:
 - Expert demonstration trajectories collected on 21K instances using the lacam3 solver (vs. MAPF-GPT's 3.75M instances — 178× fewer).

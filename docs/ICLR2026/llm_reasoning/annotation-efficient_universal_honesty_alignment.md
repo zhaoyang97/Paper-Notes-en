@@ -18,8 +18,8 @@ content_hash: 424ddb6a390e965b
 # Annotation-Efficient Universal Honesty Alignment
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.17509](https://arxiv.org/abs/2510.17509)
-**Code**: Available (GitHub link)
+**arXiv**: [2510.17509](https://arxiv.org/abs/2510.17509)  
+**Code**: Available (GitHub link)  
 **Area**: LLM Reasoning
 **Keywords**: honesty alignment, confidence calibration, self-consistency, annotation efficiency, LLM trustworthiness
 

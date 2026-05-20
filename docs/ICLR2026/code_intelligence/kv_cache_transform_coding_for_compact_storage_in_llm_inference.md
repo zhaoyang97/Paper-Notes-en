@@ -18,8 +18,8 @@ content_hash: 4c1c4694b2620040
 # KV Cache Transform Coding for Compact Storage in LLM Inference
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.01815](https://arxiv.org/abs/2511.01815)
-**Code**: None
+**arXiv**: [2511.01815](https://arxiv.org/abs/2511.01815)  
+**Code**: None  
 **Area**: Code Intelligence
 **Keywords**: KV cache compression, transform coding, PCA, adaptive quantization, entropy coding
 

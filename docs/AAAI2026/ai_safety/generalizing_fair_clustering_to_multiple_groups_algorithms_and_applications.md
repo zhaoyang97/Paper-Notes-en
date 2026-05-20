@@ -19,8 +19,8 @@ content_hash: fe411b84068f9660
 # Generalizing Fair Clustering to Multiple Groups: Algorithms and Applications
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11539](https://arxiv.org/abs/2511.11539)
-**Code**: To be confirmed
+**arXiv**: [2511.11539](https://arxiv.org/abs/2511.11539)  
+**Code**: To be confirmed  
 **Area**: AI Safety / Fairness
 **Keywords**: Fair clustering, multi-group fairness, approximation algorithms, correlation clustering, consensus clustering, NP-hard
 
@@ -45,23 +45,23 @@ A hierarchical recursive strategy decomposes multi-group fair clustering into mu
 
 1. **Algorithm fairpower-of-two (equal proportion + color count is a power of two)**
 
-   - Function: Transforms an arbitrary clustering $\mathcal{D}$ into a fair clustering in which each cluster contains an equal number of points of each color.
-   - Mechanism: Performs $\log|\chi|$ iterations; in each round, adjacent color blocks are merged pairwise. In round $i$, the color set is partitioned into $|\chi|/2^i$ blocks of size $2^i$, maintaining the invariant that each cluster contains an equal number of points from each color within a block.
-   - Each round: For each pair of adjacent blocks, the "surplus" between the two blocks within each cluster is computed, removed from the clusters, collected into sets $S_j, S_{j+1}$, and re-paired via the **multi-GM** subroutine to form new fair subsets.
-   - Approximation ratio: Each round introduces a factor of 2; after $\log|\chi|$ rounds, recursive application of the triangle inequality yields $3^{\log|\chi|} = O(|\chi|^{1.6})$.
+    - Function: Transforms an arbitrary clustering $\mathcal{D}$ into a fair clustering in which each cluster contains an equal number of points of each color.
+    - Mechanism: Performs $\log|\chi|$ iterations; in each round, adjacent color blocks are merged pairwise. In round $i$, the color set is partitioned into $|\chi|/2^i$ blocks of size $2^i$, maintaining the invariant that each cluster contains an equal number of points from each color within a block.
+    - Each round: For each pair of adjacent blocks, the "surplus" between the two blocks within each cluster is computed, removed from the clusters, collected into sets $S_j, S_{j+1}$, and re-paired via the **multi-GM** subroutine to form new fair subsets.
+    - Approximation ratio: Each round introduces a factor of 2; after $\log|\chi|$ rounds, recursive application of the triangle inequality yields $3^{\log|\chi|} = O(|\chi|^{1.6})$.
 
 2. **Algorithm make-pdc-fair (arbitrary proportion, p-divisible → fair clustering)**
 
-   - Function: Given proportions $p_1:p_2:\cdots:p_r$ and a p-divisible clustering, outputs a fair clustering satisfying the global proportions.
-   - Mechanism: Applies a hierarchical strategy similar to fairpower-of-two but handles unequal proportions. Performs $\lceil\log_2 r\rceil$ rounds, merging adjacent color blocks each round and using a "scaling factor" to balance mismatches between blocks.
-   - Balancing rule: For sub-blocks $A$ and $B$, scaling factors $x$ and $y$ are computed. If $x > y$, points of color $B$ are merged into the cluster; if $x < y$, points of color $B$ are trimmed from the cluster.
-   - Approximation ratio: Each round introduces a factor of 6, yielding a total of $7^{\log r} = O(r^{2.81})$.
+    - Function: Given proportions $p_1:p_2:\cdots:p_r$ and a p-divisible clustering, outputs a fair clustering satisfying the global proportions.
+    - Mechanism: Applies a hierarchical strategy similar to fairpower-of-two but handles unequal proportions. Performs $\lceil\log_2 r\rceil$ rounds, merging adjacent color blocks each round and using a "scaling factor" to balance mismatches between blocks.
+    - Balancing rule: For sub-blocks $A$ and $B$, scaling factors $x$ and $y$ are computed. If $x > y$, points of color $B$ are merged into the cluster; if $x < y$, points of color $B$ are trimmed from the cluster.
+    - Approximation ratio: Each round introduces a factor of 6, yielding a total of $7^{\log r} = O(r^{2.81})$.
 
 3. **Algorithm create-pdc (arbitrary clustering → p-divisible clustering)**
 
-   - Function: For each color $c_j$, makes the number of points of that color in each cluster a multiple of $p_j$.
-   - Mechanism: Clusters are classified into CUT sets (surplus $\leq p_j/2$, trimming the surplus) and MERGE sets (surplus $> p_j/2$, receiving points from other clusters to fill deficits). Auxiliary clusters are created to accommodate excess surpluses.
-   - Approximation ratio: $O(|\chi|)$-close p-divisible.
+    - Function: For each color $c_j$, makes the number of points of that color in each cluster a multiple of $p_j$.
+    - Mechanism: Clusters are classified into CUT sets (surplus $\leq p_j/2$, trimming the surplus) and MERGE sets (surplus $> p_j/2$, receiving points from other clusters to fill deficits). Auxiliary clusters are created to accommodate excess surpluses.
+    - Approximation ratio: $O(|\chi|)$-close p-divisible.
 
 ### Loss & Training
 

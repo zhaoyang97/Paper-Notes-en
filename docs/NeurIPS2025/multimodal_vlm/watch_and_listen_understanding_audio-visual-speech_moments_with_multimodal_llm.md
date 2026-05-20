@@ -18,8 +18,8 @@ content_hash: 9fdbd2a61d6b671b
 # Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18110](https://arxiv.org/abs/2505.18110)
-**Code**: [GitHub](https://github.com/zinuoli/TriSense)
+**arXiv**: [2505.18110](https://arxiv.org/abs/2505.18110)  
+**Code**: [GitHub](https://github.com/zinuoli/TriSense)  
 **Area**: Multimodal VLM
 **Keywords**: audio-visual understanding, multimodal fusion, temporal understanding, modality adaptation, video moment retrieval
 

@@ -18,8 +18,8 @@ content_hash: e7f4e935e47fbeff
 # Traceable Black-box Watermarks for Federated Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.13651](https://arxiv.org/abs/2505.13651)
-**Code**: [GitHub](https://github.com/JiiahaoXU/TraMark)
+**arXiv**: [2505.13651](https://arxiv.org/abs/2505.13651)  
+**Code**: [GitHub](https://github.com/JiiahaoXU/TraMark)  
 **Area**: AI Security
 **Keywords**: Federated Learning, Black-box Watermarking, Traceability, Model Leakage Detection, Masked Aggregation
 

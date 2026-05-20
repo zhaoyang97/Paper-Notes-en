@@ -18,8 +18,8 @@ content_hash: bd5d31f3e2aa49b3
 # Retrieving to Recover: Towards Incomplete Audio-Visual Question Answering via Semantic-consistent Purification
 
 **Conference**: ACL 2026
-**arXiv**: [2604.10695](https://arxiv.org/abs/2604.10695)
-**Code**: N/A
+**arXiv**: [2604.10695](https://arxiv.org/abs/2604.10695)  
+**Code**: N/A  
 **Area**: Audio & Speech / Multimodal Learning
 **Keywords**: Audio-visual question answering, missing modality, retrieval-based recovery, semantic purification, mixture of experts
 

@@ -18,8 +18,8 @@ content_hash: 3f8de379cad2b9b4
 # FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04733](https://arxiv.org/abs/2603.04733)
-**Code**: [eVI-group-SCU/FOZO](https://github.com/eVI-group-SCU/FOZO)
+**arXiv**: [2603.04733](https://arxiv.org/abs/2603.04733)  
+**Code**: [eVI-group-SCU/FOZO](https://github.com/eVI-group-SCU/FOZO)  
 **Area**: Model Compression
 **Keywords**: Test-Time Adaptation, Zeroth-Order Optimization, Visual Prompt, Forward Propagation, Quantized Model Deployment
 

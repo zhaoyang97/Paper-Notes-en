@@ -18,8 +18,8 @@ content_hash: 8f0c870b4d74f65b
 # Indoor Asset Detection in Large Scale 360° Drone-Captured Imagery via 3D Gaussian Splatting
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05316](https://arxiv.org/abs/2604.05316)
-**Code**: None
+**arXiv**: [2604.05316](https://arxiv.org/abs/2604.05316)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: indoor asset detection, 3DGS segmentation, multi-view consistency, object codebook, drone 360° imaging
 

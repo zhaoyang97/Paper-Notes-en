@@ -18,8 +18,8 @@ content_hash: cf8bfc1caf55e1a8
 # MikuDance: Animating Character Art with Mixed Motion Dynamics
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.08656](https://arxiv.org/abs/2411.08656)
-**Code**: [https://kebii.github.io/MikuDance](https://kebii.github.io/MikuDance)
+**arXiv**: [2411.08656](https://arxiv.org/abs/2411.08656)  
+**Code**: [https://kebii.github.io/MikuDance](https://kebii.github.io/MikuDance)  
 **Area**: Video Understanding
 **Keywords**: Character Animation, diffusion model, Camera Control, Mixed Motion, Image-to-Video
 

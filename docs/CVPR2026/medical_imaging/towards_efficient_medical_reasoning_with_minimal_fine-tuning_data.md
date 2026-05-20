@@ -18,8 +18,8 @@ content_hash: 01a9d2b9644c8065
 # Towards Efficient Medical Reasoning with Minimal Fine-Tuning Data
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.01450](https://arxiv.org/abs/2508.01450)
-**Code**: [GitHub](https://github.com/mihara-bot/DIQ)
+**arXiv**: [2508.01450](https://arxiv.org/abs/2508.01450)  
+**Code**: [GitHub](https://github.com/mihara-bot/DIQ)  
 **Area**: Medical Imaging
 **Keywords**: Data Selection, Medical Reasoning, Large Language Models, SFT, Gradient Influence
 
@@ -33,8 +33,8 @@ The standard approach for adapting LLMs to medical reasoning tasks is supervised
 
 - **Data Redundancy**: Large-scale datasets contain substantial low-quality or duplicated samples, incurring high computational costs with marginal performance gains.
 - **Limitations of Single-Dimension Selection**:
-  - Selecting by **difficulty** alone → retrieves overly noisy samples with weak gradient signals, leading to unstable training.
-  - Selecting by **gradient influence** alone → favors easily optimizable samples with shallow reasoning chains.
+    - Selecting by **difficulty** alone → retrieves overly noisy samples with weak gradient signals, leading to unstable training.
+    - Selecting by **gradient influence** alone → favors easily optimizable samples with shallow reasoning chains.
 - These two dimensions are in fundamental tension; neither alone is optimal.
 
 Through pilot experiments on the FineMed dataset—training separately on four quadrants partitioned by difficulty and influence—the authors find that high-influence + low-difficulty ($\mathcal{Q}_2$) data yields better benchmark performance than low-influence + high-difficulty ($\mathcal{Q}_3$) data, yet produces lower reasoning quality. This confirms that achieving the best of both worlds requires samples that are simultaneously high-difficulty and high-influence.

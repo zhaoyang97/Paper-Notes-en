@@ -18,8 +18,8 @@ content_hash: 196516b499689924
 # AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.18988v2](https://arxiv.org/abs/2507.18988v2)
-**Code**: [Available](https://github.com/wangchao0708/AEDR)
+**arXiv**: [2507.18988v2](https://arxiv.org/abs/2507.18988v2)  
+**Code**: [Available](https://github.com/wangchao0708/AEDR)  
 **Area**: Image Generation
 **Keywords**: Image Attribution, Autoencoder Reconstruction, Training-Free, Latent Diffusion Models, Kernel Density Estimation
 

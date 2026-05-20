@@ -18,8 +18,8 @@ content_hash: e21efdb28baa9435
 # DIA: The Adversarial Exposure of Deterministic Inversion in Diffusion Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.00778](https://arxiv.org/abs/2510.00778)
-**Code**: [https://anonymous.4open.science/r/DIA-13419/](https://anonymous.4open.science/r/DIA-13419/)
+**arXiv**: [2510.00778](https://arxiv.org/abs/2510.00778)  
+**Code**: [https://anonymous.4open.science/r/DIA-13419/](https://anonymous.4open.science/r/DIA-13419/)  
 **Area**: Diffusion Models / AI Security
 **Keywords**: Adversarial Attack, DDIM Inversion, Diffusion Model Defense, Image Editing Protection, Deepfake Defense
 

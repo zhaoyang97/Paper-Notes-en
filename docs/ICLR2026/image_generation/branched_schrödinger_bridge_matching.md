@@ -18,8 +18,8 @@ content_hash: 090b2816c5f32b72
 # Branched Schrödinger Bridge Matching
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.09007](https://arxiv.org/abs/2506.09007)
-**Code**: [HuggingFace](https://huggingface.co/ChatterjeeLab/BranchSBM)
+**arXiv**: [2506.09007](https://arxiv.org/abs/2506.09007)  
+**Code**: [HuggingFace](https://huggingface.co/ChatterjeeLab/BranchSBM)  
 **Area**: Image Generation / Generative Model Theory
 **Keywords**: Schrödinger Bridge, branching trajectories, flow matching, cell fate differentiation, optimal transport
 

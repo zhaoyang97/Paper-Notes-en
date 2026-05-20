@@ -18,8 +18,8 @@ content_hash: e6ea18de1f222b73
 # Unlocking Positive Transfer in Incrementally Learning Surgical Instruments: A Self-reflection Hierarchical Prompt Framework
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02877](https://arxiv.org/abs/2604.02877)
-**Code**: No public code available
+**arXiv**: [2604.02877](https://arxiv.org/abs/2604.02877)  
+**Code**: No public code available  
 **Area**: Medical Imaging / Surgical Video Analysis
 **Keywords**: Class-incremental segmentation, surgical instruments, hierarchical prompts, forward transfer, backward transfer
 

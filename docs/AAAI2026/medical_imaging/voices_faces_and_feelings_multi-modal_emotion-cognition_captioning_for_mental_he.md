@@ -18,8 +18,8 @@ content_hash: 0abbe6e7d24a9ca3
 # Voices, Faces, and Feelings: Multi-modal Emotion-Cognition Captioning for Mental Health Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.01816](https://arxiv.org/abs/2603.01816)
-**Code**: [github](https://github.com/zhouzyhfut/ECMC)
+**arXiv**: [2603.01816](https://arxiv.org/abs/2603.01816)  
+**Code**: [github](https://github.com/zhouzyhfut/ECMC)  
 **Area**: Medical Imaging
 **Keywords**: Emotion-cognition captioning, multimodal, mental health, large language models, depression detection
 

@@ -18,8 +18,8 @@ content_hash: 481c4f8fc2f28d57
 # Combinative Matching for Geometric Shape Assembly
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.09780](https://arxiv.org/abs/2508.09780)
-**Code**: [https://nahyuklee.github.io/cmnet](https://nahyuklee.github.io/cmnet)
+**arXiv**: [2508.09780](https://arxiv.org/abs/2508.09780)  
+**Code**: [https://nahyuklee.github.io/cmnet](https://nahyuklee.github.io/cmnet)  
 **Area**: Human/Shape Understanding
 **Keywords**: shape assembly, point cloud matching, equivariant networks, volumetric complementarity, optimal transport
 

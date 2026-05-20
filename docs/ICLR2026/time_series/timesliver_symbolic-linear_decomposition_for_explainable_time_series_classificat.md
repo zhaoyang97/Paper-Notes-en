@@ -18,8 +18,8 @@ content_hash: 88bdb473bfb2ebd6
 # TimeSliver: Symbolic-Linear Decomposition for Explainable Time Series Classification
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21289](https://arxiv.org/abs/2601.21289)
-**Code**: [GitHub](https://github.com/pandeyakash23/TimeSliver)
+**arXiv**: [2601.21289](https://arxiv.org/abs/2601.21289)  
+**Code**: [GitHub](https://github.com/pandeyakash23/TimeSliver)  
 **Area**: Time Series / Explainability
 **Keywords**: Temporal Attribution, Symbolic Abstraction, Linear Combination, Explainable Classification, Positive/Negative Attribution
 

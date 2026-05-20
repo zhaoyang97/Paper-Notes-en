@@ -18,8 +18,8 @@ content_hash: 597b2255d00cefda
 # Offline Policy Evaluation of Multi-Turn LLM Health Coaching with Real Users
 
 **Conference**: NeurIPS 2025 Workshop (Multi-Turn Interactions in Large Language Models)
-**arXiv**: [2510.17173](https://arxiv.org/abs/2510.17173)
-**Code**: [GitHub](https://github.com/stevenshci/NeurIPS-MTI-LLM)
+**arXiv**: [2510.17173](https://arxiv.org/abs/2510.17173)  
+**Code**: [GitHub](https://github.com/stevenshci/NeurIPS-MTI-LLM)  
 **Area**: Model Compression
 **Keywords**: Offline Policy Evaluation, LLM Health Coaching, Multi-Turn Dialogue, Personalization, POMDP
 

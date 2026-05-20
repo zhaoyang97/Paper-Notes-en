@@ -18,8 +18,8 @@ content_hash: b5a46f0bf8dd1795
 # 3D Mesh Editing using Masked LRMs
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.08641](https://arxiv.org/abs/2412.08641)
-**Code**: [https://chocolatebiscuit.github.io/MaskedLRM/](https://chocolatebiscuit.github.io/MaskedLRM/)
+**arXiv**: [2412.08641](https://arxiv.org/abs/2412.08641)  
+**Code**: [https://chocolatebiscuit.github.io/MaskedLRM/](https://chocolatebiscuit.github.io/MaskedLRM/)  
 **Area**: 3D Vision / Shape Editing / Large Reconstruction Models
 **Keywords**: LRM, Masked Reconstruction, 3D Editing, Conditional Inpainting, Multi-view Consistency
 

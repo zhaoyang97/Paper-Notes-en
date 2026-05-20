@@ -18,8 +18,8 @@ content_hash: 51db66487eb5fc1a
 # CoD: A Diffusion Foundation Model for Image Compression
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.18706](https://arxiv.org/abs/2511.18706)
-**Code**: [GitHub](https://github.com/microsoft/GenCodec/tree/main/CoD)
+**arXiv**: [2511.18706](https://arxiv.org/abs/2511.18706)  
+**Code**: [GitHub](https://github.com/microsoft/GenCodec/tree/main/CoD)  
 **Area**: Image Compression / Diffusion Models
 **Keywords**: Compression-oriented diffusion, foundation model, rectified flow, pixel-space diffusion, rate-distortion-perception
 

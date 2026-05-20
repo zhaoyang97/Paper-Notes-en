@@ -18,8 +18,8 @@ content_hash: ffe10174e647c230
 # Improving Set Function Approximation with Quasi-Arithmetic Neural Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.04941](https://arxiv.org/abs/2602.04941)
-**Code**: None
+**arXiv**: [2602.04941](https://arxiv.org/abs/2602.04941)  
+**Code**: None  
 **Area**: Deep Learning Theory / Set Functions
 **Keywords**: set functions, Kolmogorov mean, invertible networks, learnable pooling, permutation invariance
 

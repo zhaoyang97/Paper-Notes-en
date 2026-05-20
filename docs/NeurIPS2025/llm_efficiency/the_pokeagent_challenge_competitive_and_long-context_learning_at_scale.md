@@ -18,8 +18,8 @@ content_hash: 16da4e82e33d4092
 # The PokeAgent Challenge: Competitive and Long-Context Learning at Scale
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2603.15563](https://arxiv.org/abs/2603.15563)
-**Code**: [https://pokeagentchallenge.com](https://pokeagentchallenge.com)
+**arXiv**: [2603.15563](https://arxiv.org/abs/2603.15563)  
+**Code**: [https://pokeagentchallenge.com](https://pokeagentchallenge.com)  
 **Area**: LLM Efficiency
 **Keywords**: Game AI Benchmark, Pokémon Battling, Long-Horizon Planning, Reinforcement Learning, LLM Agent
 

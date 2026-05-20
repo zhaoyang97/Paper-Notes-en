@@ -18,8 +18,8 @@ content_hash: b7f4b0437af321e7
 # Provable Watermarking for Data Poisoning Attacks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.09210](https://arxiv.org/abs/2510.09210)
-**Code**: None
+**arXiv**: [2510.09210](https://arxiv.org/abs/2510.09210)  
+**Code**: None  
 **Area**: AI Security
 **Keywords**: watermarking, data poisoning, backdoor attack, availability attack, provable guarantee
 

@@ -18,8 +18,8 @@ content_hash: b7959d4effe71410
 # HUM4D: A Dataset and Evaluation for Complex 4D Markerless Human Motion Capture
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.12765](https://arxiv.org/abs/2604.12765)
-**Code**: N/A
+**arXiv**: [2604.12765](https://arxiv.org/abs/2604.12765)  
+**Code**: N/A  
 **Area**: Human Understanding / Motion Capture
 **Keywords**: Markerless Motion Capture, 4D Human Modeling, Multi-Person Interaction, Dataset, SMPL
 

@@ -18,8 +18,8 @@ content_hash: 60cf1ac73a320e3c
 # StegaVAR: Privacy-Preserving Video Action Recognition via Steganographic Domain Analysis
 
 **Conference**: AAAI2026
-**arXiv**: [2512.12586](https://arxiv.org/abs/2512.12586)
-**Code**: Coming soon
+**arXiv**: [2512.12586](https://arxiv.org/abs/2512.12586)  
+**Code**: Coming soon  
 **Area**: Video Understanding
 **Keywords**: privacy-preserving, video action recognition, steganography, wavelet transform, cross-band attention
 

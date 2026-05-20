@@ -18,8 +18,8 @@ content_hash: 7cd996927bffb61b
 # Gene Incremental Learning for Single-Cell Transcriptomics
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13762](https://arxiv.org/abs/2511.13762)
-**Code**: [GitHub](https://github.com/simpleshinobu/scbenchmark)
+**arXiv**: [2511.13762](https://arxiv.org/abs/2511.13762)  
+**Code**: [GitHub](https://github.com/simpleshinobu/scbenchmark)  
 **Area**: Bioinformatics / Incremental Learning
 **Keywords**: gene incremental learning, single-cell transcriptomics, catastrophic forgetting, token incremental learning, benchmark
 

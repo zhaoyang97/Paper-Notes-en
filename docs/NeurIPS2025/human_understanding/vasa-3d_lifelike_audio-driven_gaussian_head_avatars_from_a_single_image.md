@@ -18,8 +18,8 @@ content_hash: c30677749e8836f9
 # VASA-3D: Lifelike Audio-Driven Gaussian Head Avatars from a Single Image
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.14677](https://arxiv.org/abs/2512.14677)
-**Code**: [Project Page](https://www.microsoft.com/en-us/research/project/vasa-3d/)
+**arXiv**: [2512.14677](https://arxiv.org/abs/2512.14677)  
+**Code**: [Project Page](https://www.microsoft.com/en-us/research/project/vasa-3d/)  
 **Area**: Human Understanding
 **Keywords**: 3D head avatars, audio-driven, Gaussian splatting, VASA motion latent space, single-image reconstruction
 

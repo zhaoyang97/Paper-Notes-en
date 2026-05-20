@@ -18,8 +18,8 @@ content_hash: f5aa7f188c11fd48
 # Multi-Scale Finetuning for Encoder-based Time Series Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.14087](https://arxiv.org/abs/2506.14087)
-**Code**: [https://github.com/zqiao11/MSFT](https://github.com/zqiao11/MSFT)
+**arXiv**: [2506.14087](https://arxiv.org/abs/2506.14087)  
+**Code**: [https://github.com/zqiao11/MSFT](https://github.com/zqiao11/MSFT)  
 **Area**: Time Series / Foundation Model Fine-tuning
 **Keywords**: Time series foundation models, multi-scale modeling, fine-tuning, causal inference, parameter-efficient fine-tuning
 
@@ -53,8 +53,8 @@ MSFT operates under a causal intervention framework, realizing backdoor adjustme
 
 2. **Decoupled token dependency modeling**: Composed of two components:
 
-   - **In-scale attention**: A mask $\mathbf{M}_{in}$ ensures that tokens attend only to tokens within the same scale, preventing spurious attention caused by temporal index misalignment across scales.
-   - **Cross-scale aggregator**: Bidirectional (coarse-to-fine C2F and fine-to-coarse F2C) layer-wise fusion of adjacent-scale information. Tokens are mapped to a shared space via linear projection $\phi_{i,j}^l$ and then fused according to temporal alignment: C2F uses Repeat upsampling, and F2C uses AvgPool downsampling.
+    - **In-scale attention**: A mask $\mathbf{M}_{in}$ ensures that tokens attend only to tokens within the same scale, preventing spurious attention caused by temporal index misalignment across scales.
+    - **Cross-scale aggregator**: Bidirectional (coarse-to-fine C2F and fine-to-coarse F2C) layer-wise fusion of adjacent-scale information. Tokens are mapped to a shared space via linear projection $\phi_{i,j}^l$ and then fused according to temporal alignment: C2F uses Repeat upsampling, and F2C uses AvgPool downsampling.
 
 3. **Multi-scale mixing output**: Each scale produces an independent prediction $\hat{Y}_i$; the training objective is a weighted loss $\mathcal{L}_{pred} = \sum_i w_i \mathcal{L}_{pred,i}$, where weights $w_i$ are learned via softmax. At inference, predictions from each scale are upsampled to the original resolution and then combined by weighted summation, producing an ensemble effect that mitigates overfitting.
 

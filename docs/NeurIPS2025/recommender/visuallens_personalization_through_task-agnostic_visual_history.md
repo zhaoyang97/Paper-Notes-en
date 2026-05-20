@@ -18,8 +18,8 @@ content_hash: d8e960290040419f
 # VisualLens: Personalization through Task-Agnostic Visual History
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.16034](https://arxiv.org/abs/2411.16034)
-**Code**: None
+**arXiv**: [2411.16034](https://arxiv.org/abs/2411.16034)  
+**Code**: None  
 **Area**: Recommender Systems
 **Keywords**: Multimodal Recommendation, Visual History, Personalization, MLLM, User Profiling
 

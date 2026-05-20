@@ -18,8 +18,8 @@ content_hash: 349d483bae360bfd
 # CasP: Improving Semi-Dense Feature Matching Pipeline Leveraging Cascaded Correspondence Priors for Guidance
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.17312](https://arxiv.org/abs/2507.17312)
-**Code**: [GitHub](https://github.com/pq-chen/CasP)
+**arXiv**: [2507.17312](https://arxiv.org/abs/2507.17312)  
+**Code**: [GitHub](https://github.com/pq-chen/CasP)  
 **Area**: 3D Vision / Feature Matching
 **Keywords**: Feature Matching, Cascaded Matching, Semi-Dense, Efficiency, Cross-Domain Generalization
 

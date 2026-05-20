@@ -18,8 +18,8 @@ content_hash: 861dfb755d90bfe7
 # LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.18735](https://arxiv.org/abs/2602.18735)
-**Code**: [https://github.com/wylyan/LaS-Comp](https://github.com/wylyan/LaS-Comp)
+**arXiv**: [2602.18735](https://arxiv.org/abs/2602.18735)  
+**Code**: [https://github.com/wylyan/LaS-Comp](https://github.com/wylyan/LaS-Comp)  
 **Area**: Self-Supervised Learning
 **Keywords**: 3D shape completion, zero-shot, 3D foundation models, latent-spatial consistency, point cloud completion
 

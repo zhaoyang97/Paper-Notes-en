@@ -18,8 +18,8 @@ content_hash: 1ab00a1006d9f728
 # Thompson Sampling for Multi-Objective Linear Contextual Bandit
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.00930](https://arxiv.org/abs/2512.00930)
-**Code**: None
+**arXiv**: [2512.00930](https://arxiv.org/abs/2512.00930)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Thompson Sampling, Multi-Objective Optimization, Contextual Bandit, Pareto Optimality, Effective Pareto Front
 

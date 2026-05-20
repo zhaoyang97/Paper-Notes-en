@@ -18,8 +18,8 @@ content_hash: 7b05c8614a858e0e
 # Yes FLoReNce, I Will Do Better Next Time! Agentic Feedback Reasoning for Humorous Meme Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.07232](https://arxiv.org/abs/2601.07232)
-**Code**: None
+**arXiv**: [2601.07232](https://arxiv.org/abs/2601.07232)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: humorous meme detection, feedback-loop reasoning, non-parametric knowledge base, PID controller, vision-language model
 

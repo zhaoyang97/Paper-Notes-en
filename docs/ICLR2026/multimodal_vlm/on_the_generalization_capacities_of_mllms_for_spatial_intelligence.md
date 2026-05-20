@@ -18,8 +18,8 @@ content_hash: 5fb4c3e2e1422e5f
 # On the Generalization Capacities of MLLMs for Spatial Intelligence
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.06704](https://arxiv.org/abs/2603.06704)
-**Code**: [github.com/Vegetebird/CA-MLLM](https://github.com/Vegetebird/CA-MLLM)
+**arXiv**: [2603.06704](https://arxiv.org/abs/2603.06704)  
+**Code**: [github.com/Vegetebird/CA-MLLM](https://github.com/Vegetebird/CA-MLLM)  
 **Area**: 3D Spatial Understanding / MLLM
 **Keywords**: Camera Awareness, Spatial Intelligence, Cross-Camera Generalization, 3D Localization, Geometric Priors
 

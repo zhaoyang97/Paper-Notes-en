@@ -19,8 +19,8 @@ content_hash: 2fbade5ee784b784
 # Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.11883](https://arxiv.org/abs/2601.11883)
-**Code**: [https://github.com/ChaoqiJia/LSCKC](https://github.com/ChaoqiJia/LSCKC)
+**arXiv**: [2601.11883](https://arxiv.org/abs/2601.11883)  
+**Code**: [https://github.com/ChaoqiJia/LSCKC](https://github.com/ChaoqiJia/LSCKC)  
 **Area**: Theoretical Algorithms / Clustering / Approximation Algorithms
 **Keywords**: k-center clustering, constrained clustering, local search, approximation ratio, cannot-link, must-link, dominating matching set
 

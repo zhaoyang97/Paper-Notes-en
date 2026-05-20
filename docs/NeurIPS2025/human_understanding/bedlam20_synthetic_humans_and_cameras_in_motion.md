@@ -19,7 +19,7 @@ content_hash: fe2c0dc16f324e0c
 # BEDLAM2.0: Synthetic Humans and Cameras in Motion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.14394](https://arxiv.org/abs/2511.14394)
+**arXiv**: [2511.14394](https://arxiv.org/abs/2511.14394)  
 **Code/Data**: [bedlam2.is.tuebingen.mpg.de](https://bedlam2.is.tuebingen.mpg.de/)
 **Area**: Human Pose Estimation / Synthetic Data
 **Keywords**: synthetic data, SMPL-X, camera motion, HPS estimation, world coordinates, BEDLAM
@@ -51,23 +51,23 @@ Sample from the AMASS motion library (4,643 motions) → retarget motions to div
 ### Key Designs
 
 1. **Diverse Camera System**
-   - Focal length range: 14 mm–400 mm (16:9 DSLR sensor); 9% of videos include zoom during capture.
-   - Synthetic camera motions: static, translation, tracking, dolly, orbit, zoom, and combinations, with differentiable Perlin noise superimposed to simulate hand shake.
-   - Captured camera motions: real camera trajectories recorded using smartphones/tablets and an Apple Vision Pro headset within virtual scenes (static, orbit, approach/retreat), comprising 86.4% synthetic and 13.6% captured.
-   - **Design Motivation**: Real-world camera motion is highly diverse; BEDLAM's static cameras cause end-to-end training of world-coordinate methods to underperform.
+    - Focal length range: 14 mm–400 mm (16:9 DSLR sensor); 9% of videos include zoom during capture.
+    - Synthetic camera motions: static, translation, tracking, dolly, orbit, zoom, and combinations, with differentiable Perlin noise superimposed to simulate hand shake.
+    - Captured camera motions: real camera trajectories recorded using smartphones/tablets and an Apple Vision Pro headset within virtual scenes (static, orbit, approach/retreat), comprising 86.4% synthetic and 13.6% captured.
+    - **Design Motivation**: Real-world camera motion is highly diverse; BEDLAM's static cameras cause end-to-end training of world-coordinate methods to underperform.
 
 2. **Body Shape, Clothing, and Appearance Diversity**
-   - Body shapes: 1,615 SMPL-X shapes spanning BMI 18–41, with oversampling of high-BMI bodies.
-   - Clothing: 187 3D garments (76 more than BEDLAM), of which 50 are graded XS–6XL and matched to BMI.
-   - Hair: 40 strand-based 3D hair grooms (50K–100K strands per groom), fitted to individual head shapes, with 9 color presets.
-   - Shoes: 182 shoe models (Google Scanned Objects) mapped onto the SMPL-X "sock-foot" mesh via displacement maps, with height adjusted according to sole thickness.
-   - **Design Motivation**: To close the domain gap between synthetic data and real images caused by bare feet, absent hair, and single-size clothing.
+    - Body shapes: 1,615 SMPL-X shapes spanning BMI 18–41, with oversampling of high-BMI bodies.
+    - Clothing: 187 3D garments (76 more than BEDLAM), of which 50 are graded XS–6XL and matched to BMI.
+    - Hair: 40 strand-based 3D hair grooms (50K–100K strands per groom), fitted to individual head shapes, with 9 color presets.
+    - Shoes: 182 shoe models (Google Scanned Objects) mapped onto the SMPL-X "sock-foot" mesh via displacement maps, with height adjusted according to sole thickness.
+    - **Design Motivation**: To close the domain gap between synthetic data and real images caused by bare feet, absent hair, and single-size clothing.
 
 3. **Scene, Rendering, and Occlusion**
-   - 15 high-quality 3D environments (vs. 5 in BEDLAM), including 9 indoor scenes (vs. 1 in BEDLAM).
-   - Time-of-day and weather randomization (daylight, sunset, overcast, night).
-   - A custom UE5 C++ plugin ensures deterministic consistency of camera shake between image and depth renders.
-   - 12.7% of frames exhibit >20% occlusion; the top 10% most-occluded bodies have an average occlusion rate of 61.1%.
+    - 15 high-quality 3D environments (vs. 5 in BEDLAM), including 9 indoor scenes (vs. 1 in BEDLAM).
+    - Time-of-day and weather randomization (daylight, sunset, overcast, night).
+    - A custom UE5 C++ plugin ensures deterministic consistency of camera shake between image and depth renders.
+    - 12.7% of frames exhibit >20% occlusion; the top 10% most-occluded bodies have an average occlusion rate of 61.1%.
 
 ### Dataset Scale
 

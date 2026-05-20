@@ -18,8 +18,8 @@ content_hash: dbb9410c8e58d857
 # AWM: Accurate Weight-Matrix Fingerprint for Large Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.06738](https://arxiv.org/abs/2510.06738)
-**Code**: [https://github.com/LUMIA-Group/AWM](https://github.com/LUMIA-Group/AWM)
+**arXiv**: [2510.06738](https://arxiv.org/abs/2510.06738)  
+**Code**: [https://github.com/LUMIA-Group/AWM](https://github.com/LUMIA-Group/AWM)  
 **Area**: Reinforcement Learning
 **Keywords**: model fingerprinting, intellectual property, weight manipulation, CKA, linear assignment problem
 

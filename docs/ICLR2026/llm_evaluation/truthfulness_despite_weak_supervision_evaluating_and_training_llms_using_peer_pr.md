@@ -17,8 +17,8 @@ content_hash: 0767d00b11ac9aaf
 # Truthfulness Despite Weak Supervision: Evaluating and Training LLMs Using Peer Prediction
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20299](https://arxiv.org/abs/2601.20299)
-**Code**: GitHub repository (referenced in the paper)
+**arXiv**: [2601.20299](https://arxiv.org/abs/2601.20299)  
+**Code**: GitHub repository (referenced in the paper)  
 **Area**: LLM Evaluation
 **Keywords**: Peer Prediction, LLM Evaluation, Honesty Training, Deception Resistance, Weak Supervision
 

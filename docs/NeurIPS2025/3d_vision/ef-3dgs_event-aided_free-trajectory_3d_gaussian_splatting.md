@@ -18,8 +18,8 @@ content_hash: ea4dba27297bf7a2
 # EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.15392](https://arxiv.org/abs/2410.15392)
-**Code**: To be confirmed
+**arXiv**: [2410.15392](https://arxiv.org/abs/2410.15392)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: Event camera, 3D Gaussian Splatting, free-trajectory, pose estimation, novel view synthesis
 

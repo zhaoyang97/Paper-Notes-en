@@ -18,8 +18,8 @@ content_hash: 9856b9e4778593ce
 # Scaling LLM Speculative Decoding: Non-Autoregressive Forecasting in Large-Batch Scenarios
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.20340](https://arxiv.org/abs/2511.20340)
-**Code**: [https://github.com/ShiLuohe/SpecFormer](https://github.com/ShiLuohe/SpecFormer)
+**arXiv**: [2511.20340](https://arxiv.org/abs/2511.20340)  
+**Code**: [https://github.com/ShiLuohe/SpecFormer](https://github.com/ShiLuohe/SpecFormer)  
 **Area**: Time Series / LLM Inference Acceleration
 **Keywords**: Speculative Decoding, Non-Autoregressive Generation, Large-Batch Inference, LLM Acceleration, SpecFormer
 

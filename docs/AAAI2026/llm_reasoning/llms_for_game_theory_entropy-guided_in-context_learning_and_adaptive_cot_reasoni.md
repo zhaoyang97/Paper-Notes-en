@@ -18,8 +18,8 @@ content_hash: 37a11c7b7d24ab5d
 # LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.10775](https://arxiv.org/abs/2601.10775)
-**Code**: None
+**arXiv**: [2601.10775](https://arxiv.org/abs/2601.10775)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: Large Language Models, Game Theory, Entropy-Guided Reasoning, Chain-of-Thought, Retrieval-Augmented Generation
 

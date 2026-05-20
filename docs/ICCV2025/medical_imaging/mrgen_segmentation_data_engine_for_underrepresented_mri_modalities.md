@@ -18,8 +18,8 @@ content_hash: 475aeb7ebd64f3fa
 # MRGen: Segmentation Data Engine for Underrepresented MRI Modalities
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.04106](https://arxiv.org/abs/2412.04106)
-**Code**: [haoningwu3639.github.io/MRGen](https://haoningwu3639.github.io/MRGen/)
+**arXiv**: [2412.04106](https://arxiv.org/abs/2412.04106)  
+**Code**: [haoningwu3639.github.io/MRGen](https://haoningwu3639.github.io/MRGen/)  
 **Area**: Medical Imaging
 **Keywords**: MRI synthesis, diffusion models, data engine, segmentation, cross-modal generation
 

@@ -18,8 +18,8 @@ content_hash: 2f8e36053393a483
 # DISTA-Net: Dynamic Closely-Spaced Infrared Small Target Unmixing
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.19148](https://arxiv.org/abs/2505.19148)
-**Code**: [https://github.com/GrokCV/GrokCSO](https://github.com/GrokCV/GrokCSO)
+**arXiv**: [2505.19148](https://arxiv.org/abs/2505.19148)  
+**Code**: [https://github.com/GrokCV/GrokCSO](https://github.com/GrokCV/GrokCSO)  
 **Area**: LLM Evaluation
 **Keywords**: Infrared small target, closely-spaced target unmixing, deep unfolding network, sparse reconstruction, sub-pixel localization
 

@@ -18,8 +18,8 @@ content_hash: f00c65577c566726
 # Graph Out-of-Distribution Detection via Test-Time Calibration with Dual Dynamic Dictionaries
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13541](https://arxiv.org/abs/2511.13541)
-**Code**: None
+**arXiv**: [2511.13541](https://arxiv.org/abs/2511.13541)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: Graph OOD Detection, Test-Time Calibration, Graphon Mixup, Dual Dynamic Dictionary, Priority Queue
 

@@ -18,8 +18,8 @@ content_hash: 005f32191fa54053
 # Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13052](https://arxiv.org/abs/2511.13052)
-**Code**: [yunpal/LfU](https://github.com/yunpal/LfU)
+**arXiv**: [2511.13052](https://arxiv.org/abs/2511.13052)  
+**Code**: [yunpal/LfU](https://github.com/yunpal/LfU)  
 **Area**: LLM Safety
 **Keywords**: Supervised Fine-Tuning, Overfitting Mitigation, Consistency Regularization, Knowledge Retention, Adversarial Robustness
 

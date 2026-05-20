@@ -18,8 +18,8 @@ content_hash: 8fd1d598694f6574
 # JointDiff: Bridging Continuous and Discrete in Multi-Agent Trajectory Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22522](https://arxiv.org/abs/2509.22522)
-**Code**: [GitHub](https://github.com/kognia/JointDiff) (mentioned on project page)
+**arXiv**: [2509.22522](https://arxiv.org/abs/2509.22522)  
+**Code**: [GitHub](https://github.com/kognia/JointDiff) (mentioned on project page)  
 **Area**: Diffusion Models / Multi-Agent Trajectory Generation
 **Keywords**: joint diffusion, continuous-discrete unification, multi-agent, trajectory generation, controllable generation
 

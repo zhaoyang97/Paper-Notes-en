@@ -18,8 +18,8 @@ content_hash: 5464318730266d26
 # Topo-R1: Detecting Topological Anomalies via Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13054](https://arxiv.org/abs/2603.13054)
-**Code**: To be confirmed
+**arXiv**: [2603.13054](https://arxiv.org/abs/2603.13054)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Topological anomaly detection, tubular structure segmentation, GRPO reinforcement learning, clDice, VLM fine-grained perception
 

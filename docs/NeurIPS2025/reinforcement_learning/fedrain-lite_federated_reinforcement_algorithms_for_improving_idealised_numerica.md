@@ -18,8 +18,8 @@ content_hash: ab228a4f81f8a4e2
 # FedRAIN-Lite: Federated Reinforcement Algorithms for Improving Idealised Numerical Weather and Climate Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.14315](https://arxiv.org/abs/2508.14315)
-**Code**: [GitHub](https://github.com/p3jitnath/climate-rl-fedrl)
+**arXiv**: [2508.14315](https://arxiv.org/abs/2508.14315)  
+**Code**: [GitHub](https://github.com/p3jitnath/climate-rl-fedrl)  
 **Area**: Reinforcement Learning
 **Keywords**: Federated Reinforcement Learning, Climate Modeling, Parameterization, Energy Balance Model, DDPG
 

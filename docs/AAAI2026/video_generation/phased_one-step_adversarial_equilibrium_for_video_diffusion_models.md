@@ -18,8 +18,8 @@ content_hash: ff312fa7405490e1
 # Phased One-Step Adversarial Equilibrium for Video Diffusion Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.21019](https://arxiv.org/abs/2508.21019)
-**Code**: [https://v-pae.github.io/](https://v-pae.github.io/)
+**arXiv**: [2508.21019](https://arxiv.org/abs/2508.21019)  
+**Code**: [https://v-pae.github.io/](https://v-pae.github.io/)  
 **Area**: Diffusion Models / Video Generation
 **Keywords**: Video diffusion distillation, one-step generation, adversarial training, image-to-video, sampling acceleration
 

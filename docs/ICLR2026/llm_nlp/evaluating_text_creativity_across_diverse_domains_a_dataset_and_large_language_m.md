@@ -20,8 +20,8 @@ content_hash: 78687d3bb5e60dc2
 # Evaluating Text Creativity across Diverse Domains: A Dataset and Large Language Model Evaluator
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.19236](https://arxiv.org/abs/2505.19236)
-**Code**: [Project Page](https://creval-creative-evaluation.github.io)
+**arXiv**: [2505.19236](https://arxiv.org/abs/2505.19236)  
+**Code**: [Project Page](https://creval-creative-evaluation.github.io)  
 **Area**: LLM/NLP
 **Keywords**: creativity evaluation, LLM-as-a-judge, pairwise comparison, text creativity, dataset construction, CrEval, cross-domain evaluation
 

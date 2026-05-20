@@ -18,8 +18,8 @@ content_hash: fbfcb48ef7706a37
 # BindWeave: Subject-Consistent Video Generation via Cross-Modal Integration
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00438](https://arxiv.org/abs/2510.00438)
-**Code**: [https://lzy-dot.github.io/BindWeave/](https://lzy-dot.github.io/BindWeave/) (project page)
+**arXiv**: [2510.00438](https://arxiv.org/abs/2510.00438)  
+**Code**: [https://lzy-dot.github.io/BindWeave/](https://lzy-dot.github.io/BindWeave/) (project page)  
 **Area**: Video Generation / Subject Consistency
 **Keywords**: Subject-to-Video, MLLM Condition Injection, DiT, Multi-Reference Images, Cross-Modal Reasoning
 

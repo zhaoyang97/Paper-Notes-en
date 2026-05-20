@@ -18,8 +18,8 @@ content_hash: c4a63157c3d11a96
 # Inter2Former: Dynamic Hybrid Attention for Efficient High-Precision Interactive Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.09612](https://arxiv.org/abs/2507.09612)
-**Code**: [Inter2Former](https://github.com/YouHuang67/inter2former)
+**arXiv**: [2507.09612](https://arxiv.org/abs/2507.09612)  
+**Code**: [Inter2Former](https://github.com/YouHuang67/inter2former)  
 **Area**: Interactive Segmentation
 **Keywords**: interactive segmentation, high-precision segmentation, hybrid attention, BSQ attention, dynamic computation allocation
 

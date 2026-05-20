@@ -18,8 +18,8 @@ content_hash: ef54f1960d186356
 # MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.03101](https://arxiv.org/abs/2603.03101)
-**Code**: [Available](https://github.com/CoCoRessa/MoECLIP)
+**arXiv**: [2603.03101](https://arxiv.org/abs/2603.03101)  
+**Code**: [Available](https://github.com/CoCoRessa/MoECLIP)  
 **Area**: Medical Imaging
 **Keywords**: Zero-shot anomaly detection, mixture of experts, CLIP, LoRA, expert specialization
 

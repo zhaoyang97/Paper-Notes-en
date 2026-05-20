@@ -17,8 +17,8 @@ content_hash: 1ba8d2ea6720dccc
 # Rethinking SNN Online Training and Deployment: Gradient-Coherent Learning via Hybrid-Driven LIF Model
 
 **Conference**: CVPR 2026
-**arXiv**: [2410.07547](https://arxiv.org/abs/2410.07547)
-**Code**: [GitHub](https://github.com/hzc1208/HD_LIF)
+**arXiv**: [2410.07547](https://arxiv.org/abs/2410.07547)  
+**Code**: [GitHub](https://github.com/hzc1208/HD_LIF)  
 **Area**: Spiking Neural Networks / Model Compression
 **Keywords**: SNN, online training, LIF model, gradient separability, low-power inference
 

@@ -18,8 +18,8 @@ content_hash: ae97a906f70c4011
 # F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23173](https://arxiv.org/abs/2509.23173)
-**Code**: [Available](https://github.com/)
+**arXiv**: [2509.23173](https://arxiv.org/abs/2509.23173)  
+**Code**: [Available](https://github.com/)  
 **Area**: Scientific Computing
 **Keywords**: Parameter-efficient fine-tuning, Fourier neural operator, frequency-adaptive, scientific machine learning, large operator model
 

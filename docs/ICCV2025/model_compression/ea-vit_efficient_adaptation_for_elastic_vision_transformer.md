@@ -18,8 +18,8 @@ content_hash: e07bd0455c691234
 # EA-ViT: Efficient Adaptation for Elastic Vision Transformer
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19360](https://arxiv.org/abs/2507.19360)
-**Code**: [https://github.com/zcxcf/EA-ViT](https://github.com/zcxcf/EA-ViT)
+**arXiv**: [2507.19360](https://arxiv.org/abs/2507.19360)  
+**Code**: [https://github.com/zcxcf/EA-ViT](https://github.com/zcxcf/EA-ViT)  
 **Area**: Model Compression / Elastic Networks
 **Keywords**: Vision Transformer, Elastic Architecture, Sub-model Selection, Curriculum Learning, Pareto Optimization
 

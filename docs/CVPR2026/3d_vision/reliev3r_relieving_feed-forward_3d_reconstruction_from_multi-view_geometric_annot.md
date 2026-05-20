@@ -18,8 +18,8 @@ content_hash: cd1dcda7367f2110
 # Reliev3R: Relieving Feed-forward 3D Reconstruction from Multi-View Geometric Annotations
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00548](https://arxiv.org/abs/2604.00548)
-**Code**: None
+**arXiv**: [2604.00548](https://arxiv.org/abs/2604.00548)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: feed-forward 3D reconstruction, weak supervision, monocular depth, sparse correspondences, SfM-free training
 

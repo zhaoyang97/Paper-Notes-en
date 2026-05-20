@@ -18,8 +18,8 @@ content_hash: dc485b6edfaf3bcd
 # Hallucinate Less by Thinking More: Aspect-Based Causal Abstention for Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.17170](https://arxiv.org/abs/2511.17170)
-**Code**: [https://github.com/vnht/abca](https://github.com/vnht/abca)
+**arXiv**: [2511.17170](https://arxiv.org/abs/2511.17170)  
+**Code**: [https://github.com/vnht/abca](https://github.com/vnht/abca)  
 **Area**: LLM Reasoning / Hallucination Detection / Causal Inference
 **Keywords**: Selective answering, causal abstention, aspect variables, knowledge conflict detection, AIPW estimation
 

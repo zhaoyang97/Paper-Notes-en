@@ -18,8 +18,8 @@ content_hash: 2262762f1ff9a53a
 # Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.19814](https://arxiv.org/abs/2509.19814)
-**Code**: Not available
+**arXiv**: [2509.19814](https://arxiv.org/abs/2509.19814)  
+**Code**: Not available  
 **Area**: Robotics
 **Keywords**: threshold manipulation, Bayesian mixture model, heterogeneous causal effects, regression discontinuity design, consumer behavior
 

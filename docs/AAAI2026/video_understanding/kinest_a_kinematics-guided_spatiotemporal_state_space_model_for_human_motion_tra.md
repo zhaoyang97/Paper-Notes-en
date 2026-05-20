@@ -18,8 +18,8 @@ content_hash: 7751e5341fe98998
 # KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.16791](https://arxiv.org/abs/2512.16791)
-**Code**: [Project Page](https://kaka-1314.github.io/KineST/)
+**arXiv**: [2512.16791](https://arxiv.org/abs/2512.16791)  
+**Code**: [Project Page](https://kaka-1314.github.io/KineST/)  
 **Area**: Video Understanding
 **Keywords**: Whole-body motion tracking, state space model, kinematics prior, AR/VR, sparse signals
 

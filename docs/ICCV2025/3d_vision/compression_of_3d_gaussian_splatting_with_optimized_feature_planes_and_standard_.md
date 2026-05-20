@@ -18,8 +18,8 @@ content_hash: afcabe0030411d65
 # Compression of 3D Gaussian Splatting with Optimized Feature Planes and Standard Video Codecs
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.03399](https://arxiv.org/abs/2501.03399)
-**Code**: [https://fraunhoferhhi.github.io/CodecGS](https://fraunhoferhhi.github.io/CodecGS)
+**arXiv**: [2501.03399](https://arxiv.org/abs/2501.03399)  
+**Code**: [https://fraunhoferhhi.github.io/CodecGS](https://fraunhoferhhi.github.io/CodecGS)  
 **Area**: 3D Vision / 3DGS Compression
 **Keywords**: 3D Gaussian Splatting, compression, feature planes, video codec, entropy modeling
 

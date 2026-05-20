@@ -18,8 +18,8 @@ content_hash: 0f184acaf6c54d4a
 # FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02096](https://arxiv.org/abs/2603.02096)
-**Code**: [https://github.com/YiwengXie/FluxMem](https://github.com/YiwengXie/FluxMem)
+**arXiv**: [2603.02096](https://arxiv.org/abs/2603.02096)  
+**Code**: [https://github.com/YiwengXie/FluxMem](https://github.com/YiwengXie/FluxMem)  
 **Area**: Video Understanding
 **Keywords**: streaming video understanding, hierarchical memory, visual token compression, adaptive thresholding, training-free
 

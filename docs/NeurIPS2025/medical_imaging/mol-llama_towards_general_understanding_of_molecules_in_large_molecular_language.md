@@ -18,8 +18,8 @@ content_hash: 7546e639666d270c
 # Mol-LLaMA: Towards General Understanding of Molecules in Large Molecular Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.13449](https://arxiv.org/abs/2502.13449)
-**Code**: [Project Page](https://mol-llama.github.io/)
+**arXiv**: [2502.13449](https://arxiv.org/abs/2502.13449)  
+**Code**: [Project Page](https://mol-llama.github.io/)  
 **Area**: Medical Imaging / AI for Science
 **Keywords**: molecular language model, multimodal instruction tuning, 2D-3D molecular representation fusion, drug discovery, molecular reasoning
 
@@ -74,8 +74,8 @@ Training proceeds in two stages: molecular representation learning (aligning mol
 
 3. **Q-Former Projector**
 
-   - A SciBERT-initialized Q-Former models the interaction between learnable query tokens and unified molecular representations via cross-attention.
-   - The cross-attention mechanism in Q-Former naturally ensures permutation invariance, making it well-suited for graph-structured data.
+    - A SciBERT-initialized Q-Former models the interaction between learnable query tokens and unified molecular representations via cross-attention.
+    - The cross-attention mechanism in Q-Former naturally ensures permutation invariance, making it well-suited for graph-structured data.
 
 ### Loss & Training
 

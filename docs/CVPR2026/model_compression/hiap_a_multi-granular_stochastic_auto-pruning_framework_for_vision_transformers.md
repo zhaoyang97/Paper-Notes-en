@@ -18,8 +18,8 @@ content_hash: 40667d3f651be89c
 # HiAP: A Multi-Granular Stochastic Auto-Pruning Framework for Vision Transformers
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12222](https://arxiv.org/abs/2603.12222)
-**Code**: None
+**arXiv**: [2603.12222](https://arxiv.org/abs/2603.12222)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Vision Transformer pruning, multi-granular structured pruning, Gumbel-Sigmoid gating, budget-aware optimization, single-stage compression
 
@@ -87,43 +87,43 @@ An important point emphasized by the authors is that the final output is not a p
 
 1. **Macro Gates: Determining the Existence of Large Structures**
 
-   - *Function*: Make on/off decisions for attention heads and FFN blocks.
-   - *Mechanism*: If the gate $g_{l,h}=0$ for head $h$ at layer $l$, the entire head is bypassed; if $b_l=0$, the entire FFN sub-layer is removed.
-   - *Mathematical form*: The attention output is $\text{AttnOut}_{l,h}(X)=g_{l,h}\cdot \text{Attention}(XW^Q_{l,h},XW^K_{l,h},XW^V_{l,h})$; the FFN output is $\text{FFNOut}_{l}(X)=b_l\cdot \text{FFN}(X)$.
-   - *Design motivation*: Once a macro structure is switched off, all associated matrix computations and data movement become unnecessary. Macro gating therefore corresponds directly to pruning the actual inference path, not merely reducing FLOPs on paper.
+    - *Function*: Make on/off decisions for attention heads and FFN blocks.
+    - *Mechanism*: If the gate $g_{l,h}=0$ for head $h$ at layer $l$, the entire head is bypassed; if $b_l=0$, the entire FFN sub-layer is removed.
+    - *Mathematical form*: The attention output is $\text{AttnOut}_{l,h}(X)=g_{l,h}\cdot \text{Attention}(XW^Q_{l,h},XW^K_{l,h},XW^V_{l,h})$; the FFN output is $\text{FFNOut}_{l}(X)=b_l\cdot \text{FFN}(X)$.
+    - *Design motivation*: Once a macro structure is switched off, all associated matrix computations and data movement become unnecessary. Macro gating therefore corresponds directly to pruning the actual inference path, not merely reducing FLOPs on paper.
 
 2. **Micro Gates: Further Slimming Retained Structures**
 
-   - *Function*: Perform fine-grained pruning of value dimensions within active heads and hidden neurons within active FFN blocks.
-   - *Mechanism*: For surviving heads, the full $D_h$-dimensional value channel is no longer assumed to be necessary; a gate vector $d_{l,h}$ selects the genuinely useful dimensions. For FFN blocks, $c_l$ determines which intermediate neurons continue to participate in the two linear projections.
-   - *Mathematical form*: $\text{Head}'_{l,h}(X)=g_{l,h}\left[\text{softmax}\left(\frac{Q_{l,h}K_{l,h}^{\top}}{\sqrt{D_h}}\right)(V_{l,h}\odot d_{l,h})\right]$; $\text{FFN}'_l(X)=b_l\left[(\phi(XW_{1,l})\odot c_l)W_{2,l}\right]$.
-   - *Design motivation*: With only macro gates, the model can only make coarse retain/remove decisions, which severely limits the expressible structural space. Micro gates allow retained structures to develop heterogeneous widths per layer, per head, and per neuron, providing substantially more room for accuracy preservation.
+    - *Function*: Perform fine-grained pruning of value dimensions within active heads and hidden neurons within active FFN blocks.
+    - *Mechanism*: For surviving heads, the full $D_h$-dimensional value channel is no longer assumed to be necessary; a gate vector $d_{l,h}$ selects the genuinely useful dimensions. For FFN blocks, $c_l$ determines which intermediate neurons continue to participate in the two linear projections.
+    - *Mathematical form*: $\text{Head}'_{l,h}(X)=g_{l,h}\left[\text{softmax}\left(\frac{Q_{l,h}K_{l,h}^{\top}}{\sqrt{D_h}}\right)(V_{l,h}\odot d_{l,h})\right]$; $\text{FFN}'_l(X)=b_l\left[(\phi(XW_{1,l})\odot c_l)W_{2,l}\right]$.
+    - *Design motivation*: With only macro gates, the model can only make coarse retain/remove decisions, which severely limits the expressible structural space. Micro gates allow retained structures to develop heterogeneous widths per layer, per head, and per neuron, providing substantially more room for accuracy preservation.
 
 3. **Analytic Differentiable Cost Modeling**
 
-   - *Function*: Explicitly decompose prunable MACs into several categories of elementary costs, which are then used to penalize the gates.
-   - *Mechanism*: The prunable cost is decomposed into three constants: $C_1$ corresponds to the macro overhead of a single head; $C_2$ corresponds to the micro cost of retaining one attention value dimension; $C_3$ corresponds to the cost of retaining one FFN neuron.
-   - *Specific form*: $C_1=2ND(3D_h)+2N^2D_h$, $C_2=2ND+2N^2$, $C_3=4ND$.
-   - *Expected total cost*: $\mathbb{E}[C(\mathcal{G})]=\sum_{l,h}\left(C_1\mathbb{E}[g_{l,h}]+C_2\sum_j\mathbb{E}[g_{l,h}d_{l,h,j}]\right)+\sum_{l,k}C_3\mathbb{E}[b_lc_{l,k}]$.
-   - *Design motivation*: This decomposition enables the optimizer to clearly distinguish between the waste of keeping an empty head alive and the incremental benefit of retaining a head with fewer dimensions, thereby more naturally learning a strategy of first closing idle macro structures and then compressing their internal widths.
+    - *Function*: Explicitly decompose prunable MACs into several categories of elementary costs, which are then used to penalize the gates.
+    - *Mechanism*: The prunable cost is decomposed into three constants: $C_1$ corresponds to the macro overhead of a single head; $C_2$ corresponds to the micro cost of retaining one attention value dimension; $C_3$ corresponds to the cost of retaining one FFN neuron.
+    - *Specific form*: $C_1=2ND(3D_h)+2N^2D_h$, $C_2=2ND+2N^2$, $C_3=4ND$.
+    - *Expected total cost*: $\mathbb{E}[C(\mathcal{G})]=\sum_{l,h}\left(C_1\mathbb{E}[g_{l,h}]+C_2\sum_j\mathbb{E}[g_{l,h}d_{l,h,j}]\right)+\sum_{l,k}C_3\mathbb{E}[b_lc_{l,k}]$.
+    - *Design motivation*: This decomposition enables the optimizer to clearly distinguish between the waste of keeping an empty head alive and the incremental benefit of retaining a head with fewer dimensions, thereby more naturally learning a strategy of first closing idle macro structures and then compressing their internal widths.
 
 4. **Gumbel-Sigmoid Gating for Training**
 
-   - *Function*: Enable binary structural selection to participate in gradient descent.
-   - *Mechanism*: Each gate has a learnable logit $\alpha$; during the forward pass, Logistic noise $\epsilon$ is sampled and the continuous gate value is produced via $\hat{z}=\sigma((\alpha+\epsilon)/\tau)$; gradients are propagated in the backward pass using the Straight-Through Estimator.
-   - *Design motivation*: Direct hard sampling leads to highly unstable training. The continuous relaxation allows the originally discrete, non-differentiable problem of structure removal to be handled by standard optimizers.
+    - *Function*: Enable binary structural selection to participate in gradient descent.
+    - *Mechanism*: Each gate has a learnable logit $\alpha$; during the forward pass, Logistic noise $\epsilon$ is sampled and the continuous gate value is produced via $\hat{z}=\sigma((\alpha+\epsilon)/\tau)$; gradients are propagated in the backward pass using the Straight-Through Estimator.
+    - *Design motivation*: Direct hard sampling leads to highly unstable training. The continuous relaxation allows the originally discrete, non-differentiable problem of structure removal to be handled by standard optimizers.
 
 5. **Structural Feasibility Constraints to Prevent Layer Collapse**
 
-   - *Function*: Prevent the model from prematurely emptying an entire layer or structural category in pursuit of budget reduction.
-   - *Mechanism*: For example, the head-count constraint is written as $\mathcal{L}_{f,\text{head}}=\sum_l \text{ReLU}(k_{\min}-\sum_h g_{l,h})^2$, imposing a strong penalty whenever the number of active heads in a layer falls below a minimum; analogous constraints enforce minimum dimension retention within active heads and minimum neuron retention within FFN blocks.
-   - *Design motivation*: A common failure mode in differentiable search is that optimization prematurely empties an entire layer—improving the budget term immediately while the network has no opportunity to reorganize its representations. These constraints essentially serve as structural safety guardrails for the search process.
+    - *Function*: Prevent the model from prematurely emptying an entire layer or structural category in pursuit of budget reduction.
+    - *Mechanism*: For example, the head-count constraint is written as $\mathcal{L}_{f,\text{head}}=\sum_l \text{ReLU}(k_{\min}-\sum_h g_{l,h})^2$, imposing a strong penalty whenever the number of active heads in a layer falls below a minimum; analogous constraints enforce minimum dimension retention within active heads and minimum neuron retention within FFN blocks.
+    - *Design motivation*: A common failure mode in differentiable search is that optimization prematurely empties an entire layer—improving the budget term immediately while the network has no opportunity to reorganize its representations. These constraints essentially serve as structural safety guardrails for the search process.
 
 6. **Single-Stage Search and Export**
 
-   - *Function*: Integrate search, adaptation, and export into a single continuous training pipeline.
-   - *Mechanism*: High temperature $\tau$ in early training causes gates to perturb structures continuously, akin to soft dropout; low temperature in late training bimodalizes the gates, progressively approaching 0/1; upon completion, gates are hardened and weight matrices are physically truncated.
-   - *Design motivation*: This avoids the two-stage cost of "find mask first, then fine-tune separately," and eliminates additional engineering steps such as threshold tuning and structural backfilling.
+    - *Function*: Integrate search, adaptation, and export into a single continuous training pipeline.
+    - *Mechanism*: High temperature $\tau$ in early training causes gates to perturb structures continuously, akin to soft dropout; low temperature in late training bimodalizes the gates, progressively approaching 0/1; upon completion, gates are hardened and weight matrices are physically truncated.
+    - *Design motivation*: This avoids the two-stage cost of "find mask first, then fine-tune separately," and eliminates additional engineering steps such as threshold tuning and structural backfilling.
 
 ### Loss & Training
 

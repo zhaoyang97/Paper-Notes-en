@@ -18,8 +18,8 @@ content_hash: f2eca5183d717af4
 # Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.02779](https://arxiv.org/abs/2510.02779)
-**Code**: None
+**arXiv**: [2510.02779](https://arxiv.org/abs/2510.02779)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: Deep ReLU networks, generalization bounds, Rademacher complexity, NTK separability, gradient descent
 

@@ -18,8 +18,8 @@ content_hash: 64d02fbcbbb29800
 # Rethinking Circuit Completeness in Language Models: AND, OR, and ADDER Gates
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.10039](https://arxiv.org/abs/2505.10039)
-**Code**: None
+**arXiv**: [2505.10039](https://arxiv.org/abs/2505.10039)  
+**Code**: None  
 **Area**: LLM Interpretability (Note: original category image_restoration is incorrect)
 **Keywords**: circuit discovery, mechanistic interpretability, logic gates, completeness, faithfulness
 

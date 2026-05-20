@@ -19,8 +19,8 @@ content_hash: e09aa09d2b550b78
 # Note2Chat: Improving LLMs for Multi-Turn Clinical History Taking Using Medical Notes
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.21551](https://arxiv.org/abs/2601.21551)
-**Code**: [GitHub](https://github.com/zhentingsheng/Note2Chat)
+**arXiv**: [2601.21551](https://arxiv.org/abs/2601.21551)  
+**Code**: [GitHub](https://github.com/zhentingsheng/Note2Chat)  
 **Area**: Medical AI / Clinical Dialogue
 **Keywords**: Clinical history taking, multi-turn dialogue, large language models, medical notes, preference optimization, differential diagnosis
 

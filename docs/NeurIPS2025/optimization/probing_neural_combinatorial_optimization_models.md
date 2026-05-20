@@ -18,8 +18,8 @@ content_hash: 09a7b57cb4d60e90
 # Probing Neural Combinatorial Optimization Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22131](https://arxiv.org/abs/2510.22131)
-**Code**: [GitHub](https://github.com/123zhangzq/NeurIPS2025_probing/)
+**arXiv**: [2510.22131](https://arxiv.org/abs/2510.22131)  
+**Code**: [GitHub](https://github.com/123zhangzq/NeurIPS2025_probing/)  
 **Area**: Optimization
 **Keywords**: Neural Combinatorial Optimization, Interpretability, Probing Analysis, Embedding Representations, Generalization
 
@@ -51,9 +51,9 @@ Three representative Transformer-based NCO models are studied: AM (Attention Mod
 
 1. **Probe Task Design**: Two levels of tasks are designed for TSP —
 
-   - **Task 1 (Low-Level)**: Can the model perceive Euclidean distances? A linear probe regresses pairwise Euclidean distances from embeddings, with $R^2$ as the evaluation metric.
-   - **Task 2 (High-Level)**: Can the model avoid greedy myopia? This task assesses whether the model has learned to avoid always selecting the nearest node, measured by AUC.
-   - **Tasks 3/4 (CVRP)**: Understanding constraint relationships (demand additivity) and route membership information.
+    - **Task 1 (Low-Level)**: Can the model perceive Euclidean distances? A linear probe regresses pairwise Euclidean distances from embeddings, with $R^2$ as the evaluation metric.
+    - **Task 2 (High-Level)**: Can the model avoid greedy myopia? This task assesses whether the model has learned to avoid always selecting the nearest node, measured by AUC.
+    - **Tasks 3/4 (CVRP)**: Understanding constraint relationships (demand additivity) and route membership information.
 
    Key findings: Initial embeddings (after linear projection) fail to linearly capture Euclidean distances ($R^2 \approx 0$), but $R^2$ increases substantially after attention layers, reaching 0.94 for LEHD. All models achieve AUC > 0.8 on Task 2, indicating that globally optimal, non-myopic knowledge has been learned.
 

@@ -17,8 +17,8 @@ content_hash: 75176e82ad938095
 # Boosting Adversarial Transferability via Ensemble Non-Attention
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08937](https://arxiv.org/abs/2511.08937)
-**Code**: None
+**arXiv**: [2511.08937](https://arxiv.org/abs/2511.08937)  
+**Code**: None  
 **Area**: Other
 **Keywords**: adversarial transferability, ensemble attack, non-attention areas, meta-learning, cross-architecture attack
 

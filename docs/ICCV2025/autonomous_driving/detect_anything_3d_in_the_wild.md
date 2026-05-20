@@ -18,8 +18,8 @@ content_hash: 2eb6b239852f598f
 # Detect Anything 3D in the Wild
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.07958](https://arxiv.org/abs/2504.07958)
-**Code**: [https://github.com/OpenDriveLab/DetAny3D](https://github.com/OpenDriveLab/DetAny3D)
+**arXiv**: [2504.07958](https://arxiv.org/abs/2504.07958)  
+**Code**: [https://github.com/OpenDriveLab/DetAny3D](https://github.com/OpenDriveLab/DetAny3D)  
 **Area**: Autonomous Driving / 3D Object Detection
 **Keywords**: 3D detection foundation model, zero-shot generalization, monocular 3D detection, 2D-to-3D knowledge transfer, open-world detection
 

@@ -18,8 +18,8 @@ content_hash: 26f579d8dc7f6e42
 # EDBench: Large-Scale Electron Density Data for Molecular Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.09262](https://arxiv.org/abs/2505.09262)
-**Code**: Available (see paper homepage)
+**arXiv**: [2505.09262](https://arxiv.org/abs/2505.09262)  
+**Code**: Available (see paper homepage)  
 **Area**: Medical Imaging
 **Keywords**: electron density, molecular force fields, density functional theory, benchmark dataset, geometric deep learning
 

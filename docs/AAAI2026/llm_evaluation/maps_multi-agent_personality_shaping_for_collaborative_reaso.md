@@ -18,8 +18,8 @@ content_hash: 3dd3d1160c3635cd
 # MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.16905](https://arxiv.org/abs/2503.16905)
-**Code**: [https://github.com/exoskeletonzj/MAPS](https://github.com/exoskeletonzj/MAPS)
+**arXiv**: [2503.16905](https://arxiv.org/abs/2503.16905)  
+**Code**: [https://github.com/exoskeletonzj/MAPS](https://github.com/exoskeletonzj/MAPS)  
 **Area**: LLM Evaluation
 **Keywords**: Big Five Personality Theory, Multi-Agent Collaboration, Socratic Critique, Multimodal Scientific Reasoning, Personality Shaping
 

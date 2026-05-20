@@ -18,8 +18,8 @@ content_hash: 3318da774f253a42
 # Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.16471](https://arxiv.org/abs/2506.16471)
-**Code**: [GitHub](https://github.com/taraak/pita)
+**arXiv**: [2506.16471](https://arxiv.org/abs/2506.16471)  
+**Code**: [GitHub](https://github.com/taraak/pita)  
 **Area**: Diffusion Models / Sampling / Molecular Simulation
 **Keywords**: Boltzmann Sampling, Temperature Annealing, Feynman-Kac, Diffusion Models, Molecular Conformation
 
@@ -53,10 +53,10 @@ $$d\log w_t = \left[\frac{\zeta_t^2}{2}\langle\nabla, s_t\rangle - \gamma\langle
 **Design Motivation**: When $\gamma=1$ (no annealing) and the model is perfect, the weight variance is exactly zero (Proposition 2), recovering standard diffusion sampling. This guarantees that importance weights remain concentrated for small annealing steps, ensuring high sampling efficiency.
 
 2. **Training Phase (Algorithm 1)**: Four loss functions are jointly optimized:
-   - **Denoising Score Matching**: trains the score model $D_t(x_t;\theta)$.
-   - **Target Score Matching**: directly supervises the score using $\nabla_x \log \pi(x)$ from the target distribution at high noise levels (activated only when $t \geq t_{\text{thresh}}$), compensating for the high variance of DSM near the data distribution.
-   - **EBM Distillation**: distills the score model into an energy-based model.
-   - **Energy Pinning**: supervises the endpoint energy model $U_{t=1}(x;\eta)$ with the target energy $\beta_{i+1}\log\pi(x)$, fixing the gauge (translation invariance) of the energy.
+    - **Denoising Score Matching**: trains the score model $D_t(x_t;\theta)$.
+    - **Target Score Matching**: directly supervises the score using $\nabla_x \log \pi(x)$ from the target distribution at high noise levels (activated only when $t \geq t_{\text{thresh}}$), compensating for the high variance of DSM near the data distribution.
+    - **EBM Distillation**: distills the score model into an energy-based model.
+    - **Energy Pinning**: supervises the endpoint energy model $U_{t=1}(x;\eta)$ with the target energy $\beta_{i+1}\log\pi(x)$, fixing the gauge (translation invariance) of the energy.
 
 3. **Geometric Annealing Variant (Proposition 3 / Appendix A.2)**: For unbounded supports (e.g., $\text{supp}(\pi) = \mathbb{R}^d$), direct annealing may cause numerical instability. A geometric average $\mathcal{N}(0,\mathbb{1})^{(1-\beta)}\pi(x)^\beta$ is instead used, ensuring normalizability at any temperature.
 

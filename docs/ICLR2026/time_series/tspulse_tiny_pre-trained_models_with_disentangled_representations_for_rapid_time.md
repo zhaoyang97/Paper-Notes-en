@@ -18,8 +18,8 @@ content_hash: a138663a64cceb0c
 # TSPulse: Tiny Pre-Trained Models with Disentangled Representations for Rapid Time Series
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.13033](https://arxiv.org/abs/2505.13033)
-**Code**: [https://huggingface.co/ibm-granite/granite-timeseries-tspulse-r1](https://huggingface.co/ibm-granite/granite-timeseries-tspulse-r1)
+**arXiv**: [2505.13033](https://arxiv.org/abs/2505.13033)  
+**Code**: [https://huggingface.co/ibm-granite/granite-timeseries-tspulse-r1](https://huggingface.co/ibm-granite/granite-timeseries-tspulse-r1)  
 **Area**: Time Series
 **Keywords**: Time Series Pre-trained Model, Disentangled Representations, Dual-Space Reconstruction, Anomaly Detection, Tiny Model
 

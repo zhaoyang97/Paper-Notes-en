@@ -18,8 +18,8 @@ content_hash: 4add54e08dddbc74
 # SciVid: Cross-Domain Evaluation of Video Models in Scientific Applications
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.03578](https://arxiv.org/abs/2507.03578)
-**Code**: [github.com/google-deepmind/scivid](https://github.com/google-deepmind/scivid)
+**arXiv**: [2507.03578](https://arxiv.org/abs/2507.03578)  
+**Code**: [github.com/google-deepmind/scivid](https://github.com/google-deepmind/scivid)  
 **Area**: Medical Imaging
 **Keywords**: Video Foundation Models, Cross-Domain Evaluation, Scientific Applications, Benchmark, Spatiotemporal Modeling
 

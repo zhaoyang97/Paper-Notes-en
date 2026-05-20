@@ -17,8 +17,8 @@ content_hash: 436f19c6d297ead6
 # Balancing Multimodal Domain Generalization via Gradient Modulation and Projection
 
 **Conference**: AAAI2026
-**arXiv**: [2603.14175](https://arxiv.org/abs/2603.14175)
-**Code**: To be confirmed
+**arXiv**: [2603.14175](https://arxiv.org/abs/2603.14175)  
+**Code**: To be confirmed  
 **Area**: Video Understanding
 **Keywords**: Multimodal Domain Generalization, Gradient Modulation, Gradient Projection, Optimization Imbalance
 

@@ -18,8 +18,8 @@ content_hash: fabef97b3cb86e85
 # Spectral Sensitivity Estimation with an Uncalibrated Diffraction Grating
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00330](https://arxiv.org/abs/2508.00330)
-**Code**: None
+**arXiv**: [2508.00330](https://arxiv.org/abs/2508.00330)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: spectral sensitivity, diffraction grating, camera calibration, closed-form solution, pixel-wavelength mapping
 

@@ -18,8 +18,8 @@ content_hash: 733160e4b37a7a52
 # FlowCast: Advancing Precipitation Nowcasting with Conditional Flow Matching
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.09731](https://arxiv.org/abs/2511.09731)
-**Code**: [GitHub](https://github.com/b-rbmp/FlowCast)
+**arXiv**: [2511.09731](https://arxiv.org/abs/2511.09731)  
+**Code**: [GitHub](https://github.com/b-rbmp/FlowCast)  
 **Area**: Diffusion Models / Weather Forecasting
 **Keywords**: Conditional Flow Matching, precipitation nowcasting, probabilistic forecasting, latent-space generation, spatiotemporal prediction
 

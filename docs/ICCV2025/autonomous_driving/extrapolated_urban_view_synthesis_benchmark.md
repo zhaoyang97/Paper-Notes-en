@@ -17,8 +17,8 @@ content_hash: d583281ede7c24cc
 # Extrapolated Urban View Synthesis Benchmark
 
 **Conference**: ICCV2025
-**arXiv**: [2412.05256](https://arxiv.org/abs/2412.05256)
-**Code**: [Project Page](https://ai4ce.github.io/EUVS-Benchmark)
+**arXiv**: [2412.05256](https://arxiv.org/abs/2412.05256)  
+**Code**: [Project Page](https://ai4ce.github.io/EUVS-Benchmark)  
 **Area**: Autonomous Driving
 **Keywords**: novel view synthesis, 3D Gaussian Splatting, benchmark, extrapolation, autonomous driving
 

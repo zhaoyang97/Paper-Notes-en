@@ -18,8 +18,8 @@ content_hash: c197ba4db5080772
 # Generalising Traffic Forecasting to Regions without Traffic Observations
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.08947](https://arxiv.org/abs/2508.08947)
-**Code**: [https://github.com/suzy0223/GenCast](https://github.com/suzy0223/GenCast)
+**arXiv**: [2508.08947](https://arxiv.org/abs/2508.08947)  
+**Code**: [https://github.com/suzy0223/GenCast](https://github.com/suzy0223/GenCast)  
 **Area**: Autonomous Driving
 **Keywords**: traffic forecasting, spatial-temporal, physics-informed, graph neural networks, generalization
 

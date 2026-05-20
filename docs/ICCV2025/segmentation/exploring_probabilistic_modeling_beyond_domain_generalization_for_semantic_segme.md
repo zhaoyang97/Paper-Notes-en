@@ -18,8 +18,8 @@ content_hash: 84916a8606dbf230
 # Exploring Probabilistic Modeling Beyond Domain Generalization for Semantic Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.21367](https://arxiv.org/abs/2507.21367)
-**Code**: [https://pdaf-iccv.github.io](https://pdaf-iccv.github.io)
+**arXiv**: [2507.21367](https://arxiv.org/abs/2507.21367)  
+**Code**: [https://pdaf-iccv.github.io](https://pdaf-iccv.github.io)  
 **Area**: Image Segmentation
 **Keywords**: domain generalization, semantic segmentation, diffusion models, latent domain prior, probabilistic modeling
 

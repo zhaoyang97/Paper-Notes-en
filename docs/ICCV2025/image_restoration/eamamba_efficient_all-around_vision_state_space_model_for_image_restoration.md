@@ -17,8 +17,8 @@ content_hash: 6c1049508eb5e272
 # EAMamba: Efficient All-Around Vision State Space Model for Image Restoration
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22246](https://arxiv.org/abs/2506.22246)
-**Code**: [https://github.com/daidaijr/EAMamba](https://github.com/daidaijr/EAMamba)
+**arXiv**: [2506.22246](https://arxiv.org/abs/2506.22246)  
+**Code**: [https://github.com/daidaijr/EAMamba](https://github.com/daidaijr/EAMamba)  
 **Area**: Image Restoration
 **Keywords**: Vision Mamba, state space model, image restoration, multi-head selective scan, all-around scanning
 

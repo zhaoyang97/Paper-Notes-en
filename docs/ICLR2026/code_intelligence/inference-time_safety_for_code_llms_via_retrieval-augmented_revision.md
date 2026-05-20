@@ -18,8 +18,8 @@ content_hash: 7587552cfd2185b4
 # Inference-Time Safety for Code LLMs via Retrieval-Augmented Revision
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01494](https://arxiv.org/abs/2603.01494)
-**Code**: None
+**arXiv**: [2603.01494](https://arxiv.org/abs/2603.01494)  
+**Code**: None  
 **Area**: Code Security / Retrieval-Augmented Generation
 **Keywords**: code safety, retrieval-augmented generation, inference-time intervention, vulnerability repair, Stack Overflow
 

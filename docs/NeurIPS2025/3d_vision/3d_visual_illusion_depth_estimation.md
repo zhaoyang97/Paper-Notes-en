@@ -18,8 +18,8 @@ content_hash: 22c5b21c71ce92e6
 # 3D Visual Illusion Depth Estimation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13061](https://arxiv.org/abs/2505.13061)
-**Code**: [GitHub](https://github.com/YaoChengTang/3D-Visual-Illusion-Depth-Estimation)
+**arXiv**: [2505.13061](https://arxiv.org/abs/2505.13061)  
+**Code**: [GitHub](https://github.com/YaoChengTang/3D-Visual-Illusion-Depth-Estimation)  
 **Area**: 3D Vision / Depth Estimation
 **Keywords**: 3D visual illusion, depth estimation, monocular-stereo fusion, vision-language model, Flow Matching
 
@@ -45,25 +45,25 @@ The proposed VLM-Driven Monocular-Stereo Fusion Model consists of two core compo
 
 ### Key Designs
 1. **Dual-branch prediction network**:
-   - Stereo branch: based on a GRU iterative refinement framework; extracts features from rectified image pairs, constructs a cost volume, and iteratively refines disparity from a zero initialization.
-   - Monocular branch: a frozen DepthAnything V2 predicts affine-invariant inverse depth; monocular features are simultaneously extracted as left-view context to assist stereo disparity refinement.
-   - Elegant design: monocular features not only produce an independent depth prediction but also feed back into the stereo branch.
+    - Stereo branch: based on a GRU iterative refinement framework; extracts features from rectified image pairs, constructs a cost volume, and iteratively refines disparity from a zero initialization.
+    - Monocular branch: a frozen DepthAnything V2 predicts affine-invariant inverse depth; monocular features are simultaneously extracted as left-view context to assist stereo disparity refinement.
+    - Elegant design: monocular features not only produce an independent depth prediction but also feed back into the stereo branch.
 
 2. **VLM prediction stage**:
-   - A pretrained QwenVL2-7B is employed; the visual prompt comprises the left image, the stereo disparity map, and the monocular disparity map.
-   - The language prompt is designed from the perspective of "which materials interfere with stereo matching" (e.g., transparent/reflective objects) rather than directly describing complex illusion textures.
-   - The last layer of the VLM is fine-tuned with LoRA.
+    - A pretrained QwenVL2-7B is employed; the visual prompt comprises the left image, the stereo disparity map, and the monocular disparity map.
+    - The language prompt is designed from the perspective of "which materials interfere with stereo matching" (e.g., transparent/reflective objects) rather than directly describing complex illusion textures.
+    - The last layer of the VLM is fine-tuned with LoRA.
 
 3. **Confidence map generation (Flow Matching)**:
-   - Inspired by FLUX, flow matching is used to learn a guided path flow from Gaussian noise to the confidence distribution.
-   - Image-text embeddings from the VLM serve as conditioning information, injected via Transformer with cross-attention.
-   - A VAE decoder maps the final state back to image space; the result is concatenated with the cost volume and processed by a convolutional layer to predict the confidence map.
+    - Inspired by FLUX, flow matching is used to learn a guided path flow from Gaussian noise to the confidence distribution.
+    - Image-text embeddings from the VLM serve as conditioning information, injected via Transformer with cross-attention.
+    - A VAE decoder maps the final state back to image space; the result is concatenated with the cost volume and processed by a convolutional layer to predict the confidence map.
 
 4. **Global fusion stage**:
-   - An affine transformation aligns monocular disparity to absolute/metric space: $\tilde{D}_m = s_m \cdot D_m + t_m$.
-   - Affine parameters are learned via convolution over the concatenation of monocular and stereo disparities.
-   - Parameters in low-confidence regions are refined through pooling from high-confidence neighboring regions.
-   - The aligned monocular disparity, stereo disparity, and confidence map are concatenated and processed through convolution and upsampling to yield the final high-resolution disparity map.
+    - An affine transformation aligns monocular disparity to absolute/metric space: $\tilde{D}_m = s_m \cdot D_m + t_m$.
+    - Affine parameters are learned via convolution over the concatenation of monocular and stereo disparities.
+    - Parameters in low-confidence regions are refined through pooling from high-confidence neighboring regions.
+    - The aligned monocular disparity, stereo disparity, and confidence map are concatenated and processed through convolution and upsampling to yield the final high-resolution disparity map.
 
 ### Loss & Training
 - **Disparity loss** $\mathcal{L}_d$: L1 loss supervising the GRU disparity at each iteration, the aligned monocular disparity, and the final predicted disparity.

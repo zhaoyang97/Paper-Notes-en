@@ -17,8 +17,8 @@ content_hash: 71284b6cfd467c4a
 # Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.18890](https://arxiv.org/abs/2511.18890)
-**Code**: [Hugging Face Model Card](https://huggingface.co/nvidia/Nemotron-Flash-1B)
+**arXiv**: [2511.18890](https://arxiv.org/abs/2511.18890)  
+**Code**: [Hugging Face Model Card](https://huggingface.co/nvidia/Nemotron-Flash-1B)  
 **Area**: SLM Design, Latency Optimization
 **Keywords**: Hybrid Operators, Depth-Width Ratio, Weight Normalization, Evolutionary Search
 

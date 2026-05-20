@@ -18,8 +18,8 @@ content_hash: cd968130146a8d2e
 # Multimodal Bandits: Regret Lower Bounds and Optimal Algorithms
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25811](https://arxiv.org/abs/2510.25811)
-**Code**: [GitHub](https://github.com/wilrev/MultimodalBandits)
+**arXiv**: [2510.25811](https://arxiv.org/abs/2510.25811)  
+**Code**: [GitHub](https://github.com/wilrev/MultimodalBandits)  
 **Area**: Multimodal VLM
 **Keywords**: multimodal bandits, Graves-Lai bound, dynamic programming, asymptotic optimality, multi-armed bandit
 

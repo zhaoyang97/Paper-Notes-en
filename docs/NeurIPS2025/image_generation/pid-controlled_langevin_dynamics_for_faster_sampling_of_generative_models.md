@@ -18,8 +18,8 @@ content_hash: 4d76fff6419aeed3
 # PID-controlled Langevin Dynamics for Faster Sampling of Generative Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.12603](https://arxiv.org/abs/2511.12603)
-**Code**: [GitHub](https://github.com/tsinghua-fib-lab/PIDLD)
+**arXiv**: [2511.12603](https://arxiv.org/abs/2511.12603)  
+**Code**: [GitHub](https://github.com/tsinghua-fib-lab/PIDLD)  
 **Area**: Diffusion Models / Sampling Acceleration
 **Keywords**: Langevin Dynamics, PID Control, Sampling Acceleration, Energy-Based Models, Training-Free
 

@@ -18,8 +18,8 @@ content_hash: 9970d4178a182f38
 # Keep It on a Leash: Controllable Pseudo-label Generation Towards Realistic Long-Tailed Semi-Supervised Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.03993](https://arxiv.org/abs/2510.03993)
-**Code**: [https://github.com/yaxinhou/CPG](https://github.com/yaxinhou/CPG)
+**arXiv**: [2510.03993](https://arxiv.org/abs/2510.03993)  
+**Code**: [https://github.com/yaxinhou/CPG](https://github.com/yaxinhou/CPG)  
 **Area**: Semi-Supervised Learning / Long-Tailed Learning
 **Keywords**: Long-tailed distribution, semi-supervised learning, pseudo-labels, distribution mismatch, Logit Adjustment
 

@@ -18,8 +18,8 @@ content_hash: 2d0834d03a19597b
 # Automaton Constrained Q-Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.05061](https://arxiv.org/abs/2510.05061)
-**Code**: None
+**arXiv**: [2510.05061](https://arxiv.org/abs/2510.05061)  
+**Code**: None  
 **Area**: Reinforcement Learning / Safe RL
 **Keywords**: LTL, Automaton, Safety Constraints, Goal-Conditioned RL, CMDP
 

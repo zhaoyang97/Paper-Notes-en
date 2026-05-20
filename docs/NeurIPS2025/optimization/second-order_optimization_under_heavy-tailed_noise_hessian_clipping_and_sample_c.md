@@ -18,8 +18,8 @@ content_hash: 35b4ea0cec6563e8
 # Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10690](https://arxiv.org/abs/2510.10690)
-**Code**: None
+**arXiv**: [2510.10690](https://arxiv.org/abs/2510.10690)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: second-order optimization, heavy-tailed noise, Hessian clipping, sample complexity, high-probability convergence
 

@@ -18,8 +18,8 @@ content_hash: 62f1709e13be07b1
 # Agentic Persona Control and Task State Tracking for Realistic User Simulation
 
 **Conference**: NeurIPS 2025 (Workshop on SEA)
-**arXiv**: [2601.15290](https://arxiv.org/abs/2601.15290)
-**Code**: None
+**arXiv**: [2601.15290](https://arxiv.org/abs/2601.15290)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: Multi-agent framework, user simulation, persona control, state tracking, restaurant ordering
 
@@ -49,21 +49,21 @@ In each dialogue turn, the User Agent receives the system message, sequentially 
 
 1. **State Tracking Agent**:
 
-   - **Function**: Maintains a structured task state — confirmed items vs. target state.
-   - **Mechanism**: Operates on a structured list via add/remove/clear tools; extracts confirmed task items from the input message each turn and updates the state accordingly.
-   - **Design Motivation**: Decouples state tracking from natural language reasoning; uses structured data representation to prevent forgetting or hallucination.
+    - **Function**: Maintains a structured task state — confirmed items vs. target state.
+    - **Mechanism**: Operates on a structured list via add/remove/clear tools; extracts confirmed task items from the input message each turn and updates the state accordingly.
+    - **Design Motivation**: Decouples state tracking from natural language reasoning; uses structured data representation to prevent forgetting or hallucination.
 
 2. **Message Attributes Generation Agent**:
 
-   - **Function**: Dynamically determines behavioral attributes (mood\_tone / task\_execution\_style / exploration\_style / task\_completion\_status) conditioned on persona and current progress.
-   - **Mechanism**: Conditioned on persona biography and current state: $a_t = f_{msgAttrGen}(p_{bio}, s_t)$.
-   - **Design Motivation**: Makes the decision of "how to respond" explicit, rendering every response traceable. Core finding: behavior control without state awareness (Config4) yields BVS = 0 — completely rigid behavior.
+    - **Function**: Dynamically determines behavioral attributes (mood\_tone / task\_execution\_style / exploration\_style / task\_completion\_status) conditioned on persona and current progress.
+    - **Mechanism**: Conditioned on persona biography and current state: $a_t = f_{msgAttrGen}(p_{bio}, s_t)$.
+    - **Design Motivation**: Makes the decision of "how to respond" explicit, rendering every response traceable. Core finding: behavior control without state awareness (Config4) yields BVS = 0 — completely rigid behavior.
 
 3. **Protocol Constraints**:
 
-   - Strict sequential invocation: State Tracking → MAG.
-   - Monotonic state updates (only explicit additions/deletions, no implicit modifications).
-   - Persona boundary constraints.
+    - Strict sequential invocation: State Tracking → MAG.
+    - Monotonic state updates (only explicit additions/deletions, no implicit modifications).
+    - Persona boundary constraints.
 
 ### Loss & Training
 No training is required — the system is a ready-to-use agent built on GPT-4o (implemented with Pydantic AI).

@@ -18,8 +18,8 @@ content_hash: 2816b1d275362013
 # Learning Multi-View Spatial Reasoning from Cross-View Relations
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27967](https://arxiv.org/abs/2603.27967)
-**Code**: [https://cross-view-relations.github.io](https://cross-view-relations.github.io)
+**arXiv**: [2603.27967](https://arxiv.org/abs/2603.27967)  
+**Code**: [https://cross-view-relations.github.io](https://cross-view-relations.github.io)  
 **Area**: 3D Vision
 **Keywords**: multi-view spatial reasoning, cross-view relations, vision-language models, robotic manipulation, dataset construction
 

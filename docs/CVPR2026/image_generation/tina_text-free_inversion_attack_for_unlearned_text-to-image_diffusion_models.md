@@ -20,8 +20,8 @@ content_hash: c47630fa6843ce9d
 ## Basic Information
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17828](https://arxiv.org/abs/2603.17828)
-**Code**: [GitHub](https://github.com/qianlong0502/TINA)
+**arXiv**: [2603.17828](https://arxiv.org/abs/2603.17828)  
+**Code**: [GitHub](https://github.com/qianlong0502/TINA)  
 **Area**: Image Generation / AI Safety / Concept Erasure Attack
 **Keywords**: Concept Erasure, Machine Unlearning, DDIM Inversion, Text-to-Image Diffusion, Adversarial Attack
 

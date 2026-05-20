@@ -19,8 +19,8 @@ content_hash: 7b3549509c2aad60
 # What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?
 
 **Conference**: CVPR 2026
-**arXiv**: [2504.16930](https://arxiv.org/abs/2504.16930)
-**Code**: Not available (the paper mentions that the procedural generation code will be open-sourced, but no specific link is included in the cache)
+**arXiv**: [2504.16930](https://arxiv.org/abs/2504.16930)  
+**Code**: Not available (the paper mentions that the procedural generation code will be open-sourced, but no specific link is included in the cache)  
 **Area**: 3D Vision
 **Keywords**: stereo matching, synthetic data, procedural generation, zero-shot generalization, dataset design, Infinigen
 
@@ -94,10 +94,10 @@ Key engineering designs:
 - **Balanced scene type sampling**: The three scene types are sampled with equal weight (33%–33%–33%) during training; ablations confirm this ratio is optimal.
 - **Masking strategy**: Sky regions and untextured exterior room areas are masked out.
 - **Cost optimization (6× speedup)**:
-  - Solver steps reduced from 550 to 60 (greedy mode, only adding/not removing objects); indoor scene generation time reduced from 51 to 13 minutes.
-  - Render samples reduced from 8,192 to 1,024, with Blender OptiX denoising; rendering time reduced to 27 seconds per frame.
-  - Scene reuse: 20 independent camera placements per indoor scene; 200 randomizations (object poses, lighting, baseline) per dense scene.
-  - Under a fixed compute budget, the low-cost configuration (30k samples) outperforms the high-cost configuration (5k samples).
+    - Solver steps reduced from 550 to 60 (greedy mode, only adding/not removing objects); indoor scene generation time reduced from 51 to 13 minutes.
+    - Render samples reduced from 8,192 to 1,024, with Blender OptiX denoising; rendering time reduced to 27 seconds per frame.
+    - Scene reuse: 20 independent camera placements per indoor scene; 200 randomizations (object poses, lighting, baseline) per dense scene.
+    - Under a fixed compute budget, the low-cost configuration (30k samples) outperforms the high-cost configuration (5k samples).
 
 ## Key Experimental Results
 

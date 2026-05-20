@@ -18,8 +18,8 @@ content_hash: 4e900e8db6031e3f
 # From One to More: Contextual Part Latents for 3D Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.08772](https://arxiv.org/abs/2507.08772)
-**Code**: [Project Page](https://copart3d.github.io)
+**arXiv**: [2507.08772](https://arxiv.org/abs/2507.08772)  
+**Code**: [Project Page](https://copart3d.github.io)  
 **Area**: 3D Vision
 **Keywords**: Part-level 3D generation, diffusion models, mutual guidance, 3D VAE, part editing
 

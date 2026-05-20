@@ -18,8 +18,8 @@ content_hash: d611b8d2573233e2
 # Disentangling to Re-couple: Resolving the Similarity-Controllability Paradox in Subject-Driven Text-to-Image Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00849](https://arxiv.org/abs/2604.00849)
-**Code**: Unavailable (planned open-source)
+**arXiv**: [2604.00849](https://arxiv.org/abs/2604.00849)  
+**Code**: Unavailable (planned open-source)  
 **Area**: Image Generation
 **Keywords**: Subject-Driven T2I, Diffusion Transformer, GRPO, reward model, Textual-Visual Decoupling
 

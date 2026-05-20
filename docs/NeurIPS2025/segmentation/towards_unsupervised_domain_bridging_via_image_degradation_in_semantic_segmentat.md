@@ -18,8 +18,8 @@ content_hash: f8240969e183c2f9
 # Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.10339](https://arxiv.org/abs/2412.10339)
-**Code**: [Available](https://github.com/Woof6/DiDA)
+**arXiv**: [2412.10339](https://arxiv.org/abs/2412.10339)  
+**Code**: [Available](https://github.com/Woof6/DiDA)  
 **Area**: Image Segmentation
 **Keywords**: Unsupervised Domain Adaptation, Semantic Segmentation, Diffusion Process, Image Degradation, Domain Bridging
 

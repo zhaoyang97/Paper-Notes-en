@@ -18,8 +18,8 @@ content_hash: 4de3967d2e63c73a
 # DCAD-2000: A Multilingual Dataset across 2000+ Languages with Data Cleaning as Anomaly Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.11546](https://arxiv.org/abs/2502.11546)
-**Code**: [https://github.com/yl-shen/DCAD-2000](https://github.com/yl-shen/DCAD-2000)
+**arXiv**: [2502.11546](https://arxiv.org/abs/2502.11546)  
+**Code**: [https://github.com/yl-shen/DCAD-2000](https://github.com/yl-shen/DCAD-2000)  
 **Area**: Multilingual Translation
 **Keywords**: multilingual dataset, data cleaning, anomaly detection, Common Crawl, low-resource languages
 

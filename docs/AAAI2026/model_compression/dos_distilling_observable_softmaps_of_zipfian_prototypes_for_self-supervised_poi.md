@@ -18,8 +18,8 @@ content_hash: 22ca459ec1aa110c
 # DOS: Distilling Observable Softmaps of Zipfian Prototypes for Self-Supervised Point Representation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.11465](https://arxiv.org/abs/2512.11465)
-**Code**: None (pretrained weights released)
+**arXiv**: [2512.11465](https://arxiv.org/abs/2512.11465)  
+**Code**: None (pretrained weights released)  
 **Area**: Model Compression
 **Keywords**: Self-Supervised Learning, Point Cloud Representation, Self-Distillation, Long-Tail Distribution, Semantic Softmap
 
@@ -102,8 +102,8 @@ While the Softmap formulation is stable, it may still lead to semantic prototype
 1. Compute Zipf prior: $w_k \propto 1/k^\alpha$, normalized.
 2. Initialize: normalize the similarity matrix $F$.
 3. Iterate Sinkhorn for $T$ rounds:
-   - Row normalization: ensure equal total contribution per point.
-   - Column normalization to $\mathbf{w}$: align prototype usage with the Zipf distribution.
+    - Row normalization: ensure equal total contribution per point.
+    - Column normalization to $\mathbf{w}$: align prototype usage with the Zipf distribution.
 4. Column normalization to obtain the final softmap $\tilde{S}_T$.
 
 **Effect of Zipf exponent $\alpha$**:

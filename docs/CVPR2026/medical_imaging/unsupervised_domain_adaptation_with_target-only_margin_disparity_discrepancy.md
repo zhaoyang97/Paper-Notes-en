@@ -18,7 +18,7 @@ content_hash: 471f4e41b9e342da
 # Unsupervised Domain Adaptation with Target-Only Margin Disparity Discrepancy
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09932](https://arxiv.org/abs/2603.09932)
+**arXiv**: [2603.09932](https://arxiv.org/abs/2603.09932)  
 **Area**: Medical Imaging
 **Keywords**: Unsupervised Domain Adaptation, Margin Disparity Discrepancy, CBCT, Liver Segmentation, Interventional Imaging
 **Code**: None
@@ -36,9 +36,9 @@ This paper addresses unsupervised domain adaptation (UDA) for CT→CBCT liver se
   2. Intra-arterial contrast enhancement causing bright regions inside the liver
   3. Limited CBCT field of view differing from CT
 - **Limitations of Existing Methods**:
-  - Foundation models (SAM-MED 2D/3D, MA-SAM): primarily trained on natural images; generalization to CBCT is limited.
-  - Image alignment methods (SIFA): rely on a shared field-of-view assumption, inapplicable to CT/CBCT pairs.
-  - Self-training methods (BDCL): pseudo-label quality degrades under large domain shifts.
+    - Foundation models (SAM-MED 2D/3D, MA-SAM): primarily trained on natural images; generalization to CBCT is limited.
+    - Image alignment methods (SIFA): rely on a shared field-of-view assumption, inapplicable to CT/CBCT pairs.
+    - Self-training methods (BDCL): pseudo-label quality degrades under large domain shifts.
 - **Problem with MDD**: In the classical MDD formulation, the feature extractor $\psi$ is optimized to **maximize** the discrepancy between $f$ and $f'$ on the source domain (the red-boxed term in Eq. 3), which directly contradicts the goal of domain alignment.
 
 ## Method

@@ -18,8 +18,8 @@ content_hash: 0068469777a2d039
 # SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20412](https://arxiv.org/abs/2602.20412)
-**Code**: Available (to be released on HuggingFace and GitHub)
+**arXiv**: [2602.20412](https://arxiv.org/abs/2602.20412)  
+**Code**: Available (to be released on HuggingFace and GitHub)  
 **Area**: Image Generation
 **Keywords**: Fake image detection, AI-generated images, latent blending regularization, cross-generator generalization, DINOv3
 

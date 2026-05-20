@@ -18,8 +18,8 @@ content_hash: 312d36a07356290a
 # SyncTrack: Rhythmic Stability and Synchronization in Multi-Track Music Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01101](https://arxiv.org/abs/2603.01101)
-**Code**: [https://synctrack-v1.github.io](https://synctrack-v1.github.io)
+**arXiv**: [2603.01101](https://arxiv.org/abs/2603.01101)  
+**Code**: [https://synctrack-v1.github.io](https://synctrack-v1.github.io)  
 **Area**: Music Generation / Audio
 **Keywords**: multi-track music generation, rhythmic synchronization, diffusion models, cross-track attention, evaluation metrics
 

@@ -20,7 +20,7 @@ content_hash: 52522e34b5ba2055
 # APPLE: Toward General Active Perception via Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.06182](https://arxiv.org/abs/2505.06182)
+**arXiv**: [2505.06182](https://arxiv.org/abs/2505.06182)  
 **Area**: Active Perception / Reinforcement Learning
 **Keywords**: active perception, reinforcement-learning, POMDP, supervised learning, off-policy, ViViT, CrossQ
 

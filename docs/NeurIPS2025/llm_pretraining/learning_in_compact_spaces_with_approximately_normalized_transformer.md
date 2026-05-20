@@ -18,8 +18,8 @@ content_hash: 60def23f9c3c5a3a
 # Learning in Compact Spaces with Approximately Normalized Transformer
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22014](https://arxiv.org/abs/2505.22014)
-**Code**: [github.com/automl/anGPT](https://github.com/automl/anGPT)
+**arXiv**: [2505.22014](https://arxiv.org/abs/2505.22014)  
+**Code**: [github.com/automl/anGPT](https://github.com/automl/anGPT)  
 **Area**: LLM Pretraining
 **Keywords**: approximate normalization, concentration of measure, compact space, weight-decay-free, convergence acceleration
 

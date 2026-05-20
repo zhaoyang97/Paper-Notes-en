@@ -18,8 +18,8 @@ content_hash: bc728fcf4df67c8c
 # Beyond Õ(√T) Constraint Violation for Online Convex Optimization with Adversarial Constraints
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.06709](https://arxiv.org/abs/2505.06709)
-**Code**: None
+**arXiv**: [2505.06709](https://arxiv.org/abs/2505.06709)  
+**Code**: None  
 **Area**: Online Optimization / Constrained Optimization
 **Keywords**: Online convex optimization, adversarial constraints, constraint violation, regret-violation tradeoff, safety constraints
 

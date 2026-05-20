@@ -19,8 +19,8 @@ content_hash: 97f697c44dcd5db4
 # Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback
 
 **Conference**: CVPR2026
-**arXiv**: [2603.13057](https://arxiv.org/abs/2603.13057)
-**Code**: [GitHub](https://github.com/litelightlite/VTON-IQA)
+**arXiv**: [2603.13057](https://arxiv.org/abs/2603.13057)  
+**Code**: [GitHub](https://github.com/litelightlite/VTON-IQA)  
 **Area**: Human-Centric Understanding / Virtual Try-On Quality Assessment
 **Keywords**: Virtual try-on, image quality assessment, reference-free evaluation, human feedback alignment, cross-attention, large-scale annotation benchmark
 

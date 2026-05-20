@@ -18,8 +18,8 @@ content_hash: 9c0a93c221c1005a
 # Ross3D: Reconstructive Visual Instruction Tuning with 3D-Awareness
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.01901](https://arxiv.org/abs/2504.01901)
-**Code**: [https://haochen-wang409.github.io/ross3d](https://haochen-wang409.github.io/ross3d) (Project Page)
+**arXiv**: [2504.01901](https://arxiv.org/abs/2504.01901)  
+**Code**: [https://haochen-wang409.github.io/ross3d](https://haochen-wang409.github.io/ross3d) (Project Page)  
 **Area**: 3D Vision
 **Keywords**: 3D scene understanding, large multimodal models, visual reconstruction supervision, cross-view reconstruction, bird's-eye-view reconstruction
 

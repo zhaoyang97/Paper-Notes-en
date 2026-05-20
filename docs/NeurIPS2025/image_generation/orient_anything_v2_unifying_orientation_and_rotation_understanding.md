@@ -18,8 +18,8 @@ content_hash: d3f3a9b5270347fd
 # Orient Anything V2: Unifying Orientation and Rotation Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.05573](https://arxiv.org/abs/2601.05573)
-**Code**: Available ([https://orient-anythingv2.github.io/](https://orient-anythingv2.github.io/))
+**arXiv**: [2601.05573](https://arxiv.org/abs/2601.05573)  
+**Code**: Available ([https://orient-anythingv2.github.io/](https://orient-anythingv2.github.io/))  
 **Area**: Computer Vision / 3D Understanding
 **Keywords**: orientation estimation, rotational symmetry, 6DoF pose estimation, synthetic data, foundation model
 

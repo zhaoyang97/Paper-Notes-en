@@ -18,8 +18,8 @@ content_hash: 6f9f338d9836f915
 # Active Slice Discovery in Large Language Models
 
 **Conference**: NeurIPS 2025 (Workshop: Reliable ML from Unreliable Data)
-**arXiv**: [2511.20713](https://arxiv.org/abs/2511.20713)
-**Code**: To be released (promised by the authors)
+**arXiv**: [2511.20713](https://arxiv.org/abs/2511.20713)  
+**Code**: To be released (promised by the authors)  
 **Area**: Social Computing
 **Keywords**: slice discovery, active learning, LLM interpretability, toxicity classification, sparse autoencoder
 

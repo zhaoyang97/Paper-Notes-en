@@ -18,8 +18,8 @@ content_hash: 75fae327c9f754a6
 # PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22193](https://arxiv.org/abs/2603.22193)
-**Code**: [https://gasaiyu.github.io/PAM.github.io/](https://gasaiyu.github.io/PAM.github.io/)
+**arXiv**: [2603.22193](https://arxiv.org/abs/2603.22193)  
+**Code**: [https://gasaiyu.github.io/PAM.github.io/](https://gasaiyu.github.io/PAM.github.io/)  
 **Area**: 3D Vision / Diffusion Models / Video Generation
 **Keywords**: hand-object interaction, sim-to-real, controllable video generation, diffusion models, data augmentation
 

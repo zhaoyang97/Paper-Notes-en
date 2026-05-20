@@ -18,8 +18,8 @@ content_hash: feb6c5823e36bd3c
 # CUBE: Representing 3D Faces with Learnable B-Spline Volumes
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.12894](https://arxiv.org/abs/2604.12894)
-**Code**: None
+**arXiv**: [2604.12894](https://arxiv.org/abs/2604.12894)  
+**Code**: None  
 **Area**: 3D Vision / Face Reconstruction
 **Keywords**: B-spline volumes, face representation, scan registration, local control, geometry editing
 

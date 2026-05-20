@@ -19,8 +19,8 @@ content_hash: 3683bef5cd1344b0
 # MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.10376](https://arxiv.org/abs/2511.10376)
-**Code**: N/A
+**arXiv**: [2511.10376](https://arxiv.org/abs/2511.10376)  
+**Code**: N/A  
 **Area**: 3D Vision / Embodied Navigation
 **Keywords**: Embodied Navigation, 3D Scene Graph, Zero-Shot Navigation, Multi-modal Scene Graph, Viewpoint Decision, VLM
 

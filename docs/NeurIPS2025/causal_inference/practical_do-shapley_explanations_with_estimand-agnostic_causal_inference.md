@@ -17,8 +17,8 @@ content_hash: 1d709790c06357f8
 # Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20211](https://arxiv.org/abs/2509.20211)
-**Code**: To be confirmed
+**arXiv**: [2509.20211](https://arxiv.org/abs/2509.20211)  
+**Code**: To be confirmed  
 **Area**: Causal Inference / Explainability
 **Keywords**: Shapley values, causal inference, do-SHAP, structural causal models, identifiability
 

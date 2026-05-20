@@ -17,8 +17,8 @@ content_hash: 6d4e97e07628f4fb
 # I Am Big, You Are Little; I Am Right, You Are Wrong
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.23509](https://arxiv.org/abs/2507.23509)
-**Code**: [ReX-XAI/ReX](https://github.com/ReX-XAI/ReX)
+**arXiv**: [2507.23509](https://arxiv.org/abs/2507.23509)  
+**Code**: [ReX-XAI/ReX](https://github.com/ReX-XAI/ReX)  
 **Area**: Others (Explainable AI / Model Analysis)
 **Keywords**: Minimal Pixel Sets, Image Classification, Model Comparison, Explainable AI, Causal Reasoning
 

@@ -18,8 +18,8 @@ content_hash: 250decb3608d7e21
 # Enhancing Persona Following at Decoding Time via Dynamic Importance-Guided Token Estimation for Role-Playing Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01438](https://arxiv.org/abs/2603.01438)
-**Code**: Not released
+**arXiv**: [2603.01438](https://arxiv.org/abs/2603.01438)  
+**Code**: Not released  
 **Area**: LLM/NLP
 **Keywords**: Role-playing agents, persona following, inference-time alignment, conditional mutual information, multi-objective reward decoding
 

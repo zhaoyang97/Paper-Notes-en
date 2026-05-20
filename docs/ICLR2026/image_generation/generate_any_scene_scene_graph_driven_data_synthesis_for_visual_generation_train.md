@@ -19,8 +19,8 @@ content_hash: 8a7504a8ca89ff26
 # Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training
 
 **Conference**: ICLR 2026
-**arXiv**: [2412.08221](https://arxiv.org/abs/2412.08221)
-**Code**: [GitHub](https://github.com/RAIVNLab/GenerateAnyScene)
+**arXiv**: [2412.08221](https://arxiv.org/abs/2412.08221)  
+**Code**: [GitHub](https://github.com/RAIVNLab/GenerateAnyScene)  
 **Area**: Image Generation / Data Synthesis
 **Keywords**: Scene Graph, Compositional Generation, Data Engine, Self-Improvement, Targeted Distillation, Reward Model
 

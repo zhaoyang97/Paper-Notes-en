@@ -18,8 +18,8 @@ content_hash: e5e07976c147a337
 # Missing Mass for Differentially Private Domain Discovery
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.14016](https://arxiv.org/abs/2603.14016)
-**Code**: Available (provided in appendix)
+**arXiv**: [2603.14016](https://arxiv.org/abs/2603.14016)  
+**Code**: Available (provided in appendix)  
 **Area**: Other
 **Keywords**: differential privacy, domain discovery, missing mass, Weighted Gaussian Mechanism, Zipfian data, top-k selection
 

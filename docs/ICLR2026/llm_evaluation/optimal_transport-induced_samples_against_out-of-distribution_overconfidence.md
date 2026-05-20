@@ -18,8 +18,8 @@ content_hash: 2745657bfeca2ba6
 # Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.21320](https://arxiv.org/abs/2601.21320)
-**Code**: None
+**arXiv**: [2601.21320](https://arxiv.org/abs/2601.21320)  
+**Code**: None  
 **Area**: LLM Evaluation
 **Keywords**: optimal transport, OOD overconfidence, singularity boundaries, confidence calibration, OTIS
 

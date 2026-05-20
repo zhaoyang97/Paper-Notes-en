@@ -18,8 +18,8 @@ content_hash: b6cc2da9d45b2031
 # SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24039](https://arxiv.org/abs/2603.24039)
-**Code**: [https://xxuhaiyang.github.io/SemLayer/](https://xxuhaiyang.github.io/SemLayer/)
+**arXiv**: [2603.24039](https://arxiv.org/abs/2603.24039)  
+**Code**: [https://xxuhaiyang.github.io/SemLayer/](https://xxuhaiyang.github.io/SemLayer/)  
 **Area**: Segmentation / Vector Graphics
 **Keywords**: Vector layer construction, semantic segmentation colorization, amodal completion, icon editing, diffusion models
 

@@ -17,8 +17,8 @@ content_hash: d66da98e7f061bc7
 # Parameterized Approximation Algorithms for TSP on Non-Metric Graphs
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.03642](https://arxiv.org/abs/2503.03642)
-**Code**: None
+**arXiv**: [2503.03642](https://arxiv.org/abs/2503.03642)  
+**Code**: None  
 **Area**: Theoretical Computer Science / Combinatorial Optimization
 **Keywords**: Travelling Salesman Problem, parameterized approximation algorithms, non-metric graphs, fixed-parameter tractability, triangle inequality
 
@@ -47,18 +47,18 @@ The paper proposes multiple algorithms for the two parameters. The core mechanis
 1. **ALG.1 ($(\alpha+1)$-approximation, parameter $p$)**: The simplest algorithm. A good vertex $o$ is selected; dynamic programming is applied on $G[V_b \cup \{o\}]$ to find an optimal TSP tour $T_b$, and a metric-TSP $\alpha$-approximation algorithm is applied on $G[V_g]$ to find $T_g$. The final TSP tour is obtained by shortcutting $T_b \cup T_g$. The key observation is that $\text{OPT} \geq w(T_b^*)$ and $\text{OPT} \geq w(T_g^*)$, yielding an overall approximation ratio of $(\alpha + 1)$. The running time is $2^{O(p)} + n^{O(1)}$, simultaneously improving both the approximation ratio and running time.
 
 2. **ALG.2 (1.5-approximation, parameter $p$)**: A more refined algorithm. The algorithm first guesses the subgraph of the optimal tour $T^*$ induced on bad vertices (i.e., "bad chains" $\mathcal{A}$), constructs a constrained spanning tree (CST) $F_{\mathcal{A}}$, and then corrects odd-degree vertices via minimum-weight matching on an auxiliary graph. The core innovations are:
-   - Constructing an auxiliary graph $\widetilde{G}$ by contracting bad chains and finding a minimum spanning tree on it.
-   - Constructing an auxiliary graph $G'$ to handle the matching of odd-degree vertices (since the original graph may be non-metric, minimum-weight matching cannot be applied directly).
-   - Proving that $w(F_{\mathcal{A}}) \leq \text{OPT}$ and $w(\mathcal{M}_{\mathcal{A}}) \leq \frac{1}{2} \text{OPT}$.
+    - Constructing an auxiliary graph $\widetilde{G}$ by contracting bad chains and finding a minimum spanning tree on it.
+    - Constructing an auxiliary graph $G'$ to handle the matching of odd-degree vertices (since the original graph may be non-metric, minimum-weight matching cannot be applied directly).
+    - Proving that $w(F_{\mathcal{A}}) \leq \text{OPT}$ and $w(\mathcal{M}_{\mathcal{A}}) \leq \frac{1}{2} \text{OPT}$.
 
    Via a carefully established shortcutting lemma (Lemma 3), an approximation ratio of $\frac{3}{2} \cdot \text{OPT}$ is achieved.
 
 3. **ALG.3 ($(\alpha+\varepsilon)$-approximation, when $p$ is constant)**: Reduces TSP to metric $k$-TSPP ($k$-TSP path problem) and applies the $\Phi$-TSP algorithm of Traub et al. When $p = O(1)$, the approximation ratio nearly matches that of metric TSP. Running time is $n^{O(p/\varepsilon)}$.
 
 4. **ALG.4 (3-approximation, parameter $q$)**: The core algorithm for parameter $q$. The key challenge is that, unlike the $p$-parameter setting, triangles containing one bad vertex and two good vertices may also violate the triangle inequality, so Property 1 does not directly apply. The algorithm consists of three subroutines:
-   - **LIMB**: Uses a potential set technique to guess anchors and limb edges such that $w(\mathcal{B}') \leq w(\mathcal{B})$.
-   - **CONNECT**: Connects disconnected components by guessing a partition, with complexity controlled at $2^{O(q \log q)}$.
-   - **SHORTCUT**: Handles shortcutting operations on the Eulerian graph.
+    - **LIMB**: Uses a potential set technique to guess anchors and limb edges such that $w(\mathcal{B}') \leq w(\mathcal{B})$.
+    - **CONNECT**: Connects disconnected components by guessing a partition, with complexity controlled at $2^{O(q \log q)}$.
+    - **SHORTCUT**: Handles shortcutting operations on the Eulerian graph.
 
 ### Loss & Training
 

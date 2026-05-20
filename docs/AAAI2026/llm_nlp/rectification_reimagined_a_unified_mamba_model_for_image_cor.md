@@ -19,8 +19,8 @@ content_hash: 32c3700325e21bf8
 # Rectification Reimagined: A Unified Mamba Model for Image Correction and Rectangling with Prompts
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.18718](https://arxiv.org/abs/2512.18718)
-**Code**: [https://github.com/yyywxk/UniRect](https://github.com/yyywxk/UniRect)
+**arXiv**: [2512.18718](https://arxiv.org/abs/2512.18718)  
+**Code**: [https://github.com/yyywxk/UniRect](https://github.com/yyywxk/UniRect)  
 **Area**: Image Correction / Image Rectangling
 **Keywords**: image correction, image rectangling, unified rectification, Mamba, thin-plate spline, mixture-of-experts
 

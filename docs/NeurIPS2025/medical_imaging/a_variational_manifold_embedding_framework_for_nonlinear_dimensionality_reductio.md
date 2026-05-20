@@ -20,8 +20,8 @@ content_hash: 660f73638eaf898c
 # A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.22128](https://arxiv.org/abs/2511.22128)
-**Code**: [GitHub](https://github.com/john-vastola/varembed-neurreps25)
+**arXiv**: [2511.22128](https://arxiv.org/abs/2511.22128)  
+**Code**: [GitHub](https://github.com/john-vastola/varembed-neurreps25)  
 **Authors**: John J. Vastola, Samuel J. Gershman, Kanaka Rajan (Harvard University)
 **Area**: Medical Imaging
 **Keywords**: dimensionality reduction, manifold embedding, variational framework, PCA, Euler-Lagrange, Noether's theorem, score vector

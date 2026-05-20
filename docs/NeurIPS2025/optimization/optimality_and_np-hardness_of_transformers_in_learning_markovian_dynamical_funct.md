@@ -18,8 +18,8 @@ content_hash: 93e095aad1f25951
 # Optimality and NP-Hardness of Transformers in Learning Markovian Dynamical Functions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18638](https://arxiv.org/abs/2510.18638)
-**Code**: None
+**arXiv**: [2510.18638](https://arxiv.org/abs/2510.18638)  
+**Code**: None  
 **Area**: Theoretical Machine Learning / Transformer Theory
 **Keywords**: In-context learning, Markov chains, linear self-attention, NP-hard, multi-objective optimization
 

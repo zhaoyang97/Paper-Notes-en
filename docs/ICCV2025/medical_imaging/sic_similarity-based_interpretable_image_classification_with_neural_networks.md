@@ -18,8 +18,8 @@ content_hash: e922853c46b4b610
 # SIC: Similarity-Based Interpretable Image Classification with Neural Networks
 
 **Conference**: ICCV 2025
-**arXiv**: [2501.17328](https://arxiv.org/abs/2501.17328)
-**Code**: [github.com/ai-med/SIC](https://github.com/ai-med/SIC)
+**arXiv**: [2501.17328](https://arxiv.org/abs/2501.17328)  
+**Code**: [github.com/ai-med/SIC](https://github.com/ai-med/SIC)  
 **Area**: Medical Imaging
 **Keywords**: Interpretability, Similarity-Based Classification, B-cos Networks, Support Vectors, Case-Based Reasoning
 
@@ -108,9 +108,9 @@ SIC consists of three components:
   This ensures support vectors correspond to actual training samples (rather than artificially constructed prototypes), facilitating case-based reasoning.
 
 - **Design Motivation**:
-  - The non-negative mapping $\oplus$ ensures only positive contributions can increase class probability, addressing the issue in NW-Head where adversarial attacks still yield high confidence under softmax + Euclidean distance.
-  - K-means selection ensures support vectors capture intra-class diversity while limiting the number of explanations to be examined to $N_s$.
-  - The temperature parameter $\mathcal{T}$ controls logit magnitude, preventing negative contributions in the B-cos transformation (an excessively small temperature causes the model to scale via negative contributions).
+    - The non-negative mapping $\oplus$ ensures only positive contributions can increase class probability, addressing the issue in NW-Head where adversarial attacks still yield high confidence under softmax + Euclidean distance.
+    - K-means selection ensures support vectors capture intra-class diversity while limiting the number of explanations to be examined to $N_s$.
+    - The temperature parameter $\mathcal{T}$ controls logit magnitude, preventing negative contributions in the B-cos transformation (an excessively small temperature causes the model to scale via negative contributions).
 
 #### 3. Three-Level Explanation Mechanism
 

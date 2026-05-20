@@ -18,8 +18,8 @@ content_hash: cd196783ccd4527b
 # NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11167](https://arxiv.org/abs/2503.11167)
-**Code**: [https://github.com/xmed-lab/NEURONS](https://github.com/xmed-lab/NEURONS)
+**arXiv**: [2503.11167](https://arxiv.org/abs/2503.11167)  
+**Code**: [https://github.com/xmed-lab/NEURONS](https://github.com/xmed-lab/NEURONS)  
 **Area**: Medical Imaging
 **Keywords**: fMRI-to-Video, Brain Decoding, Visual Cortex, diffusion model, Neuroscience
 

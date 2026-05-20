@@ -18,8 +18,8 @@ content_hash: 43f1940ff76075fb
 # InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.15745](https://arxiv.org/abs/2506.15745)
-**Code**: [GitHub](https://github.com/aiha-lab/InfiniPot-V)
+**arXiv**: [2506.15745](https://arxiv.org/abs/2506.15745)  
+**Code**: [GitHub](https://github.com/aiha-lab/InfiniPot-V)  
 **Area**: Video Understanding / Model Efficiency
 **Keywords**: KV Cache Compression, Streaming Video Understanding, Multimodal Large Language Models, Temporal Redundancy, Edge Deployment
 

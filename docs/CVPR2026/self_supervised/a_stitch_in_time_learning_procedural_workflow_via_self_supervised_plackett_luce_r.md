@@ -17,8 +17,8 @@ content_hash: ae5202141c5d8f05
 # A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.17805](https://arxiv.org/abs/2511.17805)
-**Code**: [https://github.com/visurg-ai/PL-Stitch](https://github.com/visurg-ai/PL-Stitch)
+**arXiv**: [2511.17805](https://arxiv.org/abs/2511.17805)  
+**Code**: [https://github.com/visurg-ai/PL-Stitch](https://github.com/visurg-ai/PL-Stitch)  
 **Area**: Video Understanding / Self-Supervised Learning
 **Keywords**: Procedural Activity Understanding, Temporal Ordering, Plackett-Luce Model, Self-Supervised Learning, Surgical Video
 
@@ -46,21 +46,21 @@ PL-Stitch consists of a shared ViT backbone encoder $f_\theta$ and two complemen
 
 1. **Plackett-Luce-Based Listwise Temporal Ranking (Video Branch)**
 
-   - **Function**: Learn global procedural progression representations.
-   - **Mechanism**: $k=8$ frames are uniformly sampled from a video to form a clip $C_v$. Each frame is encoded to a [CLS] token, which is fed into a temporal head $h_{vid}$ (MLP → Transformer Encoder → MLP) that outputs PL distribution parameters $s_{clip} = (s_1, \ldots, s_k)$. The loss is the PL negative log-likelihood $\mathcal{L}_{vid} = -\log P(r^*|s)$, where $P(r|s) = \prod_{i=1}^{K} \frac{\exp(s_{r(i)})}{\sum_{j=i}^{K} \exp(s_{r(j)})}$. The model learns to assign higher ranking scores to earlier frames.
-   - **Design Motivation**: Compared to pairwise comparison (+1.3pp linear, +3.5pp kNN) and permutation classification (+2.6pp linear, +8.8pp kNN), the listwise PL optimization provides a globally consistent ranking signal. Its probabilistic nature allows near-correct orderings to receive higher probability, making it more robust than hard classification.
+    - **Function**: Learn global procedural progression representations.
+    - **Mechanism**: $k=8$ frames are uniformly sampled from a video to form a clip $C_v$. Each frame is encoded to a [CLS] token, which is fed into a temporal head $h_{vid}$ (MLP → Transformer Encoder → MLP) that outputs PL distribution parameters $s_{clip} = (s_1, \ldots, s_k)$. The loss is the PL negative log-likelihood $\mathcal{L}_{vid} = -\log P(r^*|s)$, where $P(r|s) = \prod_{i=1}^{K} \frac{\exp(s_{r(i)})}{\sum_{j=i}^{K} \exp(s_{r(j)})}$. The model learns to assign higher ranking scores to earlier frames.
+    - **Design Motivation**: Compared to pairwise comparison (+1.3pp linear, +3.5pp kNN) and permutation classification (+2.6pp linear, +8.8pp kNN), the listwise PL optimization provides a globally consistent ranking signal. Its probabilistic nature allows near-correct orderings to receive higher probability, making it more robust than hard classification.
 
 2. **Spatio-Temporal Jigsaw Objective (Image Branch)**
 
-   - **Function**: Learn fine-grained cross-frame object correspondences.
-   - **Mechanism**: Given a frame triplet (past/present/future), the patch features of the masked center frame serve as Query, while patch features from the surrounding frames serve as Key/Value (with positional encodings removed to force reliance on visual content rather than positional shortcuts). Cross-attention aggregates temporal context, self-attention models spatial relationships, and the output PL parameters predict the original spatial arrangement $r^*_{jigsaw} = (1, 2, \ldots, N)$ of the patches.
-   - **Design Motivation**: Standard jigsaw tasks rely on single-frame information and cannot capture cross-frame motion correspondences. This design exploits cues from temporally adjacent frames (e.g., positional shifts of the same instrument across frames) to reason about masked spatial locations. Ablations show that adding the jigsaw objective improves kNN accuracy from 78.9% to 80.2%.
+    - **Function**: Learn fine-grained cross-frame object correspondences.
+    - **Mechanism**: Given a frame triplet (past/present/future), the patch features of the masked center frame serve as Query, while patch features from the surrounding frames serve as Key/Value (with positional encodings removed to force reliance on visual content rather than positional shortcuts). Cross-attention aggregates temporal context, self-attention models spatial relationships, and the output PL parameters predict the original spatial arrangement $r^*_{jigsaw} = (1, 2, \ldots, N)$ of the patches.
+    - **Design Motivation**: Standard jigsaw tasks rely on single-frame information and cannot capture cross-frame motion correspondences. This design exploits cues from temporally adjacent frames (e.g., positional shifts of the same instrument across frames) to reason about masked spatial locations. Ablations show that adding the jigsaw objective improves kNN accuracy from 78.9% to 80.2%.
 
 3. **Masked Image Modeling (MIM Baseline Objective)**
 
-   - **Function**: Establish a robust frame-level semantic feature foundation.
-   - **Mechanism**: Adopts iBOT-style masked image modeling with 30% block masking and reconstruction on the current frame.
-   - **Design Motivation**: MIM provides dense pixel/semantic-level feature learning and serves as a complementary signal to temporal ranking and jigsaw objectives. Ablations show MIM is an indispensable foundational component—removing it causes a significant performance drop.
+    - **Function**: Establish a robust frame-level semantic feature foundation.
+    - **Mechanism**: Adopts iBOT-style masked image modeling with 30% block masking and reconstruction on the current frame.
+    - **Design Motivation**: MIM provides dense pixel/semantic-level feature learning and serves as a complementary signal to temporal ranking and jigsaw objectives. Ablations show MIM is an indispensable foundational component—removing it causes a significant performance drop.
 
 ### Loss & Training
 

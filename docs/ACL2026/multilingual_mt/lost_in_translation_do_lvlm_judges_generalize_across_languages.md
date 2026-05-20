@@ -18,8 +18,8 @@ content_hash: f043baeefa08e06b
 # Lost in Translation: Do LVLM Judges Generalize Across Languages?
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19405](https://arxiv.org/abs/2604.19405)
-**Code**: [https://github.com/tahmedge/mm-judgebench](https://github.com/tahmedge/mm-judgebench)
+**arXiv**: [2604.19405](https://arxiv.org/abs/2604.19405)  
+**Code**: [https://github.com/tahmedge/mm-judgebench](https://github.com/tahmedge/mm-judgebench)  
 **Area**: Multilingual / Model Evaluation
 **Keywords**: Multilingual Evaluation, LVLM Judges, Reward Models, Cross-lingual Generalization, Vision-Language Benchmarks
 

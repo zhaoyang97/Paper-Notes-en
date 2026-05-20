@@ -18,8 +18,8 @@ content_hash: 81a581bd3ff4bcbb
 # Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.08785](https://arxiv.org/abs/2508.08785)
-**Code**: [https://github.com/NLPGM/ARoG](https://github.com/NLPGM/ARoG)
+**arXiv**: [2508.08785](https://arxiv.org/abs/2508.08785)  
+**Code**: [https://github.com/NLPGM/ARoG](https://github.com/NLPGM/ARoG)  
 **Area**: AI Safety
 **Keywords**: Privacy-preserving RAG, Knowledge Graph Question Answering, Entity Anonymization, Abstract Reasoning, LLM Privacy
 

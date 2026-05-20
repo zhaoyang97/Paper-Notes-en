@@ -18,8 +18,8 @@ content_hash: af9f56e4b34e4897
 # Diffusion Models Meet Contextual Bandits
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2402.10028](https://arxiv.org/abs/2402.10028)
-**Code**: Available (GitHub)
+**arXiv**: [2402.10028](https://arxiv.org/abs/2402.10028)  
+**Code**: Available (GitHub)  
 **Area**: Image Generation / Diffusion Models / Online Learning
 **Keywords**: Diffusion Models, Contextual Bandits, Thompson Sampling, Bayesian Prior, Posterior Approximation
 

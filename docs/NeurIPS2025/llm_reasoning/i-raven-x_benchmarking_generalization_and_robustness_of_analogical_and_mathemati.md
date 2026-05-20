@@ -18,8 +18,8 @@ content_hash: da2d5125e35e02dc
 # I-RAVEN-X: Benchmarking Generalization and Robustness of Analogical and Mathematical Reasoning in Large Language and Reasoning Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17496](https://arxiv.org/abs/2510.17496)
-**Code**: [GitHub](https://github.com/IBM/raven-large-language-models)
+**arXiv**: [2510.17496](https://arxiv.org/abs/2510.17496)  
+**Code**: [GitHub](https://github.com/IBM/raven-large-language-models)  
 **Area**: LLM Reasoning
 **Keywords**: abstract reasoning, Raven's Progressive Matrices, LRM, analogical reasoning, robustness
 

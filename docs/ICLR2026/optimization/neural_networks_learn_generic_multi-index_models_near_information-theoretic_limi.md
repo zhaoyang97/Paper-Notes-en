@@ -18,8 +18,8 @@ content_hash: 19d4cc6ab401e5ac
 # Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.15120](https://arxiv.org/abs/2511.15120)
-**Code**: None
+**arXiv**: [2511.15120](https://arxiv.org/abs/2511.15120)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: Multi-Index Models, Information-Theoretic Lower Bounds, Feature Learning, Power Iteration, Two-Layer Neural Networks
 

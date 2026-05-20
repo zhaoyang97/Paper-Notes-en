@@ -18,8 +18,8 @@ content_hash: 46892a3b1c35e217
 # Position: Towards Bidirectional Human-AI Alignment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2406.09264](https://arxiv.org/abs/2406.09264)
-**Code**: None
+**arXiv**: [2406.09264](https://arxiv.org/abs/2406.09264)  
+**Code**: None  
 **Area**: AI Alignment / Human-AI Interaction
 **Keywords**: AI alignment, bidirectional alignment, human values, human-AI interaction, systematic review
 

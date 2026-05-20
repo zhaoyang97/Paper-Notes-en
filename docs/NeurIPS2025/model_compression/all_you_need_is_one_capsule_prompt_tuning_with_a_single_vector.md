@@ -18,8 +18,8 @@ content_hash: 76e443b06a59ec53
 # All You Need is One: Capsule Prompt Tuning with a Single Vector
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16670](https://arxiv.org/abs/2510.16670)
-**Code**: None
+**arXiv**: [2510.16670](https://arxiv.org/abs/2510.16670)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: prompt tuning, PEFT, capsule prompt, attention anchor, parameter efficiency
 

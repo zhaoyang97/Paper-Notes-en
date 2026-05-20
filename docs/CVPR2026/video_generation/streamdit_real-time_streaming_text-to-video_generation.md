@@ -18,8 +18,8 @@ content_hash: 598551f92c39ad80
 # StreamDiT: Real-Time Streaming Text-to-Video Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2507.03745](https://arxiv.org/abs/2507.03745)
-**Code**: [https://cumulo-autumn.github.io/StreamDiT/](https://cumulo-autumn.github.io/StreamDiT/) (project page)
+**arXiv**: [2507.03745](https://arxiv.org/abs/2507.03745)  
+**Code**: [https://cumulo-autumn.github.io/StreamDiT/](https://cumulo-autumn.github.io/StreamDiT/) (project page)  
 **Area**: Diffusion Models / Video Generation
 **Keywords**: Streaming video generation, Diffusion Transformer, real-time inference, sampling distillation, Flow Matching
 
@@ -31,10 +31,10 @@ StreamDiT presents a complete streaming video generation pipeline—covering tra
 1. **Background**: State-of-the-art text-to-video (T2V) models (e.g., MovieGen, Hunyuan, Step-Video) are built on Diffusion Transformer (DiT) architectures with bidirectional attention, capable of generating high-quality short clips. However, they only support offline generation of fixed-length segments and cannot serve interactive or real-time applications.
 
 2. **Limitations of Prior Work**:
-   - Increasing video length is prohibitively expensive due to the quadratic complexity of Transformers with respect to sequence length.
-   - Autoregressive (AR) methods can generate long videos but rely on causal attention, yielding quality far inferior to bidirectional attention.
-   - Existing training-free streaming approaches (StreamDiffusion, FIFO-Diffusion) lack training support, limiting their generation quality.
-   - Sampling distillation methods (step distillation, consistency distillation) cannot be directly applied to the non-standard setting of streaming denoising.
+    - Increasing video length is prohibitively expensive due to the quadratic complexity of Transformers with respect to sequence length.
+    - Autoregressive (AR) methods can generate long videos but rely on causal attention, yielding quality far inferior to bidirectional attention.
+    - Existing training-free streaming approaches (StreamDiffusion, FIFO-Diffusion) lack training support, limiting their generation quality.
+    - Sampling distillation methods (step distillation, consistency distillation) cannot be directly applied to the non-standard setting of streaming denoising.
 
 3. **Key Challenge**: Low latency (streaming output), high throughput (batch processing), and high quality (bidirectional attention) are difficult to achieve simultaneously. AR methods offer low latency at the cost of quality; bidirectional diffusion offers high quality but cannot produce streaming output.
 
@@ -53,27 +53,27 @@ Given a text prompt, the StreamDiT model continuously generates video frames via
 
 1. **Buffered Flow Matching**:
 
-   - **Function**: Extends standard Flow Matching into a training framework that supports streaming generation.
-   - **Mechanism**: Standard Flow Matching applies the same timestep $t$ to all frames. StreamDiT instead assigns a monotonically increasing sequence of timesteps $\tau = [\tau_1, \ldots, \tau_B]$ to frames in the buffer. Training samples are constructed as $\mathbf{X}_\tau^i = \tau \circ \mathbf{X}_1^i + (1-(1-\sigma_{min})\tau) \circ \mathbf{X}_0$. During inference, the buffer slides along the frame dimension—clean frames are popped and noisy frames are pushed—enabling streaming output.
-   - **Design Motivation**: Introducing the streaming mechanism directly within the Flow Matching framework ensures training–inference consistency and avoids the quality degradation inherent in training-free approaches.
+    - **Function**: Extends standard Flow Matching into a training framework that supports streaming generation.
+    - **Mechanism**: Standard Flow Matching applies the same timestep $t$ to all frames. StreamDiT instead assigns a monotonically increasing sequence of timesteps $\tau = [\tau_1, \ldots, \tau_B]$ to frames in the buffer. Training samples are constructed as $\mathbf{X}_\tau^i = \tau \circ \mathbf{X}_1^i + (1-(1-\sigma_{min})\tau) \circ \mathbf{X}_0$. During inference, the buffer slides along the frame dimension—clean frames are popped and noisy frames are pushed—enabling streaming output.
+    - **Design Motivation**: Introducing the streaming mechanism directly within the Flow Matching framework ensures training–inference consistency and avoids the quality degradation inherent in training-free approaches.
 
 2. **Unified Partitioning Scheme**:
 
-   - **Function**: Provides a general framework that unifies different noise allocation strategies.
-   - **Mechanism**: The buffer is divided into $K$ reference frames and $N$ chunks, each chunk containing $c$ frames and $s$ micro-steps. The total number of frames is $B = K + N \times c$ and the total denoising steps are $T = s \times N$. Setting $c=B, s=1$ reduces to uniform noise (standard T2V); setting $c=1, s=1$ reduces to diagonal noise (FIFO-Diffusion). Mixed training alternates among different partitioning schemes to prevent overfitting and enhance content consistency.
-   - **Design Motivation**: A single partitioning scheme is prone to overfitting; mixed training leads to more generalizable denoising capabilities. Experiments confirm that mixing all chunk sizes (1, 2, 4, 8, 16) yields the best results.
+    - **Function**: Provides a general framework that unifies different noise allocation strategies.
+    - **Mechanism**: The buffer is divided into $K$ reference frames and $N$ chunks, each chunk containing $c$ frames and $s$ micro-steps. The total number of frames is $B = K + N \times c$ and the total denoising steps are $T = s \times N$. Setting $c=B, s=1$ reduces to uniform noise (standard T2V); setting $c=1, s=1$ reduces to diagonal noise (FIFO-Diffusion). Mixed training alternates among different partitioning schemes to prevent overfitting and enhance content consistency.
+    - **Design Motivation**: A single partitioning scheme is prone to overfitting; mixed training leads to more generalizable denoising capabilities. Experiments confirm that mixing all chunk sizes (1, 2, 4, 8, 16) yields the best results.
 
 3. **Time-Varying DiT Architecture**:
 
-   - **Function**: Enables the model to handle different noise levels across frames within the buffer.
-   - **Mechanism**: The standard adaLN DiT is modified so that time embeddings are separable along the frame dimension. The latent tensor is reshaped to $[F, H, W]$, and distinct time embeddings controlling scale and shift modulation are applied along the first dimension. Full attention is replaced with windowed attention: the 3D latent is partitioned into non-overlapping windows of size $[F_w, H_w, W_w]$, with alternating shifted windows every other layer to propagate global information. The computational cost is $\frac{F_w H_w W_w}{FHW}$ of full attention.
-   - **Design Motivation**: Frame-level time embeddings are a prerequisite for the StreamDiT training scheme; windowed attention substantially reduces computation and is critical for achieving real-time inference.
+    - **Function**: Enables the model to handle different noise levels across frames within the buffer.
+    - **Mechanism**: The standard adaLN DiT is modified so that time embeddings are separable along the frame dimension. The latent tensor is reshaped to $[F, H, W]$, and distinct time embeddings controlling scale and shift modulation are applied along the first dimension. Full attention is replaced with windowed attention: the 3D latent is partitioned into non-overlapping windows of size $[F_w, H_w, W_w]$, with alternating shifted windows every other layer to propagate global information. The computational cost is $\frac{F_w H_w W_w}{FHW}$ of full attention.
+    - **Design Motivation**: Frame-level time embeddings are a prerequisite for the StreamDiT training scheme; windowed attention substantially reduces computation and is critical for achieving real-time inference.
 
 4. **Customized Multi-Step Distillation**:
 
-   - **Function**: Reduces the number of sampling steps from 128 to 8 and eliminates CFG, enabling real-time inference.
-   - **Mechanism**: A partitioning scheme with $c=2, s=16, N=8$ is selected, giving the teacher model $s \times N = 128$ steps. The Flow Matching trajectory is divided into $N$ segments, and step distillation is performed independently within each segment. Step distillation and guidance distillation are conducted jointly—the teacher's multi-step CFG inference is distilled into the student's single-step unconditional forward pass. After distillation, the micro-steps $s$ are reduced from 16 to 1, yielding only 8 total steps.
-   - **Design Motivation**: Standard distillation methods (step distillation, consistency distillation) cannot be directly applied to the non-standard streaming denoising setting; distillation must follow the segment structure of the partitioning scheme.
+    - **Function**: Reduces the number of sampling steps from 128 to 8 and eliminates CFG, enabling real-time inference.
+    - **Mechanism**: A partitioning scheme with $c=2, s=16, N=8$ is selected, giving the teacher model $s \times N = 128$ steps. The Flow Matching trajectory is divided into $N$ segments, and step distillation is performed independently within each segment. Step distillation and guidance distillation are conducted jointly—the teacher's multi-step CFG inference is distilled into the student's single-step unconditional forward pass. After distillation, the micro-steps $s$ are reduced from 16 to 1, yielding only 8 total steps.
+    - **Design Motivation**: Standard distillation methods (step distillation, consistency distillation) cannot be directly applied to the non-standard streaming denoising setting; distillation must follow the segment structure of the partitioning scheme.
 
 ### Loss & Training
 Training proceeds in three stages: (1) **Task learning**—3K high-quality videos, learning rate $1e{-4}$, to adapt the model to the streaming task; (2) **Task generalization**—2.6M pre-training videos, learning rate $1e{-5}$, to improve generalization; (3) **Quality fine-tuning**—high-quality data with a small learning rate for refinement. Each stage runs for 10K iterations on 128 H100 GPUs. Distillation is conducted on 64 H100 GPUs for 10K iterations.

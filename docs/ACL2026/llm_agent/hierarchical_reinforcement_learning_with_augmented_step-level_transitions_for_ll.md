@@ -18,8 +18,8 @@ content_hash: c5bd44624b4a9c1b
 # Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05808](https://arxiv.org/abs/2604.05808)
-**Code**: [GitHub](https://github.com/TonyStark042/STEP-HRL)
+**arXiv**: [2604.05808](https://arxiv.org/abs/2604.05808)  
+**Code**: [GitHub](https://github.com/TonyStark042/STEP-HRL)  
 **Area**: LLM Agent / Hierarchical Reinforcement Learning
 **Keywords**: Hierarchical Reinforcement Learning, Step-Level Transitions, Local Progress, Token Efficiency, Offline RL
 

@@ -20,9 +20,9 @@ content_hash: 5994a2cf54639aa2
 # Why Diffusion Models Don't Memorize: The Role of Implicit Dynamical Regularization in Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17638](https://arxiv.org/abs/2505.17638)
+**arXiv**: [2505.17638](https://arxiv.org/abs/2505.17638)  
 **Authors**: Tony Bonnaire, Raphaël Urfin, Giulio Biroli, Marc Mézard (LPENS/PSL Paris, Bocconi University)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Image Generation
 **Keywords**: Diffusion models, memorization, generalization, implicit regularization, training dynamics, random features, early stopping
 
@@ -80,9 +80,9 @@ where the first-layer weights $\mathbf{W}$ are frozen and only the second layer 
 
 - The timescales of training dynamics are determined by the eigenvalue spectrum of matrix $\mathbf{U}$.
 - **Theorem 3.2** (core theoretical result): In the overparameterized regime ($\psi_p > \psi_n \gg 1$), the eigenvalue spectrum of $\mathbf{U}$ decomposes into two well-separated components:
-  - $\rho_2$ (large-eigenvalue bulk): corresponds to the generalization timescale, of order $\psi_p$, independent of $\psi_n$.
-  - $\rho_1$ (small-eigenvalue bulk): corresponds to the memorization timescale, of order $\psi_p / \psi_n$.
-  - From this, the paper derives $\tau_{\text{mem}} \propto \psi_n / \Delta_t \propto n$.
+    - $\rho_2$ (large-eigenvalue bulk): corresponds to the generalization timescale, of order $\psi_p$, independent of $\psi_n$.
+    - $\rho_1$ (small-eigenvalue bulk): corresponds to the memorization timescale, of order $\psi_p / \psi_n$.
+    - From this, the paper derives $\tau_{\text{mem}} \propto \psi_n / \Delta_t \propto n$.
 
 ### Phase Diagram Analysis
 

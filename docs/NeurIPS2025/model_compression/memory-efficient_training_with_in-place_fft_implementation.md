@@ -18,8 +18,8 @@ content_hash: 97ee61de690ca280
 # Memory-Efficient Training with In-Place FFT Implementation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01385](https://arxiv.org/abs/2511.01385)
-**Code**: [PyTorch Issue #171022](https://github.com/pytorch/pytorch/issues/171022) (upstream merge under discussion)
+**arXiv**: [2511.01385](https://arxiv.org/abs/2511.01385)  
+**Code**: [PyTorch Issue #171022](https://github.com/pytorch/pytorch/issues/171022) (upstream merge under discussion)  
 **Area**: Model Compression / Efficient Training
 **Keywords**: FFT, in-place computation, memory optimization, circulant matrix, parameter-efficient fine-tuning
 

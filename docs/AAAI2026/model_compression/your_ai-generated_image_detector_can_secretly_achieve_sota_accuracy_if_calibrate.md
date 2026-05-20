@@ -18,8 +18,8 @@ content_hash: e8f64c2db5bb207e
 # Your AI-Generated Image Detector Can Secretly Achieve SOTA Accuracy, If Calibrated
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.01973](https://arxiv.org/abs/2602.01973)
-**Code**: [github.com/muliyangm/AIGI-Det-Calib](https://github.com/muliyangm/AIGI-Det-Calib)
+**arXiv**: [2602.01973](https://arxiv.org/abs/2602.01973)  
+**Code**: [github.com/muliyangm/AIGI-Det-Calib](https://github.com/muliyangm/AIGI-Det-Calib)  
 **Area**: Model Compression
 **Keywords**: AI-generated image detection, post-hoc calibration, Bayesian decision theory, distribution shift, decision boundary
 

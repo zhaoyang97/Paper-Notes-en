@@ -17,8 +17,8 @@ content_hash: 9790c688ec327ebd
 # RLSLM: A Hybrid Reinforcement Learning Framework Aligning Rule-Based Social Locomotion Model with Human Social Norms
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11323](https://arxiv.org/abs/2511.11323)
-**Code**: [github.com/kouyitian/RLSLM](https://github.com/kouyitian/RLSLM)
+**arXiv**: [2511.11323](https://arxiv.org/abs/2511.11323)  
+**Code**: [github.com/kouyitian/RLSLM](https://github.com/kouyitian/RLSLM)  
 **Area**: Reinforcement Learning
 **Keywords**: Social Navigation, Reinforcement Learning, Social Locomotion Model, VR Experiment, Human-Robot Interaction
 

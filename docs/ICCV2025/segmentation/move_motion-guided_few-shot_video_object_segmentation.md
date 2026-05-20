@@ -18,8 +18,8 @@ content_hash: cad3353e9db4fac2
 # MOVE: Motion-Guided Few-Shot Video Object Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22061](https://arxiv.org/abs/2507.22061)
-**Code**: [https://henghuiding.com/MOVE/](https://henghuiding.com/MOVE/)
+**arXiv**: [2507.22061](https://arxiv.org/abs/2507.22061)  
+**Code**: [https://henghuiding.com/MOVE/](https://henghuiding.com/MOVE/)  
 **Area**: Segmentation / Video Understanding / Few-Shot
 **Keywords**: few-shot video segmentation, motion understanding, video object segmentation, temporal modeling, benchmark
 

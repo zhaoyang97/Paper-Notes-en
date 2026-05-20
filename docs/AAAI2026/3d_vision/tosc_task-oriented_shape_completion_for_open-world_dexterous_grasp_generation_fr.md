@@ -18,8 +18,8 @@ content_hash: b6d4da7c8fce0177
 # TOSC: Task-Oriented Shape Completion for Open-World Dexterous Grasp Generation from Partial Point Clouds
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.05499](https://arxiv.org/abs/2601.05499)
-**Code**: [github.com/SyKszzzzz/TOSC](https://github.com/SyKszzzzz/TOSC)
+**arXiv**: [2601.05499](https://arxiv.org/abs/2601.05499)  
+**Code**: [github.com/SyKszzzzz/TOSC](https://github.com/SyKszzzzz/TOSC)  
 **Area**: 3D Vision
 **Keywords**: Task-oriented shape completion, dexterous grasping, point cloud completion, flow matching, foundation models
 

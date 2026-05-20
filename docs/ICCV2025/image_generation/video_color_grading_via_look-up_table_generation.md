@@ -19,8 +19,8 @@ content_hash: d86f02d6bb4ead1a
 # Video Color Grading via Look-Up Table Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00548](https://arxiv.org/abs/2508.00548)
-**Code**: [GitHub](https://github.com/seunghyuns98/VideoColorGrading)
+**arXiv**: [2508.00548](https://arxiv.org/abs/2508.00548)  
+**Code**: [GitHub](https://github.com/seunghyuns98/VideoColorGrading)  
 **Area**: Image Generation / Video Editing
 **Keywords**: video color grading, LUT generation, diffusion model, color grading, reference image, style transfer
 

@@ -18,8 +18,8 @@ content_hash: 4c3e2cbf047521b3
 # EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.12718](https://arxiv.org/abs/2509.12718)
-**Code**: [https://anonymous.4open.science/r/EvoEmpirBench-143C/](https://anonymous.4open.science/r/EvoEmpirBench-143C/)
+**arXiv**: [2509.12718](https://arxiv.org/abs/2509.12718)  
+**Code**: [https://anonymous.4open.science/r/EvoEmpirBench-143C/](https://anonymous.4open.science/r/EvoEmpirBench-143C/)  
 **Area**: Robotics
 **Keywords**: Dynamic Spatial Reasoning, Partial Observability, Online Learning, Experience Verification, Maze Navigation
 

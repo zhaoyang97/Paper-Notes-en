@@ -17,8 +17,8 @@ content_hash: cb7d4ff0e3611a85
 # Robust LLM Alignment via Distributionally Robust Direct Preference Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.01930](https://arxiv.org/abs/2502.01930)
-**Code**: [https://github.com/TheBlackCat22/distributionally_robust_dpo](https://github.com/TheBlackCat22/distributionally_robust_dpo)
+**arXiv**: [2502.01930](https://arxiv.org/abs/2502.01930)  
+**Code**: [https://github.com/TheBlackCat22/distributionally_robust_dpo](https://github.com/TheBlackCat22/distributionally_robust_dpo)  
 **Area**: Alignment / RLHF
 **Keywords**: DRO, DPO, distributionally robust optimization, preference shift, LLM alignment
 

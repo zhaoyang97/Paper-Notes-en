@@ -18,8 +18,8 @@ content_hash: 057789224eea1f80
 # PrismAudio: Decomposed Chain-of-Thoughts and Multi-dimensional Rewards for Video-to-Audio Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.18833](https://arxiv.org/abs/2511.18833)
-**Code**: [https://PrismAudio.github.io](https://PrismAudio.github.io)
+**arXiv**: [2511.18833](https://arxiv.org/abs/2511.18833)  
+**Code**: [https://PrismAudio.github.io](https://PrismAudio.github.io)  
 **Area**: LLM Reasoning
 **Keywords**: Video-to-Audio, Chain-of-Thought, Reinforcement Learning, Multi-dimensional Rewards, Diffusion Models
 

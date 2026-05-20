@@ -18,8 +18,8 @@ content_hash: 233c928507903659
 # SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.03350](https://arxiv.org/abs/2512.03350)
-**Code**: [https://yuyuanspace.com/SeeU/](https://yuyuanspace.com/SeeU/) (data and code publicly available)
+**arXiv**: [2512.03350](https://arxiv.org/abs/2512.03350)  
+**Code**: [https://yuyuanspace.com/SeeU/](https://yuyuanspace.com/SeeU/) (data and code publicly available)  
 **Area**: Video Generation
 **Keywords**: 4D dynamic modeling, continuous dynamics, spatiotemporal generation, B-spline, physical consistency
 

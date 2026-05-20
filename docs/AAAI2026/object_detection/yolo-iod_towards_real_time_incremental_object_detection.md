@@ -18,8 +18,8 @@ content_hash: 18059c938ef44682
 # YOLO-IOD: Towards Real Time Incremental Object Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.22973](https://arxiv.org/abs/2512.22973)
-**Code**: None
+**arXiv**: [2512.22973](https://arxiv.org/abs/2512.22973)  
+**Code**: None  
 **Area**: Object Detection
 **Keywords**: Incremental Object Detection, YOLO, Knowledge Distillation, Catastrophic Forgetting, Pseudo Labels
 

@@ -18,8 +18,8 @@ content_hash: b7b987cca445dea8
 # StreamReady: Learning What to Answer and When in Long Streaming Videos
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.08620](https://arxiv.org/abs/2603.08620)
-**Code**: [Project Page](https://sacrcv.github.io/StreamReady-website/)
+**arXiv**: [2603.08620](https://arxiv.org/abs/2603.08620)  
+**Code**: [Project Page](https://sacrcv.github.io/StreamReady-website/)  
 **Area**: Video Understanding
 **Keywords**: Streaming video understanding, answer readiness, temporal reasoning, multimodal large language models, proactive question answering
 

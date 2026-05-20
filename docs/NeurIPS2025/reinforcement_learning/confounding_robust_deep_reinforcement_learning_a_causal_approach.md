@@ -18,8 +18,8 @@ content_hash: dd5e5b2cdccc4966
 # Confounding Robust Deep Reinforcement Learning: A Causal Approach
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21110](https://arxiv.org/abs/2510.21110)
-**Code**: Available (supplementary materials include gameplay videos)
+**arXiv**: [2510.21110](https://arxiv.org/abs/2510.21110)  
+**Code**: Available (supplementary materials include gameplay videos)  
 **Area**: Reinforcement Learning / Causal Inference
 **Keywords**: confounded MDP, off-policy learning, partial identification, causal DQN, Atari
 

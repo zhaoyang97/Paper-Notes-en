@@ -18,8 +18,8 @@ content_hash: ff4a8e3fa15e0b80
 # Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling
 
 **Conference**: ACL 2026
-**arXiv**: [2604.08178](https://arxiv.org/abs/2604.08178)
-**Code**: Unavailable (pending corporate approval for release)
+**arXiv**: [2604.08178](https://arxiv.org/abs/2604.08178)  
+**Code**: Unavailable (pending corporate approval for release)  
 **Area**: LLM Alignment
 **Keywords**: Reward modeling, agent evaluation, trajectory-level preference, tool calling, planning benchmark
 

@@ -18,8 +18,8 @@ content_hash: ae3f8b50ba367aef
 # UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01418](https://arxiv.org/abs/2603.01418)
-**Code**: Unavailable
+**arXiv**: [2603.01418](https://arxiv.org/abs/2603.01418)  
+**Code**: Unavailable  
 **Area**: Video Generation
 **Keywords**: Talking portrait generation, joint audio-video generation, diffusion transformer, lip-audio synchronization, voice cloning
 

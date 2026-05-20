@@ -19,8 +19,8 @@ content_hash: a56ed9907be4f4aa
 # FDeID-Toolbox: Face De-Identification Toolbox
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13121](https://arxiv.org/abs/2603.13121)
-**Code**: [https://github.com/HuiWei-SYSU/FDeID-Toolbox](https://github.com/HuiWei-SYSU/FDeID-Toolbox)
+**arXiv**: [2603.13121](https://arxiv.org/abs/2603.13121)  
+**Code**: [https://github.com/HuiWei-SYSU/FDeID-Toolbox](https://github.com/HuiWei-SYSU/FDeID-Toolbox)  
 **Area**: Diffusion Models / Privacy Protection
 **Keywords**: face de-identification, privacy protection, toolbox, unified evaluation, generative models
 
@@ -120,8 +120,8 @@ The toolbox itself introduces no new loss functions; rather, it faithfully repro
 # FDeID-Toolbox: Face De-Identification Toolbox
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13121](https://arxiv.org/abs/2603.13121)
-**Code**: Available (provided with the technical report)
+**arXiv**: [2603.13121](https://arxiv.org/abs/2603.13121)  
+**Code**: Available (provided with the technical report)  
 **Area**: Diffusion Models / Privacy Protection
 **Keywords**: face de-identification, privacy protection, toolbox, evaluation protocol, generative models
 
@@ -223,8 +223,8 @@ The toolbox is an evaluation framework rather than a single model, and therefore
 # FDeID-Toolbox: Face De-Identification Toolbox
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.13121](https://arxiv.org/abs/2603.13121)
-**Code**: Available (accompanying codebase provided with the technical report)
+**arXiv**: [2603.13121](https://arxiv.org/abs/2603.13121)  
+**Code**: Available (accompanying codebase provided with the technical report)  
 **Area**: Privacy Protection / Face De-Identification / Benchmark Tooling
 **Keywords**: face de-identification, privacy protection, toolbox, reproducible evaluation, generative models, benchmark
 

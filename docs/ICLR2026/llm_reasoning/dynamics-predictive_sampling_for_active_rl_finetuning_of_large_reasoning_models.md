@@ -18,8 +18,8 @@ content_hash: e821e277deb192db
 # Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.10887](https://arxiv.org/abs/2603.10887)
-**Code**: [github.com/maoyixiu/DPS](https://github.com/maoyixiu/DPS)
+**arXiv**: [2603.10887](https://arxiv.org/abs/2603.10887)  
+**Code**: [github.com/maoyixiu/DPS](https://github.com/maoyixiu/DPS)  
 **Area**: LLM Reasoning / RL Finetuning
 **Keywords**: RL finetuning, prompt sampling, hidden Markov model, large reasoning models, online Bayesian inference
 

@@ -18,8 +18,8 @@ content_hash: 05a5bdd6afa8c9c7
 # Text-to-Image Models Leave Identifiable Signatures: Implications for Leaderboard Security
 
 **Conference**: NeurIPS 2025 (Workshop: Lock-LLM)
-**arXiv**: [2510.06525](https://arxiv.org/abs/2510.06525)
-**Code**: None
+**arXiv**: [2510.06525](https://arxiv.org/abs/2510.06525)  
+**Code**: None  
 **Area**: AI Security / Image Generation
 **Keywords**: text-to-image models, leaderboard security, model de-anonymization, CLIP embeddings, adversarial manipulation
 

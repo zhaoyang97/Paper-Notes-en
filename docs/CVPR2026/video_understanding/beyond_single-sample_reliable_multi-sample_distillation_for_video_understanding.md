@@ -19,8 +19,8 @@ content_hash: 1c5ed299d44b335b
 # Beyond Single-Sample: Reliable Multi-Sample Distillation for Video Understanding
 
 **Conference**: CVPR2026
-**arXiv**: [2603.11423](https://arxiv.org/abs/2603.11423)
-**Code**: N/A
+**arXiv**: [2603.11423](https://arxiv.org/abs/2603.11423)  
+**Code**: N/A  
 **Area**: Video Understanding
 **Keywords**: Knowledge Distillation, Black-Box Distillation, Video LVLM, Multi-Sample Sampling, Adversarial RL Distillation, Teacher Reliability
 
@@ -75,8 +75,8 @@ Different teacher–student pairing strategies are applied according to task typ
 
 - **Student rollout**: Given an input, the student autoregressively samples a response.
 - **Adversarial pairing**: Student rollouts are paired with responses from the teacher pool.
-  - Closed-form tasks: student rollout vs. teacher best → positive contrast; student rollout vs. teacher worst → negative contrast.
-  - Open-ended tasks: student rollout vs. random teacher response → uniform contrast.
+    - Closed-form tasks: student rollout vs. teacher best → positive contrast; student rollout vs. teacher worst → negative contrast.
+    - Open-ended tasks: student rollout vs. random teacher response → uniform contrast.
 - **Online Critic-as-Discriminator**: A lightweight critic network is trained to distinguish student from teacher responses; its discrimination probability serves as a distribution-level supervision signal—capturing full-sequence quality rather than per-token KL divergence.
 - **Rule Reward**: For closed-form tasks, a rule-based reward (exact match score) is added and combined with the critic reward via weighted summation.
 - **Policy Optimization**: Student parameters are updated via PPO-style policy gradient.

@@ -17,8 +17,8 @@ content_hash: b25c1bdb2dfa72c7
 # CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.18519](https://arxiv.org/abs/2511.18519)
-**Code**: [Available](https://github.com/mihara-bot/CHIPS)
+**arXiv**: [2511.18519](https://arxiv.org/abs/2511.18519)  
+**Code**: [Available](https://github.com/mihara-bot/CHIPS)  
 **Area**: Medical Imaging
 **Keywords**: CLIP adaptation, data selection, curvature-aware, continual pre-training, medical imaging
 

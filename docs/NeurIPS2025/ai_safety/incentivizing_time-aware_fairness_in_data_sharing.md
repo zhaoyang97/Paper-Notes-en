@@ -18,8 +18,8 @@ content_hash: fea8ea01d676222c
 # Incentivizing Time-Aware Fairness in Data Sharing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.09240](https://arxiv.org/abs/2510.09240)
-**Code**: None
+**arXiv**: [2510.09240](https://arxiv.org/abs/2510.09240)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: Data sharing, fairness, time-aware incentives, Shapley value, cooperative game theory
 

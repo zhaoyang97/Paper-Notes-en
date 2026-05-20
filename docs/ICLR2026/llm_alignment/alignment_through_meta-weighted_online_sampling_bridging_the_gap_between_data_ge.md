@@ -18,8 +18,8 @@ content_hash: 5ac3db987d6f1952
 # Alignment through Meta-Weighted Online Sampling: Bridging the Gap between Data Generation and Preference Optimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23371](https://arxiv.org/abs/2509.23371)
-**Code**: [https://github.com/junming-yang/MetaAPO](https://github.com/junming-yang/MetaAPO)
+**arXiv**: [2509.23371](https://arxiv.org/abs/2509.23371)  
+**Code**: [https://github.com/junming-yang/MetaAPO](https://github.com/junming-yang/MetaAPO)  
 **Area**: LLM Alignment / Preference Optimization
 **Keywords**: Preference Optimization, Online Sampling, Meta-Learned Weights, Distribution Mismatch, DPO
 

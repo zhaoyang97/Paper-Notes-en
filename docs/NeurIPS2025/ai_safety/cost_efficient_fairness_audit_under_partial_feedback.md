@@ -18,8 +18,8 @@ content_hash: a987fc6ae1b67a17
 # Cost Efficient Fairness Audit Under Partial Feedback
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.03734](https://arxiv.org/abs/2510.03734)
-**Code**: Provided with the paper (supplementary)
+**arXiv**: [2510.03734](https://arxiv.org/abs/2510.03734)  
+**Code**: Provided with the paper (supplementary)  
 **Area**: AI Safety
 **Keywords**: fairness audit, partial feedback, equalized odds, rejection sampling, exponential family mixture
 

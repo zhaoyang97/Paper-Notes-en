@@ -17,8 +17,8 @@ content_hash: 34c7f6104d22fb4a
 # Distributed Algorithms for Euclidean Clustering
 
 **Conference**: ICLR2026
-**arXiv**: [2603.08615](https://arxiv.org/abs/2603.08615)
-**Code**: None (theoretical work)
+**arXiv**: [2603.08615](https://arxiv.org/abs/2603.08615)  
+**Code**: None (theoretical work)  
 **Area**: Other
 **Keywords**: distributed clustering, coreset, communication complexity, k-means, k-median
 

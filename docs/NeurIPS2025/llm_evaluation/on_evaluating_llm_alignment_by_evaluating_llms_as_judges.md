@@ -18,8 +18,8 @@ content_hash: 172557375e3c076b
 # On Evaluating LLM Alignment by Evaluating LLMs as Judges
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.20604](https://arxiv.org/abs/2511.20604)
-**Code**: [yale-nlp/AlignEval](https://github.com/yale-nlp/AlignEval)
+**arXiv**: [2511.20604](https://arxiv.org/abs/2511.20604)  
+**Code**: [yale-nlp/AlignEval](https://github.com/yale-nlp/AlignEval)  
 **Area**: LLM Evaluation
 **Keywords**: LLM alignment, LLM-as-Judge, evaluation benchmark, generation-evaluation consistency, preference oracle
 

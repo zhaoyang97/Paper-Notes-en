@@ -18,8 +18,8 @@ content_hash: bebef47f9d81664c
 # FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12899](https://arxiv.org/abs/2511.12899)
-**Code**: [github](https://github.com/ls1rius/MRI_FDP)
+**arXiv**: [2511.12899](https://arxiv.org/abs/2511.12899)  
+**Code**: [github](https://github.com/ls1rius/MRI_FDP)  
 **Area**: Medical Imaging
 **Keywords**: Unsupervised Anomaly Detection, Brain MRI, Frequency Domain Analysis, Frequency Decomposition, Diffusion Models
 

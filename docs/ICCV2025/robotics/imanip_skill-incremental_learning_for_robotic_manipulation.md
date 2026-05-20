@@ -18,8 +18,8 @@ content_hash: 32dba3c0540da49a
 # iManip: Skill-Incremental Learning for Robotic Manipulation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07087](https://arxiv.org/abs/2503.07087)
-**Code**: Coming soon
+**arXiv**: [2503.07087](https://arxiv.org/abs/2503.07087)  
+**Code**: Coming soon  
 **Area**: Robotics
 **Keywords**: Incremental learning, robotic manipulation, catastrophic forgetting, temporal replay, scalable Transformer
 

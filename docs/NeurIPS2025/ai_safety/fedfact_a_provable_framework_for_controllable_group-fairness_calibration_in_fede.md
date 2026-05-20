@@ -18,8 +18,8 @@ content_hash: 9baa4ac926b8ce3d
 # FedFACT: A Provable Framework for Controllable Group-Fairness Calibration in Federated Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.03777](https://arxiv.org/abs/2506.03777)
-**Code**: N/A
+**arXiv**: [2506.03777](https://arxiv.org/abs/2506.03777)  
+**Code**: N/A  
 **Area**: AI Safety
 **Keywords**: Federated Learning, Group Fairness, Bayes-Optimal Classifier, Cost-Sensitive Learning, Post-Processing Calibration
 

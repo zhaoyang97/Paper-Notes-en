@@ -18,8 +18,8 @@ content_hash: 0bff4c5661bee11c
 # A Unifying View of Coverage in Linear Off-Policy Evaluation
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19030](https://arxiv.org/abs/2601.19030)
-**Code**: None
+**arXiv**: [2601.19030](https://arxiv.org/abs/2601.19030)  
+**Code**: None  
 **Area**: Reinforcement Learning / Off-Policy Evaluation
 **Keywords**: off-policy evaluation, coverage, linear function approximation, LSTDQ, feature-dynamics coverage
 

@@ -18,8 +18,8 @@ content_hash: 25c2665b4aba5c78
 # VPHO: Joint Visual-Physical Cue Learning and Aggregation for Hand-Object Pose Estimation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12030](https://arxiv.org/abs/2511.12030)
-**Code**: [github.com/zhoujun-7/VPHO](https://github.com/zhoujun-7/VPHO)
+**arXiv**: [2511.12030](https://arxiv.org/abs/2511.12030)  
+**Code**: [github.com/zhoujun-7/VPHO](https://github.com/zhoujun-7/VPHO)  
 **Area**: Human Understanding
 **Keywords**: Hand-object pose estimation, visual-physical cues, diffusion model, force prediction, candidate pose aggregation
 

@@ -18,8 +18,8 @@ content_hash: 3dd556f761bdf037
 # Multi-head Transformers Provably Learn Symbolic Multi-step Reasoning via Gradient Descent
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.08222](https://arxiv.org/abs/2508.08222)
-**Code**: None
+**arXiv**: [2508.08222](https://arxiv.org/abs/2508.08222)  
+**Code**: None  
 **Area**: Optimization / Theoretical Analysis
 **Keywords**: Transformer, multi-step reasoning, Chain-of-Thought, gradient descent dynamics, attention head specialization
 

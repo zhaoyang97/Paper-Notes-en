@@ -18,8 +18,8 @@ content_hash: e129817d7f900604
 # How Adversarial Environments Mislead Agentic AI
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18874](https://arxiv.org/abs/2604.18874)
-**Code**: [GitHub](https://github.com/zhonghaozhan/Potemkin)
+**arXiv**: [2604.18874](https://arxiv.org/abs/2604.18874)  
+**Code**: [GitHub](https://github.com/zhonghaozhan/Potemkin)  
 **Area**: AI Security / Agent Robustness
 **Keywords**: Adversarial Environment Injection, Tool Trust Gap, Depth Attack, Breadth Attack, Robustness Splitting
 

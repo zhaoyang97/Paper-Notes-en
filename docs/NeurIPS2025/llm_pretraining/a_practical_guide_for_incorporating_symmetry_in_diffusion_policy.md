@@ -18,8 +18,8 @@ content_hash: 8021a2e417c3b3d7
 # A Practical Guide for Incorporating Symmetry in Diffusion Policy
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13431](https://arxiv.org/abs/2505.13431)
-**Code**: [https://sym-in-dp.github.io](https://sym-in-dp.github.io) (project page)
+**arXiv**: [2505.13431](https://arxiv.org/abs/2505.13431)  
+**Code**: [https://sym-in-dp.github.io](https://sym-in-dp.github.io) (project page)  
 **Area**: Diffusion Models / Robot Policy Learning
 **Keywords**: Diffusion Policy, Equivariance, SE(3) Invariance, Frame Averaging, Robot Manipulation
 

@@ -18,8 +18,8 @@ content_hash: a13717f8d6fd1502
 # DisenQ: Disentangling Q-Former for Activity-Biometrics
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.07262](https://arxiv.org/abs/2507.07262)
-**Code**: None (Project Page available)
+**arXiv**: [2507.07262](https://arxiv.org/abs/2507.07262)  
+**Code**: None (Project Page available)  
 **Area**: Multimodal VLM
 **Keywords**: Activity-biometrics recognition, Q-Former, feature disentanglement, multimodal learning, video person re-identification
 

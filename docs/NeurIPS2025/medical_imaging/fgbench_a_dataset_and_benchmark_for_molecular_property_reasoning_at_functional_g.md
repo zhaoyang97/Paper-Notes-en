@@ -18,8 +18,8 @@ content_hash: 204e4b75bfa6d5c4
 # FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.01055](https://arxiv.org/abs/2508.01055)
-**Code**: [https://github.com/xuanliugit/FGBench](https://github.com/xuanliugit/FGBench)
+**arXiv**: [2508.01055](https://arxiv.org/abs/2508.01055)  
+**Code**: [https://github.com/xuanliugit/FGBench](https://github.com/xuanliugit/FGBench)  
 **Area**: Medical Imaging
 **Keywords**: Functional Groups, Molecular Property Reasoning, Chemistry Benchmark, Structure-Activity Relationship, LLM Reasoning
 

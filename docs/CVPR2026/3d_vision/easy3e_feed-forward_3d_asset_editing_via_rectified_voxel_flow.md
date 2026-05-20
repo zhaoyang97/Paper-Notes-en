@@ -18,8 +18,8 @@ content_hash: 73bcd226ec0736ea
 # Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21499](https://arxiv.org/abs/2602.21499)
-**Code**: To be confirmed
+**arXiv**: [2602.21499](https://arxiv.org/abs/2602.21499)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: 3D editing, feed-forward generation, voxel flow, Flow Matching, texture refinement
 

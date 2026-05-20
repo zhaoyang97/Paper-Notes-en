@@ -18,8 +18,8 @@ content_hash: 1e8d7a4120d0e522
 # TransiT: Transient Transformer for Non-line-of-sight Videography
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11328](https://arxiv.org/abs/2503.11328)
-**Code**: Coming soon
+**arXiv**: [2503.11328](https://arxiv.org/abs/2503.11328)  
+**Code**: Coming soon  
 **Area**: Robotics / Computational Imaging
 **Keywords**: Non-line-of-sight imaging, NLOS video reconstruction, Transformer, transient signals, transfer learning
 

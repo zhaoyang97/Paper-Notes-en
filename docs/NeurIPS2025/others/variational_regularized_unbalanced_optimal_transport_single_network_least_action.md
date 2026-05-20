@@ -17,8 +17,8 @@ content_hash: e21aefe9aa0442c9
 # Variational Regularized Unbalanced Optimal Transport: Single Network, Least Action
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.11823](https://arxiv.org/abs/2505.11823)
-**Code**: [GitHub](https://github.com/ZerooVector/VarRUOT)
+**arXiv**: [2505.11823](https://arxiv.org/abs/2505.11823)  
+**Code**: [GitHub](https://github.com/ZerooVector/VarRUOT)  
 **Area**: Other
 **Keywords**: Regularized unbalanced optimal transport, variational methods, least action principle, single scalar field, single-cell trajectory inference
 
@@ -46,31 +46,31 @@ The core idea of Var-RUOT is to derive the necessary optimality conditions of RU
 
 1. **Derivation of Necessary Optimality Conditions (Theorem 4.1)**: For RUOT problems with isotropic time-invariant diffusion, the variational method yields three necessary conditions:
 
-   - $u = \nabla_x \lambda$ (the velocity field is the gradient of the scalar field)
-   - $\alpha \cdot \psi'(g) = \lambda$ (the growth rate is implicitly determined by the scalar field)
-   - HJB equation: $\partial\lambda/\partial t + \frac{1}{2}\|\nabla\lambda\|^2 + \frac{1}{2}\sigma^2 \nabla^2\lambda + \lambda g - \alpha\psi(g) = 0$
+    - $u = \nabla_x \lambda$ (the velocity field is the gradient of the scalar field)
+    - $\alpha \cdot \psi'(g) = \lambda$ (the growth rate is implicitly determined by the scalar field)
+    - HJB equation: $\partial\lambda/\partial t + \frac{1}{2}\|\nabla\lambda\|^2 + \frac{1}{2}\sigma^2 \nabla^2\lambda + \lambda g - \alpha\psi(g) = 0$
 
    Key insight: once $\lambda$ is determined, $u$ and $g$ are automatically fixed, and the evolution governed by the Fokker–Planck equation is fully determined. This reduces the problem from learning $u$ and $g$ separately to learning a single scalar field.
 
 2. **Growth Penalty Function and Biological Priors (Theorem 4.2)**: The sign of $\psi''(g)$ is shown to govern the monotonicity of $g$ along the velocity field direction:
 
-   - $\psi''(g) > 0$ (e.g., $g^2/2$ in standard WFR): $g$ increases along $u$ — downstream cells proliferate faster.
-   - $\psi''(g) < 0$ (e.g., $g^{2/15}$ proposed in this paper): $g$ decreases along $u$ — upstream stem cells proliferate fastest.
+    - $\psi''(g) > 0$ (e.g., $g^2/2$ in standard WFR): $g$ increases along $u$ — downstream cells proliferate faster.
+    - $\psi''(g) < 0$ (e.g., $g^{2/15}$ proposed in this paper): $g$ decreases along $u$ — upstream stem cells proliferate fastest.
 
    The latter better matches biological priors: stem cells reside at the upstream end of the trajectory, exhibit the highest proliferative and differentiation capacity, and $g$ should decrease along the differentiation direction. Accordingly, the paper proposes using $\psi_2(g) = g^{2/15}$ as a more biologically grounded alternative.
 
 3. **Weighted Particle Method (Theorem 5.1)**: The solution to the Fokker–Planck equation is approximated by $N$ weighted particles. Each particle position follows an SDE and each weight follows an ODE:
 
-   - $dX_i = u(X_i, t)\,dt + \sigma\,dW_t$
-   - $dw_i = g(X_i, t)\,w_i\,dt$
+    - $dX_i = u(X_i, t)\,dt + \sigma\,dW_t$
+    - $dw_i = g(X_i, t)\,w_i\,dt$
 
    The empirical measure $\mu^N$ converges to the true density $\rho$ as $N \to \infty$.
 
 4. **Three-Component Loss Function**:
 
-   - **Reconstruction Loss $L_\text{Recon}$**: Comprises a mass-matching loss ($\hat{M}(T_k) \approx M(T_k)$) and a Wasserstein-2 distributional distance.
-   - **HJB Loss $L_\text{HJB}$**: Integrates the violation of the HJB equation along particle trajectories, enforcing the optimality condition on $\lambda$.
-   - **Action Loss $L_\text{Action}$**: Directly minimizes the transport action (since necessary conditions are insufficient, explicit optimization is still required).
+    - **Reconstruction Loss $L_\text{Recon}$**: Comprises a mass-matching loss ($\hat{M}(T_k) \approx M(T_k)$) and a Wasserstein-2 distributional distance.
+    - **HJB Loss $L_\text{HJB}$**: Integrates the violation of the HJB equation along particle trajectories, enforcing the optimality condition on $\lambda$.
+    - **Action Loss $L_\text{Action}$**: Directly minimizes the transport action (since necessary conditions are insufficient, explicit optimization is still required).
 
 ### Loss & Training
 

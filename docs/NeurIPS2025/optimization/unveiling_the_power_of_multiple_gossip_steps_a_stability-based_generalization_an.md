@@ -18,8 +18,8 @@ content_hash: bc17f1ac884e3c7c
 # Unveiling the Power of Multiple Gossip Steps: A Stability-Based Generalization Analysis in Decentralized Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.07980](https://arxiv.org/abs/2510.07980)
-**Code**: None
+**arXiv**: [2510.07980](https://arxiv.org/abs/2510.07980)  
+**Code**: None  
 **Area**: Distributed Optimization / Generalization Theory
 **Keywords**: Decentralized SGD, Gossip Communication, Generalization Bounds, Algorithmic Stability, Data Heterogeneity
 

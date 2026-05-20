@@ -18,8 +18,8 @@ content_hash: 385debd9b33c1eb2
 # ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2408.13697](https://arxiv.org/abs/2408.13697)
-**Code**: [GitHub](https://github.com/Yingjian-Chen/ForgeLens)
+**arXiv**: [2408.13697](https://arxiv.org/abs/2408.13697)  
+**Code**: [GitHub](https://github.com/Yingjian-Chen/ForgeLens)  
 **Area**: Image Generation
 **Keywords**: Forgery image detection, CLIP-ViT, data efficiency, feature guidance, generalization
 

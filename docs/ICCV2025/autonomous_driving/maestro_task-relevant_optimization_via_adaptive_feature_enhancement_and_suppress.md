@@ -18,8 +18,8 @@ content_hash: 65a9712cac5a32b3
 # MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.17462](https://arxiv.org/abs/2509.17462)
-**Code**: To be released
+**arXiv**: [2509.17462](https://arxiv.org/abs/2509.17462)  
+**Code**: To be released  
 **Area**: Autonomous Driving
 **Keywords**: Multi-task Learning, 3D Perception, BEV Segmentation, 3D Object Detection, Occupancy Prediction
 

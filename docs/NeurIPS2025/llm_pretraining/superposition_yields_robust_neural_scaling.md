@@ -18,8 +18,8 @@ content_hash: b58f8c8971027b95
 # Superposition Yields Robust Neural Scaling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.10465](https://arxiv.org/abs/2505.10465)
-**Code**: [GitHub](https://github.com/liuyz0/SuperpositionScaling)
+**arXiv**: [2505.10465](https://arxiv.org/abs/2505.10465)  
+**Code**: [GitHub](https://github.com/liuyz0/SuperpositionScaling)  
 **Area**: LLM Pre-training
 **Keywords**: Neural scaling laws, superposition, representation learning, LLM theory, weight decay
 

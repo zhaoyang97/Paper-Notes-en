@@ -18,8 +18,8 @@ content_hash: ae76617e1eee99cb
 # DiCaP: Distribution-Calibrated Pseudo-labeling for Semi-Supervised Multi-Label Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.20225](https://arxiv.org/abs/2511.20225)
-**Code**: [github.com/hb-studying/DiCaP](https://github.com/hb-studying/DiCaP)
+**arXiv**: [2511.20225](https://arxiv.org/abs/2511.20225)  
+**Code**: [github.com/hb-studying/DiCaP](https://github.com/hb-studying/DiCaP)  
 **Area**: LLM Evaluation
 **Keywords**: Semi-supervised learning, multi-label learning, pseudo-labeling, calibrated weighting, contrastive learning
 

@@ -18,8 +18,8 @@ content_hash: 9197ed99b3c71226
 # Teaming LLMs to Detect and Mitigate Hallucinations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19507](https://arxiv.org/abs/2510.19507)
-**Code**: Not released
+**arXiv**: [2510.19507](https://arxiv.org/abs/2510.19507)  
+**Code**: Not released  
 **Area**: LLM Safety
 **Keywords**: Hallucination detection, multi-model consistency, semantic entropy, ensemble voting, inference cost
 
@@ -51,21 +51,21 @@ Given an input query, a consortium of $M$ models, and a total sampling budget of
 
 1. **Consortium Voting (hallucination mitigation)**:
 
-   - **Function**: Selects the final answer from the mixed multi-model responses.
-   - **Mechanism**: All $N$ responses from all models are clustered into semantic equivalence classes $\{C_1, C_2, \ldots, C_{|C|}\}$, and the class containing the most responses is selected as the final answer: $\text{answer} = \arg\max_{C_i} \sum_{m \in \mathcal{M}} \sum_{j=1}^{N/|\mathcal{M}|} \mathbf{1}[r_{m,j} \in C_i]$
-   - **Design Motivation**: When one model produces consistent hallucinations, correct responses from other models can "outvote" the hallucination—inter-model heterogeneity transforms noise into an advantage.
+    - **Function**: Selects the final answer from the mixed multi-model responses.
+    - **Mechanism**: All $N$ responses from all models are clustered into semantic equivalence classes $\{C_1, C_2, \ldots, C_{|C|}\}$, and the class containing the most responses is selected as the final answer: $\text{answer} = \arg\max_{C_i} \sum_{m \in \mathcal{M}} \sum_{j=1}^{N/|\mathcal{M}|} \mathbf{1}[r_{m,j} \in C_i]$
+    - **Design Motivation**: When one model produces consistent hallucinations, correct responses from other models can "outvote" the hallucination—inter-model heterogeneity transforms noise into an advantage.
 
 2. **Consortium Entropy (hallucination detection)**:
 
-   - **Function**: Estimates the hallucination confidence of the final answer.
-   - **Mechanism**: The consortium's probability distribution over equivalence classes is estimated as $P(C_i|x) = \frac{1}{N}\sum_{m} \sum_j \mathbf{1}[r_{m,j} \in C_i]$, and semantic entropy is computed as $SE(x) = -\sum_{C_i} P(C_i|x) \log P(C_i|x)$. Low entropy indicates high consistency and low hallucination probability; high entropy indicates high uncertainty and elevated hallucination risk.
-   - **Design Motivation**: The multi-model distribution is more "faithful" than any single model's distribution—even if one model is highly confident in an incorrect answer, other models are unlikely to make the same error, causing consortium entropy to correctly increase in such cases.
+    - **Function**: Estimates the hallucination confidence of the final answer.
+    - **Mechanism**: The consortium's probability distribution over equivalence classes is estimated as $P(C_i|x) = \frac{1}{N}\sum_{m} \sum_j \mathbf{1}[r_{m,j} \in C_i]$, and semantic entropy is computed as $SE(x) = -\sum_{C_i} P(C_i|x) \log P(C_i|x)$. Low entropy indicates high consistency and low hallucination probability; high entropy indicates high uncertainty and elevated hallucination risk.
+    - **Design Motivation**: The multi-model distribution is more "faithful" than any single model's distribution—even if one model is highly confident in an incorrect answer, other models are unlikely to make the same error, causing consortium entropy to correctly increase in such cases.
 
 3. **Three-Level Baseline Design and Model Selection Strategy**:
 
-   - **Function**: Provides a fair evaluation of consortium performance and guides model selection.
-   - **Mechanism**: Each of the $M$ constituent models is evaluated independently using the full $N$-sample budget as a single-model consistency baseline. Three baselines are defined: Hard (the strongest single model), Standard (the median), and Worst-case (the weakest). Mock benchmark scores are used to guide consortium composition—models of comparable and high capability are preferred.
-   - **Design Motivation**: The Hard baseline is particularly valuable—if a consortium outperforms the "known strongest single model," the collaboration provides genuine gain rather than merely averaging out performance.
+    - **Function**: Provides a fair evaluation of consortium performance and guides model selection.
+    - **Mechanism**: Each of the $M$ constituent models is evaluated independently using the full $N$-sample budget as a single-model consistency baseline. Three baselines are defined: Hard (the strongest single model), Standard (the median), and Worst-case (the weakest). Mock benchmark scores are used to guide consortium composition—models of comparable and high capability are preferred.
+    - **Design Motivation**: The Hard baseline is particularly valuable—if a consortium outperforms the "known strongest single model," the collaboration provides genuine gain rather than merely averaging out performance.
 
 ### Sampling and Clustering Strategy
 

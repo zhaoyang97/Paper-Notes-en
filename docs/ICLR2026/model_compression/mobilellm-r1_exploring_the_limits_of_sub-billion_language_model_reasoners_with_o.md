@@ -18,8 +18,8 @@ content_hash: a14fe64c49676925
 # MobileLLM-R1: Exploring the Limits of Sub-Billion Language Model Reasoners with Open Training Recipes
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24945](https://arxiv.org/abs/2509.24945)
-**Code**: [GitHub](https://github.com/facebookresearch/MobileLLM-R1)
+**arXiv**: [2509.24945](https://arxiv.org/abs/2509.24945)  
+**Code**: [GitHub](https://github.com/facebookresearch/MobileLLM-R1)  
 **Area**: Model Compression
 **Keywords**: small model reasoning, data selection, influence scores, data mixing, on-device deployment
 
@@ -43,21 +43,21 @@ A three-stage training pipeline: **Pretraining** (4.2T tokens, influence-weighte
 ### Key Designs
 1. **Capability-Aware Data Selection (LOO Analysis)**
 
-   - *Function*: Identify each pretraining data source's contribution to reasoning capabilities.
-   - *Mechanism*: One dataset is excluded at a time during training, and the change in NLL on three capability probe sets (Code / Math / Knowledge) is tracked. Influence is defined as $\Delta\mathcal{L}(\mathcal{D}_j, \mathcal{D}^P) = \mathbb{E}[\ell(z;\hat{\theta}_{-j}) - \ell(z;\hat{\theta})]$.
-   - *Key Findings*: FineWeb-Edu acts as a cross-domain "glue"—removing it degrades all capabilities. StarCoder's contribution to mathematics exceeds OpenWebMath's contribution to code (counter-intuitive). Wikipedia contributes little to code or math.
+    - *Function*: Identify each pretraining data source's contribution to reasoning capabilities.
+    - *Mechanism*: One dataset is excluded at a time during training, and the change in NLL on three capability probe sets (Code / Math / Knowledge) is tracked. Influence is defined as $\Delta\mathcal{L}(\mathcal{D}_j, \mathcal{D}^P) = \mathbb{E}[\ell(z;\hat{\theta}_{-j}) - \ell(z;\hat{\theta})]$.
+    - *Key Findings*: FineWeb-Edu acts as a cross-domain "glue"—removing it degrades all capabilities. StarCoder's contribution to mathematics exceeds OpenWebMath's contribution to code (counter-intuitive). Wikipedia contributes little to code or math.
 
 2. **Cross-Capability Influence-Based Data Mixing**
 
-   - *Function*: Compute optimal sampling weights for each data source based on influence scores.
-   - *Mechanism*: The AutoMixer framework is used to efficiently approximate influence scores $\mathcal{I}(x_i, x_{\text{test}}; \theta) \approx -\nabla\mathcal{L}(x_{\text{test}})^\top H^{-1} \nabla\mathcal{L}(x_i)$. Joint influence aggregates contributions across capabilities and training stages, which are then converted into dataset-level weights $w_g = \frac{\rho_g}{\sum \rho_{g'}}$.
-   - *Design Motivation*: Quantified cross-domain influence replaces heuristic uniform sampling; the resulting mixture ratios consistently outperform uniform sampling on unseen benchmarks.
+    - *Function*: Compute optimal sampling weights for each data source based on influence scores.
+    - *Mechanism*: The AutoMixer framework is used to efficiently approximate influence scores $\mathcal{I}(x_i, x_{\text{test}}; \theta) \approx -\nabla\mathcal{L}(x_{\text{test}})^\top H^{-1} \nabla\mathcal{L}(x_i)$. Joint influence aggregates contributions across capabilities and training stages, which are then converted into dataset-level weights $w_g = \frac{\rho_g}{\sum \rho_{g'}}$.
+    - *Design Motivation*: Quantified cross-domain influence replaces heuristic uniform sampling; the resulting mixture ratios consistently outperform uniform sampling on unseen benchmarks.
 
 3. **Mid-Training Data–Model Co-Evolution**
 
-   - *Function*: Iteratively refine data mixing during mid-training.
-   - *Mechanism*: At each stage, influence scores are computed for each sample using the current model; only samples with positive influence are retained, $\mathcal{D}_t = \{x_i : I(x_i; \theta_t) > 0\}$, and dataset weights are updated accordingly. The process iterates until the influence of most samples approaches zero (convergence, typically within 2 stages).
-   - *Design Motivation*: As model capabilities evolve, a fixed data mixture becomes suboptimal; the process is framed as iterative denoising.
+    - *Function*: Iteratively refine data mixing during mid-training.
+    - *Mechanism*: At each stage, influence scores are computed for each sample using the current model; only samples with positive influence are retained, $\mathcal{D}_t = \{x_i : I(x_i; \theta_t) > 0\}$, and dataset weights are updated accordingly. The process iterates until the influence of most samples approaches zero (convergence, typically within 2 stages).
+    - *Design Motivation*: As model capabilities evolve, a fixed data mixture becomes suboptimal; the process is framed as iterative denoising.
 
 ### Loss & Training
 - **Pretraining**: Standard next-token prediction.

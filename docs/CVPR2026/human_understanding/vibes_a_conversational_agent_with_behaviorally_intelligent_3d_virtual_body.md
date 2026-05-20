@@ -18,8 +18,8 @@ content_hash: 7f384482111938b3
 # ViBES: A Conversational Agent with Behaviorally-Intelligent 3D Virtual Body
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.14234](https://arxiv.org/abs/2512.14234)
-**Code**: [ai.stanford.edu/~juze/ViBES/](https://ai.stanford.edu/~juze/ViBES/)
+**arXiv**: [2512.14234](https://arxiv.org/abs/2512.14234)  
+**Code**: [ai.stanford.edu/~juze/ViBES/](https://ai.stanford.edu/~juze/ViBES/)  
 **Area**: Human Understanding / Multimodal Interaction
 **Keywords**: Conversational Virtual Agent, Mixture of Modal Experts, Co-speech Gesture Generation, Speech-Motion Synchronization, 3D Body Animation
 

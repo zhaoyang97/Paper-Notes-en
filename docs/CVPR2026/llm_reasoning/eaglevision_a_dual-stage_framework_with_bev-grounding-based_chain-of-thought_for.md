@@ -19,8 +19,8 @@ content_hash: 995c2305832d79d8
 # EagleVision: A Dual-Stage Framework with BEV-grounding-based Chain-of-Thought for Spatial Intelligence
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.15160](https://arxiv.org/abs/2512.15160)
-**Code**: [https://wallelwan.github.io/EagleVision](https://wallelwan.github.io/EagleVision)
+**arXiv**: [2512.15160](https://arxiv.org/abs/2512.15160)  
+**Code**: [https://wallelwan.github.io/EagleVision](https://wallelwan.github.io/EagleVision)  
 **Area**: LLM Reasoning / Spatial Intelligence
 **Keywords**: Spatial Reasoning, BEV, Active Vision, Chain-of-Thought, DPP Frame Selection, Reinforcement Learning
 

@@ -18,8 +18,8 @@ content_hash: 4d7fd997528e6fce
 # Versatile Transition Generation with Image-to-Video Diffusion
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.01698](https://arxiv.org/abs/2508.01698)
-**Code**: [Project Page](https://mwxely.github.io/projects/yang2025vtg/index)
+**arXiv**: [2508.01698](https://arxiv.org/abs/2508.01698)  
+**Code**: [Project Page](https://mwxely.github.io/projects/yang2025vtg/index)  
 **Area**: Video Generation
 **Keywords**: video transition generation, image morphing, bidirectional motion prediction, LoRA interpolation, representation alignment regularization
 

@@ -18,8 +18,8 @@ content_hash: 3b9e1f0077c3f29a
 # MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.15058](https://arxiv.org/abs/2412.15058)
-**Code**: [multiverseg.csail.mit.edu](https://multiverseg.csail.mit.edu)
+**arXiv**: [2412.15058](https://arxiv.org/abs/2412.15058)  
+**Code**: [multiverseg.csail.mit.edu](https://multiverseg.csail.mit.edu)  
 **Area**: Medical Imaging
 **Keywords**: Interactive Segmentation, In-Context Learning, Biomedical Imaging, Dataset Annotation, Progressive Segmentation
 

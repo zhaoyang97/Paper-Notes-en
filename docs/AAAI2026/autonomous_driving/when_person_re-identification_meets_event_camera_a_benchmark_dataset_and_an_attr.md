@@ -18,8 +18,8 @@ content_hash: c3fd6619dcb73743
 # When Person Re-Identification Meets Event Camera: A Benchmark Dataset and An Attribute-guided Re-Identification Framework
 
 **Conference**: AAAI2026
-**arXiv**: [2507.13659](https://arxiv.org/abs/2507.13659)
-**Code**: [Event-AHU/Neuromorphic_ReID](https://github.com/Event-AHU/Neuromorphic_ReID)
+**arXiv**: [2507.13659](https://arxiv.org/abs/2507.13659)  
+**Code**: [Event-AHU/Neuromorphic_ReID](https://github.com/Event-AHU/Neuromorphic_ReID)  
 **Area**: Autonomous Driving
 **Keywords**: person re-identification, event camera, RGB-Event fusion, pedestrian attributes, benchmark dataset
 

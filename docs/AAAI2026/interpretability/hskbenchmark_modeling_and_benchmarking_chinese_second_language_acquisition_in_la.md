@@ -18,8 +18,8 @@ content_hash: ed688a205054e043
 # HSKBenchmark: Modeling and Benchmarking Chinese Second Language Acquisition in Large Language Models through Curriculum Tuning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.15574](https://arxiv.org/abs/2511.15574)
-**Code**: [GitHub](https://github.com/CharlesYang030/HSKB)
+**arXiv**: [2511.15574](https://arxiv.org/abs/2511.15574)  
+**Code**: [GitHub](https://github.com/CharlesYang030/HSKB)  
 **Area**: Language Acquisition Modeling / LLM Evaluation
 **Keywords**: Chinese second language acquisition, curriculum tuning, HSK benchmark, writing assessment, linguistic complexity
 
@@ -60,29 +60,29 @@ HSKBenchmark comprises four major components:
 
 - **Function**: Collect 79 mainstream international Chinese education textbooks (partitioned by HSK levels 3–6), clean image/pinyin/English auxiliary content; integrate 591 grammar items from the *Chinese Proficiency Grading Standards for International Chinese Language Education* (covering vocabulary, phrases, fixed expressions, sentence constituents, sentence patterns, and emphatic usages); generate graded instruction data using GPT-4.1-mini, DeepSeek-V3, and Gemini-2.5-Flash.
 - **Mechanism**:
-  - Textbooks are naturally stratified by HSK level, with token counts ranging from 895K at HSK 3 to 2.68M at HSK 6.
-  - Each grammar item yields 10 instruction–input–output triples, validated by three graduate annotators (Fleiss's Kappa = 0.91; acceptance rate = 95%).
-  - The final synthetic dataset contains 16,462 instruction samples.
+    - Textbooks are naturally stratified by HSK level, with token counts ranging from 895K at HSK 3 to 2.68M at HSK 6.
+    - Each grammar item yields 10 instruction–input–output triples, validated by three graduate annotators (Fleiss's Kappa = 0.91; acceptance rate = 95%).
+    - The final synthetic dataset contains 16,462 instruction samples.
 - **Design Motivation**: Krashen's Input Hypothesis posits that language acquisition requires comprehensible, incrementally challenging input ($i+1$). Level-stratified textbooks naturally satisfy this requirement, constituting a principled alternative to the coarse practice of partitioning data purely by volume.
 
 **Module 2: Curriculum Tuning**
 
 - **Function**: LLMs are trained progressively through HSK levels 3 → 4 → 5 → 6; at each level, pre-training on textbooks (simulating self-study) precedes instruction tuning on grammar data (simulating writing practice).
 - **Mechanism**:
-  - Pre-training: standard next-token prediction loss: $\mathcal{L}_{PT}^{(l)} = -\sum_i \sum_t \log P_{\theta}(x_{i,t}|x_{i<t})$
-  - Instruction tuning: instruction-following loss conditioned on writing prompts: $\mathcal{L}_{IT}^{(l)} = -\sum_i \sum_t \log P_{\theta_{PT}^{(l)}}(y_{i,t}|p_i, y_{i<t})$
-  - Progressive update: $\theta_{PT}^{(l)} = \text{Pretraining}(\theta^{(l-1)}, \mathcal{T}^{(l)})$, $\theta_{IT}^{(l)} = \text{InstructionTuning}(\theta_{PT}^{(l)}, \mathcal{D}^{(l)})$
+    - Pre-training: standard next-token prediction loss: $\mathcal{L}_{PT}^{(l)} = -\sum_i \sum_t \log P_{\theta}(x_{i,t}|x_{i<t})$
+    - Instruction tuning: instruction-following loss conditioned on writing prompts: $\mathcal{L}_{IT}^{(l)} = -\sum_i \sum_t \log P_{\theta_{PT}^{(l)}}(y_{i,t}|p_i, y_{i<t})$
+    - Progressive update: $\theta_{PT}^{(l)} = \text{Pretraining}(\theta^{(l-1)}, \mathcal{T}^{(l)})$, $\theta_{IT}^{(l)} = \text{InstructionTuning}(\theta_{PT}^{(l)}, \mathcal{D}^{(l)})$
 - **Design Motivation**: This design emulates the human learner's gradual progression from elementary to advanced proficiency, ensuring that at each stage the model acquires linguistic competencies commensurate with the target level, rather than being exposed to data of all difficulty levels simultaneously.
 
 **Module 3: Linguistic Evaluation System + HSKAgent**
 
 - **Function**: Evaluate LLM writing outputs across five dimensions; fine-tune HSKAgent on 10K human L2 compositions to enable automated assessment.
 - **Mechanism**:
-  - **Grammar Item Coverage Rate**: Measures the distributional usage of grammar items at each HSK level; advanced models are expected to exhibit higher coverage of high-level items.
-  - **Writing Errors (Err)**: Detects grammatical, lexical, and collocational errors.
-  - **Lexical Complexity (MATTR-50)**: Moving-average type-token ratio over a window of 50 tokens; higher values indicate greater lexical diversity.
-  - **Syntactic Complexity (MDD)**: Mean dependency distance, reflecting structural elaboration of sentences.
-  - **Holistic Score**: An integrated score referencing HSK examination rubrics.
+    - **Grammar Item Coverage Rate**: Measures the distributional usage of grammar items at each HSK level; advanced models are expected to exhibit higher coverage of high-level items.
+    - **Writing Errors (Err)**: Detects grammatical, lexical, and collocational errors.
+    - **Lexical Complexity (MATTR-50)**: Moving-average type-token ratio over a window of 50 tokens; higher values indicate greater lexical diversity.
+    - **Syntactic Complexity (MDD)**: Mean dependency distance, reflecting structural elaboration of sentences.
+    - **Holistic Score**: An integrated score referencing HSK examination rubrics.
 - **Design Motivation**: Writing evaluation must be multidimensional and automated for large-scale deployment. Existing tools (CTAP, L2C-Rater) either lack automatic scoring or automatic error detection; HSKAgent addresses this gap.
 
 ### Loss & Training

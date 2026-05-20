@@ -18,8 +18,8 @@ content_hash: bb8f643a1689282f
 # Token-Importance Guided Direct Preference Optimization (TI-DPO)
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.19653](https://arxiv.org/abs/2505.19653)
-**Code**: [https://github.com/gracefulning/TIDPO](https://github.com/gracefulning/TIDPO)
+**arXiv**: [2505.19653](https://arxiv.org/abs/2505.19653)  
+**Code**: [https://github.com/gracefulning/TIDPO](https://github.com/gracefulning/TIDPO)  
 **Area**: Alignment RLHF / DPO
 **Keywords**: token-level DPO, gradient attribution, hybrid weighting, triplet loss, fine-grained alignment
 

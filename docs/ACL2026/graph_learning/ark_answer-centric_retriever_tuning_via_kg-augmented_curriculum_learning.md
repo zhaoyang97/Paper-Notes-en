@@ -17,8 +17,8 @@ content_hash: e66cb1747ae8b6e2
 # ARK: Answer-Centric Retriever Tuning via KG-augmented Curriculum Learning
 
 **Conference**: ACL 2026
-**arXiv**: [2511.16326](https://arxiv.org/abs/2511.16326)
-**Code**: [GitHub](https://github.com/valleysprings/ARK/)
+**arXiv**: [2511.16326](https://arxiv.org/abs/2511.16326)  
+**Code**: [GitHub](https://github.com/valleysprings/ARK/)  
 **Area**: Graph Learning
 **Keywords**: Answer-Centric Retrieval, Knowledge Graph Augmentation, Curriculum Learning, Contrastive Learning, Long-Context RAG
 

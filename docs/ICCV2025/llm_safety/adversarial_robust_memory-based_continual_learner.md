@@ -18,8 +18,8 @@ content_hash: d5427edf344cf78b
 # Adversarial Robust Memory-Based Continual Learner
 
 **Conference**: ICCV 2025
-**arXiv**: [2311.17608](https://arxiv.org/abs/2311.17608)
-**Code**: N/A
+**arXiv**: [2311.17608](https://arxiv.org/abs/2311.17608)  
+**Code**: N/A  
 **Area**: Continual Learning / Adversarial Robustness
 **Keywords**: Continual Learning, Adversarial Robustness, Experience Replay, Logit Calibration, Gradient Confusion
 

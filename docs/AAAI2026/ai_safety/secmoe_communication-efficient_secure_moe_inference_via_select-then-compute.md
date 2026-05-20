@@ -18,8 +18,8 @@ content_hash: 2ab7cf541246d8dc
 # SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.06790](https://arxiv.org/abs/2601.06790)
-**Code**: Not released
+**arXiv**: [2601.06790](https://arxiv.org/abs/2601.06790)  
+**Code**: Not released  
 **Area**: AI Safety / Privacy-Preserving Machine Learning
 **Keywords**: MoE, privacy-preserving inference, secure multi-party computation, homomorphic encryption, Select-Then-Compute
 

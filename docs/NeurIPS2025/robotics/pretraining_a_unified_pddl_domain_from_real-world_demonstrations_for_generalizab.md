@@ -18,8 +18,8 @@ content_hash: c44fb0965e7a3c4a
 # UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.21545](https://arxiv.org/abs/2507.21545)
-**Code**: [https://roboticsjtu.github.io/UniDomain/](https://roboticsjtu.github.io/UniDomain/)
+**arXiv**: [2507.21545](https://arxiv.org/abs/2507.21545)  
+**Code**: [https://roboticsjtu.github.io/UniDomain/](https://roboticsjtu.github.io/UniDomain/)  
 **Area**: Robotics / Task Planning
 **Keywords**: PDDL, task planning, robotic manipulation, knowledge distillation, large-scale demonstration learning
 

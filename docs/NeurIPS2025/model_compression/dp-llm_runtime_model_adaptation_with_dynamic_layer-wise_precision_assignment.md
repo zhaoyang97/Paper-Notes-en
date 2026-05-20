@@ -18,8 +18,8 @@ content_hash: 325978072bac2d41
 # DP-LLM: Runtime Model Adaptation with Dynamic Layer-wise Precision Assignment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.06041](https://arxiv.org/abs/2508.06041)
-**Code**: [github.com/SNU-ARC/DP-LLM](https://github.com/SNU-ARC/DP-LLM)
+**arXiv**: [2508.06041](https://arxiv.org/abs/2508.06041)  
+**Code**: [github.com/SNU-ARC/DP-LLM](https://github.com/SNU-ARC/DP-LLM)  
 **Area**: Model Compression / Quantization
 **Keywords**: Dynamic mixed precision, runtime adaptation, layer-wise quantization sensitivity, on-device LLM inference, relative error
 

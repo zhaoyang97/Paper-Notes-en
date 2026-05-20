@@ -19,8 +19,8 @@ content_hash: 6e2145bde744bd05
 # The Intricate Dance of Prompt Complexity, Quality, Diversity, and Consistency in T2I Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.19557](https://arxiv.org/abs/2510.19557)
-**Code**: None
+**arXiv**: [2510.19557](https://arxiv.org/abs/2510.19557)  
+**Code**: None  
 **Area**: Image Generation / Text-to-Image
 **Keywords**: T2I models, prompt complexity, synthetic data, diversity, consistency, diffusion models
 

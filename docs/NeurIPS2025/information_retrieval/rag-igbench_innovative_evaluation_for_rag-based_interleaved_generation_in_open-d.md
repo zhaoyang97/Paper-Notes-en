@@ -18,8 +18,8 @@ content_hash: 24c4d63a8295b307
 # RAG-IGBench: Innovative Evaluation for RAG-based Interleaved Generation in Open-domain Question Answering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.05119](https://arxiv.org/abs/2512.05119)
-**Code**: [https://github.com/USTC-StarTeam/RAG-IGBench](https://github.com/USTC-StarTeam/RAG-IGBench)
+**arXiv**: [2512.05119](https://arxiv.org/abs/2512.05119)  
+**Code**: [https://github.com/USTC-StarTeam/RAG-IGBench](https://github.com/USTC-StarTeam/RAG-IGBench)  
 **Area**: Information Retrieval
 **Keywords**: interleaved image-text generation, retrieval-augmented generation, multimodal evaluation, open-domain question answering, benchmark
 

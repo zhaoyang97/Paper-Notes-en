@@ -19,8 +19,8 @@ content_hash: f5d5dfa9dc78c5e6
 # ReIn: Conversational Error Recovery with Reasoning Inception
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.17022](https://arxiv.org/abs/2602.17022)
-**Code**: [youngerous/rein](https://github.com/youngerous/rein)
+**arXiv**: [2602.17022](https://arxiv.org/abs/2602.17022)  
+**Code**: [youngerous/rein](https://github.com/youngerous/rein)  
 **Area**: Dialogue Systems
 **Keywords**: conversational agents, error recovery, test-time intervention, reasoning injection, tool-augmented dialogue, instruction hierarchy
 

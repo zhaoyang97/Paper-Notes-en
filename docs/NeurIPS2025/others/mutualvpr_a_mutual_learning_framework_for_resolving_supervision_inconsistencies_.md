@@ -17,8 +17,8 @@ content_hash: 90d6e733b5d1e702
 # MutualVPR: A Mutual Learning Framework for Resolving Supervision Inconsistencies via Adaptive Clustering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.09199](https://arxiv.org/abs/2412.09199)
-**Code**: [Available](https://github.com/Gucci233/MutualVPR)
+**arXiv**: [2412.09199](https://arxiv.org/abs/2412.09199)  
+**Code**: [Available](https://github.com/Gucci233/MutualVPR)  
 **Area**: Visual Localization / Image Retrieval
 **Keywords**: Visual Place Recognition, Adaptive Clustering, Mutual Learning, Supervision Consistency, DINOv2
 

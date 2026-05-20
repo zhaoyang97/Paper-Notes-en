@@ -18,8 +18,8 @@ content_hash: cc1a2c52bd2bfa8f
 # Oryx: a Scalable Sequence Model for Many-Agent Coordination in Offline MARL
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22151](https://arxiv.org/abs/2505.22151)
-**Code**: [https://github.com/instadeepai/og-marl](https://github.com/instadeepai/og-marl)
+**arXiv**: [2505.22151](https://arxiv.org/abs/2505.22151)  
+**Code**: [https://github.com/instadeepai/og-marl](https://github.com/instadeepai/og-marl)  
 **Area**: Reinforcement Learning
 **Keywords**: Offline Multi-Agent Reinforcement Learning, Sequence Modeling, Autoregressive Policy, Multi-Agent Coordination, Retention Mechanism
 

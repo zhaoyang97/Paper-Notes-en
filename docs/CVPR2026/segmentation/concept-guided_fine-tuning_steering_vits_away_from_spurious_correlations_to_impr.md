@@ -19,8 +19,8 @@ content_hash: 0fb77e0176abac5a
 # Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness
 
 **Conference**: CVPR2026
-**arXiv**: [2603.08309](https://arxiv.org/abs/2603.08309)
-**Code**: [GitHub](https://github.com/yonisGit/cft)
+**arXiv**: [2603.08309](https://arxiv.org/abs/2603.08309)  
+**Code**: [GitHub](https://github.com/yonisGit/cft)  
 **Area**: Image Segmentation
 **Keywords**: Spurious Correlations, ViT Robustness, Concept-Guided Fine-Tuning, AttnLRP, Zero-Shot Segmentation, OOD Generalization
 

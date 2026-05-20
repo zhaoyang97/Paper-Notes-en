@@ -20,8 +20,8 @@ content_hash: d1266b4e2ba7f69c
 # Adaptive Auxiliary Prompt Blending for Target-Faithful Diffusion Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19158](https://arxiv.org/abs/2603.19158)
-**Code**: [GitHub](https://github.com/) (open-sourced per the paper; exact link TBD)
+**arXiv**: [2603.19158](https://arxiv.org/abs/2603.19158)  
+**Code**: [GitHub](https://github.com/) (open-sourced per the paper; exact link TBD)  
 **Area**: Image Generation / Diffusion Models
 **Keywords**: Diffusion Models, Text-to-Image Generation, Rare Concept Generation, Image Editing, Adaptive Prompt Blending, Tweedie Formula, Classifier-Free Guidance
 

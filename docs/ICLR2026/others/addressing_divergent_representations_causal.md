@@ -17,8 +17,8 @@ content_hash: a33d8fb4d6e21f07
 # Addressing Divergent Representations from Causal Interventions on Neural Networks
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2511.04638](https://arxiv.org/abs/2511.04638)
-**Code**: [GitHub](https://github.com/grantsrb/rep_divergence)
+**arXiv**: [2511.04638](https://arxiv.org/abs/2511.04638)  
+**Code**: [GitHub](https://github.com/grantsrb/rep_divergence)  
 **Area**: Other
 **Keywords**: causal intervention, mechanistic interpretability, representational divergence, Counterfactual Latent loss, DAS
 

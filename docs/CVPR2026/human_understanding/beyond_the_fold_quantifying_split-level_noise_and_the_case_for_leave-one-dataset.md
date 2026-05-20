@@ -18,8 +18,8 @@ content_hash: 865f1279d88ccdde
 # Beyond the Fold: Quantifying Split-Level Noise and the Case for Leave-One-Dataset-Out AU Evaluation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02162](https://arxiv.org/abs/2604.02162)
-**Code**: None
+**arXiv**: [2604.02162](https://arxiv.org/abs/2604.02162)  
+**Code**: None  
 **Area**: Human Understanding
 **Keywords**: Facial Action Unit Detection, Cross-Validation Noise, Evaluation Protocol, Leave-One-Dataset-Out, Statistical Reliability
 
@@ -48,28 +48,28 @@ This paper reveals that subject-independent cross-validation in facial AU detect
 ### Key Designs
 1. **Distribution Perturbation Analysis**:
 
-   - Compute the prevalence range $\Delta p_{au}$ for each AU across different folds.
-   - The absolute prevalence range for AU7 and AU12 exceeds 0.10; AU24 varies from 0.026 to 0.055—a twofold change.
-   - **Why this matters**: F1 under a fixed threshold is directly affected by the base rate, so fold-level distribution perturbations inevitably propagate into performance fluctuations.
+    - Compute the prevalence range $\Delta p_{au}$ for each AU across different folds.
+    - The absolute prevalence range for AU7 and AU12 exceeds 0.10; AU24 varies from 0.026 to 0.055—a twofold change.
+    - **Why this matters**: F1 under a fixed threshold is directly affected by the base rate, so fold-level distribution perturbations inevitably propagate into performance fluctuations.
 
 2. **Noise Floor Quantification**:
 
-   - Compute the cross-fold F1 standard deviation $\sigma_{au}$ for each AU.
-   - 95% noise boundary $= \pm 1.96\sigma_{au}$.
-   - The 95% boundary for AU24 is as large as ±0.156; AU1 and AU4 exceed ±0.11.
-   - Average noise floor: **±0.065 F1**.
+    - Compute the cross-fold F1 standard deviation $\sigma_{au}$ for each AU.
+    - 95% noise boundary $= \pm 1.96\sigma_{au}$.
+    - The 95% boundary for AU24 is as large as ±0.156; AU1 and AU4 exceed ±0.11.
+    - Average noise floor: **±0.065 F1**.
 
 3. **Metric Sensitivity Analysis**:
 
-   - Compare cross-fold variability of F1 versus AUC.
-   - For most AUs, the variability ratio $\rho = \sigma_{F1}/\sigma_{AUC} > 2$ (reaching 2.93 for AU1).
-   - **Why AUC is more stable**: AUC integrates over all thresholds and is therefore insensitive to prevalence shifts.
+    - Compare cross-fold variability of F1 versus AUC.
+    - For most AUs, the variability ratio $\rho = \sigma_{F1}/\sigma_{AUC} > 2$ (reaching 2.93 for AU1).
+    - **Why AUC is more stable**: AUC integrates over all thresholds and is therefore insensitive to prevalence shifts.
 
 4. **LODO Protocol**:
 
-   - Train on 5 AU datasets, leaving one out for evaluation.
-   - Eliminates within-dataset partition randomness.
-   - Pairs with subject-level bootstrap estimation of confidence intervals.
+    - Train on 5 AU datasets, leaving one out for evaluation.
+    - Eliminates within-dataset partition randomness.
+    - Pairs with subject-level bootstrap estimation of confidence intervals.
 
 ### Statistical Methodology
 - Cross-validation performance is treated as a **random variable** conditioned on the subject partition.

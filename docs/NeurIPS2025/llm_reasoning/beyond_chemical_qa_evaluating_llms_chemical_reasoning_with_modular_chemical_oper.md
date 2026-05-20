@@ -18,8 +18,8 @@ content_hash: 32dffb18b06d5034
 # Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21318](https://arxiv.org/abs/2505.21318)
-**Code**: [https://github.com/IDEA-XL/ChemCoTBench/](https://github.com/IDEA-XL/ChemCoTBench/)
+**arXiv**: [2505.21318](https://arxiv.org/abs/2505.21318)  
+**Code**: [https://github.com/IDEA-XL/ChemCoTBench/](https://github.com/IDEA-XL/ChemCoTBench/)  
 **Area**: LLM Reasoning
 **Keywords**: chemical reasoning, Chain-of-Thought, benchmark, molecular operations, SMILES
 

@@ -18,8 +18,8 @@ content_hash: 2b4c82642f045866
 # The Controllability Trap: A Governance Framework for Military AI Agents
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.03515](https://arxiv.org/abs/2603.03515)
-**Code**: None
+**arXiv**: [2603.03515](https://arxiv.org/abs/2603.03515)  
+**Code**: None  
 **Area**: LLM Agent
 **Keywords**: AI governance, military AI, human control, agentic AI, safety framework
 

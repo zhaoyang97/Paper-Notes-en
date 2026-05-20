@@ -18,8 +18,8 @@ content_hash: 98b77aa18fd25d3f
 # Cross-modal Prompting for Balanced Incomplete Multi-modal Emotion Recognition
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.11239](https://arxiv.org/abs/2512.11239)
-**Code**: [GitHub](https://github.com/WenjueHE/2026-AAAI-ComP)
+**arXiv**: [2512.11239](https://arxiv.org/abs/2512.11239)  
+**Code**: [GitHub](https://github.com/WenjueHE/2026-AAAI-ComP)  
 **Area**: Social Computing
 **Keywords**: Incomplete multi-modal, emotion recognition, prompt learning, modality balance, knowledge propagation
 

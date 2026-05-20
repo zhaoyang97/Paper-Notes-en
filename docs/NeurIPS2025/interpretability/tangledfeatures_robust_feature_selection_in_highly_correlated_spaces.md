@@ -18,8 +18,8 @@ content_hash: d8b6019343136a38
 # TangledFeatures: Robust Feature Selection in Highly Correlated Spaces
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.15005](https://arxiv.org/abs/2510.15005)
-**Code**: R package TangledFeatures (GitHub, pending CRAN submission)
+**arXiv**: [2510.15005](https://arxiv.org/abs/2510.15005)  
+**Code**: R package TangledFeatures (GitHub, pending CRAN submission)  
 **Area**: Interpretability / Feature Selection
 **Keywords**: feature selection, stability, correlation redundancy, random forests, structural biology
 

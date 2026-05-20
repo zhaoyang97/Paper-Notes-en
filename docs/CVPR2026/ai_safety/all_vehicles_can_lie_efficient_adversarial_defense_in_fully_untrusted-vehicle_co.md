@@ -18,8 +18,8 @@ content_hash: 656279992791642a
 # All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.08498](https://arxiv.org/abs/2603.08498)
-**Code**: To be confirmed
+**arXiv**: [2603.08498](https://arxiv.org/abs/2603.08498)  
+**Code**: To be confirmed  
 **Area**: AI Security
 **Keywords**: collaborative perception, adversarial defense, Bayesian inference, autonomous driving, V2V communication
 

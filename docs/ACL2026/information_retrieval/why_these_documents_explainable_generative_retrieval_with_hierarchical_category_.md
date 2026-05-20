@@ -18,8 +18,8 @@ content_hash: 041f9f41c911068b
 # Why These Documents? Explainable Generative Retrieval with Hierarchical Category Paths
 
 **Conference**: ACL 2026
-**arXiv**: [2411.05572](https://arxiv.org/abs/2411.05572)
-**Code**: [GitHub](https://augustinlib.github.io/HyPE/)
+**arXiv**: [2411.05572](https://arxiv.org/abs/2411.05572)  
+**Code**: [GitHub](https://augustinlib.github.io/HyPE/)  
 **Area**: Information Retrieval
 **Keywords**: Generative Retrieval, Explainable Retrieval, Hierarchical Category Paths, Document Identifiers, Path-Aware Ranking
 

@@ -18,8 +18,8 @@ content_hash: c8d75db1d42e52c8
 # SemanticVLA: Semantic-Aligned Sparsification and Enhancement for Efficient Robotic Manipulation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10518](https://arxiv.org/abs/2511.10518)
-**Code**: None
+**arXiv**: [2511.10518](https://arxiv.org/abs/2511.10518)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: VLA models, visual sparsification, robotic manipulation, semantic alignment, efficient inference
 

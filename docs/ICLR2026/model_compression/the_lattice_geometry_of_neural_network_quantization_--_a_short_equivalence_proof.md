@@ -19,8 +19,8 @@ content_hash: 4a1f409078df1b30
 # The Lattice Geometry of Neural Network Quantization -- A Short Equivalence Proof of GPTQ and Babai's Algorithm
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.01077](https://arxiv.org/abs/2508.01077)
-**Code**: Not released
+**arXiv**: [2508.01077](https://arxiv.org/abs/2508.01077)  
+**Code**: Not released  
 **Area**: Model Compression / Quantization
 **Keywords**: GPTQ, Babai's algorithm, lattice theory, CVP, quantization, equivalence proof
 

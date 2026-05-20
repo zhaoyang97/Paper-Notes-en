@@ -18,8 +18,8 @@ content_hash: 3041a01907faed1f
 # Auto-Compressing Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.09714](https://arxiv.org/abs/2506.09714)
-**Code**: Available (declared in paper)
+**arXiv**: [2506.09714](https://arxiv.org/abs/2506.09714)  
+**Code**: Available (declared in paper)  
 **Area**: Network Architecture / Model Compression
 **Keywords**: Auto-compression, residual connections, layer redundancy, forward connections, continual learning
 

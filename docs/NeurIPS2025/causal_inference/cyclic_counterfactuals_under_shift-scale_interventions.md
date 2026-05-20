@@ -17,8 +17,8 @@ content_hash: 1f0b90f3df697d6e
 # Cyclic Counterfactuals under Shift–Scale Interventions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25005](https://arxiv.org/abs/2510.25005)
-**Code**: None
+**arXiv**: [2510.25005](https://arxiv.org/abs/2510.25005)  
+**Code**: None  
 **Area**: Causal Inference
 **Keywords**: causal inference, cyclic causal models, counterfactual reasoning, soft interventions, contraction mappings
 

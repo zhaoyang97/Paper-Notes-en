@@ -18,8 +18,8 @@ content_hash: 783d7151d7377f6b
 # Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19821](https://arxiv.org/abs/2601.19821)
-**Code**: To be released upon publication
+**arXiv**: [2601.19821](https://arxiv.org/abs/2601.19821)  
+**Code**: To be released upon publication  
 **Area**: Audio & Speech
 **Keywords**: Audio-Visual QA, Frequency-Domain Interaction, Query Guidance, Spatial-Temporal Perception, Multimodal Reasoning
 

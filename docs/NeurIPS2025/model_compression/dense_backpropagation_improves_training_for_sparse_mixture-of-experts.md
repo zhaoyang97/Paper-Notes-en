@@ -18,8 +18,8 @@ content_hash: 808634d91c8ff16c
 # Dense Backpropagation Improves Training for Sparse Mixture-of-Experts
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.12463](https://arxiv.org/abs/2504.12463)
-**Code**: Available (training code open-sourced)
+**arXiv**: [2504.12463](https://arxiv.org/abs/2504.12463)  
+**Code**: Available (training code open-sourced)  
 **Area**: Model Compression
 **Keywords**: Mixture-of-Experts, sparse routing, dense gradient, EMA, TopK routing
 

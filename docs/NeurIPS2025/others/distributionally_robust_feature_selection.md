@@ -17,8 +17,8 @@ content_hash: f6fec16b07693c88
 # Distributionally Robust Feature Selection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21113](https://arxiv.org/abs/2510.21113)
-**Code**: Available (link provided in the paper)
+**arXiv**: [2510.21113](https://arxiv.org/abs/2510.21113)  
+**Code**: Available (link provided in the paper)  
 **Area**: Other
 **Keywords**: Feature Selection, Distributionally Robust Optimization, Group DRO, Noise Injection, Model-Agnostic
 

@@ -18,8 +18,8 @@ content_hash: a58450dce3319417
 # Connectivity-Guided Sparsification of 2-FWL GNNs Preserving Full Expressivity
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12838](https://arxiv.org/abs/2511.12838)
-**Code**: [Available](https://github.com/RongqinChen/HOGNN-Sparsify)
+**arXiv**: [2511.12838](https://arxiv.org/abs/2511.12838)  
+**Code**: [Available](https://github.com/RongqinChen/HOGNN-Sparsify)  
 **Area**: LLM Efficiency
 **Keywords**: Higher-order GNN, 2-FWL, graph sparsification, biconnected components, expressivity preservation
 
@@ -61,10 +61,10 @@ The sparsified neighborhood set for node pair $(u, v)$ is defined as follows:
 
 - If $u$ and $v$ belong to different connected components: the neighborhood is empty.
 - If $u$ and $v$ belong to the same connected component $C$:
-  - **3-node interactions**: $((u,t),(t,v))$ is included only when $u$, $t$, and $v$ all reside in the same biconnected block $B$.
-  - **2-node interactions**: $((u,u),(u,v))$ and $((u,v),(v,v))$ are included for node-to-pair information propagation.
-  - For $u \neq v$, $((v,u),(u,v))$ is included in the neighborhood of the self-pair $(v,v)$ to propagate pair-to-node information.
-  - Self-pairs $(u,u)$ always include $((u,u),(u,u))$ to ensure non-empty neighborhoods.
+    - **3-node interactions**: $((u,t),(t,v))$ is included only when $u$, $t$, and $v$ all reside in the same biconnected block $B$.
+    - **2-node interactions**: $((u,u),(u,v))$ and $((u,v),(v,v))$ are included for node-to-pair information propagation.
+    - For $u \neq v$, $((v,u),(u,v))$ is included in the neighborhood of the self-pair $(v,v)$ to propagate pair-to-node information.
+    - Self-pairs $(u,u)$ always include $((u,u),(u,u))$ to ensure non-empty neighborhoods.
 
 **3. Co-Sparsified Message Passing**
 

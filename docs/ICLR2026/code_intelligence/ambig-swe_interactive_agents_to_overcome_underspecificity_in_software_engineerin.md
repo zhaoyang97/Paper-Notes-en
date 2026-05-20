@@ -18,8 +18,8 @@ content_hash: 47df0a899bcb49f3
 # Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.13069](https://arxiv.org/abs/2502.13069)
-**Code**: [https://github.com/sani903/InteractiveSWEAgents](https://github.com/sani903/InteractiveSWEAgents)
+**arXiv**: [2502.13069](https://arxiv.org/abs/2502.13069)  
+**Code**: [https://github.com/sani903/InteractiveSWEAgents](https://github.com/sani903/InteractiveSWEAgents)  
 **Area**: Code Intelligence
 **Keywords**: underspecification, interactive agent, SWE-Bench, clarification, software engineering
 

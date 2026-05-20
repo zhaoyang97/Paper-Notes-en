@@ -17,8 +17,8 @@ content_hash: b1c19ec2aabe08dd
 # Revisiting Adversarial Patch Defenses on Object Detectors: Unified Evaluation, Large-Scale Dataset, and New Insights
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.00649](https://arxiv.org/abs/2508.00649)
-**Code**: [https://github.com/Gandolfczjh/APDE](https://github.com/Gandolfczjh/APDE)
+**arXiv**: [2508.00649](https://arxiv.org/abs/2508.00649)  
+**Code**: [https://github.com/Gandolfczjh/APDE](https://github.com/Gandolfczjh/APDE)  
 **Area**: Adversarial Robustness / Object Detection
 **Keywords**: Adversarial Patch Defense, Object Detection, Benchmark Evaluation, Large-Scale Dataset, Adaptive Attack
 

@@ -18,8 +18,8 @@ content_hash: 47a00c307eb261d2
 # SEATrack: Simple, Efficient, and Adaptive Multimodal Tracker
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.12502](https://arxiv.org/abs/2604.12502)
-**Code**: Available
+**arXiv**: [2604.12502](https://arxiv.org/abs/2604.12502)  
+**Code**: Available  
 **Area**: Object Tracking / Multimodal
 **Keywords**: Multimodal tracking, parameter-efficient fine-tuning, attention alignment, mixture of experts, LoRA
 
@@ -51,21 +51,21 @@ A dual-stream ViT architecture freezes the backbone of a pretrained RGB tracker.
 
 1. **AMG-LoRA (Adaptive Mutual-Guidance Low-Rank Adaptation)**:
 
-   - **Function**: Simultaneously performs domain adaptation and dynamic cross-modal attention map alignment.
-   - **Mechanism**: (i) LoRA adapts the K/V projection matrices of the attention layers for domain adaptation; (ii) Inspired by Classifier-Free Guidance, cross-modal alignment is reformulated as a multi-branch trade-off. The alignment formula is: $\textbf{attn}_{rgb} = \tilde{\textbf{attn}}_{rgb} + w_X(\tilde{\textbf{attn}}_X - \tilde{\textbf{attn}}_{rgb})$, where $w_X$ is a learnable scaling factor.
-   - **Design Motivation**: Target saliency varies across modalities with changing scenes, requiring dynamic rather than static alignment to prevent negative transfer from unreliable modalities. Only 0.14M parameters yield PR improvements of 18.3%/7.2%/6.1%.
+    - **Function**: Simultaneously performs domain adaptation and dynamic cross-modal attention map alignment.
+    - **Mechanism**: (i) LoRA adapts the K/V projection matrices of the attention layers for domain adaptation; (ii) Inspired by Classifier-Free Guidance, cross-modal alignment is reformulated as a multi-branch trade-off. The alignment formula is: $\textbf{attn}_{rgb} = \tilde{\textbf{attn}}_{rgb} + w_X(\tilde{\textbf{attn}}_X - \tilde{\textbf{attn}}_{rgb})$, where $w_X$ is a learnable scaling factor.
+    - **Design Motivation**: Target saliency varies across modalities with changing scenes, requiring dynamic rather than static alignment to prevent negative transfer from unreliable modalities. Only 0.14M parameters yield PR improvements of 18.3%/7.2%/6.1%.
 
 2. **HMoE (Hierarchical Mixture of Experts)**:
 
-   - **Function**: Efficient global relation modeling that replaces the quadratic complexity of attention.
-   - **Mechanism**: Unlike existing MoE methods that aggregate only at the expert level, HMoE enables fine-grained interactions from sub-token to token level. Low-rank linear layers serve as expert functions, with hierarchical soft routing implemented via learnable gating matrices.
-   - **Design Motivation**: Attention-based fusion is expressive but incurs quadratic complexity; local fusion is efficient but lacks a global receptive field. HMoE is approximately 35% faster than its attention-based counterpart while maintaining comparable performance.
+    - **Function**: Efficient global relation modeling that replaces the quadratic complexity of attention.
+    - **Mechanism**: Unlike existing MoE methods that aggregate only at the expert level, HMoE enables fine-grained interactions from sub-token to token level. Low-rank linear layers serve as expert functions, with hierarchical soft routing implemented via learnable gating matrices.
+    - **Design Motivation**: Attention-based fusion is expressive but incurs quadratic complexity; local fusion is efficient but lacks a global receptive field. HMoE is approximately 35% faster than its attention-based counterpart while maintaining comparable performance.
 
 3. **Dual-Stream Design with Shared LoRA**:
 
-   - **Function**: Establishes joint representation learning across the two streams.
-   - **Mechanism**: The RGB and X modality streams share the same LoRA bypass, promoting cross-modal feature alignment. At inference time, the LoRA matrices can be merged into the original weights, incurring no additional latency.
-   - **Design Motivation**: Shared parameters reduce parameter count while fostering cross-modal consistency in domain adaptation.
+    - **Function**: Establishes joint representation learning across the two streams.
+    - **Mechanism**: The RGB and X modality streams share the same LoRA bypass, promoting cross-modal feature alignment. At inference time, the LoRA matrices can be merged into the original weights, incurring no additional latency.
+    - **Design Motivation**: Shared parameters reduce parameter count while fostering cross-modal consistency in domain adaptation.
 
 ### Loss & Training
 

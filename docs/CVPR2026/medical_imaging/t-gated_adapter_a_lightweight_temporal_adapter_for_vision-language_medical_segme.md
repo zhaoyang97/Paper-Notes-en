@@ -18,8 +18,8 @@ content_hash: c3a6ae97f4a37091
 # T-Gated Adapter: A Lightweight Temporal Adapter for Vision-Language Medical Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08167](https://arxiv.org/abs/2604.08167)
-**Code**: [GitHub](https://github.com/pranzalkhadka/T-Gated-Adapter)
+**arXiv**: [2604.08167](https://arxiv.org/abs/2604.08167)  
+**Code**: [GitHub](https://github.com/pranzalkhadka/T-Gated-Adapter)  
 **Area**: Medical Imaging / Vision-Language Models
 **Keywords**: Medical Image Segmentation, Vision-Language Models, Temporal Adapter, Cross-Modal Generalization, 3D Volumetric Awareness
 

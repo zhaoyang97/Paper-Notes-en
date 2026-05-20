@@ -18,8 +18,8 @@ content_hash: a711f4c87507ce94
 # FlashDepth: Real-time Streaming Video Depth Estimation at 2K Resolution
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.07093](https://arxiv.org/abs/2504.07093)
-**Code**: [GitHub](https://github.com/Eyeline-Research/FlashDepth)
+**arXiv**: [2504.07093](https://arxiv.org/abs/2504.07093)  
+**Code**: [GitHub](https://github.com/Eyeline-Research/FlashDepth)  
 **Area**: 3D Vision / Video Depth Estimation
 **Keywords**: video depth estimation, real-time streaming, 2K resolution, Mamba recurrent network, hybrid model
 

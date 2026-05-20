@@ -18,8 +18,8 @@ content_hash: fac9e27c6d28db4b
 # RM-R1: Reward Modeling as Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.02387](https://arxiv.org/abs/2505.02387)
-**Code**: [GitHub](https://github.com/RM-R1-UIUC/RM-R1)
+**arXiv**: [2505.02387](https://arxiv.org/abs/2505.02387)  
+**Code**: [GitHub](https://github.com/RM-R1-UIUC/RM-R1)  
 **Area**: Reinforcement Learning
 **Keywords**: Reward Model, Reasoning, Chain-of-Rubrics, Generative Reward Model, RLVR
 

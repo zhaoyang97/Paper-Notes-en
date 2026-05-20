@@ -18,8 +18,8 @@ content_hash: 572980db5a402dfa
 # Enhancing Graph Classification Robustness with Singular Pooling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22643](https://arxiv.org/abs/2510.22643)
-**Code**: [GitHub](https://github.com/king/rs-pool)
+**arXiv**: [2510.22643](https://arxiv.org/abs/2510.22643)  
+**Code**: [GitHub](https://github.com/king/rs-pool)  
 **Area**: AI Safety / Graph Neural Network Robustness
 **Keywords**: GNN robustness, graph classification, pooling, adversarial attacks, singular value decomposition
 

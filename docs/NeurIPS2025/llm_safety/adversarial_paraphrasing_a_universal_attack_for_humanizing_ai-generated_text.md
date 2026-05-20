@@ -18,8 +18,8 @@ content_hash: 5ebcc4559c54dd36
 # Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07001](https://arxiv.org/abs/2506.07001)
-**Code**: [chengez/Adversarial-Paraphrasing](https://github.com/chengez/Adversarial-Paraphrasing)
+**arXiv**: [2506.07001](https://arxiv.org/abs/2506.07001)  
+**Code**: [chengez/Adversarial-Paraphrasing](https://github.com/chengez/Adversarial-Paraphrasing)  
 **Authors**: Yize Cheng, Vinu Sankar Sadasivan, Mehrdad Saberi, Shoumik Saha, Soheil Feizi (UMD)
 **Area**: AI Security
 **Keywords**: AI text detection, adversarial attack, paraphrasing, watermark evasion, controllable text generation

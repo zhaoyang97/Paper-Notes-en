@@ -20,9 +20,9 @@ content_hash: 34d47faafdcc956a
 # SR-KI: Scalable and Real-Time Knowledge Integration into LLMs via Supervised Attention
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06446](https://arxiv.org/abs/2511.06446)
+**arXiv**: [2511.06446](https://arxiv.org/abs/2511.06446)  
 **Authors**: Bohan Yu, Wei Huang, Kang Liu (Baidu; Institute of Automation, Chinese Academy of Sciences)
-**Code**: To be released
+**Code**: To be released  
 **Area**: Information Retrieval
 **Keywords**: Knowledge injection, large language models, supervised attention, KV cache, retrieval layer, knowledge base compression, RAG alternative
 

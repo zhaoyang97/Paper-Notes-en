@@ -18,8 +18,8 @@ content_hash: 32895193db1c1629
 # UnZipLoRA: Separating Content and Style from a Single Image
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.04465](https://arxiv.org/abs/2412.04465)
-**Code**: [https://unziplora.github.io](https://unziplora.github.io)
+**arXiv**: [2412.04465](https://arxiv.org/abs/2412.04465)  
+**Code**: [https://unziplora.github.io](https://unziplora.github.io)  
 **Area**: Robotics
 **Keywords**: LoRA, content-style disentanglement, diffusion models, image generation, concept decoupling
 

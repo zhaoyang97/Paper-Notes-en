@@ -18,8 +18,8 @@ content_hash: c1aa08db8e86a9d4
 # ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.06240](https://arxiv.org/abs/2602.06240)
-**Code**: [https://github.com/zhangyuo/ATEX_CF](https://github.com/zhangyuo/ATEX_CF)
+**arXiv**: [2602.06240](https://arxiv.org/abs/2602.06240)  
+**Code**: [https://github.com/zhangyuo/ATEX_CF](https://github.com/zhangyuo/ATEX_CF)  
 **Area**: AI Safety / GNN Explainability
 **Keywords**: Graph Neural Networks, Counterfactual Explanations, Adversarial Attacks, Explainability, Graph Structure Perturbation
 

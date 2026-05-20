@@ -18,8 +18,8 @@ content_hash: 937af20fbc362f67
 # GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.22687](https://arxiv.org/abs/2603.22687)
-**Code**: Available (public)
+**arXiv**: [2603.22687](https://arxiv.org/abs/2603.22687)  
+**Code**: Available (public)  
 **Area**: Code Intelligence
 **Keywords**: Geometric Perception, TikZ Code Generation, Multimodal Reasoning, Auxiliary Line Generation, Image-to-Code
 

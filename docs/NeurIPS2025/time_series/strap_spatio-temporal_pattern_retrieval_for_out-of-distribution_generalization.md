@@ -18,8 +18,8 @@ content_hash: 9069ef12cbc8d06a
 # StRap: Spatio-Temporal Pattern Retrieval for Out-of-Distribution Generalization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19547](https://arxiv.org/abs/2505.19547)
-**Code**: None
+**arXiv**: [2505.19547](https://arxiv.org/abs/2505.19547)  
+**Code**: None  
 **Area**: Spatio-Temporal Forecasting / Graph Neural Networks
 **Keywords**: Spatio-Temporal Graph Neural Networks, OOD Generalization, Retrieval-Augmented Learning, Continual Learning, Pattern Memory Bank
 

@@ -19,8 +19,8 @@ content_hash: c623425ea363985c
 # CLIP-Free, Label-Free, Unsupervised Concept Bottleneck Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.10981](https://arxiv.org/abs/2503.10981)
-**Code**: To be confirmed
+**arXiv**: [2503.10981](https://arxiv.org/abs/2503.10981)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Concept Bottleneck Model, Interpretability, Knowledge Distillation, Unsupervised Classification, Vision-Language Alignment, Zero-Shot Image Captioning
 

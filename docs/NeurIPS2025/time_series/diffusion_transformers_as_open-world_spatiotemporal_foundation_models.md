@@ -18,8 +18,8 @@ content_hash: dea2851f52c63cc5
 # Diffusion Transformers as Open-World Spatiotemporal Foundation Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2411.12164](https://arxiv.org/abs/2411.12164)
-**Code**: [tsinghua-fib-lab/UrbanDiT](https://github.com/tsinghua-fib-lab/UrbanDiT)
+**arXiv**: [2411.12164](https://arxiv.org/abs/2411.12164)  
+**Code**: [tsinghua-fib-lab/UrbanDiT](https://github.com/tsinghua-fib-lab/UrbanDiT)  
 **Area**: Time Series
 **Keywords**: Diffusion Transformer, Spatiotemporal Foundation Model, Urban Computing, Prompt Learning, Zero-shot
 

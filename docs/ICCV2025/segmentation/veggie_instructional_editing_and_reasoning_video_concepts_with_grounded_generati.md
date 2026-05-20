@@ -18,8 +18,8 @@ content_hash: 2a2bab26b0c82e5c
 # VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.14350](https://arxiv.org/abs/2503.14350)
-**Code**: [https://veggie-gen.github.io/](https://veggie-gen.github.io/) (project page)
+**arXiv**: [2503.14350](https://arxiv.org/abs/2503.14350)  
+**Code**: [https://veggie-gen.github.io/](https://veggie-gen.github.io/) (project page)  
 **Area**: Semantic Segmentation
 **Keywords**: Video Editing, Instructional Editing, Video Concept Grounding, Reasoning Segmentation, Unified Multi-Task Model
 

@@ -18,8 +18,8 @@ content_hash: b56aca779a74adf6
 # RESBev: Making BEV Perception More Robust
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09529](https://arxiv.org/abs/2603.09529)
-**Code**: N/A
+**arXiv**: [2603.09529](https://arxiv.org/abs/2603.09529)  
+**Code**: N/A  
 **Area**: Autonomous Driving / BEV Perception Robustness
 **Keywords**: BEV perception, robustness, world model, adversarial attack, plug-and-play
 

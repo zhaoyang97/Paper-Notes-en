@@ -18,8 +18,8 @@ content_hash: b1e16ad4b10f3743
 # CTFS: Collaborative Teacher Framework for Forward-Looking Sonar Image Semantic Segmentation with Extremely Limited Labels
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21071](https://arxiv.org/abs/2603.21071)
-**Code**: Available
+**arXiv**: [2603.21071](https://arxiv.org/abs/2603.21071)  
+**Code**: Available  
 **Area**: Segmentation / Underwater Imaging
 **Keywords**: Sonar image segmentation, semi-supervised learning, multi-teacher collaboration, pseudo-label reliability, extremely limited annotations
 
@@ -47,32 +47,32 @@ Labeled data → supervised student training ($\mathcal{L}_{sup}$); unlabeled da
 
 1. **Collaborative Teacher Strategy (CBTS)**:
 
-   - **General teacher $T_{general}$**: Standard geometric transformations and color perturbations as weak augmentation—learns general semantic representations.
-   - **Acoustic shadow teacher $T_{sonar\_a}$**: Simulates shadows produced when sonar is occluded by obstacles. Within a fan-shaped region, intensity decays with distance: $I_o(x,y) = I_i(x,y) \times [1-\alpha(1-d/R)]$, where $d$ is the distance to the shadow origin and $R=0.2\times\min(H,W)$.
-   - **Energy attenuation teacher $T_{sonar\_b}$**: Simulates the directional energy attenuation of acoustic waves propagating through seawater: $I_o(x,y) = I_i(x,y) \times (1-\gamma \times y/H)$, applying linear attenuation along the vertical direction.
-   - **Rotation strategy**: The three teachers cycle in the fixed order general → acoustic shadow → energy attenuation; each teacher is updated via EMA.
-   - **Design Motivation**: (1) The general teacher provides a foundation for generic semantic learning; (2) sonar-specific teachers train the student to acquire sonar-invariant representations—correctly segmenting even under acoustic shadow or energy attenuation; (3) mapping each teacher to a specific physical perturbation preserves feature-level semantic consistency.
+    - **General teacher $T_{general}$**: Standard geometric transformations and color perturbations as weak augmentation—learns general semantic representations.
+    - **Acoustic shadow teacher $T_{sonar\_a}$**: Simulates shadows produced when sonar is occluded by obstacles. Within a fan-shaped region, intensity decays with distance: $I_o(x,y) = I_i(x,y) \times [1-\alpha(1-d/R)]$, where $d$ is the distance to the shadow origin and $R=0.2\times\min(H,W)$.
+    - **Energy attenuation teacher $T_{sonar\_b}$**: Simulates the directional energy attenuation of acoustic waves propagating through seawater: $I_o(x,y) = I_i(x,y) \times (1-\gamma \times y/H)$, applying linear attenuation along the vertical direction.
+    - **Rotation strategy**: The three teachers cycle in the fixed order general → acoustic shadow → energy attenuation; each teacher is updated via EMA.
+    - **Design Motivation**: (1) The general teacher provides a foundation for generic semantic learning; (2) sonar-specific teachers train the student to acquire sonar-invariant representations—correctly segmenting even under acoustic shadow or energy attenuation; (3) mapping each teacher to a specific physical perturbation preserves feature-level semantic consistency.
 
 2. **Multi-View Reliability Assessment (MVRA)**:
 
-   - **Function**: Dynamically quantifies pseudo-label reliability, replacing simple single-threshold confidence filtering.
-   - **Grid partitioning**: Images are divided into $m \times m$ grid cells; prediction probabilities within each cell are averaged to reduce computational cost.
-   - **Intra-teacher stability**: Cosine similarity between a teacher's predictions on the original image and multiple augmented views: $r_{ij}^t = \frac{1}{N_{A_w^t}} \sum_k \cos(f_{ij}^{ot}, f_{ij}^{kt})$.
-   - **Inter-teacher consistency**: Pairwise cosine similarity among the three teachers' predictions on the same image: $C_{ij} = \frac{1}{N_\mathcal{D}} \sum_{(p,q)} \cos(f_{ij}^{op}, f_{ij}^{oq})$.
-   - **Composite reliability**: $R_{ij} = \Pi(C_{ij}) \times \frac{1}{N_T}\sum_t r_{ij}^t$, where the penalty term $\Pi(C_{ij}) = \delta + (1-\delta)C_{ij}$ penalizes low inter-teacher consistency.
-   - Grid-level scores are then broadcast to the pixel level.
-   - **Design Motivation**: The characteristics of sonar images render single-teacher confidence unreliable; only multi-dimensional assessment (self-stability + multi-teacher consensus) can effectively filter noisy pseudo-labels.
+    - **Function**: Dynamically quantifies pseudo-label reliability, replacing simple single-threshold confidence filtering.
+    - **Grid partitioning**: Images are divided into $m \times m$ grid cells; prediction probabilities within each cell are averaged to reduce computational cost.
+    - **Intra-teacher stability**: Cosine similarity between a teacher's predictions on the original image and multiple augmented views: $r_{ij}^t = \frac{1}{N_{A_w^t}} \sum_k \cos(f_{ij}^{ot}, f_{ij}^{kt})$.
+    - **Inter-teacher consistency**: Pairwise cosine similarity among the three teachers' predictions on the same image: $C_{ij} = \frac{1}{N_\mathcal{D}} \sum_{(p,q)} \cos(f_{ij}^{op}, f_{ij}^{oq})$.
+    - **Composite reliability**: $R_{ij} = \Pi(C_{ij}) \times \frac{1}{N_T}\sum_t r_{ij}^t$, where the penalty term $\Pi(C_{ij}) = \delta + (1-\delta)C_{ij}$ penalizes low inter-teacher consistency.
+    - Grid-level scores are then broadcast to the pixel level.
+    - **Design Motivation**: The characteristics of sonar images render single-teacher confidence unreliable; only multi-dimensional assessment (self-stability + multi-teacher consensus) can effectively filter noisy pseudo-labels.
 
 3. **Reliability-Guided Adaptive Constraint**:
 
-   - The unsupervised loss employs reliability in a **dual role**: (1) hard-threshold filtering $\Delta = \mathbb{1}[R_b^n > \psi]$; (2) soft reliability weighting $\times R_b^n$.
-   - **Design Motivation**: Combines filtering with fine-grained weighting—high-reliability regions receive strong supervision; low-reliability regions receive weak supervision or are ignored.
+    - The unsupervised loss employs reliability in a **dual role**: (1) hard-threshold filtering $\Delta = \mathbb{1}[R_b^n > \psi]$; (2) soft reliability weighting $\times R_b^n$.
+    - **Design Motivation**: Combines filtering with fine-grained weighting—high-reliability regions receive strong supervision; low-reliability regions receive weak supervision or are ignored.
 
 4. **FSSG New Dataset**:
 
-   - Collected in Bohai Bay using a multi-beam forward-looking sonar (Oculus M750d, 750 kHz / 1.2 MHz) mounted on an ROV.
-   - 3,761 images, 11 object categories (including a diver class), with a long-tailed distribution.
-   - Captured at distances of 2–15 m from various angles to increase diversity.
+    - Collected in Bohai Bay using a multi-beam forward-looking sonar (Oculus M750d, 750 kHz / 1.2 MHz) mounted on an ROV.
+    - 3,761 images, 11 object categories (including a diver class), with a long-tailed distribution.
+    - Captured at distances of 2–15 m from various angles to increase diversity.
 
 ### Loss & Training
 $$\mathcal{L}_{total} = \mathcal{L}_{sup} + \lambda_u \cdot \mathcal{L}_{unsup}$$

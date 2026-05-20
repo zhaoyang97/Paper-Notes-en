@@ -18,8 +18,8 @@ content_hash: cca3a70288b1e002
 # DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.20933](https://arxiv.org/abs/2602.20933)
-**Code**: [Project Page](https://sk-fun.fun/DropAnSH-GS)
+**arXiv**: [2602.20933](https://arxiv.org/abs/2602.20933)  
+**Code**: [Project Page](https://sk-fun.fun/DropAnSH-GS)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, sparse-view, dropout regularization, spherical harmonics, novel view synthesis
 

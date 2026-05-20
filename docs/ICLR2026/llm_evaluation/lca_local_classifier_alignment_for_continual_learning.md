@@ -18,8 +18,8 @@ content_hash: d14d04d8ed50d8e4
 # LCA: Local Classifier Alignment for Continual Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.09888](https://arxiv.org/abs/2603.09888)
-**Code**: [GitHub](https://github.com/tung-tran-kyushu/LCA)
+**arXiv**: [2603.09888](https://arxiv.org/abs/2603.09888)  
+**Code**: [GitHub](https://github.com/tung-tran-kyushu/LCA)  
 **Area**: Continual Learning
 **Keywords**: Class-Incremental Learning, Classifier Alignment, Model Merging, Robustness, Pre-trained Models
 

@@ -18,8 +18,8 @@ content_hash: b43dbabe76f610a7
 # Stable Coresets via Posterior Sampling: Aligning Induced and Full Loss Landscapes
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.17399](https://arxiv.org/abs/2511.17399)
-**Code**: [https://github.com/changwk1001/stable-coreset.git](https://github.com/changwk1001/stable-coreset.git)
+**arXiv**: [2511.17399](https://arxiv.org/abs/2511.17399)  
+**Code**: [https://github.com/changwk1001/stable-coreset.git](https://github.com/changwk1001/stable-coreset.git)  
 **Area**: Efficient Training / Data Selection
 **Keywords**: Coreset Selection, Posterior Sampling, Loss Landscape Alignment, Label Noise Robustness, SGD Convergence
 

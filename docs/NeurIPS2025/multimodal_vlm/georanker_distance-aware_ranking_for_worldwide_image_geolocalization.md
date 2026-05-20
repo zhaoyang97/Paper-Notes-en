@@ -18,8 +18,8 @@ content_hash: b3e712a8f0df5e04
 # GeoRanker: Distance-Aware Ranking for Worldwide Image Geolocalization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13731](https://arxiv.org/abs/2505.13731)
-**Code**: [Available](https://github.com/Applied-Machine-Learning-Lab/GeoRanker)
+**arXiv**: [2505.13731](https://arxiv.org/abs/2505.13731)  
+**Code**: [Available](https://github.com/Applied-Machine-Learning-Lab/GeoRanker)  
 **Area**: Multimodal VLM
 **Keywords**: Image geolocalization, distance-aware ranking, large vision-language models, learning-to-rank, spatial reasoning
 

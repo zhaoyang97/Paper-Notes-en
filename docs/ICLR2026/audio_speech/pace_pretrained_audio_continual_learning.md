@@ -18,8 +18,8 @@ content_hash: ed96af71bc431e0e
 # PACE: Pretrained Audio Continual Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.03355](https://arxiv.org/abs/2602.03355)
-**Code**: Available (to be released with the paper)
+**arXiv**: [2602.03355](https://arxiv.org/abs/2602.03355)  
+**Code**: Available (to be released with the paper)  
 **Area**: Audio & Speech
 **Keywords**: Audio continual learning, pretrained models, parameter-efficient fine-tuning, analytic classifier, catastrophic forgetting
 

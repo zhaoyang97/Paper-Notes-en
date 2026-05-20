@@ -18,8 +18,8 @@ content_hash: cc5fd0e03edd15ad
 # Surf2CT: Cascaded 3D Flow Matching Models for Torso 3D CT Synthesis from Skin Surface
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.22511](https://arxiv.org/abs/2505.22511)
-**Code**: Not available
+**arXiv**: [2505.22511](https://arxiv.org/abs/2505.22511)  
+**Code**: Not available  
 **Area**: Medical Imaging / CT Synthesis
 **Keywords**: Flow Matching, CT Synthesis, Body Surface Scan, 3D Generation, Non-Invasive Imaging
 

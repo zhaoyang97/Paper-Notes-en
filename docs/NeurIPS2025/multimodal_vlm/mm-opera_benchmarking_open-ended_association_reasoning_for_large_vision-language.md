@@ -19,8 +19,8 @@ content_hash: 268d4cf2d14b54b5
 # MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.26937](https://arxiv.org/abs/2510.26937)
-**Code**: [https://github.com/MM-OPERA-Bench/MM-OPERA](https://github.com/MM-OPERA-Bench/MM-OPERA)
+**arXiv**: [2510.26937](https://arxiv.org/abs/2510.26937)  
+**Code**: [https://github.com/MM-OPERA-Bench/MM-OPERA](https://github.com/MM-OPERA-Bench/MM-OPERA)  
 **Area**: Multimodal VLM / Association Reasoning / Evaluation Benchmark
 **Keywords**: association reasoning, open-ended evaluation, LLM-as-a-Judge, process reward, divergent thinking, convergent thinking
 

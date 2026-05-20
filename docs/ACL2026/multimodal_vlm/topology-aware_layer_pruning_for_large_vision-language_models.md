@@ -18,8 +18,8 @@ content_hash: 28d6429d646af40d
 # Topology-Aware Layer Pruning for Large Vision-Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.16502](https://arxiv.org/abs/2604.16502)
-**Code**: [GitHub](https://github.com/zpc456/TopoVLM)
+**arXiv**: [2604.16502](https://arxiv.org/abs/2604.16502)  
+**Code**: [GitHub](https://github.com/zpc456/TopoVLM)  
 **Area**: Multimodal VLM / Model Compression
 **Keywords**: Layer Pruning, Topological Data Analysis, Persistent Homology, Vision-Language Models, Model Compression
 

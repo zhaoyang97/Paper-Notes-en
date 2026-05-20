@@ -17,8 +17,8 @@ content_hash: 92396bc3c04c2f87
 # Adaptive Data Analysis for Growing Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2405.13375](https://arxiv.org/abs/2405.13375)
-**Code**: None
+**arXiv**: [2405.13375](https://arxiv.org/abs/2405.13375)  
+**Code**: None  
 **Area**: Machine Learning Theory
 **Keywords**: Adaptive data analysis, differential privacy, generalization bounds, dynamic data, overfitting
 

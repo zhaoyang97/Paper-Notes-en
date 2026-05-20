@@ -18,8 +18,8 @@ content_hash: 85cfab2ec4caa1fd
 # MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.16310](https://arxiv.org/abs/2507.16310)
-**Code**: [Project Page](https://motionshot.github.io/)
+**arXiv**: [2507.16310](https://arxiv.org/abs/2507.16310)  
+**Code**: [Project Page](https://motionshot.github.io/)  
 **Area**: Video Generation
 **Keywords**: motion transfer, text-to-video, training-free, TPS warping, temporal attention guidance
 

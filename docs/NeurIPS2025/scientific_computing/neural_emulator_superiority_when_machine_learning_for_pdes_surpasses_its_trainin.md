@@ -19,8 +19,8 @@ content_hash: 5143fdb0ed52ac9f
 # Neural Emulator Superiority: When Machine Learning for PDEs Surpasses its Training Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23111](https://arxiv.org/abs/2510.23111)
-**Code**: [tum-pbs.github.io/emulator-superiority](https://tum-pbs.github.io/emulator-superiority)
+**arXiv**: [2510.23111](https://arxiv.org/abs/2510.23111)  
+**Code**: [tum-pbs.github.io/emulator-superiority](https://tum-pbs.github.io/emulator-superiority)  
 **Area**: Scientific Computing / Neural PDE Solvers
 **Keywords**: PDE emulator, numerical solver, emulator superiority, Fourier analysis, autoregressive rollout, inductive bias
 

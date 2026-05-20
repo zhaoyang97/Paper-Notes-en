@@ -18,8 +18,8 @@ content_hash: 3f834ab5f6f1a8e0
 # INST-IT: Boosting Instance Understanding via Explicit Visual Prompt Instruction Tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.03565](https://arxiv.org/abs/2412.03565)
-**Code**: [GitHub](https://github.com/inst-it/inst-it) | [HuggingFace](https://huggingface.co/Inst-IT)
+**arXiv**: [2412.03565](https://arxiv.org/abs/2412.03565)  
+**Code**: [GitHub](https://github.com/inst-it/inst-it) | [HuggingFace](https://huggingface.co/Inst-IT)  
 **Area**: Video Understanding / Multimodal Learning
 **Keywords**: Instance-level Understanding, Visual Prompting, Instruction Tuning, Large Multimodal Models, Spatiotemporal Understanding
 

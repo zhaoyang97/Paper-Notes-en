@@ -18,8 +18,8 @@ content_hash: 767503fd8c730823
 # MCTSr-Zero: Self-Reflective Psychological Counseling Dialogues Generation via Principles and Adaptive Exploration
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.23229](https://arxiv.org/abs/2505.23229)
-**Code**: [github](https://github.com/JianChengXingYun/Mctsr-Zero)
+**arXiv**: [2505.23229](https://arxiv.org/abs/2505.23229)  
+**Code**: [github](https://github.com/JianChengXingYun/Mctsr-Zero)  
 **Area**: Medical Imaging
 **Keywords**: Monte Carlo Tree Search, psychological counseling, dialogue generation, self-reflection, domain alignment
 

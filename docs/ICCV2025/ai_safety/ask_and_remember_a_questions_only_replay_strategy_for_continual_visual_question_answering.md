@@ -18,8 +18,8 @@ content_hash: 5bdf3c6df69b3a92
 # Ask and Remember: A Questions-Only Replay Strategy for Continual Visual Question Answering
 
 **Conference**: ICCV 2025
-**arXiv**: N/A
-**Code**: [GitHub](https://github.com/IemProg/QUAD)
+**arXiv**: N/A  
+**Code**: [GitHub](https://github.com/IemProg/QUAD)  
 **Area**: Continual Learning / Visual Question Answering
 **Keywords**: continual learning, VQA, question-only replay, attention distillation, privacy-preserving
 

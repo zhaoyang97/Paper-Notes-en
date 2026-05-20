@@ -18,8 +18,8 @@ content_hash: 2900151fd083ece8
 # CoMoGaussian: Continuous Motion-Aware Gaussian Splatting from Motion-Blurred Images
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.05332](https://arxiv.org/abs/2503.05332)
-**Code**: [https://github.com/Jho-Yonsei/CoMoGaussian](https://github.com/Jho-Yonsei/CoMoGaussian) (Project page: [https://Jho-Yonsei.github.io/CoMoGaussian/](https://Jho-Yonsei.github.io/CoMoGaussian/))
+**arXiv**: [2503.05332](https://arxiv.org/abs/2503.05332)  
+**Code**: [https://github.com/Jho-Yonsei/CoMoGaussian](https://github.com/Jho-Yonsei/CoMoGaussian) (Project page: [https://Jho-Yonsei.github.io/CoMoGaussian/](https://Jho-Yonsei.github.io/CoMoGaussian/))  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, motion blur, neural ODE, camera trajectory, deblurring
 

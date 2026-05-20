@@ -18,8 +18,8 @@ content_hash: dba16b862b3f9ad9
 # ARM: Adaptive Reasoning Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20258](https://arxiv.org/abs/2505.20258)
-**Code**: [https://team-arm.github.io/arm](https://team-arm.github.io/arm)
+**arXiv**: [2505.20258](https://arxiv.org/abs/2505.20258)  
+**Code**: [https://team-arm.github.io/arm](https://team-arm.github.io/arm)  
 **Area**: LLM Reasoning Efficiency / Reinforcement Learning
 **Keywords**: Adaptive Reasoning, Overthinking, GRPO, Reasoning Format Selection, Test-Time Compute
 

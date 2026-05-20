@@ -18,8 +18,8 @@ content_hash: 8e5c7f5066d37660
 # Synergistic Prompting for Robust Visual Recognition with Missing Modalities
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.07802](https://arxiv.org/abs/2507.07802)
-**Code**: N/A
+**arXiv**: [2507.07802](https://arxiv.org/abs/2507.07802)  
+**Code**: N/A  
 **Area**: Multimodal VLM / Missing Modality Learning / Prompt Learning
 **Keywords**: missing modality, dynamic prompt, synergistic prompting, CLIP, multi-modal learning
 

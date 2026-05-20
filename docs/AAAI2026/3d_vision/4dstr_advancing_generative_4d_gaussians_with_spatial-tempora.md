@@ -18,8 +18,8 @@ content_hash: 46457b6eedf34cb3
 # 4DSTR: Advancing Generative 4D Gaussians with Spatial-Temporal Rectification for High-Quality and Consistent 4D Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07241](https://arxiv.org/abs/2511.07241)
-**Code**: None
+**arXiv**: [2511.07241](https://arxiv.org/abs/2511.07241)  
+**Code**: None  
 **Area**: 3D/4D Vision, 4D Content Generation
 **Keywords**: 4D Gaussian Splatting, Spatial-Temporal Consistency, Video-to-4D, Mamba, Adaptive Densification
 

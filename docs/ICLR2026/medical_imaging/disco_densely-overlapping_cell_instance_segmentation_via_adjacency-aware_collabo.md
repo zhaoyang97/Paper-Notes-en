@@ -18,8 +18,8 @@ content_hash: 21597ffedfc21f0c
 # DISCO: Densely-overlapping Cell Instance Segmentation via Adjacency-aware Collaborative Coloring
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.05420](https://arxiv.org/abs/2602.05420)
-**Code**: [https://github.com/SR0920/Disco](https://github.com/SR0920/Disco)
+**arXiv**: [2602.05420](https://arxiv.org/abs/2602.05420)  
+**Code**: [https://github.com/SR0920/Disco](https://github.com/SR0920/Disco)  
 **Area**: Medical Imaging / Segmentation
 **Keywords**: cell instance segmentation, graph coloring, dense overlap, adjacency constraints, pathology images
 

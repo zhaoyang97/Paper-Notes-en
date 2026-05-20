@@ -19,8 +19,8 @@ content_hash: 4651d0234b87c3b4
 # Behavior Injection: Preparing Language Models for Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18917](https://arxiv.org/abs/2505.18917)
-**Code**: [Project](https://bridge-llm-reasoning.github.io/)
+**arXiv**: [2505.18917](https://arxiv.org/abs/2505.18917)  
+**Code**: [Project](https://bridge-llm-reasoning.github.io/)  
 **Area**: LLM / Reinforcement Learning
 **Keywords**: RL fine-tuning, behavior injection, data augmentation, GRPO, per-step influence, reasoning
 

@@ -18,8 +18,8 @@ content_hash: 7cf2e4fe2c82cbda
 # SHAP Values via Sparse Fourier Representation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.06300](https://arxiv.org/abs/2410.06300)
-**Code**: Not available
+**arXiv**: [2410.06300](https://arxiv.org/abs/2410.06300)  
+**Code**: Not available  
 **Area**: Explainable AI / Shapley Value Computation
 **Keywords**: SHAP values, Fourier representation, sparse Walsh-Hadamard transform, feature attribution, accelerated computation
 

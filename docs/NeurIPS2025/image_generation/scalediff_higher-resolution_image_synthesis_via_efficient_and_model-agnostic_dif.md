@@ -18,8 +18,8 @@ content_hash: 2c7e47fa171d131e
 # ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25818](https://arxiv.org/abs/2510.25818)
-**Code**: None
+**arXiv**: [2510.25818](https://arxiv.org/abs/2510.25818)  
+**Code**: None  
 **Area**: Diffusion Models / High-Resolution Image Generation
 **Keywords**: High-resolution generation, Training-free, Patch attention, Frequency mixing, Structure guidance
 

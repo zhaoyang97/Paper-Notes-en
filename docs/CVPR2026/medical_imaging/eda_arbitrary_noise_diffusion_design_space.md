@@ -18,8 +18,8 @@ content_hash: 9d7974971241c241
 # Elucidating the Design Space of Arbitrary-Noise-Based Diffusion Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2507.18534](https://arxiv.org/abs/2507.18534)
-**Code**: [https://github.com/PerceptionComputingLab/EDA](https://github.com/PerceptionComputingLab/EDA)
+**arXiv**: [2507.18534](https://arxiv.org/abs/2507.18534)  
+**Code**: [https://github.com/PerceptionComputingLab/EDA](https://github.com/PerceptionComputingLab/EDA)  
 **Area**: Diffusion Models / Image Restoration
 **Keywords**: Arbitrary-noise diffusion, EDM unified framework, SDE design space, medical image denoising, shadow removal
 

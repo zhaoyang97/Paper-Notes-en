@@ -18,8 +18,8 @@ content_hash: c93bd2e3d5682cfc
 # Deep RL Needs Deep Behavior Analysis: Exploring Implicit Planning by Model-Free Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06981](https://arxiv.org/abs/2506.06981)
-**Code**: [GitHub](https://github.com/RileySE/Craftax-Foraging/tree/foraging)
+**arXiv**: [2506.06981](https://arxiv.org/abs/2506.06981)  
+**Code**: [GitHub](https://github.com/RileySE/Craftax-Foraging/tree/foraging)  
 **Area**: Reinforcement Learning
 **Keywords**: behavior analysis, neural dynamics, implicit planning, foraging environment, interpretability
 

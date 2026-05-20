@@ -17,8 +17,8 @@ content_hash: 41a2dbe1334a0265
 # Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.18864](https://arxiv.org/abs/2504.18864)
-**Code**: N/A
+**arXiv**: [2504.18864](https://arxiv.org/abs/2504.18864)  
+**Code**: N/A  
 **Area**: Computer Vision / Fluid Mechanics
 **Keywords**: Particle Image Velocimetry, Spike Camera, Fluid Motion Estimation, Graph Neural Network, Multi-Scale Optimization
 

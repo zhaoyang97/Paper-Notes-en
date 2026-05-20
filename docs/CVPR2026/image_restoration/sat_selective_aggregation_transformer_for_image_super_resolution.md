@@ -18,8 +18,8 @@ content_hash: c974bc6057aefc9c
 # SAT: Selective Aggregation Transformer for Image Super-Resolution
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07994](https://arxiv.org/abs/2604.07994)
-**Code**: [https://github.com/PhuTran1005/SAT](https://github.com/PhuTran1005/SAT)
+**arXiv**: [2604.07994](https://arxiv.org/abs/2604.07994)  
+**Code**: [https://github.com/PhuTran1005/SAT](https://github.com/PhuTran1005/SAT)  
 **Area**: Image Super-Resolution
 **Keywords**: super-resolution, transformer, token aggregation, efficient attention, global modeling
 

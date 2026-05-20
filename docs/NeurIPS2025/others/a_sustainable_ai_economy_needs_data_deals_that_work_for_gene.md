@@ -17,8 +17,8 @@ content_hash: 9218fb92270f122c
 # A Sustainable AI Economy Needs Data Deals That Work for Generators
 
 **Conference**: NeurIPS 2025 (Position Paper Track)
-**arXiv**: [2601.09966](https://arxiv.org/abs/2601.09966)
-**Code**: None
+**arXiv**: [2601.09966](https://arxiv.org/abs/2601.09966)  
+**Code**: None  
 **Area**: AI Economics / Data Markets
 **Keywords**: Data markets, data valuation, economic data processing inequality, EDVEX framework, data generator rights
 
@@ -49,19 +49,19 @@ The argument proceeds in three layers: (1) empirical analysis of 73 publicly ava
 ### Key Designs
 
 1. **Empirical Analysis of 73 Public Data Transactions**:
-   - **Function**: Collect and analyze publicly disclosed data transaction cases.
-   - **Mechanism**: Analysis of transactions totaling approximately $1.75 billion reveals that creator royalties are effectively zero, transaction terms are generally opaque, most deals are one-time buyouts with no revenue sharing, and value flows primarily to aggregators.
-   - **Design Motivation**: Ground the position paper's arguments in real data rather than assumptions, thereby strengthening its persuasiveness.
+    - **Function**: Collect and analyze publicly disclosed data transaction cases.
+    - **Mechanism**: Analysis of transactions totaling approximately $1.75 billion reveals that creator royalties are effectively zero, transaction terms are generally opaque, most deals are one-time buyouts with no revenue sharing, and value flows primarily to aggregators.
+    - **Design Motivation**: Ground the position paper's arguments in real data rather than assumptions, thereby strengthening its persuasiveness.
 
 2. **Diagnosis of Three Structural Deficiencies**:
-   - **Function**: Identify the operational root causes of data generator rights erosion.
-   - **Mechanism**: (1) **Missing Provenance**: Once data is aggregated into large-scale datasets, source information disappears, making contribution tracking — and thus contribution-based compensation — impossible; (2) **Asymmetric Bargaining Power**: Individual generators face large aggregators from an extremely weak position and must accept take-it-or-leave-it terms; (3) **Non-dynamic Pricing**: Static, one-time payments do not reflect the actual marginal contribution of data to specific tasks.
-   - **Design Motivation**: The three deficiencies form a complete causal chain — no provenance → inability to quantify contribution → inability to price fairly → no basis for equitable bargaining.
+    - **Function**: Identify the operational root causes of data generator rights erosion.
+    - **Mechanism**: (1) **Missing Provenance**: Once data is aggregated into large-scale datasets, source information disappears, making contribution tracking — and thus contribution-based compensation — impossible; (2) **Asymmetric Bargaining Power**: Individual generators face large aggregators from an extremely weak position and must accept take-it-or-leave-it terms; (3) **Non-dynamic Pricing**: Static, one-time payments do not reflect the actual marginal contribution of data to specific tasks.
+    - **Design Motivation**: The three deficiencies form a complete causal chain — no provenance → inability to quantify contribution → inability to price fairly → no basis for equitable bargaining.
 
 3. **EDVEX Framework (Equitable Data-Value Exchange)**:
-   - **Function**: Propose a conceptual framework for constructing a minimally viable fair data market.
-   - **Mechanism**: The framework comprises three technical primitives — **task-data matching** (intelligently matching the most valuable data sources to ML tasks), **auditable provenance tracking** (full-chain recording from data generation to usage), and **utility-based dynamic valuation** (pricing based on actual contribution to model performance using methods such as Data Shapley). The framework also proposes **dynamic data coalitions** — small generators forming cooperative-like organizations to enhance collective bargaining power.
-   - **Design Motivation**: Each primitive addresses one deficiency — provenance tracking solves the provenance problem, dynamic valuation solves the pricing problem, and coalitions solve the bargaining power problem.
+    - **Function**: Propose a conceptual framework for constructing a minimally viable fair data market.
+    - **Mechanism**: The framework comprises three technical primitives — **task-data matching** (intelligently matching the most valuable data sources to ML tasks), **auditable provenance tracking** (full-chain recording from data generation to usage), and **utility-based dynamic valuation** (pricing based on actual contribution to model performance using methods such as Data Shapley). The framework also proposes **dynamic data coalitions** — small generators forming cooperative-like organizations to enhance collective bargaining power.
+    - **Design Motivation**: Each primitive addresses one deficiency — provenance tracking solves the provenance problem, dynamic valuation solves the pricing problem, and coalitions solve the bargaining power problem.
 
 ### Loss & Training
 

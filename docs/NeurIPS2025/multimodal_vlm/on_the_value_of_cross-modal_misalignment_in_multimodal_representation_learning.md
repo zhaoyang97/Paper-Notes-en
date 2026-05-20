@@ -18,8 +18,8 @@ content_hash: 9d23a652a1d8f3bf
 # On the Value of Cross-Modal Misalignment in Multimodal Representation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.10143](https://arxiv.org/abs/2504.10143)
-**Code**: [Project Page](https://yichaocai.com/misalignment.github.io)
+**arXiv**: [2504.10143](https://arxiv.org/abs/2504.10143)  
+**Code**: [Project Page](https://yichaocai.com/misalignment.github.io)  
 **Area**: Multimodal VLM
 **Keywords**: multimodal contrastive learning, cross-modal misalignment, latent variable model, identifiability, invariant representation learning
 
@@ -163,9 +163,9 @@ Zero-shot evaluation of OpenCLIP pretrained on LAION-400M across 146 visual conc
 1. **Unified perspective**: The paper is the first to theoretically reconcile the opposing views of misalignment as harmful vs. beneficial using identifiability theory, providing a clear characterization of the conditions governing each outcome.
 2. **Flexible latent variable model**: By permitting arbitrary causal structure among semantic variables, the framework is more general than prior work requiring independence or fixed graph structures.
 3. **Practical insights**:
-   - Large-scale pretraining requires comprehensive and consistent annotations to preserve all semantics.
-   - In OOD settings, invariant representation learning can be naturally achieved by controlling textual misalignment.
-   - Auditing and curating text is more precise and controllable than manipulating latent variables.
+    - Large-scale pretraining requires comprehensive and consistent annotations to preserve all semantics.
+    - In OOD settings, invariant representation learning can be naturally achieved by controlling textual misalignment.
+    - Auditing and curating text is more precise and controllable than manipulating latent variables.
 4. **Perturbation vs. intervention**: The paper distinguishes observation-level textual perturbations from causal interventions; the latter propagate along the causal graph whereas the former do not.
 
 ## Limitations & Future Work

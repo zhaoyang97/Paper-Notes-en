@@ -18,8 +18,8 @@ content_hash: 7d45d80245f66390
 # RegFormer: Transferable Relational Grounding for Efficient Weakly-Supervised HOI Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.00507](https://arxiv.org/abs/2604.00507)
-**Code**: [https://github.com/mlvlab/RegFormer](https://github.com/mlvlab/RegFormer)
+**arXiv**: [2604.00507](https://arxiv.org/abs/2604.00507)  
+**Code**: [https://github.com/mlvlab/RegFormer](https://github.com/mlvlab/RegFormer)  
 **Area**: Human Understanding
 **Keywords**: Human-Object Interaction Detection, Weak Supervision, Relational Grounding, Interactiveness Learning, Zero-Shot Transfer
 

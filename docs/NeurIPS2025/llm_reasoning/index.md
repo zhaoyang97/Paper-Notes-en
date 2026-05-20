@@ -21,9 +21,9 @@ tags:
 
 **🧠 NeurIPS2025** · **66** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (45)](../../ACL2026/llm_reasoning/index.md) · [📷 CVPR2026 (12)](../../CVPR2026/llm_reasoning/index.md) · [🔬 ICLR2026 (65)](../../ICLR2026/llm_reasoning/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (20)](../../ICML2026/llm_reasoning/index.md) · [💬 ACL2026 (44)](../../ACL2026/llm_reasoning/index.md) · [📷 CVPR2026 (12)](../../CVPR2026/llm_reasoning/index.md) · [🔬 ICLR2026 (63)](../../ICLR2026/llm_reasoning/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
 
-🔥 **Top topics:** Reasoning ×44 · LLM ×12 · Multimodal/VLM ×4 · Reinforcement Learning ×4 · Model Compression ×2
+🔥 **Top topics:** Reasoning ×43 · LLM ×12 · Multimodal/VLM ×4 · Reinforcement Learning ×4 · Model Compression ×2
 
 **[AbbIE: Autoregressive Block-Based Iterative Encoder for Efficient Sequence Modeling](abbie_autoregressive_block-based_iterative_encoder_for_efficient_sequence_modeli.md)**
 
@@ -145,10 +145,6 @@ tags:
 
 :   This paper proposes a formal PAC learning framework for Chain-of-Thought verifiers, defining three progressively stronger verification objectives (Simple → Trustable → γ-Trustable). It proves that when each problem admits only a bounded number of correct proofs, the sample complexity is $O(\log|H|)$; however, when the number of correct proofs is unbounded, the sample complexity inevitably grows to $\Theta(|H|)$, unless the verifier class satisfies additional structural assumptions such as intersection-closure. The paper also exploits the USAT problem to demonstrate a computational complexity gap between verification and generation.
 
-**[One Token Embedding Is Enough to Deadlock Your Large Reasoning Model](one_token_embedding_is_enough_to_deadlock_your_large_reasoning_model.md)**
-
-:   This paper proposes the Deadlock Attack, which optimizes a single adversarial token embedding and implants it into a Large Reasoning Model (LRM) via a backdoor mechanism, causing the model to enter a permanent reasoning loop during inference (endlessly generating transition words such as "Wait" and "But"). The attack achieves a 100% attack success rate across 4 LRMs and 3 mathematical reasoning benchmarks, with negligible performance degradation on clean inputs.
-
 **[ProofSketch: Efficient Verified Reasoning for Large Language Models](proofsketch_efficient_verified_reasoning_for_large_language_models.md)**
 
 :   ProofSketch is a framework that combines symbolic closure-based forward reasoning, compact sketch generation, and formal verification in a multi-stage pipeline, achieving formal correctness guarantees for logical reasoning while reducing token consumption.
@@ -209,6 +205,10 @@ tags:
 
 :   The final layer of Phi-4 family small models (3.8B/14B) is replaced with a regression head and fine-tuned, enabling them to serve simultaneously as ORM (outcome reward model) and PRM (process reward model). On code generation tasks, selecting the optimal rollout yields 20%+ improvements in pass@k.
 
+**[SolverLLM: Solving Optimization Problems via Test-Time Scaling with LLM-Guided Search](solverllm_leveraging_test-time_scaling_for_optimization_problem_via_llm-guided_s.md)**
+
+:   This paper proposes SolverLLM, a training-free framework that treats the mathematical modeling of optimization problems as a search problem. It employs an enhanced MCTS to explore optimal formulations within a six-element representation space, incorporating dynamic expansion, prompt backpropagation, and uncertainty backpropagation. SolverLLM surpasses both prompting-based and fine-tuning-based methods on 6 benchmarks without any training.
+
 **[SPRINT: Enabling Interleaved Planning and Parallelized Execution in Reasoning Models](sprint_enabling_interleaved_planning_and_parallelized_execution_in_reasoning_mod.md)**
 
 :   By restructuring long chain-of-thought reasoning traces into interleaved planning and parallel execution stages, Sprint reduces sequential token counts by up to 39% on in-distribution tasks (up to 65% on OOD tasks) while maintaining accuracy, enabling dynamic parallelization of the reasoning process.
@@ -236,10 +236,6 @@ tags:
 **[The Impact of Quantization on Large Reasoning Model Reinforcement Learning](the_impact_of_quantization_on_large_reasoning_model_reinforcement_learning.md)**
 
 :   This paper presents a systematic empirical study showing that quantization-aware fine-tuning (QAFT/STE) during RL training of large reasoning models (LRMs) degrades reasoning capability, whereas post-training quantization (PTQ) and QLoRA preserve reasoning performance well even at 4-bit precision. The authors recommend a practical pipeline of full-precision RL training followed by PTQ quantization.
-
-**[The Surprising Effectiveness of Negative Reinforcement in LLM Reasoning](the_surprising_effectiveness_of_negative_reinforcement_in_llm_reasoning.md)**
-
-:   This paper decomposes Reinforcement Learning from Verifiable Rewards (RLVR) into Positive Sample Reinforcement (PSR, which increases the probability of correct responses) and Negative Sample Reinforcement (NSR, which penalizes incorrect responses). The authors find that NSR alone consistently improves reasoning performance across the entire Pass@k spectrum and typically matches or surpasses PPO/GRPO. Based on this finding, the paper proposes Weighted-REINFORCE (reducing the PSR weight to 0.1), which achieves state-of-the-art results across MATH, AIME 2025, and AMC23.
 
 **[The Virtues of Brevity: Avoid Overthinking in Parallel Test-Time Reasoning](the_virtues_of_brevity_avoid_overthinking_in_parallel_test-time_reasoning.md)**
 
@@ -288,3 +284,7 @@ tags:
 **[Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](visual_thoughts_a_unified_perspective_of_understanding_multi.md)**
 
 :   This paper proposes "Visual Thoughts" as a unified framework for interpreting the effectiveness of multimodal chain-of-thought reasoning (MCoT). The core mechanism underlying performance gains in both textual MCoT (T-MCoT) and interleaved multimodal MCoT (I-MCoT) is the caching and transfer of visual information into the reasoning process. The paper defines four forms of visual thought expressions and reveals their role as image-to-reasoning intermediaries in deep Transformer layers.
+
+**[Note 4: WebThinker — Empowering Reasoning Models with Deep Research Capabilities](webthinker_empowering_large_reasoning_models_with_deep_research_capability.md)**
+
+:   WebThinker equips large reasoning models (LRMs) with autonomous web search and navigation capabilities. Through a Think-Search-Draft strategy, it seamlessly interleaves reasoning, information gathering, and report generation. After reinforcement learning optimization, it surpasses o1 and Gemini on complex reasoning and scientific report generation tasks.

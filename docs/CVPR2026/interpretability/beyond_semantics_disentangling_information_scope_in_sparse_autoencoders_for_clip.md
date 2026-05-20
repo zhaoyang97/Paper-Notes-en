@@ -18,8 +18,8 @@ content_hash: 8aa8815e627c11a5
 # Beyond Semantics: Disentangling Information Scope in Sparse Autoencoders for CLIP
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05724](https://arxiv.org/abs/2604.05724)
-**Code**: None
+**arXiv**: [2604.05724](https://arxiv.org/abs/2604.05724)  
+**Code**: None  
 **Area**: Model Compression / Interpretability
 **Keywords**: Sparse Autoencoders, CLIP, Information Scope, Contextual Dependency, Outlier Token
 
@@ -43,9 +43,9 @@ Input image → Shifted Context Cropping generates two overlapping crops → ViT
 ### Key Designs
 1. **Shifted Context Cropping (SCC)**:
 
-   - The image is resized to $(p+s)n \times (p+s)n$, and two $pn \times pn$ crops are extracted with a shift of $sn$ pixels.
-   - The two crops share $(p-s) \times (p-s)$ patches with identical pixel content.
-   - **Design Motivation**: Isolates purely contextual factors (positional encoding differences + attention context variation) while eliminating content differences.
+    - The image is resized to $(p+s)n \times (p+s)n$, and two $pn \times pn$ crops are extracted with a shift of $sn$ pixels.
+    - The two crops share $(p-s) \times (p-s)$ patches with identical pixel content.
+    - **Design Motivation**: Isolates purely contextual factors (positional encoding differences + attention context variation) while eliminating content differences.
 
 2. **Contextual Dependency Score (CDS)**:
    For each SAE feature $f_j$:

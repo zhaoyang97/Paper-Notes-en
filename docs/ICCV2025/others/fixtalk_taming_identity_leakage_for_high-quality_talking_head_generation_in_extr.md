@@ -17,8 +17,8 @@ content_hash: 60f703001510d0be
 # FixTalk: Taming Identity Leakage for High-Quality Talking Head Generation in Extreme Cases
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.01390](https://arxiv.org/abs/2507.01390)
-**Code**: None
+**arXiv**: [2507.01390](https://arxiv.org/abs/2507.01390)  
+**Code**: None  
 **Area**: Others (Talking Head Generation)
 **Keywords**: talking head generation, identity leakage, rendering artifacts, GAN, motion decoupling
 

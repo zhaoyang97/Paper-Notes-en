@@ -18,8 +18,8 @@ content_hash: 4ada556585ae16a0
 # EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24173](https://arxiv.org/abs/2510.24173)
-**Code**: [https://github.com/ASK-Berkeley/EddyFormer](https://github.com/ASK-Berkeley/EddyFormer)
+**arXiv**: [2510.24173](https://arxiv.org/abs/2510.24173)  
+**Code**: [https://github.com/ASK-Berkeley/EddyFormer](https://github.com/ASK-Berkeley/EddyFormer)  
 **Area**: Scientific Computing / Fluid Mechanics
 **Keywords**: Turbulence Simulation, Spectral Element Method, Transformer, LES, Neural PDE Solver
 

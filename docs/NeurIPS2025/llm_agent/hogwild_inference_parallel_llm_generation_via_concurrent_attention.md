@@ -18,8 +18,8 @@ content_hash: 46f30cbcda10dc06
 # Hogwild! Inference: Parallel LLM Generation via Concurrent Attention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.06261](https://arxiv.org/abs/2504.06261)
-**Code**: [https://github.com/eqimp/hogwild_llm](https://github.com/eqimp/hogwild_llm)
+**arXiv**: [2504.06261](https://arxiv.org/abs/2504.06261)  
+**Code**: [https://github.com/eqimp/hogwild_llm](https://github.com/eqimp/hogwild_llm)  
 **Area**: LLM Agent
 **Keywords**: parallel inference, shared KV cache, collaborative inference, RoPE positional encoding, LLM acceleration
 

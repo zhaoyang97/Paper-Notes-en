@@ -18,8 +18,8 @@ content_hash: f1850f48b5ec93f2
 # SceneTransporter: Optimal Transport-Guided Compositional Latent Diffusion for Single-Image Structured 3D Scene Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.22785](https://arxiv.org/abs/2602.22785)
-**Code**: [Project Page](https://2019epwl.github.io/SceneTransporter/)
+**arXiv**: [2602.22785](https://arxiv.org/abs/2602.22785)  
+**Code**: [Project Page](https://2019epwl.github.io/SceneTransporter/)  
 **Area**: 3D Vision / Structured Scene Generation
 **Keywords**: Structured 3D Scene, Optimal Transport, Compositional Diffusion, Instance Disentanglement, Cross-Attention Gating
 
@@ -35,8 +35,8 @@ SceneTransporter reformulates open-world structured 3D scene generation as a glo
 
 1. **Fragile divide-and-conquer pipelines**: Segmenting the input image → generating 3D objects separately → assembling the scene. This pipeline is heavily dependent on 2D segmentation quality, handles occlusions poorly, and allows minor segmentation errors to propagate into severe 3D geometric artifacts.
 2. **End-to-end compositional generation fails in open-world settings**: Methods such as PartPacker and PartCrafter perform well at object-level part generation but exhibit two pathological failure modes when generalized to complex open-world scenes:
-   - **Structural Mispartition**: Semantic instances fail to form disjoint parts, with a single object's geometry scattered across multiple part-tokens.
-   - **Geometric Redundancy**: Multiple latents compete to describe the same spatial region, causing overlaps.
+    - **Structural Mispartition**: Semantic instances fail to form disjoint parts, with a single object's geometry scattered across multiple part-tokens.
+    - **Geometric Redundancy**: Multiple latents compete to describe the same spatial region, causing overlaps.
 3. **Key Challenge**: Unconstrained soft attention cannot establish globally consistent patch-to-part assignments.
 
 **Core Problem**: Part-level generators implicitly encode correct instance grouping information in their features (recoverable via debiased clustering), yet the models themselves lack structural constraints to make these associations explicit.

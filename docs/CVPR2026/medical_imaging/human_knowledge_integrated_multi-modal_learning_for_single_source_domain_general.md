@@ -20,8 +20,8 @@ content_hash: d5e545157d839e64
 # Human Knowledge Integrated Multi-modal Learning for Single Source Domain Generalization
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12369](https://arxiv.org/abs/2603.12369)
-**Code**: [IMPACTLabASU/GenEval](https://github.com/IMPACTLabASU/GenEval)
+**arXiv**: [2603.12369](https://arxiv.org/abs/2603.12369)  
+**Code**: [IMPACTLabASU/GenEval](https://github.com/IMPACTLabASU/GenEval)  
 **Area**: Medical Imaging
 **Keywords**: Single source domain generalization, vision-language model, causal coverage, conformal inference, diabetic retinopathy, LoRA fine-tuning, MedGemma
 

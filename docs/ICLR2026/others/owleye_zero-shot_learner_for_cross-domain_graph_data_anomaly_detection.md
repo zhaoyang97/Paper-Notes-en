@@ -17,8 +17,8 @@ content_hash: cf96c53d60088f65
 # OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19102](https://arxiv.org/abs/2601.19102)
-**Code**: N/A
+**arXiv**: [2601.19102](https://arxiv.org/abs/2601.19102)  
+**Code**: N/A  
 **Area**: Other
 **Keywords**: graph anomaly detection, zero-shot learning, cross-domain feature alignment, dictionary learning, continual learning
 

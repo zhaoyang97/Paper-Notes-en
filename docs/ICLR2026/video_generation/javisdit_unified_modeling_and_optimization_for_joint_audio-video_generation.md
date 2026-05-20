@@ -18,8 +18,8 @@ content_hash: b9854a042f6fd587
 # JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.19163](https://arxiv.org/abs/2602.19163)
-**Code**: [GitHub](https://JavisVerse.github.io/JavisDiT2-page)
+**arXiv**: [2602.19163](https://arxiv.org/abs/2602.19163)  
+**Code**: [GitHub](https://JavisVerse.github.io/JavisDiT2-page)  
 **Area**: Video Generation
 **Keywords**: Joint Audio-Video Generation, DiT, Mixture-of-Experts, RoPE, DPO
 

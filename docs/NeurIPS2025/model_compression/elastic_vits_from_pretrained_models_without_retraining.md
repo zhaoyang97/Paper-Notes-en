@@ -18,8 +18,8 @@ content_hash: e8d28fbbc80e3349
 # Elastic ViTs from Pretrained Models without Retraining
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17700](https://arxiv.org/abs/2510.17700)
-**Code**: [elastic.ashita.nl](https://elastic.ashita.nl/)
+**arXiv**: [2510.17700](https://arxiv.org/abs/2510.17700)  
+**Code**: [elastic.ashita.nl](https://elastic.ashita.nl/)  
 **Area**: Model Compression / Structured Pruning
 **Keywords**: Vision Transformer Pruning, Elastic Inference, Hessian Approximation, Evolutionary Algorithms, Self-Supervised Importance Scoring
 

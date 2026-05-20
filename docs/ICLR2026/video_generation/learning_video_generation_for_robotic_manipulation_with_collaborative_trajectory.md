@@ -17,8 +17,8 @@ content_hash: 23c0c451184ebac2
 # Learning Video Generation for Robotic Manipulation with Collaborative Trajectory Control
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.01943](https://arxiv.org/abs/2506.01943)
-**Code**: [Project Page](https://fuxiao0719.github.io/projects/robomaster/)
+**arXiv**: [2506.01943](https://arxiv.org/abs/2506.01943)  
+**Code**: [Project Page](https://fuxiao0719.github.io/projects/robomaster/)  
 **Area**: Video Generation
 **Keywords**: video generation, robotic manipulation, collaborative trajectory, diffusion model, interaction modeling
 

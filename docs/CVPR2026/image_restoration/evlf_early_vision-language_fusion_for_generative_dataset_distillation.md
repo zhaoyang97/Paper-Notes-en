@@ -18,8 +18,8 @@ content_hash: f4ccf8c709913878
 # EVLF: Early Vision-Language Fusion for Generative Dataset Distillation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.07476](https://arxiv.org/abs/2603.07476)
-**Code**: [GitHub](https://github.com/wenqi-cai297/earlyfusion-for-dd/)
+**arXiv**: [2603.07476](https://arxiv.org/abs/2603.07476)  
+**Code**: [GitHub](https://github.com/wenqi-cai297/earlyfusion-for-dd/)  
 **Area**: Image Restoration
 **Keywords**: Dataset Distillation, Diffusion Models, Vision-Language Fusion, Early Fusion, Plug-and-Play
 

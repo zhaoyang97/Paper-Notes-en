@@ -18,8 +18,8 @@ content_hash: afb73ff5201b22cc
 # CrossCheck-Bench: Diagnosing Compositional Failures in Multimodal Conflict Resolution
 
 **Conference**: AAAI2026
-**arXiv**: [2511.21717](https://arxiv.org/abs/2511.21717)
-**Code**: [https://github.com/bytedance/CrossCheck-Bench](https://github.com/bytedance/CrossCheck-Bench)
+**arXiv**: [2511.21717](https://arxiv.org/abs/2511.21717)  
+**Code**: [https://github.com/bytedance/CrossCheck-Bench](https://github.com/bytedance/CrossCheck-Bench)  
 **Area**: Interpretability
 **Keywords**: [multimodal conflict detection, compositional reasoning, diagnostic evaluation, vision-language models, hierarchical benchmark]
 

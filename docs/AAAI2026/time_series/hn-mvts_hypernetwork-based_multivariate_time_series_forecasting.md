@@ -18,8 +18,8 @@ content_hash: 1eda41a3c5432837
 # HN-MVTS: HyperNetwork-based Multivariate Time Series Forecasting
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08340](https://arxiv.org/abs/2511.08340)
-**Code**: [github.com/av-savchenko/HN-MVTS](https://github.com/av-savchenko/HN-MVTS)
+**arXiv**: [2511.08340](https://arxiv.org/abs/2511.08340)  
+**Code**: [github.com/av-savchenko/HN-MVTS](https://github.com/av-savchenko/HN-MVTS)  
 **Area**: Time Series
 **Keywords**: Multivariate time series forecasting, HyperNetwork, channel dependence, channel independence, plug-and-play
 

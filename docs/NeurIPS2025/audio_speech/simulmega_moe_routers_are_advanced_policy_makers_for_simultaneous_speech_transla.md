@@ -18,8 +18,8 @@ content_hash: b4656b3ecf7dca32
 # SimulMEGA: MoE Routers are Advanced Policy Makers for Simultaneous Speech Translation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.01200](https://arxiv.org/abs/2509.01200)
-**Code**: [GitHub](https://github.com/nethermanpro/simulmega)
+**arXiv**: [2509.01200](https://arxiv.org/abs/2509.01200)  
+**Code**: [GitHub](https://github.com/nethermanpro/simulmega)  
 **Area**: Speech Translation, Simultaneous Interpretation, Mixture of Experts
 **Keywords**: Simultaneous Speech Translation, MoE, Unsupervised Policy Learning, Streaming TTS, Multilingual Translation
 

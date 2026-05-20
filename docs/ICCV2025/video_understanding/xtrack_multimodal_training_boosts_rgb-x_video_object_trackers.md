@@ -18,8 +18,8 @@ content_hash: cfddb8064c82aa34
 # XTrack: Multimodal Training Boosts RGB-X Video Object Trackers
 
 **Conference**: ICCV 2025
-**arXiv**: [2405.17773](https://arxiv.org/abs/2405.17773)
-**Code**: [Available](https://arxiv.org/abs/2405.17773)
+**arXiv**: [2405.17773](https://arxiv.org/abs/2405.17773)  
+**Code**: [Available](https://arxiv.org/abs/2405.17773)  
 **Area**: Video Understanding
 **Keywords**: Multimodal Tracking, Mixture of Experts, Cross-modal Knowledge Transfer, Video Object Tracking, RGB-X
 

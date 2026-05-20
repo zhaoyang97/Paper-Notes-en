@@ -18,8 +18,8 @@ content_hash: 107667dfde1935ba
 # The Affine Divergence: Aligning Activation Updates Beyond Normalisation
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.22247](https://arxiv.org/abs/2512.22247)
-**Code**: None
+**arXiv**: [2512.22247](https://arxiv.org/abs/2512.22247)  
+**Code**: None  
 **Area**: Optimization Theory
 **Keywords**: Affine divergence, normalization theory, gradient descent, representation updates, PatchNorm
 

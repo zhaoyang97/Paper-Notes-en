@@ -18,8 +18,8 @@ content_hash: 58a767fb02c8224e
 # Video Finetuning Improves Reasoning Between Frames
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.12868](https://arxiv.org/abs/2511.12868)
-**Code**: None
+**arXiv**: [2511.12868](https://arxiv.org/abs/2511.12868)  
+**Code**: None  
 **Area**: Video Understanding
 **Keywords**: video finetuning, multimodal large language models, inter-frame reasoning, visual chain-of-thought, temporal understanding
 
@@ -45,13 +45,13 @@ The research framework is a controlled comparative experimental design. Matched 
 
 1. **Visual Chain-of-Thought (vCoT) Generation**: vCoT explicitly generates textual transition descriptions between adjacent frames in two steps:
 
-   - **Step 1 — Common Visual Attribute Identification**: The model is shown two frames and prompted to identify shared elements (e.g., objects, background, spatial configuration), establishing stable cross-frame context.
-   - **Step 2 — Bridging Event Inference**: Given the two frames and the identified common elements, the model is prompted to infer intermediate events that may have occurred between them (e.g., "the person kicks the ball toward the house"). A Qwen-2.5 model is used to condense the descriptions for brevity.
+    - **Step 1 — Common Visual Attribute Identification**: The model is shown two frames and prompted to identify shared elements (e.g., objects, background, spatial configuration), establishing stable cross-frame context.
+    - **Step 2 — Bridging Event Inference**: Given the two frames and the identified common elements, the model is prompted to infer intermediate events that may have occurred between them (e.g., "the person kicks the ball toward the house"). A Qwen-2.5 model is used to condense the descriptions for brevity.
 
 2. **Modality Shuffling Experiments**: To disentangle the model's reliance on visual versus textual cues, two types of perturbations are designed:
 
-   - **Visual Perturbation**: Each video frame is replaced with a frame from an unrelated video, while the text infill remains unchanged.
-   - **Text Perturbation**: The original frames are retained, but the text infill is replaced with that from another video.
+    - **Visual Perturbation**: Each video frame is replaced with a frame from an unrelated video, while the text infill remains unchanged.
+    - **Text Perturbation**: The original frames are retained, but the text infill is replaced with that from another video.
 
    Observing each model type's sensitivity to these perturbations reveals the difference in modality dependence between video and image models.
 

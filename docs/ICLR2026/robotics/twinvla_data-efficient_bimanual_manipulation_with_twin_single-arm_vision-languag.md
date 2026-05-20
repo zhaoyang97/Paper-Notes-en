@@ -18,8 +18,8 @@ content_hash: ec0f006e56f0f574
 # TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.05275](https://arxiv.org/abs/2511.05275)
-**Code**: [Project Page](https://jellyho.github.io/TwinVLA/)
+**arXiv**: [2511.05275](https://arxiv.org/abs/2511.05275)  
+**Code**: [Project Page](https://jellyho.github.io/TwinVLA/)  
 **Area**: Robot Manipulation / Bimanual
 **Keywords**: bimanual manipulation, VLA, modular composition, joint attention, data efficiency
 

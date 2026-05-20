@@ -18,8 +18,8 @@ content_hash: 9410de4b6e4e32e1
 # Deep (Predictive) Discounted Counterfactual Regret Minimization
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08174](https://arxiv.org/abs/2511.08174)
-**Code**: [rpSebastian/DeepPDCFR](https://github.com/rpSebastian/DeepPDCFR)
+**arXiv**: [2511.08174](https://arxiv.org/abs/2511.08174)  
+**Code**: [rpSebastian/DeepPDCFR](https://github.com/rpSebastian/DeepPDCFR)  
 **Area**: Reinforcement Learning
 **Keywords**: Counterfactual Regret Minimization, Imperfect Information Games, Nash Equilibrium, Neural Network Approximation, Variance Reduction
 

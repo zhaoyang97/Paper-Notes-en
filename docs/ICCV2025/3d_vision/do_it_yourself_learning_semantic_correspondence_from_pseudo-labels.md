@@ -18,8 +18,8 @@ content_hash: 8122e851c81a1c86
 # Do It Yourself: Learning Semantic Correspondence from Pseudo-Labels
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.05312](https://arxiv.org/abs/2506.05312)
-**Code**: [https://genintel.github.io/DIY-SC](https://genintel.github.io/DIY-SC)
+**arXiv**: [2506.05312](https://arxiv.org/abs/2506.05312)  
+**Code**: [https://genintel.github.io/DIY-SC](https://genintel.github.io/DIY-SC)  
 **Area**: 3D Vision / Semantic Correspondence
 **Keywords**: Semantic Correspondence, Pseudo-Labels, 3D Awareness, Foundation Models, Self-Training
 

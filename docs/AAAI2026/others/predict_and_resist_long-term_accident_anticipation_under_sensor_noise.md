@@ -17,8 +17,8 @@ content_hash: 9f7be8debddf618f
 # Predict and Resist: Long-Term Accident Anticipation under Sensor Noise
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08640](https://arxiv.org/abs/2511.08640)
-**Code**: None
+**arXiv**: [2511.08640](https://arxiv.org/abs/2511.08640)  
+**Code**: None  
 **Area**: Other
 **Keywords**: accident anticipation, diffusion denoising, Actor-Critic reinforcement learning, sensor noise, long-term temporal reasoning
 

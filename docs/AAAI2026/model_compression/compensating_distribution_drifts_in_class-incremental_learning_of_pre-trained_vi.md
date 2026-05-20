@@ -18,8 +18,8 @@ content_hash: 099bf7afca6aa341
 # Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers
 
 **Conference**: AAAI2026
-**arXiv**: [2511.09926](https://arxiv.org/abs/2511.09926)
-**Code**: [raoxuan98-hash/sldc](https://github.com/raoxuan98-hash/sldc)
+**arXiv**: [2511.09926](https://arxiv.org/abs/2511.09926)  
+**Code**: [raoxuan98-hash/sldc](https://github.com/raoxuan98-hash/sldc)  
 **Area**: Model Compression
 **Keywords**: class-incremental learning, distribution drift, vision transformer, knowledge distillation, sequential fine-tuning
 

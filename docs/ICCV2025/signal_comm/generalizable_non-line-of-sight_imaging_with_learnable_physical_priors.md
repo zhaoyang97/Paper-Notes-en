@@ -18,8 +18,8 @@ content_hash: 602a4c42e604f9c2
 # Generalizable Non-Line-of-Sight Imaging with Learnable Physical Priors
 
 **Conference**: ICCV 2025
-**arXiv**: [2409.14011](https://arxiv.org/abs/2409.14011)
-**Code**: None
+**arXiv**: [2409.14011](https://arxiv.org/abs/2409.14011)  
+**Code**: None  
 **Area**: Signal & Communications
 **Keywords**: non-line-of-sight imaging, learnable physical priors, path compensation, adaptive phasor field, SPAD
 

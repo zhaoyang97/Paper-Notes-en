@@ -18,8 +18,8 @@ content_hash: 0774e874d739b6aa
 # A Learning Framework For Cooperative Collision Avoidance of UAV Swarms Leveraging Domain Knowledge
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.10913](https://arxiv.org/abs/2507.10913)
-**Code**: N/A
+**arXiv**: [2507.10913](https://arxiv.org/abs/2507.10913)  
+**Code**: N/A  
 **Area**: Agent / Multi-Agent Reinforcement Learning
 **Keywords**: UAV swarm, collision avoidance, MARL, domain knowledge, active contour model
 

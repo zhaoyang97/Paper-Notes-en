@@ -18,8 +18,8 @@ content_hash: baadd38968c4a223
 # AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.07022](https://arxiv.org/abs/2506.07022)
-**Code**: [https://github.com/AlphaLab-USTC/AlphaSteer](https://github.com/AlphaLab-USTC/AlphaSteer)
+**arXiv**: [2506.07022](https://arxiv.org/abs/2506.07022)  
+**Code**: [https://github.com/AlphaLab-USTC/AlphaSteer](https://github.com/AlphaLab-USTC/AlphaSteer)  
 **Area**: LLM Alignment
 **Keywords**: activation steering, refusal direction, null-space projection, jailbreak defense, safety-utility trade-off
 

@@ -18,8 +18,8 @@ content_hash: 2159ef4272bbab62
 # MuSLR: Multimodal Symbolic Logical Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25851](https://arxiv.org/abs/2509.25851)
-**Code**: [Project Page](https://llm-symbol.github.io/MuSLR)
+**arXiv**: [2509.25851](https://arxiv.org/abs/2509.25851)  
+**Code**: [Project Page](https://llm-symbol.github.io/MuSLR)  
 **Area**: Medical Imaging / Multimodal Reasoning
 **Keywords**: Multimodal symbolic logical reasoning, VLM benchmark, formal logic, Chain-of-Thought, modular reasoning
 

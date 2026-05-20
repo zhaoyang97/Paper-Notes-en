@@ -17,8 +17,8 @@ content_hash: bb4dab13b4325840
 # Are They Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues
 
 **Conference**: ACL 2026
-**arXiv**: [2510.19028](https://arxiv.org/abs/2510.19028)
-**Code**: [https://github.com/rladmstn1714/SCRIPTS](https://github.com/rladmstn1714/SCRIPTS)
+**arXiv**: [2510.19028](https://arxiv.org/abs/2510.19028)  
+**Code**: [https://github.com/rladmstn1714/SCRIPTS](https://github.com/rladmstn1714/SCRIPTS)  
 **Area**: LLM Evaluation
 **Keywords**: Social Relationship Reasoning, LLM Evaluation, Cross-lingual Analysis, Movie Dialogues, Cultural Dependency
 

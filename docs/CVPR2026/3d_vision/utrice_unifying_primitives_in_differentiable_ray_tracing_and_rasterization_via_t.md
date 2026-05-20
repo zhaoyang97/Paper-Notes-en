@@ -18,8 +18,8 @@ content_hash: 78251adb82333bbf
 # UTrice: Unifying Primitives in Differentiable Ray Tracing and Rasterization via Triangles for Particle-Based 3D Scenes
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.04421](https://arxiv.org/abs/2512.04421)
-**Code**: [https://github.com/waizui/UTrice](https://github.com/waizui/UTrice)
+**arXiv**: [2512.04421](https://arxiv.org/abs/2512.04421)  
+**Code**: [https://github.com/waizui/UTrice](https://github.com/waizui/UTrice)  
 **Area**: 3D Vision
 **Keywords**: Differentiable Ray Tracing, Triangle Primitives, 3D Gaussian Splatting, Novel View Synthesis, BVH Acceleration
 

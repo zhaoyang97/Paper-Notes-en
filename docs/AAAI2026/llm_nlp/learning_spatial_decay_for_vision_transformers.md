@@ -18,8 +18,8 @@ content_hash: 518f9cba4082a2e2
 # Learning Spatial Decay for Vision Transformers
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.09525](https://arxiv.org/abs/2508.09525)
-**Code**: None
+**arXiv**: [2508.09525](https://arxiv.org/abs/2508.09525)  
+**Code**: None  
 **Area**: LLM NLP
 **Keywords**: Vision Transformer, spatial decay, attention mechanism, content-aware gating, image classification
 

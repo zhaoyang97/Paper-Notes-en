@@ -18,8 +18,8 @@ content_hash: 2115beccf94e316c
 # Efficient Federated Learning against Byzantine Attacks and Data Heterogeneity via Aggregating Normalized Gradients
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2408.09539](https://arxiv.org/abs/2408.09539)
-**Code**: Not provided
+**arXiv**: [2408.09539](https://arxiv.org/abs/2408.09539)  
+**Code**: Not provided  
 **Area**: Optimization
 **Keywords**: federated learning, Byzantine Robustness, Gradient Normalization, Non-IID Data, Non-Convex Optimization
 

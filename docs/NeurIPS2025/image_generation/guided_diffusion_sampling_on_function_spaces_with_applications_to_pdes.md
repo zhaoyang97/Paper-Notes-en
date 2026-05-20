@@ -19,8 +19,8 @@ content_hash: 5ca96608985b6b6d
 # Guided Diffusion Sampling on Function Spaces with Applications to PDEs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17004](https://arxiv.org/abs/2505.17004)
-**Code**: [neuraloperator/FunDPS](https://github.com/neuraloperator/FunDPS)
+**arXiv**: [2505.17004](https://arxiv.org/abs/2505.17004)  
+**Code**: [neuraloperator/FunDPS](https://github.com/neuraloperator/FunDPS)  
 **Area**: Image Generation
 **Keywords**: function-space diffusion models, PDE inverse problems, posterior sampling, Tweedie formula, neural operators, resolution invariance
 

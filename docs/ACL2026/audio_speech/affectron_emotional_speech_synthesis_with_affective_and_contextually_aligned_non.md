@@ -18,8 +18,8 @@ content_hash: d096a561a684f645
 # Affectron: Emotional Speech Synthesis with Affective and Contextually Aligned Nonverbal Vocalizations
 
 **Conference**: ACL 2026
-**arXiv**: [2603.14432](https://arxiv.org/abs/2603.14432)
-**Code**: [https://github.com/choddeok/Affectron](https://github.com/choddeok/Affectron)
+**arXiv**: [2603.14432](https://arxiv.org/abs/2603.14432)  
+**Code**: [https://github.com/choddeok/Affectron](https://github.com/choddeok/Affectron)  
 **Area**: Audio & Speech / Speech Synthesis
 **Keywords**: Nonverbal Vocalizations, Emotional Speech Synthesis, NV-Augmented Training, Affective Routing, Neural Codec Language Model
 

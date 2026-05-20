@@ -19,8 +19,8 @@ content_hash: 5f6ba6422696ad95
 # SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.16268](https://arxiv.org/abs/2410.16268)
-**Code**: [https://github.com/Mark12Ding/SAM2Long](https://github.com/Mark12Ding/SAM2Long)
+**arXiv**: [2410.16268](https://arxiv.org/abs/2410.16268)  
+**Code**: [https://github.com/Mark12Ding/SAM2Long](https://github.com/Mark12Ding/SAM2Long)  
 **Area**: Segmentation / Video Object Segmentation
 **Keywords**: SAM 2, long video segmentation, memory tree, error accumulation, occlusion recovery, training-free
 

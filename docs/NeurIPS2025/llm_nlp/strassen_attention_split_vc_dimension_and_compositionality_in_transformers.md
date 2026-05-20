@@ -18,8 +18,8 @@ content_hash: 818999ac3a8a0b65
 # Strassen Attention, Split VC Dimension and Compositionality in Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.19215](https://arxiv.org/abs/2501.19215)
-**Code**: Not released
+**arXiv**: [2501.19215](https://arxiv.org/abs/2501.19215)  
+**Code**: Not released  
 **Area**: LLM/NLP
 **Keywords**: Transformer theory, attention mechanism, compositional reasoning, VC dimension, complexity lower bounds
 

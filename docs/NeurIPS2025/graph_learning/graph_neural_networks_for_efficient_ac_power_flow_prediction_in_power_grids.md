@@ -18,8 +18,8 @@ content_hash: fed495c1148118b7
 # Graph Neural Networks for Efficient AC Power Flow Prediction in Power Grids
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.05702](https://arxiv.org/abs/2502.05702)
-**Code**: [GitHub](https://github.com/Amirtalebi83/GNN-OptimalPowerFlow)
+**arXiv**: [2502.05702](https://arxiv.org/abs/2502.05702)  
+**Code**: [GitHub](https://github.com/Amirtalebi83/GNN-OptimalPowerFlow)  
 **Area**: Graph Learning / Power Systems
 **Keywords**: GNN, AC Power Flow, Power Systems, Graph Convolution, Optimal Power Flow
 

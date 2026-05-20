@@ -18,8 +18,8 @@ content_hash: 1e26a037c85774cb
 # MuViT: Multi-Resolution Vision Transformers for Learning Across Scales in Microscopy
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.24222](https://arxiv.org/abs/2602.24222)
-**Code**: [github.com/weigertlab/muvit](https://github.com/weigertlab/muvit)
+**arXiv**: [2602.24222](https://arxiv.org/abs/2602.24222)  
+**Code**: [github.com/weigertlab/muvit](https://github.com/weigertlab/muvit)  
 **Area**: Medical Imaging
 **Keywords**: Multi-Resolution, Vision Transformer, RoPE, Microscopy, Semantic Segmentation
 

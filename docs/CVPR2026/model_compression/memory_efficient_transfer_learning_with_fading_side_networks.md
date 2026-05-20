@@ -18,8 +18,8 @@ content_hash: 81c823c1e57c06be
 # Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.09088](https://arxiv.org/abs/2604.09088)
-**Code**: [https://github.com/Zhang-VKk/MDPD](https://github.com/Zhang-VKk/MDPD)
+**arXiv**: [2604.09088](https://arxiv.org/abs/2604.09088)  
+**Code**: [https://github.com/Zhang-VKk/MDPD](https://github.com/Zhang-VKk/MDPD)  
 **Area**: Model Compression / Efficient Transfer Learning
 **Keywords**: memory-efficient transfer learning, knowledge distillation, side networks, inference acceleration, dual-path distillation
 
@@ -51,21 +51,21 @@ MDPD consists of two parallel paths: a frozen backbone and a learnable side netw
 
 1. **Dual-Path Knowledge Distillation (DPKD)**:
 
-   - **Function**: Establishes bidirectional knowledge flow between the backbone and the side network.
-   - **Mechanism**: In feature distillation, the backbone acts as teacher and the side network as student (enhancing the side network with pretrained knowledge); in logits distillation, the side network acts as teacher and the backbone as student (transferring downstream task knowledge back to the backbone). Low-rank matrices $M_{down} \in \mathbb{R}^{D_S \times d}$ and $M_{up} \in \mathbb{R}^{d \times D_B}$ are used for dimensionality alignment.
-   - **Design Motivation**: Bidirectional distillation enables mutual enhancement — the backbone's pretrained knowledge helps the side network learn better, while the side network's task-specific knowledge helps the backbone adapt to downstream tasks.
+    - **Function**: Establishes bidirectional knowledge flow between the backbone and the side network.
+    - **Mechanism**: In feature distillation, the backbone acts as teacher and the side network as student (enhancing the side network with pretrained knowledge); in logits distillation, the side network acts as teacher and the backbone as student (transferring downstream task knowledge back to the backbone). Low-rank matrices $M_{down} \in \mathbb{R}^{D_S \times d}$ and $M_{up} \in \mathbb{R}^{d \times D_B}$ are used for dimensionality alignment.
+    - **Design Motivation**: Bidirectional distillation enables mutual enhancement — the backbone's pretrained knowledge helps the side network learn better, while the side network's task-specific knowledge helps the backbone adapt to downstream tasks.
 
 2. **Hierarchical Feature Distillation (HFD)**:
 
-   - **Function**: Applies differentiated distillation strategies across encoder layers.
-   - **Mechanism**: Shallow layers exhibit similar teacher–student attention patterns (both show diagonal self-attention), so direct imitation is applied; deep layers show divergent attention patterns (attending to different sparse key tokens), so a masked generation strategy is adopted — instead of directly imitating teacher features, the student learns to generate them.
-   - **Design Motivation**: The attention discrepancy between shallow and deep layers renders a uniform distillation strategy suboptimal; a hierarchical strategy transfers knowledge more effectively.
+    - **Function**: Applies differentiated distillation strategies across encoder layers.
+    - **Mechanism**: Shallow layers exhibit similar teacher–student attention patterns (both show diagonal self-attention), so direct imitation is applied; deep layers show divergent attention patterns (attending to different sparse key tokens), so a masked generation strategy is adopted — instead of directly imitating teacher features, the student learns to generate them.
+    - **Design Motivation**: The attention discrepancy between shallow and deep layers renders a uniform distillation strategy suboptimal; a hierarchical strategy transfers knowledge more effectively.
 
 3. **Side Network Ablation for Inference**:
 
-   - **Function**: Completely removes the side network at inference time.
-   - **Mechanism**: During training, the backbone only updates its LayerNorm scale/bias parameters and the final output layer (with most parameters frozen), yet acquires task adaptation capability through distillation. At inference, the backbone with the task head is used directly.
-   - **Design Motivation**: Eliminates inference overhead from the side network, achieving dual efficiency in both training and inference.
+    - **Function**: Completely removes the side network at inference time.
+    - **Mechanism**: During training, the backbone only updates its LayerNorm scale/bias parameters and the final output layer (with most parameters frozen), yet acquires task adaptation capability through distillation. At inference, the backbone with the task head is used directly.
+    - **Design Motivation**: Eliminates inference overhead from the side network, achieving dual efficiency in both training and inference.
 
 ### Loss & Training
 

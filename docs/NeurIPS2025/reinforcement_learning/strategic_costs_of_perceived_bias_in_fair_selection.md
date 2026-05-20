@@ -18,8 +18,8 @@ content_hash: 7f39c612154d7c5f
 # Strategic Costs of Perceived Bias in Fair Selection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20606](https://arxiv.org/abs/2510.20606)
-**Code**: None
+**arXiv**: [2510.20606](https://arxiv.org/abs/2510.20606)  
+**Code**: None  
 **Area**: Fairness / Game Theory
 **Keywords**: fair selection, game theory, Nash equilibrium, perceived bias, social welfare
 

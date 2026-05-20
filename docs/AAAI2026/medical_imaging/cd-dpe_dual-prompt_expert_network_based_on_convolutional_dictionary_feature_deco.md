@@ -18,8 +18,8 @@ content_hash: 42c54971b21c5bb1
 # CD-DPE: Dual-Prompt Expert Network Based on Convolutional Dictionary Feature Decoupling for Multi-Contrast MRI Super-Resolution
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14014](https://arxiv.org/abs/2511.14014)
-**Code**: [Available](https://github.com/xianming-gu/CD-DPE)
+**arXiv**: [2511.14014](https://arxiv.org/abs/2511.14014)  
+**Code**: [Available](https://github.com/xianming-gu/CD-DPE)  
 **Area**: Medical Imaging
 **Keywords**: Multi-contrast MRI super-resolution, convolutional dictionary, feature decoupling, dual-prompt, expert network
 

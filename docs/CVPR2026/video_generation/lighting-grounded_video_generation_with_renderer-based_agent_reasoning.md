@@ -18,8 +18,8 @@ content_hash: 1e2b314127377e50
 # Lighting-grounded Video Generation with Renderer-based Agent Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07966](https://arxiv.org/abs/2604.07966)
-**Code**: None
+**arXiv**: [2604.07966](https://arxiv.org/abs/2604.07966)  
+**Code**: None  
 **Area**: 3D Vision / Video Generation
 **Keywords**: Lighting-controllable video generation, 3D scene agent, physical rendering, diffusion model, scene agent
 

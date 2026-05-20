@@ -18,8 +18,8 @@ content_hash: 16047a5fb5ea119b
 # TraveLLaMA: A Multimodal Travel Assistant with Large-Scale Dataset and Structured Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.16505](https://arxiv.org/abs/2504.16505)
-**Code**: [https://travellama-best.github.io/](https://travellama-best.github.io/)
+**arXiv**: [2504.16505](https://arxiv.org/abs/2504.16505)  
+**Code**: [https://travellama-best.github.io/](https://travellama-best.github.io/)  
 **Area**: Recommender Systems
 **Keywords**: Multimodal Travel Assistant, Vision-Language Model, Chain-of-Thought Reasoning, Travel Planning, Dataset
 

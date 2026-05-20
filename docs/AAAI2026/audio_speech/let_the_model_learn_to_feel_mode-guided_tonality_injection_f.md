@@ -18,8 +18,8 @@ content_hash: 46fd50f46209aa7c
 # Let the Model Learn to Feel: Mode-Guided Tonality Injection for Symbolic Music Emotion Recognition
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.17946](https://arxiv.org/abs/2512.17946)
-**Code**: [https://github.com/ZoeyHuang-paper/MoFi](https://github.com/ZoeyHuang-paper/MoFi)
+**arXiv**: [2512.17946](https://arxiv.org/abs/2512.17946)  
+**Code**: [https://github.com/ZoeyHuang-paper/MoFi](https://github.com/ZoeyHuang-paper/MoFi)  
 **Area**: Music Emotion Recognition / Symbolic Music Understanding
 **Keywords**: symbolic music emotion recognition, MIDIBERT, mode injection, FiLM, music psychology
 

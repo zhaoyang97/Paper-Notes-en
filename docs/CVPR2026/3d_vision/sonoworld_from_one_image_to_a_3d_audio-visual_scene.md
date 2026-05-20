@@ -18,8 +18,8 @@ content_hash: 446093f8b6288c98
 # SonoWorld: From One Image to a 3D Audio-Visual Scene
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28757](https://arxiv.org/abs/2603.28757)
-**Code**: [https://humathe.github.io/sonoworld/](https://humathe.github.io/sonoworld/)
+**arXiv**: [2603.28757](https://arxiv.org/abs/2603.28757)  
+**Code**: [https://humathe.github.io/sonoworld/](https://humathe.github.io/sonoworld/)  
 **Area**: 3D Vision / Audio-Visual Scene Generation
 **Keywords**: 3D audio-visual scene, spatial audio generation, panorama reconstruction, Ambisonics encoding, single-image generation
 
@@ -51,21 +51,21 @@ Given an RGB image as input, the system outputs a 3D visual scene $\mathbf{V}$ (
 
 1. **Panoramic Visual Scene Generation**
 
-   - **Function**: Expands a single image into a 360° panorama and lifts it into a 3D scene.
-   - **Mechanism**: GeoCalib is first applied for single-image camera calibration to obtain the elevation angle and field of view $(φ, f) = \text{Calib}(I)$. The image is then projected into an equirectangular panorama via Gaussian-pyramid anti-aliasing sampling, and the WorldGen outpainting model completes the full 360° field of view. The panorama is subsequently lifted into a 3D Gaussian Splatting scene using either HunyuanWorld (open-source) or Marble (commercial).
-   - **Design Motivation**: The panoramic representation inherently covers the full 360° field of view and provides a unified coordinate system. Elevation correction addresses the vertical distortion caused by prior methods that assume horizontal camera orientation.
+    - **Function**: Expands a single image into a 360° panorama and lifts it into a 3D scene.
+    - **Mechanism**: GeoCalib is first applied for single-image camera calibration to obtain the elevation angle and field of view $(φ, f) = \text{Calib}(I)$. The image is then projected into an equirectangular panorama via Gaussian-pyramid anti-aliasing sampling, and the WorldGen outpainting model completes the full 360° field of view. The panorama is subsequently lifted into a 3D Gaussian Splatting scene using either HunyuanWorld (open-source) or Marble (commercial).
+    - **Design Motivation**: The panoramic representation inherently covers the full 360° field of view and provides a unified coordinate system. Elevation correction addresses the vertical distortion caused by prior methods that assume horizontal camera orientation.
 
 2. **360° Semantic Grounding**
 
-   - **Function**: Localizes all potentially sounding entities and their spatial extents within the 3D scene.
-   - **Mechanism**: A VLM (GPT-4o or LLaVA-Next-34B) first reasons from the input image to infer the sounding category set $\mathcal{C}$ along with associated attributes (source type, text prompt, equalization parameters). Because open-vocabulary segmentation (OVS) models are trained on perspective images, the panorama is tiled into overlapping FoV patches and segmented individually with X-Decoder, then reprojected to panoramic coordinates. Concurrently, SAM2 segments the full panorama to obtain class-agnostic but geometrically accurate regions; OVS results then vote over SAM2 regions, combining SAM2's global geometric consistency with X-Decoder's semantic precision. Finally, the depth map is used to back-project masks into 3D, yielding sound-source anchors $\mathcal{P}$.
-   - **Design Motivation**: Tile-based OVS produces boundary discontinuities and incomplete regions upon stitching, while SAM2 is geometrically precise but class-agnostic; the two are complementary, and the voting fusion strategy resolves both accuracy and consistency issues in panoramic semantic segmentation.
+    - **Function**: Localizes all potentially sounding entities and their spatial extents within the 3D scene.
+    - **Mechanism**: A VLM (GPT-4o or LLaVA-Next-34B) first reasons from the input image to infer the sounding category set $\mathcal{C}$ along with associated attributes (source type, text prompt, equalization parameters). Because open-vocabulary segmentation (OVS) models are trained on perspective images, the panorama is tiled into overlapping FoV patches and segmented individually with X-Decoder, then reprojected to panoramic coordinates. Concurrently, SAM2 segments the full panorama to obtain class-agnostic but geometrically accurate regions; OVS results then vote over SAM2 regions, combining SAM2's global geometric consistency with X-Decoder's semantic precision. Finally, the depth map is used to back-project masks into 3D, yielding sound-source anchors $\mathcal{P}$.
+    - **Design Motivation**: Tile-based OVS produces boundary discontinuities and incomplete regions upon stitching, while SAM2 is geometrically precise but class-agnostic; the two are complementary, and the voting fusion strategy resolves both accuracy and consistency issues in panoramic semantic segmentation.
 
 3. **Ambisonics Encoding and Rendering**
 
-   - **Function**: Converts semantically grounded sound sources into spatial audio that can be rendered at any listener position and orientation.
-   - **Mechanism**: MMAudio generates a waveform $a_{i,\text{raw}}$ for each source from its text prompt; after equalization $a_i(t) = 10^{v_i/20} a_{i,\text{raw}}(t)$, Ambisonics coefficients are encoded according to source type. Point sources are approximated by their centroid: $\mathbf{A}_\text{point} = \sum_i a_i \sigma(\|d_i\|) \mathbf{y}_L(...)$; surface sources average contributions over the entire point cloud to create a diffuse sound field; ambient sounds encode only the omnidirectional component $\mathbf{A}_\text{global} = a_\text{global}[1, 0, ..., 0]^\top$. Distance attenuation is modeled as $\sigma(d)=e^{-\alpha d}/d$. The entire rendering pipeline is differentiable over the audio buffer.
-   - **Design Motivation**: Different source types behave fundamentally differently—birdsong is a point source requiring precise directional cues, a river is a surface source producing a diffuse field, and wind is an ambient sound independent of direction. Classifying and processing each type within the unified Ambisonics framework handles this heterogeneity. The differentiable property additionally enables the framework to be extended to acoustic learning and source separation tasks.
+    - **Function**: Converts semantically grounded sound sources into spatial audio that can be rendered at any listener position and orientation.
+    - **Mechanism**: MMAudio generates a waveform $a_{i,\text{raw}}$ for each source from its text prompt; after equalization $a_i(t) = 10^{v_i/20} a_{i,\text{raw}}(t)$, Ambisonics coefficients are encoded according to source type. Point sources are approximated by their centroid: $\mathbf{A}_\text{point} = \sum_i a_i \sigma(\|d_i\|) \mathbf{y}_L(...)$; surface sources average contributions over the entire point cloud to create a diffuse sound field; ambient sounds encode only the omnidirectional component $\mathbf{A}_\text{global} = a_\text{global}[1, 0, ..., 0]^\top$. Distance attenuation is modeled as $\sigma(d)=e^{-\alpha d}/d$. The entire rendering pipeline is differentiable over the audio buffer.
+    - **Design Motivation**: Different source types behave fundamentally differently—birdsong is a point source requiring precise directional cues, a river is a surface source producing a diffuse field, and wind is an ambient sound independent of direction. Classifying and processing each type within the unified Ambisonics framework handles this heterogeneity. The differentiable property additionally enables the framework to be extended to acoustic learning and source separation tasks.
 
 ### Loss & Training
 

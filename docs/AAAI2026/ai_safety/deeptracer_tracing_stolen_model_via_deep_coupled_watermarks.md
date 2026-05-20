@@ -18,8 +18,8 @@ content_hash: 7875e544b98cf466
 # DeepTracer: Tracing Stolen Model via Deep Coupled Watermarks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08985](https://arxiv.org/abs/2511.08985)
-**Code**: [GitHub](https://github.com/yangyunfei16/DeepTracer)
+**arXiv**: [2511.08985](https://arxiv.org/abs/2511.08985)  
+**Code**: [GitHub](https://github.com/yangyunfei16/DeepTracer)  
 **Area**: AI Security / Model Copyright Protection
 **Keywords**: Model watermarking, model stealing, deep coupled watermark, black-box verification, intellectual property protection
 

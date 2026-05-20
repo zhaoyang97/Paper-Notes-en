@@ -18,8 +18,8 @@ content_hash: b0eaf6823543d5f8
 # Janus-Pro-R1: Advancing Collaborative Visual Comprehension and Generation via Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01480](https://arxiv.org/abs/2506.01480)
-**Code**: [https://janus-pro-r1.github.io](https://janus-pro-r1.github.io) (project page)
+**arXiv**: [2506.01480](https://arxiv.org/abs/2506.01480)  
+**Code**: [https://janus-pro-r1.github.io](https://janus-pro-r1.github.io) (project page)  
 **Area**: Multimodal Large Language Models / Image Generation
 **Keywords**: MLLM, visual generation, reinforcement-learning, Chain-of-Thought, Aha Moment
 

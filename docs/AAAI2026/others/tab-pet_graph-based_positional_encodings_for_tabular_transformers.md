@@ -17,8 +17,8 @@ content_hash: 371f1f30263d15ef
 # Tab-PET: Graph-Based Positional Encodings for Tabular Transformers
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13338](https://arxiv.org/abs/2511.13338)
-**Code**: [https://github.com/kentridgeai/Tab-PET](https://github.com/kentridgeai/Tab-PET)
+**arXiv**: [2511.13338](https://arxiv.org/abs/2511.13338)  
+**Code**: [https://github.com/kentridgeai/Tab-PET](https://github.com/kentridgeai/Tab-PET)  
 **Area**: Tabular Data Learning / Transformer
 **Keywords**: Positional Encoding, Tabular Data, Graph Laplacian, Transformer, Effective Rank
 

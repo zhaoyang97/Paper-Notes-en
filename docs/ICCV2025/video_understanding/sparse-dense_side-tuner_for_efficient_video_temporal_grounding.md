@@ -18,8 +18,8 @@ content_hash: 8b6d005ba8707056
 # Sparse-Dense Side-Tuner for Efficient Video Temporal Grounding
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.07744](https://arxiv.org/abs/2507.07744)
-**Code**: [GitHub](https://github.com/davidpujol/SDST)
+**arXiv**: [2507.07744](https://arxiv.org/abs/2507.07744)  
+**Code**: [GitHub](https://github.com/davidpujol/SDST)  
 **Area**: Video Understanding
 **Keywords**: Video Temporal Grounding, Side-Tuning, Parameter-Efficient Fine-Tuning, Deformable Attention, InternVideo2
 

@@ -19,8 +19,8 @@ content_hash: 0f6c4b01defac921
 # REDUCIO! Generating 1K Video within 16 Seconds using Extremely Compressed Motion Latents
 
 **Conference**: ICCV 2025
-**arXiv**: [2411.13552](https://arxiv.org/abs/2411.13552)
-**Code**: [GitHub](https://github.com/microsoft/Reducio-VAE)
+**arXiv**: [2411.13552](https://arxiv.org/abs/2411.13552)  
+**Code**: [GitHub](https://github.com/microsoft/Reducio-VAE)  
 **Area**: Image Generation / Video Generation
 **Keywords**: Video Generation, Motion Latents, Video VAE, Extreme Compression, DiT, Efficient Inference
 

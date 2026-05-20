@@ -18,8 +18,8 @@ content_hash: c31fabd756367901
 # D$^2$USt3R: Enhancing 3D Reconstruction for Dynamic Scenes
 
 **Conference**: NEURIPS2025
-**arXiv**: [2504.06264](https://arxiv.org/abs/2504.06264)
-**Code**: [cvlab-kaist/DDUSt3R](https://cvlab-kaist.github.io/DDUSt3R)
+**arXiv**: [2504.06264](https://arxiv.org/abs/2504.06264)  
+**Code**: [cvlab-kaist/DDUSt3R](https://cvlab-kaist.github.io/DDUSt3R)  
 **Area**: 3D Vision
 **Keywords**: dynamic 3D reconstruction, pointmap regression, dense correspondence, optical flow, DUSt3R
 

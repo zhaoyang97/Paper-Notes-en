@@ -18,8 +18,8 @@ content_hash: 43ba6fd156806abc
 # How Different from the Past? Spatio-Temporal Time Series Forecasting with Self-Supervised Deviation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.04908](https://arxiv.org/abs/2510.04908)
-**Code**: [GitHub](https://github.com/Jimmy-7664/ST-SSDL)
+**arXiv**: [2510.04908](https://arxiv.org/abs/2510.04908)  
+**Code**: [GitHub](https://github.com/Jimmy-7664/ST-SSDL)  
 **Area**: Autonomous Driving
 **Keywords**: spatio-temporal forecasting, self-supervised learning, deviation modeling, prototype learning, contrastive learning
 

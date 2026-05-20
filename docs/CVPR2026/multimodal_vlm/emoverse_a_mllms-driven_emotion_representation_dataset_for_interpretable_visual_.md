@@ -18,8 +18,8 @@ content_hash: a28183dd2afa3705
 # EmoVerse: A MLLMs-Driven Emotion Representation Dataset for Interpretable Visual Emotion Analysis
 
 **Conference**: CVPR2026
-**arXiv**: [2511.12554](https://arxiv.org/abs/2511.12554)
-**Code**: To be confirmed
+**arXiv**: [2511.12554](https://arxiv.org/abs/2511.12554)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Visual Emotion Analysis, Emotion Representation Dataset, Knowledge Graph, Interpretability, Multimodal Large Language Models
 

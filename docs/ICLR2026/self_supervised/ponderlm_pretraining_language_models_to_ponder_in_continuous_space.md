@@ -18,8 +18,8 @@ content_hash: 522774d8466849b3
 # PonderLM: Pretraining Language Models to Ponder in Continuous Space
 
 **Conference**: ICLR2026
-**arXiv**: [2505.20674](https://arxiv.org/abs/2505.20674)
-**Code**: To be confirmed
+**arXiv**: [2505.20674](https://arxiv.org/abs/2505.20674)  
+**Code**: To be confirmed  
 **Area**: Self-Supervised
 **Keywords**: pondering, language model, continuous space, test-time compute, pretraining
 

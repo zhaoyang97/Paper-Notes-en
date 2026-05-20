@@ -18,8 +18,8 @@ content_hash: 016ed2c33d8c88fe
 # Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04934](https://arxiv.org/abs/2604.04934)
-**Code**: [https://hyunsoocha.github.io/vanast/](https://hyunsoocha.github.io/vanast/)
+**arXiv**: [2604.04934](https://arxiv.org/abs/2604.04934)  
+**Code**: [https://hyunsoocha.github.io/vanast/](https://hyunsoocha.github.io/vanast/)  
 **Area**: Video Generation
 **Keywords**: Virtual Try-On, Human Image Animation, Synthetic Triplet, Dual Module, Video Diffusion
 
@@ -46,21 +46,21 @@ Input (person image + garment image + pose-guided video) → VAE encoding to lat
 
 1. **Three-Stage Data Construction Pipeline**
 
-   - **Function**: Construct large-scale triplet supervision (dressed image, garment, video) from scratch.
-   - **Mechanism**: Stage 1 synthesizes garment-replaced images via FLUX diffusion inpainting; Stage 2 extracts garments from in-the-wild videos and generates corresponding person images via diffusion; Stage 3 captures multi-garment videos in a studio setting. The pipeline yields 9,135 video clips in total.
-   - **Design Motivation**: Real triplet data is extremely scarce — video of the same person performing identical motions in different garments is virtually nonexistent in natural settings.
+    - **Function**: Construct large-scale triplet supervision (dressed image, garment, video) from scratch.
+    - **Mechanism**: Stage 1 synthesizes garment-replaced images via FLUX diffusion inpainting; Stage 2 extracts garments from in-the-wild videos and generates corresponding person images via diffusion; Stage 3 captures multi-garment videos in a studio setting. The pipeline yields 9,135 video clips in total.
+    - **Design Motivation**: Real triplet data is extremely scarce — video of the same person performing identical motions in different garments is virtually nonexistent in natural settings.
 
 2. **Dual Module Architecture (HAM + GTM)**
 
-   - **Function**: Inject both human animation and garment transfer conditions in parallel onto the frozen backbone.
-   - **Mechanism**: HAM and GTM are lightweight adapter modules; only these two branches are trained while the DiT backbone remains frozen. Each module independently processes its respective conditioning signal, then contributes to the main feature stream via weighted residual addition.
-   - **Design Motivation**: Decoupling the two highly heterogeneous conditioning signals into independent modules prevents mutual interference. Ablations show that Dual Module outperforms Single Module by 17.8 FID points (91.05 vs. 108.84).
+    - **Function**: Inject both human animation and garment transfer conditions in parallel onto the frozen backbone.
+    - **Mechanism**: HAM and GTM are lightweight adapter modules; only these two branches are trained while the DiT backbone remains frozen. Each module independently processes its respective conditioning signal, then contributes to the main feature stream via weighted residual addition.
+    - **Design Motivation**: Decoupling the two highly heterogeneous conditioning signals into independent modules prevents mutual interference. Ablations show that Dual Module outperforms Single Module by 17.8 FID points (91.05 vs. 108.84).
 
 3. **Zero-Shot Garment Interpolation**
 
-   - **Function**: Enable smooth blending between two garments without retraining.
-   - **Mechanism**: The outputs of two GTM branches are weighted by $\gamma$: $h_{l+1} = ... + \gamma \cdot B^{GTM}_l(h_l; G_A) + (1-\gamma) \cdot B^{GTM}_l(h_l; G_B)$, where $\gamma \in [0,1]$ controls the mixing ratio.
-   - **Design Motivation**: The modular GTM design naturally supports linear interpolation over multiple garment conditions at no additional training cost.
+    - **Function**: Enable smooth blending between two garments without retraining.
+    - **Mechanism**: The outputs of two GTM branches are weighted by $\gamma$: $h_{l+1} = ... + \gamma \cdot B^{GTM}_l(h_l; G_A) + (1-\gamma) \cdot B^{GTM}_l(h_l; G_B)$, where $\gamma \in [0,1]$ controls the mixing ratio.
+    - **Design Motivation**: The modular GTM design naturally supports linear interpolation over multiple garment conditions at no additional training cost.
 
 ### Loss & Training
 

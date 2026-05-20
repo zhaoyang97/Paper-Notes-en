@@ -18,8 +18,8 @@ content_hash: bebb4db33292252c
 # Boosting Adversarial Transferability with Spatial Adversarial Alignment
 
 **Conference**: NEURIPS2025
-**arXiv**: [2501.01015](https://arxiv.org/abs/2501.01015)
-**Code**: To be confirmed
+**arXiv**: [2501.01015](https://arxiv.org/abs/2501.01015)  
+**Code**: To be confirmed  
 **Area**: AI Security
 **Keywords**: adversarial transferability, model alignment, cross-architecture attack, spatial features, adversarial features
 

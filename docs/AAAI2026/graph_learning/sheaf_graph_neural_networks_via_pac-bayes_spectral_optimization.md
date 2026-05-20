@@ -19,8 +19,8 @@ content_hash: 54736f2764f26490
 # Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.00357](https://arxiv.org/abs/2508.00357)
-**Code**: [GitHub](https://github.com/ChoiYoonHyuk/SGPC)
+**arXiv**: [2508.00357](https://arxiv.org/abs/2508.00357)  
+**Code**: [GitHub](https://github.com/ChoiYoonHyuk/SGPC)  
 **Area**: Graph Learning / Graph Neural Networks
 **Keywords**: Sheaf Neural Networks, PAC-Bayes, Spectral Optimization, Heterophilic Graphs, Optimal Transport, Semi-supervised Node Classification
 
@@ -52,17 +52,17 @@ SGPC consists of three main modules: (1) an OT + WE Lift for learning sheaf rest
 
 2. **SVR-AFM Layer**:
 
-   - Stochastic variance-reduced (SVR) diffusion: $H^{svr} \approx (I + \Delta t L_\mathcal{F})^{-1} H$
-   - Adaptive frequency mixing (AFM) via Chebyshev polynomials: $H^{afm} = \sum_{q=0}^Q \alpha_q T_q(\tilde{L}) H$, where learnable coefficients $\alpha_q$ automatically emphasize high frequencies on heterophilic graphs
-   - Branch fusion: $H' = F_{mix}([H^{svr} \| H^{afm}])$
+    - Stochastic variance-reduced (SVR) diffusion: $H^{svr} \approx (I + \Delta t L_\mathcal{F})^{-1} H$
+    - Adaptive frequency mixing (AFM) via Chebyshev polynomials: $H^{afm} = \sum_{q=0}^Q \alpha_q T_q(\tilde{L}) H$, where learnable coefficients $\alpha_q$ automatically emphasize high frequencies on heterophilic graphs
+    - Branch fusion: $H' = F_{mix}([H^{svr} \| H^{afm}])$
 
 3. **PAC-Bayes Spectral Optimization**:
 
-   - A $\beta$-Dirichlet prior models the message consistency rate $\kappa_{ij}$ for each edge
-   - A fixed-point solver iteratively updates the posterior
-   - Spectral gap regularization: $\mathcal{L}_{spec} = c_{het} / \lambda_2(L_\mathcal{F})$
-   - Total loss: $\mathcal{L} = \mathcal{L}(y, \hat{y}) + \lambda_{KL}\mathcal{L}_{KL} + \lambda_{spec}\mathcal{L}_{spec}$
-   - A theorem guarantees that $\lambda_2$ increases monotonically (by at least $c_w/4$ per iteration), causing the PAC-Bayes bound to shrink geometrically
+    - A $\beta$-Dirichlet prior models the message consistency rate $\kappa_{ij}$ for each edge
+    - A fixed-point solver iteratively updates the posterior
+    - Spectral gap regularization: $\mathcal{L}_{spec} = c_{het} / \lambda_2(L_\mathcal{F})$
+    - Total loss: $\mathcal{L} = \mathcal{L}(y, \hat{y}) + \lambda_{KL}\mathcal{L}_{KL} + \lambda_{spec}\mathcal{L}_{spec}$
+    - A theorem guarantees that $\lambda_2$ increases monotonically (by at least $c_w/4$ per iteration), causing the PAC-Bayes bound to shrink geometrically
 
 ## Key Experimental Results
 

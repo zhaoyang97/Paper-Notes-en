@@ -18,8 +18,8 @@ content_hash: 7f9cbc309cebc92a
 # Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.14255](https://arxiv.org/abs/2510.14255)
-**Code**: [https://ipro-alimama.github.io/](https://ipro-alimama.github.io/) (project page)
+**arXiv**: [2510.14255](https://arxiv.org/abs/2510.14255)  
+**Code**: [https://ipro-alimama.github.io/](https://ipro-alimama.github.io/) (project page)  
 **Area**: Diffusion Models / Video Generation
 **Keywords**: image-to-video, identity preservation, reinforcement learning, face reward, diffusion model fine-tuning
 

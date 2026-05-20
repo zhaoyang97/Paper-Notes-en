@@ -18,8 +18,8 @@ content_hash: 8ef2ef410e8dc176
 # Trajectory Balance with Asynchrony: Decoupling Exploration and Learning for Fast, Scalable LLM Post-Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.18929](https://arxiv.org/abs/2503.18929)
-**Code**: [GitHub](https://github.com/bbartoldson/TBA)
+**arXiv**: [2503.18929](https://arxiv.org/abs/2503.18929)  
+**Code**: [GitHub](https://github.com/bbartoldson/TBA)  
 **Area**: LLM Alignment
 **Keywords**: RL post-training, asynchronous RL, trajectory balance, off-policy learning, GFlowNet
 

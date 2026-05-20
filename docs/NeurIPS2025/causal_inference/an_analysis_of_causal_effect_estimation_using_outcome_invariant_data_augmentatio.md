@@ -18,8 +18,8 @@ content_hash: 7816674c1b19c48f
 # An Analysis of Causal Effect Estimation Using Outcome Invariant Data Augmentation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25128](https://arxiv.org/abs/2510.25128)
-**Code**: [GitHub](https://github.com/uzairakbar/causal-data-augmentation)
+**arXiv**: [2510.25128](https://arxiv.org/abs/2510.25128)  
+**Code**: [GitHub](https://github.com/uzairakbar/causal-data-augmentation)  
 **Area**: Causal Inference
 **Keywords**: causal effect estimation, data augmentation, outcome invariance, IV-like regression, confounding bias
 

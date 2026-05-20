@@ -18,8 +18,8 @@ content_hash: e9f345fd49137096
 # Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias
 
 **Conference**: AAAI2026
-**arXiv**: [2602.21773](https://arxiv.org/abs/2602.21773)
-**Code**: To be confirmed
+**arXiv**: [2602.21773](https://arxiv.org/abs/2602.21773)  
+**Code**: To be confirmed  
 **Area**: AI Safety
 **Keywords**: machine unlearning, shortcut learning, data bias, loss landscape, causal pathway
 

@@ -19,8 +19,8 @@ content_hash: 1795b04bf31257e1
 # FireGNN: Neuro-Symbolic Graph Neural Networks with Trainable Fuzzy Rules for Interpretable Medical Image Classification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.10510](https://arxiv.org/abs/2509.10510)
-**Code**: [GitHub](https://github.com/basiralab/FireGNN)
+**arXiv**: [2509.10510](https://arxiv.org/abs/2509.10510)  
+**Code**: [GitHub](https://github.com/basiralab/FireGNN)  
 **Area**: Medical Image Classification / Interpretability
 **Keywords**: Graph Neural Networks, Fuzzy Rules, Interpretability, Neuro-Symbolic Reasoning, MedMNIST, Topological Descriptors
 

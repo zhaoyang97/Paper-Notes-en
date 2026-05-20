@@ -18,8 +18,8 @@ content_hash: 3050d100c4cb3f74
 # Pairwise Optimal Transports for Training All-to-All Flow-Based Condition Transfer Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.03188](https://arxiv.org/abs/2504.03188)
-**Code**: [GitHub](https://github.com/kotatumuri-room/A2A-FM)
+**arXiv**: [2504.03188](https://arxiv.org/abs/2504.03188)  
+**Code**: [GitHub](https://github.com/kotatumuri-room/A2A-FM)  
 **Area**: Diffusion Models / Flow Matching
 **Keywords**: Optimal Transport, Flow Matching, Condition Transfer, Pairwise Optimal Transport, Molecular Optimization
 

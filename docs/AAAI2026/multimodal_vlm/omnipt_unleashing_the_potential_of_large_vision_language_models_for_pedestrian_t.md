@@ -18,8 +18,8 @@ content_hash: e2a4cce56f69b9dd
 # OmniPT: Unleashing the Potential of Large Vision Language Models for Pedestrian Tracking and Understanding
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.17053](https://arxiv.org/abs/2511.17053)
-**Code**: N/A
+**arXiv**: [2511.17053](https://arxiv.org/abs/2511.17053)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: Pedestrian tracking, large vision-language models, multi-object tracking, semantic understanding, reinforcement learning
 

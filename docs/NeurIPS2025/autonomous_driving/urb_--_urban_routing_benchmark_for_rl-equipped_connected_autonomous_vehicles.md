@@ -17,8 +17,8 @@ content_hash: 1724ba5a804036f1
 # URB -- Urban Routing Benchmark for RL-Equipped Connected Autonomous Vehicles
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17734](https://arxiv.org/abs/2505.17734)
-**Code**: [GitHub](https://github.com/COeXISTENCE-PROJECT/URB)
+**arXiv**: [2505.17734](https://arxiv.org/abs/2505.17734)  
+**Code**: [GitHub](https://github.com/COeXISTENCE-PROJECT/URB)  
 **Area**: Autonomous Driving / Reinforcement Learning for Route Planning
 **Keywords**: Urban routing benchmark, multi-agent reinforcement learning, autonomous driving, traffic simulation, game theory
 

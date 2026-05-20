@@ -18,8 +18,8 @@ content_hash: 88cea78f716969dc
 # Representation Consistency for Accurate and Coherent LLM Answer Aggregation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.21590](https://arxiv.org/abs/2506.21590)
-**Code**: None
+**arXiv**: [2506.21590](https://arxiv.org/abs/2506.21590)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Test-time scaling, answer aggregation, internal representation consistency, sparse autoencoders, LLM reasoning
 

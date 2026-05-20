@@ -18,8 +18,8 @@ content_hash: c32970598c9fe92e
 # Meta-Unlearning on Diffusion Models: Preventing Relearning Unlearned Concepts
 
 **Conference**: ICCV 2025
-**arXiv**: [2410.12777](https://arxiv.org/abs/2410.12777)
-**Code**: None
+**arXiv**: [2410.12777](https://arxiv.org/abs/2410.12777)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Machine Unlearning, Diffusion Models, Malicious Fine-tuning Defense, Meta-Learning, Concept Erasure
 

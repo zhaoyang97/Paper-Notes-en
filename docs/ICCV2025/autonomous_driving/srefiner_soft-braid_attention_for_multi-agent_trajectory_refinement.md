@@ -18,8 +18,8 @@ content_hash: 4969f5e9f61440e0
 # SRefiner: Soft-Braid Attention for Multi-Agent Trajectory Refinement
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04263](https://arxiv.org/abs/2507.04263)
-**Code**: [github.com/Liwen-Xiao/SRefiner](https://github.com/Liwen-Xiao/SRefiner)
+**arXiv**: [2507.04263](https://arxiv.org/abs/2507.04263)  
+**Code**: [github.com/Liwen-Xiao/SRefiner](https://github.com/Liwen-Xiao/SRefiner)  
 **Area**: Autonomous Driving
 **Keywords**: trajectory prediction, trajectory refinement, topological structure, braid theory, multi-agent interaction
 

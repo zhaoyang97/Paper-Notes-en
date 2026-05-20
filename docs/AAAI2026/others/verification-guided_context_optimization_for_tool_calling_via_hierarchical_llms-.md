@@ -17,8 +17,8 @@ content_hash: 450791fa7616791c
 # Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.13860](https://arxiv.org/abs/2512.13860)
-**Code**: None
+**arXiv**: [2512.13860](https://arxiv.org/abs/2512.13860)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Tool Calling, Context Optimization, LLM Editor, Knowledge Base Retrieval, Document Optimization
 

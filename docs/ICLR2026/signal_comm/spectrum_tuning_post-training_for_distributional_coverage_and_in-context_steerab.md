@@ -18,8 +18,8 @@ content_hash: 65903deae5b130a6
 # Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.06084](https://arxiv.org/abs/2510.06084)
-**Code**: [GitHub](https://github.com/tsor13/spectrum)
+**arXiv**: [2510.06084](https://arxiv.org/abs/2510.06084)  
+**Code**: [GitHub](https://github.com/tsor13/spectrum)  
 **Area**: Signal Communication
 **Keywords**: post-training, distributional coverage, in-context steerability, meta-learning, language models
 

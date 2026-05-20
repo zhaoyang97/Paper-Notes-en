@@ -18,8 +18,8 @@ content_hash: fb2ef5c1665003d0
 # When would Vision-Proprioception Policies Fail in Robotic Manipulation?
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.12032](https://arxiv.org/abs/2602.12032)
-**Code**: [Project Page](https://gewu-lab.github.io/GAP/)
+**arXiv**: [2602.12032](https://arxiv.org/abs/2602.12032)  
+**Code**: [Project Page](https://gewu-lab.github.io/GAP/)  
 **Area**: Robotics
 **Keywords**: vision-proprioception policy, modality temporality, gradient adjustment, motion-transition phase, robotic manipulation
 

@@ -18,8 +18,8 @@ content_hash: 50f48ace68a9fb4f
 # Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.06218](https://arxiv.org/abs/2602.06218)
-**Code**: [https://github.com/Parabrele/IsoEnergy](https://github.com/Parabrele/IsoEnergy)
+**arXiv**: [2602.06218](https://arxiv.org/abs/2602.06218)  
+**Code**: [https://github.com/Parabrele/IsoEnergy](https://github.com/Parabrele/IsoEnergy)  
 **Area**: Interpretability
 **Keywords**: modality gap, sparse autoencoders, cross-modal redundancy, iso-energy hypothesis, VLM interpretability
 

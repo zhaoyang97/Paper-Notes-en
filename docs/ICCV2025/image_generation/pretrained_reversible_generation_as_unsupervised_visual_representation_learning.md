@@ -18,8 +18,8 @@ content_hash: 4bf88d2d07e649fc
 # Pretrained Reversible Generation as Unsupervised Visual Representation Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.01787](https://arxiv.org/abs/2412.01787)
-**Code**: [Project Page](https://opendilab.github.io/PRG/)
+**arXiv**: [2412.01787](https://arxiv.org/abs/2412.01787)  
+**Code**: [Project Page](https://opendilab.github.io/PRG/)  
 **Area**: Diffusion Models · Representation Learning
 **Keywords**: Reversible generation, flow matching, unsupervised representation learning, pretrain-finetune, mutual information
 

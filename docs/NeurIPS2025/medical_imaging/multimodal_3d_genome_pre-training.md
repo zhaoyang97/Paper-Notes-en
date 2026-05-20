@@ -18,8 +18,8 @@ content_hash: 0e61f08588b54e91
 # Multimodal 3D Genome Pre-training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.09060](https://arxiv.org/abs/2504.09060)
-**Code**: [github.com/myang998/MIX-HIC](https://github.com/myang998/MIX-HIC)
+**arXiv**: [2504.09060](https://arxiv.org/abs/2504.09060)  
+**Code**: [github.com/myang998/MIX-HIC](https://github.com/myang998/MIX-HIC)  
 **Area**: Medical Imaging
 **Keywords**: 3D genome, Hi-C, epigenomics, multimodal pre-training, foundation model
 

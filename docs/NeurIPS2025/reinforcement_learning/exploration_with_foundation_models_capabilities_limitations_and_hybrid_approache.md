@@ -18,8 +18,8 @@ content_hash: e2363cb94ba0a656
 # Exploration with Foundation Models: Capabilities, Limitations, and Hybrid Approaches
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19924](https://arxiv.org/abs/2509.19924)
-**Code**: None
+**arXiv**: [2509.19924](https://arxiv.org/abs/2509.19924)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: foundation models, exploration, reinforcement-learning, VLM, knowing-doing gap
 
@@ -122,9 +122,9 @@ Suboptimality gap analysis (GPT-4, explicit prompt):
 1. **Explicit prompts substantially improve exploration**: LLMs do not infer the need to explore on their own and require explicit instruction.
 2. **Knowing-doing gap**: VLMs correctly identify "move upward" in Freeway and recognize enemies to fire at in Gravitar (+250 points), yet completely fail in games requiring precise temporal control.
 3. **Failure mode taxonomy**:
-   - **Precise control failure**: Montezuma (correct reasoning of "get the key" but unable to execute the jump).
-   - **Self-identification failure**: Venture (unable to identify the pink square as the player character).
-   - **Temporal reasoning failure**: Pitfall (understands "jump over the pit" but misjudges timing).
+    - **Precise control failure**: Montezuma (correct reasoning of "get the key" but unable to execute the jump).
+    - **Self-identification failure**: Venture (unable to identify the pink square as the player character).
+    - **Temporal reasoning failure**: Pitfall (understands "jump over the pit" but misjudges timing).
 4. **Hybrid framework is effective under idealized conditions**: On Freeway, where the VLM strategy is correct and control is simple, the hybrid approach substantially outperforms PPO+RND.
 
 ## Highlights & Insights

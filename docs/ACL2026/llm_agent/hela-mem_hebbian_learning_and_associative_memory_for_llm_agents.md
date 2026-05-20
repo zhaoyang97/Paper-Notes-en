@@ -14,8 +14,8 @@ content_hash: a5c3760eb0df761a
 # HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents
 
 **Conference**: ACL 2026
-**arXiv**: [2604.16839](https://arxiv.org/abs/2604.16839)
-**Code**: [GitHub](https://github.com/hela-mem)
+**arXiv**: [2604.16839](https://arxiv.org/abs/2604.16839)  
+**Code**: [GitHub](https://github.com/hela-mem)  
 **Area**: LLM Agent / Memory Systems
 **Keywords**: Hebbian Learning, Associative Memory, Long-term Dialogue, Episodic-Semantic Dual Pathway, Spreading Activation
 
@@ -108,7 +108,7 @@ No training is required. All parameters ($\eta, \lambda, \beta, \tau$, etc.) are
 - Writing Quality: ⭐⭐⭐⭐⭐ Cognitive science motivation is clearly articulated; architectural description is systematic.
 - Value: ⭐⭐⭐⭐⭐ Offers a biologically inspired new paradigm for long-term memory in LLMs.
 
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: llm_agent
 **Keywords**: To be supplemented
 

@@ -18,8 +18,8 @@ content_hash: d80d4f170962f7de
 # Foundation Models as World Models: A Foundational Study in Text-Based GridWorlds
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15915](https://arxiv.org/abs/2509.15915)
-**Code**: None
+**arXiv**: [2509.15915](https://arxiv.org/abs/2509.15915)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: Foundation Models, World Models, GridWorld, Large Language Models, Sample Efficiency
 

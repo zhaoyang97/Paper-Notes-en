@@ -18,8 +18,8 @@ content_hash: 4f03c4027c85a4d7
 # SCORE: Scene Context Matters in Open-Vocabulary Remote Sensing Instance Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.12857](https://arxiv.org/abs/2507.12857)
-**Code**: [https://github.com/HuangShiqi128/SCORE](https://github.com/HuangShiqi128/SCORE)
+**arXiv**: [2507.12857](https://arxiv.org/abs/2507.12857)  
+**Code**: [https://github.com/HuangShiqi128/SCORE](https://github.com/HuangShiqi128/SCORE)  
 **Area**: Image Segmentation
 **Keywords**: Open-vocabulary instance segmentation, remote sensing, scene context, vision-language models, cross-dataset generalization
 

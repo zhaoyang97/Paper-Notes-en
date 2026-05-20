@@ -18,8 +18,8 @@ content_hash: fec0912aeacd88ad
 # Hierarchical Prompt Learning for Image- and Text-Based Person Re-Identification
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13575](https://arxiv.org/abs/2511.13575)
-**Code**: [https://github.com/LH-Z-Ac/HPL-AAAI26](https://github.com/LH-Z-Ac/HPL-AAAI26)
+**arXiv**: [2511.13575](https://arxiv.org/abs/2511.13575)  
+**Code**: [https://github.com/LH-Z-Ac/HPL-AAAI26](https://github.com/LH-Z-Ac/HPL-AAAI26)  
 **Area**: Autonomous Driving
 **Keywords**: Person Re-Identification, Prompt Learning, Cross-Modal Alignment, CLIP, Unified Retrieval Framework
 

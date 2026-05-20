@@ -18,8 +18,8 @@ content_hash: 82b5c89bc354d49d
 # Automatic Combination of Sample Selection Strategies for Few-Shot Learning
 
 **Conference**: ACL 2026
-**arXiv**: [2402.03038](https://arxiv.org/abs/2402.03038)
-**Code**: [https://github.com/kinit-sk/ACSESS](https://github.com/kinit-sk/ACSESS)
+**arXiv**: [2402.03038](https://arxiv.org/abs/2402.03038)  
+**Code**: [https://github.com/kinit-sk/ACSESS](https://github.com/kinit-sk/ACSESS)  
 **Area**: LLM/NLP
 **Keywords**: few-shot learning, sample selection, strategy combination, in-context learning, meta-learning
 

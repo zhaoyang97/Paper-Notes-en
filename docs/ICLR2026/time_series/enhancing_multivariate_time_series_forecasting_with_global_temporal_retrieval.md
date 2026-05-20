@@ -18,8 +18,8 @@ content_hash: b5fc7029e88f46ee
 # Enhancing Multivariate Time Series Forecasting with Global Temporal Retrieval
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.10847](https://arxiv.org/abs/2602.10847)
-**Code**: [https://github.com/macovaseas/GTR](https://github.com/macovaseas/GTR)
+**arXiv**: [2602.10847](https://arxiv.org/abs/2602.10847)  
+**Code**: [https://github.com/macovaseas/GTR](https://github.com/macovaseas/GTR)  
 **Area**: Video Understanding / Time Series Forecasting
 **Keywords**: Time Series Forecasting, Global Periodicity, Retrieval Augmentation, Plug-and-Play Module, 2D Convolution
 

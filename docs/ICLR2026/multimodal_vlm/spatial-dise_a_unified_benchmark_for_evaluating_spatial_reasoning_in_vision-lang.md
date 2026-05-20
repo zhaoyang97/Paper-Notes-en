@@ -18,8 +18,8 @@ content_hash: a34d763981520a7d
 # Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.13394](https://arxiv.org/abs/2510.13394)
-**Code**: [https://github.com/Spatial-DISE](https://github.com/Spatial-DISE)
+**arXiv**: [2510.13394](https://arxiv.org/abs/2510.13394)  
+**Code**: [https://github.com/Spatial-DISE](https://github.com/Spatial-DISE)  
 **Area**: Multimodal VLM
 **Keywords**: spatial reasoning, VLM benchmark, cognitive taxonomy, DISE framework, mental transformation
 
@@ -53,24 +53,24 @@ The overall pipeline consists of three stages: real-world data collection → sc
 
 1. **DISE Cognitive Taxonomy (2×2 Quadrants)**
 
-   - **Function**: Provides a unified classification framework for spatial reasoning tasks.
-   - **Mechanism**: The first dimension distinguishes Intrinsic (internal structure and part relationships of objects) from Extrinsic (spatial relationships between objects); the second dimension distinguishes Static (fixed, invariant information) from Dynamic (information requiring mental transformation). This yields four quadrants: I-S (analyzing internal static object properties, e.g., shape finding), I-D (mentally simulating object transformations, e.g., rotation and folding), E-S (inter-object relationships in fixed scenes, e.g., 3D projection), and E-D (reasoning about changing multi-object relationships, e.g., 2D/3D assembly).
-   - **Design Motivation**: Prior benchmarks typically cover only 1–2 quadrants (predominantly E-S). The DISE framework ensures comprehensive coverage, with particular emphasis on filling the weakest quadrant, I-D.
-   - **Known Limitation**: The framework does not explicitly distinguish difficulty differences between 2D and 3D spatial reasoning.
+    - **Function**: Provides a unified classification framework for spatial reasoning tasks.
+    - **Mechanism**: The first dimension distinguishes Intrinsic (internal structure and part relationships of objects) from Extrinsic (spatial relationships between objects); the second dimension distinguishes Static (fixed, invariant information) from Dynamic (information requiring mental transformation). This yields four quadrants: I-S (analyzing internal static object properties, e.g., shape finding), I-D (mentally simulating object transformations, e.g., rotation and folding), E-S (inter-object relationships in fixed scenes, e.g., 3D projection), and E-D (reasoning about changing multi-object relationships, e.g., 2D/3D assembly).
+    - **Design Motivation**: Prior benchmarks typically cover only 1–2 quadrants (predominantly E-S). The DISE framework ensures comprehensive coverage, with particular emphasis on filling the weakest quadrant, I-D.
+    - **Known Limitation**: The framework does not explicitly distinguish difficulty differences between 2D and 3D spatial reasoning.
 
 2. **Blender Automated Synthetic Data Pipeline**
 
-   - **Function**: Generates large-scale, verifiable 3D spatial reasoning VQA data.
-   - **Mechanism**: A five-step process — (1) generate reproducible random seeds via question\_id hashing; (2) construct core 3D objects (e.g., irregular shapes, textured cubes); (3) render question and correct-answer images from optimal viewpoints; (4) systematically generate multi-level distractors (geometric variants, texture/orientation errors, incorrect viewpoints, component substitutions); (5) render uniformly in a controlled virtual environment. Ground-truth answers for each instance are verifiable through Blender scene parameters.
-   - **Design Motivation**: Dynamic spatial reasoning data are extremely scarce and difficult to collect at scale from the real world; the Blender synthetic pipeline is the key technical contribution addressing this bottleneck.
-   - **Scalability**: The community can extend the framework with new task types by implementing corresponding object generation and distractor strategies.
+    - **Function**: Generates large-scale, verifiable 3D spatial reasoning VQA data.
+    - **Mechanism**: A five-step process — (1) generate reproducible random seeds via question\_id hashing; (2) construct core 3D objects (e.g., irregular shapes, textured cubes); (3) render question and correct-answer images from optimal viewpoints; (4) systematically generate multi-level distractors (geometric variants, texture/orientation errors, incorrect viewpoints, component substitutions); (5) render uniformly in a controlled virtual environment. Ground-truth answers for each instance are verifiable through Blender scene parameters.
+    - **Design Motivation**: Dynamic spatial reasoning data are extremely scarce and difficult to collect at scale from the real world; the Blender synthetic pipeline is the key technical contribution addressing this bottleneck.
+    - **Scalability**: The community can extend the framework with new task types by implementing corresponding object generation and distractor strategies.
 
 3. **Hierarchical Distractor Generation Strategy**
 
-   - **Function**: Ensures the diagnostic value and challenge level of each question.
-   - **Mechanism**: Task-specific distractor strategies are designed — geometric variants (adding or removing components), pattern/orientation errors (texture misalignment), incorrect viewpoints (wrong orthographic projection direction), and component substitutions (replacing correct parts with geometrically similar but incorrect alternatives). Each strategy targets a specific type of error that models are prone to make.
-   - **Design Motivation**: Simple distractors (e.g., completely different shapes) cannot effectively differentiate model capabilities; near-miss distractors force models to perform precise spatial reasoning rather than pattern matching.
-   - **Implementation Details**: Distractor strategies are specifically designed per task type — e.g., distractors for 3D rotation are generated by fine-tuning rotation angles, while distractors for 3D folding are generated by swapping face textures.
+    - **Function**: Ensures the diagnostic value and challenge level of each question.
+    - **Mechanism**: Task-specific distractor strategies are designed — geometric variants (adding or removing components), pattern/orientation errors (texture misalignment), incorrect viewpoints (wrong orthographic projection direction), and component substitutions (replacing correct parts with geometrically similar but incorrect alternatives). Each strategy targets a specific type of error that models are prone to make.
+    - **Design Motivation**: Simple distractors (e.g., completely different shapes) cannot effectively differentiate model capabilities; near-miss distractors force models to perform precise spatial reasoning rather than pattern matching.
+    - **Implementation Details**: Distractor strategies are specifically designed per task type — e.g., distractors for 3D rotation are generated by fine-tuning rotation angles, while distractors for 3D folding are generated by swapping face textures.
 
 ### Quality Control
 A three-stage quality control process is applied: (1) **answer uniqueness check** — each question must have exactly one correct answer; (2) **accuracy and clarity** — images must be free of rendering artifacts, questions must be clearly stated, and all options must conform to task standards; (3) **redundancy elimination** — logically or visually duplicate instances are removed. Instances failing any stage are excluded from the final dataset.

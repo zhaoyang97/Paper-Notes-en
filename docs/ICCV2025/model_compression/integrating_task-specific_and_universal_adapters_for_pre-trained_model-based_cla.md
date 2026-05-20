@@ -18,8 +18,8 @@ content_hash: 36898a3ddff5c648
 # Integrating Task-Specific and Universal Adapters for Pre-Trained Model-based Class-Incremental Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.08165](https://arxiv.org/abs/2508.08165)
-**Code**: [https://github.com/LAMDA-CL/ICCV2025-TUNA](https://github.com/LAMDA-CL/ICCV2025-TUNA)
+**arXiv**: [2508.08165](https://arxiv.org/abs/2508.08165)  
+**Code**: [https://github.com/LAMDA-CL/ICCV2025-TUNA](https://github.com/LAMDA-CL/ICCV2025-TUNA)  
 **Area**: Model Compression
 **Keywords**: Class-Incremental Learning, Adapter, Pre-Trained Model, Model Merging, Continual Learning
 

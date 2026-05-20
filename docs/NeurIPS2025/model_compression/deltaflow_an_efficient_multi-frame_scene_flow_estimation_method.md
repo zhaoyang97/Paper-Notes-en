@@ -18,8 +18,8 @@ content_hash: f2e8dbf25aee8761
 # DeltaFlow: An Efficient Multi-frame Scene Flow Estimation Method
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.17054](https://arxiv.org/abs/2508.17054)
-**Code**: [https://github.com/Kin-Zhang/DeltaFlow](https://github.com/Kin-Zhang/DeltaFlow)
+**arXiv**: [2508.17054](https://arxiv.org/abs/2508.17054)  
+**Code**: [https://github.com/Kin-Zhang/DeltaFlow](https://github.com/Kin-Zhang/DeltaFlow)  
 **Area**: Model Compression
 **Keywords**: scene flow, multi-frame, delta scheme, autonomous driving, computational efficiency
 

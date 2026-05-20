@@ -18,8 +18,8 @@ content_hash: b64d3f04a4261c0d
 # IceBreaker for Conversational Agents: Breaking the First-Message Barrier with Personalized Starters
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18375](https://arxiv.org/abs/2604.18375)
-**Code**: N/A (industrial deployment system)
+**arXiv**: [2604.18375](https://arxiv.org/abs/2604.18375)  
+**Code**: N/A (industrial deployment system)  
 **Area**: Recommender Systems / Dialogue Systems
 **Keywords**: proactive conversation initiation, personalized session starter, interest distillation, preference alignment, cold start
 

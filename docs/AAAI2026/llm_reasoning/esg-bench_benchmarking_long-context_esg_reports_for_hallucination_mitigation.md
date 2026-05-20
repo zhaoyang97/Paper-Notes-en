@@ -18,8 +18,8 @@ content_hash: 3d63221087cd1e2e
 # ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.13154](https://arxiv.org/abs/2603.13154)
-**Code**: Available
+**arXiv**: [2603.13154](https://arxiv.org/abs/2603.13154)  
+**Code**: Available  
 **Area**: LLM Reasoning / Hallucination Mitigation
 **Keywords**: ESG Reports, Long-Context, Hallucination Detection, CoT Fine-tuning, Compliance
 
@@ -52,21 +52,21 @@ ESG-Bench construction: 94 real ESG reports → GPT-4o-generated questions → h
 
 1. **SFT Baseline**:
 
-   - Function: Fine-tune the model on grounded answers with "Not Provided" abstention labels.
-   - Performance: WA 80.99% / WoA 99.0% / F1 73.68%
+    - Function: Fine-tune the model on grounded answers with "Not Provided" abstention labels.
+    - Performance: WA 80.99% / WoA 99.0% / F1 73.68%
 
 2. **CoT Prompting (2-step / 4-step)**:
 
-   - Function: Guide the LLM with structured reasoning templates.
-   - 2-step: "Can this question be answered from the report? → If yes, answer it."
-   - 4-step: "Extract the topic → Search the report for relevant passages → Assess answerability → Answer based on evidence."
-   - Design Motivation: The 4-step variant outperforms the 2-step variant — intermediate steps (search + answerability assessment) force the model to verify before answering.
+    - Function: Guide the LLM with structured reasoning templates.
+    - 2-step: "Can this question be answered from the report? → If yes, answer it."
+    - 4-step: "Extract the topic → Search the report for relevant passages → Assess answerability → Answer based on evidence."
+    - Design Motivation: The 4-step variant outperforms the 2-step variant — intermediate steps (search + answerability assessment) force the model to verify before answering.
 
 3. **CoT Fine-tuning**:
 
-   - Function: Fine-tune on human-annotated reasoning chains.
-   - Mechanism: Rather than supervising only the final answer, the model is trained on the full reasoning process, learning the 4-step inference pattern.
-   - Performance: **4-step CoT fine-tuned Llama-3 achieves WA 92.52% + WoA 99.37%.**
+    - Function: Fine-tune on human-annotated reasoning chains.
+    - Mechanism: Rather than supervising only the final answer, the model is trained on the full reasoning process, learning the 4-step inference pattern.
+    - Performance: **4-step CoT fine-tuned Llama-3 achieves WA 92.52% + WoA 99.37%.**
 
 ### Loss & Training
 - Models: Llama-3.2-3B / Gemma-2-2B / Mistral-7B

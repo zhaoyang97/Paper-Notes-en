@@ -18,8 +18,8 @@ content_hash: b867453057093c06
 # MTBBench: A Multimodal Sequential Clinical Decision-Making Benchmark in Oncology
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.20490](https://arxiv.org/abs/2511.20490)
-**Code**: [GitHub](https://github.com/bunnelab/MTBBench) / [HuggingFace](https://huggingface.co/datasets/EeshaanJain/MTBBench)
+**arXiv**: [2511.20490](https://arxiv.org/abs/2511.20490)  
+**Code**: [GitHub](https://github.com/bunnelab/MTBBench) / [HuggingFace](https://huggingface.co/datasets/EeshaanJain/MTBBench)  
 **Area**: Medical Imaging
 **Keywords**: Multimodal Benchmark, Oncology, Molecular Tumor Board, Longitudinal Reasoning, Clinical Decision-Making Agent
 

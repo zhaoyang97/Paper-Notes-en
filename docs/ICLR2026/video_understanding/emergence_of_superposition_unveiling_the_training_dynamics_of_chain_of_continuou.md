@@ -18,8 +18,8 @@ content_hash: 3399682b680352d1
 # Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.23365](https://arxiv.org/abs/2509.23365)
-**Code**: None
+**arXiv**: [2509.23365](https://arxiv.org/abs/2509.23365)  
+**Code**: None  
 **Area**: Video Understanding / LLM Reasoning Theory
 **Keywords**: Continuous CoT, Superposition, Training Dynamics, Transformer Theory, Graph Reachability
 

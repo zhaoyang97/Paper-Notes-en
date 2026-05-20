@@ -18,8 +18,8 @@ content_hash: 7c98f03cc84df6f3
 # Dynamics of Spontaneous Topic Changes in Next Token Prediction with Self-Attention
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.06382](https://arxiv.org/abs/2501.06382)
-**Code**: None
+**arXiv**: [2501.06382](https://arxiv.org/abs/2501.06382)  
+**Code**: None  
 **Area**: LLM Efficiency
 **Keywords**: spontaneous thought, topic change, self-attention theory, token priority graph, cognitive gap
 

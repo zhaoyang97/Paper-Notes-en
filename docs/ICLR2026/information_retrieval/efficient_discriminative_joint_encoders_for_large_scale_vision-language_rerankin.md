@@ -18,8 +18,8 @@ content_hash: a1e66dd34905af0d
 # Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.06820](https://arxiv.org/abs/2510.06820)
-**Code**: [GitHub](https://github.com/gitanony04-lab/Simple-Efficient-Fusion)
+**arXiv**: [2510.06820](https://arxiv.org/abs/2510.06820)  
+**Code**: [GitHub](https://github.com/gitanony04-lab/Simple-Efficient-Fusion)  
 **Area**: Information Retrieval
 **Keywords**: Vision-Language Retrieval, Joint Encoder, Re-ranking, Token Compression, Efficient Inference
 

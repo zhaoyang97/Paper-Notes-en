@@ -18,8 +18,8 @@ content_hash: 3202c2e8b314cae9
 # Manipulating 3D Molecules in a Fixed-Dimensional E(3)-Equivariant Latent Space
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.00771](https://arxiv.org/abs/2506.00771)
-**Code**: [GitHub](https://github.com/MuZhao2333/MolFLAE)
+**arXiv**: [2506.00771](https://arxiv.org/abs/2506.00771)  
+**Code**: [GitHub](https://github.com/MuZhao2333/MolFLAE)  
 **Area**: Medical Imaging
 **Keywords**: Molecular Generation, VAE, E(3)-Equivariance, Latent Space Manipulation, Bayesian Flow Networks
 

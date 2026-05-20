@@ -18,8 +18,8 @@ content_hash: cfa07d82157e0163
 # Vision Transformers are Circulant Attention Learners
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.21542](https://arxiv.org/abs/2512.21542)
-**Code**: N/A
+**arXiv**: [2512.21542](https://arxiv.org/abs/2512.21542)  
+**Code**: N/A  
 **Area**: LLM NLP
 **Keywords**: Vision Transformer, Circulant Attention, BCCB, FFT, Efficient Attention
 

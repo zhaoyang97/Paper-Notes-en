@@ -18,8 +18,8 @@ content_hash: 34dc6f0a466e57b2
 # PBCAT: Patch-Based Composite Adversarial Training against Physically Realizable Attacks on Object Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.23581](https://arxiv.org/abs/2506.23581)
-**Code**: [GitHub](https://github.com/LixiaoTHU/oddefense-PatchAT)
+**arXiv**: [2506.23581](https://arxiv.org/abs/2506.23581)  
+**Code**: [GitHub](https://github.com/LixiaoTHU/oddefense-PatchAT)  
 **Area**: Autonomous Driving
 **Keywords**: Adversarial Training, Physically Realizable Attacks, Object Detection, Adversarial Texture, Adversarial Patch
 

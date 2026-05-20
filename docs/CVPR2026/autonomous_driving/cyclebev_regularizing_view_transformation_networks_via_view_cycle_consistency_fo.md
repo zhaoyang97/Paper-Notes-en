@@ -18,8 +18,8 @@ content_hash: 78cc319480144ed6
 # CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23575](https://arxiv.org/abs/2602.23575)
-**Code**: [JeongbinHong/CycleBEV](https://github.com/JeongbinHong/CycleBEV)
+**arXiv**: [2602.23575](https://arxiv.org/abs/2602.23575)  
+**Code**: [JeongbinHong/CycleBEV](https://github.com/JeongbinHong/CycleBEV)  
 **Area**: Autonomous Driving
 **Keywords**: BEV semantic segmentation, view transformation, cycle consistency, inverse view transformation, regularization
 

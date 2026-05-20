@@ -19,7 +19,7 @@ content_hash: 00f7f59b775331f6
 # Towards LLM-Empowered Knowledge Tracing via LLM-Student Hierarchical Behavior Alignment in Hyperbolic Space
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.22879](https://arxiv.org/abs/2602.22879)
+**arXiv**: [2602.22879](https://arxiv.org/abs/2602.22879)  
 **Area**: Educational Intelligence / Knowledge Tracing
 **Keywords**: Knowledge Tracing, LLM Dual-Agent, Hyperbolic Space, Hierarchical Knowledge Graph, Contrastive Alignment, Learning Behavior Simulation
 

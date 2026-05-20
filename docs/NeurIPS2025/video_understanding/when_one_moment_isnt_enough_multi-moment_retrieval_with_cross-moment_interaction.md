@@ -18,8 +18,8 @@ content_hash: a6ca3b5076890df6
 # When One Moment Isn't Enough: Multi-Moment Retrieval with Cross-Moment Interactions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.17218](https://arxiv.org/abs/2510.17218)
-**Code**: [GitHub](https://github.com/Zhuo-Cao/QV-M2)
+**arXiv**: [2510.17218](https://arxiv.org/abs/2510.17218)  
+**Code**: [GitHub](https://github.com/Zhuo-Cao/QV-M2)  
 **Area**: Video Understanding
 **Keywords**: Multi-Moment Retrieval, Video Temporal Grounding, Dataset, Post-Verification Module, Moment Retrieval
 

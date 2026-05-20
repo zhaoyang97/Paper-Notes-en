@@ -18,8 +18,8 @@ content_hash: ce95e6071f26433c
 # MDiff4STR: Mask Diffusion Model for Scene Text Recognition
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.01422](https://arxiv.org/abs/2512.01422)
-**Code**: [https://github.com/Topdu/OpenOCR](https://github.com/Topdu/OpenOCR)
+**arXiv**: [2512.01422](https://arxiv.org/abs/2512.01422)  
+**Code**: [https://github.com/Topdu/OpenOCR](https://github.com/Topdu/OpenOCR)  
 **Area**: Image Generation
 **Keywords**: Scene Text Recognition, Mask Diffusion Model, Denoising Strategy, Token Replacement Noise, Omnidirectional Language Modeling
 

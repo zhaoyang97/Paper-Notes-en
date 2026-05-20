@@ -18,8 +18,8 @@ content_hash: 9ec86f6db0ff0acd
 # Invisible Watermarks, Visible Gains: Steering Machine Unlearning with Bi-Level Watermarking Design
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.10065](https://arxiv.org/abs/2508.10065)
-**Code**: None
+**arXiv**: [2508.10065](https://arxiv.org/abs/2508.10065)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Machine Unlearning, Digital Watermarking, Bi-Level Optimization, Implicit Gradients, Diffusion Model Concept Erasure
 

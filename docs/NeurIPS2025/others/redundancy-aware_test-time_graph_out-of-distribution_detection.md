@@ -17,8 +17,8 @@ content_hash: 22fb395d5e9ce48e
 # Redundancy-Aware Test-Time Graph Out-of-Distribution Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.14562](https://arxiv.org/abs/2510.14562)
-**Code**: [Available](https://github.com/name-is-what/RedOUT)
+**arXiv**: [2510.14562](https://arxiv.org/abs/2510.14562)  
+**Code**: [Available](https://github.com/name-is-what/RedOUT)  
 **Area**: Other
 **Keywords**: Graph OOD Detection, Structural Entropy, Information Bottleneck, Test-Time Detection, Coding Tree
 

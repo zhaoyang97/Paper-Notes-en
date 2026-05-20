@@ -17,8 +17,8 @@ content_hash: 32ace1aa6b85457c
 # On the Variability of Concept Activation Vectors
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.24058](https://arxiv.org/abs/2509.24058)
-**Code**: To be released
+**arXiv**: [2509.24058](https://arxiv.org/abs/2509.24058)  
+**Code**: To be released  
 **Area**: Other
 **Keywords**: Concept Activation Vectors, TCAV, variance analysis, asymptotic normality, interpretable AI stability
 

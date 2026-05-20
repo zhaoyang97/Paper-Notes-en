@@ -18,8 +18,8 @@ content_hash: aaf92a665bce2cb3
 # InnoAds-Composer: Efficient Condition Composition for E-Commerce Poster Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05898](https://arxiv.org/abs/2603.05898)
-**Code**: N/A
+**arXiv**: [2603.05898](https://arxiv.org/abs/2603.05898)  
+**Code**: N/A  
 **Area**: Image Generation / Controllable Generation
 **Keywords**: e-commerce poster generation, multi-condition composition, MM-DiT, text rendering, condition importance analysis
 

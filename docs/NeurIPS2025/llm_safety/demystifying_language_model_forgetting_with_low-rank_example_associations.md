@@ -18,8 +18,8 @@ content_hash: 50c05459af2a379a
 # Demystifying Language Model Forgetting with Low-Rank Example Associations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2406.14026](https://arxiv.org/abs/2406.14026)
-**Code**: [GitHub](https://github.com/AuCson/low-rank-forgetting)
+**arXiv**: [2406.14026](https://arxiv.org/abs/2406.14026)  
+**Code**: [GitHub](https://github.com/AuCson/low-rank-forgetting)  
 **Area**: LLM Safety
 **Keywords**: Catastrophic Forgetting, Low-Rank Association, Matrix Completion, Forgetting Prediction, Selective Replay
 

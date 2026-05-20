@@ -18,8 +18,8 @@ content_hash: 7c1066435d745167
 # Vanish into Thin Air: Cross-prompt Universal Adversarial Attacks for SAM2
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.24195](https://arxiv.org/abs/2510.24195)
-**Code**: [GitHub](https://github.com/CGCL-codes/UAP-SAM2)
+**arXiv**: [2510.24195](https://arxiv.org/abs/2510.24195)  
+**Code**: [GitHub](https://github.com/CGCL-codes/UAP-SAM2)  
 **Area**: Image Segmentation
 **Keywords**: Adversarial Attack, SAM2, Universal Adversarial Perturbation, Video Segmentation, Semantic Shift
 

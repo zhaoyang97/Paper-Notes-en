@@ -18,8 +18,8 @@ content_hash: f4f261dcfdc408a2
 # Spatio-Semantic Expert Routing Architecture with Mixture-of-Experts for Referring Image Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12538](https://arxiv.org/abs/2603.12538)
-**Code**: None
+**arXiv**: [2603.12538](https://arxiv.org/abs/2603.12538)  
+**Code**: None  
 **Area**: Segmentation
 **Keywords**: Referring Image Segmentation, Mixture-of-Experts, Parameter-Efficient Tuning, Vision-Language Models, Expert Routing
 

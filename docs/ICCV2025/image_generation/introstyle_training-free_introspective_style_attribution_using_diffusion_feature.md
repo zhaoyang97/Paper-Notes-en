@@ -19,8 +19,8 @@ content_hash: bca500529993f1c4
 # IntroStyle: Training-Free Introspective Style Attribution using Diffusion Features
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.14432](https://arxiv.org/abs/2412.14432)
-**Code**: [GitHub](https://anandk27.github.io/IntroStyle)
+**arXiv**: [2412.14432](https://arxiv.org/abs/2412.14432)  
+**Code**: [GitHub](https://anandk27.github.io/IntroStyle)  
 **Area**: Image Generation / Style Attribution
 **Keywords**: Style attribution, diffusion model features, training-free, Wasserstein distance, copyright protection, style retrieval
 

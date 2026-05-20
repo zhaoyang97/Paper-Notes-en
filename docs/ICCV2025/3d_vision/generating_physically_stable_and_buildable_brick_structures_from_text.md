@@ -18,8 +18,8 @@ content_hash: 31331760e0885130
 # Generating Physically Stable and Buildable Brick Structures from Text
 
 **Conference**: ICCV2025
-**arXiv**: [2505.05469](https://arxiv.org/abs/2505.05469)
-**Code**: [Project Page](https://avalovelace1.github.io/BrickGPT/)
+**arXiv**: [2505.05469](https://arxiv.org/abs/2505.05469)  
+**Code**: [Project Page](https://avalovelace1.github.io/BrickGPT/)  
 **Area**: 3D Vision
 **Keywords**: text-to-3D, brick assembly, physical stability, autoregressive LLM, LEGO generation
 

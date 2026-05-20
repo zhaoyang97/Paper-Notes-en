@@ -18,8 +18,8 @@ content_hash: 1d2df4ba7f9c1bca
 # XMark: Reliable Multi-Bit Watermarking for LLM-Generated Texts
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05242](https://arxiv.org/abs/2604.05242)
-**Code**: [https://github.com/JiiahaoXU/XMark](https://github.com/JiiahaoXU/XMark)
+**arXiv**: [2604.05242](https://arxiv.org/abs/2604.05242)  
+**Code**: [https://github.com/JiiahaoXU/XMark](https://github.com/JiiahaoXU/XMark)  
 **Area**: Text Watermarking
 **Keywords**: Multi-bit watermarking, LLM text detection, digital watermarking, text provenance, logit perturbation
 

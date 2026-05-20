@@ -18,8 +18,8 @@ content_hash: 0e39bae03c5a4bb8
 # The Transparent Earth: A Multimodal Foundation Model for the Earth's Subsurface
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.02783](https://arxiv.org/abs/2509.02783)
-**Code**: Not available
+**arXiv**: [2509.02783](https://arxiv.org/abs/2509.02783)  
+**Code**: Not available  
 **Area**: Information Retrieval
 **Keywords**: Earth science foundation model, multimodal fusion, Transformer, subsurface property reconstruction, in-context learning
 

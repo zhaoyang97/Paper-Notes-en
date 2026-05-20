@@ -17,8 +17,8 @@ content_hash: d6071bf12160f9f6
 # Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.21939](https://arxiv.org/abs/2505.21939)
-**Code**: None
+**arXiv**: [2505.21939](https://arxiv.org/abs/2505.21939)  
+**Code**: None  
 **Area**: Theoretical Computer Science / Combinatorial Optimization
 **Keywords**: Correlation Clustering, Approximation Algorithms, LP Rounding, Chromatic CC, Pseudometric
 
@@ -46,19 +46,19 @@ A unified **triple-based LP rounding analysis framework** is employed: for each 
 ### Key Designs
 
 1. **Rounding Function for Pseudometric-Weighted CC**:
-   - **Function**: Maps LP solutions $x \in [0,1]$ to clustering probabilities via a piecewise constant/linear function.
-   - **Mechanism**: $f^+(x) = f^-(x) = \begin{cases} 0 & x < 0.4 \\ 5/3 \cdot x & 0.4 \leq x < 0.6 \\ 1 & x \geq 0.6 \end{cases}$, using a linear mapping on $[0.4, 0.6)$.
-   - **Design Motivation**: Upper and lower bound constraints from configurations $(x, 1-x, 1)$ and $(x, x, 2x)$ uniquely determine the optimal piecewise function form.
+    - **Function**: Maps LP solutions $x \in [0,1]$ to clustering probabilities via a piecewise constant/linear function.
+    - **Mechanism**: $f^+(x) = f^-(x) = \begin{cases} 0 & x < 0.4 \\ 5/3 \cdot x & 0.4 \leq x < 0.6 \\ 1 & x \geq 0.6 \end{cases}$, using a linear mapping on $[0.4, 0.6)$.
+    - **Design Motivation**: Upper and lower bound constraints from configurations $(x, 1-x, 1)$ and $(x, x, 2x)$ uniquely determine the optimal piecewise function form.
 
 2. **Color-Cluster Decoupling and Multi-Type Rounding for CCC**:
-   - **Function**: Decouples color assignment from clustering decisions, introducing three rounding functions ($f^+$, $f^-$, $f^\circ$) to handle same-color, adversarial-color, and neutral edges, respectively.
-   - **Mechanism**: A two-phase approach—first assign colors via LP solution (majority voting), then run LP-Pivot within each color class; $f^\circ(x) = 1.7x\ (x < 0.5)$ or $0.3x + 0.7\ (x \geq 0.5)$ is specifically designed to control the cost of neutral edges.
-   - **Design Motivation**: Edge types in CCC are diverse (same-color, adversarial-color, neutral), requiring separate cost control for each type to ensure the overall ratio does not exceed 2.15.
+    - **Function**: Decouples color assignment from clustering decisions, introducing three rounding functions ($f^+$, $f^-$, $f^\circ$) to handle same-color, adversarial-color, and neutral edges, respectively.
+    - **Mechanism**: A two-phase approach—first assign colors via LP solution (majority voting), then run LP-Pivot within each color class; $f^\circ(x) = 1.7x\ (x < 0.5)$ or $0.3x + 0.7\ (x \geq 0.5)$ is specifically designed to control the cost of neutral edges.
+    - **Design Motivation**: Edge types in CCC are diverse (same-color, adversarial-color, neutral), requiring separate cost control for each type to ensure the overall ratio does not exceed 2.15.
 
 3. **Tight Lower Bound Construction**:
-   - **Function**: Establishes impossibility results for approximation ratios within the LP-Pivot framework.
-   - **Mechanism**: A contradiction via upper and lower bounds on $f^\circ(1/2)$ proves the CCC lower bound of 2.11; analysis of extremal configurations proves the pseudometric-weighted CC lower bound of 10/3.
-   - **Design Motivation**: Matching (or near-matching) upper and lower bounds demonstrate the optimality of the algorithms within this framework.
+    - **Function**: Establishes impossibility results for approximation ratios within the LP-Pivot framework.
+    - **Mechanism**: A contradiction via upper and lower bounds on $f^\circ(1/2)$ proves the CCC lower bound of 2.11; analysis of extremal configurations proves the pseudometric-weighted CC lower bound of 10/3.
+    - **Design Motivation**: Matching (or near-matching) upper and lower bounds demonstrate the optimality of the algorithms within this framework.
 
 ### Algorithm Pipeline
 

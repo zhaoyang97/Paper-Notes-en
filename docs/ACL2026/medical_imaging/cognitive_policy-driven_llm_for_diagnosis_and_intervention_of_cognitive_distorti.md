@@ -18,8 +18,8 @@ content_hash: b6ec90c14b7a1632
 # Cognitive Policy-Driven LLM for Diagnosis and Intervention of Cognitive Distortions in Emotional Support Conversation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17178](https://arxiv.org/abs/2604.17178)
-**Code**: [https://github.com/Chips98/CoPoLLM-for-ACL-2026](https://github.com/Chips98/CoPoLLM-for-ACL-2026)
+**arXiv**: [2604.17178](https://arxiv.org/abs/2604.17178)  
+**Code**: [https://github.com/Chips98/CoPoLLM-for-ACL-2026](https://github.com/Chips98/CoPoLLM-for-ACL-2026)  
 **Area**: Medical Imaging
 **Keywords**: Emotional Support Conversation, Cognitive Distortion, Cognitive Behavioral Therapy, Reinforcement Learning Policy, Safe Intervention
 

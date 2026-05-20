@@ -18,8 +18,8 @@ content_hash: c066fecffbfe45e6
 # Doc-PP: Document Policy Preservation Benchmark for Large Vision-Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2601.03926](https://arxiv.org/abs/2601.03926)
-**Code**: [Project Page](https://hwanchang00.github.io/docpp_project_page)
+**arXiv**: [2601.03926](https://arxiv.org/abs/2601.03926)  
+**Code**: [Project Page](https://hwanchang00.github.io/docpp_project_page)  
 **Area**: Multimodal VLM / Document Security
 **Keywords**: Document QA, Information Leakage, Policy Preservation, Multimodal Reasoning, Safety Alignment
 

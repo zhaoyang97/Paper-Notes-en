@@ -18,8 +18,8 @@ content_hash: 007a00111146e9d1
 # ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05530](https://arxiv.org/abs/2603.05530)
-**Code**: None
+**arXiv**: [2603.05530](https://arxiv.org/abs/2603.05530)  
+**Code**: None  
 **Area**: Robotics / Vision-Language Navigation
 **Keywords**: VLN, proactive perception, MCTS, zero-shot navigation, LLM agent
 

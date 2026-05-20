@@ -18,8 +18,8 @@ content_hash: 3184af12226b35bc
 # Sequential Monte Carlo for Policy Optimization in Continuous POMDPs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16732](https://arxiv.org/abs/2505.16732)
-**Code**: None
+**arXiv**: [2505.16732](https://arxiv.org/abs/2505.16732)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: POMDP, sequential Monte Carlo, policy gradient, partial observability, Feynman-Kac
 

@@ -18,8 +18,8 @@ content_hash: bcb4208a8ccb0785
 # Towards Bridging the Reward-Generation Gap in Direct Alignment Algorithms
 
 **Conference**: ACL 2026
-**arXiv**: [2506.09457](https://arxiv.org/abs/2506.09457)
-**Code**: [GitHub](https://github.com/sustech-nlp/POET)
+**arXiv**: [2506.09457](https://arxiv.org/abs/2506.09457)  
+**Code**: [GitHub](https://github.com/sustech-nlp/POET)  
 **Area**: LLM Alignment / Preference Optimization
 **Keywords**: Direct Alignment Algorithms, Prefix Importance, Equal-length Training, Reward-Generation Gap, DPO/SimPO
 

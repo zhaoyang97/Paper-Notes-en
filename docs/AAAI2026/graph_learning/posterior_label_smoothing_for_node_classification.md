@@ -18,8 +18,8 @@ content_hash: d933ac1367482d81
 # Posterior Label Smoothing for Node Classification
 
 **Conference**: AAAI 2026
-**arXiv**: [2406.00410](https://arxiv.org/abs/2406.00410)
-**Code**: [https://github.com/ml-postech/PosteL](https://github.com/ml-postech/PosteL)
+**arXiv**: [2406.00410](https://arxiv.org/abs/2406.00410)  
+**Code**: [https://github.com/ml-postech/PosteL](https://github.com/ml-postech/PosteL)  
 **Area**: Graph Learning
 **Keywords**: Label Smoothing, Node Classification, Posterior Distribution, Homophilic/Heterophilic Graphs, Iterative Pseudo-labeling
 

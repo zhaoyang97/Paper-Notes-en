@@ -18,8 +18,8 @@ content_hash: a2f4d8873d299eb6
 # Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.15809](https://arxiv.org/abs/2604.15809)
-**Code**: [https://cxliu0.github.io/AIF/](https://cxliu0.github.io/AIF/)
+**arXiv**: [2604.15809](https://arxiv.org/abs/2604.15809)  
+**Code**: [https://cxliu0.github.io/AIF/](https://cxliu0.github.io/AIF/)  
 **Area**: Multimodal VLM
 **Keywords**: Vision-language models, information flow modulation, token dynamics, causal mask, training-free
 

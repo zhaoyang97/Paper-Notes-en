@@ -18,8 +18,8 @@ content_hash: 4eba8e5a05428b76
 # Boosting MLLM Reasoning with Text-Debiased Hint-GRPO
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.23905](https://arxiv.org/abs/2503.23905)
-**Code**: [github.com/hqhQAQ/Hint-GRPO](https://github.com/hqhQAQ/Hint-GRPO)
+**arXiv**: [2503.23905](https://arxiv.org/abs/2503.23905)  
+**Code**: [github.com/hqhQAQ/Hint-GRPO](https://github.com/hqhQAQ/Hint-GRPO)  
 **Area**: Multimodal Learning / MLLM Reasoning
 **Keywords**: MLLM reasoning, GRPO reinforcement learning, data utilization, text bias, hint-guided training
 

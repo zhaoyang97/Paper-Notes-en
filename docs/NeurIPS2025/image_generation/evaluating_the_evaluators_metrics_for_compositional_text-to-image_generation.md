@@ -18,8 +18,8 @@ content_hash: 15851519c4e16b7c
 # Evaluating the Evaluators: Metrics for Compositional Text-to-Image Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.21227](https://arxiv.org/abs/2509.21227)
-**Code**: None (project page available)
+**arXiv**: [2509.21227](https://arxiv.org/abs/2509.21227)  
+**Code**: None (project page available)  
 **Area**: Image Generation
 **Keywords**: evaluation metrics, compositional alignment, text-to-image, VQA metrics, human judgment
 

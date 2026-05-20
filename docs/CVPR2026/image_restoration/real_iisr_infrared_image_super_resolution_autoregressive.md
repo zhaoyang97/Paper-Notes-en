@@ -18,8 +18,8 @@ content_hash: 6177be9da2908251
 # Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.04745](https://arxiv.org/abs/2603.04745)
-**Code**: [https://github.com/JZD151/Real-IISR](https://github.com/JZD151/Real-IISR)
+**arXiv**: [2603.04745](https://arxiv.org/abs/2603.04745)  
+**Code**: [https://github.com/JZD151/Real-IISR](https://github.com/JZD151/Real-IISR)  
 **Area**: Image Restoration / Infrared Super-Resolution
 **Keywords**: Infrared image super-resolution, visual autoregression, thermal-structure guidance, conditional adaptive codebook, thermal order consistency
 

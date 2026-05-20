@@ -18,8 +18,8 @@ content_hash: e0906251b7d7838c
 # Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.26211](https://arxiv.org/abs/2603.26211)
-**Code**: None
+**arXiv**: [2603.26211](https://arxiv.org/abs/2603.26211)  
+**Code**: None  
 **Area**: GUI Agent / Vision-Language Models
 **Keywords**: GUI Grounding, Discrete Diffusion Models, LLaDA-V, Hybrid Masking, Interface Understanding
 

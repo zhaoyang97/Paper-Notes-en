@@ -18,8 +18,8 @@ content_hash: fe32742a9d1be61b
 # Boosting Generative Image Modeling via Joint Image-Feature Synthesis
 
 **Conference**: NeurIPS 2025 **Spotlight**
-**arXiv**: [2504.16064](https://arxiv.org/abs/2504.16064)
-**Code**: [GitHub](https://representationdiffusion.github.io/)
+**arXiv**: [2504.16064](https://arxiv.org/abs/2504.16064)  
+**Code**: [GitHub](https://representationdiffusion.github.io/)  
 **Area**: Image Generation
 **Keywords**: Joint Image-Feature Generation, Diffusion Model, DINOv2, Representation Guidance, DiT
 
@@ -50,19 +50,19 @@ Given an input image $I$, both the VAE latent $\mathbf{x}_0 = \mathcal{E}_x(I) \
 ### Key Designs
 
 1. **Joint Forward-Reverse Diffusion Process**:
-   - **Function**: Independent noise is added to both the image latent and semantic features using the same noise schedule, followed by joint denoising.
-   - **Mechanism**: The forward process is defined as $\mathbf{x}_t = \sqrt{\bar\alpha_t}\mathbf{x}_0 + \sqrt{1-\bar\alpha_t}\boldsymbol{\epsilon}_x$ and $\mathbf{z}_t = \sqrt{\bar\alpha_t}\mathbf{z}_0 + \sqrt{1-\bar\alpha_t}\boldsymbol{\epsilon}_z$. The model simultaneously predicts two sets of noise: $\boldsymbol{\epsilon}_\theta^x$ and $\boldsymbol{\epsilon}_\theta^z$. The joint loss is $\mathcal{L} = \|\boldsymbol{\epsilon}_\theta^x - \boldsymbol{\epsilon}_x\|^2 + \lambda_z\|\boldsymbol{\epsilon}_\theta^z - \boldsymbol{\epsilon}_z\|^2$, with default $\lambda_z=1$.
-   - **Design Motivation**: Forcing the model to learn the joint distribution of image details and semantic structure, where each modality provides complementary information to the other, naturally leads to improved generation quality.
+    - **Function**: Independent noise is added to both the image latent and semantic features using the same noise schedule, followed by joint denoising.
+    - **Mechanism**: The forward process is defined as $\mathbf{x}_t = \sqrt{\bar\alpha_t}\mathbf{x}_0 + \sqrt{1-\bar\alpha_t}\boldsymbol{\epsilon}_x$ and $\mathbf{z}_t = \sqrt{\bar\alpha_t}\mathbf{z}_0 + \sqrt{1-\bar\alpha_t}\boldsymbol{\epsilon}_z$. The model simultaneously predicts two sets of noise: $\boldsymbol{\epsilon}_\theta^x$ and $\boldsymbol{\epsilon}_\theta^z$. The joint loss is $\mathcal{L} = \|\boldsymbol{\epsilon}_\theta^x - \boldsymbol{\epsilon}_x\|^2 + \lambda_z\|\boldsymbol{\epsilon}_\theta^z - \boldsymbol{\epsilon}_z\|^2$, with default $\lambda_z=1$.
+    - **Design Motivation**: Forcing the model to learn the joint distribution of image details and semantic structure, where each modality provides complementary information to the other, naturally leads to improved generation quality.
 
 2. **Token Fusion Strategy (Merged vs. Separate)**:
-   - **Function**: Two approaches for feeding VAE tokens and semantic tokens into the Transformer.
-   - **Mechanism**: The **Merged** approach projects both token sets via separate linear projections and adds them channel-wise — $\mathbf{h}_t = \mathbf{x}_t\mathbf{W}_{emb}^x + \mathbf{z}_t\mathbf{W}_{emb}^z$ — preserving the original token count $L$. The **Separate** approach concatenates both sets along the sequence dimension, yielding $2L$ tokens. Merged is used by default to maintain computational efficiency.
-   - **Design Motivation**: Merged enables tight early-stage interaction between the two information streams without increasing computational cost; Separate offers greater expressive capacity at the cost of doubled computation.
+    - **Function**: Two approaches for feeding VAE tokens and semantic tokens into the Transformer.
+    - **Mechanism**: The **Merged** approach projects both token sets via separate linear projections and adds them channel-wise — $\mathbf{h}_t = \mathbf{x}_t\mathbf{W}_{emb}^x + \mathbf{z}_t\mathbf{W}_{emb}^z$ — preserving the original token count $L$. The **Separate** approach concatenates both sets along the sequence dimension, yielding $2L$ tokens. Merged is used by default to maintain computational efficiency.
+    - **Design Motivation**: Merged enables tight early-stage interaction between the two information streams without increasing computational cost; Separate offers greater expressive capacity at the cost of doubled computation.
 
 3. **PCA-Reduced Semantic Representations + Representation Guidance**:
-   - **Function**: DINOv2's 768-dimensional features are reduced to 8 dimensions via PCA to balance computation; during inference, the semantic branch is used to guide image generation.
-   - **Mechanism**: PCA dimensionality reduction addresses the capacity imbalance caused by $C_z \gg C_x$. Representation Guidance, analogous to CFG, is formulated as $\hat{\boldsymbol{\epsilon}}_\theta = \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t) + w_r(\boldsymbol{\epsilon}_\theta(\mathbf{x}_t, \mathbf{z}_t, t) - \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t))$. During training, $\mathbf{z}_t$ is randomly dropped with probability $p_{drop}$ so the model learns denoising both with and without semantic conditioning.
-   - **Design Motivation**: PCA prevents high-dimensional semantic features from consuming disproportionate model capacity. Representation Guidance leverages the model's own learned semantics to guide generation without requiring any additional model.
+    - **Function**: DINOv2's 768-dimensional features are reduced to 8 dimensions via PCA to balance computation; during inference, the semantic branch is used to guide image generation.
+    - **Mechanism**: PCA dimensionality reduction addresses the capacity imbalance caused by $C_z \gg C_x$. Representation Guidance, analogous to CFG, is formulated as $\hat{\boldsymbol{\epsilon}}_\theta = \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t) + w_r(\boldsymbol{\epsilon}_\theta(\mathbf{x}_t, \mathbf{z}_t, t) - \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t))$. During training, $\mathbf{z}_t$ is randomly dropped with probability $p_{drop}$ so the model learns denoising both with and without semantic conditioning.
+    - **Design Motivation**: PCA prevents high-dimensional semantic features from consuming disproportionate model capacity. Representation Guidance leverages the model's own learned semantics to guide generation without requiring any additional model.
 
 ### Loss & Training
 

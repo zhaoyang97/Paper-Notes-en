@@ -18,8 +18,8 @@ content_hash: 56603a849c3b0cb2
 # Two-Stage Learning of Stabilizing Neural Controllers via Zubov Sampling and Iterative Domain Expansion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01356](https://arxiv.org/abs/2506.01356)
-**Code**: [GitHub](https://github.com/Verified-Intelligence/Two-Stage_Neural_Controller_Training)
+**arXiv**: [2506.01356](https://arxiv.org/abs/2506.01356)  
+**Code**: [GitHub](https://github.com/Verified-Intelligence/Two-Stage_Neural_Controller_Training)  
 **Area**: LLM Reasoning
 **Keywords**: neural controller, Lyapunov function, region of attraction, Zubov theorem, neural network verification
 

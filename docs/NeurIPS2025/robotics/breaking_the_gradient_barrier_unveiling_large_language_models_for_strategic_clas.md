@@ -18,8 +18,8 @@ content_hash: 2f8a5a6a0c8e9f45
 # Breaking the Gradient Barrier: Unveiling Large Language Models for Strategic Classification
 
 **Conference**: NEURIPS2025
-**arXiv**: [2511.06979](https://arxiv.org/abs/2511.06979)
-**Code**: To be confirmed
+**arXiv**: [2511.06979](https://arxiv.org/abs/2511.06979)  
+**Code**: To be confirmed  
 **Area**: Robotics
 **Keywords**: Strategic Classification, in-context learning, Large Language Models, Bi-level Optimization, Gradient-free
 

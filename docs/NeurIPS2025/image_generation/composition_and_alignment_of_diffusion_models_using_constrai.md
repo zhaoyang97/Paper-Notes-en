@@ -18,8 +18,8 @@ content_hash: be063061a307f1ea
 # Composition and Alignment of Diffusion Models using Constrained Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2508.19104](https://arxiv.org/abs/2508.19104)
-**Code**: [GitHub](https://github.com/shervinkhalafi/constrained_comp_align)
+**arXiv**: [2508.19104](https://arxiv.org/abs/2508.19104)  
+**Code**: [GitHub](https://github.com/shervinkhalafi/constrained_comp_align)  
 **Area**: Image Generation
 **Keywords**: Diffusion Models, Constrained Optimization, Model Alignment, Model Composition, Lagrangian Duality
 

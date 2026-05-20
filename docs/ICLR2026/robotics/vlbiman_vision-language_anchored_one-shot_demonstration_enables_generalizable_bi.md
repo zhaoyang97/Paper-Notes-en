@@ -18,8 +18,8 @@ content_hash: 377e2573c982d2f2
 # VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21723](https://arxiv.org/abs/2509.21723)
-**Code**: [Project Page](https://hnuzhy.github.io/projects/VLBiMan)
+**arXiv**: [2509.21723](https://arxiv.org/abs/2509.21723)  
+**Code**: [Project Page](https://hnuzhy.github.io/projects/VLBiMan)  
 **Area**: Robotic Manipulation / Bimanual Manipulation
 **Keywords**: bimanual manipulation, one-shot demonstration, VLM anchoring, skill decomposition, cross-embodiment transfer
 

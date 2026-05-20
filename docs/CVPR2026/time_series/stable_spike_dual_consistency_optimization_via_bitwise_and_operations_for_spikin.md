@@ -20,8 +20,8 @@ content_hash: c276d4c2e39251ca
 # Stable Spike: Dual Consistency Optimization via Bitwise AND Operations for Spiking Neural Networks
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.11676](https://arxiv.org/abs/2603.11676)
-**Code**: To be confirmed
+**arXiv**: [2603.11676](https://arxiv.org/abs/2603.11676)  
+**Code**: To be confirmed  
 **Area**: Time Series
 **Keywords**: spiking neural networks, temporal step consistency, bitwise AND, stable spike skeleton, amplitude-aware noise, neuromorphic recognition, low-latency inference
 

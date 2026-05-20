@@ -18,8 +18,8 @@ content_hash: b99e1e5e2b65077e
 # Discrete Adjoint Matching
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07132](https://arxiv.org/abs/2602.07132)
-**Code**: None
+**arXiv**: [2602.07132](https://arxiv.org/abs/2602.07132)  
+**Code**: None  
 **Area**: Image Generation / Fine-tuning of Discrete Generative Models
 **Keywords**: Adjoint Matching, discrete adjoint variables, CTMC, diffusion LLM fine-tuning, entropy-regularized reward optimization
 

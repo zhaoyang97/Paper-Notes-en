@@ -18,8 +18,8 @@ content_hash: e96a3233c073fe30
 # DeepBooTS: Dual-Stream Residual Boosting for Drift-Resilient Time-Series Forecasting
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06893](https://arxiv.org/abs/2511.06893)
-**Code**: [https://github.com/Anoise/DeepBooTS](https://github.com/Anoise/DeepBooTS)
+**arXiv**: [2511.06893](https://arxiv.org/abs/2511.06893)  
+**Code**: [https://github.com/Anoise/DeepBooTS](https://github.com/Anoise/DeepBooTS)  
 **Area**: Time Series Forecasting
 **Keywords**: time series forecasting, concept drift, ensemble learning, residual boosting, bias-variance decomposition
 

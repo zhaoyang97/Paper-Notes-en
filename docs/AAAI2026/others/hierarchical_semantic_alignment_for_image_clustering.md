@@ -17,8 +17,8 @@ content_hash: 25f201f23b7082c4
 # CAE: Hierarchical Semantic Alignment for Image Clustering
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.00904](https://arxiv.org/abs/2512.00904)
-**Code**: None
+**arXiv**: [2512.00904](https://arxiv.org/abs/2512.00904)  
+**Code**: None  
 **Area**: Other
 **Keywords**: image clustering, semantic alignment, optimal transport, caption-level semantics, training-free
 

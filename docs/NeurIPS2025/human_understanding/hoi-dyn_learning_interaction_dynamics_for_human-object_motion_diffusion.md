@@ -18,8 +18,8 @@ content_hash: 730cc0244574177b
 # HOI-Dyn: Learning Interaction Dynamics for Human-Object Motion Diffusion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.01737](https://arxiv.org/abs/2507.01737)
-**Code**: [Available](https://wulin97.github.io/hoi-dyn)
+**arXiv**: [2507.01737](https://arxiv.org/abs/2507.01737)  
+**Code**: [Available](https://wulin97.github.io/hoi-dyn)  
 **Area**: Human Understanding
 **Keywords**: Human-Object Interaction, Motion Diffusion, Interaction Dynamics, Driver-Responder, Transformer
 

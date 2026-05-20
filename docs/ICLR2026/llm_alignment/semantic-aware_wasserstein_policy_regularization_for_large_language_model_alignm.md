@@ -18,8 +18,8 @@ content_hash: 6ef62e5337e36a72
 # Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.01685](https://arxiv.org/abs/2602.01685)
-**Code**: [https://github.com/aailab-kaist/WPR](https://github.com/aailab-kaist/WPR)
+**arXiv**: [2602.01685](https://arxiv.org/abs/2602.01685)  
+**Code**: [https://github.com/aailab-kaist/WPR](https://github.com/aailab-kaist/WPR)  
 **Area**: Alignment / RLHF
 **Keywords**: Wasserstein distance, RLHF regularization, semantic awareness, optimal transport, Sinkhorn algorithm
 
@@ -54,9 +54,9 @@ $$\mathcal{J}_{\tilde{W}}(\pi_\theta) = \mathbb{E}\left[\sum_n \mathbb{E}_{y_n}[
 This makes WPR fully compatible with standard PPO—the KL penalty is simply replaced by the Wasserstein dual variable.
 
 3. **Efficient Computation Strategy**: To avoid $O(d^2)$ computation over the full vocabulary ($d \sim 256\text{K}$):
-   - **Nearest-$k_1$ truncation**: The cost kernel $K = \exp(-\lambda C)$ retains only the $k_1 = 512$ nearest neighbors for each token and is stored in sparse form.
-   - **Top-$k_2$ truncation**: The policy distribution is truncated to the top-$k_2 = 128$ tokens, reducing the effective support size from $d$ to $2k_2 + 2$.
-   - Together, these truncations add only 2.5% computational overhead relative to KL regularization.
+    - **Nearest-$k_1$ truncation**: The cost kernel $K = \exp(-\lambda C)$ retains only the $k_1 = 512$ nearest neighbors for each token and is stored in sparse form.
+    - **Top-$k_2$ truncation**: The policy distribution is truncated to the top-$k_2 = 128$ tokens, reducing the effective support size from $d$ to $2k_2 + 2$.
+    - Together, these truncations add only 2.5% computational overhead relative to KL regularization.
 
 4. **Sinkhorn–Knopp Algorithm**: The dual variable $\phi^*$ is solved efficiently via Sinkhorn iterations. Ten iterations are generally sufficient for convergence, with a tolerance of $10^{-4}$.
 

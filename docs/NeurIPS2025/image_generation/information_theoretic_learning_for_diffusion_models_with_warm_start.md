@@ -18,8 +18,8 @@ content_hash: ebc562cfe2cf1845
 # Information Theoretic Learning for Diffusion Models with Warm Start
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20903](https://arxiv.org/abs/2510.20903)
-**Code**: None
+**arXiv**: [2510.20903](https://arxiv.org/abs/2510.20903)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Diffusion Models, Likelihood Estimation, information theory, Fisher Divergence, Warm Start
 

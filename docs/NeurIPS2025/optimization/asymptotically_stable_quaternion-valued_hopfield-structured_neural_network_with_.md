@@ -18,8 +18,8 @@ content_hash: 0681dfb74a0909a8
 # Asymptotically Stable Quaternionic Hopfield Structured Neural Network with Supervised Projection-based Manifold Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16607](https://arxiv.org/abs/2510.16607)
-**Code**: None
+**arXiv**: [2510.16607](https://arxiv.org/abs/2510.16607)  
+**Code**: None  
 **Area**: Neural Networks / Robotic Control / Optimization
 **Keywords**: quaternion neural network, Hopfield network, asymptotic stability, manifold learning, robotic path planning
 

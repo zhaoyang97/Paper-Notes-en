@@ -18,8 +18,8 @@ content_hash: 6408da82f76ed40b
 # QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21420](https://arxiv.org/abs/2509.21420)
-**Code**: Unavailable (API release planned)
+**arXiv**: [2509.21420](https://arxiv.org/abs/2509.21420)  
+**Code**: Unavailable (API release planned)  
 **Area**: 3D Generation / Mesh Generation
 **Keywords**: quad mesh generation, autoregressive model, mixed topology, tDPO, Hourglass Transformer
 

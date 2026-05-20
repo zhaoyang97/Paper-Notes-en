@@ -18,8 +18,8 @@ content_hash: 135faf8c5c29aaae
 # FE2E: From Editor to Dense Geometry Estimator
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.04338](https://arxiv.org/abs/2509.04338)
-**Code**: N/A
+**arXiv**: [2509.04338](https://arxiv.org/abs/2509.04338)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: Depth Estimation, Normal Estimation, Image Editing Models, Diffusion Models, DiT
 
@@ -49,21 +49,21 @@ FE2E is built upon Step1X-Edit, a state-of-the-art DiT-based image editing model
 
 1. **Systematic Analysis: Editing Models vs. Generative Models**
 
-   - **Function**: Validate the superiority of editing models as backbones for dense geometry estimation.
-   - **Mechanism**: Step1X-Edit (editor) and FLUX (generator) are fine-tuned under identical settings. Feature evolution across different DiT layers (Block 1/20/35) and training loss curves are compared via visualization. The editing model's initial features are already aligned with image geometric structure, and fine-tuning merely refines and focuses existing capabilities. In contrast, the generative model's features must be restructured from a chaotic state, leading to oscillatory training and a loss plateau of approximately 0.08.
-   - **Design Motivation**: Provide a theoretical foundation for the "From Editor to Estimator" paradigm and explain why editing models achieve better results with less data.
+    - **Function**: Validate the superiority of editing models as backbones for dense geometry estimation.
+    - **Mechanism**: Step1X-Edit (editor) and FLUX (generator) are fine-tuned under identical settings. Feature evolution across different DiT layers (Block 1/20/35) and training loss curves are compared via visualization. The editing model's initial features are already aligned with image geometric structure, and fine-tuning merely refines and focuses existing capabilities. In contrast, the generative model's features must be restructured from a chaotic state, leading to oscillatory training and a loss plateau of approximately 0.08.
+    - **Design Motivation**: Provide a theoretical foundation for the "From Editor to Estimator" paradigm and explain why editing models achieve better results with less data.
 
 2. **Consistent Velocity Flow Matching**
 
-   - **Function**: Transform the stochastic flow matching objective of editing models into a training objective suitable for deterministic prediction.
-   - **Mechanism**: In standard flow matching, the model learns the instantaneous velocity field over all possible paths, resulting in a nonlinear global velocity field and curved integration trajectories that accumulate discretization errors. FE2E introduces two simplifications: (1) the velocity direction and magnitude are enforced to remain constant along the entire path, making the training objective $\mathcal{L} = \mathbb{E}[\|\mathbf{v} - f_\theta(\mathbf{z}^x)\|^2]$ completely independent of timestep $t$; (2) the stochastic Gaussian starting point is fixed to the zero vector $\mathbf{z}_0^y = \mathbf{0}$, eliminating sampling randomness. At inference, the prediction is obtained directly as $\mathbf{z}_1^y = f_\theta(\mathbf{z}^x)$ in a single step, without iterative solving.
-   - **Design Motivation**: Geometry estimation is a deterministic task with a unique ground truth, requiring no generative diversity. Constant-velocity straight-line paths fundamentally eliminate discretization errors from curved trajectories while substantially accelerating inference.
+    - **Function**: Transform the stochastic flow matching objective of editing models into a training objective suitable for deterministic prediction.
+    - **Mechanism**: In standard flow matching, the model learns the instantaneous velocity field over all possible paths, resulting in a nonlinear global velocity field and curved integration trajectories that accumulate discretization errors. FE2E introduces two simplifications: (1) the velocity direction and magnitude are enforced to remain constant along the entire path, making the training objective $\mathcal{L} = \mathbb{E}[\|\mathbf{v} - f_\theta(\mathbf{z}^x)\|^2]$ completely independent of timestep $t$; (2) the stochastic Gaussian starting point is fixed to the zero vector $\mathbf{z}_0^y = \mathbf{0}$, eliminating sampling randomness. At inference, the prediction is obtained directly as $\mathbf{z}_1^y = f_\theta(\mathbf{z}^x)$ in a single step, without iterative solving.
+    - **Design Motivation**: Geometry estimation is a deterministic task with a unique ground truth, requiring no generative diversity. Constant-velocity straight-line paths fundamentally eliminate discretization errors from curved trajectories while substantially accelerating inference.
 
 3. **Logarithmic Annotation Quantization**
 
-   - **Function**: Resolve the contradiction between BF16-precision training and the high numerical precision required for depth estimation.
-   - **Mechanism**: Modern editing models are trained in BF16 precision, which is sufficient for RGB output (1/256 precision) but introduces severe quantization errors when applied to depth annotations. For example, on the Virtual KITTI dataset (depth range 0–80 m), uniform quantization to $[-1, 1]$ yields an AbsRel error of 1.6 at 0.1 m. Inverse-depth (disparity) quantization achieves high near-range precision but completely fails at far distances (39 m and 78 m map to the same value). FE2E adopts logarithmic quantization $D_{log} = \ln(D_{GT} + 1e{-6})$, followed by percentile normalization $\mathbf{y}_D = \langle((D_{log} - D_{log,2})/(D_{log,98} - D_{log,2}) - 0.5) \times 2\rangle$, achieving uniformly low error at both near and far distances (AbsRel ≈ 0.013).
-   - **Design Motivation**: Enable high-precision depth estimation within a BF16-only model, avoiding the increased cost and degraded prior inheritance caused by forcing FP32 in prior methods.
+    - **Function**: Resolve the contradiction between BF16-precision training and the high numerical precision required for depth estimation.
+    - **Mechanism**: Modern editing models are trained in BF16 precision, which is sufficient for RGB output (1/256 precision) but introduces severe quantization errors when applied to depth annotations. For example, on the Virtual KITTI dataset (depth range 0–80 m), uniform quantization to $[-1, 1]$ yields an AbsRel error of 1.6 at 0.1 m. Inverse-depth (disparity) quantization achieves high near-range precision but completely fails at far distances (39 m and 78 m map to the same value). FE2E adopts logarithmic quantization $D_{log} = \ln(D_{GT} + 1e{-6})$, followed by percentile normalization $\mathbf{y}_D = \langle((D_{log} - D_{log,2})/(D_{log,98} - D_{log,2}) - 0.5) \times 2\rangle$, achieving uniformly low error at both near and far distances (AbsRel ≈ 0.013).
+    - **Design Motivation**: Enable high-precision depth estimation within a BF16-only model, avoiding the increased cost and degraded prior inheritance caused by forcing FP32 in prior methods.
 
 ### Loss & Training
 - The primary loss is the consistent velocity flow matching loss computed in latent space.

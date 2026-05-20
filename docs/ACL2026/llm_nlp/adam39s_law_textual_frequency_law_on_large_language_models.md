@@ -18,8 +18,8 @@ content_hash: 27d5fe1808ed00d1
 # Adam's Law: Textual Frequency Law on Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.02176](https://arxiv.org/abs/2604.02176)
-**Code**: [https://github.com/HongyuanLuke/frequencylaw](https://github.com/HongyuanLuke/frequencylaw)
+**arXiv**: [2604.02176](https://arxiv.org/abs/2604.02176)  
+**Code**: [https://github.com/HongyuanLuke/frequencylaw](https://github.com/HongyuanLuke/frequencylaw)  
 **Area**: LLM/NLP
 **Keywords**: textual frequency, paraphrase selection, curriculum learning, prompt optimization, fine-tuning strategy
 

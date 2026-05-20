@@ -18,8 +18,8 @@ content_hash: 31dd1eed872cd1dc
 # Catastrophic Forgetting in Kolmogorov-Arnold Networks
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12828](https://arxiv.org/abs/2511.12828)
-**Code**: [Available](https://github.com/marufur-cs/AAAI26)
+**arXiv**: [2511.12828](https://arxiv.org/abs/2511.12828)  
+**Code**: [Available](https://github.com/marufur-cs/AAAI26)  
 **Area**: Knowledge Editing
 **Keywords**: KAN, Catastrophic Forgetting, Continual Learning, KAN-LoRA, Activation Support Overlap
 

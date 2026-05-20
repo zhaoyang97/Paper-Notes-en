@@ -18,8 +18,8 @@ content_hash: 1228fa0d65aca2f3
 # Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.24739](https://arxiv.org/abs/2509.24739)
-**Code**: Not available
+**arXiv**: [2509.24739](https://arxiv.org/abs/2509.24739)  
+**Code**: Not available  
 **Area**: Medical Imaging
 **Keywords**: vision-language model, PET/CT, Vietnamese medical report, dataset, report generation
 

@@ -18,8 +18,8 @@ content_hash: d635201058fe8ab3
 # Intention Chain-of-Thought Prompting with Dynamic Routing for Code Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.14048](https://arxiv.org/abs/2512.14048)
-**Code**: [https://github.com/Guai001/RoutingGen](https://github.com/Guai001/RoutingGen)
+**arXiv**: [2512.14048](https://arxiv.org/abs/2512.14048)  
+**Code**: [https://github.com/Guai001/RoutingGen](https://github.com/Guai001/RoutingGen)  
 **Area**: LLM Reasoning / Code Generation
 **Keywords**: Intention Chain, Dynamic Routing, Code Generation, Cognitive Economy, Difficulty-Awareness
 

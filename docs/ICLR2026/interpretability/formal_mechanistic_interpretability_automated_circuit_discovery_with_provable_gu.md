@@ -18,8 +18,8 @@ content_hash: 7842156acdba9c18
 # Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.16823](https://arxiv.org/abs/2602.16823)
-**Code**: None
+**arXiv**: [2602.16823](https://arxiv.org/abs/2602.16823)  
+**Code**: None  
 **Area**: AI Safety / Interpretability
 **Keywords**: mechanistic interpretability, circuit discovery, neural network verification, provable guarantees, minimality
 

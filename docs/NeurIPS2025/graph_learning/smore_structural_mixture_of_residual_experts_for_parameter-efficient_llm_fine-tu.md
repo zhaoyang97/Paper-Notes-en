@@ -18,8 +18,8 @@ content_hash: 92bddce77965742e
 # S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.06426](https://arxiv.org/abs/2504.06426)
-**Code**: [GitHub](https://github.com/ZimpleX/SMoRE-LLM)
+**arXiv**: [2504.06426](https://arxiv.org/abs/2504.06426)  
+**Code**: [GitHub](https://github.com/ZimpleX/SMoRE-LLM)  
 **Area**: Graph Learning
 **Keywords**: Parameter-Efficient Fine-Tuning, Mixture of Experts, LoRA, Graph Neural Networks, Structural Flexibility
 

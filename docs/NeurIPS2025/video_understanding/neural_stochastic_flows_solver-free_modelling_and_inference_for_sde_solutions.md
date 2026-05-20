@@ -18,8 +18,8 @@ content_hash: d0caa7cb28d7d1d8
 # Neural Stochastic Flows: Solver-Free Modelling and Inference for SDE Solutions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25769](https://arxiv.org/abs/2510.25769)
-**Code**: [Project Page](https://nkiyohara.github.io/nsf-neurips2025/)
+**arXiv**: [2510.25769](https://arxiv.org/abs/2510.25769)  
+**Code**: [Project Page](https://nkiyohara.github.io/nsf-neurips2025/)  
 **Area**: Sequence Modelling / Stochastic Differential Equations
 **Keywords**: Stochastic Differential Equations, Normalising Flow, Solver-Free, Transition Distribution, State-Space Model
 

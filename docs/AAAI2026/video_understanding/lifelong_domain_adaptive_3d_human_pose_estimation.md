@@ -18,8 +18,8 @@ content_hash: d014110d6b0fd869
 # Lifelong Domain Adaptive 3D Human Pose Estimation
 
 **Conference**: AAAI2026
-**arXiv**: [2512.23860](https://arxiv.org/abs/2512.23860)
-**Code**: [davidpengucf/lifelongpose](https://github.com/davidpengucf/lifelongpose)
+**arXiv**: [2512.23860](https://arxiv.org/abs/2512.23860)  
+**Code**: [davidpengucf/lifelongpose](https://github.com/davidpengucf/lifelongpose)  
 **Area**: Video Understanding
 **Keywords**: 3D human pose estimation, lifelong domain adaptation, catastrophic forgetting, GAN, diffusion model
 

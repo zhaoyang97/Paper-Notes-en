@@ -18,8 +18,8 @@ content_hash: a98903aff2198456
 # Dynamic Group Detection using VLM-augmented Temporal Groupness Graph
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.04758](https://arxiv.org/abs/2509.04758)
-**Code**: [https://github.com/irajisamurai/VLM-GroupDetection.git](https://github.com/irajisamurai/VLM-GroupDetection.git)
+**arXiv**: [2509.04758](https://arxiv.org/abs/2509.04758)  
+**Code**: [https://github.com/irajisamurai/VLM-GroupDetection.git](https://github.com/irajisamurai/VLM-GroupDetection.git)  
 **Area**: Multimodal VLM
 **Keywords**: group detection, CLIP, temporal graph clustering, social behavior analysis, Louvain algorithm
 

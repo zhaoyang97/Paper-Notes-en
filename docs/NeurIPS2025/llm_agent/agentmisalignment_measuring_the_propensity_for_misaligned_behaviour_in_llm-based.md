@@ -18,8 +18,8 @@ content_hash: 0bea8d4cdc395b64
 # AgentMisalignment: Measuring the Propensity for Misaligned Behaviour in LLM-Based Agents
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04018](https://arxiv.org/abs/2506.04018)
-**Code**: Available (implemented via InspectAI framework)
+**arXiv**: [2506.04018](https://arxiv.org/abs/2506.04018)  
+**Code**: Available (implemented via InspectAI framework)  
 **Area**: Agent / AI Safety
 **Keywords**: Alignment, Agent Safety, Misalignment, Benchmark, Persona Prompting
 

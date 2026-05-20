@@ -19,7 +19,7 @@ content_hash: 96a1afc2eaab8dbb
 # The Expressive Limits of Diagonal SSMs for State-Tracking
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01959](https://arxiv.org/abs/2603.01959)
+**arXiv**: [2603.01959](https://arxiv.org/abs/2603.01959)  
 **Area**: Sequence Modeling / Theory
 **Keywords**: State Space Models, Expressive Power, Group State Tracking, Diagonal SSM, Solvable Groups, Mamba
 

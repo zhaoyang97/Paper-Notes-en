@@ -18,8 +18,8 @@ content_hash: f08bf293bcb1ed4e
 # Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.08290](https://arxiv.org/abs/2603.08290)
-**Code**: None
+**arXiv**: [2603.08290](https://arxiv.org/abs/2603.08290)  
+**Code**: None  
 **Area**: Optimization Theory
 **Keywords**: Sharpness-Aware Minimization, implicit bias, linear diagonal networks, feature amplification, depth-induced
 

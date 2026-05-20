@@ -19,8 +19,8 @@ content_hash: abad82e33280843c
 # URLs Help, Topics Guide: Understanding Metadata Utility in LLM Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16570](https://arxiv.org/abs/2505.16570)
-**Code**: Available (see paper link)
+**arXiv**: [2505.16570](https://arxiv.org/abs/2505.16570)  
+**Code**: Available (see paper link)  
 **Area**: Interpretability
 **Keywords**: metadata conditioning, URL context, context-aware pretraining, classifier-free guidance, controllable generation, LLM training efficiency
 

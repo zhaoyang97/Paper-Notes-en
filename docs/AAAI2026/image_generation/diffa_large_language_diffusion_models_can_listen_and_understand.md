@@ -18,8 +18,8 @@ content_hash: e067edae0aed4afc
 # DiffA: Large Language Diffusion Models Can Listen and Understand
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.18452](https://arxiv.org/abs/2507.18452)
-**Code**: [GitHub](https://github.com/NKU-HLT/DIFFA)
+**arXiv**: [2507.18452](https://arxiv.org/abs/2507.18452)  
+**Code**: [GitHub](https://github.com/NKU-HLT/DIFFA)  
 **Area**: Image Generation
 **Keywords**: Diffusion Language Models, Audio Understanding, Large Audio-Language Models, LLaDA, Parameter-Efficient Adaptation
 

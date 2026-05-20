@@ -18,8 +18,8 @@ content_hash: 552b7206238a9bda
 # Thinking Like a Botanist: Challenging Multimodal Language Models with Intent-Driven Chain-of-Inquiry
 
 **Conference**: ACL 2026
-**arXiv**: [2604.20983](https://arxiv.org/abs/2604.20983)
-**Code**: [github.com/syed-nazmus-sakib/PlantInquiryVQA](https://github.com/syed-nazmus-sakib/PlantInquiryVQA)
+**arXiv**: [2604.20983](https://arxiv.org/abs/2604.20983)  
+**Code**: [github.com/syed-nazmus-sakib/PlantInquiryVQA](https://github.com/syed-nazmus-sakib/PlantInquiryVQA)  
 **Area**: Medical Imaging / Plant Pathology Diagnosis
 **Keywords**: Plant Pathology VQA, Chain-of-Inquiry, Multi-step Visual Reasoning, Diagnostic Reasoning, Multimodal Evaluation
 

@@ -19,9 +19,9 @@ content_hash: d543ef5f80296992
 # The Confidence Trap: Gender Bias and Predictive Certainty in LLMs
 
 **Conference**: AAAI2026
-**arXiv**: [2601.07806](https://arxiv.org/abs/2601.07806)
+**arXiv**: [2601.07806](https://arxiv.org/abs/2601.07806)  
 **Authors**: Ahmed Sabir, Markus Kängsepp, Rajesh Sharma (University of Tartu)
-**Code**: [GitHub](https://github.com/ahmedssabir/GECE)
+**Code**: [GitHub](https://github.com/ahmedssabir/GECE)  
 **Area**: AI Safety
 **Keywords**: LLM Fairness, Gender Bias, Confidence Calibration, Expected Calibration Error, Coreference Resolution, Gender-ECE
 

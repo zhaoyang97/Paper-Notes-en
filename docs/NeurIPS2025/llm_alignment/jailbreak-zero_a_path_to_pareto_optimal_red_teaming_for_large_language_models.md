@@ -19,8 +19,8 @@ content_hash: 40f76f90bf6204c4
 # Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2601.03265](https://arxiv.org/abs/2601.03265)
-**Code**: Not released
+**arXiv**: [2601.03265](https://arxiv.org/abs/2601.03265)  
+**Code**: Not released  
 **Area**: LLM Alignment
 **Keywords**: Red teaming, LLM safety, jailbreak attacks, Pareto optimization, policy-based evaluation, automated red teaming
 

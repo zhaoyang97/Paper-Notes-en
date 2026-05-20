@@ -18,8 +18,8 @@ content_hash: b9c473b09c3df64d
 # Learning Relative Gene Expression Trends from Pathology Images in Spatial Transcriptomics
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.06612](https://arxiv.org/abs/2512.06612)
-**Code**: [GitHub](https://github.com/naivete5656/STRank)
+**arXiv**: [2512.06612](https://arxiv.org/abs/2512.06612)  
+**Code**: [GitHub](https://github.com/naivete5656/STRank)  
 **Area**: Medical Imaging / Spatial Transcriptomics
 **Keywords**: spatial transcriptomics, gene expression estimation, learning to rank, pathology images, batch effects
 

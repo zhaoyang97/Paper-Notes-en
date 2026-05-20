@@ -19,8 +19,8 @@ content_hash: 627a3ce68bdbefa9
 # Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.14709](https://arxiv.org/abs/2512.14709)
-**Code**: None
+**arXiv**: [2512.14709](https://arxiv.org/abs/2512.14709)  
+**Code**: None  
 **Area**: Transformer Theory / Neuro-Symbolic Reasoning
 **Keywords**: Vector Symbolic Architecture (VSA), attention mechanism, binding/unbinding, symbolic reasoning, hyperdimensional computing, Transformer interpretability
 

@@ -18,8 +18,8 @@ content_hash: 3a46f6296a0f06a5
 # Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2410.05130](https://arxiv.org/abs/2410.05130)
-**Code**: None
+**arXiv**: [2410.05130](https://arxiv.org/abs/2410.05130)  
+**Code**: None  
 **Area**: LLM NLP
 **Keywords**: Graph Reasoning, Multi-Agent, Distributed Computing, LLM Reasoning, Scalability
 

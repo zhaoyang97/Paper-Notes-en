@@ -18,8 +18,8 @@ content_hash: 6dbbb845d8c9066e
 # From Theory of Mind to Theory of Environment: Counterfactual Simulation of Latent Environmental Dynamics
 
 **Conference**: AAAI 2026 (Workshop: ToM4AI)
-**arXiv**: [2601.01599](https://arxiv.org/abs/2601.01599)
-**Code**: None
+**arXiv**: [2601.01599](https://arxiv.org/abs/2601.01599)  
+**Code**: None  
 **Area**: Causal Inference / Cognitive Science
 **Keywords**: Theory of Mind, Theory of Environment, Counterfactual Simulation, Motor Control, Behavioral Innovation
 

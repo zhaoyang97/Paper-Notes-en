@@ -18,8 +18,8 @@ content_hash: 9798b3f3b9a020f7
 # Conditional Panoramic Image Generation via Masked Autoregressive Modeling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16862](https://arxiv.org/abs/2505.16862)
-**Code**: [https://wang-chaoyang.github.io/project/par](https://wang-chaoyang.github.io/project/par) (project page)
+**arXiv**: [2505.16862](https://arxiv.org/abs/2505.16862)  
+**Code**: [https://wang-chaoyang.github.io/project/par](https://wang-chaoyang.github.io/project/par) (project page)  
 **Area**: Panoramic Image Generation / Autoregressive Modeling
 **Keywords**: panoramic image generation, masked autoregressive modeling (MAR), equirectangular projection, circular padding, consistency alignment
 

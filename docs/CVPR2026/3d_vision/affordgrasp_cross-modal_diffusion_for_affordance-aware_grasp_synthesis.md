@@ -18,8 +18,8 @@ content_hash: 03e66842bacb8bdf
 # AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.08021](https://arxiv.org/abs/2603.08021)
-**Code**: [Project Page](https://affordgrasp.github.io/)
+**arXiv**: [2603.08021](https://arxiv.org/abs/2603.08021)  
+**Code**: [Project Page](https://affordgrasp.github.io/)  
 **Area**: 3D Vision / Hand-Object Interaction
 **Keywords**: grasp generation, affordance, cross-modal diffusion, hand-object interaction, semantic instruction
 

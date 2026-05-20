@@ -18,8 +18,8 @@ content_hash: bb022f6f96697e9c
 # MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.18914](https://arxiv.org/abs/2604.18914)
-**Code**: [GitHub](https://github.com/) (Code + Dataset links provided)
+**arXiv**: [2604.18914](https://arxiv.org/abs/2604.18914)  
+**Code**: [GitHub](https://github.com/) (Code + Dataset links provided)  
 **Area**: Multilingual Translation
 **Keywords**: gender-aware morphological generation, multilingual benchmark, French/Arabic/Hindi, LLM morphological reasoning, gender bias evaluation
 

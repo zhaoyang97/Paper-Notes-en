@@ -20,8 +20,8 @@ content_hash: 30af317004b785fb
 # Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2506.01732](https://arxiv.org/abs/2506.01732)
-**Code**: [HuggingFace](https://huggingface.co/datasets/PleIAs/common_corpus)
+**arXiv**: [2506.01732](https://arxiv.org/abs/2506.01732)  
+**Code**: [HuggingFace](https://huggingface.co/datasets/PleIAs/common_corpus)  
 **Area**: LLM Pre-training Data / Data Engineering / AI Compliance
 **Keywords**: pre-training data, ethical data, open data, multilingual, data curation, copyright, AI legislation
 

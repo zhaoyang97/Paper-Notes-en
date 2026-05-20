@@ -19,8 +19,8 @@ content_hash: 0366f5245c82e7b8
 # NullSwap: Proactive Identity Cloaking Against Deepfake Face Swapping
 
 **Conference**: ICCV2025
-**arXiv**: [2503.18678](https://arxiv.org/abs/2503.18678)
-**Code**: Not released
+**arXiv**: [2503.18678](https://arxiv.org/abs/2503.18678)  
+**Code**: Not released  
 **Area**: Image Generation
 **Keywords**: Deepfake defense, face swapping, proactive perturbation, identity cloaking, adversarial perturbation, black-box defense
 

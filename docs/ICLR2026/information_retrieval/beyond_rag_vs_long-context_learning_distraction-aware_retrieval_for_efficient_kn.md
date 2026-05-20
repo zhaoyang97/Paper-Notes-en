@@ -18,8 +18,8 @@ content_hash: 4dcd8aee28192521
 # Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21865](https://arxiv.org/abs/2509.21865)
-**Code**: [https://github.com/ku-dmlab/LDAR](https://github.com/ku-dmlab/LDAR)
+**arXiv**: [2509.21865](https://arxiv.org/abs/2509.21865)  
+**Code**: [https://github.com/ku-dmlab/LDAR](https://github.com/ku-dmlab/LDAR)  
 **Area**: LLM Reasoning / RAG / Information Retrieval
 **Keywords**: RAG, long-context, distraction-aware retrieval, adaptive passage selection, knowledge-intensive QA
 
@@ -49,21 +49,21 @@ Given a query $q$ and $N$ candidate passages $\{p_i\}$, a pretrained embedding m
 
 1. **Band-Based Retrieval Strategy**
 
-   - **Function**: Reduces the passage selection space from an exponentially large subset search to a two-dimensional continuous control problem.
-   - **Mechanism**: Rather than applying independent Bernoulli sampling per passage, the retriever predicts a continuous similarity interval $[q_L, q_U]$ and retrieves all passages ranked within it. Concretely: $\ell = \max(1, \lfloor N \cdot q_L \rceil)$, $u = \max(\ell, \lfloor N \cdot q_U \rceil)$, and passages ranked $\ell$ through $u$ (by similarity) are selected.
-   - **Design Motivation**: Bernoulli sampling requires exploring a combinatorial space of size $2^N$, making generalization difficult and convergence prone to suboptimal solutions (empirically degenerating to the LC baseline). The band-based strategy reduces the search space to a low-dimensional continuous space, analogous to temporal abstraction in reinforcement learning, enabling more efficient credit assignment and exploration.
+    - **Function**: Reduces the passage selection space from an exponentially large subset search to a two-dimensional continuous control problem.
+    - **Mechanism**: Rather than applying independent Bernoulli sampling per passage, the retriever predicts a continuous similarity interval $[q_L, q_U]$ and retrieves all passages ranked within it. Concretely: $\ell = \max(1, \lfloor N \cdot q_L \rceil)$, $u = \max(\ell, \lfloor N \cdot q_U \rceil)$, and passages ranked $\ell$ through $u$ (by similarity) are selected.
+    - **Design Motivation**: Bernoulli sampling requires exploring a combinatorial space of size $2^N$, making generalization difficult and convergence prone to suboptimal solutions (empirically degenerating to the LC baseline). The band-based strategy reduces the search space to a low-dimensional continuous space, analogous to temporal abstraction in reinforcement learning, enabling more efficient credit assignment and exploration.
 
 2. **Transformer Encoder with Attention Pooling**
 
-   - **Function**: Encodes a variable-length similarity vector into a fixed-dimensional global representation.
-   - **Mechanism**: Each similarity score $s_i$ is first embedded via periodic embedding, then processed by a bidirectional self-attention Transformer, and finally aggregated into a global vector through attention pooling. Two output heads respectively predict Beta distribution parameters $(\alpha_L, \beta_L)$ and $(\alpha_U, \beta_U)$, from which $q_L$ and $q_U$ are sampled.
-   - **Design Motivation**: Periodic embeddings handle continuous-valued similarities; the Transformer captures relative ordering relationships among passages; and the Beta distribution naturally constrains outputs to $[0,1]$.
+    - **Function**: Encodes a variable-length similarity vector into a fixed-dimensional global representation.
+    - **Mechanism**: Each similarity score $s_i$ is first embedded via periodic embedding, then processed by a bidirectional self-attention Transformer, and finally aggregated into a global vector through attention pooling. Two output heads respectively predict Beta distribution parameters $(\alpha_L, \beta_L)$ and $(\alpha_U, \beta_U)$, from which $q_L$ and $q_U$ are sampled.
+    - **Design Motivation**: Periodic embeddings handle continuous-valued similarities; the Transformer captures relative ordering relationships among passages; and the Beta distribution naturally constrains outputs to $[0,1]$.
 
 3. **Policy Gradient Optimization**
 
-   - **Function**: Uses LLM prediction correctness as a reward signal to optimize the retriever via the log-derivative trick.
-   - **Mechanism**: The objective is $\max_\theta J(\theta) = \mathbb{E}[r_\psi(q, \mathcal{R}, y)]$, where $r_\psi = \mathbb{1}_{\text{corr}}(F_\psi(q, \mathcal{R}), y)$ is a binary indicator of whether the LLM prediction is correct. The gradient update is: $\theta_{k+1} = \theta_k + \gamma \cdot r_\psi \cdot \nabla_{\theta_k} \log \pi_{\theta_k}(\cdot|s)$.
-   - **Design Motivation**: The LLM is frozen, so no gradient backpropagation through it is required. Since the retriever relies only on the similarity distribution rather than passage text, it can be trained efficiently with lightweight policy gradient methods. Reward signals from different LLMs naturally guide the retriever to learn strategies suited to each model's capacity.
+    - **Function**: Uses LLM prediction correctness as a reward signal to optimize the retriever via the log-derivative trick.
+    - **Mechanism**: The objective is $\max_\theta J(\theta) = \mathbb{E}[r_\psi(q, \mathcal{R}, y)]$, where $r_\psi = \mathbb{1}_{\text{corr}}(F_\psi(q, \mathcal{R}), y)$ is a binary indicator of whether the LLM prediction is correct. The gradient update is: $\theta_{k+1} = \theta_k + \gamma \cdot r_\psi \cdot \nabla_{\theta_k} \log \pi_{\theta_k}(\cdot|s)$.
+    - **Design Motivation**: The LLM is frozen, so no gradient backpropagation through it is required. Since the retriever relies only on the similarity distribution rather than passage text, it can be trained efficiently with lightweight policy gradient methods. Reward signals from different LLMs naturally guide the retriever to learn strategies suited to each model's capacity.
 
 ### Additional Implementation Details
 - The retriever $\pi_\theta$ deliberately has no access to passage text, relying solely on the similarity distribution, ensuring scalability to large-scale retrieval settings.

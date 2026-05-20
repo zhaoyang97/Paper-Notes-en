@@ -18,8 +18,8 @@ content_hash: 9441e57e8b807a2c
 # LLM-CAS: Dynamic Neuron Perturbation for Real-Time Hallucination Correction
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.18623](https://arxiv.org/abs/2512.18623)
-**Code**: Coming soon
+**arXiv**: [2512.18623](https://arxiv.org/abs/2512.18623)  
+**Code**: Coming soon  
 **Area**: Multimodal VLM
 **Keywords**: Dynamic neuron perturbation, hierarchical reinforcement learning, inference-time intervention, causal tracing, adaptive masking
 

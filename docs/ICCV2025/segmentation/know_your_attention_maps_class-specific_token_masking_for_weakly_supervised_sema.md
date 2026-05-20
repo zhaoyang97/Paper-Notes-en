@@ -18,8 +18,8 @@ content_hash: a3f44e7c58d81e49
 # Know Your Attention Maps: Class-specific Token Masking for Weakly Supervised Semantic Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.06848](https://arxiv.org/abs/2507.06848)
-**Code**: [github.com/HSG-AIML/TokenMasking-WSSS](https://github.com/HSG-AIML/TokenMasking-WSSS)
+**arXiv**: [2507.06848](https://arxiv.org/abs/2507.06848)  
+**Code**: [github.com/HSG-AIML/TokenMasking-WSSS](https://github.com/HSG-AIML/TokenMasking-WSSS)  
 **Area**: Semantic Segmentation (Weakly Supervised)
 **Keywords**: Weakly Supervised Semantic Segmentation, Vision Transformer, Attention Maps, CLS Token, Attention Head Pruning
 

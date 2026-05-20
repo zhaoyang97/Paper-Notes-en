@@ -18,8 +18,8 @@ content_hash: 45396f4af2a4bea3
 # Structure-Aware Fusion with Progressive Injection for Multimodal Molecular Representation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23640](https://arxiv.org/abs/2510.23640)
-**Code**: [Available](https://github.com/selmiss/MuMo)
+**arXiv**: [2510.23640](https://arxiv.org/abs/2510.23640)  
+**Code**: [Available](https://github.com/selmiss/MuMo)  
 **Area**: Multimodal Learning / Molecular Representation
 **Keywords**: multimodal fusion, molecular representation learning, state space models, drug discovery, conformational robustness
 

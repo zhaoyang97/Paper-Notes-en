@@ -18,8 +18,8 @@ content_hash: 6d57b8ed9d9d08c8
 # Capturing Individual Human Preferences with Reward Features
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.17338](https://arxiv.org/abs/2503.17338)
-**Code**: None
+**arXiv**: [2503.17338](https://arxiv.org/abs/2503.17338)  
+**Code**: None  
 **Area**: Alignment / RLHF
 **Keywords**: Reward modeling, personalized preferences, feature decomposition, multi-annotator learning, fast adaptation
 

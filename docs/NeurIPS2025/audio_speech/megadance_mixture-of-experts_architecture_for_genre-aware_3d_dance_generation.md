@@ -18,8 +18,8 @@ content_hash: c8f02702fdeaa92e
 # MEGADance: Mixture-of-Experts Architecture for Genre-Aware 3D Dance Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17543](https://arxiv.org/abs/2505.17543)
-**Code**: To be released (upon acceptance)
+**arXiv**: [2505.17543](https://arxiv.org/abs/2505.17543)  
+**Code**: To be released (upon acceptance)  
 **Area**: 3D Dance Generation / Speech & Audio
 **Keywords**: Music-driven dance generation, Mixture-of-Experts (MoE), Mamba-Transformer, Finite Scalar Quantization (FSQ), style-controllable
 

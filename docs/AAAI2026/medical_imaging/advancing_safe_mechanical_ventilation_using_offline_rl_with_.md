@@ -18,8 +18,8 @@ content_hash: cd2c6cb1b02e25b0
 # Advancing Safe Mechanical Ventilation Using Offline RL With Hybrid Actions and Clinically Aligned Rewards
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.14375v2](https://arxiv.org/abs/2506.14375v2)
-**Code**: [Available](https://github.com/NIMI-research/intellilung-advancing-mechanical-ventilation)
+**arXiv**: [2506.14375v2](https://arxiv.org/abs/2506.14375v2)  
+**Code**: [Available](https://github.com/NIMI-research/intellilung-advancing-mechanical-ventilation)  
 **Area**: Medical AI / Offline Reinforcement Learning
 **Keywords**: Offline reinforcement learning, mechanical ventilation, hybrid action space, clinical reward design, ICU decision support
 

@@ -18,8 +18,8 @@ content_hash: 38065a09b891ed8d
 # CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.01874](https://arxiv.org/abs/2601.01874)
-**Code**: [https://shchen233.github.io/cogflow/](https://shchen233.github.io/cogflow/)
+**arXiv**: [2601.01874](https://arxiv.org/abs/2601.01874)  
+**Code**: [https://shchen233.github.io/cogflow/](https://shchen233.github.io/cogflow/)  
 **Area**: Optimization
 **Keywords**: Visual mathematical reasoning, knowledge internalization, GRPO, perception-reasoning alignment, cognition-inspired
 

@@ -18,8 +18,8 @@ content_hash: 0434810ef6a9abd2
 # GS-Occ3D: Scaling Vision-only Occupancy Reconstruction with Gaussian Splatting
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.19451](https://arxiv.org/abs/2507.19451)
-**Code**: [Project Page](https://github.com/baijunye/GS-Occ3D)
+**arXiv**: [2507.19451](https://arxiv.org/abs/2507.19451)  
+**Code**: [Project Page](https://github.com/baijunye/GS-Occ3D)  
 **Area**: Autonomous Driving
 **Keywords**: occupancy reconstruction, Gaussian splatting, vision-only, auto-labeling, 3D reconstruction
 

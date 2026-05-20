@@ -17,8 +17,8 @@ content_hash: 0bef719509c76d02
 # Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry
 
 **Conference**: NeurIPS 2025 (Workshop)
-**arXiv**: [2510.09740](https://arxiv.org/abs/2510.09740)
-**Code**: [https://github.com/Vision-IIITD/NCAL](https://github.com/Vision-IIITD/NCAL)
+**arXiv**: [2510.09740](https://arxiv.org/abs/2510.09740)  
+**Code**: [https://github.com/Vision-IIITD/NCAL](https://github.com/Vision-IIITD/NCAL)  
 **Area**: Active Learning / Reliable Machine Learning
 **Keywords**: Active Learning, Neural Collapse, Feature Geometry, Noise-Robust Learning, OOD Generalization
 
@@ -50,21 +50,21 @@ At each AL round, NCAL-R trains the model on the current labeled set until the N
 
 1. **Class Mean Alignment Perturbation (CMAP)**
 
-   - **Function**: Quantifies the degree to which a candidate sample perturbs the inter-class geometric structure.
-   - **Mechanism**: The Class Mean Alignment (CMA) is defined as the average cosine similarity between all pairs of class means. For a candidate sample $x$ predicted to belong to class $c$, the updated class mean $\tilde{\mu}_t^c$ is computed assuming $x$ is added to the labeled set, and the change in CMA is $\mathrm{CMAP}(x) = \mathrm{CMA}(\mathcal{L}_t \cup x) - \mathrm{CMA}(\mathcal{L}_t)$. Through algebraic simplification, this reduces to an efficient dot product: $(\bar{\tilde{\mu}}_t^c - \bar{\mu}_t^c)^\top (M_t - \bar{\mu}_t^c)$. A high CMAP indicates that annotating the sample would substantially alter the inter-class mean relationships, helping reduce inter-class correlation and thus an upper bound on generalization error.
-   - **Design Motivation**: Based on the theoretical result of Jin et al. (2020), the generalization error upper bound is related to weight correlations. Under NC, class means align with classifier weights; therefore, minimizing CMA serves as a proxy for minimizing generalization error.
+    - **Function**: Quantifies the degree to which a candidate sample perturbs the inter-class geometric structure.
+    - **Mechanism**: The Class Mean Alignment (CMA) is defined as the average cosine similarity between all pairs of class means. For a candidate sample $x$ predicted to belong to class $c$, the updated class mean $\tilde{\mu}_t^c$ is computed assuming $x$ is added to the labeled set, and the change in CMA is $\mathrm{CMAP}(x) = \mathrm{CMA}(\mathcal{L}_t \cup x) - \mathrm{CMA}(\mathcal{L}_t)$. Through algebraic simplification, this reduces to an efficient dot product: $(\bar{\tilde{\mu}}_t^c - \bar{\mu}_t^c)^\top (M_t - \bar{\mu}_t^c)$. A high CMAP indicates that annotating the sample would substantially alter the inter-class mean relationships, helping reduce inter-class correlation and thus an upper bound on generalization error.
+    - **Design Motivation**: Based on the theoretical result of Jin et al. (2020), the generalization error upper bound is related to weight correlations. Under NC, class means align with classifier weights; therefore, minimizing CMA serves as a proxy for minimizing generalization error.
 
 2. **Feature Fluctuation (FF)**
 
-   - **Function**: Captures the instability of a sample's representation during training.
-   - **Mechanism**: Given multiple checkpoints $\{\theta_t\}_{t=T_i}^{T_f}$ in the terminal training phase, FF counts the number of predicted label changes for sample $x$ across consecutive checkpoints: $\mathrm{FF}(x) = \sum_{t=T_i+1}^{T_f} \mathbf{1}[\hat{y}_t(x) \neq \hat{y}_{t-1}(x)]$. A high FF indicates that predictions continue to oscillate even during the NC phase when most features have stabilized, identifying samples near the true decision boundary.
-   - **Design Motivation**: Traditional uncertainty metrics (e.g., entropy) are snapshots at a single moment, whereas FF measures stability across time, better distinguishing "temporarily uncertain" (low FF) from "intrinsically boundary-adjacent" (high FF) samples.
+    - **Function**: Captures the instability of a sample's representation during training.
+    - **Mechanism**: Given multiple checkpoints $\{\theta_t\}_{t=T_i}^{T_f}$ in the terminal training phase, FF counts the number of predicted label changes for sample $x$ across consecutive checkpoints: $\mathrm{FF}(x) = \sum_{t=T_i+1}^{T_f} \mathbf{1}[\hat{y}_t(x) \neq \hat{y}_{t-1}(x)]$. A high FF indicates that predictions continue to oscillate even during the NC phase when most features have stabilized, identifying samples near the true decision boundary.
+    - **Design Motivation**: Traditional uncertainty metrics (e.g., entropy) are snapshots at a single moment, whereas FF measures stability across time, better distinguishing "temporarily uncertain" (low FF) from "intrinsically boundary-adjacent" (high FF) samples.
 
 3. **Joint Acquisition Strategy**
 
-   - **Function**: Integrates structural influence and prediction instability into a unified score.
-   - **Mechanism**: CMAP and FF are each normalized by their mean and standard deviation, then averaged: $\text{Score}(x) = (\text{CMAP}(x) + \text{FF}(x))/2$. The top-$k$ samples are selected, ensuring that chosen samples both structurally impact feature geometry and reside in genuinely ambiguous regions.
-   - **Design Motivation**: CMAP targets inter-class structural optimization while FF targets ambiguity discovery; the two are complementary.
+    - **Function**: Integrates structural influence and prediction instability into a unified score.
+    - **Mechanism**: CMAP and FF are each normalized by their mean and standard deviation, then averaged: $\text{Score}(x) = (\text{CMAP}(x) + \text{FF}(x))/2$. The top-$k$ samples are selected, ensuring that chosen samples both structurally impact feature geometry and reside in genuinely ambiguous regions.
+    - **Design Motivation**: CMAP targets inter-class structural optimization while FF targets ambiguity discovery; the two are complementary.
 
 ## Key Experimental Results
 

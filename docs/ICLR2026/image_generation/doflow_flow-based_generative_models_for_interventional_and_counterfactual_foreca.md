@@ -18,8 +18,8 @@ content_hash: 03046bdd8e06f7d7
 # DoFlow: Flow-based Generative Models for Interventional and Counterfactual Forecasting
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.02137](https://arxiv.org/abs/2511.02137)
-**Code**: [Available](https://github.com/StatFusion/DoFlow_Causal_Time_Series)
+**arXiv**: [2511.02137](https://arxiv.org/abs/2511.02137)  
+**Code**: [Available](https://github.com/StatFusion/DoFlow_Causal_Time_Series)  
 **Area**: Generative Modeling
 **Keywords**: Causal Inference, Continuous Normalizing Flows, Time Series Forecasting, Counterfactual Reasoning, Anomaly Detection
 

@@ -18,8 +18,8 @@ content_hash: df78a2c7c4d82024
 # RLVR-World: Training World Models with Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13934](https://arxiv.org/abs/2505.13934)
-**Code**: [GitHub](https://thuml.github.io/RLVR-World)
+**arXiv**: [2505.13934](https://arxiv.org/abs/2505.13934)  
+**Code**: [GitHub](https://thuml.github.io/RLVR-World)  
 **Area**: World Models / RL Post-Training
 **Keywords**: World Models, RLVR, GRPO, Video Prediction, Autoregressive Generation
 

@@ -19,8 +19,8 @@ content_hash: c94f9fd0ac53e41d
 # Stepping Out of Similar Semantic Space for Open-Vocabulary Segmentation
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.16058](https://arxiv.org/abs/2506.16058)
-**Code**: Not released
+**arXiv**: [2506.16058](https://arxiv.org/abs/2506.16058)  
+**Code**: Not released  
 **Area**: Image Segmentation
 **Keywords**: Open-vocabulary segmentation, benchmark evaluation, semantic space, CLIP fine-tuning, gradient-free aggregation, proxy calibration
 

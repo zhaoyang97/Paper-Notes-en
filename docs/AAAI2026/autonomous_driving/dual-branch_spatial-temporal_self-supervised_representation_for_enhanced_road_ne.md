@@ -18,8 +18,8 @@ content_hash: 8db39539fb2c7806
 # Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06633](https://arxiv.org/abs/2511.06633)
-**Code**: [Available](https://github.com/chaser-gua/DST)
+**arXiv**: [2511.06633](https://arxiv.org/abs/2511.06633)  
+**Code**: [Available](https://github.com/chaser-gua/DST)  
 **Area**: Autonomous Driving
 **Keywords**: Road network representation learning, self-supervised learning, graph neural networks, hypergraph, spatial-temporal modeling
 

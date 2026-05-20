@@ -18,8 +18,8 @@ content_hash: ccf4572477ad7e99
 # Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches
 
 **Conference**: ACL 2026
-**arXiv**: [2601.07711](https://arxiv.org/abs/2601.07711)
-**Code**: None
+**arXiv**: [2601.07711](https://arxiv.org/abs/2601.07711)  
+**Code**: None  
 **Area**: Information Retrieval / RAG
 **Keywords**: Retrieval-Augmented Generation, Agentic RAG, Enhanced RAG, Query Rewriting, Cost Analysis
 

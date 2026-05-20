@@ -18,8 +18,8 @@ content_hash: 84689a93b465ee18
 # Information Density Principle for MLLM Benchmarks
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.10079](https://arxiv.org/abs/2503.10079)
-**Code**: [GitHub](https://github.com/lcysyzxdxc/bench4bench)
+**arXiv**: [2503.10079](https://arxiv.org/abs/2503.10079)  
+**Code**: [GitHub](https://github.com/lcysyzxdxc/bench4bench)  
 **Area**: Multimodal VLM
 **Keywords**: Benchmark evaluation, information density, MLLM assessment, benchmark quality, meta-evaluation
 

@@ -18,8 +18,8 @@ content_hash: dbb1d72abfb354da
 # Towards General Modality Translation with Contrastive and Predictive Latent Diffusion Bridge
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20819](https://arxiv.org/abs/2510.20819)
-**Code**: [Project Page](https://sites.google.com/view/lddbm/home)
+**arXiv**: [2510.20819](https://arxiv.org/abs/2510.20819)  
+**Code**: [Project Page](https://sites.google.com/view/lddbm/home)  
 **Area**: Diffusion Models / Cross-Modal Translation
 **Keywords**: Diffusion Bridge Models, Modality Translation, Contrastive Learning, Latent Space, Transformer
 

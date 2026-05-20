@@ -18,8 +18,8 @@ content_hash: 4b0d39054c7efdc0
 # SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models
 
 **Conference**: CVPR2026
-**arXiv**: [2602.18993](https://arxiv.org/abs/2602.18993)
-**Code**: [jiwoogit/SeaCache](https://github.com/jiwoogit/SeaCache)
+**arXiv**: [2602.18993](https://arxiv.org/abs/2602.18993)  
+**Code**: [jiwoogit/SeaCache](https://github.com/jiwoogit/SeaCache)  
 **Area**: Image Generation
 **Keywords**: diffusion model acceleration, caching strategy, spectral evolution, frequency-domain filtering, training-free acceleration
 

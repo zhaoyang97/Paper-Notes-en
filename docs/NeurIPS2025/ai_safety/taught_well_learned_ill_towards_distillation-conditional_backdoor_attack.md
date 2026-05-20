@@ -18,8 +18,8 @@ content_hash: 0a18375d40272c08
 # Taught Well, Learned Ill: Towards Distillation-Conditional Backdoor Attack
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.23871](https://arxiv.org/abs/2509.23871)
-**Code**: [GitHub](https://github.com/WhitolfChen/SCAR)
+**arXiv**: [2509.23871](https://arxiv.org/abs/2509.23871)  
+**Code**: [GitHub](https://github.com/WhitolfChen/SCAR)  
 **Area**: AI Security / Backdoor Attack
 **Keywords**: knowledge distillation, backdoor attack, bi-level optimization, implicit differentiation, model security
 

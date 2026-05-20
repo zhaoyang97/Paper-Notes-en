@@ -17,8 +17,8 @@ content_hash: 0299c78830e19d91
 # Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22332](https://arxiv.org/abs/2510.22332)
-**Code**: [https://muyo8692.com/projects/ff-kv-sae](https://muyo8692.com/projects/ff-kv-sae)
+**arXiv**: [2510.22332](https://arxiv.org/abs/2510.22332)  
+**Code**: [https://muyo8692.com/projects/ff-kv-sae](https://muyo8692.com/projects/ff-kv-sae)  
 **Area**: Model Compression / Interpretability
 **Keywords**: Sparse Autoencoders, Feed-Forward Layers, Key-Value Memories, Interpretability, Feature Discovery
 
@@ -44,20 +44,20 @@ The key-value structure of the FF layer is used directly as a feature discovery 
 
 1. **FF-KV Method Family**:
 
-   - **Vanilla FF-KV**: Directly uses the FF layer activations $\phi(\mathbf{x}_{FF_{in}}\mathbf{W}_K + \mathbf{b}_K)$ as feature activations, with rows of $\mathbf{W}_V$ as feature vectors.
-   - **TopK FF-KV**: Applies Top-$k$ sparsification to FF activations, retaining only the $k$ largest values to align with SAE sparsity.
-   - **Normalized FF-KV**: L2-normalizes each row of $\mathbf{W}_V$, transferring the absorbed norm as a weight on the activation to avoid bias introduced by varying feature vector norms.
-   - **SwiGLU Compatibility**: All variants above naturally extend to modern LMs that adopt SwiGLU gated activations.
+    - **Vanilla FF-KV**: Directly uses the FF layer activations $\phi(\mathbf{x}_{FF_{in}}\mathbf{W}_K + \mathbf{b}_K)$ as feature activations, with rows of $\mathbf{W}_V$ as feature vectors.
+    - **TopK FF-KV**: Applies Top-$k$ sparsification to FF activations, retaining only the $k$ largest values to align with SAE sparsity.
+    - **Normalized FF-KV**: L2-normalizes each row of $\mathbf{W}_V$, transferring the absorbed norm as a weight on the activation to avoid bias introduced by varying feature vector norms.
+    - **SwiGLU Compatibility**: All variants above naturally extend to modern LMs that adopt SwiGLU gated activations.
 
 2. **SAEBench Evaluation Framework**: Eight complementary metrics are used for comprehensive assessment:
 
-   - **Feature Alive Rate**: Proportion of active features.
-   - **Explained Variance**: Reconstruction quality (FF-KV achieves a perfect score by construction).
-   - **Absorption Score**: Degree to which concepts are over-fragmented (lower is better).
-   - **Sparse Probing**: Discriminability and generalization of features.
-   - **Auto-Interpretation**: Whether an LLM can summarize a feature's activation pattern in natural language.
-   - **SCR/TPP**: Ability to disentangle spuriously correlated features.
-   - **RAVEL**: Separability and controllability of different attributes of the same entity.
+    - **Feature Alive Rate**: Proportion of active features.
+    - **Explained Variance**: Reconstruction quality (FF-KV achieves a perfect score by construction).
+    - **Absorption Score**: Degree to which concepts are over-fragmented (lower is better).
+    - **Sparse Probing**: Discriminability and generalization of features.
+    - **Auto-Interpretation**: Whether an LLM can summarize a feature's activation pattern in natural language.
+    - **SCR/TPP**: Ability to disentangle spuriously correlated features.
+    - **RAVEL**: Separability and controllability of different attributes of the same entity.
 
 3. **Fidelity Analysis**: Transcoders (TC) are used as the analysis target (TC being the closest proxy counterpart to FF-KV) to examine the overlap between TC features and original FF features—i.e., whether the proxy module genuinely reflects the original module's behavior or fabricates novel features.
 

@@ -17,8 +17,8 @@ content_hash: 5dbde3c86a1f1207
 # How Hard Is It to Rig a Tournament When Few Players Can Beat or Be Beaten by the Favorite?
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.08530](https://arxiv.org/abs/2601.08530)
-**Code**: None
+**arXiv**: [2601.08530](https://arxiv.org/abs/2601.08530)  
+**Code**: None  
 **Area**: Other
 **Keywords**: tournament fixing, knockout tournament, parameterized complexity, FPT, color coding
 

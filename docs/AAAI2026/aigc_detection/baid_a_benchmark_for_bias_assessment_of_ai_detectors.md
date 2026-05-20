@@ -18,8 +18,8 @@ content_hash: 6b53f0467f75ef35
 # BAID: A Benchmark for Bias Assessment of AI Detectors
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.11505](https://arxiv.org/abs/2512.11505)
-**Code**: TBD
+**arXiv**: [2512.11505](https://arxiv.org/abs/2512.11505)  
+**Code**: TBD  
 **Area**: AIGC Detection / Fairness
 **Keywords**: AI text detection, bias assessment, fairness benchmark, sociolinguistics, detector auditing
 

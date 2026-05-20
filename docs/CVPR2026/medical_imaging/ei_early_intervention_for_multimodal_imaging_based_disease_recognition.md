@@ -19,8 +19,8 @@ content_hash: b71ff3d737a6fcc5
 # EI: Early Intervention for Multimodal Imaging based Disease Recognition
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17514](https://arxiv.org/abs/2603.17514)
-**Code**: [github.com/ruc-aimc-lab/EI](https://github.com/ruc-aimc-lab/EI)
+**arXiv**: [2603.17514](https://arxiv.org/abs/2603.17514)  
+**Code**: [github.com/ruc-aimc-lab/EI](https://github.com/ruc-aimc-lab/EI)  
 **Area**: Medical Imaging / Multimodal Fusion
 **Keywords**: Multimodal medical imaging, early intervention, LoRA, MoE, VFM adaptation, disease recognition
 

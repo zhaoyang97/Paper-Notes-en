@@ -18,8 +18,8 @@ content_hash: 5daf814cd5717219
 # Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.02948](https://arxiv.org/abs/2508.02948)
-**Code**: None
+**arXiv**: [2508.02948](https://arxiv.org/abs/2508.02948)  
+**Code**: None  
 **Area**: AI Safety / Multi-Agent Reinforcement Learning
 **Keywords**: Distributionally Robust, Multi-Agent RL, Markov Games, online learning, Regret Bounds
 

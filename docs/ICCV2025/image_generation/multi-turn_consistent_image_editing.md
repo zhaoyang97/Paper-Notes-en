@@ -19,8 +19,8 @@ content_hash: fc6307771e306254
 # Multi-turn Consistent Image Editing
 
 **Conference**: ICCV2025
-**arXiv**: [2505.04320](https://arxiv.org/abs/2505.04320)
-**Code**: To be confirmed
+**arXiv**: [2505.04320](https://arxiv.org/abs/2505.04320)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: multi-turn editing, flow matching, LQR control, attention guidance, FLUX, image inversion
 

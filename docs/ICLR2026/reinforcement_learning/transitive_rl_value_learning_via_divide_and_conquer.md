@@ -18,8 +18,8 @@ content_hash: aad3f3bae2e02eee
 # Transitive RL: Value Learning via Divide and Conquer
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.22512](https://arxiv.org/abs/2510.22512)
-**Code**: None
+**arXiv**: [2510.22512](https://arxiv.org/abs/2510.22512)  
+**Code**: None  
 **Area**: Reinforcement Learning / Goal-Conditioned RL
 **Keywords**: Divide and Conquer, Value Function Learning, Offline RL, Goal-Conditioned Reinforcement Learning, Triangle Inequality
 

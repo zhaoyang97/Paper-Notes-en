@@ -18,8 +18,8 @@ content_hash: 2cd87419bed933e4
 # SliderSpace: Decomposing the Visual Capabilities of Diffusion Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2502.01639](https://arxiv.org/abs/2502.01639)
-**Code**: [https://github.com/rohitgandikota/sliderspace](https://github.com/rohitgandikota/sliderspace)
+**arXiv**: [2502.01639](https://arxiv.org/abs/2502.01639)  
+**Code**: [https://github.com/rohitgandikota/sliderspace](https://github.com/rohitgandikota/sliderspace)  
 **Area**: Diffusion Models
 **Keywords**: Controllable generation with diffusion models, semantic decomposition, LoRA adapters, latent space exploration, unsupervised discovery
 

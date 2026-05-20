@@ -19,8 +19,8 @@ content_hash: e8d70cc78f752151
 # GP-MoLFormer-Sim: Test Time Molecular Optimization through Contextual Similarity Guidance
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.05628](https://arxiv.org/abs/2506.05628)
-**Code**: No public link
+**arXiv**: [2506.05628](https://arxiv.org/abs/2506.05628)  
+**Code**: No public link  
 **Area**: AI for Science / Drug Discovery
 **Keywords**: molecular optimization, chemical language model, test-time guidance, genetic algorithm, SMILES, similarity-guided generation
 

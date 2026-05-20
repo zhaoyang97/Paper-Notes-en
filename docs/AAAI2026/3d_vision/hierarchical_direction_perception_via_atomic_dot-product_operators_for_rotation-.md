@@ -18,8 +18,8 @@ content_hash: e07be9a5ed3904e5
 # Hierarchical Direction Perception via Atomic Dot-Product Operators for Rotation-Invariant Point Clouds Learning
 
 **Conference**: AAAI2026
-**arXiv**: [2511.08240](https://arxiv.org/abs/2511.08240)
-**Code**: [DiPVNet](https://github.com/wxszreal0/DiPVNet)
+**arXiv**: [2511.08240](https://arxiv.org/abs/2511.08240)  
+**Code**: [DiPVNet](https://github.com/wxszreal0/DiPVNet)  
 **Area**: 3D Vision
 **Keywords**: Point Cloud, Rotation Invariance, Dot-Product Operator, Spherical Fourier Transform, Equivariance
 

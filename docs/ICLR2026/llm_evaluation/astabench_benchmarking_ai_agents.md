@@ -17,8 +17,8 @@ content_hash: da3f222a800604dd
 # AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite
 
 **Conference**: ICLR 2026 Oral
-**arXiv**: [2510.21652](https://arxiv.org/abs/2510.21652)
-**Code**: [allenai/asta-bench](https://github.com/allenai/asta-bench)
+**arXiv**: [2510.21652](https://arxiv.org/abs/2510.21652)  
+**Code**: [allenai/asta-bench](https://github.com/allenai/asta-bench)  
 **Area**: LLM Evaluation
 **Keywords**: Agent Benchmark, Scientific Research Automation, Reproducible Evaluation, AI for Science
 

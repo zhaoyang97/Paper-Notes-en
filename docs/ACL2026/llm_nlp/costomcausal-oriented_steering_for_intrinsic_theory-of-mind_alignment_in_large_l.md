@@ -18,8 +18,8 @@ content_hash: c2d23b7609f08417
 # CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.10031](https://arxiv.org/abs/2604.10031)
-**Code**: [GitHub](https://github.com/CGCL-codes/CoSToM)
+**arXiv**: [2604.10031](https://arxiv.org/abs/2604.10031)  
+**Code**: [GitHub](https://github.com/CGCL-codes/CoSToM)  
 **Area**: LLM/NLP
 **Keywords**: Theory of Mind, causal tracing, activation steering, dialogue systems, social reasoning
 

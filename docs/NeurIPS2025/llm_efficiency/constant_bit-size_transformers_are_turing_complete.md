@@ -18,8 +18,8 @@ content_hash: fc516acff5246a70
 # Constant Bit-Size Transformers Are Turing Complete
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.12027](https://arxiv.org/abs/2506.12027)
-**Code**: None
+**arXiv**: [2506.12027](https://arxiv.org/abs/2506.12027)  
+**Code**: None  
 **Area**: LLM Efficiency
 **Keywords**: Turing completeness, transformer theory, computational complexity, Post machines, context window
 

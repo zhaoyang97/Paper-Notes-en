@@ -18,8 +18,8 @@ content_hash: bfdaaad5ca8c3737
 # MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.13564](https://arxiv.org/abs/2506.13564)
-**Code**: [https://github.com/naver-ai/mambamia](https://github.com/naver-ai/mambamia)
+**arXiv**: [2506.13564](https://arxiv.org/abs/2506.13564)  
+**Code**: [https://github.com/naver-ai/mambamia](https://github.com/naver-ai/mambamia)  
 **Area**: Large Multimodal Models / Video Understanding
 **Keywords**: Long video compression, state space models, Mamba, gated patch aggregation, adaptive frame sampling
 

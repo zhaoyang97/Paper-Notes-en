@@ -18,8 +18,8 @@ content_hash: e2b397fb97fe838f
 # Revitalizing Canonical Pre-Alignment for Irregular Multivariate Time Series Forecasting
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01971](https://arxiv.org/abs/2508.01971)
-**Code**: [github.com/zhouziyu02/KAFNet](https://github.com/zhouziyu02/KAFNet)
+**arXiv**: [2508.01971](https://arxiv.org/abs/2508.01971)  
+**Code**: [github.com/zhouziyu02/KAFNet](https://github.com/zhouziyu02/KAFNet)  
 **Area**: Time Series
 **Keywords**: Irregular Multivariate Time Series, Canonical Pre-Alignment, Temporal Kernel Aggregation, Frequency-domain Linear Attention, Efficient Forecasting
 

@@ -18,8 +18,8 @@ content_hash: c78a6489958fa1c5
 # MIDB: Multilingual Instruction Data Booster for Enhancing Cultural Equality in Multilingual Instruction Synthesis
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.17671](https://arxiv.org/abs/2505.17671)
-**Code**: [github](https://github.com/zhaocorey/MIDB)
+**arXiv**: [2505.17671](https://arxiv.org/abs/2505.17671)  
+**Code**: [github](https://github.com/zhaocorey/MIDB)  
 **Area**: Multilingual Translation
 **Keywords**: Multilingual instruction tuning, data quality enhancement, cultural fairness, machine translation correction, LLM multilingual capability
 

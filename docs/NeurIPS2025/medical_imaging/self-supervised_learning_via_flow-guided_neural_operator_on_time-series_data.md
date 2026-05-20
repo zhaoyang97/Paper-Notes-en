@@ -18,8 +18,8 @@ content_hash: 2636738a2cc2bab5
 # Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2602.12267](https://arxiv.org/abs/2602.12267)
-**Code**: Unavailable
+**arXiv**: [2602.12267](https://arxiv.org/abs/2602.12267)  
+**Code**: Unavailable  
 **Area**: Medical Imaging / Time-Series Self-Supervised Learning
 **Keywords**: Self-supervised learning, Flow Matching, Neural Operator, Time series, Biomedical signals
 

@@ -18,8 +18,8 @@ content_hash: 55edff0ffd1e6afb
 # CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.20741](https://arxiv.org/abs/2603.20741)
-**Code**: [https://github.com/xiefan-guo/ctcal](https://github.com/xiefan-guo/ctcal)
+**arXiv**: [2603.20741](https://arxiv.org/abs/2603.20741)  
+**Code**: [https://github.com/xiefan-guo/ctcal](https://github.com/xiefan-guo/ctcal)  
 **Area**: Image Generation / Text-to-Image Diffusion Models
 **Keywords**: Text-to-Image Generation, Diffusion Models, Cross-Attention Alignment, Self-Calibration, Compositional Generation
 

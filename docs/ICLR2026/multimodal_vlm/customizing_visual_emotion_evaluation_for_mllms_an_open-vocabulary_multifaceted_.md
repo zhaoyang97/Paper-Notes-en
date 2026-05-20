@@ -18,8 +18,8 @@ content_hash: 03f9d613b21ba9ae
 # Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21950](https://arxiv.org/abs/2509.21950)
-**Code**: [GitHub](https://github.com/wdqqdw/MVEI)
+**arXiv**: [2509.21950](https://arxiv.org/abs/2509.21950)  
+**Code**: [GitHub](https://github.com/wdqqdw/MVEI)  
 **Area**: Multimodal VLM
 **Keywords**: Visual Emotion, MLLM Evaluation, Open-vocabulary, ESJ, MVEI Benchmark
 

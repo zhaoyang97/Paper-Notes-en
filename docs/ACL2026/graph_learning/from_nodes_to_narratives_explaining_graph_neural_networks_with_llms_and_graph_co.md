@@ -17,8 +17,8 @@ content_hash: 910eb65eaea47d4f
 # From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context
 
 **Conference**: ACL 2026
-**arXiv**: [2508.07117](https://arxiv.org/abs/2508.07117)
-**Code**: N/A
+**arXiv**: [2508.07117](https://arxiv.org/abs/2508.07117)  
+**Code**: N/A  
 **Area**: Graph Learning / Interpretability
 **Keywords**: GNN Explainability, LLM Explainer, Soft Prompt, Text-Attributed Graph, Natural Language Explanation
 

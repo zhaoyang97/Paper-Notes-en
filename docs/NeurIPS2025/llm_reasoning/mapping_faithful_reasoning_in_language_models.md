@@ -18,8 +18,8 @@ content_hash: 95c7a0f34b51c584
 # Mapping Faithful Reasoning in Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22362](https://arxiv.org/abs/2510.22362)
-**Code**: None
+**arXiv**: [2510.22362](https://arxiv.org/abs/2510.22362)  
+**Code**: None  
 **Area**: LLM Reasoning
 **Keywords**: CoT faithfulness, mechanistic interpretability, reasoning models, safety vectors, activation analysis
 

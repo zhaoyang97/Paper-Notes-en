@@ -18,8 +18,8 @@ content_hash: f69ea5332e09976a
 # On Minimax Estimation of Parameters in Softmax-Contaminated Mixture of Experts
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.18455](https://arxiv.org/abs/2505.18455)
-**Code**: None
+**arXiv**: [2505.18455](https://arxiv.org/abs/2505.18455)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: Mixture of Experts, Softmax Gating, Parameter Estimation, Minimax Optimality, Distinguishability
 

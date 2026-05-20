@@ -18,8 +18,8 @@ content_hash: d93dc21f62021c27
 # Continuous Chain of Thought Enables Parallel Exploration and Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.23648](https://arxiv.org/abs/2505.23648)
-**Code**: [https://github.com/alperengozeten/CoT2](https://github.com/alperengozeten/CoT2)
+**arXiv**: [2505.23648](https://arxiv.org/abs/2505.23648)  
+**Code**: [https://github.com/alperengozeten/CoT2](https://github.com/alperengozeten/CoT2)  
 **Area**: LLM Reasoning / Model Compression
 **Keywords**: Continuous chain of thought, parallel reasoning, multi-trajectory tracking, GRPO, information theory
 

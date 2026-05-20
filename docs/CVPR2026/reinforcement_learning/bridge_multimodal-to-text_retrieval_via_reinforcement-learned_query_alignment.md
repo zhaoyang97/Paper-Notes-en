@@ -17,8 +17,8 @@ content_hash: 08b6ba441d6d2bf5
 # BRIDGE: Multimodal-to-Text Retrieval via Reinforcement-Learned Query Alignment
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07201](https://arxiv.org/abs/2604.07201)
-**Code**: [GitHub](https://github.com/mm-bright/multimodal-reasoning-retrieval)
+**arXiv**: [2604.07201](https://arxiv.org/abs/2604.07201)  
+**Code**: [GitHub](https://github.com/mm-bright/multimodal-reasoning-retrieval)  
 **Area**: Multimodal Retrieval / Reinforcement Learning
 **Keywords**: Multimodal Retrieval, Query Alignment, Reinforcement Learning, Dense Retrieval, Query Rewriting
 

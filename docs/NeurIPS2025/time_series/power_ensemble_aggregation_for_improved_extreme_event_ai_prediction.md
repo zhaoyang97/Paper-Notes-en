@@ -18,8 +18,8 @@ content_hash: 8ef595897a647126
 # Power Ensemble Aggregation for Improved Extreme Event AI Prediction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.11170](https://arxiv.org/abs/2511.11170)
-**Code**: Unavailable
+**arXiv**: [2511.11170](https://arxiv.org/abs/2511.11170)  
+**Code**: Unavailable  
 **Area**: Time Series
 **Keywords**: extreme event prediction, ensemble aggregation, power mean, heat wave classification, climate prediction
 

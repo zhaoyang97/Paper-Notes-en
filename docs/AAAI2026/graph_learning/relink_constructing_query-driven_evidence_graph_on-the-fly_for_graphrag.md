@@ -18,8 +18,8 @@ content_hash: 7fba82100cdc97db
 # Relink: Constructing Query-Driven Evidence Graph On-the-Fly for GraphRAG
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.07192](https://arxiv.org/abs/2601.07192)
-**Code**: [GitHub](https://github.com/DMiC-Lab-HFUT/Relink)
+**arXiv**: [2601.07192](https://arxiv.org/abs/2601.07192)  
+**Code**: [GitHub](https://github.com/DMiC-Lab-HFUT/Relink)  
 **Area**: NLP Understanding / Knowledge Graphs
 **Keywords**: GraphRAG, Dynamic Knowledge Graph, Multi-hop Reasoning, Evidence Graph Construction, Query-Driven Retrieval
 

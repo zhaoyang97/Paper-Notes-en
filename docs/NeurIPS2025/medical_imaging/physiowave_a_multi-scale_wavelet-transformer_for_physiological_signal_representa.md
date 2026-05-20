@@ -18,8 +18,8 @@ content_hash: e7ddf2e5524ad6df
 # PhysioWave: A Multi-Scale Wavelet-Transformer for Physiological Signal Representation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10351](https://arxiv.org/abs/2506.10351)
-**Code**: [Available](https://github.com/ForeverBlue816/PhysioWave)
+**arXiv**: [2506.10351](https://arxiv.org/abs/2506.10351)  
+**Code**: [Available](https://github.com/ForeverBlue816/PhysioWave)  
 **Area**: Medical Imaging / Biosignal Processing
 **Keywords**: Wavelet transform, physiological signals, self-supervised learning, multimodal fusion, foundation model
 

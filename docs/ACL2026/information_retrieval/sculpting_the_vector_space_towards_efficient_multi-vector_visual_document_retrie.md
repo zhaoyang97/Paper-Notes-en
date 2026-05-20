@@ -18,8 +18,8 @@ content_hash: f9d07b6e0a5ce957
 # Prune-then-Merge: Towards Efficient Multi-Vector Visual Document Retrieval
 
 **Conference**: ACL 2026
-**arXiv**: [2602.19549](https://arxiv.org/abs/2602.19549)
-**Code**: N/A
+**arXiv**: [2602.19549](https://arxiv.org/abs/2602.19549)  
+**Code**: N/A  
 **Area**: Information Retrieval / Document Retrieval
 **Keywords**: Visual Document Retrieval, Multi-Vector Compression, Adaptive Pruning, Hierarchical Aggregation, ColPali
 

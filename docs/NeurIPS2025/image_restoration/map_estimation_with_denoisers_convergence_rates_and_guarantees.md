@@ -19,8 +19,8 @@ content_hash: 825366a858e3ecda
 # MAP Estimation with Denoisers: Convergence Rates and Guarantees
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.15397](https://arxiv.org/abs/2507.15397)
-**Code**: To be confirmed
+**arXiv**: [2507.15397](https://arxiv.org/abs/2507.15397)  
+**Code**: To be confirmed  
 **Area**: Image Restoration
 **Keywords**: MAP estimation, proximal operator, denoiser, convergence rates, inverse problems, plug-and-play
 

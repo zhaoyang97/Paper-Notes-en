@@ -17,8 +17,8 @@ content_hash: 1af2fc927a6eefcd
 # SynWeather: Weather Observation Data Synthesis across Multiple Regions and Variables via a General Diffusion Transformer
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.08291](https://arxiv.org/abs/2511.08291)
-**Code**: [https://github.com/Dtdtxuky/SynWeather](https://github.com/Dtdtxuky/SynWeather)
+**arXiv**: [2511.08291](https://arxiv.org/abs/2511.08291)  
+**Code**: [https://github.com/Dtdtxuky/SynWeather](https://github.com/Dtdtxuky/SynWeather)  
 **Area**: Meteorological Data Synthesis / Diffusion Models
 **Keywords**: weather data synthesis, diffusion Transformer, multi-region multi-variable, radar reflectivity, precipitation estimation
 

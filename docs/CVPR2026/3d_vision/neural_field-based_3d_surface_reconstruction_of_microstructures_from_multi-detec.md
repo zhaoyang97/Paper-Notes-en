@@ -18,8 +18,8 @@ content_hash: 27adfc99568832c6
 # Neural Field-Based 3D Surface Reconstruction of Microstructures from Multi-Detector Signals in Scanning Electron Microscopy
 
 **Conference**: CVPR 2026
-**arXiv**: [2508.04728](https://arxiv.org/abs/2508.04728)
-**Code**: [https://github.com/zju3dv/NFH-SEM](https://github.com/zju3dv/NFH-SEM)
+**arXiv**: [2508.04728](https://arxiv.org/abs/2508.04728)  
+**Code**: [https://github.com/zju3dv/NFH-SEM](https://github.com/zju3dv/NFH-SEM)  
 **Area**: 3D Vision
 **Keywords**: Scanning Electron Microscopy, 3D Reconstruction, Neural Fields, Microstructures, Photometric Stereo
 
@@ -31,10 +31,10 @@ This paper proposes NFH-SEM, a neural field-based hybrid framework that embeds t
 1. **Background**: Scanning electron microscopy (SEM) is widely used in materials science, biology, and industrial manufacturing, producing high-resolution micro/nanoscale images. However, SEM images are inherently 2D intensity distributions of secondary electrons (SE) or backscattered electrons (BSE), and do not directly encode 3D information. Existing SEM 3D reconstruction methods fall into two main categories: multi-view methods (SfM+MVS) and single-view methods (photometric stereo, PS).
 
 2. **Limitations of Prior Work**:
-   - Multi-view methods frequently fail in weakly textured or repetitive regions commonly found in microscopic specimens.
-   - Single-view PS methods require reference samples for detector calibration and are highly sensitive to shadow artifacts—shadowed regions cause distorted gradient estimates.
-   - Hybrid methods that combine both approaches are still limited by calibration requirements and shadow artifacts, and their 2D heightmap representation cannot capture complex microstructures.
-   - Learning-based methods (NeuS, 3DGS, feed-forward reconstruction) either lack large-scale SEM training data and fail to generalize, or rely on RGB optical rendering models that cannot exploit the geometric cues encoded in SEM signals.
+    - Multi-view methods frequently fail in weakly textured or repetitive regions commonly found in microscopic specimens.
+    - Single-view PS methods require reference samples for detector calibration and are highly sensitive to shadow artifacts—shadowed regions cause distorted gradient estimates.
+    - Hybrid methods that combine both approaches are still limited by calibration requirements and shadow artifacts, and their 2D heightmap representation cannot capture complex microstructures.
+    - Learning-based methods (NeuS, 3DGS, feed-forward reconstruction) either lack large-scale SEM training data and fail to generalize, or rely on RGB optical rendering models that cannot exploit the geometric cues encoded in SEM signals.
 
 3. **Key Challenge**: The physics of SEM signal generation (electron scattering) differs fundamentally from conventional RGB imaging, yet existing 3D reconstruction methods either ignore SEM physics (multi-view methods) or rely on simplified physical models requiring complex calibration procedures (single-view methods).
 
@@ -53,27 +53,27 @@ The input consists of multi-view, multi-detector SEM images (one SE image and fo
 
 1. **Learnable BSE Forward Model**:
 
-   - **Function**: Maps predicted surface normals to 4Q-BSE intensities, enabling BSE images to directly supervise geometric learning in the neural field.
-   - **Mechanism**: Traditional PS methods use $I_i(n) = d_i \cos(\varphi_i - \varphi_n)\tan(\theta_n) + c_i$ to compute gradients directly from BSE images, requiring calibration of $c/d$. NFH-SEM inverts this paradigm—a forward model with 16 learnable parameters, $\mathcal{F}_i(n) = \mathbf{R}(\theta_n)[d_i\cos(\varphi_i-\varphi_n)\sin(\theta_n) + c_i\cos(\theta_n)] + e_i$, maps normals to BSE intensities. The emission amplification term $\mathbf{R}(\theta)$ replaces the conventional $\sec(\theta)$ with a fourth-order polynomial to better fit real BSE responses. Each of the four quadrants has independent $c, d, e$ parameters and shares polynomial coefficients $p$.
-   - **Design Motivation**: (1) Traditional analytic models are insufficiently accurate (confirmed by ablation); (2) the learnable formulation enables self-calibration without reference samples; (3) embedding the forward model into volume rendering effectively backpropagates gradient information into the neural field.
+    - **Function**: Maps predicted surface normals to 4Q-BSE intensities, enabling BSE images to directly supervise geometric learning in the neural field.
+    - **Mechanism**: Traditional PS methods use $I_i(n) = d_i \cos(\varphi_i - \varphi_n)\tan(\theta_n) + c_i$ to compute gradients directly from BSE images, requiring calibration of $c/d$. NFH-SEM inverts this paradigm—a forward model with 16 learnable parameters, $\mathcal{F}_i(n) = \mathbf{R}(\theta_n)[d_i\cos(\varphi_i-\varphi_n)\sin(\theta_n) + c_i\cos(\theta_n)] + e_i$, maps normals to BSE intensities. The emission amplification term $\mathbf{R}(\theta)$ replaces the conventional $\sec(\theta)$ with a fourth-order polynomial to better fit real BSE responses. Each of the four quadrants has independent $c, d, e$ parameters and shares polynomial coefficients $p$.
+    - **Design Motivation**: (1) Traditional analytic models are insufficiently accurate (confirmed by ablation); (2) the learnable formulation enables self-calibration without reference samples; (3) embedding the forward model into volume rendering effectively backpropagates gradient information into the neural field.
 
 2. **Iterative Shadow Separation**:
 
-   - **Function**: Automatically detects and excludes shadow regions in BSE images to prevent shadow contamination of geometric reconstruction.
-   - **Mechanism**: Large discrepancies between the forward model output $\mathcal{F}(\hat{n};\hat{\Phi})$ and the actual BSE image $b$ are observed predominantly in shadowed regions, since shadows cannot be modeled by surface normal functions alone. A dynamic binary shadow mask is defined as $S = (|\mathcal{F}(\hat{n};\hat{\Phi}) - b| < \alpha d)$, where the threshold $\alpha d$ is updated dynamically with parameter $d$ during training. Since $d$ controls the sensitivity of BSE intensity to surface normals, setting the threshold proportionally prevents geometry-induced intensity variations from being misclassified as shadows.
-   - **Design Motivation**: Shadows are pervasive in 4Q-BSE images, and supervising with shadow-corrupted images leads to severe geometric distortion. Iterative separation establishes a positive feedback loop—better shadow masks yield cleaner supervision, which in turn produces more accurate geometry and forward model estimates, enabling better shadow detection.
+    - **Function**: Automatically detects and excludes shadow regions in BSE images to prevent shadow contamination of geometric reconstruction.
+    - **Mechanism**: Large discrepancies between the forward model output $\mathcal{F}(\hat{n};\hat{\Phi})$ and the actual BSE image $b$ are observed predominantly in shadowed regions, since shadows cannot be modeled by surface normal functions alone. A dynamic binary shadow mask is defined as $S = (|\mathcal{F}(\hat{n};\hat{\Phi}) - b| < \alpha d)$, where the threshold $\alpha d$ is updated dynamically with parameter $d$ during training. Since $d$ controls the sensitivity of BSE intensity to surface normals, setting the threshold proportionally prevents geometry-induced intensity variations from being misclassified as shadows.
+    - **Design Motivation**: Shadows are pervasive in 4Q-BSE images, and supervising with shadow-corrupted images leads to severe geometric distortion. Iterative separation establishes a positive feedback loop—better shadow masks yield cleaner supervision, which in turn produces more accurate geometry and forward model estimates, enabling better shadow detection.
 
 3. **Three-Stage Training Strategy**:
 
-   - **Function**: Stably integrates multi-source geometric cues into the neural field.
-   - **Mechanism**: **Stage I**: Initializes coarse geometry priors using only depth loss $\mathcal{L}_d$ and SDF regularization $\mathcal{R}_s$. **Stage II**: Introduces BSE loss $\mathcal{L}_{BSE}(1)$ (without shadow masking) and forward model regularization $\mathcal{R}_\Phi$ to jointly learn the normal-to-BSE mapping. **Stage III**: Activates the dynamic shadow mask $\mathcal{L}_{BSE}(S)$ to refine geometry and model parameters. Each stage runs for only 1,000 iterations, with total training taking approximately 2 minutes.
-   - **Design Motivation**: Directly co-optimizing all components leads to instability; establishing a geometric prior before progressively introducing photometric supervision and shadow handling is essential.
+    - **Function**: Stably integrates multi-source geometric cues into the neural field.
+    - **Mechanism**: **Stage I**: Initializes coarse geometry priors using only depth loss $\mathcal{L}_d$ and SDF regularization $\mathcal{R}_s$. **Stage II**: Introduces BSE loss $\mathcal{L}_{BSE}(1)$ (without shadow masking) and forward model regularization $\mathcal{R}_\Phi$ to jointly learn the normal-to-BSE mapping. **Stage III**: Activates the dynamic shadow mask $\mathcal{L}_{BSE}(S)$ to refine geometry and model parameters. Each stage runs for only 1,000 iterations, with total training taking approximately 2 minutes.
+    - **Design Motivation**: Directly co-optimizing all components leads to instability; establishing a geometric prior before progressively introducing photometric supervision and shadow handling is essential.
 
 4. **BSE Forward Model Regularization**:
 
-   - **Function**: Constrains the four quadrant parameters from diverging excessively.
-   - **Mechanism**: The variance of each parameter group $c, d, e$ is computed separately and summed as the regularization term $\mathcal{R}_\Phi = \text{Var}(c) + \text{Var}(d) + \text{Var}(e)$, encouraging quadrant consistency while permitting small deviations due to manufacturing tolerances.
-   - **Design Motivation**: The four BSE detector quadrants are nominally symmetric by design, so their parameters should be close, yet manufacturing and installation tolerances introduce small differences.
+    - **Function**: Constrains the four quadrant parameters from diverging excessively.
+    - **Mechanism**: The variance of each parameter group $c, d, e$ is computed separately and summed as the regularization term $\mathcal{R}_\Phi = \text{Var}(c) + \text{Var}(d) + \text{Var}(e)$, encouraging quadrant consistency while permitting small deviations due to manufacturing tolerances.
+    - **Design Motivation**: The four BSE detector quadrants are nominally symmetric by design, so their parameters should be close, yet manufacturing and installation tolerances introduce small differences.
 
 ### Loss & Training
 The total loss is $\mathcal{L} = \lambda_1 \mathcal{L}_d + \lambda_2 \mathcal{R}_s + \lambda_3 \mathcal{L}_{BSE} + \lambda_4 \mathcal{R}_\Phi$, where $\mathcal{L}_d$ is a weighted depth loss (weighted by MVS confidence), $\mathcal{R}_s$ is the standard unit-norm SDF gradient constraint, and $\mathcal{L}_{BSE}$ is the MAE loss on the 4Q-BSE images.

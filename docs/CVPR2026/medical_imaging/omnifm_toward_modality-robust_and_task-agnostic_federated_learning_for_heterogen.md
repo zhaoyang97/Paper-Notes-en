@@ -17,8 +17,8 @@ content_hash: f837218d30570b00
 # OmniFM: Toward Modality-Robust and Task-Agnostic Federated Learning for Heterogeneous Medical Imaging
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21660](https://arxiv.org/abs/2603.21660)
-**Code**: N/A
+**arXiv**: [2603.21660](https://arxiv.org/abs/2603.21660)  
+**Code**: N/A  
 **Area**: Medical Imaging / Federated Learning
 **Keywords**: Federated Learning, Modality Heterogeneity, Frequency Domain Analysis, Medical Imaging, Task-Agnostic
 

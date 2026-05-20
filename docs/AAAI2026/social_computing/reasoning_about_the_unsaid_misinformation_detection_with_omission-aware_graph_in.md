@@ -18,8 +18,8 @@ content_hash: 6ecd949579c623c1
 # Reasoning About the Unsaid: Misinformation Detection with Omission-Aware Graph Inference
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.01728](https://arxiv.org/abs/2512.01728)
-**Code**: [GitHub](https://github.com/ICTMCG/OmiGraph)
+**arXiv**: [2512.01728](https://arxiv.org/abs/2512.01728)  
+**Code**: [GitHub](https://github.com/ICTMCG/OmiGraph)  
 **Area**: Social Computing
 **Keywords**: Misinformation Detection, Omission-Aware, Graph Neural Networks, Large Language Models, Information Manipulation
 

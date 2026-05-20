@@ -18,8 +18,8 @@ content_hash: e016ff792c992b1c
 # Foresight Optimization for Strategic Reasoning in Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.13592](https://arxiv.org/abs/2604.13592)
-**Code**: [GitHub](https://github.com/wangjs9/ForesightOptim)
+**arXiv**: [2604.13592](https://arxiv.org/abs/2604.13592)  
+**Code**: [GitHub](https://github.com/wangjs9/ForesightOptim)  
 **Area**: LLM Reasoning / Game Strategy
 **Keywords**: Strategic Reasoning, Foresight Optimization, Opponent Modeling, Self-Play, Multi-Agent
 

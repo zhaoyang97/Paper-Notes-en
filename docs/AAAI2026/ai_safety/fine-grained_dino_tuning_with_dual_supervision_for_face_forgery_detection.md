@@ -18,8 +18,8 @@ content_hash: 3607ae82d3bd15d5
 # Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12107](https://arxiv.org/abs/2511.12107)
-**Code**: None
+**arXiv**: [2511.12107](https://arxiv.org/abs/2511.12107)  
+**Code**: None  
 **Area**: AI Security
 **Keywords**: Deepfake Detection, DINOv2, Parameter-Efficient Fine-Tuning, Fine-Grained Classification, LoRA
 

@@ -18,8 +18,8 @@ content_hash: 143e271a75417e84
 # Understanding Dynamic Scenes in Egocentric 4D Point Clouds
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.07251](https://arxiv.org/abs/2508.07251)
-**Code**: N/A
+**arXiv**: [2508.07251](https://arxiv.org/abs/2508.07251)  
+**Code**: N/A  
 **Area**: Autonomous Driving / 4D Scene Understanding
 **Keywords**: Egocentric View, 4D Point Clouds, Spatiotemporal Reasoning, Dynamic Scene QA, Chain-of-Thought
 

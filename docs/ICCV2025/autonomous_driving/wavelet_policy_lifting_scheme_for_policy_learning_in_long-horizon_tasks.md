@@ -18,8 +18,8 @@ content_hash: ae9adf78bdf4009f
 # Wavelet Policy: Lifting Scheme for Policy Learning in Long-Horizon Tasks
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04331](https://arxiv.org/abs/2507.04331)
-**Code**: [https://hhuang-code.github.io/wavelet_policy/](https://hhuang-code.github.io/wavelet_policy/)
+**arXiv**: [2507.04331](https://arxiv.org/abs/2507.04331)  
+**Code**: [https://hhuang-code.github.io/wavelet_policy/](https://hhuang-code.github.io/wavelet_policy/)  
 **Area**: Autonomous Driving
 **Keywords**: Policy Learning, Wavelet Transform, Lifting Scheme, Long-Horizon Tasks, Imitation Learning
 

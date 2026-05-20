@@ -18,8 +18,8 @@ content_hash: e4d8b023d0e1750c
 # Q♯: Provably Optimal Distributional RL for LLM Post-Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.20548](https://arxiv.org/abs/2502.20548)
-**Code**: [https://github.com/jinpz/q_sharp](https://github.com/jinpz/q_sharp)
+**arXiv**: [2502.20548](https://arxiv.org/abs/2502.20548)  
+**Code**: [https://github.com/jinpz/q_sharp](https://github.com/jinpz/q_sharp)  
 **Area**: LLM/NLP
 **Keywords**: LLM post-training, distributional reinforcement learning, KL regularization, value function guidance, mathematical reasoning
 

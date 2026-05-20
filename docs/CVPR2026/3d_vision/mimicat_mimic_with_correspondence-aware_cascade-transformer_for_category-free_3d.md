@@ -18,8 +18,8 @@ content_hash: 60e03778b7ba01e0
 # MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.18370](https://arxiv.org/abs/2511.18370)
-**Code**: [https://mimicat3d.github.io/](https://mimicat3d.github.io/) (Project Page)
+**arXiv**: [2511.18370](https://arxiv.org/abs/2511.18370)  
+**Code**: [https://mimicat3d.github.io/](https://mimicat3d.github.io/) (Project Page)  
 **Area**: 3D Vision
 **Keywords**: 3D pose transfer, cross-category transfer, soft correspondence, cascade Transformer, large-scale motion dataset
 

@@ -18,8 +18,8 @@ content_hash: a1d68be16ab0bd86
 # ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval
 
 **Conference**: ACL 2026
-**arXiv**: [2510.08252](https://arxiv.org/abs/2510.08252)
-**Code**: [https://github.com/VectorSpaceLab/agentic-search/tree/main/ReasonEmbed](https://github.com/VectorSpaceLab/agentic-search/tree/main/ReasonEmbed)
+**arXiv**: [2510.08252](https://arxiv.org/abs/2510.08252)  
+**Code**: [https://github.com/VectorSpaceLab/agentic-search/tree/main/ReasonEmbed](https://github.com/VectorSpaceLab/agentic-search/tree/main/ReasonEmbed)  
 **Area**: Information Retrieval / Reasoning-Intensive Retrieval
 **Keywords**: Text Embeddings, Reasoning-Intensive Retrieval, Synthetic Data, Adaptive Training, BRIGHT Benchmark
 

@@ -18,8 +18,8 @@ content_hash: 04396f3b3693cd2c
 # DistillKac: Few-Step Image Generation via Damped Wave Equations
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.21513](https://arxiv.org/abs/2509.21513)
-**Code**: None
+**arXiv**: [2509.21513](https://arxiv.org/abs/2509.21513)  
+**Code**: None  
 **Area**: Diffusion Models / Few-Step Generation / Novel PDE Framework
 **Keywords**: damped wave equation, Kac process, finite-speed flow, endpoint distillation, few-step generation
 

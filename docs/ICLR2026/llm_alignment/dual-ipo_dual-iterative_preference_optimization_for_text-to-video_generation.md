@@ -18,8 +18,8 @@ content_hash: c012f1fb5c8b9c49
 # Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.02088](https://arxiv.org/abs/2502.02088)
-**Code**: [https://github.com/SAIS-FUXI/IPO](https://github.com/SAIS-FUXI/IPO)
+**arXiv**: [2502.02088](https://arxiv.org/abs/2502.02088)  
+**Code**: [https://github.com/SAIS-FUXI/IPO](https://github.com/SAIS-FUXI/IPO)  
 **Area**: Diffusion Models / Video Generation
 **Keywords**: Preference Optimization, Video Generation, Reward Model, DPO, Iterative Training
 

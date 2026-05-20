@@ -17,8 +17,8 @@ content_hash: 1a21622b801a123c
 # Reinforcement Learning Teachers of Test Time Scaling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.08388](https://arxiv.org/abs/2506.08388)
-**Code**: [GitHub](https://github.com/SakanaAI/RLT)
+**arXiv**: [2506.08388](https://arxiv.org/abs/2506.08388)  
+**Code**: [GitHub](https://github.com/SakanaAI/RLT)  
 **Area**: Reinforcement Learning
 **Keywords**: Reasoning Language Models, Knowledge Distillation, Reinforcement Learning, Test-Time Inference, Teacher-Student Framework
 

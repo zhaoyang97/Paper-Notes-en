@@ -18,8 +18,8 @@ content_hash: 3fe703f7eb9d4015
 # Chain-of-Context Learning: Dynamic Constraint Understanding for Multi-Task VRPs
 
 **Conference**: ICLR2026
-**arXiv**: [2603.01667](https://arxiv.org/abs/2603.01667)
-**Code**: To be confirmed
+**arXiv**: [2603.01667](https://arxiv.org/abs/2603.01667)  
+**Code**: To be confirmed  
 **Area**: Reinforcement Learning
 **Keywords**: vehicle routing problem, multi-task learning, reinforcement-learning, constraint-aware decoding, neural combinatorial optimization
 

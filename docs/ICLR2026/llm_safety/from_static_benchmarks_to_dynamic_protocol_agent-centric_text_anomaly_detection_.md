@@ -18,8 +18,8 @@ content_hash: b2f87e9351e03bee
 # From Static Benchmarks to Dynamic Protocol: Agent-Centric Text Anomaly Detection for Evaluating LLM Reasoning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.23729](https://arxiv.org/abs/2602.23729)
-**Code**: To be released
+**arXiv**: [2602.23729](https://arxiv.org/abs/2602.23729)  
+**Code**: To be released  
 **Area**: AI Safety / Evaluation Methodology
 **Keywords**: dynamic benchmark, text anomaly detection, agent-centric evaluation, LLM reasoning, teacher-student
 
@@ -54,15 +54,15 @@ The protocol comprises three phases:
 ### Key Designs
 
 1. **Teacher-Student Competition Mechanism**:
-   - The Teacher is implicitly incentivized to analyze the Student's success and failure patterns.
-   - Generated hard items target the Student's specific weaknesses rather than increasing difficulty randomly.
-   - The competitive loop continuously drives deeper benchmark refinement.
+    - The Teacher is implicitly incentivized to analyze the Student's success and failure patterns.
+    - Generated hard items target the Student's specific weaknesses rather than increasing difficulty randomly.
+    - The competitive loop continuously drives deeper benchmark refinement.
 
 2. **Orchestrator Quality Gating**:
-   - Validation dimensions: format correctness, clarity, logical consistency, task-type alignment, difficulty appropriateness, and fairness.
-   - Prevents adversarial or unsolvable items from entering the benchmark.
-   - Autonomously decides whether the Teacher must regenerate — no fixed iteration schedule.
-   - If a harder variant fails validation, the Orchestrator may instruct the Teacher to refine at the same difficulty level, preserving task structure.
+    - Validation dimensions: format correctness, clarity, logical consistency, task-type alignment, difficulty appropriateness, and fairness.
+    - Prevents adversarial or unsolvable items from entering the benchmark.
+    - Autonomously decides whether the Teacher must regenerate — no fixed iteration schedule.
+    - If a harder variant fails validation, the Orchestrator may instruct the Teacher to refine at the same difficulty level, preserving task structure.
 
 3. **Failure-Driven Sample Collection**: Items are finalized into the benchmark only when the Student answers incorrectly, ensuring the benchmark always operates at the boundary of model capability.
 

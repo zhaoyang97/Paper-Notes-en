@@ -19,8 +19,8 @@ content_hash: e81b696dd173b4f2
 # CLIP Is Shortsighted: Paying Attention Beyond the First Sentence
 
 **Conference**: CVPR2026
-**arXiv**: [2602.22419](https://arxiv.org/abs/2602.22419)
-**Code**: [TRAILab/DeBias-CLIP](https://github.com/TRAILab/DeBias-CLIP)
+**arXiv**: [2602.22419](https://arxiv.org/abs/2602.22419)  
+**Code**: [TRAILab/DeBias-CLIP](https://github.com/TRAILab/DeBias-CLIP)  
 **Area**: Semantic Segmentation / Vision-Language Alignment
 **Keywords**: CLIP, long-text retrieval, text-image alignment, contrastive learning, positional bias, data augmentation
 

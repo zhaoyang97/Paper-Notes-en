@@ -18,8 +18,8 @@ content_hash: 310d989aa73d219f
 # Boosting Medical Visual Understanding From Multi-Granular Language Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.15943](https://arxiv.org/abs/2511.15943)
-**Code**: [https://github.com/HUANGLIZI/MGLL](https://github.com/HUANGLIZI/MGLL)
+**arXiv**: [2511.15943](https://arxiv.org/abs/2511.15943)  
+**Code**: [https://github.com/HUANGLIZI/MGLL](https://github.com/HUANGLIZI/MGLL)  
 **Area**: Medical Imaging / Multimodal VLM
 **Keywords**: Medical image pre-training, multi-label contrastive learning, multi-granular alignment, CLIP improvement, vision-language pre-training
 

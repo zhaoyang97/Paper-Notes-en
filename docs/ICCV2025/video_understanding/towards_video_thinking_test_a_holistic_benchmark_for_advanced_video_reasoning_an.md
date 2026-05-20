@@ -18,8 +18,8 @@ content_hash: e74a6f50d9b290d0
 # Towards Video Thinking Test: A Holistic Benchmark for Advanced Video Reasoning and Understanding
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.15028](https://arxiv.org/abs/2507.15028)
-**Code**: [https://github.com/zhangyuanhan-ai/video-tt](https://github.com/zhangyuanhan-ai/video-tt)
+**arXiv**: [2507.15028](https://arxiv.org/abs/2507.15028)  
+**Code**: [https://github.com/zhangyuanhan-ai/video-tt](https://github.com/zhangyuanhan-ai/video-tt)  
 **Area**: Video Understanding
 **Keywords**: Video Understanding Benchmark, Video LLM, Adversarial Robustness, Visual Complexity, Narrative Complexity
 

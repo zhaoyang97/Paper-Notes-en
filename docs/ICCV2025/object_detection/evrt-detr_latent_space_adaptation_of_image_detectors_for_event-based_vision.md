@@ -17,8 +17,8 @@ content_hash: 824020b29c3c1f0f
 # EvRT-DETR: Latent Space Adaptation of Image Detectors for Event-based Vision
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.02890](https://arxiv.org/abs/2412.02890)
-**Code**: [https://github.com/realtime-intelligence/evrt-detr](https://github.com/realtime-intelligence/evrt-detr)
+**arXiv**: [2412.02890](https://arxiv.org/abs/2412.02890)  
+**Code**: [https://github.com/realtime-intelligence/evrt-detr](https://github.com/realtime-intelligence/evrt-detr)  
 **Area**: Object Detection / Event-based Vision
 **Keywords**: event camera, object detection, RT-DETR, latent space adaptation, temporal modeling
 

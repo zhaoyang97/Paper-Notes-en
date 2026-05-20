@@ -18,8 +18,8 @@ content_hash: c5cd7f27fe550266
 # WildSAT: Learning Satellite Image Representations from Wildlife Observations
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.14428](https://arxiv.org/abs/2412.14428)
-**Code**: [https://github.com/cvl-umass/wildsat](https://github.com/cvl-umass/wildsat)
+**arXiv**: [2412.14428](https://arxiv.org/abs/2412.14428)  
+**Code**: [https://github.com/cvl-umass/wildsat](https://github.com/cvl-umass/wildsat)  
 **Area**: Remote Sensing / Representation Learning
 **Keywords**: remote sensing representation learning, contrastive learning, wildlife observations, cross-modal, satellite imagery
 

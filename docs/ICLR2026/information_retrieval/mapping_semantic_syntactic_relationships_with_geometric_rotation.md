@@ -18,8 +18,8 @@ content_hash: e7be55be076c7a03
 # Mapping Semantic & Syntactic Relationships with Geometric Rotation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.09790](https://arxiv.org/abs/2510.09790)
-**Code**: [https://github.com/fuelix/RISE-steering](https://github.com/fuelix/RISE-steering)
+**arXiv**: [2510.09790](https://arxiv.org/abs/2510.09790)  
+**Code**: [https://github.com/fuelix/RISE-steering](https://github.com/fuelix/RISE-steering)  
 **Area**: Representation Learning / Embedding Interpretability
 **Keywords**: Embedding Geometry, Hyperspherical Rotation, Cross-lingual Generalization, Semantic Transformation, Linear Representation Hypothesis
 

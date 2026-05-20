@@ -19,8 +19,8 @@ content_hash: e07b9f732b77ae89
 # Beyond Accuracy: Dissecting Mathematical Reasoning for LLMs Under Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.04723](https://arxiv.org/abs/2506.04723)
-**Code**: [https://sparkle-reasoning.github.io/](https://sparkle-reasoning.github.io/)
+**arXiv**: [2506.04723](https://arxiv.org/abs/2506.04723)  
+**Code**: [https://sparkle-reasoning.github.io/](https://sparkle-reasoning.github.io/)  
 **Area**: Interpretability
 **Keywords**: SPARKLE, GRPO, plan following, knowledge integration, subproblem decomposition, multi-stage RL
 

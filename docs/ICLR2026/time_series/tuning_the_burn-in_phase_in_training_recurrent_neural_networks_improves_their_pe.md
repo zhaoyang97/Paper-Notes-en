@@ -18,7 +18,7 @@ content_hash: 0d29d1f4a4f84d9b
 # Tuning the Burn-in Phase in RNN Training Improves Performance
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.10911](https://arxiv.org/abs/2602.10911)
+**arXiv**: [2602.10911](https://arxiv.org/abs/2602.10911)  
 **Area**: Time Series
 **Keywords**: Recurrent Neural Networks, Truncated Backpropagation Through Time, Burn-in Phase, Time Series Forecasting, System Identification
 

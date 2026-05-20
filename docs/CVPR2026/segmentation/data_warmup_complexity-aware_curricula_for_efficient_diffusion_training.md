@@ -18,8 +18,8 @@ content_hash: 6ce033ac0849a4ff
 # Data Warmup: Complexity-Aware Curricula for Efficient Diffusion Training
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07397](https://arxiv.org/abs/2604.07397)
-**Code**: Available
+**arXiv**: [2604.07397](https://arxiv.org/abs/2604.07397)  
+**Code**: Available  
 **Area**: Segmentation / Diffusion Model Training Acceleration
 **Keywords**: Curriculum Learning, Diffusion Models, Data Complexity, Foreground Saliency, Training Efficiency
 

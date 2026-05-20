@@ -18,8 +18,8 @@ content_hash: a0cf7b8ee0952c8f
 # Note 8: PolyMath — Evaluating Mathematical Reasoning in a Multilingual Context
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.07364](https://arxiv.org/abs/2511.07364)
-**Code**: [GitHub](https://github.com/QwenLM/PolyMath)
+**arXiv**: [2511.07364](https://arxiv.org/abs/2511.07364)  
+**Code**: [GitHub](https://github.com/QwenLM/PolyMath)  
 **Area**: Multilingual LLM, Mathematical Reasoning, Benchmark Evaluation
 **Keywords**: Multilingual benchmark, difficulty stratification, reasoning transfer, language consistency, thinking length
 

@@ -18,8 +18,8 @@ content_hash: 405d037c788da9c8
 # DiffusionBlocks: Block-wise Neural Network Training via Diffusion Interpretation
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.14202](https://arxiv.org/abs/2506.14202)
-**Code**: [SakanaAI/DiffusionBlocks](https://github.com/SakanaAI/DiffusionBlocks)
+**arXiv**: [2506.14202](https://arxiv.org/abs/2506.14202)  
+**Code**: [SakanaAI/DiffusionBlocks](https://github.com/SakanaAI/DiffusionBlocks)  
 **Area**: Image Restoration
 **Keywords**: block-wise training, diffusion models, score matching, memory efficiency, residual networks
 

@@ -1,6 +1,6 @@
 ---
 title: "AI Conference Paper Notes | 9000+ In-Depth Summaries"
-description: "9000+ AI / LLM / NLP / CV top-venue paper notes — 5-minute reads of core ideas. Covers ACL, CVPR, ICLR, AAAI, NeurIPS, ICCV, ICML, ECCV across 6 venues and 45 research areas. Each note includes a TL;DR, motivation, method, experiments, highlights, and limitations."
+description: "9000+ AI / LLM / NLP / CV top-venue paper notes — 5-minute reads of core ideas. Covers ACL, CVPR, ICLR, AAAI, NeurIPS, ICCV, ICML, ECCV across 7 venues and 47 research areas. Each note includes a TL;DR, motivation, method, experiments, highlights, and limitations."
 tags:
   - "AI paper notes"
   - "LLM"
@@ -25,9 +25,9 @@ hide:
 <p class="hero-subtitle">AI / LLM / NLP / CV top-venue paper notes — 5-minute reads of core ideas.<br>Covers ACL · CVPR · ICLR · AAAI · NeurIPS · ICCV · ICML · ECCV<br>Continuously updated</p>
 
 <div class="hero-stats">
-<div class="stat"><span class="stat-number">9068</span><span class="stat-label">Notes</span></div>
-<div class="stat"><span class="stat-number">6</span><span class="stat-label">Conferences</span></div>
-<div class="stat"><span class="stat-number">45</span><span class="stat-label">Areas</span></div>
+<div class="stat"><span class="stat-number">9437</span><span class="stat-label">Notes</span></div>
+<div class="stat"><span class="stat-number">7</span><span class="stat-label">Conferences</span></div>
+<div class="stat"><span class="stat-number">47</span><span class="stat-label">Areas</span></div>
 </div>
 
 </div>
@@ -38,88 +38,173 @@ hide:
 
 <div class="conf-card" markdown>
 
-### 💬 [ACL2026](ACL2026/index.md)
+### 🧪 [ICML2026](ICML2026/index.md)
 
-<div class="conf-count">681 notes · 39 areas</div>
+<div class="conf-count">410 notes · 40 areas</div>
 
 <div class="area-groups">
 <div class="area-group">
 <div class="area-group-label">LLM</div>
 <div class="area-tags">
-<a class="area-tag" href="ACL2026/llm_evaluation/">LLM Evaluation 45</a>
-<a class="area-tag" href="ACL2026/llm_reasoning/">LLM Reasoning 45</a>
-<a class="area-tag" href="ACL2026/llm_agent/">LLM Agent 44</a>
-<a class="area-tag" href="ACL2026/llm_nlp/">LLM / NLP 38</a>
-<a class="area-tag" href="ACL2026/llm_safety/">LLM Safety 24</a>
-<a class="area-tag" href="ACL2026/llm_alignment/">Alignment & RLHF 13</a>
-<a class="area-tag" href="ACL2026/llm_efficiency/">LLM Efficiency 8</a>
-<a class="area-tag" href="ACL2026/llm_pretraining/">Pretraining 5</a>
+<a class="area-tag" href="ICML2026/llm_reasoning/">LLM Reasoning 20</a>
+<a class="area-tag" href="ICML2026/llm_safety/">LLM Safety 18</a>
+<a class="area-tag" href="ICML2026/llm_pretraining/">Pretraining 17</a>
+<a class="area-tag" href="ICML2026/llm_agent/">LLM Agent 16</a>
+<a class="area-tag" href="ICML2026/llm_efficiency/">LLM Efficiency 11</a>
+<a class="area-tag" href="ICML2026/llm_evaluation/">LLM Evaluation 8</a>
+<a class="area-tag" href="ICML2026/llm_alignment/">Alignment & RLHF 7</a>
+<a class="area-tag" href="ICML2026/llm_nlp/">LLM / NLP 4</a>
+<a class="area-tag" href="ICML2026/knowledge_editing/">Knowledge Editing 2</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">Generation & Multimodal</div>
+<div class="area-tags">
+<a class="area-tag" href="ICML2026/multimodal_vlm/">Multimodal VLM 30</a>
+<a class="area-tag" href="ICML2026/image_generation/">Image Generation 22</a>
+<a class="area-tag" href="ICML2026/audio_speech/">Audio & Speech 7</a>
+<a class="area-tag" href="ICML2026/video_generation/">Video Generation 6</a>
+<a class="area-tag" href="ICML2026/aigc_detection/">AIGC Detection 4</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">NLP Applications</div>
+<div class="area-tags">
+<a class="area-tag" href="ICML2026/code_intelligence/">Code Intelligence 2</a>
+<a class="area-tag" href="ICML2026/information_retrieval/">Information Retrieval & RAG 2</a>
+<a class="area-tag" href="ICML2026/multilingual_mt/">Multilingual & Translation 2</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">Visual Perception</div>
+<div class="area-tags">
+<a class="area-tag" href="ICML2026/3d_vision/">3D Vision 8</a>
+<a class="area-tag" href="ICML2026/video_understanding/">Video Understanding 8</a>
+<a class="area-tag" href="ICML2026/segmentation/">Segmentation 4</a>
+<a class="area-tag" href="ICML2026/image_restoration/">Image Restoration 2</a>
+<a class="area-tag" href="ICML2026/human_understanding/">Human Understanding 1</a>
+<a class="area-tag" href="ICML2026/object_detection/">Object Detection 1</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">Decision & Embodied</div>
+<div class="area-tags">
+<a class="area-tag" href="ICML2026/reinforcement_learning/">Reinforcement Learning 20</a>
+<a class="area-tag" href="ICML2026/robotics/">Robotics & Embodied AI 12</a>
+<a class="area-tag" href="ICML2026/autonomous_driving/">Autonomous Driving 1</a>
+<a class="area-tag" href="ICML2026/recommender/">Recommender Systems 1</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">Foundations & Theory</div>
+<div class="area-tags">
+<a class="area-tag" href="ICML2026/interpretability/">Interpretability 21</a>
+<a class="area-tag" href="ICML2026/model_compression/">Model Compression 21</a>
+<a class="area-tag" href="ICML2026/optimization/">Optimization & Theory 15</a>
+<a class="area-tag" href="ICML2026/time_series/">Time Series 10</a>
+<a class="area-tag" href="ICML2026/graph_learning/">Graph Learning 9</a>
+<a class="area-tag" href="ICML2026/self_supervised/">Self-Supervised Learning 9</a>
+<a class="area-tag" href="ICML2026/causal_inference/">Causal Inference 3</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">Science & Cross-Disciplinary</div>
+<div class="area-tags">
+<a class="area-tag" href="ICML2026/scientific_computing/">Scientific Computing 19</a>
+<a class="area-tag" href="ICML2026/medical_imaging/">Medical Imaging 17</a>
+<a class="area-tag" href="ICML2026/ai_safety/">AI Safety 16</a>
+<a class="area-tag" href="ICML2026/physics/">Physics 1</a>
+</div>
+</div>
+<div class="area-group">
+<div class="area-group-label">Others</div>
+<div class="area-tags">
+<a class="area-tag" href="ICML2026/others/">Others 27</a>
+<a class="area-tag" href="ICML2026/multi_agent/">multi_agent 6</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="conf-card" markdown>
+
+### 💬 [ACL2026](ACL2026/index.md)
+
+<div class="conf-count">680 notes · 33 areas</div>
+
+<div class="area-groups">
+<div class="area-group">
+<div class="area-group-label">LLM</div>
+<div class="area-tags">
+<a class="area-tag" href="ACL2026/llm_safety/">LLM Safety 66</a>
+<a class="area-tag" href="ACL2026/llm_agent/">LLM Agent 45</a>
+<a class="area-tag" href="ACL2026/llm_reasoning/">LLM Reasoning 44</a>
+<a class="area-tag" href="ACL2026/llm_evaluation/">LLM Evaluation 42</a>
+<a class="area-tag" href="ACL2026/llm_nlp/">LLM / NLP 32</a>
+<a class="area-tag" href="ACL2026/llm_efficiency/">LLM Efficiency 13</a>
+<a class="area-tag" href="ACL2026/llm_alignment/">Alignment & RLHF 8</a>
+<a class="area-tag" href="ACL2026/llm_pretraining/">Pretraining 7</a>
 <a class="area-tag" href="ACL2026/knowledge_editing/">Knowledge Editing 4</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Generation & Multimodal</div>
 <div class="area-tags">
-<a class="area-tag" href="ACL2026/multimodal_vlm/">Multimodal VLM 52</a>
-<a class="area-tag" href="ACL2026/audio_speech/">Audio & Speech 30</a>
-<a class="area-tag" href="ACL2026/image_generation/">Image Generation 11</a>
-<a class="area-tag" href="ACL2026/aigc_detection/">AIGC Detection 9</a>
+<a class="area-tag" href="ACL2026/multimodal_vlm/">Multimodal VLM 46</a>
+<a class="area-tag" href="ACL2026/audio_speech/">Audio & Speech 35</a>
+<a class="area-tag" href="ACL2026/aigc_detection/">AIGC Detection 8</a>
 <a class="area-tag" href="ACL2026/video_generation/">Video Generation 3</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">NLP Applications</div>
 <div class="area-tags">
-<a class="area-tag" href="ACL2026/information_retrieval/">Information Retrieval & RAG 44</a>
-<a class="area-tag" href="ACL2026/multilingual_mt/">Multilingual & Translation 24</a>
-<a class="area-tag" href="ACL2026/code_intelligence/">Code Intelligence 20</a>
-<a class="area-tag" href="ACL2026/dialogue/">Dialogue Systems 10</a>
+<a class="area-tag" href="ACL2026/information_retrieval/">Information Retrieval & RAG 37</a>
+<a class="area-tag" href="ACL2026/multilingual_mt/">Multilingual & Translation 32</a>
+<a class="area-tag" href="ACL2026/code_intelligence/">Code Intelligence 31</a>
+<a class="area-tag" href="ACL2026/nlp_understanding/">NLP Understanding 14</a>
+<a class="area-tag" href="ACL2026/dialogue/">Dialogue Systems 12</a>
+<a class="area-tag" href="ACL2026/nlp_generation/">Text Generation 10</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Visual Perception</div>
 <div class="area-tags">
-<a class="area-tag" href="ACL2026/video_understanding/">Video Understanding 11</a>
-<a class="area-tag" href="ACL2026/image_restoration/">Image Restoration 6</a>
-<a class="area-tag" href="ACL2026/object_detection/">Object Detection 5</a>
-<a class="area-tag" href="ACL2026/segmentation/">Segmentation 4</a>
-<a class="area-tag" href="ACL2026/human_understanding/">Human Understanding 1</a>
-<a class="area-tag" href="ACL2026/remote_sensing/">Remote Sensing 1</a>
+<a class="area-tag" href="ACL2026/video_understanding/">Video Understanding 8</a>
+<a class="area-tag" href="ACL2026/segmentation/">Segmentation 1</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Decision & Embodied</div>
 <div class="area-tags">
-<a class="area-tag" href="ACL2026/reinforcement_learning/">Reinforcement Learning 38</a>
-<a class="area-tag" href="ACL2026/recommender/">Recommender Systems 13</a>
-<a class="area-tag" href="ACL2026/robotics/">Robotics & Embodied AI 8</a>
+<a class="area-tag" href="ACL2026/reinforcement_learning/">Reinforcement Learning 22</a>
+<a class="area-tag" href="ACL2026/recommender/">Recommender Systems 12</a>
+<a class="area-tag" href="ACL2026/robotics/">Robotics & Embodied AI 1</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Foundations & Theory</div>
 <div class="area-tags">
-<a class="area-tag" href="ACL2026/model_compression/">Model Compression 45</a>
-<a class="area-tag" href="ACL2026/interpretability/">Interpretability 34</a>
-<a class="area-tag" href="ACL2026/causal_inference/">Causal Inference 8</a>
-<a class="area-tag" href="ACL2026/graph_learning/">Graph Learning 8</a>
-<a class="area-tag" href="ACL2026/time_series/">Time Series 5</a>
-<a class="area-tag" href="ACL2026/self_supervised/">Self-Supervised Learning 2</a>
-<a class="area-tag" href="ACL2026/optimization/">Optimization & Theory 1</a>
+<a class="area-tag" href="ACL2026/model_compression/">Model Compression 31</a>
+<a class="area-tag" href="ACL2026/interpretability/">Interpretability 27</a>
+<a class="area-tag" href="ACL2026/graph_learning/">Graph Learning 10</a>
+<a class="area-tag" href="ACL2026/causal_inference/">Causal Inference 5</a>
+<a class="area-tag" href="ACL2026/time_series/">Time Series 4</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Science & Cross-Disciplinary</div>
 <div class="area-tags">
-<a class="area-tag" href="ACL2026/medical_imaging/">Medical Imaging 42</a>
-<a class="area-tag" href="ACL2026/social_computing/">Social Computing 9</a>
-<a class="area-tag" href="ACL2026/ai_safety/">AI Safety 3</a>
-<a class="area-tag" href="ACL2026/signal_comm/">Signal & Communications 3</a>
+<a class="area-tag" href="ACL2026/medical_imaging/">Medical Imaging 37</a>
+<a class="area-tag" href="ACL2026/social_computing/">Social Computing 19</a>
+<a class="area-tag" href="ACL2026/ai_safety/">AI Safety 2</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Others</div>
 <div class="area-tags">
-<a class="area-tag" href="ACL2026/others/">Others 5</a>
+<a class="area-tag" href="ACL2026/multi_agent/">multi_agent 12</a>
 </div>
 </div>
 </div>
@@ -130,14 +215,14 @@ hide:
 
 ### 📷 [CVPR2026](CVPR2026/index.md)
 
-<div class="conf-count">1648 notes · 42 areas</div>
+<div class="conf-count">1643 notes · 42 areas</div>
 
 <div class="area-groups">
 <div class="area-group">
 <div class="area-group-label">LLM</div>
 <div class="area-tags">
-<a class="area-tag" href="CVPR2026/llm_evaluation/">LLM Evaluation 26</a>
-<a class="area-tag" href="CVPR2026/llm_safety/">LLM Safety 16</a>
+<a class="area-tag" href="CVPR2026/llm_safety/">LLM Safety 29</a>
+<a class="area-tag" href="CVPR2026/llm_evaluation/">LLM Evaluation 25</a>
 <a class="area-tag" href="CVPR2026/llm_agent/">LLM Agent 14</a>
 <a class="area-tag" href="CVPR2026/llm_reasoning/">LLM Reasoning 12</a>
 <a class="area-tag" href="CVPR2026/llm_alignment/">Alignment & RLHF 10</a>
@@ -150,8 +235,8 @@ hide:
 <div class="area-group">
 <div class="area-group-label">Generation & Multimodal</div>
 <div class="area-tags">
-<a class="area-tag" href="CVPR2026/multimodal_vlm/">Multimodal VLM 241</a>
-<a class="area-tag" href="CVPR2026/image_generation/">Image Generation 208</a>
+<a class="area-tag" href="CVPR2026/multimodal_vlm/">Multimodal VLM 230</a>
+<a class="area-tag" href="CVPR2026/image_generation/">Image Generation 209</a>
 <a class="area-tag" href="CVPR2026/video_generation/">Video Generation 55</a>
 <a class="area-tag" href="CVPR2026/audio_speech/">Audio & Speech 15</a>
 <a class="area-tag" href="CVPR2026/aigc_detection/">AIGC Detection 1</a>
@@ -170,11 +255,11 @@ hide:
 <div class="area-group-label">Visual Perception</div>
 <div class="area-tags">
 <a class="area-tag" href="CVPR2026/3d_vision/">3D Vision 230</a>
-<a class="area-tag" href="CVPR2026/segmentation/">Segmentation 85</a>
+<a class="area-tag" href="CVPR2026/segmentation/">Segmentation 83</a>
 <a class="area-tag" href="CVPR2026/video_understanding/">Video Understanding 77</a>
-<a class="area-tag" href="CVPR2026/human_understanding/">Human Understanding 56</a>
+<a class="area-tag" href="CVPR2026/human_understanding/">Human Understanding 53</a>
 <a class="area-tag" href="CVPR2026/image_restoration/">Image Restoration 39</a>
-<a class="area-tag" href="CVPR2026/object_detection/">Object Detection 39</a>
+<a class="area-tag" href="CVPR2026/object_detection/">Object Detection 36</a>
 <a class="area-tag" href="CVPR2026/remote_sensing/">Remote Sensing 15</a>
 </div>
 </div>
@@ -182,15 +267,15 @@ hide:
 <div class="area-group-label">Decision & Embodied</div>
 <div class="area-tags">
 <a class="area-tag" href="CVPR2026/autonomous_driving/">Autonomous Driving 88</a>
-<a class="area-tag" href="CVPR2026/robotics/">Robotics & Embodied AI 38</a>
+<a class="area-tag" href="CVPR2026/robotics/">Robotics & Embodied AI 37</a>
 <a class="area-tag" href="CVPR2026/reinforcement_learning/">Reinforcement Learning 19</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Foundations & Theory</div>
 <div class="area-tags">
-<a class="area-tag" href="CVPR2026/model_compression/">Model Compression 51</a>
-<a class="area-tag" href="CVPR2026/self_supervised/">Self-Supervised Learning 31</a>
+<a class="area-tag" href="CVPR2026/model_compression/">Model Compression 50</a>
+<a class="area-tag" href="CVPR2026/self_supervised/">Self-Supervised Learning 30</a>
 <a class="area-tag" href="CVPR2026/interpretability/">Interpretability 28</a>
 <a class="area-tag" href="CVPR2026/graph_learning/">Graph Learning 8</a>
 <a class="area-tag" href="CVPR2026/optimization/">Optimization & Theory 8</a>
@@ -201,7 +286,7 @@ hide:
 <div class="area-group">
 <div class="area-group-label">Science & Cross-Disciplinary</div>
 <div class="area-tags">
-<a class="area-tag" href="CVPR2026/medical_imaging/">Medical Imaging 114</a>
+<a class="area-tag" href="CVPR2026/medical_imaging/">Medical Imaging 118</a>
 <a class="area-tag" href="CVPR2026/ai_safety/">AI Safety 22</a>
 <a class="area-tag" href="CVPR2026/signal_comm/">Signal & Communications 5</a>
 <a class="area-tag" href="CVPR2026/scientific_computing/">Scientific Computing 4</a>
@@ -223,18 +308,18 @@ hide:
 
 ### 🔬 [ICLR2026](ICLR2026/index.md)
 
-<div class="conf-count">1534 notes · 44 areas</div>
+<div class="conf-count">1527 notes · 44 areas</div>
 
 <div class="area-groups">
 <div class="area-group">
 <div class="area-group-label">LLM</div>
 <div class="area-tags">
-<a class="area-tag" href="ICLR2026/llm_reasoning/">LLM Reasoning 65</a>
-<a class="area-tag" href="ICLR2026/llm_evaluation/">LLM Evaluation 56</a>
-<a class="area-tag" href="ICLR2026/llm_alignment/">Alignment & RLHF 42</a>
-<a class="area-tag" href="ICLR2026/llm_agent/">LLM Agent 40</a>
-<a class="area-tag" href="ICLR2026/llm_nlp/">LLM / NLP 39</a>
-<a class="area-tag" href="ICLR2026/llm_safety/">LLM Safety 36</a>
+<a class="area-tag" href="ICLR2026/llm_reasoning/">LLM Reasoning 63</a>
+<a class="area-tag" href="ICLR2026/llm_safety/">LLM Safety 54</a>
+<a class="area-tag" href="ICLR2026/llm_evaluation/">LLM Evaluation 53</a>
+<a class="area-tag" href="ICLR2026/llm_alignment/">Alignment & RLHF 41</a>
+<a class="area-tag" href="ICLR2026/llm_agent/">LLM Agent 39</a>
+<a class="area-tag" href="ICLR2026/llm_nlp/">LLM / NLP 35</a>
 <a class="area-tag" href="ICLR2026/llm_pretraining/">Pretraining 26</a>
 <a class="area-tag" href="ICLR2026/llm_efficiency/">LLM Efficiency 18</a>
 <a class="area-tag" href="ICLR2026/knowledge_editing/">Knowledge Editing 8</a>
@@ -243,10 +328,10 @@ hide:
 <div class="area-group">
 <div class="area-group-label">Generation & Multimodal</div>
 <div class="area-tags">
-<a class="area-tag" href="ICLR2026/image_generation/">Image Generation 154</a>
-<a class="area-tag" href="ICLR2026/multimodal_vlm/">Multimodal VLM 91</a>
+<a class="area-tag" href="ICLR2026/image_generation/">Image Generation 149</a>
+<a class="area-tag" href="ICLR2026/multimodal_vlm/">Multimodal VLM 88</a>
 <a class="area-tag" href="ICLR2026/audio_speech/">Audio & Speech 32</a>
-<a class="area-tag" href="ICLR2026/video_generation/">Video Generation 19</a>
+<a class="area-tag" href="ICLR2026/video_generation/">Video Generation 18</a>
 <a class="area-tag" href="ICLR2026/aigc_detection/">AIGC Detection 6</a>
 </div>
 </div>
@@ -254,27 +339,28 @@ hide:
 <div class="area-group-label">NLP Applications</div>
 <div class="area-tags">
 <a class="area-tag" href="ICLR2026/information_retrieval/">Information Retrieval & RAG 33</a>
-<a class="area-tag" href="ICLR2026/code_intelligence/">Code Intelligence 21</a>
+<a class="area-tag" href="ICLR2026/code_intelligence/">Code Intelligence 20</a>
 <a class="area-tag" href="ICLR2026/dialogue/">Dialogue Systems 5</a>
 <a class="area-tag" href="ICLR2026/multilingual_mt/">Multilingual & Translation 5</a>
+<a class="area-tag" href="ICLR2026/nlp_generation/">Text Generation 3</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Visual Perception</div>
 <div class="area-tags">
 <a class="area-tag" href="ICLR2026/3d_vision/">3D Vision 63</a>
-<a class="area-tag" href="ICLR2026/video_understanding/">Video Understanding 24</a>
-<a class="area-tag" href="ICLR2026/image_restoration/">Image Restoration 15</a>
+<a class="area-tag" href="ICLR2026/video_understanding/">Video Understanding 22</a>
+<a class="area-tag" href="ICLR2026/image_restoration/">Image Restoration 14</a>
 <a class="area-tag" href="ICLR2026/segmentation/">Segmentation 11</a>
 <a class="area-tag" href="ICLR2026/object_detection/">Object Detection 9</a>
-<a class="area-tag" href="ICLR2026/human_understanding/">Human Understanding 8</a>
+<a class="area-tag" href="ICLR2026/human_understanding/">Human Understanding 7</a>
 <a class="area-tag" href="ICLR2026/remote_sensing/">Remote Sensing 6</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Decision & Embodied</div>
 <div class="area-tags">
-<a class="area-tag" href="ICLR2026/reinforcement_learning/">Reinforcement Learning 139</a>
+<a class="area-tag" href="ICLR2026/reinforcement_learning/">Reinforcement Learning 138</a>
 <a class="area-tag" href="ICLR2026/robotics/">Robotics & Embodied AI 47</a>
 <a class="area-tag" href="ICLR2026/autonomous_driving/">Autonomous Driving 18</a>
 <a class="area-tag" href="ICLR2026/recommender/">Recommender Systems 10</a>
@@ -283,19 +369,19 @@ hide:
 <div class="area-group">
 <div class="area-group-label">Foundations & Theory</div>
 <div class="area-tags">
-<a class="area-tag" href="ICLR2026/model_compression/">Model Compression 91</a>
-<a class="area-tag" href="ICLR2026/interpretability/">Interpretability 56</a>
-<a class="area-tag" href="ICLR2026/optimization/">Optimization & Theory 45</a>
-<a class="area-tag" href="ICLR2026/time_series/">Time Series 37</a>
+<a class="area-tag" href="ICLR2026/model_compression/">Model Compression 90</a>
+<a class="area-tag" href="ICLR2026/interpretability/">Interpretability 55</a>
+<a class="area-tag" href="ICLR2026/optimization/">Optimization & Theory 44</a>
+<a class="area-tag" href="ICLR2026/time_series/">Time Series 36</a>
 <a class="area-tag" href="ICLR2026/graph_learning/">Graph Learning 21</a>
-<a class="area-tag" href="ICLR2026/causal_inference/">Causal Inference 18</a>
-<a class="area-tag" href="ICLR2026/self_supervised/">Self-Supervised Learning 15</a>
+<a class="area-tag" href="ICLR2026/causal_inference/">Causal Inference 17</a>
+<a class="area-tag" href="ICLR2026/self_supervised/">Self-Supervised Learning 14</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Science & Cross-Disciplinary</div>
 <div class="area-tags">
-<a class="area-tag" href="ICLR2026/medical_imaging/">Medical Imaging 72</a>
+<a class="area-tag" href="ICLR2026/medical_imaging/">Medical Imaging 79</a>
 <a class="area-tag" href="ICLR2026/ai_safety/">AI Safety 26</a>
 <a class="area-tag" href="ICLR2026/scientific_computing/">Scientific Computing 10</a>
 <a class="area-tag" href="ICLR2026/social_computing/">Social Computing 10</a>
@@ -306,8 +392,7 @@ hide:
 <div class="area-group">
 <div class="area-group-label">Others</div>
 <div class="area-tags">
-<a class="area-tag" href="ICLR2026/others/">Others 76</a>
-<a class="area-tag" href="ICLR2026/moe/">Mixture of Experts 1</a>
+<a class="area-tag" href="ICLR2026/others/">Others 74</a>
 </div>
 </div>
 </div>
@@ -318,27 +403,27 @@ hide:
 
 ### 🤖 [AAAI2026](AAAI2026/index.md)
 
-<div class="conf-count">1384 notes · 44 areas</div>
+<div class="conf-count">1381 notes · 46 areas</div>
 
 <div class="area-groups">
 <div class="area-group">
 <div class="area-group-label">LLM</div>
 <div class="area-tags">
-<a class="area-tag" href="AAAI2026/llm_agent/">LLM Agent 44</a>
+<a class="area-tag" href="AAAI2026/llm_agent/">LLM Agent 43</a>
+<a class="area-tag" href="AAAI2026/llm_safety/">LLM Safety 43</a>
 <a class="area-tag" href="AAAI2026/llm_evaluation/">LLM Evaluation 39</a>
-<a class="area-tag" href="AAAI2026/llm_nlp/">LLM / NLP 38</a>
-<a class="area-tag" href="AAAI2026/llm_reasoning/">LLM Reasoning 30</a>
-<a class="area-tag" href="AAAI2026/llm_safety/">LLM Safety 29</a>
-<a class="area-tag" href="AAAI2026/llm_alignment/">Alignment & RLHF 20</a>
+<a class="area-tag" href="AAAI2026/llm_nlp/">LLM / NLP 32</a>
+<a class="area-tag" href="AAAI2026/llm_reasoning/">LLM Reasoning 29</a>
+<a class="area-tag" href="AAAI2026/llm_alignment/">Alignment & RLHF 19</a>
 <a class="area-tag" href="AAAI2026/llm_efficiency/">LLM Efficiency 9</a>
-<a class="area-tag" href="AAAI2026/llm_pretraining/">Pretraining 6</a>
 <a class="area-tag" href="AAAI2026/knowledge_editing/">Knowledge Editing 5</a>
+<a class="area-tag" href="AAAI2026/llm_pretraining/">Pretraining 5</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Generation & Multimodal</div>
 <div class="area-tags">
-<a class="area-tag" href="AAAI2026/multimodal_vlm/">Multimodal VLM 91</a>
+<a class="area-tag" href="AAAI2026/multimodal_vlm/">Multimodal VLM 88</a>
 <a class="area-tag" href="AAAI2026/image_generation/">Image Generation 78</a>
 <a class="area-tag" href="AAAI2026/audio_speech/">Audio & Speech 31</a>
 <a class="area-tag" href="AAAI2026/video_generation/">Video Generation 11</a>
@@ -352,16 +437,18 @@ hide:
 <a class="area-tag" href="AAAI2026/multilingual_mt/">Multilingual & Translation 11</a>
 <a class="area-tag" href="AAAI2026/code_intelligence/">Code Intelligence 9</a>
 <a class="area-tag" href="AAAI2026/dialogue/">Dialogue Systems 5</a>
+<a class="area-tag" href="AAAI2026/nlp_generation/">Text Generation 2</a>
+<a class="area-tag" href="AAAI2026/nlp_understanding/">NLP Understanding 2</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Visual Perception</div>
 <div class="area-tags">
-<a class="area-tag" href="AAAI2026/3d_vision/">3D Vision 74</a>
+<a class="area-tag" href="AAAI2026/3d_vision/">3D Vision 76</a>
 <a class="area-tag" href="AAAI2026/video_understanding/">Video Understanding 33</a>
 <a class="area-tag" href="AAAI2026/segmentation/">Segmentation 31</a>
-<a class="area-tag" href="AAAI2026/object_detection/">Object Detection 17</a>
-<a class="area-tag" href="AAAI2026/human_understanding/">Human Understanding 16</a>
+<a class="area-tag" href="AAAI2026/human_understanding/">Human Understanding 15</a>
+<a class="area-tag" href="AAAI2026/object_detection/">Object Detection 15</a>
 <a class="area-tag" href="AAAI2026/image_restoration/">Image Restoration 13</a>
 <a class="area-tag" href="AAAI2026/remote_sensing/">Remote Sensing 8</a>
 </div>
@@ -369,28 +456,28 @@ hide:
 <div class="area-group">
 <div class="area-group-label">Decision & Embodied</div>
 <div class="area-tags">
-<a class="area-tag" href="AAAI2026/reinforcement_learning/">Reinforcement Learning 71</a>
-<a class="area-tag" href="AAAI2026/autonomous_driving/">Autonomous Driving 58</a>
-<a class="area-tag" href="AAAI2026/robotics/">Robotics & Embodied AI 38</a>
+<a class="area-tag" href="AAAI2026/reinforcement_learning/">Reinforcement Learning 70</a>
+<a class="area-tag" href="AAAI2026/autonomous_driving/">Autonomous Driving 57</a>
+<a class="area-tag" href="AAAI2026/robotics/">Robotics & Embodied AI 37</a>
 <a class="area-tag" href="AAAI2026/recommender/">Recommender Systems 26</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Foundations & Theory</div>
 <div class="area-tags">
-<a class="area-tag" href="AAAI2026/model_compression/">Model Compression 54</a>
+<a class="area-tag" href="AAAI2026/model_compression/">Model Compression 53</a>
 <a class="area-tag" href="AAAI2026/graph_learning/">Graph Learning 38</a>
 <a class="area-tag" href="AAAI2026/interpretability/">Interpretability 37</a>
 <a class="area-tag" href="AAAI2026/time_series/">Time Series 35</a>
-<a class="area-tag" href="AAAI2026/optimization/">Optimization & Theory 23</a>
-<a class="area-tag" href="AAAI2026/self_supervised/">Self-Supervised Learning 14</a>
+<a class="area-tag" href="AAAI2026/optimization/">Optimization & Theory 22</a>
+<a class="area-tag" href="AAAI2026/self_supervised/">Self-Supervised Learning 13</a>
 <a class="area-tag" href="AAAI2026/causal_inference/">Causal Inference 10</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Science & Cross-Disciplinary</div>
 <div class="area-tags">
-<a class="area-tag" href="AAAI2026/medical_imaging/">Medical Imaging 105</a>
+<a class="area-tag" href="AAAI2026/medical_imaging/">Medical Imaging 106</a>
 <a class="area-tag" href="AAAI2026/ai_safety/">AI Safety 44</a>
 <a class="area-tag" href="AAAI2026/social_computing/">Social Computing 11</a>
 <a class="area-tag" href="AAAI2026/scientific_computing/">Scientific Computing 8</a>
@@ -402,7 +489,7 @@ hide:
 <div class="area-group">
 <div class="area-group-label">Others</div>
 <div class="area-tags">
-<a class="area-tag" href="AAAI2026/others/">Others 126</a>
+<a class="area-tag" href="AAAI2026/others/">Others 124</a>
 </div>
 </div>
 </div>
@@ -413,19 +500,19 @@ hide:
 
 ### 🧠 [NeurIPS2025](NeurIPS2025/index.md)
 
-<div class="conf-count">2515 notes · 45 areas</div>
+<div class="conf-count">2493 notes · 45 areas</div>
 
 <div class="area-groups">
 <div class="area-group">
 <div class="area-group-label">LLM</div>
 <div class="area-tags">
+<a class="area-tag" href="NeurIPS2025/llm_safety/">LLM Safety 83</a>
 <a class="area-tag" href="NeurIPS2025/llm_evaluation/">LLM Evaluation 76</a>
 <a class="area-tag" href="NeurIPS2025/llm_reasoning/">LLM Reasoning 66</a>
-<a class="area-tag" href="NeurIPS2025/llm_safety/">LLM Safety 60</a>
-<a class="area-tag" href="NeurIPS2025/llm_alignment/">Alignment & RLHF 53</a>
-<a class="area-tag" href="NeurIPS2025/llm_nlp/">LLM / NLP 52</a>
-<a class="area-tag" href="NeurIPS2025/llm_agent/">LLM Agent 50</a>
-<a class="area-tag" href="NeurIPS2025/llm_pretraining/">Pretraining 48</a>
+<a class="area-tag" href="NeurIPS2025/llm_alignment/">Alignment & RLHF 50</a>
+<a class="area-tag" href="NeurIPS2025/llm_nlp/">LLM / NLP 48</a>
+<a class="area-tag" href="NeurIPS2025/llm_agent/">LLM Agent 47</a>
+<a class="area-tag" href="NeurIPS2025/llm_pretraining/">Pretraining 46</a>
 <a class="area-tag" href="NeurIPS2025/llm_efficiency/">LLM Efficiency 35</a>
 <a class="area-tag" href="NeurIPS2025/knowledge_editing/">Knowledge Editing 6</a>
 </div>
@@ -433,30 +520,31 @@ hide:
 <div class="area-group">
 <div class="area-group-label">Generation & Multimodal</div>
 <div class="area-tags">
-<a class="area-tag" href="NeurIPS2025/image_generation/">Image Generation 244</a>
-<a class="area-tag" href="NeurIPS2025/multimodal_vlm/">Multimodal VLM 150</a>
+<a class="area-tag" href="NeurIPS2025/image_generation/">Image Generation 241</a>
+<a class="area-tag" href="NeurIPS2025/multimodal_vlm/">Multimodal VLM 146</a>
 <a class="area-tag" href="NeurIPS2025/audio_speech/">Audio & Speech 49</a>
-<a class="area-tag" href="NeurIPS2025/video_generation/">Video Generation 23</a>
+<a class="area-tag" href="NeurIPS2025/video_generation/">Video Generation 22</a>
 <a class="area-tag" href="NeurIPS2025/aigc_detection/">AIGC Detection 8</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">NLP Applications</div>
 <div class="area-tags">
-<a class="area-tag" href="NeurIPS2025/information_retrieval/">Information Retrieval & RAG 30</a>
-<a class="area-tag" href="NeurIPS2025/code_intelligence/">Code Intelligence 22</a>
-<a class="area-tag" href="NeurIPS2025/multilingual_mt/">Multilingual & Translation 13</a>
+<a class="area-tag" href="NeurIPS2025/information_retrieval/">Information Retrieval & RAG 31</a>
+<a class="area-tag" href="NeurIPS2025/code_intelligence/">Code Intelligence 21</a>
+<a class="area-tag" href="NeurIPS2025/multilingual_mt/">Multilingual & Translation 14</a>
 <a class="area-tag" href="NeurIPS2025/dialogue/">Dialogue Systems 5</a>
+<a class="area-tag" href="NeurIPS2025/nlp_understanding/">NLP Understanding 2</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Visual Perception</div>
 <div class="area-tags">
-<a class="area-tag" href="NeurIPS2025/3d_vision/">3D Vision 116</a>
-<a class="area-tag" href="NeurIPS2025/video_understanding/">Video Understanding 57</a>
-<a class="area-tag" href="NeurIPS2025/segmentation/">Segmentation 47</a>
+<a class="area-tag" href="NeurIPS2025/3d_vision/">3D Vision 112</a>
+<a class="area-tag" href="NeurIPS2025/video_understanding/">Video Understanding 58</a>
+<a class="area-tag" href="NeurIPS2025/segmentation/">Segmentation 48</a>
 <a class="area-tag" href="NeurIPS2025/image_restoration/">Image Restoration 26</a>
-<a class="area-tag" href="NeurIPS2025/human_understanding/">Human Understanding 19</a>
+<a class="area-tag" href="NeurIPS2025/human_understanding/">Human Understanding 18</a>
 <a class="area-tag" href="NeurIPS2025/object_detection/">Object Detection 17</a>
 <a class="area-tag" href="NeurIPS2025/remote_sensing/">Remote Sensing 11</a>
 </div>
@@ -465,40 +553,39 @@ hide:
 <div class="area-group-label">Decision & Embodied</div>
 <div class="area-tags">
 <a class="area-tag" href="NeurIPS2025/reinforcement_learning/">Reinforcement Learning 168</a>
-<a class="area-tag" href="NeurIPS2025/robotics/">Robotics & Embodied AI 55</a>
-<a class="area-tag" href="NeurIPS2025/autonomous_driving/">Autonomous Driving 50</a>
+<a class="area-tag" href="NeurIPS2025/robotics/">Robotics & Embodied AI 53</a>
+<a class="area-tag" href="NeurIPS2025/autonomous_driving/">Autonomous Driving 49</a>
 <a class="area-tag" href="NeurIPS2025/recommender/">Recommender Systems 24</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Foundations & Theory</div>
 <div class="area-tags">
-<a class="area-tag" href="NeurIPS2025/model_compression/">Model Compression 134</a>
-<a class="area-tag" href="NeurIPS2025/optimization/">Optimization & Theory 112</a>
-<a class="area-tag" href="NeurIPS2025/interpretability/">Interpretability 82</a>
-<a class="area-tag" href="NeurIPS2025/time_series/">Time Series 59</a>
+<a class="area-tag" href="NeurIPS2025/model_compression/">Model Compression 131</a>
+<a class="area-tag" href="NeurIPS2025/optimization/">Optimization & Theory 110</a>
+<a class="area-tag" href="NeurIPS2025/interpretability/">Interpretability 80</a>
+<a class="area-tag" href="NeurIPS2025/time_series/">Time Series 56</a>
 <a class="area-tag" href="NeurIPS2025/graph_learning/">Graph Learning 52</a>
-<a class="area-tag" href="NeurIPS2025/self_supervised/">Self-Supervised Learning 35</a>
+<a class="area-tag" href="NeurIPS2025/self_supervised/">Self-Supervised Learning 32</a>
 <a class="area-tag" href="NeurIPS2025/causal_inference/">Causal Inference 21</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Science & Cross-Disciplinary</div>
 <div class="area-tags">
-<a class="area-tag" href="NeurIPS2025/medical_imaging/">Medical Imaging 138</a>
-<a class="area-tag" href="NeurIPS2025/ai_safety/">AI Safety 72</a>
+<a class="area-tag" href="NeurIPS2025/medical_imaging/">Medical Imaging 144</a>
+<a class="area-tag" href="NeurIPS2025/ai_safety/">AI Safety 70</a>
 <a class="area-tag" href="NeurIPS2025/scientific_computing/">Scientific Computing 23</a>
-<a class="area-tag" href="NeurIPS2025/physics/">Physics 20</a>
+<a class="area-tag" href="NeurIPS2025/physics/">Physics 18</a>
 <a class="area-tag" href="NeurIPS2025/social_computing/">Social Computing 18</a>
-<a class="area-tag" href="NeurIPS2025/signal_comm/">Signal & Communications 13</a>
+<a class="area-tag" href="NeurIPS2025/signal_comm/">Signal & Communications 12</a>
 <a class="area-tag" href="NeurIPS2025/earth_science/">Earth Science 5</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Others</div>
 <div class="area-tags">
-<a class="area-tag" href="NeurIPS2025/others/">Others 150</a>
-<a class="area-tag" href="NeurIPS2025/moe/">Mixture of Experts 1</a>
+<a class="area-tag" href="NeurIPS2025/others/">Others 141</a>
 </div>
 </div>
 </div>
@@ -509,16 +596,16 @@ hide:
 
 ### 📹 [ICCV2025](ICCV2025/index.md)
 
-<div class="conf-count">1306 notes · 39 areas</div>
+<div class="conf-count">1303 notes · 41 areas</div>
 
 <div class="area-groups">
 <div class="area-group">
 <div class="area-group-label">LLM</div>
 <div class="area-tags">
 <a class="area-tag" href="ICCV2025/llm_evaluation/">LLM Evaluation 27</a>
+<a class="area-tag" href="ICCV2025/llm_safety/">LLM Safety 13</a>
 <a class="area-tag" href="ICCV2025/llm_pretraining/">Pretraining 9</a>
-<a class="area-tag" href="ICCV2025/llm_nlp/">LLM / NLP 8</a>
-<a class="area-tag" href="ICCV2025/llm_safety/">LLM Safety 8</a>
+<a class="area-tag" href="ICCV2025/llm_nlp/">LLM / NLP 6</a>
 <a class="area-tag" href="ICCV2025/llm_agent/">LLM Agent 4</a>
 <a class="area-tag" href="ICCV2025/llm_reasoning/">LLM Reasoning 3</a>
 <a class="area-tag" href="ICCV2025/llm_alignment/">Alignment & RLHF 2</a>
@@ -529,8 +616,8 @@ hide:
 <div class="area-group-label">Generation & Multimodal</div>
 <div class="area-tags">
 <a class="area-tag" href="ICCV2025/image_generation/">Image Generation 213</a>
-<a class="area-tag" href="ICCV2025/multimodal_vlm/">Multimodal VLM 135</a>
-<a class="area-tag" href="ICCV2025/video_generation/">Video Generation 49</a>
+<a class="area-tag" href="ICCV2025/multimodal_vlm/">Multimodal VLM 132</a>
+<a class="area-tag" href="ICCV2025/video_generation/">Video Generation 48</a>
 <a class="area-tag" href="ICCV2025/audio_speech/">Audio & Speech 11</a>
 </div>
 </div>
@@ -540,17 +627,19 @@ hide:
 <a class="area-tag" href="ICCV2025/information_retrieval/">Information Retrieval & RAG 8</a>
 <a class="area-tag" href="ICCV2025/code_intelligence/">Code Intelligence 1</a>
 <a class="area-tag" href="ICCV2025/multilingual_mt/">Multilingual & Translation 1</a>
+<a class="area-tag" href="ICCV2025/nlp_generation/">Text Generation 1</a>
+<a class="area-tag" href="ICCV2025/nlp_understanding/">NLP Understanding 1</a>
 </div>
 </div>
 <div class="area-group">
 <div class="area-group-label">Visual Perception</div>
 <div class="area-tags">
-<a class="area-tag" href="ICCV2025/3d_vision/">3D Vision 254</a>
-<a class="area-tag" href="ICCV2025/segmentation/">Segmentation 74</a>
+<a class="area-tag" href="ICCV2025/3d_vision/">3D Vision 263</a>
+<a class="area-tag" href="ICCV2025/segmentation/">Segmentation 73</a>
 <a class="area-tag" href="ICCV2025/video_understanding/">Video Understanding 57</a>
-<a class="area-tag" href="ICCV2025/human_understanding/">Human Understanding 47</a>
+<a class="area-tag" href="ICCV2025/human_understanding/">Human Understanding 38</a>
 <a class="area-tag" href="ICCV2025/image_restoration/">Image Restoration 29</a>
-<a class="area-tag" href="ICCV2025/object_detection/">Object Detection 28</a>
+<a class="area-tag" href="ICCV2025/object_detection/">Object Detection 26</a>
 <a class="area-tag" href="ICCV2025/remote_sensing/">Remote Sensing 11</a>
 </div>
 </div>
@@ -568,7 +657,7 @@ hide:
 <a class="area-tag" href="ICCV2025/model_compression/">Model Compression 48</a>
 <a class="area-tag" href="ICCV2025/self_supervised/">Self-Supervised Learning 11</a>
 <a class="area-tag" href="ICCV2025/interpretability/">Interpretability 10</a>
-<a class="area-tag" href="ICCV2025/optimization/">Optimization & Theory 8</a>
+<a class="area-tag" href="ICCV2025/optimization/">Optimization & Theory 7</a>
 <a class="area-tag" href="ICCV2025/time_series/">Time Series 4</a>
 <a class="area-tag" href="ICCV2025/causal_inference/">Causal Inference 2</a>
 <a class="area-tag" href="ICCV2025/graph_learning/">Graph Learning 1</a>

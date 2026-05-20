@@ -18,8 +18,8 @@ content_hash: 0a875f5e1d78d136
 # ConnectomeBench: Can LLMs Proofread the Connectome?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.05542](https://arxiv.org/abs/2511.05542)
-**Code**: [Project Page](https://connectomebench.github.io/)
+**arXiv**: [2511.05542](https://arxiv.org/abs/2511.05542)  
+**Code**: [Project Page](https://connectomebench.github.io/)  
 **Area**: Image Segmentation
 **Keywords**: connectomics proofreading, multimodal LLM, 3D neuron mesh, segmentation error detection, benchmark
 

@@ -18,8 +18,8 @@ content_hash: c97d0424ffad101b
 # Training-Free Reward-Guided Image Editing via Trajectory Optimal Control
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25845](https://arxiv.org/abs/2509.25845)
-**Code**: N/A
+**arXiv**: [2509.25845](https://arxiv.org/abs/2509.25845)  
+**Code**: N/A  
 **Area**: Diffusion Models / Image Editing
 **Keywords**: Optimal Control, Reward-Guided, training-free, Adjoint State, Pontryagin's Maximum Principle
 

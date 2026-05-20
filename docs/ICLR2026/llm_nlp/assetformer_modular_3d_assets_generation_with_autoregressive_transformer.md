@@ -19,8 +19,8 @@ content_hash: 6ea6531454600baa
 # AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.12100](https://arxiv.org/abs/2602.12100)
-**Code**: [https://github.com/Advocate99/AssetFormer](https://github.com/Advocate99/AssetFormer)
+**arXiv**: [2602.12100](https://arxiv.org/abs/2602.12100)  
+**Code**: [https://github.com/Advocate99/AssetFormer](https://github.com/Advocate99/AssetFormer)  
 **Area**: LLM/NLP
 **Keywords**: 3D generation, autoregressive transformer, modular assets, UGC, Llama, text-to-3D
 

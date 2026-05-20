@@ -18,8 +18,8 @@ content_hash: 03a3e85b47d38dd9
 # The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.24000](https://arxiv.org/abs/2506.24000)
-**Code**: [https://github.com/TomSheng21/tta-vlm](https://github.com/TomSheng21/tta-vlm)
+**arXiv**: [2506.24000](https://arxiv.org/abs/2506.24000)  
+**Code**: [https://github.com/TomSheng21/tta-vlm](https://github.com/TomSheng21/tta-vlm)  
 **Area**: Multimodal VLM / Test-Time Adaptation / Benchmark
 **Keywords**: Test-time adaptation, CLIP, SigLIP, trustworthiness, calibration
 

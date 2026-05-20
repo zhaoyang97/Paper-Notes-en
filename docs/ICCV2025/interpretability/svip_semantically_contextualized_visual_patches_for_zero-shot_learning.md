@@ -18,8 +18,8 @@ content_hash: 203e5a8b6d16245a
 # SVIP: Semantically Contextualized Visual Patches for Zero-Shot Learning
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.10252](https://arxiv.org/abs/2503.10252)
-**Code**: [https://github.com/uqzhichen/SVIP](https://github.com/uqzhichen/SVIP)
+**arXiv**: [2503.10252](https://arxiv.org/abs/2503.10252)  
+**Code**: [https://github.com/uqzhichen/SVIP](https://github.com/uqzhichen/SVIP)  
 **Area**: Self-Supervised Learning / Zero-Shot Learning
 **Keywords**: zero-shot learning, semantic alignment, ViT, patch selection, attribute localization
 

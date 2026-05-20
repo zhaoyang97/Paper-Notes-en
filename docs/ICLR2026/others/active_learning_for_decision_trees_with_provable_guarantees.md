@@ -17,8 +17,8 @@ content_hash: 82bc81c99fb55863
 # Active Learning for Decision Trees with Provable Guarantees
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.20775](https://arxiv.org/abs/2601.20775)
-**Code**: None
+**arXiv**: [2601.20775](https://arxiv.org/abs/2601.20775)  
+**Code**: None  
 **Area**: Active Learning / Theory
 **Keywords**: Active Learning, Decision Trees, Label Complexity, Disagreement Coefficient, Multiplicative Error
 

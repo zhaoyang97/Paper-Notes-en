@@ -18,8 +18,8 @@ content_hash: e1b82fdf627a61d7
 # Rethinking Long-tailed Dataset Distillation: A Uni-Level Framework with Unbiased Recovery and Relabeling
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.18858](https://arxiv.org/abs/2511.18858)
-**Code**: None
+**arXiv**: [2511.18858](https://arxiv.org/abs/2511.18858)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Dataset Distillation, Long-tailed Distribution, Uni-level Optimization, BN Statistics Calibration, Unbiased Recovery
 

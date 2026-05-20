@@ -18,8 +18,8 @@ content_hash: 9811941312f28da4
 # Unified Vector Floorplan Generation via Markup Representation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04859](https://arxiv.org/abs/2604.04859)
-**Code**: [https://mapooon.github.io/FMLPage](https://mapooon.github.io/FMLPage)
+**arXiv**: [2604.04859](https://arxiv.org/abs/2604.04859)  
+**Code**: [https://mapooon.github.io/FMLPage](https://mapooon.github.io/FMLPage)  
 **Area**: Image Generation
 **Keywords**: floorplan generation, markup language, autoregressive sequence model, constrained decoding, vector representation
 
@@ -46,21 +46,21 @@ Optional input conditions (boundary point sequence / adjacency graph / partial f
 
 1. **Floorplan Markup Language (FML)**
 
-   - **Function**: Encodes all floorplan elements into a linear token sequence.
-   - **Mechanism**: Defines four token types — tags (e.g., `<room>`, `<door>`), coordinates (1D encoding $z = x + y \times W$, $W=256$), room indices, and room types. The grammar follows `<sequence> → <condition> → <floorplan> → rooms → doors → front_door → </sequence>`. Rooms are ordered by descending index.
-   - **Design Motivation**: 1D coordinate encoding avoids the high-dimensional sparsity of 2D positional representations. Descending ordering is validated by ablation, reducing FID from 94.57 to 25.50. Tag tokens provide structural supervision signals.
+    - **Function**: Encodes all floorplan elements into a linear token sequence.
+    - **Mechanism**: Defines four token types — tags (e.g., `<room>`, `<door>`), coordinates (1D encoding $z = x + y \times W$, $W=256$), room indices, and room types. The grammar follows `<sequence> → <condition> → <floorplan> → rooms → doors → front_door → </sequence>`. Rooms are ordered by descending index.
+    - **Design Motivation**: 1D coordinate encoding avoids the high-dimensional sparsity of 2D positional representations. Descending ordering is validated by ablation, reducing FID from 94.57 to 25.50. Tag tokens provide structural supervision signals.
 
 2. **FMLM Model Architecture**
 
-   - **Function**: Autoregressively generates FML token sequences.
-   - **Mechanism**: A LLaMA-3-style Transformer with 24 layers, 512-dimensional hidden states, and 32 attention heads. Coordinate tokens use sinusoidal positional encoding with a learnable projection; tag/index/type tokens use learnable embeddings. A unified output head $W \in \mathbb{R}^{(C_{tag}+C_{coord}+C_{index}+C_{type}) \times C}$ is shared across all token types.
-   - **Design Motivation**: The unified output head allows the model to learn when to generate each token type automatically, eliminating the need for manually switching decoding modes.
+    - **Function**: Autoregressively generates FML token sequences.
+    - **Mechanism**: A LLaMA-3-style Transformer with 24 layers, 512-dimensional hidden states, and 32 attention heads. Coordinate tokens use sinusoidal positional encoding with a learnable projection; tag/index/type tokens use learnable embeddings. A unified output head $W \in \mathbb{R}^{(C_{tag}+C_{coord}+C_{index}+C_{type}) \times C}$ is shared across all token types.
+    - **Design Motivation**: The unified output head allows the model to learn when to generate each token type automatically, eliminating the need for manually switching decoding modes.
 
 3. **Constrained Decoding**
 
-   - **Function**: Guarantees syntactic validity of generated FML sequences at inference time.
-   - **Mechanism**: Hard constraints include: doors must have exactly 2 vertices; room polygons must not overlap with existing rooms; doors must lie on room boundaries. These rules are enforced by masking invalid token probabilities during decoding.
-   - **Design Motivation**: Autoregressive models may generate syntactically invalid sequences (e.g., a door with 3 vertices). Constrained decoding guarantees 100% valid outputs at zero additional computational cost.
+    - **Function**: Guarantees syntactic validity of generated FML sequences at inference time.
+    - **Mechanism**: Hard constraints include: doors must have exactly 2 vertices; room polygons must not overlap with existing rooms; doors must lie on room boundaries. These rules are enforced by masking invalid token probabilities during decoding.
+    - **Design Motivation**: Autoregressive models may generate syntactically invalid sequences (e.g., a door with 3 vertices). Constrained decoding guarantees 100% valid outputs at zero additional computational cost.
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 1dd9a94f457d37e5
 # Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts
 
 **Conference**: ICLR2026
-**arXiv**: [2503.05066](https://arxiv.org/abs/2503.05066)
-**Code**: [https://github.com/CASE-Lab-UMD/Capacity-Aware-MoE](https://github.com/CASE-Lab-UMD/Capacity-Aware-MoE)
+**arXiv**: [2503.05066](https://arxiv.org/abs/2503.05066)  
+**Code**: [https://github.com/CASE-Lab-UMD/Capacity-Aware-MoE](https://github.com/CASE-Lab-UMD/Capacity-Aware-MoE)  
 **Area**: Multimodal VLM
 **Keywords**: Mixture of Experts, reasoning efficiency, straggler effect, token drop, expert parallelism
 

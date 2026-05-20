@@ -18,8 +18,8 @@ content_hash: aeb5b459b0ab0a62
 # FlashKAT: Understanding and Addressing Performance Bottlenecks in the Kolmogorov-Arnold Transformer
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.13813](https://arxiv.org/abs/2505.13813)
-**Code**: [github](https://github.com/OSU-STARLAB/FlashKAT)
+**arXiv**: [2505.13813](https://arxiv.org/abs/2505.13813)  
+**Code**: [github](https://github.com/OSU-STARLAB/FlashKAT)  
 **Area**: Interpretability
 **Keywords**: Kolmogorov-Arnold Network, KAN, Transformer, GPU Optimization, Memory Bottleneck
 

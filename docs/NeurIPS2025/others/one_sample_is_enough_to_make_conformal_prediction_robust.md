@@ -17,8 +17,8 @@ content_hash: 1794a406d5e01e88
 # One Sample is Enough to Make Conformal Prediction Robust
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.16553](https://arxiv.org/abs/2506.16553)
-**Code**: None
+**arXiv**: [2506.16553](https://arxiv.org/abs/2506.16553)  
+**Code**: None  
 **Area**: Machine Learning / Uncertainty Quantification
 **Keywords**: conformal prediction, robustness, randomized smoothing, prediction sets, conformal risk control
 
@@ -48,20 +48,20 @@ Given a black-box model $f$ and noise radius $\epsilon$:
 
 1. **Procedure-Level Certification**
 
-   - Conventional approach: robustly certify the smoothed conformity score $\bar{s}(x)$ for each sample.
-   - Proposed approach: directly certify the coverage guarantee of the conformal procedure, i.e., $\Pr[Y \in C_\epsilon(X)] \geq 1-\alpha$.
-   - Core inequality: exploits the distributional properties of the random perturbation $\delta$ to establish a probabilistic relationship between $s(x+\delta, y)$ and $s(x', y)$, where $x'$ denotes the adversarially perturbed sample.
+    - Conventional approach: robustly certify the smoothed conformity score $\bar{s}(x)$ for each sample.
+    - Proposed approach: directly certify the coverage guarantee of the conformal procedure, i.e., $\Pr[Y \in C_\epsilon(X)] \geq 1-\alpha$.
+    - Core inequality: exploits the distributional properties of the random perturbation $\delta$ to establish a probabilistic relationship between $s(x+\delta, y)$ and $s(x', y)$, where $x'$ denotes the adversarially perturbed sample.
 
 2. **Binary Certificate**
 
-   - For any binary certificate $\phi(x, \delta)$, if $\Pr_\delta[\phi=1] \geq p$, then $x$ is certified robust within radius $\epsilon$.
-   - Concrete realization: derives the optimal binary certificate via the Neyman–Pearson lemma.
-   - RCP1 requires only a single sample to check whether $\phi=1$; a conservative prediction set is returned upon failure.
+    - For any binary certificate $\phi(x, \delta)$, if $\Pr_\delta[\phi=1] \geq p$, then $x$ is certified robust within radius $\epsilon$.
+    - Concrete realization: derives the optimal binary certificate via the Neyman–Pearson lemma.
+    - RCP1 requires only a single sample to check whether $\phi=1$; a conservative prediction set is returned upon failure.
 
 3. **Extension to Robust Conformal Risk Control**
 
-   - Generalizes the framework to the broader conformal risk control setting.
-   - Applicable to both classification and regression tasks.
+    - Generalizes the framework to the broader conformal risk control setting.
+    - Applicable to both classification and regression tasks.
 
 ### Theoretical Guarantees
 - **Theorem 1**: The coverage of RCP1 satisfies $\Pr[Y \in C_\epsilon^{RCP1}(X)] \geq 1-\alpha$ for any adversarial perturbation within radius $\epsilon$.

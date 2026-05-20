@@ -19,8 +19,8 @@ content_hash: 93d010770d501ed4
 # When Scores Learn Geometry: Rate Separations under the Manifold Hypothesis
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.24912](https://arxiv.org/abs/2509.24912)
-**Code**: None
+**arXiv**: [2509.24912](https://arxiv.org/abs/2509.24912)  
+**Code**: None  
 **Area**: Diffusion Model Theory
 **Keywords**: Score Learning, Manifold Hypothesis, Geometry Learning, Distribution Learning, Rate Separation, Uniform Sampling
 
@@ -48,10 +48,10 @@ Under the manifold hypothesis, this paper reveals a scale separation between geo
 ### Core Theory
 
 1. **Asymptotic Expansion of the Score (Central Idea of Theorem 3.1)**:
-   - As $\sigma \to 0$, the score function decomposes into:
-   - **Leading order** $\Theta(\sigma^{-2})$: a geometric term that essentially acts as a projection operator onto the manifold (pulling points toward the nearest manifold point).
-   - **Sub-leading order** $\Theta(1)$: a distributional term encoding the density $p_{\text{data}}$ on the manifold.
-   - The two terms are separated by a factor of $\sigma^{-2}$ — this constitutes the "rate separation."
+    - As $\sigma \to 0$, the score function decomposes into:
+    - **Leading order** $\Theta(\sigma^{-2})$: a geometric term that essentially acts as a projection operator onto the manifold (pulling points toward the nearest manifold point).
+    - **Sub-leading order** $\Theta(1)$: a distributional term encoding the density $p_{\text{data}}$ on the manifold.
+    - The two terms are separated by a factor of $\sigma^{-2}$ — this constitutes the "rate separation."
 
 2. **Three Corollaries**:
 

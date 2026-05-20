@@ -18,8 +18,8 @@ content_hash: 92c00fe18f1ff533
 # MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23305](https://arxiv.org/abs/2505.23305)
-**Code**: N/A (audio demo page provided)
+**arXiv**: [2505.23305](https://arxiv.org/abs/2505.23305)  
+**Code**: N/A (audio demo page provided)  
 **Area**: Image Generation / Audio Generation
 **Keywords**: music generation, source separation, latent diffusion model, multi-track modeling, CLAP
 
@@ -31,8 +31,8 @@ This paper proposes MGE-LDM, the first model to simultaneously achieve music mix
 
 - **Background**: Music generation models have achieved remarkable progress, yet most can only generate a single mixture waveform and lack fine-grained control over individual instrument tracks. Obtaining individual tracks requires additional source separation techniques.
 - **Limitations of Prior Work**: Recent works (MSDM, GMSDI, MSG-LD) attempt to jointly model multi-track audio within a unified diffusion framework, but suffer from two critical limitations:
-  - **Reliance on predefined instrument categories**: only fixed instrument sets (e.g., bass, drums, guitar, piano) can be handled.
-  - **Linear mixture assumption**: the mixture is assumed to be a linear superposition of individual sources—valid in the waveform domain, but inapplicable under the nonlinear encoder–decoder structure of latent diffusion models.
+    - **Reliance on predefined instrument categories**: only fixed instrument sets (e.g., bass, drums, guitar, piano) can be handled.
+    - **Linear mixture assumption**: the mixture is assumed to be a linear superposition of individual sources—valid in the waveform domain, but inapplicable under the nonlinear encoder–decoder structure of latent diffusion models.
 - **Key Challenge**: These limitations prevent existing methods from handling mixture generation and separation for arbitrary instruments.
 
 ## Method
@@ -47,10 +47,10 @@ MGE-LDM jointly encodes three latent variables—mixture $z^{(m)}$, submixture $
 
 2. **Track-aware adaptive timestep (Section 3.4)**: Unlike conventional diffusion inpainting that applies a uniform noise schedule to all regions, the proposed method assigns an independent timestep condition to each track. During training, the model randomly switches among four modes:
 
-   - $(\tau, \tau, \tau)$: standard joint denoising
-   - $(0, \tau, \tau)$: mixture is known; denoise submixture and source
-   - $(\tau, 0, \tau)$: submixture is known; denoise mixture and source
-   - $(\tau, \tau, 0)$: source is known; denoise mixture and submixture
+    - $(\tau, \tau, \tau)$: standard joint denoising
+    - $(0, \tau, \tau)$: mixture is known; denoise submixture and source
+    - $(\tau, 0, \tau)$: submixture is known; denoise mixture and source
+    - $(\tau, \tau, 0)$: source is known; denoise mixture and submixture
 
    This enables the model to learn conditional score functions, allowing precise generation of only the missing tracks at inference.
 

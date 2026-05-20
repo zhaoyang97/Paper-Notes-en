@@ -18,8 +18,8 @@ content_hash: 463cfeaa781404e4
 # PointINS: Instance-Aware Self-Supervised Learning for Point Clouds
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25165](https://arxiv.org/abs/2603.25165)
-**Code**: N/A
+**arXiv**: [2603.25165](https://arxiv.org/abs/2603.25165)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: Point cloud self-supervised learning, instance awareness, geometric reasoning, offset learning, panoptic segmentation
 

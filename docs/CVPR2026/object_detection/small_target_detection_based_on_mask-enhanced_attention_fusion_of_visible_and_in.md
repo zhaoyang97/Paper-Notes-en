@@ -18,8 +18,8 @@ content_hash: 623a7e56901330a0
 # Small Target Detection Based on Mask-Enhanced Attention Fusion of Visible and Infrared Remote Sensing Images
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.06925](https://arxiv.org/abs/2603.06925)
-**Code**: None
+**arXiv**: [2603.06925](https://arxiv.org/abs/2603.06925)  
+**Code**: None  
 **Area**: Object Detection
 **Keywords**: Small target detection, visible-infrared fusion, remote sensing, spatial attention, lightweight network
 

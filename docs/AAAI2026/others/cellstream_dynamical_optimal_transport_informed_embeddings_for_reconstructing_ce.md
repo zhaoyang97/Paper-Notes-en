@@ -17,8 +17,8 @@ content_hash: ff3184f1c015b55e
 # CellStream: Dynamical Optimal Transport Informed Embeddings for Reconstructing Cellular Trajectories from Snapshots Data
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13786](https://arxiv.org/abs/2511.13786)
-**Code**: [github.com/PQ-Zhang/CellStream](https://github.com/PQ-Zhang/CellStream)
+**arXiv**: [2511.13786](https://arxiv.org/abs/2511.13786)  
+**Code**: [github.com/PQ-Zhang/CellStream](https://github.com/PQ-Zhang/CellStream)  
 **Area**: Other
 **Keywords**: single-cell RNA sequencing, optimal transport, cellular trajectory inference, dimensionality reduction embedding, autoencoder
 

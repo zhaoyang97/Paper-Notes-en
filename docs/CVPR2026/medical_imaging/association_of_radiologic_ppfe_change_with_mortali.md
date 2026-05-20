@@ -18,8 +18,8 @@ content_hash: 4ffe55635ffbfd8a
 # Association of Radiologic PPFE Change with Mortality in Lung Cancer Screening Cohorts
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09531](https://arxiv.org/abs/2603.09531)
-**Code**: None
+**arXiv**: [2603.09531](https://arxiv.org/abs/2603.09531)  
+**Code**: None  
 **Area**: Medical Image Analysis
 **Keywords**: PPFE, lung cancer screening, low-dose CT, longitudinal quantitative analysis, imaging biomarker
 
@@ -130,8 +130,8 @@ tags:
 # Association of Radiologic PPFE Change with Mortality in Lung Cancer Screening Cohorts
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09531](https://arxiv.org/abs/2603.09531)
-**Code**: None
+**arXiv**: [2603.09531](https://arxiv.org/abs/2603.09531)  
+**Code**: None  
 **Area**: Medical Image Analysis
 **Keywords**: PPFE, lung cancer screening, low-dose CT, longitudinal quantitative analysis, imaging biomarker
 

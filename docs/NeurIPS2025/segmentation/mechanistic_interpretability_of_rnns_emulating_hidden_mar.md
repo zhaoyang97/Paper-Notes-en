@@ -19,9 +19,9 @@ content_hash: 7e60949be2ddea2e
 # Mechanistic Interpretability of RNNs Emulating Hidden Markov Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25674](https://arxiv.org/abs/2510.25674)
+**arXiv**: [2510.25674](https://arxiv.org/abs/2510.25674)  
 **Authors**: Elia Torre, Michele Viscione, Lucas Pompe, Benjamin F. Grewe, Valerio Mante (ETH Zurich / University of Zurich)
-**Code**: [https://github.com/EliaTorre/hmmrnn](https://github.com/EliaTorre/hmmrnn)
+**Code**: [https://github.com/EliaTorre/hmmrnn](https://github.com/EliaTorre/hmmrnn)  
 **Area**: Image Segmentation
 **Keywords**: RNN, HMM, mechanistic interpretability, stochastic resonance, kick neurons, orbital dynamics
 

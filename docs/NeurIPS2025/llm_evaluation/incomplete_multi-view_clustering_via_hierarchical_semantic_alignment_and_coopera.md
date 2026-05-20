@@ -18,8 +18,8 @@ content_hash: 3f278b19d2e216f0
 # Incomplete Multi-view Clustering via Hierarchical Semantic Alignment and Cooperative Completion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.13887](https://arxiv.org/abs/2510.13887)
-**Code**: [GitHub](https://github.com/XiaojianDing/2025-NeurIPS-HSACC)
+**arXiv**: [2510.13887](https://arxiv.org/abs/2510.13887)  
+**Code**: [GitHub](https://github.com/XiaojianDing/2025-NeurIPS-HSACC)  
 **Area**: LLM Evaluation
 **Keywords**: Incomplete multi-view clustering, hierarchical semantic alignment, dynamic weighted fusion, MMD, cooperative completion
 
@@ -49,19 +49,19 @@ HSACC comprises three modules:
 ### Key Designs
 
 1. **Two-level Semantic Space Alignment**:
-   - **Function**: Ensures cross-view consistency via mutual information maximization in the low-level semantic space, and performs adaptive weighted fusion in the high-level semantic space.
-   - **Mechanism**: *Low-level*—computes cross-view feature similarity matrix $P_{(m,n)} = \frac{1}{N}\sum_{i=1}^N z_{i,m}^1 \cdot z_{i,n}^2$, and derives mutual information loss $L_{MMI}$ from joint and marginal distributions. *High-level*—obtains an initial fusion $\mathbf{R}$ via concatenation, measures the distributional gap between each view and $\mathbf{R}$ using MMD, and assigns weights via softmax: $W^v = \frac{\exp(-D(\mathbf{Z}^v, \mathbf{R}))}{\sum_v \exp(-D(\mathbf{Z}^v, \mathbf{R}))}$.
-   - **Design Motivation**: Low-level alignment captures shared patterns, while high-level weighted fusion dynamically assigns each view's contribution based on its consistency with the fused representation.
+    - **Function**: Ensures cross-view consistency via mutual information maximization in the low-level semantic space, and performs adaptive weighted fusion in the high-level semantic space.
+    - **Mechanism**: *Low-level*—computes cross-view feature similarity matrix $P_{(m,n)} = \frac{1}{N}\sum_{i=1}^N z_{i,m}^1 \cdot z_{i,n}^2$, and derives mutual information loss $L_{MMI}$ from joint and marginal distributions. *High-level*—obtains an initial fusion $\mathbf{R}$ via concatenation, measures the distributional gap between each view and $\mathbf{R}$ using MMD, and assigns weights via softmax: $W^v = \frac{\exp(-D(\mathbf{Z}^v, \mathbf{R}))}{\sum_v \exp(-D(\mathbf{Z}^v, \mathbf{R}))}$.
+    - **Design Motivation**: Low-level alignment captures shared patterns, while high-level weighted fusion dynamically assigns each view's contribution based on its consistency with the fused representation.
 
 2. **Cooperative Completion Mechanism**:
-   - **Function**: Projects aligned latent representations to a high-dimensional semantic space via MLP to implicitly recover missing views.
-   - **Mechanism**: $\mathbf{Q}^1 = f_\text{MLP1}(\mathbf{Z}^1)$ predicts the latent representation of view 2. An inference consistency loss $L_{INF} = \frac{1}{N}\sum_i \|\mathbf{z}_i^2 - \mathbf{q}_i^1\|_2^2 + \frac{1}{N}\sum_i \|\mathbf{z}_i^1 - \mathbf{q}_i^2\|_2^2$ ensures the inferred representations align with the true latent representations.
-   - **Design Motivation**: Completion is performed in latent space rather than input space, avoiding the generation of low-quality raw features; joint optimization enables mutual reinforcement between completion and clustering.
+    - **Function**: Projects aligned latent representations to a high-dimensional semantic space via MLP to implicitly recover missing views.
+    - **Mechanism**: $\mathbf{Q}^1 = f_\text{MLP1}(\mathbf{Z}^1)$ predicts the latent representation of view 2. An inference consistency loss $L_{INF} = \frac{1}{N}\sum_i \|\mathbf{z}_i^2 - \mathbf{q}_i^1\|_2^2 + \frac{1}{N}\sum_i \|\mathbf{z}_i^1 - \mathbf{q}_i^2\|_2^2$ ensures the inferred representations align with the true latent representations.
+    - **Design Motivation**: Completion is performed in latent space rather than input space, avoiding the generation of low-quality raw features; joint optimization enables mutual reinforcement between completion and clustering.
 
 3. **Distribution Alignment Loss**:
-   - **Function**: Minimizes the distributional discrepancy between the high-level shared representation $\mathbf{H}$ and each view $\mathbf{Z}^v$ via MMD in RKHS.
-   - **Mechanism**: $L_{MMD} = \sum_{v=1}^V \text{MMD}^2(\mathcal{P}_{\mathbf{Z}^v}, \mathcal{Q}_\mathbf{H})$, approximated using kernel matrices.
-   - **Design Motivation**: Promotes information exchange between the global representation and individual views, enhancing the consistency and complementarity of cross-view representations.
+    - **Function**: Minimizes the distributional discrepancy between the high-level shared representation $\mathbf{H}$ and each view $\mathbf{Z}^v$ via MMD in RKHS.
+    - **Mechanism**: $L_{MMD} = \sum_{v=1}^V \text{MMD}^2(\mathcal{P}_{\mathbf{Z}^v}, \mathcal{Q}_\mathbf{H})$, approximated using kernel matrices.
+    - **Design Motivation**: Promotes information exchange between the global representation and individual views, enhancing the consistency and complementarity of cross-view representations.
 
 ### Loss & Training
 

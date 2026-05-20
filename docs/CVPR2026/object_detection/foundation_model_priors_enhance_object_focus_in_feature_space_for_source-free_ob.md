@@ -18,8 +18,8 @@ content_hash: 45ec8e794b80744e
 # Foundation Model Priors Enhance Object Focus in Feature Space for Source-Free Object Detection
 
 **Conference**: CVPR2026
-**arXiv**: [2512.17514](https://arxiv.org/abs/2512.17514)
-**Code**: To be confirmed
+**arXiv**: [2512.17514](https://arxiv.org/abs/2512.17514)  
+**Code**: To be confirmed  
 **Area**: Object Detection
 **Keywords**: Source-Free Object Detection, Foundation Model Priors, Feature Space Regularization, Noise-Robust Pseudo Labels, Mean-Teacher
 

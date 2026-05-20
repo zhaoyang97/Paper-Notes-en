@@ -18,8 +18,8 @@ content_hash: 8b1b0941d327ad6d
 # PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00412](https://arxiv.org/abs/2603.00412)
-**Code**: [https://github.com/yharoldsu0627/PointAlign](https://github.com/yharoldsu0627/PointAlign)
+**arXiv**: [2603.00412](https://arxiv.org/abs/2603.00412)  
+**Code**: [https://github.com/yharoldsu0627/PointAlign](https://github.com/yharoldsu0627/PointAlign)  
 **Area**: Multimodal VLM
 **Keywords**: 3D point cloud understanding, vision-language models, feature alignment, geometric information preservation, regularization
 

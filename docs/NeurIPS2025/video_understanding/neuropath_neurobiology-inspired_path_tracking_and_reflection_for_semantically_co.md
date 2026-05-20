@@ -18,8 +18,8 @@ content_hash: 908db03fc855d4ff
 # NeuroPath: Neurobiology-Inspired Path Tracking and Reflection for Semantically Coherent Retrieval
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.14096](https://arxiv.org/abs/2511.14096)
-**Code**: [GitHub](https://github.com/KennyCaty/NeuroPath)
+**arXiv**: [2511.14096](https://arxiv.org/abs/2511.14096)  
+**Code**: [GitHub](https://github.com/KennyCaty/NeuroPath)  
 **Area**: Video Understanding / RAG
 **Keywords**: RAG, multi-hop QA, knowledge graph, place cells, semantic path tracking
 

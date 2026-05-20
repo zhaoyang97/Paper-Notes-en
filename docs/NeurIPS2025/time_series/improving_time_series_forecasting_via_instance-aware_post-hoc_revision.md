@@ -18,8 +18,8 @@ content_hash: 88130e55a957e93a
 # Improving Time Series Forecasting via Instance-aware Post-hoc Revision (PIR)
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23583](https://arxiv.org/abs/2505.23583)
-**Code**: [https://github.com/icantnamemyself/PIR](https://github.com/icantnamemyself/PIR)
+**arXiv**: [2505.23583](https://arxiv.org/abs/2505.23583)  
+**Code**: [https://github.com/icantnamemyself/PIR](https://github.com/icantnamemyself/PIR)  
 **Area**: Time Series Forecasting
 **Keywords**: Instance-level revision, uncertainty estimation, retrieval augmentation, post-hoc processing, long-tail distribution
 

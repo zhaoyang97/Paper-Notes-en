@@ -17,8 +17,8 @@ content_hash: d30b02da3cdec1a3
 # LaCoOT: Layer Collapse through Optimal Transport
 
 **Conference**: ICCV2025
-**arXiv**: [2406.08933](https://arxiv.org/abs/2406.08933)
-**Code**: [VGCQ/LaCoOT](https://github.com/VGCQ/LaCoOT)
+**arXiv**: [2406.08933](https://arxiv.org/abs/2406.08933)  
+**Code**: [VGCQ/LaCoOT](https://github.com/VGCQ/LaCoOT)  
 **Area**: Other
 **Keywords**: optimal transport, layer removal, depth reduction, Max-Sliced Wasserstein distance, model compression
 

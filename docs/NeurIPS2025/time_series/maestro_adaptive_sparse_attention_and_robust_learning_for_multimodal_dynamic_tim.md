@@ -18,8 +18,8 @@ content_hash: 78163c9ecfb643d1
 # MAESTRO: Adaptive Sparse Attention and Robust Learning for Multimodal Dynamic Time Series
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.25278](https://arxiv.org/abs/2509.25278)
-**Code**: [GitHub](https://github.com/payalmohapatra/MAESTRO)
+**arXiv**: [2509.25278](https://arxiv.org/abs/2509.25278)  
+**Code**: [GitHub](https://github.com/payalmohapatra/MAESTRO)  
 **Area**: Time Series
 **Keywords**: Multimodal time series, sparse attention, mixture of experts, missing modality, sensor fusion
 

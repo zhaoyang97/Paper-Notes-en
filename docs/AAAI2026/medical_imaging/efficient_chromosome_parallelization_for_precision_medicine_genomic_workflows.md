@@ -18,8 +18,8 @@ content_hash: 53ba7c860b9778ac
 # Efficient Chromosome Parallelization for Precision Medicine Genomic Workflows
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.15977](https://arxiv.org/abs/2511.15977)
-**Code**: None (related to commercial product StrataRisk™)
+**arXiv**: [2511.15977](https://arxiv.org/abs/2511.15977)  
+**Code**: None (related to commercial product StrataRisk™)  
 **Area**: Bioinformatics / Precision Medicine
 **Keywords**: Genomic workflows, chromosome parallelization, RAM prediction, scheduling optimization, symbolic regression
 

@@ -18,8 +18,8 @@ content_hash: 1b653c30684465e0
 # 3EED: Ground Everything Everywhere in 3D
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01755](https://arxiv.org/abs/2511.01755)
-**Code**: [https://github.com/worldbench/3EED](https://github.com/worldbench/3EED)
+**arXiv**: [2511.01755](https://arxiv.org/abs/2511.01755)  
+**Code**: [https://github.com/worldbench/3EED](https://github.com/worldbench/3EED)  
 **Area**: Autonomous Driving
 **Keywords**: 3D visual grounding, multi-platform, multimodal, outdoor scenes, cross-platform transfer
 

@@ -18,8 +18,8 @@ content_hash: 0bc0d1722ceef64d
 # Visual Surface Wave Elastography: Revealing Subsurface Physical Properties via Visible Surface Waves
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.09207](https://arxiv.org/abs/2507.09207)
-**Code**: Coming soon
+**arXiv**: [2507.09207](https://arxiv.org/abs/2507.09207)  
+**Code**: Coming soon  
 **Area**: Medical Imaging / Material Characterization
 **Keywords**: Elastography, surface waves, dispersion relation, finite element method, video analysis
 

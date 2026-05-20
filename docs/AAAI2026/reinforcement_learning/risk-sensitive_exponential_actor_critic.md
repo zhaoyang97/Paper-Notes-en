@@ -18,7 +18,7 @@ content_hash: 96f93756ffb64a8f
 # Risk-Sensitive Exponential Actor Critic
 
 **Conference**: AAAI2026
-**arXiv**: [2602.07202](https://arxiv.org/abs/2602.07202)
+**arXiv**: [2602.07202](https://arxiv.org/abs/2602.07202)  
 **Area**: Reinforcement Learning
 **Keywords**: risk-sensitive RL, entropic risk measure, policy gradient, actor-critic, numerical stability
 

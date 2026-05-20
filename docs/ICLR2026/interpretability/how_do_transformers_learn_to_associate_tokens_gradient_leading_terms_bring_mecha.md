@@ -18,8 +18,8 @@ content_hash: dd47c6fd854815f9
 # How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19208](https://arxiv.org/abs/2601.19208)
-**Code**: None
+**arXiv**: [2601.19208](https://arxiv.org/abs/2601.19208)  
+**Code**: None  
 **Area**: LLM / NLP (Mechanistic Interpretability)
 **Keywords**: Transformer interpretability, training dynamics, gradient leading terms, semantic association, closed-form weight expressions
 

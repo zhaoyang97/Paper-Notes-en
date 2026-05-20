@@ -20,8 +20,8 @@ content_hash: 731fcef2f878b9ec
 # BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling
 
 **Conference**: CVPR2026
-**arXiv**: [2603.01163](https://arxiv.org/abs/2603.01163)
-**Code**: TBD (Project Page available)
+**arXiv**: [2603.01163](https://arxiv.org/abs/2603.01163)  
+**Code**: TBD (Project Page available)  
 **Area**: Image Generation / Face Restoration
 **Keywords**: face retouching, reinforcement learning, aesthetic alignment, flow matching, preference modeling, GRPO, dynamic path guidance
 

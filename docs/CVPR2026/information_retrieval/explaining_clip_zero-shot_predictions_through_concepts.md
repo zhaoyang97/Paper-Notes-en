@@ -18,8 +18,8 @@ content_hash: 6f1c4464472d5950
 # Explaining CLIP Zero-shot Predictions Through Concepts
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28211](https://arxiv.org/abs/2603.28211)
-**Code**: [https://github.com/oonat/ezpc](https://github.com/oonat/ezpc)
+**arXiv**: [2603.28211](https://arxiv.org/abs/2603.28211)  
+**Code**: [https://github.com/oonat/ezpc](https://github.com/oonat/ezpc)  
 **Area**: Information Retrieval
 **Keywords**: CLIP, Zero-shot Classification, Concept Bottleneck Model, Interpretability, Vision-Language Model
 

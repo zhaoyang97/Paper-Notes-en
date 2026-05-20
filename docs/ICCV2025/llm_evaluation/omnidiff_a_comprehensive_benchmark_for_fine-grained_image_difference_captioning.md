@@ -18,8 +18,8 @@ content_hash: ad44ce24174d22c0
 # OmniDiff: A Comprehensive Benchmark for Fine-grained Image Difference Captioning
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.11093](https://arxiv.org/abs/2503.11093)
-**Code**: [yuan-liu-omnidiff.github.io](https://yuan-liu-omnidiff.github.io)
+**arXiv**: [2503.11093](https://arxiv.org/abs/2503.11093)  
+**Code**: [yuan-liu-omnidiff.github.io](https://yuan-liu-omnidiff.github.io)  
 **Area**: Vision-Language Understanding
 **Keywords**: image difference captioning, multimodal large language models, multi-scale differential perception, change detection, benchmark
 

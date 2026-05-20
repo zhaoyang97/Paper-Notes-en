@@ -18,9 +18,9 @@ content_hash: 3b13305b11e8862e
 # Optimal Welfare in Noncooperative Network Formation under Attack
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10845](https://arxiv.org/abs/2511.10845)
+**arXiv**: [2511.10845](https://arxiv.org/abs/2511.10845)  
 **Authors**: Natan Doubez, Pascal Lenzner, Marcus Wunderlich
-**Code**: Not available
+**Code**: Not available  
 **Area**: Others (Game Theory / Network Formation)
 **Keywords**: Network formation games, Nash equilibrium, social welfare, attack and immunization, game theory, Price of Anarchy
 

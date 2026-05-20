@@ -18,8 +18,8 @@ content_hash: 6d66c1db2c990b01
 # Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.17655](https://arxiv.org/abs/2603.17655)
-**Code**: [CC-CDFSL](https://github.com/zyaz/CC-CDFSL)
+**arXiv**: [2603.17655](https://arxiv.org/abs/2603.17655)  
+**Code**: [CC-CDFSL](https://github.com/zyaz/CC-CDFSL)  
 **Area**: Medical Imaging
 **Keywords**: Cross-Domain Few-Shot Learning, CLIP, Local Feature Alignment, Cycle Consistency, Interpretability
 

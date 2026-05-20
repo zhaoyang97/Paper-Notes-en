@@ -18,8 +18,8 @@ content_hash: 7d92859c15456c80
 # A Cramér–von Mises Approach to Incentivizing Truthful Data Sharing
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07272](https://arxiv.org/abs/2506.07272)
-**Code**: None
+**arXiv**: [2506.07272](https://arxiv.org/abs/2506.07272)  
+**Code**: None  
 **Area**: Mechanism Design / Data Markets / Federated Learning / Game Theory
 **Keywords**: data sharing incentives, Cramér–von Mises test, Nash equilibrium, two-sample test, defense against data fabrication
 

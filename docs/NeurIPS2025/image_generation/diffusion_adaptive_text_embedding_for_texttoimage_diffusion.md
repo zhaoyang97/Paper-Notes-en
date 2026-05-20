@@ -18,8 +18,8 @@ content_hash: 2463155b4f7de2b7
 # Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23974](https://arxiv.org/abs/2510.23974)
-**Code**: [https://github.com/aailab-kaist/DATE](https://github.com/aailab-kaist/DATE)
+**arXiv**: [2510.23974](https://arxiv.org/abs/2510.23974)  
+**Code**: [https://github.com/aailab-kaist/DATE](https://github.com/aailab-kaist/DATE)  
 **Area**: Image Generation
 **Keywords**: Text embedding optimization, diffusion model sampling, text-image alignment, test-time optimization, adaptive conditioning
 

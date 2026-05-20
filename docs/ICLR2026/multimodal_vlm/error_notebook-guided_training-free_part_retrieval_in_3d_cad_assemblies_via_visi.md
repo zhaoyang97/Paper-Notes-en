@@ -18,8 +18,8 @@ content_hash: 929caf6ebfe33a3c
 # Error Notebook-Guided, Training-Free Part Retrieval in 3D CAD Assemblies via Vision-Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.01350](https://arxiv.org/abs/2509.01350)
-**Code**: None
+**arXiv**: [2509.01350](https://arxiv.org/abs/2509.01350)  
+**Code**: None  
 **Area**: Multimodal VLM
 **Keywords**: CAD part retrieval, test-time adaptation, Error Notebook, RAG, training-free VLM inference
 

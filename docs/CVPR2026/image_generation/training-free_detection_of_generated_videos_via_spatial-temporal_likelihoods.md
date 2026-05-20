@@ -18,8 +18,8 @@ content_hash: 02f202a6cf8e231f
 # Training-free Detection of Generated Videos via Spatial-Temporal Likelihoods
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.15026](https://arxiv.org/abs/2603.15026)
-**Code**: Available
+**arXiv**: [2603.15026](https://arxiv.org/abs/2603.15026)  
+**Code**: Available  
 **Area**: Image Generation
 **Keywords**: Zero-shot detection, generated video detection, likelihood estimation, whitening transform, spatial-temporal modeling
 

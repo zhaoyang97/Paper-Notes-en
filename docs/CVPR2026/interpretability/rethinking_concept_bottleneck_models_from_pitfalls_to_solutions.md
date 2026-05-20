@@ -17,7 +17,7 @@ content_hash: 143fa22f54e5197a
 # Rethinking Concept Bottleneck Models: From Pitfalls to Solutions
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05629](https://arxiv.org/abs/2603.05629)
+**arXiv**: [2603.05629](https://arxiv.org/abs/2603.05629)  
 **Authors**: Merve Tapli, Quentin Bouniot, Wolfgang Stammer, Zeynep Akata, Emre Akbas
 **Area**: Interpretability
 **Keywords**: Concept Bottleneck Models, interpretability, concept relevance, distillation, vision-language models

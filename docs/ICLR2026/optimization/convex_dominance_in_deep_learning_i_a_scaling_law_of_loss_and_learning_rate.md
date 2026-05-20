@@ -18,8 +18,8 @@ content_hash: 53a75150a1ea4023
 # Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07145](https://arxiv.org/abs/2602.07145)
-**Code**: Not released
+**arXiv**: [2602.07145](https://arxiv.org/abs/2602.07145)  
+**Code**: Not released  
 **Area**: Optimization
 **Keywords**: Scaling laws, learning rate schedule, convex optimization, loss convergence, training planning
 
@@ -49,27 +49,27 @@ Starting from the convergence theorem for convex SGD, the paper derives conditio
 
 1. **Convex SGD Convergence Bound**:
 
-   - Function: Derive a last-iterate loss upper bound for SGD on convex objectives.
-   - Mechanism: $\mathbb{E}[L(w_T)] \leq L^* + \frac{D^2}{2\sum \eta_t} + \frac{G^2 \sum \eta_t^2}{2\sum \eta_t} + \text{residual}$, where $D$ is the distance from initialization to the optimum and $G$ is a gradient bound.
-   - Design Motivation: Unlike average-iterate bounds, the last-iterate bound better reflects practical training, where the final model checkpoint is used rather than a model average.
+    - Function: Derive a last-iterate loss upper bound for SGD on convex objectives.
+    - Mechanism: $\mathbb{E}[L(w_T)] \leq L^* + \frac{D^2}{2\sum \eta_t} + \frac{G^2 \sum \eta_t^2}{2\sum \eta_t} + \text{residual}$, where $D$ is the distance from initialization to the optimum and $G$ is a gradient bound.
+    - Design Motivation: Unlike average-iterate bounds, the last-iterate bound better reflects practical training, where the final model checkpoint is used rather than a model average.
 
 2. **Qualified Learning Rate Schedules**:
 
-   - Function: Define which schedules achieve $O(1/\sqrt{T})$ convergence.
-   - Mechanism: Linear decay, cosine decay, and WSD are all qualified. For each schedule, the optimal peak learning rate is derived as $\eta_{\text{peak}}^*(T) = D/(G\sqrt{cT})$, where $c$ is a constant factor.
-   - Design Motivation: This unifies the theoretical analysis of different schedules — they are equivalent in the $O(\cdot)$ sense, differing only by constant factors.
+    - Function: Define which schedules achieve $O(1/\sqrt{T})$ convergence.
+    - Mechanism: Linear decay, cosine decay, and WSD are all qualified. For each schedule, the optimal peak learning rate is derived as $\eta_{\text{peak}}^*(T) = D/(G\sqrt{cT})$, where $c$ is a constant factor.
+    - Design Motivation: This unifies the theoretical analysis of different schedules — they are equivalent in the $O(\cdot)$ sense, differing only by constant factors.
 
 3. **Generalization to Deep Learning**:
 
-   - Function: Extend theoretical results to non-convex practical deep learning.
-   - Mechanism: $\mathbb{E}[L(w_T)] \sim L_\infty + q_1^2/(T \cdot \eta_{\text{peak}}) + \eta_{\text{peak}} \cdot q_2^2$. The form mirrors the convex bound, but $L_\infty$, $q_1$, $q_2$ are determined by data fitting rather than theory. The optimal learning rate is $\eta_{\text{peak}}^* = q_1/(q_2\sqrt{T})$.
-   - Design Motivation: The "Convex Dominance" hypothesis — although deep learning is non-convex, convexity dominates the optimization dynamics at the macroscopic level of the loss landscape.
+    - Function: Extend theoretical results to non-convex practical deep learning.
+    - Mechanism: $\mathbb{E}[L(w_T)] \sim L_\infty + q_1^2/(T \cdot \eta_{\text{peak}}) + \eta_{\text{peak}} \cdot q_2^2$. The form mirrors the convex bound, but $L_\infty$, $q_1$, $q_2$ are determined by data fitting rather than theory. The optimal learning rate is $\eta_{\text{peak}}^* = q_1/(q_2\sqrt{T})$.
+    - Design Motivation: The "Convex Dominance" hypothesis — although deep learning is non-convex, convexity dominates the optimization dynamics at the macroscopic level of the loss landscape.
 
 4. **Learning Rate Transfer Rule**:
 
-   - Function: Determine a reference optimal learning rate $\eta_{\text{ref}}$ from small-scale experiments and transfer it to large-scale training.
-   - Mechanism: $\eta_{\text{peak}}^*(T) = \eta_{\text{ref}}/\sqrt{T}$, where $\eta_{\text{ref}} = \eta_{\text{peak}}^*(T_{\text{small}}) \cdot \sqrt{T_{\text{small}}}$. $\eta_{\text{ref}}$ is searched once at small scale, then directly computed for any $T$.
-   - Design Motivation: Enables effective extrapolation over an 80× range of training steps (100 steps → 5000 steps).
+    - Function: Determine a reference optimal learning rate $\eta_{\text{ref}}$ from small-scale experiments and transfer it to large-scale training.
+    - Mechanism: $\eta_{\text{peak}}^*(T) = \eta_{\text{ref}}/\sqrt{T}$, where $\eta_{\text{ref}} = \eta_{\text{peak}}^*(T_{\text{small}}) \cdot \sqrt{T_{\text{small}}}$. $\eta_{\text{ref}}$ is searched once at small scale, then directly computed for any $T$.
+    - Design Motivation: Enables effective extrapolation over an 80× range of training steps (100 steps → 5000 steps).
 
 ## Key Experimental Results
 

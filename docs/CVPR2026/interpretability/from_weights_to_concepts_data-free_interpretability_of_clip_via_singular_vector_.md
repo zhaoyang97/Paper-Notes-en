@@ -18,8 +18,8 @@ content_hash: c4ed1d40e09c49e0
 # From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24653](https://arxiv.org/abs/2603.24653)
-**Code**: [https://frangente.github.io/SITH](https://frangente.github.io/SITH)
+**arXiv**: [2603.24653](https://arxiv.org/abs/2603.24653)  
+**Code**: [https://frangente.github.io/SITH](https://frangente.github.io/SITH)  
 **Area**: Multimodal VLM / Model Interpretability
 **Keywords**: CLIP interpretability, singular value decomposition, attention head analysis, weight-space editing, data-free
 

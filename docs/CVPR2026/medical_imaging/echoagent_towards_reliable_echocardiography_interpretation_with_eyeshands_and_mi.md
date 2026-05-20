@@ -18,8 +18,8 @@ content_hash: 5c3156fb90f52b14
 # EchoAgent: Towards Reliable Echocardiography Interpretation with "Eyes", "Hands" and "Minds"
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.05541](https://arxiv.org/abs/2604.05541)
-**Code**: N/A
+**arXiv**: [2604.05541](https://arxiv.org/abs/2604.05541)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: Echocardiography, Agent System, Multimodal Large Language Model, Cardiac Function Assessment, Tool Calling
 

@@ -18,8 +18,8 @@ content_hash: c1e4e612b6a3b535
 # Galactification: Painting Galaxies onto Dark Matter Only Simulations Using a Transformer-Based Model
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.08438](https://arxiv.org/abs/2511.08438)
-**Code**: None
+**arXiv**: [2511.08438](https://arxiv.org/abs/2511.08438)  
+**Code**: None  
 **Area**: 3D Vision / Cosmological Simulation
 **Keywords**: cosmological simulation, Transformer, dark matter, galaxy generation, conditional generative model
 

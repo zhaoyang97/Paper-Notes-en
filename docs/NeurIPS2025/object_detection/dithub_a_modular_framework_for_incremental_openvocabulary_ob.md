@@ -19,8 +19,8 @@ content_hash: 35a6107786258f44
 # DitHub: A Modular Framework for Incremental Open-Vocabulary Object Detection
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2503.09271](https://arxiv.org/abs/2503.09271)
-**Code**: [https://aimagelab.github.io/DitHub/](https://aimagelab.github.io/DitHub/)
+**arXiv**: [2503.09271](https://arxiv.org/abs/2503.09271)  
+**Code**: [https://aimagelab.github.io/DitHub/](https://aimagelab.github.io/DitHub/)  
 **Area**: Object Detection
 **Keywords**: open-vocabulary detection, incremental learning, modular deep learning, LoRA, model merging, version control
 

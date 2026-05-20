@@ -18,8 +18,8 @@ content_hash: f3e1451a89f3a05c
 # Smooth Regularization for Efficient Video Recognition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.20928](https://arxiv.org/abs/2511.20928)
-**Code**: [GitHub](https://github.com/cmusatyalab/grw-smoothing)
+**arXiv**: [2511.20928](https://arxiv.org/abs/2511.20928)  
+**Code**: [GitHub](https://github.com/cmusatyalab/grw-smoothing)  
 **Area**: Model Compression
 **Keywords**: Video Recognition, Smooth Regularization, Gaussian Random Walk, Lightweight Models, Temporal Inductive Bias
 

@@ -18,8 +18,8 @@ content_hash: 1dc8045262df03ca
 # OccAny: Generalized Unconstrained Urban 3D Occupancy
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23502](https://arxiv.org/abs/2603.23502)
-**Code**: [https://github.com/valeoai/OccAny](https://github.com/valeoai/OccAny)
+**arXiv**: [2603.23502](https://arxiv.org/abs/2603.23502)  
+**Code**: [https://github.com/valeoai/OccAny](https://github.com/valeoai/OccAny)  
 **Area**: Autonomous Driving
 **Keywords**: 3D Occupancy Prediction, Generalization, Unconstrained Scenes, Visual Geometry Foundation Models, Semantic Segmentation
 

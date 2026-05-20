@@ -18,8 +18,8 @@ content_hash: a6f3a38e6ec7352a
 # AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.06812](https://arxiv.org/abs/2604.06812)
-**Code**: None
+**arXiv**: [2604.06812](https://arxiv.org/abs/2604.06812)  
+**Code**: None  
 **Area**: LLM Safety
 **Keywords**: Uncertainty Quantification, Long-text Generation, Adaptive Granularity, Semantic Clustering, GMM
 

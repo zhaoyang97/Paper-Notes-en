@@ -18,8 +18,8 @@ content_hash: f7dd3a4dda10b9d9
 # FreqKV: Key-Value Compression in Frequency Domain for Context Window Extension
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.00570](https://arxiv.org/abs/2505.00570)
-**Code**: [GitHub](https://github.com/LUMIA-Group/FreqKV)
+**arXiv**: [2505.00570](https://arxiv.org/abs/2505.00570)  
+**Code**: [GitHub](https://github.com/LUMIA-Group/FreqKV)  
 **Area**: Model Compression / LLM Efficiency
 **Keywords**: KV cache compression, frequency domain transform, context window extension, DCT, long-context inference
 

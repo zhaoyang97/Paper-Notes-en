@@ -18,8 +18,8 @@ content_hash: 9ba8efc36f276d23
 # Bi-Level Optimization for Self-Supervised AI-Generated Face Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22824](https://arxiv.org/abs/2507.22824)
-**Code**: [github.com/MZMMSEC/AIGFD_BLO](https://github.com/MZMMSEC/AIGFD_BLO)
+**arXiv**: [2507.22824](https://arxiv.org/abs/2507.22824)  
+**Code**: [github.com/MZMMSEC/AIGFD_BLO](https://github.com/MZMMSEC/AIGFD_BLO)  
 **Area**: Face Understanding / AI-Generated Content Detection
 **Keywords**: AI-generated face detection, bi-level optimization, self-supervised learning, EXIF metadata, anomaly detection
 

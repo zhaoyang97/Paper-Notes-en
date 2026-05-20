@@ -18,8 +18,8 @@ content_hash: 5e26267fdf770436
 # Adaptive Action Chunking at Inference-time for Vision-Language-Action Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04161](https://arxiv.org/abs/2604.04161)
-**Code**: [https://lance-lot.github.io/adaptive-chunking.github.io/](https://lance-lot.github.io/adaptive-chunking.github.io/)
+**arXiv**: [2604.04161](https://arxiv.org/abs/2604.04161)  
+**Code**: [https://lance-lot.github.io/adaptive-chunking.github.io/](https://lance-lot.github.io/adaptive-chunking.github.io/)  
 **Area**: Robotics / VLA Models
 **Keywords**: Action chunking, VLA models, adaptive inference, action entropy, robotic manipulation
 

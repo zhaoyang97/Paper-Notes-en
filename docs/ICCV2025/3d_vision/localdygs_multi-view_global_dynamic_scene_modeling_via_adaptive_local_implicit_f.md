@@ -19,7 +19,7 @@ content_hash: 24cb1adc0774cf5d
 # LocalDyGS: Multi-view Global Dynamic Scene Modeling via Adaptive Local Implicit Feature Decoupling
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.02363](https://arxiv.org/abs/2507.02363)
+**arXiv**: [2507.02363](https://arxiv.org/abs/2507.02363)  
 **Area**: 3D Vision
 **Keywords**: 3D Gaussian Splatting, dynamic scene reconstruction, multi-view, local spatial modeling, static-dynamic decoupling, temporal Gaussians
 

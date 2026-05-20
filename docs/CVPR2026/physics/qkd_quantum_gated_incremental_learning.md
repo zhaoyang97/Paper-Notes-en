@@ -18,8 +18,8 @@ content_hash: c14a5c4713a8b1f6
 # QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.11112](https://arxiv.org/abs/2604.11112)
-**Code**: [https://github.com/Frank-lilinjie/CVPR26-QKD](https://github.com/Frank-lilinjie/CVPR26-QKD)
+**arXiv**: [2604.11112](https://arxiv.org/abs/2604.11112)  
+**Code**: [https://github.com/Frank-lilinjie/CVPR26-QKD](https://github.com/Frank-lilinjie/CVPR26-QKD)  
 **Area**: Physics
 **Keywords**: Class-Incremental Learning, Quantum Computing, Knowledge Distillation, Pre-trained Models, Adapters
 

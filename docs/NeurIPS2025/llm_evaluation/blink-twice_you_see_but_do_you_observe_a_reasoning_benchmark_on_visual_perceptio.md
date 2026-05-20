@@ -19,8 +19,8 @@ content_hash: 1566c74f4889d4b3
 # BLINK-Twice: You See But Do You Observe? A Reasoning Benchmark on Visual Perception
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.09361](https://arxiv.org/abs/2510.09361)
-**Code**: [GitHub](https://github.com/PicoTrex/BLINK-Twice)
+**arXiv**: [2510.09361](https://arxiv.org/abs/2510.09361)  
+**Code**: [GitHub](https://github.com/PicoTrex/BLINK-Twice)  
 **Area**: LLM Evaluation
 **Keywords**: visual reasoning, VLM evaluation, perception vs. reasoning, natural adversarial samples, reasoning chain evaluation, benchmark
 

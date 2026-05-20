@@ -18,8 +18,8 @@ content_hash: 2a6049b7ecb6fc4d
 # From Easy to Hard: The MIR Benchmark for Progressive Interleaved Multi-Image Reasoning
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.17040](https://arxiv.org/abs/2509.17040)
-**Code**: [https://github.com/Shelly-coder239/MIRBench](https://github.com/Shelly-coder239/MIRBench)
+**arXiv**: [2509.17040](https://arxiv.org/abs/2509.17040)  
+**Code**: [https://github.com/Shelly-coder239/MIRBench](https://github.com/Shelly-coder239/MIRBench)  
 **Area**: Multimodal VLM
 **Keywords**: multi-image reasoning, interleaved data, benchmark, curriculum learning, MLLM
 

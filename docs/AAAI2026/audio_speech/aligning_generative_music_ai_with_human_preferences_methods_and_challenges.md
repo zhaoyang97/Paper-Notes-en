@@ -18,8 +18,8 @@ content_hash: e6ff491e891dd058
 # Aligning Generative Music AI with Human Preferences: Methods and Challenges
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.15038](https://arxiv.org/abs/2511.15038)
-**Code**: None
+**arXiv**: [2511.15038](https://arxiv.org/abs/2511.15038)  
+**Code**: None  
 **Area**: Audio & Speech / Preference Alignment
 **Keywords**: Music Generation, Preference Alignment, RLHF, DPO, Inference-Time Optimization
 

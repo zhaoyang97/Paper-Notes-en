@@ -18,8 +18,8 @@ content_hash: 24d4f1d6874843e9
 # One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization
 
 **Conference**: ACL 2026
-**arXiv**: [2601.18572](https://arxiv.org/abs/2601.18572)
-**Code**: [GitHub](https://github.com/frawee/persona_cues)
+**arXiv**: [2601.18572](https://arxiv.org/abs/2601.18572)  
+**Code**: [GitHub](https://github.com/frawee/persona_cues)  
 **Area**: LLM Fairness / Personalization
 **Keywords**: persona prompting, sociodemographic cues, LLM personalization bias, external validity, prompt robustness
 

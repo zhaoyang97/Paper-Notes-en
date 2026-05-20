@@ -18,8 +18,8 @@ content_hash: 6926bc37cdb3f73c
 # Tight Lower Bounds and Improved Convergence in Performative Prediction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2412.03671](https://arxiv.org/abs/2412.03671)
-**Code**: Unavailable
+**arXiv**: [2412.03671](https://arxiv.org/abs/2412.03671)  
+**Code**: Unavailable  
 **Area**: Machine Learning Theory / Decision-Dependent Learning
 **Keywords**: Performative Prediction, Convergence Rate, Lower Bounds, Repeated Risk Minimization, Decision-Dependent Distribution
 

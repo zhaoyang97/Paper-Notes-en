@@ -18,8 +18,8 @@ content_hash: 9a13f2ca95007e7d
 # HAMMER: Harnessing MLLM via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.02329](https://arxiv.org/abs/2603.02329)
-**Code**: [https://rayyoh.github.io/Hammer/](https://rayyoh.github.io/Hammer/)
+**arXiv**: [2603.02329](https://arxiv.org/abs/2603.02329)  
+**Code**: [https://rayyoh.github.io/Hammer/](https://rayyoh.github.io/Hammer/)  
 **Area**: Multimodal VLM
 **Keywords**: 3D Affordance, MLLM, Cross-Modal Fusion, Point Cloud, Intention Understanding
 

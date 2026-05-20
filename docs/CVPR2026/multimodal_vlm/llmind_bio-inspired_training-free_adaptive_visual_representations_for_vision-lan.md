@@ -18,8 +18,8 @@ content_hash: 658a0226449cbb48
 # LLMind: Bio-inspired Training-free Adaptive Visual Representations for Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14882](https://arxiv.org/abs/2603.14882)
-**Code**: [https://empactlab.github.io/LLMind-CVPR-2026/](https://empactlab.github.io/LLMind-CVPR-2026/)
+**arXiv**: [2603.14882](https://arxiv.org/abs/2603.14882)  
+**Code**: [https://empactlab.github.io/LLMind-CVPR-2026/](https://empactlab.github.io/LLMind-CVPR-2026/)  
 **Area**: Multimodal VLM
 **Keywords**: Bio-inspired visual sampling, Möbius transformation, training-free, pixel budget, VQA
 

@@ -18,8 +18,8 @@ content_hash: fe1b5941bcf35a23
 # Generalizing Analogical Inference from Boolean to Continuous Domains
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10416](https://arxiv.org/abs/2511.10416)
-**Code**: None
+**arXiv**: [2511.10416](https://arxiv.org/abs/2511.10416)  
+**Code**: None  
 **Area**: AI Foundations / Analogical Reasoning
 **Keywords**: analogical reasoning, Boolean domain generalization, continuous domain regression, generalized mean, error bounds
 
@@ -57,35 +57,35 @@ The theoretical framework proceeds in three progressive layers:
 
 1. **Counterexample to the Classical Bound (Section 3)**:
 
-   - A function $f: \mathbb{B}^4 \to \mathbb{B}$ is constructed that outputs 1 only at $\mathbf{x} = \mathbf{1}$ and 0 elsewhere.
-   - The distance from $f$ to the affine class $\mathcal{L}$ is $d(f, \mathcal{L}) = 1/16$.
-   - An exhaustive algorithm (enumerating $2^{15}$ subsets) yields $P(\text{err}_{S,f} > 0) \geq 0.42$.
-   - However, the classical Theorem 3 predicts an upper bound of $4 \times 1/16 = 0.25$, yielding a contradiction.
-   - This constitutes an important theoretical correction, refuting a core theorem that has been widely cited in the field for a decade.
-   - Intuition behind the counterexample: when a training set of all-zero instances meets an all-one test point, the analogical inference system systematically predicts the unique label 1 as 0.
+    - A function $f: \mathbb{B}^4 \to \mathbb{B}$ is constructed that outputs 1 only at $\mathbf{x} = \mathbf{1}$ and 0 elsewhere.
+    - The distance from $f$ to the affine class $\mathcal{L}$ is $d(f, \mathcal{L}) = 1/16$.
+    - An exhaustive algorithm (enumerating $2^{15}$ subsets) yields $P(\text{err}_{S,f} > 0) \geq 0.42$.
+    - However, the classical Theorem 3 predicts an upper bound of $4 \times 1/16 = 0.25$, yielding a contradiction.
+    - This constitutes an important theoretical correction, refuting a core theorem that has been widely cited in the field for a decade.
+    - Intuition behind the counterexample: when a training set of all-zero instances meets an all-one test point, the analogical inference system systematically predicts the unique label 1 as 0.
 
 2. **Parameterized Analogy via Generalized Means (Section 4)**:
 
-   - Generalized mean definition: $m_p(x_1, ..., x_n) = \lim_{r \to p} (\frac{1}{n}\sum x_i^r)^{1/r}$
-   - $p = 1$ corresponds to the arithmetic mean, $p = 0$ to the geometric mean, and $p = -1$ to the harmonic mean.
-   - Analogy definition: $(a,b,c,d) \in \mathbb{R}_+^4$ satisfies $a:b::^p c:d$ if and only if $m_p(a,d) = m_p(b,c)$.
-   - Key properties: for any four strictly increasing positive reals, there exists a unique analogical exponent $p$; any such analogy can be reduced to an equivalent arithmetic analogy; solutions always exist for increasing sequences.
-   - The notions of analogical root and analogical extension are generalized from the Boolean domain to the continuous domain, governed by the parameter pair $(\mathbf{p}; q)$ controlling the analogical exponents for attribute and label domains respectively.
+    - Generalized mean definition: $m_p(x_1, ..., x_n) = \lim_{r \to p} (\frac{1}{n}\sum x_i^r)^{1/r}$
+    - $p = 1$ corresponds to the arithmetic mean, $p = 0$ to the geometric mean, and $p = -1$ to the harmonic mean.
+    - Analogy definition: $(a,b,c,d) \in \mathbb{R}_+^4$ satisfies $a:b::^p c:d$ if and only if $m_p(a,d) = m_p(b,c)$.
+    - Key properties: for any four strictly increasing positive reals, there exists a unique analogical exponent $p$; any such analogy can be reduced to an equivalent arithmetic analogy; solutions always exist for increasing sequences.
+    - The notions of analogical root and analogical extension are generalized from the Boolean domain to the continuous domain, governed by the parameter pair $(\mathbf{p}; q)$ controlling the analogical exponents for attribute and label domains respectively.
 
 3. **Characterization of Analogy-Preserving Functions (Sections 4.3 and 5)**:
 
-   - Core theorem (Proposition 9): A continuous function $f$ belongs to $AP_{(\mathbf{p};q)}$ if and only if $f$ maps analogies of exponent $\mathbf{p}$ to analogies of exponent $q$.
-   - When $p = q = 1$ (arithmetic analogy), the analogy-preserving functions are exactly affine functions, recovering the classical Boolean domain result.
-   - In the general case, analogy-preserving functions form a family of generalized power functions with rich structural properties.
-   - This provides a function-theoretic foundation for analogical inference in regression settings.
+    - Core theorem (Proposition 9): A continuous function $f$ belongs to $AP_{(\mathbf{p};q)}$ if and only if $f$ maps analogies of exponent $\mathbf{p}$ to analogies of exponent $q$.
+    - When $p = q = 1$ (arithmetic analogy), the analogy-preserving functions are exactly affine functions, recovering the classical Boolean domain result.
+    - In the general case, analogy-preserving functions form a family of generalized power functions with rich structural properties.
+    - This provides a function-theoretic foundation for analogical inference in regression settings.
 
 4. **Error Bounds in Continuous Domains (Section 5)**:
 
-   - An appropriate function distance metric suited to generalized analogies is introduced.
-   - Under smoothness assumptions, the following are derived:
+    - An appropriate function distance metric suited to generalized analogies is introduced.
+    - Under smoothness assumptions, the following are derived:
      - **Worst-case bound (uniform bound)**: For functions that are $\epsilon$-close to the analogy-preserving function class, the maximum error of analogical inference is bounded.
      - **Average-case bound (probabilistic bound)**: Under random selection of training sets, the expected inference error is bounded.
-   - These bounds provide PAC-learning-style theoretical guarantees for analogical inference in continuous domains.
+    - These bounds provide PAC-learning-style theoretical guarantees for analogical inference in continuous domains.
 
 ### Loss & Training
 

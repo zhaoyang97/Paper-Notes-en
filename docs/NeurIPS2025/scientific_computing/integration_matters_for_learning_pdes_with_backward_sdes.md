@@ -18,8 +18,8 @@ content_hash: cd2528c22f4ce112
 # Integration Matters for Learning PDEs with Backward SDEs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.01078](https://arxiv.org/abs/2505.01078)
-**Code**: [https://github.com/sungje-park/heunbsde](https://github.com/sungje-park/heunbsde)
+**arXiv**: [2505.01078](https://arxiv.org/abs/2505.01078)  
+**Code**: [https://github.com/sungje-park/heunbsde](https://github.com/sungje-park/heunbsde)  
 **Area**: Scientific Computing / PDE Solving
 **Keywords**: BSDE, PDE solving, Stratonovich integration, Heun method, discretization bias
 

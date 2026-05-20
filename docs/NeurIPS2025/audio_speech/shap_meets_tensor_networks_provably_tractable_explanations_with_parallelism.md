@@ -20,8 +20,8 @@ content_hash: 18232ff99930b34f
 # SHAP Meets Tensor Networks: Provably Tractable Explanations with Parallelism
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21599](https://arxiv.org/abs/2510.21599)
-**Code**: To be confirmed
+**arXiv**: [2510.21599](https://arxiv.org/abs/2510.21599)  
+**Code**: To be confirmed  
 **Area**: Audio & Speech
 **Keywords**: SHAP, Tensor Networks, Tensor Train, Explainability, Parallel Computation, Binarized Neural Networks, Parameterized Complexity
 

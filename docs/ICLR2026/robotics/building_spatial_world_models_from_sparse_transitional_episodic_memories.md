@@ -18,8 +18,8 @@ content_hash: 299dd3b9b9c91b74
 # Building Spatial World Models from Sparse Transitional Episodic Memories
 
 **Conference**: ICLR2026
-**arXiv**: [2505.13696](https://arxiv.org/abs/2505.13696)
-**Code**: To be confirmed
+**arXiv**: [2505.13696](https://arxiv.org/abs/2505.13696)  
+**Code**: To be confirmed  
 **Area**: Robotics
 **Keywords**: world model, episodic memory, spatial reasoning, cognitive map, navigation
 

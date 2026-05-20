@@ -18,8 +18,8 @@ content_hash: 76dbb419c11af471
 # Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25203](https://arxiv.org/abs/2603.25203)
-**Code**: [https://github.com/2302Jerry/pcgr](https://github.com/2302Jerry/pcgr)
+**arXiv**: [2603.25203](https://arxiv.org/abs/2603.25203)  
+**Code**: [https://github.com/2302Jerry/pcgr](https://github.com/2302Jerry/pcgr)  
 **Area**: Robotics
 **Keywords**: Multimodal Misinformation Detection, Concept Graph Reasoning, Probabilistic Inference, Explainable AI, Automatic Concept Growth
 

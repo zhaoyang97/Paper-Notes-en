@@ -17,8 +17,8 @@ content_hash: d5a3f75edfec6dce
 # Performative Validity of Recourse Explanations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.15366](https://arxiv.org/abs/2506.15366)
-**Code**: None
+**arXiv**: [2506.15366](https://arxiv.org/abs/2506.15366)  
+**Code**: None  
 **Area**: Causal Inference
 **Keywords**: Algorithmic recourse, performative effects, causal inference, counterfactual explanations, distribution shift
 

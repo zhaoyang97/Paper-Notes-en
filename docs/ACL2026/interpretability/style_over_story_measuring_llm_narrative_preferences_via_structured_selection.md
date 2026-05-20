@@ -18,8 +18,8 @@ content_hash: f144c0a0708bb815
 # Style over Story: Measuring LLM Narrative Preferences via Structured Selection
 
 **Conference**: ACL 2026
-**arXiv**: [2510.02025](https://arxiv.org/abs/2510.02025)
-**Code**: None
+**arXiv**: [2510.02025](https://arxiv.org/abs/2510.02025)  
+**Code**: None  
 **Area**: Interpretability / Text Generation
 **Keywords**: narrative preference, LLM bias, constrained selection, narratology, style preference
 

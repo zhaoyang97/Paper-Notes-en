@@ -18,8 +18,8 @@ content_hash: a9c74cb2565f409f
 # Free-Grained Hierarchical Visual Recognition
 
 **Conference**: CVPR 2026
-**arXiv**: [2510.14737](https://arxiv.org/abs/2510.14737)
-**Code**: [FreeGrainLearning](https://github.com/seulkipark/FreeGrainLearning)
+**arXiv**: [2510.14737](https://arxiv.org/abs/2510.14737)  
+**Code**: [FreeGrainLearning](https://github.com/seulkipark/FreeGrainLearning)  
 **Area**: LLM Evaluation
 **Keywords**: Hierarchical Classification, Mixed-Granularity Annotation, Semi-Supervised Learning, Text Guidance, Taxonomy
 

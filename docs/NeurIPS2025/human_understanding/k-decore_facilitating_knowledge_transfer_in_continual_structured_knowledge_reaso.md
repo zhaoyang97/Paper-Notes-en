@@ -18,8 +18,8 @@ content_hash: c3cd4185557eb731
 # K-DeCore: Facilitating Knowledge Transfer in Continual Structured Knowledge Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.16929](https://arxiv.org/abs/2509.16929)
-**Code**: None
+**arXiv**: [2509.16929](https://arxiv.org/abs/2509.16929)  
+**Code**: None  
 **Area**: Human Understanding
 **Keywords**: Continual Learning, Structured Knowledge Reasoning, Knowledge Decoupling, Memory Replay, Text-to-SQL
 

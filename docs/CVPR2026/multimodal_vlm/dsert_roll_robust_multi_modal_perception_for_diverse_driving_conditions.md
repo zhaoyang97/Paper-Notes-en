@@ -18,8 +18,8 @@ content_hash: 0519a34ffbf0e71d
 # DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03685](https://arxiv.org/abs/2604.03685)
-**Code**: [https://jeongyh98.github.io/dsert-roll](https://jeongyh98.github.io/dsert-roll)
+**arXiv**: [2604.03685](https://arxiv.org/abs/2604.03685)  
+**Code**: [https://jeongyh98.github.io/dsert-roll](https://jeongyh98.github.io/dsert-roll)  
 **Area**: Autonomous Driving / Multi-Modal Perception
 **Keywords**: multi-modal dataset, event camera, 4D radar, thermal camera, 3D detection
 

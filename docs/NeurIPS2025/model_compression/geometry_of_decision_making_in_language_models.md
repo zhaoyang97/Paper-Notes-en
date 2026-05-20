@@ -18,8 +18,8 @@ content_hash: c6f6995cae9ae609
 # Geometry of Decision Making in Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.20315](https://arxiv.org/abs/2511.20315)
-**Code**: None
+**arXiv**: [2511.20315](https://arxiv.org/abs/2511.20315)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Intrinsic Dimension, Hidden Representation Geometry, Decision Dynamics, Multiple-Choice QA, Transformer
 

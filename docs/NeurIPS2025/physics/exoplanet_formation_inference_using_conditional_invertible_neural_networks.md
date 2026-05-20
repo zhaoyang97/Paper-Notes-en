@@ -18,8 +18,8 @@ content_hash: fddddaf30f270639
 # Exoplanet Formation Inference Using Conditional Invertible Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.05751](https://arxiv.org/abs/2512.05751)
-**Code**: None
+**arXiv**: [2512.05751](https://arxiv.org/abs/2512.05751)  
+**Code**: None  
 **Area**: Physics / Planetary Science
 **Keywords**: exoplanets, conditional invertible neural networks, Bayesian inference, planet formation, surrogate model
 

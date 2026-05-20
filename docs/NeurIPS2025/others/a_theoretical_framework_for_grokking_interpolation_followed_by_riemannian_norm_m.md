@@ -18,8 +18,8 @@ content_hash: 6f54292d12380036
 # A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation
 
 **Conference**: NEURIPS2025
-**arXiv**: [2505.20172](https://arxiv.org/abs/2505.20172)
-**Code**: None
+**arXiv**: [2505.20172](https://arxiv.org/abs/2505.20172)  
+**Code**: None  
 **Area**: Other
 **Keywords**: grokking, weight decay, gradient flow, Riemannian optimization, implicit regularization, two-timescale dynamics
 

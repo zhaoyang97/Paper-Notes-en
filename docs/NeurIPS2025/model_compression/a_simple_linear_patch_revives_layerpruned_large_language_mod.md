@@ -18,8 +18,8 @@ content_hash: 141c461f93caaece
 # A Simple Linear Patch Revives Layer-Pruned Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.24680](https://arxiv.org/abs/2505.24680)
-**Code**: [https://github.com/chenxinrui-tsinghua/LinearPatch](https://github.com/chenxinrui-tsinghua/LinearPatch)
+**arXiv**: [2505.24680](https://arxiv.org/abs/2505.24680)  
+**Code**: [https://github.com/chenxinrui-tsinghua/LinearPatch](https://github.com/chenxinrui-tsinghua/LinearPatch)  
 **Area**: Model Compression
 **Keywords**: Layer Pruning, Activation Magnitude Alignment, Hadamard Transform, Channel Scaling, Knowledge Distillation
 

@@ -19,8 +19,8 @@ content_hash: 39deedc678af49ac
 # InfiAgent: Self-Evolving Pyramid Agent Framework for Infinite Scenarios
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.22502](https://arxiv.org/abs/2509.22502)
-**Code**: To be released
+**arXiv**: [2509.22502](https://arxiv.org/abs/2509.22502)  
+**Code**: To be released  
 **Area**: LLM Agent
 **Keywords**: multi-agent system, DAG, agent-as-a-tool, self-evolution, task decomposition, hierarchical agent
 

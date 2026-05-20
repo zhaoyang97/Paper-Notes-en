@@ -18,9 +18,9 @@ content_hash: a5d06f2e8c28a796
 # VIPAMIN: Visual Prompt Initialization via Embedding Selection and Subspace Expansion
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.16446](https://arxiv.org/abs/2510.16446)
+**arXiv**: [2510.16446](https://arxiv.org/abs/2510.16446)  
 **Authors**: Jaekyun Park, Hye Won Chung (KAIST)
-**Code**: [iamjaekyun/vipamin](https://github.com/iamjaekyun/vipamin)
+**Code**: [iamjaekyun/vipamin](https://github.com/iamjaekyun/vipamin)  
 **Area**: Multimodal VLM
 **Keywords**: Visual Prompt Tuning, Parameter-Efficient Fine-Tuning, Self-Supervised Learning, Vision Transformer, Subspace Expansion
 

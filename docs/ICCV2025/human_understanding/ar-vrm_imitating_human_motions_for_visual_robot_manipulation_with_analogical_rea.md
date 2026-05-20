@@ -18,8 +18,8 @@ content_hash: 437cee008a0d017c
 # AR-VRM: Imitating Human Motions for Visual Robot Manipulation with Analogical Reasoning
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.07626](https://arxiv.org/abs/2508.07626)
-**Code**: [https://github.com/idejie/ar](https://github.com/idejie/ar)
+**arXiv**: [2508.07626](https://arxiv.org/abs/2508.07626)  
+**Code**: [https://github.com/idejie/ar](https://github.com/idejie/ar)  
 **Area**: Human Understanding / Robot Manipulation
 **Keywords**: visual robot manipulation, analogical reasoning, human keypoints, vision-language pretraining, human-to-robot motion transfer
 

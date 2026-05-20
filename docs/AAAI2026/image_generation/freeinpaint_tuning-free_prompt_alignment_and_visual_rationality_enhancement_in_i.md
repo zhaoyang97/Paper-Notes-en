@@ -18,8 +18,8 @@ content_hash: c39a209344c73e22
 # FreeInpaint: Tuning-free Prompt Alignment and Visual Rationality Enhancement in Image Inpainting
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.21104](https://arxiv.org/abs/2512.21104)
-**Code**: [https://github.com/CharlesGong12/FreeInpaint](https://github.com/CharlesGong12/FreeInpaint)
+**arXiv**: [2512.21104](https://arxiv.org/abs/2512.21104)  
+**Code**: [https://github.com/CharlesGong12/FreeInpaint](https://github.com/CharlesGong12/FreeInpaint)  
 **Area**: Image Generation
 **Keywords**: Image Inpainting, Diffusion Models, Training-free Guidance, Initial Noise Optimization, Prompt Alignment
 

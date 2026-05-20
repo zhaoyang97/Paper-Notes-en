@@ -18,8 +18,8 @@ content_hash: 152617ce5f215425
 # NTIRE 2026 The Second Challenge on Day and Night Raindrop Removal for Dual-Focused Images
 
 **Conference**: CVPR 2026 (Workshop)
-**arXiv**: [2604.10634](https://arxiv.org/abs/2604.10634)
-**Code**: [Competition Page](https://www.codabench.org/competitions/12808/)
+**arXiv**: [2604.10634](https://arxiv.org/abs/2604.10634)  
+**Code**: [Competition Page](https://www.codabench.org/competitions/12808/)  
 **Area**: Image Restoration / Raindrop Removal
 **Keywords**: Raindrop removal, dual-focused images, day and night scenes, image restoration competition, NTIRE
 

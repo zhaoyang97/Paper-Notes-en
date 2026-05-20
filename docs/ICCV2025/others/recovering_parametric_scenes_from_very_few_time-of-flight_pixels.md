@@ -17,8 +17,8 @@ content_hash: 79081d489d4133b3
 # Recovering Parametric Scenes from Very Few Time-of-Flight Pixels
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.16132](https://arxiv.org/abs/2509.16132)
-**Code**: [Project Page](https://cpsiff.github.io/recovering_parametric_scenes)
+**arXiv**: [2509.16132](https://arxiv.org/abs/2509.16132)  
+**Code**: [Project Page](https://cpsiff.github.io/recovering_parametric_scenes)  
 **Area**: Other
 **Keywords**: Time-of-Flight sensor, 6D pose estimation, differentiable rendering, SPAD, parametric scene recovery
 

@@ -18,8 +18,8 @@ content_hash: 58017974e5e414ad
 # CORE: Full-Path Evaluation of LLM Agents Beyond Final State
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20998](https://arxiv.org/abs/2509.20998)
-**Code**: [https://github.com/Synkrasis-Labs/CORE](https://github.com/Synkrasis-Labs/CORE)
+**arXiv**: [2509.20998](https://arxiv.org/abs/2509.20998)  
+**Code**: [https://github.com/Synkrasis-Labs/CORE](https://github.com/Synkrasis-Labs/CORE)  
 **Area**: Agent
 **Keywords**: Agent Evaluation, Full-Path Evaluation, Deterministic Finite Automaton, Safety, Tool Calling
 

@@ -18,8 +18,8 @@ content_hash: 2d8b7cb7729b35a2
 # CA-I2P: Channel-Adaptive Registration Network with Global Optimal Selection
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21364](https://arxiv.org/abs/2506.21364)
-**Code**: N/A
+**arXiv**: [2506.21364](https://arxiv.org/abs/2506.21364)  
+**Code**: N/A  
 **Area**: 3D Vision
 **Keywords**: Image-to-point cloud registration, cross-modal feature matching, channel adaptivity, optimal transport, detector-free method
 

@@ -18,8 +18,8 @@ content_hash: c921f9b7efc054be
 # Adv-SSL: Adversarial Self-Supervised Representation Learning with Theoretical Guarantees
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2408.08533](https://arxiv.org/abs/2408.08533)
-**Code**: [GitHub](https://github.com/vincen-github/Adv-SSL)
+**arXiv**: [2408.08533](https://arxiv.org/abs/2408.08533)  
+**Code**: [GitHub](https://github.com/vincen-github/Adv-SSL)  
 **Area**: Self-Supervised Learning
 **Keywords**: self-supervised learning, adversarial learning, unbiased estimation, transfer learning, theoretical guarantees, few-shot learning
 

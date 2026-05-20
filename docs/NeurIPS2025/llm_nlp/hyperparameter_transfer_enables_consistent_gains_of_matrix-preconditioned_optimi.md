@@ -20,8 +20,8 @@ content_hash: f07bd395793ebeb6
 # Hyperparameter Transfer Enables Consistent Gains of Matrix-Preconditioned Optimizers Across Scales
 
 **Conference**: NEURIPS2025
-**arXiv**: [2512.05620](https://arxiv.org/abs/2512.05620)
-**Code**: To be confirmed
+**arXiv**: [2512.05620](https://arxiv.org/abs/2512.05620)  
+**Code**: To be confirmed  
 **Area**: LLM/NLP
 **Keywords**: optimizer scaling, μP, Shampoo, SOAP, Muon, hyperparameter transfer, matrix preconditioning
 

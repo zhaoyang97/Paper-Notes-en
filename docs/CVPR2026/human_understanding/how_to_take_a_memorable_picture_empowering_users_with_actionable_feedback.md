@@ -18,8 +18,8 @@ content_hash: 5195a8a3a765d145
 # How to Take a Memorable Picture? Empowering Users with Actionable Feedback
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21877](https://arxiv.org/abs/2602.21877)
-**Code**: [https://laitifranz.github.io/MemCoach](https://laitifranz.github.io/MemCoach)
+**arXiv**: [2602.21877](https://arxiv.org/abs/2602.21877)  
+**Code**: [https://laitifranz.github.io/MemCoach](https://laitifranz.github.io/MemCoach)  
 **Area**: Human-Centric Understanding
 **Keywords**: Image memorability, actionable feedback, activation steering, MLLM, photography assistance
 

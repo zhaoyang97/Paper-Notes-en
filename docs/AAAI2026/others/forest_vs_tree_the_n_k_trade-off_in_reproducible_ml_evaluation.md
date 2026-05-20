@@ -17,8 +17,8 @@ content_hash: c468a7f80978739b
 # Forest vs Tree: The (N, K) Trade-off in Reproducible ML Evaluation
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.03663](https://arxiv.org/abs/2508.03663)
-**Code**: None
+**arXiv**: [2508.03663](https://arxiv.org/abs/2508.03663)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Reproducibility, Human Annotation, Annotator Disagreement, Evaluation Reliability, Optimal Budget Allocation
 

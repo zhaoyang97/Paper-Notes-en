@@ -18,8 +18,8 @@ content_hash: 1ef9d4dec47a5652
 # Neural Green's Functions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.01924](https://arxiv.org/abs/2511.01924)
-**Code**: None
+**arXiv**: [2511.01924](https://arxiv.org/abs/2511.01924)  
+**Code**: None  
 **Area**: 3D Vision
 **Keywords**: Green's functions, neural operators, PDE solving, eigendecomposition, domain generalization
 
@@ -51,21 +51,21 @@ $$\mathbf{u} = \mathbf{K}^T \{\mathbf{G}(\mathbf{K}\mathbf{M}\mathbf{f} - \mathb
 
 1. **Eigendecomposition-Based Solution Operator**:
 
-   - **Function**: Factorizes the Green's function matrix $\mathbf{G} = (\mathbf{KLK}^T)^{-1}$ as $\mathbf{G} = \mathbf{\Phi} \mathbf{\Lambda}^{-1} \mathbf{\Phi}^T$.
-   - **Mechanism**: The network predicts eigenvectors $\Phi \in \mathbb{R}^{N_{int} \times K}$ and eigenvalues $\Lambda$, where $K$ is far smaller than the number of interior vertices $N_{int}$ — a low-rank approximation.
-   - **Design Motivation**: Directly predicting the $N_{int} \times N_{int}$ Green's function matrix is infeasible (too large); the low-rank eigendecomposition compresses parameters from $O(N^2)$ to $O(NK)$.
+    - **Function**: Factorizes the Green's function matrix $\mathbf{G} = (\mathbf{KLK}^T)^{-1}$ as $\mathbf{G} = \mathbf{\Phi} \mathbf{\Lambda}^{-1} \mathbf{\Phi}^T$.
+    - **Mechanism**: The network predicts eigenvectors $\Phi \in \mathbb{R}^{N_{int} \times K}$ and eigenvalues $\Lambda$, where $K$ is far smaller than the number of interior vertices $N_{int}$ — a low-rank approximation.
+    - **Design Motivation**: Directly predicting the $N_{int} \times N_{int}$ Green's function matrix is infeasible (too large); the low-rank eigendecomposition compresses parameters from $O(N^2)$ to $O(NK)$.
 
 2. **Purely Geometric Feature Extraction**:
 
-   - **Function**: Extracts pointwise features from the input point cloud without using any function value information.
-   - **Mechanism**: A Transolver backbone processes the volumetric point cloud, with cross-attention interactions with latent tokens.
-   - **Design Motivation**: **Forcing the network to observe only geometry** is the key design choice that aligns with the mathematical property that Green's functions depend solely on domain geometry.
+    - **Function**: Extracts pointwise features from the input point cloud without using any function value information.
+    - **Mechanism**: A Transolver backbone processes the volumetric point cloud, with cross-attention interactions with latent tokens.
+    - **Design Motivation**: **Forcing the network to observe only geometry** is the key design choice that aligns with the mathematical property that Green's functions depend solely on domain geometry.
 
 3. **Joint Prediction of Integration Components**:
 
-   - **Mass matrix $M$**: Converts source function values into integration weights for irregular meshes.
-   - **Selection matrices $S$/$K$**: Distinguish boundary from interior vertices.
-   - All components are predicted from geometry — mesh density and shape vary across domains, so $M$ and $S$ vary accordingly.
+    - **Mass matrix $M$**: Converts source function values into integration weights for irregular meshes.
+    - **Selection matrices $S$/$K$**: Distinguish boundary from interior vertices.
+    - All components are predicted from geometry — mesh density and shape vary across domains, so $M$ and $S$ vary accordingly.
 
 ### Loss & Training
 - Supervised loss: MSE between the predicted solution $u$ and the ground truth from a numerical solver.

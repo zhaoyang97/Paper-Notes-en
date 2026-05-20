@@ -18,8 +18,8 @@ content_hash: e3326020942e0e24
 # NURBGen: High-Fidelity Text-to-CAD Generation through LLM-Driven NURBS Modeling
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.06194](https://arxiv.org/abs/2511.06194)
-**Code**: Coming soon
+**arXiv**: [2511.06194](https://arxiv.org/abs/2511.06194)  
+**Code**: Coming soon  
 **Area**: 3D Vision
 **Keywords**: Text-to-CAD, NURBS, LLM, BRep, 3D Generation
 

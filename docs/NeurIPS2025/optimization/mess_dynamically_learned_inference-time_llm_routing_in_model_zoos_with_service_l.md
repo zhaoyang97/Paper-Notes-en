@@ -18,8 +18,8 @@ content_hash: 4a10733a50b7bd1c
 # MESS+: Dynamically Learned Inference-Time LLM Routing in Model Zoos with Service Level Guarantees
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.19947](https://arxiv.org/abs/2505.19947)
-**Code**: [GitHub](https://github.com/laminair/mess-plus)
+**arXiv**: [2505.19947](https://arxiv.org/abs/2505.19947)  
+**Code**: [GitHub](https://github.com/laminair/mess-plus)  
 **Area**: Optimization
 **Keywords**: Cost Optimization, LLM Routing, Virtual Queue, SLA Guarantee, Online Learning
 

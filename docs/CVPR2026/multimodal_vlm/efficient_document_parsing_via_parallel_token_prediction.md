@@ -18,8 +18,8 @@ content_hash: e665319a03338b02
 # Efficient Document Parsing via Parallel Token Prediction
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.15206](https://arxiv.org/abs/2603.15206)
-**Code**: [GitHub](https://github.com/flow3rdown/PTP-OCR)
+**arXiv**: [2603.15206](https://arxiv.org/abs/2603.15206)  
+**Code**: [GitHub](https://github.com/flow3rdown/PTP-OCR)  
 **Area**: Multimodal VLM
 **Keywords**: Document Parsing, Parallel Token Prediction, Register Token, VLM Acceleration, OCR
 

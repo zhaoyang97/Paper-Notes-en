@@ -18,8 +18,8 @@ content_hash: ba081f0389fe7ecc
 # Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.15055](https://arxiv.org/abs/2505.15055)
-**Code**: [https://github.com/Joe-Hall-Lee/PSN-IRT](https://github.com/Joe-Hall-Lee/PSN-IRT)
+**arXiv**: [2505.15055](https://arxiv.org/abs/2505.15055)  
+**Code**: [https://github.com/Joe-Hall-Lee/PSN-IRT](https://github.com/Joe-Hall-Lee/PSN-IRT)  
 **Area**: LLM Evaluation
 **Keywords**: IRT, benchmark evaluation, condition number, item quality, PSN-IRT
 

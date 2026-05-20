@@ -17,8 +17,8 @@ content_hash: 75d69e51fc426a80
 # TaylorPODA: A Taylor Expansion-Based Method to Improve Post-Hoc Attributions for Opaque Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.10643](https://arxiv.org/abs/2507.10643)
-**Code**: Provided in Appendix
+**arXiv**: [2507.10643](https://arxiv.org/abs/2507.10643)  
+**Code**: Provided in Appendix  
 **Area**: Other
 **Keywords**: local attribution, Taylor expansion, post-hoc explainability, feature interaction, AUP optimization
 
@@ -46,21 +46,21 @@ TaylorPODA performs a Taylor expansion of the model output $f(\mathbf{x})$ aroun
 ### Key Designs
 1. **Three Postulates**
 
-   - **Precision**: The Taylor independent effect of the $i$-th feature must be attributed solely to the $i$-th feature, with $\tau_{i,j}=1$ if $i=j$ and $0$ otherwise. This addresses the erroneous attribution of independent effects in F1.
-   - **Federation**: The Taylor interaction effect of a feature set $S$ may only be attributed to features within $S$, with $\zeta_{i,\psi}=0$ when $i \notin S$. This addresses the erroneous attribution of interaction effects to irrelevant features in F1.
-   - **Zero-Discrepancy**: The sum of all attribution values plus the baseline value exactly equals the model output, $f(\boldsymbol{\beta})+\sum_i a_i = f(\mathbf{x})$. This addresses incomplete or redundant allocation in F2.
+    - **Precision**: The Taylor independent effect of the $i$-th feature must be attributed solely to the $i$-th feature, with $\tau_{i,j}=1$ if $i=j$ and $0$ otherwise. This addresses the erroneous attribution of independent effects in F1.
+    - **Federation**: The Taylor interaction effect of a feature set $S$ may only be attributed to features within $S$, with $\zeta_{i,\psi}=0$ when $i \notin S$. This addresses the erroneous attribution of interaction effects to irrelevant features in F1.
+    - **Zero-Discrepancy**: The sum of all attribution values plus the baseline value exactly equals the model output, $f(\boldsymbol{\beta})+\sum_i a_i = f(\mathbf{x})$. This addresses incomplete or redundant allocation in F2.
 
 2. **Adaptation Property**
 
-   - **Function**: Allows the allocation weights $\xi_{i,S}$ of interaction effects among involved features to be tunable, with $\xi_{i,S} \in (0,1)$ and $\sum_{i \in S} \xi_{i,S} = 1$.
-   - **Mechanism**: Unlike SHAP's fixed equal splitting ($1/|S|$), TaylorPODA allows allocation ratios to be optimized toward downstream objectives.
-   - **Design Motivation**: In post-hoc settings without ground-truth explanations, fixed allocation may deviate from the true feature importance.
+    - **Function**: Allows the allocation weights $\xi_{i,S}$ of interaction effects among involved features to be tunable, with $\xi_{i,S} \in (0,1)$ and $\sum_{i \in S} \xi_{i,S} = 1$.
+    - **Mechanism**: Unlike SHAP's fixed equal splitting ($1/|S|$), TaylorPODA allows allocation ratios to be optimized toward downstream objectives.
+    - **Design Motivation**: In post-hoc settings without ground-truth explanations, fixed allocation may deviate from the true feature importance.
 
 3. **AUP Optimization Strategy**
 
-   - **Function**: Uses the Area Under Prediction recovery curve (AUP) as the optimization objective, and performs random search over optimal combinations of $\xi_{i,S}$ via Dirichlet distribution sampling.
-   - **Mechanism**: $\text{AUP}(\mathbf{a};\mathbf{x},f) = \sum_{m=1}^d |f(\mathbf{x}) - \mathbb{E}[f(X)|X_{\mathcal{I}(m)}=\mathbf{x}_{\mathcal{I}(m)}]|$; minimizing AUP means that features ranked by attribution magnitude recover the prediction most rapidly.
-   - **Design Motivation**: The Dirichlet distribution naturally satisfies the normalization constraint, ensuring the zero-discrepancy postulate.
+    - **Function**: Uses the Area Under Prediction recovery curve (AUP) as the optimization objective, and performs random search over optimal combinations of $\xi_{i,S}$ via Dirichlet distribution sampling.
+    - **Mechanism**: $\text{AUP}(\mathbf{a};\mathbf{x},f) = \sum_{m=1}^d |f(\mathbf{x}) - \mathbb{E}[f(X)|X_{\mathcal{I}(m)}=\mathbf{x}_{\mathcal{I}(m)}]|$; minimizing AUP means that features ranked by attribution magnitude recover the prediction most rapidly.
+    - **Design Motivation**: The Dirichlet distribution naturally satisfies the normalization constraint, ensuring the zero-discrepancy postulate.
 
 ### Attribution Formula
 $$a_i^{(\text{TaylorPODA})} = f(\mathbf{x}) - f_{G\setminus\{i\}}(\mathbf{x}) - \sum_{\substack{S \subseteq G, |S|>1 \\ i \in S}} (1-\xi_{i,S}) H(S)$$

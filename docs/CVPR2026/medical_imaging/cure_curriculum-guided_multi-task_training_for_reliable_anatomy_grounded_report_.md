@@ -18,8 +18,8 @@ content_hash: 8e9166d59fe2003c
 # CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.15408](https://arxiv.org/abs/2601.15408)
-**Code**: [Available](https://github.com/PabloMessina/CURE)
+**arXiv**: [2601.15408](https://arxiv.org/abs/2601.15408)  
+**Code**: [Available](https://github.com/PabloMessina/CURE)  
 **Area**: Medical Imaging
 **Keywords**: Curriculum Learning, Visual Grounding, Radiology Report Generation, Multi-task Learning, Hallucination Mitigation
 

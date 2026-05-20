@@ -18,8 +18,8 @@ content_hash: 879da4ae945e45b5
 # Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.09846](https://arxiv.org/abs/2507.09846)
-**Code**: None (based on the public llm-baselines codebase)
+**arXiv**: [2507.09846](https://arxiv.org/abs/2507.09846)  
+**Code**: None (based on the public llm-baselines codebase)  
 **Area**: LLM Pre-training / Optimization
 **Keywords**: Schedule-Free optimizer, learning rate schedule, river-valley loss landscape, weight averaging, large-scale pre-training
 

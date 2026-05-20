@@ -18,8 +18,8 @@ content_hash: bac9ecc0ba638ac9
 # Through the Magnifying Glass: Adaptive Perception Magnification for Hallucination-Free VLM Decoding
 
 **Conference**: ACL 2026
-**arXiv**: [2503.10183](https://arxiv.org/abs/2503.10183)
-**Code**: [GitHub](https://github.com/ShunqiM/PM)
+**arXiv**: [2503.10183](https://arxiv.org/abs/2503.10183)  
+**Code**: [GitHub](https://github.com/ShunqiM/PM)  
 **Area**: Multimodal VLM / Hallucination Mitigation
 **Keywords**: Visual hallucination mitigation, perception magnification, attention-guided decoding, iterative refinement, vision-language models
 

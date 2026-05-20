@@ -18,8 +18,8 @@ content_hash: bf37ef806ebae6e1
 # VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.23361](https://arxiv.org/abs/2602.23361)
-**Code**: N/A
+**arXiv**: [2602.23361](https://arxiv.org/abs/2602.23361)  
+**Code**: N/A  
 **Area**: 3D Vision / 3D Reconstruction
 **Keywords**: 3D Reconstruction, Test-Time Training, Linear Complexity, KV Compression, Visual Localization
 

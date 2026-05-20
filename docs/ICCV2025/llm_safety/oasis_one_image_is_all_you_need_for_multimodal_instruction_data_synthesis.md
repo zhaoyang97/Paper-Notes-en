@@ -18,8 +18,8 @@ content_hash: 02d9c58b3dfd43b1
 # Oasis: One Image is All You Need for Multimodal Instruction Data Synthesis
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08741](https://arxiv.org/abs/2503.08741)
-**Code**: [https://github.com/Letian2003/MM_INF](https://github.com/Letian2003/MM_INF)
+**arXiv**: [2503.08741](https://arxiv.org/abs/2503.08741)  
+**Code**: [https://github.com/Letian2003/MM_INF](https://github.com/Letian2003/MM_INF)  
 **Area**: AI Safety / Multimodal Data Synthesis
 **Keywords**: multimodal data synthesis, instruction-following data, quality control, LLaVA, MLLM
 

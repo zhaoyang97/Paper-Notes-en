@@ -17,8 +17,8 @@ content_hash: aa7f57d83f49e6fb
 # An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem
 
 **Conference**: ICLR 2026
-**arXiv**: [2306.12344](https://arxiv.org/abs/2306.12344)
-**Code**: None (implemented in PyTorch)
+**arXiv**: [2306.12344](https://arxiv.org/abs/2306.12344)  
+**Code**: None (implemented in PyTorch)  
 **Area**: Other
 **Keywords**: 0-1 loss, linear classification, exact algorithm, hyperplane arrangement, combinatorial optimization
 

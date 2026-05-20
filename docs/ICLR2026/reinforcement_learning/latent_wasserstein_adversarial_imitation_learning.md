@@ -18,8 +18,8 @@ content_hash: 9543bd4920fc32d3
 # Latent Wasserstein Adversarial Imitation Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.05440](https://arxiv.org/abs/2603.05440)
-**Code**: [GitHub](https://github.com/JackyYang258/LWAIL)
+**arXiv**: [2603.05440](https://arxiv.org/abs/2603.05440)  
+**Code**: [GitHub](https://github.com/JackyYang258/LWAIL)  
 **Area**: Imitation Learning / Reinforcement Learning
 **Keywords**: Wasserstein distance, ICVF, dynamics-aware embedding, state-only imitation, few-shot
 
@@ -47,20 +47,20 @@ Two-stage pipeline: (1) **Pre-training** — train ICVF on 1% of randomly collec
 
 1. **ICVF Pre-training**:
 
-   - **Function**: Learn a state embedding $\phi_\theta(s)$ from random state transition data.
-   - **Mechanism**: $V_\theta(s, s_+, z) = \phi_\theta(s)^T T_\theta(z) \psi_\theta(s_+)$, trained with IQL offline RL. The embedding $\phi(s)$ encodes the reachability structure of the state space.
-   - **Design Motivation**: Theorem 3.1 proves that the state-pair occupancy measure $d_{ss}^{\pi_z}(s,s')$ is approximately a linear combination of $\phi(s)$, implying that the $\phi$ space is naturally suited for Wasserstein-based state distribution matching.
+    - **Function**: Learn a state embedding $\phi_\theta(s)$ from random state transition data.
+    - **Mechanism**: $V_\theta(s, s_+, z) = \phi_\theta(s)^T T_\theta(z) \psi_\theta(s_+)$, trained with IQL offline RL. The embedding $\phi(s)$ encodes the reachability structure of the state space.
+    - **Design Motivation**: Theorem 3.1 proves that the state-pair occupancy measure $d_{ss}^{\pi_z}(s,s')$ is approximately a linear combination of $\phi(s)$, implying that the $\phi$ space is naturally suited for Wasserstein-based state distribution matching.
 
 2. **Latent-Space Wasserstein AIL**:
 
-   - **Function**: Match the state-pair distributions of the agent and the expert in $\phi$ space.
-   - **Mechanism**: $\min_\pi \max_{\|f\|_L \leq 1} \left(\mathbb{E}_{d_{ss}^\pi}[f(\phi(s), \phi(s'))] - \mathbb{E}_{d_{ss}^E}[f(\phi(s), \phi(s'))]\right)$
-   - **Design Motivation**: The 1-Lipschitz constraint in $\phi$ space corresponds to a Euclidean distance that is now dynamics-aware.
+    - **Function**: Match the state-pair distributions of the agent and the expert in $\phi$ space.
+    - **Mechanism**: $\min_\pi \max_{\|f\|_L \leq 1} \left(\mathbb{E}_{d_{ss}^\pi}[f(\phi(s), \phi(s'))] - \mathbb{E}_{d_{ss}^E}[f(\phi(s), \phi(s'))]\right)$
+    - **Design Motivation**: The 1-Lipschitz constraint in $\phi$ space corresponds to a Euclidean distance that is now dynamics-aware.
 
 3. **Reward Design**:
 
-   - **Function**: Construct an RL reward from the discriminator output: $r(s,s') = \sigma(-f(\phi(s), \phi(s')))$.
-   - **Design Motivation**: Sigmoid normalization to $[0,1]$ stabilizes downstream TD3 training.
+    - **Function**: Construct an RL reward from the discriminator output: $r(s,s') = \sigma(-f(\phi(s), \phi(s')))$.
+    - **Design Motivation**: Sigmoid normalization to $[0,1]$ stabilizes downstream TD3 training.
 
 ## Key Experimental Results
 

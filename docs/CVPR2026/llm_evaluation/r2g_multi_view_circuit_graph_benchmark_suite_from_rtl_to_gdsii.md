@@ -18,8 +18,8 @@ content_hash: d352ce3f222fd464
 # R2G: A Multi-View Circuit Graph Benchmark Suite from RTL to GDSII
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.08810](https://arxiv.org/abs/2604.08810)
-**Code**: [https://github.com/ShenShan123/R2G](https://github.com/ShenShan123/R2G)
+**arXiv**: [2604.08810](https://arxiv.org/abs/2604.08810)  
+**Code**: [https://github.com/ShenShan123/R2G](https://github.com/ShenShan123/R2G)  
 **Area**: AI for EDA / Graph Neural Network Benchmarks
 **Keywords**: circuit graph, GNN benchmark, multi-view, physical design, EDA
 

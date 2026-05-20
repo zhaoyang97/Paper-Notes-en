@@ -18,8 +18,8 @@ content_hash: 6b249d1e2a616c2c
 # ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.14238](https://arxiv.org/abs/2505.14238)
-**Code**: [https://github.com/CERT-Lab/abba](https://github.com/CERT-Lab/abba)
+**arXiv**: [2505.14238](https://arxiv.org/abs/2505.14238)  
+**Code**: [https://github.com/CERT-Lab/abba](https://github.com/CERT-Lab/abba)  
 **Area**: Model Compression / PEFT
 **Keywords**: Parameter-efficient fine-tuning, LoRA, Hadamard product, low-rank adaptation, Khatri-Rao decomposition
 

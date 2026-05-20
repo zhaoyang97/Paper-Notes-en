@@ -18,8 +18,8 @@ content_hash: b25644eeb99343ec
 # Enhancing Mixture-of-Experts Specialization via Cluster-Aware Upcycling
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.13508](https://arxiv.org/abs/2604.13508)
-**Code**: N/A
+**arXiv**: [2604.13508](https://arxiv.org/abs/2604.13508)  
+**Code**: N/A  
 **Area**: Model Compression / Efficient Models
 **Keywords**: Mixture-of-Experts, sparse upcycling, expert specialization, cluster initialization, self-distillation
 

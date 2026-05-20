@@ -17,8 +17,8 @@ content_hash: c0968c939b73e5b3
 # ElementaryNet: A Non-Strategic Neural Network for Predicting Human Behavior in Normal-Form Games
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.05925](https://arxiv.org/abs/2503.05925)
-**Code**: [https://github.com/gregdeon/elementarynet](https://github.com/gregdeon/elementarynet)
+**arXiv**: [2503.05925](https://arxiv.org/abs/2503.05925)  
+**Code**: [https://github.com/gregdeon/elementarynet](https://github.com/gregdeon/elementarynet)  
 **Area**: Interpretability
 **Keywords**: Behavioral game theory, human behavior prediction, non-strategic neural network, iterated reasoning, interpretability
 

@@ -18,8 +18,8 @@ content_hash: 9c8bf63b4f13fbe8
 # AnyBimanual: Transferring Unimanual Policy for General Bimanual Manipulation
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.06779](https://arxiv.org/abs/2412.06779)
-**Code**: [https://anybimanual.github.io/](https://anybimanual.github.io/)
+**arXiv**: [2412.06779](https://arxiv.org/abs/2412.06779)  
+**Code**: [https://anybimanual.github.io/](https://anybimanual.github.io/)  
 **Area**: Robotic Manipulation
 **Keywords**: bimanual manipulation, policy transfer, skill primitives, visual alignment, behavior cloning
 

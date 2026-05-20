@@ -18,7 +18,7 @@ content_hash: 9b48a653cc924ed5
 # FuncBenchGen: A Contamination-Free Controllable Evaluation Framework for Reliable Benchmarking
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.26553](https://arxiv.org/abs/2509.26553)
+**arXiv**: [2509.26553](https://arxiv.org/abs/2509.26553)  
 **Area**: Video Understanding
 **Keywords**: Tool-augmented LLM, multi-step function calling, benchmark, data contamination, DAG traversal
 

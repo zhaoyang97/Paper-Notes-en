@@ -18,8 +18,8 @@ content_hash: 206753f2090bc55c
 # SteelDefectX: A Coarse-to-Fine Vision-Language Dataset and Benchmark for Generalizable Steel Surface Defect Detection
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21824](https://arxiv.org/abs/2603.21824)
-**Code**: [https://github.com/Zhaosxian/SteelDefectX](https://github.com/Zhaosxian/SteelDefectX)
+**arXiv**: [2603.21824](https://arxiv.org/abs/2603.21824)  
+**Code**: [https://github.com/Zhaosxian/SteelDefectX](https://github.com/Zhaosxian/SteelDefectX)  
 **Area**: Interpretability
 **Keywords**: steel surface defect detection, vision-language dataset, coarse-to-fine annotation, zero-shot transfer, industrial quality inspection
 

@@ -18,8 +18,8 @@ content_hash: 6cccd16484f37560
 # ICTPolarReal: A Polarized Reflection and Material Dataset of Real World Objects
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.24912](https://arxiv.org/abs/2603.24912)
-**Code**: [https://jingyangcarl.github.io/ICTPolarReal](https://jingyangcarl.github.io/ICTPolarReal) (project page)
+**arXiv**: [2603.24912](https://arxiv.org/abs/2603.24912)  
+**Code**: [https://jingyangcarl.github.io/ICTPolarReal](https://jingyangcarl.github.io/ICTPolarReal) (project page)  
 **Area**: 3D Vision
 **Keywords**: Polarized imaging, material dataset, inverse rendering, reflection separation, Light Stage
 

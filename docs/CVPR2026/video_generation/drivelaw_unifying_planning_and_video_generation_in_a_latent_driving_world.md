@@ -17,8 +17,8 @@ content_hash: e4ee00ed2cf07f94
 # DriveLaW: Unifying Planning and Video Generation in a Latent Driving World
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.23421](https://arxiv.org/abs/2512.23421)
-**Code**: [https://github.com/xiaomi-research/drivelaw](https://github.com/xiaomi-research/drivelaw)
+**arXiv**: [2512.23421](https://arxiv.org/abs/2512.23421)  
+**Code**: [https://github.com/xiaomi-research/drivelaw](https://github.com/xiaomi-research/drivelaw)  
 **Area**: Video Generation
 **Keywords**: World Model, Autonomous Driving Planning, Video Generation, Latent Space, Diffusion Policy
 

@@ -18,8 +18,8 @@ content_hash: 531cae39c687afcc
 # Intention-Guided Cognitive Reasoning for Egocentric Long-Term Action Anticipation
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01742](https://arxiv.org/abs/2508.01742)
-**Code**: [github.com/CorrineQiu/INSIGHT](https://github.com/CorrineQiu/INSIGHT)
+**arXiv**: [2508.01742](https://arxiv.org/abs/2508.01742)  
+**Code**: [github.com/CorrineQiu/INSIGHT](https://github.com/CorrineQiu/INSIGHT)  
 **Area**: Reinforcement Learning
 **Keywords**: Long-term action anticipation, egocentric video, hand-object interaction, cognitive reasoning, GRPO
 

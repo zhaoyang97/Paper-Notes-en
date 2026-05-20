@@ -18,8 +18,8 @@ content_hash: 626e1966ef39c3e8
 # DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.24288](https://arxiv.org/abs/2602.24288)
-**Code**: [https://github.com/Snowflake-Labs/dare-bench](https://github.com/Snowflake-Labs/dare-bench)
+**arXiv**: [2602.24288](https://arxiv.org/abs/2602.24288)  
+**Code**: [https://github.com/Snowflake-Labs/dare-bench](https://github.com/Snowflake-Labs/dare-bench)  
 **Area**: LLM Evaluation
 **Keywords**: data science benchmark, instruction following, ML modeling, RLVR, LLM agent
 

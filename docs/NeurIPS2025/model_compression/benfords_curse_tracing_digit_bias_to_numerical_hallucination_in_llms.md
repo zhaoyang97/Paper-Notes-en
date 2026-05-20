@@ -18,8 +18,8 @@ content_hash: 723485f72ee8bb7a
 # Benford's Curse: Tracing Digit Bias to Numerical Hallucination in LLMs
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.01734](https://arxiv.org/abs/2506.01734)
-**Code**: [https://github.com/shamy28/Benford-Curse](https://github.com/shamy28/Benford-Curse)
+**arXiv**: [2506.01734](https://arxiv.org/abs/2506.01734)  
+**Code**: [https://github.com/shamy28/Benford-Curse](https://github.com/shamy28/Benford-Curse)  
 **Area**: Model Compression
 **Keywords**: Benford's Law, digit bias, numerical hallucination, FFN neurons, selective pruning
 

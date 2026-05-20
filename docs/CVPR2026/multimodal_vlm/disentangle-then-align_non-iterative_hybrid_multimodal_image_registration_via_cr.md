@@ -18,8 +18,8 @@ content_hash: 4aef0928433013fe
 # Disentangle-then-Align: Non-Iterative Hybrid Multimodal Image Registration via Cross-Scale Feature Disentanglement
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.19623](https://arxiv.org/abs/2603.19623)
-**Code**: [GitHub](https://github.com/Chunlei0913/HRNet)
+**arXiv**: [2603.19623](https://arxiv.org/abs/2603.19623)  
+**Code**: [GitHub](https://github.com/Chunlei0913/HRNet)  
 **Area**: Multimodal VLM / Multimodal Image Registration
 **Keywords**: multimodal registration, hybrid transformation, feature disentanglement, cross-scale consistency, Mamba
 

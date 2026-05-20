@@ -18,8 +18,8 @@ content_hash: 16c25c941165b6c9
 # Validating Interpretability in siRNA Efficacy Prediction: A Perturbation-Based, Dataset-Aware Protocol
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.10152](https://arxiv.org/abs/2602.10152)
-**Code**: [https://github.com/shadi97kh/BioPrior](https://github.com/shadi97kh/BioPrior)
+**arXiv**: [2602.10152](https://arxiv.org/abs/2602.10152)  
+**Code**: [https://github.com/shadi97kh/BioPrior](https://github.com/shadi97kh/BioPrior)  
 **Area**: Medical/Biological Interpretable AI
 **Keywords**: siRNA, saliency maps, faithfulness validation, perturbation testing, biological regularization
 

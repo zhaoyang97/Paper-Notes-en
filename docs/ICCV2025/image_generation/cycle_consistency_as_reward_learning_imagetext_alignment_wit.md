@@ -19,8 +19,8 @@ content_hash: d992af2d4a499615
 # Cycle Consistency as Reward: Learning Image-Text Alignment without Human Preferences
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.02095](https://arxiv.org/abs/2506.02095)
-**Code**: [https://cyclereward.github.io/](https://cyclereward.github.io/)
+**arXiv**: [2506.02095](https://arxiv.org/abs/2506.02095)  
+**Code**: [https://cyclereward.github.io/](https://cyclereward.github.io/)  
 **Area**: Image Generation
 **Keywords**: cycle consistency, reward model, image-text alignment, preference learning, DPO, self-supervised
 

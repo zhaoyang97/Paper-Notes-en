@@ -18,8 +18,8 @@ content_hash: 7feb28b32d734802
 # SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.24427](https://arxiv.org/abs/2510.24427)
-**Code**: [GitHub](https://github.com/behavioral-data/synthworlds)
+**arXiv**: [2510.24427](https://arxiv.org/abs/2510.24427)  
+**Code**: [GitHub](https://github.com/behavioral-data/synthworlds)  
 **Area**: Robotics
 **Keywords**: Knowledge Advantage Gap, Reasoning vs Memorization, Parallel Corpora, Multi-hop QA, RAG Evaluation
 

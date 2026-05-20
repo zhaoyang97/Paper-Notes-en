@@ -18,8 +18,8 @@ content_hash: a2103ed675279a68
 # Certifiably Optimal Anisotropic Rotation Averaging
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.07353](https://arxiv.org/abs/2503.07353)
-**Code**: None
+**arXiv**: [2503.07353](https://arxiv.org/abs/2503.07353)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: rotation averaging, anisotropic optimization, semidefinite programming, convex relaxation, structure from motion
 

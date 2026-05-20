@@ -18,8 +18,8 @@ content_hash: 25f35f932956a7e8
 # SEPatch3D: Revisiting Token Compression for Accelerating ViT-based Sparse Multi-View 3D Object Detectors
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.14563](https://arxiv.org/abs/2604.14563)
-**Code**: [github.com/Mingqj/SEPatch3D](https://github.com/Mingqj/SEPatch3D)
+**arXiv**: [2604.14563](https://arxiv.org/abs/2604.14563)  
+**Code**: [github.com/Mingqj/SEPatch3D](https://github.com/Mingqj/SEPatch3D)  
 **Area**: 3D Vision
 **Keywords**: 3D object detection, token compression, patch size selection, multi-view detection, ViT acceleration
 

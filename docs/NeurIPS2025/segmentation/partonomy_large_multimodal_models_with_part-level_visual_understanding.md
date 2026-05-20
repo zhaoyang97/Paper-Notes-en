@@ -19,8 +19,8 @@ content_hash: 23f14dad1a14c7ba
 # PARTONOMY: Large Multimodal Models with Part-Level Visual Understanding
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.20759](https://arxiv.org/abs/2505.20759)
-**Code**: [GitHub](https://github.com/AnselBlume/partonomy)
+**arXiv**: [2505.20759](https://arxiv.org/abs/2505.20759)  
+**Code**: [GitHub](https://github.com/AnselBlume/partonomy)  
 **Area**: Segmentation / Multimodal
 **Keywords**: part-level understanding, LMM, interpretable part segmentation, span tagging, mask feedback, benchmark
 

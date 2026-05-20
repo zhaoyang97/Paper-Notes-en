@@ -18,8 +18,8 @@ content_hash: 14c2c560a0ce3125
 # When Are Concepts Erased From Diffusion Models?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17013](https://arxiv.org/abs/2505.17013)
-**Code**: [https://github.com/kevinlu4588/WhenAreConceptsErased](https://github.com/kevinlu4588/WhenAreConceptsErased)
+**arXiv**: [2505.17013](https://arxiv.org/abs/2505.17013)  
+**Code**: [https://github.com/kevinlu4588/WhenAreConceptsErased](https://github.com/kevinlu4588/WhenAreConceptsErased)  
 **Area**: Image Generation
 **Keywords**: Concept Erasure, Diffusion Models, Knowledge Residual, Guidance-Based Avoidance, Destruction-Based Removal
 

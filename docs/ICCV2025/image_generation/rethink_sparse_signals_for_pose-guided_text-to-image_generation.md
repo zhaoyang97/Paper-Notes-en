@@ -18,8 +18,8 @@ content_hash: 4ccc8667481b4ca0
 # Rethink Sparse Signals for Pose-guided Text-to-Image Generation
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.20983](https://arxiv.org/abs/2506.20983)
-**Code**: [GitHub](https://github.com/WenjieXuan/SP-Ctrl) (noted as "Codes are available" in the paper)
+**arXiv**: [2506.20983](https://arxiv.org/abs/2506.20983)  
+**Code**: [GitHub](https://github.com/WenjieXuan/SP-Ctrl) (noted as "Codes are available" in the paper)  
 **Area**: Image Generation / Pose-guided Generation / Spatially Controllable Generation
 **Keywords**: ControlNet, OpenPose, Sparse Signal, Keypoint Concept Learning, Pose-guided Generation
 

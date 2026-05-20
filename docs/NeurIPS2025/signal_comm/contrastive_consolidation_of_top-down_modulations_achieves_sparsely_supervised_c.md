@@ -19,8 +19,8 @@ content_hash: 1f9f1947a4133f8b
 # Contrastive Consolidation of Top-Down Modulations Achieves Sparsely Supervised Continual Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.14125](https://arxiv.org/abs/2505.14125)
-**Code**: [Available](https://arxiv.org/abs/2505.14125) (see paper link)
+**arXiv**: [2505.14125](https://arxiv.org/abs/2505.14125)  
+**Code**: [Available](https://arxiv.org/abs/2505.14125) (see paper link)  
 **Area**: Continual Learning / Self-Supervised Learning
 **Keywords**: continual learning, contrastive learning, top-down modulation, catastrophic forgetting, sparse supervision, predictive coding
 
@@ -50,21 +50,21 @@ TMCL is built on a contrastive learning framework and operates through two core 
 
 1. **Task-Specific Affine Modulation**:
 
-   - Function: Learns additional affine transformation parameters for each new class to modulate intermediate features.
-   - Mechanism: Given a small number of labeled samples from a new class, modulation of the form $h' = \gamma \odot h + \beta$ is introduced at an intermediate layer; the low-parameter $\gamma, \beta$ are optimized to maximize the separation between new and known classes.
-   - Design Motivation: Modifying only the modulation parameters rather than feedforward weights mirrors how the brain's top-down attention modulates lower-level responses, avoiding catastrophic forgetting caused by changes to shared weights at the source.
+    - Function: Learns additional affine transformation parameters for each new class to modulate intermediate features.
+    - Mechanism: Given a small number of labeled samples from a new class, modulation of the form $h' = \gamma \odot h + \beta$ is introduced at an intermediate layer; the low-parameter $\gamma, \beta$ are optimized to maximize the separation between new and known classes.
+    - Design Motivation: Modifying only the modulation parameters rather than feedforward weights mirrors how the brain's top-down attention modulates lower-level responses, avoiding catastrophic forgetting caused by changes to shared weights at the source.
 
 2. **View-Invariance + Modulation-Invariance Contrastive Learning**:
 
-   - Function: Trains feedforward weights so that representations are simultaneously view-invariant and modulation-invariant.
-   - Mechanism: Building on the standard view-invariance objective (different augmented views of the same sample should map to similar representations), a modulation-invariance objective is added — unmodulated representations should align with modulated representations of the same sample. Positive pairs in the contrastive loss include: (original view, augmented view) and (unmodulated, modulated).
-   - Design Motivation: By driving the feedforward network to "absorb" the classification information introduced by modulation into its weights, good representations can be obtained at inference time without using modulation parameters.
+    - Function: Trains feedforward weights so that representations are simultaneously view-invariant and modulation-invariant.
+    - Mechanism: Building on the standard view-invariance objective (different augmented views of the same sample should map to similar representations), a modulation-invariance objective is added — unmodulated representations should align with modulated representations of the same sample. Positive pairs in the contrastive loss include: (original view, augmented view) and (unmodulated, modulated).
+    - Design Motivation: By driving the feedforward network to "absorb" the classification information introduced by modulation into its weights, good representations can be obtained at inference time without using modulation parameters.
 
 3. **Historical Modulation Consolidation**:
 
-   - Function: Uses modulation parameters from past tasks to prevent representation drift.
-   - Mechanism: During training on the current task, the feedforward representations are simultaneously required to remain aligned with the modulated representations of all past tasks, forming a multi-task modulation-invariance constraint.
-   - Design Motivation: Past modulation parameters serve as "anchors" to stabilize the representation space, preventing the loss of discriminability for old tasks caused by new task learning — this is the meaning of "contrastive consolidation."
+    - Function: Uses modulation parameters from past tasks to prevent representation drift.
+    - Mechanism: During training on the current task, the feedforward representations are simultaneously required to remain aligned with the modulated representations of all past tasks, forming a multi-task modulation-invariance constraint.
+    - Design Motivation: Past modulation parameters serve as "anchors" to stabilize the representation space, preventing the loss of discriminability for old tasks caused by new task learning — this is the meaning of "contrastive consolidation."
 
 ### Loss & Training
 Two alternating phases: (1) upon encountering new class labels → freeze feedforward weights, optimize only the new modulation parameters $\gamma, \beta$; (2) during normal unlabeled data streaming → update feedforward weights using a contrastive loss that jointly optimizes view-invariance and modulation-invariance (for both current and historical modulations).

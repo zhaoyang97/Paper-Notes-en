@@ -18,8 +18,8 @@ content_hash: 4458218ec5fc5fa3
 # Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear Programming
 
 **Conference**: ICLR2026
-**arXiv**: [2508.18742](https://arxiv.org/abs/2508.18742)
-**Code**: [https://github.com/Liwow/Constraint_Matters](https://github.com/Liwow/Constraint_Matters)
+**arXiv**: [2508.18742](https://arxiv.org/abs/2508.18742)  
+**Code**: [https://github.com/Liwow/Constraint_Matters](https://github.com/Liwow/Constraint_Matters)  
 **Area**: Optimization / Theory
 **Keywords**: MILP, constraint reduction, tight constraint, multi-modal representation, GNN
 

@@ -18,8 +18,8 @@ content_hash: 7343abd2ce537719
 # Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily
 
 **Conference**: AAAI2026
-**arXiv**: [2511.06608](https://arxiv.org/abs/2511.06608)
-**Code**: To be confirmed
+**arXiv**: [2511.06608](https://arxiv.org/abs/2511.06608)  
+**Code**: To be confirmed  
 **Area**: Graph Learning
 **Keywords**: GNN, adaptive depth, heterophily, node classification, homophily
 

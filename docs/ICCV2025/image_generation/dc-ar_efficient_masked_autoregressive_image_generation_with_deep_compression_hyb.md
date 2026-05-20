@@ -18,8 +18,8 @@ content_hash: 20fa19269dc0f3a4
 # DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.04947](https://arxiv.org/abs/2507.04947)
-**Code**: [https://github.com/dc-ai-projects/DC-AR](https://github.com/dc-ai-projects/DC-AR)
+**arXiv**: [2507.04947](https://arxiv.org/abs/2507.04947)  
+**Code**: [https://github.com/dc-ai-projects/DC-AR](https://github.com/dc-ai-projects/DC-AR)  
 **Area**: Image Generation
 **Keywords**: Autoregressive image generation, image tokenizer, masked autoregressive, deep compression, text-to-image
 

@@ -19,8 +19,8 @@ content_hash: 877aba9ec625f914
 # OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation
 
 **Conference**: ICLR 2026
-**arXiv**: [2502.18041](https://arxiv.org/abs/2502.18041)
-**Code**: Available (open-source)
+**arXiv**: [2502.18041](https://arxiv.org/abs/2502.18041)  
+**Code**: Available (open-source)  
 **Area**: 3D Vision
 **Keywords**: Aerial VLN, UAV Navigation, Multi-Rendering Engine, Automatic Data Generation, Keyframe-Aware, 3D Gaussian Splatting
 

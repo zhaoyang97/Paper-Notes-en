@@ -18,8 +18,8 @@ content_hash: 5d1d70bfe78068f0
 # DeCoRL: Decoupling Reasoning Chains via Parallel Sub-Step Generation and Cascaded Reinforcement for Interpretable and Scalable RLHF
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19097](https://arxiv.org/abs/2511.19097)
-**Code**: None
+**arXiv**: [2511.19097](https://arxiv.org/abs/2511.19097)  
+**Code**: None  
 **Area**: LLM Reasoning / RLHF / Reward Modeling
 **Keywords**: reasoning chain decoupling, parallel sub-step generation, cascaded DRPO, interpretable rewards, modular reasoning
 

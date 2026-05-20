@@ -18,8 +18,8 @@ content_hash: bd9e741547e72a52
 # ODP-Bench: Benchmarking Out-of-Distribution Performance Prediction
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.27263](https://arxiv.org/abs/2510.27263)
-**Code**: [https://github.com/h-yu16/Performance_Prediction/](https://github.com/h-yu16/Performance_Prediction/)
+**arXiv**: [2510.27263](https://arxiv.org/abs/2510.27263)  
+**Code**: [https://github.com/h-yu16/Performance_Prediction/](https://github.com/h-yu16/Performance_Prediction/)  
 **Area**: LLM Evaluation
 **Keywords**: OOD performance prediction, distribution shift, benchmark evaluation, robustness assessment, model selection
 

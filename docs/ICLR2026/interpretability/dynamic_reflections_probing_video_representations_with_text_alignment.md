@@ -18,8 +18,8 @@ content_hash: e4a3477f9804827c
 # Dynamic Reflections: Probing Video Representations with Text Alignment
 
 **Conference**: ICLR 2026
-**arXiv**: [2511.02767](https://arxiv.org/abs/2511.02767)
-**Code**: [https://video-prh.github.io](https://video-prh.github.io)
+**arXiv**: [2511.02767](https://arxiv.org/abs/2511.02767)  
+**Code**: [https://video-prh.github.io](https://video-prh.github.io)  
 **Area**: Interpretability / Representation Learning
 **Keywords**: video representation alignment, Platonic representation hypothesis, test-time scaling laws, cross-modal alignment, self-supervised learning
 

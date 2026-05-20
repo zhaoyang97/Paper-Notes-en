@@ -18,7 +18,7 @@ content_hash: 49107204198b68d0
 # Neu-PiG: Neural Preconditioned Grids for Fast Dynamic Surface Reconstruction on Long Sequences
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22212](https://arxiv.org/abs/2602.22212)
+**arXiv**: [2602.22212](https://arxiv.org/abs/2602.22212)  
 **Area**: 3D Vision
 **Keywords**: dynamic surface reconstruction, preconditioned latent grids, Sobolev preconditioning, multi-resolution voxels, deformation estimation
 

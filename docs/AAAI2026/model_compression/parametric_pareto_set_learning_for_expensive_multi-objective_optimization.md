@@ -18,8 +18,8 @@ content_hash: deeb712976743274
 # Parametric Pareto Set Learning for Expensive Multi-Objective Optimization
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.05815](https://arxiv.org/abs/2511.05815)
-**Code**: None
+**arXiv**: [2511.05815](https://arxiv.org/abs/2511.05815)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Pareto Set Learning, Multi-Objective Bayesian Optimization, Hypernetwork, LoRA, Parametric Multi-Objective Optimization
 

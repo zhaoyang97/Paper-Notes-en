@@ -18,8 +18,8 @@ content_hash: 1e3a07582e48251c
 # CodeWiki: Evaluating AI's Ability to Generate Holistic Documentation for Large-Scale Codebases
 
 **Conference**: ACL 2026
-**arXiv**: [2510.24428](https://arxiv.org/abs/2510.24428)
-**Code**: [GitHub](https://github.com/FSoft-AI4Code/CodeWiki)
+**arXiv**: [2510.24428](https://arxiv.org/abs/2510.24428)  
+**Code**: [GitHub](https://github.com/FSoft-AI4Code/CodeWiki)  
 **Area**: Code Intelligence
 **Keywords**: Code documentation generation, repository-level understanding, multi-agent systems, hierarchical decomposition, code benchmarks
 

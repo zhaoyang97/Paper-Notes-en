@@ -17,8 +17,8 @@ content_hash: 06f79a9a05c5392e
 # AdaptiveAE: An Adaptive Exposure Strategy for HDR Capturing in Dynamic Scenes
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.13503](https://arxiv.org/abs/2508.13503)
-**Code**: None (not released)
+**arXiv**: [2508.13503](https://arxiv.org/abs/2508.13503)  
+**Code**: None (not released)  
 **Area**: Other
 **Keywords**: HDR imaging, auto-exposure, reinforcement learning, motion blur, exposure fusion
 

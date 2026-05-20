@@ -18,8 +18,8 @@ content_hash: c3ca634dc27af266
 # Concerto: Joint 2D-3D Self-Supervised Learning Emerges Spatial Representations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23607](https://arxiv.org/abs/2510.23607)
-**Code**: [pointcept.github.io/Concerto](https://pointcept.github.io/Concerto)
+**arXiv**: [2510.23607](https://arxiv.org/abs/2510.23607)  
+**Code**: [pointcept.github.io/Concerto](https://pointcept.github.io/Concerto)  
 **Area**: 3D Vision
 **Keywords**: Self-supervised learning, point cloud, 2D-3D cross-modal, joint embedding prediction, scene understanding
 **Institution**: HKU (Hengshuang Zhao group), CUHK, HIT (Shenzhen)

@@ -18,8 +18,8 @@ content_hash: 215eea8130c63215
 # TerraSeg: Self-Supervised Ground Segmentation for Any LiDAR
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27344](https://arxiv.org/abs/2603.27344)
-**Code**: Public (Apache 2.0)
+**arXiv**: [2603.27344](https://arxiv.org/abs/2603.27344)  
+**Code**: Public (Apache 2.0)  
 **Area**: Autonomous Driving / 3D Point Cloud Segmentation
 **Keywords**: Ground Segmentation, Self-Supervised Learning, Cross-Sensor Generalization, LiDAR Perception, Pseudo Labels
 

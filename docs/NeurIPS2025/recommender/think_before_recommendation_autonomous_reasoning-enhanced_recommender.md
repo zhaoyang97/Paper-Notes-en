@@ -19,8 +19,8 @@ content_hash: cf9657eae0cc85a8
 # Think before Recommendation: Autonomous Reasoning-enhanced Recommender
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23077](https://arxiv.org/abs/2510.23077)
-**Code**: [https://github.com/AkaliKong/RecZero](https://github.com/AkaliKong/RecZero)
+**arXiv**: [2510.23077](https://arxiv.org/abs/2510.23077)  
+**Code**: [https://github.com/AkaliKong/RecZero](https://github.com/AkaliKong/RecZero)  
 **Area**: Recommender Systems / LLM Reasoning
 **Keywords**: LLM, Recommender System, Reinforcement Learning, GRPO, Rating Prediction, Chain-of-Thought
 

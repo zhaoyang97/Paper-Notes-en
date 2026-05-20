@@ -18,8 +18,8 @@ content_hash: 0582ac2aaa67ef19
 # EndoBench: A Comprehensive Evaluation of Multi-Modal Large Language Models for Endoscopy Analysis
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23601](https://arxiv.org/abs/2505.23601)
-**Code**: Public (benchmark + code)
+**arXiv**: [2505.23601](https://arxiv.org/abs/2505.23601)  
+**Code**: Public (benchmark + code)  
 **Area**: Medical Imaging
 **Keywords**: Endoscopy, MLLM Evaluation, Benchmark, VQA, Clinical Workflow
 

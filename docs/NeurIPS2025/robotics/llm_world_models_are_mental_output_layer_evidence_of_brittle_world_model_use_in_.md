@@ -18,8 +18,8 @@ content_hash: 1545228c3d724233
 # LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.15521](https://arxiv.org/abs/2507.15521)
-**Code**: [Experiment Scripts](https://osf.io/mn9hy/) (available, OSF platform)
+**arXiv**: [2507.15521](https://arxiv.org/abs/2507.15521)  
+**Code**: [Experiment Scripts](https://osf.io/mn9hy/) (available, OSF platform)  
 **Area**: Robotics
 **Keywords**: LLM world models, mechanical reasoning, pulley systems, mental models, brittleness
 

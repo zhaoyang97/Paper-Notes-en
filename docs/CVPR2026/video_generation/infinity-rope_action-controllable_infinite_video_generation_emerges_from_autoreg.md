@@ -18,8 +18,8 @@ content_hash: 5b863b11e6d9bc6e
 # Infinity-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.20649](https://arxiv.org/abs/2511.20649)
-**Code**: [Project Page](https://infinity-rope.github.io)
+**arXiv**: [2511.20649](https://arxiv.org/abs/2511.20649)  
+**Code**: [Project Page](https://infinity-rope.github.io)  
 **Area**: Video Generation / Diffusion Models
 **Keywords**: Autoregressive video generation, positional encoding, infinite-length video, action control, inference-time method
 

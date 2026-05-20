@@ -18,8 +18,8 @@ content_hash: 3db07b13fc5317c4
 # Generate, but Verify: Reducing Hallucination in Vision-Language Models with Retrospective Resampling
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.13169](https://arxiv.org/abs/2504.13169)
-**Code**: [GitHub](https://github.com/tsunghan-wu/REVERSE)
+**arXiv**: [2504.13169](https://arxiv.org/abs/2504.13169)  
+**Code**: [GitHub](https://github.com/tsunghan-wu/REVERSE)  
 **Area**: Multimodal Large Language Models / Hallucination Mitigation
 **Keywords**: VLM, Visual Hallucination, Self-Correction, Retrospective Resampling, Confidence Token
 

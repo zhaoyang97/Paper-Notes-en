@@ -18,8 +18,8 @@ content_hash: c23b930c070eeedb
 # Scalable Multi-Task Low-Rank Model Adaptation
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.01526](https://arxiv.org/abs/2603.01526)
-**Code**: [GitHub](https://github.com/doem97/ICLR26_mtLoRA)
+**arXiv**: [2603.01526](https://arxiv.org/abs/2603.01526)  
+**Code**: [GitHub](https://github.com/doem97/ICLR26_mtLoRA)  
 **Area**: Social Computing
 **Keywords**: LoRA, multi-task learning, spectral-aware regularization, block-level adaptation, fine-grained routing
 

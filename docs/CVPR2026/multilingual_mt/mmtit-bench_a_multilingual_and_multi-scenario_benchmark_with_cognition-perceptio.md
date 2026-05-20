@@ -18,8 +18,8 @@ content_hash: 6f64b68fac95fa8e
 # MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.23896](https://arxiv.org/abs/2603.23896)
-**Code**: None (MMTIT-Bench planned for release)
+**arXiv**: [2603.23896](https://arxiv.org/abs/2603.23896)  
+**Code**: None (MMTIT-Bench planned for release)  
 **Area**: Multimodal VLM / Machine Translation
 **Keywords**: Text-image translation, multilingual benchmark, chain-of-thought, cognition-perception-reasoning, VLLM evaluation
 

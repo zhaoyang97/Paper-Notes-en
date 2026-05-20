@@ -18,8 +18,8 @@ content_hash: 49ed0004fd477956
 # CMMCoT: Enhancing Complex Multi-Image Comprehension via Multi-Modal Chain-of-Thought and Memory Augmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2503.05255](https://arxiv.org/abs/2503.05255)
-**Code**: [https://github.com/zhangguanghao523/CMMCoT](https://github.com/zhangguanghao523/CMMCoT)
+**arXiv**: [2503.05255](https://arxiv.org/abs/2503.05255)  
+**Code**: [https://github.com/zhangguanghao523/CMMCoT](https://github.com/zhangguanghao523/CMMCoT)  
 **Area**: LLM Reasoning
 **Keywords**: Multi-image understanding, multimodal chain-of-thought, test-time memory augmentation, visual reasoning, slow thinking
 

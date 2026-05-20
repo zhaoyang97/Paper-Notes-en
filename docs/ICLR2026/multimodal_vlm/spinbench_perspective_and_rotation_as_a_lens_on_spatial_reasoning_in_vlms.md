@@ -18,8 +18,8 @@ content_hash: 33dbc7f27bc0e355
 # SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25390](https://arxiv.org/abs/2509.25390)
-**Code**: [https://spinbench25.github.io/](https://spinbench25.github.io/)
+**arXiv**: [2509.25390](https://arxiv.org/abs/2509.25390)  
+**Code**: [https://spinbench25.github.io/](https://spinbench25.github.io/)  
 **Area**: Multimodal VLM
 **Keywords**: spatial reasoning, perspective taking, mental rotation, vision-language models, benchmark
 

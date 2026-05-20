@@ -18,8 +18,8 @@ content_hash: 52d70abe228af40c
 # Video Diffusion Models Excel at Tracking Similar-Looking Objects Without Supervision
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.02339](https://arxiv.org/abs/2512.02339)
-**Code**: None
+**arXiv**: [2512.02339](https://arxiv.org/abs/2512.02339)  
+**Code**: None  
 **Area**: Video Generation
 **Keywords**: video diffusion models, self-supervised tracking, motion representation, similar-looking objects, label propagation
 

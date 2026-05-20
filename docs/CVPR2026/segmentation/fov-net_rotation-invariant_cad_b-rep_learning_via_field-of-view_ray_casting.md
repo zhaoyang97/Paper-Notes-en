@@ -18,8 +18,8 @@ content_hash: 78dad0cd5e71a17f
 # FoV-Net: Rotation-Invariant CAD B-rep Learning via Field-of-View Ray Casting
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.24084](https://arxiv.org/abs/2602.24084)
-**Code**: [GitHub](https://github.com/UGent-CVAMO/fovnet)
+**arXiv**: [2602.24084](https://arxiv.org/abs/2602.24084)  
+**Code**: [GitHub](https://github.com/UGent-CVAMO/fovnet)  
 **Area**: Segmentation
 **Keywords**: CAD B-rep learning, rotation invariance, ray casting, graph attention network, 3D segmentation
 

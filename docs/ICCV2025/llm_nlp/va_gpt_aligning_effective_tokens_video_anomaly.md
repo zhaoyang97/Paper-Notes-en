@@ -18,8 +18,8 @@ content_hash: 077b9adddd63361e
 # VA-GPT: Aligning Effective Tokens with Video Anomaly in Large Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.06350](https://arxiv.org/abs/2508.06350)
-**Code**: N/A
+**arXiv**: [2508.06350](https://arxiv.org/abs/2508.06350)  
+**Code**: N/A  
 **Area**: LLM/NLP
 **Keywords**: Video anomaly detection, multimodal large language models, spatial effective tokens, temporal effective tokens, cross-domain generalization
 
@@ -39,14 +39,14 @@ This paper proposes VA-GPT, a multimodal large language model for video anomaly 
 ### Key Designs
 
 1. **Spatial Effective Token Selection (SETS)**:
-   - Extracts patch embeddings of adjacent frames using DINOv2 and computes Manhattan distance as an inter-frame difference map.
-   - Selects the top-K proportion of patches with the largest differences as spatial effective tokens.
-   - **Design Motivation**: Anomalous events typically induce significant visual changes in localized regions.
+    - Extracts patch embeddings of adjacent frames using DINOv2 and computes Manhattan distance as an inter-frame difference map.
+    - Selects the top-K proportion of patches with the largest differences as spatial effective tokens.
+    - **Design Motivation**: Anomalous events typically induce significant visual changes in localized regions.
 
 2. **Temporal Effective Token Generation (TETG)**:
-   - Assigns anomaly probability scores to each frame using a lightweight pretrained anomaly classifier.
-   - Encodes the scores as additional temporal tokens injected directly into the LLM in the language space.
-   - **Design Motivation**: Provides the LLM with prior knowledge of temporal anomaly locations to enhance temporal reasoning.
+    - Assigns anomaly probability scores to each frame using a lightweight pretrained anomaly classifier.
+    - Encodes the scores as additional temporal tokens injected directly into the LLM in the language space.
+    - **Design Motivation**: Provides the LLM with prior knowledge of temporal anomaly locations to enhance temporal reasoning.
 
 3. **Cross-Domain Evaluation Benchmark**: Constructs a new cross-domain evaluation protocol based on XD-Violence, incorporating temporal-localization-oriented QA to assess model transferability across domains.
 

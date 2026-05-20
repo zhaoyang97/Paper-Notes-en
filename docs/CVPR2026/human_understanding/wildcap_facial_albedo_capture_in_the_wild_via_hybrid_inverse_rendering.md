@@ -18,8 +18,8 @@ content_hash: 67b31bcc5f6b9a9b
 # WildCap: Facial Albedo Capture in the Wild via Hybrid Inverse Rendering
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.11237](https://arxiv.org/abs/2512.11237)
-**Code**: [Released](https://arxiv.org/abs/2512.11237) (as declared in the paper)
+**arXiv**: [2512.11237](https://arxiv.org/abs/2512.11237)  
+**Code**: [Released](https://arxiv.org/abs/2512.11237) (as declared in the paper)  
 **Area**: Human Understanding
 **Keywords**: facial albedo capture, inverse rendering, diffusion prior, texel grid lighting, in-the-wild
 

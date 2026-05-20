@@ -18,8 +18,8 @@ content_hash: 8f80503c3dc43558
 # Dual-Imbalance Continual Learning for Real-World Food Recognition
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.29133](https://arxiv.org/abs/2603.29133)
-**Code**: [GitHub](https://github.com/xiaoyanzhang1/DIME)
+**arXiv**: [2603.29133](https://arxiv.org/abs/2603.29133)  
+**Code**: [GitHub](https://github.com/xiaoyanzhang1/DIME)  
 **Area**: Continual Learning / Food Recognition
 **Keywords**: continual learning, dual imbalance, adapter merging, long-tail distribution, food recognition
 

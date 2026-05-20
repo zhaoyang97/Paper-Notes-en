@@ -19,8 +19,8 @@ content_hash: afcd9c51cd7267dc
 # Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.07986](https://arxiv.org/abs/2506.07986)
-**Code**: [https://github.com/Vchitect/TACA](https://github.com/Vchitect/TACA)
+**arXiv**: [2506.07986](https://arxiv.org/abs/2506.07986)  
+**Code**: [https://github.com/Vchitect/TACA](https://github.com/Vchitect/TACA)  
 **Area**: Image Generation / Diffusion Transformer / Text-Image Alignment
 **Keywords**: MM-DiT, Cross-Attention Suppression, Temperature Scaling, FLUX, SD3.5, Text-Image Alignment
 

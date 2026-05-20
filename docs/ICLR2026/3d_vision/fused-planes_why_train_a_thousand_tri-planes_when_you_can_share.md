@@ -18,8 +18,8 @@ content_hash: 15ff98e494aa3b74
 # Fused-Planes: Why Train a Thousand Tri-Planes When You Can Share?
 
 **Conference**: ICLR 2026
-**arXiv**: [2410.23742](https://arxiv.org/abs/2410.23742)
-**Code**: [https://fused-planes.github.io](https://fused-planes.github.io)
+**arXiv**: [2410.23742](https://arxiv.org/abs/2410.23742)  
+**Code**: [https://fused-planes.github.io](https://fused-planes.github.io)  
 **Area**: 3D Vision / Large-Scale 3D Reconstruction
 **Keywords**: tri-plane, NeRF, shared representation, large-scale 3D, latent space
 

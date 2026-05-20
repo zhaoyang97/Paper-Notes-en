@@ -18,8 +18,8 @@ content_hash: 2609485741cff204
 # Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.06607](https://arxiv.org/abs/2507.06607)
-**Code**: [github.com/microsoft/ArchScale](https://github.com/microsoft/ArchScale)
+**arXiv**: [2507.06607](https://arxiv.org/abs/2507.06607)  
+**Code**: [github.com/microsoft/ArchScale](https://github.com/microsoft/ArchScale)  
 **Area**: Reinforcement Learning
 **Keywords**: Hybrid Architecture, SSM, Decoding Efficiency, Long Sequence Generation, KV Cache
 

@@ -18,8 +18,8 @@ content_hash: d715e40b9888aa59
 # SAGE: Spatial-visual Adaptive Graph Exploration for Efficient Visual Place Recognition
 
 **Conference**: ICLR 2026
-**arXiv**: [2509.25723](https://arxiv.org/abs/2509.25723)
-**Code**: [https://github.com/chenshunpeng/SAGE](https://github.com/chenshunpeng/SAGE)
+**arXiv**: [2509.25723](https://arxiv.org/abs/2509.25723)  
+**Code**: [https://github.com/chenshunpeng/SAGE](https://github.com/chenshunpeng/SAGE)  
 **Area**: Social Computing
 **Keywords**: Visual Place Recognition, DINOv2, Graph-based Sampling, Hard Sample Mining, parameter-efficient fine-tuning
 

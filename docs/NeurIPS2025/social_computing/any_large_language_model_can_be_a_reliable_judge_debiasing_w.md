@@ -18,8 +18,8 @@ content_hash: cec13caa0e23298a
 # Any Large Language Model Can Be a Reliable Judge: Debiasing with a Reasoning-based Bias Detector
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17100](https://arxiv.org/abs/2505.17100)
-**Code**: [GitHub](https://github.com/Joyyang158/Reasoning-Bias-Detector)
+**arXiv**: [2505.17100](https://arxiv.org/abs/2505.17100)  
+**Code**: [GitHub](https://github.com/Joyyang158/Reasoning-Bias-Detector)  
 **Area**: Social Computing
 **Keywords**: LLM-as-judge, bias detection, reasoning-based debiasing, self-correction, evaluation reliability
 

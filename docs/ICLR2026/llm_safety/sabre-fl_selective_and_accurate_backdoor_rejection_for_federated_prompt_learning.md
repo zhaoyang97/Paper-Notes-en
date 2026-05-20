@@ -18,8 +18,8 @@ content_hash: b837e5977396f5f9
 # SABRE-FL: Selective and Accurate Backdoor Rejection for Federated Prompt Learning
 
 **Conference**: ICLR2026
-**arXiv**: [2506.22506](https://arxiv.org/abs/2506.22506)
-**Code**: To be released
+**arXiv**: [2506.22506](https://arxiv.org/abs/2506.22506)  
+**Code**: To be released  
 **Area**: AI Security
 **Keywords**: federated learning, Prompt Learning, Backdoor Attack, CLIP, Anomaly Detection
 

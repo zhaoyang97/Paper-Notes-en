@@ -18,8 +18,8 @@ content_hash: 3c0c2a3c4594966e
 # Why Do Multilingual Reasoning Gaps Emerge in Reasoning Language Models?
 
 **Conference**: ACL 2026
-**arXiv**: [2510.27269](https://arxiv.org/abs/2510.27269)
-**Code**: [GitHub](https://github.com/deokhk/multilingual-reasoning-gap)
+**arXiv**: [2510.27269](https://arxiv.org/abs/2510.27269)  
+**Code**: [GitHub](https://github.com/deokhk/multilingual-reasoning-gap)  
 **Area**: Multilingual / Reasoning
 **Keywords**: multilingual reasoning gap, understanding failure detection, selective translation, reasoning language models, stage-wise attribution analysis
 

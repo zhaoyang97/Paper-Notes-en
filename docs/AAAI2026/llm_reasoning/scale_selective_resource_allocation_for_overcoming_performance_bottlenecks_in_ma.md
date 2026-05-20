@@ -18,8 +18,8 @@ content_hash: 2fb0112d4db6ba1a
 # SCALE: Selective Resource Allocation for Overcoming Performance Bottlenecks in Mathematical Test-time Scaling
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.00466](https://arxiv.org/abs/2512.00466)
-**Code**: [https://github.com/XiaoYang66/DualThinking](https://github.com/XiaoYang66/DualThinking)
+**arXiv**: [2512.00466](https://arxiv.org/abs/2512.00466)  
+**Code**: [https://github.com/XiaoYang66/DualThinking](https://github.com/XiaoYang66/DualThinking)  
 **Area**: LLM Reasoning
 **Keywords**: Test-time compute, dual-process theory, mathematical reasoning, resource allocation, sub-problem decomposition
 

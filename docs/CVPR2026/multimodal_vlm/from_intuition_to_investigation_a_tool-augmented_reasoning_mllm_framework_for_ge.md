@@ -18,8 +18,8 @@ content_hash: e30b0b0723d0197a
 # From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01038](https://arxiv.org/abs/2603.01038)
-**Code**: N/A
+**arXiv**: [2603.01038](https://arxiv.org/abs/2603.01038)  
+**Code**: N/A  
 **Area**: Multimodal / VLM
 **Keywords**: Face Anti-Spoofing, Multimodal Large Language Model, Tool-Augmented Reasoning, Chain-of-Thought, Reinforcement Learning
 
@@ -53,23 +53,23 @@ The complete training pipeline comprises three stages: FAS knowledge transfer �
 
 1. **Tool-Augmented Data Annotation Pipeline & ToolFAS-16K**:
 
-   - 16,172 images are selected from CelebA-Spoof, covering genuine samples and 10 attack types.
-   - Six visual tools are employed: Zoom-In (local magnification), LBP (texture analysis), FFT & Wavelet (frequency-domain analysis), Laplacian Edge & HOG (structural analysis).
-   - Gemini-2.5 Pro is used for multi-round annotation; each sample generates $L$ rounds of reasoning–tool-invocation trajectories ($L^{max}=6$).
-   - **Expert Model Guidance Mechanism**: Tool-specific binary classifiers $\mathcal{E}_k$ are trained to predict the spoof probability $p_k$ for each tool output, generating textual guidance (e.g., "FFT results indicate an 87% probability of spoofing artifacts"), ensuring annotation reliability.
-   - The final dataset is constructed after correctness verification, format validation, and human review.
-   - **Design Motivation**: Why are expert models needed? General-purpose annotation models (Gemini) may misinterpret tool outputs; lightweight expert networks provide auxiliary confidence scores, effectively introducing a "second opinion" during annotation.
+    - 16,172 images are selected from CelebA-Spoof, covering genuine samples and 10 attack types.
+    - Six visual tools are employed: Zoom-In (local magnification), LBP (texture analysis), FFT & Wavelet (frequency-domain analysis), Laplacian Edge & HOG (structural analysis).
+    - Gemini-2.5 Pro is used for multi-round annotation; each sample generates $L$ rounds of reasoning–tool-invocation trajectories ($L^{max}=6$).
+    - **Expert Model Guidance Mechanism**: Tool-specific binary classifiers $\mathcal{E}_k$ are trained to predict the spoof probability $p_k$ for each tool output, generating textual guidance (e.g., "FFT results indicate an 87% probability of spoofing artifacts"), ensuring annotation reliability.
+    - The final dataset is constructed after correctness verification, format validation, and human review.
+    - **Design Motivation**: Why are expert models needed? General-purpose annotation models (Gemini) may misinterpret tool outputs; lightweight expert networks provide auxiliary confidence scores, effectively introducing a "second opinion" during annotation.
 
 2. **Three-Stage Training Pipeline**:
 
-   - **Stage 1: FAS Knowledge Transfer**—SFT on data $\mathcal{D}_1$ in I-FAS format to establish vision–language alignment.
-   - **Stage 2: Tool-Calling Format Injection**—Training on ToolFAS-16K to learn the multi-round tool-calling format. A key design applies a loss scaling factor $\alpha$ to the first-round output to prevent degradation of base classification capability during long multi-round training.
-   - **Stage 3: DT-GRPO (Diverse-Tool Group Relative Policy Optimization)**—Using only query-label pairs, reinforcement learning enables the model to autonomously learn efficient tool-use strategies.
+    - **Stage 1: FAS Knowledge Transfer**—SFT on data $\mathcal{D}_1$ in I-FAS format to establish vision–language alignment.
+    - **Stage 2: Tool-Calling Format Injection**—Training on ToolFAS-16K to learn the multi-round tool-calling format. A key design applies a loss scaling factor $\alpha$ to the first-round output to prevent degradation of base classification capability during long multi-round training.
+    - **Stage 3: DT-GRPO (Diverse-Tool Group Relative Policy Optimization)**—Using only query-label pairs, reinforcement learning enables the model to autonomously learn efficient tool-use strategies.
 
 3. **DT-GRPO Tool Diversity Reward**:
 
-   - A tool diversity reward function is introduced on top of standard GRPO.
-   - **Design Motivation**: Training with correctness rewards alone may cause the model to rely on only one or two "universal tools," neglecting the complementary advantages of others. The tool diversity reward encourages the model to explore diverse tool combinations, yielding more robust detection.
+    - A tool diversity reward function is introduced on top of standard GRPO.
+    - **Design Motivation**: Training with correctness rewards alone may cause the model to rely on only one or two "universal tools," neglecting the complementary advantages of others. The tool diversity reward encourages the model to explore diverse tool combinations, yielding more robust detection.
 
 ### Loss & Training
 

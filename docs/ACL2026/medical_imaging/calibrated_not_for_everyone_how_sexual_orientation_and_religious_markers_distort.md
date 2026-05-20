@@ -18,8 +18,8 @@ content_hash: 9392d665b35158b7
 # Calibrated? Not for Everyone: How Sexual Orientation and Religious Markers Distort LLM Accuracy and Confidence in Medical QA
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17316](https://arxiv.org/abs/2604.17316)
-**Code**: None
+**arXiv**: [2604.17316](https://arxiv.org/abs/2604.17316)  
+**Code**: None  
 **Area**: AI Fairness / Medical NLP
 **Keywords**: Calibration Bias, Social Identity Markers, Medical QA, Uncertainty Estimation, Intersectional Identity
 

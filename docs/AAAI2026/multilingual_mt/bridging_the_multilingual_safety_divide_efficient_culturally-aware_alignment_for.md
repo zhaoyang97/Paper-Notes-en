@@ -18,8 +18,8 @@ content_hash: b3c99dd6770a17b1
 # Bridging the Multilingual Safety Divide: Efficient, Culturally-Aware Alignment for Global South Languages
 
 **Conference**: AAAI 2026
-**arXiv**: [2602.13867](https://arxiv.org/abs/2602.13867)
-**Code**: None
+**arXiv**: [2602.13867](https://arxiv.org/abs/2602.13867)  
+**Code**: None  
 **Area**: Multilingual Translation
 **Keywords**: Multilingual Safety, Parameter-Efficient Alignment, Cultural Sensitivity, Low-Resource Languages, Code-Mixing
 

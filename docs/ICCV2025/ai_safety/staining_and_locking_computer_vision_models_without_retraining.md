@@ -18,8 +18,8 @@ content_hash: ccc1ff22136d5798
 # Staining and Locking Computer Vision Models without Retraining
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22000](https://arxiv.org/abs/2507.22000)
-**Code**: None
+**arXiv**: [2507.22000](https://arxiv.org/abs/2507.22000)  
+**Code**: None  
 **Area**: AI Safety
 **Keywords**: model watermarking, model locking, intellectual property protection, training-free, computer vision
 

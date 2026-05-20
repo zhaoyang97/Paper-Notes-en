@@ -18,8 +18,8 @@ content_hash: 44f4f8cc50b36797
 # MozzaVID: Mozzarella Volumetric Image Dataset
 
 **Conference**: CVPR 2026
-**arXiv**: [2412.04880](https://arxiv.org/abs/2412.04880)
-**Code**: [https://papieta.github.io/MozzaVID/](https://papieta.github.io/MozzaVID/) (available; dataset publicly released)
+**arXiv**: [2412.04880](https://arxiv.org/abs/2412.04880)  
+**Code**: [https://papieta.github.io/MozzaVID/](https://papieta.github.io/MozzaVID/) (available; dataset publicly released)  
 **Area**: Medical Imaging / Dataset
 **Keywords**: volumetric image dataset, 3D classification, X-ray CT, food microstructure, deep learning benchmark
 

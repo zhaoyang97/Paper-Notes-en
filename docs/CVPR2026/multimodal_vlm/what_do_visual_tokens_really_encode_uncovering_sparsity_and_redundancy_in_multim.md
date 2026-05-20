@@ -18,8 +18,8 @@ content_hash: b523de97ee1751d1
 # What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.00510](https://arxiv.org/abs/2603.00510)
-**Code**: [https://github.com/EIT-NLP/EmbedLens](https://github.com/EIT-NLP/EmbedLens)
+**arXiv**: [2603.00510](https://arxiv.org/abs/2603.00510)  
+**Code**: [https://github.com/EIT-NLP/EmbedLens](https://github.com/EIT-NLP/EmbedLens)  
 **Area**: Multimodal VLM
 **Keywords**: visual token analysis, semantic sparsity, MLLM interpretability, attention sink, token redundancy
 

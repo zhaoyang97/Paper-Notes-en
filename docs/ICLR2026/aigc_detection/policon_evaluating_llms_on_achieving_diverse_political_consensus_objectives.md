@@ -20,7 +20,7 @@ content_hash: 3fa13b79d7ce3f16
 **Conference**: ICLR 2026
 **arXiv**: [2505.19558](https://arxiv.org/abs/2505.19558)
 
-**Code**: Available
+**Code**: Available  
 **Area**: AIGC Detection / LLM Evaluation
 
 **Keywords**: Political Consensus, LLM Evaluation, European Parliament, Social Choice Theory, Vote Simulation
@@ -144,7 +144,7 @@ tags:
 **Conference**: ICLR 2026
 **arXiv**: [2505.19558](https://arxiv.org/abs/2505.19558)
 
-**Code**: Available
+**Code**: Available  
 **Area**: AIGC Detection / LLM Evaluation
 
 **Keywords**: Political Consensus, LLM Evaluation, European Parliament, Social Choice Theory, Vote Simulation

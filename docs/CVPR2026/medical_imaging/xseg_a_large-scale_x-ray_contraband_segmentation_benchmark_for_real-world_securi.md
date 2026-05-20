@@ -18,8 +18,8 @@ content_hash: 37790f0bcf0fece7
 # XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03706](https://arxiv.org/abs/2604.03706)
-**Code**: N/A
+**arXiv**: [2604.03706](https://arxiv.org/abs/2604.03706)  
+**Code**: N/A  
 **Area**: Medical Imaging
 **Keywords**: X-ray contraband segmentation, security screening dataset, SAM adaptation, dual-energy encoder, adaptive point prompt
 
@@ -46,21 +46,21 @@ X-ray image → SAM ViT-L encoder extracts image features + EAE extracts dual-en
 
 1. **Energy-Aware Encoder (EAE)**
 
-   - **Function**: Extracts dual-energy domain priors from X-ray images.
-   - **Mechanism**: Computes a high-energy channel $I_H = \max_c I(\cdot,\cdot,c)$ and a low-energy channel $I_L = \min_c I(\cdot,\cdot,c)$, concatenates them, and encodes the result through three Conv+LayerNorm+GELU+MaxPool layers. Channel-wise attention combined with top-k feature selection generates initialization queries that replace SAM's random token initialization.
-   - **Design Motivation**: The RGB channels of X-ray images physically encode transmission information at different energy levels — metallic objects exhibit markedly different responses across high- and low-energy channels. Exploiting this physical prior enables the model to better discriminate between material types.
+    - **Function**: Extracts dual-energy domain priors from X-ray images.
+    - **Mechanism**: Computes a high-energy channel $I_H = \max_c I(\cdot,\cdot,c)$ and a low-energy channel $I_L = \min_c I(\cdot,\cdot,c)$, concatenates them, and encodes the result through three Conv+LayerNorm+GELU+MaxPool layers. Channel-wise attention combined with top-k feature selection generates initialization queries that replace SAM's random token initialization.
+    - **Design Motivation**: The RGB channels of X-ray images physically encode transmission information at different energy levels — metallic objects exhibit markedly different responses across high- and low-energy channels. Exploiting this physical prior enables the model to better discriminate between material types.
 
 2. **Adaptive Point Generator (APG)**
 
-   - **Function**: Expands a single user click into two more informative prompt points.
-   - **Mechanism**: The initial point $p_0$ is used to generate a soft mask $M_0$; a bounding box is extracted and randomly scaled ($s \sim \mathcal{U}(0.9, 1.1)$); K-means clustering ($K=2$) is applied within the box; the farthest point pair $(p_1^*, p_2^*)$ across the two clusters serves as the new prompts (falling back to random sampling if the inter-cluster distance is insufficient).
-   - **Design Motivation**: Contraband items in security screening are frequently heavily overlapping, making single-point prompts inadequate to describe target extent. APG adaptively identifies two representative locations, providing richer spatial cues. Ablation results show APG outperforms two randomly sampled points by 1.59 mIoU.
+    - **Function**: Expands a single user click into two more informative prompt points.
+    - **Mechanism**: The initial point $p_0$ is used to generate a soft mask $M_0$; a bounding box is extracted and randomly scaled ($s \sim \mathcal{U}(0.9, 1.1)$); K-means clustering ($K=2$) is applied within the box; the farthest point pair $(p_1^*, p_2^*)$ across the two clusters serves as the new prompts (falling back to random sampling if the inter-cluster distance is insufficient).
+    - **Design Motivation**: Contraband items in security screening are frequently heavily overlapping, making single-point prompts inadequate to describe target extent. APG adaptively identifies two representative locations, providing richer spatial cues. Ablation results show APG outperforms two randomly sampled points by 1.59 mIoU.
 
 3. **XSeg Dataset Construction**
 
-   - **Function**: Provides a large-scale, high-quality benchmark for X-ray segmentation.
-   - **Mechanism**: Images are aggregated from 114Xray, PIXray, PIDray, and real-world screening data; after filtering by resolution, aspect ratio, and sharpness, approximately 150K candidates are refined to 98,644 images. Annotation employs a closed-loop strategy combining MobileSAM-assisted labeling with expert review by security screening professionals over five iterative rounds, yielding 30 fine-grained categories (e.g., scissors are distinguished by metal vs. plastic handles).
-   - **Design Motivation**: The scale and annotation granularity of existing datasets are insufficient for training and evaluating deployable segmentation models for security screening.
+    - **Function**: Provides a large-scale, high-quality benchmark for X-ray segmentation.
+    - **Mechanism**: Images are aggregated from 114Xray, PIXray, PIDray, and real-world screening data; after filtering by resolution, aspect ratio, and sharpness, approximately 150K candidates are refined to 98,644 images. Annotation employs a closed-loop strategy combining MobileSAM-assisted labeling with expert review by security screening professionals over five iterative rounds, yielding 30 fine-grained categories (e.g., scissors are distinguished by metal vs. plastic handles).
+    - **Design Motivation**: The scale and annotation granularity of existing datasets are insufficient for training and evaluating deployable segmentation models for security screening.
 
 ### Loss & Training
 

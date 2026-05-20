@@ -18,8 +18,8 @@ content_hash: 6f56f743afd50dac
 # Learning Time-Scale Invariant Population-Level Neural Representations
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.13022](https://arxiv.org/abs/2511.13022)
-**Code**: None
+**arXiv**: [2511.13022](https://arxiv.org/abs/2511.13022)  
+**Code**: None  
 **Area**: Time Series / Neural Signal Foundation Models
 **Keywords**: neural time series, foundation models, time-scale invariance, population-level representations, brain-computer interface
 
@@ -51,17 +51,17 @@ The method builds upon the Population Transformer (PopT) framework: for a given 
 
 1. **Time-Scale Augmented Pretraining (TSAP)**:
 
-   - **Function**: Modifies the data generation pipeline so that the model is exposed to iEEG signals of multiple temporal window lengths during pretraining.
-   - **Design Motivation**: Eliminates overfitting to any specific time scale and establishes time-scale invariance.
-   - **Mechanism**: Recording segments of length $l \in \{1, 2, 4, 5\}$ seconds are sampled (3 seconds is held out); each channel is independently encoded into BrainBERT embeddings. Embeddings from different window lengths contain overlapping windows that the temporal encoder maps to distinct representations.
-   - **Novelty**: The original PopT is pretrained solely on fixed 5-second windows, whereas TSAP encourages cross-scale generalization through multi-scale exposure.
+    - **Function**: Modifies the data generation pipeline so that the model is exposed to iEEG signals of multiple temporal window lengths during pretraining.
+    - **Design Motivation**: Eliminates overfitting to any specific time scale and establishes time-scale invariance.
+    - **Mechanism**: Recording segments of length $l \in \{1, 2, 4, 5\}$ seconds are sampled (3 seconds is held out); each channel is independently encoded into BrainBERT embeddings. Embeddings from different window lengths contain overlapping windows that the temporal encoder maps to distinct representations.
+    - **Novelty**: The original PopT is pretrained solely on fixed 5-second windows, whereas TSAP encourages cross-scale generalization through multi-scale exposure.
 
 2. **Embedding Space Analysis (PCA + K-Means)**:
 
-   - **Function**: Visualizes the distribution of temporal embeddings and [CLS] token representations across different time scales.
-   - **Design Motivation**: Verifies whether TSAP genuinely eliminates time-scale-related clustering.
-   - **Mechanism**: 100 samples are drawn from a specific subject–session across 1–5 second time scales, followed by 2D PCA projection and K-Means clustering analysis.
-   - **Key Findings**: PopT pretrained on 5 seconds produces strong time-scale clusters, whereas the TSAP model's clusters are substantially mixed, indicating stronger time-scale invariance.
+    - **Function**: Visualizes the distribution of temporal embeddings and [CLS] token representations across different time scales.
+    - **Design Motivation**: Verifies whether TSAP genuinely eliminates time-scale-related clustering.
+    - **Mechanism**: 100 samples are drawn from a specific subject–session across 1–5 second time scales, followed by 2D PCA projection and K-Means clustering analysis.
+    - **Key Findings**: PopT pretrained on 5 seconds produces strong time-scale clusters, whereas the TSAP model's clusters are substantially mixed, indicating stronger time-scale invariance.
 
 ### Loss & Training
 

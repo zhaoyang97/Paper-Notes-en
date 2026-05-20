@@ -19,8 +19,8 @@ content_hash: be1d7d9ec7a2f59c
 # Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11354](https://arxiv.org/abs/2510.11354)
-**Code**: None
+**arXiv**: [2510.11354](https://arxiv.org/abs/2510.11354)  
+**Code**: None  
 **Area**: Optimization Theory / Deep Learning Theory
 **Keywords**: Adam, AdamW, batch size, weight decay, generalization, feature learning
 

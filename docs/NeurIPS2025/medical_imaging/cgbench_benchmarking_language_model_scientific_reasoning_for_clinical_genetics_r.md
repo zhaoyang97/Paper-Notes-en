@@ -18,8 +18,8 @@ content_hash: 32879ecc81d59424
 # CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.11985](https://arxiv.org/abs/2510.11985)
-**Code**: [GitHub](https://github.com/owencqueen/cgbench)
+**arXiv**: [2510.11985](https://arxiv.org/abs/2510.11985)  
+**Code**: [GitHub](https://github.com/owencqueen/cgbench)  
 **Area**: Medical Imaging
 **Keywords**: clinical genetics, language models, scientific reasoning, benchmark, evidence evaluation
 

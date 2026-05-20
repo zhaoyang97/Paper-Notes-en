@@ -18,8 +18,8 @@ content_hash: 5f3d48922739e325
 # Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.07022](https://arxiv.org/abs/2602.07022)
-**Code**: None
+**arXiv**: [2602.07022](https://arxiv.org/abs/2602.07022)  
+**Code**: None  
 **Area**: Diffusion Models / Autoregressive Image Generation
 **Keywords**: autoregressive generation, diffusion loss, condition refinement, optimal transport, Wasserstein gradient flow
 

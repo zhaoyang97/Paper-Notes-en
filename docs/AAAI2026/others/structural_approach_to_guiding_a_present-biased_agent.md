@@ -17,8 +17,8 @@ content_hash: dc04936f85c08349
 # Structural Approach to Guiding a Present-Biased Agent
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.07763](https://arxiv.org/abs/2601.07763)
-**Code**: None
+**arXiv**: [2601.07763](https://arxiv.org/abs/2601.07763)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Present Bias, Parameterized Complexity, Treewidth, Task Graph Modification, Principal-Agent Problem
 
@@ -49,19 +49,19 @@ The core of the paper is a parameterized algorithmic framework. Given a time-inc
 ### Key Designs
 
 1. **XP Algorithm Parameterized by Vertex Cover (Theorem 2)**:
-   - **Function**: Shows that T-path-Editing is solvable in polynomial time when the vertex cover number $\text{vc}$ of $G+A$ is constant.
-   - **Mechanism**: The key observation is that paths in a DAG with bounded vertex cover have length at most $2\cdot\text{vc}-1$. The algorithm enumerates all possible agent paths $P$ (at most $m^{O(\text{vc})}$) and the shortest $(v,t)$-paths $R_v$ for each vertex in the critical vertex set $S = V(P) \cup C$. The inner layer reduces to a matching problem: edges to be deleted are classified into those between critical vertices that must be removed due to distance or preference violations ($X_1$), and edge pairs on non-critical vertices ($\mathcal{X}_v$), the latter of which reduces to minimum vertex cover in a bipartite graph (solvable in polynomial time via König's theorem). Total runtime is $m^{O(\text{vc}^2)}$.
-   - **Design Motivation**: Vertex cover is one of the most restrictive parameters, guaranteeing bounded path lengths and making exhaustive enumeration feasible. It serves as the most intuitive starting point among all structured algorithms.
+    - **Function**: Shows that T-path-Editing is solvable in polynomial time when the vertex cover number $\text{vc}$ of $G+A$ is constant.
+    - **Mechanism**: The key observation is that paths in a DAG with bounded vertex cover have length at most $2\cdot\text{vc}-1$. The algorithm enumerates all possible agent paths $P$ (at most $m^{O(\text{vc})}$) and the shortest $(v,t)$-paths $R_v$ for each vertex in the critical vertex set $S = V(P) \cup C$. The inner layer reduces to a matching problem: edges to be deleted are classified into those between critical vertices that must be removed due to distance or preference violations ($X_1$), and edge pairs on non-critical vertices ($\mathcal{X}_v$), the latter of which reduces to minimum vertex cover in a bipartite graph (solvable in polynomial time via König's theorem). Total runtime is $m^{O(\text{vc}^2)}$.
+    - **Design Motivation**: Vertex cover is one of the most restrictive parameters, guaranteeing bounded path lengths and making exhaustive enumeration feasible. It serves as the most intuitive starting point among all structured algorithms.
 
 2. **FPT Algorithm Parameterized by Treewidth (Theorem 1, Main Result)**:
-   - **Function**: The central positive result, establishing that T-path-Editing is fixed-parameter tractable when parameterized by treewidth $\text{tw}$ and path-cost diversity $|L|$.
-   - **Mechanism**: The algorithm runs in time $|L|^{O(\text{tw})} \cdot m^{O(1)}$, where $L = |\bigcup_{v \in V(G)} \{w(P) \mid P \text{ is a } (v,t)\text{-path in } G+A\}|$ denotes the number of distinct path-cost values. The key distinction from Theorem 2 is that the algorithm avoids directly enumerating agent paths (which would require lexicographic comparison of arbitrary edges) and instead only compares edges in $G+A$ against edges in $T$. Dynamic programming over the tree decomposition maintains, for each bag, a guess of the distance from each vertex to $t$, enforcing consistency of distances and correctness of the agent's path preference constraints.
-   - **Design Motivation**: Treewidth captures the "tree-likeness" of a graph, and many practical planning graphs (hierarchical structures, modular designs) exhibit low treewidth. Combining this with the bounded-$|L|$ condition substantially broadens the tractable regime.
+    - **Function**: The central positive result, establishing that T-path-Editing is fixed-parameter tractable when parameterized by treewidth $\text{tw}$ and path-cost diversity $|L|$.
+    - **Mechanism**: The algorithm runs in time $|L|^{O(\text{tw})} \cdot m^{O(1)}$, where $L = |\bigcup_{v \in V(G)} \{w(P) \mid P \text{ is a } (v,t)\text{-path in } G+A\}|$ denotes the number of distinct path-cost values. The key distinction from Theorem 2 is that the algorithm avoids directly enumerating agent paths (which would require lexicographic comparison of arbitrary edges) and instead only compares edges in $G+A$ against edges in $T$. Dynamic programming over the tree decomposition maintains, for each bag, a guess of the distance from each vertex to $t$, enforcing consistency of distances and correctness of the agent's path preference constraints.
+    - **Design Motivation**: Treewidth captures the "tree-likeness" of a graph, and many practical planning graphs (hierarchical structures, modular designs) exhibit low treewidth. Combining this with the bounded-$|L|$ condition substantially broadens the tractable regime.
 
 3. **W[1]-Hardness and Para-NP Hardness Results**:
-   - **Function**: Establishes lower bounds on intractability, proving that the parameter choices in the positive results are necessary.
-   - **Mechanism**: Through parameterized gap reductions from the Modified $k$-Sum problem ($\text{W}[1]$-complete), the paper proves: (a) T-path-Editing is $\text{W}[1]$-hard parameterized by the number of vertices $n$; (b) it remains $\text{W}[1]$-hard with respect to the combined parameter path length $p$ + vertex cover $\text{vc}$. The reduction constructs a carefully engineered gadget graph in which the cost of the agent's chosen path precisely encodes a solution to the $k$-Sum problem. When $\text{tw}=2$, the problem is already NP-hard (as the reduction yields a series-parallel graph), while at $\text{tw}=1$ the problem is trivial (paths on trees are unique).
-   - **Design Motivation**: These hardness results explain why both graph-structural parameters and cost diversity must be simultaneously constrained—bounding any single parameter alone is insufficient to overcome the inherent difficulty of the problem.
+    - **Function**: Establishes lower bounds on intractability, proving that the parameter choices in the positive results are necessary.
+    - **Mechanism**: Through parameterized gap reductions from the Modified $k$-Sum problem ($\text{W}[1]$-complete), the paper proves: (a) T-path-Editing is $\text{W}[1]$-hard parameterized by the number of vertices $n$; (b) it remains $\text{W}[1]$-hard with respect to the combined parameter path length $p$ + vertex cover $\text{vc}$. The reduction constructs a carefully engineered gadget graph in which the cost of the agent's chosen path precisely encodes a solution to the $k$-Sum problem. When $\text{tw}=2$, the problem is already NP-hard (as the reduction yields a series-parallel graph), while at $\text{tw}=1$ the problem is trivial (paths on trees are unique).
+    - **Design Motivation**: These hardness results explain why both graph-structural parameters and cost diversity must be simultaneously constrained—bounding any single parameter alone is insufficient to overcome the inherent difficulty of the problem.
 
 ### Loss & Training
 

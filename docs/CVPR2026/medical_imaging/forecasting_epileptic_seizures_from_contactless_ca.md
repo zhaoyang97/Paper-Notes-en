@@ -18,8 +18,8 @@ content_hash: dde9ad6caa9b4927
 # Forecasting Epileptic Seizures from Contactless Camera via Cross-Species Transfer Learning
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.12887](https://arxiv.org/abs/2603.12887)
-**Code**: To be confirmed
+**arXiv**: [2603.12887](https://arxiv.org/abs/2603.12887)  
+**Code**: To be confirmed  
 **Area**: Medical Imaging
 **Keywords**: Epileptic seizure forecasting, video analysis, cross-species transfer learning, contactless monitoring, VideoMAE
 
@@ -51,21 +51,21 @@ The framework consists of two stages. **Stage 1** — Domain-Specific Continual 
 
 1. **Cross-Species Pre-training Data Construction**
 
-   - **Function**: Construct a pre-training dataset by mixing rodent epilepsy videos with human normal videos.
-   - **Mechanism**: The RodEpil dataset (13,000+ 10-second rodent clips) is used, with 2,952 seizure samples and 3,000 normal samples selected via balanced sampling. Additionally, 1,870 5-second human non-ictal videos (from 6 patients) are included. Both sources are simply concatenated to form $D_{pt}$.
-   - **Design Motivation**: Rodent data provides knowledge of epileptic motor dynamics (subtle pre-ictal behavioral patterns), while human data preserves the model's ability to represent human body poses. The two sources are complementary. Ablation experiments confirm that the mixed data configuration (+R(Y/N)+H) achieves the best performance across all shot settings.
+    - **Function**: Construct a pre-training dataset by mixing rodent epilepsy videos with human normal videos.
+    - **Mechanism**: The RodEpil dataset (13,000+ 10-second rodent clips) is used, with 2,952 seizure samples and 3,000 normal samples selected via balanced sampling. Additionally, 1,870 5-second human non-ictal videos (from 6 patients) are included. Both sources are simply concatenated to form $D_{pt}$.
+    - **Design Motivation**: Rodent data provides knowledge of epileptic motor dynamics (subtle pre-ictal behavioral patterns), while human data preserves the model's ability to represent human body poses. The two sources are complementary. Ablation experiments confirm that the mixed data configuration (+R(Y/N)+H) achieves the best performance across all shot settings.
 
 2. **VideoMAE Self-Supervised Pre-training**
 
-   - **Function**: Perform masked video autoencoder pre-training on the mixed dataset to learn epilepsy-related spatiotemporal representations.
-   - **Mechanism**: Tube masking is applied to 3D video patches, which are then reconstructed. The MSE reconstruction loss is: $\mathcal{L}_{MSE} = \frac{1}{\Omega}\sum_{i\in\Omega}(I_i - \hat{I}_i)^2$. **Key finding**: The optimal masking ratio is 0.3, rather than the 0.75–0.9 commonly used for general videos, as pre-ictal movements are subtle and require more spatiotemporal context to be preserved for meaningful representation learning.
-   - **Design Motivation**: Self-supervised pre-training requires no labels, making full use of large-scale unlabeled data. The low masking ratio is a domain-specific finding — the high information redundancy of general videos (where 90% masking still allows reconstruction in Kinetics) does not apply to medical behavioral videos.
+    - **Function**: Perform masked video autoencoder pre-training on the mixed dataset to learn epilepsy-related spatiotemporal representations.
+    - **Mechanism**: Tube masking is applied to 3D video patches, which are then reconstructed. The MSE reconstruction loss is: $\mathcal{L}_{MSE} = \frac{1}{\Omega}\sum_{i\in\Omega}(I_i - \hat{I}_i)^2$. **Key finding**: The optimal masking ratio is 0.3, rather than the 0.75–0.9 commonly used for general videos, as pre-ictal movements are subtle and require more spatiotemporal context to be preserved for meaningful representation learning.
+    - **Design Motivation**: Self-supervised pre-training requires no labels, making full use of large-scale unlabeled data. The low masking ratio is a domain-specific finding — the high information redundancy of general videos (where 90% masking still allows reconstruction in Kinetics) does not apply to medical behavioral videos.
 
 3. **Few-Shot Classification Fine-tuning**
 
-   - **Function**: Perform binary classification using the encoder CLS token and a linear classification head under $N \in \{2, 3, 4\}$-shot settings.
-   - **Mechanism**: The decoder is discarded and the pre-trained encoder weights are retained. The CLS token is passed through a linear layer followed by a sigmoid to output seizure probability: $\hat{y} = \sigma(\mathbf{W} \cdot \mathbf{z}_{cls} + b)$. The model is trained with cross-entropy loss for 20 epochs. Gradient checkpointing and 16-bit mixed precision are used to reduce memory overhead.
-   - **Design Motivation**: Under extreme data scarcity (40 videos), complex classification heads are prone to overfitting; linear probing is the most reliable choice.
+    - **Function**: Perform binary classification using the encoder CLS token and a linear classification head under $N \in \{2, 3, 4\}$-shot settings.
+    - **Mechanism**: The decoder is discarded and the pre-trained encoder weights are retained. The CLS token is passed through a linear layer followed by a sigmoid to output seizure probability: $\hat{y} = \sigma(\mathbf{W} \cdot \mathbf{z}_{cls} + b)$. The model is trained with cross-entropy loss for 20 epochs. Gradient checkpointing and 16-bit mixed precision are used to reduce memory overhead.
+    - **Design Motivation**: Under extreme data scarcity (40 videos), complex classification heads are prone to overfitting; linear probing is the most reliable choice.
 
 ### Loss & Training
 

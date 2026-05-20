@@ -18,8 +18,8 @@ content_hash: e6f792755f8b8192
 # Few-Shot Pattern Detection via Template Matching and Regression
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.17636](https://arxiv.org/abs/2508.17636)
-**Code**: [https://cvlab.postech.ac.kr/research/TMR](https://cvlab.postech.ac.kr/research/TMR)
+**arXiv**: [2508.17636](https://arxiv.org/abs/2508.17636)  
+**Code**: [https://cvlab.postech.ac.kr/research/TMR](https://cvlab.postech.ac.kr/research/TMR)  
 **Area**: LLM Evaluation
 **Keywords**: few-shot detection, template matching, pattern detection, repetitive patterns, anchor-free detection
 

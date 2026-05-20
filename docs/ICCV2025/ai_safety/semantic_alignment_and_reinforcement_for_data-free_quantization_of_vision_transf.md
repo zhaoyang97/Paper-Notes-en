@@ -18,8 +18,8 @@ content_hash: 91f649271b9904b5
 # Semantic Alignment and Reinforcement for Data-Free Quantization of Vision Transformers
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.16553](https://arxiv.org/abs/2412.16553)
-**Code**: [https://github.com/zysxmu/SARDFQ](https://github.com/zysxmu/SARDFQ)
+**arXiv**: [2412.16553](https://arxiv.org/abs/2412.16553)  
+**Code**: [https://github.com/zysxmu/SARDFQ](https://github.com/zysxmu/SARDFQ)  
 **Area**: AI Safety / Model Quantization
 **Keywords**: Data-free quantization, Vision Transformer, attention prior alignment, multi-semantic reinforcement, synthetic images
 

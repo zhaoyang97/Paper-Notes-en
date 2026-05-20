@@ -18,8 +18,8 @@ content_hash: 72ba8292f0837a78
 # Graph Tokenization for Bridging Graphs and Transformers
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.11099](https://arxiv.org/abs/2603.11099)
-**Code**: Available (provided in supplementary material)
+**arXiv**: [2603.11099](https://arxiv.org/abs/2603.11099)  
+**Code**: Available (provided in supplementary material)  
 **Area**: Graph Learning
 **Keywords**: graph tokenization, BPE, graph serialization, Transformer, graph classification
 
@@ -49,28 +49,28 @@ GraphTokenizer $\Phi = T \circ f$: an input labeled graph $\mathcal{G}$ is passe
 
 1. **Local Structural Pattern Statistics**:
 
-   - Function: Computes the frequency $F(p)$ of all local edge patterns $p = (l_u, l_e, l_v)$ over the training corpus.
-   - Mechanism: Edge patterns are the minimal substructures preserving the typed relationship between two entities; they are computationally efficient and invariant under node permutations. The frequency map $F$ serves as global statistical information to guide subsequent serialization.
-   - Design Motivation: Provides deterministic priority for serialization while ensuring that high-frequency substructures appear adjacently in the sequence, creating ideal input for BPE.
+    - Function: Computes the frequency $F(p)$ of all local edge patterns $p = (l_u, l_e, l_v)$ over the training corpus.
+    - Mechanism: Edge patterns are the minimal substructures preserving the typed relationship between two entities; they are computationally efficient and invariant under node permutations. The frequency map $F$ serves as global statistical information to guide subsequent serialization.
+    - Design Motivation: Provides deterministic priority for serialization while ensuring that high-frequency substructures appear adjacently in the sequence, creating ideal input for BPE.
 
 2. **Frequency-Guided Invertible Serialization (Frequency-Guided Eulerian Circuit)**:
 
-   - Function: Traverses every edge of the graph exactly once along an Eulerian circuit, selecting the next edge according to frequency priority.
-   - Mechanism: Each undirected edge is split into two directed edges, making any connected graph admit an Eulerian circuit. At each node $u$, among unvisited outgoing edges $\mathcal{E}_u$, the algorithm selects $e^* = \arg\max_{e_i \in \mathcal{E}_u} \pi(e_i, F)$ with priority $\pi(e_i, F) = F(p_i)$. Traversal outputs an alternating node-edge-node sequence, guaranteeing invertibility.
-   - Design Motivation: (a) Eulerian circuits are inherently invertible since every edge is visited; (b) frequency guidance resolves the non-determinism of the classical Hierholzer algorithm, producing identical sequences for isomorphic graphs; (c) time complexity is only $O(|\mathcal{E}|)$.
-   - Distinction from Prior Methods: Random Walk is non-invertible; BFS/DFS lose edge information; SMILES is applicable only to molecular graphs.
+    - Function: Traverses every edge of the graph exactly once along an Eulerian circuit, selecting the next edge according to frequency priority.
+    - Mechanism: Each undirected edge is split into two directed edges, making any connected graph admit an Eulerian circuit. At each node $u$, among unvisited outgoing edges $\mathcal{E}_u$, the algorithm selects $e^* = \arg\max_{e_i \in \mathcal{E}_u} \pi(e_i, F)$ with priority $\pi(e_i, F) = F(p_i)$. Traversal outputs an alternating node-edge-node sequence, guaranteeing invertibility.
+    - Design Motivation: (a) Eulerian circuits are inherently invertible since every edge is visited; (b) frequency guidance resolves the non-determinism of the classical Hierholzer algorithm, producing identical sequences for isomorphic graphs; (c) time complexity is only $O(|\mathcal{E}|)$.
+    - Distinction from Prior Methods: Random Walk is non-invertible; BFS/DFS lose edge information; SMILES is applicable only to molecular graphs.
 
 3. **BPE Vocabulary Learning**:
 
-   - Function: Trains BPE on the serialized corpus, iteratively merging the most frequent adjacent symbol pair into a new token.
-   - Mechanism: Because serialization has arranged high-frequency substructures as adjacent symbols, BPE's greedy merge strategy naturally discovers semantically meaningful graph substructure tokens. Each merged token corresponds to a decodable subgraph fragment.
-   - Design Motivation: (a) Compresses sequence length (~10× compression ratio), reducing Transformer computational overhead; (b) the learned vocabulary is hierarchical and semantically meaningful (e.g., functional groups in molecules); (c) entirely data-driven, requiring no domain knowledge.
+    - Function: Trains BPE on the serialized corpus, iteratively merging the most frequent adjacent symbol pair into a new token.
+    - Mechanism: Because serialization has arranged high-frequency substructures as adjacent symbols, BPE's greedy merge strategy naturally discovers semantically meaningful graph substructure tokens. Each merged token corresponds to a decodable subgraph fragment.
+    - Design Motivation: (a) Compresses sequence length (~10× compression ratio), reducing Transformer computational overhead; (b) the learned vocabulary is hierarchical and semantically meaningful (e.g., functional groups in molecules); (c) entirely data-driven, requiring no domain knowledge.
 
 4. **Frequency-Guided CPP (Chinese Postman Problem)**:
 
-   - Function: An alternative approach that covers all edges with minimum-weight traversal.
-   - Mechanism: Frequency information is encoded into edge weights $w(e) = \alpha \cdot 1 + (1-\alpha) \cdot g(F(p_e))$, making high-frequency edges more likely to be traversed consecutively.
-   - Design Motivation: CPP already produces highly structured sequences; the marginal gain from frequency guidance is limited. However, CPP has complexity $O(|\mathcal{V}|^3)$, far exceeding Feuler's $O(|\mathcal{E}|)$.
+    - Function: An alternative approach that covers all edges with minimum-weight traversal.
+    - Mechanism: Frequency information is encoded into edge weights $w(e) = \alpha \cdot 1 + (1-\alpha) \cdot g(F(p_e))$, making high-frequency edges more likely to be traversed consecutively.
+    - Design Motivation: CPP already produces highly structured sequences; the marginal gain from frequency guidance is limited. However, CPP has complexity $O(|\mathcal{V}|^3)$, far exceeding Feuler's $O(|\mathcal{E}|)$.
 
 ### Loss & Training
 The tokenizer itself requires no gradient-based training (BPE is a statistical algorithm). Downstream training uses standard Transformer objectives:

@@ -18,8 +18,8 @@ content_hash: cbed54a82759b9d1
 # Beyond Scattered Acceptance: Fast and Coherent Inference for DLMs via Longest Stable Prefixes
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.05454](https://arxiv.org/abs/2603.05454)
-**Code**: None
+**arXiv**: [2603.05454](https://arxiv.org/abs/2603.05454)  
+**Code**: None  
 **Area**: Image Restoration
 **Keywords**: diffusion language models, inference acceleration, KV cache, prefix commitment, logit margin
 

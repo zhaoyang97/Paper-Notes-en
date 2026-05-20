@@ -18,8 +18,8 @@ content_hash: ec7bb57e7c247a98
 # MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2505.07591](https://arxiv.org/abs/2505.07591)
-**Code**: [GitHub](https://github.com/Junjie-Ye/MulDimIF)
+**arXiv**: [2505.07591](https://arxiv.org/abs/2505.07591)  
+**Code**: [GitHub](https://github.com/Junjie-Ye/MulDimIF)  
 **Area**: LLM Evaluation & Improvement
 **Keywords**: Instruction Following, Multi-Dimensional Constraints, Evaluation Benchmark, GRPO Training, Attention Mechanism Analysis
 

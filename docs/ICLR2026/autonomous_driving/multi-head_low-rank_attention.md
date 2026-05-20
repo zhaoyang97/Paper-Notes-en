@@ -18,8 +18,8 @@ content_hash: 41fd1a5c06b2f9e8
 # Multi-Head Low-Rank Attention (MLRA)
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02188](https://arxiv.org/abs/2603.02188)
-**Code**: [GitHub](https://github.com/SongtaoLiu0823/MLRA) / [HuggingFace](https://huggingface.co/Soughing/MLRA)
+**arXiv**: [2603.02188](https://arxiv.org/abs/2603.02188)  
+**Code**: [GitHub](https://github.com/SongtaoLiu0823/MLRA) / [HuggingFace](https://huggingface.co/Soughing/MLRA)  
 **Area**: Autonomous Driving
 **Keywords**: KV Cache, Tensor Parallelism, Low-Rank Attention, Decoding Efficiency, Multi-Head Latent Attention
 

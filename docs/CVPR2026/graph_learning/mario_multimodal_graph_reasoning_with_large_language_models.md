@@ -18,8 +18,8 @@ content_hash: 897514b43ad7586e
 # Mario: Multimodal Graph Reasoning with Large Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05181](https://arxiv.org/abs/2603.05181)
-**Code**: Coming soon
+**arXiv**: [2603.05181](https://arxiv.org/abs/2603.05181)  
+**Code**: Coming soon  
 **Area**: Graph Learning
 **Keywords**: Multimodal graphs, LLM reasoning, vision-language alignment, modality-adaptive routing, instruction tuning
 

@@ -18,8 +18,8 @@ content_hash: 57a928c53a7a983e
 # MeshAnything V2: Artist-Created Mesh Generation with Adjacent Mesh Tokenization
 
 **Conference**: ICCV 2025
-**arXiv**: [2408.02555](https://arxiv.org/abs/2408.02555)
-**Code**: [https://buaacyw.github.io/meshanything-v2/](https://buaacyw.github.io/meshanything-v2/)
+**arXiv**: [2408.02555](https://arxiv.org/abs/2408.02555)  
+**Code**: [https://buaacyw.github.io/meshanything-v2/](https://buaacyw.github.io/meshanything-v2/)  
 **Area**: 3D Vision / Mesh Generation
 **Keywords**: Mesh Generation, Serialization, Tokenization, Autoregressive, Artist-Created Mesh
 

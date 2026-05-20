@@ -18,8 +18,8 @@ content_hash: 1a00b5689112eb42
 # NegoCollab: A Common Representation Negotiation Approach for Heterogeneous Collaborative Perception
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.27647](https://arxiv.org/abs/2510.27647)
-**Code**: None
+**arXiv**: [2510.27647](https://arxiv.org/abs/2510.27647)  
+**Code**: None  
 **Area**: Multimodal VLM / Collaborative Perception
 **Keywords**: Collaborative Perception, Heterogeneity, Common Representation, Domain Adaptation, Autonomous Driving
 

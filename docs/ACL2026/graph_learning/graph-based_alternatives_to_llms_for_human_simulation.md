@@ -17,8 +17,8 @@ content_hash: 987dc5fe8763a8bf
 # Graph-Based Alternatives to LLMs for Human Simulation
 
 **Conference**: ACL 2026
-**arXiv**: [2511.02135](https://arxiv.org/abs/2511.02135)
-**Code**: [GitHub](https://github.com/schang-lab/gems)
+**arXiv**: [2511.02135](https://arxiv.org/abs/2511.02135)  
+**Code**: [GitHub](https://github.com/schang-lab/gems)  
 **Area**: Graph Learning / Human Behavior Simulation
 **Keywords**: GNN, Human Simulation, Link Prediction, Heterogeneous Graph, Survey Prediction
 

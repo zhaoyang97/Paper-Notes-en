@@ -18,8 +18,8 @@ content_hash: 4d7de094adfd5d46
 # Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.05089](https://arxiv.org/abs/2602.05089)
-**Code**: None
+**arXiv**: [2602.05089](https://arxiv.org/abs/2602.05089)  
+**Code**: None  
 **Area**: AI Safety / RL Safety
 **Keywords**: backdoor attack, reinforcement-learning, simulator security, reward-free, supply chain attack
 

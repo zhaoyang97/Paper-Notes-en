@@ -20,8 +20,8 @@ content_hash: d7a94fc94a58ef42
 # Robust Adverse Weather Removal via Spectral-based Spatial Grouping (SSGformer)
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.22498](https://arxiv.org/abs/2507.22498)
-**Code**: [https://github.com/jeongyh98/SSGformer](https://github.com/jeongyh98/SSGformer)
+**arXiv**: [2507.22498](https://arxiv.org/abs/2507.22498)  
+**Code**: [https://github.com/jeongyh98/SSGformer](https://github.com/jeongyh98/SSGformer)  
 **Area**: Image Restoration / Adverse Weather Removal
 **Keywords**: All-in-One weather removal, spectral decomposition, spatial grouping, Transformer, Sobel operator, SVD, attention mechanism
 

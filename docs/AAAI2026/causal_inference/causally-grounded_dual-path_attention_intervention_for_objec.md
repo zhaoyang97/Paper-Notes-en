@@ -17,8 +17,8 @@ content_hash: 393bab6c948ef3ea
 # Causally-Grounded Dual-Path Attention Intervention for Object Hallucination Mitigation in LVLMs
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09018](https://arxiv.org/abs/2511.09018)
-**Code**: [https://github.com/CikZ2023/OWL](https://github.com/CikZ2023/OWL)
+**arXiv**: [2511.09018](https://arxiv.org/abs/2511.09018)  
+**Code**: [https://github.com/CikZ2023/OWL](https://github.com/CikZ2023/OWL)  
 **Area**: Causal Inference
 **Keywords**: Object Hallucination, Causal Inference, Attention Intervention, Contrastive Decoding, Large Vision-Language Models
 

@@ -18,8 +18,8 @@ content_hash: 704b9546586bed35
 # CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception
 
 **Conference**: CVPR 2026
-**arXiv**: [2511.19820](https://arxiv.org/abs/2511.19820)
-**Code**: [GitHub](https://github.com/miguelscarv/cropvlm)
+**arXiv**: [2511.19820](https://arxiv.org/abs/2511.19820)  
+**Code**: [GitHub](https://github.com/miguelscarv/cropvlm)  
 **Area**: Multimodal VLM
 **Keywords**: Visual cropping, reinforcement learning, GRPO, fine-grained perception, plug-and-play
 

@@ -18,8 +18,8 @@ content_hash: 3ea14689f94df048
 # Weakly-Supervised Referring Video Object Segmentation through Text Supervision
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.17797](https://arxiv.org/abs/2604.17797)
-**Code**: [https://github.com/viscom-tongji/WSRVOS](https://github.com/viscom-tongji/WSRVOS)
+**arXiv**: [2604.17797](https://arxiv.org/abs/2604.17797)  
+**Code**: [https://github.com/viscom-tongji/WSRVOS](https://github.com/viscom-tongji/WSRVOS)  
 **Area**: Segmentation
 **Keywords**: Weakly supervised, video object segmentation, referring expression, text supervision, multimodal alignment
 

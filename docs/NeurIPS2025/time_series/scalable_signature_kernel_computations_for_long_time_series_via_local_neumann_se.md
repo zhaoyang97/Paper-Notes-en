@@ -18,8 +18,8 @@ content_hash: d5ca818463272cb6
 # Scalable Signature Kernel Computations for Long Time Series via Local Neumann Series Expansions
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.20392](https://arxiv.org/abs/2502.20392)
-**Code**: [https://github.com/geekbeast/powersig](https://github.com/geekbeast/powersig)
+**arXiv**: [2502.20392](https://arxiv.org/abs/2502.20392)  
+**Code**: [https://github.com/geekbeast/powersig](https://github.com/geekbeast/powersig)  
 **Area**: Time Series
 **Keywords**: Signature Kernel, Neumann Series, Long Time Series, Goursat PDE, Kernel Methods
 

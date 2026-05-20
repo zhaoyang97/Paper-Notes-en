@@ -17,8 +17,8 @@ content_hash: 34d4f79c2d91ec90
 # Cognitive Mirrors: Exploring the Diverse Functional Roles of Attention Heads in LLM Reasoning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.10978](https://arxiv.org/abs/2512.10978)
-**Code**: [https://github.com/sihuo-design/CognitiveMirrors](https://github.com/sihuo-design/CognitiveMirrors)
+**arXiv**: [2512.10978](https://arxiv.org/abs/2512.10978)  
+**Code**: [https://github.com/sihuo-design/CognitiveMirrors](https://github.com/sihuo-design/CognitiveMirrors)  
 **Area**: Interpretability
 **Keywords**: Attention heads, cognitive functions, interpretability, probing, functional specialization
 

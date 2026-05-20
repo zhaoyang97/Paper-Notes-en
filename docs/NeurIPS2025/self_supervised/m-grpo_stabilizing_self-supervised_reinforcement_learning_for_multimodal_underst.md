@@ -19,8 +19,8 @@ content_hash: e4e400f6845cd4a7
 # M-GRPO: Stabilizing Self-Supervised Reinforcement Learning for Large Language Models with Momentum-Anchored Policy Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.13070](https://arxiv.org/abs/2512.13070)
-**Code**: [https://github.com/M_GRPO](https://github.com/M_GRPO)
+**arXiv**: [2512.13070](https://arxiv.org/abs/2512.13070)  
+**Code**: [https://github.com/M_GRPO](https://github.com/M_GRPO)  
 **Area**: Self-Supervised Learning
 **Keywords**: self-supervised reinforcement learning, policy collapse, momentum anchoring, GRPO, entropy filtering, pseudo-labels
 
@@ -32,9 +32,9 @@ To address the pervasive "policy collapse" problem in self-supervised reinforcem
 
 1. **Background**: Reinforcement learning from verifiable rewards (RLVR) is a central paradigm for LLM post-training, but it relies on costly human-annotated data and reward model infrastructure. Recent SS-RLVR methods (e.g., SRT, Intuitor, TTRL, CoReward) attempt to construct pseudo-rewards from the model's own consistency signals (e.g., majority voting), eliminating the need for ground-truth labels.
 2. **Limitations of Prior Work**:
-   - **Policy collapse**: Reproducing SRT and Intuitor on self-supervised training with the MATH dataset, the authors observe that training reward first rises then sharply or gradually drops, with validation accuracy degrading in tandem—a common failure mode across all SS-RLVR methods.
-   - **Increasing rollout count only delays collapse**: Scaling rollouts from 16 to 128 improves peak performance but does not prevent collapse; it merely postpones it.
-   - **Entropy collapse**: Policy entropy drops sharply in early training, causing the model to become overconfident prematurely and lock into suboptimal strategies.
+    - **Policy collapse**: Reproducing SRT and Intuitor on self-supervised training with the MATH dataset, the authors observe that training reward first rises then sharply or gradually drops, with validation accuracy degrading in tandem—a common failure mode across all SS-RLVR methods.
+    - **Increasing rollout count only delays collapse**: Scaling rollouts from 16 to 128 improves peak performance but does not prevent collapse; it merely postpones it.
+    - **Entropy collapse**: Policy entropy drops sharply in early training, causing the model to become overconfident prematurely and lock into suboptimal strategies.
 3. **Key Challenge**: In self-supervised RL, pseudo-labels are derived from the current policy itself—rapid policy changes destabilize pseudo-labels, which in turn exacerbate policy drift, forming a vicious cycle.
 4. **Goal**: Break the vicious cycle of "rapidly changing policy → unstable pseudo-labels → policy collapse" while simultaneously preventing the accompanying entropy collapse.
 5. **Key Insight**: Inspired by momentum-based contrastive self-supervised visual representation learning (MoCo)—a slowly evolving momentum model serves as a stable anchor.
@@ -49,33 +49,33 @@ Built upon GRPO (Group Relative Policy Optimization). A momentum model $\pi_{\th
 ### Key Designs
 
 1. **Momentum-Anchored Self-Supervised RL (M-GRPO)**
-   - **Function**: Introduces the momentum model $\pi_{\theta_k}$ into pseudo-label generation to stabilize training targets.
-   - **Mechanism**:
+    - **Function**: Introduces the momentum model $\pi_{\theta_k}$ into pseudo-label generation to stabilize training targets.
+    - **Mechanism**:
      - For each prompt $x$, the current policy samples $M$ rollouts $\{y_i^q\}$ and the momentum model samples $N$ rollouts $\{y_j^k\}$, aggregated into $G = M + N$ candidates.
      - Majority voting selects the highest-consensus answer $y_v$ as the pseudo ground truth.
      - Binary rewards are assigned to the $M$ rollouts of the current policy based on agreement with $y_v$ (agree = 1, disagree = 0).
      - Normalized advantage estimates $\hat{A}_i$ are computed and optimized in the GRPO manner.
-   - **Momentum update rule**: $\pi_{\theta_k} \leftarrow m \cdot \pi_{\theta_k} + (1-m) \cdot \pi_{\theta_q}$, with $m = 0.99$.
-   - **Design Motivation**:
+    - **Momentum update rule**: $\pi_{\theta_k} \leftarrow m \cdot \pi_{\theta_k} + (1-m) \cdot \pi_{\theta_q}$, with $m = 0.99$.
+    - **Design Motivation**:
      - The momentum model evolves slowly, providing temporally consistent rollouts that reduce fluctuation in majority voting outcomes.
      - Analogous to the stabilizing role of the momentum encoder in MoCo for contrastive learning.
      - Enlarges the diversity of the voting pool (two slightly different policy perspectives), improving pseudo-label quality.
 
 2. **IQR-Based Trajectory Entropy Filtering**
-   - **Function**: Adaptively removes low-entropy trajectories to prevent premature policy convergence.
-   - **Mechanism**:
+    - **Function**: Adaptively removes low-entropy trajectories to prevent premature policy convergence.
+    - **Mechanism**:
      - For the $G$ trajectories of each prompt, trajectory-level entropy is computed for each.
      - $Q_1$, $Q_3$, and $\text{IQR} = Q_3 - Q_1$ of the entropy distribution are calculated.
      - Trajectories with entropy below $Q_1 - k \cdot \text{IQR}$ ($k = 0.75$) are flagged as low-entropy outliers and removed.
      - Only filtered trajectories participate in voting and policy optimization.
-   - **Design Motivation**:
+    - **Design Motivation**:
      - Low-entropy trajectories correspond to overconfident policy outputs; their pseudo-labels are of poor quality and suppress exploration.
      - More flexible than static thresholds (e.g., fixed removal of the lowest 10%)—when most trajectories have high entropy early in training, IQR automatically relaxes; as entropy naturally decreases later, IQR automatically tightens.
      - High-entropy trajectories are retained to maintain policy diversity.
 
 3. **Integrated Training Pipeline**
-   - Each iteration: sample batch → dual-model rollout → IQR filtering → majority voting → compute advantages → update current policy → EMA update of momentum model.
-   - The momentum model contributes $N = G/4$ rollouts (i.e., the current model contributes 3/4 of total rollouts).
+    - Each iteration: sample batch → dual-model rollout → IQR filtering → majority voting → compute advantages → update current policy → EMA update of momentum model.
+    - The momentum model contributes $N = G/4$ rollouts (i.e., the current model contributes 3/4 of total rollouts).
 
 ### Loss & Training
 

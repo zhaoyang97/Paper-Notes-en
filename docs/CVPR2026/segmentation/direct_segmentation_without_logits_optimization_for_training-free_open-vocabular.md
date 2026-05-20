@@ -18,8 +18,8 @@ content_hash: 484f1a9cf8335ab5
 # Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.07723](https://arxiv.org/abs/2604.07723)
-**Code**: [GitHub](https://github.com/liblacklucy/DSLO)
+**arXiv**: [2604.07723](https://arxiv.org/abs/2604.07723)  
+**Code**: [GitHub](https://github.com/liblacklucy/DSLO)  
 **Area**: Image Segmentation
 **Keywords**: Open-vocabulary semantic segmentation, training-free, distributional discrepancy, optimal transport, Markov process
 

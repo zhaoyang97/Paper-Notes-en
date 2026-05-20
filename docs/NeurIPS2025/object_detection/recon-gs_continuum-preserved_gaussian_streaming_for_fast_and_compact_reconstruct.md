@@ -18,8 +18,8 @@ content_hash: 67a8e2fcb1bca148
 # ReCon-GS: Continuum-Preserved Gaussian Streaming for Fast and Compact Reconstruction
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.24325](https://arxiv.org/abs/2509.24325)
-**Code**: Available
+**arXiv**: [2509.24325](https://arxiv.org/abs/2509.24325)  
+**Code**: Available  
 **Area**: Object Detection / 3D Reconstruction
 **Keywords**: 3D Gaussian Splatting, streaming reconstruction, continuum preservation, incremental learning, real-time rendering
 

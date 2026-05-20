@@ -18,8 +18,8 @@ content_hash: 8870a9c44791dfdd
 # QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.04485](https://arxiv.org/abs/2508.04485)
-**Code**: [https://github.com/bowenchai/QuantVSR](https://github.com/bowenchai/QuantVSR)
+**arXiv**: [2508.04485](https://arxiv.org/abs/2508.04485)  
+**Code**: [https://github.com/bowenchai/QuantVSR](https://github.com/bowenchai/QuantVSR)  
 **Area**: Image Generation
 **Keywords**: Video Super-Resolution, Low-Bit Quantization, Post-Training Quantization, Diffusion Model Compression, Spatiotemporal Complexity
 

@@ -18,8 +18,8 @@ content_hash: 0bb4270fd4392b33
 # SMARTIES: Spectrum-Aware Multi-Sensor Auto-Encoder for Remote Sensing Images
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.19585](https://arxiv.org/abs/2506.19585)
-**Code**: [https://gsumbul.github.io/SMARTIES](https://gsumbul.github.io/SMARTIES)
+**arXiv**: [2506.19585](https://arxiv.org/abs/2506.19585)  
+**Code**: [https://gsumbul.github.io/SMARTIES](https://gsumbul.github.io/SMARTIES)  
 **Area**: Remote Sensing
 **Keywords**: Remote sensing foundation model, multi-sensor, spectrum-aware, masked autoencoder, sensor-agnostic representation
 

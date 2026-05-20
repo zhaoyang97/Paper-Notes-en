@@ -18,8 +18,8 @@ content_hash: c32004279d62193a
 # Alternating Gradient Flows: A Theory of Feature Learning in Two-layer Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06489](https://arxiv.org/abs/2506.06489)
-**Code**: [https://github.com/danielkunin/alternating-gradient-flows](https://github.com/danielkunin/alternating-gradient-flows)
+**arXiv**: [2506.06489](https://arxiv.org/abs/2506.06489)  
+**Code**: [https://github.com/danielkunin/alternating-gradient-flows](https://github.com/danielkunin/alternating-gradient-flows)  
 **Area**: Deep Learning Theory
 **Keywords**: Feature Learning, Saddle-point Dynamics, Alternating Gradient Flows, Dormant Neurons, Two-layer Networks
 

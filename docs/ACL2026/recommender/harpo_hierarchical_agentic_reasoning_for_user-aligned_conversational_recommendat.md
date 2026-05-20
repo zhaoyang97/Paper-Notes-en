@@ -18,8 +18,8 @@ content_hash: 8936d6b8be3ea303
 # HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation
 
 **Conference**: ACL 2026
-**arXiv**: [2604.10048](https://arxiv.org/abs/2604.10048)
-**Code**: [https://anonymous.4open.science/r/HARPO-D881](https://anonymous.4open.science/r/HARPO-D881)
+**arXiv**: [2604.10048](https://arxiv.org/abs/2604.10048)  
+**Code**: [https://anonymous.4open.science/r/HARPO-D881](https://anonymous.4open.science/r/HARPO-D881)  
 **Area**: Recommender Systems
 **Keywords**: Conversational Recommendation, Agentic Reasoning, Preference Optimization, Tree Search, Recommendation Quality
 

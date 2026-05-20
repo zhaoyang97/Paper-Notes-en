@@ -18,8 +18,8 @@ content_hash: e67f0e9fed7799ae
 # AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.20524](https://arxiv.org/abs/2601.20524)
-**Code**: [Project Page](https://AnomalyVFM.github.io/)
+**arXiv**: [2601.20524](https://arxiv.org/abs/2601.20524)  
+**Code**: [Project Page](https://AnomalyVFM.github.io/)  
 **Area**: Multimodal VLM / Anomaly Detection
 **Keywords**: Zero-shot anomaly detection, vision foundation models, synthetic data, parameter-efficient fine-tuning, LoRA
 

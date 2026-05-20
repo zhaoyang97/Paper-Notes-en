@@ -18,8 +18,8 @@ content_hash: bf4e5f5cc7272f2c
 # MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.05078](https://arxiv.org/abs/2603.05078)
-**Code**: [Project Page](https://hellexf.github.io/MoRe/)
+**arXiv**: [2603.05078](https://arxiv.org/abs/2603.05078)  
+**Code**: [Project Page](https://hellexf.github.io/MoRe/)  
 **Area**: 3D Vision
 **Keywords**: 4D reconstruction, dynamic scenes, attention enforcement, streaming inference, motion disentanglement
 

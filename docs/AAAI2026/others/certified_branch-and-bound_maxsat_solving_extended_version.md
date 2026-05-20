@@ -17,8 +17,8 @@ content_hash: f2f79f2def51350d
 # Certified Branch-and-Bound MaxSAT Solving (Extended Version)
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10273](https://arxiv.org/abs/2511.10273)
-**Code**: [Zenodo](https://zenodo.org/) (Vandesande et al., 2025)
+**arXiv**: [2511.10273](https://arxiv.org/abs/2511.10273)  
+**Code**: [Zenodo](https://zenodo.org/) (Vandesande et al., 2025)  
 **Area**: Other
 **Keywords**: MaxSAT, Proof Logging, Branch-and-Bound, VeriPB, Multi-valued Decision Diagrams
 

@@ -18,8 +18,8 @@ content_hash: eda80847e64332ff
 # A Content-Preserving Secure Linguistic Steganography
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12565](https://arxiv.org/abs/2511.12565)
-**Code**: None
+**arXiv**: [2511.12565](https://arxiv.org/abs/2511.12565)  
+**Code**: None  
 **Area**: LLM/NLP
 **Keywords**: linguistic steganography, content preservation, masked language model, distribution transformation, secure communication
 

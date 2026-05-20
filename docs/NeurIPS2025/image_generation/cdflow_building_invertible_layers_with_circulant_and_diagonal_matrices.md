@@ -19,8 +19,8 @@ content_hash: 506845e91c94f19f
 # CDFlow: Building Invertible Layers with Circulant and Diagonal Matrices
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.25323](https://arxiv.org/abs/2510.25323)
-**Code**: To be confirmed
+**arXiv**: [2510.25323](https://arxiv.org/abs/2510.25323)  
+**Code**: To be confirmed  
 **Area**: Image Generation
 **Keywords**: Normalizing flows, circulant matrices, diagonal matrices, invertible linear layers, fast Fourier transform, density estimation
 

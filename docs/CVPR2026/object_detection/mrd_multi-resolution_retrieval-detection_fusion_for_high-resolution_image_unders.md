@@ -19,8 +19,8 @@ content_hash: a5b23abd342964e5
 # MRD: Multi-resolution Retrieval-Detection Fusion for High-Resolution Image Understanding
 
 **Conference**: CVPR2026
-**arXiv**: [2512.02906](https://arxiv.org/abs/2512.02906)
-**Code**: [yf0412/MRD](https://github.com/yf0412/MRD)
+**arXiv**: [2512.02906](https://arxiv.org/abs/2512.02906)  
+**Code**: [yf0412/MRD](https://github.com/yf0412/MRD)  
 **Area**: Object Detection / High-Resolution Image Understanding
 **Keywords**: High-resolution image understanding, multimodal large language models, retrieval-augmented perception, open-vocabulary detection, multi-resolution fusion, training-free
 

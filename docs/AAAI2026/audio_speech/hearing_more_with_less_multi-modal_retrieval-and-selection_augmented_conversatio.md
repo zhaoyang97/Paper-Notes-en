@@ -18,8 +18,8 @@ content_hash: 962677a3dffb6e70
 # Hearing More with Less: Multi-Modal Retrieval-and-Selection Augmented Conversational LLM-Based ASR
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.01166](https://arxiv.org/abs/2508.01166)
-**Code**: None
+**arXiv**: [2508.01166](https://arxiv.org/abs/2508.01166)  
+**Code**: None  
 **Area**: Speech Recognition / Audio Processing
 **Keywords**: Conversational ASR, LLM-ASR, Multimodal Retrieval, RAG, Historical Context Selection
 

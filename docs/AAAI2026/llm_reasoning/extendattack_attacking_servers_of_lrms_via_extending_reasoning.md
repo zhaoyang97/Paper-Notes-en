@@ -18,8 +18,8 @@ content_hash: 22a5dd498799cb62
 # ExtendAttack: Attacking Servers of LRMs via Extending Reasoning
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.13737](https://arxiv.org/abs/2506.13737)
-**Code**: [GitHub](https://github.com/zzh-thu-22/ExtendAttack)
+**arXiv**: [2506.13737](https://arxiv.org/abs/2506.13737)  
+**Code**: [GitHub](https://github.com/zzh-thu-22/ExtendAttack)  
 **Area**: LLM Reasoning
 **Keywords**: LRM Security, Resource Exhaustion Attack, Reasoning Extension, Adversarial Attack, DDoS
 

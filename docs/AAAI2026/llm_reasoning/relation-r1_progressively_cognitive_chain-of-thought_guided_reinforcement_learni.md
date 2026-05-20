@@ -19,8 +19,8 @@ content_hash: 9b6ec098d443b000
 # Relation-R1: Progressively Cognitive Chain-of-Thought Guided Reinforcement Learning for Unified Relation Comprehension
 
 **Conference**: AAAI 2026
-**arXiv**: [2504.14642](https://arxiv.org/abs/2504.14642)
-**Code**: [github.com/HKUST-LongGroup/Relation-R1](https://github.com/HKUST-LongGroup/Relation-R1)
+**arXiv**: [2504.14642](https://arxiv.org/abs/2504.14642)  
+**Code**: [github.com/HKUST-LongGroup/Relation-R1](https://github.com/HKUST-LongGroup/Relation-R1)  
 **Area**: LLM Reasoning
 **Keywords**: Visual Relation Understanding, Cognitive Chain-of-Thought, GRPO Reinforcement Learning, Scene Graph Generation, N-ary Relation Detection, Multimodal Large Language Models
 
@@ -53,28 +53,28 @@ Both task types are handled in a unified manner: binary relations are expressed 
 
 - **Function**: Injects two types of cognitive CoT into the model during SFT — template-based first, then MLLM-generated — to progressively guide multi-step reasoning.
 - **Mechanism**:
-  - **Template CoT (specific → canonical)**: Fixed step-by-step templates are designed; for binary relations: Object Existence → Object Localization → Relation Existence; for N-ary relations: Activity Recognition → Entities & Roles Recognition → Entity Localization. CoT is enclosed within `<think>` tags.
-  - **MLLM-generated CoT (general → flexible)**: Qwen2.5-VL-72B serves as the teacher model to automatically generate diverse reasoning paths conditioned on task definitions, ground-truth scene graphs, and CoT generation instructions.
-  - **Progressive Transition**: Training begins with 2 epochs on template CoT to establish format compliance, followed by fine-tuning on 4k MLLM-generated CoT samples to introduce reasoning flexibility.
+    - **Template CoT (specific → canonical)**: Fixed step-by-step templates are designed; for binary relations: Object Existence → Object Localization → Relation Existence; for N-ary relations: Activity Recognition → Entities & Roles Recognition → Entity Localization. CoT is enclosed within `<think>` tags.
+    - **MLLM-generated CoT (general → flexible)**: Qwen2.5-VL-72B serves as the teacher model to automatically generate diverse reasoning paths conditioned on task definitions, ground-truth scene graphs, and CoT generation instructions.
+    - **Progressive Transition**: Training begins with 2 epochs on template CoT to establish format compliance, followed by fine-tuning on 4k MLLM-generated CoT samples to introduce reasoning flexibility.
 - **Design Motivation**: Template CoT ensures correctness and format consistency but limits diversity; MLLM-generated CoT expands the exploration space but may introduce noise. The progressive combination captures the strengths of both — learning canonical structure before flexible reasoning — to prevent overfitting to a single reasoning pattern during SFT.
 
 ### Key Design 2: GRPO Multi-Reward Optimization (RL Stage)
 
 - **Function**: Applies Group Relative Policy Optimization to the SFT-initialized model, guiding policy optimization via three rule-based reward signals.
 - **Mechanism**:
-  - **Format reward** $r_{\text{form}}$: Output must contain the `<think>...</think><answer>...</answer>` structure; score is 1 if satisfied, 0 otherwise, ensuring explicit reasoning expression.
-  - **Binary relation reward** $r_{\text{binary}} = \alpha \cdot R + (1-\alpha) \cdot mR$: $R$ denotes sample-level triplet recall; $mR$ denotes mean recall across predicate categories. A triplet is considered correct when subject/predicate/object categories all match and bbox IoU ≥ 0.5.
-  - **N-ary relation reward** $r_{\text{n-ary}} = \beta \cdot V_e + (1-\beta) \cdot V_{\text{grnd}}$: $V_e$ measures entity category and semantic role accuracy; $V_{\text{grnd}}$ measures entity localization precision (IoU ≥ 0.5).
-  - **Multi-task gating**: Dynamically routes to binary or N-ary relation rewards based on whether `<ref>` tags appear in the output.
+    - **Format reward** $r_{\text{form}}$: Output must contain the `<think>...</think><answer>...</answer>` structure; score is 1 if satisfied, 0 otherwise, ensuring explicit reasoning expression.
+    - **Binary relation reward** $r_{\text{binary}} = \alpha \cdot R + (1-\alpha) \cdot mR$: $R$ denotes sample-level triplet recall; $mR$ denotes mean recall across predicate categories. A triplet is considered correct when subject/predicate/object categories all match and bbox IoU ≥ 0.5.
+    - **N-ary relation reward** $r_{\text{n-ary}} = \beta \cdot V_e + (1-\beta) \cdot V_{\text{grnd}}$: $V_e$ measures entity category and semantic role accuracy; $V_{\text{grnd}}$ measures entity localization precision (IoU ≥ 0.5).
+    - **Multi-task gating**: Dynamically routes to binary or N-ary relation rewards based on whether `<ref>` tags appear in the output.
 - **Design Motivation**: GRPO eliminates the need for an additional critic network and estimates advantage scores through within-group comparison, yielding computational efficiency. The three rewards separately constrain format, pairwise relations, and multi-role activities, providing finer-grained supervision than a single unified score. RL exploration further encourages the model to prioritize visual semantics over linguistic priors.
 
 ### Key Design 3: Unified Representation for Binary and N-ary Relations
 
 - **Function**: Integrates binary and N-ary relation understanding into a single model, sharing reasoning pipeline and training workflow.
 - **Mechanism**:
-  - Binary relation output (scene graph description): `<ref>person</ref><box>[[x1,y1,x2,y2]]</box> <pred>drinking</pred> <ref>glass</ref><box>[[...]]</box>`
-  - N-ary relation output (grounded situation frame): `drinking → <agent>child</agent><box>[...]</box> <liquid>milk</liquid><box>[...]</box>`
-  - Both task types are jointly trained in SFT and GRPO; the GRPO stage automatically selects the corresponding reward by task type.
+    - Binary relation output (scene graph description): `<ref>person</ref><box>[[x1,y1,x2,y2]]</box> <pred>drinking</pred> <ref>glass</ref><box>[[...]]</box>`
+    - N-ary relation output (grounded situation frame): `drinking → <agent>child</agent><box>[...]</box> <liquid>milk</liquid><box>[...]</box>`
+    - Both task types are jointly trained in SFT and GRPO; the GRPO stage automatically selects the corresponding reward by task type.
 - **Design Motivation**: Binary and N-ary relations share underlying capabilities in entity recognition, spatial localization, and semantic reasoning. A unified framework enables mutual reinforcement between tasks while avoiding the overhead of maintaining multiple task-specific models.
 
 ### Loss & Training

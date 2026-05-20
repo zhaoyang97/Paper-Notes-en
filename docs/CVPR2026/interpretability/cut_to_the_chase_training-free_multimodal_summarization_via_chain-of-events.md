@@ -18,8 +18,8 @@ content_hash: 9a0529d831ecf897
 # Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.06213](https://arxiv.org/abs/2603.06213)
-**Code**: [GitHub](https://github.com/youxiaoxing/CoE)
+**arXiv**: [2603.06213](https://arxiv.org/abs/2603.06213)  
+**Code**: [GitHub](https://github.com/youxiaoxing/CoE)  
 **Area**: Interpretability
 **Keywords**: Multimodal summarization, training-free, chain-of-events reasoning, hierarchical event graph, cross-domain generalization
 

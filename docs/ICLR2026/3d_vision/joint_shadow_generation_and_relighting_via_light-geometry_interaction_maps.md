@@ -18,8 +18,8 @@ content_hash: b35ac22f0526388e
 # Joint Shadow Generation and Relighting via Light-Geometry Interaction Maps
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.21820](https://arxiv.org/abs/2602.21820)
-**Code**: To be confirmed
+**arXiv**: [2602.21820](https://arxiv.org/abs/2602.21820)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: shadow generation, relighting, light-geometry interaction, bridge matching, monocular depth
 

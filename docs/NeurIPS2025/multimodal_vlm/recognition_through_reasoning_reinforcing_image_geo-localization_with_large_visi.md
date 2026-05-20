@@ -18,8 +18,8 @@ content_hash: 6bcfcbe3f5bb7684
 # Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.14674](https://arxiv.org/abs/2506.14674)
-**Code**: [GitHub](https://github.com/lingli1996/GLOBE)
+**arXiv**: [2506.14674](https://arxiv.org/abs/2506.14674)  
+**Code**: [GitHub](https://github.com/lingli1996/GLOBE)  
 **Area**: Multimodal VLM
 **Keywords**: Image geo-localization, visual reasoning, GRPO reinforcement learning, data distillation, interpretable reasoning
 

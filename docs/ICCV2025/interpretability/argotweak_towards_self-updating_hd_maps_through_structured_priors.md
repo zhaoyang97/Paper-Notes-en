@@ -18,8 +18,8 @@ content_hash: 5cd9fa69aaad473c
 # ArgoTweak: Towards Self-Updating HD Maps through Structured Priors
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.08764](https://arxiv.org/abs/2509.08764)
-**Code**: [https://KTH-RPL.github.io/ArgoTweak/](https://KTH-RPL.github.io/ArgoTweak/)
+**arXiv**: [2509.08764](https://arxiv.org/abs/2509.08764)  
+**Code**: [https://KTH-RPL.github.io/ArgoTweak/](https://KTH-RPL.github.io/ArgoTweak/)  
 **Area**: Interpretability
 **Keywords**: HD Map, Map Updating, Change Detection, Dataset, Autonomous Driving
 

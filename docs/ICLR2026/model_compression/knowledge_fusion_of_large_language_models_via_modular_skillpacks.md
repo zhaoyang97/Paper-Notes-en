@@ -18,8 +18,8 @@ content_hash: b412aed03291301a
 # Knowledge Fusion of Large Language Models Via Modular Skillpacks
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.18502](https://arxiv.org/abs/2505.18502)
-**Code**: [duguodong7/GraftLLM](https://github.com/duguodong7/GraftLLM)
+**arXiv**: [2505.18502](https://arxiv.org/abs/2505.18502)  
+**Code**: [duguodong7/GraftLLM](https://github.com/duguodong7/GraftLLM)  
 **Area**: Model Compression / Knowledge Fusion
 **Keywords**: knowledge grafting, SkillPack, heterogeneous model fusion, continual learning, delta compression
 

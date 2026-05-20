@@ -18,8 +18,8 @@ content_hash: 98d763f55ead1323
 # Kuramoto Orientation Diffusion Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.15328](https://arxiv.org/abs/2509.15328)
-**Code**: [GitHub](https://github.com/KingJamesSong/OrientationDiffusion)
+**arXiv**: [2509.15328](https://arxiv.org/abs/2509.15328)  
+**Code**: [GitHub](https://github.com/KingJamesSong/OrientationDiffusion)  
 **Area**: Diffusion Models / Image Generation
 **Keywords**: Kuramoto model, synchronization dynamics, orientation field, periodic domain, score-based generative models
 

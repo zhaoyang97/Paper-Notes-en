@@ -20,8 +20,8 @@ content_hash: 4d7d7dd9d8981f0a
 # Breaking the Adversarial Robustness-Performance Trade-off in Text Classification via Manifold Purification
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07888](https://arxiv.org/abs/2511.07888)
-**Code**: To be confirmed
+**arXiv**: [2511.07888](https://arxiv.org/abs/2511.07888)  
+**Code**: To be confirmed  
 **Area**: AI Safety / Adversarial Robustness
 **Keywords**: Adversarial Defense, Text Classification, Manifold Correction, Normalizing Flow, Riemannian Geometry, OOD Detection, Geodesic Purification
 

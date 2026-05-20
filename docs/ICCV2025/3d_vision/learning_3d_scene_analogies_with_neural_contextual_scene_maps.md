@@ -18,8 +18,8 @@ content_hash: d25a3ba6ea08d094
 # Learning 3D Scene Analogies with Neural Contextual Scene Maps
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.15897](https://arxiv.org/abs/2503.15897)
-**Code**: [https://82magnolia.github.io/3d_scene_analogies/](https://82magnolia.github.io/3d_scene_analogies/)
+**arXiv**: [2503.15897](https://arxiv.org/abs/2503.15897)  
+**Code**: [https://82magnolia.github.io/3d_scene_analogies/](https://82magnolia.github.io/3d_scene_analogies/)  
 **Area**: 3D Vision
 **Keywords**: 3D scene analogy, scene mapping, descriptor field, contrastive learning, coarse-to-fine
 

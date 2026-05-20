@@ -18,8 +18,8 @@ content_hash: ef12944f26118624
 # Adaptive Debiasing Tsallis Entropy for Test-Time Adaptation
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.11743](https://arxiv.org/abs/2602.11743)
-**Code**: [https://github.com/Jinx630/ADTE](https://github.com/Jinx630/ADTE)
+**arXiv**: [2602.11743](https://arxiv.org/abs/2602.11743)  
+**Code**: [https://github.com/Jinx630/ADTE](https://github.com/Jinx630/ADTE)  
 **Area**: Social Computing
 **Keywords**: Test-Time Adaptation, Tsallis entropy, CLIP, debiasing, uncertainty estimation
 
@@ -49,20 +49,20 @@ ADTE serves as a plug-and-play replacement for Shannon entropy in TTA methods su
 
 1. **Tsallis Entropy as a Replacement for Shannon Entropy**:
 
-   - **Function**: Replace SE $\mathbf{H}_{SE} = -\sum_l P_l \log P_l$ with TE $\mathbf{H}_{TE} = \frac{\sum_l P_l^q - 1}{1-q}$.
-   - **Mechanism**: Theoretically, TE reduces to SE as $q \to 1$ (lower-bound property). When $q < 1$, views selected by TE exhibit higher Top-K cumulative reliability (TcrK). For $0 < q < 1$, TE naturally mitigates the influence of VLM prediction bias.
-   - **Design Motivation**: SE is sensitive to bias in tail classes (where probabilities approach zero). By replacing $p\log p$ with $p^q$, TE alters the treatment of small probabilities.
+    - **Function**: Replace SE $\mathbf{H}_{SE} = -\sum_l P_l \log P_l$ with TE $\mathbf{H}_{TE} = \frac{\sum_l P_l^q - 1}{1-q}$.
+    - **Mechanism**: Theoretically, TE reduces to SE as $q \to 1$ (lower-bound property). When $q < 1$, views selected by TE exhibit higher Top-K cumulative reliability (TcrK). For $0 < q < 1$, TE naturally mitigates the influence of VLM prediction bias.
+    - **Design Motivation**: SE is sensitive to bias in tail classes (where probabilities approach zero). By replacing $p\log p$ with $p^q$, TE alters the treatment of small probabilities.
 
 2. **Adaptive Debiasing Tsallis Entropy (ADTE)**:
 
-   - **Function**: Customize a class-specific parameter $q^l$ for each class $l$ without manual tuning.
-   - **Mechanism**: (1) A memory bank is maintained to estimate the per-class prior probability $\tilde{p}_l$ (solved via Jacobi iteration, approximated with pseudo-labels). (2) The estimated bias is mapped to $[\alpha, \beta] = [0.01, 0.9]$ via min-max normalization to yield $q^l$—classes with larger bias receive smaller $q^l$, implying stronger correction.
-   - **Design Motivation**: Manual tuning of $q$ is infeasible across varying test distributions, and different classes are affected by bias to different extents (head vs. tail classes).
+    - **Function**: Customize a class-specific parameter $q^l$ for each class $l$ without manual tuning.
+    - **Mechanism**: (1) A memory bank is maintained to estimate the per-class prior probability $\tilde{p}_l$ (solved via Jacobi iteration, approximated with pseudo-labels). (2) The estimated bias is mapped to $[\alpha, \beta] = [0.01, 0.9]$ via min-max normalization to yield $q^l$—classes with larger bias receive smaller $q^l$, implying stronger correction.
+    - **Design Motivation**: Manual tuning of $q$ is infeasible across varying test distributions, and different classes are affected by bias to different extents (head vs. tail classes).
 
 3. **Integration with Logit Adjustment**:
 
-   - ADTE integrates seamlessly with logit adjustment strategies: the estimated bias is first used to adjust logits, after which ADTE selects high-confidence views.
-   - The entire process requires no additional training or distribution-specific hyperparameter tuning.
+    - ADTE integrates seamlessly with logit adjustment strategies: the estimated bias is first used to adjust logits, after which ADTE selects high-confidence views.
+    - The entire process requires no additional training or distribution-specific hyperparameter tuning.
 
 ### Loss & Training
 No training is required. ADTE is a purely inference-time method that directly replaces Shannon entropy in the TTA pipeline. The memory bank stores 10 samples per class.

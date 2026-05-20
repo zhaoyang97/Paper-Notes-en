@@ -18,8 +18,8 @@ content_hash: bcb126d69dff3b95
 # Compact Example-Based Explanations for Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2601.03786](https://arxiv.org/abs/2601.03786)
-**Code**: None
+**arXiv**: [2601.03786](https://arxiv.org/abs/2601.03786)  
+**Code**: None  
 **Area**: LLM Pretraining
 **Keywords**: Training data influence, example-based explanations, selection relevance, gradient reconstruction, redundancy elimination
 

@@ -18,8 +18,8 @@ content_hash: b66c7a2a144ad373
 # Conformal Risk Training: End-to-End Optimization of Conformal Risk Control
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.08748](https://arxiv.org/abs/2510.08748)
-**Code**: None (not mentioned in the paper)
+**arXiv**: [2510.08748](https://arxiv.org/abs/2510.08748)  
+**Code**: None (not mentioned in the paper)  
 **Area**: Machine Learning Theory / Risk Control
 **Keywords**: conformal prediction, risk control, CVaR, OCE risk, end-to-end training
 

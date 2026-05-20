@@ -18,8 +18,8 @@ content_hash: 555427eec4319b40
 # MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.13760](https://arxiv.org/abs/2511.13760)
-**Code**: [GitHub](https://github.com/AnikiFan/MoETTA)
+**arXiv**: [2511.13760](https://arxiv.org/abs/2511.13760)  
+**Code**: [GitHub](https://github.com/AnikiFan/MoETTA)  
 **Area**: Test-Time Adaptation / Domain Adaptation
 **Keywords**: test-time adaptation, mixed distribution shifts, Mixture-of-Experts, LayerNorm, Vision Transformer
 

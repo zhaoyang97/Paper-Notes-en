@@ -18,8 +18,8 @@ content_hash: 3de63e373cb3c793
 # Locally Optimal Private Sampling: Beyond the Global Minimax
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.09485](https://arxiv.org/abs/2510.09485)
-**Code**: [GitHub](https://github.com/hradghoukasian/private_sampling)
+**arXiv**: [2510.09485](https://arxiv.org/abs/2510.09485)  
+**Code**: [GitHub](https://github.com/hradghoukasian/private_sampling)  
 **Area**: AI Security
 **Keywords**: Local Differential Privacy, Private Sampling, Minimax Optimality, $f$-Divergence, Public Data
 

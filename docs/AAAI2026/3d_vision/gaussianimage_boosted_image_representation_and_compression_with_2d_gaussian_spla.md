@@ -18,8 +18,8 @@ content_hash: 42d320ab315b3df1
 # GaussianImage++: Boosted Image Representation and Compression with 2D Gaussian Splatting
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.19108](https://arxiv.org/abs/2512.19108)
-**Code**: [GitHub](https://github.com/Sweethyh/GaussianImage_plus.git)
+**arXiv**: [2512.19108](https://arxiv.org/abs/2512.19108)  
+**Code**: [GitHub](https://github.com/Sweethyh/GaussianImage_plus.git)  
 **Area**: 3D Vision
 **Keywords**: 2D Gaussian Splatting, Image Representation, Image Compression, Density Control, Quantization-Aware Training
 
@@ -186,8 +186,8 @@ D³ alone yields approximately 2 dB PSNR improvement; the combination of D³ and
 # GaussianImage++: Boosted Image Representation and Compression with 2D Gaussian Splatting
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.19108](https://arxiv.org/abs/2512.19108)
-**Code**: [https://github.com/Sweethyh/GaussianImage_plus](https://github.com/Sweethyh/GaussianImage_plus)
+**arXiv**: [2512.19108](https://arxiv.org/abs/2512.19108)  
+**Code**: [https://github.com/Sweethyh/GaussianImage_plus](https://github.com/Sweethyh/GaussianImage_plus)  
 **Area**: 3D Vision / Image Representation and Compression
 **Keywords**: 2D Gaussian Splatting, Image Compression, Implicit Neural Representation, Densification Mechanism, Quantization-Aware Training
 

@@ -18,8 +18,8 @@ content_hash: 756cdd40d6d84c5c
 # Towards Robust Zero-Shot Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.15382](https://arxiv.org/abs/2510.15382)
-**Code**: [GitHub](https://github.com/Whiterrrrr/BREEZE)
+**arXiv**: [2510.15382](https://arxiv.org/abs/2510.15382)  
+**Code**: [GitHub](https://github.com/Whiterrrrr/BREEZE)  
 **Area**: Image Generation
 **Keywords**: Zero-shot reinforcement learning, Forward-Backward representation, behavior regularization, diffusion policy, attention architecture
 
@@ -72,8 +72,8 @@ BREEZE (Behavior-REgularizEd Zero-shot RL with Expressivity Enhancement) operate
 
 3. **Attention-Enhanced Representation Networks**
 
-   - **Forward network $F$**: Two independent linear encoders separately encode (state, task) and (state, action) pairs, producing an embedding sequence of length 2, which is refined via a self-attention block enabling bidirectional feature interaction between task conditioning and behavioral patterns.
-   - **Backward network $B$**: Stacked standard Transformer layers (with multi-head attention) serve as a global environment embedding, maintaining orthogonality and enforcing alignment with $F$.
+    - **Forward network $F$**: Two independent linear encoders separately encode (state, task) and (state, action) pairs, producing an embedding sequence of length 2, which is refined via a self-attention block enabling bidirectional feature interaction between task conditioning and behavioral patterns.
+    - **Backward network $B$**: Stacked standard Transformer layers (with multi-head attention) serve as a global environment embedding, maintaining orthogonality and enforcing alignment with $F$.
 
    **Design Motivation**: Self-attention effectively captures complex relationships between task conditioning and dynamics; simply increasing MLP width proves ineffective.
 

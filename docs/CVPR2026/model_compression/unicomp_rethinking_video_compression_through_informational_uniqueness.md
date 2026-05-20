@@ -18,8 +18,8 @@ content_hash: b66936232e66de1a
 # UniComp: Rethinking Video Compression Through Informational Uniqueness
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.03575](https://arxiv.org/abs/2512.03575)
-**Code**: [TimeMarker-LLM/UniComp](https://github.com/TimeMarker-LLM/UniComp)
+**arXiv**: [2512.03575](https://arxiv.org/abs/2512.03575)  
+**Code**: [TimeMarker-LLM/UniComp](https://github.com/TimeMarker-LLM/UniComp)  
 **Area**: Model Compression
 **Keywords**: visual token compression, informational uniqueness, video understanding, MLLM efficiency, plug-and-play
 

@@ -18,8 +18,8 @@ content_hash: 6fd74c695acaa7e5
 # QuRL: Efficient Reinforcement Learning with Quantized Rollout
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.13953](https://arxiv.org/abs/2602.13953)
-**Code**: None
+**arXiv**: [2602.13953](https://arxiv.org/abs/2602.13953)  
+**Code**: None  
 **Area**: Reinforcement Learning / Model Quantization
 **Keywords**: quantized inference, RL acceleration, PPO, GRPO, importance sampling
 

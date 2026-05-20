@@ -17,8 +17,8 @@ content_hash: f86a37c78f0ed8f9
 # Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.04379](https://arxiv.org/abs/2604.04379)
-**Code**: N/A
+**arXiv**: [2604.04379](https://arxiv.org/abs/2604.04379)  
+**Code**: N/A  
 **Area**: Video Understanding / Multimodal Reasoning / Reinforcement Learning
 **Keywords**: Video Reasoning, Reinforcement Learning, Evidence-Driven, Multi-Candidate Election, Test-Time Reasoning
 

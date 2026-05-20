@@ -18,8 +18,8 @@ content_hash: 4fff3661755e81d6
 # COOPERA: Continual Open-Ended Human-Robot Assistance
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23495](https://arxiv.org/abs/2510.23495)
-**Code**: None
+**arXiv**: [2510.23495](https://arxiv.org/abs/2510.23495)  
+**Code**: None  
 **Area**: Robotics
 **Keywords**: human-robot collaboration, continual learning, open-ended tasks, LLM-driven human simulation, personalized robot assistant
 

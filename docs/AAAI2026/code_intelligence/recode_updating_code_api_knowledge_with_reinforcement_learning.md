@@ -18,8 +18,8 @@ content_hash: 76f8608a684fb891
 # ReCode: Updating Code API Knowledge with Reinforcement Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2506.20495](https://arxiv.org/abs/2506.20495)
-**Code**: [https://github.com/zjunlp/ReCode](https://github.com/zjunlp/ReCode)
+**arXiv**: [2506.20495](https://arxiv.org/abs/2506.20495)  
+**Code**: [https://github.com/zjunlp/ReCode](https://github.com/zjunlp/ReCode)  
 **Area**: Code Intelligence
 **Keywords**: Code Generation, API Update, Reinforcement Learning, GRPO, Version Migration
 

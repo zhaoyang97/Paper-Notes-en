@@ -19,9 +19,9 @@ content_hash: ed3e8e6caffcc890
 # GraLoRA: Granular Low-Rank Adaptation for Parameter-Efficient Fine-Tuning
 
 **Conference**: NEURIPS2025
-**arXiv**: [2505.20355](https://arxiv.org/abs/2505.20355)
+**arXiv**: [2505.20355](https://arxiv.org/abs/2505.20355)  
 **Authors**: Yeonjoon Jung, Daehyun Ahn, Hyungjun Kim, Taesu Kim, Eunhyeok Park (SqueezeBits, POSTECH)
-**Code**: Not released
+**Code**: Not released  
 **Area**: Parameter-Efficient Fine-Tuning (PEFT) / LoRA Improvements
 **Keywords**: LoRA, low-rank adaptation, parameter-efficient fine-tuning, gradient entanglement, block decomposition, high-rank expressiveness
 

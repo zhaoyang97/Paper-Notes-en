@@ -18,8 +18,8 @@ content_hash: 2ff3a644212c882b
 # SFUOD: Source-Free Unknown Object Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.17373](https://arxiv.org/abs/2507.17373)
-**Code**: [https://github.com/SFUOD](https://github.com/SFUOD) (to be released)
+**arXiv**: [2507.17373](https://arxiv.org/abs/2507.17373)  
+**Code**: [https://github.com/SFUOD](https://github.com/SFUOD) (to be released)  
 **Area**: Object Detection
 **Keywords**: Source-free domain adaptation, unknown object detection, mean teacher, collaborative tuning, principal axis pseudo-labels
 

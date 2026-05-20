@@ -18,8 +18,8 @@ content_hash: e81bda84e0af4127
 # Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.13143](https://arxiv.org/abs/2505.13143)
-**Code**: [https://github.com/](https://github.com/) (available)
+**arXiv**: [2505.13143](https://arxiv.org/abs/2505.13143)  
+**Code**: [https://github.com/](https://github.com/) (available)  
 **Area**: Interpretability
 **Keywords**: hallucination, reasoning LLM, Chain-of-Thought, metacognition, reflection
 

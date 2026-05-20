@@ -17,8 +17,8 @@ content_hash: 0c653ad9be7b2513
 # SPACE: SPike-Aware Consistency Enhancement for Test-Time Adaptation in Spiking Neural Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.02298](https://arxiv.org/abs/2504.02298)
-**Code**: [GitHub](https://github.com/ethanxyluo/SPACE)
+**arXiv**: [2504.02298](https://arxiv.org/abs/2504.02298)  
+**Code**: [GitHub](https://github.com/ethanxyluo/SPACE)  
 **Area**: Spiking Neural Networks, Test-Time Adaptation, Domain Robustness
 **Keywords**: SNN, test-time adaptation, spike consistency, distribution shift, single-sample adaptation
 

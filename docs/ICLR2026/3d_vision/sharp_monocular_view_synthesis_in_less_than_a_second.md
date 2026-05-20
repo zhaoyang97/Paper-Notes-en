@@ -18,8 +18,8 @@ content_hash: 3044c8987737131c
 # Sharp Monocular View Synthesis in Less Than a Second
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.10685](https://arxiv.org/abs/2512.10685)
-**Code**: [github.com/apple/ml-sharp](https://github.com/apple/ml-sharp)
+**arXiv**: [2512.10685](https://arxiv.org/abs/2512.10685)  
+**Code**: [github.com/apple/ml-sharp](https://github.com/apple/ml-sharp)  
 **Area**: 3D Vision
 **Keywords**: view synthesis, 3D Gaussian splatting, monocular depth, real-time rendering, feedforward
 

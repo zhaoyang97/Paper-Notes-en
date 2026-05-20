@@ -18,8 +18,8 @@ content_hash: f6c527265fe5caef
 # VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.05138](https://arxiv.org/abs/2601.05138)
-**Code**: [https://sixiaozheng.github.io/VerseCrafter_page/](https://sixiaozheng.github.io/VerseCrafter_page/)
+**arXiv**: [2601.05138](https://arxiv.org/abs/2601.05138)  
+**Code**: [https://sixiaozheng.github.io/VerseCrafter_page/](https://sixiaozheng.github.io/VerseCrafter_page/)  
 **Area**: 3D Vision / Video Generation
 **Keywords**: Video World Model, 4D Geometric Control, 3D Gaussian Trajectory, Camera and Object Motion, Video Diffusion Model
 
@@ -48,24 +48,24 @@ This paper presents VerseCrafter, a video world model based on a unified 4D geom
 ### Key Designs
 
 1. **4D Geometric Control Representation**:
-   - **Function**: Unified representation of static scene structure and dynamic objects in a shared world coordinate system.
-   - **Mechanism**: The background point cloud $P^{\text{bg}}$ is obtained by back-projecting non-object pixels of the input image into 3D. Each object's 3D Gaussian trajectory $\{\mathcal{G}_o^t\}_{t=1}^T$ consists of a mean $\boldsymbol{\mu}_o^t$ (position) and covariance $\mathbf{\Sigma}_o^t$ (shape/orientation), initialized by fitting a full-covariance Gaussian to the object point cloud. Users can visualize the Gaussians as ellipsoids in Blender and specify trajectories via drag-and-drop keyframing.
-   - **Design Motivation**: Compared to 3D bounding boxes (overly rigid), SMPL-X (human-only), and sparse trajectory points (no shape information), 3D Gaussians softly encode object occupancy in a probabilistic manner, are category-agnostic, and admit low-dimensional editing.
+    - **Function**: Unified representation of static scene structure and dynamic objects in a shared world coordinate system.
+    - **Mechanism**: The background point cloud $P^{\text{bg}}$ is obtained by back-projecting non-object pixels of the input image into 3D. Each object's 3D Gaussian trajectory $\{\mathcal{G}_o^t\}_{t=1}^T$ consists of a mean $\boldsymbol{\mu}_o^t$ (position) and covariance $\mathbf{\Sigma}_o^t$ (shape/orientation), initialized by fitting a full-covariance Gaussian to the object point cloud. Users can visualize the Gaussians as ellipsoids in Blender and specify trajectories via drag-and-drop keyframing.
+    - **Design Motivation**: Compared to 3D bounding boxes (overly rigid), SMPL-X (human-only), and sparse trajectory points (no shape information), 3D Gaussians softly encode object occupancy in a probabilistic manner, are category-agnostic, and admit low-dimensional editing.
 
 2. **4D Control Map Rendering**:
-   - **Function**: Convert the 4D geometric state into model-consumable control signals.
-   - **Mechanism**: Three types of maps are rendered per frame: (i) background RGB/depth—project $P^{\text{bg}}$ under the target camera; (ii) trajectory RGB/depth—project per-object Gaussians as soft elliptical footprints; (iii) soft fusion mask—derived by inverting background visibility and merging Gaussian footprints, indicating regions where the diffusion model should synthesize or inpaint content. The first frame retains the original input image. Background and trajectory maps are rendered through decoupled channels, separating camera motion from object motion.
-   - **Design Motivation**: Decoupled rendering ensures control maps do not interfere with each other—background changes arise solely from camera motion while trajectory changes arise solely from object motion—while maintaining geometric consistency.
+    - **Function**: Convert the 4D geometric state into model-consumable control signals.
+    - **Mechanism**: Three types of maps are rendered per frame: (i) background RGB/depth—project $P^{\text{bg}}$ under the target camera; (ii) trajectory RGB/depth—project per-object Gaussians as soft elliptical footprints; (iii) soft fusion mask—derived by inverting background visibility and merging Gaussian footprints, indicating regions where the diffusion model should synthesize or inpaint content. The first frame retains the original input image. Background and trajectory maps are rendered through decoupled channels, separating camera motion from object motion.
+    - **Design Motivation**: Decoupled rendering ensures control maps do not interfere with each other—background changes arise solely from camera motion while trajectory changes arise solely from object motion—while maintaining geometric consistency.
 
 3. **GeoAdapter Architecture**:
-   - **Function**: Inject 4D geometric control signals into the frozen video diffusion model.
-   - **Mechanism**: Four groups of RGB/depth control maps are encoded by a frozen Wan Encoder. Soft fusion masks are reshaped to the latent resolution. All geometric latents are concatenated channel-wise to form a spatiotemporal geometry tensor. The GeoAdapter is a lightweight DiT branch that shares the hidden dimension of the Wan-DiT but has far fewer layers. Each GeoAdapter block is paired with every $k=5$ DiT blocks; its output is projected through a zero-initialized linear layer and added as a residual to the corresponding DiT block. GeoAdapter blocks are initialized from the weights of their paired DiT blocks to stabilize training.
-   - **Design Motivation**: The adapter design introduces only a small number of additional parameters while keeping the backbone frozen, inheriting the strong video prior of Wan2.1. Zero initialization ensures the backbone is not perturbed during the early stages of training.
+    - **Function**: Inject 4D geometric control signals into the frozen video diffusion model.
+    - **Mechanism**: Four groups of RGB/depth control maps are encoded by a frozen Wan Encoder. Soft fusion masks are reshaped to the latent resolution. All geometric latents are concatenated channel-wise to form a spatiotemporal geometry tensor. The GeoAdapter is a lightweight DiT branch that shares the hidden dimension of the Wan-DiT but has far fewer layers. Each GeoAdapter block is paired with every $k=5$ DiT blocks; its output is projected through a zero-initialized linear layer and added as a residual to the corresponding DiT block. GeoAdapter blocks are initialized from the weights of their paired DiT blocks to stabilize training.
+    - **Design Motivation**: The adapter design introduces only a small number of additional parameters while keeping the backbone frozen, inheriting the strong video prior of Wan2.1. Zero initialization ensures the backbone is not perturbed during the early stages of training.
 
 4. **VerseControl4D Dataset Construction**:
-   - **Function**: Provide large-scale 4D geometric control annotations for real-world videos.
-   - **Mechanism**: 81-frame clips are extracted from Sekai-Real-HQ and SpatialVID-HQ, filtered by object criteria (1–6 controllable objects detected by Grounded SAM2) and quality criteria (aesthetic/brightness scores). Text descriptions are generated by Qwen2.5-VL-72B. Depth and camera trajectories are estimated using MoGe-2, UniDepth V2, and MegaSAM; 3D point clouds are reconstructed and Gaussian trajectories are fitted; control maps are rendered. The final dataset contains 35K training samples and 1K validation samples.
-   - **Design Motivation**: Addresses the bottleneck of scarce 4D control data; the fully automated pipeline enables large-scale training.
+    - **Function**: Provide large-scale 4D geometric control annotations for real-world videos.
+    - **Mechanism**: 81-frame clips are extracted from Sekai-Real-HQ and SpatialVID-HQ, filtered by object criteria (1–6 controllable objects detected by Grounded SAM2) and quality criteria (aesthetic/brightness scores). Text descriptions are generated by Qwen2.5-VL-72B. Depth and camera trajectories are estimated using MoGe-2, UniDepth V2, and MegaSAM; 3D point clouds are reconstructed and Gaussian trajectories are fitted; control maps are rendered. The final dataset contains 35K training samples and 1K validation samples.
+    - **Design Motivation**: Addresses the bottleneck of scarce 4D control data; the fully automated pipeline enables large-scale training.
 
 ### Loss & Training
 - Optimizer: Adam, learning rate 2e-5, constant schedule with 100-step warmup

@@ -18,8 +18,8 @@ content_hash: 8cc20f0054822b5a
 # The Price of Robustness: Stable Classifiers Need Overparameterization
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.02806](https://arxiv.org/abs/2603.02806)
-**Code**: None
+**arXiv**: [2603.02806](https://arxiv.org/abs/2603.02806)  
+**Code**: None  
 **Area**: Learning Theory / Generalization Theory
 **Keywords**: overparameterization, robustness, stability, classifier, generalization bound, margin
 

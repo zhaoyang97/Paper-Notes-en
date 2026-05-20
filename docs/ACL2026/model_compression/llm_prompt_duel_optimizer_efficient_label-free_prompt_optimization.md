@@ -18,8 +18,8 @@ content_hash: a0a491670d9d79bf
 # LLM Prompt Duel Optimizer: Efficient Label-Free Prompt Optimization
 
 **Conference**: ACL 2026
-**arXiv**: [2510.13907](https://arxiv.org/abs/2510.13907)
-**Code**: [GitHub](https://github.com/meta-llama/prompt-ops)
+**arXiv**: [2510.13907](https://arxiv.org/abs/2510.13907)  
+**Code**: [GitHub](https://github.com/meta-llama/prompt-ops)  
 **Area**: Model Compression
 **Keywords**: Automatic prompt optimization, label-free optimization, dueling bandit, LLM-as-judge, Thompson sampling
 

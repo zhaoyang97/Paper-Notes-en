@@ -18,8 +18,8 @@ content_hash: 766e4adfa5bd3264
 # GraphChain: Large Language Models for Large-scale Graph Analysis via Tool Chaining
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00457](https://arxiv.org/abs/2511.00457)
-**Code**: [GitHub](https://github.com/wuanjunruc/GraphChain)
+**arXiv**: [2511.00457](https://arxiv.org/abs/2511.00457)  
+**Code**: [GitHub](https://github.com/wuanjunruc/GraphChain)  
 **Area**: Reinforcement Learning
 **Keywords**: large-scale graph analysis, tool chaining, reinforcement learning, information bottleneck, test-time adaptation, graph analysis
 

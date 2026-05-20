@@ -19,8 +19,8 @@ content_hash: 7004cf18c20bbbfa
 # Judge's Verdict: A Comprehensive Analysis of LLM Judge Capability Through Human Agreement
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.09738](https://arxiv.org/abs/2510.09738)
-**Code**: [nvidia/judges-verdict](https://github.com/nvidia/judges-verdict)
+**arXiv**: [2510.09738](https://arxiv.org/abs/2510.09738)  
+**Code**: [nvidia/judges-verdict](https://github.com/nvidia/judges-verdict)  
 **Area**: Information Retrieval
 **Keywords**: LLM-as-a-Judge, Cohen's Kappa, human agreement, benchmark, RAG evaluation, Turing Test for judges
 

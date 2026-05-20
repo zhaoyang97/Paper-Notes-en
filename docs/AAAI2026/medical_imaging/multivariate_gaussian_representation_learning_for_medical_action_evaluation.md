@@ -18,8 +18,8 @@ content_hash: c41a4119c30b9043
 # Multivariate Gaussian Representation Learning for Medical Action Evaluation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10060](https://arxiv.org/abs/2511.10060)
-**Code**: [https://github.com/HaoxianLiu/GaussMedAct](https://github.com/HaoxianLiu/GaussMedAct)
+**arXiv**: [2511.10060](https://arxiv.org/abs/2511.10060)  
+**Code**: [https://github.com/HaoxianLiu/GaussMedAct](https://github.com/HaoxianLiu/GaussMedAct)  
 **Area**: Medical Imaging / Action Recognition
 **Keywords**: CPR Assessment, Gaussian Mixture Model, Skeleton-based Action Recognition, Spatiotemporal Representation, Medical Dataset
 

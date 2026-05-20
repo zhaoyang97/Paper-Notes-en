@@ -18,8 +18,8 @@ content_hash: 69ee5a644a07fae6
 # PrefixGPT: Prefix Adder Optimization by a Generative Pre-trained Transformer
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.19472](https://arxiv.org/abs/2511.19472)
-**Code**: [https://github.com/Mightlaus/PrefixGPT-AAAI26](https://github.com/Mightlaus/PrefixGPT-AAAI26)
+**arXiv**: [2511.19472](https://arxiv.org/abs/2511.19472)  
+**Code**: [https://github.com/Mightlaus/PrefixGPT-AAAI26](https://github.com/Mightlaus/PrefixGPT-AAAI26)  
 **Area**: LLM Pretraining
 **Keywords**: prefix adder optimization, GPT generative model, hardware design automation, reinforcement learning fine-tuning, legality mask
 

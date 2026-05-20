@@ -18,8 +18,8 @@ content_hash: 33a8bdb47436a2a6
 # Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation
 
 **Conference**: ICLR 2026
-**arXiv**: [2508.13587](https://arxiv.org/abs/2508.13587)
-**Code**: [GitHub](https://github.com/DocTron-hub/MSRL)
+**arXiv**: [2508.13587](https://arxiv.org/abs/2508.13587)  
+**Code**: [GitHub](https://github.com/DocTron-hub/MSRL)  
 **Area**: Multimodal VLM / Code Generation
 **Keywords**: Chart-to-Code, Reinforcement Learning, SFT Plateau, Multi-granularity Reward, GRPO
 

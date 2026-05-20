@@ -18,8 +18,8 @@ content_hash: 0c72fbcb1901c7b3
 # CarGait: Cross-Attention based Re-ranking for Gait Recognition
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.03501](https://arxiv.org/abs/2503.03501)
-**Code**: N/A
+**arXiv**: [2503.03501](https://arxiv.org/abs/2503.03501)  
+**Code**: N/A  
 **Area**: Human Understanding / Gait Recognition
 **Keywords**: Gait Recognition, Re-ranking, Cross-Attention, Metric Learning, Fine-grained Matching
 
@@ -46,26 +46,26 @@ CarGait is a two-stage approach: (1) a pretrained gait model produces a global r
 ### Key Designs
 
 1. **Strip-wise Multi-head Cross-Attention**:
-   - The pretrained model outputs feature maps $F_p, F_c \in \mathbb{R}^{s \times d}$, where $s$ is the number of body strips and $d$ is the feature dimension.
-   - Multi-head cross-attention is applied with probe $F_p$ as Query and candidate $F_c$ as Key/Value, yielding $E_p$.
-   - The operation is performed in reverse: $F_c$ as Query and $F_p$ as Key/Value, yielding $E_c$.
-   - A residual connection preserves information from the pretrained model: $E_p = E_p + F_p$.
-   - **Design Motivation**: Single-stage models only compute distances between corresponding strips (part-to-part alignment), whereas cross-attention enables **arbitrary inter-strip interactions** — the head strip can attend to the leg strip of the counterpart, capturing global gait dynamics.
+    - The pretrained model outputs feature maps $F_p, F_c \in \mathbb{R}^{s \times d}$, where $s$ is the number of body strips and $d$ is the feature dimension.
+    - Multi-head cross-attention is applied with probe $F_p$ as Query and candidate $F_c$ as Key/Value, yielding $E_p$.
+    - The operation is performed in reverse: $F_c$ as Query and $F_p$ as Key/Value, yielding $E_c$.
+    - A residual connection preserves information from the pretrained model: $E_p = E_p + F_p$.
+    - **Design Motivation**: Single-stage models only compute distances between corresponding strips (part-to-part alignment), whereas cross-attention enables **arbitrary inter-strip interactions** — the head strip can attend to the leg strip of the counterpart, capturing global gait dynamics.
 
 2. **New Metric Space and Distance Computation**:
-   - The post-attention representations $E_p, E_c$ define a new embedding space.
-   - The new distance $d_{p,c}^r = \mathcal{Z}(E_p, E_c)$ is computed as the mean Euclidean distance across all strip features.
-   - Re-ranking reorders the top-K list in ascending order of this new distance.
-   - **Design Motivation**: Pairwise fine-grained comparison built upon global features provides stronger discriminability for hard negatives.
+    - The post-attention representations $E_p, E_c$ define a new embedding space.
+    - The new distance $d_{p,c}^r = \mathcal{Z}(E_p, E_c)$ is computed as the mean Euclidean distance across all strip features.
+    - Re-ranking reorders the top-K list in ascending order of this new distance.
+    - **Design Motivation**: Pairwise fine-grained comparison built upon global features provides stronger discriminability for hard negatives.
 
 3. **Training Data Construction and Loss Functions**:
-   - Training set construction: for each probe in the training set, the top-$v$ ($v=30$) candidates are retrieved using the pretrained model, containing both positive (same identity) and negative samples.
-   - Ranking loss (modified BPR loss):
+    - Training set construction: for each probe in the training set, the top-$v$ ($v=30$) candidates are retrieved using the pretrained model, containing both positive (same identity) and negative samples.
+    - Ranking loss (modified BPR loss):
      $$\mathcal{L}_i^* = -\log[\sigma(d_{p_i,neg_i}^r - d_{p_i,pos_i}^r)]$$
      Triplets that are already correctly ranked are down-weighted by $\beta=0.1$, focusing training on hard cases.
-   - Classification loss: an MLP classifier is applied on $E_p$ and $E_c$ with standard cross-entropy, serving as a regularizer.
-   - Total loss: $\mathcal{L} = \mathcal{L}_{ranking} + \alpha \mathcal{L}_{CE}$, with $\alpha=0.01$.
-   - **Design Motivation**: The ranking loss directly optimizes the ranking objective, while the classification loss preserves identity-discriminative information.
+    - Classification loss: an MLP classifier is applied on $E_p$ and $E_c$ with standard cross-entropy, serving as a regularizer.
+    - Total loss: $\mathcal{L} = \mathcal{L}_{ranking} + \alpha \mathcal{L}_{CE}$, with $\alpha=0.01$.
+    - **Design Motivation**: The ranking loss directly optimizes the ranking objective, while the classification loss preserves identity-discriminative information.
 
 ### Inference Strategy
 

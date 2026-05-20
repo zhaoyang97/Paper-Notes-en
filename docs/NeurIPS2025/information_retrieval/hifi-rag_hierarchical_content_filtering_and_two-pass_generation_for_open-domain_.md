@@ -18,8 +18,8 @@ content_hash: d7d6ab1a8bee26e3
 # HiFi-RAG: Hierarchical Content Filtering and Two-Pass Generation for Open-Domain RAG
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.22442](https://arxiv.org/abs/2512.22442)
-**Code**: None
+**arXiv**: [2512.22442](https://arxiv.org/abs/2512.22442)  
+**Code**: None  
 **Area**: LLM Agent / RAG
 **Keywords**: Retrieval-Augmented Generation, hierarchical filtering, two-pass generation, multi-LLM strategy, Flash-Pro cascade
 

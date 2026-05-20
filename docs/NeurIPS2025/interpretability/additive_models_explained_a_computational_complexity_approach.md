@@ -19,8 +19,8 @@ content_hash: 21b3548e3414673d
 # Additive Models Explained: A Computational Complexity Approach
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.21292](https://arxiv.org/abs/2510.21292)
-**Code**: None
+**arXiv**: [2510.21292](https://arxiv.org/abs/2510.21292)  
+**Code**: None  
 **Area**: Explainable AI / Computational Complexity
 **Keywords**: GAM, Explainability, Computational Complexity, Shapley Values, Sufficient Reasons, Contrastive Explanations
 

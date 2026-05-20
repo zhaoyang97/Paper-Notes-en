@@ -18,8 +18,8 @@ content_hash: c16e3303241fde77
 # VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice
 
 **Conference**: CVPR 2026
-**arXiv**: [2601.05175](https://arxiv.org/abs/2601.05175)
-**Code**: [https://ivul-kaust.github.io/projects/videoauto-r1](https://ivul-kaust.github.io/projects/videoauto-r1)
+**arXiv**: [2601.05175](https://arxiv.org/abs/2601.05175)  
+**Code**: [https://ivul-kaust.github.io/projects/videoauto-r1](https://ivul-kaust.github.io/projects/videoauto-r1)  
 **Area**: Video Understanding / LLM Reasoning
 **Keywords**: Video Reasoning, Adaptive Thinking, Chain-of-Thought, Reinforcement Learning, Inference Efficiency
 

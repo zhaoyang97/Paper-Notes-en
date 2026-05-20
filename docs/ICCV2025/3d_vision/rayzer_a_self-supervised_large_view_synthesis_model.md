@@ -18,8 +18,8 @@ content_hash: db3efddfe7ee50ae
 # RayZer: A Self-supervised Large View Synthesis Model
 
 **Conference**: ICCV 2025
-**arXiv**: [2505.00702](https://arxiv.org/abs/2505.00702)
-**Code**: [Project Page](https://hwjiang1510.github.io/RayZer/)
+**arXiv**: [2505.00702](https://arxiv.org/abs/2505.00702)  
+**Code**: [Project Page](https://hwjiang1510.github.io/RayZer/)  
 **Area**: 3D Vision
 **Keywords**: Self-supervised Learning, Novel View Synthesis, Camera Pose Estimation, Plücker Rays, Transformer
 
@@ -53,27 +53,27 @@ A key information-flow control for self-supervised training: the input images ar
 
 1. **Camera Estimator**:
 
-   - Employs learnable camera tokens $\mathbf{p} \in \mathbb{R}^{K \times d}$ (one per view), concatenated with image tokens $\mathbf{f} \in \mathbb{R}^{Khw \times d}$ and fed into full self-attention Transformer layers.
-   - One reference view is chosen (identity rotation + zero translation); remaining views predict relative poses.
-   - Rotation is parameterized with a 6D continuous representation and predicted via MLP: $p_i = \text{MLP}_{pose}([\mathbf{p}_i^*, \mathbf{p}_c^*])$.
-   - Intrinsics are parameterized with a single focal length value: $\text{focal} = \text{MLP}_{focal}(\mathbf{p}_c^*)$.
-   - **Design Motivation**: A low-dimensional, geometrically well-defined SE(3) parameterization facilitates information disentanglement; the pose-first paradigm (predicting poses before reconstructing the scene) provides better mutual regularization.
+    - Employs learnable camera tokens $\mathbf{p} \in \mathbb{R}^{K \times d}$ (one per view), concatenated with image tokens $\mathbf{f} \in \mathbb{R}^{Khw \times d}$ and fed into full self-attention Transformer layers.
+    - One reference view is chosen (identity rotation + zero translation); remaining views predict relative poses.
+    - Rotation is parameterized with a 6D continuous representation and predicted via MLP: $p_i = \text{MLP}_{pose}([\mathbf{p}_i^*, \mathbf{p}_c^*])$.
+    - Intrinsics are parameterized with a single focal length value: $\text{focal} = \text{MLP}_{focal}(\mathbf{p}_c^*)$.
+    - **Design Motivation**: A low-dimensional, geometrically well-defined SE(3) parameterization facilitates information disentanglement; the pose-first paradigm (predicting poses before reconstructing the scene) provides better mutual regularization.
 
 2. **Plücker Ray Bridging**: The predicted SE(3) poses and intrinsics are converted into pixel-aligned Plücker ray maps $\mathcal{R} \in \mathbb{R}^{K \times H \times W \times 6}$. This is the **only 3D prior** in RayZer, jointly encoding:
 
-   - The alignment between 2D pixels and rays.
-   - 3D ray geometry (direction and origin).
-   - The physical relationship among camera, pixels, and scene.
+    - The alignment between 2D pixels and rays.
+    - 3D ray geometry (direction and origin).
+    - The physical relationship among camera, pixels, and scene.
 
    Ray maps are tokenized via a linear layer and fused with image tokens: $\mathbf{x}_\mathcal{A} = \text{MLP}_{fuse}([\mathbf{f}_\mathcal{A}, \mathbf{r}_\mathcal{A}])$.
    - **Key Detail**: The original image tokens $\mathbf{f}$ are used instead of the camera estimator outputs $\mathbf{f}^*$, preventing information leakage from $\mathcal{I}_\mathcal{B}$.
 
 3. **Latent Set Scene Representation and Full-Transformer Rendering**:
 
-   - The scene is represented as a set of learnable tokens $\mathbf{z} \in \mathbb{R}^{L \times d}$ without explicit 3D structure; 3D properties are acquired entirely through learning.
-   - Scene reconstruction: $\{\mathbf{z}^*, \mathbf{x}_\mathcal{A}^*\} = \mathcal{E}_{scene}(\{\mathbf{z}, \mathbf{x}_\mathcal{A}\})$.
-   - Rendering: given Plücker ray tokens $\mathbf{r}$ for the target camera, the rendering decoder generates images: $\hat{I} = \text{MLP}_{rgb}(\mathbf{r}^*)$.
-   - This is analogous to the classical rendering formulation $v = R(\text{scene}, \text{ray})$, except that the "rendering equation" is a parameterized learnable model.
+    - The scene is represented as a set of learnable tokens $\mathbf{z} \in \mathbb{R}^{L \times d}$ without explicit 3D structure; 3D properties are acquired entirely through learning.
+    - Scene reconstruction: $\{\mathbf{z}^*, \mathbf{x}_\mathcal{A}^*\} = \mathcal{E}_{scene}(\{\mathbf{z}, \mathbf{x}_\mathcal{A}\})$.
+    - Rendering: given Plücker ray tokens $\mathbf{r}$ for the target camera, the rendering decoder generates images: $\hat{I} = \text{MLP}_{rgb}(\mathbf{r}^*)$.
+    - This is analogous to the classical rendering formulation $v = R(\text{scene}, \text{ray})$, except that the "rendering equation" is a parameterized learnable model.
 
 ### Loss & Training
 

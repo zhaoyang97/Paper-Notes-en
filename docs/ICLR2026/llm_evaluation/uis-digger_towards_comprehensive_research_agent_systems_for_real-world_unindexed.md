@@ -18,8 +18,8 @@ content_hash: be89d29a8f8fe54d
 # UIS-Digger: Towards Comprehensive Research Agent Systems for Real-world Unindexed Information Seeking
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.08117](https://arxiv.org/abs/2603.08117)
-**Code**: [https://huggingface.co/datasets/UIS-Digger/UIS-QA](https://huggingface.co/datasets/UIS-Digger/UIS-QA)
+**arXiv**: [2603.08117](https://arxiv.org/abs/2603.08117)  
+**Code**: [https://huggingface.co/datasets/UIS-Digger/UIS-QA](https://huggingface.co/datasets/UIS-Digger/UIS-QA)  
 **Area**: LLM Evaluation
 **Keywords**: Unindexed Information Seeking, Multi-Agent Framework, Dual-Mode Browser, SFT+RFT Training, Information Retrieval Benchmark
 

@@ -18,8 +18,8 @@ content_hash: 6612c31b49dfe4a7
 # CTPD: Cross Tokenizer Preference Distillation
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.11865](https://arxiv.org/abs/2601.11865)
-**Code**: [Available](https://github.com/dinhtruongng/CTPD)
+**arXiv**: [2601.11865](https://arxiv.org/abs/2601.11865)  
+**Code**: [Available](https://github.com/dinhtruongng/CTPD)  
 **Area**: Model Compression
 **Keywords**: Knowledge Distillation, Preference Alignment, Cross-Tokenizer, DPO, Language Models
 

@@ -18,8 +18,8 @@ content_hash: b75e84ff19b42314
 # PRECISE: Reducing the Bias of LLM Evaluations Using Prediction-Powered Ranking Estimation
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.18777](https://arxiv.org/abs/2601.18777)
-**Code**: None
+**arXiv**: [2601.18777](https://arxiv.org/abs/2601.18777)  
+**Code**: None  
 **Area**: Information Retrieval
 **Keywords**: LLM Evaluation, Prediction-Powered Inference, Ranking Metrics, Bias Correction, Human Annotation
 

@@ -18,8 +18,8 @@ content_hash: 65dd9aee84cc9fc9
 # Arbitrary Generative Video Interpolation
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.00578](https://arxiv.org/abs/2510.00578)
-**Code**: [Project Page](https://mcg-nju.github.io/ArbInterp-Web/)
+**arXiv**: [2510.00578](https://arxiv.org/abs/2510.00578)  
+**Code**: [Project Page](https://mcg-nju.github.io/ArbInterp-Web/)  
 **Area**: Video Understanding / Video Generation
 **Keywords**: Video Frame Interpolation, Generative VFI, RoPE, Temporal Conditioning, Any-length Generation
 

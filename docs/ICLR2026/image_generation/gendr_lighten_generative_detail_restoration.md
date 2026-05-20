@@ -18,8 +18,8 @@ content_hash: c8aa56f8850de273
 # GenDR: Lighten Generative Detail Restoration
 
 **Conference**: ICLR 2026
-**arXiv**: [2503.06790](https://arxiv.org/abs/2503.06790)
-**Code**: None
+**arXiv**: [2503.06790](https://arxiv.org/abs/2503.06790)  
+**Code**: None  
 **Area**: Image Generation
 **Keywords**: Single-step super-resolution, latent space expansion, score distillation, VAE 16-channel, consistency distillation
 

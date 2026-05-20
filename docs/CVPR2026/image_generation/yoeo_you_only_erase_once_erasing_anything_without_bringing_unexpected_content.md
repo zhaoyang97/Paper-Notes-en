@@ -18,8 +18,8 @@ content_hash: d173ccbbe03a2c89
 # YOEO: You Only Erase Once - Erasing Anything without Bringing Unexpected Content
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27599](https://arxiv.org/abs/2603.27599)
-**Code**: [https://zyxunh.github.io/YOEO-ProjectPage/](https://zyxunh.github.io/YOEO-ProjectPage/)
+**arXiv**: [2603.27599](https://arxiv.org/abs/2603.27599)  
+**Code**: [https://zyxunh.github.io/YOEO-ProjectPage/](https://zyxunh.github.io/YOEO-ProjectPage/)  
 **Area**: Image Generation / Image Editing
 **Keywords**: Object Erasure, Diffusion Distillation, Hallucination Suppression, Entity Consistency, Unpaired Training
 

@@ -18,8 +18,8 @@ content_hash: ca5611cb8d813d67
 # Knowing When to Quit: Probabilistic Early Exits for Speech Separation
 
 **Conference**: ICLR 2026
-**arXiv**: [2507.09768](https://arxiv.org/abs/2507.09768)
-**Code**: None
+**arXiv**: [2507.09768](https://arxiv.org/abs/2507.09768)  
+**Code**: None  
 **Area**: Audio & Speech
 **Keywords**: Speech Separation, Early Exit, Probabilistic Modeling, Dynamic Computation, TasNet
 
@@ -69,11 +69,11 @@ PRESS-Net adopts an encoder–separator–decoder architecture (the TasNet famil
    This is equivalent to treating each target source as a mixture of all predicted sources, achieving $O(S^2)$ permutation invariance via LogSumExp. A temperature-parameterized LogSumExp variant with temperature $\tau$ is used at the start of training to prevent gradient vanishing, with $\tau$ annealed rapidly from $T$ to $1$.
 
 4. **PRESS-Net Architecture**:
-   - **Encoder head**: Wide 1D convolution (kernel size $K$) → activation → patch-based downsampling (factor $P$) → ShiftNorm → linear projection to model dimension $D$
-   - **Separator**: Pre-norm Transformer-like stack using LayerScale (initialized to $10^{-5}$) for stable training. Consists of: the first $N_\text{Enc}$ blocks processing the mixed representation → SpeakerSplit projection into $S$ sources → the remaining $N_\text{Dec}$ decoder blocks, each comprising (1) a linear RNN block, (2) a long-convolution block, and (3) a speaker-attention block
-   - **Linear RNN**: Based on minGRU/RG-LRU; bidirectionality is constructed using the Hydra scheme, with efficient training via parallel associative scan
-   - **Inverse-gamma parameterization**: GLU layer → Snake activation → linear projection → Softplus → cumulative parameterization to ensure that distributions at earlier exit points are stochastically dominated by those at later exit points
-   - **Exit points**: Placed every few decoder blocks; each exit point has an independent decoder head and an inverse-gamma parameterization module
+    - **Encoder head**: Wide 1D convolution (kernel size $K$) → activation → patch-based downsampling (factor $P$) → ShiftNorm → linear projection to model dimension $D$
+    - **Separator**: Pre-norm Transformer-like stack using LayerScale (initialized to $10^{-5}$) for stable training. Consists of: the first $N_\text{Enc}$ blocks processing the mixed representation → SpeakerSplit projection into $S$ sources → the remaining $N_\text{Dec}$ decoder blocks, each comprising (1) a linear RNN block, (2) a long-convolution block, and (3) a speaker-attention block
+    - **Linear RNN**: Based on minGRU/RG-LRU; bidirectionality is constructed using the Hydra scheme, with efficient training via parallel associative scan
+    - **Inverse-gamma parameterization**: GLU layer → Snake activation → linear projection → Softplus → cumulative parameterization to ensure that distributions at earlier exit points are stochastically dominated by those at later exit points
+    - **Exit points**: Placed every few decoder blocks; each exit point has an independent decoder head and an inverse-gamma parameterization module
 
 ### Loss & Training
 - **Primary loss**: Multivariate Student-$t$ log-likelihood, equivalent to measuring error on a logarithmic scale

@@ -18,8 +18,8 @@ content_hash: 865d0f036510b0c3
 # Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.16270](https://arxiv.org/abs/2505.16270)
-**Code**: [GitHub](https://github.com/jiaruzouu/TransformerCopilot)
+**arXiv**: [2505.16270](https://arxiv.org/abs/2505.16270)  
+**Code**: [GitHub](https://github.com/jiaruzouu/TransformerCopilot)  
 **Area**: Recommender Systems
 **Keywords**: Mistake Log, Pilot-Copilot, logits rectification, fine-tuning, error-aware
 

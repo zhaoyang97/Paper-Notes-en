@@ -18,8 +18,8 @@ content_hash: f9f39e40269d02dc
 # MobileIE: An Extremely Lightweight and Effective ConvNet for Real-Time Image Enhancement on Mobile Devices
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.01838](https://arxiv.org/abs/2507.01838)
-**Code**: [https://github.com/AVC2-UESTC/MobileIE.git](https://github.com/AVC2-UESTC/MobileIE.git)
+**arXiv**: [2507.01838](https://arxiv.org/abs/2507.01838)  
+**Code**: [https://github.com/AVC2-UESTC/MobileIE.git](https://github.com/AVC2-UESTC/MobileIE.git)  
 **Area**: Image Enhancement / Image Restoration
 **Keywords**: Mobile image enhancement, re-parameterization, lightweight CNN, real-time inference, attention mechanism
 

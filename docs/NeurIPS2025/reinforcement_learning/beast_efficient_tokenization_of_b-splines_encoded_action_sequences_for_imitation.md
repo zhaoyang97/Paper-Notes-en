@@ -18,8 +18,8 @@ content_hash: cced0633b4104d63
 # BEAST: Efficient Tokenization of B-Splines Encoded Action Sequences for Imitation Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.06072](https://arxiv.org/abs/2506.06072)
-**Code**: [https://intuitive-robots.github.io/beast_website/](https://intuitive-robots.github.io/beast_website/)
+**arXiv**: [2506.06072](https://arxiv.org/abs/2506.06072)  
+**Code**: [https://intuitive-robots.github.io/beast_website/](https://intuitive-robots.github.io/beast_website/)  
 **Area**: Imitation Learning / Robotics
 **Keywords**: Action Tokenizer, B-Spline, Parallel Decoding, Smooth Trajectory, Efficient Inference
 
@@ -49,21 +49,21 @@ Action sequence $a_{1:T}$ ($T$ steps × $D$ degrees of freedom) → **B-spline f
 
 1. **B-Spline Parameterization + Ridge Regression**:
 
-   - Function: Compactly represent $T$-step action sequences using $N$ control points.
-   - Mechanism: Select $N=10$ B-spline basis functions (degree 3), compute the basis matrix $\Phi$ via Cox–de Boor recursion, and solve for control points via ridge regression. Each degree of freedom is solved independently (parallelizable).
-   - Design Motivation: $N \ll T$ (e.g., 10 vs. 100) achieves 10–20× compression. The local support property of B-splines ensures that modifying one control point affects only a local portion of the trajectory.
+    - Function: Compactly represent $T$-step action sequences using $N$ control points.
+    - Mechanism: Select $N=10$ B-spline basis functions (degree 3), compute the basis matrix $\Phi$ via Cox–de Boor recursion, and solve for control points via ridge regression. Each degree of freedom is solved independently (parallelizable).
+    - Design Motivation: $N \ll T$ (e.g., 10 vs. 100) achieves 10–20× compression. The local support property of B-splines ensures that modifying one control point affects only a local portion of the trajectory.
 
 2. **Clamped B-Splines (Inter-Chunk Continuity)**:
 
-   - Function: Mathematically guarantee discontinuity-free transitions between consecutive action chunks.
-   - Mechanism: The first control point of the current chunk is fixed to the last action value of the previous chunk $c_0$; the residual $\hat{a} = a - c_0\Phi_0^P$ is computed by subtracting the contribution of $c_0$, and the remaining control points are fitted to the residual.
-   - Design Motivation: Existing methods rely on temporal blending to smooth inter-chunk transitions—this is post-processing rather than a guarantee. Clamped B-splines provide mathematical $C^0$ continuity by construction.
+    - Function: Mathematically guarantee discontinuity-free transitions between consecutive action chunks.
+    - Mechanism: The first control point of the current chunk is fixed to the last action value of the previous chunk $c_0$; the residual $\hat{a} = a - c_0\Phi_0^P$ is computed by subtracting the contribution of $c_0$, and the remaining control points are fitted to the residual.
+    - Design Motivation: Existing methods rely on temporal blending to smooth inter-chunk transitions—this is post-processing rather than a guarantee. Clamped B-splines provide mathematical $C^0$ continuity by construction.
 
 3. **Uniform Quantization + Interleaved Flattening**:
 
-   - Function: Convert control points into discrete tokens processable by a Transformer.
-   - Mechanism: Control point values are normalized to [0, 255] (8-bit uniform quantization) and arranged in an interleaved order by basis function, so that adjacent tokens correspond to different degrees of freedom but the same temporal segment.
-   - Design Motivation: Interleaved arrangement allows the Transformer to exploit dependencies among different degrees of freedom within the same temporal segment.
+    - Function: Convert control points into discrete tokens processable by a Transformer.
+    - Mechanism: Control point values are normalized to [0, 255] (8-bit uniform quantization) and arranged in an interleaved order by basis function, so that adjacent tokens correspond to different degrees of freedom but the same temporal segment.
+    - Design Motivation: Interleaved arrangement allows the Transformer to exploit dependencies among different degrees of freedom within the same temporal segment.
 
 ### Loss & Training
 - Discrete tokens: cross-entropy loss; continuous variant (BEAST-CT): ELBO.

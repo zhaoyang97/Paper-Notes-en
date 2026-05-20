@@ -18,8 +18,8 @@ content_hash: 5d01e5b7d322f259
 # Online Dense Point Tracking with Streaming Memory
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.06471](https://arxiv.org/abs/2503.06471)
-**Code**: [Project Page](https://dqiaole.github.io/SPOT/)
+**arXiv**: [2503.06471](https://arxiv.org/abs/2503.06471)  
+**Code**: [Project Page](https://dqiaole.github.io/SPOT/)  
 **Area**: Video Understanding
 **Keywords**: Dense point tracking, streaming memory, optical flow, online processing, visibility estimation
 

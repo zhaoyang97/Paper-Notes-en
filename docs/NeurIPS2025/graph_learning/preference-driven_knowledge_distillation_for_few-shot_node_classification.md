@@ -18,8 +18,8 @@ content_hash: e52a43dbe833d91c
 # PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.10116](https://arxiv.org/abs/2510.10116)
-**Code**: [https://github.com/GEEX-Weixing/PKD](https://github.com/GEEX-Weixing/PKD)
+**arXiv**: [2510.10116](https://arxiv.org/abs/2510.10116)  
+**Code**: [https://github.com/GEEX-Weixing/PKD](https://github.com/GEEX-Weixing/PKD)  
 **Area**: Graph Learning / Few-shot Learning
 **Keywords**: Few-shot node classification, LLM-GNN collaboration, knowledge distillation, RL-based teacher selection, text-attributed graphs
 

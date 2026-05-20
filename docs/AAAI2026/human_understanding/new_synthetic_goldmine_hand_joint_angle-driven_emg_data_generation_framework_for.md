@@ -18,8 +18,8 @@ content_hash: 8803b4063dcaccf9
 # New Synthetic Goldmine: Hand Joint Angle-Driven EMG Data Generation Framework for Micro-Gesture Recognition
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.23359](https://arxiv.org/abs/2509.23359)
-**Code**: None
+**arXiv**: [2509.23359](https://arxiv.org/abs/2509.23359)  
+**Code**: None  
 **Area**: Human Understanding
 **Keywords**: EMG signal generation, gesture recognition, conditional GAN, joint angle-driven, data augmentation
 

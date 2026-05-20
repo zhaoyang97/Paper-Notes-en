@@ -18,8 +18,8 @@ content_hash: 0c485e3aaccf6580
 # Disentangling Shared and Private Neural Dynamics with SPIRE: A Latent Modeling Framework for Deep Brain Stimulation
 
 **Conference**: ICLR2026
-**arXiv**: [2510.25023](https://arxiv.org/abs/2510.25023)
-**Code**: [GitHub](https://github.com/Rahil-Soroush/spire-iclr2026)
+**arXiv**: [2510.25023](https://arxiv.org/abs/2510.25023)  
+**Code**: [GitHub](https://github.com/Rahil-Soroush/spire-iclr2026)  
 **Area**: LLM Evaluation
 **Keywords**: latent variable model, shared-private disentanglement, deep brain stimulation, multi-region neural dynamics, autoencoder
 

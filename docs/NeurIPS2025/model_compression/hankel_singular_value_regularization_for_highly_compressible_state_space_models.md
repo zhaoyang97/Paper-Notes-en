@@ -18,8 +18,8 @@ content_hash: c5d5f1aca7055d94
 # Hankel Singular Value Regularization for Highly Compressible State Space Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.22951](https://arxiv.org/abs/2510.22951)
-**Code**: [GitHub](https://github.com/Algopaul/hankelreg)
+**arXiv**: [2510.22951](https://arxiv.org/abs/2510.22951)  
+**Code**: [GitHub](https://github.com/Algopaul/hankelreg)  
 **Area**: Model Compression / State Space Models
 **Keywords**: SSM compression, Hankel singular values, balanced truncation, regularization, Long Range Arena
 

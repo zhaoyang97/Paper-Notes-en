@@ -18,8 +18,8 @@ content_hash: a566622a0911066d
 # ByteFlow: Language Modeling through Adaptive Byte Compression without a Tokenizer
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.03583](https://arxiv.org/abs/2603.03583)
-**Code**: Not released
+**arXiv**: [2603.03583](https://arxiv.org/abs/2603.03583)  
+**Code**: Not released  
 **Area**: NLP / tokenizer-free LM (categorized under segmentation track)
 **Keywords**: byte-level LM, tokenizer-free, coding rate, hierarchical architecture, self-tokenization
 

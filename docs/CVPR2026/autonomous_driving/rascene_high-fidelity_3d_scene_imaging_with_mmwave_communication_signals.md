@@ -18,8 +18,8 @@ content_hash: 4408ac8d059afdd2
 # Rascene: High-Fidelity 3D Scene Imaging with mmWave Communication Signals
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.02603](https://arxiv.org/abs/2604.02603)
-**Code**: N/A
+**arXiv**: [2604.02603](https://arxiv.org/abs/2604.02603)  
+**Code**: N/A  
 **Area**: Autonomous Driving / 3D Perception / Integrated Sensing and Communication
 **Keywords**: mmWave communication, 3D scene imaging, OFDM signals, multi-frame fusion, ISAC
 

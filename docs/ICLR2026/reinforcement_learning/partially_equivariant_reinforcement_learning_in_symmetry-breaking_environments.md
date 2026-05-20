@@ -18,8 +18,8 @@ content_hash: ffba62141d07f822
 # Partially Equivariant Reinforcement Learning in Symmetry-Breaking Environments
 
 **Conference**: ICLR 2026
-**arXiv**: [2512.00915](https://arxiv.org/abs/2512.00915)
-**Code**: [Project Page](https://pranaboy72.github.io/perl_page/)
+**arXiv**: [2512.00915](https://arxiv.org/abs/2512.00915)  
+**Code**: [Project Page](https://pranaboy72.github.io/perl_page/)  
 **Area**: Reinforcement Learning / Equivariance
 **Keywords**: Partial equivariance, symmetry breaking, group-invariant MDP, gated policy, Bellman error propagation
 
@@ -51,21 +51,21 @@ PERL (Partially Equivariant RL) maintains two parallel sets of value function/po
 
 1. **Theoretical Analysis of Local-to-Global Error Propagation**:
 
-   - **Function**: Provides the theoretical foundation for why selective equivariance is necessary.
-   - **Mechanism**: Defines pointwise deviations between the true MDP and the group-invariant MDP: $\epsilon_R(s,a) = |R_N(s,a) - R_E(s,a)|$ and $\epsilon_P(s,a) = \frac{1}{2}\int|P_N(s'|s,a) - P_E(s'|s,a)|ds'$. Lemma 1 proves that the single-step Bellman error is $\leq \epsilon_R(s,a) + 2\gamma V_{\max}\epsilon_P(s,a)$. Proposition 1 further proves that the global error of the optimal value function satisfies $\|Q_N^* - Q_E^*\|_\infty \leq \frac{1}{1-\gamma}\|\delta\|_\infty$, i.e., local error is amplified by $(1-\gamma)^{-1}$ through backup to affect the global value function.
-   - **Design Motivation**: This theoretical result clearly identifies the root cause of strictly equivariant RL's failure in breaking environments — not that equivariance itself is harmful, but that local MDP mismatch is amplified into a global problem via Bellman backup.
+    - **Function**: Provides the theoretical foundation for why selective equivariance is necessary.
+    - **Mechanism**: Defines pointwise deviations between the true MDP and the group-invariant MDP: $\epsilon_R(s,a) = |R_N(s,a) - R_E(s,a)|$ and $\epsilon_P(s,a) = \frac{1}{2}\int|P_N(s'|s,a) - P_E(s'|s,a)|ds'$. Lemma 1 proves that the single-step Bellman error is $\leq \epsilon_R(s,a) + 2\gamma V_{\max}\epsilon_P(s,a)$. Proposition 1 further proves that the global error of the optimal value function satisfies $\|Q_N^* - Q_E^*\|_\infty \leq \frac{1}{1-\gamma}\|\delta\|_\infty$, i.e., local error is amplified by $(1-\gamma)^{-1}$ through backup to affect the global value function.
+    - **Design Motivation**: This theoretical result clearly identifies the root cause of strictly equivariant RL's failure in breaking environments — not that equivariance itself is harmful, but that local MDP mismatch is amplified into a global problem via Bellman backup.
 
 2. **Partially Invariant MDP (PI-MDP) Framework**:
 
-   - **Function**: Formally defines the concept of "selective equivariance" at the MDP level.
-   - **Mechanism**: Introduces gating function $\lambda: \mathcal{S}\times\mathcal{A} \to [0,1]$ and defines mixed reward $R_H = (1-\lambda)R_E + \lambda R_N$ and transition kernel $P_H = (1-\lambda)P_E + \lambda P_N$. Theorem 1 proves that the PI-MDP Bellman operator $\mathcal{T}_H$ satisfies an affine decomposition (a convex combination of equivariant and standard operators) and remains a $\gamma$-contraction, guaranteeing a unique fixed point. Corollary 1 gives the key bound: $\|Q_H^* - Q_N^*\|_\infty \leq \frac{1}{1-\gamma}\|(1-\lambda)\delta\|_\infty$, which reduces to zero when $\lambda = 1$ in breaking regions.
-   - **Design Motivation**: Elevates the intuition of "use equivariance where it holds, standard otherwise" into an MDP framework with rigorous theoretical guarantees. The convex combination preserves MDP validity, $\gamma$-contraction ensures convergence, and the error bound prescribes how $\lambda$ should be designed.
+    - **Function**: Formally defines the concept of "selective equivariance" at the MDP level.
+    - **Mechanism**: Introduces gating function $\lambda: \mathcal{S}\times\mathcal{A} \to [0,1]$ and defines mixed reward $R_H = (1-\lambda)R_E + \lambda R_N$ and transition kernel $P_H = (1-\lambda)P_E + \lambda P_N$. Theorem 1 proves that the PI-MDP Bellman operator $\mathcal{T}_H$ satisfies an affine decomposition (a convex combination of equivariant and standard operators) and remains a $\gamma$-contraction, guaranteeing a unique fixed point. Corollary 1 gives the key bound: $\|Q_H^* - Q_N^*\|_\infty \leq \frac{1}{1-\gamma}\|(1-\lambda)\delta\|_\infty$, which reduces to zero when $\lambda = 1$ in breaking regions.
+    - **Design Motivation**: Elevates the intuition of "use equivariance where it holds, standard otherwise" into an MDP framework with rigorous theoretical guarantees. The convex combination preserves MDP validity, $\gamma$-contraction ensures convergence, and the error bound prescribes how $\lambda$ should be designed.
 
 3. **Symmetry-Breaking Detection via Predictor Disagreement**:
 
-   - **Function**: Automatically identifies whether each $(s,a)$ lies in a symmetry-breaking region without prior knowledge.
-   - **Mechanism**: Two one-step predictors are trained — an equivariant predictor $\hat{P}_E$ subject to group constraints and an unconstrained standard predictor $\hat{P}_N$. In symmetric regions both predictors agree (low disagreement); in breaking regions, $\hat{P}_E$ can only represent a group-averaged surrogate dynamics while $\hat{P}_N$ approximates the true dynamics, resulting in high disagreement. A disagreement score $d(s,a) = D(\hat{P}_E, \hat{P}_N)$ is computed, high-disagreement samples are treated as anomalies (upper-tail distribution), pseudo-labels $y \in \{0,1\}$ are generated, and the gating network $\lambda_\omega$ is trained with binary cross-entropy loss. The gating network is frozen during RL updates and receives no RL gradients.
-   - **Design Motivation**: Directly measuring $\epsilon_R, \epsilon_P$ requires knowledge of the group-invariant MDP (typically unavailable), while predictor disagreement provides an indirect but practical surrogate signal. Anomaly detection avoids the need to set hard thresholds.
+    - **Function**: Automatically identifies whether each $(s,a)$ lies in a symmetry-breaking region without prior knowledge.
+    - **Mechanism**: Two one-step predictors are trained — an equivariant predictor $\hat{P}_E$ subject to group constraints and an unconstrained standard predictor $\hat{P}_N$. In symmetric regions both predictors agree (low disagreement); in breaking regions, $\hat{P}_E$ can only represent a group-averaged surrogate dynamics while $\hat{P}_N$ approximates the true dynamics, resulting in high disagreement. A disagreement score $d(s,a) = D(\hat{P}_E, \hat{P}_N)$ is computed, high-disagreement samples are treated as anomalies (upper-tail distribution), pseudo-labels $y \in \{0,1\}$ are generated, and the gating network $\lambda_\omega$ is trained with binary cross-entropy loss. The gating network is frozen during RL updates and receives no RL gradients.
+    - **Design Motivation**: Directly measuring $\epsilon_R, \epsilon_P$ requires knowledge of the group-invariant MDP (typically unavailable), while predictor disagreement provides an indirect but practical surrogate signal. Anomaly detection avoids the need to set hard thresholds.
 
 ### Loss & Training
 

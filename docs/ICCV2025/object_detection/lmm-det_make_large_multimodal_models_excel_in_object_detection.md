@@ -17,8 +17,8 @@ content_hash: c7250443d5303106
 # LMM-Det: Make Large Multimodal Models Excel in Object Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.18300](https://arxiv.org/abs/2507.18300)
-**Code**: [github.com/360CVGroup/LMM-Det](https://github.com/360CVGroup/LMM-Det)
+**arXiv**: [2507.18300](https://arxiv.org/abs/2507.18300)  
+**Code**: [github.com/360CVGroup/LMM-Det](https://github.com/360CVGroup/LMM-Det)  
 **Area**: Object Detection
 **Keywords**: Large multimodal models, object detection, recall, data distribution adjustment, inference optimization
 

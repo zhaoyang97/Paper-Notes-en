@@ -18,8 +18,8 @@ content_hash: cfbe4515d6d88c57
 # MP-HSIR: A Multi-Prompt Framework for Universal Hyperspectral Image Restoration
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.09131](https://arxiv.org/abs/2503.09131)
-**Code**: [GitHub](https://github.com/ZhehuiWu/MP-HSIR)
+**arXiv**: [2503.09131](https://arxiv.org/abs/2503.09131)  
+**Code**: [GitHub](https://github.com/ZhehuiWu/MP-HSIR)  
 **Area**: Image Restoration
 **Keywords**: Hyperspectral image restoration, multi-prompt learning, all-in-one restoration, spectral prompt, text-visual synergy
 

@@ -19,9 +19,9 @@ content_hash: 2ffaf60727ee91a4
 # VLM-Guided Group Preference Alignment for Diffusion-based Human Mesh Recovery
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.19180](https://arxiv.org/abs/2602.19180)
+**arXiv**: [2602.19180](https://arxiv.org/abs/2602.19180)  
 **Institution**: Nanyang Technological University, HKUST(GZ), SenseTime Research, A*STAR
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Human Mesh Recovery, diffusion model, VLM, GRPO, Preference Alignment, Critique Agent
 

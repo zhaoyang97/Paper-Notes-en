@@ -18,8 +18,8 @@ content_hash: f5122d1cbb4bbc15
 # Position Paper: If Innovation in AI Systematically Violates Fundamental Rights, Is It Innovation at All?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.00027](https://arxiv.org/abs/2511.00027)
-**Code**: None
+**arXiv**: [2511.00027](https://arxiv.org/abs/2511.00027)  
+**Code**: None  
 **Area**: AI Ethics / AI Governance
 **Keywords**: AI regulation, fundamental rights, EU AI Act, responsible innovation, Collingridge dilemma
 

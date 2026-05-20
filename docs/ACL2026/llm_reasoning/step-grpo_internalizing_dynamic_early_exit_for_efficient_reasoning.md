@@ -14,8 +14,8 @@ content_hash: 043c76f8bd40df69
 # Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning
 
 **Conference**: ACL 2026
-**arXiv**: [2604.16890](https://arxiv.org/abs/2604.16890)
-**Code**: None
+**arXiv**: [2604.16890](https://arxiv.org/abs/2604.16890)  
+**Code**: None  
 **Area**: LLM Reasoning Efficiency / Reinforcement Learning
 **Keywords**: Efficient Reasoning, GRPO, Semantic Steps, Dynamic Truncation, Overthinking
 
@@ -121,7 +121,7 @@ Standard GRPO policy gradient objective + PPO clipping + KL regularization. Hype
 - Novelty: ⭐⭐⭐⭐ The semantic step quantification and truncated rollout designs are elegant, though the overall framework is an incremental improvement upon GRPO.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three model scales, six benchmarks, and seven baselines — exceptionally comprehensive.
 - Writing Quality: ⭐⭐⭐⭐ Problem analysis is clear, method description is systematic, and figures effectively aid understanding.
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: model_compression
 **Keywords**: To be supplemented
 

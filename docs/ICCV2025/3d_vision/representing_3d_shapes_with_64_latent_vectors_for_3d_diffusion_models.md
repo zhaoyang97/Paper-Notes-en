@@ -18,8 +18,8 @@ content_hash: 4f9d45cd672e4a00
 # Representing 3D Shapes with 64 Latent Vectors for 3D Diffusion Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.08737](https://arxiv.org/abs/2503.08737)
-**Code**: [GitHub](https://github.com/join16/COD-VAE)
+**arXiv**: [2503.08737](https://arxiv.org/abs/2503.08737)  
+**Code**: [GitHub](https://github.com/join16/COD-VAE)  
 **Area**: 3D Vision
 **Keywords**: 3D VAE, Compact Latent Space, 3D Diffusion Models, Triplane Decoding, Token Pruning
 

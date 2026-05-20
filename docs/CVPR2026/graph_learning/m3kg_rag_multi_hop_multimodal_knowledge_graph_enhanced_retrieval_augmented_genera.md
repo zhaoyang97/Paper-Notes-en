@@ -18,8 +18,8 @@ content_hash: bbda231e8caaca9b
 # M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.20136](https://arxiv.org/abs/2512.20136)
-**Code**: [Project Page](https://kuai-lab.github.io/cvpr2026m3kgrag/)
+**arXiv**: [2512.20136](https://arxiv.org/abs/2512.20136)  
+**Code**: [Project Page](https://kuai-lab.github.io/cvpr2026m3kgrag/)  
 **Area**: Graph Learning
 **Keywords**: Multimodal Knowledge Graph, Retrieval-Augmented Generation, Audio-Visual Reasoning, Graph Pruning, Multi-hop Reasoning
 

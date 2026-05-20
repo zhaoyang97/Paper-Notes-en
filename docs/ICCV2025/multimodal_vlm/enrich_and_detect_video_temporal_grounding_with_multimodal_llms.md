@@ -18,8 +18,8 @@ content_hash: ac3c952a3f12b508
 # Enrich and Detect: Video Temporal Grounding with Multimodal LLMs
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.17023](https://arxiv.org/abs/2510.17023)
-**Code**: [Project Page](https://shramanpramanick.github.io/ED-VTG/)
+**arXiv**: [2510.17023](https://arxiv.org/abs/2510.17023)  
+**Code**: [Project Page](https://shramanpramanick.github.io/ED-VTG/)  
 **Area**: Multimodal VLM
 **Keywords**: Video Temporal Grounding, Multimodal LLM, Query Enrichment, Multiple Instance Learning, Temporal Detection
 

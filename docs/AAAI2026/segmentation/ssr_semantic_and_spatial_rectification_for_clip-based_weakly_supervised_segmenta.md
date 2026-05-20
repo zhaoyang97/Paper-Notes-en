@@ -18,8 +18,8 @@ content_hash: ece48df4c0e1b0b8
 # SSR: Semantic and Spatial Rectification for CLIP-based Weakly Supervised Segmentation
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.01701](https://arxiv.org/abs/2512.01701)
-**Code**: None
+**arXiv**: [2512.01701](https://arxiv.org/abs/2512.01701)  
+**Code**: None  
 **Area**: Segmentation
 **Keywords**: Weakly supervised semantic segmentation, CLIP, cross-modal prototype alignment, superpixel-guided correction, class activation map
 

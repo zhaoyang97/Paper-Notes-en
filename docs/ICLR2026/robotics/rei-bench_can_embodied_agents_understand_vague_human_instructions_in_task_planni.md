@@ -18,8 +18,8 @@ content_hash: ef625132fa93e333
 # REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.10872](https://arxiv.org/abs/2505.10872)
-**Code**: [Project Page](https://jcx0110.github.io/rei-bench-project)
+**arXiv**: [2505.10872](https://arxiv.org/abs/2505.10872)  
+**Code**: [Project Page](https://jcx0110.github.io/rei-bench-project)  
 **Area**: Embodied AI / Task Planning
 **Keywords**: Referring Expressions, Vague Instructions, LLM Planning, Coreference Resolution, Robustness
 
@@ -53,18 +53,18 @@ The data construction pipeline is seeded from ALFRED instructions: GPT-4o-mini i
 
 - **Function**: Categorizes REs in instructions into three difficulty levels—Explicit, Mixed, and Implicit—systematically simulating a gradient from clear to ambiguous.
 - **Mechanism**: Explicit REs include proper nouns ("apple"), definite noun phrases ("the apple"), and indefinite noun phrases ("an apple"), all directly interpretable. Implicit REs include pronouns ("it"/"them") and attribute-based descriptions ("sweet fruit"), which have multiple potential referents and require contextual inference. The three levels are defined as:
-  - *Explicit REs*: All explicit expressions from the original dataset are retained.
-  - *Mixed REs*: Explicit REs in the instruction are replaced with implicit REs, while explicit REs in the contextual memory remain unchanged.
-  - *Implicit REs*: All explicit REs are replaced with implicit REs; only the first explicit RE in the context is retained.
+    - *Explicit REs*: All explicit expressions from the original dataset are retained.
+    - *Mixed REs*: Explicit REs in the instruction are replaced with implicit REs, while explicit REs in the contextual memory remain unchanged.
+    - *Implicit REs*: All explicit REs are replaced with implicit REs; only the first explicit RE in the context is retained.
 - **Design Motivation**: Humans do not always express themselves with full clarity; the degree of vagueness varies with individual habits and cognitive capacity. The tiered design enables quantitative analysis of how different levels of ambiguity affect planning performance. Replacement rules are grounded in coreference patterns from the OntoNotes corpus to ensure that implicit REs conform to natural language usage.
 
 ### Key Design 2: Three-Level Context Memory Modeling
 
 - **Function**: Designs three dialogue context types—Standard, Noised, and Short—to simulate varying information quality in real human–robot interaction.
 - **Mechanism**:
-  - *Standard Context*: Provides complete task-relevant contextual information.
-  - *Noised Context*: Introduces "ambiguous name" noise—person names or brand names similar to scene object names (e.g., "Rose" → "Mrs. Rose")—appearing repeatedly in the dialogue to create interference.
-  - *Short Context*: Builds on the noised context by randomly removing some noun phrases containing task-relevant explicit REs, further increasing inferential difficulty.
+    - *Standard Context*: Provides complete task-relevant contextual information.
+    - *Noised Context*: Introduces "ambiguous name" noise—person names or brand names similar to scene object names (e.g., "Rose" → "Mrs. Rose")—appearing repeatedly in the dialogue to create interference.
+    - *Short Context*: Builds on the noised context by randomly removing some noun phrases containing task-relevant explicit REs, further increasing inferential difficulty.
 - **Design Motivation**: Linguists argue that the association between words and objects is constructed within specific contexts (Levinson, 1983). Everyday misleading cues arise from polysemy (e.g., "apple" referring to both a fruit and a brand); semantic omission reflects the cognitive limitations of elderly or young users. The 3 RE levels × 3 context types = 9 ambiguity grades provide comprehensive coverage for evaluating planner robustness.
 
 ### Key Design 3: Task-Oriented Context Cognition (TOCC)

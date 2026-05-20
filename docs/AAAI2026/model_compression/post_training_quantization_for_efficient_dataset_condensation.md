@@ -18,8 +18,8 @@ content_hash: 993fd633443c404d
 # Post Training Quantization for Efficient Dataset Condensation
 
 **Conference**: AAAI 2026
-**arXiv**: [2603.13346](https://arxiv.org/abs/2603.13346)
-**Code**: None
+**arXiv**: [2603.13346](https://arxiv.org/abs/2603.13346)  
+**Code**: None  
 **Area**: Model Compression
 **Keywords**: Dataset Distillation, Post-Training Quantization, Low-Bit Storage, Image Compression, Patch Quantization
 

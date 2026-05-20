@@ -19,7 +19,7 @@ content_hash: 8ddd82766fafcdea
 # Logical Characterizations of GNNs with Mean Aggregation
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.18145](https://arxiv.org/abs/2507.18145)
+**arXiv**: [2507.18145](https://arxiv.org/abs/2507.18145)  
 **Area**: Graph Learning / Graph Neural Network Theory
 **Keywords**: GNN expressiveness, mean aggregation, modal logic, ratio modal logic, alternation-free modal logic, non-uniform/uniform setting
 

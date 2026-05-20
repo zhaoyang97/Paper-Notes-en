@@ -18,8 +18,8 @@ content_hash: 0554cdff6f1f1006
 # MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.16641](https://arxiv.org/abs/2510.16641)
-**Code**: [MultiVerse](https://passing2961.github.io/multiverse-project-page/)
+**arXiv**: [2510.16641](https://arxiv.org/abs/2510.16641)  
+**Code**: [MultiVerse](https://passing2961.github.io/multiverse-project-page/)  
 **Area**: Multimodal VLM
 **Keywords**: multi-turn dialogue, VLM evaluation, benchmark dataset, checklist evaluation, in-context learning
 

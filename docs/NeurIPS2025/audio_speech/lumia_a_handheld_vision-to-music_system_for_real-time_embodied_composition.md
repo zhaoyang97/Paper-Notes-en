@@ -18,8 +18,8 @@ content_hash: 5df5cc71a54042b3
 # LUMIA: A Handheld Vision-to-Music System for Real-Time, Embodied Composition
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.17228](https://arxiv.org/abs/2512.17228)
-**Code**: [https://github.com/KidaGSD/LLOv2](https://github.com/KidaGSD/LLOv2)
+**arXiv**: [2512.17228](https://arxiv.org/abs/2512.17228)  
+**Code**: [https://github.com/KidaGSD/LLOv2](https://github.com/KidaGSD/LLOv2)  
 **Area**: Audio & Speech
 **Keywords**: vision-to-music, real-time composition, human-AI co-creation, embodied interaction, multimodal generation
 

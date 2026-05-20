@@ -18,8 +18,8 @@ content_hash: cc1b7e1db3d45d64
 # Sim-DETR: Unlock DETR for Temporal Sentence Grounding
 
 **Conference**: ICCV 2025
-**arXiv**: [2509.23867](https://arxiv.org/abs/2509.23867)
-**Code**: [github.com/SooLab/Sim-DETR](https://github.com/SooLab/Sim-DETR)
+**arXiv**: [2509.23867](https://arxiv.org/abs/2509.23867)  
+**Code**: [github.com/SooLab/Sim-DETR](https://github.com/SooLab/Sim-DETR)  
 **Area**: Object Detection / Temporal Sentence Grounding
 **Keywords**: Temporal sentence grounding, DETR, query conflict, self-attention adjustment, global-local bridging
 

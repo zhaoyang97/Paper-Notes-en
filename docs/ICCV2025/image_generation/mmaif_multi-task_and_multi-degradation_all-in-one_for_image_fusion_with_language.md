@@ -20,8 +20,8 @@ content_hash: c61c2cd3bc134a18
 # MMAIF: Multi-task and Multi-degradation All-in-One for Image Fusion with Language Guidance
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.14944](https://arxiv.org/abs/2503.14944)
-**Code**: [GitHub](https://github.com/294coder/MMAIF)
+**arXiv**: [2503.14944](https://arxiv.org/abs/2503.14944)  
+**Code**: [GitHub](https://github.com/294coder/MMAIF)  
 **Area**: Diffusion Models · Image Fusion
 **Keywords**: Image Fusion, Diffusion Transformer, Multi-task, Multi-degradation, Language Guidance, Flow Matching, MoE
 

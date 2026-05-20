@@ -18,8 +18,8 @@ content_hash: 08de4ea6fa92e2da
 # Polar Sparsity: High Throughput Batched LLM Inferencing with Scalable Contextual Sparsity
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.14884](https://arxiv.org/abs/2505.14884)
-**Code**: [susavlsh10/Polar-Sparsity](https://github.com/susavlsh10/Polar-Sparsity)
+**arXiv**: [2505.14884](https://arxiv.org/abs/2505.14884)  
+**Code**: [susavlsh10/Polar-Sparsity](https://github.com/susavlsh10/Polar-Sparsity)  
 **Area**: LLM/NLP
 **Keywords**: LLM inference, contextual sparsity, attention head sparsity, batched inference, GPU kernel
 

@@ -18,8 +18,8 @@ content_hash: 2fc71486cff977be
 # Isotropic Noise in Stochastic and Quantum Convex Optimization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.20745](https://arxiv.org/abs/2510.20745)
-**Code**: None
+**arXiv**: [2510.20745](https://arxiv.org/abs/2510.20745)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: stochastic convex optimization, isotropic noise, cutting plane, sub-exponential distribution, quantum optimization
 

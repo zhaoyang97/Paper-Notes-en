@@ -18,8 +18,8 @@ content_hash: 33694116b7b99929
 # HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks
 
 **Conference**: CVPR 2026
-**arXiv**: [2412.17574](https://arxiv.org/abs/2412.17574)
-**Code**: [https://github.com/datajuicer/data-juicer/tree/HumanVBench](https://github.com/datajuicer/data-juicer/tree/HumanVBench)
+**arXiv**: [2412.17574](https://arxiv.org/abs/2412.17574)  
+**Code**: [https://github.com/datajuicer/data-juicer/tree/HumanVBench](https://github.com/datajuicer/data-juicer/tree/HumanVBench)  
 **Area**: Multimodal VLM / Video Understanding
 **Keywords**: Video benchmark, human-centric video understanding, multimodal large language models, emotion perception, speech-visual alignment
 

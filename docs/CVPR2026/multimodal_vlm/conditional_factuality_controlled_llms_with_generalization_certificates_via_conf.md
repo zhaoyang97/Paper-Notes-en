@@ -18,8 +18,8 @@ content_hash: aca9ac09fb94b01d
 # Conditional Factuality Controlled LLMs with Generalization Certificates via Conformal Sampling
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27403](https://arxiv.org/abs/2603.27403)
-**Code**: Available
+**arXiv**: [2603.27403](https://arxiv.org/abs/2603.27403)  
+**Code**: Available  
 **Area**: Multimodal VLM / LLM Reliability
 **Keywords**: Conditional conformal prediction, hallucination control, inference-time sampling, PAC certificates, set-valued output
 
@@ -166,8 +166,8 @@ TriviaQA ($\alpha = 0.25$):
 # Conditional Factuality Controlled LLMs with Generalization Certificates via Conformal Sampling
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27403](https://arxiv.org/abs/2603.27403)
-**Code**: [GitHub](https://github.com/) (mentioned in paper)
+**arXiv**: [2603.27403](https://arxiv.org/abs/2603.27403)  
+**Code**: [GitHub](https://github.com/) (mentioned in paper)  
 **Area**: Multimodal VLM / LLM Reliability
 **Keywords**: Conformal prediction, conditional coverage, LLM hallucination control, set-valued prediction, PAC guarantees
 

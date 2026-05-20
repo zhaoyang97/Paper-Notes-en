@@ -18,8 +18,8 @@ content_hash: 45889b8cda61e122
 # VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL
 
 **Conference**: ICLR 2026
-**arXiv**: [2510.02282](https://arxiv.org/abs/2510.02282)
-**Code**: [Project Page](https://vidguard-r1.github.io/)
+**arXiv**: [2510.02282](https://arxiv.org/abs/2510.02282)  
+**Code**: [Project Page](https://vidguard-r1.github.io/)  
 **Area**: Multimodal VLM
 **Keywords**: AI-generated video detection, MLLM reasoning, GRPO, temporal artifacts, explainable forensics
 

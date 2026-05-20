@@ -18,8 +18,8 @@ content_hash: 3c3681b68b4527bc
 # Coded-E2LF: Coded Aperture Light Field Imaging from Events
 
 **Conference**: CVPR2026
-**arXiv**: [2602.22620](https://arxiv.org/abs/2602.22620)
-**Code**: To be confirmed
+**arXiv**: [2602.22620](https://arxiv.org/abs/2602.22620)  
+**Code**: To be confirmed  
 **Area**: Others (Computational Photography / Event Camera)
 **Keywords**: light field imaging, event camera, coded aperture, deep optics, end-to-end optimization, black-first coding sequence
 
@@ -69,9 +69,9 @@ The Coded-E2LF system comprises three components: **(1)** hardware layer—progr
 
 - **Design**: The black pattern is fixed as the first element of the sequence ($a^{(1)} = \mathbf{0}$), followed by $N-1$ coded patterns applied successively.
 - **Advantages**:
-  - Event images $\{E^{(1,n)}\}_{n=2}^{N}$ from the initial black pattern to each subsequent pattern directly correspond to intensity-based measurements.
-  - Substantially reduces event count—compared to arbitrary sequences, BF avoids redundant events between adjacent non-zero patterns.
-  - $N-1$ event images suffice to reconstruct the complete $u \times v$ view light field.
+    - Event images $\{E^{(1,n)}\}_{n=2}^{N}$ from the initial black pattern to each subsequent pattern directly correspond to intensity-based measurements.
+    - Substantially reduces event count—compared to arbitrary sequences, BF avoids redundant events between adjacent non-zero patterns.
+    - $N-1$ event images suffice to reconstruct the complete $u \times v$ view light field.
 - **Measured efficiency**: The entire coding sequence can be acquired in approximately 20 ms.
 
 ### Reference-Aware Event Generation (RA)
@@ -86,10 +86,10 @@ The Coded-E2LF system comprises three components: **(1)** hardware layer—progr
 
 - **AcqNet (learning coding patterns)**: Takes randomly initialized continuous patterns $\tilde{a}^{(n)} \in [0,1]^{u \times v}$ as input; after training convergence, patterns are binarized to $a^{(n)} \in \{0,1\}^{u \times v}$.
 - **RecNet (light field reconstruction)**: Receives $N-1$ event images and outputs the complete light field $\hat{L} \in \mathbb{R}^{H \times W \times u \times v}$.
-  - Architecture: CNN-based encoder-decoder that processes spatial and angular dimensions separately before fusion.
+    - Architecture: CNN-based encoder-decoder that processes spatial and angular dimensions separately before fusion.
 - **Loss function**: $\mathcal{L} = \mathcal{L}_{\text{recon}}(\hat{L}, L_{\text{GT}}) + \gamma \cdot \mathcal{L}_{\text{binary}}$
-  - $\mathcal{L}_{\text{recon}}$: L1 + SSIM loss for light field reconstruction.
-  - $\mathcal{L}_{\text{binary}}$: Regularization encouraging patterns toward binary values.
+    - $\mathcal{L}_{\text{recon}}$: L1 + SSIM loss for light field reconstruction.
+    - $\mathcal{L}_{\text{binary}}$: Regularization encouraging patterns toward binary values.
 - **Training pipeline**: Forward pass—AcqNet generates patterns → RA simulates events → RecNet reconstructs light field; Backward pass—gradients propagate through the entire pipeline for joint optimization of coding and decoding.
 
 ## Experiments

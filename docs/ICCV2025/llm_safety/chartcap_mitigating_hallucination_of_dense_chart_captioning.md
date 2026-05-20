@@ -18,8 +18,8 @@ content_hash: 0e07a7e18c19a7ad
 # ChartCap: Mitigating Hallucination of Dense Chart Captioning
 
 **Conference**: ICCV 2025
-**arXiv**: [2508.03164](https://arxiv.org/abs/2508.03164)
-**Code**: [https://junyoung-00.github.io/ChartCap/](https://junyoung-00.github.io/ChartCap/)
+**arXiv**: [2508.03164](https://arxiv.org/abs/2508.03164)  
+**Code**: [https://junyoung-00.github.io/ChartCap/](https://junyoung-00.github.io/ChartCap/)  
 **Area**: LLM Safety
 **Keywords**: Chart understanding, vision-language models, hallucination mitigation, chart captioning, dataset construction
 

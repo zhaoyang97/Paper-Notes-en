@@ -18,8 +18,8 @@ content_hash: 578d992fb5979ae2
 # DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2406.09795](https://arxiv.org/abs/2406.09795)
-**Code**: [https://github.com/yuexihang/DeltaPhi](https://github.com/yuexihang/DeltaPhi)
+**arXiv**: [2406.09795](https://arxiv.org/abs/2406.09795)  
+**Code**: [https://github.com/yuexihang/DeltaPhi](https://github.com/yuexihang/DeltaPhi)  
 **Area**: Scientific Computing / Neural PDE Solvers
 **Keywords**: neural operators, residual learning, data efficiency, PDE solving, implicit data augmentation
 

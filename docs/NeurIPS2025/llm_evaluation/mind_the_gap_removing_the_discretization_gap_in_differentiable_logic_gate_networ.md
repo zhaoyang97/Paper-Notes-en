@@ -18,8 +18,8 @@ content_hash: a66775d1fa45937a
 # Mind the Gap: Removing the Discretization Gap in Differentiable Logic Gate Networks
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.07500](https://arxiv.org/abs/2506.07500)
-**Code**: To be confirmed
+**arXiv**: [2506.07500](https://arxiv.org/abs/2506.07500)  
+**Code**: To be confirmed  
 **Area**: LLM Evaluation
 **Keywords**: Logic Gate Networks, Gumbel-Softmax, Discretization Gap, Efficient Inference, Loss Landscape Smoothing
 

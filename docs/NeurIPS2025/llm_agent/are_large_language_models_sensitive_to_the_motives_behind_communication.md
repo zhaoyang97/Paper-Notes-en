@@ -17,8 +17,8 @@ content_hash: fd3bbe09a9097d16
 # Are Large Language Models Sensitive to the Motives Behind Communication?
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19687](https://arxiv.org/abs/2510.19687)
-**Code**: None
+**arXiv**: [2510.19687](https://arxiv.org/abs/2510.19687)  
+**Code**: None  
 **Area**: LLM Agent / Social Cognition
 **Keywords**: motivational vigilance, strategic communication, information credibility, rational model
 

@@ -18,8 +18,8 @@ content_hash: b263461530cab38c
 # Think Straight, Stop Smart: Structured Reasoning for Efficient Multi-Hop RAG
 
 **Conference**: NeurIPS 2025 Workshop
-**arXiv**: [2510.19171](https://arxiv.org/abs/2510.19171)
-**Code**: None
+**arXiv**: [2510.19171](https://arxiv.org/abs/2510.19171)  
+**Code**: None  
 **Area**: NLP / Retrieval-Augmented Generation
 **Keywords**: Multi-hop RAG, structured reasoning, template caching, termination control, inference efficiency
 

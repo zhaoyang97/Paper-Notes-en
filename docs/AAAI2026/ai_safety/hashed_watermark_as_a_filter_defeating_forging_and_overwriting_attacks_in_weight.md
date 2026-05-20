@@ -19,8 +19,8 @@ content_hash: 57e81cdf362b823c
 # Hashed Watermark as a Filter: A Unified Defense Against Forging and Overwriting Attacks in Neural Network Watermarking
 
 **Conference**: AAAI 2026
-**arXiv**: [2507.11137](https://arxiv.org/abs/2507.11137)
-**Code**: [GitHub](https://github.com/AIResearch-Group/NeuralMark)
+**arXiv**: [2507.11137](https://arxiv.org/abs/2507.11137)  
+**Code**: [GitHub](https://github.com/AIResearch-Group/NeuralMark)  
 **Area**: AI Security / Model Watermarking
 **Keywords**: Neural network watermarking, model intellectual property protection, forging attack, overwriting attack, hash function, white-box watermarking
 

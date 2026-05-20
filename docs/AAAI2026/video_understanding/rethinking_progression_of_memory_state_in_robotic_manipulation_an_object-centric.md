@@ -18,8 +18,8 @@ content_hash: 657afde530b5a803
 # Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11478](https://arxiv.org/abs/2511.11478)
-**Code**: [libero-mem.github.io](https://libero-mem.github.io)
+**arXiv**: [2511.11478](https://arxiv.org/abs/2511.11478)  
+**Code**: [libero-mem.github.io](https://libero-mem.github.io)  
 **Area**: Video Understanding / Robotic Manipulation
 **Keywords**: Non-Markovian Decision Making, Object-Centric Memory, State Space Models, VLA, Robotics Benchmark
 

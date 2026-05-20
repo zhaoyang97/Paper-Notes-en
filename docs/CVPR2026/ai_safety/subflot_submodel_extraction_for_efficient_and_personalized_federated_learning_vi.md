@@ -18,8 +18,8 @@ content_hash: 742e7c0c385946ae
 # SubFLOT: Submodel Extraction for Efficient and Personalized Federated Learning via Optimal Transport
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.06631](https://arxiv.org/abs/2604.06631)
-**Code**: N/A
+**arXiv**: [2604.06631](https://arxiv.org/abs/2604.06631)  
+**Code**: N/A  
 **Area**: AI Security
 **Keywords**: Federated Learning, Network Pruning, Optimal Transport, Personalized Models, Heterogeneous Systems
 

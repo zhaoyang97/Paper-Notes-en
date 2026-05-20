@@ -17,8 +17,8 @@ content_hash: 5170455f8822e9f0
 # Forget Less by Learning from Parents Through Hierarchical Relationships
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.01892](https://arxiv.org/abs/2601.01892)
-**Code**: None
+**arXiv**: [2601.01892](https://arxiv.org/abs/2601.01892)  
+**Code**: None  
 **Area**: Continual Learning / Image Generation
 **Keywords**: Custom diffusion models, catastrophic forgetting, hyperbolic space, hierarchical relationships, concept learning
 

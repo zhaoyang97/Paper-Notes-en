@@ -18,8 +18,8 @@ content_hash: c0a083e5dc302651
 # Medic-AD: Towards Medical Vision-Language Model's Clinical Intelligence
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.27176](https://arxiv.org/abs/2603.27176)
-**Code**: [https://github.com/AIDASLab/Medic-AD](https://github.com/AIDASLab/Medic-AD)
+**arXiv**: [2603.27176](https://arxiv.org/abs/2603.27176)  
+**Code**: [https://github.com/AIDASLab/Medic-AD](https://github.com/AIDASLab/Medic-AD)  
 **Area**: Multimodal VLM
 **Keywords**: Medical VLM, Anomaly Detection, Longitudinal Tracking, Interpretability, Heatmap
 

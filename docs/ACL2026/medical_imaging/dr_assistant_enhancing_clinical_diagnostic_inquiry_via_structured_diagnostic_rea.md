@@ -18,8 +18,8 @@ content_hash: c0aec830033facb4
 # Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning
 
 **Conference**: ACL 2026
-**arXiv**: [2601.13690](https://arxiv.org/abs/2601.13690)
-**Code**: [GitHub](https://github.com/YGswu/Dr.-Assistant)
+**arXiv**: [2601.13690](https://arxiv.org/abs/2601.13690)  
+**Code**: [GitHub](https://github.com/YGswu/Dr.-Assistant)  
 **Area**: Medical Imaging
 **Keywords**: Clinical Diagnostic Reasoning, Reinforcement Learning, Structured Data, Inquiry Guidance, CDSS
 

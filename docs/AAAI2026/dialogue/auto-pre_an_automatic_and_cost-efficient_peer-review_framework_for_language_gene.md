@@ -18,8 +18,8 @@ content_hash: a7580888c276f129
 # Auto-PRE: An Automatic and Cost-Efficient Peer-Review Framework for Language Generation Evaluation
 
 **Conference**: AAAI 2026
-**arXiv**: [2410.12265](https://arxiv.org/abs/2410.12265)
-**Code**: [cjj826/Auto-PRE](https://github.com/cjj826/Auto-PRE)
+**arXiv**: [2410.12265](https://arxiv.org/abs/2410.12265)  
+**Code**: [cjj826/Auto-PRE](https://github.com/cjj826/Auto-PRE)  
 **Area**: Dialogue Systems
 **Keywords**: LLM evaluation, peer review, evaluator selection, automatic qualification exam, LLM-as-judge
 

@@ -18,8 +18,8 @@ content_hash: 79bd815531650552
 # LeGrad: An Explainability Method for Vision Transformers via Feature Formation Sensitivity
 
 **Conference**: ICCV 2025
-**arXiv**: [2404.03214](https://arxiv.org/abs/2404.03214)
-**Code**: None
+**arXiv**: [2404.03214](https://arxiv.org/abs/2404.03214)  
+**Code**: None  
 **Area**: Image Segmentation
 **Keywords**: Explainability, Vision Transformer, Attention Gradient, Open-Vocabulary Segmentation, CLIP
 
@@ -53,23 +53,23 @@ The core idea of LeGrad is straightforward: compute the gradient of the target c
 
 1. **Per-layer explanation map computation**:
 
-   - For a given layer $l$, compute the activation $s^l = \bar{y}^l_{[\hat{c}]}$ using the mean of the intermediate token representations $Z^l$, denoted $\bar{z}^l$, passed through the classifier/text embedding $\mathcal{C}$.
-   - Compute the gradient of $s^l$ with respect to the attention map $\mathbf{A}^l \in \mathbb{R}^{h \times (n+1) \times (n+1)}$: $\nabla\mathbf{A}^l = \frac{\partial s^l}{\partial \mathbf{A}^l}$
-   - Key step: clip negative gradients via ReLU $(\nabla\mathbf{A}^l_{h,i,.})^+$ to prevent negative gradients from corrupting positive activations.
-   - Average across heads and patch dimensions to obtain $\hat{E}^l(s^l) = \frac{1}{h \cdot (n+1)}\sum_h\sum_i(\nabla\mathbf{A}^l_{h,i,.})^+$
-   - **Design Motivation**: Gradients directly reflect the sensitivity of attention maps to the prediction, which is more direct than gradient-weighted attention; per-layer gradients are naturally additive without requiring additional normalization.
+    - For a given layer $l$, compute the activation $s^l = \bar{y}^l_{[\hat{c}]}$ using the mean of the intermediate token representations $Z^l$, denoted $\bar{z}^l$, passed through the classifier/text embedding $\mathcal{C}$.
+    - Compute the gradient of $s^l$ with respect to the attention map $\mathbf{A}^l \in \mathbb{R}^{h \times (n+1) \times (n+1)}$: $\nabla\mathbf{A}^l = \frac{\partial s^l}{\partial \mathbf{A}^l}$
+    - Key step: clip negative gradients via ReLU $(\nabla\mathbf{A}^l_{h,i,.})^+$ to prevent negative gradients from corrupting positive activations.
+    - Average across heads and patch dimensions to obtain $\hat{E}^l(s^l) = \frac{1}{h \cdot (n+1)}\sum_h\sum_i(\nabla\mathbf{A}^l_{h,i,.})^+$
+    - **Design Motivation**: Gradients directly reflect the sensitivity of attention maps to the prediction, which is more direct than gradient-weighted attention; per-layer gradients are naturally additive without requiring additional normalization.
 
 2. **Multi-layer aggregation**:
 
-   - Average the per-layer explanation maps: $\bar{\mathbf{E}} = \frac{1}{L}\sum_l \hat{E}^l(s^l)_{1:}$
-   - Remove the CLS token column, reshape to 2D, and apply min-max normalization: $\mathbf{E} = \text{norm}(\text{reshape}(\bar{\mathbf{E}}))$
-   - **Design Motivation**: Information aggregation in ViTs is distributed across multiple layers, especially in larger models; using only the final layer discards rich intermediate-layer information.
+    - Average the per-layer explanation maps: $\bar{\mathbf{E}} = \frac{1}{L}\sum_l \hat{E}^l(s^l)_{1:}$
+    - Remove the CLS token column, reshape to 2D, and apply min-max normalization: $\mathbf{E} = \text{norm}(\text{reshape}(\bar{\mathbf{E}}))$
+    - **Design Motivation**: Information aggregation in ViTs is distributed across multiple layers, especially in larger models; using only the final layer discards rich intermediate-layer information.
 
 3. **Attentional Pooler adaptation** (e.g., SigLIP):
 
-   - For ViTs using attentional pooling, process the intermediate representations $Z^l$ at each layer with the Attentional Pooler to obtain pooled queries $q^l$.
-   - Replace the self-attention map with the Pooler's attention map $\mathbf{A}_{pool} \in \mathbb{R}^{h \times 1 \times n}$ for gradient computation.
-   - **Design Motivation**: This adaptation allows LeGrad to support different feature aggregation strategies beyond CLS token–based architectures.
+    - For ViTs using attentional pooling, process the intermediate representations $Z^l$ at each layer with the Attentional Pooler to obtain pooled queries $q^l$.
+    - Replace the self-attention map with the Pooler's attention map $\mathbf{A}_{pool} \in \mathbb{R}^{h \times 1 \times n}$ for gradient computation.
+    - **Design Motivation**: This adaptation allows LeGrad to support different feature aggregation strategies beyond CLS token–based architectures.
 
 ### Loss & Training
 

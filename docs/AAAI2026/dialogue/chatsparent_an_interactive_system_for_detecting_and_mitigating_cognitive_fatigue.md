@@ -18,8 +18,8 @@ content_hash: ed4c901854acc167
 # Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs
 
 **Conference**: AAAI 2026
-**arXiv**: [2601.11526](https://arxiv.org/abs/2601.11526)
-**Code**: N/A
+**arXiv**: [2601.11526](https://arxiv.org/abs/2601.11526)  
+**Code**: N/A  
 **Area**: Human-Computer Interaction / LLM Reliability
 **Keywords**: cognitive fatigue, large language models, attention decay, entropy collapse, interpretability
 

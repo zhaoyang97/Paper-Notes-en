@@ -18,8 +18,8 @@ content_hash: 2888cfa811138e35
 # QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture
 
 **Conference**: ICLR 2026
-**arXiv**: [2601.19580](https://arxiv.org/abs/2601.19580)
-**Code**: Available (mentioned in the paper; specific link to be released)
+**arXiv**: [2601.19580](https://arxiv.org/abs/2601.19580)  
+**Code**: Available (mentioned in the paper; specific link to be released)  
 **Area**: Human Understanding / 3D Vision
 **Keywords**: Quaternion kinematics, 3D human motion capture, state space model, PD controller, acceleration augmentation
 
@@ -51,21 +51,21 @@ QuaMo proposes a 3D human kinematics capture method based on quaternion differen
 
 1. **Quaternion Differential Equation (QDE) and Constrained Integration**
 
-   - **Function**: Accurately solves rotational updates on the unit quaternion sphere, eliminating Euler angle discontinuities.
-   - **Mechanism**: Given angular velocity $\omega \in \mathbb{R}^3$, the quaternion velocity is defined as $\dot{q} = \frac{1}{2}\Omega(\omega)q$, where $\Omega(\omega)$ is a $4\times4$ skew-symmetric matrix. Assuming $\omega$ is constant over $\Delta t$, the exact solution is $q_{t+\Delta t} = \exp\!\left(\frac{\Delta t}{2}\Omega(\omega_{t+\Delta t})\right)q_t = q_\omega \otimes q_t$, where $\otimes$ denotes the Hamilton product. This guarantees that $q_{t+\Delta t}$ always lies on $\mathcal{S}^3$, requiring no post-hoc renormalization.
-   - **Design Motivation**: Conventional Euler integration $q_{t+\Delta t} \approx q_t + \dot{q}_t \Delta t$ violates the unit quaternion constraint and accumulates errors. Matrix-exponential integration guarantees an exact solution respecting the Lie group constraint.
+    - **Function**: Accurately solves rotational updates on the unit quaternion sphere, eliminating Euler angle discontinuities.
+    - **Mechanism**: Given angular velocity $\omega \in \mathbb{R}^3$, the quaternion velocity is defined as $\dot{q} = \frac{1}{2}\Omega(\omega)q$, where $\Omega(\omega)$ is a $4\times4$ skew-symmetric matrix. Assuming $\omega$ is constant over $\Delta t$, the exact solution is $q_{t+\Delta t} = \exp\!\left(\frac{\Delta t}{2}\Omega(\omega_{t+\Delta t})\right)q_t = q_\omega \otimes q_t$, where $\otimes$ denotes the Hamilton product. This guarantees that $q_{t+\Delta t}$ always lies on $\mathcal{S}^3$, requiring no post-hoc renormalization.
+    - **Design Motivation**: Conventional Euler integration $q_{t+\Delta t} \approx q_t + \dot{q}_t \Delta t$ violates the unit quaternion constraint and accumulates errors. Matrix-exponential integration guarantees an exact solution respecting the Lie group constraint.
 
 2. **Meta-PD Controller with Second-Order Acceleration Augmentation**
 
-   - **Function**: Adaptively modulates the control signal strength based on the rate of change of the reference pose.
-   - **Mechanism**: The angular acceleration is computed as $\dot{\omega}_t = \kappa_P \operatorname{vec}(\hat{q}_t \otimes q_t^*) - \kappa_D \omega_t + b_t + \kappa_A\!\left(\operatorname{vec}(\hat{q}_t \otimes \hat{q}_{t-\Delta t}^*) - \operatorname{vec}(\hat{q}_{t-\Delta t} \otimes \hat{q}_{t-2\Delta t}^*)\right)$. The first two terms constitute classical PD control (proportional tracking error; derivative jitter suppression), and $b_t$ is a data-driven bias. The key innovation is the acceleration augmentation term (last term), which computes the second-order quaternion finite difference of the reference pose: it increases the control force during rapid motion and naturally diminishes as the target is approached.
-   - **Design Motivation**: Standard PD control lags behind sudden motion changes. The acceleration augmentation term leverages the "acceleration" of the reference signal to anticipate motion trends, accelerating tracking while reducing overshoot. All gains $\kappa_P, \kappa_D, \kappa_A$ and the bias $b_t$ are predicted by a ControlNet from the current state.
+    - **Function**: Adaptively modulates the control signal strength based on the rate of change of the reference pose.
+    - **Mechanism**: The angular acceleration is computed as $\dot{\omega}_t = \kappa_P \operatorname{vec}(\hat{q}_t \otimes q_t^*) - \kappa_D \omega_t + b_t + \kappa_A\!\left(\operatorname{vec}(\hat{q}_t \otimes \hat{q}_{t-\Delta t}^*) - \operatorname{vec}(\hat{q}_{t-\Delta t} \otimes \hat{q}_{t-2\Delta t}^*)\right)$. The first two terms constitute classical PD control (proportional tracking error; derivative jitter suppression), and $b_t$ is a data-driven bias. The key innovation is the acceleration augmentation term (last term), which computes the second-order quaternion finite difference of the reference pose: it increases the control force during rapid motion and naturally diminishes as the target is approached.
+    - **Design Motivation**: Standard PD control lags behind sudden motion changes. The acceleration augmentation term leverages the "acceleration" of the reference signal to anticipate motion trends, accelerating tracking while reducing overshoot. All gains $\kappa_P, \kappa_D, \kappa_A$ and the bias $b_t$ are predicted by a ControlNet from the current state.
 
 3. **InitNet Initialization and Global Translation**
 
-   - **Function**: Provides a reasonable initial state for the kinematic system and tracks global displacement.
-   - **Mechanism**: InitNet predicts the initial state $q_0, \omega_0$ and a learnable shape parameter $\beta_{fix}$ from the first two reference frames $\hat{q}_{0:1}$ and the initial shape parameter $\beta_0$. Global translation is estimated with a PD controller and Euler integration: $r_{t+\Delta t} = r_t + \left(v_t + (\kappa_P(\hat{r}_t - r_t) - \kappa_D v_t)\Delta t\right)\Delta t$.
-   - **Design Motivation**: An online system has no historical state at the first frame, necessitating a dedicated initialization network. The shape parameter is fixed across the sequence but remains fine-tunable.
+    - **Function**: Provides a reasonable initial state for the kinematic system and tracks global displacement.
+    - **Mechanism**: InitNet predicts the initial state $q_0, \omega_0$ and a learnable shape parameter $\beta_{fix}$ from the first two reference frames $\hat{q}_{0:1}$ and the initial shape parameter $\beta_0$. Global translation is estimated with a PD controller and Euler integration: $r_{t+\Delta t} = r_t + \left(v_t + (\kappa_P(\hat{r}_t - r_t) - \kappa_D v_t)\Delta t\right)\Delta t$.
+    - **Design Motivation**: An online system has no historical state at the first frame, necessitating a dedicated initialization network. The shape parameter is fixed across the sequence but remains fine-tunable.
 
 ### Loss & Training
 

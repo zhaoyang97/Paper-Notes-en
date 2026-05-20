@@ -18,8 +18,8 @@ content_hash: 728e840987700ccb
 # DynamicGTR: Leveraging Graph Topology Representation Preferences to Boost VLM Capabilities on Graph QAs
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.21864](https://arxiv.org/abs/2602.21864)
-**Code**: To be confirmed
+**arXiv**: [2602.21864](https://arxiv.org/abs/2602.21864)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: Graph QA, graph topology representation, VLM zero-shot reasoning, dynamic routing, accuracy-conciseness trade-off
 

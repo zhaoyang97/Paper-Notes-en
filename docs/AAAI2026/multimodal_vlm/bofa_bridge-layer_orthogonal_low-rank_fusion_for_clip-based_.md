@@ -18,8 +18,8 @@ content_hash: 7848c1cf6769c629
 # BOFA: Bridge-Layer Orthogonal Low-Rank Fusion for CLIP-Based Class-Incremental Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11421](https://arxiv.org/abs/2511.11421)
-**Code**: Not released
+**arXiv**: [2511.11421](https://arxiv.org/abs/2511.11421)  
+**Code**: Not released  
 **Area**: Multimodal VLM
 **Keywords**: Class-incremental learning, CLIP, orthogonal low-rank fusion, cross-modal prototypes, catastrophic forgetting
 

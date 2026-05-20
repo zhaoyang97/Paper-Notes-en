@@ -18,8 +18,8 @@ content_hash: cf3c6fa0d9f7ba8b
 # Refining Few-Step Text-to-Multiview Diffusion via Reinforcement Learning
 
 **Conference**: CVPR2026
-**arXiv**: [2505.20107](https://arxiv.org/abs/2505.20107)
-**Code**: [ZiyiZhang27/MVC-ZigAL](https://github.com/ZiyiZhang27/MVC-ZigAL)
+**arXiv**: [2505.20107](https://arxiv.org/abs/2505.20107)  
+**Code**: [ZiyiZhang27/MVC-ZigAL](https://github.com/ZiyiZhang27/MVC-ZigAL)  
 **Area**: Image Generation
 **Keywords**: Multi-view generation, diffusion models, reinforcement learning fine-tuning, few-step inference, cross-view consistency
 

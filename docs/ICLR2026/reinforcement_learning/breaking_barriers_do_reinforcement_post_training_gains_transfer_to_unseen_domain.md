@@ -19,8 +19,8 @@ content_hash: fead83f434632ca5
 # Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?
 
 **Conference**: ICLR2026
-**arXiv**: [2506.19733](https://arxiv.org/abs/2506.19733)
-**Code**: To be confirmed
+**arXiv**: [2506.19733](https://arxiv.org/abs/2506.19733)  
+**Code**: To be confirmed  
 **Area**: Reinforcement Learning
 **Keywords**: Reinforcement Post-Training (RPT), RLVR, Cross-Domain Generalization, Structured Reasoning, Unstructured Reasoning, LLM
 

@@ -18,8 +18,8 @@ content_hash: 62fc03adaddc1514
 # FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07322](https://arxiv.org/abs/2511.07322)
-**Code**: [https://github.com/jinsong8/FinRpt](https://github.com/jinsong8/FinRpt)
+**arXiv**: [2511.07322](https://arxiv.org/abs/2511.07322)  
+**Code**: [https://github.com/jinsong8/FinRpt](https://github.com/jinsong8/FinRpt)  
 **Area**: LLM Agent / Financial NLP
 **Keywords**: Equity research report generation, multi-agent framework, financial dataset, evaluation system, report enhancement
 

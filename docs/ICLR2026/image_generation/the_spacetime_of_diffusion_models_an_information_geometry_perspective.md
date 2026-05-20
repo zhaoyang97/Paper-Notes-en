@@ -18,8 +18,8 @@ content_hash: b850e72cd9eac839
 # The Spacetime of Diffusion Models: An Information Geometry Perspective
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.17517](https://arxiv.org/abs/2505.17517)
-**Code**: [GitHub](https://github.com/rafalkarczewski/spacetime-geometry)
+**arXiv**: [2505.17517](https://arxiv.org/abs/2505.17517)  
+**Code**: [GitHub](https://github.com/rafalkarczewski/spacetime-geometry)  
 **Area**: Diffusion Models / Information Geometry / Theoretical Analysis
 **Keywords**: Spacetime Geometry, Fisher-Rao Metric, Pullback Geometry, Diffusion Edit Distance, Transition Path Sampling
 

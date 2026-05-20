@@ -18,8 +18,8 @@ content_hash: 7945e90f13805f23
 # NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.22059](https://arxiv.org/abs/2602.22059)
-**Code**: [Available](https://github.com/Event-AHU/OpenFusion)
+**arXiv**: [2602.22059](https://arxiv.org/abs/2602.22059)  
+**Code**: [Available](https://github.com/Event-AHU/OpenFusion)  
 **Area**: Scientific Computing
 **Keywords**: Neural Operator, Mixture of Experts (MoE), PDE Solving, Large-Scale Pre-Training, Fourier Attention
 

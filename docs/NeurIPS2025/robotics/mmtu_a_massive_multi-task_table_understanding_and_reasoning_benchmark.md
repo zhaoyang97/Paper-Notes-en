@@ -18,8 +18,8 @@ content_hash: 1cde311b9fa7198e
 # MMTU: A Massive Multi-Task Table Understanding and Reasoning Benchmark
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.05587](https://arxiv.org/abs/2506.05587)
-**Code**: [Available](https://github.com/MMTU-Benchmark/MMTU)
+**arXiv**: [2506.05587](https://arxiv.org/abs/2506.05587)  
+**Code**: [Available](https://github.com/MMTU-Benchmark/MMTU)  
 **Area**: Robotics
 **Keywords**: table understanding, benchmark, LLM evaluation, multi-task reasoning, structured data
 

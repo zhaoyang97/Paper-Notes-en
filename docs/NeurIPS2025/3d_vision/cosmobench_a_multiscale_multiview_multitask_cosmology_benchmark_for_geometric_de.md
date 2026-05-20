@@ -18,8 +18,8 @@ content_hash: 5d77dd7f40ffe5e4
 # CosmoBench: A Multiscale, Multiview, Multitask Cosmology Benchmark for Geometric Deep Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.03707](https://arxiv.org/abs/2507.03707)
-**Code**: [GitHub](https://github.com/TeresaHuang/CosmoBench)
+**arXiv**: [2507.03707](https://arxiv.org/abs/2507.03707)  
+**Code**: [GitHub](https://github.com/TeresaHuang/CosmoBench)  
 **Area**: 3D Vision
 **Keywords**: geometric deep learning, cosmology benchmark, point cloud, graph neural network, merger tree
 

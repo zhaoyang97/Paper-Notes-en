@@ -19,8 +19,8 @@ content_hash: 4d5c72d8b2310ebd
 # OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.21101](https://arxiv.org/abs/2506.21101)
-**Code**: [GitHub](https://github.com/lcs0215/OracleFusion)
+**arXiv**: [2506.21101](https://arxiv.org/abs/2506.21101)  
+**Code**: [GitHub](https://github.com/lcs0215/OracleFusion)  
 **Area**: Multimodal VLM / Oracle Bone Script Decipherment / Semantic Typography
 **Keywords**: oracle bone script, semantic typography, MLLM, vector graphics generation, spatial awareness reasoning, score distillation
 

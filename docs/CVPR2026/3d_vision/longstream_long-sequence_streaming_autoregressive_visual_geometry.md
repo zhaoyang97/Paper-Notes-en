@@ -18,8 +18,8 @@ content_hash: c665c553e3e010d8
 # LongStream: Long-Sequence Streaming Autoregressive Visual Geometry
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.13172](https://arxiv.org/abs/2602.13172)
-**Code**: [Project Page](https://3dagentworld.github.io/longstream/)
+**arXiv**: [2602.13172](https://arxiv.org/abs/2602.13172)  
+**Code**: [Project Page](https://3dagentworld.github.io/longstream/)  
 **Area**: 3D Vision
 **Keywords**: Streaming 3D reconstruction, autoregressive model, pose estimation, KV cache, long sequence
 

@@ -18,8 +18,8 @@ content_hash: 4590a4dd000a81da
 # MotionFollower: Editing Video Motion via Lightweight Score-Guided Diffusion
 
 **Conference**: ICCV2025
-**arXiv**: [2405.20325](https://arxiv.org/abs/2405.20325)
-**Code**: [francis-rings/MotionFollower](https://francis-rings.github.io/MotionFollower/)
+**arXiv**: [2405.20325](https://arxiv.org/abs/2405.20325)  
+**Code**: [francis-rings/MotionFollower](https://francis-rings.github.io/MotionFollower/)  
 **Area**: Model Compression
 **Keywords**: video motion editing, diffusion models, score guidance, lightweight controller, pose transfer
 

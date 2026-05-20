@@ -18,8 +18,8 @@ content_hash: d9bbf70cb1edd2d1
 # AutoTool: Efficient Tool Selection for Large Language Model Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.14650](https://arxiv.org/abs/2511.14650)
-**Code**: [GitHub](https://github.com/jiajingyyyyyy/AutoTool)
+**arXiv**: [2511.14650](https://arxiv.org/abs/2511.14650)  
+**Code**: [GitHub](https://github.com/jiajingyyyyyy/AutoTool)  
 **Area**: Agent
 **Keywords**: tool selection, LLM agent efficiency, tool usage inertia, graph-based planning, inference cost reduction
 
@@ -46,8 +46,8 @@ AutoTool attempts an *inertia call* before each standard LLM invocation, compris
 
 - **Hierarchical Node Structure**: Tool Nodes encode functional descriptions and execution states; each Tool Node embeds a sub-graph of Parameter Nodes.
 - **Two Types of Directed Edges**:
-  - *Tool Sequence Edges*: connect Tool Nodes and encode sequential dependencies.
-  - *Parameter Dependency Edges*: connect Parameter Nodes and model inter-tool data flow.
+    - *Tool Sequence Edges*: connect Tool Nodes and encode sequential dependencies.
+    - *Parameter Dependency Edges*: connect Parameter Nodes and model inter-tool data flow.
 - **Online Incremental Construction**: the graph is learned dynamically from historical execution trajectories; edge weights are updated via positive/negative reinforcement based on success/failure feedback.
 - Edge weights are reinforced only from high-confidence LLM-generated sequences, preventing error propagation from inertia calls.
 

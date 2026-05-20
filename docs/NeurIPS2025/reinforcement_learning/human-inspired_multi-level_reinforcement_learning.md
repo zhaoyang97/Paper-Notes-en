@@ -18,8 +18,8 @@ content_hash: 5c29fd38727f0ab9
 # Human-Inspired Multi-Level Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2501.07502](https://arxiv.org/abs/2501.07502)
-**Code**: None
+**arXiv**: [2501.07502](https://arxiv.org/abs/2501.07502)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: rating-based RL, KL divergence, human feedback, multi-level learning, reward-free RL
 

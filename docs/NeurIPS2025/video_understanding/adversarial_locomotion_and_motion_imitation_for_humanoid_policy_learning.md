@@ -18,8 +18,8 @@ content_hash: 5c932862442cdadf
 # Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2504.14305](https://arxiv.org/abs/2504.14305)
-**Code**: [Project Page](https://almi-humanoid.github.io)
+**arXiv**: [2504.14305](https://arxiv.org/abs/2504.14305)  
+**Code**: [Project Page](https://almi-humanoid.github.io)  
 **Area**: Video Understanding
 **Keywords**: Humanoid Robot, Adversarial Learning, Motion Imitation, Whole-Body Control, Sim-to-Real
 
@@ -51,13 +51,13 @@ Two coupled zero-sum Markov games trained in alternation: (1) when learning $\pi
 
 1. **Zero-Sum Game Formulation**:
 
-   - Mechanism: $\max_{\pi^l} \min_{\pi^u} V_\rho^l$ and $\max_{\pi^u} \min_{\pi^l} V_\rho^u$
-   - Theoretical guarantee: Theorem 3.1 proves convergence to an $\epsilon$-approximate Nash equilibrium
+    - Mechanism: $\max_{\pi^l} \min_{\pi^u} V_\rho^l$ and $\max_{\pi^u} \min_{\pi^l} V_\rho^u$
+    - Theoretical guarantee: Theorem 3.1 proves convergence to an $\epsilon$-approximate Nash equilibrium
 
 2. **Command-Space Adversary (Simplified Implementation)**:
 
-   - Instead of directly optimizing opponent parameters, adversarial commands are sampled (more extreme motions / higher velocities)
-   - An Arm Curriculum progressively increases adversarial difficulty
+    - Instead of directly optimizing opponent parameters, adversarial commands are sampled (more extreme motions / higher velocities)
+    - An Arm Curriculum progressively increases adversarial difficulty
 
 3. **PPO Training**: 3 rounds of adversarial iteration, 4096 parallel environments, approximately 17 hours
 

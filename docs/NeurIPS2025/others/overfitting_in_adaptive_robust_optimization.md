@@ -17,8 +17,8 @@ content_hash: fe158df255023ca8
 # Overfitting in Adaptive Robust Optimization
 
 **Conference**: NeurIPS 2025 (Workshop: MLxOR)
-**arXiv**: [2509.16451](https://arxiv.org/abs/2509.16451)
-**Code**: None
+**arXiv**: [2509.16451](https://arxiv.org/abs/2509.16451)  
+**Code**: None  
 **Area**: Other
 **Keywords**: Adaptive Robust Optimization, Overfitting, Regularization, Uncertainty Set, Affine Decision Rules
 

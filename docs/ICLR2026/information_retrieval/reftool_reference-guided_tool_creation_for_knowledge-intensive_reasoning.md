@@ -19,8 +19,8 @@ content_hash: e556f702c2425ee2
 
 **Conference**: ICLR 2026
 
-**arXiv**: [2505.21413](https://arxiv.org/abs/2505.21413)
-**Code**: To be confirmed
+**arXiv**: [2505.21413](https://arxiv.org/abs/2505.21413)  
+**Code**: To be confirmed  
 **Area**: Information Retrieval
 **Keywords**: tool creation, reference-guided, knowledge-intensive reasoning, executable tools, hierarchical toolbox
 

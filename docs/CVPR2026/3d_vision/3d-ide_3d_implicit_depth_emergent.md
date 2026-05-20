@@ -18,8 +18,8 @@ content_hash: 40ec83b346abe42c
 # 3D-IDE: 3D Implicit Depth Emergent
 
 **Conference**: CVPR 2026
-**arXiv**: [2604.03296](https://arxiv.org/abs/2604.03296)
-**Code**: [GitHub](https://github.com/ChushanZhang/3D-IDE)
+**arXiv**: [2604.03296](https://arxiv.org/abs/2604.03296)  
+**Code**: [GitHub](https://github.com/ChushanZhang/3D-IDE)  
 **Area**: 3D Vision / Multimodal VLM
 **Keywords**: 3D scene understanding, multimodal large language models, implicit geometry emergence, depth estimation, zero inference overhead
 

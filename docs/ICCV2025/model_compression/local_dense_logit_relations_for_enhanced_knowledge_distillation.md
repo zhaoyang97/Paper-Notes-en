@@ -18,8 +18,8 @@ content_hash: bded630bd3386913
 # Local Dense Logit Relations for Enhanced Knowledge Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.15911](https://arxiv.org/abs/2507.15911)
-**Code**: None (promised by authors)
+**arXiv**: [2507.15911](https://arxiv.org/abs/2507.15911)  
+**Code**: None (promised by authors)  
 **Area**: Model Compression
 **Keywords**: Knowledge Distillation, Logit Distillation, Class-Pair Relations, Adaptive Decay Weights, Fine-Grained Knowledge Transfer
 

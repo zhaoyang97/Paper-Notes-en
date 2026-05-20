@@ -18,8 +18,8 @@ content_hash: 1f24b044cb682a55
 # PHAC: Promptable Human Amodal Completion
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.14741](https://arxiv.org/abs/2603.14741)
-**Code**: None
+**arXiv**: [2603.14741](https://arxiv.org/abs/2603.14741)  
+**Code**: None  
 **Area**: Object Detection
 **Keywords**: human amodal completion, diffusion model, ControlNet, pose-guided generation, image inpainting
 

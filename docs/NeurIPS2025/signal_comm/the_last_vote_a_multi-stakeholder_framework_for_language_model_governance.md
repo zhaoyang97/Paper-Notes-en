@@ -18,8 +18,8 @@ content_hash: 52373fc38306e0cf
 # The Last Vote: A Multi-Stakeholder Framework for Language Model Governance
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.13432](https://arxiv.org/abs/2511.13432)
-**Code**: Unavailable
+**arXiv**: [2511.13432](https://arxiv.org/abs/2511.13432)  
+**Code**: Unavailable  
 **Area**: Signal Communication
 **Keywords**: AI governance, democratic risk, multi-stakeholder, incident severity scoring, language model regulation
 
@@ -77,10 +77,10 @@ The framework rests on three pillars: (1) a seven-category democratic risk taxon
 
 3. **Phased Implementation Roadmap**
 
-   - **Stage 1 (0–24 months)**: Foundation building—municipal pilots, political chatbot/content moderation testing, establishment of constitutional principles (due process rights, transparency requirements, appeal mechanisms)
-   - **Stage 2 (24–48 months)**: System integration—transition from voluntary cooperation to mandatory compliance, mandatory ISS assessment for high-risk applications, model safety committees with enforcement authority
-   - **Stage 3 (48–72 months)**: Full coverage—inclusion of medium-risk scenarios, community oversight committees based on the subsidiarity principle, decentralized governance
-   - **Stage 4 (72+ months)**: Adaptive governance—governance innovation laboratories, dynamic risk threshold updates, institutionalized continuous learning
+    - **Stage 1 (0–24 months)**: Foundation building—municipal pilots, political chatbot/content moderation testing, establishment of constitutional principles (due process rights, transparency requirements, appeal mechanisms)
+    - **Stage 2 (24–48 months)**: System integration—transition from voluntary cooperation to mandatory compliance, mandatory ISS assessment for high-risk applications, model safety committees with enforcement authority
+    - **Stage 3 (48–72 months)**: Full coverage—inclusion of medium-risk scenarios, community oversight committees based on the subsidiarity principle, decentralized governance
+    - **Stage 4 (72+ months)**: Adaptive governance—governance innovation laboratories, dynamic risk threshold updates, institutionalized continuous learning
 
    **Threshold-dependent trigger mechanism**: Interventions are triggered when ISS exceeds time-evolving thresholds:
    $$P(S \geq s_j(t)) = 1 - F_S(s_j(t)) \geq \alpha_j(t)$$

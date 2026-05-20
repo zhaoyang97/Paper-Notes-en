@@ -18,8 +18,8 @@ content_hash: 3254f7dfd5b303b6
 # Brain Harmony: A Multimodal Foundation Model Unifying Morphology and Function into 1D Tokens
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.24693](https://arxiv.org/abs/2509.24693)
-**Code**: [hzlab/Brain-Harmony](https://github.com/hzlab/Brain-Harmony)
+**arXiv**: [2509.24693](https://arxiv.org/abs/2509.24693)  
+**Code**: [hzlab/Brain-Harmony](https://github.com/hzlab/Brain-Harmony)  
 **Area**: Medical Imaging
 **Keywords**: brain imaging foundation model, multimodal fusion, fMRI, sMRI, 1D token
 
@@ -54,20 +54,20 @@ BrainHarmonix adopts a two-stage pretraining pipeline: **Unimodal Encoding (UE)*
 ### Key Designs
 
 1. **Geometric Harmonics Pre-alignment**
-   - Computes the eigendecomposition of the Laplace-Beltrami Operator (LBO) on a population-level cortical surface mesh, yielding a set of orthogonal geometric harmonics $\psi_i$.
-   - Downsamples the geometric harmonics to ROI level ($\bar{\psi}_i \in \mathbb{R}^{N\times 1}$) and projects them via a linear layer to serve as Transformer positional encodings.
-   - Injects physical priors (cortical morphological constraints) into fMRI representations, enhancing alignment across subjects and datasets.
+    - Computes the eigendecomposition of the Laplace-Beltrami Operator (LBO) on a population-level cortical surface mesh, yielding a set of orthogonal geometric harmonics $\psi_i$.
+    - Downsamples the geometric harmonics to ROI level ($\bar{\psi}_i \in \mathbb{R}^{N\times 1}$) and projects them via a linear layer to serve as Transformer positional encodings.
+    - Injects physical priors (cortical morphological constraints) into fMRI representations, enhancing alignment across subjects and datasets.
 
 2. **Temporally Adaptive Patch Embedding (TAPE)**
-   - Defines a unified time window $\tau$ and dynamically computes the patch size according to TR: $k = \text{round}(\tau / s)$.
-   - Adaptively rescales embedding weights via pseudo-inverse resizing (PI-resize): $\omega = ((B_k^{k^*})^T)^\dagger \cdot \omega^*$.
-   - Handles variable-length time series with zero-padding and attention masking, enabling fMRI pretraining with arbitrary TR for the first time.
-   - Gives rise to the first data augmentation method for fMRI time series: downsampling high-resolution scans to multiple TR levels (e.g., UKB 0.735s → 1.47s/2.205s/2.94s).
+    - Defines a unified time window $\tau$ and dynamically computes the patch size according to TR: $k = \text{round}(\tau / s)$.
+    - Adaptively rescales embedding weights via pseudo-inverse resizing (PI-resize): $\omega = ((B_k^{k^*})^T)^\dagger \cdot \omega^*$.
+    - Handles variable-length time series with zero-padding and attention masking, enabling fMRI pretraining with arbitrary TR for the first time.
+    - Gives rise to the first data augmentation method for fMRI time series: downsampling high-resolution scans to multiple TR levels (e.g., UKB 0.735s → 1.47s/2.205s/2.94s).
 
 3. **Brain Hub Token Fusion**
-   - Introduces $N_H=128$ learnable continuous 1D brain hub tokens $\mathbf{H}_0 \in \mathbb{R}^{N_H \times d}$.
-   - Concatenates hub tokens with structural/functional tokens as input to the Harmonizer: $\mathbf{Z}_0 = [\mathbf{H}_0; \mathbf{Z}_S; \mathbf{Z}_F]$.
-   - Self-attention allows hub tokens to simultaneously aggregate information from both modalities and facilitate cross-modal interaction.
+    - Introduces $N_H=128$ learnable continuous 1D brain hub tokens $\mathbf{H}_0 \in \mathbb{R}^{N_H \times d}$.
+    - Concatenates hub tokens with structural/functional tokens as input to the Harmonizer: $\mathbf{Z}_0 = [\mathbf{H}_0; \mathbf{Z}_S; \mathbf{Z}_F]$.
+    - Self-attention allows hub tokens to simultaneously aggregate information from both modalities and facilitate cross-modal interaction.
 
 ### Loss & Training
 

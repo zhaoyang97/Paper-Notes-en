@@ -19,8 +19,8 @@ content_hash: e85a6db6405d494b
 # Generalization or Hallucination? Understanding Out-of-Context Reasoning in Transformers
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2506.10887](https://arxiv.org/abs/2506.10887)
-**Code**: None
+**arXiv**: [2506.10887](https://arxiv.org/abs/2506.10887)  
+**Code**: None  
 **Area**: Optimization
 **Keywords**: out-of-context reasoning, hallucination, generalization, implicit bias, nuclear norm, matrix factorization
 

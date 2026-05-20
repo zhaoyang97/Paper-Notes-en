@@ -18,8 +18,8 @@ content_hash: 6c74446326836f81
 # Advancing Text-to-3D Generation with Linearized Lookahead Variational Score Distillation
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.09748](https://arxiv.org/abs/2507.09748)
-**Code**: Implemented based on the [threestudio](https://github.com/threestudio-project/threestudio) framework
+**arXiv**: [2507.09748](https://arxiv.org/abs/2507.09748)  
+**Code**: Implemented based on the [threestudio](https://github.com/threestudio-project/threestudio) framework  
 **Area**: 3D Vision / Text-to-3D Generation
 **Keywords**: Score Distillation, VSD, Text-to-3D, LoRA, Forward-mode Autodiff
 

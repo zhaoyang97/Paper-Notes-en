@@ -18,8 +18,8 @@ content_hash: 456c2372604d18cc
 # Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.02567](https://arxiv.org/abs/2511.02567)
-**Code**: [https://github.com/thu-rllab/ANQ](https://github.com/thu-rllab/ANQ)
+**arXiv**: [2511.02567](https://arxiv.org/abs/2511.02567)  
+**Code**: [https://github.com/thu-rllab/ANQ](https://github.com/thu-rllab/ANQ)  
 **Area**: Reinforcement Learning / Offline RL
 **Keywords**: offline RL, neighborhood constraint, OOD actions, adaptive conservatism, bilevel optimization
 
@@ -48,22 +48,22 @@ The core of ANQ is to define an adaptive neighborhood constraint $\mathcal{C}_{A
 ### Key Designs
 1. **Neighborhood Constraint**:
 
-   - Definition: The constraint set is the union of $\epsilon$-neighborhoods of all actions in the dataset: $\mathcal{C}_N(s) = \{\tilde{a} \mid \|\tilde{a} - a\| \leq \epsilon, (s,a) \in \mathcal{D}\}$.
-   - Theoretical guarantee (Theorem 1): Under standard regularity assumptions, when the sample size $n$ is sufficiently large, the Hausdorff distance between the neighborhood union $U_{n,\epsilon}$ and the behavior policy support set $S$ is $\leq \epsilon$, meaning the neighborhood constraint can approximate the support constraint.
-   - Extrapolation control (Lemma 2): Under the NTK regime, the Q-value deviation for actions within the neighborhood satisfies $\|Q(s,\tilde{a}) - Q(s,a)\| \leq C(\sqrt{\min(\|s \oplus a\|, \|s \oplus \tilde{a}\|)}\sqrt{\epsilon} + 2\epsilon)$; a smaller radius yields tighter control.
-   - Distribution shift (Proposition 1): The TV distance between the state occupancy distribution under the neighborhood constraint and that under the sample constraint is $\leq \gamma K_P \epsilon / (2(1-\gamma))$.
+    - Definition: The constraint set is the union of $\epsilon$-neighborhoods of all actions in the dataset: $\mathcal{C}_N(s) = \{\tilde{a} \mid \|\tilde{a} - a\| \leq \epsilon, (s,a) \in \mathcal{D}\}$.
+    - Theoretical guarantee (Theorem 1): Under standard regularity assumptions, when the sample size $n$ is sufficiently large, the Hausdorff distance between the neighborhood union $U_{n,\epsilon}$ and the behavior policy support set $S$ is $\leq \epsilon$, meaning the neighborhood constraint can approximate the support constraint.
+    - Extrapolation control (Lemma 2): Under the NTK regime, the Q-value deviation for actions within the neighborhood satisfies $\|Q(s,\tilde{a}) - Q(s,a)\| \leq C(\sqrt{\min(\|s \oplus a\|, \|s \oplus \tilde{a}\|)}\sqrt{\epsilon} + 2\epsilon)$; a smaller radius yields tighter control.
+    - Distribution shift (Proposition 1): The TV distance between the state occupancy distribution under the neighborhood constraint and that under the sample constraint is $\leq \gamma K_P \epsilon / (2(1-\gamma))$.
 
 2. **Adaptive Neighborhood Radius**:
 
-   - Core idea: High-advantage (high-quality) data points use a small radius—they are already near-optimal, requiring less exploration, and a smaller radius reduces extrapolation error; low-advantage (low-quality) data points use a large radius—encouraging broader search for better actions.
-   - Radius formula: $r(s,a) = \epsilon \exp(-\alpha A(s,a))$, where $\alpha$ is an inverse temperature parameter.
-   - Robustness of advantage estimation: Estimation is performed only within the data distribution (relatively reliable), and is used only to qualitatively distinguish action quality; the exponential form serves as a soft heuristic.
+    - Core idea: High-advantage (high-quality) data points use a small radius—they are already near-optimal, requiring less exploration, and a smaller radius reduces extrapolation error; low-advantage (low-quality) data points use a large radius—encouraging broader search for better actions.
+    - Radius formula: $r(s,a) = \epsilon \exp(-\alpha A(s,a))$, where $\alpha$ is an inverse temperature parameter.
+    - Robustness of advantage estimation: Estimation is performed only within the data distribution (relatively reliable), and is used only to qualitatively distinguish action quality; the exponential form serves as a soft heuristic.
 
 3. **Bilevel Optimization Framework**:
 
-   - **Inner optimization**: An auxiliary policy $\mu_\omega(s,a)$ outputs an action perturbation $\delta$ and maximizes the Q function within the adaptive neighborhood of each data point. The constraint is internalized via a Lagrange multiplier $\lambda$: $\max_{\mu_\omega} \mathbb{E}[Q_\theta(s, a + \mu_\omega(s,a)) - \lambda \exp(\alpha(Q_{\theta'}(s,a) - V_\psi(s)))\|\mu_\omega(s,a)\|]$.
-   - **Outer optimization**: Actions refined by the auxiliary policy are sampled, and expectile regression (IQL-style) is used to implicitly take the maximum over neighborhoods: $\min_{V_\psi} \mathbb{E}[L_2^\tau(Q_{\theta'}(s, a + \mu_{\omega'}(s,a)) - V_\psi(s))]$.
-   - **Policy extraction**: After the Q function is trained, a policy is extracted from the optimized neighborhood actions via weighted regression.
+    - **Inner optimization**: An auxiliary policy $\mu_\omega(s,a)$ outputs an action perturbation $\delta$ and maximizes the Q function within the adaptive neighborhood of each data point. The constraint is internalized via a Lagrange multiplier $\lambda$: $\max_{\mu_\omega} \mathbb{E}[Q_\theta(s, a + \mu_\omega(s,a)) - \lambda \exp(\alpha(Q_{\theta'}(s,a) - V_\psi(s)))\|\mu_\omega(s,a)\|]$.
+    - **Outer optimization**: Actions refined by the auxiliary policy are sampled, and expectile regression (IQL-style) is used to implicitly take the maximum over neighborhoods: $\min_{V_\psi} \mathbb{E}[L_2^\tau(Q_{\theta'}(s, a + \mu_{\omega'}(s,a)) - V_\psi(s))]$.
+    - **Policy extraction**: After the Q function is trained, a policy is extracted from the optimized neighborhood actions via weighted regression.
 
 ### Loss & Training
 - The Q function is updated with standard Polyak-averaged target networks.

@@ -18,8 +18,8 @@ content_hash: 794491274c87d07c
 # Mind the GAP! The Challenges of Scale in Pixel-based Deep Reinforcement Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.17749](https://arxiv.org/abs/2505.17749)
-**Code**: [Dopamine](https://github.com/google/dopamine)
+**arXiv**: [2505.17749](https://arxiv.org/abs/2505.17749)  
+**Code**: [Dopamine](https://github.com/google/dopamine)  
 **Area**: Reinforcement Learning
 **Keywords**: Deep Reinforcement Learning, Network Scaling, Global Average Pooling, Bottleneck Layer, Atari
 

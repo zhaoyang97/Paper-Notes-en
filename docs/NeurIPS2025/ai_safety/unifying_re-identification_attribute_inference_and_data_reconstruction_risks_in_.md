@@ -18,8 +18,8 @@ content_hash: 77407ae622b5f4e6
 # Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.06969](https://arxiv.org/abs/2507.06969)
-**Code**: None
+**arXiv**: [2507.06969](https://arxiv.org/abs/2507.06969)  
+**Code**: None  
 **Area**: AI Safety / Differential Privacy
 **Keywords**: Differential Privacy, Re-identification, Attribute Inference, Data Reconstruction, f-DP
 

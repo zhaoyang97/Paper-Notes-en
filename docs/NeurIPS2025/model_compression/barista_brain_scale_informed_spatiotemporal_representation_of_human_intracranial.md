@@ -18,8 +18,8 @@ content_hash: 08ef5159ec89ca57
 # BaRISTA: Brain-Scale Informed Spatiotemporal Representation of Human Intracranial EEG
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.12135](https://arxiv.org/abs/2512.12135)
-**Code**: [https://github.com/ShanechiLab/BaRISTA](https://github.com/ShanechiLab/BaRISTA)
+**arXiv**: [2512.12135](https://arxiv.org/abs/2512.12135)  
+**Code**: [https://github.com/ShanechiLab/BaRISTA](https://github.com/ShanechiLab/BaRISTA)  
 **Area**: Neuroscience / Foundation Models
 **Keywords**: Intracranial EEG, Spatiotemporal Transformer, Spatial Encoding Scale, Masked Reconstruction, Pretraining
 

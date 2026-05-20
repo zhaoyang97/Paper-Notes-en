@@ -17,8 +17,8 @@ content_hash: 03802a2d9458b1b5
 # From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09376](https://arxiv.org/abs/2511.09376)
-**Code**: [GitHub](https://github.com/ron-wettenstein/woodelf)
+**arXiv**: [2511.09376](https://arxiv.org/abs/2511.09376)  
+**Code**: [GitHub](https://github.com/ron-wettenstein/woodelf)  
 **Area**: Explainable AI / Feature Attribution / Game Theory
 **Keywords**: SHAP, Shapley Values, Decision Tree Ensembles, Boolean Logic, GPU Acceleration
 

@@ -18,8 +18,8 @@ content_hash: a6e3cf7675f07720
 # The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.05995](https://arxiv.org/abs/2604.05995)
-**Code**: [XiaojieGu/SA-MCQ](https://github.com/XiaojieGu/SA-MCQ)
+**arXiv**: [2604.05995](https://arxiv.org/abs/2604.05995)  
+**Code**: [XiaojieGu/SA-MCQ](https://github.com/XiaojieGu/SA-MCQ)  
 **Area**: LLM Trustworthiness / Knowledge Editing
 **Keywords**: Knowledge Editing, Surface Compliance, Self-Assessment, Parametric Memory, In-Context Learning
 

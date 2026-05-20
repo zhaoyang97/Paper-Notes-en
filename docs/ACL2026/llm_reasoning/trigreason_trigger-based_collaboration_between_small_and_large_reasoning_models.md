@@ -18,8 +18,8 @@ content_hash: 97dc7307bd93ba19
 # TrigReason: Trigger-Based Collaboration between Small and Large Reasoning Models
 
 **Conference**: ACL 2026
-**arXiv**: [2604.14847](https://arxiv.org/abs/2604.14847)
-**Code**: [https://github.com/QQQ-yi/TrigReason](https://github.com/QQQ-yi/TrigReason)
+**arXiv**: [2604.14847](https://arxiv.org/abs/2604.14847)  
+**Code**: [https://github.com/QQQ-yi/TrigReason](https://github.com/QQQ-yi/TrigReason)  
 **Area**: LLM Reasoning
 **Keywords**: Reasoning Acceleration, Small-Large Model Collaboration, Speculative Reasoning, Event Triggering, Reasoning Models
 

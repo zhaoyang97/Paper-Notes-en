@@ -18,8 +18,8 @@ content_hash: 6475a647c8d9e54a
 # Do Retrieval Augmented Language Models Know When They Don't Know?
 
 **Conference**: AAAI 2026
-**arXiv**: [2509.01476](https://arxiv.org/abs/2509.01476)
-**Code**: [GitHub](https://github.com/zuochao912/refusal-ability-of-retrieval-augmented-LLMs)
+**arXiv**: [2509.01476](https://arxiv.org/abs/2509.01476)  
+**Code**: [GitHub](https://github.com/zuochao912/refusal-ability-of-retrieval-augmented-LLMs)  
 **Area**: Information Retrieval
 **Keywords**: RAG, Calibration, Over-Refusal, Uncertainty Estimation, Retrieval Augmentation
 

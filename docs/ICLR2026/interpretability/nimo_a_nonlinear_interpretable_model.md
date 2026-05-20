@@ -18,8 +18,8 @@ content_hash: be9a60ddbbae18cf
 # NIMO: a Nonlinear Interpretable MOdel
 
 **Conference**: ICLR 2026
-**arXiv**: [2506.05059](https://arxiv.org/abs/2506.05059)
-**Code**: N/A
+**arXiv**: [2506.05059](https://arxiv.org/abs/2506.05059)  
+**Code**: N/A  
 **Area**: Interpretable Machine Learning
 **Keywords**: interpretable model, marginal effects, linear regression, neural networks, feature effects
 

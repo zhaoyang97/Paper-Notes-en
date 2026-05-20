@@ -18,8 +18,8 @@ content_hash: 4700be2820439c9b
 # RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.01194](https://arxiv.org/abs/2603.01194)
-**Code**: [https://npucvr.github.io/RnG](https://npucvr.github.io/RnG)
+**arXiv**: [2603.01194](https://arxiv.org/abs/2603.01194)  
+**Code**: [https://npucvr.github.io/RnG](https://npucvr.github.io/RnG)  
 **Area**: 3D Vision
 **Keywords**: 3D reconstruction, novel view synthesis, transformer, KV-Cache, feed-forward
 
@@ -57,9 +57,9 @@ RnG builds upon the architecture and pretrained weights of VGGT as a feed-forwar
 1. **Input Encoding**: Source-view images $\{\mathbf{I}_s\}$ are encoded into tokens via a DINOv2 Vision Transformer; target views are encoded as Plücker ray maps and mapped to tokens via a linear layer.
 2. **Joint Processing**: Source- and target-view tokens are concatenated and processed through $L=24$ alternating layers of Global Attention and Frame Attention.
 3. **Multi-head Decoding**:
-   - Source-view tokens → Camera Head → estimated camera poses $\{\hat{\mathbf{g}}_s\}$
-   - Target-view tokens → RGB Head $\mathcal{D}_\text{RGB}$ → novel view images $\hat{\mathbf{I}}_t$
-   - Target-view tokens → Point Head $\mathcal{D}_\text{pmap}$ → point maps $\hat{\mathbf{p}}_t$ (explicit geometry)
+    - Source-view tokens → Camera Head → estimated camera poses $\{\hat{\mathbf{g}}_s\}$
+    - Target-view tokens → RGB Head $\mathcal{D}_\text{RGB}$ → novel view images $\hat{\mathbf{I}}_t$
+    - Target-view tokens → Point Head $\mathcal{D}_\text{pmap}$ → point maps $\hat{\mathbf{p}}_t$ (explicit geometry)
 
 To preserve the knowledge acquired by VGGT, the first source view uses dedicated camera and register tokens, while the remaining source views and target views share the same token type. During training, the pose of the first view is fixed to:
 

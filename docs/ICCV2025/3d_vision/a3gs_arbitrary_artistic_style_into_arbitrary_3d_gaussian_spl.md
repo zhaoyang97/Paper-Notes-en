@@ -18,8 +18,8 @@ content_hash: d99220521c731211
 # A3GS: Arbitrary Artistic Style into Arbitrary 3D Gaussian Splatting
 
 **Conference**: ICCV 2025
-**arXiv**: N/A
-**Code**: N/A
+**arXiv**: N/A  
+**Code**: N/A  
 **Area**: 3D Vision / 3D Style Transfer
 **Keywords**: 3DGS style transfer, zero-shot, feed-forward network, graph convolutional network, AdaIN
 

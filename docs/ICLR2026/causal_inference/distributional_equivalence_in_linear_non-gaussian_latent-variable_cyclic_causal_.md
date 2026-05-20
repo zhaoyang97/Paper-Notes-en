@@ -19,8 +19,8 @@ content_hash: 8ad2061376031316
 # Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models
 
 **Conference**: ICLR 2026 (Oral)
-**arXiv**: [2603.04780](https://arxiv.org/abs/2603.04780)
-**Code**: [MarkDana/Equiv-LiNG-Latent](https://github.com/MarkDana/Equiv-LiNG-Latent) / [Online Demo](https://equiv.cc/)
+**arXiv**: [2603.04780](https://arxiv.org/abs/2603.04780)  
+**Code**: [MarkDana/Equiv-LiNG-Latent](https://github.com/MarkDana/Equiv-LiNG-Latent) / [Online Demo](https://equiv.cc/)  
 **Area**: Causal Inference / Causal Discovery
 **Keywords**: causal discovery, latent variables, cyclic causal models, distributional equivalence, edge rank constraints, non-Gaussian models
 

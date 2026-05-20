@@ -18,8 +18,8 @@ content_hash: 917554f58998d1a3
 # Amodal Depth Anything: Amodal Depth Estimation in the Wild
 
 **Conference**: ICCV 2025
-**arXiv**: [2412.02336](https://arxiv.org/abs/2412.02336)
-**Code**: [https://github.com/zhyever/Amodal-Depth-Anything](https://github.com/zhyever/Amodal-Depth-Anything)
+**arXiv**: [2412.02336](https://arxiv.org/abs/2412.02336)  
+**Code**: [https://github.com/zhyever/Amodal-Depth-Anything](https://github.com/zhyever/Amodal-Depth-Anything)  
 **Area**: 3D Vision / Depth Estimation / Amodal Perception
 **Keywords**: amodal depth estimation, relative depth, occlusion-aware perception, Depth Anything V2, conditional flow matching
 

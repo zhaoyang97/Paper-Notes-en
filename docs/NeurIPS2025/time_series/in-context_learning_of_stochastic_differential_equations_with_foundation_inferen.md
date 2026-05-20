@@ -18,9 +18,9 @@ content_hash: 0ef8ae4db90ef2a9
 # In-Context Learning of Stochastic Differential Equations with Foundation Inference Models
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2502.19049](https://arxiv.org/abs/2502.19049)
+**arXiv**: [2502.19049](https://arxiv.org/abs/2502.19049)  
 **Authors**: Patrick Seifner, Kostadin Cvejoski, David Berghaus, Cesar Ojeda, Ramses J. Sanchez
-**Code**: Available
+**Code**: Available  
 **Area**: Time Series / Stochastic Differential Equations
 **Keywords**: stochastic differential equations, in-context learning, foundation inference models, drift function estimation, diffusion function estimation
 

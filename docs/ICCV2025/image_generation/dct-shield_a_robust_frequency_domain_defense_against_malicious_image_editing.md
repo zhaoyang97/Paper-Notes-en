@@ -18,8 +18,8 @@ content_hash: 447e45360b2bff46
 # DCT-Shield: A Robust Frequency Domain Defense against Malicious Image Editing
 
 **Conference**: ICCV 2025
-**arXiv**: [2504.17894](https://arxiv.org/abs/2504.17894)
-**Code**: None
+**arXiv**: [2504.17894](https://arxiv.org/abs/2504.17894)  
+**Code**: None  
 **Area**: Image Generation / Adversarial Defense
 **Keywords**: image immunization, adversarial perturbation, DCT frequency domain, JPEG robustness, diffusion model defense
 
@@ -69,9 +69,9 @@ The core idea of DCT-Shield is to add adversarial perturbations directly to DCT 
 
 3. **Multiple variants for different scenarios**:
 
-   - **Baseline DCT-Shield**: Perturbs DCT coefficients across all channels (Y/Cb/Cr) for general editing protection.
-   - **Mask-based DCT-Shield**: Targets inpainting tasks by concentrating noise in sensitive regions.
-   - **Y-channel DCT-Shield**: Adds perturbation only to the luminance channel, further reducing noise visibility and enhancing robustness under high JPEG compression.
+    - **Baseline DCT-Shield**: Perturbs DCT coefficients across all channels (Y/Cb/Cr) for general editing protection.
+    - **Mask-based DCT-Shield**: Targets inpainting tasks by concentrating noise in sensitive regions.
+    - **Y-channel DCT-Shield**: Adds perturbation only to the luminance channel, further reducing noise visibility and enhancing robustness under high JPEG compression.
 
 ### Loss & Training
 

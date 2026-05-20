@@ -18,8 +18,8 @@ content_hash: d915dfa4d364d4c1
 # TimeBill: Time-Budgeted Inference for Large Language Models
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.21859](https://arxiv.org/abs/2512.21859)
-**Code**: None
+**arXiv**: [2512.21859](https://arxiv.org/abs/2512.21859)  
+**Code**: None  
 **Area**: Autonomous Driving / LLM Inference Optimization
 **Keywords**: Time-budgeted inference, KV cache eviction, response length prediction, execution time estimation, real-time systems
 

@@ -18,8 +18,8 @@ content_hash: 2464e74851c5962e
 # Taming Video Models for 3D and 4D Generation via Zero-Shot Camera Control
 
 **Conference**: CVPR 2026
-**arXiv**: [2509.15130](https://arxiv.org/abs/2509.15130)
-**Code**: [https://worldforge-agi.github.io](https://worldforge-agi.github.io) (project page)
+**arXiv**: [2509.15130](https://arxiv.org/abs/2509.15130)  
+**Code**: [https://worldforge-agi.github.io](https://worldforge-agi.github.io) (project page)  
 **Area**: Diffusion Models / 3D Vision
 **Keywords**: Video Diffusion Models, 3D Generation, 4D Generation, Camera Control, Training-Free Inference
 

@@ -18,8 +18,8 @@ content_hash: 8031ef75ace747b8
 # Towards Scalable Spatial Intelligence via 2D-to-3D Data Lifting
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.18678](https://arxiv.org/abs/2507.18678)
-**Code**: [Project Page](https://ZhangGongjie.github.io/TowardsSSI-page/)
+**arXiv**: [2507.18678](https://arxiv.org/abs/2507.18678)  
+**Code**: [Project Page](https://ZhangGongjie.github.io/TowardsSSI-page/)  
 **Area**: 3D Vision
 **Keywords**: Spatial Intelligence, 2D-to-3D, Depth Estimation, Scale Calibration, Point Cloud Dataset
 

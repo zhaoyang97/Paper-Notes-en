@@ -18,8 +18,8 @@ content_hash: e6b3540b612a4101
 # HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.25411](https://arxiv.org/abs/2603.25411)
-**Code**: N/A
+**arXiv**: [2603.25411](https://arxiv.org/abs/2603.25411)  
+**Code**: N/A  
 **Area**: Multimodal VLM
 **Keywords**: 3D spatial understanding, vision-language models, hierarchical task design, point cloud maps, spatial reasoning
 

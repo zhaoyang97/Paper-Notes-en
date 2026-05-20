@@ -18,8 +18,8 @@ content_hash: c365fb04558d2d31
 # GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents
 
 **Conference**: ACL 2026
-**arXiv**: [2603.24329](https://arxiv.org/abs/2603.24329)
-**Code**: [Project Page](https://hats-ict.github.io/gameplayqa/)
+**arXiv**: [2603.24329](https://arxiv.org/abs/2603.24329)  
+**Code**: [Project Page](https://hats-ict.github.io/gameplayqa/)  
 **Area**: Video Understanding
 **Keywords**: Video QA, Multi-View Understanding, Game AI, Hallucination Diagnosis, Multi-Agent Perception
 

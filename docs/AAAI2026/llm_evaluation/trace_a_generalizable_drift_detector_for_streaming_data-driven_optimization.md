@@ -18,8 +18,8 @@ content_hash: c8a9bfad4a95cae9
 # TRACE: A Generalizable Drift Detector for Streaming Data-Driven Optimization
 
 **Conference**: AAAI 2026
-**arXiv**: [2512.07082](https://arxiv.org/abs/2512.07082)
-**Code**: [https://github.com/YTALIEN/TRACE](https://github.com/YTALIEN/TRACE)
+**arXiv**: [2512.07082](https://arxiv.org/abs/2512.07082)  
+**Code**: [https://github.com/YTALIEN/TRACE](https://github.com/YTALIEN/TRACE)  
 **Area**: LLM Evaluation
 **Keywords**: Concept Drift Detection, Streaming Data Optimization, Attention Mechanism, Transfer Learning, Plug-and-Play
 

@@ -18,8 +18,8 @@ content_hash: a251524e8d9ae7ba
 # RAGNet: Large-scale Reasoning-based Affordance Segmentation Benchmark towards General Grasping
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.23734](https://arxiv.org/abs/2507.23734)
-**Code**: [GitHub](https://github.com/DongmingWu/RAGNet)
+**arXiv**: [2507.23734](https://arxiv.org/abs/2507.23734)  
+**Code**: [GitHub](https://github.com/DongmingWu/RAGNet)  
 **Area**: Image Segmentation
 **Keywords**: affordance segmentation, robotic grasping, reasoning instructions, large-scale benchmark, vision-language model
 

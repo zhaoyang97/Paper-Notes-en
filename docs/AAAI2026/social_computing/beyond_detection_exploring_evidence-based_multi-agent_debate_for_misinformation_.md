@@ -18,8 +18,8 @@ content_hash: 4bec7c93d8bf2583
 # Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.07267](https://arxiv.org/abs/2511.07267)
-**Code**: [https://github.com/hanshenmesen/Debate-to-Detect](https://github.com/hanshenmesen/Debate-to-Detect)
+**arXiv**: [2511.07267](https://arxiv.org/abs/2511.07267)  
+**Code**: [https://github.com/hanshenmesen/Debate-to-Detect](https://github.com/hanshenmesen/Debate-to-Detect)  
 **Area**: Social Computing
 **Keywords**: Multi-agent debate, misinformation detection, evidence retrieval, persuasion evaluation, LLM
 

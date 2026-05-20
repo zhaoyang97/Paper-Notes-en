@@ -18,8 +18,8 @@ content_hash: 35467ab21973336d
 # Learning Interpretable Features in Audio Latent Spaces via Sparse Autoencoders
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23802](https://arxiv.org/abs/2510.23802)
-**Code**: None (anonymous audio samples available: [https://anonymous.4open.science/r/audio_samples-A301/](https://anonymous.4open.science/r/audio_samples-A301/))
+**arXiv**: [2510.23802](https://arxiv.org/abs/2510.23802)  
+**Code**: None (anonymous audio samples available: [https://anonymous.4open.science/r/audio_samples-A301/](https://anonymous.4open.science/r/audio_samples-A301/))  
 **Area**: Image Generation
 **Keywords**: Sparse Autoencoders, Audio Latent Space, Interpretability, Music Generation, Control Vectors
 

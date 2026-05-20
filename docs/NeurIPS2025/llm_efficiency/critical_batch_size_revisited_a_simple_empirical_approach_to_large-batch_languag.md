@@ -19,8 +19,8 @@ content_hash: c13139e0a2048119
 # Critical Batch Size Revisited: A Simple Empirical Approach to Large-Batch Language Model Training
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23971](https://arxiv.org/abs/2505.23971)
-**Code**: None
+**arXiv**: [2505.23971](https://arxiv.org/abs/2505.23971)  
+**Code**: None  
 **Area**: LLM Efficiency / Training Optimization
 **Keywords**: critical batch size, large-batch training, learning rate scaling, batch size warmup, gradient noise scale, OLMo
 

@@ -19,8 +19,8 @@ content_hash: b7d042c1c6521c1f
 # Purifying Generative LLMs from Backdoors without Prior Knowledge or Clean Reference
 
 **Conference**: ICLR 2026
-**arXiv**: [2603.13461](https://arxiv.org/abs/2603.13461)
-**Code**: [https://bd-vax.github.io/](https://bd-vax.github.io/)
+**arXiv**: [2603.13461](https://arxiv.org/abs/2603.13461)  
+**Code**: [https://bd-vax.github.io/](https://bd-vax.github.io/)  
 **Area**: AI Safety / Backdoor Defense
 **Keywords**: LLM backdoor, backdoor purification, mechanistic analysis, MLP encoding, immunity analogy, signature extraction
 

@@ -18,8 +18,8 @@ content_hash: cf55dbed4341376c
 # Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning
 
 **Conference**: AAAI 2026
-**arXiv**: [2505.11777](https://arxiv.org/abs/2505.11777)
-**Code**: [https://github.com/G-U-N/Diffusion-NPO](https://github.com/G-U-N/Diffusion-NPO)
+**arXiv**: [2505.11777](https://arxiv.org/abs/2505.11777)  
+**Code**: [https://github.com/G-U-N/Diffusion-NPO](https://github.com/G-U-N/Diffusion-NPO)  
 **Area**: Image Generation
 **Keywords**: Diffusion Models, Preference Optimization, Negative Preference Optimization, Self-Learning, Training Efficiency
 

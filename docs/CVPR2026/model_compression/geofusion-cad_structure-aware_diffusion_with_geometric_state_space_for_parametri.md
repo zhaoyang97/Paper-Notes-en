@@ -18,8 +18,8 @@ content_hash: 5feb4c060126d531
 # GeoFusion-CAD: Structure-Aware Diffusion with Geometric State Space for Parametric 3D Design
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.21978](https://arxiv.org/abs/2603.21978)
-**Code**: [https://github.com/](https://github.com/) (to be released)
+**arXiv**: [2603.21978](https://arxiv.org/abs/2603.21978)  
+**Code**: [https://github.com/](https://github.com/) (to be released)  
 **Area**: Model Compression
 **Keywords**: CAD generation, diffusion model, state space model, Mamba, hierarchical tree representation
 

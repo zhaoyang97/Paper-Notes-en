@@ -18,8 +18,8 @@ content_hash: 5f6c935e1df6dda8
 # Online Two-Stage Submodular Maximization
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.19480](https://arxiv.org/abs/2510.19480)
-**Code**: [GitHub](https://github.com/jasonNikolaou/online-two-stage-sub-max)
+**arXiv**: [2510.19480](https://arxiv.org/abs/2510.19480)  
+**Code**: [GitHub](https://github.com/jasonNikolaou/online-two-stage-sub-max)  
 **Area**: Optimization / Submodular Functions / Online Learning
 **Keywords**: submodular maximization, online learning, two-stage optimization, regret minimization, matroid constraints
 

@@ -18,8 +18,8 @@ content_hash: d0643fd887e9d2bd
 # Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.16024](https://arxiv.org/abs/2511.16024)
-**Code**: None
+**arXiv**: [2511.16024](https://arxiv.org/abs/2511.16024)  
+**Code**: None  
 **Area**: Image Generation / Image Super-Resolution
 **Keywords**: Image Super-Resolution, Mixture of Experts, LoRA, Degradation-Aware, One-Step Diffusion
 

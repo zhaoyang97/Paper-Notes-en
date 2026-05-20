@@ -18,8 +18,8 @@ content_hash: 73312d89cc20e283
 # MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.23013](https://arxiv.org/abs/2510.23013)
-**Code**: [GitHub](https://github.com/alexhw15/MoEMeta)
+**arXiv**: [2510.23013](https://arxiv.org/abs/2510.23013)  
+**Code**: [GitHub](https://github.com/alexhw15/MoEMeta)  
 **Area**: Graph Learning
 **Keywords**: Knowledge Graphs, Few-Shot Relational Learning, Meta-Learning, Mixture of Experts, Task Adaptation
 

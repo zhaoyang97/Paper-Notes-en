@@ -18,8 +18,8 @@ content_hash: d1a7a33565fb1cba
 # CAMILA: Context-Aware Masking for Image Editing with Language Alignment
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.19731](https://arxiv.org/abs/2509.19731)
-**Code**: None
+**arXiv**: [2509.19731](https://arxiv.org/abs/2509.19731)  
+**Code**: None  
 **Area**: Image Editing
 **Keywords**: context-aware editing, multi-instruction image editing, instruction executability assessment, MLLM, diffusion model editing
 

@@ -19,8 +19,8 @@ content_hash: 1d8d7d1b1d08eb25
 # RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.01653](https://arxiv.org/abs/2507.01653)
-**Code**: To be confirmed
+**arXiv**: [2507.01653](https://arxiv.org/abs/2507.01653)  
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: stereo matching, adverse weather, zero-shot generalization, diffusion-based data generation, robust feature encoder, depth estimation
 

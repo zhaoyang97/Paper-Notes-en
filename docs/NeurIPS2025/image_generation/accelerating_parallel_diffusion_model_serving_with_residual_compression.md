@@ -18,8 +18,8 @@ content_hash: 9a09a826e0f01371
 # Accelerating Parallel Diffusion Model Serving with Residual Compression
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2507.17511](https://arxiv.org/abs/2507.17511)
-**Code**: [GitHub](https://github.com/Cobalt-27/CompactFusion)
+**arXiv**: [2507.17511](https://arxiv.org/abs/2507.17511)  
+**Code**: [GitHub](https://github.com/Cobalt-27/CompactFusion)  
 **Area**: Diffusion Models / System Optimization / Model Serving
 **Keywords**: parallel inference, communication compression, residual compression, diffusion model serving, sequence parallelism
 

@@ -18,8 +18,8 @@ content_hash: 0f7f20d724da6181
 # Unsafe2Safe: Controllable Image Anonymization for Downstream Utility
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.28605](https://arxiv.org/abs/2603.28605)
-**Code**: [https://see-ai-lab.github.io/unsafe2safe/](https://see-ai-lab.github.io/unsafe2safe/)
+**arXiv**: [2603.28605](https://arxiv.org/abs/2603.28605)  
+**Code**: [https://see-ai-lab.github.io/unsafe2safe/](https://see-ai-lab.github.io/unsafe2safe/)  
 **Area**: AI Safety
 **Keywords**: Image Anonymization, Privacy Protection, Diffusion Editing, VLM Inspection, Downstream Task Preservation
 
@@ -46,21 +46,21 @@ Input image → Stage 1: InternVL2.5 inspects privacy risk (binary labeling) →
 
 1. **VLM Privacy Inspection and Dual Captioning**
 
-   - **Function**: Automatically identifies privacy risks and generates two versions of scene descriptions—one preserving and one removing privacy information.
-   - **Mechanism**: InternVL2.5 inspects each image against predefined privacy criteria (faces, health identifiers, vehicles, personal opinions, sensitive documents), achieving a recall of 97.5% (a deliberately high Type I error rate to minimize privacy leakage). For unsafe images, the model generates $c^{\text{priv}}$ containing privacy details and $c^{\text{pub}}$ with privacy removed.
-   - **Design Motivation**: The two captions serve as modality-aligned privacy-safe representations—$c^{\text{pub}}$ retains scene semantics without privacy content, while $c^{\text{edit}}$ guides modifications to privacy regions.
+    - **Function**: Automatically identifies privacy risks and generates two versions of scene descriptions—one preserving and one removing privacy information.
+    - **Mechanism**: InternVL2.5 inspects each image against predefined privacy criteria (faces, health identifiers, vehicles, personal opinions, sensitive documents), achieving a recall of 97.5% (a deliberately high Type I error rate to minimize privacy leakage). For unsafe images, the model generates $c^{\text{priv}}$ containing privacy details and $c^{\text{pub}}$ with privacy removed.
+    - **Design Motivation**: The two captions serve as modality-aligned privacy-safe representations—$c^{\text{pub}}$ retains scene semantics without privacy content, while $c^{\text{edit}}$ guides modifications to privacy regions.
 
 2. **LLM Editing Instruction Generation**
 
-   - **Function**: Generates plausible replacement attributes and editing instructions based on the public caption.
-   - **Mechanism**: Qwen3-4B-Instruct analyzes $c^{\text{pub}}$, generates pseudo-private attributes (e.g., replacing a specific face with "a middle-aged male"), and produces structured editing prompts $c^{\text{edit}}$. The final editing condition concatenates $c^{\text{edit}}$ and $c^{\text{pub}}$ as the textual prior for the diffusion editor.
-   - **Design Motivation**: Delegating replacement strategy to the LLM rather than humans enables full automation; the LLM also generates diverse replacement attributes, mitigating demographic bias.
+    - **Function**: Generates plausible replacement attributes and editing instructions based on the public caption.
+    - **Mechanism**: Qwen3-4B-Instruct analyzes $c^{\text{pub}}$, generates pseudo-private attributes (e.g., replacing a specific face with "a middle-aged male"), and produces structured editing prompts $c^{\text{edit}}$. The final editing condition concatenates $c^{\text{edit}}$ and $c^{\text{pub}}$ as the textual prior for the diffusion editor.
+    - **Design Motivation**: Delegating replacement strategy to the LLM rather than humans enables full automation; the LLM also generates diverse replacement attributes, mitigating demographic bias.
 
 3. **Safe Cross-Attention Module**
 
-   - **Function**: Prevents the diffusion editor from over-modifying non-private regions.
-   - **Mechanism**: Embeddings of $c^{\text{pub}}$ and $c^{\text{edit}}$ are concatenated into a unified token sequence, upon which dual-condition cross-attention is performed during denoising. $c^{\text{pub}}$ provides a semantic preservation signal while $c^{\text{edit}}$ provides the target transformation signal; the two act jointly within the attention layers.
-   - **Design Motivation**: Standard diffusion editors conditioned on a single instruction tend to over-edit or under-edit. Dual-condition attention allows the model to simultaneously "know what not to change" and "know what to change."
+    - **Function**: Prevents the diffusion editor from over-modifying non-private regions.
+    - **Mechanism**: Embeddings of $c^{\text{pub}}$ and $c^{\text{edit}}$ are concatenated into a unified token sequence, upon which dual-condition cross-attention is performed during denoising. $c^{\text{pub}}$ provides a semantic preservation signal while $c^{\text{edit}}$ provides the target transformation signal; the two act jointly within the attention layers.
+    - **Design Motivation**: Standard diffusion editors conditioned on a single instruction tend to over-edit or under-edit. Dual-condition attention allows the model to simultaneously "know what not to change" and "know what to change."
 
 ### Loss & Training
 

@@ -18,8 +18,8 @@ content_hash: 5dc32a3d88fb7188
 # EFX and PO Allocation Exists for Two Types of Goods
 
 **Conference**: AAAI2026
-**arXiv**: [2601.03438](https://arxiv.org/abs/2601.03438)
-**Code**: None (theoretical work)
+**arXiv**: [2601.03438](https://arxiv.org/abs/2601.03438)  
+**Code**: None (theoretical work)  
 **Area**: AI Safety
 **Keywords**: fair division, EFX, Pareto optimality, indivisible goods, additive valuations
 

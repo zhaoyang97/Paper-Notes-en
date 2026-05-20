@@ -18,8 +18,8 @@ content_hash: d9690d714199169e
 # Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection
 
 **Conference**: ICCV 2025
-**arXiv**: [2510.18437](https://arxiv.org/abs/2510.18437)
-**Code**: [https://github.com/xiaohainku/RISE](https://github.com/xiaohainku/RISE)
+**arXiv**: [2510.18437](https://arxiv.org/abs/2510.18437)  
+**Code**: [https://github.com/xiaohainku/RISE](https://github.com/xiaohainku/RISE)  
 **Area**: Segmentation / Camouflaged Object Detection / Unsupervised
 **Keywords**: camouflaged object detection, unsupervised segmentation, retrieval-augmented, KNN, prototype library
 

@@ -18,8 +18,8 @@ content_hash: baf15434e7545f97
 # EvoPrompt: Evolving Prompt Adaptation for Vision-Language Models
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.09493](https://arxiv.org/abs/2603.09493)
-**Code**: To be confirmed
+**arXiv**: [2603.09493](https://arxiv.org/abs/2603.09493)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: prompt learning, catastrophic forgetting, low-rank decomposition, feature decorrelation, VLM adaptation
 
@@ -51,25 +51,25 @@ EvoPrompt is built upon a frozen CLIP (ViT-B/16) backbone. Input images and text
 
 1. **Modality-Shared Prompt Projector (MPP)**
 
-   - **Function**: Generates per-layer, per-modality prompts from a unified learnable embedding space, replacing conventional layer-wise independent prompts.
-   - **Mechanism**: A shared learnable embedding $E \in \mathbb{R}^{K \times d_r}$ ($K=5$, $d_r=512$) is initialized and transformed into prompts for each layer and modality via decoupled projectors. For modality $m \in \{v, t\}$, the prompt at layer $i$ is $P_i^m = \text{Proj}_i^m(E)$. Projector weights are factorized into a shared basis plus a low-rank adapter: $W_i^m = W_{\text{shared}}^m + A_i \cdot B_i$, where $W_{\text{shared}}^m \in \mathbb{R}^{d_r \times d_m}$ is shared across layers, and $A_i \in \mathbb{R}^{d_r \times r}$, $B_i \in \mathbb{R}^{r \times d_m}$ are layer-specific low-rank matrices.
-   - **Design Motivation**: The shared $W_{\text{shared}}$ captures foundational semantic knowledge across layers (e.g., generic visual/textual patterns), while the low-rank $A_i B_i$ encodes layer-specific adaptation (e.g., shallow texture vs. deep semantics). Parameter count is reduced from $O((L-J+1) \cdot d_r \cdot d_m)$ to $O(d_r \cdot d_m + (L-J+1) \cdot r \cdot (d_r + d_m))$, yielding a 4.6× reduction over MaPLe.
+    - **Function**: Generates per-layer, per-modality prompts from a unified learnable embedding space, replacing conventional layer-wise independent prompts.
+    - **Mechanism**: A shared learnable embedding $E \in \mathbb{R}^{K \times d_r}$ ($K=5$, $d_r=512$) is initialized and transformed into prompts for each layer and modality via decoupled projectors. For modality $m \in \{v, t\}$, the prompt at layer $i$ is $P_i^m = \text{Proj}_i^m(E)$. Projector weights are factorized into a shared basis plus a low-rank adapter: $W_i^m = W_{\text{shared}}^m + A_i \cdot B_i$, where $W_{\text{shared}}^m \in \mathbb{R}^{d_r \times d_m}$ is shared across layers, and $A_i \in \mathbb{R}^{d_r \times r}$, $B_i \in \mathbb{R}^{r \times d_m}$ are layer-specific low-rank matrices.
+    - **Design Motivation**: The shared $W_{\text{shared}}$ captures foundational semantic knowledge across layers (e.g., generic visual/textual patterns), while the low-rank $A_i B_i$ encodes layer-specific adaptation (e.g., shallow texture vs. deep semantics). Parameter count is reduced from $O((L-J+1) \cdot d_r \cdot d_m)$ to $O(d_r \cdot d_m + (L-J+1) \cdot r \cdot (d_r + d_m))$, yielding a 4.6× reduction over MaPLe.
 
 2. **Evolutionary Trajectory-Aware Learning (ETL)**
 
-   - **Function**: Controls the training trajectory of prompts through direction–magnitude decoupling and progressive knowledge accumulation to prevent catastrophic forgetting.
-   - **Mechanism**: At training epoch $t$, the low-rank update for layer $i$ is decomposed into a magnitude scalar $\alpha_i^t$ and a normalized direction matrix: $\Delta W_i^t = \alpha_i^t \cdot \overline{A_i^t B_i^t}$ (where $\overline{\cdot}$ denotes Frobenius normalization). By epoch $T$, the total weight is a weighted sum of historical directions:
+    - **Function**: Controls the training trajectory of prompts through direction–magnitude decoupling and progressive knowledge accumulation to prevent catastrophic forgetting.
+    - **Mechanism**: At training epoch $t$, the low-rank update for layer $i$ is decomposed into a magnitude scalar $\alpha_i^t$ and a normalized direction matrix: $\Delta W_i^t = \alpha_i^t \cdot \overline{A_i^t B_i^t}$ (where $\overline{\cdot}$ denotes Frobenius normalization). By epoch $T$, the total weight is a weighted sum of historical directions:
      $$W_i^T = W_{\text{shared}} + \sum_{t=1}^{T-1} \alpha_i^t \cdot \overline{A_i^t B_i^t} + \alpha_i^T \cdot \overline{A_i^T B_i^T}$$
      Critically, all historical directions $\{\overline{A_i^t B_i^t}\}_{t=1}^{T-1}$ are frozen; only the magnitudes $\{\alpha_i^t\}_{t=1}^T$ and the current new direction $\overline{A_i^T B_i^T}$ are trained.
-   - **Design Motivation**: Prior work (DoRA) demonstrates that direction is more critical than magnitude in low-rank adaptation. Directions established during early training encode robust semantic structure; freezing them effectively protects the "cognitive skeleton," allowing magnitudes to freely adjust for task adaptation. New directions introduced in subsequent epochs enable the learning of incremental knowledge.
-   - **Adaptive Rank Reduction**: The rank $r$ of the low-rank matrices is progressively reduced in stages: $r_1 > r_\mu > r_\nu$ (reduced at epochs $\mu$ and $\nu$). As the marginal contribution of later epochs diminishes, lower ranks serve as structured regularization (preventing overfitting) while reducing accumulated parameter count and computational overhead.
+    - **Design Motivation**: Prior work (DoRA) demonstrates that direction is more critical than magnitude in low-rank adaptation. Directions established during early training encode robust semantic structure; freezing them effectively protects the "cognitive skeleton," allowing magnitudes to freely adjust for task adaptation. New directions introduced in subsequent epochs enable the learning of incremental knowledge.
+    - **Adaptive Rank Reduction**: The rank $r$ of the low-rank matrices is progressively reduced in stages: $r_1 > r_\mu > r_\nu$ (reduced at epochs $\mu$ and $\nu$). As the marginal contribution of later epochs diminishes, lower ranks serve as structured regularization (preventing overfitting) while reducing accumulated parameter count and computational overhead.
 
 3. **Feature Geometric Regularization (FGR)**
 
-   - **Function**: Prevents dimensional redundancy and representation collapse in the feature space, enhancing orthogonality and decorrelation of learned features.
-   - **Mechanism**: Grounded in the Soft-HGR (Hirschfeld–Gebelein–Rényi) maximum correlation framework. The InfoNCE contrastive loss can be interpreted as maximizing the cross-modal alignment term (the first term of the Soft-HGR objective) while neglecting the intra-modal covariance structure (the second term). FGR explicitly minimizes the trace of the product of intra-modal covariance matrices:
+    - **Function**: Prevents dimensional redundancy and representation collapse in the feature space, enhancing orthogonality and decorrelation of learned features.
+    - **Mechanism**: Grounded in the Soft-HGR (Hirschfeld–Gebelein–Rényi) maximum correlation framework. The InfoNCE contrastive loss can be interpreted as maximizing the cross-modal alignment term (the first term of the Soft-HGR objective) while neglecting the intra-modal covariance structure (the second term). FGR explicitly minimizes the trace of the product of intra-modal covariance matrices:
      $$\mathcal{L}_{fgr}(\mathcal{F}^v, \mathcal{F}^t) = \frac{1}{2} \text{tr}(\text{cov}(\mathcal{F}^v) \cdot \text{cov}(\mathcal{F}^t))$$
-   - **Design Motivation**: Contrastive learning focuses solely on instance-level alignment and is prone to high-dimensional feature redundancy. FGR encourages decorrelation across feature dimensions, ensuring that each dimension of the representation space is effectively utilized — particularly critical in low-data regimes.
+    - **Design Motivation**: Contrastive learning focuses solely on instance-level alignment and is prone to high-dimensional feature redundancy. FGR encourages decorrelation across feature dimensions, ensuring that each dimension of the representation space is effectively utilized — particularly critical in low-data regimes.
 
 ### Loss & Training
 The overall training objective is a weighted sum of three terms:

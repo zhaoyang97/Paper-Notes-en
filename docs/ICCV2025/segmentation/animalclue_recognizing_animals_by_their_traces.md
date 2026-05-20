@@ -18,8 +18,8 @@ content_hash: 36b35f5b981f56ac
 # AnimalClue: Recognizing Animals by their Traces
 
 **Conference**: ICCV 2025
-**arXiv**: [2507.20240](https://arxiv.org/abs/2507.20240)
-**Code**: [https://dahlian00.github.io/AnimalCluePage/](https://dahlian00.github.io/AnimalCluePage/)
+**arXiv**: [2507.20240](https://arxiv.org/abs/2507.20240)  
+**Code**: [https://dahlian00.github.io/AnimalCluePage/](https://dahlian00.github.io/AnimalCluePage/)  
 **Area**: Segmentation / Object Detection / Image Classification
 **Keywords**: animal trace recognition, wildlife conservation, indirect evidence, dataset, instance segmentation
 

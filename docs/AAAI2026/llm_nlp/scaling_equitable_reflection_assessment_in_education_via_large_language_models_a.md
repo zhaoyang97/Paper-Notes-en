@@ -18,8 +18,8 @@ content_hash: 58f9ba8b8fc66edc
 # Scaling Equitable Reflection Assessment in Education via Large Language Models and Role-Based Feedback Agents
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.11772](https://arxiv.org/abs/2511.11772)
-**Code**: [GitHub](https://github.com/CharlieChenyuZhang/equitable-reflection-assessment)
+**arXiv**: [2511.11772](https://arxiv.org/abs/2511.11772)  
+**Code**: [GitHub](https://github.com/CharlieChenyuZhang/equitable-reflection-assessment)  
 **Area**: Education AI / LLM Applications
 **Keywords**: Multi-Agent Systems, Formative Feedback, Automated Scoring, Fairness, Metacognition
 

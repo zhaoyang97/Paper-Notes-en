@@ -18,8 +18,8 @@ content_hash: 3db304a739fc15e2
 # Stress-Testing Alignment Audits with Prompt-Level Strategic Deception
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.08877](https://arxiv.org/abs/2602.08877)
-**Code**: [GitHub](https://github.com/oliveradk/audit-stress-test)
+**arXiv**: [2602.08877](https://arxiv.org/abs/2602.08877)  
+**Code**: [GitHub](https://github.com/oliveradk/audit-stress-test)  
 **Area**: AI Safety / Alignment Auditing
 **Keywords**: alignment audit, red teaming, strategic deception, model organisms, SAE
 

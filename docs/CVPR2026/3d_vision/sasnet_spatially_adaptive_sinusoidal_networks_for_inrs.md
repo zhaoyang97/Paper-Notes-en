@@ -18,8 +18,8 @@ content_hash: b93d598e6bd24a6d
 # SASNet: Spatially-Adaptive Sinusoidal Networks for INRs
 
 **Conference**: CVPR 2026
-**arXiv**: [2503.09750](https://arxiv.org/abs/2503.09750)
-**Code**: [https://github.com/Fengyee/SASNet_inr](https://github.com/Fengyee/SASNet_inr)
+**arXiv**: [2503.09750](https://arxiv.org/abs/2503.09750)  
+**Code**: [https://github.com/Fengyee/SASNet_inr](https://github.com/Fengyee/SASNet_inr)  
 **Area**: 3D Vision / Implicit Neural Representations
 **Keywords**: Implicit Neural Representation, SIREN, Spatial Adaptivity, Frequency Leakage, Hash Grid
 
@@ -47,21 +47,21 @@ SASNet consists of two parallel networks: a sinusoidal MLP and a hash-grid MLP. 
 
 1. **Frozen Frequency Embedding Layer**:
 
-   - **Function**: Explicitly fixes the network's frequency support range, providing a controllable spectrum.
-   - **Mechanism**: Following Novello et al., the first layer of SIREN uses a predefined set of frequencies with frozen weights. Unlike standard SIREN, where the spectral range is implicitly determined by a single $\omega_0$, the frozen embedding layer directly specifies available frequency components, making frequency control explicit rather than implicit.
-   - **Design Motivation**: In standard SIREN, the frequency range is jointly determined by $\omega_0$ and weight initialization in an uncontrollable manner. The frozen embedding layer eliminates this uncertainty, providing a stable frequency basis for the subsequent spatial masks.
+    - **Function**: Explicitly fixes the network's frequency support range, providing a controllable spectrum.
+    - **Mechanism**: Following Novello et al., the first layer of SIREN uses a predefined set of frequencies with frozen weights. Unlike standard SIREN, where the spectral range is implicitly determined by a single $\omega_0$, the frozen embedding layer directly specifies available frequency components, making frequency control explicit rather than implicit.
+    - **Design Motivation**: In standard SIREN, the frequency range is jointly determined by $\omega_0$ and weight initialization in an uncontrollable manner. The frozen embedding layer eliminates this uncertainty, providing a stable frequency basis for the subsequent spatial masks.
 
 2. **Spatially-Adaptive Masks**:
 
-   - **Function**: Learns which neurons/frequency bands should be activated at each spatial location.
-   - **Mechanism**: Multi-scale hash grid encoding maps input coordinates to feature vectors, which are decoded by a small ReLU MLP into mask values matching the dimensionality of each sinusoidal MLP layer. Masks modulate sinusoidal layer outputs via element-wise multiplication $\mathbf{h}^i \odot \mathcal{M}^i(\mathbf{x})$. Intuitively, masks suppress high-frequency neurons in smooth regions and allow them to pass in detail-rich regions. Through joint training, the network automatically learns this spatial assignment.
-   - **Design Motivation**: This is the key to resolving frequency leakage — restricting the spatial influence of each global INR neuron to specific regions. Hash grids are inherently spatially local; using them as mask generators rather than direct feature extractors is a novel application.
+    - **Function**: Learns which neurons/frequency bands should be activated at each spatial location.
+    - **Mechanism**: Multi-scale hash grid encoding maps input coordinates to feature vectors, which are decoded by a small ReLU MLP into mask values matching the dimensionality of each sinusoidal MLP layer. Masks modulate sinusoidal layer outputs via element-wise multiplication $\mathbf{h}^i \odot \mathcal{M}^i(\mathbf{x})$. Intuitively, masks suppress high-frequency neurons in smooth regions and allow them to pass in detail-rich regions. Through joint training, the network automatically learns this spatial assignment.
+    - **Design Motivation**: This is the key to resolving frequency leakage — restricting the spatial influence of each global INR neuron to specific regions. Hash grids are inherently spatially local; using them as mask generators rather than direct feature extractors is a novel application.
 
 3. **Joint Training of Hybrid Architecture**:
 
-   - **Function**: Achieves an optimal balance between frequency control and spatial localization under parameter efficiency constraints.
-   - **Mechanism**: The sinusoidal MLP and hash-grid MLP share input coordinates and are jointly optimized with a standard INR fitting loss $\mathcal{L}(\theta) = \frac{1}{N}\sum_i \|f_\theta(\mathbf{x}_i) - \mathscr{f}_i\|^2 + \lambda \mathcal{R}(\theta)$. The hash-grid MLP is designed to be lightweight (small-resolution grid + shallow ReLU MLP) to avoid significantly increasing parameter count. For SDF tasks, the regularization term $\mathcal{R}(\theta)$ enforces the eikonal constraint.
-   - **Design Motivation**: Compared to pure SIREN or pure hash-grid methods, the hybrid architecture inherits SIREN's frequency expressiveness (derivative accuracy of sinusoidal activations) and the hash grid's spatial locality, while avoiding the weaknesses of each.
+    - **Function**: Achieves an optimal balance between frequency control and spatial localization under parameter efficiency constraints.
+    - **Mechanism**: The sinusoidal MLP and hash-grid MLP share input coordinates and are jointly optimized with a standard INR fitting loss $\mathcal{L}(\theta) = \frac{1}{N}\sum_i \|f_\theta(\mathbf{x}_i) - \mathscr{f}_i\|^2 + \lambda \mathcal{R}(\theta)$. The hash-grid MLP is designed to be lightweight (small-resolution grid + shallow ReLU MLP) to avoid significantly increasing parameter count. For SDF tasks, the regularization term $\mathcal{R}(\theta)$ enforces the eikonal constraint.
+    - **Design Motivation**: Compared to pure SIREN or pure hash-grid methods, the hybrid architecture inherits SIREN's frequency expressiveness (derivative accuracy of sinusoidal activations) and the hash grid's spatial locality, while avoiding the weaknesses of each.
 
 ### Loss & Training
 

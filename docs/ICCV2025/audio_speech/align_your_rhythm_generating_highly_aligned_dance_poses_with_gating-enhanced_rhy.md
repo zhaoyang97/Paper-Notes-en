@@ -18,8 +18,8 @@ content_hash: 29a48c0d865c5244
 # Align Your Rhythm: Generating Highly Aligned Dance Poses with Gating-Enhanced Rhythm-Aware Feature Representation
 
 **Conference**: ICCV 2025
-**arXiv**: [2503.17340](https://arxiv.org/abs/2503.17340)
-**Code**: [https://danceba.github.io/](https://danceba.github.io/)
+**arXiv**: [2503.17340](https://arxiv.org/abs/2503.17340)  
+**Code**: [https://danceba.github.io/](https://danceba.github.io/)  
 **Area**: Human Understanding / Music-Driven Dance Generation
 **Keywords**: music-driven dance generation, rhythm alignment, gated attention, Mamba, human motion generation
 

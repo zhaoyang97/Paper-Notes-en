@@ -18,8 +18,8 @@ content_hash: 8cd8c2d48d91e0fb
 # PSR: Scaling Multi-Subject Personalized Image Generation with Pairwise Subject-Consistency Rewards
 
 **Conference**: CVPR 2026
-**arXiv**: [2512.01236](https://arxiv.org/abs/2512.01236)
-**Code**: [https://github.com/wang-shulei/PSR](https://github.com/wang-shulei/PSR)
+**arXiv**: [2512.01236](https://arxiv.org/abs/2512.01236)  
+**Code**: [https://github.com/wang-shulei/PSR](https://github.com/wang-shulei/PSR)  
 **Area**: Diffusion Models / Personalized Generation
 **Keywords**: Multi-subject personalized generation, subject consistency, reinforcement learning, pairwise reward, positional encoding
 

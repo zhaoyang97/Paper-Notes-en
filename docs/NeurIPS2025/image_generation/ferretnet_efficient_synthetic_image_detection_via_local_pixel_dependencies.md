@@ -18,8 +18,8 @@ content_hash: 105b7f39ba4adefd
 # FerretNet: Efficient Synthetic Image Detection via Local Pixel Dependencies
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20890](https://arxiv.org/abs/2509.20890)
-**Code**: [https://github.com/xigua7105/FerretNet](https://github.com/xigua7105/FerretNet)
+**arXiv**: [2509.20890](https://arxiv.org/abs/2509.20890)  
+**Code**: [https://github.com/xigua7105/FerretNet](https://github.com/xigua7105/FerretNet)  
 **Area**: Image Generation
 **Keywords**: Synthetic image detection, local pixel dependency, Markov random field, lightweight network, cross-model generalization
 

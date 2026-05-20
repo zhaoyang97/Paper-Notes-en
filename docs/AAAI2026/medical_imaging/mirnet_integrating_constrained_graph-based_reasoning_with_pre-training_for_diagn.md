@@ -18,8 +18,8 @@ content_hash: 4d4314b11098cd8b
 # MIRNet: Integrating Constrained Graph-Based Reasoning with Pre-training for Diagnostic Medical Imaging
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.10013](https://arxiv.org/abs/2511.10013)
-**Code**: [GitHub](https://github.com/zijie8247/MIRNet)
+**arXiv**: [2511.10013](https://arxiv.org/abs/2511.10013)  
+**Code**: [GitHub](https://github.com/zijie8247/MIRNet)  
 **Area**: Medical Image Analysis / Tongue Diagnosis
 **Keywords**: tongue diagnosis, graph attention network, self-supervised pre-training, clinically constrained optimization, multi-label classification
 

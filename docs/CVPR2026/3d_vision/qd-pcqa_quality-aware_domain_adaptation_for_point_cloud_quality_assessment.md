@@ -17,9 +17,9 @@ content_hash: ca928b4b2883adaa
 # QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment
 
 **Conference**: CVPR 2026
-**arXiv**: [2603.03726](https://arxiv.org/abs/2603.03726)
+**arXiv**: [2603.03726](https://arxiv.org/abs/2603.03726)  
 **Authors**: Guohua Zhang, Jian Jin, Meiqin Liu, Chao Yao, Weisi Lin (Beijing Jiaotong University, NTU, USTB)
-**Code**: To be confirmed
+**Code**: To be confirmed  
 **Area**: 3D Vision
 **Keywords**: Point cloud quality assessment, unsupervised domain adaptation, quality-aware feature alignment, cross-domain transfer
 

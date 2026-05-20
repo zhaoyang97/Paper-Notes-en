@@ -18,8 +18,8 @@ content_hash: ed1442605b4c773b
 # Good-for-MDP State Reduction for Stochastic LTL Planning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.09073](https://arxiv.org/abs/2511.09073)
-**Code**: None
+**arXiv**: [2511.09073](https://arxiv.org/abs/2511.09073)  
+**Code**: None  
 **Area**: Reinforcement Learning
 **Keywords**: LTL planning, Markov decision processes, automaton state reduction, Good-for-MDP, formal methods
 

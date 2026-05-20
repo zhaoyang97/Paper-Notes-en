@@ -18,8 +18,8 @@ content_hash: 76d2bbd372403d51
 # Angular Constraint Embedding via SpherePair Loss for Constrained Clustering
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.06907](https://arxiv.org/abs/2510.06907)
-**Code**: Available (repository mentioned in the paper)
+**arXiv**: [2510.06907](https://arxiv.org/abs/2510.06907)  
+**Code**: Available (repository mentioned in the paper)  
 **Area**: Clustering / Representation Learning
 **Keywords**: Constrained clustering, angular embedding, SpherePair loss, deep constrained clustering, spherical representation
 
@@ -51,21 +51,21 @@ Given a dataset and pairwise constraints (positive pairs: same cluster; negative
 
 1. **SpherePair Loss Function**:
 
-   - **Function**: Encodes pairwise constraints in angular space, driving positive-pair angles toward 0 and negative-pair angles toward the negative zone boundary $\pi/\omega$.
-   - **Mechanism**: For each constraint pair $(a_i, b_i, y_i)$, the angle $\theta$ between embedding vectors is computed and mapped via cosine to a similarity score $\text{Sim} \in [0,1]$; a logistic regression loss $\mathcal{L}_{\text{ang}}$ is then minimized. Positive pairs use $\cos(\theta)$ directly; negative pairs use $\cos(\min(\omega\theta, \pi))$, where $\omega$ is an angular factor controlling the size of the negative zone.
-   - **Design Motivation**: The bounded angular distance $[0, \pi]$ avoids the normalization issues and margin sensitivity caused by unbounded Euclidean distances. The negative zone mechanism $\pi/\omega$ ensures sufficient separation between different clusters.
+    - **Function**: Encodes pairwise constraints in angular space, driving positive-pair angles toward 0 and negative-pair angles toward the negative zone boundary $\pi/\omega$.
+    - **Mechanism**: For each constraint pair $(a_i, b_i, y_i)$, the angle $\theta$ between embedding vectors is computed and mapped via cosine to a similarity score $\text{Sim} \in [0,1]$; a logistic regression loss $\mathcal{L}_{\text{ang}}$ is then minimized. Positive pairs use $\cos(\theta)$ directly; negative pairs use $\cos(\min(\omega\theta, \pi))$, where $\omega$ is an angular factor controlling the size of the negative zone.
+    - **Design Motivation**: The bounded angular distance $[0, \pi]$ avoids the normalization issues and margin sensitivity caused by unbounded Euclidean distances. The negative zone mechanism $\pi/\omega$ ensures sufficient separation between different clusters.
 
 2. **Theoretically Determined Optimal Hyperparameters**:
 
-   - **Function**: Theoretically determines the optimal values of the angular factor $\omega$ and embedding dimension $D$, eliminating manual tuning.
-   - **Mechanism**: Theorem 4.4 proves that when $D \geq K$, any $\omega \geq \pi/\arccos(-1/(K-1))$ is valid; Corollary 4.5 further establishes that when $D$ is sufficiently large, $\omega = 2$ is the universally optimal choice (effective for any $K$). Under this setting, the $K$ clusters in the embedding form a regular simplex in a $(K-1)$-dimensional subspace.
-   - **Design Motivation**: The theoretical guarantees ensure that SpherePair requires no adjustment of $\omega$ for different datasets or values of $K$; fixing $\omega = 2$ suffices. The requirement $D \geq K$ is easily satisfied in practice, even when $K$ is unknown.
+    - **Function**: Theoretically determines the optimal values of the angular factor $\omega$ and embedding dimension $D$, eliminating manual tuning.
+    - **Mechanism**: Theorem 4.4 proves that when $D \geq K$, any $\omega \geq \pi/\arccos(-1/(K-1))$ is valid; Corollary 4.5 further establishes that when $D$ is sufficiently large, $\omega = 2$ is the universally optimal choice (effective for any $K$). Under this setting, the $K$ clusters in the embedding form a regular simplex in a $(K-1)$-dimensional subspace.
+    - **Design Motivation**: The theoretical guarantees ensure that SpherePair requires no adjustment of $\omega$ for different datasets or values of $K$; fixing $\omega = 2$ suffices. The requirement $D \geq K$ is easily satisfied in practice, even when $K$ is unknown.
 
 3. **PCA-Based Cluster Count Inference**:
 
-   - **Function**: Infers the number of clusters from the learned spherical representations when $K$ is unknown.
-   - **Mechanism**: Based on the angular invariance property in Theorem 4.6 — when the PCA projection dimension $d \geq K-1$, inter-cluster angles are preserved — the method computes the minimum inter-cluster angle $\delta_d$ for samples involved in cannot-link constraints across subspaces of increasing dimension, and identifies the plateau onset $d^* = K-1$ in the sequence $\{\bar{\delta}_d\}$, yielding $\hat{K} = d^* + 1$.
-   - **Design Motivation**: The geometric structure of the spherical representations enables direct inference of $K$ without retraining or the cumbersome posterior cluster validation required by end-to-end methods.
+    - **Function**: Infers the number of clusters from the learned spherical representations when $K$ is unknown.
+    - **Mechanism**: Based on the angular invariance property in Theorem 4.6 — when the PCA projection dimension $d \geq K-1$, inter-cluster angles are preserved — the method computes the minimum inter-cluster angle $\delta_d$ for samples involved in cannot-link constraints across subspaces of increasing dimension, and identifies the plateau onset $d^* = K-1$ in the sequence $\{\bar{\delta}_d\}$, yielding $\hat{K} = d^* + 1$.
+    - **Design Motivation**: The geometric structure of the spherical representations enables direct inference of $K$ without retraining or the cumbersome posterior cluster validation required by end-to-end methods.
 
 ### Loss & Training
 

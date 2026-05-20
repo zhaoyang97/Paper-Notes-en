@@ -18,8 +18,8 @@ content_hash: 3b51f053b99766aa
 # Estimation of Stochastic Optimal Transport Maps
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2512.09499](https://arxiv.org/abs/2512.09499)
-**Code**: None
+**arXiv**: [2512.09499](https://arxiv.org/abs/2512.09499)  
+**Code**: None  
 **Area**: Optimal Transport / Statistical Learning Theory
 **Keywords**: Stochastic OT maps, transport error, finite-sample estimation, robust statistics, Markov kernels
 

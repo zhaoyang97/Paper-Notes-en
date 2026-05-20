@@ -18,8 +18,8 @@ content_hash: 6276867bb4ab9ac9
 # Stopping Computation for Converged Tokens in Masked Diffusion-LM Decoding
 
 **Conference**: ICLR 2026
-**arXiv**: [2602.06412](https://arxiv.org/abs/2602.06412)
-**Code**: [https://daioba.github.io/surelock](https://daioba.github.io/surelock)
+**arXiv**: [2602.06412](https://arxiv.org/abs/2602.06412)  
+**Code**: [https://daioba.github.io/surelock](https://daioba.github.io/surelock)  
 **Area**: LLM/NLP
 **Keywords**: Masked Diffusion LM, Inference Acceleration, Token Locking, KL Divergence, KV Cache
 
@@ -49,25 +49,25 @@ At each iteration of MDLM, SureLock maintains two sets: the active set $\mathcal
 
 1. **Permanent Locking Mechanism**:
 
-   - **Function**: Once token position $i$ is locked, Q projection and FFN are skipped for all subsequent steps, with cached $K, V$ values reused.
-   - **Mechanism**: After locking, $\hat{p}_t^{(i)} = p_{t^*}^{(i)}$ (posterior frozen), while $K^{\text{all}}[\mathcal{L}_t] \leftarrow \mathcal{C}.k[\mathcal{L}_t]$ ensures other tokens can still attend to locked positions.
-   - **Design Motivation**: Unlike selective-update methods (e.g., dLLM-Cache, which selects "what to compute now"), SureLock selects "what to permanently remove"—the active set is strictly non-increasing, guaranteeing monotonically decreasing computation.
+    - **Function**: Once token position $i$ is locked, Q projection and FFN are skipped for all subsequent steps, with cached $K, V$ values reused.
+    - **Mechanism**: After locking, $\hat{p}_t^{(i)} = p_{t^*}^{(i)}$ (posterior frozen), while $K^{\text{all}}[\mathcal{L}_t] \leftarrow \mathcal{C}.k[\mathcal{L}_t]$ ensures other tokens can still attend to locked positions.
+    - **Design Motivation**: Unlike selective-update methods (e.g., dLLM-Cache, which selects "what to compute now"), SureLock selects "what to permanently remove"—the active set is strictly non-increasing, guaranteeing monotonically decreasing computation.
 
 2. **Locking Criterion: Inter-Step KL Divergence**:
 
-   - **Function**: Position $i$ is locked when $D_t^{(i)} = \text{KL}(p_t^{(i)} \| p_{t-1}^{(i)}) \leq \varepsilon$.
-   - **Mechanism**: KL divergence measures the degree of change in the posterior between adjacent steps. The threshold $\varepsilon$ translates directly into a terminal error bound $\delta = C_{\text{tail}}\sqrt{\varepsilon}$.
-   - **Design Motivation**: Local KL is inexpensive to compute and theoretically tractable—Theorem 1 proves that the local KL at the locking step suffices to bound the deviation in the final token probability.
+    - **Function**: Position $i$ is locked when $D_t^{(i)} = \text{KL}(p_t^{(i)} \| p_{t-1}^{(i)}) \leq \varepsilon$.
+    - **Mechanism**: KL divergence measures the degree of change in the posterior between adjacent steps. The threshold $\varepsilon$ translates directly into a terminal error bound $\delta = C_{\text{tail}}\sqrt{\varepsilon}$.
+    - **Design Motivation**: Local KL is inexpensive to compute and theoretically tractable—Theorem 1 proves that the local KL at the locking step suffices to bound the deviation in the final token probability.
 
 3. **Optional Confidence Gate**:
 
-   - **Function**: $u_t^{(i)} = 1 - \max_v p_t^{(i)}(v) \leq q_m(u_t)$ serves as an auxiliary condition.
-   - **Design Motivation**: Acts as a safety net—only tokens with sufficiently peaked posteriors are locked, preventing premature locking of positions that remain uncertain.
+    - **Function**: $u_t^{(i)} = 1 - \max_v p_t^{(i)}(v) \leq q_m(u_t)$ serves as an auxiliary condition.
+    - **Design Motivation**: Acts as a safety net—only tokens with sufficiently peaked posteriors are locked, preventing premature locking of positions that remain uncertain.
 
 4. **Theoretical Error Bound (Theorem 1)**:
 
-   - **Core Result**: $\|\log p_T^{(i)} - \log \hat{p}_T^{(i)}\|_\infty \leq C_{\text{tail}}\sqrt{D_{t^*}^{(i)}}$, where $C_{\text{tail}} = L_{\text{sm}} L / (1 - \sqrt{\rho})$.
-   - **Significance**: Establishes a closed-form mapping from a locally computable KL threshold to a global terminal error bound, providing principled guidance for hyperparameter selection.
+    - **Core Result**: $\|\log p_T^{(i)} - \log \hat{p}_T^{(i)}\|_\infty \leq C_{\text{tail}}\sqrt{D_{t^*}^{(i)}}$, where $C_{\text{tail}} = L_{\text{sm}} L / (1 - \sqrt{\rho})$.
+    - **Significance**: Establishes a closed-form mapping from a locally computable KL threshold to a global terminal error bound, providing principled guidance for hyperparameter selection.
 
 ### Loss & Training
 SureLock is a **training-free** inference-time method that does not modify model parameters. It is orthogonal to and composable with existing temporal and reuse acceleration methods.

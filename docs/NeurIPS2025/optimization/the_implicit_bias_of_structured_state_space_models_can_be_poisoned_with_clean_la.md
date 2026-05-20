@@ -18,8 +18,8 @@ content_hash: 5b2ac74573222ea0
 # The Implicit Bias of Structured State Space Models Can Be Poisoned With Clean Labels
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2410.10473](https://arxiv.org/abs/2410.10473)
-**Code**: None
+**arXiv**: [2410.10473](https://arxiv.org/abs/2410.10473)  
+**Code**: None  
 **Area**: Optimization / Adversarial Machine Learning
 **Keywords**: Implicit Bias, State Space Models, Clean-Label Poisoning, Generalization Theory, SSM
 

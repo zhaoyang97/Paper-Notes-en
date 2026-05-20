@@ -18,8 +18,8 @@ content_hash: 722e0bb4140563dd
 # Fair Generation without Unfair Distortions: Debiasing Text-to-Image Generation with Entanglement-Free Attention
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.13298](https://arxiv.org/abs/2506.13298)
-**Code**: Unavailable
+**arXiv**: [2506.13298](https://arxiv.org/abs/2506.13298)  
+**Code**: Unavailable  
 **Area**: Text-to-Image Generation / Fairness
 **Keywords**: Debiasing, Attribute Disentanglement, Cross-Attention, Diffusion Models, Fairness
 

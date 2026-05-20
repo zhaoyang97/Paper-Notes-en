@@ -18,8 +18,8 @@ content_hash: c704b4eed89e50c5
 # Can Continual Pre-training Bridge the Performance Gap between General-purpose and Specialized Language Models in the Medical Domain?
 
 **Conference**: ACL 2026
-**arXiv**: [2604.19394](https://arxiv.org/abs/2604.19394)
-**Code**: None
+**arXiv**: [2604.19394](https://arxiv.org/abs/2604.19394)  
+**Code**: None  
 **Area**: Medical Imaging
 **Keywords**: Continual pre-training, domain adaptation, German medical LLM, model merging, data filtering
 

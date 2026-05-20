@@ -18,8 +18,8 @@ content_hash: f44dbcd39455129a
 # DP²O-SR: Direct Perceptual Preference Optimization for Real-World Image Super-Resolution
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2510.18851](https://arxiv.org/abs/2510.18851)
-**Code**: [github.com/cswry/DP2O-SR](https://github.com/cswry/DP2O-SR)
+**arXiv**: [2510.18851](https://arxiv.org/abs/2510.18851)  
+**Code**: [github.com/cswry/DP2O-SR](https://github.com/cswry/DP2O-SR)  
 **Area**: LLM Alignment
 **Keywords**: Image Super-Resolution, Preference Optimization, Diffusion Models, Perceptual Quality, DPO
 

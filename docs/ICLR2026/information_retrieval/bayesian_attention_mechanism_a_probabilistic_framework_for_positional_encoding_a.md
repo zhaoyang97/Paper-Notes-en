@@ -18,8 +18,8 @@ content_hash: 9b0369237c31da23
 # Bayesian Attention Mechanism: A Probabilistic Framework for Positional Encoding and Context Length Extrapolation
 
 **Conference**: ICLR 2026
-**arXiv**: [2505.22842](https://arxiv.org/abs/2505.22842)
-**Code**: [https://github.com/ArthurSBianchessi/BAM](https://github.com/ArthurSBianchessi/BAM)
+**arXiv**: [2505.22842](https://arxiv.org/abs/2505.22842)  
+**Code**: [https://github.com/ArthurSBianchessi/BAM](https://github.com/ArthurSBianchessi/BAM)  
 **Area**: Information Retrieval
 **Keywords**: Bayesian attention, positional encoding, context extrapolation, generalized Gaussian distribution, long context
 

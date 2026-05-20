@@ -18,8 +18,8 @@ content_hash: c348da3b5a4b4d25
 # Accelerate Creation of Product Claims Using Generative AI
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2509.20652](https://arxiv.org/abs/2509.20652)
-**Code**: Available (GitHub)
+**arXiv**: [2509.20652](https://arxiv.org/abs/2509.20652)  
+**Code**: Available (GitHub)  
 **Area**: Audio & Speech
 **Keywords**: product claims, in-context learning, LoRA fine-tuning, MaxDiff, consumer simulation
 

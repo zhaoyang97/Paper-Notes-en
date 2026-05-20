@@ -18,8 +18,8 @@ content_hash: 27f0fda802e2d001
 # Frequency-Semantic Enhanced Variational Autoencoder for Zero-Shot Skeleton-based Action Recognition
 
 **Conference**: ICCV 2025
-**arXiv**: [2506.22179](https://arxiv.org/abs/2506.22179)
-**Code**: N/A
+**arXiv**: [2506.22179](https://arxiv.org/abs/2506.22179)  
+**Code**: N/A  
 **Area**: Video Understanding / Action Recognition
 **Keywords**: Zero-shot action recognition, skeleton sequences, frequency decomposition, semantic alignment, variational autoencoder
 

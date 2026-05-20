@@ -18,8 +18,8 @@ content_hash: 1ce586d41b6d4df8
 # TRAP: Targeted Redirecting of Agentic Preferences
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2505.23518](https://arxiv.org/abs/2505.23518)
-**Code**: [https://github.com/uiuc-focal-lab/TRAP](https://github.com/uiuc-focal-lab/TRAP)
+**arXiv**: [2505.23518](https://arxiv.org/abs/2505.23518)  
+**Code**: [https://github.com/uiuc-focal-lab/TRAP](https://github.com/uiuc-focal-lab/TRAP)  
 **Area**: AI Safety
 **Keywords**: adversarial attack, vision-language models, semantic injection, agentic safety, diffusion models
 

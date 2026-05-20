@@ -18,8 +18,8 @@ content_hash: 92b193175ec1ad0a
 # DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching
 
 **Conference**: CVPR 2026
-**arXiv**: [2602.05449](https://arxiv.org/abs/2602.05449)
-**Code**: Coming soon
+**arXiv**: [2602.05449](https://arxiv.org/abs/2602.05449)  
+**Code**: Coming soon  
 **Area**: Video Generation / Diffusion Model Acceleration
 **Keywords**: Feature Caching, Step Distillation, MeanFlow, Learnable Predictor, HunyuanVideo
 

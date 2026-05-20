@@ -18,8 +18,8 @@ content_hash: 7ab52d362efbe3e8
 # Waking Up Blind: Cold-Start Optimization of Supervision-Free Agentic Trajectories
 
 **Conference**: ACL 2026
-**arXiv**: [2604.17475](https://arxiv.org/abs/2604.17475)
-**Code**: [GitHub](https://github.com/ab-iitd/spectra)
+**arXiv**: [2604.17475](https://arxiv.org/abs/2604.17475)  
+**Code**: [GitHub](https://github.com/ab-iitd/spectra)  
 **Area**: Multimodal Agent / Visual Reasoning
 **Keywords**: Small VLM, Tool Calling, Cold-Start Reinforcement Learning, Multi-Objective Reward, Agentic Trajectory Optimization
 

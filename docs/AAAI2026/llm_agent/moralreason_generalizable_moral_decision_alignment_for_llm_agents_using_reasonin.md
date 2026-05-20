@@ -18,8 +18,8 @@ content_hash: b107336a94b297f6
 # MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning
 
 **Conference**: AAAI 2026
-**arXiv**: [2511.12271](https://arxiv.org/abs/2511.12271)
-**Code**: [Project Page](https://ryeii.github.io/MoralReason/) / [Dataset](https://huggingface.co/datasets/zankjhk/Moral-Reason-QA)
+**arXiv**: [2511.12271](https://arxiv.org/abs/2511.12271)  
+**Code**: [Project Page](https://ryeii.github.io/MoralReason/) / [Dataset](https://huggingface.co/datasets/zankjhk/Moral-Reason-QA)  
 **Area**: LLM Agent / Alignment RLHF
 **Keywords**: Moral Alignment, GRPO, Reasoning-Level Reinforcement Learning, Out-of-Distribution Generalization, Ethical Frameworks
 

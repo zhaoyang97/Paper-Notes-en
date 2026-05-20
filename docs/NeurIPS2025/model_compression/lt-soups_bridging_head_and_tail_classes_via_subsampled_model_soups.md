@@ -18,8 +18,8 @@ content_hash: 5761645a06aec098
 # LT-Soups: Bridging Head and Tail Classes via Subsampled Model Soups
 
 **Conference**: NeurIPS 2025
-**arXiv**: [2511.10683](https://arxiv.org/abs/2511.10683)
-**Code**: [GitHub](https://github.com/Masseeh/LT-Soups)
+**arXiv**: [2511.10683](https://arxiv.org/abs/2511.10683)  
+**Code**: [GitHub](https://github.com/Masseeh/LT-Soups)  
 **Area**: Model Compression & Efficient Learning
 **Keywords**: Long-tail distribution, model merging, CLIP fine-tuning, class imbalance, parameter-efficient fine-tuning
 

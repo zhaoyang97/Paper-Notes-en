@@ -18,8 +18,8 @@ content_hash: 2b9540356becf94b
 # InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization
 
 **Conference**: AAAI 2026
-**arXiv**: [2508.05731](https://arxiv.org/abs/2508.05731)
-**Code**: [github.com/InfiXAI/InfiGUI-G1](https://github.com/InfiXAI/InfiGUI-G1)
+**arXiv**: [2508.05731](https://arxiv.org/abs/2508.05731)  
+**Code**: [github.com/InfiXAI/InfiGUI-G1](https://github.com/InfiXAI/InfiGUI-G1)  
 **Area**: Reinforcement Learning
 **Keywords**: GUI Grounding, Multimodal Large Language Models, Adaptive Exploration, Policy Optimization, Multi-Answer Generation
 

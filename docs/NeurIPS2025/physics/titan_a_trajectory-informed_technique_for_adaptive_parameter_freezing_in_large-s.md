@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE
 description: >-
-  [NeurIPS 2025][Physics][VQE] This paper proposes TITAN, a framework that employs deep learning models to predict "frozen parameters" in VQE—parameters that remain inactive throughout training—enabling 40–60% of parameter…
+  [NeurIPS 2025][Physics & Scientific Computing][VQE] This paper proposes TITAN, a framework that employs deep learning models to predict "frozen parameters" in VQE—parameters that remain inactive throughout training—enabl…
 tags:
   - "NeurIPS 2025"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "VQE"
   - "parameter freezing"
   - "barren plateau"
@@ -123,11 +123,11 @@ Three stages: (1) the APFA algorithm collects parameter freezing patterns from V
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning](f-adapter_frequency-adaptive_parameter-efficient_fine-tuning_in_scientific_machi.md)
 - [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
 - [\[NeurIPS 2025\] FEAT: Free Energy Estimators with Adaptive Transport](feat_free_energy_estimators_with_adaptive_transport.md)
-- [\[AAAI 2026\] Adaptive Fidelity Estimation for Quantum Programs with Graph-Guided Noise Awareness](../../AAAI2026/physics/adaptive_fidelity_estimation_for_quantum_programs_with_graph.md)
-- [\[NeurIPS 2025\] Exoplanet Formation Inference Using Conditional Invertible Neural Networks](exoplanet_formation_inference_using_conditional_invertible_neural_networks.md)
-- [\[NeurIPS 2025\] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)
+- [\[CVPR 2026\] NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training](../../CVPR2026/physics/nestor_a_nested_moe-based_neural_operator_for_large-scale_pde_pre-training.md)
+- [\[NeurIPS 2025\] Multi-Trajectory Physics-Informed Neural Networks for HJB Equations with Hard-Zero Terminal Inventory: Optimal Execution on Synthetic & SPY Data](multi-trajectory_physics-informed_neural_networks_for_hjb_equations_with_hard-ze.md)
 
 </div>
 

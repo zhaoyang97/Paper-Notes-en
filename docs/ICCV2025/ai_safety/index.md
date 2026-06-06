@@ -19,7 +19,7 @@ tags:
 
 **📹 ICCV2025** · **21** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (16)](../../ICML2026/ai_safety/index.md) · [💬 ACL2026 (2)](../../ACL2026/ai_safety/index.md) · [📷 CVPR2026 (22)](../../CVPR2026/ai_safety/index.md) · [🔬 ICLR2026 (26)](../../ICLR2026/ai_safety/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/ai_safety/index.md) · [🧠 NeurIPS2025 (70)](../../NeurIPS2025/ai_safety/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (16)](../../ICML2026/ai_safety/index.md) · [💬 ACL2026 (2)](../../ACL2026/ai_safety/index.md) · [📷 CVPR2026 (22)](../../CVPR2026/ai_safety/index.md) · [🔬 ICLR2026 (27)](../../ICLR2026/ai_safety/index.md) · [🤖 AAAI2026 (44)](../../AAAI2026/ai_safety/index.md) · [🧠 NeurIPS2025 (70)](../../NeurIPS2025/ai_safety/index.md)
 
 🔥 **Top topics:** Federated Learning ×6 · Adversarial Robustness ×4 · Alignment/RLHF ×3 · Question Answering ×2
 

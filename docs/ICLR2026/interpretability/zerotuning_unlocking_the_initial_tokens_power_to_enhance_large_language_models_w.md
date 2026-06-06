@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ZeroTuning: Unlocking the Initial Token's Power to Enhance Large Language Models Without Training
 description: >-
-  [Interpretability] This paper proposes ZeroTuning, a training-free method that improves LLM performance across 15 datasets by applying head-specific scaling to the attention scores of the initial token (e.g., `&lt;BOS>`)…
+  [Interpretability] This paper proposes ZeroTuning, a training-free method that improves LLM performance across 15 datasets by applying head-specific scaling to the attention scores of the initial token (e.g., `<BOS>`)…
 tags:
   - "Interpretability"
 date: 2026-05-08

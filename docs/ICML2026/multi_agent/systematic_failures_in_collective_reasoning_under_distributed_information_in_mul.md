@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Systematic Failures in Collective Reasoning under Distributed Information in Multi-Agent LLMs
 description: >-
-  [ICML 2026][LLM Agent / Multi-Agent / Collective Reasoning Evaluation][HiddenBench] This paper adapts the social psychology Hidden Profile paradigm to multi-agent LLM evaluation…
+  [ICML 2026][Multi-Agent][HiddenBench] This paper adapts the social psychology Hidden Profile paradigm to multi-agent LLM evaluation…
 tags:
   - "ICML 2026"
-  - "LLM Agent / Multi-Agent / Collective Reasoning Evaluation"
+  - "Multi-Agent"
   - "HiddenBench"
   - "Hidden Profile"
   - "Distributed Information"
@@ -132,11 +132,11 @@ Key cross-sectional findings: (i) Single agents achieve 80.7% on average under F
 
 ## Related Papers
 
-- [\[ICML 2025\] From Passive to Active Reasoning: Can Large Language Models Ask the Right Questions under Incomplete Information?](../../ICML2025/llm_agent/from_passive_to_active_reasoning_can_large_language_models_ask_the_right_questio.md)
-- [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](../../ACL2026/llm_agent/silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
-- [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
-- [\[ACL 2026\] Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation](../../ACL2026/llm_agent/diversity_collapse_in_multi-agent_llm_systems_structural_coupling_and_collective.md)
-- [\[AAAI 2026\] BayesAgent: Bayesian Agentic Reasoning Under Uncertainty via Verbalized Probabilistic Graphical Modeling](../../AAAI2026/llm_agent/bayesagent_bayesian_agentic_reasoning_under_uncertainty_via_.md)
+- [\[ACL 2026\] Collaborative Multi-Agent Scripts Generation for Enhancing Imperfect-Information Reasoning in Murder Mystery Games](../../ACL2026/multi_agent/collaborative_multi-agent_scripts_generation_for_enhancing_imperfect-information.md)
+- [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](../../ACL2026/multi_agent/silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
+- [\[ACL 2026\] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation](../../ACL2026/multi_agent/from_query_to_counsel_structured_reasoning_with_a_multi-agent_framework_and_data.md)
+- [\[ACL 2026\] Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation](../../ACL2026/multi_agent/diversity_collapse_in_multi-agent_llm_systems_structural_coupling_and_collective.md)
+- [\[ICML 2026\] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory](e-mem_multi-agent_based_episodic_context_reconstruction_for_llm_agent_memory.md)
 
 </div>
 

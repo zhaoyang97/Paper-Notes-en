@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning
 description: >-
-  [NeurIPS 2025][Physics][simulation-based inference] This work presents the first application of simulation-based inference (SBI) to neutrino interaction model parameter tuning. Using neural posterior estimation (NPE)…
+  [NeurIPS 2025][Physics & Scientific Computing][simulation-based inference] This work presents the first application of simulation-based inference (SBI) to neutrino interaction model parameter tuning. Using neural posteri…
 tags:
   - "NeurIPS 2025"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "simulation-based inference"
   - "neutrino scattering"
   - "neural posterior estimation"
@@ -128,11 +128,11 @@ The GENIE simulator takes 4 physical parameters as input → NUISANCE generates 
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning](f-adapter_frequency-adaptive_parameter-efficient_fine-tuning_in_scientific_machi.md)
 - [\[NeurIPS 2025\] Transfer Learning Beyond the Standard Model](transfer_learning_beyond_the_standard_model.md)
 - [\[NeurIPS 2025\] Exoplanet Formation Inference Using Conditional Invertible Neural Networks](exoplanet_formation_inference_using_conditional_invertible_neural_networks.md)
 - [\[NeurIPS 2025\] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE](titan_a_trajectory-informed_technique_for_adaptive_parameter_freezing_in_large-s.md)
 - [\[NeurIPS 2025\] Knowledge is Overrated: A Zero-Knowledge ML and Cryptographic Hashing-Based Framework for Verifiable, Low Latency Inference at the LHC](knowledge_is_overrated_a_zero-knowledge_machine_learning_and_cryptographic_hashi.md)
-- [\[CVPR 2026\] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](../../CVPR2026/physics/qkd_quantum_gated_incremental_learning.md)
 
 </div>
 

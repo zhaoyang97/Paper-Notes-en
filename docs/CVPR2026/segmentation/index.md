@@ -20,9 +20,9 @@ tags:
 
 **📷 CVPR2026** · **83** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (4)](../../ICML2026/segmentation/index.md) · [💬 ACL2026 (1)](../../ACL2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (48)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (73)](../../ICCV2025/segmentation/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (4)](../../ICML2026/segmentation/index.md) · [💬 ACL2026 (1)](../../ACL2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (74)](../../ICCV2025/segmentation/index.md)
 
-🔥 **Top topics:** Segmentation ×42 · Diffusion Models ×5 · Reasoning ×5 · Domain Adaptation ×4 · Object Detection ×4
+🔥 **Top topics:** Segmentation ×43 · Diffusion Models ×5 · Reasoning ×5 · Domain Adaptation ×4 · Object Detection ×4
 
 **[3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion](3m-ti_high-quality_mobile_thermal_imaging_via_calibration-free_multi-camera_cros.md)**
 
@@ -55,10 +55,6 @@ tags:
 **[CLIP Is Shortsighted: Paying Attention Beyond the First Sentence](clip_is_shortsighted_paying_attention_beyond_the_first_sentence.md)**
 
 :   This paper reveals a systematic bias in CLIP-family models toward the summary sentence and early tokens in long-form text, and proposes DeBias-CLIP, which eliminates this bias via three text augmentation strategies — summary removal, sentence sub-sampling, and token padding — achieving state-of-the-art performance on both long- and short-text retrieval benchmarks without introducing any additional parameters.
-
-**[Comparative Evaluation of Traditional Methods and Deep Learning for Brain Glioma Imaging](comparative_evaluation_of_traditional_methods_and_deep_learning_for_brain_glioma.md)**
-
-:   A systematic review paper that comprehensively compares traditional methods (thresholding, region growing, fuzzy clustering, etc.) and deep learning methods (CNN, U-Net, SegNet, etc.) for brain glioma MRI segmentation and classification, concluding that CNN-based architectures consistently outperform traditional techniques in both accuracy and degree of automation.
 
 **[Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness](concept-guided_fine-tuning_steering_vits_away_from_spurious_correlations_to_impr.md)**
 
@@ -355,3 +351,7 @@ tags:
 **[Weakly-Supervised Referring Video Object Segmentation through Text Supervision](wsrvos_weakly_supervised_rvos.md)**
 
 :   This paper proposes WSRVOS, the first weakly supervised referring video object segmentation framework that uses only text expressions as supervision signals. It achieves significant reduction in reliance on pixel-level annotations through MLLM-driven contrastive expression augmentation, bidirectional visual-language feature selection, instance-aware expression classification, and temporal segment ranking constraints.
+
+**[XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening](xseg_a_large-scale_x-ray_contraband_segmentation_benchmark_for_real-world_securi.md)**
+
+:   This paper introduces XSeg, the largest X-ray contraband segmentation dataset to date (98,644 images, 295,932 instance masks, 30 fine-grained categories), and proposes APSAM, a domain-specialized model that leverages the physical dual-energy properties of X-ray imaging via an Energy-Aware Encoder (EAE) and an Adaptive Point Generator (APG) to intelligently expand user click prompts. APSAM achieves 72.83% mIoU, surpassing SAM fine-tuning by 4.96%.

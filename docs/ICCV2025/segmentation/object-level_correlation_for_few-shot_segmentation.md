@@ -161,10 +161,10 @@ Training configuration: SGD optimizer, lr=0.005, batch size=4; 200 epochs on PAS
 ## Related Papers
 
 - [\[ICCV 2025\] MOVE: Motion-Guided Few-Shot Video Object Segmentation](move_motion-guided_few-shot_video_object_segmentation.md)
+- [\[ICCV 2025\] DictAS: A Framework for Class-Generalizable Few-Shot Anomaly Segmentation via Dictionary Lookup](dictas_a_framework_for_class-generalizable_few-shot_anomaly_segmentation_via_dic.md)
 - [\[NeurIPS 2025\] SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation](../../NeurIPS2025/segmentation/sansa_unleashing_the_hidden_semantics_in_sam2_for_few-shot_segmentation.md)
 - [\[ICCV 2025\] LayerAnimate: Layer-level Control for Animation](layeranimate_layer-level_control_for_animation.md)
 - [\[ICCV 2025\] ZIM: Zero-Shot Image Matting for Anything](zim_zero-shot_image_matting_for_anything.md)
-- [\[NeurIPS 2025\] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning](../../NeurIPS2025/segmentation/unipixel_unified_object_referring_and_segmentation_for_pixel-level_visual_reason.md)
 
 </div>
 

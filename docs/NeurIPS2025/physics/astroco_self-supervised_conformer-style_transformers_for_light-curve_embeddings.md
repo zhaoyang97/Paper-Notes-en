@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] AstroCo: Self-Supervised Conformer-Style Transformers for Light-Curve Embeddings
 description: >-
-  [NeurIPS 2025 (ML4PS Workshop)][Physics][Self-supervised learning] This paper proposes AstroCo, a self-supervised encoder that introduces the Conformer architecture (attention + depthwise separable convolution + gating)…
+  [NeurIPS 2025 (ML4PS Workshop)][Physics & Scientific Computing][Self-supervised learning] This paper proposes AstroCo, a self-supervised encoder that introduces the Conformer architecture (attention + depthwise separable…
 tags:
   - "NeurIPS 2025 (ML4PS Workshop)"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "Self-supervised learning"
   - "Conformer"
   - "light curves"
@@ -179,9 +179,9 @@ Light curve {(t_i, m_i, σ_i)}
 
 - [\[NeurIPS 2025\] Quantum Doubly Stochastic Transformers](quantum_doubly_stochastic_transformers.md)
 - [\[NeurIPS 2025\] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)
+- [\[ICLR 2026\] Supervised Metric Regularization Through Alternating Optimization for Multi-Regime PINNs](../../ICLR2026/physics/supervised_metric_regularization_through_alternating_optimization_for_multi-regi.md)
 - [\[NeurIPS 2025\] Toward Complete Merger Identification at Cosmic Noon with Deep Learning](toward_complete_merger_identification_at_cosmic_noon_with_deep_learning.md)
 - [\[NeurIPS 2025\] POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning](polaris_a_high-contrast_polarimetric_imaging_benchmark_dataset_for_exoplanetary_.md)
-- [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](neural_deprojection_of_galaxy_stellar_mass_profiles.md)
 
 </div>
 

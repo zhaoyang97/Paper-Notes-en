@@ -144,9 +144,9 @@ Coarse labels emphasize fundamental semantic patterns rather than subtle distinc
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Torch-Uncertainty: A Deep Learning Framework for Uncertainty Quantification](../../NeurIPS2025/segmentation/torch-uncertainty_a_deep_learning_framework_for_uncertainty_quantification.md)
 - [\[ICCV 2025\] Exploring Probabilistic Modeling Beyond Domain Generalization for Semantic Segmentation](exploring_probabilistic_modeling_beyond_domain_generalization_for_semantic_segme.md)
 - [\[ICCV 2025\] Exploiting Domain Properties in Language-Driven Domain Generalization for Semantic Segmentation](exploiting_domain_properties_in_language-driven_domain_generalization_for_semant.md)
+- [\[NeurIPS 2025\] Torch-Uncertainty: A Deep Learning Framework for Uncertainty Quantification](../../NeurIPS2025/segmentation/torch-uncertainty_a_deep_learning_framework_for_uncertainty_quantification.md)
 - [\[CVPR 2026\] Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation](../../CVPR2026/segmentation/brewing_stronger_features_dual-teacher_distillation_for_multispectral_earth_obse.md)
 - [\[ICCV 2025\] Region-based Cluster Discrimination for Visual Representation Learning](region-based_cluster_discrimination_for_visual_representation_learning.md)
 

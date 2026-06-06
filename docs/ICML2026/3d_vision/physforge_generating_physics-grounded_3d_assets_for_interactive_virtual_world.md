@@ -130,3 +130,19 @@ Comparison on PhysXNet with part-aware and physics-aware baselines. Key metrics:
 - Experimental Thoroughness: ⭐⭐⭐⭐  
 - Writing Quality: ⭐⭐⭐⭐  
 - Value: ⭐⭐⭐⭐⭐
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICCV 2025\] WonderTurbo: Generating Interactive 3D World in 0.72 Seconds](../../ICCV2025/3d_vision/wonderturbo_generating_interactive_3d_world_in_072_seconds.md)
+- [\[CVPR 2026\] ArtLLM: Generating Articulated Assets via 3D LLM](../../CVPR2026/3d_vision/artllm_generating_articulated_assets_via_3d_llm.md)
+- [\[ICML 2026\] LabBuilder: Protocol-Grounded 3D Layout Generation for Interactable and Safe Laboratory](labbuilder_protocol-grounded_3d_layout_generation_for_interactable_and_safe_labo.md)
+- [\[ICML 2026\] PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions](physhandi_physics-based_reconstruction_of_hand-deformable_object_interactions.md)
+- [\[CVPR 2026\] MotionAnymesh: Physics-Grounded Articulation for Simulation-Ready Digital Twins](../../CVPR2026/3d_vision/motionanymesh_physicsgrounded_articulation_for_sim.md)
+
+</div>
+
+<!-- RELATED:END -->

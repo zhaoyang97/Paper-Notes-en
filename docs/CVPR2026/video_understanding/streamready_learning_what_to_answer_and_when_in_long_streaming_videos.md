@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] StreamReady: Learning What to Answer and When in Long Streaming Videos
 description: >-
-  [CVPR 2026][Video Understanding][Streaming video understanding] This paper introduces a readiness-aware paradigm for streaming video understanding. By incorporating a learnable `&lt;RDY>` token and proposing the Answer Read…
+  [CVPR 2026][Video Understanding][Streaming video understanding] This paper introduces a readiness-aware paradigm for streaming video understanding. By incorporating a learnable `<RDY>` token and proposing the Answer Read…
 tags:
   - "CVPR 2026"
   - "Video Understanding"
@@ -153,7 +153,7 @@ StreamReady outperforms the best competitor, StreamBridge, by ~3% in accuracy an
 - [\[CVPR 2026\] Color When It Counts: Grayscale-Guided Online Triggering for Always-On Streaming Video Sensing](color_when_it_counts_grayscale-guided_online_triggering_for_always-on_streaming_.md)
 - [\[CVPR 2026\] Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering](do_you_see_what_i_am_pointing_at_gesture-based_egocentric_video_question_answeri.md)
 - [\[CVPR 2026\] FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding](fluxmem_adaptive_hierarchical_memory_for_streaming_video_understanding.md)
-- [\[CVPR 2026\] STORM: End-to-End Referring Multi-Object Tracking in Videos](storm_referring_multi_object_tracking.md)
+- [\[ICML 2026\] VideoSEAL: Mitigating Evidence Misalignment in Agentic Long Video Understanding by Decoupling Answer Authority](../../ICML2026/video_understanding/videoseal_mitigating_evidence_misalignment_in_agentic_long_video_understanding_b.md)
 
 </div>
 

@@ -17,7 +17,7 @@ tags:
 
 **🧠 NeurIPS2025** · **5** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (12)](../../ACL2026/dialogue/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/dialogue/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/dialogue/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/dialogue/index.md)
+📌 **Same area in other venues:** [💬 ACL2026 (13)](../../ACL2026/dialogue/index.md) · [📷 CVPR2026 (1)](../../CVPR2026/dialogue/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/dialogue/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/dialogue/index.md)
 
 🔥 **Top topics:** LLM ×2
 

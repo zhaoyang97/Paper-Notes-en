@@ -131,11 +131,11 @@ The paper presents two ablation variants—PragLocker_tune (task loss tuning onl
 
 ## Related Papers
 
-- [\[ICML 2026\] RHB：度量带工具的 LLM Agent 中奖励黑客行为的基准](reward_hacking_benchmark_measuring_exploits_in_llm_agents_with_tool_use.md)
-- [\[ICML 2026\] EngiAgent：用全连接协调器把 LLM 多 Agent 拉到工程可行解](engiagent_fully_connected_coordination_of_llm_agents_for_solving_open-ended_engi.md)
-- [\[ICML 2026\] Video2GUI: 从互联网视频合成大规模交互轨迹用于通用 GUI Agent 预训练](video2gui_synthesizing_large-scale_interaction_trajectories_for_generalized_gui_.md)
-- [\[ICML 2026\] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory](e-mem_multi-agent_based_episodic_context_reconstruction_for_llm_agent_memory.md)
 - [\[ICML 2026\] A Minimal Agent for Automated Theorem Proving](a_minimal_agent_for_automated_theorem_proving.md)
+- [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
+- [\[ICML 2026\] Agent-Omit: Adaptive Context Omission for Efficient LLM Agents](agent-omit_adaptive_context_omission_for_efficient_llm_agents.md)
+- [\[ICML 2026\] Video2GUI: Synthesizing Large-Scale Interaction Trajectories for Generalized GUI Agent Pretraining](video2gui_synthesizing_large-scale_interaction_trajectories_for_generalized_gui_.md)
+- [\[ICLR 2026\] M²-Miner: Multi-Agent Enhanced MCTS for Mobile GUI Agent Data Mining](../../ICLR2026/llm_agent/m2-miner_multi-agent_enhanced_mcts_for_mobile_gui_agent_data_mining.md)
 
 </div>
 

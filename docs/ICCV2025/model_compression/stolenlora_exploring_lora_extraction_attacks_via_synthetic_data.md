@@ -182,10 +182,10 @@ When only one-hot predictions are available (no probability distributions), Stol
 ## Related Papers
 
 - [\[NeurIPS 2025\] Toward Efficient Inference Attacks: Shadow Model Sharing via Mixture-of-Experts](../../NeurIPS2025/model_compression/toward_efficient_inference_attacks_shadow_model_sharing_via_mixture-of-experts.md)
-- [\[ACL 2026\] Mem^p: Exploring Agent Procedural Memory](../../ACL2026/model_compression/memp_exploring_agent_procedural_memory.md)
 - [\[ICCV 2025\] OuroMamba: A Data-Free Quantization Framework for Vision Mamba](ouromamba_a_data-free_quantization_framework_for_vision_mamba.md)
 - [\[NeurIPS 2025\] FirstAidQA: A Synthetic Dataset for First Aid and Emergency Response in Low-Connectivity Settings](../../NeurIPS2025/model_compression/firstaidqa_a_synthetic_dataset_for_first_aid_and_emergency_response_in_low-conne.md)
 - [\[ICCV 2025\] Partial Forward Blocking: A Novel Data Pruning Paradigm for Lossless Training Acceleration](partial_forward_blocking_a_novel_data_pruning_paradigm_for_lossless_training_acc.md)
+- [\[AAAI 2026\] LexChronos: An Agentic Framework for Structured Event Timeline Extraction in Indian Jurisprudence](../../AAAI2026/model_compression/lexchronos_an_agentic_framework_for_structured_event_timeline_extraction_in_indi.md)
 
 </div>
 

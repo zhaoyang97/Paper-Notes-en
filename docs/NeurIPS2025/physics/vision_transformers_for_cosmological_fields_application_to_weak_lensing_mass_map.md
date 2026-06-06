@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps
 description: >-
-  [NeurIPS 2025][Physics][Vision Transformer] This work presents the first systematic application of Vision Transformers (ViT and Swin Transformer) to constraining cosmological parameters ($\Omega_m$ and $S_8$) from weak l…
+  [NeurIPS 2025][Physics & Scientific Computing][Vision Transformer] This work presents the first systematic application of Vision Transformers (ViT and Swin Transformer) to constraining cosmological parameters ($\Omega_m$…
 tags:
   - "NeurIPS 2025"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "Vision Transformer"
   - "Weak Lensing"
   - "Cosmological Parameters"
@@ -137,11 +137,11 @@ This work presents the first systematic application of Vision Transformers (ViT 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](neural_deprojection_of_galaxy_stellar_mass_profiles.md)
 - [\[NeurIPS 2025\] Quantum Doubly Stochastic Transformers](quantum_doubly_stochastic_transformers.md)
+- [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](neural_deprojection_of_galaxy_stellar_mass_profiles.md)
 - [\[NeurIPS 2025\] AstroCo: Self-Supervised Conformer-Style Transformers for Light-Curve Embeddings](astroco_self-supervised_conformer-style_transformers_for_light-curve_embeddings.md)
 - [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
-- [\[NeurIPS 2025\] Dynamic Diffusion Schrödinger Bridge in Astrophysical Observational Inversions](dynamic_diffusion_schrödinger_bridge_in_astrophysical_observational_inversions.md)
+- [\[NeurIPS 2025\] FEAT: Free Energy Estimators with Adaptive Transport](feat_free_energy_estimators_with_adaptive_transport.md)
 
 </div>
 

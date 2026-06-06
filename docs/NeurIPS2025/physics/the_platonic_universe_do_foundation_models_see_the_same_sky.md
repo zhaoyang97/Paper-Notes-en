@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] The Platonic Universe: Do Foundation Models See the Same Sky?
 description: >-
-  [NeurIPS 2025][Physics][Platonic Representation Hypothesis] This paper validates the Platonic Representation Hypothesis (PRH) in an astronomical setting. Using JWST, HSC, Legacy Survey, and DESI spectroscopic data…
+  [NeurIPS 2025][Physics & Scientific Computing][Platonic Representation Hypothesis] This paper validates the Platonic Representation Hypothesis (PRH) in an astronomical setting. Using JWST, HSC, Legacy Survey…
 tags:
   - "NeurIPS 2025"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "Platonic Representation Hypothesis"
   - "foundation models"
   - "astronomy"
@@ -123,10 +123,10 @@ This paper validates the Platonic Representation Hypothesis (PRH) in an astronom
 ## Related Papers
 
 - [\[NeurIPS 2025\] FAIR Universe HiggsML Uncertainty Dataset and Competition](fair_universe_higgsml_uncertainty_dataset_and_competition.md)
+- [\[NeurIPS 2025\] Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models](physics-guided_machine_learning_for_uncertainty_quantification_in_turbulence_mod.md)
+- [\[AAAI 2026\] Towards a Foundation Model for Partial Differential Equations Across Physics Domains](../../AAAI2026/physics/towards_a_foundation_model_for_partial_differential_equations_across_physics_dom.md)
 - [\[NeurIPS 2025\] Transfer Learning Beyond the Standard Model](transfer_learning_beyond_the_standard_model.md)
 - [\[NeurIPS 2025\] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)
-- [\[NeurIPS 2025\] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE](titan_a_trajectory-informed_technique_for_adaptive_parameter_freezing_in_large-s.md)
-- [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
 
 </div>
 

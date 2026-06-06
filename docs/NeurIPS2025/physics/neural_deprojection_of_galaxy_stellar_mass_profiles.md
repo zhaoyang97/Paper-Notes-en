@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Neural Deprojection of Galaxy Stellar Mass Profiles
 description: >-
-  [NeurIPS 2025][Physics][galaxy mass distribution] A neural network approach is proposed to map Nuker galaxy profile parameters to analytically deprojectable Multi-Gaussian Expansion (MGE) components…
+  [NeurIPS 2025][Physics & Scientific Computing][galaxy mass distribution] A neural network approach is proposed to map Nuker galaxy profile parameters to analytically deprojectable Multi-Gaussian Expansion (MGE) component…
 tags:
   - "NeurIPS 2025"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "galaxy mass distribution"
   - "deprojection"
   - "deep learning"
@@ -137,10 +137,10 @@ Validation on galaxy NGC4697, compared against the state-of-the-art method using
 ## Related Papers
 
 - [\[NeurIPS 2025\] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)
+- [\[NeurIPS 2025\] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)
 - [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
-- [\[NeurIPS 2025\] Exoplanet Formation Inference Using Conditional Invertible Neural Networks](exoplanet_formation_inference_using_conditional_invertible_neural_networks.md)
-- [\[NeurIPS 2025\] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology](multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal.md)
 - [\[NeurIPS 2025\] Unsupervised Discovery of High-Redshift Galaxy Populations with Variational Autoencoders](unsupervised_discovery_of_high-redshift_galaxy_populations_with_variational_auto.md)
+- [\[NeurIPS 2025\] From Images to Physics: Probabilistic Inference of Galaxy Parameters and Emission Lines via VAE & Normalizing Flows](from_images_to_physics_probabilistic_inference_of_galaxy_parameters_and_emission.md)
 
 </div>
 

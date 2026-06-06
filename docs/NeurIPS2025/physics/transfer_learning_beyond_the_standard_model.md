@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Transfer Learning Beyond the Standard Model
 description: >-
-  [NeurIPS 2025][Physics][Transfer Learning] This work investigates whether neural networks pre-trained on the standard cosmological model (ΛCDM) can transfer to beyond-standard-model scenarios (massive neutrinos…
+  [NeurIPS 2025][Physics & Scientific Computing][Transfer Learning] This work investigates whether neural networks pre-trained on the standard cosmological model (ΛCDM) can transfer to beyond-standard-model scenarios (mass…
 tags:
   - "NeurIPS 2025"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "Transfer Learning"
   - "Cosmological Inference"
   - "ΛCDM"
@@ -125,11 +125,11 @@ Pre-training on Quijote ΛCDM simulations (32,768 samples) → frozen/fine-tuned
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] One-Shot Transfer Learning for Nonlinear PDEs with Perturbative PINNs](oneshot_transfer_learning_nonlinear_pdes_perturbative_pinns.md)
 - [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
-- [\[NeurIPS 2025\] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology](multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal.md)
 - [\[NeurIPS 2025\] POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning](polaris_a_high-contrast_polarimetric_imaging_benchmark_dataset_for_exoplanetary_.md)
-- [\[NeurIPS 2025\] Toward Complete Merger Identification at Cosmic Noon with Deep Learning](toward_complete_merger_identification_at_cosmic_noon_with_deep_learning.md)
-- [\[NeurIPS 2025\] Latent Representation Learning in Heavy-Ion Collisions with MaskPoint Transformer](latent_representation_learning_in_heavy-ion_collisions_with_maskpoint_transforme.md)
+- [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](integration_matters_for_learning_pdes_with_backward_sdes.md)
+- [\[NeurIPS 2025\] The Platonic Universe: Do Foundation Models See the Same Sky?](the_platonic_universe_do_foundation_models_see_the_same_sky.md)
 
 </div>
 

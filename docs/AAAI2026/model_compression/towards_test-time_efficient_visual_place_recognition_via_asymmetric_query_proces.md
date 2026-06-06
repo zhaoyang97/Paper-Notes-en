@@ -175,10 +175,10 @@ Training constraint: only the gallery dataset and precomputed features may be us
 ## Related Papers
 
 - [\[AAAI 2026\] Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time](correcting_false_alarms_from_unseen_adapting_graph_anomaly_detectors_at_test_tim.md)
-- [\[CVPR 2026\] TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery](../../CVPR2026/model_compression/talon_test-time_adaptive_learning_for_on-the-fly_category_discovery.md)
+- [\[ICML 2026\] Linearizing Vision Transformer with Test-Time Training](../../ICML2026/model_compression/linearizing_vision_transformer_with_test-time_training.md)
 - [\[NeurIPS 2025\] Smooth Regularization for Efficient Video Recognition](../../NeurIPS2025/model_compression/smooth_regularization_for_efficient_video_recognition.md)
-- [\[AAAI 2026\] ALTER: Asymmetric LoRA for Token-Entropy-Guided Unlearning of LLMs](alter_asymmetric_lora_for_token-entropy-guided_unlearning_of.md)
-- [\[ACL 2026\] Training-Free Test-Time Contrastive Learning for Large Language Models](../../ACL2026/model_compression/training-free_test-time_contrastive_learning_for_large_language_models.md)
+- [\[ICML 2026\] Test-Time Training with KV Binding Is Secretly Linear Attention](../../ICML2026/model_compression/test-time_training_with_kv_binding_is_secretly_linear_attention.md)
+- [\[CVPR 2026\] TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery](../../CVPR2026/model_compression/talon_test-time_adaptive_learning_for_on-the-fly_category_discovery.md)
 
 </div>
 

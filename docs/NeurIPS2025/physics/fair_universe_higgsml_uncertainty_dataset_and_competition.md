@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] FAIR Universe HiggsML Uncertainty Dataset and Competition
 description: >-
-  [NeurIPS 2025][Physics][Higgs boson] This work provides a standardized dataset of 280 million simulated LHC collision events and a competition platform featuring six parameterized systematic biases (detector calibration…
+  [NeurIPS 2025][Physics & Scientific Computing][Higgs boson] This work provides a standardized dataset of 280 million simulated LHC collision events and a competition platform featuring six parameterized systematic biases…
 tags:
   - "NeurIPS 2025"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "Higgs boson"
   - "systematic uncertainties"
   - "confidence intervals"
@@ -144,10 +144,10 @@ The data generation pipeline proceeds as follows: Pythia 8.2 Monte Carlo event g
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Platonic Universe: Do Foundation Models See the Same Sky?](the_platonic_universe_do_foundation_models_see_the_same_sky.md)
+- [\[NeurIPS 2025\] Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models](physics-guided_machine_learning_for_uncertainty_quantification_in_turbulence_mod.md)
 - [\[NeurIPS 2025\] POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning](polaris_a_high-contrast_polarimetric_imaging_benchmark_dataset_for_exoplanetary_.md)
+- [\[AAAI 2026\] Phys-Liquid: A Physics-Informed Dataset for Estimating 3D Geometry and Volume of Transparent Deformable Liquids](../../AAAI2026/physics/phys-liquid_a_physics-informed_dataset_for_estimating_3d_geometry_and_volume_of_.md)
 - [\[NeurIPS 2025\] Transfer Learning Beyond the Standard Model](transfer_learning_beyond_the_standard_model.md)
-- [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
-- [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](neural_deprojection_of_galaxy_stellar_mass_profiles.md)
 
 </div>
 

@@ -127,7 +127,7 @@ The work carries several broader implications:
 - [\[CVPR 2026\] When Understanding Becomes a Risk: Authenticity and Safety Risks in the Emerging Image Generation Paradigm](../../CVPR2026/image_generation/when_understanding_becomes_a_risk_authenticity_and_safety_risks_in_the_emerging_.md)
 - [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
 - [\[CVPR 2026\] CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing](../../CVPR2026/image_generation/care-edit_condition-aware_routing_of_experts_for_contextual_image_editing.md)
-- [\[ICLR 2026\] Routing Matters in MoE: Scaling Diffusion Transformers with Explicit Routing Guidance](routing_matters_in_moe_scaling_diffusion_transformers_with_explicit_routing_guid.md)
+- [\[NeurIPS 2025\] Diffusion Models Meet Contextual Bandits](../../NeurIPS2025/image_generation/diffusion_models_meet_contextual_bandits.md)
 
 </div>
 

@@ -136,11 +136,11 @@ Performance is essentially unchanged, thoroughly undermining the memory interpre
 
 ## Related Papers
 
-- [\[ICML 2025\] How Do Transformers Learn Variable Binding in Symbolic Programs?](../../ICML2025/others/how_do_transformers_learn_variable_binding_in_symbolic_programs.md)
-- [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
-- [\[ICML 2026\] Realizable Bayes-Consistency for General Metric Losses](realizable_bayes-consistency_for_general_metric_losses.md)
-- [\[ICML 2026\] 具有随机到达的自适应多轮资源分配](adaptive_multi-round_allocation_with_stochastic_arrivals.md)
-- [\[ICML 2026\] GEM-FI: 用能量门控 + Fisher 调制的证据混合，让单次前向也能多模态地表达 epistemic 不确定性](gem-fi_gated_evidential_mixtures_with_fisher_modulation.md)
+- [\[ICML 2026\] Linearizing Vision Transformer with Test-Time Training](linearizing_vision_transformer_with_test-time_training.md)
+- [\[ICLR 2026\] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models](../../ICLR2026/model_compression/specialization_after_generalization_towards_understanding_test-time_training_in_.md)
+- [\[ACL 2026\] Training-Free Test-Time Contrastive Learning for Large Language Models](../../ACL2026/model_compression/training-free_test-time_contrastive_learning_for_large_language_models.md)
+- [\[NeurIPS 2025\] Linear Attention for Efficient Bidirectional Sequence Modeling](../../NeurIPS2025/model_compression/linear_attention_for_efficient_bidirectional_sequence_modeling.md)
+- [\[CVPR 2026\] TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery](../../CVPR2026/model_compression/talon_test-time_adaptive_learning_for_on-the-fly_category_discovery.md)
 
 </div>
 

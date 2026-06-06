@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Toward Complete Merger Identification at Cosmic Noon with Deep Learning
 description: >-
-  [NeurIPS 2025 (ML4PS Workshop)][Physics][Galaxy merger identification] A ResNet18 is trained on simulated HST CANDELS images generated from IllustrisTNG50…
+  [NeurIPS 2025 (ML4PS Workshop)][Physics & Scientific Computing][Galaxy merger identification] A ResNet18 is trained on simulated HST CANDELS images generated from IllustrisTNG50…
 tags:
   - "NeurIPS 2025 (ML4PS Workshop)"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "Galaxy merger identification"
   - "ResNet18"
   - "Cosmic noon"
@@ -135,11 +135,11 @@ Average performance across 3 random seeds:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Deep Learning for Subspace Regression](../../ICLR2026/physics/deep_learning_for_subspace_regression.md)
 - [\[NeurIPS 2025\] Transfer Learning Beyond the Standard Model](transfer_learning_beyond_the_standard_model.md)
 - [\[NeurIPS 2025\] Latent Representation Learning in Heavy-Ion Collisions with MaskPoint Transformer](latent_representation_learning_in_heavy-ion_collisions_with_maskpoint_transforme.md)
-- [\[NeurIPS 2025\] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology](multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal.md)
 - [\[NeurIPS 2025\] POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning](polaris_a_high-contrast_polarimetric_imaging_benchmark_dataset_for_exoplanetary_.md)
-- [\[CVPR 2026\] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](../../CVPR2026/physics/qkd_quantum_gated_incremental_learning.md)
+- [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](integration_matters_for_learning_pdes_with_backward_sdes.md)
 
 </div>
 

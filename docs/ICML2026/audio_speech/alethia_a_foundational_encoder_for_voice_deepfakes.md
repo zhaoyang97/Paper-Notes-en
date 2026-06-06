@@ -135,11 +135,11 @@ Zero-shot singing voice deepfake (SVDD, CtrSVDD test split, no singing data seen
 
 ## Related Papers
 
-- [\[CVPR 2025\] InteractVLM: 3D Interaction Reasoning from 2D Foundational Models](../../CVPR2025/3d_vision/interactvlm_3d_interaction_reasoning_from_2d_foundational_models.md)
-- [\[CVPR 2025\] DUNE: Distilling a Universal Encoder from Heterogeneous 2D and 3D Teachers](../../CVPR2025/3d_vision/dune_distilling_a_universal_encoder_from_heterogeneous_2d_and_3d_teachers.md)
-- [\[ICML 2026\] FS-I2P: Hierarchical Focus-Sweep Registration Network with Dynamically Allocated Depth Inspired by Human Observation](fs-i2pa_hierarchical_focus-sweep_registration_network_with_dynamically_allocated.md)
-- [\[ICML 2026\] Streaming Sliced Optimal Transport](streaming_sliced_optimal_transport.md)
-- [\[ICML 2026\] Mesh Field Theory: Port–Hamiltonian Formulation of Mesh-Based Physics](mesh_field_theory_port-hamiltonian_formulation_of_mesh-based_physics.md)
+- [\[ICLR 2026\] SiNGER: A Clearer Voice Distills Vision Transformers Further](../../ICLR2026/audio_speech/singer_a_clearer_voice_distills_vision_transformers_further.md)
+- [\[ACL 2026\] Still Between Us? Evaluating and Improving Voice Assistant Robustness to Third-Party Interruptions](../../ACL2026/audio_speech/still_between_us_evaluating_and_improving_voice_assistant_robustness_to_third-pa.md)
+- [\[ACL 2026\] Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages](../../ACL2026/audio_speech/indic-codecfake_meets_satyam_towards_detecting_neural_audio_codec_synthesized_sp.md)
+- [\[ICML 2026\] NAACA: Training-Free NeuroAuditory Attentive Cognitive Architecture with Oscillatory Working Memory for Salience-Driven Attention Gating](naaca_training-free_neuroauditory_attentive_cognitive_architecture_with_oscillat.md)
+- [\[ICML 2026\] MECAT: A Multi-Experts Constructed Benchmark for Fine-Grained Audio Understanding Tasks](mecat_a_multi-experts_constructed_benchmark_for_fine-grained_audio_understanding.md)
 
 </div>
 

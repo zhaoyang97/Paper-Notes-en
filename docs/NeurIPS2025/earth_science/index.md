@@ -16,7 +16,7 @@ tags:
 
 **🧠 NeurIPS2025** · **5** paper notes
 
-📌 **Same area in other venues:** [🤖 AAAI2026 (1)](../../AAAI2026/earth_science/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (1)](../../ICML2026/earth_science/index.md) · [🤖 AAAI2026 (1)](../../AAAI2026/earth_science/index.md)
 
 **[A Probabilistic U-Net Approach to Downscaling Climate Simulations](a_probabilistic_unet_approach_to_downscaling_climate_simulat.md)**
 

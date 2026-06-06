@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] From Simulations to Surveys: Domain Adaptation for Galaxy Observations
 description: >-
-  [NeurIPS 2025][Physics][domain adaptation] This work constructs a domain adaptation pipeline from simulated galaxies (TNG50) to real survey observations (SDSS) via feature-level alignment using Euclidean distance…
+  [NeurIPS 2025][Physics & Scientific Computing][domain adaptation] This work constructs a domain adaptation pipeline from simulated galaxies (TNG50) to real survey observations (SDSS) via feature-level alignment using Euc…
 tags:
   - "NeurIPS 2025"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "domain adaptation"
   - "galaxy morphology"
   - "optimal transport"
@@ -119,11 +119,11 @@ Domain AUC ≈ 0.5 indicates that source and target features are indistinguishab
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] The Primacy of Magnitude in Low-Rank Adaptation](the_primacy_of_magnitude_in_low-rank_adaptation.md)
 - [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](neural_deprojection_of_galaxy_stellar_mass_profiles.md)
-- [\[NeurIPS 2025\] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology](multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal.md)
+- [\[NeurIPS 2025\] GyroSwin: 5D Surrogates for Gyrokinetic Plasma Turbulence Simulations](gyroswin_5d_surrogates_for_gyrokinetic_plasma_turbulence_simulations.md)
+- [\[NeurIPS 2025\] EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale](eddyformer_accelerated_neural_simulations_of_three-dimensional_turbulence_at_sca.md)
 - [\[NeurIPS 2025\] Unsupervised Discovery of High-Redshift Galaxy Populations with Variational Autoencoders](unsupervised_discovery_of_high-redshift_galaxy_populations_with_variational_auto.md)
-- [\[NeurIPS 2025\] The Pareto Frontier of Resilient Jet Tagging](the_pareto_frontier_of_resilient_jet_tagging.md)
-- [\[NeurIPS 2025\] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE](titan_a_trajectory-informed_technique_for_adaptive_parameter_freezing_in_large-s.md)
 
 </div>
 

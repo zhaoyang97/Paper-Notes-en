@@ -19,7 +19,7 @@ tags:
 
 📌 **Same area in other venues:** [💬 ACL2026 (7)](../../ACL2026/llm_pretraining/index.md) · [📷 CVPR2026 (8)](../../CVPR2026/llm_pretraining/index.md) · [🔬 ICLR2026 (26)](../../ICLR2026/llm_pretraining/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/llm_pretraining/index.md) · [🧠 NeurIPS2025 (46)](../../NeurIPS2025/llm_pretraining/index.md) · [📹 ICCV2025 (9)](../../ICCV2025/llm_pretraining/index.md)
 
-🔥 **Top topics:** LLM ×7 · Diffusion Models ×3
+🔥 **Top topics:** LLM ×6 · Diffusion Models ×3
 
 **[Annotations Mitigate Post-Training Mode Collapse](annotations_mitigate_post-training_mode_collapse.md)**
 
@@ -57,10 +57,6 @@ tags:
 
 :   In a simplified setting where a single-layer Transformer learns Markov data, this work analyzes gradient flow by performing stage-wise linearization around a sequence of critical points, rigorously characterizing the recurring "focus–dilution" cycles in attention training. Consistent phenomena are observed on WikiText and TinyStories.
 
-**[From Backward Spreading to Forward Replay: Revisiting Target Construction in LLM Parameter Editing](from_backward_spreading_to_forward_replay_revisiting_target_construction_in_llm_.md)**
-
-:   This paper systematically analyzes why backward spreading works in locate-then-edit (LTE) editing, why it is insufficient, and proposes forward replay: treating the first decisive layer as the optimization variable and obtaining subsequent layer targets via standard forward propagation. This approach consistently improves over MEMIT/RECT/PRUNE/AlphaEdit without extra computational cost.
-
 **[InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)**
 
 :   The authors propose InfoLaw: redefining "pretraining" as a process of "bucket-wise information accumulation," where the information in each bucket equals "quality density $f_d$ × unique token count $M_d$ × $\log K$" multiplied by an exponentially decaying factor with respect to repetition $R_d$. The final validation loss is expressed as $L = \alpha\cdot\text{info}^{-\beta}$, which can be fitted on 252M-1.2B and extrapolated to 7B / 425B tokens with an average error of 0.15% and a maximum of 0.96%. This formulation can be directly used to search for the optimal data recipe.
@@ -68,6 +64,10 @@ tags:
 **[Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)**
 
 :   The authors empirically establish, using 10,866 merged models, a dual-axis power law of the form $L=L_*+BN^{-\beta}+A_0 N^{-\gamma}/(k+b)$: the base model size $N$ determines the floor, the number of experts $k$ determines the tail, and four mainstream merging methods (Average, TA, TIES, DARE) all share the same curve. This transforms the questions of "how many experts to merge" and "when to stop merging" into predictable, budgetable engineering problems.
+
+**[MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier](moose-star_unlocking_tractable_training_for_scientific_discovery_by_breaking_the.md)**
+
+:   MOOSE-Star decomposes the problem of "training an LLM to directly generate scientific hypotheses"—which originally requires searching a $\mathcal{O}(N^k)$ combinatorial space—into two sequential subtasks: "inspiration retrieval + hypothesis composition." By further stacking hierarchical tree retrieval, bounded composition, and motivation planning, the optimal complexity is reduced from exponential to $\mathcal{O}(\log N)$. The authors also release the TOMATO-Star dataset with 108,717 decomposition-annotated papers.
 
 **[On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of Horizon Length](on_training_large_language_models_for_long-horizon_tasks_an_empirical_study_of_h.md)**
 

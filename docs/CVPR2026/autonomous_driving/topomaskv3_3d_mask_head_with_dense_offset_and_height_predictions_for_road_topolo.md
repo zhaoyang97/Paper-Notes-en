@@ -152,7 +152,7 @@ Cross-split generalization ablation (camera, ±50 m):
 - [\[AAAI 2026\] Minimum-Cost Network Flow with Dual Predictions](../../AAAI2026/autonomous_driving/minimum-cost_network_flow_with_dual_predictions.md)
 - [\[ICCV 2025\] ALOcc: Adaptive Lifting-Based 3D Semantic Occupancy and Cost Volume-Based Flow Predictions](../../ICCV2025/autonomous_driving/alocc_adaptive_liftingbased_3d_semantic_occupancy_and_cost_v.md)
 - [\[AAAI 2026\] Fine-Grained Representation for Lane Topology Reasoning](../../AAAI2026/autonomous_driving/fine-grained_representation_for_lane_topology_reasoning.md)
-- [\[AAAI 2026\] Invisible Triggers, Visible Threats! Road-Style Adversarial Creation Attack for Visual 3D Detection in Autonomous Driving](../../AAAI2026/autonomous_driving/invisible_triggers_visible_threats_road-style_adversarial_creation_attack_for_vi.md)
+- [\[ICCV 2025\] SeqGrowGraph: Learning Lane Topology as a Chain of Graph Expansions](../../ICCV2025/autonomous_driving/seqgrowgraph_learning_lane_topology_as_a_chain_of_graph_expansions.md)
 
 </div>
 

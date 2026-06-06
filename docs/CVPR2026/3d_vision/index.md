@@ -21,9 +21,9 @@ tags:
 
 **📷 CVPR2026** · **230** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (8)](../../ICML2026/3d_vision/index.md) · [🔬 ICLR2026 (63)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (76)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (112)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (263)](../../ICCV2025/3d_vision/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (9)](../../ICML2026/3d_vision/index.md) · [🔬 ICLR2026 (63)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (76)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (112)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (264)](../../ICCV2025/3d_vision/index.md)
 
-🔥 **Top topics:** 3D Gaussian Splatting ×44 · 3D Reconstruction ×22 · Dynamic Scenes ×18 · Point Cloud ×16 · Few-/Zero-Shot Learning ×12
+🔥 **Top topics:** 3D Gaussian Splatting ×44 · 3D Reconstruction ×23 · Dynamic Scenes ×18 · Point Cloud ×16 · Few-/Zero-Shot Learning ×12
 
 **[3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)**
 
@@ -269,10 +269,6 @@ tags:
 
 :   This paper proposes the *extrinsic paradigm*, which fully decouples semantics from 3DGS geometry. By combining multi-granularity overlapping object grouping with VLM-generated text hypotheses, it constructs a lightweight semantic index layer that enables training-free, low-storage, and ambiguity-aware open-vocabulary 3D scene understanding.
 
-**[FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning](facecam_portrait_video_camera_control_via_scale-aware_conditioning.md)**
-
-:   This paper proposes FaceCam, a system that addresses camera control in monocular portrait videos by using facial landmarks as a scale-aware camera representation, thereby avoiding the scale ambiguity inherent in conventional extrinsic camera representations. Two data augmentation strategies—synthetic camera motion and multi-clip stitching—are further designed to support continuous camera trajectory inference.
-
 **[FACT-GS: Frequency-Aligned Complexity-Aware Texture Reparameterization for 2D Gaussian Splatting](fact-gs_frequency-aligned_complexity-aware_texture_reparameterization_for_2d_gau.md)**
 
 :   FACT-GS reframes texture parameterization as a sampling density allocation problem, employing a learnable deformation field to achieve frequency-adaptive non-uniform texture sampling, substantially improving high-frequency detail recovery under a fixed parameter budget.
@@ -489,6 +485,10 @@ tags:
 
 :   This paper proposes MARCO, a semantic correspondence model built on a single DINOv2 backbone. It progressively improves spatial precision via a coarse-to-fine Gaussian RBF loss, and expands sparse keypoint supervision into dense pseudo-correspondence labels through a self-distillation framework. MARCO achieves state-of-the-art performance on standard benchmarks as well as on unseen keypoints and categories, while being 3× smaller and 10× faster than dual-encoder approaches.
 
+**[Marker-Based 3D Reconstruction of Aggregates with a Comparative Analysis of 2D and 3D Morphologies](markerbased_3d_reconstruction_of_aggregates_with_a.md)**
+
+:   This paper proposes a low-cost marker-based photogrammetric pipeline for high-quality 3D reconstruction of aggregate particles. Through a systematic comparative analysis of 2D and 3D morphological indices, it reveals the significant limitations of relying solely on 2D images for aggregate morphology assessment.
+
 **[Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)**
 
 :   This paper identifies two fundamental conflicts between the causal mask in LLM decoders and 3D scene understanding (order bias and instruction isolation), and proposes the 3D-SLIM masking strategy (Geometry-adaptive Mask + Instruction-aware Mask) to replace the causal mask. It achieves significant improvements across multiple 3D scene-language tasks without any architectural modifications or additional parameters.
@@ -524,6 +524,10 @@ tags:
 **[MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)**
 
 :   This paper proposes MoVieS, a feed-forward 4D dynamic scene reconstruction framework that unifies appearance, geometry, and motion modeling via **Dynamic Splatter Pixels**, enabling 4D reconstruction from monocular video in approximately one second while supporting novel view synthesis, 3D point tracking, scene flow estimation, and moving object segmentation.
+
+**[MozzaVID: Mozzarella Volumetric Image Dataset](mozzavid_mozzarella_volumetric_image_dataset.md)**
+
+:   This paper introduces MozzaVID — a mozzarella cheese microstructure volumetric image classification dataset based on synchrotron X-ray CT — comprising 591–37,824 samples of size $192^3$, with classification targets spanning 25 cheese types and 149 individual cheese specimens. The dataset bridges the large gap in scale and task design between 3D volumetric and 2D datasets, and experiments demonstrate that 3D models significantly outperform their 2D counterparts.
 
 **[MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation](msgnav_unleashing_the_power_of_multi-modal_3d_scene_graph_for_zero-shot_embodied.md)**
 
@@ -872,10 +876,6 @@ tags:
 **[Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)**
 
 :   MonoIA proposes converting numerical camera intrinsics into language-guided semantic representations (via LLM-generated intrinsic descriptions encoded by CLIP), and injects them into the detection network through a hierarchical adaptation module. This enables zero-shot generalization to unseen focal lengths and unified cross-dataset training, achieving new state-of-the-art results on KITTI, Waymo, and nuScenes.
-
-**[Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos](towards_spatio-temporal_world_scene_graph_generation_from_monocular_videos.md)**
-
-:   This paper introduces the World Scene Graph Generation (WSGG) task, which constructs spatio-temporally persistent, world-coordinate-anchored scene graphs from monocular videos, covering all objects including occluded and out-of-frame ones. The paper also presents the ActionGenome4D dataset and three complementary methods (PWG/MWAE/4DST).
 
 **[TR2M: Transferring Monocular Relative Depth to Metric Depth with Language Descriptions and Dual-Level Scale-Oriented Contrast](tr2m_transferring_monocular_relative_depth_to_metric_depth_with_language_descrip.md)**
 

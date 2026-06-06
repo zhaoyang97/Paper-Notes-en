@@ -111,3 +111,19 @@ Removing asset annotations doubles collision counts and significantly increases 
 - Experimental Thoroughness: ⭐⭐⭐⭐ 30 experiments + three baselines + ablation + navigation evaluation provide comprehensive coverage.
 - Writing Quality: ⭐⭐⭐⭐ Clear modular structure, with well-presented formulas and pseudocode.
 - Value: ⭐⭐⭐⭐⭐ Automated laboratories address a real-world demand, offering a deployable environment synthesis solution.
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICCV 2025\] REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment](../../ICCV2025/3d_vision/reparo_compositional_3d_assets_generation_with_differentiable_3d_layout_alignmen.md)
+- [\[ICML 2026\] PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World](physforge_generating_physics-grounded_3d_assets_for_interactive_virtual_world.md)
+- [\[NeurIPS 2025\] PhysX-3D: Physical-Grounded 3D Asset Generation](../../NeurIPS2025/3d_vision/physx-3d_physical-grounded_3d_asset_generation.md)
+- [\[ICCV 2025\] LACONIC: A 3D Layout Adapter for Controllable Image Creation](../../ICCV2025/3d_vision/laconic_a_3d_layout_adapter_for_controllable_image_creation.md)
+- [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](../../CVPR2026/3d_vision/ggpt_geometry_grounded_point_transformer.md)
+
+</div>
+
+<!-- RELATED:END -->

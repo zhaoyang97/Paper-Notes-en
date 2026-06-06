@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Neon: Negative Extrapolation From Self-Training Improves Image Generation
 description: >-
-  [ICLR 2026 Oral][Image Generation][self-training] Neon is proposed as a post-processing method requiring &lt;1% additional training compute: the model is first fine-tuned on its own synthetic data (causing degradation)…
+  [ICLR 2026 Oral][Image Generation][self-training] Neon is proposed as a post-processing method requiring <1% additional training compute: the model is first fine-tuned on its own synthetic data (causing degradation)…
 tags:
   - "ICLR 2026 Oral"
   - "Image Generation"
@@ -142,8 +142,8 @@ The fine-tuning stage uses the standard training loss of each respective archite
 - [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
 - [\[AAAI 2026\] RetrySQL: Text-to-SQL Training with Retry Data for Self-Correcting Query Generation](../../AAAI2026/image_generation/retrysql_text-to-sql_training_with_retry_data_for_self-correcting_query_generati.md)
 - [\[NeurIPS 2025\] Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation](../../NeurIPS2025/image_generation/understand_before_you_generate_self-guided_training_for_autoregressive_image_gen.md)
-- [\[ACL 2026\] VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval](../../ACL2026/image_generation/visret_visualization_improves_knowledge-intensive_text-to-image_retrieval.md)
 - [\[CVPR 2026\] Self-Corrected Image Generation with Explainable Latent Rewards](../../CVPR2026/image_generation/self-corrected_image_generation_with_explainable_latent_rewards.md)
+- [\[CVPR 2026\] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](../../CVPR2026/image_generation/solace_self_confidence_rewards_t2i.md)
 
 </div>
 

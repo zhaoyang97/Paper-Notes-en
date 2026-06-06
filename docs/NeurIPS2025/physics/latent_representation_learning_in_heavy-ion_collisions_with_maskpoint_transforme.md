@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Latent Representation Learning in Heavy-Ion Collisions with MaskPoint Transformer
 description: >-
-  [NEURIPS2025 (Workshop: ML and Physical Sciences)][Physics][heavy-ion collisions] This work introduces a masked point cloud Transformer autoencoder to heavy-ion collision analysis. Through a two-stage paradigm of self-su…
+  [NEURIPS2025 (Workshop: ML and Physical Sciences)][Physics & Scientific Computing][heavy-ion collisions] This work introduces a masked point cloud Transformer autoencoder to heavy-ion collision analysis. Through a two-st…
 tags:
   - "NEURIPS2025 (Workshop: ML and Physical Sciences)"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "heavy-ion collisions"
   - "masked autoencoder"
   - "Transformer"
@@ -142,10 +142,10 @@ Two-stage paradigm:
 ## Related Papers
 
 - [\[NeurIPS 2025\] POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning](polaris_a_high-contrast_polarimetric_imaging_benchmark_dataset_for_exoplanetary_.md)
+- [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](../../AAAI2026/physics/saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
 - [\[NeurIPS 2025\] Transfer Learning Beyond the Standard Model](transfer_learning_beyond_the_standard_model.md)
 - [\[NeurIPS 2025\] Toward Complete Merger Identification at Cosmic Noon with Deep Learning](toward_complete_merger_identification_at_cosmic_noon_with_deep_learning.md)
-- [\[NeurIPS 2025\] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology](multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal.md)
-- [\[CVPR 2026\] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](../../CVPR2026/physics/qkd_quantum_gated_incremental_learning.md)
+- [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](integration_matters_for_learning_pdes_with_backward_sdes.md)
 
 </div>
 

@@ -129,11 +129,11 @@ LoRA finetuning (not full parameters), rank 128, 1000 steps, batch size 8; $\bet
 
 ## Related Papers
 
-- [\[CVPR 2025\] Boost Your Human Image Generation Model via Direct Preference Optimization](../../CVPR2025/llm_alignment/boost_your_human_image_generation_model_via_direct_preference_optimization.md)
-- [\[ACL 2025\] Aligned but Blind: Alignment Increases Implicit Bias by Reducing Awareness of Race](../../ACL2025/llm_alignment/aligned_but_blind_implicit_bias.md)
-- [\[ICML 2026\] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization](tur-dpo_topology-_and_uncertainty-aware_direct_preference_optimization.md)
-- [\[ACL 2025\] PKU-SafeRLHF: Towards Multi-Level Safety Alignment for LLMs with Human Preference](../../ACL2025/llm_alignment/pku-saferlhf_towards_multi-level_safety_alignment_for_llms_with_human_preference.md)
-- [\[NeurIPS 2025\] Human-assisted Robotic Policy Refinement via Action Preference Optimization](../../NeurIPS2025/llm_alignment/human-assisted_robotic_policy_refinement_via_action_preference_optimization.md)
+- [\[AAAI 2026\] Multi-Metric Preference Alignment for Generative Speech Restoration](../../AAAI2026/image_generation/multi-metric_preference_alignment_for_generative_speech_restoration.md)
+- [\[ICML 2026\] Anomaly-Preference Image Generation (APO)](anomaly-preference_image_generation.md)
+- [\[ICML 2026\] Visual Implicit Autoregressive Modeling](visual_implicit_autoregressive_modeling.md)
+- [\[CVPR 2026\] Ani3DHuman: Photorealistic 3D Human Animation with Self-guided Stochastic Sampling](../../CVPR2026/image_generation/ani3dhuman_photorealistic_3d_human_animation_with_self-guided_stochastic_samplin.md)
+- [\[ICCV 2025\] HPSv3: Towards Wide-Spectrum Human Preference Score](../../ICCV2025/image_generation/hpsv3_towards_wide-spectrum_human_preference_score.md)
 
 </div>
 

@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory
 description: >-
-  [ICML 2026][LLM Agent / Long-Context Memory / Multi-Agent Systems][Episodic Memory] E-mem shifts the traditional memory paradigm of "preprocessing and compressing into embeddings/graphs" to an episodic reconstruction par…
+  [ICML 2026][Multi-Agent][Episodic Memory] E-mem shifts the traditional memory paradigm of "preprocessing and compressing into embeddings/graphs" to an episodic reconstruction paradigm of "retaining original context + in-…
 tags:
   - "ICML 2026"
-  - "LLM Agent / Long-Context Memory / Multi-Agent Systems"
+  - "Multi-Agent"
   - "Episodic Memory"
   - "Context Reconstruction"
   - "Master-Assistant Architecture"
@@ -149,11 +149,11 @@ Master model replacement (assistant fixed at Qwen3-4B): Gemini2.5-flash 93.62, G
 
 ## Related Papers
 
-- [\[ICML 2026\] Agent-Omit: Adaptive Context Omission for Efficient LLM Agents](agent-omit_adaptive_context_omission_for_efficient_llm_agents.md)
-- [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](../../NeurIPS2025/llm_agent/a-mem_agentic_memory_for_llm_agents.md)
-- [\[ICLR 2026\] REMem: Reasoning with Episodic Memory in Language Agents](../../ICLR2026/llm_agent/remem_reasoning_with_episodic_memory_in_language_agent.md)
-- [\[ACL 2026\] MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection](../../ACL2026/llm_agent/memophishagent_memory-augmented_multi-modal_llm_agent_for_phishing_url_detection.md)
-- [\[ICML 2026\] SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety](safeharbor_hierarchical_memory-augmented_guardrail_for_llm_agent_safety.md)
+- [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](../../ACL2026/multi_agent/memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
+- [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
+- [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
+- [\[ICML 2026\] EngiAgent: Fully Connected Coordination of LLM Agents for Solving Open-ended Engineering Problems with Feasible Solutions](engiagent_fully_connected_coordination_of_llm_agents_for_solving_open-ended_engi.md)
+- [\[ICML 2026\] RADAR: Redundancy-Aware Diffusion for Multi-Agent Communication Structure Generation](radar_redundancy-aware_diffusion_for_multi-agent_communication_structure_generat.md)
 
 </div>
 

@@ -2,9 +2,10 @@
 title: >-
   [Paper Note] OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata
 description: >-
-  [NeurIPS 2025][UAV localization] OrthoLoC establishes the first large-scale UAV 6-DoF localization benchmark dataset based on orthographic geodata (DOP+DSM), comprising 16…
+  [NeurIPS 2025][Remote Sensing][UAV localization] OrthoLoC establishes the first large-scale UAV 6-DoF localization benchmark dataset based on orthographic geodata (DOP+DSM), comprising 16…
 tags:
   - "NeurIPS 2025"
+  - "Remote Sensing"
   - "UAV localization"
   - "6-DoF"
   - "orthographic geodata"
@@ -120,11 +121,11 @@ The OrthoLoC localization pipeline proceeds as follows: (1) *Initial localizatio
 
 ## Related Papers
 
-- [\[ICCV 2025\] IAP: Invisible Adversarial Patch Attack through Perceptibility-Aware Localization](../../ICCV2025/others/iap_invisible_adversarial_patch_attack_through_perceptibility-aware_localization.md)
-- [\[NeurIPS 2025\] Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?](are_pixel-wise_metrics_reliable_for_sparse-view_computed_tomography_reconstructi.md)
-- [\[NeurIPS 2025\] Note 5: ReSearch — Learning to Reason with Search](research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Learning Dynamics of RNNs in Closed-Loop Environments](learning_dynamics_of_rnns_in_closed-loop_environments.md)
-- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](learning-augmented_streaming_algorithms_for_correlation_clustering.md)
+- [\[NeurIPS 2025\] Scaling Image Geo-Localization to Continent Level](scaling_image_geo-localization_to_continent_level.md)
+- [\[ICLR 2026\] AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild](../../ICLR2026/remote_sensing/autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild.md)
+- [\[ICCV 2025\] GeoExplorer: Active Geo-Localization with Curiosity-Driven Exploration](../../ICCV2025/remote_sensing/geoexplorer_active_geo-localization_with_curiosity-driven_exploration.md)
+- [\[ICCV 2025\] GeoDistill: Geometry-Guided Self-Distillation for Weakly Supervised Cross-View Localization](../../ICCV2025/remote_sensing/geodistill_geometry-guided_self-distillation_for_weakly_supervised_cross-view_lo.md)
+- [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](../../CVPR2026/remote_sensing/rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
 
 </div>
 

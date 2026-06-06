@@ -2,14 +2,13 @@
 title: >-
   [Paper Note] EngiAgent: Fully Connected Coordination of LLM Agents for Solving Open-ended Engineering Problems with Feasible Solutions
 description: >-
-  [ICML 2026][LLM Agent / Engineering Problem Solving / Multi-Agent Systems][Fully Connected Coordinator] EngiAgent decomposes engineering problem solving into five expert agents: Analyzer, Modeler, Verifier, Solver…
+  [ICML 2026][Multi-Agent][Fully Connected Coordinator] EngiAgent decomposes engineering problem solving into five expert agents: Analyzer, Modeler, Verifier, Solver…
 tags:
   - "ICML 2026"
-  - "LLM Agent / Engineering Problem Solving / Multi-Agent Systems"
+  - "Multi-Agent"
   - "Fully Connected Coordinator"
   - "Feasibility"
   - "Engineering Modeling"
-  - "Multi-Agent"
   - "Feedback Routing"
 date: 2026-05-08
 content_hash: 06f646e37394f3ca
@@ -126,11 +125,11 @@ This is an inference-time agent framework with no training involved; all perform
 
 ## Related Papers
 
-- [\[ICML 2026\] RHB：度量带工具的 LLM Agent 中奖励黑客行为的基准](reward_hacking_benchmark_measuring_exploits_in_llm_agents_with_tool_use.md)
-- [\[ICML 2026\] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory](e-mem_multi-agent_based_episodic_context_reconstruction_for_llm_agent_memory.md)
+- [\[ACL 2026\] Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation](../../ACL2026/multi_agent/diversity_collapse_in_multi-agent_llm_systems_structural_coupling_and_collective.md)
+- [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](../../ACL2026/multi_agent/silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
 - [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
-- [\[ICML 2026\] Agent-Omit: Adaptive Context Omission for Efficient LLM Agents](agent-omit_adaptive_context_omission_for_efficient_llm_agents.md)
-- [\[ICML 2026\] SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety](safeharbor_hierarchical_memory-augmented_guardrail_for_llm_agent_safety.md)
+- [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
+- [\[ICML 2026\] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory](e-mem_multi-agent_based_episodic_context_reconstruction_for_llm_agent_memory.md)
 
 </div>
 

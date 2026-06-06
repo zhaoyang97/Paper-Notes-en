@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Data Verification is the Future of Quantum Computing Copilots
 description: >-
-  [AAAI 2026][Physics][quantum circuit optimization] This position paper argues that data verification must be elevated from a post-hoc filtering step to a foundational architectural principle in quantum computing AI copil…
+  [AAAI 2026][Physics & Scientific Computing][quantum circuit optimization] This position paper argues that data verification must be elevated from a post-hoc filtering step to a foundational architectural principle in qua…
 tags:
   - "AAAI 2026"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "quantum circuit optimization"
   - "LLM hallucination"
   - "formal verification"
@@ -130,7 +130,7 @@ Performance of 34 LLMs on quantum circuit optimization multiple-choice questions
 - [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
 - [\[NeurIPS 2025\] Quantum Doubly Stochastic Transformers](../../NeurIPS2025/physics/quantum_doubly_stochastic_transformers.md)
 - [\[ICLR 2026\] Feedback-driven Recurrent Quantum Neural Network Universality](../../ICLR2026/physics/feedback-driven_recurrent_quantum_neural_network_universality.md)
-- [\[CVPR 2026\] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](../../CVPR2026/physics/qkd_quantum_gated_incremental_learning.md)
+- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](../../ICLR2026/physics/dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
 
 </div>
 

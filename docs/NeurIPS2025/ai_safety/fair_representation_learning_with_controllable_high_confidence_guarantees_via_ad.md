@@ -139,7 +139,7 @@ Under $\varepsilon \in \{0.04, 0.08, 0.12, 0.16\}$ and $\delta=0.1$: FRG consist
 - [\[NeurIPS 2025\] FedFACT: A Provable Framework for Controllable Group-Fairness Calibration in Federated Learning](fedfact_a_provable_framework_for_controllable_group-fairness_calibration_in_fede.md)
 - [\[NeurIPS 2025\] Environment Inference for Learning Generalizable Dynamical System](environment_inference_for_learning_generalizable_dynamical_system.md)
 - [\[NeurIPS 2025\] Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization](stochastic_regret_guarantees_for_online_zeroth-_and_first-order_bilevel_optimiza.md)
-- [\[NeurIPS 2025\] Fair Minimum Labeling: Efficient Temporal Network Activations for Reachability and Equity](fair_minimum_labeling_efficient_temporal_network_activations_for_reachability_an.md)
+- [\[NeurIPS 2025\] Differentially Private High-dimensional Variable Selection via Integer Programming](differentially_private_high-dimensional_variable_selection_via_integer_programmi.md)
 
 </div>
 

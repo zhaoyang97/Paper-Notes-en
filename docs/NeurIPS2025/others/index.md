@@ -21,7 +21,7 @@ tags:
 
 **🧠 NeurIPS2025** · **141** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (27)](../../ICML2026/others/index.md) · [📷 CVPR2026 (44)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (74)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (124)](../../AAAI2026/others/index.md) · [📹 ICCV2025 (48)](../../ICCV2025/others/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/others/index.md) · [📷 CVPR2026 (42)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (74)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (124)](../../AAAI2026/others/index.md) · [📹 ICCV2025 (47)](../../ICCV2025/others/index.md)
 
 🔥 **Top topics:** Adversarial Robustness ×7 · Anomaly Detection ×3 · Alignment/RLHF ×3 · Face & Gaze ×2 · Agents ×2
 

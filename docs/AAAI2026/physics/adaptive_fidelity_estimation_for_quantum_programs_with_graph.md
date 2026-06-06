@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Adaptive Fidelity Estimation for Quantum Programs with Graph-Guided Noise Awareness
 description: >-
-  [AAAI 2026][Physics][Quantum fidelity estimation] This paper proposes QuFid, a framework that models quantum circuits as directed acyclic graphs (DAGs), characterizes noise propagation via control-flow-aware random walks…
+  [AAAI 2026][Physics & Scientific Computing][Quantum fidelity estimation] This paper proposes QuFid, a framework that models quantum circuits as directed acyclic graphs (DAGs)…
 tags:
   - "AAAI 2026"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "Quantum fidelity estimation"
   - "noise awareness"
   - "graph structure analysis"
@@ -148,10 +148,10 @@ The fundamental distinction between QuFid and QuCT/QuEst lies in their objective
 ## Related Papers
 
 - [\[AAAI 2026\] Data Verification is the Future of Quantum Computing Copilots](data_verification_is_the_future_of_quantum_computing_copilots.md)
-- [\[NeurIPS 2025\] FEAT: Free Energy Estimators with Adaptive Transport](../../NeurIPS2025/physics/feat_free_energy_estimators_with_adaptive_transport.md)
-- [\[NeurIPS 2025\] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE](../../NeurIPS2025/physics/titan_a_trajectory-informed_technique_for_adaptive_parameter_freezing_in_large-s.md)
+- [\[AAAI 2026\] Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study](scientific_knowledge-guided_machine_learning_for_vessel_power_prediction_a_compa.md)
+- [\[ICLR 2026\] HyperKKL: Enabling Non-Autonomous State Estimation through Dynamic Weight Conditioning](../../ICLR2026/physics/hyperkkl_enabling_non-autonomous_state_estimation_through_dynamic_weight_conditi.md)
+- [\[AAAI 2026\] Knowledge-Guided Masked Autoencoder with Linear Spectral Mixing and Spectral-Angle-Aware Reconstruction](knowledge-guided_masked_autoencoder_with_linear_spectral_mixing_and_spectral-ang.md)
 - [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
-- [\[ICLR 2026\] Feedback-driven Recurrent Quantum Neural Network Universality](../../ICLR2026/physics/feedback-driven_recurrent_quantum_neural_network_universality.md)
 
 </div>
 

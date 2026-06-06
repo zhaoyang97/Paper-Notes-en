@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration
 description: >-
-  [ICML 2026][LLM Agent / Multi-Agent Systems / Code Generation][Multi-Agent Systems] This paper formalizes the optimization space of multi-agent systems (MAS) into five dimensions (two functional + three structural)…
+  [ICML 2026][Multi-Agent][Multi-Agent Systems] This paper formalizes the optimization space of multi-agent systems (MAS) into five dimensions (two functional + three structural)…
 tags:
   - "ICML 2026"
-  - "LLM Agent / Multi-Agent Systems / Code Generation"
+  - "Multi-Agent"
   - "Multi-Agent Systems"
   - "Collaborative Optimization"
   - "Contrastive Reasoning"
@@ -136,11 +136,11 @@ OMAC-C: Removes the Contrastive Comparator, only uses the Semantic Initializer t
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions](../../NeurIPS2025/code_intelligence/a_stochastic_differential_equation_framework_for_multi-objective_llm_interaction.md)
-- [\[AAAI 2026\] Extracting Events Like Code: A Multi-Agent Programming Framework for Zero-Shot Event Extraction](../../AAAI2026/code_intelligence/extracting_events_like_code_a_multi-agent_programming_framework_for_zero-shot_ev.md)
-- [\[ICLR 2026\] CARD: Towards Conditional Design of Multi-agent Topological Structures](../../ICLR2026/code_intelligence/card_towards_conditional_design_of_multi-agent_topological_structures.md)
-- [\[ACL 2026\] CodeWiki: Evaluating AI's Ability to Generate Holistic Documentation for Large-Scale Codebases](../../ACL2026/code_intelligence/codewiki_evaluating_ai39s_ability_to_generate_holistic_documentation_for_large-s.md)
-- [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](../../ACL2026/code_intelligence/mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
+- [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
+- [\[ACL 2026\] Towards Robust Real-World Spreadsheet Understanding with Multi-Agent Multi-Format Collaboration](../../ACL2026/multi_agent/towards_robust_real-world_spreadsheet_understanding_with_multi-agent_multi-forma.md)
+- [\[ACL 2026\] MATA: Multi-Agent Framework for Reliable and Flexible Table Question Answering](../../ACL2026/multi_agent/mata_multi-agent_framework_for_reliable_and_flexible_table_question_answering.md)
+- [\[ICML 2026\] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory](e-mem_multi-agent_based_episodic_context_reconstruction_for_llm_agent_memory.md)
+- [\[ACL 2026\] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation](../../ACL2026/multi_agent/from_query_to_counsel_structured_reasoning_with_a_multi-agent_framework_and_data.md)
 
 </div>
 

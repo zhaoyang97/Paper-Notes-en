@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Sublinear Time Quantum Algorithm for Attention Approximation
 description: >-
-  [ICLR 2026][Physics][Quantum Computing] This paper proposes the first quantum data structure with **sublinear** time complexity in sequence length $n$ for approximating row queries of the Transformer attention matrix. Th…
+  [ICLR 2026][Physics & Scientific Computing][Quantum Computing] This paper proposes the first quantum data structure with **sublinear** time complexity in sequence length $n$ for approximating row queries of the Transform…
 tags:
   - "ICLR 2026"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "Quantum Computing"
   - "Attention Approximation"
   - "Sublinear Algorithm"
@@ -198,10 +198,10 @@ The pretrained dataset is used with batch size 2 over 16 batches; statistics are
 ## Related Papers
 
 - [\[ICLR 2026\] Feedback-driven Recurrent Quantum Neural Network Universality](feedback-driven_recurrent_quantum_neural_network_universality.md)
+- [\[CVPR 2026\] PhysSkin: Real-Time and Generalizable Physics-Based Skin Simulation](../../CVPR2026/physics/physskin_real-time_and_generalizable_physics-based_animation_via_self-supervised.md)
+- [\[NeurIPS 2025\] Hamiltonian Neural PDE Solvers through Functional Approximation](../../NeurIPS2025/physics/hamiltonian_neural_pde_solvers_through_functional_approximation.md)
+- [\[CVPR 2026\] Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis](../../CVPR2026/physics/continuous_exposure-time_modeling_for_realistic_atmospheric_turbulence_synthesis.md)
 - [\[AAAI 2026\] Data Verification is the Future of Quantum Computing Copilots](../../AAAI2026/physics/data_verification_is_the_future_of_quantum_computing_copilots.md)
-- [\[NeurIPS 2025\] Quantum Doubly Stochastic Transformers](../../NeurIPS2025/physics/quantum_doubly_stochastic_transformers.md)
-- [\[CVPR 2026\] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](../../CVPR2026/physics/qkd_quantum_gated_incremental_learning.md)
-- [\[AAAI 2026\] Adaptive Fidelity Estimation for Quantum Programs with Graph-Guided Noise Awareness](../../AAAI2026/physics/adaptive_fidelity_estimation_for_quantum_programs_with_graph.md)
 
 </div>
 

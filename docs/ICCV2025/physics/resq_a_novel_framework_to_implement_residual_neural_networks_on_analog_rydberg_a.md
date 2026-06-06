@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] ResQ: A Novel Framework to Implement Residual Neural Networks on Analog Rydberg Atom Quantum Computers
 description: >-
-  [ICCV 2025][Physics][Quantum Machine Learning] This paper proposes ResQ — the first framework to natively implement residual neural networks (ResNets) on analog Rydberg atom quantum computers by exploiting continuous-tim…
+  [ICCV 2025][Physics & Scientific Computing][Quantum Machine Learning] This paper proposes ResQ — the first framework to natively implement residual neural networks (ResNets) on analog Rydberg atom quantum computers by ex…
 tags:
   - "ICCV 2025"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "Quantum Machine Learning"
   - "Residual Networks"
   - "Rydberg Atoms"
@@ -177,10 +177,10 @@ Overall: ResQ achieves an **average 50% improvement** over classical models of e
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](../../NeurIPS2025/physics/from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)
+- [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](../../NeurIPS2025/physics/deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
 - [\[NeurIPS 2025\] Exoplanet Formation Inference Using Conditional Invertible Neural Networks](../../NeurIPS2025/physics/exoplanet_formation_inference_using_conditional_invertible_neural_networks.md)
 - [\[ICLR 2026\] Feedback-driven Recurrent Quantum Neural Network Universality](../../ICLR2026/physics/feedback-driven_recurrent_quantum_neural_network_universality.md)
-- [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](../../NeurIPS2025/physics/neural_deprojection_of_galaxy_stellar_mass_profiles.md)
-- [\[NeurIPS 2025\] Knowledge is Overrated: A Zero-Knowledge ML and Cryptographic Hashing-Based Framework for Verifiable, Low Latency Inference at the LHC](../../NeurIPS2025/physics/knowledge_is_overrated_a_zero-knowledge_machine_learning_and_cryptographic_hashi.md)
 - [\[NeurIPS 2025\] Quantum Doubly Stochastic Transformers](../../NeurIPS2025/physics/quantum_doubly_stochastic_transformers.md)
 
 </div>

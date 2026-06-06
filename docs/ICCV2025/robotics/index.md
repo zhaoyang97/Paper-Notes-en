@@ -20,7 +20,7 @@ tags:
 
 **📹 ICCV2025** · **26** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (12)](../../ICML2026/robotics/index.md) · [💬 ACL2026 (1)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (37)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (53)](../../NeurIPS2025/robotics/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (13)](../../ICML2026/robotics/index.md) · [💬 ACL2026 (1)](../../ACL2026/robotics/index.md) · [📷 CVPR2026 (34)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/robotics/index.md)
 
 🔥 **Top topics:** Robotics ×8 · Multimodal/VLM ×3 · Navigation ×3 · Alignment/RLHF ×2 · Self-Supervised Learning ×2
 

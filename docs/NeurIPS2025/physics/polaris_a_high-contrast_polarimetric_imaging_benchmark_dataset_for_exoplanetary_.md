@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning
 description: >-
-  [NeurIPS 2025][Physics][high-contrast imaging] This work introduces POLARIS, the first ML benchmark dataset for exoplanetary polarimetric imaging (921 VLT/SPHERE/IRDIS polarimetric images + 75,910 preprocessed exposures)…
+  [NeurIPS 2025][Physics & Scientific Computing][high-contrast imaging] This work introduces POLARIS, the first ML benchmark dataset for exoplanetary polarimetric imaging (921 VLT/SPHERE/IRDIS polarimetric images + 75…
 tags:
   - "NeurIPS 2025"
-  - "Physics"
+  - "Physics & Scientific Computing"
   - "high-contrast imaging"
   - "exoplanets"
   - "polarimetric imaging"
@@ -129,7 +129,7 @@ Raw VLT/SPHERE polarimetric observations → IRDAP unified preprocessing → 921
 - [\[NeurIPS 2025\] FAIR Universe HiggsML Uncertainty Dataset and Competition](fair_universe_higgsml_uncertainty_dataset_and_competition.md)
 - [\[NeurIPS 2025\] Unsupervised Discovery of High-Redshift Galaxy Populations with Variational Autoencoders](unsupervised_discovery_of_high-redshift_galaxy_populations_with_variational_auto.md)
 - [\[NeurIPS 2025\] Transfer Learning Beyond the Standard Model](transfer_learning_beyond_the_standard_model.md)
-- [\[NeurIPS 2025\] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology](multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal.md)
+- [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](integration_matters_for_learning_pdes_with_backward_sdes.md)
 
 </div>
 

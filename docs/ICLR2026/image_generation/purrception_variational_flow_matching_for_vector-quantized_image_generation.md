@@ -196,7 +196,7 @@ Evaluation on unconditional/class-conditional image generation on ImageNet-1k 25
 - [\[ICLR 2026\] Diffusion Alignment as Variational Expectation-Maximization](diffusion_alignment_as_variational_expectation-maximization.md)
 - [\[ICLR 2026\] Multi-agent Coordination via Flow Matching](multi-agent_coordination_via_flow_matching.md)
 - [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](latent_diffusion_model_without_variational_autoencoder.md)
-- [\[CVPR 2026\] Unified Vector Floorplan Generation via Markup Representation](../../CVPR2026/image_generation/unified_vector_floorplan_generation_via_markup_representation.md)
+- [\[ICLR 2026\] QVGen: Pushing the Limit of Quantized Video Generative Models](qvgen_pushing_the_limit_of_quantized_video_generative_models.md)
 
 </div>
 

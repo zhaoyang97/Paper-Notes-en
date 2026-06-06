@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sherlock: Self-Correcting Reasoning in Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][self-correction] The first systematic study of self-correction capabilities in reasoning VLMs: existing reasoning VLMs are found to be nearly incapable of self-correction (&lt;10% exhibit an a…
+  [NeurIPS 2025][Multimodal VLM][self-correction] The first systematic study of self-correction capabilities in reasoning VLMs: existing reasoning VLMs are found to be nearly incapable of self-correction (<10% exhibit an a…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
